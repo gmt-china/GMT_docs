@@ -34,6 +34,7 @@ help:
 	@echo "  epub       to make an epub"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  xelatexpdf to make LaTeX files and run them through xelatex"
 	@echo "  latexpdfja to make LaTeX files and run them through platex/dvipdfmx"
 	@echo "  text       to make text files"
 	@echo "  man        to make manual pages"
@@ -139,6 +140,13 @@ latexpdf:
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
 
+.PHONY: xelatexpdf
+xelatexpdf:
+	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo "Running LaTeX files through pdflatex..."
+	cd $(BUILDDIR)/latex; latexmk -xelatex -shell-escape
+	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
+
 .PHONY: latexpdfja
 latexpdfja:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
@@ -216,6 +224,7 @@ pseudoxml:
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
+.PHONY: github
 github: html
 	# push build/html to github/gh-pages
 	ghp-import -b gh-pages -r github -p -n build/html
