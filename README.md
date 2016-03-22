@@ -40,3 +40,19 @@
    $ make xelatexpdf
    $ evince build/latex/GMT_Docs.pdf&
    ~~~
+
+## 文档维护
+
+本文档尚有很多不完善之处，因而需要GMT用户一起完善。主要的维护包括如下几个方面：
+
+1. 错字、语句不通
+2. 语法错误导致的显示问题
+3. 翻译尚未完成的部分，见 [任务列表](https://github.com/gmt-china/GMT_Docs/wiki/%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8)
+4. 优化文档结构，使得文档条理更清晰
+5. 增加索引，辅助查找
+6. 随着GMT版本的更新而不断更新文档内容
+
+文档的维护可以通过如下几个方式：
+
+1. 在项目主页提交Issue
+2. 修改文档源码并提交Pull Request
