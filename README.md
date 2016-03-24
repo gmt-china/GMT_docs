@@ -1,45 +1,46 @@
 # GMT参考手册
 
-本项目是GMT中文社区的一部分，是介绍GMT用法的中文手册，可以作为GMT的入门读物以及日常参考。
+欢迎来到 GMT(Generic Mapping Tools) 的世界。
+
+本项目是由GMT中文社区维护的GMT中文手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
 
 ## 相关链接
 
 - GMT中文社区主页：http://gmt-china.org
-- GMT参考手册项目主页：https://docs.gmt-china.org
+- GMT参考手册项目主页：http://docs.gmt-china.org
 - GMT参考手册项目源码：https://github.com/gmt-china/GMT_Docs
 - GMT官方网站：http://gmt.soest.hawaii.edu/
 - GMT官方文档：http://gmt.soest.hawaii.edu/doc/latest/index.html
 
-## 本地编译
+## 版本说明
 
-读者可以通过如下方式咋本地编译该文档：
+本手册目前与GMT 5.2.1同步。手册有正式发布（release）版和维护开发(dev)版。
 
-1. Clone项目至本地
+### release版
 
-   ~~~bash
-   $ git clone https://github.com/gmt-china/GMT_Docs.git GMT_Docs
-   ~~~
+本项目会针对每个GMT版本，发布与之对应的realease版文档，版本号与GMT版本相同。release版包括HTML和PDF等格式的文档，供用户离线阅读。目前尚未发布release版。
 
-2. 安装依赖
+正式发布版可以从社区主页的 [下载页面](http://gmt-china.org/download/) 或项目主页的 [Release页面](https://github.com/gmt-china/GMT_Docs/releases) 中获取。
 
-   ~~~bash
-   $ cd GMT_Docs
-   $ pip install -r requirements.txt
-   ~~~
+### dev版
 
-3. 编译生成HTML
+文档发布release版之后，即进入日常维护模式，即dev版。dev版的版本号格式为 `当前GMT版本号-dev` 。
 
-   ~~~bash
-   $ make html
-   $ firefox build/html/index.html&
-   ~~~
+dev版只提供在线阅读，地址为 http://docs.gmt-china.org/ 。
 
-4. 编译生成PDF（需要安装TeXLive 2015）
+需要离线阅读dev版的用户，请安装Sphinx并自行编译：
 
-   ~~~ bash
-   $ make xelatexpdf
-   $ evince build/latex/GMT_Docs.pdf&
-   ~~~
+~~~bash
+# Clone至本机
+$ git clone https://github.com/gmt-china/GMT_Docs.git GMT_Docs
+$ cd GMT_Docs
+# 编译生成HTML
+$ make html
+$ firefox build/html/index.html&
+# 编译生成PDF（需要安装TeXLive 2015）
+$ make xelatexpdf
+$ evince build/latex/GMT_Docs.pdf&
+~~~
 
 ## 文档维护
 
@@ -47,7 +48,7 @@
 
 1. 错字、语句不通
 2. 语法错误导致的显示问题
-3. 翻译尚未完成的部分，见 [任务列表](https://github.com/gmt-china/GMT_Docs/wiki/%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8)
+3. 翻译尚未完成的部分，见[任务列表](https://github.com/gmt-china/GMT_Docs/wiki/%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8)
 4. 优化文档结构，使得文档条理更清晰
 5. 增加索引，辅助查找
 6. 随着GMT版本的更新而不断更新文档内容
@@ -56,3 +57,5 @@
 
 1. 在项目主页提交Issue
 2. 修改文档源码并提交Pull Request
+
+关于维护的具体细节，见项目[Wiki](https://github.com/gmt-china/GMT_Docs/wiki)
