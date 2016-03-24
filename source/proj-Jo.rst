@@ -49,9 +49,9 @@ poles to their antipodes in the north hemisphere].  Our example was produced by 
    :width: 500 px
    :align: center
 
-   Oblique Mercator map using **-Joc**. We make it clear which direction is North by
-   adding a star rose with the **-Td** option.
+   Oblique Mercator map using **-Joc**.
 
+   We make it clear which direction is North by adding a star rose with the **-Td** option.
 
 It uses definition 3 for an oblique view of some Caribbean islands. Note
 that we define our region using the rectangular system described
@@ -71,6 +71,8 @@ geographic coordinates of the two diagonal corners internally.
 .. figure:: /images/GMT_obl_nz.*
    :width: 600 px
    :align: center
+
+   Oblique Mercator Map using **-JOa**
 
    (left) Oblique view of New Zealand centered on its geographical center (Nelson)
    indicated by the white circle for an oblique Equator with azimuth 35.  This

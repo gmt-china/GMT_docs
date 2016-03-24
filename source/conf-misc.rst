@@ -33,36 +33,7 @@
 **GMT_LANGUAGE**
     绘制月份、星期几等时所使用的语言 [US]
 
-    该参数的默认值为 ``US`` ，所以在绘图时一月会显示 ``January`` 而不是 ``一月`` 。可以通过修改该参数设置GMT所使用的语言，理论上可支持如下语言：
-
-    #. CN1：Simplified Chinese
-    #. CN2：Traditional Chinese
-    #. DE： German
-    #. DK：Danish
-    #. EH：Basque
-    #. ES：Spanish
-    #. FI：Finnish
-    #. FR：French
-    #. GR：Greek
-    #. HI：Hawaiian
-    #. HU：Hungarian
-    #. IE：Irish
-    #. IL：Hebrew
-    #. IS：Icelandic
-    #. IT：Italian
-    #. JP：Japanese
-    #. KR：Korean
-    #. NL：Dutch
-    #. NO：Norwegian
-    #. PL：Polish
-    #. PT：Portuguese
-    #. RU：Russian
-    #. SE：Swedish
-    #. SG：Scottish Gaelic
-    #. TO：Tongan
-    #. TR：Turkish
-    #. UK：British English
-    #. US：US English
+    该参数的默认值为 ``US`` ，所以在绘图时一月会显示 ``January`` 而不是 ``一月`` 。可以通过修改该参数设置GMT所使用的语言。该参数可以取值包含 CN1、CN2、UK、US等。详细列表见 `GMT官方文档 gmt.conf <http://gmt.soest.hawaii.edu/doc/5.2.1/gmt.conf.html>`_
 
     每种语言的定义位于 ``$GMTHOME/share/localization`` 中。读者可以自定义自己的语言，并将其放在该目录或 ``~/.gmt`` 目录下。
 

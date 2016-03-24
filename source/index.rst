@@ -10,7 +10,9 @@ GMT参考手册
    \listoftables
    \cleardoublepage
 
-欢迎来到GMT的世界。本手册是GMT中文社区维护的GMT中文手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
+欢迎来到 GMT(Generic Mapping Tools) 的世界。
+
+本项目是GMT中文社区维护的GMT中文手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
 
 **相关链接：**
 

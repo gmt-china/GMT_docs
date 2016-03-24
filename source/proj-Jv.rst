@@ -11,12 +11,9 @@ world enclosed in a circle. To use it you must enter
 
 -  Scale along equator in inch/degree or 1:xxxxx (**-Jv**), or map width (**-JV**).
 
-Centered on the Dateline, the example below was created by this command:
+Centered on the Dateline, the example below was created by this command::
 
-    ::
-
-      gmt pscoast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 \
-                  -Wthinnest -P > GMT_grinten.ps
+      gmt pscoast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -P > GMT_grinten.ps
 
 .. figure:: /images/GMT_grinten.*
    :width: 400 px

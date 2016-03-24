@@ -7,7 +7,7 @@
    :width: 400 px
    :align: center
 
-   极坐标（ :math:`\theta, r` ）的线性投影
+   极坐标（ :math:`\theta, r`\ ）的线性投影
 
 该投影方式将极坐标（角度 :math:`\theta` 和半径 :math:`r` ）转换到纸张上的位置。此时投影函数为 :math:`x' = f(\theta,r)` 和 :math:`y' = g(\theta,r)` ，X和Y是相互耦合的，且具有360度的周期性，因而与地图投影类似。
 
