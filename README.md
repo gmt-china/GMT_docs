@@ -14,11 +14,11 @@
 
 ## 版本说明
 
-本手册目前与GMT 5.2.1同步。手册有正式发布（release）版和维护开发(dev)版。
+本手册目前与GMT 5.2.1同步。手册有正式发布(release)版和维护开发(dev)版。
 
 ### release版
 
-本项目会针对每个GMT版本，发布与之对应的realease版文档，版本号与GMT版本相同。release版包括HTML和PDF等格式的文档，供用户离线阅读。目前尚未发布release版。
+本项目会针对每个GMT版本，发布与之对应的release版文档，版本号与GMT版本相同。release版包括HTML和PDF等格式的文档，供用户离线阅读。目前尚未发布release版。
 
 正式发布版可以从社区主页的 [下载页面](http://gmt-china.org/download/) 或项目主页的 [Release页面](https://github.com/gmt-china/GMT_Docs/releases) 中获取。
 
