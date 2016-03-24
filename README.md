@@ -28,12 +28,14 @@
 
 dev版只提供在线阅读，地址为 http://docs.gmt-china.org/ 。
 
-需要离线阅读dev版的用户，请安装Sphinx并自行编译：
+需要离线阅读dev版的用户，请自行编译：
 
 ~~~bash
 # Clone至本机
 $ git clone https://github.com/gmt-china/GMT_Docs.git GMT_Docs
 $ cd GMT_Docs
+# 安装Python第三方模块
+$ pip install -r requirements.txt
 # 编译生成HTML
 $ make html
 $ firefox build/html/index.html&
