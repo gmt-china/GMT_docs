@@ -47,9 +47,9 @@ linkcheck:
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
 github: html
-	# push build/html to github/gh-pages
-	ghp-import -b gh-pages -r github -p -n build/html
-
+	@echo "Push build/html to github/gh-pages"
+	ghp-import -b gh-pages -r github -p -n build/html \
+		-m "Update at `date +'%Y-%m-%d %H:%M:%S'`"
 
 ## Builers
 html: figures
