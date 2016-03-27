@@ -39,7 +39,7 @@ GMT参考手册
 
 - GMT模块手册： http://modules.gmt-china.org
 - GMT示例手册： http://examples.gmt-china.org
-- GMT问答社区： http://ask.gmt-china.org
+- GMT问答社区： http://forum.gmt-china.org
 
 .. toctree::
    :maxdepth: 3

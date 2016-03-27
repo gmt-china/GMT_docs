@@ -19,6 +19,6 @@ GMT相关的学习资源列举如下，按照推荐的阅读顺序排序：
 
    在 ``gmt5-dev/test`` 目录下，每个命令均有一个或若干个测试脚本
 
-#. `GMT中文问答社区 <http://ask.gmt-china.org>`_
+#. `GMT中文问答社区 <http://forum.gmt-china.org>`_
 #. GMT学习QQ群：218905582
 #. `GMT官方论坛 <http://gmt.soest.hawaii.edu/projects/gmt/boards/1>`_
