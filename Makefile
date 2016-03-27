@@ -20,17 +20,16 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
 .PHONY: help clean linkcheck figures github
-.PHONY: html qthelp epub latex xelatexpdf
+.PHONY: html epub latex xelatexpdf
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"
-	@echo "  qthelp     to make HTML files and a qthelp project"
 	@echo "  epub       to make an epub"
-	@echo "  latex      to make LaTeX files"
 	@echo "  xelatexpdf to make LaTeX files and run them through xelatex"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  figures    to update all figures"
+	@echo "  latex      to make LaTeX files"
 	@echo "  github     to push the generated html to github  "
 
 clean:
@@ -56,15 +55,6 @@ html: figures
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
-
-qthelp: figures
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
-	@echo
-	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
-	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/GMT.qhcp"
-	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/GMT.qhc"
 
 epub: figures
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
