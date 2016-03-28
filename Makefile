@@ -61,6 +61,11 @@ epub: figures
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
+epub3:
+	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
+	@echo
+	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
+
 latex: figures
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo

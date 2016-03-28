@@ -10,8 +10,8 @@ Flat Earth距离
 
 .. math::
 
-     d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
-     \theta_B}{2} \right ] \Delta \lambda^2}, \label{eq:flatearth}
+   d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
+   \theta_B}{2} \right ] \Delta \lambda^2}
 
 其中R是地球平均半径（由参数 :ref:`PROJ_MEAN_RADIUS <PROJ_MEAN_RADIUS>` 控制）， :math:`\theta` 是纬度， :math:`\Delta \lambda = \lambda_A - \lambda_B` 是经度差。式中地理坐标的单位均是弧度。
 
@@ -28,9 +28,8 @@ Flat Earth距离
 
 .. math::
 
-     d_g = 2R \sin^{-1}  {\sqrt{\sin^2\frac{\theta_A - \theta_B}{2} + \cos
-     \theta_A \cos \theta_B \sin^2 \frac{\lambda_A - \lambda_B}{2}} },
-     \label{eq:greatcircle}
+   d_g = 2R \sin^{-1}  {\sqrt{\sin^2\frac{\theta_A - \theta_B}{2} + \cos
+   \theta_A \cos \theta_B \sin^2 \frac{\lambda_A - \lambda_B}{2}} },
 
 该方法是GMT默认使用的计算距离方法，适用于大多数情况。该方法将地球近似为一个半径为R的球，
 
