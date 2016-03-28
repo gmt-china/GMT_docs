@@ -1,5 +1,7 @@
 # GMT参考手册
 
+[![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
+
 欢迎来到 GMT(Generic Mapping Tools) 的世界。
 
 本项目是由GMT中文社区维护的GMT中文参考手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
