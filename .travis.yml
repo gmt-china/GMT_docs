@@ -8,4 +8,5 @@ script:
     make html
 
 after_success:
-    bash ./travis-deploy.sh
+  - ghp-import -b gh-pages -n build/html -m 'abc'
+  - git push "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages --force
