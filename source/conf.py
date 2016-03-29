@@ -15,6 +15,7 @@
 
 import sys
 import os
+sys.path.insert(0, os.path.abspath('_extension'))
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -34,8 +35,11 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
+    'edit_on_github',
 ]
 mathjax_path = 'http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+edit_on_github_project = 'gmt-china/GMT_docs'
+edit_on_github_branch = 'master'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
