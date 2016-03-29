@@ -1,23 +1,11 @@
-.. _FORMAT_TIME_SECONDARY_MAP:
-.. _FORMAT_GEO_MAP:
-.. _FORMAT_GEO_OUT:
-.. _FORMAT_CLOCK_IN:
-.. _FORMAT_CLOCK_MAP:
-.. _FORMAT_CLOCK_OUT:
-.. _FORMAT_DATE_IN:
-.. _FORMAT_DATE_MAP:
-.. _FORMAT_DATE_OUT:
-.. _FORMAT_FLOAT_MAP:
-.. _FORMAT_FLOAT_OUT:
-.. _FORMAT_TIME_PRIMARY_MAP:
-.. _FORMAT_TIME_STAMP:
-
 FORMAT参数
 ==========
 
 下面列出所有与格式相关的参数，通常包括输入格式、输出格式和绘图格式三类，参数的默认值在中括号内列出。
 
 日期数据的输入/输出/绘图格式：
+
+.. _FORMAT_DATE_IN:
 
 **FORMAT_DATE_IN**
     输入数据中日期字符串的格式模板 [ ``yyyy-mm-dd`` ]
@@ -37,6 +25,8 @@ FORMAT参数
 
     对于ISO周历而言，其格式为 ``yyyy[-]W[-]ww[-]d`` 模板，表示某年的第ww周的第d天。比如 ``yyyyWwwd`` 或 ``yyyy-Www`` 等。
 
+.. _FORMAT_DATE_OUT:
+
 **FORMAT_DATE_OUT**
     输出日期字符串时所使用的格式 [ ``yyyy-mm-dd`` ]
 
@@ -44,6 +34,8 @@ FORMAT参数
 
     - 若模板开头有一个 ``-`` ，则所有的整数年月日在输出时会省略前置零。比如若使用模板 ``-yyyy-mm-dd`` 则输出类似于 ``2012-1-3`` 而不是 ``2012-01-03``
     - 若模板为 ``-`` ，则输出时省略日期，日期和时间中的 ``T`` 也会被省略
+
+.. _FORMAT_DATE_MAP:
 
 **FORMAT_DATE_MAP**
     绘制日期字符串时所使用的格式 [ ``yyyy-mm-dd`` ]
@@ -58,6 +50,8 @@ FORMAT参数
 
 时间数据的输入/输出/绘图格式：
 
+.. _FORMAT_CLOCK_OUT:
+
 **FORMAT_CLOCK_OUT**
     输出时间字符串时所使用的格式 [ ``hh:mm:ss`` ]
 
@@ -66,16 +60,22 @@ FORMAT参数
     - 若时间格式模板以 ``-`` 开头，则输出时间字符串时不会输出前置0
     - 若时间格式模板为 ``-`` ，则在输出日期时间时不输出时间字符串
 
+.. _FORMAT_CLOCK_IN:
+
 **FORMAT_CLOCK_IN**
     输入数据中时间数据的格式 [ ``hh:mm:ss`` ]
 
     默认使用24小时制，即 ``hh:mm:ss`` ，若要使用12小时制，则在参数后加上 ``am|pm|AM|PM`` 。比如 ``hh:mm`` 或 ``hh:mm:ssAM``
+
+.. _FORMAT_CLOCK_MAP:
 
 **FORMAT_CLOCK_MAP**
     图上绘制时间字符串时所使用的格式 [ ``hh:mm:ss`` ]
 
 
 地理坐标的输出/绘图格式：
+
+.. _FORMAT_GEO_OUT:
 
 **FORMAT_GEO_OUT**
     控制地理坐标数据的输出格式 [ ``D`` ]
@@ -105,6 +105,8 @@ FORMAT参数
     - ``ddd:mm:ss`` => ``40:34:24``
     - ``ddd.xxx`` => ``36.250``
 
+.. _FORMAT_GEO_MAP:
+
 **FORMAT_GEO_MAP**
     绘图时地理坐标的显示格式 [ ``ddd.mm.ss`` ]
 
@@ -112,6 +114,8 @@ FORMAT参数
 
 
 浮点数的输出/绘图：
+
+.. _FORMAT_FLOAT_OUT:
 
 **FORMAT_FLOAT_OUT**
     双精度浮点数在输出时所使用的格式 [``%.12lg``]
@@ -122,12 +126,14 @@ FORMAT参数
 
     也可以列出N个用空格分隔的格式，这些格式分别应用到数据的前N列中，比如 ``%.3lf %.2lf %lf`` 。
 
+.. _FORMAT_FLOAT_MAP:
+
 **FORMAT_FLOAT_MAP**
     以双精度浮点数形式绘制地图边框标注或等值线标注时所使用的格式 [``%.12lg``]
 
     见 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 中的相关说明。
 
-
+.. _FORMAT_TIME_PRIMARY_MAP:
 
 **FORMAT_TIME_PRIMARY_MAP**
     一级标注中月份、周名的格式 [full]
@@ -142,10 +148,14 @@ FORMAT参数
 
     全称、简称以及单字符的定义，见 ``${GMTHOME}/share/localization/gmt_us.locale``
 
+.. _FORMAT_TIME_SECONDARY_MAP:
+
 **FORMAT_TIME_SECONDARY_MAP**
     二级标注中月份、周名的格式 [full]
 
     见 :ref:`FORMAT_TIME_PRIMARY_MAP <FORMAT_TIME_PRIMARY_MAP>` 中的相关说明。
+
+.. _FORMAT_TIME_STAMP:
 
 **FORMAT_TIME_STAMP**
     GMT时间戳中时间信息的显示格式 [ ``%Y %b %d %H:%M:%S`` ]

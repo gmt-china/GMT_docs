@@ -1,19 +1,16 @@
-.. _PROJ_GEODESIC:
-.. _PROJ_MEAN_RADIUS:
-.. _PROJ_AUX_LATITUDE:
-.. _PROJ_LENGTH_UNIT:
-.. _PROJ_SCALE_FACTOR:
-.. _PROJ_ELLIPSOID:
-
 PROJ参数
 ========
 
 本节列出投影相关参数，参数的默认值在中括号内列出。
 
+.. _PROJ_LENGTH_UNIT:
+
 **PROJ_LENGTH_UNIT**
     长度量的默认单位 [c]
 
     见 :doc:`unit` 一节。
+
+.. _PROJ_ELLIPSOID:
 
 **PROJ_ELLIPSOID**
     地图投影中使用的地球椭球标准 [WGS-84]
@@ -105,6 +102,8 @@ PROJ参数
 
     需要注意，对于某些全球投影，GMT会对选中的地球椭球做球状近似，将扁率设为零，并使用其平均半径。当GMT做此类近似时，会给出警告信息。
 
+.. _PROJ_AUX_LATITUDE:
+
 **PROJ_AUX_LATITUDE**
     球体近似时的辅助纬线 [authalic]
 
@@ -119,6 +118,8 @@ PROJ参数
 
     当设置为除 ``none`` 外的其他值时，GMT会在计算距离前，将大圆弧距离计算时使用的两点中任意一点的纬度转换成辅助纬度。
 
+.. _PROJ_MEAN_RADIUS:
+
 **PROJ_MEAN_RADIUS**
     地球/行星的平均半径 [authalic]
 
@@ -130,12 +131,16 @@ PROJ参数
     - ``meridional``
     - ``quadratic``
 
+.. _PROJ_SCALE_FACTOR:
+
 **PROJ_SCALE_FACTOR**
     修改某些投影的地图缩放因子以减小面积失真
 
     - Polar Stereographic：默认值为0.9996
     - UTM：默认值为0.9996
     - Transverse Mercator：默认值为1
+
+.. _PROJ_GEODESIC:
 
 **PROJ_GEODESIC**
     指定大地测量距离中所使用的算法 [Vincenty]

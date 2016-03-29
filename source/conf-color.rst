@@ -1,22 +1,19 @@
-.. _COLOR_BACKGROUND:
-.. _COLOR_FOREGROUND:
-.. _COLOR_NAN:
-.. _COLOR_HSV_MAX_S:
-.. _COLOR_HSV_MIN_S:
-.. _COLOR_HSV_MAX_V:
-.. _COLOR_HSV_MIN_V:
-.. _COLOR_MODEL:
-
 COLOR参数
 =========
 
 下面列出所有与颜色相关的参数，参数的默认值在中括号内列出。
 
+.. _COLOR_BACKGROUND:
+
 **COLOR_BACKGROUND**
     图片背景色，数据Z值小于CPT文件中最小值所对应的背景色 [black]
 
+.. _COLOR_FOREGROUND:
+
 **COLOR_FOREGROUND**
     图片前景色，数据Z值大于CPT文件中最大值所对应的前景色 [white]
+
+.. _COLOR_NAN:
 
 **COLOR_NAN**
     Z值等于 ``NaN`` 时所使用的颜色 [127.5]
@@ -26,18 +23,27 @@ COLOR参数
 
 .. TODO gmt_support.c, GMT_illuminate()
 
+.. _COLOR_HSV_MAX_S:
+
 **COLOR_HSV_MAX_S**
     最大正强度对应的S值，取值范围0到1 [0.1]
+
+.. _COLOR_HSV_MIN_S:
 
 **COLOR_HSV_MIN_S**
     最小负强度对应的S值，取值范围0到1 [1.0]
 
+.. _COLOR_HSV_MAX_V:
+
 **COLOR_HSV_MAX_V**
     最大正强度对应的V值，取值范围0到1 [1.0]
+
+.. _COLOR_HSV_MIN_V:
 
 **COLOR_HSV_MIN_V**
     最小负强度对应的V值，取值范围0到1 [0.3]
 
+.. _COLOR_MODEL:
 
 **COLOR_MODEL**
     对CPT文件做插值时所使用的颜色空间 [none]

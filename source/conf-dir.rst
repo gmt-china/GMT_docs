@@ -1,17 +1,19 @@
-.. _DIR_DCW:
-.. _DIR_GSHHG:
-.. _DIR_DATA:
-
 DIR参数
 =======
 
 下面列出所有与目录相关的参数，参数的默认值在中括号内列出。
 
+.. _DIR_DCW:
+
 **DIR_DCW**
     DCW数据文件的路径，默认值为空，GMT会自动猜测合理的路径值。
 
+.. _DIR_GSHHG:
+
 **DIR_GSHHG**
     海岸线数据所在路径 [``$GMTHOME/_SHAREDIR/coast``]
+
+.. _DIR_DATA:
 
 **DIR_DATA**
     存放数据文件的目录，默认值为空。

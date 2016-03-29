@@ -1,26 +1,16 @@
-.. _PS_IMAGE_COMPRESS:
-.. _PS_COMMENTS:
-.. _PS_COLOR_MODEL:
-.. _PS_TRANSPARENCY:
-.. _PS_SCALE_Y:
-.. _PS_SCALE_X:
-.. _PS_PAGE_ORIENTATION:
-.. _PS_PAGE_COLOR:
-.. _PS_MEDIA:
-.. _PS_MITER_LIMIT:
-.. _PS_LINE_JOIN:
-.. _PS_LINE_CAP:
-.. _PS_CHAR_ENCODING:
-
 PS参数
 ======
 
 本节列出所有与PS相关的参数，参数的默认值在中括号内列出。
 
+.. _PS_CHAR_ENCODING:
+
 **PS_CHAR_ENCODING**
     字符集编码方式 [ISOLatin1+|Standard+]
 
     在处理文本中的八进制码时所使用的字符集编码方式，可选值包括： ``Standard`` 、 ``Standard+`` 、 ``ISOLatin1`` 、 ``ISOLatin1+`` 和 ``ISO-8859-x`` （其中x取值为[1-10]或[13-15]）。若安装GMT时使用SI单位制，则默认值为ISOLatin1编码；否则使用Standard+编码。
+
+.. _PS_LINE_CAP:
 
 **PS_LINE_CAP**
     控制线段的\ **端点**\ 的绘制方式 [butt]
@@ -43,6 +33,8 @@ PS参数
 
     说明：当 ``PS_LINE_CAP=round`` 时，若线段长度为零，则线段将以圆的形式存在，这可以用于创建圆点线，此时将同一条线绘制两次，每次使用不同的相移和颜色，则可以创建颜色变化的线条。
 
+.. _PS_LINE_JOIN:
+
 **PS_LINE_JOIN**
     控制线段拐点的绘制方式 [miter]
 
@@ -58,10 +50,14 @@ PS参数
 
        ``PS_LINE_JOIN`` 控制线段拐点绘制效果
 
+.. _PS_MITER_LIMIT:
+
 **PS_MITER_LIMIT**
     设置mitered拐点的角度阈值 [35]
 
     当两个相交的线段之间的夹角小于该阈值时，则该拐角会被bevelled而不是被mitered。该参数的取值范围为0到180。若设置为0，则使用PS的默认值（11度），若设置为180，则所有拐角都会被beveled。
+
+.. _PS_MEDIA:
 
 **PS_MEDIA**
     设置当前纸张尺寸 [a4|letter]
@@ -114,38 +110,54 @@ PS参数
 
     若某些尺寸经常使用，用户还可以在 ``${GMT}/share/conf/gmt_custom_media.conf`` 中添加自定义的纸张尺寸。
 
+.. _PS_PAGE_COLOR:
+
 **PS_PAGE_COLOR**
     设置纸张的背景色 [white]
+
+.. _PS_PAGE_ORIENTATION:
 
 **PS_PAGE_ORIENTATION**
     设置纸张方向 [landscape]
 
     可以取 ``portrait`` 或 ``landscape`` ，见 :doc:`paper` 一节。
 
+.. _PS_SCALE_X:
+
 **PS_SCALE_X**
     绘图时X方向的全局比例 [1.0]
 
     用于实现图像的整体缩放
+
+.. _PS_SCALE_Y:
 
 **PS_SCALE_Y**
     绘图时Y方向的全局比例 [1.0]
 
     用于实现图像的整体缩放
 
+.. _PS_TRANSPARENCY:
+
 **PS_TRANSPARENCY**
     设置生成PS文件所使用的透明模式 [Normal]
 
     可取值包括Color、ColorBurn、ColorDodge、Darken、Difference、Exclusion、HardLight、Hue、Lighten、Luminosity、Multiply、Normal、Overlay、Saturation、SoftLight、Screen
+
+.. _PS_COLOR_MODEL:
 
 **PS_COLOR_MODEL**
     设置生成PS代码时颜色所使用的颜色模型 [rgb]
 
     可以取RGB、HSV、CMYK或GRAY。若设置为HSV，其不会影响绘图过程中使用RGB指定的颜色；若设置为GRAY，则所有的颜色都将使用YIQ方法转换成灰度。
 
+.. _PS_COMMENTS:
+
 **PS_COMMENTS**
     生成的PS代码中是否包含注释信息 [false]
 
     若为 ``true`` ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，当你需要手动编辑PS文件时比较有用。默认情况下，其值为 ``false`` ，即PS文件中不会包含注释，此时生成的PS文件更小。
+
+.. _PS_IMAGE_COMPRESS:
 
 **PS_IMAGE_COMPRESS**
     设置PS中的图像压缩算法 [deflate,5]
