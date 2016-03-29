@@ -76,7 +76,7 @@ language = 'zh_CN'
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-#today_fmt = '%B %d, %Y'
+today_fmt = '%Y年%m月%d日'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -209,9 +209,6 @@ html_search_language = 'zh'
 # implements a search results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'GMT_Docs'
-
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -222,6 +219,7 @@ latex_elements = {
         'fontenc'    : '',
         'releasename': '',
         'babel'      : r'''\usepackage[english]{babel}''',
+        'figure_align': 'htp',
         'preamble'   : r'''
             \usepackage{ctex}
             \parindent 2em
@@ -233,7 +231,9 @@ latex_elements = {
                 linkcolor = blue,
                 citecolor = blue,
                 urlcolor = blue,
-             }
+            }
+            \addto\captionsenglish{\renewcommand\listfigurename{插图目录}}
+            \addto\captionsenglish{\renewcommand\listtablename{表格目录}}
         ''',
 }
 
@@ -241,8 +241,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'GMT_Docs.tex', 'GMT参考手册',
-     'SeisMan', 'manual'),
+    (master_doc, 'GMT_docs.tex', project, author, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -274,7 +273,7 @@ epub_publisher = author
 epub_copyright = copyright
 
 # The basename for the epub file. It defaults to the project name.
-#epub_basename = project
+epub_basename = 'GMT_docs'
 
 # The HTML theme for the epub output. Since the default themes are not
 # optimized for small screen space, using the same theme for HTML and epub
