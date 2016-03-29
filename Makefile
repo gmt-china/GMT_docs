@@ -25,7 +25,6 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html       to make standalone HTML files"
-	@echo "  epub       to make an epub"
 	@echo "  xelatexpdf to make LaTeX files and run them through xelatex"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  figures    to update all figures"
@@ -55,16 +54,6 @@ html: figures
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
-
-epub: figures
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
-
-epub3:
-	$(SPHINXBUILD) -b epub3 $(ALLSPHINXOPTS) $(BUILDDIR)/epub3
-	@echo
-	@echo "Build finished. The epub3 file is in $(BUILDDIR)/epub3."
 
 latex: figures
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
