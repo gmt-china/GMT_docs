@@ -1,7 +1,7 @@
 自定义字体
 ==========
 
-GMT默认支持了35种字体，如果想要使用额外的字体，则需要自己配置。可以修改 ``${GMTHOME}/share/postscriptlight/PSL_custom_fonts.txt`` 文件或在当前目录下新建配置文件 ``PSL_custom_fonts.txt`` 。
+GMT默认支持了35种字体，如果想要使用额外的字体，则需要自己配置。可以修改 :file:`${GMTHOME}/share/postscriptlight/PSL_custom_fonts.txt` 文件或在当前目录下新建配置文件 :file:`PSL_custom_fonts.txt` 。
 
 文件中每行包含三列数据，分别是：PS字体名、字体的高度（单位为 ``p`` ）以及布尔值0或1告诉GMT是否要对文字重新编码。例如::
 

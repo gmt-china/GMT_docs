@@ -85,7 +85,7 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
 GMT内置CPT
 ----------
 
-GMT内置了35个常规CPT文件和一个分类CPT文件，位于 ``${GMTHOME}/share/cpt`` 目录中。
+GMT内置了35个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHOME}/share/cpt` 目录中。
 
 下图给出了GMT内置的36个CPT文件，每张图上边的色标为原始CPT，用如下命令绘制::
 
@@ -113,7 +113,7 @@ GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以以这些内置CPT文件为基础，
 使用CPT
 -------
 
-命令行指定CPT文件名后，GMT会依次在当前目录、 ``~/.gmt`` 和 ``${GMTHOME}/share/cpt/`` 目录下寻找CPT文件，如果找不到还会加上后缀 ``.cpt`` 寻找。
+命令行指定CPT文件名后，GMT会依次在当前目录、 :file:`~/.gmt` 和 :file:`${GMTHOME}/share/cpt/` 目录下寻找CPT文件，如果找不到还会加上后缀 ``.cpt`` 寻找。
 
 在文件名后加上后缀 ``+u|U<unit>`` 还可以对CPT文件中的Z值进行缩放。
 

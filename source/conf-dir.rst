@@ -11,7 +11,7 @@ DIR参数
 .. _DIR_GSHHG:
 
 **DIR_GSHHG**
-    海岸线数据所在路径 [``$GMTHOME/_SHAREDIR/coast``]
+    海岸线数据所在路径 [:file:`$GMTHOME/_SHAREDIR/coast`]
 
 .. _DIR_DATA:
 

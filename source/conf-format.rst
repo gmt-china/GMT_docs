@@ -146,7 +146,7 @@ FORMAT参数
 
     还可以使用 ``Full`` 、 ``Abbreviate`` 、 ``Character`` 表示所有名字均大写。
 
-    全称、简称以及单字符的定义，见 ``${GMTHOME}/share/localization/gmt_us.locale``
+    全称、简称以及单字符的定义，见 :file:`${GMTHOME}/share/localization/gmt_us.locale`
 
 .. _FORMAT_TIME_SECONDARY_MAP:
 
