@@ -42,8 +42,7 @@ equivalent of the 360º Mercator map. Using the command
     gmt pscoast -R0/360/-80/80 -JT330/-45/3.5i -Ba30g -BWSne -Dc -A2000 \
                 -Slightblue -G0 -P > GMT_TM.ps
 
-we made the map illustrated in Figure :ref:`Global transverse Mercator
-<GMT_TM>`. Note that
+Note that
 when a world map is given (indicated by **-R**\ *0/360/s/n*), the
 arguments are interpreted to mean oblique degrees, i.e., the 360º range
 is understood to mean the extent of the plot along the central meridian,
@@ -51,8 +50,6 @@ while the "south" and "north" values represent how far from the central
 longitude we want the plot to extend. These values correspond to
 latitudes in the regular Mercator projection and must therefore be less
 than 90.
-
-.. _GMT_TM:
 
 .. figure:: /images/GMT_TM.*
    :width: 450 px

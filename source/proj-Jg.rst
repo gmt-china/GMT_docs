@@ -43,7 +43,6 @@ The perspective projection imitates in 2 dimensions the 3-dimensional
 view of the earth from space. The implementation in GMT is very
 flexible, and thus requires many input variables. Those are listed and
 explained below, with the values used in
-Figure :ref:`Perspective projection <GMT_perspective>` between brackets.
 
 -  Longitude and latitude of the projection center (4ºE/52ºN).
 
@@ -80,8 +79,6 @@ looking due east is thus accomplished by the following
 
     gmt pscoast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown \
                 -Wthinnest -P -Slightblue --MAP_ANNOT_MIN_SPACING=0.25i > GMT_perspective.ps
-
-.. _GMT_perspective:
 
 .. figure:: /images/GMT_perspective.*
    :width: 500 px

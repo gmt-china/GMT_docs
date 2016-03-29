@@ -11,8 +11,6 @@ GMT中的投影方式大致可以分为三大类：
 
 GMT支持的投影方式如下图所示。
 
-.. _gmt_projections:
-
 .. figure:: /images/GMT_-J.*
    :width: 500 px
    :align: center

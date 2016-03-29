@@ -14,9 +14,9 @@ straight lines. The requirements to define this projection are:
 
 While you may choose any value for the standard parallel and obtain your
 own personal projection, there are seven choices of standard parallels
-that result in known (or named) projections. These are listed in Table :ref:`JY <tbl-JY>`.
+that result in known (or named) projections.
 
-.. _tbl-JY:
+.. table::
 
    +-------------------+---------------------+
    +===================+=====================+
@@ -36,15 +36,12 @@ that result in known (or named) projections. These are listed in Table :ref:`JY 
    +-------------------+---------------------+
 
 For instance, a world map centered on the 35ºE meridian using the Behrman
-projection (Figure :ref:`Behrman cylindrical projection <GMT_general_cyl>`)
-can be obtained by running the command:
+projection can be obtained by running the command:
 
    ::
 
     gmt pscoast -R-145/215/-90/90 -JY35/30/4.5i -B45g45 -Dc -A10000 -Sdodgerblue \
                 -Wthinnest -P > GMT_general_cyl.ps
-
-.. _GMT_general_cyl:
 
 .. figure:: /images/GMT_general_cyl.*
    :width: 600 px

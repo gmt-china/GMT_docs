@@ -19,10 +19,7 @@ parallels, equidistant from the equator. The projections are defined by:
    (**-JCyl_stere**)
 
 Some of the selections of the standard parallel are named for the
-cartographer or publication that popularized the projection
-(Table :ref:`JCylstere <tbl-JCylstere>`).
-
-.. _tbl-JCylstere:
+cartographer or publication that popularized the projection.
 
 +---------------------------------------------------------+-------------+
 +=========================================================+=============+
@@ -38,17 +35,13 @@ cartographer or publication that popularized the projection
 +---------------------------------------------------------+-------------+
 
 A map of the world, centered on the Greenwich meridian, using the Gall's
-stereographic projection (standard parallel is 45º,
-Figure :ref:`Gall's stereographic projection <GMT_gall_stereo>`),
-is obtained as follows:
+stereographic projection (standard parallel is 45º), is obtained as follows:
 
    ::
 
     gmt set FORMAT_GEO_MAP dddA
     gmt pscoast -R-180/180/-60/80 -JCyl_stere/0/45/4.5i -Bxa60f30g30 -Bya30g30 -Dc -A5000 \
                 -Wblack -Gseashell4 -Santiquewhite1 -P > GMT_gall_stereo.ps
-
-.. _GMT_gall_stereo:
 
 .. figure:: /images/GMT_gall_stereo.*
    :width: 500 px

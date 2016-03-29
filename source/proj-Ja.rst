@@ -74,8 +74,6 @@ plotting fold axes, fault planes, and the like. An *equal-angle* (Wulff)
 stereonet can be obtained by using the stereographic projection
 (discussed later). The stereonets produced by these two projections appear below.
 
-.. _GMT_stereonets:
-
 .. figure:: /images/GMT_stereonets.*
    :width: 500 px
    :align: center

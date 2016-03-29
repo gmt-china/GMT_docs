@@ -51,15 +51,12 @@ use rectangular boundaries rather than the wedge-shape typically
 associated with polar projections. This choice is defined by selecting
 two points as corners in the rectangle and appending an "r" to the
 **-R** option. This command produces a map as presented in
-Figure :ref:`Polar stereographic <GMT_stereographic_rect>`:
 
    ::
 
     gmt set MAP_ANNOT_OBLIQUE 30
     gmt pscoast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest \
                 -Slightgray -P > GMT_stereographic_rect.ps
-
-.. _GMT_stereographic_rect:
 
 .. figure:: /images/GMT_stereographic_rect.*
    :width: 500 px
@@ -91,4 +88,4 @@ hemispheric maps. Our example shows Australia using a projection pole at
 
 By choosing 0/0 as the pole, we obtain the conformal stereonet presented
 next to its equal-area cousin on the Lambert
-azimuthal equal-area projection (Figure :ref:`Stereonets <GMT_stereonets>`).
+azimuthal equal-area projection.

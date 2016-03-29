@@ -32,8 +32,6 @@
 
 下图列出了GMT中预定义的90种位图图案（右键查看大图），所有图案都是使用默认的黑白色在 ``<dpi>`` 取300的环境下生成的。
 
-.. _GMT_patterns:
-
 .. figure:: /images/GMT_patterns.png
    :width: 600 px
    :align: center

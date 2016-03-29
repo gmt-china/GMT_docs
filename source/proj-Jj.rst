@@ -15,15 +15,13 @@ this projection. Specify the projection by:
 -  Scale in inch/degree or as 1:xxxxx (**-Jj**), or map width (**-JJ**).
 
 For instance, a world map centered on the 90ºE meridian at a map scale of
-1:400,000,000 (Figure :ref:`Miller projection <GMT_miller>`) can be obtained as
+1:400,000,000 can be obtained as
 follows:
 
    ::
 
     gmt pscoast -R-90/270/-80/90 -Jj1:400000000 -Bx45g45 -By30g30 -Dc -A10000 \
                 -Gkhaki -Wthinnest -P -Sazure > GMT_miller.ps
-
-.. _GMT_miller:
 
 .. figure:: /images/GMT_miller.*
    :width: 500 px

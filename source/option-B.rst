@@ -120,8 +120,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 地理底图与一般的坐标轴不同，其底图类型 :ref:`MAP_FRAME_TYPE <MAP_FRAME_TYPE>` 使用 ``fancy`` 形式。
 
-.. _basemap_border:
-
 .. figure:: /images/GMT_-B_geo_1.*
    :width: 500 px
    :align: center
@@ -131,8 +129,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
    ``-Ba1f15mg5m -BS``
 
 下图同时使用了 ``p`` 和 ``s`` 两级属性。这里 ``p`` 属性用于显示弧度， ``s`` 属性用于显示弧分。
-
-.. _complex_basemap:
 
 .. figure:: /images/GMT_-B_geo_2.*
    :width: 500 px
@@ -146,8 +142,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 ------------
 
 对于一般的线性轴而言，标注的格式由 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 决定，其默认值为 ``%g`` ，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 ``<stride>`` 自动决定。若设置 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 为其他值，则会严格使用其定义的格式，比如 ``%.2f`` 表示显示两位小数。
-
-.. _axis_label_basemap:
 
 .. figure:: /images/GMT_-B_linear.*
    :width: 500 px
@@ -172,8 +166,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 - 在 ``<stride>`` 后加 ``l`` ，则标注会以log\ :sub:`10`\ 的值显示，比如100会显示成2
 - 在 ``<stride>`` 后加 ``p`` ，则标注会以10的n次方的形式显示，比如10\ :sup:`-5`
 
-.. _Log_projection:
-
 .. figure:: /images/GMT_-B_log.*
    :width: 500 px
    :align: center
@@ -188,8 +180,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 ------------
 
 正常情况下， ``<stride>`` 用于生成等间隔的标注或刻度，但是由于指数函数的特性，这样的标注会在坐标轴的某一端挤在一起。为了避免这个问题，可以在 ``<stride>`` 后加 ``p`` ，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。
-
-.. _Pow_projection:
 
 .. figure:: /images/GMT_-B_pow.*
    :width: 500 px
@@ -206,8 +196,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 时间轴与其他轴不同的地方在于，时间轴可以有多种不同的标注方式。下面会用一系列示例来演示时间轴的灵活性。在下面的例子中，尽管只绘制了X轴（绘图时使用了 ``-BS`` ），实际上时间轴标注的各种用法使用于全部轴。
 
 在绘制时间轴时，需要指定时间间隔，时间间隔的单位可以取如下值：
-
-.. _tbl-units:
 
 .. table:: GMT时间单位
 
@@ -251,15 +239,12 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
    | ``s``      | seconds          | Plot as 2-digit integer (0--60)                                          |
    +------------+------------------+--------------------------------------------------------------------------+
 
-
 第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来::
 
      gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
      gmt psbasemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -P > GMT_-B_time1.ps
 
-绘图效果如图 :ref:`Cartesian time axis <cartesian_axis1>` 所示，需要注意 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 前的破折号会去掉日期前面的前置零（即02变成2）。
-
-.. _cartesian_axis1:
+绘图效果如下图所示，需要注意 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 前的破折号会去掉日期前面的前置零（即02变成2）。
 
 .. figure:: /images/GMT_-B_time1.*
    :width: 500 px
@@ -273,9 +258,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
      gmt psbasemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS -P -K > GMT_-B_time2.ps
      gmt psbasemap -R -J -Bpa6Hf1h -Bsa1D -BS -O -Y0.65i >> GMT_-B_time2.ps
 
-绘图效果如图 :ref:`cartesian_axis2` 所示。图中下面的例子使用周来标注，上面的例子使用日期来标注。
-
-.. _cartesian_axis2:
+绘图效果如下图所示。图中下面的例子使用周来标注，上面的例子使用日期来标注。
 
 .. figure:: /images/GMT_-B_time2.*
    :width: 500 px
@@ -290,8 +273,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
 
-.. _cartesian_axis3:
-
 .. figure:: /images/GMT_-B_time3.*
    :width: 500 px
    :align: center
@@ -302,8 +283,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
      gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p
      gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P > GMT_-B_time4.ps
-
-.. _cartesian_axis4:
 
 .. figure:: /images/GMT_-B_time4.*
    :width: 500 px
@@ -319,8 +298,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
     gmt psbasemap -R -J -Bpa3Kf1k -Bsa1r -BS -O -Y0.65i >> GMT_-B_time5.ps
 
-.. _cartesian_axis5:
-
 .. figure:: /images/GMT_-B_time5.*
    :width: 500 px
    :align: center
@@ -332,8 +309,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
     gmt psbasemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -P > GMT_-B_time6.ps
 
-.. _cartesian_axis6:
-
 .. figure:: /images/GMT_-B_time6.*
    :width: 500 px
    :align: center
@@ -344,8 +319,6 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
     gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P > GMT_-B_time7.ps
-
-.. _cartesian_axis7:
 
 .. figure:: /images/GMT_-B_time7.*
    :width: 500 px
@@ -401,8 +374,6 @@ GMT允许用户定义标注来实现不规则间隔的标注，用法是 ``-Bc``
     gmt psbasemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -BWS -O \
                   --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p >> GMT_-B_custom.ps
     rm -f [xy]annots.txt
-
-.. _Custom_annotations:
 
 .. figure:: /images/GMT_-B_custom.*
    :width: 500 px

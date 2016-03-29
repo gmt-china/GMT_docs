@@ -24,8 +24,6 @@
 
    该方法可以在创建网格文件时使用。 ``<code>`` 用于指定网格区域的锚点（见 :doc:`anchors` 一节）。 ``<code>`` 所指定的锚点对应的坐标为 ``(x0, y0)`` ， ``<nx>`` 、 ``<ny>`` 是X和Y方向的网格数，通过 ``-I`` 选项指定的网格间隔即可计算得到区域范围。
 
-.. _gmt_region:
-
 .. figure:: /images/GMT_-R.*
    :width: 700 px
    :align: center

@@ -7,10 +7,7 @@ large-scale military maps. Here, the globe is divided into 60 zones
 between 84ºS and 84ºN, most of which are 6 wide. Each of these UTM zones
 have their unique central meridian. Furthermore, each zone is divided
 into latitude bands but these are not needed to specify the projection
-for most cases. See Figure :ref:`Universal Transverse Mercator
-<GMT_utm_zones>` for all zone designations.
-
-.. _GMT_utm_zones:
+for most cases.
 
 .. figure:: /images/GMT_utm_zones.*
    :width: 700 px

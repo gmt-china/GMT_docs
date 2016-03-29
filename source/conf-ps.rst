@@ -23,8 +23,6 @@ PS参数
 
     下图展示了 ``PS_LINE_CAP`` 取不同值时线段端点的区别。需要注意，图中三条线段的长度是相同的，但因为参数设置不同而导致实际线段长度看上去有些不一样。
 
-    .. _linecap:
-
     .. figure:: /images/GMT_line_cap.*
        :width: 600 px
        :align: center
@@ -41,8 +39,6 @@ PS参数
     可以取 ``miter`` 、 ``round`` 、 ``bevel``
 
     下图展示了 ``PS_LINE_JOIN`` 取不同值时线段拐点的绘图效果。当线宽较小时，几乎看不出来区别，这里为了显示的效果，将线宽设置为 ``20p`` 。
-
-    .. _line_join:
 
     .. figure:: /images/GMT_line_join.*
        :width: 600 px
@@ -63,8 +59,6 @@ PS参数
     设置当前纸张尺寸 [a4|letter]
 
     下表列出了GMT预定义的若干种纸张尺寸及其对应的宽度和高度（单位为points）。
-
-    .. _tbl-media:
 
     .. table:: GMT预定义纸张大小
 

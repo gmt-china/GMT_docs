@@ -1,8 +1,6 @@
 -Jp：极坐标线性投影
 ===================
 
-.. _GMT_polar:
-
 .. figure:: /images/GMT_polar.*
    :width: 400 px
    :align: center

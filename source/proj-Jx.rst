@@ -66,8 +66,6 @@ GMT中笛卡尔坐标变换分为三类：
     gmt pscoast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest \
             -P -Slightblue > GMT_linear_d.ps
 
-.. _GMT_linear_d:
-
 .. figure:: /images/GMT_JX_geo.*
    :width: 500 px
    :align: center
@@ -88,8 +86,6 @@ GMT中笛卡尔坐标变换分为三类：
     gmt psbasemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d \
                   -Bya1Hg1h -BWsNe+glightyellow -P > GMT_linear_cal.ps
 
-.. _GMT_linear_cal:
-
 .. figure:: /images/GMT_JX_calendar.*
    :width: 400 px
    :align: center
@@ -106,8 +102,6 @@ GMT中笛卡尔坐标变换分为三类：
     gmt psxy -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque \
              -Wthick,blue,- -P -K -h sqrt.d > GMT_log.ps
     gmt psxy -R -J -Ss0.1i -N -Gred -W -O -h sqrt.d10 >> GMT_log.ps
-
-.. _GMT_log:
 
 .. figure:: /images/GMT_JX_log.*
    :width: 400 px
@@ -127,8 +121,6 @@ GMT中笛卡尔坐标变换分为三类：
     gmt psxy -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory \
              -Wthick -P -K sqrt.d > GMT_pow.ps
     gmt psxy -R -J -Sc0.075i -Ggreen -W -O sqrt.d10 >> GMT_pow.ps
-
-.. _GMT_pow:
 
 .. figure:: /images/GMT_JX_pow.*
    :width: 400 px

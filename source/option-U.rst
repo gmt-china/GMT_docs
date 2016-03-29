@@ -23,8 +23,6 @@ GMT参数中有一些与logo相关的参数：
 
 显示效果如下图：
 
-.. _U_option:
-
 .. figure:: /images/GMT_-U.*
    :width: 500px
    :align: center

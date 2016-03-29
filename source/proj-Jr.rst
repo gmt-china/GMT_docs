@@ -21,14 +21,11 @@ use it you must enter
 
 -  Scale along equator in inch/degree or 1:xxxxx (**-Jr**), or map width (**-JR**).
 
-Centered on Greenwich, the example in Figure :ref:`Winkel Tripel projection
-<GMT_winkel>` was created by this command:
+Centered on Greenwich, the example was created by this command:
 
    ::
 
     gmt pscoast -Rd -JR4.5i -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -P > GMT_winkel.ps
-
-.. _GMT_winkel:
 
 .. figure:: /images/GMT_winkel.*
    :width: 500 px
