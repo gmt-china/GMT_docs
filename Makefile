@@ -20,7 +20,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) sou
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
 .PHONY: help clean linkcheck figures github
-.PHONY: html epub latex xelatexpdf
+.PHONY: html latex xelatexpdf
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
