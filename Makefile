@@ -67,3 +67,8 @@ xelatexpdf: figures
 	@echo "Running LaTeX files through pdflatex..."
 	cd $(BUILDDIR)/latex; latexmk -xelatex -shell-escape
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
+
+release: html xelatexpdf
+	cd $(BUILDDIR) && mv html GMT_docs && zip -r ../GMT_docs.zip GMT_docs/
+	mv $(BUILDDIR)/latex/GMT_docs.pdf .
+	rm -rf $(BUILDDIR)/*
