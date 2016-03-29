@@ -43,6 +43,8 @@ GMT参考手册
 
 .. toctree::
    :maxdepth: 3
+   :numbered: 3
+   :caption: 目 录
    :hidden:
 
    preface

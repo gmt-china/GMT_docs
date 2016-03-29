@@ -24,7 +24,7 @@ import os
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '1.4'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -46,7 +46,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-source_encoding = 'utf-8'
+source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'index'
@@ -98,6 +98,7 @@ exclude_patterns = []
 # output. They are ignored by default.
 #show_authors = False
 
+highlight_language = 'bash'
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
