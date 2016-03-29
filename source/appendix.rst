@@ -16,3 +16,4 @@
    grid-suffix
    isolation-mode
    get-gmt-dev
+   animation
