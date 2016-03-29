@@ -1,7 +1,7 @@
 GMT学习资源
 ===========
 
-GMT相关的学习资源列举如下，按照推荐的阅读顺序排序：
+GMT相关的学习资源列举如下。虽然官方文档都有对应的中文版本，但还是建议一切以官方英文版本为准。
 
 #. `GMT官方入门教程 <http://gmt.soest.hawaii.edu/doc/5.2.1/tutorial.html>`_
 #. `GMT官方参考手册 <http://gmt.soest.hawaii.edu/doc/5.2.1/GMT_Docs.html>`_
@@ -11,14 +11,7 @@ GMT相关的学习资源列举如下，按照推荐的阅读顺序排序：
 #. `GMT官方示例 <http://gmt.soest.hawaii.edu/doc/5.2.1/Gallery.html>`_
 #. `GMT中文社区示例 <http://examples.gmt-china.org>`_
 #. `SeisMan博客GMT示例 <http://seisman.info/tags.html#gmt5-ref>`_
-#. GMT源码中的测试脚本
-
-   使用如下命令获取GMT的开发源码::
-
-       svn checkout svn://gmtserver.soest.hawaii.edu/gmt5/trunk gmt5-dev
-
-   在 ``gmt5-dev/test`` 目录下，每个命令均有一个或若干个测试脚本
-
+#. GMT开发版源码中的测试脚本，见 :doc:`get-gmt-dev`
 #. `GMT中文问答社区 <http://forum.gmt-china.org>`_
 #. GMT学习QQ群：218905582
 #. `GMT官方论坛 <http://gmt.soest.hawaii.edu/projects/gmt/boards/1>`_

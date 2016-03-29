@@ -15,3 +15,4 @@
    sun-raster
    grid-suffix
    isolation-mode
+   get-gmt-dev
