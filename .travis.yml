@@ -8,7 +8,4 @@ script:
     make html
 
 after_success:
-  - git config user.name "Dongdong Tian"
-  - git config user.email "seisman.info@gmail.com"
-  - ghp-import -b gh-pages -n build/html -m 'Update by travis automatically'
-  - git push "https://${GH_TOKEN}@${GH_REF}" gh-pages:gh-pages --force
+    bash ./.travis-deploy.sh
