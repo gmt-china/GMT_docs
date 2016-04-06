@@ -10,6 +10,6 @@
    directory-tree
    philosophy
    postscript
-   linux-cmd
+   linux-basic
    self-learning
    citation
