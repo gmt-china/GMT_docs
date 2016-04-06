@@ -5,3 +5,4 @@
 
    intro-docs
    read-docs
+   glossary
