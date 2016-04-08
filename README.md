@@ -2,9 +2,9 @@
 
 [![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
-[![GMT_Release](https://img.shields.io/badge/GMT%20Release-v5.2.1-blue.svg)](http://gmt.soest.hawaii.edu/)
+[![GMT_Release](https://img.shields.io/badge/GMT%20Release-v5.3.1-blue.svg)](http://gmt.soest.hawaii.edu/)
 [![Release](https://img.shields.io/github/release/gmt-china/GMT_docs.svg)](https://github.com/gmt-china/GMT_docs/releases)
-[![GitHub commits](https://img.shields.io/github/commits-since/gmt-china/GMT_docs/v5.2.1.svg)]()
+[![GitHub commits](https://img.shields.io/github/commits-since/gmt-china/GMT_docs/v5.3.1.svg)]()
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
 欢迎来到 GMT(Generic Mapping Tools) 的世界。
@@ -21,7 +21,7 @@
 
 ## 版本说明
 
-本手册目前与GMT 5.2.1同步。手册有正式发布(release)版和维护开发(dev)版。
+本手册目前与GMT 5.3.1 同步。手册有正式发布(release)版和维护开发(dev)版。
 
 ### release版
 

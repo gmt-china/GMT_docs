@@ -72,6 +72,11 @@ MAP参数
 **MAP_SCALE_HEIGHT**
     地图比例尺的高度 [5p]
 
+.. _MAP_TICK_PEN:
+
+**MAP_TICK_PEN**
+    同时设置 ``MAP_TICK_PEN_PRIMARY`` 和 ``MAP_TICK_PEN_SECONDARY`` 的值
+
 .. _MAP_TICK_PEN_PRIMARY:
 
 **MAP_TICK_PEN_PRIMARY**
@@ -81,6 +86,11 @@ MAP参数
 
 **MAP_TICK_PEN_SECONDARY**
     二级刻度的画笔属性 [thinner,black]
+
+.. _MAP_TICK_LENGTH:
+
+**MAP_TICK_LENGTH**
+    同时设置 ``MAP_TICK_LENGTH_PRIMARY`` 和 ``MAP_TICK_LENGTH_SECONDARY`` 的值
 
 .. _MAP_TICK_LENGTH_PRIMARY:
 
@@ -103,6 +113,11 @@ MAP参数
 
     地理投影下，两点之间会用大圆路径连接，因而GMT需要先计算大圆路径上的其他中间点的坐标，并将这些点用直线连起来。若该步长太大，会导致大圆路径看上去很不光滑。
 
+.. _MAP_GRID_PEN:
+
+**MAP_GRID_PEN**
+    同时设置 ``MAP_GRID_PEN_PRIMARY`` 和 ``MAP_GRID_PEN_SECONDARY`` 的值
+
 .. _MAP_GRID_PEN_PRIMARY:
 
 **MAP_GRID_PEN_PRIMARY**
@@ -113,6 +128,11 @@ MAP参数
 **MAP_GRID_PEN_SECONDARY**
     二级网格线的线条属性 [thinner,black]
 
+.. _MAP_GRID_CROSS_SIZE:
+
+**MAP_GRID_CROSS_SIZE**
+    同时设置 ``MAP_GRID_CROSS_SIZE_PRIMARY`` 和 ``MAP_GRID_CROSS_SIZE_SECONDARY`` 的值
+
 .. _MAP_GRID_CROSS_SIZE_PRIMARY:
 
 **MAP_GRID_CROSS_SIZE_PRIMARY**
@@ -122,6 +142,11 @@ MAP参数
 
 **MAP_GRID_CROSS_SIZE_SECONDARY**
     二级网格交叉线的大小，0表示绘制连续的网格线 [0p]
+
+.. _MAP_ANNOT_OFFSET:
+
+**MAP_ANNOT_OFFSET**
+    同时设置 ``MAP_ANNOT_OFFSET_PRIMARY`` 和 ``MAP_ANNOT_OFFSET_SECONDARY`` 的值
 
 .. _MAP_ANNOT_OFFSET_PRIMARY:
 

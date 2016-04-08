@@ -8,6 +8,11 @@ FONT参数
 **FONT**
     一次性设置所有FONT类参数（ ``FONT_LOGO`` 除外）的默认字体，该参数不在 ``gmt.conf`` 中。
 
+.. _FONT_ANNOT:
+
+**FONT_ANNOT**
+    同时设置 ``FONT_ANNOT_PRIMARY`` 和 ``FONT_ANNOT_SECONDARY`` 的值。
+
 .. _FONT_ANNOT_PRIMARY:
 
 **FONT_ANNOT_PRIMARY**

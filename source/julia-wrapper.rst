@@ -35,7 +35,7 @@ GMT的Julia接口
 
 安装完成后，还需要通过如下命令::
 
-    echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.2.1/lib64")' >> ~/.juliarc.jl
+    echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.3.1/lib64")' >> ~/.juliarc.jl
 
 将 GMT 的动态库文件所在目录添加到 Julia 的搜索路径中。
 
