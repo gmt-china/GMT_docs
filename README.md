@@ -52,14 +52,16 @@ $ evince build/latex/GMT_Docs.pdf&
 
 1. 错字、语句不通
 2. 语法错误导致的显示问题
-3. 翻译尚未完成的部分，见[任务列表](https://github.com/gmt-china/GMT_Docs/wiki/%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8)
+3. 翻译尚未完成的部分，见[Issue列表](https://github.com/gmt-china/GMT_docs/issues)
 4. 优化文档结构，使得文档条理更清晰
 5. 增加索引，辅助查找
 6. 随着GMT版本的更新而不断更新文档内容
 
 文档的维护可以通过如下几个方式：
 
-1. 在项目主页提交Issue
-2. 修改文档源码并提交Pull Request
+1. 在文档页面的底部评论区留言
+2. 发送相关建议或投稿至 admin@gmt-china.org
+3. 在项目主页提交Issue
+4. 修改文档源码并提交Pull Request
 
 关于维护的具体细节，见项目[Wiki](https://github.com/gmt-china/GMT_Docs/wiki)
