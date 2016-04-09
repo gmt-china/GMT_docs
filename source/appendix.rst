@@ -17,3 +17,4 @@
    isolation-mode
    get-gmt-dev
    animation
+   ogr-format
