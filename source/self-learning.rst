@@ -11,7 +11,7 @@ GMT相关的学习资源列举如下。虽然官方文档都有对应的中文�
 #. `GMT官方示例 <http://gmt.soest.hawaii.edu/doc/5.2.1/Gallery.html>`_
 #. `GMT中文社区示例 <http://examples.gmt-china.org>`_
 #. `SeisMan博客GMT示例 <http://seisman.info/tags.html#gmt5-ref>`_
-#. GMT开发版源码中的测试脚本，见 :doc:`get-gmt-dev`
+#. :doc:`GMT开发版源码 <get-gmt-dev>` 中的测试脚本
 #. `GMT中文问答社区 <http://forum.gmt-china.org>`_
 #. GMT学习QQ群：218905582
 #. `GMT官方论坛 <http://gmt.soest.hawaii.edu/projects/gmt/boards/1>`_

@@ -29,9 +29,9 @@
 
 ``-X`` 和 ``-Y`` 选项的用法介绍起来有些难度，多试试就好，下面举个简单的例子::
 
-    gmt psbasemap -JX5c/5c -R0/5/0/5 -B1 -K > test.ps
+    gmt psbasemap -JX5c/2c -R0/5/0/2 -B1 -K > test.ps
     gmt psbasemap -J -R -B1 -K -O -X7c >> test.ps
-    gmt psbasemap -J -R -B1 -K -O -X-7c -Y7c >> test.ps
+    gmt psbasemap -J -R -B1 -K -O -X-7c -Y4c >> test.ps
     gmt psbasemap -J -R -B1 -K -O -X7c >> test.ps
 
 上图用四个 ``psbasemap`` 命令绘制了四张底图，绘图效果如下：
