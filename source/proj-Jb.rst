@@ -1,34 +1,23 @@
--Jb：Albers conic equal-area projection
-=======================================
+-Jb：Albers圆锥等面积投影
+=========================
 
-This projection, developed by Albers in 1805, is predominantly used to
-map regions of large east-west extent, in particular the United States.
-It is a conic, equal-area projection, in which parallels are unequally
-spaced arcs of concentric circles, more closely spaced at the north and
-south edges of the map. Meridians, on the other hand, are equally spaced
-radii about a common center, and cut the parallels at right angles.
-Distortion in scale and shape vanishes along the two standard parallels.
-Between them, the scale along parallels is too small; beyond them it is
-too large. The opposite is true for the scale along meridians. To define
-the projection in GMT you need to provide the following information:
+维基链接：https://en.wikipedia.org/wiki/Albers_projection
 
--  Longitude and latitude of the projection center.
+此投影由Albers于1805年提出，主要用于绘制东西方向范围很大的地图，尤其是美国地图。
 
--  Two standard parallels.
+此投影是圆锥、等面积投影。纬线是不等间隔分布的同心圆，在地球南北极处分布较密。经线则是等间隔分隔，并垂直切割纬线。
 
--  Map scale in inch/degree or 1:xxxxx notation (**-Jb**), or map width (**-JB**).
+在两条标准纬线处，比例尺和形状的畸变最小；在两者之间，沿着纬线的比例尺太小；在两者外部，沿着经线的比例尺则太大。沿着经线，则完全相反。
 
-Note that you must include the "1:" if you choose to specify the scale
-that way. E.g., you can say 0.5 which means 0.5 inch/degree or 1:200000
-which means 1 inch on the map equals 200,000 inches along the standard
-parallels. The projection center defines the origin of the rectangular
-map coordinates. As an example we will make a map of the region near
-Taiwan. We choose the center of the projection to be at 125ºE/20ºN and
-25ºN and 45ºN as our two standard parallels. We desire a map that is 5
-inches wide. The complete command needed to generate the map below is
-therefore given by:
+该投影方式的参数为::
 
-   ::
+    -JB<lon>/<lat>/<lat1>/<lat2>/<width>
+    -Jb<lon>/<lat>/<lat1>/<lat2>/<scale>
+
+- ``<lon>`` 和 ``<lat>`` 是投影中心的位置
+- ``<lat1>`` 和 ``<lat2>`` 是两条标准纬线
+
+下图绘制了台湾附近的区域，投影中心位于125ºE/20ºN，25度和45度纬线是两条标准纬线::
 
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0
     gmt pscoast -R110/140/20/35 -JB125/20/25/45/5i -Bag -Dl -Ggreen -Wthinnest \
@@ -38,4 +27,4 @@ therefore given by:
    :width: 500 px
    :align: center
 
-   Albers equal-area conic map projection.
+   Albers圆锥等面积投影

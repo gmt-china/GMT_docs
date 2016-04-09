@@ -1,24 +1,17 @@
--Jn：Robinson projection
-========================
+-Jn：Robinson投影
+=================
 
-The Robinson projection, presented by the American geographer and
-cartographer Arthur H. Robinson in 1963, is a modified cylindrical
-projection that is neither conformal nor equal-area. Central meridian
-and all parallels are straight lines; other meridians are curved. It
-uses lookup tables rather than analytic expressions to make the world
-map "look" right . The scale is true along latitudes 38. The
-projection was originally developed for use by Rand McNally and is
-currently used by the National Geographic Society. To use it you must
-enter
+维基链接：https://en.wikipedia.org/wiki/Robinson_projection
 
--  The central meridian [Middle of your map].
+此投影Arthur H. Robinson于1963年提出，是一个修改后的圆柱投影，既不是保角也不是等面积。中心经线以及所有纬线都是执行，其余经线都是曲线。其使用查找表的方式而不是解析表达式来使得全球看上去比较正常。比例尺在经线38度是真实的。
 
--  Scale along equator in inch/degree or 1:xxxxx (**-Jn**), or map width
-   (**-JN**).
+该投影的参数为::
 
-Again centered on Greenwich, the example below was created by this command:
+    -JN[<lon>/]<width>       -Jn[<lon>/]<scale>
 
-   ::
+``<lon>`` 是中心经线，默认值为地图区域的中心。
+
+示例::
 
     gmt pscoast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2 -P > GMT_robinson.ps
 
@@ -26,4 +19,4 @@ Again centered on Greenwich, the example below was created by this command:
    :width: 500 px
    :align: center
 
-   World map using the Robinson projection.
+   使用Robinson投影绘制全球地图

@@ -1,37 +1,23 @@
--Js：Stereographic Equal-Angle projection
-=========================================
+-Js：立体等角投影
+=================
 
-This is a conformal, azimuthal projection that dates back to the Greeks.
-Its main use is for mapping the polar regions. In the polar aspect all
-meridians are straight lines and parallels are arcs of circles. While
-this is the most common use it is possible to select any point as the
-center of projection. The requirements are
+维基链接：https://en.wikipedia.org/wiki/Stereographic_projection
 
--  Longitude and latitude of the projection center.
+此投影是保角方位投影，主要用于绘制南北极区域。在两极，所有经线都是直线，纬线则是圆弧。
 
--  Optionally, the horizon, i.e., the number of degrees from the center
-   to the edge (< 180, default is 90).
+该投影的参数::
 
--  Scale as 1:xxxxx (true scale at pole), slat/1:xxxxx (true scale at
-   standard parallel slat), or radius/latitude where radius is distance
-   on map in inches from projection center to a particular
-   oblique latitude (**-Js**), or simply map width (**-JS**).
+    -JS<lon>/<lat>[/<distance>]/<width>
+    -Js<lon>/<lat>[/<distance>]/<scale>
 
-A default map scale factor of 0.9996 will be applied by default
-(although you may change this with :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>`). However,
-the setting is ignored when a standard parallel has been specified since
-the scale is then implicitly given. We will look at two different types
-of maps.
+- ``<lon>/<lat>`` 投影中心的经纬度
+- ``<distance>`` 地图边界到投影中心的角度，默认值为90度
+- ``<scale>`` 可以是 ``1:xxxx`` 也可以是 ``<radius>/<latitude>`` （ ``<radius>`` 是投影中心到纬线 ``<latitude>`` 在图上的距离），还可以是 ``<slat>/1:xxxx`` （指定在标准纬线 ``<slat>`` 处的比例尺）
 
-Polar Stereographic Map
------------------------
+极区立体地图
+------------
 
-In our first example we will let the projection center be at the north
-pole. This means we have a polar stereographic projection and the map
-boundaries will coincide with lines of constant longitude and latitude.
-An example is given by
-
-   ::
+下面的示例中，投影中心为北极，地图边界与经线和纬线完全重合::
 
     gmt pscoast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
                 -Sseashell -P > GMT_stereographic_polar.ps
@@ -40,19 +26,12 @@ An example is given by
    :width: 500 px
    :align: center
 
-   Polar stereographic conformal projection.
+   极区立体保角投影
 
+矩形立体地图
+------------
 
-Rectangular stereographic map
------------------------------
-
-As with Lambert's azimuthal equal-area projection we have the option to
-use rectangular boundaries rather than the wedge-shape typically
-associated with polar projections. This choice is defined by selecting
-two points as corners in the rectangle and appending an "r" to the
-**-R** option. This command produces a map as presented in
-
-   ::
+与Lambert方位等面积投影类似，也可以通过指定地图区域左下角和右上角的坐标来绘制一个矩形区域::
 
     gmt set MAP_ANNOT_OBLIQUE 30
     gmt pscoast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest \
@@ -62,18 +41,12 @@ two points as corners in the rectangle and appending an "r" to the
    :width: 500 px
    :align: center
 
-   Polar stereographic conformal projection with rectangular borders.
+   矩形边界下的极区立体保角投影
 
+一般立体地图
+------------
 
-General stereographic map
--------------------------
-
-In terms of usage this projection is identical to the Lambert azimuthal
-equal-area projection. Thus, one can make both rectangular and
-hemispheric maps. Our example shows Australia using a projection pole at
-130ºE/30ºS. The command used was
-
-   ::
+示例::
 
     gmt set MAP_ANNOT_OBLIQUE 0
     gmt pscoast -R100/-42/160/-8r -JS130/-30/4i -Bag -Dl -A500 -Ggreen -Slightblue \
@@ -83,9 +56,4 @@ hemispheric maps. Our example shows Australia using a projection pole at
    :width: 500 px
    :align: center
 
-   General stereographic conformal projection with rectangular borders.
-
-
-By choosing 0/0 as the pole, we obtain the conformal stereonet presented
-next to its equal-area cousin on the Lambert
-azimuthal equal-area projection.
+   一般立体投影

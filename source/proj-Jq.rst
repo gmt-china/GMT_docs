@@ -1,25 +1,19 @@
--Jq：Cylindrical equidistant projection
-=======================================
+-Jq：圆柱等距投影
+=================
 
-This simple cylindrical projection is really a linear scaling of
-longitudes and latitudes. The most common form is the Plate Carrée
-projection, where the scaling of longitudes and latitudes is the same.
-All meridians and parallels are straight lines. The projection can be
-defined by:
+维基链接：https://en.wikipedia.org/wiki/Equirectangular_projection
 
--  The central meridian [Middle of your map].
+这个简单的圆柱投影是一个经度和纬度的线性缩放。最常用的形式是Plate Carrée投影，其中对经线和纬线的缩放比例是相同的。所有的经纬线都是直线。
 
--  Standard parallel [Equator].
+该投影的参数为::
 
--  Scale in inch/degree or as 1:xxxxx (**-Jq**), or map width (**-JQ**).
+    -JQ[<lon>/[<lat>]/]<width>
+    -Jq[<lon>/[<lat>]/]<scale>
 
-The first two of these are optional and have defaults. When the standard
-parallel is defined, the central meridian must be supplied as well.
+- ``<lon>`` 是中心经线，默认为地图区域的中心
+- ``<lat>`` 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
 
-A world map centered on the dateline using this projection can be
-obtained by running the command:
-
-   ::
+示例::
 
     gmt pscoast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -P > GMT_equi_cyl.ps
 
@@ -27,13 +21,9 @@ obtained by running the command:
    :width: 500 px
    :align: center
 
-   World map using the Plate Carrée projection.
+   使用Plate Carrée投影绘制全球地图
 
-
-Different relative scalings of longitudes and latitudes can be obtained
-by selecting a standard parallel different from the equator. Some
-selections for standard parallels have practical properties as shown in
-Table.
+选择不同的标准纬线，则可以获取经度和纬度的不同缩放比例。流行的几个标准纬线如下：
 
 .. table::
 

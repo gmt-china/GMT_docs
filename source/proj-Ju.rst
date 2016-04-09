@@ -1,37 +1,20 @@
--Ju：Universal Transverse Mercator (UTM) projection
-===================================================
+-Ju：通用横向Mercator(UTM)投影
+==============================
 
-A particular subset of the transverse Mercator is the Universal
-Transverse Mercator (UTM) which was adopted by the US Army for
-large-scale military maps. Here, the globe is divided into 60 zones
-between 84ºS and 84ºN, most of which are 6 wide. Each of these UTM zones
-have their unique central meridian. Furthermore, each zone is divided
-into latitude bands but these are not needed to specify the projection
-for most cases.
+维基链接：https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system
+
+通用横向Mercator(UTM)投影是横向Mercator投影的一个特殊子集。此处，全球在南北纬84度之间被划分为60个区域，大多数区域的宽度都是6度。每一个区域都有各自位移的中心经线。进一步，每个区域都被划分为纬度带。
 
 .. figure:: /images/GMT_utm_zones.*
    :width: 700 px
    :align: center
 
-   Universal Transverse Mercator zone layout.
+   通用横向Mercator区域布局
 
+该投影的参数为::
 
-GMT implements both the transverse Mercator and the UTM projection.
-When selecting UTM you must specify:
+    -JU<zone>/<width>       -Ju<zone>/<scale>
 
--  UTM zone (A, B, 1--60, Y, Z). Use negative values for numerical zones
-   in the southern hemisphere or append the latitude modifiers C--H, J--N,
-   P--X) to specify an exact UTM grid zone.
+其中 ``<zone>`` 可以取1--60、A、B、Y、Z，负值表示南半球的区域，也可以加上C--H以及J--N来指定纬度带。
 
--  Scale along the equator in inch/degree or 1:xxxxx (**-Ju**), or map
-   width (**-JU**).
-
-In order to minimize the distortion in any given zone, a scale factor of
-0.9996 has been factored into the formulae. (although a standard, you
-can change this with :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>`). This makes the UTM
-projection a *secant* projection and not a *tangent* projection like the
-transverse Mercator above. The scale only varies by 1 part in 1,000 from
-true scale at equator. The ellipsoidal projection expressions are
-accurate for map areas that extend less than 10 away from the central
-meridian. For larger regions we use the conformal latitude in the
-general spherical formulae instead.
+为了让任意指定区域的畸变最小化，公式中乘以了比例因子0.9996，这个值可以通过修改 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` 以自定义。这是的UTM投影是割线投影而不是切线投影，在赤道处比例尺的畸变只有千分之一。在中心经线附近10度范围内的椭球投影表达式都是精确的。对于更大的区域，则在一般球状公式中使用保角纬度作为代替。

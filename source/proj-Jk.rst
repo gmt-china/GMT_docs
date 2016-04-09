@@ -1,25 +1,20 @@
--Jk：Eckert IV and VI projection
-================================
+-Jk：Eckert投影
+===============
 
-The Eckert IV and VI projections, presented by the German cartographer
-Max Eckert-Greiffendorff in 1906, are pseudocylindrical equal-area
-projections. Central meridian and all parallels are straight lines;
-other meridians are equally spaced elliptical arcs (IV) or sinusoids
-(VI). The scale is true along latitudes 40º30' (IV) and 49º16' (VI). Their
-main use is in thematic world maps. To select Eckert IV you must use
-**-JKf** (**f** for "four") while Eckert VI is selected with **-JKs**
-(**s** for "six"). If no modifier is given it defaults to Eckert VI. In
-addition, you must enter
+维基链接：
 
--  The central meridian [Middle of your map].
+- https://en.wikipedia.org/wiki/Eckert_IV_projection
+- https://en.wikipedia.org/wiki/Eckert_VI_projection
 
--  Scale along equator in inch/degree or 1:xxxxx (**-Jk**), or map width
-   (**-JK**).
+Eckert IV和VI投影由Max Eckert-Greiffendorff于1906年提出，是伪圆柱等面积投影。中心经线以及所有的纬线都是执行，其余经线是等间隔分布的椭圆弧（IV）或正弦曲线（VI）。比例尺在纬线40º30'（IV）和49º16'（VI）是真实的。 ``-JKf`` （f代表four）表示使用Eckert IV投影， ``-JKs`` （s代表six）表示使用Eckert VI投影。若不指定f或s，则默认使用Eckert VI投影。
 
-Centered on the Dateline, the Eckert IV example below was created by
-this command:
+该选项的参数为::
 
-   ::
+    -JK[f|s][<lon>/]<width>      -Jk[f|s][<lon>/]<scale>
+
+``<lon>`` 为中心经线，默认值为地图区域的中心。
+
+Eckert IV示例::
 
     gmt pscoast -Rg -JKf4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
 
@@ -27,13 +22,14 @@ this command:
    :width: 500 px
    :align: center
 
-   World map using the Eckert IV projection.
+   Eckert IV投影绘制全球图
 
+Eckert VI示例::
 
-The same script, with **s** instead of **f**, yields the Eckert VI map:
+    gmt pscoast -Rg -JKs4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
 
 .. figure:: /images/GMT_eckert6.*
    :width: 500 px
    :align: center
 
-   World map using the Eckert VI projection.
+   Eckert VI投影绘制全球图

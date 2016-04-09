@@ -1,39 +1,22 @@
--Ja：Lambert Azimuthal Equal-Area
-=================================
+-Ja：Lambert方位等面积投影
+==========================
 
-This projection was developed by Lambert in 1772 and is typically used
-for mapping large regions like continents and hemispheres. It is an
-azimuthal, equal-area projection, but is not perspective. Distortion is
-zero at the center of the projection, and increases radially away from
-this point. To define this projection in GMT you must provide the
-following information:
+维基链接: https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection
 
--  Longitude and latitude of the projection center.
+该投影由Lambert于1772年发展得到，通常用于绘制大区域地图（例如整个大洲或半球），该投影是方位等面积投影，但不支持透视。在投影的中心畸变为0，离投影中心距离越远，畸变越大。该投影的参数为::
 
--  Optionally, the horizon, i.e., the number of degrees from the center
-   to the edge (<= 180, default is 90).
+    -JA<lon>/<lat>/[<distance>/]<width>
+    -Ja<lon>/<lat>/[<distance>/]<scale>
 
--  Scale as 1:xxxxx or as radius/latitude where radius is the projected
-   distance on the map from projection center to an oblique latitude where 0
-   would be the oblique Equator
-   (**-Ja**), or map width (**-JA**).
+- ``<lon>/<lat>`` 投影中心坐标
+- ``<distance>`` 投影中心到边界的角度，默认值为90，即距离投影中心各90度，即整个半球
+- ``<width>`` 地图宽度
+- ``<scale>`` 地图比例尺 ``1:xxxx`` 或 ``<radius>/<latitude>`` （ ``<radius>`` 是纬线 ``<latitude>`` 与投影中心在图上的距离）
 
-Two different types of maps can be made with this projection depending
-on how the region is specified. We will give examples of both types.
+矩形地图
+--------
 
-Rectangular map
----------------
-
-In this mode we define our region by specifying the longitude/latitude
-of the lower left and upper right corners instead of the usual *west,
-east, south, north* boundaries. The reason for specifying our area this
-way is that for this and many other projections, lines of equal
-longitude and latitude are not straight lines and are thus poor choices
-for map boundaries. Instead we require that the map boundaries be
-rectangular by defining the corners of a rectangular map boundary. Using
-0ºE/40ºS (lower left) and 60ºE/10ºS (upper right) as our corners we try
-
-   ::
+对于此投影而言，经线和纬线通常不是直线，因而不适合用于指定地图边界。因而本例中通过指定区域的左下角（0ºE/40ºS）和右上角（60ºE/10ºS）的坐标来指定区域范围::
 
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0
     gmt pscoast -R0/-40/60/-10r -JA30/-30/4.5i -Bag -Dl -A500 -Gp300/10 \
@@ -43,21 +26,12 @@ rectangular by defining the corners of a rectangular map boundary. Using
    :width: 500 px
    :align: center
 
-   Rectangular map using the Lambert azimuthal equal-area projection.
+   使用Lambert方位等面积投影绘制矩形地图
 
+半球地图
+--------
 
-Note that an "r" is appended to the **-R** option to inform GMT that
-the region has been selected using the rectangle technique, otherwise it
-would try to decode the values as *west, east, south, north* and report
-an error since *'east'* < *'west'*.
-
-Hemisphere map
---------------
-
-Here, you must specify the world as your region (**-Rg** or
-**-Rd**). E.g., to obtain a hemisphere view that shows the Americas, try
-
-   ::
+要绘制半球地图，需要指定区域范围为整个地球。下图绘制了以南美洲为中心的半球图::
 
     gmt pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps
 
@@ -65,17 +39,12 @@ Here, you must specify the world as your region (**-Rg** or
    :width: 400 px
    :align: center
 
-   Hemisphere map using the Lambert azimuthal equal-area projection.
+   使用Lambert方位等面积投影绘制半球地图
 
-
-To geologists, the Lambert azimuthal equal-area projection (with origin
-at 0/0) is known as the *equal-area* (Schmidt) stereonet and used for
-plotting fold axes, fault planes, and the like. An *equal-angle* (Wulff)
-stereonet can be obtained by using the stereographic projection
-(discussed later). The stereonets produced by these two projections appear below.
+地球物理学中，在绘制震源机制解时，就是将三维的辐射花样信息投影到一个水平面内。投影的方式有两种：Schmidt网和Wulff网。其中Schmidt网使用的就是Lambert方位等面积投影（中心经纬度为0/0），Wulff网使用的则是等角度的立体投影。两种震源球投影方式如下图所示：
 
 .. figure:: /images/GMT_stereonets.*
    :width: 500 px
    :align: center
 
-   Equal-Area (Schmidt) and Equal-Angle (Wulff) stereo nets.
+   震源球投影：等面积的Schmidt网和等角度的Wulff网

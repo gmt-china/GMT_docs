@@ -1,20 +1,18 @@
--Jh：Hammer projection
-======================
+-Jh：等面积Hammer投影
+=====================
 
-The equal-area Hammer projection, first presented by the German
-mathematician Ernst von Hammer in 1892, is also known as Hammer-Aitoff
-(the Aitoff projection looks similar, but is not equal-area). The border
-is an ellipse, equator and central meridian are straight lines, while
-other parallels and meridians are complex curves. The projection is
-defined by selecting:
+维基链接：https://en.wikipedia.org/wiki/Hammer_projection
 
--  The central meridian [Middle of your map].
+等面积Hammer投影由Ernst von Hammer于1892年提出，也被称为Hammer-Aitoff投影（Aitoff投影与之看起来相似，但不等面积）。投影后的边界是一个椭圆，赤道和中心经线是执行，其余纬线和经线都是复杂曲线。
 
--  Scale along equator in inch/degree or 1:xxxxx (**-Jh**), or map width (**-JH**).
+该投影的参数为::
 
-A view of the Pacific ocean using the Dateline as central meridian is accomplished thus
+    -JH[<lon>/]<width>
+    -Jh[<lon>/]<scale>
 
-   ::
+``<lon>`` 是中心经线，默认位于地图区域的中心。
+
+示例::
 
     gmt pscoast -Rg -JH4.5i -Bg -Dc -A10000 -Gblack -Scornsilk -P > GMT_hammer.ps
 
@@ -22,4 +20,4 @@ A view of the Pacific ocean using the Dateline as central meridian is accomplish
    :width: 500 px
    :align: center
 
-   World map using the Hammer projection.
+   使用Hammer投影绘制全球地图

@@ -33,9 +33,12 @@ GMT支持的投影方式如下图所示。
    proj-Jf
    proj-Jg
    proj-Jh
+   proj-Ji
    proj-Jj
+   proj-Jk
    proj-Jl
    proj-Jm
+   proj-Jn
    proj-Jo
    proj-Jpoly
    proj-Jq
@@ -43,9 +46,6 @@ GMT支持的投影方式如下图所示。
    proj-Js
    proj-Jt
    proj-Ju
+   proj-Jv
    proj-Jw
    proj-Jy
-   proj-Jn
-   proj-Jk
-   proj-Ji
-   proj-Jv

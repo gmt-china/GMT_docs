@@ -1,22 +1,22 @@
--Jv：Van der Grinten projection
-===============================
+-Jv：Van der Grinten投影
+========================
 
-The Van der Grinten projection, presented by Alphons J. van der Grinten
-in 1904, is neither equal-area nor conformal. Central meridian and
-Equator are straight lines; other meridians are arcs of circles. The
-scale is true along the Equator only. Its main use is to show the entire
-world enclosed in a circle. To use it you must enter
+维基链接：https://en.wikipedia.org/wiki/Van_der_Grinten_projection
 
--  The central meridian [Middle of your map].
+此投影由Alphons J. van der Grinten于1904年提出，其既不等面积也不保角。中心经线和赤道都是直线，其余经线则是圆弧，仅在赤道处比例尺是真实的，主要用于在一个圆内展示整个世界地图。
 
--  Scale along equator in inch/degree or 1:xxxxx (**-Jv**), or map width (**-JV**).
+该投影的参数为::
 
-Centered on the Dateline, the example below was created by this command::
+    -JV<lon>/<width>       -Jv<lon>/<scale>
 
-      gmt pscoast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -P > GMT_grinten.ps
+``<lon>`` 是投影中心经线，默认值为地图区域的中心。
+
+示例::
+
+    gmt pscoast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -P > GMT_grinten.ps
 
 .. figure:: /images/GMT_grinten.*
    :width: 400 px
    :align: center
 
-   World map using the Van der Grinten projection.
+   使用Van der Grinten投影绘制全球图

@@ -1,24 +1,17 @@
--Jj：Miller Cylindrical projection
-==================================
+-Jj：Miller圆柱投影
+===================
 
-This cylindrical projection, presented by Osborn Maitland Miller of the
-American Geographic Society in 1942, is neither equal nor conformal. All
-meridians and parallels are straight lines. The projection was designed
-to be a compromise between Mercator and other cylindrical projections.
-Specifically, Miller spaced the parallels by using Mercator's formula
-with 0.8 times the actual latitude, thus avoiding the singular poles;
-the result was then divided by 0.8. There is only a spherical form for
-this projection. Specify the projection by:
+维基链接：https://en.wikipedia.org/wiki/Miller_cylindrical_projection
 
--  Optionally, the central meridian (default is the middle of your map).
+此投影由Osborn Maitland Miller于1942年提出，该投影既不是保角也不是等面积。所有的经线和纬线都是直线。该投影是Mercator与其他圆柱投影之间的折衷。在此投影中，纬线之间的间距使用了Mercator公式并乘以0.8倍的真实纬度，因而避免了极点的奇点，然后再将结果除以0.8。
 
--  Scale in inch/degree or as 1:xxxxx (**-Jj**), or map width (**-JJ**).
+该投影的参数为::
 
-For instance, a world map centered on the 90ºE meridian at a map scale of
-1:400,000,000 can be obtained as
-follows:
+    -JJ<lon>/<width>       -Jj<lon>/<scale>
 
-   ::
+``<lon>`` 为中心经度，默认为地图区域的中心。
+
+示例::
 
     gmt pscoast -R-90/270/-80/90 -Jj1:400000000 -Bx45g45 -By30g30 -Dc -A10000 \
                 -Gkhaki -Wthinnest -P -Sazure > GMT_miller.ps
@@ -27,4 +20,4 @@ follows:
    :width: 500 px
    :align: center
 
-   World map using the Miller cylindrical projection.
+   使用Miller圆柱投影绘制世界地图

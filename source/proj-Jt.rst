@@ -1,28 +1,20 @@
--Jt：Transverse Mercator projection
-===================================
+-Jt：横向Mercator投影
+=====================
 
-The transverse Mercator was invented by Lambert in 1772. In this
-projection the cylinder touches a meridian along which there is no
-distortion. The distortion increases away from the central meridian and
-goes to infinity at 90º from center. The central meridian, each meridian
-90º away from the center, and equator are straight lines; other parallels
-and meridians are complex curves. The projection is defined by
-specifying:
+维基链接：https://en.wikipedia.org/wiki/Transverse_Mercator_projection
 
--  The central meridian.
+此投影由Lambert于1772年提出。该投影中，圆柱与某条经线相切。在该经线处无畸变。离中心经线越远畸变越大，距离中心经线90度处的经线畸变达到无穷。中心经线和赤道都是直线，其余经线和纬线则是复杂曲线。
 
--  Optionally, the latitude of origin (default is the equator).
+该投影的参数::
 
--  Scale along the equator in inch/degree or 1:xxxxx (**-Jt**), or map
-   width (**-JT**).
+    -JT<lon>[/<lat>]/<width>
+    -Jt<lon>[/<lat>]/<scale>
 
-The optional latitude of origin defaults to Equator if not specified.
-Although defaulting to 1, you can change the map scale factor via the
-:ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` parameter. Our example shows a transverse
-Mercator map of south-east Europe and the Middle East with 35ºE as the
-central meridian:
+``<lon>`` 中心经线， ``<lat>`` 原点的纬度，默认值为赤道。
 
-   ::
+地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` 以实现自定义。
+
+示例::
 
     gmt pscoast -R20/30/50/45r -Jt35/0.18i -Bag -Dl -A250 -Glightbrown -Wthinnest \
                 -P -Sseashell > GMT_transverse_merc.ps
@@ -31,28 +23,15 @@ central meridian:
    :width: 500 px
    :align: center
 
-   Rectangular Transverse Mercator map.
+   矩形横向Mercator地图
 
-
-The transverse Mercator can also be used to generate a global map - the
-equivalent of the 360º Mercator map. Using the command
-
-   ::
+示例::
 
     gmt pscoast -R0/360/-80/80 -JT330/-45/3.5i -Ba30g -BWSne -Dc -A2000 \
                 -Slightblue -G0 -P > GMT_TM.ps
-
-Note that
-when a world map is given (indicated by **-R**\ *0/360/s/n*), the
-arguments are interpreted to mean oblique degrees, i.e., the 360º range
-is understood to mean the extent of the plot along the central meridian,
-while the "south" and "north" values represent how far from the central
-longitude we want the plot to extend. These values correspond to
-latitudes in the regular Mercator projection and must therefore be less
-than 90.
 
 .. figure:: /images/GMT_TM.*
    :width: 450 px
    :align: center
 
-   A global transverse Mercator map.
+   全球横向Mercator地图

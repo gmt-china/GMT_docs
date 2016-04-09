@@ -1,31 +1,21 @@
--Jl：Lambert conic conformal projection
-=======================================
+-Jl：Lambert圆锥保角投影
+========================
 
-This conic projection was designed by the Alsatian mathematician Johann
-Heinrich Lambert (1772) and has been used extensively for mapping of
-regions with predominantly east-west orientation, just like the Albers
-projection. Unlike the Albers projection, Lambert's conformal projection
-is not equal-area. The parallels are arcs of circles with a common
-origin, and meridians are the equally spaced radii of these circles. As
-with Albers projection, it is only the two standard parallels that are
-distortion-free. To select this projection in GMT you must provide the
-same information as for the Albers projection, i.e.,
+维基链接：https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection
 
--  Longitude and latitude of the projection center.
+此投影由Heinrich Lambert于1772年提出，主要用于绘制东西方向范围很大的地图。与Albers投影不同的是，Lambert投影不是等面积的。纬线是共圆心的圆弧，经线是这些圆的等间隔分布的半径。与Albers投影类似，只有两条标准纬线是无畸变的。
 
--  Two standard parallels.
+该投影的参数为::
 
--  Map scale in inch/degree or 1:xxxxx notation (**-Jl**), or map width (**-JL**).
+    -JB<lon>/<lat>/<lat1>/<lat2>/<width>
+    -Jb<lon>/<lat>/<lat1>/<lat2>/<scale>
 
-The Lambert conformal projection has been used for basemaps for all the
-48 contiguous States with the two fixed standard parallels 33ºN and 45ºN.
-We will generate a map of the continental USA using these parameters.
-Note that with all the projections you have the option of selecting a
-rectangular border rather than one defined by meridians and parallels.
-Here, we choose the regular WESN region, a "fancy" basemap frame, and
-use degrees west for longitudes. The generating commands used were
+- ``<lon>`` 和 ``<lat>`` 是投影中心的位置
+- ``<lat1>`` 和 ``<lat2>`` 是两条标准纬线
 
-   ::
+Lambert保角投影场用于绘制美国地图，两个固定的标准纬线是33ºN和45ºN。
+
+示例::
 
     gmt set MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.05i
     gmt pscoast -R-130/-70/24/52 -Jl-100/35/33/45/1:50000000 -Bag -Dl -N1/thick,red \
@@ -35,11 +25,6 @@ use degrees west for longitudes. The generating commands used were
    :width: 500 px
    :align: center
 
-   Lambert conformal conic map projection.
+   Lambert保角圆锥投影
 
-
-The choice for projection center does not affect the projection but it
-indicates which meridian (here 100ºW) will be vertical on the map. The
-standard parallels were originally selected by Adams to provide a
-maximum scale error between latitudes 30.5ºN and 47.5ºN of 0.5--1%. Some
-areas, like Florida, experience scale errors of up to 2.5%.
+投影中心的选取并不影响投影，但其指定了哪一条经线垂直于地图。

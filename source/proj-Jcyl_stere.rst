@@ -1,25 +1,19 @@
--Jcyl_stere：Cylindrical stereographic projections
-==================================================
+-Jcyl_stere：圆柱立体投影
+=========================
 
-The cylindrical stereographic projections are certainly not as notable
-as other cylindrical projections, but are still used because of their
-relative simplicity and their ability to overcome some of the downsides
-of other cylindrical projections, like extreme distortions of the higher
-latitudes. The stereographic projections are perspective projections,
-projecting the sphere onto a cylinder in the direction of the antipodal
-point on the equator. The cylinder crosses the sphere at two standard
-parallels, equidistant from the equator. The projections are defined by:
+维基链接：https://en.wikipedia.org/wiki/Gall_stereographic_projection
 
--  The central meridian (uses the middle of the map when omitted).
+圆柱立体投影不像其他的圆柱投影那样显著，但由于其相对简单且能够克服其他圆柱投影的缺点（比如高纬度的畸变），故而仍然被使用。立体投影是透视投影，将整个球沿着赤道上的对跖点投影到一个圆柱上。该圆柱于两条距赤道等间距的标准纬线处穿过球体。
 
--  The standard parallel (default is the Equator). When used, central
-   meridian needs to be given as well.
+该投影的参数为::
 
--  Scale in inch/degree or as 1:xxxxx (**-Jcyl_stere**), or map width
-   (**-JCyl_stere**)
+    -JCyl_stere/[<lon>[/<lat>]]/<width>
+    -Jcyl_stere/[<lon>[/<lat>]]/<scale>
 
-Some of the selections of the standard parallel are named for the
-cartographer or publication that popularized the projection.
+- ``<lon>`` 中心经线，若省略则使用区域的中心经线
+- ``<lat>`` 标准纬线，默认是赤道。若使用，则必须指定中心经线
+
+一些比较流行的标准纬线的选择如下：
 
 +---------------------------------------------------------+-------------+
 +=========================================================+=============+
@@ -34,10 +28,7 @@ cartographer or publication that popularized the projection.
 | Braun's cylindrical                                     | 0º          |
 +---------------------------------------------------------+-------------+
 
-A map of the world, centered on the Greenwich meridian, using the Gall's
-stereographic projection (standard parallel is 45º), is obtained as follows:
-
-   ::
+示例::
 
     gmt set FORMAT_GEO_MAP dddA
     gmt pscoast -R-180/180/-60/80 -JCyl_stere/0/45/4.5i -Bxa60f30g30 -Bya30g30 -Dc -A5000 \
@@ -47,4 +38,4 @@ stereographic projection (standard parallel is 45º), is obtained as follows:
    :width: 500 px
    :align: center
 
-   World map using Gall's stereographic projection.
+   使用Gall立体投影绘制世界地图

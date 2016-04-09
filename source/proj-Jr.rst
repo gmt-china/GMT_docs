@@ -1,29 +1,17 @@
--Jr：Winkel Tripel projection
-=============================
+-Jr：Winkel Tripel投影
+======================
 
-In 1921, the German mathematician Oswald Winkel a projection that was to
-strike a compromise between the properties of three elements (area,
-angle and distance). The German word "tripel" refers to this junction of
-where each of these elements are least distorted when plotting global
-maps. The projection was popularized when Bartholomew and Son started to
-use it in its world-renowned "The Times Atlas of the World" in the mid
-20th century. In 1998, the National Geographic Society made the Winkel
-Tripel as its map projection of choice for global maps.
+维基链接：https://en.wikipedia.org/wiki/Winkel_tripel_projection
 
-Naturally, this projection is neither conformal, nor equal-area. Central
-meridian and equator are straight lines; other parallels and meridians
-are curved. The projection is obtained by averaging the coordinates of
-the Equidistant Cylindrical and Aitoff (not Hammer-Aitoff) projections.
-The poles map into straight lines 0.4 times the length of equator. To
-use it you must enter
+1921年Oswald Winkel设计了该投影，以在三个元素（面积、角度、距离）之间折衷，是的在绘制全球地图时，这三个元素的畸变最小。此投影不是保角也不是等面积投影。中心经线和赤道是直线，其他经线和纬线是曲线。该投影取等距圆柱投影和Aitoff投影的坐标的平均值。极点处投影为0.4倍赤道长度的直线。
 
--  The central meridian [Middle of your map].
+该投影的参数为::
 
--  Scale along equator in inch/degree or 1:xxxxx (**-Jr**), or map width (**-JR**).
+    -JR[<lon>/]<width>       -Jr[<lon>/]<scale>
 
-Centered on Greenwich, the example was created by this command:
+``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-   ::
+示例::
 
     gmt pscoast -Rd -JR4.5i -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -P > GMT_winkel.ps
 
@@ -31,4 +19,4 @@ Centered on Greenwich, the example was created by this command:
    :width: 500 px
    :align: center
 
-   World map using the Winkel Tripel projection.
+   使用Winkel Tripel投影绘制全球地图
