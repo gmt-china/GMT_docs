@@ -28,8 +28,8 @@
 
 文档发布release版之后，即进入日常维护模式，即dev版。dev版的版本号格式为 `当前GMT版本号-dev` 。
 
-dev版在线阅读： http://docs.gmt-china.org
-dev版离线阅读： `HTML <https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.zip>`_ `PDF <https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.pdf>`_
+- dev版在线阅读： http://docs.gmt-china.org
+- dev版离线阅读： [HTML](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.zip) [PDF](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.pdf)
 
 ## 编译方式
 
