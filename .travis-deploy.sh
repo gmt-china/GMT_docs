@@ -8,8 +8,8 @@
 #  TRAVIS_PULL_REQUEST:
 #   - is a pull request => pull request number
 #   - not a pull request => false
-name=Dongdong Tian
-mail=seisman.info@gmail.com
+name="Dongdong Tian"
+mail="seisman.info@gmail.com"
 docdir=doc-dev
 docname=GMT_docs-dev
 pdfname=GMT_docs.pdf
