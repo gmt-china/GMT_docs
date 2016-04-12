@@ -20,7 +20,7 @@ if [ ${TRAVIS_BRANCH} = "master" -a ${TRAVIS_PULL_REQUEST} = 'false' ]; then
     mkdir build/doc-dev && cd build
     mv html GMT_docs-dev && zip -r doc-dev/GMT_docs-dev.zip GMT_docs-dev
     cp latex/GMT_docs.pdf doc-dev/GMT_docs-dev.pdf
-    ghp-import -b doc-dev -n doc-dev -m 'Update by travis automatically'
+    ghp-import -b doc-dev doc-dev -m 'Update by travis automatically'
     git push "https://${GH_TOKEN}@${GH_REF}" doc-dev:doc-dev --force
 else
     echo "Not in master branch"
