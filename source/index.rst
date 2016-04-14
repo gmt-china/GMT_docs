@@ -49,6 +49,7 @@ GMT参考手册
 
    preface
    introductions
+   tutorial
    basics
    advances
    options
