@@ -25,6 +25,15 @@ GMT当前使用的字符编码方式由GMT参数 :ref:`PS_CHAR_ENCODING <PS_CHAR
 
 这张图应该如何读呢？以 ``ISOLation1+`` 编码下的八进制码 ``\144`` 为例， ``\14x`` 行与 ``4`` 列的交界处就是该八进制码代表的字符，即 ``d`` 。
 
+下面展示了如何修改GMT的文本编码及其具体效果::
+
+    $ gmt set PS_CHAR_ENCODING Standard+
+    $ echo 1 1 '\260' | gmt pstext -JX2c/2c -R0/2/0/2 -B1 > standard.ps
+    $ gmt set PS_CHAR_ENCODING ISOLatin1+
+    $ echo 1 1 '\260' | gmt pstext -JX2c/2c -R0/2/0/2 -B1 > isolatin1.ps
+
+其中， ``standard.ps`` 中显示的是类似A的字符，而 ``isolation1.ps`` 中显示的则是弧度 ``°`` 符号。
+
 下图给出了如何用八进制码来表示常见字符和特殊字符：
 
 .. figure:: /images/GMT_octal_examples.*
