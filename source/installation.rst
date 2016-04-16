@@ -39,7 +39,7 @@ GMT主要依赖于 cmake(>=2.8.5)、fftw(>=3.3)、glib2(>=2.32)、netCDF、ghost
 Linux安装GMT需要下载三个文件：
 
 #. GMT源码： ftp://ftp.soest.hawaii.edu/gmt/gmt-5.2.1-src.tar.gz
-#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.4.tar.gz
+#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.5.tar.gz
 #. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/gmt/dcw-gmt-1.1.2.tar.gz
 
 也可以到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载对应的文件，下载速度要快不少。
@@ -53,11 +53,11 @@ Linux安装GMT需要下载三个文件：
 
    # 解压三个压缩文件
    $ tar -xvf gmt-5.2.1-src.tar.gz
-   $ tar -xvf gshhg-gmt-2.3.4.tar.gz
+   $ tar -xvf gshhg-gmt-2.3.5.tar.gz
    $ tar -xvf dcw-gmt-1.1.2.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.4 gmt-5.2.1/share/gshhg
+   $ mv gshhg-gmt-2.3.5 gmt-5.2.1/share/gshhg
    $ mv dcw-gmt-1.1.2 gmt-5.2.1/share/dcw-gmt
 
    # 切换到gmt源码目录下
@@ -89,7 +89,7 @@ Linux安装GMT需要下载三个文件：
 ``cmake ..`` 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-5.2.1/share/gshhg (2.3.4)
+    *  Found GSHHG database       : /home/user/GMT/gmt-5.2.1/share/gshhg (2.3.5)
     *  Found DCW-GMT database     : /home/user/GMT/gmt-5.2.1/share/dcw-gmt
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
