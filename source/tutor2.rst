@@ -15,12 +15,12 @@ GMT结构化的做图
 ---------
 
 .. literalinclude:: ../scripts/GMT_tutor2_1.sh
-      :language: bash
+   :language: bash
    :lines: 2
 
 
 .. figure:: /images/GMT_tutor2_1.*
-      :width: 500 px
+   :width: 500 px
    :align: center
 
    线性X-Y图
