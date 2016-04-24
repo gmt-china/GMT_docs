@@ -18,3 +18,4 @@
    get-gmt-dev
    animation
    ogr-format
+   gmt-c-api
