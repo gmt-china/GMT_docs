@@ -25,7 +25,7 @@ GMT当前使用的字符编码方式由GMT参数 :ref:`PS_CHAR_ENCODING <PS_CHAR
 
 这张图应该如何读呢？以 ``ISOLation1+`` 编码下的八进制码 ``\144`` 为例， ``\14x`` 行与 ``4`` 列的交界处就是该八进制码代表的字符，即 ``d`` 。
 
-下面展示了如何修改GMT的文本编码及其具体效果::
+下面的示例展示了修改GMT的文本编码，以及不同编码下同一八进制码的效果::
 
     $ gmt set PS_CHAR_ENCODING Standard+
     $ echo 1 1 '\260' | gmt pstext -JX2c/2c -R0/2/0/2 -B1 > standard.ps
