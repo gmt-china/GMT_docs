@@ -9,7 +9,7 @@ FAQ
 
 #. 在使用地图投影时，为何无法给坐标轴加标签？命令如下::
 
-       gmt psbasemap -R0/10/0/10 -JX10c -B1 -Bx+l"Latitude" -By+"Longtitude" > a.ps
+       gmt psbasemap -R0/10/0/10 -JM10c -B1 -Bx+l"Latitude" -By+"Longtitude" > a.ps
 
    从绘图效果中可以看出，“Latitude”和“Longtitude”是没有加进去的。这不是Bug，而是一个Feature。因为对于使用地图投影绘制的地图，从“火车道”边框或标注上的“度”符号都可以直观的知道这是一个地图投影而不是笛卡尔投影。而对于地图投影来说，X方向是经度、Y方向是纬度，是基本常识，给坐标轴加label反而是多此一举，故而对于地图投影来说，坐标轴是不能加label的。
 
