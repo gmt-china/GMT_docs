@@ -18,6 +18,7 @@ GMT结构化的做图
    :language: bash
    :lines: 2
 
+
 .. figure:: /images/GMT_tutor2_1.*
    :width: 500 px
    :align: center
