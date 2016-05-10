@@ -25,29 +25,34 @@ GMT结构化的做图
 
 解释一下：
 
-1. J=H110/24c                              定义投影方式
+1. -K表示不写入文件尾，-O表示不要文件头
 
-2. R=g                                     定义绘图范围
+2. >表示生成新文件，>>表示在文件中追加内容
 
-3. PS=GMT_tutor2_1.ps                      定义文件名
-
-4. gmt psxy -J$J -R$R -T -K > $PS          -T表示空输入，什么都不画，-K表示不写入文件尾
-
-5. gmt psbasemap -Bg30 -J -R -K -O >> $PS  -K -O表示既不要文件尾也不要文件头，>>表示在文件中追加内容
-
-6. gmt psxy -J -R -T -O >> $PS             -O表示既不要文件尾也不要文件头，>>表示在文件中追加内容
+3. -T表示空输入，什么都不画
 
 
-psxy模块绘制五角星
+psxy模块绘制五角星和三角形
 ---------
+我们一般用五角星表示震中，三角形表示台站。五角星和三角形这样的图案用psxy模块绘制，见下面的代码和结果：
 
-psxy模块绘制三角符号
---------
+.. literalinclude:: ../scripts/GMT_tutor2_2.sh
+   :language: bash
+   :lines: 2
+
+
+.. figure:: /images/GMT_tutor2_2.*
+   :width: 500 px
+   :align: center
+
+
+
+
+psxy模块绘制线条
+---------
 
 pstext模块添加文字
 ---------
 
-psxy模块绘制线条
----------
 
 
