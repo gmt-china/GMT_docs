@@ -1,14 +1,9 @@
 #!/bin/bash
-#
-# GMT模块 : psxy, psbasemap, pscoast, psxy, pstext
-# Unix命令: rm
-# 作者    : 王亮@GLUT
-# 日期    : 2016-04-20
 
 #变量命名
 J=H110/24c
 R=g
-PS=NAME.ps
+PS=GMT_tutor2_2.ps
 # 文件头
 gmt psxy -J$J -R$R -T -K > $PS
 # 底图
