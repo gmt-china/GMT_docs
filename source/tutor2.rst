@@ -14,14 +14,10 @@ GMT结构化的做图
 绘制底图
 ---------
 
+首先看代码：
+
 .. literalinclude:: ../scripts/GMT_tutor2_1.sh
    :language: bash
-   :lines: 2
-
-
-.. figure:: /images/GMT_tutor2_1.*
-   :width: 500 px
-   :align: center
 
 解释一下：
 
@@ -31,6 +27,9 @@ GMT结构化的做图
 
 3. -T表示空输入，什么都不画
 
+.. figure:: /images/GMT_tutor2_1.*
+   :width: 500 px
+   :align: center
 
 psxy模块绘制五角星和三角形
 ---------
@@ -38,7 +37,6 @@ psxy模块绘制五角星和三角形
 
 .. literalinclude:: ../scripts/GMT_tutor2_2.sh
    :language: bash
-   :lines: 2
 
 
 .. figure:: /images/GMT_tutor2_2.*
@@ -63,7 +61,6 @@ psxy模块除了绘制图形，也绘制线条。下面我们用psxy给图画加
 
 .. literalinclude:: ../scripts/GMT_tutor2_3.sh
       :language: bash
-   :lines: 2
 
 
 .. figure:: /images/GMT_tutor2_3.*
@@ -78,7 +75,6 @@ pstext模块添加文字
 
 .. literalinclude:: ../scripts/GMT_tutor2_4.sh
          :language: bash
-   :lines: 2
 
 
 .. figure:: /images/GMT_tutor2_4.*
