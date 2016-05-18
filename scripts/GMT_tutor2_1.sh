@@ -9,8 +9,11 @@ gmt psxy -J$J -R$R -T -K > $PS
 # 底图
 gmt psbasemap -Bg30 -J -R -K -O >> $PS
 # 海岸线
-gmt pscoast -J -R -Glightgreen -Sblue -A1000 -Dc -Bg30 -K -O >> $PS
+gmt pscoast -J -R -Glightgreen -SCADETBLUE1 -A1000 -Dc -Bg30 -K -O >> $PS
 # 文件尾
 gmt psxy -J -R -T -O >> $PS
 # 删除临时文件
 rm gmt.*
+
+
+
