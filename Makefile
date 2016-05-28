@@ -64,7 +64,7 @@ latex: figures
 
 xelatexpdf: figures
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through pdflatex..."
+	@echo "Running LaTeX files through xelatex..."
 	cd $(BUILDDIR)/latex; latexmk -xelatex -shell-escape -interaction=nonstopmode
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
 
