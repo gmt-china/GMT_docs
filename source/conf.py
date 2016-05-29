@@ -37,7 +37,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'edit_on_github',
 ]
-mathjax_path = 'http://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = 'http://www.josephjctang.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 edit_on_github_project = 'gmt-china/GMT_docs'
 edit_on_github_branch = 'master'
 
@@ -56,9 +56,9 @@ source_encoding = 'utf-8-sig'
 master_doc = 'index'
 
 # General information about the project.
-project = 'GMT参考手册'
-copyright = '2014-2016, GMT中文社区'
-author = 'GMT中文社区'
+project = u'GMT参考手册'
+copyright = u'2014-2016, GMT中文社区'
+author = u'GMT中文社区'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -80,7 +80,7 @@ language = 'zh_CN'
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-today_fmt = '%Y年%m月%d日'
+today_fmt = u'%Y年%m月%d日'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -160,7 +160,7 @@ html_extra_path = ['CNAME']
 # If not None, a 'Last updated on:' timestamp is inserted at every page
 # bottom, using the given strftime format.
 # The empty string is equivalent to '%b %d, %Y'.
-html_last_updated_fmt = '%Y年%m月%d日'
+html_last_updated_fmt = u'%Y年%m月%d日'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
