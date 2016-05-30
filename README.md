@@ -1,6 +1,8 @@
 # GMT参考手册
 
+[![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
+[![GMT_Release](https://img.shields.io/badge/GMT%20Release-v5.2.1-blue.svg)](http://gmt.soest.hawaii.edu/)
 [![Release](https://img.shields.io/github/release/gmt-china/GMT_docs.svg)](https://github.com/gmt-china/GMT_docs/releases)
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
