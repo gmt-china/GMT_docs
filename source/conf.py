@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # GMT参考手册 documentation build configuration file, created by
@@ -227,8 +227,8 @@ latex_elements = {
         'preamble'   : r'''
             \usepackage{ctex}
             \parindent 2em
-            \setcounter{tocdepth}{3}     % 目录深度
-            \setcounter{secnumdepth}{3}  % 编号深度
+            \setcounter{tocdepth}{3}
+            \setcounter{secnumdepth}{3}
             \hypersetup{
                 CJKbookmarks = true,
                 colorlinks = true,
@@ -236,8 +236,6 @@ latex_elements = {
                 citecolor = blue,
                 urlcolor = blue,
             }
-            \addto\captionsenglish{\renewcommand\listfigurename{插图目录}}
-            \addto\captionsenglish{\renewcommand\listtablename{表格目录}}
         ''',
 }
 
