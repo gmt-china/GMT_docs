@@ -10,7 +10,7 @@ GMT相关的学习资源列举如下。虽然官方文档都有对应的中文�
 #. `GMT中文模块手册 <http://modules.gmt-china.org>`_
 #. `GMT官方示例 <http://gmt.soest.hawaii.edu/doc/5.2.1/Gallery.html>`_
 #. `GMT中文社区示例 <http://examples.gmt-china.org>`_
-#. `SeisMan博客GMT示例 <http://seisman.info/tags.html#gmt5-ref>`_
+#. `SeisMan博客GMT示例 <https://seisman.info/tags/GMT/>`_
 #. :doc:`GMT开发版源码 <get-gmt-dev>` 中的测试脚本
 #. `GMT中文问答社区 <http://forum.gmt-china.org>`_
 #. GMT学习QQ群：218905582
