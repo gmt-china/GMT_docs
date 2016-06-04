@@ -213,6 +213,9 @@ html_search_language = 'zh'
 # implements a search results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
+# Output file base name for HTML help builder.
+htmlhelp_basename = 'GMT_docs'
+
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -222,7 +225,7 @@ latex_elements = {
         'cmappkg'    : '',
         'fontenc'    : '',
         'releasename': '',
-        'babel'      : r'''\usepackage[english]{babel}''',
+        'babel'      : '',
         'figure_align': 'htp',
         'preamble'   : r'''
             \usepackage{ctex}
@@ -239,11 +242,13 @@ latex_elements = {
         ''',
 }
 
+latex_additional_files = ['gmt-docs.cls']
+
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'GMT_docs.tex', project, author, 'manual'),
+    (master_doc, 'GMT_docs.tex', project, author, 'gmt-docs'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
