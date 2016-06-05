@@ -19,3 +19,4 @@
    animation
    ogr-format
    gmt-c-api
+   chinese-linux
