@@ -263,3 +263,31 @@ Ubuntu 12.04
         sudo apt-get install gs-cjk-resource
 
 2.  其他部分未做测试，估计跟 Ubuntu 15.05 差不多。
+
+可移植性的测试
+--------------
+
+-   本机：用 vi 打开 PS 文件，中文正常显示；
+-   本机：gs 查看正常；
+-   本机：ps2raster 转换为 PDF，用 evince、zathura 查看正常；
+-   本机：ps2pdf 转换为 PDF，用 evince、zathura 查看正常；
+-   复制到 Windows：用 gs 查看正常；
+
+参考资料
+--------
+
+1.  GMT 软件显示汉字的技术原理与实现*，赵桂儒，《测绘通报》*
+2.  [ghostscript 中文打印经验](http://guoyoooping.blog.163.com/blog/static/13570518320101291442176)
+3.  [GMT 中文支持](http://xxqhome.blog.163.com/blog/static/1967330202011112810120598/)
+4.  [GMT chinese support](http://hi.baidu.com/guyueshuiming/item/0052df53852ee4494fff20c3)
+5.  [维基词条：PostScript](https://en.wikipedia.org/wiki/PostScript)
+6.  [Debian Wiki](https://wiki.debian.org/gs-undefoma)
+
+更新历史
+--------
+
+-   2013-05-15：修正了中文测试脚本的一个 bug。
+-   2013-05-16：系统默认未安装 ghostscript 的中文字体包，conf.d 文件夹为空，通过安装相应中文包解决该问题。
+-   2013-08-17：添加了字体以及 ghostscript 可能需要的几个安装包的信息；以及在新增字体后要重建字体缓存。
+-   2014-10-14：重写整个文档，使其更具有普遍性；
+-   2015-08-31：Ubuntu 下需要使用 `update-gsfontmap` 命令来更新中文配置文件；
