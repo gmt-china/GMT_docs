@@ -227,19 +227,9 @@ latex_elements = {
         'releasename': '',
         'babel'      : '',
         'figure_align': 'htp',
-        'preamble'   : r'''
-            \usepackage{ctex}
-            \parindent 2em
-            \setcounter{tocdepth}{3}
-            \setcounter{secnumdepth}{3}
-            \hypersetup{
-                CJKbookmarks = true,
-                colorlinks = true,
-                linkcolor = blue,
-                citecolor = blue,
-                urlcolor = blue,
-            }
-        ''',
+        'fontpkg'    : '',
+        'fncychap'   : '',
+        'preamble'   : '',
 }
 
 latex_additional_files = ['gmt-docs.cls']
