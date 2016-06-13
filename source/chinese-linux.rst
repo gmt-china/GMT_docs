@@ -13,7 +13,7 @@ Linux 下的 GMT 中文支持
 
     $ sudo yum install ghostscript-chinese-zh_CN
 
-安装完成后，中文配置文件的路径为 `/usr/share/ghostscript/conf.d/cidfmap.zh_CN`，以下称为 ghostscript 中文配置文件。
+安装完成后，中文配置文件的路径为 `/usr/share/ghostscript/conf.d/cidfmap.zh_CN` ，以下称为 ghostscript 中文配置文件。
 
 GMT 字体配置文件
 ++++++++++++++++
@@ -35,17 +35,15 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为:
 
 其中的细节可能看不懂，但是可以大概总（xia）结（cai）如下：
 
--   第一行定义了字体名为 `/BousungEG-Light-GB` ，对应的字体文件为   `/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc` ，也就是文泉驿正黑；
--   第二行定义了字体名为 `/GBZenKai-Medium`，对应的字体文件也是文泉驿正黑；
--   第三行和第四行分别定义了字体名 `/MSungGBK-Light` 和 `/Adobe-GB1`，这两种
-    都对应于 `/BousungEG-Light-GB` ，相当于给字体定义了别名。
+- 第一行定义了字体名为 `/BousungEG-Light-GB` ，对应的字体文件为   `/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc` ，也就是文泉驿正黑；
+- 第二行定义了字体名为 `/GBZenKai-Medium` ，对应的字体文件也是文泉驿正黑；
+- 第三行和第四行分别定义了字体名 `/MSungGBK-Light` 和 `/Adobe-GB1` ，这两种都对应于 `/BousungEG-Light-GB` ，相当于给字体定义了别名。
 
 关于配置文件的几点说明：
 
--   字体名是任意的，比如字体名可以取为 `/ABC` ；
--   字体文件似乎只能是 `ttc` 或 `ttf` 格式的，当然修改参数也有可能可以使用其他格式的字体；
--   要注意确认字体文件是否存在，比如 CentOS7 下的 `wqy-zenhei.ttc` 字体实际上位于软件包
-    `wqy-zenhei-fonts` 中。若字体不存在，则需要安装相应软件包。
+- 字体名是任意的，比如字体名可以取为 `/ABC` ；
+- 字体文件似乎只能是 `ttc` 或 `ttf` 格式的，当然修改参数也有可能可以使用其他格式的字体；
+- 要注意确认字体文件是否存在，比如 CentOS7 下的 `wqy-zenhei.ttc` 字体实际上位于软件包 `wqy-zenhei-fonts` 中。若字体不存在，则需要安装相应软件包。
 
 测试 gs 对 Linux 默认字体的支持
 +++++++++++++++++++++++++++++++
@@ -75,7 +73,8 @@ CentOS7 的 ghostscript 中文配置文件中，默认有四行，分别定义�
     %%Trailer
     %%EOF
 
-简单解释一下，PS 文件中要使用某个中文字体，需要用 `FontName--CMap` 的格式来调用。其中 `FontName` 即 gs 中文配置文件中给定的字体名。CMap 可以取 `UniGB-UTF8-H` 和 `GB-EUC-H`， Linux 下一般用前者，Windows 下一般用后者，应该是用于指定汉字或中文字体的编码，具体原理不知。
+简单解释一下，PS 文件中要使用某个中文字体，需要用 `FontName--CMap` 的格式来调用。
+其中 `FontName` 即 gs 中文配置文件中给定的字体名。CMap 可以取 `UniGB-UTF8-H` 和 `GB-EUC-H` ， Linux 下一般用前者，Windows 下一般用后者，应该是用于指定汉字或中文字体的编码，具体原理不知。
 
 用 gs 查看该 PS 文件，正常情况下显示如下图，表明 gs 可以正常显示 Linux 下的默认中文字体。
 
@@ -145,6 +144,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 
 查看 GMT 当前支持的字体
 +++++++++++++++++++++++
+
 用 `pstext -L` 命令查看 GMT 当前的字体配置::
 
     $ pstext -L
@@ -247,14 +247,10 @@ Ubuntu 14.04/15.04
 
         $ sudo update-gsfontmap
 
-    该命令会将 `/etc/ghostscript/cidfmap.d/*.conf` 合并成单独的文件
-    `/var/lib/ghostscript/fonts/cidfmap` 。gs 在需要中文字体时会读取
-    `/var/lib/ghostscript/fonts/cidfmap` 而不是
-    `/etc/ghostscript/cidfmap.d/*.conf`
-    。这是 Ubuntu/Debian 和 CentOS 的一个很大不同。
+    该命令会将 `/etc/ghostscript/cidfmap.d/*.conf` 合并成单独的文件 `/var/lib/ghostscript/fonts/cidfmap` 。gs 在需要中文字体时会读取 `/var/lib/ghostscript/fonts/cidfmap` 而不是 `/etc/ghostscript/cidfmap.d/*.conf` 。这是 Ubuntu/Debian 和 CentOS 的一个很大不同。
 
 Ubuntu 12.04
-++++++++++++++++++++++
+++++++++++++
 
 1.  gs 中文配置文件需要用如下命令安装:
 
