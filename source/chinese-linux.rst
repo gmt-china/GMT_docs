@@ -78,6 +78,10 @@ CentOS7 的 ghostscript 中文配置文件中，默认有四行，分别定义�
 
 用 gs 查看该 PS 文件，正常情况下显示如下图，表明 gs 可以正常显示 Linux 下的默认中文字体。
 
+.. figure:: /images/GMT_tutor_chinese_linux_gs_linux.png
+   :width: 400px
+   :align: center
+
 添加 Windows 中文字体
 +++++++++++++++++++++
 
@@ -125,7 +129,9 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 
 用 gs 查看该 PS 文件，若正确显示中文如下图，则表明 gs 已支持 Windows 字体。
 
-
+.. figure:: /images/GMT_tutor_chinese_linux_gs_windows.png
+   :width: 500px
+   :align: center
 
 使 GMT 支持中文
 ---------------
@@ -184,7 +190,10 @@ rm gmt.*
 
 成图效果如下
 
-
+.. figure:: /images/GMT_tutor_chinese_linux_gmt5.png
+   :width: 400px
+   :align: center
+   
 对其他发行版的若干说明
 ----------------------
 
