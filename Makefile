@@ -47,7 +47,7 @@ linkcheck:
 github: html
 	@echo "Push build/html to github/gh-pages"
 	ghp-import -b gh-pages -n build/html -m "Update at `date +'%Y-%m-%d %H:%M:%S'`"
-	git push github gh-pages:gh-pages
+	git push origin gh-pages:gh-pages
 
 ## Builers
 html: figures
