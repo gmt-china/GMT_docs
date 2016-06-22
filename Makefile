@@ -29,7 +29,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  figures    to update all figures"
 	@echo "  latex      to make LaTeX files"
-	@echo "  github     to push the generated html to github  "
+	@echo "  deploy     to deploy html, zip and PDF to github"
 
 clean:
 	rm -rf $(BUILDDIR)/*
@@ -44,10 +44,17 @@ linkcheck:
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
-github: html
-	@echo "Push build/html to github/gh-pages"
+deploy: html xelatexpdf
+	@echo "Deploy HTML, ZIP and PDF"
 	ghp-import -b gh-pages -n build/html -m "Update at `date +'%Y-%m-%d %H:%M:%S'`"
-	git push origin gh-pages:gh-pages
+	git push origin gh-pages:gh-pages --force
+
+	mkdir -p build/doc-dev && cd build && \
+	cp -r html GMT_docs-dev && zip -r doc-dev/GMT_docs-dev.zip GMT_docs-dev && \
+	cp latex/GMT_docs.pdf doc-dev/GMT_docs.pdf  && \
+	ghp-import -b doc-dev doc-dev -m 'Update by travis automatically' && \
+	git push origin doc-dev:doc-dev --force
+
 
 ## Builers
 html: figures
