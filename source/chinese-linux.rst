@@ -272,5 +272,5 @@ Ubuntu 12.04
 1. GMT 软件显示汉字的技术原理与实现，赵桂儒，《测绘通报》
 2. `ghostscript 中文打印经验 <http://guoyoooping.blog.163.com/blog/static/13570518320101291442176>`_
 3. `GMT 中文支持 <http://xxqhome.blog.163.com/blog/static/1967330202011112810120598/>`_
-5. `维基词条：PostScript <https://en.wikipedia.org/wiki/PostScript>`_
-6. `Debian Wiki <https://wiki.debian.org/gs-undefoma>`_
+4. `维基词条：PostScript <https://en.wikipedia.org/wiki/PostScript>`_
+5. `Debian Wiki <https://wiki.debian.org/gs-undefoma>`_
