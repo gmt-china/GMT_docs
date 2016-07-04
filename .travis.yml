@@ -10,17 +10,17 @@ install:
     # python
     - pip install -r requirements.txt
     # TeXLive
-    - curl -sSL https://raw.githubusercontent.com/ustctug/mini-texlive/master/install-tl.sh -o install-tl.sh
-    - sed -i 's!http://mirrors.ustc.edu.cn/CTAN!http://ctan.sharelatex.com/tex-archive!' install-tl.sh
-    - sudo bash install-tl.sh
-    - source ~/.bash_profile
-    - export TLMGR=`which tlmgr`
-    - sudo $TLMGR update --self --all -repository http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/
+    # - curl -sSL https://raw.githubusercontent.com/ustctug/mini-texlive/master/install-tl.sh -o install-tl.sh
+    # - sed -i 's!http://mirrors.ustc.edu.cn/CTAN!http://ctan.sharelatex.com/tex-archive!' install-tl.sh
+    # - sudo bash install-tl.sh
+    # - source ~/.bash_profile
+    # - export TLMGR=`which tlmgr`
+    # - sudo $TLMGR update --self --all -repository http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/
 
 script:
     - make linkcheck
     - make html
-    - make xelatexpdf
+    # - make xelatexpdf
 
 after_success:
     bash ./.travis-deploy.sh
