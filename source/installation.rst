@@ -36,13 +36,13 @@ GMT主要依赖于 cmake(>=2.8.5)、fftw(>=3.3)、glib2(>=2.32)、netCDF、ghost
 下载
 ~~~~
 
-Linux安装GMT需要下载三个文件：
+Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
-#. GMT源码： ftp://ftp.soest.hawaii.edu/gmt/gmt-5.2.1-src.tar.gz
-#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.5.tar.gz
-#. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/gmt/dcw-gmt-1.1.2.tar.gz
+#. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.2.1-src.tar.gz
+#. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.5.tar.gz
+#. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.2.tar.gz
 
-也可以到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载对应的文件，下载速度要快不少。
+也可以到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载对应的文件。
 
 安装GMT
 ~~~~~~~
@@ -182,7 +182,7 @@ Mac OS下GMT的安装方法有很多，可以直接使用安装包，也可以�
 
 1. 直接使用GMT提供的安装包
 
-   到官方网站下载 `安装包 <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-5.2.1-darwin-x84_64.dmg>`_ ，也可以到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 更快地下载安装包。
+   到国内镜像网站下载 `安装包 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-5.2.1-darwin-x84_64.dmg>`_ ，也可以到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载安装包。
 
    安装完成后，在桌面会出现GMT的图标。点击该图标会启动一个终端，在终端内执行::
 
