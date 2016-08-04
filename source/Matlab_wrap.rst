@@ -2,21 +2,21 @@
 GMT的Matlab接口
 ===============
 
-1\. 简介
---------
+1. 简介
+-------
 
 GMT的Matlab接口，顾名思义，提供了在Matlab中调用GMT命令的功能。通过该接口，GMT的所有模块命令都可以在Matlab脚本中嵌入执行。GMT命令生成的结果（grid格网数据、table表格数据、CPT颜色表、文本文件、图片等）都可以作为Matlab变量进行运算；Matlab中的矩阵变量也可以直接作为GMT的输入，执行GMT的命令。
 
-2\. 安装
---------
+2. 安装
+----
 
-2.1 Windows平台
----------------
+Windows平台
+------------
 
-GMT5.2用户在GMT执行路径（默认为C:\programs\gmt5\bin）下，已经存在**“gmt.m”**和**“gmtmex.mexw64”**两个文件，只要确保：
+GMT5.2用户在GMT执行路径（默认为C:\programs\gmt5\bin）下，已经存在“gmt.m”和“gmtmex.mexw64”两个文件，只要确保：
 
-  - GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
-  - GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
+- GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
+- GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
 
 .. figure:: /images/Matlab_path.jpg
    :width: 500 px
@@ -24,8 +24,8 @@ GMT5.2用户在GMT执行路径（默认为C:\programs\gmt5\bin）下，已经存
 
 就可以使用这个接口了。如果试图自行编译接口，请参考下一篇。
 
-2.2 OS X 平台
--------------
+OS X 平台
+---------
 在已发布的OS X平台下的GMT源代码中包含MATLAB的可编译接口。但是，由于MATLAB对共享库的操作是一个复杂的过程，
 当要与MathWorks协同工作时，可以采用以下步骤编译出独立的基于GMT的MATLAB接口：
 
@@ -40,28 +40,28 @@ GMT5.2用户在GMT执行路径（默认为C:\programs\gmt5\bin）下，已经存
 
 经测试，该项目在2016b和2015a，b的MATLAB版本中可使用，对于更老版本的MATLAB，还未进行测试。
 
-2.3 Unix/Linux平台
-------------------
+Unix/Linux平台
+--------------
 
 正在努力开发中，还望有志之士加入...
 
-3\. 使用方法
-------------
+3. 使用方法
+-----------
 
 GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或IDE中使用。形式是:
 
-    返回参数 = gmt('<module> <module-options>', 输入参数)
+``返回参数 = gmt('<module> <module-options>', 输入参数)``
 
 其中**输入数据**可以为Matlab的矩阵、结构体或数组；**返回变量**可直接在Matlab中参与后续的计算。调用GMT完毕后，清空缓存：
 
-    gmt('destroy')
+``gmt('destroy')``
 
-3.1 入门级示例
---------------
+入门级示例
+----------
 
 在matlab环境中调用pscoast绘制地图：
 
-    gmt('pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps')
+``gmt('pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps')``
 
 绘图效果如下：
 
@@ -71,11 +71,11 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 上例中，并不存在输入数据，也就是不存在与Matlab变量的交互，生成的ps文件在Matlab当前路径下。
 
-3.2 进阶级示例
---------------
+进阶级示例
+----------
 
 在Matlab环境中，绘制文字：
-
+:: 
     %创建字符串数组 
     lines = {'5 6 Some label', '6 7 Another label'}; 
     % 绘制 
@@ -92,11 +92,11 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 以上为单个输入参数，若需要多个输入参数，如何确定参数的先后顺序？
 
-3.3 高手级示例
----------------
+高手级示例
+----------
 
 对一个矩阵数组进行格网化并绘图：
-
+:: 
     % 创建一个100*3矩阵，xyz值均为0~150之间的随机数
     t= rand(100,3)*150 
     % 利用GMT的surface命令对t进行格网化，输出为结构体G，数组结构见附1 
@@ -107,21 +107,19 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     gmt('grdimage -JX8c -Ba -P -C -G > crap_img.ps', cpt, G);
     gmt('destroy');
 
-
 绘图效果如下：
 
 .. figure:: /images/Matlab_ex3.jpg
    :width: 500 px
    :align: center
 
-
 上例中，grdimage命令需要两个输入参数：颜色表cpt和格网数据G，两者先后顺序不可交换。cpt(选项-C的参数)要先于G(grdimage的强制性参数)。若有多个选项参数，则选项的顺序决定参数的先后顺序，强制性输入参数要写在最后。
 
-3.3 大神级示例
---------------
+大神级示例
+----------
 
 另一个多参数的例子：
-  
+::   
     x = linspace(-pi, pi)';            % 创建x值
     seno = sin(x);                     % 创建y值
     xyz  = [x seno seno];              % 创建xyz三列数据，其中y=z
@@ -136,17 +134,17 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
    :width: 500 px
    :align: center
 
-4\. 常见问题
--------------
+常见问题
+--------
 
 - 使用完GMT接口后要记得destroy，不然有可能出现不可预知错误。
 - gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。
 
-5\.附录
--------
+附录
+----
 
-#.grd结构体说明:
-
+**grd结构体说明:**
+:: 
     ProjectionRefPROJ4     % Proj4投影 (Optional)
     ProjectionRefWKT       % WKT投影 (Optional)
     range                  % 1x6 向量表示数值范围： [x_min x_max y_min y_max z_min z_max]
@@ -165,5 +163,3 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     z                      % [n行x n列]格网点值
     x_units                % x轴单位 (Optional)
     y_units                % y轴单位 (Optional)
-    z_units                % z轴单位 (Optional)
-
