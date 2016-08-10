@@ -2,16 +2,16 @@
 GMT的Matlab接口
 ===============
 
-1. 简介
+#. 简介
 ---------
 
 GMT的Matlab接口，顾名思义，提供了在Matlab中调用GMT命令的功能。通过该接口，GMT的所有模块命令都可以在Matlab脚本中嵌入执行。GMT命令生成的结果（grid格网数据、table表格数据、CPT颜色表、文本文件、图片等）都可以作为Matlab变量进行运算；Matlab中的矩阵变量也可以直接作为GMT的输入，执行GMT的命令。
 
-2. 安装
+#. 安装
 --------
 
-2.1 Windows平台
-----------------
+Windows平台
+````````````
 
 GMT5.2用户在GMT执行路径（默认为C:\programs\gmt5\bin）下，已经存在“gmt.m”和“gmtmex.mexw64”两个文件，只要确保：
 
