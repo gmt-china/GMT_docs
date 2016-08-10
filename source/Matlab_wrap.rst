@@ -38,7 +38,7 @@ OS X 平台
 #. 设置MTATLAB路径;
 #. 确保 ``gmt.conf`` 文件中包含选项： ``GMT\_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so`` 。
 
-经测试，该项目在2016b和2015a，b的MATLAB版本中可使用，对于更老版本的MATLAB，还未进行测试。
+经测试，该项目在2015a，b的MATLAB版本中可使用，对于更老版本的MATLAB，还未进行测试。
 
 Unix/Linux平台
 ++++++++++++++
@@ -65,7 +65,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 绘图效果如下：
 
-.. figure:: /images/Matlab_ex1.jpg
+.. figure:: /images/Matlab_ex1.*
    :width: 500 px
    :align: center
 
@@ -84,7 +84,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 绘图效果如下：
 
-.. figure:: /images/Matlab_ex2.png
+.. figure:: /images/Matlab_ex2.*
    :width: 500 px
    :align: center
 
@@ -109,7 +109,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 绘图效果如下：
 
-.. figure:: /images/Matlab_ex3.jpg
+.. figure:: /images/Matlab_ex3.*
    :width: 500 px
    :align: center
 
@@ -130,7 +130,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 绘图效果如下：
 
-.. figure:: /images/Matlab_ex4.jpg
+.. figure:: /images/Matlab_ex4.*
    :width: 500 px
    :align: center
 
