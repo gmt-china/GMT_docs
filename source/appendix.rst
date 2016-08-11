@@ -21,3 +21,4 @@
    gmt-c-api
    chinese-linux
    chinese-windows
+   matlab-wrapper

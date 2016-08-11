@@ -1,4 +1,3 @@
-
 GMT的Matlab接口
 ===============
 
@@ -13,7 +12,7 @@ GMT的Matlab接口，顾名思义，提供了在Matlab中调用GMT命令的功�
 Windows平台
 +++++++++++
 
-GMT5.2用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下，已经存在 ``gmt.m`` 和 ``gmtmex.mexw64`` 两个文件，只要确保：
+GMT5.2用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经存在 ``gmt.m`` 和 ``gmtmex.mexw64`` 两个文件，只要确保如下两点即可在Windows下使用该接口了。
 
 - GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
 - GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
@@ -22,21 +21,29 @@ GMT5.2用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下，已
    :width: 500 px
    :align: center
 
-就可以使用这个接口了。
+   Matlab PATH 设置
 
 OS X 平台
 +++++++++
-在已发布的OS X平台下的GMT源代码中包含MATLAB的可编译接口。但是，由于MATLAB对共享库的操作是一个复杂的过程，
-当要与MathWorks协同工作时，可以采用以下步骤编译出独立的基于GMT的MATLAB接口：
 
-#. 安装最新版本OS X平台下的GMT；
+在OS X上按照如下流程可以成功编译GMT的Matlab接口。但由于Matlab处理动态链接库的方式很特别，因而编译接口的流程也很复杂。GMT开发者正试图与MathWorks合作以简化安装流程。
+
+#. 安装OS X平台下最新版本的GMT；
 #. 运行安装目录下 ``share/tools`` 下的 ``gmt_prepmex.sh`` 文件。此操作会复制GMT的已安装文件到 ``/opt/gmt`` 目录下，并且会重新检查所有的共享库；
 #. 使用 ``gmtswitch`` 切换当前使用的GMT版本，确保 ``/opt/gmt`` 下的GMT为当前激活版本；
-#. 使用svn检出 ``gmt-mex`` 项目文件到本地，示例： ``svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex`` ；
-#. 进入 ``get-mex`` 目录，在 ``trunk`` 文件夹下（ ``cd trunk`` ），执行 ``autoconf`` 生成配置文件，然后执行 ``./configure -enable-matlab`` ；
-#. 执行 ``make`` 编译整个项目；
-#. 设置MTATLAB路径;
-#. 确保 ``gmt.conf`` 文件中包含选项： ``GMT\_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so`` 。
+#. 使用svn获取 ``gmt-mex`` 项目文件到本地::
+
+    svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex
+
+#. 进入 ``get-mex`` 目录并编译生成 ``gmtmex.mexmaci64`` ::
+
+    cd gmt-mex/trunk/
+    autoconf
+    ./configure --enable-matlab
+    make
+
+#. 将 ``gmt.m`` 和 ``gmtmex.mexmaci64`` 所在目录添加到MTATLAB路径中
+#. 确保 ``gmt.conf`` 文件中包含选项： ``GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so``
 
 经测试，该项目在2015a，b的MATLAB版本中可使用，对于更老版本的MATLAB，还未进行测试。
 
@@ -48,13 +55,13 @@ Unix/Linux平台
 使用方法
 --------
 
-GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或IDE中使用。形式是:
+GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或IDE中使用。形式是::
 
-``返回参数 = gmt('<module> <module-options>', 输入参数)``
+    返回参数 = gmt('<module> <module-options>', 输入数据)
 
-其中**输入数据**可以为Matlab的矩阵、结构体或数组；**返回变量**可直接在Matlab中参与后续的计算。调用GMT完毕后，清空缓存：
+其中 **输入数据** 可以为Matlab的矩阵、结构体或数组等； **返回参数** 可直接在Matlab中参与后续的计算。调用GMT完毕后，清空缓存::
 
-``gmt('destroy')``
+    gmt('destroy')
 
 入门级示例
 ++++++++++
@@ -74,12 +81,12 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 进阶级示例
 ++++++++++
 
-在Matlab环境中，绘制文字：
-:: 
-    %创建字符串数组 
-    lines = {'5 6 Some label', '6 7 Another label'}; 
-    % 绘制 
-    gmt('pstext -R0/10/0/10 -JM6i -Bafg -F+f18p -P > text.ps ', lines); 
+在Matlab环境中，绘制文字::
+
+    %创建字符串数组
+    lines = {'5 6 Some label', '6 7 Another label'};
+    % 绘制
+    gmt('pstext -R0/10/0/10 -JM6i -Bafg -F+f18p -P > text.ps ', lines);
     gmt('destroy');
 
 绘图效果如下：
@@ -96,14 +103,16 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 ++++++++++
 
 对一个矩阵数组进行格网化并绘图：
-:: 
+
+.. code-block:: matlab
+
     % 创建一个100*3矩阵，xyz值均为0~150之间的随机数
-    t= rand(100,3)*150 
-    % 利用GMT的surface命令对t进行格网化，输出为结构体G，数组结构见附1 
-    G = gmt('surface -R0/150/0/150 -I1', t ); 
-    % 利用Grd2cpt创建颜色表文件，输出为颜色表结构体cpt，结构体构成见附2
+    t= rand(100,3)*150
+    % 利用GMT的surface命令对t进行格网化，输出为结构体G，数组结构见附录
+    G = gmt('surface -R0/150/0/150 -I1', t );
+    % 利用grd2cpt创建颜色表文件，输出为颜色表结构体cpt
     cpt = gmt('grd2cpt -Cjet', G);
-    % 利用Grdimage绘制格网话结果
+    % 利用grdimage绘制格网化结果
     gmt('grdimage -JX8c -Ba -P -C -G > crap_img.ps', cpt, G);
     gmt('destroy');
 
@@ -113,13 +122,15 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
    :width: 500 px
    :align: center
 
-上例中， ``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G`` ，两者先后顺序不可交换。 ``cpt`` (选项 ``-C`` 的参数)要先于 ``G`` ( ``grdimage`` 的强制性参数)。若有多个选项参数，则选项的顺序决定参数的先后顺序，强制性输入参数要写在最后。
+上例中， ``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G`` ，两者先后顺序不可交换。 ``cpt`` （选项 ``-C`` 的参数）要先于 ``G`` （ ``grdimage`` 的强制性参数）。若有多个选项参数，则选项的顺序决定参数的先后顺序，强制性输入参数要写在最后。
 
 大神级示例
 ++++++++++
 
 另一个多参数的例子：
-::   
+
+.. code-block:: matlab
+
     x = linspace(-pi, pi)';            % 创建x值
     seno = sin(x);                     % 创建y值
     xyz  = [x seno seno];              % 创建xyz三列数据，其中y=z
@@ -137,14 +148,16 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 常见问题
 --------
 
-- 使用完GMT接口后要记得 ``destroy`` ，不然有可能出现不可预知错误。
+- 使用完GMT接口后要记得 ``gmt('destroy')`` ，不然有可能出现不可预知错误。
 - gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。
 
 附录
 ----
 
-**grd结构体说明:**
-:: 
+**网格数据结构体说明:**
+
+::
+
     ProjectionRefPROJ4     % Proj4投影 (Optional)
     ProjectionRefWKT       % WKT投影 (Optional)
     range                  % 1x6 向量表示数值范围： [x_min x_max y_min y_max z_min z_max]
