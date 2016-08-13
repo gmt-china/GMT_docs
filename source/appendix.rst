@@ -22,3 +22,4 @@
    chinese-linux
    chinese-windows
    matlab-wrapper
+   julia-wrapper
