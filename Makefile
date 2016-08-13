@@ -6,6 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
+DOCNAME       = GMT_docs
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -51,8 +52,8 @@ deploy: html xelatexpdf
 	git push origin gh-pages:gh-pages --force
 
 	mkdir -p build/doc-dev && cd build && \
-	cp -r html GMT_docs-dev && zip -r doc-dev/GMT_docs-dev.zip GMT_docs-dev && \
-	cp latex/GMT_docs.pdf doc-dev/GMT_docs.pdf  && \
+	cp -r html $(DOCNAME)-dev && zip -r doc-dev/$(DOCNAME)-dev.zip $(DOCNAME)-dev && \
+	cp latex/$(DOCNAME).pdf doc-dev/$(DOCNAME)-dev.pdf  && \
 	ghp-import -b doc-dev doc-dev -m 'Update by travis automatically' && \
 	git push origin doc-dev:doc-dev --force
 
@@ -83,6 +84,6 @@ dummy:
 
 
 release: html xelatexpdf
-	cd $(BUILDDIR) && mv html GMT_docs && zip -r ../GMT_docs.zip GMT_docs/
-	mv $(BUILDDIR)/latex/GMT_docs.pdf .
+	cd $(BUILDDIR) && mv html $(DOCNAME) && zip -r ../$(DOCNAME).zip $(DOCNAME)/
+	mv $(BUILDDIR)/latex/$(DOCNAME).pdf .
 	rm -rf $(BUILDDIR)/*
