@@ -17,7 +17,7 @@ GMT5.2用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经
 - GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
 - GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
 
-.. figure:: /images/Matlab_path.*
+.. figure:: /images/Matlab_path.png
    :width: 500 px
    :align: center
 
@@ -70,12 +70,6 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 ``gmt('pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps')``
 
-绘图效果如下：
-
-.. figure:: /images/Matlab_ex1.*
-   :width: 500 px
-   :align: center
-
 上例中，并不存在输入数据，也就是不存在与Matlab变量的交互，生成的ps文件在Matlab当前路径下。
 
 进阶级示例
@@ -88,12 +82,6 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     % 绘制
     gmt('pstext -R0/10/0/10 -JM6i -Bafg -F+f18p -P > text.ps ', lines);
     gmt('destroy');
-
-绘图效果如下：
-
-.. figure:: /images/Matlab_ex2.*
-   :width: 500 px
-   :align: center
 
 上例中，字符串数组 ``lines`` 可以直接作为 ``pstext`` 的输入参数。
 
@@ -116,12 +104,6 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     gmt('grdimage -JX8c -Ba -P -C -G > crap_img.ps', cpt, G);
     gmt('destroy');
 
-绘图效果如下：
-
-.. figure:: /images/Matlab_ex3.*
-   :width: 500 px
-   :align: center
-
 上例中， ``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G`` ，两者先后顺序不可交换。 ``cpt`` （选项 ``-C`` 的参数）要先于 ``G`` （ ``grdimage`` 的强制性参数）。若有多个选项参数，则选项的顺序决定参数的先后顺序，强制性输入参数要写在最后。
 
 大神级示例
@@ -138,12 +120,6 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     %绘制函数曲线，以z值赋颜色。cpt和xyz先后顺序不可交换。
     gmt('psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps', cpt, xyz);
     gmt('destroy');
-
-绘图效果如下：
-
-.. figure:: /images/Matlab_ex4.*
-   :width: 500 px
-   :align: center
 
 常见问题
 --------
