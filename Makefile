@@ -29,6 +29,7 @@ help:
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  figures    to update all figures"
 	@echo "  latex      to make LaTeX files"
+	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  deploy     to deploy html, zip and PDF to github"
 
 clean:
@@ -74,6 +75,12 @@ xelatexpdf: figures
 	@echo "Running LaTeX files through xelatex..."
 	cd $(BUILDDIR)/latex; latexmk -xelatex -shell-escape -interaction=nonstopmode
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
+
+dummy:
+	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
+	@echo
+	@echo "Build finished. Dummy builder generates no files."
+
 
 release: html xelatexpdf
 	cd $(BUILDDIR) && mv html GMT_docs && zip -r ../GMT_docs.zip GMT_docs/
