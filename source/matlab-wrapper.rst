@@ -66,9 +66,9 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 入门级示例
 ++++++++++
 
-在matlab环境中调用 ``pscoast`` 绘制地图：
+在matlab环境中调用 ``pscoast`` 绘制地图::
 
-``gmt('pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps')``
+    gmt('pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps')
 
 上例中，并不存在输入数据，也就是不存在与Matlab变量的交互，生成的ps文件在Matlab当前路径下。
 
