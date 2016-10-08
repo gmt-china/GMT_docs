@@ -32,7 +32,6 @@ GMT参考手册
 - :doc:`configurations`\ ：介绍GMT中的配置参数
 - :doc:`projections`\ ：介绍GMT中的几十种投影方式
 - :doc:`appendix`\ ：与GMT相关但很少用到的一些知识
-- :doc:`FAQs`\ ：常见问题及解决方案
 - :ref:`索引 <genindex>`\ ：关键词索引，方便通过关键字查找
 
 **除了本手册之外，还可以阅读GMT中文社区的其他资源：**
@@ -54,4 +53,3 @@ GMT参考手册
    configurations
    projections
    appendix
-   FAQs
