@@ -20,20 +20,16 @@
 
 ## 版本说明
 
-本手册目前与 GMT 5.3.1 同步。手册有正式发布(release)版和维护开发(dev)版。
+### 最新版本
 
-### release版
+本手册目前与 GMT 5.3.1 同步。
 
-本项目会针对每个GMT版本，发布与之对应的release版文档，版本号与GMT版本相同。release版包括HTML和PDF格式的文档，供用户离线阅读。
+- 在线阅读： http://docs.gmt-china.org
+- 离线阅读： [HTML](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.zip) [PDF](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.pdf)
 
-正式发布版可以从社区主页的 [下载页面](http://gmt-china.org/download/) 或项目主页的 [Release页面](https://github.com/gmt-china/GMT_Docs/releases) 中获取。
+### 历史版本
 
-### dev版
-
-文档发布release版之后，即进入日常维护模式，即dev版。dev版的版本号格式为 `当前GMT版本号-dev` 。
-
-- dev版在线阅读： http://docs.gmt-china.org
-- dev版离线阅读： [HTML](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.zip) [PDF](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.pdf)
+- GMT 5.2.1：[HTML](https://github.com/gmt-china/GMT_docs/releases/download/v5.2.1/GMT_docs-v5.2.1-HTML.zip) [PDF](https://github.com/gmt-china/GMT_docs/releases/download/v5.2.1/GMT_docs-v5.2.1.pdf)
 
 ## 文档维护
 
@@ -41,7 +37,7 @@
 
 1. 错字、语句不通
 2. 语法错误导致的显示问题
-3. 翻译尚未完成的部分，见[Issue列表](https://github.com/gmt-china/GMT_docs/issues)
+3. 翻译尚未完成的部分，见 [Issue列表](https://github.com/gmt-china/GMT_docs/issues)
 4. 优化文档结构，使得文档条理更清晰
 5. 增加索引，辅助查找
 6. 随着GMT版本的更新而不断更新文档内容
@@ -49,9 +45,9 @@
 文档的维护可以通过如下几个方式：
 
 1. 在文档页面的底部评论区留言
-2. 发送相关建议或投稿至 admin@gmt-china.org
-3. 在项目主页提交Issue
-4. 修改文档源码并提交Pull Request
+2. 发送相关建议或投稿至 `admin@gmt-china.org`
+3. 在项目主页提交 Issue
+4. 修改文档源码并提交 Pull Request
 
 关于维护的具体细节，见项目[Wiki](https://github.com/gmt-china/GMT_Docs/wiki)
 
