@@ -4,10 +4,9 @@
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
 [![GMT_Release](https://img.shields.io/badge/GMT%20Release-v5.3.1-blue.svg)](http://gmt.soest.hawaii.edu/)
 [![Release](https://img.shields.io/github/release/gmt-china/GMT_docs.svg)](https://github.com/gmt-china/GMT_docs/releases)
-[![GitHub commits](https://img.shields.io/github/commits-since/gmt-china/GMT_docs/v5.3.1.svg)]()
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
-欢迎来到 GMT(Generic Mapping Tools) 的世界。
+欢迎来到 GMT（Generic Mapping Tools）的世界。
 
 本项目是由GMT中文社区维护的GMT中文参考手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
 
@@ -21,7 +20,7 @@
 
 ## 版本说明
 
-本手册目前与GMT 5.3.1 同步。手册有正式发布(release)版和维护开发(dev)版。
+本手册目前与 GMT 5.3.1 同步。手册有正式发布(release)版和维护开发(dev)版。
 
 ### release版
 
