@@ -13,25 +13,32 @@ Linux
 解决依赖关系
 ~~~~~~~~~~~~
 
-GMT主要依赖于 cmake(>=2.8.5)、fftw(>=3.3)、glib2(>=2.32)、netCDF、ghostscript等。
+GMT主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
 
 对于Ubuntu/Debian::
 
-    sudo apt-get update
-    sudo apt-get install gcc g++ cmake make libc6
-    sudo apt-get install ghostscript libnetcdf-dev
-    sudo apt-get install libgdal-dev python-gdal
-    sudo apt-get install liblapack3 libglib2.0-dev
-    sudo apt-get install libpcre3-dev libfftw3-dev
+    # 更新
+    $ sudo apt-get update
+    # 必须安装的包
+    $ sudo apt-get install gcc g++ cmake make libc6 ghostscript libnetcdf-dev
+    # 可选包
+    $ sudo apt-get install libgdal-dev python-gdal liblapack3 libglib2.0-dev
+    $ sudo apt-get install libpcre3-dev libfftw3-dev
 
 对于CentOS/RHEL/Fedora::
 
-    sudo yum install gcc gcc-c++ cmake make glibc
-    sudo yum install ghostscript netcdf-devel
-    sudo yum install glib2-devel
-    sudo yum install gdal-devel gdal-python
-    sudo yum install lapack64-devel lapack-devel
-    sudo yum install pcre-devel fftw-devel
+    # 必须安装的包
+    $ sudo yum install gcc gcc-c++ cmake make glibc ghostscript netcdf-devel
+    # 可选包
+    $ sudo yum install glib2-devel gdal-devel gdal-python lapack64-devel lapack-devel
+    $ sudo yum install pcre-devel fftw-devel
+
+确认 netCDF 支持 netCDF-4/HDF5 格式::
+
+    $ nc-config --has-nc4
+    yes
+
+若输出为 ``yes`` 则可正常安装 GMT，否则无法正常安装。
 
 下载
 ~~~~

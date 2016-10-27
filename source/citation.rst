@@ -27,40 +27,39 @@ GMT发表在EOS上的文献：
 
 GMT的某些模块基于GMT团队发展并发表的算法。算法相关文章包括：
 
-- Kim, S.-S., and P. Wessel,
-  Directional median filtering for regional-residual separation of bathymetry,
-  *Geochem. Geophys. Geosyst.*, 9, Q03005, 2008.
-  `doi:10.1029/2007GC001850 <http://dx.doi.org/10.1029/2007GC001850>`_.
-  [``dimfilter``]
+**dimfilter**
+    Kim, S.-S., and P. Wessel,
+    Directional median filtering for regional-residual separation of bathymetry,
+    *Geochem. Geophys. Geosyst.*, 9, Q03005, 2008.
+    `doi:10.1029/2007GC001850 <http://dx.doi.org/10.1029/2007GC001850>`_.
 
-- Luis, J. F. and J. M. Miranda, i
-  Reevaluation of magnetic chrons in the North Atlantic between 35ºN and 47ºN:
-  Implications for the formation of the  Azores Triple Junction and associated plateau,
-  *J. Geophys. Res.*, 113, B10105, 2008.
-  `doi:10.1029/2007JB005573 <http://dx.doi.org/10.1029/2007JB005573>`_.
-  [``grdredpol``]
+**grdredpol**
+    Luis, J. F. and J. M. Miranda,
+    Reevaluation of magnetic chrons in the North Atlantic between 35ºN and 47ºN:
+    Implications for the formation of the  Azores Triple Junction and associated plateau,
+    *J. Geophys. Res.*, 113, B10105, 2008.
+    `doi:10.1029/2007JB005573 <http://dx.doi.org/10.1029/2007JB005573>`_.
 
-- Smith, W. H. F., and P. Wessel,
-  Gridding with continuous curvature splines in tension,
-  *Geophysics*, 55(3), 293--305, 1990.
-  `doi:10.1190/1.1442837 <http://dx.doi.org/10.1190/1.1442837>`_.
-  [``surface``]
+**surface**
+    Smith, W. H. F., and P. Wessel,
+    Gridding with continuous curvature splines in tension,
+    *Geophysics*, 55(3), 293--305, 1990.
+    `doi:10.1190/1.1442837 <http://dx.doi.org/10.1190/1.1442837>`_.
 
-- Wessel, P.,
-  Tools for analyzing intersecting tracks: The x2sys package,
-  *Computers & Geosciences*, 36, 348--354, 2010.
-  `doi:10.1016/j.cageo.2009.05.009 <http://dx.doi.org/10.1016/j.cageo.2009.05.009>`_.
-  [``x2sys``]
+**x2sys**
+    Wessel, P.,
+    Tools for analyzing intersecting tracks: The x2sys package,
+    *Computers & Geosciences*, 36, 348--354, 2010.
+    `doi:10.1016/j.cageo.2009.05.009 <http://dx.doi.org/10.1016/j.cageo.2009.05.009>`_.
 
-- Wessel, P.,
-  A General-purpose Green's function-based interpolator,
-  *Computers & Geosciences*, 35, 1247--1254, 2009.
-  `doi:10.1016/j.cageo.2008.08.012 <http://dx.doi.org/10.1016/j.cageo.2008.08.012>`_.
-  [``greenspline``]
+**greenspline**
+    Wessel, P.,
+    A General-purpose Green's function-based interpolator,
+    *Computers & Geosciences*, 35, 1247--1254, 2009.
+    `doi:10.1016/j.cageo.2008.08.012 <http://dx.doi.org/10.1016/j.cageo.2008.08.012>`_.
 
-- Wessel, P. and J. M. Becker,
-  Interpolation using a generalized Green's function for a spherical surface
-  spline in tension,
-  *Geophys. J. Int.*, 174, 21--28, 2008.
-  `doi:10.1111/j.1365-246X.2008.03829.x <http://dx.doi.org/10.1111/j.1365-246X.2008.03829.x>`_.
-  [``greenspline``]
+    Wessel, P. and J. M. Becker,
+    Interpolation using a generalized Green's function for a spherical surface
+    spline in tension,
+    *Geophys. J. Int.*, 174, 21--28, 2008.
+    `doi:10.1111/j.1365-246X.2008.03829.x <http://dx.doi.org/10.1111/j.1365-246X.2008.03829.x>`_.
