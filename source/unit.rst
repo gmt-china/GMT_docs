@@ -1,6 +1,3 @@
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#gmt-units
-
-
 单位
 ====
 
@@ -74,3 +71,5 @@ Flat Earth距离
 .. seealso::
 
    关于三种距离计算方式的详细介绍，见附录 :doc:`calculate-distance` 。
+
+.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#gmt-units

@@ -1,5 +1,3 @@
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#distance-calculations
-
 三种距离计算方式
 ================
 
@@ -57,3 +55,5 @@ Flat Earth距离
 GMT 在计算距离时有三种算法：FLAT Earth距离、大圆路径距离和测地距离。三种方法的计算精度由低到高，计算速度由高到低。
 
 对于一个距离量，比如 ``40k`` ，默认使用大圆弧距离，可以使用 ``-40k`` 表示 FLAT Earth 距离， ``+40k`` 表示测地距离。
+
+.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#distance-calculations

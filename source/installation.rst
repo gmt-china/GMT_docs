@@ -185,7 +185,7 @@ GMT为Windows用户提供了安装包，可以直接安装使用。Windows下需
 Mac OS
 ------
 
-Mac OS下GMT的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。推荐使用 `Homebre <http://brew.sh/>` 。
+Mac OS下GMT的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。推荐使用 `Homebre <http://brew.sh/>`_ 。
 
 1. 使用homebrew安装::
 
