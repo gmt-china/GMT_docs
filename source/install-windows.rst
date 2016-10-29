@@ -29,3 +29,7 @@ GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows �
 3. 安装gsview
 
    双击直接安装即可。
+
+4. 安装 UnixTools
+
+   解压压缩包，并将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
