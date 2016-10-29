@@ -7,7 +7,9 @@
    :maxdepth: 2
 
    intro-gmt
-   installation
+   install-linux
+   install-windows
+   install-macOS
    directory-tree
    philosophy
    postscript

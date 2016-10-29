@@ -1,37 +1,69 @@
-安装GMT
-=======
+Linux 下安装GMT
+===============
 
-这一节介绍如何在Linux/Windows/Mac OS下安装GMT 5.3.1。
+安装预编译版
+------------
 
-Linux
------
+大多数 Linux 发行版都可以通过系统自带的软件包管理器直接安装 GMT。但通常系统软件源里自带的 GMT 版本都比较老，因而如果可能，还是建议 Linux 用户手动编译安装。
 
-大多数Linux发行版的软件源中都有GMT，因而可以通过系统自带的软件包管理器来安装。但通常系统软件源里自带的GMT都比较老，所以在Linux还是建议自己手动编译安装。
+可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含 GMT 以及 GMT 的具体版本。
 
-编译过程有些复杂，一般用户可以尝试使用为CentOS和Ubuntu用户准备的 `快速安装脚本 <https://github.com/gmt-china/gmt-easy-installer>`_ 。其他发行版的用户也可以测试一下。
+CentOS 7 用户::
+
+    sudo yum install epel-release
+    sudo yum install GMT GMT-devel GMT-doc 
+    sudo yum install dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+
+Ubuntu 用户::
+
+    sudo apt-get install gmt gmt-dcw gmt-gshhg
+
+其他发行版请自行到 https://pkgs.org/ 搜索 GMT 并安装所有与 GMT 相关的包。
+
+从源码编译
+----------
+
+为了使用最新版本的 GMT，建议用户从源码编译 GMT。
 
 解决依赖关系
 ~~~~~~~~~~~~
 
-GMT主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
+GMT 主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
+
+.. warning::
+
+   由于 Linux 发行版众多，以下仅所列仅供参考，请自行确认自己的发行版上软件包的具体名字。
 
 对于Ubuntu/Debian::
 
     # 更新
     $ sudo apt-get update
+
     # 必须安装的包
-    $ sudo apt-get install gcc g++ cmake make libc6 ghostscript libnetcdf-dev
-    # 可选包
-    $ sudo apt-get install libgdal-dev python-gdal liblapack3 libglib2.0-dev
-    $ sudo apt-get install libpcre3-dev libfftw3-dev
+    $ sudo apt-get install gcc g++ cmake make libc6 
+    $ sudo apt-get install ghostscript 
+    $ sudo apt-get install libnetcdf-dev
+
+    # 可选包(即便安装不成功也不影响 GMT 的使用)
+    $ sudo apt-get install libgdal-dev python-gdal 
+    $ sudo apt-get install liblapack3 
+    $ sudo apt-get install libglib2.0-dev
+    $ sudo apt-get install libpcre3-dev 
+    $ sudo apt-get install libfftw3-dev
 
 对于CentOS/RHEL/Fedora::
 
     # 必须安装的包
-    $ sudo yum install gcc gcc-c++ cmake make glibc ghostscript netcdf-devel
+    $ sudo yum install gcc gcc-c++ cmake make glibc 
+    $ sudo yum install ghostscript 
+    $ sudo yum install netcdf-devel
+
     # 可选包
-    $ sudo yum install glib2-devel gdal-devel gdal-python lapack64-devel lapack-devel
-    $ sudo yum install pcre-devel fftw-devel
+    $ sudo yum install gdal-devel gdal-python 
+    $ sudo yum install lapack64-devel lapack-devel
+    $ sudo yum install glib2-devel 
+    $ sudo yum install pcre-devel 
+    $ sudo yum install fftw-devel
 
 确认 netCDF 支持 netCDF-4/HDF5 格式::
 
@@ -86,6 +118,12 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 - ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
 - ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
 - ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能
+
+.. tip::
+
+   此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的5行语句。
+   
+   对于高级用户而言，可以直接在 GMT 提供的配置模板基础上进行更多配置。将 ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake`` ，然后根据配置文件中的大量注释说明信息自行修改配置文件。
 
 继续执行如下命令以检查GMT的依赖关系::
 
@@ -153,62 +191,3 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
     $ gmt --version
     5.3.1
-
-Windows
--------
-
-GMT为Windows用户提供了安装包，可以直接安装使用。Windows下需要安装GMT、ghostscript和gsview。
-
-1. 下载
-
-   到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载所需要的安装包。
-
-2. 安装GMT
-
-   直接双击安装包即可安装，直接点击下一步，使用默认的选项即可，无须做任何修改。在“选择组件”页面，建议将四个选项都勾选上，然后点击下一步安装完成。
-
-   安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
-
-       C:\Users\xxxx> gmt --version
-       5.3.1
-
-   即表示安装成功。
-
-2. 安装ghostscript
-
-   安装的过程没什么可说的，在最后一步，记得勾选“Generate cidfmap for Windows CJK TrueType fonts”。
-
-3. 安装gsview
-
-   双击直接安装即可。
-
-Mac OS
-------
-
-Mac OS下GMT的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。推荐使用 `Homebre <http://brew.sh/>`_ 。
-
-1. 使用homebrew安装::
-
-    brew update && brew upgrade
-    brew install gmt
-
-2. 直接使用GMT提供的安装包
-
-   到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载安装包。
-
-   安装完成后，在桌面会出现GMT的图标。点击该图标会启动一个终端，在终端内执行::
-
-       echo ${PATH%%:*}
-
-   并将输出的目录添加到 ``~/.bashrc`` 中::
-
-       echo 'PATH=${PATH}:/path/to/gmt' >> ~/.bashrc
-
-3. 使用macports安装::
-
-    sudo port install gdal +curl +geos +hdf5 +netcdf +fftw3 +openmp
-    sudo port install gmt5
-
-4. 使用fink安装::
-
-    sudo fink install gmt5

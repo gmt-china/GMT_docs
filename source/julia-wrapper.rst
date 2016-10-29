@@ -149,52 +149,52 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
 
 Julia 中网格变量 ``GMTJL_GRID`` 的定义为::
 
-    type GMTJL_GRID     # The type holding a local header and data of a GMT grid
-       ProjectionRefPROJ4::ASCIIString    # Projection string in PROJ4 syntax (Optional)
-       ProjectionRefWKT::ASCIIString      # Projection string in WKT syntax (Optional)
-       range::Array{Float64,1}            # 1x6 vector with [x_min x_max y_min y_max z_min z_max]
-       inc::Array{Float64,1}              # 1x2 vector with [x_inc y_inc]
-       n_rows::Int                        # Number of rows in grid
-       n_columns::Int                     # Number of columns in grid
-       n_bands::Int                       # Not-yet used (always == 1)
-       registration::Int                  # Registration type: 0 -> Grid registration; 1 -> Pixel registration
-       NoDataValue::Float64               # The value of nodata
-       title::ASCIIString                 # Title (Optional)
-       remark::ASCIIString                # Remark (Optional)
-       command::ASCIIString               # Command used to create the grid (Optional)
-       DataType::ASCIIString              # 'float' or 'double'
-       x::Array{Float64,1}                # [1 x n_columns] vector with XX coordinates
-       y::Array{Float64,1}                # [1 x n_rows]    vector with YY coordinates
-       z::Array{Float32,2}                # [n_rows x n_columns] grid array
-       x_units::ASCIIString               # Units of XX axis (Optional)
-       y_units::ASCIIString               # Units of YY axis (Optional)
-       z_units::ASCIIString               # Units of ZZ axis (Optional)
+    type GMTJL_GRID   # The type holding a local header and data of a GMT grid
+        ProjectionRefPROJ4::ASCIIString    # Proj4 语法的投影方式 (可选)
+        ProjectionRefWKT::ASCIIString      # WKT 语法的投影方式 (可选)
+        range::Array{Float64,1}            # 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
+        inc::Array{Float64,1}              # 1x2 向量, 表示采样间隔： [x_inc y_inc]
+        n_rows::Int                        # 行数
+        n_columns::Int                     # 列数
+        n_bands::Int                       # 波段数（维数）(目前未启用，恒等于 1)
+        registration::Int                  # 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration
+        NoDataValue::Float64               # 空值对应的数值
+        title::ASCIIString                 # 标题 (可选)
+        remark::ASCIIString                # Remark (可选)
+        command::ASCIIString               # 生成网格所使用的命令 (可选)
+        DataType::ASCIIString              # 数据格式 'float' 或 'double'
+        x::Array{Float64,1}                # [1 x n_columns] 向量, 表示X坐标值
+        y::Array{Float64,1}                # [1 x n_rows] 向量, 表示Y坐标值
+        z::Array{Float32,2}                # [n_rows x n_columns] 网格数组
+        x_units::ASCIIString               # X轴单位 (可选)
+        y_units::ASCIIString               # Y轴单位 (可选)
+        z_units::ASCIIString               # Z单位 (可选)
     end
 
 图片变量 ``GMTJL_IMAGE`` 的定义为::
 
     type GMTJL_IMAGE     # The type holding a local header and data of a GMT image
-       ProjectionRefPROJ4::ASCIIString    # Projection string in PROJ4 syntax (Optional)
-       ProjectionRefWKT::ASCIIString      # Projection string in WKT syntax (Optional)
-       range::Array{Float64,1}            # 1x6 vector with [x_min x_max y_min y_max z_min z_max]
-       inc::Array{Float64,1}              # 1x2 vector with [x_inc y_inc]
-       n_rows::Int                        # Number of rows in image
-       n_columns::Int                     # Number of columns in image
-       n_bands::Int                       # Number of bands in image
-       registration::Int                  # Registration type: 0 -> Grid registration; 1 -> Pixel registration
-       NoDataValue::Float64               # The value of nodata
-       title::ASCIIString                 # Title (Optional)
-       remark::ASCIIString                # Remark (Optional)
-       command::ASCIIString               # Command used to create the image (Optional)
-       DataType::ASCIIString              # 'uint8' or 'int8' (needs checking)
-       x::Array{Float64,1}                # [1 x n_columns] vector with XX coordinates
-       y::Array{Float64,1}                # [1 x n_rows]    vector with YY coordinates
-       image::Array{UInt8,3}              # [n_rows x n_columns x n_bands] image array
-       x_units::ASCIIString               # Units of XX axis (Optional)
-       y_units::ASCIIString               # Units of YY axis (Optional)
-       z_units::ASCIIString               # Units of ZZ axis (Optional) ==> MAKES NO SENSE
-       colormap::Array{Clong,1}           #
-       alpha::Array{UInt8,2}              # A [n_rows x n_columns] alpha array
+        ProjectionRefPROJ4::ASCIIString    % Proj4 语法的投影方式 (可选)
+        ProjectionRefWKT::ASCIIString      % WKT 语法的投影方式 (可选)
+        range::Array{Float64,1}            % 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
+        inc::Array{Float64,1}              % 1x2 向量, 表示采样间隔： [x_inc y_inc]
+        n_rows::Int                        % 行数
+        n_columns::Int                     % 列数
+        n_bands::Int                       % 波段数（维数）
+        registration::Int                  % 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration (默认值)
+        NoDataValue::Float64               % 空值对应的数值
+        title::ASCIIString                 % 标题 (可选)
+        remark::ASCIIString                % Remark (可选)
+        command::ASCIIString               % 生成网格所使用的命令 (可选)
+        DataType::ASCIIString              % 数据格式 'uint8' 或 'int8'
+        x::Array{Float64,1}                % [1 x n_columns] 向量, 表示X坐标值
+        y::Array{Float64,1}                % [1 x n_rows] 向量, 表示Y坐标值
+        image::Array{UInt8,3}              % [n_rows x n_columns] 图像数组
+        x_units::ASCIIString               % X轴单位 (可选)
+        y_units::ASCIIString               % Y轴单位 (可选)
+        z_units::ASCIIString               % Z单位 (可选)
+        colormap::Array{Clong,1}           % CPT 结构体
+        alpha::Array{UInt8,2}              % [n_rows x n_columns] alpha 数组
     end
 
 CPT变量 ``GMTJL_CPT`` 的定义为::
