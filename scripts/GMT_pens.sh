@@ -6,7 +6,7 @@ line=lines.txt
 
 cat << EOF > $line
 0       0
-10       0
+10      0
 EOF
 
 gmt psxy -R$R -J$J -P -K -T > $PS

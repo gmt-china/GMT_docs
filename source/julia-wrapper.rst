@@ -6,12 +6,14 @@ GMT的Julia接口
 
 `Julia <http://julialang.org>`_ 是一门为科学计算设计的编程语言，简单易学。其与 Matlab、Python 等编程语言都有相似之处。GMT 提供了 Julia 接口，使得 Julia 用户可以直接在 Julia 脚本中调用 GMT 的相关模块。
 
+GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
+
 安装
 ----
 
 关于 Julia 的安装请参考 `Julia 官方网站 <http://julialang.org/downloads/>`_ 的相关说明。
 
-启动 Julia　并按照如下方式即可安装GMT 的 Julia 接口（即 Julia 下的 GMT 模块）::
+启动 Julia 并按照如下方式即可安装 GMT 的 Julia 接口（即 Julia 下的 GMT 模块）::
 
     $ julia
                    _
@@ -19,25 +21,23 @@ GMT的Julia接口
       (_)     | (_) (_)    |  Documentation: http://docs.julialang.org
        _ _   _| |_  __ _   |  Type "?help" for help.
       | | | | | | |/ _` |  |
-      | | |_| | | | (_| |  |  Version 0.4.6 (2016-06-19 17:16 UTC)
-     _/ |\__'_|_|_|\__'_|  |
-    |__/                   |  x86_64-redhat-linux
+      | | |_| | | | (_| |  |  Version 0.5.0 (2016-09-19 18:14 UTC)
+     _/ |\__'_|_|_|\__'_|  |  Official http://julialang.org/ release
+    |__/                   |  x86_64-pc-linux-gnu
 
     julia> Pkg.init()
-    INFO: Initializing package repository /home/seisman/.julia/v0.4
-    INFO: Cloning METADATA from git://github.com/JuliaLang/METADATA.jl
+    INFO: Initializing package repository /home/seisman/.julia/v0.5
+    INFO: Cloning METADATA from https://github.com/JuliaLang/METADATA.jl
 
     julia> Pkg.clone("git://github.com/joa-quim/GMT.jl.git")
     INFO: Cloning GMT from git://github.com/joa-quim/GMT.jl.git
     INFO: Computing changes...
-    INFO: No packages to install, update or remove
+    INFO: Cloning cache of Compat from https://github.com/JuliaLang/Compat.jl.git
+    INFO: Installing Compat v0.9.3
     INFO: Package database updated
 
-安装完成后，还需要通过如下命令::
-
-    echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.3.1/lib64")' >> ~/.juliarc.jl
-
-将 GMT 的动态库文件所在目录添加到 Julia 的搜索路径中。
+    julia> using GMT
+    INFO: Precompiling module Compat.
 
 使用
 ----
@@ -53,9 +53,9 @@ GMT的Julia接口
 
 说明：
 
-#. ``using GMT`` 的作用是在 Julia 中导入 GMT 模块，使得可以在 Julia 中通过 ``gmt()`` 函数调用 GMT 的所有模块。
+#. ``using GMT`` 的作用是在 Julia 中导入 GMT 模块，使得可以在 Julia 中通过 ``gmt()`` 函数调用 GMT 的所有模块
 #. 安装完 GMT 即可后第一次使用 ``using GMT`` 时，Julia 会对 GMT 即可进行预编译，因而会消耗一段时间，但之后再调用时，速度就非常快了
-#. 函数 ``gmt()`` 用于调用 GMT 模块，其第一个参数与GMT命令行版本的参数几乎一致，之后的参数是当前命令所需的输入数据
+#. 函数 ``gmt()`` 用于调用 GMT 模块，其第一个参数与 GMT 命令行版本的参数几乎一致，之后的参数是当前命令所需的输入数据
 #. 最后，调用函数 ``gmt("destroy")`` 以清理不需要的内存
 
 最简单的例子
@@ -71,6 +71,14 @@ GMT的Julia接口
 该 Julia 命令等效于命令行版本的::
 
    gmt pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps
+
+.. note::
+
+   Julia 接口能够正确使用的前提是 Julia 可以找到 GMT 的动态链接库文件。所以若以上命令报错，则可以执行::
+   
+        echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.3.1/lib64")' >> ~/.juliarc.jl
+
+   将 GMT 的动态库文件所在目录添加到 Julia 的搜索路径中。
 
 向 GMT 传递数据
 +++++++++++++++
@@ -89,7 +97,7 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
    G = gmt("surface -R0/150/0/150 -I1", t);
    gmt("grdimage -JX8c -Ba -P -Cblue,red > crap_img.ps", G)
 
-本例生成了一个 *100x3* 的随机数数组（矩阵） ``t`` ，并将其作为 ``gmt()`` 函数的第二个参数，即将数组 ``t`` 作为 ``surface`` 命令的输入数据（即命令行中的 ``input.txt`` ）。同时，将 ``surface`` 命令的输出数据（即命令行中生成的网格数据 ``-Goutput.grd`` ）保存到网格变量 ``G`` 中。
+本例生成了一个 *100x3* 的随机数矩阵 ``t`` ，并将其作为 ``gmt()`` 函数的第二个参数，即将矩阵 ``t`` 作为 ``surface`` 命令的输入数据（即命令行中的 ``input.txt`` ）。同时，将 ``surface`` 命令的输出数据（即命令行中生成的网格数据 ``-Goutput.grd`` ）保存到网格变量 ``G`` 中。
 
 紧接着调用了 ``grdimage`` 模块绘制网格变量 ``G`` 。注意，在命令中使用或不使用 ``-G`` 选项是完全等效的。即上面例子中的最后一个命令也可以写成：
 
@@ -102,7 +110,7 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
 
 若需要向 GMT 命令传递多个数据，则输入参数的顺序就变得很重要。
 
-下面的例子在之前例子的基础上先生成了一个CPT文件，再利用 ``-C<cpt>`` 选项绘图。
+下面的例子在之前例子的基础上先生成了一个 CPT 文件，再利用 ``-C<cpt>`` 选项绘图。
 
 .. code-block:: julia
 
@@ -111,6 +119,10 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
    G = gmt("surface -R0/150/0/150 -I1", t);
    cpt = gmt("grd2cpt -Cblue,red", G);
    gmt("grdimage -JX8c -Ba -P -C -G > crap_img.ps", cpt, G)
+
+.. error::
+
+   本示例可能存在问题！ 
 
 命令行版本中的命令应该是::
 
@@ -141,6 +153,32 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
    using GMT
    lines = Any["5 6 Some label", "6 7 Another label"];
    gmt("pstext -R0/10/0/10 -JM6i -Bafg -F+f18p -P > text.ps", lines)
+
+在 Julia 脚本结束时，可以使用::
+
+   gmt("destroy")
+
+以清理不必要的内存。
+
+更多示例
+--------
+
+GMT 官方将 GMT 自带的 46 个示例用 Julia 重写了一遍，Julia 用户可以阅读并运行这些 Julia 代码。
+
+Julia 示例位于： ``~/.julia/v0.5/GMT/test/gallery.jl`` 中，你可以直接阅读 Julia 源码。
+
+如果想要执行该 Julia 脚本，你需要将 ``~/.julia/v0.5/GMT/test/gallery.jl`` 的第7行修改为::
+
+    global g_root_dir = "/opt/GMT-5.3.1/share/"                                                                                 
+    global out_path = "" 
+
+并安装如下方式运行示例：
+
+.. code-block:: julia
+
+   using GMT
+   include("/home/seisman/.julia/v0.5/GMT/test/gallery.jl")
+   gallery("ex01")
 
 附录
 ----
@@ -205,3 +243,5 @@ CPT变量 ``GMTJL_CPT`` 的定义为::
         range::Array{Float64,2}
         rangeMinMax::Array{Float64,1}
     end
+
+.. source: http://gmt.soest.hawaii.edu/doc/latest/julia_wrapper.html
