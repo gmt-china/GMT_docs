@@ -66,3 +66,20 @@ PS解释器，或称PS阅读器，是用于查看PS文件的软件。
 - `evince <https://wiki.gnome.org/Apps/Evince>`_
 - `zathura <https://pwmt.org/projects/zathura/>`_ (Linux only)
 - `SumatraPDF <http://www.sumatrapdfreader.org/free-pdf-reader.html>`_ (Windows only)
+
+将PS转化为其他格式
+------------------
+
+GMT提供了 ``psconvert`` 模块，可以很方便地将PS文件以任意精度转换为jpeg、png、eps、pdf等图片格式，以满足不同情形下的需求。
+
+比如，将 PS 文件转化为 JPG 文件::
+
+    gmt psconvert test.ps
+
+转换为 JPG 格式的过程中对其进行裁剪并旋转::
+
+    gmt psconvert -A -P test.ps
+
+转化为 PDF 格式::
+
+    gmt psconvert -Tf -A -P test.ps

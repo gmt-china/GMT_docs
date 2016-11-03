@@ -23,3 +23,4 @@
    chinese-windows
    matlab-wrapper
    julia-wrapper
+   nan-data

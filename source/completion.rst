@@ -43,3 +43,5 @@ GMT为bash提供了基本的命令行补全功能。在终端敲GMT命令时，�
        $ gmt psxy -[Tab]
        -^  -?  -A  -B  -C  -E  -g  -h  -I  -K  -N  -p  -R  -S  -T  -V  -X
        -:  -a  -b  -c  -D  -f  -G  -i  -J  -L  -O  -P  -s  -t  -U  -W  -Y
+
+.. source: http://gmt.soest.hawaii.edu/doc/5.3.1/GMT_Docs.html#command-line-completion

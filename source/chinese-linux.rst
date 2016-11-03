@@ -189,7 +189,7 @@ GMT5 测试脚本：
 
 成图效果如下
 
-.. figure:: /static_images/GMT_chinese_linux_fonts.png
+.. figure:: /static_images/GMT_chinese_linux.png
    :width: 400px
    :align: center
 

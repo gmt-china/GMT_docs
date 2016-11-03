@@ -240,7 +240,9 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
      gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
      gmt psbasemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -P > GMT_-B_time1.ps
 
-绘图效果如下图所示，需要注意 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 前的破折号会去掉日期前面的前置零（即02变成2）。
+需要注意， ``-Bsa1O`` 指定了次级标注的间隔为一个月，由于此处使用的是大写的 ``O`` ，因而具体的显式方式由 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 决定。根据 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 的说明可知，其值为 ``-o`` 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。
+
+绘图效果如下图所示。
 
 .. figure:: /images/GMT_-B_time1.*
    :width: 500 px

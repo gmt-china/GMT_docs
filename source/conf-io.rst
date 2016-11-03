@@ -56,7 +56,7 @@ IO参数
     #. ``B`` 表示将空行作为数据段开始的标识符
     #. ``N`` 表示将一个NaN记录作为数据段开始的标识符
 
-.. TODO To use B or N as regular segment markers you must escape them with a leading backslash.
+    To use B or N as regular segment markers you must escape them with a leading backslash.
 
 .. _IO_NC4_CHUNK_SIZE:
 

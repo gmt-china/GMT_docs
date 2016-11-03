@@ -210,21 +210,20 @@ netCDF格式的设计相当灵活，可以包含多个多维变量。而GMT中�
     gmt psxy "file.nc?lon/lat" ...
     gmt convert "file.nc?time/lat/lon"
 
-.. TODO
-.. If one or more of the selected variables are two-dimensional, and have
-.. the same leading dimension as the other selected variables they will be
-.. plotted in their entirety. For example, if a netCDF files contains 6
-.. time steps recording temperature at 4 points, and the variable ``temp`` is a 6 by
-.. 4 array, then the command ``gmt convert "file.nc?time/temp"`` can result in:
+If one or more of the selected variables are two-dimensional, and have
+the same leading dimension as the other selected variables they will be
+plotted in their entirety. For example, if a netCDF files contains 6
+time steps recording temperature at 4 points, and the variable ``temp`` is a 6 by
+4 array, then the command ``gmt convert "file.nc?time/temp"`` can result in:
 
-..    2012-06-25T00:00:00 20.1 20.2 20.1 20.3
-..    2012-06-25T12:00:00 24.2 23.2 24.5 23.5
-..    2012-06-26T00:00:00 16.1 16.2 16.1 16.3
-..    2012-06-26T12:00:00 22.1 23.0 23.9 23.5
-..    2012-06-27T00:00:00 17.5 16.9 17.2 16.8
+    2012-06-25T00:00:00 20.1 20.2 20.1 20.3
+    2012-06-25T12:00:00 24.2 23.2 24.5 23.5
+    2012-06-26T00:00:00 16.1 16.2 16.1 16.3
+    2012-06-26T12:00:00 22.1 23.0 23.9 23.5
+    2012-06-27T00:00:00 17.5 16.9 17.2 16.8
 
-.. If, for example, only the second temperature column is needed, use
-.. ``gmt convert "file.nc?time/temp[1]"`` (indices start counting at 0).
+If, for example, only the second temperature column is needed, use
+``gmt convert "file.nc?time/temp[1]"`` (indices start counting at 0).
 
 修改坐标单位
 ~~~~~~~~~~~~

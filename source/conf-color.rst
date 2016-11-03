@@ -18,10 +18,7 @@ COLOR参数
 **COLOR_NAN**
     Z值等于 ``NaN`` 时所使用的颜色 [127.5]
 
-
 某些绘图命令（比如 ``grdimage`` 、 ``psscale`` ）可以使用强度文件（intensity file）来模拟光照效果。光照效果的实现，本质上是先将任意颜色转换成HSV模型，然后根据强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。下面的四个参数控制了模拟光照过程中S和V变化的极限值，估计是为了避免过亮或过暗的情况。
-
-.. TODO gmt_support.c, GMT_illuminate()
 
 .. _COLOR_HSV_MAX_S:
 

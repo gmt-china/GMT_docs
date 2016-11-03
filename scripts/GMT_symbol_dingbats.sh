@@ -1,5 +1,4 @@
 #!/bin/bash
-#	$Id: GMT_App_F_symbol.sh 11490 2013-05-16 06:26:21Z pwessel $
 #
 #	Makes the octal code charts in Appendix F
 #
@@ -93,12 +92,12 @@ cat << EOF > tt.awk
 EOF
 
 awk -f tt.awk tt.txt > tt.d
-gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_symbol_dingbats.ps
->
-1	21
-2	21
-2	20
-1	20
+gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_App_F_symbol_dingbats.ps
+#> The Euro symbol now goes here so I have commented out this green box
+#1	21
+#2	21
+#2	20
+#1	20
 >
 8	32
 9	32

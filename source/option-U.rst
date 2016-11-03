@@ -29,6 +29,8 @@ GMT参数中有一些与logo相关的参数：
 
    ``-U`` 选项加时间戳
 
-说明：
+.. important::
 
-#. 每个带有 ``-U`` 选项的绘图命令都会绘制一遍logo，通常只需要一个绘图命令中使用 ``-U`` 即可
+   每个带有 ``-U`` 选项的绘图命令都会绘制一遍时间戳，因而只需要一个绘图命令中使用 ``-U`` 即可
+
+.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#timestamps-on-plots-the-u-option

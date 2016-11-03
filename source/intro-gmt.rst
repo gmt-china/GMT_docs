@@ -97,15 +97,15 @@ PS：GMT4和GMT5可在系统中共存，因而完全可以同时安装两个版�
 跨平台特性
 ----------
 
-GMT是跨平台的，可以运行在Linux及Windows下，当然也可以运行在 macOS 下，这里姑且认为 macOS 跟Linux是同一个东西。
+GMT 是跨平台的，可以运行在 Linux 及 Windows 下，当然也可以运行在 macOS 下，这里姑且认为 macOS 跟 Linux 是同一个东西。
 
-推荐在Linux下使用GMT，原因如下：
+推荐在 Linux 下使用 GMT，原因如下：
 
-- GMT是在Linux下开发再移植到Windows下的。因而，Windows版本的GMT相对来说有更多的bug
-- Linux自带了众多数据处理工具： ``gawk`` 、 ``cut`` 、 ``paste`` 等
-- Windows下的命令行及bat太难用，Linux下的命令行和Bash脚本相对来说更易用
+- GMT 是在 Linux 下开发再移植到 Windows 下的。因而，Windows 版本的 GMT 相对来说有更多的bug
+- Linux 自带了众多数据处理工具： ``gawk`` 、 ``cut`` 、 ``paste`` 等
+- Windows 下的命令行及 bat 太难用，Linux 下的命令行和 Bash 脚本相对来说更易用
 
-PS：Windows10即将自带Bash，未来有可能可以在Windows下写Bash脚本，值得期待。
+PS：Windows10 即将自带 Bash，未来有可能可以在 Windows 下写 Bash 脚本，值得期待。
 
 GMT替代品
 ---------
