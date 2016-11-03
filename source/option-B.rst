@@ -277,7 +277,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 第四个例子展示了一天中的几个小时，通过在R选项中指定 ``t`` 来使用相对时间坐标。这里使用了 ``p`` 属性和 ``s`` 属性，12小时制，时间从右向左增加::
 
-     gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p
+     gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
      gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P > GMT_-B_time4.ps
 
 .. figure:: /images/GMT_-B_time4.*
