@@ -3,6 +3,8 @@ macOS 下安装 GMT
 
 macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。
 
+推荐使用 homebrew 方式安装。
+
 使用 homebrew 安装
 ------------------
 
@@ -11,7 +13,7 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 1.  安装 Homebrew::
 
        $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    
+
 2.  安装 GMT::
 
        $ brew update && brew upgrade
@@ -37,23 +39,30 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 
 .. warning::
 
-   以下几种安装方法翻译自官方文档，我们未作验证。 
+   以下几种安装方法翻译自官方文档，我们未作验证。
 
 使用 GMT 安装包
 ---------------
 
-1. 到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载安装包。
+GMT 为 macOS 用户提供了 dmg 安装包。
 
-2. 安装完成后，在桌面会出现GMT的图标。点击该图标会启动一个终端，在终端内执行::
+1. 到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
 
-       echo ${PATH%%:*}
+2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.3.1.app`` 拖动到 Applications 目录即可。
 
-   并将输出的目录添加到 ``~/.bashrc`` 中::
+3. GMT 默认会安装到 ``/Applications/GMT-5.3.1.app/`` 目录下，
 
-       echo 'PATH=${PATH}:/path/to/gmt' >> ~/.bashrc
+       export PATH=${PATH}:/Applications/GMT-5.3.1.app/Contents/Resources/bin
+
+   加入到 ``~/.bashrc`` 中即可。
+
+4. 测试安装是否成功::
+
+       $ gmt --version
+       5.3.1
 
 使用 macports 安装
------------------- 
+------------------
 
 ::
 
