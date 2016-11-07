@@ -50,7 +50,7 @@ GMT 为 macOS 用户提供了 dmg 安装包。
 
 2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.3.1.app`` 拖动到 Applications 目录即可。
 
-3. GMT 默认会安装到 ``/Applications/GMT-5.3.1.app/`` 目录下，
+3. GMT 默认会安装到 ``/Applications/GMT-5.3.1.app/`` 目录下，将如下语句::
 
        export PATH=${PATH}:/Applications/GMT-5.3.1.app/Contents/Resources/bin
 
