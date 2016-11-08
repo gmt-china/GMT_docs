@@ -19,10 +19,10 @@ GMT维护者
 ---------
 
 .. figure:: /images/GMT5_Summit_2016.jpg
-   :width: 1200 px 
+   :width: 1200 px
    :align: center
 
-   GMT目前的5个维护者：Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe 和 Paul Wessel 
+   GMT目前的5个维护者：Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe 和 Paul Wessel
 
 GMT的特点
 ---------
@@ -80,9 +80,15 @@ GMT4的优缺点：
 
 GMT5的优缺点：
 
-- 相对于GMT4有很多改进，命令语法更统一，选项的设计更加合理
-- 相对于GMT4加入了更多的新功能
 - GMT5是GMT的未来
+- 相对于GMT4有很多改进，命令语法更统一，选项的设计更加合理
+- 增加了很多新功能，其中非常有用的包括但不限于：
+
+  - ``-Bafg`` 自动确定坐标轴的标注间隔
+  - 支持透明色，且支持透明图层
+  - 引入修饰物的概念，使得相关代码更具通用性
+  - ``-X`` 和 ``-Y`` 支持多种指定坐标原点的方式，画多子图的组合图时更加简单
+
 - 由于重写了大量代码，因而可能有较多的Bug
 - 目前关于GMT5的中文教程太少
 
