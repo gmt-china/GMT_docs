@@ -92,7 +92,7 @@ cat << EOF > tt.awk
 EOF
 
 awk -f tt.awk tt.txt > tt.d
-gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_App_F_symbol_dingbats.ps
+gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_symbol_dingbats.ps
 #> The Euro symbol now goes here so I have commented out this green box
 #1	21
 #2	21
