@@ -1,4 +1,4 @@
-等值线标注和“线段引用”
+等值线标注和“线条标注”
 =======================
 
 对于2维网格数据和3维表数据，GMT分别采用 :doc:`grdcontour` 
@@ -94,93 +94,74 @@ X:
 
 每调用一次等值线绘制模块，只能指定一种确定标签位置的算法。
 
-Label Attributes
+标签的属性
 ----------------
 
 Determining where to place labels is half the battle. The other half is
-to specify exactly what are the attributes of the labels. It turns out
-that there are quite a few possible attributes that we may want to
-control, hence understanding how to specify these attributes becomes
-important. In the contouring programs, one or more attributes may be
-appended to the **-A** option using the format +\ *code*\ [*args*\ ] for
-each attribute, whereas for the line plotting programs these attributes
-are appended to the **-Sq** option following a colon (:) that separates
-the label codes from the placement algorithm. Several of the attributes
-do not apply to contours so we start off with listing those that apply
-universally. These codes are:
+to specify exactly what are the attributes of the labels. 
+确定标签的位置之后，还需要指定标签的属性。
+在等值线绘制模块中，在 **-A** 选项后以+\ *字符*\ [*参数*\ ]的形式定义
+不同的属性；在线条绘制模块中，则是在 **-Sq** 选项后，用冒号(:)来分隔
+标签的属性和标签的位置。
+部分属性只能用于线条绘制模块，因此，首先列出了两个模块通用的属性。
+这些属性包括：
 
 +a:
     Controls the angle of the label relative to the angle of the line.
     Append **n** for normal to the line, give a fixed *angle* measured
-    counter-clockwise relative to the horizontal. or append **p** for
-    parallel to the line [Default]. If using
-    :doc:`grdcontour` the latter option
-    you may further append **u** or **d** to get annotations whose upper
-    edge always face the next higher or lower contour line.
+    counter-clockwise relative to the horizontal. 
+    控制标签方位角和线条方位角的相互关系， **n** 表示二者相互垂直；
+    **p** 表示二者之间相互平行，调用 :doc:`grdcontour` 模块时，还可以附加
+    **u** 或 **d** 表示标注的上边缘指向更高或更低的等值线；
+    给定的角度 *angle* 表示自水平方向开始，沿逆时针方向旋转。
 
 +c:
-    Surrounding each label is an imaginary label "textbox" which defines
-    a region in which no segment lines should be visible. The initial
-    box provides an exact fit to the enclosed text but clearance may be
-    extended in both the horizontal and vertical directions (relative to
-    the label baseline) by the given amounts. If these should be
-    different amounts please separate them by a slash; otherwise the
-    single value applies to both directions. Append the distance units
-    of your choice (**c\ \|\ i\ \|\ m\ \|\ p**), or
-    give % to indicate that the clearance should be this fixed
-    percentage of the label font size in use. The default is 15%.
+    每个标签周围存在一个假想的文本框，等值线在这个区域内是不可见的。
+    默认的文本框精确的围限了标注，可以指定水平向和竖直向的间隙
+    (相对于标签的基线)。
+    若水平向和竖直向的间隙值不同，需要以斜杠分隔，可以在间隙值后附加
+    长度单位(**c\ \|\ i\ \|\ m\ \|\ p**)，也可以指定间隙与标注所采用字体的
+    百分比，默认值为15% 。
 
 +d:
-    Debug mode. This is useful when testing contour placement as it will
-    draw the normally invisible helper lines and points in the label
-    placement algorithms above.
+    Debug 模式。 
+    标签所在位置也会绘制等值线，用来测试等值线的位置。
 
 +d:
-    Delayed mode, to delay the plotting of the text as text clipping is set instead.
+    延迟模式, 延迟标注文字的绘制。
 
 +f:
-    Specifies the desired label font, including size or color. See
-    :doc:`pstext` for font names or numbers.
-    The default font is given by :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>`.
+    指定标注文字的字体、大小和颜色等，可参考 :doc:`pstext` 。
+    字体的默认值参见 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 。
 
 +g:
-    Selects opaque rather than the default transparent text boxes. You
-    may optionally append the color you want to fill the label boxes;
-    the default is the same as :ref:`PS_PAGE_COLOR <PS_PAGE_COLOR>`.
+    指定文本框的填充效果，颜色的默认值与 :ref:`PS_PAGE_COLOR <PS_PAGE_COLOR>`
+    相同。
 
 +j:
-    Selects the justification of the label relative to the placement
-    points determined above. Normally this is center/mid justified
-    (**CM** in :doc:`pstext` justification
-    parlance) and this is indeed the default setting. Override by using
-    this option and append another justification key code from
-    [**L\ \|\ C\ \|\ R**\ ][**B\ \|\ M\ \|\ T**\ ].
-    Note for curved text (**+v**) only vertical justification will be
-    affected.
+    指定标注内容与标签位置之间的对齐方式，默认值为 **CM** 
+    (参见:doc:`pstext` )，指定值可以覆盖默认值，参数值由2个字母组成，
+    取值范围分别为
+    [**L\ \|\ C\ \|\ R**\ ][**B\ \|\ M\ \|\ T**\ ] 。
+    对于弯曲的标注文字 (**+v**)，只有竖直向对齐方式起作用。
 
 +o:
-    Request a rounded, rectangular label box shape; the default is
-    rectangular. This is only manifested if the box is filled or
-    outlined, neither of which is implied by this option alone (see
-    **+g** and **+p**). As this option only applies to straight text, it
-    is ignored if **+v** is given.
+    指定文本框的形状为圆角矩形，只有对文本框进行填充或显示轮廓时才起作用。
+    对于弯曲的标注文字 (**+v**)不起作用。
 
 +p:
-    Selects the drawing of the label box outline; append your preferred
-    *pen* unless you want the default GMT pen [0.25p,black].
+    指定文本框轮廓线的线条属性，默认值为[0.25p,black] 。
 
 +r:
-    Do not place labels at points along the line whose local radius of
-    curvature falls below the given threshold value. Append the radius
-    unit of your choice (**c\ \|\ i\ \|\ p**) [Default is 0].
+    当曲率半径低于给定值时，不放置标签，可以指定曲率半径的单位，默认值为0。
 
 +u:
-    Append the chosen *unit* to the label. Normally a space will
-    separate the label and the unit. If you want to close this gap,
-    append a *unit* that begins with a hyphen (-). If you are contouring
-    with :doc:`grdcontour` and you specify
-    this option without appending a unit, the unit will be taken from
-    the *z*-unit attribute of the grid header.
+    在标签后加单位 *unit* 。
+    通常在单位和标签之间有一个空格，若想去掉这个间隔，
+    需要在单位前加连字符(-)。
+    调用 :doc:`grdcontour` 模块时，若给出这个属性，却不指定单位时，
+    则使用网格头段中 *z* 值的单位。
+
 
 +v:
     Place curved labels that follow the wiggles of the line segments.
@@ -554,17 +535,4 @@ with the complete illustration presented as Figure
    in particular New York. Should a catastrophic landslide occur it is possible
    that New York will experience a large tsunami about 8 hours after the event.
 
-
-Special Operations
-==================
-
-.. _Isolation mode:
-
-Running GMT in *isolation mode*
--------------------------------
-
-In Chapter `General features`_ it is described how GMT creates
-several (temporary) files to communicate between the different commands
-that make up the script that finally creates a plot. Among those files
-are:
 
