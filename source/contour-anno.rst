@@ -5,18 +5,18 @@
 和 :doc:`pscontour` 模块来绘制等值线。
 在需要为等值线附加标签的时候，如何优化标签的位置是一个很困难的主题。
 GMT提供了不同的算法确定标签的位置，并且可以自由的指定标签的属性。
-由于选择比较多，本章总结了不同的选项，并给出了一些应用实例。
+本章总结了标签的属性和位置确定方法，并给出了一些应用实例。
 
 标签的位置
 ---------------
 
 在不同版本的GMT当中，确定标签位置的算法个数不同，GMT1--3中只提供了1种
 算法，GMT4中则提供了5种算法。
-另外，在 :doc:`psxy` 和 :doc:`psxyz` 模块中增加了一个新的符号选项
-(**-Sq** "线段引用") 也可以采用这些算法来确定线段标签的位置。
+另外，在线条绘制模块 :doc:`psxy` 和 :doc:`psxyz` 中增加了一个新的符号选项
+(**-Sq** "线条标注")，也可以采用这些算法来确定线条标签的位置。
 等值线绘制模块中，需要在 **-G** 选项中以不同字符来指定标签位置的算法，
-线段绘制模块中，则需要在 **-Sq**  选项中指定标签位置的算法。
-附加给这两个选项的信息是完全相同的，采用 [**字符**]\ *参数*\ 的格式，
+线条绘制模块中，则需要在 **-Sq**  选项中指定标签位置的算法。
+这两个选项所需要的信息是完全相同的，采用 [**字符**]\ *参数*\ 的格式，
 指定算法和相应参数。 
 下述内容给出了不同 [**字符**] 对应的算法和相应的参数：
 
@@ -97,19 +97,14 @@ X:
 标签的属性
 ----------------
 
-Determining where to place labels is half the battle. The other half is
-to specify exactly what are the attributes of the labels. 
 确定标签的位置之后，还需要指定标签的属性。
-在等值线绘制模块中，在 **-A** 选项后以+\ *字符*\ [*参数*\ ]的形式定义
-不同的属性；在线条绘制模块中，则是在 **-Sq** 选项后，用冒号(:)来分隔
+对于等值线绘制模块，在 **-A** 选项后以+\ *字符*\ [*参数*\ ]的形式定义
+不同的属性；对于线条绘制模块中，则是在 **-Sq** 选项后，用冒号(:)来分隔
 标签的属性和标签的位置。
 部分属性只能用于线条绘制模块，因此，首先列出了两个模块通用的属性。
 这些属性包括：
 
 +a:
-    Controls the angle of the label relative to the angle of the line.
-    Append **n** for normal to the line, give a fixed *angle* measured
-    counter-clockwise relative to the horizontal. 
     控制标签方位角和线条方位角的相互关系， **n** 表示二者相互垂直；
     **p** 表示二者之间相互平行，调用 :doc:`grdcontour` 模块时，还可以附加
     **u** 或 **d** 表示标注的上边缘指向更高或更低的等值线；
@@ -135,8 +130,8 @@ to specify exactly what are the attributes of the labels.
     字体的默认值参见 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 。
 
 +g:
-    指定文本框的填充效果，颜色的默认值与 :ref:`PS_PAGE_COLOR <PS_PAGE_COLOR>`
-    相同。
+    指定文本框的填充效果，颜色的默认值与
+    :ref:`PS_PAGE_COLOR <PS_PAGE_COLOR>` 相同。
 
 +j:
     指定标注内容与标签位置之间的对齐方式，默认值为 **CM** 
@@ -164,99 +159,84 @@ to specify exactly what are the attributes of the labels.
 
 
 +v:
-    Place curved labels that follow the wiggles of the line segments.
-    This is especially useful if the labels are long relative to the
-    length-scale of the wiggles. The default places labels on an
-    invisible straight line at the angle determined.
+    根据线条摆动情况放置弯曲的标签，当标签长度较大时，该属性尤其有用。
+    默认值为给定角度的不可见的直线段。
+
 
 +w:
     The angle of the line at the point of straight label placement is
     calculated by a least-squares fit to the *width* closest points. If
     not specified, *width* defaults to 10.
 
+
 +=:
     Similar in most regards to **+u** but applies instead to a label
     *prefix* which you must append.
 
-For contours, the label will be the value of the contour (possibly
-modified by **+u** or **+=**). However, for quoted lines other options apply:
+对于等值线绘制模块，
+标签的内容为等值线的数值(可以通过 **+u** 或 **+=** 属性来修改)。
+对于线条绘制模块来说，还可以指定下述属性：
 
 +l:
-    Append a fixed *label* that will be placed at all label locations.
-    If the label contains spaces you must place it inside matching
-    quotes.
+    在标签位置放置相同的内容，如果标签内容包含空格，
+    则需要用引号括起来。
 
 +L:
-    Append a code *flag* that will determine the label. Available codes
-    are:
+    通过附加 *字符* 指定标签的内容，可用的字符包括：
 
     +Lh:
-        Take the label from the current multi-segment header (hence it
-        is assumed that the input line segments are given in the
-        multi-segment file format; if not we pick the single label from
-        the file's header record). We first scan the header for an
-        embedded **-L**\ *label* option; if none is found we instead use
-        the first word following the segment marker [>].
+        采用多段数据的头记录作为标签内容(假设输入为多段数据，
+        如果不是多段数据，则采用文件头记录)。
+        首先扫描 **-L**\ *字符* 属性，若没有指定该选项，
+        则采用数据段头记录首字符(默认为 > )后的第一个单词。
 
     +Ld:
-        Take the Cartesian plot distances along the line as the label;
-        append **c\ \|\ i\ \|\ p** as the unit [Default is
-        :ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>`]. The label will be formatted according
-        to the :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` string, *unless* label placement
-        was determined from map distances along the segment lines, in
-        which case we determine the appropriate format from the distance
-        value itself.
+        采用笛卡尔坐标系内的距离作为标签位置的距离单位，
+        可以指定单位，如 **c\ \|\ i\ \|\ p** 默认值为
+        [:ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>`]。 
+        标签内容的格式参见:ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 。
 
     +LD:
-        Calculate actual Earth surface distances and use the distance at
-        the label placement point as the label; append
+        采用真实地表距离计算标签的位置，可以指定单位，如
         **d\ \|\ e\ \|\ f\ \|\ k\ \|\ m\ \|\ M\ \|\ n\ \|\ s**
-        to specify the unit [If not given we default to **d**\ egrees,
-        *unless* label placement was determined from map distances along
-        the segment lines, in which case we use the same unit specified
-        for that algorithm]. Requires a map projection to be used.
+        默认值为弧度 **d** 。
 
     +Lf:
-        Use all text after the 2nd column in the fixed label location
-        file *fix.txt* as labels. This choice obviously requires the
-        fixed label location algorithm (code **f**) to be in effect.
+        采用ASCII文件 *fix.txt* 中第2列数据之后的所有文字作为标签
+        的内容，显然，该属性需要在指定标签位置
+        算法(**f**) 的前提下，才能起作用。
+
 
     +Ln:
-        Use the running number of the current multi-segment as label.
+        采用多段数据中当前数据段的顺序号作为标签内容。
 
     +LN:
-        Use a slash-separated combination of the current file number and
-        the current multi-segment number as label.
+        采用斜杠分隔的文件号--当前数据段顺序号作为标签内容。
 
     +Lx:
-        As **h** but use the multi-segment headers in the *cross.d* file
-        instead. This choice obviously requires the crossing segments
-        location algorithm (code **x\ \|\ X**) to be in effect.
+        与属性 **h** 类似，多段数据头记录的来源为 *cross.d* 文件。
+        显然，该属性需要在指定标签位置算法(**x\ \|\ X**)的前提下，
+        才能起作用。
 
-Examples of Contour Label Placement
+等值线标签位置实例
 -----------------------------------
 
-We will demonstrate the use of these options with a few simple examples.
-First, we will contour a subset of the global geoid data used in
-Example :ref:`example_01`; the region selected encompasses the world's strongest
-"geoid dipole": the Indian Low and the New Guinea High.
+本节通过一些简单的实例说明等值线标签位置选项的作用。
+首先，在实例1中，采用部分全球大地水准面数据(geoid)，绘制了等值线。
+所选择的区域包含了大地水准面的两级，Indian Low和New Guinea High。
 
-Equidistant labels
+
+等距离放置标签
 ~~~~~~~~~~~~~~~~~~
 
-Our first example uses the default placement algorithm. Because of the
-size of the map we request contour labels every 1.5 inches along the
-lines:
+第1个实例使用标签位置算法的默认值，沿等值线每1.5英寸放置一个标签:
 
     ::
 
      gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_1.ps
      gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH >> GMT_App_O_1.ps
 
-As seen in Figure :ref:`Contour label 1 <Contour_label_1>`, the contours are
-placed rather arbitrary. The string of contours for -40 to
-60 align well but that is a fortuitous consequence of reaching
-the 1.5 inch distance from the start at the bottom of the map.
+效果如图:ref:`Contour label 1 <Contour_label_1>` 所示。
 
 .. _Contour_label_1:
 
@@ -264,24 +244,21 @@ the 1.5 inch distance from the start at the bottom of the map.
    :width: 500 px
    :align: center
 
-   Equidistant contour label placement with **-Gd**, the only algorithm
-   available in previous GMT versions.
+   通过指定 **-Gd** 选项的参数，确定了标签的位置(等值线上相距1.5英寸的点) 
 
 
-Fixed number of labels
+给定标签个数
 ~~~~~~~~~~~~~~~~~~~~~~
 
-We now exercise the option for specifying exactly how many labels each
-contour line should have:
+现在指定每条等值线上标签的个数：
 
     ::
 
      gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_2.ps
      gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH >> GMT_App_O_2.ps
 
-By selecting only one label per contour and requiring that labels only
-be placed on contour lines whose length exceed 1 inch, we achieve the
-effect shown in Figure :ref:`Contour label 2 <Contour_label_2>`.
+每条等值线上只放置1个标签，并且要求等值线的长度不小于1英寸，
+效果如图 :ref:`Contour label 2 <Contour_label_2>` 所示。
 
 .. _Contour_label_2:
 
@@ -289,17 +266,15 @@ effect shown in Figure :ref:`Contour label 2 <Contour_label_2>`.
    :width: 500 px
    :align: center
 
-   Placing one label per contour that exceed 1 inch in length, centered on the segment with **-Gn**.
+   通过指定 **-Gn** 选项的参数，确定了标签的位置(每条长度超过1英寸的等值线的中心位置)
 
 
-Prescribed label placements
+
+给定标签位置
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here, we specify four points where we would like contour labels to be
-placed. Our points are not exactly on the contour lines so we give a
-nonzero "slop" to be used in the distance calculations: The point on the
-contour closest to our fixed points and within the given maximum
-distance will host the label.
+给定标签所在位置的坐标，由于坐标不是严格位于等值线上，
+指定了非0距离值，即标签位置与等值线距离的上限。
 
     ::
 
@@ -312,10 +287,10 @@ distance will host the label.
      gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_3.ps
      gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH >> GMT_App_O_3.ps
 
-The angle of the label is evaluated from the contour line geometry, and
-the final result is shown in Figure :ref:`Contour label 3 <Contour_label_3>`.
-To aid in understanding the algorithm we chose to specify "debug" mode
-(**+d**) which placed a small circle at each of the fixed points.
+根据等值线的几何形状，自动计算标签的角度，
+效果如图:ref:`Contour label 3 <Contour_label_3>` 所示。
+为了帮助理解，通过指定选项 **-A** 中的 **+d*** 属性，
+采用了debug模式，即在每个给定位置上绘制了一个小圆圈。
 
 .. _Contour_label_3:
 
@@ -323,24 +298,21 @@ To aid in understanding the algorithm we chose to specify "debug" mode
    :width: 500 px
    :align: center
 
-   Four labels are positioned on the points along the contours that are
-   closest to the locations given in the file fix.txt in the **-Gf** option.
+   通过指定 **-Gf** 选项的参数，确定了标签的位置(等值线上与给定点距离最小的点)
 
 
-Label placement at simple line intersections
+线段与等值线交点处放置标签
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Often, it will suffice to place contours at the imaginary intersections
-between the contour lines and a well-placed straight line segment. The
-**-Gl** or **-GL** algorithms work well in those cases:
+通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，
+将标签放置在直线段与等值线的交点。
 
     ::
 
       gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_4.ps
       gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH >> GMT_App_O_4.ps
 
-The obvious choice in this example is to specify a great circle between
-the high and the low, thus placing all labels between these extrema.
+图中的标签位于数据极值点连线(**Z-/Z+**)与等值线的交点。
 
 .. _Contour_label_4:
 
@@ -348,22 +320,18 @@ the high and the low, thus placing all labels between these extrema.
    :width: 500 px
    :align: center
 
-   Labels are placed at the intersections between contours and the great circle specified in the **-GL** option.
+   通过指定 **-GL** 选项的参数确定了标签的位置(大圆弧与等值线的交点)
 
 
-The thin debug line in Figure :ref:`Contour label 4 <Contour_label_4>` shows
-the great circle and the intersections where labels are plotted. Note
-that any number of such lines could be specified; here we are content
-with just one.
+图:ref:`Contour label 4 <Contour_label_4>` 中极值点连线为两点之间的大圆弧，
+在其与等值线交点位置处放置了标签。
+同一幅地图中，可以分别指定多条线段。
 
-Label placement at general line intersections
+广义的线段与等值线相交算法
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If (1) the number of intersecting straight line segments needed to pick
-the desired label positions becomes too large to be given conveniently
-on the command line, or (2) we have another data set or lines whose
-intersections we wish to use, the general crossing algorithm makes more
-sense:
+如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，
+可以使用广义的相交算法确定标签的位置：
 
     ::
 
@@ -376,15 +344,14 @@ sense:
    :width: 500 px
    :align: center
 
-   Labels are placed at the intersections between contours and the
-   multi-segment lines specified in the **-GX** option.
+   通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定了标签的位置
 
 
-In this case, we have created three strands of lines whose intersections
-with the contours define the label placements, presented in
-Figure :ref:`Contour label 5 <Contour_label_5>`.
+多段数据文件 *cross.txt* 中定义了三条曲线，
+在这三条曲线与等值线交点位置处放置了标签，
+效果如图:ref:`Contour label 5 <Contour_label_5>` 所示。
 
-Examples of Label Attributes
+标签属性实例
 ----------------------------
 
 We will now demonstrate some of the ways to play with the label
