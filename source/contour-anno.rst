@@ -164,14 +164,12 @@ X:
 
 
 +w:
-    The angle of the line at the point of straight label placement is
-    calculated by a least-squares fit to the *width* closest points. If
-    not specified, *width* defaults to 10.
+    标签所在位置处等值线的角度，是对附近的 *width* 个点，
+    进行最小二乘拟合计算的，*width* 的默认值为10。
 
 
 +=:
-    Similar in most regards to **+u** but applies instead to a label
-    *prefix* which you must append.
+    与 **+u** 非常相似，用于指定 *prefix* 的单位。
 
 对于等值线绘制模块，
 标签的内容为等值线的数值(可以通过 **+u** 或 **+=** 属性来修改)。
@@ -192,7 +190,8 @@ X:
 
     +Ld:
         采用笛卡尔坐标系内的距离作为标签位置的距离单位，
-        可以指定单位，如 **c\ \|\ i\ \|\ p** 默认值为
+        可以指定单位，如 **c\ \|\ i\ \|\ p** ，
+        默认值为
         [:ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>`]。 
         标签内容的格式参见:ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 。
 
@@ -240,7 +239,7 @@ X:
 
 .. _Contour_label_1:
 
-.. figure:: /_images/GMT_App_O_1.*
+.. figure:: /images/GMT_App_O_1.*
    :width: 500 px
    :align: center
 
@@ -262,7 +261,7 @@ X:
 
 .. _Contour_label_2:
 
-.. figure:: /_images/GMT_App_O_2.*
+.. figure:: /images/GMT_App_O_2.*
    :width: 500 px
    :align: center
 
@@ -294,7 +293,7 @@ X:
 
 .. _Contour_label_3:
 
-.. figure:: /_images/GMT_App_O_3.*
+.. figure:: /images/GMT_App_O_3.*
    :width: 500 px
    :align: center
 
@@ -316,7 +315,7 @@ X:
 
 .. _Contour_label_4:
 
-.. figure:: /_images/GMT_App_O_4.*
+.. figure:: /images/GMT_App_O_4.*
    :width: 500 px
    :align: center
 
@@ -340,7 +339,7 @@ X:
 
 .. _Contour_label_5:
 
-.. figure:: /_images/GMT_App_O_5.*
+.. figure:: /images/GMT_App_O_5.*
    :width: 500 px
    :align: center
 
@@ -354,22 +353,22 @@ X:
 标签属性实例
 ----------------------------
 
-We will now demonstrate some of the ways to play with the label
-attributes. To do so we will use :doc:`psxy` on
-a great-circle line connecting the geoid extrema, along which we have
-sampled the ETOPO5 relief data set. The file thus contains *lon, lat,
-dist, geoid, relief*, with distances in km.
+本节通过实例说明标签属性的作用，
+采用:doc:`psxy` 绘制了大地水准面极值点之间的大圆弧，
+并且沿着该大圆弧从ETOPO5数据集中提取了高程数据。
+高程数据文件(transect.txt)中包括
+了 *经度、纬度、距离、大地水准面、高程* 数据。 
 
-Label placement by along-track distances, 1
+按照沿大圆弧距离放置标签, 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example will change the orientation of labels from along-track to
-across-track, and surrounds the labels with an opaque, outlined text box
-so that the label is more readable. We choose the place the labels every
-1000 km along the line and use that distance as the label. The labels
-are placed normal to the line:
+在本实例中将标签的走向从沿大圆弧改变为跨大圆弧，并指定了不透明的文本框
+和轮廓线，增加了标签的可读性。
+沿大圆弧每1000km放置一个标签，使用距离值作为标签的内容。
+标签的方向与大圆弧垂直：
 
     ::
+
      gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_6.ps
      gmt grdcontour geoid.nc -J -O -K -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 \
      -T+l"-+" >> GMT_App_O_6.ps
@@ -377,26 +376,24 @@ are placed normal to the line:
 
 .. _Contour_label_6:
 
-.. figure:: /_images/GMT_App_O_6.*
+.. figure:: /images/GMT_App_O_6.*
    :width: 500 px
    :align: center
 
-   Labels attributes are controlled with the arguments to the **-Sq** option.
+   通过指定 **-Sq** 选项的参数控制标签属性.
 
 
-The composite illustration in Figure :ref:`Contour label 6 <Contour_label_6>`
-shows the new effects. Note that the line connecting the extrema does
-not end exactly at the ‘-' and ‘+' symbols. This is because the
-placements of those symbols are based on the mean coordinates of the
-contour and not the locations of the (local or global) extrema.
+图:ref:`Contour label 6 <Contour_label_6>` 显示了上述命令的综合效果。
+值得注意的是，大圆弧的起点和终点没有与表示极值点的"-"和"+"符号完全重合。
+造成这个现象的原因是，极值点符号"-"和"+"的坐标是等值线的平均值，
+而不是全局或局部极值的位置。
 
-Label placement by along-track distances, 2
+按照沿大圆弧距离放置标签, 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A small variation on this theme is to place the labels parallel to the
-line, use spherical degrees for placement, append the degree symbol as a
-unit for the labels, choose a rounded rectangular text box, and
-inverse-video the label:
+与上一个实例不同的是，
+本实例中标签与大圆弧平行，以弧度指定标签位置，并添加弧度单位。
+文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。
 
     ::
 
@@ -405,26 +402,23 @@ inverse-video the label:
      -T+l"-+" >> GMT_App_O_7.ps
      gmt psxy -R -J -O -SqD15d:+gblack+fwhite+Ld+o+u\\260 -Wthick transect.txt >> GMT_App_O_7.ps
 
-The output is presented as Figure :ref:`Contour label 7 <Contour_label_7>`.
+输出结果如图:ref:`Contour label 7 <Contour_label_7>` 所示。
 
 .. _Contour_label_7:
 
-.. figure:: /_images/GMT_App_O_7.*
+.. figure:: /images/GMT_App_O_7.*
    :width: 500 px
    :align: center
 
-   Another label attribute example.
+   另一个标签属性实例
 
-
-Using a different data set for labels
+使用不同数据集定义标签的内容和位置
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the next example we will use the bathymetry values along the transect
-as our label, with placement determined by the distance along track. We
-choose to place labels every 1500 km. To do this we need to pull out
-those records whose distances are multiples of 1500 km and create a
-"fixed points" file that can be used to place labels and specify the
-labels. This is done with **awk**.
+本实例中采用沿大圆弧的海底地形数据作为标签的内容，
+按照沿大圆弧的距离，每1500km放置一个标签。
+因此需要使用 **awk** 程序从 *transect.txt* 文件中抽取距离为1500km倍数的记录，
+并创建一个新文件，指定标签的位置和内容：
 
     ::
 
@@ -434,27 +428,26 @@ labels. This is done with **awk**.
                     -S10 -T+l"-+" >> GMT_App_O_8.ps
      gmt psxy -R -J -O -Sqffix2.txt:+g+an+p+Lf+u" m"+f8p -Wthick transect.txt >> GMT_App_O_8.ps
 
-The output is presented as Figure :ref:`Contour label 8 <Contour_label_8>`.
+输出如图 :ref:`Contour label 8 <Contour_label_8>` 所示。
 
 .. _Contour_label_8:
 
-.. figure:: /_images/GMT_App_O_8.*
+.. figure:: /images/GMT_App_O_8.*
    :width: 500 px
    :align: center
 
-   Labels based on another data set (here bathymetry) while the placement is based on distances.
+   标签的位置和内容来自不同的数据集
 
-
-Putting it all together
+综合实例
 -----------------------
 
-Finally, we will make a more complex composite illustration that uses
-several of the label placement and label attribute settings discussed in
-the previous sections. We make a map showing the tsunami travel times
-(in hours) from a hypothetical catastrophic landslide in the Canary
-Islands [42]_. We lay down a color map based on the travel times and the
-shape of the seafloor, and travel time contours with curved labels as
-well as a few quoted lines. The final script is
+最后，采用之前章节中论述的多个标签位置确定方法和属性设置，
+绘制了一幅比较复杂的综合性图件。
+假设在Canary Islands发生了灾难性滑坡，
+图件显示了所引发的的海啸的走时(以小时为单位)。
+根据海啸走时和海底地形绘制了彩图，
+对等值线和线条进行了标注。
+完整的脚本如下：
 
     ::
 
@@ -489,17 +482,15 @@ well as a few quoted lines. The final script is
      EOF
      gmt psxy -R -J -O -T >> GMT_App_O_9.ps
 
-with the complete illustration presented as Figure
-:ref:`Contour label 9 <Contour_label_9>`.
+图件如图:ref:`Contour label 9 <Contour_label_9>` 所示。
 
 .. _Contour_label_9:
 
-.. figure:: /_images/GMT_App_O_9.*
+.. figure:: /images/GMT_App_O_9.*
    :width: 500 px
    :align: center
 
-   Tsunami travel times from the Canary Islands to places in the Atlantic,
-   in particular New York. Should a catastrophic landslide occur it is possible
-   that New York will experience a large tsunami about 8 hours after the event.
+   Canary Islands到大西洋沿岸的海啸走时图，特别是纽约。
+   当发生灾难性滑坡时，纽约将在8小时后遭遇大海啸。
 
 
