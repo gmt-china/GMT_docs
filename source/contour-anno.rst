@@ -35,9 +35,9 @@ D:
     **D**\ *dist*\ [**d\ \|\ m\ \|\ s\ \|\ e\ \|\ f\ \|\ k\ \|\ M\ \|\ n**][/\ *frac*].
     与字符 **d** 相似，但是其输入数据必须是地理坐标(同时必须选择地图投影)，
     距离为沿等值线的地表真实距离。
-    可以附加距离的单位，包括弧度 **d**\ egree、 **m**\ 弧分、  **s**\ 弧秒,
-    或 米m\ **e**\ ter [Default]、英尺 **f**\ eet、公里 **k**\ ilometer、英里
-    **M**\ iles、 海里 **n**\ autical miles。
+    可以附加距离的单位，包括弧度 **d**\ 、 **m**\ 弧分、  **s**\ 弧秒,
+    米 **e**\  、英尺 **f**\ 、公里 **k**\ 、英里
+    **M**\ 、 海里 **n**\ 。
     其它参数的意义与字符 **d** 相同。
 
 f:
@@ -189,14 +189,14 @@ X:
         则采用数据段头记录首字符(默认为 > )后的第一个单词。
 
     +Ld:
-        采用笛卡尔坐标系内的距离作为标签位置的距离单位，
+        采用笛卡尔坐标系内的距离作为标签内容的距离单位，
         可以指定单位，如 **c\ \|\ i\ \|\ p** ，
         默认值为
         [:ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>`]。 
         标签内容的格式参见:ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 。
 
     +LD:
-        采用真实地表距离计算标签的位置，可以指定单位，如
+        采用真实地表距离计算标签内容，可以指定单位，如
         **d\ \|\ e\ \|\ f\ \|\ k\ \|\ m\ \|\ M\ \|\ n\ \|\ s**
         默认值为弧度 **d** 。
 
@@ -230,16 +230,15 @@ X:
 
 第1个实例使用标签位置算法的默认值，沿等值线每1.5英寸放置一个标签:
 
-    ::
-
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_1.ps
-     gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH >> GMT_App_O_1.ps
+.. literalinclude:: ../scripts/GMT_contour-anno1.sh
+   :language: bash
+   :lines: 3
 
 效果如图:ref:`Contour label 1 <Contour_label_1>` 所示。
 
 .. _Contour_label_1:
 
-.. figure:: /images/GMT_App_O_1.*
+.. figure:: /images/GMT_contour-anno1.*
    :width: 500 px
    :align: center
 
@@ -251,17 +250,18 @@ X:
 
 现在指定每条等值线上标签的个数：
 
-    ::
+.. literalinclude:: ../scripts/GMT_contour-anno2.sh
+   :language: bash
+   :lines: 3
+    
 
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_2.ps
-     gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH >> GMT_App_O_2.ps
 
 每条等值线上只放置1个标签，并且要求等值线的长度不小于1英寸，
 效果如图 :ref:`Contour label 2 <Contour_label_2>` 所示。
 
 .. _Contour_label_2:
 
-.. figure:: /images/GMT_App_O_2.*
+.. figure:: /images/GMT_contour-anno2.*
    :width: 500 px
    :align: center
 
@@ -275,16 +275,9 @@ X:
 给定标签所在位置的坐标，由于坐标不是严格位于等值线上，
 指定了非0距离值，即标签位置与等值线距离的上限。
 
-    ::
-
-     cat << EOF > fix.txt
-     80      -8.5
-     55      -7.5
-     102     0
-     130     10.5
-     EOF
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_3.ps
-     gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH >> GMT_App_O_3.ps
+.. literalinclude:: ../scripts/GMT_contour-anno3.sh
+   :language: bash
+   :lines: 9
 
 根据等值线的几何形状，自动计算标签的角度，
 效果如图:ref:`Contour label 3 <Contour_label_3>` 所示。
@@ -293,7 +286,7 @@ X:
 
 .. _Contour_label_3:
 
-.. figure:: /images/GMT_App_O_3.*
+.. figure:: /images/GMT_contour-anno3.*
    :width: 500 px
    :align: center
 
@@ -306,16 +299,16 @@ X:
 通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，
 将标签放置在直线段与等值线的交点。
 
-    ::
+.. literalinclude:: ../scripts/GMT_contour-anno4.sh
+   :language: bash
+   :lines: 3
 
-      gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_4.ps
-      gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH >> GMT_App_O_4.ps
 
 图中的标签位于数据极值点连线(**Z-/Z+**)与等值线的交点。
 
 .. _Contour_label_4:
 
-.. figure:: /images/GMT_App_O_4.*
+.. figure:: /images/GMT_contour-anno4.*
    :width: 500 px
    :align: center
 
@@ -332,14 +325,14 @@ X:
 如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，
 可以使用广义的相交算法确定标签的位置：
 
-    ::
+.. literalinclude:: ../scripts/GMT_contour-anno5.sh
+   :language: bash
+   :lines: 3
 
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_5.ps
-     gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+d+f8p -GXcross.txt -S10 -T+lLH >> GMT_App_O_5.ps
 
 .. _Contour_label_5:
 
-.. figure:: /images/GMT_App_O_5.*
+.. figure:: /images/GMT_contour-anno5.*
    :width: 500 px
    :align: center
 
@@ -367,16 +360,14 @@ X:
 沿大圆弧每1000km放置一个标签，使用距离值作为标签的内容。
 标签的方向与大圆弧垂直：
 
-    ::
+.. literalinclude:: ../scripts/GMT_contour-anno6.sh
+   :language: bash
+   :lines: 4
 
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_6.ps
-     gmt grdcontour geoid.nc -J -O -K -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 \
-     -T+l"-+" >> GMT_App_O_6.ps
-     gmt psxy -R -J -O -SqD1000k:+g+LD+an+p -Wthick transect.txt >> GMT_App_O_6.ps
 
 .. _Contour_label_6:
 
-.. figure:: /images/GMT_App_O_6.*
+.. figure:: /images/GMT_contour-anno6.*
    :width: 500 px
    :align: center
 
@@ -394,19 +385,17 @@ X:
 与上一个实例不同的是，
 本实例中标签与大圆弧平行，以弧度指定标签位置，并添加弧度单位。
 文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。
+     
+.. literalinclude:: ../scripts/GMT_contour-anno7.sh
+   :language: bash
+   :lines: 4
 
-    ::
-
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_7.ps
-     gmt grdcontour geoid.nc -J -O -K -B20f10 -BWSne -C10 -A20+d+u" m"+f8p -Gl50/10S/160/10S -S10 \
-     -T+l"-+" >> GMT_App_O_7.ps
-     gmt psxy -R -J -O -SqD15d:+gblack+fwhite+Ld+o+u\\260 -Wthick transect.txt >> GMT_App_O_7.ps
 
 输出结果如图:ref:`Contour label 7 <Contour_label_7>` 所示。
 
 .. _Contour_label_7:
 
-.. figure:: /images/GMT_App_O_7.*
+.. figure:: /images/GMT_contour-anno7.*
    :width: 500 px
    :align: center
 
@@ -420,19 +409,16 @@ X:
 因此需要使用 **awk** 程序从 *transect.txt* 文件中抽取距离为1500km倍数的记录，
 并创建一个新文件，指定标签的位置和内容：
 
-    ::
+.. literalinclude:: ../scripts/GMT_contour-anno8.sh
+   :language: bash
+   :lines: 5
 
-     gmt convert -i0,1,4 -Em150 transect.txt | $AWK '{print $1,$2,int($3)}' > fix2.txt
-     gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_App_O_8.ps
-     gmt grdcontour geoid.nc -J -O -K -B20f10 -BWSne -C10 -A20+d+u" m"+f8p -Gl50/10S/160/10S \
-                    -S10 -T+l"-+" >> GMT_App_O_8.ps
-     gmt psxy -R -J -O -Sqffix2.txt:+g+an+p+Lf+u" m"+f8p -Wthick transect.txt >> GMT_App_O_8.ps
 
 输出如图 :ref:`Contour label 8 <Contour_label_8>` 所示。
 
 .. _Contour_label_8:
 
-.. figure:: /images/GMT_App_O_8.*
+.. figure:: /images/GMT_contour-anno8.*
    :width: 500 px
    :align: center
 
@@ -448,45 +434,17 @@ X:
 根据海啸走时和海底地形绘制了彩图，
 对等值线和线条进行了标注。
 完整的脚本如下：
+     
+.. literalinclude:: ../scripts/GMT_contour-anno9.sh
+   :language: bash
+   :lines: 24
 
-    ::
-
-     R=-R-85/5/10/55
-     gmt grdgradient topo5.nc -Nt1 -A45 -Gtopo5_int.nc
-     gmt set FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
-     gmt project -E-74/41 -C-17/28 -G10 -Q > great_NY_Canaries.txt
-     gmt project -E-74/41 -C2.33/48.87 -G100 -Q > great_NY_Paris.txt
-     km=`echo -17 28 | gmt mapproject -G-74/41/k -fg --FORMAT_FLOAT_OUT=%.0f -o2`
-     cat << EOF > ttt.cpt
-     0	lightred	3	lightred
-     3	lightyellow	6	lightyellow
-     6	lightgreen	100	lightgreen
-     EOF
-     gmt grdimage ttt_atl.nc -Itopo5_int.nc -Cttt.cpt $R -JM5.3i -P -K -nc+t1 > GMT_App_O_9.ps
-     gmt grdcontour ttt_atl.nc -R -J -O -K -C0.5 -A1+u" hour"+v+f8p,Bookman-Demi \
-                    -GL80W/31N/17W/26N,17W/28N/17W/50N -S2 >> GMT_App_O_9.ps
-     gmt psxy -R -J -Wfatter,white great_NY_Canaries.txt -O -K  >> GMT_App_O_9.ps
-     gmt pscoast -R -J -B20f5 -BWSne+t"Tsunami travel times from the Canaries" -N1/thick -O -K \
-                 -Glightgray -Wfaint -A500 >> GMT_App_O_9.ps
-     gmt convert great_NY_*.txt -E | gmt psxy -R -J -O -K -Sa0.15i -Gred -Wthin >> GMT_App_O_9.ps
-     gmt psxy -R -J -Wthick great_NY_Canaries.txt -O -K \
-              -Sqn1:+f8p,Times-Italic+l"Distance Canaries to New York = $km km"+ap+v >> GMT_App_O_9.ps
-     gmt psxy -R -J great_NY_Paris.txt -O -K -Sc0.08c -Gblack >> GMT_App_O_9.ps
-     gmt psxy -R -J -Wthinner great_NY_Paris.txt -SqD1000k:+an+o+gblue+LDk+f7p,Helvetica-Bold,white \
-              -O -K >> GMT_App_O_9.ps
-     cat << EOF | gmt pstext -R -J -O -K -Gwhite -Wthin -Dj0.1i/0.1i -F+f8p,Bookman-Demi+j \
-                             >> GMT_App_O_9.ps
-     74W	41N	RT	New York
-     2.33E	48.87N	CT	Paris
-     17W	28N	CT	Canaries
-     EOF
-     gmt psxy -R -J -O -T >> GMT_App_O_9.ps
 
 图件如图:ref:`Contour label 9 <Contour_label_9>` 所示。
 
 .. _Contour_label_9:
 
-.. figure:: /images/GMT_App_O_9.*
+.. figure:: /images/GMT_contour-anno9.*
    :width: 500 px
    :align: center
 
