@@ -24,3 +24,4 @@
    matlab-wrapper
    julia-wrapper
    nan-data
+   contour-annot
