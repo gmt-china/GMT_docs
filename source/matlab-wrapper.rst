@@ -135,73 +135,73 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 ::
 
-    projection_ref_proj4   % Proj4 语法的投影方式 (可选)
-    projection_ref_wkt     % WKT 语法的投影方式 (可选)
-    range                  % 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
-    inc                    % 1x2 向量, 表示采样间隔： [x_inc y_inc]
-    n_rows                 % 行数
-    n_columns              % 列数
-    n_bands                % 波段数（维数）(目前未启用，恒等于 1)
-    registration           % 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration
-    nodata                 % 空值对应的数值
-    title                  % 标题 (可选)
-    remark                 % Remark (可选)
-    command                % 生成网格所使用的命令 (可选)
-    datatype               % 数据格式 'float' 或 'double'
-    x                      % [1 x n_columns] 向量, 表示X坐标值
-    y                      % [1 x n_rows] 向量, 表示Y坐标值
-    z                      % [n_rows x n_columns] 网格数组
-    x_units                % X轴单位 (可选)
-    y_units                % Y轴单位 (可选)
-    z_units                % Z单位 (可选)
+    proj4          % Proj4 语法的投影方式 (可选)
+    wkt            % WKT 语法的投影方式 (可选)
+    range          % 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
+    inc            % 1x2 向量, 表示采样间隔： [x_inc y_inc]
+    registration   % 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration
+    nodata         % 空值对应的数值
+    title          % 标题 (可选)
+    comment        % Remark (可选)
+    command        % 生成网格所使用的命令 (可选)
+    datatype       % 数据格式 'float' 或 'double'
+    x              % [1 x n_columns] 向量, 表示X坐标值
+    y              % [1 x n_rows] 向量, 表示Y坐标值
+    z              % [n_rows x n_columns] 网格数组
+    x_units        % X轴单位 (可选)
+    y_units        % Y轴单位 (可选)
+    z_units        % Z单位 (可选)
+    layout         % 一个三字符的字符串，用于描述 image memory layout
 
 图像结构体
 ++++++++++
 
 ::
 
-    projection_ref_proj4   % Proj4 语法的投影方式 (可选)
-    projection_ref_wkt     % WKT 语法的投影方式 (可选)
-    range                  % 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
-    inc                    % 1x2 向量, 表示采样间隔： [x_inc y_inc]
-    n_rows                 % 行数
-    n_columns              % 列数
-    n_bands                % 波段数（维数）
-    registration           % 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration (默认值)
-    nodata                 % 空值对应的数值
-    title                  % 标题 (可选)
-    remark                 % Remark (可选)
-    command                % 生成网格所使用的命令 (可选)
-    datatype               % 数据格式 'uint8' 或 'int8'
-    x                      % [1 x n_columns] 向量, 表示X坐标值
-    y                      % [1 x n_rows] 向量, 表示Y坐标值
-    image                  % [n_rows x n_columns] 图像数组
-    x_units                % X轴单位 (可选)
-    y_units                % Y轴单位 (可选)
-    z_units                % Z单位 (可选)
-    colormap               % CPT 结构体
-    alpha                  % [n_rows x n_columns] alpha 数组
+    proj4          % Proj4 语法的投影方式 (可选)
+    wkt            % WKT 语法的投影方式 (可选)
+    range          % 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
+    inc            % 1x2 向量, 表示采样间隔： [x_inc y_inc]
+    registration   % 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration (默认值)
+    nodata         % 空值对应的数值
+    title          % 标题 (可选)
+    comment        % Remark (可选)
+    command        % 生成网格所使用的命令 (可选)
+    datatype       % 数据格式 'uint8' 或 'int8'
+    x              % [1 x n_columns] 向量, 表示X坐标值
+    y              % [1 x n_rows] 向量, 表示Y坐标值
+    image          % [n_rows x n_columns] 图像数组
+    x_units        % X轴单位 (可选)
+    y_units        % Y轴单位 (可选)
+    z_units        % Z单位 (可选)
+    colormap       % CPT 结构体
+    alpha          % [n_rows x n_columns] alpha 数组
+    layout         % 一个四字符的字符串，用于描述 image memory layout
 
 CPT 结构体
 +++++++++++
 
 ::
 
-    colormap               % [ncolors x 3] 矩阵，保存了 [0-1] 范围内的颜色值
-    alpha                  % [ncolors x 1] 矢量，包含了 [0-1] 范围内的透明度值 (可选)
-    range                  % [ncolors x 2] 矩阵，对于每个颜色而言包含了 z_low 和 z_high 两个值
-    bnf                    % [3 x 3] 矩阵，包含了 [0-1] 范围内的前景色、背景色和NaN色
-    minmax                 % [z_min z_max]
-    depth                  % CPT 颜色深度，取值 (1, 8, 24)
-    hinge                  % hinge 值
+    colormap       % [ncolors x 3] 矩阵，保存了 [0-1] 范围内的颜色值
+    alpha          % [ncolors x 1] 矢量，包含了 [0-1] 范围内的透明度值 (可选)
+    range          % [ncolors x 2] 矩阵，对于每个颜色而言包含了 z_low 和 z_high 两个值
+    minmax         % [z_min z_max]
+    bnf            % [3 x 3] 矩阵，包含了 [0-1] 范围内的前景色、背景色和NaN色
+    depth          % CPT 颜色深度，取值 (1, 8, 24)
+    hinge          % hinge 值
+    cpt
+    model          % RGB 或 CMYK
+    comment        % remark (可选)
 
 PostScript 结构体
 ++++++++++++++++++
 
 ::
 
-    postscript             % 包含了全部 PostScript 代码的字符串
-    length                 % 字符串的长度（即字节数）
-    mode                   % 1 表示仅包含文件头，2表示只包含文件尾，3表示完整为文件
+    postscript     % 包含了全部 PostScript 代码的字符串
+    length         % 字符串的长度（即字节数）
+    mode           % 1 表示仅包含文件头，2表示只包含文件尾，3表示完整为文件
+    comment
 
 .. source: http://gmt.soest.hawaii.edu/doc/latest/matlab_wrapper.html
