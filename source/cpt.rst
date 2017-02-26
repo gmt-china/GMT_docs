@@ -72,8 +72,6 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
 #. ``B|F|N`` 语句分别用于设置背景色（默认值为 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` ）、前景色（默认值为 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` ）和NaN值的颜色（默认值为 :ref:`COLOR_NAN <COLOR_NAN>` ）
 #. ``B|F|N`` 语句要放在CPT文件的开头或结尾
 
-.. TODO L|U|B似乎有BUG
-
 下面是一个常规CPT文件的示例::
 
     30    p200/16  80   -
@@ -115,6 +113,16 @@ GMT内置了35个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHO
    GMT内置CPT示例2
 
 GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以以这些内置CPT文件为基础，针对用户自己的数据制作专门的CPT文件。比如某个内置CPT文件定义了从0到1颜色从蓝色变成红色，用 ``makecpt`` 可以制作一个从1000到3000颜色从蓝色变成红色的CPT文件。
+
+动态CPT
+-------
+
+GMT 内置的 CPT 文件都是动态的。
+
+所有动态CPT文件都按照两种方式中的一种进行了归一化：
+
+#.
+
 
 使用CPT
 -------

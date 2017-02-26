@@ -35,7 +35,7 @@ GMT 为了将一个修饰物放在底图上，做了四件事：
    参考点与锚点
 
 .. note::
-    
+
    一个比较形象的比喻：将底图看作是一片海洋，将修饰物看作是一条小船。小船航行到海洋中的某个参考点，然后将船上的一个锚（按照GMT的定义，这条船有9个锚）从参考点处丢下，即实现了船在海洋中的定位。
 
 底图参考点
@@ -100,4 +100,4 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
 
    左图使用了 ``-F+glightgreen+r`` ，右图使用了 ``-F+p1p+i+s+gwhite+c0.1i``
 
-.. source: http://gmt.soest.hawaii.edu/doc/5.3.1/GMT_Docs.html#plot-embellishments
+.. source: http://gmt.soest.hawaii.edu/doc/5.3.2/GMT_Docs.html#plot-embellishments

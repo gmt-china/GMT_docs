@@ -37,11 +37,11 @@ GMT为bash提供了基本的命令行补全功能。在终端敲GMT命令时，�
        psbasemap    psconvert    pslegend     psrose       pssegyz      pswiggle
        psclip       pscoupe      psmask       pssac        pssolar      psxy
        pscoast      pshistogram  psmeca       psscale      pstext       psxyz
-       pscontour    psimage      pspolar      pssegy       psvelo       
+       pscontour    psimage      pspolar      pssegy       psvelo
 
-       # 似乎选项的补全无法使用 
+       # 似乎选项的补全无法使用
        $ gmt psxy -[Tab]
        -^  -?  -A  -B  -C  -E  -g  -h  -I  -K  -N  -p  -R  -S  -T  -V  -X
        -:  -a  -b  -c  -D  -f  -G  -i  -J  -L  -O  -P  -s  -t  -U  -W  -Y
 
-.. source: http://gmt.soest.hawaii.edu/doc/5.3.1/GMT_Docs.html#command-line-completion
+.. source: http://gmt.soest.hawaii.edu/doc/5.3.2/GMT_Docs.html#command-line-completion

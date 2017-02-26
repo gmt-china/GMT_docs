@@ -248,6 +248,10 @@ GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线
 
    （左）网格线配准；（右）像素配准。
 
+.. note::
+
+   大多数原始观测数据都采样网格线配准方式，而有时经过处理的数据会以像素配准方式发布。尽管两种配准方式可以互相转换，但转换过程中会降低Nyquist采样率，阻尼一些高频信息。因而如果你可以控制，应尽量避免配准转换。
+
 网格线配准
 ~~~~~~~~~~
 
@@ -323,3 +327,7 @@ X方向的周期边界条件表明数据是以周期 :math:`x_{max} - x_{min}` �
 - `ncBrowse <http://www.epic.noaa.gov/java/ncBrowse/>`_
 
 更多相关工具，见 `netCDF网站上的列表 <http://www.unidata.ucar.edu/software/netcdf/software.html>`_ 。
+
+.. note::
+
+   尽管大多数程序都可以读取 netCDF 文件，但某些不支持 netCDF4 格式。

@@ -20,12 +20,14 @@
 
 ### 最新版本
 
-本手册目前与 GMT 5.3.1 同步。
+本手册目前与 GMT 5.3.2 同步。
 
 - 在线阅读： http://docs.gmt-china.org
 - 离线阅读： [HTML](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.zip) [PDF](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.pdf)
 
 ### 历史版本
+
+- GMT 5.3.1：[HTML](https://github.com/gmt-china/GMT_docs/releases/download/v5.3.1/GMT_docs-v5.3.1-HTML.zip) [PDF](https://github.com/gmt-china/GMT_docs/releases/download/v5.3.1/GMT_docs-v5.3.1.pdf)
 
 - GMT 5.2.1：[HTML](https://github.com/gmt-china/GMT_docs/releases/download/v5.2.1/GMT_docs-v5.2.1-HTML.zip) [PDF](https://github.com/gmt-china/GMT_docs/releases/download/v5.2.1/GMT_docs-v5.2.1.pdf)
 

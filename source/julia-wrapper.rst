@@ -75,8 +75,8 @@ GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
 .. note::
 
    Julia 接口能够正确使用的前提是 Julia 可以找到 GMT 的动态链接库文件。所以若以上命令报错，则可以执行::
-   
-        echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.3.1/lib64")' >> ~/.juliarc.jl
+
+        echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.3.2/lib64")' >> ~/.juliarc.jl
 
    将 GMT 的动态库文件所在目录添加到 Julia 的搜索路径中。
 
@@ -122,7 +122,7 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
 
 .. error::
 
-   本示例可能存在问题！ 
+   本示例可能存在问题！
 
 命令行版本中的命令应该是::
 
@@ -169,8 +169,8 @@ Julia 示例位于： ``~/.julia/v0.5/GMT/test/gallery.jl`` 中，你可以直�
 
 如果想要执行该 Julia 脚本，你需要将 ``~/.julia/v0.5/GMT/test/gallery.jl`` 的第7行修改为::
 
-    global g_root_dir = "/opt/GMT-5.3.1/share/"                                                                                 
-    global out_path = "" 
+    global g_root_dir = "/opt/GMT-5.3.2/share/"
+    global out_path = ""
 
 并安装如下方式运行示例：
 
