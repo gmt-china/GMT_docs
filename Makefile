@@ -32,6 +32,7 @@ help:
 	@echo "  latex      to make LaTeX files"
 	@echo "  dummy      to check syntax errors of document sources"
 	@echo "  deploy     to deploy html, zip and PDF to github"
+	@echo "  release    to prepare HTML and PDF files for release"
 
 clean:
 	rm -rf $(BUILDDIR)/*
