@@ -7,6 +7,8 @@ GMT开发版源码通过 ``svn`` 管理，因而要先安装 ``svn`` ，然后�
 
     svn checkout svn://gmtserver.soest.hawaii.edu/gmt5/trunk gmt5-dev
 
+并可以通过通过 ``svn update`` 命令将其更新至最新版本。
+
 当然，也可以使用如下命令获取GMT的开发版的全部源码（包括所有分支）::
 
     svn checkout svn://gmtserver.soest.hawaii.edu/gmt5/ gmt5-dev-full
@@ -14,3 +16,5 @@ GMT开发版源码通过 ``svn`` 管理，因而要先安装 ``svn`` ，然后�
 Git用户可以使用git提供的svn插件来获取源码::
 
     git svn clone svn://gmtserver.soest.hawaii.edu/gmt5/trunk gmt5-dev
+
+并可以通过 ``git svn rebase`` 命令将其更新至最新版本。

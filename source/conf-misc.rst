@@ -16,7 +16,16 @@
 **GMT_VERBOSE**
     控制GMT命令的verbose级别 [c]
 
-    可选值包括 ``quiet`` 、 ``normal`` 、 ``compat`` 、 ``verbose`` 、 ``long`` 、 ``debug`` ，也可以直接使用每个级别的第一个字母。参考 :doc:`option-V` 一节。
+    可选值包括:
+
+    - ``quiet``
+    - ``normal``
+    - ``compat``
+    - ``verbose``
+    - ``long``
+    - ``debug``
+
+    也可以直接使用每个级别的第一个字母。每个级别的具体含义见 :doc:`option-V` 一节。
 
 .. _GMT_TRIANGULATE:
 
