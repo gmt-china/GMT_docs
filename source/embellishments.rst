@@ -90,7 +90,7 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
    - ``+c<xgap>/<ygap>`` 分别为X方向和Y方向指定不同的空白距离
    - ``+c<lgap>/<rgap>/<bgap>/<tgap>`` 分别为四个方向指定不同的空白距离
 
-#. ``+s<dx>/<dy>/<shade>`` 下拉阴影区。 ``<dx>/<dy>`` 是阴影区相对于面板的偏移量， ``<shade>`` 是阴影区的颜色，默认值为 ``4p/-4p/gray50`` 。
+#. ``+s<dx>/<dy>/<fill>`` 下拉阴影区。 ``<dx>/<dy>`` 是阴影区相对于面板的偏移量， ``<shade>`` 是阴影区的颜色，默认值为 ``4p/-4p/gray50`` 。
 
 .. figure:: /images/GMT_panel.*
    :width: 600px
@@ -100,4 +100,4 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
 
    左图使用了 ``-F+glightgreen+r`` ，右图使用了 ``-F+p1p+i+s+gwhite+c0.1i``
 
-.. source: http://gmt.soest.hawaii.edu/doc/5.3.2/GMT_Docs.html#plot-embellishments
+.. source: http://gmt.soest.hawaii.edu/doc/5.3.3/GMT_Docs.html#plot-embellishments
