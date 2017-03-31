@@ -9,7 +9,7 @@
 
 该投影方式将极坐标（角度 :math:`\theta` 和半径 :math:`r` ）转换到纸张上的位置。此时投影函数为 :math:`x' = f(\theta,r)` 和 :math:`y' = g(\theta,r)` ，X和Y是相互耦合的，且具有360度的周期性，因而与地图投影类似。
 
-#. 通常， :math:`\theta` 是相对于水平方向逆时针旋转的角度，但是也可以加一个 :math:`theta_0` 作为所有角度的共同偏移量。即 :math:`x' = f(\theta, r) = ar \cos (\theta-\theta_0) + b` 和 :math:`y' = g(\theta, r) = ar \sin (\theta-\theta_0) + c` 。
+#. 通常， :math:`\theta` 是相对于水平方向逆时针旋转的角度，但是也可以加一个 :math:`\theta_0` 作为所有角度的共同偏移量。即 :math:`x' = f(\theta, r) = a r \cos (\theta-\theta_0) + b` 和 :math:`y' = g(\theta, r) = ar \sin (\theta-\theta_0) + c` 。
 
 #. 或者， :math:`\theta` 也可以解释成相对于北方向顺时针旋转的角度，当然也可以为所有角度指定一个共同的偏移量 :math:`\theta_0` ，即 :math:`x' = f(\theta, r) = ar \cos (90 - (\theta-\theta_0)) + b` 和 :math:`y' = g(\theta, r) = ar \sin (90 - (\theta-\theta_0)) + c` 。
 
