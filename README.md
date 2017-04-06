@@ -23,7 +23,7 @@
 本手册目前与 GMT 5.3.3 同步。
 
 - 在线阅读： http://docs.gmt-china.org
-- 离线阅读： [HTML](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.zip) [PDF](https://github.com/gmt-china/GMT_docs/raw/doc-dev/GMT_docs-dev.pdf)
+- 离线阅读： [HTML](http://docs.gmt-china.org/GMT_docs.zip) [PDF](http://docs.gmt-china.org/GMT_docs.pdf)
 
 ### 历史版本
 
