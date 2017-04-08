@@ -53,6 +53,7 @@ GMT 主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、n
 
 对于CentOS/RHEL/Fedora::
 
+    $ sudo yum install epel-release  # CentOS用户必须先安装epel-release
     # 必须安装的包
     $ sudo yum install gcc gcc-c++ cmake make glibc
     $ sudo yum install ghostscript
