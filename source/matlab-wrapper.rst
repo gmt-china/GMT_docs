@@ -12,7 +12,7 @@ GMT的Matlab接口，顾名思义，提供了在Matlab中调用GMT命令的功�
 Windows平台
 +++++++++++
 
-GMT5.2用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经存在 ``gmt.m`` 和 ``gmtmex.mexw64`` 两个文件，只要确保如下两点即可在Windows下使用该接口了。
+GMT5.3用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经存在 ``gmt.m`` 和 ``gmtmex.mexw64|32`` 两个文件，只要确保如下两点即可在Windows下使用该接口了。
 
 - GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
 - GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
@@ -22,11 +22,12 @@ GMT5.2用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经
    :align: center
 
    Matlab PATH 设置
+- 测试安装是否正确：在Matlab的命令行窗口直接敲入``gmt``，若出现GMT的版本及使用方法介绍，则安装成功。
 
 OS X 平台
 +++++++++
 
-在OS X上按照如下流程可以成功编译GMT的Matlab接口。但由于Matlab处理动态链接库的方式很特别，因而编译接口的流程也很复杂。GMT开发者正试图与MathWorks合作以简化安装流程。
+在OS X上按照如下流程可以成功编译GMT的Matlab接口。但由于Matlab处理动态链接库的方式很特别，因而该接口可能不太稳定。GMT开发者正试图与MathWorks合作以解决这个问题，将来以下编译方法可能会修改：
 
 #. 安装OS X平台下最新版本的GMT；
 #. 运行安装目录下 ``share/tools`` 下的 ``gmt_prepmex.sh`` 文件。此操作会复制GMT的已安装文件到 ``/opt/gmt`` 目录下，并且会重新检查所有的共享库；
@@ -72,6 +73,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 
 上例中，并不存在输入数据，也就是不存在与Matlab变量的交互，生成的ps文件在Matlab当前路径下。
 
+
 进阶级示例
 ++++++++++
 
@@ -80,7 +82,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     %创建字符串数组
     lines = {'5 6 Some label', '6 7 Another label'};
     % 绘制
-    gmt('pstext -R0/10/0/10 -JM6i -Bafg -F+f18p -P > text.ps ', lines);
+    gmt('pstext -R0/10/0/10 -JX6i -Bafg -F+f18p -P > text.ps ', lines);
     gmt('destroy');
 
 上例中，字符串数组 ``lines`` 可以直接作为 ``pstext`` 的输入参数。
@@ -101,10 +103,10 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     % 利用grd2cpt创建颜色表文件，输出为颜色表结构体cpt
     cpt = gmt('grd2cpt -Cjet', G);
     % 利用grdimage绘制格网化结果
-    gmt('grdimage -JX8c -Ba -P -C -G > crap_img.ps', cpt, G);
+    gmt('grdimage -JX8c -Ba -P -C -G > crap_img.ps', G, cpt);
     gmt('destroy');
 
-上例中， ``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G`` ，两者先后顺序不可交换。 ``cpt`` （选项 ``-C`` 的参数）要先于 ``G`` （ ``grdimage`` 的强制性参数）。若有多个选项参数，则选项的顺序决定参数的先后顺序，强制性输入参数要写在最后。
+上例中， ``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G`` ，两者先后顺序不可交换。强制性输入参数（本例中的``G``）要在所有可选参数（本例中的``cpt``）之前。若有多个选项参数，强制性输入参数写在最前，然后按顺序给出可选参数。
 
 大神级示例
 ++++++++++
@@ -118,14 +120,17 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     xyz  = [x seno seno];              % 创建xyz三列数据，其中y=z
     cpt  = gmt('makecpt -T-1/1/0.1');  % 创建rainbow颜色表
     %绘制函数曲线，以z值赋颜色。cpt和xyz先后顺序不可交换。
-    gmt('psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps', cpt, xyz);
+    gmt('psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps', xyz, cpt);
     gmt('destroy');
+	
+敲黑板，上例``psxy``一句中，``-C``为可选参数，因此引号外``cpt``要在强制性输入数据``xyz``之后。
 
 常见问题
 --------
 
-- 使用完GMT接口后要记得 ``gmt('destroy')`` ，不然有可能出现不可预知错误。
+- 使用完GMT接口后要记得 ``gmt('destroy')`` 释放内存，不然有可能出现不可预知错误。
 - gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。
+- 绘制地理投影时，经纬度标注可能会出现``%s``乱码（即使设置为不显示任何度分秒符号），目前已知Matlab2016存在该问题，其他版本还未有此类反馈。
 
 附录
 ----
