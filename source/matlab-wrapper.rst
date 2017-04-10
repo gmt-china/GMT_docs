@@ -67,7 +67,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 入门级示例
 ++++++++++
 
-在matlab环境中调用 ``pscoast`` 绘制地图：
+在matlab环境中调用 ``pscoast`` 绘制地图::
 
     gmt('pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps')
 
@@ -77,7 +77,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 进阶级示例
 ++++++++++
 
-在Matlab环境中，绘制文字：
+在Matlab环境中，绘制文字::
 
     %创建字符串数组
     lines = {'5 6 Some label', '6 7 Another label'};
@@ -120,7 +120,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     xyz  = [x seno seno];              % 创建xyz三列数据，其中y=z
     cpt  = gmt('makecpt -T-1/1/0.1');  % 创建rainbow颜色表
     %绘制函数曲线，以z值赋颜色。cpt和xyz先后顺序不可交换。
-    gmt('psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps', xyz,cpt);
+    gmt('psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps', xyz, cpt);
     gmt('destroy');
 	
 敲黑板，上例``psxy``一句中，``-C``为可选参数，因此引号外``cpt``要在强制性输入数据``xyz``之后。
