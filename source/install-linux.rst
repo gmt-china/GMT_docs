@@ -6,8 +6,6 @@ Linux 下安装GMT
 
 大多数 Linux 发行版都可以通过系统自带的软件包管理器直接安装 GMT。但通常系统软件源里自带的 GMT 版本都比较老，因而如果可能，还是建议 Linux 用户手动编译安装。
 
-可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含 GMT 以及 GMT 的具体版本。
-
 CentOS 7 用户::
 
     sudo yum install epel-release
@@ -18,7 +16,20 @@ Ubuntu 用户::
 
     sudo apt-get install gmt gmt-dcw gmt-gshhg
 
-其他发行版请自行到 https://pkgs.org/ 搜索 GMT 并安装所有与 GMT 相关的包。
+其他发行版用户可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含 GMT 以及 GMT 的具体版本。
+
+使用社区提供的快速安装脚本
+--------------------------
+
+GMT 中文社区为常见的 Linux 发行版提供了 GMT 最新版本的安装脚本，见 https://github.com/gmt-china/gmt-easy-installer。
+
+用户需要下载三个文件到同一个目录：
+
+1. 自己的发行版对应的安装脚本，比如 `ubuntu-installer.sh`
+2. GMT安装脚本 `GMT-installer.sh`
+3. md5 文件 `md5sums.md5`
+
+并依次执行 `ubuntu-installer.sh` 和 `GMT-installer.sh` 即可。
 
 从源码编译
 ----------
