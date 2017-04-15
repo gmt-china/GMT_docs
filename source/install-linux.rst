@@ -23,11 +23,10 @@ Ubuntu 用户::
 
 GMT 中文社区为常见的 Linux 发行版提供了 GMT 最新版本的安装脚本，见 https://github.com/gmt-china/gmt-easy-installer。
 
-用户需要下载三个文件到同一个目录：
+用户需要下载两个安装脚本：
 
-1. 自己的发行版对应的安装脚本，比如 ``ubuntu-installer.sh``
-2. GMT安装脚本 ``GMT-installer.sh``
-3. md5 文件 ``md5sums.md5``
+1. 自己的发行版对应的安装脚本，比如 ``ubuntu-installer.sh``， 用于安装 GMT 所需的依赖
+2. GMT安装脚本 ``GMT-installer.sh`` 用于编译安装GMT源码
 
 并依次执行 ``ubuntu-installer.sh`` 和 ``GMT-installer.sh`` 即可。
 
