@@ -4,7 +4,8 @@ Linux 下安装GMT
 安装预编译版
 ------------
 
-大多数 Linux 发行版都可以通过系统自带的软件包管理器直接安装 GMT。但通常系统软件源里自带的 GMT 版本都比较老，因而如果可能，还是建议 Linux 用户手动编译安装。
+大多数 Linux 发行版都可以通过系统自带的软件包管理器直接安装 GMT。但通常系统软件
+源里自带的 GMT 版本都比较老，因而如果可能，还是建议 Linux 用户手动编译安装。
 
 CentOS 7 用户::
 
@@ -16,16 +17,19 @@ Ubuntu 用户::
 
     sudo apt-get install gmt gmt-dcw gmt-gshhg
 
-其他发行版用户可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含 GMT 以及 GMT 的具体版本。
+其他发行版用户可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含
+GMT 以及 GMT 的具体版本。
 
 使用社区提供的快速安装脚本
 --------------------------
 
-GMT 中文社区为常见的 Linux 发行版提供了 GMT 最新版本的安装脚本，见 https://github.com/gmt-china/gmt-easy-installer。
+GMT 中文社区为常见的 Linux 发行版提供了 GMT 最新版本的安装脚本，见
+https://github.com/gmt-china/gmt-easy-installer。
 
 用户需要下载两个安装脚本：
 
-1. 自己的发行版对应的安装脚本，比如 ``ubuntu-installer.sh``， 用于安装 GMT 所需的依赖
+1. 自己的发行版对应的安装脚本，比如 ``ubuntu-installer.sh``， 用于安装 GMT
+   所需的依赖
 2. GMT安装脚本 ``GMT-installer.sh`` 用于编译安装GMT源码
 
 并依次执行 ``ubuntu-installer.sh`` 和 ``GMT-installer.sh`` 即可。
@@ -38,11 +42,13 @@ GMT 中文社区为常见的 Linux 发行版提供了 GMT 最新版本的安装�
 解决依赖关系
 ~~~~~~~~~~~~
 
-GMT 主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
+GMT 主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、
+netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
 
 .. warning::
 
-   由于 Linux 发行版众多，以下仅所列仅供参考，请自行确认自己的发行版上软件包的具体名字。
+   由于 Linux 发行版众多，以下仅所列仅供参考，请自行确认自己的发行版上软件包的
+   具体名字。
 
 对于Ubuntu/Debian::
 
@@ -122,8 +128,11 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     set (COPY_DCW TRUE)
     set (GMT_USE_THREADS TRUE)
 
-- ``CMAKE_INSTALL_PREFIX`` 设置GMT的安装路径，可以修改为其他路径。对于没有 root 权限的用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.3.3`` 等有可读写权限的路径；
-- ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，也可设置为TRUE
+- ``CMAKE_INSTALL_PREFIX`` 设置GMT的安装路径，可以修改为其他路径。对于没有 root
+  权限的用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.3.3`` 等有可读写
+  权限的路径；
+- ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，
+  也可设置为TRUE
 - ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
 - ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
 - ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能
@@ -132,7 +141,9 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
    此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的5行语句。
 
-   对于高级用户而言，可以直接在 GMT 提供的配置模板基础上进行更多配置。将 ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake`` ，然后根据配置文件中的大量注释说明信息自行修改配置文件。
+   对于高级用户而言，可以直接在 GMT 提供的配置模板基础上进行更多配置。将
+   ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake`` ，
+   然后根据配置文件中的大量注释说明信息自行修改配置文件。
 
 继续执行如下命令以检查GMT的依赖关系::
 
@@ -177,7 +188,9 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     -- Configuring done
     -- Generating done
 
-正常情况下的检查结果应该与上面给出的类似。若出现问题，则需要检查之前的步骤是否有误，检查完毕后重新执行 ``cmake ..`` ，直到出现类似的检查结果。检查完毕后，开始编译和安装::
+正常情况下的检查结果应该与上面给出的类似。若出现问题，则需要检查之前的步骤是否
+有误，检查完毕后重新执行 ``cmake ..`` ，直到出现类似的检查结果。检查完毕后，
+开始编译和安装::
 
     $ make
     $ sudo make install
