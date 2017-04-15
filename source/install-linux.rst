@@ -92,8 +92,6 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 #. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.6.tar.gz
 #. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.2.tar.gz
 
-也可以到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载对应的文件。
-
 安装GMT
 ~~~~~~~
 
