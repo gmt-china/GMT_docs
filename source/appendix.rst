@@ -18,10 +18,7 @@
    get-gmt-dev
    animation
    ogr-format
-   gmt-c-api
    chinese-linux
    chinese-windows
-   matlab-wrapper
-   julia-wrapper
    nan-data
    contour-annot
