@@ -4,9 +4,16 @@ GMT的Julia接口
 简介
 ----
 
-`Julia <http://julialang.org>`_ 是一门为科学计算设计的编程语言，简单易学。其与 Matlab、Python 等编程语言都有相似之处。GMT 提供了 Julia 接口，使得 Julia 用户可以直接在 Julia 脚本中调用 GMT 的相关模块。
+`Julia <http://julialang.org>`_ 是一门为科学计算设计的编程语言，简单易学。
+其与 Matlab、Python 等编程语言都有相似之处。GMT 提供了 Julia 接口，使得 Julia
+用户可以直接在 Julia 脚本中调用 GMT 的相关模块。
 
 GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
+
+.. note::
+
+   GMT 的 julia 接口还在开发中，因而用法可能出现改动，一切以
+   https://github.com/joa-quim/GMT.jl 中的说明为准。
 
 安装
 ----
@@ -25,15 +32,13 @@ GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
      _/ |\__'_|_|_|\__'_|  |  Official http://julialang.org/ release
     |__/                   |  x86_64-pc-linux-gnu
 
-    julia> Pkg.init()
+    julia> Pkg.add("GMT")
     INFO: Initializing package repository /home/seisman/.julia/v0.5
     INFO: Cloning METADATA from https://github.com/JuliaLang/METADATA.jl
-
-    julia> Pkg.clone("git://github.com/joa-quim/GMT.jl.git")
-    INFO: Cloning GMT from git://github.com/joa-quim/GMT.jl.git
-    INFO: Computing changes...
     INFO: Cloning cache of Compat from https://github.com/JuliaLang/Compat.jl.git
-    INFO: Installing Compat v0.9.3
+    INFO: Cloning cache of GMT from https://github.com/joa-quim/GMT.jl.git
+    INFO: Installing Compat v0.23.0
+    INFO: Installing GMT v0.0.3
     INFO: Package database updated
 
     julia> using GMT
@@ -42,7 +47,8 @@ GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
 使用
 ----
 
-在 Julia 中调用 GMT 的方式，与直接在命令行中调用 GMT 非常类似。通常来说，一个调用 GMT 的 Julia 脚本具有如下形式：
+在 Julia 中调用 GMT 的方式，与直接在命令行中调用 GMT 非常类似。通常来说，
+一个调用 GMT 的 Julia 脚本具有如下形式：
 
 .. code-block:: julia
 
@@ -53,9 +59,12 @@ GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
 
 说明：
 
-#. ``using GMT`` 的作用是在 Julia 中导入 GMT 模块，使得可以在 Julia 中通过 ``gmt()`` 函数调用 GMT 的所有模块
-#. 安装完 GMT 即可后第一次使用 ``using GMT`` 时，Julia 会对 GMT 即可进行预编译，因而会消耗一段时间，但之后再调用时，速度就非常快了
-#. 函数 ``gmt()`` 用于调用 GMT 模块，其第一个参数与 GMT 命令行版本的参数几乎一致，之后的参数是当前命令所需的输入数据
+#. ``using GMT`` 的作用是在 Julia 中导入 GMT 模块，使得可以在 Julia 中通过
+   ``gmt()`` 函数调用 GMT 的所有模块
+#. 安装完 GMT 即可后第一次使用 ``using GMT`` 时，Julia 会对 GMT 即可进行预编译，
+   因而会消耗一段时间，但之后再调用时，速度就非常快了
+#. 函数 ``gmt()`` 用于调用 GMT 模块，其第一个参数与 GMT 命令行版本的参数几乎一致，
+   之后的参数是当前命令所需的输入数据
 #. 最后，调用函数 ``gmt("destroy")`` 以清理不需要的内存
 
 最简单的例子
@@ -74,7 +83,8 @@ GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
 
 .. note::
 
-   Julia 接口能够正确使用的前提是 Julia 可以找到 GMT 的动态链接库文件。所以若以上命令报错，则可以执行::
+   Julia 接口能够正确使用的前提是 Julia 可以找到 GMT 的动态链接库文件。所以，
+   若以上命令报错，则可以执行::
 
         echo 'push!(Libdl.DL_LOAD_PATH, "/opt/GMT-5.3.3/lib64")' >> ~/.juliarc.jl
 
@@ -97,9 +107,13 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
    G = gmt("surface -R0/150/0/150 -I1", t);
    gmt("grdimage -JX8c -Ba -P -Cblue,red > crap_img.ps", G)
 
-本例生成了一个 *100x3* 的随机数矩阵 ``t`` ，并将其作为 ``gmt()`` 函数的第二个参数，即将矩阵 ``t`` 作为 ``surface`` 命令的输入数据（即命令行中的 ``input.txt`` ）。同时，将 ``surface`` 命令的输出数据（即命令行中生成的网格数据 ``-Goutput.grd`` ）保存到网格变量 ``G`` 中。
+本例生成了一个 *100x3* 的随机数矩阵 ``t`` ，并将其作为 ``gmt()`` 函数的第二个参数，
+即将矩阵 ``t`` 作为 ``surface`` 命令的输入数据（即命令行中的 ``input.txt`` ）。
+同时，将 ``surface`` 命令的输出数据（即命令行中生成的网格数据 ``-Goutput.grd`` ）
+保存到网格变量 ``G`` 中。
 
-紧接着调用了 ``grdimage`` 模块绘制网格变量 ``G`` 。注意，在命令中使用或不使用 ``-G`` 选项是完全等效的。即上面例子中的最后一个命令也可以写成：
+紧接着调用了 ``grdimage`` 模块绘制网格变量 ``G`` 。注意，在命令中使用或不使用
+``-G`` 选项是完全等效的。即上面例子中的最后一个命令也可以写成：
 
 .. code-block:: julia
 
@@ -118,17 +132,15 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
    t = rand(100,3) * 150;
    G = gmt("surface -R0/150/0/150 -I1", t);
    cpt = gmt("grd2cpt -Cblue,red", G);
-   gmt("grdimage -JX8c -Ba -P -C -G > crap_img.ps", cpt, G)
-
-.. error::
-
-   本示例可能存在问题！
+   gmt("grdimage -JX8c -Ba -P -C -G > crap_img.ps", G, cpt)
 
 命令行版本中的命令应该是::
 
     gmt grdimage -JX8c -Ba -P -Cbluered.cpt -Goutput.grd > crap_img.ps
 
-在 Julia 中，CPT 文件和网格文件作为输入数据，其在参数列表中的顺序由命令中 ``-C`` 和 ``-G`` 选项的先后顺序决定。
+在 Julia 中，CPT 文件和网格文件作为输入数据。参数列表中，必须的输入（即 ``G`` ）
+要放在可选输入（即 ``cpt`` ）之前，多个可选输入的参数位置由命令中选项的先后
+顺序决定。
 
 其他示例
 ++++++++
@@ -142,9 +154,9 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
    seno = sin(x);                     # *yy*
    xyz  = [x seno seno];              # Duplicate *yy* so that it can be colored
    cpt  = gmt("makecpt -T-1/1/0.1");  # Create a CPT
-   gmt("psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps", cpt, xyz)
+   gmt("psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba > seno.ps", xyz, cpt)
 
-注意，由于变量 ``cpt`` 对应的是 ``-C`` 选项，而变量 ``xyz`` 是 ``psxy`` 模块的直接输入数据，所以，此处输入参数的顺序必须是 ``cpt, xyz`` 而不能是 ``xyz, cpt`` 。
+注意，此处输入参数的顺序必须是 ``xyz, cpt`` 而不能是 ``cpt, xyz`` 。
 
 下面的例子展示了如何写字符串：
 
@@ -163,7 +175,7 @@ GMT 的 ``surface`` 命令会读入一个文本数据，对其进行插值以生
 更多示例
 --------
 
-GMT 官方将 GMT 自带的 46 个示例用 Julia 重写了一遍，Julia 用户可以阅读并运行这些 Julia 代码。
+GMT 官方将 GMT 自带的示例用 Julia 重写了一遍，Julia 用户可以阅读并运行这些 Julia 代码。
 
 Julia 示例位于： ``~/.julia/v0.5/GMT/test/gallery.jl`` 中，你可以直接阅读 Julia 源码。
 
@@ -183,65 +195,89 @@ Julia 示例位于： ``~/.julia/v0.5/GMT/test/gallery.jl`` 中，你可以直�
 附录
 ----
 
-``gmt()`` 函数会返回多种类型的变量，比如上面例子中涉及到的CPT类型和网格类型的变量。因而需要在 Julia 中专门定义相关类型的变量。
+``gmt()`` 函数会返回多种类型的变量，比如上面例子中涉及到的CPT类型和网格类型的变量。
+因而需要在 Julia 中专门定义相关类型的变量。
 
 Julia 中网格变量 ``GMTJL_GRID`` 的定义为::
 
-    type GMTJL_GRID   # The type holding a local header and data of a GMT grid
-        ProjectionRefPROJ4::ASCIIString    # Proj4 语法的投影方式 (可选)
-        ProjectionRefWKT::ASCIIString      # WKT 语法的投影方式 (可选)
-        range::Array{Float64,1}            # 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
-        inc::Array{Float64,1}              # 1x2 向量, 表示采样间隔： [x_inc y_inc]
-        n_rows::Int                        # 行数
-        n_columns::Int                     # 列数
-        n_bands::Int                       # 波段数（维数）(目前未启用，恒等于 1)
-        registration::Int                  # 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration
-        NoDataValue::Float64               # 空值对应的数值
-        title::ASCIIString                 # 标题 (可选)
-        remark::ASCIIString                # Remark (可选)
-        command::ASCIIString               # 生成网格所使用的命令 (可选)
-        DataType::ASCIIString              # 数据格式 'float' 或 'double'
-        x::Array{Float64,1}                # [1 x n_columns] 向量, 表示X坐标值
-        y::Array{Float64,1}                # [1 x n_rows] 向量, 表示Y坐标值
-        z::Array{Float32,2}                # [n_rows x n_columns] 网格数组
-        x_units::ASCIIString               # X轴单位 (可选)
-        y_units::ASCIIString               # Y轴单位 (可选)
-        z_units::ASCIIString               # Z单位 (可选)
+    type GMTJL_GRID 	            # The type holding a local header and data of a GMT grid
+       proj4::String              # Projection string in PROJ4 syntax (Optional)
+       wkt::String                # Projection string in WKT syntax (Optional)
+       range::Array{Float64,1}    # 1x6 vector with [x_min x_max y_min y_max z_min z_max]
+       inc::Array{Float64,1}      # 1x2 vector with [x_inc y_inc]
+       registration::Int          # Registration type: 0 -> Grid registration; 1 -> Pixel registration
+       nodata::Float64            # The value of nodata
+       title::String              # Title (Optional)
+       comment::String            # Remark (Optional)
+       command::String            # Command used to create the grid (Optional)
+       datatype::String           # 'float' or 'double'
+       x::Array{Float64,1}        # [1 x n_columns] vector with XX coordinates
+       y::Array{Float64,1}        # [1 x n_rows]    vector with YY coordinates
+       z::Array{Float32,2}        # [n_rows x n_columns] grid array
+       x_units::String            # Units of XX axis (Optional)
+       y_units::String            # Units of YY axis (Optional)
+       z_units::String            # Units of ZZ axis (Optional)
+       layout::String             # A three character string describing the grid memory layout
     end
 
-图片变量 ``GMTJL_IMAGE`` 的定义为::
+图片变量 ``GMTimage`` 的定义为::
 
-    type GMTJL_IMAGE     # The type holding a local header and data of a GMT image
-        ProjectionRefPROJ4::ASCIIString    % Proj4 语法的投影方式 (可选)
-        ProjectionRefWKT::ASCIIString      % WKT 语法的投影方式 (可选)
-        range::Array{Float64,1}            % 1x6 向量, 表示数值范围： [x_min x_max y_min y_max z_min z_max]
-        inc::Array{Float64,1}              % 1x2 向量, 表示采样间隔： [x_inc y_inc]
-        n_rows::Int                        % 行数
-        n_columns::Int                     % 列数
-        n_bands::Int                       % 波段数（维数）
-        registration::Int                  % 格网表达方式: 0 -> Grid registration; 1 -> Pixel registration (默认值)
-        NoDataValue::Float64               % 空值对应的数值
-        title::ASCIIString                 % 标题 (可选)
-        remark::ASCIIString                % Remark (可选)
-        command::ASCIIString               % 生成网格所使用的命令 (可选)
-        DataType::ASCIIString              % 数据格式 'uint8' 或 'int8'
-        x::Array{Float64,1}                % [1 x n_columns] 向量, 表示X坐标值
-        y::Array{Float64,1}                % [1 x n_rows] 向量, 表示Y坐标值
-        image::Array{UInt8,3}              % [n_rows x n_columns] 图像数组
-        x_units::ASCIIString               % X轴单位 (可选)
-        y_units::ASCIIString               % Y轴单位 (可选)
-        z_units::ASCIIString               % Z单位 (可选)
-        colormap::Array{Clong,1}           % CPT 结构体
-        alpha::Array{UInt8,2}              % [n_rows x n_columns] alpha 数组
+    type GMTimage                 # The type holding a local header and data of a GMT image
+       proj4::String              # Projection string in PROJ4 syntax (Optional)
+       wkt::String                # Projection string in WKT syntax (Optional)
+       range::Array{Float64,1}    # 1x6 vector with [x_min x_max y_min y_max z_min z_max]
+       inc::Array{Float64,1}      # 1x2 vector with [x_inc y_inc]
+       registration::Int          # Registration type: 0 -> Grid registration; 1 -> Pixel registration
+       nodata::Float64            # The value of nodata
+       title::String              # Title (Optional)
+       comment::String            # Remark (Optional)
+       command::String            # Command used to create the image (Optional)
+       datatype::String           # 'uint8' or 'int8' (needs checking)
+       x::Array{Float64,1}        # [1 x n_columns] vector with XX coordinates
+       y::Array{Float64,1}        # [1 x n_rows]    vector with YY coordinates
+       image::Array{UInt8,3}      # [n_rows x n_columns x n_bands] image array
+       x_units::String            # Units of XX axis (Optional)
+       y_units::String            # Units of YY axis (Optional)
+       z_units::String            # Units of ZZ axis (Optional) ==> MAKES NO SENSE
+       colormap::Array{Clong,1}   #
+       alpha::Array{UInt8,2}      # A [n_rows x n_columns] alpha array
+       layout::String             # A four character string describing the image memory layout
     end
 
-CPT变量 ``GMTJL_CPT`` 的定义为::
+DATASET变量 ``GMTdataset`` 的定义为::
 
-    type GMTJL_CPT
+    type GMTdataset
+        header::String
+        data::Array{Float64,2}
+        text::Array{Any,1}
+        comment::Array{Any,1}
+        proj4::String
+        wkt::String
+    end
+
+CPT变量 ``GMTcpt`` 的定义为::
+
+    type GMTcpt
         colormap::Array{Float64,2}
         alpha::Array{Float64,1}
         range::Array{Float64,2}
-        rangeMinMax::Array{Float64,1}
+        minmax::Array{Float64,1}
+        bfn::Array{Float64,2}
+        depth::Cint
+        hinge::Cdouble
+        cpt::Array{Float64,2}
+        model::String
+        comment::Array{Any,1}   # Cell array with any comments
+    end
+
+PS变量 ``GMTps`` 的定义为::
+
+    type GMTps
+        postscript::String      # Actual PS plot (text string)
+        length::Int             # Byte length of postscript
+        mode::Int               # 1 = Has header, 2 = Has trailer, 3 = Has both
+        comment::Array{Any,1}   # Cell array with any comments
     end
 
 .. source: http://gmt.soest.hawaii.edu/doc/latest/julia_wrapper.html
+.. source: https://github.com/joa-quim/GMT.jl
