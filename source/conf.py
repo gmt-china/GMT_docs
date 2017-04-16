@@ -254,7 +254,7 @@ html_search_language = 'zh'
 htmlhelp_basename = 'GMT_docs'
 
 # -- Options for LaTeX output ---------------------------------------------
-
+latex_engine = "xelatex"
 latex_elements = {
         'papersize'  : 'a4paper',
         'utf8extra'  : '',
