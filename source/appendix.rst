@@ -23,3 +23,6 @@
    nan-data
    contour-annot
    custom-symbols
+   gdal
+   data-filter
+   color-space
