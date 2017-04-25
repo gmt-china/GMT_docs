@@ -22,5 +22,8 @@ script:
     - make latexpdf
     - make pre-deploy
 
-after_success:
-    bash ./.travis-deploy.sh
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: ${GH_TOKEN}
+    local_dir: build
