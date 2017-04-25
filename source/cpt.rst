@@ -135,11 +135,10 @@ GMT 内置的 CPT 文件都是动态的。
 
 下图展示了动态的内置CPT如何拉伸适用于用户自定义数据，绘制命令如下::
 
-	gmt makecpt -Cglobe -T-8000/3000 > t.cpt
-	gmt psscale -Ct.cpt  -K -P -Baf -Dx0/0+w4.5i/0.1i+h -W0.001 > hing.ps	
-	gmt psscale -Cglobe  -O -Baf -Dx0/0+w4.5i/0.1i+h -W0.001 -Y0.5i >> hing.ps
+.. literalinclude:: ../scripts/GMT_CPT_3.sh
+   :language: bash
 	
-.. figure:: /images/GMT_CPT_HINGE.*
+.. figure:: /images/GMT_CPT_3.*
    :width: 700 px
    :align: center
    
@@ -159,7 +158,10 @@ GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以内置CPT文件为基础，针对用
 #. 利用``-G``选项提取主CPT的一部分颜色
 #. 最后，将初始的内置CPT或修改后的CPT拉伸为自定义数据范围
 	
-.. figure:: /images/GMT_CPT_REVERSE.*
+.. literalinclude:: ../scripts/GMT_CPT_4.sh
+   :language: bash
+   
+.. figure:: /images/GMT_CPT_4.*
    :width: 700 px
    :align: center
    
