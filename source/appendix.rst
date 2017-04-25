@@ -22,3 +22,4 @@
    chinese-windows
    nan-data
    contour-annot
+   custom-symbols
