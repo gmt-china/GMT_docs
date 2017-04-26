@@ -34,6 +34,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
+    'sphinx.ext.githubpages',
     'edit_on_github',
 ]
 mathjax_path = 'http://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
