@@ -30,11 +30,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
-    'edit_on_github',
 ]
 mathjax_path = 'http://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-edit_on_github_project = 'gmt-china/GMT_docs'
-edit_on_github_branch = 'master'
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
@@ -64,6 +61,13 @@ html_secnumber_suffix = ' '  # default is '.'
 html_search_language = 'zh'
 html_theme_options = {
     'prev_next_buttons_location': 'both',
+}
+html_context = {
+    'display_github': True,
+    'github_user': 'gmt-china',
+    'github_repo': 'GMT_Docs',
+    'github_version': 'master',
+    'conf_py_path': '/source/',
 }
 
 # -- Options for LaTeX output ---------------------------------------------
