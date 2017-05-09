@@ -20,7 +20,7 @@
 
 ### 最新版本
 
-本手册目前与 GMT 5.3.3 同步。
+本手册目前与 GMT 5.4.0 同步。
 
 - 在线阅读： http://docs.gmt-china.org
 - 离线阅读： [HTML](http://docs.gmt-china.org/GMT_docs.zip) [PDF](http://docs.gmt-china.org/GMT_docs.pdf)

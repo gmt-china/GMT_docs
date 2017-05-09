@@ -100,4 +100,4 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
 
    左图使用了 ``-F+glightgreen+r`` ，右图使用了 ``-F+p1p+i+s+gwhite+c0.1i``
 
-.. source: http://gmt.soest.hawaii.edu/doc/5.3.3/GMT_Docs.html#plot-embellishments
+.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#plot-embellishments
