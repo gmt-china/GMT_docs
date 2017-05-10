@@ -74,7 +74,7 @@ GMT 的中文支持
 将这四种中文字体添加到 GMT 的字体配置文件中，GMT 版本不同，配置文件的位置也不同：
 
 -  GMT 5.1.2 及其之前版本： ``C:\programs\gmt5\share\pslib\PS_font_info.d``
--  GMT 5.2.1 及其之后版本： ``C:\programs\gmt5\share\postscriptlight\PSL_standard_fonts.txt``
+-  GMT 5.2.1 及其之后版本： ``C:\programs\gmt5\share\postscriptlight\PSL_custom_fonts.txt``
 
 字体配置文件修改后，最后几行如下::
 
