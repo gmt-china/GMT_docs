@@ -16,7 +16,7 @@ gmt psxy -R -J -Wfatter,white great_NY_Canaries.txt -O -K  >> GMT_contour-anno9.
 gmt pscoast -R -J -B20f5 -BWSne+t"Tsunami travel times from the Canaries" -N1/thick -O -K -Glightgray -Wfaint -A500 >> GMT_contour-anno9.ps
 gmt convert great_NY_*.txt -E | gmt psxy -R -J -O -K -Sa0.15i -Gred -Wthin >> GMT_contour-anno9.ps
 gmt psxy -R -J -Wthick great_NY_Canaries.txt -O -K -Sqn1:+f8p,Times-Italic+l"Distance Canaries to New York = $km km"+ap+v >> GMT_contour-anno9.ps
- 
+
 gmt psxy -R -J -Wthinner great_NY_Paris.txt -SqD1000k:+an+o+gblue+LDk+f7p,Helvetica-Bold,white -O -K >> GMT_contour-anno9.ps
 cat << EOF | gmt pstext -R -J -O -K -Gwhite -Wthin -Dj0.1i/0.1i -F+f8p,Bookman-Demi+j >> GMT_contour-anno9.ps
 74W	41N	RT	New York
@@ -24,4 +24,4 @@ cat << EOF | gmt pstext -R -J -O -K -Gwhite -Wthin -Dj0.1i/0.1i -F+f8p,Bookman-D
 17W	28N	CT	Canaries
 EOF
 gmt psxy -R -J -O -T >> GMT_contour-anno9.ps
-rm gmt.*
+rm gmt.* topo5_int.nc

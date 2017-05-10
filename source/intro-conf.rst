@@ -67,6 +67,12 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 
    rm gmt.conf gmt.history # 要养成删除临时文件的习惯
 
+删除配置文件
+------------
+
+GMT 从5.4.0版本开始新增了 ``gmt clear conf`` 命令，可以用于删除配置文件 ``gmt.conf``，
+其等效于 ``rm gmt.conf`` 命令。
+
 GMT配置示例
 -----------
 

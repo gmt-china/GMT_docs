@@ -78,6 +78,7 @@ GMT 中的选项都是以 ``-`` 加一个字符的形式构成，通常这个字
    option-a
    option-binary
    option-d
+   option-e
    option-f
    option-g
    option-h
