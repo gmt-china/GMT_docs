@@ -38,7 +38,7 @@ GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows �
    安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
        C:\Users\xxxx> gmt --version
-       5.4.0
+       5.4.1
 
    即表示安装成功。
 
@@ -59,7 +59,7 @@ GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows �
 
 欢迎补充，请参考：
 
-#. http://gmt.soest.hawaii.edu/doc/5.4.0/GMT_Docs.html#cygwin-and-gmt
+#. http://gmt.soest.hawaii.edu/doc/5.4.1/GMT_Docs.html#cygwin-and-gmt
 #. http://gmt.soest.hawaii.edu/projects/gmt/wiki/BuildingGMT#Cygwin
 
 在 MSYS2 中安装
