@@ -1,7 +1,8 @@
 Linux 下的 GMT 中文支持
 =======================
 
-GMT原生并不支持中文。为了让GMT支持中文，需要修改 ghostscript 和 GMT 的配置文件。本文的修改流程将以CentOS7为准，其他发行版与CentOS7的区别将在文末给出。
+GMT原生并不支持中文。为了让GMT支持中文，需要修改 ghostscript 和 GMT 的配置文件。
+本文的修改流程将以CentOS7为准，其他发行版与CentOS7的区别将在文末给出。
 
 准备工作
 --------
@@ -9,16 +10,19 @@ GMT原生并不支持中文。为了让GMT支持中文，需要修改 ghostscrip
 安装gs中文配置文件
 ++++++++++++++++++
 
-大多数发行版都已经默认安装了gs。除此之外，还需要安装简体中文配置文件。CentOS 7下中文配置文件可以通过如下命令安装::
+大多数发行版都已经默认安装了gs。除此之外，还需要安装简体中文配置文件。CentOS 7
+下中文配置文件可以通过如下命令安装::
 
     $ sudo yum install ghostscript-chinese-zh_CN
 
-安装完成后，中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN`` ，以下称为 ghostscript 中文配置文件。
+安装完成后，中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN`` ，
+以下称为 ghostscript 中文配置文件。
 
 GMT 字体配置文件
 ++++++++++++++++
 
-假定 GMT 的安装路径为 ``/opt/GMT-5.4.1`` ，则字体配置文件的路径为 ``/opt/GMT-5.4.1/share/postscriptlight/PSL_custom_fonts.txt`` 。
+假定 GMT 的安装路径为 ``/opt/GMT-5.4.1`` ，则字体配置文件的路径为
+``/opt/GMT-5.4.1/share/postscriptlight/PSL_custom_fonts.txt`` 。
 
 使 gs 支持中文
 --------------
@@ -43,14 +47,17 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为::
 
 - 字体名是任意的，比如字体名可以取为 ``/ABC`` ；
 - 字体文件似乎只能是 ``ttc`` 或 ``ttf`` 格式的，当然修改参数也有可能可以使用其他格式的字体；
-- 要注意确认字体文件是否存在，比如 CentOS7 下的 ``wqy-zenhei.ttc`` 字体实际上位于软件包 ``wqy-zenhei-fonts`` 中。若字体不存在，则需要安装相应软件包。
+- 要注意确认字体文件是否存在，比如 CentOS7 下的 ``wqy-zenhei.ttc`` 字体实际上
+  位于软件包 ``wqy-zenhei-fonts`` 中。若字体不存在，则需要安装相应软件包。
 
 测试 gs 对 Linux 默认字体的支持
 +++++++++++++++++++++++++++++++
 
-CentOS7 的 ghostscript 中文配置文件中，默认有四行，分别定义了四个字体名，尽管本质上这四个字体名都指向同一个字体。下面先测试一下如何让 gs 显示 Linux 的默认字体。
+CentOS7 的 ghostscript 中文配置文件中，默认有四行，分别定义了四个字体名，尽管
+本质上这四个字体名都指向同一个字体。下面先测试一下如何让 gs 显示 Linux 的默认字体。
 
-用 **编辑器** 新建一个 PS 文件（是的，PS 文件其中就是纯文本，可以直接用编辑器编辑!），名为 ``linux_fonts.ps`` ，其内容为::
+用 **编辑器** 新建一个 PS 文件（是的，PS 文件其中就是纯文本，可以直接用编辑器编辑!），
+名为 ``linux_fonts.ps`` ，其内容为::
 
     %! PS-Adobe-3. 0
     /BousungEG-Light-GB--UniGB-UTF8-H findfont 20 scalefont setfont
@@ -73,9 +80,13 @@ CentOS7 的 ghostscript 中文配置文件中，默认有四行，分别定义�
     %%Trailer
     %%EOF
 
-简单解释一下，PS 文件中要使用某个中文字体，需要用 ``FontName--CMap`` 的格式来调用。其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H`` 和 ``GB-EUC-H`` ， Linux 下一般用前者，Windows 下一般用后者，应该是用于指定汉字或中文字体的编码，具体原理不知。
+简单解释一下，PS 文件中要使用某个中文字体，需要用 ``FontName--CMap`` 的格式来调用。
+其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H``
+和 ``GB-EUC-H`` ， Linux 下一般用前者，Windows 下一般用后者，应该是用于指定汉字
+或中文字体的编码，具体原理不知。
 
-用 gs 查看该 PS 文件，正常情况下显示如下图，表明 gs 可以正常显示 Linux 下的默认中文字体。
+用 gs 查看该 PS 文件，正常情况下显示如下图，表明 gs 可以正常显示 Linux 下的默认
+中文字体。
 
 .. figure:: /static_images/GMT_chinese_linux_fonts.png
    :width: 400px
@@ -84,7 +95,9 @@ CentOS7 的 ghostscript 中文配置文件中，默认有四行，分别定义�
 添加 Windows 中文字体
 +++++++++++++++++++++
 
-Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体，这里只考虑 Windows 下的宋体、仿宋、黑体和楷体四个基本字体。将这四个字体文件复制到 ``/usr/share/fonts/winfonts/`` 目录下，然后对 gs 的中文配置文件做如下修改::
+Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体，这里只考虑 Windows 下的
+宋体、仿宋、黑体和楷体四个基本字体。将这四个字体文件复制到 ``/usr/share/fonts/winfonts/``
+目录下，然后对 gs 的中文配置文件做如下修改::
 
     % 原内容保持不变
     /BousungEG-Light-GB <</FileType /TrueType /Path (/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
@@ -98,7 +111,8 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
     /STHeiti-Regular <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
     /STKaiti-Regular <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
 
-这里仅以 Windows 下的常用四大字体为例。对于 Windows 下的其他中文字体、Linux 的其他中文字体甚至日韩字体来说，方法类似。
+这里仅以 Windows 下的常用四大字体为例。对于 Windows 下的其他中文字体、Linux 的
+其他中文字体甚至日韩字体来说，方法类似。
 
 测试 gs 对 Windows 中文字体的支持
 +++++++++++++++++++++++++++++++++
@@ -255,7 +269,11 @@ Ubuntu 14.04/15.04
 
         $ sudo update-gsfontmap
 
-    该命令会将 ``/etc/ghostscript/cidfmap.d/*.conf`` 合并成单独的文件 ``/var/lib/ghostscript/fonts/cidfmap`` 。gs 在需要中文字体时会读取 ``/var/lib/ghostscript/fonts/cidfmap`` 而不是 ``/etc/ghostscript/cidfmap.d/*.conf`` 。这是 Ubuntu/Debian 和 CentOS 的一个很大不同。
+    该命令会将 ``/etc/ghostscript/cidfmap.d/*.conf`` 合并成单独的文件
+    ``/var/lib/ghostscript/fonts/cidfmap`` 。gs 在需要中文字体时会读取
+    ``/var/lib/ghostscript/fonts/cidfmap`` 而不是
+    ``/etc/ghostscript/cidfmap.d/*.conf`` 。这是 Ubuntu/Debian 和 CentOS 的
+    一个很大不同。
 
 Ubuntu 12.04
 ++++++++++++
