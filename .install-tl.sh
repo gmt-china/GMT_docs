@@ -1,9 +1,6 @@
 #!/bin/bash
 
 REMOTE="http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet"
-PACKAGES="algorithm2e environ latexmk relsize stringstrings texdoc titlesec trimspaces was"
-DOCPACKAGES=""
-SRCPACKAGES=""
 
 mkdir -p /tmp/install-texlive
 cd /tmp/install-texlive/
@@ -15,7 +12,6 @@ selected_scheme scheme-basic
 TEXMFHOME ~/.texmf
 collection-basic 1
 collection-fontsrecommended 1
-collection-genericrecommended 1
 collection-langchinese 1
 collection-latex 1
 collection-latexrecommended 1
@@ -31,6 +27,6 @@ TEXBIN="/usr/local/texlive/${TEXLIVE}/bin/${PLATFORM}"
 
 echo PATH=$PATH:$TEXBIN
 echo 'export PATH=$PATH':$TEXBIN >> ~/.bash_profile
-$TEXBIN/tlmgr install $PACKAGES
-$TEXBIN/tlmgr install --with-doc $DOCPACKAGES
-$TEXBIN/tlmgr install --with-doc --with-src $SRCPACKAGES
+$TEXBIN/tlmgr install tabulary latexmk ulem environ trimspaces titlesec \
+                      varwidth framed threeparttable wrapfig upquote capt-of \
+                      multirow eqparbox needspace
