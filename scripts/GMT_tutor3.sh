@@ -3,6 +3,7 @@ R=65/18/117/45r
 J=B90/0/40/30/6.5i
 PS=GMT_tutor3.ps
 D=earth_relief_03m.grd
+
 gmt gmtset FONT_ANNOT_PRIMARY 10p
 
 # 裁剪区域地形数据
@@ -24,7 +25,4 @@ gmt pscoast -R$R -J$J -N1/0.5p,white -Ia/0.15p,177/178/183 -I1/0.5p,61/99/172 -C
 gmt psscale -Dx-0.3i/1.4i+w2.5i/0.15i+ma -CTibet.cpt -G1600/9000 -By+lm -Bxa1000f200 -K -O >> $PS
 gmt psscale -Dx-0.3i/0+w1.3i/0.15i+ma -CTibet.cpt -G-3500/0 -L -O >> $PS
 
-gmt psconvert $PS -A -P -Tj
-gmt psconvert $PS -A -P -Tf
-
-rm gmt.*
+rm gmt.* Tibet.grd int.grad
