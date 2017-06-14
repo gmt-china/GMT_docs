@@ -10,12 +10,7 @@ install:
     # python
     - pip install -r requirements.txt
     # Install TeXLive
-    - curl -sSL https://raw.githubusercontent.com/ustctug/mini-texlive/master/install-tl.sh -o install-tl.sh
-    - sed -i 's!http://mirrors.ustc.edu.cn/CTAN!http://ctan.sharelatex.com/tex-archive!' install-tl.sh
-    ## make TexLive installation quiet
-    - sed -i 's/tar -xzv/tar -xz/' install-tl.sh
-    - sed -i 's/-profile/-q -profile/' install-tl.sh
-    - sudo bash install-tl.sh
+    - sudo bash .install-tl.sh
     - source ~/.bash_profile
     - export TLMGR=`which tlmgr`
     # update texlive
