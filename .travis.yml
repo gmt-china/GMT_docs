@@ -1,26 +1,32 @@
 language: python
+python: 3.6
 sudo: required
 dist: trusty
 
 branch:
-    only:
-        - master
+  only:
+    - master
+    - travis
 
 install:
-    # python
-    - pip install -r requirements.txt
-    # Install TeXLive
-    - curl -sSL https://gist.githubusercontent.com/seisman/ad00252a9f03fc644146a11e6983d9c5/raw/install-tl.sh -o install-tl.sh
-    - sudo bash install-tl.sh
-    - source ~/.bash_profile
-    - export TLMGR=`which tlmgr`
-    # update texlive
-    - sudo $TLMGR update --self --all -repository http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/
+  # python
+  - pip install -r requirements.txt
+  # Install TeXLive
+  - curl -sSL https://gist.githubusercontent.com/seisman/ad00252a9f03fc644146a11e6983d9c5/raw/install-tl.sh -o install-tl.sh
+  - sudo bash install-tl.sh
+  - source ~/.bash_profile
+  - export TLMGR=`which tlmgr`
+  - sudo $TLMGR update --self --all -repository http://ctan.sharelatex.com/tex-archive/systems/texlive/tlnet/
+  # Install GMT
+  - curl -sSL https://raw.githubusercontent.com/gmt-china/gmt-easy-installer/master/ubuntu-installer.sh | bash
+  - curl -sSL https://raw.githubusercontent.com/gmt-china/gmt-easy-installer/master/GMT-installer.sh | bash
+  - source ~/.bashrc
 
 script:
-    - make html
-    - make latexpdf
-    - make pre-deploy
+  - make figures
+  - make html
+  - make latexpdf
+  - make pre-deploy
 
 deploy:
   provider: pages

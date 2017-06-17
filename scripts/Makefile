@@ -8,7 +8,7 @@ PDF = $(patsubst %.sh, $(OUT_DIR)/%.pdf, $(wildcard *.sh))
 all: $(OUT_DIR) $(PNG) $(PDF) clean
 
 %.ps: %.sh
-	sh $<
+	bash $<
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
