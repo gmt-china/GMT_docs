@@ -18,7 +18,7 @@ GMT的历史
 GMT维护者
 ---------
 
-.. figure:: /images/GMT5_Summit_2016.jpg
+.. figure:: /static_images/GMT5_Summit_2016.jpg
    :width: 1200 px
    :align: center
 
