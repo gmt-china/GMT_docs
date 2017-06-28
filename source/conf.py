@@ -38,13 +38,13 @@ master_doc = 'index'
 project = u'GMT参考手册'
 copyright = u'2014-2017, GMT中文社区'
 author = u'GMT中文社区'
-version = '5.4.1'
+version = '5.4.2'
 release = version
 rst_prolog = '''
-.. |GMT4_latest_release| replace:: 4.5.15
-.. |GMT4_latest_release_date| replace:: 2016-10-01
-.. |GMT5_latest_release| replace:: 5.4.1
-.. |GMT5_latest_release_date| replace:: 2017-05-09
+.. |GMT4_latest_release| replace:: 4.5.16
+.. |GMT4_latest_release_date| replace:: 2017-06-25
+.. |GMT5_latest_release| replace:: 5.4.2
+.. |GMT5_latest_release_date| replace:: 2017-06-25
 '''
 
 # -- Options for HTML output ----------------------------------------------
