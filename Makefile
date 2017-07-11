@@ -24,7 +24,7 @@ help:
 
 figures:
 	@echo "Update all figures..."
-	make -C scripts
+	make -C source/scripts
 
 pre-deploy: html latexpdf
 	@echo "Deploy HTML, ZIP and PDF"

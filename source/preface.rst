@@ -3,6 +3,6 @@
 
 .. toctree::
 
-   intro-docs
-   read-docs
-   glossary
+   preface/intro-docs
+   preface/read-docs
+   preface/glossary

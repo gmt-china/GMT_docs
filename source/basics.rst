@@ -5,11 +5,11 @@
 
 .. toctree::
 
-   unit
-   paper
-   color
-   pen
-   fill
-   text
-   io
-   format
+   basic/unit
+   basic/paper
+   basic/color
+   basic/pen
+   basic/fill
+   basic/text
+   basic/io
+   basic/format

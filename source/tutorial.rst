@@ -16,6 +16,6 @@
 .. toctree::
    :maxdepth: 2
 
-   tutor1
-   tutor2
-   tutor3
+   tutorial/tutor1
+   tutorial/tutor2
+   tutorial/tutor3

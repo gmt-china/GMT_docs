@@ -5,15 +5,15 @@
 
 .. toctree::
 
-   table-data
-   grid-data
-   cpt
-   special-fonts
-   special-characters
-   character-escape
-   lines
-   vectors
-   anchors
-   embellishments
-   cmd-history
-   special-dirs
+   advance/table-data
+   advance/grid-data
+   advance/cpt
+   advance/special-fonts
+   advance/special-characters
+   advance/character-escape
+   advance/lines
+   advance/vectors
+   advance/anchors
+   advance/embellishments
+   advance/cmd-history
+   advance/special-dirs

@@ -6,13 +6,13 @@
 .. toctree::
    :maxdepth: 2
 
-   intro-gmt
-   install-linux
-   install-windows
-   install-macOS
-   directory-tree
-   philosophy
-   postscript
-   linux-basic
-   self-learning
-   citation
+   intro/intro-gmt
+   intro/install-linux
+   intro/install-windows
+   intro/install-macOS
+   intro/directory-tree
+   intro/philosophy
+   intro/postscript
+   intro/linux-basic
+   intro/self-learning
+   intro/citation
