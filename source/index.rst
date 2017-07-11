@@ -35,6 +35,7 @@ GMT |version| 参考手册
 
    preface
    introductions
+   install
    tutorial
    basics
    advances
