@@ -45,5 +45,6 @@ GMT |version| 参考手册
    options
    configurations
    projections
+   style
    api
    appendix

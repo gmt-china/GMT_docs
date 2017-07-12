@@ -11,3 +11,4 @@
    basic/pen
    basic/fill
    basic/text
+   basic/glossary

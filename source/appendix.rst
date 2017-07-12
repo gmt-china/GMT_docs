@@ -9,7 +9,6 @@
    appendix/variables
    appendix/completion
    appendix/custom-fonts
-   appendix/style-guide
    appendix/isolation-mode
    appendix/get-gmt-dev
    appendix/animation
