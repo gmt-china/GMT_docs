@@ -18,8 +18,6 @@
    appendix/get-gmt-dev
    appendix/animation
    appendix/ogr-format
-   appendix/chinese-linux
-   appendix/chinese-windows
    appendix/nan-data
    appendix/contour-annot
    appendix/custom-symbols
