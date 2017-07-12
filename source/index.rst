@@ -10,9 +10,11 @@ GMT |version| 参考手册
    \listoftables
    \cleardoublepage
 
-.. figure:: /images/GMT_logo.*
-   :width: 400 px
-   :align: center
+.. only:: html
+
+   .. figure:: /images/GMT_logo.*
+      :width: 400 px
+      :align: center
 
 欢迎来到 `GMT <http://gmt.soest.hawaii.edu>`_ （Generic Mapping Tools）的世界。
 
