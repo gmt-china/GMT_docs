@@ -8,7 +8,6 @@
 
    intro/intro-gmt
    intro/philosophy
-   intro/postscript
    intro/linux-basic
    intro/self-learning
    intro/citation

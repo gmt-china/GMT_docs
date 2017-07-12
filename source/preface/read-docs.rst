@@ -10,7 +10,8 @@
 #. :doc:`/introductions` ：了解GMT的相关背景
 #. :doc:`/tutorial` ：跟着教程把示例运行一遍
 #. :doc:`/basics` ：仔细阅读，多多理解，尽量记住，至少要有印象
-#. :doc:`/advances` ：粗略浏览，对每节的大概内容要有印象， :doc:`/advance/table-data` 一节比较重要
+#. :doc:`/io` : :doc:`/io/table-data` 一节比较重要
+#. :doc:`/advances` ：粗略浏览，对每节的大概内容要有印象，
 #. :doc:`/options` ：非常重要，必须掌握选项 ``-B`` 、 ``-J`` 、 ``-K`` 、 ``-O`` 、 ``-P`` 、 ``-R`` 、 ``-V`` 、 ``-X`` 和 ``-Y`` 的用法，其他选项的用法有印象即可
 #. :doc:`/configurations` ：仔细阅读第一节的内容，并多看这一节的三张图。其他节的内容稍微浏览一遍即可
 #. :doc:`/projections` ：掌握线性投影 ``-JX`` 的用法，其他投影方式看看图即可，需要的时候再重新看图

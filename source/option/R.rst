@@ -47,7 +47,7 @@ GMT的坐标轴可以是多种类型，比如地图的经纬度轴、一般的�
 地理坐标
 ~~~~~~~~
 
-在 :doc:`/basic/format` 中已经介绍过地理坐标的格式，既可以用浮点数表示也可以用度分秒表示。
+在 :doc:`/io/format` 中已经介绍过地理坐标的格式，既可以用浮点数表示也可以用度分秒表示。
 
 对于两个常用的地图范围，GMT提供了简写形式， ``-Rg`` 等效于 ``-R0/360/-90/90`` ，
 ``-Rd`` 等效于 ``-R-180/180/-90/90`` 。
@@ -79,16 +79,16 @@ GMT 对于地理投影和线性投影的默认设置有很大区别。有些时�
 绝对时间坐标
 ~~~~~~~~~~~~
 
-默认为 ``yyyymmddThh:mm:ss.xxx`` 格式，见 :doc:`/basic/format` 一节。
+默认为 ``yyyymmddThh:mm:ss.xxx`` 格式，见 :doc:`/io/format` 一节。
 
 相对时间坐标
 ~~~~~~~~~~~~
 
-见 :doc:`/basic/format` 一节。
+见 :doc:`/io/format` 一节。
 
 笛卡尔坐标
 ~~~~~~~~~~
 
-既可以用浮点数表示也可以用指数表示，见 :doc:`/basic/format` 一节。
+既可以用浮点数表示也可以用指数表示，见 :doc:`/io/format` 一节。
 
 .. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#data-domain-or-map-region-the-r-option

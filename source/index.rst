@@ -40,6 +40,7 @@ GMT |version| 参考手册
    install
    tutorial
    basics
+   io
    advances
    options
    configurations

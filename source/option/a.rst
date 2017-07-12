@@ -1,7 +1,7 @@
 ``-a`` 选项
 ===========
 
-GMT5支持读取OGR/GMT格式的数据文件，关于该格式的介绍，见 :doc:`/appendix/ogr-format` 。
+GMT5支持读取OGR/GMT格式的数据文件，关于该格式的介绍，见 :doc:`/io/ogr-format` 。
 
 该选项可以控制GMT在读写OGR/GMT格式的数据时对非空间数据的处理方式。该选项的语法为::
 

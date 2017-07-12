@@ -5,9 +5,6 @@
 
 .. toctree::
 
-   advance/table-data
-   advance/grid-data
-   advance/cpt
    advance/special-fonts
    advance/special-characters
    advance/character-escape

@@ -29,13 +29,13 @@ Native二进制网格文件
 
 旧版本的GMT不支持netCDF格式的文件，使用的是GMT自定义的二进制网格格式。新版本的
 GMT依然支持这种二进制网格格式，但不建议使用。该文件格式由两部分组成：892个字节的
-头段区和长度不定的数据区。详细信息见附录 :doc:`/appendix/native-grid` 。
+头段区和长度不定的数据区。详细信息见 :doc:`/io/native-grid` 。
 
 Sun光栅文件
 ~~~~~~~~~~~
 
 Sun光栅文件格式包含了一个头段区以及一系列无符号一字节整型以表示bit-pattern。
-详细信息见附录 :doc:`/appendix/sun-raster` 。
+详细信息见 :doc:`/io/sun-raster` 。
 
 写网格文件
 ----------
@@ -143,7 +143,7 @@ GMT会默认使用 ``nf`` 格式（可以修改 :ref:`IO_GRIDFILE_FORMAT <IO_GRI
    变成0到2，再减去1，则数据范围变成-1到1
 #. 写一个8字节整型netCDF网格文件，偏移距由GMT自动决定，可以用 ``=nb+oa``
 
-GMT还支持通过网格文件后缀自动识别网格文件格式，详情见附录 :doc:`/appendix/grid-suffix` 一节。
+GMT还支持通过网格文件后缀自动识别网格文件格式，详情见 :doc:`/io/grid-suffix` 一节。
 
 读netCDF文件
 ------------

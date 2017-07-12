@@ -10,15 +10,9 @@
    appendix/completion
    appendix/custom-fonts
    appendix/style-guide
-   appendix/netcdf
-   appendix/native-grid
-   appendix/sun-raster
-   appendix/grid-suffix
    appendix/isolation-mode
    appendix/get-gmt-dev
    appendix/animation
-   appendix/ogr-format
-   appendix/nan-data
    appendix/contour-annot
    appendix/custom-symbols
    appendix/gdal

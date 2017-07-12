@@ -13,7 +13,7 @@ IO参数
 **IO_N_HEADER_RECS**
     在使用 ``-h`` 选项时，要跳过的文件头记录的数目 [0]
 
-    见 :doc:`/option/h` 和 :doc:`/advance/table-data` 。
+    见 :doc:`/option/h` 和 :doc:`/io/table-data` 。
 
 .. _IO_LONLAT_TOGGLE:
 
@@ -49,7 +49,7 @@ IO参数
 **IO_SEGMENT_MARKER**
     多段数据中每段数据开始的标识符 [ ``>`` ]
 
-    见 :doc:`/advance/table-data` 中的相关介绍。若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和输出数据的段标识符，比如 ``>,:`` 。
+    见 :doc:`/io/table-data` 中的相关介绍。若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和输出数据的段标识符，比如 ``>,:`` 。
 
     有两个特殊的标识符：
 
@@ -63,7 +63,7 @@ IO参数
 **IO_NC4_CHUNK_SIZE**
     控制写netCDF文件时的分块大小 [auto]
 
-    见 :doc:`/appendix/netcdf` 中的相关介绍，以及官方文档对该参数的说明。
+    见 :doc:`/io/netcdf` 中的相关介绍，以及官方文档对该参数的说明。
 
 .. _IO_NC4_DEFLATION_LEVEL:
 
@@ -84,11 +84,11 @@ IO参数
 **IO_GRIDFILE_SHORTHAND**
     是否支持自动识别网格文件后缀的功能 [false]
 
-    见 :doc:`/appendix/grid-suffix` 一节。若设置为 ``true`` ，则会检测每个网格文件的后缀是否在用户自定义文件后缀中；若为 ``false`` ，则不检测用户自定义文件后缀。
+    见 :doc:`/io/grid-suffix` 一节。若设置为 ``true`` ，则会检测每个网格文件的后缀是否在用户自定义文件后缀中；若为 ``false`` ，则不检测用户自定义文件后缀。
 
 .. _IO_GRIDFILE_FORMAT:
 
 **IO_GRIDFILE_FORMAT**
     GMT默认使用的网格文件格式 [nf]
 
-    见 :doc:`/advance/grid-data` 一节。
+    见 :doc:`/io/grid-data` 一节。
