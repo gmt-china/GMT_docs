@@ -31,10 +31,6 @@ pre-deploy: html latexpdf
 	cd $(BUILDDIR) && cp -r html $(DOCNAME) && zip -r html/$(DOCNAME).zip $(DOCNAME) && \
 	cp latex/$(DOCNAME).pdf html && cd ..
 
-deploy: pre-deploy
-	ghp-import -b gh-pages -n $(BUILDDIR)/html -m "Update at `date +'%Y-%m-%d %H:%M:%S'`"
-	git push origin gh-pages:gh-pages --force
-
 release: html latexpdf
 	cd $(BUILDDIR) && mv html $(DOCNAME) && zip -r ../$(DOCNAME).zip $(DOCNAME)/
 	mv $(BUILDDIR)/latex/$(DOCNAME).pdf .
