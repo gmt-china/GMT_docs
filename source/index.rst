@@ -42,7 +42,6 @@ GMT 参考手册
    tutorial
    basics
    io
-   advances
    options
    configurations
    projections

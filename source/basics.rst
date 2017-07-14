@@ -11,4 +11,11 @@
    basic/pen
    basic/fill
    basic/text
+   basic/special-fonts
+   basic/special-characters
+   basic/character-escape
+   basic/lines
+   basic/vectors
+   basic/anchors
+   basic/embellishments
    basic/glossary

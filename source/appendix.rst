@@ -12,6 +12,8 @@
    appendix/isolation-mode
    appendix/get-gmt-dev
    appendix/animation
+   appendix/cmd-history
+   appendix/special-dirs
    appendix/contour-annot
    appendix/custom-symbols
    appendix/gdal
