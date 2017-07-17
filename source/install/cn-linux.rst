@@ -185,25 +185,27 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 GMT 中文测试
 ++++++++++++
 
-GMT5 测试脚本：
+测试脚本：
 
 .. code-block:: bash
 
    #!/bin/bash
-   gmt gmtset FONT_TITLE 40p,35,black
+   gmt set FONT_TITLE 30p,35,black
+   gmt set FONT_LABEL 15p,35,black
 
-   gmt pstext -R0/10/0/3 -JX15c/3c -Bafg -B+t"GMT中文支持" -F+a+c+f -P > gmt5_cn.ps << EOF
-   3 2.1 0 LM 35p,35,red   GMT宋体
-   3 0.9 0 LM 35p,36,blue  GMT仿宋
-   7 2.1 0 LM 35p,37,black GMT黑体
-   7 0.9 0 LM 35p,38,green GMT楷体
+   gmt pstext -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" \
+            -BWSen+t"中文标题" -F+f -P > cn.ps << EOF
+   3 2.5 35p,35,black GMT宋体
+   3 1.0 35p,36,blue GMT仿宋
+   7 2.5 35p,37,yellow GMT黑体
+   7 1.0 35p,38,green GMT楷体
    EOF
 
-   rm gmt.*
+   rm gmt.history gmt.conf
 
-成图效果如下
+成图效果如下：
 
-.. figure:: /static_images/GMT_chinese_linux.png
+.. figure:: /static_images/GMT_chinese.png
    :width: 400px
    :align: center
 

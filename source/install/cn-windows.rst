@@ -98,16 +98,22 @@ GMT 的中文支持
 
 .. code-block:: bash
 
-    gmt gmtset FONT_TITLE 40p,35,black
+   gmt set FONT_TITLE 30p,35,black
+   gmt set FONT_LABEL 15p,35,black
 
-    echo 3.5 5 0 LM 45p,35,red  GMT 宋体 > tmp
-    echo 3.5 4 0 LM 45p,36,blue GMT 仿宋 >> tmp
-    echo 3.5 3 0 LM 45p,37,yellow GMT 黑体 >> tmp
-    echo 3.5 2 0 LM 45p,38,green GMT 楷体 >> tmp
+   echo 3 2.5 35p,35,black GMT宋体 > tmp
+   echo 3 1.0 35p,36,blue GMT仿宋 >> tmp
+   echo 7 2.5 35p,37,yellow GMT黑体 >> tmp
+   echo 7 1.0 35p,38,green GMT楷体 >> tmp
 
-    gmt pstext tmp -R0/7/0/7 -JX6i/6i -Bafg -B+t"GMT 中文" -F+a+c+f -P > cn.ps
+   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" \
+            -BWSen+t"中文标题" -F+f -P > cn.ps
 
-若生成的 PS 文件正常显示汉字，则表示 GMT 已经可以支持中文。
+成图效果如下：
+
+.. figure:: /static_images/GMT_chinese.png
+   :width: 400px
+   :align: center
 
 需要注意，若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
 Unicode big endian，若使用 UTF-8 编码则会出现乱码；另外，很多编辑器默认将文本
