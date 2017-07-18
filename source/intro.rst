@@ -6,7 +6,8 @@
 .. toctree::
    :maxdepth: 2
 
-   intro/intro-gmt
+   intro/overview
+   intro/versions
    intro/philosophy
    intro/linux-basic
    intro/self-learning

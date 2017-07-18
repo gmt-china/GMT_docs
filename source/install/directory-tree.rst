@@ -1,5 +1,5 @@
-目录树
-======
+目录结构
+========
 
 本文用 ``$GMTHOME`` 表示GMT的安装路径，在Linux下一般是 :file:`/usr/local/GMT5`
 或 :file:`/opt/GMT5` ，在Windows下一般是 ``C:\programs\gmt5`` 。

@@ -3,7 +3,7 @@
 PostScript
 ==========
 
-前面已经多次提到了PostScript（简写为PS），这一节将简单介绍一下PS语言与PS格式。
+GMT生成的图片为PS格式，全称是PostScript。这一节将简单介绍一下PS语言与PS格式。
 
 PS是什么
 --------
@@ -56,10 +56,10 @@ GMT所有的绘图模块都只能生成PS代码，将这些PS代码保存到PS�
 
    GMT提供了 ``psconvert`` 模块，可以很方便地将PS文件以任意精度转换为jpeg、png、eps、pdf等图片格式，以满足不同情形下的需求。
 
-PS解释器
+PS阅读器
 --------
 
-PS解释器，或称PS阅读器，是用于查看PS文件的软件。
+PS阅读器，或称PS解释器，是用于查看PS文件的软件。
 
 - `ghostscript <http://ghostscript.com/>`_
 - `gsview <http://www.gsview.com/>`_
@@ -67,7 +67,7 @@ PS解释器，或称PS阅读器，是用于查看PS文件的软件。
 - `zathura <https://pwmt.org/projects/zathura/>`_ (Linux only)
 - `SumatraPDF <http://www.sumatrapdfreader.org/free-pdf-reader.html>`_ (Windows only)
 
-将PS转化为其他格式
+将PS转换为其他格式
 ------------------
 
 GMT提供了 ``psconvert`` 模块，可以很方便地将PS文件以任意精度转换为jpeg、png、eps、pdf等图片格式，以满足不同情形下的需求。

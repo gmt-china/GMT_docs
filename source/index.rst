@@ -18,8 +18,8 @@ GMT 参考手册
 
 欢迎来到 `GMT <http://gmt.soest.hawaii.edu>`_ （Generic Mapping Tools）的世界。
 
-本项目是GMT中文社区维护的GMT中文手册，既可以作为入门读物，也可以作为日常参考。
-希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
+本项目是 `GMT中文社区 <http://gmt-china.org>`_ 维护的GMT中文参考手册，既可以作为
+入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
 
 **相关链接：**
 
@@ -37,14 +37,14 @@ GMT 参考手册
    :hidden:
 
    preface
-   introductions
+   intro
    install
    tutorial
    basics
    io
    options
    configurations
-   projections
+   proj
    style
    api
    appendix

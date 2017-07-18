@@ -32,7 +32,7 @@
 .. |lonp| replace:: lon\ :sub:`p`
 .. |latp| replace:: lat\ :sub:`p`
 
-下表列出了GMT所支持的全部投影方式，详细介绍见 :doc:`/projections` 。
+下表列出了GMT所支持的全部投影方式，详细介绍见 :doc:`/proj` 。
 
 .. table:: GMT -J Codes
 
