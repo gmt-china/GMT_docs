@@ -15,7 +15,7 @@ GMT的所有模块命令都可以在Matlab脚本中嵌入执行。GMT命令生�
 Windows平台
 +++++++++++
 
-GMT5.3用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经存在 ``gmt.m``
+GMT5.3以后的用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）下已经存在 ``gmt.m``
 和 ``gmtmex.mexw64|32`` 两个文件，只要确保如下两点即可在Windows下使用该接口了。
 
 - GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
