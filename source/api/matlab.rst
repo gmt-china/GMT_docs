@@ -9,6 +9,13 @@ GMT的所有模块命令都可以在Matlab脚本中嵌入执行。GMT命令生�
 （grid格网数据、table表格数据、CPT颜色表、文本文件、图片等）
 都可以作为Matlab变量进行运算；Matlab中的矩阵变量也可以直接作为GMT的输入。
 
+GMT/MATLAB工具包用户请引用如下文章:
+
+Wessel, P., and J. F. Luis
+The GMT/MATLAB Toolbox,
+*Geochem. Geophys. Geosyst.*, **18(2)**, 811-823, 2017.
+`doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_.
+
 安装
 ----
 
@@ -222,10 +229,5 @@ PostScript 结构体
     length         % 字符串的长度（即字节数）
     mode           % 1 表示仅包含文件头，2表示只包含文件尾，3表示完整为文件
     comment
-
-参考文献
---------
-
-- Wessel, P., & Luis, J. F. (2017). The GMT/MATLAB Toolbox. *Geochemistry, Geophysics, Geosystems*, **18(2)**, 811-823.
 
 .. source: http://gmt.soest.hawaii.edu/doc/latest/matlab_wrapper.html
