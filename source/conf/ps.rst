@@ -102,7 +102,7 @@ PS参数
 
     用户还可以用 ``WxH`` 的格式完全自定义纸张尺寸，其中 ``W`` 和 ``H`` 分别为纸张的宽度和高度。比如 ``12cx12c`` 表示纸张为宽度和高度都为12厘米。
 
-    若某些尺寸经常使用，用户还可以在 ``${GMT}/share/conf/gmt_custom_media.conf`` 中添加自定义的纸张尺寸。
+    若某些尺寸经常使用，用户还可以在 ``${GMTHOME}/share/postscriptlight/gmt_custom_media.conf`` 中添加自定义的纸张尺寸。
 
 .. _PS_PAGE_COLOR:
 
