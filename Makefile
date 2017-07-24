@@ -26,12 +26,7 @@ figures:
 	@echo "Update all figures..."
 	make -C source/scripts
 
-pre-deploy: html latexpdf
+build: html latexpdf
 	@echo "Deploy HTML, ZIP and PDF"
-	cd $(BUILDDIR) && cp -r html $(DOCNAME) && zip -r html/$(DOCNAME).zip $(DOCNAME) && \
+	cd $(BUILDDIR) && cp -r html $(DOCNAME) && zip -rm html/$(DOCNAME).zip $(DOCNAME) && \
 	cp latex/$(DOCNAME).pdf html && cd ..
-
-release: html latexpdf
-	cd $(BUILDDIR) && mv html $(DOCNAME) && zip -r ../$(DOCNAME).zip $(DOCNAME)/
-	mv $(BUILDDIR)/latex/$(DOCNAME).pdf .
-	rm -rf $(BUILDDIR)/*
