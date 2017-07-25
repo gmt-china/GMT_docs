@@ -3,6 +3,11 @@
 
 本节介绍GMT中的其他参数，参数的默认值在中括号内列出。
 
+.. _GMT_AUTO_DOWNLOAD:
+
+**GMT_AUTO_DOWNLOAD**
+    是否自动从GMT服务器下载文件到缓存目录 [on]
+
 .. _GMT_COMPATIBILITY:
 
 **GMT_COMPATIBILITY**
