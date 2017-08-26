@@ -128,8 +128,11 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     set (COPY_DCW TRUE)
     set (GMT_USE_THREADS TRUE)
 
-- ``CMAKE_INSTALL_PREFIX`` 设置GMT的安装路径，可以修改为其他路径。对于没有 root
-  权限的用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.2`` 等有可读写
+其中，
+
+- ``CMAKE_INSTALL_PREFIX`` 用于设置GMT的安装路径，上面的语句会将GMT安装在
+  ``/opt/GMT-5.4.2`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.2`` 等有可读写
   权限的路径；
 - ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，
   也可设置为TRUE
