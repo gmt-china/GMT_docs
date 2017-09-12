@@ -127,6 +127,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_USE_THREADS TRUE)
+   
 
 其中，
 
@@ -140,6 +141,10 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 - ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
 - ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能
 
+.. warning::
+
+   CentOS 6 用户需要将用户配置文件的最后一行改为 ``set (GMT_USE_THREADS FALSE)``
+   
 .. tip::
 
    此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的5行语句。
