@@ -8,6 +8,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('_extension'))
+sys.path.append("..")
 
 # -- General configuration ------------------------------------------------
 needs_sphinx = '1.5.0'
