@@ -92,6 +92,6 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm`` 。
 有两种方式可以修改底图的原点位置：
 
 #. 修改GMT参数 :ref:`MAP_ORIGIN_X <MAP_ORIGIN_X>` 和 :ref:`MAP_ORIGIN_Y <MAP_ORIGIN_Y>`
-#. 命令中使用 :doc:`/option/KO`
+#. 命令中使用 :doc:`/option/XY`
 
 .. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#portrait-plot-orientation-the-p-option
