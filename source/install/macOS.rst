@@ -17,25 +17,12 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 2.  安装 GMT::
 
        $ brew update && brew upgrade
-       $ brew tap homebrew/science
        $ brew install gmt
 
 3.  测试安装是否成功::
 
        $ gmt --version
        5.4.2
-
-4.  如果你想要同时安装 GMT4 和 GMT5::
-
-       $ brew unlink gmt && brew install gmt4
-
-5.  从 GMT5 切换至 GMT4::
-
-       $ brew unlink gmt && brew link gmt4
-
-    从 GMT4 切换至 GMT5::
-
-       $ brew unlink gmt4 && brew link gmt5
 
 .. warning::
 
