@@ -36,7 +36,7 @@ mathjax_path = 'http://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-M
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
 project = u'GMT参考手册'
-copyright = u'2014-2017, GMT中文社区'
+copyright = u'2014-2018, GMT中文社区'
 author = u'GMT中文社区'
 version = '5.4.2'
 release = version
