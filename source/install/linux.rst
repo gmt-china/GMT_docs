@@ -94,7 +94,7 @@ netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
 
 Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
-#. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.4.2-src.tar.gz
+#. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.4.3-src.tar.gz
 #. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz
 #. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.2.tar.gz
 
@@ -106,34 +106,34 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 .. code-block:: bash
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-5.4.2-src.tar.gz
+   $ tar -xvf gmt-5.4.3-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
    $ tar -xvf dcw-gmt-1.1.2.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-5.4.2/share/gshhg
-   $ mv dcw-gmt-1.1.2 gmt-5.4.2/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-5.4.3/share/gshhg
+   $ mv dcw-gmt-1.1.2 gmt-5.4.3/share/dcw-gmt
 
    # 切换到gmt源码目录下
-   $ cd gmt-5.4.2
+   $ cd gmt-5.4.3
 
    # 新建用户配置文件
    $ gedit cmake/ConfigUser.cmake
 
 向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.4.2")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.4.3")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_USE_THREADS TRUE)
-   
+
 
 其中，
 
 - ``CMAKE_INSTALL_PREFIX`` 用于设置GMT的安装路径，上面的语句会将GMT安装在
-  ``/opt/GMT-5.4.2`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.2`` 等有可读写
+  ``/opt/GMT-5.4.3`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.3`` 等有可读写
   权限的路径；
 - ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，
   也可设置为TRUE
@@ -144,7 +144,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 .. warning::
 
    CentOS 6 用户需要将用户配置文件的最后一行改为 ``set (GMT_USE_THREADS FALSE)``
-   
+
 .. tip::
 
    此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的5行语句。
@@ -155,7 +155,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
 继续执行如下命令以检查GMT的依赖关系::
 
-    # 注意，此处新建的 build 文件夹位于 gmt-5.4.2 目录下，不是 gmt-5.4.1/cmake 目录下
+    # 注意，此处新建的 build 文件夹位于 gmt-5.4.3 目录下，不是 gmt-5.4.1/cmake 目录下
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -163,8 +163,8 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 ``cmake ..`` 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-5.4.2/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-5.4.2/share/dcw-gmt
+    *  Found GSHHG database       : /home/user/GMT/gmt-5.4.3/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-5.4.3/share/dcw-gmt
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
     *  GDAL library               : /usr/lib64/libgdal.so
@@ -189,10 +189,10 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     *  Build proto supplements    : none
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-5.4.2
-    *  GMT_DATADIR                : /opt/GMT-5.4.2/share
-    *  GMT_DOCDIR                 : /opt/GMT-5.4.2/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-5.4.2/share/man
+    *  Installing GMT in          : /opt/GMT-5.4.3
+    *  GMT_DATADIR                : /opt/GMT-5.4.3/share
+    *  GMT_DOCDIR                 : /opt/GMT-5.4.3/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-5.4.3/share/man
     -- Configuring done
     -- Generating done
 
@@ -219,7 +219,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
 .. code-block:: bash
 
-   $ echo 'export GMT5HOME=/opt/GMT-5.4.2' >> ~/.bashrc
+   $ echo 'export GMT5HOME=/opt/GMT-5.4.3' >> ~/.bashrc
    $ echo 'export PATH=${GMT5HOME}/bin:$PATH' >> ~/.bashrc
    $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> ~/.bashrc
    $ exec $SHELL -l
@@ -230,4 +230,4 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 在终端键入 ``gmt`` ，若出现如下输出，则安装成功::
 
     $ gmt --version
-    5.4.2
+    5.4.3

@@ -18,7 +18,7 @@
 
 ## 版本说明
 
-本手册目前与 GMT 5.4.2 同步，历史版本见 [release](https://github.com/gmt-china/GMT_docs/releases) 页面。
+本手册目前与 GMT 5.4.3 同步，历史版本见 [release](https://github.com/gmt-china/GMT_docs/releases) 页面。
 
 - 在线阅读： http://docs.gmt-china.org
 - 离线阅读： [HTML](http://docs.gmt-china.org/GMT_docs.zip) [PDF](http://docs.gmt-china.org/GMT_docs.pdf)
