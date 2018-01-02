@@ -12,8 +12,6 @@ DOCNAME       = GMT_docs
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@echo "  figures    to update all figures"
-	@echo "  deploy     to deploy html, zip and PDF to github"
-	@echo "  release    to prepare HTML and PDF files for release"
 
 .PHONY: help Makefile
 
