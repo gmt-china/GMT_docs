@@ -19,14 +19,18 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
        $ brew update && brew upgrade
        $ brew install gmt
 
-3.  测试安装是否成功::
+3.  安装 ghostscript::
+
+       $ brew install ghostscript
+
+4.  测试安装是否成功::
 
        $ gmt --version
        5.4.3
 
 .. warning::
 
-   以下几种安装方法翻译自官方文档，我们未作验证。
+   以下几种安装方法翻译自官方文档，我们尚未作验证。
 
 使用 GMT 安装包
 ---------------
