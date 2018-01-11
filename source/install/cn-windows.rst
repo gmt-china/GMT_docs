@@ -96,7 +96,7 @@ GMT 的中文支持
 测试脚本
 --------
 
-.. code-block:: bash
+.. code-block:: batch
 
    gmt set FONT_TITLE 30p,35,black
    gmt set FONT_LABEL 15p,35,black
@@ -106,8 +106,7 @@ GMT 的中文支持
    echo 7 2.5 35p,37,yellow GMT黑体 >> tmp
    echo 7 1.0 35p,38,green GMT楷体 >> tmp
 
-   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" \
-            -BWSen+t"中文标题" -F+f -P > cn.ps
+   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f -P > cn.ps
 
 成图效果如下：
 
