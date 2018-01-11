@@ -142,7 +142,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
     41 STHeiti-Regular--UniGB-UTF8-H
     42 STKaiti-Regular--UniGB-UTF8-H
 
-其中 0-38 为 GMT/gs 默认支持的西文字体，39 至 42 为新添加的中文字体。
+其中 0-38 为 GMT/gs 默认支持的西文字体，39-42 为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
 
 GMT 中文测试
