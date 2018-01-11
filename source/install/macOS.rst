@@ -28,6 +28,19 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
        $ gmt --version
        5.4.3
 
+如果想同时安装 GMT4 和 GMT5，还需要执行以下步骤::
+
+       # 安装 GMT4
+       $ brew install gmt4
+
+       # 删除GMT5带的软链接
+       $ cd /usr/local/opt/gmt@5/bin/
+       $ find . -size -4c -delete       # 删除所有文件大小小于4字节的软链接
+
+       # 删除GMT4自带的GMT二进制文件
+       $ cd /usr/local/opt/gmt@4/bin/
+       $ rm GMT
+
 .. warning::
 
    以下几种安装方法翻译自官方文档，我们尚未作验证。
