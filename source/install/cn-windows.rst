@@ -91,20 +91,22 @@ GMT 的中文支持
     STHeiti-Regular--GB-EUC-H   0.700   1
     STKaiti-Regular--GB-EUC-H   0.700   1
 
-完成后可以用 ``gmt pstext -L`` 查看 GMT 字体。需要注意的是，在 Linux 下新添加的四种中文字体对应的字体编号为 35 到 38，在 Windows 下新添加的四种中文字体对应的字体编号为 39 到 42，请根据实际情况修改测试脚本。
+用 ``gmt pstext -L`` 查看 GMT 字体，可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
+
+强烈建议在执行测试脚本前确认自己的中文字体编号。
 
 测试脚本
 --------
 
 .. code-block:: batch
 
-   gmt set FONT_TITLE 30p,35,black
-   gmt set FONT_LABEL 15p,35,black
+   gmt set FONT_TITLE 30p,39,black
+   gmt set FONT_LABEL 15p,39,black
 
-   echo 3 2.5 35p,35,black GMT宋体 > tmp
-   echo 3 1.0 35p,36,blue GMT仿宋 >> tmp
-   echo 7 2.5 35p,37,yellow GMT黑体 >> tmp
-   echo 7 1.0 35p,38,green GMT楷体 >> tmp
+   echo 3 2.5 35p,39,black GMT宋体 > tmp
+   echo 3 1.0 35p,40,blue GMT仿宋 >> tmp
+   echo 7 2.5 35p,41,yellow GMT黑体 >> tmp
+   echo 7 1.0 35p,42,green GMT楷体 >> tmp
 
    gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f -P > cn.ps
 
