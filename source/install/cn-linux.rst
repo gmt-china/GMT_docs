@@ -137,15 +137,12 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    32  Palatino-BoldItalic
-    33  ZapfChancery-MediumItalic
-    34  ZapfDingbats
-    35 STSong-Light--UniGB-UTF8-H
-    36 STFangsong-Light--UniGB-UTF8-H
-    37 STHeiti-Regular--UniGB-UTF8-H
-    38 STKaiti-Regular--UniGB-UTF8-H
+    39 STSong-Light--UniGB-UTF8-H
+    40 STFangsong-Light--UniGB-UTF8-H
+    41 STHeiti-Regular--UniGB-UTF8-H
+    42 STKaiti-Regular--UniGB-UTF8-H
 
-其中 0-34 为 GMT/gs 默认支持的西文字体，35 至 38 为新添加的中文字体。
+其中 0-38 为 GMT/gs 默认支持的西文字体，39 至 42 为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
 
 GMT 中文测试
@@ -156,15 +153,15 @@ GMT 中文测试
 .. code-block:: bash
 
    #!/bin/bash
-   gmt set FONT_TITLE 30p,35,black
-   gmt set FONT_LABEL 15p,35,black
+   gmt set FONT_TITLE 30p,39,black
+   gmt set FONT_LABEL 15p,39,black
 
    gmt pstext -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" \
             -BWSen+t"中文标题" -F+f -P > cn.ps << EOF
-   3 2.5 35p,35,black GMT宋体
-   3 1.0 35p,36,blue GMT仿宋
-   7 2.5 35p,37,yellow GMT黑体
-   7 1.0 35p,38,green GMT楷体
+   3 2.5 35p,39,black GMT宋体
+   3 1.0 35p,40,blue GMT仿宋
+   7 2.5 35p,41,yellow GMT黑体
+   7 1.0 35p,42,green GMT楷体
    EOF
 
    rm gmt.history gmt.conf
