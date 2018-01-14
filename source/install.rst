@@ -9,4 +9,5 @@
    install/windows
    install/cn-windows
    install/macOS
+   install/datadir
    install/directory-tree
