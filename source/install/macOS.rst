@@ -33,13 +33,20 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
        # 安装 GMT4
        $ brew install gmt4
 
-       # 删除GMT5带的软链接
+       # 删除 GMT5 带的软链接
        $ cd /usr/local/opt/gmt@5/bin/
        $ find . -size -4c -delete       # 删除所有文件大小小于4字节的软链接
 
-       # 删除GMT4自带的GMT二进制文件
+       # 删除 GMT4 自带的GMT二进制文件
        $ cd /usr/local/opt/gmt@4/bin/
        $ rm GMT
+
+       # 为 GMT4 写环境变量
+       $ echo 'export GMT4HOME=/usr/local/Cellar/gmt@4/4.5.17' >> ~/.bashrc
+       $ echo 'export GMT4HOME=/usr/local/Cellar/gmt@4/4.5.17' >> ~/.bashrc
+       $ echo 'export PATH=${GMT4HOME}/bin:$PATH' >> ~/.bashrc
+       $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
+       $ source ~/.bashrc
 
 .. warning::
 
