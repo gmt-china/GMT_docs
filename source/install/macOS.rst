@@ -42,8 +42,7 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
        $ rm GMT
 
        # 为 GMT4 写环境变量
-       $ echo 'export GMT4HOME=/usr/local/Cellar/gmt@4/4.5.17' >> ~/.bashrc
-       $ echo 'export GMT4HOME=/usr/local/Cellar/gmt@4/4.5.17' >> ~/.bashrc
+       $ echo 'export GMT4HOME=/usr/local/opt/gmt@4' >> ~/.bashrc
        $ echo 'export PATH=${GMT4HOME}/bin:$PATH' >> ~/.bashrc
        $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
        $ source ~/.bashrc
