@@ -9,5 +9,5 @@
    install/windows
    install/cn-windows
    install/macOS
-   install/datadir
+   install/database
    install/directory-tree
