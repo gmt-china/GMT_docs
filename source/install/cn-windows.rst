@@ -84,7 +84,7 @@ GMT 的中文支持
 -  GMT 5.1.2 及其之前版本： ``C:\programs\gmt5\share\pslib\PS_font_info.d``
 -  GMT 5.2.1 及其之后版本： ``C:\programs\gmt5\share\postscriptlight\PSL_custom_fonts.txt``
 
-将如下即行内容加入到字体配置文件中::
+将如下几行内容加入到字体配置文件中::
 
     STSong-Light--GB-EUC-H  0.700    1
     STFangsong-Light--GB-EUC-H  0.700    1
@@ -108,7 +108,9 @@ GMT 的中文支持
    echo 7 2.5 35p,41,yellow GMT黑体 >> tmp
    echo 7 1.0 35p,42,green GMT楷体 >> tmp
 
-   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f -P > cn.ps
+   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f > GMT_chinese.ps
+   gmt psconvert GMT_chinese.ps -C-sFONTPATH=C:\windows\fonts -Tg -A -P -E300
+   del gmt.* tmp
 
 成图效果如下：
 
