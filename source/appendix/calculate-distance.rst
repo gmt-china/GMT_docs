@@ -22,7 +22,8 @@ Flat Earth距离
 大圆路径距离
 ------------
 
-该方法将地球近似为一个半径为R的球，地球上任意两点 A 和 B 的大圆路径距离可以用 Haversine 公式计算：
+该方法将地球近似为一个半径为R的球，地球上任意两点 A 和 B 的大圆路径距离可以用
+`Haversine 公式 <https://en.wikipedia.org/wiki/Haversine_formula>`_ 计算：
 
 .. math::
 
@@ -34,10 +35,10 @@ Flat Earth距离
 .. note::
 
    有两个 GMT 参数可以控制大圆路径距离的计算，分别是：
-   
+
    - :ref:`PROJ_MEAN_RADIUS <PROJ_MEAN_RADIUS>` 地球平均半径
    - :ref:`PROJ_AUX_LATITUDE <PROJ_AUX_LATITUDE>` 辅助纬线
-     
+
    参数的具体含义见相关页面中的说明。
 
 测地距离
