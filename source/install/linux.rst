@@ -155,7 +155,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
 继续执行如下命令以检查GMT的依赖关系::
 
-    # 注意，此处新建的 build 文件夹位于 gmt-5.4.3 目录下，不是 gmt-5.4.1/cmake 目录下
+    # 注意，此处新建的 build 文件夹位于 gmt-5.4.3 目录下，不是 gmt-5.4.3/cmake 目录下
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -223,6 +223,13 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
    $ echo 'export PATH=${GMT5HOME}/bin:$PATH' >> ~/.bashrc
    $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> ~/.bashrc
    $ exec $SHELL -l
+
+说明：
+
+- 第一个命令向 ``~/.bashrc`` 中添加环境变量 ``GMT5HOME``
+- 第二个命令修改 ``~/.bashrc`` ，将 GMT5 的 bin 目录加入到 ``PATH`` 中
+- 第三个命令将 GMT5 的 lib 目录加入到动态链接库路径中，若为 32 位系统，则为 lib ；64 位系统则为 lib64
+- 第四个命令是重新载入 bash，相当于 ``source ~/.bashrc``
 
 测试是否安装成功
 ~~~~~~~~~~~~~~~~
