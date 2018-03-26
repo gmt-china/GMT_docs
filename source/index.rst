@@ -1,15 +1,6 @@
 GMT 参考手册
 ############
 
-.. raw:: latex
-
-   \pdfbookmark[0]{\listfigurename}{lof}
-   \listoffigures
-   \cleardoublepage
-   \pdfbookmark[0]{\listtablename}{lot}
-   \listoftables
-   \cleardoublepage
-
 .. only:: html
 
    .. figure:: /images/GMT_logo.*

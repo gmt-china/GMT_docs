@@ -73,22 +73,36 @@ html_context = {
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
 latex_documents = [
-    (master_doc, 'GMT_docs.tex', project, author, 'gmt-docs'),
+    (master_doc, 'GMT_docs.tex', "{} v{}".format(project, version), author, 'ctexbook'),
 ]
 latex_logo = None
 latex_toplevel_sectioning = 'chapter'
-latex_show_urls = 'no'
-latex_additional_files = ['gmt-docs.cls']
+latex_additional_files = ['GMT_style.sty']
 latex_elements = {
-        'papersize'  : 'a4paper',
-        'utf8extra'  : '',
-        'inputenc'   : '',
-        'cmappkg'    : '',
-        'fontenc'    : '',
-        'releasename': '',
-        'babel'      : '',
-        'figure_align': 'htp',
-        'fontpkg'    : '',
-        'fncychap'   : '',
-        'preamble'   : '',
+    'papersize' : 'a4paper',
+    'pointsize' : '11pt',
+    'extraclassoptions' : 'UTF8,twoside,punct=CCT',
+    'preamble'  : r'\input{GMT_style.sty}',
+    'figure_align' : 'H',
+    'geometry'  : r'\usepackage[top=3.0cm, bottom=2.0cm, left=3.5cm, right=2.5cm]{geometry}',
+    # customized tableofcontents
+    'tableofcontents' : r'''\pdfbookmark[0]{\contentsname}{contents}
+                            \tableofcontents
+                            \cleardoublepage
+                            \pdfbookmark[0]{\listfigurename}{lof}
+                            \listoffigures
+                            \cleardoublepage
+                            \pdfbookmark[0]{\listtablename}{lot}
+                            \listoftables
+                            \cleardoublepage''',
+    'passoptionstopackages': r'\PassOptionsToPackage{dvipsnames, svgnames}{xcolor}',
+    'sphinxsetup': r'''VerbatimColor={named}{Lavender},
+                       VerbatimBorderColor={named}{Silver},
+                       ''',
+    'fncychap'  : '',   # use default chapter style from ctex
+    'babel'     : '',
+    'polyglossia': '',
+    'fontpkg'   : '',
+    'cmappkg'   : '',
+    'fontenc'   : '',
 }

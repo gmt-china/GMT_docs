@@ -1,0 +1,97 @@
+% 文档相关信息
+\newcommand{\GMTDOCTITLE}{GMT\textbf{参考手册}}   % 文档标题
+\newcommand{\GMTDOCAUTHOR}{GMT中文社区}               % 文档作者
+\newcommand{\GMTDOCVERSION}{5.4.3}              % 文档版本
+
+% 字体设置
+\setmonofont{Source Code Pro}
+
+% sphinx已经载入hyperref
+\hypersetup{
+    % 文档元信息
+    pdftitle={\GMTDOCTITLE v\GMTDOCVERSION},
+    pdfauthor={\GMTDOCAUTHOR},
+    % 超链接及书签设置
+    CJKbookmarks=true,
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% 章节标题设置
+\ctexset{
+    contentsname = {目 \quad 录},
+    listfigurename = {图目录},
+    listtablename = {表目录},
+    chapter/number = \arabic{chapter},
+    chapter/beforeskip = 1ex,
+    section/afterskip = 5ex,
+}
+% sphinx使用titleformat设置章节标题属性
+% ctex无法修改section的标题属性，故而使用titleformat重新设置
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.5em}{}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.5em}{}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{0.5em}{}{}
+% 设置标题前后距离
+\titlespacing{\section}{0pt}{3pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+\setlength{\parskip}{0.75em}
+
+% 列表设置
+\usepackage{enumitem}	% 列表宏包
+% itemsep 设置列表间距; topsep 设置列表前间距
+\setenumerate{
+    itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt
+}
+\setitemize{
+    itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt
+}
+\setdescription{
+    itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt, itemindent=0pt
+}
+
+% 双栏目录
+\usepackage{multicol}
+\makeatletter
+\renewcommand{\tableofcontents}{%
+\setlength{\columnsep}{2.5em}
+\begin{multicols}{2}[\chapter*{\contentsname}]%
+    \@starttoc{toc}%
+\end{multicols}}
+\makeatother
+
+% 空白页
+\makeatletter	% copy from lnotes
+\def\cleardoublepage{
+    \clearpage
+    \if@twoside
+        \ifodd
+            \c@page
+        \else
+            \hbox{}
+            \vspace*{\fill}
+            \begin{center}
+		    保护环境，从阅读电子文档开始！
+            \end{center}
+            \vspace{\fill}
+            \thispagestyle{empty}
+            \newpage
+            \if@twocolumn
+                \hbox{}
+                \newpage
+            \fi
+        \fi
+    \fi
+}
+\makeatother
+
+% 图表标题
+\usepackage[labelfont={small,bf}, textfont=small]{caption}
+\captionsetup[figure]{aboveskip=6pt, belowskip=-12pt}
+\captionsetup[table]{aboveskip=6pt, belowskip=-6pt}
+
+% 首行缩进
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
