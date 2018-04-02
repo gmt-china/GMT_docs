@@ -7,6 +7,7 @@ SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 DOCNAME       = GMT_docs
+HTML          = dirhtml
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -24,7 +25,13 @@ figures:
 	@echo "Update all figures..."
 	make -C source/scripts
 
-build: html latexpdf
+build: $(HTML) latexpdf
 	@echo "Deploy HTML, ZIP and PDF"
-	cd $(BUILDDIR) && cp -r html $(DOCNAME) && zip -rm html/$(DOCNAME).zip $(DOCNAME) && \
-	cp latex/$(DOCNAME).pdf html && cd ..
+	cd $(BUILDDIR) && \
+	cp -r $(HTML) $(DOCNAME) && \
+	zip -rm $(HTML)/$(DOCNAME).zip $(DOCNAME) && \
+	cp latex/$(DOCNAME).pdf $(HTML) && \
+	cd ..
+
+serve: $(HTML)
+	cd $(BUILDDIR)/$(HTML) && python -m http.server
