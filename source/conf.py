@@ -69,6 +69,7 @@ html_context = {
     'github_repo': 'GMT_Docs',
     'github_version': 'master',
     'conf_py_path': '/source/',
+    'theme_vcs_pageview_mode': 'blob',
 }
 
 # -- Options for LaTeX output ---------------------------------------------
