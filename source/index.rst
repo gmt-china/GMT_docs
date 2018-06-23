@@ -15,10 +15,10 @@ GMT 参考手册
 **相关链接：**
 
 - 社区主页：http://gmt-china.org
-- 项目主页：http://docs.gmt-china.org
+- 项目主页：https://docs.gmt-china.org
 - 项目源码：https://github.com/gmt-china/GMT_Docs
 - GMT官方手册：http://gmt.soest.hawaii.edu/doc/latest/index.html
-- GMT模块手册： http://modules.gmt-china.org
+- GMT模块手册： https://modules.gmt-china.org
 - GMT图库： http://gmt-china.org/gallery/
 
 .. toctree::

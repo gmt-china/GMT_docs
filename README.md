@@ -11,7 +11,7 @@
 ## 相关链接
 
 - GMT中文社区主页：http://gmt-china.org
-- GMT参考手册项目主页：http://docs.gmt-china.org
+- GMT参考手册项目主页：https://docs.gmt-china.org
 - GMT参考手册项目源码：https://github.com/gmt-china/GMT_Docs
 - GMT官方网站：http://gmt.soest.hawaii.edu/
 - GMT官方文档：http://gmt.soest.hawaii.edu/doc/latest/index.html
@@ -20,8 +20,8 @@
 
 本手册目前与 GMT 5.4.3 同步，历史版本见 [release](https://github.com/gmt-china/GMT_docs/releases) 页面。
 
-- 在线阅读： http://docs.gmt-china.org
-- 离线阅读： [HTML](http://docs.gmt-china.org/GMT_docs.zip) [PDF](http://docs.gmt-china.org/GMT_docs.pdf)
+- 在线阅读： https://docs.gmt-china.org
+- 离线阅读： [HTML](https://docs.gmt-china.org/GMT_docs.zip) [PDF](https://docs.gmt-china.org/GMT_docs.pdf)
 
 ## 文档维护
 
