@@ -15,8 +15,8 @@ GMT的历史
 - 1988年，Paul Wessel和Walter H.F. Smith开发了GMT的最原始版本GMT 1.0
 - 1991年8月10日，GMT 2.0发布
 - 1998年11月8日，GMT 3.x的第一个正式版发布
-- 2005年10月1日，GMT 4.x的第一个正式版发布；目前最新版本 GMT |GMT4_latest_release|
-  发布于  |GMT4_latest_release_date|
+- 2005年10月1日，GMT 4.x的第一个正式版发布；GMT4.x系列的最后一个版本是
+  GMT 4.5.18，发布于2018年7月1日；
 - 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT |GMT5_latest_release|
   发布于  |GMT5_latest_release_date|
 
@@ -24,7 +24,7 @@ GMT维护者
 ---------
 
 .. figure:: /static_images/GMT5_Summit_2016.jpg
-   :width: 1200 px
+   :width: 100%
    :align: center
 
    GMT目前的5个维护者：Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe 和 Paul Wessel
