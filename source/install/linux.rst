@@ -20,20 +20,6 @@ Ubuntu 用户::
 其他发行版用户可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含
 GMT 以及 GMT 的具体版本。
 
-使用社区提供的快速安装脚本
---------------------------
-
-GMT 中文社区为常见的 Linux 发行版提供了 GMT 最新版本的安装脚本，见
-https://github.com/gmt-china/gmt-easy-installer。
-
-用户需要下载两个安装脚本：
-
-1. 自己的发行版对应的安装脚本，比如 ``ubuntu-installer.sh``， 用于安装 GMT
-   所需的依赖
-2. GMT安装脚本 ``GMT-installer.sh`` 用于编译安装GMT源码
-
-并依次执行 ``ubuntu-installer.sh`` 和 ``GMT-installer.sh`` 即可。
-
 从源码编译
 ----------
 
