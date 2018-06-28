@@ -47,6 +47,9 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
        $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
        $ source ~/.bashrc
 
+.. 从 conda 安装 GMT
+.. include:: conda-install-gmt.rst_
+
 .. warning::
 
    以下几种安装方法翻译自官方文档，我们尚未作验证。
