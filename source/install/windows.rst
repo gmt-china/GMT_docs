@@ -24,7 +24,7 @@ ghostscript 和 gsview。
 
 1. 下载
 
-   到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载所需要的安装包。
+   到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载所需要的安装包。
 
 2. 安装GMT
 

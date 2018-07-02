@@ -59,7 +59,7 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 
 GMT 为 macOS 用户提供了 dmg 安装包。
 
-1. 到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
+1. 到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
 
 2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.4.4.app`` 拖动到 Applications 目录即可。
 
