@@ -50,7 +50,7 @@
 下图给出了GMT支持的35种字体的列表：
 
 .. figure:: /images/GMT_fonts.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    GMT中的35种PS标准字体
@@ -89,7 +89,7 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 下图给出了几种指定文本属性的方式：
 
 .. figure:: /images/GMT_text_examples.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    GMT文本属性示例

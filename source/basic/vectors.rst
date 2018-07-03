@@ -37,7 +37,7 @@ GMT 中的矢量可以分为三类：
    :language: bash
 
 .. figure:: /images/GMT_arrows.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    GMT中的三种矢量箭头
@@ -109,7 +109,7 @@ GMT 中的矢量可以分为三类：
 下图展示了部分 GMT 可以绘制的矢量，每个矢量右边给出了其对应的选项。需要注意的是，某些矢量设置了 ``MAP_VECTOR_SHAPE`` 的值为 0.5。
 
 .. figure:: /images/GMT_arrows_types.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    矢量箭头类型

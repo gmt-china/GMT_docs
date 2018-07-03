@@ -12,7 +12,7 @@
 下图给出了12号字体（Symbol字符集）和34字体（Pifont ZapfDingbats）的字符与八进制码对应关系：
 
 .. figure:: /images/GMT_symbol_dingbats.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    Symbol和Pifont字体八进制码
@@ -22,7 +22,7 @@
 下图给出了一些示例：
 
 .. figure:: /images/GMT_symbol_examples.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    12号和34号字体示例

@@ -16,7 +16,7 @@
     gmt pscoast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2 -P > GMT_robinson.ps
 
 .. figure:: /images/GMT_robinson.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Robinson投影绘制全球地图

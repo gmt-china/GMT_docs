@@ -17,7 +17,7 @@
     gmt pscoast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -P > GMT_orthographic.ps
 
 .. figure:: /images/GMT_orthographic.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    使用正交投影绘制半球
@@ -40,7 +40,7 @@
                 -Wthinnest -P -Slightblue --MAP_ANNOT_MIN_SPACING=0.25i > GMT_perspective.ps
 
 .. figure:: /images/GMT_perspective.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    透视投影

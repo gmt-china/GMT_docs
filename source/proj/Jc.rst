@@ -20,7 +20,7 @@
         -Gspringgreen  -Dh -Sazure -Wthinnest -Ia/thinner -P --FONT_LABEL=12p > GMT_cassini.ps
 
 .. figure:: /images/GMT_cassini.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    Cassini投影绘制Sardinia岛

@@ -20,7 +20,7 @@
                 -Glightgreen -Wthinnest -P > GMT_equidistant_conic.ps
 
 .. figure:: /images/GMT_equidistant_conic.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    等距圆锥地图投影

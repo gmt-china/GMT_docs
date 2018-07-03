@@ -23,7 +23,7 @@
                 -Sseashell -P > GMT_stereographic_polar.ps
 
 .. figure:: /images/GMT_stereographic_polar.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    极区立体保角投影
@@ -38,7 +38,7 @@
                 -Slightgray -P > GMT_stereographic_rect.ps
 
 .. figure:: /images/GMT_stereographic_rect.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    矩形边界下的极区立体保角投影
@@ -53,7 +53,7 @@
                 -Wthinnest -P > GMT_stereographic_general.ps
 
 .. figure:: /images/GMT_stereographic_general.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    一般立体投影

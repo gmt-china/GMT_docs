@@ -18,7 +18,7 @@
     gmt pscoast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -P > GMT_equi_cyl.ps
 
 .. figure:: /images/GMT_equi_cyl.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Plate Carrée投影绘制全球地图

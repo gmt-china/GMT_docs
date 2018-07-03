@@ -115,7 +115,7 @@ GMT 的中文支持
 成图效果如下：
 
 .. figure:: /static_images/GMT_chinese.png
-   :width: 400px
+   :width: 100%
    :align: center
 
 需要注意，若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或

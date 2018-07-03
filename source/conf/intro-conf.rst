@@ -81,19 +81,19 @@ GMT配置示例
 下面列出部分会影响到绘图效果的GMT参数。
 
 .. figure:: /images/GMT_Defaults_1.*
-   :width: 600px
+   :width: 100%
    :align: center
 
    GMT配置参数示例1
 
 .. figure:: /images/GMT_Defaults_2.*
-   :width: 600px
+   :width: 100%
    :align: center
 
    GMT配置参数示例2
 
 .. figure:: /images/GMT_Defaults_3.*
-   :width: 600px
+   :width: 100%
    :align: center
 
    GMT配置参数示例3

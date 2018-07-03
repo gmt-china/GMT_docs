@@ -24,7 +24,7 @@
                 -A250 -P > GMT_albers.ps
 
 .. figure:: /images/GMT_albers.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    Albers圆锥等面积投影

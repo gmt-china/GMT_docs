@@ -17,7 +17,7 @@
     gmt pscoast -Rg -JH4.5i -Bg -Dc -A10000 -Gblack -Scornsilk -P > GMT_hammer.ps
 
 .. figure:: /images/GMT_hammer.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Hammer投影绘制全球地图

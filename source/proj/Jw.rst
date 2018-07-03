@@ -16,7 +16,7 @@
     gmt pscoast -Rd -JW4.5i -Bg -Dc -A10000 -Gtomato1 -Sskyblue -P > GMT_mollweide.ps
 
 .. figure:: /images/GMT_mollweide.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Mollweide投影绘制全球地图

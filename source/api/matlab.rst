@@ -29,7 +29,7 @@ GMT5.3以后的用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）
 - GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
 
 .. figure:: /static_images/Matlab_path.png
-   :width: 500 px
+   :width: 100%
    :align: center
 
    Matlab PATH 设置

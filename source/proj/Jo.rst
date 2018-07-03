@@ -30,7 +30,7 @@
                 --MAP_TITLE_OFFSET=0.05i > GMT_obl_merc.ps
 
 .. figure:: /images/GMT_obl_merc.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用 ``-Joc`` 倾斜Mercator投影
@@ -38,7 +38,7 @@
 在使用倾斜头时，直接指定整个区域相对地图中心的相对投影坐标更为方便，下面的示例中使用了 ``-Rk-1000/1000/-500/500`` 来指定相对投影坐标。
 
 .. figure:: /images/GMT_obl_nz.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    使用 ``-JOa`` 倾斜Mercator投影

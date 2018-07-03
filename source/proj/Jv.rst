@@ -16,7 +16,7 @@
     gmt pscoast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -P > GMT_grinten.ps
 
 .. figure:: /images/GMT_grinten.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    使用Van der Grinten投影绘制全球图

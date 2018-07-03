@@ -295,7 +295,7 @@ GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线
 GMT默认使用的是网格线配准方式。
 
 .. figure:: /images/GMT_grid_registration.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    GMT网格配准方式

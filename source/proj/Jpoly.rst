@@ -11,7 +11,7 @@
                 -Wthinnest -P > GMT_polyconic.ps
 
 .. figure:: /images/GMT_polyconic.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    多圆锥投影

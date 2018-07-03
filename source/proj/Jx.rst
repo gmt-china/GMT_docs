@@ -41,7 +41,7 @@ GMT中笛卡尔坐标变换分为三类：
 绘图效果如下图所示：
 
 .. figure:: /images/GMT_JX_linear.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    笛卡尔坐标的线性变换
@@ -67,7 +67,7 @@ GMT中笛卡尔坐标变换分为三类：
             -P -Slightblue > GMT_linear_d.ps
 
 .. figure:: /images/GMT_JX_geo.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    地理坐标的线性变换
@@ -87,7 +87,7 @@ GMT中笛卡尔坐标变换分为三类：
                   -Bya1Hg1h -BWsNe+glightyellow -P > GMT_linear_cal.ps
 
 .. figure:: /images/GMT_JX_calendar.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    日期时间坐标的线性变换
@@ -104,7 +104,7 @@ GMT中笛卡尔坐标变换分为三类：
     gmt psxy -R -J -Ss0.1i -N -Gred -W -O -h sqrt.d10 >> GMT_log.ps
 
 .. figure:: /images/GMT_JX_log.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    对数投影
@@ -123,7 +123,7 @@ GMT中笛卡尔坐标变换分为三类：
     gmt psxy -R -J -Sc0.075i -Ggreen -W -O sqrt.d10 >> GMT_pow.ps
 
 .. figure:: /images/GMT_JX_pow.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    指数变换

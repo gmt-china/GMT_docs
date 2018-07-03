@@ -20,7 +20,7 @@
                 -P -Sseashell > GMT_transverse_merc.ps
 
 .. figure:: /images/GMT_transverse_merc.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    矩形横向Mercator地图
@@ -31,7 +31,7 @@
                 -Slightblue -G0 -P > GMT_TM.ps
 
 .. figure:: /images/GMT_TM.*
-   :width: 450 px
+   :width: 100%
    :align: center
 
    全球横向Mercator地图

@@ -39,7 +39,7 @@
                 -Wthinnest -P > GMT_general_cyl.ps
 
 .. figure:: /images/GMT_general_cyl.*
-   :width: 600 px
+   :width: 100%
    :align: center
 
    使用Behrman圆柱等面积投影绘制地图

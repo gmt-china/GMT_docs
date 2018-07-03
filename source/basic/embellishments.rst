@@ -29,7 +29,7 @@ GMT 为了将一个修饰物放在底图上，做了四件事：
 下图中，大矩形代表底图，小矩形代表修饰物。
 
 .. figure:: /images/GMT_anchors.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    参考点与锚点
@@ -93,7 +93,7 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
 #. ``+s<dx>/<dy>/<fill>`` 下拉阴影区。 ``<dx>/<dy>`` 是阴影区相对于面板的偏移量， ``<shade>`` 是阴影区的颜色，默认值为 ``4p/-4p/gray50`` 。
 
 .. figure:: /images/GMT_panel.*
-   :width: 600px
+   :width: 100%
    :align: center
 
    GMT修饰物背景面板

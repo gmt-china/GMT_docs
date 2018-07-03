@@ -16,11 +16,10 @@
 .. literalinclude:: /scripts/GMT_tutor3.sh
    :language: bash
 
-
 结果：
 
 .. figure:: /images/GMT_tutor3.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
 主要参数解释：

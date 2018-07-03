@@ -57,7 +57,7 @@ netCDF的非数据部分，包含了众多属性，这些属性完整地描述�
 下图描绘了一个分块的netCDF文件的布局。为了读取数据的一部分（比如左下角的四个蓝色区块），netCDF只需要读取相应的区块即可，不用先读取整个数据。
 
 .. figure:: /images/GMT_grid_chunking.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    网格分块

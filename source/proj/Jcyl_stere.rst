@@ -35,7 +35,7 @@
                 -Wblack -Gseashell4 -Santiquewhite1 -P > GMT_gall_stereo.ps
 
 .. figure:: /images/GMT_gall_stereo.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Gall立体投影绘制世界地图

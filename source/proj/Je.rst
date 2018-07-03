@@ -19,7 +19,7 @@
     gmt pscoast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -P > GMT_az_equidistant.ps
 
 .. figure:: /images/GMT_az_equidistant.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    使用等距方位投影绘制全球图

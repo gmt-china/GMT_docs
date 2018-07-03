@@ -231,7 +231,7 @@ X:
 .. _Contour_label_1:
 
 .. figure:: /images/GMT_contour-anno1.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    通过指定 **-Gd** 选项的参数，确定了标注的位置(等值线上相距1.5英寸的点)
@@ -252,7 +252,7 @@ X:
 .. _Contour_label_2:
 
 .. figure:: /images/GMT_contour-anno2.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    通过指定 **-Gn** 选项的参数，确定了标注的位置(每条长度超过1英寸的等值线的中心位置)
@@ -277,7 +277,7 @@ X:
 .. _Contour_label_3:
 
 .. figure:: /images/GMT_contour-anno3.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    通过指定 **-Gf** 选项的参数，确定了标注的位置(等值线上与给定点距离最小的点)
@@ -298,7 +298,7 @@ X:
 .. _Contour_label_4:
 
 .. figure:: /images/GMT_contour-anno4.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    通过指定 **-GL** 选项的参数确定了标注的位置(大圆弧与等值线的交点)
@@ -321,7 +321,7 @@ X:
 .. _Contour_label_5:
 
 .. figure:: /images/GMT_contour-anno5.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定了标注的位置
@@ -356,7 +356,7 @@ X:
 .. _Contour_label_6:
 
 .. figure:: /images/GMT_contour-anno6.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    通过指定 **-Sq** 选项的参数控制标注属性.
@@ -384,7 +384,7 @@ X:
 .. _Contour_label_7:
 
 .. figure:: /images/GMT_contour-anno7.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    另一个标注属性实例
@@ -407,7 +407,7 @@ X:
 .. _Contour_label_8:
 
 .. figure:: /images/GMT_contour-anno8.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    标注的位置和内容来自不同的数据集
@@ -432,7 +432,7 @@ X:
 .. _Contour_label_9:
 
 .. figure:: /images/GMT_contour-anno9.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    Canary Islands到大西洋沿岸的海啸走时图，特别是纽约。

@@ -22,7 +22,7 @@
                 -P > GMT_mercator.ps
 
 .. figure:: /images/GMT_mercator.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    Mercator投影

@@ -26,7 +26,7 @@ MAP参数
     下图给出了不同的底图边框类型的效果：
 
     .. figure:: /images/GMT_frame_type.*
-       :width: 600px
+       :width: 100%
        :align: center
 
        GMT底图边框类型

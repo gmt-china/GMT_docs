@@ -23,7 +23,7 @@
                 -Wthinnest -P > GMT_lambert_az_rect.ps
 
 .. figure:: /images/GMT_lambert_az_rect.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Lambert方位等面积投影绘制矩形地图
@@ -36,7 +36,7 @@
     gmt pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps
 
 .. figure:: /images/GMT_lambert_az_hemi.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    使用Lambert方位等面积投影绘制半球地图
@@ -44,7 +44,7 @@
 地球物理学中，在绘制震源机制解时，就是将三维的辐射花样信息投影到一个水平面内。投影的方式有两种：Schmidt网和Wulff网。其中Schmidt网使用的就是Lambert方位等面积投影（中心经纬度为0/0），Wulff网使用的则是等角度的立体投影。两种震源球投影方式如下图所示：
 
 .. figure:: /images/GMT_stereonets.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    震源球投影：等面积的Schmidt网和等角度的Wulff网

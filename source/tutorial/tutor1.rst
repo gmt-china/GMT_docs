@@ -15,7 +15,7 @@ GMT可以绘制最简单的线性X-Y图。
 绘图结果如图所示：
 
 .. figure:: /images/GMT_tutor1_1.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    线性X-Y图
@@ -47,7 +47,7 @@ GMT可以绘制最简单的线性X-Y图。
 绘图结果如图所示：
 
 .. figure:: /images/GMT_tutor1_2.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    对数X-Y图
@@ -76,7 +76,7 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 绘图结果如图所示：
 
 .. figure:: /images/GMT_tutor1_3.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    区域地图
@@ -115,7 +115,7 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 绘图结果如图所示：
 
 .. figure:: /images/GMT_tutor1_4.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    全球地图

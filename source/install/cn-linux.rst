@@ -108,7 +108,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 用 gs 查看该 PS 文件，若正确显示中文如下图，则表明 gs 已支持 Windows 字体。
 
 .. figure:: /static_images/GMT_chinese_windows_fonts.png
-   :width: 500px
+   :width: 100%
    :align: center
 
 使 GMT 支持中文
@@ -169,7 +169,7 @@ GMT 中文测试
 成图效果如下：
 
 .. figure:: /static_images/GMT_chinese.png
-   :width: 400px
+   :width: 100%
    :align: center
 
 对其他发行版的若干说明

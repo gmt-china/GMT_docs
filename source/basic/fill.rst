@@ -44,7 +44,7 @@
 ``-Gp`` 绘制，右半部分使用 ``-GP`` 绘制。
 
 .. figure:: /images/GMT_patterns.png
-   :width: 600 px
+   :width: 100%
    :align: center
 
    GMT内置位图图案

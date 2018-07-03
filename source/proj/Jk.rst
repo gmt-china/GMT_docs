@@ -19,7 +19,7 @@ Eckert IV示例::
     gmt pscoast -Rg -JKf4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
 
 .. figure:: /images/GMT_eckert4.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    Eckert IV投影绘制全球图
@@ -29,7 +29,7 @@ Eckert VI示例::
     gmt pscoast -Rg -JKs4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
 
 .. figure:: /images/GMT_eckert6.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    Eckert VI投影绘制全球图

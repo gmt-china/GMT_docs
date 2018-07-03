@@ -31,7 +31,7 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm`` 。
 取一张 A4 纸放在桌面上，有两种放置的方式：竖着放和横着放。如图所示：
 
 .. figure:: /images/GMT_-P.*
-   :width: 500px
+   :width: 100%
    :align: center
 
    画布方向
@@ -74,7 +74,7 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm`` 。
 准备好画布之后，可不能随便找一个点就开始画了，还需要定义底图的原点。GMT默认的底图原点距左下角 ``(1i,1i)`` ，即坐标原点离纸张左下角的距离是水平方向偏移1英寸，垂直方向偏移1英寸。
 
 .. figure:: /images/GMT_basemap_origin.*
-   :width: 600px
+   :width: 100%
    :align: center
 
    底图原点

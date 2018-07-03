@@ -25,7 +25,7 @@ GMT参数中有一些与logo相关的参数：
 显示效果如下图：
 
 .. figure:: /images/GMT_-U.*
-   :width: 500px
+   :width: 100%
    :align: center
 
    ``-U`` 选项加时间戳

@@ -2,7 +2,7 @@
 ===================
 
 .. figure:: /images/GMT_polar.*
-   :width: 400 px
+   :width: 100%
    :align: center
 
    极坐标（ :math:`\theta, r`\ ）的线性投影

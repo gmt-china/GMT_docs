@@ -16,7 +16,7 @@
      gmt pscoast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -P > GMT_sinusoidal.ps
 
 .. figure:: /images/GMT_sinusoidal.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用正弦曲线投影绘制世界地图
@@ -30,7 +30,7 @@
    gmt pscoast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.12i -O >> GMT_sinus_int.ps
 
 .. figure:: /images/GMT_sinus_int.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用间断正弦曲线投影绘制世界地图

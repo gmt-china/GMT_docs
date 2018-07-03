@@ -17,7 +17,7 @@
                 -Gkhaki -Wthinnest -P -Sazure > GMT_miller.ps
 
 .. figure:: /images/GMT_miller.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    使用Miller圆柱投影绘制世界地图

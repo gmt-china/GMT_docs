@@ -116,7 +116,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 下图展示了这三个名词在绘图时的具体含义。
 
 .. figure:: /images/GMT_-B_afg.*
-   :width: 500px
+   :width: 100%
    :align: center
 
    GMT坐标轴中的标注、刻度和网格线
@@ -150,7 +150,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 使用 ``fancy`` 形式。
 
 .. figure:: /images/GMT_-B_geo_1.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    地理底图示例1
@@ -161,7 +161,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 属性用于显示弧分。
 
 .. figure:: /images/GMT_-B_geo_2.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    地理底图示例2
@@ -177,7 +177,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 为其他值，则会严格使用其定义的格式，比如 ``%.2f`` 表示显示两位小数。
 
 .. figure:: /images/GMT_-B_linear.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    笛卡尔线性轴
@@ -201,7 +201,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 - 在 ``<stride>`` 后加 ``p`` ，则标注会以10的n次方的形式显示，比如10\ :sup:`-5`
 
 .. figure:: /images/GMT_-B_log.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    对数坐标轴
@@ -219,7 +219,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。
 
 .. figure:: /images/GMT_-B_pow.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    指数投影坐标轴
@@ -291,7 +291,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 绘图效果如下图所示。
 
 .. figure:: /images/GMT_-B_time1.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间轴示例1
@@ -305,7 +305,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 绘图效果如下图所示。图中下面的例子使用周来标注，上面的例子使用日期来标注。
 
 .. figure:: /images/GMT_-B_time2.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间轴示例2
@@ -318,7 +318,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
 
 .. figure:: /images/GMT_-B_time3.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间示例3
@@ -330,7 +330,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
      gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P > GMT_-B_time4.ps
 
 .. figure:: /images/GMT_-B_time4.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间轴示例4
@@ -344,7 +344,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt psbasemap -R -J -Bpa3Kf1k -Bsa1r -BS -O -Y0.65i >> GMT_-B_time5.ps
 
 .. figure:: /images/GMT_-B_time5.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间轴示例5
@@ -355,7 +355,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt psbasemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -P > GMT_-B_time6.ps
 
 .. figure:: /images/GMT_-B_time6.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间轴示例6
@@ -366,7 +366,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P > GMT_-B_time7.ps
 
 .. figure:: /images/GMT_-B_time7.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    时间轴示例7
@@ -420,7 +420,7 @@ GMT允许用户定义标注来实现不规则间隔的标注，用法是 ``-Bc``
     rm -f [xy]annots.txt
 
 .. figure:: /images/GMT_-B_custom.*
-   :width: 500 px
+   :width: 100%
    :align: center
 
    自定义坐标轴
