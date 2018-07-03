@@ -85,7 +85,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
 #. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.4.4-src.tar.gz
 #. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz
-#. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.3.tar.gz
+#. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz
 
 安装GMT
 ~~~~~~~
@@ -97,11 +97,11 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
    # 解压三个压缩文件
    $ tar -xvf gmt-5.4.4-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-1.1.3.tar.gz
+   $ tar -xvf dcw-gmt-1.1.4.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
    $ mv gshhg-gmt-2.3.7 gmt-5.4.4/share/gshhg
-   $ mv dcw-gmt-1.1.3 gmt-5.4.4/share/dcw-gmt
+   $ mv dcw-gmt-1.1.4 gmt-5.4.4/share/dcw-gmt
 
    # 切换到gmt源码目录下
    $ cd gmt-5.4.4
