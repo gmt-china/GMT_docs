@@ -5,7 +5,7 @@
 
 .. figure:: /images/GMT_glossary.*
    :align: center
-   :width: 700 px
+   :width: 100%
 
    GMT绘图元素
 

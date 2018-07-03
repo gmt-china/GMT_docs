@@ -119,13 +119,13 @@ GMT内置了43个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHO
     gmt psscale -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt > test.ps
 
 .. figure:: /images/GMT_CPT_1.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    GMT内置CPT示例1
 
 .. figure:: /images/GMT_CPT_2.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    GMT内置CPT示例2
@@ -163,7 +163,7 @@ GMT 内置的 CPT 文件都是动态的。
    :language: bash
 
 .. figure:: /images/GMT_CPT_3.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    动态CPT的拉伸
@@ -197,7 +197,7 @@ GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以内置CPT文件为基础，针对用
    :language: bash
 
 .. figure:: /images/GMT_CPT_4.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    CPT颜色翻转

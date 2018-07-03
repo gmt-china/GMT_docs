@@ -57,7 +57,7 @@
 ------------
 
 .. figure:: /images/GMT_escape_examples.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    GMT转义序列示例
