@@ -31,7 +31,7 @@
    是X和Y方向的网格数，通过 ``-I`` 选项指定的网格间隔即可计算得到区域范围。
 
 .. figure:: /images/GMT_-R.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    ``-R`` 选项指定数据范围

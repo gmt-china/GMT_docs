@@ -24,7 +24,7 @@ ghostscript 和 gsview。
 
 1. 下载
 
-   到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载所需要的安装包。
+   到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载所需要的安装包。
 
 2. 安装GMT
 
@@ -46,7 +46,7 @@ ghostscript 和 gsview。
    安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
        C:\Users\xxxx> gmt --version
-       5.4.3
+       5.4.4
 
    即表示安装成功。
 
@@ -87,7 +87,7 @@ ghostscript 和 gsview。
 
 欢迎补充，请参考：
 
-#. http://gmt.soest.hawaii.edu/doc/5.4.3/GMT_Docs.html#cygwin-and-gmt
+#. http://gmt.soest.hawaii.edu/doc/5.4.4/GMT_Docs.html#cygwin-and-gmt
 #. http://gmt.soest.hawaii.edu/projects/gmt/wiki/BuildingGMT#Cygwin
 
 在 MSYS2 中安装

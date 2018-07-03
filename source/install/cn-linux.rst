@@ -23,8 +23,8 @@ GMT 原生并不支持中文。为了让 GMT 支持中文，需要修改 ghostsc
 GMT 字体配置文件
 ++++++++++++++++
 
-假定 GMT 的安装路径为 ``/opt/GMT-5.4.3`` ，则字体配置文件的路径为
-``/opt/GMT-5.4.3/share/postscriptlight/PSL_custom_fonts.txt`` 。
+假定 GMT 的安装路径为 ``/opt/GMT-5.4.4`` ，则字体配置文件的路径为
+``/opt/GMT-5.4.4/share/postscriptlight/PSL_custom_fonts.txt`` 。
 
 使 gs 支持中文
 --------------

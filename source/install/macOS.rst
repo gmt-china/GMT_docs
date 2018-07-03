@@ -26,7 +26,7 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 4.  测试安装是否成功::
 
        $ gmt --version
-       5.4.3
+       5.4.4
 
 如果想同时安装 GMT4 和 GMT5，还需要执行以下步骤::
 
@@ -59,20 +59,20 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 
 GMT 为 macOS 用户提供了 dmg 安装包。
 
-1. 到社区主页的 `下载页面 <http://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
+1. 到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
 
-2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.4.3.app`` 拖动到 Applications 目录即可。
+2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.4.4.app`` 拖动到 Applications 目录即可。
 
-3. GMT 默认会安装到 ``/Applications/GMT-5.4.3.app/`` 目录下，将如下语句::
+3. GMT 默认会安装到 ``/Applications/GMT-5.4.4.app/`` 目录下，将如下语句::
 
-       export PATH=${PATH}:/Applications/GMT-5.4.3.app/Contents/Resources/bin
+       export PATH=${PATH}:/Applications/GMT-5.4.4.app/Contents/Resources/bin
 
    加入到 ``~/.bashrc`` 中即可。
 
 4. 测试安装是否成功::
 
        $ gmt --version
-       5.4.3
+       5.4.4
 
 使用 macports 安装
 ------------------

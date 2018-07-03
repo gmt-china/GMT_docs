@@ -29,7 +29,7 @@ PS文件结构
 任何一个PS文件都由header、body和trailer组成，可以理解成头、身体和尾巴。其中头部的作用是初始化PS文件，比如设置纸张大小、纸张方向、载入字体等；身体部分则是真正的绘图部分，包含了每个绘图命令绘制的图层；尾巴部分则用于控制PS文件的显示。
 
 .. figure:: /images/GMT_-OK.*
-   :width: 700 px
+   :width: 100%
    :align: center
 
    ``-K`` 和 ``-O`` 选项的原理
@@ -98,6 +98,6 @@ PS文件结构
 - ``gmt psxy ... -T -K`` 只向PS文件中写入头部
 - ``gmt psxy ... -T -O`` 只向PS文件中写入尾部
 - 中间的全部绘图命令统一用 ``-K -O >>`` 。这样的统一使得，任意调整命令顺序或删减命令，都不需要修改 ``-K`` 、 ``-O`` 和重定向符号！
-- 实际使用中， 第一个 ``gmt psxy -T -K`` 命令也可以考虑改成只绘制底图边框的 ``gmt psbasemap -B ... -K`` 
+- 实际使用中， 第一个 ``gmt psxy -T -K`` 命令也可以考虑改成只绘制底图边框的 ``gmt psbasemap -B ... -K``
 
 .. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#plot-overlays-the-k-o-options
