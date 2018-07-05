@@ -44,12 +44,10 @@ netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
     # 更新
     $ sudo apt-get update
 
-    # 必须安装的包
     $ sudo apt-get install gcc g++ cmake make libc6
     $ sudo apt-get install ghostscript
     $ sudo apt-get install libnetcdf-dev
 
-    # 可选包(即便安装不成功也不影响 GMT 的使用)
     $ sudo apt-get install libgdal-dev python-gdal
     $ sudo apt-get install liblapack3
     $ sudo apt-get install libglib2.0-dev
@@ -59,12 +57,11 @@ netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
 对于CentOS/RHEL/Fedora::
 
     $ sudo yum install epel-release  # CentOS用户必须先安装epel-release
-    # 必须安装的包
+
     $ sudo yum install gcc gcc-c++ cmake make glibc
     $ sudo yum install ghostscript
     $ sudo yum install netcdf-devel
 
-    # 可选包
     $ sudo yum install gdal-devel gdal-python
     $ sudo yum install lapack64-devel lapack-devel
     $ sudo yum install glib2-devel
@@ -116,7 +113,6 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_USE_THREADS TRUE)
-
 
 其中，
 
