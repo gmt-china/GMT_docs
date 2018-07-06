@@ -110,6 +110,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.4.4")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
+    set (GMT_DATA_URL "http://mirrors.ustc.edu.cn/gmt/data/")
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_USE_THREADS TRUE)
@@ -122,6 +123,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
   权限的路径；
 - ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，
   也可设置为TRUE
+- ``GMT_DATA_URL`` 设置从中科大镜像下载GMT数据，以加快数据下载速度
 - ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
 - ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
 - ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能
