@@ -27,7 +27,10 @@ GMT维护者
    :width: 100%
    :align: center
 
-   GMT目前的5个维护者：Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe 和 Paul Wessel
+   GMT的5个主要维护者
+
+   从左至右依次为Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe
+   和 Paul Wessel。照片摄于2016年8月15日至19日在加州La Jolla举办的GMT开发者峰会。
 
 GMT的特点
 ---------
