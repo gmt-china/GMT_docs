@@ -36,6 +36,7 @@ GMT 参考手册
    options
    configurations
    proj
+   datasets
    style
    api
    appendix
