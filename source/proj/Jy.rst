@@ -34,12 +34,11 @@
    | Lambert           | 0º                  |
    +-------------------+---------------------+
 
-示例::
 
-    gmt pscoast -R-145/215/-90/90 -JY35/30/4.5i -B45g45 -Dc -A10000 -Sdodgerblue \
-                -Wthinnest -P > GMT_general_cyl.ps
+.. literalinclude:: /scripts/J_general_cyl.sh
+   :language: bash
 
-.. figure:: /images/GMT_general_cyl.*
+.. figure:: /images/J_general_cyl.*
    :width: 100%
    :align: center
 

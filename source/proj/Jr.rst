@@ -3,19 +3,21 @@
 
 维基链接：https://en.wikipedia.org/wiki/Winkel_tripel_projection
 
-1921年Oswald Winkel设计了该投影，以在三个元素（面积、角度、距离）之间折衷，是的在绘制全球地图时，这三个元素的畸变最小。此投影不是保角也不是等面积投影。中心经线和赤道是直线，其他经线和纬线是曲线。该投影取等距圆柱投影和Aitoff投影的坐标的平均值。极点处投影为0.4倍赤道长度的直线。
+1921年Oswald Winkel设计了该投影，以在三个元素（面积、角度、距离）之间折衷，
+使得在绘制全球地图时，这三个元素的畸变最小。此投影不是保角也不是等面积投影。
+中心经线和赤道是直线，其他经线和纬线是曲线。该投影取等距圆柱投影和Aitoff
+投影的坐标的平均值。极点处投影为0.4倍赤道长度的直线。
 
 该投影的参数为::
 
-    -JR[<lon>/]<width>       -Jr[<lon>/]<scale>
+    -JR[<lon>/]<width>
+    -Jr[<lon>/]<scale>
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-示例::
+.. literalinclude:: /scripts/J_winkel.sh
 
-    gmt pscoast -Rd -JR4.5i -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -P > GMT_winkel.ps
-
-.. figure:: /images/GMT_winkel.*
+.. figure:: /images/J_winkel.*
    :width: 100%
    :align: center
 

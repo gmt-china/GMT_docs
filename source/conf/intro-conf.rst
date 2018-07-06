@@ -87,11 +87,11 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 
 .. code-block:: bash
 
-   gmt psxy ...
-   gmt pscoast ..
+   gmt plot ...
+   gmt coast ..
    gmt gmtset ...
    gmt grdimage ...
-   gmt psxy ...
+   gmt plot ...
 
    rm gmt.conf gmt.history # 要养成删除临时文件的习惯
 
@@ -105,19 +105,19 @@ GMT配置示例
 
 下面列出部分会影响到绘图效果的GMT参数。
 
-.. figure:: /images/GMT_Defaults_1.*
+.. figure:: /images/defaults_1.*
    :width: 100%
    :align: center
 
    GMT配置参数示例1
 
-.. figure:: /images/GMT_Defaults_2.*
+.. figure:: /images/defaults_2.*
    :width: 100%
    :align: center
 
    GMT配置参数示例2
 
-.. figure:: /images/GMT_Defaults_3.*
+.. figure:: /images/defaults_3.*
    :width: 100%
    :align: center
 

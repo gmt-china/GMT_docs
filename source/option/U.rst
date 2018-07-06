@@ -20,11 +20,11 @@ GMT参数中有一些与LOGO相关的参数：
 
 执行如下命令::
 
-    gmt psbasemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -P -UBL/-1.5c/-1.5c/"This is a GMT logo" > GMT_-U.ps
+    gmt basemap -R0/8/0/3 -Jx1c -Bx1 -By1 -UBL/-1.5c/-1.5c/"This is a GMT logo" -pdf GMT_-U
 
 得到的图片效果如下：
 
-.. figure:: /images/GMT_-U.*
+.. figure:: /images/U.*
    :width: 100%
    :align: center
 

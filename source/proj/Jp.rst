@@ -1,17 +1,25 @@
 -Jp：极坐标线性投影
 ===================
 
-.. figure:: /images/GMT_polar.*
+.. figure:: /images/J_polar.*
    :width: 100%
    :align: center
 
    极坐标（ :math:`\theta, r`\ ）的线性投影
 
-该投影方式将极坐标（角度 :math:`\theta` 和半径 :math:`r` ）转换到纸张上的位置。此时投影函数为 :math:`x' = f(\theta,r)` 和 :math:`y' = g(\theta,r)` ，X和Y是相互耦合的，且具有360度的周期性，因而与地图投影类似。
+该投影方式将极坐标（角度 :math:`\theta` 和半径 :math:`r` ）转换到纸张上的位置。
+此时投影函数为 :math:`x' = f(\theta,r)` 和 :math:`y' = g(\theta,r)`\ ，
+X和Y是相互耦合的，且具有360度的周期性，因而与地图投影类似。
 
-#. 通常， :math:`\theta` 是相对于水平方向逆时针旋转的角度，但是也可以加一个 :math:`\theta_0` 作为所有角度的共同偏移量。即 :math:`x' = f(\theta, r) = a r \cos (\theta-\theta_0) + b` 和 :math:`y' = g(\theta, r) = ar \sin (\theta-\theta_0) + c` 。
+#. 通常， :math:`\theta` 是相对于水平方向逆时针旋转的角度，但是也可以加一个
+   :math:`\theta_0` 作为所有角度的共同偏移量。
+   即 :math:`x' = f(\theta, r) = a r \cos (\theta-\theta_0) + b`
+   和 :math:`y' = g(\theta, r) = ar \sin (\theta-\theta_0) + c`\ 。
 
-#. 或者， :math:`\theta` 也可以解释成相对于北方向顺时针旋转的角度，当然也可以为所有角度指定一个共同的偏移量 :math:`\theta_0` ，即 :math:`x' = f(\theta, r) = ar \cos (90 - (\theta-\theta_0)) + b` 和 :math:`y' = g(\theta, r) = ar \sin (90 - (\theta-\theta_0)) + c` 。
+#. 或者， :math:`\theta` 也可以解释成相对于北方向顺时针旋转的角度，
+   当然也可以为所有角度指定一个共同的偏移量 :math:`\theta_0` ，
+   即 :math:`x' = f(\theta, r) = ar \cos (90 - (\theta-\theta_0)) + b`
+   和 :math:`y' = g(\theta, r) = ar \sin (90 - (\theta-\theta_0)) + c` 。
 
 极坐标投影可以通过如下方式定义：
 
@@ -21,7 +29,7 @@
 - 在后面加上 ``r`` 可以反转径向的方向
 - 在后面加上 ``z`` to annotate depths rather than radius.
 
-下面的示例，用 ``grdmath`` 命令生成了 一个 :math:`z(\theta, r) = r^2 \cdot \cos{4\theta}` 的网格文件，并用 ``grdcontour`` 绘图::
+下面的示例，用 ``grdmath`` 命令生成了 一个 :math:`z(\theta, r) = r^2 \cdot \cos{4\theta}` 的
+网格文件，并用 ``grdcontour`` 绘图。
 
-    gmt grdmath -R0/360/2/4 -I6/0.1 X 4 MUL PI MUL 180 DIV COS Y 2 POW MUL = tt.nc
-    gmt grdcontour tt.nc -JP3i -B30 -BNs+ghoneydew -P -C2 -S4 --FORMAT_GEO_MAP=+ddd > GMT_polar.ps
+.. literalinclude:: /scripts/J_polar.sh

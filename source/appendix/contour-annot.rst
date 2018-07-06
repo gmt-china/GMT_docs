@@ -1,8 +1,8 @@
 等值线标注和“线条标注”
 =======================
 
-GMT 中可以使用采用 ``grdcontour`` 和 ``pscontour`` 模块来绘制等值线，
-每条等值线都可以附加一个标注。GMT 中 ``psxy`` 和 ``psxyz`` 模块也可以使用
+GMT 中可以使用采用 ``grdcontour`` 和 ``contour`` 模块来绘制等值线，
+每条等值线都可以附加一个标注。GMT 中 ``plot`` 和 ``plot3d`` 模块也可以使用
 ``-Sq`` 选项绘制带有标注的线段。
 
 在需要为等值线/线段附加标注的时候，如何优化标注的位置是一个很困难的主题。
@@ -12,8 +12,8 @@ GMT提供了不同的算法确定标注的位置，并且可以自由地指定�
 标注的位置
 ----------
 
-GMT 中提供了5种算法来自动确定标注的位置。对于 ``grdcontour`` 和 ``pscontour`` 模块，
-可以通过 ``-G`` 选项指定使用哪种标注定位算法，对于 ``psxy`` 和 ``psxyz`` 模块，
+GMT 中提供了5种算法来自动确定标注的位置。对于 ``grdcontour`` 和 ``contour`` 模块，
+可以通过 ``-G`` 选项指定使用哪种标注定位算法，对于 ``plot`` 和 ``plot3d`` 模块，
 则可以通过 ``-Sq`` 选项指定使用哪种标注定位算法。
 
 不管是 ``-G`` 还是 ``-Sq`` ，其所需要的信息是完全相同的，采用 ``<code><info>``
@@ -56,7 +56,7 @@ l:
     通过起点 ``<start>`` 和终点 ``<stop>`` 的坐标来定义每个直线段 ``<line>`` 。
     起点和终点的坐标可以是常规坐标，如斜杠分隔的经纬度，或与地图区域
     相关的2个字母组合成的子选项。
-    这些字母的取值与 ``pstext`` 中对齐方式的取值相同，即 ``[L|C|R][B|M|T]``
+    这些字母的取值与 ``text`` 中对齐方式的取值相同，即 ``[L|C|R][B|M|T]``
 
     第一个字母代表横坐标 ``<x>`` ，第二个字母代表纵坐标 ``<y>`` ，如 ``LB` 代表
     地图的左下角。
@@ -123,7 +123,7 @@ X:
     延迟模式, 延迟标注文字的绘制。
 
 +f:
-    指定标注文字的字体、大小和颜色等，可参考 ``pstext`` 。
+    指定标注文字的字体、大小和颜色等，可参考 ``text`` 。
     字体的默认值参见 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 。
 
 +g:
@@ -222,7 +222,7 @@ X:
 
 第1个实例使用标注位置算法的默认值，沿等值线每1.5英寸放置一个标注:
 
-.. literalinclude:: /scripts/GMT_contour-anno1.sh
+.. literalinclude:: /scripts/contour_annot1.sh
    :language: bash
    :lines: 3
 
@@ -230,7 +230,7 @@ X:
 
 .. _Contour_label_1:
 
-.. figure:: /images/GMT_contour-anno1.*
+.. figure:: /images/contour_annot1.*
    :width: 100%
    :align: center
 
@@ -242,7 +242,7 @@ X:
 
 现在指定每条等值线上标注的个数：
 
-.. literalinclude:: /scripts/GMT_contour-anno2.sh
+.. literalinclude:: /scripts/contour_annot2.sh
    :language: bash
    :lines: 3
 
@@ -251,7 +251,7 @@ X:
 
 .. _Contour_label_2:
 
-.. figure:: /images/GMT_contour-anno2.*
+.. figure:: /images/contour_annot2.*
    :width: 100%
    :align: center
 
@@ -265,7 +265,7 @@ X:
 给定标注所在位置的坐标，由于坐标不是严格位于等值线上，
 指定了非0距离值，即标注位置与等值线距离的上限。
 
-.. literalinclude:: /scripts/GMT_contour-anno3.sh
+.. literalinclude:: /scripts/contour_annot3.sh
    :language: bash
    :lines: 9
 
@@ -276,7 +276,7 @@ X:
 
 .. _Contour_label_3:
 
-.. figure:: /images/GMT_contour-anno3.*
+.. figure:: /images/contour_annot3.*
    :width: 100%
    :align: center
 
@@ -289,7 +289,7 @@ X:
 通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，
 将标注放置在直线段与等值线的交点。
 
-.. literalinclude:: /scripts/GMT_contour-anno4.sh
+.. literalinclude:: /scripts/contour_annot4.sh
    :language: bash
    :lines: 3
 
@@ -297,7 +297,7 @@ X:
 
 .. _Contour_label_4:
 
-.. figure:: /images/GMT_contour-anno4.*
+.. figure:: /images/contour_annot4.*
    :width: 100%
    :align: center
 
@@ -313,14 +313,14 @@ X:
 如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，
 可以使用广义的相交算法确定标注的位置：
 
-.. literalinclude:: /scripts/GMT_contour-anno5.sh
+.. literalinclude:: /scripts/contour_annot5.sh
    :language: bash
    :lines: 3
 
 
 .. _Contour_label_5:
 
-.. figure:: /images/GMT_contour-anno5.*
+.. figure:: /images/contour_annot5.*
    :width: 100%
    :align: center
 
@@ -335,7 +335,7 @@ X:
 ----------------------------
 
 本节通过实例说明标注属性的作用，
-采用 ``psxy`` 绘制了大地水准面极值点之间的大圆弧，
+采用 ``plot`` 绘制了大地水准面极值点之间的大圆弧，
 并且沿着该大圆弧从ETOPO5数据集中提取了高程数据。
 高程数据文件(transect.txt)中包括
 了 *经度、纬度、距离、大地水准面、高程* 数据。
@@ -348,14 +348,14 @@ X:
 沿大圆弧每1000km放置一个标注，使用距离值作为标注的内容。
 标注的方向与大圆弧垂直：
 
-.. literalinclude:: /scripts/GMT_contour-anno6.sh
+.. literalinclude:: /scripts/contour_annot6.sh
    :language: bash
    :lines: 4
 
 
 .. _Contour_label_6:
 
-.. figure:: /images/GMT_contour-anno6.*
+.. figure:: /images/contour_annot6.*
    :width: 100%
    :align: center
 
@@ -374,7 +374,7 @@ X:
 本实例中标注与大圆弧平行，以弧度指定标注位置，并添加弧度单位。
 文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。
 
-.. literalinclude:: /scripts/GMT_contour-anno7.sh
+.. literalinclude:: /scripts/contour_annot7.sh
    :language: bash
    :lines: 4
 
@@ -383,7 +383,7 @@ X:
 
 .. _Contour_label_7:
 
-.. figure:: /images/GMT_contour-anno7.*
+.. figure:: /images/contour_annot7.*
    :width: 100%
    :align: center
 
@@ -397,7 +397,7 @@ X:
 因此需要使用 **awk** 程序从 *transect.txt* 文件中抽取距离为1500km倍数的记录，
 并创建一个新文件，指定标注的位置和内容：
 
-.. literalinclude:: /scripts/GMT_contour-anno8.sh
+.. literalinclude:: /scripts/contour_annot8.sh
    :language: bash
    :lines: 5
 
@@ -406,7 +406,7 @@ X:
 
 .. _Contour_label_8:
 
-.. figure:: /images/GMT_contour-anno8.*
+.. figure:: /images/contour_annot8.*
    :width: 100%
    :align: center
 
@@ -423,7 +423,7 @@ X:
 对等值线和线条进行了标注。
 完整的脚本如下：
 
-.. literalinclude:: /scripts/GMT_contour-anno9.sh
+.. literalinclude:: /scripts/contour_annot9.sh
    :language: bash
    :lines: 24
 
@@ -431,7 +431,7 @@ X:
 
 .. _Contour_label_9:
 
-.. figure:: /images/GMT_contour-anno9.*
+.. figure:: /images/contour_annot9.*
    :width: 100%
    :align: center
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 gmt begin tutor2_5 pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc 
+gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 
 # 绘制大圆路径
 gmt plot -W1p,red << EOF

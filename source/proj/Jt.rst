@@ -3,7 +3,9 @@
 
 维基链接：https://en.wikipedia.org/wiki/Transverse_Mercator_projection
 
-此投影由Lambert于1772年提出。该投影中，圆柱与某条经线相切。在该经线处无畸变。离中心经线越远畸变越大，距离中心经线90度处的经线畸变达到无穷。中心经线和赤道都是直线，其余经线和纬线则是复杂曲线。
+此投影由Lambert于1772年提出。该投影中，圆柱与某条经线相切。在该经线处无畸变。
+离中心经线越远畸变越大，距离中心经线90度处的经线畸变达到无穷。
+中心经线和赤道都是直线，其余经线和纬线则是复杂曲线。
 
 该投影的参数::
 
@@ -14,23 +16,17 @@
 
 地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` 以实现自定义。
 
-示例::
+.. literalinclude:: /scripts/J_transverse_merc.sh
 
-    gmt pscoast -R20/30/50/45r -Jt35/0.18i -Bag -Dl -A250 -Glightbrown -Wthinnest \
-                -P -Sseashell > GMT_transverse_merc.ps
-
-.. figure:: /images/GMT_transverse_merc.*
+.. figure:: /images/J_transverse_merc.*
    :width: 100%
    :align: center
 
    矩形横向Mercator地图
 
-示例::
+.. literalinclude:: /scripts/J_TM.sh
 
-    gmt pscoast -R0/360/-80/80 -JT330/-45/3.5i -Ba30g -BWSne -Dc -A2000 \
-                -Slightblue -G0 -P > GMT_TM.ps
-
-.. figure:: /images/GMT_TM.*
+.. figure:: /images/J_TM.*
    :width: 100%
    :align: center
 

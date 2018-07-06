@@ -21,6 +21,11 @@ GMT的历史
   GMT 4.5.18，发布于2018年7月1日；
 - 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT |GMT5_latest_release|
   发布于 |GMT5_latest_release_date|\ ；
+- 2018年X月X日，GMT 6.x的第一个正式版本发布；目前最新版本为 GMT XXX。
+
+.. TODO::
+
+   修正GMT6的发布信息
 
 GMT维护者
 ---------

@@ -3,7 +3,7 @@
 
 矢量是一个有大小和方向的量。
 
-GMT 中能够绘制矢量的模块包括 ``psxy``\ 、 ``psxyz``\ 、 ``grdvector`` 和 ``psvelo`` 等。
+GMT 中能够绘制矢量的模块包括 ``plot``\ 、 ``plot3d``\ 、 ``grdvector`` 和 ``velo`` 等。
 除此之外，大多数简单的线段也可以加上矢量箭头。
 
 GMT 中绘制的矢量都可以分为两个独立的部分：
@@ -31,15 +31,15 @@ GMT 中的矢量可以分为三类：
    #. 给定起点坐标和终点坐标
    #. 给定起点坐标、方位角和长度（单位为km）
 
-以 ``psxy`` 模块为例，``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量， 
+以 ``plot`` 模块为例，``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量，
 ``-Sm`` 用于绘制弧形矢量， ``-S=`` 用于绘制地理矢量。
 
 下面的例子分别绘制了三种矢量箭头：
 
-.. literalinclude:: /scripts/GMT_arrows.sh
+.. literalinclude:: /scripts/arrows.sh
    :language: bash
 
-.. figure:: /images/GMT_arrows.*
+.. figure:: /images/arrows.*
    :width: 100%
    :align: center
 
@@ -83,6 +83,8 @@ GMT 中的矢量可以分为三类：
 下面的子选项可以进一步控制矢量头的外观：
 
 - ``+a<angle>`` 控制矢量箭头顶端的夹角，默认值为30度
+- ``+h<shape>`` 控制矢量头的形状，可以取-2到2之间的值，该选项的效果等效于修改参数
+  :ref:`MAP_VECTOR_SHAPE <MAP_VECTOR_SHAPE>` （默认值为0）
 - ``+l`` 表示只绘制左半个箭头
 - ``+r`` 表示只绘制右半个箭头
 - ``+g<fill>`` 设置箭头填充色， ``<fill>`` 为 ``-`` 表示不填充，默认使用 ``-G`` 指定的填充色
@@ -119,7 +121,7 @@ GMT 中的矢量可以分为三类：
 下图展示了部分 GMT 可以绘制的矢量，每个矢量右边给出了其对应的选项。
 需要注意的是，某些矢量设置了 ``MAP_VECTOR_SHAPE`` 的值为 0.5。
 
-.. figure:: /images/GMT_arrows_types.*
+.. figure:: /images/arrows_types.*
    :width: 100%
    :align: center
 

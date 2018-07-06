@@ -109,12 +109,12 @@ GMT中的画笔有三个属性：笔宽、颜色和线型，三者用逗号分�
 下图中展示了不同风格的画笔，读者可以将下面命令里 ``-W`` 选项中的 ``<pen>``
 修改成不同的值来理解这一节的内容::
 
-    gmt psxy -R0/10/0/5 -JX10c/5c -W<pen> > pens.ps << EOF
-    0 2
-    10 2
+    gmt plot -R0/10/0/5 -Jx1c -Baf -W1p -pdf pens << EOF
+    2 2
+    8 2
     EOF
 
-.. figure:: /images/GMT_pens.*
+.. figure:: /images/pens.*
    :width: 100%
    :align: center
 

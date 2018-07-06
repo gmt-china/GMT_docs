@@ -40,7 +40,7 @@
 
 在终端中键入如下命令::
 
-    $ gmt pscoast -JM10c -R70/140/2/60 -Bafg -Ggray -Wthin > map.ps
+    $ gmt coast -JM10c -R70/140/2/60 -Bafg -Ggray -Wthin -pdf map
 
 则会在当前目录（即家目录）下生成名为 ``map.pdf`` 的一张图，其中绘制了中国及其
 周边的海岸线。
@@ -51,9 +51,10 @@
 一张稍复杂的图通常都需要多个GMT命令来完成。你可以在终端键入如下几行命令来绘制
 海岸线并在某个点处加一个五角星::
 
-    gmt pscoast -JM10c -R70/140/2/60 -Bafg -W1/thin -Ggray -P -K > map.ps
-    echo 115 40 | gmt psxy -J -R -Sa0.5c -Gred -O >> map.ps
-    rm gmt.*
+    gmt begin map pdf
+    gmt coast -JM10c -R70/140/2/60 -Bafg -W1/thin -Ggray
+    echo 115 40 | gmt plot -Sa0.5c -Gred
+    gmt end
 
 直接在终端敲大一堆命令是不是很麻烦？一旦敲错了就得把光标移过去重新编辑，或者哪里
 不满意想修改，还得查找命令历史把命令找出来重新执行一遍，又或者一个不小心

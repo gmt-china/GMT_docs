@@ -52,11 +52,10 @@ GMT 的中文支持
     STHeiti-Regular--GB-EUC-H   0.700   1
     STKaiti-Regular--GB-EUC-H   0.700   1
 
-用 ``gmt pstext -L`` 查看 GMT 字体，可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
 其中 ``STSong-Light--GB-EUC-H`` 即为宋体，\ ``GB-EUC`` 是文字编码方式，
 ``H`` 表示文字水平排列。
 
-强烈建议在执行测试脚本前确认自己的中文字体编号。
+用 ``gmt text -L -pdf map`` 查看 GMT 字体，可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
 
 测试脚本
 --------
@@ -67,6 +66,8 @@ GMT 的中文支持
 
 .. code-block:: batch
 
+   gmt begin
+   gmt figure GMT_Chinese pdf C-sFONTPATH=C:\windows\fonts
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black
 
@@ -75,9 +76,9 @@ GMT 的中文支持
    echo 7 2.5 35p,41,yellow GMT黑体 >> tmp
    echo 7 1.0 35p,42,green GMT楷体 >> tmp
 
-   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f > GMT_chinese.ps
-   gmt psconvert GMT_chinese.ps -C-sFONTPATH=C:\windows\fonts -Tg -A -P -E300
-   del gmt.* tmp
+   gmt text tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f
+   del tmp
+   gmt end
 
 成图效果如下：
 

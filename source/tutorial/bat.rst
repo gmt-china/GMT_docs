@@ -41,7 +41,9 @@ echo常见的用法是在屏幕上显示信息，例如 ``echo hello world`` 命
 
 管道符号 ``|`` 会将其左侧命令的输出结果作为输入传递给其右侧语句::
 
-   echo 5 5 | gmt psxy -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred > map.ps
+   gmt begin map pdf
+   echo 5 5 | gmt plot -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred
+   gmt end
 
 定义变量
 ~~~~~~~~
@@ -61,7 +63,12 @@ echo常见的用法是在屏幕上显示信息，例如 ``echo hello world`` 命
 pause 用来暂停命令的执行，以便查看终端输出的过程。
 
 一般情况下双击执行bat脚本cmd窗口会一闪而过，为了查看中间是否出错，在bat文件
-最后一行（或需要暂停的地方）写一个pause。
+最后一行（或需要暂停的地方）写一个pause::
+
+    gmt begin map pdf
+    gmt coast -Rd -JH10c -B30 -A10000 -Sblue
+    pause
+    gmt end
 
 删除文件
 ~~~~~~~~
@@ -69,21 +76,28 @@ pause 用来暂停命令的执行，以便查看终端输出的过程。
 del命令用来删除文件。使用GMT命令绘图后通常会在文件夹下产生一些临时文件，这时
 可以使用del命令进行删除::
 
+   gmt begin map pdf
    echo 1 2 > tmp1.txt
    echo 3 4 >> tmp1.txt
    echo 5 6 > tmp2.txt
-   gmt psxy tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred -K > map.ps
-   gmt psxy tmp2.txt -R -J -Sc0.5c -Gyellow -O >> map.ps
-   del tmp* gmt.*
+   gmt plot tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred
+   gmt plot tmp2.txt -Sc0.5c -Gyellow
+   gmt end
+   del tmp*
 
 注释语句
 ~~~~~~~~
 
 rem命令用来添加注释::
 
-   rem 绘制地图
+   rem GMT5语法
    echo 2 2 | gmt psxy -R0/5/0/5 -JX5c -B1 -Sc0.5c -Gblack -K > map.ps
    echo 3 3 | gmt psxy -R -J -Sc0.5c -Gred -O >> map.ps
+   rem GMT6语法
+   gmt begin fig pdf
+   echo 2 2 | gmt plot -R0/5/0/5 -JX5c -B1 -Sc0.5c -Gblack
+   echo 3 3 | gmt plot -Sc0.5c -Gred
+   gmt end
 
 循环语句
 ~~~~~~~~
@@ -101,9 +115,10 @@ bat文件中for命令用法较为复杂，这里只介绍如何利用for命令�
    set file=%%i
    rem 去除文件后缀名，即去除文件最后4个字符
    set file=!file:~0,-4!
+   gmt begin !file! pdf
    gmt surface %%i -R73/135/17/54 -I5m -Gtmp.grd
-   gmt grdimage tmp.grd -R73/135/17/54 -JM12c -Cmycpt.cpt -Ba !file!.pdf
-   del gmt.*
+   gmt grdimage tmp.grd -R73/135/17/54 -JM12c -Cmycpt.cpt -Ba
+   gmt end
 	)
 
 上段表示将当前目录下所有DAT文件都进行插值并绘图，生成不同的pdf文件。

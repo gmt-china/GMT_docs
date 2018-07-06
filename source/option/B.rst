@@ -44,8 +44,9 @@
 下面的命令分别使用了不同的 ``-B`` 选项，可以自己执行，查看绘图效果并试着
 理解 ``<axes>`` 的用法::
 
-    gmt psbasemap -R0/10/0/10 -JX5c -B2 -BWSEN > test1.ps
-    gmt psbasemap -R0/10/0/10 -JX5c -B2 -BWSn > test2.ps
+    gmt basemap -R0/10/0/10 -JX5c -B2 -BWSEN -pdf test1
+    gmt basemap -R0/10/0/10 -JX5c -B2 -BWSn -pdf test2
+    gmt basemap -R0/10/0/10 -JX5c -B2 -BWSrt -pdf test3
 
 对于3D绘图来说，``<axes>`` 还可以加上一个 ``Z`` 用于控制Z轴。同理，大写的 ``Z``
 表示有刻度和标注，小写的 ``z`` 表示有刻度无标注， ``u`` 表示无刻度无标注。
@@ -58,20 +59,20 @@
 效果理解 ``-B`` 选项中各字母的含义。命令中的某些选项还没有介绍过，暂时可以不必
 理会其含义::
 
-    gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ -p45/45 > test1.ps
-    gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ1234 -p45/45 > test2.ps
-    gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSEN+b -p45/45 > test3.ps
-    gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -B+b -p45/45 > test4.ps
-    gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWESNZ+b -p45/45 > test5.ps
-    gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -B2 -Bz2 -BwSEnZ+b -p45/45 > test6.ps
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ -p45/45 -pdf test1
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ1234 -p45/45 -pdf test2
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSEN+b -p45/45 -pdf test3
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -B+b -p45/45 -pdf test4
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWESNZ+b -p45/45 -pdf test5
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -B2 -Bz2 -BwSEnZ+b -p45/45 -pdf test6
 
 示例
 ~~~~
 
 ::
 
-    gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWSen+glightblue+ttitle > test.ps
-    gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t"This is title" > test2.ps
+    gmt basemap -R0/10/0/10 -JX5c -Ba2g2 -BWSen+glightblue+ttitle -pdf test1
+    gmt basemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t"This is title" -pdf test2
 
 轴设置
 ------
@@ -79,12 +80,12 @@
 X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格线间隔、轴标签以及标注的
 间隔、前缀和单位。轴属性可以用如下语法控制::
 
-    -B[p|s][x|y|z]<intervals>[+l|L<label>][+p<prefix>][+u<unit>]
+    -B[p|s][x|y|z]<intervals>[+l|L<label>][+s|S<label2>][+p<prefix>][+u<unit>]
 
 为了更加清晰，以上的语法也可以被分为两部分::
 
     -B[p|s][x|y|z]<intervals>
-    -B[p|s][x|y|z][+l|L<label>][+p<prefix>][+u<unit>]
+    -B[p|s][x|y|z][+l|L<label>][+s|S<label2>][+p<prefix>][+u<unit>]
 
 其中，
 
@@ -94,9 +95,14 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 - ``+l<label>`` 用于给指定的轴加标签。默认情况下，X轴标签文字方向平行于X轴，
   Y轴标签文字方向平行于Y轴。若Y轴标签文字很短，则Y轴可以使用 ``+L<label>``
   选项，使得Y轴标签文字方向平行于X轴
+- 对于笛卡尔坐标系，还可以 ``+s<label2>`` 为右轴或上轴单独指定不同的标签
 - ``+p<prefix>`` 选中的轴的标注加前缀
 - ``+u<unit>`` 给选中的轴的标注加单位。对于地图而言，标注的单位为度，该符号是
   自动添加的，由 :ref:`FORMAT_GEO_MAP <FORMAT_GEO_MAP>` 控制
+
+示例::
+
+    gmt basemap -R0/50/0/7 -JX6i/8i -Xc -P -Bxaf+l"Bottom label"+s"Top label" -Byaf+l"Left label"+s"Right label" -pdf dual_labels
 
 ``p|s``
 ~~~~~~~
@@ -121,7 +127,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 每个轴都有三个属性，分别是标注（annotation）、刻度（frame）和网格线（grid）。
 下图展示了这三个名词在绘图时的具体含义。
 
-.. figure:: /images/GMT_-B_afg.*
+.. figure:: /images/B_afg.*
    :width: 100%
    :align: center
 
@@ -140,7 +146,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 读者可以将命令::
 
-    gmt psbasemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 > test.ps
+    gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf test
 
 中的 ``-B`` 选项替换成如下不同的值并查看绘图效果以理解各个参数的含义：
 
@@ -155,7 +161,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 地理底图与一般的坐标轴不同，其底图类型 :ref:`MAP_FRAME_TYPE <MAP_FRAME_TYPE>`
 使用 ``fancy`` 形式。
 
-.. figure:: /images/GMT_-B_geo_1.*
+.. figure:: /images/B_geo_1.*
    :width: 100%
    :align: center
 
@@ -166,7 +172,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 下图同时使用了 ``p`` 和 ``s`` 两级属性。这里 ``p`` 属性用于显示弧度， ``s``
 属性用于显示弧分。
 
-.. figure:: /images/GMT_-B_geo_2.*
+.. figure:: /images/B_geo_2.*
    :width: 100%
    :align: center
 
@@ -182,7 +188,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 数目会根据 ``<stride>`` 自动决定。若设置 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>`
 为其他值，则会严格使用其定义的格式，比如 ``%.2f`` 表示显示两位小数。
 
-.. figure:: /images/GMT_-B_linear.*
+.. figure:: /images/B_linear.*
    :width: 100%
    :align: center
 
@@ -206,7 +212,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 - 在 ``<stride>`` 后加 ``l`` ，则标注会以log\ :sub:`10`\ 的值显示，比如100会显示成2
 - 在 ``<stride>`` 后加 ``p`` ，则标注会以10的n次方的形式显示，比如10\ :sup:`-5`
 
-.. figure:: /images/GMT_-B_log.*
+.. figure:: /images/B_log.*
    :width: 100%
    :align: center
 
@@ -224,7 +230,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 加 ``p`` ，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。
 比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。
 
-.. figure:: /images/GMT_-B_pow.*
+.. figure:: /images/B_pow.*
    :width: 100%
    :align: center
 
@@ -284,10 +290,10 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
    | ``s``      | seconds          | Plot as 2-digit integer (0--60)                                          |
    +------------+------------------+--------------------------------------------------------------------------+
 
-第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来::
+第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来:
 
-     gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
-     gmt psbasemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -P > GMT_-B_time1.ps
+.. literalinclude:: /scripts/B_time1.sh
+   :language: bash
 
 需要注意， ``-Bsa1O`` 指定了次级标注的间隔为一个月，由于此处使用的是大写的 ``O`` ，
 因而具体的显式方式由 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 决定。
@@ -296,86 +302,94 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 绘图效果如下图所示。
 
-.. figure:: /images/GMT_-B_time1.*
+.. figure:: /images/B_time1.*
    :width: 100%
    :align: center
 
    时间轴示例1
 
-下面的例子用两种不同的方式标注了1969年的两天::
+下面的例子用两种不同的方式标注了1969年的两天:
 
-     gmt set FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
-     gmt psbasemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS -P -K > GMT_-B_time2.ps
-     gmt psbasemap -R -J -Bpa6Hf1h -Bsa1D -BS -O -Y0.65i >> GMT_-B_time2.ps
+.. literalinclude:: /scripts/B_time2.sh
+   :language: bash
 
 绘图效果如下图所示。图中下面的例子使用周来标注，上面的例子使用日期来标注。
 
-.. figure:: /images/GMT_-B_time2.*
+.. figure:: /images/B_time2.*
    :width: 100%
    :align: center
 
    时间轴示例2
 
-第三个例子展示了两年的时间，并标注了每年以及每三个月::
+第三个例子展示了两年的时间，并标注了每年以及每三个月:
 
-     gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-     gmt psbasemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS -P > GMT_-B_time3.ps
+.. literalinclude:: /scripts/B_time3.sh
+   :language: bash
 
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
 
-.. figure:: /images/GMT_-B_time3.*
+.. figure:: /images/B_time3.*
    :width: 100%
    :align: center
 
    时间示例3
 
 第四个例子展示了一天中的几个小时，通过在R选项中指定 ``t`` 来使用相对时间坐标。
-这里使用了 ``p`` 属性和 ``s`` 属性，12小时制，时间从右向左增加::
+这里使用了 ``p`` 属性和 ``s`` 属性，12小时制，时间从右向左增加:
 
-     gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-     gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P > GMT_-B_time4.ps
+.. literalinclude:: /scripts/B_time4.sh
+   :language: bash
 
-.. figure:: /images/GMT_-B_time4.*
+.. figure:: /images/B_time4.*
    :width: 100%
    :align: center
 
    时间轴示例4
 
-第五个例子用两种方式展示了几周的时间::
+第五个例子用两种方式展示了几周的时间:
 
-    gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character \
-           FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
-    gmt psbasemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS -P -K > GMT_-B_time5.ps
-    gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
-    gmt psbasemap -R -J -Bpa3Kf1k -Bsa1r -BS -O -Y0.65i >> GMT_-B_time5.ps
+.. literalinclude:: /scripts/B_time5.sh
+   :language: bash
 
-.. figure:: /images/GMT_-B_time5.*
+.. figure:: /images/B_time5.*
    :width: 100%
    :align: center
 
    时间轴示例5
 
-第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注::
+第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注:
 
-    gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
-    gmt psbasemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -P > GMT_-B_time6.ps
+.. literalinclude:: /scripts/B_time6.sh
+   :language: bash
 
-.. figure:: /images/GMT_-B_time6.*
+.. figure:: /images/B_time6.*
    :width: 100%
    :align: center
 
    时间轴示例6
 
-第七个例子::
+第七个例子:
 
-    gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
-    gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P > GMT_-B_time7.ps
+.. literalinclude:: /scripts/B_time7.sh
+   :language: bash
 
-.. figure:: /images/GMT_-B_time7.*
+.. figure:: /images/B_time7.*
    :width: 100%
    :align: center
 
    时间轴示例7
+
+弧度轴 :math:`\pi` 的标注
+-------------------------
+
+如果坐标轴以弧度为单位，用户可以直接指定 :math:`\pi` 的整数倍或分数倍作为标注
+间隔，其格式为 ``[+|-][s]pi[f]`` ，其中 s 表示标注间隔是 :math:`\pi` 的 s 倍，
+而 f 表示标注间隔为 :math:`\pi` 的 f 分之一。
+
+示例::
+
+    gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -pdf test1
+    gmt basemap -JX10c/5c -R-pi/pi/-1/1 -Bxapi4 -pdf test2
 
 自定义轴
 --------
@@ -399,33 +413,12 @@ GMT允许用户定义标注来实现不规则间隔的标注，用法是 ``-Bc``
 需要注意， ``coord`` 必须按递增顺序排列。
 
 下面的例子展示中展示了自定义标注的用法， ``xannots.txt`` 和 ``yannots.txt``
-分别是X轴和Y轴的标注文件::
+分别是X轴和Y轴的标注文件:
 
-    cat << EOF > xannots.txt
-    416.0 ig Devonian
-    443.7 ig Silurian
-    488.3 ig Ordovician
-    542 ig Cambrian
-    EOF
-    cat << EOF > yannots.txt
-    0 a
-    1 a
-    2 f
-    2.71828 ag e
-    3 f
-    3.1415926 ag @~p@~
-    4 f
-    5 f
-    6 f
-    6.2831852 ag 2@~p@~
-    EOF
-    gmt psbasemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u" Ma" -Bpycyannots.txt \
-                  -BWS+glightblue -P -K > GMT_-B_custom.ps
-    gmt psbasemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -BWS -O \
-                  --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p >> GMT_-B_custom.ps
-    rm -f [xy]annots.txt
+.. literalinclude:: /scripts/B_custom.sh
+   :language: bash
 
-.. figure:: /images/GMT_-B_custom.*
+.. figure:: /images/B_custom.*
    :width: 100%
    :align: center
 

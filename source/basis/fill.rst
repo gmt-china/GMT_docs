@@ -43,7 +43,7 @@
 都是使用默认的黑白色在 ``<dpi>`` 取300的环境下生成的。每张小图中左半部分使用
 ``-Gp`` 绘制，右半部分使用 ``-GP`` 绘制。
 
-.. figure:: /images/GMT_patterns.png
+.. figure:: /images/patterns.png
    :width: 100%
    :align: center
 
@@ -71,7 +71,7 @@ GMT中通常使用 ``-G`` 选项填充多边形或符号。有两种填充方式
 
 读者可以将下面命令中的 ``<fill>`` 修改为不同的值并查看效果以理解这一节的内容::
 
-    echo 5 5 | gmt psxy -JX10c/10c -R0/10/0/10 -Baf -Sc2c -G<fill> > test.ps
+    echo 5 5 | gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc2c -G<fill> -pdf test
 
 .. note::
    #. 由于PostScript实现的限制， ``-G`` 选项里使用的光栅图片必须小于146x146像素；

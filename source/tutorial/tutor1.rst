@@ -1,20 +1,20 @@
 入门示例1
 =========
 
-这一节将使用GMT的 ``psbasemap`` 和 ``pscoast`` 模块绘制简单的坐标轴以及世界地图。
+这一节将使用GMT的 ``basemap`` 和 ``coast`` 模块绘制简单的坐标轴以及世界地图。
+真实世界是三维空间，而地图是二维面。三维世界如何画到二维面上，这就是投影问题。
 
 线性投影
 ---------
 
 GMT可以绘制最简单的线性X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_1.sh
+.. literalinclude:: /scripts/tutor1_1.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_1.*
+.. figure:: /images/tutor1_1.*
    :width: 100%
    :align: center
 
@@ -22,11 +22,12 @@ GMT可以绘制最简单的线性X-Y图。
 
 在这个示例中：
 
+- GMT的绘图命令从 ``gmt begin`` 开始，``gmt end`` 结束
+- ``GMT_tutor1_1 pdf,png`` 的含义是文件名为 ``GMT_tutor1_1``\ ，输出为pdf和png两种格式的文件
 - ``-R10/70/-3/8`` 设置了X轴范围是10到70，Y轴范围为-3到8
 - ``-JX8c/5c`` 指定了整张图为线性投影，图的宽度（X轴长度）为8厘米，图的高度（Y轴长度）为5厘米
 - ``-Bx10 -By3`` 分别设置了X、Y轴标注以及刻度的间隔为10和3
 - ``-B+t"Linear X-Y Plot"`` 为整张图添加了标题
-- ``> GMT_tutor1_1.ps`` GMT绘图模块的输出是PS代码，因而需要使用重定向符号 ``>`` 将PS代码输出到PS文件中
 
 你可以尝试如下操作以增进对各个选项的理解：
 
@@ -40,13 +41,12 @@ GMT可以绘制最简单的线性X-Y图。
 
 下面展示如何用GMT绘制对数X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_2.sh
+.. literalinclude:: /scripts/tutor1_2.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_2.*
+.. figure:: /images/tutor1_2.*
    :width: 100%
    :align: center
 
@@ -67,28 +67,27 @@ GMT可以绘制最简单的线性X-Y图。
 区域地图
 ---------
 
-GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
+GMT自带了海岸线数据，通过 ``coast`` 模块可以直接调用。
 
-.. literalinclude:: /scripts/GMT_tutor1_3.sh
+.. literalinclude:: /scripts/tutor1_3.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_3.*
+.. figure:: /images/tutor1_3.*
    :width: 100%
    :align: center
 
    区域地图
 
-此示例中使用 ``pscoast`` 绘制了拉丁美洲区域的海岸线。
+此示例中使用 ``coast`` 绘制了拉丁美洲区域的海岸线。
 
 - ``-R-90/-70/0/20`` 指定了地理区域的范围
 - ``-JM6i`` 表示使用墨卡托投影，地图的宽度为6英寸，高度由投影自动决定
 - ``-Ba`` 会根据地理范围以及图片大小自动计算出适合的标注和刻度间隔
 - ``-Gchocolate`` 将陆地区域填充颜色chocolate
 
-``pscoast`` 还有很多常用的选项：
+``coast`` 还有很多常用的选项：
 
 #. ``-D`` 选项海岸线数据的精度
 #. ``-G`` 设置陆地区域的填充色
@@ -108,13 +107,12 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 全球地图
 ---------
 
-.. literalinclude:: /scripts/GMT_tutor1_4.sh
+.. literalinclude:: /scripts/tutor1_4.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_4.*
+.. figure:: /images/tutor1_4.*
    :width: 100%
    :align: center
 

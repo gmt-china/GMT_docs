@@ -23,21 +23,18 @@
 
 在三种定义中， 大写的 ``A|B|C`` 表示允许投影极点位于南半球。
 
-示例::
+.. literalinclude:: /scripts/J_obl_merc.sh
 
-    gmt pscoast -R270/20/305/25r -JOc280/25.5/22/69/4.8i -Bag -Di -A250 -Gburlywood \
-                -Wthinnest -P -TdjTR+w0.4i+f2+l+o0.15i -Sazure --FONT_TITLE=8p \
-                --MAP_TITLE_OFFSET=0.05i > GMT_obl_merc.ps
-
-.. figure:: /images/GMT_obl_merc.*
+.. figure:: /images/J_obl_merc.*
    :width: 100%
    :align: center
 
    使用 ``-Joc`` 倾斜Mercator投影
 
-在使用倾斜头时，直接指定整个区域相对地图中心的相对投影坐标更为方便，下面的示例中使用了 ``-Rk-1000/1000/-500/500`` 来指定相对投影坐标。
+在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便。
+下面的示例中使用了 ``-Rk-1000/1000/-500/500`` 来指定相对投影坐标。
 
-.. figure:: /images/GMT_obl_nz.*
+.. figure:: /images/J_obl_nz.*
    :width: 100%
    :align: center
 

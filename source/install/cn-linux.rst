@@ -112,9 +112,9 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 查看 GMT 当前支持的字体
 +++++++++++++++++++++++
 
-用 ``gmt pstext -L`` 命令查看 GMT 当前的字体配置::
+用如下命令查看 GMT 当前的字体配置::
 
-    $ gmt pstext -L
+    $ gmt text -L -pdf map
     Font #  Font Name
     ------------------------------------
     0   Helvetica
@@ -136,18 +136,17 @@ GMT 中文测试
 .. code-block:: bash
 
    #!/bin/bash
+   gmt begin CN pdf
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black
 
-   gmt pstext -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" \
-            -BWSen+t"中文标题" -F+f -P > cn.ps << EOF
+   gmt text -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f << EOF
    3 2.5 35p,39,black GMT宋体
    3 1.0 35p,40,blue GMT仿宋
    7 2.5 35p,41,yellow GMT黑体
    7 1.0 35p,42,green GMT楷体
    EOF
-
-   rm gmt.history gmt.conf
+   gmt end
 
 成图效果如下：
 

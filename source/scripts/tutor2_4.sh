@@ -1,6 +1,6 @@
 #!/bin/bash
 gmt begin tutor2_4 pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc 
+gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 
 # 绘制震中位置
 gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow  << EOF
