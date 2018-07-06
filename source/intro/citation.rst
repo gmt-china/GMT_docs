@@ -1,7 +1,8 @@
 引用
 ====
 
-若你发表的文章中使用了GMT做的图或数据处理的结果，可以考虑引用GMT的如下系列文章：
+若你发表的文章中包含了利用GMT制作的图件或利用GMT数据处理功能得到的结果，
+可以考虑引用GMT的如下文章来回报GMT开发者：
 
 GMT5用户：
     Wessel, P., W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe,
@@ -27,40 +28,40 @@ GMT2用户：
     *EOS Trans. AGU*, 72(41), 445-446, 1991.
     `doi:10.1029/90EO00319 <http://dx.doi.org/10.1029/90EO00319>`_.
 
-GMT/MATLAB Toolbox用户：
+GMT/MATLAB工具箱用户：
     Wessel, P., and J. F. Luis
     The GMT/MATLAB Toolbox,
     *Geochem. Geophys. Geosyst.*, 18, 811-823, 2017.
     `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_.
 
-GMT的某些模块基于GMT团队发展并发表的算法。算法相关文章包括：
+GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关文章包括：
 
-**dimfilter**
+**dimfilter模块**
     Kim, S.-S., and P. Wessel,
     Directional median filtering for regional-residual separation of bathymetry,
     *Geochem. Geophys. Geosyst.*, 9, Q03005, 2008.
     `doi:10.1029/2007GC001850 <http://dx.doi.org/10.1029/2007GC001850>`_.
 
-**grdredpol**
+**grdredpol模块**
     Luis, J. F. and J. M. Miranda,
     Reevaluation of magnetic chrons in the North Atlantic between 35ºN and 47ºN:
     Implications for the formation of the  Azores Triple Junction and associated plateau,
     *J. Geophys. Res.*, 113, B10105, 2008.
     `doi:10.1029/2007JB005573 <http://dx.doi.org/10.1029/2007JB005573>`_.
 
-**surface**
+**surface模块**
     Smith, W. H. F., and P. Wessel,
     Gridding with continuous curvature splines in tension,
     *Geophysics*, 55(3), 293--305, 1990.
     `doi:10.1190/1.1442837 <http://dx.doi.org/10.1190/1.1442837>`_.
 
-**x2sys**
+**x2sys相关模块**
     Wessel, P.,
     Tools for analyzing intersecting tracks: The x2sys package,
     *Computers & Geosciences*, 36, 348--354, 2010.
     `doi:10.1016/j.cageo.2009.05.009 <http://dx.doi.org/10.1016/j.cageo.2009.05.009>`_.
 
-**greenspline**
+**greenspline模块**
     Wessel, P.,
     A General-purpose Green's function-based interpolator,
     *Computers & Geosciences*, 35, 1247--1254, 2009.
