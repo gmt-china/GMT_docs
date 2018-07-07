@@ -31,6 +31,7 @@ GMT 参考手册
    intro
    install
    tutorial
+   modern
    basics
    io
    options
