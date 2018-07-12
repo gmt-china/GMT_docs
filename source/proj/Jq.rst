@@ -3,7 +3,8 @@
 
 维基链接：https://en.wikipedia.org/wiki/Equirectangular_projection
 
-这个简单的圆柱投影是一个经度和纬度的线性缩放。最常用的形式是Plate Carrée投影，其中对经线和纬线的缩放比例是相同的。所有的经纬线都是直线。
+这个简单的圆柱投影是一个经度和纬度的线性缩放。最常用的形式是Plate Carrée投影，
+其中对经线和纬线的缩放比例是相同的。所有的经纬线都是直线。
 
 该投影的参数为::
 
@@ -13,9 +14,7 @@
 - ``<lon>`` 是中心经线，默认为地图区域的中心
 - ``<lat>`` 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
 
-示例::
-
-    gmt pscoast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -P > GMT_equi_cyl.ps
+.. literalinclude:: /scripts/GMT_equi_cyl.sh
 
 .. figure:: /images/GMT_equi_cyl.*
    :width: 100%

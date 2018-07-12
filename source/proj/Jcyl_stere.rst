@@ -3,7 +3,10 @@
 
 维基链接：https://en.wikipedia.org/wiki/Gall_stereographic_projection
 
-圆柱立体投影不像其他的圆柱投影那样显著，但由于其相对简单且能够克服其他圆柱投影的缺点（比如高纬度的畸变），故而仍然被使用。立体投影是透视投影，将整个球沿着赤道上的对跖点投影到一个圆柱上。该圆柱于两条距赤道等间距的标准纬线处穿过球体。
+圆柱立体投影不像其他的圆柱投影那样显著，但由于其相对简单且能够克服其他
+圆柱投影的缺点（比如高纬度的畸变），故而仍然被使用。立体投影是透视投影，
+将整个球沿着赤道上的对跖点投影到一个圆柱上。该圆柱于两条距赤道等间距的
+标准纬线处穿过球体。
 
 该投影的参数为::
 
@@ -28,11 +31,7 @@
 | Braun's cylindrical                                     | 0º          |
 +---------------------------------------------------------+-------------+
 
-示例::
-
-    gmt set FORMAT_GEO_MAP dddA
-    gmt pscoast -R-180/180/-60/80 -JCyl_stere/0/45/4.5i -Bxa60f30g30 -Bya30g30 -Dc -A5000 \
-                -Wblack -Gseashell4 -Santiquewhite1 -P > GMT_gall_stereo.ps
+.. literalinclude:: /scripts/GMT_gall_stereo.sh
 
 .. figure:: /images/GMT_gall_stereo.*
    :width: 100%
