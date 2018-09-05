@@ -25,6 +25,11 @@ FONT参数
 **FONT_ANNOT_SECONDARY**
     二级（Secondary）标注所使用的字体 [``14p,Helvetica,black``]
 
+.. _FONT_HEADING:
+
+**FONT_HEADING**
+    多子图的总标题的字体 [``32p,Helvetica,black``]
+
 .. _FONT_LABEL:
 
 **FONT_LABEL**
@@ -41,3 +46,8 @@ FONT参数
     GMT时间戳中字符串所使用的字体 [``8p,Helvetica,black``]
 
     该参数中仅字体ID有效，字号及颜色均无效。
+
+.. _FONT_TAG:
+
+**FONT_TAG**
+    子图中每个面板的标签（如 ``a)`` 、 ``ii)`` 等）的字体 [``20p,Helvetica,black``]

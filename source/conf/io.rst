@@ -15,6 +15,7 @@ IO参数
 
     见 :doc:`/option/h` 和 :doc:`/io/table-data` 。
 
+
 .. _IO_LONLAT_TOGGLE:
 
 **IO_LONLAT_TOGGLE**
@@ -49,7 +50,9 @@ IO参数
 **IO_SEGMENT_MARKER**
     多段数据中每段数据开始的标识符 [ ``>`` ]
 
-    见 :doc:`/io/table-data` 中的相关介绍。若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和输出数据的段标识符，比如 ``>,:`` 。
+    见 :doc:`/io/table-data` 中的相关介绍。
+    若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和
+    输出数据的段标识符，比如 ``>,:`` 。
 
     有两个特殊的标识符：
 
@@ -57,6 +60,13 @@ IO参数
     #. ``N`` 表示将一个NaN记录作为数据段开始的标识符
 
     To use B or N as regular segment markers you must escape them with a leading backslash.
+
+.. _IO_FIRST_HEADER:
+
+**IO_FIRST_HEADER**
+    若整个数据中只有一个数据段时，是否要写这个数据段的文件头记录。
+    默认情况下，只有当这个单独段的头段记录中有额外的内容时才会写该头记录。
+    可选的值包括 ``always`` 、 ``never`` 和 ``maybe`` 。
 
 .. _IO_NC4_CHUNK_SIZE:
 
@@ -70,21 +80,25 @@ IO参数
 **IO_NC4_DEFLATION_LEVEL**
     输出netCDF4格式的数据时所使用的压缩等级 [3]
 
-    可以取0到9的整数，0表示不压缩，9表示最大压缩。低压缩率可以提高性能并减少文件尺寸，而高压缩率虽然可以进一步减小文件尺寸，但却需要更多的处理时间。
+    可以取0到9的整数，0表示不压缩，9表示最大压缩。低压缩率可以提高性能并减少文件尺寸，
+    而高压缩率虽然可以进一步减小文件尺寸，但却需要更多的处理时间。
 
 .. _IO_SEGMENT_BINARY:
 
 **IO_SEGMENT_BINARY**
     二进制数据中，某个记录的所有值都是NaN时该如何解释 [2]
 
-    默认情况下，当二进制数据中某个记录的值为NaN的列数超过了 ``IO_SEGMENT_BINARY`` 的值时，则将该记录解释为二进制数据中的数据段头记录。将该参数赋值为0或off可以关闭这一特性。
+    默认情况下，当二进制数据中某个记录的值为NaN的列数超过了 ``IO_SEGMENT_BINARY`` 
+    的值时，则将该记录解释为二进制数据中的数据段头记录。将该参数赋值为0或off可以
+    关闭这一特性。
 
 .. _IO_GRIDFILE_SHORTHAND:
 
 **IO_GRIDFILE_SHORTHAND**
     是否支持自动识别网格文件后缀的功能 [false]
 
-    见 :doc:`/io/grid-suffix` 一节。若设置为 ``true`` ，则会检测每个网格文件的后缀是否在用户自定义文件后缀中；若为 ``false`` ，则不检测用户自定义文件后缀。
+    见 :doc:`/io/grid-suffix` 一节。若设置为 ``true`` ，则会检测每个网格文件的
+    后缀是否在用户自定义文件后缀中；若为 ``false`` ，则不检测用户自定义文件后缀。
 
 .. _IO_GRIDFILE_FORMAT:
 
