@@ -31,12 +31,12 @@ GMT 参考手册
    intro
    install
    tutorial
-   basics
+   basis
    io
-   options
-   configurations
+   option
+   conf
    proj
-   datasets
+   dataset
    style
    api
    appendix

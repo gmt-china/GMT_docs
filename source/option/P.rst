@@ -3,7 +3,7 @@
 
 ``-P`` 选项用于设置纸张方向为 Portrait 模式。
 
-由于历史原因，GMT 默认使用 Landscape 模式，详情见 :doc:`/basic/paper` 。可以通过 ``-P`` 选项设定使用Portrait模式，也可以通过设置GMT参数 :ref:`PS_PAGE_ORIENTATION <PS_PAGE_ORIENTATION>` 来修改纸张方向。
+由于历史原因，GMT 默认使用 Landscape 模式，详情见 :doc:`/basis/paper` 。可以通过 ``-P`` 选项设定使用Portrait模式，也可以通过设置GMT参数 :ref:`PS_PAGE_ORIENTATION <PS_PAGE_ORIENTATION>` 来修改纸张方向。
 
 .. important::
 

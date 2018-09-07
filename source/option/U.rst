@@ -6,8 +6,8 @@
     -U[<just>/<dx>/<dy>/][c|<label>]
 
 - ``-U`` 不加任何参数时会在当前图的左下角添加一个带时间戳的logo
-- ``-U<just>/<dx>/<dy>`` 可以调整logo的对齐方式（见 :doc:`/basic/anchors` ）以及
-  相对于当前坐标原点的位置，比如 ``-UBL/-54p/-54p``
+- ``-U<just>/<dx>/<dy>`` 用于控制时间戳的锚点（见 :doc:`/basis/anchors`\ ）
+  及时间戳相对于当前坐标原点的位置，比如 ``-UBL/-1c/-1c``
 - ``-U<label>`` 会在时间戳后打印字符串 ``<label>``，比如 ``-U"This is string"``
 - ``-Uc`` 会在时间戳后打印当前命令
 
