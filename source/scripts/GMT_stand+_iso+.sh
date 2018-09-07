@@ -5,8 +5,8 @@
 # 一个PS文件中不能同时使用不同的字符集，因而需要生成两个PS文件再合并
 
 # ISO
-PS=GMT_iso+.ps
-gmt gmtset MAP_FRAME_PEN thick FONT_TITLE 14p
+gmt begin GMT_iso+ png
+gmt set MAP_FRAME_PEN thick FONT_TITLE 14p
 
 # First col is row number, the remaining cols are col number in table
 # that has a printable character
@@ -43,7 +43,7 @@ cat << EOF > tt.txt
 EOF
 
 # Use the row, col values to generate the octal code needed and
-# plot it with gmt pstext, including the header row and left column
+# plot it with gmt text, including the header row and left column
 cat << EOF > tt.awk
 BEGIN {
     printf "0.5 2.5 10p,4 octal\n"
@@ -63,10 +63,10 @@ EOF
 awk -f tt.awk tt.txt > tt.d
 
 # Chart ISOLatin1+ font
-gmt gmtset PS_CHAR_ENCODING ISOLatin1+
+gmt set PS_CHAR_ENCODING ISOLatin1+
 
 # First the uncoded ones
-gmt psxy -R0/9/2/32 -Jx0.345i/-0.21i -BN+tISOLatin1++ -P -K -Glightred -Y0.0 << EOF > $PS
+gmt plot -R0/9/2/32 -Jx0.345i/-0.21i -BN+tISOLatin1++ -Glightred -Y0.0 << EOF 
 >
 1   4
 2   4
@@ -79,7 +79,7 @@ gmt psxy -R0/9/2/32 -Jx0.345i/-0.21i -BN+tISOLatin1++ -P -K -Glightred -Y0.0 << 
 1   20
 EOF
 # Then highlight ISOLatin1+ enhancements
-gmt psxy -R -J -O -K -Glightgreen << EOF >> $PS
+gmt plot -Glightgreen << EOF 
 >
 2   4
 9   4
@@ -106,8 +106,8 @@ gmt psxy -R -J -O -K -Glightgreen << EOF >> $PS
 6   19
 5   19
 EOF
-gmt pstext tt.d -R -J -O -K -F+f >> $PS
-gmt psxy -R -J -O -Bg1 -Wthick << EOF >> $PS
+gmt text tt.d -F+f 
+gmt plot -Bg1 -Wthick << EOF 
 >
 0   3
 9   3
@@ -115,11 +115,12 @@ gmt psxy -R -J -O -Bg1 -Wthick << EOF >> $PS
 1   2
 1   32
 EOF
-rm tt.* gmt.*
+rm tt.* 
+gmt end
 
 # Standard
-PS=GMT_stand+.ps
-gmt gmtset MAP_FRAME_PEN thick FONT_TITLE 14p
+gmt begin GMT_stand+ png
+gmt set MAP_FRAME_PEN thick FONT_TITLE 14p
 
 # First col is row number, the remaining cols are col number in table
 # that has a printable character
@@ -156,7 +157,7 @@ cat << EOF > tt.txt
 EOF
 
 # Use the row, col values to generate the octal code needed and
-# plot it with gmt pstext, including the header row and left column
+# plot it with gmt text, including the header row and left column
 cat << EOF > tt.awk
 BEGIN {
     printf "0.5 2.5 10p,4 octal\n"
@@ -176,10 +177,10 @@ EOF
 awk -f tt.awk tt.txt > tt.d
 
 # Chart for Standard+ font
-gmt gmtset PS_CHAR_ENCODING Standard+
+gmt set PS_CHAR_ENCODING Standard+
 
 # First mark uncoded entries
-gmt psxy -R0/9/2/32 -Jx0.345i/-0.21i -BN+tStandard++ -P -K -Glightred -Y0.0 << EOF > $PS
+gmt plot -R0/9/2/32 -Jx0.345i/-0.21i -BN+tStandard++ -Glightred -Y0.0 << EOF 
 >
 1   4
 2   4
@@ -192,7 +193,7 @@ gmt psxy -R0/9/2/32 -Jx0.345i/-0.21i -BN+tStandard++ -P -K -Glightred -Y0.0 << E
 1   20
 EOF
 #Then highlight Standard+ enhancements
-gmt psxy -R -J -O -K -Glightgreen << EOF >> $PS
+gmt plot -Glightgreen << EOF 
 >
 2   4
 9   4
@@ -299,8 +300,8 @@ gmt psxy -R -J -O -K -Glightgreen << EOF >> $PS
 9   31
 5   31
 EOF
-gmt pstext tt.d -R -J -O -K -F+f >> $PS
-gmt psxy -R -J -O -Bg1 -Wthick << EOF >> $PS
+gmt text tt.d -F+f 
+gmt plot -Bg1 -Wthick << EOF 
 >
 0   3
 9   3
@@ -308,11 +309,12 @@ gmt psxy -R -J -O -Bg1 -Wthick << EOF >> $PS
 1   2
 1   32
 EOF
-rm tt.* gmt.*
+rm tt.*
+gmt end
 
 # Merge
-gmt psconvert -Tg -E600 -P -A -D. GMT_stand+.ps
-gmt psconvert -Tg -E600 -P -A -D. GMT_iso+.ps
-gmt psimage GMT_stand+.png -Dx0/0+r600 -P -K > GMT_stand+_iso+.ps
-gmt psimage GMT_iso+.png -Dx0/0+r600 -O -X3.2i >> GMT_stand+_iso+.ps
-rm gmt.* GMT_stand+.ps GMT_stand+.png GMT_iso+.ps GMT_iso+.png
+gmt begin GMT_stand+_iso+ pdf,png
+gmt image GMT_stand+.png -Dx0/0+r600
+gmt image GMT_iso+.png -Dx0/0+r600 -X3.2i
+gmt end
+rm GMT_stand+.png GMT_iso+.png

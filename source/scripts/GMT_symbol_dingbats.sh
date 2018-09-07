@@ -3,12 +3,13 @@
 #	Makes the octal code charts in Appendix F
 #
 # Use the row, col values to generate the octal code needed and
-# plot it with gmt pstext, including the header row and left column
+# plot it with gmt text, including the header row and left column
 
-gmt gmtset MAP_FRAME_PEN thick FONT_TITLE 14p
+gmt begin GMT_symbol_dingbats pdf,png
+gmt set MAP_FRAME_PEN thick FONT_TITLE 14p
 
 # Chart for Symbols font
-gmt gmtset PS_CHAR_ENCODING ISOLatin1+
+gmt set PS_CHAR_ENCODING ISOLatin1+
 
 # First col is row number, the remaining cols are col number in table
 # that has a printable character
@@ -29,7 +30,7 @@ cat << EOF > tt.txt
 EOF
 
 # Use the row, col values to generate the octal code needed and
-# plot it with gmt pstext, including the header row and left column
+# plot it with gmt text, including the header row and left column
 
 cat << EOF > tt.awk
 BEGIN {
@@ -49,15 +50,15 @@ BEGIN {
 EOF
 
 awk -f tt.awk tt.txt > tt.d
-gmt psxy -R0/9/3/16 -Jx0.345i/-0.21i -BN+tSymbol -P -K -Glightgreen -Y2.58i << EOF > GMT_symbol_dingbats.ps
+gmt plot -R0/9/3/16 -Jx0.345i/-0.21i -BN+tSymbol -Glightgreen -Y2.58i << EOF
 >
 8	16
 9	16
 9	15
 8	15
 EOF
-gmt pstext tt.d -R -J -O -K -F+f >> GMT_symbol_dingbats.ps
-gmt psxy -R -J -O -K -Bg1 -Wthick << EOF >> GMT_symbol_dingbats.ps
+gmt text tt.d -F+f
+gmt plot -Bg1 -Wthick << EOF
 >
 0	4
 9	4
@@ -92,7 +93,7 @@ cat << EOF > tt.awk
 EOF
 
 awk -f tt.awk tt.txt > tt.d
-gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_symbol_dingbats.ps
+gmt plot -R0/9/20/32 -Glightgreen -Y-2.58i << EOF
 #> The Euro symbol now goes here so I have commented out this green box
 #1	21
 #2	21
@@ -104,8 +105,8 @@ gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_symbol_dingbat
 9	31
 8	31
 EOF
-gmt pstext tt.d -R -J -O -K -F+f >> GMT_symbol_dingbats.ps
-gmt psxy -R -J -O -K -Bg1 -Wthick << EOF >> GMT_symbol_dingbats.ps
+gmt text tt.d -F+f
+gmt plot -Bg1 -Wthick << EOF
 >
 1	20
 1	32
@@ -135,7 +136,7 @@ cat << EOF > tt.txt
 EOF
 
 # Use the row, col values to generate the octal code needed and
-# plot it with gmt pstext, including the header row and left column
+# plot it with gmt text, including the header row and left column
 
 cat << EOF > tt.awk
 BEGIN {
@@ -157,17 +158,17 @@ EOF
 awk -f tt.awk tt.txt > tt.d
 
 # Chart for ZapfDingbats
-gmt gmtset PS_CHAR_ENCODING ISOLatin1+
+gmt set PS_CHAR_ENCODING ISOLatin1+
 
-gmt psxy -R0/9/3/16 -Jx0.345i/-0.21i -BN+tZapfDingbats -O -K -Glightgreen -X3.2i -Y2.58i << EOF >> GMT_symbol_dingbats.ps
+gmt plot -R0/9/3/16 -Jx0.345i/-0.21i -BN+tZapfDingbats -Glightgreen -X3.2i -Y2.58i << EOF
 >
 8	16
 9	16
 9	15
 8	15
 EOF
-gmt pstext tt.d -R -J -O -K -F+f >> GMT_symbol_dingbats.ps
-gmt psxy -R -J -O -Bg1 -K -Wthick << EOF >> GMT_symbol_dingbats.ps
+gmt text tt.d -F+f
+gmt plot -Bg1 -Wthick << EOF
 >
 0	4
 9	4
@@ -202,7 +203,7 @@ cat << EOF > tt.awk
 EOF
 
 awk -f tt.awk tt.txt > tt.d
-gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_symbol_dingbats.ps
+gmt plot -R0/9/20/32 -Glightgreen -Y-2.58i << EOF
 >
 1	21
 2	21
@@ -214,10 +215,11 @@ gmt psxy -R0/9/20/32 -J -O -K -Glightgreen -Y-2.58i << EOF >> GMT_symbol_dingbat
 9	31
 8	31
 EOF
-gmt pstext tt.d -R -J -O -K -F+f >> GMT_symbol_dingbats.ps
-gmt psxy -R -J -O -Bg1 -Wthick << EOF >> GMT_symbol_dingbats.ps
+gmt text tt.d -F+f
+gmt plot -Bg1 -Wthick << EOF
 >
 1	20
 1	32
 EOF
-rm tt.* gmt.*
+rm tt.*
+gmt end

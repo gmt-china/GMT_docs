@@ -1,11 +1,12 @@
 #!/bin/bash
+
+gmt begin GMT_fonts pdf,png
 dy=-0.2222
 y0=4.3
-ps=GMT_fonts.ps
 
 grep -v '^#' PSL_standard_fonts.txt | awk '{print $1}' > tt.d
-gmt gmtset MAP_FRAME_PEN thinner
-gmt psxy -R0/5.4/0/$y0 -Jx1i -P -K -B0 <<EOF > $ps
+gmt set MAP_FRAME_PEN thinner
+gmt plot -R0/5.4/0/$y0 -Jx1i -B0 <<EOF 
 >
 0.3	0
 0.3	$y0
@@ -16,14 +17,14 @@ gmt psxy -R0/5.4/0/$y0 -Jx1i -P -K -B0 <<EOF > $ps
 3	0
 3	$y0
 EOF
-gmt psxy -R -J -O -K -Y${y0}i -T >> $ps
-gmt pstext -R -J -O -K -Y${dy}i -F+f10p+jBC <<EOF >> $ps
+gmt plot -Y${y0}i -T 
+gmt text -Y${dy}i -F+f10p+jBC <<EOF 
 0.15	0.05	\\043
 1.55	0.05	Font Name
 2.85	0.05	\\043
 4.15	0.05	Font Name
 EOF
-gmt psxy -R -J -O -K <<EOF >> $ps
+gmt plot -W << EOF 
 0	0
 5.4	0
 EOF
@@ -43,7 +44,7 @@ do
 		f1="Symbol @%0%(Symbol)@%%"
 	fi
 	fn2=$i2
-	gmt pstext -R -J -O -K -Y${dy}i -F+f+j <<EOF >> $ps
+	gmt text -Y${dy}i -F+f+j <<EOF 
 0.15	0.03	10p,$i1		BC	$i1
 0.4	0.03	10p,$i1		BL	$f1
 2.85	0.03	10p,$fn2	BC	$i2
@@ -52,11 +53,10 @@ EOF
 	i=`echo "$i + 1" | bc`
 done
 
-gmt pstext -R -J -O -K -Y${dy}i -F+f+j <<EOF >> $ps
+gmt text -Y${dy}i -F+f+j <<EOF 
 2.85	0.03	10p,Helvetica		BC	34
 3.1	0.03	10p,ZapfDingbats	BL	ZapfDingbats @%0%(ZapfDingbats)@%%
 EOF
 
-gmt psxy -R -J -O -T >> $ps
-
-rm tt.d gmt.conf gmt.history
+rm tt.d 
+gmt end
