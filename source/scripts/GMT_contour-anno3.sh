@@ -5,6 +5,7 @@ cat << EOF > fix.txt
 102     0
 130     10.5
 EOF
-gmt pscoast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 -K -P > GMT_contour-anno3.ps
-gmt grdcontour geoid.nc -J -O -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH >> GMT_contour-anno3.ps
-rm gmt.*
+gmt begin GMT_contour-anno3 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH 
+gmt end

@@ -1,11 +1,8 @@
 #!/bin/bash
-PS=GMT_symbol_examples.ps
-R=0/3/-1/4
-J=X12c/-5c
 
-gmt psxy -R$R -J$J -P -K -T > $PS
+gmt begin GMT_symbol_examples pdf,png
 
-gmt pstext -R -J -Bg1 -Bwsen -F+j+f -K -O -N >> $PS << EOF
+gmt text -JX12c/-5c -R0/3/-1/4 -Bg1 -Bwsen -F+j+f -N  << EOF
 0.5  -0.5 CM 10p,5,black Input
 1.5  -0.5 CM 10p,5,black Font
 2.5  -0.5 CM 10p,5,black Output
@@ -26,6 +23,4 @@ gmt pstext -R -J -Bg1 -Bwsen -F+j+f -K -O -N >> $PS << EOF
 1.5  3.5 CM 10p,8,black 15p,34,blue
 2.5  3.5 CM 15p,34,blue \243\251\256\303
 EOF
-gmt psxy -R -J -O -T >> $PS
-
-rm gmt.history
+gmt end
