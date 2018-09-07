@@ -32,12 +32,12 @@ GMT 参考手册
    install
    tutorial
    modern
-   basics
+   basis
    io
-   options
-   configurations
+   option
+   conf
    proj
-   datasets
+   dataset
    style
    api
    appendix

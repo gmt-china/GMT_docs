@@ -8,7 +8,7 @@ PROJ参数
 **PROJ_LENGTH_UNIT**
     长度量的默认单位 [c]
 
-    见 :doc:`/basic/unit` 一节。
+    见 :doc:`/basis/unit` 一节。
 
 .. _PROJ_ELLIPSOID:
 

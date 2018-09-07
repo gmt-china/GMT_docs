@@ -64,7 +64,7 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
    使用 ``gmt pstext -L`` 可以列出GMT所支持的字体及其编号。
 
 图中大多数字体都很直观，比较特别的字体有两个，Symbol（12号）和ZapfDingbats（34号），
-前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 :doc:`/basic/special-fonts` 。
+前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 :doc:`/basis/special-fonts` 。
 
 填充色
 ------
