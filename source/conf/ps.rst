@@ -129,7 +129,7 @@ PS参数
 **PS_PAGE_ORIENTATION**
     设置纸张方向 [landscape]
 
-    可以取 ``portrait`` 或 ``landscape`` ，见 :doc:`/basic/paper` 一节。
+    可以取 ``portrait`` 或 ``landscape`` ，见 :doc:`/basis/paper` 一节。
 
 .. _PS_SCALE_X:
 
