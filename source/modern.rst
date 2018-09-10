@@ -13,7 +13,7 @@ GMT5以及之前的命令风格则称之为经典模式。
 
 一个GMT经典模式下的绘图脚本如下所示：
 
-.. literalinclude:: /scripts/classic_mode_1.sh
+.. literalinclude:: /modern/classic_mode_1.sh
 
 从上面的示例脚本中以及实际使用经验中会发现GMT经典模式存在的一些明显的缺点或问题：
 
@@ -29,7 +29,7 @@ GMT5以及之前的命令风格则称之为经典模式。
 
 上面的示例在现代模式下可以改写为：
 
-.. literalinclude:: /scripts/modern_mode_1.sh
+.. literalinclude:: /modern/modern_mode_1.sh
 
 现代模式下的GMT命令风格具有如下优点：
 
@@ -69,11 +69,11 @@ GMT6提供了 ``gmt subplot`` 功能引入了子图模式，可以解决绘制�
 
 经典模式下的一个多子图绘制脚本如下：
 
-.. literalinclude:: /scripts/classic_mode_2.sh
+.. literalinclude:: /modern/classic_mode_2.sh
 
 使用 ``gmt subplot`` 后的现代模式绘图脚本如下：
 
-.. literalinclude:: /scripts/modern_mode_2.sh
+.. literalinclude:: /modern/modern_mode_2.sh
 
 详细用法见 ``gmt subplot`` 的模块说明文档。
 
