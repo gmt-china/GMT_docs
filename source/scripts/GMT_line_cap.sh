@@ -7,7 +7,7 @@ cat << EOF > $line
 EOF
 
 gmt begin GMT_line_cap pdf,png
-gmt plot -JX15c/2c -R-0.25/16/-0.5/1.5 -B1 -T 
+gmt plot -JX15c/2c -R-0.25/16/-0.5/1.5 -T 
 
 for cap in butt round square
 do

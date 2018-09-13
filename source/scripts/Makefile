@@ -5,19 +5,19 @@ OUT_DIR=../images
 PNG = $(patsubst %.sh, $(OUT_DIR)/%.png, $(wildcard *.sh))
 PDF = $(patsubst %.sh, $(OUT_DIR)/%.pdf, $(wildcard *.sh))
 
-all: $(OUT_DIR) $(PNG) $(PDF) clean
-
-%.ps: %.sh
-	sh $<
+all: $(OUT_DIR) $(PNG) $(PDF) update clean
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
 
-$(OUT_DIR)/%.png: %.ps
-	gmt psconvert -A -Tg -P -D$(OUT_DIR) $<
+$(OUT_DIR)/%.png: %.sh
+	sh $<
 
-$(OUT_DIR)/%.pdf: %.ps
-	gmt psconvert -A -Tf -P -D$(OUT_DIR) $<
+$(OUT_DIR)/%.pdf: %.sh
+	sh $<
+
+update:
+	-mv *.png *.pdf ${OUT_DIR}/
 
 clean:
-	@rm -f *.ps
+	@rm -f *.png *.pdf
