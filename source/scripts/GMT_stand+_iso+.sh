@@ -315,6 +315,7 @@ gmt end
 # Merge
 gmt begin GMT_stand+_iso+ pdf,png
 gmt image GMT_stand+.png -Dx0/0+r600
-gmt image GMT_iso+.png -Dx0/0+r600 -X3.2i
+#gmt image GMT_iso+.png -Dx0/0+r600 -X3.2i
+gmt image GMT_iso+.png -Dx0/0+r600 -X1.6i
 gmt end
 rm GMT_stand+.png GMT_iso+.png
