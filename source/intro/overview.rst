@@ -84,6 +84,8 @@ GMT替代品
 
 在绘制地图方面，还有一些软件也可以实现类似的功能，可以作为GMT的替代品。
 
-#. `Matplotlib Basemap Toolkit for Python <http://matplotlib.org/basemap/>`_
-#. `M_Map for Matlab <https://www.eoas.ubc.ca/~rich/map.html>`_
-#. `ggmap for R <https://github.com/dkahle/ggmap>`_
+#. Python: `Cartopy <https://scitools.org.uk/cartopy/>`_ `Basemap <http://matplotlib.org/basemap/>`_
+#. Matlab: `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
+#. R: `ggmap <https://github.com/dkahle/ggmap>`_
+
+.. TODO:: 更多替代品
