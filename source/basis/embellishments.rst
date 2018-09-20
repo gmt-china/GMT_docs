@@ -3,14 +3,14 @@
 
 GMT 除了可以绘制常规的数据外，还可以绘制8种修饰物：
 
-#. 地图比例尺（ ``psbasemap -L`` ``pscoast -L`` ）
-#. 方向玫瑰图（ ``psbasemap -Td`` ）
-#. 磁场玫瑰图（ ``psbasemap -Tm`` ）
-#. 颜色条（ ``psscale`` ）
-#. 图例（ ``pslegend`` ）
-#. Image overlay（ ``psimage`` ）
-#. GMT logo （ ``gmtlogo`` ）
-#. map inset （ ``psbasemap -D`` ）
+#. 地图比例尺（ ``basemap -L`` ``coast -L`` ）
+#. 方向玫瑰图（ ``basemap -Td`` ）
+#. 磁场玫瑰图（ ``basemap -Tm`` ）
+#. 颜色条（ ``colorbar`` ）
+#. 图例（ ``legend`` ）
+#. Image overlay（ ``image`` ）
+#. GMT logo （ ``logo`` ）
+#. map inset （ ``basemap -D`` ）
 
 8种修饰物的绘制有各自不同的语法，但这些修饰物都可以抽象为一个矩形。对于这些
 抽象的矩形，GMT 设计了一套非常通用的机制，来决定这些修饰物在图上的位置，

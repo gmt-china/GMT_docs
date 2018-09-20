@@ -251,7 +251,7 @@ netCDF文件时，可以做一些特殊的处理。
 包含一维变量的netCDF文件，也就是前面所说的netCDF表。可以通过在文件名后加上变量名
 来使用一个一维变量，比如::
 
-    gmt psxy "file.nc?lon/lat" ...
+    gmt plot "file.nc?lon/lat" ...
     gmt convert "file.nc?time/lat/lon"
 
 If one or more of the selected variables are two-dimensional, and have

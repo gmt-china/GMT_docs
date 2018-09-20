@@ -45,7 +45,7 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm`` 。
 图中所示是一个完整的A4画布。其中灰色实线的间距是 1 cm，灰色虚线（右键查看大图）的
 间距是 0.5 cm。图中的底图用如下命令得到::
 
-    gmt psbasemap -R0/10/0/10 -JX10c/10c -B1 -B+glightblue > map.ps
+    gmt basemap -R0/10/0/10 -JX10c/10c -B1 -B+glightblue -pdf map
 
 该命令中， ``-JX10c/10c`` 规定了底图的宽和高都是 10 cm，可以看到，底图的左边界位于 
 ``1i`` ，右边界位于 ``1i+10c`` 处，下边界位于 ``1i`` ，上边界位于 ``1i+10c`` 处。
@@ -56,5 +56,3 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm`` 。
    而不包括坐标轴的标注或标签部分。
 
 可以在命令中使用 :doc:`/option/XY` 来修改底图的原点位置。
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#portrait-plot-orientation-the-p-option

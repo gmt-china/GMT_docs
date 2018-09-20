@@ -33,5 +33,3 @@ GMT每个命令在执行的时候，会将当前命令所使用的标准选项�
 .. important::
 
    命令历史这一特性看起来非常方便，但不建议依赖这一特性！建议将常用的标准选项的参数定义成变量使用。
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#command-line-history
