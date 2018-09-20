@@ -33,13 +33,13 @@ GMT的 ``bin`` 目录下几乎可以说是只有 ``gmt`` 这一个有用的二�
 
 一个完整的示例::
 
-    gmt pscoast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t"Title with spaces" -V -P > map.ps
+    gmt coast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t"Title with spaces" -pdf map
 
 其中，
 
 - 命令以 ``gmt`` 开头
-- ``pscoast`` 是用于绘制海岸线的模块
-- ``-R`` 、 ``-J`` 、 ``-G`` 等都是 ``pscoast`` 模块的选项
+- ``coast`` 是用于绘制海岸线的模块
+- ``-R`` 、 ``-J`` 、 ``-G`` 等都是 ``coast`` 模块的选项
 - ``-B+t"Title with spaces"`` 中 ``+t`` 是选项 ``-B`` 的子选项， ``"Title with spaces"`` 是子选项 ``+t`` 的参数
 
 几点说明：
@@ -65,6 +65,6 @@ GMT的所有绘图操作都是通过调用不同的模块来完成的，但GMT�
 处理以及格式转换等功能。根据功能的不同，大致将GMT的众多模块分为如下几类：
 
 - 参数设定类：如 ``gmtset``
-- 绘图操作类：如 ``psxy`` 、 ``grdimage``
+- 绘图操作类：如 ``plot`` 、 ``grdimage``
 - 数据处理类：如 ``gmtmath`` 、 ``grdmath``
 - 格式转换类：如 ``xyz2grd`` 、 ``psconvert``

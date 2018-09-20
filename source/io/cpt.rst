@@ -6,7 +6,7 @@ CPT文件
 决定线条颜色、符号的填充色等。CPT文件的作用就是为每个Z值或Z值范围定义其对应的
 颜色。CPT全称是color palette table，也称为调色板或色标文件。
 
-CPT文件可以在 ``grdimage`` 、 ``psxy`` 、 ``psxyz`` 等命令中使用。通常，你可以
+CPT文件可以在 ``grdimage`` 、 ``plot`` 、 ``plot3d`` 等命令中使用。通常，你可以
 使用 ``makecpt`` 或 ``grd2cpt`` 对已有的CPT（比如GMT内置的CPT）文件进行重采样，
 并适应你目前所使用的数据范围。当然，也可以自己手写CPT文件，或使用 ``awk`` 、
 ``perl`` 之类的文本处理工具自动生成CPT文件。
