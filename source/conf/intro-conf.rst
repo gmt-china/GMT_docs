@@ -42,7 +42,7 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 #. 在单个GMT命令中使用 ``+<defaultfile>`` 的语法，来指定使用配置文件 ``<defaultfile>``\ ，
    该方法仅对单个命令有效::
 
-      gmt psxy ... +custom_gmt.conf > test.ps
+      gmt plot ... +custom_gmt.conf 
 
 #. 在脚本开始执行之前，将要使用的配置文件 :file:`gmt.conf` 复制到当前目录，
    待脚本执行完毕后，删除该配置文件。该方法要求写脚本时要非常小心，
@@ -50,17 +50,18 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 
    .. code-block:: bash
 
+      gmt begin map pdf  
       cp ~/somewhere/gmt.conf ./gmt.conf
-      gmt psxy ...
-      gmt pscoast ...
-      gmt psxy ...
-      rm gmt.conf
+      gmt plot ...
+      gmt coast ...
+      gmt plot ...
+      gmt end
 
 #. 用 ``gmtset`` 模块在脚本执行的过程中显式地修改GMT参数值
 
    比如，需要设置主标注的字体为 ``12p,Times-Bold,red`` ::
 
-      gmt gmtset FONT_ANNOT_PRIMARY 12p,Times-Bold,red
+      gmt set FONT_ANNOT_PRIMARY 12p,Times-Bold,red
 
    ``gmtset`` 会修改当前目录下的 :file:`gmt.conf` 文件中的相应参数值，
    进而影响到接下来其它GMT程序的执行。若当前目录没有 :file:`gmt.conf` 文件，
