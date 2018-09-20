@@ -81,10 +81,10 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
 #. 若 ``<color_min_1>`` 与 ``<color_max_1>`` 相等，则 ``<z0>`` 到 ``<z1>``
    范围内的所有Z值均使用相同的颜色
 #. 若 ``<color_min_1>`` 使用了图案，则 ``<color_max_1>`` 必须设置为 ``-``
-#. ``<A>`` 是可选的，用于表明在使用 ``psscale`` 命令绘制色标时要如何标注。
+#. ``<A>`` 是可选的，用于表明在使用 ``colorbar`` 命令绘制色标时要如何标注。
    ``<A>`` 可以取 ``L`` 、 ``U`` 、 ``B`` ，表示选择每个Z切片的下限、上限或者
    上下限作为标注。
-#. ``;<lable>`` 是切片的标签，当 ``psscale`` 使用 ``-L`` 选项时会在用 ``<label>`` 作为标注
+#. ``;<lable>`` 是切片的标签，当 ``colorbar`` 使用 ``-L`` 选项时会在用 ``<label>`` 作为标注
 #. ``B|F|N`` 语句分别用于设置背景色（默认值为 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` ）、
    前景色（默认值为 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` ）和
    NaN值的颜色（默认值为 :ref:`COLOR_NAN <COLOR_NAN>` ）
@@ -135,12 +135,12 @@ GMT内置了43个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHO
 
 下图给出了GMT内置的44个CPT文件，每张图上边的色标为原始CPT，用如下命令绘制::
 
-    gmt psscale -D5c/2c+w10c/1c+h+jTC -B0 -C<cpt> > test.ps
+    gmt colorbar -D5c/2c+w10c/1c+h+jTC -B0 -C<cpt> -pdf test
 
 下边的色标是经过 ``makecpt`` 离散成8部分后的色标，用如下命令绘制::
 
     gmt makecpt -C<cpt> -T-1/1/0.25 > new.cpt
-    gmt psscale -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt > test.ps
+    gmt colorbar -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt -pdf test
 
 .. figure:: /images/GMT_CPT_1.*
    :width: 100%
@@ -197,7 +197,7 @@ GMT 内置的 CPT 文件都是动态的。
 绘制的区域高程值是非对称的，从-8000米到3000米（下图）。由于hinge值的存在，负高程
 依旧由海蓝色拉伸填充，正高程则由大地色压缩填充。
 
-注：若要实现hinge分界效果，``makecpt`` 命令中的 ``-T`` 选项不可设置 ``/<z_int>``。
+注：若要实现hinge分界效果，``makecpt`` 命令中的 ``-T`` 选项不可设置 ``/<z_int>``\ 。
 
 调整CPT
 -------
@@ -211,7 +211,7 @@ GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以内置CPT文件为基础，针对用
 
 #. 利用 ``-Iz`` 选项倒转CPT的z值指向（不包括前景色、背景色）。用于数据的正负
    颜色表示和惯例不符的情况（比如用正值表示海平面以下的深度，而不是惯常的负高程）。
-#. 利用 ``-Ic`` 选项翻转颜色的顺序，包括前景色和背景色（与 ``psscale`` 的宽度
+#. 利用 ``-Ic`` 选项翻转颜色的顺序，包括前景色和背景色（与 ``colorbar`` 的宽度
    设为负值效果一致）。
 #. ``-Icz`` 表示以上两种效果的叠加，即颜色顺序不变，只调转了前景色和背景色
 #. 利用 ``-G`` 选项提取主CPT的一部分颜色

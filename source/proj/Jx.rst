@@ -34,10 +34,10 @@ GMT中笛卡尔坐标变换分为三类：
 - ``-Jx<xscale>/<yscale>`` 分别为X轴和Y轴指定不同的比例尺
 - ``-JX<width>/<height>`` 分别为X轴和Y轴指定不同的长度
 
-下面的命令用线性投影将函数 :math:`y=\sqrt{x}` 用笛卡尔线性变换画在图上::
+下面的命令用线性投影将函数 :math:`y=\sqrt{x}` 用笛卡尔线性变换画在图上:
 
-    gmt psxy -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- -P -K sqrt.d > GMT_linear.ps
-    gmt psxy -R -J -St0.1i -N -Gred -Wfaint -O sqrt.d10 >> GMT_linear.ps
+.. litearlinclude:: /scripts/GMT_JX_linear.sh
+   :language: bash 
 
 绘图效果如下图所示：
 
@@ -65,11 +65,10 @@ GMT中笛卡尔坐标变换分为三类：
 #. 在 ``-Jx`` 或 ``-JX`` 选项的最后加上 ``g`` 或 ``d`` ，比如 ``-JX10c/6cd``
 #. 使用 ``-fg`` 选项
 
-下面的例子用线性投影绘制了一个中心位于125ºE的世界地图::
+下面的例子用线性投影绘制了一个中心位于125ºE的世界地图:
 
-    gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
-    gmt pscoast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest \
-            -P -Slightblue > GMT_linear_d.ps
+.. litearlinclude:: /scripts/GMT_JX_geo.sh
+   :language: bash 
 
 .. figure:: /images/GMT_JX_geo.*
    :width: 100%
@@ -86,12 +85,8 @@ GMT中笛卡尔坐标变换分为三类：
 选项中已经指定了时间范围，所以没有必要在 ``-J`` 和 ``-R`` 选项中都指定。
 当 ``-R`` 和 ``-J`` 选项给出的坐标类型相冲突时，GMT会给出警告，并以 ``-JX`` 选项为准。
 
-::
-
-    gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham \
-            FORMAT_TIME_PRIMARY_MAP full
-    gmt psbasemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d \
-                  -Bya1Hg1h -BWsNe+glightyellow -P > GMT_linear_cal.ps
+.. litearlinclude:: /scripts/GMT_JX_calendar.sh
+   :language: bash 
 
 .. figure:: /images/GMT_JX_calendar.*
    :width: 100%
@@ -105,11 +100,10 @@ GMT中笛卡尔坐标变换分为三类：
 对数变换 :math:`\log_{10}` 的数学表示是 :math:`u' = a \log_{10}(u) + b` ，
 可以通过在比例尺或轴长度后加上 ``l`` 指定。
 
-下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图::
+下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图:
 
-    gmt psxy -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque \
-             -Wthick,blue,- -P -K -h sqrt.d > GMT_log.ps
-    gmt psxy -R -J -Ss0.1i -N -Gred -W -O -h sqrt.d10 >> GMT_log.ps
+.. litearlinclude:: /scripts/GMT_JX_log.sh
+   :language: bash 
 
 .. figure:: /images/GMT_JX_log.*
    :width: 100%
@@ -127,11 +121,10 @@ GMT中笛卡尔坐标变换分为三类：
 :math:`x^p` vs :math:`y^q` 这样的函数关系。如果选 ``p=0.5`` 、 ``q=1`` 
 则相对于绘制 ``x`` 与 :math:`\sqrt{x}` 的函数曲线。
 
-要使用指数投影，需要在比例尺或轴长度后加上 ``p<exp>`` ，其中 ``<exp>`` 是要使用的指数。例如::
+要使用指数投影，需要在比例尺或轴长度后加上 ``p<exp>`` ，其中 ``<exp>`` 是要使用的指数。例如:
 
-    gmt psxy -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory \
-             -Wthick -P -K sqrt.d > GMT_pow.ps
-    gmt psxy -R -J -Sc0.075i -Ggreen -W -O sqrt.d10 >> GMT_pow.ps
+.. litearlinclude:: /scripts/GMT_JX_pow.sh
+   :language: bash 
 
 .. figure:: /images/GMT_JX_pow.*
    :width: 100%
