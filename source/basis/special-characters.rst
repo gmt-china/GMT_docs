@@ -35,9 +35,9 @@ GMT当前使用的字符编码方式由GMT参数 :ref:`PS_CHAR_ENCODING <PS_CHAR
 下面的示例展示了修改GMT的文本编码，以及不同编码下同一八进制码的效果::
 
     $ gmt set PS_CHAR_ENCODING Standard+
-    $ echo 1 1 '\260' | gmt pstext -JX2c/2c -R0/2/0/2 -B1 > standard.ps
+    $ echo 1 1 '\260' | gmt text -JX2c/2c -R0/2/0/2 -B1 -pdf standard
     $ gmt set PS_CHAR_ENCODING ISOLatin1+
-    $ echo 1 1 '\260' | gmt pstext -JX2c/2c -R0/2/0/2 -B1 > isolatin1.ps
+    $ echo 1 1 '\260' | gmt text -JX2c/2c -R0/2/0/2 -B1 -pdf isolatin1
 
 其中， ``standard.ps`` 中显示的是类似A的字符，而 ``isolation1.ps`` 中显示的则是弧度 ``°`` 符号。
 
