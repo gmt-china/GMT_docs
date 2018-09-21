@@ -1,7 +1,4 @@
 #!/bin/bash
-J=H110/24c
-R=g
-
 gmt begin GMT_tutor2_5 pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc 
 
