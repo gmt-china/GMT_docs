@@ -10,7 +10,6 @@ GMT可以绘制最简单的线性X-Y图。
 
 .. literalinclude:: /scripts/GMT_tutor1_1.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
@@ -42,7 +41,6 @@ GMT可以绘制最简单的线性X-Y图。
 
 .. literalinclude:: /scripts/GMT_tutor1_2.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
@@ -71,7 +69,6 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 
 .. literalinclude:: /scripts/GMT_tutor1_3.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
@@ -110,7 +107,6 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 
 .. literalinclude:: /scripts/GMT_tutor1_4.sh
    :language: bash
-   :lines: 2
 
 绘图结果如图所示：
 
