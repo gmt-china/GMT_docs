@@ -1,16 +1,14 @@
 #!/bin/bash
-PS=GMT_tutor2_3.ps
-
 gmt begin GMT_tutor2_3 pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc 
 
 # 绘制震中位置
-gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow  << EOF
+gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow << EOF
 130.72 32.78
 EOF
 
 # 绘制台站位置
-gmt plot -St0.2c -W0.5p,black,solid -Gblack  << EOF
+gmt plot -St0.2c -W0.5p,black,solid -Gblack << EOF
 104.39 29.90
 13.14 52.50
 19.99 -34.52
@@ -21,7 +19,7 @@ gmt plot -St0.2c -W0.5p,black,solid -Gblack  << EOF
 EOF
 
 # 绘制大圆路径
-gmt plot -W1p,red  << EOF
+gmt plot -W1p,red << EOF
 >
 130.72 32.78
 104.39 29.90
