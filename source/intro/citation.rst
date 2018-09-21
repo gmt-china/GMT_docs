@@ -4,6 +4,12 @@
 若你发表的文章中包含了利用GMT制作的图件或利用GMT数据处理功能得到的结果，
 可以考虑引用GMT的如下文章来回报GMT开发者：
 
+GMT/MATLAB工具箱用户：
+    Wessel, P., and J. F. Luis
+    The GMT/MATLAB Toolbox,
+    *Geochem. Geophys. Geosyst.*, 18, 811-823, 2017.
+    `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_.
+
 GMT5用户：
     Wessel, P., W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe,
     Generic Mapping Tools: Improved Version Released,
@@ -27,12 +33,6 @@ GMT2用户：
     Free software helps map and display data,
     *EOS Trans. AGU*, 72(41), 445-446, 1991.
     `doi:10.1029/90EO00319 <http://dx.doi.org/10.1029/90EO00319>`_.
-
-GMT/MATLAB工具箱用户：
-    Wessel, P., and J. F. Luis
-    The GMT/MATLAB Toolbox,
-    *Geochem. Geophys. Geosyst.*, 18, 811-823, 2017.
-    `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_.
 
 GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关文章包括：
 
