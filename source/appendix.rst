@@ -4,6 +4,7 @@
 .. toctree::
    :maxdepth: 2
 
+   appendix/postscript
    appendix/calculate-distance
    appendix/J-and-R
    appendix/variables
