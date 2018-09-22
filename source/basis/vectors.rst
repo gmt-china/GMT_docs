@@ -31,7 +31,7 @@ GMT 中的矢量可以分为三类：
    #. 给定起点和终点
    #. 给定起点、方位角和长度（单位为km）
 
-以 ``psxy`` 模块为例，``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量， 
+以 ``plot`` 模块为例，``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量， 
 ``-Sm`` 用于绘制弧形矢量， ``-S=`` 用于绘制地理矢量。
 
 下面的例子分别绘制了三种矢量箭头：
@@ -84,7 +84,7 @@ GMT 中的矢量可以分为三类：
 
 - ``+a<angle>`` 控制矢量箭头顶端的夹角，默认值为30度
 - ``+h<shape>`` 控制矢量头的形状，可以取-2到2之间的值，该选项的效果等效于修改参数
-  :ref:`MAP_VECTOR_SHAPE <MAP_VECTOR_SHAPE>` （默认值为0）  
+  :ref:`MAP_VECTOR_SHAPE <MAP_VECTOR_SHAPE>` （默认值为0）
 - ``+l`` 表示只绘制左半个箭头
 - ``+r`` 表示只绘制右半个箭头
 - ``+g<fill>`` 设置箭头填充色， ``<fill>`` 为 ``-`` 表示不填充，默认使用 ``-G`` 指定的填充色
@@ -96,7 +96,7 @@ GMT 中的矢量可以分为三类：
 - ``+n<norm>`` 默认情况下，矢量头的大小不随着矢量线的长度变化而变化，
   这可能会出现矢量长度太小时矢量头过大的情况。该选项使得矢量长度小于 ``<norm>`` 时，
   矢量头的属性（画笔宽度，箭头大小）会根据矢量长度按照 ``length/<norm>`` 缩放
-- ``+t[b|e]<trim>`` 将矢量的首端或尾端偏移一定长度， 
+- ``+t[b|e]<trim>`` 将矢量的首端或尾端偏移一定长度，
   ``<trim>`` 为正值表示矢量长度变短，为负值表示矢量长度变长。
   还可以使用 ``+t<trim1>/<trim2>`` 语法分别为首端和尾端指定偏移量。正值表示将矢量线缩短。
 - ``+o<plon>/<plat>`` specifies the oblique pole for the great or small circles. 仅当与 ``+q`` 一起使用时有效
@@ -110,7 +110,7 @@ GMT 中的矢量可以分为三类：
 
 对于笛卡尔矢量而言，还可以使用：
 
-- ``+z<scale>[<unit>]`` expects input *dx*,\ *dy* vector components and uses 
+- ``+z<scale>[<unit>]`` expects input *dx*,\ *dy* vector components and uses
   the *scale* to convert to polar coordinates with length in given unit.
 
 除此之外，GMT配置参数中 :ref:`MAP_VECTOR_SHAPE <MAP_VECTOR_SHAPE>` 也可以用于修改箭头的外观。

@@ -34,13 +34,13 @@ GMT为bash提供了基本的命令行补全功能。在终端敲GMT命令时，�
 #. 在命令行键入即可看到补全效果::
 
        $ gmt ps[Tab][Tab]
-       psbasemap    psconvert    pslegend     psrose       pssegyz      pswiggle
-       psclip       pscoupe      psmask       pssac        pssolar      psxy
-       pscoast      pshistogram  psmeca       psscale      pstext       psxyz
-       pscontour    psimage      pspolar      pssegy       psvelo
+       basemap    convert    legend     rose       segyz      wiggle
+       clip       coupe      mask       sac        solar      plot
+       coast      histogram  meca       colorbar   text       plot3d
+       contour    image      polar      segy       velo
 
        # 似乎选项的补全无法使用
-       $ gmt psxy -[Tab]
+       $ gmt plot -[Tab]
        -^  -?  -A  -B  -C  -E  -g  -h  -I  -K  -N  -p  -R  -S  -T  -V  -X
        -:  -a  -b  -c  -D  -f  -G  -i  -J  -L  -O  -P  -s  -t  -U  -W  -Y
 
