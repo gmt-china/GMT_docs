@@ -10,7 +10,6 @@
    appendix/variables
    appendix/completion
    appendix/custom-fonts
-   appendix/isolation-mode
    appendix/get-gmt-dev
    appendix/animation
    appendix/cmd-history
