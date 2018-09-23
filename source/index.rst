@@ -4,7 +4,7 @@ GMT 参考手册
 .. only:: html
 
    .. figure:: /images/GMT_logo.*
-      :width: 100%
+      :width: 80%
       :align: center
 
 欢迎来到 `Generic Mapping Tools <http://gmt.soest.hawaii.edu>`_ 的世界。
