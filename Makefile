@@ -33,5 +33,9 @@ build: $(HTML) latexpdf
 	cp latex/$(DOCNAME).pdf $(HTML) && \
 	cd ..
 
+watch:
+	sphinx-autobuild --open-browser --delay 1 -b dirhtml $(SOURCEDIR) $(BUILDDIR)/html
+
 serve: $(HTML)
 	cd $(BUILDDIR)/$(HTML) && python -m http.server
+
