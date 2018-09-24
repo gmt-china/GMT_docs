@@ -10,5 +10,5 @@
    intro/versions
    intro/philosophy
    intro/linux-basic
-   intro/self-learning
+   intro/resources
    intro/citation
