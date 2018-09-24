@@ -9,6 +9,5 @@
    intro/overview
    intro/versions
    intro/philosophy
-   intro/linux-basic
    intro/resources
    intro/citation
