@@ -15,4 +15,5 @@
 
    tutorial/tutor1
    tutorial/tutor2
+   tutorial/linux-basis
    tutorial/tutor3
