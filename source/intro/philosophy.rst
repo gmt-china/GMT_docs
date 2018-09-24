@@ -65,6 +65,6 @@ GMT的所有绘图操作都是通过调用不同的模块来完成的，但GMT�
 处理以及格式转换等功能。根据功能的不同，大致将GMT的众多模块分为如下几类：
 
 - 参数设定类：如 ``gmtset``
-- 绘图操作类：如 ``plot`` 、 ``grdimage``
-- 数据处理类：如 ``gmtmath`` 、 ``grdmath``
-- 格式转换类：如 ``xyz2grd`` 、 ``psconvert``
+- 绘图操作类：如 ``plot``\ 、\ ``grdimage``
+- 数据处理类：如 ``gmtmath``\ 、\ ``grdmath``
+- 格式转换类：如 ``xyz2grd``\ 、\ ``psconvert``
