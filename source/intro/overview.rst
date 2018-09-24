@@ -20,6 +20,10 @@ GMT的历史
 - 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT |GMT5_latest_release|
   发布于  |GMT5_latest_release_date|
 
+.. TODO::
+
+   增加GMT6的发布信息
+
 GMT维护者
 ---------
 
@@ -59,25 +63,23 @@ GMT的特点
    - 每一步均独立于独立于之前的步骤以及具体的数据类型，因而可以用于不同的应用中
    - 可以在shell脚本中调用一系列程序，或通过管道连接起来，进而绘制复杂图件
 
-#. 高精度矢量图
+#. 支持多种格式的高精度矢量图和位图
 
-   GMT绘制得到的图件为PS格式，即PostScript，是一种页面描述语言。PS格式是矢量
-   图片格式，可以任意放大缩小而不失真。GMT充分利用PostScript语言的特性，可以
-   生成高质量的矢量图件，并可以很容易地转换为其他图片格式。
+   GMT底层使用PostScript语言进行绘图，其可以直接转换为多种格式的矢量图格式，如EPS、PDF和SVG格式，
+   矢量图格式具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；也可以转换为多种格式的
+   位图格式，如BMP、JPG、PNG、PPM和TIFF格式，可以用于日常的文档及演示。
 
 跨平台特性
 ----------
 
-GMT 是跨平台的，可以运行在 Linux 及 Windows 下，当然也可以运行在 macOS 下，
-这里姑且认为 macOS 跟 Linux 是同一个东西。
+GMT 是跨平台的，可以运行在 Linux、macOS 及 Windows 下。
 
-推荐在 Linux 下使用 GMT，原因如下：
+推荐在类 Linux 系统（如 Linux、macOS、Windows下的cygwin或者bash on Windows）下使用 GMT。
+原因如下：
 
 - GMT 是在 Linux 下开发再移植到 Windows 下的。因而，Windows 版本的 GMT 相对来说有更多的bug
 - Linux 自带了众多数据处理工具： ``gawk`` 、 ``cut`` 、 ``paste`` 等
 - Windows 下的命令行及 bat 太难用，Linux 下的命令行和 Bash 脚本相对来说更易用
-
-PS：Windows10 即将自带 Bash，未来有可能可以在 Windows 下写 Bash 脚本，值得期待。
 
 GMT替代品
 ---------
@@ -88,6 +90,6 @@ GMT替代品
 #. Matlab: `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
 #. R: `ggmap <https://github.com/dkahle/ggmap>`_
 
-.. TODO:: 
-    
+.. TODO::
+
     介绍更多GMT替代品
