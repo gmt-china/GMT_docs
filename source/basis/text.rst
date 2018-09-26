@@ -49,7 +49,7 @@
 
 下图给出了GMT支持的35种字体的列表：
 
-.. figure:: /images/GMT_fonts.*
+.. figure:: /images/fonts.*
    :width: 100%
    :align: center
 
@@ -88,7 +88,7 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 
 下图给出了几种指定文本属性的方式：
 
-.. figure:: /images/GMT_text_examples.*
+.. figure:: /images/text_examples.*
    :width: 100%
    :align: center
 

@@ -14,9 +14,9 @@
 
 ``<lon>`` 是投影中心经线，默认值为地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_grinten.sh
+.. literalinclude:: /scripts/J_grinten.sh
 
-.. figure:: /images/GMT_grinten.*
+.. figure:: /images/J_grinten.*
    :width: 100%
    :align: center
 

@@ -36,12 +36,12 @@ GMT中笛卡尔坐标变换分为三类：
 
 下面的命令用线性投影将函数 :math:`y=\sqrt{x}` 用笛卡尔线性变换画在图上:
 
-.. literalinclude:: /scripts/GMT_JX_linear.sh
+.. literalinclude:: /scripts/JX_linear.sh
    :language: bash 
 
 绘图效果如下图所示：
 
-.. figure:: /images/GMT_JX_linear.*
+.. figure:: /images/JX_linear.*
    :width: 100%
    :align: center
 
@@ -67,10 +67,10 @@ GMT中笛卡尔坐标变换分为三类：
 
 下面的例子用线性投影绘制了一个中心位于125ºE的世界地图:
 
-.. literalinclude:: /scripts/GMT_JX_geo.sh
+.. literalinclude:: /scripts/JX_geo.sh
    :language: bash 
 
-.. figure:: /images/GMT_JX_geo.*
+.. figure:: /images/JX_geo.*
    :width: 100%
    :align: center
 
@@ -85,10 +85,10 @@ GMT中笛卡尔坐标变换分为三类：
 选项中已经指定了时间范围，所以没有必要在 ``-J`` 和 ``-R`` 选项中都指定。
 当 ``-R`` 和 ``-J`` 选项给出的坐标类型相冲突时，GMT会给出警告，并以 ``-JX`` 选项为准。
 
-.. literalinclude:: /scripts/GMT_JX_calendar.sh
+.. literalinclude:: /scripts/JX_calendar.sh
    :language: bash 
 
-.. figure:: /images/GMT_JX_calendar.*
+.. figure:: /images/JX_calendar.*
    :width: 100%
    :align: center
 
@@ -102,10 +102,10 @@ GMT中笛卡尔坐标变换分为三类：
 
 下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图:
 
-.. literalinclude:: /scripts/GMT_JX_log.sh
+.. literalinclude:: /scripts/JX_log.sh
    :language: bash 
 
-.. figure:: /images/GMT_JX_log.*
+.. figure:: /images/JX_log.*
    :width: 100%
    :align: center
 
@@ -123,10 +123,10 @@ GMT中笛卡尔坐标变换分为三类：
 
 要使用指数投影，需要在比例尺或轴长度后加上 ``p<exp>`` ，其中 ``<exp>`` 是要使用的指数。例如:
 
-.. literalinclude:: /scripts/GMT_JX_pow.sh
+.. literalinclude:: /scripts/JX_pow.sh
    :language: bash 
 
-.. figure:: /images/GMT_JX_pow.*
+.. figure:: /images/JX_pow.*
    :width: 100%
    :align: center
 

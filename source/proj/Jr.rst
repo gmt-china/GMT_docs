@@ -15,9 +15,9 @@
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_winkel.sh
+.. literalinclude:: /scripts/J_winkel.sh
 
-.. figure:: /images/GMT_winkel.*
+.. figure:: /images/J_winkel.*
    :width: 100%
    :align: center
 

@@ -31,9 +31,9 @@
 | Braun's cylindrical                                     | 0º          |
 +---------------------------------------------------------+-------------+
 
-.. literalinclude:: /scripts/GMT_gall_stereo.sh
+.. literalinclude:: /scripts/J_gall_stereo.sh
 
-.. figure:: /images/GMT_gall_stereo.*
+.. figure:: /images/J_gall_stereo.*
    :width: 100%
    :align: center
 

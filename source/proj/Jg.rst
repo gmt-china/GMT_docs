@@ -15,9 +15,9 @@
 - ``<scale>`` 地图比例尺 ``1:xxxx`` 或 ``<radius>/<latitude>``
   （ ``<radius>`` 是纬线 ``<latitude>`` 与投影中心在图上的距离）
 
-.. literalinclude:: /scripts/GMT_orthographic.sh
+.. literalinclude:: /scripts/J_orthographic.sh
 
-.. figure:: /images/GMT_orthographic.*
+.. figure:: /images/J_orthographic.*
    :width: 100%
    :align: center
 
@@ -43,9 +43,9 @@
 - ``<scale>`` as 1:xxxxx or as radius/latitude where radius is distance on map
   in inches from projection center to a particular oblique latitude
 
-.. literalinclude:: /scripts/GMT_perspective.sh
+.. literalinclude:: /scripts/J_perspective.sh
 
-.. figure:: /images/GMT_perspective.*
+.. figure:: /images/J_perspective.*
    :width: 100%
    :align: center
 

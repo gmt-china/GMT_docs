@@ -7,7 +7,7 @@
 之间被划分为60个区域，大多数区域的宽度都是6度。每一个区域都有各自位移的中心经线。
 进一步，每个区域都被划分为纬度带。
 
-.. figure:: /images/GMT_utm_zones.*
+.. figure:: /images/J_utm_zones.*
    :width: 100%
    :align: center
 

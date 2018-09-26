@@ -1,7 +1,7 @@
 -Jp：极坐标线性投影
 ===================
 
-.. figure:: /images/GMT_polar.*
+.. figure:: /images/J_polar.*
    :width: 100%
    :align: center
 
@@ -32,4 +32,4 @@ X和Y是相互耦合的，且具有360度的周期性，因而与地图投影类
 下面的示例，用 ``grdmath`` 命令生成了 一个 :math:`z(\theta, r) = r^2 \cdot \cos{4\theta}` 的
 网格文件，并用 ``grdcontour`` 绘图。
 
-.. literalinclude:: /scripts/GMT_polar.sh
+.. literalinclude:: /scripts/J_polar.sh

@@ -14,9 +14,9 @@
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_sinusoidal.sh
+.. literalinclude:: /scripts/J_sinusoidal.sh
 
-.. figure:: /images/GMT_sinusoidal.*
+.. figure:: /images/J_sinusoidal.*
    :width: 100%
    :align: center
 
@@ -29,9 +29,9 @@
 为了生成一个宽度为5.04英寸的间断世界地图，需要设置比例尺为5.04/360 = 0.014，
 并将每段图沿水平方向偏移其对应的宽度 (140\ :math:`\cdot`\ 0.014 and 80\ :math:`\cdot`\ 0.014)。
 
-.. literalinclude:: /scripts/GMT_sinus_int.sh
+.. literalinclude:: /scripts/J_sinus_int.sh
 
-.. figure:: /images/GMT_sinus_int.*
+.. figure:: /images/J_sinus_int.*
    :width: 100%
    :align: center
 
