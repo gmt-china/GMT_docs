@@ -43,7 +43,7 @@
 都是使用默认的黑白色在 ``<dpi>`` 取300的环境下生成的。每张小图中左半部分使用
 ``-Gp`` 绘制，右半部分使用 ``-GP`` 绘制。
 
-.. figure:: /images/GMT_patterns.png
+.. figure:: /images/patterns.png
    :width: 100%
    :align: center
 

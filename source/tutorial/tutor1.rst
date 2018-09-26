@@ -9,12 +9,12 @@
 
 GMT可以绘制最简单的线性X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_1.sh
+.. literalinclude:: /scripts/tutor1_1.sh
    :language: bash
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_1.*
+.. figure:: /images/tutor1_1.*
    :width: 100%
    :align: center
 
@@ -41,12 +41,12 @@ GMT可以绘制最简单的线性X-Y图。
 
 下面展示如何用GMT绘制对数X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_2.sh
+.. literalinclude:: /scripts/tutor1_2.sh
    :language: bash
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_2.*
+.. figure:: /images/tutor1_2.*
    :width: 100%
    :align: center
 
@@ -69,12 +69,12 @@ GMT可以绘制最简单的线性X-Y图。
 
 GMT自带了海岸线数据，通过 ``coast`` 模块可以直接调用。
 
-.. literalinclude:: /scripts/GMT_tutor1_3.sh
+.. literalinclude:: /scripts/tutor1_3.sh
    :language: bash
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_3.*
+.. figure:: /images/tutor1_3.*
    :width: 100%
    :align: center
 
@@ -107,12 +107,12 @@ GMT自带了海岸线数据，通过 ``coast`` 模块可以直接调用。
 全球地图
 ---------
 
-.. literalinclude:: /scripts/GMT_tutor1_4.sh
+.. literalinclude:: /scripts/tutor1_4.sh
    :language: bash
 
 绘图结果如图所示：
 
-.. figure:: /images/GMT_tutor1_4.*
+.. figure:: /images/tutor1_4.*
    :width: 100%
    :align: center
 

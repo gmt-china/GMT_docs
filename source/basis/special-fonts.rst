@@ -17,7 +17,7 @@
 
 下图给出了12号字体（Symbol字符集）和34字体（Pifont ZapfDingbats）的字符与八进制码对应关系：
 
-.. figure:: /images/GMT_symbol_dingbats.*
+.. figure:: /images/text_symbol_dingbats.*
    :width: 100%
    :align: center
 
@@ -30,7 +30,7 @@
 
 下图给出了一些示例：
 
-.. figure:: /images/GMT_symbol_examples.*
+.. figure:: /images/text_symbol_examples.*
    :width: 100%
    :align: center
 

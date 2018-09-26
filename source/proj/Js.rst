@@ -21,9 +21,9 @@
 
 下面的示例中，投影中心为北极，地图边界与经线和纬线完全重合：
 
-.. literalinclude:: /scripts/GMT_stereographic_polar.sh
+.. literalinclude:: /scripts/J_stereographic_polar.sh
 
-.. figure:: /images/GMT_stereographic_polar.*
+.. figure:: /images/J_stereographic_polar.*
    :width: 100%
    :align: center
 
@@ -35,9 +35,9 @@
 与Lambert方位等面积投影类似，也可以通过指定地图区域左下角和右上角的坐标来绘制
 一个矩形区域：
 
-.. literalinclude:: /scripts/GMT_stereographic_rect.sh
+.. literalinclude:: /scripts/J_stereographic_rect.sh
 
-.. figure:: /images/GMT_stereographic_rect.*
+.. figure:: /images/J_stereographic_rect.*
    :width: 100%
    :align: center
 
@@ -46,9 +46,9 @@
 一般立体地图
 ------------
 
-.. literalinclude:: /scripts/GMT_stereographic_general.sh
+.. literalinclude:: /scripts/J_stereographic_general.sh
 
-.. figure:: /images/GMT_stereographic_general.*
+.. figure:: /images/J_stereographic_general.*
    :width: 100%
    :align: center
 

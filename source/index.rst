@@ -3,7 +3,7 @@ GMT 参考手册
 
 .. only:: html
 
-   .. figure:: /images/GMT_logo.*
+   .. figure:: /images/logo.*
       :width: 80%
       :align: center
 

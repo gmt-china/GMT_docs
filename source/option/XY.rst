@@ -40,7 +40,7 @@
 
 上图用四个 ``basemap`` 命令绘制了四张底图，绘图效果如下：
 
-.. figure:: /images/GMT_-XY.*
+.. figure:: /images/XY.*
    :width: 100%
    :align: center
 

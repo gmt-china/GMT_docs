@@ -21,9 +21,9 @@ Eckert IV和VI投影由Max Eckert-Greiffendorff于1906年提出，是伪圆柱�
 
 Eckert IV示例:
 
-.. literalinclude:: /scripts/GMT_eckert4.sh
+.. literalinclude:: /scripts/J_eckert4.sh
 
-.. figure:: /images/GMT_eckert4.*
+.. figure:: /images/J_eckert4.*
    :width: 100%
    :align: center
 
@@ -31,9 +31,9 @@ Eckert IV示例:
 
 Eckert VI示例:
 
-.. literalinclude:: /scripts/GMT_eckert6.sh
+.. literalinclude:: /scripts/J_eckert6.sh
 
-.. figure:: /images/GMT_eckert6.*
+.. figure:: /images/J_eckert6.*
    :width: 100%
    :align: center
 

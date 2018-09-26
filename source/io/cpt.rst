@@ -122,7 +122,7 @@ CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行::
 
 GMT在CPT中看到这一注释行时就会将该CPT当作时周期性CPT文件。
 
-.. figure:: /images/GMT_cyclic.*
+.. figure:: /images/cpt_cyclic.*
    :width: 100%
    :align: center
 
@@ -142,13 +142,13 @@ GMT内置了43个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHO
     gmt makecpt -C<cpt> -T-1/1/0.25 > new.cpt
     gmt colorbar -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt -pdf test
 
-.. figure:: /images/GMT_CPT_1.*
+.. figure:: /images/cpt_1.*
    :width: 100%
    :align: center
 
    GMT内置CPT示例1
 
-.. figure:: /images/GMT_CPT_2.*
+.. figure:: /images/cpt_2.*
    :width: 100%
    :align: center
 
@@ -183,10 +183,10 @@ GMT 内置的 CPT 文件都是动态的。
 
 下图展示了动态的内置CPT如何拉伸适用于用户自定义数据，绘制命令如下:
 
-.. literalinclude:: /scripts/GMT_CPT_3.sh
+.. literalinclude:: /scripts/cpt_3.sh
    :language: bash
 
-.. figure:: /images/GMT_CPT_3.*
+.. figure:: /images/cpt_3.*
    :width: 100%
    :align: center
 
@@ -217,10 +217,10 @@ GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以内置CPT文件为基础，针对用
 #. 利用 ``-G`` 选项提取主CPT的一部分颜色
 #. 最后，将初始的内置CPT或修改后的CPT拉伸为自定义数据范围
 
-.. literalinclude:: /scripts/GMT_CPT_4.sh
+.. literalinclude:: /scripts/cpt_4.sh
    :language: bash
 
-.. figure:: /images/GMT_CPT_4.*
+.. figure:: /images/cpt_4.*
    :width: 100%
    :align: center
 

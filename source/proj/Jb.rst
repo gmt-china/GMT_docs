@@ -21,9 +21,9 @@
 
 下图绘制了台湾附近的区域，投影中心位于125ºE/20ºN，25度和45度纬线是两条标准纬线。
 
-.. literalinclude:: /scripts/GMT_albers.sh
+.. literalinclude:: /scripts/J_albers.sh
 
-.. figure:: /images/GMT_albers.*
+.. figure:: /images/J_albers.*
    :width: 100%
    :align: center
 

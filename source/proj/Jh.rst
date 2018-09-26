@@ -14,9 +14,9 @@
 
 ``<lon>`` 是中心经线，默认位于地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_hammer.sh
+.. literalinclude:: /scripts/J_hammer.sh
 
-.. figure:: /images/GMT_hammer.*
+.. figure:: /images/J_hammer.*
    :width: 100%
    :align: center
 

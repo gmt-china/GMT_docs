@@ -22,9 +22,9 @@
 对于此投影而言，经线和纬线通常不是直线，因而不适合用于指定地图边界。因而本例中
 通过指定区域的左下角（0ºE/40ºS）和右上角（60ºE/10ºS）的坐标来指定区域范围。
 
-.. literalinclude:: /scripts/GMT_lambert_az_rect.sh
+.. literalinclude:: /scripts/J_lambert_az_rect.sh
 
-.. figure:: /images/GMT_lambert_az_rect.*
+.. figure:: /images/J_lambert_az_rect.*
    :width: 100%
    :align: center
 
@@ -35,9 +35,9 @@
 
 要绘制半球地图，需要指定区域范围为整个地球。下图绘制了以南美洲为中心的半球图。
 
-.. literalinclude:: /scripts/GMT_lambert_az_hemi.sh
+.. literalinclude:: /scripts/J_lambert_az_hemi.sh
 
-.. figure:: /images/GMT_lambert_az_hemi.*
+.. figure:: /images/J_lambert_az_hemi.*
    :width: 60%
    :align: center
 
@@ -48,7 +48,7 @@
 等面积投影（中心经纬度为0/0），Wulff网使用的则是等角度的立体投影。
 两种震源球投影方式如下图所示：
 
-.. figure:: /images/GMT_stereonets.*
+.. figure:: /images/J_stereonets.*
    :width: 100%
    :align: center
 

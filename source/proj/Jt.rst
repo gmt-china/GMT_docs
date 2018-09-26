@@ -16,17 +16,17 @@
 
 地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` 以实现自定义。
 
-.. literalinclude:: /scripts/GMT_transverse_merc.sh
+.. literalinclude:: /scripts/J_transverse_merc.sh
 
-.. figure:: /images/GMT_transverse_merc.*
+.. figure:: /images/J_transverse_merc.*
    :width: 100%
    :align: center
 
    矩形横向Mercator地图
 
-.. literalinclude:: /scripts/GMT_TM.sh
+.. literalinclude:: /scripts/J_TM.sh
 
-.. figure:: /images/GMT_TM.*
+.. figure:: /images/J_TM.*
    :width: 100%
    :align: center
 
