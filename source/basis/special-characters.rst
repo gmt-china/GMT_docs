@@ -20,7 +20,7 @@ GMT当前使用的字符编码方式由GMT参数 :ref:`PS_CHAR_ENCODING <PS_CHAR
 
 下图给出了 ``Standard+`` 和 ``ISOLatin1+`` 编码下八进制码与字符间的对应关系：
 
-.. figure:: /images/GMT_stand+_iso+.*
+.. figure:: /images/text_stand+_iso+.*
    :width: 100%
    :align: center
 

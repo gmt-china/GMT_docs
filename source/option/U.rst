@@ -24,7 +24,7 @@ GMT参数中有一些与LOGO相关的参数：
 
 得到的图片效果如下：
 
-.. figure:: /images/GMT_-U.*
+.. figure:: /images/U.*
    :width: 100%
    :align: center
 

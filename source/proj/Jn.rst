@@ -14,9 +14,9 @@
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_robinson.sh
+.. literalinclude:: /scripts/J_robinson.sh
 
-.. figure:: /images/GMT_robinson.*
+.. figure:: /images/J_robinson.*
    :width: 100%
    :align: center
 

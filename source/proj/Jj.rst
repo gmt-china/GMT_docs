@@ -15,9 +15,9 @@
 
 ``<lon>`` 为中心经度，默认为地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_miller.sh
+.. literalinclude:: /scripts/J_miller.sh
 
-.. figure:: /images/GMT_miller.*
+.. figure:: /images/J_miller.*
    :width: 100%
    :align: center
 

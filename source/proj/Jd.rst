@@ -16,9 +16,9 @@
 
 等距圆锥投影常用于绘制小国家的地图集。
 
-.. literalinclude:: /scripts/GMT_equidistant_conic.sh
+.. literalinclude:: /scripts/J_equidistant_conic.sh
 
-.. figure:: /images/GMT_equidistant_conic.*
+.. figure:: /images/J_equidistant_conic.*
    :width: 100%
    :align: center
 

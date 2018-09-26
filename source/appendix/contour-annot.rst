@@ -222,7 +222,7 @@ X:
 
 第1个实例使用标注位置算法的默认值，沿等值线每1.5英寸放置一个标注:
 
-.. literalinclude:: /scripts/GMT_contour-anno1.sh
+.. literalinclude:: /scripts/contour_annot1.sh
    :language: bash
    :lines: 3
 
@@ -230,7 +230,7 @@ X:
 
 .. _Contour_label_1:
 
-.. figure:: /images/GMT_contour-anno1.*
+.. figure:: /images/contour_annot1.*
    :width: 100%
    :align: center
 
@@ -242,7 +242,7 @@ X:
 
 现在指定每条等值线上标注的个数：
 
-.. literalinclude:: /scripts/GMT_contour-anno2.sh
+.. literalinclude:: /scripts/contour_annot2.sh
    :language: bash
    :lines: 3
 
@@ -251,7 +251,7 @@ X:
 
 .. _Contour_label_2:
 
-.. figure:: /images/GMT_contour-anno2.*
+.. figure:: /images/contour_annot2.*
    :width: 100%
    :align: center
 
@@ -265,7 +265,7 @@ X:
 给定标注所在位置的坐标，由于坐标不是严格位于等值线上，
 指定了非0距离值，即标注位置与等值线距离的上限。
 
-.. literalinclude:: /scripts/GMT_contour-anno3.sh
+.. literalinclude:: /scripts/contour_annot3.sh
    :language: bash
    :lines: 9
 
@@ -276,7 +276,7 @@ X:
 
 .. _Contour_label_3:
 
-.. figure:: /images/GMT_contour-anno3.*
+.. figure:: /images/contour_annot3.*
    :width: 100%
    :align: center
 
@@ -289,7 +289,7 @@ X:
 通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，
 将标注放置在直线段与等值线的交点。
 
-.. literalinclude:: /scripts/GMT_contour-anno4.sh
+.. literalinclude:: /scripts/contour_annot4.sh
    :language: bash
    :lines: 3
 
@@ -297,7 +297,7 @@ X:
 
 .. _Contour_label_4:
 
-.. figure:: /images/GMT_contour-anno4.*
+.. figure:: /images/contour_annot4.*
    :width: 100%
    :align: center
 
@@ -313,14 +313,14 @@ X:
 如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，
 可以使用广义的相交算法确定标注的位置：
 
-.. literalinclude:: /scripts/GMT_contour-anno5.sh
+.. literalinclude:: /scripts/contour_annot5.sh
    :language: bash
    :lines: 3
 
 
 .. _Contour_label_5:
 
-.. figure:: /images/GMT_contour-anno5.*
+.. figure:: /images/contour_annot5.*
    :width: 100%
    :align: center
 
@@ -348,14 +348,14 @@ X:
 沿大圆弧每1000km放置一个标注，使用距离值作为标注的内容。
 标注的方向与大圆弧垂直：
 
-.. literalinclude:: /scripts/GMT_contour-anno6.sh
+.. literalinclude:: /scripts/contour_annot6.sh
    :language: bash
    :lines: 4
 
 
 .. _Contour_label_6:
 
-.. figure:: /images/GMT_contour-anno6.*
+.. figure:: /images/contour_annot6.*
    :width: 100%
    :align: center
 
@@ -374,7 +374,7 @@ X:
 本实例中标注与大圆弧平行，以弧度指定标注位置，并添加弧度单位。
 文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。
 
-.. literalinclude:: /scripts/GMT_contour-anno7.sh
+.. literalinclude:: /scripts/contour_annot7.sh
    :language: bash
    :lines: 4
 
@@ -383,7 +383,7 @@ X:
 
 .. _Contour_label_7:
 
-.. figure:: /images/GMT_contour-anno7.*
+.. figure:: /images/contour_annot7.*
    :width: 100%
    :align: center
 
@@ -397,7 +397,7 @@ X:
 因此需要使用 **awk** 程序从 *transect.txt* 文件中抽取距离为1500km倍数的记录，
 并创建一个新文件，指定标注的位置和内容：
 
-.. literalinclude:: /scripts/GMT_contour-anno8.sh
+.. literalinclude:: /scripts/contour_annot8.sh
    :language: bash
    :lines: 5
 
@@ -406,7 +406,7 @@ X:
 
 .. _Contour_label_8:
 
-.. figure:: /images/GMT_contour-anno8.*
+.. figure:: /images/contour_annot8.*
    :width: 100%
    :align: center
 
@@ -423,7 +423,7 @@ X:
 对等值线和线条进行了标注。
 完整的脚本如下：
 
-.. literalinclude:: /scripts/GMT_contour-anno9.sh
+.. literalinclude:: /scripts/contour_annot9.sh
    :language: bash
    :lines: 24
 
@@ -431,7 +431,7 @@ X:
 
 .. _Contour_label_9:
 
-.. figure:: /images/GMT_contour-anno9.*
+.. figure:: /images/contour_annot9.*
    :width: 100%
    :align: center
 

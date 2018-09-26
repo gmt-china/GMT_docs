@@ -13,12 +13,12 @@
 
 代码为：
 
-.. literalinclude:: /scripts/GMT_tutor3.sh
+.. literalinclude:: /scripts/tutor3.sh
    :language: bash
 
 结果：
 
-.. figure:: /images/GMT_tutor3.*
+.. figure:: /images/tutor3.*
    :width: 100%
    :align: center
 

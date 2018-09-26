@@ -20,9 +20,9 @@
 下图中，投影中心为100ºW/40ºN，离投影中心180度的点在图中的最外边界处。
 
 
-.. literalinclude:: /scripts/GMT_az_equidistant.sh
+.. literalinclude:: /scripts/J_az_equidistant.sh
 
-.. figure:: /images/GMT_az_equidistant.*
+.. figure:: /images/J_az_equidistant.*
    :width: 100%
    :align: center
 

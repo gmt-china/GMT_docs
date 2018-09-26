@@ -14,9 +14,9 @@
 - ``<lon>`` 是中心经线，默认为地图区域的中心
 - ``<lat>`` 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
 
-.. literalinclude:: /scripts/GMT_equi_cyl.sh
+.. literalinclude:: /scripts/J_equi_cyl.sh
 
-.. figure:: /images/GMT_equi_cyl.*
+.. figure:: /images/J_equi_cyl.*
    :width: 100%
    :align: center
 

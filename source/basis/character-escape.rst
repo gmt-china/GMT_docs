@@ -59,7 +59,7 @@
 转义字符示例
 ------------
 
-.. figure:: /images/GMT_escape_examples.*
+.. figure:: /images/text_escape_examples.*
    :width: 100%
    :align: center
 

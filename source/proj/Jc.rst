@@ -20,9 +20,9 @@
 
 示例如下：
 
-.. literalinclude:: /scripts/GMT_cassini.sh
+.. literalinclude:: /scripts/J_cassini.sh
 
-.. figure:: /images/GMT_cassini.*
+.. figure:: /images/J_cassini.*
    :width: 100%
    :align: center
 

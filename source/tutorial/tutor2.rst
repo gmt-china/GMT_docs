@@ -17,7 +17,7 @@ GMT模块化作图
 底图（海岸线）、震中位置（五角星）、台站位置（三角形）、大圆路径（大圆弧线段）
 以及台站名。
 
-.. figure:: /images/GMT_tutor2_5.*
+.. figure:: /images/tutor2_5.*
    :width: 100%
    :align: center
 
@@ -28,7 +28,7 @@ GMT模块化作图
 
 上一节已经介绍了如何画全球地图，所以我们很容易就用 ``coast`` 模块把底图绘制出来。
 
-.. literalinclude:: /scripts/GMT_tutor2_1.sh
+.. literalinclude:: /scripts/tutor2_1.sh
    :language: bash
    :lines: 2
 
@@ -40,7 +40,7 @@ GMT模块化作图
 
 效果如图
 
-.. figure:: /images/GMT_tutor2_1.*
+.. figure:: /images/tutor2_1.*
    :width: 100%
    :align: center
 
@@ -50,10 +50,10 @@ GMT模块化作图
 一般用五角星表示震中，三角形表示台站。五角星和三角形这样的图案用 ``plot``
 模块绘制，见下面的代码和结果：
 
-.. literalinclude:: /scripts/GMT_tutor2_2.sh
+.. literalinclude:: /scripts/tutor2_2.sh
    :language: bash
 
-.. figure:: /images/GMT_tutor2_2.*
+.. figure:: /images/tutor2_2.*
    :width: 100%
    :align: center
 
@@ -75,14 +75,14 @@ GMT模块化作图
 ``plot`` 模块除了绘制符号，也绘制线条。下面我们用 ``plot`` 给图画加上大圆路径。
 ``plot`` 会自动用大圆路径连接地球上的两个位置，不需要额外设置。首先直接看代码：
 
-.. literalinclude:: /scripts/GMT_tutor2_3.sh
+.. literalinclude:: /scripts/tutor2_3.sh
    :language: bash
 
 用于绘制射线路径的 ``plot`` 命令和之前的命令的区别在于没有了 ``-S`` 和 ``-G`` 选项。
 为了绘制一条线段，至少需要指定两个端点，输入数据中每个 ``>`` 之后的两行数据分别
 代表一条线条的两个端点位置。结果如下：
 
-.. figure:: /images/GMT_tutor2_3.*
+.. figure:: /images/tutor2_3.*
    :width: 100%
    :align: center
 
@@ -92,10 +92,10 @@ GMT模块化作图
 
 最后还需要往图画里添加台站所在地区的名字。添加文字使用 ``text`` 模块：
 
-.. literalinclude:: /scripts/GMT_tutor2_4.sh
+.. literalinclude:: /scripts/tutor2_4.sh
    :language: bash
 
-.. figure:: /images/GMT_tutor2_4.*
+.. figure:: /images/tutor2_4.*
    :width: 100%
    :align: center
 
@@ -121,10 +121,10 @@ GMT模块化作图
 三角形也是，只是因为大圆路径没有那么多所以不明显）。我们可以调换代码的顺序，
 就可以把射线的图层放到最下面：
 
-.. literalinclude:: /scripts/GMT_tutor2_5.sh
+.. literalinclude:: /scripts/tutor2_5.sh
    :language: bash
 
-.. figure:: /images/GMT_tutor2_5.*
+.. figure:: /images/tutor2_5.*
    :width: 100%
    :align: center
 

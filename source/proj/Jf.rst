@@ -16,9 +16,9 @@
 - ``<scale>`` 可以是 ``1:xxxx`` 也可以是 ``<radius>/<latitude>``
   （ ``<radius>`` 是投影中心到纬线 ``<latitude>`` 在图上的距离）
 
-.. literalinclude:: /scripts/GMT_gnomonic.sh
+.. literalinclude:: /scripts/J_gnomonic.sh
 
-.. figure:: /images/GMT_gnomonic.*
+.. figure:: /images/J_gnomonic.*
    :width: 100%
    :align: center
 

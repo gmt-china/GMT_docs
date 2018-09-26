@@ -14,9 +14,9 @@
 
 ``<lon>`` 为中心经线，默认值为地图区域的中心。
 
-.. literalinclude:: /scripts/GMT_mollweide.sh
+.. literalinclude:: /scripts/J_mollweide.sh
 
-.. figure:: /images/GMT_mollweide.*
+.. figure:: /images/J_mollweide.*
    :width: 100%
    :align: center
 

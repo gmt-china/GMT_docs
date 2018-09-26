@@ -23,9 +23,9 @@
 
 在三种定义中， 大写的 ``A|B|C`` 表示允许投影极点位于南半球。
 
-.. literalinclude:: /scripts/GMT_obl_merc.sh
+.. literalinclude:: /scripts/J_obl_merc.sh
 
-.. figure:: /images/GMT_obl_merc.*
+.. figure:: /images/J_obl_merc.*
    :width: 100%
    :align: center
 
@@ -34,7 +34,7 @@
 在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便。
 下面的示例中使用了 ``-Rk-1000/1000/-500/500`` 来指定相对投影坐标。
 
-.. figure:: /images/GMT_obl_nz.*
+.. figure:: /images/J_obl_nz.*
    :width: 100%
    :align: center
 

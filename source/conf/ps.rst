@@ -27,7 +27,7 @@ PS参数
     下图展示了 ``PS_LINE_CAP`` 取不同值时线段端点的区别。需要注意，图中三条线段的
     长度是相同的，但因为参数设置不同而导致实际线段长度看上去有些不一样。
 
-    .. figure:: /images/GMT_line_cap.*
+    .. figure:: /images/line_cap.*
        :width: 100%
        :align: center
 
@@ -46,7 +46,7 @@ PS参数
     下图展示了 ``PS_LINE_JOIN`` 取不同值时线段拐点的绘图效果。当线宽较小时，几乎
     看不出来区别，这里为了显示的效果，将线宽设置为 ``20p`` 。
 
-    .. figure:: /images/GMT_line_join.*
+    .. figure:: /images/line_join.*
        :width: 100%
        :align: center
 

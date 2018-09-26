@@ -4,7 +4,7 @@
 在GMT中有不少与绘图有关的专业词汇。这些英文词汇没有固定的中文翻译，因而这里统一
 给出本文所使用的中文翻译，并在图中指出这些词汇的含义。
 
-.. figure:: /images/GMT_glossary.*
+.. figure:: /images/glossary.*
    :align: center
    :width: 100%
 

@@ -36,7 +36,7 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm`` 。
 底图原点距左下角 ``(1i,1i)`` ，即坐标原点离纸张左下角的距离是水平方向偏移1英寸，
 垂直方向偏移1英寸。
 
-.. figure:: /images/GMT_basemap_origin.*
+.. figure:: /images/basemap_origin.*
    :width: 100%
    :align: center
 
