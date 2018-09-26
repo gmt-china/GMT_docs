@@ -74,7 +74,6 @@ GMT中通常使用 ``-G`` 选项填充多边形或符号。有两种填充方式
     echo 5 5 | gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc2c -G<fill> -pdf test
 
 .. note::
-
    #. 由于PostScript实现的限制， ``-G`` 选项里使用的光栅图片必须小于146x146像素；
       若要使用更大的图像，需要使用 ``image``
    #. 在PostScript Level 1下，图案填充是通过使用多边形做路径裁剪实现的。复杂的
