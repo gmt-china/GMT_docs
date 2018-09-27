@@ -11,13 +11,13 @@ GMT 每个模块都有很多输入和输出。总的来说，输入输出可以�
 
 .. toctree::
 
-   io/format
-   io/table-data
-   io/grid-data
-   io/cpt
-   io/nan-data
-   io/netcdf
-   io/sun-raster
-   io/native-grid
-   io/grid-suffix
-   io/ogr-format
+   format
+   table-data
+   grid-data
+   cpt
+   nan-data
+   netcdf
+   sun-raster
+   native-grid
+   grid-suffix
+   ogr-format
