@@ -16,3 +16,4 @@ do
 done
 rm lines.txt
 gmt end
+
