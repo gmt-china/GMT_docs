@@ -28,16 +28,16 @@ GMT 参考手册
    :hidden:
 
    preface
-   intro
-   install
-   tutorial
-   modern
-   basis
-   io
-   option
-   conf
-   proj
-   dataset
+   intro/index
+   install/index
+   tutorial/index
+   modern/index
+   basis/index
+   io/index
+   option/index
+   conf/index
+   proj/index
+   dataset/index
    style
-   api
-   appendix
+   api/index
+   appendix/index

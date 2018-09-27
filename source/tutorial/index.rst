@@ -13,7 +13,7 @@
 .. toctree::
    :maxdepth: 2
 
-   tutorial/tutor1
-   tutorial/tutor2
-   tutorial/linux-basis
-   tutorial/tutor3
+   tutor1
+   tutor2
+   linux-basis
+   tutor3
