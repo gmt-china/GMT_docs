@@ -5,6 +5,7 @@
    :maxdepth: 2
 
    appendix/postscript
+   appendix/paper
    appendix/calculate-distance
    appendix/J-and-R
    appendix/variables
