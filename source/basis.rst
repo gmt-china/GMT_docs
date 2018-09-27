@@ -6,7 +6,6 @@
 .. toctree::
 
    basis/unit
-   basis/paper
    basis/color
    basis/pen
    basis/fill
