@@ -5,6 +5,7 @@
 
 .. toctree::
 
+   paper
    unit
    color
    pen
