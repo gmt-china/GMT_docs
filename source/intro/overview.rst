@@ -4,9 +4,11 @@ GMT简介
 GMT是什么
 ---------
 
-GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”。GMT不仅可以用于
-绘制不同类型的地图，还可以绘制常见的笛卡尔坐标轴（线性轴、对数轴和指数轴）。
-除此之外，GMT还有一些数据处理和分析的功能，比如多项式拟合、数据滤波、线性回归
+GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”。
+
+GMT可以绘制多种类型的底图，包括不同类型的地图投影、常见的2D笛卡尔坐标轴（线性轴、对数轴和指数轴）
+以及3D图；还可以在底图上绘制线段、多种符号、等值线、图例、直方图和文字等。
+除此之外，GMT还具有数据转换、处理和分析的功能，比如多项式拟合、数据滤波、线性回归
 分析等。
 
 GMT的历史
@@ -18,14 +20,19 @@ GMT的历史
 - 2005年10月1日，GMT 4.x的第一个正式版发布；GMT4.x系列的最后一个版本是
   GMT 4.5.18，发布于2018年7月1日；
 - 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT |GMT5_latest_release|
-  发布于  |GMT5_latest_release_date|
+  发布于  |GMT5_latest_release_date|；
+- 2018年X月X日，GMT 6.x的第一个正式版本发布；目前最新版本为 GMT XXX。
 
 .. TODO::
 
-   增加GMT6的发布信息
+   修正GMT6的发布信息
 
 GMT维护者
 ---------
+
+GMT源码目前主要由 Paul Wessel、Joaquim Luis、Remko Scharroo和Leonardo Uieda维护。
+其源码公开在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上，任何用户
+均可贡献自己的代码。
 
 .. figure:: /static_images/GMT5_Summit_2016.jpg
    :width: 100%
@@ -55,7 +62,7 @@ GMT的特点
 
 #. 模块化
 
-   GMT遵循UNIX的模块化设计思想，将GMT的绘图及数据处理功能划分到不同的模块中。
+   GMT遵循UNIX的模块化设计思想，将不同的绘图功能和数据处理功能划分到不同的模块中。
    这样的模块化设计有很多优点：
 
    - 只需要少量的模块
@@ -78,8 +85,9 @@ GMT 是跨平台的，可以运行在 Linux、macOS 及 Windows 下。
 原因如下：
 
 - GMT 是在 Linux 下开发再移植到 Windows 下的。因而，Windows 版本的 GMT 相对来说有更多的bug
-- Linux 自带了众多数据处理工具： ``gawk`` 、 ``cut`` 、 ``paste`` 等
+- Linux 自带了众多数据处理工具： ``gawk``\ 、\ ``cut``\ 、\ ``paste`` 等
 - Windows 下的命令行及 bat 太难用，Linux 下的命令行和 Bash 脚本相对来说更易用
+- 本社区的文档及示例仅适用于bash
 
 GMT替代品
 ---------
