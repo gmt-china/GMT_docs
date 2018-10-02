@@ -20,9 +20,6 @@ Ubuntu 用户::
 其他发行版用户可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含
 GMT 以及 GMT 的具体版本。
 
-.. 从 conda 安装 GMT
-.. include:: conda-install-gmt.rst_
-
 从源码编译
 ----------
 
