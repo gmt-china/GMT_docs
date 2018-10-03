@@ -36,7 +36,7 @@ build: $(HTML) latexpdf
 # Watch a Sphinx directory and rebuild the documentation when a change is detected.
 # See https://github.com/GaretJax/sphinx-autobuild for details
 watch:
-	sphinx-autobuild --open-browser --delay 1 -b dirhtml $(SOURCEDIR) $(BUILDDIR)/html
+	sphinx-autobuild --open-browser --delay 1 -b dirhtml $(SOURCEDIR) $(BUILDDIR)/dirhtml
 
 serve: $(HTML)
 	cd $(BUILDDIR)/$(HTML) && python -m http.server
