@@ -9,5 +9,3 @@
    windows
    cn-windows
    macOS
-   database
-   directory-tree

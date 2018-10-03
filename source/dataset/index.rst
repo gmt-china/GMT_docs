@@ -7,3 +7,4 @@ GMT数据集
    gshhg
    dcw
    earth_relief
+   database
