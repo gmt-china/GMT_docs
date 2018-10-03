@@ -4,6 +4,7 @@
 .. toctree::
    :maxdepth: 2
 
+   directory-tree 
    postscript
    paper
    calculate-distance

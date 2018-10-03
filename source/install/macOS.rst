@@ -26,20 +26,16 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 4.  测试安装是否成功::
 
        $ gmt --version
-       5.4.4
+       6.0.0
 
 如果想同时安装 GMT4 和 GMT5，还需要执行以下步骤::
 
        # 安装 GMT4
        $ brew install gmt4
 
-       # 删除 GMT5 带的软链接
-       $ cd /usr/local/opt/gmt@5/bin/
+       # 删除 GMT6 带的软链接
+       $ cd /usr/local/opt/gmt/bin/
        $ find . -size -4c -delete       # 删除所有文件大小小于4字节的软链接
-
-       # 删除 GMT4 自带的GMT二进制文件
-       $ cd /usr/local/opt/gmt@4/bin/
-       $ rm GMT
 
        # 为 GMT4 写环境变量
        $ echo 'export GMT4HOME=/usr/local/opt/gmt@4' >> ~/.bashrc
@@ -58,18 +54,18 @@ GMT 为 macOS 用户提供了 dmg 安装包。
 
 1. 到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
 
-2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.4.4.app`` 拖动到 Applications 目录即可。
+2. 双击 dmg 包以解压，将解压得到的 ``GMT-6.0.0.app`` 拖动到 Applications 目录即可。
 
-3. GMT 默认会安装到 ``/Applications/GMT-5.4.4.app/`` 目录下，将如下语句::
+3. GMT 默认会安装到 ``/Applications/GMT-6.0.0.app/`` 目录下，将如下语句::
 
-       export PATH=${PATH}:/Applications/GMT-5.4.4.app/Contents/Resources/bin
+       export PATH=${PATH}:/Applications/GMT-6.0.0.app/Contents/Resources/bin
 
    加入到 ``~/.bashrc`` 中即可。
 
 4. 测试安装是否成功::
 
        $ gmt --version
-       5.4.4
+       6.0.0
 
 使用 macports 安装
 ------------------
