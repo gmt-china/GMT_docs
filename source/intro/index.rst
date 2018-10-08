@@ -6,6 +6,5 @@
 
    overview
    versions
-   philosophy
    resources
    citation

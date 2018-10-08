@@ -56,9 +56,9 @@ GMT的特点
 
 #. 跨平台
 
-   GMT的源码采用了高度可移植的ANSI C语言，其完全兼容于POSIX标准，几乎不需修改
-   即可运行在大多数类UNIX系统上。GMT官方网站不仅提供了软件源码，还提供了供
-   Windows 和 macOS 使用的软件安装包。各大Linux发行版中也提供了预编译的二进制版本。
+   GMT的源码采用了高度可移植的ANSI C语言，其完全兼容于POSIX标准，可以运行在Linux、
+   macOS、Windows及其他类Unix系统上。GMT官方网站不仅提供了软件源码，还提供了 Windows 
+   和 macOS 下的安装包。各大Linux发行版中也提供了预编译的二进制版本。
 
 #. 模块化
 
@@ -75,19 +75,6 @@ GMT的特点
    GMT支持多种高精度的矢量图片格式和位图图片格式。EPS、PDF和SVG格式，
    矢量图片格式，如PDF、PS、EPS和SVG，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
    位图图片格式，如BMP、JPG、PNG、PPM和TIFF格式，可用于日常的文档及演示。
-
-跨平台特性
-----------
-
-GMT 是跨平台的，可以运行在 Linux、macOS 及 Windows 下。
-
-推荐在类 Linux 系统（如 Linux、macOS、Windows下的cygwin或者bash on Windows）下使用 GMT。
-原因如下：
-
-- GMT 是在 Linux 下开发再移植到 Windows 下的。因而，Windows 版本的 GMT 相对来说有更多的bug
-- Linux 自带了众多数据处理工具： ``gawk``\ 、\ ``cut``\ 、\ ``paste`` 等
-- Windows 下的命令行及 bat 太难用，Linux 下的命令行和 Bash 脚本相对来说更易用
-- 本社区的文档及示例仅适用于bash
 
 GMT替代品
 ---------
