@@ -36,7 +36,7 @@ Windows下常用的脚本是bat，Linux常用的是Bash、Perl和Python。使用
 Windows下运行。这其中会遇到很多坑，包括但不限于：
 
 - 默认编码不同，Windows用GBK，Linux用UTF8；
-- 换行符不同，Windows用 ``\r\n`` ，Linux用 ``\n`` ；
+- 换行符不同，Windows用 ``\r\n``\ ，Linux用 ``\n``\ ；
 
 如果你真的跨平台写了脚本并遇到各种奇怪的问题时，尝试着新建一个文件，然后把脚本
 重新手敲一遍。
