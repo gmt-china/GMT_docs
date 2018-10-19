@@ -1,5 +1,69 @@
-设计哲学
-========
+GMT命令行
+=========
+
+命令风格
+--------
+
+现代模式
+~~~~~~~~
+
+GMT在绘图时总是以 ``gmt begin`` 开头，并以 ``gmt end`` 结尾，中间则是用于绘图的
+GMT命令。其一般形式如下::
+
+   gmt begin figurename pdf,png  # 生成PDF和PNG格式的名为figurename的图片
+   gmt set ...                   # 配置GMT参数
+   gmt ...                       # GMT绘图命令及其他数据处理命令
+   gmt ...                       # GMT绘图命令及其他数据处理命令
+   gmt end                       # 结束绘图
+
+也可以使用::
+
+   gmt begin 
+   gmt figure figurename pdf,png # 生成PDF和PNG格式的名为figurename的图片
+   gmt set ...                   # 配置GMT参数
+   gmt ...                       # GMT绘图命令及其他数据处理命令
+   gmt ...                       # GMT绘图命令及其他数据处理命令
+   gmt end                       # 结束绘图
+
+现代模式: 单行模式
+~~~~~~~~~~~~~~~~~~
+
+有些图只需要一个命令就可以画出来，比如::
+
+    gmt begin map pdf
+    gmt coast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2
+    gmt end
+
+对于这种一个命令就可以成图的情况，可以使用更加简洁的单行模式::
+
+    gmt coast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2 -pdf map
+
+其中 ``-pdf map`` 指定了生成的图片的格式和文件名，即 ``map.pdf``\ 。
+
+现代模式: 子图模式
+~~~~~~~~~~~~~~~~~~
+
+有些时候，需要在一张图中绘制多张子图（多个panel）。在一般模式下，可以使用 
+``-X`` 和 ``-Y`` 选项（后面会介绍到）调整每个子图的底图原点，即可实现多子图的图件。
+
+对于某些比较规律的多子图图件，可以使用GMT提供的子图模式 ``gmt subplot`` 功能。
+例如：
+
+.. code-block:: bash
+
+   gmt begin panels ps
+     gmt subplot begin 2x2 -Fs3i -M5p -A -SCb -SRl -Bwstr
+       gmt psbasemap -R0/80/0/10 -c1,1
+       gmt psbasemap -c1,2
+       gmt psbasemap -c2,1
+       gmt psbasemap -c2,2
+       gmt subplot end
+   gmt end
+
+现代模式: 多图模式
+~~~~~~~~~~~~~~~~~~
+
+如果想在GMT中指定
 
 命令格式
 --------
