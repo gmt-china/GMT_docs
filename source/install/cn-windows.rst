@@ -77,7 +77,7 @@ GMT 的中文支持
    echo 7 1.0 35p,42,green GMT楷体 >> tmp
 
    gmt text tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f
-   rm tmp
+   del tmp
    gmt end
 
 成图效果如下：
