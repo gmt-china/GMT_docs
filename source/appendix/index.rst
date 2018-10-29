@@ -4,9 +4,8 @@
 .. toctree::
    :maxdepth: 2
 
+   low-level/index.md
    directory-tree 
-   postscript
-   paper
    calculate-distance
    J-and-R
    variables
@@ -14,7 +13,6 @@
    custom-fonts
    get-gmt-dev
    animation
-   cmd-history
    special-dirs
    contour-annot
    custom-symbols
