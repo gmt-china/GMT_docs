@@ -10,7 +10,7 @@ GMT 除了可以绘制常规的数据外，还可以绘制8种修饰物：
 #. 图例（ ``pslegend`` ）
 #. Image overlay（ ``psimage`` ）
 #. GMT logo （ ``gmtlogo`` ）
-#. map insert （ ``psbasemap -D`` ）
+#. map inset （ ``psbasemap -D`` ）
 
 8种修饰物的绘制有各自不同的语法，但这些修饰物都可以抽象为一个矩形。对于这些抽象的矩形，GMT 设计了一套非常通用的机制，来决定这些修饰物在图上的位置，同时为这些矩形设计了统一的可定制的背景面板。
 
@@ -99,5 +99,3 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
    GMT修饰物背景面板
 
    左图使用了 ``-F+glightgreen+r`` ，右图使用了 ``-F+p1p+i+s+gwhite+c0.1i``
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#plot-embellishments
