@@ -6,7 +6,18 @@
 .. _GMT_AUTO_DOWNLOAD:
 
 **GMT_AUTO_DOWNLOAD**
-    是否自动从GMT服务器下载文件到缓存目录 [on]
+    是否允许GMT自动从GMT服务器（由 ``GMT_DATA_URL`` 控制）下载数据文件到缓存目录 [on]
+
+.. _GMT_DATA_URL:
+
+**GMT_DATA_URL**
+    GMT数据服务器地址，默认使用SOEST官方镜像。
+
+.. _GMT_DATA_URL_LIMIT:
+
+**GMT_DATA_URL_LIMIT**
+    从远程下载的文件的大小上限，即GMT缓存目录的空间上限，默认无限制
+
 
 .. _GMT_COMPATIBILITY:
 
@@ -37,16 +48,21 @@
 **GMT_TRIANGULATE**
     选择triangulate命令中源码的来源 [Watson]
 
-    ``triangulate`` 命令有两个版本的源码， ``Watson`` 的版本遵循GPL， ``Shewchuk`` 的版本不遵循GPL。该选项用于控制要使用哪个版本， ``Shewchuk`` 版本拥有更多功能。
+    ``triangulate`` 命令有两个版本的源码，
+    ``Watson`` 的版本遵循GPL， ``Shewchuk`` 的版本不遵循GPL。
+    该选项用于控制要使用哪个版本， ``Shewchuk`` 版本拥有更多功能。
 
 .. _GMT_LANGUAGE:
 
 **GMT_LANGUAGE**
     绘制月份、星期几等时所使用的语言 [US]
 
-    该参数的默认值为 ``US`` ，所以在绘图时一月会显示 ``January`` 而不是 ``一月`` 。可以通过修改该参数设置GMT所使用的语言。该参数可以取值包含 CN1、CN2、UK、US等。详细列表见 `GMT官方文档 gmt.conf <http://gmt.soest.hawaii.edu/doc/latest/gmt.conf.html>`_
+    该参数的默认值为 ``US`` ，所以在绘图时一月会显示 ``January`` 而不是 ``一月`` 。
+    可以通过修改该参数设置GMT所使用的语言。该参数可以取值包含 CN1、CN2、UK、US等。
+    详细列表见 `GMT官方文档 gmt.conf <http://gmt.soest.hawaii.edu/doc/latest/gmt.conf.html>`_
 
-    每种语言的定义位于 ``$GMTHOME/share/localization`` 中。读者可以自定义自己的语言，并将其放在该目录或 ``~/.gmt`` 目录下。
+    每种语言的定义位于 ``$GMTHOME/share/localization`` 中。读者可以自定义自己的语言，
+    并将其放在该目录或 ``~/.gmt`` 目录下。
 
     实际使用时，还涉及到编码和字体问题，所以想做出中文效果还需要一些特殊处理。
 
@@ -92,9 +108,14 @@
 **GMT_CUSTOM_LIBS**
     自定义的GMT共享库文件，默认值为空
 
-    GMT支持自定义模块。用户可以自己写一个GMT模块，并将其编译成GMT兼容的动态函数库，并告知GMT该函数库的信息，就可以通过 ``gmt xxx`` 的语法调用自定义的模块，以实现扩充GMT功能的目的。
+    GMT支持自定义模块。用户可以自己写一个GMT模块，并将其编译成GMT兼容的动态函数库，
+    并告知GMT该函数库的信息，就可以通过 ``gmt xxx`` 的语法调用自定义的模块，
+    以实现扩充GMT功能的目的。
 
-    该参数用于指定自定义动态库函数的路径，多个路径之间用逗号分隔。路径可以是共享库文件的绝对路径，也可以是其所在的目录。若路径是一个目录名，该目录必须需斜杠或反斜杠结尾，表明使用该目录下的全部共享库文件。在Windows下，若目录名是 ``/`` ，则在 ``${GMTHOME}/bin/gmt_plugins`` 目录下寻找库文件。
+    该参数用于指定自定义动态库函数的路径，多个路径之间用逗号分隔。
+    路径可以是共享库文件的绝对路径，也可以是其所在的目录。若路径是一个目录名，
+    该目录必须需斜杠或反斜杠结尾，表明使用该目录下的全部共享库文件。
+    在Windows下，若目录名是 ``/`` ，则在 ``${GMTHOME}/bin/gmt_plugins`` 目录下寻找库文件。
 
 .. _GMT_FFT:
 

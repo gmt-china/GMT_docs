@@ -41,5 +41,3 @@ GMT提供了这样一种机制，可以很方便地将矩形的任意一点放�
 
 从图中可以直观得看到， ``CM`` 对齐方式将字符串的中心放在了指定坐标处， ``LT`` 
 对齐方式将字符串的左上角放在了指定坐标处，其他同理。
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#placement-of-text

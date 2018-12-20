@@ -4,13 +4,14 @@
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
 [![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
 
-欢迎来到 GMT（Generic Mapping Tools）的世界。
+欢迎来到 [Generic Mapping Tools](http://gmt.soest.hawaii.edu/) 的世界。
 
-本项目是由GMT中文社区维护的GMT中文参考手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
+本项目是由GMT中文社区维护的GMT中文参考手册，既可以作为入门读物，
+也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
 
 ## 相关链接
 
-- GMT中文社区主页：http://gmt-china.org
+- GMT中文社区主页：https://gmt-china.org
 - GMT参考手册项目主页：https://docs.gmt-china.org
 - GMT参考手册项目源码：https://github.com/gmt-china/GMT_Docs
 - GMT官方网站：http://gmt.soest.hawaii.edu/

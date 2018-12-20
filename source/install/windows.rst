@@ -1,22 +1,19 @@
 Windows 下安装 GMT
 ==================
 
-GMT 最初是在类 Unix 系统上开发的，尽管已经移植到了 Windows 上，但还是建议尽
-可能在类 Unix 系统上使用。
-
 在 Windows 下使用 GMT 有如下几种途径：
 
 #. 使用 GMT 提供的 Windows 安装包
 #. 在 `cygwin <https://www.cygwin.com/>`_ 中安装 GMT
 #. 在 `MSYS2 <http://msys2.github.io/>`_ 中安装 GMT
 #. 在 `MinGW-w64 <https://mingw-w64.org/doku.php>`_ 中安装GMT
-#. 使用 Windows 10 提供的 Bash on Ubuntu on Windows
+#. 在 Windows 10 提供的 Bash on Ubuntu on Windows 中安装GMT
 
 Windows 下的 GMT 安装包
 -----------------------
 
 GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows 下需要安装 GMT、
-ghostscript 和 gsview。
+ghostscript，查看PS文件需要使用 gsview。日常数据处理需要Linux下的小工具。
 
 .. warning::
 
@@ -53,7 +50,7 @@ ghostscript 和 gsview。
 3. 安装ghostscript
 
    安装的过程没什么可说的，在最后一步，记得勾选
-   ``Generate cidfmap for Windows CJK TrueType fonts`` 。
+   ``Generate cidfmap for Windows CJK TrueType fonts``\ 。
 
 4. 安装gsview
 
@@ -75,7 +72,7 @@ ghostscript 和 gsview。
           变量名： HOME
           变量值： C:\Users\用户名
 
-重新运行脚本检查问题是否得到解决。经过测试， ``HOME`` 变量的值可以取任意盘符中
+重新运行脚本检查问题是否得到解决。经过测试，\ ``HOME`` 变量的值可以取任意盘符中
 任何已存在的文件夹，正常情况下，执行脚本后会生成 ``%HOME%/.gmt/cache`` 空文件夹。
 
 如果想要同时使用 GMT4 和 GMT5，则需要在安装完 GMT4 和 GMT5 之后到 GMT5 的 bin

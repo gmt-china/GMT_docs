@@ -1,36 +1,29 @@
 Linux 下的 GMT 中文支持
 =======================
 
-GMT 原生并不支持中文。为了让 GMT 支持中文，需要修改 ghostscript 和 GMT 的配置文件。
+GMT 原生并不支持中文。为了让 GMT 支持中文，需要首先修改 ghostscript 的配置文件
+使得其支持中文，再修改 GMT 的配置文件。
+
 不同的 Linux 发行版下 GMT 中文支持的原理相同，但修改细节不同。
 这里先介绍 CentOS 7 上的修改方法，非 CentOS 7 用户可以先看 CentOS 7 的方法原理，
-再阅读后面的对其他发行版指导。
+再阅读文末关于其他发行版的进一步说明。
 
-准备工作
---------
+使 ghostscript 支持中文
+-----------------------
 
-安装gs中文配置文件
-++++++++++++++++++
+ghostscript中文配置文件
++++++++++++++++++++++++
 
-大多数发行版都已经默认安装了gs。除此之外，还需要安装gs的简体中文配置文件。CentOS 7
-下gs简体中文配置文件需要通过如下命令安装::
+CentOS 7下，ghostscript的中文配置文件的路径为
+``/usr/share/ghostscript/conf.d/cidfmap.zh_CN``\ 。
+若该文件不存在，则表明系统中未安装ghostscript中文配置文件。
+
+CentOS 7下ghostscript简体中文配置文件可以通过如下命令安装::
 
     $ sudo yum install ghostscript-chinese-zh_CN
 
-安装完成后，中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN`` ，
-以下称为 ghostscript 中文配置文件。
-
-GMT 字体配置文件
-++++++++++++++++
-
-假定 GMT 的安装路径为 ``/opt/GMT-5.4.4`` ，则字体配置文件的路径为
-``/opt/GMT-5.4.4/share/postscriptlight/PSL_custom_fonts.txt`` 。
-
-使 gs 支持中文
---------------
-
-gs 中文配置文件
-+++++++++++++++
+ghostscript 中文配置文件
+++++++++++++++++++++++++
 
 CentOS 7 中 ghostscript 中文配置文件的默认内容为::
 
@@ -39,11 +32,14 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为::
     /MSungGBK-Light     /BousungEG-Light-GB ;
     /Adobe-GB1      /BousungEG-Light-GB ;
 
-其中的细节可能看不懂，但是可以大概总结如下：
+其中的细节不管，其大致意义为：
 
-- 第一行定义了字体名为 ``/BousungEG-Light-GB`` ，对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc`` ，也就是文泉驿正黑；
-- 第二行定义了字体名为 ``/GBZenKai-Medium`` ，对应的字体文件也是文泉驿正黑；
-- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1`` ，这两种都对应于 ``/BousungEG-Light-GB`` ，相当于给字体定义了别名。
+- 第一行定义了字体名为 ``/BousungEG-Light-GB``\ ，
+  对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc``\ ，
+  也就是文泉驿正黑；
+- 第二行定义了字体名为 ``/GBZenKai-Medium``\ ，对应的字体文件也是文泉驿正黑；
+- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1``\ ，
+  这两种都对应于 ``/BousungEG-Light-GB``\ ，相当于给字体定义了别名。
 
 关于配置文件的几点说明：
 
@@ -56,8 +52,9 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为::
 +++++++++++++++++++++
 
 Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体，这里只考虑 Windows 下的
-宋体、仿宋、黑体和楷体四个基本字体。将这四个字体文件复制到 ``/usr/share/fonts/winfonts/``
-目录下，然后对 gs 的中文配置文件做如下修改::
+宋体、仿宋、黑体和楷体四个基本字体。
+将这四个字体文件复制到 ``/usr/share/fonts/winfonts/`` 目录下，
+然后对 ghostscript 的中文配置文件做如下修改::
 
     % 原内容保持不变
     /BousungEG-Light-GB <</FileType /TrueType /Path (/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
@@ -74,50 +71,36 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 这里仅以 Windows 下的常用四大字体为例。对于 Windows 下的其他中文字体、Linux 的
 其他中文字体甚至日韩字体来说，方法类似。
 
-测试 gs 对 Windows 中文字体的支持
-+++++++++++++++++++++++++++++++++
+测试 ghostscript 对 Windows 中文字体的支持
+++++++++++++++++++++++++++++++++++++++++++
 
-用 **编辑器** 新建一个 PS 文件，名为 ``windows_fonts.ps`` ，其内容为::
-
-    %! PS-Adobe-3. 0
-    /STSong-Light--UniGB-UTF8-H findfont 20 scalefont setfont
-    150 400 moveto
-    (Song Typeface 宋体) show
-
-    /STFangsong-Light--UniGB-UTF8-H findfont 20 scalefont setfont
-    150 375 moveto
-    (Fangsong Typeface 仿宋体) show
-
-    /STHeiti-Regular--UniGB-UTF8-H findfont 20 scalefont setfont
-    150 350 moveto
-    (Hei Typeface 黑体) show
-
-    /STKaiti-Regular--UniGB-UTF8-H findfont 20 scalefont setfont
-    150 325 moveto
-    (Kai Typeface 楷体) show
-
-    showpage
-    %%Trailer
-    %%EOF
-
-简单解释一下，PS 文件中要使用某个中文字体，需要用 ``FontName--CMap`` 的格式来调用。
-其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H``
-和 ``GB-EUC-H`` ， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
-字体的编码。
-
-用 gs 查看该 PS 文件，若正确显示中文如下图，则表明 gs 已支持 Windows 字体。
+下载PS测试文件 :download:`GMT_Chinese_Linux.ps </install/GMT_Chinese_Linux.ps>`\ ，
+并打开终端用 ``gs GMT_Chinese_Linux.ps`` 命令查看该PS文件。
+若正确显示中文如下图，则表明 ghostscript 已支持 Windows 中文字体。
 
 .. figure:: /static_images/GMT_chinese_windows_fonts.png
    :width: 100%
    :align: center
 
+.. note::
+
+    PS文件本质上是一个纯文本文件，可以用\ **编辑器**\ 打开该PS文件以查看其内容。
+
+    PS 文件中要使用某个中文字体，需要用 ``FontName--CMap`` 的格式来调用。
+    其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H``
+    和 ``GB-EUC-H``\ ， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
+    字体的编码。
+
 使 GMT 支持中文
 ---------------
 
-修改 GMT 字体配置文件
-+++++++++++++++++++++
+配置 GMT 中文字体
++++++++++++++++++
 
-打开 GMT 字体配置文件，在文件最后加入如下语句（以 Windows 下的四大常用字体为例）::
+新建GMT自定义字体配置文件 ``~/.gmt/PSL_custom_fonts.txt`` （若不存在 ``~/.gmt``
+目录则需新建该目录）。
+
+向 GMT自定义字体配置文件 ``~/.gmt/PSL_custom_fonts.txt`` 中加入如下语句::
 
     STSong-Light--UniGB-UTF8-H  0.700    1
     STFangsong-Light--UniGB-UTF8-H  0.700    1
@@ -180,26 +163,26 @@ GMT 中文测试
 CentOS 6
 ++++++++
 
-1.  gs 中文配置文件需要用如下命令安装::
+1.  ghostscript 中文配置文件需要用如下命令安装::
 
         sudo yum install cjkuni-fonts-ghostscript
 
-    在安装配置文件的同时会安装中文字体 uming 和 ukai
+    在安装配置文件的同时会安装中文字体 uming 和 ukai。
 
-2.  gs 中文配置文件中给定的字体路径： ``/usr/share/fonts/cjkuni/uming.ttc``
+2.  ghostscript 中文配置文件中给定的字体路径： ``/usr/share/fonts/cjkuni/uming.ttc``
     和 ``/usr/share/fonts/cjkuni/ukai.ttc`` 是错误的。正确的字体路径是
     ``/usr/share/fonts/cjkui-uming/uming.ttc`` 和
-    ``/usr/share/fonts/cjkuni-ukai/ukai.ttc`` ，要注意改正。
+    ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``\ ，要注意改正。
 
 Ubuntu 14.04/15.04
 ++++++++++++++++++
 
-1.  gs 中文配置文件可以用如下命令安装（默认已安装）::
+1.  ghostscript 中文配置文件可以用如下命令安装（默认已安装）::
 
         sudo apt-get install poppler-data
 
-2.  gs 中文配置文件路径为： ``/etc/ghostscript/cidfmap.d/90gs-cjk-resource-gb1.conf``
-3.  gs 中文配置文件中默认使用的 Linux 字体为 uming 和 ukai，需要通过如下命令安装::
+2.  ghostscript 中文配置文件路径为： ``/etc/ghostscript/cidfmap.d/90gs-cjk-resource-gb1.conf``
+3.  ghostscript 中文配置文件中默认使用的 Linux 字体为 uming 和 ukai，需要通过如下命令安装::
 
         sudo apt-get install fonts-arphic-uming fonts-arphic-ukai
 
@@ -230,20 +213,20 @@ Ubuntu 14.04/15.04
         /STHeiti-Regular <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
         /STKaiti-Regular <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
 
-    修改完 gs 中文配置文件后，必须要执行如下命令::
+    修改完 ghostscript 中文配置文件后，必须要执行如下命令::
 
         $ sudo update-gsfontmap
 
     该命令会将 ``/etc/ghostscript/cidfmap.d/*.conf`` 合并成单独的文件
-    ``/var/lib/ghostscript/fonts/cidfmap`` 。gs 在需要中文字体时会读取
+    ``/var/lib/ghostscript/fonts/cidfmap``\ 。gs 在需要中文字体时会读取
     ``/var/lib/ghostscript/fonts/cidfmap`` 而不是
-    ``/etc/ghostscript/cidfmap.d/*.conf`` 。这是 Ubuntu/Debian 和 CentOS 的
+    ``/etc/ghostscript/cidfmap.d/*.conf``\ 。这是 Ubuntu/Debian 和 CentOS 的
     一个很大不同。
 
 Ubuntu 12.04
 ++++++++++++
 
-1.  gs 中文配置文件需要用如下命令安装::
+1.  ghostscript 中文配置文件需要用如下命令安装::
 
         sudo apt-get install gs-cjk-resource
 

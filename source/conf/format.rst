@@ -23,7 +23,8 @@ FORMAT参数
 
     比如 ``ddmmyyy`` 、 ``yy-mm-dd`` 、 ``dd-o-yyyy`` 、 ``yyyy/dd/mm`` 、 ``yyyy-jjj`` 等。
 
-    对于ISO周历而言，其格式为 ``yyyy[-]W[-]ww[-]d`` 模板，表示某年的第ww周的第d天。比如 ``yyyyWwwd`` 或 ``yyyy-Www`` 等。
+    对于ISO周历而言，其格式为 ``yyyy[-]W[-]ww[-]d`` 模板，表示某年的第ww周的第d天。
+    比如 ``yyyyWwwd`` 或 ``yyyy-Www`` 等。
 
 .. _FORMAT_DATE_OUT:
 
@@ -32,21 +33,24 @@ FORMAT参数
 
     参考 :ref:`FORMAT_DATE_IN <FORMAT_DATE_IN>` 的相关说明。除此之外：
 
-    - 若模板开头有一个 ``-``，则所有的整数年月日在输出时会省略前置零。比如若使用模板 ``-yyyy-mm-dd`` 则输出类似于 ``2012-1-3`` 而不是 ``2012-01-03``
-    - 若模板为 ``-``，则输出时省略日期，日期和时间中的 ``T`` 也会被省略
+    - 若模板开头有一个 ``-``\ ，则所有的整数年月日在输出时会省略前置零。
+      比如若使用模板 ``-yyyy-mm-dd`` 则输出类似于 ``2012-1-3`` 而不是 ``2012-01-03``
+    - 若模板为 ``-``\ ，则输出时省略日期，日期和时间中的 ``T`` 也会被省略
 
 .. _FORMAT_DATE_MAP:
 
 **FORMAT_DATE_MAP**
     绘制日期字符串时所使用的格式 [ ``yyyy-mm-dd`` ]
 
-    参考 :ref:`FORMAT_DATE_IN <FORMAT_DATE_IN>` 和 :ref:`FORMAT_DATE_OUT <FORMAT_DATE_OUT>` 中的相关说明。除此之外，
+    参考 :ref:`FORMAT_DATE_IN <FORMAT_DATE_IN>` 和 :ref:`FORMAT_DATE_OUT <FORMAT_DATE_OUT>`
+    中的相关说明。除此之外，
 
     - 绘制月份名时的 ``mm`` 可以用 ``o`` 替代，即图上显示 ``Jan`` 而不是 ``01``
     - 用 ``u`` 代替 ``W[-]ww`` ，即图上显示 ``Week 10`` 而不是 ``W10``
 
-    所有的日期文本字符串都由 :ref:`GMT_LANGUAGE <GMT_LANGUAGE>` 、 :ref:`FORMAT_TIME_PRIMARY_MAP <FORMAT_TIME_PRIMARY_MAP>` 和 :ref:`FORMAT_TIME_SECONDARY_MAP <FORMAT_TIME_SECONDARY_MAP>` 控制。
-
+    所有的日期文本字符串都由 :ref:`GMT_LANGUAGE <GMT_LANGUAGE>` 、
+    :ref:`FORMAT_TIME_PRIMARY_MAP <FORMAT_TIME_PRIMARY_MAP>` 和
+    :ref:`FORMAT_TIME_SECONDARY_MAP <FORMAT_TIME_SECONDARY_MAP>` 控制。
 
 时间数据的输入/输出/绘图格式：
 
@@ -55,7 +59,9 @@ FORMAT参数
 **FORMAT_CLOCK_OUT**
     输出时间字符串时所使用的格式 [ ``hh:mm:ss`` ]
 
-    默认使用24小时制。若要使用12小时制，可以在字符串的最后加上 ``am`` 、 ``AM`` 、 ``a.m.`` 、 ``A.M.`` 。比如 ``hh:mm:ss.xxx`` 、 ``hh:mm`` 、 ``hh:mm.xxx`` 、 ``hha.m.`` 等等。
+    默认使用24小时制。若要使用12小时制，可以在字符串的最后加上
+    ``am`` 、 ``AM`` 、 ``a.m.`` 、 ``A.M.`` 。
+    比如 ``hh:mm:ss.xxx`` 、 ``hh:mm`` 、 ``hh:mm.xxx`` 、 ``hha.m.`` 等等。
 
     - 若时间格式模板以 ``-`` 开头，则输出时间字符串时不会输出前置0
     - 若时间格式模板为 ``-`` ，则在输出日期时间时不输出时间字符串
@@ -65,7 +71,8 @@ FORMAT参数
 **FORMAT_CLOCK_IN**
     输入数据中时间数据的格式 [ ``hh:mm:ss`` ]
 
-    默认使用24小时制，即 ``hh:mm:ss`` ，若要使用12小时制，则在参数后加上 ``am|pm|AM|PM`` 。比如 ``hh:mm`` 或 ``hh:mm:ssAM``
+    默认使用24小时制，即 ``hh:mm:ss`` ，若要使用12小时制，则在参数后加上
+    ``am|pm|AM|PM`` 。比如 ``hh:mm`` 或 ``hh:mm:ssAM``
 
 .. _FORMAT_CLOCK_MAP:
 
@@ -111,7 +118,8 @@ FORMAT参数
 **FORMAT_GEO_MAP**
     绘图时地理坐标的显示格式 [ ``ddd.mm.ss`` ]
 
-    格式的具体定义参考 :ref:`FORMAT_GEO_OUT <FORMAT_GEO_OUT>` ，但具体格式会进一步由 ``-B`` 选项中的值控制。除此之外，还可以在格式后面加上 ``A`` 以表示绘制坐标的绝对值。
+    格式的具体定义参考 :ref:`FORMAT_GEO_OUT <FORMAT_GEO_OUT>` ，但具体格式会
+    进一步由 ``-B`` 选项中的值控制。除此之外，还可以在格式后面加上 ``A`` 以表示绘制坐标的绝对值。
 
 
 浮点数的输出/绘图：
@@ -123,14 +131,17 @@ FORMAT参数
 
     具体的格式遵循C语言 ``printf`` 函数的格式定义，比如 ``%.3lf`` 。
 
-    若需要为不同列指定不同的输出格式，可以使用多个逗号分隔的 ``cols:format`` 形式。其中， ``cols`` 可以是列号（比如5代表数据的第六列），也可以是列范围（比如3-7表示第4到8列），不指定 ``cols`` 的格式将用于其他余下的列。比如 ``0:%.3lf,1-3:%.12lg,%lf``
+    若需要为不同列指定不同的输出格式，可以使用多个逗号分隔的 ``cols:format`` 形式。
+    其中， ``cols`` 可以是列号（比如5代表数据的第六列），也可以是列范围（比如3-7表示第4到8列），
+    不指定 ``cols`` 的格式将用于其他余下的列。比如 ``0:%.3lf,1-3:%.12lg,%lf``
 
     也可以列出N个用空格分隔的格式，这些格式分别应用到数据的前N列中，比如 ``%.3lf %.2lf %lf`` 。
 
     .. note::
 
        #. 由于 GMT 内部将所有数字以浮点型保存，因而若使用整型格式 ``%d`` 显示则会出错
-       #. 若设置为 ``%'lg`` ，则 ``10000`` 会显示成 ``10,000`` 。由于单引号的特殊意义，因而可能需要转义，即写成 ``%\'lg``
+       #. 若设置为 ``%'lg`` ，则 ``10000`` 会显示成 ``10,000`` 。
+          由于单引号的特殊意义，因而可能需要转义，即写成 ``%\'lg``
 
 .. _FORMAT_FLOAT_MAP:
 
@@ -171,4 +182,5 @@ FORMAT参数
 **FORMAT_TIME_STAMP**
     GMT时间戳中时间信息的显示格式 [ ``%Y %b %d %H:%M:%S`` ]
 
-    该选项的值用C函数 `strftime <https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.15.html#strftime>`_ 解析，故而理论上可以包含任意文本。
+    该选项的值用C函数 `strftime <https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.15.html#strftime>`_ i
+    解析，故而理论上可以包含任意文本。

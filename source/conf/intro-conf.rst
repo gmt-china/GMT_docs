@@ -8,14 +8,14 @@ GMT的每个模块都有众多选项，除此之外，GMT还有100多个参数�
 数据的处理方式。
 
 所有GMT参数都有一个系统默认值，你可以使用 ``gmt defaults -D`` 命令查看所有参数的
-系统默认值.
+系统默认值。
 
 当执行一个GMT程序时，首先会将所有参数初始化为系统默认值，然后去搜索 :file:`gmt.conf`
 文件。若找到该文件，则会读取该文件中的参数值并覆盖系统默认值。
 
-:file:`gmt.conf` 文件的搜索路径按优先级排序为： 
+:file:`gmt.conf` 文件的搜索路径按优先级排序为：
 :file:`./gmt.conf` > :file:`~/.gmt/gmt.conf` > :file:`~/gmt.conf` 。
-即GMT程序首先会在当前目录寻找配置文件；若未找到，则到 :file:`~/.gmt` 
+即GMT程序首先会在当前目录寻找配置文件；若未找到，则到 :file:`~/.gmt`
 目录下寻找；若仍为找到，则在家目录下寻找。
 
 设计思路
@@ -25,8 +25,8 @@ GMT将这100多个参数单独放置在配置文件 :file:`gmt.conf` 中，主�
 
 #. 让每个模块的命令行语法中都涵盖如此多的参数是不实际的，这些参数有些很少或
    几乎不需要改变（比如地图投影过程中使用的地球椭率）
-#. 针对不同的应用环境，设置不同的GMT配置文件，保存到不同的 :file:`gmt.conf` 
-   文件中，当需要使用一组特定的GMT配置时，可以在GMT命令行中使用 ``+<defaultfile>`` 
+#. 针对不同的应用环境，设置不同的GMT配置文件，保存到不同的 :file:`gmt.conf`
+   文件中，当需要使用一组特定的GMT配置时，可以在GMT命令行中使用 ``+<defaultfile>``
    来指定要使用的配置文件。比如，不同的期刊可能要求不同的字体和字号，
    你可以使用同样的脚本加上不同的配置文件来满足不同期刊的要求；又比如，
    用于出版的图件和用于PowerPoint演示的图件通常需要用不同的颜色和字号。
@@ -42,7 +42,7 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 #. 在单个GMT命令中使用 ``+<defaultfile>`` 的语法，来指定使用配置文件 ``<defaultfile>``\ ，
    该方法仅对单个命令有效::
 
-      gmt psxy ... +custom_gmt.conf > test.ps
+      gmt plot ... +custom_gmt.conf
 
 #. 在脚本开始执行之前，将要使用的配置文件 :file:`gmt.conf` 复制到当前目录，
    待脚本执行完毕后，删除该配置文件。该方法要求写脚本时要非常小心，
@@ -50,17 +50,18 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 
    .. code-block:: bash
 
+      gmt begin map pdf
       cp ~/somewhere/gmt.conf ./gmt.conf
-      gmt psxy ...
-      gmt pscoast ...
-      gmt psxy ...
-      rm gmt.conf
+      gmt plot ...
+      gmt coast ...
+      gmt plot ...
+      gmt end
 
 #. 用 ``gmtset`` 模块在脚本执行的过程中显式地修改GMT参数值
 
    比如，需要设置主标注的字体为 ``12p,Times-Bold,red`` ::
 
-      gmt gmtset FONT_ANNOT_PRIMARY 12p,Times-Bold,red
+      gmt set FONT_ANNOT_PRIMARY 12p,Times-Bold,red
 
    ``gmtset`` 会修改当前目录下的 :file:`gmt.conf` 文件中的相应参数值，
    进而影响到接下来其它GMT程序的执行。若当前目录没有 :file:`gmt.conf` 文件，
@@ -73,15 +74,12 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
    比如，针对某个GMT命令，为了临时设置浮点数的输出格式包含更多的小数位，
    而不影响其他命令的浮点数输出格式，可以在该命令中加上 ``--FORMAT_FLOAT_OUT=%.16lg`` 。
 
-#. GMT提供了“隔离”模式，使得仅在单个脚本执行的过程中修改配置，当脚本执行完毕后
-   自动恢复到原始配置，见附录 :doc:`/appendix/isolation-mode` 一节
-
 一般情况下，仅推荐使用方法三和方法四。
 
 在使用方法三的时候，需要注意一个潜在的问题。假如一个脚本中，只有三个命令，
 首先执行了GMT命令A，然后使用 ``gmtset`` 将字体由默认字体a修改为字体b，然后
 又执行了GMT命令B。则命令A使用的是字体a，命令B使用的是字体b，这是自己想要的效果，
-到此为止都是没有问题的。若再次执行该脚本，由于当前目录下已经有了上一次执行生成的 
+到此为止都是没有问题的。若再次执行该脚本，由于当前目录下已经有了上一次执行生成的
 :file:`gmt.conf` 文件，且文件中使用的是字体b，则命令A受到该参数文件的影响使用了字体b，
 ``gmtset`` 将字体b修改为字体b，命令B使用字体b。这导致了执行同一个脚本出现了
 不同的结果，经常会浪费很多的时间用来调试和排错。最好的做法是在脚本结束时删除
@@ -100,8 +98,7 @@ GMT系统自带的 :file:`gmt.conf` 文件中对每个参数都给了一个合�
 删除配置文件
 ------------
 
-GMT 从5.4.0版本开始新增了 ``gmt clear conf`` 命令，可以用于删除配置文件 ``gmt.conf``，
-其等效于 ``rm gmt.conf`` 命令。
+可以使用 ``gmt clear conf`` 命令删除配置文件 ``gmt.conf``\ 。
 
 GMT配置示例
 -----------

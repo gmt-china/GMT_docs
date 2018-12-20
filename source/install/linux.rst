@@ -1,39 +1,18 @@
 Linux 下安装GMT
 ===============
 
-安装预编译版
+解决依赖关系
 ------------
 
-大多数 Linux 发行版都可以通过系统自带的软件包管理器直接安装 GMT。但通常系统软件
-源里自带的 GMT 版本都比较老，因而如果可能，还是建议 Linux 用户手动编译安装。
-
-CentOS 7 用户::
-
-    sudo yum install epel-release
-    sudo yum install GMT GMT-devel GMT-doc
-    sudo yum install dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
-
-Ubuntu 用户::
-
-    sudo apt-get install gmt gmt-dcw gmt-gshhg
-
-其他发行版用户可以到 https://pkgs.org/ 查询自己的 Linux 发行版软件源中是否包含
-GMT 以及 GMT 的具体版本。
-
-从源码编译
-----------
-
-为了使用最新版本的 GMT，建议用户从源码编译 GMT。
-
-解决依赖关系
-~~~~~~~~~~~~
-
-GMT 主要依赖于 cmake（>=2.8.5）、fftw（>=3.3）、glib2（>=2.32）、
-netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
+GMT 在运行时依赖 fftw（>=3.3）、glib2（>=2.32）、netCDF（>4.0且支持netCDF-4/HDF5）、
+ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）。
+因而，需要先安装GMT所依赖的软件包。
 
 .. warning::
 
-   由于 Linux 发行版众多，以下仅所列仅供参考，请自行确认自己的发行版上软件包的
+   由于 Linux 发行版众多，不同发行办下软件包的名称不同。
+   因而，以下仅所列仅供参考，其他用户应自行根据关键词到
+   https://pkgs.org 上确认自己使用的发行版上软件包的
    具体名字。
 
 对于Ubuntu/Debian::
@@ -41,10 +20,12 @@ netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
     # 更新
     $ sudo apt-get update
 
+    # 安装编译所需软件包
     $ sudo apt-get install gcc g++ cmake make libc6
+
+    # 安装运行所需软件包
     $ sudo apt-get install ghostscript
     $ sudo apt-get install libnetcdf-dev
-
     $ sudo apt-get install libgdal-dev python-gdal
     $ sudo apt-get install liblapack3
     $ sudo apt-get install libglib2.0-dev
@@ -53,36 +34,44 @@ netCDF（>4.0且支持netCDF-4/HDF5）、ghostscript等。
 
 对于CentOS/RHEL/Fedora::
 
-    $ sudo yum install epel-release  # CentOS用户必须先安装epel-release
+    # CentOS用户必须先安装epel-release, RHEL/Fedora用户无需安装
+    $ sudo yum install epel-release
 
+    # 安装编译所需软件包
     $ sudo yum install gcc gcc-c++ cmake make glibc
+
+    # 安装运行所需软件包
     $ sudo yum install ghostscript
     $ sudo yum install netcdf-devel
-
     $ sudo yum install gdal-devel gdal-python
     $ sudo yum install lapack64-devel lapack-devel
     $ sudo yum install glib2-devel
     $ sudo yum install pcre-devel
     $ sudo yum install fftw-devel
 
-确认 netCDF 支持 netCDF-4/HDF5 格式::
+安装完依赖包后，需要进一步确认 netCDF 是否支持 netCDF-4/HDF5 格式::
 
     $ nc-config --has-nc4
     yes
 
-若输出为 ``yes`` 则可正常安装 GMT，否则无法正常安装。
+若输出为 ``yes`` 则表示安装的 netCDF 支持 netCDF-4/HDF5 格式，则可继续安装 GMT，
+否则无法安装 GMT。
 
 下载
-~~~~
+----
 
-Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
+Linux下安装GMT需要下载如下三个文件（这里提供的国内下载源）：
 
 #. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.4.4-src.tar.gz
 #. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz
 #. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz
 
+.. TODO::
+
+    确认下载链接正确性
+
 安装GMT
-~~~~~~~
+-------
 
 将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装：
 
@@ -118,9 +107,9 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
   ``/opt/GMT-5.4.4`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.4`` 等有可读写
   权限的路径；
-- ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，
-  也可设置为TRUE
-- ``GMT_DATA_URL`` 设置从中科大镜像下载GMT数据，以加快数据下载速度
+- ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
+  软链接，不建议设置为 ``TRUE``
+- ``GMT_DATA_URL`` 设置从中科大镜像下载GMT数据，以加快数据下载速度（可选）
 - ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
 - ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
 - ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能
@@ -133,11 +122,11 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 
    此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的5行语句。
 
-   对于高级用户而言，可以直接在 GMT 提供的配置模板基础上进行更多配置。将
-   ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake`` ，
+   有经验的用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。
+   将 ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake``\ ，
    然后根据配置文件中的大量注释说明信息自行修改配置文件。
 
-继续执行如下命令以检查GMT的依赖关系::
+继续执行如下命令以检查GMT的依赖是否满足::
 
     # 注意，此处新建的 build 文件夹位于 gmt-5.4.4 目录下，不是 gmt-5.4.4/cmake 目录下
     $ mkdir build
@@ -181,8 +170,8 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
     -- Generating done
 
 正常情况下的检查结果应该与上面给出的类似。若出现问题，则需要检查之前的步骤是否
-有误，检查完毕后重新执行 ``cmake ..`` ，直到出现类似的检查结果。检查完毕后，
-开始编译和安装::
+有误，检查完成后删除原build目录再新建build，继续执行 ``cmake ..``\ ，
+直到出现类似的检查结果。检查完毕后，开始编译和安装::
 
     $ make
     $ sudo make install
@@ -197,7 +186,7 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
    但并行编译可能在个别发行版上无法使用。
 
 修改环境变量
-~~~~~~~~~~~~
+------------
 
 修改环境变量并使其生效：
 
@@ -216,9 +205,9 @@ Linux安装GMT需要下载三个文件（这里提供的国内下载源）：
 - 第四个命令是重新载入 bash，相当于 ``source ~/.bashrc``
 
 测试是否安装成功
-~~~~~~~~~~~~~~~~
+----------------
 
-在终端键入 ``gmt`` ，若出现如下输出，则安装成功::
+打开终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
 
     $ gmt --version
     5.4.4

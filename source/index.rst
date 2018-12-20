@@ -7,7 +7,7 @@ GMT 参考手册
       :width: 80%
       :align: center
 
-欢迎来到 `GMT <http://gmt.soest.hawaii.edu>`_ （Generic Mapping Tools）的世界。
+欢迎来到 `Generic Mapping Tools <http://gmt.soest.hawaii.edu>`_ 的世界。
 
 本项目是 `GMT中文社区 <https://gmt-china.org>`_ 维护的GMT中文参考手册，既可以作为
 入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
@@ -28,15 +28,15 @@ GMT 参考手册
    :hidden:
 
    preface
-   intro
-   install
-   tutorial
-   basis
-   io
-   option
-   conf
-   proj
-   dataset
+   intro/index
+   install/index
+   tutorial/index
+   basis/index
+   io/index
+   option/index
+   conf/index
+   proj/index
+   dataset/index
    style
-   api
-   appendix
+   api/index
+   appendix/index
