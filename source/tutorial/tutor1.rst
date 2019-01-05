@@ -8,17 +8,12 @@
 
 GMT可以绘制最简单的线性X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_1.sh
+.. gmt-plot::
    :language: bash
-   :lines: 2
-
-绘图结果如图所示：
-
-.. figure:: /images/GMT_tutor1_1.*
-   :width: 100%
+   :caption: 线性X-Y图
    :align: center
 
-   线性X-Y图
+    gmt psbasemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t"Linear X-Y Plot" > GMT_tutor1_1.ps
 
 在这个示例中：
 
