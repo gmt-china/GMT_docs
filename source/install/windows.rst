@@ -43,7 +43,7 @@ ghostscript，查看PS文件需要使用 gsview。日常数据处理需要Linux�
    安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
        C:\Users\xxxx> gmt --version
-       5.4.4
+       5.4.5
 
    即表示安装成功。
 
@@ -84,7 +84,7 @@ ghostscript，查看PS文件需要使用 gsview。日常数据处理需要Linux�
 
 欢迎补充，请参考：
 
-#. http://gmt.soest.hawaii.edu/doc/5.4.4/GMT_Docs.html#cygwin-and-gmt
+#. http://gmt.soest.hawaii.edu/doc/5.4.5/GMT_Docs.html#cygwin-and-gmt
 #. http://gmt.soest.hawaii.edu/projects/gmt/wiki/BuildingGMT#Cygwin
 
 在 MSYS2 中安装
