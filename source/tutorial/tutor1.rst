@@ -34,17 +34,13 @@ GMT可以绘制最简单的线性X-Y图。
 
 下面展示如何用GMT绘制对数X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_2.sh
-   :language: bash
-   :lines: 2
+.. gmt-plot::
+    :language: bash
+    :caption: 对数X-Y图
 
-绘图结果如图所示：
+    gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l"Wavelength (m)" \
+        -Bya1pf3+l"Power (W)" -BWS > GMT_tutor1_2.ps
 
-.. figure:: /images/GMT_tutor1_2.*
-   :width: 100%
-   :align: center
-
-   对数X-Y图
 
 此示例中：
 
