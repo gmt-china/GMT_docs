@@ -9,11 +9,18 @@
 #. ``pscoast``：绘制政区边界、湿地（水体）、比例尺
 #. ``psscale``: 绘制色标图例
 
+绘图过程中需要的 `Tibet.cpt <https://github.com/gmt-china/GMT_docs/blob/master/source/scripts/Tibet.cpt>`_ 。
+
 代码为：
 
-:download:`Tibet.cpt </scripts/Tibet.cpt>`
+.. literalinclude:: /scripts/GMT_tutor3.sh
+   :language: bash
 
-.. gmt-plot:: /scripts/GMT_tutor3.sh
+结果：
+
+.. figure:: /images/GMT_tutor3.*
+   :width: 100%
+   :align: center
 
 主要参数解释：
 
