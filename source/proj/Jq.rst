@@ -13,15 +13,10 @@
 - ``<lon>`` 是中心经线，默认为地图区域的中心
 - ``<lat>`` 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
 
-示例::
+.. gmt-plot::
+    :caption: 使用Plate Carrée投影绘制全球地图
 
     gmt pscoast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -P > GMT_equi_cyl.ps
-
-.. figure:: /images/GMT_equi_cyl.*
-   :width: 100%
-   :align: center
-
-   使用Plate Carrée投影绘制全球地图
 
 选择不同的标准纬线，则可以获取经度和纬度的不同缩放比例。流行的几个标准纬线如下：
 

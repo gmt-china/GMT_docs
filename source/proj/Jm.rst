@@ -15,14 +15,9 @@
 - ``<lon>`` 中心经线，默认为地图区域的中心
 - ``<lat>`` 标准纬线，默认值为赤道。若要指定标准纬线，则必须同时指定中心经线
 
-示例::
+.. gmt-plot::
+    :caption: Mercator投影
 
     gmt set MAP_FRAME_TYPE fancy
     gmt pscoast -R0/360/-70/70 -Jm1.2e-2i -Bxa60f15 -Bya30f15 -Dc -A5000 -Gred \
                 -P > GMT_mercator.ps
-
-.. figure:: /images/GMT_mercator.*
-   :width: 100%
-   :align: center
-
-   Mercator投影

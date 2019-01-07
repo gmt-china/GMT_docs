@@ -138,42 +138,36 @@ GMT中至少有两处会使用DCW数据：
 绘制洲界
 ++++++++
 
-绘制全部亚洲国家的边界::
+绘制全部亚洲国家的边界：
 
-    $ gmt coast -R=AS -JM20c -Baf -E=AS+p0.25p,red -pdf dataset_dcw_01
+.. gmt-plot::
 
-.. figure:: /images/dataset_dcw_01.*
-   :width: 100%
-   :align: center
+    gmt pscoast -R=AS -JM20c -Baf -E=AS+p0.25p,red > dataset_dcw_01.ps
 
 绘制国界
 ++++++++
 
-绘制中国大陆边界（不含台湾、香港、澳门），这里可以不使用 ``-R`` 选项::
+绘制中国大陆边界（不含台湾、香港、澳门），这里可以不使用 ``-R`` 选项:
 
-    $ gmt coast -JM20c -Baf -ECN+p0.25p,red -pdf dataset_dcw_02
+.. gmt-plot::
 
-.. figure:: /images/dataset_dcw_02.*
-   :width: 100%
-   :align: center
+    gmt pscoast -JM20c -Baf -ECN+p0.25p,red > dataset_dcw_02.ps
 
 绘制省界
 ++++++++
 
-绘制内蒙古，并修改边界和填充颜色::
+绘制内蒙古，并修改边界和填充颜色:
 
-    $ gmt coast -JM20c -Baf -ECN.15+p1p,blue+gred -pdf dataset_dcw_03
+.. gmt-plot::
 
-.. figure:: /images/dataset_dcw_03.*
-   :width: 100%
-   :align: center
+    gmt pscoast -JM20c -Baf -ECN.15+p1p,blue+gred > dataset_dcw_03.ps
 
 导出省界数据
 ++++++++++++
 
 导出内蒙古的边界数据::
 
-    $ gmt pscoast -ECN.15 -M > neimenggu.dat
+    gmt pscoast -ECN.15 -M > neimenggu.dat
 
 这里只需要使用 ``-M`` 选项即可。
 
@@ -182,12 +176,7 @@ GMT中至少有两处会使用DCW数据：
 
 这个例子算是一个相对比较完整的中国地图，包含了必要的省界信息。
 
-.. literalinclude:: /scripts/dataset_dcw_04.sh
-   :language: bash
-
-.. figure:: /images/dataset_dcw_04.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/dataset_dcw_04.sh
 
 备注
 ----

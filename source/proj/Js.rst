@@ -17,43 +17,33 @@
 极区立体地图
 ------------
 
-下面的示例中，投影中心为北极，地图边界与经线和纬线完全重合::
+下面的示例中，投影中心为北极，地图边界与经线和纬线完全重合。
+
+.. gmt-plot::
+    :caption: 极区立体保角投影
 
     gmt pscoast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
                 -Sseashell -P > GMT_stereographic_polar.ps
 
-.. figure:: /images/GMT_stereographic_polar.*
-   :width: 100%
-   :align: center
-
-   极区立体保角投影
-
 矩形立体地图
 ------------
 
-与Lambert方位等面积投影类似，也可以通过指定地图区域左下角和右上角的坐标来绘制一个矩形区域::
+与Lambert方位等面积投影类似，也可以通过指定地图区域左下角和右上角的坐标来绘制一个矩形区域。
+
+.. gmt-plot::
+    :caption: 矩形边界下的极区立体保角投影
 
     gmt set MAP_ANNOT_OBLIQUE 30
     gmt pscoast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest \
                 -Slightgray -P > GMT_stereographic_rect.ps
 
-.. figure:: /images/GMT_stereographic_rect.*
-   :width: 100%
-   :align: center
-
-   矩形边界下的极区立体保角投影
 
 一般立体地图
 ------------
 
-示例::
+.. gmt-plot::
+    :caption: 一般立体投影
 
     gmt set MAP_ANNOT_OBLIQUE 0
     gmt pscoast -R100/-42/160/-8r -JS130/-30/4i -Bag -Dl -A500 -Ggreen -Slightblue \
                 -Wthinnest -P > GMT_stereographic_general.ps
-
-.. figure:: /images/GMT_stereographic_general.*
-   :width: 100%
-   :align: center
-
-   一般立体投影

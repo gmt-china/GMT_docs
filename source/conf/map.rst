@@ -28,11 +28,9 @@ MAP参数
 
     下图给出了不同的底图边框类型的效果：
 
-    .. figure:: /images/GMT_frame_type.*
-       :width: 100%
-       :align: center
-
-       GMT底图边框类型
+    .. gmt-plot:: /scripts/GMT_frame_type.sh
+        :show-code: false
+        :caption: GMT底图边框类型
 
 .. _MAP_FRAME_PEN:
 

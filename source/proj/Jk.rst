@@ -14,22 +14,16 @@ Eckert IV和VI投影由Max Eckert-Greiffendorff于1906年提出，是伪圆柱�
 
 ``<lon>`` 为中心经线，默认值为地图区域的中心。
 
-Eckert IV示例::
+Eckert IV示例：
+
+.. gmt-plot::
+    :caption: Eckert IV投影绘制全球图
 
     gmt pscoast -Rg -JKf4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
 
-.. figure:: /images/GMT_eckert4.*
-   :width: 100%
-   :align: center
+Eckert VI示例:
 
-   Eckert IV投影绘制全球图
-
-Eckert VI示例::
+.. gmt-plot::
+    :caption: Eckert VI投影绘制全球图
 
     gmt pscoast -Rg -JKs4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
-
-.. figure:: /images/GMT_eckert6.*
-   :width: 100%
-   :align: center
-
-   Eckert VI投影绘制全球图

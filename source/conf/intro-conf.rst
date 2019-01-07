@@ -105,20 +105,14 @@ GMT配置示例
 
 下面列出部分会影响到绘图效果的GMT参数。
 
-.. figure:: /images/GMT_Defaults_1.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_Defaults_1.sh
+    :show-code: false
+    :caption: GMT配置参数示例1
 
-   GMT配置参数示例1
+.. gmt-plot:: /scripts/GMT_Defaults_2.sh
+    :show-code: false
+    :caption: GMT配置参数示例2
 
-.. figure:: /images/GMT_Defaults_2.*
-   :width: 100%
-   :align: center
-
-   GMT配置参数示例2
-
-.. figure:: /images/GMT_Defaults_3.*
-   :width: 100%
-   :align: center
-
-   GMT配置参数示例3
+.. gmt-plot:: /scripts/GMT_Defaults_3.sh
+    :show-code: false
+    :caption: GMT配置参数示例3

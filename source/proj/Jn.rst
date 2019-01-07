@@ -11,12 +11,7 @@
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-示例::
+.. gmt-plot::
+    :caption: 使用Robinson投影绘制全球地图
 
     gmt pscoast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2 -P > GMT_robinson.ps
-
-.. figure:: /images/GMT_robinson.*
-   :width: 100%
-   :align: center
-
-   使用Robinson投影绘制全球地图

@@ -12,15 +12,11 @@
 - ``<distance>`` 是边界离投影中心的度数，默认值为90
 - ``<scale>`` 地图比例尺 ``1:xxxx`` 或 ``<radius>/<latitude>`` （ ``<radius>`` 是纬线 ``<latitude>`` 与投影中心在图上的距离）
 
-示例::
+.. gmt-plot::
+    :caption: 使用正交投影绘制半球
 
     gmt pscoast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -P > GMT_orthographic.ps
 
-.. figure:: /images/GMT_orthographic.*
-   :width: 100%
-   :align: center
-
-   使用正交投影绘制半球
 
 ``-Jg`` 加上更多的参数时还可以用于绘制透视投影，以在二维平面内模拟从太空看三维的地球。具体的参数为::
 
@@ -34,13 +30,8 @@
 - ``<width>/<height>`` 是视角的角度，单位为度，默认值为60。This number depends on whether you are looking with the naked eye (in which case you view is about 60º wide), or with binoculars, for example.
 - ``<scale>`` as 1:xxxxx or as radius/latitude where radius is distance on map in inches from projection center to a particular oblique latitude
 
-示例::
+.. gmt-plot::
+    :caption: 透视投影
 
     gmt pscoast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown \
                 -Wthinnest -P -Slightblue --MAP_ANNOT_MIN_SPACING=0.25i > GMT_perspective.ps
-
-.. figure:: /images/GMT_perspective.*
-   :width: 100%
-   :align: center
-
-   透视投影
