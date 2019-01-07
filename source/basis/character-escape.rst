@@ -59,11 +59,9 @@
 转义字符示例
 ------------
 
-.. figure:: /images/GMT_escape_examples.*
-   :width: 100%
-   :align: center
-
-   GMT转义序列示例
+.. gmt-plot:: /scripts/GMT_escape_examples.sh
+    :show-code: false
+    :caption: GMT转义序列示例
 
 注意事项
 --------

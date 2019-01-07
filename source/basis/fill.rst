@@ -43,11 +43,9 @@
 都是使用默认的黑白色在 ``<dpi>`` 取300的环境下生成的。每张小图中左半部分使用
 ``-Gp`` 绘制，右半部分使用 ``-GP`` 绘制。
 
-.. figure:: /images/GMT_patterns.png
-   :width: 100%
-   :align: center
-
-   GMT内置位图图案
+.. gmt-plot:: /scripts/GMT_patterns.sh
+    :show-code: false
+    :caption: GMT内置位图图案
 
 填充小结
 --------

@@ -17,11 +17,9 @@
 
 下图给出了12号字体（Symbol字符集）和34字体（Pifont ZapfDingbats）的字符与八进制码对应关系：
 
-.. figure:: /images/GMT_symbol_dingbats.*
-   :width: 100%
-   :align: center
-
-   Symbol和Pifont字体八进制码
+.. gmt-plot:: /scripts/GMT_symbol_dingbats.sh
+    :show-code: false
+    :caption: Symbol和Pifont字体八进制码
 
 比如需要字符 :math:`\beta` ，则首先设置文本的字体为12号字体，查上表可知，
 字符 :math:`\beta` 位于 ``\14x`` 行 ``2`` 列，因而其对应的八进制码为 ``\142`` 。
@@ -30,11 +28,9 @@
 
 下图给出了一些示例：
 
-.. figure:: /images/GMT_symbol_examples.*
-   :width: 100%
-   :align: center
-
-   12号和34号字体示例
+.. gmt-plot:: /scripts/GMT_symbol_examples.sh
+    :show-code: false
+    :caption: 12号和34号字体示例
 
 对于26个希腊字母的大小写而言，由于其与26个英语字母的大小写一一对应，所以如果
 熟悉的话，完全可以用英文字母写文本，然后设置字体为12号字体，如第一行所示，
@@ -44,4 +40,3 @@
 用户可通过转义字符 @~ 或 @%% 来使用上述特殊字体，例如::
 
     gmt psbasemap -R0/10/0/10 -JX10c/10c -BWSne -Bx2+l"@~\161@~ or @%12%\161@%%" -By2+l"@%34%\164@%%" > test.ps
-

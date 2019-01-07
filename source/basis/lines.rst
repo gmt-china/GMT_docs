@@ -24,11 +24,9 @@
 此时线段的起点和终点与数据指定的点重合，粗线在绘制线条时使用了 ``-W2p+o1c/500k`` 选项，
 即在起点处偏移1厘米，在终点处偏移500千米。
 
-.. figure:: /images/GMT_line_offset.*
-   :width: 100%
-   :align: center
-
-   线段起点偏移示意图
+.. gmt-plot:: /scripts/GMT_line_offset.sh
+    :show-code: false
+    :caption: 线段起点偏移示意图
 
 线条平滑
 --------
@@ -38,11 +36,9 @@
 
 下图中，左图使用了 ``-W2p`` 选项，右边使用了 ``-W2p+s`` 。
 
-.. figure:: /images/GMT_bezier.*
-   :width: 100%
-   :align: center
-
-   线条自动样条插值示意图
+.. gmt-plot:: /scripts/GMT_bezier.sh
+    :show-code: false
+    :caption: 线条自动样条插值示意图
 
 端点箭头
 --------
@@ -57,8 +53,6 @@
 
 下图中细线是通常绘制的线段，粗线使用的选项是 ``-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue`` 。
 
-.. figure:: /images/GMT_line_arrow.*
-   :width: 100%
-   :align: center
-
-   线条端点箭头示意图
+.. gmt-plot:: /scripts/GMT_line_arrow.sh
+    :show-code: false
+    :caption: 线条端点箭头示意图
