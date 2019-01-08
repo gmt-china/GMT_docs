@@ -7,6 +7,7 @@
 
 import os
 import sys
+import datetime
 sys.path.insert(0, os.path.abspath('_extension'))
 
 # -- General configuration ------------------------------------------------
@@ -38,7 +39,7 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
 project = u'GMT参考手册'
-copyright = u'2014-2018, GMT中文社区'
+copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = u'GMT中文社区'
 version = '5.4.5'
 release = version
