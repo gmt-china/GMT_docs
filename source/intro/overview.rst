@@ -29,7 +29,7 @@ GMT源码目前主要由 Paul Wessel、Joaquim Luis、Remko Scharroo和Leonardo 
 其源码公开在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上，任何用户
 均可贡献自己的代码。
 
-.. figure:: /static_images/GMT5_Summit_2016.jpg
+.. figure:: /images/GMT5_Summit_2016.jpg
    :width: 100%
    :align: center
 
