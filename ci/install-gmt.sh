@@ -12,9 +12,9 @@ sudo apt-get install -y build-essential cmake libcurl4-gnutls-dev libnetcdf-dev 
 GMT_INSTALL=/opt/GMT-${GMT_VERSION}
 
 # download files
-wget https://github.com/GenericMappingTools/gmt/archive/${GMT_VERSION}.tar.gz -O gmt-${GMT_VERSION}-src.tar.gz
-wget http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION}.tar.gz
-wget http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz
+wget --quiet https://github.com/GenericMappingTools/gmt/archive/${GMT_VERSION}.tar.gz -O gmt-${GMT_VERSION}-src.tar.gz
+wget --quiet http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION}.tar.gz
+wget --quiet http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz
 
 # Now start to install
 tar -xf gmt-${GMT_VERSION}-src.tar.gz
