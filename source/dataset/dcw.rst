@@ -142,7 +142,7 @@ GMT中至少有两处会使用DCW数据：
 
 .. gmt-plot::
 
-    gmt pscoast -R=AS -JM20c -Baf -E=AS+p0.25p,red > dataset_dcw_01.ps
+    gmt pscoast -R15/180/-20/70 -JM12c -Baf -E=AS+p0.25p,red > dataset_dcw_01.ps
 
 绘制国界
 ++++++++
@@ -151,7 +151,7 @@ GMT中至少有两处会使用DCW数据：
 
 .. gmt-plot::
 
-    gmt pscoast -JM20c -Baf -ECN+p0.25p,red > dataset_dcw_02.ps
+    gmt pscoast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 > dataset_dcw_02.ps
 
 绘制省界
 ++++++++
@@ -160,7 +160,7 @@ GMT中至少有两处会使用DCW数据：
 
 .. gmt-plot::
 
-    gmt pscoast -JM20c -Baf -ECN.15+p1p,blue+gred > dataset_dcw_03.ps
+    gmt pscoast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 > dataset_dcw_03.ps
 
 导出省界数据
 ++++++++++++
@@ -170,13 +170,6 @@ GMT中至少有两处会使用DCW数据：
     gmt pscoast -ECN.15 -M > neimenggu.dat
 
 这里只需要使用 ``-M`` 选项即可。
-
-绘制多个省界
-++++++++++++
-
-这个例子算是一个相对比较完整的中国地图，包含了必要的省界信息。
-
-.. gmt-plot:: /scripts/dataset_dcw_04.sh
 
 备注
 ----
