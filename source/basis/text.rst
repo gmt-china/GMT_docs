@@ -49,11 +49,9 @@
 
 下图给出了GMT支持的35种字体的列表：
 
-.. figure:: /images/GMT_fonts.*
-   :width: 100%
-   :align: center
-
-   GMT中的35种PS标准字体
+.. gmt-plot:: /scripts/GMT_fonts.sh
+   :show-code: false
+   :caption: GMT中的35种PS标准字体
 
 GMT中可以用字体名（\ **区分大小写**\ ）或对应的字体编号来指定字体 （比如
 Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以及字体名称。每个字体

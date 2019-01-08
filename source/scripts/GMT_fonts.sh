@@ -3,7 +3,44 @@ dy=-0.2222
 y0=4.3
 ps=GMT_fonts.ps
 
-grep -v '^#' PSL_standard_fonts.txt | awk '{print $1}' > tt.d
+cat > tt.d << EOF
+Helvetica
+Helvetica-Bold
+Helvetica-Oblique
+Helvetica-BoldOblique
+Times-Roman
+Times-Bold
+Times-Italic
+Times-BoldItalic
+Courier
+Courier-Bold
+Courier-Oblique
+Courier-BoldOblique
+Symbol
+AvantGarde-Book
+AvantGarde-BookOblique
+AvantGarde-Demi
+AvantGarde-DemiOblique
+Bookman-Demi
+Bookman-DemiItalic
+Bookman-Light
+Bookman-LightItalic
+Helvetica-Narrow
+Helvetica-Narrow-Bold
+Helvetica-Narrow-Oblique
+Helvetica-Narrow-BoldOblique
+NewCenturySchlbk-Roman
+NewCenturySchlbk-Italic
+NewCenturySchlbk-Bold
+NewCenturySchlbk-BoldItalic
+Palatino-Roman
+Palatino-Italic
+Palatino-Bold
+Palatino-BoldItalic
+ZapfChancery-MediumItalic
+ZapfDingbats
+EOF
+
 gmt gmtset MAP_FRAME_PEN thinner
 gmt psxy -R0/5.4/0/$y0 -Jx1i -P -K -B0 <<EOF > $ps
 >
