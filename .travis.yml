@@ -3,6 +3,12 @@ sudo: required
 dist: trusty
 python: 3.6
 
+branches:
+    only:
+        - master
+        # Regex to build tagged commits with version numbers
+        - /\d+\.\d+(\.\d+)?(\S*)?$/
+
 env:
     global:
         - HTML_BUILDDIR=build/dirhtml
