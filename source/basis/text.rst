@@ -88,11 +88,9 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 
 下图给出了几种指定文本属性的方式：
 
-.. figure:: /images/GMT_text_examples.*
-   :width: 100%
-   :align: center
-
-   GMT文本属性示例
+.. gmt-plot:: /scripts/GMT_text_examples.sh
+    :show-code: false
+    :caption: GMT文本属性示例
 
 从下往上，一一解释一下：
 
@@ -105,6 +103,3 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 读者可以将下面命令中 ``-F+f`` 后的 ``<font>`` 修改为不同的值以帮助理解本节的内容::
 
     echo 2.5 0.5 TEXT | gmt pstext -R0/5/0/1 -JX15c/2c -F+f<font> > text.ps
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#specifying-fonts
-.. source: http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html#postscript-fonts-used-by-gmt

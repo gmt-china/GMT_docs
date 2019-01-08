@@ -30,7 +30,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
-    'sphinx_cjkspace.cjkspace'
+    'sphinx_cjkspace.cjkspace',
+    'gmtsphinxext.gmtplot'
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 

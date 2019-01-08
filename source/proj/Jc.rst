@@ -14,13 +14,8 @@
 
 其中， ``<lon>/<lat>`` 为中心的经纬度。
 
-示例::
+.. gmt-plot::
+    :caption: Cassini投影绘制Sardinia岛
 
     gmt pscoast -R7:30/38:30/10:30/41:30r -JC8.75/40/2.5i -Bafg -LjBR+c40+w100+f+o0.15i/0.2i \
         -Gspringgreen  -Dh -Sazure -Wthinnest -Ia/thinner -P --FONT_LABEL=12p > GMT_cassini.ps
-
-.. figure:: /images/GMT_cassini.*
-   :width: 100%
-   :align: center
-
-   Cassini投影绘制Sardinia岛

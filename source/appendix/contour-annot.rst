@@ -222,42 +222,19 @@ X:
 
 第1个实例使用标注位置算法的默认值，沿等值线每1.5英寸放置一个标注:
 
-.. literalinclude:: /scripts/GMT_contour-anno1.sh
-   :language: bash
-   :lines: 3
-
-效果如图 :ref:`Contour label 1 <Contour_label_1>` 所示。
-
-.. _Contour_label_1:
-
-.. figure:: /images/GMT_contour-anno1.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno1.sh
 
    通过指定 **-Gd** 选项的参数，确定了标注的位置(等值线上相距1.5英寸的点)
-
 
 给定标注个数
 ~~~~~~~~~~~~~~~~~~~~~~
 
-现在指定每条等值线上标注的个数：
-
-.. literalinclude:: /scripts/GMT_contour-anno2.sh
-   :language: bash
-   :lines: 3
-
+现在指定每条等值线上标注的个数。
 每条等值线上只放置1个标注，并且要求等值线的长度不小于1英寸，
-效果如图 :ref:`Contour label 2 <Contour_label_2>` 所示。
 
-.. _Contour_label_2:
-
-.. figure:: /images/GMT_contour-anno2.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno2.sh
 
    通过指定 **-Gn** 选项的参数，确定了标注的位置(每条长度超过1英寸的等值线的中心位置)
-
-
 
 给定标注位置
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,23 +242,13 @@ X:
 给定标注所在位置的坐标，由于坐标不是严格位于等值线上，
 指定了非0距离值，即标注位置与等值线距离的上限。
 
-.. literalinclude:: /scripts/GMT_contour-anno3.sh
-   :language: bash
-   :lines: 9
-
-根据等值线的几何形状，自动计算标注的角度，
-效果如图 :ref:`Contour label 3 <Contour_label_3>` 所示。
+根据等值线的几何形状，自动计算标注的角度。
 为了帮助理解，通过指定选项 **-A** 中的 **+d*** 属性，
 采用了debug模式，即在每个给定位置上绘制了一个小圆圈。
 
-.. _Contour_label_3:
-
-.. figure:: /images/GMT_contour-anno3.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno3.sh
 
    通过指定 **-Gf** 选项的参数，确定了标注的位置(等值线上与给定点距离最小的点)
-
 
 线段与等值线交点处放置标注
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,21 +256,12 @@ X:
 通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，
 将标注放置在直线段与等值线的交点。
 
-.. literalinclude:: /scripts/GMT_contour-anno4.sh
-   :language: bash
-   :lines: 3
-
-图中的标注位于数据极值点连线(**Z-/Z+**)与等值线的交点。
-
-.. _Contour_label_4:
-
-.. figure:: /images/GMT_contour-anno4.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno4.sh
 
    通过指定 **-GL** 选项的参数确定了标注的位置(大圆弧与等值线的交点)
 
-图 :ref:`Contour label 4 <Contour_label_4>` 中极值点连线为两点之间的大圆弧，
+图中的标注位于数据极值点连线(**Z-/Z+**)与等值线的交点。
+图中极值点连线为两点之间的大圆弧，
 在其与等值线交点位置处放置了标注。
 同一幅地图中，可以分别指定多条线段。
 
@@ -311,25 +269,13 @@ X:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，
-可以使用广义的相交算法确定标注的位置：
-
-.. literalinclude:: /scripts/GMT_contour-anno5.sh
-   :language: bash
-   :lines: 3
-
-
-.. _Contour_label_5:
-
-.. figure:: /images/GMT_contour-anno5.*
-   :width: 100%
-   :align: center
-
-   通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定了标注的位置
-
-
+可以使用广义的相交算法确定标注的位置。
 多段数据文件 *cross.txt* 中定义了三条曲线，
 在这三条曲线与等值线交点位置处放置了标注，
-效果如图:ref:`Contour label 5 <Contour_label_5>` 所示。
+
+.. gmt-plot:: /scripts/GMT_contour-anno5.sh
+
+   通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定了标注的位置
 
 标注属性实例
 ----------------------------
@@ -348,21 +294,11 @@ X:
 沿大圆弧每1000km放置一个标注，使用距离值作为标注的内容。
 标注的方向与大圆弧垂直：
 
-.. literalinclude:: /scripts/GMT_contour-anno6.sh
-   :language: bash
-   :lines: 4
-
-
-.. _Contour_label_6:
-
-.. figure:: /images/GMT_contour-anno6.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno6.sh
 
    通过指定 **-Sq** 选项的参数控制标注属性.
 
-
-图 :ref:`Contour label 6 <Contour_label_6>` 显示了上述命令的综合效果。
+图中显示了上述命令的综合效果。
 值得注意的是，大圆弧的起点和终点没有与表示极值点的"-"和"+"符号完全重合。
 造成这个现象的原因是，极值点符号"-"和"+"的坐标是等值线的平均值，
 而不是全局或局部极值的位置。
@@ -374,18 +310,7 @@ X:
 本实例中标注与大圆弧平行，以弧度指定标注位置，并添加弧度单位。
 文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。
 
-.. literalinclude:: /scripts/GMT_contour-anno7.sh
-   :language: bash
-   :lines: 4
-
-
-输出结果如图 :ref:`Contour label 7 <Contour_label_7>` 所示。
-
-.. _Contour_label_7:
-
-.. figure:: /images/GMT_contour-anno7.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno7.sh
 
    另一个标注属性实例
 
@@ -397,18 +322,7 @@ X:
 因此需要使用 **awk** 程序从 *transect.txt* 文件中抽取距离为1500km倍数的记录，
 并创建一个新文件，指定标注的位置和内容：
 
-.. literalinclude:: /scripts/GMT_contour-anno8.sh
-   :language: bash
-   :lines: 5
-
-
-输出如图 :ref:`Contour label 8 <Contour_label_8>` 所示。
-
-.. _Contour_label_8:
-
-.. figure:: /images/GMT_contour-anno8.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_contour-anno8.sh
 
    标注的位置和内容来自不同的数据集
 
@@ -423,17 +337,6 @@ X:
 对等值线和线条进行了标注。
 完整的脚本如下：
 
-.. literalinclude:: /scripts/GMT_contour-anno9.sh
-   :language: bash
-   :lines: 24
+.. gmt-plot:: /scripts/GMT_contour-anno9.sh
 
-图件如图 :ref:`Contour label 9 <Contour_label_9>` 所示。
-
-.. _Contour_label_9:
-
-.. figure:: /images/GMT_contour-anno9.*
-   :width: 100%
-   :align: center
-
-   Canary Islands到大西洋沿岸的海啸走时图，特别是纽约。
-   当发生灾难性滑坡时，纽约将在8小时后遭遇大海啸。
+   Canary Islands到大西洋沿岸的海啸走时图，特别是纽约。当发生灾难性滑坡时，纽约将在8小时后遭遇大海啸。

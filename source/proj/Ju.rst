@@ -5,11 +5,8 @@
 
 通用横向Mercator(UTM)投影是横向Mercator投影的一个特殊子集。此处，全球在南北纬84度之间被划分为60个区域，大多数区域的宽度都是6度。每一个区域都有各自位移的中心经线。进一步，每个区域都被划分为纬度带。
 
-.. figure:: /images/GMT_utm_zones.*
-   :width: 100%
-   :align: center
-
-   通用横向Mercator区域布局
+.. gmt-plot:: /scripts/GMT_utm_zones.sh
+    :caption: 通用横向Mercator区域布局
 
 该投影的参数为::
 

@@ -18,17 +18,13 @@ GMT参数中有一些与LOGO相关的参数：
 - :ref:`FORMAT_TIME_STAMP <FORMAT_TIME_STAMP>` 用于控制时间戳的显示格式
 - :ref:`FONT_LOGO <FONT_LOGO>` 时间戳中文本字体
 
-执行如下命令::
 
-    gmt psbasemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -P -UBL/-1.5c/-1.5c/"This is a GMT logo" > GMT_-U.ps
+.. gmt-plot::
+    :caption: ``-U`` 选项加时间戳
 
-得到的图片效果如下：
+    gmt psbasemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -P \
+        -UBL/-1.5c/-1.5c/"This is a GMT logo" > GMT_-U.ps
 
-.. figure:: /images/GMT_-U.*
-   :width: 100%
-   :align: center
-
-   ``-U`` 选项加时间戳
 
 .. important::
 

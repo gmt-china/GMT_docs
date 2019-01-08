@@ -11,11 +11,9 @@ GMT中的投影方式大致可以分为三大类：
 
 GMT支持的投影方式如下图所示。
 
-.. figure:: /images/GMT_-J.*
-   :width: 100%
-   :align: center
-
-   GMT支持的地图投影及坐标变换
+.. gmt-plot:: /scripts/GMT_-J.sh
+    :show-code: false
+    :caption: GMT支持的地图投影及坐标变换
 
 这一章会给出所有投影方式，但地图投影部分不会翻译。
 

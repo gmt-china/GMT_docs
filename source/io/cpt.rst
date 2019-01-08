@@ -122,11 +122,9 @@ CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行::
 
 GMT在CPT中看到这一注释行时就会将该CPT当作时周期性CPT文件。
 
-.. figure:: /images/cpt_cyclic.*
-   :width: 100%
-   :align: center
-
-   绘制周期CPT时会在其左边加上环状符号
+.. gmt-plot:: /scripts/cpt_cyclic.sh
+    :show-code: false
+    :caption: 绘制周期CPT时会在其左边加上环状符号
 
 GMT内置CPT
 ----------
@@ -142,17 +140,13 @@ GMT内置了43个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHO
     gmt makecpt -C<cpt> -T-1/1/0.25 > new.cpt
     gmt psscale -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt > test.ps
 
-.. figure:: /images/GMT_CPT_1.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_CPT_1.sh
+    :show-code: false
+    :caption: GMT内置CPT示例1
 
-   GMT内置CPT示例1
-
-.. figure:: /images/GMT_CPT_2.*
-   :width: 100%
-   :align: center
-
-   GMT内置CPT示例2
+.. gmt-plot:: /scripts/GMT_CPT_2.sh
+    :show-code: false
+    :caption: GMT内置CPT示例2
 
 动态CPT
 -------
@@ -183,14 +177,8 @@ GMT 内置的 CPT 文件都是动态的。
 
 下图展示了动态的内置CPT如何拉伸适用于用户自定义数据，绘制命令如下:
 
-.. literalinclude:: /scripts/GMT_CPT_3.sh
-   :language: bash
-
-.. figure:: /images/GMT_CPT_3.*
-   :width: 100%
-   :align: center
-
-   动态CPT的拉伸
+.. gmt-plot:: /scripts/GMT_CPT_3.sh
+    :caption: 动态CPT的拉伸
 
 原始的内置CPT（globe，上图）的初始范围为-10000至10000，颜色不连续处的分界值
 （hinge）为0，小于0的部分为海蓝色系，大于0的部分为大地色系。但实际上，我们要
@@ -217,14 +205,8 @@ GMT模块 ``makecpt`` 和 ``grd2cpt`` 可以内置CPT文件为基础，针对用
 #. 利用 ``-G`` 选项提取主CPT的一部分颜色
 #. 最后，将初始的内置CPT或修改后的CPT拉伸为自定义数据范围
 
-.. literalinclude:: /scripts/GMT_CPT_4.sh
-   :language: bash
-
-.. figure:: /images/GMT_CPT_4.*
-   :width: 100%
-   :align: center
-
-   CPT颜色翻转
+.. gmt-plot:: /scripts/GMT_CPT_4.sh
+    :caption: CPT颜色翻转
 
 注：这些CPT的调整选项顺序也是有优先级的。比如 ``-Iz`` 使用后，所有其他的更改
 都是基于z值反向的前提进行的。

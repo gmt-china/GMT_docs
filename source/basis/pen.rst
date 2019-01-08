@@ -114,11 +114,9 @@ GMT中的画笔有三个属性：笔宽、颜色和线型，三者用逗号分�
     10 2
     EOF
 
-.. figure:: /images/GMT_pens.*
-   :width: 100%
-   :align: center
-
-   GMT画笔示例
+.. gmt-plot:: /scripts/GMT_pens.sh
+    :show-code: false
+    :caption: GMT画笔示例
 
 其他属性
 --------

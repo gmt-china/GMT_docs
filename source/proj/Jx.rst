@@ -9,8 +9,8 @@ GMT中笛卡尔坐标变换分为三类：
 
 在开始之前，先用 ``gmtmath`` 命令生成两个数据以供接下来示例使用::
 
-    gmt gmtmath -T0/100/1  T SQRT = sqrt.d
-    gmt gmtmath -T0/100/10 T SQRT = sqrt.d10
+    gmt gmtmath -T0/100/1  T SQRT = sqrt.txt
+    gmt gmtmath -T0/100/10 T SQRT = sqrt10.txt
 
 笛卡尔线性变换
 --------------
@@ -24,7 +24,7 @@ GMT中笛卡尔坐标变换分为三类：
 常规浮点数坐标
 ~~~~~~~~~~~~~~
 
-对于常规的浮点型数据而言，选择笛卡尔线性坐标意味着对输入坐标做简单的线性变换 
+对于常规的浮点型数据而言，选择笛卡尔线性坐标意味着对输入坐标做简单的线性变换
 ``u'=au+b`` ，将输入坐标 ``u`` 投影到纸张坐标 ``u'`` 。
 
 线性投影可以通过四种方式指定：
@@ -34,18 +34,13 @@ GMT中笛卡尔坐标变换分为三类：
 - ``-Jx<xscale>/<yscale>`` 分别为X轴和Y轴指定不同的比例尺
 - ``-JX<width>/<height>`` 分别为X轴和Y轴指定不同的长度
 
-下面的命令用线性投影将函数 :math:`y=\sqrt{x}` 用笛卡尔线性变换画在图上::
+下面的命令用线性投影将函数 :math:`y=\sqrt{x}` 用笛卡尔线性变换画在图上。
 
-    gmt psxy -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- -P -K sqrt.d > GMT_linear.ps
-    gmt psxy -R -J -St0.1i -N -Gred -Wfaint -O sqrt.d10 >> GMT_linear.ps
+.. gmt-plot::
+    :caption: 笛卡尔坐标的线性变换
 
-绘图效果如下图所示：
-
-.. figure:: /images/GMT_JX_linear.*
-   :width: 100%
-   :align: center
-
-   笛卡尔坐标的线性变换
+    gmt psxy -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- -P -K sqrt.txt > GMT_linear.ps
+    gmt psxy -R -J -St0.1i -N -Gred -Wfaint -O sqrt10.txt >> GMT_linear.ps
 
 说明：
 
@@ -65,39 +60,31 @@ GMT中笛卡尔坐标变换分为三类：
 #. 在 ``-Jx`` 或 ``-JX`` 选项的最后加上 ``g`` 或 ``d`` ，比如 ``-JX10c/6cd``
 #. 使用 ``-fg`` 选项
 
-下面的例子用线性投影绘制了一个中心位于125ºE的世界地图::
+下面的例子用线性投影绘制了一个中心位于125ºE的世界地图。
+
+.. gmt-plot::
+    :caption: 地理坐标的线性变换
 
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
     gmt pscoast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest \
             -P -Slightblue > GMT_linear_d.ps
-
-.. figure:: /images/GMT_JX_geo.*
-   :width: 100%
-   :align: center
-
-   地理坐标的线性变换
 
 日期时间坐标
 ~~~~~~~~~~~~
 
 时间日期坐标也可以用线性投影绘制，此时需要告诉GMT输入坐标是绝对时间还是相对时间。
 
-可以通过在 ``-Jx`` 或 ``-JX`` 的最后加上 ``T`` 或 ``t`` ，不过实际上 ``-R`` 
+可以通过在 ``-Jx`` 或 ``-JX`` 的最后加上 ``T`` 或 ``t`` ，不过实际上 ``-R``
 选项中已经指定了时间范围，所以没有必要在 ``-J`` 和 ``-R`` 选项中都指定。
 当 ``-R`` 和 ``-J`` 选项给出的坐标类型相冲突时，GMT会给出警告，并以 ``-JX`` 选项为准。
 
-::
+.. gmt-plot::
+    :caption: 日期时间坐标的线性变换
 
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham \
             FORMAT_TIME_PRIMARY_MAP full
     gmt psbasemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d \
                   -Bya1Hg1h -BWsNe+glightyellow -P > GMT_linear_cal.ps
-
-.. figure:: /images/GMT_JX_calendar.*
-   :width: 100%
-   :align: center
-
-   日期时间坐标的线性变换
 
 笛卡尔对数投影
 --------------
@@ -105,36 +92,30 @@ GMT中笛卡尔坐标变换分为三类：
 对数变换 :math:`\log_{10}` 的数学表示是 :math:`u' = a \log_{10}(u) + b` ，
 可以通过在比例尺或轴长度后加上 ``l`` 指定。
 
-下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图::
+下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图。
+
+.. gmt-plot::
+    :caption: 对数投影
 
     gmt psxy -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque \
-             -Wthick,blue,- -P -K -h sqrt.d > GMT_log.ps
-    gmt psxy -R -J -Ss0.1i -N -Gred -W -O -h sqrt.d10 >> GMT_log.ps
-
-.. figure:: /images/GMT_JX_log.*
-   :width: 100%
-   :align: center
-
-   对数投影
+             -Wthick,blue,- -P -K -h sqrt.txt > GMT_log.ps
+    gmt psxy -R -J -Ss0.1i -N -Gred -W -O -h sqrt10.txt >> GMT_log.ps
 
 注意：若想要X轴和Y轴都使用对数投影，且X轴和Y轴比例尺不同，则必须在指定每个轴的
-比例尺时分别加上 ``l`` ，例如 ``-JX10cl/6cl``  。
+比例尺时分别加上 ``l``\ ，例如 ``-JX10cl/6cl``\ 。
 
 笛卡尔指数投影
 --------------
 
-指数投影的函数表示是 :math:`u' = a u^b + c` ，使得用户可以绘制类似 
-:math:`x^p` vs :math:`y^q` 这样的函数关系。如果选 ``p=0.5`` 、 ``q=1`` 
+指数投影的函数表示是 :math:`u' = a u^b + c` ，使得用户可以绘制类似
+:math:`x^p` vs :math:`y^q` 这样的函数关系。如果选 ``p=0.5`` 、 ``q=1``
 则相对于绘制 ``x`` 与 :math:`\sqrt{x}` 的函数曲线。
 
-要使用指数投影，需要在比例尺或轴长度后加上 ``p<exp>`` ，其中 ``<exp>`` 是要使用的指数。例如::
+要使用指数投影，需要在比例尺或轴长度后加上 ``p<exp>`` ，其中 ``<exp>`` 是要使用的指数。
+
+.. gmt-plot::
+    :caption: 指数变换
 
     gmt psxy -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory \
-             -Wthick -P -K sqrt.d > GMT_pow.ps
-    gmt psxy -R -J -Sc0.075i -Ggreen -W -O sqrt.d10 >> GMT_pow.ps
-
-.. figure:: /images/GMT_JX_pow.*
-   :width: 100%
-   :align: center
-
-   指数变换
+             -Wthick -P -K sqrt.txt > GMT_pow.ps
+    gmt psxy -R -J -Sc0.075i -Ggreen -W -O sqrt10.txt >> GMT_pow.ps

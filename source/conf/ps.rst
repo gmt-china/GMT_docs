@@ -27,11 +27,9 @@ PS参数
     下图展示了 ``PS_LINE_CAP`` 取不同值时线段端点的区别。需要注意，图中三条线段的
     长度是相同的，但因为参数设置不同而导致实际线段长度看上去有些不一样。
 
-    .. figure:: /images/GMT_line_cap.*
-       :width: 100%
-       :align: center
-
-       ``PS_LINE_CAP`` 控制线段端点绘图效果
+    .. gmt-plot:: /scripts/GMT_line_cap.sh
+        :show-code: false
+        :caption: ``PS_LINE_CAP`` 控制线段端点绘图效果
 
     说明：当 ``PS_LINE_CAP=round`` 时，若线段长度为零，则线段将以圆的形式存在，
     这可以用于创建圆点线，此时将同一条线绘制两次，每次使用不同的相移和颜色，则可以创建颜色变化的线条。
@@ -46,11 +44,9 @@ PS参数
     下图展示了 ``PS_LINE_JOIN`` 取不同值时线段拐点的绘图效果。当线宽较小时，几乎
     看不出来区别，这里为了显示的效果，将线宽设置为 ``20p`` 。
 
-    .. figure:: /images/GMT_line_join.*
-       :width: 100%
-       :align: center
-
-       ``PS_LINE_JOIN`` 控制线段拐点绘制效果
+    .. gmt-plot:: /scripts/GMT_line_join.sh
+        :show-code: false
+        :caption: ``PS_LINE_JOIN`` 控制线段拐点绘制效果
 
 .. _PS_MITER_LIMIT:
 

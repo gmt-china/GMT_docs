@@ -8,17 +8,11 @@
 
 GMT可以绘制最简单的线性X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_1.sh
+.. gmt-plot::
    :language: bash
-   :lines: 2
+   :caption: 线性X-Y图
 
-绘图结果如图所示：
-
-.. figure:: /images/GMT_tutor1_1.*
-   :width: 100%
-   :align: center
-
-   线性X-Y图
+    gmt psbasemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t"Linear X-Y Plot" > GMT_tutor1_1.ps
 
 在这个示例中：
 
@@ -40,17 +34,12 @@ GMT可以绘制最简单的线性X-Y图。
 
 下面展示如何用GMT绘制对数X-Y图。
 
-.. literalinclude:: /scripts/GMT_tutor1_2.sh
-   :language: bash
-   :lines: 2
+.. gmt-plot::
+    :language: bash
+    :caption: 对数X-Y图
 
-绘图结果如图所示：
-
-.. figure:: /images/GMT_tutor1_2.*
-   :width: 100%
-   :align: center
-
-   对数X-Y图
+    gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l"Wavelength (m)" \
+        -Bya1pf3+l"Power (W)" -BWS > GMT_tutor1_2.ps
 
 此示例中：
 
@@ -69,17 +58,11 @@ GMT可以绘制最简单的线性X-Y图。
 
 GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 
-.. literalinclude:: /scripts/GMT_tutor1_3.sh
-   :language: bash
-   :lines: 2
+.. gmt-plot::
+    :language: bash
+    :caption: 区域地图
 
-绘图结果如图所示：
-
-.. figure:: /images/GMT_tutor1_3.*
-   :width: 100%
-   :align: center
-
-   区域地图
+    gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate > GMT_tutor1_3.ps
 
 此示例中使用 ``pscoast`` 绘制了拉丁美洲区域的海岸线。
 
@@ -108,17 +91,12 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
 全球地图
 ---------
 
-.. literalinclude:: /scripts/GMT_tutor1_4.sh
-   :language: bash
-   :lines: 2
+.. gmt-plot::
+    :language: bash
+    :caption: 全球地图
 
-绘图结果如图所示：
-
-.. figure:: /images/GMT_tutor1_4.*
-   :width: 100%
-   :align: center
-
-   全球地图
+    gmt pscoast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise \
+        -Wthinnest > GMT_tutor1_4.ps
 
 此示例中：
 

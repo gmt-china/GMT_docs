@@ -17,14 +17,11 @@
 - ``<lon>`` 和 ``<lat>`` 是投影中心的位置
 - ``<lat1>`` 和 ``<lat2>`` 是两条标准纬线
 
-下图绘制了台湾附近的区域，投影中心位于125ºE/20ºN，25度和45度纬线是两条标准纬线::
+下图绘制了台湾附近的区域，投影中心位于125ºE/20ºN，25度和45度纬线是两条标准纬线。
+
+.. gmt-plot::
+   :caption: Albers圆锥等面积投影
 
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0
     gmt pscoast -R110/140/20/35 -JB125/20/25/45/5i -Bag -Dl -Ggreen -Wthinnest \
                 -A250 -P > GMT_albers.ps
-
-.. figure:: /images/GMT_albers.*
-   :width: 100%
-   :align: center
-
-   Albers圆锥等面积投影

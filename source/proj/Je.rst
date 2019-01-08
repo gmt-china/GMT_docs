@@ -14,12 +14,9 @@
 - ``<distance>`` 是边界距离投影中心的度数，默认值为180，即绘制全球图
 - ``<scale>`` 可以取 ``1:xxxx`` 格式，也可以是 ``<radius>/<latitude>`` （表示从投影中心到 纬线 ``<latitude>`` 在图上的距离为 ``<radius>`` ）
 
-下图中，投影中心为100ºW/40ºN，离投影中心180度的点在图中的最外边界处::
+下图中，投影中心为100ºW/40ºN，离投影中心180度的点在图中的最外边界处。
+
+.. gmt-plot::
+    :caption: 使用等距方位投影绘制全球图
 
     gmt pscoast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -P > GMT_az_equidistant.ps
-
-.. figure:: /images/GMT_az_equidistant.*
-   :width: 100%
-   :align: center
-
-   使用等距方位投影绘制全球图

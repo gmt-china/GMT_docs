@@ -23,4 +23,3 @@ EOF
 
 gmt psxy -J -R -T -O >> $PS
 rm gmt.*
-

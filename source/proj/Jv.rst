@@ -11,12 +11,7 @@
 
 ``<lon>`` 是投影中心经线，默认值为地图区域的中心。
 
-示例::
+.. gmt-plot::
+    :caption: 使用Van der Grinten投影绘制全球图
 
     gmt pscoast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -P > GMT_grinten.ps
-
-.. figure:: /images/GMT_grinten.*
-   :width: 100%
-   :align: center
-
-   使用Van der Grinten投影绘制全球图

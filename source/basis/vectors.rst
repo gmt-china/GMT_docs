@@ -31,21 +31,16 @@ GMT 中的矢量可以分为三类：
    #. 给定起点坐标和终点坐标
    #. 给定起点坐标、方位角和长度（单位为km）
 
-以 ``psxy`` 模块为例，``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量， 
+以 ``psxy`` 模块为例，``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量，
 ``-Sm`` 用于绘制弧形矢量， ``-S=`` 用于绘制地理矢量。
 
 下面的例子分别绘制了三种矢量箭头：
 
-.. literalinclude:: /scripts/GMT_arrows.sh
-   :language: bash
+.. gmt-plot:: /scripts/GMT_arrows.sh
 
-.. figure:: /images/GMT_arrows.*
-   :width: 100%
-   :align: center
+    GMT中的三种矢量箭头
 
-   GMT中的三种矢量箭头
-
-   （左）笛卡尔矢量；（中）弧形矢量；（右）地理矢量
+    （左）笛卡尔矢量；（中）弧形矢量；（右）地理矢量
 
 矢量箭头属性
 ------------
@@ -119,8 +114,6 @@ GMT 中的矢量可以分为三类：
 下图展示了部分 GMT 可以绘制的矢量，每个矢量右边给出了其对应的选项。
 需要注意的是，某些矢量设置了 ``MAP_VECTOR_SHAPE`` 的值为 0.5。
 
-.. figure:: /images/GMT_arrows_types.*
-   :width: 100%
-   :align: center
-
-   矢量箭头类型
+.. gmt-plot:: /scripts/GMT_arrows_types.sh
+    :show-code: false
+    :caption: 矢量箭头类型

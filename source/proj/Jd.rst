@@ -13,14 +13,11 @@
 - ``<lon>/<lat>`` 投影中心位置
 - ``<lat1>/<lat2>`` 两条标准纬线
 
-等距圆锥投影常用于绘制小国家的地图集::
+等距圆锥投影常用于绘制小国家的地图集。
+
+.. gmt-plot::
+    :caption: 等距圆锥地图投影
 
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.05i
     gmt pscoast -R-88/-70/18/24 -JD-79/21/19/23/4.5i -Bag -Di -N1/thick,red \
                 -Glightgreen -Wthinnest -P > GMT_equidistant_conic.ps
-
-.. figure:: /images/GMT_equidistant_conic.*
-   :width: 100%
-   :align: center
-
-   等距圆锥地图投影

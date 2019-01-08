@@ -14,24 +14,15 @@
 
 地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` 以实现自定义。
 
-示例::
+.. gmt-plot::
+    :caption: 矩形横向Mercator地图
 
     gmt pscoast -R20/30/50/45r -Jt35/0.18i -Bag -Dl -A250 -Glightbrown -Wthinnest \
                 -P -Sseashell > GMT_transverse_merc.ps
 
-.. figure:: /images/GMT_transverse_merc.*
-   :width: 100%
-   :align: center
 
-   矩形横向Mercator地图
-
-示例::
+.. gmt-plot::
+    :caption: 全球横向Mercator地图
 
     gmt pscoast -R0/360/-80/80 -JT330/-45/3.5i -Ba30g -BWSne -Dc -A2000 \
                 -Slightblue -G0 -P > GMT_TM.ps
-
-.. figure:: /images/GMT_TM.*
-   :width: 100%
-   :align: center
-
-   全球横向Mercator地图

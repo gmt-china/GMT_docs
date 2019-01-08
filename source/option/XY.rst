@@ -40,11 +40,9 @@
 
 上图用四个 ``psbasemap`` 命令绘制了四张底图，绘图效果如下：
 
-.. figure:: /images/GMT_-XY.*
-   :width: 100%
-   :align: center
-
-   ``-X`` 和 ``-Y`` 移动绘图原点
+.. gmt-plot:: /scripts/GMT_-XY.sh
+    :show-code: false
+    :caption: ``-X`` 和 ``-Y`` 移动绘图原点
 
 解释：
 
