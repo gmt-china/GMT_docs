@@ -28,11 +28,10 @@ PS文件结构
 
 任何一个PS文件都由header、body和trailer组成，可以理解成头、身体和尾巴。其中头部的作用是初始化PS文件，比如设置纸张大小、纸张方向、载入字体等；身体部分则是真正的绘图部分，包含了每个绘图命令绘制的图层；尾巴部分则用于控制PS文件的显示。
 
-.. figure:: /images/GMT_-OK.*
-   :width: 100%
-   :align: center
+.. gmt-plot:: /scripts/GMT_-OK.sh
+    :show-code: false
 
-   ``-K`` 和 ``-O`` 选项的原理
+    ``-K`` 和 ``-O`` 选项的原理
 
 因而，一个PS文件中，只有一个头和尾巴，可以有零个、一个或多个身体。
 
