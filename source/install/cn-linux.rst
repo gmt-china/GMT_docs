@@ -78,7 +78,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 并打开终端用 ``gs GMT_Chinese_Linux.ps`` 命令查看该PS文件。
 若正确显示中文如下图，则表明 ghostscript 已支持 Windows 中文字体。
 
-.. figure:: /static_images/GMT_chinese_windows_fonts.png
+.. figure:: /images/GMT_chinese_windows_fonts.png
    :width: 100%
    :align: center
 
@@ -151,7 +151,7 @@ GMT 中文测试
 
 成图效果如下：
 
-.. figure:: /static_images/GMT_chinese.png
+.. figure:: /images/GMT_chinese.png
    :width: 100%
    :align: center
 

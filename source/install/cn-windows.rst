@@ -81,7 +81,7 @@ GMT 的中文支持
 
 成图效果如下：
 
-.. figure:: /static_images/GMT_chinese.png
+.. figure:: /images/GMT_chinese.png
    :width: 100%
    :align: center
 

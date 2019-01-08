@@ -80,7 +80,7 @@ GMT 中文测试
 
 成图效果如下：
 
-.. figure:: /static_images/GMT_chinese.png
+.. figure:: /images/GMT_chinese.png
    :width: 100%
    :align: center
 
