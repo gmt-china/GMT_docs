@@ -63,7 +63,7 @@ git add -A .
 git status
 # If this is a dev build and the last commit was from a dev build, reuse the
 # same commit
-if [[ "${TRAVIS_TAG}" != "" && `git log -1 --format='%s'` == *"dev"* ]]; then
+if [[ "${TRAVIS_TAG}" != "" && `git log -1 --format='%s'` == *"${GMT_VERSION}"* ]]; then
     echo -e "Amending last commit"
     git commit --amend --reset-author --no-edit
 else
