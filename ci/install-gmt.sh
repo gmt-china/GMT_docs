@@ -9,9 +9,6 @@ sudo apt-get install -y build-essential cmake libcurl4-gnutls-dev libnetcdf-dev 
     libgdal1-dev libfftw3-dev libpcre3-dev liblapack-dev ghostscript curl
 
 # Basic Information
-GMT_VERSION=5.4.5
-GSHHG_VERSION=2.3.7
-DCW_VERSION=1.1.4
 GMT_INSTALL=/opt/GMT-${GMT_VERSION}
 
 # download files

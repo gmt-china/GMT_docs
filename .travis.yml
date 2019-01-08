@@ -3,26 +3,28 @@ sudo: required
 dist: trusty
 python: 3.6
 
+env:
+    global:
+        - HTML_BUILDDIR=build/dirhtml
+        - GMT_VERSION=5.4.5
+        - GSHHG_VERSION=2.3.7
+        - DCW_VERSION=1.1.4
+
 install:
-  # Install Python dependencies
-  - pip install -r requirements.txt
-  # Install TexLive
-  - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh -o install-tl.sh
-  - sudo bash install-tl.sh
-  # Install SourceCodePro fonts
-  - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash
-  - source ~/.bash_profile
-  # Install GMT
-  - source ci/install-gmt.sh
+    # Install Python dependencies
+    - pip install -r requirements.txt
+    # Install TexLive
+    - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh -o install-tl.sh
+    - sudo bash install-tl.sh
+    # Install SourceCodePro fonts
+    - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash
+    - source ~/.bash_profile
+    # Install GMT
+    - source ci/install-gmt.sh
 
 script:
-  # build html and PDF
-  - make build
+    # build html and PDF
+    - make build
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: ${GH_TOKEN}
-  local_dir: build/dirhtml
-  on:
-    branch: master
+after_success:
+    - bash ci/deploy-gh-pages.sh

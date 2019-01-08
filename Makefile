@@ -26,10 +26,8 @@ figures:
 	make -C $(SOURCEDIR)/scripts
 
 build: $(HTML) latexpdf
-	@echo "Deploy HTML, ZIP and PDF"
+	@echo "Deploy HTML and PDF"
 	cd $(BUILDDIR) && \
-	cp -r $(HTML) $(DOCNAME) && \
-	zip -rm $(HTML)/$(DOCNAME).zip $(DOCNAME) && \
 	cp latex/$(DOCNAME).pdf $(HTML) && \
 	cd ..
 
