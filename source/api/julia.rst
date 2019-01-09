@@ -4,21 +4,21 @@ GMT Julia API
 简介
 ----
 
-`Julia <http://julialang.org>`_ 是一门为科学计算设计的编程语言，简单易学。
+`Julia <https://julialang.org>`_ 是一门为科学计算设计的编程语言，简单易学。
 其与 Matlab、Python 等编程语言都有相似之处。GMT 提供了 Julia 接口，使得 Julia
 用户可以直接在 Julia 脚本中调用 GMT 的相关模块。
 
-GMT 的 Julia 接口的官方地址为： https://github.com/joa-quim/GMT.jl
+GMT 的 Julia 接口的官方地址为： https://github.com/GenericMappingTools/GMT.jl
 
 .. note::
 
    GMT 的 julia 接口还在开发中，因而用法可能出现改动，一切以
-   https://github.com/joa-quim/GMT.jl 中的说明为准。
+   https://github.com/GenericMappingTools/GMT.jl 中的说明为准。
 
 安装
 ----
 
-关于 Julia 的安装请参考 `Julia 官方网站 <http://julialang.org/downloads/>`_ 的相关说明。
+关于 Julia 的安装请参考 `Julia 官方网站 <https://julialang.org/downloads/>`_ 的相关说明。
 
 启动 Julia 并按照如下方式即可安装 GMT 的 Julia 接口（即 Julia 下的 GMT 模块）::
 

@@ -236,7 +236,7 @@ GMT用单个字母指定投影方式，但英文字母只有26个，而投影方
     -JEPSG:4326+to+proj=aeqd+ellps=WGS84+units=m
 
 对于使用 ``mapproject`` 和 ``grdproject`` 进行点和网格文件的转换，GMT可以使用
-所有的 `PROJ.4投影 <http://proj4.org/projections/index.html>`_\ 。
+所有的 `PROJ.4投影 <https://proj4.org/operations/projections/index.html>`_\ 。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被
 映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图
 比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展： ``+width=`` 和 ``+scale=1:xxxx``
