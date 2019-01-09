@@ -1,28 +1,23 @@
 # GMT参考手册
 
-[![Sphinx](https://img.shields.io/badge/Powered%20by-Sphinx-orange.svg)](http://www.sphinx-doc.org/)
-[![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
-[![License (CC BY-NC 4.0 CN)](https://img.shields.io/badge/license-CC%20BY--NC%204.0-red.svg)](http://creativecommons.org/licenses/by-nc/4.0/)
+[![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg)](https://travis-ci.org/gmt-china/GMT_docs)
 
 欢迎来到 [Generic Mapping Tools](http://gmt.soest.hawaii.edu/) 的世界。
 
-本项目是由GMT中文社区维护的GMT中文参考手册，既可以作为入门读物，
-也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。
+[在线阅读](https://docs.gmt-china.org/5.4.5/) |
+[PDF下载](https://docs.gmt-china.org/5.4.5/GMT_docs.pdf)
+[文档源码](https://github.com/gmt-china/GMT_Docs) |
+[GMT中文社区](https://gmt-china.org) |
+[GMT官方网站](http://gmt.soest.hawaii.edu/) |
+[GMT官方文档](http://gmt.soest.hawaii.edu/doc/5.4.5/)
 
-## 相关链接
+## 文档说明
 
-- GMT中文社区主页：https://gmt-china.org
-- GMT参考手册项目主页：https://docs.gmt-china.org
-- GMT参考手册项目源码：https://github.com/gmt-china/GMT_Docs
-- GMT官方网站：http://gmt.soest.hawaii.edu/
-- GMT官方文档：http://gmt.soest.hawaii.edu/doc/latest/index.html
+本文档是由 GMT 中文社区维护的 GMT 中文参考手册，既可以作为入门读物，
+也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握 GMT 的用法。
 
-## 版本说明
-
-本手册目前与 GMT 5.4.5 同步，历史版本见 [release](https://github.com/gmt-china/GMT_docs/releases) 页面。
-
-- 在线阅读： https://docs.gmt-china.org
-- 离线阅读： [HTML](https://docs.gmt-china.org/GMT_docs.zip) [PDF](https://docs.gmt-china.org/GMT_docs.pdf)
+本手册目前与 GMT 5.4.5 同步，历史版本见
+[release](https://github.com/gmt-china/GMT_docs/releases) 页面。
 
 ## 文档维护
 
@@ -46,7 +41,8 @@
 
 ## 许可协议
 
-本作品采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/) 进行许可。任何人都可以自由地分享、修改本作品，但必须遵循如下条件：
+本作品采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/) 。
+任何人都可以自由地分享、修改本作品，但必须遵循如下条件：
 
 - 署名：必须提到原作者，提供指向此许可协议的链接，表明是否有做修改
 - 非商业性使用：不能对本作品进行任何形式的商业性使用
