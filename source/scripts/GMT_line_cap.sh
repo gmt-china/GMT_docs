@@ -9,7 +9,7 @@ cat << EOF > $line
 10       0
 EOF
 
-gmt psxy -R$R -J$J -B1 -P -K -T > $PS
+gmt psxy -R$R -J$J -P -K -T > $PS
 
 for cap in butt round square
 do

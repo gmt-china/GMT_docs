@@ -30,12 +30,10 @@
                 -Wthinnest -P -TdjTR+w0.4i+f2+l+o0.15i -Sazure --FONT_TITLE=8p \
                 --MAP_TITLE_OFFSET=0.05i > GMT_obl_merc.ps
 
-.. gmt-plot:: /scripts/GMT_obl_merc.sh
-    :show-code: false
-
 在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便，下面的示例中使用了 ``-Rk-1000/1000/-500/500`` 来指定相对投影坐标。
 
 .. gmt-plot:: /scripts/GMT_obl_nz.sh
+   :show-code: false
 
    使用 ``-JOa`` 倾斜Mercator投影
 
