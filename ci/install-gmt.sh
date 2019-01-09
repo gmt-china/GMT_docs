@@ -21,6 +21,7 @@ wget --quiet http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION
 wget --quiet http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz
 
 # Now start to install
+mkdir gmt-${GMT_VERSION}
 tar xf gmt-${GMT_VERSION}-src.tar.gz -C gmt-${GMT_VERSION} --strip-components=1
 tar -xf gshhg-gmt-${GSHHG_VERSION}.tar.gz
 tar -xf dcw-gmt-${DCW_VERSION}.tar.gz
