@@ -41,7 +41,7 @@ master_doc = 'index'
 project = u'GMT参考手册'
 copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = u'GMT中文社区'
-version = '5.4.5'
+version = '6.0.0'
 release = version
 rst_prolog = '''
 .. |GMT5_latest_release| replace:: 5.4.5
