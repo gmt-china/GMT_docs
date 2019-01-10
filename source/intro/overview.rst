@@ -6,10 +6,10 @@ GMT是什么
 
 GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”。
 
-GMT可以绘制多种类型的底图，包括不同类型的地图投影、常见的2D笛卡尔坐标轴（线性轴、对数轴和指数轴）
-以及3D图；还可以在底图上绘制线段、多种符号、等值线、图例、直方图和文字等。
-除此之外，GMT还具有数据转换、处理和分析的功能，比如多项式拟合、数据滤波、线性回归
-分析等。
+GMT可以绘制多种类型的底图，包括不同类型的地图投影、常见的2D笛卡尔坐标轴（线性轴、
+对数轴和指数轴）以及3D图；还可以在底图上绘制线段、多种符号、等值线、图例、直方图
+和文字等。除此之外，GMT还具有数据转换、处理和分析的功能，比如多项式拟合、数据滤波、
+线性回归分析等。
 
 GMT的历史
 ---------
@@ -25,7 +25,7 @@ GMT的历史
 GMT维护者
 ---------
 
-GMT源码目前主要由 Paul Wessel、Joaquim Luis、Remko Scharroo和Leonardo Uieda维护。
+GMT源码目前主要由 Paul Wessel 和 Joaquim Luis 维护。
 其源码公开在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上，任何用户
 均可贡献自己的代码。
 
@@ -62,12 +62,12 @@ GMT的特点
 
    - 只需要少量的模块
    - 各个模块之间相互独立且代码量少，易于更新和维护
-   - 每一步均独立于独立于之前的步骤以及具体的数据类型，因而可以用于不同的应用中
+   - 每一步均独立于之前的步骤以及具体的数据类型，因而可以用于不同的应用中
    - 可以在shell脚本中调用一系列程序，或通过管道连接起来，进而绘制复杂图件
 
 #. 支持多种格式的高精度矢量图和位图
 
-   GMT支持多种高精度的矢量图片格式和位图图片格式。EPS、PDF和SVG格式，
+   GMT支持多种高精度的矢量图片格式和位图图片格式。
    矢量图片格式，如PDF、PS、EPS和SVG，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
    位图图片格式，如BMP、JPG、PNG、PPM和TIFF格式，可用于日常的文档及演示。
 
@@ -79,7 +79,3 @@ GMT替代品
 #. Python: `Cartopy <https://scitools.org.uk/cartopy/>`_ | `Basemap <http://matplotlib.org/basemap/>`_
 #. Matlab: `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
 #. R: `ggmap <https://github.com/dkahle/ggmap>`_
-
-.. TODO::
-
-    介绍更多GMT替代品

@@ -4,6 +4,7 @@
 .. toctree::
    :maxdepth: 2
 
+   colors
    low-level/index
    directory-tree
    calculate-distance
