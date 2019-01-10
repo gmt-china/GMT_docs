@@ -22,11 +22,11 @@
 或 ``dark``\ ，以表示浅色和深色。比如 ``lightblue``\ 、``blue``\ 、``darkblue``
 分别表示浅蓝、蓝色和深蓝。
 
-GMT共支持663种颜色名，可以直接查看GMT自带的颜色文档
-``${GMTHOME}/share/doc/pdf/GMT_RGBchart_a4.pdf``\ 。
-
 所有的颜色名都是不区分大小写的，所以 ``lightblue``\ 、``LIGHTBLUE``
 或者 ``LightBlue`` 都是合法的颜色名。
+
+GMT共支持663种颜色名，可以查找附录中的 :doc:`/appendix/colors` 获取GMT所支持的
+颜色及其对应的RGB值。
 
 RGB
 ---

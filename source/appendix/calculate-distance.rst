@@ -23,7 +23,7 @@ Flat Earth距离
 
 可以通过在距离量前加上前缀 ``-`` 指定使用该方法计算两点间的距离。对于某些只需要
 指定距离单位而不需要指定具体距离值的情况下，则可以在距离单位前加上前缀 ``-``
-表示该距离用 Flat Earth 方法计算。比如， ``-S-50M`` 表示设定搜索半径为50海里，
+表示该距离用 Flat Earth 方法计算。比如，\ ``-S-50M`` 表示设定搜索半径为50海里，
 其中距离用 Flat Earth 方法计算。
 
 大圆路径距离
@@ -38,15 +38,15 @@ Flat Earth距离
    \theta_A \cos \theta_B \sin^2 \frac{\lambda_A - \lambda_B}{2}} }
 
 该方法是 GMT 默认使用的距离计算方法，适用于大多数情况。
-比如， ``-S5000f`` 表示距离为 5000 英尺。
+比如，\ ``-S5000f`` 表示距离为 5000 英尺。
 
 有两个 GMT 参数可以控制大圆路径距离的计算细节，分别是：
 
 - :ref:`PROJ_MEAN_RADIUS <PROJ_MEAN_RADIUS>` 地球平均半径
-- :ref:`PROJ_AUX_LATITUDE <PROJ_AUX_LATITUDE>` 辅助纬线
+- :ref:`PROJ_AUX_LATITUDE <PROJ_AUX_LATITUDE>` 指定将大地纬度转换为多个适合球状
+  近似的辅助纬度中的其中一个
 
-参数的具体含义见相关页面中的说明。这两个选项仅当 :ref:`PROJ_ELLIPSOID <PROJ_ELLIPSOID>`
-不为 ``sphere`` 时才有效。
+需要注意，这两个选项仅当 :ref:`PROJ_ELLIPSOID <PROJ_ELLIPSOID>` 不为 ``sphere`` 时才有效。
 
 测地距离
 --------
@@ -55,7 +55,7 @@ Flat Earth距离
 该方法计算得到的距离精度最高精确到 0.5 毫米，同时也是计算速度的最慢的方式。
 
 可以通过在距离或距离单位前加上前缀 ``+`` 来指定用该方法计算距离。
-比如， ``-S+20k`` 表示用该方法计算的20千米的距离。
+比如，\ ``-S+20k`` 表示用该方法计算的20千米的距离。
 
 除了 Vincenty 完全椭球公式外，还可以将参数 :ref:`PROJ_GEODESIC <PROJ_GEODESIC>`
 设置成 ``Rudoe`` （GMT4所使用的计算公式）或 ``Andoyer`` （近似公式，精确到10米量级）

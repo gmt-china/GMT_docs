@@ -56,3 +56,12 @@
 .. gmt-plot:: /scripts/GMT_line_arrow.sh
     :show-code: false
     :caption: 线条端点箭头示意图
+
+其他属性
+--------
+
+除了上面提到的属性之外，GMT中还有一些参数可以影响线段的外观。这些参数包括：
+
+- :ref:`PS_LINE_CAP <PS_LINE_CAP>`\ ：控制线段顶端的绘制方式
+- :ref:`PS_LINE_JOIN <PS_LINE_JOIN>`\ ：控制线段拐点/交点的绘制方式
+- :ref:`PS_MITER_LIMIT <PS_MITER_LIMIT>`\ ：控制线段拐点在 ``miter`` 模式下的阈值
