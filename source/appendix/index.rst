@@ -5,6 +5,7 @@
    :maxdepth: 2
 
    colors
+   patterns
    low-level/index
    directory-tree
    calculate-distance
