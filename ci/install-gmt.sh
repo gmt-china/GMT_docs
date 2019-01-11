@@ -4,8 +4,8 @@
 # To return a failure if any commands inside fail
 set -e
 
-sudo apt-get update
-sudo apt-get install -y build-essential cmake libcurl4-gnutls-dev libnetcdf-dev \
+sudo apt-get -qq update
+sudo apt-get -qq install -y build-essential cmake libcurl4-gnutls-dev libnetcdf-dev \
     libgdal1-dev libfftw3-dev libpcre3-dev liblapack-dev ghostscript curl
 
 # Basic Information
