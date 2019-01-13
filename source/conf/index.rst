@@ -6,7 +6,7 @@
 .. toctree::
    :maxdepth: 2
 
-   intro-conf
+   overview
    color
    dir
    font
