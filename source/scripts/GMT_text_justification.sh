@@ -1,5 +1,6 @@
 #!/bin/bash
-gmt pstext -R0/10/0/2 -Jx2c -B1g1 -BWS -F+j+f20p,blue > GMT_text_justification.ps << EOF
+gmt begin text_justification pdf,png
+gmt text -R0/10/0/2 -Jx2c -B1g1 -BWS -F+j+f20p,blue << EOF
 1 1 LT LT
 2 1 LM LM
 3 1 LB LB
@@ -10,4 +11,4 @@ gmt pstext -R0/10/0/2 -Jx2c -B1g1 -BWS -F+j+f20p,blue > GMT_text_justification.p
 8 1 RM RM
 9 1 RB RB
 EOF
-rm gmt.*
+gmt end

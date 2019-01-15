@@ -51,10 +51,8 @@ Landscape（风景）模式。记起来也很简单，人是瘦长的，所以�
    这种理解方式下，Landscape模式可以认为是在Portrait模式的基础上先将坐标原点
    沿X轴移动到右下角，在将坐标系旋转90度得到。
 
-由于历史原因，GMT中画布的默认放置方式是Landscape模式。有两种方式可以修改画布方向：
-
-#. 在第一个\ **绘图**\ 命令中使用 :doc:`/option/P`
-#. 修改GMT参数中的 :ref:`PS_PAGE_ORIENTATION <PS_PAGE_ORIENTATION>`
+由于历史原因，GMT中画布的默认放置方式是Landscape模式。可以通过设置
+修改GMT参数中的 :ref:`PS_PAGE_ORIENTATION <PS_PAGE_ORIENTATION>` 来修改画布的方式方式。
 
 .. tip::
 

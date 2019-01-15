@@ -1,3 +1,4 @@
 #!/bin/bash
-gmt logo -P -Dx0/0+w8c > GMT_logo.ps
-gmt clear history
+gmt begin logo pdf,png
+gmt logo -Dx0/0+w8c
+gmt end

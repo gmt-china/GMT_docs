@@ -1,53 +1,62 @@
 #!/bin/bash
-ps=GMT_anchors.ps
-gmt psbasemap -R0/1/0/1 -JX5i/2i -Ba1f0.5 -BwSnE+gbisque -P -K -DjTL+o0.7i/0.5i+w1.5i/0.75i -F+glightgreen+p1p > $ps
-gmt psxy -R -J -O -K -W0.25p,- << EOF >> $ps
-0	0.75
-0.14	0.75
-0.14	1
+B=0.2
+M=0.38
+T=0.56
+L=0.10
+C=1.04
+R=1.98
+
+gmt begin text_anchors pdf,png
+gmt text -R0/3/0/1.5 -Jx1i -N -C0 -Wthin,- -F+f36p,Helvetica-Bold+jLB << EOF
+0.1	0.2	My Text
 EOF
-gmt psxy -R -J -O -K -W2p << EOF >> $ps
-0	1
-0.14	0.75
+gmt plot -N << EOF
+>
+0.05	$B
+2.04	$B
+>
+0.05	$M
+2.04	$M
+>
+0.05	$T
+2.04	$T
+>
+$L	0
+$L	0.65
+>
+$C	0
+$C	0.65
+>
+$R	0
+$R	0.65
 EOF
-echo 0 1 | gmt psxy  -R -J -O -K -Ss0.2i -Gred -W0.25p -N >> $ps
-echo 0.14 0.75 | gmt psxy  -R -J -O -K -Ss0.2i -Gorange -W0.25p -N >> $ps
-gmt psxy -R -J -O -K -Sc0.075i -Gblue -W0.25p -N << EOF >> $ps
-0	0
-0.5	0
-1	0
-0	0.5
-0.5	0.5
-1	0.5
-0	1
-0.5	1
-1	1
+gmt plot -N -Wthinner << EOF
+>
+0.7	-0.1
+$L	$M
+>
+1.3	-0.1
+$R	$T
 EOF
-gmt psxy -R -J -O -K -Sc0.075i -Gcyan -W0.25p -N << EOF >> $ps
-0.14	0.375
-0.29	0.375
-0.44	0.375
-0.14	0.5625
-0.29	0.5625
-0.44	0.5625
-0.14	0.75
-0.29	0.75
-0.44	0.75
+gmt text -N -F+f8p+j << EOF
+$L	0.69	CB	L (Left)
+$C	0.69	CB	C (Center)
+$R	0.69	CB	R (Right)
+2.07	$T	LM	T (Top)
+2.07	$M	LM	M (Middle)
+2.07	$B	LM	B (Bottom)
+0.6	-0.05	LM	LM
+1.37	-0.05	RM	TR
 EOF
-gmt pstext -R -J -O -K -F+f14p,Helvetica-Bold+j -Dj0.25iv0.25p -N << EOF >> $ps
-0	0  	RT	LB
-0.5	0  	CT	CB
-1	0  	LT	RB
-0	0.5	RM	LM
-0.5	0.5	LM	CM
-1	0.5	LM	RM
-0	1  	RB	LT
-0.5	1  	CB	CT
-1	1  	LB	RT
+gmt plot -Sc0.05 << EOF
+$L	$B
+$L	$M
+$L	$T
+$C	$B
+$C	$M
+$C	$T
+$R	$B
+$R	$M
+$R	$T
 EOF
-echo 0 0.75 0 1 | gmt psxy -R -J -O -K -N -Sv0.2i+bt+et+s -W1p -D-0.2i/0 >> $ps
-echo 0 1 0.14 1 | gmt psxy -R -J -O -K -N -Sv0.2i+bt+et+s -W1p -D0/0.2i >> $ps
-echo 0.07 1 dx  | gmt pstext -N -R -J -O -K -F+f12p,Times-Italic+jCM -Gwhite -D0/0.2i >> $ps
-echo 0 0.875 dy | gmt pstext -N -R -J -O -K -F+f12p,Times-Italic+jCM -Gwhite -D-0.2i/0 >> $ps
-gmt psxy -R -J -O -T >> $ps
-rm gmt.*
+gmt end
