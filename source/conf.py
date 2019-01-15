@@ -55,6 +55,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 templates_path = ['_templates']
 html_title = project
 html_logo = None
+html_favicon = "_static/favicon.ico"
 html_static_path = ['_static']
 html_extra_path = ['CNAME']
 html_last_updated_fmt = u'%Y年%m月%d日'
