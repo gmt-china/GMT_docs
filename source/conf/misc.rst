@@ -49,15 +49,15 @@
     选择triangulate命令中源码的来源 [Watson]
 
     ``triangulate`` 命令有两个版本的源码，
-    ``Watson`` 的版本遵循GPL， ``Shewchuk`` 的版本不遵循GPL。
-    该选项用于控制要使用哪个版本， ``Shewchuk`` 版本拥有更多功能。
+    ``Watson`` 的版本遵循GPL，\ ``Shewchuk`` 的版本不遵循GPL。
+    该选项用于控制要使用哪个版本，\ ``Shewchuk`` 版本拥有更多功能。
 
 .. _GMT_LANGUAGE:
 
 **GMT_LANGUAGE**
     绘制月份、星期几等时所使用的语言 [US]
 
-    该参数的默认值为 ``US`` ，所以在绘图时一月会显示 ``January`` 而不是 ``一月`` 。
+    该参数的默认值为 ``US``\ ，所以在绘图时一月会显示 ``January`` 而不是 ``一月`` 。
     可以通过修改该参数设置GMT所使用的语言。该参数可以取值包含 CN1、CN2、UK、US等。
     详细列表见 `GMT官方文档 gmt.conf <http://gmt.soest.hawaii.edu/doc/latest/gmt.conf.html>`_
 
@@ -80,10 +80,10 @@
 **GMT_INTERPOLANT**
     程序中一维插值所使用的算法 [akima]
 
-    #. ``linear`` ：线性插值
-    #. ``akima`` ：akima's spline
-    #. ``cubic`` ：natural cubic spline
-    #. ``none`` ：不插值
+    #. ``linear``\ ：线性插值
+    #. ``akima``\ ：akima's spline
+    #. ``cubic``\ ：natural cubic spline
+    #. ``none``\ ：不插值
 
 .. _GMT_EXPORT_TYPE:
 
@@ -99,9 +99,9 @@
 
     可选值包括：
 
-    #. ``NaN`` ：区域范围外的值一律为NaN
-    #. ``extrap`` ： 使用外插算法计算的区域外的值
-    #. ``extrapval,val`` ：设置区域外的值为 ``val``
+    #. ``NaN``\ ：区域范围外的值一律为NaN
+    #. ``extrap``\ ： 使用外插算法计算的区域外的值
+    #. ``extrapval,val``\ ：设置区域外的值为 ``val``
 
 .. _GMT_CUSTOM_LIBS:
 
@@ -115,7 +115,7 @@
     该参数用于指定自定义动态库函数的路径，多个路径之间用逗号分隔。
     路径可以是共享库文件的绝对路径，也可以是其所在的目录。若路径是一个目录名，
     该目录必须需斜杠或反斜杠结尾，表明使用该目录下的全部共享库文件。
-    在Windows下，若目录名是 ``/`` ，则在 ``${GMTHOME}/bin/gmt_plugins`` 目录下寻找库文件。
+    在Windows下，若目录名是 ``/``\ ，则在 ``${GMTHOME}/bin/gmt_plugins`` 目录下寻找库文件。
 
 .. _GMT_FFT:
 
@@ -124,8 +124,8 @@
 
     可以取：
 
-    #. ``auto`` ：自动选择合适的算法
-    #. ``fftw[,planner]`` ：FFTW算法，其中 ``planner`` 可以取 ``measure|patient|exhaustive``
+    #. ``auto``\ ：自动选择合适的算法
+    #. ``fftw[,planner]``\ ：FFTW算法，其中 ``planner`` 可以取 ``measure|patient|exhaustive``
     #. ``accelerate`` OS X下使用Accelerate Framework
-    #. ``kiss`` ：kiss FFT
-    #. ``brenner`` ：Brenner Legacy FFT
+    #. ``kiss``\ ：kiss FFT
+    #. ``brenner``\ ：Brenner Legacy FFT

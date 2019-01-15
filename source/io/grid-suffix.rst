@@ -25,5 +25,5 @@ GMT中也可以将网格文件的后缀与网格文件格式关联起来，就�
     ns         ns        a     a      -    16-bit integer netCDF grid with auto-scale and auto-offset
 
 要使用这一特性，需要将参数 :ref:`IO_GRIDFILE_SHORTHAND <IO_GRIDFILE_SHORTHAND>`
-设置为 ``true`` 。此时，文件名 ``file.i2`` 等效于 ``file.i2=bs///32767`` ，
+设置为 ``true`` 。此时，文件名 ``file.i2`` 等效于 ``file.i2=bs///32767``\ ，
 ``wet.mask`` 等效于 ``wet.mask=bm+n0`` 。

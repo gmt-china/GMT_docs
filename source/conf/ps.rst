@@ -20,9 +20,9 @@ PS参数
 
     可以取如下值：
 
-    - ``butt`` ：不对端点做特殊处理，即端点是矩形（默认值）
-    - ``round`` ：端点处为直径与线宽相等的半圆弧
-    - ``square`` ：端点处为边长与线宽相等的半个正方形
+    - ``butt``\ ：不对端点做特殊处理，即端点是矩形（默认值）
+    - ``round``\ ：端点处为直径与线宽相等的半圆弧
+    - ``square``\ ：端点处为边长与线宽相等的半个正方形
 
     下图展示了 ``PS_LINE_CAP`` 取不同值时线段端点的区别。需要注意，图中三条线段的
     长度是相同的，但因为参数设置不同而导致实际线段长度看上去有些不一样。
@@ -163,8 +163,8 @@ PS参数
 **PS_COMMENTS**
     生成的PS代码中是否包含注释信息 [false]
 
-    若为 ``true`` ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
-    当你需要手动编辑PS文件时比较有用。默认情况下，其值为 ``false`` ，即PS文件中
+    若为 ``true``\ ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
+    当你需要手动编辑PS文件时比较有用。默认情况下，其值为 ``false``\ ，即PS文件中
     不会包含注释，此时生成的PS文件更小。
 
 .. _PS_CONVERT:
@@ -179,7 +179,7 @@ PS参数
 
     可以取值为
 
-    - ``rle`` ：Run-Length Encoding scheme
-    - ``lzw`` ：Lempel-Ziv-Welch compression
-    - ``deflate[,level]`` ：DEFLATE compression， ``level`` 可以取1到9；
-    - ``none`` ：不压缩，相当于 ``deflate,5`` 。
+    - ``rle``\ ：Run-Length Encoding scheme
+    - ``lzw``\ ：Lempel-Ziv-Welch compression
+    - ``deflate[,level]``\ ：DEFLATE compression，\ ``level`` 可以取1到9；
+    - ``none``\ ：不压缩，相当于 ``deflate,5`` 。

@@ -29,7 +29,7 @@ Sun光栅文件头段区的结构如下表：
    | ``ras_maplength`` | ``int`` | 接下来的map的长度（字节数）  |
    +-------------------+---------+------------------------------+
 
-在头段区后，若 ``ras_maptype`` 不等于 ``RMT_NONE`` ，则紧接着是 ``ras_maplength`` 
+在头段区后，若 ``ras_maptype`` 不等于 ``RMT_NONE``\ ，则紧接着是 ``ras_maplength`` 
 个字节的color map区，然后是 ``ras_length`` 个字节的图片区。
 
 相关的一些宏定义如下表：

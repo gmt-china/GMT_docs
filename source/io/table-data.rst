@@ -82,7 +82,7 @@ GMT还可以处理大多数CVS（Comma-Separated Values）文件，包括被双�
 每段数据的开头加上一个额外的数据段头记录（segment header records）来标记一段新数据的开始。
 
 数据段头记录可以是任意格式，但所有数据段头记录的第一列字符必须相同。
-GMT中默认的数据段头记录的首字符为 ``>`` ，也可以通过修改 
+GMT中默认的数据段头记录的首字符为 ``>``\ ，也可以通过修改 
 :ref:`IO_SEGMENT_MARKER <IO_SEGMENT_MARKER>` 设置为其他字符。
 
 :ref:`IO_SEGMENT_MARKER <IO_SEGMENT_MARKER>` 可以取两个特殊的值：
@@ -152,7 +152,7 @@ NetCDF的表数据。NetCDF表数据中包含了一个或多个一维数组，�
 然后再读入第二个一维数组，将其作为输入的第二列，依次循环下去，直到读完自己所需要的字段数。
 
 若需要手动指定要从NetCDF表中读入哪些变量，可以在netCDF表文件名后加上后缀 
-``?<var1>/<var2>/...`` ，也可以直接使用 ``-bic<var1>/<var2>/...`` 选项。
+``?<var1>/<var2>/...``\ ，也可以直接使用 ``-bic<var1>/<var2>/...`` 选项。
 其中 ``<var1>`` 等是要从NetCDF表中读入的变量名。比如 ``file.nc?lon/lat`` 
 表示要从文件中读入 ``lon`` 和 ``lat`` 两个一维数组作为输入数据。
 

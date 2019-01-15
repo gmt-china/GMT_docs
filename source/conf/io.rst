@@ -6,7 +6,7 @@ IO参数
 **IO_HEADER**
     指定输入/输出的表文件中是否有文件头记录 [false]
 
-    可以取 ``true|false`` 。若值为 ``true`` ，则相当于使用了 ``-h`` 选项
+    可以取 ``true|false`` 。若值为 ``true``\ ，则相当于使用了 ``-h`` 选项
 
 .. _IO_N_HEADER_RECS:
 
@@ -35,8 +35,8 @@ IO参数
 
     可以取如下值：
 
-    - ``skip`` ：直接跳过NaN记录，并报告NaN记录的数目
-    - ``pass`` ：将所有记录传递给程序
+    - ``skip``\ ：直接跳过NaN记录，并报告NaN记录的数目
+    - ``pass``\ ：将所有记录传递给程序
 
 .. _IO_COL_SEPARATOR:
 
@@ -97,8 +97,8 @@ IO参数
 **IO_GRIDFILE_SHORTHAND**
     是否支持自动识别网格文件后缀的功能 [false]
 
-    见 :doc:`/io/grid-suffix` 一节。若设置为 ``true`` ，则会检测每个网格文件的
-    后缀是否在用户自定义文件后缀中；若为 ``false`` ，则不检测用户自定义文件后缀。
+    见 :doc:`/io/grid-suffix` 一节。若设置为 ``true``\ ，则会检测每个网格文件的
+    后缀是否在用户自定义文件后缀中；若为 ``false``\ ，则不检测用户自定义文件后缀。
 
 .. _IO_GRIDFILE_FORMAT:
 

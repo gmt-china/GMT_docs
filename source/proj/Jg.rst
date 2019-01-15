@@ -23,7 +23,7 @@
     -JG<lon>/<lat>/<alt>/<az>/<tilt>/<twist>/<width>/<height>
 
 - ``<lon>/<lat>`` 投影中心的经纬度
-- ``<alt>`` 是观察者所处的海拔，单位为km。若该值小于10，则假定是观察者相对于地心的距离，若距离后加了 ``r`` ，则表示观察者与地心的距离（单位为km）。
+- ``<alt>`` 是观察者所处的海拔，单位为km。若该值小于10，则假定是观察者相对于地心的距离，若距离后加了 ``r``\ ，则表示观察者与地心的距离（单位为km）。
 - ``<az>`` 观察者的方位角，默认值为90度，即从东向观测
 - ``<tilt>`` 倾角（单位为度），默认值为60度。若值为0则表示在顶点直接向下看，值为60则表示在顶点处沿着水平方向30度角的方向观察
 - ``<twist>`` 扭转角度，默认值为180度。This is the boresight rotation (clockwise) of the image. The twist of 180º in the example mimics the fact that the Space Shuttle flies upside down.

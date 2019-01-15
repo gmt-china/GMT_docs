@@ -48,9 +48,9 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
 
 ``<key>`` 可以取几个特殊的值：
 
-- ``B`` ：小于 ``<key1>`` 的值的颜色，即背景色，默认值由 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` 控制
-- ``F`` ：大于 ``<keyn>`` 的值的颜色，即前景色，默认值由 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` 控制
-- ``N`` ：值为 ``NaN`` 所对应的颜色，默认值由 :ref:`COLOR_NAN <COLOR_NAN>` 控制
+- ``B``\ ：小于 ``<key1>`` 的值的颜色，即背景色，默认值由 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` 控制
+- ``F``\ ：大于 ``<keyn>`` 的值的颜色，即前景色，默认值由 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` 控制
+- ``N``\ ：值为 ``NaN`` 所对应的颜色，默认值由 :ref:`COLOR_NAN <COLOR_NAN>` 控制
 
 下面是一个分类CPT文件的示例::
 
@@ -72,7 +72,7 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
     F   <fill_fore>
     N   <fill_NaN>
 
-以CPT文件中的第一行为例，其定义了一个Z值切片，切片范围为 ``<z0>`` 到 ``<z1>`` ，
+以CPT文件中的第一行为例，其定义了一个Z值切片，切片范围为 ``<z0>`` 到 ``<z1>``\ ，
 切片内每个Z值的颜色由 ``<color_min_1>`` 线性渐变为 ``<color_max_1>`` 。
 其他行同理。几点说明：
 
@@ -82,7 +82,7 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
    范围内的所有Z值均使用相同的颜色
 #. 若 ``<color_min_1>`` 使用了图案，则 ``<color_max_1>`` 必须设置为 ``-``
 #. ``<A>`` 是可选的，用于表明在使用 ``psscale`` 命令绘制色标时要如何标注。
-   ``<A>`` 可以取 ``L`` 、 ``U`` 、 ``B`` ，表示选择每个Z切片的下限、上限或者
+   ``<A>`` 可以取 ``L`` 、 ``U`` 、 ``B``\ ，表示选择每个Z切片的下限、上限或者
    上下限作为标注。
 #. ``;<lable>`` 是切片的标签，当 ``psscale`` 使用 ``-L`` 选项时会在用 ``<label>`` 作为标注
 #. ``B|F|N`` 语句分别用于设置背景色（默认值为 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` ）、
