@@ -64,5 +64,5 @@ Windows下的默认路径是 ``C:\Users\用户名\.gmt`` 。
 
 #. 建立GMT数据库目录 ``F:\GMTDATABASE`` （具体路径自行决定）
 #. 打开“我的电脑”->“属性”->“高级”->“环境变量”
-#. 添加环境变量，变量名为 ``GMT_DATADIR`` ，值为 ``F:\GMTDATABASE``
+#. 添加环境变量，变量名为 ``GMT_DATADIR``\ ，值为 ``F:\GMTDATABASE``
 #. 重启电脑使得环境变量生效

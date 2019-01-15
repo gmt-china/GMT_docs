@@ -22,7 +22,7 @@ MAP参数
     底图边框类型 [fancy]
 
     可选值包括 ``inside|plain|graph|fancy|fancy+`` 。
-    一般情况下， ``fancy`` 边框类型仅适用于投影后的X、Y方向平行于经度纬度方向的
+    一般情况下，\ ``fancy`` 边框类型仅适用于投影后的X、Y方向平行于经度纬度方向的
     情况，比如rectangular投影、polar投影。
     对于某些投影，只能使用plain底图，即便 ``MAP_BASEMAP_TYPE`` 被设置为fancy。
 
@@ -57,7 +57,7 @@ MAP参数
 **MAP_LOGO**
     是否在左下角绘制GMT时间戳 [false]
 
-    可以取 ``true|false`` ，等效于在命令行中使用 ``-U`` 选项。
+    可以取 ``true|false``\ ，等效于在命令行中使用 ``-U`` 选项。
 
 .. _MAP_LOGO_POS:
 
