@@ -71,6 +71,25 @@ html_context = {
     'github_version': 'master',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
+
+    "menu_links": [
+        (
+            '<i class="fa fa-github fa-fw"></i> 源代码',
+            "https://github.com/gmt-china/GMT_Docs",
+        ),
+        (
+            '<i class="fa fa-book fa-fw"></i> 模块手册',
+            "https://modules.gmt-china.org",
+        ),
+        (
+            '<i class="fa fa-globe fa-fw"></i> GMT 中文社区',
+            "https://gmt-china.org",
+        ),
+        (
+            '<i class="fa fa-envelope fa-fw"></i> 联系我们',
+            "mailto:admin@gmt-china.org",
+        ),
+    ],
 }
 
 # -- Options for LaTeX output ---------------------------------------------
