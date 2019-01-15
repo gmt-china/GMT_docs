@@ -25,19 +25,20 @@
 
 若只使用了 ``-X`` 和 ``-Y`` 而不接任何额外参数，则使用前一个GMT命令使用该选项时的参数值。
 
-#. 第一个绘图命令的默认偏移量由 :ref:`MAP_ORIGIN_X <MAP_ORIGIN_X>` 和
-   :ref:`MAP_ORIGIN_Y <MAP_ORIGIN_Y>` 控制
-#. 当PS文件中有多个底图时才需要使用 ``-X`` 和 ``-Y`` 选项，不要仅仅为了在某个
-   地方加几个文字就使用这两个选项
-
 ``-X`` 和 ``-Y`` 选项的用法介绍起来有些难度，多试试就好，下面举个简单的例子::
 
-    gmt psbasemap -JX5c/2c -R0/5/0/2 -B1 -K > test.ps
-    gmt psbasemap -J -R -B1 -K -O -X7c >> test.ps
-    gmt psbasemap -J -R -B1 -K -O -X-7c -Y4c >> test.ps
-    gmt psbasemap -J -R -B1 -K -O -X7c >> test.ps
+    gmt begin test pdf
+    gmt basemap -JX5c/2c -R0/5/0/2 -B1
+    gmt basemap -B1 -X7c
+    gmt basemap -B1 -X-7c -Y4c
+    gmt basemap -B1 -X7c
+    gmt end
 
-上图用四个 ``psbasemap`` 命令绘制了四张底图，绘图效果如下：
+.. note::
+
+   本示例仅供演示，这张图更适合用现代模式下的 ``gmt subplot`` 实现。
+
+上图用四个 ``basemap`` 命令绘制了四张底图，绘图效果如下：
 
 .. gmt-plot:: /scripts/GMT_-XY.sh
     :show-code: false
@@ -45,7 +46,33 @@
 
 解释：
 
-#. 第一个命令的绘图原点位于纸张左下角 ``(1i,1i)`` 处，绘制底图1
+#. 第一个命令的绘图原点位于纸张左下角，绘制底图1
 #. 第二个将绘图原点右移了7 cm，绘制底图2
 #. 为了绘制底图3，第三个命令将底图左移了7 cm，并上移4 cm
 #. 第四个命令在底图3的基础上右移7 cm，绘制底图4
+
+实际绘图时会发现一些不方便的地方。比如 ``-X`` 和 ``-Y`` 的偏移量与前一张底图的
+大小息息相关。若修改了前一张底图的大小，则下一张底图的偏移量也需要相应修改。
+为解决这一问题，GMT6为该选项引入了一种新的语法::
+
+    -X[+|-]w[[+|-|/]<xshift>[u]]
+    -Y[+|-]h[[+|-|/]<yshift>[u]]
+
+其中 ``w`` 和 ``h`` 分别表示前一底图的宽度和高度。
+
+看上去语法很复杂，举几个例子：
+
+- ``-Yh+2c``\ ：沿着Y轴上移 **前一底图高度+2厘米**
+- ``-Xw-2c``\ ：沿着X轴右移 **前一底图宽度-2厘米**
+- ``-Xw/2``\ ：沿着X轴右移 **前一底图宽度/2**
+- ``-Y-h-2c``\ ：沿着Y轴下移 **前一底图高度+2厘米**
+- ``-X-w+2c``\ ：沿着X轴左移 **前一底图宽度-2厘米**
+
+因而，上面的示例可以改写为更灵活的版本::
+
+    gmt begin test pdf
+    gmt basemap -JX5c/2c -R0/5/0/2 -B1
+    gmt basemap -B1 -Xw+2c
+    gmt basemap -B1 -X-w-2c -Yh+2c
+    gmt basemap -B1 -Xw+2c
+    gmt end

@@ -352,6 +352,18 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
     gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P > GMT_-B_time7.ps
 
+弧度轴 :math:`\pi` 的标注
+-------------------------
+
+如果坐标轴以弧度为单位，用户可以直接指定 :math:`\pi` 的整数倍或分数倍作为标注
+间隔，其格式为 ``[+|-][s]pi[f]`` ，其中 s 表示标注间隔是 :math:`\pi` 的 s 倍，
+而 f 表示标注间隔为 :math:`\pi` 的 f 分之一。
+
+示例::
+
+    gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -pdf test1
+    gmt basemap -JX10c/5c -R-pi/pi/-1/1 -Bxapi4 -pdf test2
+
 自定义轴
 --------
 
