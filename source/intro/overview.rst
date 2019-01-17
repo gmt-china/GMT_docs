@@ -28,7 +28,8 @@ GMT的历史
 GMT维护者
 ---------
 
-GMT源码目前主要由 Paul Wessel 和 Joaquim Luis 维护。
+GMT源码目前主要由 `Paul Wessel <http://www.soest.hawaii.edu/wessel/>`_ 和
+`Joaquim Luis <http://w3.ualg.pt/~jluis/>`_ 维护。
 其源码公开在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上，任何用户
 均可贡献自己的代码。
 
