@@ -62,9 +62,13 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 
 Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的国内下载镜像）：
 
-#. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz
+#. GMT源码： https://github.com/GenericMappingTools/gmt/archive/master.tar.gz
 #. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz
 #. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz
+
+.. note::
+
+    由于 GMT 6.0.0 尚未发布，此处下载的是 GMT 开发版的源代码。
 
 安装GMT
 -------
@@ -74,23 +78,24 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 .. code-block:: bash
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-5.4.5-src.tar.gz
+   $ tar -xvf gmt-master.tar.gz
+   $ mv gmt-master/ gmt-6.0.0/
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
    $ tar -xvf dcw-gmt-1.1.4.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-5.4.5/share/gshhg
-   $ mv dcw-gmt-1.1.4 gmt-5.4.5/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.0.0/share/gshhg
+   $ mv dcw-gmt-1.1.4 gmt-6.0.0/share/dcw-gmt
 
    # 切换到gmt源码目录下
-   $ cd gmt-5.4.5
+   $ cd gmt-6.0.0
 
    # 新建用户配置文件
    $ gedit cmake/ConfigUser.cmake
 
 向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.4.5")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0")
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_INSTALL_MODULE_LINKS FALSE)
@@ -100,8 +105,8 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 其中，
 
 - ``CMAKE_INSTALL_PREFIX`` 用于设置GMT的安装路径，上面的语句会将GMT安装在
-  ``/opt/GMT-5.4.5`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.5`` 等有可读写
+  ``/opt/GMT-6.0.0`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
   权限的路径；
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
 - ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
@@ -123,7 +128,7 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于 gmt-5.4.5 目录下，不是 gmt-5.4.5/cmake 目录下
+    # 注意，此处新建的 build 文件夹位于 gmt-6.0.0 目录下，不是 gmt-6.0.0/cmake 目录下
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -131,8 +136,8 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 ``cmake ..`` 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-5.4.5/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-5.4.5/share/dcw-gmt
+    *  Found GSHHG database       : /home/user/GMT/gmt-6.0.0/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.0.0/share/dcw-gmt
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
     *  GDAL library               : /usr/lib64/libgdal.so
@@ -157,10 +162,10 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
     *  Build proto supplements    : none
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-5.4.5
-    *  GMT_DATADIR                : /opt/GMT-5.4.5/share
-    *  GMT_DOCDIR                 : /opt/GMT-5.4.5/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-5.4.5/share/man
+    *  Installing GMT in          : /opt/GMT-6.0.0
+    *  GMT_DATADIR                : /opt/GMT-6.0.0/share
+    *  GMT_DOCDIR                 : /opt/GMT-6.0.0/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.0.0/share/man
     -- Configuring done
     -- Generating done
 
@@ -193,15 +198,15 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 
 向 ``~/.bashrc`` 中加入如下语句以修改环境变量，并重启终端使其生效::
 
-    export GMT5HOME=/opt/GMT-5.4.5
-    export PATH=${GMT5HOME}/bin:$PATH
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64
+    export GMT6HOME=/opt/GMT-6.0.0
+    export PATH=${GMT6HOME}/bin:$PATH
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
 说明：
 
-- 第一个命令添加了环境变量 ``GMT5HOME``
-- 第二个命令修改 GMT5 的 bin 目录加入到 ``PATH`` 中，使得终端可以找到GMT命令
-- 第三个命令将 GMT5 的 lib 目录加入到动态链接库路径中。
+- 第一个命令添加了环境变量 ``GMT6HOME``
+- 第二个命令修改 GMT6 的 bin 目录加入到 ``PATH`` 中，使得终端可以找到GMT命令
+- 第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。
   通常，32位系统的路径为 ``lib``\ ，64位系统的路径为 ``lib64``
 
 测试是否安装成功
@@ -210,4 +215,4 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 打开终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
 
     $ gmt --version
-    5.4.5
+    6.0.0
