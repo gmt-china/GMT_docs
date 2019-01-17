@@ -9,8 +9,8 @@ GMT 参考手册
 
 欢迎来到 `Generic Mapping Tools <http://gmt.soest.hawaii.edu>`_ 的世界。
 
-`在线阅读 <https://docs.gmt-china.org/5.4.5/>`_ |
-`PDF下载 <https://docs.gmt-china.org/5.4.5/GMT_Docs.pdf>`_ |
+`在线阅读 <https://docs.gmt-china.org/6.0.0/>`_ |
+`PDF下载 <https://docs.gmt-china.org/6.0.0/GMT_Docs.pdf>`_ |
 `文档源码 <https://github.com/gmt-china/GMT_Docs>`_ |
 `GMT中文社区 <https://gmt-china.org>`_
 

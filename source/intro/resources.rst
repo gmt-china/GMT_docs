@@ -6,10 +6,10 @@ GMT学习资源列举如下，建议以官方学习资源为准。
 官方学习资源
 ------------
 
-#. `GMT官方入门教程 <http://gmt.soest.hawaii.edu/doc/5.4.5/tutorial.html>`_
-#. `GMT官方参考手册 <http://gmt.soest.hawaii.edu/doc/5.4.5/GMT_Docs.html>`_
-#. `GMT官方模块手册 <http://gmt.soest.hawaii.edu/doc/5.4.5/index.html#man-pages>`_
-#. `GMT官方示例 <http://gmt.soest.hawaii.edu/doc/5.4.5/Gallery.html>`_
+#. `GMT官方入门教程 <http://gmt.soest.hawaii.edu/doc/latest/tutorial.html>`_
+#. `GMT官方参考手册 <http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html>`_
+#. `GMT官方模块手册 <http://gmt.soest.hawaii.edu/doc/latest/index.html#man-pages>`_
+#. `GMT官方示例 <http://gmt.soest.hawaii.edu/doc/latest/Gallery.html>`_
 #. `GMT官方论坛 <http://gmt.soest.hawaii.edu/projects/gmt/boards/1>`_
 #. :doc:`GMT开发版源码 </appendix/get-gmt-dev>` 中的测试脚本
 
