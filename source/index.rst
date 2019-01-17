@@ -29,6 +29,8 @@ GMT 参考手册
    tutorial/index
    basis/index
    io/index
+   cpt/index
+   grid/index
    option/index
    conf/index
    proj/index
