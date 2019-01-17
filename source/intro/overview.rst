@@ -4,8 +4,8 @@ GMT简介
 GMT是什么
 ---------
 
-GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”。
-GMT具有强大的绘图功能和数据处理功能。
+GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”，是地球科学最广泛
+使用的制图软件。GMT具有强大的绘图功能和数据处理功能。
 
 绘图方面，GMT支持绘制多种类型的底图，包括30多种地图投影、笛卡尔线性坐标轴、
 对数轴、指数轴、极坐标系，支持绘制统计直方图、等值线图、2D网格图以及3D视角图等，
@@ -56,8 +56,8 @@ GMT的特点
 #. 跨平台
 
    GMT的源码采用了高度可移植的ANSI C语言，其完全兼容于POSIX标准，可以运行在Linux、
-   macOS、Windows及其他类Unix系统上。GMT官方网站不仅提供了软件源码，还提供了 Windows
-   和 macOS 下的安装包。各大Linux发行版中也提供了预编译的二进制版本。
+   macOS、Windows及其他类Unix系统上。GMT不公开了软件源代码，还提供了 Windows
+   和 macOS 下的安装包。各大Linux发行版中也提供了预编译的二进制包。
 
 #. 模块化
 
@@ -75,11 +75,31 @@ GMT的特点
    矢量图片格式，如PDF、PS、EPS和SVG，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
    位图图片格式，如BMP、JPG、PNG、PPM和TIFF格式，可用于日常的文档及演示。
 
-GMT替代品
----------
+其他制图软件
+------------
 
-在绘制地图方面，还有一些软件也可以实现类似的功能，可以作为GMT的替代品。
+除了GMT之外，还有很多其他的软件也可以实现各种制图功能。以下仅列出一些地学
+常用的制图软件。其中 ``√`` 和 ``X`` 用于表示是否支持某一功能。
 
-#. Python: `Cartopy <https://scitools.org.uk/cartopy/>`_ | `Basemap <http://matplotlib.org/basemap/>`_
-#. Matlab: `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
-#. R: `ggmap <https://github.com/dkahle/ggmap>`_
+===============  ======  ======== ==============
+软件名称         二维图  三维图   地图
+===============  ======  ======== ==============
+`GMT`_           √       √ [1]_   √
+`Matplotlib`_    √       √        √ [2]_
+Microsoft Excel  √       √        √
+`Origin`_        √       √        X
+Matlab           √       √        √ [3]_
+`ggplot2`_       √       X        √ [4]_
+`gnuplot`_       √       √        X
+===============  ======  ======== ==============
+
+.. _GMT: http://gmt.soest.hawaii.edu
+.. _Matplotlib: https://matplotlib.org/
+.. _Origin: https://www.originlab.com/
+.. _ggplot2: https://ggplot2.tidyverse.org/
+.. _gnuplot: http://www.gnuplot.info/
+
+.. [1] GMT对三维图的支持很有限。
+.. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`_ 或 `Basemap <http://matplotlib.org/basemap/>`_
+.. [3] 需要额外安装 `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
+.. [4] 需要额外安装 `ggmap <https://github.com/dkahle/ggmap>`_
