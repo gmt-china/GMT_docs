@@ -62,7 +62,7 @@ html_last_updated_fmt = u'%Y年%m月%d日'
 html_secnumber_suffix = ' '  # default is '.'
 html_search_language = 'zh'
 html_theme_options = {
-    'prev_next_buttons_location': 'both',
+    'prev_next_buttons_location': 'bottom',
 }
 html_context = {
     'display_github': True,
