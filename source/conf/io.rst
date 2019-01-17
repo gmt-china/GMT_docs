@@ -73,7 +73,7 @@ IO参数
 **IO_NC4_CHUNK_SIZE**
     控制写netCDF文件时的分块大小 [auto]
 
-    见 :doc:`/io/netcdf` 中的相关介绍，以及官方文档对该参数的说明。
+    见 :doc:`/grid/netcdf` 中的相关介绍，以及官方文档对该参数的说明。
 
 .. _IO_NC4_DEFLATION_LEVEL:
 
@@ -97,7 +97,7 @@ IO参数
 **IO_GRIDFILE_SHORTHAND**
     是否支持自动识别网格文件后缀的功能 [false]
 
-    见 :doc:`/io/grid-suffix` 一节。若设置为 ``true``\ ，则会检测每个网格文件的
+    见 :doc:`/grid/suffix` 一节。若设置为 ``true``\ ，则会检测每个网格文件的
     后缀是否在用户自定义文件后缀中；若为 ``false``\ ，则不检测用户自定义文件后缀。
 
 .. _IO_GRIDFILE_FORMAT:
@@ -105,4 +105,4 @@ IO参数
 **IO_GRIDFILE_FORMAT**
     GMT默认使用的网格文件格式 [nf]
 
-    见 :doc:`/io/grid-data` 一节。
+    见 :doc:`/grid/read` 一节。

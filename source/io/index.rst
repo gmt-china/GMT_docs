@@ -13,11 +13,6 @@ GMT 每个模块都有很多输入和输出。总的来说，输入输出可以�
 
    format
    table-data
-   grid-data
    nan-data
-   netcdf
-   sun-raster
-   native-grid
-   grid-suffix
    ogr-format
    postscript
