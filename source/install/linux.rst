@@ -10,7 +10,7 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 
 .. warning::
 
-   由于 Linux 发行版众多，不同发行办下软件包的名称不同。
+   由于 Linux 发行版众多，不同发行版下软件包的名称不同。
    因而，以下仅所列仅供参考，其他用户应自行根据关键词到
    https://pkgs.org 上确认自己使用的发行版上软件包的
    具体名字。
@@ -60,15 +60,11 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 下载
 ----
 
-Linux下安装GMT需要下载如下三个文件（这里提供的国内下载源）：
+Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的国内下载镜像）：
 
 #. GMT源码： http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz
 #. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz
 #. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz
-
-.. TODO::
-
-    确认下载链接正确性
 
 安装GMT
 -------
@@ -95,10 +91,10 @@ Linux下安装GMT需要下载如下三个文件（这里提供的国内下载源
 向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.4.5")
-    set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GMT_DATA_URL "http://mirrors.ustc.edu.cn/gmt/data/")
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
+    set (GMT_INSTALL_MODULE_LINKS FALSE)
+    set (GMT_DATA_URL "http://mirrors.ustc.edu.cn/gmt/data/")
     set (GMT_USE_THREADS TRUE)
 
 其中，
@@ -107,12 +103,11 @@ Linux下安装GMT需要下载如下三个文件（这里提供的国内下载源
   ``/opt/GMT-5.4.5`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-5.4.5`` 等有可读写
   权限的路径；
+- ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
 - ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
-  软链接，不建议设置为 ``TRUE``
+  软链接，不建议设置为 ``TRUE`` （可选）
 - ``GMT_DATA_URL`` 设置从中科大镜像下载GMT数据，以加快数据下载速度（可选）
-- ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
-- ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
-- ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能
+- ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能（可选）
 
 .. warning::
 
@@ -120,9 +115,9 @@ Linux下安装GMT需要下载如下三个文件（这里提供的国内下载源
 
 .. tip::
 
-   此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的5行语句。
+   此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的语句。
 
-   有经验的用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。
+   高级用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。
    将 ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake``\ ，
    然后根据配置文件中的大量注释说明信息自行修改配置文件。
 
@@ -171,38 +166,43 @@ Linux下安装GMT需要下载如下三个文件（这里提供的国内下载源
 
 正常情况下的检查结果应该与上面给出的类似。若出现问题，则需要检查之前的步骤是否
 有误，检查完成后删除原build目录再新建build，继续执行 ``cmake ..``\ ，
-直到出现类似的检查结果。检查完毕后，开始编译和安装::
+直到出现类似的检查结果。
 
-    $ make
-    $ sudo make install
+.. warning::
+
+    Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，
+    GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行
+    过程中出错。
+
+    解决办法是，在 `~/.bashrc` 中将 Anaconda 相关的环境变量注释掉，以保证GMT
+    在配置和编译过程中找到的不是 Anaconda 提供的库文件。待GMT安装完成后，再
+    将 Anaconda 相关环境变量改回即可。
+
+检查完毕后，开始编译和安装::
+
+    $ make -j
+    $ sudo make -j install
 
 .. note::
 
-   对于多核计算机，可以使用如下命令实现并行编译以减少编译时间::
-
-        $ make -j
-        $ sudo make -j install
-
-   但并行编译可能在个别发行版上无法使用。
+   ``-j`` 选项可以实现并行编译以减少编译时间。但并行编译可能在个别发行版上
+   无法使用。
 
 修改环境变量
 ------------
 
-修改环境变量并使其生效：
+向 ``~/.bashrc`` 中加入如下语句以修改环境变量，并重启终端使其生效::
 
-.. code-block:: bash
-
-   $ echo 'export GMT5HOME=/opt/GMT-5.4.5' >> ~/.bashrc
-   $ echo 'export PATH=${GMT5HOME}/bin:$PATH' >> ~/.bashrc
-   $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> ~/.bashrc
-   $ exec $SHELL -l
+    export GMT5HOME=/opt/GMT-5.4.5
+    export PATH=${GMT5HOME}/bin:$PATH
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64
 
 说明：
 
-- 第一个命令向 ``~/.bashrc`` 中添加环境变量 ``GMT5HOME``
-- 第二个命令修改 ``~/.bashrc``\ ，将 GMT5 的 bin 目录加入到 ``PATH`` 中
-- 第三个命令将 GMT5 的 lib 目录加入到动态链接库路径中，若为 32 位系统，则为 lib ；64 位系统则为 lib64
-- 第四个命令是重新载入 bash，相当于 ``source ~/.bashrc``
+- 第一个命令添加了环境变量 ``GMT5HOME``
+- 第二个命令修改 GMT5 的 bin 目录加入到 ``PATH`` 中，使得终端可以找到GMT命令
+- 第三个命令将 GMT5 的 lib 目录加入到动态链接库路径中。
+  通常，32位系统的路径为 ``lib``\ ，64位系统的路径为 ``lib64``
 
 测试是否安装成功
 ----------------

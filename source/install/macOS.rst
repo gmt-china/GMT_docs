@@ -37,22 +37,18 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
        $ cd /usr/local/opt/gmt@5/bin/
        $ find . -size -4c -delete       # 删除所有文件大小小于4字节的软链接
 
-       # 为 GMT4 写环境变量
-       $ echo 'export GMT4HOME=/usr/local/opt/gmt@4' >> ~/.bashrc
-       $ echo 'export PATH=${GMT4HOME}/bin:$PATH' >> ~/.bashrc
-       $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
-       $ source ~/.bashrc
+然后向 ``~/.bashrc`` 中写入如下语句以修改环境变量::
 
-.. warning::
-
-   以下几种安装方法翻译自官方文档，我们尚未作验证。
+    export GMT4HOME=/usr/local/opt/gmt@4'
+    export PATH=${GMT4HOME}/bin:$PATH
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64'
 
 使用 GMT 安装包
 ---------------
 
 GMT 为 macOS 用户提供了 dmg 安装包。
 
-1. 到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载最新版本的 dmg 安装包。
+1. 到 `下载页面 <http://gmt.soest.hawaii.edu/projects/gmt/wiki/Download>`_ 下载最新版本的 dmg 安装包。
 
 2. 双击 dmg 包以解压，将解压得到的 ``GMT-5.4.5.app`` 拖动到 Applications 目录即可。
 
@@ -66,6 +62,10 @@ GMT 为 macOS 用户提供了 dmg 安装包。
 
        $ gmt --version
        5.4.5
+
+.. warning::
+
+    以下安装方式未经验证。
 
 使用 macports 安装
 ------------------

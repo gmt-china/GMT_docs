@@ -6,15 +6,19 @@ macOS 下的 GMT 中文支持
 使 gs 支持中文
 --------------
 
-首先需要使 gs 支持中文，这可以通过 `cjk-gs-support <https://github.com/texjporg/cjk-gs-support>`_
-项目提供的脚本 `cjk-gs-integrate.pl <https://github.com/texjporg/cjk-gs-support/blob/master/cjk-gs-integrate.pl>`_ 实现。
+首先需要使 gs 支持中文，这可以通过
+`cjk-gs-support <https://github.com/texjporg/cjk-gs-support>`_ 项目提供的脚本
+`cjk-gs-integrate.pl`_ 实现。
 
-1. 下载脚本 `cjk_gs_integrate <https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl>`_
+1. 下载脚本 `cjk-gs-integrate.pl`_
 2. 执行脚本::
 
     $ sudo perl cjk-gs-integrate.pl
 
    该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。
+
+.. _cjk-gs-integrate.pl: https://github.com/texjporg/cjk-gs-support/blob/master/cjk-gs-integrate.pl
+
 
 使 GMT 支持中文
 ---------------
@@ -34,7 +38,7 @@ macOS 下的 GMT 中文支持
     STHeiti-Regular--UniGB-UTF8-H   0.700   1
     STKaiti-Regular--UniGB-UTF8-H   0.700   1
 
-第一列为字体名，第二列为字母 A 的高度，第三列与编码有关。
+这几句话分别添加了宋体、仿宋、黑体和楷体四种字体。
 
 查看 GMT 当前支持的字体
 +++++++++++++++++++++++
@@ -52,7 +56,7 @@ macOS 下的 GMT 中文支持
     41 STHeiti-Regular--UniGB-UTF8-H
     42 STKaiti-Regular--UniGB-UTF8-H
 
-其中 0-38 为 GMT/gs 默认支持的西文字体，39-42 为新添加的中文字体。
+其中 39-42 号字体为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
 
 GMT 中文测试
@@ -76,16 +80,16 @@ GMT 中文测试
     gmt psconvert -A -P -Tf cn.ps
     gmt psconvert -A -P -Tg cn.ps
 
-    rm gmt.history gmt.conf
+    gmt clear history conf
+
+.. note::
+
+    生成的 PNG、JPG格式的图片中可直接显示中文，
+    而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开
+    无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。
 
 成图效果如下：
 
 .. figure:: /images/GMT_chinese.png
    :width: 100%
    :align: center
-
-注意事项
---------
-
-生成的 PNG 图片中可直接显示中文，而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开
-无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。
