@@ -173,7 +173,7 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 有误，检查完成后删除原build目录再新建build，继续执行 ``cmake ..``\ ，
 直到出现类似的检查结果。
 
-.. warn::
+.. warning::
 
     Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，
     GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行
