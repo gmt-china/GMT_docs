@@ -4,12 +4,8 @@
 # To return a failure if any commands inside fail
 set -e
 
-sudo apt-get -qq update
-sudo apt-get -qq install -y build-essential cmake libcurl4-gnutls-dev libnetcdf-dev \
-    libgdal1-dev libfftw3-dev libpcre3-dev liblapack-dev ghostscript curl
-
 # Basic Information
-GMT_INSTALL=/opt/GMT-${GMT_VERSION}
+GMT_INSTALL=${HOME}/GMT-${GMT_VERSION}
 
 # download files
 if [[ "${GMT_VERSION}" != '6.0.0' ]]; then
@@ -42,8 +38,8 @@ EOF
 mkdir build
 cd build
 cmake ..
-make
-sudo make install
+make -j
+make -j install
 cd ../..
 
 export PATH=${GMT_INSTALL}/bin:${PATH}
