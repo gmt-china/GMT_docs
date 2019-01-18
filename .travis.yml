@@ -1,16 +1,39 @@
+# Configuration file for TravisCI
+
+# Use the container builds so we don't need sudo priviledges
+sudo: false
+
 language: python
-sudo: required
-dist: trusty
 python: 3.6
 
+# Set the Ubuntu version for the Linux builds
+dist: xenial
+
+# Only build pushes to select branches and tags. This avoids the double
+# builds than happen when working on a branch instead of a fork.
 branches:
     only:
         - master
         # Regex to build tagged commits with version numbers
         - /\d+\.\d+(\.\d+)?(\S*)?$/
 
+addons:
+    apt:
+        packages:
+            - cmake
+            - build-essential
+            - libcurl4-gnutls-dev
+            - libnetcdf-dev
+            - libgdal1-dev
+            - libfftw3-dev
+            - libpcre3-dev
+            - liblapack-dev
+            - ghostscript
+            - curl
+
 env:
     global:
+        - BUILD_PDF="true"
         - HTML_BUILDDIR=build/dirhtml
         - GMT_VERSION=5.4.5
         - GSHHG_VERSION=2.3.7
@@ -19,19 +42,28 @@ env:
 install:
     # Install Python dependencies
     - pip install -r requirements.txt
-    # Install TexLive
-    - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh -o install-tl.sh
-    - sudo bash install-tl.sh
-    # Install SourceCodePro fonts
-    - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash
-    - source ~/.bash_profile
+    # Install TexLive and SourceCodePro Fonts for building PDF
+    - if [ "$BUILD_PDF" == "true" ]; then
+        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh -o install-tl.sh;
+        sudo bash install-tl.sh;
+        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash;
+        source ~/.bash_profile;
+      fi
     # Install GMT
     - source ci/install-gmt.sh
 
 script:
-    # build html and PDF
-    #- make build
-    - make dirhtml
+    # build html or/and PDF
+    - if [ "$BUILD_PDF" == "true" ]; then
+        make build;
+      else
+        make dirhtml;
+      fi
 
-after_success:
-    - bash ci/deploy-gh-pages.sh
+deploy:
+    provider: script
+    script: bash ci/deploy-gh-pages.sh
+    on:
+        branch:
+            - master
+            - /\d+\.\d+(\.\d+)?(\S*)?$/
