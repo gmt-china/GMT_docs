@@ -4,6 +4,7 @@
 .. toctree::
    :maxdepth: 2
 
+   cmd/index
    colors
    patterns
    low-level/index
