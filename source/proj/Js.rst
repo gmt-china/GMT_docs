@@ -22,8 +22,8 @@
 .. gmt-plot::
     :caption: 极区立体保角投影
 
-    gmt pscoast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
-                -Sseashell -P > GMT_stereographic_polar.ps
+    gmt coast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
+                -Sseashell -png GMT_stereographic_polar
 
 矩形立体地图
 ------------
@@ -33,10 +33,10 @@
 .. gmt-plot::
     :caption: 矩形边界下的极区立体保角投影
 
+    gmt begin GMT_stereographic_rect pdf,png
     gmt set MAP_ANNOT_OBLIQUE 30
-    gmt pscoast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest \
-                -Slightgray -P > GMT_stereographic_rect.ps
-
+    gmt coast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -Slightgray
+    gmt end
 
 一般立体地图
 ------------
@@ -44,6 +44,7 @@
 .. gmt-plot::
     :caption: 一般立体投影
 
+    gmt begin GMT_stereographic_general pdf,png
     gmt set MAP_ANNOT_OBLIQUE 0
-    gmt pscoast -R100/-42/160/-8r -JS130/-30/4i -Bag -Dl -A500 -Ggreen -Slightblue \
-                -Wthinnest -P > GMT_stereographic_general.ps
+    gmt coast -R100/-42/160/-8r -JS130/-30/4i -Bag -Dl -A500 -Ggreen -Slightblue -Wthinnest
+    gmt end

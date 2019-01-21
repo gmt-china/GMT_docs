@@ -12,4 +12,4 @@
 
 使用如下命令将 PS 文件转换为 PD F即可看到透明效果::
 
-    gmt psconvert -A -P -Tf xxxx.ps
+    gmt psconvert -A -Tf xxxx.ps

@@ -41,7 +41,7 @@ echo常见的用法是在屏幕上显示信息，例如 ``echo hello world`` 命
 
 管道符号 ``|`` 会将其左侧命令的输出结果作为输入传递给其右侧语句::
 
-   echo 5 5 | gmt psxy -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred > map.ps
+   echo 5 5 | gmt plot -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred -pdf map
 
 定义变量
 ~~~~~~~~
@@ -72,9 +72,12 @@ del命令用来删除文件。使用GMT命令绘图后通常会在文件夹下�
    echo 1 2 > tmp1.txt
    echo 3 4 >> tmp1.txt
    echo 5 6 > tmp2.txt
-   gmt psxy tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred -K > map.ps
-   gmt psxy tmp2.txt -R -J -Sc0.5c -Gyellow -O >> map.ps
-   del tmp* gmt.*
+
+   gmt begin map pdf,png
+   gmt psxy tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred
+   gmt psxy tmp2.txt -R -J -Sc0.5c -Gyellow
+   gmt end
+   del tmp*
 
 注释语句
 ~~~~~~~~
@@ -82,8 +85,10 @@ del命令用来删除文件。使用GMT命令绘图后通常会在文件夹下�
 rem命令用来添加注释::
 
    rem 绘制地图
-   echo 2 2 | gmt psxy -R0/5/0/5 -JX5c -B1 -Sc0.5c -Gblack -K > map.ps
-   echo 3 3 | gmt psxy -R -J -Sc0.5c -Gred -O >> map.ps
+   gmt begin map pdf
+   echo 2 2 | gmt plot -R0/5/0/5 -JX5c -B1 -Sc0.5c -Gblack
+   echo 3 3 | gmt plot -R -J -Sc0.5c -Gred
+   gmt end
 
 循环语句
 ~~~~~~~~

@@ -7,7 +7,7 @@
 - `Panoply <http://www.giss.nasa.gov/tools/panoply/>`_
 - `ncBrowse <http://www.epic.noaa.gov/java/ncBrowse/>`_
 
-更多相关工具，见 `netCDF网站上的列表 <http://www.unidata.ucar.edu/software/netcdf/software.html>`_ 。
+更多相关工具，见 `netCDF网站上的列表 <http://www.unidata.ucar.edu/software/netcdf/software.html>`_\ 。
 
 .. note::
 

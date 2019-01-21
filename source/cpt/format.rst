@@ -61,10 +61,10 @@ CPT文件有两种类型，一种适用于分类型数据，一种适用于常�
 #. 若 ``<color_min_1>`` 与 ``<color_max_1>`` 相等，则 ``<z0>`` 到 ``<z1>``
    范围内的所有Z值均使用相同的颜色
 #. 若 ``<color_min_1>`` 使用了图案，则 ``<color_max_1>`` 必须设置为 ``-``
-#. ``<A>`` 是可选的，用于表明在使用 ``psscale`` 命令绘制色标时要如何标注。
+#. ``<A>`` 是可选的，用于表明在使用 ``colorbar`` 命令绘制色标时要如何标注。
    ``<A>`` 可以取 ``L`` 、 ``U`` 、 ``B``\ ，表示选择每个Z切片的下限、上限或者
    上下限作为标注。
-#. ``;<lable>`` 是切片的标签，当 ``psscale`` 使用 ``-L`` 选项时会在用 ``<label>`` 作为标注
+#. ``;<lable>`` 是切片的标签，当 ``colorbar`` 使用 ``-L`` 选项时会在用 ``<label>`` 作为标注
 #. ``B|F|N`` 语句分别用于设置背景色（默认值为 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` ）、
    前景色（默认值为 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` ）和
    NaN值的颜色（默认值为 :ref:`COLOR_NAN <COLOR_NAN>` ）

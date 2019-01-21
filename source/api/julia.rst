@@ -278,6 +278,3 @@ PS变量 ``GMTps`` 的定义为::
         mode::Int               # 1 = Has header, 2 = Has trailer, 3 = Has both
         comment::Array{Any,1}   # Cell array with any comments
     end
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/julia_wrapper.html
-.. source: https://github.com/joa-quim/GMT.jl

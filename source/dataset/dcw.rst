@@ -142,7 +142,7 @@ GMT中至少有两处会使用DCW数据：
 
 .. gmt-plot::
 
-    gmt pscoast -R15/180/-20/70 -JM12c -Baf -E=AS+p0.25p,red > dataset_dcw_01.ps
+    gmt coast -R15/180/-20/70 -JM12c -Baf -E=AS+p0.25p,red -png dataset_dcw_01
 
 绘制国界
 ++++++++
@@ -151,7 +151,7 @@ GMT中至少有两处会使用DCW数据：
 
 .. gmt-plot::
 
-    gmt pscoast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 > dataset_dcw_02.ps
+    gmt coast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 -png dataset_dcw_02
 
 绘制省界
 ++++++++
@@ -160,7 +160,7 @@ GMT中至少有两处会使用DCW数据：
 
 .. gmt-plot::
 
-    gmt pscoast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 > dataset_dcw_03.ps
+    gmt coast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 -png dataset_dcw_03
 
 导出省界数据
 ++++++++++++

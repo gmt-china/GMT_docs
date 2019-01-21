@@ -61,7 +61,7 @@ GMT中通常使用 ``-G`` 选项填充多边形或符号。有两种填充方式
 
 下面的命令在底图中心绘制了一个直径为4厘米的圆，并填充颜色::
 
-    echo 5 5 | gmt psxy -JX10c/10c -R0/10/0/10 -Baf -Sc4c -G<fill> > test.ps
+    echo 5 5 | gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc4c -G<fill> -pdf test
 
 请尝试将其中的 ``<fill>`` 修改为以下不同的值并查看效果以理解这一节的内容：
 

@@ -86,7 +86,7 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 
 下面的命令在图上写了文字 ``TEXT``\ ::
 
-    echo 2.5 0.5 TEXT | gmt pstext -R0/5/0/1 -JX15c/2c -F+f<font> > text.ps
+    echo 2.5 0.5 TEXT | gmt text -R0/5/0/1 -JX15c/2c -F+f<font> -pdf text
 
 将其中的 ``<font>`` 修改为不同的值并查看绘图效果，以理解这一节的内容。
 

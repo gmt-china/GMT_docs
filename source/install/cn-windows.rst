@@ -67,6 +67,9 @@ GMT 的中文支持
 
 .. code-block:: batch
 
+   gmt begin
+   gmt figure map pdf,png C-sFONTPATH=C:\windows\fon
+
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black
 
@@ -75,9 +78,9 @@ GMT 的中文支持
    echo 7 2.5 35p,41,yellow GMT黑体 >> tmp
    echo 7 1.0 35p,42,green GMT楷体 >> tmp
 
-   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f > GMT_chinese.ps
-   gmt psconvert GMT_chinese.ps -C-sFONTPATH=C:\windows\fonts -Tg -A -P -E300
-   del gmt.* tmp
+   gmt text tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f
+   del tmp
+   gmt end
 
 成图效果如下：
 

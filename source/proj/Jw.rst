@@ -14,4 +14,4 @@
 .. gmt-plot::
     :caption: 使用Mollweide投影绘制全球地图
 
-    gmt pscoast -Rd -JW4.5i -Bg -Dc -A10000 -Gtomato1 -Sskyblue -P > GMT_mollweide.ps
+    gmt coast -Rd -JW4.5i -Bg -Dc -A10000 -Gtomato1 -Sskyblue -png GMT_mollweide

@@ -15,4 +15,4 @@
 .. gmt-plot::
     :caption: 使用Hammer投影绘制全球地图
 
-    gmt pscoast -Rg -JH4.5i -Bg -Dc -A10000 -Gblack -Scornsilk -P > GMT_hammer.ps
+    gmt coast -Rg -JH4.5i -Bg -Dc -A10000 -Gblack -Scornsilk -png GMT_hammer

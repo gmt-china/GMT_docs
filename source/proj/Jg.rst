@@ -15,8 +15,7 @@
 .. gmt-plot::
     :caption: 使用正交投影绘制半球
 
-    gmt pscoast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -P > GMT_orthographic.ps
-
+    gmt coast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -png GMT_orthographic
 
 ``-Jg`` 加上更多的参数时还可以用于绘制透视投影，以在二维平面内模拟从太空看三维的地球。具体的参数为::
 
@@ -33,5 +32,5 @@
 .. gmt-plot::
     :caption: 透视投影
 
-    gmt pscoast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown \
-                -Wthinnest -P -Slightblue --MAP_ANNOT_MIN_SPACING=0.25i > GMT_perspective.ps
+    gmt coast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown \
+                -Wthinnest -Slightblue --MAP_ANNOT_MIN_SPACING=0.25i -png GMT_perspective

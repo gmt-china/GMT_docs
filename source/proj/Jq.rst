@@ -16,7 +16,7 @@
 .. gmt-plot::
     :caption: 使用Plate Carrée投影绘制全球地图
 
-    gmt pscoast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -P > GMT_equi_cyl.ps
+    gmt coast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl
 
 选择不同的标准纬线，则可以获取经度和纬度的不同缩放比例。流行的几个标准纬线如下：
 

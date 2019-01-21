@@ -9,28 +9,28 @@ GMT提供了大约130多个模块，每个模块可以实现不同的功能，�
 绘制1D数据
 ----------
 
-- psbasemap ：绘制底图
-- psxy ：在图上绘制线段、多边形和符号
-- pstext ：在图上写文本
-- pscoast ：在地图上绘制海岸线、河流、国界线
-- pslegend ：绘制图例
-- pssolar ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
-- psmeca ：在地图上绘制震源机制解
-- pscoupe ：绘制震源机制解的剖面图
-- pshistogram ：统计并绘制直方图
-- pssac ：在地图上绘制 SAC 格式的地震波形数据
-- psclip ：打开或关闭多边形裁剪路径
-- psrose ：绘制极坐标下的直方图（sector图、rose图或windrose图）
-- pspolar ：在震源球上绘制台站极性
-- psvelo ：在地图上绘制速度矢量、十字线、楔形图
-- psternary ：绘制三角图解
+- basemap ：绘制底图
+- plot ：在图上绘制线段、多边形和符号
+- text ：在图上写文本
+- coast ：在地图上绘制海岸线、河流、国界线
+- legend ：绘制图例
+- solar ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
+- meca ：在地图上绘制震源机制解
+- coupe ：绘制震源机制解的剖面图
+- histogram ：统计并绘制直方图
+- sac ：在地图上绘制 SAC 格式的地震波形数据
+- clip ：打开或关闭多边形裁剪路径
+- rose ：绘制极坐标下的直方图（sector图、rose图或windrose图）
+- polar ：在震源球上绘制台站极性
+- velo ：在地图上绘制速度矢量、十字线、楔形图
+- ternary ：绘制三角图解
 
 绘制2D数据
 ----------
 
-- gmtlogo ：在图上绘制GMT图形logo
-- psimage ：将EPS或光栅图片放在图上
-- psscale ：在图上绘制灰色或彩色色标
+- logo ：在图上绘制GMT图形logo
+- image ：将EPS或光栅图片放在图上
+- colorbar ：在图上绘制灰色或彩色色标
 - grdvector ：根据两个网格文件绘制矢量场
 - grdimage ：在图上绘制网格数据
 

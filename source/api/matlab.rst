@@ -229,5 +229,3 @@ PostScript 结构体
     length         % 字符串的长度（即字节数）
     mode           % 1 表示仅包含文件头，2表示只包含文件尾，3表示完整为文件
     comment
-
-.. source: http://gmt.soest.hawaii.edu/doc/latest/matlab_wrapper.html

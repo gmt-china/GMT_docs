@@ -27,11 +27,11 @@ GMT中12号字体（Symbol字符集）和34号字体（Pifont ZapfDingbats）所
 
 示例如下::
 
-    gmt pstext -JX10c/10c -R0/10/0/10 -F+f15p,12 > test1.ps << EOF
+    gmt text -JX10c/10c -R0/10/0/10 -F+f15p,12 -pdf test1 << EOF
     5 5 \141
     EOF
 
-    echo 5 5 '\141' | gmt pstext -JX10c/10c -R0/10/0/10 -F+f15p,12 > test2.ps
+    echo 5 5 '\141' | gmt text -JX10c/10c -R0/10/0/10 -F+f15p,12 -pdf test2
 
 上面的示例中，\ ``-F+f15p,12`` 指定了使用12号字体。两个示例分别采用了两种不同的
 方式输入数据。需要格外注意，在第二种方式下，由于bash中的echo命令会自动将 ``\141``
@@ -43,5 +43,5 @@ GMT中12号字体（Symbol字符集）和34号字体（Pifont ZapfDingbats）所
 ``@~`` 或 ``@%%`` 临时将字体切换为特殊字符。转义字符的具体用法在后面会介绍，
 此处仅举一例::
 
-    gmt psbasemap -R0/10/0/10 -JX10c/10c -BWSne \
-        -Bx2+l"@~\161@~ or @%12%\161@%%" -By2+l"@%34%\164@%%" > test.ps
+    gmt basemap -R0/10/0/10 -JX10c/10c -BWSne \
+        -Bx2+l"@~\161@~ or @%12%\161@%%" -By2+l"@%34%\164@%%" -pdf test

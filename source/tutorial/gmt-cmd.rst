@@ -16,13 +16,13 @@ GMT的所有功能都是通过调用 ``gmt`` 这个命令来完成的。
 
 一个完整的示例::
 
-    gmt pscoast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t"Title with spaces" -V -P > map.ps
+    gmt coast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t"Title with spaces" -V -pdf map
 
 其中，
 
 - 命令以 ``gmt`` 开头
-- ``pscoast`` 是用于绘制海岸线的模块
-- ``-R``\ 、\ ``-J``\ 、\ ``-G`` 等都是 ``pscoast`` 模块的选项
+- ``coast`` 是用于绘制海岸线的模块
+- ``-R``\ 、\ ``-J``\ 、\ ``-G`` 等都是 ``coast`` 模块的选项
 - ``-B+t"Title with spaces"`` 中 ``+t`` 是选项 ``-B`` 的子选项，\ ``"Title with spaces"`` 是子选项 ``+t`` 的参数
 
 几点说明：
@@ -40,4 +40,3 @@ GMT的所有功能都是通过调用 ``gmt`` 这个命令来完成的。
 - 注意 ``-A`` 、``—A``　以及 ``－A`` 的细微区别，这通常是由于标点符号的全角和
   半角导致的。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客，都有此问题。
   GMT5、6的官方文档以及本文档不存在该问题。
-
