@@ -15,8 +15,6 @@ GMT支持的投影方式如下图所示。
     :show-code: false
     :caption: GMT支持的地图投影及坐标变换
 
-这一章会给出所有投影方式，但地图投影部分不会翻译。
-
 .. toctree::
    :maxdepth: 2
 

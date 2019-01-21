@@ -6,10 +6,7 @@ GMT初探
 
    cmd
    gmt-cmd
-   cmd-basis
-   bash
-   bat
-   unix-tools
+   modules
    tutor1
    tutor2
    tutor3
