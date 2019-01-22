@@ -6,8 +6,6 @@
 
     overview
     netcdf
-    native-grid
-    sun-raster
     read
     write
     boundary-condition
