@@ -6,6 +6,7 @@ GMT初探
 
    cmd
    gmt-cmd
+   mode
    modules
    tutor1
    tutor2
