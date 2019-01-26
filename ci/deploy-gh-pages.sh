@@ -45,8 +45,6 @@ rm -rf ${VERSION}
 cp -Rf ${HTML_SRC}/ ${VERSION}/
 # Another copy to root directory
 if [[ "${TRAVIS_BRANCH}" == 'master' ]]; then
-    # copy files to root
-    cp -Rf ${HTML_SRC}/* .
     # direct index.html to latest
     echo "<meta http-equiv=\"Refresh\" content=\"0;url=latest/\"/>" > index.html
 fi

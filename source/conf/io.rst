@@ -73,8 +73,6 @@ IO参数
 **IO_NC4_CHUNK_SIZE**
     控制写netCDF文件时的分块大小 [auto]
 
-    见 :doc:`/grid/netcdf` 中的相关介绍，以及官方文档对该参数的说明。
-
 .. _IO_NC4_DEFLATION_LEVEL:
 
 **IO_NC4_DEFLATION_LEVEL**
