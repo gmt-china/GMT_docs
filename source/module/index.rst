@@ -8,6 +8,15 @@ GMT 模块
 - :doc:`gmt5syntax` ：将旧的GMT脚本修改成新的 ``gmt <module>`` 语法
 - :doc:`gmt-config` ：返回 GMT 动态函数库的基本信息
 
+**现代模式/会话管理**
+
+- :doc:`begin` : 初始化一个新的GMT现代模式会话
+- :doc:`end` : 结束现代模式会话，并生成图片文件
+- :doc:`docs` : 打开指定模块的HTML文档
+- :doc:`figure` : 设置当前图片的属性
+- :doc:`subplot`
+- :doc:`clear` : 删除当前的历史文件、配置文件、CPT文件、缓存、数据目录、会话目录
+
 **参数设置**
 
 - :doc:`gmtset` ：修改单个或多个GMT参数的值
