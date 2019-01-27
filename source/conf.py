@@ -129,3 +129,7 @@ latex_elements = {
     'fontenc'   : '',
     'maketitle' : '\\maketitle',
 }
+
+intersphinx_mapping = {
+    'gmt': ('http://gmt.soest.hawaii.edu/doc/5.4.5/', 'gmt.inv'),
+}
