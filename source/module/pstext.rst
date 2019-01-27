@@ -9,8 +9,8 @@ pstext
 该命令用于在图上添加文本，可以自由控制文本的大小、颜色、字体、角度。
 
 除了可以添加键盘上可直接输入的字符外，还可以通过使用转义字符、特殊字体以及八进制码
-实现希腊字母、上下标等功能，详见 :ref:`doc:text` 、 :ref:`doc:character-escape` 、
-:ref:`doc:special-fonts` 和 :ref:`doc:special-characters` 。
+实现希腊字母、上下标等功能，详见 :doc:`/basis/text` 、 :doc:`/basis/character-escape` 、
+:doc:`/basis/special-fonts` 和 :doc:`/basis/special-characters` 。
 
 必选选项
 --------
@@ -66,10 +66,10 @@ pstext
 ``-F[+a|+A[angle]][+c[justify]][+f[font]][+j[justify]][+h|+l|+r[<first>]|+t<text>|+z<format>]``
     控制文本的角度、对齐方式和字体等属性。
 
-    #. ``+f<font>`` 设置文本的字体， 见 :ref:`doc:text`
+    #. ``+f<font>`` 设置文本的字体， 见 :doc:`/basis/text`
     #. ``+a<angle>`` 文本相对于水平方向逆时针旋转的角度
     #. ``+A<angle>`` force text-baselines to convert into the -90/+90 range
-    #. ``+j<justify>`` 文本对齐方式，见 :ref:`doc:anchors`
+    #. ``+j<justify>`` 文本对齐方式，见 :doc:`/basis/anchors`
 
     下面的命令中，统一设置了所有文本的字号为30p，4号字体，红色，文本旋转45度，
     且以左上角对齐::

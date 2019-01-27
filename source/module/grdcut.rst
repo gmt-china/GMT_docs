@@ -41,7 +41,7 @@ grdcut
 
     #. ``<lon>/<lat>`` 圆心位置
     #. ``<radius>`` 圆半径
-    #. ``<unit>`` 圆半径所使用的距离单位，见 :ref:`doc:unit` 一节
+    #. ``<unit>`` 圆半径所使用的距离单位，见 :doc:`/basis/unit` 一节
     #. ``-Sn`` 将所有矩形区域内但不在圆内的节点的值为NaN
 
 ``-Z[n|r]<min>/<max>``

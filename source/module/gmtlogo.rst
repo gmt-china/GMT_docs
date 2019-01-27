@@ -20,13 +20,13 @@ gmtlogo
 ``-D[g|j|J|n|x]<refpoint>[+w<width>][+j<justify>][+o<dx>[/<dy>]]``
     设置logo在图中的位置
 
-    - ``[g|j|J|n|x]<refpoint>`` 设置底图上的参考点，见 :ref:`doc:embellishments` 一节
-    - ``+j<justify>`` 设置logo上的锚点，见 :ref:`doc:embellishments` 一节
-    - ``+o<dx>[/<dy>]`` 设置参考点的额外偏移量，见 :ref:`doc:embellishments` 一节
+    - ``[g|j|J|n|x]<refpoint>`` 设置底图上的参考点，见 :doc:`/basis/embellishments` 一节
+    - ``+j<justify>`` 设置logo上的锚点，见 :doc:`/basis/embellishments` 一节
+    - ``+o<dx>[/<dy>]`` 设置参考点的额外偏移量，见 :doc:`/basis/embellishments` 一节
     - ``+w<width>`` 设置logo的宽度
 
 ``-F[+c<clearances>][+g<fill>][+i[[<gap>/]<pen>]][+p[<pen>]][+r[<radius>]][+s[<dx>/<dy>/][<fill>]]``
-    在 logo 后加一个背景面板，见 :ref:`doc:embellishments` 一节
+    在 logo 后加一个背景面板，见 :doc:`/basis/embellishments` 一节
 
     - ``+p<pen>`` 面板边框的画笔属性（默认画笔属性由参数 ``MAP_FRAME_PEN`` 决定）
     - ``+g<fill>`` 面板填充色（默认不填充颜色）

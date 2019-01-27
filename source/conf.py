@@ -78,10 +78,6 @@ html_context = {
             "https://github.com/gmt-china/GMT_Docs",
         ),
         (
-            '<i class="fa fa-book fa-fw"></i> 模块手册',
-            "https://modules.gmt-china.org",
-        ),
-        (
             '<i class="fa fa-globe fa-fw"></i> GMT 中文社区',
             "https://gmt-china.org",
         ),
