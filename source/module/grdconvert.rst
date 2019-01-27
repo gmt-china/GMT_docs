@@ -10,10 +10,10 @@ grdconvert
 --------
 
 ``<ingrdfile>[=<id>[+s<scale>][+o<offset>][+n<invalid>]]``
-    要读入的网格文件。其他参数的含义见 :ref:`doc:grid-data`
+    要读入的网格文件。
 
 ``<outgrdfile>[=<id>[+s<scale>][+o<offset>][+n<invalid>]][:<driver>[/<datatype>]]``
-    要写入的网格文件。其他参数的含义见 :ref:`doc:grid-data`
+    要写入的网格文件。
 
 ``-N``
     如果你想要将一个网格文件转换为 native 二进制文件供 :doc:`grdraster` 模块直接使用，则需要使用 ``-N`` 选项，以保证不将 GMT 头段结构写到文件中。

@@ -41,7 +41,7 @@ grdsample
     是像素点配准，则输出为网格线配准。
 
 ``-n[b|c|l|n][+a][+b<BC>][+c][+t<threshold>]``
-    重采样时使用的插值算法，见 :ref:`doc:option-n` 一节。
+    重采样时使用的插值算法，见 :doc:`/option/n` 一节。
 
 示例
 ----

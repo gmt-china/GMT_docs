@@ -10,7 +10,7 @@ gmtget
 --------
 
 ``<PARAMETER>``
-    GMT的参数名，见 :ref:`doc:configurations`
+    GMT的参数名，见 :doc:`/conf/index`
 
     ``gmtset`` 后直接跟一个或多个参数名::
 
