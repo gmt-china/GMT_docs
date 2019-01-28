@@ -3,7 +3,7 @@
 psternary
 =========
 
-:官方文档: :ref:`gmt:psternary`
+:官方文档: :doc:`gmt:psternary`
 :简介: 绘制三角图解
 
 ``psternary``\ 从文件（三列或者更多列数据）或者标准输出中读取数据，并在三角图中绘制符号。

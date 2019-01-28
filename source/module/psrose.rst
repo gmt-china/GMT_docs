@@ -3,7 +3,7 @@
 psrose
 ======
 
-:官方文档: :ref:`gmt:psrose`
+:官方文档: :doc:`gmt:psrose`
 :简介: 绘制极坐标下的直方图（sector图、rose图或windrose图）
 
 可选选项

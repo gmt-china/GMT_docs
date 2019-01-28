@@ -3,4 +3,4 @@
 grdflexure
 ==========
 
-:官方文档: :ref:`gmt:grdflexure`
+:官方文档: :doc:`gmt:supplements/potential/grdflexure`

@@ -3,7 +3,7 @@
 isogmt
 ======
 
-:官方文档: :ref:`gmt:isogmt`
+:官方文档: :doc:`gmt:isogmt`
 :简介: 在“隔离模式”下运行GMT命令或脚本
 
 用法

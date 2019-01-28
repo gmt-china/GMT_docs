@@ -3,7 +3,7 @@
 gmtsimplify
 ===========
 
-:官方文档: :ref:`gmt:gmtsimplify`
+:官方文档: :doc:`gmt:gmtsimplify`
 :简介: 使用Douglas-Peucker算法对线段做简化
 
 该命令可以将一个复杂多边形进行简化，用一条直线代替一系列点，并保证每个点与直线的

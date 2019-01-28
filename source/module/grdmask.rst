@@ -3,7 +3,7 @@
 grdmask
 =======
 
-:官方文档: :ref:`gmt:grdmask`
+:官方文档: :doc:`gmt:grdmask`
 :简介: 根据多边形数据或点数据创建mask网格文件
 
 必选选项

@@ -3,4 +3,4 @@
 grdredpol
 =========
 
-:官方文档: :ref:`gmt:grdredpol`
+:官方文档: :doc:`gmt:supplements/potential/grdredpol`

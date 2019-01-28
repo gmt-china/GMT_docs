@@ -3,4 +3,4 @@
 greenspline
 ===========
 
-:官方文档: :ref:`greenspline`
+:官方文档: :doc:`gmt:greenspline`

@@ -3,7 +3,7 @@
 psmeca
 ======
 
-:官方文档: :ref:`gmt:psmeca`
+:官方文档: :doc:`gmt:supplements/meca/psmeca`
 :简介: 在地图上绘制震源机制解
 
 -S选项

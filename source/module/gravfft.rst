@@ -3,4 +3,4 @@
 gravfft
 =======
 
-:官方文档: :ref:`gmt:gravfft`
+:官方文档: :doc:`gmt:supplements/potential/gravfft`

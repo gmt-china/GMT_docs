@@ -3,4 +3,4 @@
 triangulate
 ===========
 
-:官方文档: :ref:`gmt:triangulate`
+:官方文档: :doc:`gmt:triangulate`

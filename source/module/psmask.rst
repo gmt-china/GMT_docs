@@ -3,4 +3,4 @@
 psmask
 ==========
 
-:官方文档: :ref:`gmt:psmask`
+:官方文档: :doc:`gmt:psmask`

@@ -3,7 +3,7 @@
 grdraster
 =========
 
-:官方文档: :ref:`gmt:grdraster`
+:官方文档: :doc:`gmt:grdraster`
 :简介: 从二进制数据中提取子区域并保存为GMT网格文件
 
 该命令会读取根据 ``grdraster.info`` 的内容，读取指定的二进制数据，从中提取出

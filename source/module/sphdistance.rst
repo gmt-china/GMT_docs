@@ -3,4 +3,4 @@
 sphdistance
 ===========
 
-:官方文档: :ref:`gmt:sphdistance`
+:官方文档: :doc:`gmt:sphdistance`

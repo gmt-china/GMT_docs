@@ -3,7 +3,7 @@
 grdlandmask
 ===========
 
-:官方文档: :ref:`gmt:grdlandmask`
+:官方文档: :doc:`gmt:grdlandmask`
 :简介: 根据海岸线数据创建陆地-海洋的mask网格文件
 
 该命令会根据海岸线数据，确定指定网格内的每个节点是在陆地上还是在水中，并给节点

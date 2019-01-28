@@ -3,7 +3,7 @@
 grdconvert
 ==========
 
-:官方文档: :ref:`gmt:grdconvert`
+:官方文档: :doc:`gmt:grdconvert`
 :简介: 在不同的网格格式之间互相转换
 
 必选选项

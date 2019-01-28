@@ -3,7 +3,7 @@
 pslegend
 ==========
 
-:官方文档: :ref:`gmt:pslegend`
+:官方文档: :doc:`gmt:pslegend`
 :简介: 在图上添加图例
 
 选项

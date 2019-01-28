@@ -3,7 +3,7 @@
 grd2rgb
 =======
 
-:官方文档: :ref:`gmt:grd2rgb`
+:官方文档: :doc:`gmt:grd2rgb`
 :简介: 将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件
 
 该命令的作用是：

@@ -3,7 +3,7 @@
 pscoupe
 =======
 
-:官方文档: :ref:`gmt:pscoupe`
+:官方文档: :doc:`gmt:supplements/meca/pscoupe`
 :简介: 绘制震源机制解的剖面图
 
 :doc:`psmeca` 在绘制震源球时，本质上是取了一个水平剖面，并将三维震源球的下半球

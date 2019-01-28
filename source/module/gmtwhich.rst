@@ -3,7 +3,7 @@
 gmtwhich
 ========
 
-:官方文档: :ref:`gmt:gmtwhich`
+:官方文档: :doc:`gmt:gmtwhich`
 :简介: 返回指定文件的完整路径
 
 GMT会依次在如下目录中去寻找命令行中指定的文件::

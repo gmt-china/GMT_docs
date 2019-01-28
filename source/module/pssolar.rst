@@ -3,7 +3,7 @@
 pssolar
 =======
 
-:官方文档: :ref:`gmt:pssolar`
+:官方文档: :doc:`gmt:pssolar`
 :简介: 计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 
 必选选项
@@ -35,7 +35,7 @@ pssolar
 ``-G<fill>|c``
     根据晨昏线对黑夜区域填充颜色或图案，见 :doc:`/basis/fill` 一节。
     也可以使用 ``-Gc`` 剪裁黑夜区域，并通过使用 ``gmt psclip -C`` 停止区域剪裁，
-    见 :ref:`gmt:psclip` 。
+    见 :doc:`gmt:psclip` 。
 
 ``-I[<lon>/<lat>][+d<date>][+z<TZ>]``
     输出太阳的当前位置、方位角和高度角。加上 ``<lon>/<lat>`` 则输出日出、日落、

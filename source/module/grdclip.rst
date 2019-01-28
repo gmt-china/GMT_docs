@@ -3,7 +3,7 @@
 grdclip
 ========
 
-:官方文档: :ref:`gmt:grdclip`
+:官方文档: :doc:`gmt:grdclip`
 :简介: 对网格文件的Z值范围做裁剪
 
 必选选项

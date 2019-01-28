@@ -3,5 +3,5 @@
 blockmode
 =========
 
-:官方文档: :ref:`gmt:blockmode`
+:官方文档: :doc:`gmt:blockmode`
 :简介:

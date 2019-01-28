@@ -3,7 +3,7 @@
 pssac
 =====
 
-:官方文档: :ref:`gmt:pssac`
+:官方文档: :doc:`gmt:supplements/meca/pssac`
 :简介: 在地图上绘制 SAC 格式的地震波形数据
 
 该命令会直接读取命令行中的 SAC 文件名，或者从输入文件中读入 SAC 文件名及控制

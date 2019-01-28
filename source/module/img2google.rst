@@ -3,4 +3,4 @@
 img2google
 ==========
 
-:官方文档: :ref:`gmt:img2google`
+:官方文档: :doc:`gmt:supplements/img/img2google`

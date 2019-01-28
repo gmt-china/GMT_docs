@@ -3,4 +3,4 @@
 pswiggle
 ========
 
-:官方文档: :ref:`gmt:pswiggle`
+:官方文档: :doc:`gmt:pswiggle`

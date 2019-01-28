@@ -3,4 +3,4 @@
 grdfft
 ======
 
-:官方文档: :ref:`gmt:grdfft`
+:官方文档: :doc:`gmt:grdfft`

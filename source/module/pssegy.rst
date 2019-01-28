@@ -3,4 +3,4 @@
 pssegy
 ======
 
-:官方文档: :ref:`gmt:pssegy`
+:官方文档: :doc:`gmt:supplements/segy/pssegy`

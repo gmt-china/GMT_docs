@@ -3,4 +3,4 @@
 talwani2d
 =========
 
-:官方文档: :ref:`gmt:talwani2d`
+:官方文档: :doc:`gmt:supplements/potential/talwani2d`
