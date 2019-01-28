@@ -1,16 +1,16 @@
-.. index:: ! pscoupe
+.. index:: ! coupe
 
-pscoupe
-=======
+coupe
+=====
 
-:官方文档: :doc:`gmt:supplements/meca/pscoupe`
+:官方文档: :doc:`gmt:supplements/meca/coupe`
 :简介: 绘制震源机制解的剖面图
 
-:doc:`psmeca` 在绘制震源球时，本质上是取了一个水平剖面，并将三维震源球的下半球
-投影到该水平剖面上。而 :doc:`pscoupe` 则更灵活一些，可以将三维震源球投影到任意
+:doc:`meca` 在绘制震源球时，本质上是取了一个水平剖面，并将三维震源球的下半球
+投影到该水平剖面上。而 :doc:`coupe` 则更灵活一些，可以将三维震源球投影到任意
 一个剖面上。
 
-- 对于一个水平剖面，会将下半球投影到平面上（即 :doc:`psmeca` 的做法）
+- 对于一个水平剖面，会将下半球投影到平面上（即 :doc:`meca` 的做法）
 - 对于一个垂直剖面，会将垂直平面后的半球投影到平面上
 - 对于任意一个非水平的平面而言：
 
@@ -59,7 +59,7 @@ pscoupe
     设置多个属性，可重复使用多次
 
     - ``-Fs<symbol>[<size[/<fontsize>[/<offset>[<u>]]]]`` 见官方文档
-    - ``-Fa[<size>][/<P_axis_symbol>[<T_axis_symbol>]]`` 计算并绘制P和T轴的符号。 ``<size>`` 是符号大小，符号与 :doc:`psxy` 类似，可以取 ``c|d|h|i|p|s|t|x`` ，默认值为 ``6p/cc``
+    - ``-Fa[<size>][/<P_axis_symbol>[<T_axis_symbol>]]`` 计算并绘制P和T轴的符号。 ``<size>`` 是符号大小，符号与 :doc:`plot` 类似，可以取 ``c|d|h|i|p|s|t|x`` ，默认值为 ``6p/cc``
     - ``-Fe<fill>`` 设置T轴符号的填充色
     - ``-Fg<fill>`` 设置P轴符号的填充色
     - ``-Fp<pen>`` P轴轮廓的画笔属性
@@ -89,9 +89,9 @@ pscoupe
     - ``2`` 绘制第二个断层面
 
 ``-S``
-    选择震源机制解的格式。与 :doc:`psmeca` 中 ``-S`` 选项用法相同
+    选择震源机制解的格式。与 :doc:`meca` 中 ``-S`` 选项用法相同
 
-    唯一的不同在于，输入文件中 ``newX`` 和 ``newY`` 对该命令无效，这里加上 ``newX`` 和 ``newY`` 只是为了是的该命令可以使用与 :doc:`psmeca` 相同的输入文件。
+    唯一的不同在于，输入文件中 ``newX`` 和 ``newY`` 对该命令无效，这里加上 ``newX`` 和 ``newY`` 只是为了是的该命令可以使用与 :doc:`meca` 相同的输入文件。
 
 ``-W<pen>``
     设置断层边界的画笔属性

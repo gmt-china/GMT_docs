@@ -1,9 +1,9 @@
-.. index:: ! pscoast
+.. index:: ! coast
 
-pscoast
-=======
+coast
+=====
 
-:官方文档: :doc:`gmt:pscoast`
+:官方文档: :doc:`gmt:coast`
 :简介: 在地图上绘制海岸线、河流、国界线
 
 该命令除了可以用于绘制海岸线、河流、政治边界，还可以裁剪陆地区域或水域，也可以
@@ -139,7 +139,7 @@ pscoast
 
     使用 ``-Gc`` 和 ``-Sc`` 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令
     中只有在裁剪区域内的部分才会被绘制。在绘图结束后，需要关闭裁剪，就需要再次调用
-    ``pscoast`` ，并加上 ``-Q`` 选项。若在开启裁剪后使用了 ``-X`` 和 ``-Y`` 选项，
+    ``coast`` ，并加上 ``-Q`` 选项。若在开启裁剪后使用了 ``-X`` 和 ``-Y`` 选项，
     则在关闭时也要记得使用 ``-X`` 和  ``-Y`` 。
 
 ``-S<fill>|c``
@@ -180,33 +180,33 @@ pscoast
 
 ::
 
-    gmt pscoast -R-30/30/-40/40 -Jm0.1i -B5 -I1/1p,blue -N1/0.25p,- \
+    gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -I1/1p,blue -N1/0.25p,- \
             -I2/0.25p,blue -W0.25p,white -Ggreen -Sblue -P > africa.ps
 
 ::
 
-    gmt pscoast -R-30/-10/60/65 -Jm1c -B5 -Gp100/28 > iceland.ps
+    gmt coast -R-30/-10/60/65 -Jm1c -B5 -Gp100/28 > iceland.ps
 
 将非洲区域裁剪出来，并在其中的陆地部分绘制地形::
 
-    gmt pscoast -R-30/30/-40/40 -Jm0.1i -B5 -Gc -P -K > africa.ps
+    gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -Gc -P -K > africa.ps
     gmt grdimage -Jm0.1i etopo5.nc -Ccolors.cpt -O -K >> africa.ps
-    gmt pscoast -Q -O >> africa.ps
+    gmt coast -Q -O >> africa.ps
 
 绘制部分国家的国界线（似乎有BUG）::
 
-    gmt pscoast -JM6i -P -Baf -EGB,IT,FR+gblue+p0.25p,red+r -EES,PT,GR+gyellow > map.ps
+    gmt coast -JM6i -P -Baf -EGB,IT,FR+gblue+p0.25p,red+r -EES,PT,GR+gyellow > map.ps
 
 提取冰岛的海岸线数据::
 
-    gmt pscoast -R-26/-12/62/68 -Dh -W -M > iceland.txt
+    gmt coast -R-26/-12/62/68 -Dh -W -M > iceland.txt
 
 FAQ
 ---
 
 #. 错误消息::
 
-       pscoast: low resolution shoreline data base not installed.
+       coast: low resolution shoreline data base not installed.
 
    出现该错误的原因有如下几种：
 

@@ -1,9 +1,9 @@
-.. index:: ! psmeca
+.. index:: ! meca
 
-psmeca
-======
+meca
+====
 
-:官方文档: :doc:`gmt:supplements/meca/psmeca`
+:官方文档: :doc:`gmt:supplements/meca/meca`
 :简介: 在地图上绘制震源机制解
 
 -S选项
@@ -151,7 +151,7 @@ psmeca
 
     - ``-Fa[<size>][/<P_axis_symbol>[<T_axis_symbol>]]`` 在震源球上P轴和T轴处
       绘制符号。 ``<size>`` 是符号大小；符号可以取 ``c|d|h|i|p|s|t|x``
-      （具体含义见 :doc:`psxy` 的 ``-S`` 选项），默认值为 ``6p/cc`` ，即在P轴
+      （具体含义见 :doc:`plot` 的 ``-S`` 选项），默认值为 ``6p/cc`` ，即在P轴
       和T轴处分别绘制一个大小为6p的圆
     - ``-Fe<fill>`` 设置T轴符号的填充色
     - ``-Fg<fill>`` 设置P轴符号的填充色

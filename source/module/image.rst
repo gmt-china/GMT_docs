@@ -1,9 +1,9 @@
-.. index:: ! psimage
+.. index:: ! image
 
-psimage
-=======
+image
+=====
 
-:官方文档: :doc:`gmt:psimage`
+:官方文档: :doc:`gmt:image`
 :简介: 将图片或EPS文件放在地图上
 
 该命令可以读取一个 EPS 文件或光栅图片格式，并将其画在地图上。

@@ -1,9 +1,9 @@
-.. index:: ! psvelo
+.. index:: ! velo
 
-psvelo
-======
+velo
+====
 
-:官方文档: :doc:`gmt:supplements/meca/psvelo`
+:官方文档: :doc:`gmt:supplements/meca/velo`
 :简介: 在地图上绘制速度矢量、十字线、楔形图
 
 -S选项

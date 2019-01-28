@@ -1,9 +1,9 @@
-.. index:: ! pslegend
+.. index:: ! legend
 
-pslegend
-==========
+legend
+======
 
-:官方文档: :doc:`gmt:pslegend`
+:官方文档: :doc:`gmt:legend`
 :简介: 在图上添加图例
 
 选项
@@ -53,7 +53,7 @@ GMT中共有14种图例类型，列举如下：
     #. ``offset`` 是colorbar相对于图例框左边界的距离
     #. ``height`` 是colorbar高度
     #. 还可以加上子选项 ``+e[b|f][<length>]][+h][+ma|c|l|u][+n[<txt>]`` 以及
-       其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 :doc:`psscale` 命令
+       其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 :doc:`colorbar` 命令
 
 ``C textcolor``
     接下来的所有文本所使用的颜色。
@@ -111,7 +111,7 @@ GMT中共有14种图例类型，列举如下：
     #. ``-`` 表示使用默认的文字大小以及默认字体 ``FONT_TITLE``
 
 ``M slon|- slat length [+f][+l[label]][+u] [-Fparam] [-Rw/e/s/n -Jparam]``
-    在图例中绘制比例尺，在 :doc:`psbasemap` 命令中有详细介绍
+    在图例中绘制比例尺，在 :doc:`basemap` 命令中有详细介绍
 
 ``N ncolumns`` 或 ``N relwidth1 relwidth2 ... relwidthn``
     修改图例中的列数
@@ -121,12 +121,12 @@ GMT中共有14种图例类型，列举如下：
     用于指定每列所占的相对宽度，所有宽度的和应等于 ``-D`` 选项所设置的宽度相等。
 
 ``P paragraph-mode-header-for-pstext``
-    在图例中添加段落，参考 :doc:`pstext` 命令中的段落模式
+    在图例中添加段落，参考 :doc:`text` 命令中的段落模式
 
 ``S [dx1 symbol size fill pen] [dx2 text]``
     在图例中绘制符号
 
-    #. ``symbol`` 指定要绘制的符号类型， 见 :doc:`psxy` 命令的 ``-S`` 选项。若 ``symbol`` 设置为 ``-`` 则表示绘制线段
+    #. ``symbol`` 指定要绘制的符号类型， 见 :doc:`plot` 命令的 ``-S`` 选项。若 ``symbol`` 设置为 ``-`` 则表示绘制线段
     #. ``dx1`` 是符号中心与左边界的距离
     #. ``dx2`` 是 ``text`` 与左边界的距离
     #. ``text`` 的字体由参数 ``FONT_ANNOT_PRIMARY`` 控制

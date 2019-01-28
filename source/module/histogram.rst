@@ -1,9 +1,9 @@
-.. index:: ! pshistogram
+.. index:: ! histogram
 
-pshistogram
-===========
+histogram
+=========
 
-:官方文档: :doc:`gmt:pshistogram`
+:官方文档: :doc:`gmt:histogram`
 :简介: 统计并绘制直方图
 
 该命令会读取数据中的第一列，对其进行统计，并绘制直方图或累积直方图。

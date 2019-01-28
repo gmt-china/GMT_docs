@@ -1,9 +1,9 @@
-.. index:: ! psbasemap
+.. index:: ! basemap
 
-psbasemap
-=========
+basemap
+=======
 
-:官方文档: :doc:`gmt:psbasemap`
+:官方文档: :doc:`gmt:basemap`
 :简介: 绘制底图
 
 该命令用于绘制：

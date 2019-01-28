@@ -15,6 +15,7 @@ GMT 模块
 - :doc:`docs` : 打开指定模块的HTML文档
 - :doc:`figure` : 设置当前图片的属性
 - :doc:`subplot`
+- :doc:`inset`
 - :doc:`clear` : 删除当前的历史文件、配置文件、CPT文件、缓存、数据目录、会话目录
 
 **参数设置**
@@ -39,27 +40,27 @@ GMT 模块
 
 **绘制 1D 数据**
 
-- :doc:`pssolar` ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
-- :doc:`psbasemap` ：绘制底图
-- :doc:`psclip` ：打开或关闭多边形裁剪路径
-- :doc:`pshistogram` ：统计并绘制直方图
-- :doc:`pstext` ：在图上写文本
-- :doc:`pscoast` ：在地图上绘制海岸线、河流、国界线
-- :doc:`pslegend` ：绘制图例
-- :doc:`psrose` ：绘制极坐标下的直方图（sector图、rose图或windrose图）
-- :doc:`psxy` ：在图上绘制线段、多边形和符号
-- :doc:`pssac` ：在地图上绘制 SAC 格式的地震波形数据
-- :doc:`psmeca` ：在地图上绘制震源机制解
-- :doc:`pspolar` ：在震源球上绘制台站极性
-- :doc:`psvelo` ：在地图上绘制速度矢量、十字线、楔形图
-- :doc:`pscoupe` ：绘制震源机制解的剖面图
-- :doc:`psternary` ：绘制三角图解
+- :doc:`solar` ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
+- :doc:`basemap` ：绘制底图
+- :doc:`clip` ：打开或关闭多边形裁剪路径
+- :doc:`histogram` ：统计并绘制直方图
+- :doc:`text` ：在图上写文本
+- :doc:`coast` ：在地图上绘制海岸线、河流、国界线
+- :doc:`legend` ：绘制图例
+- :doc:`rose` ：绘制极坐标下的直方图（sector图、rose图或windrose图）
+- :doc:`plot` ：在图上绘制线段、多边形和符号
+- :doc:`sac` ：在地图上绘制 SAC 格式的地震波形数据
+- :doc:`meca` ：在地图上绘制震源机制解
+- :doc:`polar` ：在震源球上绘制台站极性
+- :doc:`velo` ：在地图上绘制速度矢量、十字线、楔形图
+- :doc:`coupe` ：绘制震源机制解的剖面图
+- :doc:`ternary` ：绘制三角图解
 
 **绘制 2D 数据**
 
 - :doc:`gmtlogo` ：在图上绘制GMT图形logo
-- :doc:`psimage` ：将EPS或光栅图片放在图上
-- :doc:`psscale` ：在图上绘制灰色或彩色色标
+- :doc:`image` ：将EPS或光栅图片放在图上
+- :doc:`colorbar` ：在图上绘制灰色或彩色色标
 - :doc:`grdvector` ：根据两个网格文件绘制矢量场
 - :doc:`grdimage` ：在图上绘制网格数据
 
@@ -83,11 +84,9 @@ GMT 模块
 - :doc:`grdlandmask` ：根据海岸线数据创建陆地-海洋的mask网格文件
 - :doc:`grdinfo` ：从网格文件中提取基本信息
 - :doc:`grdpaste` ：将两个网格沿着其共同边界拼接成一个文件
-- :doc:`grdraster` ：从二进制数据中提取子区域并保存为GMT网格文件
 - :doc:`grdsample` ：对网格文件做重采样
 - :doc:`grdvolume` ：计算网格数据中某个等值线所包围的表面积和体积
 - :doc:`grd2xyz` ：将网格文件转换成表数据
-- :doc:`grd2rgb` ：将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件
 - :doc:`grdblend` ：将多个部分重叠的网格文件合并成一个网格文件
 - :doc:`grdtrend` ：拟合网格的趋势面并计算残差
 - :doc:`grdproject` ：对网格数据做地图变换和逆变换
@@ -101,7 +100,7 @@ GMT 模块
 #. :doc:`gmtconvert`
 #. :doc:`trend1d`
 #. :doc:`grdcontour`
-#. :doc:`psmask`
+#. :doc:`mask`
 #. :doc:`grdview`
 #. :doc:`grdgradient`
 #. :doc:`grdmath`
@@ -116,11 +115,11 @@ GMT 模块
 #. :doc:`blockmean`
 #. :doc:`blockmedian`
 #. :doc:`blockmode`
-#. :doc:`psxyz`
-#. :doc:`pscontour`
-#. :doc:`pssegy`
-#. :doc:`pssegyz`
-#. :doc:`pswiggle`
+#. :doc:`plot3d`
+#. :doc:`contour`
+#. :doc:`segy`
+#. :doc:`segyz`
+#. :doc:`wiggle`
 #. :doc:`grdgravmag3d`
 #. :doc:`grdhisteq`
 #. :doc:`gmtpmodeler`
@@ -163,7 +162,7 @@ GMT 模块
 #. :doc:`hotspotter`
 #. :doc:`img2google`
 #. :doc:`img2grd`
-#. :doc:`originator`
+#. :doc:`originater`
 #. :doc:`rotconverter`
 #. :doc:`rotsmoother`
 #. :doc:`segy2grd`
@@ -214,7 +213,6 @@ GMT 模块
    gpsgridder
    gravfft
    grd2cpt
-   grd2rgb
    grd2xyz
    grdblend
    grdclip
@@ -235,7 +233,6 @@ GMT 模块
    grdpaste
    grdpmodeler
    grdproject
-   grdraster
    grdredpol
    grdconvert
    grdrotater
@@ -252,6 +249,7 @@ GMT 模块
    hotspotter
    img2google
    img2grd
+   inset
    isogmt
    kml2gmt
    makecpt
@@ -266,32 +264,32 @@ GMT 模块
    mgd77sniffer
    mgd77track
    nearneighbor
-   originator
+   originater
    project
-   psbasemap
-   psclip
-   pscoast
-   pscontour
+   basemap
+   clip
+   coast
+   contour
    psconvert
-   pscoupe
-   pshistogram
-   psimage
-   pslegend
-   psmask
-   psmeca
-   pspolar
-   psrose
-   pssac
-   psscale
-   pssegy
-   pssegyz
-   pssolar
-   psternary
-   pstext
-   psvelo
-   pswiggle
-   psxy
-   psxyz
+   coupe
+   histogram
+   image
+   legend
+   mask
+   meca
+   polar
+   rose
+   sac
+   colorbar
+   segy
+   segyz
+   solar
+   ternary
+   text
+   velo
+   wiggle
+   plot
+   plot3d
    rotconverter
    rotsmoother
    sample1d

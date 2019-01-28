@@ -30,7 +30,7 @@ docs
 
     gmt docs grdimage
 
-查看 :doc:`pscoast` 的 ``-B`` 选项::
+查看 :doc:`coast` 的 ``-B`` 选项::
 
     gmt docs coast -B
 
