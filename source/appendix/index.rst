@@ -8,7 +8,7 @@
    cmd/index
    colors
    patterns
-   mode
+   modes-difference
    low-level/index
    directory-tree
    calculate-distance

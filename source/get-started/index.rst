@@ -6,4 +6,5 @@ GMT初探
 
    cli
    command
+   mode
    first-plot
