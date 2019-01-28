@@ -3,7 +3,7 @@
 figure
 ======
 
-:官方文档: :ref:`gmt:figure`
+:官方文档: :doc:`gmt:figure`
 :简介: 设置当前图片的属性
 
 一个GMT现代模式会话下可以绘制一张或多张图件。对于一个会话中绘制多张图件的情况，
@@ -30,7 +30,7 @@ figure
     一个或多个由逗号分隔的图片格式后缀。支持的图片格式见表 :ref:`formats <tbl-formats>`\ 。
     默认图片格式为 pdf。
 
-``<options>`` 
+``<options>``
     设置用于传递给模块 :doc:`psconvert` 的选项，多个选项之间用逗号分隔。
     默认值为 ``A`` 表明在调用 :doc:`psconvert` 模块生成最终图片时会额外
     加上 ``-A`` 选项。

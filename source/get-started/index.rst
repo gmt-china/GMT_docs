@@ -6,5 +6,4 @@ GMT初探
 
    cmd
    gmt-cmd
-   mode
    tutor

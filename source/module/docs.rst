@@ -3,7 +3,7 @@
 docs
 ====
 
-:官方文档: :ref:`gmt:docs`
+:官方文档: :doc:`gmt:docs`
 :简介: 打开指定模块的HTML文档
 
 ``docs`` 模块可以用默认的浏览器打开指定模块的网页版文档，
@@ -17,7 +17,7 @@ docs
 可选选项
 --------
 
-``<module-name>`` 
+``<module-name>``
     模块名。除此之外，还可以打开 cookbook、tutorial、api、gmt.conf 等文档。
 
 ``<-option>``

@@ -178,10 +178,15 @@ GMT 模块
    :hidden:
 
    backtracker
+   begin
    blockmean
    blockmedian
    blockmode
+   clear
    dimfilter
+   docs
+   end
+   figure
    filter1d
    fitcircle
    gmt
@@ -297,6 +302,7 @@ GMT 模块
    sphinterpolate
    sphtriangulate
    splitxyz
+   subplot
    surface
    talwani2d
    talwani3d

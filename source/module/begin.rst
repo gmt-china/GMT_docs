@@ -3,7 +3,7 @@
 begin
 =====
 
-:官方文档: :ref:`gmt:begin`
+:官方文档: :doc:`gmt:begin`
 :简介: 初始化一个新的GMT现代模式会话
 
 在GMT现代模式下，一个GMT会话总是用 ``begin`` 开始，用 ``end`` 结束。
@@ -23,7 +23,7 @@ begin
 ``<prefix>``
     文件名前缀。后缀由文件格式自动决定。默认文件名前缀为 ``gmtsession``\ 。
 
-``<formats>`` 
+``<formats>``
     图片文件格式。多个格式之间可以用逗号分开。默认为 ``pdf``\ 。
 
     GMT可输出的图片文件格式见下表：
@@ -42,9 +42,9 @@ begin
         +--------+-----------------------------------------+
         |  pdf   | Portable Document Format [Default]      |
         +--------+-----------------------------------------+
-        |  png   | Portable Network Graphics (opaque)      | 
+        |  png   | Portable Network Graphics (opaque)      |
         +--------+-----------------------------------------+
-        |  PNG   | Portable Network Graphics (transparent) | 
+        |  PNG   | Portable Network Graphics (transparent) |
         +--------+-----------------------------------------+
         |  ppm   | Portable Pixel Map                      |
         +--------+-----------------------------------------+
