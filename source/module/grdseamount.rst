@@ -3,4 +3,4 @@
 grdseamount
 ===========
 
-:官方文档: :ref:`gmt:grdseamount`
+:官方文档: :doc:`gmt:supplements/potential/grdseamount`

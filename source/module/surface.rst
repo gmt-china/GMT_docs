@@ -3,4 +3,4 @@
 surface
 =======
 
-:官方文档: :ref:`gmt:surface`
+:官方文档: :doc:`gmt:surface`

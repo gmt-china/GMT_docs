@@ -3,4 +3,4 @@
 hotspotter
 ==========
 
-:官方文档: :ref:`gmt:hotspotter`
+:官方文档: :doc:`gmt:supplements/spotter/hotspotter`

@@ -3,4 +3,4 @@
 psxyz
 =====
 
-:官方文档: :ref:`gmt:psxyz`
+:官方文档: :doc:`gmt:psxyz`

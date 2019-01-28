@@ -3,7 +3,7 @@
 grdedit
 =======
 
-:官方文档: :ref:`gmt:grdedit`
+:官方文档: :doc:`gmt:grdedit`
 :简介: 修改网格文件的头段或内容
 
 该模块具有如下功能：

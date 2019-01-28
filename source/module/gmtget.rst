@@ -3,7 +3,7 @@
 gmtget
 ======
 
-:官方文档: :ref:`gmt:gmtget`
+:官方文档: :doc:`gmt:gmtget`
 :简介: 列出单个或多个GMT参数的当前值
 
 必选选项

@@ -3,7 +3,7 @@
 gmtset
 ======
 
-:官方文档: :ref:`gmt:gmtset`
+:官方文档: :doc:`gmt:gmtset`
 :简介: 修改单个或多个GMT参数的值
 
 该命令会修改当前目录下GMT配置文件 ``gmt.conf`` 中指定参数的值。若配置文件不存在，

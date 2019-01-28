@@ -3,4 +3,4 @@
 sphtriangulate
 ==============
 
-:官方文档: :ref:`gmt:sphtriangulate`
+:官方文档: :doc:`gmt:sphtriangulate`

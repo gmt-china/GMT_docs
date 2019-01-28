@@ -3,4 +3,4 @@
 grdrotater
 ==========
 
-:官方文档: :ref:`gmt:grdrotater`
+:官方文档: :doc:`gmt:supplements/spotter/grdrotater`

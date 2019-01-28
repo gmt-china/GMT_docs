@@ -3,7 +3,7 @@
 mapproject
 ==========
 
-:官方文档: :ref:`gmt:mapproject`
+:官方文档: :doc:`gmt:mapproject`
 
 - 投影正变换：读入经纬度数据，将其转换为指定投影类型下的XY坐标
 - 投影逆变换：读入XY坐标，将其转换为经纬度数据

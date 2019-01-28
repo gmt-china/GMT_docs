@@ -3,4 +3,4 @@
 gmt2kml
 =======
 
-:官方文档: :ref:`gmt:gmt2kml`
+:官方文档: :doc:`gmt:gmt2kml`

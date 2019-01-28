@@ -3,5 +3,5 @@
 blockmedian
 ===========
 
-:官方文档: :ref:`gmt:blockmedian`
+:官方文档: :doc:`gmt:blockmedian`
 :简介:

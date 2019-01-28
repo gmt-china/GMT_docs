@@ -3,7 +3,7 @@
 kml2gmt
 =======
 
-:官方文档: :ref:`gmt:kml2gmt`
+:官方文档: :doc:`gmt:kml2gmt`
 :简介: 将Google Earth的KML文件转换为GMT表数据
 
 该模块可以将 KML 文件中包含的点、线或多边形导出为 GMT 可用的格式。

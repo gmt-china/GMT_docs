@@ -3,4 +3,4 @@
 grdcontour
 ==========
 
-:官方文档: :ref:`gmt:grdcontour`
+:官方文档: :doc:`gmt:grdcontour`

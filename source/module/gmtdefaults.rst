@@ -3,7 +3,7 @@
 gmtdefaults
 ===========
 
-:官方文档: :ref:`gmt:gmtdefaults`
+:官方文档: :doc:`gmt:gmtdefaults`
 :简介: 列出所有GMT参数的当前值或系统默认值
 
 必选选项

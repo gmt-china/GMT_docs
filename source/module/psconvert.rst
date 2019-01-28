@@ -3,7 +3,7 @@
 psconvert
 =========
 
-:官方文档: :ref:`gmt:psconvert`
+:官方文档: :doc:`gmt:psconvert`
 :简介: 将 GMT 生成的 PS/EPS 文件转换为其他图片格式
 
 .. note::

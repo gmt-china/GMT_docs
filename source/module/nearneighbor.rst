@@ -3,4 +3,4 @@
 nearneighbor
 ============
 
-:官方文档: :ref:`gmt:nearneighbor`
+:官方文档: :doc:`gmt:nearneighbor`

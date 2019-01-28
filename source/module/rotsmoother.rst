@@ -3,4 +3,4 @@
 rotsmoother
 ===========
 
-:官方文档: :ref:`gmt:rotsmoother`
+:官方文档: :doc:`gmt:supplements/spotter/rotsmoother`

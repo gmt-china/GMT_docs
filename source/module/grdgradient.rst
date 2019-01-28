@@ -3,4 +3,4 @@
 grdgradient
 ===========
 
-:官方文档: :ref:`gmt:grdgradient`
+:官方文档: :doc:`gmt:grdgradient`

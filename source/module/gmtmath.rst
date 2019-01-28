@@ -3,4 +3,4 @@
 gmtmath
 =======
 
-:官方文档: :ref:`gmt:gmtmath`
+:官方文档: :doc:`gmt:gmtmath`

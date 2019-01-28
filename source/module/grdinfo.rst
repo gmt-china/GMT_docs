@@ -3,7 +3,7 @@
 grdinfo
 =======
 
-:官方文档: :ref:`gmt:grdinfo`
+:官方文档: :doc:`gmt:grdinfo`
 :简介: 从2D网格文件中提取基本信息
 
 能提取的信息包括：

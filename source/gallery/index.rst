@@ -9,3 +9,4 @@
     coast
     beachball
     legend
+    earth-relief

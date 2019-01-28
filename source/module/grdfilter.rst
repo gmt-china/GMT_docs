@@ -3,4 +3,4 @@
 grdfilter
 =========
 
-:官方文档: :ref:`gmt:grdfilter`
+:官方文档: :doc:`gmt:grdfilter`

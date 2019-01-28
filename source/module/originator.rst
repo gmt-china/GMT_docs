@@ -3,4 +3,4 @@
 originator
 ==========
 
-:官方文档: :ref:`gmt:originator`
+:官方文档: :doc:`gmt:supplements/spotter/originator`

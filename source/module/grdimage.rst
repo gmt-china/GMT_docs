@@ -3,7 +3,7 @@
 grdimage
 ==========
 
-:官方文档: :ref:`gmt:grdimage`
+:官方文档: :doc:`gmt:grdimage`
 :简介: 在地图上绘制网格数据
 
 必选选项

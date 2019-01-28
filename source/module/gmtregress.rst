@@ -3,4 +3,4 @@
 gmtregress
 ==========
 
-:官方文档: :ref:`gmt:gmtregress`
+:官方文档: :doc:`gmt:gmtregress`

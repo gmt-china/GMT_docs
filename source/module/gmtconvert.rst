@@ -3,4 +3,4 @@
 gmtconvert
 ==========
 
-:官方文档: :ref:`gmt:gmtconvert`
+:官方文档: :doc:`gmt:gmtconvert`

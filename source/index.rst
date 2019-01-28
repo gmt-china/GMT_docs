@@ -47,7 +47,7 @@ GMT4甚至GMT3。这些文档存在一些共同的缺点：
 
    intro/index
    install/index
-   tutorial/index
+   get-started/index
    basis/index
    io/index
    cpt/index
@@ -57,7 +57,6 @@ GMT4甚至GMT3。这些文档存在一些共同的缺点：
    proj/index
    dataset/index
    module/index
-   style
    gallery/index
    api/index
    appendix/index

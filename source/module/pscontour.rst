@@ -3,4 +3,4 @@
 pscontour
 =========
 
-:官方文档: :ref:`gmt:pscontour`
+:官方文档: :doc:`gmt:pscontour`

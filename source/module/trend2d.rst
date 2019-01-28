@@ -3,4 +3,4 @@
 trend2d
 =======
 
-:官方文档: :ref:`gmt:trend2d`
+:官方文档: :doc:`gmt:trend2d`

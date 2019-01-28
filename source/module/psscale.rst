@@ -3,7 +3,7 @@
 psscale
 =======
 
-:官方文档: :ref:`gmt:psscale`
+:官方文档: :doc:`gmt:psscale`
 :简介: 在地图上绘制灰色或彩色色条（colorbar）
 
 必选选项

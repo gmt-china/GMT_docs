@@ -3,4 +3,4 @@
 sphinterpolate
 ==============
 
-:官方文档: :ref:`gmt:sphinterpolate`
+:官方文档: :doc:`gmt:sphinterpolate`

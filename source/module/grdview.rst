@@ -3,4 +3,4 @@
 grdview
 =======
 
-:官方文档: :ref:`gmt:grdview`
+:官方文档: :doc:`gmt:grdview`

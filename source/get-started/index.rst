@@ -7,6 +7,4 @@ GMT初探
    cmd
    gmt-cmd
    mode
-   tutor1
-   tutor2
-   tutor3
+   tutor
