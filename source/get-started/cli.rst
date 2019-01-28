@@ -52,7 +52,7 @@ macOS下可以直接用 ``open map.ps`` 查看。
 
     gmt pscoast -JM10c -R70/140/2/60 -Bafg -W1/thin -Ggray -P -K > map.ps
     echo 115 40 | gmt psxy -J -R -Sa0.5c -Gred -O >> map.ps
-    rm gmt.*
+    gmt clear history
 
 直接在终端敲大一堆命令是不是很麻烦？一旦敲错了就得把光标移过去重新编辑，或者哪里
 不满意想修改，还得查找命令历史把命令找出来重新执行一遍，又或者一个不小心
@@ -63,7 +63,7 @@ Linux或macOS下，可以新建一个名为 ``test.sh`` 的文件，将上面的
 
     $ sh ./test.sh
 
-Windows下，可以将上面的两行命令复制到名为 ``test.bat`` 的文件内并保存，
+Windows下，可以将上面的命令复制到名为 ``test.bat`` 的文件内并保存，
 然后双击该bat文件即可执行脚本。此时会看到一个黑框一闪而过。
 
 脚本语言

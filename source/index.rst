@@ -1,18 +1,7 @@
 GMT 参考手册
 ############
 
-.. only:: html
-
-   .. figure:: /images/GMT_logo.*
-      :width: 80%
-      :align: center
-
 欢迎来到 `Generic Mapping Tools <http://gmt.soest.hawaii.edu>`_ 的世界。
-
-`在线阅读 <https://docs.gmt-china.org/5.4.5/>`_ |
-`PDF下载 <https://docs.gmt-china.org/5.4.5/GMT_Docs.pdf>`_ |
-`文档源码 <https://github.com/gmt-china/GMT_Docs>`_ |
-`GMT中文社区 <https://gmt-china.org>`_
 
 本文档是由GMT中文社区维护整理的GMT中文参考手册，其详尽地介绍了GMT的方方面面。
 其可以作为初学者的入门读物，也可以作为日常使用的参考书。

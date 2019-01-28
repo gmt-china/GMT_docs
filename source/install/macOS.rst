@@ -62,23 +62,3 @@ GMT 为 macOS 用户提供了 dmg 安装包。
 
        $ gmt --version
        5.4.5
-
-.. warning::
-
-    以下安装方式未经验证。
-
-使用 macports 安装
-------------------
-
-::
-
-    sudo port install gdal +curl +geos +hdf5 +netcdf +fftw3 +openmp
-    sudo port install gmt5
-
-
-使用fink安装
-------------
-
-::
-
-    sudo fink install gmt5
