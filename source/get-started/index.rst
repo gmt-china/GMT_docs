@@ -6,5 +6,4 @@ GMT初探
 
    cmd
    gmt-cmd
-   tutor2
-   tutor3
+   tutor
