@@ -1,5 +1,5 @@
 #!/bin/bash
-R=65/18/117/45r
+R=65/18/117/45+r
 J=B90/0/40/30/6.5i
 PS=GMT_tutor3.ps
 D=earth_relief_03m.grd
