@@ -11,7 +11,7 @@ gmt grdcut $D -R55/120/10/50 -GTibet.grd
 gmt grdgradient Tibet.grd -A0 -Nt -Gint.grad
 
 # 利用basemap确定格网标注等参数
-gmt basemap -JB90/0/40/30/6.5i -R65/18/117/45r -B10g10 -BwSEN
+gmt basemap -JB90/0/40/30/6.5i -R65/18/117/45+r -B10g10 -BwSEN
 
 # 绘制地形
 gmt grdimage -Bg10 Tibet.grd -Iint.grad -CTibet.cpt
