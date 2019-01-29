@@ -10,11 +10,11 @@ GMT 模块
 
 **现代模式/会话管理**
 
-- :doc:`begin` : 初始化一个新的GMT现代模式会话
-- :doc:`end` : 结束现代模式会话，并生成图片文件
-- :doc:`docs` : 打开指定模块的HTML文档
-- :doc:`figure` : 设置当前图片的属性
-- :doc:`subplot`
+- :doc:`begin`: 初始化一个新的GMT现代模式会话
+- :doc:`end`: 结束现代模式会话，并生成图片文件
+- :doc:`figure`: 设置当前图片的属性
+- :doc:`subplot`: 设置子图模式
+- :doc:`docs`: 打开指定模块的HTML文档
 - :doc:`inset`
 - :doc:`clear` : 删除当前的历史文件、配置文件、CPT文件、缓存、数据目录、会话目录
 

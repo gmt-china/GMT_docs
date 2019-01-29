@@ -68,7 +68,7 @@ GMT 的中文支持
 .. code-block:: batch
 
    gmt begin
-   gmt figure map pdf,png C-sFONTPATH=C:\windows\fon
+   gmt figure map pdf,png C-sFONTPATH=C:\windows\fonts
 
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black

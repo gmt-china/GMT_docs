@@ -15,7 +15,7 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 基本用法
 --------
 
-现代模式下，GMT用 ``gmt begin`` 开始一个绘图，并用 ``gmt end`` 结束一个绘图，
+现代模式下，GMT用 :doc:`/module/begin` 开始一个绘图，并用 :doc:`/module/end` 结束一个绘图，
 所有的绘图命令均放在二者之间。其基本用法如下::
 
     gmt begin <figname> <formats>
@@ -51,7 +51,7 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 --------
 
 多图模式，允许用户可以同时画多张图，并在绘图过程中，随意切换到任意一张图。
-多图模式可以通过 ``gmt figure`` 模块实现，其语法为::
+多图模式可以通过 :doc:`/module/figure` 模块实现，其语法为::
 
     gmt figure <figname> <formats> <options>
 
@@ -86,9 +86,51 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 子图模式
 --------
 
-有些时候需要把多张图放在一张图中，此时可以使用GMT提供的子图模式。
+有些时候需要把多张图放在一张图中，最直接的做法是分别绘制不同的图，然后
+通过移动各个图的绘图原点，将多张图拼接成一张图。
+
+针对这种需求，GMT的 :doc:`/module/subplot` 模块提供了子图模式。
 子图模式的基本思想是将整体绘图区域分割成M行N列的网格，每个网格区域内均可以
-绘制一张子图。子图模式通过模块 :doc:`/module/subplot` 实现。
+绘制一张子图。子图模式主要适用于子图具有相似的底图的情况，若子图的底图差异
+太大，配置和微调子图还是有些麻烦。
+
+子图模式的特色在于：
+
+- 自动控制每个子图的位置而无需用户自己移动坐标原点；
+- 自动为每个子图编号；
+- 每张子图可以有各自的子图标题，整张图也可以有自己的标题；
+- 多张子图可以共享X轴或Y轴
+
+子图模式的选项比较多，此处仅举一个示例，详细用法见 :doc:`/module/subplot` 的
+说明文档。本示例中整张图片包含了2行3列共计6个子图，且每列的两张子图共享X轴，
+每列的子图共享Y轴。
+
+.. gmt-plot::
+    :language: bash
+
+    gmt begin subplot-example png,pdf
+    gmt subplot begin 2x3 -Fs4c/4c -A'(a)' -M5p/10p -BWsrt -SCb -SRl -T"Subplot Example"
+        gmt subplot set 1,1
+        gmt basemap -R0/80/0/10
+
+        gmt subplot set 1,2
+        gmt basemap -R0/50/0/10
+
+        gmt subplot set 1,3
+        gmt basemap -R0/20/0/10
+
+        gmt subplot set 2,1
+        gmt basemap -R0/80/0/20
+
+        gmt subplot set 2,2
+        gmt basemap -R0/50/0/20
+
+        gmt subplot set 2,3
+        gmt basemap -R0/20/0/20
+    gmt subplot end
+    gmt end
+
+
 
 插图模式
 --------
