@@ -149,13 +149,13 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 .. gmt-plot::
 
     gmt begin inset png
-	    gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
+        gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
 
         # 插图模式
-    	gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
-	    	gmt basemap -Rg -JA20/20/2.3i -Bafg
-    		echo INSET | gmt text -F+f12p+cTR
-	    gmt inset end
+        gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
+            gmt basemap -Rg -JA20/20/2.3i -Bafg
+            echo INSET | gmt text -F+f12p+cTR
+        gmt inset end
 
-    	echo MAP | gmt text -F+f18p+cBL -Dj0.2i
+        echo MAP | gmt text -F+f18p+cBL -Dj0.2i
     gmt end
