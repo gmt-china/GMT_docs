@@ -1,12 +1,48 @@
 #!/bin/bash
-
-gmt begin fonts pdf,png
 dy=-0.2222
 y0=4.3
 
-grep -v '^#' PSL_standard_fonts.txt | awk '{print $1}' > tt.d
+cat > tt.d << EOF
+Helvetica
+Helvetica-Bold
+Helvetica-Oblique
+Helvetica-BoldOblique
+Times-Roman
+Times-Bold
+Times-Italic
+Times-BoldItalic
+Courier
+Courier-Bold
+Courier-Oblique
+Courier-BoldOblique
+Symbol
+AvantGarde-Book
+AvantGarde-BookOblique
+AvantGarde-Demi
+AvantGarde-DemiOblique
+Bookman-Demi
+Bookman-DemiItalic
+Bookman-Light
+Bookman-LightItalic
+Helvetica-Narrow
+Helvetica-Narrow-Bold
+Helvetica-Narrow-Oblique
+Helvetica-Narrow-BoldOblique
+NewCenturySchlbk-Roman
+NewCenturySchlbk-Italic
+NewCenturySchlbk-Bold
+NewCenturySchlbk-BoldItalic
+Palatino-Roman
+Palatino-Italic
+Palatino-Bold
+Palatino-BoldItalic
+ZapfChancery-MediumItalic
+ZapfDingbats
+EOF
+
+gmt begin GMT_fonts png,pdf
 gmt set MAP_FRAME_PEN thinner
-gmt plot -R0/5.4/0/$y0 -Jx1i -B0 <<EOF
+gmt plot -R0/5.4/0/$y0 -Jx1i -B0 << EOF
 >
 0.3	0
 0.3	$y0
@@ -18,13 +54,13 @@ gmt plot -R0/5.4/0/$y0 -Jx1i -B0 <<EOF
 3	$y0
 EOF
 gmt plot -Y${y0}i -T
-gmt text -Y${dy}i -F+f10p+jBC <<EOF
+gmt text -Y${dy}i -F+f10p+jBC << EOF
 0.15	0.05	\\043
 1.55	0.05	Font Name
 2.85	0.05	\\043
 4.15	0.05	Font Name
 EOF
-gmt plot -W << EOF
+gmt plot <<EOF
 0	0
 5.4	0
 EOF
@@ -44,7 +80,7 @@ do
 		f1="Symbol @%0%(Symbol)@%%"
 	fi
 	fn2=$i2
-	gmt text -Y${dy}i -F+f+j <<EOF
+	gmt text -Y${dy}i -F+f+j << EOF
 0.15	0.03	10p,$i1		BC	$i1
 0.4	0.03	10p,$i1		BL	$f1
 2.85	0.03	10p,$fn2	BC	$i2
@@ -53,7 +89,7 @@ EOF
 	i=`echo "$i + 1" | bc`
 done
 
-gmt text -Y${dy}i -F+f+j <<EOF
+gmt text -Y${dy}i -F+f+j << EOF
 2.85	0.03	10p,Helvetica		BC	34
 3.1	0.03	10p,ZapfDingbats	BL	ZapfDingbats @%0%(ZapfDingbats)@%%
 EOF

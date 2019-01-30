@@ -82,7 +82,7 @@ GMT中可以用字体名（\ **区分大小写**\ ）或对应的字体编号来
 小练习
 ------
 
-:doc:`/module/pstext` 模块可以用于绘制文字。下面的命令在图上写了文字 ``TEXT``\ ::
+:doc:`/module/text` 模块可以用于绘制文字。下面的命令在图上写了文字 ``TEXT``\ ::
 
     echo 2.5 0.5 TEXT | gmt text -R0/5/0/1 -JX15c/2c -F+f<font> -pdf text
 
