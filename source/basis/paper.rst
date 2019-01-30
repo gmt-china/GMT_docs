@@ -39,22 +39,10 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm``\ 。
 Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，
 风景是矮胖的，就需要横着拍。
 
-.. note::
-
-   对于Portrait模式和Landscape模式，还有另外一种理解方式，即认为画布总是竖着放的。
-
-   - Portrait模式：此模式下坐标原点位于纸张左下角，X轴从左到右递增，与画布的
-     短边平行，Y轴从下往上递增，与画布的长边平行
-   - Landscape模式：此模式下坐标原点位于纸张右下角，X轴从下往上递增，与画布的
-     长边平行，Y轴从右往左递增，与画布的短边平行
-
-   这种理解方式下，Landscape模式可以认为是在Portrait模式的基础上先将坐标原点
-   沿X轴移动到右下角，在将坐标系旋转90度得到。
-
 由于历史原因，GMT中画布的默认放置方式是Landscape模式。有两种方式可以修改画布方向：
 
 #. 在第一个\ **绘图**\ 命令中使用 :doc:`/option/P`
-#. 修改GMT参数中的 :ref:`PS_PAGE_ORIENTATION <PS_PAGE_ORIENTATION>`
+#. 设置GMT参数 :ref:`PS_PAGE_ORIENTATION <PS_PAGE_ORIENTATION>` 为 ``portrait``
 
 .. tip::
 
