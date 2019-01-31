@@ -314,8 +314,7 @@ gmt end
 
 # Merge
 gmt begin text_stand+_iso+ pdf,png
-gmt image text_stand+.png -Dx0/0+r600
-#gmt image text_iso+.png -Dx0/0+r600 -X3.2i
-gmt image text_iso+.png -Dx0/0+r600 -X1.6i
+gmt image text_iso+.png -Dx0/0+r600
+gmt image text_stand+.png -Dx0/0+r600 -X1.6i
 gmt end
 rm text_stand+.png text_iso+.png

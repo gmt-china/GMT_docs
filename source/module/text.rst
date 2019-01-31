@@ -9,8 +9,8 @@ text
 该命令用于在图上添加文本，可以自由控制文本的大小、颜色、字体、角度。
 
 除了可以添加键盘上可直接输入的字符外，还可以通过使用转义字符、特殊字体以及八进制码
-实现希腊字母、上下标等功能，详见 :doc:`/basis/text` 、 :doc:`/basis/character-escape` 、
-:doc:`/basis/special-fonts` 和 :doc:`/basis/special-characters` 。
+实现希腊字母、上下标等功能，详见 :doc:`/basis/text`\ 、\ :doc:`/basis/escape-character`\ 、
+:doc:`/basis/special-character`\ 。
 
 必选选项
 --------
