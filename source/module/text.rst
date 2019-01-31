@@ -69,7 +69,7 @@ text
     #. ``+f<font>`` 设置文本的字体， 见 :doc:`/basis/text`
     #. ``+a<angle>`` 文本相对于水平方向逆时针旋转的角度
     #. ``+A<angle>`` force text-baselines to convert into the -90/+90 range
-    #. ``+j<justify>`` 文本对齐方式，见 :doc:`/basis/anchors`
+    #. ``+j<justify>`` 文本对齐方式，见 :doc:`/basis/anchor`
 
     下面的命令中，统一设置了所有文本的字号为30p，4号字体，红色，文本旋转45度，
     且以左上角对齐::

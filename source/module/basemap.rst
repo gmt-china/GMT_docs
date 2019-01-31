@@ -86,7 +86,7 @@ basemap
        inset box在地图上的范围
     #. ``-D<unit><xmin>/<xmax>/<ymin>/<ymax>`` ：类似 ``-R`` 的语法，指定投影后的
        坐标范围， ``<unit>`` 为投影后的坐标单位
-    #. 指定参考点和锚点，见 :doc:`/basis/embellishments` 一节
+    #. 指定参考点和锚点，见 :doc:`/basis/embellishment` 一节
 
        #. ``[g|j|J|n|x]<refpoint>`` 指定大区域底图上的参考点
        #. ``+j<justify>`` 指定inset box上的锚点
@@ -105,7 +105,7 @@ basemap
     #. 该选项用于给inset box、比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性
     #. ``d|l|t`` 表示该选项定义的属性仅适用于 ``-D`` 、 ``-L`` 或 ``-T`` 选项
     #. 直接使用 ``-F`` 选项，则绘制背景边框，边框属性由参数 ``MAP_FRAME_PEN`` 控制
-    #. 其他子选项的含义见 :doc:`/basis/embellishments` 一节的详细介绍
+    #. 其他子选项的含义见 :doc:`/basis/embellishment` 一节的详细介绍
 
 示例
 ----

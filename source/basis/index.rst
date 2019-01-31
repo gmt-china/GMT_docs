@@ -13,8 +13,8 @@
    text
    escape-character
    special-character
-   lines
-   vectors
-   anchors
-   embellishments
+   vector
+   line
+   anchor
+   embellishment
    glossary

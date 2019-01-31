@@ -77,7 +77,7 @@ coast
        格式的字符串
 
 ``-F``
-    控制比例尺和玫瑰图的背景边框，见 :doc:`/basis/embellishments` 一节
+    控制比例尺和玫瑰图的背景边框，见 :doc:`/basis/embellishment` 一节
 
 ``-G<fill>|c``
     设置dry区域的填充色或裁剪dry区域

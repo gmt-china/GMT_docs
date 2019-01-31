@@ -12,9 +12,9 @@ colorbar
 ``-D[g|j|J|n|x]<refpoint>[+w<length>[/<width>]][+e[b|f][<length>]][+h|v][+j<justify>][+m[a|c|l|u]][+n[<txt>]][+o<dx>[/<dy>]]``
     指定色标的尺寸和位置。
 
-    #. ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishments` 一节
-    #. ``+j<justify>`` 指定色标上的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishments` 一节
-    #. ``+o<dx>[/<dy>]`` 指定参考点的额外偏移量，见 :doc:`/basis/embellishments`
+    #. ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishment` 一节
+    #. ``+j<justify>`` 指定色标上的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishment` 一节
+    #. ``+o<dx>[/<dy>]`` 指定参考点的额外偏移量，见 :doc:`/basis/embellishment`
     #. ``+w<length>[/<width>]`` 指定色标的长度和宽度。若未指定宽度，则默认为长度
        的4%；若长度为负值则会反转色标
     #. ``+h`` 绘制水平色标
@@ -53,7 +53,7 @@ colorbar
     要绘制的CPT文件。
 
 ``-F``
-    为colorbar加上背景边框，见 :doc:`/basis/embellishments` 一节
+    为colorbar加上背景边框，见 :doc:`/basis/embellishment` 一节
 
 ``-G<zlow>/<zhigh>``
     绘图前先对CPT文件做截断，使得其只绘制 ``<zlow>`` 到 ``<zhigh>`` 之间的部分。

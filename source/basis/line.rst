@@ -49,7 +49,7 @@
     +v[b|e]<vspecs>
 
 - 默认会在线段两端都加上箭头，\ ``b|e`` 表示只绘制开头或结尾的箭头
-- 箭头属性 ``<vspecs>`` 的细节参考 :doc:`vectors` 一节的内容
+- 箭头属性 ``<vspecs>`` 的细节参考 :doc:`vector` 一节的内容
 
 下图中细线是通常绘制的线段，粗线使用的选项是 ``-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue``\ 。
 
