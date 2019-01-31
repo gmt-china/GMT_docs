@@ -11,9 +11,8 @@
    pen
    fill
    text
-   special-fonts
-   special-characters
-   character-escape
+   escape-character
+   special-character
    lines
    vectors
    anchors

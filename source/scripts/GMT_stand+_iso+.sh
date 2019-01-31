@@ -313,6 +313,6 @@ rm tt.* gmt.*
 # Merge
 gmt psconvert -Tg -E600 -P -A -D. GMT_stand+.ps
 gmt psconvert -Tg -E600 -P -A -D. GMT_iso+.ps
-gmt psimage GMT_stand+.png -Dx0/0+r600 -P -K > GMT_stand+_iso+.ps
-gmt psimage GMT_iso+.png -Dx0/0+r600 -O -X3.2i >> GMT_stand+_iso+.ps
+gmt psimage GMT_iso+.png   -Dx0/0+r600 -P -K > GMT_stand+_iso+.ps
+gmt psimage GMT_stand+.png -Dx0/0+r600 -O -X3.2i >> GMT_stand+_iso+.ps
 rm gmt.* GMT_stand+.ps GMT_stand+.png GMT_iso+.ps GMT_iso+.png
