@@ -10,7 +10,9 @@ ghostscript，查看PS文件需要使用 gsview。日常数据处理需要Linux�
 
 1. 下载
 
-   到社区主页的 `下载页面 <https://gmt-china.org/download/>`_ 下载所需要的安装包。
+   由于GMT6.0.0尚未正式发布，请到
+   http://w3.ualg.pt/~jluis/mirone/downloads/gmt.html
+   下载最新开发版源码的二进制安装包。
 
 2. 安装GMT
 
@@ -32,7 +34,7 @@ ghostscript，查看PS文件需要使用 gsview。日常数据处理需要Linux�
    安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
        C:\Users\xxxx> gmt --version
-       5.4.5
+       6.0.0
 
    即表示安装成功。
 
