@@ -43,9 +43,9 @@ macOS 下的 GMT 中文支持
 查看 GMT 当前支持的字体
 +++++++++++++++++++++++
 
-用 ``gmt pstext -L`` 命令查看 GMT 当前的字体配置::
+用 ``gmt text -L`` 命令查看 GMT 当前的字体配置::
 
-    $ gmt pstext -L
+    $ gmt text -L
     Font #  Font Name
     ------------------------------------
     0   Helvetica

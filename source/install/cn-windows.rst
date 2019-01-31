@@ -52,7 +52,7 @@ GMT 的中文支持
     STHeiti-Regular--GB-EUC-H   0.700   1
     STKaiti-Regular--GB-EUC-H   0.700   1
 
-用 ``gmt pstext -L`` 查看 GMT 字体，可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
+用 ``gmt text -L`` 查看 GMT 字体，可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
 其中 ``STSong-Light--GB-EUC-H`` 即为宋体，\ ``GB-EUC`` 是文字编码方式，
 ``H`` 表示文字水平排列。
 
