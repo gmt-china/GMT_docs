@@ -36,15 +36,15 @@ psimage
 ``-D[g|j|J|n|x]<refpoint>+r<dpi>+w[-]<width>[/<height>][+j<justify>][+n<nx>[/<ny>]][+o<dx>[/<dy>]]``
     指定图片的尺寸和位置
 
-    #. ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishments` 一节
+    #. ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishment` 一节
     #. ``+r<dpi>`` 指定图片的DPI以间接指定图片的尺寸
     #. ``+w[-]<width>[/<height>]`` 直接指定图片的尺寸。若未给定 ``<height>`` 则按照 ``<width>`` 以及原图的横纵比进行缩放；若 ``<width>`` 为负值，则使用其绝对值作为宽度，并使用PS的图片操作符将图片插值到设备的分辨率
-    #. ``+j<justify>`` 指定图片的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishments` 一节
-    #. ``+o<dx>[/<dy>]`` 指定参考点的额外偏移量，见 :doc:`/basis/embellishments`
+    #. ``+j<justify>`` 指定图片的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishment` 一节
+    #. ``+o<dx>[/<dy>]`` 指定参考点的额外偏移量，见 :doc:`/basis/embellishment`
     #. ``+n<nx>/<ny>`` 使图片在水平方向重复 ``<nx>`` 次，垂直方向重复 ``<ny>`` 次，若省略 ``<ny>`` 则默认其与 ``<nx>`` 相等，默认值为 ``1/1``
 
 ``-F[+c<clearance(s)>][+g<fill>][+i[[<gap>/]<pen>]][+p[<pen>]][+r[<radius>]][+s[<dx>/<dy>/][<fill>]]``
-    为图片加上背景边框，见 :doc:`/basis/embellishments` 一节
+    为图片加上背景边框，见 :doc:`/basis/embellishment` 一节
 
     - ``+p<pen>`` 面板边框的画笔属性
     - ``+g<fill>`` 面板填充色

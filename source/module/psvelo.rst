@@ -74,7 +74,7 @@ psvelo
 ----
 
 ``-A<params>``
-    修改矢量的属性，见 :doc:`/basis/vectors` 一节
+    修改矢量的属性，见 :doc:`/basis/vector` 一节
 
 ``-D<sigma_scale>``
     控制 ``-Se`` 和 ``-Sr`` 中速度不确定度以及 ``-Sw`` 中旋转不确定度的缩放。该参数可以与 ``<confidence>`` 一起控制不确定度的绘制

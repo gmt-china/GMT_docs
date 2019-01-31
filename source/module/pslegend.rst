@@ -15,9 +15,9 @@ pslegend
 ``-D[g|j|J|n|x]<refpoint>+w<width>[/<height>][+j<justify>][+l<spacing>][+o<dx>[/<dy>]]``
     设置图例的位置和大小
 
-    - ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishments`
+    - ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishment`
     - ``+w<width>/<height>`` 用于指定图例框的尺寸，若 ``<height>`` 未指定或取0，则GMT会自动估算所需的高度
-    - ``+j<justify>`` 指定图例上的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishments` 一节
+    - ``+j<justify>`` 指定图例上的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishment` 一节
     - ``+o<dx>/<dy>`` 指定参考点的额外偏移量
     - ``+l<spacing>`` 行间距因子，默认值为1.1，则当前字体大小的1.1倍
 
@@ -29,7 +29,7 @@ pslegend
     #. 将图例放在右上角： ``-DjTR+w4c+o0.2c/0.2c``
 
 ``-F``
-    控制图例的背景属性，见 :doc:`/basis/embellishments` 一节
+    控制图例的背景属性，见 :doc:`/basis/embellishment` 一节
 
     默认图例无边框，使用该选项则会给图例绘制边框。
 
