@@ -38,13 +38,13 @@ inset
 
     - ``g|j|J|n|x<refpoint>`` 用于指定插图区域的参考点，通常用 ``j`` 比较方便，
       例如 ``jTL`` 表示插图区域位于左上角，\ ``jBR`` 表示插图区域位于右下角。
-      详情见 :doc:`/basis/embellishments/` 一节
+      详情见 :doc:`/basis/embellishment` 一节
     - ``+w<width>/<height>`` 指定了插图区域的宽度和高度
-    - ``+j<justify`` 控制插图区域的锚点，见 :doc:`/basis/anchors` 一节
-    - ``+o<dx>/<dy>`` 见 :doc:`/basis/embellishments/` 一节
+    - ``+j<justify`` 控制插图区域的锚点，见 :doc:`/basis/anchor` 一节
+    - ``+o<dx>/<dy>`` 见 :doc:`/basis/embellishment` 一节
 
 ``-F[+c<clearances>][+g<fill>][+i[[<gap>/]<pen>]][+p[<pen>]][+r[<radius>]][+s[[<dx>/<dy>/][<shade>]]]``
-    设置插图区域的背景色、轮廓等熟悉，见 :doc:`/basis/embellishments/` 一节
+    设置插图区域的背景色、轮廓等熟悉，见 :doc:`/basis/embellishment` 一节
 
 ``-M<margins>``
     插图内部的额外空白区域。其可以取三种形式：
