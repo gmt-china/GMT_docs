@@ -1,14 +1,10 @@
 earth_relief: 全球地形起伏数据
 ==============================
 
-数据简介
---------
+地形起伏数据简介
+----------------
 
-GMT提供了多种不同精度的全球地形起伏网格数据供用户使用。
-
-这些全球地形起伏数据保存在GMT的服务器上，用户可以直接通过 ``@earth_relief_<res>`` 的
-形式直接使用这些地形起伏数据，也可以通过 ``-R`` 选项获得数据的一个子集。
-其中 ``<res>`` 表示网格文件的精度，其可以取的值如下表所示。
+GMT提供了从15弧秒到60弧分的多种不同精度的全球地形起伏网格数据供用户使用。
 
 +----------------------+---------+--------+------------------------+
 | 地形数据名称         | 精度    | 大小   | 说明                   |
@@ -40,22 +36,25 @@ GMT提供了多种不同精度的全球地形起伏网格数据供用户使用�
 | ``earth_relief_15s`` | 15 弧秒 | 2.6 Gb | SRTM15+                |
 +----------------------+---------+--------+------------------------+
 
-.. not available yet
-.. | ``earth_relief_03s`` |  3 弧秒 | 6.8 Gb | SRTM tiles (14297 tiles, land only, 60S-60N) [NASA/USGS]     |
-.. +----------------------+---------+--------+--------------------------------------------------------------+
-.. | ``earth_relief_01s`` |  1 弧秒 |  41 Gb | SRTM tiles (14297 tiles, land only, 60S-60N) [NASA/USGS]     |
-.. +----------------------+---------+--------+--------------------------------------------------------------+
+这些数据保存在GMT的 `FTP服务器 <ftp://ftp.soest.hawaii.edu/gmt/data/>`_ 上
+（\ `国内镜像 <http://mirrors.ustc.edu.cn/gmt/data/>`\ ）。
+当用户第一次使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，
+并保存到GMT的缓存文件夹下（由 :ref:`DIR_CACHE <DIR_CACHE>` 控制，默认为 ``~/.gmt/`` 目录），
+然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，
+而无需再次从服务器下载。
 
-当你第一次使用某个地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的
-缓存文件夹下（由 :ref:`DIR_CACHE <DIR_CACHE>` 控制，默认为 ``~/.gmt/`` 目录），
-然后再读取该文件。以后再使用该数据，GMT会自动从缓存文件夹下读取该数据文件，而无需
-再次从服务器下载。
+使用方法
+--------
 
-用户可以直接使用如下命令将60弧分的全球地形起伏数据下载到GMT缓存文件夹下::
+当需要使用地形数据时，可以直接通过 ``@earth_relief_<res>`` 的形式调用这些
+地形起伏数据，其中 ``<res>`` 表示网格文件的精度。如果命令中使用了 ``-R`` 选项，
+则只会读取该区域内的地学起伏数据。
 
-    gmt which -G @earth_relief_60m
+使用示例::
 
-也可以遍历所有分辨率把全球地形起伏数据都下载到缓存文件夹中供以后使用。
+    gmt grdinfo @earth_relief_60m
+
+    gmt grdimage -Rg -JH15c @earth_relief_05m -Cglobe > map.ps
 
 缓存空间问题
 ------------
@@ -64,7 +63,6 @@ GMT提供了多种不同精度的全球地形起伏网格数据供用户使用�
 
 #. 通过参数 :ref:`GMT_DATA_URL_LIMIT <GMT_DATA_URL_LIMIT>` 设置缓存目录空间大小的上限，默认无限制；
 #. 可以通过 ``gmt clear cache`` 命令清理整个缓存目录
-#. 利用 ``crontab`` 的高级功能自动删除长期未使用（比如半年）的文件
 
 技术细节
 --------
@@ -101,8 +99,3 @@ GMT提供了多种不同精度的全球地形起伏网格数据供用户使用�
    A new global bathymetry map at 15 arcsecond resolution for resolving seafloor fabric: SRTM15_PLUS,
    in Eos Trans. AGU, edited, pp. Abstract OS34A-03
    `原始数据下载链接 <ftp://topex.ucsd.edu/pub/srtm15_plus/topo15.grd>`__
-
-.. #. SRTMGL3 tiles: [https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003].
-.. #. SRTMGL1 tiles: [https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003].
-
-.. TODO earth_relief_03s and earth_relief_01s
