@@ -17,7 +17,7 @@
 .. gmt-plot::
     :caption: 使用正弦曲线投影绘制世界地图
 
-    gmt coast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -png GMT_sinusoidal.ps
+    gmt coast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -png GMT_sinusoidal
 
 为了减少形状的畸变，1927年引入了间断正弦曲线投影，即用三个对称的段来覆盖全球。
 传统上，间断出现在160ºW、20ºW和60ºE处。为了生成间断地图，必须调用 :doc:`/module/coast`

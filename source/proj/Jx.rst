@@ -9,8 +9,8 @@ GMT中笛卡尔坐标变换分为三类：
 
 在开始之前，先用 :doc:`/module/gmtmath` 生成两个数据以供接下来示例使用::
 
-    gmt gmtmath -T0/100/1  T SQRT = sqrt.txt
-    gmt gmtmath -T0/100/10 T SQRT = sqrt10.txt
+    gmt math -T0/100/1  T SQRT = sqrt.txt
+    gmt math -T0/100/10 T SQRT = sqrt10.txt
 
 笛卡尔线性坐标
 --------------
