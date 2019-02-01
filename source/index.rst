@@ -42,8 +42,8 @@ GMT4甚至GMT3。这些文档存在一些共同的缺点：
    cpt/index
    grid/index
    option/index
-   conf/index
    proj/index
+   conf/index
    dataset/index
    module/index
    gallery/index

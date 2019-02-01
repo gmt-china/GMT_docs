@@ -3,7 +3,9 @@
 
 维基链接：https://en.wikipedia.org/wiki/Transverse_Mercator_projection
 
-此投影由Lambert于1772年提出。该投影中，圆柱与某条经线相切。在该经线处无畸变。离中心经线越远畸变越大，距离中心经线90度处的经线畸变达到无穷。中心经线和赤道都是直线，其余经线和纬线则是复杂曲线。
+此投影由Lambert于1772年提出。该投影中，圆柱与某条经线相切。在该经线处无畸变。
+离中心经线越远畸变越大，距离中心经线90度处的经线畸变达到无穷。中心经线和赤道
+都是直线，其余经线和纬线则是复杂曲线。
 
 该投影的参数::
 
@@ -12,7 +14,8 @@
 
 ``<lon>`` 中心经线，\ ``<lat>`` 原点的纬度，默认值为赤道。
 
-地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>` 以实现自定义。
+地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>`
+以实现自定义。
 
 .. gmt-plot::
     :caption: 矩形横向Mercator地图

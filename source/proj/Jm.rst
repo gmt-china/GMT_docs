@@ -3,9 +3,11 @@
 
 维基链接：https://en.wikipedia.org/wiki/Mercator_projection
 
-此投影是圆柱保角投影，沿着赤道无畸变，但两极畸变严重。此投影的主要特点是等方位角的线是一条直线，这样一条线称为rhumb线或loxodrome。
+此投影是圆柱保角投影，沿着赤道无畸变，但两极畸变严重。此投影的主要特点是等方位角的
+线是一条直线，这样一条线称为rhumb线或loxodrome。
 
-在常规Mercator投影中，圆柱与赤道相切。若圆柱沿着其他方向与地球相切，则称为横向Mercator投影或倾斜Mercator投影。
+在常规Mercator投影中，圆柱与赤道相切。若圆柱沿着其他方向与地球相切，则称为横向
+Mercator投影或倾斜Mercator投影。
 
 常规的Mercator投影需要的参数如下::
 
