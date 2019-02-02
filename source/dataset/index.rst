@@ -8,3 +8,4 @@
    gshhg
    dcw
    earth_relief
+   gadm/index
