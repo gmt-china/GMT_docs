@@ -5,9 +5,9 @@
     :maxdepth: 2
 
     overview
+    registration
+    boundary-condition
     read
     write
-    boundary-condition
-    registration
     suffix
     viewer

@@ -7,7 +7,7 @@ GMT内置了43个常规CPT文件和一个分类CPT文件，位于 :file:`${GMTHO
 
     gmt psscale -D5c/2c+w10c/1c+h+jTC -B0 -C<cpt> > test.ps
 
-下边的色标是经过 ``makecpt`` 离散成8部分后的色标，用如下命令绘制::
+下边的色标是经过 :doc:`/module/makecpt` 离散成8部分后的色标，用如下命令绘制::
 
     gmt makecpt -C<cpt> -T-1/1/0.25 > new.cpt
     gmt psscale -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt > test.ps
