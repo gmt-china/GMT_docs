@@ -94,6 +94,7 @@
 
 **其他**
 
+#. :doc:`movie`
 #. :doc:`grdtrack`
 #. :doc:`makecpt`
 #. :doc:`grd2cpt`
@@ -277,6 +278,7 @@
    legend
    mask
    meca
+   movie
    polar
    rose
    sac
