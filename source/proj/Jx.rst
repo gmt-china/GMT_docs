@@ -7,7 +7,7 @@ GMT中笛卡尔坐标变换分为三类：
 - log\ :math:`_{10}` 坐标
 - 指数坐标
 
-在开始之前，先用 :doc:`/module/gmtmath` 生成两个数据以供接下来示例使用::
+在开始之前，先用 :doc:`/module/math` 生成两个数据以供接下来示例使用::
 
     gmt math -T0/100/1  T SQRT = sqrt.txt
     gmt math -T0/100/10 T SQRT = sqrt10.txt

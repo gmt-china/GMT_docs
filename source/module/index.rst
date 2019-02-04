@@ -20,15 +20,15 @@
 
 **参数设置**
 
-- :doc:`gmtset` ：修改单个或多个GMT参数的值
-- :doc:`gmtget` ：列出单个或多个GMT参数的当前值
-- :doc:`gmtdefaults` ：列出所有GMT参数的当前值
+- :doc:`set` ：修改单个或多个GMT参数的值
+- :doc:`get` ：列出单个或多个GMT参数的当前值
+- :doc:`defaults` ：列出所有GMT参数的当前值
 
 **信息提取**
 
 - :doc:`grdinfo` ：从网格文件中提取基本信息
-- :doc:`gmtinfo` ：从表数据中提取信息
-- :doc:`gmtwhich` ：返回指定文件的完整路径
+- :doc:`info` ：从表数据中提取信息
+- :doc:`which` ：返回指定文件的完整路径
 
 **格式转换**
 
@@ -58,7 +58,7 @@
 
 **绘制 2D 数据**
 
-- :doc:`gmtlogo` ：在图上绘制GMT图形logo
+- :doc:`logo` ：在图上绘制GMT图形logo
 - :doc:`image` ：将EPS或光栅图片放在图上
 - :doc:`colorbar` ：在图上绘制灰色或彩色色标
 - :doc:`grdvector` ：根据两个网格文件绘制矢量场
@@ -66,11 +66,11 @@
 
 **1D 数据处理**
 
-- :doc:`gmtselect` ：根据多个准则筛选数据
+- :doc:`select` ：根据多个准则筛选数据
 - :doc:`fitcircle` ：拟合球面上数据点的平均位置及圆弧
-- :doc:`gmtsimplify` ：使用Douglas-Peucker算法对线段做简化
+- :doc:`simplify` ：使用Douglas-Peucker算法对线段做简化
 - :doc:`filter1d` ：对1D表数据做时间域滤波
-- :doc:`gmtconnect` ：将端点接近的线段连接起来
+- :doc:`connect` ：将端点接近的线段连接起来
 - :doc:`project` ：将数据点投影到线或大圆路径上，生成测线，坐标转换
 - :doc:`sample1d` ：对1D表数据进行重采样
 - :doc:`spectrum1d`: 计算一个时间序列的自功率谱，或两个时间序列的互功率谱
@@ -98,21 +98,21 @@
 #. :doc:`grdtrack`
 #. :doc:`makecpt`
 #. :doc:`grd2cpt`
-#. :doc:`gmtconvert`
+#. :doc:`convert`
 #. :doc:`trend1d`
 #. :doc:`grdcontour`
 #. :doc:`mask`
 #. :doc:`grdview`
 #. :doc:`grdgradient`
 #. :doc:`grdmath`
-#. :doc:`gmt2kml`
+#. :doc:`2kml`
 #. :doc:`trend2d`
 #. :doc:`mapproject`
 #. :doc:`surface`
 #. :doc:`grdfilter`
 #. :doc:`grdfft`
 #. :doc:`splitxyz`
-#. :doc:`gmtmath`
+#. :doc:`math`
 #. :doc:`blockmean`
 #. :doc:`blockmedian`
 #. :doc:`blockmode`
@@ -123,7 +123,7 @@
 #. :doc:`wiggle`
 #. :doc:`grdgravmag3d`
 #. :doc:`grdhisteq`
-#. :doc:`gmtpmodeler`
+#. :doc:`pmodeler`
 #. :doc:`grdpmodeler`
 #. :doc:`grdredpol`
 #. :doc:`grdrotater`
@@ -151,9 +151,9 @@
 #. :doc:`x2sys_solve`
 #. :doc:`gmtswitch`
 #. :doc:`backtracker`
-#. :doc:`gmtgravmag3d`
-#. :doc:`gmtspatial`
-#. :doc:`gmtvector`
+#. :doc:`gravmag3d`
+#. :doc:`spatial`
+#. :doc:`vector`
 #. :doc:`gravfft`
 #. :doc:`grdseamount`
 #. :doc:`gpsgridder`
@@ -177,47 +177,43 @@
    :maxdepth: 1
    :hidden:
 
+   2kml
    backtracker
+   basemap
    begin
    blockmean
    blockmedian
    blockmode
    clear
+   clip
+   coast
+   colorbar
+   connect
+   contour
+   convert
+   coupe
+   defaults
    dimfilter
    docs
    end
    figure
    filter1d
    fitcircle
+   flexure
+   get
    gmt
    gmt-config
-   gmt2kml
    gmt5syntax
-   gmtconnect
-   gmtconvert
-   gmtdefaults
-   gmtflexure
-   gmtget
-   gmtgravmag3d
-   gmtinfo
-   gmtlogo
-   gmtmath
-   gmtpmodeler
-   gmtregress
-   gmtselect
-   gmtset
-   gmtsimplify
-   gmtspatial
    gmtswitch
-   gmtvector
-   gmtwhich
    gpsgridder
    gravfft
+   gravmag3d
    grd2cpt
    grd2xyz
    grdblend
    grdclip
    grdcontour
+   grdconvert
    grdcut
    grdedit
    grdfft
@@ -235,7 +231,6 @@
    grdpmodeler
    grdproject
    grdredpol
-   grdconvert
    grdrotater
    grdsample
    grdseamount
@@ -247,14 +242,22 @@
    grdvolume
    greenspline
    gshhg
+   histogram
    hotspotter
+   image
    img2google
    img2grd
+   info
    inset
    isogmt
    kml2gmt
+   legend
+   logo
    makecpt
    mapproject
+   mask
+   math
+   meca
    mgd77convert
    mgd77header
    mgd77info
@@ -264,38 +267,29 @@
    mgd77path
    mgd77sniffer
    mgd77track
+   movie
    nearneighbor
    originater
-   project
-   basemap
-   clip
-   coast
-   contour
-   psconvert
-   coupe
-   histogram
-   image
-   legend
-   mask
-   meca
-   movie
-   polar
-   rose
-   sac
-   colorbar
-   segy
-   segyz
-   solar
-   ternary
-   text
-   velo
-   wiggle
    plot
    plot3d
+   pmodeler
+   polar
+   project
+   psconvert
+   regress
+   rose
    rotconverter
    rotsmoother
+   sac
    sample1d
+   segy
    segy2grd
+   segyz
+   select
+   set
+   simplify
+   solar
+   spatial
    spectrum1d
    sph2grd
    sphdistance
@@ -306,9 +300,15 @@
    surface
    talwani2d
    talwani3d
+   ternary
+   text
    trend1d
    trend2d
    triangulate
+   vector
+   velo
+   which
+   wiggle
    x2sys_binlist
    x2sys_cross
    x2sys_datalist
