@@ -1,5 +1,5 @@
-``-a`` 选项
-===========
+-a 选项
+=======
 
 GMT自身是无法读取shapefile等格式的地理空间数据的。需要利用
 `GDAL <https://www.gdal.org/>`_ 中的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_
