@@ -238,15 +238,6 @@ psxy
     对于大写符号 ``ACDGHINST``， ``<size>`` 表示符号的面积与直径为 ``<size>``
     的圆的面积相同。
 
-    下图给出了上面所给出的symbol所对应的符号：
-
-    .. figure:: /images/psxy_symbols.*
-       :width: 100%
-       :align: center
-       :alt: psxy simple symbols
-
-       psxy -S选项示意图
-
     除了上述简单的符号之外，还有更多复杂的符号。
 
 ``-Sb|B[<size>[<u>]][b[<base>]]``

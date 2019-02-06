@@ -5,7 +5,7 @@
 
     basemap
     points
-    symbols
+    symbols/index
     coast
     beachball
     legend
