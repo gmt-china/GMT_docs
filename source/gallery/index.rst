@@ -4,7 +4,7 @@
 .. toctree::
 
     basemap
-    points
+    lines
     symbols
     coast
     beachball
