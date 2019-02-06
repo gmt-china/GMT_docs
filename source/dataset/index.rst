@@ -6,6 +6,6 @@
 
    overview
    gshhg
-   dcw
+   dcw/index
    earth_relief
    gadm/index
