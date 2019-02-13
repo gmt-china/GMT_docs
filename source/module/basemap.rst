@@ -121,17 +121,6 @@ basemap
 
    用psbasemap命令-D选项绘制图中图
 
-下面的脚本绘制了另一种不同的inset box：
-
-.. literalinclude:: /scripts/psbasemap_ex2.sh
-   :language: bash
-
-.. figure:: /images/psbasemap_ex2.*
-   :width: 100%
-   :align: center
-
-   用psbasemap命令-D选项绘制另一种图中图
-
 下面的脚本绘制了磁场玫瑰图：
 
 .. literalinclude:: /scripts/psbasemap_ex4.sh
