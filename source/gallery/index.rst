@@ -15,3 +15,4 @@
     sac-waveforms
     ternary-diagram
     contour
+    subplot
