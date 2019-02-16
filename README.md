@@ -1,4 +1,4 @@
-# GMT参考手册
+# GMT中文手册
 
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg)](https://travis-ci.org/gmt-china/GMT_docs)
 
@@ -13,7 +13,7 @@
 
 ## 文档说明
 
-本文档是由 GMT 中文社区维护的 GMT 中文参考手册，既可以作为入门读物，
+本文档是由 GMT 中文社区维护的 GMT 中文手册，既可以作为入门读物，
 也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握 GMT 的用法。
 
 本手册目前与 GMT 6.0.0 同步，历史版本见
