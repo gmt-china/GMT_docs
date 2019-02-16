@@ -172,6 +172,9 @@
 #. :doc:`sphinterpolate`
 #. :doc:`sphtriangulate`
 
+.. raw:: latex
+
+   \setcounter{tocdepth}{1}
 
 .. toctree::
    :maxdepth: 1
@@ -320,3 +323,7 @@
    x2sys_report
    x2sys_solve
    xyz2grd
+
+.. raw:: latex
+
+   \setcounter{tocdepth}{2}
