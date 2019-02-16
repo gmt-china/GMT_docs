@@ -16,7 +16,7 @@ GMT学习资源列举如下，建议以官方学习资源为准。
 社区学习资源
 ------------
 
-#. `GMT中文参考手册 <https://docs.gmt-china.org/>`_
+#. `GMT中文手册 <https://docs.gmt-china.org/>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
 #. 地学GMT中文社区QQ群：1群（218905582，已满）；2群（791856541）

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# GMT 参考手册配置文件
+# GMT 中文手册配置文件
 #
 # 1. http://www.sphinx-doc.org/en/stable/config.html
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
@@ -38,7 +38,7 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
-project = u'GMT参考手册'
+project = u'GMT中文手册'
 copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = u'GMT中文社区'
 version = '5.4.5'
