@@ -1,9 +1,8 @@
 -x 选项
 =======
 
-GMT中的某些模块支持OpenMP多线程并行，前提是在编译时打开了 OpenMP 选项。
-
-默认情况下，GMT会尝试使用所有可用的核。使用 ``-x`` 选项可以限制GMT所使用的核数，
+在编译GMT时若打开了 OpenMP 选项，则GMT中某些模块在运行时可以通过 OpenMP 加快计算速度。
+默认情况下，这些模块会尝试使用所有可用的核。\ ``-x`` 选项用于限制所使用的核数，
 其语法为::
 
     -x[[-]<n>]
@@ -14,13 +13,15 @@ GMT中的某些模块支持OpenMP多线程并行，前提是在编译时打开�
 - ``-x-4`` 表示使用 all-4 个核，也就是说给其他程序留下四个核。若 all-4<1，则使用1个核
 
 支持该选项的模块包括：
-``greenspline`` 、
-``grdmask`` 、
-``grdmath`` 、
-``grdfilter`` 、
-``grdsample`` 、
-``sph2grd`` 、
-``grdgravmag3d`` 、
-``talwani2d`` 、
-``talwani3d`` 、
-``x2sys_solve`` 。
+:doc:`/module/grdfilter`\ 、
+:doc:`/module/grdlandmask`\ 、
+:doc:`/module/grdmask`\ 、
+:doc:`/module/grdmath`\ 、
+:doc:`/module/grdsample`\ 、
+:doc:`/module/greenspline`\ 、
+:doc:`/module/sph2grd`\ 、
+:doc:`/module/gpsgridder`\ 、
+:doc:`/module/talwani2d`\ 、
+:doc:`/module/talwani3d`\ 、
+:doc:`/module/surface`\ 、
+:doc:`/module/x2sys_solve`\ 。
