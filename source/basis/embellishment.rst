@@ -124,4 +124,4 @@ GMT 提供了5种方式用于指定底图的参考点，5种方法提供了极�
 
     GMT修饰物背景面板
 
-    左图使用了 ``-F+glightgreen+r``\ ，右图使用了 ``-F+p1p+i+s+gwhite+c0.1i``
+    左图使用了 ``-F+glightgreen+r``\ ，右图使用了 ``-F+p1p+i+s+glightblue+c0.1i``(不包含最内侧虚线框)
