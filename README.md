@@ -5,7 +5,7 @@
 欢迎来到 [Generic Mapping Tools](http://gmt.soest.hawaii.edu/) 的世界。
 
 [在线阅读](https://docs.gmt-china.org/5.4.5/) |
-[PDF下载](https://docs.gmt-china.org/5.4.5/GMT_docs.pdf)
+[PDF下载](https://docs.gmt-china.org/5.4.5/GMT_docs.pdf) |
 [文档源码](https://github.com/gmt-china/GMT_Docs) |
 [GMT中文社区](https://gmt-china.org) |
 [GMT官方网站](http://gmt.soest.hawaii.edu/) |
