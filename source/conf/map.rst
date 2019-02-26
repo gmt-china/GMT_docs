@@ -286,5 +286,15 @@ MAP_LINE_STEP
 MAP_VECTOR_SHAPE
     矢量箭头的形状 [0]
 
-    取值范围为-2到2。0表示矢量头为三角形，1表示箭头形状，2表示打开的V字。
-    其他的中间值代表了两种形状的中间值。
+    可以取-2到2之间的任意实数。
+    下面展示了取-2、-1、0、1和2时的矢量箭头的形状：
+
+    .. gmt-plot::
+        :show-code: false
+
+        gmt begin vector-shape pdf,png
+        for shape in -2 -1 0 1 2; do
+            echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
+            echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
+        done
+        gmt end
