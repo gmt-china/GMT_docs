@@ -1,7 +1,4 @@
 #!/bin/bash
-
-J=Q104/15c
-R=102.5/105.5/30.5/32.5
 PS=beachball_3.ps
 CPT=meca.cpt
 
@@ -13,7 +10,7 @@ cat << EOF > $CPT
 60 240-1-1  100 240-1-1
 EOF
 
-gmt psbasemap -J$J -R$R -Ba -BWSEN -P -K > $PS
+gmt psbasemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSEN -P -K > $PS
 gmt psmeca -J -R -CP5p -Sa1.3c -Z$CPT -K -O >> $PS << EOF
 # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
 104.33 31.91 39.8  32 64   85 7.0      0     0 A
