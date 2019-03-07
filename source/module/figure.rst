@@ -15,6 +15,8 @@ figure
 语法
 ----
 
+::
+
     gmt figure <prefix> [<formats>] [<options>]
 
 必须选项
