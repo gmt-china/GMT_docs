@@ -51,9 +51,8 @@ GMT中共有14种图例类型，列举如下：
     绘制水平colorbar
 
     #. ``offset`` 是colorbar相对于图例框左边界的距离
-    #. ``height`` 是colorbar高度
-    #. 还可以加上子选项 ``+e[b|f][<length>]][+h][+ma|c|l|u][+n[<txt>]`` 以及
-       其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 :doc:`colorbar` 命令
+    #. ``height`` 是colorbar高度，其后可以加上子选项 ``+e[b|f][<length>]][+h][+ma|c|l|u][+n[<txt>]``
+    #. 还可以添加其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 :doc:`colorbar` 命令
 
 ``C textcolor``
     接下来的所有文本所使用的颜色。
