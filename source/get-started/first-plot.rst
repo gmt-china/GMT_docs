@@ -8,7 +8,7 @@ GMT中图层的概念。
 
    请注意，以下均采用Linux下的bash脚本作为示例，如果你是在
    Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，
-   强烈建议先阅读 :doc:`/appendix/cmd/` 一节。
+   强烈建议先阅读 :doc:`/appendix/cmd/index` 一节。
 
 图件分析与拆解
 --------------
