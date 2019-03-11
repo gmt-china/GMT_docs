@@ -9,7 +9,6 @@
    colors
    patterns
    low-level/index
-   directory-tree
    calculate-distance
    variables
    custom-fonts
