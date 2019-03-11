@@ -1,10 +1,16 @@
 Linux 下安装GMT
 ===============
 
+.. note::
+
+    大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装
+    工具，如 ``apt-get`` 或 ``yum`` 等进行直接安装GMT。但大多数发行版提供的
+    GMT版本都较老，故本文仅介绍如何从源码编译GMT。
+
 解决依赖关系
 ------------
 
-GMT 在运行时依赖 fftw（>=3.3）、glib2（>=2.32）、netCDF（>4.0且支持netCDF-4/HDF5）、
+GMT 在运行时依赖 fftw（>=3.3）、netCDF（>4.0且支持netCDF-4/HDF5）、
 ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）。
 因而，需要先安装GMT所依赖的软件包。
 
@@ -23,9 +29,12 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     # 安装编译所需软件包
     $ sudo apt-get install gcc g++ cmake make libc6
 
-    # 安装运行所需软件包
+    # 安装必须软件包
     $ sudo apt-get install ghostscript
     $ sudo apt-get install libnetcdf-dev
+    $ sudo apt-get install libcurl4-gnutls-dev
+
+    # 安装可选软件包
     $ sudo apt-get install libgdal-dev python-gdal
     $ sudo apt-get install liblapack3
     $ sudo apt-get install libglib2.0-dev
@@ -40,9 +49,12 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     # 安装编译所需软件包
     $ sudo yum install gcc gcc-c++ cmake make glibc
 
-    # 安装运行所需软件包
+    # 安装必须软件包
     $ sudo yum install ghostscript
     $ sudo yum install netcdf-devel
+    $ sudo yum install libcurl-devel
+
+    # 安装可选软件包
     $ sudo yum install gdal-devel gdal-python
     $ sudo yum install lapack64-devel lapack-devel
     $ sudo yum install glib2-devel
@@ -62,9 +74,9 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 
 Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的国内下载镜像）：
 
-#. GMT源码： https://github.com/GenericMappingTools/gmt/archive/master.tar.gz
-#. 全球海岸线数据GSHHG： http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz
-#. 全球数字图表DCW： http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz
+#. GMT源码：`gmt-master.tar.gz <https://github.com/GenericMappingTools/gmt/archive/master.tar.gz>`_
+#. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
+#. 全球数字图表DCW：`dcw-gmt-1.1.4.tar.gz <http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz>`_
 
 .. note::
 
@@ -99,7 +111,6 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GMT_DATA_URL "http://mirrors.ustc.edu.cn/gmt/data/")
     set (GMT_USE_THREADS TRUE)
 
 其中，
@@ -111,7 +122,6 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
 - ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
   软链接，不建议设置为 ``TRUE`` （可选）
-- ``GMT_DATA_URL`` 设置从中科大镜像下载GMT数据，以加快数据下载速度（可选）
 - ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能（可选）
 
 .. warning::
@@ -190,8 +200,8 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 
 .. note::
 
-   ``-j`` 选项可以实现并行编译以减少编译时间。但并行编译可能在个别发行版上
-   无法使用。
+   ``-j`` 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下
+   使用 ``-j`` 选项会导致编译过程卡死。若出现此种情况，建议去除 ``-j`` 选项。
 
 修改环境变量
 ------------

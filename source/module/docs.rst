@@ -20,7 +20,7 @@ docs
 ``<module-name>``
     模块名。除此之外，还可以打开 cookbook、tutorial、api、gmt.conf 等文档。
 
-``<-option>``
+``<option>``
     指定选项（例如 ``-R``\ ）以直接跳转到模块文档的该选项处。
 
 示例

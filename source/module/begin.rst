@@ -15,6 +15,8 @@ begin
 语法
 ----
 
+::
+
     gmt begin <prefix> <formats>
 
 可选选项
@@ -23,34 +25,25 @@ begin
 ``<prefix>``
     文件名前缀，默认文件名前缀为 ``gmtsession``\ 。后缀由文件格式自动决定。
 
+.. _fig-formats:
+
 ``<formats>``
     图片文件格式。多个格式之间可以用逗号分开。默认为 ``pdf``\ 。
 
-    GMT可输出的图片文件格式见下表：
+    GMT支持输出如下矢量图片格式：
 
-    .. _tbl-formats:
+    - ``pdf``\ ：\ `Portable Document Format <https://zh.wikipedia.org/wiki/可移植文档格式>`_ [默认格式]
+    - ``ps``\ ：\  `Plain PostScript <https://zh.wikipedia.org/wiki/PostScript>`_
+    - ``eps``\ ：\ `Encapsulated PostScript <https://zh.wikipedia.org/wiki/EPS>`_
 
-        +--------+-----------------------------------------+
-        | 格式   | 说明                                    |
-        +========+=========================================+
-        |  bmp   | Microsoft Bit Map                       |
-        +--------+-----------------------------------------+
-        |  eps   | Encapsulated PostScript                 |
-        +--------+-----------------------------------------+
-        |  jpg   | Joint Photographic Experts Group Format |
-        +--------+-----------------------------------------+
-        |  pdf   | Portable Document Format [Default]      |
-        +--------+-----------------------------------------+
-        |  png   | Portable Network Graphics (opaque)      |
-        +--------+-----------------------------------------+
-        |  PNG   | Portable Network Graphics (transparent) |
-        +--------+-----------------------------------------+
-        |  ppm   | Portable Pixel Map                      |
-        +--------+-----------------------------------------+
-        |   ps   | Plain PostScript                        |
-        +--------+-----------------------------------------+
-        |  tif   | Tagged Image Format File                |
-        +--------+-----------------------------------------+
+    GMT支持输出如下位图图片格式：
+
+    - ``bmp``\ ：\ `Microsoft Bit Map <https://zh.wikipedia.org/wiki/BMP>`_
+    - ``jpg``\ ：\ `Joint Photographic Experts Group Format <https://zh.wikipedia.org/wiki/JPEG>`_
+    - ``png``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ (不透明)
+    - ``PNG``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ (支持透明)
+    - ``ppm``\ ：\ `Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
+    - ``tif``\ ：\ `Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
 
 示例
 ----
@@ -63,14 +56,13 @@ begin
 
     gmt begin
 
-
 注意事项
 --------
 
 如果用户想要输出PS格式的图片，则应额外留意画布尺寸。对于其他图片格式而言，
 GMT默认使用无穷大的画布，而对于PS格式而言，GMT则默认使用A4大小的画布。
 若用户绘制的图片超过A4纸张的大小，则可能会造成显示不完全。针对这种情况，
-建议用户修改参数 :ref:`PS_MEDIA` 以指定纸张大小。例如::
+建议用户修改参数 :ref:`PS_MEDIA` 以显式指定纸张大小。例如::
 
     gmt begin map ps
     gmt set PS_MEDIA A3

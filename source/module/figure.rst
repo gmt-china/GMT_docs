@@ -29,7 +29,7 @@ figure
 --------
 
 ``<formats>``
-    一个或多个由逗号分隔的图片格式后缀。支持的图片格式见表 :ref:`formats <tbl-formats>`\ 。
+    一个或多个由逗号分隔的图片格式后缀。支持的图片格式见表 :ref:`formats <fig-formats>`\ 。
     默认图片格式为 ``pdf``\ 。
 
 ``<options>``
