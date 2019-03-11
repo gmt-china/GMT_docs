@@ -39,6 +39,27 @@ GMT可以绘制最简单的线性X-Y图。
 - ``-B`` 选项中 ``+l`` 用于指定每个轴的轴标签
 - ``-BWS`` 表示只绘制图边框左（W）和下（S）边框
 
+双Y轴坐标系
+-----------
+
+下面展示如何用GMT绘制双Y轴坐标系。
+
+.. gmt-plot::
+    :language: bash
+    :caption: 双Y轴图
+
+    gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l"Wavelength (m)" \
+        -Bya1pf3+l"Power (W)" -BWS -K > GMT_tutor1_3.ps
+    # Y为指数坐标底图上的绘图操作
+    gmt psbasemap -R1/10000/1/20 -JX15cl/10c \
+        -Bya5f2+l"linear (W)" -BE -O >> GMT_tutor1_3.ps
+    # Y为线性坐标底图上的绘图操作
+
+此示例中：
+
+- 首句 ``gmt psbasemap`` 绘制了指数Y轴坐标系底图
+- 其次 ``gmt psbasemap`` 绘制了线性Y轴坐标系底图
+
 区域地图
 --------
 
@@ -48,7 +69,7 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
     :language: bash
     :caption: 区域地图
 
-    gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate > GMT_tutor1_3.ps
+    gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate > GMT_tutor1_4.ps
 
 此示例中使用 ``pscoast`` 绘制了拉丁美洲区域的海岸线。
 
@@ -75,7 +96,7 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
     :caption: 全球地图
 
     gmt pscoast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise \
-        -Wthinnest > GMT_tutor1_4.ps
+        -Wthinnest > GMT_tutor1_5.ps
 
 此示例中：
 
