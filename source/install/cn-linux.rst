@@ -52,7 +52,9 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为::
 +++++++++++++++++++++
 
 Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体，这里只考虑 Windows 下的
-宋体、仿宋、黑体和楷体四个基本字体。
+宋体、仿宋、黑体和楷体四个基本字体。对于 Windows 下的其他中文字体、Linux 的
+其他中文字体甚至日韩字体来说，方法类似。
+
 将这四个字体文件复制到 ``/usr/share/fonts/winfonts/`` 目录下，
 然后对 ghostscript 的中文配置文件做如下修改::
 
@@ -67,9 +69,6 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
     /STFangsong-Light <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
     /STHeiti-Regular <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
     /STKaiti-Regular <</FileType /TrueType /Path (/usr/share/fonts/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
-
-这里仅以 Windows 下的常用四大字体为例。对于 Windows 下的其他中文字体、Linux 的
-其他中文字体甚至日韩字体来说，方法类似。
 
 测试 ghostscript 对 Windows 中文字体的支持
 ++++++++++++++++++++++++++++++++++++++++++
@@ -125,7 +124,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
     41 STHeiti-Regular--UniGB-UTF8-H
     42 STKaiti-Regular--UniGB-UTF8-H
 
-其中 0-38 为 GMT/gs 默认支持的西文字体，39-42 为新添加的中文字体。
+其中 0-38 为 GMT/gs 默认支持的字体，39-42 为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
 
 GMT 中文测试
