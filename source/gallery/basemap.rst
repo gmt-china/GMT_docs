@@ -10,7 +10,7 @@ GMT可以绘制最简单的线性X-Y图。
    :language: bash
    :caption: 线性X-Y图
 
-    gmt psbasemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t"Linear X-Y Plot" > GMT_tutor1_1.ps
+   gmt psbasemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t"Linear X-Y Plot" > linearXY.ps
 
 在这个示例中：
 
@@ -18,7 +18,7 @@ GMT可以绘制最简单的线性X-Y图。
 - ``-JX8c/5c`` 指定了整张图为线性投影，图的宽度（X轴长度）为8厘米，图的高度（Y轴长度）为5厘米
 - ``-Bx10 -By3`` 分别设置了X、Y轴标注以及刻度的间隔为10和3
 - ``-B+t"Linear X-Y Plot"`` 为整张图添加了标题
-- ``> GMT_tutor1_1.ps`` GMT绘图模块的输出是PS代码，因而需要使用重定向符号 ``>`` 将PS代码输出到PS文件中
+- ``> linearXY.ps`` GMT绘图模块的输出是PS代码，因而需要使用重定向符号 ``>`` 将PS代码输出到PS文件中
 
 对数坐标系
 ----------
@@ -30,7 +30,7 @@ GMT可以绘制最简单的线性X-Y图。
     :caption: 对数X-Y图
 
     gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l"Wavelength (m)" \
-        -Bya1pf3+l"Power (W)" -BWS > GMT_tutor1_2.ps
+        -Bya1pf3+l"Power (W)" -BWS > logXY.ps
 
 此示例中：
 
@@ -49,16 +49,15 @@ GMT可以绘制最简单的线性X-Y图。
     :caption: 双Y轴图
 
     gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l"Wavelength (m)" \
-        -Bya1pf3+l"Power (W)" -BWS -K > GMT_tutor1_3.ps
+        -Bya1pf3+l"Power (W)" -BWS -K > doubleY.ps
     # Y为指数坐标底图上的绘图操作
-    gmt psbasemap -R1/10000/1/20 -JX15cl/10c \
-        -Bya5f2+l"linear (W)" -BE -O >> GMT_tutor1_3.ps
+    gmt psbasemap -R1/10000/1/20 -JX15cl/10c -Bya5f2+l"linear (W)" -BE -O >> doubleY.ps
     # Y为线性坐标底图上的绘图操作
 
 此示例中：
 
-- 首句 ``gmt psbasemap`` 绘制了指数Y轴坐标系底图
-- 其次 ``gmt psbasemap`` 绘制了线性Y轴坐标系底图
+- 第一句 ``gmt psbasemap`` 绘制了指数Y轴坐标系底图
+- 第二句 ``gmt psbasemap`` 绘制了线性Y轴坐标系底图
 
 区域地图
 --------
@@ -69,7 +68,7 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
     :language: bash
     :caption: 区域地图
 
-    gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate > GMT_tutor1_4.ps
+    gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate > regionalMap.ps
 
 此示例中使用 ``pscoast`` 绘制了拉丁美洲区域的海岸线。
 
@@ -96,8 +95,9 @@ GMT自带了海岸线数据，通过 ``pscoast`` 模块可以直接调用。
     :caption: 全球地图
 
     gmt pscoast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise \
-        -Wthinnest > GMT_tutor1_5.ps
+        -Wthinnest > globalMap.ps
 
 此示例中：
 
 #. ``-JK180/9i`` 表明使用Eckert投影，地图中心位于经度180度，地图宽度为9英寸
+#. ``-Rg`` 等效于 ``-R0/360/-90/90`` 即绘制全球区域
