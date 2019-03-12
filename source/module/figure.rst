@@ -29,8 +29,8 @@ figure
 --------
 
 ``<formats>``
-    一个或多个由逗号分隔的图片格式后缀。支持的图片格式见表 :ref:`formats <fig-formats>`\ 。
-    默认图片格式为 ``pdf``\ 。
+    一个或多个由逗号分隔的图片格式后缀。默认图片格式为 ``pdf``\ 。
+    支持的图片格式见 :ref:`图片格式列表 <fig-formats>`\ 。
 
 ``<options>``
     GMT本质上是先生成PS格式的图片，再通过调用 :doc:`psconvert` 自动转换成用户

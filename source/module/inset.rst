@@ -12,7 +12,7 @@ inset
 ``inset`` 模块包含两个命令：
 
 - ``inset begin`` 用于设置图中图模式，其定义了图中图区域的位置和大小
-- ``inset end`` 用于结束图中图模式，此时所有的操作都会回到原始的完全图中
+- ``inset end`` 用于结束图中图模式，此时所有的操作都会回到大区域图中
 
 ``inset begin``
 ---------------
@@ -22,10 +22,7 @@ inset
 
 ::
 
-    gmt inset begin
-        -D<inset-box>
-        [-F<box>]
-        [-M<margins>]
+    gmt inset begin -D<inset-box> [-F<box>] [-M<margins>]
 
 必须选项
 ~~~~~~~~
@@ -44,7 +41,7 @@ inset
     - ``+o<dx>/<dy>`` 见 :doc:`/basis/embellishment` 一节
 
 ``-F[+c<clearances>][+g<fill>][+i[[<gap>/]<pen>]][+p[<pen>]][+r[<radius>]][+s[[<dx>/<dy>/][<shade>]]]``
-    设置图中图区域的背景色、轮廓等熟悉，见 :doc:`/basis/embellishment` 一节
+    设置图中图区域的背景色、轮廓等属性，见 :doc:`/basis/embellishment` 一节
 
 ``-M<margins>``
     图中图内部的额外空白区域。其可以取三种形式：
