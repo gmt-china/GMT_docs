@@ -13,7 +13,6 @@
    variables
    custom-fonts
    get-gmt-dev
-   animation
    special-dirs
    contour-annot
    gdal
