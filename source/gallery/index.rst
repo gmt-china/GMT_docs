@@ -16,3 +16,4 @@
     ternary-diagram
     contour
     subplot
+    animation/index
