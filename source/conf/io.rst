@@ -13,7 +13,7 @@ IO参数
 **IO_N_HEADER_RECS**
     在使用 ``-h`` 选项时，要跳过的文件头记录的数目 [0]
 
-    见 :doc:`/option/h` 和 :doc:`/io/table-data` 。
+    见 :doc:`/option/h` 和 :doc:`/table/ascii`\ 。
 
 
 .. _IO_LONLAT_TOGGLE:
@@ -50,7 +50,7 @@ IO参数
 **IO_SEGMENT_MARKER**
     多段数据中每段数据开始的标识符 [ ``>`` ]
 
-    见 :doc:`/io/table-data` 中的相关介绍。
+    见 :doc:`/table/ascii` 中的相关介绍。
     若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和
     输出数据的段标识符，比如 ``>,:`` 。
 

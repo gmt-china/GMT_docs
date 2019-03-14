@@ -38,7 +38,7 @@ GMT4甚至GMT3。这些文档存在一些共同的缺点：
    install/index
    get-started/index
    basis/index
-   io/index
+   table/index
    grid/index
    cpt/index
    option/index

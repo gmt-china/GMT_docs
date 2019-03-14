@@ -1,5 +1,5 @@
-绘图基础
-########
+GMT基础
+#######
 
 这一章介绍GMT中所有程序通用的基础知识。
 
@@ -17,4 +17,5 @@
    line
    anchor
    embellishment
+   io-format
    glossary
