@@ -60,10 +60,10 @@ GMT 的中文支持
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light--UniGB-UTF8-H
-    40 STFangsong-Light--UniGB-UTF8-H
-    41 STHeiti-Regular--UniGB-UTF8-H
-    42 STKaiti-Regular--UniGB-UTF8-H
+    39 STSong-Light--GB-EUC-H
+    40 STFangsong-Light--GB-EUC-H
+    41 STHeiti-Regular--GB-EUC-H
+    42 STKaiti-Regular--GB-EUC-H
 
 可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
 其中 ``STSong-Light--GB-EUC-H`` 即为宋体，\ ``GB-EUC`` 是文字编码方式，
