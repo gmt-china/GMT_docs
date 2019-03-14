@@ -94,14 +94,14 @@ GMT 对于地理投影和线性投影的默认设置有很大区别。有些时�
 绝对时间坐标
 ~~~~~~~~~~~~
 
-默认为 ``yyyymmddThh:mm:ss.xxx`` 格式，见 :doc:`/io/format` 一节。
+默认为 ``yyyymmddThh:mm:ss.xxx`` 格式，见 :doc:`/basis/io-format` 一节。
 
 相对时间坐标
 ~~~~~~~~~~~~
 
-见 :doc:`/io/format` 一节。
+见 :doc:`/basis/io-format` 一节。
 
 笛卡尔坐标
 ~~~~~~~~~~
 
-既可以用浮点数表示也可以用指数表示，见 :doc:`/io/format` 一节。
+既可以用浮点数表示也可以用指数表示，见 :doc:`/basis/io-format` 一节。
