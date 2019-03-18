@@ -17,7 +17,7 @@ macOS 下的 GMT 中文支持
 
    该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。
 
-.. _cjk-gs-integrate.pl: https://github.com/texjporg/cjk-gs-support/blob/master/cjk-gs-integrate.pl
+.. _cjk-gs-integrate.pl: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
 
 使 GMT 支持中文
 ---------------
@@ -36,8 +36,12 @@ macOS 下的 GMT 中文支持
     STFangsong-Light--UniGB-UTF8-H  0.700    1
     STHeiti-Regular--UniGB-UTF8-H   0.700   1
     STKaiti-Regular--UniGB-UTF8-H   0.700   1
+    STSong-Light--UniGB-UTF8-V  0.700    1
+    STFangsong-Light--UniGB-UTF8-V  0.700    1
+    STHeiti-Regular--UniGB-UTF8-V   0.700   1
+    STKaiti-Regular--UniGB-UTF8-V   0.700   1
 
-这几句话分别添加了宋体、仿宋、黑体和楷体四种字体。
+这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。
 
 查看 GMT 当前支持的字体
 +++++++++++++++++++++++
@@ -54,8 +58,12 @@ macOS 下的 GMT 中文支持
     40 STFangsong-Light--UniGB-UTF8-H
     41 STHeiti-Regular--UniGB-UTF8-H
     42 STKaiti-Regular--UniGB-UTF8-H
+    43 STSong-Light-UniGB-UTF8-V
+    44 STFangsong-Light-UniGB-UTF8-V
+    45 STHeiti-Regular-UniGB-UTF8-V
+    46 STKaiti-Regular-UniGB-UTF8-V
 
-其中 39-42 号字体为新添加的中文字体。
+其中 39-46 号字体为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
 
 GMT 中文测试
@@ -63,23 +71,7 @@ GMT 中文测试
 
 测试脚本：
 
-.. code-block:: bash
-
-    #!/bin/bash
-    gmt set FONT_TITLE 30p,39,black
-    gmt set FONT_LABEL 15p,39,black
-
-    gmt pstext -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" \
-        -BWSen+t"中文标题" -F+f -P > cn.ps << EOF
-    3 2.5 35p,39,black GMT宋体
-    3 1.0 35p,40,blue GMT仿宋
-    7 2.5 35p,41,yellow GMT黑体
-    7 1.0 35p,42,green GMT楷体
-    EOF
-    gmt psconvert -A -P -Tf cn.ps
-    gmt psconvert -A -P -Tg cn.ps
-
-    gmt clear history conf
+.. literalinclude:: GMT_Chinese_macOS.sh
 
 .. note::
 
@@ -89,6 +81,6 @@ GMT 中文测试
 
 成图效果如下：
 
-.. figure:: /images/GMT_chinese.png
+.. figure:: GMT_Chinese_macOS.*
    :width: 100%
    :align: center
