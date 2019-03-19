@@ -71,7 +71,7 @@ GMT 中文测试
 
 测试脚本：
 
-.. literalinclude:: GMT_Chinese_macOS.sh
+.. literalinclude:: GMT_Chinese.sh
 
 .. note::
 
@@ -81,6 +81,6 @@ GMT 中文测试
 
 成图效果如下：
 
-.. figure:: GMT_Chinese_macOS.*
+.. figure:: GMT_Chinese.*
    :width: 100%
    :align: center

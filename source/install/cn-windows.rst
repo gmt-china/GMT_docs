@@ -51,6 +51,10 @@ GMT 的中文支持
     STFangsong-Light--GB-EUC-H  0.700    1
     STHeiti-Regular--GB-EUC-H   0.700   1
     STKaiti-Regular--GB-EUC-H   0.700   1
+    STSong-Light--GB-EUC-V  0.700    1
+    STFangsong-Light--GB-EUC-V  0.700    1
+    STHeiti-Regular--GB-EUC-V   0.700   1
+    STKaiti-Regular--GB-EUC-V   0.700   1
 
 用 ``gmt pstext -L`` 查看 GMT 字体::
 
@@ -64,10 +68,14 @@ GMT 的中文支持
     40 STFangsong-Light--GB-EUC-H
     41 STHeiti-Regular--GB-EUC-H
     42 STKaiti-Regular--GB-EUC-H
+    43 STSong-Light--GB-EUC-V
+    44 STFangsong-Light--GB-EUC-V
+    45 STHeiti-Regular--GB-EUC-V
+    46 STKaiti-Regular--GB-EUC-V
 
-可以看到，新添加的四种中文字体对应的字体编号为 39 到 42。
+可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。
 其中 ``STSong-Light--GB-EUC-H`` 即为宋体，\ ``GB-EUC`` 是文字编码方式，
-``H`` 表示文字水平排列。
+``H`` 表示文字水平排列，\ ``V`` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
 
 测试脚本
@@ -75,25 +83,13 @@ GMT 的中文支持
 
 .. note::
 
-   请自行确认你的中文字体编号。如果编号不是39到42，请自行修改以下测试脚本。
+   请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
 
-.. code-block:: batch
-
-   gmt set FONT_TITLE 30p,39,black
-   gmt set FONT_LABEL 15p,39,black
-
-   echo 3 2.5 35p,39,black GMT宋体 > tmp
-   echo 3 1.0 35p,40,blue GMT仿宋 >> tmp
-   echo 7 2.5 35p,41,yellow GMT黑体 >> tmp
-   echo 7 1.0 35p,42,green GMT楷体 >> tmp
-
-   gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l"X轴" -Byafg+l"Y轴" -BWSen+t"中文标题" -F+f > GMT_chinese.ps
-   gmt psconvert GMT_chinese.ps -C-sFONTPATH=C:\windows\fonts -Tg -A -P -E300
-   del gmt.* tmp
+.. literalinclude:: GMT_Chinese.bat
 
 成图效果如下：
 
-.. figure:: /images/GMT_chinese.png
+.. figure:: GMT_Chinese.png
    :width: 100%
    :align: center
 
