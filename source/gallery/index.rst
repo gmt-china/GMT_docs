@@ -17,3 +17,4 @@
     contour
     subplot
     animation/index
+    chinese-texts/index
