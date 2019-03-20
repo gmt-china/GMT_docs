@@ -6,6 +6,17 @@
     GMT本身不支持中文，若需要在GMT上显示中文，需要进行额外的配置。具体方法见
     :doc:`/install/index` 一章。本文假定用户已经做好了GMT中文支持的配置工作。
 
+.. note::
+
+    GMT中文语言文件是GMT安装目录下的文件 ``share/localization/gmt_cn1.locale``\ 。
+    该中文语言文件默认为GB2312编码方式。对于Linux和macOS用户，需要人工将其修改为
+    UTF8编码才能正常显示中文的月份和星期。Windows用户则不需要对其进行处理。
+
+    修改文件编码方式的方式有很多，请自行查找。我使用的是
+    `enca <https://github.com/nijel/enca>`_\ 的如下命令修改编码::
+
+        enca -L zh_CN -x UTF-8 gmt_cn1.locale
+
 中文文字
 --------
 
