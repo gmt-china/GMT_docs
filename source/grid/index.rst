@@ -4,10 +4,9 @@
 .. toctree::
     :maxdepth: 2
 
-    overview
-    registration
-    boundary-condition
+    format
     read
     write
-    suffix
+    registration
+    boundary-condition
     viewer
