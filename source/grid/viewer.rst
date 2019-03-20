@@ -5,7 +5,7 @@
 
 - `ncview <http://meteora.ucsd.edu/~pierce/ncview_home_page.html>`_
 - `Panoply <http://www.giss.nasa.gov/tools/panoply/>`_
-- `ncBrowse <http://www.epic.noaa.gov/java/ncBrowse/>`_
+- `ncBrowse <https://www.pmel.noaa.gov/epic/java/ncBrowse/>`_
 
 更多相关工具，见 `netCDF网站上的列表 <http://www.unidata.ucar.edu/software/netcdf/software.html>`_\ 。
 
