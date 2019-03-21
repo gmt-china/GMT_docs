@@ -12,7 +12,6 @@
    calculate-distance
    variables
    custom-fonts
-   get-gmt-dev
    special-dirs
    contour-annot
    gdal
