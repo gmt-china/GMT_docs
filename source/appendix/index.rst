@@ -15,4 +15,3 @@
    custom-fonts
    special-dirs
    contour-annot
-   gdal
