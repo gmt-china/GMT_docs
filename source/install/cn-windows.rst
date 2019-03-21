@@ -47,14 +47,14 @@ GMT 的中文支持
 
 向 GMT自定义字体配置文件 ``C:\Users\XXX\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
-    STSong-Light--GB-EUC-H  0.700    1
-    STFangsong-Light--GB-EUC-H  0.700    1
-    STHeiti-Regular--GB-EUC-H   0.700   1
-    STKaiti-Regular--GB-EUC-H   0.700   1
-    STSong-Light--GB-EUC-V  0.700    1
-    STFangsong-Light--GB-EUC-V  0.700    1
-    STHeiti-Regular--GB-EUC-V   0.700   1
-    STKaiti-Regular--GB-EUC-V   0.700   1
+    STSong-Light-GB-EUC-H  0.700    1
+    STFangsong-Light-GB-EUC-H  0.700    1
+    STHeiti-Regular-GB-EUC-H   0.700   1
+    STKaiti-Regular-GB-EUC-H   0.700   1
+    STSong-Light-GB-EUC-V  0.700    1
+    STFangsong-Light-GB-EUC-V  0.700    1
+    STHeiti-Regular-GB-EUC-V   0.700   1
+    STKaiti-Regular-GB-EUC-V   0.700   1
 
 用 ``gmt pstext -L`` 查看 GMT 字体::
 
@@ -64,17 +64,17 @@ GMT 的中文支持
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light--GB-EUC-H
-    40 STFangsong-Light--GB-EUC-H
-    41 STHeiti-Regular--GB-EUC-H
-    42 STKaiti-Regular--GB-EUC-H
-    43 STSong-Light--GB-EUC-V
-    44 STFangsong-Light--GB-EUC-V
-    45 STHeiti-Regular--GB-EUC-V
-    46 STKaiti-Regular--GB-EUC-V
+    39 STSong-Light-GB-EUC-H
+    40 STFangsong-Light-GB-EUC-H
+    41 STHeiti-Regular-GB-EUC-H
+    42 STKaiti-Regular-GB-EUC-H
+    43 STSong-Light-GB-EUC-V
+    44 STFangsong-Light-GB-EUC-V
+    45 STHeiti-Regular-GB-EUC-V
+    46 STKaiti-Regular-GB-EUC-V
 
 可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。
-其中 ``STSong-Light--GB-EUC-H`` 即为宋体，\ ``GB-EUC`` 是文字编码方式，
+其中 ``STSong-Light-GB-EUC-H`` 即为宋体，\ ``GB-EUC`` 是文字编码方式，
 ``H`` 表示文字水平排列，\ ``V`` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
 

@@ -85,7 +85,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 
     PS文件本质上是一个纯文本文件，可以用\ **编辑器**\ 打开该PS文件以查看其内容。
 
-    PS 文件中要使用某个中文字体，需要用 ``FontName--CMap`` 的格式来调用。
+    PS 文件中要使用某个中文字体，需要用 ``FontName-CMap`` 的格式来调用。
     其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H``
     和 ``GB-EUC-H``\ ， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
     字体的编码。
@@ -101,10 +101,10 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 
 向 GMT自定义字体配置文件 ``~/.gmt/PSL_custom_fonts.txt`` 中加入如下语句::
 
-    STSong-Light--UniGB-UTF8-H  0.700    1
-    STFangsong-Light--UniGB-UTF8-H  0.700    1
-    STHeiti-Regular--UniGB-UTF8-H   0.700   1
-    STKaiti-Regular--UniGB-UTF8-H   0.700   1
+    STSong-Light-UniGB-UTF8-H  0.700    1
+    STFangsong-Light-UniGB-UTF8-H  0.700    1
+    STHeiti-Regular-UniGB-UTF8-H   0.700   1
+    STKaiti-Regular-UniGB-UTF8-H   0.700   1
 
 第一列为字体名，第二列为字母 A 的高度，第三列与编码有关。
 
@@ -119,10 +119,10 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light--UniGB-UTF8-H
-    40 STFangsong-Light--UniGB-UTF8-H
-    41 STHeiti-Regular--UniGB-UTF8-H
-    42 STKaiti-Regular--UniGB-UTF8-H
+    39 STSong-Light-UniGB-UTF8-H
+    40 STFangsong-Light-UniGB-UTF8-H
+    41 STHeiti-Regular-UniGB-UTF8-H
+    42 STKaiti-Regular-UniGB-UTF8-H
 
 其中 0-38 为 GMT/gs 默认支持的字体，39-42 为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
