@@ -32,14 +32,14 @@ macOS 下的 GMT 中文支持
 
 打开 GMT 字体配置文件，在文件中加入如下语句::
 
-    STSong-Light--UniGB-UTF8-H  0.700    1
-    STFangsong-Light--UniGB-UTF8-H  0.700    1
-    STHeiti-Regular--UniGB-UTF8-H   0.700   1
-    STKaiti-Regular--UniGB-UTF8-H   0.700   1
-    STSong-Light--UniGB-UTF8-V  0.700    1
-    STFangsong-Light--UniGB-UTF8-V  0.700    1
-    STHeiti-Regular--UniGB-UTF8-V   0.700   1
-    STKaiti-Regular--UniGB-UTF8-V   0.700   1
+    STSong-Light-UniGB-UTF8-H  0.700    1
+    STFangsong-Light-UniGB-UTF8-H  0.700    1
+    STHeiti-Regular-UniGB-UTF8-H   0.700   1
+    STKaiti-Regular-UniGB-UTF8-H   0.700   1
+    STSong-Light-UniGB-UTF8-V  0.700    1
+    STFangsong-Light-UniGB-UTF8-V  0.700    1
+    STHeiti-Regular-UniGB-UTF8-V   0.700   1
+    STKaiti-Regular-UniGB-UTF8-V   0.700   1
 
 这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。
 
@@ -54,10 +54,10 @@ macOS 下的 GMT 中文支持
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light--UniGB-UTF8-H
-    40 STFangsong-Light--UniGB-UTF8-H
-    41 STHeiti-Regular--UniGB-UTF8-H
-    42 STKaiti-Regular--UniGB-UTF8-H
+    39 STSong-Light-UniGB-UTF8-H
+    40 STFangsong-Light-UniGB-UTF8-H
+    41 STHeiti-Regular-UniGB-UTF8-H
+    42 STKaiti-Regular-UniGB-UTF8-H
     43 STSong-Light-UniGB-UTF8-V
     44 STFangsong-Light-UniGB-UTF8-V
     45 STHeiti-Regular-UniGB-UTF8-V
