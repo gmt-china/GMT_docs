@@ -21,19 +21,11 @@
 --------
 
 本例中展示了如何在绘图时使用中文标签和中文标题，以及如何打印横排和竖排的中文。
+左图中Y轴标签与纵轴平行，右图中Y轴标签与X轴平行。
 
-.. literalinclude:: chinese-texts-1.sh
+.. literalinclude:: chinese-texts.sh
 
-.. figure:: chinese-texts-1.*
-   :align: center
-   :width: 80%
-
-对于纵轴的标注，GMT的默认设定使得文字方向使用与纵轴方向平行，这一点无法修改。
-此时可以使用 :doc:`/module/text` 手动为纵轴添加竖排的中文标签。
-
-.. literalinclude:: chinese-texts-2.sh
-
-.. figure:: chinese-texts-2.*
+.. figure:: chinese-texts.*
    :align: center
    :width: 80%
 
