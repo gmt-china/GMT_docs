@@ -1,14 +1,16 @@
 FORMAT参数
 ==========
 
-下面列出所有与格式相关的参数，通常包括输入格式、输出格式和绘图格式三类，参数的默认值在中括号内列出。
+下面列出所有与格式相关的参数，通常包括输入格式、输出格式和绘图格式三类，
+参数的默认值在中括号内列出。
 
-日期数据的输入/输出/绘图格式：
+日期的输入/输出/绘图格式
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _FORMAT_DATE_IN:
 
-**FORMAT_DATE_IN**
-    输入数据中日期字符串的格式模板 [ ``yyyy-mm-dd`` ]
+FORMAT_DATE_IN
+    输入数据中日期字符串的格式模板 [``yyyy-mm-dd``]
 
     日期字符串可以用公历表示，也可以用ISO周历表示。
 
@@ -21,15 +23,16 @@ FORMAT参数
     - ``dd``\ ：两位日期
     - ``jjj``\ ：一年中的第几天
 
-    比如 ``ddmmyyy`` 、 ``yy-mm-dd`` 、 ``dd-o-yyyy`` 、 ``yyyy/dd/mm`` 、 ``yyyy-jjj`` 等。
+    比如 ``ddmmyyy``\ 、\ ``yy-mm-dd``\ 、\ ``dd-o-yyyy``\ 、\ ``yyyy/dd/mm``\ 、
+    ``yyyy-jjj`` 等。
 
     对于ISO周历而言，其格式为 ``yyyy[-]W[-]ww[-]d`` 模板，表示某年的第ww周的第d天。
     比如 ``yyyyWwwd`` 或 ``yyyy-Www`` 等。
 
 .. _FORMAT_DATE_OUT:
 
-**FORMAT_DATE_OUT**
-    输出日期字符串时所使用的格式 [ ``yyyy-mm-dd`` ]
+FORMAT_DATE_OUT
+    输出日期字符串时所使用的格式 [``yyyy-mm-dd``]
 
     参考 :ref:`FORMAT_DATE_IN <FORMAT_DATE_IN>` 的相关说明。除此之外：
 
@@ -39,8 +42,8 @@ FORMAT参数
 
 .. _FORMAT_DATE_MAP:
 
-**FORMAT_DATE_MAP**
-    绘制日期字符串时所使用的格式 [ ``yyyy-mm-dd`` ]
+FORMAT_DATE_MAP
+    绘制日期字符串时所使用的格式 [``yyyy-mm-dd``]
 
     参考 :ref:`FORMAT_DATE_IN <FORMAT_DATE_IN>` 和 :ref:`FORMAT_DATE_OUT <FORMAT_DATE_OUT>`
     中的相关说明。除此之外，
@@ -52,44 +55,46 @@ FORMAT参数
     :ref:`FORMAT_TIME_PRIMARY_MAP <FORMAT_TIME_PRIMARY_MAP>` 和
     :ref:`FORMAT_TIME_SECONDARY_MAP <FORMAT_TIME_SECONDARY_MAP>` 控制。
 
-时间数据的输入/输出/绘图格式：
+时间的输入/输出/绘图格式
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _FORMAT_CLOCK_OUT:
 
-**FORMAT_CLOCK_OUT**
-    输出时间字符串时所使用的格式 [ ``hh:mm:ss`` ]
+FORMAT_CLOCK_OUT
+    输出时间字符串时所使用的格式 [``hh:mm:ss``]
 
     默认使用24小时制。若要使用12小时制，可以在字符串的最后加上
-    ``am`` 、 ``AM`` 、 ``a.m.`` 、 ``A.M.`` 。
-    比如 ``hh:mm:ss.xxx`` 、 ``hh:mm`` 、 ``hh:mm.xxx`` 、 ``hha.m.`` 等等。
+    ``am``\ 、\ ``AM``\ 、\ ``a.m.``\ 、\ ``A.M.``\ 。
+    比如 ``hh:mm:ss.xxx``\ 、\ ``hh:mm``\ 、\ ``hh:mm.xxx``\ 、\ ``hha.m.`` 等等。
 
     - 若时间格式模板以 ``-`` 开头，则输出时间字符串时不会输出前置0
     - 若时间格式模板为 ``-``\ ，则在输出日期时间时不输出时间字符串
 
 .. _FORMAT_CLOCK_IN:
 
-**FORMAT_CLOCK_IN**
-    输入数据中时间数据的格式 [ ``hh:mm:ss`` ]
+FORMAT_CLOCK_IN
+    输入数据中时间数据的格式 [``hh:mm:ss``]
 
     默认使用24小时制，即 ``hh:mm:ss``\ ，若要使用12小时制，则在参数后加上
-    ``am|pm|AM|PM`` 。比如 ``hh:mm`` 或 ``hh:mm:ssAM``
+    ``am|pm|AM|PM``\ 。比如 ``hh:mm`` 或 ``hh:mm:ssAM``
 
 .. _FORMAT_CLOCK_MAP:
 
-**FORMAT_CLOCK_MAP**
-    图上绘制时间字符串时所使用的格式 [ ``hh:mm:ss`` ]
+FORMAT_CLOCK_MAP
+    图上绘制时间字符串时所使用的格式 [``hh:mm:ss``]
 
-
-地理坐标的输出/绘图格式：
+地理坐标的输出/绘图格式
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _FORMAT_GEO_OUT:
 
-**FORMAT_GEO_OUT**
-    控制地理坐标数据的输出格式 [ ``D`` ]
+FORMAT_GEO_OUT
+    控制地理坐标数据的输出格式 [``D``]
 
     格式的通用形式有两类：
 
-    - ``[±]D``\ ：表示将地理数据以浮点数的形式输出，浮点数的格式由 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 决定
+    - ``[±]D``\ ：表示将地理数据以浮点数的形式输出，浮点数的格式由
+      :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 决定
 
       - ``D``\ ：经度输出范围为 -180到180
       - ``+D``\ ：经度输出范围为 0到360
@@ -115,21 +120,22 @@ FORMAT参数
 
 .. _FORMAT_GEO_MAP:
 
-**FORMAT_GEO_MAP**
-    绘图时地理坐标的显示格式 [ ``ddd.mm.ss`` ]
+FORMAT_GEO_MAP
+    绘图时地理坐标的显示格式 [``ddd.mm.ss``]
 
-    格式的具体定义参考 :ref:`FORMAT_GEO_OUT <FORMAT_GEO_OUT>` ，但具体格式会
-    进一步由 ``-B`` 选项中的值控制。除此之外，还可以在格式后面加上 ``A`` 以表示绘制坐标的绝对值。
+    格式的具体定义参考 :ref:`FORMAT_GEO_OUT <FORMAT_GEO_OUT>`\ ，
+    但具体格式会进一步由 ``-B`` 选项中的值控制。除此之外，还可以在格式后面加上
+    ``A`` 以表示绘制坐标的绝对值。
 
-
-浮点数的输出/绘图：
+浮点数的输出/绘图格式
+~~~~~~~~~~~~~~~~~~~~~
 
 .. _FORMAT_FLOAT_OUT:
 
-**FORMAT_FLOAT_OUT**
+FORMAT_FLOAT_OUT
     双精度浮点数在输出时所使用的格式 [``%.12lg``]
 
-    具体的格式遵循C语言 ``printf`` 函数的格式定义，比如 ``%.3lf`` 。
+    具体的格式遵循C语言 ``printf`` 函数的格式定义，比如 ``%.3lf``\ 。
 
     若需要为不同列指定不同的输出格式，可以使用多个逗号分隔的 ``cols:format`` 形式。
     其中，\ ``cols`` 可以是列号（比如5代表数据的第六列），也可以是列范围（比如3-7表示第4到8列），
@@ -145,20 +151,23 @@ FORMAT参数
 
 .. _FORMAT_FLOAT_MAP:
 
-**FORMAT_FLOAT_MAP**
+FORMAT_FLOAT_MAP
     以双精度浮点数形式绘制地图边框标注或等值线标注时所使用的格式 [``%.12lg``]
 
     见 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 中的相关说明。
 
+其他数据的绘图格式
+~~~~~~~~~~~~~~~~~~
+
 .. _FORMAT_TIME_MAP:
 
-**FORMAT_TIME_MAP**
+FORMAT_TIME_MAP
     同时设置 ``FORMAT_TIME_PRIMARY_MAP`` 和 ``FORMAT_TIME_SECONDARY_MAP`` 的值
 
 .. _FORMAT_TIME_PRIMARY_MAP:
 
-**FORMAT_TIME_PRIMARY_MAP**
-    一级标注中月份、周名的格式 [full]
+FORMAT_TIME_PRIMARY_MAP
+    一级标注中月份、周名的格式 [``full``]
 
     可以取如下值：
 
@@ -166,21 +175,22 @@ FORMAT参数
     - ``abbreviate``\ ：显示简称，比如 ``Jan``
     - ``character``\ ：显示单个字符，比如 ``J``
 
-    还可以使用 ``Full`` 、 ``Abbreviate`` 、 ``Character`` 表示所有名字均大写。
+    还可以使用 ``Full``\ 、\ ``Abbreviate``\ 、\ ``Character`` 表示所有名字均大写。
 
-    全称、简称以及单字符的定义，见 :file:`${GMTHOME}/share/localization/gmt_us.locale`
+    全称、简称以及单字符的定义见GMT安装目录下 ``share/localization`` 目录中的
+    语言定义文件。
 
 .. _FORMAT_TIME_SECONDARY_MAP:
 
-**FORMAT_TIME_SECONDARY_MAP**
+FORMAT_TIME_SECONDARY_MAP
     二级标注中月份、周名的格式 [full]
 
     见 :ref:`FORMAT_TIME_PRIMARY_MAP <FORMAT_TIME_PRIMARY_MAP>` 中的相关说明。
 
 .. _FORMAT_TIME_STAMP:
 
-**FORMAT_TIME_STAMP**
-    GMT时间戳中时间信息的显示格式 [ ``%Y %b %d %H:%M:%S`` ]
+FORMAT_TIME_STAMP
+    GMT时间戳中时间信息的显示格式 [``%Y %b %d %H:%M:%S``]
 
     该选项的值用C函数 `strftime <http://www.cplusplus.com/reference/ctime/strftime/>`_
     解析，故而理论上可以包含任意文本。
