@@ -63,10 +63,12 @@ GMT6中绘制多子图有两种方式：
 
 现代方式使用 :doc:`/module/subplot` 绘制多子图。
 
+- ``subplot begin`` 将整个绘图区域分为2x2的网格并设置子图的大小及其它属性
+- ``subplot set`` 通过指定行和列以激活指定的子图
+
 .. gmt-plot::
 
    #!/bin/bash
-   J=X5c/3c
    R=0/5/0/3
 
    gmt begin subplot pdf,png
@@ -74,16 +76,62 @@ GMT6中绘制多子图有两种方式：
 
    gmt subplot begin 2x2 -Fs5c/3c -A'(a)'+JTL+o0.2c/0.4c -M0.5c/0.2c
    gmt subplot set 1,1
-   gmt basemap -J$J -R$R -Ba -BWSen
+   gmt basemap -R$R -Ba -BWSen
 
    gmt subplot set 1,2
-   gmt basemap -J$J -R$R -Ba -BWSen
+   gmt basemap -R$R -Ba -BWSen
 
    gmt subplot set 2,1
-   gmt basemap -J$J -R$R -Ba -BWSen
+   gmt basemap -R$R -Ba -BWSen
 
    gmt subplot set 2,2
-   gmt basemap -J$J -R$R -Ba -BWSen
+   gmt basemap -R$R -Ba -BWSen
 
+   gmt subplot end
+   gmt end
+
+若 ``subplot set`` 不指定子图行和列，则GMT自动依次激活下一个子图。因而下面的
+示例也可以实现相同的效果，但更加简洁：
+
+.. code-block:: bash
+
+   #!/bin/bash
+   R=0/5/0/3
+
+   gmt begin subplot pdf,png
+   gmt set FONT_TAG 15p,1
+
+   gmt subplot begin 2x2 -Fs5c/3c -A'(a)'+JTL+o0.2c/0.4c -M0.5c/0.2c
+   gmt subplot set
+   gmt basemap -R$R -Ba -BWSen
+
+   gmt subplot set
+   gmt basemap -R$R -Ba -BWSen
+
+   gmt subplot set
+   gmt basemap -R$R -Ba -BWSen
+
+   gmt subplot set
+   gmt basemap -R$R -Ba -BWSen
+
+   gmt subplot end
+   gmt end
+
+:doc:`/option/c` 也可以用于激活指定的子图，但其功能没有 ``subplot set`` 丰富。
+但通常已经足够使用。下面的代码使用 ``-c`` 进一步简化了上面的示例:
+
+.. code-block:: bash
+
+   #!/bin/bash
+   R=0/5/0/3
+
+   gmt begin subplot pdf,png
+   gmt set FONT_TAG 15p,1
+
+   gmt subplot begin 2x2 -Fs5c/3c -A'(a)'+JTL+o0.2c/0.4c -M0.5c/0.2c
+   gmt basemap -R$R -Ba -BWSen -c
+   gmt basemap -R$R -Ba -BWSen -c
+   gmt basemap -R$R -Ba -BWSen -c
+   gmt basemap -R$R -Ba -BWSen -c
    gmt subplot end
    gmt end

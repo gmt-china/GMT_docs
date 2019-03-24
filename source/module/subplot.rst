@@ -157,10 +157,15 @@ subplot
 ``subplot set``
 ---------------
 
-``subplot set`` 用于选中某个特定的子图，接下来的所有绘图命令将只在该子图内
-进行绘制。也可以通过在绘图命令上加上选项 :doc:`/option/c` 来指定在哪个子图内
-绘制。与 ``subplot set`` 类似，\ :doc:`/option/c` 对当前命令以及之后的命令均
-有效，直到再次在绘图命令中使用 :doc:`/option/c` 选项设定新的子图为止。
+``subplot set`` 通过指定子图的行号和列号以激活某个特定的子图，
+接下来的所有绘图命令将只在该子图内进行绘制。子图的行号和列号均从1开始算起。
+``subplot set`` 的功能与 :doc:`/option/c` 类似但其更加灵活。
+
+若使用 ``subplot set`` 但未指定子图的行和列，则GMT会自动激活“下一个”子图面板。
+例如，对于一个2行2列的图而言，每次使用 ``subplot set`` 而不指定子图行和列，则
+按照行优先顺序依次激活子图 ``1,1`` -> ``1,2`` -> ``2,1`` -> ``2,2``\ 。
+若 ``subplot begin`` 中使用了 ``-A+v`` 选项，则按照列优先顺序依次激活子图
+``1,1`` -> ``2,1`` -> ``1,2`` -> ``2,2``\ 。
 
 需要注意，子图中所有的投影方式均不能指定绘图宽度，因为底图的尺寸完全由子图的
 大小和 ``-R`` 选项指定的研究区域决定。在需要指定绘图宽度的地方，需要用问号
@@ -171,16 +176,13 @@ subplot
 
 ::
 
-    gmt subplot set <row>,<col> [-A<fixedlabel>] [-C<side>/<clearance>[u]]
+    gmt subplot set [<row>,<col>] [-A<fixedlabel>] [-C<side>/<clearance>[u]]
 
-必须选项
+可选选项
 ~~~~~~~~
 
 ``<row>,<col>``
     要激活的子图所在的行和列。行列均从1开始数起。
-
-可选选项
-~~~~~~~~
 
 ``-A<fixedlabel>``
     设置当前子图的编号，而忽略 ``subplot begin`` 中 ``-A`` 选项的设置的自动编号。
@@ -211,9 +213,13 @@ subplot
 
     gmt begin panels pdf
       gmt subplot begin 2x2 -Fs3i -M5p -A -SCb -SRl -Bwstr
-        gmt basemap -R0/80/0/10 -c1,1
-        gmt basemap -c1,2
-        gmt basemap -c2,1
-        gmt basemap -c2,2
+        gmt subplot set
+        gmt basemap -R0/80/0/10
+        gmt subplot set
+        gmt basemap
+        gmt subplot set
+        gmt basemap
+        gmt subplot set
+        gmt basemap
       gmt subplot end
     gmt end

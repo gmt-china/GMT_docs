@@ -113,23 +113,12 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 
     gmt begin subplot-example png,pdf
     gmt subplot begin 2x3 -Fs4c/4c -A'(a)' -M5p/10p -BWsrt -SCb -SRl -T"Subplot Example"
-        gmt subplot set 1,1
-        gmt basemap -R0/80/0/10
-
-        gmt subplot set 1,2
-        gmt basemap -R0/50/0/10
-
-        gmt subplot set 1,3
-        gmt basemap -R0/20/0/10
-
-        gmt subplot set 2,1
-        gmt basemap -R0/80/0/20
-
-        gmt subplot set 2,2
-        gmt basemap -R0/50/0/20
-
-        gmt subplot set 2,3
-        gmt basemap -R0/20/0/20
+        gmt basemap -R0/80/0/10 -c
+        gmt basemap -R0/50/0/10 -c
+        gmt basemap -R0/20/0/10 -c
+        gmt basemap -R0/80/0/20 -c
+        gmt basemap -R0/50/0/20 -c
+        gmt basemap -R0/20/0/20 -c
     gmt subplot end
     gmt end
 
