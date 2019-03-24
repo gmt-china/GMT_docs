@@ -49,6 +49,21 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 
    即表示安装成功。
 
+   .. note::
+
+      某些情况下，运行 GMT 命令时会出现警告信息::
+
+        gmt: Unable to create GMT User directory : /Users/用户名/.gmt
+        gmt: Auto-downloading of earth_relief_##m|s.grd files has been disabled.
+
+      解决办法::
+
+      1. 打开 “我的电脑”->“属性”->“高级系统设置”->“环境变量”
+      2. 新建 “系统变量”。变量名：\ ``HOME``\ ；变量值：\ ``C:\Users\用户名``
+
+      重新执行命令检查问题是否得到解决。经过测试，\ ``HOME`` 变量的值可以取任意盘符中
+      任何已存在的文件夹，正常情况下，执行脚本后会生成 ``%HOME%/.gmt/cache`` 空文件夹。
+
 3. 安装ghostscript
 
    安装的过程没什么可说的，在最后一步，记得勾选
@@ -62,21 +77,6 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 
    解压压缩包，并将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
 
-某些情况下，运行 GMT 命令时会出现警告信息::
-
-    gmt: Unable to create GMT User directory : /Users/用户名/.gmt
-    gmt: Auto-downloading of earth_relief_##m|s.grd files has been disabled.
-
-解决办法::
-
-   1、打开 “我的电脑”->“属性”->“高级系统设置”->“环境变量”
-   2、新建 “系统变量”
-          变量名： HOME
-          变量值： C:\Users\用户名
-
-重新运行脚本检查问题是否得到解决。经过测试，\ ``HOME`` 变量的值可以取任意盘符中
-任何已存在的文件夹，正常情况下，执行脚本后会生成 ``%HOME%/.gmt/cache`` 空文件夹。
-
-如果想要同时使用 GMT4 和 GMT5，则需要在安装完 GMT4 和 GMT5 之后到 GMT5 的 bin
-目录下，将该目录下的所有文件按照大小排序，所有大小为 6 KB 的都是 “符号链接”，
-直接选中删除就好。
+GMT6可以和GMT4共存，但不能与GMT5共存。若想要同时使用 GMT4 和 GMT6，则需要在安装完
+GMT4 和 GMT6 之后到 GMT6 的 bin目录下，将该目录下的所有文件按照大小排序，
+所有大小为 6 KB 的都是 “符号链接”，直接选中删除就好。
