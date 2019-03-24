@@ -54,9 +54,9 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 
 然后向 ``~/.bashrc`` 中写入如下语句以修改环境变量::
 
-    export GMT4HOME=/usr/local/opt/gmt@4'
+    export GMT4HOME='/usr/local/opt/gmt@4'
     export PATH=${GMT4HOME}/bin:$PATH
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64'
+    export LD_LIBRARY_PATH='${LD_LIBRARY_PATH}:${GMT4HOME}/lib64'
 
 使用 GMT 安装包
 ---------------
