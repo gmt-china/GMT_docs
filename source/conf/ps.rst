@@ -5,18 +5,40 @@ PS参数
 
 .. _PS_CHAR_ENCODING:
 
-**PS_CHAR_ENCODING**
-    字符集编码方式 [ISOLatin1+|Standard+]
+PS_CHAR_ENCODING
+    字符集编码方式 [``ISOLatin1+|Standard+``]
 
-    在处理文本中的八进制码时所使用的字符集编码方式，可选值包括：
-    ``Standard`` 、 ``Standard+`` 、 ``ISOLatin1`` 、 ``ISOLatin1+`` 和 ``ISO-8859-x``
-    （其中x取值为[1-10]或[13-15]）。若安装GMT时使用SI单位制，则默认值为ISOLatin1编码；
-    否则使用Standard+编码。
+    GMT使用的字符集编码方式。可选值包括：
+
+    - ``Standard``
+    - ``Standard+``
+    - ``ISOLatin1``
+    - ``ISOLatin1+``
+    - ``ISO-8859-x``\ （x取值为1-10或13-15）
+
+    若安装GMT时使用SI单位制，则默认值为ISOLatin1+编码；否则使用Standard+编码。
+
+.. _PS_COLOR_MODEL:
+
+PS_COLOR_MODEL
+    生成PS代码时颜色所使用的色彩模型 [``rgb``]
+
+    可以取RGB、HSV、CMYK或GRAY。若设置为HSV，其不会影响绘图过程中使用RGB指定的颜色；
+    若设置为GRAY，则所有的颜色都将使用YIQ方法转换成灰度。
+
+.. _PS_COMMENTS:
+
+PS_COMMENTS
+    生成的PS代码中是否包含注释信息 [false]
+
+    若为 ``true``\ ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
+    当你需要手动编辑PS文件时比较有用。默认情况下，其值为 ``false``\ ，即PS文件中
+    不会包含注释，此时生成的PS文件更小。
 
 .. _PS_LINE_CAP:
 
-**PS_LINE_CAP**
-    控制线段的\ **端点**\ 的绘制方式 [butt]
+PS_LINE_CAP
+    控制线段的\ **端点**\ 的绘制方式 [``butt``]
 
     可以取如下值：
 
@@ -24,42 +46,44 @@ PS参数
     - ``round``\ ：端点处为直径与线宽相等的半圆弧
     - ``square``\ ：端点处为边长与线宽相等的半个正方形
 
-    下图展示了 ``PS_LINE_CAP`` 取不同值时线段端点的区别。需要注意，图中三条线段的
-    长度是相同的，但因为参数设置不同而导致实际线段长度看上去有些不一样。
+    下图展示了该参数取不同值时线段端点的区别。需要注意，图中三条线段的
+    长度是相同的，但因参数设置不同而导致线段看上去长度不同。
 
-    .. gmt-plot:: /scripts/GMT_line_cap.sh
+    .. gmt-plot:: ps_line_cap.sh
         :show-code: false
         :caption: ``PS_LINE_CAP`` 控制线段端点绘图效果
 
-    说明：当 ``PS_LINE_CAP=round`` 时，若线段长度为零，则线段将以圆的形式存在，
-    这可以用于创建圆点线，此时将同一条线绘制两次，每次使用不同的相移和颜色，则可以创建颜色变化的线条。
-
 .. _PS_LINE_JOIN:
 
-**PS_LINE_JOIN**
-    控制线段拐点的绘制方式 [miter]
+PS_LINE_JOIN
+    控制线段拐点的绘制方式 [``miter``]
 
-    可以取 ``miter`` 、 ``round`` 、 ``bevel``
+    可以取 ``miter``\ 、\ ``round``\ 、\ ``bevel``
 
     下图展示了 ``PS_LINE_JOIN`` 取不同值时线段拐点的绘图效果。当线宽较小时，几乎
-    看不出来区别，这里为了显示的效果，将线宽设置为 ``20p`` 。
+    看不出来区别，这里为了显示的效果，将线宽设置为 ``20p``\ 。
 
-    .. gmt-plot:: /scripts/GMT_line_join.sh
+    .. gmt-plot:: ps_line_join.sh
         :show-code: false
         :caption: ``PS_LINE_JOIN`` 控制线段拐点绘制效果
 
 .. _PS_MITER_LIMIT:
 
-**PS_MITER_LIMIT**
+PS_MITER_LIMIT
     设置mitered拐点的角度阈值 [35]
 
     当两个相交的线段之间的夹角小于该阈值时，则该拐角会被bevelled而不是被mitered。
-    该参数的取值范围为0到180。若设置为0，则使用PS的默认值（11度），若设置为180，则所有拐角都会被beveled。
+    该参数的取值范围为0到180。若设置为0，则使用PS的默认值（11度），若设置为180，
+    则所有拐角都会被beveled。
 
 .. _PS_MEDIA:
 
-**PS_MEDIA**
+PS_MEDIA
     设置当前纸张的尺寸 [a4|letter]
+
+    .. note::
+
+       仅在GMT经典模式下有效。GMT现代模式下直接使用无限大的纸张。
 
     下表列出了GMT预定义的若干种纸张尺寸及其对应的宽度和高度（单位为points）。
 
@@ -118,67 +142,56 @@ PS参数
 
 .. _PS_PAGE_COLOR:
 
-**PS_PAGE_COLOR**
-    设置纸张的背景色 [white]
+PS_PAGE_COLOR
+    设置纸张的背景色 [``white``]
 
 .. _PS_PAGE_ORIENTATION:
 
-**PS_PAGE_ORIENTATION**
-    设置纸张方向 [landscape]
+PS_PAGE_ORIENTATION
+    设置纸张方向 [``landscape``]
+
+    .. note::
+
+       仅GMT经典模式下有效，现代模式下纸张始终是 protrait 模式。
 
     可以取 ``portrait`` 或 ``landscape``\ 。
 
 .. _PS_SCALE_X:
 
-**PS_SCALE_X**
+PS_SCALE_X
     绘图时X方向的全局比例 [1.0]
 
-    用于实现图像的整体缩放
+    用于实现图像的整体缩放。
 
 .. _PS_SCALE_Y:
 
-**PS_SCALE_Y**
+PS_SCALE_Y
     绘图时Y方向的全局比例 [1.0]
 
-    用于实现图像的整体缩放
+    用于实现图像的整体缩放。
 
 .. _PS_TRANSPARENCY:
 
-**PS_TRANSPARENCY**
+PS_TRANSPARENCY
     设置生成PS文件所使用的透明模式 [Normal]
 
     可取值包括Color、ColorBurn、ColorDodge、Darken、Difference、Exclusion、
     HardLight、Hue、Lighten、Luminosity、Multiply、Normal、Overlay、Saturation、
     SoftLight、Screen
 
-.. _PS_COLOR_MODEL:
-
-**PS_COLOR_MODEL**
-    设置生成PS代码时颜色所使用的颜色模型 [rgb]
-
-    可以取RGB、HSV、CMYK或GRAY。若设置为HSV，其不会影响绘图过程中使用RGB指定的颜色；
-    若设置为GRAY，则所有的颜色都将使用YIQ方法转换成灰度。
-
-.. _PS_COMMENTS:
-
-**PS_COMMENTS**
-    生成的PS代码中是否包含注释信息 [false]
-
-    若为 ``true``\ ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
-    当你需要手动编辑PS文件时比较有用。默认情况下，其值为 ``false``\ ，即PS文件中
-    不会包含注释，此时生成的PS文件更小。
-
 .. _PS_CONVERT:
 
-**PS_CONVERT**
-    现代模式下调用 ``psconvert`` 命令时默认加上的参数，多个参数之间用逗号分隔 [``A,P``]
+PS_CONVERT
+    现在模式下在执行 ``gmt end`` 命令时GMT会自动调用 :doc:`/module/psconvert`
+    生成用户指定格式的图片。该选项用于控制调用 ``psconvert`` 是的默认参数，
+    多个参数之间以逗号分隔 [``A,P``]
 
 .. _PS_IMAGE_COMPRESS:
 
-**PS_IMAGE_COMPRESS**
+PS_IMAGE_COMPRESS
     设置PS中的图像压缩算法 [deflate,5]
 
-    可以取值为
+    可以取值为：
 
     - ``rle``\ ：Run-Length Encoding scheme
     - ``lzw``\ ：Lempel-Ziv-Welch compression

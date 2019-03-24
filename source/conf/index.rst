@@ -1,18 +1,19 @@
 .. index:: ! gmt.conf
 
-配置GMT
-#######
+配置参数
+########
 
 .. toctree::
    :maxdepth: 2
 
    overview
+   showcase
+   font
+   map
    color
    dir
-   font
    format
    io
-   map
    proj
    ps
    time
