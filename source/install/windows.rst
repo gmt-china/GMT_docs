@@ -55,7 +55,7 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
         gmt: Unable to create GMT User directory : /Users/用户名/.gmt
         gmt: Auto-downloading of earth_relief_##m|s.grd files has been disabled.
 
-      解决办法::
+      解决办法:
 
       1. 打开 “我的电脑”->“属性”->“高级系统设置”->“环境变量”
       2. 新建 “系统变量”。变量名：\ ``HOME``\ ；变量值：\ ``C:\Users\用户名``

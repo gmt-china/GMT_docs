@@ -4,7 +4,7 @@ Windows 下的 GMT 中文支持
 ghostscript 的中文支持
 ----------------------
 
-通常，在 ``C:\Program Files\gs\gs9.15\examples\cjk`` 目录下可以找到文件 ``gscjk_ag.ps``\ 。
+通常，在 ``C:\Program Files\gs\gs9.26\examples\cjk`` 目录下可以找到文件 ``gscjk_ag.ps``\ 。
 
 .. note::
 
@@ -14,7 +14,7 @@ ghostscript 的中文支持
 
 启动 cmd，键入如下命令::
 
-    cd "C:\Program Files\gs\gs9.16\bin"
+    cd "C:\Program Files\gs\gs9.26\bin"
     gswin64.exe ..\examples\cjk\gscjk_ag.ps
 
 该命令用命令行版本的 ``gswin64c`` 打开 ``gscjk_ag.ps``\ ，若能看到中文，则说明
@@ -23,7 +23,9 @@ ghostscript 是可以正常支持中文的。
 gsview 的中文支持
 -----------------
 
-如果你需要用gsview查看PS文件，则需要为gsview配置中文显示。否则，则可以跳过这一部分。
+.. note::
+
+   如果你需要用gsview查看PS文件，则需要为gsview配置中文显示。否则，则可以跳过这一部分。
 
 安装好 gsview 之后，PS 格式会自动与 gsview 关联。一般情况下，直接双击 PS 文件，
 就会用 gsview 打开该 PS 文件。
@@ -78,8 +80,8 @@ GMT 的中文支持
 ``H`` 表示文字水平排列，\ ``V`` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
 
-测试脚本
---------
+GMT 中文测试
+------------
 
 .. note::
 
@@ -93,6 +95,8 @@ GMT 的中文支持
    :width: 100%
    :align: center
 
-需要注意，若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
-Unicode big endian，若使用 UTF-8 编码则会出现乱码；另外，很多编辑器默认将文本
-文件以 UTF-8 编码保存，因而可能需要修改编辑器的默认编码。
+.. note::
+
+   若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
+   Unicode big endian，若使用 UTF-8 编码则会出现乱码；另外，很多编辑器默认将文本
+   文件以 UTF-8 编码保存，因而可能需要修改编辑器的默认编码。
