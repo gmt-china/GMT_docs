@@ -12,10 +12,13 @@ docs
 语法
 ----
 
-    gmt docs <module-name> [<options>]
+    gmt docs [-Q] <module-name> [<options>]
 
 可选选项
 --------
+
+``-Q``
+    不打开文档，仅显示文档的网页链接。适合没有安装GUI的服务器使用。
 
 ``<module-name>``
     模块名。除此之外，还可以打开 cookbook、tutorial、api、gmt.conf 等文档。
