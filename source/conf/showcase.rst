@@ -3,14 +3,14 @@
 
 下面的图展示了常用的用于控制绘图效果的配置参数。
 
-.. gmt-plot:: /scripts/GMT_Defaults_1.sh
+.. gmt-plot:: defaults_1.sh
     :show-code: false
-    :caption: GMT配置参数示例1
+    :caption: 配置参数示例1
 
-.. gmt-plot:: /scripts/GMT_Defaults_2.sh
+.. gmt-plot:: defaults_2.sh
     :show-code: false
-    :caption: GMT配置参数示例2
+    :caption: 配置参数示例2
 
-.. gmt-plot:: /scripts/GMT_Defaults_3.sh
+.. gmt-plot:: defaults_3.sh
     :show-code: false
-    :caption: GMT配置参数示例3
+    :caption: 配置参数示例3
