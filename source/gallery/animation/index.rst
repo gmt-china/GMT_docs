@@ -42,3 +42,22 @@ GMT生成动画的基本流程是：
     .. figure:: anim01/anim01.png
        :align: center
        :width: 60%
+
+绘制旋转的地球
+--------------
+
+本例中绘制了一个旋转的地球动画，图上展示了地壳的的年龄。
+
+.. literalinclude:: anim02/anim02.sh
+
+.. only:: html
+
+    .. figure:: anim02/anim02.gif
+       :align: center
+       :width: 60%
+
+.. only:: latex
+
+    .. figure:: anim02/anim02.png
+       :align: center
+       :width: 60%
