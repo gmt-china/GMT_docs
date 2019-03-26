@@ -15,7 +15,6 @@ needs_sphinx = '1.5.0'
 source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 nitpicky = True
-numfig = True
 language = 'zh_CN'
 today_fmt = u'%Y年%m月%d日'
 exclude_patterns = []
