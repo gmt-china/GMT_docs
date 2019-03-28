@@ -44,10 +44,10 @@ PS 文件时没有找到汉字所对应的字体文件。
 GMT 的中文支持
 --------------
 
-新建GMT自定义字体配置文件 ``C:\Users\XXX\.gmt\PSL_custom_fonts.txt``
-（若不存在 ``C:\Users\XXX\.gmt`` 目录则需新建该目录）。
+新建GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt``
+（若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录）。
 
-向 GMT自定义字体配置文件 ``C:\Users\XXX\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
+向 GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
     STSong-Light-GB-EUC-H  0.700    1
     STFangsong-Light-GB-EUC-H  0.700    1
