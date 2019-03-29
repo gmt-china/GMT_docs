@@ -9,6 +9,22 @@ python: 3.6
 # Set the Ubuntu version for the Linux builds
 dist: xenial
 
+env:
+    global:
+        - BUILD_PDF="true"
+        - HTML_BUILDDIR=build/dirhtml
+        - GMT_VERSION=6.0.0
+        # Install location
+        - TEXLIVE_INSTALL_PREFIX=${HOME}/texlive
+        - GMT_INSTALL_PREFIX=${HOME}/gmt
+        # PATH
+        - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/2018/bin/x86_64-linux:${PATH}
+
+cache:
+    directories:
+        - ${TEXLIVE_INSTALL_PREFIX}
+        # - ${GMT_INSTALL_PREFIX}
+
 # Only build pushes to select branches and tags. This avoids the double
 # builds than happen when working on a branch instead of a fork.
 branches:
@@ -31,26 +47,15 @@ addons:
             - ghostscript
             - curl
 
-env:
-    global:
-        - BUILD_PDF="true"
-        - HTML_BUILDDIR=build/dirhtml
-        - GMT_VERSION=6.0.0
-        - GSHHG_VERSION=2.3.7
-        - DCW_VERSION=1.1.4
-
 install:
     # Install Python dependencies
     - pip install -r requirements.txt
-    # Install TexLive and SourceCodePro Fonts for building PDF
-    - if [ "$BUILD_PDF" == "true" ]; then
-        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh -o install-tl.sh;
-        sudo bash install-tl.sh;
-        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash;
-        source ~/.bash_profile;
-      fi
+    # Install SourceCodePro fonts for PDF
+    - if [ "$BUILD_PDF" == "true" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash; fi
+    # Install TeXLive for building PDF
+    - if [ "$BUILD_PDF" == "true" ] && [ ! -x "$(command -v latexmk)" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh | bash; fi
     # Install GMT
-    - source ci/install-gmt.sh
+    - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then source ci/install-gmt.sh; fi
 
 script:
     # build html or/and PDF
