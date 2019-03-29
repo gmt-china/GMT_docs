@@ -14,7 +14,6 @@ dist: xenial
 branches:
     only:
         - master
-        - travis
         # Regex to build tagged commits with version numbers
         - /\d+\.\d+(\.\d+)?(\S*)?$/
 
@@ -36,32 +35,30 @@ env:
     global:
         - BUILD_PDF="true"
         - HTML_BUILDDIR=build/dirhtml
-        # Install location
-        - TEXLIVE_INSTALL_PREFIX=${HOME}/texlive
-        - GMT_INSTALL_PREFIX=${HOME}/gmt
-        # PATH
-        - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/2018/bin/x86_64-linux:${PATH}
-
-cache:
-    directories:
-        - ${HOME}/.cache/pip
-        - ${TEXLIVE_INSTALL_PREFIX}
-        - ${GMT_INSTALL_PREFIX}
+        - GMT_VERSION=5.4.5
+        - GSHHG_VERSION=2.3.7
+        - DCW_VERSION=1.1.4
 
 install:
     # Install Python dependencies
     - pip install -r requirements.txt
-    # Install SourceCodePro fonts for PDF
-    - if [ "$BUILD_PDF" == "true" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash; fi
-    # Install TeXLive for building PDF
-    - if [ "$BUILD_PDF" == "true" ] && [ ! -x "$(command -v latexmk)" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh | bash; fi
+    # Install TexLive and SourceCodePro Fonts for building PDF
+    - if [ "$BUILD_PDF" == "true" ]; then
+        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh -o install-tl.sh;
+        sudo bash install-tl.sh;
+        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | sudo bash;
+        source ~/.bash_profile;
+      fi
     # Install GMT
-    - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then source ci/install-gmt.sh; fi
+    - source ci/install-gmt.sh
 
 script:
     # build html or/and PDF
-    - make dirhtml
-    - if [ "$BUILD_PDF" == "true" ]; then make latexpdf; fi
+    - if [ "$BUILD_PDF" == "true" ]; then
+        make build;
+      else
+        make dirhtml;
+      fi
 
 deploy:
     provider: script
