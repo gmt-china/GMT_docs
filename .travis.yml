@@ -60,8 +60,11 @@ install:
 
 script:
     # build html or/and PDF
-    - make dirhtml
-    - if [ "$BUILD_PDF" == "true" ]; then make latexpdf; fi
+    - if [ "$BUILD_PDF" == "true" ]; then
+        make build;
+      else
+        make dirhtml;
+      fi
 
 deploy:
     provider: script
