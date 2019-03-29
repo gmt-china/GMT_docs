@@ -5,30 +5,29 @@
 set -e
 
 # Basic Information
-GMT_INSTALL=${HOME}/GMT-${GMT_VERSION}
+GSHHG_VERSION=2.3.7
+DCW_VERSION=1.1.4
 
-# download files
+mkdir -p /tmp/GMT-build/
+cd /tmp/GMT-build
+
+# Download files
 if [[ "${GMT_VERSION}" != '6.0.0' ]]; then
-    wget --quiet https://github.com/GenericMappingTools/gmt/archive/${GMT_VERSION}.tar.gz -O gmt-${GMT_VERSION}-src.tar.gz
+    wget --quiet https://github.com/GenericMappingTools/gmt/archive/${GMT_VERSION}.tar.gz -O gmt.tar.gz
 else
-    wget --quiet https://github.com/GenericMappingTools/gmt/archive/master.tar.gz -O gmt-${GMT_VERSION}-src.tar.gz
+    wget --quiet https://github.com/GenericMappingTools/gmt/archive/master.tar.gz -O gmt.tar.gz
 fi
-wget --quiet http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION}.tar.gz
-wget --quiet http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz
+wget --quiet http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION}.tar.gz -O gshhg-gmt.tar.gz
+wget --quiet http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz -O dcw-gmt.tar.gz
 
 # Now start to install
-mkdir gmt-${GMT_VERSION}
-tar xf gmt-${GMT_VERSION}-src.tar.gz -C gmt-${GMT_VERSION} --strip-components=1
-tar -xf gshhg-gmt-${GSHHG_VERSION}.tar.gz
-tar -xf dcw-gmt-${DCW_VERSION}.tar.gz
-
-mv gshhg-gmt-${GSHHG_VERSION} gmt-${GMT_VERSION}/share/gshhg
-mv dcw-gmt-${DCW_VERSION} gmt-${GMT_VERSION}/share/dcw-gmt
-
-cd gmt-${GMT_VERSION}
+tar -xf gmt.tar.gz --strip-components=1
+mkdir share/gmt-gshhg && tar -xf gshhg-gmt.tar.gz -C share/gmt-gshhg --strip-components=1
+mkdir share/gmt-dcw && tar -xf dcw-gmt.tar.gz -C share/gmt-dcw --strip-components=1
+rm gmt.tar.gz gshhg-gmt.tar.gz dcw-gmt.tar.gz
 
 cat > cmake/ConfigUser.cmake << EOF
-set (CMAKE_INSTALL_PREFIX "${GMT_INSTALL}")
+set (CMAKE_INSTALL_PREFIX "${GMT_INSTALL_PREFIX}")
 set (GMT_INSTALL_MODULE_LINKS FALSE)
 set (COPY_GSHHG TRUE)
 set (COPY_DCW TRUE)
@@ -40,8 +39,9 @@ cd build
 cmake ..
 make -j
 make -j install
-cd ../..
+rm -r ${GMT_INSTALL_PREFIX}/share/doc
 
-export PATH=${GMT_INSTALL}/bin:${PATH}
+cd ${TRAVIS_BUILD_DIR}
+
 # Turn off exit on failure.
 set +e
