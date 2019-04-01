@@ -196,7 +196,6 @@ PDF、PNG、PPM、SVG、TIFF 格式。
 #. 转换为PDF、PNG时使用DEFALTE压缩；转换为TIFF时使用LZW压缩；
 #. 对于小dpi的图件而言，可以使用 ``-Qt4 -Qg4`` 使得文字和线条看上去更加尖锐；
 #. psconvert还可以用于其他命令生成的PS文件；
-#. 新版本的Word已经支持直接插入PDF格式的图片，高清且文件小，推荐使用；
 
 FAQ
 ---
