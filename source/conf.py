@@ -16,7 +16,7 @@ source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 nitpicky = True
 language = 'zh_CN'
-today_fmt = u'%Y年%m月%d日'
+today_fmt = '%Y年%m月%d日'
 exclude_patterns = []
 
 highlight_language = 'bash'
@@ -37,9 +37,9 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
-project = u'GMT中文手册'
+project = 'GMT中文手册'
 copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
-author = u'GMT中文社区'
+author = 'GMT中文社区'
 version = '6.0.0'
 release = version
 rst_prolog = '''
@@ -57,7 +57,7 @@ html_logo = None
 html_favicon = "_static/favicon.ico"
 html_static_path = ['_static']
 html_extra_path = ['CNAME']
-html_last_updated_fmt = u'%Y年%m月%d日'
+html_last_updated_fmt = '%Y年%m月%d日'
 html_secnumber_suffix = ' '  # default is '.'
 html_search_language = 'zh'
 html_theme_options = {
