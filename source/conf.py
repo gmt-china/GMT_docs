@@ -73,6 +73,10 @@ html_context = {
 
     "menu_links": [
         (
+            '<i class="fa fa-book fa-fw"></i> PDF下载',
+            "https://docs.gmt-china.org/5.4.5/GMT_docs.pdf",
+        ),
+        (
             '<i class="fa fa-github fa-fw"></i> 源代码',
             "https://github.com/gmt-china/GMT_Docs",
         ),
