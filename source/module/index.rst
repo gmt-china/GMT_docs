@@ -121,25 +121,6 @@
 #. :doc:`dimfilter`
 #. :doc:`triangulate`
 #. :doc:`nearneighbor`
-#. :doc:`mgd77convert`
-#. :doc:`mgd77header`
-#. :doc:`mgd77info`
-#. :doc:`mgd77list`
-#. :doc:`mgd77magref`
-#. :doc:`mgd77manage`
-#. :doc:`mgd77path`
-#. :doc:`mgd77sniffer`
-#. :doc:`mgd77track`
-#. :doc:`x2sys_binlist`
-#. :doc:`x2sys_cross`
-#. :doc:`x2sys_datalist`
-#. :doc:`x2sys_get`
-#. :doc:`x2sys_init`
-#. :doc:`x2sys_list`
-#. :doc:`x2sys_merge`
-#. :doc:`x2sys_put`
-#. :doc:`x2sys_report`
-#. :doc:`x2sys_solve`
 #. :doc:`gmtswitch`
 #. :doc:`backtracker`
 #. :doc:`gmtgravmag3d`
@@ -162,6 +143,31 @@
 #. :doc:`sphdistance`
 #. :doc:`sphinterpolate`
 #. :doc:`sphtriangulate`
+
+**mgd77相关模块**
+
+- :doc:`gmt:supplements/mgd77/mgd77convert`
+- :doc:`gmt:supplements/mgd77/mgd77header`
+- :doc:`gmt:supplements/mgd77/mgd77info`
+- :doc:`gmt:supplements/mgd77/mgd77list`
+- :doc:`gmt:supplements/mgd77/mgd77magref`
+- :doc:`gmt:supplements/mgd77/mgd77manage`
+- :doc:`gmt:supplements/mgd77/mgd77path`
+- :doc:`gmt:supplements/mgd77/mgd77sniffer`
+- :doc:`gmt:supplements/mgd77/mgd77track`
+
+**x2sys相关模块**
+
+- :doc:`gmt:supplements/x2sys/x2sys_binlist`
+- :doc:`gmt:supplements/x2sys/x2sys_cross`
+- :doc:`gmt:supplements/x2sys/x2sys_datalist`
+- :doc:`gmt:supplements/x2sys/x2sys_get`
+- :doc:`gmt:supplements/x2sys/x2sys_init`
+- :doc:`gmt:supplements/x2sys/x2sys_list`
+- :doc:`gmt:supplements/x2sys/x2sys_merge`
+- :doc:`gmt:supplements/x2sys/x2sys_put`
+- :doc:`gmt:supplements/x2sys/x2sys_report`
+- :doc:`gmt:supplements/x2sys/x2sys_solve`
 
 .. raw:: latex
 
@@ -245,15 +251,6 @@
    kml2gmt
    makecpt
    mapproject
-   mgd77convert
-   mgd77header
-   mgd77info
-   mgd77list
-   mgd77magref
-   mgd77manage
-   mgd77path
-   mgd77sniffer
-   mgd77track
    nearneighbor
    originator
    project
@@ -297,16 +294,6 @@
    trend1d
    trend2d
    triangulate
-   x2sys_binlist
-   x2sys_cross
-   x2sys_datalist
-   x2sys_get
-   x2sys_init
-   x2sys_list
-   x2sys_merge
-   x2sys_put
-   x2sys_report
-   x2sys_solve
    xyz2grd
 
 .. raw:: latex

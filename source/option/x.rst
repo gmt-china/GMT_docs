@@ -24,4 +24,4 @@
 :doc:`/module/talwani2d`\ 、
 :doc:`/module/talwani3d`\ 、
 :doc:`/module/surface`\ 、
-:doc:`/module/x2sys_solve`\ 。
+:doc:`gmt:supplements/x2sys/x2sys_solve`\ 。
