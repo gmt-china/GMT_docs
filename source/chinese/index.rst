@@ -1,9 +1,9 @@
-安装
-####
+中文支持
+========
 
 .. toctree::
    :maxdepth: 2
 
    linux
-   windows
    macOS
+   windows

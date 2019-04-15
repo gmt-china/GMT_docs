@@ -45,6 +45,7 @@ GMT4甚至GMT3。这些文档存在一些共同的缺点：
    proj/index
    conf/index
    dataset/index
+   chinese/index
    module/index
    gallery/index
    api/index
