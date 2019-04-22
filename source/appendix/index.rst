@@ -11,6 +11,5 @@
    low-level/index
    calculate-distance
    variables
-   custom-fonts
    special-dirs
    contour-annot

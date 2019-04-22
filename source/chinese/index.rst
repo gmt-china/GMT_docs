@@ -7,3 +7,4 @@
    linux
    macOS
    windows
+   custom-fonts
