@@ -10,6 +10,5 @@
    modes-difference
    low-level/index
    variables
-   custom-fonts
    special-dirs
    contour-annot
