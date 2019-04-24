@@ -23,7 +23,7 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 
         sudo apt-get install texlive-binaries
 
-    对于CentOS/RHEL/Fedora用户，执行
+    对于CentOS/RHEL/Fedora用户，执行::
 
         sudo yum install texlive-kpathsea-bin
 
