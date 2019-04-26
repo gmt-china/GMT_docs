@@ -4,7 +4,7 @@
 .. note::
 
     GMT本身不支持中文，若需要在GMT上显示中文，需要进行额外的配置。具体方法见
-    :doc:`/install/index` 一章。本文假定用户已经做好了GMT中文支持的配置工作。
+    :doc:`/chinese/index` 一章。本文假定用户已经做好了GMT中文支持的配置工作。
 
 .. note::
 
