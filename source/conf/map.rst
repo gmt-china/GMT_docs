@@ -12,7 +12,7 @@ MAP_FRAME_TYPE
     可选值包括 ``inside|plain|graph|fancy|fancy+``\ 。
     一般情况下，\ ``fancy`` 边框类型仅适用于投影后的X、Y方向平行于经度纬度方向的
     情况，比如rectangular投影、polar投影。
-    对于某些投影，只能使用plain底图，即便 ``MAP_BASEMAP_TYPE`` 被设置为fancy。
+    对于某些投影，只能使用plain底图，即便 ``MAP_FRAME_TYPE`` 被设置为fancy。
 
     下图给出了不同的底图边框类型的效果：
 
