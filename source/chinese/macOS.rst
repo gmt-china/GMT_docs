@@ -11,17 +11,17 @@ ghostscript的中文支持
 `cjk-gs-integrate.pl`_ 实现。
 
 1.  下载脚本 `cjk-gs-integrate.pl`_
-3.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``\ ，该命令由 TeXLive 提供。
+2.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``\ ，该命令由 TeXLive 提供。
     执行 ``kpsewhich --version`` 检查 ``kpsewhich`` 这个命令是否存在。若不存在，则
     需要单独安装。使用homebrew安装安装::
 
         brew cask install basictex
 
-2. 执行脚本::
+3.  执行脚本::
 
-    $ sudo perl cjk-gs-integrate.pl
+        $ sudo perl cjk-gs-integrate.pl
 
-   该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。
+    该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。
 
 .. _cjk-gs-integrate.pl: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
 
