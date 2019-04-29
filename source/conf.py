@@ -71,6 +71,8 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
 
+    'versions': ['6.0.0', '5.4.5'],
+
     "menu_links": [
         (
             '<i class="fa fa-book fa-fw"></i> PDF下载',
