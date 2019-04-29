@@ -83,7 +83,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 测试 ghostscript 对 Windows 中文字体的支持
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-下载PS测试文件 :download:`GMT_Chinese_Linux.ps </appendix/GMT_Chinese_Linux.ps>`\ ，
+下载PS测试文件 :download:`GMT_Chinese_Linux.ps </chinese/GMT_Chinese_Linux.ps>`\ ，
 并打开终端用 ``gs GMT_Chinese_Linux.ps`` 命令查看该PS文件。
 若正确显示中文如下图，则表明 ghostscript 已支持 Windows 中文字体。
 
