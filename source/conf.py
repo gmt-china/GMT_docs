@@ -67,7 +67,7 @@ html_context = {
     'display_github': True,
     'github_user': 'gmt-china',
     'github_repo': 'GMT_Docs',
-    'github_version': 'master',
+    'github_version': '6.0.0',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
 
