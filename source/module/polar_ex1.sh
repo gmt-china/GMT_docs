@@ -1,18 +1,17 @@
 #!/bin/bash
-ps=pspolar_ex1.ps
 
-gmt gmtset PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY 0.075i MAP_FRAME_WIDTH 0.1i \
+gmt begin polar_ex1 png,pdf
+gmt set PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY 0.075i MAP_FRAME_WIDTH 0.1i \
     MAP_ORIGIN_X 2.5c MAP_ORIGIN_Y 1.3i FONT_TITLE 18p
 
 # this is Harvard CMT for tibethan earthquake (1997)
-gmt psmeca -Fo -R85/89/25/50 -JX7i -P -M -Sm4i -N  -L -K -G150 -T0 << EOF > $ps
+gmt meca -Fo -R85/89/25/50 -JX7i -M -Sm4i -N  -L -G150 -T0 << EOF
 # lon  lat  mrr   mtt  mff   mrt   mrf  mtf ex nlon nlat
  87  35 -0.26 -0.71 0.97 -0.20 -0.61 2.60 27  0    0
 EOF
 
 # and polarities observed
-gmt pspolar -R -J -D87/35 -M4i -N -Sc0.3i -Qe -O \
-    -B0 -B+t"Tibet earthquake (1997) - polarities distribution" << EOF >> $ps
+gmt polar -D87/35 -M4i -N -Sc0.3i -Qe -B0 -B+t"Tibet earthquake (1997) - polarities distribution" << EOF
 1 147.8 53 c
 2 318.6 53 c
 3 311.9 53 c
@@ -81,4 +80,4 @@ gmt pspolar -R -J -D87/35 -M4i -N -Sc0.3i -Qe -O \
 69 131.7 15 d
 70 114.1 15 c
 EOF
-rm gmt.*
+gmt end
