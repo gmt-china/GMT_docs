@@ -69,7 +69,7 @@ pspolar
 示例
 ----
 
-.. gmt-plot:: pspolar_ex1.sh
+.. gmt-plot:: /scripts/pspolar_ex1.sh
    :width: 100%
    :align: center
 
