@@ -36,6 +36,7 @@ project
 
 .. gmt-plot:: /scripts/project_sketch.sh
    :width: 60%
+   :show-code: false
 
    project 示意图
 
