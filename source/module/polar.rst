@@ -69,8 +69,8 @@ polar
 示例
 ----
 
-.. gmt-plot:: polar_ex1.sh
+.. gmt-plot:: /scripts/polar_ex1.sh
    :width: 100%
    :align: center
 
-   pspolar示例
+   polar示例
