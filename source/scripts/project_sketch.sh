@@ -17,7 +17,7 @@ EOF
 PS=project_sketch.ps
 p_az=$((270 - $profile_az))
 # 绘制测线坐标系
-gmt psbasemap -R0/7/0/5 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p$p_az/90+v${profile_x}/${profile_y}+w0/0 -K > $PS
+gmt psbasemap -R0/7/0/5 -Jx1c -Bws -p$p_az/90+v${profile_x}/${profile_y}+w0/0 -K > $PS
 # P, Q
 gmt pstext -J -R -F+f12p,5,black+j -Dj0.2c/0.2c -N -p -K -O >> $PS << EOF
 7 0 TL P
@@ -51,7 +51,7 @@ echo 0 0 | gmt psxy -J -R -Sc0.2c -W1p,darkblue -Gdodgerblue -N -p -K -O >> $PS
 echo $profile_length 0 | gmt psxy -J -R -Sc0.2c -W1p,darkblue -Ggreen -N -p -K -O >> $PS
 
 # 绘制原始坐标系
-gmt psbasemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p180/90 -K -O >> $PS
+gmt psbasemap -R0/10/0/10 -Jx1c -Bws -p180/90 -K -O >> $PS
 # 绘制测线
 gmt project -C$profile_x/$profile_y -A$profile_az -G1 -L0/$profile_length | gmt psxy -W5p,green@30 -J -R -K -O >> $PS
 
