@@ -98,60 +98,60 @@
 #. :doc:`grdtrack`
 #. :doc:`makecpt`
 #. :doc:`grd2cpt`
-#. :doc:`convert`
+#. :doc:`gmt:gmtconvert`
 #. :doc:`trend1d`
 #. :doc:`grdcontour`
 #. :doc:`mask`
 #. :doc:`grdview`
 #. :doc:`grdgradient`
 #. :doc:`grdmath`
-#. :doc:`2kml`
-#. :doc:`trend2d`
+#. :doc:`gmt:gmt2kml`
+#. :doc:`gmt:trend2d`
 #. :doc:`mapproject`
 #. :doc:`surface`
 #. :doc:`grdfilter`
 #. :doc:`grdfft`
 #. :doc:`splitxyz`
-#. :doc:`math`
-#. :doc:`blockmean`
-#. :doc:`blockmedian`
-#. :doc:`blockmode`
+#. :doc:`gmt:gmtmath`
+#. :doc:`gmt:blockmean`
+#. :doc:`gmt:blockmedian`
+#. :doc:`gmt:blockmode`
 #. :doc:`plot3d`
 #. :doc:`contour`
-#. :doc:`segy`
-#. :doc:`segyz`
-#. :doc:`wiggle`
-#. :doc:`grdgravmag3d`
+#. :doc:`gmt:supplements/segy/segy`
+#. :doc:`gmt:supplements/segy/segyz`
+#. :doc:`gmt:wiggle`
+#. :doc:`gmt:supplements/potential/grdgravmag3d`
 #. :doc:`grdhisteq`
-#. :doc:`pmodeler`
-#. :doc:`grdpmodeler`
-#. :doc:`grdredpol`
-#. :doc:`grdrotater`
-#. :doc:`dimfilter`
-#. :doc:`triangulate`
-#. :doc:`nearneighbor`
-#. :doc:`gmtswitch`
-#. :doc:`backtracker`
-#. :doc:`gravmag3d`
-#. :doc:`spatial`
-#. :doc:`vector`
-#. :doc:`gravfft`
-#. :doc:`grdseamount`
-#. :doc:`gpsgridder`
-#. :doc:`grdspotter`
-#. :doc:`greenspline`
-#. :doc:`gshhg`
-#. :doc:`hotspotter`
-#. :doc:`img2google`
-#. :doc:`img2grd`
-#. :doc:`originater`
-#. :doc:`rotconverter`
-#. :doc:`rotsmoother`
-#. :doc:`segy2grd`
-#. :doc:`sph2grd`
-#. :doc:`sphdistance`
-#. :doc:`sphinterpolate`
-#. :doc:`sphtriangulate`
+#. :doc:`gmt:supplements/spotter/gmtpmodeler`
+#. :doc:`gmt:supplements/spotter/grdpmodeler`
+#. :doc:`gmt:supplements/potential/grdredpol`
+#. :doc:`gmt:supplements/spotter/grdrotater`
+#. :doc:`gmt:dimfilter`
+#. :doc:`gmt:triangulate`
+#. :doc:`gmt:nearneighbor`
+#. :doc:`gmt:gmtswitch`
+#. :doc:`gmt:supplements/spotter/backtracker`
+#. :doc:`gmt:supplements/potential/gmtgravmag3d`
+#. :doc:`gmt:gmtspatial`
+#. :doc:`gmt:gmtvector`
+#. :doc:`gmt:supplements/potential/gravfft`
+#. :doc:`gmt:supplements/potential/grdseamount`
+#. :doc:`gmt:supplements/potential/gpsgridder`
+#. :doc:`gmt:supplements/spotter/grdspotter`
+#. :doc:`gmt:greenspline`
+#. :doc:`gmt:supplements/gshhg/gshhg`
+#. :doc:`gmt:supplements/spotter/hotspotter`
+#. :doc:`gmt:supplements/img/img2google`
+#. :doc:`gmt:supplements/img/img2grd`
+#. :doc:`gmt:supplements/spotter/originater`
+#. :doc:`gmt:supplements/spotter/rotconverter`
+#. :doc:`gmt:supplements/spotter/rotsmoother`
+#. :doc:`gmt:supplements/segy/segy2grd`
+#. :doc:`gmt:sph2grd`
+#. :doc:`gmt:sphdistance`
+#. :doc:`gmt:sphinterpolate`
+#. :doc:`gmt:sphtriangulate`
 
 **mgd77相关模块**
 
@@ -186,76 +186,43 @@
    :maxdepth: 1
    :hidden:
 
-   2kml
-   backtracker
    basemap
    begin
-   blockmean
-   blockmedian
-   blockmode
    clear
    clip
    coast
    colorbar
    connect
-   contour
-   convert
    coupe
    defaults
-   dimfilter
    docs
    end
    figure
    filter1d
    fitcircle
-   flexure
    get
    gmt
    gmt-config
    gmt5syntax
-   gmtswitch
-   gpsgridder
-   gravfft
-   gravmag3d
-   grd2cpt
    grd2xyz
    grdblend
    grdclip
-   grdcontour
    grdconvert
    grdcut
    grdedit
-   grdfft
-   grdfilter
-   grdflexure
-   grdgradient
-   grdgravmag3d
-   grdhisteq
    grdimage
    grdinfo
    grdlandmask
    grdmask
-   grdmath
    grdpaste
-   grdpmodeler
    grdproject
-   grdredpol
-   grdrotater
    grdsample
-   grdseamount
-   grdspotter
    grdtrack
    grdtrend
    grdvector
-   grdview
    grdvolume
-   greenspline
-   gshhg
    histogram
-   hotspotter
    image
-   img2google
-   img2grd
    info
    inset
    isogmt
@@ -264,51 +231,25 @@
    logo
    makecpt
    mapproject
-   mask
-   math
    meca
    movie
-   nearneighbor
-   originater
    plot
-   plot3d
-   pmodeler
    polar
    project
    psconvert
-   regress
    rose
-   rotconverter
-   rotsmoother
    sac
    sample1d
-   segy
-   segy2grd
-   segyz
    select
    set
    simplify
    solar
-   spatial
    spectrum1d
-   sph2grd
-   sphdistance
-   sphinterpolate
-   sphtriangulate
-   splitxyz
    subplot
-   surface
-   talwani2d
-   talwani3d
    ternary
    text
-   trend1d
-   trend2d
-   triangulate
-   vector
    velo
    which
-   wiggle
    xyz2grd
 
 .. raw:: latex

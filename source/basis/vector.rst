@@ -7,7 +7,7 @@
 
 GMT 中能够绘制矢量的模块有
 :doc:`/module/plot`\ 、
-:doc:`/module/plot3d`\ 、
+:doc:`gmt:plot3d`\ 、
 :doc:`/module/grdvector`\ 、
 :doc:`/module/velo` \ 、
 :doc:`/module/rose`\ 、
