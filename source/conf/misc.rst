@@ -18,9 +18,9 @@ GMT_AUTO_DOWNLOAD
 .. _GMT_TRIANGULATE:
 
 GMT_TRIANGULATE
-    设置 :doc:`/module/triangulate` 模块中算法代码的来源 [Watson]
+    设置 :doc:`gmt:triangulate` 模块中算法代码的来源 [Watson]
 
-    :doc:`/module/triangulate` 模块的核心源码有两个版本，
+    :doc:`gmt:triangulate` 模块的核心源码有两个版本，
     ``Watson`` 的版本遵循GPL，\ ``Shewchuk`` 的版本不遵循GPL。
     该选项用于控制要使用哪个版本，\ ``Shewchuk`` 版本拥有更多功能。
 

@@ -7,7 +7,7 @@
 
 GMT 中能够绘制矢量的模块有
 :doc:`/module/psxy`\ 、
-:doc:`/module/psxyz`\ 、
+:doc:`gmt:psxyz`\ 、
 :doc:`/module/grdvector`\ 、
 :doc:`/module/psvelo` \ 、
 :doc:`/module/psrose`\ 、

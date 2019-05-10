@@ -104,45 +104,45 @@
 #. :doc:`grdfft`
 #. :doc:`splitxyz`
 #. :doc:`gmtmath`
-#. :doc:`blockmean`
-#. :doc:`blockmedian`
-#. :doc:`blockmode`
-#. :doc:`psxyz`
+#. :doc:`gmt:blockmean`
+#. :doc:`gmt:blockmedian`
+#. :doc:`gmt:blockmode`
+#. :doc:`gmt:psxyz`
 #. :doc:`pscontour`
-#. :doc:`pssegy`
-#. :doc:`pssegyz`
+#. :doc:`gmt:supplements/segy/pssegy`
+#. :doc:`gmt:supplements/segy/pssegyz`
 #. :doc:`pswiggle`
-#. :doc:`grdgravmag3d`
+#. :doc:`gmt:supplements/potential/grdgravmag3d`
 #. :doc:`grdhisteq`
-#. :doc:`gmtpmodeler`
-#. :doc:`grdpmodeler`
-#. :doc:`grdredpol`
-#. :doc:`grdrotater`
-#. :doc:`dimfilter`
-#. :doc:`triangulate`
-#. :doc:`nearneighbor`
+#. :doc:`gmt:supplements/spotter/gmtpmodeler`
+#. :doc:`gmt:supplements/spotter/grdpmodeler`
+#. :doc:`gmt:supplements/potential/grdredpol`
+#. :doc:`gmt:supplements/spotter/grdrotater`
+#. :doc:`gmt:supplements/misc/dimfilter`
+#. :doc:`gmt:triangulate`
+#. :doc:`gmt:nearneighbor`
 #. :doc:`gmtswitch`
-#. :doc:`backtracker`
-#. :doc:`gmtgravmag3d`
+#. :doc:`gmt:supplements/spotter/backtracker`
+#. :doc:`gmt:supplements/potential/gmtgravmag3d`
 #. :doc:`gmtspatial`
 #. :doc:`gmtvector`
-#. :doc:`gravfft`
-#. :doc:`grdseamount`
-#. :doc:`gpsgridder`
-#. :doc:`grdspotter`
+#. :doc:`gmt:supplements/potential/gravfft`
+#. :doc:`gmt:supplements/potential/grdseamount`
+#. :doc:`gmt:supplements/potential/gpsgridder`
+#. :doc:`gmt:supplements/spotter/grdspotter`
 #. :doc:`greenspline`
-#. :doc:`gshhg`
-#. :doc:`hotspotter`
-#. :doc:`img2google`
-#. :doc:`img2grd`
-#. :doc:`originator`
-#. :doc:`rotconverter`
-#. :doc:`rotsmoother`
-#. :doc:`segy2grd`
-#. :doc:`sph2grd`
-#. :doc:`sphdistance`
-#. :doc:`sphinterpolate`
-#. :doc:`sphtriangulate`
+#. :doc:`gmt:supplements/gshhg/gshhg`
+#. :doc:`gmt:supplements/spotter/hotspotter`
+#. :doc:`gmt:supplements/img/img2google`
+#. :doc:`gmt:supplements/img/img2grd`
+#. :doc:`gmt:supplements/spotter/originator`
+#. :doc:`gmt:supplements/spotter/rotconverter`
+#. :doc:`gmt:supplements/spotter/rotsmoother`
+#. :doc:`gmt:supplements/segy/segy2grd`
+#. :doc:`gmt:sph2grd`
+#. :doc:`gmt:sphdistance`
+#. :doc:`gmt:sphinterpolate`
+#. :doc:`gmt:sphtriangulate`
 
 **mgd77相关模块**
 
@@ -177,123 +177,64 @@
    :maxdepth: 1
    :hidden:
 
-   backtracker
-   blockmean
-   blockmedian
-   blockmode
-   dimfilter
    filter1d
    fitcircle
    gmt
    gmt-config
-   gmt2kml
    gmt5syntax
    gmtconnect
-   gmtconvert
    gmtdefaults
-   gmtflexure
    gmtget
-   gmtgravmag3d
    gmtinfo
    gmtlogo
-   gmtmath
-   gmtpmodeler
-   gmtregress
    gmtselect
    gmtset
    gmtsimplify
-   gmtspatial
-   gmtswitch
-   gmtvector
    gmtwhich
-   gpsgridder
-   gravfft
-   grd2cpt
    grd2rgb
    grd2xyz
    grdblend
    grdclip
-   grdcontour
    grdcut
    grdedit
-   grdfft
-   grdfilter
-   grdflexure
-   grdgradient
-   grdgravmag3d
-   grdhisteq
    grdimage
    grdinfo
    grdlandmask
    grdmask
-   grdmath
    grdpaste
-   grdpmodeler
    grdproject
    grdraster
-   grdredpol
    grdconvert
-   grdrotater
    grdsample
-   grdseamount
-   grdspotter
    grdtrack
    grdtrend
    grdvector
-   grdview
    grdvolume
-   greenspline
-   gshhg
-   hotspotter
-   img2google
-   img2grd
    isogmt
    kml2gmt
    makecpt
    mapproject
-   nearneighbor
-   originator
    project
    psbasemap
    psclip
    pscoast
-   pscontour
    psconvert
    pscoupe
    pshistogram
    psimage
    pslegend
-   psmask
    psmeca
    pspolar
    psrose
    pssac
    psscale
-   pssegy
-   pssegyz
    pssolar
    psternary
    pstext
    psvelo
-   pswiggle
    psxy
-   psxyz
-   rotconverter
-   rotsmoother
    sample1d
-   segy2grd
    spectrum1d
-   sph2grd
-   sphdistance
-   sphinterpolate
-   sphtriangulate
-   splitxyz
-   surface
-   talwani2d
-   talwani3d
-   trend1d
-   trend2d
-   triangulate
    xyz2grd
 
 .. raw:: latex

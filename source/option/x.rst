@@ -13,15 +13,15 @@
 - ``-x-4`` 表示使用 all-4 个核，也就是说给其他程序留下四个核。若 all-4<1，则使用1个核
 
 支持该选项的模块包括：
-:doc:`/module/grdfilter`\ 、
-:doc:`/module/grdlandmask`\ 、
-:doc:`/module/grdmask`\ 、
-:doc:`/module/grdmath`\ 、
-:doc:`/module/grdsample`\ 、
-:doc:`/module/greenspline`\ 、
-:doc:`/module/sph2grd`\ 、
-:doc:`/module/gpsgridder`\ 、
-:doc:`/module/talwani2d`\ 、
-:doc:`/module/talwani3d`\ 、
-:doc:`/module/surface`\ 、
+:doc:`gmt:grdfilter`\ 、
+:doc:`gmt:grdlandmask`\ 、
+:doc:`gmt:grdmask`\ 、
+:doc:`gmt:grdmath`\ 、
+:doc:`gmt:grdsample`\ 、
+:doc:`gmt:greenspline`\ 、
+:doc:`gmt:sph2grd`\ 、
+:doc:`gmt:supplements/potential/gpsgridder`\ 、
+:doc:`gmt:supplements/potential/talwani2d`\ 、
+:doc:`gmt:supplements/potential/talwani3d`\ 、
+:doc:`gmt:surface`\ 、
 :doc:`gmt:supplements/x2sys/x2sys_solve`\ 。

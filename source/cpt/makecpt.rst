@@ -1,11 +1,11 @@
 制作CPT
 =======
 
-GMT模块 :doc:`/module/makecpt` 和 :doc:`/module/grd2cpt` 可以内置CPT文件为基础，针对用户自己的数据
+GMT模块 :doc:`/module/makecpt` 和 :doc:`gmt:grd2cpt` 可以内置CPT文件为基础，针对用户自己的数据
 制作专门的CPT文件；也可以将用户自定义CPT重新调整为一个新的范围、颜色倒转甚至
 屏蔽部分颜色的新色标文件。比如某个内置CPT文件定义了从0到1颜色从蓝色变成红色，
 用 :doc:`/module/makecpt` 可以制作一个从1000到3000颜色从蓝色变成红色的CPT文件。不同的是，
-:doc:`/module/makecpt` 常用于已知极值范围的表数据，而 :doc:`/module/grd2cpt` 常用于将cpt适用于一个
+:doc:`/module/makecpt` 常用于已知极值范围的表数据，而 :doc:`gmt:grd2cpt` 常用于将cpt适用于一个
 或多个格网数据。此外，两者均可通过以下方式翻转颜色：
 
 #. 利用 ``-Iz`` 选项倒转CPT的z值指向（不包括前景色、背景色）。用于数据的正负
@@ -22,8 +22,8 @@ GMT模块 :doc:`/module/makecpt` 和 :doc:`/module/grd2cpt` 可以内置CPT文�
 注：这些CPT的调整选项顺序也是有优先级的。比如 ``-Iz`` 使用后，所有其他的更改
 都是基于z值反向的前提进行的。
 
-CPT文件可以在 :doc:`/module/grdimage`\ 、:doc:`/module/psxy`\ 、:doc:`/module/psxyz`
-等命令中使用。通常，你可以使用 :doc:`/module/makecpt` 或 :doc:`/module/grd2cpt`
+CPT文件可以在 :doc:`/module/grdimage`\ 、:doc:`/module/psxy`\ 、:doc:`gmt:psxyz`
+等命令中使用。通常，你可以使用 :doc:`/module/makecpt` 或 :doc:`gmt:grd2cpt`
 对已有的CPT（比如GMT内置的CPT）文件进行重采样，
 并适应你目前所使用的数据范围。当然，也可以自己手写CPT文件，或使用 ``awk`` 、
 ``perl`` 之类的文本处理工具自动生成CPT文件。
