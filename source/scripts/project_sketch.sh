@@ -17,6 +17,11 @@ EOF
 gmt begin project_sketch png,pdf
 
 p_az=$((270 - $profile_az))
+# 绘制原始坐标系
+gmt basemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p180/90
+# 绘制测线
+gmt project -C$profile_x/$profile_y -A$profile_az -G1 -L0/$profile_length | gmt plot -W5p,lightgreen@30
+
 # 绘制测线坐标系
 gmt basemap -R0/7/0/5 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p$p_az/90+v${profile_x}/${profile_y}+w0/0
 # P, Q
@@ -48,13 +53,12 @@ gmt plot -W1p,black -Sqn1:+Lh+f15p,7,blue+n0c/-0.5c -p << EOF
 0 0
 $p 0
 EOF
+# 绘制测线的起点和终点
 echo 0 0 | gmt plot -Sc0.2c -W1p,darkblue -Gdodgerblue -N -p
 echo $profile_length 0 | gmt plot -Sc0.2c -W1p,darkblue -Ggreen -N -p
 
-# 绘制原始坐标系
+# 回到原始坐标系
 gmt basemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p180/90
-# 绘制测线
-gmt project -C$profile_x/$profile_y -A$profile_az -G1 -L0/$profile_length | gmt plot -W5p,green@30
 
 # 添加标注XY
 gmt text -F+f12p,5,black+j -Dj0.25c/0.25c -N << EOF
