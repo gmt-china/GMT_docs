@@ -20,7 +20,7 @@ p_az=$((270 - $profile_az))
 # 绘制原始坐标系
 gmt basemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph
 # 绘制测线
-gmt project -C$profile_x/$profile_y -A$profile_az -G1 -L0/$profile_length | gmt plot -W5p,lightgreen@30
+gmt project -C$profile_x/$profile_y -A$profile_az -G1 -L0/$profile_length | gmt plot -W5p,lightgreen
 
 # 绘制测线坐标系
 gmt basemap -R0/7/0/5 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p$p_az/90+v${profile_x}/${profile_y}+w0/0
