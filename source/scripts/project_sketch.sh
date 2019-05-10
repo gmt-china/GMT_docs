@@ -18,7 +18,7 @@ gmt begin project_sketch png,pdf
 
 p_az=$((270 - $profile_az))
 # 绘制原始坐标系
-gmt basemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p180/90
+gmt basemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph
 # 绘制测线
 gmt project -C$profile_x/$profile_y -A$profile_az -G1 -L0/$profile_length | gmt plot -W5p,lightgreen@30
 
@@ -58,7 +58,7 @@ echo 0 0 | gmt plot -Sc0.2c -W1p,darkblue -Gdodgerblue -N -p
 echo $profile_length 0 | gmt plot -Sc0.2c -W1p,darkblue -Ggreen -N -p
 
 # 回到原始坐标系
-gmt basemap -R0/10/0/10 -Jx1c -Bws --MAP_FRAME_TYPE=graph -p180/90
+gmt plot -R0/10/0/10 -Jx1c -T
 
 # 添加标注XY
 gmt text -F+f12p,5,black+j -Dj0.25c/0.25c -N << EOF
