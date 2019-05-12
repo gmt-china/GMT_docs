@@ -1,4 +1,5 @@
 # GMT中文手册
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg)](https://travis-ci.org/gmt-china/GMT_docs)
 [![Documentation version](https://img.shields.io/badge/版本-v5.4.5-blue.svg)](https://docs.gmt-china.org/5.4.5/)
@@ -26,3 +27,15 @@
 
 - 署名：必须提到原作者，提供指向此许可协议的链接，表明是否有做修改
 - 非商业性使用：不能对本作品进行任何形式的商业性使用
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://seisman.info"><img src="https://avatars2.githubusercontent.com/u/3974108?v=4" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#design-seisman" title="Design">🎨</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
