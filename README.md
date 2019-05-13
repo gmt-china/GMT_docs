@@ -34,7 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://seisman.info"><img src="https://avatars2.githubusercontent.com/u/3974108?v=4" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#design-seisman" title="Design">🎨</a></td></tr></table>
+<table><tr><td align="center"><a href="https://seisman.info"><img src="https://avatars2.githubusercontent.com/u/3974108?v=4" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#design-seisman" title="Design">🎨</a> <a href="#review-seisman" title="Reviewed Pull Requests">👀</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
