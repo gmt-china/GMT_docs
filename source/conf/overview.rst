@@ -26,8 +26,8 @@
 GMT提供了多种方法来控制或修改配置参数的值。
 
 设置全局参数
-    用 :doc:`/module/set` 模块可以为GMT设置全局参数，此类参数会影响到接下来
-    所有GMT命令的执行，直到绘图结束或者被 :doc:`/module/set` 再次修改为
+    用 :doc:`/module/gmtset` 模块可以为GMT设置全局参数，此类参数会影响到接下来
+    所有GMT命令的执行，直到绘图结束或者被 :doc:`/module/gmtset` 再次修改为
     其他值为止。例如::
 
         gmt begin map png
