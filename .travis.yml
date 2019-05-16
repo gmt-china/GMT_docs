@@ -10,13 +10,10 @@ env:
         - HTML_BUILDDIR=build/dirhtml
         - GMT_VERSION=5.4.5
         # Install location
-        - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
-        - PATH=${GMT_INSTALL_PREFIX}/bin:${HOME}/.TinyTeX/bin/x86_64-linux:${PATH}
+        - PATH=${HOME}/.TinyTeX/bin/x86_64-linux:${PATH}
 
 cache:
     pip: true
-    directories:
-        - ${GMT_INSTALL_PREFIX}
 
 # Only build pushes to select branches and tags. This avoids the double
 # builds than happen when working on a branch instead of a fork.
@@ -26,24 +23,7 @@ branches:
         # Regex to build tagged commits with version numbers
         - /\d+\.\d+(\.\d+)?(\S*)?$/
 
-addons:
-    apt:
-        packages:
-            - cmake
-            - build-essential
-            - libcurl4-gnutls-dev
-            - libnetcdf-dev
-            - libgdal1-dev
-            - libfftw3-dev
-            - libpcre3-dev
-            - liblapack-dev
-            - ghostscript
-            - curl
-
-
 install:
-    # Install Python dependencies
-    - pip install -r requirements.txt
     # Install SourceCodePro fonts for PDF
     - if [ "$BUILD_PDF" == "true" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash; fi
     # Install tinytex (https://github.com/yihui/tinytex)
@@ -54,9 +34,8 @@ install:
     - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
                     float wrapfig parskip capt-of needspace xcolor enumitem xindy
                     fandol
-    - echo ${PATH}
     # Install GMT
-    - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then source ci/install-gmt.sh; fi
+    - source ci/install-gmt-via-conda.sh
     - gmt --version
 
 script:
