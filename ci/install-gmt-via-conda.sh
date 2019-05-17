@@ -5,4 +5,11 @@ chmod +x miniconda.sh
 bash miniconda.sh -b -p $conda_prefix
 export PATH="$conda_prefix/bin:$PATH"
 conda config --set always_yes yes --set changeps1 no
-conda install gmt=${GMT_VERSION} -c conda-forge
+conda config --prepend channels conda-forge
+if [ "$GMT_VERSION" == "5.4.5" ]; then
+    conda install gmt=${GMT_VERSION}
+elif [ "$GMT_VERSION" == "6.0.0" ]; then
+    conda install gmt=${GMT_VERSION} -c conda-forge/label/dev
+else
+    echo "GMT_VERSION not specified"
+fi
