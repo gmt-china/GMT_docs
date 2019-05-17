@@ -1,13 +1,8 @@
 # Configuration file for TravisCI
 
-# Use the container builds so we don't need sudo priviledges
-sudo: false
-
+sudo: required
 language: python
 python: 3.6
-
-# Set the Ubuntu version for the Linux builds
-dist: xenial
 
 env:
     global:
@@ -15,12 +10,12 @@ env:
         - HTML_BUILDDIR=build/dirhtml
         - GMT_VERSION=6.0.0
         # Install location
-        - TEXLIVE_INSTALL_PREFIX=${HOME}/texlive
+        - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
         - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
-        # PATH
-        - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/2018/bin/x86_64-linux:${PATH}
+        - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
 
 cache:
+    pip: true
     directories:
         - ${TEXLIVE_INSTALL_PREFIX}
         - ${GMT_INSTALL_PREFIX}
@@ -52,8 +47,11 @@ install:
     - pip install -r requirements.txt
     # Install SourceCodePro fonts for PDF
     - if [ "$BUILD_PDF" == "true" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash; fi
-    # Install TeXLive for building PDF
-    - if [ "$BUILD_PDF" == "true" ] && [ ! -x "$(command -v latexmk)" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-texlive.sh | bash; fi
+    # Install tinytex (https://github.com/yihui/tinytex)
+    - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
+    - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
+                    float wrapfig parskip capt-of needspace xcolor enumitem xindy
+                    fandol
     # Install GMT
     - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then source ci/install-gmt.sh; fi
     - gmt --version
