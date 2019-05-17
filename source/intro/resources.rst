@@ -24,5 +24,6 @@ GMT学习资源列举如下，建议以官方学习资源为准。
 其他学习资源
 ------------
 
-#. `SeisMan博客 <https://blog.seisman.info/>`_
-#. `GMT Tutorial by Whyjay Zheng <http://gmt-tutorials.org/>`_
+#. `《地学GMT绘图软件入门》视频教程 <https://ke.qq.com/course/369776>`_ 作者: `@liuzhumei <https://github.com/liuzhumei>`_ (适用于GMT5)
+#. `GMT Tutorial by Whyjay Zheng <http://gmt-tutorials.org/>`_ (适用于GMT4)
+#. `SeisMan博客 <https://blog.seisman.info/categories/GMT/>`_
