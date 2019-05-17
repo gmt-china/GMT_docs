@@ -13,9 +13,11 @@ ghostscript的中文支持
 1.  下载脚本 `cjk-gs-integrate.pl`_
 2.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``\ ，该命令由 TeXLive 提供。
     执行 ``kpsewhich --version`` 检查 ``kpsewhich`` 这个命令是否存在。若不存在，则
-    需要单独安装。使用homebrew安装安装::
+    需要单独安装。使用homebrew安装 basictex 或 mactex-no-gui::
 
+        # 以下二选一即可，第一个更小，第二个更完整
         brew cask install basictex
+        brew cask install mactex-no-gui
 
 3.  执行脚本::
 
