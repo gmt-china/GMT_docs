@@ -4,6 +4,26 @@ Windows 下安装 GMT
 GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows 下需要安装 GMT、
 ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux下的小工具。
 
+Windows 上使用 GMT 有诸多的不便，比如本手册和 GMT 中文社区就不提供 Windows 上的批处理示例脚本。
+用户可以在 Windows 上安装 Linux 的虚拟机，然后在 Linux 虚拟机中使用 GMT。
+如果用户对 Linux 的需求仅限于用 GMT 做图，虚拟机的开销就显得有些大。
+这时候，Windows 10 用户可以考虑使用 WSL。WSL 是 Windows Subsystem for Linux 的简称，
+是为在 Windows 10 上能够原生运行 Linux 二进制可执行文件而制作的兼容层。
+它是由微软与 Canonical 公司合作开发，目标是使纯正的 Ubuntu 14.04/18.04， OpenSUSE,
+Kali Linux 和Debian 映像能下载和解压到用户的本地计算机，并且映像内的工具和实用工具能在此子系统上原生运行。
+WSL 的优势是程序是直接运行在 Windows 上的，节约系统资源开销，缺点在于完全的命令行界面。
+如果你打算安装WSL，请确定你的系统是 Windows **10** 。
+首先，检查内部版本号是否是 Windows build 16215 或以上，如果不满足，需要升级。
+升级方法是在左下角的搜索里搜索 powershell，右键，点击以管理员权限打开，执行以下命令::
+
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+然后，重启电脑。
+
+访问 Windows 软件商店 下载 Ubuntu 18.04或者上述其他发行版。
+点击后，下载会陆续开始，等待下载完毕。下载安装过程完全自动。
+装好以后，在开始菜单中可以看到 Ubuntu 18.04，点击即可启动。后面的事就和一般的 Linux 一样
+
 .. warning::
 
    从 GMT 5.2.1 开始，GMT 提供的 Windows 下的安装包已经不再支持 Windows XP。
