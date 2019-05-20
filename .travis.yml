@@ -42,11 +42,9 @@ install:
     - if [ ! -d "${CONDA_INSTALL_PREFIX}/bin" ]; then
         source ci/install-gmt-via-conda.sh;
       fi
-    - if [[ $(gmt --version) != ${GMT_VERSION}* ]]; then
-        exit;
-      else
-        echo $(gmt --version);
-      fi
+    - conda list
+    - gmt --version
+    - sphinx-build --version
 
 script:
     # build html or/and PDF
