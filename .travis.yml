@@ -30,15 +30,22 @@ branches:
 
 install:
     # Install SourceCodePro fonts for PDF
-    - if [ "$BUILD_PDF" == "true" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash; fi
+    - if [ "$BUILD_PDF" == "true" ]; then
+        curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash;
+      fi
     # Install tinytex (https://github.com/yihui/tinytex)
-    - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
-    - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
-                    float wrapfig parskip capt-of needspace xcolor enumitem xindy
-                    fandol
+    - if [ ! -d "${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux" ]; then
+        wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
+        tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
+                      float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol;
+      fi
     # Setup conda, install dependencies and install GMT
-    - if [ ! -d "${CONDA_INSTALL_PREFIX}/bin" ]; then source ci/install-gmt-via-conda.sh; fi
-    - if [[ $(gmt --version) == ${GMT_VERSION}* ]]; then exit; fi
+    - if [ ! -d "${CONDA_INSTALL_PREFIX}/bin" ]; then
+        source ci/install-gmt-via-conda.sh;
+      fi
+    - if [[ $(gmt --version) == ${GMT_VERSION}* ]]; then
+        exit;
+      fi
 
 script:
     # build html or/and PDF
