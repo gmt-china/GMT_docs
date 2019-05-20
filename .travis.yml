@@ -11,12 +11,14 @@ env:
         - GMT_VERSION=5.4.5
         # Install location
         - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
-        - PATH=${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
+        - CONDA_INSTALL_PREFIX=${HOME}/miniconda
+        - PATH=${CONDA_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
 
 cache:
     pip: true
     directories:
         - ${TEXLIVE_INSTALL_PREFIX}
+        - ${CONDA_INSTALL_PREFIX}
 
 # Only build pushes to select branches and tags. This avoids the double
 # builds than happen when working on a branch instead of a fork.
@@ -34,11 +36,9 @@ install:
     - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
                     float wrapfig parskip capt-of needspace xcolor enumitem xindy
                     fandol
-    # Install GMT
-    - source ci/install-gmt-via-conda.sh
-    - gmt --version
-    # Install Python packages
-    - pip install -r requirements.txt
+    # Setup conda, install dependencies and install GMT
+    - if [ ! -d "${CONDA_INSTALL_PREFIX}" ]; then source ci/install-gmt-via-conda.sh; fi
+    - if [[ $(gmt --version) == ${GMT_VERSION}* ]]; then exit; fi
 
 script:
     # build html or/and PDF

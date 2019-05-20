@@ -1,9 +1,6 @@
-conda_prefix=$HOME/miniconda
-
 wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 chmod +x miniconda.sh
 bash miniconda.sh -b -p $conda_prefix
-export PATH="$conda_prefix/bin:$PATH"
 conda config --set always_yes yes --set changeps1 no
 conda config --prepend channels conda-forge
 if [ "$GMT_VERSION" == "5.4.5" ]; then
@@ -13,3 +10,4 @@ elif [ "$GMT_VERSION" == "6.0.0" ]; then
 else
     echo "GMT_VERSION not specified"
 fi
+pip install -r requirements.txt
