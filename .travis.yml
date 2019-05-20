@@ -37,7 +37,7 @@ install:
                     float wrapfig parskip capt-of needspace xcolor enumitem xindy
                     fandol
     # Setup conda, install dependencies and install GMT
-    - if [ ! -d "${CONDA_INSTALL_PREFIX}" ]; then source ci/install-gmt-via-conda.sh; fi
+    - if [ ! -d "${CONDA_INSTALL_PREFIX}/bin" ]; then source ci/install-gmt-via-conda.sh; fi
     - if [[ $(gmt --version) == ${GMT_VERSION}* ]]; then exit; fi
 
 script:
