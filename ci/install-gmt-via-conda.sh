@@ -13,3 +13,4 @@ else
     echo "GMT_VERSION not specified"
 fi
 pip install -r requirements.txt
+conda list
