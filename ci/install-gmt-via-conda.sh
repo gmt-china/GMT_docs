@@ -12,4 +12,5 @@ elif [ "$GMT_VERSION" == "6.0.0" ]; then
 else
     echo "GMT_VERSION not specified"
 fi
+which pip
 pip install -r requirements.txt
