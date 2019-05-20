@@ -383,7 +383,6 @@
    makecpt
    mapproject
    meca
-   movie
    plot
    polar
    project
