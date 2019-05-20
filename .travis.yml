@@ -43,8 +43,10 @@ install:
     - if [ ! -d "${CONDA_INSTALL_PREFIX}/bin" ]; then
         source ci/install-gmt-via-conda.sh;
       fi
-    - if [[ $(gmt --version) == ${GMT_VERSION}* ]]; then
+    - if [[ $(gmt --version) != ${GMT_VERSION}* ]]; then
         exit;
+      else
+        echo $(gmt --version)
       fi
 
 script:
