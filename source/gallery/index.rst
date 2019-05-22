@@ -10,7 +10,7 @@
     beachball/index
     legend
     earth-relief
-    histogram
+    histogram/index
     inset-map
     sac-waveforms
     ternary-diagram
