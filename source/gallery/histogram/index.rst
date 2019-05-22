@@ -42,9 +42,6 @@
 
    gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 > histHori.ps
 
-此示例中：
-
-
 累积直方图
 ----------
 
@@ -55,7 +52,6 @@
    :caption: 累积直方图
 
    gmt pshistogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l"Depth/km" -Bya200+l"Counts" -BWSne -W5+b -L1p -i2 -Q > histCumu.ps
-
 
 百分比直方图
 ------------
