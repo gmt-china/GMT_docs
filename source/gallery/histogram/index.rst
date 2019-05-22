@@ -9,7 +9,7 @@
 #. ``-Q`` 绘制累积直方图
 #. ``-A`` 绘制水平直方图，默认情况绘制垂直直方图
 
-以下示例使用的数据为  :download:`eq.dat </gallery/histogram/eq.dat>`.
+以下示例使用的数据为  :download:`eq.dat </gallery/histogram/eq.dat>`\ 。
 数据格式为三列，分别为：地震纬度、地震经度、震源深度。
 
 垂直直方图
@@ -18,7 +18,7 @@
 .. gmt-plot::
    :language: bash
    :caption: 垂直直方图
-   
+
    gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -W5+b -L1p -i2 > histVert.ps
 
 此示例中：
@@ -34,39 +34,36 @@
 水平直方图
 ----------
 
+``-A`` 用于控制绘制水平直方图，上一个例子中默认绘制垂直直方图。
+
 .. gmt-plot::
    :language: bash
    :caption: 水平直方图
-   
+
    gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 > histHori.ps
 
 此示例中：
 
-- ``-A`` 绘制水平直方图，上一个例子中默认绘制垂直直方图
 
 累积直方图
 ----------
 
+``-Q`` 表示绘制累积直方图。
+
 .. gmt-plot::
    :language: bash
    :caption: 累积直方图
-   
+
    gmt pshistogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l"Depth/km" -Bya200+l"Counts" -BWSne -W5+b -L1p -i2 -Q > histCumu.ps
 
-此示例中：
-
-- ``-Q`` 绘制累积直方图
 
 百分比直方图
 ------------
 
+``-Z1`` 设置纵轴为百分比，\ ``-N`` 绘制等效的正态分布曲线。
+
 .. gmt-plot::
    :language: bash
    :caption: 百分比直方图
-   
+
    gmt pshistogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l"Depth/km" -Bya20+l"Frequency" -BWSne -W5+b -L1p -i2 -N -Z1> histFreq.ps
-
-此示例中：
-
-- ``-N`` 绘制等效的正态分布曲线
-- ``-Z1`` 设置纵轴为百分比
