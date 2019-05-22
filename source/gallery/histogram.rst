@@ -1,2 +1,61 @@
 绘制直方图
 ==========
+
+线性垂直直方图
+----------
+
+.. gmt-plot::
+   :language: bash
+   :caption: 垂直直方图
+   
+   gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,Times-Roman+o8p -W5+b -L1p -i2 > hist.ps
+
+此示例中：
+
+- ``-R0/35/0/600`` 设置了X轴范围是0到35，Y轴范围为0到600
+- ``-JX8c`` 指定了整张图为线性投影，图的宽度（X轴长度）和图的高度（Y轴长度）均为8厘米
+- ``-Bxa5+l"Depth/km" -Bya100+l"Counts"`` 分别设置了X、Y轴标注、刻度的间隔、标签
+- ``-D+f10p,Times-Roman+o8p`` 为每个bar设置标注，标注字号为10p、字体为Times-Roman，标注与bar之间距离为8p
+- ``-W5+b`` 设置直方图bin宽度为5，``+b``表示将落在范围外的数据包含在第一个或最后一个bin中
+- ``-L1p`` 设置bar边框为1p
+- ``-i2`` 从输入文件eq.dat中读取第3列，``-i0``表示输入文件第1列
+
+线性水平直方图
+----------
+
+.. gmt-plot::
+   :language: bash
+   :caption: 水平直方图
+   
+   gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,Times-Roman+o8p -A -W5+b -L1p -i2 > hist.ps
+
+此示例中：
+
+- ``-A`` 绘制水平直方图，上一个例子中默认绘制垂直直方图
+
+线性累积直方图
+----------
+
+.. gmt-plot::
+   :language: bash
+   :caption: 累积直方图
+   
+   gmt pshistogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l"Depth/km" -Bya200+l"Counts" -BWSne -W5+b -L1p -i2 -Q > hist.ps
+
+此示例中：
+
+- ``-Q`` 绘制累积直方图
+
+线性百分比直方图
+----------
+
+.. gmt-plot::
+   :language: bash
+   :caption: 累积直方图
+   
+   gmt pshistogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l"Depth/km" -Bya20+l"Frequency" -BWSne -W5+b -L1p -i2 -N -Z1> histFreq.ps
+
+此示例中：
+
+- ``-N`` 绘制等效的正态分布曲线
+- ``-Z1`` 设置纵轴为百分比
