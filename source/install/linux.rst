@@ -1,11 +1,24 @@
 Linux 下安装GMT
 ===============
 
-.. note::
+大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装
+工具进行安装GMT。
 
-    大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装
-    工具，如 ``apt-get`` 或 ``yum`` 等进行直接安装GMT。但大多数发行版提供的
-    GMT版本都较老，故本文仅介绍如何从源码编译GMT。
+Ubuntu/Debian用户::
+
+    sudo apt-get install gmt gmt-dcw gmt-gshhg
+
+RHEL/CentOS用户::
+
+    sudo yum install epel-release
+    sudo yum install GMT gshhg-gmt-nc4-all dcw-gmt
+
+Fedora用户::
+
+    sudo dnf install GMT gshhg-gmt-nc4-all dcw-gmt
+
+大多数发行版提供的GMT版本都较老，故不推荐直接安装发行版提供的版本，而建议
+直接从源码编译GMT。
 
 解决依赖关系
 ------------
