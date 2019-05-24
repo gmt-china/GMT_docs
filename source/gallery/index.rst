@@ -4,7 +4,7 @@
 .. toctree::
 
     basemap
-    lines
+    lines/index
     symbols
     coast
     beachball/index
