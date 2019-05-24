@@ -32,7 +32,7 @@
    :language: bash
    :caption: 地理坐标下不同连接方式的线段
 
-   set PS=lineGeo.ps
+PS=lineGeo.ps
    gmt psbasemap -JN90/10c -R0/180/-90/90 -Bx60 -By30 -K > $PS
    gmt psxy dataA -J -R -W1p -O -K >> $PS
    gmt psxy dataA -J -R -W1p,red -A -O -K >> $PS
