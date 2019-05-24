@@ -49,7 +49,7 @@
    :language: bash
    :caption: 笛卡尔坐标下不同连接方式的线段
 
-   set PS=lineCart.ps
+PS=lineCart.ps
    gmt psbasemap -JX10/10c -R0/180/-90/90 -Bx60 -By30 -K > $PS
    gmt psxy dataA -J -R -W1p -O -K >> $PS
    gmt psxy dataA -J -R -W1p,green -Ax -O -K >> $PS
