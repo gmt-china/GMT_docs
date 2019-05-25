@@ -14,17 +14,17 @@
    :language: bash
    :caption: 简单线段示例
 
-   gmt psxy -JX10c/10c -R0/9/0/9 -B1 -W2p,blue > lineSimp.ps << EOF
+   gmt psxy -JX16c/9c -R0/8/0/5 -B1 -W2p,blue > lineSimp.ps << EOF
    >
    1 2
    2 1
    3 4
    5 4
    >
-   7 4
-   8 5
-   6 6
-   8 8
+   4 2
+   5 3
+   5 1
+   7 3
    EOF
 
 不同连接方式的线段
@@ -39,10 +39,10 @@
    PS=lineGeo.ps
 
    cat > input.dat << EOF
-   150 -70
-   30 70
+   160 10
+   20 70
    EOF
-   gmt psbasemap -JN90/10c -R0/180/-90/90 -Bx60 -By30 -K > $PS
+   gmt psbasemap -JN90/10c -R0/180/0/90 -Bx60 -By30 -K > $PS
    gmt psxy input.dat -J -R -W1p -O -K >> $PS
    gmt psxy input.dat -J -R -W1p,red -A -O -K >> $PS
    gmt psxy input.dat -J -R -W1p,green -Am -O -K >> $PS
@@ -62,10 +62,10 @@
    PS=lineCart.ps
 
    cat > input.dat << EOF
-   150 -70
-   30 70
+   160 10
+   20 70
    EOF
-   gmt psbasemap -JX10/10c -R0/180/-90/90 -Bx60 -By30 -K > $PS
+   gmt psbasemap -JX16/8c -R0/180/0/90 -Bx60 -By30 -K > $PS
    gmt psxy input.dat -J -R -W1p -O -K >> $PS
    gmt psxy input.dat -J -R -W1p,green -Ax -O -K >> $PS
    gmt psxy input.dat -J -R -W1p,blue -Ay -O >> $PS
@@ -85,32 +85,32 @@
    :language: bash
    :caption: 不同颜色的线段示例图
 
-   R=0/9/0/9
-   J=X9c/9c
+   R=0/9/0/4
+   J=X16c/9c
    PS=lineColo.ps
    gmt makecpt -Crainbow -T-0.5/2.5/1 > lineC.cpt
    gmt psbasemap -J$J -R$R -B1 -K > $PS
    gmt psxy -J$J -R$R -ClineC.cpt -W2p -O -K >> $PS <<EOF
    > -Z0
-   2 1
-   3 2
+   1 1
+   2 3
    > -Z1
-   4 1
-   5 2
+   2 1
+   3 3
    > -Z2
-   1 2
-   3 4
+   3 1
+   4 3
    EOF
    gmt psxy -J$J -R$R -Cblue,red,green -W2p -O >> $PS <<EOF
    > -Z0
-   5 8
-   6 7
+   5 3
+   6 1
    > -Z1
-   7 6
-   8 5
+   6 3
+   7 1
    > -Z2
-   4 7
-   7 4
+   7 3
+   8 1
    EOF
 
 此示例中：
