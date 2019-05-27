@@ -589,3 +589,5 @@ plot
    :align: center
 
    psxy -L选项示意图
+
+更多示例见 :doc:`/gallery/lines`\ 。
