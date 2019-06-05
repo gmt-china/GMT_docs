@@ -2,10 +2,10 @@
 SIZE=w15c/0.25c
 
 gmt begin cpt_4 pdf,png
-gmt makecpt -Chaxby -T-10/10/1 > Icpt.cpt
-gmt makecpt -Chaxby -T-10/10/1 -Iz > Icpt_z.cpt
-gmt makecpt -Chaxby -T-10/10/1 -Ic > Icpt_c.cpt
-gmt makecpt -Chaxby -T-10/10/1 -Icz > Icpt_cz.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H > Icpt.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Iz > Icpt_z.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Ic > Icpt_c.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Icz > Icpt_cz.cpt
 
 gmt plot -R1/10/1/10 -JX20c -T
 

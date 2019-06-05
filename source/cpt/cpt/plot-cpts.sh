@@ -70,10 +70,9 @@ do
     gmt figure $cpt PNG,pdf
     #gmt basemap -R0/6/0/2 -JX6c/0.9c -B+t"$cpt"
     gmt plot -R0/6/0/2 -JX6c/1c -T
-    gmt makecpt -C$cpt > tt1.cpt
-    gmt makecpt -C$cpt -T-1/1/0.25 > tt2.cpt
-    gmt colorbar -D0c/0.5c+w6c/0.4c+h+jBL -Ctt1.cpt -B0
-    gmt colorbar -D0c/0.0c+w6c/0.4c+h+jBL -Ctt2.cpt -Bf0.25
-    rm tt1.cpt tt2.cpt
+    gmt makecpt -C$cpt
+    gmt colorbar -D0c/0.5c+w6c/0.4c+h+jBL -C -B0
+    gmt makecpt -C$cpt -T-1/1/0.25
+    gmt colorbar -D0c/0.0c+w6c/0.4c+h+jBL -C -Bf0.25
 done
 gmt end
