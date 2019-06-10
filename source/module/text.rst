@@ -130,7 +130,7 @@ text
 
     -  ``+l`` 会直接从多段数据的段头记录里的 ``-L<label>`` 中提取信息::
 
-            gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+h > text.ps << EOF
+            gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+l > text.ps << EOF
             > -LTEXT1
             2  2
             > -LTEXT2
