@@ -91,9 +91,9 @@
    J=X16c/9c
 
    gmt begin lineColor png,pdf
-   gmt makecpt -Crainbow -T-0.5/2.5/1 > lineC.cpt
+   gmt makecpt -Crainbow -T-0.5/2.5/1
    gmt basemap -JX16c/9c -R0/9/0/4 -B1
-   gmt plot -ClineC.cpt -W2p << EOF
+   gmt plot -C -W2p << EOF
    > -Z0
    1 1
    2 3
@@ -120,5 +120,5 @@
 此示例中：
 
 - ``makecpt`` 生成CPT文件，\ ``-T-0.5/2.5/1`` 指定了范围为 ``-0.5/2.5`` 是为了与 ``<val>`` 相对应
-- ``-ClineC.cpt`` 表示线段颜色分别由生成的 ``lineC.cpt`` 文件指定
+- ``-C`` 表示线段颜色分别由生成的 ``lineC.cpt`` 文件指定
 - ``-Cblue,red,green`` 表示设置值为0、1、2的线段颜色分别为 blue, red 和 green
