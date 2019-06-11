@@ -17,7 +17,6 @@
     :show-code: false
     :width: 70%
 
-
     PS=anchor-1.ps
     gmt set MAP_TICK_LENGTH_PRIMARY 20p MAP_TICK_PEN_PRIMARY 1p
     gmt psbasemap -R0/10/0/6 -JX10c/6c -BENws -Bxf5 -Byf3 -P -K > $PS
@@ -40,16 +39,16 @@
     5  6 BC @%1%C@%%enter
     10 6 BC @%1%R@%%ight
     EOF
-    gmt pstext -J -R -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -O >> $PS << EOF
-    TL TL TL
-    TC TC TC
-    TR TR TR
-    ML ML ML
-    MC BL MC
-    MR MR MR
-    BL BL BL
-    BC BC BC
-    BR BR BR
+    gmt pstext -J -R -F+f15p,1,red+j -Dj0.5c/0.5c+v2p -O >> $PS << EOF
+    0 6 TL TL
+    5 6 TC TC
+    10 6 TR TR
+    0 3 ML ML
+    5 3 BL MC
+    10 3 MR MR
+    0 0 BL BL
+    5 0 BC BC
+    10 0 BR BR
     EOF
 
 此处的矩形元素并不一定是一个真正的矩形，GMT中很多绘图元素都可以抽象为一个矩形元素。
@@ -64,16 +63,16 @@
 
     PS=anchor-2.ps
     gmt psbasemap -Rg -JH10c -B0 -P -K > $PS
-    gmt pstext -J -R -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N -K -O >> $PS << EOF
-    TL TL TL
-    TC TC TC
-    TR TR TR
-    ML ML ML
-    MC BL MC
-    MR MR MR
-    BL BL BL
-    BC BC BC
-    BR BR BR
+    gmt pstext -J -R -F+f15p,1,red+j -Dj0.5c/0.5c+v2p -N -K -O >> $PS << EOF
+    0 6 TL TL
+    5 6 TC TC
+    10 6 TR TR
+    0 3 ML ML
+    5 3 BL MC
+    10 3 MR MR
+    0 0 BL BL
+    5 0 BC BC
+    10 0 BR BR
     EOF
 
     gmt psxy -R0/10/0/6 -JX10c/5c -Sc0.3c -Gred -N -O >> $PS << EOF
@@ -98,16 +97,16 @@
     PS=anchor-3.ps
     gmt psbasemap -R0/10/0/6 -JX10c/1.5c -B0 -K > $PS
     gmt psscale -J -R -D0c/0c+w10c/1.5c+h -B0 -Cpolar -K -O >> $PS
-    gmt pstext -J -R -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N -K -O >> $PS << EOF
-    TL BR TL
-    TC BC TC
-    TR BL TR
-    ML MR ML
-    MC MR MC
-    MR ML MR
-    BL TR BL
-    BC TC BC
-    BR TL BR
+    gmt pstext -J -R -F+f15p,1,red+j -Dj0.5c/0.5c+v2p -N -K -O >> $PS << EOF
+    0 6 BR TL
+    5 6 BC TC
+    10 6 BL TR
+    0 3 MR ML
+    5 3 MR MC
+    10 3 ML MR
+    0 0 TR BL
+    5 0 TC BC
+    10 0 TL BR
     EOF
 
     gmt psxy -J -R -Sc0.3c -Gred -N -O >> $PS << EOF
