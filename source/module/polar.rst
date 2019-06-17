@@ -3,7 +3,7 @@
 polar
 =====
 
-:官方文档: :doc:`gmt:supplements/meca/polar`
+:官方文档: :doc:`gmt:supplements/seis/polar`
 :简介: 将台站的极性信息画在震源球上
 
 一般情况下，需要使用psmeca绘制震源球，再使用pspolar将每个台站的极性信息画在

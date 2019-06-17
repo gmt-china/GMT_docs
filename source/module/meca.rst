@@ -3,7 +3,7 @@
 meca
 ====
 
-:官方文档: :doc:`gmt:supplements/meca/meca`
+:官方文档: :doc:`gmt:supplements/seis/meca`
 :简介: 在地图上绘制震源机制解
 
 -S选项

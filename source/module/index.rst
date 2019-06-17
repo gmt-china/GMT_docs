@@ -308,8 +308,6 @@
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/potential/grdseamount`  | Compute synthetic seamount bathymetry                                 |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:supplements/potential/gpsgridder`   | Interpolate GPS velocity vectors using Green's functions              |
-+-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/potential/talwani2d`    | Compute geopotential anomalies over 2-D bodies                        |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/potential/talwani3d`    | Compute geopotential anomalies over 3-D bodies                        |
@@ -323,6 +321,8 @@
 | :doc:`gmt:supplements/img/img2google`         | Create Google Earth KML tiles from bathymetry Mercator img grid       |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/img/img2grd`            | Extract a subset from an img file in Mercator or Geographic format    |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| :doc:`gmt:supplements/geodesy/gpsgridder`     | Interpolate GPS velocity vectors using Green's functions              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
 .. raw:: latex
