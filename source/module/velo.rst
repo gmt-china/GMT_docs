@@ -3,13 +3,8 @@
 velo
 ====
 
-<<<<<<< HEAD
 :官方文档: :doc:`gmt:supplements/geodesy/velo`
-:简介: 在地图上绘制速度矢量、十字线、楔形图
-=======
-:官方文档: :doc:`gmt:supplements/meca/velo`
 :简介: 在地图上绘制三种符号：矢量（向量）、十字线和旋转饼图
->>>>>>> 15b1c816e... 更新velo
 
 -S选项
 ------
