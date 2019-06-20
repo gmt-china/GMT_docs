@@ -1,0 +1,21 @@
+trigger:
+  branches:
+    include:
+    - master
+    - 5.x
+
+jobs:
+- job:
+  displayName: Build documentations
+
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+
+    - bash: echo "##vso[task.prependpath]$CONDA/bin"
+      displayName: Add conda to PATH
+
+    - bash:
+        conda list
+      displayName: test
