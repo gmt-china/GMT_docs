@@ -30,16 +30,6 @@ jobs:
       gmt --version
     displayName: Install GMT
 
-    #- bash: curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
-    #displayName: Install fonts
-  - bash: |
-      mkdir -p "${HOME}/.local/share/fonts/adobe-fonts/source-code-pro"
-      git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git "${HOME}/.local/share/fonts/adobe-fonts/source-code-pro"
-      fc-cache -f -v "${HOME}/.local/share/fonts/adobe-fonts/source-code-pro"
-      ls /home/vsts/.local/share/fonts/adobe-fonts/source-code-pro/WOFF/OTF/SourceCodePro-It.otf.woff
-      ls /home/vsts/.local/share/fonts/adobe-fonts/source-code-pro/*
-    displayName: Install fonts
-
   - bash: echo "##vso[task.prependpath]$HOME/.TinyTeX/bin/x86_64-linux"
     displayName: Set TinyTeX PATH
 
