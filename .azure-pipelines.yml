@@ -16,6 +16,6 @@ jobs:
     - bash: echo "##vso[task.prependpath]$CONDA/bin"
       displayName: Add conda to PATH
 
-    - bash:
-        conda list
-      displayName: test
+    - bash: |
+        conda install --file requirements.txt
+      displayName: Install dependencies
