@@ -30,7 +30,11 @@ jobs:
       gmt --version
     displayName: Install GMT
 
-  - bash: curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
+    #- bash: curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
+    #displayName: Install fonts
+  - bash: |
+      git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype
+      fc-cache -f -v
     displayName: Install fonts
 
   - bash: echo "##vso[task.prependpath]$HOME/.TinyTeX/bin/x86_64-linux"
