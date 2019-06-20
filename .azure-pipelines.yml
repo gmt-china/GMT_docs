@@ -15,8 +15,12 @@ jobs:
   - checkout: self
     fetchDepth: 5
 
-  - bash: echo "##vso[task.prependpath]$CONDA/bin"
-    displayName: Add conda to PATH
+  - bash: |
+      echo "##vso[task.prependpath]$CONDA/bin"
+      conda config --set always_yes yes --set changeps1 no
+      conda config --prepend channels conda-forge
+      conda config --set show_channel_urls True
+    displayName: Config conda
 
   - bash: pip install -r requirements.txt
     displayName: Install dependencies
