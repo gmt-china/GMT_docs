@@ -33,9 +33,11 @@ jobs:
   - bash: curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
     displayName: Install fonts
 
+  - bash: echo "##vso[task.prependpath]$HOME/.TinyTeX/bin/x86_64-linux"
+    displayName: Set TinyTeX PATH
+
   # TinyTeX https://github.com/yihui/tinytex
   - bash: |
-      echo "##vso[task.prependpath]$HOME/.TinyTeX/bin/x86_64-linux"
       wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
       echo $PATH
       tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
