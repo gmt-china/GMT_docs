@@ -1,11 +1,7 @@
 #!/bin/bash
-PS=GMT_escape_examples.ps
-R=0/2/-1/9
-J=X18c/-8c
 
-gmt psxy -R$R -J$J -P -K -T > $PS
-
-gmt pstext -R -J -Bg1 -Bwsen -F+f -K -O -N >> $PS << EOF
+gmt begin text_escape_examples pdf,png
+gmt text -JX18c/-8c -R0/2/-1/9 -Bg1 -Bwsen -F+f -N  << EOF
 0.5  -0.5 10p,5,black Input
 1.5  -0.5 10p,5,black Output
 
@@ -36,6 +32,4 @@ gmt pstext -R -J -Bg1 -Bwsen -F+f -K -O -N >> $PS << EOF
 0.5  8.5 10p,8,black Stresses are @@~s@@~@@+*@@+@@-xx@@- MPa
 1.5  8.5 -,-,black Stresses are @~s@~@+*@+@-xx@- MPa
 EOF
-gmt psxy -R -J -O -T >> $PS
-
-rm gmt.history
+gmt end

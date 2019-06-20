@@ -22,4 +22,4 @@
 .. gmt-plot::
     :caption: 使用等距方位投影绘制全球图
 
-    gmt pscoast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest > GMT_az_equidistant.ps
+    gmt coast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -png GMT_az_equidistant

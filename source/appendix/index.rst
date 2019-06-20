@@ -4,12 +4,11 @@
 .. toctree::
    :maxdepth: 2
 
-   style
    cmd/index
    colors
    patterns
+   modes-difference
    low-level/index
-   calculate-distance
    variables
    special-dirs
    contour-annot

@@ -6,20 +6,20 @@
 控制。这一节则主要介绍矢量头的属性及控制方式。
 
 GMT 中能够绘制矢量的模块有
-:doc:`/module/psxy`\ 、
-:doc:`gmt:psxyz`\ 、
+:doc:`/module/plot`\ 、
+:doc:`gmt:plot3d`\ 、
 :doc:`/module/grdvector`\ 、
-:doc:`/module/psvelo` \ 、
-:doc:`/module/psrose`\ 、
-:doc:`/module/psternary` 和
-:doc:`/module/pspolar`\ 。
-其中最常见的绘制矢量的模块是 :doc:`/module/psxy`\ 。
+:doc:`/module/velo` \ 、
+:doc:`/module/rose`\ 、
+:doc:`/module/ternary` 和
+:doc:`/module/polar`\ 。
+其中最常见的绘制矢量的模块是 :doc:`/module/plot`\ 。
 
-下面的命令使用 :doc:`/module/psxy` 的 ``-Sv`` 选项绘制了一个最简单的矢量。
+下面的命令使用 :doc:`/module/plot` 的 ``-Sv`` 选项绘制了一个最简单的矢量。
 
 .. gmt-plot::
 
-   echo 1 1 0 3 | gmt psxy -R0/5/0/2 -JX5c/2c -Sv0.5c+e -W1.5p -Gred -P > vector.ps
+   echo 1 1 0 3 | gmt plot -R0/5/0/2 -JX5c/2c -Sv0.5c+e -W1.5p -Gred -png vector
 
 接下来将介绍如何通过在 ``-Sv0.5c`` 后增加更多的子选项来进一步修改矢量头的属性。
 
@@ -38,13 +38,12 @@ GMT 中能够绘制矢量的模块有
     .. gmt-plot::
         :show-code: false
 
-        PS=vector-head.ps
-        gmt psxy -R0/5/0/2 -JX2c/1c -K -T > $PS
+        gmt begin vector-head pdf,png
         for symbol in t c a A i I; do
-            echo 1 1 0 3 | gmt psxy -R -J -Sv0.5c+b${symbol} -W1.5p -Gred -X2c -K -O >> $PS
-            echo 3 0.5 $symbol | gmt pstext -R -J -F+f15p,9 -N -K -O >> $PS
+            echo 1 1 0 3 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b${symbol} -W1.5p -Gred -X2c
+            echo 3 0.5 $symbol | gmt text -F+f15p,9 -N
         done
-        gmt psxy -R -J -O -T >> $PS
+        gmt end
 
     - ``f|r`` 在 ``+m`` 用用于指定矢量头的方向沿着正方向或逆方向（默认为正方向，
       即从起点指向终点）
@@ -66,13 +65,12 @@ GMT 中能够绘制矢量的模块有
     .. gmt-plot::
         :show-code: false
 
-        PS=vector-head.ps
-        gmt psxy -R0/5/0/2 -JX2c/1c -K -T > $PS
+        gmt begin vector-shape pdf,png
         for shape in -2 -1 0 1 2; do
-            echo 1 1 0 1.5 | gmt psxy -R -J -Sv0.5c+b+h$shape -W1.5p -Gred -X2c -K -O >> $PS
-            echo 3 0.5 +h$shape | gmt pstext -R -J -F+f8p,9 -N -K -O >> $PS
+            echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
+            echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
         done
-        gmt psxy -R -J -O -T >> $PS
+        gmt end
 
 矢量头线条颜色和填充色
 ----------------------
@@ -106,7 +104,7 @@ GMT提供了三类矢量：
 - 地理矢量：矢量起点到终点之间的矢量线以大圆弧路径连接
 - 弧形矢量：矢量线是以某一点为中心的一段圆弧
 
-:doc:`/module/psxy` 模块中：
+:doc:`/module/plot` 模块中：
 
 - ``-Sv`` 或 ``-SV`` 用于绘制笛卡尔矢量
 - ``-S=`` 用于绘制地理矢量
@@ -117,15 +115,18 @@ GMT提供了三类矢量：
 .. gmt-plot::
     :caption: 三种矢量：（左）笛卡尔矢量；（中）地理矢量；（右）弧形矢量
 
-    PS=arrows.ps
+    gmt begin arrows pdf,png
+
     # 笛卡尔矢量
-    echo 0.5 1.5 4.5 1.5 | gmt psxy -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred -K > $PS
+    echo 0.5 1.5 4.5 1.5 | gmt plot -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred
 
     # 地理矢量
-    echo 10 -35 90 8000 | gmt psxy -R0/90/-41.17/41.17 -JM1.75i -S=0.2i+b+e -W1.5p -Gred -X2i -K -O >> $PS
+    echo 10 -35 90 8000 | gmt plot -R0/90/-41.17/41.17 -JM1.75i -S=0.2i+b+e -W1.5p -Gred -X2i
 
     # 弧形矢量
-    echo 0.5 0.5 0.9i 0 90 | gmt psxy -R0/5/0/5 -JX1.75i -Sm0.2i+b+e -W1.5p -Gred -X2i -O >> $PS
+    echo 0.5 0.5 0.9i 0 90 | gmt plot -R0/5/0/5 -JX1.75i -Sm0.2i+b+e -W1.5p -Gred -X2i
+
+    gmt end
 
 笛卡尔矢量和地理矢量
 ~~~~~~~~~~~~~~~~~~~~

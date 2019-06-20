@@ -66,15 +66,14 @@ MAP_DEGREE_SYMBOL
     .. gmt-plot::
         :show-code: false
 
-        PS=map_degree_symbol.ps
-        symbol=ring
+        gmt begin map_degree_symbol pdf,png
         gmt set FONT_TITLE 18p MAP_TITLE_OFFSET 0p
-        gmt psbasemap -R0/2/0/1 -JM5c -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -K > $PS
-        for symbol in degree colon none; do
-            gmt psbasemap -R -J -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -X7c -K -O >> $PS
-        done
-        gmt psxy -R -J -T -O >> $PS
-        rm gmt.*
+        gmt subplot begin 1x4 -Fs5c
+          for symbol in ring degree colon none; do
+            gmt basemap -R0/2/0/1 -JM5c -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -c
+          done
+        gmt subplot end
+        gmt end
 
 .. _MAP_ANNOT_ORTHO:
 
@@ -86,14 +85,14 @@ MAP_ANNOT_ORTHO
     .. gmt-plot::
         :show-code: false
 
-        PS=map_annot_ortho.ps
-        axes=ws
-        gmt psbasemap -R0/5/0/5 -JX4c -Baf -B+t"$axes" --MAP_ANNOT_ORTHO=$axes -K > $PS
-        for axes in sn wesn z; do
-            gmt psbasemap -J -R -Baf -B+t"$axes" --MAP_ANNOT_ORTHO=$axes -K -O -X6c >> $PS
-        done
-        gmt psxy -R -J -T -O >> $PS
-        rm gmt.*
+        gmt begin map_annot_ortho pdf,png
+        gmt subplot begin 1x4 -Fs5c
+          for axes in we sn wesn z; do
+            gmt basemap -R0/5/0/5 -Baf -B+t"$axes" --MAP_ANNOT_ORTHO=$axes -c
+          done
+        gmt subplot end
+        gmt end
+
 
 .. _MAP_ANNOT_OBLIQUE:
 
@@ -215,12 +214,14 @@ MAP_POLAR_CAP
     .. gmt-plot::
         :show-code: false
 
+        gmt begin map pdf,png
         gmt set FONT_TITLE 15p MAP_TITLE_OFFSET -5p
-        cap=85/90
-        gmt pscoast -Rg -JA280/30/5c -Bg -B+t"$cap" -Dc -A1000 -Gnavy --MAP_POLAR_CAP=$cap -K > map_polar_cap.ps
-        cap=80/60
-        gmt pscoast -Rg -JA280/30/5c -Bg -B+t"$cap" -Dc -A1000 -Gnavy --MAP_POLAR_CAP=$cap -O -X6c >> map_polar_cap.ps
-        rm gmt.*
+        gmt subplot begin 1x3 -Fs5c -M0c
+        for cap in none 85/90 80/60; do
+            gmt coast -Rg -JA280/30/? -Bg -B+t"$cap" -Dc -A1000 -Gnavy --MAP_POLAR_CAP=$cap -c
+        done
+        gmt subplot end
+        gmt end
 
 标题相关参数
 ------------
@@ -229,6 +230,11 @@ MAP_POLAR_CAP
 
 MAP_TITLE_OFFSET
     图标题的底部与轴标注（或轴标签）的顶部之间的距离 [14p]
+
+.. _MAP_HEADING_OFFSET:
+
+MAP_HEADING_OFFSET
+    子图标题的顶部与图总标题的底部之间的距离 [18p]
 
 其它参数
 --------
@@ -243,12 +249,12 @@ MAP_DEFAULT_PEN
 .. _MAP_ORIGIN_X:
 
 MAP_ORIGIN_X
-    新绘图在纸张上的原点的X坐标 [``1i``]
+    新绘图在纸张上的原点的X坐标（仅适用于GMT经典模式）[``1i``]
 
 .. _MAP_ORIGIN_Y:
 
 MAP_ORIGIN_Y
-    设置新绘图在纸张上的原点的Y坐标 [``1i``]
+    设置新绘图在纸张上的原点的Y坐标（仅适用于GMT经典模式）[``1i``]
 
 .. _MAP_LOGO:
 
@@ -286,10 +292,9 @@ MAP_VECTOR_SHAPE
     .. gmt-plot::
         :show-code: false
 
-        PS=vector-head.ps
-        gmt psxy -R0/5/0/2 -JX2c/1c -K -T > $PS
+        gmt begin vector-shape pdf,png
         for shape in -2 -1 0 1 2; do
-            echo 1 1 0 1.5 | gmt psxy -R -J -Sv0.5c+b+h$shape -W1.5p -Gred -X2c -K -O >> $PS
-            echo 3 0.5 +h$shape | gmt pstext -R -J -F+f8p,9 -N -K -O >> $PS
+            echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
+            echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
         done
-        gmt psxy -R -J -O -T >> $PS
+        gmt end

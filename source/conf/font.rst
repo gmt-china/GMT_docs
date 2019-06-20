@@ -36,9 +36,20 @@ FONT_LABEL
 FONT_TITLE
     图上方标题的字体 [``24p,Helvetica,black``]
 
+.. _FONT_HEADING:
+
+FONT_HEADING
+    子图模式下总标题的字体 [``32p,Helvetica,black``]
+
+.. _FONT_TAG:
+
+FONT_TAG
+    子图模式下每个子图编号（如 ``a)``\ 、\ ``ii)`` 等）的字体 [``20p,Helvetica,black``]
+
 .. _FONT_LOGO:
 
 FONT_LOGO
     GMT时间戳中字符串的字体 [``8p,Helvetica,black``]
 
     该参数中仅字体ID有效，字号及颜色均无效。
+

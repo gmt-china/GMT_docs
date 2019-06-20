@@ -81,6 +81,10 @@ PS_MITER_LIMIT
 PS_MEDIA
     设置当前纸张的尺寸 [a4|letter]
 
+    .. note::
+
+       仅在GMT经典模式下有效。GMT现代模式下直接使用无限大的纸张。
+
     下表列出了GMT预定义的若干种纸张尺寸及其对应的宽度和高度（单位为points）。
 
     .. table:: GMT预定义纸张大小
@@ -146,6 +150,10 @@ PS_PAGE_COLOR
 PS_PAGE_ORIENTATION
     设置纸张方向 [``landscape``]
 
+    .. note::
+
+       仅GMT经典模式下有效，现代模式下纸张始终是 protrait 模式。
+
     可以取 ``portrait`` 或 ``landscape``\ 。
 
 .. _PS_SCALE_X:
@@ -170,6 +178,13 @@ PS_TRANSPARENCY
     可取值包括Color、ColorBurn、ColorDodge、Darken、Difference、Exclusion、
     HardLight、Hue、Lighten、Luminosity、Multiply、Normal、Overlay、Saturation、
     SoftLight、Screen
+
+.. _PS_CONVERT:
+
+PS_CONVERT
+    现在模式下在执行 ``gmt end`` 命令时GMT会自动调用 :doc:`/module/psconvert`
+    生成用户指定格式的图片。该选项用于控制调用 ``psconvert`` 是的默认参数，
+    多个参数之间以逗号分隔 [``A,P``]
 
 .. _PS_IMAGE_COMPRESS:
 

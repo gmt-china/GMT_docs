@@ -9,8 +9,8 @@ GMT中笛卡尔坐标变换分为三类：
 
 在开始之前，先用 :doc:`gmt:gmtmath` 生成两个数据以供接下来示例使用::
 
-    gmt gmtmath -T0/100/1  T SQRT = sqrt.txt
-    gmt gmtmath -T0/100/10 T SQRT = sqrt10.txt
+    gmt math -T0/100/1  T SQRT = sqrt.txt
+    gmt math -T0/100/10 T SQRT = sqrt10.txt
 
 笛卡尔线性坐标
 --------------
@@ -39,8 +39,10 @@ GMT中笛卡尔坐标变换分为三类：
 .. gmt-plot::
     :caption: 笛卡尔坐标的线性变换
 
-    gmt psxy -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- -P -K sqrt.txt > GMT_linear.ps
-    gmt psxy -R -J -St0.1i -N -Gred -Wfaint -O sqrt10.txt >> GMT_linear.ps
+    gmt begin GMT_linear pdf,png
+    gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
+    gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
+    gmt end
 
 说明：
 
@@ -65,9 +67,10 @@ GMT中笛卡尔坐标变换分为三类：
 .. gmt-plot::
     :caption: 地理坐标的线性变换
 
+    gmt begin GMT_linear_d pdf,png
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
-    gmt pscoast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest \
-            -P -Slightblue > GMT_linear_d.ps
+    gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
+    gmt end
 
 日期时间坐标
 ~~~~~~~~~~~~
@@ -81,10 +84,12 @@ GMT中笛卡尔坐标变换分为三类：
 .. gmt-plot::
     :caption: 日期时间坐标的线性变换
 
+    gmt begin GMT_linear_cal pdf,png
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham \
             FORMAT_TIME_PRIMARY_MAP full
     gmt psbasemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d \
-                  -Bya1Hg1h -BWsNe+glightyellow -P > GMT_linear_cal.ps
+                  -Bya1Hg1h -BWsNe+glightyellow
+    gmt end
 
 笛卡尔对数投影
 --------------
@@ -97,9 +102,11 @@ GMT中笛卡尔坐标变换分为三类：
 .. gmt-plot::
     :caption: 对数投影
 
-    gmt psxy -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque \
-             -Wthick,blue,- -P -K -h sqrt.txt > GMT_log.ps
-    gmt psxy -R -J -Ss0.1i -N -Gred -W -O -h sqrt10.txt >> GMT_log.ps
+    gmt begin GMT_log pdf,png
+    gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque \
+             -Wthick,blue,- -h sqrt.txt
+    gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
+    gmt end
 
 注意：若想要X轴和Y轴都使用对数投影，且X轴和Y轴比例尺不同，则必须在指定每个轴的
 比例尺时分别加上 ``l``\ ，例如 ``-JX10cl/6cl``\ 。
@@ -116,6 +123,8 @@ GMT中笛卡尔坐标变换分为三类：
 .. gmt-plot::
     :caption: 指数变换
 
-    gmt psxy -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory \
-             -Wthick -P -K sqrt.txt > GMT_pow.ps
-    gmt psxy -R -J -Sc0.075i -Ggreen -W -O sqrt10.txt >> GMT_pow.ps
+    gmt begin GMT_pow pdf,png
+    gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory \
+             -Wthick sqrt.txt
+    gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
+    gmt end

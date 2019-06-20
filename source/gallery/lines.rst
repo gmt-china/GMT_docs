@@ -1,7 +1,7 @@
 绘制线条
 ========
 
-:doc:`/module/psxy` 模块可以在图上绘制线段、多边形、符号。
+:doc:`/module/plot` 模块可以在图上绘制线段、多边形、符号。
 
 本节主要展示如何绘制线段，线段之间如何连接，以及如何利用CPT文件绘制不同颜色的线段。
 
@@ -14,7 +14,7 @@
    :language: bash
    :caption: 简单线段示例
 
-   gmt psxy -JX16c/9c -R0/8/0/5 -B1 -W2p,blue > lineSimp.ps << EOF
+   gmt plot -JX16c/9c -R0/8/0/5 -B1 -W2p,blue -png lineSimp << EOF
    >
    1 2
    2 1
@@ -43,17 +43,17 @@
    :language: bash
    :caption: 地理坐标下不同连接方式的线段
 
-   PS=lineGeo.ps
-
    cat > input.dat << EOF
    160 10
    20 70
    EOF
-   gmt psbasemap -JN90/10c -R0/180/0/90 -Bx60 -By30 -K > $PS
-   gmt psxy input.dat -J -R -W1p -O -K >> $PS
-   gmt psxy input.dat -J -R -W1p,red -A -O -K >> $PS
-   gmt psxy input.dat -J -R -W1p,green -Am -O -K >> $PS
-   gmt psxy input.dat -J -R -W1p,blue -Ap -O >> $PS
+   gmt begin lineGeo png,pdf
+   gmt basemap -JN90/10c -R0/180/0/90 -Bx60 -By30
+   gmt plot input.dat -W1p
+   gmt plot input.dat -W1p,red -A
+   gmt plot input.dat -W1p,green -Am
+   gmt plot input.dat -W1p,blue -Ap
+   gmt end
 
 在笛卡尔坐标下，两点之间默认用直线连接。下面的示例中：
 
@@ -65,16 +65,16 @@
    :language: bash
    :caption: 笛卡尔坐标下不同连接方式的线段
 
-   PS=lineCart.ps
-
    cat > input.dat << EOF
    160 10
    20 70
    EOF
-   gmt psbasemap -JX16/8c -R0/180/0/90 -Bx60 -By30 -K > $PS
-   gmt psxy input.dat -J -R -W1p -O -K >> $PS
-   gmt psxy input.dat -J -R -W1p,green -Ax -O -K >> $PS
-   gmt psxy input.dat -J -R -W1p,blue -Ay -O >> $PS
+   gmt begin lineCart png,pdf
+   gmt basemap -JX16/8c -R0/180/0/90 -Bx60 -By30
+   gmt plot input.dat -W1p
+   gmt plot input.dat -W1p,green -Ax
+   gmt plot input.dat -W1p,blue -Ay
+   gmt end
 
 绘制不同颜色的线段
 ------------------
@@ -89,10 +89,11 @@
 
    R=0/9/0/4
    J=X16c/9c
-   PS=lineColo.ps
-   gmt makecpt -Crainbow -T-0.5/2.5/1 > lineC.cpt
-   gmt psbasemap -J$J -R$R -B1 -K > $PS
-   gmt psxy -J$J -R$R -ClineC.cpt -W2p -O -K >> $PS <<EOF
+
+   gmt begin lineColor png,pdf
+   gmt makecpt -Crainbow -T-0.5/2.5/1
+   gmt basemap -JX16c/9c -R0/9/0/4 -B1
+   gmt plot -C -W2p << EOF
    > -Z0
    1 1
    2 3
@@ -103,7 +104,7 @@
    3 1
    4 3
    EOF
-   gmt psxy -J$J -R$R -Cblue,red,green -W2p -O >> $PS <<EOF
+   gmt plot -Cblue,red,green -W2p << EOF
    > -Z0
    5 3
    6 1
@@ -114,9 +115,10 @@
    7 3
    8 1
    EOF
+   gmt end
 
 此示例中：
 
 - ``makecpt`` 生成CPT文件，\ ``-T-0.5/2.5/1`` 指定了范围为 ``-0.5/2.5`` 是为了与 ``<val>`` 相对应
-- ``-ClineC.cpt`` 表示线段颜色分别由生成的 ``lineC.cpt`` 文件指定
+- ``-C`` 表示线段颜色分别由生成的 ``lineC.cpt`` 文件指定
 - ``-Cblue,red,green`` 表示设置值为0、1、2的线段颜色分别为 blue, red 和 green

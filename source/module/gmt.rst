@@ -12,18 +12,9 @@ GMT的所有功能通过如下语法调用::
 
 其中，\ ``<module>`` 是GMT模块名，\ ``<module-options>`` 是模块所支持的选项。
 
-比如，想要调用GMT的 :doc:`/module/psbasemap` 模块::
+比如，想要调用GMT的 :doc:`/module/basemap` 模块::
 
-    gmt psbasemap -JX10c/10c -R0/20/0/5 -Bafg > test.ps
-
-gmt 还提供了一个特殊的模块，名为 ``clear``\ ::
-
-    gmt clear history|conf|cache|all
-
-- ``gmt clear history``\ ：删除当前目录下的 ``gmt.history`` 文件
-- ``gmt clear conf``\ ：删除当前目录下的 ``gmt.conf`` 文件
-- ``gmt clear cache``\ ：删除用户目录（\ ``~/.gmt``\ ）下的缓存文件夹
-- ``gmt clear all``\ ：清理 history、conf 和 cache
+    gmt basemap -JX10c/10c -R0/20/0/5 -Bafg -png test
 
 除此之外，还有一些其他选项可以使用：
 

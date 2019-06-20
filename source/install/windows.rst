@@ -13,9 +13,10 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 
 1. 下载
 
-   - GMT 5.4.5:
-     `32位 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-5.4.5-win32.exe>`__
-     `64位 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-5.4.5-win64.exe>`__
+   由于GMT6.0.0尚未正式发布，请到
+   http://w3.ualg.pt/~jluis/mirone/downloads/gmt.html
+   下载最新开发版源码的二进制安装包。
+
    - ghostscript 9.26:
      `32位 <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe>`__
      `64位 <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe>`__
@@ -47,7 +48,7 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
    安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
        C:\Users\xxxx> gmt --version
-       5.4.5
+       6.0.0
 
    即表示安装成功。
 
@@ -79,9 +80,9 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 
    解压压缩包，并将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
 
-如果想要同时使用 GMT4 和 GMT5，则需要在安装完 GMT4 和 GMT5 之后到 GMT5 的 bin
-目录下，将该目录下的所有文件按照大小排序，所有大小为 6 KB 的都是 “符号链接”，
-直接选中删除就好。
+GMT6可以和GMT4共存，但不能与GMT5共存。若想要同时使用 GMT4 和 GMT6，则需要在安装完
+GMT4 和 GMT6 之后到 GMT6 的 bin目录下，将该目录下的所有文件按照大小排序，
+所有大小为 6 KB 的都是 “符号链接”，直接选中删除就好。
 
 在 Windows Subsystem for Linux (WSL) 下安装 GMT
 -----------------------------------------------

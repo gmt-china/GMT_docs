@@ -1,21 +1,10 @@
 #!/bin/bash
-PS=ps_line_cap.ps
-gmt psxy -JX15c/2c -R-0.25/16/-0.5/1.5 -W8p --PS_LINE_CAP=butt -K > $PS << EOF
+gmt begin line_cap pdf,png
+for cap in butt round square; do
+gmt plot -JX15c/2c -R-0.25/16/-0.5/1.5 -Y0.8c -W8p --PS_LINE_CAP=$cap << EOF
 0       0
-10      0
+10       0
 EOF
-echo 10.5 0 butt | gmt pstext -J -R -F+jML+f12p,8 -K -O >> $PS
-
-gmt psxy -JX15c/2c -R-0.25/16/-0.5/1.5 -W8p --PS_LINE_CAP=round -Y0.8c -K -O >> $PS << EOF
-0       0
-10      0
-EOF
-echo 10.5 0 round | gmt pstext -J -R -F+jML+f12p,8 -K -O >> $PS
-
-gmt psxy -JX15c/2c -R-0.25/16/-0.5/1.5 -W8p --PS_LINE_CAP=square -Y0.8c -K -O >> $PS << EOF
-0       0
-10      0
-EOF
-echo 10.5 0 square | gmt pstext -J -R -F+jML+f12p,8 -K -O >> $PS
-gmt psxy -J -R -T -O >> $PS
-rm gmt.*
+echo 10.5 0 $cap | gmt text -F+jML+f12p,8
+done
+gmt end

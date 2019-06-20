@@ -20,7 +20,7 @@
 :doc:`gmt:grdsample`\ 、
 :doc:`gmt:greenspline`\ 、
 :doc:`gmt:sph2grd`\ 、
-:doc:`gmt:supplements/potential/gpsgridder`\ 、
+:doc:`gmt:supplements/geodesy/gpsgridder`\ 、
 :doc:`gmt:supplements/potential/talwani2d`\ 、
 :doc:`gmt:supplements/potential/talwani3d`\ 、
 :doc:`gmt:surface`\ 、

@@ -58,7 +58,7 @@ GMT中可以用字体名（\ **区分大小写**\ ）或对应的字体编号来
 
 .. tip::
 
-   使用 ``gmt pstext -L`` 可以列出GMT所支持的字体及其编号。
+   使用 ``gmt text -L`` 可以列出GMT所支持的字体及其编号。
 
 图中大多数字体都很直观，比较特别的字体有两个，Symbol（12号）和ZapfDingbats（34号），
 前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 :doc:`/basis/special-character`\ 。
@@ -83,9 +83,9 @@ GMT中可以用字体名（\ **区分大小写**\ ）或对应的字体编号来
 小练习
 ------
 
-:doc:`/module/pstext` 模块可以用于绘制文字。下面的命令在图上写了文字 ``TEXT``\ ::
+:doc:`/module/text` 模块可以用于绘制文字。下面的命令在图上写了文字 ``TEXT``\ ::
 
-    echo 2.5 0.5 TEXT | gmt pstext -R0/5/0/1 -JX15c/2c -F+f<font> > text.ps
+    echo 2.5 0.5 TEXT | gmt text -R0/5/0/1 -JX15c/2c -F+f<font> -pdf text
 
 将其中的 ``<font>`` 修改为不同的值并查看绘图效果，以理解这一节的内容。
 

@@ -20,12 +20,12 @@
 .. gmt-plot::
     :caption: 矩形横向Mercator地图
 
-    gmt pscoast -R20/30/50/45r -Jt35/0.18i -Bag -Dl -A250 -Glightbrown -Wthinnest \
-                -P -Sseashell > GMT_transverse_merc.ps
+    gmt coast -R20/30/50/45r -Jt35/0.18i -Bag -Dl -A250 -Glightbrown -Wthinnest \
+                -Sseashell -png GMT_transverse_merc
 
 
 .. gmt-plot::
     :caption: 全球横向Mercator地图
 
-    gmt pscoast -R0/360/-80/80 -JT330/-45/3.5i -Ba30g -BWSne -Dc -A2000 \
-                -Slightblue -G0 -P > GMT_TM.ps
+    gmt coast -R0/360/-80/80 -JT330/-45/3.5i -Ba30g -BWSne -Dc -A2000 \
+                -Slightblue -G0 -png GMT_TM

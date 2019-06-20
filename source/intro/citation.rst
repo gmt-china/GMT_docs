@@ -36,7 +36,7 @@ GMT/MATLAB工具箱用户：
 
 GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关文章包括：
 
-:doc:`gmt:supplements/misc/dimfilter` 模块
+:doc:`gmt:dimfilter` 模块
     Kim, S.-S., and P. Wessel,
     Directional median filtering for regional-residual separation of bathymetry,
     *Geochem. Geophys. Geosyst.*, 9, Q03005, 2008.

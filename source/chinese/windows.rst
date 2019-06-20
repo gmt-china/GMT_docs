@@ -58,9 +58,9 @@ GMT 的中文支持
     STHeiti-Regular-GB-EUC-V   0.700   1
     STKaiti-Regular-GB-EUC-V   0.700   1
 
-用 ``gmt pstext -L`` 查看 GMT 字体::
+用 ``gmt text -L`` 查看 GMT 字体::
 
-    $ gmt pstext -L
+    $ gmt text -L
     Font #  Font Name
     ------------------------------------
     0   Helvetica

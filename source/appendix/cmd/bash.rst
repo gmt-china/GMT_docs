@@ -45,7 +45,7 @@ echo，顾名思义，就是回显的意思，在屏幕上输出 hello world::
 
 管道符号 ``|`` 会将其左侧命令的输出结果作为输入传递给其右侧语句::
 
-    echo 5 5 | gmt psxy -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred > map.ps
+    echo 5 5 | gmt plot -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred -pdf map
 
 删除文件
 ~~~~~~~~
@@ -56,9 +56,11 @@ echo，顾名思义，就是回显的意思，在屏幕上输出 hello world::
     echo 1 2 > tmp1.txt
     echo 3 4 >> tmp1.txt
     echo 5 6 > tmp2.txt
-    gmt psxy tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred -K > map.ps
-    gmt plot tmp2.txt -R -J -Sc0.5c -Gyellow -O >> map.ps
-    rm tmp* gmt.*
+    gmt begin map pdf
+    gmt plot tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred
+    gmt plot tmp2.txt -R -J -Sc0.5c -Gyellow
+    gmt end
+    rm tmp*
 
 定义变量
 --------

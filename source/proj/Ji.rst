@@ -17,10 +17,10 @@
 .. gmt-plot::
     :caption: 使用正弦曲线投影绘制世界地图
 
-    gmt pscoast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -P > GMT_sinusoidal.ps
+    gmt coast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -png GMT_sinusoidal
 
 为了减少形状的畸变，1927年引入了间断正弦曲线投影，即用三个对称的段来覆盖全球。
-传统上，间断出现在160ºW、20ºW和60ºE处。为了生成间断地图，必须调用 :doc:`/module/pscoast`
+传统上，间断出现在160ºW、20ºW和60ºE处。为了生成间断地图，必须调用 :doc:`/module/coast`
 三次以分别绘制每段地图并叠加起来。间断正弦曲线投影一般仅用于显示全球不连续数据分布。
 
 为了生成一个宽度为5.04英寸的间断世界地图，需要设置比例尺为5.04/360 = 0.014，
@@ -30,6 +30,8 @@
 .. gmt-plot::
    :caption:  使用间断正弦曲线投影绘制世界地图
 
-   gmt pscoast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack -K -P > GMT_sinus_int.ps
-   gmt pscoast -R-20/60/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.96i -O -K >> GMT_sinus_int.ps
-   gmt pscoast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.12i -O >> GMT_sinus_int.ps
+   gmt begin GMT_sinus_int pdf,png
+   gmt coast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack
+   gmt coast -R-20/60/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.96i
+   gmt coast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.12i
+   gmt end

@@ -23,7 +23,7 @@ grdlandmask
 .. include:: explain_-A.rst_
 
 ``-D<resolution>[+]``
-    选项海岸线数据的精度，见 :doc:`pscoast` 中的介绍。
+    选项海岸线数据的精度，见 :doc:`coast` 中的介绍。
 
 ``-E``
     默认情况下会将恰好位于多边形边界上的节点当作是在多边形的内部，使用该选项

@@ -1,7 +1,7 @@
 绘制直方图
 ==========
 
-:doc:`/module/pshistogram` 模块可以用于统计并绘制直方图。
+:doc:`/module/histogram` 模块可以用于统计并绘制直方图。
 
 该模块可以绘制不同类型的直方图，具体选项为：
 
@@ -19,7 +19,7 @@
    :language: bash
    :caption: 垂直直方图
 
-   gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -W5+b -L1p -i2 > histVert.ps
+   gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -W5+b -L1p -i2 -png histVert
 
 此示例中：
 
@@ -40,7 +40,7 @@
    :language: bash
    :caption: 水平直方图
 
-   gmt pshistogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 > histHori.ps
+   gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 -png histHori
 
 累积直方图
 ----------
@@ -51,7 +51,7 @@
    :language: bash
    :caption: 累积直方图
 
-   gmt pshistogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l"Depth/km" -Bya200+l"Counts" -BWSne -W5+b -L1p -i2 -Q > histCumu.ps
+   gmt histogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l"Depth/km" -Bya200+l"Counts" -BWSne -W5+b -L1p -i2 -Q -png histCumu
 
 百分比直方图
 ------------
@@ -62,4 +62,4 @@
    :language: bash
    :caption: 百分比直方图
 
-   gmt pshistogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l"Depth/km" -Bya20+l"Frequency" -BWSne -W5+b -L1p -i2 -N -Z1> histFreq.ps
+   gmt histogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l"Depth/km" -Bya20+l"Frequency" -BWSne -W5+b -L1p -i2 -N -Z1 -png histFreq

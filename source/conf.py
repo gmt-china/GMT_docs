@@ -40,7 +40,7 @@ master_doc = 'index'
 project = 'GMT中文手册'
 copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = 'GMT中文社区'
-version = '5.4.5'
+version = '6.0.0'
 release = version
 rst_prolog = '''
 .. |GMT5_latest_release| replace:: 5.4.5
@@ -68,7 +68,7 @@ html_context = {
     'display_github': True,
     'github_user': 'gmt-china',
     'github_repo': 'GMT_Docs',
-    'github_version': 'master',
+    'github_version': '6.0.0',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
 
@@ -147,5 +147,5 @@ latex_elements = {
 }
 
 intersphinx_mapping = {
-    'gmt': ('http://gmt.soest.hawaii.edu/doc/5.4.5/', None),
+    'gmt': ('http://www.generic-mapping-tools.org/gmt/latest/', None),
 }

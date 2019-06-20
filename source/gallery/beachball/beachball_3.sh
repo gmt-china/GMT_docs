@@ -1,5 +1,4 @@
 #!/bin/bash
-PS=beachball_3.ps
 CPT=meca.cpt
 
 # 生成CPT文件，为每个深度段设置不同的颜色
@@ -10,8 +9,9 @@ cat << EOF > $CPT
 60 240-1-1  100 240-1-1
 EOF
 
-gmt psbasemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSEN -P -K > $PS
-gmt psmeca -J -R -CP5p -Sa1.3c -Z$CPT -K -O >> $PS << EOF
+gmt begin beachball_3 png,pdf
+gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSEN
+gmt meca -C+s5p -Sa1.3c -Z$CPT << EOF
 # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
 104.33 31.91 39.8  32 64   85 7.0      0     0 A
 104.11 31.52 27.1  22 53   57 6.0      0     0 B
@@ -22,4 +22,5 @@ gmt psmeca -J -R -CP5p -Sa1.3c -Z$CPT -K -O >> $PS << EOF
 104.23 31.61 62.0  86 63  -51 4.7 104.96 31.69 G
 EOF
 
-gmt psscale -J -R -C$CPT -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm -L -S -O >> $PS
+gmt colorbar -C$CPT -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm -L -S
+gmt end

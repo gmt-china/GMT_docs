@@ -30,18 +30,18 @@
     :show-code: false
     :caption: 线段起点偏移示意图
 
-    ps=GMT_line_offset.ps
+    gmt begin line_offset pdf,png
     gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
-    gmt psbasemap -R8/32/40/44 -JM5i -P -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain -K > $ps
-    gmt psxy line.txt -R -J -Wfaint,red -K -O >> $ps
-    gmt psxy line.txt -R -J -W2p+o1c/500k -O -K >> $ps
-    gmt pstext -R -J -O -K -F+f10p+jCM+a << EOF >> $ps
+    gmt basemap -R8/32/40/44 -JM5i -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain
+    gmt plot line.txt -W0.5p,red
+    gmt plot line.txt -W2p+o1c/500k
+    gmt text -F+f10p+jCM+a << EOF
     11.0 42.6 -11.5 1 cm
     27.1 42.3 +9.5 500 km
     EOF
-    gmt psxy -R -J -O -T >> $ps
-    rm line.txt gmt.*
+    rm line.txt
+    gmt end
 
 线条平滑
 --------
@@ -55,7 +55,6 @@
     :show-code: false
     :caption: 线条自动样条插值示意图
 
-    ps=GMT_bezier.ps
     cat << EOF > line.txt
     0       0
     1	1
@@ -64,11 +63,13 @@
     2	1.5
     EOF
 
-    gmt psxy line.txt -R-0.25/4.25/-0.2/2.2 -JX3i/1.25i -P -W2p -K > $ps
-    gmt psxy line.txt -R -J -O -K -Sc0.1i -Gred -Wfaint >> $ps
-    gmt psxy line.txt -R -J -O -W2p+s -K -X3i >> $ps
-    gmt psxy line.txt -R -J -O -Sc0.1i -Gred -Wfaint >> $ps
-    rm gmt.* line.txt
+    gmt begin line_bezier pdf,png
+    gmt plot line.txt -R-0.25/4.25/-0.2/2.2 -JX3i/1.25i -W2p
+    gmt plot line.txt -Sc0.1i -Gred -Wfaint
+    gmt plot line.txt -W2p+s -X3i
+    gmt plot line.txt -Sc0.1i -Gred -Wfaint
+    rm line.txt
+    gmt end
 
 端点箭头
 --------
@@ -87,13 +88,13 @@
     :show-code: false
     :caption: 线条端点箭头示意图
 
-    ps=GMT_line_arrow.ps
+    gmt begin line_arrow pdf,png
     gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
-    gmt psxy line.txt -R8/32/40/44 -JM5i -P -Wfaint,red -K -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain > $ps
-    gmt psxy line.txt -R -J -W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue -O -K --MAP_VECTOR_SHAPE=0.5 >> $ps
-    gmt psxy -R -J -O -T >> $ps
-    rm gmt.* line.txt
+    gmt plot line.txt -R8/32/40/44 -JM5i -Wfaint,red -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain
+    gmt plot line.txt -W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue --MAP_VECTOR_SHAPE=0.5
+    rm line.txt
+    gmt end
 
 其它属性
 --------

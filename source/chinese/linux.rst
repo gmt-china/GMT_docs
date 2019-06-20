@@ -56,9 +56,9 @@ GMT的中文支持
 
 这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。
 
-用 ``gmt pstext -L`` 命令查看 GMT 当前的字体配置::
+用 ``gmt text -L`` 命令查看 GMT 当前的字体配置::
 
-    $ gmt pstext -L
+    $ gmt text -L
     Font #  Font Name
     ------------------------------------
     0   Helvetica

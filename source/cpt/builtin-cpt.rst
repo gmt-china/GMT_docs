@@ -7,13 +7,13 @@ GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展�
 下面列出了GMT内置的若干个CPT文件的具体配色以及CPT文件名（位于图下方）。
 每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到::
 
-    gmt psscale -D0c/0c+w10c/1c+h -B0 -C<cpt> -P > CPT.ps
+    gmt colorbar -D0c/0c+w10c/1c+h -B0 -C<cpt> -pdf CPT
 
 下面的色标是利用 :doc:`/module/makecpt` 对原始CPT文件做离散处理得到的单色型
 CPT文件，可以用如下命令绘制得到::
 
     gmt makecpt -C<cpt> -T-1/1/0.25 > new.cpt
-    gmt psscale -D0c/0c+w10c/1c+h -B0 -Cnew.cpt -P > CPT.ps
+    gmt colorbar -D0c/0c+w10c/1c+h -B0 -Cnew.cpt -pdf CPT
 
 +--------------------------------+--------------------------------+
 | .. figure:: cpt/abyss.*        | .. figure:: cpt/bathy.*        |
@@ -21,20 +21,35 @@ CPT文件，可以用如下命令绘制得到::
 |                                |                                |
 |    abyss                       |    bathy                       |
 +--------------------------------+--------------------------------+
+| .. figure:: cpt/batlow.*       | .. figure:: cpt/berlin.*       |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    batlow                      |    berlin                      |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/bilbao.*       | .. figure:: cpt/broc.*         |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    bilbao                      |    broc                        |
++--------------------------------+--------------------------------+
 | .. figure:: cpt/categorical.*  | .. figure:: cpt/cool.*         |
 |    :align: center              |    :align: center              |
 |                                |                                |
 |    categorical                 |    cool                        |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/copper.*       | .. figure:: cpt/cubhelix.*     |
+| .. figure:: cpt/copper.*       | .. figure:: cpt/cork.*         |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    copper                      |    cubhelix                    |
+|    copper                      |    cork                        |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/cyclic.*       | .. figure:: cpt/dem1.*         |
+| .. figure:: cpt/cubhelix.*     | .. figure:: cpt/cyclic.*       |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    cyclic                      |    dem1                        |
+|    cubhelix                    |    cyclic                      |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/davos.*        | .. figure:: cpt/dem1.*         |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    davos                       |    dem1                        |
 +--------------------------------+--------------------------------+
 | .. figure:: cpt/dem2.*         | .. figure:: cpt/dem3.*         |
 |    :align: center              |    :align: center              |
@@ -61,10 +76,15 @@ CPT文件，可以用如下命令绘制得到::
 |                                |                                |
 |    geo                         |    globe                       |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/gray.*         | .. figure:: cpt/haxby.*        |
+| .. figure:: cpt/gray.*         | .. figure:: cpt/grayC.*        |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    gray                        |    haxby                       |
+|    gray                        |    grayC                       |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/hawaii.*       | .. figure:: cpt/haxby.*        |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    hawaii                      |    haxby                       |
 +--------------------------------+--------------------------------+
 | .. figure:: cpt/hot.*          | .. figure:: cpt/ibcso.*        |
 |    :align: center              |    :align: center              |
@@ -76,55 +96,85 @@ CPT文件，可以用如下命令绘制得到::
 |                                |                                |
 |    inferno                     |    jet                         |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/magma.*        | .. figure:: cpt/nighttime.*    |
+| .. figure:: cpt/lajolla.*      | .. figure:: cpt/lapaz.*        |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    magma                       |    nighttime                   |
+|    lajolla                     |    lapaz                       |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/no_green.*     | .. figure:: cpt/ocean.*        |
+| .. figure:: cpt/lisbon.*       | .. figure:: cpt/magma.*        |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    no_green                    |    ocean                       |
+|    lisbon                      |    magma                       |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/paired.*       | .. figure:: cpt/panoply.*      |
+| .. figure:: cpt/nighttime.*    | .. figure:: cpt/no_green.*     |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    paired                      |    panoply                     |
+|    nighttime                   |    no_green                    |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/plasma.*       | .. figure:: cpt/polar.*        |
+| .. figure:: cpt/ocean.*        | .. figure:: cpt/oleron.*       |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    plasma                      |    polar                       |
+|    ocean                       |    oleron                      |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/rainbow.*      | .. figure:: cpt/red2green.*    |
+| .. figure:: cpt/oslo.*         | .. figure:: cpt/paired.*       |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    rainbow                     |    red2green                   |
+|    oslo                        |    paired                      |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/relief.*       | .. figure:: cpt/seafloor.*     |
+| .. figure:: cpt/panoply.*      | .. figure:: cpt/plasma.*       |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    relief                      |    seafloor                    |
+|    panoply                     |    plasma                      |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/polar.*        | .. figure:: cpt/rainbow.*      |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    polar                       |    rainbow                     |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/red2green.*    | .. figure:: cpt/relief.*       |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    red2green                   |    relief                      |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/roma.*         | .. figure:: cpt/seafloor.*     |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    roma                        |    seafloor                    |
 +--------------------------------+--------------------------------+
 | .. figure:: cpt/sealand.*      | .. figure:: cpt/seis.*         |
 |    :align: center              |    :align: center              |
 |                                |                                |
 |    sealand                     |    seis                        |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/split.*        | .. figure:: cpt/terra.*        |
+| .. figure:: cpt/split.*        | .. figure:: cpt/srtm.*         |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    split                       |    terra                       |
+|    split                       |    srtm                        |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/topo.*         | .. figure:: cpt/viridis.*      |
+| .. figure:: cpt/terra.*        | .. figure:: cpt/tofino.*       |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    topo                        |    viridis                     |
+|    terra                       |    tofino                      |
 +--------------------------------+--------------------------------+
-| .. figure:: cpt/world.*        | .. figure:: cpt/wysiwyg.*      |
+| .. figure:: cpt/tokyo.*        | .. figure:: cpt/topo.*         |
 |    :align: center              |    :align: center              |
 |                                |                                |
-|    world                       |    wysiwyg                     |
+|    tokyo                       |    topo                        |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/turku.*        | .. figure:: cpt/vik.*          |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    turku                       |    vik                         |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/viridis.*      | .. figure:: cpt/world.*        |
+|    :align: center              |    :align: center              |
+|                                |                                |
+|    viridis                     |    world                       |
++--------------------------------+--------------------------------+
+| .. figure:: cpt/wysiwyg.*      |                                |
+|    :align: center              |                                |
+|                                |                                |
+|    wysiwyg                     |                                |
 +--------------------------------+--------------------------------+
 
 GMT内置CPT文件中，某些是针对特定的需求设计的，因而常用于特定的图件中：

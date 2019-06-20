@@ -25,9 +25,10 @@
 .. gmt-plot::
     :caption: 使用Lambert方位等面积投影绘制矩形地图
 
+    gmt begin GMT_lambert_az_rect pdf,png
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0
-    gmt pscoast -R0/-40/60/-10r -JA30/-30/4.5i -Bag -Dl -A500 -Gp300/10 \
-                -Wthinnest -P > GMT_lambert_az_rect.ps
+    gmt coast -R0/-40/60/-10r -JA30/-30/4.5i -Bag -Dl -A500 -Gp300/10 -Wthinnest
+    gmt end
 
 半球地图
 --------
@@ -37,7 +38,7 @@
 .. gmt-plot::
     :caption: 使用Lambert方位等面积投影绘制半球地图
 
-    gmt pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps
+    gmt coast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -png GMT_lambert_az_hemi
 
 震源辐射花样
 ------------

@@ -6,8 +6,8 @@ GSHHG: 全球高精度海岸线数据
 GSHHG，全称为 A Global Self-consistent, Hierarchical, High-resolution Geography Database。
 GMT提供的GSHHG数据中包含了海岸线、河流和国界等数据。
 
-GMT的 :doc:`/module/pscoast` 模块可以直接绘制GSHHG中的数据，也可以使用
-:doc:`/module/pscoast` 的 ``-M`` 选项将数据导出为纯文本文件供其他程序使用。
+GMT的 :doc:`/module/coast` 模块可以直接绘制GSHHG中的数据，也可以使用
+:doc:`/module/coast` 的 ``-M`` 选项将数据导出为纯文本文件供其他程序使用。
 
 数据精度
 --------
@@ -16,7 +16,7 @@ GSHHG提供了五种不同精度的数据，以满足不同的需求。五种精
 
     full > high > intermediate > low > crude
 
-:doc:`/module/pscoast` 的 ``-D`` 选项加上每种精度的单词首字母即可指定使用何种精度的数据。
+:doc:`/module/coast` 的 ``-D`` 选项加上每种精度的单词首字母即可指定使用何种精度的数据。
 在绘制全球地图时，可以用 ``-Dc`` 指定使用最低精度的数据，以避免绘制了大量细节而导致文件太大；
 在绘制几度范围的小区域地图时，则可以使用 ``-Df`` 指定使用最高精度的数据。
 当然，也可以使用 ``-Da`` 选项，此时GMT会根据当前绘图区域的大小自动选择
@@ -28,12 +28,14 @@ GSHHG提供了五种不同精度的数据，以满足不同的需求。五种精
 .. gmt-plot::
     :show-code: false
 
+    gmt begin map png,pdf
     gmt set MAP_TITLE_OFFSET -10p
-    gmt pscoast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Df" -W1p -Df -K > map.ps
-    gmt pscoast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Dh" -W1p -Dh -K -O -X4c >> map.ps
-    gmt pscoast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Di" -W1p -Di -K -O -X4c >> map.ps
-    gmt pscoast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Dl" -W1p -Dl -K -O -X4c >> map.ps
-    gmt pscoast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Dc" -W1p -Dc -O -X4c >> map.ps
+    gmt coast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Df" -W1p -Df
+    gmt coast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Dh" -W1p -Dh -X4c
+    gmt coast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Di" -W1p -Di -X4c
+    gmt coast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Dl" -W1p -Dl -X4c
+    gmt coast -JM4c -R-158.3/-157.6/21.2/21.8 -B+t"-Dc" -W1p -Dc -X4c
+    gmt end
 
 数据内容
 --------
@@ -50,7 +52,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - 3: 湖泊中的岛屿与湖泊的分界线
 - 4: 湖泊中的岛屿里的池塘与岛屿的分界线
 
-:doc:`/module/pscoast` 模块中有如下几个与海岸线相关的选项：
+:doc:`/module/coast` 模块中有如下几个与海岸线相关的选项：
 
 - ``-W[<level>/]<pen>`` 绘制不同等级的海岸线
 - ``-G<fill>`` 设置陆地、岛屿等陆区的填充色
@@ -75,7 +77,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - 9: Minor canals.
 - 10: Irrigation canals.
 
-:doc:`/module/pscoast` 模块的 ``-I`` 选项可以用于绘制不同等级的河流，其基本语法
+:doc:`/module/coast` 模块的 ``-I`` 选项可以用于绘制不同等级的河流，其基本语法
 为 ``-I<level>/<pen>``\ 。其中 ``<level>`` 除了可以取1至10之外，还可以取：
 
 - ``a``: 所有河流和运河，即包含0-10等级的所有河流
@@ -96,7 +98,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - 2: 美国州界
 - 3: 海洋边界
 
-:doc:`/module/pscoast` 模块的 ``-N`` 选项可以用于绘制不同等级的国界线，其基本
+:doc:`/module/coast` 模块的 ``-N`` 选项可以用于绘制不同等级的国界线，其基本
 语法为 ``-N<level>/<pen>``\ 。其中 ``<level>`` 可以取1至3，也可以
 取 ``a`` \（表示所有边界）。该选项可以重复多次使用，
 为不同等级的国界设置不同的画笔属性。
@@ -108,31 +110,31 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 
 .. gmt-plot::
 
-    gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -P > map.ps
+    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -png map
 
 同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），
 蓝色的为3级岛屿线（即五大湖内部的岛屿）：
 
 .. gmt-plot::
 
-    gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
-        -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -P > map.ps
+    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
+        -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
 
 绘制1-3级海岸线，并为陆地、还有、湖泊填充不同的颜色：
 
 .. gmt-plot::
 
-    gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
+    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
         -W1/0.5p -W2/0.3p,red -W3/0.2p,blue \
-        -Gtan -Slightblue -Cl/royalblue -P > map.ps
+        -Gtan -Slightblue -Cl/royalblue -png map
 
 绘制海岸线、国界和美国州界：
 
 .. gmt-plot::
 
-    gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
+    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
         -W1/0.5p -N1/thick,red -N2/thinner \
-        -Gtan -Slightblue -Cl/royalblue -P > map.ps
+        -Gtan -Slightblue -Cl/royalblue -png map
 
 备注
 ----

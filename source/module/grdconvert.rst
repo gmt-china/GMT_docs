@@ -16,7 +16,7 @@ grdconvert
     要写入的网格文件。
 
 ``-N``
-    如果你想要将一个网格文件转换为 native 二进制文件供 :doc:`grdraster` 模块直接使用，则需要使用 ``-N`` 选项，以保证不将 GMT 头段结构写到文件中。
+    如果你想要将一个网格文件转换为 native 二进制文件，则需要使用 ``-N`` 选项，以保证不将 GMT 头段结构写到文件中。
 
 示例
 ----
@@ -32,10 +32,6 @@ grdconvert
 将网格文件转换成二字节短整型文件，将其乘以10并减去32000，并设置无数据节点的值为-9999::
 
     gmt grdconvert values.nc shorts.i2=bs/10/-32000/-9999 -V
-
-将网格文件转换为 :doc:`grdraster` 可直接使用的二进制文件::
-
-    gmt grdconvert etopo2.nc etopo2.i2=bs -N -V
 
 To creat a dumb file saved as a 32 bits float GeoTiff using GDAL::
 

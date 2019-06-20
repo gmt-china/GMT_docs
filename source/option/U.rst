@@ -3,13 +3,14 @@
 
 ``-U`` 选项用于在图上绘制一个带有GMT标识的时间戳。其语法为::
 
-    -U[<just>/<dx>/<dy>/][c|<label>]
+    -U[<label>][+c][+j<just>][+o<dx>/<dy>]
 
 - ``-U`` 不加任何参数时会在当前图的左下角添加一个带GMT标识的时间戳
-- ``-U<just>/<dx>/<dy>`` 用于设置时间戳的锚点（见 :doc:`/basis/anchor`\ ）
-  及时间戳相对于当前坐标原点的位置，比如 ``-UBL/-1c/-1c``
 - ``-U<label>`` 会在时间戳后打印字符串 ``<label>``\ ，比如 ``-U"This is string"``
-- ``-Uc`` 会在时间戳后打印当前命令
+- ``-U+c`` 会在时间戳后打印当前命令
+- ``-U+j<just>+o<dx>/<dy>`` 用于控制时间戳相对于当前坐标原点的锚点
+  （见 :doc:`/basis/anchor`\ ）和偏移量。例如，\ ``-jBL+o0/0`` 表示将时间戳的
+  左下角与底图的坐标原点对齐
 
 GMT参数中有一些与时间戳相关的参数：
 
@@ -21,8 +22,7 @@ GMT参数中有一些与时间戳相关的参数：
 .. gmt-plot::
     :caption: ``-U`` 选项加时间戳
 
-    gmt psbasemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -P \
-        -UBL/-1.5c/-1.5c/"This is a GMT logo" > GMT_-U.ps
+    gmt basemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -U"This is a GMT logo" -png GMT_-U
 
 .. important::
 

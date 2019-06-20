@@ -11,12 +11,27 @@ IO_HEADER
 
     可以取 ``true|false``\ 。若值为 ``true``\ ，则等效于使用 :doc:`/option/h`
 
+.. _IO_HEADER_MARKER:
+
+IO_HEADER_MARKER
+    输入ASCII表文件中文件头记录的标识符 [``#``]
+
+    若希望输入和输出数据中使用不同的文件头标识符，则可以使用逗号分隔输入和
+    输出数据的文件头标识符，比如 ``#,:``\ 。
+
 .. _IO_N_HEADER_RECS:
 
 IO_N_HEADER_RECS
     在使用 ``-h`` 选项时，要跳过的文件头记录的数目 [0]
 
     见 :doc:`/option/h` 和 :doc:`/table/ascii`\ 。
+
+.. _IO_FIRST_HEADER:
+
+IO_FIRST_HEADER
+    若整个数据中只有一个数据段时，是否要写这个数据段的文件头记录。
+    默认情况下，只有当这个单独段的头段记录中有额外的内容时才会写该头记录。
+    可选的值包括 ``always``\ 、\ ``never`` 和 ``maybe`` [``maybe``]
 
 .. _IO_COL_SEPARATOR:
 
