@@ -37,9 +37,9 @@ jobs:
   - bash: |
       echo "##vso[task.prependpath]$HOME/.TinyTeX/bin/x86_64-linux"
       wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
+      echo $PATH
       tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
                     float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
-      ls ${HOME}/.TinyTeX/bin/x86_64-linux
     displayName: Install tinytex
 
   - bash: make build
