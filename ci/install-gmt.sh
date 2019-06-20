@@ -15,7 +15,7 @@ cd /tmp/GMT-build
 if [[ "${GMT_VERSION}" != '6.0.0' ]]; then
     wget --quiet https://github.com/GenericMappingTools/gmt/archive/${GMT_VERSION}.tar.gz -O gmt.tar.gz
 else
-    wget --quiet https://github.com/GenericMappingTools/gmt/archive/master.tar.gz -O gmt.tar.gz
+    wget --quiet https://github.com/GenericMappingTools/gmt/archive/6.0.0rc1.tar.gz -O gmt.tar.gz
 fi
 wget --quiet http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION}.tar.gz -O gshhg-gmt.tar.gz
 wget --quiet http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz -O dcw-gmt.tar.gz
