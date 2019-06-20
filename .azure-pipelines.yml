@@ -23,7 +23,23 @@ jobs:
     displayName: Config conda
 
   - bash: pip install -r requirements.txt
-    displayName: Install dependencies
+    displayName: Install Python dependencies
 
-  - bash: conda install -c conda-forge/label/dev gmt=6.0.0rc1
+  - bash: |
+      conda install -c conda-forge/label/dev gmt=6.0.0rc1
+      gmt --version
     displayName: Install GMT
+
+  - bash: curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
+    displayName: Install fonts
+
+  # TinyTeX https://github.com/yihui/tinytex
+  - bash: |
+      wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
+      tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
+                    float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
+    displayName: Install tinytex
+
+  - bash: make build
+    displayName: Build documentation
+
