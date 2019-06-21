@@ -96,17 +96,17 @@ html_context = {
 
 # See https://github.com/rtfd/sphinx_rtd_theme/issues/761
 # Load custom stylesheets to support Algolia search.
-html_css_files = [
-  'algolia.css',
-  'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
-]
+#html_css_files = [
+#  'algolia.css',
+#  'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
+#]
 
 # Load custom javascript to support Algolia search. Note that the sequence
 # defined below (external first) is intentional!
-html_js_files = [
-  ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
-  ('algolia.js', {'defer': 'defer'})
-]
+#html_js_files = [
+#  ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
+#  ('algolia.js', {'defer': 'defer'})
+#]
 
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
