@@ -85,15 +85,11 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 下载
 ----
 
-Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的国内下载镜像）：
+Linux下安装GMT需要下载如下三个文件：
 
-#. GMT源码：`gmt-master.tar.gz <https://github.com/GenericMappingTools/gmt/archive/master.tar.gz>`_
+#. GMT 6.0.0rc1 源码：`gmt-6.0.0rc1-src.tar.gz <ftp://ftp.soest.hawaii.edu/gmt/gmt-6.0.0rc1-src.tar.gz>`_
 #. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
 #. 全球数字图表DCW：`dcw-gmt-1.1.4.tar.gz <http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz>`_
-
-.. note::
-
-    由于 GMT 6.0.0 尚未发布，此处下载的是 GMT 开发版的源代码。
 
 安装GMT
 -------
@@ -103,24 +99,23 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 .. code-block:: bash
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-master.tar.gz
-   $ mv gmt-master/ gmt-6.0.0/
+   $ tar -xvf gmt-6.0.0rc1.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
    $ tar -xvf dcw-gmt-1.1.4.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.0.0/share/gshhg
-   $ mv dcw-gmt-1.1.4 gmt-6.0.0/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.0.0rc1/share/gshhg
+   $ mv dcw-gmt-1.1.4 gmt-6.0.0rc1/share/dcw-gmt
 
    # 切换到gmt源码目录下
-   $ cd gmt-6.0.0
+   $ cd gmt-6.0.0rc1
 
    # 新建用户配置文件
    $ gedit cmake/ConfigUser.cmake
 
 向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0rc1")
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_INSTALL_MODULE_LINKS FALSE)
@@ -129,8 +124,8 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 其中，
 
 - ``CMAKE_INSTALL_PREFIX`` 用于设置GMT的安装路径，上面的语句会将GMT安装在
-  ``/opt/GMT-6.0.0`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
+  ``/opt/GMT-6.0.0rc1`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0rc1`` 等有可读写
   权限的路径；
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
 - ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
@@ -151,16 +146,20 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于 gmt-6.0.0 目录下，不是 gmt-6.0.0/cmake 目录下
+    # 注意，此处新建的 build 文件夹位于 gmt-6.0.0rc1 目录下，不是 gmt-6.0.0rc1/cmake 目录下
     $ mkdir build
     $ cd build/
     $ cmake ..
 
 ``cmake ..`` 会检查GMT对软件的依赖关系，我的检查结果如下::
 
+    *
+    *  GMT Version:               : 6.0.0rc1
+    *
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-6.0.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.0.0/share/dcw-gmt
+    *  Found GSHHG database       : /home/user/GMT/gmt-6.0.0rc1/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.0.0rc1/share/dcw-gmt
+    *  Found GMT data server      : http://oceania.generic-mapping-tools.org
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
     *  GDAL library               : /usr/lib64/libgdal.so
@@ -172,6 +171,7 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
     *  ZLIB library               : /usr/lib64/libz.so
     *  ZLIB include dir           : /usr/include
     *  LAPACK library             : yes
+    *  BLAS library               : yes
     *  License restriction        : no
     *  Triangulation method       : Shewchuk
     *  OpenMP support             : enabled
@@ -183,12 +183,18 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
     *  Build GMT supplements      : yes [supplements.so]
     *  Build GMT Developer        : yes
     *  Build proto supplements    : none
+    *  Found GhostScript (gs)     : yes
+    *  Found GraphicsMagick (gm)  : yes
+    *  Found ffmpeg               : yes
+    *  Found open                 : yes
+    *  Found ogr2ogr              : yes
+    *  Found gdal_translate       : yes
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-6.0.0
-    *  GMT_DATADIR                : /opt/GMT-6.0.0/share
-    *  GMT_DOCDIR                 : /opt/GMT-6.0.0/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-6.0.0/share/man
+    *  Installing GMT in          : /opt/GMT-6.0.0rc1
+    *  GMT_DATADIR                : /opt/GMT-6.0.0rc1/share
+    *  GMT_DOCDIR                 : /opt/GMT-6.0.0rc1/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.0.0rc1/share/man
     -- Configuring done
     -- Generating done
 
@@ -221,7 +227,7 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 
 向 ``~/.bashrc`` 中加入如下语句以修改环境变量，并重启终端使其生效::
 
-    export GMT6HOME=/opt/GMT-6.0.0
+    export GMT6HOME=/opt/GMT-6.0.0rc1
     export PATH=${GMT6HOME}/bin:$PATH
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
@@ -239,4 +245,4 @@ Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的
 
     $ source ~/.bashrc
     $ gmt --version
-    6.0.0
+    6.0.0rc1
