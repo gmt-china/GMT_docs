@@ -93,7 +93,7 @@
 行内模式，即直接在文档中写绘图代码:
 
 ```
-.. gmt-plot::
+.. gmtplot::
     :caption: 图片标题
 
     gmt begin map png,pdf
@@ -104,13 +104,13 @@
 脚本模式，即将绘图代码写在脚本中：
 
 ```
-    .. gmt-plot:: /scripts/psmeca_ex1.*
+    .. gmtplot:: /scripts/psmeca_ex1.*
        :width: 100%
 
        图片标题
 ```
 
-`gmt-plot` 指定有众多可用的选项，常用的包括：
+`gmtplot` 指定有众多可用的选项，常用的包括：
 
 - `show-code`: `true` 或 `false` 表示是否显示代码
 - `width`: 图片在网页中的宽度，建议使用百分比表示，比如 `100%`
