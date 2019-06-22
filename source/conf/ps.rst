@@ -49,7 +49,7 @@ PS_LINE_CAP
     下图展示了该参数取不同值时线段端点的区别。需要注意，图中三条线段的
     长度是相同的，但因参数设置不同而导致线段看上去长度不同。
 
-    .. gmt-plot:: ps_line_cap.sh
+    .. gmtplot:: ps_line_cap.sh
         :show-code: false
         :caption: ``PS_LINE_CAP`` 控制线段端点绘图效果
 
@@ -63,7 +63,7 @@ PS_LINE_JOIN
     下图展示了 ``PS_LINE_JOIN`` 取不同值时线段拐点的绘图效果。当线宽较小时，几乎
     看不出来区别，这里为了显示的效果，将线宽设置为 ``20p``\ 。
 
-    .. gmt-plot:: ps_line_join.sh
+    .. gmtplot:: ps_line_join.sh
         :show-code: false
         :caption: ``PS_LINE_JOIN`` 控制线段拐点绘制效果
 

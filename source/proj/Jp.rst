@@ -19,6 +19,6 @@
 
 下面给出了一些极坐标的示例以展示极坐标的用法：
 
-.. gmt-plot:: /scripts/Jp.sh
+.. gmtplot:: /scripts/Jp.sh
 
    极坐标用法示例

@@ -16,7 +16,7 @@
 
 以下示例展示了该选项的基本用法，其等效于在绘图命令前使用 ``subplot set`` 命令。
 
-.. gmt-plot::
+.. gmtplot::
 
    #!/bin/bash
    R=0/5/0/3

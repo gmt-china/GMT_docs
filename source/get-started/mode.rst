@@ -108,7 +108,7 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 说明文档。本示例中整张图片包含了2行3列共计6个子图，且每列的两张子图共享X轴，
 每列的子图共享Y轴。
 
-.. gmt-plot::
+.. gmtplot::
     :language: bash
 
     gmt begin subplot-example png,pdf
@@ -136,7 +136,7 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 
 下面仅展示一个简单的示例：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt begin inset-map png
         gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen

@@ -17,7 +17,7 @@ GMT 中能够绘制矢量的模块有
 
 下面的命令使用 :doc:`/module/plot` 的 ``-Sv`` 选项绘制了一个最简单的矢量。
 
-.. gmt-plot::
+.. gmtplot::
 
    echo 1 1 0 3 | gmt plot -R0/5/0/2 -JX5c/2c -Sv0.5c+e -W1.5p -Gred -png vector
 
@@ -35,7 +35,7 @@ GMT 中能够绘制矢量的模块有
 
     ``t|c|a|i|A|I`` 用于控制矢量头的形状。取不同值所对应的矢量头形状如下图所示：
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin vector-head pdf,png
@@ -62,7 +62,7 @@ GMT 中能够绘制矢量的模块有
 
   下面展示了 ``+h`` 后取不同值的矢量箭头的形状：
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin vector-shape pdf,png
@@ -112,7 +112,7 @@ GMT提供了三类矢量：
 
 下面的例子分别绘制了三种矢量：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 三种矢量：（左）笛卡尔矢量；（中）地理矢量；（右）弧形矢量
 
     gmt begin arrows pdf,png

@@ -141,7 +141,7 @@ GMT中至少有两处会使用DCW数据：
 
 绘制全部亚洲国家的边界：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt coast -R15/180/-20/70 -JM12c -Baf -E=AS+p0.25p,red -png dataset_dcw_01
 
@@ -150,7 +150,7 @@ GMT中至少有两处会使用DCW数据：
 
 绘制中国大陆边界（不含台湾、香港、澳门），其中 ``-R`` 选项可省略：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt coast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 -png dataset_dcw_02
 
@@ -159,7 +159,7 @@ GMT中至少有两处会使用DCW数据：
 
 绘制内蒙古，并设置边界颜色和填充颜色，其中 ``-R`` 选项可省略:
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt coast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 -png dataset_dcw_03
 

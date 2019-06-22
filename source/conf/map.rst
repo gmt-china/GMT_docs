@@ -16,7 +16,7 @@ MAP_FRAME_TYPE
 
     下图给出了不同的底图边框类型的效果：
 
-    .. gmt-plot:: map_frame_type.sh
+    .. gmtplot:: map_frame_type.sh
         :show-code: false
         :caption: GMT底图边框类型
 
@@ -63,7 +63,7 @@ MAP_DEGREE_SYMBOL
 
     可以取 ``ring|degree|colon|none``\ 。下图给出了取不同值时的绘图效果：
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin map_degree_symbol pdf,png
@@ -82,7 +82,7 @@ MAP_ANNOT_ORTHO
 
     该参数可以将 ``wesnz`` 做任意组合。下图给出了取不同值时的绘图效果：
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin map_annot_ortho pdf,png
@@ -211,7 +211,7 @@ MAP_POLAR_CAP
 
     下图展示了该参数取不同值时的绘图效果：
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin map pdf,png
@@ -289,7 +289,7 @@ MAP_VECTOR_SHAPE
     可以取-2到2之间的任意实数。
     下面展示了取-2、-1、0、1和2时的矢量箭头的形状：
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin vector-shape pdf,png

@@ -21,7 +21,7 @@
 
 下面的示例中，投影中心为北极，地图边界与经线和纬线完全重合。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 极区立体保角投影
 
     gmt coast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
@@ -32,7 +32,7 @@
 
 与Lambert方位等面积投影类似，也可以通过指定地图区域左下角和右上角的坐标来绘制一个矩形区域。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 矩形边界下的极区立体保角投影
 
     gmt begin GMT_stereographic_rect pdf,png
@@ -43,7 +43,7 @@
 一般立体地图
 ------------
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 一般立体投影
 
     gmt begin GMT_stereographic_general pdf,png

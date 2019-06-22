@@ -23,7 +23,7 @@
 
 在三种定义中， 大写的 ``A|B|C`` 表示允许投影极点位于南半球。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用 ``-Joc`` 倾斜Mercator投影
 
     gmt coast -R270/20/305/25r -JOc280/25.5/22/69/4.8i -Bag -Di -A250 -Gburlywood \
@@ -33,7 +33,7 @@
 在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便，
 下面的示例中使用了 ``-Rk-1000/1000/-500/500`` 来指定相对投影坐标。
 
-.. gmt-plot:: /scripts/GMT_obl_nz.sh
+.. gmtplot:: /scripts/GMT_obl_nz.sh
    :show-code: false
 
    使用 ``-JOa`` 倾斜Mercator投影

@@ -21,7 +21,7 @@
 
 下图绘制了台湾附近的区域，投影中心位于125ºE/20ºN，25度和45度纬线是两条标准纬线。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: Albers圆锥等面积投影
 
     gmt begin GMT_albers pdf,png

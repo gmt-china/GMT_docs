@@ -14,7 +14,7 @@
 - ``<lon>`` 是中心经线，默认为地图区域的中心
 - ``<lat>`` 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Plate Carrée投影绘制全球地图
 
     gmt coast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl

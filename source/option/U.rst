@@ -19,7 +19,7 @@ GMT参数中有一些与时间戳相关的参数：
 - :ref:`FORMAT_TIME_STAMP <FORMAT_TIME_STAMP>` 用于控制时间戳的显示格式
 - :ref:`FONT_LOGO <FONT_LOGO>` 时间戳中文本的字体
 
-.. gmt-plot::
+.. gmtplot::
     :caption: ``-U`` 选项加时间戳
 
     gmt basemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -U"This is a GMT logo" -png GMT_-U

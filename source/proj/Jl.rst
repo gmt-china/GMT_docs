@@ -17,7 +17,7 @@
 
 Lambert保角投影场用于绘制美国地图，两个固定的标准纬线是33ºN和45ºN。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: Lambert保角圆锥投影
 
     gmt begin GMT_lambert_conic pdf,png

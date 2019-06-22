@@ -15,7 +15,7 @@
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Winkel Tripel投影绘制全球地图
 
     gmt coast -Rd -JR4.5i -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -png GMT_winkel

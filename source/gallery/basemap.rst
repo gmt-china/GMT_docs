@@ -6,7 +6,7 @@
 
 GMT可以绘制最简单的线性X-Y图。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 线性X-Y图
 
@@ -24,7 +24,7 @@ GMT可以绘制最简单的线性X-Y图。
 
 下面展示如何用GMT绘制对数X-Y图。
 
-.. gmt-plot::
+.. gmtplot::
     :language: bash
     :caption: 对数X-Y图
 
@@ -43,7 +43,7 @@ GMT可以绘制最简单的线性X-Y图。
 
 下面展示如何用GMT绘制双Y轴坐标系。
 
-.. gmt-plot::
+.. gmtplot::
     :language: bash
     :caption: 双Y轴图
 
@@ -65,7 +65,7 @@ GMT可以绘制最简单的线性X-Y图。
 
 GMT自带了海岸线数据，通过 ``coast`` 模块可以直接调用。
 
-.. gmt-plot::
+.. gmtplot::
     :language: bash
     :caption: 区域地图
 
@@ -91,7 +91,7 @@ GMT自带了海岸线数据，通过 ``coast`` 模块可以直接调用。
 全球地图
 --------
 
-.. gmt-plot::
+.. gmtplot::
     :language: bash
     :caption: 全球地图
 

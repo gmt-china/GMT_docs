@@ -35,7 +35,7 @@
 
     WSENZ[1234]wesez[1234]lrbtu
 
-.. gmt-plot:: B/axes.sh
+.. gmtplot:: B/axes.sh
    :show-code: false
 
 二维底图（上图左图）有四条边，分别用东西南北（WSEN或wsen）或左右上下（lrtb）的
@@ -51,7 +51,7 @@
 
     gmt basemap -R0/4/0/4 -JX10c -BWS -pdf axes
 
-.. gmt-plot:: B/2D-axes-examples.sh
+.. gmtplot:: B/2D-axes-examples.sh
    :show-code: false
 
 3D底图有12条边（上图右图）。对于3D底图而言，``Zzu`` 用于控制Z轴的绘制。
@@ -69,7 +69,7 @@
 
     gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t'-BwesnZ' -p130/30 -pdf map
 
-.. gmt-plot:: B/3D-axes-examples.sh
+.. gmtplot:: B/3D-axes-examples.sh
    :show-code: false
 
 轴设置
@@ -120,7 +120,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 每个轴都有三个属性，分别是标注（annotation）、刻度（frame）和网格线（grid）。
 下图展示了这三个名词在绘图时的具体含义。
 
-.. gmt-plot:: /scripts/GMT_-B_afg.sh
+.. gmtplot:: /scripts/GMT_-B_afg.sh
     :show-code: false
     :caption: GMT坐标轴中的标注、刻度和网格线
 
@@ -163,7 +163,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 地理底图与一般的坐标轴不同，其底图类型 :ref:`MAP_FRAME_TYPE <MAP_FRAME_TYPE>`
 使用 ``fancy`` 形式。
 
-.. gmt-plot:: /scripts/GMT_-B_geo_1.sh
+.. gmtplot:: /scripts/GMT_-B_geo_1.sh
    :show-code: false
 
    地理底图示例1
@@ -173,7 +173,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 下图同时使用了 ``p`` 和 ``s`` 两级属性。这里 ``p`` 属性用于显示弧度，\ ``s``
 属性用于显示弧分。
 
-.. gmt-plot:: /scripts/GMT_-B_geo_2.sh
+.. gmtplot:: /scripts/GMT_-B_geo_2.sh
    :show-code: false
 
    地理底图示例2
@@ -188,7 +188,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 数目会根据 ``<stride>`` 自动决定。若设置 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>`
 为其他值，则会严格使用其定义的格式，比如 ``%.2f`` 表示显示两位小数。
 
-.. gmt-plot:: /scripts/GMT_-B_linear.sh
+.. gmtplot:: /scripts/GMT_-B_linear.sh
    :show-code: false
 
    笛卡尔线性轴
@@ -211,7 +211,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 - 在 ``<stride>`` 后加 ``l``\ ，则标注会以log\ :sub:`10`\ 的值显示，比如100会显示成2
 - 在 ``<stride>`` 后加 ``p``\ ，则标注会以10的n次方的形式显示，比如10\ :sup:`-5`
 
-.. gmt-plot:: /scripts/GMT_-B_log.sh
+.. gmtplot:: /scripts/GMT_-B_log.sh
    :show-code: false
 
    对数坐标轴
@@ -228,7 +228,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 加 ``p``\ ，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。
 比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。
 
-.. gmt-plot:: /scripts/GMT_-B_pow.sh
+.. gmtplot:: /scripts/GMT_-B_pow.sh
    :show-code: false
 
    指数投影坐标轴
@@ -290,7 +290,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来。
 
-.. gmt-plot::
+.. gmtplot::
    :caption: 时间轴示例1
 
    gmt begin GMT_-B_time1 pdf,png
@@ -306,7 +306,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，
 上面的例子使用日期来标注。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 时间轴示例2
 
     gmt begin GMT_-B_time2 pdf,png
@@ -318,7 +318,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 第三个例子展示了两年的时间，并标注了每年以及每三个月。
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 时间示例3
 
     gmt begin GMT_-B_time3 pdf,png
@@ -329,7 +329,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 第四个例子展示了一天中的几个小时，通过在R选项中指定 ``t`` 来使用相对时间坐标。
 这里使用了 ``p`` 属性和 ``s`` 属性，12小时制，时间从右向左增加：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 时间轴示例4
 
     gmt begin GMT_-B_time4 pdf,png
@@ -339,7 +339,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 第五个例子用两种方式展示了几周的时间：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 时间轴示例5
 
     gmt begin GMT_-B_time5 png,pdf
@@ -352,7 +352,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 时间轴示例6
 
     gmt begin GMT_-B_time6 pdf,png
@@ -362,7 +362,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 第七个例子：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 时间轴示例7
 
     gmt begin GMT_-B_time7 pdf,png
@@ -406,7 +406,7 @@ GMT允许用户定义标注来实现不规则间隔的标注，用法是 ``-Bc``
 下面的例子展示中展示了自定义标注的用法，\ ``xannots.txt`` 和 ``yannots.txt``
 分别是X轴和Y轴的标注文件：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 自定义坐标轴
 
     cat << EOF > xannots.txt

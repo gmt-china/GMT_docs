@@ -17,7 +17,7 @@ Mercator投影或倾斜Mercator投影。
 - ``<lon>`` 中心经线，默认为地图区域的中心
 - ``<lat>`` 标准纬线，默认值为赤道。若要指定标准纬线，则必须同时指定中心经线
 
-.. gmt-plot::
+.. gmtplot::
     :caption: Mercator投影
 
     gmt begin GMT_mercator pdf,png

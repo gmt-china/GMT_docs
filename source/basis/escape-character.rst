@@ -71,7 +71,7 @@ GMT可以识别的转义字符在下表列出：
 
 下面给出了一些使用转义字符的示例，左边Input是命令中的输入，右边Output是图上显示的效果：
 
-.. gmt-plot:: /scripts/GMT_escape_examples.sh
+.. gmtplot:: /scripts/GMT_escape_examples.sh
     :show-code: false
     :caption: GMT转义序列示例
 

@@ -69,7 +69,7 @@ polar
 示例
 ----
 
-.. gmt-plot:: /scripts/polar_ex1.sh
+.. gmtplot:: /scripts/polar_ex1.sh
    :width: 100%
    :align: center
 

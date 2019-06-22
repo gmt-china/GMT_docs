@@ -12,7 +12,7 @@
 
 ``<lon>`` 是中心经线，默认位于地图区域的中心。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Hammer投影绘制全球地图
 
     gmt coast -Rg -JH4.5i -Bg -Dc -A10000 -Gblack -Scornsilk -png GMT_hammer

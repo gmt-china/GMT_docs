@@ -19,7 +19,7 @@
 
 下图中，投影中心为100ºW/40ºN，离投影中心180度的点在图中的最外边界处。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用等距方位投影绘制全球图
 
     gmt coast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -png GMT_az_equidistant

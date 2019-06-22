@@ -98,7 +98,7 @@ TIME_IS_INTERVAL
     - ``+1o``\ ：\ ``1997-03-05`` 解释为 ``1997-03-15T12:00:00.0``
     - ``-1o``\ ：\ ``1997-03-05`` 解释为 ``1997-02-15T12:00:00.0``
 
-    .. gmt-plot::
+    .. gmtplot::
         :show-code: false
 
         gmt begin time pdf,png

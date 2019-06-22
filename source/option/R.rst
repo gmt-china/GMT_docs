@@ -54,7 +54,7 @@
    （由 ``<nx>/<ny>`` 决定），以及X和Y方向的网格间隔
    （通常由 ``-I<xinc>/<yinc>`` 选项决定），即可指定网格文件的区域范围。
 
-.. gmt-plot:: /scripts/GMT_-R.sh
+.. gmtplot:: /scripts/GMT_-R.sh
     :show-code: false
 
     ``-R`` 选项指定数据范围

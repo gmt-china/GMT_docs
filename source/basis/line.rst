@@ -26,7 +26,7 @@
 粗线在绘制线条时使用了 ``-W2p+o1c/500k`` 选项，
 即在起点处偏移1厘米，在终点处偏移500千米。
 
-.. gmt-plot::
+.. gmtplot::
     :show-code: false
     :caption: 线段起点偏移示意图
 
@@ -51,7 +51,7 @@
 
 下图中，左图使用了 ``-W2p`` 选项，右边使用了 ``-W2p+s``\ 。
 
-.. gmt-plot::
+.. gmtplot::
     :show-code: false
     :caption: 线条自动样条插值示意图
 
@@ -84,7 +84,7 @@
 
 下图中细线是通常绘制的线段，粗线使用的选项是 ``-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue``\ 。
 
-.. gmt-plot::
+.. gmtplot::
     :show-code: false
     :caption: 线条端点箭头示意图
 
