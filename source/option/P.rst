@@ -5,7 +5,7 @@
 
 取一张 A4 纸放在桌面上，有两种放置的方式：竖着放和横着放。如图所示：
 
-.. gmt-plot:: /scripts/GMT_-P.sh
+.. gmtplot:: /scripts/GMT_-P.sh
     :show-code: false
     :caption: 画布方向
 

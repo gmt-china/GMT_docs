@@ -48,7 +48,7 @@ GMT默认的画布尺寸为A4，即 ``210mmx297mm``\ 。
 
 取一张 A4 纸放在桌面上，有两种放置的方式：竖着放和横着放。如图所示：
 
-.. gmt-plot:: /scripts/GMT_-P.sh
+.. gmtplot:: /scripts/GMT_-P.sh
     :show-code: false
     :caption: 画布方向
 
@@ -74,7 +74,7 @@ Landscape（风景）模式。记起来也很简单，人是瘦长的，所以�
 底图原点距左下角 ``(1i,1i)``\ ，即坐标原点离纸张左下角的距离是水平方向偏移1英寸，
 垂直方向偏移1英寸。
 
-.. gmt-plot:: /scripts/GMT_basemap_origin.sh
+.. gmtplot:: /scripts/GMT_basemap_origin.sh
     :show-code: false
     :caption: 底图原点
 

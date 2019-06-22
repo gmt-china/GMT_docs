@@ -48,7 +48,7 @@
 
 GMT默认支持35种标准字体。下图给出了GMT支持的35种字体的名字及对应的编号:
 
-.. gmt-plot:: /scripts/GMT_fonts.sh
+.. gmtplot:: /scripts/GMT_fonts.sh
    :show-code: false
    :caption: GMT中的35种标准字体
 
@@ -91,7 +91,7 @@ GMT中可以用字体名（\ **区分大小写**\ ）或对应的字体编号来
 
 下图给出了一些 ``<font>`` 的示例：
 
-.. gmt-plot:: /scripts/GMT_text_examples.sh
+.. gmtplot:: /scripts/GMT_text_examples.sh
     :show-code: false
     :width: 60%
     :caption: GMT文本属性示例

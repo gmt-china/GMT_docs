@@ -16,7 +16,7 @@
 - ``<scale>`` 可以是 ``1:xxxx`` 也可以是 ``<radius>/<latitude>``
   （\ ``<radius>`` 是投影中心到纬线 ``<latitude>`` 在图上的距离）
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 球心方位投影
 
     gmt pscoast -Rg -JF-120/35/60/4.5i -B30g15 -Dc -A10000 -Gtan -Scyan -Wthinnest \

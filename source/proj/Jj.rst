@@ -15,7 +15,7 @@
 
 ``<lon>`` 为中心经度，默认为地图区域的中心。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Miller圆柱投影绘制世界地图
 
     gmt pscoast -R-90/270/-80/90 -Jj1:400000000 -Bx45g45 -By30g30 -Dc -A10000 \

@@ -7,7 +7,7 @@
 之间被划分为60个区域，大多数区域的宽度都是6度。每一个区域都有各自位移的中心经线。
 进一步，每个区域都被划分为纬度带。
 
-.. gmt-plot:: /scripts/GMT_utm_zones.sh
+.. gmtplot:: /scripts/GMT_utm_zones.sh
     :show-code: false
     :caption: 通用横向Mercator区域布局
 

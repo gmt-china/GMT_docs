@@ -30,7 +30,7 @@
 | Braun's cylindrical                                     | 0º          |
 +---------------------------------------------------------+-------------+
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Gall立体投影绘制世界地图
 
     gmt set FORMAT_GEO_MAP dddA

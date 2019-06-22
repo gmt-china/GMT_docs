@@ -25,7 +25,7 @@ GSHHG提供了五种不同精度的数据，以满足不同的需求。五种精
 下面的示例绘制了一个小区域的海岸线边界，可以看到 ``-D`` 取不同精度时边界
 精细程度的差异:
 
-.. gmt-plot::
+.. gmtplot::
     :show-code: false
 
     gmt set MAP_TITLE_OFFSET -10p
@@ -106,21 +106,21 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 
 绘制1级海岸线：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -P > map.ps
 
 同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），
 蓝色的为3级岛屿线（即五大湖内部的岛屿）：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
         -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -P > map.ps
 
 绘制1-3级海岸线，并为陆地、还有、湖泊填充不同的颜色：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
         -W1/0.5p -W2/0.3p,red -W3/0.2p,blue \
@@ -128,7 +128,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 
 绘制海岸线、国界和美国州界：
 
-.. gmt-plot::
+.. gmtplot::
 
     gmt pscoast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 \
         -W1/0.5p -N1/thick,red -N2/thinner \

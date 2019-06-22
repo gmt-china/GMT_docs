@@ -33,7 +33,7 @@ GMT除了可以绘制线段、符号、矢量外，还可以绘制如下修饰�
 本示例中首先指定了底图左上角为参考点，并指定了修饰物的左上角为锚点，
 通过 ``+o<dx>/<dy>`` 对修饰物锚点进行微调。
 
-.. gmt-plot:: embellishment.sh
+.. gmtplot:: embellishment.sh
     :show-code: false
     :caption: 参考点与锚点
 
@@ -127,7 +127,7 @@ GMT提供了5种方法用于指定底图的参考点，使得用户可以灵活�
 -   ``+s<dx>/<dy>/<fill>`` 下拉阴影区。\ ``<dx>/<dy>`` 是阴影区相对于面板的偏移量，
     ``<shade>`` 是阴影区的颜色，默认值为 ``4p/-4p/gray50`` 。
 
-.. gmt-plot:: panel.sh
+.. gmtplot:: panel.sh
     :show-code: false
 
     GMT修饰物背景面板

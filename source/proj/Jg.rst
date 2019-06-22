@@ -16,7 +16,7 @@
 - ``<scale>`` 地图比例尺 ``1:xxxx`` 或 ``<radius>/<latitude>``
   （\ ``<radius>`` 是纬线 ``<latitude>`` 与投影中心在图上的距离）
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用正交投影绘制半球
 
     gmt pscoast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -P > GMT_orthographic.ps
@@ -42,7 +42,7 @@
 - ``<scale>`` as 1:xxxxx or as radius/latitude where radius is distance on map
   in inches from projection center to a particular oblique latitude
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 透视投影
 
     gmt pscoast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown \

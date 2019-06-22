@@ -16,7 +16,7 @@
 
 等距圆锥投影常用于绘制小国家的地图集。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 等距圆锥地图投影
 
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.05i

@@ -21,14 +21,14 @@ Eckert IV和VI投影由Max Eckert-Greiffendorff于1906年提出，是伪圆柱�
 
 Eckert IV示例：
 
-.. gmt-plot::
+.. gmtplot::
     :caption: Eckert IV投影绘制全球图
 
     gmt pscoast -Rg -JKf4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps
 
 Eckert VI示例:
 
-.. gmt-plot::
+.. gmtplot::
     :caption: Eckert VI投影绘制全球图
 
     gmt pscoast -Rg -JKs4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -P > GMT_eckert4.ps

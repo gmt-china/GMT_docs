@@ -40,7 +40,7 @@ PS文件结构
 身体部分则是真正的绘图部分，包含了每个绘图命令绘制的图层；
 尾巴部分则用于控制PS文件的显示。
 
-.. gmt-plot:: /scripts/GMT_-OK.sh
+.. gmtplot:: /scripts/GMT_-OK.sh
     :show-code: false
 
     ``-K`` 和 ``-O`` 选项的原理

@@ -22,7 +22,7 @@
 对于此投影而言，经线和纬线通常不是直线，因而不适合用于指定地图边界。因而本例中
 通过指定区域的左下角（0ºE/40ºS）和右上角（60ºE/10ºS）的坐标来指定区域范围。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Lambert方位等面积投影绘制矩形地图
 
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0
@@ -34,7 +34,7 @@
 
 要绘制半球地图，需要指定区域范围为整个地球。下图绘制了以南美洲为中心的半球图。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用Lambert方位等面积投影绘制半球地图
 
     gmt pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P > GMT_lambert_az_hemi.ps
@@ -47,6 +47,6 @@
 等面积投影（中心经纬度为0/0），Wulff网使用的则是等角度的立体投影。
 两种震源球投影方式如下图所示：
 
-.. gmt-plot:: /scripts/GMT_stereonets.sh
+.. gmtplot:: /scripts/GMT_stereonets.sh
     :show-code: false
     :caption: 震源球投影：等面积的Schmidt网和等角度的Wulff网

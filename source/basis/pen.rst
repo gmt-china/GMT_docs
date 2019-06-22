@@ -119,6 +119,6 @@ GMT中可以通过两种方式指定画笔宽度：
     10 2
     EOF
 
-.. gmt-plot:: /scripts/GMT_pens.sh
+.. gmtplot:: /scripts/GMT_pens.sh
     :show-code: false
     :caption: GMT画笔示例

@@ -36,7 +36,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 下面的命令将函数 :math:`y=\sqrt{x}` 用笛卡尔线性变换画在图上。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 笛卡尔坐标的线性变换
 
     gmt psxy -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- -P -K sqrt.txt > GMT_linear.ps
@@ -62,7 +62,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 下面的例子用线性投影绘制了一个中心位于125ºE的世界地图。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 地理坐标的线性变换
 
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
@@ -78,7 +78,7 @@ GMT中笛卡尔坐标变换分为三类：
 选项中已经指定了时间范围，所以没有必要在 ``-J`` 和 ``-R`` 选项中都指定。
 当 ``-R`` 和 ``-J`` 选项给出的坐标类型相冲突时，GMT会给出警告，并以 ``-JX`` 选项为准。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 日期时间坐标的线性变换
 
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham \
@@ -94,7 +94,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 对数投影
 
     gmt psxy -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque \
@@ -113,7 +113,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 要使用指数投影，需要在比例尺或轴长度后加上 ``p<exp>``\ ，其中 ``<exp>`` 是要使用的指数。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 指数变换
 
     gmt psxy -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory \

@@ -10,7 +10,7 @@
 
 ``-W`` 选项可以用于设置线段属性。以下示例 ``-W2p,blue`` 表示设置线段粗细为2p、颜色为蓝色：
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 简单线段示例
 
@@ -39,7 +39,7 @@
 - ``-Am`` 先沿着经线画，再沿着纬线画，图中绿线效果。
 - ``-Ap`` 先沿着纬线画，再沿着经线画，图中蓝线效果。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 地理坐标下不同连接方式的线段
 
@@ -61,7 +61,7 @@
 - ``-Ax`` 表示先沿着X轴画，再沿着Y轴画，图中绿线效果。
 - ``-Ay`` 表示先沿着Y轴画，再沿着X轴画，图中蓝线效果。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 笛卡尔坐标下不同连接方式的线段
 
@@ -83,7 +83,7 @@
 线段赋一个值，然后利用 ``-C`` 选项指定CPT文件或者 ``-C<color1>,<color2>,...``
 语法指定Z取不同值时对应的颜色。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 不同颜色的线段示例图
 

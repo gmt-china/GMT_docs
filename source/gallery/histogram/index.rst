@@ -15,7 +15,7 @@
 垂直直方图
 ----------
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 垂直直方图
 
@@ -36,7 +36,7 @@
 
 ``-A`` 用于控制绘制水平直方图，上一个例子中默认绘制垂直直方图。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 水平直方图
 
@@ -47,7 +47,7 @@
 
 ``-Q`` 表示绘制累积直方图。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 累积直方图
 
@@ -58,7 +58,7 @@
 
 ``-Z1`` 设置纵轴为百分比，\ ``-N`` 绘制等效的正态分布曲线。
 
-.. gmt-plot::
+.. gmtplot::
    :language: bash
    :caption: 百分比直方图
 

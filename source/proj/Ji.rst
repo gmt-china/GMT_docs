@@ -14,7 +14,7 @@
 
 ``<lon>`` 是中心经线，默认值为地图区域的中心。
 
-.. gmt-plot::
+.. gmtplot::
     :caption: 使用正弦曲线投影绘制世界地图
 
     gmt pscoast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -P > GMT_sinusoidal.ps
@@ -27,7 +27,7 @@
 并将每段图沿水平方向偏移其对应的宽度
 (140\ :math:`\cdot`\ 0.014 and 80\ :math:`\cdot`\ 0.014)。
 
-.. gmt-plot::
+.. gmtplot::
    :caption:  使用间断正弦曲线投影绘制世界地图
 
    gmt pscoast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack -K -P > GMT_sinus_int.ps
