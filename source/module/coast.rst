@@ -181,21 +181,23 @@ coast
 ::
 
     gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -I1/1p,blue -N1/0.25p,- \
-            -I2/0.25p,blue -W0.25p,white -Ggreen -Sblue -P > africa.ps
+            -I2/0.25p,blue -W0.25p,white -Ggreen -Sblue -png africa
 
 ::
 
-    gmt coast -R-30/-10/60/65 -Jm1c -B5 -Gp100/28 > iceland.ps
+    gmt coast -R-30/-10/60/65 -Jm1c -B5 -Gp100/28 -png iceland
 
 将非洲区域裁剪出来，并在其中的陆地部分绘制地形::
 
-    gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -Gc -P -K > africa.ps
-    gmt grdimage -Jm0.1i etopo5.nc -Ccolors.cpt -O -K >> africa.ps
-    gmt coast -Q -O >> africa.ps
+    gmt begin map png
+    gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -Gc
+    gmt grdimage etopo5.nc -Ccolors.cpt
+    gmt coast -Q
+    gmt end
 
 绘制部分国家的国界线（似乎有BUG）::
 
-    gmt coast -JM6i -P -Baf -EGB,IT,FR+gblue+p0.25p,red+r -EES,PT,GR+gyellow > map.ps
+    gmt coast -JM6i -P -Baf -EGB,IT,FR+gblue+p0.25p,red+r -EES,PT,GR+gyellow -png map
 
 提取冰岛的海岸线数据::
 
