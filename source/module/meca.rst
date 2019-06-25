@@ -49,7 +49,7 @@ meca
 
     ::
 
-        gmt psmeca -Rg -JN15c -Sa2c > meca.ps << EOF
+        gmt meca -Rg -JN15c -Sa2c -pdf meca << EOF
         -176.96 -29.25 47.8 202 30 93 7.3 0 0 197601010129
         EOF
 
@@ -66,7 +66,7 @@ meca
 
     ::
 
-        gmt psmeca -Rg -JN15c -Sc2c > meca.ps << EOF
+        gmt meca -Rg -JN15c -Sc2c -pdf meca << EOF
         -176.96 -29.25 47.8 202 30 93 18 60 88 9.56 26 0 0 197601010129
         EOF
 
@@ -94,7 +94,7 @@ meca
 
     ::
 
-        gmt psmeca -Rg -JN15c -Sm2c > meca.ps << EOF
+        gmt meca -Rg -JN15c -Sm2c -pdf meca << EOF
         -176.96 -29.25 47.8 7.680 0.090 -7.770 1.390 4.520 -3.260 26 0 0 title
         EOF
 

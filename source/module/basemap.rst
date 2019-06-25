@@ -22,16 +22,16 @@ basemap
 
     示例::
 
-        gmt psbasemap -R-180/180/-70/70 -JM10c -Bx60 -By30 > test.ps
+        gmt basemap -R-180/180/-70/70 -JM10c -Bx60 -By30 -pdf test
 
 .. include:: explain_-L_scale.rst_
 ..
 
     示例::
 
-        gmt psbasemap -R90/110/30/40 -JM10c -Bx5 -By5 -Lg95/35+c35+w800k+lscale+u+f > test.ps
+        gmt basemap -R90/110/30/40 -JM10c -Bx5 -By5 -Lg95/35+c35+w800k+lscale+u+f -png test
 
-        gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k > mercator.ps
+        gmt basemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k -png mercator
 
 .. include:: explain_-T_directional_rose.rst_
 ..
@@ -69,7 +69,7 @@ basemap
 
     示例::
 
-        gmt psbasemap -R0/10/0/10 -JX10c/5c -Aoutline.txt
+        gmt basemap -R0/10/0/10 -JX10c/5c -Aoutline.txt
 
 ``-D[<unit>]<xmin>/<xmax>/<ymin>/<ymax>[r][+s<file>][+t]``
 

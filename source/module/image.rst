@@ -77,12 +77,12 @@ image
 
 ::
 
-    gmt psimage logo.jpg -Dx0/0+w1i -F+pthin,blue > image.ps
+    gmt image logo.jpg -Dx0/0+w1i -F+pthin,blue -png image
 
 ::
 
-    gmt psimage tiger.eps -Dx2i/1i+jTR+w3i > image.ps
+    gmt image tiger.eps -Dx2i/1i+jTR+w3i -png image
 
 ::
 
-    gmt psimage 1_bit.ras -Gbbrown -Gfred -Dx0/0+w1c+n5 > image.ps
+    gmt image 1_bit.ras -Gbbrown -Gfred -Dx0/0+w1c+n5 -png image

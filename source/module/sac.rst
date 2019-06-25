@@ -138,14 +138,16 @@ pssac 实现波形绘制的步骤是：
 利用 SAC 的命令 ``funcgen seismogram`` 生成了波形，想要绘制单个波形，并分别为
 正负部分涂色::
 
-    gmt pssac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred > single.ps
+    gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
 利用 SAC 命令 ``datagen sub tel *.z`` 生成多个波形，将其绘制在距离剖面上::
 
-    gmt pssac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l'T(s)' -By5+lDegree -BWSen \
-         -Ed -M1.5c -W0.5p,red > distance_profile.ps
+    gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l'T(s)' -By5+lDegree -BWSen \
+         -Ed -M1.5c -W0.5p,red -png distance_profile
 
 利用 SAC 命令 ``datagen sub tel *.z`` 生成多个波形，将其绘制在地图上::
 
-    gmt pssac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c -K > map.ps
-    saclst stlo stla f *.z | gmt psxy -J -R -St0.4c -Gblack -i1,2 -O >> map.ps
+    gmt begin map pdf
+    gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
+    saclst stlo stla f *.z | gmt plot -St0.4c -Gblack -i1,2
+    gmt end

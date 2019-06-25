@@ -22,7 +22,7 @@ text
 
     示例::
 
-        echo 2 2 SHOW TEXTS | gmt pstext -JX10c -R0/5/0/5 -Ba > test.ps
+        echo 2 2 SHOW TEXTS | gmt text -JX10c -R0/5/0/5 -Ba -pdf test
 
     若使用了 ``-F`` 选项，则输入数据的格式为::
 
@@ -74,7 +74,7 @@ text
     下面的命令中，统一设置了所有文本的字号为30p，4号字体，红色，文本旋转45度，
     且以左上角对齐::
 
-        gmt pstext -R0/10/0/10 -JX10c/10c -B1g1 -F+f30p,4,red+a45+jTL > text.ps << EOF
+        gmt text -R0/10/0/10 -JX10c/10c -B1g1 -F+f30p,4,red+a45+jTL -pdf text << EOF
         3 4 Text1
         6 8 Text2
         EOF
@@ -114,14 +114,14 @@ text
     比如 ``-F+cTL`` 表示将文本放在底图的左上角，在加上合适的偏移量即可放在任意
     位置。例如::
 
-        echo '(a)' | gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+cTL -Dj0.2c/0.2c > text.ps
+        echo '(a)' | gmt text -R0/10/0/10 -JX10c/10c -B1 -F+cTL -Dj0.2c/0.2c -pdf text
 
     通常来说，要绘制的文本都来自于输入数据的某一列。对于多段数据而言，还可以
     使用其他子选项来设置文本的来源：
 
     -  ``+h`` 会直接从多段数据的段头记录中提取文本::
 
-            gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+h > text.ps << EOF
+            gmt text -R0/10/0/10 -JX10c/10c -B1 -F+h -pdf text << EOF
             > TEXT1
             2  2
             > TEXT2
@@ -130,7 +130,7 @@ text
 
     -  ``+l`` 会直接从多段数据的段头记录里的 ``-L<label>`` 中提取信息::
 
-            gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+l > text.ps << EOF
+            gmt text -R0/10/0/10 -JX10c/10c -B1 -F+l -pdf text << EOF
             > -LTEXT1
             2  2
             > -LTEXT2
@@ -152,7 +152,7 @@ text
 ``-L``
     用于列出GMT所支持的所有字体名及其对应的字号::
 
-        gmt pstext -L
+        gmt text -L
 
 ``-M``
     段落模式，用于输入大量文本。
@@ -212,7 +212,7 @@ text
 
 下面的例子中设置文本框的相关属性：蓝色边框、淡蓝填充色、圆角矩形，空白为 ``100%/100%`` ::
 
-    gmt pstext -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -TO -C100%/100% > text.ps << EOF
+    gmt text -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -TO -C100%/100% -pdf text << EOF
     3   1   Text1
     6   3   Text2
     EOF
