@@ -1,17 +1,16 @@
 # Configuration file for TravisCI
 
-sudo: required
 language: python
-python: 3.6
+python: 3.7
 
 env:
     global:
-        - BUILD_PDF="true"
         - HTML_BUILDDIR=build/dirhtml
         - GMT_VERSION=5.4.5
+        - GMT_TARBALL=5.4.5.tar.gz
+        - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
         # Install location
         - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
-        - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
         - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
 
 cache:
@@ -25,9 +24,8 @@ cache:
 branches:
     only:
         - master
-        - 5.x
-        # Regex to build tagged commits with version numbers
-        - /\d+\.\d+(\.\d+)?(\S*)?$/
+        # Regex to build versioned branches, e.g. 5.4, 6.1
+        - /^\d+\.\d+$/
 
 addons:
     apt:
@@ -47,23 +45,20 @@ install:
     # Install Python dependencies
     - pip install -r requirements.txt
     # Install SourceCodePro fonts for PDF
-    - if [ "$BUILD_PDF" == "true" ]; then curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash; fi
+    - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
     # Install tinytex (https://github.com/yihui/tinytex)
     - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
     - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
-                    float wrapfig parskip capt-of needspace xcolor enumitem xindy
-                    fandol
+                    float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
     # Install GMT
-    - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then source ci/install-gmt.sh; fi
+    - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then
+        source ci/install-gmt.sh;
+      fi
     - gmt --version
 
 script:
-    # build html or/and PDF
-    - if [ "$BUILD_PDF" == "true" ]; then
-        make build;
-      else
-        make dirhtml;
-      fi
+    # build html and PDF
+    - make build
 
 deploy:
     provider: script
@@ -72,5 +67,4 @@ deploy:
     on:
         branch:
             - master
-            - 5.x
-            - /\d+\.\d+(\.\d+)?(\S*)?$/
+            - /^\d+\.\d+$/
