@@ -8,24 +8,24 @@ macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以
 
 GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
-1. 下载：\ `gmt-6.0.0rc1-darwin-x86_64.dmg <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc1-darwin-x86_64.dmg>`_
+1. 下载：\ `gmt-6.0.0rc2-darwin-x86_64.dmg <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc2-darwin-x86_64.dmg>`_
 
-2. 双击 dmg 包以解压，将解压得到的 ``GMT-6.0.0rc1.app`` 拖动到 Applications 目录即可。
+2. 双击 dmg 包以解压，将解压得到的 ``GMT-6.0.0rc2.app`` 拖动到 Applications 目录即可。
 
-3. GMT 默认会安装到 ``/Applications/GMT-6.0.0rc1.app/`` 目录下，将如下语句::
+3. GMT 默认会安装到 ``/Applications/GMT-6.0.0rc2.app/`` 目录下，将如下语句::
 
-       export PATH=${PATH}:/Applications/GMT-6.0.0rc1.app/Contents/Resources/bin
+       export PATH=${PATH}:/Applications/GMT-6.0.0rc2.app/Contents/Resources/bin
 
    加入到 ``~/.bashrc`` 中即可。
 
 4. 测试安装是否成功::
 
        $ gmt --version
-       6.0.0rc1
+       6.0.0rc2
 
 .. note::
 
-    homebrew 尚未将GMT更新到6.0.0rc1，故而目前无法使用homebrew安装GMT6。
+    homebrew 尚未将GMT更新到6.0.0rc2，故而目前无法使用homebrew安装GMT6。
 
 使用 homebrew 安装
 ------------------

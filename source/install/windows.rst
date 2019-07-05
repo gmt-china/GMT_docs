@@ -18,9 +18,9 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 
 1. 下载
 
-   - GMT 6.0.0rc1:
-     `32位 <ftp://ftp.soest.hawaii.edu/gmt/bin/GMT-6.0.0rc1-win32.exe>`__
-     `64位 <ftp://ftp.soest.hawaii.edu/gmt/bin/GMT-6.0.0rc1-win64.exe>`__
+   - GMT 6.0.0rc2:
+     `32位 <ftp://ftp.soest.hawaii.edu/gmt/bin/GMT-6.0.0rc2-win32.exe>`__
+     `64位 <ftp://ftp.soest.hawaii.edu/gmt/bin/GMT-6.0.0rc2-win64.exe>`__
 
    - ghostscript 9.26:
      `32位 <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe>`__
@@ -53,7 +53,7 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
    安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
        C:\Users\xxxx> gmt --version
-       6.0.0rc1
+       6.0.0rc2
 
    即表示安装成功。
 
