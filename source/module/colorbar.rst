@@ -107,5 +107,7 @@ colorbar
 
 ::
 
-    gmt makecpt -T-200/1000/100 -Crainbow > t.cpt
-    gmt psscale -Ct.cpt -Dx8c/1c+w12c/0.5c+jTC+h -Bxaf+l"topography" -By+lkm > map.ps
+    gmt begin map
+    gmt makecpt -T-200/1000/100 -Crainbow
+    gmt colorbar -C -Dx8c/1c+w12c/0.5c+jTC+h -Bxaf+l"topography" -By+lkm
+    gmt end
