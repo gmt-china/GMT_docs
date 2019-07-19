@@ -19,8 +19,8 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 1. 下载
 
    - GMT 6.0.0rc3:
-     `32位 <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc3-win32.exe>`__
-     `64位 <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc3-win64.exe>`__
+     `32位 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win32.exe>`__
+     `64位 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win64.exe>`__
 
    - ghostscript 9.26:
      `32位 <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe>`__
