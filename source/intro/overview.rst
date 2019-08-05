@@ -97,7 +97,7 @@ GMT的特点
     `gnuplot`_       √       √        X
     ===============  ======  ======== ==============
 
-.. _GMT: http://gmt.soest.hawaii.edu
+.. _GMT: https://www.generic-mapping-tools.org/
 .. _Matplotlib: https://matplotlib.org/
 .. _Origin: https://www.originlab.com/
 .. _ggplot2: https://ggplot2.tidyverse.org/
