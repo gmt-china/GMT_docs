@@ -40,7 +40,7 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     $ sudo apt-get update
 
     # 安装编译所需软件包
-    $ sudo apt-get install gcc g++ cmake make libc6
+    $ sudo apt-get install build-essential cmake
 
     # 安装必须软件包
     $ sudo apt-get install ghostscript
@@ -53,6 +53,9 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     $ sudo apt-get install libglib2.0-dev
     $ sudo apt-get install libpcre3-dev
     $ sudo apt-get install libfftw3-dev
+
+    # 安装制作动画所需的软件包
+    $ sudo apt-get install graphicsmagick ffmpeg
 
 对于CentOS/RHEL/Fedora::
 
@@ -74,13 +77,9 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     $ sudo yum install pcre-devel
     $ sudo yum install fftw-devel
 
-安装完依赖包后，需要进一步确认 netCDF 是否支持 netCDF-4/HDF5 格式::
-
-    $ nc-config --has-nc4
-    yes
-
-若输出为 ``yes`` 则表示安装的 netCDF 支持 netCDF-4/HDF5 格式，则可继续安装 GMT，
-否则无法安装 GMT。
+    # 安装其他可选包
+    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+    $ sudo yum install GraphicsMagick ffmpeg
 
 .. warning::
 
@@ -125,7 +124,6 @@ Linux下安装GMT需要下载如下三个文件：
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
     set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GMT_USE_THREADS TRUE)
 
 其中，
 
@@ -136,19 +134,13 @@ Linux下安装GMT需要下载如下三个文件：
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
 - ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
   软链接，不建议设置为 ``TRUE`` （可选）
-- ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能（可选）
-
-.. warning::
-
-   CentOS 6 用户需要将用户配置文件的最后一行改为 ``set (GMT_USE_THREADS FALSE)``
 
 .. tip::
 
    此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的语句。
 
-   高级用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。
-   将 ``cmake/ConfigUserTemplate.cmake`` 复制为 ``cmake/ConfigUser.cmake``\ ，
-   然后根据配置文件中的大量注释说明信息自行修改配置文件。
+   用户可以将GMT提供的配置模板 ``cmake/ConfigUserTemplate.cmake`` 复制为
+   ``cmake/ConfigUser.cmake``\ ，然后根据配置文件中的大量注释说明信息自行修改配置文件。
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
@@ -181,8 +173,8 @@ Linux下安装GMT需要下载如下三个文件：
     *  License restriction        : no
     *  Triangulation method       : Shewchuk
     *  OpenMP support             : enabled
-    *  GLIB GTHREAD support       : enabled
-    *  PTHREAD support            : enabled
+    *  GLIB GTHREAD support       : disabled
+    *  PTHREAD support            : disabled
     *  Build mode                 : shared
     *  Build GMT core             : always [libgmt.so]
     *  Build PSL library          : always [libpostscriptlight.so]
@@ -231,7 +223,8 @@ Linux下安装GMT需要下载如下三个文件：
 修改环境变量
 ------------
 
-向 ``~/.bashrc`` 中加入如下语句以修改环境变量，并重启终端使其生效::
+向 ``~/.bashrc`` （某些系统需要修改 ``~/.bash_profile``\ ）中加入如下语句以
+修改环境变量，并重启终端使其生效::
 
     export GMT6HOME=/opt/GMT-6.0.0rc3
     export PATH=${GMT6HOME}/bin:$PATH
@@ -247,8 +240,7 @@ Linux下安装GMT需要下载如下三个文件：
 测试是否安装成功
 ----------------
 
-打开终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
+重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
 
-    $ source ~/.bashrc
     $ gmt --version
     6.0.0rc3

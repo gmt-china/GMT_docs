@@ -18,50 +18,40 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
    加入到 ``~/.bashrc`` 中即可。
 
-4. 测试安装是否成功::
+4. 重新打开一个终端，输入如下命令，检测安装是否成功::
 
        $ gmt --version
        6.0.0rc3
+
+5. 安装GMT依赖的其它软件（此处使用homebrew进行安装）
+
+       # 必须软件包
+       $ brew install ghostscript
+       # 生成动画所需要的软件包（可选）
+       $ brew install graphicsmagick ffmpeg
+
+使用 homebrew 安装
+------------------
 
 .. note::
 
     homebrew 尚未将GMT更新到6.0.0rc3，故而目前无法使用homebrew安装GMT6。
 
-使用 homebrew 安装
-------------------
-
 `Homebrew <https://brew.sh/>`_ 是 macOS 下的第三方软件包管理工具。
 
-1.  安装 Homebrew::
-
-       $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-2.  安装 GMT::
+1.  安装 GMT::
 
        $ brew update && brew upgrade
        $ brew install gmt
 
-3.  安装 ghostscript::
+2.  安装GMT依赖的其它软件::
 
+       # 必须软件包
        $ brew install ghostscript
+       # 生成动画所需要的软件包（可选）
+       $ brew install graphicsmagick ffmpeg
 
-4.  测试安装是否成功::
+3.  重新打开一个终端，检测安装是否成功::
 
        $ gmt --version
        6.0.0
-
-如果想同时安装 GMT4 和 GMT5，还需要执行以下步骤::
-
-       # 安装 GMT4
-       $ brew install gmt4
-
-       # 删除 GMT5 带的软链接
-       $ cd /usr/local/opt/gmt@5/bin/
-       $ find . -size -4c -delete       # 删除所有文件大小小于4字节的软链接
-
-然后向 ``~/.bashrc`` 中写入如下语句以修改环境变量::
-
-    export GMT4HOME='/usr/local/opt/gmt@4'
-    export PATH=${GMT4HOME}/bin:$PATH
-    export LD_LIBRARY_PATH='${LD_LIBRARY_PATH}:${GMT4HOME}/lib64'
-
