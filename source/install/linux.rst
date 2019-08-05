@@ -82,7 +82,7 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 若输出为 ``yes`` 则表示安装的 netCDF 支持 netCDF-4/HDF5 格式，则可继续安装 GMT，
 否则无法安装 GMT。
 
-.. warnings::
+.. warning::
 
    GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在
    严重bug，会导致生成的图片中有用信息被裁剪。

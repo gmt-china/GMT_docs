@@ -11,7 +11,7 @@ ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux�
 
    从 GMT 5.2.1 开始，GMT 提供的 Windows 下的安装包已经不再支持 Windows XP。
 
-.. warnings::
+.. warning::
 
    GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在
    严重bug，会导致生成的图片中有用信息被裁剪。请确保自己安装的不是 9.27 版本。
