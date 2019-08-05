@@ -32,7 +32,7 @@ GMT中文手册
 
    intro/index
    install/index
-   get-started/index
+   tutorial/index
    basis/index
    table/index
    grid/index
