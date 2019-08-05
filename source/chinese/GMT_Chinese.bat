@@ -1,6 +1,4 @@
-gmt begin
-gmt figure map pdf,png C-sFONTPATH=C:\windows\fonts
-
+gmt begin map pdf,png C-sFONTPATH=C:\windows\fonts
 gmt set FONT_TITLE 25p,41,black
 gmt set FONT_LABEL 15p,39,black
 
