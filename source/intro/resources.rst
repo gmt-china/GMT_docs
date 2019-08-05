@@ -8,13 +8,13 @@
 
 #. `《地学GMT绘图软件入门》视频教程 <https://ke.qq.com/course/369776>`_ 作者: `@liuzhumei <https://github.com/liuzhumei>`_ (适用于GMT5)
 #. `GMT Tutorial by Whyjay Zheng <http://gmt-tutorials.org/>`_ (适用于GMT4)
-#. `GMT官方入门教程 <http://gmt.soest.hawaii.edu/doc/latest/tutorial.html>`_
+#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/latest/tutorial.html>`_
 #. :doc:`《GMT中文手册》中的入门示例 </get-started/index>`
 
-图库
-----
+图库与示例
+----------
 
-#. `GMT官方示例 <http://gmt.soest.hawaii.edu/doc/latest/Gallery.html>`_
+#. `GMT官方示例 <https://docs.generic-mapping-tools.org/latest/Gallery.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. :doc:`《GMT中文手册》中的示例 </gallery/index>`
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
@@ -23,8 +23,8 @@
 参考手册/高级用法
 -----------------
 
-#. `GMT官方参考手册 <http://gmt.soest.hawaii.edu/doc/latest/GMT_Docs.html>`_
-#. `GMT官方模块手册 <http://gmt.soest.hawaii.edu/doc/latest/index.html#man-pages>`_
+#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/latest/GMT_Docs.html>`_
+#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/latest/index.html#man-pages>`_
 #. `GMT中文手册 <https://docs.gmt-china.org/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
 #. `SeisMan博客 <https://blog.seisman.info/categories/GMT/>`_

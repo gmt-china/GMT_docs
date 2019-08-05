@@ -2,7 +2,7 @@
 ====
 
 若你发表的文章中包含了利用GMT制作的图件或利用GMT数据处理功能得到的结果，
-可以考虑引用GMT的如下文章来回报GMT开发者：
+可以考虑引用GMT的如下文章来回报GMT开发者。
 
 GMT5用户：
     Wessel, P., W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe,
