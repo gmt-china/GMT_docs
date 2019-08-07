@@ -71,55 +71,18 @@ basemap
 
         gmt basemap -R0/10/0/10 -JX10c/5c -Aoutline.txt
 
-``-D[<unit>]<xmin>/<xmax>/<ymin>/<ymax>[r][+s<file>][+t]``
-
-``-D[g|j|J|n|x]<refpoint>+w<width>[/<height>][+j<justify>][+o<dx>[/<dy>]][+s<file>][+t]``
-    在底图中绘制图中图（inset map box），需要 ``-F`` 选项，该选项有两种语法。
-
-    先解释图中图（inset box）的概念。在绘制一个小区域时，为了表明该小区域在
-    地球上的位置，通常需要在一张更大范围（比如整个中国或整个地球）的底图上标出
-    小区域所在的位置，这种绘图形式通常称为inset map。而inset box就是inset map的边框。
-
-    指定inset map box的范围有三种方法：
-
-    #. ``-D<xmin>/<xmax>/<ymin>/<ymax>[r]`` ：类似 ``-R`` 的语法，直接指定
-       inset box在地图上的范围
-    #. ``-D<unit><xmin>/<xmax>/<ymin>/<ymax>`` ：类似 ``-R`` 的语法，指定投影后的
-       坐标范围， ``<unit>`` 为投影后的坐标单位
-    #. 指定参考点和锚点，见 :doc:`/basis/embellishment` 一节
-
-       #. ``[g|j|J|n|x]<refpoint>`` 指定大区域底图上的参考点
-       #. ``+j<justify>`` 指定inset box上的锚点
-       #. ``+o<dx>/<dy>`` 指定参考点的额外偏移量
-       #. ``+w<width>[/<height>]`` 指定inset box的宽度或/和高度
-
-    #. ``+s<file>`` ：将inset box的左下角位置以及其长宽写到文件中，坐标值以及
-       长度值均使用当前地图单位
-    #. ``+t`` 将绘图原点移动到inset box的左下角
-
 ``-F[d|l|t][+c<clearances>][+g<fill>][+i[[<gap>/]<pen>]][+p[<pen>]][+r[<radius>]][+s[[<dx>/<dy>/][<shade>]]]``
-    控制inset box、比例尺和方向玫瑰的背景边框的属性
+    控制比例尺和方向玫瑰的背景边框的属性
 
     说明：
 
-    #. 该选项用于给inset box、比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性
-    #. ``d|l|t`` 表示该选项定义的属性仅适用于 ``-D`` 、 ``-L`` 或 ``-T`` 选项
+    #. 该选项用于给比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性
+    #. ``d|l|t`` 表示该选项定义的属性仅适用于 ``-D``\ 、\ ``-L`` 或 ``-T`` 选项
     #. 直接使用 ``-F`` 选项，则绘制背景边框，边框属性由参数 ``MAP_FRAME_PEN`` 控制
     #. 其他子选项的含义见 :doc:`/basis/embellishment` 一节的详细介绍
 
 示例
 ----
-
-下面的脚本展示了一种inset box的用法：
-
-.. literalinclude:: /scripts/psbasemap_ex1.sh
-   :language: bash
-
-.. figure:: /images/psbasemap_ex1.*
-   :width: 100%
-   :align: center
-
-   用psbasemap命令-D选项绘制图中图
 
 下面的脚本绘制了磁场玫瑰图：
 
