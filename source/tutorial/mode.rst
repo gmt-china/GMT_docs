@@ -16,20 +16,25 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 --------
 
 现代模式下，GMT用 :doc:`/module/begin` 开始一个绘图，并用 :doc:`/module/end` 结束一个绘图，
-所有的绘图命令均放在二者之间。其基本用法如下::
+所有的\ **绘图命令**\ 均放在二者之间，而数据处理相关的命令则可以随意放置。其基本用法如下::
 
     gmt begin [<figname> <formats> <psconvert_options>]
     gmt commands ...
-    gmt end
+    gmt end [show]
 
-其中 ``<figname>`` 指定了要生成的图片名，\ ``<formats>`` 则指定了图片的格式。
-这二者都是可选的，默认的文件名为 ``gmtsession``\ ，默认的图片格式为PDF格式。
+``gmt begin`` 用于开启一个绘图，其中::
+
+- ``<figname>`` 指定了要生成的图片名，默认文件名为 ``gmtsession``
+- ``<formats>`` 指定了图片的格式，默认图片格式为PDF
+- ``<psconvert_options>`` 指定了生成图片过程中的一些转换细节（比如裁剪方式、图片分辨率等）
+
+``gmt end`` 则用于结束一个绘图，其中 ``show`` 表示在绘图结束后自动打开图片。
 
 例如::
 
     gmt begin map pdf,png
     gmt basemap -JX10c/10c -R0/10/0/10 -Baf
-    gmt end
+    gmt end show
 
 会绘制一张底图，并保存为PDF和PNG格式的图片 ``map.pdf`` 和 ``map.png``\ 。
 
