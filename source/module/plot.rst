@@ -30,11 +30,10 @@ plot
     下图中，黑色曲线为默认情况；红线为使用 ``-A`` 的效果；蓝线为使用 ``-Ap``
     的效果；黄线为使用 ``-Am`` 的效果：
 
-    .. figure:: /images/psxy_-A.*
+    .. gmtplot:: /scripts/plot_-A.sh
        :width: 100%
-       :align: center
 
-       psxy -A选项示意图
+       plot -A选项示意图
 
     注：由于这里投影比较特别，所以沿着经线的线和沿着纬线的线，看上去都是直线，
     在其他投影方式下可能不会是这样。
@@ -54,7 +53,7 @@ plot
 
     下面的例子展示了 ``-C<color1>,<color2>..`` 用法::
 
-        gmt psxy -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p > test.ps << EOF
+        gmt plot -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p -png test << EOF
         > -Z0
         1 1
         2 2
@@ -79,11 +78,11 @@ plot
 
     例如，X方向误差为1::
 
-        echo 5 5 1 | gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Ex -W2p > test.ps
+        echo 5 5 1 | gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Ex -W2p -png test
 
     X方向误差为1，Y方向误差为0.5::
 
-        echo 5 5 1 0.5 | gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy -W2p > test.ps
+        echo 5 5 1 0.5 | gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy -W2p -png test
 
     使用 ``+a`` 表示X方向和/或Y方向为非对称误差棒，此时输入数据的格式为::
 
@@ -91,7 +90,7 @@ plot
 
     例如::
 
-        echo 5 5 1 0.4 0.5 0.25 | gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy+a -W2p > test.ps
+        echo 5 5 1 0.4 0.5 0.25 | gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy+a -W2p -png test
 
     使用 ``X`` 和 ``Y`` 则绘制box-and-whisker（即stem-and-leaf）符号。以 ``-EX``
     为例，此时数据数据格式为::
@@ -100,7 +99,7 @@ plot
 
     25%到75%之间的方框内可以用 ``-G`` 选项填充颜色::
 
-        echo 5 5 4 4.25 5.4 7 | gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -EX -Gred -W2p > test.ps
+        echo 5 5 4 4.25 5.4 7 | gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -EX -Gred -W2p -png test
 
     - 若使用 ``-EXY`` ，则输入数据中至少需要10列；
     - 若在X或Y后加上了 ``+n`` ，则需要在额外的第5列数据指定中位数的不确定性。
@@ -146,7 +145,7 @@ plot
 ``-L[+b|d|D][+xl|r|<x0>][+yl|r|<y0>][+p<pen>]``
     构建闭合多边形。
 
-    默认情况下，psxy只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。
+    默认情况下，plot只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。
     使用 ``-F`` ，则自动将数据的首尾两个点连起来，形成闭合多边形。
 
     除了简单的首尾相连之外，还可以给线段加上包络线（类似于线段的误差）：
@@ -169,7 +168,7 @@ plot
 
     对于存在周期性的地图而言，若符号出现在重复边界上，则会被重复绘制两次。比如::
 
-        gmt psxy -R0/360/-60/60 -JM10c -Bx60 -By15 -Sc2c > test.ps << EOF
+        gmt plot -R0/360/-60/60 -JM10c -Bx60 -By15 -Sc2c -png test << EOF
         360 0
         EOF
 
@@ -179,17 +178,6 @@ plot
     #. ``-Nr`` 关闭裁剪，但符号依然绘制两次
     #. ``-Nc`` 不关闭裁剪，但符号仅绘制一次
 
-``-T``
-    忽略所有输入文件，包括标准输入流
-
-    该选项会忽略命令行中的输入文件以及标准输入流，在Linux下相当于将空文件
-    ``/dev/null`` 作为输入文件，因而该命令不会在PS文件中绘制任何图形。
-
-    该选项有如下几个用途：
-
-    #. ``gmt psxy -J$J -R$R -T -K > $PS`` 只写入文件头，见 ``-K`` 和 ``-O`` 选项的介绍
-    #. ``gmt psxy -J$J -R$R -T -O >> $PS`` 只写入文件尾，见 ``-K`` 和 ``-O`` 选项的介绍
-    #. ``gmt psxy -J$J -R$R -T -X10c -Y10c >> $PS`` 只移动坐标原点而不绘制任何图形
 
 ``-W[<pen>][<attr>]``
     设置线段或符号轮廓的画笔属性。
@@ -240,12 +228,10 @@ plot
 
     下图给出了上面所给出的symbol所对应的符号：
 
-    .. figure:: /images/psxy_symbols.*
+    .. figure:: /scripts/plot_symbols.sh
        :width: 100%
-       :align: center
-       :alt: psxy simple symbols
 
-       psxy -S选项示意图
+       plot -S选项示意图
 
     除了上述简单的符号之外，还有更多复杂的符号。
 
@@ -263,7 +249,7 @@ plot
 
     ::
 
-        gmt psxy -R0/10/0/5 -JX15c/5c -B1 -Sb1cb > test.ps << EOF
+        gmt plot -R0/10/0/5 -JX15c/5c -B1 -Sb1cb -png test << EOF
         2 3 1 0.5
         4 2 1 1.5
         8 4 1 2.5
@@ -286,28 +272,28 @@ plot
 
     用长度单位指定一个椭圆::
 
-        echo 180 0 45 5c 3c | gmt psxy -R0/360/-90/90 -JN15c -B60 -Se > test.ps
+        echo 180 0 45 5c 3c | gmt plot -R0/360/-90/90 -JN15c -B60 -Se -png test
 
     线性投影下 ``-SE`` 的长短轴的单位为数据单位::
 
-        echo 180 0 45 300 100 | gmt psxy -R0/360/-90/90 -JX10c -B60 -SE > test.ps
+        echo 180 0 45 300 100 | gmt plot -R0/360/-90/90 -JX10c -B60 -SE -png test
 
     地理投影下 ``-SE`` 的长短轴的单位是地理单位，默认长度单位为千米::
 
-        echo 80 0 45 22200 11100 | gmt psxy -R0/360/-90/90 -JN15c -B60 -SE > test.ps
-        echo 80 0 45 200d  100d  | gmt psxy -R0/360/-90/90 -JN15c -B60 -SE > test2.ps
+        echo 80 0 45 22200 11100 | gmt plot -R0/360/-90/90 -JN15c -B60 -SE -png test
+        echo 80 0 45 200d  100d  | gmt plot -R0/360/-90/90 -JN15c -B60 -SE -png test2
 
     若长短轴长度相等，则椭圆退化成圆，可以用于绘制直径以千米为单位的圆，从而解决了
     ``-Sc`` 只能用长度单位而不能用距离单位画圆的不足。这一特性可以用于绘制等震中
     距线。比如如下命令可以绘制30度等震中距线::
 
-        echo 80 0 0 60d 60d | gmt psxy -R0/360/-90/90 -JN15c -B60 -SE > test.ps
+        echo 80 0 0 60d 60d | gmt plot -R0/360/-90/90 -JN15c -B60 -SE -png test
 
     上面示例的输入数据中，方向和短轴长度都是多余的，所以GMT提供了 ``-SE-[<size>]``
     选项用于绘制直径为 ``<size>`` 的圆，若未指定 ``<size>`` ，则需要在数据中指定
     圆的直径。比如30度和60度等震中距线可以用如下命令绘制::
 
-        gmt psxy -R0/360/-90/90 -JN15c -B60 -SE- > test.ps << EOF
+        gmt plot -R0/360/-90/90 -JN15c -B60 -SE- -png test << EOF
         180 0 60d
         180 0 120d
         EOF
@@ -334,15 +320,13 @@ plot
 
     下面的例子分别绘制了 ``+b`` 、 ``+c`` 、 ``+f`` 、 ``+s`` 、 ``+t`` 所对应的符号：
 
-    .. literalinclude:: /scripts/psxy_-Sf.sh
+    .. literalinclude:: /scripts/plot_-Sf.sh
        :language: bash
 
-    .. figure:: /images/psxy_-Sf.*
+    .. gmtplot:: /scripts/plot_-Sf.sh
        :width: 100%
-       :align: center
-       :alt: psxy -Sf example
 
-       psxy -Sf示意图
+       plot -Sf示意图
 
 ``-Sj|J``
     绘制旋转矩形
@@ -391,15 +375,13 @@ plot
        ``-SM`` 会用直角符号来表示
     #. 圆弧的两端可加上额外的箭头，见 :doc:`/basis/vector` 一节
 
-    .. literalinclude:: /scripts/psxy_-Sm.sh
+    .. literalinclude:: /scripts/plot_-Sm.sh
        :language: bash
 
-    .. figure:: /images/psxy_-Sm.*
+    .. gmtplot:: /scripts/plot_-Sm.sh
        :width: 50%
-       :align: center
-       :alt: psxy angle arc
 
-       psxy -Sm 示意图
+       plot -Sm 示意图
 
 ``-Sq[<type>]<info>[:<labelinfo>]``
     绘制quoted lines，即带标注的线段，比如等值线、带断层名的断层线等
@@ -473,7 +455,7 @@ plot
 
     ::
 
-        echo 2 2 45 5c | gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sv1c+e -W2p > test.ps
+        echo 2 2 45 5c | gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sv1c+e -W2p -png test
 
 ``-Sw|W[+a|+r]``
     绘制楔形饼图（pie **w**\ edge），即饼图中的一个切片。加上 ``+a`` 表示只
@@ -492,15 +474,13 @@ plot
 
     下面的示例分别用 ``-SW`` 和 ``-Sw`` 画了两个不同大小的楔形饼图：
 
-    .. literalinclude:: /scripts/psxy_-Sw.sh
+    .. literalinclude:: /scripts/plot_-Sw.sh
        :language: bash
 
-    .. figure:: /images/psxy_-Sw.*
+    .. gmtplot:: /scripts/plot_-Sw.sh
        :width: 100%
-       :align: center
-       :alt: psxy pie wedge
 
-       psxy -Sw示意图。
+       plot -Sw示意图。
 
        左边-Sw，右边-SW；图中1格表示1cm。
 
@@ -562,7 +542,7 @@ plot
 
 最简单的命令，绘制线段或多边形，此时数据输入需要两列，即X和Y::
 
-    gmt psxy -R0/10/0/10 -JX10c -B1 > test.ps << EOF
+    gmt plot -R0/10/0/10 -JX10c -B1 -png test << EOF
     3 5
     5 8
     7 4
@@ -570,24 +550,22 @@ plot
 
 下面的脚本展示了 ``-F`` 选项的用法：
 
-.. literalinclude:: /scripts/psxy_-F.sh
+.. literalinclude:: /scripts/plot_-F.sh
    :language: bash
 
-.. figure:: /images/psxy_-F.*
+.. gmtplot:: /scripts/plot_-F.sh
    :width: 100%
-   :align: center
 
-   psxy -F选项示意图
+   plot -F选项示意图
 
 ``-L`` 选项的示例：
 
-.. literalinclude:: /scripts/psxy_-L.sh
+.. literalinclude:: /scripts/plot_-L.sh
    :language: bash
 
-.. figure:: /images/psxy_-L.*
+.. gmtplot:: /scripts/plot_-L.sh
    :width: 100%
-   :align: center
 
-   psxy -L选项示意图
+   plot -L选项示意图
 
 更多示例见 :doc:`/gallery/lines`\ 。

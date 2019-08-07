@@ -9,7 +9,7 @@
 #. `《地学GMT绘图软件入门》视频教程 <https://ke.qq.com/course/369776>`_ 作者: `@liuzhumei <https://github.com/liuzhumei>`_ (适用于GMT5)
 #. `GMT Tutorial by Whyjay Zheng <http://gmt-tutorials.org/>`_ (适用于GMT4)
 #. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/latest/tutorial.html>`_
-#. :doc:`《GMT中文手册》中的入门示例 </get-started/index>`
+#. :doc:`《GMT中文手册》中的入门示例 </tutorial/index>`
 
 图库与示例
 ----------
