@@ -12,8 +12,10 @@ GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展�
 下面的色标是利用 :doc:`/module/makecpt` 对原始CPT文件做离散处理得到的单色型
 CPT文件，可以用如下命令绘制得到::
 
-    gmt makecpt -C<cpt> -T-1/1/0.25 > new.cpt
-    gmt colorbar -D0c/0c+w10c/1c+h -B0 -Cnew.cpt -pdf CPT
+    gmt begin CPT png,pdf
+    gmt makecpt -C<cpt> -T-1/1/0.25
+    gmt colorbar -C -D0c/0c+w10c/1c+h -B0
+    gmt end
 
 +--------------------------------+--------------------------------+
 | .. figure:: cpt/abyss.*        | .. figure:: cpt/bathy.*        |

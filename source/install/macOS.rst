@@ -23,7 +23,7 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
        $ gmt --version
        6.0.0rc3
 
-5. 安装GMT依赖的其它软件（此处使用homebrew进行安装）
+5. 安装GMT依赖的其它软件（此处使用homebrew进行安装）::
 
        # 必须软件包
        $ brew install ghostscript

@@ -71,4 +71,4 @@ grdimage
 
 使用默认的光照效果::
 
-    gmt grdimage stuff.nc -JX6i+ -I+ > quick.ps
+    gmt grdimage stuff.nc -JX6i+ -I+d -pdf map

@@ -76,8 +76,8 @@ X分量和Y分量，最终矢量场用不同长度和方向的箭头表示。两
 
 对矢量长度进行缩放，使得图上1英寸代表实际的10个数据单位::
 
-    gmt grdvector r.nc theta.nc -Jx5c -A -Q0.1i+e+jc -S10i > gradient.ps
+    gmt grdvector r.nc theta.nc -Jx5c -A -Q0.1i+e+jc -S10i -pdf gradient
 
 绘制地理数据，缩放比例为每个数据单位对应200 km，每隔3个网格点绘制一个矢量::
 
-    gmt grdvector comp_x.nc comp_y.nc -Ix3 -JH0/20c -Q0.1i+e+jc -S200 > globe.ps
+    gmt grdvector comp_x.nc comp_y.nc -Ix3 -JH0/20c -Q0.1i+e+jc -S200 -pdf globe

@@ -18,7 +18,7 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
 现代模式下，GMT用 :doc:`/module/begin` 开始一个绘图，并用 :doc:`/module/end` 结束一个绘图，
 所有的绘图命令均放在二者之间。其基本用法如下::
 
-    gmt begin <figname> <formats>
+    gmt begin [<figname> <formats> <psconvert_options>]
     gmt commands ...
     gmt end
 

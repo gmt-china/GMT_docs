@@ -30,9 +30,4 @@ gmtdefaults
 
 搜索与 ``LABEL`` 有关的参数的值::
 
-    gmt gmtdefaults | grep LABEL
-
-BUGS
-----
-
-- ``-D`` 选项无效（v5.1.2）
+    gmt gmtdefaults -D | grep LABEL

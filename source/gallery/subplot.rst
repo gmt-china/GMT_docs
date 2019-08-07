@@ -75,16 +75,16 @@ GMT6中绘制多子图有两种方式：
    gmt set FONT_TAG 15p,1
 
    gmt subplot begin 2x2 -Fs5c/3c -A'(a)'+JTL+o0.2c/0.4c -M0.5c/0.2c
+   gmt subplot set 0,0
+   gmt basemap -R$R -Ba -BWSen
+
+   gmt subplot set 0,1
+   gmt basemap -R$R -Ba -BWSen
+
+   gmt subplot set 1,0
+   gmt basemap -R$R -Ba -BWSen
+
    gmt subplot set 1,1
-   gmt basemap -R$R -Ba -BWSen
-
-   gmt subplot set 1,2
-   gmt basemap -R$R -Ba -BWSen
-
-   gmt subplot set 2,1
-   gmt basemap -R$R -Ba -BWSen
-
-   gmt subplot set 2,2
    gmt basemap -R$R -Ba -BWSen
 
    gmt subplot end

@@ -41,8 +41,11 @@ gmtlogo
 
 单独绘制一个2英寸宽的GMT logo::
 
-    gmt logo -P -Dx0/0+w2i > logo.ps
+    gmt logo -Dx0/0+w2i -pdf map
 
 将GMT logo作为一个图层放在当前底图的左上角::
 
-    gmt logo -R -J -DjTR+o0.1i/0.1i+w3i -F+glightblue+s -K -O >> bigmap.ps
+    gmt begin logo
+    gmt ...
+    gmt logo -DjTR+o0.1i/0.1i+w3i -F+glightblue+s
+    gmt end

@@ -42,7 +42,6 @@ Windows下默认GMT用户目录是 ``C:\Users\用户名\.gmt``\ ）。
 重启电脑使得环境变量生效。
 
 如果喜欢将不同的数据分类放在不同的目录下，则可以向 ``GMT_DATADIR`` 添加多个目录。
-Linux和macOS下多个目录之间用冒号 ``:`` 分隔，Windows下多个目录之间用 ``;`` 分隔。
-例如::
+多个目录之间用逗号 ``,`` 分隔。例如::
 
-    export GMT_DATADIR=~/GMTDB/data1:~/GMTDB/data2
+    export GMT_DATADIR=~/GMTDB/data1,~/GMTDB/data2
