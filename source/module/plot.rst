@@ -32,6 +32,7 @@ plot
 
     .. gmtplot:: /scripts/plot_-A.sh
        :width: 100%
+       :show-code: false
 
        plot -A选项示意图
 
@@ -228,8 +229,9 @@ plot
 
     下图给出了上面所给出的symbol所对应的符号：
 
-    .. figure:: /scripts/plot_symbols.sh
+    .. gmtplot:: /scripts/plot_symbols.sh
        :width: 100%
+       :show-code: false
 
        plot -S选项示意图
 
@@ -320,9 +322,6 @@ plot
 
     下面的例子分别绘制了 ``+b`` 、 ``+c`` 、 ``+f`` 、 ``+s`` 、 ``+t`` 所对应的符号：
 
-    .. literalinclude:: /scripts/plot_-Sf.sh
-       :language: bash
-
     .. gmtplot:: /scripts/plot_-Sf.sh
        :width: 100%
 
@@ -374,9 +373,6 @@ plot
     #. ``-SM`` 选项与 ``-Sm`` 完全相同，只是当圆弧的夹角恰好是90度是，
        ``-SM`` 会用直角符号来表示
     #. 圆弧的两端可加上额外的箭头，见 :doc:`/basis/vector` 一节
-
-    .. literalinclude:: /scripts/plot_-Sm.sh
-       :language: bash
 
     .. gmtplot:: /scripts/plot_-Sm.sh
        :width: 50%
@@ -474,9 +470,6 @@ plot
 
     下面的示例分别用 ``-SW`` 和 ``-Sw`` 画了两个不同大小的楔形饼图：
 
-    .. literalinclude:: /scripts/plot_-Sw.sh
-       :language: bash
-
     .. gmtplot:: /scripts/plot_-Sw.sh
        :width: 100%
 
@@ -550,18 +543,12 @@ plot
 
 下面的脚本展示了 ``-F`` 选项的用法：
 
-.. literalinclude:: /scripts/plot_-F.sh
-   :language: bash
-
 .. gmtplot:: /scripts/plot_-F.sh
    :width: 100%
 
    plot -F选项示意图
 
 ``-L`` 选项的示例：
-
-.. literalinclude:: /scripts/plot_-L.sh
-   :language: bash
 
 .. gmtplot:: /scripts/plot_-L.sh
    :width: 100%
