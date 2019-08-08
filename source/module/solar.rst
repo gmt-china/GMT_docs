@@ -29,7 +29,7 @@ solar
 
     示例::
 
-        $ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8 -C
+        $ gmt solar -I120/40+d2016-11-01T01:00:00+z8 -C
         160.885755836	-14.5068940782	38.6719503593	-59.513608404	0.270214374769	0.706928713211	0.48857154399	628.868647356	-59.5102114599	16.4569766548
 
 ``-G<fill>|c``
@@ -45,7 +45,7 @@ solar
 
     ::
 
-        $ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8
+        $ gmt solar -I120/40+d2016-11-01T01:00:00+z8
             Sun current position:    long = 160.885756    lat = -14.506894
                                   Azimuth = 38.6720    Elevation = -59.5136
         Sunrise  = 06:29
@@ -94,8 +94,10 @@ solar
 
     下面的命令绘制了晨昏线以及三条曙暮光线::
 
-        $ gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K > terminator.ps
-        $ gmt pssolar -R -J -W1p -Tdcna -O >> terminator.ps
+        $ gmt begin terminator png
+        $ gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000
+        $ gmt solar -W1p -Tdcna -O
+        $ gmt end
 
 ``-W[<pen>]``
     设置晨昏线的画笔属性，见 :doc:`/basis/pen` 。
