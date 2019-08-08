@@ -1,8 +1,6 @@
 #!/bin/bash
-J=X20c/2c
-R=0.5/13.5/0/4
-PS=psxy_symbols.ps
-gmt psxy -J$J -R$R -B1 -BS -S0.5c -K > $PS << EOF
+gmt begin plot_symbols pdf,png
+gmt plot -JX20c/2c -R0.5/13.5/0/4 -B1 -BS -S0.5c << EOF
 1 3 -
 2 3 +
 3 3 a
@@ -17,7 +15,7 @@ gmt psxy -J$J -R$R -B1 -BS -S0.5c -K > $PS << EOF
 12 3 x
 13 3 y
 EOF
-gmt pstext -J$J -R$R -F+f15p,9 -O >> $PS << EOF
+gmt text -F+f15p,9 << EOF
 1 1 -S-
 2 1 -S+
 3 1 -Sa
@@ -32,5 +30,4 @@ gmt pstext -J$J -R$R -F+f15p,9 -O >> $PS << EOF
 12 1 -Sx
 13 1 -Sy
 EOF
-
-rm gmt.*
+gmt end
