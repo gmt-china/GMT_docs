@@ -92,12 +92,14 @@ solar
     - 航海曙暮光指太阳中心位于地平线以下 0˚50' 至 12˚ 这段时间
     - 天文曙暮光指太阳中心位于地平线以下 0˚50' 至 18˚ 这段时间
 
-    下面的命令绘制了晨昏线以及三条曙暮光线::
+    下面的命令绘制了晨昏线以及三条曙暮光线:
 
-        $ gmt begin terminator png
-        $ gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000
-        $ gmt solar -W1p -Tdcna -O
-        $ gmt end
+    .. code-block:: bash
+
+        gmt begin terminator png
+        gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000
+        gmt solar -W1p -Tdcna -O
+        gmt end
 
 ``-W[<pen>]``
     设置晨昏线的画笔属性，见 :doc:`/basis/pen` 。
