@@ -97,8 +97,8 @@ cat << EOF > t.cpt
 7	magenta
 8	white
 EOF
-gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
 gmt begin legend pdf,png
+gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
 gmt legend -Dx0/0+w5.6i+jBL+l1.1 -C0.05i -F+p+gsnow1 -B0 table.txt
 gmt end
 rm -f table.txt t.cpt
