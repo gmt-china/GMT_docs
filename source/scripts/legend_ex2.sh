@@ -1,8 +1,4 @@
 #!/bin/bash
-ps=pslegend_ex2.ps
-
-gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
-
 cat <<EOF > table.txt
 #G 0.04i
 H 24 Times-Roman Eight Largest Cities in North America
@@ -101,6 +97,8 @@ cat << EOF > t.cpt
 7	magenta
 8	white
 EOF
-gmt pslegend -Dx0/0+w5.6i+jBL+l1.1 -C0.05i -F+p+gsnow1 -B0 table.txt -P --FONT_ANNOT_PRIMARY=12p \
-        --FONT_LABEL=12p > $ps
-rm -f table.txt t.cpt gmt.*
+gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
+gmt begin legend pdf,png
+gmt legend -Dx0/0+w5.6i+jBL+l1.1 -C0.05i -F+p+gsnow1 -B0 table.txt
+gmt end
+rm -f table.txt t.cpt

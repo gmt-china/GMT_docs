@@ -1,6 +1,6 @@
 #!/bin/bash
-gmt pslegend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 \
-    -C0.1i/0.1i -B5f1 << EOF > pslegend_ex1.ps
+gmt begin legend pdf,png
+gmt legend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 -C0.1i/0.1i -B5f1 << EOF
 # Legend test for pslegend
 # G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line.
 # H is header, L is label, S is symbol, T is paragraph text, M is map scale.
@@ -32,4 +32,4 @@ T Let us just try some simple text that can go on a few lines.
 T There is no easy way to predetermine how many lines will be required,
 T so we may have to adjust the box height to get the right size box.
 EOF
-rm gmt.*
+gmt end

@@ -145,20 +145,14 @@ GMT中共有14种图例类型，列举如下：
 示例
 ----
 
-.. literalinclude:: /scripts/pslegend_ex1.sh
-   :language: bash
-
-.. figure:: /images/pslegend_ex1.*
+.. gmtplot:: /scripts/legend_ex1.sh
    :width: 100%
    :align: center
 
-   pslegend示例图1
+   legend示例图1
 
-.. literalinclude:: /scripts/pslegend_ex2.sh
-   :language: bash
-
-.. figure:: /images/pslegend_ex2.*
+.. gmtplot:: /scripts/legend_ex2.sh
    :width: 100%
    :align: center
 
-   pslegend示例图2
+   legend示例图2
