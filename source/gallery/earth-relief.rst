@@ -13,14 +13,7 @@
 
 代码为：
 
-.. literalinclude:: /scripts/GMT_tutor3.sh
-   :language: bash
-
-结果：
-
-.. figure:: /images/GMT_tutor3.*
-   :width: 100%
-   :align: center
+.. gmtplot:: /scripts/GMT_tutor3.sh
 
 本示例使用GMT提供的earth_relief数据绘制西藏地区的地形图。
 
