@@ -46,9 +46,8 @@ text
 
     下图展示了 ``-C`` 选项的作用。
 
-    .. figure:: /images/GMT_pstext_clearance.*
+    .. gmtplot:: /scripts/text_clearance.sh
        :width: 80%
-       :align: center
 
 ``-D[j|J]<dx>[/<dy>][+v[<pen>]]``
     文本在指定坐标的基础上偏移 ``<dx>/<dy>`` ，默认值为 ``0/0`` 即不偏移。
