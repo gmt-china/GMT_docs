@@ -38,9 +38,9 @@ basemap
 
     下图展示了方向玫瑰图的效果图：
 
-    .. figure:: /images/psbasemap_ex3.*
+    .. gmtplot:: /scripts/basemap_ex3.sh
        :width: 100%
-       :align: center
+       :show-code: false
 
        方向玫瑰图
 
@@ -86,12 +86,8 @@ basemap
 
 下面的脚本绘制了磁场玫瑰图：
 
-.. literalinclude:: /scripts/psbasemap_ex4.sh
-   :language: bash
-
-.. figure:: /images/psbasemap_ex4.*
+.. gmtplot:: /scripts/basemap_ex4.sh
    :width: 100%
-   :align: center
 
    磁场玫瑰图
 
