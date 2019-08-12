@@ -42,7 +42,7 @@ text
     ``-W`` 或 ``-G`` 选项时才有效。
 
     ``<dx>`` 可以是具体的距离值也可以接 ``%`` 表示空白与当前字号的百分比。
-    例如 ``-C1c/1c`` 或 ``-C20%/30%`` 。
+    例如 ``-C1c/1c`` 或 ``-C20%/30%``\ 。
 
     下图展示了 ``-C`` 选项的作用。
 
@@ -171,12 +171,7 @@ text
 
     段头记录后即为要显示在图上的文本，每段数据之间用空行分隔。
 
-    .. literalinclude:: /scripts/pstext_-M.sh
-       :language: bash
-
-    .. figure:: /images/pstext_-M.*
-       :width: 100%
-       :align: center
+    .. gmtplot:: /scripts/text_-M.sh
 
        段落模式示意图
 

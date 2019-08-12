@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gmt begin velo_ex2 pdf
+gmt begin velo_ex2 png,pdf
 gmt velo -R-10/10/-10/10 -Wthin,red -Se0.2c/0.39/12 -B1g1 \
         -BWeSn -Jx0.2i -Ggreen -Eblue -L -N -A1c+p3p+e << EOF
 # Long.   Lat.   Evel   Nvel   Esig   Nsig  CorEN SITE

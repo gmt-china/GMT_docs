@@ -104,24 +104,12 @@ coupe
 
 下面的示例展示了 ``-Aa`` 选项的用法，指定P1和P2为剖面的起点和终点，并展示了不同倾角时的震源球的效果。
 
-.. literalinclude:: /scripts/pscoupe_ex1.sh
-   :language: bash
+.. gmtplot:: /scripts/coupe_ex1.sh
 
-.. figure:: /images/pscoupe_ex1.*
-   :alt: pscoupe example 1
-   :width: 100%
-   :align: center
-
-   pscoupe示例图1
+   coupe示例图1
 
 下面的示例将震源球投影到不同方位角的剖面上的效果：
 
-.. literalinclude:: /scripts/pscoupe_ex2.sh
-   :language: bash
+.. gmtplot:: /scripts/coupe_ex2.sh
 
-.. figure:: /images/pscoupe_ex2.*
-   :alt: pscoupe example 2
-   :width: 100%
-   :align: center
-
-   pscoupe示例图2
+   coupe示例图2

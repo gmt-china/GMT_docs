@@ -103,21 +103,11 @@ velo
 示例
 ----
 
-.. literalinclude:: /scripts/velo_ex1.sh
-   :language: bash
-
-.. figure:: /images/velo_ex1.png
-   :width: 100%
-   :align: center
+.. gmtplot:: /scripts/velo_ex1.sh
 
    velo示例图1
 
-.. literalinclude:: /scripts/velo_ex2.sh
-   :language: bash
-
-.. figure:: /images/velo_ex2.png
-   :width: 100%
-   :align: center
+.. gmtplot:: /scripts/velo_ex2.sh
 
    velo示例图2
 
