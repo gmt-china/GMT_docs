@@ -22,7 +22,7 @@ GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称
     gmt commands ...
     gmt end [show]
 
-``gmt begin`` 用于开启一个绘图，其中::
+``gmt begin`` 用于开启一个绘图，其中:
 
 - ``<figname>`` 指定了要生成的图片名，默认文件名为 ``gmtsession``
 - ``<formats>`` 指定了图片的格式，默认图片格式为PDF
