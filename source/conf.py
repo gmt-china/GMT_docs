@@ -91,6 +91,10 @@ html_context = {
     ],
 }
 
+html_css_files = [
+    'custom.css',
+]
+
 # See https://github.com/rtfd/sphinx_rtd_theme/issues/761
 # Load custom stylesheets to support Algolia search.
 #html_css_files = [
