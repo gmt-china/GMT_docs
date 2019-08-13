@@ -22,8 +22,8 @@ GMT的历史
 - 1998年11月8日，GMT 3.x的第一个正式版发布；
 - 2005年10月1日，GMT 4.x的第一个正式版发布；GMT4.x系列的最后一个版本是
   GMT 4.5.18，发布于2018年7月1日；
-- 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT |GMT5_latest_release|
-  发布于 |GMT5_latest_release_date|\ ；
+- 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT 5.4.5
+  发布于 2019年1月4日；
 - 2019年6月18日，GMT 6.0.0 的第一个公测版发布。
 
 GMT维护者
@@ -104,6 +104,6 @@ GMT的特点
 .. _gnuplot: http://www.gnuplot.info/
 
 .. [1] GMT对三维图的支持很有限。
-.. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`_ 或 `Basemap <http://matplotlib.org/basemap/>`_
+.. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`_
 .. [3] 需要额外安装 `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
 .. [4] 需要额外安装 `ggmap <https://github.com/dkahle/ggmap>`_

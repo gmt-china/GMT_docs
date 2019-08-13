@@ -42,10 +42,6 @@ copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = 'GMT中文社区'
 version = '6.0.0'
 release = version
-rst_prolog = '''
-.. |GMT5_latest_release| replace:: 5.4.5
-.. |GMT5_latest_release_date| replace:: 2019-01-04
-'''
 
 # -- Options for HTML output ----------------------------------------------
 import sphinx_rtd_theme
@@ -73,7 +69,7 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
 
-    'versions': ['6.0.0', '5.4.5'],
+    'versions': ['6.0', '5.4'],
 
     "menu_links": [
         (
