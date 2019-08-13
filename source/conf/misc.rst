@@ -145,3 +145,8 @@ GMT_HISTORY
     - ``true`` 可以读写
     - ``readonly`` 只能读不能写
     - ``false`` 不显示历史文件
+
+.. _GMT_GRAPHICS_FORMAT:
+
+GMT_GRAPHICS_FORMAT
+    现代模式下默认的图片文件格式 [pdf]
