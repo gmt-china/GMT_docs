@@ -72,7 +72,7 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
 
-    'versions': ['6.0.0', '5.4.5'],
+    'versions': ['6.0', '5.4'],
 
     "menu_links": [
         (
