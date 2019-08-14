@@ -40,7 +40,7 @@ master_doc = 'index'
 project = 'GMT中文手册'
 copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = 'GMT中文社区'
-version = '6.0.0'
+version = '6.0'
 release = version
 
 # -- Options for HTML output ----------------------------------------------
