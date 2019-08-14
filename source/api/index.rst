@@ -1,7 +1,8 @@
 API
 ###
 
-GMT 目前提供了 C/Fortran、Matlab、Julia、Python的程序接口。
+GMT提供了API，使得用户可以直接在C/Fortran、Matlab、Julia、Python程序中直接调用
+GMT。
 
 .. toctree::
    :maxdepth: 2

@@ -1,5 +1,5 @@
-GMT Julia API
-=============
+GMT/Julia
+=========
 
 `Julia <https://julialang.org>`_ 是一门为科学计算设计的编程语言，简单易学。
 其与 Matlab、Python 等编程语言都有相似之处。GMT 提供了 Julia 接口，使得 Julia
@@ -7,3 +7,7 @@ GMT Julia API
 
 - 源码地址: https://github.com/GenericMappingTools/GMT.jl
 - 官方文档: https://www.generic-mapping-tools.org/GMT.jl
+
+.. note::
+
+    目前 GMT.jl 正在开发中。
