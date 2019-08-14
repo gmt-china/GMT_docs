@@ -68,14 +68,14 @@ begin
 
     其他可选的选项包括：
 
-    - **A**\ [*args*]: 裁剪选项
+    - **A**\ [*args*]: 裁剪图片
     - **C**\ *args*: 额外传递给GhostScript的选项
     - **D**\ *dir*: 指定图片的输出目录
     - **E**\ *dpi*: 设置图片分辨率
-    - **H**\ *factor*
-    - **M**\ *args*
-    - **Q**\ *args*
-    - **S**
+    - **H**\ *factor*: 对图片做平滑以避免混叠
+    - **M**\ *args*: 为当前图片叠加前景图片或背景图片
+    - **Q**\ *args*: 设置图像和文本的抗锯齿选项
+    - **S** : 把 GhostScript 命令输出到标准错误输出，且不删除所有中间文件
 
     详细解释见 :doc:`psconvert` 的说明文档。
 
@@ -130,10 +130,17 @@ UNIX shell 注意事项
 错误。最常见的情况是在使用UNIX管道时，可能会生成子shell进而导致父进程ID出现变化。
 
 如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 ``gmt6.#####``
-这样的错误，这极有可能意味着你所使用的UNIX shell存在此类问题。解决办法是，
-在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID，即GMT脚本为::
+这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，
+在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID。在Bash shell应该是::
 
     export GMT_SESSION_NAME=$$
     gmt begin
     gmt ...
+    gmt end
+
+在CShell中应该是::
+
+    setenv GMT_SESSION_NAME $$
+    gmt begin
+    gmt ..
     gmt end
