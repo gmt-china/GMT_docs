@@ -131,13 +131,16 @@ UNIX shell 注意事项
 
 如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 ``gmt6.#####``
 这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，
-在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID，Bash shell应该是::
+在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID。在Bash shell应该是::
 
     export GMT_SESSION_NAME=$$
     gmt begin
     gmt ...
     gmt end
 
-cshel应该是::
+在CShell中应该是::
 
     setenv GMT_SESSION_NAME $$
+    gmt begin
+    gmt ..
+    gmt end
