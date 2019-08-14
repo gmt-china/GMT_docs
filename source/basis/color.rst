@@ -27,6 +27,8 @@
 
 GMT 支持通过颜色名指定663种颜色。下图中列出了GMT支持的所有颜色名及其对应的RGB值。
 
+.. _color_list:
+
 .. figure:: /images/GMT_RGBchart_a4.*
    :width: 100%
    :align: center

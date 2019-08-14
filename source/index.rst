@@ -16,7 +16,7 @@ GMT中文手册
 **快速链接：**
 
 - :doc:`GMT投影方式 </option/J>`
-- :doc:`GMT颜色表 </appendix/colors>`
+- :ref:`GMT颜色表 <color_list>`
 - :doc:`GMT内置CPT </cpt/builtin-cpt>`
 - :doc:`GMT字体 </basis/text>`
 - :doc:`GMT配置参数 </conf/index>`
