@@ -25,8 +25,17 @@
 所有的颜色名都是不区分大小写的，所以 ``lightblue``\ 、``LIGHTBLUE``
 或者 ``LightBlue`` 都是合法的颜色名。
 
-GMT共支持663种颜色名，可以查找附录中的 :doc:`/appendix/colors` 获取GMT所支持的
-颜色及其对应的RGB值。
+GMT 支持通过颜色名指定663种颜色。下图中列出了GMT支持的所有颜色名及其对应的RGB值。
+
+.. figure:: /images/GMT_RGBchart_a4.*
+   :width: 100%
+   :align: center
+
+**GMT颜色表下载：**
+:download:`A4 PNG格式 </images/GMT_RGBchart_a4.png>` |
+:download:`A4 PDF格式 </images/GMT_RGBchart_a4.pdf>` |
+:download:`USLetter PNG格式 </images/GMT_RGBchart_letter.png>` |
+:download:`USLetter PDF格式 </images/GMT_RGBchart_letter.pdf>`
 
 RGB
 ---

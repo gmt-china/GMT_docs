@@ -5,7 +5,6 @@
    :maxdepth: 2
 
    cmd/index
-   colors
    patterns
    modes-difference
    low-level/index
