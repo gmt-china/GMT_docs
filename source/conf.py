@@ -43,6 +43,9 @@ author = 'GMT中文社区'
 version = '6.0'
 release = version
 
+# Set smartquotes_action to 'qe' to disable Smart Quotes transform of -- and ---
+smartquotes_action = 'qe'
+
 # -- Options for HTML output ----------------------------------------------
 import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
