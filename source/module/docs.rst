@@ -1,4 +1,5 @@
 .. index:: ! docs
+.. include:: common_SYN_OPTs.rst_
 
 docs
 ====
@@ -11,8 +12,6 @@ docs
 
 语法
 ----
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt docs**
 [ |-Q| ]

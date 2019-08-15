@@ -1,4 +1,5 @@
 .. index:: ! figure
+.. include:: common_SYN_OPTs.rst_
 
 figure
 ======
@@ -16,8 +17,6 @@ figure
 
 语法
 ----
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt figure**
 [ *prefix* ]

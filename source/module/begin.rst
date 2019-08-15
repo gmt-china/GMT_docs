@@ -1,4 +1,5 @@
 .. index:: ! begin
+.. include:: common_SYN_OPTs.rst_
 
 begin
 =====
@@ -16,8 +17,6 @@ begin
 
 语法
 ----
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt begin**
 [ *prefix* ]

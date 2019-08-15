@@ -1,4 +1,5 @@
 .. index:: ! end
+.. include:: common_SYN_OPTs.rst_
 
 end
 ===
@@ -11,8 +12,6 @@ end
 
 语法
 ----
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt end**
 [ **show** ]
