@@ -6,5 +6,13 @@
 
    prerequisite
    first-plot
-   mode
+   coastline
+   lines
+   symbols
+   texts
+   grids
+   oneliner
+   multifig
+   subplot
+   inset
    last-plot
