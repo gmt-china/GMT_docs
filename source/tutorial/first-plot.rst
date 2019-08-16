@@ -70,7 +70,7 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 ::
 
     gmt begin GlobalMap png,pdf
-        gmt coast -Rg -JH15c -Gpurple -Baf+t"My First Plot"
+        gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 
 .. gmtplot::
@@ -79,7 +79,7 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
     :caption: 第一张图
 
     gmt begin GlobalMap png,pdf
-        gmt coast -Rg -JH15c -Gpurple -Baf+t"My First Plot"
+        gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end
 
 .. tip::
@@ -99,7 +99,8 @@ GMT命令格式
 -   所有的GMT命令都需要以 **gmt** 开头
 -   **coast** 是模块名，这个模块可以用于绘制海岸线
 -   **-R**\ 、\ **-J**\ 、\ **-G**\ 、\ **-B**\ 等以 **-** 开头的是模块的选项
--   ``-Baf+t"My First Plot"`` 中 ``af`` 是 **-B** 的参数，\ **+t** 为 **-B** 的
+-   ``-Baf`` 中 ``af`` 是 ``-B`` 选项的参数
+-   ``-B+t"My First Plot"`` 中 **+t** 为 **-B** 的
     子选项，\ ``"My First Plot"`` 则是子选项 **+t** 的参数
 
 关于GMT命令的几点说明：
