@@ -53,6 +53,8 @@
 语法写成，并用脚本语言对应的解释器去执行。
 
 Linux和macOS下最常用的脚本语言是Bash，而Windows自带的脚本语言则是BAT。
+Windows用户可以使用BAT脚本语言，也可以安装 `git for Windows <https://git-scm.com/download>`
+使用Bash脚本解释器。
 
 不同脚本语言的语法规则不同，本教程中的示例将采用Bash作为脚本语言。本教程假定
 用户对Bash或BAT语言有基本的了解。如果不了解，请阅读 `附录中的相关章节 </appendix/cmd>`_
