@@ -1,8 +1,8 @@
 绘制第一张图
 ============
 
-GMT绘图模板
------------
+GMT绘图脚本模板
+---------------
 
 GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/end` 结束。
 所有的\ **绘图命令**\ 都放在 **begin** 与 **end** 之间。
@@ -13,58 +13,59 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 
     GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称之为现代模式。
     GMT5及之前的命令风格称之为经典模式。GMT6既支持经典模式也支持现代模式。
-
     现代模式与经典模式可以完成相同的绘图功能，但现代模式大大简化了绘图代码，
     并极大避免了用户最容易出错的地方，因而推荐用户使用现代模式而非经典模式。
 
     本手册将只使用现代模式，而不介绍经典模式。
-    GMT新用户而言，只需要按照本手册直接学习现代模式即可；
-    GMT老用户，建议阅读 :doc:`现代模式与经典模式的差异 </appendix/modes-difference>`
+    GMT新用户只需要按照本手册直接学习现代模式即可；
+    对于GMT老用户，建议阅读 :doc:`现代模式与经典模式的差异 </appendix/modes-difference>`
     并开始使用现代模式进行绘图。
 
 一个最最基本的GMT绘图脚本的模板是::
 
     #!/usr/bin/env bash
+
     gmt begin
     #
     # 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令
     #
     gmt end
 
-当然，绘图时我们通常需要指定图片文件名和图片格式，因而更实用的绘图脚本模板为::
+你可以直接执行这个脚本，但是因为我们什么也没有画，所以这个脚本不会生成任何图片。
+
+绘图时我们通常需要指定图片文件名和图片格式，因而更实用的绘图脚本模板为::
 
     #!/usr/bin/env bash
+
     gmt begin FigureName pdf
     #
     # 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令
     #
     gmt end show
 
-其中，
-
 -   *FigureName* 指定了要生成的图片文件名，你可以指定任意文件名，
     但最好避免在文件名中使用特殊符号和空格。若不给定文件名，
     则默认文件名为 ``gmtsession``
--   紧跟在图片文件名后的 **pdf** 指定了要生成的图片格式。GMT支持多种图片格式，
-    pdf、ps、eps、jpg、png、bmp等等。若想要一次性生成多种格式的图片，则可以使用
-    逗号将多种格式连接起来，如 **pdf,png** 会同时生成PDF和PNG格式的图片
--   在 **gmt end** 后面加上 **show**\ ，则GMT会在绘图完成后，使用系统自带的阅读器
-    软件自动打开生成的图片文件，以供用户预览绘图效果。
+-   紧跟在图片文件名后的 **pdf** 指定了要生成的图片格式（若不指定格式，则默认图片格式为PDF）。
+    GMT支持多种图片格式，pdf、ps、eps、jpg、png、bmp等等。若想要一次性生成多种格式的图片，
+    则可以使用逗号将多种格式连接起来，如 **pdf,png** 会同时生成PDF和PNG格式的图片
+-   **gmt end** 后面加上 **show**\ ，则GMT会在绘图完成后，使用系统自带的阅读器
+    软件自动打开生成的图片文件，供用户预览绘图效果
 
 .. note::
 
-    本手册中的示例里 \ **gmt end** 后面都没有加上 **show**\ ，这主要是由于
-    生成网站时的一些技术原因所限制的。对于用户而言，建议总是在 **gmt end** 后
+    在本手册中，所有示例里 \ **gmt end** 后面都没有加上 **show**\ ，这主要是
+    制作网站时的一些技术原因所限制的。对于实际用户而言，建议总是在 **gmt end** 后
     加上 **show** 以便于在生成图片后预览图片效果。
 
 绘制第一张图
 ------------
 
-以GMT绘图模板为基础，在 **begin** 和 **end** 中间加入合适的GMT绘图命令，即可
-用GMT实现绘图。
+在GMT绘图脚本模板的基础上，向 **begin** 和 **end** 语句中间加入正确的GMT绘图命令，
+即可实现用GMT绘图。
 
 下面的脚本使用 :doc:`/module/coast` 绘制了一张全球地图。
-执行该脚本，会生成文件名为 :file:`GlobalMap`\ 格式为PNG和PDF的图片文件，
+执行该脚本，会生成文件名为 :file:`GlobalMap`\ 、格式为PNG和PDF的图片文件，
 并且GMT会在绘图结束后自动打开生成的图片文件。
 
 ::
@@ -73,28 +74,26 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 
+.. tip::
+
+    不理解 **gmt coast** 这一行命令的含义？没关系，在下一节会详细介绍。
+
 .. gmtplot::
     :show-code: false
     :width: 80%
-    :caption: 第一张图
+    :caption: 使用GMT绘制的第一张图
 
     gmt begin GlobalMap png,pdf
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end
 
-.. tip::
-
-    不理解 **gmt coast** 这一行命令的含义？没关系，在下一节会详细介绍。
-
 GMT命令格式
 -----------
 
-一个GMT命令通常由 **gmt** + **模块** + **选项** + **参数** 构成。比如
+一个GMT命令通常由 **gmt** + **模块名** + **选项** + **参数** 构成。比如
 上面的例子中::
 
-    gmt coast -Rg -JH15c -Gpurple -Baf+t"My First Plot"
-
-其中，
+    gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
 
 -   所有的GMT命令都需要以 **gmt** 开头
 -   **coast** 是模块名，这个模块可以用于绘制海岸线

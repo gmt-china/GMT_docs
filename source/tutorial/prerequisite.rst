@@ -30,7 +30,7 @@
     GMT is distributed under the GNU LGP License (http://www.gnu.org/licenses/lgpl.html).
 
     usage: gmt [options]
-        gmt <module name> [<module-options>]
+           gmt <module name> [<module-options>]
 
     options:
     --help            List descriptions of available GMT modules.
