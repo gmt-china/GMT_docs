@@ -4,7 +4,7 @@
 .. toctree::
    :maxdepth: 2
 
-   cli
+   prerequisite
    command
    mode
    first-plot
