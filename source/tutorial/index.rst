@@ -5,6 +5,6 @@
    :maxdepth: 2
 
    prerequisite
-   command
-   mode
    first-plot
+   mode
+   last-plot
