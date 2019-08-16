@@ -39,12 +39,12 @@ GADM提供了两种下载方式：
 GDAL 的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_ 可以实现多种地理数据
 格式之间的互相转换。该软件的安装及介绍见
 `GDAL/OGR: 地理空间数据格式转换神器 <https://gmt-china.org/blog/gdal-ogr/>`_\ 。
-本文使用的是 GDAL 2.4.0，其他版本的GDAL可能用法略有不同。
+本文使用的是 GDAL 2.4.2，其他版本的GDAL可能用法略有不同。
 
 Geopackage转GMT
 ~~~~~~~~~~~~~~~
 
-以China数据为例，解压得到文件 ``gadm36_CHN.gpkg``\ 。使用如下命令查看文件的信息::
+以China数据为例，解压得到文件 :file:`gadm36_CHN.gpkg`\ 。使用如下命令查看文件的信息::
 
     $ ogrinfo gadm36_CHN.gpkg
     INFO: Open of `gadm36_CHN.gpkg'
@@ -54,7 +54,7 @@ Geopackage转GMT
     3: gadm36_CHN_2 (Multi Polygon)
     4: gadm36_CHN_3 (Multi Polygon)
 
-可以看到Geopackage文件中包含了四个文件，使用如下命令（注意其中的一对单引号）
+可以看到Geopackage文件中包含了四个文件，使用如下命令（注意其中的一对单引号不可省略）
 将其转换为GMT可识别的格式::
 
     ogr2ogr -f OGR_GMT '' gadm36_CHN.gpkg gadm36_CHN_0
@@ -63,14 +63,14 @@ Geopackage转GMT
     ogr2ogr -f OGR_GMT '' gadm36_CHN.gpkg gadm36_CHN_3
 
 同理，对Hong Kong、Macao和Taiwan的数据做同样的处理即可。
-最终得到以 ``.gmt`` 结尾的数据12个，其中 CHN 四个、HKG 两个、
+最终得到以 :file:`.gmt` 结尾的数据12个，其中 CHN 四个、HKG 两个、
 MAC 三个、TWN 三个。
 
 Shapefile转GMT
 ~~~~~~~~~~~~~~
 
 以 China 数据为例，将下载的ZIP压缩包解压会得到一堆文件，其中
-``gadm36_CHN_[0123].shp`` 是真正需要的4个Shapefile的数据文件。
+:file:`gadm36_CHN_[0123].shp` 是真正需要的4个Shapefile的数据文件。
 
 使用如下命令即可将Shapefile转换为GMT可识别的格式::
 
@@ -80,14 +80,14 @@ Shapefile转GMT
     ogr2ogr -f OGR_GMT gadm36_CHN_3.gmt gadm36_CHN_3.shp
 
 对于 Hong Kong、Macao、Taiwan 的数据做类似操作。
-最终得到以 ``.gmt`` 结尾的数据12个，其中 CHN 四个、HKG 两个、
+最终得到以 :file:`.gmt` 结尾的数据12个，其中 CHN 四个、HKG 两个、
 MAC 三个、TWN 三个。
 
 数据分级
 --------
 
-提取得到的数据文件的文件名类似 ``gadm36_CHN_0.gmt``\ ，其中 ``CHN`` 为国家/地区
-代码，\ ``0`` 表示行政等级。
+提取得到的数据文件的文件名类似 :file:`gadm36_CHN_0.gmt`\ ，其中 **CHN** 为国家/地区
+代码，\ **0** 表示行政等级。
 
 以中国数据为例，其数据包含了四个等级：
 
@@ -134,8 +134,8 @@ MAC 三个、TWN 三个。
 2 级行政区划/市界
 ~~~~~~~~~~~~~~~~~
 
-2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 ``gadm36_CHN_2.gmt``\ ，
-从中提取安徽相关的数据保存到文件 ``gadm36_CHN_Anhui_2.gmt`` 中，绘图效果如下：
+2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 :file:`gadm36_CHN_2.gmt`\ ，
+从中提取安徽相关的数据保存到文件 :file:`gadm36_CHN_Anhui_2.gmt` 中，绘图效果如下：
 
 .. literalinclude:: gadm_level2.sh
 

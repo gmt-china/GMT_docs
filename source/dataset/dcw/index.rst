@@ -11,12 +11,12 @@ GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其中�
 #.  8个大国的省界/州界
 
 GMT的 :doc:`/module/coast` 模块可以直接绘制DCW数据中提供的行政边界数据，
-也可以使用 :doc:`/module/coast` 的 ``-M`` 选项将边界数据导出为纯文本文件
-供其他程序使用。
+也可以使用 :doc:`/module/coast` 的 **-M** 选项将边界数据导出为纯文本文件
+供其它程序使用。
 
 GMT提供的DCW数据默认位于GMT安装目录下的 ``share/dcw`` 下，其中主要包含了三个文件：
 
-- ``dcw-gmt.nc``: netCDF格式的DCW数据
+- :file:`dcw-gmt.nc`: netCDF格式的DCW数据
 - :download:`dcw-countries.txt`: 辅助文件，内含国家代码
 - :download:`dcw-states.txt`: 辅助文件，内含省界代码
 
@@ -30,21 +30,23 @@ GMT提供的DCW数据默认位于GMT安装目录下的 ``share/dcw`` 下，其�
 
 七大洲都有各自的代码，其代码分别为:
 
-- ``AF``: 非洲（Africa）
-- ``AN``: 南极洲（Antarctica）
-- ``AS``: 亚洲（Asia）
-- ``EU``: 欧洲（Europe）
-- ``OC``: 大洋洲（Oceania）
-- ``NA``: 北美洲（North America）
-- ``SA``: 南美洲（South America）
+- **AF**: 非洲（Africa）
+- **AN**: 南极洲（Antarctica）
+- **AS**: 亚洲（Asia）
+- **EU**: 欧洲（Europe）
+- **OC**: 大洋洲（Oceania）
+- **NA**: 北美洲（North America）
+- **SA**: 南美洲（South America）
 
 国家代码
 ++++++++
 
-每个国家也有各自的编码。国家代码可以从DCW的辅助文件 :download:`dcw-countries.txt` 中查找，
-其文件格式为::
+每个国家都有一个国家代码，国家代码可以直接从 `ISO Country Codes <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ 中查找。
+也可以从DCW辅助文件 :download:`dcw-countries.txt` 中查找，其文件格式为::
 
     洲代码 国家代码 国家名
+
+也可以直接在  中查看。
 
 该文件共计 250 个国家。文件内容大致如下::
 
@@ -124,14 +126,14 @@ GMT提供的DCW数据默认位于GMT安装目录下的 ``share/dcw`` 下，其�
 
 GMT中至少有两处会使用DCW数据：
 
-#. ``-R<code1>,<code2>,...``: 通过指定区域代码 ``<code>`` 间接指定绘图范围
-#. :doc:`/module/coast` 模块 ``-E<code1>,<code2>,...`` 选项调用 DCW 数据绘制或导出国界/省界
+#. :doc:`-R 选项 </option/R>` 中可以直接使用区域代码以间接指定绘图范围
+#. :doc:`/module/coast` 模块 **-E**\ *code1*,\ *code2*,... 选项调用 DCW 数据绘制或导出国界/省界
 
-洲代码、国家代码和省代码都是字母，GMT通过如下方式区分：
+洲代码、国家代码和省代码都由两个字符构成，为了避免可能的冲突，GMT通过如下方式区分：
 
--   在洲代码前加上 ``=`` 号表示某个大洲，比如 ``=AS`` 表示亚洲
--   国家代码不需要做任何处理格式，比如 ``GB`` 表示英国
--   省代码的格式为 ``country.state``\ ，即必须在省代码前加上国家代码才可以，比如 ``US.TX`` 表示美国 Texas 州
+-   在洲代码前加上 **=** 号表示某个大洲，比如 **=AS** 表示亚洲
+-   国家代码不需要做任何处理格式，比如 **GB** 表示英国
+-   省代码的格式为 ``country.state``\ ，即必须在省代码前加上国家代码才可以，比如 **US.TX** 表示美国 Texas 州
 
 使用示例
 --------
@@ -148,7 +150,7 @@ GMT中至少有两处会使用DCW数据：
 绘制国界
 ++++++++
 
-绘制中国大陆边界（不含台湾、香港、澳门），其中 ``-R`` 选项可省略：
+绘制中国大陆边界（不含台湾、香港、澳门），其中 **-R** 选项可省略：
 
 .. gmtplot::
 
@@ -157,7 +159,7 @@ GMT中至少有两处会使用DCW数据：
 绘制省界
 ++++++++
 
-绘制内蒙古，并设置边界颜色和填充颜色，其中 ``-R`` 选项可省略:
+绘制内蒙古，并设置边界颜色和填充颜色，其中 **-R** 选项可省略:
 
 .. gmtplot::
 
@@ -170,7 +172,7 @@ GMT中至少有两处会使用DCW数据：
 
     gmt coast -ECN.15 -M > neimenggu.dat
 
-这里只需要使用 ``-M`` 选项即可。
+这里只需要使用 **-M** 选项即可。
 
 备注
 ----
