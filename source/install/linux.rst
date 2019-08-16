@@ -6,7 +6,7 @@ Linux 下安装GMT
 
 Ubuntu/Debian用户::
 
-    sudo apt-get install gmt gmt-dcw gmt-gshhg
+    sudo apt install gmt gmt-dcw gmt-gshhg
 
 RHEL/CentOS用户::
 
@@ -37,25 +37,25 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 对于Ubuntu/Debian::
 
     # 更新
-    $ sudo apt-get update
+    $ sudo apt update
 
     # 安装编译所需软件包
     $ sudo apt-get install build-essential cmake
 
     # 安装必须软件包
-    $ sudo apt-get install ghostscript
-    $ sudo apt-get install libnetcdf-dev
-    $ sudo apt-get install libcurl4-gnutls-dev
+    $ sudo apt install ghostscript
+    $ sudo apt install libnetcdf-dev
+    $ sudo apt install libcurl4-gnutls-dev
 
     # 安装可选软件包
-    $ sudo apt-get install libgdal-dev python-gdal
-    $ sudo apt-get install liblapack3
-    $ sudo apt-get install libglib2.0-dev
-    $ sudo apt-get install libpcre3-dev
-    $ sudo apt-get install libfftw3-dev
+    $ sudo apt install libgdal-dev python-gdal
+    $ sudo apt install liblapack3
+    $ sudo apt install libglib2.0-dev
+    $ sudo apt install libpcre3-dev
+    $ sudo apt install libfftw3-dev
 
     # 安装制作动画所需的软件包
-    $ sudo apt-get install graphicsmagick ffmpeg
+    $ sudo apt install graphicsmagick ffmpeg
 
 对于CentOS/RHEL/Fedora::
 

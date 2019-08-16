@@ -2,7 +2,7 @@
 ========
 
 这一节列出网络上可免费获取的GMT学习资源。各个学习资源的质量以及维护程度不同，
-建议用户以英文官方文档以及中文社区参考手册为主，其余学习资源仅供参考。
+**建议用户以英文官方文档以及中文社区参考手册为主，其余学习资源仅供参考** 。
 
 入门教程
 --------
@@ -10,7 +10,7 @@
 #. :doc:`《GMT中文手册》中的入门教程 </tutorial/index>`
 #. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/latest/tutorial.html>`_
 #. `《地学GMT绘图软件入门》视频教程 <https://ke.qq.com/course/369776>`_ 作者: `@liuzhumei <https://github.com/liuzhumei>`_ (适用于GMT5)
-#. `GMT Tutorial by Whyjay Zheng <http://gmt-tutorials.org/>`_ (适用于GMT5)
+#. `GMT Tutorial <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_ (适用于GMT4)
 
 参考手册
 --------
