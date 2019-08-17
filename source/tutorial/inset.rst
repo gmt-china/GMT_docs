@@ -28,17 +28,8 @@ GMT 中 :doc:`/module/inset` 模块用于管理图中图模式。图中图模式
 同时我们使用 **plot** 模块的 **-Sr+s** 选项在小图中绘制了一个对应于大图区域的
 矩形框，该命令需要输入矩形区域的两个对角顶点的经纬度。
 
-.. gmtplot::
+.. gmtplot:: /module/inset/inset-ex01.sh
     :width: 60%
-
-    gmt begin inset-map png,pdf
-        gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF
-        gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p -M0
-            gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
-            # 使用 -Sr+s 绘制矩形区域
-            echo 139.2 34.8 140.5 36 | gmt plot -Sr+s -W1p,blue
-        gmt inset end
-    gmt end
 
 用颜色标记研究区域
 ------------------
@@ -50,12 +41,5 @@ GMT 中 :doc:`/module/inset` 模块用于管理图中图模式。图中图模式
 1.5英寸（\ **+w1.5i**\ ）。同样的，在小图内部我们在需要指定地图宽度的地方使用了
 **?** 让GMT自动帮我们决定小图的宽度。
 
-.. gmtplot::
+.. gmtplot:: /module/inset/inset-ex02.sh
     :width: 60%
-
-    gmt begin inset-example png,pdf
-        gmt coast -R110E/170E/44S/9S -JM6i -B -BWSne -Wfaint -N2/1p -Gbrown -EAU+gbisque
-        gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c
-            gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
-        gmt inset end
-    gmt end

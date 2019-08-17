@@ -63,7 +63,7 @@ inset begin语法
 .. _-M:
 
 **-M**\ *margins*
-    小图区域内部的额外空白区域，默认值为 0.5c。其可以取三种形式：
+    小图区域内部的额外空白区域 [默认值没有空白]。其可以取三种形式：
 
     #. 一个值，表示四个边的空白相同
     #. 两个用斜杠分隔的值，分别设置水平和垂直方向的空白
@@ -76,27 +76,13 @@ inset begin语法
 示例
 ----
 
+下面的示例绘制了一个日本的区域地图，并在左下角的小图中绘制了日本全图，同时在小图中标出了大图的研究区域。
+
+.. gmtplot:: inset/inset-ex01.sh
+    :width: 60%
+
 下面的示例绘制了澳大利亚的地图，并在地图右上角绘制了小图。小图中绘制了全球地图，
 并以特殊颜色标注了澳大利亚的位置。
 
-.. gmtplot::
-
-    gmt begin inset-example png,pdf
-        gmt coast -R110E/170E/44S/9S -JM6i -B -BWSne -Wfaint -N2/1p -Gbrown -EAU+gbisque
-        gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c -M0
-            gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
-        gmt inset end
-    gmt end
-
-下面的示例绘制了一个日本的区域地图，并在左下角的小图中绘制了日本全图，同时在小图中标出了大图的研究区域。
-
-.. gmtplot::
-
-    gmt begin inset-map png,pdf
-        gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF
-        gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p -M0
-            gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
-            # 使用 -Sr+s 绘制矩形区域
-            echo 139.2 34.8 140.5 36 | gmt plot -Sr+s -W1p,blue
-        gmt inset end
-    gmt end
+.. gmtplot:: inset/inset-ex02.sh
+    :width: 60%
