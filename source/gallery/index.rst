@@ -11,7 +11,6 @@
     legend
     earth-relief
     histogram/index
-    inset-map
     sac-waveforms
     ternary-diagram
     contour

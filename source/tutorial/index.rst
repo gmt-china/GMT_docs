@@ -12,7 +12,7 @@
    texts
    grids
    oneliner
+   inset
    multifig
    subplot
-   inset
    last-plot

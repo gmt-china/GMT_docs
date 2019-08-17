@@ -1,27 +1,61 @@
 GMT图中图模式
 =============
 
-在绘制研究区域的地图时，有时研究区域的范围比较小。在这种情况下，为了更好地显示
-研究区域的具体地理位置，通常会绘制一个更大区域的地图，并在大区域地图中框出研究
-区域的位置，这种图件称之为 inset map，中文没有统一的翻译，通常称之为图中图或者
-小图。图中图模式可以通过模块 :doc:`/module/inset` 实现。
+在绘制区域地图时，为了更清晰地显示研究区域的地理位置，通常会额外绘制一个更大
+区域范围的地图，并在大区域地图中标记出研究区域的位置。这种图称之为 inset map。
+中文没有统一的翻译，大家一般称之为图中图、小图或者插页图。
 
-``gmt inset begin`` 用于进入图中图模式，其作用是在图纸上标记出一个矩形区域，并将绘图
-原点移动到该矩形区域的左下角，接下来的所有绘图命令均只在该图中图区域内操作，
-而 ``gmt inset end`` 则用于退出图中图模式，并将坐标原点移动回原大图中。
+GMT 中 :doc:`/module/inset` 模块用于管理图中图模式。图中图模式以 **inset begin**
+开始，并以 **inset end** 结束。
 
-下面仅展示一个简单的示例：
+使用 **inset begin** 进入图中图模式，其作用是在纸张上规划出一个矩形区域，
+并将绘图原点移动到该矩形区域的左下角。接下来的所有绘图命令均只在该区域内
+进行操作。当使用 **inset end** 结束图中图模式时，绘图原点会自动恢复到图中图
+模式之前的位置，且所有设置参数都将回到之前的状态。
+
+用矩形框标记研究区域
+--------------------
+
+下面的示例中研究区域为日本东京周围的一个小区域。为了展示其地理位置，我们在大图的
+左下角的小图中绘制了日本全图，同时在小图中用矩形框出了大图中的研究区域范围。
+
+**inset begin** 定义了小图的位置位于大图左下角（\ **-DjBL**\ ），小图区域的宽度
+为3厘米，高度为3.6厘米（\ **+w3c/3.6c**\ ），并且相对大图左下角偏移0.1厘米（\ **+o0.1c**\ ）。
+同时还设置了小图区域的背景色为白色（\ **+gwhite**\ ），并绘制了小图区域的边框（\ **+p1p**\ ）。
+
+在小图区域内，我们使用 **coast** 模块绘制了日本全图，小图投影参数为 **-JM?**\ ，
+其中 **?** 表示根据 **inset begin** 中 **-D** 选项指定的宽度自动决定小图宽度。
+同时我们使用 **plot** 模块的 **-Sr+s** 选项在小图中绘制了一个对应于大图区域的
+矩形框，该命令需要输入矩形区域的两个对角顶点的经纬度。
 
 .. gmtplot::
+    :width: 60%
 
-    gmt begin inset-map png
-        gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
-
-        # 图中图模式
-        gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
-            gmt basemap -Rg -JA20/20/2.3i -Bafg
-            echo INSET | gmt text -F+f12p+cTR
+    gmt begin inset-map png,pdf
+        gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF
+        gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p -M0
+            gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
+            # 使用 -Sr+s 绘制矩形区域
+            echo 139.2 34.8 140.5 36 | gmt plot -Sr+s -W1p,blue
         gmt inset end
+    gmt end
 
-        echo MAP | gmt text -F+f18p+cBL -Dj0.2i
+用颜色标记研究区域
+------------------
+
+下面的示例中研究区域为澳大利亚。为了展示其地理位置，我们在大图的右上角区域绘制了
+全球地图，并用特殊的颜色将澳大利亚区域标记出来。
+
+**inset begin** 定义了小图的位置位于大图右上角（\ **-DjTR**\ ），小图区域宽度为
+1.5英寸（\ **+w1.5i**\ ）。同样的，在小图内部我们在需要指定地图宽度的地方使用了
+**?** 让GMT自动帮我们决定小图的宽度。
+
+.. gmtplot::
+    :width: 60%
+
+    gmt begin inset-example png,pdf
+        gmt coast -R110E/170E/44S/9S -JM6i -B -BWSne -Wfaint -N2/1p -Gbrown -EAU+gbisque
+        gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c
+            gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
+        gmt inset end
     gmt end
