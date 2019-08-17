@@ -249,12 +249,12 @@ MAP_DEFAULT_PEN
 .. _MAP_ORIGIN_X:
 
 MAP_ORIGIN_X
-    新绘图在纸张上的原点的X坐标（仅适用于GMT经典模式）[``1i``]
+    新绘图在纸张上的原点的X坐标（仅适用于GMT经典模式）[72p]
 
 .. _MAP_ORIGIN_Y:
 
 MAP_ORIGIN_Y
-    设置新绘图在纸张上的原点的Y坐标（仅适用于GMT经典模式）[``1i``]
+    设置新绘图在纸张上的原点的Y坐标（仅适用于GMT经典模式）[72p]
 
 .. _MAP_LOGO:
 
