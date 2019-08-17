@@ -93,9 +93,9 @@ inset begin语法
 .. gmtplot::
 
     gmt begin inset-map png,pdf
-        gmt coast -R139.2E/140.5E/34.8N/36N -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF
+        gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF
         gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p -M0
-            gmt coast -R129E/146E/30N/46N -JM3c -Df -W0.5p -A1000 -Glightbrown -Sazure1
+            gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
             # 使用 -Sr+s 绘制矩形区域
             echo 139.2 34.8 140.5 36 | gmt plot -Sr+s -W1p,blue
         gmt inset end
