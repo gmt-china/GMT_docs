@@ -10,7 +10,7 @@
    lines
    symbols
    texts
-   grids
+   earth-relief
    oneliner
    inset
    multifig
