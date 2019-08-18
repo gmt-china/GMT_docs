@@ -11,8 +11,8 @@
    symbols
    texts
    earth-relief
+   layers
    oneliner
    inset
    subplot
    multifig
-   last-plot
