@@ -13,6 +13,6 @@
    earth-relief
    oneliner
    inset
-   multifig
    subplot
+   multifig
    last-plot
