@@ -15,15 +15,13 @@ GMT单行模式
 
 例如，上面的三行命令可以用单行模式写成一行命令::
 
-    gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot" -pdf GlobalMap
+    gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot" -pdf,png GlobalMap
 
-``-pdf GlobalMap`` 表明生成的图片文件名为 ``GlobalMap`` 格式为 PDF。
 命令一下子就简单了很多，也可以直接将命令复制粘贴到终端执行。
 
 单行模式的缺点也很明显：
 
 #.  只适用于单命令成图的情况，而大部分实际绘图都需要使用多个命令，应用场景有限
-#.  一次只能生成一种格式的图片
 #.  生成图片后无法自动打开图片以实现预览
 
 .. note::
