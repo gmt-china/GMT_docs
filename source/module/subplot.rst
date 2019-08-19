@@ -36,7 +36,7 @@ subplot begin 语法
 
 **gmt subplot begin**
 *nrows*\ **x**\ *ncols*
-|-F|\ [**f**\ \|\ **s**\ ]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*\ ][**+c**\ *dx/dy*\ ][**+g**\ *fill*\ ][**+p**\ *pen*\ ]
+|-F|\ [**f**\ \|\ **s**\ ]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*\ ][**+c**\ *dx/dy*\ ][**+g**\ *fill*\ ][**+p**\ *pen*\ ][**+w**\ *pen*\ ]
 [ |-A|\ [\ *autolabel*][\ **+j**\ \|\ **J**\ *refpoint*\ ][**+c**\ *dx*\ /\ *dy*][**+g**\ *fill*][**+p**\ *pen*][**+o**\ *dx*/*dy*][**+r**][**+R**][**+v**\ ] ]
 [ |-C|\ [*side*]\ /*clearance*\ [**u**] ]
 [ |SYN_OPT-B| ]
@@ -58,7 +58,7 @@ subplot begin 语法
 
 .. _-F:
 
-**-F**\ [**f**\ \|\ **s**\ ]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*\ ][**+c**\ *dx/dy*\ ][**+g**\ *fill*\ ][**+p**\ *pen*\ ]
+**-F**\ [**f**\ \|\ **s**\ ]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*\ ][**+c**\ *dx/dy*\ ][**+g**\ *fill*\ ][**+p**\ *pen*\ ][**+w**\ *pen*\ ]
     指定图片的尺寸。有两种方式：
 
     - **-Ff**: 直接指定整张图片的尺寸
@@ -67,6 +67,7 @@ subplot begin 语法
     除此之外，还可以为整张图加上背景色和边框:
 
     - **+p**\ *pen*: 为整张图加上背景矩形边框
+    - **+w**\ *pen*: 绘制子图区域之间的水平和垂直分割线
     - **+g**\ *fill*: 为整张图的背景矩形填充颜色
     - **+c**\ *dx/dy*: 设置背景矩形与整张图之间的额外空白
 
@@ -169,7 +170,7 @@ subplot begin 语法
 
     *margins* 可以有三种情况：
 
-    #. 取一个值，表示子图四个方向的空白 [默认值为0.5c]
+    #. 取一个值，表示子图四个方向的空白 [默认值为 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 规定的字体大小]
     #. 取两个值，表示子图的水平和垂直方向的空白，两个值之间用斜杠分隔
     #. 取四个值，表示子图的左右下上四个方向的空白，四个值之间用斜杠分隔
 

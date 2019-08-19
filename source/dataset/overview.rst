@@ -30,7 +30,8 @@ Windows下默认GMT用户目录是 ``C:\Users\用户名\.gmt``\ ）。
 建立GMT数据库
 -------------
 
-将数据集放在某个特定目录下，然后修改环境变量 ``GMT_DATADIR`` 使得其包含该目录即可。
+建立GMT数据库的方法很简单，只要将数据集放在某个特定目录下，然后修改环境变量
+``GMT_DATADIR`` 使得其包含该目录即可。
 
 比如Linux和macOS下数据库可以放在 ``~/GMTDB``\ ，然后向 ``~/.bashrc`` 中加入如下语句::
 
@@ -45,3 +46,10 @@ Windows下默认GMT用户目录是 ``C:\Users\用户名\.gmt``\ ）。
 多个目录之间用逗号 ``,`` 分隔。例如::
 
     export GMT_DATADIR=~/GMTDB/data1,~/GMTDB/data2
+
+Linux和macOS用户，可以进一步简化为::
+
+    export GMT_DATADIR=~/GMTDB/
+
+``GMT_DATADIR`` 中的目录以 ``/`` 结尾，GMT则会在 ``~/GMTDB`` 及其子目录下递归地
+寻找文件。需要注意，Windows似乎不支持这一功能。

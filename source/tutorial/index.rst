@@ -10,9 +10,10 @@
    lines
    symbols
    texts
+   legend
    earth-relief
+   layers
    oneliner
    inset
-   multifig
    subplot
-   last-plot
+   multifig
