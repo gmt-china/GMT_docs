@@ -10,6 +10,7 @@
    lines
    symbols
    texts
+   legend
    earth-relief
    layers
    oneliner
