@@ -19,7 +19,7 @@ clear
 --------
 
 **all**
-    删除所有项目，包括缓存目录（\ **~/.gmt/cache**\ ）、数据目录（\ **~/.gmt/server**\ ）、会话目录\ **~/.gmt/sessions**\ 以及当前配置文件
+    删除所有项目，包括缓存目录（\ **~/.gmt/cache**\ ）、数据目录（\ **~/.gmt/server**\ ）、会话目录（\ **~/.gmt/sessions**\ ）以及当前配置文件
 
 **defaults**
     删除现代模式下的当前会话的GMT配置文件gmt.conf
