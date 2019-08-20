@@ -8,7 +8,7 @@
 --------
 
 #. :doc:`《GMT中文手册》中的入门教程 </tutorial/index>`
-#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/latest/tutorial.html>`_
+#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/dev/tutorial.html>`_
 #. `《地学GMT绘图软件入门》视频教程 <https://ke.qq.com/course/369776>`_ 作者: `@liuzhumei <https://github.com/liuzhumei>`_ (适用于GMT5)
 #. `GMT Tutorial <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_ (适用于GMT5)
 
@@ -16,14 +16,14 @@
 --------
 
 #. `GMT中文手册 <https://docs.gmt-china.org/>`_
-#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/latest/GMT_Docs.html>`_
-#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/latest/index.html#man-pages>`_
+#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/dev/GMT_Docs.html>`_
+#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/dev/index.html#man-pages>`_
 
 图库与示例
 ----------
 
 #. :doc:`《GMT中文手册》中的示例 </gallery/index>`
-#. `GMT官方示例 <https://docs.generic-mapping-tools.org/latest/Gallery.html>`_
+#. `GMT官方示例 <https://docs.generic-mapping-tools.org/dev/Gallery.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
 #. `GMT开发版源码 <https://github.com/GenericMappingTools/gmt>`_ 中的 test 目录下的测试脚本
