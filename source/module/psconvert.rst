@@ -156,8 +156,8 @@ PDF、PNG、PPM、SVG、TIFF 格式。
     - ``f`` ：PDF；
     - ``F`` ：多页PDF；
     - ``j`` ：JPEG（默认值）；
-    - ``g`` ：PNG；
-    - ``G`` ：透明PNG；
+    - ``g`` ：PNG（不透明背景）；
+    - ``G`` ：PNG（透明背景）；
     - ``m`` ：PPM；
     - ``s`` ：SVG；
     - ``t`` ：TIFF；
