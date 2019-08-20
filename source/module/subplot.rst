@@ -306,7 +306,7 @@ subplot end 语法
 
 **方法2: 使用 subplot set 指定子图索引号**
 
-注意子图索引号从0开始。这种方式相较于前一种，在脚本编写上简便很多::
+注意子图索引号从0开始::
 
     gmt begin map png,pdf
         gmt subplot begin 2x2 -Fs5c/2.5c -A
