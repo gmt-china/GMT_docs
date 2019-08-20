@@ -19,6 +19,7 @@ GMT中文手册
 - :ref:`GMT颜色表 <color_list>`
 - :doc:`GMT内置CPT </cpt/builtin-cpt>`
 - :doc:`GMT字体 </basis/text>`
+- :doc:`GMT特殊字符一览表 </basis/special-character>`
 - :doc:`GMT配置参数 </conf/index>`
 - :doc:`地学数据 </dataset/index>`
 - :doc:`模块列表 </module/index>`

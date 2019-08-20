@@ -11,8 +11,8 @@ GMT基础
    pen
    fill
    text
-   escape-character
    special-character
+   escape-character
    vector
    line
    anchor

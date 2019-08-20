@@ -6,7 +6,7 @@ gmt text -JX18c/-8c -R0/2/-1/9 -Bg1 -Bwsen -F+f -N  << EOF
 1.5  -0.5 10p,5,black Output
 
 0.5  0.5 10p,8,black abc@@~def@@~ghi
-1.5  0.5 -,-,black abcd@~def@~ghi
+1.5  0.5 -,-,black abc@~def@~ghi
 
 0.5  1.5 10p,8,black 2@@~p@@~r@@+2@@+h@@-0@@-
 1.5  1.5 -,-,black 2@~p@~r@+2@+h@-0@-
