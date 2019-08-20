@@ -9,7 +9,7 @@ gmt-config
 **gmt-config** 提供了如下选项::
 
     --help        显示此帮助信息并退出
-    --all        显示全部选项的值
+    --all         显示全部选项的值
     --bits        库文件是32位还是64位
     --cc          编译过程中使用的C编译器
     --cflags      C预处理器和编译器的CFLAGS: -I/opt/GMT/include/gmt
