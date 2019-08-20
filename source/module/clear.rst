@@ -22,16 +22,16 @@ clear
     删除所有项目，包括缓存目录（\ **~/.gmt/cache**\ ）、数据目录（\ **~/.gmt/server**\ ）、会话目录（\ **~/.gmt/sessions**\ ）以及当前配置文件
 
 **defaults**
-    删除现代模式下的当前会话的GMT配置文件gmt.conf
+    删除现代模式下当前会话的GMT配置文件gmt.conf
 
 **cache**
-    删除GMT缓存目录
+    删除GMT缓存目录（默认为\ **~/.gmt/cache**\ ）及其内容
 
 **data**
-    删除GMT数据下载目录及其内容
+    删除GMT数据目录（默认为\ **~/.gmt/server**\ ）及其内容
 
 **sessions**
-    删除用户的会话目录
+    删除GMT会话目录（默认为\ **~/.gmt/sessions**\ ）及其内容
 
 .. include:: explain_-V.rst_
 
