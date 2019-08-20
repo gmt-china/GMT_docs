@@ -6,8 +6,8 @@
 
 - ``$GMT_SHAREDIR`` GMT的share目录所在位置，通常不用设置，GMT会自动猜测其所在位置
 - ``$GMT_DATADIR`` 或 :ref:`DIR_DATA <DIR_DATA>` 可以指向一个或多个目录，用于放置
-  用户常用的数据文件。目录之间用冒号分隔（Windows下用分号分隔）。任何以斜杠 ``/``
-  结尾的目录会被递归搜索（Windows下不会）。若二者同时有值，以 :ref:`DIR_DATA <DIR_DATA>`
+  用户常用的数据文件。目录之间用逗号分隔。任何以斜杠 ``/`` 结尾的目录会被递归搜索
+  （Windows不支持此功能）。若二者同时有值，以 :ref:`DIR_DATA <DIR_DATA>`
   的值优先
 - ``$GMT_CACHEDIR`` 或 :ref:`DIR_CACHE <DIR_CACHE>` 用于放置GMT模块从GMT服务器上
   下载的临时数据
