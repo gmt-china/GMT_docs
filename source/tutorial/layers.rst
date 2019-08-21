@@ -25,7 +25,7 @@ GMT中图层的概念。
 #. 台站位置（三角形）、射线路径（大圆弧线段）
 #. 台站名（文本）
 
-.. gmtplot:: first-plot-5.sh
+.. gmtplot:: layers-5.sh
     :show-code: false
 
 下面会一步步地把整张图绘制出来。
@@ -36,10 +36,10 @@ GMT中图层的概念。
 GMT中的 :doc:`/module/coast` 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充
 不同的颜色，绘图命令及效果如下：
 
-.. gmtplot:: first-plot-1.sh
+.. gmtplot:: layers-1.sh
 
 GMT绘图脚本总是以 ``gmt begin`` 开始制图，并以 ``gmt end`` 结束制图。
-其中 ``first-plot`` 为生成的图件名，\ ``pdf,png`` 表示最终生成的图片格式为
+其中 ``layers`` 为生成的图件名，\ ``pdf,png`` 表示最终生成的图片格式为
 PDF和PNG格式。
 
 解释一下 ``coast`` 模块中的一些选项：
@@ -56,7 +56,7 @@ PDF和PNG格式。
 
 :doc:`/module/plot` 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：
 
-.. gmtplot:: first-plot-2.sh
+.. gmtplot:: layers-2.sh
 
 这里我们通过两次调用 ``plot`` 命令分别绘制了五角星和三角形。
 
@@ -78,7 +78,7 @@ PDF和PNG格式。
 ``plot`` 模块还可以用于绘制线段，默认情况下，``plot`` 会自动用大圆路径连接地球上的
 两个位置，不需要额外设置。首先直接看代码：
 
-.. gmtplot:: first-plot-3.sh
+.. gmtplot:: layers-3.sh
 
 用于绘制射线路径的 ``plot`` 命令和之前的命令的区别在于没有了 ``-S`` 和 ``-G`` 选项。
 为了绘制一条线段，至少需要指定两个端点，输入数据中每个 ``>`` 之后的两行数据分别
@@ -89,7 +89,7 @@ PDF和PNG格式。
 
 最后还需要往图画里添加台站所在地区的名字。添加文字使用 :doc:`/module/text` 模块：
 
-.. gmtplot:: first-plot-4.sh
+.. gmtplot:: layers-4.sh
 
 解释如下：
 
@@ -115,7 +115,7 @@ PDF和PNG格式。
 
 对脚本中命令的先后顺序进行微调，如下所示：
 
-.. gmtplot:: first-plot-5.sh
+.. gmtplot:: layers-5.sh
 
 需要注意的是，本节内容仅作演示用，实际绘图时通常会写脚本来处理自己的数据，
 以使得其符合GMT输入数据的要求，而不是像本节示例中这样手写所有的数据。
