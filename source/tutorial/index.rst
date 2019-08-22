@@ -6,6 +6,7 @@
 
    prerequisite
    first-plot
+   basemap
    coastline
    lines
    symbols

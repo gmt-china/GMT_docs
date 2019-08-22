@@ -3,7 +3,6 @@
 
 .. toctree::
 
-    basemap
     lines
     beachball/index
     earth-relief

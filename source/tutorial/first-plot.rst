@@ -72,7 +72,7 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 
 .. tip::
 
-    不理解 **gmt coast** 这一行命令的含义？没关系，在下一节会详细介绍。
+    不理解 **gmt coast** 这一行命令的含义？没关系，稍后会详细介绍。
 
 .. gmtplot::
     :show-code: false
