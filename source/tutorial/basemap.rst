@@ -20,7 +20,9 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 全球地图（无边框版）
     :width: 85%
 
-    gmt coast -JH180/12c -R0/360/-90/90 -W0.5p -A10000 -png GlobalMap
+    gmt begin GlobalMap png,pdf
+    gmt coast -JH180/12c -R0/360/-90/90 -W0.5p -A10000
+    gmt end
 
 先忽略后面的 **-W0.5p -A10000**\ （后面章节会介绍到），这里只关注 **-J** 和 **-R** 选项。
 此示例中：
@@ -37,7 +39,9 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 全球地图（有边框版）
     :width: 85%
 
-    gmt coast -JH180/12c -Rg -Bg -W0.5p -A10000 -png GlobalMap
+    gmt begin GlobalMap png,pdf
+    gmt coast -JH180/12c -Rg -Bg -W0.5p -A10000
+    gmt end
 
 跟上一个脚本相比，此处我们做了两点修改：
 
@@ -70,7 +74,9 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 使用国家代码指定绘图区域
     :width: 50%
 
-    gmt coast -JM12c -RNZ -Ba -W0.5p -A10000 -png NewZealandMap
+    gmt begin NewZealandMap png,pdf
+    gmt coast -JM12c -RNZ -Ba -W0.5p -A10000
+    gmt end
 
 这里我们使用了：
 
@@ -92,7 +98,9 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 使用经纬度范围指定绘图区域
     :width: 50%
 
-    gmt coast -JM12c -R165/180/-48/-32 -Ba -W0.5p -A10000 -png NewZealandMap
+    gmt begin NewZealandMap png,pdf
+    gmt coast -JM12c -R165/180/-48/-32 -Ba -W0.5p -A10000
+    gmt end
 
 我们还可以对底图进行进一步的修改：
 
@@ -108,7 +116,9 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 为区域地图添加标题
     :width: 50%
 
-    gmt coast -JM12c -R165/180/-48/-32 -Bxa4 -Bya3 -BWSen+t"New Zealand" -W0.5p -A10000 -png NewZealandMap
+    gmt begin NewZealandMap png,pdf
+    gmt coast -JM12c -R165/180/-48/-32 -Bxa4 -Bya3 -BWSen+t"New Zealand" -W0.5p -A10000
+    gmt end
 
 线性坐标轴
 ----------
@@ -130,7 +140,9 @@ GMT最擅长绘制地图，同时也适合绘制最简单的线性坐标轴。�
     :width: 60%
     :caption: 线性坐标轴
 
-    gmt basemap -R10/70/-4/8 -JX8c/5c -Bxa10f5g10+l"X Label" -Bya4f2g2+l"Y Label" -BWSen+t"Linear X-Y Plot" -png linearXY
+    gmt begin linearXY png,pdf
+    gmt basemap -R10/70/-4/8 -JX8c/5c -Bxa10f5g10+l"X Label" -Bya4f2g2+l"Y Label" -BWSen+t"Linear X-Y Plot"
+    gmt end
 
 三维线性坐标轴
 --------------
@@ -152,4 +164,6 @@ GMT最擅长绘制地图，同时也适合绘制最简单的线性坐标轴。�
     :width: 50%
     :caption: 三维线性坐标轴
 
-    gmt basemap -R10/70/-4/8/-10/10 -JX8c5c -JZ5c -Bxa10+lX -Bya4+lY -Bzaf+lDepth -BSEwnZ+b+t'3D Plot' -p130/30 -png map
+    gmt begin 3DMap png,pdf
+    gmt basemap -R10/70/-4/8/-10/10 -JX8c5c -JZ5c -Bxa10+lX -Bya4+lY -Bzaf+lDepth -BSEwnZ+b+t'3D Plot' -p130/30
+    gmt end
