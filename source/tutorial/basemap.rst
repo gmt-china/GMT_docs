@@ -69,7 +69,7 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 使用国家代码指定绘图区域
     :width: 50%
 
-    gmt coast -JM12c -RNZ -Ba -W0.5p -A10000 -png JapanMap
+    gmt coast -JM12c -RNZ -Ba -W0.5p -A10000 -png NewZealandMap
 
 这里我们使用了：
 
@@ -91,7 +91,7 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 使用经纬度范围指定绘图区域
     :width: 50%
 
-    gmt coast -JM12c -R165/180/-48/-32 -Ba -W0.5p -A10000 -png JapanMap
+    gmt coast -JM12c -R165/180/-48/-32 -Ba -W0.5p -A10000 -png NewZealandMap
 
 我们还可以对底图进行进一步的修改：
 
@@ -107,7 +107,7 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :caption: 为区域地图添加标题
     :width: 50%
 
-    gmt coast -JM12c -R165/180/-48/-32 -Bxa4 -Bya3 -BWSen+t"New Zealand" -W0.5p -A10000 -png JapanMap
+    gmt coast -JM12c -R165/180/-48/-32 -Bxa4 -Bya3 -BWSen+t"New Zealand" -W0.5p -A10000 -png NewZealandMap
 
 线性坐标轴
 ----------
