@@ -23,8 +23,6 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 
 一个最最基本的GMT绘图脚本的模板是::
 
-    #!/usr/bin/env bash
-
     gmt begin
     #
     # 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令
@@ -34,8 +32,6 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 你可以直接执行这个脚本，但是因为我们什么也没有画，所以这个脚本不会生成任何图片。
 
 绘图时我们通常需要指定图片文件名和图片格式，因而更实用的绘图脚本模板为::
-
-    #!/usr/bin/env bash
 
     gmt begin FigureName pdf
     #
