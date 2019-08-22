@@ -3,7 +3,6 @@
 
 .. toctree::
 
-    lines
     beachball/index
     earth-relief
     histogram/index
