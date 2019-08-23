@@ -555,4 +555,3 @@ plot
 
    plot -L选项示意图
 
-更多示例见 :doc:`/gallery/lines`\ 。
