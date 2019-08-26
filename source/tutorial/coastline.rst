@@ -10,10 +10,10 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
 
 .. gmtplot::
     :width: 100%
-    :caption: 美加五大湖中的休伦湖、伊利湖和安大略湖附近的（海、湖）岸线
+    :caption: 全球的（海、湖）岸线
 
     gmt begin coastline_0 pdf,png
-    gmt coast -R-85/-65/40/50 -JM25c -Baf -W1p,blue
+    gmt coast -Rg -JH25c -Baf -W1p,blue
     gmt end
 
 
@@ -28,7 +28,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 绘制不同级别的（海、湖）岸线
 
     gmt begin coastline_1 pdf,png
-    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JH25c -Rg -Bxaf -Byaf -BSWEN
     gmt coast -W1/1p,blue   # 海岸线
     gmt coast -W2/1p,black  # 湖岸线
     gmt coast -W3/1p,purple # 湖中岛
@@ -38,14 +38,14 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
 设置要绘制的对象的最小面积
 --------------------------
 
-现在，我们想突出三大湖，不让过小的对象出现在图画上。这时候可以用 ``-A`` 选项设置要绘制的对象的最小面积（单位为平方公里）。
+用 ``-A`` 选项设置要绘制的对象的最小面积（单位为平方公里）。
 
 .. gmtplot::
     :width: 100%
     :caption: 设置要绘制的对象的最小面积
 
     gmt begin coastline_2 pdf,png
-    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JH25c -Rg -Bxaf -Byaf -BSWEN
     gmt coast -W1/1p,blue           # 海岸线
     gmt coast -A10000 -W2/1p,black  # 湖岸线
     gmt coast -A1000 -W3/1p,purple  # 湖中岛
@@ -61,25 +61,26 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 填充颜色
 
     gmt begin coastline_3 pdf,png
-    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JH25c -Rg -Bxaf -Byaf -BSWEN
     gmt coast -Clightblue -Gdarkgreen -Scornflowerblue
     gmt end
 
 ``-C`` 指定的是湖泊和河流的颜色， ``-G`` 是陆地的颜色。 ``-S`` 是海洋的颜色。
 同时，你可以体会到GMT对于颜色支持的丰富性。
 
-绘制国界
+绘制边界
 --------
 
-美国和加拿大是世界上最长的互不设防国界。使用 ``-N`` 选项可以绘制国界。
-``-N1`` 绘制美国、加拿大、澳大利亚和南美国家的国界线。 ``-N2`` 绘制美国和加拿大的州、省边界。
+使用 ``-N`` 选项可以绘制边界。
+``-N1`` 绘制边界线。 ``-N2`` 绘制制美国、加拿大、澳大利亚和南美国家的州、省界线。
+此处界线不作国家划界依据（The boundary here is not used as the basis for the delimitation of the national territory.）。
 
 .. gmtplot::
     :width: 100%
     :caption: 绘制国界
 
     gmt begin coastline_4 pdf,png
-    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JH25c -Rg -Bxaf -Byaf -BSWEN
     gmt coast -Clightblue -Gdarkgreen -Scornflowerblue
     gmt coast -N1/2p,red
     gmt coast -N2/1p,black
@@ -88,7 +89,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
 比例尺
 ------
 
-最后我们为图画加上比例尺。 ``-Lg-70/41+c-70+w100k+f`` 的含义是比例尺的中点的经纬度为-70和41，比例尺的长度为100公里。
+最后我们为图画加上比例尺。 ``-Lg-70/41+c-70+w100k+f`` 的含义是比例尺的中点的经纬度为-70和-41，比例尺的长度为2000公里。
 绘制的是比例尺为经度-70度的。 ``+f`` 表示风格为黑白相间的铁轨。
 
 .. gmtplot::
@@ -96,6 +97,6 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 加上比例尺
 
     gmt begin coastline_4 pdf,png
-    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
-    gmt coast -Clightblue -Gdarkgreen -Scornflowerblue -Lg-70/41+c-70+w100k+f
+    gmt basemap -JH25c -Rg -Bxaf -Byaf -BSWEN
+    gmt coast -Clightblue -Gdarkgreen -Scornflowerblue -Lg-70/-41+c-70+w2000k+f
     gmt end
