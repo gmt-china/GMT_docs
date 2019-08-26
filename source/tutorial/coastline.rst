@@ -13,7 +13,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 美加五大湖中的休伦湖、伊利湖和安大略湖附近的（海、湖）岸线
 
     gmt begin coastline_0 pdf,png
-    gmt coast -R-85/-65/40/50 -JM35c -Baf -W1p,blue
+    gmt coast -R-85/-65/40/50 -JM25c -Baf -W1p,blue
     gmt end
 
 
@@ -28,7 +28,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 绘制不同级别的（海、湖）岸线
 
     gmt begin coastline_1 pdf,png
-    gmt basemap -JM30c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
     gmt coast -W1/1p,blue   # 海岸线
     gmt coast -W2/1p,black  # 湖岸线
     gmt coast -W3/1p,purple # 湖中岛
@@ -45,7 +45,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 设置要绘制的对象的最小面积
 
     gmt begin coastline_2 pdf,png
-    gmt basemap -JM30c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
     gmt coast -W1/1p,blue           # 海岸线
     gmt coast -A10000 -W2/1p,black  # 湖岸线
     gmt coast -A1000 -W3/1p,purple  # 湖中岛
@@ -61,7 +61,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 填充颜色
 
     gmt begin coastline_3 pdf,png
-    gmt basemap -JM30c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
     gmt coast -Clightblue -Gdarkgreen -Scornflowerblue
     gmt end
 
@@ -79,7 +79,7 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 绘制国界
 
     gmt begin coastline_4 pdf,png
-    gmt basemap -JM30c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
     gmt coast -Clightblue -Gdarkgreen -Scornflowerblue
     gmt coast -N1/2p,red
     gmt coast -N2/1p,black
@@ -96,6 +96,6 @@ coast顾名思义是海岸线、湖岸线的意思，该模块不仅可以绘制
     :caption: 加上比例尺
 
     gmt begin coastline_4 pdf,png
-    gmt basemap -JM30c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
+    gmt basemap -JM25c -R-85/-65/40/50 -Bxaf -Byaf -BSWEN
     gmt coast -Clightblue -Gdarkgreen -Scornflowerblue -Lg-70/41+c-70+w100k+f
     gmt end
