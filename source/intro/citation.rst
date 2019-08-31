@@ -7,7 +7,7 @@
 **GMT5用户**:
     Wessel, P., W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe,
     Generic Mapping Tools: Improved Version Released,
-    *EOS Trans. AGU*, 94(45), p. 409-410, 2013.
+    *EOS Trans. AGU*, 94(45), p. 409–410, 2013.
     `doi:10.1002/2013EO450001 <http://dx.doi.org/10.1002/2013EO450001>`_.
 
 **GMT4/GMT3用户**:
@@ -25,13 +25,13 @@
 **GMT2用户**:
     Wessel, P., and W. H. F. Smith,
     Free software helps map and display data,
-    *EOS Trans. AGU*, 72(41), 445-446, 1991.
+    *EOS Trans. AGU*, 72(41), 445–446, 1991.
     `doi:10.1029/90EO00319 <http://dx.doi.org/10.1029/90EO00319>`_.
 
 **GMT/MATLAB工具箱用户**:
     Wessel, P., and J. F. Luis
     The GMT/MATLAB Toolbox,
-    *Geochem. Geophys. Geosyst.*, 18, 811-823, 2017.
+    *Geochem. Geophys. Geosyst.*, 18, 811–823, 2017.
     `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_.
 
 GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关文章包括：
@@ -52,23 +52,23 @@ GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关�
 :doc:`gmt:surface` **模块**
     Smith, W. H. F., and P. Wessel,
     Gridding with continuous curvature splines in tension,
-    *Geophysics*, 55(3), 293--305, 1990.
+    *Geophysics*, 55(3), 293–305, 1990.
     `doi:10.1190/1.1442837 <http://dx.doi.org/10.1190/1.1442837>`_.
 
 **x2sys相关模块**
     Wessel, P.,
     Tools for analyzing intersecting tracks: The x2sys package,
-    *Computers & Geosciences*, 36, 348--354, 2010.
+    *Computers & Geosciences*, 36, 348–354, 2010.
     `doi:10.1016/j.cageo.2009.05.009 <http://dx.doi.org/10.1016/j.cageo.2009.05.009>`_.
 
 :doc:`gmt:greenspline` **模块**
     Wessel, P.,
     A General-purpose Green's function-based interpolator,
-    *Computers & Geosciences*, 35, 1247--1254, 2009.
+    *Computers & Geosciences*, 35, 1247–1254, 2009.
     `doi:10.1016/j.cageo.2008.08.012 <http://dx.doi.org/10.1016/j.cageo.2008.08.012>`_.
 
     Wessel, P. and J. M. Becker,
     Interpolation using a generalized Green's function for a spherical surface
     spline in tension,
-    *Geophys. J. Int.*, 174, 21--28, 2008.
+    *Geophys. J. Int.*, 174, 21–28, 2008.
     `doi:10.1111/j.1365-246X.2008.03829.x <http://dx.doi.org/10.1111/j.1365-246X.2008.03829.x>`_.
