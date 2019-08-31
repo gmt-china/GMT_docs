@@ -48,7 +48,7 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     $ sudo apt install libcurl4-gnutls-dev
 
     # 安装可选软件包
-    $ sudo apt install libgdal-dev python-gdal
+    $ sudo apt install gdal-bin libgdal-dev python-gdal
     $ sudo apt install liblapack3
     $ sudo apt install libglib2.0-dev
     $ sudo apt install libpcre3-dev
@@ -71,7 +71,7 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
     $ sudo yum install libcurl-devel
 
     # 安装可选软件包
-    $ sudo yum install gdal-devel gdal-python
+    $ sudo yum install gdal gdal-devel gdal-python
     $ sudo yum install lapack64-devel lapack-devel
     $ sudo yum install glib2-devel
     $ sudo yum install pcre-devel
