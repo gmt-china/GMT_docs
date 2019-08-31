@@ -1,7 +1,8 @@
 Windows 下安装 GMT
 ==================
 
-GMT 提供了 Windows 下的安装包，可以直接双击使用。
+GMT 提供了 Windows 下的安装包，可以直接安装使用。GMT安装包中不仅包含了GMT，
+还自带了最新版的GDAL相关工具。
 
 .. warning::
 
