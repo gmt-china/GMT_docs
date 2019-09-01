@@ -71,21 +71,24 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
 这里我们使用 **-A5000** 表示只绘制面积大于5000平方千米的湖泊或岛屿。这样子
 得到的图看上去更加干净简洁了。
 
-填充颜色
---------
-上面的图都是在画线：海岸线和湖岸线。现在，我们再用颜色来表示水体和陆地。
+填充陆地与水体
+--------------
+
+上面介绍了如何使用 **-W** 绘制海岸线和湖岸线。我们还可以不绘制岸线，而是为
+陆地和水体设置不同的填充色。
 
 .. gmtplot::
     :width: 100%
     :caption: 填充颜色
 
-    gmt begin coastline_3 pdf,png
-    gmt basemap -JM15c -R-130/-50/20/60 -Bxaf -Byaf -BSWEN
-    gmt coast -W1/1p,blue -W2/1p,black -A2000 -Clightblue -Gdarkgreen -Scornflowerblue
+    gmt begin coastline png,pdf
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
     gmt end
 
-``-C`` 指定的是湖泊和河流的颜色， ``-G`` 是陆地的颜色。 ``-S`` 是海洋的颜色。
-同时，你可以体会到GMT对于颜色支持的丰富性。
+其中，\ **-G** 设置了陆地区域的填充色，\ **-S** 设置水体的颜色，
+**-C** 则设置湖泊的颜色（若不指定 **-C**\ ，则湖泊颜色由 **-S** 控制）。
+
+当然，你也可以同时使用 **-W** 选项和 **-G** 选项，即绘制岸线并填充颜色。
 
 绘制边界
 --------
