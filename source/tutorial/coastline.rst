@@ -90,33 +90,41 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
 
 当然，你也可以同时使用 **-W** 选项和 **-G** 选项，即绘制岸线并填充颜色。
 
-绘制边界
---------
+绘制国界/州界
+-------------
 
-使用 ``-N`` 选项可以绘制边界。
-``-N1`` 绘制边界线。 ``-N2`` 绘制制澳大利亚和美洲国家所属的州、省界线。
-此处界线不作国家划界依据（The boundary here is not used as the basis for the delimitation of the national territory.）。
+使用 **-N** 选项可以绘制国界/州界等行政边界。\ **-N1** 表示绘制国界线。
+\ **-N2** 表示绘制州界/省界线（目前只有美国、加拿大、澳大利亚以及南美各国的数据）。
 
 .. gmtplot::
-    :width: 100%
-    :caption: 绘制国界
+    :width: 80%
+    :caption: 绘制国界与州界
 
-    gmt begin coastline_4 pdf,png
-    gmt basemap -JM15c -R-130/-50/20/60 -Bxaf -Byaf -BSWEN
-    gmt coast -W1/1p,blue -W2/1p,black -A2000 -Clightblue -Gdarkgreen -Scornflowerblue -N1/2p,red -N2/1p,black
+    gmt begin coastline png,pdf
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
     gmt end
 
-比例尺
-------
+添加比例尺
+----------
 
-最后我们为图画加上比例尺。 ``-Lg-65/25+c-65+w500k+f+u`` 的含义是比例尺的中点的经纬度为-65和25，比例尺的长度为500公里。
-绘制的是比例尺为经度-65度的。 ``+f`` 表示风格为黑白相间的铁轨。``+u`` 表示要显示单位。
+最后，我们还需要为地图添加比例尺。为了绘制比例尺，我们需要提供如下参数：
+
+- 要绘制哪个纬度的比例尺
+- 比例尺在图中的位置
+- 比例尺的长度
+
+在下面的例子中，我们使用了 **-Lg-60/25+c25+w1000k+f+u** 增加比例尺，其中：
+
+- **+w1000k** 表示比例尺长度为1000千米
+- **+c25** 表示绘制纬度为北纬25°处的比例尺
+- **g-60/25** 则表示将比例尺画在北纬25°西经60°处
+- **+f** 表示比例尺的风格为图中所示黑白相间的铁轨形式
+- **+u** 表示显示比例尺对应的单位
 
 .. gmtplot::
-    :width: 100%
-    :caption: 加上比例尺
+    :width: 80%
+    :caption: 添加比例尺
 
-    gmt begin coastline_4 pdf,png
-    gmt basemap -JM15c -R-130/-50/20/60 -Bxaf -Byaf -BSWEN
-    gmt coast -W1/1p,blue -W2/1p,black -A2000 -Clightblue -Gdarkgreen -Scornflowerblue -N1/2p,red -N2/1p,black -Lg-65/25+c-65+w500k+f+u
+    gmt begin coastline png,pdf
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -Lg-60/25+c25+w1000k+f+u
     gmt end
