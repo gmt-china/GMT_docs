@@ -104,6 +104,9 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
     gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
     gmt end
 
+除了 **-N** 选项之外，\ **-E** 选项也可以用于绘制州界、国界和省界，在
+:doc:`/dataset/dcw` 一节会详细介绍，这里姑且略过。
+
 添加比例尺
 ----------
 
