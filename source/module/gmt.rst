@@ -17,9 +17,11 @@ GMT的数据处理和绘图功能均通过使用 **gmt** 调用相应模块来�
 - **gmt --help**\ ：列出GMT提供的所有模块名及其功能
 - **gmt --new-script**\ ：生成GMT脚本模板
 - **gmt --show-bindir**\ ：显示GMT的bin目录
+- **gmt --show-citation**\ ：显示GMT的参考文献引用信息
 - **gmt --show-cores**\ ：显示当前计算机可以使用的核数
 - **gmt --show-datadir**\ ：显示GMT的数据目录，默认为空
 - **gmt --show-dataserver**\ ：显示GMT远程数据服务器的网址
+- **gmt --show-doi**\ ：显示当前版本的DOI
 - **gmt --show-library**\ ：显示GMT共享库文件的路径
 - **gmt --show-modules**\ ：列出GMT的所有模块名
 - **gmt --show-plugindir**\ ：显示GMT的插件目录
