@@ -30,18 +30,24 @@
     GMT is distributed under the GNU LGP License (http://www.gnu.org/licenses/lgpl.html).
 
     usage: gmt [options]
-           gmt <module name> [<module-options>]
+        gmt <module name> [<module-options>]
 
     options:
     --help            List descriptions of available GMT modules.
+    --new-script      Write GMT modern mode script template to stdout.
     --show-bindir     Show directory with GMT executables.
+    --show-citation   Show the most recent citation for GMT.
     --show-cores      Show number of available cores.
     --show-datadir    Show directory/ies with user data.
+    --show-dataserver Show URL of the remote GMT data server.
+    --show-doi        Show the DOI for the current release.
     --show-modules    Show all module names.
     --show-library    Show path of the shared GMT library.
     --show-plugindir  Show directory for plug-ins.
     --show-sharedir   Show directory for shared GMT resources.
     --version         Print GMT version number.
+
+    if <module-options> is '=' we call exit (0) if module exist and non-zero otherwise.
 
 从中可以看到GMT的版本，请确保你所使用的GMT版本是与本手册的版本一致。
 
