@@ -4,10 +4,6 @@
 # To return a failure if any commands inside fail
 set -e
 
-# Basic Information
-GSHHG_VERSION=2.3.7
-DCW_VERSION=1.1.4
-
 mkdir -p /tmp/GMT-build/
 cd /tmp/GMT-build
 
@@ -35,6 +31,7 @@ cd build
 cmake ..
 make -j
 make -j install
+# Remove documentations to keep caches small
 rm -r ${GMT_INSTALL_PREFIX}/share/doc
 
 cd ${TRAVIS_BUILD_DIR}
