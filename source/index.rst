@@ -1,6 +1,10 @@
 GMT中文手册
 ###########
 
+.. image:: /images/combined_logo.*
+   :align: center
+   :width: 80%
+
 欢迎来到 `Generic Mapping Tools`_ 的世界。
 
 本文档是由 `GMT中文社区`_ 维护整理的GMT中文手册。手册详尽地介绍了GMT的
