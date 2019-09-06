@@ -17,15 +17,19 @@ GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”�
 GMT的历史
 ---------
 
-- 1988年，Paul Wessel和Walter H.F. Smith开发了GMT的最原始版本GMT 1.0；
+- 1988年，Paul Wessel 和 Walter H.F. Smith 开发了GMT的最原始版本GMT 1.0；
 - 1991年8月10日，GMT 2.0发布；
 - 1998年11月8日，GMT 3.x的第一个正式版发布；
 - 2005年10月1日，GMT 4.x的第一个正式版发布；GMT4.x系列的最后一个版本是
   GMT 4.5.18，发布于2018年7月1日；
-- 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT 5.4.5
-  发布于 2019年1月4日；
-- 2019年6月18日，GMT 6.0.0 的第一个公测版发布；目前最新版本 GMT 6.0.0rc4
-  发布于 2019年9月6日；
+- 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT 5.4.5 发布于 2019年1月4日；
+- 2019年6月18日，GMT 6.0.0 的第一个公测版发布；目前最新版本 GMT 6.0.0rc4 发布于 2019年9月6日。
+
+想了解更多关于GMT的历史故事，可以观看/收听下面的视频/音频：
+
+- Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访 http://www.dontpanicgeocast.com/?p=638
+- Don't Panic Geocast 对 Walter Smith 的采访 https://www.dontpanicgeocast.com/?p=742
+- Paul Wessel 在 GMT 20 周年的演讲 https://av.tib.eu/media/19869
 
 GMT维护者
 ---------
