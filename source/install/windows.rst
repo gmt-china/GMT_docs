@@ -8,10 +8,10 @@ GMT 提供了 Windows 下的安装包，可以直接安装使用。GMT安装包�
 
     从 GMT 5.2.1 开始，GMT 提供的安装包已经不再支持 Windows XP。
 
-1.  下载 GMT 6.0.0rc3 安装包
+1.  下载 GMT 6.0.0rc4 安装包
 
-    - `64位安装包 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win64.exe>`__
-    - `32位安装包 <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win32.exe>`__
+    - `64位安装包 <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc4-win64.exe>`__
+    - `32位安装包 <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc4-win32.exe>`__
 
 2.  安装GMT
 
@@ -36,7 +36,7 @@ GMT 提供了 Windows 下的安装包，可以直接安装使用。GMT安装包�
     安装完成后，“开始”->“所有程序”->“附件”->“命令提示符”以启动cmd。在cmd窗口中执行::
 
         C:\Users\xxxx> gmt --version
-        6.0.0rc3
+        6.0.0rc4
 
     即表示安装成功。
 
