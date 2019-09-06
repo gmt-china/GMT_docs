@@ -2,7 +2,7 @@
 ====
 
 若你发表的文章中包含了利用GMT制作的图件或利用GMT数据处理功能得到的结果，
-可以考虑引用GMT的如下文章来回报GMT开发者。
+可以考虑在文中引用GMT的如下文章来回报GMT开发者。
 
 **GMT6用户**:
     Wessel, P., Luis, J., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019).
@@ -15,7 +15,6 @@
     Generic Mapping Tools: Improved Version Released.
     *Eos, Transactions American Geophysical Union*, 94(45), 409–410.
     https://doi.org/10.1002/2013EO450001
-
 
 **GMT4/GMT3用户**:
     Wessel, P., & Smith, W. H. F. (1998).

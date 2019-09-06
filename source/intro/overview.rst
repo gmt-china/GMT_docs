@@ -62,7 +62,7 @@ GMT的特点
 
 #. 开源免费
 
-   GMT是开源软件，其源码遵循 `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`_
+   GMT是免费的开源软件，其源码遵循 `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`_
    协议。任何人均可自由复制、分发、修改其源代码，也可用于盈利。修改后的代码
    必须开源但可以使用其他开源协议。
 
@@ -85,16 +85,16 @@ GMT的特点
 #. 支持多种格式的高精度矢量图和位图
 
    GMT支持多种高精度的矢量图片格式和位图图片格式。
-   矢量图片格式，如PDF、PS、EPS和SVG，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
+   矢量图片格式，如PDF、PS和EPS，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
    位图图片格式，如BMP、JPG、PNG、PPM和TIFF格式，可用于日常的文档及演示。
 
 其他制图软件
 ------------
 
-除了GMT之外，还有很多其他的软件也可以实现各种制图功能。以下仅列出一些地学
+除了GMT之外，还有很多其他的软件也可以用于制图。以下仅列出一些地学
 常用的制图软件。其中 ``√`` 和 ``X`` 用于表示是否支持某一功能。
 
-.. table:: 地球科学常用绘图软件
+.. table:: 地球科学常用绘图软件比较
     :align: center
 
     ===============  ======  ======== ==============
@@ -115,7 +115,7 @@ GMT的特点
 .. _ggplot2: https://ggplot2.tidyverse.org/
 .. _gnuplot: http://www.gnuplot.info/
 
-.. [1] GMT对三维图的支持很有限。
+.. [1] GMT对三维图的支持很有限
 .. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`_
 .. [3] 需要额外安装 `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
 .. [4] 需要额外安装 `ggmap <https://github.com/dkahle/ggmap>`_
