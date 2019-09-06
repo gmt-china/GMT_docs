@@ -31,22 +31,29 @@ GMT的历史
 - Don't Panic Geocast 对 Walter Smith 的采访 https://www.dontpanicgeocast.com/?p=742
 - Paul Wessel 在 GMT 20 周年的演讲 https://av.tib.eu/media/19869
 
-GMT维护者
+GMT开发者
 ---------
 
-GMT源码目前主要由 `Paul Wessel <http://www.soest.hawaii.edu/wessel/>`_ 和
-`Joaquim Luis <http://w3.ualg.pt/~jluis/>`_ 维护。
-其源码公开在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上，任何用户
-均可贡献自己的代码。
+GMT的核心开发者有7位，分别是
+`Paul Wessel <http://www.soest.hawaii.edu/wessel/>`_\ 、
+`Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`_\ 、
+`Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`_\ 、
+`Joaquim F. Luis <http://w3.ualg.pt/~jluis/>`_\ 、
+`Leonardo Uieda <https://www.leouieda.com>`_\ 、
+Florian Wobbe 和
+`Dongdong Tian <https://msu.edu/~tiandong/>`_\ 。
+GMT的开发在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上进行，
+任何用户均可通过多种方式向GMT做贡献。
 
-.. figure:: /images/GMT5_Summit_2016.jpg
-   :width: 100%
+.. figure:: /images/GMT6_Summit_2019.jpg
+   :width: 80%
    :align: center
 
-   GMT的5个主要维护者
+   GMT核心开发者及指导委员会部分成员
 
-   从左至右依次为Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe
-   和 Paul Wessel。照片摄于2016年8月15日至19日在加州La Jolla举办的GMT开发者峰会。
+   从左至右依次为Dongdong Tian、David Sandwell（指导委员会主席）、Walter H.F. Smith、
+   Paul Wessel、Joaquim Luis、Leonardo Uieda 和 Dave Caress（指导委员会成员）。
+   照片拍摄于2019年7月29日至8月2日在加州La Jolla举办的GMT开发者峰会。
 
 GMT的特点
 ---------
