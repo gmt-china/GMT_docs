@@ -104,10 +104,10 @@
 脚本模式，即将绘图代码写在脚本中：
 
 ```
-    .. gmtplot:: /scripts/psmeca_ex1.sh
-       :width: 100%
+.. gmtplot:: /scripts/psmeca_ex1.sh
+    :width: 100%
 
-       图片标题
+    图片标题
 ```
 
 `gmtplot` 指令有很多选项，常用的包括：
