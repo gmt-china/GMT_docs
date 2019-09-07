@@ -138,7 +138,6 @@ Linux下安装GMT需要下载如下三个文件：
 .. tip::
 
    此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的语句。
-
    用户可以将GMT提供的配置模板 ``cmake/ConfigUserTemplate.cmake`` 复制为
    ``cmake/ConfigUser.cmake``\ ，然后根据配置文件中的大量注释说明信息自行修改配置文件。
 

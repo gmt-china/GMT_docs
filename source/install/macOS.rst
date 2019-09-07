@@ -21,7 +21,7 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
        $ gmt --version
        6.0.0rc4
 
-5. GMT还依赖于其他软件包，可以使用 [Homebrew](https://brew.sh) 安装这些软件::
+5. GMT还依赖于其它软件包，可以使用 `Homebrew <https://brew.sh>`__ 安装这些软件::
 
        # 必须软件包
        $ brew install ghostscript
@@ -48,7 +48,7 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
     homebrew 尚未将GMT更新到6.0.0rc4，故而目前无法使用homebrew安装GMT6。
 
-`Homebrew <https://brew.sh/>`_ 是 macOS 下的第三方软件包管理工具。
+`Homebrew <https://brew.sh/>`__ 是 macOS 下的第三方软件包管理工具。
 
 1.  安装 GMT::
 
