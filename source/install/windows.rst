@@ -24,6 +24,7 @@ GMT 6.0.0rc4 安装包中不仅包含了GMT，还包含了运行GMT所需的如�
 2.  安装GMT
 
     双击安装包即可安装。在“Choose components”页面，建议将所有选项都勾选上。
+    若想要让GMT支持中文，则需要取消ghostscript组件。
 
     .. note::
 
