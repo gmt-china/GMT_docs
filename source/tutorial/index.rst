@@ -4,7 +4,7 @@
 .. toctree::
    :maxdepth: 1
 
-   prerequisite
+   get-started/index
    first-plot
    basemap
    coastline
