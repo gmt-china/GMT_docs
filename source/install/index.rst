@@ -7,3 +7,4 @@
    linux
    windows
    macOS
+   cross-platform

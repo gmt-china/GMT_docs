@@ -17,31 +17,43 @@ GMT，全称Generic Mapping Tools，中文一般译为“通用制图工具”�
 GMT的历史
 ---------
 
-- 1988年，Paul Wessel和Walter H.F. Smith开发了GMT的最原始版本GMT 1.0；
+- 1988年，Paul Wessel 和 Walter H.F. Smith 开发了GMT的最原始版本GMT 1.0；
 - 1991年8月10日，GMT 2.0发布；
 - 1998年11月8日，GMT 3.x的第一个正式版发布；
 - 2005年10月1日，GMT 4.x的第一个正式版发布；GMT4.x系列的最后一个版本是
   GMT 4.5.18，发布于2018年7月1日；
-- 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT 5.4.5
-  发布于 2019年1月4日；
-- 2019年6月18日，GMT 6.0.0 的第一个公测版发布。
+- 2013年11月5日，GMT 5.x的第一个正式版发布；目前最新版本 GMT 5.4.5 发布于 2019年1月4日；
+- 2019年6月18日，GMT 6.0.0 的第一个公测版发布；目前最新版本 GMT 6.0.0rc4 发布于 2019年9月6日。
 
-GMT维护者
+想了解更多关于GMT的历史故事，可以观看/收听下面的视频/音频：
+
+- Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访 http://www.dontpanicgeocast.com/?p=638
+- Don't Panic Geocast 对 Walter Smith 的采访 https://www.dontpanicgeocast.com/?p=742
+- Paul Wessel 在 GMT 20 周年的演讲 https://av.tib.eu/media/19869
+
+GMT开发者
 ---------
 
-GMT源码目前主要由 `Paul Wessel <http://www.soest.hawaii.edu/wessel/>`_ 和
-`Joaquim Luis <http://w3.ualg.pt/~jluis/>`_ 维护。
-其源码公开在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上，任何用户
-均可贡献自己的代码。
+GMT的核心开发者有7位，分别是
+`Paul Wessel <http://www.soest.hawaii.edu/wessel/>`_\ 、
+`Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`_\ 、
+`Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`_\ 、
+`Joaquim F. Luis <http://w3.ualg.pt/~jluis/>`_\ 、
+`Leonardo Uieda <https://www.leouieda.com>`_\ 、
+Florian Wobbe 和
+`Dongdong Tian <https://msu.edu/~tiandong/>`_\ 。
+GMT的开发在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上进行，
+任何用户均可通过多种方式向GMT做贡献。
 
-.. figure:: /images/GMT5_Summit_2016.jpg
-   :width: 100%
+.. figure:: /images/GMT6_Summit_2019.jpg
+   :width: 80%
    :align: center
 
-   GMT的5个主要维护者
+   GMT核心开发者及指导委员会部分成员
 
-   从左至右依次为Joaquim Luis、Walter H.F. Smith、Remko Scharroo、Florian Wobbe
-   和 Paul Wessel。照片摄于2016年8月15日至19日在加州La Jolla举办的GMT开发者峰会。
+   从左至右依次为Dongdong Tian、David Sandwell（指导委员会主席）、Walter H.F. Smith、
+   Paul Wessel、Joaquim Luis、Leonardo Uieda 和 Dave Caress（指导委员会成员）。
+   照片拍摄于2019年7月29日至8月2日在加州La Jolla举办的GMT开发者峰会。
 
 GMT的特点
 ---------
@@ -50,7 +62,7 @@ GMT的特点
 
 #. 开源免费
 
-   GMT是开源软件，其源码遵循 `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`_
+   GMT是免费的开源软件，其源码遵循 `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`_
    协议。任何人均可自由复制、分发、修改其源代码，也可用于盈利。修改后的代码
    必须开源但可以使用其他开源协议。
 
@@ -73,16 +85,16 @@ GMT的特点
 #. 支持多种格式的高精度矢量图和位图
 
    GMT支持多种高精度的矢量图片格式和位图图片格式。
-   矢量图片格式，如PDF、PS、EPS和SVG，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
+   矢量图片格式，如PDF、PS和EPS，具有任意放大缩小而不失真的特性，可直接投稿到学术期刊；
    位图图片格式，如BMP、JPG、PNG、PPM和TIFF格式，可用于日常的文档及演示。
 
 其他制图软件
 ------------
 
-除了GMT之外，还有很多其他的软件也可以实现各种制图功能。以下仅列出一些地学
+除了GMT之外，还有很多其他的软件也可以用于制图。以下仅列出一些地学
 常用的制图软件。其中 ``√`` 和 ``X`` 用于表示是否支持某一功能。
 
-.. table:: 地球科学常用绘图软件
+.. table:: 地球科学常用绘图软件比较
     :align: center
 
     ===============  ======  ======== ==============
@@ -103,7 +115,7 @@ GMT的特点
 .. _ggplot2: https://ggplot2.tidyverse.org/
 .. _gnuplot: http://www.gnuplot.info/
 
-.. [1] GMT对三维图的支持很有限。
+.. [1] GMT对三维图的支持很有限
 .. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`_
 .. [3] 需要额外安装 `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`_
 .. [4] 需要额外安装 `ggmap <https://github.com/dkahle/ggmap>`_

@@ -5,14 +5,20 @@ python: 3.7
 
 env:
   global:
+    # Sphinx HTML builddir
     - HTML_BUILDDIR=build/dirhtml
-    # Use 6.0.0rc4 tarball
+    # GSHHG and DCW version
+    - GSHHG_VERSION=2.3.7
+    - DCW_VERSION=1.1.4
+    # set GMT_VERSION to 6.0 or master if you want to use the latest codes
     - GMT_VERSION=6.0.0rc4
     # URL of the current documentation
     - GMT_DOC_VERSION=6.0
+    # GMT install location
     - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
-    # Install location
+    # TeXLive install location
     - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
+    # PATH
     - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
 
 cache:

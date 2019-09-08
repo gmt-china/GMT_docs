@@ -1,6 +1,10 @@
 GMT中文手册
 ###########
 
+.. image:: /images/combined_logo.*
+   :align: center
+   :width: 80%
+
 欢迎来到 `Generic Mapping Tools`_ 的世界。
 
 本文档是由 `GMT中文社区`_ 维护整理的GMT中文手册。手册详尽地介绍了GMT的
@@ -15,15 +19,23 @@ GMT中文手册
 
 **快速链接：**
 
-- :doc:`GMT投影方式 </option/J>`
-- :ref:`GMT颜色表 <color_list>`
-- :doc:`GMT内置CPT </cpt/builtin-cpt>`
-- :doc:`GMT字体 </basis/text>`
-- :doc:`GMT特殊字符一览表 </basis/special-character>`
-- :doc:`GMT配置参数 </conf/index>`
-- :doc:`地学数据 </dataset/index>`
-- :doc:`模块列表 </module/index>`
-- :doc:`图库 </gallery/index>`
+.. hlist::
+    :columns: 3
+
+    - :doc:`模块列表 </module/index>`
+    - :doc:`配置参数 </conf/showcase>`
+    - :doc:`通用选项 </option/index>`
+    - :doc:`投影方式 </option/J>`
+
+    - :ref:`颜色名列表 <color_list>`
+    - :doc:`字体列表 </basis/text>`
+    - :doc:`内置CPT </cpt/builtin-cpt>`
+    - :doc:`特殊字符一览 </basis/special-character>`
+
+    - :doc:`地学数据 </dataset/index>`
+    - :doc:`图库 <gallery/index>`
+    - :doc:`引用GMT </intro/citation>`
+    - :doc:`学习资源 </intro/resources>`
 
 .. toctree::
    :maxdepth: 3
