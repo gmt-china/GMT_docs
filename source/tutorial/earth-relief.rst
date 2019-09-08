@@ -16,7 +16,9 @@ earth_relief 全球地形起伏数据
     :width: 100%
     :caption: 全球地形
 
-    gmt grdimage -JH10c @earth_relief_15m -pdf,png earth_relief_1
+    gmt begin global_relief png,pdf
+    gmt grdimage -JH10c @earth_relief_15m
+    gmt end
 
 上图中，使用gridimage模块绘制地形数据。使用的数据是@earth_relief_15m。
 数据名称中的@表示是GMT官方提供的数据，如果你之前从来没有用过，gmt会下载，今后再使用就不再下载了。
@@ -31,7 +33,9 @@ earth_relief 全球地形起伏数据
     :width: 80%
     :caption: 台湾
 
-    gmt grdimage -JM15c -R118/125/21/26.5 -Baf -BWSEN earth_relief_15s.grd -pdf,png earth_relief_2
+    gmt begin taiwan_relief png,pdf
+    gmt grdimage -JM15c -R118/125/21/26.5 -Baf -BWSEN @earth_relief_15s.grd
+    gmt end
 
 台湾岛为中国第一大岛。虽然位于东南沿海，纵深浅，中国东部地区最高点却在台湾3952米高的玉山山顶。你能在图中找到钓鱼台列屿吗？
 
@@ -41,7 +45,9 @@ earth_relief 全球地形起伏数据
     :width: 80%
     :caption: 带光照效果的台湾
 
-    gmt grdimage -JM15c -R118/125/21/26.5 -Baf -BWSEN earth_relief_15s.grd -I+d -pdf,png earth_relief_3
+    gmt begin taiwan_relief png,pdf
+    gmt grdimage -JM15c -R118/125/21/26.5 -Baf -BWSEN @earth_relief_15s.grd -I+d
+    gmt end
 
 制作CPT文件和绘制色标卡
 -------------------------
