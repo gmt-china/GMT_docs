@@ -1,7 +1,7 @@
 绘制地形起伏
 ============
 
-GMT中使用 :doc:`/module/gridimage` 模块绘制地形。
+GMT中使用 :doc:`gridimage` 模块绘制地形。
 
 earth_relief 全球地形起伏数据
 --------------------------------
@@ -46,13 +46,11 @@ earth_relief 全球地形起伏数据
     R=85/90/42/44                                               # 确定图幅范围
 
     gmt grdcut earth_relief_15s.grd -R$R -Gcut_data             # 对数据切割，减少计算机的运行负担
-    gmt grdgradient cut_data -A180 -Glight_data                 # 生成光照文件light_data，-A选项给出太阳的方位角，180表示正南方
-
     gmt begin earth_relief_3 pdf,png
-    gmt grdimage -JM15c -R$R -Baf -BWSEN cut_data -Ilight_data  # 用-I选项指定光照文件
+    gmt grdimage -JM15c -R$R -Baf -BWSEN cut_data -I+d  # 用-I选项指定光照文件
     echo '87.611671 43.875513' | gmt plot -Sa0.5c -W1p,red      # 标出乌鲁木齐
     gmt end
-    rm cut_data light_data
+    rm cut_data
 
 选用不同的色标
 ------------------
@@ -73,14 +71,12 @@ earth_relief 全球地形起伏数据
     R=85/90/42/44                                               # 确定图幅范围
 
     gmt grdcut earth_relief_15s.grd -R$R -Gcut_data             # 对数据切割，减少计算机的运行负担
-    gmt grdgradient cut_data -A180 -Glight_data                 # 生成光照文件light_data，-A选项给出太阳的方位角，180表示正南方
-
     gmt begin earth_relief_4 pdf,png
     gmt basemap -JM15c -R$R -Baf -BWSEN 
-    gmt grdimage -Cglobe -Ilight_data cut_data                  # 用-I选项指定光照文件，用-C指定色标
+    gmt grdimage -Cglobe -I+d cut_data                  # 用-I选项指定光照文件，用-C指定色标
     echo '87.611671 43.875513' | gmt plot -Sa0.5c -W1p,red      # 标出乌鲁木齐
     gmt end
-    rm cut_data light_data
+    rm cut_data
 
 似乎效果还不如默认的。这时候我们可以自己设计色标。
 gmt中色标存储为一个CPT格式的文本文件，通常以cpt结尾。你也可以用其他后缀名，或者不用后缀名，这都不会改变其本质。
@@ -106,14 +102,12 @@ gmt中色标存储为一个CPT格式的文本文件，通常以cpt结尾。你�
     EOF
 
     gmt grdcut earth_relief_15s.grd -R$R -Gcut_data             # 对数据切割，减少计算机的运行负担
-    gmt grdgradient cut_data -A180 -Glight_data                 # 生成光照文件light_data，-A选项给出太阳的方位角，180表示正南方
-
     gmt begin earth_relief_5 pdf,png
     gmt basemap -JM15c -R$R -Baf -BWSEN 
-    gmt grdimage -C$CPT -Ilight_data cut_data                  # 用-I选项指定光照文件，用-C指定色标
+    gmt grdimage -C$CPT -I+d cut_data                  # 用-I选项指定光照文件，用-C指定色标
     echo '87.611671 43.875513' | gmt plot -Sa0.5c -W1p,red      # 标出乌鲁木齐
     gmt end
-    rm cut_data light_data
+    rm cut_data
 
 加上显示高程的色标卡
 -----------------------
@@ -139,12 +133,10 @@ gmt中色标存储为一个CPT格式的文本文件，通常以cpt结尾。你�
     EOF
 
     gmt grdcut earth_relief_15s.grd -R$R -Gcut_data             # 对数据切割，减少计算机的运行负担
-    gmt grdgradient cut_data -A180 -Glight_data                 # 生成光照文件light_data，-A选项给出太阳的方位角，180表示正南方
-
     gmt begin earth_relief_6 pdf,png
     gmt basemap -JM15c -R$R -Baf -BWSEN 
-    gmt grdimage -C$CPT -Ilight_data cut_data                   # 用-I选项指定光照文件，用-C指定色标
+    gmt grdimage -C$CPT -I+d cut_data                   # 用-I选项指定光照文件，用-C指定色标
     echo '87.611671 43.875513' | gmt plot -Sa0.5c -W1p,red      # 标出乌鲁木齐
     gmt colorbar -DjCB+w18c/0.3c+o0/-2.5c+h -C$CPT -BWSEN -Bxa500f100+l"Elevation/m" -G-500/6000 #绘制色标卡
     gmt end
-    rm cut_data light_data
+    rm cut_data
