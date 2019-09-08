@@ -59,12 +59,11 @@ earth_relief 全球地形起伏数据
     :width: 80%
     :caption: 专门制作CPT文件的台湾
 
-    gmt makecpt -Cglobe -T-10000/10000/200 -Z > colorTopo.cpt
     gmt begin earth_relief_4 pdf,png
     gmt basemap -JM15c -R118/125/21/26.5 -Baf -BWSEN
-    gmt grdimage -CcolorTopo.cpt earth_relief_15s.grd -I+d
-    gmt colorbar -DjCB+w15c/0.3c+o0/-2.5c+h -CcolorTopo.cpt -BWSEN -Bxa2000f200+l"Elevation/m" -G-8000/8000
+    gmt makecpt -Cglobe -T-10000/10000/200 -Z
+    gmt grdimage -C earth_relief_15s.grd -I+d
+    gmt colorbar -DjCB+w15c/0.3c+o0/-2.5c+h -C -BWSEN -Bxa2000f200+l"Elevation/m" -G-8000/8000
     gmt end
-    rm colorTopo.cpt
 
 在有了色标卡之后，我们可以看到台湾岛东部的海沟非常深。
