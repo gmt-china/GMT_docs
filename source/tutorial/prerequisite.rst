@@ -73,7 +73,7 @@ Windows用户可以使用BAT脚本语言，也可以安装 `git for Windows <htt
 Linux下通常是Gedit，Windows下有记事本，macOS也有自己的文本编辑器。除此之外，还有
 很多流行的编辑器，如Notepad++、Vim、Emacs、Sublime Text、Atom等。
 
-此处，推荐使用微软开发的 `Visual Stuidio Code <https://code.visualstudio.com/>`_\ 。
+此处，推荐使用微软开发的 `Visual Studio Code <https://code.visualstudio.com/>`_\ 。
 其具有如下特点：
 
 #. 开源且跨平台
