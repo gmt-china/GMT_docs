@@ -77,8 +77,48 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 该点颜色的亮度；对于背阴处，其方向梯度为负值，则降低该点颜色的亮度。由此达到
 增加光照效果、增强立体感的目的。
 
-制作CPT文件和绘制色标卡
--------------------------
+添加色标
+--------
+
+前面提到，\ **grdimage** 绘制地形起伏数据本质上就是将高程的数值与颜色之间对应起来。
+二者之间的对应关系由色标文件（即CPT文件）决定。那么，上图使用的是怎么样的CPT呢？
+高程数值与颜色之间的对应关系又是怎样的呢？不同的颜色代表的具体数值又是多少呢？
+这就需要用 :doc:`/module/colorbar` 向图中添加色标。
+
+.. gmtplot::
+    :width: 70%
+
+    gmt begin taiwan_relief png,pdf
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt colorbar
+    gmt end
+
+上面的脚本中 **colorbar** 命令在地形图的下方添加了一个色标，但是色标下面的有一团
+很乱的标注，这显示不是我们想要的。我们可以使用 **-B** 选项设置色标的标注间隔，
+并为色标添加一个标签。
+
+.. gmtplot::
+    :width: 70%
+
+    gmt begin taiwan_relief png,pdf
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt colorbar -Bxaf+l"Elevation (m)"
+    gmt end
+
+当然，我们还可以更进一步调整色标的位置、长度等属性。下面的脚本中，我们使用了
+**-D** 选项将色标放在了地形起伏图的右侧中间（\ **JMR**\ ）向右偏移1.5厘米，
+色标长度为10厘米，并将标签放在了色标左侧（\ **+ml**\ ）。
+
+.. gmtplot::
+    :width: 70%
+
+    gmt begin taiwan_relief png,pdf
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f+l"Elevation (m)"
+    gmt end
+
+制作CPT文件
+-----------
 
 刚才说了，gmt需要把高程数值和颜色对应起来。对应的关系是由CPT格式的色标文件决定的。
 刚才我们介绍了，中国东部地区的最高点接近4000米，据此，我们专门制作CPT文件绘制地图。
@@ -93,5 +133,3 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt grdimage -C earth_relief_15s.grd -I+d
     gmt colorbar -DjCB+w15c/0.3c+o0/-2.5c+h -C -BWSEN -Bxa2000f200+l"Elevation/m" -G-8000/8000
     gmt end
-
-在有了色标卡之后，我们可以看到台湾岛东部的海沟非常深。
