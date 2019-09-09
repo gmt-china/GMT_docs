@@ -120,16 +120,19 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 制作CPT文件
 -----------
 
-刚才说了，gmt需要把高程数值和颜色对应起来。对应的关系是由CPT格式的色标文件决定的。
-刚才我们介绍了，中国东部地区的最高点接近4000米，据此，我们专门制作CPT文件绘制地图。
+上面的示例中使用的是GMT的默认CPT文件。用户也可以使用 :doc:`/module/makecpt` 或
+:doc:`/module/grd2cpt` 制作CPT文件。
+
+下面的示例中，我们使用 :doc:`/module/makecpt` 模块在GMT内置CPT **globe** 的基础
+上生成了一个-8000到8000范围内的新CPT文件。生成的CPT文件将作为当前CPT文件，供
+接下来的 **grdimage** 和 **colorbar** 命令使用。
 
 .. gmtplot::
-    :width: 80%
-    :caption: 专门制作CPT文件的台湾
+    :width: 70%
 
-    gmt begin earth_relief_4 pdf,png
-    gmt basemap -JM15c -R118/125/21/26.5 -Baf -BWSEN
-    gmt makecpt -Cglobe -T-10000/10000/200 -Z
-    gmt grdimage -C earth_relief_15s.grd -I+d
-    gmt colorbar -DjCB+w15c/0.3c+o0/-2.5c+h -C -BWSEN -Bxa2000f200+l"Elevation/m" -G-8000/8000
+    gmt begin taiwan_relief png,pdf
+    gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
+    gmt makecpt -Cglobe -T-8000/8000
+    gmt grdimage @earth_relief_30s -I+d
+    gmt colorbar -Bxa2000+l"Elevation/m"
     gmt end
