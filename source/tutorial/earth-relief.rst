@@ -45,14 +45,19 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 
 想要绘制区域地形起伏？只需要在 **grdimage** 模块中使用 **-R** 选项指定
 区域经纬度范围即可。这里我们设置了绘图区域为118°E至125°E、20°N至26°N。
-由于绘图区域比较小，所以我们选用了更高精度的 3 弧秒的地形起伏数据。
+由于绘图区域比较小，所以我们选用了更高精度的 30 弧秒的地形起伏数据。
+
+.. note::
+
+    30弧秒的地形起伏数据大小约为800Mb。
+    第一次使用该数据时GMT会自动从服务器下载该文件，因而会很耗时，请耐心等待。
 
 .. gmtplot::
     :width: 70%
     :caption: 台湾区域地形图
 
     gmt begin taiwan_relief png,pdf
-    gmt grdimage @earth_relief_03s -JM15c -R118/125/20/26 -Baf -BWSen
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen
     gmt end
 
 增加光照效果
@@ -69,7 +74,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     :caption: 带光照效果的台湾区域地形图
 
     gmt begin taiwan_relief png,pdf
-    gmt grdimage @earth_relief_03s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt end
 
 增加光照效果本质上是计算了每个点沿着某个方位角的方向梯度，然后根据每个点的
@@ -89,7 +94,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     :width: 70%
 
     gmt begin taiwan_relief png,pdf
-    gmt grdimage @earth_relief_03s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar
     gmt end
 
@@ -101,7 +106,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     :width: 70%
 
     gmt begin taiwan_relief png,pdf
-    gmt grdimage @earth_relief_03s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -Bxaf+l"Elevation (m)"
     gmt end
 
@@ -113,7 +118,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     :width: 70%
 
     gmt begin taiwan_relief png,pdf
-    gmt grdimage @earth_relief_03s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+    gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f+l"Elevation (m)"
     gmt end
 
@@ -133,6 +138,6 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt begin taiwan_relief png,pdf
     gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
     gmt makecpt -Cglobe -T-8000/8000
-    gmt grdimage @earth_relief_03s -I+d
+    gmt grdimage @earth_relief_30s -I+d
     gmt colorbar -Bxa2000+l"Elevation/m"
     gmt end
