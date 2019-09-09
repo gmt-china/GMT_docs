@@ -92,7 +92,7 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 
 Linux下安装GMT需要下载如下三个文件：
 
-#. GMT 6.0.0rc4 源码：`gmt-6.0.0rc4-src.tar.gz <ftp://ftp.soest.hawaii.edu/gmt/gmt-6.0.0rc4-src.tar.gz>`_
+#. GMT 6.0.0rc4 源码：`gmt-6.0.0rc4-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.0.0rc4-src.tar.gz>`_
 #. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
 #. 全球数字图表DCW：`dcw-gmt-1.1.4.tar.gz <http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz>`_
 

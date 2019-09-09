@@ -8,7 +8,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
-1. 下载：\ `gmt-6.0.0rc4-darwin-x86_64.dmg <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc4-darwin-x86_64.dmg>`_
+1. 下载：\ `gmt-6.0.0rc4-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc4-darwin-x86_64.dmg>`_
 
 2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0rc4.app** 拖动到 Applications 目录
 
