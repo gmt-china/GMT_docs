@@ -4,7 +4,6 @@
 .. toctree::
 
     beachball/index
-    earth-relief
     histogram/index
     animation/index
     chinese-texts/index
