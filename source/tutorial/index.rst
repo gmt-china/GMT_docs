@@ -5,7 +5,7 @@
    :maxdepth: 1
 
    get-started/index
-   first-plot
+   commands
    basemap
    coastline
    lines
