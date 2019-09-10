@@ -95,13 +95,10 @@ Linux下通常是Gedit，Windows下有记事本，macOS也有自己的文本编�
 
 #.  将文件保存为脚本文件 :file:`hello.sh`
 #.  打开终端，使用 ``cd`` 命令进入脚本所在目录
-#.  执行如下命令，为脚本文件增加可执行权限::
-
-        chmod +x hello.sh
 
 #.  执行脚本::
 
-        ./hello.sh
+        bash ./hello.sh
 
     你会看到终端输出 ``Hello world``\ 。
 
