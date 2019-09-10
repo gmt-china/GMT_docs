@@ -55,17 +55,21 @@ GMT提供了从1弧秒到60弧分的多种不同精度的全球地形起伏网�
     由于第一次使用地形数据时，GMT需要从服务器下载数据，通常会需要很长时间。
     建议用户可以在闲置时提前将精度为15弧秒到60弧秒的地形数据下载到自己的计算机上。
 
-    Linux和macOS用户可以执行如下批量下载脚本::
+    可以复制并执行如下命令以下载不同精度的地形数据::
 
-        for res in 60m 30m 20m 15m 10m 06m 05m 04m 03m 02m 01m 30s 15s; do
-            gmt which -Gu @earth_relief_${res}
-        done
-
-    Windows用户可以打开CMD执行如下批量下载命令::
-
-        for %%i in (60m 30m 20m 15m 10m 06m 05m 04m 03m 02m 01m 30s 15s) do (
-            gmt which -Gu @earth_relief_%%i
-        )
+        gmt which -Gu @earth_relief_60m
+        gmt which -Gu @earth_relief_30m
+        gmt which -Gu @earth_relief_20m
+        gmt which -Gu @earth_relief_15m
+        gmt which -Gu @earth_relief_10m
+        gmt which -Gu @earth_relief_06m
+        gmt which -Gu @earth_relief_05m
+        gmt which -Gu @earth_relief_04m
+        gmt which -Gu @earth_relief_03m
+        gmt which -Gu @earth_relief_02m
+        gmt which -Gu @earth_relief_01m
+        gmt which -Gu @earth_relief_30s
+        gmt which -Gu @earth_relief_15s
 
     不建议提前下载1弧秒和3弧秒的地形数据，主要原因在于，这两套数据占据硬盘空间太大。
     基于同样的理由，GMT服务器上这两套数据不是以单个文件的形式存放，而是被分成了多个小块，
