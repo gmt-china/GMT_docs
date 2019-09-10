@@ -1,6 +1,8 @@
 #!/bin/bash
-gmt begin layers pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
+gmt begin layers png,pdf
+gmt basemap -JH180/15c -Rg -B0
+gmt grdimage @earth_relief_10m -Cetopo1 -I+d
+gmt colorbar -Bxa2000f+l"Elevation (m)"
 
 # 绘制震中位置
 gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow << EOF
@@ -44,20 +46,14 @@ gmt plot -W1p,red << EOF
 EOF
 
 # 添加文本
-gmt text -F+f12p,1,black+jTL -D-1.5c/-0.15c << EOF
--77.15 38.89 Washington
-76.22 -69.22 Zhongshanzhan
-EOF
-gmt text -F+f12p,1,black+jTL -D-1c/-0.15c << EOF
-104.39 29.90 Zigong
-13.14 52.50 Berlin
-19.99 -34.52 Bredasdorp
-EOF
-gmt text -F+f12p,1,black+jTL -D-0.6c/-0.15c << EOF
-150.36 -33.79 Sydney
-EOF
-gmt text -F+f12p,1,black+jTL -D-0.6c/-0.15c << EOF
--52.47 -31.62 Pelotas
+gmt text -F+f9p,1,black+j -Dj0.1c/0.1c << EOF
+-77.15  38.89 ML Washington
+76.22  -69.22 ML Zhongshanzhan
+104.39  29.90 MR Zigong
+13.14   52.50 TC Berlin
+19.99  -34.52 ML Bredasdorp
+150.36 -33.79 ML Sydney
+-52.47 -31.62 ML Pelotas
 EOF
 
 gmt end
