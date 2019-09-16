@@ -78,3 +78,31 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 5.  卸载GMT。执行如下命令即可卸载GMT::
 
         brew uninstall gmt
+
+使用 macports 安装
+------------------
+
+`macports <https://www.macports.org/>`_ 是 macOS 下的第三方软件包管理工具。
+
+1.  安装GMT::
+
+        $ sudo port install gdal +curl +geos +hdf5 +netcdf
+        $ sudo port install gmt6
+
+2.  安装GMT依赖的其他软件
+
+        $ sudo port install ghostscript graphicsmagick ffmpeg
+
+3.  重新打开一个终端，检测安装是否成功::
+
+        $ gmt --version
+        6.0.0rc4
+
+4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
+
+        $ sudo port selfupdate
+        $ sudo port upgrade gmt6
+
+5.  卸载GMT。执行如下命令即可卸载GMT::
+
+        $ sudo port uninstall gmt6
