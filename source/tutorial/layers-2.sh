@@ -22,4 +22,4 @@ gmt plot -St0.2c -W0.5p,black,solid -Gblack << EOF
 76.22 -69.22
 EOF
 
-gmt end
+gmt end show

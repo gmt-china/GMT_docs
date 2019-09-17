@@ -38,7 +38,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 
     gmt begin global_relief png,pdf
     gmt grdimage @earth_relief_05m -JH180/10c
-    gmt end
+    gmt end show
 
 绘图区域地形起伏图
 ------------------
@@ -58,7 +58,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 
     gmt begin taiwan_relief png,pdf
     gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen
-    gmt end
+    gmt end show
 
 增加光照效果
 ------------
@@ -75,7 +75,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 
     gmt begin taiwan_relief png,pdf
     gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
-    gmt end
+    gmt end show
 
 增加光照效果本质上是计算了每个点沿着某个方位角的方向梯度，然后根据每个点的
 方向梯度的正负以及振幅调节该点颜色的亮度值。对于向阳处，其方向梯度为正值，则增加
@@ -96,7 +96,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt begin taiwan_relief png,pdf
     gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar
-    gmt end
+    gmt end show
 
 上面的脚本中 **colorbar** 命令在地形图的下方添加了一个色标，但是色标下面的有一团
 很乱的标注，这显示不是我们想要的。我们可以使用 **-B** 选项设置色标的标注间隔，
@@ -108,7 +108,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt begin taiwan_relief png,pdf
     gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -Bxaf+l"Elevation (m)"
-    gmt end
+    gmt end show
 
 当然，我们还可以更进一步调整色标的位置、长度等属性。下面的脚本中，我们使用了
 **-D** 选项将色标放在了地形起伏图的右侧中间（\ **JMR**\ ）向右偏移1.5厘米，
@@ -120,7 +120,7 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt begin taiwan_relief png,pdf
     gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f+l"Elevation (m)"
-    gmt end
+    gmt end show
 
 制作CPT文件
 -----------
@@ -140,4 +140,4 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt makecpt -Cglobe -T-8000/8000
     gmt grdimage @earth_relief_30s -I+d
     gmt colorbar -Bxa2000+l"Elevation/m"
-    gmt end
+    gmt end show

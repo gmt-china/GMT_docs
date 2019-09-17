@@ -27,6 +27,6 @@ GMT多图模式
         # 切换回 Fig2，并绘制三角形
         gmt figure Fig2
         echo 1 2 | gmt plot -St1c -W1p
-    gmt end
+    gmt end show
 
 最终会生成两张图，第一张图中在底图中绘制了圆圈，第二张图中则在底图中绘制了三角形。

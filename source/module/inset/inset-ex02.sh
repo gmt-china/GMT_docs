@@ -4,4 +4,4 @@ gmt begin inset-example png,pdf
     gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c
         gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
     gmt inset end
-gmt end
+gmt end show

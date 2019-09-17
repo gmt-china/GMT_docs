@@ -51,8 +51,6 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 -   **gmt end** 后面加上 **show**\ ，则GMT会在绘图完成后，使用系统自带的阅读器
     软件自动打开生成的图片文件，供用户预览绘图效果
 
-.. include:: notes.rst_
-
 绘制第一张图
 ------------
 
@@ -63,7 +61,10 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 执行该脚本，会生成文件名为 :file:`GlobalMap`\ 、格式为PNG和PDF的图片文件，
 并且GMT会在绘图结束后自动打开生成的图片文件。
 
-::
+.. gmtplot::
+    :show-code: false
+    :width: 80%
+    :caption: 使用GMT绘制的第一张图
 
     gmt begin GlobalMap png,pdf
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
@@ -77,15 +78,6 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 
     想了解 **gmt coast** 的具体用法？打开终端，敲入 ``gmt docs coast``\ ，
     GMT会自动帮你打开 **coast** 模块的说明文档。
-
-.. gmtplot::
-    :show-code: false
-    :width: 80%
-    :caption: 使用GMT绘制的第一张图
-
-    gmt begin GlobalMap png,pdf
-        gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
-    gmt end
 
 GMT命令格式
 -----------

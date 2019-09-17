@@ -6,4 +6,4 @@ gmt begin inset-map png,pdf
         # 使用 -Sr+s 绘制矩形区域
         echo 139.2 34.8 140.5 36 | gmt plot -Sr+s -W1p,blue
     gmt inset end
-gmt end
+gmt end show

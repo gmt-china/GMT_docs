@@ -47,4 +47,4 @@ gmt plot -W1p,red << EOF
 76.22 -69.22
 EOF
 
-gmt end
+gmt end show

@@ -1,8 +1,6 @@
 绘制线段和多边形
 ================
 
-.. include:: notes.rst_
-
 绘制线条和多边形是日常绘图最常见的需求之一，也是所有绘图软件必备的功能。
 这一节我们将学习如何使用 GMT 的 :doc:`/module/plot` 模块绘制线段和多边形。
 
@@ -36,7 +34,7 @@
     gmt begin SimpleLine png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot points.dat
-    gmt end
+    gmt end show
 
 想要修改线段的粗细或颜色？很简单，可以使用 **plot** 模块的 **-W** 选项设置画笔属性。
 画笔属性包括三个部分：线宽、颜色以及线型，三者之间用逗号隔开。
@@ -56,7 +54,7 @@
     gmt begin SimpleLine png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot points.dat -W2p,red,-
-    gmt end
+    gmt end show
 
 你可以尝试修改线宽、颜色和线型，并查看绘图效果。几种常见的线型包括
 ``-``\ 、\ ``.``\ 、\ ``.-``\ 和 \ ``-.``\ 。
@@ -79,7 +77,7 @@
     gmt begin polygon png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot points.dat -W4p,lightblue -L
-    gmt end
+    gmt end show
 
 我们还可以使用 **-G** 选项为闭合多边形填充颜色。
 
@@ -95,7 +93,7 @@
     gmt begin polygon png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot points.dat -W4p,lightblue -Glightred -L
-    gmt end
+    gmt end show
 
 这样我们就得到了一个内部为浅红色、轮廓为浅蓝色的多边形了。如果只想要填充颜色而不绘制轮廓，
 只需要使用 **-G** 而不使用 **-W** 即可。
@@ -112,7 +110,7 @@
     gmt begin polygon png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot points.dat -Glightred -L
-    gmt end
+    gmt end show
 
 绘制多条线段
 ------------
@@ -155,7 +153,7 @@
     gmt begin MultiLines png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot lines.dat -W1p,red
-    gmt end
+    gmt end show
 
 绘制多个多边形
 --------------
@@ -179,7 +177,7 @@
     gmt begin MultiPolygons png,pdf
     gmt basemap -JX10c -R0/10/0/10 -Baf
     gmt plot lines.dat -W1p,red -L -Glightred
-    gmt end
+    gmt end show
 
 大圆弧路径
 ----------
@@ -204,4 +202,4 @@
     gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
     gmt plot twopoints.dat -W2p,red
     gmt plot twopoints.dat -W2p,blue -A
-    gmt end
+    gmt end show

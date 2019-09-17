@@ -38,7 +38,7 @@
 	S 0.25c v0.1i+a40+e 0.25i magenta 0.25p 0.8c vector
 	S 0.25c f0.1i+l+t 0.25i blue 0.25p 0.8c fault
 	EOF
-	gmt end
+	gmt end show
 
 我们可以通过修改 **-D** 和 **-F** 进一步修改图例的位置和属性。
 上面的例子中，

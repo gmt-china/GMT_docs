@@ -24,7 +24,7 @@ GMT的 :doc:`/module/text` 模块可以用于添加文字。
     5 3 GMT TEXT2
     5 5 GMT TEXT3
     EOF
-    gmt end
+    gmt end show
 
 文字属性
 --------
@@ -52,7 +52,7 @@ GMT的 :doc:`/module/text` 模块可以用于添加文字。
     5 3 GMT TEXT2
     5 5 GMT TEXT3
     EOF
-    gmt end
+    gmt end show
 
 文本框
 ------
@@ -73,7 +73,7 @@ GMT的 :doc:`/module/text` 模块可以用于添加文字。
     5 3 GMT TEXT2
     5 5 GMT TEXT3
     EOF
-    gmt end
+    gmt end show
 
 对齐方式
 --------
@@ -102,7 +102,7 @@ GMT的 :doc:`/module/text` 模块可以用于添加文字。
     5 3 GMT TEXT2
     5 5 GMT TEXT3
     EOF
-    gmt end
+    gmt end show
 
 文本偏移量
 ----------
@@ -120,7 +120,7 @@ GMT的 :doc:`/module/text` 模块可以用于添加文字。
     5 3 GMT TEXT2
     5 5 GMT TEXT3
     EOF
-    gmt end
+    gmt end show
 
 变化的文字属性
 --------------
@@ -147,4 +147,4 @@ GMT的 :doc:`/module/text` 模块可以用于添加文字。
     5 3 15p,1,blue      30  MC GMT TEXT2
     5 5 18p,2,yellow    180 TL GMT TEXT3
     EOF
-    gmt end
+    gmt end show

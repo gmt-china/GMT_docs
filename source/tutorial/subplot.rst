@@ -41,7 +41,7 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
         echo 0.5 0.5 '@;red;'$i,$j'@;;' '(@;blue;'$index'@;;)' | gmt text -R0/1/0/1 -F+f20p -c
         done
     gmt subplot end
-    gmt end
+    gmt end show
 
 **subplot set** 用于激活指定的子图，接下来的所有绘图命令都将在该子图内进行绘制。
 为了指定某个子图，则需要知道每个子图的编号。GMT中可以通过 **行号,列号** 或者
@@ -87,7 +87,7 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
         gmt subplot set 3
         gmt basemap -R0/20/0/20 -JX? -Baf -BWSen
       gmt subplot end
-    gmt end
+    gmt end show
 
 在这个例子中，我们用 **subplot begin** 定义了一个2行2列（\ **2x2**\ ）的子图布局，
 每个子图区域宽5厘米高3厘米（\ **-Fs5c/3c**\ ）。除此之外，我们还使用了一些可选
@@ -132,7 +132,7 @@ X轴范围。此时可以使用 **-S** 选项设置各子图之间共用X或Y轴
         gmt basemap -R0/10/0/20 -JX? -c
         gmt basemap -R0/20/0/20 -JX? -c
       gmt subplot end
-    gmt end
+    gmt end show
 
 **-SRl** 表示一行内（\ **R**\ ow\ ）的子图共用Y轴，且只在左边（\ **l**\ ）轴显示标注，
 **-SCb** 表示一列内（\ **C**\ olumn\ ）的子图共用X轴，且只在底部（\ **b**\ ）轴显示标注。
@@ -159,7 +159,7 @@ X轴范围。此时可以使用 **-S** 选项设置各子图之间共用X或Y轴
         gmt subplot set 3 -A'(c)'
         gmt basemap -R0/5/0/5 -JX? -Baf -BWSen
       gmt subplot end
-    gmt end
+    gmt end show
 
 在绘制三个底图时，后两个底图均使用了 **-JX?**\ ，因而GMT会自动根据子图区域的
 大小确定子图的尺寸；而为了使得第一张子图占据两个子图区域的空间，我们使用了

@@ -56,4 +56,4 @@ gmt text -F+f9p,1,black+j -Dj0.1c/0.1c << EOF
 -52.47 -31.62 ML Pelotas
 EOF
 
-gmt end
+gmt end show
