@@ -16,9 +16,9 @@
 
     conda install gmt=6.0.0rc4 -c conda-forge/label/dev -c conda-forge
 
-安装FFmpeg::
+安装FFmpeg和GraphicsMagick::
 
-    conda install ffmpeg -c conda-forge
+    conda install ffmpeg graphicsmagick -c conda-forge
 
 安装完成后，在终端执行如下命令以验证::
 
