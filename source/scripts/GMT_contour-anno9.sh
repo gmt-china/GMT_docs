@@ -1,6 +1,5 @@
 #!/bin/bash
 gmt begin contour_annot9 pdf,png
-gmt grdgradient topo5.nc -Nt1 -A45 -Gtopo5_int.nc
 gmt set FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
 gmt project -E-74/41 -C-17/28 -G10 -Q > great_NY_Canaries.txt
 gmt project -E-74/41 -C2.33/48.87 -G100 -Q > great_NY_Paris.txt
@@ -10,6 +9,7 @@ cat << EOF > ttt.cpt
 3	lightyellow	6	lightyellow
 6	lightgreen	100	lightgreen
 EOF
+gmt grdgradient @earth_relief_05m -R-85/5/10/55 -Nt1 -A45 -Gtopo5_int.nc
 gmt grdimage ttt_atl.nc -Itopo5_int.nc -Cttt.cpt -R-85/5/10/55 -JM5.3i -nc+t1
 gmt grdcontour ttt_atl.nc -C0.5 -A1+u" hour"+v+f8p,Bookman-Demi -GL80W/31N/17W/26N,17W/28N/17W/50N -S2
 gmt plot -Wfatter,white great_NY_Canaries.txt
