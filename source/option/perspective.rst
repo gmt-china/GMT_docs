@@ -26,7 +26,7 @@
 
 下图给出了3D底图上使用不同的 ``-p`` 选项绘制出来的效果图。绘制底图使用的命令为::
 
-    gmt psbasemap -R0/10/0/10/0/20 -JX3c -JZ3c -Baf -Bzaf -BwsENZ1+b -p135/40 > xxx.ps
+    gmt basemap -R0/10/0/10/0/20 -JX3c -JZ3c -Baf -Bzaf -BwsENZ1+b -p135/40 -pdf 3D-map
 
 .. gmtplot:: p-option-example-3D.sh
    :show-code: false
