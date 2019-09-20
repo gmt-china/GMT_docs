@@ -47,6 +47,7 @@ text
     下图展示了 ``-C`` 选项的作用。
 
     .. gmtplot:: /scripts/text_clearance.sh
+       :show-code: false
        :width: 80%
 
 ``-D[j|J]<dx>[/<dy>][+v[<pen>]]``
