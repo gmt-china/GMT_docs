@@ -8,18 +8,18 @@
 
 .. _GMT_AUTO_DOWNLOAD:
 
-GMT_AUTO_DOWNLOAD
+**GMT_AUTO_DOWNLOAD**
     是否允许GMT自动从GMT服务器（由 ``GMT_DATA_URL`` 控制）下载数据文件到
     缓存目录 [``on``]
 
 .. _GMT_DATA_SERVER:
 
-GMT_DATA_SERVER
+**GMT_DATA_SERVER**
     GMT数据服务器地址，默认使用SOEST官方镜像 [http://www.soest.hawaii.edu/gmt/data]
 
 .. _GMT_DATA_SERVER_LIMIT:
 
-GMT_DATA_SERVER_LIMIT
+**GMT_DATA_SERVER_LIMIT**
     从GMT服务器上下载的文件的大小上限，即GMT缓存目录的空间上限，默认无限制。
     可以给定文件大小上限的字节数，也可以加上 ``k``\ 、\ ``m``\ 或 ``g`` 表示
     KB、MB 或 GB。
@@ -29,7 +29,7 @@ GMT_DATA_SERVER_LIMIT
 
 .. _GMT_TRIANGULATE:
 
-GMT_TRIANGULATE
+**GMT_TRIANGULATE**
     设置 :doc:`gmt:triangulate` 模块中算法代码的来源 [Watson]
 
     :doc:`gmt:triangulate` 模块的核心源码有两个版本，
@@ -38,7 +38,7 @@ GMT_TRIANGULATE
 
 .. _GMT_FFT:
 
-GMT_FFT
+**GMT_FFT**
     要使用的FFT算法 [auto]
 
     可以取：
@@ -51,7 +51,7 @@ GMT_FFT
 
 .. _GMT_INTERPOLANT:
 
-GMT_INTERPOLANT
+**GMT_INTERPOLANT**
     程序中一维插值所使用的算法 [``akima``]
 
     #. ``linear``\ ：线性插值
@@ -61,7 +61,7 @@ GMT_INTERPOLANT
 
 .. _GMT_EXTRAPOLATE_VAL:
 
-GMT_EXTRAPOLATE_VAL
+**GMT_EXTRAPOLATE_VAL**
     外插时超过数据区时如何处理 [NaN]
 
     可选值包括：
@@ -75,7 +75,7 @@ GMT_EXTRAPOLATE_VAL
 
 .. _GMT_EXPORT_TYPE:
 
-GMT_EXPORT_TYPE
+**GMT_EXPORT_TYPE**
     控制表数据的数据类型，仅被外部接口使用 [``double``]
 
     可以取 ``double``\ 、\ ``single``\ 、\ ``[u]long``\ 、\ ``[u]int``\ 、
@@ -83,7 +83,7 @@ GMT_EXPORT_TYPE
 
 .. _GMT_CUSTOM_LIBS:
 
-GMT_CUSTOM_LIBS
+**GMT_CUSTOM_LIBS**
     要链接的自定义GMT库文件，默认值为空
 
     GMT支持自定义模块。用户可以写一个GMT模块，并将其编译成动态函数库。通过设置
@@ -98,7 +98,7 @@ GMT_CUSTOM_LIBS
 
 .. _GMT_LANGUAGE:
 
-GMT_LANGUAGE
+**GMT_LANGUAGE**
     设置GMT绘图时使用的语言 [``us``]
 
     不同的语言中，月份、星期几、东西南北的表达方法是不同的。
@@ -122,7 +122,7 @@ GMT_LANGUAGE
 
 .. _GMT_COMPATIBILITY:
 
-GMT_COMPATIBILITY
+**GMT_COMPATIBILITY**
     是否开启兼容模式 [4]
 
     - 若值为4，表示兼容GMT4语法并给出警告
@@ -130,7 +130,7 @@ GMT_COMPATIBILITY
 
 .. _GMT_VERBOSE:
 
-GMT_VERBOSE
+**GMT_VERBOSE**
     控制GMT命令的verbose级别 [``c``]
 
     可选值包括 ``quiet``\ 、\ ``normal``\ 、\ ``compat``\ 、\ ``verbose``\ 、
@@ -139,7 +139,7 @@ GMT_VERBOSE
 
 .. _GMT_HISTORY:
 
-GMT_HISTORY
+**GMT_HISTORY**
     GMT历史文件 ``gmt.history`` 的处理方式 [true]
 
     - ``true`` 可以读写
@@ -148,5 +148,5 @@ GMT_HISTORY
 
 .. _GMT_GRAPHICS_FORMAT:
 
-GMT_GRAPHICS_FORMAT
+**GMT_GRAPHICS_FORMAT**
     现代模式下默认的图片文件格式 [pdf]

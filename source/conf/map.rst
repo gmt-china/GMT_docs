@@ -6,7 +6,7 @@ MAP参数
 
 .. _MAP_FRAME_TYPE:
 
-MAP_FRAME_TYPE
+**MAP_FRAME_TYPE**
     底图边框类型 [fancy]
 
     可选值包括 ``inside|plain|graph|fancy|fancy+``\ 。
@@ -22,17 +22,17 @@ MAP_FRAME_TYPE
 
 .. _MAP_FRAME_PEN:
 
-MAP_FRAME_PEN
+**MAP_FRAME_PEN**
     绘制底图类型为plain时边框的画笔属性 [``thicker,black``]
 
 .. _MAP_FRAME_WIDTH:
 
-MAP_FRAME_WIDTH
+**MAP_FRAME_WIDTH**
     设置底图类型为fancy时的边框宽度 [``5p``]
 
 .. _MAP_FRAME_AXES:
 
-MAP_FRAME_AXES
+**MAP_FRAME_AXES**
     要绘制/标注的轴 [``WSENZ``]
 
     默认值为 ``WSENZ``\ ，即2D底图下绘制并标注四条边，可以通过 ``-B`` 选项
@@ -43,22 +43,22 @@ MAP_FRAME_AXES
 
 .. _MAP_ANNOT_OFFSET:
 
-MAP_ANNOT_OFFSET
+**MAP_ANNOT_OFFSET**
     同时设置 ``MAP_ANNOT_OFFSET_PRIMARY`` 和 ``MAP_ANNOT_OFFSET_SECONDARY`` 的值
 
 .. _MAP_ANNOT_OFFSET_PRIMARY:
 
-MAP_ANNOT_OFFSET_PRIMARY
+**MAP_ANNOT_OFFSET_PRIMARY**
     一级标注的开始位置与刻度尾端间的距离 [5p]
 
 .. _MAP_ANNOT_OFFSET_SECONDARY:
 
-MAP_ANNOT_OFFSET_SECONDARY
+**MAP_ANNOT_OFFSET_SECONDARY**
     二级标注的底部与secondary标注的顶部之间的距离 [5p]
 
 .. _MAP_DEGREE_SYMBOL:
 
-MAP_DEGREE_SYMBOL
+**MAP_DEGREE_SYMBOL**
     在地图上绘制“度”时所使用的符号 [degree]
 
     可以取 ``ring|degree|colon|none``\ 。下图给出了取不同值时的绘图效果：
@@ -77,7 +77,7 @@ MAP_DEGREE_SYMBOL
 
 .. _MAP_ANNOT_ORTHO:
 
-MAP_ANNOT_ORTHO
+**MAP_ANNOT_ORTHO**
     控制哪些轴的标注垂直于轴 [``we``]
 
     该参数可以将 ``wesnz`` 做任意组合。下图给出了取不同值时的绘图效果：
@@ -93,10 +93,9 @@ MAP_ANNOT_ORTHO
         gmt subplot end
         gmt end
 
-
 .. _MAP_ANNOT_OBLIQUE:
 
-MAP_ANNOT_OBLIQUE
+**MAP_ANNOT_OBLIQUE**
     控制倾斜投影下标注和刻度线的显示
 
     可以将如下任意几个数字求和的结果作为该参数的值：
@@ -111,13 +110,13 @@ MAP_ANNOT_OBLIQUE
 
 .. _MAP_ANNOT_MIN_ANGLE:
 
-MAP_ANNOT_MIN_ANGLE
+**MAP_ANNOT_MIN_ANGLE**
     对于某些倾斜投影方式而言，如果标注的基线与地图的边界之间的夹角小于该值，
     则不绘制标注。合理的取值范围为0到90 [20]
 
 .. _MAP_ANNOT_MIN_SPACING:
 
-MAP_ANNOT_MIN_SPACING
+**MAP_ANNOT_MIN_SPACING**
     在某些倾斜投影中，相邻两个标注之间的最小距离，若标注的距离小于该值，则不绘制 [0p]
 
 标签相关参数
@@ -125,7 +124,7 @@ MAP_ANNOT_MIN_SPACING
 
 .. _MAP_LABEL_OFFSET:
 
-MAP_LABEL_OFFSET
+**MAP_LABEL_OFFSET**
     轴标注底部与轴标签顶部间的距离 [8p]
 
 刻度相关参数
@@ -133,34 +132,34 @@ MAP_LABEL_OFFSET
 
 .. _MAP_TICK_PEN:
 
-MAP_TICK_PEN
+**MAP_TICK_PEN**
     同时设置 ``MAP_TICK_PEN_PRIMARY`` 和 ``MAP_TICK_PEN_SECONDARY`` 的值
 
 .. _MAP_TICK_PEN_PRIMARY:
 
-MAP_TICK_PEN_PRIMARY
+**MAP_TICK_PEN_PRIMARY**
     一级刻度的画笔属性 [thinner,black]
 
 .. _MAP_TICK_PEN_SECONDARY:
 
-MAP_TICK_PEN_SECONDARY
+**MAP_TICK_PEN_SECONDARY**
     二级刻度的画笔属性 [thinner,black]
 
 .. _MAP_TICK_LENGTH:
 
-MAP_TICK_LENGTH
+**MAP_TICK_LENGTH**
     同时设置 ``MAP_TICK_LENGTH_PRIMARY`` 和 ``MAP_TICK_LENGTH_SECONDARY`` 的值
 
 .. _MAP_TICK_LENGTH_PRIMARY:
 
-MAP_TICK_LENGTH_PRIMARY
+**MAP_TICK_LENGTH_PRIMARY**
     一级刻度的主刻度和次刻度的长度 [5p/2.5p]
 
     若只给定一个长度值，则次刻度的长度假定为主刻度的一半
 
 .. _MAP_TICK_LENGTH_SECONDARY:
 
-MAP_TICK_LENGTH_SECONDARY
+**MAP_TICK_LENGTH_SECONDARY**
     二级刻度的主刻度和次刻度的长度 [15p/3.75p]
 
     若只给定一个长度值，则次刻度的长度假定为主刻度的25%
@@ -170,37 +169,37 @@ MAP_TICK_LENGTH_SECONDARY
 
 .. _MAP_GRID_PEN:
 
-MAP_GRID_PEN
+**MAP_GRID_PEN**
     同时设置 ``MAP_GRID_PEN_PRIMARY`` 和 ``MAP_GRID_PEN_SECONDARY`` 的值
 
 .. _MAP_GRID_PEN_PRIMARY:
 
-MAP_GRID_PEN_PRIMARY
+**MAP_GRID_PEN_PRIMARY**
     一级网格线的线条属性 [default,black]
 
 .. _MAP_GRID_PEN_SECONDARY:
 
-MAP_GRID_PEN_SECONDARY
+**MAP_GRID_PEN_SECONDARY**
     二级网格线的线条属性 [thinner,black]
 
 .. _MAP_GRID_CROSS_SIZE:
 
-MAP_GRID_CROSS_SIZE
+**MAP_GRID_CROSS_SIZE**
     同时设置 ``MAP_GRID_CROSS_SIZE_PRIMARY`` 和 ``MAP_GRID_CROSS_SIZE_SECONDARY`` 的值
 
 .. _MAP_GRID_CROSS_SIZE_PRIMARY:
 
-MAP_GRID_CROSS_SIZE_PRIMARY
+**MAP_GRID_CROSS_SIZE_PRIMARY**
     一级网格十字线的大小，0表示绘制连续的网格线 [0p]
 
 .. _MAP_GRID_CROSS_SIZE_SECONDARY:
 
-MAP_GRID_CROSS_SIZE_SECONDARY
+**MAP_GRID_CROSS_SIZE_SECONDARY**
     二级网格十字线的大小，0表示绘制连续的网格线 [0p]
 
 .. _MAP_POLAR_CAP:
 
-MAP_POLAR_CAP
+**MAP_POLAR_CAP**
     控制网格线在两极附近的显示 [``85/90``]
 
     若取值为 ``none``\ ，则表示不对极点附近的网格线做特殊处理。
@@ -228,12 +227,12 @@ MAP_POLAR_CAP
 
 .. _MAP_TITLE_OFFSET:
 
-MAP_TITLE_OFFSET
+**MAP_TITLE_OFFSET**
     图标题的底部与轴标注（或轴标签）的顶部之间的距离 [14p]
 
 .. _MAP_HEADING_OFFSET:
 
-MAP_HEADING_OFFSET
+**MAP_HEADING_OFFSET**
     子图标题的顶部与图总标题的底部之间的距离 [18p]
 
 其它参数
@@ -241,41 +240,41 @@ MAP_HEADING_OFFSET
 
 .. _MAP_DEFAULT_PEN:
 
-MAP_DEFAULT_PEN
+**MAP_DEFAULT_PEN**
     设置所有与 ``-W`` 选项相关的画笔属性的默认值 [``default,pen``]
 
     在参数值的前面加上 ``+`` 可以覆盖其他PEN相关参数中的颜色。
 
 .. _MAP_ORIGIN_X:
 
-MAP_ORIGIN_X
+**MAP_ORIGIN_X**
     新绘图在纸张上的原点的X坐标（仅适用于GMT经典模式）[72p]
 
 .. _MAP_ORIGIN_Y:
 
-MAP_ORIGIN_Y
+**MAP_ORIGIN_Y**
     设置新绘图在纸张上的原点的Y坐标（仅适用于GMT经典模式）[72p]
 
 .. _MAP_LOGO:
 
-MAP_LOGO
+**MAP_LOGO**
     是否在左下角绘制GMT时间戳 [``false``]
 
     可以取 ``true|false``\ ，等效于在命令行中使用 :doc:`/option/U`
 
 .. _MAP_LOGO_POS:
 
-MAP_LOGO_POS
+**MAP_LOGO_POS**
     GMT时间戳相对于当前绘图原点的对齐方式与位置 [``BL/-54p/-54p``]
 
 .. _MAP_SCALE_HEIGHT:
 
-MAP_SCALE_HEIGHT
+**MAP_SCALE_HEIGHT**
     地图比例尺的高度 [5p]
 
 .. _MAP_LINE_STEP:
 
-MAP_LINE_STEP
+**MAP_LINE_STEP**
     绘制线段时所使用的最大步长 [0.75p]
 
     地理投影下，两点之间会用大圆路径连接，因而GMT需要先计算大圆路径上的其他
@@ -283,7 +282,7 @@ MAP_LINE_STEP
 
 .. _MAP_VECTOR_SHAPE:
 
-MAP_VECTOR_SHAPE
+**MAP_VECTOR_SHAPE**
     矢量箭头的形状 [0]
 
     可以取-2到2之间的任意实数。

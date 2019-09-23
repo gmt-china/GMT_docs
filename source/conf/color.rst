@@ -8,22 +8,22 @@ CPT相关参数
 
 .. _COLOR_BACKGROUND:
 
-COLOR_BACKGROUND
+**COLOR_BACKGROUND**
     数据Z值小于CPT文件中最小值时使用的背景色 [``black``]
 
 .. _COLOR_FOREGROUND:
 
-COLOR_FOREGROUND
+**COLOR_FOREGROUND**
     数据Z值大于CPT文件中最大值时使用的前景色 [``white``]
 
 .. _COLOR_NAN:
 
-COLOR_NAN
+**COLOR_NAN**
     数值Z值为 NaN 时使用的颜色 [``127.5``]
 
 .. _COLOR_MODEL:
 
-COLOR_MODEL
+**COLOR_MODEL**
     对CPT文件做插值生成新CPT时所使用的色彩模型 [``none``]
 
     可以取如下值：
@@ -44,20 +44,20 @@ COLOR_MODEL
 
 .. _COLOR_HSV_MIN_S:
 
-COLOR_HSV_MIN_S
+**COLOR_HSV_MIN_S**
     负强度最小值对应的S值，取值范围0到1 [1.0]
 
 .. _COLOR_HSV_MAX_S:
 
-COLOR_HSV_MAX_S
+**COLOR_HSV_MAX_S**
     正强度最大值对应的S值，取值范围0到1 [0.1]
 
 .. _COLOR_HSV_MIN_V:
 
-COLOR_HSV_MIN_V
+**COLOR_HSV_MIN_V**
     负强度最小值对应的V值，取值范围0到1 [0.3]
 
 .. _COLOR_HSV_MAX_V:
 
-COLOR_HSV_MAX_V
+**COLOR_HSV_MAX_V**
     正强度最大值对应的V值，取值范围0到1 [1.0]

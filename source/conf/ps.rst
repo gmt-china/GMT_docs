@@ -5,7 +5,7 @@ PS参数
 
 .. _PS_CHAR_ENCODING:
 
-PS_CHAR_ENCODING
+**PS_CHAR_ENCODING**
     字符集编码方式 [``ISOLatin1+|Standard+``]
 
     GMT使用的字符集编码方式。可选值包括：
@@ -20,7 +20,7 @@ PS_CHAR_ENCODING
 
 .. _PS_COLOR_MODEL:
 
-PS_COLOR_MODEL
+**PS_COLOR_MODEL**
     生成PS代码时颜色所使用的色彩模型 [``rgb``]
 
     可以取RGB、HSV、CMYK或GRAY。若设置为HSV，其不会影响绘图过程中使用RGB指定的颜色；
@@ -28,7 +28,7 @@ PS_COLOR_MODEL
 
 .. _PS_COMMENTS:
 
-PS_COMMENTS
+**PS_COMMENTS**
     生成的PS代码中是否包含注释信息 [false]
 
     若为 ``true``\ ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
@@ -37,7 +37,7 @@ PS_COMMENTS
 
 .. _PS_LINE_CAP:
 
-PS_LINE_CAP
+**PS_LINE_CAP**
     控制线段的\ **端点**\ 的绘制方式 [``butt``]
 
     可以取如下值：
@@ -55,7 +55,7 @@ PS_LINE_CAP
 
 .. _PS_LINE_JOIN:
 
-PS_LINE_JOIN
+**PS_LINE_JOIN**
     控制线段拐点的绘制方式 [``miter``]
 
     可以取 ``miter``\ 、\ ``round``\ 、\ ``bevel``
@@ -69,7 +69,7 @@ PS_LINE_JOIN
 
 .. _PS_MITER_LIMIT:
 
-PS_MITER_LIMIT
+**PS_MITER_LIMIT**
     设置mitered拐点的角度阈值 [35]
 
     当两个相交的线段之间的夹角小于该阈值时，则该拐角会被bevelled而不是被mitered。
@@ -78,7 +78,7 @@ PS_MITER_LIMIT
 
 .. _PS_MEDIA:
 
-PS_MEDIA
+**PS_MEDIA**
     设置当前纸张的尺寸 [a4|letter]
 
     .. note::
@@ -142,12 +142,12 @@ PS_MEDIA
 
 .. _PS_PAGE_COLOR:
 
-PS_PAGE_COLOR
+**PS_PAGE_COLOR**
     设置纸张的背景色 [``white``]
 
 .. _PS_PAGE_ORIENTATION:
 
-PS_PAGE_ORIENTATION
+**PS_PAGE_ORIENTATION**
     设置纸张方向 [``landscape``]
 
     .. note::
@@ -158,21 +158,21 @@ PS_PAGE_ORIENTATION
 
 .. _PS_SCALE_X:
 
-PS_SCALE_X
+**PS_SCALE_X**
     绘图时X方向的全局比例 [1.0]
 
     用于实现图像的整体缩放。
 
 .. _PS_SCALE_Y:
 
-PS_SCALE_Y
+**PS_SCALE_Y**
     绘图时Y方向的全局比例 [1.0]
 
     用于实现图像的整体缩放。
 
 .. _PS_TRANSPARENCY:
 
-PS_TRANSPARENCY
+**PS_TRANSPARENCY**
     设置生成PS文件所使用的透明模式 [Normal]
 
     可取值包括Color、ColorBurn、ColorDodge、Darken、Difference、Exclusion、
@@ -181,14 +181,14 @@ PS_TRANSPARENCY
 
 .. _PS_CONVERT:
 
-PS_CONVERT
+**PS_CONVERT**
     现在模式下在执行 ``gmt end`` 命令时GMT会自动调用 :doc:`/module/psconvert`
     生成用户指定格式的图片。该选项用于控制调用 ``psconvert`` 是的默认参数，
     多个参数之间以逗号分隔 [``A,P``]
 
 .. _PS_IMAGE_COMPRESS:
 
-PS_IMAGE_COMPRESS
+**PS_IMAGE_COMPRESS**
     设置PS中的图像压缩算法 [deflate,5]
 
     可以取值为：

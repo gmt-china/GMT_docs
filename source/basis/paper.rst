@@ -16,7 +16,7 @@ JPG（推荐）、BMP、PPM和TIFF格式。
 
     gmt begin figname pdf,png
     gmt ...
-    gmt end
+    gmt end show
 
 .. tip::
 
@@ -34,7 +34,7 @@ JPG（推荐）、BMP、PPM和TIFF格式。
     gmt begin map pdf,png
     gmt set PS_PAGE_COLOR lightred
     gmt ...
-    gmt end
+    gmt end show
 
 画布大小
 --------

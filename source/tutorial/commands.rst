@@ -62,7 +62,6 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 并且GMT会在绘图结束后自动打开生成的图片文件。
 
 .. gmtplot::
-    :show-code: false
     :width: 80%
     :caption: 使用GMT绘制的第一张图
 

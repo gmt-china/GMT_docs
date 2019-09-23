@@ -6,7 +6,7 @@
 GMT投影代码
 -----------
 
-``-J`` 选项有两种写法：
+``-J`` 选项有两种写法::
 
     -J<δ>[<parameters>/]<scale>
     -J<Δ>[<parameters>/]<width>[h|+|-]

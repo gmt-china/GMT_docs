@@ -5,14 +5,14 @@ TIME参数
 
 .. _TIME_EPOCH:
 
-TIME_EPOCH
+**TIME_EPOCH**
     指定所有相对时间的参考时刻 [1970-01-01T00:00:00]
 
     其格式为 ``yyyy-mm-ddT[hh:mm:ss]`` 或 ``yyyy-Www-ddTT[hh:mm:ss]``
 
 .. _TIME_UNIT:
 
-TIME_UNIT
+**TIME_UNIT**
     指定相对时间数据相对于参考时间的单位 [s]
 
     可以取：
@@ -26,7 +26,7 @@ TIME_UNIT
 
 .. _TIME_SYSTEM:
 
-TIME_SYSTEM
+**TIME_SYSTEM**
     ``TIME_EPOCH`` 和 ``TIME_UNIT`` 的合并版
 
     即指定 ``TIME_SYSTEM`` 相当于同时指定了 ``TIME_EPOCH`` 和 ``TIME_UNIT``\ 。可取如下值：
@@ -44,12 +44,12 @@ TIME_SYSTEM
 
 .. _TIME_WEEK_START:
 
-TIME_WEEK_START
+**TIME_WEEK_START**
     指定周几是一周的第一天，可取值为Monday或Sunday [Monday]
 
 .. _TIME_Y2K_OFFSET_YEAR:
 
-TIME_Y2K_OFFSET_YEAR
+**TIME_Y2K_OFFSET_YEAR**
     当用两位数字表示四位数字的年份时，TIME_Y2K_OFFSET_YEAR给定了100年序列的第一年 [1950]
 
     比如，若TIME_Y2K_OFFSET_YEAR=1729，则数字29到99分别表示1729到1799，而数字00
@@ -57,7 +57,7 @@ TIME_Y2K_OFFSET_YEAR
 
 .. _TIME_REPORT:
 
-TIME_REPORT
+**TIME_REPORT**
     控制GMT运行进度报告中是否显示时间戳 [``none``]
 
     可以取三个值：
@@ -68,7 +68,7 @@ TIME_REPORT
 
 .. _TIME_IS_INTERVAL:
 
-TIME_IS_INTERVAL
+**TIME_IS_INTERVAL**
     控制输入的日期时间数据截断和微调 [``off``]
 
     其可以取如下三类值：
@@ -113,7 +113,7 @@ TIME_IS_INTERVAL
 
 .. _TIME_INTERVAL_FRACTION:
 
-TIME_INTERVAL_FRACTION
+**TIME_INTERVAL_FRACTION**
     确定时间轴开头和结尾的部分时间间隔是否需要标注 [0.5]
 
     对于时间轴而言，若开头/结尾部分的时间间隔大于指定的时间间隔的某个比例，则

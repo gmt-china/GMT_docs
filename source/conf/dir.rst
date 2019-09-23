@@ -5,7 +5,7 @@ DIR参数
 
 .. _DIR_DATA:
 
-DIR_DATA
+**DIR_DATA**
     存放数据文件的目录，默认值为空。
 
     GMT在命令中遇到文件名时，首先在当前目录下寻找该文件，
@@ -14,15 +14,15 @@ DIR_DATA
 
 .. _DIR_DCW:
 
-DIR_DCW
+**DIR_DCW**
     DCW数据文件的路径，默认值为空，GMT会自动猜测合理的路径值。
 
 .. _DIR_GSHHG:
 
-DIR_GSHHG
+**DIR_GSHHG**
     海岸线数据所在路径
 
 .. _DIR_CACHE:
 
-DIR_CACHE
+**DIR_CACHE**
     GMT用于存储从GMT服务器下载得到的临时文件的目录
