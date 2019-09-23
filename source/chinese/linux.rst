@@ -3,6 +3,12 @@ Linux 下的 GMT 中文支持
 
 本文介绍如何让 GMT 在 Linux 下支持中文。
 
+.. note::
+
+    据用户反映，本文所介绍的内容可能存在严重问题！
+
+    Linux用户请阅读 :doc:`custom-fonts` 一文。
+
 ghostscript的中文支持
 ---------------------
 
