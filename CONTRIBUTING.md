@@ -95,17 +95,18 @@
 ```
 .. gmtplot::
     :caption: 图片标题
+    :width: 80%
 
     gmt begin map png,pdf
     gmt basemap -JX10c/10c -R0/10/0/10 -Baf
-    gmt end
+    gmt end show
 ```
 
 脚本模式，即将绘图代码写在脚本中：
 
 ```
 .. gmtplot:: /scripts/psmeca_ex1.sh
-    :width: 100%
+    :width: 80%
 
     图片标题
 ```
@@ -114,3 +115,9 @@
 
 - `show-code`: `true` 或 `false` 表示是否显示代码
 - `width`: 图片在网页中的宽度，建议使用百分比表示，比如 `100%`
+
+注意事项：
+
+- `master` 分支中所有脚本均使用现代模式
+- 所有脚本至少需要生成PNG格式的图片，建议使用 ``png,pdf`` 生成两种格式的图片
+- 所有脚本以 ``gmt end show`` 结尾
