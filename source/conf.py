@@ -11,7 +11,7 @@ import datetime
 sys.path.insert(0, os.path.abspath('_extension'))
 
 # -- General configuration ------------------------------------------------
-needs_sphinx = '1.5.0'
+needs_sphinx = '1.8'
 source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 nitpicky = True
@@ -33,7 +33,7 @@ extensions = [
     'sphinx_cjkspace.cjkspace',
     'sphinx_gmt.gmtplot'
 ]
-mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
