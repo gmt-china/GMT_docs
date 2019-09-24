@@ -81,6 +81,8 @@ basemap
     #. 直接使用 ``-F`` 选项，则绘制背景边框，边框属性由参数 ``MAP_FRAME_PEN`` 控制
     #. 其他子选项的含义见 :doc:`/basis/embellishment` 一节的详细介绍
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

@@ -66,6 +66,8 @@ grdimage
 ``-Q``
     将值为NaN的节点处设置为透明色
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

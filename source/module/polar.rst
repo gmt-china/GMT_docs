@@ -66,6 +66,8 @@ polar
 ``-W<pen>``
     设置画笔属性
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

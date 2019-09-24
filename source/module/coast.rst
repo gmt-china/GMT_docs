@@ -175,6 +175,8 @@ coast
     #. ``-W`` 选项中 ``<level>`` 是可选的，而 ``<pen>`` 是必须的！因而 ``-W2``
        会被解释为所有level的画笔属性，而不是level 2
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

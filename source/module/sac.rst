@@ -132,6 +132,8 @@ pssac 实现波形绘制的步骤是：
 ``-W<pen>``
     设置波形的画笔属性
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

@@ -36,6 +36,8 @@ gmtlogo
     - ``+r<radius>`` 面板使用圆角矩形边框（默认圆角半径为 ``6p`` ）
     - ``+s<dx>/<dy>/<fill>`` 为面板增加背景阴影区（默认值为 ``4p/-4p/gray50`` ）
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

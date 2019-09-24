@@ -202,6 +202,8 @@ text
 
     此时强制使用 ``-N`` 选项。
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

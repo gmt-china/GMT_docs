@@ -104,6 +104,8 @@ solar
 ``-W[<pen>]``
     设置晨昏线的画笔属性，见 :doc:`/basis/pen` 。
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

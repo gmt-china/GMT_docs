@@ -72,6 +72,8 @@ image
 ``-I``
     绘图前对1-bit图片进行反转，即黑色变白色，白色变黑色
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 

@@ -100,6 +100,8 @@ velo
 ``-W<pen>``
     设置速度箭头、椭圆轮廓以及断层边界的颜色
 
+.. include:: explain_-U.rst_
+
 示例
 ----
 
