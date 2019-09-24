@@ -51,14 +51,14 @@ GMT的中文支持
 
 打开 GMT 字体配置文件，在文件中加入如下语句::
 
-    STSong-Light-UniGB-UTF8-H  0.700    1
-    STFangsong-Light-UniGB-UTF8-H  0.700    1
-    STHeiti-Regular-UniGB-UTF8-H   0.700   1
-    STKaiti-Regular-UniGB-UTF8-H   0.700   1
-    STSong-Light-UniGB-UTF8-V  0.700    1
-    STFangsong-Light-UniGB-UTF8-V  0.700    1
-    STHeiti-Regular-UniGB-UTF8-V   0.700   1
-    STKaiti-Regular-UniGB-UTF8-V   0.700   1
+    STSong-Light--UniGB-UTF8-H  0.700    1
+    STFangsong-Light--UniGB-UTF8-H  0.700    1
+    STHeiti-Regular--UniGB-UTF8-H   0.700   1
+    STKaiti-Regular--UniGB-UTF8-H   0.700   1
+    STSong-Light--UniGB-UTF8-V  0.700    1
+    STFangsong-Light--UniGB-UTF8-V  0.700    1
+    STHeiti-Regular--UniGB-UTF8-V   0.700   1
+    STKaiti-Regular--UniGB-UTF8-V   0.700   1
 
 这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。
 
@@ -70,14 +70,14 @@ GMT的中文支持
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light-UniGB-UTF8-H
-    40 STFangsong-Light-UniGB-UTF8-H
-    41 STHeiti-Regular-UniGB-UTF8-H
-    42 STKaiti-Regular-UniGB-UTF8-H
-    43 STSong-Light-UniGB-UTF8-V
-    44 STFangsong-Light-UniGB-UTF8-V
-    45 STHeiti-Regular-UniGB-UTF8-V
-    46 STKaiti-Regular-UniGB-UTF8-V
+    39 STSong-Light--UniGB-UTF8-H
+    40 STFangsong-Light--UniGB-UTF8-H
+    41 STHeiti-Regular--UniGB-UTF8-H
+    42 STKaiti-Regular--UniGB-UTF8-H
+    43 STSong-Light--UniGB-UTF8-V
+    44 STFangsong-Light--UniGB-UTF8-V
+    45 STHeiti-Regular--UniGB-UTF8-V
+    46 STKaiti-Regular--UniGB-UTF8-V
 
 其中 39-46 号字体为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
