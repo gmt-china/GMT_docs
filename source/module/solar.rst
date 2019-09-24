@@ -106,6 +106,8 @@ solar
 
 .. include:: explain_-U.rst_
 
+.. include:: explain_-t.rst_
+
 示例
 ----
 

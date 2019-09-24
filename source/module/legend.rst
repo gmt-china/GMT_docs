@@ -35,6 +35,8 @@ legend
 
 .. include:: explain_-U.rst_
 
+.. include:: explain_-t.rst_
+
 图例文件格式
 ------------
 

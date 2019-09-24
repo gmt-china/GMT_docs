@@ -47,3 +47,5 @@ ternary
     见 ``psxy`` 中的 ``-S`` 选项
 
 .. include:: explain_-U.rst_
+
+.. include:: explain_-t.rst_

@@ -134,6 +134,8 @@ pssac 实现波形绘制的步骤是：
 
 .. include:: explain_-U.rst_
 
+.. include:: explain_-t.rst_
+
 示例
 ----
 
