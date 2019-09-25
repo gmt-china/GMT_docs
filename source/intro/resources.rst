@@ -16,14 +16,14 @@
 --------
 
 #. `GMT中文手册 <https://docs.gmt-china.org/>`_
-#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/6.0/GMT_Docs.html>`_
-#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/6.0/index.html#man-pages>`_
+#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/6.0/cookbook.html>`_
+#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/6.0/modules.html>`_
 
 图库与示例
 ----------
 
 #. :doc:`《GMT中文手册》中的示例 </gallery/index>`
-#. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.0/Gallery.html>`_
+#. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.0/gallery.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
 
