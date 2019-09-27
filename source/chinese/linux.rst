@@ -47,7 +47,7 @@ GMT的中文支持
 在 ``~/.gmt``\ （若无该文件夹，请自行新建）下创建字体配置文件::
 
     $ touch ~/.gmt/PSL_custom_fonts.txt
-    $ open ~/.gmt/PSL_custom_fonts.txt
+    $ gedit ~/.gmt/PSL_custom_fonts.txt
 
 打开 GMT 字体配置文件，在文件中加入如下语句::
 
