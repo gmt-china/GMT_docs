@@ -9,6 +9,9 @@ BUILDDIR      = build
 DOCNAME       = GMT_docs
 HTML          = dirhtml
 
+# disable "gmt end show" and one-liner autoshow (needs GMT 6.0.0)
+export GMT_END_SHOW=off
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
