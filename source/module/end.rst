@@ -8,7 +8,7 @@ end
 :简介: 结束现代模式会话，生成并显示图片
 
 **end** 模块用于结束由 **begin** 模块创建的GMT当前会话，并在当前目录生成
-指定格式的图片文件。还支持使用系统默认图片阅读器自动打开生成的图片。
+指定格式的图片文件，还支持使用系统默认图片阅读器自动打开生成的图片。
 
 语法
 ----
@@ -35,3 +35,13 @@ end
     gmt begin
     gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt end show
+
+相关模块
+--------
+
+:doc:`begin`,
+:doc:`clear`,
+:doc:`docs`,
+:doc:`figure`,
+:doc:`inset`,
+:doc:`subplot`

@@ -15,6 +15,7 @@ docs
 
 **gmt docs**
 [ |-Q| ]
+[ |-S| ]
 [ |SYN_OPT-V| ]
 *module-name*
 [*-option*]
@@ -39,8 +40,14 @@ docs
 .. _-Q:
 
 **-Q**
-    仅显示文档的网页链接而不打开文档。适合没有安装图形界面的服务器。
+    仅显示文档的网页链接而不打开文档，适用于没有安装图形界面的服务器。
     若使用该选项，则其必须是 **docs** 的第一个选项。
+
+.. _-S:
+
+**-S**
+    **docs** 默认优先打开本地文档，若本地文档不存在，则打开GMT文档网站。
+    该选项强制 **docs** 使用浏览器打开GMT文档网站上的网页。
 
 **-**\ *option*
     指定选项（例如 **-R**\ ），则 **docs** 会打开模块文档并定位到模块文档的该选项处。
@@ -60,6 +67,10 @@ docs
 
     gmt docs -Q grdimage
 
+查看 :doc:`grdimage` 在GMT文档网站上的链接::
+
+    gmt docs -Q -S grdimage
+
 查看 :doc:`coast` 的 **-B** 选项::
 
     gmt docs coast -B
@@ -71,3 +82,13 @@ docs
 查看图库::
 
     gmt docs gallery
+
+相关模块
+--------
+
+:doc:`begin`,
+:doc:`clear`,
+:doc:`end`,
+:doc:`figure`,
+:doc:`inset`,
+:doc:`subplot`

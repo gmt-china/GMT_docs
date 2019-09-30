@@ -15,13 +15,16 @@ begin
 现代会话模式下，每个会话均独立于其他进程，每个会话负责管理各自的配置参数、
 命令历史等，因而可以同时执行多个GMT会话而不会互相干扰。
 
+除了可以指定图片文件名和文件格式之外，还可以通过 *options* 指定生成图片过程
+中所使用的 :doc:`psconvert` 选项。
+
 语法
 ----
 
 **gmt begin**
 [ *prefix* ]
 [ *formats* ]
-[ *psoptions* ]
+[ *options* ]
 [ |SYN_OPT-V| ]
 
 可选选项
@@ -58,7 +61,7 @@ begin
     - ``ppm``\ ：\ `Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
     - ``tif``\ ：\ `Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
 
-*psoptions*
+*options*
     GMT现代模式本质上是先生成PS文件，再通过调用 :doc:`psconvert` 自动转换成用户
     指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，
     多个选项之间用逗号分隔。
@@ -68,13 +71,13 @@ begin
     其他可选的选项包括：
 
     - **A**\ [*args*]: 裁剪图片
-    - **C**\ *args*: 额外传递给GhostScript的选项
+    - **C**\ *args*: 额外传递给Ghostscript的选项
     - **D**\ *dir*: 指定图片的输出目录
     - **E**\ *dpi*: 设置图片分辨率
     - **H**\ *factor*: 对图片做平滑以避免混叠
     - **M**\ *args*: 为当前图片叠加前景图片或背景图片
     - **Q**\ *args*: 设置图像和文本的抗锯齿选项
-    - **S** : 把 GhostScript 命令输出到标准错误输出，且不删除所有中间文件
+    - **S** : 把 Ghostscript 命令输出到标准错误输出，且不删除所有中间文件
 
     详细解释见 :doc:`psconvert` 的说明文档。
 
@@ -97,7 +100,7 @@ begin
     gmt ...
     gmt end show
 
-设置额外的参数以控制PS到输出格式之间的转换::
+设置额外的参数，以控制生成图片时的额外空白::
 
     gmt begin map pdf,png A+m1c
     gmt ...
@@ -122,24 +125,32 @@ UNIX shell 注意事项
 现代模式的工作原理是，在使用 **gmt begin** 时利用父进程ID创建唯一的会话目录，
 并将很多信息保存到该会话目录中。脚本中接下来的命令拥有共同的父进程ID，因而
 接下来的命令可以向唯一会话目录中写入信息或读取信息，以实现多个命令之间的互相
-通信。
-
-然而，UNIX下某些shell的实现不完全统一，脚本执行过程中父进程ID可能出现变化，
+通信。然而，UNIX下某些shell的实现不完全统一，脚本执行过程中父进程ID可能出现变化，
 后面执行的命令无法正确获取前面命令的父进程ID，因而导致命令之间的信息交流出现
 错误。最常见的情况是在使用UNIX管道时，可能会生成子shell进而导致父进程ID出现变化。
 
 如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 ``gmt6.#####``
 这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，
-在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID。在Bash shell应该是::
+在脚本开始的地方设置环境变量 **GMT_SESSION_NAME** 为进程ID。在Bash shell应该是::
 
     export GMT_SESSION_NAME=$$
     gmt begin
     gmt ...
-    gmt end
+    gmt end show
 
-在CShell中应该是::
+在C shell中应该是::
 
     setenv GMT_SESSION_NAME $$
     gmt begin
     gmt ..
-    gmt end
+    gmt end show
+
+相关模块
+--------
+
+:doc:`clear`,
+:doc:`docs`,
+:doc:`end`,
+:doc:`figure`,
+:doc:`inset`,
+:doc:`subplot`

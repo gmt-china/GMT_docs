@@ -21,7 +21,7 @@ figure
 **gmt figure**
 [ *prefix* ]
 [ *formats* ]
-[ *psoptions* ]
+[ *options* ]
 [ |SYN_OPT-V| ]
 
 必须选项
@@ -38,8 +38,6 @@ figure
 可选选项
 --------
 
-.. _fig-formats:
-
 *formats*
     图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 ``pdf``\ ，由
     参数 :ref:`GMT_GRAPHICS_FORMAT <GMT_GRAPHICS_FORMAT>` 控制。
@@ -54,12 +52,12 @@ figure
 
     - ``bmp``\ ：\ `Microsoft Bit Map <https://zh.wikipedia.org/wiki/BMP>`_
     - ``jpg``\ ：\ `Joint Photographic Experts Group Format <https://zh.wikipedia.org/wiki/JPEG>`_
-    - ``png``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ (不透明)
-    - ``PNG``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ (支持透明)
+    - ``png``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （不透明背景）
+    - ``PNG``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （透明背景）
     - ``ppm``\ ：\ `Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
     - ``tif``\ ：\ `Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
 
-*psoptions*
+*options*
     GMT现代模式本质上是先生成PS文件，再通过调用 :doc:`psconvert` 自动转换成用户
     指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，
     多个选项之间用逗号分隔。
@@ -83,6 +81,20 @@ figure
 
 .. include:: explain_help_nopar.rst_
 
+PS文件注意事项
+--------------
+
+如果用户想要输出PS格式的图片，则应额外留意画布尺寸。对于其他图片格式而言，
+GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，GMT则默认使用A4大小的画布。
+若用户绘制的图片超过A4纸张的大小，则可能会造成显示不完全。针对这种情况，
+建议用户修改参数 :ref:`PS_MEDIA` 以显式指定纸张大小。例如::
+
+    gmt begin
+    gmt figure map ps
+    gmt set PS_MEDIA A3
+    gmt ...
+    gmt end
+
 示例
 ----
 
@@ -91,14 +103,14 @@ figure
     gmt begin
     gmt figure Regional pdf,eps
     gmt ...
-    gmt end
+    gmt end show
 
 开启一个新绘图，名为GlobalMap，图片格式为JPEG，并对图片进行裁剪，四边均保留1厘米的空白::
 
     gmt begin
     gmt figure GlobalMap jpg A1c
     gmt ...
-    gmt end
+    gmt end show
 
 在一个会话中绘制两张图，并在两张图之间来回切换::
 
@@ -120,4 +132,14 @@ figure
     gmt figure Fig2
     gmt ...
 
-    gmt end
+    gmt end show
+
+相关模块
+--------
+
+:doc:`begin`,
+:doc:`clear`,
+:doc:`docs`,
+:doc:`end`,
+:doc:`inset`,
+:doc:`subplot`
