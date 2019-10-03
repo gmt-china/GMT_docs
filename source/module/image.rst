@@ -26,7 +26,7 @@ image
 
     .. note::
 
-       ``psimage`` 并不支持 PS 文件，建议使用如下命令将 PS 文件转化为 EPS 文件::
+       **image** 模块并不支持 PS 文件，建议使用如下命令将 PS 文件转化为 EPS 文件::
 
             gmt psconvert -A -P -Te xxx.ps
 

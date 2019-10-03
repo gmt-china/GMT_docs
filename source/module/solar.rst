@@ -34,8 +34,8 @@ solar
 
 ``-G<fill>|c``
     根据晨昏线对黑夜区域填充颜色或图案，见 :doc:`/basis/fill` 一节。
-    也可以使用 ``-Gc`` 剪裁黑夜区域，并通过使用 ``gmt psclip -C`` 停止区域剪裁，
-    见 :doc:`gmt:clip` 。
+    也可以使用 ``-Gc`` 剪裁黑夜区域，并通过使用 ``gmt clip -C`` 停止区域剪裁，
+    见 :doc:`clip` 。
 
 ``-I[<lon>/<lat>][+d<date>][+z<TZ>]``
     输出太阳的当前位置、方位角和高度角。加上 ``<lon>/<lat>`` 则输出日出、日落、
@@ -98,7 +98,7 @@ solar
 
         gmt begin terminator png
         gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000
-        gmt solar -W1p -Tdcna -O
+        gmt solar -W1p -Tdcna
         gmt end
 
 ``-W[<pen>]``

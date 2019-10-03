@@ -11,9 +11,9 @@ sac
 
 .. note::
 
-   pssac 模块修改自原 pssac 与 pssac2，其功能类似，但语法不同。
+   sac 模块修改自原 pssac 与 pssac2，其功能类似，但语法不同。
 
-pssac 实现波形绘制的步骤是：
+sac 模块实现波形绘制的步骤是：
 
 #. 读入 ``SACfiles`` 或 ``saclist``
 #. 根据 ``-T`` 选项确定参考时间

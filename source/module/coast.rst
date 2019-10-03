@@ -201,7 +201,7 @@ coast
 
 绘制部分国家的国界线（似乎有BUG）::
 
-    gmt coast -JM6i -P -Baf -EGB,IT,FR+gblue+p0.25p,red+r -EES,PT,GR+gyellow -png map
+    gmt coast -JM6i -Baf -EGB,IT,FR+gblue+p0.25p,red+r -EES,PT,GR+gyellow -png map
 
 提取冰岛的海岸线数据::
 

@@ -44,7 +44,7 @@ ternary
     分别给a、b、c三边指定最小值最大值。
 
 ``-S``
-    见 ``psxy`` 中的 ``-S`` 选项
+    见 :doc:`plot` 中的 ``-S`` 选项
 
 .. include:: explain_-U.rst_
 
