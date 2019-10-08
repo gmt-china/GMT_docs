@@ -6,5 +6,5 @@
 
     cmd-basis
     bash
-    bat
+    batch
     unix-tools
