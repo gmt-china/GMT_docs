@@ -45,7 +45,8 @@ GMT 的中文支持
 --------------
 
 新建GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt``
-（若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录）。
+（若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录。Windows的文件管理器无法新建
+以 **.** 开头的文件夹，因而需要打开CMD，然后执行命令 ``mkdir .gmt`` 以创建该文件夹）。
 
 向 GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
