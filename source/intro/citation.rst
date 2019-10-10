@@ -7,7 +7,7 @@
 **GMT6用户**:
     Wessel, P., Luis, J., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019).
     The Generic Mapping Tools Version 6.
-    *Geochemistry, Geophysics, Geosystems*,
+    *Geochemistry, Geophysics, Geosystems*, 20.
     https://doi.org/10.1029/2019GC008515
 
 **GMT5用户**:
