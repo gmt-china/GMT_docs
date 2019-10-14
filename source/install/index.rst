@@ -8,3 +8,4 @@
    windows
    macOS
    cross-platform
+   build-source
