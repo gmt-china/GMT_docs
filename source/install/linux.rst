@@ -23,8 +23,13 @@ Fedora用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/
 
 除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
-    dnf install GraphicsMagick gdal
+    # 地理数据格式转换工具
+    dnf install gdal
 
+    # 制作GIF格式动画需要GraphicsMagick
+    dnf install GraphicsMagick
+
+    # 制作MP4、WebM格式动画需要ffmpeg
     dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
     dnf install ffmpeg
 
@@ -59,10 +64,15 @@ RHEL/CentOS用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud
 
 除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
-    yum install GraphicsMagick gdal
+    # 地理数据格式转换工具
+    yum install gdal
 
+    # 制作GIF格式动画需要GraphicsMagick
+    yum install GraphicsMagick
+
+    # 制作MP4、WebM格式动画需要ffmpeg
     yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm
-    yum install GraphicsMagick ffmpeg gdal
+    yum install ffmpeg
 
 .. note::
 
