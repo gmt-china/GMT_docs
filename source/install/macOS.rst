@@ -1,7 +1,8 @@
 macOS 下安装 GMT
 ================
 
-macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 软件管理工具进行安装。
+macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
+工具进行安装。
 
 使用 GMT 安装包
 ---------------
@@ -79,19 +80,19 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
         brew uninstall gmt
 
-使用 macports 安装
+使用 Macports 安装
 ------------------
 
-`macports <https://www.macports.org/>`_ 是 macOS 下的第三方软件包管理工具。
+`Macports <https://www.macports.org/>`_ 是 macOS 下的第三方软件包管理工具。
 
 1.  安装GMT::
 
-        $ sudo port install gdal +curl +geos +hdf5 +netcdf
+        $ sudo port install gdal +hdf5 +netcdf +openjpeg
         $ sudo port install gmt6
 
 2.  安装GMT依赖的其他软件
 
-        $ sudo port install ghostscript graphicsmagick ffmpeg
+        $ sudo port install graphicsmagick ffmpeg
 
 3.  重新打开一个终端，检测安装是否成功::
 
