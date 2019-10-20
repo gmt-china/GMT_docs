@@ -1,43 +1,39 @@
-Linux 下编译GMT源码
-===================
+Linux/macOS 下编译GMT源码
+=========================
 
-尽管大多数Linux发行版都提供了预编译的GMT二进制包，但其GMT版本都很老。
-姑不推荐直接安装发行版提供的版本，建议按照下面的安装说明直接从源码编译。
+这一节介绍如何在 Linux 或者 macOS 下编译GMT源代码。Windows用户如果想编译
+GMT源码请参考GMT官方
+`编译指南 <https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md>`_\ 。
 
-解决依赖关系
+编译及运行依赖
+--------------
+
+GMT的编译及运行需要如下软件：
+
+- CMake: >=2.8.5
+- `Ghostscript <https://www.ghostscript.com/>`_
+- netCDF（>4.0且支持netCDF-4/HDF5）
+- curl
+
+除此之外，还可以安装如下软件库以增强GMT的更多功能：
+
+- `GDAL <https://www.gdal.org/>`_: 读写其他地学常用的网格和图片格式
+- `PCRE <https://www.pcre.org/>`_: 正则表达式支持
+- `FFTW <http://www.fftw.org/>`_: 快速傅里叶变换库（>=3.3，macOS下不需要）
+- LAPACK: 快速矩阵反演库 （macOS下不需要）
+- BLAS：快速矩阵运算库 （macOS下不需要）
+- `GraphicsMagick <http://www.graphicsmagick.org>`_: 生成GIF格式的动画
+- `FFmpeg <http://www.ffmpeg.org/>`_: 生成MP4格式的动画
+
+安装依赖软件
 ------------
-
-GMT 在运行时依赖 fftw（>=3.3）、netCDF（>4.0且支持netCDF-4/HDF5）、
-ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）。
-因而，需要先安装GMT所依赖的软件包。
-
-.. warning::
-
-   由于 Linux 发行版众多，不同发行版下软件包的名称不同。
-   因而，以下仅所列仅供参考，其他用户应自行根据关键词到
-   https://pkgs.org 上确认自己使用的发行版上软件包的
-   具体名字。
 
 对于Ubuntu/Debian::
 
-    # 更新
-    $ sudo apt update
-
     # 安装编译所需软件包
-    $ sudo apt-get install build-essential cmake
-
-    # 安装必须软件包
-    $ sudo apt install ghostscript
-    $ sudo apt install libnetcdf-dev
-    $ sudo apt install libcurl4-gnutls-dev
-
+    $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev ghostscript
     # 安装可选软件包
-    $ sudo apt install gdal-bin libgdal-dev python-gdal
-    $ sudo apt install liblapack3
-    $ sudo apt install libglib2.0-dev
-    $ sudo apt install libpcre3-dev
-    $ sudo apt install libfftw3-dev
-
+    $ sudo apt install gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
@@ -45,25 +41,20 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
 
     # CentOS用户必须先安装epel-release, RHEL/Fedora用户无需安装
     $ sudo yum install epel-release
-
     # 安装编译所需软件包
-    $ sudo yum install gcc gcc-c++ cmake make glibc
-
-    # 安装必须软件包
-    $ sudo yum install ghostscript
-    $ sudo yum install netcdf-devel
-    $ sudo yum install libcurl-devel
-
+    $ sudo yum install gcc cmake make glibc ghostscript netcdf-devel libcurl-devel
     # 安装可选软件包
-    $ sudo yum install gdal gdal-devel gdal-python
-    $ sudo yum install lapack64-devel lapack-devel
-    $ sudo yum install glib2-devel
-    $ sudo yum install pcre-devel
-    $ sudo yum install fftw-devel
-
+    $ sudo yum install gdal gdal-devel lapack64-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     # 安装其他可选包
-    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
+
+对于macOS用户，建议使用 [Homebrew](https://brew.sh/) 安装依赖::
+
+    # 安装必须依赖
+    brew install cmake curl netcdf ghostscript
+    # 安装可选依赖
+    brew install gdal pcre2 fftw graphicsmagick ffmpeg
 
 .. warning::
 
@@ -71,10 +62,10 @@ ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（>=2.8.5）�
    严重bug，会导致生成的图片中有用信息被裁剪。
    请使用 ``gs --version`` 确认安装的ghostscript不是9.27版本。
 
-下载
-----
+下载源码及数据
+--------------
 
-Linux下安装GMT需要下载如下三个文件：
+编译GMT需要下载如下三个文件：
 
 #. GMT 6.0.0rc4 源码：`gmt-6.0.0rc4-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.0.0rc4-src.tar.gz>`_
 #. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
@@ -144,7 +135,7 @@ Linux下安装GMT需要下载如下三个文件：
     *  Options:
     *  Found GSHHG database       : /home/user/GMT/gmt-6.0.0rc4/share/gshhg (2.3.7)
     *  Found DCW-GMT database     : /home/user/GMT/gmt-6.0.0rc4/share/dcw-gmt
-    *  Found GMT data server      : http://oceania.generic-mapping-tools.org
+    *  Found GMT data server      : https://oceania.generic-mapping-tools.org
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
     *  GDAL library               : /usr/lib64/libgdal.so
