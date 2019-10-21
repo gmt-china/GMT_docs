@@ -7,8 +7,9 @@ docs
 :官方文档: :doc:`gmt:docs`
 :简介: 打开指定模块的GMT官方的HTML文档
 
-**docs** 用系统默认的浏览器打开GMT官方的HTML文档。
-若本地存在HTML文档，则优先使用本地文档。
+**docs** 用系统默认浏览器打开指定模块的HTML文档。若本地存在HTML文档，
+则优先使用本地文档；否则则打开GMT文档网站。除了指定模块外，还可以打开
+*cookbook*\ 、\ *gallery*\ 、\ *defaults*\ 、\ *api* 和 *tutorial* 页面。
 
 语法
 ----
@@ -52,6 +53,9 @@ docs
 **-**\ *option*
     指定选项（例如 **-R**\ ），则 **docs** 会打开模块文档并定位到模块文档的该选项处。
 
+    注意，该功能对本地文档无效，因而当使用该功能时GMT会默认添加 **-S** 选项以打开
+    远程文档。
+
 .. include:: explain_-V.rst_
 
 .. include:: explain_help_nopar.rst_
@@ -91,4 +95,5 @@ docs
 :doc:`end`,
 :doc:`figure`,
 :doc:`inset`,
-:doc:`subplot`
+:doc:`subplot`,
+:doc:`gmt`

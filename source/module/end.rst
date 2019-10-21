@@ -21,7 +21,12 @@ end
 --------
 
 **show**
-    用系统默认图片阅读器自动打开所有当前会话生成的图片文件
+    用系统默认图片阅读器自动打开所有当前会话生成的图片文件。
+
+    .. note::
+
+        若环境变量 **GMT_END_SHOW** 值为 **off**\ ，则 **gmt end show**
+        不会打开图片文件。
 
 .. include:: explain_-V.rst_
 
@@ -44,4 +49,5 @@ end
 :doc:`docs`,
 :doc:`figure`,
 :doc:`inset`,
-:doc:`subplot`
+:doc:`subplot`,
+:doc:`gmt`

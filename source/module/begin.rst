@@ -31,7 +31,7 @@ begin
 --------
 
 *prefix*
-    图片文件名前缀，默认值为 ``gmtsession``\ 。
+    图片文件名前缀，默认值为 **gmtsession**\ 。
     图片文件名后缀由 *formats* 自动决定。
 
     如果一个GMT会话只用于进行计算而不绘图，或者需要绘制多张图，则不需要指定该参数。
@@ -43,7 +43,7 @@ begin
 .. _fig-formats:
 
 *formats*
-    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 ``pdf``\ ，由
+    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**\ ，由
     参数 :ref:`GMT_GRAPHICS_FORMAT <GMT_GRAPHICS_FORMAT>` 控制。
 
     GMT支持输出如下矢量图片格式：
@@ -94,13 +94,13 @@ begin
     gmt ...
     gmt end
 
-开始一个GMT会话，并指定图片名为 ``Figure_2``\ ，图片格式为PDF和PNG格式::
+开始一个GMT会话，并指定图片名为 *Figure_2*\ ，图片格式为PDF和PNG格式::
 
     gmt begin Figure_2 pdf,png
     gmt ...
     gmt end show
 
-设置额外的参数，以控制生成图片时的额外空白::
+设置额外的参数以控制生成图片时的额外空白::
 
     gmt begin map pdf,png A+m1c
     gmt ...
@@ -153,4 +153,5 @@ UNIX shell 注意事项
 :doc:`end`,
 :doc:`figure`,
 :doc:`inset`,
-:doc:`subplot`
+:doc:`subplot`,
+:doc:`gmt`

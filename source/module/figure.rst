@@ -19,7 +19,7 @@ figure
 ----
 
 **gmt figure**
-[ *prefix* ]
+*prefix*
 [ *formats* ]
 [ *options* ]
 [ |SYN_OPT-V| ]
@@ -28,7 +28,7 @@ figure
 --------
 
 *prefix*
-    图片文件名前缀，默认值为 ``gmtsession``\ 。
+    图片文件名前缀，默认值为 **gmtsession**\ 。
     图片文件名后缀由 *formats* 自动决定。
 
     .. note::
@@ -39,7 +39,7 @@ figure
 --------
 
 *formats*
-    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 ``pdf``\ ，由
+    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**\ ，由
     参数 :ref:`GMT_GRAPHICS_FORMAT <GMT_GRAPHICS_FORMAT>` 控制。
 
     GMT支持输出如下矢量图片格式：
@@ -67,13 +67,13 @@ figure
     其他可选的选项包括：
 
     - **A**\ [*args*]: 裁剪图片
-    - **C**\ *args*: 额外传递给GhostScript的选项
+    - **C**\ *args*: 额外传递给Ghostscript的选项
     - **D**\ *dir*: 指定图片的输出目录
     - **E**\ *dpi*: 设置图片分辨率
     - **H**\ *factor*: 对图片做平滑以避免混叠
     - **M**\ *args*: 为当前图片叠加前景图片或背景图片
     - **Q**\ *args*: 设置图像和文本的抗锯齿选项
-    - **S** : 把 GhostScript 命令输出到标准错误输出，且不删除所有中间文件
+    - **S** : 把 Ghostscript 命令输出到标准错误输出，且不删除所有中间文件
 
     详细解释见 :doc:`psconvert` 的说明文档。
 
@@ -108,7 +108,7 @@ GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，G
 开启一个新绘图，名为GlobalMap，图片格式为JPEG，并对图片进行裁剪，四边均保留1厘米的空白::
 
     gmt begin
-    gmt figure GlobalMap jpg A1c
+    gmt figure GlobalMap jpg A+m1c
     gmt ...
     gmt end show
 
@@ -134,6 +134,12 @@ GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，G
 
     gmt end show
 
+技术细节
+--------
+
+如果你在为GMT设计外部接口并且你不希望在会话结束时自动转换并生成图片，
+你可以指定图片文件名或图片格式为 **-**\ 。
+
 相关模块
 --------
 
@@ -142,4 +148,5 @@ GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，G
 :doc:`docs`,
 :doc:`end`,
 :doc:`inset`,
-:doc:`subplot`
+:doc:`subplot`,
+:doc:`gmt`
