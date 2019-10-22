@@ -31,5 +31,5 @@
 -----------
 
 #. 地学GMT中文社区QQ群：1群（218905582，已满）；2群（791856541）
-#. `GMT官方论坛 <http://gmt.soest.hawaii.edu/projects/gmt/boards/1>`_
+#. `GMT官方论坛 <https://forum.generic-mapping-tools.org/>`_
 #. `GMT Gitter 聊天室 <https://gitter.im/GenericMappingTools>`_
