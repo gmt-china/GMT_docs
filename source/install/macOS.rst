@@ -90,7 +90,7 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
         $ sudo port install gdal +hdf5 +netcdf +openjpeg
         $ sudo port install gmt6
 
-2.  安装GMT依赖的其他软件
+2.  安装GMT依赖的其他软件::
 
         $ sudo port install graphicsmagick ffmpeg
 

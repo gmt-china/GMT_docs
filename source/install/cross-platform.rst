@@ -8,9 +8,9 @@
 
 `conda <https://conda.io/>`_ 是由 `Anaconda <https://www.anaconda.com/>`_ 提供的
 一个跨平台软件包管理器。conda的 `conda-forge <https://conda-forge.org/>`_
-频道中提供了GMT 6.0.0rc4。
+频道中提供了最新的GMT。
 
-如果你是 conda 用户，则可以直接通过如下命令安装。
+如果你是 Anaconda 用户，则可以直接通过如下命令安装。
 
 安装GMT 6.0.0rc4::
 

@@ -49,7 +49,7 @@ GMT的编译及运行需要如下软件：
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
-对于macOS用户，建议使用 [Homebrew](https://brew.sh/) 安装依赖::
+对于macOS用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
 
     # 安装必须依赖
     brew install cmake curl netcdf ghostscript
@@ -199,7 +199,11 @@ GMT的编译及运行需要如下软件：
 
 打开终端，使用如下命令用文件编辑器打开Bash配置文件 :file:`~/.bashrc`::
 
+    # Linux 用户
     gedit ~/.bashrc
+
+    # macOS 用户
+    open ~/.bash_profile
 
 然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
 然后重启终端使其生效::
