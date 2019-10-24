@@ -9,18 +9,18 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
-1. 下载：\ `gmt-6.0.0rc4-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc4-darwin-x86_64.dmg>`_
+1. 下载：\ `gmt-6.0.0rc5-darwin-x86_64.dmg <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc5-darwin-x86_64.dmg>`_
 
-2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0rc4.app** 拖动到 Applications 目录
+2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0rc5.app** 拖动到 Applications 目录
 
 3. 将如下语句添加到 :file:`~/.bashrc` 中以修改PATH环境变量::
 
-       export PATH=/Applications/GMT-6.0.0rc4.app/Contents/Resources/bin:${PATH}
+       export PATH=/Applications/GMT-6.0.0rc5.app/Contents/Resources/bin:${PATH}
 
 4. 打开一个终端，输入如下命令，检测安装是否成功::
 
        $ gmt --version
-       6.0.0rc4
+       6.0.0rc5
 
 5. GMT还依赖于其它软件包，可以使用 `Homebrew <https://brew.sh>`__ 安装这些软件::
 
@@ -47,7 +47,7 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 
 .. note::
 
-    homebrew 尚未将GMT更新到6.0.0rc4，故而目前无法使用homebrew安装GMT6。
+    homebrew 尚未将GMT更新到6.0.0rc5，故而目前无法使用homebrew安装GMT6。
 
 `Homebrew <https://brew.sh/>`__ 是 macOS 下的第三方软件包管理工具。
 
@@ -97,7 +97,7 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 3.  重新打开一个终端，检测安装是否成功::
 
         $ gmt --version
-        6.0.0rc4
+        6.0.0rc5
 
 4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
 
