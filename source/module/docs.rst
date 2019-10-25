@@ -9,7 +9,7 @@ docs
 
 **docs** 用系统默认浏览器打开指定模块的HTML文档。若本地存在HTML文档，
 则优先使用本地文档；否则则打开GMT文档网站。除了指定模块外，还可以打开
-*cookbook*\ 、\ *gallery*\ 、\ *defaults*\ 、\ *api* 和 *tutorial* 页面。
+*gmt*\ 、\ *cookbook*\ 、\ *gallery*\ 、\ *settings*\ 、\ *api* 和 *tutorial* 页面。
 
 语法
 ----
@@ -29,10 +29,11 @@ docs
 
     除了模块名之外，还支持几个特殊的名字:
 
+    - **gmt**: 打开GMT命令的帮助文档
     - **cookbook**: 打开GMT参考手册
     - **tutorial**: 打开GMT入门教程
     - **api**: 打开GMT API手册
-    - **defaults**: 打开GMT配置参数文档
+    - **settings**: 打开GMT配置参数文档
     - **gallery**: 打开GMT图库
 
 可选选项
@@ -81,7 +82,7 @@ docs
 
 查看GMT配置参数列表::
 
-    gmt docs defaults
+    gmt docs settings
 
 查看图库::
 
