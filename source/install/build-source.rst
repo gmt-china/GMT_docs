@@ -33,7 +33,7 @@ GMT的编译及运行需要如下软件：
     # 安装编译所需软件包
     $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev ghostscript
     # 安装可选软件包
-    $ sudo apt install gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-single3 liblapack-dev
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
