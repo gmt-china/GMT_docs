@@ -10,7 +10,7 @@ psconvert
 
    本模块原名为 ``ps2raster`` ，v5.2.1 版本起更名为 ``psconvert``
 
-该模块通过调用 GhostScript 将 PS/EPS 文件转换为其他图片格式，包括BMP、EPS、JPEG、
+该模块通过调用 Ghostscript 将 PS/EPS 文件转换为其他图片格式，包括BMP、EPS、JPEG、
 PDF、PNG、PPM、SVG、TIFF 格式。
 
 必选选项
@@ -66,10 +66,10 @@ PDF、PNG、PPM、SVG、TIFF 格式。
     - ``-A-`` 覆盖 ``-W`` 选项中自动设置的 ``-A`` 值
 
 ``-C<gs_options>``
-    传递给 GhostScript 的选项
+    传递给 Ghostscript 的选项
 
-    该选项用于在调用 GhostScript 时传给 GhostScript 额外的选项，若要额外给
-    GhostScript增加多个选项，可重复使用 ``-C`` 命令。
+    该选项用于在调用 Ghostscript 时传给 Ghostscript 额外的选项，若要额外给
+    Ghostscript增加多个选项，可重复使用 ``-C`` 命令。
 
     在Windows下，若PS文件中含中文，则可能需要使用 ``-C`` 选项告诉ghostscript字体路径::
 
@@ -107,10 +107,10 @@ PDF、PNG、PPM、SVG、TIFF 格式。
         gmt psconvert -Tf -Fout test.ps
 
 ``-G<ghost_path>``
-    指定GhostScript可执行文件的路径
+    指定Ghostscript可执行文件的路径
 
-    ``psconvert`` 底层调用了 GhostScript 来实现PS到其他格式的转换，因而成功转换的
-    前提是必须能够找到 GhostScript 的可执行文件。 ``-G`` 选项即用于显式指定
+    ``psconvert`` 底层调用了 Ghostscript 来实现PS到其他格式的转换，因而成功转换的
+    前提是必须能够找到 Ghostscript 的可执行文件。 ``-G`` 选项即用于显式指定
     ghostscript可执行文件的路径。
 
     说明：
@@ -120,13 +120,13 @@ PDF、PNG、PPM、SVG、TIFF 格式。
     #. 如果从注册表中获取路径失败，则必须指定 ``-G`` 选项，例如 ``-Gc:\programs\gs\gs9.02\bin\gswin64c``
 
 ``-I``
-    Enforce gray-shades by using ICC profiles.  GhostScript versions
-    >= 9.00 change gray-shades by using ICC profiles.  GhostScript 9.05
+    Enforce gray-shades by using ICC profiles.  Ghostscript versions
+    >= 9.00 change gray-shades by using ICC profiles.  Ghostscript 9.05
     and above provide the '-dUseFastColor=true' option to prevent that
     and that is what **psconvert** does by default, unless option **-I** is
-    set.  Note that for GhostScript >= 9.00 and < 9.05 the gray-shade
+    set.  Note that for Ghostscript >= 9.00 and < 9.05 the gray-shade
     shifting is applied to all but PDF format.  We have no solution to
-    offer other than upgrade GhostScript.
+    offer other than upgrade Ghostscript.
 
 ``-L<listfile>``
     ``<listfile>`` 中包含要转换的所有PS文件名

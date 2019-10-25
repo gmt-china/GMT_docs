@@ -159,7 +159,7 @@ GMT的编译及运行需要如下软件：
     *  Build GMT supplements      : yes [supplements.so]
     *  Build GMT Developer        : yes
     *  Build proto supplements    : none
-    *  Found GhostScript (gs)     : yes
+    *  Found Ghostscript (gs)     : yes
     *  Found GraphicsMagick (gm)  : yes
     *  Found ffmpeg               : yes
     *  Found open                 : yes
