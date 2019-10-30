@@ -2,9 +2,11 @@
 
 # 绘制静态背景图层的脚本并生成绘图过程中需要使用的数据
 cat << EOF > pre.sh
-gmt math -T0/360/5 -I T 5 SUB = longitudes.txt
-gmt makecpt -Cdem2 -T0/6000 > movie_dem.cpt
-gmt grdgradient @earth_relief_20m -Nt1.25 -A45 -Gintens.nc
+gmt begin
+	gmt math -T0/360/5 -I T 5 SUB = longitudes.txt
+	gmt makecpt -Cdem2 -T0/6000 -H > t.cpt
+	gmt grdgradient @earth_relief_20m -Nt1.25 -A45 -Gintens.nc
+gmt end
 EOF
 
 # 生成绘图主脚本
@@ -19,7 +21,7 @@ gmt begin
 	# Clip to expose land areas only
 	gmt coast -Gc
 	# Overlay relief over land only using dem cpt
-	gmt grdimage @earth_relief_20m -Is.nc -Cmovie_dem.cpt
+	gmt grdimage @earth_relief_20m -Is.nc -Ct.cpt
 	# Undo clipping and overlay gridlines
 	gmt coast -Q -B30g30
 gmt end
