@@ -12,15 +12,14 @@
 
 如果你是 Anaconda 用户，则可以直接通过如下命令安装。
 
-安装GMT 6.0.0rc5::
+安装GMT 6.0.0::
 
-    conda install gmt=6.0.0rc5 -c conda-forge/label/dev -c conda-forge
+    conda install gmt -c conda-forge
 
-安装FFmpeg和GraphicsMagick::
-
-    conda install ffmpeg graphicsmagick -c conda-forge
+注意：由于conda-forge并提供Windows下的graphicsmagick，因而需要用户自行下载并安装
+graphicsmagick。
 
 安装完成后，在终端执行如下命令以验证::
 
     $ gmt --version
-    6.0.0rc5
+    6.0.0

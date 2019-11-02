@@ -7,7 +7,7 @@ GMT 提供了 Windows 下的安装包，可以直接安装使用。
 
     从 GMT 5.2.1 开始，GMT 提供的安装包已经不再支持 Windows XP。
 
-GMT 6.0.0rc5 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件：
+GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件：
 
 - `GDAL <https://gdal.org/>`_\ ：用于多种地学数据格式的转换
 - `FFmpeg <https://ffmpeg.org/>`_\ ：用于生成MP4格式的动画
@@ -16,10 +16,10 @@ GMT 6.0.0rc5 安装包中不仅包含了GMT，还包含了运行GMT所需的如�
 安装GMT
 -------
 
-1.  下载 GMT 6.0.0rc5 安装包
+1.  下载 GMT 6.0.0 安装包
 
-    - `gmt-6.0.0rc5-win64.exe (64位) <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc5-win64.exe>`__
-    - `gmt-6.0.0rc5-win32.exe (32位) <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0rc5-win32.exe>`__
+    - `gmt-6.0.0-win64.exe (64位) <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0-win64.exe>`__
+    - `gmt-6.0.0-win32.exe (32位) <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.0.0-win32.exe>`__
 
 2.  安装GMT
 
@@ -47,7 +47,7 @@ GMT 6.0.0rc5 安装包中不仅包含了GMT，还包含了运行GMT所需的如�
     在cmd窗口中执行::
 
         C:\Users\xxxx> gmt --version
-        6.0.0rc5
+        6.0.0
 
     即表示安装成功。
 
