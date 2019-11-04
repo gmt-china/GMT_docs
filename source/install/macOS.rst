@@ -2,42 +2,14 @@ macOS 下安装 GMT
 ================
 
 macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
-工具进行安装。
-
-使用 GMT 安装包
----------------
-
-GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
-
-1. 下载：\ `gmt-6.0.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg>`_
-
-2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0.app** 拖动到 Applications 目录
-
-3. 将如下语句添加到 :file:`~/.bashrc` 中以修改PATH环境变量::
-
-       export GMTHOME=/Applications/GMT-6.0.0.app/Contents/Resources
-       export PATH=${GMTHOME}/bin:${PATH}
-       export PROJ_LIB=$GMTHOME/share/proj6
-       export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick-1.3.33/config
-
-4. 打开一个终端，输入如下命令，检测安装是否成功::
-
-       $ gmt --version
-       6.0.0
-
-5.  卸载GMT
-
-    若想要卸载GMT，可直接到 ``/Application`` 目录下找到 GMT，直接删除即可。
-
-6.  升级GMT
-
-    GMT包不支持自动升级，因而要先删除旧GMT包，再下载新版安装包并按照上面的
-    步骤重新安装，即实现升级GMT。
+工具进行安装。\ **推荐使用Homebrew**\ 。
 
 使用 Homebrew 安装
 ------------------
 
 `Homebrew <https://brew.sh/>`__ 是 macOS 下的第三方软件包管理工具。
+未安装 Homebrew 的用户，可以访问其 `官网 <https://brew.sh/index_zh-cn>`_
+以了解如何安装与使用。
 
 1.  安装 GMT::
 
@@ -64,6 +36,42 @@ GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。
 5.  卸载GMT。执行如下命令即可卸载GMT::
 
         brew uninstall gmt
+
+使用 GMT 安装包
+---------------
+
+GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了GMT，还包含了运行GMT所需的
+Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
+
+1. 下载：\ `gmt-6.0.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg>`_
+
+2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0.app** 拖动到 Applications 目录
+
+3. 双击应用中的GMT图标以启动GMT。GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
+   提示将如下语句添加到 :file:`~/.bash_profile` 中以修改PATH环境变量::
+
+       export GMTHOME=/Applications/GMT-6.0.0.app/Contents/Resources
+       export PATH=${GMTHOME}/bin:${PATH}
+       export PROJ_LIB=$GMTHOME/share/proj6
+       export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick-1.3.33/config
+
+   .. note::
+
+      以上内容仅供参考，请务必根据GMT欢迎信息中的提示修改环境变量。
+
+4. 打开一个终端，输入如下命令，检测安装是否成功::
+
+       $ gmt --version
+       6.0.0
+
+5.  卸载GMT
+
+    若想要卸载GMT，可直接到 ``/Application`` 目录下找到 GMT，直接删除即可。
+
+6.  升级GMT
+
+    GMT包不支持自动升级，因而要先删除旧GMT包，再下载新版安装包并按照上面的
+    步骤重新安装，即实现升级GMT。
 
 使用 Macports 安装
 ------------------

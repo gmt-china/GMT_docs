@@ -20,6 +20,7 @@ GMT的编译及运行需要如下软件：
 - `GDAL <https://www.gdal.org/>`_: 读写其他地学常用的网格和图片格式
 - `PCRE <https://www.pcre.org/>`_: 正则表达式支持
 - `FFTW <http://www.fftw.org/>`_: 快速傅里叶变换库（>=3.3，macOS下不需要）
+- `GLib <https://developer.gnome.org/glib/>`_: GTHREAD多线程支持
 - LAPACK: 快速矩阵反演库 （macOS下不需要）
 - BLAS：快速矩阵运算库 （macOS下不需要）
 - `GraphicsMagick <http://www.graphicsmagick.org>`_: 生成GIF格式的动画
@@ -44,7 +45,7 @@ GMT的编译及运行需要如下软件：
     # 安装编译所需软件包
     $ sudo yum install gcc cmake make glibc ghostscript netcdf-devel libcurl-devel
     # 安装可选软件包
-    $ sudo yum install gdal gdal-devel lapack64-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    $ sudo yum install gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     # 安装其他可选包
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
@@ -54,7 +55,7 @@ GMT的编译及运行需要如下软件：
     # 安装必须依赖
     brew install cmake curl netcdf ghostscript
     # 安装可选依赖
-    brew install gdal pcre2 fftw graphicsmagick ffmpeg
+    brew install gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 .. warning::
 
@@ -90,8 +91,11 @@ GMT的编译及运行需要如下软件：
    # 切换到gmt源码目录下
    $ cd gmt-6.0.0
 
-   # 新建用户配置文件
+   # 用文本编辑器新建并打开CMake用户配置文件
+   # Linux用户
    $ gedit cmake/ConfigUser.cmake
+   # macOS用户
+   $ open -a TextEdit cmake/ConfigUser.cmake
 
 向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
 
@@ -107,8 +111,7 @@ GMT的编译及运行需要如下软件：
   一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
   权限的路径；
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
-- ``GMT_INSTALL_MODULE_LINKS`` 为 ``FALSE``\ ，表明不在GMT的bin目录下建立命令的
-  软链接，不建议设置为 ``TRUE`` （可选）
+- ``GMT_INSTALL_MODULE_LINKS`` 建议设置为 ``FALSE``
 
 .. tip::
 
@@ -151,25 +154,25 @@ GMT的编译及运行需要如下软件：
     *  License restriction        : no
     *  Triangulation method       : Shewchuk
     *  OpenMP support             : enabled
-    *  GLIB GTHREAD support       : disabled
-    *  PTHREAD support            : disabled
+    *  GLIB GTHREAD support       : enabled
     *  Build mode                 : shared
     *  Build GMT core             : always [libgmt.so]
     *  Build PSL library          : always [libpostscriptlight.so]
     *  Build GMT supplements      : yes [supplements.so]
     *  Build GMT Developer        : yes
     *  Build proto supplements    : none
-    *  Found Ghostscript (gs)     : yes
-    *  Found GraphicsMagick (gm)  : yes
-    *  Found ffmpeg               : yes
+    *  Found Ghostscript (gs)     : yes (9.50)
+    *  Found GraphicsMagick (gm)  : yes (1.3.33)
+    *  Found ffmpeg               : yes (4.2.1)
     *  Found open                 : yes
-    *  Found ogr2ogr              : yes
-    *  Found gdal_translate       : yes
+    *  Found ogr2ogr              : yes (2.4.2)
+    *  Found gdal_translate       : yes (2.4.2)
     *
     *  Locations:
     *  Installing GMT in          : /opt/GMT-6.0.0
     *  GMT_DATADIR                : /opt/GMT-6.0.0/share
     *  GMT_DOCDIR                 : /opt/GMT-6.0.0/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.0.0/share/man
     -- Configuring done
     -- Generating done
 
