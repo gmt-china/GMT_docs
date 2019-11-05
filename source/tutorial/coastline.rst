@@ -22,7 +22,7 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
     :caption: 美国海岸线
 
     gmt begin coastline png,pdf
-    gmt coast -R-130/-50/20/60 -JM15c -Baf -W0.5p,black
+        gmt coast -R-130/-50/20/60 -JM15c -Baf -W0.5p,black
     gmt end show
 
 上图看上去有些复杂。这是因为默认情况下 **-W** 选项会绘制所有水体与陆地的界限，
@@ -38,10 +38,10 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
     :caption: 绘制海岸线
 
     gmt begin coastline png,pdf
-    gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black
+        gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black
     gmt end show
 
-也可以在一个命令中多次使用 **-W** 选项，分别用不同的线条绘制不同等级的岸线。
+可以在一个命令中多次使用 **-W** 选项，分别用不同的线条绘制不同等级的岸线。
 这里我们使用 **-W1/0.5p,black** 绘制0.5p黑色的海岸线，同时使用 **-W2/1p,lightred**
 绘制1p宽的浅红色湖岸线。
 
@@ -50,7 +50,7 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
     :caption: 绘制海岸线和湖岸线
 
     gmt begin coastline png,pdf
-    gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred
+        gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred
     gmt end show
 
 设置要绘制的对象的最小面积
@@ -65,7 +65,7 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
     :caption: 设置要绘制的对象的最小面积
 
     gmt begin coastline png,pdf
-    gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred -A5000
+        gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred -A5000
     gmt end show
 
 这里我们使用 **-A5000** 表示只绘制面积大于5000平方千米的湖泊或岛屿。这样子
@@ -78,11 +78,11 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
 陆地和水体设置不同的填充色。
 
 .. gmtplot::
-    :width: 100%
+    :width: 80%
     :caption: 填充颜色
 
     gmt begin coastline png,pdf
-    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
+        gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
     gmt end show
 
 其中，\ **-G** 设置了陆地区域的填充色，\ **-S** 设置水体的颜色，
@@ -101,11 +101,11 @@ GMT中使用 :doc:`/module/coast` 模块绘制海岸线。
     :caption: 绘制国界与州界
 
     gmt begin coastline png,pdf
-    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
+        gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
     gmt end show
 
 除了 **-N** 选项之外，\ **-E** 选项也可以用于绘制州界、国界和省界，在
-:doc:`/dataset/dcw/index` 一节会详细介绍，这里姑且略过。
+:doc:`/dataset/dcw/index` 一节会详细介绍。本入门教程中暂时略过。
 
 添加比例尺
 ----------

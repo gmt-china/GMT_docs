@@ -10,7 +10,7 @@ GMT可以绘制多种不同类型的底图，包括全球地图、区域地图�
 全球地图
 --------
 
-要绘制全球地图，就需要将地球的三维球面投影到一个二维面上，投影的过程需要指定投影方式。
+要绘制地图，就需要将地球的三维球面投影到一个二维面上，投影的过程需要指定投影方式。
 GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
 同时，我们还需要使用 **-R** 选项指定要绘制的区域范围（即经纬度范围）。
 
@@ -21,13 +21,14 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :width: 85%
 
     gmt begin GlobalMap png,pdf
-    gmt coast -JH180/12c -R0/360/-90/90 -W0.5p -A10000
+        gmt coast -JH180/12c -R0/360/-90/90 -W0.5p -A10000
     gmt end show
 
 先忽略后面的 **-W0.5p -A10000**\ （后面章节会介绍到），这里只关注 **-J** 和 **-R** 选项。
 此示例中：
 
-#.  **-JH180/12c** 指定地图投影参数，\ **H** 表示使用Hammer投影，地图中心位于经度180°处，地图宽度为12厘米（\ **12c**\ ）；
+#.  **-JH180/12c** 指定地图投影参数，\ **H** 表示使用Hammer投影，地图中心位于经度180°处，
+    地图宽度为12厘米（\ **12c**\ ，\ **c** 表示单位厘米）；
 #.  **-R0/360/-90/90** 指定要绘制的区域范围，即经度0°到360°，纬度-90°到90°，
     四个数字之间用斜杠 **/** 分隔。
 
@@ -40,7 +41,7 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :width: 85%
 
     gmt begin GlobalMap png,pdf
-    gmt coast -JH180/12c -Rg -Bg -W0.5p -A10000
+        gmt coast -JH180/12c -Rg -Bg -W0.5p -A10000
     gmt end show
 
 跟上一个脚本相比，此处我们做了两点修改：
@@ -75,7 +76,7 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :width: 50%
 
     gmt begin NewZealandMap png,pdf
-    gmt coast -JM12c -RNZ -Ba -W0.5p -A10000
+        gmt coast -JM12c -RNZ -Ba -W0.5p -A10000
     gmt end show
 
 这里我们使用了：
@@ -99,25 +100,31 @@ GMT中使用 **-J** 选项指定地图投影参数以及地图的尺寸。
     :width: 50%
 
     gmt begin NewZealandMap png,pdf
-    gmt coast -JM12c -R165/180/-48/-32 -Ba -W0.5p -A10000
+        gmt coast -JM12c -R165/180/-48/-32 -Bafg -W0.5p -A10000
     gmt end show
 
-我们还可以对底图进行进一步的修改：
+上面的例子中我们还调整了 **-B** 选项，**-Bafg** 表示绘制底图边框的标注（\ **a**\ nnotation）、
+刻度线（\ **f**\ rame，即图中黑白线段的间隔）和网格线（\ **g**\ rid）。
+标注、刻度线以及网格线的间隔由GMT算法自动决定。
 
--   **-Bxa4** 表示设置X轴（\ **x**\ ）的标注间隔为4度一个（\ **a4**\ ）
--   **-Bya3** 表示设置X轴（\ **y**\ ）的标注间隔为3度一个（\ **a3**\ ）
+对GMT自动算法确定的间隔不满意？你还可以任意指定自己想要的间隔。
+下面例子中，我们对底图进行了进一步的自定义，为X轴和Y轴分别指定了间隔，
+并给底图添加了标题：
+
+-   **-Bxa4g2** 表示设置X轴（\ **x**\ ）的标注间隔为4度、网格线间隔为2度（\ **a4g2**\ ）
+-   **-Bya3g3** 表示设置X轴（\ **y**\ ）的标注间隔为3度、网格间隔为3度（\ **a3g3**\ ）
 -   **-BWSen** 中WSEN分别是西南东北四个方向的英文单词首字母，用于控制四条边的属性。
     大写的 **WS** 表示给西边和南边添加标注，而小写的 **en** 则表示对于东边和北边
     只绘制边框但不显示标注
 -   **-BWSen+t"New Zealand"** 中 **+t** 用于给整张图添加标题（\ **t**\ itle）。
-    由于标题 New Zealand 中含有空格，我们需要使用单引号或双引号将其括起来
+    由于标题 New Zealand 中含有空格，我们需要使用引号将其括起来
 
 .. gmtplot::
     :caption: 为区域地图添加标题
     :width: 50%
 
     gmt begin NewZealandMap png,pdf
-    gmt coast -JM12c -R165/180/-48/-32 -Bxa4 -Bya3 -BWSen+t"New Zealand" -W0.5p -A10000
+        gmt coast -JM12c -R165/180/-48/-32 -Bxa4g2 -Bya3g3 -BWSen+t"New Zealand" -W0.5p -A10000
     gmt end show
 
 线性坐标轴
@@ -141,8 +148,10 @@ GMT最擅长绘制地图，同时也适合绘制最简单的线性坐标轴。�
     :caption: 线性坐标轴
 
     gmt begin linearXY png,pdf
-    gmt basemap -R10/70/-4/8 -JX8c/5c -Bxa10f5g10+l"X Label" -Bya4f2g2+l"Y Label" -BWSen+t"Linear X-Y Plot"
+        gmt basemap -R10/70/-4/8 -JX8c/5c -Bxa10f5g10+l"X Label" -Bya4f2g2+l"Y Label" -BWSen+t"Linear X-Y Plot"
     gmt end show
+
+GMT同样也可以绘制对数轴、指数轴以及极坐标轴，在这一节中不再介绍。
 
 三维线性坐标轴
 --------------
@@ -156,14 +165,14 @@ GMT最擅长绘制地图，同时也适合绘制最简单的线性坐标轴。�
 -   **-JZ5c** 指定了Z轴的高度为5厘米
 -   **-Bzaf** 指定了Z轴的标注和刻度属性
 -   **-BSEwnZ+b** 中 **Z+b** 表示绘制一条Z轴，并绘制出整个长方体的所有边
--   **-p130/30** 则指定了看这个长方体的视角，130和30分别为三维视角的方位角和高度角。
+-   **-p130/30** 指定了看这个长方形的视角。130和30分别为三维视角的方位角和高度角。
     这个解释起来稍复杂，读者可以自己试试修改这两个参数并查看效果。方位角的取值范围
-    为0到360度，高度角的取值范围为0到90度
+    为0到360度，高度角的取值范围为0到90度。
 
 .. gmtplot::
     :width: 50%
     :caption: 三维线性坐标轴
 
     gmt begin 3DMap png,pdf
-    gmt basemap -R10/70/-4/8/-10/10 -JX8c5c -JZ5c -Bxa10+lX -Bya4+lY -Bzaf+lDepth -BSEwnZ+b+t'3D Plot' -p130/30
+        gmt basemap -R10/70/-4/8/-10/10 -JX8c/5c -JZ5c -Bxa10+lX -Bya4+lY -Bzaf+lDepth -BSEwnZ+b+t"3D Plot" -p130/30
     gmt end show

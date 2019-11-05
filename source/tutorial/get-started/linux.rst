@@ -80,7 +80,7 @@ Linux都自带了的文本编辑器 **gedit** 打开该脚本文件::
 
 编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加GMT命令，将脚本修改如下::
 
-    #!/usr/bin/env bash
+    #!/usr/bin/env -S bash -e
     # GMT modern mode bash template
     # Date:    2019-09-10T00:44:39
     # User:    seisman

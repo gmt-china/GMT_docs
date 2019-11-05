@@ -20,6 +20,24 @@
 :file:`points.dat` 中，然后使用 **basemap** 模块绘制了一张底图，
 并使用 **plot** 模块绘制输入文件 :file:`points.dat` 中的数据。
 
+.. warning::
+
+    **Windows Batch 用户请注意！Batch 不支持 EOF 语法！**
+
+    ::
+
+        cat > points.dat << EOF
+        2   2
+        8   2
+        5   7
+        EOF
+
+    这一段代码的作用是将两个EOF中间的三行数据保存到文件 points.dat 中。
+    由于Batch不支持这一语法，Batch用户需要在当前目录手动创建文件 points.dat
+    并将数据复制到文件中并保存。
+
+    其它示例也有相同的问题，Batch用户自行修改，不再专门解释。
+
 图中，\ **plot** 模块在绘图时自动将三个点连接起来，绘制出了一条线段。
 
 .. gmtplot::
@@ -32,8 +50,8 @@
     EOF
 
     gmt begin SimpleLine png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot points.dat
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot points.dat
     gmt end show
 
 想要修改线段的粗细或颜色？很简单，可以使用 **plot** 模块的 **-W** 选项设置画笔属性。
@@ -52,8 +70,8 @@
     EOF
 
     gmt begin SimpleLine png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot points.dat -W2p,red,-
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot points.dat -W2p,red,-
     gmt end show
 
 你可以尝试修改线宽、颜色和线型，并查看绘图效果。几种常见的线型包括
@@ -75,8 +93,8 @@
     EOF
 
     gmt begin polygon png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot points.dat -W4p,lightblue -L
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot points.dat -W4p,lightblue -L
     gmt end show
 
 我们还可以使用 **-G** 选项为闭合多边形填充颜色。
@@ -91,8 +109,8 @@
     EOF
 
     gmt begin polygon png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot points.dat -W4p,lightblue -Glightred -L
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot points.dat -W4p,lightblue -Glightred -L
     gmt end show
 
 这样我们就得到了一个内部为浅红色、轮廓为浅蓝色的多边形了。如果只想要填充颜色而不绘制轮廓，
@@ -108,8 +126,8 @@
     EOF
 
     gmt begin polygon png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot points.dat -Glightred -L
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot points.dat -Glightred -L
     gmt end show
 
 绘制多条线段
@@ -151,8 +169,8 @@
     EOF
 
     gmt begin MultiLines png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot lines.dat -W1p,red
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot lines.dat -W1p,red
     gmt end show
 
 绘制多个多边形
@@ -175,8 +193,8 @@
     EOF
 
     gmt begin MultiPolygons png,pdf
-    gmt basemap -JX10c -R0/10/0/10 -Baf
-    gmt plot lines.dat -W1p,red -L -Glightred
+        gmt basemap -JX10c -R0/10/0/10 -Baf
+        gmt plot lines.dat -W1p,red -L -Glightred
     gmt end show
 
 大圆弧路径
@@ -199,7 +217,7 @@
     EOF
 
     gmt begin map png,pdf
-    gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
-    gmt plot twopoints.dat -W2p,red
-    gmt plot twopoints.dat -W2p,blue -A
+        gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
+        gmt plot twopoints.dat -W2p,red
+        gmt plot twopoints.dat -W2p,blue -A
     gmt end show
