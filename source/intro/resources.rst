@@ -9,9 +9,9 @@
 
 #. :doc:`《GMT中文手册》中的入门教程 </tutorial/index>`
 #. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/6.0/tutorial.html>`_
-#. 视频教程 （作者: `@liuzhumei <https://github.com/liuzhumei>`_\ ）
+#. 《地学GMT绘图》系列视频教程 （作者: `@liuzhumei <https://github.com/liuzhumei>`_\ ）
 
-   - `《地学GMT绘图软件入门》 <https://www.bilibili.com/video/av74087421>`_
+   - `《GMT5入门教程》 <https://www.bilibili.com/video/av74087421>`_
    - `《GMT6新特性》 <https://www.bilibili.com/video/av73835957>`_
 
 #. `GMT Tutorial <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_ (适用于GMT5)
