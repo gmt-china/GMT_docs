@@ -27,7 +27,7 @@
 
 *pattern* 有两种取法：
 
-- 取1到90内的整数，表示使用GMT提供的\ :doc:`90种内置位图图案 </appendix/patterns>`
+- 取1到90内的整数，表示使用GMT提供的\ :ref:`GMT预定义填充图案 <GMT_patterns>`
 - 取文件名，表示使用一个1、8或24位Sun光栅文件作为位图图案
 
 **+r**\ *dpi* 设置了用于填充的位图图案的分辨率。\ *dpi* 越大，则填充区域内位图
@@ -70,3 +70,22 @@
 - **-GP7+r1000**
 - **-Gp7+bred+r300**
 - **-Gp7+bred+f-+r300**
+
+.. _GMT_patterns:
+
+附录: GMT预定义填充图案
+-----------------------
+
+下图列出了GMT中预定义的90种位图图案（右键查看大图并放大才能看到差异），所有图案
+都是使用默认的黑白色在 ``<dpi>`` 取300的环境下生成的。每张小图中左半部分使用
+``-Gp`` 绘制，右半部分使用 ``-GP`` 绘制。
+
+.. figure:: /images/GMT_patterns.*
+   :width: 80%
+   :align: center
+
+   GMT内置位图图案
+
+**下载：**
+:download:`PDF格式 </images/GMT_patterns.pdf>` |
+:download:`PNG格式 </images/GMT_patterns.png>`
