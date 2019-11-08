@@ -31,6 +31,7 @@ docs
 
     - **gmt**: 打开GMT命令的说明文档
     - **api**: 打开GMT API手册
+    - **colors**: 打开GMT颜色列表文档
     - **cookbook**: 打开GMT参考手册
     - **tutorial**: 打开GMT入门教程
     - **settings**: 打开GMT配置参数文档
