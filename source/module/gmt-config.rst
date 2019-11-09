@@ -14,6 +14,7 @@ gmt-config
     --cc          编译过程中使用的C编译器
     --cflags      C预处理器和编译器的CFLAGS: -I/opt/GMT/include/gmt
     --datadir     GMT 数据目录，默认为空
+    --dataserver  GMT数据服务器网址
     --dcw         DCW 数据的位置（可能为空）
     --dep-libs    GMT 函数库依赖的其他函数库
     --gshhg       GSHHG 数据的位置
