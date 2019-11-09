@@ -10,7 +10,7 @@ subplot
 **subplot** 模块可以将当前纸张分隔成若干个网格区域，每个区域内都可以包含一张
 单独的子图。
 
-**subplot**  模块提供了三条命令：
+**subplot**  模块提供了三条指令：
 
 - **subplot begin** 进入子图模式，并设置子图的布局
 - **subplot set** 用于指定接下来的绘图操作在哪一个子图中进行
@@ -38,6 +38,8 @@ subplot begin 语法
 [ |-S|\ *layout* ]
 [ |-T|\ *title* ]
 [ |SYN_OPT-V| ]
+[ |SYN_OPT-X| ]
+[ |SYN_OPT-Y| ]
 [ |SYN_OPT--| ]
 
 必须选项
@@ -201,6 +203,8 @@ subplot begin 语法
     每张子图各自的标题可以用 **-B** 或 **-S** 选项控制。
 
 .. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
 
 .. include:: explain_help.rst_
 

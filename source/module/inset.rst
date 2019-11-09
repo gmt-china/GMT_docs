@@ -25,6 +25,7 @@ inset begin语法
 |-D|\ *inset-box*
 [ |-F|\ *box* ]
 [ |-M|\ *margins* ]
+[ |-N| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 
@@ -69,20 +70,16 @@ inset begin语法
     #. 两个用斜杠分隔的值，分别设置水平和垂直方向的空白
     #. 四个用斜杠分隔的值，分别设置左右下上四条边的空白
 
+.. _-N:
+
+**-N**
+    不裁剪超过小图区域边界的部分。
+
 .. include:: explain_-V.rst_
 
-.. include:: explain_help_nopar.rst_
+.. include:: explain_help.rst_
 
 示例
 ----
 
-下面的示例绘制了一个日本的区域地图，并在左下角的小图中绘制了日本全图，同时在小图中标出了大图的研究区域。
-
-.. gmtplot:: inset/inset-ex01.sh
-    :width: 60%
-
-下面的示例绘制了澳大利亚的地图，并在地图右上角绘制了小图。小图中绘制了全球地图，
-并以特殊颜色标注了澳大利亚的位置。
-
-.. gmtplot:: inset/inset-ex02.sh
-    :width: 60%
+示例见 :doc:`/tutorial/inset`\ 。
