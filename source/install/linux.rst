@@ -38,7 +38,7 @@ Fedora用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/
     如果你已经安装了Fedora系统仓库提供的GMT软件包，你必须在使用GMT官方仓库
     前卸载旧的GMT安装包。使用如下命令::
 
-        dnf uninstall GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+        dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 RHEL/CentOS
 -----------
@@ -79,7 +79,7 @@ RHEL/CentOS用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud
     如果你已经安装了EPEL仓库提供的GMT软件包，你必须在使用GMT官方仓库
     前卸载旧的GMT安装包。使用如下命令::
 
-        yum uninstall GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+        yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 Ubuntu/Debian用户
 -----------------
