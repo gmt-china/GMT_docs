@@ -11,12 +11,12 @@ GMT源码请参考GMT官方
 GMT的编译及运行需要如下软件：
 
 - CMake: >=2.8.5
-- `Ghostscript <https://www.ghostscript.com/>`_
 - netCDF（>4.0且支持netCDF-4/HDF5）
 - curl
 
 除此之外，还可以安装如下软件库以增强GMT的更多功能：
 
+- `Ghostscript <https://www.ghostscript.com/>`_: 生成PDF或者其他位图格式的图片
 - `GDAL <https://www.gdal.org/>`_: 读写其他地学常用的网格和图片格式
 - `PCRE <https://www.pcre.org/>`_: 正则表达式支持
 - `FFTW <http://www.fftw.org/>`_: 快速傅里叶变换库（>=3.3，macOS下不需要）
@@ -32,9 +32,9 @@ GMT的编译及运行需要如下软件：
 对于Ubuntu/Debian::
 
     # 安装编译所需软件包
-    $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev ghostscript
+    $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
     # 安装可选软件包
-    $ sudo apt install gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install ghostscript gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
@@ -43,19 +43,19 @@ GMT的编译及运行需要如下软件：
     # CentOS用户必须先安装epel-release, RHEL/Fedora用户无需安装
     $ sudo yum install epel-release
     # 安装编译所需软件包
-    $ sudo yum install gcc cmake make glibc ghostscript netcdf-devel libcurl-devel
+    $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
     # 安装可选软件包
-    $ sudo yum install gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    $ sudo yum install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     # 安装其他可选包
-    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm
+    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
 对于macOS用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
 
     # 安装必须依赖
-    brew install cmake curl netcdf ghostscript
+    brew install cmake curl netcdf
     # 安装可选依赖
-    brew install gdal pcre2 glib fftw graphicsmagick ffmpeg
+    brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 .. warning::
 
@@ -102,7 +102,6 @@ GMT的编译及运行需要如下软件：
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0")
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
-    set (GMT_INSTALL_MODULE_LINKS FALSE)
 
 其中，
 
@@ -111,7 +110,6 @@ GMT的编译及运行需要如下软件：
   一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
   权限的路径；
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
-- ``GMT_INSTALL_MODULE_LINKS`` 建议设置为 ``FALSE``
 
 .. tip::
 

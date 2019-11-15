@@ -9,7 +9,8 @@ Linux 下安装 GMT
 Fedora
 ------
 
-Fedora用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
+**Fedora 29** 及之后版本的用户，可以启用
+`GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本::
 
     # 启用GMT官方RPM仓库
@@ -30,7 +31,7 @@ Fedora用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/
     dnf install GraphicsMagick
 
     # 制作MP4、WebM格式动画需要ffmpeg
-    dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     dnf install ffmpeg
 
 .. note::
@@ -43,7 +44,8 @@ Fedora用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/
 RHEL/CentOS
 -----------
 
-RHEL/CentOS用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
+**RHEL/CentOS 6/7** 用户可以启用
+`GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本::
 
     # 安装 epel-release
@@ -71,7 +73,7 @@ RHEL/CentOS用户可以启用 `GMT官方RPM仓库 <https://copr.fedorainfracloud
     yum install GraphicsMagick
 
     # 制作MP4、WebM格式动画需要ffmpeg
-    yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm
+    yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     yum install ffmpeg
 
 .. note::
