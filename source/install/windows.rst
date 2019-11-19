@@ -92,8 +92,8 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
     GMT安装包中自带了Ghostscript，但是其并不支持在GMT图片中添加中文。
 
     如果有在GMT图片中添加中文的需求，则需要在安装GMT时不安装Ghostscript组件，
-    然后自己再自行安装 Ghostscript。安装过程中记得勾选
-    ``Generate cidfmap for Windows CJK TrueType fonts``\ 。
+    然后自己再自行安装 Ghostscript。安装 Ghostscript 的过程中记得勾选
+    ``Generate cidfmap for Windows CJK TrueType fonts`` 以生成中文字体配置文件。
 
     安装包下载地址:
 

@@ -43,11 +43,16 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了GMT，还包含了运行GMT所需的
 Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
+.. note::
+
+    GMT的dmg安装包只支持 macOS >= 10.12。
+
 1. 下载：\ `gmt-6.0.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg>`_
 
 2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0.app** 拖动到 Applications 目录
 
-3. 双击应用中的GMT图标以启动GMT。GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
+3. 在Finder中的Applications目录下，找到GMT图标以双击启动。
+   GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
    提示将如下语句添加到 :file:`~/.bash_profile` 中以修改PATH环境变量::
 
        export GMTHOME=/Applications/GMT-6.0.0.app/Contents/Resources
@@ -66,7 +71,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
 5.  卸载GMT
 
-    若想要卸载GMT，可直接到 ``/Application`` 目录下找到 GMT，直接删除即可。
+    若想要卸载GMT，可直接到 ``/Applications`` 目录下找到 GMT，直接删除即可。
 
 6.  升级GMT
 

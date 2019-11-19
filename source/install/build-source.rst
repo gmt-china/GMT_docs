@@ -38,9 +38,8 @@ GMT的编译及运行需要如下软件：
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
-对于CentOS/RHEL/Fedora::
+对于CentOS/RHEL::
 
-    # CentOS用户必须先安装epel-release, RHEL/Fedora用户无需安装
     $ sudo yum install epel-release
     # 安装编译所需软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
@@ -49,6 +48,16 @@ GMT的编译及运行需要如下软件：
     # 安装其他可选包
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
+
+对于Fedora用户::
+
+    # 安装编译所需软件包
+    $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
+    # 安装可选软件包
+    $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    # 安装其他可选包
+    $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
+    $ sudo dnf install GraphicsMagick ffmpeg
 
 对于macOS用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
 
@@ -103,6 +112,9 @@ GMT的编译及运行需要如下软件：
     set (COPY_GSHHG TRUE)
     set (COPY_DCW TRUE)
 
+    set (GMT_USE_THREADS TRUE)
+    set (GMT_ENABLE_OPENMP TRUE)
+
 其中，
 
 - ``CMAKE_INSTALL_PREFIX`` 用于设置GMT的安装路径，上面的语句会将GMT安装在
@@ -110,6 +122,8 @@ GMT的编译及运行需要如下软件：
   一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
   权限的路径；
 - ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
+- ``GMT_USE_THREADS`` 和 ``GMT_ENABLE_OPENMP`` 设置为 TRUE 会为GMT的某些模块
+  增加多线程并行功能以加速计算。
 
 .. tip::
 
@@ -197,7 +211,7 @@ GMT的编译及运行需要如下软件：
 修改环境变量
 ------------
 
-打开终端，使用如下命令用文件编辑器打开Bash配置文件 :file:`~/.bashrc`::
+打开终端，使用如下命令用文件编辑器打开Bash配置文件::
 
     # Linux 用户
     gedit ~/.bashrc
