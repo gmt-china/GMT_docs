@@ -5,11 +5,11 @@ docs
 ====
 
 :官方文档: :doc:`gmt:docs`
-:简介: 打开指定模块的GMT官方的HTML文档
+:简介: 打开指定模块的GMT官方HTML文档
 
 **docs** 用系统默认浏览器打开指定模块的HTML文档。若本地存在HTML文档，
-则优先使用本地文档；否则则打开GMT文档网站。除了指定模块外，还可以打开
-*gmt*\ 、\ *cookbook*\ 、\ *gallery*\ 、\ *settings*\ 、\ *api* 和 *tutorial* 页面。
+则优先使用本地文档；否则则打开GMT文档网站。除了可以指定模块外，
+还支持打开一些常用的文档页面（下面会详细列出）。
 
 语法
 ----
@@ -27,12 +27,12 @@ docs
 *module-name*
     要查看文档的模块名。
 
-    除了模块名之外，还支持几个特殊的名字:
+    除了模块名之外，还支持几个特殊的页面:
 
-    - **gmt**: 打开GMT命令的帮助文档
+    - **gmt**: 打开GMT命令的说明文档
+    - **api**: 打开GMT API手册
     - **cookbook**: 打开GMT参考手册
     - **tutorial**: 打开GMT入门教程
-    - **api**: 打开GMT API手册
     - **settings**: 打开GMT配置参数文档
     - **gallery**: 打开GMT图库
 
