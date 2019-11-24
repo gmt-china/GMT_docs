@@ -23,11 +23,6 @@ end
 **show**
     用系统默认图片阅读器自动打开所有当前会话生成的图片文件。
 
-    .. note::
-
-        若环境变量 **GMT_END_SHOW** 值为 **off**\ ，则 **gmt end show**
-        不会打开图片文件。
-
 .. include:: explain_-V.rst_
 
 .. include:: explain_help_nopar.rst_
@@ -45,7 +40,7 @@ end
 ------------
 
 对于单行模式的命令以及以 **gmt end show** 结尾的脚本，GMT会自动显示生成的图片。
-如果想不修改脚本但并自动显示图片，则可以设置为环境变量 **GMT_END_SHOW** 为 ``off``\ 。
+如果想不修改脚本但禁用自动显示图片，则可以设置为环境变量 **GMT_END_SHOW** 为 ``off``\ 。
 
 相关模块
 --------
