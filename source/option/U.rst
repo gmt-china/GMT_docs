@@ -14,7 +14,7 @@
 
 GMT参数中有一些可以控制时间戳：
 
-- :ref:`MAP_LOGO <MAP_LOGO>` 控制是否绘制时间戳，默认值为 ``FALSE``
+- :ref:`MAP_LOGO <MAP_LOGO>` 控制是否绘制时间戳，默认值为 **FALSE**
 - :ref:`MAP_LOGO_POS <MAP_LOGO_POS>` 用于控制时间戳的位置
 - :ref:`FORMAT_TIME_STAMP <FORMAT_TIME_STAMP>` 用于控制时间戳的显示格式
 - :ref:`FONT_LOGO <FONT_LOGO>` 时间戳中文本字体
@@ -31,4 +31,4 @@ GMT参数中有一些可以控制时间戳：
 
 .. note::
 
-    修改UNIX 环境变量 **TZ** 可以控制时间戳中时间所使用的时区。
+    修改UNIX 环境变量 **TZ** 可以控制时间戳中时间所使用的时区，默认为当地时区。
