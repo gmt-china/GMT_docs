@@ -57,7 +57,6 @@ html_favicon = "_static/favicon.ico"
 html_static_path = ['_static']
 html_extra_path = ['CNAME']
 html_last_updated_fmt = '%Y年%m月%d日'
-html_secnumber_suffix = ' '  # default is '.'
 html_search_language = 'zh'
 html_theme_options = {
     'canonical_url': 'https://docs.gmt-china.org/latest/',
