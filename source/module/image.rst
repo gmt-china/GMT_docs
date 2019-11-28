@@ -1,92 +1,149 @@
 .. index:: ! image
+.. include:: common_SYN_OPTs.rst_
 
 image
 =====
 
 :官方文档: :doc:`gmt:image`
-:简介: 将图片或EPS文件放在地图上
+:简介: 将图片或EPS文件放在图上
 
-该命令可以读取一个 EPS 文件或光栅图片格式，并将其画在地图上。
+**image** 模块可以读取EPS文件或任意一个光栅图片文件，并将其画在图上。
 
-该命令可以用于：
+该模块的几个主要用途：
 
-#. 将多张图合并到一张图上
-#. 将自己单位的 logo 放在 GMT 生成的图上
-#. 将一般图片放在图上
+- 将多张图合并到一张图上
+- 将自己单位的 logo 放在 GMT 生成的图上
+- 将一般图片放在图上
 
-必选选项
+必须选项
 --------
 
-``<imagefile>``
+*imagefile*
     EPS文件或其他光栅图片格式（GIF、PNG等）的文件
 
     - EPS文件必须包含合适的BoundingBox
     - 光栅文件的颜色深度可以是1、8、24、32位
     - 光栅文件是通过GDAL读入的，若安装GMT时未配置GDAL，则该命令只支持EPS文件
 
-    .. note::
-
-       **image** 模块并不支持 PS 文件，建议使用如下命令将 PS 文件转化为 EPS 文件::
-
-            gmt psconvert -A -P -Te xxx.ps
-
 可选选项
 --------
 
-``-D[g|j|J|n|x]<refpoint>+r<dpi>+w[-]<width>[/<height>][+j<justify>][+n<nx>[/<ny>]][+o<dx>[/<dy>]]``
+.. _-D:
+
+**-D**\ [**g**\ \|\ **j**\ \|\ **J**\ \|\ **n**\ \|\ **x**]\ *refpoint*\ **+r**\ *dpi*\ **+w**\ [**-**]\ *width*\ [/*height*]\ [**+j**\ *justify*]\ [**+n**\ *nx*\ [/*ny*] ]\ [**+o**\ *dx*\ [/*dy*]]
     指定图片的尺寸和位置
 
-    #. ``[g|j|J|n|x]<refpoint>`` 指定底图上的参考点，见 :doc:`/basis/embellishment` 一节
-    #. ``+r<dpi>`` 指定图片的DPI以间接指定图片的尺寸
-    #. ``+w[-]<width>[/<height>]`` 直接指定图片的尺寸。若未给定 ``<height>`` 则按照 ``<width>`` 以及原图的横纵比进行缩放；若 ``<width>`` 为负值，则使用其绝对值作为宽度，并使用PS的图片操作符将图片插值到设备的分辨率
-    #. ``+j<justify>`` 指定图片的锚点，默认锚点是 ``BL`` ，见 :doc:`/basis/embellishment` 一节
-    #. ``+o<dx>[/<dy>]`` 指定参考点的额外偏移量，见 :doc:`/basis/embellishment`
-    #. ``+n<nx>/<ny>`` 使图片在水平方向重复 ``<nx>`` 次，垂直方向重复 ``<ny>`` 次，若省略 ``<ny>`` 则默认其与 ``<nx>`` 相等，默认值为 ``1/1``
+    简单介绍各子选项的含义，详情见 :doc:`/basis/embellishment`
 
-``-F[+c<clearance(s)>][+g<fill>][+i[[<gap>/]<pen>]][+p[<pen>]][+r[<radius>]][+s[<dx>/<dy>/][<fill>]]``
-    为图片加上背景边框，见 :doc:`/basis/embellishment` 一节
+    - **g**\ \|\ **j**\ \|\ **J**\ \|\ **n**\ \|\ **x**]\ *refpoint*\ 指定地图上的参考点
 
-    - ``+p<pen>`` 面板边框的画笔属性
-    - ``+g<fill>`` 面板填充色
-    - ``+c<clearance>`` 设置 logo 与面板边框之间空白区域的大小
-    - ``+i<gap>/<pen>`` 为背景面板加上额外的内边框
-    - ``+r<radisu>`` 面板使用圆角矩形边框
-    - ``+s<dx>/<dy>/<fill>`` 为面板增加阴影区
+      - **g** 指定某地图坐标位参考点
+      - **j**\ \|\ **J** 通过2字母的对齐方式码指定矩形区域的某个锚点作为参考点
+      - **n** 在归一化坐标系（即0-1）中指定参考点
+      - **x** 在绘图坐标系下指定参考点
 
-``-M``
+    - **+j**\ *justify* 指定logo上的锚点（默认锚点为logo的左下角(BL)）
+    - **+o**\ *dx*/*dy* 在参考点的基础上设置比例尺的额外偏移量
+    - **+r**\ *dpi* 指定图片的DPI以间接指定图片的尺寸
+    - **+w**\ [**-**]\ *width*\ [/*height*] 直接指定图片的尺寸。若未给定 *height*
+      则按照 *width* 以及原图的横纵比进行缩放；若 *width* 为负值，则使用其绝对值作为宽度，
+      并使用PS的图片操作符将图片插值到设备的分辨率
+    - **+n**\ *nx*\ [/*ny*] 使图片在水平方向重复 *nx* 次，垂直方向重复 *ny* 次。
+      若省略 *ny* 则默认其与 *nx* 相等 [默认值为 **1/1**]
+
+
+.. _-F:
+
+**-F**\ [\ **+c**\ *clearances*][\ **+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][\ **+p**\ [*pen*]][\ **+r**\ [*radius*\ ]][\ **+s**\ [[*dx*/*dy*/][*shade*\ ]]]
+    控制图片的背景面板属性
+
+    若只使用 **-F** 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
+    下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
+
+    - **+p**\ *pen* 指定背景面板的画笔属性（默认画笔属性由 :ref:`MAP_FRAME_PEN <MAP_FRAME_PEN>` 决定）
+    - **+g**\ *fill* 设置背景面板的填充色 [默认不填充]
+    - **+c**\ *clearances* 以设置不同方向的空白间隔
+    - **+i**\ *gap*/*pen* 在背景面板内部绘制一个额外的内边框。\ *gap* 为外边框
+      与内边界之间的距离 [2p]，默认边界属性由 :ref:`MAP_DEFAULT_PEN <MAP_DEFAULT_PEN>` 控制
+    - **+r**\ *radius* 控制圆角矩形边框，圆角矩形半径 *radius* 默认为 6p
+    - **+s** 绘制背景面板阴影区。\ *dx*/*dy* 是阴影区相对于背景面板的偏移量 [4p/4p]。
+      *shade* 为阴影区的颜色 [gray50]。
+
+.. _-G:
+
+**-G**\ [*color*\ ][**+b**\ \|\ **+f**\ \|\ **+t**]
+    修改特定像素值为其它颜色或透明（该选项可重复使用）
+
+    对于1-bit光栅图片，可以通过 **+b** 或 **+f** 指定背景色或前景色为 *color*\ 。
+    若不给 *color* 则表示设置背景色或前景色为透明色。
+    对于其它图片而言，还可以使用 **-G**\ *color*\ **+t** 将颜色 *color* 设置为
+    透明。
+
+.. _-I:
+
+**-I**
+    绘图前对1-bit图片进行反转，即黑色变白色，白色变黑色
+
+.. include:: explain_-J.rst_
+..
+    仅与 **-p** 一起使用。
+
+.. _-M:
+
+**-M**
     使用YIQ变换将彩图转换成灰度图
 
-``-G[b|f|t]<color>``
-    对光栅图片设置颜色属性
+.. include:: explain_-R.rst_
+..
+    仅与 **-p** 选项一起使用。
 
-    1-bit图片默认为黑色和白色，可以通过如下选项进行修改：
-
-    - ``-Gb<color>`` 设置背景色，即将白色替换成其他颜色
-    - ``-Gf<color>`` 设置前景色，即将黑色替换成其他颜色
-    - ``<color>`` 可以取 ``-`` ，表示透明色
-
-    对于8、24、32位图片而言：
-
-    - ``-Gt<color>`` 将某个特定颜色设置为透明
-
-``-I``
-    绘图前对1-bit图片进行反转，即黑色变白色，白色变黑色
+.. include:: explain_-Rz.rst_
 
 .. include:: explain_-U.rst_
 
+.. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
+
+.. include:: explain_perspective.rst_
+
 .. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
+
+注意事项
+--------
+
+**-G** 和 **-I** 选项仅适用于光栅图片文件，对于EPS文件无效。
 
 示例
 ----
 
-::
+绘制GMT示例图片 needle.jpg，其宽度为7厘米::
 
-    gmt image logo.jpg -Dx0/0+w1i -F+pthin,blue -png image
+    gmt image @needle.jpg -Dx0/0+w7c -pdf plot
 
-::
+绘制相同的文件，但是反转其RGB带::
 
-    gmt image tiger.eps -Dx2i/1i+jTR+w3i -png image
+    gmt image @needle.jpg+b2,1,0 -Dx0/0+w7c -pdf plot
 
-::
+相同的文件，只绘制其红色带，但以灰度方式绘制::
 
-    gmt image 1_bit.ras -Gbbrown -Gfred -Dx0/0+w1c+n5 -png image
+    gmt image @needle.jpg+b0 -Dx0/0+w7c -pdf plot
+
+绘制EPS文件::
+
+    gmt image @gallo.eps -Dx2i/1i+jTR+w3i -png image
+
+以一个1-bit光栅图片为模板，设其背景色为brown、前景色为red，并设置重复5x5次的宽度为1厘米::
+
+    gmt image 1_bit.ras -Gbrown+b -Gred+f -Dx0/0+w1c+n5 -png image
+
+相关模块
+--------
+
+:doc:`gmtlogo`
+:doc:`legend`,
+:doc:`colorbar`
+:doc:`plot`,
+:doc:`psconvert`
