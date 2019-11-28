@@ -1,4 +1,5 @@
 .. index:: ! gmtselect
+.. include:: common_SYN_OPTs.rst_
 
 gmtselect
 =========
