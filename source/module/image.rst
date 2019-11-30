@@ -135,9 +135,9 @@ image
 
     gmt image @gallo.eps -Dx2i/1i+jTR+w3i -png image
 
-以一个1-bit光栅图片为模板，设其背景色为brown、前景色为red，并设置重复5x5次的宽度为1厘米::
+以一个1-bit光栅图片为模板，设其背景色为darkgray、前景色为yellow，并设置重复6x12次，宽度为2.5厘米::
 
-    gmt image 1_bit.ras -Gbrown+b -Gred+f -Dx0/0+w1c+n5 -png image
+    gmt image @vader1.png -Gdarkgray+b -Gyellow+f -Dx0/0+w2.5c+n6/12 -pdf image
 
 相关模块
 --------
