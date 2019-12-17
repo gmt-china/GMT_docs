@@ -24,7 +24,7 @@ M 5 5 600+u f
 G 0.05i
 #I SOEST_logo.ras 3i CT
 G 0.05i
-B rainbow.cpt 0.2i 0.2i
+B rainbow 0.2i 0.2i
 G 0.05i L 9 4 R Smith et al., @%5%J. Geophys. Res., 99@%%, 2000
 G 0.1i
 P
