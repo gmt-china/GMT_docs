@@ -13,6 +13,7 @@ GMT中文手册
 
 文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
 欢迎更多的志愿者加入到文档的维护工作中来。
+**一个人可以走的很快，但是一群人却可以走的更远。**
 
 .. _Generic Mapping Tools: https://www.generic-mapping-tools.org
 .. _GMT中文社区: https://gmt-china.org/
