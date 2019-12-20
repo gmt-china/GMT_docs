@@ -240,7 +240,7 @@ coast
       四个level的shore
     - 在同一个命令中可以多次使用 **-W**\ ，以指定不同 *level* 的shore的画笔属性
     - **-W** 选项中 *level* 是可选的，而 *pen* 是必须的！因而 **-W2**
-       会被解释为所有level的画笔属性，而不是level 2
+      会被解释为所有level的画笔属性，而不是level 2
 
 .. include:: explain_-XY.rst_
 
