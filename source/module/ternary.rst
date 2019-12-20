@@ -122,7 +122,7 @@ ternary
 
 .. include:: explain_-U.rst_
 
-.. include:: explain_-V.rst_a
+.. include:: explain_-V.rst_
 
 .. _-W:
 
