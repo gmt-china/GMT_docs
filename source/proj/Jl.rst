@@ -9,10 +9,10 @@
 
 该投影的参数为::
 
-    -JB<lon>/<lat>/<lat1>/<lat2>/<width>
-    -Jb<lon>/<lat>/<lat1>/<lat2>/<scale>
+    -JL<lon0>/<lat0>/<lat1>/<lat2>/<width>
+    -Jl<lon0>/<lat0>/<lat1>/<lat2>/<scale>
 
-- ``<lon>`` 和 ``<lat>`` 是投影中心的位置
+- ``<lon0>`` 和 ``<lat0>`` 是投影中心的位置
 - ``<lat1>`` 和 ``<lat2>`` 是两条标准纬线
 
 Lambert保角投影场用于绘制美国地图，两个固定的标准纬线是33ºN和45ºN。
