@@ -9,8 +9,8 @@
 
 该投影的参数为::
 
-    -JB<lon>/<lat>/<lat1>/<lat2>/<width>
-    -Jb<lon>/<lat>/<lat1>/<lat2>/<scale>
+    -JL<lon>/<lat>/<lat1>/<lat2>/<width>
+    -Jl<lon>/<lat>/<lat1>/<lat2>/<scale>
 
 - ``<lon>`` 和 ``<lat>`` 是投影中心的位置
 - ``<lat1>`` 和 ``<lat2>`` 是两条标准纬线
