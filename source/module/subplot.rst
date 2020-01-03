@@ -386,3 +386,12 @@ subplot end 语法
         gmt subplot end
     gmt end
 
+相关模块
+--------
+
+:doc:`begin`,
+:doc:`clear`,
+:doc:`docs`,
+:doc:`end`,
+:doc:`figure`,
+:doc:`inset`
