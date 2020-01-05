@@ -4,7 +4,6 @@
 .. toctree::
    :maxdepth: 2
 
-   cmd/index
    modes-difference
    low-level/index
    variables

@@ -6,6 +6,7 @@
 
    get-started/index
    commands
+   scripting
    basemap
    coastline
    lines
