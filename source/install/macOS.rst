@@ -16,6 +16,10 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
        $ brew update && brew upgrade
        $ brew install gmt
 
+    也可以使用如下命令安装GMT的最新开发版（即源码的master分支）::
+
+       $ brew install gmt --HEAD
+
 2.  安装GMT依赖的其它软件::
 
        # 必须软件包
