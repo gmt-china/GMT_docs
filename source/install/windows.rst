@@ -86,7 +86,7 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
     如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境
     变量 **PATH** 中，以保证 GMT 可以找到其提供的 **gm** 命令。
 
-3.  安装 Ghostscript 9.50 (**根据是否需要中文支持决定是否安装**)
+3.  安装 Ghostscript (**根据是否需要中文支持决定是否安装**)
 
     GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片，因而 Ghostscript 是必须的。
     GMT安装包中自带了Ghostscript，但是其并不支持在GMT图片中添加中文。
