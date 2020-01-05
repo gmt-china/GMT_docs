@@ -7,4 +7,5 @@
    linux
    macOS
    windows
+   showcase
    custom-fonts

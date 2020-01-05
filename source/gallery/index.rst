@@ -6,4 +6,3 @@
     beachball/index
     histogram/index
     animation/index
-    chinese-texts/index
