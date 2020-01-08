@@ -97,8 +97,8 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
 
     安装包下载地址:
 
-    - `gs950w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w32.exe>`__
-    - `gs950w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe>`__
+    - `gs950w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe>`__
+    - `gs950w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w32.exe>`__
 
     .. warning::
 
