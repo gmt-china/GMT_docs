@@ -11,7 +11,7 @@ import datetime
 sys.path.insert(0, os.path.abspath('_extension'))
 
 # -- General configuration ------------------------------------------------
-needs_sphinx = '1.5.0'
+needs_sphinx = '1.8'
 source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 nitpicky = True
@@ -33,7 +33,7 @@ extensions = [
     'sphinx_cjkspace.cjkspace',
     'sphinx_gmt.gmtplot'
 ]
-mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
@@ -42,6 +42,10 @@ copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = 'GMT中文社区'
 version = '5.4'
 release = version
+
+# Set smartquotes_action to 'qe' to disable Smart Quotes transform of -- and ---
+smartquotes_action = 'qe'
+
 rst_prolog = '''
 .. |GMT5_latest_release| replace:: 5.4.5
 .. |GMT5_latest_release_date| replace:: 2019-01-04
@@ -95,19 +99,19 @@ html_context = {
     ],
 }
 
-# See https://github.com/rtfd/sphinx_rtd_theme/issues/761
-# Load custom stylesheets to support Algolia search.
-html_css_files = [
-  'algolia.css',
-  'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
-]
+# # See https://github.com/rtfd/sphinx_rtd_theme/issues/761
+# # Load custom stylesheets to support Algolia search.
+# html_css_files = [
+#   'algolia.css',
+#   'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css'
+# ]
 
 # Load custom javascript to support Algolia search. Note that the sequence
 # defined below (external first) is intentional!
-html_js_files = [
-  ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
-  ('algolia.js', {'defer': 'defer'})
-]
+# html_js_files = [
+#   ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
+#   ('algolia.js', {'defer': 'defer'})
+# ]
 
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
@@ -148,5 +152,5 @@ latex_elements = {
 }
 
 intersphinx_mapping = {
-    'gmt': ('http://gmt.soest.hawaii.edu/doc/5.4.5/', None),
+    'gmt': ('https://docs.generic-mapping-tools.org/5.4/', None),
 }
