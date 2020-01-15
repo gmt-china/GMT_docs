@@ -1,4 +1,5 @@
 .. index:: ! coupe
+.. include:: common_SYN_OPTs.rst_
 
 coupe
 =====
@@ -8,105 +9,211 @@ coupe
 
 :doc:`meca` 在绘制震源球时，本质上是取了一个水平剖面，并将三维震源球的下半球
 投影到该水平剖面上。而 :doc:`coupe` 则更灵活一些，可以将三维震源球投影到任意
-一个剖面上。
+一个剖面上（例如垂直平面）。
 
 - 对于一个水平剖面，会将下半球投影到平面上（即 :doc:`meca` 的做法）
-- 对于一个垂直剖面，会将垂直平面后的半球投影到平面上
+- 对于一个垂直剖面，会将垂直平面\ **后方** 的半球投影到平面上
 - 对于任意一个非水平的平面而言：
 
   - 北方向为平面的最速下降方向
   - 东方向为平面的走向方向
   - 下方向则根据右手定则确定
 
-剖面类型
---------
-
-``-A`` 选项用于确定剖面。
-
-``-Aa<lon1>/<lat1>/<lon2>/<lat2>/<dip>/<p_width>/<dmin>/<dmax>[f]``
-
-    - ``<lon1>/<lat1>`` 剖面起点的经纬度
-    - ``<lon2>/<lat2>`` 剖面终点的经纬度
-    - 起点和终点确定了剖面的长度
-    - ``<dip>`` 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）
-    - ``<p_width>`` 剖面的宽度（即剖面不是一个平面，而是一个有厚度的长方体）
-    - ``<dmin>/<dmax>`` 是沿着最速下降方向（“北”方向）的最小、最大距离
-    - ``f`` 表示根据剖面的参数自动计算边框的范围
-    - TODO: ``<p_width>/<dmin>/<dmax>`` 的具体含义尚不明确
-
-``-Ab<lon1>/<lat1>/<strike>/<p_length>/<dip>/<p_width>/<dmin>/<dmax>[f]``
-
-    - ``<lon1>/<lat1>`` 剖面起点的经纬度
-    - ``<strike>`` 是剖面的走向
-    - ``<p_length>`` 是剖面的长度
-    - 其他参数与 ``-Aa`` 相同
-
-``-Ac<x1>/<y1>/<x2>/<y2>/<dip>/<p_width>/<dmin>/<dmax>[f]``
-
-    与 ``-Aa`` 选项相同，只是 ``<x>/<y>`` 为笛卡尔坐标而不是地理坐标
-
-``-Ad<x1>/<y1>/<strike>/<p_length>/<dip>/<p_width>/<dmin>/<dmax>[f]``
-
-    与 ``-Ab`` 选项相同，只是 ``<x>/<y>`` 为笛卡尔坐标而不是地理坐标
-
-选项
+语法
 ----
 
-``-E<color>``
-    扩张部分的填充色，默认为白色
+**gmt coupe** [ *files* ] |-J|\ *parameters*
+|SYN_OPT-R| |-A|\ *parameters*
+|-S|\ *<format><scale>*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
+[ |SYN_OPT-B| ]
+[ |-E|\ *fill* ]
+[ |-F|\ *mode*\ [*args*] ]
+[ |-G|\ *fill* ]
+[ |-L|\ *[pen]* ]
+[ |-M| ] [ |-N| ]
+[ |-Q| ]
+[ |-T|\ *nplane*\ [/*pen*\ ] ]
+[ |SYN_OPT-U| ]
+[ |SYN_OPT-V| ]
+[ |-W|\ *pen* ]
+[ |SYN_OPT-X| ]
+[ |SYN_OPT-Y| ]
+[ |-Z|\ *cpt* ]
+[ |SYN_OPT-di| ]
+[ |SYN_OPT-e| ]
+[ |SYN_OPT-h| ]
+[ |SYN_OPT-i| ]
+[ |SYN_OPT-p| ]
+[ |SYN_OPT-t| ]
+[ |SYN_OPT-:| ]
+[ |SYN_OPT--| ]
 
-``-F<mode>[<args>]``
+必须选项
+--------
+
+.. include:: explain_intables.rst_
+
+.. include:: explain_-J.rst_
+
+.. include:: explain_-R.rst_
+
+.. _-A:
+
+**-A**
+    以多种方式指定剖面
+
+**-Aa**\ *lon1/lat1/lon2/lat2/dip/p\_width/dmin/dmax*\ [**+f**]
+
+    - *lon1/lat1* 剖面起点的经纬度
+    - *lon2/lat2* 剖面终点的经纬度
+    - *dip* 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）
+    - *p_width* 剖面的宽度（即剖面不是一个平面，而是一个有厚度的长方体）
+    - *dmin/dmax* 是沿着最速下降方向（“北”方向）的最小、最大距离（对于垂直平面，可以理解为限制地震深度范围）
+    - **+f** 表示根据剖面的参数自动计算边框的范围
+
+**-Ab**\ *lon1/lat1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**\ ]
+
+    - *lon1/lat1* 剖面起点的经纬度
+    - *strike* 是剖面的走向
+    - *p_length* 是剖面的长度
+    - 其他参数与 **-Aa** 相同
+
+**-Ac**\ *x1/y1/x2/y2/dip/p\_width/dmin/dmax*\ [**+f**\ ]
+
+    与 **-Aa** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
+
+**-Ad**\ *x1/y1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**\ ]
+    与 **-Ab** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
+
+.. include:: explain_meca_-S.rst_
+
+可选选项
+--------
+
+.. include:: explain_-B.rst_
+
+.. _-E:
+
+**-E**\ *fill*
+    扩张部分的填充色 [默认为白色]
+
+.. _-F:
+
+**-F**\ *mode*\ [*args*]
     设置多个属性，可重复使用多次
 
-    - ``-Fs<symbol>[<size[/<fontsize>[/<offset>[<u>]]]]`` 见官方文档
-    - ``-Fa[<size>][/<P_axis_symbol>[<T_axis_symbol>]]`` 计算并绘制P和T轴的符号。 ``<size>`` 是符号大小，符号与 :doc:`plot` 类似，可以取 ``c|d|h|i|p|s|t|x`` ，默认值为 ``6p/cc``
-    - ``-Fe<fill>`` 设置T轴符号的填充色
-    - ``-Fg<fill>`` 设置P轴符号的填充色
-    - ``-Fp<pen>`` P轴轮廓的画笔属性
-    - ``-Ft<pen>`` T轴轮廓的画笔属性
-    - ``-Fr<fill>`` 在标签后加一个方框
+**-Fs**\ *symbol*\ [*size*\ ][**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
+    不绘制震源球，仅绘制一个符号。
 
-``-G<color>``
-    指定压缩部分的填充色，默认值为黑色
+    *symbol* 为符号类型，可以选择 **c**\ \|\ **d**\ \|\ **i**\ \|\ **s**\ \|\ **t**\ \|\ **x**\ ，
+    符号的具体含义见 :doc:`plot` 模块的 **-S** 选项。\ *size* 为符号大小。
 
-``-L[<pen>]``
+    输入数据的格式为::
+
+        longitude latitude depth [event_label]
+
+    若未指定 *size*\ ，则需要从输入数据的第四列读入符号大小，其余列向后移动。
+
+    *event_label* 默认位于震源球上方。使用 **+f** 控制其字体，\ **+j** 控制其
+    位置，\ **+o** 进一步控制其偏移量。
+
+**-Fa**\ [*size*\ [/*Psymbol*\ [*Tsymbol*\ ]]]
+    计算并在震源球上P轴和T轴处绘制符号。
+    *size* 是符号大小；
+    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\ \|\ **d**\ \|\ **h**\ \|\ **i**\ \|\ **p**\ \|\ **s**\ \|\ **t**\ \|\ **x**\ ，
+    具体含义见 :doc:`plot` **-S** 选项 [默认值为 6p/cc]
+
+**-Fe**\ *fill*
+    设置T轴符号的填充色
+
+**-Fg**\ *fill*
+    设置P轴符号的填充色
+
+**-Fp**\ *pen*
+    设置P轴符号的画笔属性
+
+**-Ft**\ *pen*
+    设置T轴符号的画笔属性
+
+**-Fr**\ [*fill*\ ]
+    在震源球标签后加一个方框 [默认填充色为白色]
+
+.. _-G:
+
+**-G**\ *color*
+    指定压缩部分的填充色 [默认为黑色]
+
+.. _-L:
+
+**-L**\ [*pen*]
     设置震源球外部轮廓的线条属性
 
-``-M``
-    所有震级使用相同的大小，具体大小由 ``-S`` 选项的 ``<scale>`` 参数决定。
+.. _-M:
 
-``-N``
+**-M**
+    所有震级使用相同的大小，具体大小由 **-S** 选项的 *scale* 参数决定。
+
+.. _-N:
+
+**-N**
     地图区域外的震源球也要绘制，默认不绘制。
 
-``-Q``
-    默认会生成一些临时文件，其中包含了剖面和剖面上的震源机制的信息，使用该选项，则不会生成这些临时文件。
+.. _-Q:
 
-``-T<num_of_planes][/<pen>]``
-    绘制断层平面。 ``<num_of_planes>`` 可以取：
+**-Q**
+    默认会生成一些临时文件，其中包含了剖面和剖面上的震源机制的信息，
+    供调试时使用。使用该选项，则不会生成这些临时文件。
 
-    - ``0`` 绘制两个断层面
-    - ``1`` 绘制第一个断层面
-    - ``2`` 绘制第二个断层面
+.. _-T:
 
-``-S``
-    选择震源机制解的格式。与 :doc:`meca` 中 ``-S`` 选项用法相同
+**-T**\ [*nplane*\ ][\ **/**\ *pen*]
+    绘制断层平面。
 
-    唯一的不同在于，输入文件中 ``newX`` 和 ``newY`` 对该命令无效，这里加上 ``newX`` 和 ``newY`` 只是为了使得该命令可以使用与 :doc:`meca` 相同的输入文件。
+    *nplanes* 可以取：
 
-``-W<pen>``
-    设置断层边界的画笔属性
+    - *0** 绘制两个断层面
+    - **1** 绘制第一个断层面
+    - **2** 绘制第二个断层面
 
-``-Z<cpt>``
-    指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。
+    *pen* 为画笔属性。
+
+    对于双力偶机制解而言，\ **-T** 选项只绘制震源球的圆周和断层平面，不填充颜色；
+    对于非双力偶机制解而言，\ **-T0** 在震源球的基础上覆盖上透明的断层平面。
 
 .. include:: explain_-U.rst_
 
+.. include:: explain_-V.rst_
+
+**-W**\ [*pen*]
+    设置断层平面的画笔属性 [默认为 default,black,solid]
+
+.. include:: explain_-XY.rst_
+
+.. _-Z:
+
+**-Z**\ *cpt*
+    指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。
+
+.. include:: explain_-di.rst_
+
+.. include:: explain_-e.rst_
+
+.. include:: explain_-h.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_perspective.rst_
+
 .. include:: explain_-t.rst_
+
+.. include:: explain_colon.rst_
+
+.. include:: explain_help.rst_
 
 示例
 ----
 
-下面的示例展示了 ``-Aa`` 选项的用法，指定P1和P2为剖面的起点和终点，并展示了不同倾角时的震源球的效果。
+下面的示例展示了 **-Aa** 选项的用法，指定P1和P2为剖面的起点和终点，并展示了不同倾角时的震源球的效果。
 
 .. gmtplot:: /scripts/coupe_ex1.sh
 
@@ -117,3 +224,11 @@ coupe
 .. gmtplot:: /scripts/coupe_ex2.sh
 
    coupe示例图2
+
+相关模块
+--------
+
+:doc:`meca`,
+:doc:`polar`,
+:doc:`basemap`,
+:doc:`plot`

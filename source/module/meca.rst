@@ -43,108 +43,7 @@ meca
 
 .. include:: explain_-R.rst_
 
-.. _-S:
-
-**-S**\ *<format><scale>*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-    指定输入数据的格式、震源球大小等属性。
-
-    *format* 用于指定输入的震源机制解的格式。
-
-    *scale* 指定了5级地震（地震矩为4.0E23 dynes-cm）的震源球的直径。
-    默认情况下，震源球的直径与震级大小成正比，即实际直径为 *size* = M / 5 * *scale*\ 。
-    若使用 **-M** 选项，则所有震源球大小相同。
-
-    每个震源球都可以有一个可选的标签。标签默认位于震源球的上方。
-
-    - **+f**\ *font* 设置震源球标签的文本属性
-    - **+j**\ *justify* 标签相对于震源球的位置 [默认为 **BC**\ ，即正上方]
-    - **+o**\ *dx*\ [/*dy*] 标签的额外偏移量
-
-**-Sa**\ *scale*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-    Aki and Richards约定的震源机制格式。输入文件的具体格式为::
-
-        X  Y  depth  strike  dip  rake  mag  [newX  newY]  [title]
-
-    - *X* 和 *Y* 为震源经度和纬度
-    - *depth* 为震源深度，单位为km
-    - *strike*\ 、\ *dip*\ 、\ *rake* 为断层的三个基本参数，单位为度
-    - *mag* 为地震震级
-    - *newX* 和 *newY* 震源球在图上的经纬度[可选]。默认震源球会放在 *X* 和 *Y*
-      处，指定新的震源球放置位置 *newX* 和 *newY* 以使得震源球与震源位置错开。
-    - *title* 震源球标签[可选]
-
-**-Sc**\ *scale*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-    Global CMT约定的震源机制解格式。输入文件的具体格式为::
-
-        X Y depth strike1 dip1 rake1 strike2 dip2 rake2 mantissa exponent [newX newY] [title]
-
-    - *X* 和 *Y* 为震源经度和纬度
-    - *depth* 为震源深度，单位为km
-    - 两组 *strike*\ 、\ *dip*\ 、\ *rake* 为两个断层面的基本参数
-    - *mantissa* 和 *exponent* 是地震标量矩的尾数和指数部分。
-      例如，地震标量矩为9.56e+26 dyne-cm，则 *mantissa*\ =9.56，\ *exponent*\ =26
-    - *newX* 和 *newY* 震源球在图上的经纬度[可选]。默认震源球会放在 *X* 和 *Y*
-      处，指定新的震源球放置位置 *newX* 和 *newY* 以使得震源球与震源位置错开。
-    - *title* 震源球标签[可选]
-
-**-Sm\|d\|z**\ *scale*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-    地震矩张量。输入数据格式为::
-
-        X Y depth mrr mtt mff mrt mrf mtf exp [newX newY] [title]
-
-    - *X* 和 *Y* 为震源经度和纬度
-    - *depth* 为震源深度，单位为km
-    - *mrr* 等是地震矩的6个分量，单位是 :math:`10^{exp}` dyne-cm
-    - *exp* 地震矩的指数部分。例如 *mrr*\ =2.5，\ *exp*\ =26 ，则真实 *mrr* = 2.0e26
-    - *newX* 和 *newY* 震源球在图上的经纬度[可选]。默认震源球会放在 *X* 和 *Y*
-      处，指定新的震源球放置位置 *newX* 和 *newY* 以使得震源球与震源位置错开。
-    - *title* 震源球标签[可选]
-
-    地震矩张量可以分解成各向同性部分（ISO）、双力偶部分（DC）和补偿线性向量
-    偶极部分（CLVD）。
-
-    - **m** 表示绘制完整的地震矩张量（ISO+DC+CLVD）
-    - **d** 表示仅绘制地震矩的双力偶部分（DC）
-    - **z** 表示仅绘制地震矩的各向异性部分（DC+CLVD）
-
-    说明：
-
-    - 6个分量使用的坐标系为USE坐标系，与Global CMT的坐标系一致
-    - Global CMT的矩张量解不包含各向同性部分，因而 **-Sm** 和 **-Sz** 的效果相同。
-
-**-Sp**\ *scale*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-    由两个断层平面的部分数据构成的机制解。输入数据格式为::
-
-        X Y depth strike1 dip1 strike2 fault mag [newX newY] [title]
-
-    - *X* 和 *Y* 为震源经度和纬度
-    - *depth* 为震源深度，单位为km
-    - *strike1* 和 *dip1* 平面1的断层参数，\ *strike2* 是平面2的断层参数
-    - *fault* 取-1或+1，表示正断层和逆断层
-    - *mag* 地震震级
-    - *newX* 和 *newY* 震源球在图上的经纬度[可选]。默认震源球会放在 *X* 和 *Y*
-      处，指定新的震源球放置位置 *newX* 和 *newY* 以使得震源球与震源位置错开。
-    - *title* 震源球标签[可选]
-
-**-Sx\|y\|t**\ *scale*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-    指定T、N、P轴的方位和大小。输入数据格式为::
-
-        X Y depth Tvalue Tazim Tplunge Nvalue Nazim Nplunge Pvalue Pazim Pplunge exp [newX newY] [title]
-
-    - *X* 和 *Y* 为震源经度和纬度
-    - *depth* 为震源深度，单位为km
-    - *Tvalue* 等9个量定义了T、N、P轴的大小和方向
-    - *exp* 是 *Tvalue* 等的指数部分
-    - *newX* 和 *newY* 震源球在图上的经纬度[可选]。默认震源球会放在 *X* 和 *Y*
-      处，指定新的震源球放置位置 *newX* 和 *newY* 以使得震源球与震源位置错开。
-    - *title* 震源球标签[可选]
-
-    地震矩张量可以分解成各向同性部分（ISO）、双力偶部分（DC）和补偿线性向量
-    偶极部分（CLVD）。
-
-    - *x* 绘制完整的地震矩张量 (ISO+DC+CLVD)
-    - *y* 只绘制地震矩的双力偶部分 (DC)
-    - *z* 只绘制地震局的各向异性部分 (DC+CVLD)
+.. include:: explain_meca_-S.rst_
 
 可选选项
 --------
@@ -237,6 +136,9 @@ meca
     - **2** 绘制第二个断层面
 
     *pen* 为画笔属性。
+
+    对于双力偶机制解而言，\ **-T** 选项只绘制震源球的圆周和断层平面，不填充颜色；
+    对于非双力偶机制解而言，\ **-T0** 在震源球的基础上覆盖上透明的断层平面。
 
 .. include:: explain_-U.rst_
 
