@@ -41,7 +41,7 @@ polar
 必须选项
 --------
 
-.. include:: ../../explain_intables.rst_
+.. include:: explain_intables.rst_
 ..
 
     输入数据的格式为::
@@ -157,7 +157,7 @@ polar
 
 .. include:: explain_-t.rst_
 
-.. include:: explain_-colon.rst_
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 

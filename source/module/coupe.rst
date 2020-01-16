@@ -210,21 +210,6 @@ coupe
 
 .. include:: explain_help.rst_
 
-示例
-----
-
-下面的示例展示了 **-Aa** 选项的用法，指定P1和P2为剖面的起点和终点，并展示了不同倾角时的震源球的效果。
-
-.. gmtplot:: /scripts/coupe_ex1.sh
-
-   coupe示例图1
-
-下面的示例将震源球投影到不同方位角的剖面上的效果：
-
-.. gmtplot:: /scripts/coupe_ex2.sh
-
-   coupe示例图2
-
 相关模块
 --------
 
