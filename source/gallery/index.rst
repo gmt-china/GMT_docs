@@ -3,6 +3,5 @@
 
 .. toctree::
 
-    beachball/index
     histogram/index
     animation/index
