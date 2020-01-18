@@ -178,7 +178,7 @@ meca
 示例
 ----
 
-绘制了两个震源球，位置在其震中处。震源球的大小随震级变化：5 级地震的震源球大小为 1 厘米。::
+绘制了两个震源球，位置在其震中处。震源球的大小随震级变化：5 级地震的震源球大小为 1 厘米::
 
     gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png beachball_1 << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
@@ -186,7 +186,7 @@ meca
     104.11 31.52 27.1 22 53 57 6 0 0 B
     EOF
 
-绘制了两个震源球，位置在其震中处。震源球的大小固定。::
+绘制了两个震源球，位置在其震中处。震源球的大小固定::
 
     gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M -png beachball_2 << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
@@ -210,7 +210,7 @@ meca
     104.12 31.78 12.7 186 68  107 4.7 103.83 32.26 F
     104.23 31.61 62.0  86 63  -51 4.7 104.96 31.69 G
     EOF
-    gmt colorbar -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm -L -S
+    gmt colorbar -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm
     gmt end
 
 相关模块
