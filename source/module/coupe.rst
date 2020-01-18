@@ -225,7 +225,7 @@ coupe
     138.37 42.85 248 -2.49  3.40 -0.91  3.09  0.83 -3.64 25 X Y
     EOF
     gmt basemap -BWS -Byaf+l"Focal depth (km)" -Bxaf+l"Distance (km)"
-    gmt end
+    gmt end show
 
 相关模块
 --------
