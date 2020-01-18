@@ -211,7 +211,7 @@ meca
     104.23 31.61 62.0  86 63  -51 4.7 104.96 31.69 G
     EOF
     gmt colorbar -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm
-    gmt end
+    gmt end show
 
 相关模块
 --------
