@@ -9,3 +9,4 @@
    dcw/index
    earth_relief
    gadm/index
+   plate_boundaries/index
