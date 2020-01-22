@@ -234,12 +234,12 @@ GMT+PROJ4
 也可以直接使用 `EPSG codes <http://spatialreference.org>`_\ ，但需要设置环境变量
 ``GDAL_DATA`` 指向 GDAL 的 data 子目录。例如 ``-JEPSG:4326`` 表示使用 WGS-84 系统。
 
-对于 :doc:`/module/mapproject` 和 :doc:`/module/grdproject` 模块，可以直接使用
+对于 :doc:`gmt:mapproject` 和 :doc:`/module/grdproject` 模块，可以直接使用
 ``+to`` 关键字直接指定要将A参考系统转换为B参考系统，而不需要中间步骤。例如::
 
     -JEPSG:4326+to+proj=aeqd+ellps=WGS84+units=m
 
-对于使用 :doc:`/module/mapproject` 和 :doc:`/module/grdproject` 进行点和网格
+对于使用 :doc:`gmt:mapproject` 和 :doc:`/module/grdproject` 进行点和网格
 文件的转换，GMT可以使用
 所有的 `PROJ.4投影 <https://proj4.org/operations/projections/index.html>`_\ 。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被

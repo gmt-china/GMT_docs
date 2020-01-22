@@ -378,7 +378,6 @@
    kml2gmt
    legend
    makecpt
-   mapproject
    meca
    plot
    polar
