@@ -19,7 +19,7 @@ GADM提供了两种下载方式：
 需要说明的是，GADM 中对country 的定义为
 “any entity with `an ISO country code <http://zh.wikipedia.org/wiki/ISO_3166-1>`_\ ”。
 因而如果想要下载完整的中国数据，实际上需要下载China、Hong Kong、Macao和Taiwan
-四个数据。
+四个数据。由于GADM提供的中国国界数据不符合我国领土主张，因此本文以美国（United States）为例介绍数据下载及使用。
 
 数据格式及转换
 --------------
@@ -33,7 +33,7 @@ GADM提供了两种下载方式：
 - R (sf)：可直接用于R语言绘图
 
 如果在安装GMT时，GMT已经正确链接了GDAL库，则Shapefile格式的数据可以直接用于绘图。
-实际绘图时，可能只想要一小部分数据（比如某个省的省界），这种情况下，则需要将
+实际绘图时，可能只想要一小部分数据（比如某个省/洲的界线），这种情况下，则需要将
 数据转换成纯文本文件，以方便从数据中提取出需要的部分。
 
 GDAL 的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_ 可以实现多种地理数据
@@ -44,67 +44,57 @@ GDAL 的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_ 可以实现多种地理
 Geopackage转GMT
 ~~~~~~~~~~~~~~~
 
-以China数据为例，解压得到文件 :file:`gadm36_CHN.gpkg`\ 。使用如下命令查看文件的信息::
+以United States数据为例，解压得到文件 :file:`gadm36_USA.gpkg`\ 。使用如下命令查看文件的信息::
 
-    $ ogrinfo gadm36_CHN.gpkg
-    INFO: Open of `gadm36_CHN.gpkg'
+    $ ogrinfo gadm36_USA.gpkg
+    INFO: Open of `gadm36_USA.gpkg'
           using driver `GPKG' successful.
-    1: gadm36_CHN_0 (Multi Polygon)
-    2: gadm36_CHN_1 (Multi Polygon)
-    3: gadm36_CHN_2 (Multi Polygon)
-    4: gadm36_CHN_3 (Multi Polygon)
+    1: gadm36_USA_2 (Multi Polygon)
+    2: gadm36_USA_1 (Multi Polygon)
+    3: gadm36_USA_0 (Multi Polygon)
 
-可以看到Geopackage文件中包含了四个文件，使用如下命令（注意其中的一对单引号不可省略）
+可以看到Geopackage文件中包含了三个文件，使用如下命令（注意其中的一对单引号不可省略）
 将其转换为GMT可识别的格式::
 
-    ogr2ogr -f OGR_GMT '' gadm36_CHN.gpkg gadm36_CHN_0
-    ogr2ogr -f OGR_GMT '' gadm36_CHN.gpkg gadm36_CHN_1
-    ogr2ogr -f OGR_GMT '' gadm36_CHN.gpkg gadm36_CHN_2
-    ogr2ogr -f OGR_GMT '' gadm36_CHN.gpkg gadm36_CHN_3
+    ogr2ogr -f OGR_GMT '' gadm36_USA.gpkg gadm36_USA_0
+    ogr2ogr -f OGR_GMT '' gadm36_USA.gpkg gadm36_USA_1
+    ogr2ogr -f OGR_GMT '' gadm36_USA.gpkg gadm36_USA_2
 
-同理，对Hong Kong、Macao和Taiwan的数据做同样的处理即可。
-最终得到以 :file:`.gmt` 结尾的数据12个，其中 CHN 四个、HKG 两个、
-MAC 三个、TWN 三个。
+最终得到以 :file:`.gmt` 结尾的数据3个。
 
 Shapefile转GMT
 ~~~~~~~~~~~~~~
 
-以 China 数据为例，将下载的ZIP压缩包解压会得到一堆文件，其中
-:file:`gadm36_CHN_[0123].shp` 是真正需要的4个Shapefile的数据文件。
+以 United States 数据为例，将下载的ZIP压缩包解压会得到
+:file:`gadm36_USA_[012].shp` 3组Shapefile数据文件。
 
 使用如下命令即可将Shapefile转换为GMT可识别的格式::
 
-    ogr2ogr -f OGR_GMT gadm36_CHN_0.gmt gadm36_CHN_0.shp
-    ogr2ogr -f OGR_GMT gadm36_CHN_1.gmt gadm36_CHN_1.shp
-    ogr2ogr -f OGR_GMT gadm36_CHN_2.gmt gadm36_CHN_2.shp
-    ogr2ogr -f OGR_GMT gadm36_CHN_3.gmt gadm36_CHN_3.shp
+    ogr2ogr -f OGR_GMT gadm36_USA_0.gmt gadm36_USA_0.shp
+    ogr2ogr -f OGR_GMT gadm36_USA_1.gmt gadm36_USA_1.shp
+    ogr2ogr -f OGR_GMT gadm36_USA_2.gmt gadm36_USA_2.shp
 
-对于 Hong Kong、Macao、Taiwan 的数据做类似操作。
-最终得到以 :file:`.gmt` 结尾的数据12个，其中 CHN 四个、HKG 两个、
-MAC 三个、TWN 三个。
+最终得到以 :file:`.gmt` 结尾的数据3个。
 
 数据分级
 --------
 
-提取得到的数据文件的文件名类似 :file:`gadm36_CHN_0.gmt`\ ，其中 **CHN** 为国家/地区
+提取得到的数据文件的文件名类似 :file:`gadm36_USA_0.gmt`\ ，其中 **USA** 为国家/地区
 代码，\ **0** 表示行政等级。
 
-以中国数据为例，其数据包含了四个等级：
+以美国数据为例，其数据包含了三个等级：
 
 - 0级：即国界
-- 1级：即省界
-- 2级：即市界
-- 3级：即区界
-
-对于Hong Kong而言，则只包含0级和1级边界。
+- 1级：即州界
+- 2级：即县界
 
 使用示例
 --------
 
-中国全图
+美国本土地图
 ~~~~~~~~
 
-绘制中国全图需要前面提取出的四个 0 级数据。
+绘制美国本土地图需要前面提取出的 0 级数据。
 
 .. literalinclude:: gadm_level0.sh
 
@@ -114,10 +104,10 @@ MAC 三个、TWN 三个。
    :align: center
    :width: 80%
 
-1 级行政区划/省界
+美国 1 级行政区划/州界
 ~~~~~~~~~~~~~~~~~
 
-代码与上面的代码几乎一样，此处使用了中国的一级数据和香港、台湾、澳门的0级数据。
+代码与上面的代码几乎一样，此处使用了美国本土的1级数据。
 
 .. literalinclude:: gadm_level1.sh
 
@@ -127,15 +117,18 @@ MAC 三个、TWN 三个。
    :align: center
    :width: 80%
 
-此处绘制了全国所有省的省界数据。如果只想要绘制某个省的省界数据，可以用文本编辑器
-打开CHN的一级数据文件，在注释行中有清晰地标记出每段数据是哪个省的边界，因而
-可以很方便地提取出来。
+此处绘制了美国本土48个州的州界数据。如果只想要绘制某个州，可以用文本编辑器
+打开USA的1级数据文件，在注释行中有清晰地标记出每段数据是哪个州的边界，因而
+可以很方便地提取出来。或利用如下命令将某个州界从Shapefile中提取出来::
 
-2 级行政区划/市界
+    ogr2ogr -f OGR_GMT Alabama.gmt gadm36_USA_1.shp -where "NAME_1 = 'ALABAMA'"
+
+
+美国 2 级行政区划/县界
 ~~~~~~~~~~~~~~~~~
 
-2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 :file:`gadm36_CHN_2.gmt`\ ，
-从中提取安徽相关的数据保存到文件 :file:`gadm36_CHN_Anhui_2.gmt` 中，绘图效果如下：
+2 级数据中包含了美国所有的县级边界。此处以Alabama州为例，用上述方法在USA的2级数据文件
+中提取该州的州界和县界 :file:`Alabama.gmt`，绘图效果如下：
 
 .. literalinclude:: gadm_level2.sh
 

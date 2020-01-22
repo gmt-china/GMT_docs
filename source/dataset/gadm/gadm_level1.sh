@@ -1,7 +1,4 @@
 #!/bin/bash
 gmt begin gadm_level1 pdf,png
-gmt plot -JM15c -R72/136/15/54 gadm36_CHN_1.gmt
-gmt plot gadm36_HKG_0.gmt
-gmt plot gadm36_MAC_0.gmt
-gmt plot gadm36_TWN_0.gmt
+gmt plot -JM15c -R-132/-64/23/51 gadm36_USA_1.gmt
 gmt end
