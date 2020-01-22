@@ -2,14 +2,14 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -j auto
 SPHINXBUILD   = sphinx-build
+SPHINXOPTS    = -j auto -n
 SOURCEDIR     = source
 BUILDDIR      = build
 DOCNAME       = GMT_docs
 HTML          = dirhtml
 
-# disable "gmt end show" and one-liner autoshow (needs GMT 6.0.0)
+# disable "gmt end show" and one-liner autoshow for GMT 6.0.0 modern mode
 export GMT_END_SHOW=off
 
 # Put it first so that "make" without argument is like "make help".
@@ -33,4 +33,4 @@ serve: $(HTML)
 # Watch a Sphinx directory and rebuild the documentation when a change is detected.
 # See https://github.com/GaretJax/sphinx-autobuild for details
 watch:
-	sphinx-autobuild --open-browser --delay 1 -b ${HTML} $(SOURCEDIR) $(BUILDDIR)/${HTML}
+	sphinx-autobuild --open-browser --delay 1 -b ${HTML} ${SPHINXOPTS} $(SOURCEDIR) $(BUILDDIR)/${HTML}
