@@ -1,4 +1,4 @@
-# 维护指南
+# 贡献指南
 
 欢迎GMT中文用户参与到GMT中文手册的维护与更新中。
 
@@ -7,32 +7,29 @@
 手册的维护主要包括几个方面：
 
 - 修正错别字、语句不通等
-- 修正rST文件语法错误导致的显示问题
-- 修正文档中的错误描述和不清晰的描述
-- 优化文档结构，使得文档条理更清晰
-- 为每个文档增加索引关键词，方便用户通过关键词查找文档
-- 翻译整理模块的文档
-- 增加更多示例
+- 修正文档中的错误或不清晰的描述
+- 修正reST文件语法错误导致的显示问题
+- 调整章节结构，使得文档条理更清晰
+- 翻译整理更多模块的文档
+- 增加示例与入门教程
 
 可以通过如下几种方式参与文档的维护：
 
 1. 通过 GitHub 修改文档源码并提交 Pull Request
-2. 在项目主页提交 Issue
+2. 在 GitHub 上提交 Issue
 3. 在网页底部评论区留言
 4. 发送相关建议或投稿至 `admin@gmt-china.org`
 
 ## 构建文档
 
 本文档使用 [Sphinx](http://www.sphinx-doc.org/) 构建得到。Sphinx 是基于 Python 的
-文档生成工具。
+文档生成工具。如果想要在本地构建文档，则需要安装 Sphinx，否则可以跳过这一节。
 
-1.  安装 [Anaconda](https://www.anaconda.com/distribution/#download-section)
+1.  下载并安装 Python 3.7 版本的[Anaconda](https://www.anaconda.com/distribution/#download-section)
 
-    Anaconda是一个Python发行版。对于Python入门用户，建议直接安装Anaconda。
+    Linux用户执行如下命令以安装:
 
-    下载安装包后执行:
-
-        bash ./Anaconda3-2019.07-Linux-x86_64.sh
+        bash ./Anaconda3-2019.10-Linux-x86_64.sh
 
 2.  下载文档源码
 
@@ -119,5 +116,5 @@
 注意事项：
 
 - `master` 分支中所有脚本均使用现代模式
-- 所有脚本至少需要生成PNG格式的图片，建议使用 ``png,pdf`` 生成两种格式的图片
-- 所有脚本以 ``gmt end show`` 结尾
+- 所有脚本至少需要生成PNG格式的图片，建议使用 `png,pdf` 生成两种格式的图片
+- 所有脚本以 `gmt end show` 结尾
