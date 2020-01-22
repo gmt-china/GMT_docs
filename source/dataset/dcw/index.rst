@@ -7,7 +7,7 @@ DCW，全称为 Digital Chart of the World，即世界数字图表。
 GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其中包含了如下行政边界数据：
 
 #.  七大洲的洲界
-#.  全球250个国家或地区的边界AU.QLD
+#.  全球250个国家或地区的边界
 #.  8个大国的省界/州界
 
 GMT的 :doc:`/module/coast` 模块可以直接绘制DCW数据中提供的行政边界数据，
@@ -157,7 +157,7 @@ GMT中至少有两处会使用DCW数据：
     gmt coast -JM12c -Baf -EAU+p0.25p,red -png dataset_dcw_02
 
 绘制省/洲界
-++++++++
++++++++++++
 
 绘制澳大利亚昆士兰州(Queensland)，并设置边界颜色和填充颜色。其中 **-R** 选项后跟区域代码 **AU.QLD** 可间接指定该区域范围， **+R2** 表示在原有范围外扩大2度:
 
@@ -166,7 +166,7 @@ GMT中至少有两处会使用DCW数据：
     gmt coast -RAU.QLD+R2 -JM12c -Baf -EAU.QLD+p1p,blue+gred -png dataset_dcw_03
 
 导出省/洲界数据
-++++++++++++
++++++++++++++++
 
 导出昆士兰州的边界数据::
 
