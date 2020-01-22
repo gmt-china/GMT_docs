@@ -10,7 +10,11 @@ env:
     # GSHHG and DCW version
     - GSHHG_VERSION=2.3.7
     - DCW_VERSION=1.1.4
-    # set GMT_VERSION to 6.0 or master if you want to use the latest codes
+    # set GMT_VERSION to fetch GMT archive tarball from the GMT repository.
+    # Available values are:
+    # - master: build the latest master branch
+    # - 6.0: build the lastest 6.0 branch
+    # - 6.0.0: build the 6.0.0 release
     - GMT_VERSION=6.0.0
     # URL of the current documentation
     - GMT_DOC_VERSION=6.0
@@ -21,6 +25,7 @@ env:
     # PATH
     - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
 
+# Cache the installed GMT and TeXLive to save time
 cache:
   pip: true
   directories:
@@ -35,6 +40,7 @@ branches:
     # Regex to build versioned branches, e.g. 5.4, 6.1
     - /^\d+\.\d+$/
 
+# Install dependencies for building GMT
 addons:
   apt:
     packages:
@@ -55,20 +61,22 @@ install:
   # Install SourceCodePro fonts for PDF
   - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
   # Install tinytex (https://github.com/yihui/tinytex)
-  - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
-  - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
-          float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
-          pdftexcmds
+  - if [ ! -x "${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux/tlmgr" ]; then
+      wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
+      tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
+          float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol \
+          pdftexcmds;
+    fi
   # Install GMT
   - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then
       source ci/install-gmt.sh;
     fi
+  - xelatex --version
   - gmt --version
 
 script:
   # build html and PDF
   - make build
-  #- make dirhtml
 
 deploy:
   provider: script
@@ -77,3 +85,5 @@ deploy:
   on:
     branch:
       - master
+      # Regex to deploy on versioned branches, e.g. 5.4, 6.1
+      - /^\d+\.\d+$/
