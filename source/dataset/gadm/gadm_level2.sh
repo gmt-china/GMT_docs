@@ -1,1 +1,1 @@
-gmt plot -JM10c -R114/120/29/35 gadm36_CHN_Anhui_2.gmt -png gadm_level2
+gmt plot -JM10c -R-90/-82/29/37 Alabama.gmt -png,pdf gadm_level2

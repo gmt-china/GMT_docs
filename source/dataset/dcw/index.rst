@@ -7,7 +7,7 @@ DCW，全称为 Digital Chart of the World，即世界数字图表。
 GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其中包含了如下行政边界数据：
 
 #.  七大洲的洲界
-#.  全球250个国家或地区的边界
+#.  全球250个国家或地区的边界AU.QLD
 #.  8个大国的省界/州界
 
 GMT的 :doc:`/module/coast` 模块可以直接绘制DCW数据中提供的行政边界数据，
@@ -141,36 +141,36 @@ GMT中至少有两处会使用DCW数据：
 绘制洲界
 ++++++++
 
-绘制全部亚洲国家的边界：
+绘制主要大洋洲国家的边界：
 
 .. gmtplot::
 
-    gmt coast -R15/180/-20/70 -JM12c -Baf -E=AS+p0.25p,red -png dataset_dcw_01
+    gmt coast -R100/190/-50/10 -JM12c -Baf -E=OC+p0.25p,red -png dataset_dcw_01
 
 绘制国界
 ++++++++
 
-绘制中国大陆边界（不含台湾、香港、澳门），其中 **-R** 选项可省略：
+绘制澳大利亚边界：
 
 .. gmtplot::
 
-    gmt coast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 -png dataset_dcw_02
+    gmt coast -JM12c -Baf -EAU+p0.25p,red -png dataset_dcw_02
 
-绘制省界
+绘制省/洲界
 ++++++++
 
-绘制内蒙古，并设置边界颜色和填充颜色，其中 **-R** 选项可省略:
+绘制澳大利亚昆士兰州(Queensland)，并设置边界颜色和填充颜色。其中 **-R** 选项后跟区域代码 **AU.QLD** 可间接指定该区域范围， **+R2** 表示在原有范围外扩大2度:
 
 .. gmtplot::
 
-    gmt coast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 -png dataset_dcw_03
+    gmt coast -RAU.QLD+R2 -JM12c -Baf -EAU.QLD+p1p,blue+gred -png dataset_dcw_03
 
-导出省界数据
+导出省/洲界数据
 ++++++++++++
 
-导出内蒙古的边界数据::
+导出昆士兰州的边界数据::
 
-    gmt coast -ECN.15 -M > neimenggu.dat
+    gmt coast -EAU.QLD -M > Queensland.dat
 
 这里只需要使用 **-M** 选项即可。
 
@@ -178,4 +178,4 @@ GMT中至少有两处会使用DCW数据：
 ----
 
 DCW数据提供的中国国界数据不符合中国的领土主张，在正式刊物中发表使用此类国界
-数据的图件时都可能存在问题。此处展示的国界仅用于展示如何使用数据。
+数据的图件时都可能存在问题。
