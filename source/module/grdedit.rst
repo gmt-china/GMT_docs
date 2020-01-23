@@ -134,7 +134,7 @@ grdedit
 
 .. include:: explain_-h.rst_
 
-.. include:: explain_-i.rst_
+.. include:: explain_-icols.rst_
 
 .. include:: explain_help.rst_
 
