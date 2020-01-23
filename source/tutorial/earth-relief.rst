@@ -119,14 +119,14 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
 
     gmt begin taiwan_relief png,pdf
     gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
-    gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f+l"Elevation (m)"
+    gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l"m"
     gmt end show
 
 制作CPT文件
 -----------
 
 上面的示例中使用的是GMT的默认CPT文件。用户也可以使用 :doc:`/module/makecpt` 或
-:doc:`grd2cpt` 制作CPT文件。
+:doc:`gmt:grd2cpt` 制作CPT文件。
 
 下面的示例中，我们使用 :doc:`/module/makecpt` 模块在GMT内置CPT **globe** 的基础
 上生成了一个-8000到8000范围内的新CPT文件。生成的CPT文件将作为当前CPT文件，供
@@ -139,5 +139,5 @@ GMT会自动从服务器下载该数据并保存到本地的GMT数据目录中�
     gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
     gmt makecpt -Cglobe -T-8000/8000
     gmt grdimage @earth_relief_30s -I+d
-    gmt colorbar -Bxa2000+l"Elevation/m"
+    gmt colorbar -Bxa2000 -B+l"m"
     gmt end show
