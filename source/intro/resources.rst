@@ -1,8 +1,8 @@
 学习资源
 ========
 
-这一节列出网络上可免费获取的GMT学习资源。各个学习资源的质量以及维护程度不同，
-**建议用户以英文官方文档以及中文社区参考手册为主，其余学习资源仅供参考**\ 。
+本节列出网络上可免费获取的GMT学习资源。各个学习资源的质量以及维护程度不同，
+**建议用户以英文官方文档以及本中文手册为主，其余学习资源仅供参考**\ 。
 
 **入门教程**
 
@@ -13,7 +13,7 @@
    - `《GMT5入门教程》 <https://www.bilibili.com/video/av74087421>`_
    - `《GMT6新特性》 <https://www.bilibili.com/video/av73835957>`_
 
-#. `GMT Tutorial <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_ (适用于GMT5)
+#. `GMT 教學手冊 <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_ (适用于GMT5)
 
 **参考手册**
 
@@ -23,7 +23,6 @@
 
 **图库与示例**
 
-#. :doc:`《GMT中文手册》中的示例 </gallery/index>`
 #. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.0/gallery.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
