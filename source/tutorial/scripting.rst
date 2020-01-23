@@ -6,7 +6,7 @@ Windows用户若使用Batch脚本，则需要同时了解Bash和Batch的语法�
 本手册中的Bash脚本正确转换为Batch脚本。
 
 这一节介绍本手册中或GMT使用过程中最常用的Bash和Batch语法，而不涉及不常用或更复杂的语法。
-本文主要包含三部分内容：
+本文主要包含四部分内容：
 
 - Bash编程基础知识
 - Batch编程基础知识
@@ -101,7 +101,7 @@ Batch编程基础知识
 	REM echo 命令用于显示后面的字符
 	echo Hello world!
 
-	# 使用 set 命令声明一个变量
+	REM 使用 set 命令声明一个变量
 	set projection="X10c/10c"
 	set region="0/10/0/10"
 
@@ -110,33 +110,33 @@ Batch编程基础知识
 
 	REM 执行GMT命令
 	gmt begin map
-	gmt basemap -J$projection -R$region -Baf
+	gmt basemap -J%projection% -R%region% -Baf
 
-	# 输入数据
-	# 有些命令需要读入数据。Bash中有多种方法可以将数据传递给一个命令：
-	# 1. 将数据保存到文件中，并在命令中指定数据文件名
-	#    下面的命令会读取文件 input.dat 中的数据
+	REM 输入数据
+	REM 有些命令需要读入数据。Bash中有多种方法可以将数据传递给一个命令：
+	REM 1. 将数据保存到文件中，并在命令中指定数据文件名
+	REM    下面的命令会读取文件 input.dat 中的数据
 	gmt plot input.dat -W1p
 
-	# 2. 通过管道符号 | 将前一个命令的输出作为后一个命令的输入
-	#    下面的命令中，echo 命令输出了 5 5，该输出通过管道被传递给了 GMT 命令作为输入
+	REM 2. 通过管道符号 | 将前一个命令的输出作为后一个命令的输入
+	REM    下面的命令中，echo 命令输出了 5 5，该输出通过管道被传递给了 GMT 命令作为输入
 	echo 5 5 | gmt plot -Sc0.5c
 
-	# 输出数据
-	# 很多命令都会输出一些数据或信息。默认情况下，输出会在终端显示。为了将数据保存到文件中，需要使用重定向符号。
-	# 常用的重定向符号主要有两个： > 和 >>
-	#   > 表示将数据输出到文件中。若文件不存在，则创建该文件；若文件已存在，则覆盖该文件的原内容；
-	#  >> 表示将数据追加到文件中。若文件不存在，则创建该文件；若文件已存在，则将数据追加到原内容的后面；
+	REM 输出数据
+	REM 很多命令都会输出一些数据或信息。默认情况下，输出会在终端显示。为了将数据保存到文件中，需要使用重定向符号。
+	REM 常用的重定向符号主要有两个： > 和 >>
+	REM   > 表示将数据输出到文件中。若文件不存在，则创建该文件；若文件已存在，则覆盖该文件的原内容；
+	REM  >> 表示将数据追加到文件中。若文件不存在，则创建该文件；若文件已存在，则将数据追加到原内容的后面；
 	echo 1 3 Point1 > tmp.txt
 	echo 2 5 Point2 >> tmp.txt
 	echo 4 2 Point3 >> tmp.txt
-	# 此时文件中有三行内容
+	REM 此时文件中有三行内容
 
-	# 将命令的输出保存到变量中
-	# Batch中可以将命令的输出写到文件中，然后用 set /p var=<file 的方式将文件中的内容作为变量的值
+	REM 将命令的输出保存到变量中
+	REM Batch中可以将命令的输出写到文件中，然后用 set /p var=<file 的方式将文件中的内容作为变量的值
 	gmt info input.dat -I1/1 > tmp.dat
    	set /p new_region=<tmp.dat
-	gmt plot input.dat -J$projection %new_region%
+	gmt plot input.dat -J%projection% %new_region%
 
 	gmt end show
 
