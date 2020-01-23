@@ -95,14 +95,15 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
 
     安装包下载地址:
 
-    - `gs926aw64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe>`__
-    - `gs926aw32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe>`__
+    - `gs950w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe>`__
+
+    - `gs950w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w32.exe>`__
 
     .. warning::
 
         请注意 Ghostscript 的版本！
 
-        由于Ghostscript的bug和兼容性问题，Windows下 GMT 6.0.0 建议与 ghostscript 9.26
+        由于Ghostscript的bug和兼容性问题，Windows下 GMT 6.1.0 建议与 ghostscript 9.50
         搭配使用。
 
 4.  安装GSview 5.0 (**不推荐**)
