@@ -109,3 +109,16 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 5.  卸载GMT。执行如下命令即可卸载GMT::
 
         $ sudo port uninstall gmt6
+
+使用 Fink 安装
+--------------
+
+`Fink <http://www.finkproject.org/>`_ 是 macOS 下的第三方软件包管理工具。
+
+1.  安装GMT::
+
+        sudo fink install gmt6
+
+2.  安装依赖包::
+
+        sudo fink install graphicsmagick ffmpeg

@@ -27,7 +27,7 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
 
     .. note::
 
-       GMT安装包中内置了Ghostscript最新版，但其不支持中文。
+       GMT安装包中内置了Ghostscript 9.50，但其不支持中文。
        若想要GMT支持中文，则需要在安装GMT时不选择Ghostscript组件，
        待GMT安装完成后再自行安装 Ghostscript。
 
@@ -97,13 +97,15 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
 
     安装包下载地址:
 
-    - `gs950w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe>`__
-    - `gs950w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w32.exe>`__
+    - `gs926aw64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe>`__
+    - `gs926aw32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe>`__
 
     .. warning::
 
-        ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。
-        请确保自己安装的不是 9.27 版本。
+        请注意 Ghostscript 的版本！
+
+        - ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。切勿使用！
+        - GMT 6.0.0 与 ghostscript 9.50 间不完全兼容，无法正常生成中文图片。请勿使用！
 
 4.  安装GSview 5.0 (**不推荐**)
 

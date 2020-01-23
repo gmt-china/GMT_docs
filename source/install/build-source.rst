@@ -10,14 +10,14 @@ GMT源码请参考GMT官方
 
 GMT的编译及运行需要如下软件：
 
-- CMake: >=2.8.5
-- netCDF（>4.0且支持netCDF-4/HDF5）
+- CMake: >=2.8.7
+- netCDF（>=4.0且支持netCDF-4/HDF5）
 - curl
 
 除此之外，还可以安装如下软件库以增强GMT的更多功能：
 
 - `Ghostscript <https://www.ghostscript.com/>`_: 生成PDF或者其他位图格式的图片
-- `GDAL <https://www.gdal.org/>`_: 读写其他地学常用的网格和图片格式
+- `GDAL <https://www.gdal.org/>`_: 读写其它地学常用的网格和图片格式
 - `PCRE <https://www.pcre.org/>`_: 正则表达式支持
 - `FFTW <http://www.fftw.org/>`_: 快速傅里叶变换库（>=3.3，macOS下不需要）
 - `GLib <https://developer.gnome.org/glib/>`_: GTHREAD多线程支持
@@ -34,7 +34,7 @@ GMT的编译及运行需要如下软件：
     # 安装编译所需软件包
     $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
     # 安装可选软件包
-    $ sudo apt install ghostscript gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
@@ -68,9 +68,9 @@ GMT的编译及运行需要如下软件：
 
 .. warning::
 
-   GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在
+   GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片。但Ghostscript 9.27存在
    严重bug，会导致生成的图片中有用信息被裁剪。
-   请使用 ``gs --version`` 确认安装的ghostscript不是9.27版本。
+   请使用 ``gs --version`` 确认安装的Ghostscript不是9.27版本。
 
 下载源码及数据
 --------------
@@ -117,12 +117,12 @@ GMT的编译及运行需要如下软件：
 
 其中，
 
-- ``CMAKE_INSTALL_PREFIX`` 用于设置GMT的安装路径，上面的语句会将GMT安装在
+- **CMAKE_INSTALL_PREFIX** 用于设置GMT的安装路径，上面的语句会将GMT安装在
   ``/opt/GMT-6.0.0`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
   权限的路径；
-- ``COPY_GSHHG`` 和 ``COPY_DCW`` 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下
-- ``GMT_USE_THREADS`` 和 ``GMT_ENABLE_OPENMP`` 设置为 TRUE 会为GMT的某些模块
+- **COPY_GSHHG** 和 **COPY_DCW** 设置为 **TRUE** 会将相关数据复制到 GMT 的 share 目录下
+- **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为GMT的某些模块
   增加多线程并行功能以加速计算。
 
 .. tip::
@@ -205,8 +205,8 @@ GMT的编译及运行需要如下软件：
 
 .. note::
 
-   ``-j`` 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下
-   使用 ``-j`` 选项会导致编译过程卡死。若出现此种情况，建议去除 ``-j`` 选项。
+   **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下
+   使用 **-j** 选项会导致编译过程卡死。若出现此种情况，建议去除 **-j** 选项。
 
 修改环境变量
 ------------
@@ -228,8 +228,8 @@ GMT的编译及运行需要如下软件：
 
 说明：
 
-- 第一个命令添加了环境变量 ``GMT6HOME``
-- 第二个命令修改 GMT6 的 bin 目录加入到 ``PATH`` 中，使得终端可以找到GMT命令
+- 第一个命令添加了环境变量 **GMT6HOME**
+- 第二个命令修改 GMT6 的 bin 目录加入到 **PATH** 中，使得终端可以找到GMT命令
 - 第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。
   通常，32位系统的路径为 ``lib``\ ，64位系统的路径为 ``lib64``
 
