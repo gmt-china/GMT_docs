@@ -35,7 +35,7 @@
 
 上图用四个 :doc:`/module/basemap` 命令绘制了四张底图，绘图效果如下：
 
-.. gmtplot:: /scripts/GMT_-XY.sh
+.. gmtplot:: XY.sh
     :show-code: false
     :caption: **-X** 和 **-Y** 移动绘图原点
 
