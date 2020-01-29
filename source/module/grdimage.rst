@@ -14,10 +14,10 @@ grdimage
 [ |-A|\ *out_img*\ [**=**\ *driver*] ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt* ]
-[ |-D|\ [**r**\ ] ]
-[ |-E|\ [\ **i**\ \|\ *dpi*] ] |-J|\ *parameters*
-[ |-G|\ *color*\ [**+b**\ \|\ **+f**] ]
-[ |-I|\ [*intensfile*\ \|\ *intensity*\ \|\ *modifiers*] ]
+[ |-D|\ [**r**] ]
+[ |-E|\ [**i**\|\ *dpi*] ] |-J|\ *parameters*
+[ |-G|\ *color*\ [**+b**\|\ **+f**] ]
+[ |-I|\ [*intensfile*\|\ *intensity*\|\ *modifiers*] ]
 [ |-M| ] [ |-N| ]
 [ |-Q| ]
 [ |SYN_OPT-Rz| ]

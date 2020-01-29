@@ -20,7 +20,7 @@ filter1d
 [ |-D|\ *increment* ] [ |-E| ]
 [ |-L|\ *lack\_width* ] [ |-N|\ *t\_col* ] [ |-Q|\ *q\_factor* ]
 [ |-S|\ *symmetry\_factor* ]
-[ |-T|\ [\ *min/max*\ /]\ *inc*\ [**+e**\ \|\ **+a**\ \|\ **n**] \|\ |-T|\ *file*\ \|\ *list* ]
+[ |-T|\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ |-T|\ *file*\|\ *list* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -68,7 +68,7 @@ filter1d
     大写的 **B|C|G|M|P|F** 会使用健壮滤波器。即在滤波时会将outliers替换为中位数。
     outliers 定义为偏离中位数 2.5 倍的 L1 sacle （1.4826倍的Median absolute deviation）。
 
-    对于 **L**\ \|\ **U** 可能会出现没有数据大于或小于0，此时滤波器会返回0.0。
+    对于 **L**\|\ **U** 可能会出现没有数据大于或小于0，此时滤波器会返回0.0。
 
     该模块默认对数据进行低通滤波，加上 **+h** 选项则对数据进行高通滤波。
 
@@ -116,7 +116,7 @@ filter1d
 
 .. _-T:
 
-**-T**\ [\ *min/max*\ /]\ *inc*\ [**+e**\ \|\ **+a**\ \|\ **n**] \|\ |-T|\ *file*\ \|\ *list*
+**-T**\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
     生成时间序列
 
     生成从 *min* 到 *max* 间隔为 *inc* 的等间隔数列。

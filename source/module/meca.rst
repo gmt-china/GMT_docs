@@ -13,12 +13,12 @@ meca
 **gmt meca** [ *table* ] |-J|\ *parameters* |SYN_OPT-R|
 |-S|\ *<format><scale>*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
 [ |SYN_OPT-B| ]
-[ |-C|\ [*pen*\ ][\ **+s**\ *size*] ] [ |-D|\ *depmin*/*depmax* ]
+[ |-C|\ [*pen*][**+s**\ *size*] ] [ |-D|\ *depmin*/*depmax* ]
 [ |-E|\ *fill*]
-[ |-F|\ *mode*\ [*args*] ] [ |-G|\ *fill*] [ |-L|\ [*pen*\ ] ]
+[ |-F|\ *mode*\ [*args*] ] [ |-G|\ *fill*] [ |-L|\ [*pen*] ]
 [ |-M| ]
 [ |-N| ]
-[ |-T|\ *nplane*\ [/*pen*\ ] ]
+[ |-T|\ *nplane*\ [/*pen*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |-W|\ *pen* ]
@@ -52,7 +52,7 @@ meca
 
 .. _-C:
 
-**-C**\ [*pen*\ ][\ **+s**\ *size*]
+**-C**\ [*pen*][**+s**\ *size*]
     在 (*newX*,\ *newY*) 处绘制震源球
 
     默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 **-C** 选项，
@@ -77,10 +77,10 @@ meca
 **-F**\ *mode*\ [*args*]
     设置多个属性，可重复使用多次。
 
-**-Fa**\ [*size*\ [/*Psymbol*\ [*Tsymbol*\ ]]]
+**-Fa**\ [*size*\ [/*Psymbol*\ [*Tsymbol*]]]
     计算并在震源球上P轴和T轴处绘制符号。
     *size* 是符号大小；
-    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\ \|\ **d**\ \|\ **h**\ \|\ **i**\ \|\ **p**\ \|\ **s**\ \|\ **t**\ \|\ **x**\ ，
+    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\|\ **d**\|\ **h**\|\ **i**\|\ **p**\|\ **s**\|\ **t**\|\ **x**\ ，
     具体含义见 :doc:`plot` **-S** 选项 [默认值为 6p/cc]
 
 **-Fe**\ *fill*
@@ -98,10 +98,10 @@ meca
 **-Fo**
     使用旧版本的 **psvelomeca** 命令的输入数据格式，即不需要第三列的深度信息
 
-**-Fr**\ [*fill*\ ]
+**-Fr**\ [*fill*]
     在震源球标签后加一个方框 [默认填充色为白色]
 
-**-Fz**\ [*pen*\ ]
+**-Fz**\ [*pen*]
     覆盖零迹矩张量的画笔属性
 
 .. _-G:
@@ -111,7 +111,7 @@ meca
 
 .. _-L:
 
-**-L**\ [*pen*\ ]
+**-L**\ [*pen*]
     设置震源球外部轮廓的线条属性[默认由 **-W** 选项决定]
 
 .. _-M:
@@ -126,7 +126,7 @@ meca
 
 .. _-T:
 
-**-T**\ [*nplane*\ ][\ **/**\ *pen*]
+**-T**\ [*nplane*][**/**\ *pen*]
     绘制断层平面。
 
     *nplanes* 可以取：

@@ -16,8 +16,8 @@ gmtset
 ----
 
 **gmt set**
-[ |-C| \| |-D|\ [**s**\ \|\ **u**] \| |-G|\ *defaultsfile* ]
-[ **-**\ [**BJRXxYycp**\ ]\ *value* ]
+[ |-C| \| |-D|\ [**s**\|\ **u**] \| |-G|\ *defaultsfile* ]
+[ **-**\ [**BJRXxYycp**]\ *value* ]
 PARAMETER1 [=] *value1*
 PARAMETER2 [=] *value2*
 PARAMETER3 [=] *value3*
@@ -42,7 +42,7 @@ PARAMETER3 [=] *value3*
 
 .. _-D:
 
-**-D**\ [**s**\ \|\ **u**]
+**-D**\ [**s**\|\ **u**]
     在系统默认配置的基础上修改参数值
 
     #. **-D**\ ：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）

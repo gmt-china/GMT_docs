@@ -18,7 +18,7 @@ polar
 |-M|\ *size*\ [**+m**\ *mag*]
 |-S|\ *<symbol><size>*
 [ |SYN_OPT-B| ]
-[ |-C|\ *lon*/*lat*\ [**+p**\ *pen*\ ][**+s**\ *pointsize*] ]
+[ |-C|\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*] ]
 [ |-E|\ *fill* ]
 [ |-F|\ *fill* ]
 [ |-G|\ *fill* ]
@@ -85,7 +85,7 @@ polar
 
 .. _-C:
 
-**-C**\ *lon*/*lat*\ [**+p**\ *pen*\ ][**+s**\ *pointsize*]
+**-C**\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*]
     将震源球放在新的位置上，并将新位置与老位置之间连线。
 
 .. _-E:

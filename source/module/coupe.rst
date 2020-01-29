@@ -32,7 +32,7 @@ coupe
 [ |-L|\ *[pen]* ]
 [ |-M| ] [ |-N| ]
 [ |-Q| ]
-[ |-T|\ *nplane*\ [/*pen*\ ] ]
+[ |-T|\ *nplane*\ [/*pen*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |-W|\ *pen* ]
@@ -71,18 +71,18 @@ coupe
     - *dmin/dmax* 是沿着最速下降方向（“北”方向）的最小、最大距离（对于垂直平面，可以理解为限制地震深度范围）
     - **+f** 表示根据剖面的参数自动计算边框的范围
 
-**-Ab**\ *lon1/lat1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**\ ]
+**-Ab**\ *lon1/lat1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**]
 
     - *lon1/lat1* 剖面起点的经纬度
     - *strike* 是剖面的走向
     - *p_length* 是剖面的长度
     - 其他参数与 **-Aa** 相同
 
-**-Ac**\ *x1/y1/x2/y2/dip/p\_width/dmin/dmax*\ [**+f**\ ]
+**-Ac**\ *x1/y1/x2/y2/dip/p\_width/dmin/dmax*\ [**+f**]
 
     与 **-Aa** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
 
-**-Ad**\ *x1/y1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**\ ]
+**-Ad**\ *x1/y1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**]
     与 **-Ab** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
 
 .. include:: explain_meca_-S.rst_
@@ -102,10 +102,10 @@ coupe
 **-F**\ *mode*\ [*args*]
     设置多个属性，可重复使用多次
 
-**-Fs**\ *symbol*\ [*size*\ ][**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
+**-Fs**\ *symbol*\ [*size*][**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
     不绘制震源球，仅绘制一个符号。
 
-    *symbol* 为符号类型，可以选择 **c**\ \|\ **d**\ \|\ **i**\ \|\ **s**\ \|\ **t**\ \|\ **x**\ ，
+    *symbol* 为符号类型，可以选择 **c**\|\ **d**\|\ **i**\|\ **s**\|\ **t**\|\ **x**\ ，
     符号的具体含义见 :doc:`plot` 模块的 **-S** 选项。\ *size* 为符号大小。
 
     输入数据的格式为::
@@ -117,10 +117,10 @@ coupe
     *event_label* 默认位于震源球上方。使用 **+f** 控制其字体，\ **+j** 控制其
     位置，\ **+o** 进一步控制其偏移量。
 
-**-Fa**\ [*size*\ [/*Psymbol*\ [*Tsymbol*\ ]]]
+**-Fa**\ [*size*\ [/*Psymbol*\ [*Tsymbol*]]]
     计算并在震源球上P轴和T轴处绘制符号。
     *size* 是符号大小；
-    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\ \|\ **d**\ \|\ **h**\ \|\ **i**\ \|\ **p**\ \|\ **s**\ \|\ **t**\ \|\ **x**\ ，
+    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\|\ **d**\|\ **h**\|\ **i**\|\ **p**\|\ **s**\|\ **t**\|\ **x**\ ，
     具体含义见 :doc:`plot` **-S** 选项 [默认值为 6p/cc]
 
 **-Fe**\ *fill*
@@ -135,7 +135,7 @@ coupe
 **-Ft**\ *pen*
     设置T轴符号的画笔属性
 
-**-Fr**\ [*fill*\ ]
+**-Fr**\ [*fill*]
     在震源球标签后加一个方框 [默认填充色为白色]
 
 .. _-G:
@@ -166,7 +166,7 @@ coupe
 
 .. _-T:
 
-**-T**\ [*nplane*\ ][\ **/**\ *pen*]
+**-T**\ [*nplane*][**/**\ *pen*]
     绘制断层平面。
 
     *nplanes* 可以取：
