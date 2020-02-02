@@ -25,7 +25,7 @@ Flat Earth距离
    d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
    \theta_B}{2} \right ] \Delta \lambda^2}
 
-其中 R 是地球平均半径（由参数 :ref:`PROJ_MEAN_RADIUS <PROJ_MEAN_RADIUS>` 控制），
+其中 R 是地球平均半径（由参数 :term:`PROJ_MEAN_RADIUS` 控制），
 :math:`\theta` 是纬度，
 :math:`\Delta \lambda = \lambda_A - \lambda_B` 是经度差。
 式中地理坐标的单位均是弧度，且需要考虑到跨越经度的周期性问题。
@@ -47,11 +47,11 @@ Flat Earth距离
 
 有两个 GMT 参数可以控制大圆路径距离的计算细节，分别是：
 
-- :ref:`PROJ_MEAN_RADIUS <PROJ_MEAN_RADIUS>` 地球平均半径
-- :ref:`PROJ_AUX_LATITUDE <PROJ_AUX_LATITUDE>` 指定将大地纬度转换为多个适合球状
+- :term:`PROJ_MEAN_RADIUS` 地球平均半径
+- :term:`PROJ_AUX_LATITUDE` 指定将大地纬度转换为多个适合球状
   近似的辅助纬度中的其中一个
 
-需要注意，这两个选项仅当 :ref:`PROJ_ELLIPSOID <PROJ_ELLIPSOID>` 不为 **sphere** 时才有效。
+需要注意，这两个选项仅当 :term:`PROJ_ELLIPSOID` 不为 **sphere** 时才有效。
 
 测地距离
 --------
@@ -59,6 +59,6 @@ Flat Earth距离
 地球上两点间的精确距离可以用 Vincenty (1975) 的完全椭球公式计算。
 该方法计算得到的距离精度最高精确到 0.5 毫米，同时也是计算速度的最慢的方式。
 
-除了 Vincenty 完全椭球公式外，还可以将参数 :ref:`PROJ_GEODESIC <PROJ_GEODESIC>`
+除了 Vincenty 完全椭球公式外，还可以将参数 :term:`PROJ_GEODESIC`
 设置成 **Rudoe** （GMT4所使用的计算公式）或 **Andoyer** （近似公式，精确到10米量级）
 以使用不同的计算公式。

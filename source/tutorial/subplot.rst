@@ -96,8 +96,8 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
 -   **-A**: 对每个子图进行自动编号abcd
 -   **-M0.2c/0.1c**: 调整相邻子图之间的空白距离，X方向间隔为0.2厘米，Y方向间隔为0.1厘米
 -   **-T"My Subplot Heading"**: 为整张图加上一个总标题
--   调整子图编号的大小（:ref:`FONT_TAG <FONT_TAG>`\ ）、总标题文字大小（:ref:`FONT_HEADING <FONT_HEADING>`\ ）
-    以及总标题相对于底图的偏移量（:ref:`MAP_HEADING_OFFSET <MAP_HEADING_OFFSET>`\ ）
+-   调整子图编号的大小（:term:`FONT_TAG`\ ）、总标题文字大小（:term:`FONT_HEADING`\ ）
+    以及总标题相对于底图的偏移量（:term:`MAP_HEADING_OFFSET`\ ）
 
 在子图模式内，我们使用 **subplot set 0** 的方式依次激活每个子图。在每个子图内绘图时，
 我们使用了线性投影方式 **-JX?**\ 。通常我们需要指定图片的宽度或高度，这里我们使用了

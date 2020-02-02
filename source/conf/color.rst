@@ -6,32 +6,26 @@ COLOR参数
 CPT相关参数
 -----------
 
-.. _COLOR_BACKGROUND:
+.. glossary::
 
-**COLOR_BACKGROUND**
-    数据Z值小于CPT文件中最小值时使用的背景色 [``black``]
+    **COLOR_BACKGROUND**
+        数据Z值小于CPT文件中最小值时使用的背景色 [``black``]
 
-.. _COLOR_FOREGROUND:
+    **COLOR_FOREGROUND**
+        数据Z值大于CPT文件中最大值时使用的前景色 [``white``]
 
-**COLOR_FOREGROUND**
-    数据Z值大于CPT文件中最大值时使用的前景色 [``white``]
+    **COLOR_NAN**
+        数值Z值为 NaN 时使用的颜色 [``127.5``]
 
-.. _COLOR_NAN:
+    **COLOR_MODEL**
+        对CPT文件做插值生成新CPT时所使用的色彩模型 [``none``]
 
-**COLOR_NAN**
-    数值Z值为 NaN 时使用的颜色 [``127.5``]
+        可以取如下值：
 
-.. _COLOR_MODEL:
-
-**COLOR_MODEL**
-    对CPT文件做插值生成新CPT时所使用的色彩模型 [``none``]
-
-    可以取如下值：
-
-    - ``none``\ ：使用CPT文件中指定的 ``COLOR_MODEL``
-    - ``rgb``\ ：在RGB色彩空间中插值
-    - ``hsv``\ ：在HSV色彩空间中插值
-    - ``cmyk``\ ：假定颜色是CMYK色彩空间，但在RGB空间内插值
+        - ``none``\ ：使用CPT文件中指定的 ``COLOR_MODEL``
+        - ``rgb``\ ：在RGB色彩空间中插值
+        - ``hsv``\ ：在HSV色彩空间中插值
+        - ``cmyk``\ ：假定颜色是CMYK色彩空间，但在RGB空间内插值
 
 光照相关参数
 ------------
@@ -42,22 +36,16 @@ CPT相关参数
 强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。
 下面的四个参数控制了模拟光照过程中S和V变化的极限值，以避免模拟的光照过亮或过暗。
 
-.. _COLOR_HSV_MIN_S:
+.. glossary::
 
-**COLOR_HSV_MIN_S**
-    负强度最小值对应的S值，取值范围0到1 [1.0]
+    **COLOR_HSV_MIN_S**
+        负强度最小值对应的S值，取值范围0到1 [1.0]
 
-.. _COLOR_HSV_MAX_S:
+    **COLOR_HSV_MAX_S**
+        正强度最大值对应的S值，取值范围0到1 [0.1]
 
-**COLOR_HSV_MAX_S**
-    正强度最大值对应的S值，取值范围0到1 [0.1]
+    **COLOR_HSV_MIN_V**
+        负强度最小值对应的V值，取值范围0到1 [0.3]
 
-.. _COLOR_HSV_MIN_V:
-
-**COLOR_HSV_MIN_V**
-    负强度最小值对应的V值，取值范围0到1 [0.3]
-
-.. _COLOR_HSV_MAX_V:
-
-**COLOR_HSV_MAX_V**
-    正强度最大值对应的V值，取值范围0到1 [1.0]
+    **COLOR_HSV_MAX_V**
+        正强度最大值对应的V值，取值范围0到1 [1.0]

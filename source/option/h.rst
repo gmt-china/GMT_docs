@@ -25,6 +25,6 @@
 
 几种常见的用法：
 
-- **-h**\ ：使用GMT参数 :ref:`IO_N_HEADER_RECS <IO_N_HEADER_RECS>` 的值作为
+- **-h**\ ：使用GMT参数 :term:`IO_N_HEADER_RECS` 的值作为
   头段记录数（默认值为0）
 - **-h3**\ ：表示跳过3个头段记录

@@ -67,11 +67,11 @@ inset begin语法
     若只使用 **-F** 而不使用其它子选项，则会在小图周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
-    - **+p**\ *pen* 指定背景面板的画笔属性（默认画笔属性由 :ref:`MAP_FRAME_PEN <MAP_FRAME_PEN>` 决定）
+    - **+p**\ *pen* 指定背景面板的画笔属性（默认画笔属性由 :term:`MAP_FRAME_PEN` 决定）
     - **+g**\ *fill* 设置背景面板的填充色 [默认不填充]
     - **+c**\ *clearances* 以设置不同方向的空白间隔
     - **+i**\ *gap*/*pen* 在背景面板内部绘制一个额外的内边框。\ *gap* 为外边框
-      与内边界之间的距离 [2p]，默认边界属性由 :ref:`MAP_DEFAULT_PEN <MAP_DEFAULT_PEN>` 控制
+      与内边界之间的距离 [2p]，默认边界属性由 :term:`MAP_DEFAULT_PEN` 控制
     - **+r**\ *radius* 控制圆角矩形边框，圆角矩形半径 *radius* 默认为 6p
     - **+s** 绘制背景面板阴影区。\ *dx*/*dy* 是阴影区相对于背景面板的偏移量 [4p/4p]。
       *shade* 为阴影区的颜色 [gray50]。

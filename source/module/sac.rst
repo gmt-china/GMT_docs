@@ -140,7 +140,7 @@ sac
     控制Y方向的缩放。不使用的话，Y方向即为振幅
 
     - *size*\ [*u*] 将所有波形在地图上的高度缩放到 *size*\ [*u*]，
-      其中 *u* 可以取 **i**\|\ **c**\|\ **p** ，默认单位由 :ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>` 控制。
+      其中 *u* 可以取 **i**\|\ **c**\|\ **p** ，默认单位由 :term:`PROJ_LENGTH_UNIT` 控制。
     - *size*/*alpha*
 
       - 若 *alpha* 小于0，则所有波形使用相同的比例因子。比例因子由第一个
@@ -161,7 +161,7 @@ sac
 
     对于地理投影而言，即表示图上一个单位距离所代表的波形描述。
     其中单位 *unit* 可以取 **c**\|\ **i**\|\ **p**\ 。
-    若未指定 *unit*\ ，则默认使用 :ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>` 所指定的单位。
+    若未指定 *unit*\ ，则默认使用 :term:`PROJ_LENGTH_UNIT` 所指定的单位。
 
     在 *scale* 前加上 **i** 则时间比例尺的含义反过来，即 *scale* 表示
     1秒长度的波形在图上的实际长度。

@@ -51,10 +51,10 @@ GMT可以绘制笛卡尔坐标轴、地图的经纬度轴以及绝对时间轴�
 使用过程中需要注意：
 
 #. GMT的时间数据的输入/输出格式默认为 ``yyyy-mm-ddThh:mm:ss.xxx``\ 。
-   若想要输入其他格式的时间数据，需要修改 :ref:`FORMAT_DATE_IN <FORMAT_DATE_IN>`
-   和 :ref:`FORMAT_CLOCK_IN <FORMAT_CLOCK_IN>`\ ；
-   若想要输出其他格式的时间数据，需要修改 :ref:`FORMAT_DATE_OUT <FORMAT_DATE_OUT>`
-   和 :ref:`FORMAT_CLOCK_OUT <FORMAT_CLOCK_OUT>`
+   若想要输入其他格式的时间数据，需要修改 :term:`FORMAT_DATE_IN`
+   和 :term:`FORMAT_CLOCK_IN`\ ；
+   若想要输出其他格式的时间数据，需要修改 :term:`FORMAT_DATE_OUT`
+   和 :term:`FORMAT_CLOCK_OUT`
 #. 若未指定 ``<date>`` 则假定 ``<date>`` 为今日
 #. 若未指定 ``<clock>`` 则认为是 ``00:00:00``
 #. 若指定了 ``<clock>`` 则必须要加 ``T``\ ，比如 ``T10:20:34`` 表示今天的早晨10点多
@@ -74,16 +74,16 @@ GMT可以绘制笛卡尔坐标轴、地图的经纬度轴以及绝对时间轴�
 相对时间坐标即某个时间相对于参考时刻的秒数、小时数、天数或年数。
 因而在使用相对时间时，首先要给定两个参数：参考时刻以及相对时间所使用的单位。
 
-GMT参数 :ref:`TIME_EPOCH <TIME_EPOCH>` 用于指定参考时刻，
-:ref:`TIME_UNIT <TIME_UNIT>` 用于指定相对时间的单位。
+GMT参数 :term:`TIME_EPOCH` 用于指定参考时刻，
+:term:`TIME_UNIT` 用于指定相对时间的单位。
 也可以用参数 :ref:`TIME_SYSTEM <TIME_SYSTEM>` 同时指定这两个参数。
 默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。
 
 在指定了参考时刻后，相对时间就跟一般的浮点数没什么区别了。那如何区分一般的
 浮点数与相对时间呢？有两种方式：
 
-#. 在数据后加上小写的 ``t``\ ，比如 ``30t`` 表示相对于 :ref:`TIME_EPOCH <TIME_EPOCH>`
-   间隔了 30 个 :ref:`TIME_UNIT <TIME_UNIT>` 时间单位的时刻
+#. 在数据后加上小写的 ``t``\ ，比如 ``30t`` 表示相对于 :term:`TIME_EPOCH`
+   间隔了 30 个 :term:`TIME_UNIT` 时间单位的时刻
 #. 在命令行中使用 ``-ft`` 选项表明当前数据是相对时间，此时不需要在数字后加 ``t``
 
 .. _float_coordinates:

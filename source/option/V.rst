@@ -12,10 +12,10 @@ verbose 共有6个等级，等级越高输出的信息越多，高等级会在�
 - **-Vn**\ ：\ **n**\ omral 模式，仅输出致命错误信息和警告信息。当不使用
   **-V** 选项时则默认为该等级
 - **-Vc**\ ：\ **c**\ ompatibility 模式，额外输出数据兼容性相关的警告信息。
-  仅当 :ref:`GMT_COMPATIBILITY <GMT_COMPATIBILITY>` 值为 **4** 即兼容模式时才默认为该模式
+  仅当 :term:`GMT_COMPATIBILITY` 值为 **4** 即兼容模式时才默认为该模式
 - **-Vv** 或 **-V**\ ：\ **v**\ erbose，即输出错误、警告以及数据处理的进程信息
 - **-Vl**\ ：\ **l**\ ong 模式，会额外输出详细的进程报告
 - **-Vd**\ ：\ **d**\ ebug 模式，会输出大量调试信息
 
 **-V** 选项仅对当前命令有效，若希望所有命令都具有某个 verbose 级别，
-可以通过设置 GMT 参数 :ref:`GMT_VERBOSE <GMT_VERBOSE>` 的值来实现。
+可以通过设置 GMT 参数 :term:`GMT_VERBOSE` 的值来实现。

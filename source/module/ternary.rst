@@ -86,7 +86,7 @@ ternary
 .. _-L:
 
 **-L**\ *a*\ /*b*\ /*c*
-    设置三个顶点的标签，标签距离顶点的距离为 :ref:`MAP_LABEL_OFFSET <MAP_LABEL_OFFSET>` 三倍。
+    设置三个顶点的标签，标签距离顶点的距离为 :term:`MAP_LABEL_OFFSET` 三倍。
 
 .. _-M:
 

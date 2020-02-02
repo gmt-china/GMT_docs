@@ -112,11 +112,11 @@ GMT提供了5种方法用于指定底图的参考点，使得用户可以灵活�
 
 -   ``+g<fill>`` 指定面板填充色，默认不填充
 -   ``+p<pen>`` 绘制面板边框。\ ``<pen>`` 为边框的画笔属性，若不指定 ``<pen>``
-    则默认使用默认使用 :ref:`MAP_FRAME_PEN <MAP_FRAME_PEN>` 的值
+    则默认使用默认使用 :term:`MAP_FRAME_PEN` 的值
 -   ``+r<radius>`` 绘制圆角边框，\ ``<radius>`` 为圆角的半径
 -   ``+i<gap>/<pen>`` 在边框内部绘制一个内边框，\ ``<gap>`` 是内外边框的空白距离
     （默认值为2p），\ ``<pen>`` 为内边框的画笔属性，比如 ``+i0.1c/thin,dahsed``\ ，
-    默认使用 :ref:`MAP_DEFAULT_PEN <MAP_DEFAULT_PEN>`
+    默认使用 :term:`MAP_DEFAULT_PEN`
 -   ``+c<clearance>`` 设置修饰物与面板之间的空白距离。默认情况下面板的大小由
     修饰物的大小决定，可以使用该子选项为面板增加额外的尺寸：
 

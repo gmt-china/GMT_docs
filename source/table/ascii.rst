@@ -35,7 +35,7 @@ GMT还可以处理大多数CVS（Comma-Separated Values）文件，包括被双�
 以及 ``gawk`` 等工具。
 
 在输出ASCII 表时，字段之间默认用 TAB 键分隔，可以通过修改
-:ref:`IO_COL_SEPARATOR <IO_COL_SEPARATOR>` 来设置字段的分隔符，
+:term:`IO_COL_SEPARATOR` 来设置字段的分隔符，
 
 文件头记录
 ----------
@@ -44,7 +44,7 @@ GMT还可以处理大多数CVS（Comma-Separated Values）文件，包括被双�
 
 记录中以 ``#`` 开头的行都被当做注释忽略，所以不算是文件头记录。其他不以 ``#``
 开头但与数据无关的行，则是文件头记录。可以使用 :doc:`/option/h` 选项或设置参数
-:ref:`IO_N_HEADER_RECS <IO_N_HEADER_RECS>` 跳过这些文件头记录。
+:term:`IO_N_HEADER_RECS` 跳过这些文件头记录。
 
 下面的ASCII表有一个文件头记录，可以使用 ``-h1`` 选项跳过该文件头段记录::
 
@@ -93,10 +93,10 @@ GMT还可以处理大多数CVS（Comma-Separated Values）文件，包括被双�
 
     gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
 
-用户可以通过设置 :ref:`IO_SEGMENT_MARKER <IO_SEGMENT_MARKER>` 将段头记录的
+用户可以通过设置 :term:`IO_SEGMENT_MARKER` 将段头记录的
 标识符修改为任意字符，例如 ``@``\ 、\ ``%``\ 等。
 
-:ref:`IO_SEGMENT_MARKER <IO_SEGMENT_MARKER>` 可以取两个特殊的值：
+:term:`IO_SEGMENT_MARKER` 可以取两个特殊的值：
 
 - 取 ``B`` 表示用空行作为数据段的分隔符
 - 取 ``N`` 表示用一个所有列都是NaN的记录作为数据段分隔符

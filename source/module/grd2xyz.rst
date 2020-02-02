@@ -8,7 +8,7 @@ grd2xyz
 :简介: 将网格文件转换成表数据
 
 **grd2xyz** 读取一个或多个二进制2D网格文件，并将XYZ数据以ASCII或二进制格式
-写到标准输出中。ASCII输出的格式由参数 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>`
+写到标准输出中。ASCII输出的格式由参数 :term:`FORMAT_FLOAT_OUT`
 控制，也可以以单精度或双精度浮点数的形式储存为二进制格式，还可以只输出Z值而不包含
 XY坐标数据。
 
@@ -121,7 +121,7 @@ XY坐标数据。
 
 GMT可以识别netCDF网格文件中的时间坐标。netCDF变量的 **unit** 属性会被解析以
 确定网格文件中时间坐标的起算点和单位。这些时间坐标值会被进一步根据
-:ref:`TIME_UNIT <TIME_UNIT>` 和 :ref:`TIME_EPOCH <TIME_EPOCH>`
+:term:`TIME_UNIT` 和 :term:`TIME_EPOCH`
 转换为GMT内部时间值。输出时，默认以相对时间的形式输出，也可以使用 **-f** 选项
 指定以绝对时间方式输出。
 

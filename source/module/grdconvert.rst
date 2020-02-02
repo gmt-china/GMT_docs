@@ -58,7 +58,7 @@ grdconvert
     *u8*\|\ *u16*\|\ *i16*\|\ *u32*\|\ *i32*\|\ *float32*\ ，
     其中 *i* 和 *u* 分别表示有符号和无符号整型。\ *datatype* 默认值为 *float32*\ 。
 
-    写网格文件时，可以考虑设置 :ref:`IO_NC4_DEFLATION_LEVEL <IO_NC4_DEFLATION_LEVEL>`
+    写网格文件时，可以考虑设置 :term:`IO_NC4_DEFLATION_LEVEL`
     以减小生成的文件大小，并进一步优化读写性能。
 
 可选选项

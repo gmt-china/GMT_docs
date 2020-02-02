@@ -31,9 +31,9 @@ CPT文件可以分成两类，一种适用于分类数据，一种适用于常�
 
 ``<key>`` 还可以取以下特殊值：
 
-- ``B``\ ：定义小于 ``<key1>`` 的值的填充色，即背景色，默认值由 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` 控制
-- ``F``\ ：定义大于 ``<keyn>`` 的值的填充色，即前景色，默认值由 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` 控制
-- ``N``\ ：定义值为 NaN 时使用的填充色，默认值由 :ref:`COLOR_NAN <COLOR_NAN>` 控制
+- ``B``\ ：定义小于 ``<key1>`` 的值的填充色，即背景色，默认值由 :term:`COLOR_BACKGROUND` 控制
+- ``F``\ ：定义大于 ``<keyn>`` 的值的填充色，即前景色，默认值由 :term:`COLOR_FOREGROUND` 控制
+- ``N``\ ：定义值为 NaN 时使用的填充色，默认值由 :term:`COLOR_NAN` 控制
 
 下面是一个分类CPT文件的示例::
 
@@ -78,9 +78,9 @@ CPT文件可以分成两类，一种适用于分类数据，一种适用于常�
 
 Z值还可以取以下特殊值：
 
-- ``B``\ ：定义小于 ``<z0>`` 的值的填充色，即背景色，默认值由 :ref:`COLOR_BACKGROUND <COLOR_BACKGROUND>` 控制
-- ``F``\ ：定义大于 ``<zn>`` 的值的填充色，即前景色，默认值由 :ref:`COLOR_FOREGROUND <COLOR_FOREGROUND>` 控制
-- ``N``\ ：定义值为 NaN 时使用的填充色，默认值由 :ref:`COLOR_NAN <COLOR_NAN>` 控制
+- ``B``\ ：定义小于 ``<z0>`` 的值的填充色，即背景色，默认值由 :term:`COLOR_BACKGROUND` 控制
+- ``F``\ ：定义大于 ``<zn>`` 的值的填充色，即前景色，默认值由 :term:`COLOR_FOREGROUND` 控制
+- ``N``\ ：定义值为 NaN 时使用的填充色，默认值由 :term:`COLOR_NAN` 控制
 
 GMT对于常规CPT文件的格式由如下要求：
 

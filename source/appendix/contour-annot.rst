@@ -26,7 +26,7 @@ d:
     完整的语法为 ``d<dist>[c|i|p][/frac]``
 
     根据地图上的投影距离确定标注的位置，可以指定长度单位或采用默认值
-    [:ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>`]。
+    [:term:`PROJ_LENGTH_UNIT`]。
     从等值线的起始位置开始，以 ``<dist>`` 为步长，沿着等值线布置标注。
     为了保证可以标注总长度小于 ``<dist>`` 的封闭曲线，可以指定 ``<frac>`` 参数，
     将第一个标注放置在距封闭曲线起点 d = <dist> * <frac> 的
@@ -44,7 +44,7 @@ f:
 
     其中，ASCII文件 ``<fix.txt>`` 中每条记录的前两列（坐标）指定了标注的位置。
     当文件中的坐标与等值线的距离小于 ``<slop>``
-    （附加单位或使用默认值 :ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>` ）时，
+    （附加单位或使用默认值 :term:`PROJ_LENGTH_UNIT` ）时，
     才会显示标注。\ ``<slope>`` 的默认值为0，即文件中的坐标必须与线段上的坐标
     完全匹配。
 
@@ -124,10 +124,10 @@ X:
 
 +f:
     指定标注文字的字体、大小和颜色等，可参考 ``pstext`` 。
-    字体的默认值参见 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 。
+    字体的默认值参见 :term:`FONT_ANNOT_PRIMARY` 。
 
 +g:
-    指定文本框的填充效果，颜色的默认值与 :ref:`PS_PAGE_COLOR <PS_PAGE_COLOR>` 相同。
+    指定文本框的填充效果，颜色的默认值与 :term:`PS_PAGE_COLOR` 相同。
 
 +j:
     指定标注内容与标注位置之间的对齐方式，默认值为 **CM** ，
@@ -185,8 +185,8 @@ X:
         采用笛卡尔坐标系内的距离作为标注内容的距离单位，
         可以指定单位，如 ``c|i|p``\ ，
         默认值为
-        [:ref:`PROJ_LENGTH_UNIT <PROJ_LENGTH_UNIT>`]。
-        标注内容的格式参见:ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>` 。
+        [:term:`PROJ_LENGTH_UNIT`]。
+        标注内容的格式参见:term:`FORMAT_FLOAT_OUT` 。
 
     +LD:
         采用真实地表距离计算标注内容，可以指定单位，如

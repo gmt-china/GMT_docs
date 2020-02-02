@@ -44,7 +44,7 @@ begin
 
 *formats*
     图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**\ ，由
-    参数 :ref:`GMT_GRAPHICS_FORMAT <GMT_GRAPHICS_FORMAT>` 控制。
+    参数 :term:`GMT_GRAPHICS_FORMAT` 控制。
 
     GMT支持输出如下矢量图片格式：
 

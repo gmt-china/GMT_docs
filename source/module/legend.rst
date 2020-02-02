@@ -79,11 +79,11 @@ legend
     若只使用 **-F** 而不使用其它子选项，则绘制图例框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
-    - **+p**\ *pen* 指定背景面板的画笔属性（默认画笔属性由 :ref:`MAP_FRAME_PEN <MAP_FRAME_PEN>` 决定）
+    - **+p**\ *pen* 指定背景面板的画笔属性（默认画笔属性由 :term:`MAP_FRAME_PEN` 决定）
     - **+g**\ *fill* 设置背景面板的填充色 [默认不填充]
     - **+c**\ *clearances* 以设置不同方向的空白间隔
     - **+i**\ *gap*/*pen* 在背景面板内部绘制一个额外的内边框。\ *gap* 为外边框
-      与内边界之间的距离 [2p]，默认边界属性由 :ref:`MAP_DEFAULT_PEN <MAP_DEFAULT_PEN>` 控制
+      与内边界之间的距离 [2p]，默认边界属性由 :term:`MAP_DEFAULT_PEN` 控制
     - **+r**\ *radius* 控制圆角矩形边框，圆角矩形半径 *radius* 默认为 6p
     - **+s** 绘制背景面板阴影区。\ *dx*/*dy* 是阴影区相对于背景面板的偏移量 [4p/4p]。
       *shade* 为阴影区的颜色 [gray50]。
@@ -151,7 +151,7 @@ GMT中共有14种图例类型，列举如下：
     绘制一条水平线
 
     - *offset* 为线条左右顶端与图例边框的空白距离 [默认为0]
-    - *pen* 为线条的画笔属性。若未指定 *pen*\ ，则使用 :ref:`MAP_GRID_PEN_PRIMARY <MAP_GRID_PEN_PRIMARY>`\ 。
+    - *pen* 为线条的画笔属性。若未指定 *pen*\ ，则使用 :term:`MAP_GRID_PEN_PRIMARY`\ 。
       若 *pen* 设置为 **-**\ ，则绘制一条不可见的线（供 **V** 记录使用）
     - 默认情况下，线条上下各留出四分之一的行间距，\ **-**\|\ **+**\|\ **=**
       分别表示线条上方无空白、线条下方无空白和线条上下均无空白。
@@ -172,7 +172,7 @@ GMT中共有14种图例类型，列举如下：
 *H** *font*\|\ **-** *header*
     为图例指定一个居中的标题。
 
-    *header* 为标题，\ *font* 为文字属性。若字体为 **-** 则使用默认字体 :ref:`FONT_TITLE <FONT_TITLE>`\ 。
+    *header* 为标题，\ *font* 为文字属性。若字体为 **-** 则使用默认字体 :term:`FONT_TITLE`\ 。
 
 **I** *imagefile width justification*
     将EPS或光栅文件放在图例中
@@ -183,7 +183,7 @@ GMT中共有14种图例类型，列举如下：
     在某一列增加指定的文字
 
     *label* 为显示的文本，\ *font* 为字体。若 *font* 为 **-** 则使用默认字体
-    :ref:`FONT_LABEL <FONT_LABEL>`\ 。\ *justification* 为对齐方式，可以取
+    :term:`FONT_LABEL`\ 。\ *justification* 为对齐方式，可以取
     **L**\|\ **C**\|\ **R**\ ，分别表示左对齐、居中对齐和右对齐
 
 **M** *slon*\|\ **-** *slat* *length*\ [**+f**][**+l**\ [*label*]][**+u**] [**-F**\ *param*] [ **-R**\ *w/e/s/n* **-J**\ *param* ]
@@ -220,7 +220,7 @@ GMT中共有14种图例类型，列举如下：
     - *fill* 符号的填充色。使用 **-** 表示不填充。\ *fill* 也可以用 z=\ *val* 的形式从CPT文件中根据Z值查找颜色
     - *pen* 符号的轮廓属性。使用 **-** 表示不绘制轮廓
     - *dx2* 是 *text* 与左边框的距离。使用 **-** 则自动设置为最大符号大小的1.5倍
-    - *text* 是符号的文字说明，字体由 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 控制
+    - *text* 是符号的文字说明，字体由 :term:`FONT_ANNOT_PRIMARY` 控制
 
     若只有 **S** 而不接其它任何信息，则直接跳至下一列。若 *symbol* 取 **f** **q** 或 **v**\ ，
     可以在符号后加上更多的子选项，详情见 :doc:`plot` 模块 **-S** 选项。
@@ -228,7 +228,7 @@ GMT中共有14种图例类型，列举如下：
     分隔作为 *size* 即可。如果只给了一个 *size*\ ，则其余 *size* 由GMT默认值决定。
 
 **T** *paragraph-text*
-    打印一段文本，字体由 :ref:`FONT_ANNOT_PRIMARY <FONT_ANNOT_PRIMARY>` 控制
+    打印一段文本，字体由 :term:`FONT_ANNOT_PRIMARY` 控制
 
 **V** [*offset*] *pen*
     在两列之间绘制垂直的线条

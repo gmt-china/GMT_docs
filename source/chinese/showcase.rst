@@ -30,7 +30,7 @@ GMT中文效果演示
 
         enca -L zh_CN -x UTF-8 gmt_cn1.locale
 
-GMT支持中文的月份。要想使用中文表示月份，需要设置 :ref:`GMT_LANGUAGE <GMT_LANGUAGE>` 为中文，
+GMT支持中文的月份。要想使用中文表示月份，需要设置 :term:`GMT_LANGUAGE` 为中文，
 即 ``cn1``\ ，并设置标注的字体为中文。
 
 .. literalinclude:: chinese-months.sh
@@ -42,7 +42,7 @@ GMT支持中文的月份。要想使用中文表示月份，需要设置 :ref:`G
 中文星期
 --------
 
-GMT支持中文的星期。要想使用中文表示星期几，需要设置 :ref:`GMT_LANGUAGE <GMT_LANGUAGE>` 为中文，
+GMT支持中文的星期。要想使用中文表示星期几，需要设置 :term:`GMT_LANGUAGE` 为中文，
 即 ``cn1``\ ，并设置标注的字体为中文。
 
 .. literalinclude:: chinese-weeks.sh

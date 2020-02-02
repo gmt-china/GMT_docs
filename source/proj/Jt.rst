@@ -14,7 +14,7 @@
 
 ``<lon>`` 中心经线，\ ``<lat>`` 原点的纬度，默认值为赤道。
 
-地图缩放因子默认值为1，可以通过修改参数 :ref:`PROJ_SCALE_FACTOR <PROJ_SCALE_FACTOR>`
+地图缩放因子默认值为1，可以通过修改参数 :term:`PROJ_SCALE_FACTOR`
 以实现自定义。
 
 .. gmtplot::

@@ -29,7 +29,7 @@ JPG（推荐）、BMP、PPM和TIFF格式。
 画布颜色
 --------
 
-默认的画布颜色为白色，可以通过设置 :ref:`PS_PAGE_COLOR <PS_PAGE_COLOR>` 来修改画布颜色::
+默认的画布颜色为白色，可以通过设置 :term:`PS_PAGE_COLOR` 来修改画布颜色::
 
     gmt begin map pdf,png
     gmt set PS_PAGE_COLOR lightred
@@ -43,7 +43,7 @@ GMT中默认使用宽11.55米、高11.55米的画布，在最终生成图片文�
 白色区域裁减掉，因而用户无需担心。
 
 若需要生成特定尺寸的图片，而不裁剪周边的白色区域，可以设置参数
-:ref:`PS_MEDIA <PS_MEDIA>` 来指定纸张尺寸::
+:term:`PS_MEDIA` 来指定纸张尺寸::
 
     gmt begin map
     gmt set PS_MEDIA A4
@@ -51,7 +51,7 @@ GMT中默认使用宽11.55米、高11.55米的画布，在最终生成图片文�
     gmt end show
 
 PS图片格式是一个例外。若选择PS作为图片格式，则默认画布大小为 A4 纸大小。
-当用户需要更大的画布时，需要修改参数 :ref:`PS_MEDIA <PS_MEDIA>` 来修改画布尺寸::
+当用户需要更大的画布时，需要修改参数 :term:`PS_MEDIA` 来修改画布尺寸::
 
     gmt begin map ps
     gmt set PS_MEDIA A1

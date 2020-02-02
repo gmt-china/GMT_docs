@@ -18,8 +18,8 @@
 - ``<axes>`` 控制显示底图的哪几条边，具体写法在下面会进一步介绍
 - ``+t<title>`` 指定当前底图的标题。该标题位于底图上方的中间位置。
   标题可以是任意字符串，如果是字符串中有空格，则必须用引号将字符串括起来。
-  标题的文本属性由 :ref:`FONT_TITLE <FONT_TITLE>` 控制。
-  标题与上边框之间的距离由 :ref:`MAP_TITLE_OFFSET <MAP_TITLE_OFFSET>` 控制。
+  标题的文本属性由 :term:`FONT_TITLE` 控制。
+  标题与上边框之间的距离由 :term:`MAP_TITLE_OFFSET` 控制。
 - ``+g<fill>`` 为底图内部填充背景色，见 :doc:`/basis/fill`
 - ``+n`` 只绘制边框，而不绘制刻度线和标注
 - ``+b`` 仅适用于3D底图，使用该子选项则会根据绘制3D底图的12条边
@@ -102,7 +102,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
   指定右轴和上轴的标签。
 - ``+p<prefix>`` 在选中的轴的标注加前缀
 - ``+u<unit>`` 给选中的轴的标注加单位。对于地图而言，标注的单位为度，该符号是
-  自动添加的，由 :ref:`FORMAT_GEO_MAP <FORMAT_GEO_MAP>` 控制
+  自动添加的，由 :term:`FORMAT_GEO_MAP` 控制
 
 ``x|y|z``
 ~~~~~~~~~
@@ -160,7 +160,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 地理底图
 --------
 
-地理底图与一般的坐标轴不同，其底图类型 :ref:`MAP_FRAME_TYPE <MAP_FRAME_TYPE>`
+地理底图与一般的坐标轴不同，其底图类型 :term:`MAP_FRAME_TYPE`
 使用 ``fancy`` 形式。
 
 .. gmtplot:: /scripts/GMT_-B_geo_1.sh
@@ -183,9 +183,9 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 笛卡尔线性轴
 ------------
 
-对于一般的线性轴而言，标注的格式由 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>`
+对于一般的线性轴而言，标注的格式由 :term:`FORMAT_FLOAT_OUT`
 决定，其默认值为 ``%g``\ ，即根据数据的大小决定用一般表示还是指数表示，小数位的
-数目会根据 ``<stride>`` 自动决定。若设置 :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>`
+数目会根据 ``<stride>`` 自动决定。若设置 :term:`FORMAT_FLOAT_OUT`
 为其他值，则会严格使用其定义的格式，比如 ``%.2f`` 表示显示两位小数。
 
 .. gmtplot:: /scripts/GMT_-B_linear.sh
@@ -299,8 +299,8 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
    gmt end
 
 需要注意，\ ``-Bsa1O`` 指定了次级标注的间隔为一个月，由于此处使用的是大写的 ``O``\ ，
-因而具体的显式方式由 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 决定。
-根据 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` 的说明可知，其值为 ``-o`` 表明
+因而具体的显式方式由 :term:`FORMAT_DATE_MAP` 决定。
+根据 :term:`FORMAT_DATE_MAP` 的说明可知，其值为 ``-o`` 表明
 以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。
 
 下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，
