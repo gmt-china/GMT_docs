@@ -1,10 +1,10 @@
 # GMT中文手册
 
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
-[![Documentation version](https://img.shields.io/badge/版本-v6.0-blue.svg)](https://docs.gmt-china.org/6.0/)
+[![Documentation version](https://img.shields.io/badge/版本-v6.1-blue.svg)](https://docs.gmt-china.org/6.1/)
 
-[在线阅读](https://docs.gmt-china.org/6.0/) |
-[PDF下载](https://docs.gmt-china.org/6.0/GMT_docs.pdf) |
+[在线阅读](https://docs.gmt-china.org/6.1/) |
+[PDF下载](https://docs.gmt-china.org/6.1/GMT_docs.pdf) |
 [文档源码](https://github.com/gmt-china/GMT_Docs) |
 [GMT中文社区](https://gmt-china.org) |
 [GMT官方网站](https://www.generic-mapping-tools.org) |

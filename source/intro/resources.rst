@@ -7,7 +7,7 @@
 **入门教程**
 
 #. :doc:`《GMT中文手册》中的入门教程 </tutorial/index>`
-#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/6.0/tutorial.html>`_
+#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/6.1/tutorial.html>`_
 #. 《地学GMT绘图》系列视频教程 （作者: `@liuzhumei <https://github.com/liuzhumei>`_\ ）
 
    - `《GMT5入门教程》 <https://www.bilibili.com/video/av74087421>`_
@@ -18,12 +18,12 @@
 **参考手册**
 
 #. `GMT中文手册 <https://docs.gmt-china.org/>`_
-#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/6.0/cookbook.html>`_
-#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/6.0/modules.html>`_
+#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/6.1/cookbook.html>`_
+#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/6.1/modules.html>`_
 
 **图库与示例**
 
-#. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.0/gallery.html>`_
+#. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.1/gallery.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
 

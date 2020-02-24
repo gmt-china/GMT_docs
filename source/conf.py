@@ -33,7 +33,7 @@ master_doc = 'index'
 project = 'GMT中文手册'
 copyright = '2014 - {}, GMT中文社区.'.format(datetime.date.today().year)
 author = 'GMT中文社区'
-version = '6.0'
+version = '6.1'
 release = version
 
 # Set smartquotes_action to 'qe' to disable Smart Quotes transform of -- and ---
@@ -64,7 +64,7 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
 
-    'versions': ['6.0', '5.4'],
+    'versions': ['6.1', '6.0', '5.4'],
 
     "menu_links": [
         (
