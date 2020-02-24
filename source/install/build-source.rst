@@ -110,8 +110,6 @@ GMT的编译及运行需要如下软件：
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0")
-    set (COPY_GSHHG TRUE)
-    set (COPY_DCW TRUE)
 
     set (GMT_USE_THREADS TRUE)
     set (GMT_ENABLE_OPENMP TRUE)
@@ -120,7 +118,6 @@ GMT的编译及运行需要如下软件：
   :file:`/opt/GMT-6.0.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.0.0` 等有可读写
   权限的路径；
-- **COPY_GSHHG** 和 **COPY_DCW** 设置为 **TRUE** 会将相关数据复制到 GMT 的 share 目录下
 - **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为GMT的某些模块
   增加多线程并行功能以加速计算，也可以不设置。
 
