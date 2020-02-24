@@ -9,7 +9,7 @@ BUILDDIR      = build
 DOCNAME       = GMT_docs
 HTML          = dirhtml
 
-# disable "gmt end show" and one-liner autoshow for GMT 6.0.0 modern mode
+# disable "gmt end show" and one-liner auto display for GMT 6 modern mode
 export GMT_END_SHOW=off
 
 # Put it first so that "make" without argument is like "make help".
