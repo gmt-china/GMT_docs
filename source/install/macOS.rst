@@ -75,7 +75,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
 5.  卸载GMT
 
-    若想要卸载GMT，可直接到 ``/Applications`` 目录下找到 GMT，直接删除即可。
+    若想要卸载GMT，可直接到 **/Applications** 目录下找到 GMT，直接删除即可。
 
 6.  升级GMT
 
