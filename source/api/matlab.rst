@@ -1,5 +1,5 @@
-GMT Matlab API
-==============
+GMT/Matlab Toolbox
+==================
 
 简介
 ----
