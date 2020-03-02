@@ -17,7 +17,7 @@ CLONE_ARGS="--quiet --branch=$BRANCH --single-branch"
 REPO_URL=https://${GH_TOKEN}@github.com/${REPO}.git
 HTML_SRC=${TRAVIS_BUILD_DIR}/${HTML_BUILDDIR:-doc/_build/html}
 # Place the HTML is different folders for different versions
-VERSION=${GMT_VERSION}
+VERSION=${GMT_DOC_VERSION}
 
 echo -e "DEPLOYING HTML TO GITHUB PAGES:"
 echo -e "Target: branch ${BRANCH} of ${REPO}"
@@ -46,7 +46,7 @@ touch .nojekyll
 echo -e "Add and commit changes"
 git add -A .
 git status
-git commit -m "Deploy $VERSION from TravisCI"
+git commit --amend --no-edit
 
 echo -e "Pushing..."
 git push -fq origin $BRANCH 2>&1 >/dev/null

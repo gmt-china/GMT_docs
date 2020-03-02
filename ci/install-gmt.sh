@@ -4,17 +4,13 @@
 # To return a failure if any commands inside fail
 set -e
 
-# Basic Information
-GSHHG_VERSION=2.3.7
-DCW_VERSION=1.1.4
-
 mkdir -p /tmp/GMT-build/
 cd /tmp/GMT-build
 
 # Download files
 wget --quiet http://www.soest.hawaii.edu/pwessel/gshhg/gshhg-gmt-${GSHHG_VERSION}.tar.gz -O gshhg-gmt.tar.gz
 wget --quiet http://www.soest.hawaii.edu/pwessel/dcw/dcw-gmt-${DCW_VERSION}.tar.gz -O dcw-gmt.tar.gz
-wget --quiet https://github.com/GenericMappingTools/gmt/archive/${GMT_TARBALL} -O gmt.tar.gz
+wget --quiet https://github.com/GenericMappingTools/gmt/archive/${GMT_VERSION}.tar.gz -O gmt.tar.gz
 
 # Now start to install
 tar -xf gmt.tar.gz --strip-components=1
@@ -35,6 +31,7 @@ cd build
 cmake ..
 make -j
 make -j install
+# Remove documentations to keep caches small
 rm -r ${GMT_INSTALL_PREFIX}/share/doc
 
 cd ${TRAVIS_BUILD_DIR}

@@ -4,68 +4,86 @@ language: python
 python: 3.7
 
 env:
-    global:
-        - HTML_BUILDDIR=build/dirhtml
-        - GMT_VERSION=5.4
-        - GMT_TARBALL=5.4.5.tar.gz
-        - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
-        # Install location
-        - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
-        - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
+  global:
+    # Sphinx HTML builddir
+    - HTML_BUILDDIR=build/dirhtml
+    # GSHHG and DCW version
+    - GSHHG_VERSION=2.3.7
+    - DCW_VERSION=1.1.4
+    # set GMT_VERSION to fetch GMT archive tarball from the GMT repository.
+    # Available values are:
+    # - master: build the latest master branch
+    # - 6.0: build the lastest 6.0 branch
+    # - 6.0.0: build the 6.0.0 release
+    - GMT_VERSION=5.4.5
+    # URL of the current documentation
+    - GMT_DOC_VERSION=5.4
+    # GMT install location
+    - GMT_INSTALL_PREFIX=${HOME}/GMT-${GMT_VERSION}
+    # TeXLive install location
+    - TEXLIVE_INSTALL_PREFIX=${HOME}/.TinyTeX
+    # PATH
+    - PATH=${GMT_INSTALL_PREFIX}/bin:${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux:${PATH}
 
+# Cache the installed GMT and TeXLive to save time
 cache:
-    pip: true
-    directories:
-        - ${TEXLIVE_INSTALL_PREFIX}
-        - ${GMT_INSTALL_PREFIX}
+  pip: true
+  directories:
+    - ${TEXLIVE_INSTALL_PREFIX}
+    - ${GMT_INSTALL_PREFIX}
 
 # Only build pushes to select branches and tags. This avoids the double
 # builds than happen when working on a branch instead of a fork.
 branches:
-    only:
-        - master
-        # Regex to build versioned branches, e.g. 5.4, 6.1
-        - /^\d+\.\d+$/
+  only:
+    - master
+    # Regex to build versioned branches, e.g. 5.4, 6.1
+    - /^\d+\.\d+$/
 
+# Install dependencies for building GMT
 addons:
-    apt:
-        packages:
-            - cmake
-            - build-essential
-            - libcurl4-gnutls-dev
-            - libnetcdf-dev
-            - libgdal1-dev
-            - libfftw3-dev
-            - libpcre3-dev
-            - liblapack-dev
-            - ghostscript
-            - curl
+  apt:
+    packages:
+      - cmake
+      - build-essential
+      - libcurl4-gnutls-dev
+      - libnetcdf-dev
+      - libgdal-dev
+      - libfftw3-dev
+      - libpcre3-dev
+      - liblapack-dev
+      - ghostscript
+      - curl
 
 install:
-    # Install Python dependencies
-    - pip install -r requirements.txt
-    # Install SourceCodePro fonts for PDF
-    - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
-    # Install tinytex (https://github.com/yihui/tinytex)
-    - wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh
-    - tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
-                    float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
-                    pdftexcmds
-    # Install GMT
-    - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then
-        source ci/install-gmt.sh;
-      fi
-    - gmt --version
+  # Install Python dependencies
+  - pip install -r requirements.txt
+  # Install SourceCodePro fonts for PDF
+  - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
+  # Install tinytex (https://github.com/yihui/tinytex)
+  - if [ ! -x "${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux/tlmgr" ]; then
+      wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
+      tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
+          float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol \
+          pdftexcmds;
+    fi
+  # Install GMT
+  - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then
+      source ci/install-gmt.sh;
+    fi
+  - xelatex --version
+  - gmt --version
 
 script:
-    # build html and PDF
-    - make build
+  # build html and PDF
+  - make build
 
 deploy:
-    provider: script
-    script: bash ci/deploy-gh-pages.sh
-    skip_cleanup: true
-    on:
-        branch:
-            - master
-            - 5.4
+  provider: script
+  script: bash ci/deploy-gh-pages.sh
+  skip_cleanup: true
+  on:
+    branch:
+      - master
+      # Regex to deploy on versioned branches, e.g. 5.4, 6.1
+      - /^\d+\.\d+$/
