@@ -77,6 +77,8 @@ install:
 script:
   # build html and PDF
   - make build
+  # Optimize PNG files to reduce file sizes
+  - bash ci/image_optimize.sh ${HTML_BUILDDIR}/_images/*.png
 
 deploy:
   provider: script
