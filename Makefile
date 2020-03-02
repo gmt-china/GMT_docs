@@ -2,8 +2,8 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -j auto
 SPHINXBUILD   = sphinx-build
+SPHINXOPTS    = -j auto -n
 SOURCEDIR     = source
 BUILDDIR      = build
 DOCNAME       = GMT_docs
@@ -20,9 +20,16 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-build: $(HTML) latexpdf
+build: $(HTML) latexpdf optimize_pdf
 	@echo "Copy built PDF to HTML directory"
 	cp $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(HTML)/
+
+optimize_pdf: latexpdf
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
+		-dNOPAUSE -dQUIET -dBATCH \
+		-sOutputFile=$(BUILDDIR)/latex/$(DOCNAME).optimized.pdf \
+		$(BUILDDIR)/latex/$(DOCNAME).pdf
+	mv $(BUILDDIR)/latex/$(DOCNAME).optimized.pdf $(BUILDDIR)/latex/$(DOCNAME).pdf
 
 serve: $(HTML)
 	cd $(BUILDDIR)/$(HTML) && python -m http.server
@@ -30,4 +37,4 @@ serve: $(HTML)
 # Watch a Sphinx directory and rebuild the documentation when a change is detected.
 # See https://github.com/GaretJax/sphinx-autobuild for details
 watch:
-	sphinx-autobuild --open-browser --delay 1 -b ${HTML} $(SOURCEDIR) $(BUILDDIR)/${HTML}
+	sphinx-autobuild --open-browser --delay 1 -b ${HTML} ${SPHINXOPTS} $(SOURCEDIR) $(BUILDDIR)/${HTML}
