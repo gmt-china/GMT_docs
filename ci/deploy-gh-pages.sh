@@ -46,7 +46,7 @@ touch .nojekyll
 echo -e "Add and commit changes"
 git add -A .
 git status
-git commit -m "Deploy $VERSION from TravisCI"
+git commit --ammend --no-edit
 
 echo -e "Pushing..."
 git push -fq origin $BRANCH 2>&1 >/dev/null
