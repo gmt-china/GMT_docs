@@ -6,6 +6,11 @@ GADM: 全球行政区划数据库
 GADM，全称Database of Global Administrative Areas，是一个高精度的全球行政区划
 数据库。其包含了全球所有国家和地区的国界、省界、市界、区界等多个级别的行政区划边界数据。
 
+.. warning::
+
+    GADM提供的中国国界数据不符合中国的领土主张，省界、市界、区界等数据也不一定
+    是最新的版本。在正式刊物中发表使用此类数据的图件时需格外谨慎。
+
 数据下载
 --------
 
@@ -14,12 +19,14 @@ GADM提供了两种下载方式：
 #. 下载全球所有国家和地区的所有数据 https://gadm.org/download_world.html
 #. 按国家下载 https://gadm.org/download_country_v3.html
 
-推荐只下载自己需要的国家的数据。
+由于全球数据量巨大，建议根据需要按照国家下载数据。
 
 需要说明的是，GADM 中对country 的定义为
 “any entity with `an ISO country code <http://zh.wikipedia.org/wiki/ISO_3166-1>`_\ ”。
 因而如果想要下载完整的中国数据，实际上需要下载China、Hong Kong、Macao和Taiwan
-四个数据。由于GADM提供的中国国界数据不符合我国领土主张，因此本文以美国（United States）为例介绍数据下载及使用。
+四个数据。
+
+由于GADM提供的中国国界数据不符合我国领土主张，本文以美国数据为例介绍数据下载及使用。
 
 数据格式及转换
 --------------
@@ -53,8 +60,8 @@ Geopackage转GMT
     2: gadm36_USA_1 (Multi Polygon)
     3: gadm36_USA_0 (Multi Polygon)
 
-可以看到Geopackage文件中包含了三个文件，使用如下命令（注意其中的一对单引号不可省略）
-将其转换为GMT可识别的格式::
+可以看到Geopackage文件中包含了三个文件，分别是3个不同等级的边界。
+使用如下命令（注意其中的一对单引号不可省略）将其转换为GMT可识别的格式::
 
     ogr2ogr -f OGR_GMT '' gadm36_USA.gpkg gadm36_USA_0
     ogr2ogr -f OGR_GMT '' gadm36_USA.gpkg gadm36_USA_1
@@ -123,7 +130,6 @@ Shapefile转GMT
 
     ogr2ogr -f OGR_GMT Alabama.gmt gadm36_USA_1.shp -where "NAME_1 = 'ALABAMA'"
 
-
 美国 2 级行政区划/县界
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -143,9 +149,3 @@ Shapefile转GMT
 
 GADM的\ `许可协议 <https://gadm.org/license.html>`_ 表明该数据可以免费用于学术
 和非商业用途，可以利用该数据绘制学术出版物的地图，但禁止重新分发或商业用途。
-
-备注
-----
-
-GADM提供的中国国界数据不一定符合中国的领土主张，省界、市界、区界等数据也不一定
-能够是最新的版本，在正式刊物中发表使用此类数据的图件时需要谨慎。
