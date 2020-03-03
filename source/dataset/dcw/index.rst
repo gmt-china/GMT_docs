@@ -1,6 +1,12 @@
 DCW: 世界数字图表
 =================
 
+.. figure:: /images/dcw.*
+   :width: 75%
+   :align: center
+
+   DCW: 世界数字图表
+
 **DCW数据主页**\ ： http://www.soest.hawaii.edu/wessel/dcw/
 
 DCW，全称为 Digital Chart of the World，即世界数字图表。
@@ -151,8 +157,9 @@ GMT中至少有两处会使用DCW数据：
 绘制主要大洋洲国家的边界：
 
 .. gmtplot::
+   :width: 60%
 
-    gmt coast -R100/190/-50/10 -JM12c -Baf -E=OC+p0.25p,red -png dataset_dcw_01
+   gmt coast -R100/190/-50/10 -JM12c -Baf -E=OC+p0.25p,red -png dataset_dcw_01
 
 绘制国界
 ++++++++
@@ -160,8 +167,9 @@ GMT中至少有两处会使用DCW数据：
 绘制澳大利亚边界：
 
 .. gmtplot::
+   :width: 60%
 
-    gmt coast -JM12c -Baf -EAU+p0.25p,red -png dataset_dcw_02
+   gmt coast -JM12c -Baf -EAU+p0.25p,red -png dataset_dcw_02
 
 绘制省/洲界
 +++++++++++
@@ -169,8 +177,9 @@ GMT中至少有两处会使用DCW数据：
 绘制澳大利亚昆士兰州(Queensland)，并设置边界颜色和填充颜色。其中 **-R** 选项后跟区域代码 **AU.QLD** 可间接指定该区域范围， **+R2** 表示在原有范围外扩大2度:
 
 .. gmtplot::
+   :width: 60%
 
-    gmt coast -RAU.QLD+R2 -JM12c -Baf -EAU.QLD+p1p,blue+gred -png dataset_dcw_03
+   gmt coast -RAU.QLD+R2 -JM12c -Baf -EAU.QLD+p1p,blue+gred -png dataset_dcw_03
 
 导出省/洲界数据
 +++++++++++++++
