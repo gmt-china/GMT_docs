@@ -1,29 +1,40 @@
 GSHHG: 全球高精度海岸线数据
 ===========================
 
+.. figure:: /images/gshhg.*
+   :width: 75%
+   :align: center
+
+   GSHHG: 全球高精度海岸线数据
+
 **GSHHG数据主页**\ ： http://www.soest.hawaii.edu/wessel/gshhg/
 
 GSHHG，全称为 A Global Self-consistent, Hierarchical, High-resolution Geography Database。
 GMT提供的GSHHG数据中包含了海岸线、河流和国界等数据。
 
+.. warning::
+
+    GSHHG提供的中国国界数据不符合中国的领土主张，在正式刊物中发表使用此类国界
+    数据的图件时都可能存在问题。
+
 GMT的 :doc:`/module/coast` 模块可以直接绘制GSHHG中的数据，也可以使用
 :doc:`/module/coast` 的 **-M** 选项将数据导出为纯文本文件供其它程序使用。
-这一节将利用 :doc:`/module/coast` 模块介绍GSHHG数据，关于
-:doc:`/module/coast` 模块的详细用法，见 :doc:`/module/coast` 模块的说明文档。
+这一节将利用 :doc:`/module/coast` 模块介绍GSHHG数据。
+关于 :doc:`/module/coast` 模块的详细用法，见 :doc:`/module/coast` 模块的说明文档。
 
 数据精度
 --------
 
-GSHHG提供了五种不同精度的数据，以满足不同的需求。五种精度从高到低分别为::
+GSHHG提供了五种不同精度的数据，以满足不同的需求。五种精度从高到低分别为：
 
-    full > high > intermediate > low > crude
+**f**\ ull > **h**\ igh > **i**\ ntermediate > **l**\ ow > **c**\ rude
 
 :doc:`/module/coast` 模块的 **-D** 选项加上每种精度的单词首字母即可指定使用何种精度的数据。
 在绘制全球地图时，可以用 **-Dc** 指定使用最低精度的数据，以避免绘制了大量细节而导致
 绘图速度慢且文件太大；
 在绘制几度范围的小区域地图时，则可以使用 **-Df** 指定使用最高精度的数据。
-当然，也可以使用 **-Da** 选项，此时GMT会根据当前绘图区域的大小自动选择
-合适的数据精度。
+GMT现代模式下，默认使用 **-Da** 选项，\ **a** 表示 **a**\ uto，
+即GMT会根据当前绘图区域的大小自动选择合适的数据精度。
 
 下面的示例绘制了一个小区域的海岸线边界，可以看到 **-D** 取不同精度时边界
 精细程度的差异:
@@ -62,8 +73,8 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - **-W**\ [*level*/]\ *pen* 绘制不同等级的海岸线
 - **-G**\ *fill* 设置陆地、岛屿等陆区的填充色
 - **-S**\ *fill* 设置海洋、湖泊等水区的填充色
-- **-Cl**\ *fill* 设置湖泊的填充色
-- **-Cr**\ *fill* 设置河流湖的填充色
+- **-C**\ *fill*\ **+l** 设置湖泊的填充色
+- **-C**\ *fill*\ **+r** 设置河流湖的填充色
 
 河流
 ~~~~
@@ -83,7 +94,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - 10: Irrigation canals.
 
 :doc:`/module/coast` 模块的 **-I** 选项可以用于绘制不同等级的河流，其基本语法
-为 **-I**/ *level*/*pen*\ 。其中 **level** 除了可以取1至10之外，还可以取：
+为 **-I**\ *level*/*pen*\ 。其中 *level* 除了可以取1至10之外，还可以取：
 
 - **a**: 所有河流和运河，即包含0-10等级的所有河流
 - **A**: 除了河流湖之外的所有河流和运河，即包含1-10等级的河流
@@ -114,32 +125,30 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 绘制1级海岸线：
 
 .. gmtplot::
+   :width: 75%
 
-    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -png map
+   gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -png map
 
 同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），
 蓝色的为3级岛屿线（即五大湖内部的岛屿）：
 
 .. gmtplot::
+   :width: 75%
 
-    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
+   gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
 
 绘制1-3级海岸线，并为陆地、还有、湖泊填充不同的颜色：
 
 .. gmtplot::
+   :width: 75%
 
-    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue \
-        -Gtan -Slightblue -Cl/royalblue -png map
+   gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue \
+        -Gtan -Slightblue -Croyalblue+l -png map
 
 绘制海岸线、国界和美国州界：
 
 .. gmtplot::
 
     gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -N1/thick,red -N2/thinner \
-        -Gtan -Slightblue -Cl/royalblue -png map
+        -Gtan -Slightblue -Croyalblue+l -png map
 
-备注
-----
-
-GSHHG提供的中国国界数据不符合中国的领土主张，在正式刊物中发表使用此类国界
-数据的图件时都可能存在问题。
