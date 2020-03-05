@@ -151,6 +151,7 @@ latex_elements = {
     'cmappkg'   : '',
     'fontenc'   : '',
     'maketitle' : '\\maketitle',
+    'releasename': 'v', # the default is "Release" or "发布"
 }
 
 intersphinx_mapping = {
