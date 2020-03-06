@@ -87,15 +87,19 @@ Windows下Batch用户可以直接复制如下命令并在CMD中执行::
 
 当需要使用地形数据时，可以直接通过 **@earth_relief_**\ *res* 的形式调用这些
 地形起伏数据，其中 *res* 表示网格文件的精度。如果命令中使用了 **-R** 选项，
-则只会读取该区域内的地形起伏数据。
+则只会读取该区域内的地形起伏数据。例如：
 
-使用示例::
+查看60弧分的地形数据的信息::
 
     gmt grdinfo @earth_relief_60m
 
+使用15弧分地形起伏数据绘制全球地形图::
+
     gmt grdimage -JH15c @earth_relief_15m -pdf map
 
-    gmt grdimage -JH15c -R90/120/20/60 @earth_relief_30m -pdf map
+使用2弧分地形起伏数据绘制一个区域的地形图::
+
+    gmt grdimage -JH15c -R90/120/20/60 @earth_relief_02m -pdf map
 
 缓存空间问题
 ------------
