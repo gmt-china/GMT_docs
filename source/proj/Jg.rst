@@ -34,10 +34,10 @@
   值为60则表示在顶点处沿着水平方向30度角的方向观察
 - ``<twist>`` 扭转角度，默认值为180度。
   This is the boresight rotation (clockwise) of the image.
-  The twist of 180º in the example mimics the fact that the Space Shuttle flies upside down.
+  The twist of 180° in the example mimics the fact that the Space Shuttle flies upside down.
 - ``<width>/<height>`` 是视角的角度，单位为度，默认值为60。
   This number depends on whether you are looking with the naked eye
-  (in which case you view is about 60º wide), or with binoculars, for example.
+  (in which case you view is about 60° wide), or with binoculars, for example.
 - ``<scale>`` as 1:xxxxx or as radius/latitude where radius is distance on map
   in inches from projection center to a particular oblique latitude
 

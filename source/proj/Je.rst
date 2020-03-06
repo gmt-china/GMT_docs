@@ -12,12 +12,12 @@
     -JE<lon>/<lat>[/<distance>]/<width>
     -Je<lon>/<lat>[/<distance>]/<scale>
 
-- ``<lon>/<lat>`` 投影中心的经纬度
-- ``<distance>`` 是边界距离投影中心的度数，默认值为180，即绘制全球图
-- ``<scale>`` 可以取 ``1:xxxx`` 格式，也可以是 ``<radius>/<latitude>``
-  （表示从投影中心到 纬线 ``<latitude>`` 在图上的距离为 ``<radius>``\ ）
+- *lon*/*lat* 投影中心的经纬度
+- *distance* 是边界距离投影中心的度数，默认值为180，即绘制全球图
+- *scale* 可以取 ``1:xxxx`` 格式，也可以是 *radius*/*latitude*
+  （表示从投影中心到 纬线 *latitude* 在图上的距离为 *radius*\ ）
 
-下图中，投影中心为100ºW/40ºN，离投影中心180度的点在图中的最外边界处。
+下图中，投影中心为100°W/40°N，离投影中心180度的点在图中的最外边界处。
 
 .. gmtplot::
     :caption: 使用等距方位投影绘制全球图

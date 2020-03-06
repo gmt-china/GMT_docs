@@ -15,7 +15,7 @@
     -JC<lon>/<lat>/<width>
     -JC<lon>/<lat>/<scale>
 
-其中，\ ``<lon>/<lat>`` 为中心的经纬度。
+其中，\ *lon*/*lat* 为中心的经纬度。
 
 .. gmtplot::
     :caption: Cassini投影绘制Sardinia岛

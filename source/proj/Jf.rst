@@ -11,10 +11,10 @@
     -JF<lon>/<lat>[/<distance>]/<width>
     -Jf<lon>/<lat>[/<distance>]/<scale>
 
-- ``<lon>/<lat>`` 投影中心的经纬度
-- ``<distance>`` 地图边界到投影中心的角度，默认值为60度
-- ``<scale>`` 可以是 ``1:xxxx`` 也可以是 ``<radius>/<latitude>``
-  （\ ``<radius>`` 是投影中心到纬线 ``<latitude>`` 在图上的距离）
+- *lon*/*lat* 投影中心的经纬度
+- *distance* 地图边界到投影中心的角度，默认值为60度
+- *scale* 可以是 ``1:xxxx`` 也可以是 *radius*/*atitude*
+  （\ *radius* 是投影中心到纬线 *latitude* 在图上的距离）
 
 .. gmtplot::
     :caption: 球心方位投影

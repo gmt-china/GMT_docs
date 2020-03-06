@@ -26,15 +26,15 @@
 
    +-----------------------------------------------------+--------+
    +=====================================================+========+
-   | Grafarend and Niermann, minimum linear distortion   | 61.7º  |
+   | Grafarend and Niermann, minimum linear distortion   | 61.7°  |
    +-----------------------------------------------------+--------+
-   | Ronald Miller Equirectangular                       | 50.5º  |
+   | Ronald Miller Equirectangular                       | 50.5°  |
    +-----------------------------------------------------+--------+
-   | Ronald Miller, minimum continental distortion       | 43.5º  |
+   | Ronald Miller, minimum continental distortion       | 43.5°  |
    +-----------------------------------------------------+--------+
-   | Grafarend and Niermann                              | 42º    |
+   | Grafarend and Niermann                              | 42°    |
    +-----------------------------------------------------+--------+
-   | Ronald Miller, minimum overall distortion           | 37.5º  |
+   | Ronald Miller, minimum overall distortion           | 37.5°  |
    +-----------------------------------------------------+--------+
-   | Plate Carrée, Simple Cylindrical, Plain/Plane       | 0º     |
+   | Plate Carrée, Simple Cylindrical, Plain/Plane       | 0°     |
    +-----------------------------------------------------+--------+

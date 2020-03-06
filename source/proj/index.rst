@@ -9,12 +9,14 @@ GMT支持几十种不同的投影方式，这些投影方式可以分为三类�
 
 其中地图投影又可以细分为几十种不同的投影方式。
 
-.. gmtplot:: /scripts/GMT_-J.sh
-    :show-code: false
-    :caption: GMT支持的地图投影及坐标变换
+.. gmtplot:: projections.sh
+   :width: 75%
+   :show-code: false
+   :caption: GMT支持的地图投影及坐标变换
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    Jx
    Jp

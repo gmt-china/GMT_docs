@@ -11,8 +11,8 @@
     -JD<lon>/<lat>/<lat1>/<lat2>/<width>
     -Jd<lon>/<lat>/<lat1>/<lat2>/<scale>
 
-- ``<lon>/<lat>`` 投影中心位置
-- ``<lat1>/<lat2>`` 两条标准纬线
+- *lon*/*lat* 投影中心位置
+- *lat1*/*lat2* 两条标准纬线
 
 等距圆锥投影常用于绘制小国家的地图集。
 
