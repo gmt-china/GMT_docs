@@ -326,6 +326,9 @@
 .. raw:: latex
 
    % numbering and show section, i.e. module names, not subsections
+   % protect it to make it also work with toc
+   % see https://tex.stackexchange.com/questions/4102/
+   \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
    \setcounter{tocdepth}{1}
    \setcounter{secnumdepth}{1}
 
@@ -399,5 +402,6 @@
 .. raw:: latex
 
    % revert back to subsections
+   \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
    \setcounter{tocdepth}{2}
    \setcounter{secnumdepth}{2}
