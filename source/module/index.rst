@@ -325,7 +325,9 @@
 
 .. raw:: latex
 
+   % numbering and show section, i.e. module names, not subsections
    \setcounter{tocdepth}{1}
+   \setcounter{secnumdepth}{1}
 
 .. toctree::
    :maxdepth: 1
@@ -396,4 +398,6 @@
 
 .. raw:: latex
 
+   % revert back to subsections
    \setcounter{tocdepth}{2}
+   \setcounter{secnumdepth}{2}
