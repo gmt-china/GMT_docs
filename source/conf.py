@@ -5,10 +5,7 @@
 # 1. http://www.sphinx-doc.org/en/stable/config.html
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
 
-import os
-import sys
 import datetime
-sys.path.insert(0, os.path.abspath('_extension'))
 
 # -- General configuration ------------------------------------------------
 needs_sphinx = '1.8'
@@ -22,23 +19,19 @@ exclude_patterns = []
 highlight_language = 'bash'
 pygments_style = 'sphinx'
 show_authors = False
-todo_include_todos = True
 
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
     'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.githubpages',
     'sphinx_cjkspace.cjkspace',
     'sphinx_gmt.gmtplot'
 ]
-mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
 project = 'GMT中文手册'
-copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
+copyright = '2014 - {}, GMT中文社区.'.format(datetime.date.today().year)
 author = 'GMT中文社区'
 version = '6.0'
 release = version
@@ -118,7 +111,7 @@ html_css_files = [
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
 latex_documents = [
-    (master_doc, 'GMT_docs.tex', "{} v{}".format(project, version), author, 'ctexbook'),
+    (master_doc, 'GMT_docs.tex', project, author, 'ctexbook'),
 ]
 latex_logo = None
 latex_toplevel_sectioning = 'chapter'
@@ -126,10 +119,10 @@ latex_additional_files = ['GMT_style.sty']
 latex_elements = {
     'papersize' : 'a4paper',
     'pointsize' : '11pt',
-    'extraclassoptions' : 'UTF8,twoside,punct=CCT',
+    'extraclassoptions' : 'UTF8,oneside,punct=CCT',
     'preamble'  : r'\input{GMT_style.sty}',
     'figure_align' : 'H',
-    'geometry'  : r'\usepackage[top=3.0cm, bottom=2.0cm, left=3.5cm, right=2.5cm]{geometry}',
+    'geometry'  : r'\usepackage[top=3.0cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}',
     # customized tableofcontents
     'tableofcontents' : r'''\pdfbookmark[0]{\contentsname}{contents}
                             \tableofcontents
