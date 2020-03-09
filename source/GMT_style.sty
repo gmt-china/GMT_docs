@@ -1,7 +1,7 @@
 % 文档相关信息
 \newcommand{\GMTDOCTITLE}{GMT\textbf{中文手册}}   % 文档标题
 \newcommand{\GMTDOCAUTHOR}{GMT中文社区}               % 文档作者
-\newcommand{\GMTDOCVERSION}{6.0.0}              % 文档版本
+\newcommand{\GMTDOCVERSION}{6.0}              % 文档版本
 
 % sphinx已经载入hyperref
 \hypersetup{
@@ -39,14 +39,12 @@
 % 列表设置
 \usepackage{enumitem}	% 列表宏包
 % itemsep 设置列表间距; topsep 设置列表前间距
-\setenumerate{
-    itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt
-}
 \setitemize{
-    itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt
+    itemsep=-10pt
 }
-\setdescription{
-    itemsep=-10pt, partopsep=0pt, parsep=\parskip, topsep=0pt, itemindent=0pt
+\setlist[description]{
+	font=\normalfont,  % 默认情况下label总是粗体
+	style=nextline     % item的定义在下一行显示
 }
 
 % 双栏目录
@@ -58,6 +56,19 @@
     \@starttoc{toc}%
 \end{multicols}}
 \makeatother
+
+% 封面页
+\renewcommand{\maketitle}{%
+    \pdfbookmark[0]{封面}{cover}
+    \begin{titlepage}
+    \centering
+    \vspace*{6cm}
+    \Huge{\GMTDOCTITLE}\\[0.25cm]
+    \huge{v\GMTDOCVERSION}\\[0.5cm]
+    \Large{\GMTDOCAUTHOR} \\
+    \Large{\today}	\\
+    \end{titlepage}
+}
 
 % 空白页
 \makeatletter	% copy from lnotes
@@ -88,10 +99,6 @@
 \usepackage[labelfont={small,bf}, textfont=small]{caption}
 \captionsetup[figure]{aboveskip=6pt, belowskip=6pt}
 \captionsetup[table]{aboveskip=6pt, belowskip=-12pt}
-
-% 首行缩进
-\usepackage{indentfirst}
-\setlength{\parindent}{2em}
 
 % 代码部分
 \fvset{fontsize=\scriptsize} % 设置全局代码字体为footnotesize
