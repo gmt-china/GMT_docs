@@ -106,7 +106,7 @@ GMT的编译及运行需要如下软件：
    # macOS用户
    $ open -a TextEdit cmake/ConfigUser.cmake
 
-向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
+向 **cmake/ConfigUser.cmake** 文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0")
     set (COPY_GSHHG TRUE)
@@ -115,21 +115,21 @@ GMT的编译及运行需要如下软件：
     set (GMT_USE_THREADS TRUE)
     set (GMT_ENABLE_OPENMP TRUE)
 
-其中，
-
 - **CMAKE_INSTALL_PREFIX** 用于设置GMT的安装路径，上面的语句会将GMT安装在
-  ``/opt/GMT-6.0.0`` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 ``/home/xxx/software/GMT-6.0.0`` 等有可读写
+  **/opt/GMT-6.0.0** 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 **/home/xxx/software/GMT-6.0.0** 等有可读写
   权限的路径；
 - **COPY_GSHHG** 和 **COPY_DCW** 设置为 **TRUE** 会将相关数据复制到 GMT 的 share 目录下
 - **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为GMT的某些模块
-  增加多线程并行功能以加速计算。
+  增加多线程并行功能以加速计算，也可以不设置。
 
 .. tip::
 
-   此处为了便于一般用户理解，只向 ``cmake/ConfigUser.cmake`` 中写入了必要的语句。
-   用户可以将GMT提供的配置模板 ``cmake/ConfigUserTemplate.cmake`` 复制为
-   ``cmake/ConfigUser.cmake``\ ，然后根据配置文件中的大量注释说明信息自行修改配置文件。
+   此处为了便于一般用户理解，只向 **cmake/ConfigUser.cmake** 中写入了必要的语句。
+   用户可以将GMT提供的配置模板 **cmake/ConfigUserTemplate.cmake** 复制为
+   **cmake/ConfigUser.cmake**\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
+   进一步，可以将高级配置模板 **cmake/ConfigUserAdvancedTemplate.cmake** 复制为
+   **cmake/ConfigUserAdvanced.cmake** 并根据注释说明信息修改高级配置。
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
@@ -194,7 +194,7 @@ GMT的编译及运行需要如下软件：
     GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
-    解决办法是，在 ``~/.bashrc`` 中将 Anaconda 相关的环境变量注释掉，以保证GMT
+    解决办法是，在 *~/.bashrc* 中将 Anaconda 相关的环境变量注释掉，以保证GMT
     在配置和编译过程中找到的不是 Anaconda 提供的库文件。待GMT安装完成后，再
     将 Anaconda 相关环境变量改回即可。
 
@@ -231,7 +231,7 @@ GMT的编译及运行需要如下软件：
 - 第一个命令添加了环境变量 **GMT6HOME**
 - 第二个命令修改 GMT6 的 bin 目录加入到 **PATH** 中，使得终端可以找到GMT命令
 - 第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。
-  通常，32位系统的路径为 ``lib``\ ，64位系统的路径为 ``lib64``
+  通常，32位系统的路径为 **lib**\ ，64位系统的路径为 **lib64**
 
 测试是否安装成功
 ----------------
@@ -244,10 +244,10 @@ GMT的编译及运行需要如下软件：
 升级/卸载GMT
 ------------
 
-按照上面的配置，GMT会被安装到 ``/opt/GMT-6.0.0`` 目录下。若想要卸载GMT，
-可以直接删除整个 ``/opt/GMT-6.0.0`` 即可。
+按照上面的配置，GMT会被安装到 **/opt/GMT-6.0.0** 目录下。若想要卸载GMT，
+可以直接删除整个 **/opt/GMT-6.0.0** 即可。
 
 GMT不支持自动更新，因而若想要升级GMT，通常建议先卸载GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。
 
-当然，高级用户也可以同时安装多个版本的GMT，但需要注意环境变量PATH的设置。
+当然，高级用户也可以同时安装多个版本的GMT，但需要注意环境变量 **PATH** 的设置。
