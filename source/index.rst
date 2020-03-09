@@ -5,19 +5,17 @@ GMT中文手册
    :align: center
    :width: 80%
 
-欢迎来到 `Generic Mapping Tools`_ 的世界。
+欢迎来到 `Generic Mapping Tools (GMT) <https://www.generic-mapping-tools.org>`_ 的世界。
+GMT 是地球科学最广泛使用的制图软件之一。
 
-本文档是由 `GMT中文社区`_ 维护整理的GMT中文手册。手册详尽地介绍了GMT的
-用法并提供了大量的实用示例。其既可以作为初学者的入门读物，
-也可以作为日常使用的参考书。
+本文档是由 `GMT中文社区 <https://gmt-china.org/>`_ 维护整理的GMT中文手册。
+手册详尽地介绍了GMT的用法并提供了大量的实用示例。
+其既可以作为初学者的入门读物，也可以作为日常使用的参考书。
 
 文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
 欢迎更多的志愿者加入到文档的维护工作中来。
 
     **一个人可以走的很快，但是一群人却可以走的更远。**
-
-.. _Generic Mapping Tools: https://www.generic-mapping-tools.org
-.. _GMT中文社区: https://gmt-china.org/
 
 .. rubric:: 快速链接：
 
@@ -45,6 +43,7 @@ GMT中文手册
 
    intro/index
    install/index
+   migrating/index
    tutorial/index
    basis/index
    table/index
