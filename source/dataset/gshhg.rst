@@ -73,8 +73,8 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - **-W**\ [*level*/]\ *pen* 绘制不同等级的海岸线
 - **-G**\ *fill* 设置陆地、岛屿等陆区的填充色
 - **-S**\ *fill* 设置海洋、湖泊等水区的填充色
-- **-Cl**\ *fill* 设置湖泊的填充色
-- **-Cr**\ *fill* 设置河流湖的填充色
+- **-Cl**/*fill* 设置湖泊的填充色
+- **-Cr**/*fill* 设置河流湖的填充色
 
 河流
 ~~~~
@@ -143,12 +143,12 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
    :width: 75%
 
    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue \
-        -Gtan -Slightblue -Clroyalblue -png map
+        -Gtan -Slightblue -Cl/royalblue -png map
 
 绘制海岸线、国界和美国州界：
 
 .. gmtplot::
 
     gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -N1/thick,red -N2/thinner \
-        -Gtan -Slightblue -Clroyalblue -png map
+        -Gtan -Slightblue -Cl/royalblue -png map
 
