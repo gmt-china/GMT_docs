@@ -37,7 +37,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
         brew upgrade gmt
 
-5.  卸载GMT。执行如下命令即可卸载GMT::
+5.  如果需要卸载GMT，可以执行如下命令::
 
         brew uninstall gmt
 
@@ -106,7 +106,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
         $ sudo port selfupdate
         $ sudo port upgrade gmt6
 
-5.  卸载GMT。执行如下命令即可卸载GMT::
+5.  如果需要卸载GMT，可以执行如下命令::
 
         $ sudo port uninstall gmt6
 
