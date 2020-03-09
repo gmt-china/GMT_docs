@@ -1,12 +1,14 @@
 地学数据集
 ##########
 
+这一章介绍了GMT中常用的地学数据。
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    overview
    gshhg
    dcw/index
-   earth_relief
+   earth-relief
    gadm/index
-   plate_boundaries/index
+   PB2002/index
