@@ -114,10 +114,18 @@
         - 若值为5，则表示不兼容GMT4语法，严格遵守GMT5语法，遇到GMT4语法时直接报错
 
     **GMT_VERBOSE**
-        控制GMT命令的verbose级别 [``c``]
+        控制GMT命令的verbose级别 [warning]
 
-        可选值包括 ``quiet``\ 、\ ``normal``\ 、\ ``compat``\ 、\ ``verbose``\ 、
-        ``long``\ 、\ ``debug``\ 。
+        可选值包括
+
+        - **quiet**
+        - **error**
+        - **warning**
+        - **timings**
+        - **information**
+        - **compatibility**
+        - **debug**
+
         也可以直接使用每个级别的第一个字母。每个级别的具体含义见 :doc:`/option/V` 一节。
 
     **GMT_HISTORY**
