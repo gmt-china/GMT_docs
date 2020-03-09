@@ -22,7 +22,7 @@ GMT在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/e
 
     本手册将只使用现代模式，而不介绍经典模式。
     GMT新用户只需要按照本手册直接学习现代模式即可；
-    对于GMT老用户，建议阅读 :doc:`现代模式与经典模式的差异 </appendix/modes-difference>`
+    对于GMT老用户，建议阅读 :doc:`/migrating/classic2modern`
     或者观看视频教程 `GMT6新特性 <https://www.bilibili.com/video/av73835957>`_\ ，
     并开始使用现代模式进行绘图。
 
