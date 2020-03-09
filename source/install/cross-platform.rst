@@ -12,7 +12,7 @@
 
 如果你是 Anaconda 用户，则可以直接通过如下命令安装。
 
-安装GMT 6.0.0::
+安装GMT 6.1.0::
 
     conda install gmt -c conda-forge
 
@@ -22,4 +22,4 @@
 安装完成后，在终端执行如下命令以验证::
 
     $ gmt --version
-    6.0.0
+    6.1.0
