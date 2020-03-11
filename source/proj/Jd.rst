@@ -6,10 +6,11 @@
 等距圆锥投影由希腊哲学家Claudius Ptolemy于公元150年提出。其既不是保角也不是
 等面积，而是两种的折衷。在所有经线以及标准纬线上比例尺没有畸变。
 
-该投影的参数为::
+该投影的参数为：
 
-    -JD<lon>/<lat>/<lat1>/<lat2>/<width>
-    -Jd<lon>/<lat>/<lat1>/<lat2>/<scale>
+**-JD**\ *lon0*/*lat0*/*lat1*/*lat2*/*width*
+或
+**-Jd**\ *lon0*/*lat0*/*lat1*/*lat2*/*scale*
 
 - *lon*/*lat* 投影中心位置
 - *lat1*/*lat2* 两条标准纬线

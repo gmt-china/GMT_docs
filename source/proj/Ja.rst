@@ -7,8 +7,9 @@
 该投影是方位等面积投影。在投影的中心畸变为0，离投影中心距离越远，
 畸变越大。该投影的参数为：
 
--**JA**\ *lon*/*lat*/[*distance*/]\ *width*
--**Ja**\ *lon*/*lat*/[*distance*/]\ *scale*
+**-JA**\ *lon*/*lat*/[*distance*/]\ *width*
+或
+**-Ja**\ *lon*/*lat*/[*distance*/]\ *scale*
 
 - *lon*/*lat* 投影中心坐标
 - *distance* 投影中心到边界的角度，默认值为90，即距离投影中心各90度，即整个半球
@@ -24,6 +25,7 @@
 
 .. gmtplot::
     :caption: 使用Lambert方位等面积投影绘制矩形地图
+    :width: 75%
 
     gmt begin GMT_lambert_az_rect pdf,png
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0
@@ -37,6 +39,7 @@
 
 .. gmtplot::
     :caption: 使用Lambert方位等面积投影绘制半球地图
+    :width: 40%
 
     gmt coast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -png GMT_lambert_az_hemi
 
@@ -51,3 +54,4 @@
 .. gmtplot:: /scripts/GMT_stereonets.sh
     :show-code: false
     :caption: 震源球投影：等面积的Schmidt网和等角度的Wulff网
+    :width: 75%

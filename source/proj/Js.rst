@@ -5,16 +5,17 @@
 
 此投影是保角方位投影，主要用于绘制南北极区域。在两极，所有经线都是直线，纬线则是圆弧。
 
-该投影的参数::
+该投影的参数：
 
-    -JS<lon>/<lat>[/<distance>]/<width>
-    -Js<lon>/<lat>[/<distance>]/<scale>
+**-JS**\ *lon*/*lat*\ [/*distance*]/*width*
+或
+**-Js**\ *lon*/*lat*\ [/*distance*]/*scale*
 
-- ``<lon>/<lat>`` 投影中心的经纬度
-- ``<distance>`` 地图边界到投影中心的角度，默认值为90度
-- ``<scale>`` 可以是 ``1:xxxx`` 也可以是 ``<radius>/<latitude>``
-  （\ ``<radius>`` 是投影中心到纬线 ``<latitude>`` 在图上的距离），
-  还可以是 ``<slat>/1:xxxx``\ （指定在标准纬线 ``<slat>`` 处的比例尺）
+- *lon*/*lat* 投影中心的经纬度
+- *distance* 地图边界到投影中心的角度，默认值为90度
+- *scale* 可以是 1:*xxxx* 也可以是 *radius*/*latitude*
+  （\ *radius* 是投影中心到纬线 *latitude* 在图上的距离），
+  还可以是 *slat*/1:*xxxx*\ （指定在标准纬线 *slat* 处的比例尺）
 
 极区立体地图
 ------------

@@ -9,13 +9,14 @@
 在常规Mercator投影中，圆柱与赤道相切。若圆柱沿着其他方向与地球相切，则称为横向
 Mercator投影或倾斜Mercator投影。
 
-常规的Mercator投影需要的参数如下::
+常规的Mercator投影需要的参数如下：
 
-    -JM[<lon>[/<lat>]/]<width>
-    -Jm[<lon>[/<lat>]/]<scale>
+**-JM**\ [*lon*\ [/*lat*]/]\ *width*
+或
+**-Jm**\ [*lon*\ [/*lat*]/]\ *scale*
 
-- ``<lon>`` 中心经线，默认为地图区域的中心
-- ``<lat>`` 标准纬线，默认值为赤道。若要指定标准纬线，则必须同时指定中心经线
+- *lon* 中心经线，默认为地图区域的中心
+- *lat* 标准纬线，默认值为赤道。若要指定标准纬线，则必须同时指定中心经线
 
 .. gmtplot::
     :caption: Mercator投影

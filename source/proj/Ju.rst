@@ -11,12 +11,13 @@
     :show-code: false
     :caption: 通用横向Mercator区域布局
 
-该投影的参数为::
+该投影的参数为：
 
-    -JU<zone>/<width>
-    -Ju<zone>/<scale>
+**-JU**\ *zone*/*width*
+或
+**-Ju**\ *zone*/*scale*
 
-其中 ``<zone>`` 可以取1--60、A、B、Y、Z，负值表示南半球的区域，也可以加上C--H
+其中 *zone* 可以取1--60、A、B、Y、Z，负值表示南半球的区域，也可以加上C--H
 以及J--N来指定纬度带。
 
 为了让任意指定区域的畸变最小化，公式中乘以了比例因子0.9996，这个值可以通过修改
