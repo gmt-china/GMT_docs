@@ -53,10 +53,14 @@ git push -fq origin $BRANCH 2>&1 >/dev/null
 
 echo -e "Pushing to Coding.net..."
 # Push GitHub gh-pages branch to coding.net master branch
-rm -rf latest
-mdkir latest
-echo '<meta http-equiv="Refresh" content="0;url=/6.0/"/>' >> latest/index.html
 CODING_URL=e.coding.net/seisman/GMT_docs.git
+
+rm -rf latest
+mkdir latest
+echo '<meta http-equiv="Refresh" content="0;url=/6.0/"/>' >> latest/index.html
+git add -A .
+git status
+git commit --amend --no-edit
 git push -fq https://${CODING_USER}:${CODING_TOKEN}@${CODING_URL} ${BRANCH}:master
 
 echo -e "Finished uploading generated files."
