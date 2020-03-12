@@ -128,8 +128,6 @@ GMT的编译及运行需要如下软件：
    此处为了便于一般用户理解，只向 :file:`cmake/ConfigUser.cmake` 中写入了必要的语句。
    用户可以将GMT提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
    :file:`cmake/ConfigUser.cmake`\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
-   进一步，可以将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
-   :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
