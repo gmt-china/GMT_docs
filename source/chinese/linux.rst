@@ -3,11 +3,14 @@ Linux 下的 GMT 中文支持
 
 本文介绍如何让 GMT 在 Linux 下支持中文。
 
-.. note::
+.. warning::
 
-    据用户反映，本文所介绍的内容可能存在严重问题！
+    据用户反映，按照本文的步骤操作可能会导致ghostscript无法正常使用。
 
-    Linux用户请阅读 :doc:`custom-fonts` 一文。
+    若出现该问题，可以执行 ``sudo perl cjk-gs-integrate.pl --remove`` 命令
+    撤销 cjk-gs-integrate.pl 脚本的操作。
+
+    若需要GMT中文支持，请转向 :doc:`custom-fonts` 一文。
 
 ghostscript的中文支持
 ---------------------
