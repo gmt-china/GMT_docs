@@ -15,5 +15,6 @@
 
 .. gmtplot::
     :caption: 使用Hammer投影绘制全球地图
+    :width: 85%
 
     gmt coast -Rg -JH4.5i -Bg -Dc -A10000 -Gblack -Scornsilk -png GMT_hammer

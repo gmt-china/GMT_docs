@@ -24,6 +24,7 @@
 
 .. gmtplot::
     :caption: Albers圆锥等面积投影
+    :width: 75%
 
     gmt begin GMT_albers pdf,png
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0

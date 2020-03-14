@@ -19,6 +19,7 @@
 
 .. gmtplot::
     :caption: 使用正交投影绘制半球
+    :width: 60%
 
     gmt coast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -png GMT_orthographic
 
@@ -44,6 +45,7 @@
 
 .. gmtplot::
     :caption: 透视投影
+    :width: 75%
 
     gmt coast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown \
                 -Wthinnest -Slightblue --MAP_ANNOT_MIN_SPACING=0.25i -png GMT_perspective

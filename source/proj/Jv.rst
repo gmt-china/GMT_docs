@@ -17,5 +17,6 @@
 
 .. gmtplot::
     :caption: 使用Van der Grinten投影绘制全球图
+    :width: 65%
 
     gmt coast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -png GMT_grinten

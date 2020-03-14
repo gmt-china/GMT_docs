@@ -24,6 +24,7 @@
 
 .. gmtplot::
     :caption: 极区立体保角投影
+    :width: 85%
 
     gmt coast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
                 -Sseashell -png GMT_stereographic_polar
@@ -35,6 +36,7 @@
 
 .. gmtplot::
     :caption: 矩形边界下的极区立体保角投影
+    :width: 75%
 
     gmt begin GMT_stereographic_rect pdf,png
     gmt set MAP_ANNOT_OBLIQUE 30
@@ -46,6 +48,7 @@
 
 .. gmtplot::
     :caption: 一般立体投影
+    :width: 75%
 
     gmt begin GMT_stereographic_general pdf,png
     gmt set MAP_ANNOT_OBLIQUE 0

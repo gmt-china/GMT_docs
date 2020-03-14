@@ -18,6 +18,7 @@
 
 .. gmtplot::
     :caption: 使用Miller圆柱投影绘制世界地图
+    :width: 85%
 
     gmt coast -R-90/270/-80/90 -Jj1:400000000 -Bx45g45 -By30g30 -Dc -A10000 \
                 -Gkhaki -Wthinnest -Sazure -png GMT_miller

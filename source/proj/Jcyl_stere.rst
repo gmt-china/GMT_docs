@@ -33,6 +33,7 @@
 
 .. gmtplot::
     :caption: 使用Gall立体投影绘制世界地图
+    :width: 85%
 
     gmt begin GMT_gall_stereo pdf,png
     gmt set FORMAT_GEO_MAP dddA

@@ -22,5 +22,6 @@
 
 .. gmtplot::
     :caption: 使用等距方位投影绘制全球图
+    :width: 50%
 
     gmt coast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -png GMT_az_equidistant

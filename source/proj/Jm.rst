@@ -20,6 +20,7 @@ Mercator投影或倾斜Mercator投影。
 
 .. gmtplot::
     :caption: Mercator投影
+    :width: 85%
 
     gmt begin GMT_mercator pdf,png
     gmt set MAP_FRAME_TYPE fancy

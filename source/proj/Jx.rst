@@ -38,6 +38,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 .. gmtplot::
     :caption: 笛卡尔坐标的线性变换
+    :width: 60%
 
     gmt begin GMT_linear pdf,png
     gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
@@ -66,6 +67,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 .. gmtplot::
     :caption: 地理坐标的线性变换
+    :width: 60%
 
     gmt begin GMT_linear_d pdf,png
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
@@ -83,6 +85,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 .. gmtplot::
     :caption: 日期时间坐标的线性变换
+    :width: 60%
 
     gmt begin GMT_linear_cal pdf,png
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham FORMAT_TIME_PRIMARY_MAP full
@@ -99,6 +102,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 .. gmtplot::
     :caption: 对数投影
+    :width: 60%
 
     gmt begin GMT_log pdf,png
     gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque -Wthick,blue,- -h sqrt.txt
@@ -119,6 +123,7 @@ GMT中笛卡尔坐标变换分为三类：
 
 .. gmtplot::
     :caption: 指数变换
+    :width: 60%
 
     gmt begin GMT_pow pdf,png
     gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory -Wthick sqrt.txt

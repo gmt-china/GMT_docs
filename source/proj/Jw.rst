@@ -17,5 +17,6 @@
 
 .. gmtplot::
     :caption: 使用Mollweide投影绘制全球地图
+    :width: 85%
 
     gmt coast -Rd -JW4.5i -Bg -Dc -A10000 -Gtomato1 -Sskyblue -png GMT_mollweide

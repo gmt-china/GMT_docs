@@ -24,6 +24,7 @@ Eckert IV示例：
 
 .. gmtplot::
     :caption: Eckert IV投影绘制全球图
+    :width: 85%
 
     gmt coast -Rg -JKf4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -png GMT_eckert4
 
@@ -31,5 +32,6 @@ Eckert VI示例:
 
 .. gmtplot::
     :caption: Eckert VI投影绘制全球图
+    :width: 85%
 
     gmt coast -Rg -JKs4.5i -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -png GMT_eckert4

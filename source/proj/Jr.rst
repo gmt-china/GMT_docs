@@ -18,5 +18,6 @@
 
 .. gmtplot::
     :caption: 使用Winkel Tripel投影绘制全球地图
+    :width: 75%
 
     gmt coast -Rd -JR4.5i -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -png GMT_winkel

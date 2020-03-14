@@ -10,6 +10,7 @@
 .. gmtplot:: /scripts/GMT_utm_zones.sh
     :show-code: false
     :caption: 通用横向Mercator区域布局
+    :width: 85%
 
 该投影的参数为：
 

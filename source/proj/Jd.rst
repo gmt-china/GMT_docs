@@ -19,6 +19,7 @@
 
 .. gmtplot::
     :caption: 等距圆锥地图投影
+    :width: 85%
 
     gmt begin GMT_equidistant_conic pdf,png
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.05i

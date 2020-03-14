@@ -17,6 +17,7 @@
 
 .. gmtplot::
     :caption: 使用Plate Carrée投影绘制全球地图
+    :width: 85%
 
     gmt coast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl
 

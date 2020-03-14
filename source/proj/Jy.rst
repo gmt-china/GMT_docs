@@ -38,6 +38,6 @@
 
 .. gmtplot::
     :caption: 使用Behrman圆柱等面积投影绘制地图
+    :width: 85%
 
-    gmt coast -R-145/215/-90/90 -JY35/30/4.5i -B45g45 -Dc -A10000 -Sdodgerblue \
-                -Wthinnest -png GMT_general_cyl
+    gmt coast -R-145/215/-90/90 -JY35/30/4.5i -B45g45 -Dc -A10000 -Sdodgerblue -Wthinnest -png GMT_general_cyl

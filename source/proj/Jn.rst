@@ -17,5 +17,6 @@
 
 .. gmtplot::
     :caption: 使用Robinson投影绘制全球地图
+    :width: 80%
 
     gmt coast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2 -png GMT_robinson

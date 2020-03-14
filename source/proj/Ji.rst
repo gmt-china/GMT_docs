@@ -17,6 +17,7 @@
 
 .. gmtplot::
     :caption: 使用正弦曲线投影绘制世界地图
+    :width: 85%
 
     gmt coast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -png GMT_sinusoidal
 
@@ -30,6 +31,7 @@
 
 .. gmtplot::
    :caption:  使用间断正弦曲线投影绘制世界地图
+   :width: 85%
 
    gmt begin GMT_sinus_int pdf,png
    gmt coast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack

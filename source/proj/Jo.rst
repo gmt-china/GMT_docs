@@ -23,6 +23,7 @@
 
 .. gmtplot::
     :caption: 使用 **-Joc** 倾斜Mercator投影
+    :width: 80%
 
     gmt coast -R270/20/305/25r -JOc280/25.5/22/69/4.8i -Bag -Di -A250 -Gburlywood \
                 -Wthinnest -TdjTR+w0.4i+f2+l+o0.15i -Sazure --FONT_TITLE=8p \
@@ -33,6 +34,7 @@
 
 .. gmtplot:: /scripts/GMT_obl_nz.sh
    :show-code: false
+   :width: 85%
 
    使用 **-JOa** 倾斜Mercator投影
 
