@@ -22,8 +22,7 @@ Flat Earth距离
 
 .. math::
 
-   d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
-   \theta_B}{2} \right ] \Delta \lambda^2}
+   d_f = R \sqrt{(\theta_A - \theta_B)^2 + (\cos \left [ \frac{\theta_A + \theta_B}{2} \right ] \Delta \lambda)^2}
 
 其中 R 是地球平均半径（由参数 :term:`PROJ_MEAN_RADIUS` 控制），
 :math:`\theta` 是纬度，
