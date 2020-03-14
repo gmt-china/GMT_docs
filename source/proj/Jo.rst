@@ -30,7 +30,7 @@
                 --MAP_TITLE_OFFSET=0.05i -png GMT_obl_merc
 
 在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便，
-下面的示例中使用了 **-Rk-1000/1000/-500/500** 来指定相对投影坐标。
+下面的示例中使用了 **-R-1000/1000/-500/500+uk** 来指定相对投影坐标。
 
 .. gmtplot:: /scripts/GMT_obl_nz.sh
    :show-code: false
