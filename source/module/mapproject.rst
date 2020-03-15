@@ -6,6 +6,7 @@ mapproject
 
 :官方文档: :doc:`gmt:mapproject`
 :简介: 地图投影正变换及逆变换
+:译文作者: `@cugliming <https://github.com/cugliming/>`_
 
 **mapproject** 从表数据中读取（经度，纬度）位置，并使用指定的地图投影和比例尺计算（x，y）坐标。
 

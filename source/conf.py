@@ -18,7 +18,7 @@ exclude_patterns = []
 
 highlight_language = 'bash'
 pygments_style = 'sphinx'
-show_authors = False
+show_authors = True
 
 extensions = [
     'sphinx.ext.intersphinx',
