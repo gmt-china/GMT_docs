@@ -56,8 +56,7 @@ echo -e "Pushing to Coding.net..."
 CODING_URL=e.coding.net/seisman/GMT_docs.git
 
 rm -rf latest
-mkdir latest
-echo '<meta http-equiv="Refresh" content="0;url=/6.0/"/>' >> latest/index.html
+cp -Rf ${VERSION} latest
 git add -A .
 git status
 git commit --amend --no-edit
