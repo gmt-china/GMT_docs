@@ -112,8 +112,8 @@ Windows下Batch用户可以直接复制如下命令并在CMD中执行::
 技术细节
 --------
 
--   15弧秒的数据来源于 SRTM15+V2 [http://dx.doi.org/10.1029/2019EA000658]
--   30弧秒及更低分辨率的全球地形数据均是SRTM15+V2 的衍生产品。
+-   15弧秒的数据来源于 SRTM15+ [http://dx.doi.org/10.1029/2019EA000658]
+-   30弧秒及更低分辨率的全球地形数据均是SRTM15+ 的衍生产品。
     GMT利用笛卡尔高斯滤波对其进行重采样以防止混叠现象，并保留了原始15弧秒数据的
     纬度依赖的精度信息。
     可以使用 :doc:`/module/grdinfo` 查看生成网格文件所使用的滤波命令。
@@ -132,6 +132,6 @@ Windows下Batch用户可以直接复制如下命令并在CMD中执行::
 数据来源及引用
 --------------
 
-#. SRTM15+V2 [http://dx.doi.org/10.1029/2019EA000658]
+#. SRTM15 [http://dx.doi.org/10.1029/2019EA000658]
 #. SRTMGL3数据: https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003
 #. SRTMGL1数据: https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003
