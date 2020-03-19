@@ -12,7 +12,7 @@ MAP参数
         可选值包括 ``inside|plain|graph|fancy|fancy+``\ 。
         一般情况下，\ ``fancy`` 边框类型仅适用于投影后的X、Y方向平行于经度纬度方向的
         情况，比如rectangular投影、polar投影。
-        对于某些投影，只能使用plain底图，即便 ``MAP_FRAME_TYPE`` 被设置为fancy。
+        对于某些投影，只能使用plain底图，即便 **MAP_FRAME_TYPE** 被设置为fancy。
 
         下图给出了不同的底图边框类型的效果：
 
@@ -64,7 +64,7 @@ MAP参数
             gmt end
 
     **MAP_ANNOT_ORTHO**
-        控制哪些轴的标注垂直于轴 [``we``]
+        控制笛卡尔投影下哪些轴的标注垂直于轴 [``we``]
 
         该参数可以将 ``wesnz`` 做任意组合。下图给出了取不同值时的绘图效果：
 
@@ -78,6 +78,10 @@ MAP参数
             done
             gmt subplot end
             gmt end
+
+        .. note::
+
+           此参数仅对笛卡尔投影有效。对于地理投影，可使用 :term:`MAP_ANNOT_OBLIQUE`\ 。
 
     **MAP_ANNOT_OBLIQUE**
         控制倾斜投影下标注和刻度线的显示
