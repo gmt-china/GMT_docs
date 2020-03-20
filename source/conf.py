@@ -117,8 +117,8 @@ latex_logo = None
 latex_toplevel_sectioning = 'chapter'
 latex_additional_files = ['GMT_style.sty']
 latex_elements = {
-    'papersize' : 'a4paper',
-    'pointsize' : '11pt',
+    'papersize' : 'b4paper',
+    'pointsize' : '12pt',
     'extraclassoptions' : 'UTF8,oneside,punct=CCT',
     'preamble'  : r'\input{GMT_style.sty}',
     'figure_align' : 'H',
