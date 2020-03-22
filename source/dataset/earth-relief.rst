@@ -106,7 +106,7 @@ Windows下Batch用户可以直接复制如下命令并在CMD中执行::
 
 你可以使用多种方式来控制你的缓存目录所占用的空间大小：
 
-#. 通过参数 :term:`GMT_DATA_SERVER_LIMIT` 设置缓存目录空间大小的上限，默认无限制；
+#. 通过参数 :term:`GMT_DATA_SERVER_LIMIT` 设置允许下载的单个文件的大小上限，默认无限制；
 #. 可以通过 **gmt clear data** 命令清空整个数据缓存目录
 
 技术细节
