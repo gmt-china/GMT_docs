@@ -60,7 +60,7 @@ rm -rf latest
 # make a copy to latest because coding.net doesn't support symlinks
 cp -Rf ${VERSION} latest
 # delete GMT_docs.pdf to reduce website size
-rm latest/GMT_Docs.pdf
+rm latest/GMT_docs.pdf
 git add -A .
 git status
 git commit --amend --no-edit
