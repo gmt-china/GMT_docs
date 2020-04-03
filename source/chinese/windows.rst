@@ -91,7 +91,7 @@ GMT 中文测试
 
 成图效果如下：
 
-.. figure:: GMT_Chinese.png
+.. figure:: GMT_chinese.png
    :width: 100%
    :align: center
 
