@@ -102,8 +102,8 @@ GMT 6.0.0 安装包中不仅包含了GMT，还包含了运行GMT所需的如下�
 
         请注意 Ghostscript 的版本！
 
-        - ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。切勿使用！
-        - GMT 6.0.0 与 ghostscript 9.50 间不完全兼容，无法正常生成中文图片。请勿使用！
+        由于Ghostscript的bug和兼容性问题，Windows下 GMT 6.0.0 建议与 ghostscript 9.26
+        搭配使用。
 
 4.  安装GSview 5.0 (**不推荐**)
 
