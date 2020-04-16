@@ -33,7 +33,41 @@ GMT中使用 :doc:`/module/legend` 模块添加图例。
     EOF
     gmt end show
 
-**-l** 选项还可以接受更多子选项以实现更多图例效果，在本教程中不再赘述。
+还可以为 **-l** 选项加上其它子选项以控制图例的位置、大小以及其它显示效果，
+在本教程中不再赘述。
+
+设置图例属性
+------------
+
+GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调用 **legend** 模块，
+而是 GMT 在绘图结束时自动调用了 **legend** 添加图例。我们也可以显式调用
+**legend** 模块，并设置图例的更多属性。
+
+.. gmtplot::
+    :width: 50%
+
+    gmt begin auto-legend png,pdf
+    gmt basemap -R0/10/0/10 -JX10c -Baf
+    gmt plot -W1p,blue -l"Profile" << EOF
+    3 3
+    6 8
+    EOF
+    gmt plot -Gred -Sa0.3c -W0.5p -l"Event" << EOF
+    5  5
+    EOF
+    gmt plot -Gblue -St0.3c -W0.5p -l"Station" << EOF
+    2 3
+    4 6
+    8 5
+    EOF
+    gmt legend -DjBR+o0.1c/0.1c -F+p1p+glightblue
+    gmt end show
+
+这个示例中，我们显式调用了 **legend** 选项，并设置了 **-D** 和 **-F** 选项。
+
+- **jBR** 表示将图例放在底图的右下角（BottomRight）
+- **+o0.1c/0.1c** 表示将图例在右下角的基础上再加上额外的偏移量
+- **-F+p1p+glightblue** 则设置了图例框的轮廓和填充色
 
 手动设置图例
 ------------
@@ -61,7 +95,7 @@ GMT中使用 :doc:`/module/legend` 模块添加图例。
 
 	gmt begin map png,pdf
 	gmt basemap -R0/10/0/8 -JX10c/8c -Baf -BWSen
-	gmt legend -DjBR+w2.8c+o0.1c/0.1c -F+p1p+glightblue << EOF
+	cat > legend.txt << EOF
 	# symbols
 	S 0.25c c 0.3c -      0.25p,blue 0.8c circle
 	S 0.25c t 0.3c cyan   0.25p      0.8c triangle
@@ -73,12 +107,5 @@ GMT中使用 :doc:`/module/legend` 模块添加图例。
 	S 0.25c v0.1i+a40+e 0.25i magenta 0.25p 0.8c vector
 	S 0.25c f0.1i+l+t 0.25i blue 0.25p 0.8c fault
 	EOF
+	gmt legend legend.txt -DjBR+w2.8c+o0.1c/0.1c -F+p1p+glightblue
 	gmt end show
-
-我们可以通过修改 **-D** 和 **-F** 进一步修改图例的位置和属性。
-上面的例子中，
-
-- **jBR** 表示将图例放在底图的右下角（BottomRight）
-- **+o0.1c/0.1c** 表示将图例在右下角的基础上再加上额外的偏移量
-- **+w2.8c** 设置了图例框的宽度
-- **-F+p1p+glightblue** 则设置了图例框的轮廓和填充色
