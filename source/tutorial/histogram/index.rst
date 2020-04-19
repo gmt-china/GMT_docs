@@ -3,51 +3,70 @@
 
 :doc:`/module/histogram` 模块用于统计并绘制直方图。
 
-直方图展现数据的分布情况，每一个直方的长度表示了对应范围数据的多少或者比例。
-在这一节，我们借用深部强震数量随季节变化的规律作为例子来介绍直方图的绘制。
+直方图可以展现样本的分布情况。
+一个直方的宽度表示它的数据范围，长度表示位于该范围内的样本的数量或者比例。
+在这一节，我们借用深部强震（深度不小于500公里，震级不小于7级）发生的月份来介绍直方图的绘制。
+为了突出重点，这里提供的数据文件已经经过充分处理，是从地震目录中提取的月份。
+
+直方图根据直方的方向可以分为垂直直方图和水平直方图，也可以根据直方的长度的意义不同分为计数直方图和百分比直方图。
 
 垂直直方图
 ----------
 
-所谓垂直直方图，就是直方是垂直的，是最常见的形式。
+我们首先来绘制垂直直方图：
 
 .. gmtplot::
    :language: bash
+   :width: 75%
    :caption: 垂直直方图
 
-   gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -W5+b -L1p -i2 -png histVert
+   gmt histogram eq.dat -JX8c -Bxa1+l'Month' -Byaf+l'Counts' -BWSen -T1/12/1 -W1p -png hist1
 
 此示例中：
 
-- ``-R0/35/0/600`` 设置了X轴范围是0到35，Y轴范围为0到600
 - ``-JX8c`` 指定了整张图为线性投影，图的宽度（X轴长度）和图的高度（Y轴长度）均为8厘米
-- ``-Bxa5+l"Depth/km" -Bya100+l"Counts"`` 分别设置了X、Y轴标注、刻度的间隔、标签
-- ``-D+f10p,Times-Roman+o8p`` 为每个bar设置标注，标注字号为10p、字体为4号Times-Roman，标注与bar之间距离为8p
-- ``-W5+b`` 设置直方图bin宽度为5，\ ``+b`` 表示将落在范围外的数据包含在第一个或最后一个bin中
-- ``-L1p`` 设置bar边框为1p
-- ``-i2`` 从输入文件eq.dat中读取第3列，\ ``-i0`` 表示输入文件第1列
+- ``-Bxa1+l'Month' -Byaf+l'Counts'`` 分别设置了X、Y轴标注、刻度间隔和标签
+- ``-T1/12/1`` 设置了统计的范围是1到12，每一个直方的跨度是1
+- ``-W1p`` 设置直方的边框宽度为1p
 
-除了统计个数，还可以统计百分比，绘制百分比直方图
+从这张图可以看到，年中的地震明显更多。
 
-``-Z1`` 设置纵轴为百分比，\ ``-N`` 绘制等效的正态分布曲线。
-
-.. gmtplot::
-   :language: bash
-   :caption: 百分比直方图
-
-   gmt histogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l"Depth/km" -Bya20+l"Frequency" -BWSne -W5+b -L1p -i2 -N -Z1 -png histFreq
-
-上面的例子中，直方没有颜色，下面的例子中我们添加上颜色。
-
-水平直方图
+增加修饰
 ----------
 
-除了垂直直方图，还可以绘制水平直方图。
-
-``-A`` 用于控制绘制水平直方图，上一个例子中默认绘制垂直直方图。
+为了让图形更加的美观，我们可以添加一些选项：
 
 .. gmtplot::
    :language: bash
+   :width: 75%
+   :caption: 添加选项的垂直直方图
+
+   gmt histogram eq.dat -JX8c -Bxa1+l'Month' -Byaf+l'Counts' -BWSen -D -Gred -T1/12/1 -W1p -png hist2
+
+添加的选项：
+   - ``-D`` 为每一个直方标注数量
+   - ``-Gred`` 为每一个直方增加红色的填充色
+
+百分比直方图
+-----------
+
+如果想绘制百分比直方图，只需要增加 ``-Z1`` 选项即可：
+
+.. gmtplot::
+   :language: bash
+   :width: 75%
+   :caption: 添加选项的垂直直方图
+
+   gmt histogram eq.dat -JX8c -Bxa1+l'Month' -Byaf+l'Counts'+u' %' -BWSen -D -Gred -T1/12/1 -W1p -Z1 -png hist3
+
+水平直方图
+-----------
+
+如果想要绘制水平的直方图，只需要增加 ``-A`` 选项：
+
+.. gmtplot::
+   :language: bash
+   :width: 75%
    :caption: 水平直方图
 
-   gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l"Depth/km" -Bya100+l"Counts" -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 -png histHori
+   gmt histogram eq.dat -JX8c -Bxa1+l'Month' -Byaf+l'Counts' -BWSen -A -D -Gred -T1/12/1 -W1p -png hist4
