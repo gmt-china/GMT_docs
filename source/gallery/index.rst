@@ -3,5 +3,4 @@
 
 .. toctree::
 
-    histogram/index
     animation/index
