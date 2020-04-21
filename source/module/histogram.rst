@@ -187,4 +187,4 @@ histogram
 示例
 ----
 
-访问 :doc:`/gallery/histogram/index` 以查看更多示例。
+访问 :doc:`/tutorial/histogram/index` 以查看更多示例。

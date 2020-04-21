@@ -15,6 +15,7 @@
    legend
    earth-relief
    layers
+   histogram/index
    oneliner
    inset
    subplot
