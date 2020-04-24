@@ -20,3 +20,4 @@
    inset
    subplot
    multifig
+   conf
