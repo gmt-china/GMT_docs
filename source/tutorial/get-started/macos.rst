@@ -50,7 +50,7 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 
     gmt --new-script > myplot.sh
 
-该命令会生成一个GMT模板脚本，并保存到Bash脚本文件 :file:`myplot.sh` 中。
+该命令会在当前目录生成一个GMT模板脚本，并保存到Bash脚本文件 :file:`myplot.sh` 中。
 
 .. note::
 

@@ -48,7 +48,7 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
     gmt --new-script > myplot.sh
 
-该命令会生成一个GMT模板脚本，并保存到Bash脚本文件 :file:`myplot.sh` 中。
+该命令会在当前目录生成一个GMT模板脚本，并保存到Bash脚本文件 :file:`myplot.sh` 中。
 
 .. note::
 
