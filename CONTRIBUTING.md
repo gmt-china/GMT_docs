@@ -49,18 +49,18 @@
     - Linux 用户可以执行 `firefox build/html/index.html` 查看网页
     - macOS 用户可以执行 `open build/html/index.html` 查看网页
 
-5.  安装 TeXLive
+5.  编译生成PDF文档
 
     如果想要生成PDF格式的文档，则需要安装TeXLive。
 
     - Linux 用户可以参考 http://blog.seisman.info/texlive-install
     - macOS 用户可以直接执行 `brew cask install mactex-no-gui` 安装 mactex
 
-6.  编译生成PDF版文档
+	安装完成后执行:
 
         make latexpdf
 
-    生成的的PDF位于 `build/latex/GMT_docs.pdf`
+    生成的的PDF位于 `build/latex/GMT_docs.pdf`\ 。
 
 ## 分支模型
 
