@@ -13,7 +13,7 @@
    - `《GMT5入门教程》 <https://www.bilibili.com/video/av74087421>`_
    - `《GMT6新特性》 <https://www.bilibili.com/video/av73835957>`_
 
-#. `GMT 教學手冊 <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_ (适用于GMT5)
+#. `GMT 教學手冊 <http://gmt-tutorials.org/>`_ 作者: `鄭懷傑 <https://github.com/whyjz>`_
 
 **参考手册**
 
@@ -26,6 +26,7 @@
 #. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.1/gallery.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
+#. `GMT YouTube Channel <https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q>`_
 
 **论坛/讨论组**
 
