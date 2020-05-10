@@ -1,10 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Push HTML pages to the gh-pages branch of the current Github repository.
 #
-# Keeps pages built from git tags in separate folders (named after the tag).
-# Pages for the master branch are in the 'dev' folder. 'latest' is a link to
-# the last tag.
 
 # To return a failure if any commands inside fail
 set -e
@@ -16,7 +13,7 @@ CLONE_DIR=deploy
 CLONE_ARGS="--quiet --branch=$BRANCH --single-branch"
 REPO_URL=https://${GH_TOKEN}@github.com/${REPO}.git
 HTML_SRC=${TRAVIS_BUILD_DIR}/${HTML_BUILDDIR:-doc/_build/html}
-# Place the HTML is different folders for different versions
+# Place the HTML in different folders for different versions
 VERSION=${GMT_DOC_VERSION}
 
 echo -e "DEPLOYING HTML TO GITHUB PAGES:"
@@ -51,7 +48,7 @@ git commit --amend --no-edit
 echo -e "Pushing to GitHub..."
 git push -fq origin $BRANCH 2>&1 >/dev/null
 
-# Push anotther copy got coding.net
+# Push anotther copy to coding.net
 echo -e "Pushing to Coding.net..."
 # Push GitHub gh-pages branch to coding.net master branch
 CODING_URL=e.coding.net/seisman/GMT_docs.git

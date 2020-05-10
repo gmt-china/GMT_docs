@@ -1,5 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
 # Install GMT on Travis
+#
 
 # To return a failure if any commands inside fail
 set -e
@@ -20,8 +22,6 @@ rm gmt.tar.gz gshhg-gmt.tar.gz dcw-gmt.tar.gz
 
 cat > cmake/ConfigUser.cmake << EOF
 set (CMAKE_INSTALL_PREFIX "${GMT_INSTALL_PREFIX}")
-set (GMT_INSTALL_MODULE_LINKS FALSE)
-set (GMT_USE_THREADS TRUE)
 EOF
 
 mkdir build
