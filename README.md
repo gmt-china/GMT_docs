@@ -8,9 +8,10 @@
 [文档源码](https://github.com/gmt-china/GMT_Docs) |
 [GMT中文社区](https://gmt-china.org) |
 [GMT官方网站](https://www.generic-mapping-tools.org) |
-[GMT官方文档](https://docs.generic-mapping-tools.org)
+[GMT官方文档](https://docs.generic-mapping-tools.org) |
+[GMT官方论坛](https://forum.generic-mapping-tools.org/)
 
-欢迎来到 [Generic Mapping Tools](https://www.generic-mapping-tools.org) 的世界。
+欢迎来到 [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org) 的世界。
 
 本文档是由 GMT 中文社区维护的 GMT 中文手册，既可以作为入门读物，也可以作为日常参考。
 
