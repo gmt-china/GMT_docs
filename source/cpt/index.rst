@@ -15,4 +15,5 @@ CPT文件定义了数值与颜色之间的映射关系，对于每一个数值�
    builtin-cpt
    makecpt
    usage
+   current-cpt
    resources
