@@ -24,6 +24,7 @@
 **图库与示例**
 
 #. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.1/gallery.html>`_
+#. `GMT官方动画示例 <https://docs.generic-mapping-tools.org/6.1/animations.html>`_
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`_
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`_
 #. `GMT YouTube Channel <https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q>`_
