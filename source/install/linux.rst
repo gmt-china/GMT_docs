@@ -91,17 +91,20 @@ RHEL/CentOS
 Ubuntu/Debian用户
 -----------------
 
-Ubuntu/Debian官方源中提供的GMT版本较老，不建议安装使用。
-目前Ubuntu/Debian用户只能通过编译源码的方式安装GMT最新版，
-具体编译方法见 :doc:`build-source`\ 。
-
-如果不介意使用老版本的GMT5，可以通过如下方式安装。
-但注意，本手册中的所有脚本无法在GMT5下运行。
-
-安装方式为::
+Ubuntu 20.04 (Focal Fossa) 和 Debian 11 (测试版）用户可以直接使用如下命令安装GMT::
 
     sudo apt-get install gmt gmt-dcw gmt-gshhg
-    sudo apt-get install ghostscript gdal-bin
+    sudo apt-get install ghostscript gdal-bin graphicsmagick ffmpeg
+
+.. warning::
+
+   以上命令在老版本的Ubuntu/Debian上会安装GMT 5.x。
+
+   对于老版本Ubuntu/Debian用户，有如下几种选择：
+
+   #. 使用 GMT 5.x
+   #. 升级系统到Ubuntu 20.04 或 Debian 11
+   #. 编译GMT源码以安装最新版，具体编译方法见 :doc:`build-source`
 
 ArchLinux用户
 -------------

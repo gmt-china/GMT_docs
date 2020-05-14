@@ -53,11 +53,11 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
 1. 下载：\ `gmt-6.1.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.0-darwin-x86_64.dmg>`_
 
-2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.1.0.app** 拖动到 Applications 目录
+2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.1.0.app** 拖动到 **Applications** 目录
 
-3. 在Finder中的Applications目录下，找到GMT图标以双击启动。
+3. 在Finder中的 **Applications** 目录下，找到GMT图标以双击启动。
    GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
-   提示将如下语句添加到 :file:`~/.bash_profile` 中以修改PATH环境变量::
+   提示将如下语句添加到 :file:`~/.bash_profile` 中以修改环境变量::
 
        export GMTHOME=/Applications/GMT-6.1.0.app/Contents/Resources
        export PATH=${GMTHOME}/bin:${PATH}
