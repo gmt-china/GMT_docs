@@ -16,9 +16,6 @@
 
     conda install gmt -c conda-forge
 
-注意：由于conda-forge没有提供Windows下的GraphicsMagick，因而Windows用户还需
-自行下载并安装 GraphicsMagick 才能制作GIF格式的动画。
-
 安装完成后，在终端执行如下命令以验证::
 
     $ gmt --version
