@@ -100,6 +100,15 @@ GMT 中文测试
 
 .. literalinclude:: GMT_Chinese.bat
 
+.. note::
+
+    GMT 6.x 目前在Windows下处理中文时存在BUG，可能会出现某些中文正常显示，某些
+    不正常显示的情况。使用::
+
+        gmt set PS_CHAR_ENCODING Standard+
+
+    可临时避免这一BUG。
+
 成图效果如下：
 
 .. figure:: GMT_Chinese.png

@@ -1,4 +1,7 @@
 gmt begin map pdf,png
+REM GMT在Windows下处理中文存在一些已知BUG
+REM 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
+gmt set PS_CHAR_ENCODING Standard+
 gmt set FONT_TITLE 25p,41,black
 gmt set FONT_LABEL 15p,39,black
 
