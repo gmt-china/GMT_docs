@@ -57,7 +57,7 @@ GMT中默认绘制垂直直方图。绘制直方图只需要一列数据，而�
    :width: 75%
    :caption: 添加选项的垂直直方图
 
-   gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l'Depth' -Byaf+l'Counts' -BWSen -D -W1p -Gred -T5 -i2 -png hist2
+   gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l"Depth" -Byaf+l"Counts" -BWSen -D -W1p -Gred -T5 -i2 -png hist2
 
 - **-JX15c/9c** 指定了整张直方图的宽度和高度。若不指定，GMT会自动指定一个合适的值
 - **-R0/40/0/600** 设置了直方图的数据范围。若不指定，\ **histogram** 会自动确定最适合的数据范围。
@@ -79,7 +79,7 @@ GMT中默认绘制垂直直方图。绘制直方图只需要一列数据，而�
    :width: 75%
    :caption: 水平直方图
 
-   gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l'Depth' -Byaf+l'Counts' -BWSen -A -D -W1p -Gred -T5 -i2 -png hist3
+   gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l"Depth" -Byaf+l"Counts" -BWSen -A -D -W1p -Gred -T5 -i2 -png hist3
 
 百分比直方图
 ------------
@@ -92,7 +92,7 @@ GMT中默认绘制垂直直方图。绘制直方图只需要一列数据，而�
    :width: 75%
    :caption: 添加选项的垂直直方图
 
-   gmt histogram eq.dat -JX15c/9c -Bxaf+l'Depth' -Byaf+l'Counts'+u'%' -BWSen -Z1 -W1p -Gred -T5 -i2 -png hist4
+   gmt histogram eq.dat -JX15c/9c -Bxaf+l"Depth" -Byaf+l"Counts"+u"%" -BWSen -Z1 -W1p -Gred -T5 -i2 -png hist4
 
 这个命令中，由于纵轴的含义变了，之前的 **-R** 选项就不再合适了，因而我们去除了
 **-R** 选项让GMT自动确定最佳数据范围。

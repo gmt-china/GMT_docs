@@ -37,7 +37,7 @@ GMT命令在读入数据时默认会处理读入的所有数据记录。\ **-e**
 
 筛选出所有匹配 *type* 的记录::
 
-    $ gmt select input.dat -e'type'
+    $ gmt select input.dat -e"type"
     1	1	type1
     2	2	type1
     3	3	type1
@@ -50,7 +50,7 @@ GMT命令在读入数据时默认会处理读入的所有数据记录。\ **-e**
 
 排除所有匹配 *null* 的记录::
 
-    $ gmt select input.dat -e~'null'
+    $ gmt select input.dat -e~"null"
     1	1	type1
     2	2	type1
     3	3	type1
@@ -63,7 +63,7 @@ GMT命令在读入数据时默认会处理读入的所有数据记录。\ **-e**
 
 筛选所有匹配 *type2* 的记录::
 
-    $ gmt select input.dat -e'type2'
+    $ gmt select input.dat -e"type2"
     4	4	type2
     5	5	type2
     6	6	type2
@@ -71,7 +71,7 @@ GMT命令在读入数据时默认会处理读入的所有数据记录。\ **-e**
 筛选所有匹配 *type1* 的记录::
 
     # 错误写法，因为 type1 也包含在字符串 type10 中
-    $ gmt select input.dat -e'type1'
+    $ gmt select input.dat -e"type1"
     1	1	type1
     2	2	type1
     3	3	type1

@@ -67,7 +67,7 @@
 下图展示了3D绘图中 **-B** 选项的不同用法。读者可以修改如下命令中的 **-B** 选项
 来实现不同搭配的效果::
 
-    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t'-BwesnZ' -p130/30 -pdf map
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t"-BwesnZ" -p130/30 -pdf map
 
 .. gmtplot:: B/3D-axes-examples.sh
    :show-code: false
