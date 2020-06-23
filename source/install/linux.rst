@@ -48,14 +48,13 @@ RHEL/CentOS
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本。
 
-.. note::
-
-    CentOS 8 中的 GMT 目前不支持 GDAL 相关功能。
-
 安装方式如下::
 
     # 安装 epel-release
     yum install epel-release
+
+    # 启用 PowerTools 仓库 (仅限于 RHEL/CentOS 8 用户)
+    yum config-manager --set-enabled PowerTools
 
     # 启用GMT官方仓库 (仅限于RHEL/CentOS 7/8 用户)
     yum install yum-plugin-copr
