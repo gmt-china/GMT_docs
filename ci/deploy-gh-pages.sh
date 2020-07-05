@@ -36,6 +36,8 @@ git config user.name "TravisCI"
 echo -e "Remove old files from previous builds"
 rm -rf ${VERSION}
 cp -Rf ${HTML_SRC}/ ${VERSION}/
+rm -f latest
+ln -sf ${VERSION} latest
 
 # Need to have this file so that Github doesn't try to run Jekyll
 touch .nojekyll
@@ -57,7 +59,7 @@ rm -rf latest
 # make a copy to latest because coding.net doesn't support symlinks
 cp -Rf ${VERSION} latest
 # delete GMT_docs.pdf to reduce website size
-rm latest/GMT_docs.pdf
+#rm latest/GMT_docs.pdf
 git add -A .
 git status
 git commit --amend --no-edit
