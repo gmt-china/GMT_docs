@@ -104,6 +104,7 @@ GMT的编译及运行需要如下软件：
    # Linux用户
    $ gedit cmake/ConfigUser.cmake
    # macOS用户
+   $ touch cmake/ConfigUser.cmake
    $ open -a TextEdit cmake/ConfigUser.cmake
 
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
