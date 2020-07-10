@@ -117,6 +117,9 @@ GMT 中文测试
 
 .. note::
 
-   若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
-   Unicode big endian，若使用 UTF-8 编码则会出现乱码；另外，很多编辑器默认将文本
-   文件以 UTF-8 编码保存，需要将编辑器的默认编码修改为 GB-2321、ANSI或GB-EUC。
+   使用记事本的用户，应注意含中文的bat文件和输入数据文件都应以ANSI编码保存，
+   使用其编码方式则极可能出现乱码。
+
+   Visual Studio Code 用户，应注意确保含中文的bat文件和输入数据文件都采用
+   GB2312编码方式。在Visual Studio Code右下角状态栏中可以查看并修改当前文件的
+   编码方式。
