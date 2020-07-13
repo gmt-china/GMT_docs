@@ -45,42 +45,12 @@ GMT对公开的全球地形起伏数据进行预处理，并提供了从1弧秒�
 数据下载
 --------
 
-当用户第一次使用地形数据时，GMT需要从服务器下载数据，这通常很耗时。
-因而，建议用户在闲置时提前将分辨率为15弧秒到1弧分的地形数据下载到自己的计算机上。
-
-Bash用户可以直接使用GMT提供的数据下载脚本（注意，下面命令开始处的 ``$`` 符号
-不是命令提示符，执行时必须加上）::
-
-    $(gmt --show-sharedir)/tools/gmt_getremote.sh data
-
-Windows下Batch用户可以直接复制如下命令并在CMD中执行::
-
-    gmt which -Gu @earth_relief_01d
-    gmt which -Gu @earth_relief_30m
-    gmt which -Gu @earth_relief_20m
-    gmt which -Gu @earth_relief_15m
-    gmt which -Gu @earth_relief_10m
-    gmt which -Gu @earth_relief_06m
-    gmt which -Gu @earth_relief_05m
-    gmt which -Gu @earth_relief_04m
-    gmt which -Gu @earth_relief_03m
-    gmt which -Gu @earth_relief_02m
-    gmt which -Gu @earth_relief_01m
-    gmt which -Gu @earth_relief_30s
-    gmt which -Gu @earth_relief_15s
-
-对于国内用户，由于GMT服务器位于国外，下载通常很慢且容易由于网络原因出现中断。
-建议手动从中科大镜像手动下载：
-
-#. 访问中科大GMT镜像的data目录 http://mirrors.ustc.edu.cn/gmt/data/
-#. 下载网页显示的所有数据文件
-#. Linux或macOS用户将数据文件放在目录 ``~/.gmt/server`` 下（若目录不存在则新建）
-#. Windows 用户将数据文件放在 ``C:\Users\用户名\.gmt\server`` 目录下（若目录不存在则新建）
-
-不建议提前下载1弧秒和3弧秒的地形数据，主要原因在于，这两套数据占据硬盘空间太大。
-基于同样的理由，GMT服务器上这两套数据不是以单个文件的形式存放，而是被分成了多个小块，
+当用户第一次使用地形数据时，GMT会根据需要从服务器下载数据。
+这些地形数据在GMT服务器上不是以单个文件的形式存放，而是被分成了多个小块，
 当用户需要绘制某个区域的高分辨率地形时，GMT会自动下载该区域的所有区块的地形数据，
-然后合并成单个网格数据供用户使用。
+然后合并成单个网格数据供用户使用。这样可以极大减小数据下载量。比如想要用3弧秒的
+数据绘制2度x2度的区域，GMT只需要下载该区域几MB的网格数据，而无需下载整个7 GB的
+网格数据，极大的节省了下载时间。
 
 使用方法
 --------
