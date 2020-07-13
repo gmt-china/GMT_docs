@@ -18,8 +18,8 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 1.  下载 GMT 安装包
 
-    - `gmt-6.1.0-win64.exe (64位) <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.1.0-win64.exe>`__
-    - `gmt-6.1.0-win32.exe (32位) <ftp://ftp.soest.hawaii.edu/gmt/bin/gmt-6.1.0-win32.exe>`__
+    - `gmt-6.1.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.0-win64.exe>`__
+    - `gmt-6.1.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.0-win32.exe>`__
 
 2.  安装GMT
 
