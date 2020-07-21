@@ -30,7 +30,7 @@ subplot begin 语法
 *nrows*\ **x**\ *ncols*
 |-F|\ [**f**\|\ **s**]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx/dy*][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
 [ |-A|\ [*autolabel*][**+j**\|\ **J**\ *refpoint*][**+c**\ *dx*\ /\ *dy*][**+g**\ *fill*][**+p**\ *pen*][**+o**\ *dx*/*dy*][**+r**][**+R**][**+v**] ]
-[ |-C|\ [*side*]\ /*clearance*\ [**u**] ]
+[ |-C|\ [*side*]\ *clearance*\ [**u**] ]
 [ |SYN_OPT-B| ]
 [ |SYN_OPT-J| ]
 [ |-M|\ *margins* ]
@@ -138,7 +138,7 @@ subplot begin 语法
 
 .. _-C:
 
-**-C**\ [*side*]\ /*clearance*\ [**u**]
+**-C**\ [*side*]\ *clearance*\ [**u**]
     设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、
     添加额外的文字等。
 
@@ -153,7 +153,7 @@ subplot begin 语法
 
     .. note::
 
-       在子图模式下不能使用 **-X** 和 **-Y**\ ，可以使用 **-C** 作为替代。
+       在子图模式内不能使用 **-X** 和 **-Y**\ ，可以使用 **-C** 作为替代。
 
 .. include:: explain_-J.rst_
 
