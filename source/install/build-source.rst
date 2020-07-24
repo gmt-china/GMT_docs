@@ -10,7 +10,7 @@ GMT源码请参考GMT官方
 
 GMT的编译及运行需要如下软件：
 
-- CMake: >=2.8.7
+- CMake: >=2.8.12
 - netCDF（>=4.0且支持netCDF-4/HDF5）
 - curl
 
@@ -31,6 +31,7 @@ GMT的编译及运行需要如下软件：
 
 对于Ubuntu/Debian::
 
+    $ sudo apt-get update
     # 安装编译所需软件包
     $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
     # 安装可选软件包
@@ -66,12 +67,6 @@ GMT的编译及运行需要如下软件：
     # 安装可选依赖
     brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
-.. warning::
-
-   GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片。但Ghostscript 9.27存在
-   严重bug，会导致生成的图片中有用信息被裁剪。
-   请使用 ``gs --version`` 确认安装的Ghostscript不是9.27版本。
-
 下载源码及数据
 --------------
 
@@ -94,7 +89,7 @@ GMT的编译及运行需要如下软件：
    $ tar -xvf dcw-gmt-1.1.4.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.1.0/share/gshhg
+   $ mv gshhg-gmt-2.3.7 gmt-6.1.0/share/gshhg-gmt
    $ mv dcw-gmt-1.1.4 gmt-6.1.0/share/dcw-gmt
 
    # 切换到gmt源码目录下
@@ -147,7 +142,7 @@ GMT的编译及运行需要如下软件：
     *
     *  Options:
     *  Found GSHHG database       : /home/user/GMT/gmt-6.1.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.1.0/share/dcw-gmt
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.1.0/share/dcw-gmt (1.1.4)
     *  Found GMT data server      : https://oceania.generic-mapping-tools.org
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
@@ -189,7 +184,7 @@ GMT的编译及运行需要如下软件：
 .. warning::
 
     Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，
-    GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行
+    GMT在配置过程中可能会找到Anaconda提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
     解决办法是，在 :file:`~/.bashrc` 中将 Anaconda 相关的环境变量注释掉，以保证GMT
@@ -204,7 +199,7 @@ GMT的编译及运行需要如下软件：
 .. note::
 
    **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下
-   使用 **-j** 选项会导致编译过程卡死。若出现此种情况，建议去除 **-j** 选项。
+   使用 **-j** 选项会导致编译过程卡死。Ubuntu用户建议不使用 **-j** 选项。
 
 修改环境变量
 ------------

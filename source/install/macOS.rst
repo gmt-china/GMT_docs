@@ -49,7 +49,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
 .. note::
 
-    GMT的dmg安装包只支持 macOS >= 10.12。
+    GMT的dmg安装包只支持 macOS >= 10.14。
 
 1. 下载：\ `gmt-6.1.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.0-darwin-x86_64.dmg>`_
 
@@ -109,16 +109,3 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 5.  如果需要卸载GMT，可以执行如下命令::
 
         $ sudo port uninstall gmt6
-
-使用 Fink 安装
---------------
-
-`Fink <http://www.finkproject.org/>`_ 是 macOS 下的第三方软件包管理工具。
-
-1.  安装GMT::
-
-        sudo fink install gmt6
-
-2.  安装依赖包::
-
-        sudo fink install graphicsmagick ffmpeg

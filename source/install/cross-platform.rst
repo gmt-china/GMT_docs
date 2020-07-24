@@ -12,11 +12,19 @@
 
 如果你是 Anaconda 用户，则可以直接通过如下命令安装。
 
-安装GMT::
+1.  安装GMT::
 
-    conda install gmt -c conda-forge
+        conda install gmt -c conda-forge
 
-安装完成后，在终端执行如下命令以验证::
+2.  安装完成后，在终端执行如下命令以验证::
 
-    $ gmt --version
-    6.1.0
+        $ gmt --version
+        6.1.0
+
+3.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
+
+        conda update gmt
+
+4.  如果需要卸载GMT，可以执行如下命令::
+
+        conda remove gmt
