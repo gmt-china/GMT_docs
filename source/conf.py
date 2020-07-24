@@ -148,5 +148,5 @@ latex_elements = {
 }
 
 intersphinx_mapping = {
-    'gmt': ('https://docs.generic-mapping-tools.org/6.0/', None),
+    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
 }
