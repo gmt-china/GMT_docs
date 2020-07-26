@@ -8,7 +8,7 @@ legend
 :简介: 在图上添加图例
 
 **legend** 模块用于绘制图例，图例由图例文件控制。如无特别说明，
-标注的字体由 :ref:`FONT_ANNOT_PRIMARY <FONT\_ANNOT\_PRIMARY>` 控制。
+标注的字体由 :term:`FONT_ANNOT_PRIMARY` 控制。
 
 语法
 ----

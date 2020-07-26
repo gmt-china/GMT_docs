@@ -4,7 +4,7 @@
 GMT自身是无法读取shapefile等格式的地理空间数据的。需要利用
 `GDAL <https://www.gdal.org/>`_ 中的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_
 工具将其他格式的地理空间数据转换为GMT可识别的OGR/GMT格式的数据文件，转换过程中
-保留了地理空间数据的非空间元数据。关于该格式的介绍，见 :doc:`/table/ogr`\ 。
+保留了地理空间数据的非空间元数据。关于该格式的介绍，见 :doc:`/table/ogrgmt`\ 。
 
 **-a** 选项用于建立非空间元数据与GMT输入/输出数据之间的联系。该选项的语法为：
 
