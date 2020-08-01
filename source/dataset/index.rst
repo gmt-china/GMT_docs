@@ -10,3 +10,4 @@
    earth-relief
    gadm/index
    PB2002/index
+   earth-images
