@@ -15,10 +15,19 @@
     **GMT_DATA_SERVER**
         GMT数据服务器地址，默认使用SOEST官方镜像 [https://oceania.generic-mapping-tools.org/]
 
+        目前的镜像包括：
+
+        - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
+        - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
+
     **GMT_DATA_SERVER_LIMIT**
         从GMT服务器上下载的单个文件的大小上限，默认无限制。
         可以给定文件大小上限的字节数，也可以加上 ``k``\ 、\ ``m``\ 或 ``g`` 表示
         KB、MB 或 GB。
+
+    **GMT_DATA_UPDATE_INTERVAL**
+        指定远程数据目录文件的更新频率，默认为1天 [1d]。
+        时间单位可以取 **d** （天)、\ **w** （周）或 **o**\ （月）。
 
 算法选择相关参数
 ----------------
