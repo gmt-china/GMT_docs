@@ -15,6 +15,11 @@
     **GMT_DATA_SERVER**
         GMT数据服务器地址，默认使用SOEST官方镜像 [https://oceania.generic-mapping-tools.org/]
 
+        目前的镜像包括：
+
+        - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
+        - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
+
     **GMT_DATA_SERVER_LIMIT**
         从GMT服务器上下载的单个文件的大小上限，默认无限制。
         可以给定文件大小上限的字节数，也可以加上 ``k``\ 、\ ``m``\ 或 ``g`` 表示
