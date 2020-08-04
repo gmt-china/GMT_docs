@@ -11,7 +11,7 @@ earth_day 和 earth_night : 地球卫星影像数据
    :show-code: false
    :width: 75%
 
-   gmt grdimage @earth_night_01d -png,pdf earth_night
+   gmt grdimage @earth_night_15m -png,pdf earth_night
 
 
 介绍
