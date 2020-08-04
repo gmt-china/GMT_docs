@@ -1,15 +1,17 @@
 earth_day 和 earth_night : 地球卫星影像数据
-========================================
+===============================================
 
 .. gmtplot::
    :show-code: false
    :width: 75%
+   :caption: 地球卫星影像白昼数据
 
    gmt grdimage @earth_day_15m -png,pdf earth_day
 
 .. gmtplot::
    :show-code: false
    :width: 75%
+   :caption: 地球卫星影像黑夜数据
 
    gmt grdimage @earth_night_15m -png,pdf earth_night
 
@@ -21,7 +23,7 @@ GMT 提供了地球的卫星影像数据。该数据来自于美国航空航天�
 和地形起伏数据一样，该影像数据也分不同的精度，从30弧秒到1弧度。
 使用时，GMT会自动下载，不需要用户自己下载或者安装。
 
-下表列出了GMT提供的白昼影像数据的名称、分辨率以及文件大小。黑夜影像数据把名称中的day换为night即可。
+下表列出了GMT提供的白昼影像数据的名称、分辨率以及文件大小。黑夜影像数据把名称中的 day 换为 night 即可。
 
 ====================== ========= ========
 地形数据名称           分辨率    大小

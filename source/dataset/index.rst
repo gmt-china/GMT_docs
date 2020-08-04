@@ -8,6 +8,6 @@
    gshhg
    dcw/index
    earth-relief
+   earth-images
    gadm/index
    PB2002/index
-   earth-images
