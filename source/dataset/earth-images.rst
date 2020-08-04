@@ -2,18 +2,16 @@ earth_day 和 earth_night : 地球昼夜卫星影像
 ===============================================
 
 .. gmtplot::
-   :show-code: false
-   :width: 75%
-   :caption: 地球卫星影像白昼数据
+    :show-code: false
+    :width: 80%
+    :caption: 地球昼夜卫星影像
 
-   gmt grdimage @earth_day_15m -png,pdf earth_day
-
-.. gmtplot::
-   :show-code: false
-   :width: 75%
-   :caption: 地球卫星影像黑夜数据
-
-   gmt grdimage @earth_night_15m -png,pdf earth_night
+    gmt begin earth-image png,pdf
+          gmt grdmath -Rd -I15m -r $(gmt solar -C -o0:1 -I+d2008-08-08T12:00) 2 DAYNIGHT = w.grd
+          gmt grdmix @earth_day_15m @earth_night_15m -Ww.grd -Gview.tif
+          gmt grdimage view.tif -Baf
+          rm -f w.grd intens.grd view.tif
+    gmt end show
 
 
 介绍
@@ -49,9 +47,9 @@ GMT 提供了地球的卫星影像数据。该数据来自于美国航空航天�
 其中 *res* 表示网格文件的分辨率。
 如果命令中使用了 **-R** 选项，则只会读取该区域内的影像数据。例如：
 
-查看60弧分的影像数据的信息::
+查看30弧分的影像数据的信息::
 
-    gmt grdinfo @earth_day_60m
+    gmt grdinfo @earth_day_30m
 
 使用15弧分影像数据绘制全球影像图::
 
