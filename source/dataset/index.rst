@@ -8,5 +8,6 @@
    gshhg
    dcw/index
    earth-relief
+   earth-mask
    gadm/index
    PB2002/index
