@@ -61,7 +61,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
        export GMTHOME=/Applications/GMT-6.1.0.app/Contents/Resources
        export PATH=${GMTHOME}/bin:${PATH}
-       export PROJ_LIB=$GMTHOME/share/proj6
+       export PROJ_LIB=$GMTHOME/share/proj
        export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick/config
 
    .. note::
