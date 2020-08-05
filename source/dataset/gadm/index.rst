@@ -46,7 +46,9 @@ GADM提供了两种下载方式：
 GDAL 的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_ 可以实现多种地理数据
 格式之间的互相转换。该软件的安装及介绍见
 `GDAL/OGR: 地理空间数据格式转换神器 <https://gmt-china.org/blog/gdal-ogr/>`_\ 。
-本文使用的是 GDAL 2.4.2，其他版本的GDAL可能用法略有不同。
+
+下面的示例使用了 GADM v3.6，在GDAL 2.4.2 和 3.1.2 下测试通过，其它版本的GDAL
+也许用法略有不同。
 
 Geopackage转GMT
 ~~~~~~~~~~~~~~~
@@ -126,7 +128,9 @@ Shapefile转GMT
 
 此处绘制了美国本土48个州的州界数据。如果只想要绘制某个州，可以用文本编辑器
 打开USA的1级数据文件，在注释行中有清晰地标记出每段数据是哪个州的边界，因而
-可以很方便地提取出来。或利用如下命令将某个州界从Shapefile中提取出来::
+可以很方便地提取出来。
+
+也可以利用如下命令将某个州界从Shapefile中提取出来::
 
     ogr2ogr -f OGR_GMT Alabama.gmt gadm36_USA_1.shp -where "NAME_1 = 'ALABAMA'"
 

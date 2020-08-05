@@ -127,7 +127,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 .. gmtplot::
    :width: 75%
 
-   gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -png map
+   gmt coast -R-130/-70/24/52 -JM15c -Ba -A1000 -W1/0.5p -png map
 
 同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），
 蓝色的为3级岛屿线（即五大湖内部的岛屿）：
@@ -135,20 +135,18 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 .. gmtplot::
    :width: 75%
 
-   gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
+   gmt coast -R-130/-70/24/52 -JM15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
 
-绘制1-3级海岸线，并为陆地、还有、湖泊填充不同的颜色：
+绘制1-3级海岸线，并为陆地、海洋、湖泊填充不同的颜色：
 
 .. gmtplot::
    :width: 75%
 
-   gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue \
-        -Gtan -Slightblue -Croyalblue+l -png map
+   gmt coast -R-130/-70/24/52 -JM15c -Ba -A1000 -Gtan -Slightblue -Croyalblue+l -png map
 
 绘制海岸线、国界和美国州界：
 
 .. gmtplot::
 
-    gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -N1/thick,red -N2/thinner \
-        -Gtan -Slightblue -Croyalblue+l -png map
+    gmt coast -R-130/-70/24/52 -JM15c -Ba -Dh -A1000 -W1/0.5p -N1/thick,red -N2/thinner -png map
 
