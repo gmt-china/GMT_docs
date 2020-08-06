@@ -14,10 +14,12 @@
 或
 **-Jr**\ [*lon*/]\ *scale*
 
-*lon* 是中心经线，默认值为地图区域的中心。
+- *lon* 是中心经线 [默认值为地图区域的中心]
+- *width* 地图宽度
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
 
 .. gmtplot::
     :caption: 使用Winkel Tripel投影绘制全球地图
     :width: 75%
 
-    gmt coast -Rd -JR4.5i -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -png GMT_winkel
+    gmt coast -Rd -JR12c -Bg -Dc -A10000 -Gburlywood4 -Swheat1 -png GMT_winkel

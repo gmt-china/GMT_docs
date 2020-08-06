@@ -10,5 +10,4 @@
     :caption: 多圆锥投影
     :width: 75%
 
-    gmt coast -R-180/-20/0/90 -JPoly/4i -Bx30g10 -By10g10 -Dc -A1000 -Glightgray \
-                -Wthinnest -png GMT_polyconic
+    gmt coast -R-180/-20/0/90 -JPoly/10c -Bx30g10 -By10g10 -Dc -A1000 -Glightgray -Wthinnest -png GMT_polyconic

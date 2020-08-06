@@ -13,10 +13,12 @@
 或
 **-Jv**\ *lon*/*scale*
 
-*lon* 是投影中心经线，默认值为地图区域的中心。
+- *lon* 是投影中心经线 [默认为地图区域的中心]
+- *width* 地图宽度
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
 
 .. gmtplot::
     :caption: 使用Van der Grinten投影绘制全球图
-    :width: 65%
+    :width: 60%
 
-    gmt coast -Rg -JV4i -Bxg30 -Byg15 -Dc -Glightgray -A10000 -Wthinnest -png GMT_grinten
+    gmt coast -Rg -JV10c -Bg -Dc -Glightgray -Scornsilk -A10000 -Wthinnest -png GMT_grinten

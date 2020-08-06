@@ -13,9 +13,12 @@
 
 - *lon*/*lat* 投影中心的经纬度
 - *distance* 地图边界到投影中心的角度，默认值为90度
-- *scale* 可以是 1:*xxxx* 也可以是 *radius*/*latitude*
-  （\ *radius* 是投影中心到纬线 *latitude* 在图上的距离），
-  还可以是 *slat*/1:*xxxx*\ （指定在标准纬线 *slat* 处的比例尺）
+- *width* 地图宽度
+- *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上1厘米对应真实地球 *xxxx* 厘米），
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+
+默认情况下使用的地图比例因子为0.996。尽管你可以通过 :term:`PROJ_SCALE_FACTOR` 修改
+地图比例因子，然而，当标准纬线被指定后，该比例因子则会被自动计算。
 
 极区立体地图
 ------------
@@ -26,8 +29,7 @@
     :caption: 极区立体保角投影
     :width: 85%
 
-    gmt coast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue \
-                -Sseashell -png GMT_stereographic_polar
+    gmt coast -R-30/30/60/72 -Js0/90/12c/60 -B10g -Dl -A250 -Groyalblue -Sseashell -png GMT_stereographic_polar
 
 矩形立体地图
 ------------
@@ -39,8 +41,8 @@
     :width: 75%
 
     gmt begin GMT_stereographic_rect pdf,png
-    gmt set MAP_ANNOT_OBLIQUE 30
-    gmt coast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -Slightgray
+    gmt set MAP_ANNOT_OBLIQUE lon_horizontal,lat_horizontal,tick_extend,tick_normal
+    gmt coast -R-25/59/70/72+r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -Slightgray
     gmt end
 
 一般立体地图
@@ -51,6 +53,6 @@
     :width: 75%
 
     gmt begin GMT_stereographic_general pdf,png
-    gmt set MAP_ANNOT_OBLIQUE 0
-    gmt coast -R100/-42/160/-8r -JS130/-30/4i -Bag -Dl -A500 -Ggreen -Slightblue -Wthinnest
+    gmt set MAP_ANNOT_OBLIQUE separate
+    gmt coast -R100/-42/160/-8+r -JS130/-30/12c -Bag -Dl -A500 -Ggreen -Slightblue -Wthinnest
     gmt end
