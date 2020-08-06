@@ -14,6 +14,8 @@
 
 - *lon*/*lat* 投影中心位置
 - *lat1*/*lat2* 两条标准纬线
+- *width* 地图宽度
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
 
 等距圆锥投影常用于绘制小国家的地图集。
 
@@ -22,6 +24,6 @@
     :width: 85%
 
     gmt begin GMT_equidistant_conic pdf,png
-    gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.05i
-    gmt coast -R-88/-70/18/24 -JD-79/21/19/23/4.5i -Bag -Di -N1/thick,red -Glightgreen -Wthinnest
+    gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.15c
+    gmt coast -R-88/-70/18/24 -JD-79/21/19/23/12c -Bag -Di -N1/thick,red -Glightgreen -Wthinnest
     gmt end

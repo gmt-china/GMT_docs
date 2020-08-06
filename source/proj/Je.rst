@@ -9,14 +9,15 @@
 
 该投影的参数为：
 
-**-JE**\ *lon0*/*lat0*\ [*/horizon*]/*width*
+**-JE**\ *lon0*/*lat0*\ [*/distance*]/*width*
 或
-**-Je**\ *lon0*/*lat0*\ [*/horizon*]/*scale*
+**-Je**\ *lon0*/*lat0*\ [*/distance*]/*scale*
 
 - *lon*/*lat* 投影中心的经纬度
 - *distance* 是边界距离投影中心的度数，默认值为180，即绘制全球图
-- *scale* 可以取 1:*xxxx* 格式，也可以是 *radius*/*latitude*
-  （表示从投影中心到 纬线 *latitude* 在图上的距离为 *radius*\ ）
+- *width* 地图宽度
+- *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上1厘米对应真实地球 *xxxx* 厘米），
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
 
 下图中，投影中心为100°W/40°N，离投影中心180度的点在图中的最外边界处。
 
@@ -24,4 +25,4 @@
     :caption: 使用等距方位投影绘制全球图
     :width: 50%
 
-    gmt coast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -png GMT_az_equidistant
+    gmt coast -Rg -JE-100/40/12c -Bg -Dc -A10000 -Glightgray -Wthinnest -png GMT_az_equidistant
