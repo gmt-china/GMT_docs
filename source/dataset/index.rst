@@ -9,5 +9,6 @@
    dcw/index
    earth-relief
    earth-images
+   earth-mask
    gadm/index
    PB2002/index
