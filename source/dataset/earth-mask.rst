@@ -6,10 +6,7 @@ earth_mask : 地表掩码数据
     :width: 80%
     :caption: 地表掩码数据
 
-    gmt begin earth-mask png,pdf
-          gmt grdimage @earth_mask_20m
-    gmt end show
-
+    gmt grdimage @earth_mask_20m -png,pdf earth-mask
 
 介绍
 ----
@@ -44,7 +41,7 @@ earth_mask : 地表掩码数据
 
 使用时，通过 **@earth_mask_**\ *res* 的形式调用。
 其中 *res* 表示网格文件的分辨率。
-如果命令中使用了 **-R** 选项，则只会绘制该区域内的数据。例如：
+如果命令中使用了 **-R** 选项，则只会绘制该区域内的数据。
 
 查看30弧分的地表掩码数据的信息::
 
@@ -57,6 +54,19 @@ earth_mask : 地表掩码数据
 使用2弧分的地表掩码数据绘制一个区域的影像图::
 
     gmt grdimage -JH15c -R90/120/20/60 @earth_mask_02m -pdf map
+
+如果用户希望仅仅获得海洋或者水陆的掩码，需要使用 grdmath 模块来调整这个掩码。
+下面给出一些例子。利用 grdmath，掩码数据 earth_mask_01m 中大于（GT） 0 的为 1, 其余为 0。这就意味着海洋部分改为0，其余均为1::
+
+    gmt grdmath @earth_mask_01m 0 GT = ocean_land.grd
+
+To make a pixel-registered mask that has NaNs on land and 1 in the oceans, use::
+
+    gmt grdmath @earth_mask_01m 0 LE 0 NAN = land_NaN.grd
+
+Finally, to make a pixel-registered mask that is 1 for lakes and NaN elsewhere, try::
+
+    gmt grdmath @earth_mask_01m 2 EQ 0 NAN = lakes_and_NaN.grd
 
 技术细节
 --------
