@@ -33,7 +33,7 @@
 
 2.  下载文档源码
 
-        git clone https://github.com/gmt-china/GMT_docs.git
+        git clone --depth=100 https://github.com/gmt-china/GMT_docs.git
 
 3.  安装文档所需依赖
 
