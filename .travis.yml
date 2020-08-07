@@ -63,23 +63,22 @@ install:
   # Install SourceCodePro fonts for PDF
   - curl -sSL https://raw.githubusercontent.com/seisman/install/master/install-SourceCodePro.sh | bash
   # Install tinytex (https://github.com/yihui/tinytex)
-  #- if [ ! -x "${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux/tlmgr" ]; then
-  #    wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
-  #    tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
-  #        float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
-  #        pdftexcmds upquote hypcap;
-  #  fi
+  - if [ ! -x "${TEXLIVE_INSTALL_PREFIX}/bin/x86_64-linux/tlmgr" ]; then
+      wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
+      tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth
+          float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol
+          pdftexcmds upquote oberdiek caption;
+    fi
   # Install GMT
   - if [ ! -x "${GMT_INSTALL_PREFIX}/bin/gmt" ]; then
       source ci/install-gmt.sh;
     fi
-  #- xelatex --version
+  - xelatex --version
   - gmt --version
 
 script:
   # build html and PDF
-  #- make build
-  - make dirhtml
+  - make build
   # Optimize PNG files to reduce file sizes
   - bash ci/image_optimize.sh ${HTML_BUILDDIR}/_images/*.png
 
