@@ -50,23 +50,6 @@ git commit --amend --no-edit
 echo -e "Pushing to GitHub..."
 git push -fq origin $BRANCH 2>&1 >/dev/null
 
-# Push anotther copy to coding.net
-echo -e "Pushing to Coding.net..."
-# Push GitHub gh-pages branch to coding.net master branch
-CODING_URL=e.coding.net/seisman/GMT_docs.git
-
-rm -rf latest
-# make a copy to latest because coding.net doesn't support symlinks
-cp -Rf ${VERSION} latest
-# delete GMT_docs.pdf to reduce website size
-#rm latest/GMT_docs.pdf
-git add -A .
-git status
-git commit --amend --no-edit
-git push -fq https://${CODING_USER}:${CODING_TOKEN}@${CODING_URL} ${BRANCH}:master
-
-echo -e "Finished uploading generated files."
-
 # Workaround for https://github.com/travis-ci/travis-ci/issues/6522
 # Turn off exit on failure.
 set +x
