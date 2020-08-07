@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/gmt-china/GMT_docs.svg?branch=master)](https://travis-ci.org/gmt-china/GMT_docs)
 [![Documentation version](https://img.shields.io/badge/版本-v6.1-blue.svg)](https://docs.gmt-china.org/6.1/)
+![Repository size](https://img.shields.io/github/repo-size/gmt-china/GMT_Docs)
 
 [在线阅读](https://docs.gmt-china.org/6.1/) |
 [PDF下载](https://docs.gmt-china.org/6.1/GMT_docs.pdf) |
