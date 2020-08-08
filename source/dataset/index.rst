@@ -8,6 +8,7 @@
    gshhg
    dcw/index
    earth-relief
+   earth-seafloor-age
    earth-images
    earth-mask
    gadm/index
