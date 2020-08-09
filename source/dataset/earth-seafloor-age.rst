@@ -15,7 +15,7 @@ earth_seafloor_age: 地球洋壳年龄数据
 数据简介
 --------
 
-**earth_age** 数据是GMT提供的地球洋壳年龄数据，。
+**earth_age** 数据是GMT提供的地球洋壳年龄数据。
 原始数据来源于公开数据，GMT经过了一些预处理，提供了不同分辨率和不同配准方式的网格数据，
 以满足用户的不同需求。\ **earth_age** 数据默认使用GMT内置的 *age_chrons_GTS2012_2020* CPT文件。
 
@@ -71,4 +71,4 @@ earth_seafloor_age: 地球洋壳年龄数据
 数据来源及引用
 --------------
 
-#. Seton 等. [2020, 在审] [https://www.earthbyte.org/category/resources/data-models/seafloor-age/].
+#. Seton 等 [https://www.earthbyte.org/category/resources/data-models/seafloor-age/].
