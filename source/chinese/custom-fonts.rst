@@ -177,8 +177,8 @@ CentOS 6
     ``/usr/share/fonts/cjkui-uming/uming.ttc`` 和
     ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``\ ，要注意改正。
 
-Ubuntu 14.04/15.04
-~~~~~~~~~~~~~~~~~~
+Ubuntu 14.04及之后的版本
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 1.  ghostscript 中文配置文件可以用如下命令安装（默认已安装）::
 
@@ -225,15 +225,6 @@ Ubuntu 14.04/15.04
     ``/var/lib/ghostscript/fonts/cidfmap`` 而不是
     ``/etc/ghostscript/cidfmap.d/*.conf``\ 。这是 Ubuntu/Debian 和 CentOS 的
     一个很大不同。
-
-Ubuntu 12.04
-~~~~~~~~~~~~
-
-1.  ghostscript 中文配置文件需要用如下命令安装::
-
-        sudo apt-get install gs-cjk-resource
-
-2.  其他部分未做测试，估计跟 Ubuntu 15.05 差不多。
 
 参考资料
 --------
