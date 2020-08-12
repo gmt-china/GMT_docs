@@ -44,20 +44,20 @@
 
 取输入的1-3列::
 
-    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt select -i1:3
+    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt convert -i1:3
     1	2	3
 
 取输入的第2列并乘以10加上5，并取第三列之后的所有列::
 
-    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt select -i1+s10+o5,2:
+    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt convert -i1+s10+o5,2:
     15	2	3	4
 
 在上例基础上，取输入的所有文本列::
 
-    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt select -i1+s10+o5,2:,t
+    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt convert -i1+s10+o5,2:,t
     15	2	3	4	TEXT0 TEXT1 TEXT2
 
 在上例基础上，只取文本列的第2列::
 
-    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt select -i1+s10+o5,2:,t1
+    $ echo 0 1 2 3 4 TEXT0 TEXT1 TEXT2 | gmt convert -i1+s10+o5,2:,t1
     15	2	3	4	TEXT1

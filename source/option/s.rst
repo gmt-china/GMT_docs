@@ -25,31 +25,31 @@
 
 不使用 **-s** 选项则会输出所有记录::
 
-    $ gmt select input.dat
+    $ gmt convert input.dat
     1	1	1	0
     2	2	NaN	0
     3	3	3	NaN
 
 使用 **-s** 选项则会压制第三列为NaN的记录的输出::
 
-    $ gmt select input.dat -s
+    $ gmt convert input.dat -s
     1	1	1	0
     3	3	3	NaN
 
 使用 **-s+a** 选项则只有任意一列有NaN则不输出该记录::
 
-    $ gmt select input.dat -s+a
+    $ gmt convert input.dat -s+a
     1	1	1	0
 
 使用 **-s2** 选项则检查第三列（列号从0开始）是否为NaN::
 
-    $ gmt select input.dat -s2
+    $ gmt convert input.dat -s2
     1	1	1	0
     3	3	3	NaN
 
 使用 **-s2,3** 则压制第3和4列均为NaN的记录的输出::
 
-    $ gmt select input.dat -s2,3
+    $ gmt convert input.dat -s2,3
     1	1	1	0
     2	2	NaN	0
     3	3	3	NaN

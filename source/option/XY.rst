@@ -35,9 +35,17 @@
 
 上图用四个 :doc:`/module/basemap` 命令绘制了四张底图，绘图效果如下：
 
-.. gmtplot:: XY.sh
+.. gmtplot::
     :show-code: false
+    :width: 75%
     :caption: **-X** 和 **-Y** 移动绘图原点
+
+    gmt begin XY pdf,png
+    gmt text -F+f40p+cMC+t1 -JX5c/2c -R0/5/0/2 -BWSen -B1
+    gmt text -F+f40p+cMC+t2 -BWSen -B1 -X7c
+    gmt text -F+f40p+cMC+t3 -BWSen -B1 -X-7c -Y4c
+    gmt text -F+f40p+cMC+t4 -BWSen -B1 -X7c
+    gmt end
 
 解释：
 
