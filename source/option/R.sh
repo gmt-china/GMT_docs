@@ -7,7 +7,7 @@ gmt coast -R-90/-70/18/35.819 -JM2i -Dl -Glightbrown -Wthinnest -Ba10g5 -BWsEN
 gmt text -R0/2/-0.5/2 -Jx1i -N -Y-0.5i -F+f9p,Helvetica-Oblique+jCT << EOF
 1	-0.375	@%0%a)@%% @%1%\035R@%%xmin/xmax/ymin/ymax
 EOF
-gmt plot -N -Sc0.1 -Wthinner << EOF
+gmt plot -N -Sc0.1i -Wthinner << EOF
 0	1
 1	0
 1	2
@@ -32,7 +32,7 @@ gmt coast -R-90/20/-65.5327/29.4248+r -JOc280/20/22/69/2i -Dl -Glightbrown -Wthi
 gmt text -R0/2/-0.5/2 -Jx1i -N -Y-0.5i -F+f9p,Helvetica-Oblique+jCT << EOF
 1	-0.375	@%0%b)@%% @%1%\035R@%%xlleft/ylleft/xuright/yuright@%1%+r@%%
 EOF
-gmt plot -N -Sc0.1 -Wthinner << EOF
+gmt plot -N -Sc0.1i -Wthinner << EOF
 0	0
 2	2
 EOF
