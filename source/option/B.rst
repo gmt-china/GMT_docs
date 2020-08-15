@@ -299,7 +299,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
    gmt begin GMT_-B_time1 pdf,png
    gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
-   gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS
+   gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpxa7Rf1d -Bsxa1O -BS
    gmt end
 
 需要注意，\ **-Bsa1O** 指定了次级标注的间隔为一个月，由于此处使用的是大写的 **O**\ ，
@@ -315,8 +315,8 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time2 pdf,png
     gmt set FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
-    gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
+    gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpxa6Hf1h -Bsxa1K -BS
+    gmt basemap -Bpxa6Hf1h -Bsxa1D -BS -Y0.65i
     gmt end
 
 第三个例子展示了两年的时间，并标注了每年以及每三个月。
@@ -327,7 +327,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time3 pdf,png
     gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS
+    gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpxa3Of1o -Bsxa1Y -BS
     gmt end
 
 第四个例子展示了一天中的几个小时，通过在R选项中指定 **t** 来使用相对时间坐标。
@@ -338,7 +338,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time4 pdf,png
     gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-    gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS
+    gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpxa15mf5m -Bsxa1H -BS
     gmt end
 
 第五个例子用两种方式展示了几周的时间：
@@ -349,9 +349,9 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt begin GMT_-B_time5 png,pdf
     gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character \
            FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS
+    gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpxa1K -Bsxa1U -BS
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
-    gmt basemap -Bpa3Kf1k -Bsa1r -BS -Y0.65i
+    gmt basemap -Bpxa3Kf1k -Bsxa1r -BS -Y0.65i
     gmt end
 
 第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：
@@ -361,7 +361,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time6 pdf,png
     gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
-    gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS
+    gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Bxa1Of1d -BS
     gmt end
 
 第七个例子：
@@ -371,7 +371,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time7 pdf,png
     gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS
+    gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpxa5Df1d -Bsxa1Y -BS
     gmt end
 
 弧度轴 :math:`\pi` 的标注
