@@ -55,6 +55,5 @@ GMT 是地球科学最广泛使用的制图软件之一。
    dataset/index
    chinese/index
    module/index
-   gallery/index
    api/index
    appendix/index
