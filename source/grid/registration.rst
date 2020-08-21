@@ -9,7 +9,7 @@ GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线
 而节点的位置有两种选择，即网格线配准（gridline registration）和像素配准（pixel registration）。
 GMT默认使用的是网格线配准方式。
 
-.. gmtplot:: /scripts/GMT_grid_registration.sh
+.. gmtplot:: GMT_grid_registration.sh
    :show-code: false
    :width: 75%
 
