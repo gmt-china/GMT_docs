@@ -163,7 +163,7 @@ MAP参数
         同时设置 :term:`MAP_GRID_PEN_PRIMARY` 和 :term:`MAP_GRID_PEN_SECONDARY` 的值
 
     **MAP_GRID_PEN_PRIMARY**
-        一级网格线的线条属性 [default,black]
+        一级网格线的线条属性 [0.25p,black]
 
     **MAP_GRID_PEN_SECONDARY**
         二级网格线的线条属性 [thinner,black]
@@ -227,8 +227,8 @@ MAP参数
 
 .. glossary::
 
-    **MAP_DEFAULT_PEN**
-        设置所有与 **-W** 选项相关的画笔属性的默认值 [**default,black**]
+    **MAP_0.25p_PEN**
+        设置所有与 **-W** 选项相关的画笔属性的默认值 [**0.25p,black**]
 
         在参数值的前面加上 **+** 可以覆盖其他 **MAP_\*_PEN** 相关参数中的颜色。
 
