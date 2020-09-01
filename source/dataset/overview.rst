@@ -139,7 +139,7 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
     - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
     - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
 
-    对于国内用户，若官方镜像很慢，可以考虑使用欧洲镜像。修改方式为::
+    对于国内用户，若官方镜像无法连接或者很慢，可以考虑使用欧洲镜像。修改方式为::
 
         gmt set GMT_DATA_SERVER http://europe.generic-mapping-tools.org
 
