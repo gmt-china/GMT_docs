@@ -9,7 +9,7 @@ Linux 下安装 GMT
 Fedora
 ------
 
-**Fedora 30** 及之后版本的用户，可以启用
+**Fedora 31** 及之后版本的用户，可以启用
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本::
 
@@ -91,19 +91,20 @@ RHEL/CentOS
 Ubuntu/Debian用户
 -----------------
 
-Ubuntu 20.04 (Focal Fossa) 和 Debian 11 (测试版）用户可以直接使用如下命令安装GMT::
+Ubuntu 和 Debian 用户可以直接使用如下命令安装GMT::
 
     sudo apt-get install gmt gmt-dcw gmt-gshhg
     sudo apt-get install ghostscript gdal-bin graphicsmagick ffmpeg
 
 .. warning::
 
-   以上命令在老版本的Ubuntu/Debian上会安装GMT 5.x。
+   由于Ubuntu和Debian自身的软件更新规则，通常以上命令安装的都是老版本的GMT，
+   比如GMT 5.4 或者 GMT 6.0.0，而不是GMT的最新版本。
 
-   对于老版本Ubuntu/Debian用户，有如下几种选择：
+   针对这种情况，有如下几种选择：
 
-   #. 使用 GMT 5.x
-   #. 升级系统到Ubuntu 20.04 或 Debian 11
+   #. 使用老版本 GMT
+   #. 使用其它Linux发行版
    #. 编译GMT源码以安装最新版，具体编译方法见 :doc:`build-source`
 
 ArchLinux用户
