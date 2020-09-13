@@ -7,9 +7,9 @@ gmtset
 :官方文档: :doc:`gmt:gmtset`
 :简介: 修改单个或多个GMT配置参数的值
 
-该命令用于修改GMT配置参数的值以调整接下来的绘图或者命令的运行。
+该模块用于修改GMT配置参数的值以调整接下来的绘图或者命令的运行。
 
-该命令修改的参数将对接下来的命令一直有效，直到GMT参数再次被修改或覆盖。
+该模块修改的参数将对接下来的命令一直有效，直到GMT参数再次被修改或覆盖。
 若想要参数修改仅对某个命令有效，可以在该命令中使用 **--**\ *PARAMETER*\ **=**\ *value* 语法。
 
 语法
@@ -18,18 +18,17 @@ gmtset
 **gmt set**
 [ |-C| \| |-D|\ [**s**\|\ **u**] \| |-G|\ *defaultsfile* ]
 [ **-**\ [**BJRXxYycp**]\ *value* ]
-PARAMETER1 [=] *value1*
-PARAMETER2 [=] *value2*
-PARAMETER3 [=] *value3*
+PARAMETER1 *value1*
+PARAMETER2 *value2*
+PARAMETER3 *value3*
 
 必选选项
 --------
 
-*PARAMETER*\ **=**\ *value*
+*PARAMETER* *value*
     要修改的GMT配置参数名 *PARAMETER* 以及想要设置的值 *value*
 
-    参数名和值必须成对存在，二者可以用等号 **=** 连接，也可以省略等号。
-    GMT配置参数见 :doc:`/conf/index`\ 。
+    参数名和值必须成对存在。GMT配置参数见 :doc:`/conf/index`\ 。
 
 可选选项
 --------
@@ -37,17 +36,17 @@ PARAMETER3 [=] *value3*
 .. _-C:
 
 **-C**
-    将 GMT4 创建的 GMT4配置文件 ``.gmtdefaults4`` 转换为GMT5及之后版本所使用的 ``gmt.conf``
-    文件，并保留原GMT4配置文件。
+    将 GMT4 创建的 GMT4配置文件 :file:`.gmtdefaults4` 转换为GMT5及之后版本所使用的
+    :file:`gmt.conf` 文件，并保留原GMT4配置文件。
 
 .. _-D:
 
 **-D**\ [**s**\|\ **u**]
     在系统默认配置的基础上修改参数值
 
-    #. **-D**\ ：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）
-    #. **-Du**\ ：使用US单位制下的默认参数文件
-    #. **-Ds**\ ：使用SI单位制下的默认参数文件
+    - **-D**\ ：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）
+    - **-Du**\ ：使用US单位制下的默认参数文件
+    - **-Ds**\ ：使用SI单位制下的默认参数文件
 
 .. _-G:
 
@@ -69,10 +68,6 @@ PARAMETER3 [=] *value3*
 修改主标注字体为Helvetica，字号为12p，设置网格交叉线的尺寸为0.2厘米::
 
     gmt set FONT_ANNOT_PRIMARY 12p,Helvetica MAP_GRID_CROSS_SIZE_PRIMARY 0.2c
-
-也可以用等号将参数名和参数值连接起来::
-
-    gmt set FONT_ANNOT_PRIMARY=12p,Helvetica MAP_GRID_CROSS_SIZE_PRIMARY=0.2c
 
 FAQ
 ---

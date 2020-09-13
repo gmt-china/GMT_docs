@@ -122,6 +122,8 @@ grdedit
     使用该选项后，网格线配准的数据的范围将在四个方向上扩大半个网格间隔，
     像素点配置的数据的范围将在四个方向上缩小半个网格间隔。
 
+    注意：修改网格配准方式会导致高频信息丢失，详情见 :doc:`/grid/registration`\ 。
+
 .. include:: explain_-V.rst_
 
 .. include:: explain_-bi.rst_

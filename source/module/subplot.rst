@@ -30,7 +30,7 @@ subplot begin 语法
 *nrows*\ **x**\ *ncols*
 |-F|\ [**f**\|\ **s**]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx/dy*][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
 [ |-A|\ [*autolabel*][**+j**\|\ **J**\ *refpoint*][**+c**\ *dx*\ /\ *dy*][**+g**\ *fill*][**+p**\ *pen*][**+o**\ *dx*/*dy*][**+r**][**+R**][**+v**] ]
-[ |-C|\ [*side*]\ *clearance*\ [**u**] ]
+[ |-C|\ [*side*]\ *clearance* ]
 [ |SYN_OPT-B| ]
 [ |SYN_OPT-J| ]
 [ |-M|\ *margins* ]
@@ -138,7 +138,7 @@ subplot begin 语法
 
 .. _-C:
 
-**-C**\ [*side*]\ *clearance*\ [**u**]
+**-C**\ [*side*]\ *clearance*
     设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、
     添加额外的文字等。
 
@@ -229,7 +229,7 @@ subplot set 语法
 **gmt subplot set**
 [ *row,col*\|\ *index* ]
 [ **-A**\ *fixedlabel*]
-[ **-C**\ *side*\ /*clearance*\ [**u**] ]
+[ **-C**\ *side*\ /*clearance* ]
 [ |SYN_OPT-V| ]
 
 可选选项
@@ -246,7 +246,7 @@ subplot set 语法
     这一选项可以用于临时修改单个子图的编号，但该选项只能修改编号字符串，
     其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 **-A** 选项。
 
-**-C**\ *side*/*clearance*\ [*u*]
+**-C**\ *side*/*clearance*
     设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。
 
     *side* 可以取 **e** **w** **s** **n** 分别代表东西南北四条边。

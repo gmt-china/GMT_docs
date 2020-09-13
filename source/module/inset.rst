@@ -92,14 +92,16 @@ inset begin语法
 
 .. include:: explain_-V.rst_
 
-.. include:: explain_help.rst_
+.. include:: explain_help_nopar.rst_
 
 示例
 ----
 
 .. gmtplot:: inset/inset-ex01.sh
+   :width: 75%
 
 .. gmtplot:: inset/inset-ex02.sh
+   :width: 75%
 
 相关模块
 --------
