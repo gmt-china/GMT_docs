@@ -53,8 +53,8 @@ GMT 是地球科学最广泛使用的制图软件之一。
    proj/index
    conf/index
    dataset/index
-   chinese/index
    china-geospatial-data/index
+   chinese/index
    module/index
    api/index
    appendix/index
