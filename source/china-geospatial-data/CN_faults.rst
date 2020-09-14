@@ -32,5 +32,8 @@ CN_faults: 中国断层数据
 
    gmt begin CN_faults png,pdf
    gmt coast -JM10c -RTW -Baf -W0.5p,black
+   gmt plot CN_faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
    gmt plot CN_faults.gmt -W1p,red
+   gmt text faultname.dat -F+f15p,46,red+a
+   rm faultname.dat
    gmt end show
