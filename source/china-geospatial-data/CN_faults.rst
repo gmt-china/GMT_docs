@@ -2,6 +2,7 @@ CN_faults: 中国断层数据
 ==============================
 
 GMT中文社区提供的中国断层数据覆盖了中国大陆和主要岛屿。
+下载地址是 https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults.gmt 。
 数据引用方式见其官方链接：http://www.earthsciencefrontiers.net.cn/CN/abstract/abstract856.shtml
 
 绘制全国断层：
