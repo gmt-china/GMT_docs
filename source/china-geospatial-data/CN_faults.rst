@@ -35,9 +35,10 @@ GMT中文社区提供的中国断层数据覆盖了中国大陆和主要岛屿�
 
    gmt begin CN_faults png,pdf
    gmt coast -JM10c -RTW -Baf -W0.5p,black
-   # gmt在此处添加中文的断层名称有bug，所以绘制100%透明的一个涂层，并把断层名称输出到文件faultname.dat，而后再绘制
+   # gmt在此处添加中文的断层名称有bug，所以先绘制一个100%透明的图层，并把断层名称输出到文件faultname.dat，而后再标注
    gmt plot CN_faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
    gmt plot CN_faults.gmt -W1p,red
+   #标注断层名
    gmt text faultname.dat -F+f15p,46,red+a
    rm faultname.dat
    gmt end show
