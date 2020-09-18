@@ -89,7 +89,7 @@ GMT的编译及运行需要如下软件：
    $ tar -xvf dcw-gmt-1.1.4.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.1.1/share/gshhg-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.1.1/share/gshhg
    $ mv dcw-gmt-1.1.4 gmt-6.1.1/share/dcw-gmt
 
    # 切换到gmt源码目录下
