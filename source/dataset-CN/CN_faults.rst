@@ -29,10 +29,21 @@ CN_faults: 中国断层数据
    gmt plot CN_faults.gmt -W1p,red
    gmt end show
 
-显示断层名
+标注断层名
 ----------
 
-绘制台湾省断层，并显示断层名：
+对于英文断层名，GMT中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
+**-Sq** 选项功能强大，可以灵活地设置断层名的位置、字体等属性。
+
+对于中文断层名，由于 **plot -Sq** 目前存在BUG，导致即便在正确设置中文字体的情况下，
+依然无法显示中文断层名。因而下面的示例中，使用 **plot -Sq** 绘制了一个全透明的图层，
+同时将断层名文本输出到文件faultname.dat中，并使用 **plot** 和 **text** 模块分别
+绘制断层线和标注断层名。
+
+.. note::
+
+   由于中文手册服务器上未设置GMT中文支持，故而下图中断层名显示乱码。
+   对于用户而言，若已经正确设置GMT中文支持，则应可正常显示中文。
 
 .. gmtplot::
    :show-code: true
@@ -40,10 +51,12 @@ CN_faults: 中国断层数据
 
    gmt begin CN_faults png,pdf
    gmt coast -JM10c -RTW -Baf -W0.5p,black
-   # gmt在此处添加中文的断层名称有bug，所以先绘制一个100%透明的图层，并把断层名称输出到文件faultname.dat，而后再标注
+   # 由于 -Sq 无法支持中文，该命令将断层名称输出到文件faultname.dat中，并绘制了一个全透明的图层
+   # 实际上，当执行脚本获得faultname.dat 后，可将该命令注释掉
    gmt plot CN_faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
+   # 使用 plot 绘制断层
    gmt plot CN_faults.gmt -W1p,red
-   #标注断层名
+   # 标注断层名
    gmt text faultname.dat -F+f15p,46,red+a
    rm faultname.dat
    gmt end show
