@@ -1,31 +1,36 @@
 CN_faults: 中国断层数据
-==============================
+=======================
 
-GMT中文社区提供的中国断层数据覆盖了中国大陆和主要岛屿。
-下载地址是 https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults.gmt 。
-数据引用方式见其官方链接：http://www.earthsciencefrontiers.net.cn/CN/abstract/abstract856.shtml
+中国断层数据 ``CN_faults.gmt`` 中包含了中国区域的主要断层。
 
-绘制全国断层：
+数据下载地址: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults.gmt
 
-.. gmtplot::
-   :show-code: true
-   :width: 75%
-
-   gmt begin CN_faults png,pdf
-   gmt coast -JM10c -RCN -Baf -W0.5p,black
-   gmt plot CN_faults.gmt -W1p,red
-   gmt end show
-
-绘制四川省断层：
+绘制全国断层
+------------
 
 .. gmtplot::
    :show-code: true
    :width: 75%
 
    gmt begin CN_faults png,pdf
-   gmt coast -JM10c -RCN.51 -Baf -W0.5p,black
+   gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
    gmt plot CN_faults.gmt -W1p,red
    gmt end show
+
+绘制区域断层
+------------
+
+.. gmtplot::
+   :show-code: true
+   :width: 75%
+
+   gmt begin CN_faults png,pdf
+   gmt coast -JM15c -RCN.51 -Baf -W0.5p,black
+   gmt plot CN_faults.gmt -W1p,red
+   gmt end show
+
+显示断层名
+----------
 
 绘制台湾省断层，并显示断层名：
 
@@ -42,3 +47,9 @@ GMT中文社区提供的中国断层数据覆盖了中国大陆和主要岛屿�
    gmt text faultname.dat -F+f15p,46,red+a
    rm faultname.dat
    gmt end show
+
+数据来源及引用
+--------------
+
+- 中文引用: 邓起东, 张培震, 冉勇康, 杨晓平, 闵伟, 陈立春, 2003. 中国活动构造与地震活动, 地学前缘, 10(S1), 66-73.
+- 英文引用: Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003. Active tectonics and earthquake activities in China. Earth Science Frontiers, 10(S1): 66-73.
