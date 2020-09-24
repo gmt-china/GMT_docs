@@ -74,4 +74,4 @@ earth_age: 地球洋壳年龄数据
 数据来源及引用
 --------------
 
-#. Seton et al. [https://www.earthbyte.org/category/resources/data-models/seafloor-age/].
+- Seton et al., 2020, http://dx.doi.org/10.1029/2020GC009214
