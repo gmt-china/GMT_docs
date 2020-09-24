@@ -1,11 +1,21 @@
-中国地学数据集
+中国地学数据集概述
 ==================
 
-中国地学数据集是GMT中文社区收集的用于GMT绘图的地球科学空间数据，包含了以下数据集：
+中国地学数据集是GMT中文社区收集的可直接用于GMT绘图的中国区域地理空间数据。
+目前，数据集中包含如下地理空间数据：
 
 - :doc:`CN_faults`
 
-中国地学数据集是保存在 GitHub 上的：https://github.com/gmt-china/china-geospatial-data
-用户可以一次性打包下载所有数据，也可以分别下载。
-一次性打包下载的地址是：https://github.com/gmt-china/china-geospatial-data/archive/master.zip 。
-分别下载的地震在各数据的介绍中说明。
+下载数据
+--------
+
+数据官方仓库：https://github.com/gmt-china/china-geospatial-data
+
+用户可以一次性打包下载所有数据，也可以只下载自己需要的数据。
+一次性打包下载的地址是：https://github.com/gmt-china/china-geospatial-data/archive/master.zip
+
+使用数据
+--------
+
+下载数据后，建议按照 :ref:`自定义数据 <setup_database>` 一节中介绍的方法
+自行构建一个GMT数据库目录。
