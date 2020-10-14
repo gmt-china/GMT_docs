@@ -1,7 +1,7 @@
 Linux 下安装 GMT
 ================
 
-尽管大多数Linux发行版都提供了GMT二进制包，可以直接通过软件包管理器 **apt-get**
+尽管大多数Linux发行版都提供了GMT二进制包，可以直接通过软件包管理器 **apt**
 或 **yum** 安装，但发行版提供的GMT版本都很老，不建议使用。
 
 针对Fedora/RHEL/CentOS用户，GMT的官方RPM仓库提供了最新版本的GMT。
@@ -93,8 +93,8 @@ Ubuntu/Debian用户
 
 Ubuntu 和 Debian 用户可以直接使用如下命令安装GMT::
 
-    sudo apt-get install gmt gmt-dcw gmt-gshhg
-    sudo apt-get install ghostscript gdal-bin graphicsmagick ffmpeg
+    sudo apt install gmt gmt-dcw gmt-gshhg
+    sudo apt install ghostscript gdal-bin graphicsmagick ffmpeg
 
 .. warning::
 

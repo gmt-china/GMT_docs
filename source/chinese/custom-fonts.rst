@@ -182,12 +182,12 @@ Ubuntu 14.04及之后的版本
 
 1.  ghostscript 中文配置文件可以用如下命令安装（默认已安装）::
 
-        sudo apt-get install poppler-data
+        sudo apt install poppler-data
 
 2.  ghostscript 中文配置文件路径为： ``/etc/ghostscript/cidfmap.d/90gs-cjk-resource-gb1.conf``
 3.  ghostscript 中文配置文件中默认使用的 Linux 字体为 uming 和 ukai，需要通过如下命令安装::
 
-        sudo apt-get install fonts-arphic-uming fonts-arphic-ukai
+        sudo apt install fonts-arphic-uming fonts-arphic-ukai
 
 4.  gs 中文配置文件的默认内容为::
 

@@ -31,9 +31,9 @@ GMT的编译及运行需要如下软件：
 
 对于Ubuntu/Debian::
 
-    $ sudo apt-get update
+    $ sudo apt update
     # 安装编译所需软件包
-    $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
+    $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
     # 安装可选软件包
     $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装制作动画所需的软件包
