@@ -4,7 +4,7 @@ Windows 下的 GMT 中文支持
 ghostscript 的中文支持
 ----------------------
 
-通常，在 ``C:\Program Files\gs\gs9.26\examples\cjk`` 目录下可以找到文件 ``gscjk_ag.ps``\ 。
+以ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下可以找到文件 ``gscjk_ag.ps``\ 。
 
 .. note::
 
@@ -12,7 +12,7 @@ ghostscript 的中文支持
    cidmap 的选项，选中该选项则表示会为当前系统自动生成中文所需的 cidmap 文件。
    默认该选项是被选中的，一定 **不要** 将该选项取消；
 
-启动 cmd，键入如下命令::
+启动 cmd，键入如下命令(第一行中的ghostscript安装目录请根据实际情况修改)::
 
     cd "C:\Program Files\gs\gs9.26\bin"
     gswin64.exe ..\examples\cjk\gscjk_ag.ps
