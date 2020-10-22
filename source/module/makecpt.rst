@@ -17,6 +17,9 @@ makecpt
 
     可以是GMT自带的CPT文件，也可以是用户自定义的CPT文件，也可以是通过 ``-C<color1>,<color2>[,<color3>]`` 语法指定一个线性连续变化的颜色列表。
 
+``-D[i]``
+	将背景色和前景色分别设置为输出的CPT文件中最低值和最高值对应的颜色。不设置本项时，GMT默认使用主CPT文件规定的背景色与前景色，或是采用配置参数 :term:`COLOR_BACKGROUND` ， :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。加上 ``i`` 则设置为输入的CPT文件中最低值和最高值对应的颜色。
+
 ``-T<z_min>/<z_max>[/<z_inc>[+]]`` 或 ``-T<ztable>``
     定义要生成的CPT文件的Z值范围及Z值间隔
 
