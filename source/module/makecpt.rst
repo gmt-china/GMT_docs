@@ -20,6 +20,9 @@ makecpt
 ``-D[i]``
 	将背景色和前景色分别设置为输出的CPT文件中最低值和最高值对应的颜色。不设置本项时，GMT默认使用主CPT文件规定的背景色与前景色，或是采用配置参数 :term:`COLOR_BACKGROUND` ， :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。加上 ``i`` 则设置为输入的CPT文件中最低值和最高值对应的颜色。
 
+``-I[c][z]``
+	利用 ``-Iz`` 选项倒转CPT的z值指向（不包括前景色、背景色）。利用 ``-Ic`` 选项翻转颜色的顺序，包括前景色和背景色。详细用法和说明见 :doc:`/cpt/makecpt` 。
+
 ``-T<z_min>/<z_max>[/<z_inc>[+]]`` 或 ``-T<ztable>``
     定义要生成的CPT文件的Z值范围及Z值间隔
 
