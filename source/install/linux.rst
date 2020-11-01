@@ -110,26 +110,5 @@ Ubuntu 和 Debian 用户可以直接使用如下命令安装GMT::
 ArchLinux用户
 -------------
 
-ArchLinux用户可以使用AUR提供的非官方源，使用方法为::
+ArchLinux用户请参考 https://github.com/GenericMappingTools/gmt/wiki/Install-latest-GMT-on-ArchLinux
 
-    # 完整更新系统包
-    sudo pacman -Syu
-
-    # 安装构建AUR包所需要的工具
-    sudo pacman -S base-devel
-
-    # 下载 AUR 提供的 gmt 构建代码
-    git clone https://aur.archlinux.org/gmt.git
-
-    # 下载 AUR 提供的其它 gmt 相关包
-    git clone https://aur.archlinux.org/gmt-coast.git
-    git clone https://aur.archlinux.org/gmt-cpt-city.git
-    git clone https://aur.archlinux.org/gmt-dcw.git
-
-    # 使用 makepkg 构建并使用 pacman 安装 gmt
-    cd gmt
-    makepkg -sc
-    sudo pacman -U *.pkg.tar.xz
-
-注意：\ `ArchlinuxCN repo <https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror>`_
-尚未提供GMT的二进制包。
