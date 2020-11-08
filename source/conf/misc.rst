@@ -19,6 +19,9 @@
 
         - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
         - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
+        - 中国镜像: http://china.generic-mapping-tools.org [中国合肥]
+
+        建议国内用户替换为中国镜像。
 
     **GMT_DATA_SERVER_LIMIT**
         从GMT服务器上下载的单个文件的大小上限，默认无限制。
