@@ -130,7 +130,7 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
 #. 使用参数 :term:`GMT_AUTO_DOWNLOAD` 彻底关闭数据自动下载功能。
    若关闭，你将无法再下载或更新远程数据，但已下载到本地的数据依然可以使用。
 #. 通过参数 :term:`GMT_DATA_UPDATE_INTERVAL` 控制检查远程数据是否更新的频率 [默认为每天检查一次]
-#. 通过 :doc:`/module/clear` 命令情况整个 *server* 目录下的远程数据或部分数据
+#. 通过 :doc:`/module/clear` 命令清理整个 *server* 目录下的远程数据或部分数据
 
 .. note::
 
@@ -138,7 +138,7 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
 
     - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
     - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
-    - 中国镜像: http://china.generic-mapping-tools.org [中国合肥]
+    - **中国镜像**: http://china.generic-mapping-tools.org [中国合肥]
 
     对于国内用户，建议直接使用中国镜像。修改方式为::
 
