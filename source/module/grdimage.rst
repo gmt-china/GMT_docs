@@ -10,12 +10,12 @@ grdimage
 语法
 ----
 
-**gmt grdimage** *grd_z* \| *img* \| *grd_r grd_g grd_b*
+**gmt grdimage** *grd_z* \| *img* \| *grd_r grd_g grd_b* |-J|\ *parameters*
 [ |-A|\ *out_img*\ [**=**\ *driver*] ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt* ]
 [ |-D|\ [**r**] ]
-[ |-E|\ [**i**\|\ *dpi*] ] |-J|\ *parameters*
+[ |-E|\ *dpi* ]
 [ |-G|\ *color*\ [**+b**\|\ **+f**] ]
 [ |-I|\ [*intensfile*\|\ *intensity*\|\ *modifiers*] ]
 [ |-M| ] [ |-N| ]
@@ -30,6 +30,13 @@ grdimage
 [ |SYN_OPT-p| ]
 [ |SYN_OPT-t| ]
 [ |SYN_OPT--| ]
+
+描述
+--------
+
+**grdimage** 可以读取一个grd网格文件，在每个网格节点上绘制小矩形并根据z值填充颜色，从而生成彩色图层。 **grdimage** 也可以读取三个分别包含red、green、blue值的网格文件绘图。 用户可以使用 ``-I`` 可选项设置光照效果。
+
+请注意，在使用地图投影绘图时，每个网格节点上绘制的小矩形并不会根据所选的投影方式进行变形。 因此当网格间距较大时，绘制出的图像会产生一定的失真与变形。 此时可以使用 ``-E`` 选项设置一个较大的dpi值，将图像重采样成较高的分辨率缓解这一问题。 当然最根本的解决方式是使用精度更高的数据，生成网格间距更小的grd网格文件进行绘图。
 
 必选选项
 --------
@@ -47,7 +54,6 @@ grdimage
 
 **-A**\ *out_img*\ [**=**\ *driver*]
 
-``-A<out_img>[=<driver>]``
     将图片以光栅格式保存
 
     默认图片会以PostScript代码的形式输出，使用此选项可以以其他图片格式保存。
@@ -74,16 +80,16 @@ grdimage
 **-D**\ [**r**]
     表明输入的网格文件是需要通过GDAL读取的图片文件，见官方文档。
 
-``-E[i|<dpi>]``
+**-E**\ *dpi*
     设置投影后网格的精度，默认值为100。
 
-``-G[f|b]<color>``
+**-G**\ *color*\ [**+b**\|\ **+f**]
     该选项仅当生成的图片是黑白图时才可用。
 
     This option will instead use the image as a transparent mask and paint
     the mask (or its inverse, with **-Gb**) with the given color combination.
 
-``-I[<intensfile>|<intensity>|<modifiers>]``
+**-I**\ [*intensfile*\|\ *intensity*\|\ *modifiers*]
     增加光照效果
 
     可以通过三种方式设置光照效果:
@@ -94,13 +100,13 @@ grdimage
        并使用参数 ``-A-45 -Nt1`` 计算输入网格数据的梯度作为光照强度文件。用户
        可以使用 ``+a<azimuth>+n<args>`` 以自定义 grdgradient 的 -A 和 -N 选项
 
-``-M``
+**-M**
     使用YIQ转换强制将其转换为灰度图。
 
-``-N``
+**-N**
     对于非矩形地图，在地图边界处不对图片做裁剪。
 
-``-Q``
+**-Q**
     将值为NaN的节点处设置为透明色
 
 .. include:: explain_-U.rst_
