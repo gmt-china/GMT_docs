@@ -134,13 +134,10 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
 
 .. note::
 
-    GMT数据服务器目前有三个镜像：
+    GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
+    https://www.generic-mapping-tools.org/mirrors 页面。
 
-    - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
-    - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
-    - **中国镜像**: http://china.generic-mapping-tools.org [中国合肥]
-
-    对于国内用户，建议直接使用中国镜像。修改方式为::
+    对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为::
 
         gmt set GMT_DATA_SERVER http://china.generic-mapping-tools.org
 

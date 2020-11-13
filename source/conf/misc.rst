@@ -15,13 +15,15 @@
     **GMT_DATA_SERVER**
         GMT数据服务器地址，默认使用SOEST官方镜像 [https://oceania.generic-mapping-tools.org/]
 
-        目前的镜像包括：
+        GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
+        https://www.generic-mapping-tools.org/mirrors 页面。
 
-        - 官方镜像: https://oceania.generic-mapping-tools.org [夏威夷]
-        - 欧洲镜像: http://europe.generic-mapping-tools.org [葡萄牙]
-        - 中国镜像: http://china.generic-mapping-tools.org [中国合肥]
+        对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为::
 
-        建议国内用户替换为中国镜像。
+            gmt set GMT_DATA_SERVER http://china.generic-mapping-tools.org
+
+        然后将生成的 ``gmt.conf`` 文件复制到GMT用户目录 ``~/.gmt`` (Linux/macOS)
+        或 ``C:\Users\XXX\.gmt`` (Windows) 下。
 
     **GMT_DATA_SERVER_LIMIT**
         从GMT服务器上下载的单个文件的大小上限，默认无限制。
