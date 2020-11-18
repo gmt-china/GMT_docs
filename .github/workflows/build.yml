@@ -43,10 +43,10 @@ jobs:
         run: |
           curl https://raw.githubusercontent.com/GenericMappingTools/gmt/master/ci/build-gmt.sh | bash
           # Add to PATH
-          echo "::add-path::${GMT_INSTALL_DIR}/bin"
+          echo "${GMT_INSTALL_DIR}" >> $GITHUB_PATH
         env:
           GMT_INSTALL_DIR: ${{ github.workspace }}/GMT
-          GMT_GIT_REF: 6.1.0
+          GMT_GIT_REF: 6.1.1
 
       - name: Build documentaiton
         run: |
