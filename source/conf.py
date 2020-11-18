@@ -24,7 +24,8 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx_cjkspace.cjkspace',
-    'sphinx_gmt.gmtplot'
+    'sphinx_gmt.gmtplot',
+    'sphinxcontrib.ghcontributors'
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
