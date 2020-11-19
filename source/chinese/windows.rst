@@ -4,7 +4,19 @@ Windows 下的 GMT 中文支持
 ghostscript 的中文支持
 ----------------------
 
-以ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下可以找到文件 ``gscjk_ag.ps``\ 。
+如果没有正确配置ghostscript的中文支持，GMT生成的PNG、PDF等格式的图片中的中文将会出现乱码。
+因此ghostscript的中文支持对于希望使用中文的用户来说是必须进行配置的。
+
+.. warning::
+
+   GMT安装包中内置的 Ghostscript 不支持中文。
+   若想要GMT支持中文，注意在安装GMT时不勾选Ghostscript组件，待GMT安装完成后再自行安装 Ghostscript。
+   
+   新手常常没有意识到自己安装GMT时勾选了Ghostscript组件，导致中文乱码出现。
+   如果严格按照下列步骤配置，依然遇到了中文乱码问题，
+   建议卸载并按照《 :doc:`/install/windows` 》章节的步骤与要求重新下载安装Ghostscript。
+
+以Ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下可以找到文件 ``gscjk_ag.ps``\ 。
 
 .. note::
 
