@@ -53,7 +53,8 @@ plot
     除此以外，也可以使用 ``-C<color1>,<color2>,...`` 语法在
     命令行上临时构建一个颜色列表，其中 ``<color1>`` 对应Z值为0的颜色， ``<color2>``
     对应Z值为1的颜色，依次类推。
-	下面的例子展示了 ``-C<color1>,<color2>..`` 用法::
+    
+    下面的例子展示了 ``-C<color1>,<color2>..`` 用法::
 
         gmt plot -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p -png test << EOF
         > -Z0
@@ -561,4 +562,3 @@ plot
    :width: 100%
 
    plot -L选项示意图
-
