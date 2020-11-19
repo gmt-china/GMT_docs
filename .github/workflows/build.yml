@@ -21,16 +21,10 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
-      #- name: Install GMT dependencies
-      #  run: |
-      #    sudo apt-get install --no-install-recommends --no-install-suggests \
-      #         cmake libcurl4-gnutls-dev libnetcdf-dev gdal-bin libgdal-dev \
-      #         libfftw3-dev libpcre3-dev liblapack-dev libblas-dev libglib2.0-dev ghostscript
-
       - name: Install GMT dependencies
         run: |
-          brew update
-          brew install netcdf curl netcdf gdal fftw pcre2 ghostscript
+          #brew update
+          brew install gmt
 
       - name: Install TeXLive
         run: |
@@ -38,15 +32,6 @@ jobs:
           tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
                         float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol \
                         pdftexcmds upquote oberdiek caption
-
-      - name: Build GMT
-        run: |
-          curl https://raw.githubusercontent.com/GenericMappingTools/gmt/master/ci/build-gmt.sh | bash
-          # Add to PATH
-          echo "${GMT_INSTALL_DIR}/bin" >> $GITHUB_PATH
-        env:
-          GMT_INSTALL_DIR: ${{ github.workspace }}/GMT
-          GMT_GIT_REF: 6.1.1
 
       - name: Build documentaiton
         run: |
