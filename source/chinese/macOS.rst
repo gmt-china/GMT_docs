@@ -19,6 +19,8 @@ ghostscript的中文支持
         brew cask install basictex
         brew cask install mactex-no-gui
 
+    安装完成后关闭当前终端，打开一个新终端使其生效。
+
 3.  执行脚本::
 
         $ sudo perl cjk-gs-integrate.pl
