@@ -33,9 +33,9 @@ gmtget
 **-D**\ *selection*
     从GMT服务器下载一个或多个数据目录
 
-    在这里，参数 **selection** 可以是缓存（在GMT示例或测试中使用的文件的整个缓存目录），
-	也可以是数据（服务器上的整个数据目录），或者包含两者（缓存或数据）。
-	也可以通过添加 ``=planet`` 或 ``=datasetlist`` 进一步限定数据。
+    在这里，参数 *selection* 可以是 **cache**\（在GMT示例或测试中使用的文件的整个缓存目录），
+    也可以是 **data**（服务器上的整个数据目录），或者 **all** （缓存和数据）。
+    也可以通过添加 **=**\ *planet* 或 **=**\ *datasetlist* 进一步限定数据。
 
 .. _-G:
 
@@ -53,8 +53,8 @@ gmtget
 
 .. _-I:
 
-**-I**\ *inc[m|s]*
-    与 ``-D`` 结合使用。下载网格间距大于或等于 ``inc`` 的网格数据。
+**-I**\ *inc*\ [**m**\|\ **s**]
+    与 **-D** 结合使用。下载网格间距大于或等于 *inc* 的网格数据。
 	
 .. _-L:
 
@@ -72,7 +72,7 @@ gmtget
 .. _-Q:
 
 **-Q**
-    与 ``-D`` （和 ``-I`` ）结合使用，提供一个可下载数据集的列表。    
+    与 **-D** （和 **-I** ）结合使用，提供一个可下载数据集的列表。    
 	
 示例
 ----
@@ -96,15 +96,15 @@ gmtget
 
 下载所有的地球网格数据::
 
-    $ gmt get -Ddata=earth -N	
+    gmt get -Ddata=earth -N	
 
 只下载1x1弧分的地球掩模和日影像数据::
 
-    $ gmt get -Ddata=earth_mask,earth_day -I1m
+    gmt get -Ddata=earth_mask,earth_day -I1m
 
 下载所有的缓存目录::
 
-    $ gmt get -Dcache
+    gmt get -Dcache
 	
 相关模块
 --------
@@ -112,4 +112,3 @@ gmtget
 :doc:`gmt.conf`,
 :doc:`gmtdefaults`,
 :doc:`gmtset`
-
