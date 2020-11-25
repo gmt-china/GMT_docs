@@ -9,20 +9,24 @@ rose
 可选选项
 --------
 
-``<table>``
-    输入文件，数据格式为 ``length  azimuth``
+*table*
+    输入文件，数据格式为::
 
-    若输入文件中只有azimuth一列数据，则此时需要使用 ``-i0`` 选项，此时所有的
-    长度都默认为单位长度。
+        length  azimuth
 
-``-A[r]<sector_width>``
+    若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项，
+    此时所有的长度都默认为单位长度。
+
+.. _-A:
+
+**-A**\ [**r**]\ *sector_width*
     指定扇页宽度，单位为度
 
-    #. 默认扇页宽度为0，即windrose图
-    #. 若扇页宽度不为0，则表示绘制sector图
-    #. 若扇页宽度不为0且使用了 ``-Ar`` ，则表示绘制rose图
+    - 默认扇页宽度为0，即windrose图
+    - 若扇页宽度不为0，则表示绘制sector图
+    - 若扇页宽度不为0且使用了 **-Ar**\ ，则表示绘制rose图
 
-``-B``
+**-B**
     此模块中，X表示径向距离，Y表示方位角。Y轴的标签是图片的标题，比例尺长度由
     径向网格间隔决定。
 
@@ -37,16 +41,16 @@ rose
     其中最后一项可以取0或1，取决于平均结果是否significant at the level of
     confidence set via **-Q**.
 
-``-D``
+**-D**
     对扇页对偏移，使得其位于每个间隔的中间，即第一个扇页的中心在0度处
 
-``-F``
+**-F**
     不绘制scale length bar，默认会在右下角绘制
 
-``-G<fill>``
+**-G**\ *fill*
     绘制扇页的填充色
 
-``-I``
+**-I**
     不绘制图形，只计算 ``-R`` 选项所需要的参数。
 
     以下统计信息会输出到标准输出::
@@ -84,7 +88,7 @@ rose
 
     ``-Sn`` 会将输入的半径归一化到0到1。
 
-``-T``
+**-T**
     指定输入数据为 orientation 数据（即数据范围在0-180度范围内）而不是0-360度
     范围的direction数据。We compensate by counting each record twice:
     First as *azimuth* and second as *azimuth + 180*.
@@ -100,7 +104,7 @@ rose
 
     若不考虑半径，可以通过 ``-Zu`` 将所有的半径设置为单位长度。
 
-``-:``
+**-:**
     输入数据为 ``azimuth, radus`` 而不是 ``radius, azimuth``
 
 .. include:: explain_-U.rst_
