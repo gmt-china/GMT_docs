@@ -14,7 +14,7 @@ ghostscript 的中文支持
    
    新手常常没有意识到自己安装GMT时勾选了Ghostscript组件，导致中文乱码出现。
    如果严格按照下列步骤配置，依然遇到了中文乱码问题，
-   建议卸载并按照《 :doc:`/install/windows` 》章节的步骤与要求重新下载安装Ghostscript。
+   建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
 
 以Ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下可以找到文件 ``gscjk_ag.ps``\ 。
 
@@ -67,9 +67,20 @@ GMT 的中文支持
 --------------
 
 新建GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt``
-（若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录。Windows的文件管理器无法新建
+（注意 ``用户名`` 应该替换为实际的用户名。
+若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录。Windows的文件管理器无法新建
 以 **.** 开头的文件夹，因而需要打开CMD，然后执行命令 ``mkdir .gmt`` 以创建该文件夹）。
+       
+.. note::
 
+    Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
+    常常将文件名错误写成 ``PSL_custom_fonts.txt.txt`` ，导致中文字体添加失败。
+    因此强烈建议在 **资源管理器** -> **查看** 中开启显示文件扩展名: 
+    
+    |image_reference|
+    
+.. |image_reference| image:: chinese-extension.png
+    
 向 GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
     STSong-Light--GB-EUC-H  0.700    1
