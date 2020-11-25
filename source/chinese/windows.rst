@@ -74,12 +74,11 @@ GMT 的中文支持
 .. note::
 
     Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
-    常常将文件名错误写成 ``PSL_custom_fonts.txt.txt`` ，导致中文字体添加失败。
+    常常将文件名错误写成 ``PSL_custom_fonts.txt.txt``\ ，导致中文字体添加失败。
     因此强烈建议在 **资源管理器** -> **查看** 中开启显示文件扩展名: 
     
-    |image_reference|
     
-.. |image_reference| image:: chinese-extension.png
+    .. image:: chinese-extension.png
     
 向 GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
