@@ -110,7 +110,7 @@ gmtget
 
     gmt get -Ddata=earth_mask,earth_day -I1m
 
-下载所有的缓存目录::
+下载整个缓存目录::
 
     gmt get -Dcache
 	
