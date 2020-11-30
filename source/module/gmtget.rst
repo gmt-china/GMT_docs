@@ -18,6 +18,7 @@ gmtget
 [ |-L| ]
 [ |-N| ]
 [ |-Q| ]
+[ |SYN_OPT-V| ]
 
 必选选项
 --------
@@ -33,7 +34,7 @@ gmtget
 **-D**\ *selection*
     从GMT服务器下载一个或多个数据目录
 
-    在这里，参数 *selection* 可以是 **cache**\（在GMT示例或测试中使用的文件的整个缓存目录），
+    参数 *selection* 可以是 **cache**\（在GMT示例或测试中使用的文件的整个缓存目录），
     也可以是 **data**\（服务器上的整个数据目录），或者 **all**\ （缓存和数据）。
     也可以通过添加 **=**\ *planet* 或 **=**\ *datasetlist* 进一步限定数据。
 
@@ -54,7 +55,7 @@ gmtget
 .. _-I:
 
 **-I**\ *inc*\ [**m**\|\ **s**]
-    与 **-D** 结合使用。下载网格间距大于或等于 *inc* 的网格数据。
+    与 **-D** 结合使用。下载网格间距大于或等于 *inc* 的网格数据。默认无限制。
 	
 .. _-L:
 
@@ -74,7 +75,12 @@ gmtget
 
 **-Q**
     与 **-D** （和 **-I** ）结合使用，提供一个可下载数据集的列表。    
-	
+    输出格式为::
+    
+       planet group dataset size nitems remark         
+.. _-V:
+
+.. include:: explain_-V.rst_
 示例
 ----
 
@@ -99,7 +105,7 @@ gmtget
 
     gmt get -Ddata=earth -N	
 
-只下载 **1×1** 弧分的地球掩膜数据和白昼影像数据::
+只下载大于或等于 **1X1** 弧分的地球掩膜数据和白昼影像数据::
 
     gmt get -Ddata=earth_mask,earth_day -I1m
 
