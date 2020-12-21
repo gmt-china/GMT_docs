@@ -31,6 +31,6 @@
 
 **论坛/讨论组**
 
-#. 地学GMT中文社区QQ群：1群（218905582，已满）；2群（791856541）
+#. 地学GMT中文社区QQ群：1群（218905582）；2群（791856541）[**请勿重复加群!**]
 #. `GMT官方论坛 <https://forum.generic-mapping-tools.org/>`_
 #. `GMT Gitter 聊天室 <https://gitter.im/GenericMappingTools>`_
