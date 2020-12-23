@@ -182,7 +182,7 @@ PS参数
 
         .. note::
 
-            仅GMT经典模式下有效，现代模式下纸张始终是 protrait 模式。
+            仅GMT经典模式下有效，现代模式下纸张始终是 portrait 模式。
 
         可以取 **portrait** 或 **landscape**\ 。
 
