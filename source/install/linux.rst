@@ -9,7 +9,7 @@ Linux 下安装 GMT
 Fedora
 ------
 
-**Fedora 31** 及之后版本的用户，可以启用
+**Fedora 32** 及之后版本的用户，可以启用
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本::
 

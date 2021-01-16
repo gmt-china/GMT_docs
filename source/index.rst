@@ -38,13 +38,19 @@ GMT 是地球科学最广泛使用的制图软件之一。
 
 .. toctree::
    :maxdepth: 3
-   :caption: 目 录
+   :caption: GMT 入门
    :hidden:
 
    intro/index
    install/index
    migrating/index
    tutorial/index
+
+.. toctree::
+   :maxdepth: 3
+   :caption: GMT 进阶
+   :hidden:
+
    basis/index
    table/index
    grid/index
@@ -55,7 +61,13 @@ GMT 是地球科学最广泛使用的制图软件之一。
    dataset/index
    dataset-CN/index
    chinese/index
-   module/index
    api/index
+   module/index
+
+.. toctree::
+   :maxdepth: 3
+   :caption: 附录
+   :hidden:
+
    appendix/index
    contributors
