@@ -15,7 +15,7 @@ gmtsimplify
 
 **gmt simplify**
 [ *table* ]
-|-T|\ *tolerance*\ [*unit*]
+|-T|\ *tolerance*
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -25,6 +25,7 @@ gmtsimplify
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-o| ]
+[ |SYN_OPT-q| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
@@ -33,9 +34,10 @@ gmtsimplify
 
 .. _-T:
 
-**-T**\ *tolerance*\ [*unit*]
+**-T**\ *tolerance*
     指定最大所能容忍的误差，即任意数据点与简化后的线段间的距离小于该值。
-    默认单位为用户单位。对于地理数据（例如海岸线）可以指定其它距离单位。
+    默认单位为用户单位。对于地理数据（例如海岸线）可以指定其它
+    `距离单位`\ 。
 
 可选选项
 --------
@@ -62,9 +64,13 @@ gmtsimplify
 
 .. include:: explain_-ocols.rst_
 
+.. include:: explain_-q.rst_
+
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_distunits.rst_
 
 示例
 ----

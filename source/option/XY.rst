@@ -35,9 +35,17 @@
 
 上图用四个 :doc:`/module/basemap` 命令绘制了四张底图，绘图效果如下：
 
-.. gmtplot:: XY.sh
+.. gmtplot::
     :show-code: false
+    :width: 75%
     :caption: **-X** 和 **-Y** 移动绘图原点
+
+    gmt begin XY pdf,png
+    gmt text -F+f40p+cMC+t1 -JX5c/2c -R0/5/0/2 -BWSen -B1
+    gmt text -F+f40p+cMC+t2 -BWSen -B1 -X7c
+    gmt text -F+f40p+cMC+t3 -BWSen -B1 -X-7c -Y4c
+    gmt text -F+f40p+cMC+t4 -BWSen -B1 -X7c
+    gmt end
 
 解释：
 
@@ -51,7 +59,8 @@
 为解决这一问题，GMT6引入了一种新的语法：
 
     **-X**\ [**+**\|\ **-**]\ **w**\ [[**+**\|\ **-**\|\ **/**]\ *xshift*\ [*u*]]
-    **-X**\ [**+**\|\ **-**]\ **h**\ [[**+**\|\ **-**\|\ **/**]\ *xshift*\ [*u*]]
+
+    **-Y**\ [**+**\|\ **-**]\ **h**\ [[**+**\|\ **-**\|\ **/**]\ *xshift*\ [*u*]]
 
 其中 **w** 和 **h** 分别表示前一底图的宽度和高度。
 

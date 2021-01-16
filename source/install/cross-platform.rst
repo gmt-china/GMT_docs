@@ -12,14 +12,19 @@
 
 如果你是 Anaconda 用户，则可以直接通过如下命令安装。
 
-安装GMT 6.0.0::
+1.  安装GMT::
 
-    conda install gmt -c conda-forge
+        conda install gmt -c conda-forge
 
-注意：由于conda-forge没有提供Windows下的GraphicsMagick，因而Windows用户还需
-自行下载并安装 GraphicsmMagick 才能制作GIF格式的动画。
+2.  安装完成后，在终端执行如下命令以验证::
 
-安装完成后，在终端执行如下命令以验证::
+        $ gmt --version
+        6.1.1
 
-    $ gmt --version
-    6.0.0
+3.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
+
+        conda update gmt
+
+4.  如果需要卸载GMT，可以执行如下命令::
+
+        conda remove gmt

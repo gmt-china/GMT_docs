@@ -15,21 +15,20 @@ ternary
 ----
 
 **gmt ternary** [ *table* ]
-[ **-JX**\ *width*\ [unit] ]
-[ |SYN_OPT-Rz| ]
+[ **-JX**\ *width* ]
+[ |-R|\ *amin*\ /*amax*\ /*bmin*\ /*bmax*\ /*cmin*\ /*cmax* ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt* ]
 [ |-G|\ *fill* ]
 [ |-L|\ *a*\ /*b*\ /*c* ]
 [ |-M| ]
 [ |-N| ]
-[ |-S|\ [*symbol*][*size*\ [**u**] ]
+[ |-S|\ [*symbol*][*size*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |-W|\ [*pen*][*attr*] ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
@@ -38,6 +37,7 @@ ternary
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-p| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-t| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
@@ -63,8 +63,8 @@ ternary
 
 .. _-C:
 
-**-C**\ *cpt*
-    使用CPT文件，或者直接使用 **-C**\ *color1,color2*\ [*,color3*\ ,...] 自动建立一个线性连续CPT文件。
+**-C**\ *cpt* 或 **-C**\ *color1,color2*\ [*,color3*\ ,...]
+    指定CPT文件，或者跟上一系列以逗号分隔的颜色以构建一个线性连续CPT
 
     若使用了 **-S** 选项，则符号填充色由第四列数值决定，其它字段向右移动一列
     （即若需要指定符号大小，符号大小应置于第5列）。
@@ -80,7 +80,7 @@ ternary
 
 .. _-J:
 
-**-JX**\ *width*\ [*unit*]
+**-JX**\ *width*
     指定三角图的宽度
 
 .. _-L:
@@ -95,7 +95,7 @@ ternary
     (*x*,\ *y*,\ [,\ *z*])，x,y 为在三角图解中的归一化坐标值。
     x 的取值范围为0-1，y 的取值范围为0到 :math:`\frac{\sqrt{3}}{2}`
 
-    如果一个点在三角图中坐标为（a，b，c），则笛卡尔坐标(x, y)为:
+    如果一个点在三角图中坐标为 (a, b, c)，则笛卡尔坐标(x, y)为:
 
     .. math::
 
@@ -115,7 +115,7 @@ ternary
 
 .. _-S:
 
-**-S**\ [*symbol*][*size*\ [**u**]]
+**-S**\ [*symbol*][*size*]
     指定要绘制的符号类型及大小
 
     详见 :doc:`plot` 中的 **-S** 选项。
@@ -146,6 +146,8 @@ ternary
 .. include:: explain_-h.rst_
 
 .. include:: explain_-icols.rst_
+
+.. include:: explain_-qi.rst_
 
 .. include:: explain_colon.rst_
 

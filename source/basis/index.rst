@@ -18,3 +18,4 @@ GMT基础
    anchor
    embellishment
    io-format
+   input-files

@@ -32,11 +32,18 @@ GMT的 :file:`share/tools` 目录下。该脚本的使用方法也很简单::
 #.  如果你是自行编译GMT源码并安装，则可以在 :file:`cmake/ConfigUser.cmake` 中加上
     ``set (GMT_INSTALL_MODULE_LINKS TRUE)`` 再进行编译安装
 
-#.  对于已经安装GMT的用户，可以执行::
+#.  GMT提供了一个脚本，可以用于检查软连接是否存在，同时也可以创建或删除软连接。
+    对于已经安装GMT的用户，可以执行以下命令以检查软连接是否已经存在::
+
+        $(gmt --show-sharedir)/tools/gmt_links.sh
+
+    执行如下命令为所有旧GMT命令创建软连接（可能需要root权限）::
 
         $(gmt --show-sharedir)/tools/gmt_links.sh create
 
-    该脚本会自动为所有旧命令创建软链接。
+    也可以执行如下命令删除已有的软连接::
+
+        $(gmt --show-sharedir)/tools/gmt_links.sh delete
 
 #.  对于Bash用户，可以直接在Bash脚本、终端或者Bash配置文件中加入如下语句::
 

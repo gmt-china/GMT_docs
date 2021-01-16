@@ -31,7 +31,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 3.  重新打开一个终端，检测安装是否成功::
 
        $ gmt --version
-       6.0.0
+       6.1.1
 
 4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
 
@@ -49,20 +49,20 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
 .. note::
 
-    GMT的dmg安装包只支持 macOS >= 10.12。
+    GMT的dmg安装包只支持 macOS >= 10.14。
 
-1. 下载：\ `gmt-6.0.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg>`_
+1. 下载：\ `gmt-6.1.1-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.1-darwin-x86_64.dmg>`_
 
-2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.0.0.app** 拖动到 Applications 目录
+2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.1.1.app** 拖动到 **Applications** 目录
 
-3. 在Finder中的Applications目录下，找到GMT图标以双击启动。
+3. 在Finder中的 **Applications** 目录下，找到GMT图标以双击启动。
    GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
-   提示将如下语句添加到 :file:`~/.bash_profile` 中以修改PATH环境变量::
+   提示将如下语句添加到 :file:`~/.bash_profile` 中以修改环境变量::
 
-       export GMTHOME=/Applications/GMT-6.0.0.app/Contents/Resources
+       export GMTHOME=/Applications/GMT-6.1.1.app/Contents/Resources
        export PATH=${GMTHOME}/bin:${PATH}
-       export PROJ_LIB=$GMTHOME/share/proj6
-       export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick-1.3.33/config
+       export PROJ_LIB=$GMTHOME/share/proj
+       export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick/config
 
    .. note::
 
@@ -71,7 +71,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 4. 打开一个终端，输入如下命令，检测安装是否成功::
 
        $ gmt --version
-       6.0.0
+       6.1.1
 
 5.  卸载GMT
 
@@ -99,7 +99,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 3.  重新打开一个终端，检测安装是否成功::
 
         $ gmt --version
-        6.0.0
+        6.1.1
 
 4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
 
@@ -109,16 +109,3 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 5.  如果需要卸载GMT，可以执行如下命令::
 
         $ sudo port uninstall gmt6
-
-使用 Fink 安装
---------------
-
-`Fink <http://www.finkproject.org/>`_ 是 macOS 下的第三方软件包管理工具。
-
-1.  安装GMT::
-
-        sudo fink install gmt6
-
-2.  安装依赖包::
-
-        sudo fink install graphicsmagick ffmpeg

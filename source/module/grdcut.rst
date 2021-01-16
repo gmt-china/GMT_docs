@@ -22,7 +22,7 @@ grdcut
 |SYN_OPT-R|
 [ |-J|\ *parameters* ]
 [ |-N|\ [*nodata*] ]
-[ |-S|\ *lon/lat/radius*\ [*unit*]\ [**+n**] ]
+[ |-S|\ *lon/lat/radius*\ [**+n**] ]
 [ |SYN_OPT-V| ]
 [ |-Z|\ [*min/max*]\ [**+n**\|\ **N**\|\ **r**] ]
 [ |SYN_OPT-f| ]
@@ -56,11 +56,15 @@ grdcut
 
 .. include:: explain_-R.rst_
 
+..
+
+   指定要截取的网格子区域的范围。
+
 .. _-S:
 
-**-S**\ *lon/lat/radius*\ [*unit*]\ [**+n**]
-    指定圆心位置（\ *lon/lat*\ ）及其半径（\ *radius*\ ，单位为 *unit*\ ），
-    程序会自动计算一个矩形区域，该矩形区域包含了圆上及圆内所有网格点。
+**-S**\ *lon/lat/radius*\ [**+n**]
+    指定圆心位置（\ *lon/lat*\ ）及其半径（\ *radius*\ ，可指定 `距离单位`_\ ），
+    程序会自动计算出一个包含了圆上及圆内所有网格点的矩形区域。
     **+n** 表示将所有矩形区域内但不在圆内的节点的值设为NaN。
 
 .. include:: explain_-V.rst_
@@ -68,7 +72,7 @@ grdcut
 .. _-Z:
 
 **-Z**\ [*min/max*]\ [**+n**\|\ **N**\|\ **r**]
-    确定一个新的矩形区域，使得所有该区域外的节点值都在指定的Z值范围 *min/max* 外
+    确定一个新的矩形区域，使得所有该区域外的节点值都在指定的Z值范围 *min/max* 外。
     *min* 和 *max* 默认值为正负无穷，可以用 **-** 表示无穷。
 
     默认情况下，值为NaN的节点会被自动忽略。
@@ -81,6 +85,7 @@ grdcut
 
 .. include:: explain_help.rst_
 
+.. include:: explain_distunits.rst_
 
 示例
 ----
@@ -92,11 +97,7 @@ grdcut
 使用 **-S** 选项生成一个包含了原点(45,30)周围 500 km 以内的所有点的矩形区域，
 并设置矩形区域内圆外的节点值为NaN::
 
-    gmt grdcut @earth_relief_02m -Goutput.nc -S45/30/500k+n
-
-使用 **-Z** 选项使得子区域外被除去的部分大于0::
-
-    gmt grdcut @earth_relief_02m -Goutput.nc -Z-/0
+    gmt grdcut @earth_relief_06m -Goutput.nc -S45/30/500k+n
 
 对于一个倾斜投影的地图，由于 **grdcut** 获得的区域是由经线、纬度划分出来的
 矩形区域，而倾斜投影地图的边界不是由经纬线构成的，所以需要使用 **-J** 和 **-R**
@@ -107,5 +108,8 @@ grdcut
 相关
 ----
 
+- :doc:`grdclip`
+- :doc:`grdfill`
+- :doc:`grdinfo`
 - :doc:`grdpaste`
-- :doc:`grdsample`
+- :doc:`gmt:surface`

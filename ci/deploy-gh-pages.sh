@@ -1,10 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Push HTML pages to the gh-pages branch of the current Github repository.
 #
-# Keeps pages built from git tags in separate folders (named after the tag).
-# Pages for the master branch are in the 'dev' folder. 'latest' is a link to
-# the last tag.
 
 # To return a failure if any commands inside fail
 set -e
@@ -16,7 +13,7 @@ CLONE_DIR=deploy
 CLONE_ARGS="--quiet --branch=$BRANCH --single-branch"
 REPO_URL=https://${GH_TOKEN}@github.com/${REPO}.git
 HTML_SRC=${TRAVIS_BUILD_DIR}/${HTML_BUILDDIR:-doc/_build/html}
-# Place the HTML is different folders for different versions
+# Place the HTML in different folders for different versions
 VERSION=${GMT_DOC_VERSION}
 
 echo -e "DEPLOYING HTML TO GITHUB PAGES:"
@@ -39,6 +36,8 @@ git config user.name "TravisCI"
 echo -e "Remove old files from previous builds"
 rm -rf ${VERSION}
 cp -Rf ${HTML_SRC}/ ${VERSION}/
+rm -f latest
+ln -sf ${VERSION} latest
 
 # Need to have this file so that Github doesn't try to run Jekyll
 touch .nojekyll
@@ -50,23 +49,6 @@ git commit --amend --no-edit
 
 echo -e "Pushing to GitHub..."
 git push -fq origin $BRANCH 2>&1 >/dev/null
-
-# Push anotther copy got coding.net
-echo -e "Pushing to Coding.net..."
-# Push GitHub gh-pages branch to coding.net master branch
-CODING_URL=e.coding.net/seisman/GMT_docs.git
-
-rm -rf latest
-# make a copy to latest because coding.net doesn't support symlinks
-cp -Rf ${VERSION} latest
-# delete GMT_docs.pdf to reduce website size
-rm latest/GMT_docs.pdf
-git add -A .
-git status
-git commit --amend --no-edit
-git push -fq https://${CODING_USER}:${CODING_TOKEN}@${CODING_URL} ${BRANCH}:master
-
-echo -e "Finished uploading generated files."
 
 # Workaround for https://github.com/travis-ci/travis-ci/issues/6522
 # Turn off exit on failure.

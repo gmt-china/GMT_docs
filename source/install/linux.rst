@@ -1,7 +1,7 @@
 Linux 下安装 GMT
 ================
 
-尽管大多数Linux发行版都提供了GMT二进制包，可以直接通过软件包管理器 **apt-get**
+尽管大多数Linux发行版都提供了GMT二进制包，可以直接通过软件包管理器 **apt**
 或 **yum** 安装，但发行版提供的GMT版本都很老，不建议使用。
 
 针对Fedora/RHEL/CentOS用户，GMT的官方RPM仓库提供了最新版本的GMT。
@@ -9,7 +9,7 @@ Linux 下安装 GMT
 Fedora
 ------
 
-**Fedora 30** 及之后版本的用户，可以启用
+**Fedora 32** 及之后版本的用户，可以启用
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本::
 
@@ -48,14 +48,13 @@ RHEL/CentOS
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本。
 
-.. note::
-
-    CentOS 8 中的 GMT 目前不支持 GDAL 相关功能。
-
 安装方式如下::
 
     # 安装 epel-release
     yum install epel-release
+
+    # 启用 PowerTools 仓库 (仅限于 RHEL/CentOS 8 用户)
+    yum config-manager --set-enabled PowerTools
 
     # 启用GMT官方仓库 (仅限于RHEL/CentOS 7/8 用户)
     yum install yum-plugin-copr
@@ -92,41 +91,24 @@ RHEL/CentOS
 Ubuntu/Debian用户
 -----------------
 
-Ubuntu/Debian官方源中提供的GMT版本较老，不建议安装使用。
-目前Ubuntu/Debian用户只能通过编译源码的方式安装GMT最新版，
-具体编译方法见 :doc:`build-source`\ 。
+Ubuntu 和 Debian 用户可以直接使用如下命令安装GMT::
 
-如果不介意使用老版本的GMT5，可以通过如下方式安装。
-但注意，本手册中的所有脚本无法在GMT5下运行。
+    sudo apt install gmt gmt-dcw gmt-gshhg
+    sudo apt install ghostscript gdal-bin graphicsmagick ffmpeg
 
-安装方式为::
+.. warning::
 
-    sudo apt-get install gmt gmt-dcw gmt-gshhg
-    sudo apt-get install ghostscript gdal-bin
+   由于Ubuntu和Debian自身的软件更新规则，通常以上命令安装的都是老版本的GMT，
+   比如GMT 5.4 或者 GMT 6.0.0，而不是GMT的最新版本。
+
+   针对这种情况，有如下几种选择：
+
+   #. 使用老版本 GMT
+   #. 使用其它Linux发行版
+   #. 编译GMT源码以安装最新版，具体编译方法见 :doc:`build-source`
 
 ArchLinux用户
 -------------
 
-ArchLinux用户可以使用AUR提供的非官方源，使用方法为::
+ArchLinux用户请参考 https://github.com/GenericMappingTools/gmt/wiki/Install-latest-GMT-on-ArchLinux
 
-    # 完整更新系统包
-    sudo pacman -Syu
-
-    # 安装构建AUR包所需要的工具
-    sudo pacman -S base-devel
-
-    # 下载 AUR 提供的 gmt 构建代码
-    git clone https://aur.archlinux.org/gmt.git
-
-    # 下载 AUR 提供的其它 gmt 相关包
-    git clone https://aur.archlinux.org/gmt-coast.git
-    git clone https://aur.archlinux.org/gmt-cpt-city.git
-    git clone https://aur.archlinux.org/gmt-dcw.git
-
-    # 使用 makepkg 构建并使用 pacman 安装 gmt
-    cd gmt
-    makepkg -sc
-    sudo pacman -U *.pkg.tar.xz
-
-注意：\ `ArchlinuxCN repo <https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror>`_
-尚未提供GMT的二进制包。

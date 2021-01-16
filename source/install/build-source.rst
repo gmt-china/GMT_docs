@@ -10,7 +10,7 @@ GMT源码请参考GMT官方
 
 GMT的编译及运行需要如下软件：
 
-- CMake: >=2.8.7
+- CMake: >=2.8.12
 - netCDF（>=4.0且支持netCDF-4/HDF5）
 - curl
 
@@ -31,8 +31,9 @@ GMT的编译及运行需要如下软件：
 
 对于Ubuntu/Debian::
 
+    $ sudo apt update
     # 安装编译所需软件包
-    $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
+    $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
     # 安装可选软件包
     $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装制作动画所需的软件包
@@ -66,18 +67,12 @@ GMT的编译及运行需要如下软件：
     # 安装可选依赖
     brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
-.. warning::
-
-   GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片。但Ghostscript 9.27存在
-   严重bug，会导致生成的图片中有用信息被裁剪。
-   请使用 ``gs --version`` 确认安装的Ghostscript不是9.27版本。
-
 下载源码及数据
 --------------
 
 编译GMT需要下载如下三个文件：
 
-#. GMT 6.0.0 源码：`gmt-6.0.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.0.0-src.tar.gz>`_
+#. GMT 6.1.1 源码：`gmt-6.1.1-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.1.1-src.tar.gz>`_
 #. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
 #. 全球数字图表DCW：`dcw-gmt-1.1.4.tar.gz <http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz>`_
 
@@ -89,37 +84,35 @@ GMT的编译及运行需要如下软件：
 .. code-block:: bash
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-6.0.0.tar.gz
+   $ tar -xvf gmt-6.1.1-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
    $ tar -xvf dcw-gmt-1.1.4.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.0.0/share/gshhg
-   $ mv dcw-gmt-1.1.4 gmt-6.0.0/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.1.1/share/gshhg-gmt
+   $ mv dcw-gmt-1.1.4 gmt-6.1.1/share/dcw-gmt
 
    # 切换到gmt源码目录下
-   $ cd gmt-6.0.0
+   $ cd gmt-6.1.1
 
    # 用文本编辑器新建并打开CMake用户配置文件
    # Linux用户
    $ gedit cmake/ConfigUser.cmake
    # macOS用户
+   $ touch cmake/ConfigUser.cmake
    $ open -a TextEdit cmake/ConfigUser.cmake
 
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.0.0")
-    set (COPY_GSHHG TRUE)
-    set (COPY_DCW TRUE)
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.1.1")
 
     set (GMT_USE_THREADS TRUE)
     set (GMT_ENABLE_OPENMP TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置GMT的安装路径，上面的语句会将GMT安装在
-  :file:`/opt/GMT-6.0.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.0.0` 等有可读写
+  :file:`/opt/GMT-6.1.1` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.1.1` 等有可读写
   权限的路径；
-- **COPY_GSHHG** 和 **COPY_DCW** 设置为 **TRUE** 会将相关数据复制到 GMT 的 share 目录下
 - **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为GMT的某些模块
   增加多线程并行功能以加速计算，也可以不设置。
 
@@ -128,10 +121,12 @@ GMT的编译及运行需要如下软件：
    此处为了便于一般用户理解，只向 :file:`cmake/ConfigUser.cmake` 中写入了必要的语句。
    用户可以将GMT提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
    :file:`cmake/ConfigUser.cmake`\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
+   进一步，可以将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
+   :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于 gmt-6.0.0 目录下，不是 gmt-6.0.0/cmake 目录下
+    # 注意，此处新建的 build 文件夹位于 gmt-6.1.1 目录下，不是 gmt-6.1.1/cmake 目录下
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -143,11 +138,11 @@ GMT的编译及运行需要如下软件：
 继续执行 ``cmake ..``\ ，直到出现类似的检查结果::
 
     *
-    *  GMT Version:               : 6.0.0
+    *  GMT Version:               : 6.1.1
     *
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-6.0.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.0.0/share/dcw-gmt
+    *  Found GSHHG database       : /home/user/GMT/gmt-6.1.1/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.1.1/share/dcw-gmt (1.1.4)
     *  Found GMT data server      : https://oceania.generic-mapping-tools.org
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
@@ -179,17 +174,17 @@ GMT的编译及运行需要如下软件：
     *  Found gdal_translate       : yes (2.4.2)
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-6.0.0
-    *  GMT_DATADIR                : /opt/GMT-6.0.0/share
-    *  GMT_DOCDIR                 : /opt/GMT-6.0.0/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-6.0.0/share/man
+    *  Installing GMT in          : /opt/GMT-6.1.1
+    *  GMT_DATADIR                : /opt/GMT-6.1.1/share
+    *  GMT_DOCDIR                 : /opt/GMT-6.1.1/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.1.1/share/man
     -- Configuring done
     -- Generating done
 
 .. warning::
 
     Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，
-    GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行
+    GMT在配置过程中可能会找到Anaconda提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
     解决办法是，在 :file:`~/.bashrc` 中将 Anaconda 相关的环境变量注释掉，以保证GMT
@@ -204,7 +199,7 @@ GMT的编译及运行需要如下软件：
 .. note::
 
    **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下
-   使用 **-j** 选项会导致编译过程卡死。若出现此种情况，建议去除 **-j** 选项。
+   使用 **-j** 选项会导致编译过程卡死。Ubuntu用户建议在上面的两条命令中去掉 **-j** 选项。
 
 修改环境变量
 ------------
@@ -220,7 +215,7 @@ GMT的编译及运行需要如下软件：
 然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
 然后重启终端使其生效::
 
-    export GMT6HOME=/opt/GMT-6.0.0
+    export GMT6HOME=/opt/GMT-6.1.1
     export PATH=${GMT6HOME}/bin:$PATH
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
@@ -237,13 +232,13 @@ GMT的编译及运行需要如下软件：
 重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
 
     $ gmt --version
-    6.0.0
+    6.1.1
 
 升级/卸载GMT
 ------------
 
-按照上面的配置，GMT会被安装到 :file:`/opt/GMT-6.0.0` 目录下。若想要卸载GMT，
-可以直接删除整个 :file:`/opt/GMT-6.0.0` 即可。
+按照上面的配置，GMT会被安装到 :file:`/opt/GMT-6.1.1` 目录下。若想要卸载GMT，
+可以直接删除整个 :file:`/opt/GMT-6.1.1` 即可。
 
 GMT不支持自动更新，因而若想要升级GMT，通常建议先卸载GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。

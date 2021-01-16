@@ -1,6 +1,5 @@
 #!/bin/bash
 gmt begin embellishment pdf,png
-#gmt basemap -R0/1/0/1 -JX5i/2i -Ba1f0.5 -BwSnE+gbisque -DjTL+o0.7i/0.5i+w1.5i/0.75i -F+glightgreen+p1p
 gmt basemap -R0/1/0/1 -JX5i/2i -Ba1f0.5 -BwSnE+gbisque
 gmt plot -W1p -Glightgreen -L << EOF
 0.14	0.375

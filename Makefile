@@ -27,6 +27,7 @@ build: $(HTML) latexpdf optimize_pdf
 	@echo "Copy built PDF to HTML directory"
 	cp $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(HTML)/
 
+# reduce file size of the final PDF documentation
 optimize_pdf: latexpdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
 		-dNOPAUSE -dQUIET -dBATCH \

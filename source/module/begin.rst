@@ -12,7 +12,7 @@ begin
 **begin** 模块告诉GMT要开始一个新的现代模式会话。如果你的脚本只绘制一张图，
 那么你可以直接指定要生成的图片的文件名和文件格式。如果你的脚本绘制多张图，
 则你需要使用 :doc:`figure` 来分别为每张图指定文件名和文件格式。
-现代会话模式下，每个会话均独立于其他进程，每个会话负责管理各自的配置参数、
+现代会话模式下，每个会话互相独立，每个会话负责管理各自的配置参数、
 命令历史等，因而可以同时执行多个GMT会话而不会互相干扰。
 
 除了可以指定图片文件名和文件格式之外，还可以通过 *options* 指定生成图片过程
@@ -25,6 +25,7 @@ begin
 [ *prefix* ]
 [ *formats* ]
 [ *options* ]
+[ |-C| ]
 [ |SYN_OPT-V| ]
 
 可选选项
@@ -81,6 +82,14 @@ begin
 
     详细解释见 :doc:`psconvert` 的说明文档。
 
+.. _-C:
+
+**-C**
+    启动一个“干净”的会话。所有已存在的 gmt.conf 都会被忽略，而不会影响到该会话。
+
+    默认情况下，若当前目录或 :file:`~/.gmt` 等目录下存在 gmt.conf 文件，启动的
+    会话会继承 gmt.conf 文件中的设置，使用该选项则忽略所有已存在的设置。
+
 .. include:: explain_-V.rst_
 
 .. include:: explain_help_nopar.rst_
@@ -112,7 +121,7 @@ PS文件注意事项
 如果用户想要输出PS格式的图片，则应额外留意画布尺寸。对于其他图片格式而言，
 GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，GMT则默认使用A4大小的画布。
 若用户绘制的图片超过A4纸张的大小，则可能会造成显示不完全。针对这种情况，
-建议用户修改参数 :ref:`PS_MEDIA` 以显式指定纸张大小。例如::
+建议用户修改参数 :term:`PS_MEDIA` 以显式指定纸张大小。例如::
 
     gmt begin map ps
     gmt set PS_MEDIA A3
@@ -131,7 +140,9 @@ UNIX shell 注意事项
 
 如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 ``gmt6.#####``
 这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，
-在脚本开始的地方设置环境变量 **GMT_SESSION_NAME** 为进程ID。在Bash shell应该是::
+在脚本开始的地方设置环境变量 **GMT_SESSION_NAME** 为进程ID。
+
+在Bash shell应该是（其中，\ ``$$`` 是特殊变量，用于表示当前进程ID）::
 
     export GMT_SESSION_NAME=$$
     gmt begin
@@ -144,6 +155,14 @@ UNIX shell 注意事项
     gmt begin
     gmt ..
     gmt end show
+
+在Batch脚本中应该是（Batch中无法直接获取进程ID，此时可以随便给 **GMT_SESSION_NAME** 一个数字）::
+
+    set GMT_SESSION_NAME=97401
+    gmt begin
+    gmt ..
+    gmt end show
+
 
 相关模块
 --------

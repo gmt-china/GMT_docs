@@ -4,7 +4,19 @@ Windows 下的 GMT 中文支持
 ghostscript 的中文支持
 ----------------------
 
-通常，在 ``C:\Program Files\gs\gs9.26\examples\cjk`` 目录下可以找到文件 ``gscjk_ag.ps``\ 。
+如果没有正确配置ghostscript的中文支持，GMT生成的PNG、PDF等格式的图片中的中文将会出现乱码。
+因此ghostscript的中文支持对于希望使用中文的用户来说是必须进行配置的。
+
+.. warning::
+
+   GMT安装包中内置的 Ghostscript 不支持中文。
+   若想要GMT支持中文，注意在安装GMT时不勾选Ghostscript组件，待GMT安装完成后再自行安装 Ghostscript。
+   
+   新手常常没有意识到自己安装GMT时勾选了Ghostscript组件，导致中文乱码出现。
+   如果严格按照下列步骤配置，依然遇到了中文乱码问题，
+   建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
+
+以Ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下可以找到文件 ``gscjk_ag.ps``\ 。
 
 .. note::
 
@@ -12,7 +24,7 @@ ghostscript 的中文支持
    cidmap 的选项，选中该选项则表示会为当前系统自动生成中文所需的 cidmap 文件。
    默认该选项是被选中的，一定 **不要** 将该选项取消；
 
-启动 cmd，键入如下命令::
+启动 cmd，键入如下命令(第一行中的ghostscript安装目录请根据实际情况修改)::
 
     cd "C:\Program Files\gs\gs9.26\bin"
     gswin64.exe ..\examples\cjk\gscjk_ag.ps
@@ -55,9 +67,19 @@ GMT 的中文支持
 --------------
 
 新建GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt``
-（若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录。Windows的文件管理器无法新建
+（注意 ``用户名`` 应该替换为实际的用户名。
+若不存在 ``C:\Users\用户名\.gmt`` 目录则需新建该目录。Windows的文件管理器无法新建
 以 **.** 开头的文件夹，因而需要打开CMD，然后执行命令 ``mkdir .gmt`` 以创建该文件夹）。
+       
+.. note::
 
+    Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
+    常常将文件名错误写成 ``PSL_custom_fonts.txt.txt``\ ，导致中文字体添加失败。
+    因此强烈建议在 **资源管理器** -> **查看** 中开启显示文件扩展名: 
+    
+    
+    .. image:: chinese-extension.png
+    
 向 GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
     STSong-Light--GB-EUC-H  0.700    1
@@ -100,6 +122,15 @@ GMT 中文测试
 
 .. literalinclude:: GMT_Chinese.bat
 
+.. note::
+
+    GMT 6.x 目前在Windows下处理中文时存在BUG，可能会出现某些中文正常显示，某些
+    不正常显示的情况。使用::
+
+        gmt set PS_CHAR_ENCODING Standard+
+
+    可临时避免这一BUG。
+
 成图效果如下：
 
 .. figure:: GMT_Chinese.png
@@ -108,6 +139,9 @@ GMT 中文测试
 
 .. note::
 
-   若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
-   Unicode big endian，若使用 UTF-8 编码则会出现乱码；另外，很多编辑器默认将文本
-   文件以 UTF-8 编码保存，需要将编辑器的默认编码修改为 GB-2321、ANSI或GB-EUC。
+   使用记事本的用户，应注意含中文的bat文件和输入数据文件都应以ANSI编码保存，
+   使用其编码方式则极可能出现乱码。
+
+   Visual Studio Code 用户，应注意确保含中文的bat文件和输入数据文件都采用
+   GB2312编码方式。在Visual Studio Code右下角状态栏中可以查看并修改当前文件的
+   编码方式。

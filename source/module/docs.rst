@@ -33,9 +33,13 @@ docs
     - **api**: 打开GMT API手册
     - **colors**: 打开GMT颜色列表文档
     - **cookbook**: 打开GMT参考手册
-    - **tutorial**: 打开GMT入门教程
-    - **settings**: 打开GMT配置参数文档
+    - **data**: 打开GMT数据集页面
     - **gallery**: 打开GMT图库
+    - **home**: 打开GMT文档手册
+    - **settings**: 打开GMT配置参数文档
+    - **tutorial**: 打开GMT入门教程
+    - **forum**: 打开GMT官方论坛网站
+    - **website**: 打开GMT官方网站
 
 可选选项
 --------

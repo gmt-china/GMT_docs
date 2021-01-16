@@ -8,7 +8,7 @@ legend
 :简介: 在图上添加图例
 
 **legend** 模块用于绘制图例，图例由图例文件控制。如无特别说明，
-标注的字体由 :ref:`FONT_ANNOT_PRIMARY <FONT\_ANNOT\_PRIMARY>` 控制。
+标注的字体由 :term:`FONT_ANNOT_PRIMARY` 控制。
 
 语法
 ----
@@ -169,7 +169,7 @@ GMT中共有14种图例类型，列举如下：
     空白的高度由 *gap* 决定，\ *gap* 可以用 **i**\|\ **c**\|\ **p** 单位，
     也可以用 **l**  作为单位表示几倍行距的空白，\ *gap* 也可以取负值，表示将当前行上移。
 
-*H** *font*\|\ **-** *header*
+**H** *font*\|\ **-** *header*
     为图例指定一个居中的标题。
 
     *header* 为标题，\ *font* 为文字属性。若字体为 **-** 则使用默认字体 :term:`FONT_TITLE`\ 。

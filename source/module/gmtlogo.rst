@@ -10,6 +10,12 @@ gmtlogo
 该模块将GMT的图形logo绘制在图上。默认情况下，GMT的图形logo默认宽2英寸，高1英寸，
 将放在当前的绘图原点处。
 
+.. gmtplot::
+   :width: 25%
+   :show-code: false
+
+   gmt logo -png logo
+
 语法
 ----
 
@@ -25,7 +31,7 @@ gmtlogo
 [ |SYN_OPT-t| ]
 [ |SYN_OPT--| ]
 
-必选选项
+必须选项
 --------
 
 无
@@ -48,7 +54,7 @@ gmtlogo
       - **x** 在绘图坐标系下指定参考点
 
     - **+j**\ *justify* 指定logo上的锚点（默认锚点为logo的左下角(BL)）
-    - **+o**\ *dx*/*dy* 在参考点的基础上设置比例尺的额外偏移量
+    - **+o**\ *dx*/*dy* 在参考点的基础上设置logo的额外偏移量
     - **+w**\ *width* 设置logo的宽度
 
 .. _-F:
@@ -103,8 +109,8 @@ gmtlogo
    :width: 80%
 
    gmt begin logo pdf,png
-   gmt basemap -R0/10/0/10 -JX10c/5c -Baf
-   gmt logo -DjTL+w1i
+   gmt basemap -R0/10/0/10 -JX10c/5c -Baf -BWSen
+   gmt logo -DjTL+w3c+o0.25c -F
    gmt end show
 
 注意

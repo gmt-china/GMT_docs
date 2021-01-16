@@ -13,28 +13,29 @@
 或
 **-Ji**\ [*lon*/]\ *scale*
 
-*lon* 是中心经线，默认值为地图区域的中心。
+- *lon* 是中心经线 [默认值为地图区域的中心]
+- *width* 地图宽度
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
 
 .. gmtplot::
     :caption: 使用正弦曲线投影绘制世界地图
     :width: 85%
 
-    gmt coast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -png GMT_sinusoidal
+    gmt coast -Rd -JI12c -Bg -Dc -A10000 -Gcoral4 -Sazure3 -png GMT_sinusoidal
 
 为了减少形状的畸变，1927年引入了间断正弦曲线投影，即用三个对称的段来覆盖全球。
 传统上，间断出现在160°W、20°W和60°E处。为了生成间断地图，必须调用 :doc:`/module/coast`
 三次以分别绘制每段地图并叠加起来。间断正弦曲线投影一般仅用于显示全球不连续数据分布。
 
-为了生成一个宽度为5.04英寸的间断世界地图，需要设置比例尺为5.04/360 = 0.014，
-并将每段图沿水平方向偏移其对应的宽度
-(140\ :math:`\cdot`\ 0.014 and 80\ :math:`\cdot`\ 0.014)。
+为了生成一个宽度为14.4 cm英寸的间断世界地图，需要设置比例尺为14.4/360 = 0.04，
+并将每段图沿水平方向偏移其对应的宽度（140 x 0.04 和 80 x 0.04）。
 
 .. gmtplot::
    :caption:  使用间断正弦曲线投影绘制世界地图
    :width: 85%
 
    gmt begin GMT_sinus_int pdf,png
-   gmt coast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack
-   gmt coast -R-20/60/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.96i
-   gmt coast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.12i
+   gmt coast -R200/340/-90/90 -Ji0.04c -Bg -A10000 -Dc -Gdarkred -Sazure
+   gmt coast -R-20/60/-90/90 -Bg -Dc -A10000 -Gdarkgreen -Sazure -X5.6c
+   gmt coast -R60/200/-90/90 -Bg -Dc -A10000 -Gdarkblue -X3.2c
    gmt end

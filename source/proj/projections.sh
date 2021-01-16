@@ -1,5 +1,5 @@
-#!/bin/bash
-gmt begin J pdf,png
+#!/usr/bin/env bash
+gmt begin projections png,pdf
 gmt text -R0/5/0/3 -Jx1i -F+f+j << EOF
 2.5	2.8	16p,Helvetica-Bold	BC	GMT PROJECTIONS
 2	2.25	12p,Helvetica-Bold	BC	GEOGRAPHIC PROJECTIONS

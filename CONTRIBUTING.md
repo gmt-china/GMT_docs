@@ -33,7 +33,7 @@
 
 2.  下载文档源码
 
-        git clone https://github.com/gmt-china/GMT_docs.git
+        git clone --depth=100 https://github.com/gmt-china/GMT_docs.git
 
 3.  安装文档所需依赖
 
@@ -49,14 +49,14 @@
     - Linux 用户可以执行 `firefox build/html/index.html` 查看网页
     - macOS 用户可以执行 `open build/html/index.html` 查看网页
 
-5.  安装 TeXLive
+5.  编译生成PDF文档
 
     如果想要生成PDF格式的文档，则需要安装TeXLive。
 
     - Linux 用户可以参考 http://blog.seisman.info/texlive-install
     - macOS 用户可以直接执行 `brew cask install mactex-no-gui` 安装 mactex
 
-6.  编译生成PDF版文档
+	安装完成后执行:
 
         make latexpdf
 
@@ -70,7 +70,7 @@
 - `5.4`: 对应GMT5版本的文档，所有绘图命令均使用经典模式 (该分支已不再维护)
 - `gh-pages`: 用户存放网页的分支，自动更新，无需人工修改
 
-其它分支均属于短期分支，在合并到 `master` 或 `5.4` 分支后会删除。
+其它分支均属于短期分支，在合并到 `master` 分支后会删除。
 
 ## 文档风格
 
@@ -116,5 +116,5 @@
 注意事项：
 
 - `master` 分支中所有脚本均使用现代模式
-- 所有脚本至少需要生成PNG格式的图片，建议使用 `png,pdf` 生成两种格式的图片
+- 所有脚本至少需要生成PNG格式的图片，建议使用 `png,pdf` 生成两种格式的图片，分别供网页版和PDF版使用
 - 所有脚本以 `gmt end show` 结尾

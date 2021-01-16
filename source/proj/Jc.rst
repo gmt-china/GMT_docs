@@ -16,11 +16,13 @@
 或
 **-Jc**\ *lon*/*lat*/*scale*
 
-其中，\ *lon*/*lat* 为中心的经纬度。
+- *lon*/*lat* 为中心的经纬度
+- *width* 地图宽度
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
 
 .. gmtplot::
     :caption: Cassini投影绘制Sardinia岛
     :width: 50%
 
-    gmt coast -R7:30/38:30/10:30/41:30r -JC8.75/40/2.5i -Bafg -LjBR+c40+w100+f+o0.15i/0.2i \
-        -Gspringgreen -Dh -Sazure -Wthinnest -Ia/thinner --FONT_LABEL=12p -png GMT_cassini
+    gmt coast -R7:30/38:30/10:30/41:30+r -JC8.75/40/6c -Bafg -LjBR+c40+w100+f+o0.4c/0.5c -Dh \
+        -Gspringgreen -Sazure -Wthinnest -Ia/thinner --FONT_LABEL=10p -png GMT_cassini

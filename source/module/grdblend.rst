@@ -22,12 +22,14 @@ grdblend
 语法
 ----
 
-**gmt grdblend** [ *blendfile* \| *grid1* *grid2* ... ] |-G|\ *outgrid*
+**gmt grdblend** [ *blendfile* \| *grid1* *grid2* ... ]
+|-G|\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ |-C|\ **f**\|\ **l**\|\ **o**\|\ **u**\ [**+n**\|\ **p**] ]
 [ |-N|\ *nodata* ]
-[ |-Q| ] [ |-Z|\ *scale* ]
+[ |-Q| ]
+[ |-Z|\ *scale* ]
 [ |SYN_OPT-V| ]
 [ |-W|\ [**z**] ]
 [ |SYN_OPT-f| ]
@@ -40,6 +42,18 @@ grdblend
 
 *grid1* *grid2*
     要合并的网格文件
+
+.. _-G:
+
+**-G**\ *outgrid*
+    输出的网格文件名
+
+.. include:: explain_-I.rst_
+
+.. include:: explain_-R.rst_
+
+可选选项
+--------
 
 *blendfile*
     合并参数文件。
@@ -55,18 +69,6 @@ grdblend
     - 若未指定权重，则默认权重为1
     - 也可以不指定 *blendfile* 而只将所有网格文件名列在命令行中，此时会
       使用网格数据的真实范围，且所有网格文件的权重都是1
-
-.. _-G:
-
-**-G**\ *outgrid*
-    输出的网格文件名
-
-.. include:: explain_-I.rst_
-
-.. include:: explain_-R.rst_
-
-可选选项
---------
 
 .. _-C:
 
@@ -92,7 +94,7 @@ grdblend
 .. _-Q:
 
 **-Q**
-    创建一个无头段的二进制网格文件以供其它程序使用
+    创建一个无头段的二进制网格文件（非netCDF格式）以供其它程序使用
 
 .. include:: explain_-V.rst_
 
@@ -101,7 +103,7 @@ grdblend
 **-W**\ [**z**]
     不合并数据，仅输出每个节点所使用的权重。
 
-    **-Wz** 表示输出 Z值乘以权重的和。
+    **-Wz** 表示输出 Z 值乘以权重的和。
 
 .. _-Z:
 

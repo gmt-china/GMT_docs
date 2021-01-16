@@ -76,7 +76,7 @@ GMT6既支持传统的经典模式，也支持全新的现代模式。
 #. 去掉多余的 **-J**, **-R** 选项
 #. 某些模块重新命名。经典模式下以 **ps** 开头的模块省略 **ps**\ ，
    比如 **pscoast** → **coast**\ 、\ **psbasemap** → **basemap**\ 。
-   个别几个模块是例外，\ **psxy** → **plot**,\ **psxyz** → **plot3d**,
+   个别几个模块是例外，\ **psxy** → **plot**, **psxyz** → **plot3d**,
    **psscale** → **colorbar**
 #. 在需要绘制多子图、图中图时，考虑使用 **inset** 和 **subplot** 改写
 #. 现代模式下 **makecpt** 和 **grd2cpt** 默认将生成的CPT作为当前CPT，

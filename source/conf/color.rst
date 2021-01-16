@@ -9,23 +9,23 @@ CPT相关参数
 .. glossary::
 
     **COLOR_BACKGROUND**
-        数据Z值小于CPT文件中最小值时使用的背景色 [``black``]
+        数据Z值小于CPT文件中最小值时使用的背景色 [black]
 
     **COLOR_FOREGROUND**
-        数据Z值大于CPT文件中最大值时使用的前景色 [``white``]
+        数据Z值大于CPT文件中最大值时使用的前景色 [white]
 
     **COLOR_NAN**
-        数值Z值为 NaN 时使用的颜色 [``127.5``]
+        数值Z值为 NaN 时使用的颜色 [127.5]
 
     **COLOR_MODEL**
-        对CPT文件做插值生成新CPT时所使用的色彩模型 [``none``]
+        对CPT文件中的颜色做插值生成新CPT时所使用的色彩模型 [**none**]
 
         可以取如下值：
 
-        - ``none``\ ：使用CPT文件中指定的 ``COLOR_MODEL``
-        - ``rgb``\ ：在RGB色彩空间中插值
-        - ``hsv``\ ：在HSV色彩空间中插值
-        - ``cmyk``\ ：假定颜色是CMYK色彩空间，但在RGB空间内插值
+        - **none**\ ：使用CPT文件中指定的 **COLOR_MODEL**
+        - **rgb**\ ：在RGB色彩空间中插值
+        - **hsv**\ ：在HSV色彩空间中插值
+        - **cmyk**\ ：假定颜色是CMYK色彩空间，但在RGB空间内插值
 
 光照相关参数
 ------------

@@ -14,12 +14,14 @@
 
 - *lon* 是中心经线，默认为地图区域的中心
 - *lat* 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
+- *width* 地图宽度
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
 
 .. gmtplot::
     :caption: 使用Plate Carrée投影绘制全球地图
     :width: 85%
 
-    gmt coast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl
+    gmt coast -Rg -JQ12c -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl
 
 选择不同的标准纬线，则可以获取经度和纬度的不同缩放比例。流行的几个标准纬线如下：
 

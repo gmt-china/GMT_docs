@@ -11,19 +11,22 @@
 
 **-B** 选项在设置边框属性时的语法为:
 
-**-B**\ [*axe*][**+b**][**+g**\ *fill*][**+n**][**+o**\ *lon*/*lat*][**+t**\ *title*]
+**-B**\ [*axe*][**+b**][**+g**\ *fill*][**+i**\ [*val*][**+n**][**+o**\ *lon*/*lat*][**+t**\ *title*]
 
 其中：
 
-- *axes* 控制显示底图的哪几条边，具体写法在下面会进一步介绍
+- *axes* 控制显示底图的哪几条边，具体用法在下面会进一步介绍
 - **+t**\ *title* 指定当前底图的标题。该标题位于底图上方的中间位置。
   标题可以是任意字符串，如果是字符串中有空格，则必须用引号将字符串括起来。
   标题的文本属性由 :term:`FONT_TITLE` 控制。
   标题与上边框之间的距离由 :term:`MAP_TITLE_OFFSET` 控制。
-- **+g**\ *fill* 为底图内部填充背景色，见 :doc:`/basis/fill`
-- **+n** 只绘制边框，而不绘制刻度线和标注
-- **+b** 仅适用于3D底图，使用该子选项则会根据绘制3D底图的12条边
-- **+oi**\ *lon*/*lat* 指定网格线的参考点。默认情况下，网格线是以北极点作为参考的，
+- **+g**\ *fill* 为底图内部填充颜色，见 :doc:`/basis/fill`
+- **+n** 表示完全不绘制边框
+- **+b** 仅适用于3D底图，使用该子选项则会绘制3D底图的12条边
+- **+i**\ *val* 对于某些投影方式，某条轴可能不会被绘制（比如360度的方位投影地图
+  没有纬度轴，全球Hammer投影没有经度轴），使用该子选项可以强制标注一个经线或纬线。
+  *val* 默认值为0
+- **+o**\ *lon*/*lat* 指定网格线的参考点。默认情况下，网格线是以北极点作为参考的，
   如果你想要以另一个点作为参考绘制倾斜的网格线，则可以使用 **+o** 子选项
 
 通常情况下，只需要使用 *axes* 和 **+t**\ *title* 选项。
@@ -67,7 +70,7 @@
 下图展示了3D绘图中 **-B** 选项的不同用法。读者可以修改如下命令中的 **-B** 选项
 来实现不同搭配的效果::
 
-    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t'-BwesnZ' -p130/30 -pdf map
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t"-BwesnZ" -p130/30 -pdf map
 
 .. gmtplot:: B/3D-axes-examples.sh
    :show-code: false
@@ -82,9 +85,9 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
 以上语法也可以被拆分为两部分:
 
-*-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ *intervals*
+**-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ *intervals*
 和
-*-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ [**+a**\ *angle*\|\ **n**\|\ **p**][**+l**\|\ **L**\ *label*][**+s**\ *label*][**+p**\ *prefix*][**+u**\ *unit*]
+**-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ [**+a**\ *angle*\|\ **n**\|\ **p**][**+l**\|\ **L**\ *label*][**+s**\|\ **S**\ *seclabel*][**+p**\ *prefix*][**+u**\ *unit*]
 
 其中，
 
@@ -116,12 +119,12 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     -Bxyzaf
 
 *interval*
-~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 每个轴都有三个属性，分别是标注（annotation）、刻度（frame）和网格线（grid）。
 下图展示了这三个名词在绘图时的具体含义。
 
-.. gmtplot:: /scripts/GMT_-B_afg.sh
+.. gmtplot:: B/B_afg.sh
     :show-code: false
     :caption: GMT坐标轴中的标注、刻度和网格线
 
@@ -164,7 +167,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 地理底图与一般的坐标轴不同，其底图类型 :term:`MAP_FRAME_TYPE`
 使用 **fancy** 形式。
 
-.. gmtplot:: /scripts/GMT_-B_geo_1.sh
+.. gmtplot:: B/B_geo_1.sh
    :show-code: false
 
    地理底图示例1
@@ -174,7 +177,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 下图同时使用了 **p** 和 **s** 两级属性。这里 **p** 属性用于显示弧度，\ **s**
 属性用于显示弧分。
 
-.. gmtplot:: /scripts/GMT_-B_geo_2.sh
+.. gmtplot:: B/B_geo_2.sh
    :show-code: false
 
    地理底图示例2
@@ -189,7 +192,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 数目会根据 *stride* 自动决定。若设置 :term:`FORMAT_FLOAT_OUT`
 为其他值，则会严格使用其定义的格式，比如 ``%.2f`` 表示显示两位小数。
 
-.. gmtplot:: /scripts/GMT_-B_linear.sh
+.. gmtplot:: B/B_linear.sh
    :show-code: false
 
    笛卡尔线性轴
@@ -212,7 +215,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 - 在 *stride* 后加 **l**\ ，则标注会以log\ :sub:`10`\ 的值显示，比如100会显示成2
 - 在 *stride* 后加 **p**\ ，则标注会以10的n次方的形式显示，比如10\ :sup:`-5`
 
-.. gmtplot:: /scripts/GMT_-B_log.sh
+.. gmtplot:: B/B_log.sh
    :show-code: false
 
    对数坐标轴
@@ -229,7 +232,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 加 **p**\ ，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。
 比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。
 
-.. gmtplot:: /scripts/GMT_-B_pow.sh
+.. gmtplot:: B/B_pow.sh
    :show-code: false
 
    指数投影坐标轴
@@ -296,7 +299,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
    gmt begin GMT_-B_time1 pdf,png
    gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
-   gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS
+   gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpxa7Rf1d -Bsxa1O -BS
    gmt end
 
 需要注意，\ **-Bsa1O** 指定了次级标注的间隔为一个月，由于此处使用的是大写的 **O**\ ，
@@ -312,8 +315,8 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time2 pdf,png
     gmt set FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
-    gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
+    gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpxa6Hf1h -Bsxa1K -BS
+    gmt basemap -Bpxa6Hf1h -Bsxa1D -BS -Y0.65i
     gmt end
 
 第三个例子展示了两年的时间，并标注了每年以及每三个月。
@@ -324,7 +327,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time3 pdf,png
     gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS
+    gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpxa3Of1o -Bsxa1Y -BS
     gmt end
 
 第四个例子展示了一天中的几个小时，通过在R选项中指定 **t** 来使用相对时间坐标。
@@ -335,7 +338,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time4 pdf,png
     gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-    gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS
+    gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpxa15mf5m -Bsxa1H -BS
     gmt end
 
 第五个例子用两种方式展示了几周的时间：
@@ -346,9 +349,9 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
     gmt begin GMT_-B_time5 png,pdf
     gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character \
            FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS
+    gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpxa1K -Bsxa1U -BS
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
-    gmt basemap -Bpa3Kf1k -Bsa1r -BS -Y0.65i
+    gmt basemap -Bpxa3Kf1k -Bsxa1r -BS -Y0.65i
     gmt end
 
 第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：
@@ -358,7 +361,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time6 pdf,png
     gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
-    gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS
+    gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Bxa1Of1d -BS
     gmt end
 
 第七个例子：
@@ -368,7 +371,7 @@ X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格�
 
     gmt begin GMT_-B_time7 pdf,png
     gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
-    gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS
+    gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpxa5Df1d -Bsxa1Y -BS
     gmt end
 
 弧度轴 :math:`\pi` 的标注
@@ -410,28 +413,26 @@ GMT允许用户定义标注来实现不规则间隔的标注，用法是 **-Bc**
 .. gmtplot::
     :caption: 自定义坐标轴
 
-    cat << EOF > xannots.txt
-    416.0 ig Devonian
-    443.7 ig Silurian
-    488.3 ig Ordovician
-    542 ig Cambrian
+    cat << EOF >| xannots.txt
+    416.0	ig	Devonian
+    443.7	ig	Silurian
+    488.3	ig	Ordovician
+    542	ig	Cambrian
     EOF
-    cat << EOF > yannots.txt
-    0 a
-    1 a
-    2 f
-    2.71828 ag e
-    3 f
-    3.1415926 ag @~p@~
-    4 f
-    5 f
-    6 f
-    6.2831852 ag 2@~p@~
+    cat << EOF >| yannots.txt
+    0	a
+    1	a
+    2	f
+    2.71828	ag	e
+    3	f
+    3.1415926	ag	@~p@~
+    4	f
+    5	f
+    6	f
+    6.2831852	ag	2@~p@~
     EOF
 
     gmt begin GMT_-B_custom pdf,png
-    gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u" Ma" -Bpycyannots.txt -BWS+glightblue
-    gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -BWS \
-                  --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p
-    gmt end
-    rm -f [xy]annots.txt
+      gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u" Ma" -Bpycyannots.txt -Bsxcxannots.txt -BWS+glightblue \
+        --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p
+    gmt end show

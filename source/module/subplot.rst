@@ -30,7 +30,7 @@ subplot begin 语法
 *nrows*\ **x**\ *ncols*
 |-F|\ [**f**\|\ **s**]\ *width*\ /*height*\ [**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx/dy*][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
 [ |-A|\ [*autolabel*][**+j**\|\ **J**\ *refpoint*][**+c**\ *dx*\ /\ *dy*][**+g**\ *fill*][**+p**\ *pen*][**+o**\ *dx*/*dy*][**+r**][**+R**][**+v**] ]
-[ |-C|\ [*side*]\ /*clearance*\ [**u**] ]
+[ |-C|\ [*side*]\ *clearance* ]
 [ |SYN_OPT-B| ]
 [ |SYN_OPT-J| ]
 [ |-M|\ *margins* ]
@@ -125,10 +125,10 @@ subplot begin 语法
       即编号位于子图的左上角。\ **+j** 和 **+J** 分别适用于子图编号位于子图内部和
       外部的情况
     - **+o**\ *dx*\ [/*dy*] 设置子图编号相对于 **+j|J** 指定的参考位置间的额外偏移量，
-      默认值为 :ref:`FONT_TAG` 的20%
+      默认值为 :term:`FONT_TAG` 的20%
     - **+p**\ *pen* 为子图编号加上文本框
     - **+g**\ *fill* 为子图编号的文本框填充颜色
-    - **+c**\ *dx*\ [/*dy*]: 设置子图编号与文本框轮廓间的距离，默认值为 :ref:`FONT_TAG` 的15%
+    - **+c**\ *dx*\ [/*dy*]: 设置子图编号与文本框轮廓间的距离，默认值为 :term:`FONT_TAG` 的15%
     - **+r** 表示用小写罗马数字编号
     - **+R** 表示用大小罗马数字编号
     - **+v** 表示沿着垂直列方向依次增加编号，默认沿着水平行方向依次增加
@@ -138,7 +138,7 @@ subplot begin 语法
 
 .. _-C:
 
-**-C**\ [*side*]\ /*clearance*\ [**u**]
+**-C**\ [*side*]\ *clearance*
     设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、
     添加额外的文字等。
 
@@ -153,7 +153,7 @@ subplot begin 语法
 
     .. note::
 
-       在子图模式下不能使用 **-X** 和 **-Y**\ ，可以使用 **-C** 作为替代。
+       在子图模式内不能使用 **-X** 和 **-Y**\ ，可以使用 **-C** 作为替代。
 
 .. include:: explain_-J.rst_
 
@@ -198,7 +198,7 @@ subplot begin 语法
 .. _-T:
 
 **-T**\ *heading*
-    设置整张图的总标题，标题文字的属性由 :ref:`FONT_HEADING` 控制。
+    设置整张图的总标题，标题文字的属性由 :term:`FONT_HEADING` 控制。
 
     每张子图各自的标题可以用 **-B** 或 **-S** 选项控制。
 
@@ -229,7 +229,7 @@ subplot set 语法
 **gmt subplot set**
 [ *row,col*\|\ *index* ]
 [ **-A**\ *fixedlabel*]
-[ **-C**\ *side*\ /*clearance*\ [**u**] ]
+[ **-C**\ *side*\ /*clearance* ]
 [ |SYN_OPT-V| ]
 
 可选选项
@@ -246,7 +246,7 @@ subplot set 语法
     这一选项可以用于临时修改单个子图的编号，但该选项只能修改编号字符串，
     其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 **-A** 选项。
 
-**-C**\ *side*/*clearance*\ [*u*]
+**-C**\ *side*/*clearance*
     设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。
 
     *side* 可以取 **e** **w** **s** **n** 分别代表东西南北四条边。

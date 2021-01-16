@@ -5,8 +5,8 @@
     :maxdepth: 2
 
     format
-    read
-    write
     registration
     boundary-condition
+    read
+    write
     viewer

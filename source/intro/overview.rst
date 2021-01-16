@@ -23,16 +23,16 @@ GMT的历史
 - 1991年8月10日，GMT 2.0发布；
 - 1998年11月8日，GMT 3.x的第一个正式版发布；
 - 2005年10月1日，GMT 4.x的第一个正式版发布；
-  GMT4.x系列的最后一个版本是GMT 4.5.18，发布于2018年7月1日；
+  GMT 4.x系列的最后一个版本是GMT 4.5.18，发布于2018年7月1日；
 - 2013年11月5日，GMT 5.x的第一个正式版发布；
-  GMT5.x系列的最后一个版本是GMT 5.4.5，发布于 2019年1月4日；
-- 2019年11月1日，GMT 6.x的第一个正式版发布；目前最新版本 GMT 6.0.0 发布于 2019年11月1日。
+  GMT 5.x系列的最后一个版本是GMT 5.4.5，发布于 2019年1月4日；
+- 2019年11月1日，GMT 6.x的第一个正式版发布；目前最新版本 GMT 6.1.1 发布于 2020年9月2日。
 
 想了解更多关于GMT的历史故事，可以观看/收听下面的视频/音频：
 
 - Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访 http://www.dontpanicgeocast.com/?p=638
 - Don't Panic Geocast 对 Walter Smith 的采访 https://www.dontpanicgeocast.com/?p=742
-- Paul Wessel 在 GMT 20 周年的演讲 https://av.tib.eu/media/19869
+- Paul Wessel 在 GMT 20 周年的演讲 https://av.tib.eu/media/19869 或 https://youtu.be/2D_UlEZpxbU
 
 GMT开发者
 ---------

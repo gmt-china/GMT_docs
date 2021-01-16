@@ -205,7 +205,7 @@ sac
 
 利用 SAC 命令 **datagen sub tel *.z** 生成多个波形，将其绘制在距离剖面上::
 
-    gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l'T(s)' -By5+lDegree -BWSen \
+    gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
          -Ed -M1.5c -W0.5p,red -png distance_profile
 
 利用 SAC 命令 **datagen sub tel *.z** 生成多个波形，将其绘制在地图上::
