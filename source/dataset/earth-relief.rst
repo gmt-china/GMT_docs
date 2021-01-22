@@ -50,7 +50,7 @@ earth_relief: 全球地形起伏数据
 
 查看1弧度分辨率（像素配准）的地形数据的信息::
 
-    gmt grdinfo @earth_relief_60m
+    gmt grdinfo @earth_relief_01d
 
 查看30弧分分辨率、网格线配准的地形数据的信息::
 
