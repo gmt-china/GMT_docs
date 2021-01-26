@@ -30,7 +30,8 @@ ghostscript 的中文支持
     gswin64.exe ..\examples\cjk\gscjk_ag.ps
 
 该命令用命令行版本的 ``gswin64c`` 打开 ``gscjk_ag.ps``\ ，若能看到中文，则说明
-ghostscript 是可以正常支持中文的。
+ghostscript 是可以正常支持中文的。如果看不到中文也可以先继续进行以下的步骤。
+某些版本的ghostscript 在这一步看不到中文，但事实上也能正常工作。
 
 配置Ghostscript环境变量
 -----------------------
@@ -119,6 +120,19 @@ GMT 中文测试
 .. note::
 
    请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
+   
+.. warning::
+   目前发现 **Notepad++** 编辑器会导致中文乱码出现，请使用 **记事本** 
+   或 **Visual Studio Code** 编辑脚本。
+   
+   此外，目前还发现 **Git Bash** 运行Bash脚本也可能会导致中文乱码。建议在有中文需求时，
+   使用bat脚本。
+
+使用记事本的用户，应注意含中文的bat文件和输入数据文件都应以 **ANSI** 编码保存，
+使用其编码方式则极可能出现乱码。
+
+Visual Studio Code 用户，应注意确保含中文的bat文件和输入数据文件都采用 **GB2312** 编码方式。
+在Visual Studio Code右下角状态栏中可以查看并修改当前文件的编码方式。
 
 .. literalinclude:: GMT_Chinese.bat
 
@@ -136,12 +150,3 @@ GMT 中文测试
 .. figure:: GMT_Chinese.png
    :width: 100%
    :align: center
-
-.. note::
-
-   使用记事本的用户，应注意含中文的bat文件和输入数据文件都应以ANSI编码保存，
-   使用其编码方式则极可能出现乱码。
-
-   Visual Studio Code 用户，应注意确保含中文的bat文件和输入数据文件都采用
-   GB2312编码方式。在Visual Studio Code右下角状态栏中可以查看并修改当前文件的
-   编码方式。
