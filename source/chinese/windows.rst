@@ -16,12 +16,8 @@ ghostscript 的中文支持
    如果严格按照下列步骤配置，依然遇到了中文乱码问题，
    建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
 
-以Ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下
-确认文件 ``gscjk_ag.ps``\ 是否存在。
-
-如果找不到该文件，请尝试重新安装ghostscript。在安装的过程中，会有一个生成
-cidmap 的选项，选中该选项则表示会为当前系统自动生成中文所需的 cidmap 文件。
-默认该选项是被选中的，一定 **不要** 将该选项取消。
+在安装ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
+生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
 
 为了能够在将PS文件转换为其他图片格式时也支持中文，需要设置环境变量 ``GS_FONTPATH``\ 。
 具体步骤如下：
