@@ -16,24 +16,8 @@ ghostscript 的中文支持
    如果严格按照下列步骤配置，依然遇到了中文乱码问题，
    建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
 
-以Ghostscript9.26为例，在其安装目录 ``C:\Program Files\gs\gs9.26\examples\cjk`` 下可以找到文件 ``gscjk_ag.ps``\ 。
-
-.. note::
-
-   如果找不到该文件，请尝试重新安装ghostscript。在安装的过程中，会有一个生成
-   cidmap 的选项，选中该选项则表示会为当前系统自动生成中文所需的 cidmap 文件。
-   默认该选项是被选中的，一定 **不要** 将该选项取消；
-
-启动 cmd，键入如下命令(第一行中的ghostscript安装目录请根据实际情况修改)::
-
-    cd "C:\Program Files\gs\gs9.26\bin"
-    gswin64.exe ..\examples\cjk\gscjk_ag.ps
-
-该命令用命令行版本的 ``gswin64c`` 打开 ``gscjk_ag.ps``\ ，若能看到中文，则说明
-ghostscript 是可以正常支持中文的。
-
-配置Ghostscript环境变量
------------------------
+在安装ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
+生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
 
 为了能够在将PS文件转换为其他图片格式时也支持中文，需要设置环境变量 ``GS_FONTPATH``\ 。
 具体步骤如下：
@@ -119,6 +103,19 @@ GMT 中文测试
 .. note::
 
    请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
+   
+.. warning::
+   
+   目前发现 **Git Bash** 运行Bash脚本时， ``echo`` 生成文件使用的是 UTF8 编码，
+   从而可能会导致中文乱码。建议在有中文需求时使用bat脚本，或者避免在Bash脚本
+   中使用 ``echo`` 。
+
+使用 **记事本** 和 **Notepad++** 的用户，应注意含中文的bat文件和输入数据文件都应以 **ANSI** 编码保存，
+使用其他编码方式则极可能出现乱码。Notepad++除了注意要选择 “ 编码 -> 使用ANSI编码 ” 以外，还应该选中 
+“ 设置 -> 首选项 -> 新建 -> 编码 -> ANSI ”。
+
+**Visual Studio Code** 用户，应注意确保含中文的bat文件和输入数据文件都采用 **GB2312** 编码方式。
+在Visual Studio Code右下角状态栏中可以查看并修改当前文件的编码方式。
 
 .. literalinclude:: GMT_Chinese.bat
 
@@ -136,12 +133,3 @@ GMT 中文测试
 .. figure:: GMT_Chinese.png
    :width: 100%
    :align: center
-
-.. note::
-
-   使用记事本的用户，应注意含中文的bat文件和输入数据文件都应以ANSI编码保存，
-   使用其编码方式则极可能出现乱码。
-
-   Visual Studio Code 用户，应注意确保含中文的bat文件和输入数据文件都采用
-   GB2312编码方式。在Visual Studio Code右下角状态栏中可以查看并修改当前文件的
-   编码方式。

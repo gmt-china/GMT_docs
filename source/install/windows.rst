@@ -5,6 +5,10 @@ GMT 为 Windows 用户提供了 32 位和 64位的安装包，可以直接下载
 
 .. warning::
 
+    安装前请检查你的Windows登录用户名①是否包含空格、②是否为 **Administrator** 。
+    以上两种情况都会导致GMT运行出错。如果你的用户名不符合要求，请新建一个用户，
+    并使用新用户登录Windows，再安装GMT。
+	
     GMT 提供的安装包不支持 Windows XP。
 
 GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件：
@@ -107,10 +111,11 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境
     变量 **PATH** 中，以保证 GMT 可以找到其提供的 **gm** 命令。
 
-5.  安装 UnixTools (**不推荐，仅适用于Batch用户**)
+5.  安装 UnixTools
 
-    如果想要在Windows下运行Batch脚本，但同时想要使用各种Linux下的常用命令，
-    则可以使用GMT中文社区整理的Unix小工具合集包 UnixTools。
+    GMT中文社区图库例子中使用到的 **gawk** 等Linux下的命令并不是GMT的一部分。
+    如果想要在Bat脚本中使用各种Linux下的常用命令，
+    推荐使用GMT中文社区整理的Unix小工具合集包 UnixTools。
 
     直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
 
