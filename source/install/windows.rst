@@ -83,7 +83,7 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     然后自己再自行安装 Ghostscript。安装 Ghostscript 的过程中记得勾选
     ``Generate cidfmap for Windows CJK TrueType fonts`` 以生成中文字体配置文件。
 
-    中文支持的详细配置步骤请参阅《 :doc:`/chinese/windows` 》。
+    中文支持的详细配置步骤请参阅《\ :doc:`/chinese/windows`\ 》。
 
     安装包下载地址:
 
