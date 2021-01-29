@@ -27,13 +27,11 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 2.  安装GMT
 
-    双击安装包即可安装。在“Choose components”页面，建议将所有选项都勾选上。
+    双击安装包即可安装。请注意，GMT安装包中内置的 Ghostscript **不支持** 中文。
+    若想要GMT支持中文，注意在安装GMT时 **不勾选** Ghostscript组件，其他所有选项都勾选上。
+    待GMT安装完成后再按照下面的步骤与注意事项自行安装 Ghostscript。
 
-    .. note::
-
-       GMT安装包中内置的 Ghostscript 不支持中文。
-       若想要GMT支持中文，注意在安装GMT时不勾选Ghostscript组件，
-       待GMT安装完成后再自行安装 Ghostscript。
+    如果不需要中文支持，则必须在“Choose components”页面，将所有选项都勾选上。
 
     .. note::
 
@@ -84,6 +82,8 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     如果有在GMT图片中添加中文的需求，则需要在安装GMT时不安装Ghostscript组件，
     然后自己再自行安装 Ghostscript。安装 Ghostscript 的过程中记得勾选
     ``Generate cidfmap for Windows CJK TrueType fonts`` 以生成中文字体配置文件。
+
+    中文支持的详细配置步骤请参阅《\ :doc:`/chinese/windows`\ 》。
 
     安装包下载地址:
 
