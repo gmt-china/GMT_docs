@@ -22,10 +22,10 @@ Fedora
     # 当有新版本发布时可直接更新
     dnf update gmt
 
-除此之外，还可以安装如下可选包以使用GMT的更多功能::
-
     # 地理数据格式转换工具
     dnf install gdal
+    
+除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
     # 制作GIF格式动画需要GraphicsMagick
     dnf install GraphicsMagick
@@ -69,10 +69,10 @@ RHEL/CentOS
     # 当有新版本发布时可直接更新
     yum update gmt
 
-除此之外，还可以安装如下可选包以使用GMT的更多功能::
-
     # 地理数据格式转换工具
     yum install gdal
+
+除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
     # 制作GIF格式动画需要GraphicsMagick
     yum install GraphicsMagick
