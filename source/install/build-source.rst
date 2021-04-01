@@ -34,7 +34,6 @@ GMT的编译及运行需要如下软件：
     $ sudo apt update
     # 安装编译所需软件包
     $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
-    # 安装可选软件包
     $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
@@ -44,7 +43,6 @@ GMT的编译及运行需要如下软件：
     $ sudo yum install epel-release
     # 安装编译所需软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
-    # 安装可选软件包
     $ sudo yum install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     # 安装其他可选包
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
@@ -54,7 +52,6 @@ GMT的编译及运行需要如下软件：
 
     # 安装编译所需软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
-    # 安装可选软件包
     $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     # 安装其他可选包
     $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
@@ -64,7 +61,6 @@ GMT的编译及运行需要如下软件：
 
     # 安装必须依赖
     brew install cmake curl netcdf
-    # 安装可选依赖
     brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 下载源码及数据
