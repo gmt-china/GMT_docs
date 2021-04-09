@@ -64,6 +64,7 @@ html_context = {
     'github_version': 'master',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
+    'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
 
     'versions': ['6.1', '6.0', '5.4'],
 
