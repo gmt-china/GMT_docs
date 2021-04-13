@@ -104,6 +104,8 @@ GMT还可以处理大多数CVS（Comma-Separated Values）文件，包括被双�
 同样，可以将 :term:`IO_SEGMENT_MARKER` 设置为两个以逗号分隔的字符，则为输入和
 输出指定了不同的段分隔符。
 
+.. _table_ascii_id4:
+
 数据段头记录中的额外属性
 ------------------------
 
