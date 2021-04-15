@@ -65,6 +65,8 @@ html_context = {
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
     'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Enable version switch on Travis
+    "enable_versions_switch": True if os.getenv("BUILD_SOURCEBRANCHNAME") else False,
 
     'versions': ['6.1', '6.0', '5.4'],
 
