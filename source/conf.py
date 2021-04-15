@@ -5,6 +5,7 @@
 # 1. http://www.sphinx-doc.org/en/stable/config.html
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
 
+import os
 import datetime
 
 # -- General configuration ------------------------------------------------
