@@ -11,9 +11,9 @@
   // Add one entry "version: title" for any minor releases
   var all_versions = {
     'latest': 'latest',
-    '6.1': 'v6.1',
-    '6.0': 'v6.0',
-    '5.4': 'v5.4',
+    '6.1': '6.1',
+    '6.0': '6.0',
+    '5.4': '5.4',
   };
 
   function build_select(current_version, current_release) {
