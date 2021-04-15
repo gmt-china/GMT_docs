@@ -69,8 +69,6 @@ html_context = {
     # Enable version switch on Travis
     "enable_versions_switch": True if os.getenv("TRAVIS") else False,
 
-    'versions': ['6.1', '6.0', '5.4'],
-
     "menu_links": [
         (
             '<i class="fa fa-book fa-fw"></i> PDF下载',
