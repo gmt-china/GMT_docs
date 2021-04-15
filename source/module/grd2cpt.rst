@@ -36,8 +36,6 @@ grd2cpt
 [ |SYN_OPT-o| ]
 [ |SYN_OPT--| ]
 
-|No-spaces|
-
 描述
 -----------
 
