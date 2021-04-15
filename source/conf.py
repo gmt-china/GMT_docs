@@ -33,7 +33,7 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
 project = 'GMT中文手册'
-copyright = '2014 - {}, GMT中文社区.'.format(datetime.date.today().year)
+copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = 'GMT中文社区'
 version = '6.1'
 release = version
