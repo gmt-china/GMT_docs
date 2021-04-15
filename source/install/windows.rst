@@ -5,6 +5,12 @@ GMT 为 Windows 用户提供了 32 位和 64位的安装包，可以直接下载
 
 .. warning::
 
+    安装前请检查你的Windows登录用户名①是否包含空格、②是否为 **Administrator** 。
+    以上两种情况都会导致GMT运行出错。如果你的用户名不符合要求，请新建一个用户，
+    并使用新用户登录Windows，再安装GMT。
+    
+    此外，360等安全软件会在GMT安装过程中拦截PATH环境变量的修改。请务必关闭安全软件之后再安装。
+	
     GMT 提供的安装包不支持 Windows XP。
 
 GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件：
@@ -23,13 +29,11 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 2.  安装GMT
 
-    双击安装包即可安装。在“Choose components”页面，建议将所有选项都勾选上。
+    双击安装包即可安装。请注意，GMT安装包中内置的 Ghostscript **不支持** 中文。
+    若想要GMT支持中文，注意在安装GMT时 **不勾选** Ghostscript组件，其他所有选项都勾选上。
+    待GMT安装完成后再按照下面的步骤与注意事项自行安装 Ghostscript。
 
-    .. note::
-
-       GMT安装包中内置的 Ghostscript 不支持中文。
-       若想要GMT支持中文，注意在安装GMT时不勾选Ghostscript组件，
-       待GMT安装完成后再自行安装 Ghostscript。
+    如果不需要中文支持，则必须在“Choose components”页面，将所有选项都勾选上。
 
     .. note::
 
@@ -81,6 +85,8 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     然后自己再自行安装 Ghostscript。安装 Ghostscript 的过程中记得勾选
     ``Generate cidfmap for Windows CJK TrueType fonts`` 以生成中文字体配置文件。
 
+    中文支持的详细配置步骤请参阅《\ :doc:`/chinese/windows`\ 》。
+
     安装包下载地址:
 
     - `gs950w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe>`__
@@ -107,10 +113,11 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境
     变量 **PATH** 中，以保证 GMT 可以找到其提供的 **gm** 命令。
 
-5.  安装 UnixTools (**不推荐，仅适用于Batch用户**)
+5.  安装 UnixTools
 
-    如果想要在Windows下运行Batch脚本，但同时想要使用各种Linux下的常用命令，
-    则可以使用GMT中文社区整理的Unix小工具合集包 UnixTools。
+    GMT中文社区图库例子中使用到的 **gawk** 等Linux下的命令并不是GMT的一部分。
+    如果想要在Bat脚本中使用各种Linux下的常用命令，
+    推荐使用GMT中文社区整理的Unix小工具合集包 UnixTools。
 
     直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
 

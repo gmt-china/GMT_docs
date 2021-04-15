@@ -5,6 +5,7 @@
 # 1. http://www.sphinx-doc.org/en/stable/config.html
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
 
+import os
 import datetime
 
 # -- General configuration ------------------------------------------------
@@ -32,7 +33,7 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-
 # -- Project configuration ------------------------------------------------
 master_doc = 'index'
 project = 'GMT中文手册'
-copyright = '2014 - {}, GMT中文社区.'.format(datetime.date.today().year)
+copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
 author = 'GMT中文社区'
 version = '6.1'
 release = version
@@ -64,8 +65,9 @@ html_context = {
     'github_version': 'master',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
-
-    'versions': ['6.1', '6.0', '5.4'],
+    'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Enable version switch on Travis
+    "enable_versions_switch": True if os.getenv("TRAVIS") else False,
 
     "menu_links": [
         (

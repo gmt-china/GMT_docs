@@ -144,9 +144,9 @@ Batch编程基础知识
    	set /p new_region=<tmp.dat
 	gmt plot input.dat -J%projection% %new_region%
 
-	# 长命令续行符
-	# 当一个命令较长时，可以将命令拆分为多行，每行行末用续行符 ^ 表示下一行命令
-	# 需要接在当前命令的后面
+	REM 长命令续行符
+	REM 当一个命令较长时，可以将命令拆分为多行，每行行末用续行符 ^ 表示下一行命令
+	REM 需要接在当前命令的后面
 	gmt coast -A1000 -Dc -ECN -W1/1p ^
 		-Glightblue -Slightred
 

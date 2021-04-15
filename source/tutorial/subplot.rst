@@ -143,46 +143,31 @@ X轴范围。此时可以使用 **-S** 选项设置各子图之间共用X或Y轴
 复杂布局
 --------
 
-**subplot** 目前尚不支持嵌套。如果想要使用更复杂的子图布局，则需要更多的人工调整。
+**subplot** 目前尚不支持嵌套。如果想要使用更复杂的子图布局，可以多次调用 **subplot**
+并进行人工的调整。
 
-下面的例子在一个2行2列的子图布局中绘制了三张子图，其中第一张子图占据了第一行。
+下面的示例中线绘制了一个一行两列的子图布局，然后在其上方绘制了一个等宽的一行
+一列的子图布局。
 
 .. gmtplot::
     :width: 75%
 
     gmt begin complex-subplot png,pdf
-      gmt subplot begin 2x2 -Fs5c/3c -A
+      gmt subplot begin 1x2 -Ff15c/3c -A -BWSen
+        gmt subplot set 0 -A'(b)'
+        gmt basemap -R0/10/0/10 -JX?
+        gmt subplot set 1 -A'(c)'
+        gmt basemap -R0/10/0/10 -JX?
+      gmt subplot end
+
+      gmt subplot begin 1x1 -Ff15c/3c -A -BWSen -Yh+1c
         gmt subplot set 0 -A'(a)'
-        gmt basemap -R0/10/0/10 -JX11.75c/3c -Baf -BWSen
-        echo 5 5 TEXT | gmt text -JX11.75c/3c
-        gmt subplot set 2 -A'(b)'
-        gmt basemap -R0/5/0/5 -JX? -Baf -BWSen
-        gmt subplot set 3 -A'(c)'
-        gmt basemap -R0/5/0/5 -JX? -Baf -BWSen
+        gmt basemap -R0/10/0/10 -JX?
       gmt subplot end
     gmt end show
 
-在绘制三个底图时，后两个底图均使用了 **-JX?**\ ，因而GMT会自动根据子图区域的
-大小确定子图的尺寸；而为了使得第一张子图占据两个子图区域的空间，我们使用了
-**-JX11.75c/3c** 来人工指定其子图宽度，其中子图宽度11.75厘米是需要人工调整的。
-
 .. note::
 
-    以上示例存在尚未修复的BUG。
-
-    子图模式下每张子图的大小是由 **subplot begin** 的 **-F** 选项控制。
-    用户可以使用 **-J** 指定某个子图的尺寸，但该尺寸不会被记住，接下来的
-    命令若不指定 **-J** 则会使用子图模式默认的尺寸，继而出错。
-
-    目前的解决办法是，在该子图内的所有命令中均使用相同的 **-J** 选项。
-    例如，子图a强行指定了子图大小为 **-JX11.75c/3c**\ ，则该子图内的其余命令
-    （如 **text** 命令）必须也使用 **-JX11.75c/3c**\ 。若省去，则图会出错。
-
-由于我们跳过了第二个子图区域，自动标签功能会将三个子图依次编号为a、c、d，
-这显然不是我们想要的，因而我们使用了 **-A'(a)'** 选项手动设置子图编号。
-需要注意的是，由于小括号在Bash中有特殊含义，所以这里 **(a)** 两边加了
-单引号以避免Bash对小括号进行解释。
-
-.. note::
-
-    对于Windows Batch用户，不可使用单引号。可以使用双引号，或者不使用引号。
+    由于小括号在 Bash 中有特殊含义，子图标签 **(a)** 两边加了单引号以避免
+    Bash 对小括号进行解释。对于 Windows Batch 用户，不可使用单引号。
+    可以使用双引号，或者不使用引号。

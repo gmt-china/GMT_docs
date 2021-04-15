@@ -1,0 +1,19 @@
+{%- if builder != 'singlehtml' %}
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+  var searchForm = document.getElementById('searchForm');
+  searchForm.onsubmit = function(){
+    var url = this.action;
+    var q = document.getElementById('search-bar').value;
+    var site = document.getElementById('sitesearch').value;
+    var url = url + '?q='+q+' site:'+ site;
+    window.open(url);
+    return false;
+  };
+</script>
+</div>
+{%- endif %}
