@@ -13,25 +13,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      # Setup Miniconda
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.1.1
         with:
-          python-version: '3.8'
+          python-version: 3.8
+          channels: conda-forge
+          miniconda-version: "latest"
 
-      - name: Install Python packages
-        run: pip install -r requirements.txt
-
-      - name: Install GMT
+      - name: Install packages
         run: |
-          sudo apt-get update
-          sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
-          sudo apt-get install libgdal-dev libfftw3-dev libpcre3-dev liblapack-dev libblas-dev libglib2.0-dev ghostscript
-          curl https://raw.githubusercontent.com/GenericMappingTools/gmt/master/ci/build-gmt.sh | bash
-        env:
-          GMT_GIT_REF: 6.1.1
+          conda install gmt
+          pip install -r requirements.txt
 
-      - name: Add GMT's bin to PATH
-        run: echo ${GITHUB_WORKSPACE}/gmt-install-dir/bin >> $GITHUB_PATH
+      #- name: Install GMT
+      #  run: |
+      #    sudo apt-get update
+      #    sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
+      #    sudo apt-get install libgdal-dev libfftw3-dev libpcre3-dev liblapack-dev libblas-dev libglib2.0-dev ghostscript
+      #    curl https://raw.githubusercontent.com/GenericMappingTools/gmt/master/ci/build-gmt.sh | bash
+      #  env:
+      #    GMT_GIT_REF: 6.1.1
+
+      #- name: Add GMT's bin to PATH
+      #  run: echo ${GITHUB_WORKSPACE}/gmt-install-dir/bin >> $GITHUB_PATH
 
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
