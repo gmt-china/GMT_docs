@@ -29,6 +29,9 @@ jobs:
           conda install gmt
           pip install -r requirements.txt
 
+      - name: Build HTML
+        run: make dirhtml
+
       #- name: Install GMT
       #  run: |
       #    sudo apt-get update
@@ -52,4 +55,4 @@ jobs:
 
       - name: Build documentaiton
         run: |
-          make build
+          make latexpdf optimize_pdf
