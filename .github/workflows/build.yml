@@ -30,9 +30,11 @@ jobs:
         env:
           GMT_GIT_REF: 6.1.1
 
-      - name: Install TeXLive
+      - name: Install TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: Install LaTeX packages
         run: |
-          wget -qO- "https://yihui.name/gh/tinytex/tools/install-unx.sh" | sh;
           tlmgr install ctex ms xecjk ulem zhnumber fancyhdr titlesec tabulary varwidth \
                         float wrapfig parskip capt-of needspace xcolor enumitem xindy fandol \
                         pdftexcmds upquote oberdiek caption everysel
