@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,7 +22,13 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Install GMT
-        run: brew install gmt ghostscript
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
+          sudo apt-get install libgdal-dev libfftw3-dev libpcre3-dev liblapack-dev libblas-dev libglib2.0-dev ghostscript
+          curl https://raw.githubusercontent.com/GenericMappingTools/gmt/master/ci/build-gmt.sh | bash
+        env:
+          GMT_GIT_REF: 6.1.1
 
       - name: Install TeXLive
         run: |
