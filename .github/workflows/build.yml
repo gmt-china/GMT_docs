@@ -30,6 +30,9 @@ jobs:
         env:
           GMT_GIT_REF: 6.1.1
 
+      - name: Add GMT's bin to PATH
+        run: echo ${GITHUB_WORKSPACE}/gmt-install-dir/bin >> $GITHUB_PATH
+
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
 
