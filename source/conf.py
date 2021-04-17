@@ -53,7 +53,6 @@ html_static_path = ['_static']
 html_extra_path = ['CNAME']
 html_last_updated_fmt = '%Y年%m月%d日'
 html_search_language = 'zh'
-html_baseurl = 'https://docs.gmt-china.org/latest/'
 html_theme_options = {
     'prev_next_buttons_location': 'bottom',
     'sticky_navigation': False,
