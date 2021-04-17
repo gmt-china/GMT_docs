@@ -3,7 +3,7 @@ name: Check Links
 
 on:
   # Uncomment the 'pull_request' line below to trigger the workflow in PR
-  pull_request:
+  #pull_request:
   # Schedule runs on 12 noon every Sunday
   schedule:
     - cron: '0 12 * * 0'
@@ -31,6 +31,9 @@ jobs:
         # 429: Too many requests
         args: >
           --accept 429
+          --exclude "^https://www.bilibili.com/"
+          --exclude "^https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$"
+          --exclude "^https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$"
           --verbose
           "repository/*.md"
           "documentation/latest/**/*.html"
