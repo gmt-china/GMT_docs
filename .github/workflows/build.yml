@@ -30,7 +30,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build HTML
-        run: make dirhtml
+        run: |
+          gmt set GMT_DATA_SERVER china
+          make dirhtml
 
       #- name: Install GMT
       #  run: |
