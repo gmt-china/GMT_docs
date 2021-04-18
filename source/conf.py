@@ -8,6 +8,14 @@
 import os
 import datetime
 
+# -- Project configuration ------------------------------------------------
+master_doc = 'index'
+project = 'GMT中文手册'
+copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
+author = 'GMT中文社区'
+version = '6.1'
+release = version
+
 # -- General configuration ------------------------------------------------
 needs_sphinx = '1.8'
 source_suffix = '.rst'
@@ -25,21 +33,27 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx_cjkspace.cjkspace',
+    "sphinx_copybutton",
+    'sphinxcontrib.ghcontributors',
     'sphinx_gmt.gmtplot',
-    'sphinxcontrib.ghcontributors'
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
-# -- Project configuration ------------------------------------------------
-master_doc = 'index'
-project = 'GMT中文手册'
-copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
-author = 'GMT中文社区'
-version = '6.1'
-release = version
-
 # Set smartquotes_action to 'qe' to disable Smart Quotes transform of -- and ---
 smartquotes_action = 'qe'
+
+# Cross-refering other projects
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+intersphinx_mapping = {
+    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
+}
+
+# options for sphinx-copybutton
+# https://sphinx-copybutton.readthedocs.io
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
+copybutton_only_copy_prompt_lines = True
+copybutton_remove_prompts = True
 
 # -- Options for HTML output ----------------------------------------------
 import sphinx_rtd_theme
@@ -147,8 +161,4 @@ latex_elements = {
     'fontenc'   : '',
     'maketitle' : '\\maketitle',
     'releasename': 'v', # the default is "Release" or "发布"
-}
-
-intersphinx_mapping = {
-    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
 }
