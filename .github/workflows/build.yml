@@ -31,8 +31,11 @@ jobs:
 
       - name: Build HTML
         run: |
-          gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata/
-          gmt which -Ga @earth_relief_10m -Vd
+          gmt which -Ga @earth_relief_01d \
+                        @earth_relief_30m_g \
+                        @earth_relief_15m \
+                        @earth_relief_10m \
+                        @earth_relief_02m_g
           make dirhtml
 
       #- name: Install GMT
