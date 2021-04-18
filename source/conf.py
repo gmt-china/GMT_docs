@@ -30,12 +30,12 @@ pygments_style = 'sphinx'
 show_authors = True
 
 extensions = [
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax',
-    'sphinx_cjkspace.cjkspace',
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.mathjax",
+    "sphinx_cjkspace.cjkspace",
     "sphinx_copybutton",
-    'sphinxcontrib.ghcontributors',
-    'sphinx_gmt.gmtplot',
+    "sphinxcontrib.ghcontributors",
+    "sphinx_gmt.gmtplot",
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
