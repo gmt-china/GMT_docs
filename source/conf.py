@@ -54,7 +54,6 @@ html_extra_path = ['CNAME']
 html_last_updated_fmt = '%Y年%m月%d日'
 html_search_language = 'zh'
 html_theme_options = {
-    'canonical_url': 'https://docs.gmt-china.org/latest/',
     'prev_next_buttons_location': 'bottom',
     'sticky_navigation': False,
 }
