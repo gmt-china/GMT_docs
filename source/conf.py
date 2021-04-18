@@ -79,10 +79,6 @@ html_context = {
             "https://github.com/gmt-china/GMT_Docs",
         ),
         (
-            '<i class="fa fa-edit fa-fw"></i> 贡献指南',
-            "https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md",
-        ),
-        (
             '<i class="fa fa-globe fa-fw"></i> GMT中文社区',
             "https://gmt-china.org",
         ),
