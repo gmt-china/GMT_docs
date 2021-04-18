@@ -229,7 +229,7 @@ GMT+PROJ4
 
 从GMT6开始，GMT支持使用 PROJ.4 库来实现坐标和基准面的转换。这一特性是通过GDAL
 实现的，因而需要GMT在安装时链接到GDAL库。详细的 PROJ.4 语法见
-`<http://proj4.org/apps/index.html>`_\ 。
+`<https://proj.org/apps/index.html>`_\ 。
 
 在PROJ.4中，投影一般有很多参数，多个参数之间用空格分隔。在GMT中，可以将所有参数
 用双引号括起来::
@@ -250,7 +250,7 @@ GMT+PROJ4
 
 对于使用 :doc:`gmt:mapproject` 和 :doc:`/module/grdproject` 进行点和网格
 文件的转换，GMT可以使用
-所有的 `PROJ.4投影 <https://proj4.org/operations/projections/index.html>`_\ 。
+所有的 `PROJ.4投影 <https://proj.org/operations/projections/index.html>`_\ 。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被
 映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图
 比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：\ **+width=**\ *size*

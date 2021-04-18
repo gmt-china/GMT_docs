@@ -41,7 +41,7 @@ GMT的核心开发者有7位，分别是
 `Paul Wessel <http://www.soest.hawaii.edu/wessel/>`_\ 、
 `Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`_\ 、
 `Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`_\ 、
-`Joaquim F. Luis <http://w3.ualg.pt/~jluis/>`_\ 、
+`Joaquim F. Luis <http://joa-quim.pt/>`_\ 、
 `Leonardo Uieda <https://www.leouieda.com>`_\ 、
 Florian Wobbe 和
 `Dongdong Tian <https://msu.edu/~tiandong/>`_\ 。
