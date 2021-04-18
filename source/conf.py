@@ -22,6 +22,7 @@ pygments_style = 'sphinx'
 show_authors = True
 
 extensions = [
+    "myst_parser",
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx_cjkspace.cjkspace',
