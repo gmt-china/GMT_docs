@@ -24,7 +24,7 @@ Fedora
 
     # 地理数据格式转换工具
     sudo dnf install gdal
-    
+
 除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
     # 制作GIF格式动画需要GraphicsMagick
@@ -44,7 +44,7 @@ Fedora
 RHEL/CentOS
 -----------
 
-**RHEL/CentOS 6/7/8** 用户可以启用
+**RHEL/CentOS 7/8** 用户可以启用
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本。
 
@@ -59,9 +59,6 @@ RHEL/CentOS
     # 启用GMT官方仓库 (仅限于RHEL/CentOS 7/8 用户)
     sudo yum install yum-plugin-copr
     sudo yum copr enable genericmappingtools/gmt
-
-    # 启用GMT官方仓库 (仅限于RHEL/CentOS 6 用户)
-    sudo wget https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/repo/epel-6/genericmappingtools-gmt-epel-6.repo -O /etc/yum.repos.d/genericmappingtools-gmt-epel-6.repo
 
     # 安装最新版GMT
     sudo yum install gmt
