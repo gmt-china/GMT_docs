@@ -19,13 +19,13 @@
 ## 文档维护
 
 本文档尚有很多不完善之处，欢迎GMT用户参与到GMT中文手册的维护与更新中。
-详情见 [维护指南](CONTRIBUTING.md)。
+详情见[维护指南](https://docs.gmt-china.org/latest/contributing)。
 
 > 一个人可以走的很快，但是一群人却可以走的更远。
 
 ## 许可协议
 
-本作品采用 [知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/) 。
+本作品采用[知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/) 。
 任何人都可以自由地分享、修改本作品，但必须遵循如下条件：
 
 - 署名：必须提到原作者，提供指向此许可协议的链接，表明是否有做修改
