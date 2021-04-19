@@ -1,0 +1,52 @@
+# This workflow downloads GMT data used in the documentation and uploads as artifacts
+name: Cache data
+
+on:
+  # Uncomment the 'pull_request' line below to manually re-cache data artifacts
+  #pull_request:
+  # Schedule runs on 12 noon every Sunday
+  schedule:
+    - cron: '0 12 * * 0'
+
+jobs:
+  gmt_cache:
+    name: Cache GMT artifacts
+    runs-on: macOS-latest  # must be macos
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+      # Setup Miniconda
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.1.1
+        with:
+          channels: conda-forge
+          miniconda-version: "latest"
+
+      # Install GMT
+      - name: Install GMT
+        run: conda install -c conda-forge gmt=6.1.1
+
+      # Download remote files
+      - name: Download remote data
+        run: |
+          gmt which -Ga @earth_relief_30m \
+                        @earth_relief_20m \
+                        @earth_relief_10m \
+                        @earth_relief_05m \
+                        @earth_age_06m \
+                        @age_chrons_GTS2012_2020.cpt \
+                        @earth_day_20m \
+                        @earth_night_20m \
+                        @earth_mask_05m
+          gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
+
+      # Upload the downloaded files as artifacts to GitHub
+      - name: Upload artifacts to GitHub
+        uses: actions/upload-artifact@v2
+        with:
+          name: gmt-cache
+          path: |
+              ~/.gmt/cache
+              ~/.gmt/server
