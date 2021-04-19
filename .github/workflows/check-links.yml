@@ -1,0 +1,48 @@
+# This workflow checks the links in plaintext and HTML files
+name: Check Links
+
+on:
+  # Uncomment the 'pull_request' line below to trigger the workflow in PR
+  #pull_request:
+  # Schedule runs on 12 noon every Sunday
+  schedule:
+    - cron: '0 12 * * 0'
+
+jobs:
+  check_links:
+    name: Check Links
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2.3.4
+      with:
+        path: repository
+
+    - name: Checkout the website
+      uses: actions/checkout@v2.3.4
+      with:
+        ref: gh-pages
+        path: documentation
+
+    - name: Link Checker
+      uses: lycheeverse/lychee-action@v1.0.7
+      with:
+        # 429: Too many requests
+        args: >
+          --accept 429
+          --exclude "^https://www.bilibili.com/"
+          --exclude "^https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$"
+          --exclude "^https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$"
+          --exclude "https://www.eoas.ubc.ca/~rich/map.html"
+          --verbose
+          "repository/*.md"
+          "documentation/latest/**/*.html"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create Issue From File
+      uses: peter-evans/create-issue-from-file@v3
+      with:
+        title: Link Checker Report
+        content-filepath: ./lychee/out.md

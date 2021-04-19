@@ -5,7 +5,19 @@
 # 1. http://www.sphinx-doc.org/en/stable/config.html
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
 
+import os
 import datetime
+
+# -- Project configuration ------------------------------------------------
+master_doc = 'index'
+project = 'GMT中文手册'
+copyright = '2014 - {}, GMT中文社区'.format(datetime.date.today().year)
+author = "GMT中文社区"
+github_user = "gmt-china"
+github_repo = "GMT_docs"
+github_url = f"https://github.com/{github_user}/{github_repo}"
+version = '6.1'
+release = version
 
 # -- General configuration ------------------------------------------------
 needs_sphinx = '1.8'
@@ -24,21 +36,27 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx_cjkspace.cjkspace',
+    "sphinx_copybutton",
     'sphinx_gmt.gmtplot',
     'sphinxcontrib.ghcontributors'
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
-# -- Project configuration ------------------------------------------------
-master_doc = 'index'
-project = 'GMT中文手册'
-copyright = '2014 - {}, GMT中文社区.'.format(datetime.date.today().year)
-author = 'GMT中文社区'
-version = '6.1'
-release = version
-
 # Set smartquotes_action to 'qe' to disable Smart Quotes transform of -- and ---
 smartquotes_action = 'qe'
+
+# Cross-refering other projects
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+intersphinx_mapping = {
+    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
+}
+
+# options for sphinx-copybutton
+# https://sphinx-copybutton.readthedocs.io
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
+copybutton_only_copy_prompt_lines = True
+copybutton_remove_prompts = True
 
 # -- Options for HTML output ----------------------------------------------
 import sphinx_rtd_theme
@@ -53,40 +71,36 @@ html_extra_path = ['CNAME']
 html_last_updated_fmt = '%Y年%m月%d日'
 html_search_language = 'zh'
 html_theme_options = {
-    'canonical_url': 'https://docs.gmt-china.org/latest/',
     'prev_next_buttons_location': 'bottom',
     'sticky_navigation': False,
 }
 html_context = {
     'display_github': True,
-    'github_user': 'gmt-china',
-    'github_repo': 'GMT_Docs',
+    'github_user': github_user,
+    'github_repo': github_repo,
     'github_version': 'master',
     'conf_py_path': '/source/',
     'theme_vcs_pageview_mode': 'blob',
-
-    'versions': ['6.1', '6.0', '5.4'],
+    'metatags': '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Enable version switch on Travis
+    "enable_versions_switch": True if os.getenv("TRAVIS") else False,
 
     "menu_links": [
         (
-            '<i class="fa fa-book fa-fw"></i> PDF下载',
-            "https://docs.gmt-china.org/{}/GMT_docs.pdf".format(version),
-        ),
-        (
-            '<i class="fa fa-github fa-fw"></i> 源代码',
-            "https://github.com/gmt-china/GMT_Docs",
-        ),
-        (
-            '<i class="fa fa-edit fa-fw"></i> 贡献指南',
-            "https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md",
-        ),
-        (
-            '<i class="fa fa-globe fa-fw"></i> GMT中文社区',
+            '<i class="fa fa-globe fa-fw"></i> GMT 中文社区',
             "https://gmt-china.org",
         ),
         (
-            '<i class="fa fa-envelope fa-fw"></i> 联系我们',
-            "mailto:admin@gmt-china.org",
+            '<i class="fa fa-github fa-fw"></i> 手册源码',
+            github_url,
+        ),
+        (
+            '<i class="fa fa-book fa-fw"></i> 手册 PDF',
+            "https://docs.gmt-china.org/{}/GMT_docs.pdf".format(version),
+        ),
+        (
+            '<i class="fa fa-comments fa-fw"></i> 参与讨论',
+            f"{github_url}/discussions",
         ),
     ],
 }
@@ -146,8 +160,4 @@ latex_elements = {
     'fontenc'   : '',
     'maketitle' : '\\maketitle',
     'releasename': 'v', # the default is "Release" or "发布"
-}
-
-intersphinx_mapping = {
-    'gmt': ('https://docs.generic-mapping-tools.org/6.1/', None),
 }

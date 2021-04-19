@@ -14,79 +14,76 @@ Fedora
 以安装GMT最新版本::
 
     # 启用GMT官方RPM仓库
-    dnf copr enable genericmappingtools/gmt
+    sudo dnf copr enable genericmappingtools/gmt
 
     # 安装最新版GMT
-    dnf install gmt
+    sudo dnf install gmt
 
     # 当有新版本发布时可直接更新
-    dnf update gmt
+    sudo dnf update gmt
+
+    # 地理数据格式转换工具
+    sudo dnf install gdal
 
 除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
-    # 地理数据格式转换工具
-    dnf install gdal
-
     # 制作GIF格式动画需要GraphicsMagick
-    dnf install GraphicsMagick
+    sudo dnf install GraphicsMagick
 
     # 制作MP4、WebM格式动画需要ffmpeg
-    dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
-    dnf install ffmpeg
+    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
+    sudo dnf install ffmpeg
 
 .. note::
 
     如果你已经安装了Fedora系统仓库提供的GMT软件包，你必须在使用GMT官方仓库
     前卸载旧的GMT安装包。使用如下命令::
 
-        dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+        sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 RHEL/CentOS
 -----------
 
-**RHEL/CentOS 6/7/8** 用户可以启用
+**RHEL/CentOS 7/8** 用户可以启用
 `GMT官方RPM仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装GMT最新版本。
 
 安装方式如下::
 
     # 安装 epel-release
-    yum install epel-release
+    sudo yum install epel-release
 
     # 启用 PowerTools 仓库 (仅限于 RHEL/CentOS 8 用户)
-    yum config-manager --set-enabled PowerTools
+    sudo yum config-manager --set-enabled PowerTools
 
     # 启用GMT官方仓库 (仅限于RHEL/CentOS 7/8 用户)
-    yum install yum-plugin-copr
-    yum copr enable genericmappingtools/gmt
-
-    # 启用GMT官方仓库 (仅限于RHEL/CentOS 6 用户)
-    wget https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/repo/epel-6/genericmappingtools-gmt-epel-6.repo -O /etc/yum.repos.d/genericmappingtools-gmt-epel-6.repo
+    sudo yum install yum-plugin-copr
+    sudo yum copr enable genericmappingtools/gmt
 
     # 安装最新版GMT
-    yum install gmt
+    sudo yum install gmt
 
     # 当有新版本发布时可直接更新
-    yum update gmt
+    sudo yum update gmt
+
+    # 地理数据格式转换工具
+    sudo yum install gdal
 
 除此之外，还可以安装如下可选包以使用GMT的更多功能::
 
-    # 地理数据格式转换工具
-    yum install gdal
-
     # 制作GIF格式动画需要GraphicsMagick
-    yum install GraphicsMagick
+    sudo yum install GraphicsMagick
 
     # 制作MP4、WebM格式动画需要ffmpeg
-    yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
-    yum install ffmpeg
+    sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
+    sudo yum install ffmpeg
 
 .. note::
 
     如果你已经安装了EPEL仓库提供的GMT软件包，你必须在使用GMT官方仓库
     前卸载旧的GMT安装包。使用如下命令::
 
-        yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+        sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 Ubuntu/Debian用户
 -----------------

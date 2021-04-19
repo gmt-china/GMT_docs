@@ -48,13 +48,13 @@ macOS 平台
 #. 运行安装目录下 ``share/tools`` 下的 ``gmt_prepmex.sh`` 文件。
    此操作会复制GMT的已安装文件到 ``/opt/gmt`` 目录下，并且会重新检查所有的共享库；
 #. 使用 ``gmtswitch`` 切换当前使用的GMT版本，确保 ``/opt/gmt`` 下的GMT为当前激活版本；
-#. 使用svn获取 ``gmt-mex`` 项目文件到本地::
+#. 获取 ``gmt-mex`` 项目文件到本地::
 
-    svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex
+    git clone https://github.com/GenericMappingTools/gmtmex
 
 #. 进入 ``get-mex`` 目录并编译生成 ``gmtmex.mexmaci64`` ::
 
-    cd gmt-mex/trunk/
+    cd gmt-mex/
     autoconf
     ./configure --enable-matlab
     make
