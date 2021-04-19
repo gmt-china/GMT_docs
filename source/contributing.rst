@@ -58,7 +58,7 @@
     - Linux 用户：参考 http://blog.seisman.info/texlive-install
     - macOS 用户：直接执行 ``brew cask install mactex-no-gui`` 安装 mactex
 
-	安装完成后执行::
+    安装完成后执行::
 
         $ make latexpdf
 
