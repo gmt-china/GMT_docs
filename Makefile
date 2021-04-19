@@ -23,7 +23,11 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-build: $(HTML) latexpdf optimize_pdf
+build: build_html build_pdf
+
+build_html: $(HTML)
+
+build_pdf: latexpdf optimize_pdf
 	@echo "Copy built PDF to HTML directory"
 	cp $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(HTML)/
 
