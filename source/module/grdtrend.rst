@@ -11,8 +11,7 @@ grdtrend
 
 .. math::
 
-    m_1 + m_2x + m_3y + m_4xy + m_5x^2 + m_6y^2 + m_7x^3 +
-    m_8x^2y + m_9xy^2 + m_{10}y^3.
+    m_1 + m_2x + m_3y + m_4xy + m_5x^2 + m_6y^2 + m_7x^3 + m_8x^2y + m_9xy^2 + m_{10}y^3.
 
 必选选项
 --------
