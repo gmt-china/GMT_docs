@@ -29,13 +29,26 @@ jobs:
           conda install gmt
           pip install -r requirements.txt
 
+      # Download cached remote files (artifacts) from GitHub
+      - name: Download remote data from GitHub
+        uses: dawidd6/action-download-artifact@v2.13.0
+        with:
+          workflow: cache-data.yaml
+          workflow_conclusion: success
+          name: gmt-cache
+          path: .gmt
+
+      # Move downloaded files to ~/.gmt directory and list them
+      - name: Move and list downloaded remote files
+        run: |
+          mkdir -p ~/.gmt
+          mv .gmt/* ~/.gmt
+          # Change modification times of the two files, so GMT won't refresh it
+          touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
+          ls -lhR ~/.gmt
+
       - name: Build HTML
         run: |
-          gmt which -Ga @earth_relief_01d \
-                        @earth_relief_30m_g \
-                        @earth_relief_15m \
-                        @earth_relief_10m \
-                        @earth_relief_02m_g
           make dirhtml
 
       #- name: Install GMT
