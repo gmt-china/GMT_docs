@@ -33,12 +33,12 @@ pygments_style = 'sphinx'
 show_authors = True
 
 extensions = [
-    "sphinx.ext.intersphinx",
-    "sphinx.ext.mathjax",
-    "sphinx_cjkspace.cjkspace",
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'sphinx_cjkspace.cjkspace',
     "sphinx_copybutton",
-    "sphinxcontrib.ghcontributors",
-    "sphinx_gmt.gmtplot",
+    'sphinx_gmt.gmtplot',
+    'sphinxcontrib.ghcontributors'
 ]
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
@@ -97,10 +97,6 @@ html_context = {
         (
             '<i class="fa fa-book fa-fw"></i> 手册 PDF',
             "https://docs.gmt-china.org/{}/GMT_docs.pdf".format(version),
-        ),
-        (
-            '<i class="fa fa-edit fa-fw"></i> 贡献指南',
-            f"{github_url}/blob/master/CONTRIBUTING.md",
         ),
         (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',
