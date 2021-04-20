@@ -12,6 +12,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      GMT_VERSION: 6.1.1
+      GMT_DOC_VERSION: 6.1
     defaults:
       run:
         shell: bash -l {0}
@@ -69,4 +72,24 @@ jobs:
       - name: Build PDF
         run: make build_pdf
 
+      - name: Checkout the gh-pages branch
+        uses: actions/checkoutv2.3.4
+        with:
+          ref: gh-pages
+          path: deploy
+          fetch-depth: 0
+
+      - name: Push the documentation to gh-pages
+        run: |
+          cd deploy
+          touch .nojekyll
+          rm -rvf ${GMT_DOC_VERSION}
+          cp -Rvf build/dirhtml/ ${GMT_DOV_VERSION}/
+          git add -A .
+          git status
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          message="Deploy $version from $(git rev-parse --short HEAD)"
+          git commit --amend --reset-author -m "$message"
+          git push -fq origin gh-pages 2>&1 >/dev/null
 
