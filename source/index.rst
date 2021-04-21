@@ -70,5 +70,5 @@ GMT 是地球科学最广泛使用的制图软件之一。
    :hidden:
 
    appendix/index
-   contributing
+   contributing/index
    贡献者列表 <https://github.com/gmt-china/GMT_docs/graphs/contributors>
