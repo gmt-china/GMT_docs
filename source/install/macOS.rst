@@ -92,20 +92,25 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
         $ sudo port install gdal +hdf5 +netcdf +openjpeg
         $ sudo port install gmt6
 
-2.  安装GMT依赖的其他软件::
+2.  GMT会安装在 :file:`/opt/local/lib/gmt6/` 目录下，需要将其 bin 目录添加至
+    环境变量 **PATH** 中::
+
+        $ echo 'export PATH=/opt/local/lib/gmt6/bin:$PATH' >> ~/.zshrc
+
+3.  安装GMT依赖的其他软件::
 
         $ sudo port install graphicsmagick ffmpeg
 
-3.  重新打开一个终端，检测安装是否成功::
+4.  重新打开一个终端，检测安装是否成功::
 
         $ gmt --version
         6.1.1
 
-4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
+5.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
 
         $ sudo port selfupdate
         $ sudo port upgrade gmt6
 
-5.  如果需要卸载GMT，可以执行如下命令::
+6.  如果需要卸载GMT，可以执行如下命令::
 
         $ sudo port uninstall gmt6
