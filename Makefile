@@ -28,7 +28,6 @@ build: build_html build_pdf
 build_html: $(HTML)
 
 build_pdf: latexpdf optimize_pdf
-	@echo "Copy built PDF to HTML directory"
 	cp $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(HTML)/
 
 # reduce file size of the final PDF documentation
