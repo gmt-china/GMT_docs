@@ -83,8 +83,13 @@ jobs:
         run: |
           cd deploy
           touch .nojekyll
+          # Update the directory
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
+          # let "latest" link to the latest version
+          rm -f latest
+          ln -sf ${GMT_DOC_VERSION} latest
+          # commit all changes
           git add -A .
           git status
           git config user.email "github-actions[bot]@users.noreply.github.com"
