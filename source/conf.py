@@ -36,7 +36,6 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_cjkspace.cjkspace",
-    "sphinxcontrib.ghcontributors",
     "sphinx_copybutton",
     "sphinx_gmt.gmtplot",
 ]
