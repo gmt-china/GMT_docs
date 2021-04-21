@@ -4,7 +4,7 @@
 name: Deploy
 
 on:
-  pull_request: # enable pull_request for testing
+  #pull_request: # enable pull_request for testing
   push:
     branches:
       - master
@@ -92,4 +92,3 @@ jobs:
           message="Deploy $version from $(git rev-parse --short HEAD)"
           git commit --amend --reset-author -m "$message"
           git push -fq origin gh-pages 2>&1 >/dev/null
-
