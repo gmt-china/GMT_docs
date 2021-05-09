@@ -104,6 +104,5 @@ earth_relief: 全球地形起伏数据
 
 - ETOPO1 (1弧分): https://www.ngdc.noaa.gov/mgg/global/
 - GEBCO (30弧秒): https://www.gebco.net/
-- SRTM30+ (30弧秒): https://topex.ucsd.edu/WWW_html/srtm30_plus.html
 - SRTM3 (3弧秒，仅陆地): http://srtm.csi.cgiar.org
 - ASTER GDEM (1弧秒，仅陆地): https://asterweb.jpl.nasa.gov/gdem.asp
