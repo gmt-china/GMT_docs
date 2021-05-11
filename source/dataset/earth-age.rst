@@ -52,15 +52,15 @@ earth_age: 地球洋壳年龄数据
 
 查看1弧度分辨率（像素配准）的地球洋壳年龄的信息::
 
-    gmt grdinfo @earth_day_01d
+    gmt grdinfo @earth_age_01d
 
 查看30弧分分辨率、网格线配准的地球洋壳年龄的信息::
 
-    gmt grdinfo @earth_day_30m_g
+    gmt grdinfo @earth_age_30m_g
 
 使用15弧分地球洋壳年龄数据::
 
-    gmt grdimage -JH15c @earth_day_15m -pdf map
+    gmt grdimage -JH15c @earth_age_15m -pdf map
 
 技术细节
 --------
