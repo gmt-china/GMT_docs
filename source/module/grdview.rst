@@ -37,7 +37,7 @@ grdview
 -----------
 
 **grdview** 读取一个二维grid网格文件，绘制出三维视角图。可以实现的效果有：
-根据数据大小对表面进行拉伸，形成起伏效果、在表面绘制等值线、应用光照效果等等。
+根据数据大小对表面进行拉伸，形成起伏效果、在表面绘制等值线、三维表面贴图、应用光照效果等等。
 
 必选选项
 ------------------
@@ -47,6 +47,11 @@ grdview
 
 .. include:: explain_-J.rst_
 
+.. _-Jz:
+
+**-Jz**\|\ **Z**\ *parameters*
+    设置Z轴的缩放比例，设置方式与 -Jx|X 相同。若忽略此选项将生成平面图。
+    
 可选选项
 ------------------
 
@@ -74,31 +79,26 @@ grdview
        并使用参数 ``-A-45 -Nt1`` 计算输入网格数据的梯度作为光照强度文件。用户
        可以使用 ``+a<azimuth>+n<args>`` 以自定义 grdgradient 的 -A 和 -N 选项
 
-.. _-Jz:
-
-**-Jz**\|\ **Z**\ *parameters*
-    设置Z轴的尺度，设置方式与 ``-Jx|X`` 相同。
-
 .. _-N:
 
 **-N**\ *level*\ [**+g**\ *fill*]
     在 *z=level* 位置处绘制一个平面， **+g** 设置平面和数据曲面之间截面的填充色。
 
+.. _-G:
+
+|-G|\ *drapegrid* \| |-G|\ *grd_r* |-G|\ *grd_g* |-G|\ *grd_b*
+    在三维表面上贴图。该贴图可以是一个彩色图片，也可以是三个单波段文件，分别代表R、G、B的强度值，每个文件像素值范围是0-255。
+
 .. _-Q:
 
 **-Q**\ *args*\ [**+m**]
-    Select one of following settings. For any of these choices, you may force
-    a monochrome image by appending the modifier **+m**. Colors are then
-    converted to shades of gray using the (monochrome television) YIQ transformation
+    #. ``-Qm`` ，表示生成网格线图（mesh，默认）。也可以用 ``-Qmcolor`` 的形式生成不同底色的网格线。
+    #. ``-Qmx`` 或 ``-Qmy`` 生成仅有x或y方向线条的瀑布图（waterfall）。同样可以指定底色。
+    #. ``-Qs`` 生成表面图（surface），颜色由 **-C** 选项指定。 ``-Qsm`` 则在表面图上叠加格网线。
+    #. ``-Qi`` 生成图像（image），与 ``-G`` 选项一同使用绘制三维贴图。后面可加dpi参数（默认dpi=100）。
+    #. ``-Qc`` 与 ``-Qi`` 类似，不同的是 ``-Qc`` 将 Z=NaN 的节点透明化。
 
-    #. Specify **m** for mesh plot [Default], and optionally append *color* for a different mesh paint [white].
-    #. Specify **mx** or **my** for waterfall plots (row or column profiles). Specify color as for plain **m**
-    #. Specify **s** for surface plot, and optionally append **m** to have mesh lines drawn on top of surface.
-    #. Specify **i** for image plot, and optionally append the effective dpi resolution for the rasterization [100].
-    #. Specify **c**. Same as **-Qi** but will make nodes with z = NaN transparent, using the colormasking
-       feature in PostScript Level 3 (the PS device must support PS Level 3). .
-
-    **Note**: If the CPT is categorical then only **-Qm** is available (but see **-T**).
+    ``+m`` 表示强制转化为灰度图像，适用于 ``-Qs`` 。
 
 .. include:: explain_-R.rst_
 
