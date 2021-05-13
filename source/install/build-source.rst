@@ -122,7 +122,7 @@ GMT的编译及运行需要如下软件：
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于 gmt-6.1.1 目录下，不是 gmt-6.1.1/cmake 目录下
+    # 注意，此处新建的 build 文件夹位于GMT源码压缩包解压出来的 gmt-6.1.1 目录下，不是 gmt-6.1.1/cmake 目录下，更不是 /opt/GMT-6.1.1
     $ mkdir build
     $ cd build/
     $ cmake ..
