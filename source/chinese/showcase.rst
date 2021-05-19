@@ -28,6 +28,7 @@ Linux 和 Mac 用户需要先修改GMT的中文语言文件的字符编码（Win
 
     # 备份中文语言文件
     cp gmt_cn1.locale gmt_cn1.locale_old
+    # 将中文编码方式从默认的 GB2312 修改为 UTF8 编码，这样才能正常显示中文月份
     iconv -f GBK -t UTF8 gmt_cn1.locale
 
 设置 :term:`GMT_LANGUAGE` 为中文，
