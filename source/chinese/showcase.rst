@@ -21,7 +21,7 @@ GMT中文效果演示
 
 GMT 可以绘制中文的月份。
 
-Linux 和 Mac 用户需要先修改 GMT 中文语言文件的字符编码（Windows 用户不需要）::
+Linux 和 macOS 用户需要先修改 GMT 中文语言文件的字符编码（Windows 用户不需要）::
 
     # 进入 GMT 语言定义文件所在目录
     cd `gmt --show-sharedir`/localization
@@ -31,8 +31,7 @@ Linux 和 Mac 用户需要先修改 GMT 中文语言文件的字符编码（Wind
     # 将中文编码方式从默认的 GB2312 修改为 UTF8 编码，这样才能正常显示中文月份
     iconv -f GBK -t UTF8 gmt_cn1.locale
 
-设置 :term:`GMT_LANGUAGE` 为中文，
-即 ``cn1``\ ，并设置标注的字体为中文。
+设置 :term:`GMT_LANGUAGE` 为中文（即 ``cn1``\ ），并设置标注字体为中文。
 
 .. literalinclude:: chinese-months.sh
 
