@@ -25,6 +25,8 @@ Linux 和 Mac 用户需要先修改GMT的中文语言文件的字符编码（Win
 
     # 进入 GMT 语言定义文件所在目录
     cd `gmt --show-sharedir`/localization
+
+    # 备份中文语言文件
     cp gmt_cn1.locale gmt_cn1.locale_old
     iconv -f GBK -t UTF8 gmt_cn1.locale
 
