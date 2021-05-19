@@ -21,7 +21,7 @@ GMT中文效果演示
 
 GMT 可以绘制中文的月份。
 
-Linux 和 Mac 用户需要先修改GMT的中文语言文件的字符编码（Windows 用户不需要）::
+Linux 和 Mac 用户需要先修改 GMT 中文语言文件的字符编码（Windows 用户不需要）::
 
     # 进入 GMT 语言定义文件所在目录
     cd `gmt --show-sharedir`/localization
