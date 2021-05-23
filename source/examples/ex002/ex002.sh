@@ -14,8 +14,8 @@ gmt basemap -Byg6371+3480 -Bs
 gmt basemap -Byg6371+1221 -Bs
 
 # 计算并绘制震相的射线路径
-taup_path -mod prem -ph PcP -h 300 -deg 30 -o PcP.raypath
-taup_path -mod prem -ph PKiKP -h 300 -deg 30 -o PKiKP.raypath
+#taup_path -mod prem -ph PcP -h 300 -deg 30 -o PcP.raypath
+#taup_path -mod prem -ph PKiKP -h 300 -deg 30 -o PKiKP.raypath
 gmt plot PcP.raypath.gmt -W1p,blue
 gmt plot PKiKP.raypath.gmt -W1p,red
 
@@ -33,5 +33,4 @@ gmt text -F+f11p+a -N << EOF
 16 4100 0 @;blue;PcP@;;
 37 1600 0 @;red;PKiKP@;;
 EOF
-rm *.raypath.gmt
 gmt end
