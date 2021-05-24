@@ -4,7 +4,7 @@ PB2002: 全球板块边界数据
 PB2002 是常用的一个全球板块边界数据，其包含了14个大板块和38个小板块，共计52个板块的边界数据。
 
 - 官方网站: http://peterbird.name/publications/2003_PB2002/2003_PB2002.htm
-- 原始数据下载地址: http://peterbird.name/oldFTP/PB2002/
+- 原始数据: http://peterbird.name/oldFTP 的 :file:`ALL_Bird_freeware.zip` 文件
 - 数据格式说明: http://peterbird.name/oldFTP/PB2002/2001GC000252_readme.txt
 
 数据下载
