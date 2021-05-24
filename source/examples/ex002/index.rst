@@ -12,14 +12,9 @@
 震相的射线路径可以用 `TauP <http://www.seis.sc.edu/taup/>`__ 提供的 ``taup_path``
 命令计算得到，然后在极坐标系 ``-JP`` 中绘制。难点在于如何绘制几个主要界面。
 
-本示例将展示如何绘制震中距为30度的 PcP 和 PKiKP 震相的射线路径，同时绘制地球内的
-410、660界面以及 CMB 和 ICB。
-
-绘制射线需要调用 `Taup`，可以调用 `Taup`.脚本中给出了调用的具体命令。也可以下载相关数据:
-
-:download:`PKiKP.raypath.gmt`
-
-:download:`PcP.raypath.gmt`
+本示例将展示如何绘制震中距为30度的 PcP 和 PKiKP 震相的射线路径，
+同时绘制地球内的 410、660界面以及 CMB 和 ICB。计算射线需要调用 TauP，脚本中给出的具体命令参数。
+没有安装 TauP 的用户可以下载使用射线路径数据 :download:`PKiKP.raypath.gmt` 和 :download:`PcP.raypath.gmt`\ 。
 
 绘图脚本如下：
 
