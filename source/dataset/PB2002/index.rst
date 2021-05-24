@@ -13,7 +13,7 @@ PB2002 是常用的一个全球板块边界数据，其包含了14个大板块�
 原始数据的格式无法直接用于GMT绘图。这里我们从官方网站下载了 :file:`PB2002_plates.dig.txt`
 和 :file:`PB2002_boundaries.dig.txt` 数据，并将其段头记录做了修改以供GMT用户使用。
 
-可供GMT直接使用的数据下载地址: :download:`PB2002_plates.dig.txt` | :download:`PB2002_boundaries.dig.txt`
+可供GMT直接使用的数据下载地址：\ :download:`PB2002_plates.dig.txt` | :download:`PB2002_boundaries.dig.txt`
 
 两个数据是等效的，区别在于：
 
