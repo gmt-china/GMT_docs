@@ -92,7 +92,7 @@ earth_relief: 全球地形起伏数据
 数据来源及引用
 --------------
 
-#. SRTM15+ [http://dx.doi.org/10.1029/2019EA000658]
+#. SRTM15+: http://dx.doi.org/10.1029/2019EA000658
 #. SRTMGL3数据: https://lpdaac.usgs.gov/products/srtmgl3v003/
 #. SRTMGL1数据: https://lpdaac.usgs.gov/products/srtmgl1v003/
 
