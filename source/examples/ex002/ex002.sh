@@ -13,7 +13,7 @@ gmt basemap -Byg6371+3480 -Bs
 # 绘制 ICB
 gmt basemap -Byg6371+1221 -Bs
 
-# 计算震相的射线路径，用户需安装 taup，并取消以下注释
+# 计算震相的射线路径，用户需安装 TauP，并取消以下注释
 # taup_path -mod prem -ph PcP -h 300 -deg 30 -o PcP.raypath
 # taup_path -mod prem -ph PKiKP -h 300 -deg 30 -o PKiKP.raypath
 
