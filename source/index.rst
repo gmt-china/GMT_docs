@@ -12,6 +12,12 @@ GMT 是地球科学最广泛使用的制图软件之一。
 手册详尽地介绍了GMT的用法并提供了大量的实用示例。
 其既可以作为初学者的入门读物，也可以作为日常使用的参考书。
 
+.. image:: https://user-images.githubusercontent.com/50591376/119363251-2dade780-bce0-11eb-9f12-787245f049d3.png
+    :alt: GMT6初学者教程
+    :width: 80%
+    :align: center
+    :target: https://www.bilibili.com/video/BV1C64y1m7qP
+
 文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
 欢迎更多的志愿者加入到文档的维护工作中来。
 
