@@ -14,6 +14,7 @@ GMT 是地球科学最广泛使用的制图软件之一。
 
 .. image:: https://user-images.githubusercontent.com/50591376/119363251-2dade780-bce0-11eb-9f12-787245f049d3.png
     :alt: GMT6初学者教程
+    :width: 80%
     :align: center
     :target: https://www.bilibili.com/video/BV1C64y1m7qP
 
