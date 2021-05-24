@@ -6,5 +6,5 @@
 
    overview
    versions
-   citation
    resources
+   citation
