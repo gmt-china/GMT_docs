@@ -3,3 +3,4 @@
 .. toctree::
 
    ex002/index
+   ex028/index
