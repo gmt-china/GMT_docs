@@ -35,7 +35,7 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
     nrow=2
     ncol=3
     gmt begin subplot png,pdf
-    gmt subplot begin ${nrow}x${ncol} -Fs5c/3c+d -Blrtb
+    gmt subplot begin ${nrow}x${ncol} -Fs5c/3c -Blrtb
         for index in $(seq 0 $((nrow*ncol-1))); do
         i=$((index/ncol))
         j=$((index%ncol))
