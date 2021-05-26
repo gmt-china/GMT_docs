@@ -44,6 +44,10 @@ CN_faults: 中国断层数据
 
    由于中文手册服务器上未设置GMT中文支持，故而下图中断层名显示乱码。
    对于用户而言，若已经正确设置GMT中文支持，则应可正常显示中文。
+   
+   Windows用户应该要特别注意，将以下的bash脚本改写为bat脚本后，
+   除了bat脚本的编码应改为ANSI/GB2312外，数据文件 ``CN_faults.gmt`` 的编码也应该改为ANSI/GB2312。
+   详细说明请参阅 :doc:`/tutorial/scripting` 以及 :doc:`/chinese/windows` 。
 
 .. gmtplot::
    :show-code: true

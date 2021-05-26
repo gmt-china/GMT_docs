@@ -1,20 +1,16 @@
 GMT制作GIF动画
 ====================
 
-:示例贡献者: 杨磊（作者）、陈箫翰（修订）
+:示例贡献者: 杨磊（作者）、刘珠妹（修订）
 :初次发布: 2021-05-12
 :最近更新日期: 2021-05-26
 :原文链接: http://assz0a.coding-pages.com/2020/06/07/anni/
 
 ----
 
-本示例展示如何使用GMT制作GIF动画。首先使用GMT制作每帧png图像，然后用GraphicsMagick工具，
-把连续的png图像制作成GIF动画。请注意，GraphicsMagick在安装教程中属于可选安装，
-如果未安装此工具，请参阅安装教程安装。
-
-这里以GNSS浮标观测的海面波动为例，希望展示波浪的时间变化规律。动画设置每一帧显示一个小时的波浪功率谱图像，
-不同帧使用不同的颜色表达。
-示例数据下载 :download:`gnss_b1_hlf_allppk.txt`\ 。
+本示例展示如何使用GMT制作GIF动画。这里以GNSS浮标观测的海面波动为例，
+希望展示波浪的时间变化规律。动画设置每一帧显示一个小时的波浪功率谱图像，
+不同帧使用不同的颜色表达。示例数据下载 :download:`gnss_b1_hlf_allppk.txt`\ 。
 
 绘图脚本如下：
 
@@ -58,3 +54,7 @@ GMT制作GIF动画
 .. figure:: wave_spectrum.gif
    :width: 70%
    :align: center
+   
+.. note::
+
+   Windows用户请参考《 :doc:`/tutorial/scripting` 》，将bash脚本改写为bat脚本后方可运行。
