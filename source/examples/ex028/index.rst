@@ -24,6 +24,9 @@ GMT制作GIF动画
 
 .. literalinclude:: ex028_movie.sh
 
+请注意本例中使用了 ``cat << 'EOF'`` 以简化 ``$`` 符号的书写。为此脚本文件必须使用 UNIX 的
+``LF`` 换行符，不可以使用 Windows 的 ``CRLF`` 换行符。
+
 .. image:: https://user-images.githubusercontent.com/26203721/119760695-68cd3800-bee5-11eb-846e-e7a544d263b0.gif
     :width: 80%
     :align: center
