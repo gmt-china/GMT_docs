@@ -4,6 +4,8 @@ geo3al: 中国大陆及临区地质图数据
 :贡献者: 徐弥坚
 :原文链接: https://blog.xumijian.me/post/gmt-geo/
 
+----
+
 中国大陆及临区地质图数据 ``geo3al`` 来自
 美国USGS(`Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`_)
 ，其分辨率为1:4,000,000。 GMT 无法使用原始数据文件，已由贡献者处理为 GMT 可用的格式。
