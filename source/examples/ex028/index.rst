@@ -24,6 +24,6 @@ GMT制作GIF动画
 
 .. literalinclude:: ex028_movie.sh
 
-.. figure:: wave_spectrum.gif
-   :width: 70%
-   :align: center
+.. image:: https://user-images.githubusercontent.com/26203721/119760695-68cd3800-bee5-11eb-846e-e7a544d263b0.gif
+    :width: 80%
+    :align: center
