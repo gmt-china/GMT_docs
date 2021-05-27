@@ -3,9 +3,11 @@ CN_faults: 中国断层数据
 
 中国断层数据 ``CN_faults.gmt`` 中包含了中国区域的主要断层。
 
-Windows下的vscode编辑器用户请下载 ``GB2312`` 编码的数据文件，
-并且绘图脚本也应该修改为 ``bat`` 格式与 ``GB2312`` 编码。
-MacOS与Linux用户请下载 ``UTF-8`` 编码的数据文件，绘图脚本则不必进行特殊修改。
+Windows下的VSCode编辑器用户，在使用 ``cmd`` 终端时绘图脚本应该修改为 ``bat`` 格式，
+并且请下载 ``GB2312`` 编码的数据文件。 ``bat`` 绘图脚本也应该修改为 ``GB2312`` 编码。
+
+而使用 ``git-bash`` 终端的用户，或是MacOS与Linux用户，
+请下载 ``UTF-8`` 编码的数据文件，绘图脚本则不必进行特殊修改。
 
 GB2312编码: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults_GB2312.gmt
 
