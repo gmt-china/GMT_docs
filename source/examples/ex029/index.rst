@@ -13,3 +13,5 @@ GMT三维地形图的制作
 绘图脚本如下：
 
 .. literalinclude:: ex029.sh
+
+.. image:: https://user-images.githubusercontent.com/26203721/119947281-89bf8700-bfd2-11eb-99e5-d69cee9776e7.png
