@@ -1,0 +1,15 @@
+GMT三维地形图的制作
+====================
+
+:示例贡献者: 刘珠妹（作者）、陈箫翰（修订）
+:初次发布: 2021-05-28
+:最近更新日期: 2021-05-28
+:视频讲解: https://www.bilibili.com/video/BV1Xh411e7fi/
+
+----
+
+中国断层数据 ``CN_faults.gmt`` 下载地址参阅： :doc:`/dataset-CN/CN_faults` 
+
+绘图脚本如下：
+
+.. literalinclude:: ex029.sh
