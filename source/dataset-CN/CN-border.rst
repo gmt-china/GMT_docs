@@ -4,9 +4,9 @@ CN-border: 中国行政区划数据
 由于 GMT 自带的国界线数据不符合中国领土主张，因而绘制正式图件时，用户需要自己准备国界数据。
 中文社区提供一套数字化的国界数据：
 
-- 中国国界、省界、十段线以及南海诸岛数据: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-La.gmt
-- 中国国界、十段线以及南海诸岛数据，不含省界数据: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-L1.gmt
-- 仅包含十段线数据: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/ten-dash-line.gmt
+- `中国国界、省界、十段线以及南海诸岛数据 <https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-La.gmt>`__
+- `中国国界、十段线以及南海诸岛数据，不含省界数据 <https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-L1.gmt>`__
+- `仅包含十段线数据 <https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/ten-dash-line.gmt>`__
 
 .. note::
 
