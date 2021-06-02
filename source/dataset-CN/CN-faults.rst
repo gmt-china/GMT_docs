@@ -1,18 +1,17 @@
-CN_faults: 中国断层数据
+CN-faults: 中国断层数据
 =======================
 
-中国断层数据 ``CN_faults.gmt`` 中包含了中国区域的主要断层。
+中国断层数据 ``CN-faults.gmt`` 中包含了中国区域的主要断层。
 
 
 .. note::
 
    Windows 下的 VSCode 编辑器用户，在使用 CMD 终端时绘图脚本应该修改为 bat 脚本，
-   并下载 GB2312 编码的数据文件。bat 绘图脚本也应该修改为 GB2312 编码。
+   并将数据文件的编码改为 GB2312 编码。bat 绘图脚本也应该修改为 GB2312 编码。
    而使用 Git Bash 终端的用户，或 macOS 与 Linux用户，
-   需下载 UTF-8 编码的数据文件，绘图脚本则不必进行特殊修改。
+   可以直接下载使用 UTF-8 编码的数据文件，绘图脚本也不必进行特殊修改。
 
-   - GB2312编码: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults_GB2312.gmt
-   - UTF-8编码: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults.gmt
+   - UTF-8编码: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-faults.gmt
 
 绘制全国断层
 ------------
@@ -21,9 +20,9 @@ CN_faults: 中国断层数据
    :show-code: true
    :width: 75%
 
-   gmt begin CN_faults png,pdf
+   gmt begin CN-faults png,pdf
    gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
-   gmt plot CN_faults.gmt -W1p,red
+   gmt plot CN-faults.gmt -W1p,red
    gmt end show
 
 绘制区域断层
@@ -33,9 +32,9 @@ CN_faults: 中国断层数据
    :show-code: true
    :width: 75%
 
-   gmt begin CN_faults png,pdf
+   gmt begin CN-faults png,pdf
    gmt coast -JM15c -RCN.51 -Baf -W0.5p,black
-   gmt plot CN_faults.gmt -W1p,red
+   gmt plot CN-faults.gmt -W1p,red
    gmt end show
 
 标注断层名
@@ -58,13 +57,13 @@ CN_faults: 中国断层数据
    :show-code: true
    :width: 75%
 
-   gmt begin CN_faults png,pdf
+   gmt begin CN-faults png,pdf
    gmt coast -JM10c -RTW -Baf -W0.5p,black
    # 由于 -Sq 无法支持中文，该命令将断层名称输出到文件faultname.dat中，并绘制了一个全透明的图层
    # 实际上，当执行脚本获得faultname.dat 后，可将该命令注释掉
-   gmt plot CN_faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
+   gmt plot CN-faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
    # 使用 plot 绘制断层
-   gmt plot CN_faults.gmt -W1p,red
+   gmt plot CN-faults.gmt -W1p,red
    # 标注断层名
    gmt text faultname.dat -F+f15p,46,red+a
    rm faultname.dat
