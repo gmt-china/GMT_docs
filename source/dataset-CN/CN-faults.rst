@@ -11,7 +11,6 @@ CN_faults: 中国断层数据
    而使用 Git Bash 终端的用户，或 macOS 与 Linux用户，
    需下载 UTF-8 编码的数据文件，绘图脚本则不必进行特殊修改。
 
-   - GB2312编码: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults_GB2312.gmt
    - UTF-8编码: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-faults.gmt
 
 绘制全国断层
