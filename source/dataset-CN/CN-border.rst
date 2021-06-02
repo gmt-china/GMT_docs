@@ -8,6 +8,8 @@ CN-border: 中国国界、省界、十段线以及南海诸岛数据
 - 中国国界、十段线以及南海诸岛数据，不含省界数据: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-L1.gmt
 - 仅包含十段线数据: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/ten-dash-line.gmt
 
+需要注意的是，社区无法保证数据完全准确或可通过地图审核，欢迎用户共享更准确的国界数据。
+
 -JD 等距圆锥投影
 ----------------
 
