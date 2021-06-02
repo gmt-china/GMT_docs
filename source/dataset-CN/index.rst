@@ -5,5 +5,5 @@
    :maxdepth: 1
 
    overview
-   CN_faults
+   CN-faults
 
