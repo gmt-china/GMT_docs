@@ -41,7 +41,7 @@ jobs:
                         @earth_night_20m \
                         @earth_mask_05m
           gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
-          wget -N https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults.gmt -O ~/.gmt/cache/CN_faults.gmt
+          git clone --depth 1 https://github.com/gmt-china/china-geospatial-data ~/.gmt/china-geospatial-data
 
       # Upload the downloaded files as artifacts to GitHub
       - name: Upload artifacts to GitHub
@@ -51,3 +51,4 @@ jobs:
           path: |
               ~/.gmt/cache
               ~/.gmt/server
+              ~/.gmt/china-geospatial-data
