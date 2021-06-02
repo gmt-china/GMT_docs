@@ -3,7 +3,7 @@ name: Cache data
 
 on:
   # Uncomment the 'pull_request' line below to manually re-cache data artifacts
-  # pull_request:
+  pull_request:
   # Schedule runs on 12 noon every Sunday
   schedule:
     - cron: '0 12 * * 0'
@@ -41,7 +41,9 @@ jobs:
                         @earth_night_20m \
                         @earth_mask_05m
           gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
+          # Download the china-geospatial-data datasets
           git clone --depth 1 https://github.com/gmt-china/china-geospatial-data ~/.gmt/china-geospatial-data
+          rm -rf ~/.gmt/china-geospatial-data/.git
 
       # Upload the downloaded files as artifacts to GitHub
       - name: Upload artifacts to GitHub
