@@ -42,8 +42,9 @@ jobs:
                         @earth_mask_05m
           gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
           # Download the china-geospatial-data datasets
-          git clone --depth 1 https://github.com/gmt-china/china-geospatial-data ~/.gmt/china-geospatial-data
-          rm -rf ~/.gmt/china-geospatial-data/.git
+          git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
+          rm -rf china-geospatial-data/.git
+          mv china-geospatial-data/* ~/.gmt/cache/
 
       # Upload the downloaded files as artifacts to GitHub
       - name: Upload artifacts to GitHub
@@ -53,4 +54,3 @@ jobs:
           path: |
               ~/.gmt/cache
               ~/.gmt/server
-              ~/.gmt/china-geospatial-data
