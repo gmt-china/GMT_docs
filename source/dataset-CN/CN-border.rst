@@ -46,3 +46,8 @@ CN-border: 中国国界、省界、十段线以及南海诸岛数据
         gmt coast -N1/0.1p -W1/0.25p -G244/243/239 -S167/194/223
         gmt plot CN-border-La.gmt -W0.25p
     gmt end
+    
+数据来源
+---------
+
+- 1:100万全国基础地理数据库: https://www.webmap.cn/commres.do?method=result100W
