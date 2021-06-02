@@ -29,8 +29,7 @@ CN-border: 中国国界、省界、十段线以及南海诸岛数据
         gmt plot CN-border-La.gmt -W0.5p
     gmt end
     
--JM 墨卡托投影
---------------
+-JM 墨卡托投影：
 
 .. gmtplot::
    :show-code: true
