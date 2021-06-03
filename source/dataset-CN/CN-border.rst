@@ -47,7 +47,7 @@ https://docs.gmt-china.org/latest/dataset-CN/overview/
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
         gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_FRAME_WIDTH 3p
         # 绘制中国地图
-        gmt basemap -JM105/35/10c -R70/138/13/56 -B10f5 -BnSWe
+        gmt basemap -JM105/35/10c -R70/138/13/56 -B10f5 -BnSWe --FONT_ANNOT_PRIMARY=7p
         gmt coast -G244/243/239 -S167/194/223 -Lg85/17.5+c17.5+w800k+f+u --FONT_ANNOT_PRIMARY=4p
         gmt plot CN-border-La.gmt -W0.1p 
 
