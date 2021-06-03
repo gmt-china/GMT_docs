@@ -1,6 +1,6 @@
 #!/bin/bash
 gmt begin 
-    gmt figure map3D_1 png 
+    gmt figure 3D_earth_relief_1
         gmt set MAP_FRAME_TYPE plain
         # 1. DEM图层位于-1000的高度(默认为z轴底部)
         gmt grdview @earth_relief_02m -R101/108/35/42/-1000/20000 -JM10c -JZ10c -N-1000+ggray -Qi -I -Ba -BwsENZ -p60/25    
