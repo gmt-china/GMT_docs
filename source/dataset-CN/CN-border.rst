@@ -1,12 +1,21 @@
-CN-border: 中国行政区划数据
+CN-border: 中国国界省界数据
 ============================
 
-由于 GMT 自带的国界线数据不符合中国领土主张，因而绘制正式图件时，用户需要自己准备国界数据。
-中文社区提供一套数字化的国界数据：
+GMT 自带的国界线数据不符合中国领土主张，阿克赛钦地区、藏南地区边界均存在明显差异，其他地方也存在微小差异。
+因而绘制正式图件时，用户需要自己准备国界数据。
 
-- `中国国界、省界、十段线以及南海诸岛数据 <https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-La.gmt>`__
-- `中国国界、十段线以及南海诸岛数据，不含省界数据 <https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN-border-L1.gmt>`__
-- `仅包含十段线数据 <https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/ten-dash-line.gmt>`__
+2017年国家测绘地理信息局发布的《“问题地图”清查工作指南》中列出了绘图中应避免的若干错误。
+下面列出了绘制中国全图时的常见注意事项：
+
+ - 阿克赛钦地区正确表示
+ - 藏南地区正确表示
+ - 钓鱼岛、赤尾屿位置正确
+ - 南海诸岛各岛点位置正确
+ - 台湾省底色设置与大陆一致
+
+中文社区提供一套数字化的国界数据，具体的下载地址和使用方式请见:
+
+https://docs.gmt-china.org/latest/dataset-CN/overview/
 
 .. note::
 
