@@ -15,7 +15,7 @@ gmt begin
 
     gmt figure 3D_earth_relief_2
         gmt set MAP_FRAME_TYPE plain
-        # 预处理1. 生成断层的三维采样 -R选项是给远程服务器DEM数据一个范围，避免下载全球数据后再采样
+        # 预处理1. 生成断层的三维采样，输出数据为断层的经度、纬度以及对应的地形高程。
         gmt grdtrack -R101/108/35/42 -G@earth_relief_02m CN-faults.gmt > faults.xyz
         # 预处理2. 进入数据目录（~/.gmt/server/earth/earth_day）用gdal_translate裁剪出绘图区域的day.tif
         # 下载 earth_day_02_p 数据到当前目录
