@@ -1,5 +1,4 @@
 #!/bin/bash
-export GMT_SESSION_NAME=$$
 gmt begin 
     gmt figure map3D_1 png 
         gmt set MAP_FRAME_TYPE plain
