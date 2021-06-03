@@ -33,7 +33,7 @@ https://docs.gmt-china.org/latest/dataset-CN/overview/
     gmt begin CN-border-JD png
         gmt set FONT_ANNOT_PRIMARY 9p FORMAT_GEO_MAP ddd:mm:ssF
         gmt set MAP_FRAME_WIDTH 2p MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
-        gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -B10f5g10 -Lg85/11+c11+w900k+f+u
+        gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -B10f5g10 -BnSWe -Lg85/11+c11+w900k+f+u
         gmt plot CN-border-La.gmt -W0.1p
     gmt end
     
@@ -46,9 +46,9 @@ https://docs.gmt-china.org/latest/dataset-CN/overview/
     gmt begin CN-border-JM png
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
         gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_FRAME_WIDTH 3p
-        gmt set FONT_ANNOT_PRIMARY 7p
         # 绘制中国地图
-        gmt coast -JM105/35/10c -R70/138/13/56 -G244/243/239 -S167/194/223 -B10f5 -Lg85/17.5+c17.5+w800k+f+u --FONT_ANNOT_PRIMARY=4p
+        gmt basemap -JM105/35/10c -R70/138/13/56 -B10f5 -BnSWe
+        gmt coast -G244/243/239 -S167/194/223 -Lg85/17.5+c17.5+w800k+f+u --FONT_ANNOT_PRIMARY=4p
         gmt plot CN-border-La.gmt -W0.1p 
 
         # 绘制南海区域
