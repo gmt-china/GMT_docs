@@ -30,7 +30,7 @@ gmt begin
         gmt grdview @earth_relief_02m -R101/108/35/42/-1000/5000 -JM10c -JZ4c -N-1000+ggray -Gday.tif -Qi -Ba -Bz -BwsENZ -p60/25   
         # 图层2. 三维断层线
         gmt plot3d faults.xyz -W1p,brown -p
-        # 绘图3. 色标和指北针
+        # 图层3. 色标和指北针
         gmt colorbar -C -Ba -DJTC+o0/1c -p
         gmt basemap -TdjLT+w1.5c+l+o1c -p60/25/2000
 gmt end
