@@ -10,7 +10,7 @@ gmt begin
         gmt plot CN-faults.gmt -W2p,brown -p60/25/10000 -Ba -BWSen
         gmt basemap -TdjLT+w1.5c+l+o1c -p
         
-        # 3. 卫星图片 -p设置图层抬高到20000
+        # 3. 绘制卫星图片图层。-p 设置图层抬高到20000
         gmt grdimage @earth_day_02m -p60/25/20000 -Ba -BWSen
 
     gmt figure map3D_2 png
