@@ -8,7 +8,7 @@ GMT三维地形图的制作
 
 ----
 
-中国断层数据 ``CN_faults.gmt`` 下载地址参阅： :doc:`/dataset-CN/CN_faults` 
+中国断层数据 ``CN-faults.gmt`` 下载地址参阅： :doc:`/dataset-CN/CN-faults` 
 
 绘图脚本如下：
 
