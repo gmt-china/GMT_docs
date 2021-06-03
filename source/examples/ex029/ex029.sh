@@ -7,7 +7,7 @@ gmt begin
         gmt colorbar -C -Ba -DJTC+o0/1c -p
 
         # 2. 断层线图层 -p设置图层抬高到10000 
-        gmt plot CN_faults.gmt -W2p,brown -p60/25/10000 -Ba -BWSen
+        gmt plot CN-faults.gmt -W2p,brown -p60/25/10000 -Ba -BWSen
         gmt basemap -TdjLT+w1.5c+l+o1c -p
         
         # 3. 卫星图片 -p设置图层抬高到20000
