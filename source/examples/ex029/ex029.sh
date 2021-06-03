@@ -20,6 +20,10 @@ gmt begin
         # 预处理2. 截取区域卫星图片
         # 下载 2弧分的卫星图片数据 earth_day_02m_p 到当前目录
         gmt which -Gl @earth_day_02m_p
+        # 使用 gdal_translate 截取区域的卫星图片
+        # -projwin 选项后的四个参数指定了区域范围。四个值分别是：
+        #   左上角经度 左上角纬度 右下角经度 右下角纬度
+        # gdal_translate 的详细用法见 https://gdal.org/programs/gdal_translate.html
         gdal_translate -of GTIFF -projwin 101 42 108 35 earth_day_02m_p.tif day.tif
   
         # 绘图1. -G表示在DEM上贴卫星图片
