@@ -13,7 +13,7 @@ gmt begin
         # 3. 绘制卫星图片图层。-p 设置图层抬高到20000
         gmt grdimage @earth_day_02m -p60/25/20000 -Ba -BWSen
 
-    gmt figure map3D_2 png
+    gmt figure 3D_earth_relief_2
         gmt set MAP_FRAME_TYPE plain
         # 预处理1. 生成断层的三维采样 -R选项是给远程服务器DEM数据一个范围，避免下载全球数据后再采样
         gmt grdtrack -R101/108/35/42 -G@earth_relief_02m CN-faults.gmt > faults.xyz
