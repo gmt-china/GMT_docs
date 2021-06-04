@@ -5,7 +5,8 @@ gmt begin 3D_earth_relief_2 pdf,png
     gmt set MAP_FRAME_TYPE plain
     # 预处理1：生成断层的三维采样，输出数据为断层的经度、纬度以及对应的地形高程
     gmt grdtrack -R101/108/35/42 -G@earth_relief_02m CN-faults.gmt > faults.xyz
-    # 预处理2. 截取区域卫星图片
+
+    # 预处理2：截取区域卫星图片
     # 下载 2弧分的卫星图片数据 earth_day_02m_p 到当前目录
     gmt which -Gl @earth_day_02m_p
     # 使用 gdal_translate 截取区域的卫星图片
