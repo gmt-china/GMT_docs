@@ -1,6 +1,6 @@
 #!/bin/bash
+# 将三维地形、卫星图片以及断层线绘制在不同高度
 
-# 三个图层分离绘图
 gmt begin 3D_earth_relief_1 pdf,png
     gmt set MAP_FRAME_TYPE plain
     # 1. 绘制地形图形，图层默认位于 z 轴底部（此例中即 -1000 的高度）
