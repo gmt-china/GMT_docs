@@ -22,7 +22,7 @@
 - :file:`@@earth_day_02m`\ ：\ :doc:`/dataset/earth-images`
 - :file:`CN-faults.gmt`\ ：\ :doc:`/dataset-CN/CN-faults`
 
-绘图脚本如下：
+下面的绘图脚本绘制了三个图层:
 
 .. gmtplot:: ex029_1.sh
     :width: 75%
