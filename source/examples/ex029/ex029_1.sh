@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 三个图层分离绘图
-gmt begin 3D_earth_relief_1 png
+gmt begin 3D_earth_relief_1 pdf,png
     gmt set MAP_FRAME_TYPE plain
     # 1. 绘制地形图形。图层位于位于-1000的高度（默认为z轴底部）
     gmt grdview @earth_relief_02m -R101/108/35/42/-1000/20000 -JM10c -JZ10c -N-1000+ggray -Qi -I -Ba -BwsENZ -p60/25    
