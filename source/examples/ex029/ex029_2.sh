@@ -20,6 +20,7 @@ gmt begin 3D_earth_relief_2 pdf,png
     gmt plot3d faults.xyz -W1p,brown -p
     # 绘制色标
     gmt colorbar -C -Ba -DJTC+o0/1c -p
+    # 绘制底图（含指北针）
     gmt basemap -TdjLT+w1.5c+l+o1c -p60/25/2000
 
     rm day.tif faults.xyz
