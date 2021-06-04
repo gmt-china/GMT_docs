@@ -16,7 +16,7 @@ gmt begin 3D_earth_relief_2 pdf,png
 
     # 绘制卫星图片，-G 表示在 DEM 上贴卫星图片
     gmt grdview @earth_relief_02m -R101/108/35/42/-1000/5000 -JM10c -JZ4c -N-1000+ggray -Gday.tif -Qi -Ba -Bz -BwsENZ -p60/25   
-    # 图层2. 三维断层线
+    # 绘制断层线
     gmt plot3d faults.xyz -W1p,brown -p
     # 图层3. 色标和指北针
     gmt colorbar -C -Ba -DJTC+o0/1c -p
