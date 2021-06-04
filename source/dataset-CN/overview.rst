@@ -1,8 +1,8 @@
 “中国地理空间数据集”概述
 ==========================
 
-中国地学数据集包含了一些中国区域的地理空间数据，由GMT中文社区收集，可以直接用于GMT绘图。
-目前，数据集中包含如下地理空间数据：
+“中国地理空间数据集”包含了一些中国区域的地理空间数据，可以直接用于GMT绘图。由GMT中文社区收集和维护。
+目前，数据集包含如下地理空间数据：
 
 - :doc:`CN-faults`
 - :doc:`CN-border`
@@ -10,7 +10,7 @@
 下载数据
 --------
 
-macOS/Linux 用户请下载 UTF8 编码的数据，Windows 用户请下载 GB2312 编码数据：
+macOS/Linux 用户请下载 UTF8 编码的数据，Windows 用户请下载 GB2312 编码的数据：
 
 - 下载地址： https://github.com/gmt-china/china-geospatial-data/releases
 
