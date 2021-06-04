@@ -15,7 +15,12 @@
 本例将展示如何绘制三维起伏地形图，并叠加卫星图像图层与地震断层图层，用于对比研究。
 请点击观看视频学习代码的详细讲解。
 
-中国断层数据 ``CN-faults.gmt`` 下载地址参阅： :doc:`/dataset-CN/CN-faults` 
+
+示例中使用到的数据包括：
+
+- :file:`@earth_relief_02m`\ ：\ :doc:`/dataset/earth-relief`
+- :file:`@@earth_day_02m`\ ：\ :doc:`/dataset/earth-images`
+- :file:`CN-faults.gmt`\ ：\ :doc:`/dataset-CN/CN-faults`
 
 绘图脚本如下：
 
