@@ -36,7 +36,7 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
         gmt set MAP_FRAME_WIDTH 2p MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
         gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -B10f5g10 -BnSWe -Lg85/11+c11+w900k+f+u
         gmt plot CN-border-La.gmt -W0.1p
-    gmt end
+    gmt end show
     
 -JM 墨卡托投影：
 
