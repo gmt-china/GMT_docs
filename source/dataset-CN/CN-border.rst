@@ -44,7 +44,7 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
    :show-code: true
    :width: 75%
 
-    gmt begin CN-border-JM png
+    gmt begin CN-border-JM pdf,png
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
         gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_FRAME_WIDTH 3p
         # 绘制中国地图
