@@ -19,6 +19,10 @@
 
 绘图脚本如下：
 
-.. literalinclude:: ex029.sh
-
-.. image:: https://user-images.githubusercontent.com/26203721/119947281-89bf8700-bfd2-11eb-99e5-d69cee9776e7.png
+.. gmtplot:: ex029_1.sh
+    :width: 75%
+    :show-code: true
+    
+.. gmtplot:: ex029_2.sh
+    :width: 75%
+    :show-code: true
