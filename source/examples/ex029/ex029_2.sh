@@ -14,7 +14,7 @@ gmt begin 3D_earth_relief_2 pdf,png
     # gdal_translate 的详细用法见 https://gdal.org/programs/gdal_translate.html
     gdal_translate -of GTIFF -projwin 101 42 108 35 earth_day_02m_p.tif day.tif
 
-    # 图层1. -G表示在DEM上贴卫星图片
+    # 绘制卫星图片，-G 表示在 DEM 上贴卫星图片
     gmt grdview @earth_relief_02m -R101/108/35/42/-1000/5000 -JM10c -JZ4c -N-1000+ggray -Gday.tif -Qi -Ba -Bz -BwsENZ -p60/25   
     # 图层2. 三维断层线
     gmt plot3d faults.xyz -W1p,brown -p
