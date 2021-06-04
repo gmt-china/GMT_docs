@@ -1,6 +1,6 @@
 #!/bin/bash
+# 将卫星图片和断层线直接绘制在三维地形上
 
-# 将卫星图片与断层线贴在地形起伏上绘图
 gmt begin 3D_earth_relief_2 pdf,png
     gmt set MAP_FRAME_TYPE plain
     # 预处理1：生成断层的三维采样，输出数据为断层的经度、纬度以及对应的地形高程
