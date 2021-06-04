@@ -10,7 +10,7 @@
 下载数据
 --------
 
-最新版数据下载地址： https://github.com/gmt-china/china-geospatial-data/releases
+下载地址： https://github.com/gmt-china/china-geospatial-data/releases
 
 Windows用户请下载 GB2312 编码数据， macOS/Linux 用户请下载 UTF8 编码的数据。
 
