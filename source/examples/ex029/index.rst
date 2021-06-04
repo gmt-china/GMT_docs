@@ -19,7 +19,7 @@
 示例中使用到的数据包括：
 
 - :file:`@earth_relief_02m`\ ：\ :doc:`/dataset/earth-relief`
-- :file:`@@earth_day_02m`\ ：\ :doc:`/dataset/earth-images`
+- :file:`@earth_day_02m`\ ：\ :doc:`/dataset/earth-images`
 - :file:`CN-faults.gmt`\ ：\ :doc:`/dataset-CN/CN-faults`
 
 下面的绘图脚本绘制了三个图层:
