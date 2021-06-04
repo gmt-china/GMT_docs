@@ -15,7 +15,7 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
  - 南海诸岛各岛点位置正确
  - 台湾省底色设置与大陆一致
 
-中文社区提供一套数字化的国界数据，具体的下载地址和使用方式请见: https://docs.gmt-china.org/latest/dataset-CN/overview/
+中文社区提供一套数字化的国界数据，具体的下载地址和使用方式请见: :doc:`/dataset-CN/overview`\ 。
 
 .. note::
 
