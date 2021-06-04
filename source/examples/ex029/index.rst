@@ -22,7 +22,7 @@
 - :file:`@earth_day_02m`\ ：\ :doc:`/dataset/earth-images`
 - :file:`CN-faults.gmt`\ ：\ :doc:`/dataset-CN/CN-faults`
 
-下面的绘图脚本绘制了三个图层:
+下面的绘图脚本将三维地形、卫星图片以及断层线绘制在不同高度：
 
 .. gmtplot:: ex029_1.sh
     :width: 75%
