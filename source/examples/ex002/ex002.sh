@@ -3,7 +3,7 @@
 gmt begin earth-discontinuities png
 gmt set MAP_GRID_PEN_PRIMARY 1p
 # 绘制地表
-gmt basemap -JPa10c/15 -R-10/40/0/6371 -Byg6371 -Bs
+gmt basemap -JP10c+a+t15 -R-10/40/0/6371 -Byg6371 -Bs
 # 绘制 410 界面
 gmt basemap -Byg6371+5961 -Bs
 # 绘制 660 界面
