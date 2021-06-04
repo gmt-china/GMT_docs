@@ -33,5 +33,6 @@ gmt begin
         # 图层3. 色标和指北针
         gmt colorbar -C -Ba -DJTC+o0/1c -p
         gmt basemap -TdjLT+w1.5c+l+o1c -p60/25/2000
+
         rm day.tif faults.xyz
 gmt end
