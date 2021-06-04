@@ -7,7 +7,7 @@ gmt begin 3D_earth_relief_1 pdf,png
     gmt grdview @earth_relief_02m -R101/108/35/42/-1000/20000 -JM10c -JZ10c -N-1000+ggray -Qi -I -Ba -BwsENZ -p60/25    
     gmt colorbar -C -Ba -DJTC+o0/1c -p
 
-    # 2. 绘制断层线图层。-p 设置图层抬高到10000 
+    # 2. 绘制断层线图层，-p 设置图层抬高到10000 
     gmt plot CN-faults.gmt -W2p,brown -p60/25/10000 -Ba -BWSen
     gmt basemap -TdjLT+w1.5c+l+o1c -p
     
