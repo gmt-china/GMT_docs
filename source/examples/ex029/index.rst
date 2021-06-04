@@ -27,6 +27,8 @@
 .. gmtplot:: ex029_1.sh
     :width: 75%
     :show-code: true
+
+下面的脚本将卫星图片和断层线直接绘制在三维地形上:
     
 .. gmtplot:: ex029_2.sh
     :width: 75%
