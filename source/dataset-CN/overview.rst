@@ -10,13 +10,15 @@
 下载数据
 --------
 
-数据官方仓库：https://github.com/gmt-china/china-geospatial-data
+最新版数据下载地址： https://github.com/gmt-china/china-geospatial-data/releases
 
-用户可以一次性打包下载所有数据，也可以只下载自己需要的数据。
-一次性打包下载的地址是：https://github.com/gmt-china/china-geospatial-data/archive/master.zip
+Windows用户请下载 GB2312 编码数据， macOS/Linux 用户请下载 UTF8 编码的数据。
 
 使用数据
 --------
 
 下载数据后，建议按照 :ref:`自定义数据 <setup_database>` 一节中介绍的方法
-自行构建一个GMT数据库目录。
+自行构建一个GMT数据库目录。然后将压缩包内的所有文件解压至这个目录中。
+
+放在该目录下的数据文件，就可以在 GMT 命令中直接使用，不用指定其绝对路径。
+详细用法与示例，请阅读本章其他小节各个数据的详细介绍。
