@@ -19,17 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
 
-      # Setup Miniconda
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
-        with:
-          python-version: 3.8
-          channels: conda-forge
-          miniconda-version: "latest"
-
       - name: Install packages
         run: |
-          conda install gmt
+          snap install gmt-test --edge
+          gmt-test
+          gmt
           pip install -r requirements.txt
 
       # Download cached remote files (artifacts) from GitHub
