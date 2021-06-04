@@ -1,8 +1,8 @@
-中国地学数据集概述
-==================
+“中国地理空间数据集”概述
+==========================
 
-中国地学数据集包含了一些中国区域的地理空间数据，由GMT中文社区收集，可以直接用于GMT绘图。
-目前，数据集中包含如下地理空间数据：
+“中国地理空间数据集”包含了一些中国区域的地理空间数据，可以直接用于GMT绘图。由GMT中文社区收集和维护。
+目前，数据集包含如下地理空间数据：
 
 - :doc:`CN-faults`
 - :doc:`CN-border`
@@ -10,13 +10,14 @@
 下载数据
 --------
 
-数据官方仓库：https://github.com/gmt-china/china-geospatial-data
+macOS/Linux 用户请下载 UTF8 编码的数据，Windows 用户请下载 GB2312 编码的数据：
 
-用户可以一次性打包下载所有数据，也可以只下载自己需要的数据。
-一次性打包下载的地址是：https://github.com/gmt-china/china-geospatial-data/archive/master.zip
+- 下载地址： https://github.com/gmt-china/china-geospatial-data/releases
 
 使用数据
 --------
 
-下载数据后，建议按照 :ref:`自定义数据 <setup_database>` 一节中介绍的方法
-自行构建一个GMT数据库目录。
+推荐按照\ :ref:`自定义数据 <setup_database>`\ 一节中介绍的方法构建一个 GMT 数据库目录，
+并将压缩包内的所有文件解压至这个目录中。
+然后就可以在 GMT 命令中直接使用该目录下的数据文件，而不用指定绝对路径。
+详细用法与示例，请阅读本章其他小节各个数据的详细介绍。
