@@ -7,7 +7,7 @@ gmt begin 3D_earth_relief_2 pdf,png
     gmt grdtrack -R101/108/35/42 -G@earth_relief_02m CN-faults.gmt > faults.xyz
 
     # 预处理2：截取区域卫星图片
-    # 下载 2弧分的卫星图片数据 earth_day_02m_p 到当前目录
+    # 下载 2 弧分的卫星图片数据 earth_day_02m_p 到当前目录
     gmt which -Gl @earth_day_02m_p
     # 使用 gdal_translate 截取区域的卫星图片
     # -projwin 选项后的四个参数指定了区域范围。四个值分别是：
