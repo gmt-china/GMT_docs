@@ -21,10 +21,10 @@ DIR参数
 
         GMT 在命令中遇到文件名时，首先在当前目录下寻找该文件。
         若找不到，则会到参数 **DIR_DATA** 指定的目录中寻找。
-        若找不到，则到环境变量 **$GMT_DATADIR** 指定的目录中寻找。
+        若依然找不到，则到环境变量 **$GMT_DATADIR** 指定的目录中寻找。
 
     **DIR_DCW**
         :doc:`DCW数据 </dataset/dcw/index>` 所在路径，默认值为空。GMT 会自动猜测合理的路径值。
 
     **DIR_GSHHG**
-        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。若该参数为空，则路径默认为 :file:`**$GMT_SHAREDIR**\ /coast` 目录。
+        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。若该参数为空，则路径默认为 **$GMT_SHAREDIR**\ /coast 目录。
