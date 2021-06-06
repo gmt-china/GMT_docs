@@ -35,14 +35,14 @@ CN-block: 中国大陆及周边活动地块数据
         gmt plot CN-block-L1.gmt -W1.0p,2/138/210
 
         # ============活动地块标注
-        gmt text -F+f10p << EOF
-    90 45 Xiyu region
-    122 46 Northeastern Asia region
-    120 35 North China region
-    110 27 South China region
-    90 33 Tibetan Plateau region
-    97 23 Yunnan-Burma region
-    EOF
+        gmt text -F+f10p <<- EOF
+        90 45 Xiyu region
+        122 46 Northeastern Asia region
+        120 35 North China region
+        110 27 South China region
+        90 33 Tibetan Plateau region
+        97 23 Yunnan-Burma region
+        EOF
 
         # ============边界图例
         gmt legend -DjTL+w2.8i+jTL+o0.2c/0.2c -F+gwhite+p0.5p --FONT_ANNOT_PRIMARY=8p << EOF
