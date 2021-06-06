@@ -1,14 +1,10 @@
 DIR参数
 =======
-
-.. note::
-
-   早期，GMT 仅依赖于几个环境变量（\ **$GMT_SHAREDIR**\ 、\ **$GMT_DATADIR**\ 、\ 
-   **$GMT_USERDIR** 和 **$GMT_TMPDIR**\ ），用于指向数据文件和程序设置的目录。
-
-   目前，一些目录\ **只**\ 或者\ **同时**\ 使用 :doc:`/module/gmtset` 进行配置。 
-   若这些环境变量在 GMT 配置文件 :file:`gmt.conf` 中有等效参数，那么配置文件中的参数设置将优先于环境变量。
-
+   
+可以使用 :doc:`/module/gmtset` 设定指向数据文件和程序设置的目录。
+其中一些目录也可以使用环境变量（\ **$GMT_SHAREDIR**\ 、\ **$GMT_DATADIR**\ 、\ 
+**$GMT_USERDIR** 和 **$GMT_TMPDIR**\ ）进行设置。
+GMT 配置文件 :file:`gmt.conf` 中的参数设置优先于环境变量，推荐用户使用配置文件进行配置。
 下面列出所有与目录相关的参数，参数的默认值在中括号内列出。
 
 .. glossary::
