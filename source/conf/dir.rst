@@ -1,7 +1,8 @@
 DIR参数
 =======
    
-可以使用 :doc:`/module/gmtset` 设定指向数据文件和程序设置的目录。
+可以使用 :doc:`/module/gmtset` 设定一些专用的目录位置，如数据文件和程序设置的目录。
+这时，我们只需指定文件名，GMT 会自动去这些目录中找同名文件。
 其中一些目录也可以使用环境变量（\ **$GMT_SHAREDIR**\ 、\ **$GMT_DATADIR**\ 、\ 
 **$GMT_USERDIR** 和 **$GMT_TMPDIR**\ ）进行设置。
 GMT 配置文件 :file:`gmt.conf` 中的参数设置优先于环境变量，推荐用户使用配置文件进行配置。
