@@ -7,7 +7,7 @@ CN-block: 中国大陆及周边活动地块数据
     :width: 80%
     :align: center
     
-示例代码如下:
+具体的下载地址和使用方式请见: :doc:`/dataset-CN/overview`\ 。示例代码如下:
 
 .. gmtplot::
    :show-code: true
