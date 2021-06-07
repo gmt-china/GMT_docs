@@ -161,9 +161,9 @@ X轴范围。此时可以使用 **-S** 选项设置各子图之间共用X或Y轴
         gmt basemap -R0/10/0/10 -JX?
       gmt subplot end
 
-      gmt subplot begin 1x1 -Ff15c/3c -A -BWSen -Yh+1c
+      gmt subplot begin 1x1 -Ff15c/3c -A -Yh+1c
         gmt subplot set 0 -A'(a)'
-        gmt basemap -R0/10/0/10 -JX?
+        gmt basemap -R0/10/0/10 -JX? -BWSen -Bxa2f1 -Bya2f1
       gmt subplot end
     gmt end show
 
