@@ -2,7 +2,7 @@ CN-faults: 中国断层数据
 =======================
 
 中国断层数据 :file:`CN-faults.gmt` 包含了中国区域的主要断层，
-具体的下载地址和使用方式请见: :doc:`/dataset-CN/overview`\ 。
+具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/overview`\ 。
 
 .. note::
 
