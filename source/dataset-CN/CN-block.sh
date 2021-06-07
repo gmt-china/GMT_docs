@@ -5,9 +5,11 @@ gmt begin BLOCK png,pdf
     gmt gmtset MAP_TICK_LENGTH_PRIMARY 0
     gmt gmtset MAP_FRAME_TYPE plain
 
-    # 底图
+    # 底图和海岸线
     gmt basemap -R78/12/149/53+r -JB105/10/25/47/15 -Bx10 -By5 -BneWS
     gmt coast -Ggray95 -S83/216/238 -A5000 -Dh
+    
+    # 中国国界
     gmt plot CN-border-L1.gmt -W0.2p -Gwhite
 
     # 绘制推断地块边界
