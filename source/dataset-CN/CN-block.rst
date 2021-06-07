@@ -26,19 +26,19 @@ CN-block: 中国大陆及周边活动地块数据
         gmt gmtset MAP_TICK_LENGTH_PRIMARY 0
         gmt gmtset MAP_FRAME_TYPE plain
 
-        # ============底图
+        # 底图
         gmt basemap -R78/12/149/53+r -JB105/10/25/47/15 -Bx10 -By5 -BneWS
         gmt coast -Ggray95 -S83/216/238 -A5000 -Dh
         gmt plot CN-border-L1.gmt -W0.2p -Gwhite
 
-        # ============绘制推断地块边界
+        # 绘制推断地块边界
         gmt plot CN-block-L1-deduced.gmt -W1.0p,2/138/210,-
-        # ============绘制二级地块边界
+        # 绘制二级地块边界
         gmt plot CN-block-L2.gmt -W1.0p,orange
-        # ============绘制一级地块边界
+        # 绘制一级地块边界
         gmt plot CN-block-L1.gmt -W1.0p,2/138/210
 
-        # ============活动地块标注
+        # 活动地块标注
         gmt text -F+f10p <<- EOF
     90 45 Xiyu region
     122 46 Northeastern Asia region
