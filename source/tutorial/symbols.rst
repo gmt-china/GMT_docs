@@ -176,8 +176,8 @@ GMT 在使用自定义符号时会按照顺序在如下目录中依次搜索自�
 #.  :file:`$GMT_SHAREDIR/custom` 目录
 
 用户可以下载社区提供的自定义符号，并复制到以上任一路径，即可使用这些自定义符号。
-通常建议放在 ``~/.gmt/custom`` 目录（Linux和Mac用户）或
-``C:\Users\你的当前用户名\.gmt\custom`` (Windows用户）下。
+建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
+:file:`C:\Users\你的当前用户名\.gmt\custom` 目录（Windows 用户）下。
 
 绘制自定义符号示例脚本如下：
 
