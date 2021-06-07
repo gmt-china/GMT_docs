@@ -49,8 +49,8 @@ jobs:
           mv china-geospatial-data/* ~/.gmt/cache/
           # Download custom symbol
           git clone --depth 1 https://github.com/gmt-china/GMT_custom_symbols GMT_custom_symbols
-          mkdir -p ~/.gmt/custom/
-          mv GMT_custom_symbols/* ~/.gmt/custom/
+          rm -rf GMT_custom_symbols/.git
+          mv GMT_custom_symbols ~/.gmt/custom/
 
       # Upload the downloaded files as artifacts to GitHub
       - name: Upload artifacts to GitHub
