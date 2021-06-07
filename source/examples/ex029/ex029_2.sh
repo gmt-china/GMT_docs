@@ -23,5 +23,5 @@ gmt begin 3D_earth_relief_2 pdf,png
     # 绘制底图（含指北针）
     gmt basemap -TdjLT+w1.5c+l+o1c -p60/25/2000
 
-    rm day.tif faults.xyz
+    rm day.tif faults.xyz earth_day_06m_p.tif
 gmt end show
