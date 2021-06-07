@@ -55,7 +55,7 @@ CN-block: 中国大陆及周边活动地块数据
     S 0.3i - 0.50i orange 1.0p,orange 0.7i Active tectonic-block boundary
     EOF
 
-        # ============南海诸岛
+        # 南海诸岛
         gmt inset begin -DjBR+w2c/2.8c -F+p0.5p
             gmt coast -JM? -R106/121/3/24 -Ggray95 -S83/216/238 -Df
             gmt plot CN-border-La.gmt -W0.2p -Gwhite
