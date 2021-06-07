@@ -25,8 +25,8 @@ CN-block: 中国大陆及周边活动地块数据
         gmt coast -Ggray95 -S83/216/238 -A5000 -Dh
         gmt plot CN-border-L1.gmt -W0.2p -Gwhite
 
-        # ============绘制板块边界
-        gmt plot CN-plate-neighbor.gmt -W2.0p,2/138/210 -Sf0.5+t+l -G2/138/210
+        # ============绘制板块边界。板块边界数据下载地址：https://docs.gmt-china.org/latest/dataset/PB2002/
+        gmt plot PB2002_boundaries.dig.txt -W2.0p,2/138/210 -Sf0.5+t+l -G2/138/210
         # ============绘制推断地块边界
         gmt plot CN-block-L1-deduced.gmt -W1.0p,2/138/210,-
         # ============绘制二级地块边界
