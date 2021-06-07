@@ -166,7 +166,7 @@ GMT 官方目前内置了 40 个自定义符号，如下所示：
     :width: 80%
 
 但是对于广大用户来说，这些自定义符号仍然远远无法满足需求。 
-因此，社区在 `Github仓库 <https://github.com/gmt-china/GMT_custom_symbols>`_ 
+因此，社区维护了一套 `GMT自定义符号 <https://github.com/gmt-china/GMT_custom_symbols>`__\ ，
 持续更新一些常用的但还没有被 GMT 官方内置的自定义符号。
 
 GMT 在使用自定义符号时会按照顺序在如下目录中依次搜索自定义符号：
