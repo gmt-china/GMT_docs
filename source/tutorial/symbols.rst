@@ -153,3 +153,56 @@ X和Y坐标的基础上额外加一列Z值，用于控制符号的填充色。
     8   2   2   0.5 i
     EOF
     gmt end show
+
+.. _custom_symbols_id:
+
+绘制自定义符号
+----------------
+
+GMT 官方目前内置了 40 个自定义符号，如下所示：
+
+.. image:: GMT_custom_symbol_def.png
+    :alt: GMT 内置自定义符号
+    :width: 80%
+
+但是对于广大用户来说，这些自定义符号仍然远远无法满足需求。 
+因此，社区在 `Github仓库 <https://github.com/gmt-china/GMT_custom_symbols>`_ 
+持续更新一些常用的但还没有被 GMT 官方内置的自定义符号。
+
+GMT 在使用自定义符号时会按照顺序在如下目录中依次搜索自定义符号：
+
+#. 当前目录，即运行脚本所在目录
+#. Linux和Mac用户： ``~/.gmt/custom`` ，Windows用户： ``C:\Users\你的当前用户名\.gmt\custom`` 
+#.  ``$GMT_SHAREDIR/custom`` 目录
+
+因而用户可以下载社区提供的自定义符号并复制到以上任一路径即可使用这些自定义符号。
+通常建议放在 ``~/.gmt/custom`` 目录（Linux和Mac用户）或
+``C:\Users\你的当前用户名\.gmt\custom`` (Windows用户）下。
+
+绘制自定义符号示例脚本如下：
+
+.. gmtplot::
+    :width: 80%
+    
+    #!/bin/bash
+    gmt begin custom_symbol png,pdf
+
+    # 绘制城市符号
+    echo 3 5 | gmt plot -R0/10/0/10 -JM4i -B2 -Skcity/0.2i -W0.6p
+    echo 5 5 | gmt plot -Skcity/0.3i -Gblue
+    echo 7 5 | gmt plot -Skcity/0.4i -Gred -W1p
+    # 绘制指北针符号，第三列为旋转角度
+    echo 3 8 0| gmt plot -Skcompass/0.4i -W0.6p
+    echo 5 8 45| gmt plot -Skcompass/0.5i -Gblue
+    echo 7 8 90| gmt plot -Skcompass/0.6i -Gred -W1p
+    # 绘制三角形和五角星符号
+    echo 2 2 | gmt plot -Sa0.5i -Wblack -Gred
+    echo 4 2 | gmt plot -St0.5i -Wblack -Ggreen
+    # 绘制图例
+    gmt legend -F+p1p -DjBR+w1.2i+o0.2c/0.2c << EOF
+    S 0.2c kcompass 0.15i white 0.5p 1c compass
+    S 0.2c kcity 0.15i white 0.5p 1c city
+    S 0.2c a 0.15i red 0.5p 1c capital
+    S 0.2c t 0.15i green 0.5p 1c station
+    EOF
+    gmt end show

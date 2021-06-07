@@ -356,7 +356,7 @@ plot
 
     GMT支持自定义符号，该选项会依次在当前目录、 ``~/.gmt`` 、 ``$GMT_SHAREDIR/custom``
     目录中寻找自定义符号的定义文件 ``<name>.def`` 。定义文件中的符号默认其大小为1，
-    然后会根据 ``<size>`` 对其进行缩放。关于如何自定义符号，见中文手册。
+    然后会根据 ``<size>`` 对其进行缩放。关于如何使用自定义符号，见 :ref:`custom_symbols_id` 。
 
 ``-Sl<size>+t<string>+j<justify>``
     绘制文本字符串
