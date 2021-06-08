@@ -9,9 +9,9 @@
 .. toctree::
    :maxdepth: 1
 
-   CN-faults
    CN-border
    CN-block
+   CN-faults
 
 **下载数据**
 
