@@ -19,3 +19,4 @@ GMT基础
    embellishment
    io-format
    input-files
+   symbols
