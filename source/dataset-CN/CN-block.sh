@@ -20,7 +20,7 @@ gmt begin BLOCK png,pdf
     gmt plot CN-block-L1.gmt -W1.0p,2/138/210
 
     # 活动地块标注
-    gmt text -F+f10p <<- EOF
+    gmt text -F+f10p << EOF
 90 45 Xiyu region
 122 46 Northeastern Asia region
 120 35 North China region
