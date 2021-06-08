@@ -30,7 +30,7 @@ gmt begin BLOCK png,pdf
 EOF
 
     # 边界图例
-    gmt legend -DjTL+w2.8i+jTL+o0.2c/0.2c -F+gwhite+p0.5p --FONT_ANNOT_PRIMARY=8p <<- EOF
+    gmt legend -DjTL+w2.8i+jTL+o0.2c/0.2c -F+gwhite+p0.5p --FONT_ANNOT_PRIMARY=8p << EOF
 S 0.3i - 0.50i 2/138/210 1.0p,2/138/210 0.7i Active tectonic-block region boundary
 S 0.3i - 0.44i - 1.0p,2/138/210,- 0.7i  Deduced region boundary
 S 0.3i - 0.50i orange 1.0p,orange 0.7i Active tectonic-block boundary
