@@ -178,6 +178,7 @@ GMT中文社区整理了一些自定义数据，用户可以选用，包括：
 
 - :doc:`gadm/index`
 - :doc:`PB2002/index`
+- :doc:`/dataset-CN/index`
 
 建立GMT数据库
 ~~~~~~~~~~~~~
