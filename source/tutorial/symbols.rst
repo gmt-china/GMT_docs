@@ -199,10 +199,10 @@ GMT 在使用自定义符号时会按照顺序在如下目录中依次搜索自�
     echo 2 2 | gmt plot -Sa0.5i -Wblack -Gred
     echo 4 2 | gmt plot -St0.5i -Wblack -Ggreen
     # 绘制图例
-    gmt legend -F+p1p -DjBR+w1.2i+o0.2c/0.2c << EOF
-    S 0.2c kcompass 0.15i white 0.5p 1c compass
-    S 0.2c kcity 0.15i white 0.5p 1c city
-    S 0.2c a 0.15i red 0.5p 1c capital
-    S 0.2c t 0.15i green 0.5p 1c station
+    gmt legend -F+p1p -DjBR+o0.2c/0.2c << EOF
+    S - kcompass 0.12i white 0.5p - compass
+    S - kcity 0.12i white 0.5p - city
+    S - a 0.12i red 0.5p - capital
+    S - t 0.12i green 0.5p - station
     EOF
     gmt end show
