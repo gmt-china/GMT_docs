@@ -165,7 +165,7 @@ GMT 官方目前内置了 40 个自定义符号，如下所示：
     :alt: GMT 内置自定义符号
     :width: 80%
 
-但是对于广大用户来说，这些自定义符号仍然远远无法满足需求。 
+对于 GMT 用户来说，这些自定义符号可能仍然无法满足需求。 
 因此，社区维护了一套 `GMT自定义符号 <https://github.com/gmt-china/GMT_custom_symbols>`__\ ，
 会持续更新一些常用的但还没有被 GMT 官方内置的自定义符号。
 
@@ -187,14 +187,14 @@ GMT 在使用自定义符号时会按照顺序在如下目录中依次搜索自�
     #!/bin/bash
     gmt begin custom_symbol png,pdf
 
-    # 绘制城市符号
-    echo 3 5 | gmt plot -R0/10/0/10 -JM4i -B2 -Skcity/0.2i -W0.6p
-    echo 5 5 | gmt plot -Skcity/0.3i -Gblue
-    echo 7 5 | gmt plot -Skcity/0.4i -Gred -W1p
     # 绘制指北针符号，第三列为旋转角度
-    echo 3 8 0| gmt plot -Skcompass/0.4i -W0.6p
+    echo 3 8 0| gmt plot -Skcompass/0.4i -W0.6p -R0/10/0/10 -JM4i -B2 
     echo 5 8 45| gmt plot -Skcompass/0.5i -Gblue
     echo 7 8 90| gmt plot -Skcompass/0.6i -Gred -W1p
+    # 绘制城市符号
+    echo 3 5 | gmt plot -Skcity/0.2i -W0.6p
+    echo 5 5 | gmt plot -Skcity/0.3i -Gblue
+    echo 7 5 | gmt plot -Skcity/0.4i -Gred -W1p
     # 绘制三角形和五角星符号
     echo 2 2 | gmt plot -Sa0.5i -Wblack -Gred
     echo 4 2 | gmt plot -St0.5i -Wblack -Ggreen
