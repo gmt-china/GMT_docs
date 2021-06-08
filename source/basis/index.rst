@@ -17,6 +17,6 @@ GMT基础
    line
    anchor
    embellishment
+   symbols
    io-format
    input-files
-   symbols
