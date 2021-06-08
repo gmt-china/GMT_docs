@@ -18,10 +18,8 @@
 - 项目主页： https://github.com/gmt-china/china-geospatial-data
 - 下载地址： https://github.com/gmt-china/china-geospatial-data/releases
 
-.. note::
-
-   - macOS/Linux 用户请下载数据 :file:`china-geospatial-data-UTF8.zip`\ （UTF8 编码）
-   - Windows 用户请下载数据 :file:`china-geospatial-data-GB2312.zip`\ （GB2312 编码）
+macOS/Linux 用户请下载数据 :file:`china-geospatial-data-UTF8.zip`\ （UTF8 编码），
+Windows 用户请下载数据 :file:`china-geospatial-data-GB2312.zip`\ （GB2312 编码）
 
 **使用数据**
 
