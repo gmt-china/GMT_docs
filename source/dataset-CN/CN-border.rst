@@ -21,10 +21,10 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
 -  :file:`CN-border-L1.gmt`\ ：中国国界、十段线以及南海诸岛数据，不含省界数据
 -  :file:`ten-dash-line.gmt`\ ：仅十段线数据
 
-具体的下载地址和使用方式请见: :doc:`/dataset-CN/overview`\ 。
+具体的下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
 
 .. admonition:: 免责声明
-   
+
    本数据仅供科研用途使用。社区不保证数据完全准确或可通过地图审核。
    欢迎用户共享更准确的国界数据。
 
@@ -43,7 +43,7 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
         gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -B10f5g10 -BnSWe -Lg85/11+c11+w900k+f+u
         gmt plot CN-border-La.gmt -W0.1p
     gmt end show
-    
+
 **-JM** 墨卡托投影：
 
 .. gmtplot::
@@ -56,7 +56,7 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
         # 绘制中国地图
         gmt basemap -JM105/35/10c -R70/138/13/56 -B10f5 -BnSWe --FONT_ANNOT_PRIMARY=7p
         gmt coast -G244/243/239 -S167/194/223 -Lg85/17.5+c17.5+w800k+f+u --FONT_ANNOT_PRIMARY=4p
-        gmt plot CN-border-La.gmt -W0.1p 
+        gmt plot CN-border-La.gmt -W0.1p
 
         # 绘制南海区域
         gmt inset begin -DjRB+w1.8c/2.2c -F+p0.5p
@@ -64,7 +64,7 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
             gmt plot CN-border-La.gmt -W0.1p
         gmt inset end
     gmt end show
-    
+
 数据来源
 ---------
 
