@@ -6,6 +6,7 @@
 GMT 官方目前内置了 40 个自定义符号，如下所示：
 
 .. image:: GMT_custom_symbol_def.png
+    :align: center
     :alt: GMT 内置自定义符号
     :width: 80%
 
