@@ -543,7 +543,7 @@ GMT 官方目前内置了 40 个自定义符号，如下所示：
 #. :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
 #.  :file:`$GMT_SHAREDIR/custom` 目录
 
-用户可以下载社区提供的自定义符号，并复制到以上任一路径，即可使用这些自定义符号。
+将下载的社区提供的自定义符号复制到以上任一路径，即可使用这些自定义符号。
 建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows 用户）下。
 
