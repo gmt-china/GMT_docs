@@ -35,6 +35,28 @@ jobs:
           conda install -c conda-forge gmt=${GMT_VERSION}
           pip install -r requirements.txt
 
+      - name: Set up Chinese support
+        run: |
+          sudo apt install ghostscript texlive-lang-chinese
+          ls -l /usr/share/ghostscript/9.50/Resource/*
+          wget https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
+          sudo apt install texlive-binaries
+          sudo perl cjk-gs-integrate.pl
+          ls -l /usr/share/ghostscript/9.50/Resource/*
+          cat /usr/share/ghostscript/9.50/Resource/Init/cidfmap
+          cat /usr/share/ghostscript/9.50/Resource/Init/cidfmap.aliases
+          mkdir ~/.gmt
+          cat > ~/.gmt/PSL_custom_fonts.txt << EOF
+          STSong-Light-UniGB-UTF8-H  0.700    1
+          STFangsong-Light-UniGB-UTF8-H  0.700    1
+          STHeiti-Regular-UniGB-UTF8-H   0.700   1
+          STKaiti-Regular-UniGB-UTF8-H   0.700   1
+          STSong-Light--UniGB-UTF8-V  0.700    1
+          STFangsong-Light--UniGB-UTF8-V  0.700    1
+          STHeiti-Regular--UniGB-UTF8-V   0.700   1
+          STKaiti-Regular--UniGB-UTF8-V   0.700   1
+          EOF
+
       # Download cached remote files (artifacts) from GitHub
       - name: Download remote data from GitHub
         uses: dawidd6/action-download-artifact@v2.14.0
@@ -52,6 +74,7 @@ jobs:
           # Change modification times of the two files, so GMT won't refresh it
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
           ls -lhR ~/.gmt
+          gmt text -L
 
       - name: Build HTML
         run: |
