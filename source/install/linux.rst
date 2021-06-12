@@ -54,7 +54,7 @@ RHEL/CentOS
     sudo yum install epel-release
 
     # 启用 PowerTools 仓库 (仅限于 RHEL/CentOS 8 用户)
-    sudo yum config-manager --set-enabled PowerTools
+    sudo yum config-manager --set-enabled powertools
 
     # 启用GMT官方仓库 (仅限于RHEL/CentOS 7/8 用户)
     sudo yum install yum-plugin-copr
