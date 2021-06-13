@@ -9,7 +9,7 @@ gmtwhich
 
 GMT会依次在如下目录中去寻找命令行中指定的文件::
 
-    当前目录 > $GMT_USERDIR (``~/.gmt``) > $GMT_DATADIR (``~/.gmt/server``) > $GMT_CACHEDIR (``~/.gmt/cache``)
+    当前目录 > $GMT_USERDIR\ （:file:`~/.gmt`\ ）> $GMT_DATADIR\ （:file:`~/.gmt/server`\ ）> $GMT_CACHEDIR\ （:file:`~/.gmt/cache`\ ）
 
 该模块会报告文件的完整路径，使得用户可以确认自己在使用的究竟是哪个数据文件。
 
