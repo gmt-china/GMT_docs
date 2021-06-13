@@ -189,7 +189,7 @@ Bash语法和Batch语法不同。本手册中所有脚本均使用Bash实现，B
 		echo 5 6 >> tmp.dat
 		gmt plot tmp.dat
 
-常用Unix小工具
---------------
+Linux 常用命令
+---------------
 
-- awk: http://www.ruanyifeng.com/blog/2018/11/awk.html
+- `《地震“学”科研入门教程：Linux 常用命令》 <https://seismo-learn.org/seismology101/computer/commands/>`__
