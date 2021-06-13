@@ -122,6 +122,7 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     如果想要在Bat脚本中使用各种Linux下的常用命令，
     推荐使用GMT中文社区整理的Unix小工具合集包 UnixTools。
 
-    直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
+    直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可：
 
-    下载地址: `UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`__
+    - 下载地址: `UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`__
+    - 简介: https://gmt-china.org/blog/unix-tools-for-windows/
