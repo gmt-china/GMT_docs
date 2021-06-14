@@ -96,9 +96,6 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
         请注意 Ghostscript 的版本！
         由于Ghostscript自身的bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
-        GMT 6.1.1 无法在注册表中查找到 9.54 版本的安装目录键值，安装此版本的话，
-        需要自行在系统的环境变量 **PATH** 中添加 Ghostscript的安装目录，
-        例如 ``C:\Program Files\gs\gs9.54.0\bin`` 。
 
 3.  安装GSview 5.0 (**不推荐安装**)
 
