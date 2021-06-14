@@ -13,14 +13,14 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
 启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
 
-	    GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
-	    (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
+            GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
+            (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
-	    Supported in part by the US National Science Foundation (http://www.nsf.gov/)
-	    and volunteers from around the world.
+            Supported in part by the US National Science Foundation (http://www.nsf.gov/)
+            and volunteers from around the world.
 
-	    GMT is distributed under the GNU LGPL License (http://www.gnu.org/licenses/lgpl.html).
-	    Dependencies: netCDF, GDAL, PCRE, FFTW, LAPACK, ZLIB, Ghostscript, GraphicsMagick, FFmpeg.
+            GMT is distributed under the GNU LGPL License (http://www.gnu.org/licenses/lgpl.html).
+            Dependencies: netCDF, GDAL, PCRE, FFTW, LAPACK, ZLIB, Ghostscript, GraphicsMagick, FFmpeg.
 
     usage: gmt [options]
            gmt <module name> [<module-options>]
