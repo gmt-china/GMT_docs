@@ -64,6 +64,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
        export PATH=${GMTHOME}/bin:${PATH}
        export PROJ_LIB=$GMTHOME/share/proj
        export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick/config
+       export GS_LIB=${GMTHOME}/share/ghostscript/9.53.3/Resource/Init
 
    .. note::
 
