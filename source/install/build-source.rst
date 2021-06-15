@@ -68,9 +68,9 @@ GMT的编译及运行需要如下软件：
 
 编译GMT需要下载如下三个文件：
 
-#. GMT 6.1.1 源码：`gmt-6.1.1-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.1.1-src.tar.gz>`_
+#. GMT 6.2.0 源码：`gmt-6.2.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.2.0-src.tar.gz>`_
 #. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
-#. 全球数字图表DCW：`dcw-gmt-1.1.4.tar.gz <http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz>`_
+#. 全球数字图表DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
 
 安装GMT
 -------
@@ -80,16 +80,16 @@ GMT的编译及运行需要如下软件：
 .. code-block:: bash
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-6.1.1-src.tar.gz
+   $ tar -xvf gmt-6.2.0-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-1.1.4.tar.gz
+   $ tar -xvf dcw-gmt-2.0.0.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.1.1/share/gshhg-gmt
-   $ mv dcw-gmt-1.1.4 gmt-6.1.1/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.2.0/share/gshhg-gmt
+   $ mv dcw-gmt-2.0.0 gmt-6.2.0/share/dcw-gmt
 
    # 切换到gmt源码目录下
-   $ cd gmt-6.1.1
+   $ cd gmt-6.2.0
 
    # 用文本编辑器新建并打开CMake用户配置文件
    # Linux用户
@@ -100,14 +100,14 @@ GMT的编译及运行需要如下软件：
 
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.1.1")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.2.0")
 
     set (GMT_USE_THREADS TRUE)
     set (GMT_ENABLE_OPENMP TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置GMT的安装路径，上面的语句会将GMT安装在
-  :file:`/opt/GMT-6.1.1` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.1.1` 等有可读写
+  :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.2.0` 等有可读写
   权限的路径；
 - **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为GMT的某些模块
   增加多线程并行功能以加速计算，也可以不设置。
@@ -122,7 +122,7 @@ GMT的编译及运行需要如下软件：
 
 继续执行如下命令以检查GMT的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于GMT源码压缩包解压出来的 gmt-6.1.1 目录下，不是 gmt-6.1.1/cmake 目录下，更不是 /opt/GMT-6.1.1
+    # 注意，此处新建的 build 文件夹位于GMT源码压缩包解压出来的 gmt-6.2.0 目录下，不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -134,11 +134,11 @@ GMT的编译及运行需要如下软件：
 继续执行 ``cmake ..``\ ，直到出现类似的检查结果::
 
     *
-    *  GMT Version:               : 6.1.1
+    *  GMT Version:               : 6.2.0
     *
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-6.1.1/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.1.1/share/dcw-gmt (1.1.4)
+    *  Found GSHHG database       : /home/user/GMT/gmt-6.2.0/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.2.0/share/dcw-gmt (2.0.0)
     *  Found GMT data server      : https://oceania.generic-mapping-tools.org
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
@@ -170,10 +170,10 @@ GMT的编译及运行需要如下软件：
     *  Found gdal_translate       : yes (2.4.2)
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-6.1.1
-    *  GMT_DATADIR                : /opt/GMT-6.1.1/share
-    *  GMT_DOCDIR                 : /opt/GMT-6.1.1/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-6.1.1/share/man
+    *  Installing GMT in          : /opt/GMT-6.2.0
+    *  GMT_DATADIR                : /opt/GMT-6.2.0/share
+    *  GMT_DOCDIR                 : /opt/GMT-6.2.0/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.2.0/share/man
     -- Configuring done
     -- Generating done
 
@@ -211,7 +211,7 @@ GMT的编译及运行需要如下软件：
 然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
 然后重启终端使其生效::
 
-    export GMT6HOME=/opt/GMT-6.1.1
+    export GMT6HOME=/opt/GMT-6.2.0
     export PATH=${GMT6HOME}/bin:$PATH
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
@@ -228,13 +228,13 @@ GMT的编译及运行需要如下软件：
 重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
 
     $ gmt --version
-    6.1.1
+    6.2.0
 
 升级/卸载GMT
 ------------
 
-按照上面的配置，GMT会被安装到 :file:`/opt/GMT-6.1.1` 目录下。若想要卸载GMT，
-可以直接删除整个 :file:`/opt/GMT-6.1.1` 即可。
+按照上面的配置，GMT会被安装到 :file:`/opt/GMT-6.2.0` 目录下。若想要卸载GMT，
+可以直接删除整个 :file:`/opt/GMT-6.2.0` 即可。
 
 GMT不支持自动更新，因而若想要升级GMT，通常建议先卸载GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。

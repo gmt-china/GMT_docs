@@ -1,20 +1,10 @@
 GMT/Matlab Toolbox
 ==================
 
-简介
-----
-
-GMT的Matlab接口，顾名思义，提供了在Matlab中调用GMT命令的功能。通过该接口，
-GMT的所有模块命令都可以在Matlab脚本中嵌入执行。GMT命令生成的结果
-（grid格网数据、table表格数据、CPT颜色表、文本文件、图片等）
-都可以作为Matlab变量进行运算；Matlab中的矩阵变量也可以直接作为GMT的输入。
-
-GMT/MATLAB工具包用户请引用如下文章:
-
-Wessel, P., and J. F. Luis
-The GMT/MATLAB Toolbox,
-*Geochem. Geophys. Geosyst.*, **18(2)**, 811-823, 2017.
-`doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_.
+GMT 的 Matlab 接口提供了在 Matlab 中调用 GMT 命令的功能。
+通过该接口，GMT 的所有模块命令都可以在 Matlab 脚本中嵌入执行。
+GMT 命令生成的结果（grid 格网数据、table 表格数据、CPT 颜色表、文本文件、图片等）
+都可以作为 Matlab 变量进行运算；Matlab 中的矩阵变量也可以直接作为GMT的输入。
 
 安装
 ----
@@ -152,3 +142,13 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
 - gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。
 - 绘制地理投影时，经纬度标注可能会出现 ``%s`` 乱码（即使设置为不显示任何度分秒符号），
   目前已知Matlab2016存在该问题，其他版本还未有此类反馈。
+
+引用
+------
+
+GMT/MATLAB 工具包用户请引用如下文章:
+
+- Wessel, P., and J. F. Luis
+  The GMT/MATLAB Toolbox,
+  *Geochem. Geophys. Geosyst.*, **18(2)**, 811-823, 2017.
+  `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_
