@@ -534,11 +534,11 @@ plot
 社区维护了一套 `GMT自定义符号 <https://github.com/gmt-china/GMT_custom_symbols>`__\ ，
 并持续更新一些常用的但还没有被 GMT 官方内置的自定义符号。
 
-使用自定义符号时，GMT 会依次按照如下顺序到目录中搜索自定义符号的定义文件 ``<name>.def`` ：
+使用自定义符号时，GMT 会依次按照如下顺序到目录中搜索自定义符号的定义文件 :file:`*name*.def`\ ：
 
 #. 当前目录，即运行脚本所在目录
 #. :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
-#.  :file:`$GMT_SHAREDIR/custom` 目录
+#. :file:`$GMT_SHAREDIR/custom` 目录
 
 将下载的社区提供的自定义符号复制到以上任一路径，即可使用这些自定义符号。
 建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
