@@ -27,7 +27,7 @@ assignees: ''
 - [ ] Bump the GMT version number in `source/_static/version_switch.js`, `source/conf.py`, and `README.md`
 - [ ] Bump the GMT version in the documentation
   - [ ] `source/intro`: `overview.rst` and `resources.rst`
-  - [ ] `source/install`: `macOS.rst`, `windows.rst`, `cross-platform.rst`, `build-source.rst`
+  - [ ] `source/install`: `macOS.rst`, `windows.rst`, `cross-platform.rst`, and `build-source.rst`
   - [ ] `source/tutorial/get-started`: `linux.rst`, `macos.rst`, `windows.rst`
 
 ---
