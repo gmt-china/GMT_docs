@@ -20,7 +20,7 @@ assignees: ''
 
 **Release**:
 - [ ] Set the tag version to vX.Y
-- [ ] Manually upload the PDF to the release
+- [ ] Manually upload the PDF to the GitHub release page
 
 **After release**:
 - [ ] Bump the GMT version in the CI workflow: `cache-data.yml`, `deploy.yml`, and `preview-pr.yml`
