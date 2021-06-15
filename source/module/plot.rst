@@ -539,7 +539,7 @@ plot
 
 #. 当前目录，即运行脚本所在目录
 #. :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
-#.  :file:`$GMT_SHAREDIR/custom` 目录
+#. :file:`$GMT_SHAREDIR/custom` 目录
 
 将下载的社区提供的自定义符号复制到以上任一路径，即可使用这些自定义符号。
 建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
