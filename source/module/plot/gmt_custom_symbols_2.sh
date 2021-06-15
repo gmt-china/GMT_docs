@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# 绘制自定义符号
+#
 gmt begin custom_symbol png,pdf
 gmt basemap -R0/10/-2/4 -JX10c/2c -B2
 # 绘制城市符号
