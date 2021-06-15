@@ -354,11 +354,10 @@ plot
 ``-Sk<name>/<size>``
     绘制自定义的符号。GMT 官方目前内置了 40 个自定义符号，如下所示：
 
-    .. gmtplot:: plot/gmt_custom_symbols_1.sh
+    .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
         :width: 70%
         :align: center
         :alt: GMT 内置自定义符号
-        :show-code: false
 
     这些自定义符号可能仍然无法满足广大 GMT 用户的需求，
     因而社区维护了一套常用的但还没有被 GMT 官方内置的自定义符号。

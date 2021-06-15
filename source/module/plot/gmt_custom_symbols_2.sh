@@ -1,13 +1,22 @@
 #!/bin/bash
 gmt begin custom_symbol png,pdf
-
-# 绘制指北针符号，第三列为旋转角度
-echo 2 2 0 | gmt plot -Skcompass/2c -W0.6p -R0/10/0/4 -JM10c -B2 
+gmt basemap -R0/10/-2/4 -JX10c/2c -B2
 # 绘制城市符号
-echo 5 2 | gmt plot -Skcity/1c -Gred -W1p
-# 绘制图例
-gmt legend -F+p1p -DjBR+o0.2c/0.2c << EOF
-S - kcompass 0.3c white 0.5p - compass
-S - kcity 0.3c white 0.5p - city
-EOF
+echo 1 1 | gmt plot -Skcity/1 -W0.6p
+# 绘制指北针符号,第三个参数为顺时针旋转角度
+echo 2 1 0 | gmt plot -Skcompass/1 -W0.6p 
+# 绘制应力解除符号,第三个参数为顺时针旋转角度
+echo 3 1 45 | gmt plot -Skstress_relief/1 -W1p
+# 绘制水压致裂符号,第三个参数为顺时针旋转角度
+echo 4 1 135 | gmt plot -Skhydra_fract/1 -W1p 
+# 绘制钻孔崩落符号,第三个参数为顺时针旋转角度
+echo 5 1 45 | gmt plot -Skborehole_collapse/1 -W1p 
+# 绘制断层滑动符号,第三个参数为顺时针旋转角度
+echo 6 1 0  | gmt plot -Skfault_slip/1 -W1p 
+# 绘制震源机制符号,第三个参数为顺时针旋转角度
+echo 7 1 135 | gmt plot -Skfocal_mec/1 -W1p 
+# 绘制钻孔槽符号,第三个参数为顺时针旋转角度
+echo 8 1 45 | gmt plot -SkBS/1 -W1p 
+# 绘制钻孔诱发张裂隙符号,第三个参数为顺时针旋转角度
+echo 9 1 135 | gmt plot -SkDIF/1 -W1p 
 gmt end show
