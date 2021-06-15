@@ -352,7 +352,7 @@ plot
     ``<size>`` 是正方形的长度，若未指定 ``<size>`` 则需要在输入数据的第三列指定长度。
 
 ``-Sk<name>/<size>``
-    绘制自定义的符号。GMT 官方目前内置了 40 个自定义符号，如下所示：
+    绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：
 
     .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
         :width: 70%
