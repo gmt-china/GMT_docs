@@ -7,7 +7,8 @@ geo3al: 中国大陆及临区地质图数据
 
 具体的下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
 
-示例代码使用地质年代CPT色标文件 (GTS2012_periods): :download:`geoage.cpt` 。
+示例代码使用地质年代CPT色标文件 (`GTS2012_periods <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/tn/GTS2012_periods.png.index.html>`_):
+ :download:`geoage.cpt` 。
 此 CPT 文件所提供的地质年代色标文件最小单位是“纪”，因此在绘制小区域时可能精度较低。
 有兴趣的读者可以尝试在最小精度为“世”的色标(`GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`_)中进行修改，
 来绘制更精细的图像，但这时图注则需要自行修改。
