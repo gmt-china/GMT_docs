@@ -355,7 +355,7 @@ plot
     绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：
 
     .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
-        :width: 70%
+        :width: 50%
         :align: center
         :alt: GMT 内置自定义符号
 
