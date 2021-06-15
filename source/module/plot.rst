@@ -528,7 +528,7 @@ plot
 
 GMT 官方目前内置了 40 个自定义符号，如下所示：
 
-.. gmtplot:: plot/gmt_custom_symbols_1.sh
+.. gmtplot:: gmt_custom_symbols_1.sh
     :width: 80%
     :align: center
     :alt: GMT 内置自定义符号
