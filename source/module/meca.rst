@@ -202,6 +202,8 @@ meca
     104.11 31.52 27.1 22 53 57 6 0 0 B
     EOF
 
+.. _gmt-meca-cpt-example:
+
 震源球大小随震级变化，颜色随深度变化:
 
 .. gmtplot::
