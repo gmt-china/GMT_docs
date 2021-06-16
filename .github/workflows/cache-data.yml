@@ -37,12 +37,14 @@ jobs:
                         @earth_relief_06m \
                         @earth_relief_05m \
                         @earth_age_06m \
-                        @age_chrons_GTS2012_2020.cpt \
                         @earth_day_20m \
                         @earth_day_06m \
                         @earth_night_20m \
                         @earth_mask_05m
           gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
+          # cache
+          gmt which -Ga @age_chrons_GTS2012_2020.cpt \
+                        @ternary.txt
           # Download the china-geospatial-data datasets
           git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
           rm -rf china-geospatial-data/.git
