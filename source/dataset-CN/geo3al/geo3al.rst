@@ -1,7 +1,7 @@
-geo3al: 中国大陆及临区地质图数据
+geo3al: 中国大陆及邻区地质图数据
 ================================
 
-中国大陆及临区地质图数据 :file:`geo3al.gmt`\ 来自
+中国大陆及邻区地质图数据 :file:`geo3al.gmt`\ 来自
 美国USGS(`Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`_)
 ，其分辨率为1:4,000,000。 原始的 ``.shp`` 数据文件使用的不是WGS84坐标系统，不便于 GMT 使用。
 社区提供的数据已由贡献者徐弥坚进行过坐标转换，处理为 GMT 易用的WGS84坐标。数据处理具体步骤如下：
