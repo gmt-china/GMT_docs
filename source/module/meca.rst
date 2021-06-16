@@ -50,17 +50,22 @@ meca
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. _-A:
 
-**-C**\ [*pen*][**+s**\ *size*]
+**-A**\ [**+p**\ *pen*][**+s**\ *size*]
     在 (*newX*,\ *newY*) 处绘制震源球
 
-    默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 **-C** 选项，
+    默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 **-A** 选项，
     则将震源球绘制在 (*newX*,\ *newY*) 处，在震源位置绘制一个小圆，
     并将 (*X*,\ *Y*) 和 (*newX*,\ *newY*) 连线。
 
     *pen* 控制连线的画笔属性，\ **+s**\ *size* 指定圆的大小。
     [默认使用 **-W** 选项的 *pen* 属性，\ *size* 为0]
+
+.. _-C:
+
+**-C**\ *cpt*
+    指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。
 
 .. _-D:
 
@@ -154,11 +159,6 @@ meca
 
 .. include:: explain_-XY.rst_
 
-.. _-Z:
-
-**-Z**\ *cpt*
-    指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。
-
 .. include:: explain_-di.rst_
 
 .. include:: explain_-e.rst_
@@ -178,29 +178,42 @@ meca
 示例
 ----
 
-绘制了两个震源球，位置在其震中处。震源球的大小随震级变化：5 级地震的震源球大小为 1 厘米::
+绘制了两个震源球，位置在其震中处。震源球的大小随震级变化：5 级地震的震源球大小为 1 厘米:
 
-    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png beachball_1 << EOF
+.. gmtplot::
+   :show-code: true
+   :width: 75%
+
+    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png,pdf beachball_1 << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
     104.33 31.91 39.8 32 64 85 7 0 0 A
     104.11 31.52 27.1 22 53 57 6 0 0 B
     EOF
 
-绘制了两个震源球，位置在其震中处。震源球的大小固定::
+绘制了两个震源球，位置在其震中处。震源球的大小固定:
 
-    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M -png beachball_2 << EOF
+.. gmtplot::
+   :show-code: true
+   :width: 75%
+
+    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M -png,pdf beachball_2 << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
     104.33 31.91 39.8 32 64 85 7 0 0 A
     104.11 31.52 27.1 22 53 57 6 0 0 B
     EOF
 
-震源球大小随震级变化，颜色随深度变化::
+震源球大小随震级变化，颜色随深度变化:
+
+.. gmtplot::
+   :show-code: true
+   :width: 75%
 
     #!/bin/bash
     gmt begin beachball_3 png,pdf
-    gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSEN
+    gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSen
+    gmt coast -Da -Ia/0.05,black
     gmt makecpt -T0/100/20
-    gmt meca -C+s5p -Sa1.3c -Z << EOF
+    gmt meca -A+s0.2c -Sa1.3c -C << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
     104.33 31.91 39.8  32 64   85 7.0      0     0 A
     104.11 31.52 27.1  22 53   57 6.0      0     0 B
