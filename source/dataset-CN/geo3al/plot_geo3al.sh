@@ -1,6 +1,6 @@
 #!/bin/bash
 data=geo3al.gmt
-cpt=geoage.cpt
+cpt=GTS2012_periods.cpt
 rocksize=400
 lengsize=0.15i
 
