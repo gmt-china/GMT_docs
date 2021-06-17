@@ -14,6 +14,11 @@
     :width: 70%
     
     #!/bin/bash
+    #!/usr/bin/env bash
+    #
+    # 事件相对台站的震中距方位角分布图
+    #
+
     # 假定台站位于 105/30 处
     stlo=105
     stla=30
