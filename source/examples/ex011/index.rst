@@ -29,7 +29,7 @@
     gmt set FORMAT_GEO_MAP=+D
     gmt coast -J$J -Rg -A10000 -Ggrey
     # 绘制台站位置（三角形）
-    echo $stlo $stla | gmt plot -St0.4c -Ggreen -Bya180
+    echo $stlo $stla | gmt plot -St0.4c -Gblue -Bya180
     # 绘制地震震源位置
     gmt plot -Sa0.4c -Gyellow -W0.1p << EOF
     145 30
