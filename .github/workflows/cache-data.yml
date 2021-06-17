@@ -3,7 +3,7 @@ name: Cache data
 
 on:
   # Uncomment the 'pull_request' line below to manually re-cache data artifacts
-  # pull_request:
+  pull_request:
   # Schedule runs on 12 noon every Sunday
   schedule:
     - cron: '0 12 * * 0'
@@ -44,7 +44,8 @@ jobs:
           gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
           # cache
           gmt which -Ga @age_chrons_GTS2012_2020.cpt \
-                        @ternary.txt
+                        @ternary.txt \
+                        @sunglasses.eps
           # Download the china-geospatial-data datasets
           git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
           rm -rf china-geospatial-data/.git
