@@ -8,6 +8,12 @@
 2. GMT 远程数据：GMT 官方整理的保存在远程 GMT 数据服务器中的数据
 3. 自定义数据：用户自行准备的数据
 
+.. toctree::   
+   :maxdepth: 1
+   :hidden:
+ 
+   usage
+
 GMT 内置数据
 ------------
 
