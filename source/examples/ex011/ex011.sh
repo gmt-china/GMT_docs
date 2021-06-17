@@ -1,4 +1,3 @@
-#!/bin/bash
 #!/usr/bin/env bash
 #
 # 事件相对台站的震中距反方位角分布图
