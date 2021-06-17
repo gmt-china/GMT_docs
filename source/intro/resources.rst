@@ -9,19 +9,19 @@
 #. `GMT6初学者教程（视频教程） <https://www.bilibili.com/video/BV1C64y1m7qP>`__
    （作者: `@liuzhumei <https://github.com/liuzhumei>`__\  、\ `陈箫翰 <https://github.com/covmat>`__\ ）
 #. :doc:`GMT中文手册：入门教程 </tutorial/index>`
-#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/6.1/tutorial.html>`__
+#. `GMT官方入门教程 <https://docs.generic-mapping-tools.org/6.2/tutorial.html>`__
 #. `GMT 教學手冊 <http://gmt-tutorials.org/>`__\ （作者: `鄭懷傑 <https://github.com/whyjz>`__\ ）
 
 **参考手册**
 
 #. `GMT中文手册 <https://docs.gmt-china.org/>`__
-#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/6.1/cookbook.html>`__
-#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/6.1/modules.html>`__
+#. `GMT官方参考手册 <https://docs.generic-mapping-tools.org/6.2/cookbook.html>`__
+#. `GMT官方模块手册 <https://docs.generic-mapping-tools.org/6.2/modules.html>`__
 
 **图库与示例**
 
-#. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.1/gallery.html>`__
-#. `GMT官方动画示例 <https://docs.generic-mapping-tools.org/6.1/animations.html>`__
+#. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.2/gallery.html>`__
+#. `GMT官方动画示例 <https://docs.generic-mapping-tools.org/6.2/animations.html>`__
 #. `GMT中文社区示例 <https://gmt-china.org/gallery/>`__
 #. `GMT中文社区博客 <https://gmt-china.org/blog/>`__
 #. `GMT YouTube Channel <https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q>`__

@@ -11,6 +11,7 @@
   // Add one entry "version: title" for any minor releases
   var all_versions = {
     'latest': 'latest',
+    '6.2': '6.2',
     '6.1': '6.1',
     '6.0': '6.0',
     '5.4': '5.4',

@@ -157,23 +157,28 @@ solar
 
 .. include:: explain_help.rst_
 
+.. _gmt-solar-example:
+
 示例
 ----
 
 .. gmtplot::
    :width: 60%
 
-   gmt begin solar png
-     gmt coast -Rd -JKs0/10i -Dl -A5000 -W0.5p -N1/0.5p,gray -S175/210/255 -Bafg --MAP_FRAME_TYPE=plain
+    gmt begin solar png,pdf
+      gmt coast -Rd -JKs0/10i -Dl -A5000 -W0.5p -S175/210/255 -Bafg --MAP_FRAME_TYPE=plain
 
-     gmt solar -Td+d2016-02-09T16:00:00 -Gnavy@95
+      # 绘制晨昏线
+      gmt solar -Td+d2016-02-09T16:00:00 -Gnavy@95
 
-     gmt solar -Tc+d2016-02-09T16:00:00 -Gnavy@85
-     gmt solar -Tn+d2016-02-09T16:00:00 -Gnavy@80
-     gmt solar -Ta+d2016-02-09T16:00:00 -Gnavy@80
+      # 绘制不同定义的晨昏区
+      gmt solar -Tc+d2016-02-09T16:00:00 -Gnavy@85
+      gmt solar -Tn+d2016-02-09T16:00:00 -Gnavy@80
+      gmt solar -Ta+d2016-02-09T16:00:00 -Gnavy@80
 
-     gmt solar -I+d2016-02-09T16:00:00 -C | gmt plot -Sksunglasses/1.5c -Gyellow
-   gmt end
+      # 计算指定时间太阳位置并绘制在底图上
+      gmt solar -I+d2016-02-09T16:00:00 -C | gmt plot -Sk@sunglasses/1.5c -Gyellow -W0.2p
+    gmt end show
 
 参考
 ----
