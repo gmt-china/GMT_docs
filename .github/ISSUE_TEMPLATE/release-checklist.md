@@ -29,6 +29,7 @@ assignees: ''
   - [ ] `source/intro`: `overview.rst` and `resources.rst`
   - [ ] `source/install`: `macOS.rst`, `windows.rst`, `cross-platform.rst`, and `build-source.rst`
   - [ ] `source/tutorial/get-started`: `linux.rst`, `macos.rst`, `windows.rst`
+  - [ ] `source/GMT_style.sty`
 
 ---
 
