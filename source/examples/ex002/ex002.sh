@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# 绘制地球内部主要界面
+#
 
 gmt begin earth-discontinuities pdf,png
 gmt set MAP_GRID_PEN_PRIMARY 1p
