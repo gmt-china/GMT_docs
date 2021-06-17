@@ -157,6 +157,8 @@ solar
 
 .. include:: explain_help.rst_
 
+.. _gmt-solar-example:
+
 示例
 ----
 
