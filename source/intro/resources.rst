@@ -22,12 +22,10 @@
 
 #. `GMT官方示例 <https://docs.generic-mapping-tools.org/6.2/gallery.html>`__
 #. `GMT官方动画示例 <https://docs.generic-mapping-tools.org/6.2/animations.html>`__
-#. `GMT中文社区示例 <https://gmt-china.org/gallery/>`__
-#. `GMT中文社区博客 <https://gmt-china.org/blog/>`__
+#. :doc:`GMT中文社区示例 </examples/index>`
 #. `GMT YouTube Channel <https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q>`__
 
 **论坛/讨论组**
 
 #. 地学GMT中文社区QQ群：1群（218905582）；2群（791856541）[**请勿重复加群!**]
 #. `GMT官方论坛 <https://forum.generic-mapping-tools.org/>`_
-#. `GMT Gitter 聊天室 <https://gitter.im/GenericMappingTools>`_
