@@ -1,9 +1,10 @@
 geo3al: 中国大陆及邻区地质图数据
 ================================
 
-中国大陆及邻区地质图数据 :file:`geo3al.gmt`\ 来自
-美国USGS(`Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`_)，
-其分辨率为1:4,000,000。原始的 ``.shp`` 数据文件使用的不是WGS84坐标系统，不便于 GMT 使用，数据处理具体步骤如下：
+中国大陆及邻区地质图数据 :file:`geo3al.gmt`\ 来自 USGS
+`Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`__\ ，
+分辨率为 1:4,000,000。原始的 **.shp** 格式的数据文件未使用 WGS84 坐标系统，不便于 GMT 使用。
+为了方便 GMT 用户使用，需要对原始数据做一定的转换和处理，具体步骤如下。
 
 首先 :doc:`/table/ogr2ogr`\ ，将 ``Shapefile`` 转换为GMT可识别的 ``OGR/GMT`` 格式。
 原数据的坐标不是我们希望的经纬度坐标，而是大地坐标，
