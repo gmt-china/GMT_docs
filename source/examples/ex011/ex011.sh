@@ -23,7 +23,7 @@ gmt plot -Sa0.25c -Gred << EOF
 80 -10
 EOF
 
-# 绘制30和60度等震中距线
+# 绘制等震中距线：30度（直径 6672 km）、60 度（13344 km）
 echo $stlo $stla 6672 | gmt plot -SE- -W1p,red
 echo $stlo $stla 13344 | gmt plot -SE- -W1p,red
 # 在30, 60, 90度处添加文字
