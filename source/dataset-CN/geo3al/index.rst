@@ -25,5 +25,5 @@ geo3al: 中国大陆及邻区地质图数据
 数据来源及引用
 --------------
 - USGS Generalized Geology of the Far East (geo3al). https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al
-- 用GMT绘制中国大陆及邻区地质年代图. https://blog.xumijian.me/post/gmt-geo/
+- 用 GMT 绘制中国大陆及邻区地质年代图：https://blog.xumijian.me/post/gmt-geo/
 - Po-Chin Tseng的博客. https://jimmytseng79.github.io/GMT5_tutorials/geology_map.html
