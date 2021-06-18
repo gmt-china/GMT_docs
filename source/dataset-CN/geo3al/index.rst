@@ -15,8 +15,8 @@ geo3al: 中国大陆及邻区地质图数据
 
 处理好的数据的具体下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
 
-示例代码使用地质年代CPT色标文件修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`_ 。
-下载地址 :download:`geoage.cpt` 。
+示例代码使用地质年代 CPT 色标文件修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
+下载地址：\ :download:`geoage.cpt` 。
 
 .. gmtplot:: plot_geo3al.sh
    :show-code: true
