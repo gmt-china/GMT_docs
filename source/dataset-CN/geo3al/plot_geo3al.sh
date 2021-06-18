@@ -1,27 +1,25 @@
+#!/bin/bash
 data=geo3al.gmt
 cpt=geoage.cpt
-rocksize=500
 lengsize=0.381c
 
 gmt begin geo3al png,pdf
-    gmt set FONT_ANNOT_PRIMARY 10
-    gmt set MAP_FRAME_WIDTH 0.08
-    gmt set MAP_TICK_LENGTH_PRIMARY 0.08
+    gmt set FONT_ANNOT_PRIMARY 10 MAP_TICK_LENGTH_PRIMARY 0.08
+    # plot coastlines
+    gmt coast -R70/150/13/55 -JM22c -Baf -Df -G255 -BWsNe
+    # plot the geology map.
+    # -aZ="GLG": using the "GLG" property as the Z value
+    # -G+z -C$cpt: the color is determined by the Z value and the CPT file
+    gmt plot $data -C$cpt -aZ="GLG" -G+z
 
-    gmt coast -R70/150/13/55 -JM21.844c -Baf -Df -G255 -BWsNe
-    gmt plot $data -C$cpt -L
-
-    gmt gmtconvert $data -S"|v|" > tmp
-    awk '!/^($|B|F|#)/{print $1,"p'$rocksize'/28:F100B"$2}' $cpt > tmp.cpt
-    gmt plot tmp -Ctmp.cpt -L
-
-    gmt gmtconvert $data -S"|i|" > tmp
-    awk '!/^($|B|F|#)/{print $1,"p'$rocksize'/29:F100B"$2}' $cpt > tmp.cpt
-    gmt plot tmp -Ctmp.cpt -L
-
-    gmt gmtconvert $data -S"|w|" > tmp
-    awk '!/^($|B|F|#)/{print $1,"p'$rocksize'/44:F100B"$2}' $cpt > tmp.cpt
-    gmt plot tmp -Ctmp.cpt -L
+    # plot rock types using diffenrent patterns
+    # -aI="TYPE": using the "TYPE" properties as ID
+    # -S"-Iv": only keep data segments that matches "-Iv"
+    # v means XXX rocks, i means XXX rocks, w means XXX rocks
+    # -Gp28+r500+f100+b-: fill the region with pattern 28, dpi=500, foregroud color=100 (gray), backgroud color=- (transparency)
+    gmt convert $data -aI="TYPE" -S"-Iv" | gmt plot -Gp28+r500+f100+b-
+    gmt convert $data -aI="TYPE" -S"-Ii" | gmt plot -Gp29+r500+f100+b-
+    gmt convert $data -aI="TYPE" -S"-Iw" | gmt plot -Gp44+r500+f100+b-
 
     gmt coast -SCADETBLUE1
 
@@ -48,5 +46,5 @@ S 0.3c r 0.508c p400/29:B255 0.3p 0.7c Intrusive rocks
 S 0.3c r 0.508c p400/44:B255 0.3p 0.7c Ultrabasic igneous rock or ophiolites 
 EOF
 
-    rm tmp  tmp.cpt
+    rm tmp
 gmt end show
