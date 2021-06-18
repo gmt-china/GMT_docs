@@ -5,8 +5,8 @@ lengsize=0.381c
 
 gmt begin geo3al png,pdf
     gmt set FONT_ANNOT_PRIMARY 10 MAP_TICK_LENGTH_PRIMARY 0.08
-    # plot coastlines
     gmt coast -R70/150/13/55 -JM22c -Baf -Df -G255 -BWsNe
+
     # plot the geology map
     # -aZ="GLG": using the "GLG" property as the Z value
     # -G+z -C$cpt: the color is determined by the Z value and the CPT file
@@ -14,8 +14,9 @@ gmt begin geo3al png,pdf
 
     # plot rock types using diffenrent patterns
     # -aI="TYPE": using the "TYPE" properties as ID
-    # -S"-Iv": only keep data segments that matches "-Iv"
-    # v means XXX rocks, i means XXX rocks, w means XXX rocks
+    # -S"-Iv": only keep data segments that matches "-Iv" (v means XXX rocks)
+    # -S"-Ii": only keep data segments that matches "-Ii" (i means XXX rocks)
+    # -S"-Iw": only keep data segments that matches "-Iw" (w means XXX rocks)
     # -Gp28+r500+f100+b-: fill the region with pattern 28, dpi=500, foregroud color=100 (gray), backgroud color=- (transparency)
     gmt convert $data -aI="TYPE" -S"-Iv" | gmt plot -Gp28+r500+f100+b-
     gmt convert $data -aI="TYPE" -S"-Ii" | gmt plot -Gp29+r500+f100+b-
@@ -23,6 +24,7 @@ gmt begin geo3al png,pdf
 
     gmt coast -SCADETBLUE1
 
+    # plot age legend 
     gmt set FONT_ANNOT_PRIMARY 7p
     cat > tmp << EOF
 H 10 3 Age of rock units
