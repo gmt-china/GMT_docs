@@ -12,7 +12,7 @@
    CN-border
    CN-block
    CN-faults
-   geo3al/geo3al
+   geo3al/index
 
 **下载数据**
 
