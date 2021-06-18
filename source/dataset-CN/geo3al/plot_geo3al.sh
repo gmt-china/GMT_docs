@@ -41,9 +41,9 @@ EOF
 H 10 3 Rock type
 
 N 2
-S 0.3c r 0.508c p400/28:B255 0.3p 0.7c Volcanic rocks
-S 0.3c r 0.508c p400/29:B255 0.3p 0.7c Intrusive rocks
-S 0.3c r 0.508c p400/44:B255 0.3p 0.7c Ultrabasic igneous rock or ophiolites 
+S 0.3c r 0.508c p28+r500+f100+b255 0.3p 0.7c Volcanic rocks
+S 0.3c r 0.508c p29+r500+f100+b255 0.3p 0.7c Intrusive rocks
+S 0.3c r 0.508c p44+r500+f100+b255 0.3p 0.7c Ultrabasic igneous rock or ophiolites 
 EOF
 
     rm tmp
