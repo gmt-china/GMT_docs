@@ -9,7 +9,7 @@ geo3al: 中国大陆及邻区地质图数据
 首先使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 **.shp** 格式转换为 GMT 可识别的 **OGR/GMT** 格式。
 原数据的坐标系统并不是经纬度坐标，而是大地坐标。因此，需要使用 ``ogr2ogr`` 的 **-t_srs** 参数进行坐标转换::
 
-    ogr2ogr -f GMT geo3al.gmt geo3al.shp -t_srs EPSG:4326
+    $ ogr2ogr -f GMT geo3al.gmt geo3al.shp -t_srs EPSG:4326
     
 在此需要注意的是，除了 ``shp`` 文件以外， ``.dbf`` , ``.prj`` , ``.shx`` 等文件也必须放在同一文件夹下。
 
