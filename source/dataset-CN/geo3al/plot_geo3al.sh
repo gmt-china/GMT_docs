@@ -7,7 +7,7 @@ gmt begin geo3al png,pdf
     gmt set FONT_ANNOT_PRIMARY 10 MAP_TICK_LENGTH_PRIMARY 0.08
     # plot coastlines
     gmt coast -R70/150/13/55 -JM22c -Baf -Df -G255 -BWsNe
-    # plot the geology map.
+    # plot the geology map
     # -aZ="GLG": using the "GLG" property as the Z value
     # -G+z -C$cpt: the color is determined by the Z value and the CPT file
     gmt plot $data -C$cpt -aZ="GLG" -G+z
