@@ -11,7 +11,7 @@ geo3al: 中国大陆及邻区地质图数据
 
     $ ogr2ogr -f GMT geo3al.gmt geo3al.shp -t_srs EPSG:4326
     
-在此需要注意的是，除了 ``shp`` 文件以外， ``.dbf`` , ``.prj`` , ``.shx`` 等文件也必须放在同一文件夹下。
+需要注意的是，:file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和 :file:`shp` 文件放在同一目录下。
 
 处理好的数据的具体下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
 
