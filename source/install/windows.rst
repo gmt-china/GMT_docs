@@ -97,23 +97,14 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
         请注意 Ghostscript 的版本！
         由于Ghostscript自身的bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
 
-3.  安装GSview 5.0 (**不推荐安装**)
-
-    GSview是一个PostScript阅读器，可用于查看GMT生成的PS格式的图片。
-    GMT6默认生成PDF格式的图片，因而无需安装GSview。
-    如果坚持想要生成并查看PS格式的图片，则可以安装GSview。
-
-    - `gsv50w64.exe (64位) <http://www.ghostgum.com.au/download/gsv50w64.exe>`__
-    - `gsv50w32.exe (32位) <http://www.ghostgum.com.au/download/gsv50w32.exe>`__
-
-4.  安装 GraphicsMagick (**根据需求选择是否安装**)
+3.  安装 GraphicsMagick (**根据需求选择是否安装**)
 
     GMT 的 **movie** 模块在制作 GIF 格式的动画时需要
     使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
     如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境
     变量 **PATH** 中，以保证 GMT 可以找到其提供的 **gm** 命令。
 
-5.  安装 UnixTools
+4.  安装 UnixTools
 
     GMT中文社区图库例子中使用到的 **gawk** 等Linux下的命令并不是GMT的一部分。
     如果想要在Bat脚本中使用各种Linux下的常用命令，
