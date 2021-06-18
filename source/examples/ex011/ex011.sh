@@ -15,7 +15,7 @@ gmt coast -J$J -Rg -A10000 -Ggrey
 
 # 绘制台站位置（三角形）
 echo $stlo $stla | gmt plot -St0.4c -Gblack -Bya180
-# 绘制地震震源位置
+# 绘制地震位置（五角星）
 gmt plot -Sa0.25c -Gred -W0.1p << EOF
 145 30
 160 40
