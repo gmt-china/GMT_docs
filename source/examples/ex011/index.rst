@@ -11,5 +11,5 @@
 下面的例子展示了如何绘制地震随震中距与反方位角的分布图：
 
 .. gmtplot:: ex011.sh
-    :width: 70%
+    :width: 50%
     :show-code: true
