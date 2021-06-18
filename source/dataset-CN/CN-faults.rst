@@ -1,35 +1,50 @@
 CN-faults: 中国断层数据
 =======================
 
-中国断层数据 :file:`CN-faults.gmt` 包含了中国区域的主要断层，
+CN-faults 数据包含了中国区域内主要断层的地理位置信息。
+
+数据文件
+--------
+
+CN-faults 提供了一个数据文件：
+
+- :file:`CN-faults.gmt`\ ：中国区域主要断层
+
 具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
+示例图
+------
+
 绘制全国断层
-------------
+++++++++++++
+
+绘制全国所有断层：
 
 .. gmtplot::
    :show-code: true
    :width: 75%
 
-   gmt begin CN-faults png,pdf
-   gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
-   gmt plot CN-faults.gmt -W1p,red
-   gmt end show
+    gmt begin CN-faults png,pdf
+        gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
+        gmt plot CN-faults.gmt -W1p,red
+    gmt end show
 
 绘制区域断层
-------------
+++++++++++++
+
+绘制一个小区域内的断层：
 
 .. gmtplot::
    :show-code: true
-   :width: 75%
+   :width: 50%
 
-   gmt begin CN-faults png,pdf
-   gmt coast -JM15c -RCN.51 -Baf -W0.5p,black
-   gmt plot CN-faults.gmt -W1p,red
-   gmt end show
+    gmt begin CN-regional-faults png,pdf
+        gmt basemap -JM15c -R95/105/25/35 -Baf
+        gmt plot CN-faults.gmt -W1p,red
+    gmt end show
 
 标注断层名
-----------
+++++++++++
 
 对于英文断层名，GMT中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
 **-Sq** 选项功能强大，可以灵活地设置断层名的位置、字体等属性。
@@ -46,22 +61,31 @@ CN-faults: 中国断层数据
 
 .. gmtplot::
    :show-code: true
-   :width: 75%
+   :width: 50%
 
-   gmt begin CN-faults png,pdf
-   gmt coast -JM10c -RTW -Baf -W0.5p,black
-   # 由于 -Sq 无法支持中文，该命令将断层名称输出到文件faultname.dat中，并绘制了一个全透明的图层
-   # 实际上，当执行脚本获得faultname.dat 后，可将该命令注释掉
-   gmt plot CN-faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
-   # 使用 plot 绘制断层
-   gmt plot CN-faults.gmt -W1p,red
-   # 标注断层名
-   gmt text faultname.dat -F+f15p,46,red+a
-   rm faultname.dat
-   gmt end show
+    gmt begin CN-faults-labeling png,pdf
+        gmt coast -JM10c -RTW -Baf -W0.5p,black
+        # 由于 -Sq 无法支持中文，该命令将断层名称输出到文件faultname.dat中，并绘制了一个全透明的图层
+        # 实际上，当执行脚本获得faultname.dat 后，可将该命令注释掉
+        gmt plot CN-faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
+        # 使用 plot 绘制断层
+        gmt plot CN-faults.gmt -W1p,red
+        # 标注断层名
+        gmt text faultname.dat -F+f15p,46,red+a
+        rm faultname.dat
+    gmt end show
 
-数据来源及引用
+数据来源及处理
 --------------
 
-- 中文引用: 邓起东, 张培震, 冉勇康, 杨晓平, 闵伟, 陈立春, 2003. 中国活动构造与地震活动, 地学前缘, 10(S1), 66-73.
-- 英文引用: Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003. Active tectonics and earthquake activities in China. Earth Science Frontiers, 10(S1): 66-73.
+CN-faults 原始数据来源于邓起东院士提供的 Shapefile 格式的数据，并
+由\ `刘珠妹 <https://github.com/liuzhumei>`__\ 通过如下命令转换为
+GMT 可使用的格式::
+
+    $ ogr2ogr -f GMT CN-faults.gmt faults.shp
+
+数据引用
+--------
+
+- 中文引用： 邓起东, 张培震, 冉勇康, 杨晓平, 闵伟, 陈立春, 2003. 中国活动构造与地震活动, 地学前缘, 10(S1), 66-73.
+- 英文引用： Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003. Active tectonics and earthquake activities in China. Earth Science Frontiers, 10(S1): 66-73.
