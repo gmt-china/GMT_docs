@@ -22,7 +22,8 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
 
     gmt subplot begin 2x3 -Fs5c/3c
 
-定义了一个2行3列的子图布局。\ **-Fs5c/3c** 则指定了每个子图区域的宽度为5厘米，
+定义了一个2行3列的子图布局，注意中间为小写英文字母 **x**\ ，
+不是星号或其他符号。\ **-Fs5c/3c** 则指定了每个子图区域的宽度为5厘米，
 高度为3厘米。相邻子图之间的间隔则可以用 **-M** 选项控制。
 最终得到的子图布局如下图所示：
 
@@ -34,7 +35,7 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
     nrow=2
     ncol=3
     gmt begin subplot png,pdf
-    gmt subplot begin ${nrow}x${ncol} -Fs5c/3c+d -Blrtb
+    gmt subplot begin ${nrow}x${ncol} -Fs5c/3c -Blrtb
         for index in $(seq 0 $((nrow*ncol-1))); do
         i=$((index/ncol))
         j=$((index%ncol))
@@ -160,9 +161,9 @@ X轴范围。此时可以使用 **-S** 选项设置各子图之间共用X或Y轴
         gmt basemap -R0/10/0/10 -JX?
       gmt subplot end
 
-      gmt subplot begin 1x1 -Ff15c/3c -A -BWSen -Yh+1c
+      gmt subplot begin 1x1 -Ff15c/3c -A -Yh+1c
         gmt subplot set 0 -A'(a)'
-        gmt basemap -R0/10/0/10 -JX?
+        gmt basemap -R0/10/0/10 -JX? -BWSen -Bxa2f1 -Bya2f1
       gmt subplot end
     gmt end show
 

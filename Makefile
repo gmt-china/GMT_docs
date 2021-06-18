@@ -16,15 +16,18 @@ export GMT_END_SHOW=off
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile build build_html build_pdf optimize_pdf serve watch
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-build: $(HTML) latexpdf optimize_pdf
-	@echo "Copy built PDF to HTML directory"
+build: build_html build_pdf
+
+build_html: $(HTML)
+
+build_pdf: latexpdf optimize_pdf
 	cp $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(HTML)/
 
 # reduce file size of the final PDF documentation

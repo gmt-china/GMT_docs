@@ -12,6 +12,12 @@ GMT 是地球科学最广泛使用的制图软件之一。
 手册详尽地介绍了GMT的用法并提供了大量的实用示例。
 其既可以作为初学者的入门读物，也可以作为日常使用的参考书。
 
+.. image:: https://user-images.githubusercontent.com/50591376/119465777-9182ef80-bd76-11eb-9bd7-67c58f61795f.jpg
+    :alt: GMT6初学者教程
+    :width: 80%
+    :align: center
+    :target: https://www.bilibili.com/video/BV1C64y1m7qP
+
 文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
 欢迎更多的志愿者加入到文档的维护工作中来。
 
@@ -48,6 +54,13 @@ GMT 是地球科学最广泛使用的制图软件之一。
 
 .. toctree::
    :maxdepth: 3
+   :caption: GMT 实例
+   :hidden:
+
+   examples/index
+
+.. toctree::
+   :maxdepth: 3
    :caption: GMT 进阶
    :hidden:
 
@@ -70,5 +83,5 @@ GMT 是地球科学最广泛使用的制图软件之一。
    :hidden:
 
    appendix/index
-   contributing
-   contributors
+   contributing/index
+   贡献者列表 <https://github.com/gmt-china/GMT_docs/graphs/contributors>

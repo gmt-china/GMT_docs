@@ -1,9 +1,8 @@
-CN_faults: 中国断层数据
+CN-faults: 中国断层数据
 =======================
 
-中国断层数据 ``CN_faults.gmt`` 中包含了中国区域的主要断层。
-
-数据下载地址: https://raw.githubusercontent.com/gmt-china/china-geospatial-data/master/CN_faults.gmt
+中国断层数据 :file:`CN-faults.gmt` 包含了中国区域的主要断层，
+具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
 绘制全国断层
 ------------
@@ -12,9 +11,9 @@ CN_faults: 中国断层数据
    :show-code: true
    :width: 75%
 
-   gmt begin CN_faults png,pdf
+   gmt begin CN-faults png,pdf
    gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
-   gmt plot CN_faults.gmt -W1p,red
+   gmt plot CN-faults.gmt -W1p,red
    gmt end show
 
 绘制区域断层
@@ -24,9 +23,9 @@ CN_faults: 中国断层数据
    :show-code: true
    :width: 75%
 
-   gmt begin CN_faults png,pdf
+   gmt begin CN-faults png,pdf
    gmt coast -JM15c -RCN.51 -Baf -W0.5p,black
-   gmt plot CN_faults.gmt -W1p,red
+   gmt plot CN-faults.gmt -W1p,red
    gmt end show
 
 标注断层名
@@ -49,13 +48,13 @@ CN_faults: 中国断层数据
    :show-code: true
    :width: 75%
 
-   gmt begin CN_faults png,pdf
+   gmt begin CN-faults png,pdf
    gmt coast -JM10c -RTW -Baf -W0.5p,black
    # 由于 -Sq 无法支持中文，该命令将断层名称输出到文件faultname.dat中，并绘制了一个全透明的图层
    # 实际上，当执行脚本获得faultname.dat 后，可将该命令注释掉
-   gmt plot CN_faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
+   gmt plot CN-faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
    # 使用 plot 绘制断层
-   gmt plot CN_faults.gmt -W1p,red
+   gmt plot CN-faults.gmt -W1p,red
    # 标注断层名
    gmt text faultname.dat -F+f15p,46,red+a
    rm faultname.dat

@@ -1,0 +1,100 @@
+#
+# Build and deploy the documentation
+#
+name: Deploy
+
+on:
+  #pull_request: # enable pull_request for testing
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      GMT_VERSION: 6.2.0
+      GMT_DOC_VERSION: 6.2
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      # Cancel previous runs that are not completed
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.0
+
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.1.1
+        with:
+          python-version: 3.8
+          channels: conda-forge
+          miniconda-version: "latest"
+
+      - name: Install packages
+        run: |
+          conda install gmt=${GMT_VERSION}
+          pip install -r requirements.txt
+
+      # Download cached remote files (artifacts) from GitHub
+      - name: Download remote data from GitHub
+        uses: dawidd6/action-download-artifact@v2.14.0
+        with:
+          workflow: cache-data.yml
+          workflow_conclusion: success
+          name: gmt-cache
+          path: .gmt
+
+      # Move downloaded files to ~/.gmt directory and list them
+      - name: Move and list downloaded remote files
+        run: |
+          mkdir -p ~/.gmt
+          mv .gmt/* ~/.gmt
+          # Change modification times of the two files, so GMT won't refresh it
+          touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
+          ls -lhR ~/.gmt
+
+      - name: Build HTML
+        run: make build_html
+
+      - name: Install TinyTeX
+        uses: r-lib/actions/setup-tinytex@v1
+
+      - name: Install LaTeX packages
+        run: |
+          tlmgr update --self
+          tlmgr install capt-of caption ctex enumitem everysel fancyhdr fandol \
+                        float ms needspace oberdiek parskip pdftexcmds tabulary \
+                        titlesec ulem upquote varwidth wrapfig xcolor xecjk \
+                        xindy zhnumber
+
+      - name: Build PDF
+        run: make build_pdf
+
+      - name: Checkout the gh-pages branch
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: gh-pages
+          path: deploy
+          fetch-depth: 0
+
+      - name: Push the documentation to gh-pages
+        run: |
+          cd deploy
+          touch .nojekyll
+          # Update the directory
+          rm -rvf ${GMT_DOC_VERSION}
+          cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
+          # let "latest" link to the latest version
+          rm -f latest
+          ln -sf ${GMT_DOC_VERSION} latest
+          # commit all changes
+          git add -A .
+          git status
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          message="Deploy ${GITHUB_SHA::8}"
+          git commit --amend --reset-author -m "$message"
+          git push -fq origin gh-pages 2>&1 >/dev/null

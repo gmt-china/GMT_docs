@@ -8,9 +8,9 @@ GMT 为 Windows 用户提供了 32 位和 64位的安装包，可以直接下载
     安装前请检查你的Windows登录用户名①是否包含空格、②是否为 **Administrator** 。
     以上两种情况都会导致GMT运行出错。如果你的用户名不符合要求，请新建一个用户，
     并使用新用户登录Windows，再安装GMT。
-    
+
     此外，360等安全软件会在GMT安装过程中拦截PATH环境变量的修改。请务必关闭安全软件之后再安装。
-	
+
     GMT 提供的安装包不支持 Windows XP。
 
 GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件：
@@ -24,8 +24,8 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 1.  下载 GMT 安装包
 
-    - `gmt-6.1.1-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.1-win64.exe>`__
-    - `gmt-6.1.1-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.1-win32.exe>`__
+    - `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
+    - `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
 
 2.  安装GMT
 
@@ -89,36 +89,28 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
     安装包下载地址:
 
-    - `gs950w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe>`__
-    - `gs950w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w32.exe>`__
+    - `gs9540w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
+    - `gs9540w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
 
     .. warning::
 
         请注意 Ghostscript 的版本！
         由于Ghostscript自身的bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
 
-3.  安装GSview 5.0 (**不推荐安装**)
-
-    GSview是一个PostScript阅读器，可用于查看GMT生成的PS格式的图片。
-    GMT6默认生成PDF格式的图片，因而无需安装GSview。
-    如果坚持想要生成并查看PS格式的图片，则可以安装GSview。
-
-    - `gsv50w64.exe (64位) <http://www.ghostgum.com.au/download/gsv50w64.exe>`__
-    - `gsv50w32.exe (32位) <http://www.ghostgum.com.au/download/gsv50w32.exe>`__
-
-4.  安装 GraphicsMagick (**根据需求选择是否安装**)
+3.  安装 GraphicsMagick (**根据需求选择是否安装**)
 
     GMT 的 **movie** 模块在制作 GIF 格式的动画时需要
     使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
     如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境
     变量 **PATH** 中，以保证 GMT 可以找到其提供的 **gm** 命令。
 
-5.  安装 UnixTools
+4.  安装 UnixTools
 
     GMT中文社区图库例子中使用到的 **gawk** 等Linux下的命令并不是GMT的一部分。
     如果想要在Bat脚本中使用各种Linux下的常用命令，
     推荐使用GMT中文社区整理的Unix小工具合集包 UnixTools。
 
-    直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。
+    直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可：
 
-    下载地址: `UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`__
+    - 下载地址: `UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`__
+    - 简介: https://gmt-china.org/blog/unix-tools-for-windows/

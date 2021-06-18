@@ -23,7 +23,7 @@
 - **+c**\ ：假设原网格的Z值范围为 *zmin* 到 *zmax*\ ，插值后的Z值范围可能会超过这一范围，
   使用 **+c** 则将超过 *zmin* 和 *zmax* 的部分裁剪掉，以保证插值后的网格数据的范围
   不超过输入网格数据的范围
-- **+t**\ *threshold* 用于控制值为NaN的网格点在插值时的影响范围 [默认值为0.5]
-  A *threshold* of 1.0 requires all (4 or 16) nodes involved in
-  interpolation to be non-NaN. 0.5 will interpolate about half way
-  from a non-NaN value; 0.1 will go about 90% of the way, etc.
+- **+t**\ *threshold* 用于控制值为 NaN 的网格点在插值时的影响范围 [默认值为 0.5]。
+  *threshold* 设置为 1.0 时，表示插值中的所有节点（4 或 16 个）都要为非 NaN；
+  0.5 表示距非 NaN 值的大约一半处进行插值；0.1 表示距非 NaN 值的大约 90% 处进行插值；
+  依此类推。
