@@ -17,15 +17,17 @@ geo3al: 中国大陆及邻区地质图数据
 数据转换和处理流程
 -----------------
 
-原始的 **.shp** 格式的数据文件未使用 WGS84 坐标系统，为了方便 GMT 用户使用，
-需要对原始数据做一定的转换和处理。
+原始的数据文件是 **.shp** 格式，且未使用 WGS84 坐标系统。
+为了方便 GMT 用户使用，需要对原始数据做一定的格式转换和处理。
 
-首先使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 **.shp** 格式转换为 GMT 可识别的 **OGR/GMT** 格式。
-原数据的坐标系统并不是经纬度坐标，而是大地坐标。因此，需要使用 ``ogr2ogr`` 的 **-t_srs** 参数进行坐标转换::
+使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 **.shp** 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
 
     $ ogr2ogr -f GMT geo3al.gmt geo3al.shp -t_srs EPSG:4326
     
-需要注意的是，:file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和 :file:`shp` 文件放在同一目录下。
+注意事项：
+
+- 原数据的坐标系统是大地坐标，不是经纬度坐标，因而需要使用 ``ogr2ogr`` 的 **-t_srs** 参数进行坐标转换
+- :file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和 :file:`shp` 文件放在同一目录下
 
 数据来源及引用
 --------------
@@ -34,7 +36,8 @@ geo3al: 中国大陆及邻区地质图数据
 
 - USGS Generalized Geology of the Far East (geo3al): https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al
 
-**数据转换与处理**：
+**数据转换与处理流程**：
+
 - `Mijian Xu <https://home.xumijian.me/>`__ 的博客：
   `用 GMT 绘制中国大陆及邻区地质年代图 <https://blog.xumijian.me/post/gmt-geo/>`__
 - `Po-Chin Tseng <https://github.com/jimmytseng79>`__ 的
