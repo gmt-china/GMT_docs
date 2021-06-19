@@ -31,31 +31,29 @@ GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦�
 中国国界省界示例图
 ------------------
 
-**-JD** 等距圆锥投影：
+使用等距圆锥投影（\ **-JD**\ ）绘制中国国界省界数据：
 
 .. gmtplot::
    :show-code: true
    :width: 75%
 
     gmt begin CN-border-JD pdf,png
-        gmt set FONT_ANNOT_PRIMARY 9p FORMAT_GEO_MAP ddd:mm:ssF
-        gmt set MAP_FRAME_WIDTH 2p MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
-        gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -B10f5g10 -BnSWe -Lg85/11+c11+w900k+f+u
+        gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
+        gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -Ba10f5g10 -Lg85/11+c11+w900k+f+u
         gmt plot CN-border-La.gmt -W0.1p
     gmt end show
 
-**-JM** 墨卡托投影：
+使用墨卡托投影（\ **-JM**\ ）绘制中国国界省界数据：
 
 .. gmtplot::
    :show-code: true
    :width: 75%
 
     gmt begin CN-border-JM pdf,png
-        gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2:1
-        gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_FRAME_WIDTH 3p
+        gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
         # 绘制中国地图
-        gmt basemap -JM105/35/10c -R70/138/13/56 -B10f5 -BnSWe --FONT_ANNOT_PRIMARY=7p
-        gmt coast -G244/243/239 -S167/194/223 -Lg85/17.5+c17.5+w800k+f+u --FONT_ANNOT_PRIMARY=4p
+        gmt coast -JM105/35/10c -R70/138/13/56 -Ba10f5g10 -G244/243/239 -S167/194/223
+        gmt basemap -Lg85/17.5+c17.5+w800k+f+u --FONT_ANNOT_PRIMARY=4p
         gmt plot CN-border-La.gmt -W0.1p
 
         # 绘制南海区域
