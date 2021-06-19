@@ -14,7 +14,9 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 运行GMT
 -------
 
-启动CMD后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
+启动CMD后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于：
+
+.. code-block:: console
 
             GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
