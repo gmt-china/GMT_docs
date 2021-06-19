@@ -95,46 +95,47 @@ GMT提供的DCW数据默认位于GMT安装目录下的 **share/dcw** 下，其�
 
     国家代码 省代码 省名
 
-也可以使用命令 ``gmt coast -E+L`` 查看省代码。
+使用 ``gmt coast -E+L`` 命令可以列出 DCW 数据中的所有省代码。如果想进一步筛选出
+某个国家（以中国 **CN** 为例）的省代码，则可以使用 ``gmt coast -E+L | grep CN`` 命令。
 
 以中国的数据为例，其包括全部 34 个省级行政区域：23 个省（包括台湾省），
-5 个自治区，4 个直辖市，以及香港，澳门 2 个特别行政区。
-中国的省代码是数字，和中国居民身份证号码相同::
+5 个自治区、4 个直辖市以及 2 个特别行政区（香港、澳门）。
+每个省用两个字符表示（如 AH 表示安徽）::
 
-    CN 11 Beijing
-    CN 50 Chongqing
-    CN 31 Shanghai
-    CN 12 Tianjin
-    CN 34 Anhui
-    CN 35 Fujian
-    CN 62 Gansu
-    CN 44 Guangdong
-    CN 52 Guizhou
-    CN 46 Hainan
-    CN 13 Hebei
-    CN 23 Heilongjiang
-    CN 41 Henan
-    CN 42 Hubei
-    CN 43 Hunan
-    CN 32 Jiangsu
-    CN 36 Jiangxi
-    CN 22 Jilin
-    CN 21 Liaoning
-    CN 63 Qinghai
-    CN 61 Shaanxi
-    CN 37 Shandong
-    CN 14 Shanxi
-    CN 51 Sichuan
-    CN 71 Taiwan
-    CN 53 Yunnan
-    CN 33 Zhejiang
-    CN 45 Guangxi
-    CN 15 Nei Mongol
-    CN 64 Ningxia
-    CN 65 Xinjiang
-    CN 54 Xizang
-    CN 91 Xianggang (Hong Kong)
-    CN 92 Aomen (Macao)
+    CN.AH	Anhui
+    CN.BJ	Beijing
+    CN.CQ	Chongqing
+    CN.FJ	Fujian
+    CN.GD	Guangdong
+    CN.GS	Gansu
+    CN.GX	Guangxi
+    CN.GZ	Guizhou
+    CN.HA	Henan
+    CN.HB	Hubei
+    CN.HE	Hebei
+    CN.HI	Hainan
+    CN.HK	Xianggang (Hong Kong)
+    CN.HL	Heilongjiang
+    CN.HN	Hunan
+    CN.JL	Jilin
+    CN.JS	Jiangsu
+    CN.JX	Jiangxi
+    CN.LN	Liaoning
+    CN.MO	Aomen (Macao)
+    CN.NM	Nei Mongol
+    CN.NX	Ningxia
+    CN.QH	Qinghai
+    CN.SC	Sichuan
+    CN.SD	Shandong
+    CN.SH	Shanghai
+    CN.SN	Shaanxi
+    CN.SX	Shanxi
+    CN.TJ	Tianjin
+    CN.TW	Taiwan
+    CN.XJ	Xinjiang
+    CN.XZ	Xizang
+    CN.YN	Yunnan
+    CN.ZJ	Zhejiang
 
 使用说明
 --------
@@ -192,4 +193,3 @@ GMT中至少有两处会使用DCW数据：
     gmt coast -EAU.QLD -M > Queensland.dat
 
 这里只需要使用 **-M** 选项即可。
-
