@@ -6,9 +6,7 @@ CN-faults 数据包含了中国区域内主要断层的地理位置信息。
 数据文件
 --------
 
-CN-faults 提供了一个数据文件：
-
-- :file:`CN-faults.gmt`\ ：中国区域主要断层
+CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主要断层
 
 具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
@@ -17,8 +15,6 @@ CN-faults 提供了一个数据文件：
 
 绘制全国断层
 ++++++++++++
-
-绘制全国所有断层：
 
 .. gmtplot::
    :show-code: true
@@ -31,8 +27,6 @@ CN-faults 提供了一个数据文件：
 
 绘制区域断层
 ++++++++++++
-
-绘制一个小区域内的断层：
 
 .. gmtplot::
    :show-code: true
@@ -78,9 +72,8 @@ CN-faults 提供了一个数据文件：
 数据来源及处理
 --------------
 
-CN-faults 原始数据来源于邓起东院士提供的 Shapefile 格式的数据，并
-由\ `刘珠妹 <https://github.com/liuzhumei>`__\ 通过如下命令转换为
-GMT 可使用的格式::
+CN-faults 原始数据来源于邓起东院士提供的 Shapefile 格式的数据，
+并由\ `刘珠妹 <https://github.com/liuzhumei>`__\ 通过如下命令转换为 GMT 可使用的格式::
 
     $ ogr2ogr -f GMT CN-faults.gmt faults.shp
 
