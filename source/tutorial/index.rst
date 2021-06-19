@@ -10,7 +10,7 @@
 
    get-started/index
    commands
-   scripting
+   scripting/index
    basemap
    coastline
    lines
