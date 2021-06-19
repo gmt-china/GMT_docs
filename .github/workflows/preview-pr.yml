@@ -8,6 +8,9 @@ on:
 jobs:
   preview-pr:
     runs-on: ubuntu-latest
+    env:
+      GMT_VERSION: 6.2.0
+      GMT_DOC_VERSION: 6.2
     defaults:
       run:
         shell: bash -l {0}
@@ -29,7 +32,7 @@ jobs:
 
       - name: Install packages
         run: |
-          conda install gmt
+          conda install -c conda-forge gmt=${GMT_VERSION}
           pip install -r requirements.txt
 
       # Download cached remote files (artifacts) from GitHub
