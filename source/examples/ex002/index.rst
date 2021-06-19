@@ -21,7 +21,7 @@
 绘图脚本如下：
 
 .. gmtplot:: ex002.sh
-    :width: 75%
+    :width: 50%
     :show-code: true
 
 脚本使用了五次 ``basemap`` 命令，分别绘制五个界面：
