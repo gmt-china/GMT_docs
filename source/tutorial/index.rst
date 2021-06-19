@@ -18,7 +18,7 @@
    texts
    legend
    earth-relief
-   layers
+   layers/index
 
 进阶教程
 ########
