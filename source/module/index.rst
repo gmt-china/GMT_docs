@@ -110,7 +110,6 @@
     - :doc:`gmt:grdinterpolate`
     - :doc:`gmt:grdmath`
     - :doc:`gmt:grdmix`
-    - :doc:`gmt:grdtrack`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:mask`
     - :doc:`gmt:movie`
