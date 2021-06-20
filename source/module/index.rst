@@ -93,7 +93,7 @@
     - :doc:`gmt:dimfilter`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmtbinstats`
+    - :doc:`gmt:gmtbinstats`
     - :doc:`gmt:gmtconvert`
     - :doc:`gmt:gmtmath`
     - :doc:`gmt:gmtregress`
