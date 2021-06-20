@@ -38,23 +38,21 @@
     - :doc:`gmtwhich`
     - :doc:`grd2cpt`
     - :doc:`grd2xyz`
-    - :doc:`grd2xyz`
     - :doc:`grdblend`
     - :doc:`grdclip`
     - :doc:`grdcontour`
-    - :doc:`grdconvert`
     - :doc:`grdconvert`
     - :doc:`grdcut`
     - :doc:`grdedit`
     - :doc:`grdfill`
     - :doc:`grdimage`
     - :doc:`grdinfo`
-    - :doc:`grdinfo`
     - :doc:`grdlandmask`
     - :doc:`grdmask`
     - :doc:`grdpaste`
     - :doc:`grdproject`
     - :doc:`grdsample`
+    - :doc:`grdtrack`
     - :doc:`grdtrend`
     - :doc:`grdvector`
     - :doc:`grdview`
@@ -88,12 +86,14 @@
 .. hlist::
     :columns: 6
 
+    - :doc:`gmt:batch`
     - :doc:`gmt:blockmean`
     - :doc:`gmt:blockmedian`
     - :doc:`gmt:blockmode`
     - :doc:`gmt:dimfilter`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
+    - :doc:`gmtbinstats`
     - :doc:`gmt:gmtconvert`
     - :doc:`gmt:gmtmath`
     - :doc:`gmt:gmtregress`
@@ -101,11 +101,15 @@
     - :doc:`gmt:gmtsplit`
     - :doc:`gmt:gmtswitch`
     - :doc:`gmt:gmtvector`
+    - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdfft`
+    - :doc:`gmt:grdgdal`
     - :doc:`gmt:grdfilter`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
+    - :doc:`gmt:grdinterpolate`
     - :doc:`gmt:grdmath`
+    - :doc:`gmt:grdmix`
     - :doc:`gmt:grdtrack`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:mask`
@@ -116,6 +120,7 @@
     - :doc:`gmt:sphdistance`
     - :doc:`gmt:sphinterpolate`
     - :doc:`gmt:sphtriangulate`
+    - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/gshhg/gshhg`
     - :doc:`gmt:supplements/img/img2google`
@@ -148,6 +153,7 @@
     - :doc:`gmt:supplements/spotter/grdspotter`
     - :doc:`gmt:supplements/spotter/hotspotter`
     - :doc:`gmt:supplements/spotter/originater`
+    - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/x2sys/x2sys_binlist`
@@ -165,7 +171,7 @@
     - :doc:`gmt:triangulate`
     - :doc:`gmt:wiggle`
 
-**GMT 模块（按功能分类）**
+**GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | **主程序/脚本**                               |                                                                       |
