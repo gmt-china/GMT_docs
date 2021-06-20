@@ -6,8 +6,8 @@
 .. hlist::
     :columns: 6
 
-    - :doc:`gmt-config`
     - :doc:`gmt`
+    - :doc:`gmt-config`
 
 **GMT 模块（已翻译整理）**
 
@@ -83,7 +83,7 @@
     - :doc:`velo`
     - :doc:`xyz2grd`
 
-**GMT模块（尚未翻译整理，欢迎贡献）**
+**GMT 模块（尚未翻译整理，欢迎贡献）**
 
 .. hlist::
     :columns: 6
