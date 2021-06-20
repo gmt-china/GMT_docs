@@ -62,7 +62,7 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 .. note::
 
     本手册中所有示例均使用Bash脚本，要求读者对Bash脚本及Unix命令行有最基本的了解。
-    不了解的用户请阅读网络上Bash相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
+    不了解的用户请阅读网络上 Bash 相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
 
 查看并编辑脚本文件
 ------------------
