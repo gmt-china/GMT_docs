@@ -13,7 +13,9 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 运行GMT
 -------
 
-启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
+启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于：
+
+.. code-block:: console
 
             GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
