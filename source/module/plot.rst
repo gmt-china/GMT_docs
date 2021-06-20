@@ -352,11 +352,16 @@ plot
     ``<size>`` 是正方形的长度，若未指定 ``<size>`` 则需要在输入数据的第三列指定长度。
 
 ``-Sk<name>/<size>``
-    绘制自定义的符号。
+    绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：
 
-    GMT支持自定义符号，该选项会依次在当前目录、 ``~/.gmt`` 、 ``$GMT_SHAREDIR/custom``
-    目录中寻找自定义符号的定义文件 ``<name>.def`` 。定义文件中的符号默认其大小为1，
-    然后会根据 ``<size>`` 对其进行缩放。关于如何自定义符号，见中文手册。
+    .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
+        :width: 50%
+        :align: center
+        :alt: GMT 内置自定义符号
+
+    这些自定义符号可能仍然无法满足广大 GMT 用户的需求，
+    因而社区维护了一套常用的但还没有被 GMT 官方内置的自定义符号。
+    详细使用方法见\ `绘制 GMT 社区自定义符号`_\ 。
 
 ``-Sl<size>+t<string>+j<justify>``
     绘制文本字符串
@@ -523,6 +528,29 @@ plot
 其中 ``...`` 为某些符号所要求的特殊的数据列， ``symbol`` 是未指定符号时必须的
 输入列， ``size`` 是未指定大小时的输入列。
 
+.. _gmt-custom-symbols:
+
+绘制 GMT 社区自定义符号
+------------------------
+
+社区维护了一套 `GMT 自定义符号 <https://github.com/gmt-china/GMT_custom_symbols>`__\ ，
+会持续更新一些常用的但还没有被 GMT 官方内置的自定义符号。
+
+使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 :file:`name.def`\ ：
+
+#. 当前目录，即运行脚本所在目录
+#. :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
+#. :file:`$GMT_SHAREDIR/custom` 目录
+
+将下载的社区自定义符号复制到以上任一路径，即可使用这些自定义符号。
+建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
+:file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows 用户）下。
+
+绘制自定义符号示例脚本如下：
+
+.. gmtplot:: plot/gmt_custom_symbols_2.sh
+    :width: 70%
+    
 多段数据
 --------
 

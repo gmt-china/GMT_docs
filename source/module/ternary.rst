@@ -157,6 +157,8 @@ ternary
 
 .. include:: explain_help.rst_
 
+.. _gmt-ternary-example:
+
 示例
 ----
 
