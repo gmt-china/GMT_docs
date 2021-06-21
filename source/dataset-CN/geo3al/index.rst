@@ -21,6 +21,11 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
    :show-code: true
    :width: 75%
 
+数据来源及引用
+--------------
+
+- Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
+
 数据转换和处理流程
 -----------------
 
@@ -36,14 +41,7 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 - 原数据的坐标系统是大地坐标，不是经纬度坐标，因而需要使用 ``ogr2ogr`` 的 **-t_srs** 参数进行坐标转换
 - :file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和 :file:`shp` 文件放在同一目录下
 
-数据来源及引用
---------------
-
-**原始数据**：
-
-- Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
-
-**数据转换与处理流程**：
+数据转换与处理参考了如下博文：
 
 - `Mijian Xu <https://home.xumijian.me/>`__ 的博客：
   `用 GMT 绘制中国大陆及邻区地质年代图 <https://blog.xumijian.me/post/gmt-geo/>`__
