@@ -1,5 +1,5 @@
-CPT文件
-#######
+颜色表 CPT
+##########
 
 CPT 全称 Color Palette Table，也称为调色板或色标文件。
 
