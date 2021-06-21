@@ -3,7 +3,7 @@ geo3al: 中国大陆及邻区地质图数据
 
 中国大陆及邻区地质图数据 :file:`geo3al.gmt`\ 来自 USGS
 `Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`__\ ，
-分辨率为 1:4,000,000。
+分辨率为 1:5,000,000。
 
 处理好的数据的具体下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
 
@@ -34,7 +34,7 @@ geo3al: 中国大陆及邻区地质图数据
 
 **原始数据**：
 
-- USGS Generalized Geology of the Far East (geo3al): https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al
+- Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
 
 **数据转换与处理流程**：
 
