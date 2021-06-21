@@ -12,8 +12,10 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 
 具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
-示例代码使用地质年代 CPT 色标文件修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
-下载地址：\ :download:`geoage.cpt` 。
+示例图
+------
+
+示例代码使用了地质年代 CPT 色标文件 :download:`geoage.cpt` 修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
 
 .. gmtplot:: plot_geo3al.sh
    :show-code: true
