@@ -5,7 +5,12 @@ geo3al 数据是来自 USGS
 `Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`__\ 的中国大陆及邻区地质图数据，
 数据分辨率为 1:5,000,000。
 
-处理好的数据的具体下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
+数据文件
+--------
+
+geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区地质图数据。
+
+具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
 示例代码使用地质年代 CPT 色标文件修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
 下载地址：\ :download:`geoage.cpt` 。
