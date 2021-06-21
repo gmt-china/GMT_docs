@@ -14,7 +14,9 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 运行GMT
 -------
 
-启动CMD后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
+启动CMD后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于：
+
+.. code-block:: console
 
             GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
@@ -67,11 +69,11 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
     #. 安装 `Git for Windows <https://git-scm.com/download/win>`_ 并使用其提供的
        Bash，本手册中的所有命令都将可以直接使用。要求读者对Bash脚本及Unix命令行有最基本的了解。
-       不了解的用户请阅读网络上Bash相关教程，或本手册中 :doc:`/tutorial/scripting` 一节。
+       不了解的用户请阅读网络上 Bash 相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
     #. 继续使用Windows的Batch脚本。要求读者对Batch脚本和Bash脚本均有所了解，并
        知道二者用法的差异，以便于将手册中的Bash脚本转换为Batch脚本。
        不了解的用户请阅读网络上Bash和Batch相关教程，或本手册中
-       :doc:`/tutorial/scripting` 一节。
+       :doc:`/tutorial/scripting/index` 一节。
 
 查看并编辑脚本文件
 ------------------

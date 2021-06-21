@@ -10,7 +10,7 @@
 
    get-started/index
    commands
-   scripting
+   scripting/index
    basemap
    coastline
    lines
@@ -18,7 +18,7 @@
    texts
    legend
    earth-relief
-   layers
+   layers/index
 
 进阶教程
 ########
