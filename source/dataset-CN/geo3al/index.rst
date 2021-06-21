@@ -27,7 +27,7 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 - Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
 
 数据转换和处理流程
------------------
+------------------
 
 原始的数据文件是 **.shp** 格式，且未使用 WGS84 坐标系统。
 为了方便 GMT 用户使用，需要对原始数据做一定的格式转换和处理。
