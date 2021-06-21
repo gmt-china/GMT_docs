@@ -8,9 +8,9 @@ gmt begin geo3al png,pdf
     gmt coast -R70/150/13/55 -JM22c -Baf -Df -G255 -BWsNe
 
     # plot the geology map
-    # -aZ="GLG": using the "GLG" property as the Z value
+    # -aZ="GEN_GLG": using the "GEN_GLG" property as the Z value
     # -G+z -C$cpt: the color is determined by the Z value and the CPT file
-    gmt plot $data -C$cpt -aZ="GLG" -G+z
+    gmt plot $data -C$cpt -aZ="GEN_GLG" -G+z
 
     # plot rock types using diffenrent patterns
     # -aI="TYPE": using the "TYPE" properties as ID
