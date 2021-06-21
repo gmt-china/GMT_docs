@@ -31,7 +31,7 @@ H 10 3 Age of rock units
 G 1p
 N 3
 EOF
-    awk '!/^($|B|F|#)/{print $0}' $cpt | while read label color period
+    gawk '!/^($|B|F|#)/{print $0}' $cpt | while read label color period
     do
         echo "S 0.3c r $lengsize $color 0.3p 0.7c $period" >> tmp
     done
