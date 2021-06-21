@@ -33,8 +33,6 @@ N 3
 EOF
     awk '!/^($|B|F|#)/{print $0}' $cpt | while read label color period
     do
-        if [ $label == "N" ]; then period=Neogene; fi
-        if [ $label == "MZT" ]; then continue; fi
         echo "S 0.3c r $lengsize $color 0.3p 0.7c $period" >> tmp
     done
     gmt legend tmp -DJBR+w300p/157p+jBR+o0c/-100p+l1.3 -F+p0.7p+g255 -C3p/3p
