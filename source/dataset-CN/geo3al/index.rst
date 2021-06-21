@@ -1,5 +1,5 @@
-geo3al: 中国大陆及邻区地质图数据
-================================
+geo3al: 中国大陆及邻区地质数据
+==============================
 
 中国大陆及邻区地质图数据 :file:`geo3al.gmt`\ 来自 USGS
 `Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`__\ ，
