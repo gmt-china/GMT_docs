@@ -29,7 +29,7 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 
 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 **.shp** 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
 
-    $ ogr2ogr -f GMT geo3al.gmt geo3al.shp -t_srs EPSG:4326
+    $ ogr2ogr -t_srs EPSG:4326 -f GMT geo3al.gmt geo3al.shp
     
 注意事项：
 
