@@ -11,7 +11,7 @@
 
    CN-border
    CN-faults
-   CN-block
+   CN-block/index
 
 **下载数据**
 
