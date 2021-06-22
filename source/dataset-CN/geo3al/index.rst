@@ -17,7 +17,7 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 
 示例代码使用了地质年代 CPT 色标文件 :download:`geoage.cpt` 修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
 
-.. gmtplot:: plot_geo3al.sh
+.. gmtplot:: geo3al.sh
    :show-code: true
    :width: 75%
 
@@ -35,7 +35,7 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 **.shp** 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
 
     $ ogr2ogr -t_srs EPSG:4326 -f GMT geo3al.gmt geo3al.shp
-    
+
 注意事项：
 
 - 原数据的坐标系统是大地坐标，不是经纬度坐标，因而需要使用 ``ogr2ogr`` 的 **-t_srs** 参数进行坐标转换
