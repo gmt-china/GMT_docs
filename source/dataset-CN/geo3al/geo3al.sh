@@ -15,7 +15,7 @@ gmt begin geo3al pdf,png
     # -S"-Iv": only keep data segments that matches "-Iv" (v means "Volcanic rocks")
     # -S"-Ii": only keep data segments that matches "-Ii" (i means "Intrusive rocks")
     # -S"-Iw": only keep data segments that matches "-Iw" (w means "Ultrabasic igneous rock or ophiolites")
-    # -Gp28+r500+f100+b-: fill with pattern 28, dpi=500, foreground color=100 (gray), background color=- (transparency)
+    # -Gp28+r500+f100+b-: fill with pattern 28, dpi=500, foreground color=100 (gray), background color=- (transparent)
     gmt convert $data -aI="TYPE" -S"-Iv" | gmt plot -Gp28+r500+f100+b-
     gmt convert $data -aI="TYPE" -S"-Ii" | gmt plot -Gp29+r500+f100+b-
     gmt convert $data -aI="TYPE" -S"-Iw" | gmt plot -Gp44+r500+f100+b-
