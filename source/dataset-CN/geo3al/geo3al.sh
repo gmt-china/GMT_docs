@@ -24,26 +24,26 @@ gmt begin geo3al png,pdf
 
     gmt coast -SCADETBLUE1
 
-    # plot age legend 
+    # plot age legend
     gmt set FONT_ANNOT_PRIMARY 7p
     cat > tmp << EOF
 H 10 3 Age of rock units
 G 1p
 N 3
 EOF
-    gawk '!/^($|B|F|#)/{print $0}' $cpt | while read label color period
+    gawk '!/^($|B|F|N|#)/{print $0}' $cpt | while read label color period
     do
         echo "S 0.3c r $lengsize $color 0.3p 0.7c $period" >> tmp
     done
-    gmt legend tmp -DJBR+w300p/157p+jBR+o0c/-100p+l1.3 -F+p0.7p+g255 -C3p/3p
+    gmt legend tmp -DJBR+w10.5c/5c+jBR+o0c/-3.0c+l1.3 -F+p0.7p+g255 -C3p/3p
 
-    gmt legend -DJBR+w150p/50p+jBR+o0c/57p+l1.9 -F+p0.7p+g255 -C3p/1p <<EOF
+    gmt legend -DJBR+w5.0c/1.8c+jBR+o0c/2c+l1.9 -F+p0.7p+g255 -C3p/1p <<EOF
 H 10 3 Rock type
 
 N 2
 S 0.3c r 0.508c p28+r500+f100+b255 0.3p 0.7c Volcanic rocks
 S 0.3c r 0.508c p29+r500+f100+b255 0.3p 0.7c Intrusive rocks
-S 0.3c r 0.508c p44+r500+f100+b255 0.3p 0.7c Ultrabasic igneous rock or ophiolites 
+S 0.3c r 0.508c p44+r500+f100+b255 0.3p 0.7c Ultrabasic igneous rock or ophiolites
 EOF
 
     rm tmp

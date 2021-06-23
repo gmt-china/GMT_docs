@@ -17,9 +17,10 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 
 示例代码使用了地质年代 CPT 色标文件 :download:`geoage.cpt` 修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
 
-.. gmtplot:: geo3al.sh
-   :show-code: true
-   :width: 75%
+.. literalinclude:: geo3al.sh
+
+.. image:: https://user-images.githubusercontent.com/3974108/123112829-0c8a0500-d40c-11eb-8991-a9bd34bd8b4a.png
+   :width: 80%
 
 数据来源及引用
 --------------
