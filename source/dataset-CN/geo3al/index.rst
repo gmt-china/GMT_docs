@@ -1,21 +1,37 @@
-geo3al: 中国大陆及邻区地质数据
-==============================
+geo3al: 中国及邻区地质数据
+==========================
 
-geo3al 数据是来自 USGS
-`Generalized Geology of the Far East (geo3al) <https://catalog.data.gov/dataset/generalized-geology-of-the-far-east-geo3al>`__\ 的中国大陆及邻区地质图数据，
+geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质图数据，
+是“\ `世界地质地图 <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”的一部分，
 数据分辨率为 1:5,000,000。
 
 数据文件
 --------
 
-geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区地质图数据。
+GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 
-具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
+- :file:`geo3al.gmt`\ ：中国及邻区地质图数据
+
+数据中包含了如下非空间元信息：
+
+- ``NAREA``\ ：地层多边形区域的面积
+- ``PERIMETER``\ ：地层多边形区域的周长
+- ``TYPE``\ ：岩性
+- ``GLG``\ ：原始地图上显示地表露头的地质年代
+- ``GEN_GLG``\ ：编者从 ``GLG`` 中计算得到的地质年代，在单元年龄跨越一个以上地质年龄的情况下用“代”表示
+
+参考 :file:`geo3al.shp.xml` 以获取元信息的更多细节。
+
+数据的具体下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
 示例图
 ------
 
-示例代码使用了地质年代 CPT 色标文件 :download:`geoage.cpt` 修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__ 。
+下面的示例图绘制了中国大陆及邻区地质图。地质年代从数据的 ``GEN_GLG`` 属性中提取，
+用不同的颜色表示；岩性从数据的 ``TYPE`` 属性中提取，用不同的填充图案表示。
+
+示例代码中使用的地质年代 CPT 色标文件 :download:`geoage.cpt`
+修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__\ 。
 
 .. literalinclude:: geo3al.sh
 
@@ -31,17 +47,21 @@ geo3al 提供了一个数据文件 :file:`geo3al.gmt`\ ：中国大陆及邻区�
 数据转换和处理流程
 ------------------
 
-原始的数据文件是 **.shp** 格式，且未使用 WGS84 坐标系统。
-为了方便 GMT 用户使用，需要对原始数据做一定的格式转换和处理。
+*以下内容仅供数据维护者参考，一般用户无需关心。*
 
-使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 **.shp** 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
+1.  从 “\ `World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”
+    下载 “Generalized Geology of the Far East” 对应的 Shapefile 文件
 
-    $ ogr2ogr -t_srs EPSG:4326 -f GMT geo3al.gmt geo3al.shp
+2.  使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
 
-注意事项：
+        $ ogr2ogr -t_srs EPSG:4326 -f GMT geo3al.gmt geo3al.shp
 
-- 原数据的坐标系统是大地坐标，不是经纬度坐标，因而需要使用 ``ogr2ogr`` 的 **-t_srs** 参数进行坐标转换
-- :file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和 :file:`shp` 文件放在同一目录下
+    注意事项：
+
+    - 原始数据使用的是大地坐标系统，而非 WGS84 坐标系统。因而在使用
+      ``ogr2ogr`` 时需要加上 ``-t_srs EPSG:4326`` 参数进行坐标转换
+    - 转换时 :file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和
+      :file:`shp` 文件放在同一目录下
 
 数据转换与处理参考了如下博文：
 
