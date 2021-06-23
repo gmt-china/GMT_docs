@@ -22,21 +22,23 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 - ``GLG``\ ：原始地图上显示地表露头的地质年代
 - ``GEN_GLG``\ ：编者从 ``GLG`` 中计算得到的地质年代，在单元年龄跨越一个以上地质年龄的情况下用“代”表示
 
-参考 :file:`geo3al.shp.xml` 以获取元信息的更多细节。
+参考 `geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__
+以获取元信息的更多细节。
 
 示例图
 ------
 
-下面的示例图绘制了中国大陆及邻区地质图。地质年代从数据的 ``GEN_GLG`` 属性中提取，
-用不同的颜色表示；岩性从数据的 ``TYPE`` 属性中提取，用不同的填充图案表示。
+下面的示例图使用 :file:`geo3al.gmt` 数据绘制了中国大陆及邻区地质图。
+地质年代从数据的 ``GEN_GLG`` 属性中提取，用不同的颜色表示；
+岩性从数据的 ``TYPE`` 属性中提取，用不同的填充图案表示。
 
 示例代码中使用的地质年代 CPT 色标文件 :download:`geoage.cpt`
 修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__\ 。
 
 .. literalinclude:: geo3al.sh
 
-.. image:: https://user-images.githubusercontent.com/3974108/123112829-0c8a0500-d40c-11eb-8991-a9bd34bd8b4a.png
-   :width: 80%
+.. image:: https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png
+   :width: 95%
    :align: center
 
 数据来源及引用
@@ -50,11 +52,11 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 *以下内容仅供数据维护者参考，一般用户无需关心。*
 
 1.  从 “\ `World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”
-    下载 “Generalized Geology of the Far East” 对应的 Shapefile 文件
+    下载 “Generalized Geology of the Far East” 对应的 Shapefile 压缩文件
 
 2.  使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
 
-        $ ogr2ogr -t_srs EPSG:4326 -f GMT geo3al.gmt geo3al.shp
+        $ ogr2ogr -t_srs EPSG:4326 -f OGR_GMT geo3al.gmt geo3al.shp
 
     注意事项：
 
