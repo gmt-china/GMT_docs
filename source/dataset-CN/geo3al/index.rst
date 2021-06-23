@@ -69,3 +69,14 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
   `用 GMT 绘制中国大陆及邻区地质年代图 <https://blog.xumijian.me/post/gmt-geo/>`__
 - `Po-Chin Tseng <https://github.com/jimmytseng79>`__ 的
   `GMT5 教程：地质图 <https://jimmytseng79.github.io/GMT5_tutorials/geology_map.html>`__
+
+扩展阅读
+--------
+
+`World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__ 提供了
+全球几乎所有区域的地质图数据。本文只提供了中国及邻区地质图（即 Generalized Geology of the Far East）。
+需要绘制其他地区地质图的用户可以参考本文的数据处理方式和绘图脚本。但需要注意：
+
+- 部分原始数据使用的是经纬度坐标，因此格式转换时不需要使用 ``-t_srs EPSG:4326``
+- 每个数据提供的属性可能不同。用户应查阅从源文件中解压得到的 ``.xml`` 文件
+  以了解数据提供的数学，并相应修改绘图脚本。
