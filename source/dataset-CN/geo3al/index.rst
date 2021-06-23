@@ -1,5 +1,5 @@
-geo3al: 中国及邻区地质数据
-==========================
+geo3al: 中国及邻区地质图数据
+============================
 
 geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质图数据，
 是“\ `世界地质地图 <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”的一部分，
