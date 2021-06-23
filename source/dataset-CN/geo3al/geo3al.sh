@@ -10,7 +10,7 @@ gmt begin geo3al pdf,png
     # -G+z -C$cpt: the fill color is determined by the Z value and the CPT file
     gmt plot $data -C$cpt -aZ="GEN_GLG" -G+z
 
-	# Plot rock types using diffenrent patterns (28, 29 and 44)
+    # Plot rock types using diffenrent patterns (28, 29 and 44)
     # -aI="TYPE": using the "TYPE" metadata as ID
     # -S"-Iv": only keep data segments that matches "-Iv" (v means "Volcanic rocks")
     # -S"-Ii": only keep data segments that matches "-Ii" (i means "Intrusive rocks")
@@ -35,7 +35,7 @@ EOF
     gmt legend age_legend.txt -DJBR+w10.5c+jTR+o0c/-2c+l1.3 -F+p0.7p+g255 -C3p/3p
     rm age_legend.txt
 
-	# Plot rock type legend
+    # Plot rock type legend
     gmt legend -DJBR+w5.0c+jBR+o0c/2c+l1.9 -F+p0.7p+g255 -C3p/1p <<EOF
 H 10 3 Rock type
 N 2
