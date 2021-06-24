@@ -14,7 +14,7 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
     环境变量 **$GMT_USERDIR**
         指定用户自定义配置文件的存放目录。例如，用户自定义的 :file:`gmt.conf` 文件、
         自定义符号、CPT 文件、数学宏、网格文件后缀文件等。
-        若该变量未定义，则默认值为 **${HOME}**/.gmt。
+        若该变量未定义，则默认值为 :file:`~/.gmt`\ 。
 
         若该环境变量未定义，则 GMT 用户目录默认为用户目录
         （Linux 和 macOS 下是 :file:`~/.gmt` 目录，Windows 下是 :file:`C:\\Users\\用户名\\.gmt` 目录）。
@@ -32,7 +32,7 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 
     GMT 配置参数 :term:`DIR_CACHE` 或环境变量 **$GMT_CACHEDIR**
         指定存放从 GMT 服务器上下载的临时数据的缓存目录。
-        若该配置参数和环境变量均未定义，则默认缓存目录为 :file:`${HOME}/.gmt/cache`\ 。
+        若该配置参数和环境变量均未定义，则默认缓存目录为 :file:`~/.gmt/cache`\ 。
         可以使用 ``gmt clear cache`` 命令清空缓存目录。
 
         配置参数 :term:`DIR_CACHE` 的值优先于且会**覆盖**环境变量 **$GMT_CACHEDIR** 的值。
