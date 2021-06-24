@@ -7,7 +7,8 @@ data=geo3al.gmt
 cpt=geoage.cpt
 
 gmt begin geo3al pdf,png
-    gmt coast -R70/150/13/55 -JM22c -Baf -G255 -BWsNe
+    # 绘制陆地为白色，即灰度 255
+    gmt coast -R70/150/13/55 -JM22c -G255 -Baf -BWsNe
 
     # Plot the geological map by geologic ages
     # -aZ="GEN_GLG": use the "GEN_GLG" metadata as the Z value
