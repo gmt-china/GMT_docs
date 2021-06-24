@@ -75,3 +75,8 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 - 部分原始数据使用的是经纬度坐标，因此格式转换时不需要使用 ``-t_srs EPSG:4326``
 - 每个数据提供的属性可能不同。用户应查阅从源文件中解压得到的 ``.xml`` 文件
   以了解数据提供的数学，并相应修改绘图脚本。
+  
+数据来源及引用
+--------------
+
+- Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
