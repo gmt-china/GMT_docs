@@ -41,11 +41,6 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
    :width: 95%
    :align: center
 
-数据来源及引用
---------------
-
-- Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
-
 数据转换和处理流程
 ------------------
 
