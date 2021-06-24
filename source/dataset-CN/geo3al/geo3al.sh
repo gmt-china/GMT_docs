@@ -25,6 +25,7 @@ gmt begin geo3al pdf,png
     gmt convert $data -aI="TYPE" -S"-Ii" | gmt plot -Gp29+r500+f100+b-
     gmt convert $data -aI="TYPE" -S"-Iw" | gmt plot -Gp44+r500+f100+b-
 
+    # 绘制海洋或者湖泊为 CADETBLUE1 颜色
     gmt coast -SCADETBLUE1
 
     # Plot geologic age legend
