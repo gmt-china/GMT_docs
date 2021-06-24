@@ -48,7 +48,7 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
         若未设置，则默认为会话目录，即当前目录。
 
     配置参数 :term:`DIR_DCW`
-        指定 :doc:`DCW数据 </dataset/dcw/index>` 所在目录。
+        指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
 
     配置参数 :term:`DIR_GSHHG`
         指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
