@@ -53,8 +53,6 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 
         $ ogr2ogr -t_srs EPSG:4326 -f OGR_GMT geo3al.gmt geo3al.shp
 
-    注意事项：
-
     - 原始数据使用的是大地坐标系统，而非 WGS84 坐标系统。因而在使用
       ``ogr2ogr`` 时需要加上 ``-t_srs EPSG:4326`` 参数进行坐标转换
     - 转换时 :file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和
