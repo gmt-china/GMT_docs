@@ -1,6 +1,9 @@
 输入文件的搜索目录
 ==================
 
+搜索目录顺序
+------------
+
 GMT 命令行经常需要读入文件。如果指定了文件的完整路径，GMT 会直接读入。
 否则，GMT 会\ **依次**\ 到以下目录中去寻找文件，直到找到文件为止：
 
@@ -35,9 +38,19 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 
         配置参数 :term:`DIR_CACHE` 的值优先于且会\ **覆盖**\ 环境变量 **$GMT_CACHEDIR** 的值。
 
-此外，还有一些目录相关的 GMT 配置参数或环境变量：
+其他目录
+--------
+
+还有一些目录相关的 GMT 配置参数或环境变量：
 
 .. glossary::
+
+    配置参数 :term:`DIR_DCW`
+        指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
+
+    配置参数 :term:`DIR_GSHHG`
+        指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
+        若该参数为空，则默认为 **$GMT_SHAREDIR**\ /coast 目录。
 
     环境变量 **$GMT_SHAREDIR**
         指定 GMT 的 :file:`share` 目录。若未设置，GMT 自动猜测其所在位置
@@ -47,10 +60,3 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
     环境变量 **$GMT_TMPDIR**
         指定 GMT 状态参数文件（如 :file:`gmt.history` 和 :file:`gmt.conf` ）的存放目录。
         若未设置，则默认为会话目录，即当前目录。
-
-    配置参数 :term:`DIR_DCW`
-        指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
-
-    配置参数 :term:`DIR_GSHHG`
-        指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
-        若该参数为空，则默认为 **$GMT_SHAREDIR**\ /coast 目录。
