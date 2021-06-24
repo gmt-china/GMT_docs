@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# 中国及邻区地质图
+#
+
 data=geo3al.gmt
 cpt=geoage.cpt
 
