@@ -13,36 +13,42 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 运行GMT
 -------
 
-启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
+启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于：
 
-        GMT - The Generic Mapping Tools, Version 6.1.1 [64-bit] [8 cores]
-        (c) 1991-2020 The GMT Team (https://www.generic-mapping-tools.org/team.html).
+.. code-block:: console
 
-        Supported in part by the US National Science Foundation (http://www.nsf.gov/)
-        and volunteers from around the world.
+            GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
+            (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
-        GMT is distributed under the GNU LGPL License (http://www.gnu.org/licenses/lgpl.html).
-        Dependencies: netCDF, GDAL, PCRE, FFTW, LAPACK, ZLIB, Ghostscript, GraphicsMagick, FFmpeg.
+            Supported in part by the US National Science Foundation (http://www.nsf.gov/)
+            and volunteers from around the world.
+
+            GMT is distributed under the GNU LGPL License (http://www.gnu.org/licenses/lgpl.html).
+            Dependencies: netCDF, GDAL, PCRE, FFTW, LAPACK, ZLIB, Ghostscript, GraphicsMagick, FFmpeg.
 
     usage: gmt [options]
-        gmt <module name> [<module-options>]
+           gmt <module name> [<module-options>]
 
     options:
-    --help            List descriptions of available GMT modules.
-    --new-script[=L]  Write GMT modern mode script template to stdout.
-                        Optionally specify bash|csh|batch [Default is current shell].
-    --show-bindir     Show directory with GMT executables.
-    --show-citation   Show the most recent citation for GMT.
-    --show-classic    Show all classic module names.
-    --show-cores      Show number of available cores.
-    --show-datadir    Show directory/ies with user data.
-    --show-dataserver Show URL of the remote GMT data server.
-    --show-doi        Show the DOI for the current release.
-    --show-modules    Show all modern module names.
-    --show-library    Show path of the shared GMT library.
-    --show-plugindir  Show directory for plug-ins.
-    --show-sharedir   Show directory for shared GMT resources.
-    --version         Print GMT version number.
+      --help              List descriptions of available GMT modules.
+      --new-script[=L]    Write GMT modern mode script template to stdout.
+                          Optionally specify bash|csh|batch [Default is current shell].
+      --new-glue=name     Write C code for external supplements to glue them to GMT.
+      --show-bindir       Show directory with GMT executables.
+      --show-citation     Show the most recent citation for GMT.
+      --show-classic      Show all classic module names.
+      --show-classic-core Show all classic module names (core only).
+      --show-cores        Show number of available cores.
+      --show-datadir      Show directory/ies with user data.
+      --show-dataserver   Show URL of the remote GMT data server.
+      --show-doi          Show the DOI for the current release.
+      --show-library      Show path of the shared GMT library.
+      --show-modules      Show all modern module names.
+      --show-modules-core Show all modern module names (core only).
+      --show-plugindir    Show directory for plug-ins.
+      --show-sharedir     Show directory for shared GMT resources.
+      --show-userdir      Show full path of user's ~/.gmt dir
+      --version           Print GMT version number.
 
     if <module-options> is '=' we call exit (0) if module exist and non-zero otherwise.
 
@@ -58,7 +64,7 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 .. note::
 
     本手册中所有示例均使用Bash脚本，要求读者对Bash脚本及Unix命令行有最基本的了解。
-    不了解的用户请阅读网络上Bash相关教程，或本手册中 :doc:`/tutorial/scripting` 一节。
+    不了解的用户请阅读网络上 Bash 相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
 
 查看并编辑脚本文件
 ------------------

@@ -31,7 +31,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 3.  重新打开一个终端，检测安装是否成功::
 
        $ gmt --version
-       6.1.1
+       6.2.0
 
 4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
 
@@ -51,18 +51,20 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
     GMT的dmg安装包只支持 macOS >= 10.14。
 
-1. 下载：\ `gmt-6.1.1-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.1.1-darwin-x86_64.dmg>`_
+1. 下载：\ `gmt-6.2.0-darwin-x86_64.dmg (Intel) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__ |
+   `gmt-6.2.0-darwin-arm64.dmg (ARM) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
 
-2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.1.1.app** 拖动到 **Applications** 目录
+2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.2.0.app** 拖动到 **Applications** 目录
 
 3. 在Finder中的 **Applications** 目录下，找到GMT图标以双击启动。
    GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
    提示将如下语句添加到 :file:`~/.bash_profile` 中以修改环境变量::
 
-       export GMTHOME=/Applications/GMT-6.1.1.app/Contents/Resources
+       export GMTHOME=/Applications/GMT-6.2.0.app/Contents/Resources
        export PATH=${GMTHOME}/bin:${PATH}
        export PROJ_LIB=$GMTHOME/share/proj
        export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick/config
+       export GS_LIB=${GMTHOME}/share/ghostscript/9.53.3/Resource/Init
 
    .. note::
 
@@ -71,7 +73,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 4. 打开一个终端，输入如下命令，检测安装是否成功::
 
        $ gmt --version
-       6.1.1
+       6.2.0
 
 5.  卸载GMT
 
@@ -104,7 +106,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 4.  重新打开一个终端，检测安装是否成功::
 
         $ gmt --version
-        6.1.1
+        6.2.0
 
 5.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
 
