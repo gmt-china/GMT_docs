@@ -41,7 +41,8 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 
     环境变量 **$GMT_SHAREDIR**
         指定 GMT 的 :file:`share` 目录。若未设置，GMT 自动猜测其所在位置
-        （如 :file:`${GMTHOME}/share`\ ）。此环境变量通常不需设置，且推荐仅在特殊需求时设置。
+        （如 GMT 安装目录下的 :file:`share` 目录）。此环境变量通常不需设置，
+        且推荐仅在特殊需求时设置。
 
     环境变量 **$GMT_TMPDIR**
         指定 GMT 状态参数文件（如 :file:`gmt.history` 和 :file:`gmt.conf` ）的存放目录。
