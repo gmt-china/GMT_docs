@@ -31,7 +31,8 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
   指定存放从 GMT 服务器上下载的临时数据的缓存目录。
   若该配置参数和环境变量均未定义，则默认缓存目录为 :file:`~/.gmt/cache`\ 。
   可以使用 ``gmt clear cache`` 命令清空缓存目录。
-  配置参数 :term:`DIR_CACHE` 的值优先于且会\ **覆盖**\ 环境变量 **$GMT_CACHEDIR** 的值。
+  配置参数的值优先于且会\ **覆盖**\ 环境变量的值，也就是说若同时设置了 :term:`DIR_CACHE`
+  和 **$GMT_CACHEDIR**\ ，则 GMT 只会使用 **DIR_CACHE** 指定的目录。
 
 其他目录
 --------
@@ -43,7 +44,6 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 
 - 配置参数 :term:`DIR_GSHHG`\ ：
   指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
-  若该参数为空，则默认为 **$GMT_SHAREDIR**\ /coast 目录。
 
 - 环境变量 **$GMT_SHAREDIR**\ ：
   指定 GMT 的 :file:`share` 目录。若未设置，GMT 自动猜测其所在位置
