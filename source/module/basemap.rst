@@ -1,5 +1,3 @@
-:orphan:
-
 .. index:: ! basemap
 .. include:: common_SYN_OPTs.rst_
 
