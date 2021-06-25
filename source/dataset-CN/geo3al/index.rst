@@ -8,7 +8,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 数据文件
 --------
 
-GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
+中文社区提供了可供 GMT 直接使用的数据文件：
 
 - :file:`geo3al.gmt`\ ：中国及邻区地质图数据
 
@@ -27,9 +27,10 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 示例图
 ------
 
-下面的示例图使用 :file:`geo3al.gmt` 数据绘制了中国大陆及邻区地质图。
-地质年代从数据的 ``GEN_GLG`` 属性中提取，用不同的颜色表示；
-岩性从数据的 ``TYPE`` 属性中提取，用不同的填充图案表示。
+下面的示例图使用 :file:`geo3al.gmt` 数据绘制了中国大陆及邻区地质图：
+
+- 地质年代从数据的 ``GEN_GLG`` 属性中提取，用不同的颜色表示
+- 岩性从数据的 ``TYPE`` 属性中提取，用不同的填充图案表示
 
 示例代码中使用的地质年代 CPT 色标文件 :download:`geoage.cpt`
 修改自 `GTS2012_epochs <http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt>`__\ 。

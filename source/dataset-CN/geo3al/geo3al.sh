@@ -34,6 +34,7 @@ gmt begin geo3al pdf,png
 H 10 3 Age of rock units
 N 3
 EOF
+    # Output non-empty lines that don't start with "B", "F", "N" or "#"
     gawk '!/^($|B|F|N|#)/' $cpt | while read label color period
     do
         echo "S 0.3c r 0.38c $color 0.3p 0.7c $period" >> age_legend.txt
