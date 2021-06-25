@@ -95,13 +95,3 @@ earth_relief: 全球地形起伏数据
 #. SRTM15+: http://dx.doi.org/10.1029/2019EA000658
 #. SRTMGL3数据: https://lpdaac.usgs.gov/products/srtmgl3v003/
 #. SRTMGL1数据: https://lpdaac.usgs.gov/products/srtmgl1v003/
-
-其它地形起伏数据
-----------------
-
-其它机构或单位也提供了不同格式、不同分辨率的地形起伏数据。此处仅列出部分，
-供需要的用户参考与使用：
-
-- ETOPO1 (1 弧分): https://www.ngdc.noaa.gov/mgg/global/
-- GEBCO (30 弧秒): https://www.gebco.net/
-- ASTER GDEM (1 弧秒，仅陆地): https://asterweb.jpl.nasa.gov/gdem.asp
