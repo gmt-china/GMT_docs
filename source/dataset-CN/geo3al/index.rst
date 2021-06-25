@@ -14,16 +14,15 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 
 数据的具体下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
-数据中包含了如下非空间元信息：
+数据中包含了如下非空间元信息（可以参考
+`geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__
+以获取元信息的更多细节）：
 
 - ``NAREA``\ ：地层多边形区域的面积（单位 :math:`m^2`）
 - ``PERIMETER``\ ：地层多边形区域的周长（单位 m）
 - ``TYPE``\ ：岩性
 - ``GLG``\ ：原始地图上显示地表露头的地质年代
 - ``GEN_GLG``\ ：编者从 ``GLG`` 中计算得到的地质年代，在单元年龄跨越一个以上地质年龄的情况下用“代”表示
-
-参考 `geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__
-以获取元信息的更多细节。
 
 示例图
 ------
@@ -49,7 +48,7 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 1.  从 “\ `World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”
     下载 “Generalized Geology of the Far East” 对应的 Shapefile 压缩文件
 
-2.  使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 **OGR/GMT** 格式::
+2.  使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 
         $ ogr2ogr -t_srs EPSG:4326 -f OGR_GMT geo3al.gmt geo3al.shp
 
@@ -68,13 +67,13 @@ GMT 中文社区为 GMT 用户提供了可供 GMT 直接使用的数据文件：
 扩展阅读
 --------
 
-`World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__ 提供了
-全球几乎所有区域的地质图数据。本文只提供了中国及邻区地质图（即 Generalized Geology of the Far East）。
-需要绘制其他地区地质图的用户可以参考本文的数据处理方式和绘图脚本。但需要注意：
+`World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__
+提供了几乎所有区域的地质图数据。本文只提供了中国及邻区地质图（即 Generalized Geology of the Far East）。
+需要绘制其他地区地质图的用户可以参考本文的数据处理方式和绘图脚本，但需要注意：
 
 - 部分原始数据使用的是经纬度坐标，因此格式转换时不需要使用 ``-t_srs EPSG:4326``
-- 每个数据提供的属性可能不同。用户应查阅从源文件中解压得到的 ``.xml`` 文件
-  以了解数据提供的数学，并相应修改绘图脚本。
+- 每个数据提供的属性可能不同，因而用户应查阅从源文件中解压得到的 ``.xml`` 文件
+  以了解数据提供的数学，并相应地修改绘图脚本。
 
 数据来源及引用
 --------------
