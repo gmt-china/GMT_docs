@@ -43,7 +43,7 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
   指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
 
 - 配置参数 :term:`DIR_GSHHG`\ ：
-  指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
+  指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。该数据的默认目录为 **$GMT_SHAREDIR**\ /coast 目录。
 
 - 环境变量 **$GMT_SHAREDIR**\ ：
   指定 GMT 的 :file:`share` 目录。若未设置，GMT 自动猜测其所在位置

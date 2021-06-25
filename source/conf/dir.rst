@@ -24,9 +24,9 @@ DIR参数
         多个目录之间用逗号分隔；以斜杠 :kbd:`/` 结尾的目录都会被递归搜索（Windows 不支持此功能）。
  
     **DIR_DCW**
-        :doc:`DCW数据 </dataset/dcw/index>` 所在路径。默认值为空。GMT 会自动猜测合理的路径值。
+        :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。该数据的默认目录为 **$GMT_SHAREDIR**\ /dcw 目录。
 
     **DIR_GSHHG**
-        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。该数据的默认路径为 **$GMT_SHAREDIR**\ /coast 目录。
+        :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。该数据的默认目录为 **$GMT_SHAREDIR**\ /coast 目录。
 
 可以参考\ :doc:`/basis/input-files`\ 了解搜索目录的顺序。
