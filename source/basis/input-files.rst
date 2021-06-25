@@ -40,7 +40,7 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 还有一些目录相关的 GMT 配置参数或环境变量：
 
 - 配置参数 :term:`DIR_DCW`\ ：
-  指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
+  指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。该数据的默认目录为 **$GMT_SHAREDIR**\ /dcw 目录。
 
 - 配置参数 :term:`DIR_GSHHG`\ ：
   指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。该数据的默认目录为 **$GMT_SHAREDIR**\ /coast 目录。
