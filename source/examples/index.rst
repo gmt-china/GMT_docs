@@ -1,7 +1,8 @@
 绘图实例
-########
+#########
 
 .. toctree::
-   :glob:
+   :maxdepth: 1
 
-   ex*/index
+   internal
+   external
