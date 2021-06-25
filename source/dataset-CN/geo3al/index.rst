@@ -1,6 +1,10 @@
 geo3al: 中国及邻区地质图数据
 ============================
 
+:贡献者: |徐弥坚|, |陈箫翰|, |刘珠妹|, |田冬冬|, |姚家园|
+
+----
+
 geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质图数据，
 是“\ `世界地质地图 <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”的一部分，
 数据分辨率为 1:5,000,000。
