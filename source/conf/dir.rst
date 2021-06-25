@@ -29,4 +29,4 @@ DIR参数
     **DIR_GSHHG**
         :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。该数据的默认目录为 **$GMT_SHAREDIR**\ /coast 目录。
 
-可以参考\ :doc:`/basis/input-files`\ 了解搜索目录的顺序。
+可以参考\ :doc:`/basis/input-files`\ 了解搜索目录的顺序以及相关环境变量的定义。
