@@ -12,46 +12,41 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 #. GMT 数据目录：配置参数 :term:`DIR_DATA` 或环境变量 **$GMT_DATADIR** 所定义的目录
 #. GMT 缓存目录：配置参数 :term:`DIR_CACHE` 或环境变量 **$GMT_CACHEDIR** 所定义的目录
 
-.. glossary::
+这些配置参数或环境变量的具体用途如下：
 
-    环境变量 **$GMT_USERDIR**
-        指定用户自定义配置文件的存放目录。例如，用户自定义的 :file:`gmt.conf` 文件、
-        自定义符号、CPT 文件、网格文件后缀文件等。
+- 环境变量 **$GMT_USERDIR**\ ：
+  指定用户自定义配置文件的存放目录。例如，用户自定义的 :file:`gmt.conf` 文件、
+  自定义符号、CPT 文件、网格文件后缀文件等。
+  若该环境变量未定义，则 GMT 用户目录默认为用户目录
+  （Linux 和 macOS 下是 :file:`~/.gmt` 目录，Windows 下是 :file:`C:\\Users\\用户名\\.gmt` 目录）。
 
-        若该环境变量未定义，则 GMT 用户目录默认为用户目录
-        （Linux 和 macOS 下是 :file:`~/.gmt` 目录，Windows 下是 :file:`C:\\Users\\用户名\\.gmt` 目录）。
+- 配置参数 :term:`DIR_DATA` 或环境变量 **$GMT_DATADIR**\ ：
+  指定一个或多个存放常用数据文件的目录。
+  若该配置参数和环境变量均未定义，则数据目录默认为空；多个目录之间用逗号分隔；
+  以斜杠 :kbd:`/` 结尾的目录都会被递归搜索（Windows 不支持此功能）。
+  若该配置参数和环境变量均设置了值，则配置参数的值优先于且会\ **覆盖**\ 环境变量的值：
+  GMT 会先到 :term:`DIR_DATA` 指定的目录中寻找数据文件；若找不到，则到 **$GMT_DATADIR**
+  指定的目录中寻找。
 
-    配置参数 :term:`DIR_DATA` 或环境变量 **$GMT_DATADIR**
-        指定一个或多个存放常用数据文件的目录。
-        若该配置参数和环境变量均未定义，则数据目录默认为空；多个目录之间用逗号分隔；
-        以斜杠 :kbd:`/` 结尾的目录都会被递归搜索（Windows 不支持此功能）。
-
-        若该配置参数和环境变量均设置了值，则配置参数的值优先于且会\ **覆盖**\ 环境变量的值：
-        GMT 会先到 :term:`DIR_DATA` 指定的目录中寻找数据文件；若找不到，则到 **$GMT_DATADIR**
-        指定的目录中寻找。
-
-    配置参数 :term:`DIR_CACHE` 或环境变量 **$GMT_CACHEDIR**
-        指定存放从 GMT 服务器上下载的临时数据的缓存目录。
-        若该配置参数和环境变量均未定义，则默认缓存目录为 :file:`~/.gmt/cache`\ 。
-        可以使用 ``gmt clear cache`` 命令清空缓存目录。
-
-        配置参数 :term:`DIR_CACHE` 的值优先于且会\ **覆盖**\ 环境变量 **$GMT_CACHEDIR** 的值。
+- 配置参数 :term:`DIR_CACHE` 或环境变量 **$GMT_CACHEDIR**\ ：
+  指定存放从 GMT 服务器上下载的临时数据的缓存目录。
+  若该配置参数和环境变量均未定义，则默认缓存目录为 :file:`~/.gmt/cache`\ 。
+  可以使用 ``gmt clear cache`` 命令清空缓存目录。
+  配置参数 :term:`DIR_CACHE` 的值优先于且会\ **覆盖**\ 环境变量 **$GMT_CACHEDIR** 的值。
 
 其他目录
 --------
 
 还有一些目录相关的 GMT 配置参数或环境变量：
 
-.. glossary::
+- 配置参数 :term:`DIR_DCW`\ ：
+  指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
 
-    配置参数 :term:`DIR_DCW`
-        指定 :doc:`DCW 数据 </dataset/dcw/index>` 所在目录。
+- 配置参数 :term:`DIR_GSHHG`\ ：
+  指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
+  若该参数为空，则默认为 **$GMT_SHAREDIR**\ /coast 目录。
 
-    配置参数 :term:`DIR_GSHHG`
-        指定 :doc:`GSHHG 数据 </dataset/gshhg>` 所在目录。
-        若该参数为空，则默认为 **$GMT_SHAREDIR**\ /coast 目录。
-
-    环境变量 **$GMT_SHAREDIR**
-        指定 GMT 的 :file:`share` 目录。若未设置，GMT 自动猜测其所在位置
-        （如 GMT 安装目录下的 :file:`share` 目录）。此环境变量通常不需设置，
-        且推荐仅在特殊需求时设置。
+- 环境变量 **$GMT_SHAREDIR**\ ：
+  指定 GMT 的 :file:`share` 目录。若未设置，GMT 自动猜测其所在位置
+  （如 GMT 安装目录下的 :file:`share` 目录）。此环境变量通常不需设置，
+  且推荐仅在特殊需求时设置。
