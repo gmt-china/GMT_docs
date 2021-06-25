@@ -27,6 +27,6 @@ DIR参数
         :doc:`DCW数据 </dataset/dcw/index>` 所在路径。默认值为空。GMT 会自动猜测合理的路径值。
 
     **DIR_GSHHG**
-        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。若该参数未设置，则默认值为 **$GMT_SHAREDIR**\ /coast 目录。
+        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。该数据的默认路径为 **$GMT_SHAREDIR**\ /coast 目录。
 
 可以参考\ :doc:`/basis/input-files`\ 了解搜索目录的顺序。
