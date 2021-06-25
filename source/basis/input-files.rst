@@ -17,8 +17,8 @@ GMT 命令行经常需要读入文件。如果指定了文件的完整路径，G
 - 环境变量 **$GMT_USERDIR**\ ：
   指定用户自定义配置文件的存放目录。例如，用户自定义的 :file:`gmt.conf` 文件、
   自定义符号、CPT 文件、网格文件后缀文件等。
-  若该环境变量未定义，则 GMT 用户目录默认为用户目录
-  （Linux 和 macOS 下是 :file:`~/.gmt` 目录，Windows 下是 :file:`C:\\Users\\用户名\\.gmt` 目录）。
+  若该环境变量未定义，则用户目录默认为 :file:`~/.gmt` 目录（Linux 和 macOS ）
+  或 :file:`C:\\Users\\用户名\\.gmt` 目录（Windows）。
 
 - 配置参数 :term:`DIR_DATA` 或环境变量 **$GMT_DATADIR**\ ：
   指定一个或多个存放常用数据文件的目录。
