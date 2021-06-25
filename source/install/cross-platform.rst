@@ -7,7 +7,7 @@
 ---------------
 
 `conda <https://conda.io/>`_ 是由 `Anaconda <https://www.anaconda.com/>`__
-提供的一个跨平台软件包管理器。conda的 `conda-forge <https://conda-forge.org/>`_
+提供的一个跨平台软件包管理器。conda 的 `conda-forge <https://conda-forge.org/>`_
 通道提供了最新的 GMT。
 
 如果你是 Anaconda 用户（可以参考
