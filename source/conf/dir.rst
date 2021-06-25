@@ -7,7 +7,7 @@ DIR参数
 .. glossary::
 
     **DIR_CACHE**
-        指定从 GMT 服务器下载的临时文件（以 **@** 开头，如 :file:`@hotspots.txt`\ ）的存储目录。
+        指定从 GMT 服务器下载的临时文件（以 **@** 开头，如 :file:`@hotspots.txt`\ ）的缓存目录。
    
         也可用环境变量 **$GMT_CACHEDIR** 指定。若同时设置了 **DIR_CACHE** 和 **$GMT_CACHEDIR**\ ，
         则 GMT 只会使用 **DIR_CACHE** 指定的目录。若该配置参数和环境变量均未定义，
