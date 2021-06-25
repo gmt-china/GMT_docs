@@ -57,7 +57,8 @@ GMT 是地球科学最广泛使用的制图软件之一。
    :caption: GMT 实例
    :hidden:
 
-   examples/index
+   examples/internal
+   examples/external
 
 .. toctree::
    :maxdepth: 3
