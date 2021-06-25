@@ -2,26 +2,31 @@ DIR参数
 =======
    
 可以使用 :doc:`/module/gmtset` 设定一些专用的目录位置，如数据文件和程序设置的目录。
-这时，我们只需指定文件名，GMT 会自动去这些目录中找同名文件。
-其中一些目录也可以使用环境变量（\ **$GMT_SHAREDIR**\ 、\ **$GMT_DATADIR**\ 、\ 
-**$GMT_USERDIR** 和 **$GMT_TMPDIR**\ ）进行设置。
-GMT 配置文件 :file:`gmt.conf` 中的参数设置优先于环境变量，推荐用户使用配置文件进行配置。
-下面列出所有与目录相关的参数，参数的默认值在中括号内列出。
+这时，我们只需指定文件名，GMT 会自动去这些目录中找同名文件。下面列出所有与目录相关的配置参数：
 
 .. glossary::
 
     **DIR_CACHE**
-        从 GMT 服务器下载的临时文件（以 **@** 开头，如 :file:`@hotspots.txt`\ ）的存储目录 [:file:`~/.gmt/cache`]
+        指定从 GMT 服务器下载的临时文件（以 **@** 开头，如 :file:`@hotspots.txt`\ ）的存储目录。
+   
+        也可用环境变量 **$GMT_CACHEDIR** 指定。若同时设置了 **DIR_CACHE** 和 **$GMT_CACHEDIR**\ ，
+        则 GMT 只会使用 **DIR_CACHE** 指定的目录。若该配置参数和环境变量均未定义，
+        则默认缓存目录为 :file:`~/.gmt/cache`\ 。
+
+        可以使用 ``gmt clear cache`` 命令清空缓存目录。
 
     **DIR_DATA**
-        数据文件的存放目录，默认值为空。覆盖环境变量 **$GMT_DATADIR** 的值。
-
-        GMT 在命令中遇到文件名时，首先在当前目录下寻找该文件。
-        若找不到，则会到参数 **DIR_DATA** 指定的目录中寻找。
-        若依然找不到，则到环境变量 **$GMT_DATADIR** 指定的目录中寻找。
-
+        指定一个或多个存放常用数据文件的目录。
+        
+        也可用环境变量 **$GMT_DATADIR** 指定。若同时设置了 **DIR_DATA** 和 **$GMT_DATADIR**\ ，
+        则 GMT 只会使用 **DIR_DATA** 指定的目录。若该配置参数和环境变量均未定义，则数据目录默认为空。
+ 
+        多个目录之间用逗号分隔；以斜杠 :kbd:`/` 结尾的目录都会被递归搜索（Windows 不支持此功能）。
+ 
     **DIR_DCW**
-        :doc:`DCW数据 </dataset/dcw/index>` 所在路径，默认值为空。GMT 会自动猜测合理的路径值。
+        :doc:`DCW数据 </dataset/dcw/index>` 所在路径。默认值为空。GMT 会自动猜测合理的路径值。
 
     **DIR_GSHHG**
-        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。若该参数为空，则路径默认为 **$GMT_SHAREDIR**\ /coast 目录。
+        :doc:`GSHHG 数据 </dataset/gshhg>` 所在路径。若该参数未设置，则默认值为 **$GMT_SHAREDIR**\ /coast 目录。
+
+可以参考\ :doc:`/basis/input-files`\ 了解搜索目录的顺序。
