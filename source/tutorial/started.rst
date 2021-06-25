@@ -1,5 +1,5 @@
 入门教程
-########
+========
 
 《入门教程》通过一系列简单的示例介绍如何使用 GMT 实现最基本的绘图功能，
 如绘制底图、海岸线、线段、符号、文字等。初学者应仔细阅读《入门教程》，
@@ -19,17 +19,3 @@
    legend
    earth-relief
    layers/index
-
-进阶教程
-########
-
-《进阶教程》展示如何使用 GMT 实现更复杂的绘图功能。
-
-.. toctree::
-   :maxdepth: 1
-
-   histogram/index
-   oneliner
-   inset
-   subplot
-   multifig
