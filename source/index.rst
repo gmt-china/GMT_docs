@@ -50,7 +50,8 @@ GMT 是地球科学最广泛使用的制图软件之一。
    intro/index
    install/index
    migrating/index
-   tutorial/index
+   tutorial/started
+   tutorial/advanced
 
 .. toctree::
    :maxdepth: 3
@@ -82,6 +83,6 @@ GMT 是地球科学最广泛使用的制图软件之一。
    :caption: 附录
    :hidden:
 
-   appendix/index
+   contour-annot
    contributing/index
    贡献者列表 <https://github.com/gmt-china/GMT_docs/graphs/contributors>
