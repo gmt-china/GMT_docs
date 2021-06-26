@@ -1,5 +1,5 @@
-GMT中文手册
-###########
+GMT 中文手册
+############
 
 .. image:: /images/combined_logo.*
    :align: center
@@ -12,16 +12,20 @@ GMT 是地球科学最广泛使用的制图软件之一。
 手册详尽地介绍了GMT的用法并提供了大量的实用示例。
 其既可以作为初学者的入门读物，也可以作为日常使用的参考书。
 
+.. rubric:: 学习指南
+
+本手册主要包含如下三个部分：GMT 入门、GMT 实例和 GMT 进阶。
+
+- “GMT 入门”中介绍了 GMT 的历史、版本以及安装方法，并提供了初学者的学习入门材料。
+  初学者应完整阅读“GMT 入门”，也可观看配套的视频教程，并通过练习掌握 GMT 的基本用法。
+- “GMT 实例”包含了丰富的 GMT 实用脚本，可以作为日常科研绘图参考。
+- “GMT 进阶”详细介绍了 GMT 中的全部细节和用法，可以作为参考书查阅。
+
 .. image:: https://user-images.githubusercontent.com/50591376/119465777-9182ef80-bd76-11eb-9bd7-67c58f61795f.jpg
-    :alt: GMT6初学者教程
+    :alt: GMT6 初学者教程
     :width: 80%
     :align: center
     :target: https://www.bilibili.com/video/BV1C64y1m7qP
-
-文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
-欢迎更多的志愿者加入到文档的维护工作中来。
-
-    **一个人可以走得很快，但是一群人却可以走得更远。**
 
 .. rubric:: 快速链接：
 
@@ -41,6 +45,13 @@ GMT 是地球科学最广泛使用的制图软件之一。
     - :doc:`地学数据 </dataset/index>`
     - :doc:`引用GMT </intro/citation>`
     - :doc:`学习资源 </intro/resources>`
+
+
+文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
+欢迎更多的志愿者加入到文档的维护工作中来。
+
+    **一个人可以走得很快，但是一群人却可以走得更远。**
+
 
 .. toctree::
    :maxdepth: 3
