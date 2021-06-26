@@ -46,6 +46,7 @@ GMT 是地球科学最广泛使用的制图软件之一。
     - :doc:`引用GMT </intro/citation>`
     - :doc:`学习资源 </intro/resources>`
 
+----
 
 文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，
 欢迎更多的志愿者加入到文档的维护工作中来。
