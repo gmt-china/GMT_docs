@@ -38,12 +38,12 @@ GMT 是地球科学最广泛使用的制图软件之一。
     - :doc:`模块列表 </module/index>`
 
     - :doc:`颜色名列表 </basis/color>`
-    - :doc:`内置CPT </cpt/builtin-cpt>`
+    - :doc:`内置 CPT </cpt/builtin-cpt>`
     - :doc:`内置字体列表 </basis/text>`
     - :doc:`特殊字符一览 </basis/special-character>`
 
     - :doc:`地学数据 </dataset/index>`
-    - :doc:`引用GMT </intro/citation>`
+    - :doc:`引用 GMT </intro/citation>`
     - :doc:`学习资源 </intro/resources>`
 
 ----
