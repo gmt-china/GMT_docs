@@ -503,6 +503,20 @@
    \setcounter{tocdepth}{1}
    \setcounter{secnumdepth}{1}
 
+
+主程序/脚本
+===========
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    gmt
+    gmt-config
+
+现代模式会话管理
+================
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -520,8 +534,6 @@
    figure
    filter1d
    fitcircle
-   gmt
-   gmt-config
    gmtconnect
    gmtdefaults
    gmtget
