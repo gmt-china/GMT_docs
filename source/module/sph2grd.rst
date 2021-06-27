@@ -1,7 +1,6 @@
 .. index:: ! sph2grd
 .. include:: common_SYN_OPTs.rst_
 
-
 sph2grd
 ==========
 
@@ -95,31 +94,27 @@ L，M，C[L，M]，S[L，M]
 
 .. include:: explain_help.rst_
 
-
 示例
 ------
 
-使用 egm96_to360.txt 球谐系数文件创建 1 x 1 度
-全球网格。 ::
+使用 :file:`egm96_to360.txt` 球谐系数文件创建 1 x 1 度全球网格::
 
     gmt sph2grd @EGM96_to_360.txt -GEGM96_to_360.nc -Rg -I1 -V
 
-由于 -D 选项还未实施，该命令结果没有物理意义。EGM96_to_360.txt 远程文件已经失效，可从下面网址下载：
-https://cddis.nasa.gov/926/egm96/getit.html
-
+由于 -D 选项还未实施，该命令结果没有物理意义。\ :file:`EGM96_to_360.txt` 远程文件已经失效，
+可从 https://cddis.nasa.gov/926/egm96/getit.html 下载。
 
 参考文献
 ----------
 
-Holmes, S. A., and Featherstone, W. E., 2002, A unified approach to
-the Clenshaw summation and the recursive computation of very high
-degree and order normalized associated Legendre functions:
+Holmes, S. A., and Featherstone, W. E., 2002,
+A unified approach to the Clenshaw summation and the recursive computation of very high degree
+and order normalized associated Legendre functions:
 *J. Geodesy, v. 76, p. 279-299*.
-
 
 相关模块
 -----------
 
 :doc:`gmt`,
-:doc:`grdfft`,
-:doc:`grdmath`
+:doc:`gmt:grdfft`,
+:doc:`gmt:grdmath`
