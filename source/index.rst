@@ -95,6 +95,6 @@ GMT 是地球科学最广泛使用的制图软件之一。
    :caption: 附录
    :hidden:
 
-   contour-annot
-   contributing/index
    contributors
+   contributing/index
+   contour-annot
