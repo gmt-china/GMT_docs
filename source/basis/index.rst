@@ -1,9 +1,10 @@
-GMT基础
-#######
+GMT 基础
+########
 
-这一章介绍GMT中所有模块通用的基础知识。
+这一章介绍 GMT 所有模块的通用基础知识。
 
 .. toctree::
+   :maxdepth: 1
 
    paper
    unit
