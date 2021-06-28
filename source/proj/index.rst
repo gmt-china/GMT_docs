@@ -23,6 +23,8 @@ GMT 读取数据的实际坐标，并将其转换或者投影到图片的对应�
    :show-code: false
    :caption: GMT支持的地图投影及坐标变换
 
+.. include:: ../option/projection-codes.rst_
+
 .. toctree::
    :maxdepth: 2
    :hidden:
