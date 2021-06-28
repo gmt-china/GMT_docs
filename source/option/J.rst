@@ -52,15 +52,6 @@ GMT投影代码
 - **-JM15ch** 表示整个地图的高度是15厘米
 - **-JX10c/5c** 使用线性投影，地图的宽度是10厘米，高度为5厘米
 
-.. Substitution definitions:
-.. |lon0| replace:: lon\ :sub:`0`
-.. |lat0| replace:: lat\ :sub:`0`
-.. |lon1| replace:: lon\ :sub:`1`
-.. |lat1| replace:: lat\ :sub:`1`
-.. |lat2| replace:: lat\ :sub:`2`
-.. |lonp| replace:: lon\ :sub:`p`
-.. |latp| replace:: lat\ :sub:`p`
-
 下表列出了GMT所支持的全部投影方式，详细介绍见 :doc:`/proj/index`\ 。
 
 .. include:: projection-codes.rst_
