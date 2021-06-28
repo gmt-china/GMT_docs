@@ -16,7 +16,7 @@ GMT 读取数据的实际坐标，并将其转换或者投影到图片的对应�
    - 圆柱地图投影（cylindrical projection）
    - 圆锥地图投影（conic projection）
    - 方位地图投影（azimuthal projection）
-   - 其它地图投影（miscellaneous projection，即下图的 thematic 分类）
+   - 其它地图投影（miscellaneous projection，即下图的 THEMATIC 分类）
 
 .. gmtplot:: projections.sh
    :width: 75%
