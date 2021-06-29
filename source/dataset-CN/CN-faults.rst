@@ -1,7 +1,7 @@
 CN-faults: 中国断层数据
 =======================
 
-CN-faults 数据包含了中国区域内主要断层的地理位置信息。
+CN-faults 数据来自邓起东院士的中国活动构造图(1:400万)，由 `国家地震科学数据中心——地震地质与地震动力学数据共享分中心 <http://datashare.igl.earthquake.cn/datashare>`__ 提供，包含了中国区域内主要断层的地理位置、断层名称、长度、走向、倾向、倾角、断层性质、最晚活动年代等信息。
 
 数据文件
 --------
@@ -40,13 +40,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 标注断层名
 ++++++++++
 
-对于英文断层名，GMT中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
-**-Sq** 选项功能强大，可以灵活地设置断层名的位置、字体等属性。
-
-对于中文断层名，由于 **plot -Sq** 目前存在BUG，导致即便在正确设置中文字体的情况下，
-依然无法显示中文断层名。因而下面的示例中，使用 **plot -Sq** 绘制了一个全透明的图层，
-同时将断层名文本输出到文件faultname.dat中，并使用 **plot** 和 **text** 模块分别
-绘制断层线和标注断层名。
+GMT中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
 
 .. note::
 
@@ -59,26 +53,57 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 
     gmt begin CN-faults-labeling png,pdf
         gmt coast -JM10c -RTW -Baf -W0.5p,black
-        # 由于 -Sq 无法支持中文，该命令将断层名称输出到文件faultname.dat中，并绘制了一个全透明的图层
-        # 实际上，当执行脚本获得faultname.dat 后，可将该命令注释掉
-        gmt plot CN-faults.gmt -Sqn1:+Lh+tfaultname.dat -aL=断层名称 -t100
-        # 使用 plot 绘制断层
-        gmt plot CN-faults.gmt -W1p,red
-        # 标注断层名
-        gmt text faultname.dat -F+f15p,46,red+a
-        rm faultname.dat
+        # convert命令的-aL选项提取源文件中"断层名称"字段作为头记录的-L标签
+        # plot命令-Sq的+Lh子选项从当前段头中获取该标签值，作为该线段的文字标注
+        gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11,STHeiti-Regular--GB-EUC-H
+    gmt end show
+
+根据属性信息提取数据
+++++++++++++++++++++++
+
+.. gmtplot::
+   :show-code: true
+   :width: 50%
+   
+    gmt begin CN-single-fault png
+        # convert -S根据属性筛选某一条/类断层数据 
+        gmt convert CN-faults.gmt -S"断层名称=阿巴宫断裂"  -aL="断层名称" | gmt plot -R87/90/46/49 -Ba -Sqn1:+Lh+f11,STHeiti-Regular--GB-EUC-H 
+    gmt end show
+
+根据空间范围提取数据
+++++++++++++++++++++++
+
+.. note::
+
+    :doc:`/module/gmtselect`模块，可实现矩形范围、缓冲区范围和多边形范围内空间数据的提取。此处仅举其中一个例子。
+
+.. gmtplot::
+   :show-code: true
+   :width: 50%
+   
+    gmt begin CN-buffer-fault png
+        # 圆心
+        echo 111 35.5 >center
+        # 半径100km的圆域
+        echo 111 35.5 200k| gmt plot -R109/113/34/37 -JM15c -SE- -Wblue -fg
+        # 筛选半径为100km内的断层
+        gmt select CN-faults.gmt -Ccenter+d100k -fg -aL="断层名称" | gmt plot -Ba -Sqd3c:+Lh+f11,STHeiti-Regular--GB-EUC-H
+        rm center
     gmt end show
 
 数据来源及处理
 --------------
+1.  从 `中国大陆1：400万活动断层数据库 <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__ 下载 ``Active_fault.zip`` 压缩包
 
-CN-faults 原始数据来源于邓起东院士提供的 Shapefile 格式的数据，
-并由\ `刘珠妹 <https://github.com/liuzhumei>`__\ 通过如下命令转换为 GMT 可使用的格式::
+2. 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式（若不关注属性信息，GMT也可以直接读取Shapefile格式源数据绘图）::
 
-    $ ogr2ogr -f GMT CN-faults.gmt faults.shp
+    ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp --config SHAPE_ENCODING "UTF-8"
+
+社区最终提供的:file:`CN-faults.gmt`\参考了《最新1/400万中国活动构造空间数据库的建立》（屈春燕，2008）对属性字段名称的缺失和错误部分进行了订正。
 
 数据引用
 --------
 
-- 中文引用： 邓起东, 张培震, 冉勇康, 杨晓平, 闵伟, 陈立春, 2003. 中国活动构造与地震活动, 地学前缘, 10(S1), 66-73.
-- 英文引用： Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003. Active tectonics and earthquake activities in China. Earth Science Frontiers, 10(S1): 66-73.
+- 中文引用1:: 邓起东. 中国活动构造图(1:400万)(附光盘)[M]. 地震出版社, 2007.
+- 中文引用2:: 屈春燕. 最新1/400万中国活动构造空间数据库的建立[J]. 地震地质, 2008, 30(1):298-304.
+- 英文引用:: Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003. Active tectonics and earthquake activities in China. Earth Science Frontiers, 10(S1): 66-73.
