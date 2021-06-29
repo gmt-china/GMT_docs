@@ -23,7 +23,7 @@
     :width: 70%
     :show-code: false
 
-本章将详细介绍这些 GMT 的配置参数：
+本章将详细介绍这些 GMT 配置参数：
 
 .. toctree::
    :maxdepth: 1
