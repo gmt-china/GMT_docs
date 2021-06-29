@@ -10,17 +10,17 @@
 
 .. gmtplot:: defaults_1.sh
     :caption: 配置参数示例 1
-    :width: 50%
+    :width: 70%
     :show-code: false
 
 .. gmtplot:: defaults_2.sh
     :caption: 配置参数示例 2
-    :width: 50%
+    :width: 70%
     :show-code: false
 
 .. gmtplot:: defaults_3.sh
     :caption: 配置参数示例 3
-    :width: 50%
+    :width: 70%
     :show-code: false
 
 本章将详细介绍这些 GMT 的配置参数：
