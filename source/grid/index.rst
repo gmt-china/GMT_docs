@@ -13,7 +13,7 @@ Z 值可以表示高程、重力值、温度、速度等。
     registration
     boundary-condition
 
-然后介绍如何利用 GMT 或其他软件读取和查看 netCDF 网格文件：
+然后介绍如何利用 GMT 或其他软件读写和查看 netCDF 网格文件：
 
 .. toctree::
     :maxdepth: 1
