@@ -1,7 +1,7 @@
-查看netCDF文件
-==============
+查看 netCDF 文件
+================
 
-某些软件可以直接用于查看netCDF文件的内容：
+某些软件可以直接用于查看 netCDF 文件的内容：
 
 - `ncview <http://meteora.ucsd.edu/~pierce/ncview_home_page.html>`_
 - `Panoply <http://www.giss.nasa.gov/tools/panoply/>`_
