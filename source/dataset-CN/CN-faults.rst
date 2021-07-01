@@ -93,7 +93,8 @@ GMT中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
 
 数据来源及处理
 --------------
-1.  从 `中国大陆1：400万活动断层数据库 <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__ 下载 ``Active_fault.zip`` 压缩包
+1.  从 `中国大陆1：400万活动断层数据库 <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__
+     下载 :file:`Active_fault.zip` 压缩包
 
 2. 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式（若不关注属性信息，GMT也可以直接读取Shapefile格式源数据绘图）::
 
