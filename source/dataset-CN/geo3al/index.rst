@@ -81,6 +81,6 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
   以了解数据提供的元信息，并相应地修改绘图脚本。
 
 数据引用
---------------
+--------
 
 - Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.
