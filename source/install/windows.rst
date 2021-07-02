@@ -69,14 +69,28 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 为了更好地使用GMT，你还可以根据自己的需求安装如下软件。
 
-1.  安装 Git for Windows (**推荐需要在Bash下运行GMT的用户安装**)
+1.  安装 Visual Studio Code
+
+    Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能强大的编辑器。
+    VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
+    实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
+    
+    安装配置教程请参阅： https://gmt-china.org/blog/vscode-usage/
+    
+    .. warning::
+    
+        使用 VS Code 内置终端运行 Batch 绘图脚本时，\ **请一定要选择 CMD 终端，
+        绝对不要使用 PowerShell **\ 。PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
+        CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
+
+2.  安装 Git for Windows (**推荐需要在Bash下运行GMT的用户安装**)
 
     Git for Windows 为Windows用户提供了Bash以及Linux下常用的多个命令。
     如果想要在Windows下运行Bash脚本，推荐安装Git for Windows。
 
     下载地址: https://git-scm.com/download/win
 
-2.  安装 Ghostscript (**根据是否需要中文支持决定是否安装**)
+3.  安装 Ghostscript (**根据是否需要中文支持决定是否安装**)
 
     GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片，因而 Ghostscript 是必须的。
     GMT安装包中自带了Ghostscript，但其并不支持在GMT图片中添加中文。
@@ -97,14 +111,14 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
         请注意 Ghostscript 的版本！
         由于Ghostscript自身的bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
 
-3.  安装 GraphicsMagick (**根据需求选择是否安装**)
+4.  安装 GraphicsMagick (**根据需求选择是否安装**)
 
     GMT 的 **movie** 模块在制作 GIF 格式的动画时需要
     使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
     如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境
     变量 **PATH** 中，以保证 GMT 可以找到其提供的 **gm** 命令。
 
-4.  安装 UnixTools
+5.  安装 UnixTools
 
     GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不是 GMT 的一部分。
     如果想要在 Windows 下使用各种 Linux 的常用命令，
