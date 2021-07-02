@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 gmt begin defaults_3 pdf,png
 gmt set MAP_FRAME_TYPE plain FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh FONT_ANNOT_PRIMARY +8p
 gmt basemap -R2001-9-11T/2001-9-13T/0.01/100 -JX2.25iT/2.25il -Bpxa6Hf1hg6h+l"x-axis label" -Bpya1g3p+l"y-axis label" -BWSne \

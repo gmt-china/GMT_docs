@@ -68,7 +68,7 @@ CN-border 数据提供了三个数据文件：
         gmt inset end
     gmt end show
 
-数据来源及处理
+数据来源与处理
 --------------
 
 CN-border 原始数据来自于 `1:100万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_\ ，
