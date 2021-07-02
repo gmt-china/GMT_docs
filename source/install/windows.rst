@@ -71,17 +71,17 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 1.  安装 Visual Studio Code
 
-    Visual Studio Code (vscode)，是微软推出的一款免费、轻量且功能强大的编辑器。
-    vscode除一键执行、语法高亮、分屏显示外，还可实现bat/bash脚本的顺滑切换运行、
-    jpg/gif/pdf等成图结果实时预览、脚本报错信息显示，非常适合全平台下执行GMT脚本。
+    Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能强大的编辑器。
+    VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
+    实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
     
     安装配置教程请参阅： https://gmt-china.org/blog/vscode-usage/
     
     .. warning::
     
-        使用vscode内置终端运行bat绘图脚本时，请一定要选择 **cmd** 终端，绝对不要
-        使用 **PowerShell** 。PowerShell运行bat绘图脚本会出现无法使用远程数据等
-        错误。 **cmd** 终端的切换方法在上面的安装配置教程中已有详细说明。
+        使用 VS Code 内置终端运行 Batch 绘图脚本时，\ **请一定要选择 CMD 终端，
+        绝对不要使用 PowerShell **\ 。PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
+        CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
 2.  安装 Git for Windows (**推荐需要在Bash下运行GMT的用户安装**)
 
