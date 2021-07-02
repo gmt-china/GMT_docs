@@ -106,7 +106,7 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
 4.  安装 UnixTools
 
-    GMT 中文手册的实例中使用到的 **gawk** 等 Linux下的命令并不是 GMT 的一部分。
+    GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不是 GMT 的一部分。
     如果想要在 Windows 下使用各种 Linux 的常用命令，
     推荐使用 GMT 中文社区整理的 Unix 小工具合集包 **UnixTools**\ ，其包含了如下程序：
     
@@ -135,6 +135,3 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     
     可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
     简易教程学习这些命令的基本用法。
-
-    - 下载地址: `UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`__
-    - 简介: https://gmt-china.org/blog/unix-tools-for-windows/
