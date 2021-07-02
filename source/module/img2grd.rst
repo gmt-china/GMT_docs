@@ -4,7 +4,7 @@
 img2grd
 ========
 
-:官方文档: :doc:`gmt:img2grd`
+:官方文档: :doc:`gmt:supplements/img/img2grd`
 :简介: 从墨卡托 img 格式文件中提取网格数据
 
 **img2grd** 读取 img 格式的文件，提取数据并写入到网格文件中。**-M** 选项用来设置
@@ -227,4 +227,4 @@ grdgradient 生成一个光照文件::
 相关模块
 -----------
 :doc:`gmt`,
-:doc:`img2google`
+:doc:`gmt:supplements/img/img2google`
