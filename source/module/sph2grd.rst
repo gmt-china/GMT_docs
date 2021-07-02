@@ -101,7 +101,7 @@ L，M，C[L，M]，S[L，M]
 
     gmt sph2grd @EGM96_to_360.txt -GEGM96_to_360.nc -Rg -I1 -V
 
-由于 -D 选项还未实施，该命令结果没有物理意义。\ :file:`EGM96_to_360.txt` 远程文件已经失效，
+由于 **-D** 选项还未实施，该命令结果没有物理意义。\ :file:`EGM96_to_360.txt` 远程文件已经失效，
 可从 https://cddis.nasa.gov/926/egm96/getit.html 下载。
 
 参考文献
