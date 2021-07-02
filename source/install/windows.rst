@@ -75,6 +75,21 @@ GMT 目前不具备自动更新功能。如果想要升级新版本，通常需�
 
 为了更好地使用 GMT，你还可以根据自己的需求安装如下软件。
 
+Visual Studio Code
+^^^^^^^^^^^^^^^^^^
+
+Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能强大的编辑器。
+VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
+实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
+    
+安装配置教程请参阅： https://gmt-china.org/blog/vscode-usage/
+    
+.. warning::
+    
+    使用 VS Code 内置终端运行 Batch 绘图脚本时，\ **请一定要选择 CMD 终端，
+    绝对不要使用 PowerShell **\ 。PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
+    CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
+
 Git for Windows
 ^^^^^^^^^^^^^^^
 
