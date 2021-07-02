@@ -38,7 +38,7 @@ img2google
 --------
 
 *imgfile*
-    Img 格式的的测深/地形文件，比如由 Sandwell 和 Smith 创建的海底地形文件。
+    Img 格式的测深/地形文件，比如由 Sandwell 和 Smith 创建的海底地形文件。
     如果当前文件夹中不存在该文件并且用户已经设置了环境变量 **$GMT_DATADIR**，
     :doc:`gmt:supplements/img/img2grd`\ 将从 **$GMT_DATADIR** 中寻找 *imgfile*。
 
@@ -88,7 +88,7 @@ img2google
 
 **-T**\ *doctitle*
     指定文档标题（如果字符串中包含空格，使用双引号括起来）
-    ["Predicted bathymetry"].
+    ["Predicted bathymetry"]。
 
 .. _-U:
 
@@ -101,7 +101,7 @@ img2google
 .. _-Z:
 
 **-Z**\ [+]
-    使用 zip （需预先安装）创建一个 \*.kmz 文件以方便分发；追加 **+**
+    使用 zip（需预先安装）创建一个 \*.kmz 文件以方便分发；追加 **+**
     可以在压缩后删除对应的 KML 和 PNG 文件。
 
 示例
@@ -113,7 +113,7 @@ img2google
     img2google -R170/180/20/30
 
 使用早期的墨卡托测深文件，例如 topo.15.1.img，在详细模式中生成相同的切片，
-通过裁剪以仅显示海洋，将输出命名为*oldimage*，直接设置 KML 文件元数据
+通过裁剪以仅显示海洋，将输出命名为 *oldimage*，直接设置 KML 文件元数据
 （包括设置图像高度为 10km），并制作单个 \*.kmz 文件::
 
     img2google topo.15.1.img -R170/180/20/30 -Aa10000 -C -Goldimage \
@@ -128,5 +128,5 @@ http://topex.ucsd.edu
 相关模块
 --------
 
-:doc:`gmt:supplements/img/img2grd`，
+:doc:`gmt:supplements/img/img2grd`,
 :doc:`psconvert`
