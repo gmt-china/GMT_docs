@@ -88,8 +88,8 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 
 安装和配置教程：
 
- - https://gmt-china.org/blog/vscode-usage/
--  https://seismo-learn.org/seismology101/computer/editor/#vs-code
+- https://gmt-china.org/blog/vscode-usage/
+- https://seismo-learn.org/seismology101/computer/editor/#vs-code
 
 .. warning::
 
