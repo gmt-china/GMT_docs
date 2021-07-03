@@ -23,52 +23,47 @@ GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软�
 安装 GMT
 --------
 
-1. 下载 GMT
-^^^^^^^^^^^
+1.  下载 GMT
 
-- `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
-- `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
+    - `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
+    - `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
 
-2. 安装 GMT
-^^^^^^^^^^^
+2.  安装 GMT
 
-双击安装包即可安装。请注意，GMT 安装包中内置的 Ghostscript **不支持** 中文。
-若想要 GMT 支持中文，注意在安装 GMT 时 **不勾选** Ghostscript 组件，其他所有选项都勾选上。
-待 GMT 安装完成后再按照下面的步骤与注意事项自行安装 Ghostscript。
+    双击安装包即可安装。请注意，GMT 安装包中内置的 Ghostscript **不支持** 中文。
+    若想要 GMT 支持中文，注意在安装 GMT 时 **不勾选** Ghostscript 组件，其他所有选项都勾选上。
+    待 GMT 安装完成后再按照下面的步骤与注意事项自行安装 Ghostscript。
 
-如果不需要中文支持，则必须在 “Choose components” 页面，将所有选项都勾选上。
+    如果不需要中文支持，则必须在 “Choose components” 页面，将所有选项都勾选上。
 
-.. note::
+    .. note::
 
-    安装过程中可能会出现如下警告::
+        安装过程中可能会出现如下警告::
 
-        Warning! Failed to add GMT to PATH. Please add the GMT bin path to PATH manually.
+            Warning! Failed to add GMT to PATH. Please add the GMT bin path to PATH manually.
 
-    出现此警告的原因是系统的环境变量 **PATH** 太长，GMT 安装包无法直接修改。
-    解决办法是，先忽略这一警告，待安装完成后按照如下步骤手动修改系统环境变量 **PATH**\ 。
+        出现此警告的原因是系统的环境变量 **PATH** 太长，GMT 安装包无法直接修改。
+        解决办法是，先忽略这一警告，待安装完成后按照如下步骤手动修改系统环境变量 **PATH**\ 。
 
-    1.  点击“计算机”→“属性”→“高级系统设置”→“环境变量”打开“环境变量”编辑工具
-    2.  在“系统变量”部分中，选中 “Path” 并点击“编辑”
-    3.  在“变量值”的最后加上 GMT 的 :file:`bin` 目录的路径，例如 :file:`C:\\programs\\gmt6\\bin`\ 。
-        需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
+        1.  点击“计算机”→“属性”→“高级系统设置”→“环境变量”打开“环境变量”编辑工具
+        2.  在“系统变量”部分中，选中 “Path” 并点击“编辑”
+        3.  在“变量值”的最后加上 GMT 的 :file:`bin` 目录的路径，例如 :file:`C:\\programs\\gmt6\\bin`\ 。
+            需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
 
-3. 测试安装
-^^^^^^^^^^^
+3.  测试安装
 
-安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 cmd。
-在 cmd 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
+    安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 cmd。
+    在 cmd 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
 
-4. 升级 GMT
-^^^^^^^^^^^
+4.  升级 GMT
 
-GMT 目前不具备自动更新功能。如果想要升级新版本，通常需要先卸载旧版本。
-卸载完成后，再下载并安装新版安装包以完成升级。
+    GMT 目前不具备自动更新功能。如果想要升级新版本，通常需要先卸载旧版本。
+    卸载完成后，再下载并安装新版安装包以完成升级。
 
-5. 卸载 GMT
-^^^^^^^^^^^
+5.  卸载 GMT
 
-若想要卸载 GMT，可以进入 GMT 安装目录，找到并双击执行 ``Uninstall.exe`` 即可完成卸载。
-偶尔会遇到卸载不干净的情况，可以等卸载程序执行完成后再手动删除 GMT 安装目录即可。
+    若想要卸载 GMT，可以进入 GMT 安装目录，找到并双击执行 ``Uninstall.exe`` 即可完成卸载。
+    偶尔会遇到卸载不干净的情况，可以等卸载程序执行完成后再手动删除 GMT 安装目录即可。
 
 安装可选软件
 ------------
@@ -81,11 +76,11 @@ Visual Studio Code
 Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能强大的编辑器。
 VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
 实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
-    
+
 安装配置教程请参阅： https://gmt-china.org/blog/vscode-usage/
-    
+
 .. warning::
-    
+
     使用 VS Code 内置终端运行 Batch 绘图脚本时，\
     **请一定要选择 CMD 终端，绝对不要使用 PowerShell**\ 。
     PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
