@@ -33,7 +33,7 @@ GMT 是地球科学最广泛使用的制图软件之一。
     :columns: 3
 
     - :doc:`标准选项 </option/index>`
-    - :doc:`投影方式 </option/J>`
+    - :doc:`地图投影 </proj/index>`
     - :doc:`配置参数 </conf/index>`
     - :doc:`模块列表 </module/index>`
 
