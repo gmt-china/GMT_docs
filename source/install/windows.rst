@@ -68,7 +68,7 @@ GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软�
 安装可选软件
 ------------
 
-为了更好地使用 GMT，你还可以根据自己的需求安装如下软件。
+为了更好地使用 GMT，用户可以根据自己的实际需求选择安装如下软件。
 
 Visual Studio Code
 ^^^^^^^^^^^^^^^^^^
@@ -77,7 +77,10 @@ Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能�
 VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
 实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
 
-安装配置教程请参阅： https://gmt-china.org/blog/vscode-usage/
+安装和配置教程：
+
+ - https://gmt-china.org/blog/vscode-usage/
+-  https://seismo-learn.org/seismology101/computer/editor/#vs-code
 
 .. warning::
 
@@ -89,17 +92,15 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 Git for Windows
 ^^^^^^^^^^^^^^^
 
-**推荐需要在 Bash 下运行 GMT 的用户安装**\ 。
+**推荐需要在 Bash 下运行 GMT 的用户安装 Git for Windows**\ 。
+Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
+方便用户在 Windows 下运行 Bash 脚本。
 
-Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 下常用的多个命令。
-如果想要在 Windows 下运行 Bash 脚本，推荐安装 Git for Windows。
-
-下载地址: https://git-scm.com/download/win
+- 下载地址：https://git-scm.com/download/win
+- 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
 
 Ghostscript
 ^^^^^^^^^^^
-
-**根据是否需要中文支持决定是否安装**\ 。
 
 GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片，因而 Ghostscript 是必须的。
 GMT 安装包中自带了 Ghostscript，但其并不支持在 GMT 图片中添加中文。
@@ -123,11 +124,9 @@ GMT 安装包中自带了 Ghostscript，但其并不支持在 GMT 图片中添�
 GraphicsMagick
 ^^^^^^^^^^^^^^
 
-**根据需求选择是否安装**\ 。
-
 GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要
 使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
-如有制作 GIF 动画的需求，可以下载安装这个软件，并将其 :file:`bin` 目录加入到系统环境
+如有制作 GIF 动画的需求，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境
 变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gmt`` 命令。
 
 UnixTools
