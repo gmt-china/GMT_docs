@@ -9,7 +9,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位的安装包，可以直接下�
     以上两种情况都会导致 GMT 运行出错。如果你的用户名不符合要求，请新建一个用户，
     并使用新用户登录 Windows，再安装 GMT。
 
-    此外，360 等安全软件会在 GMT 安装过程中拦截 PATH 环境变量的修改。
+    360 等安全软件会在 GMT 安装过程中拦截 PATH 环境变量的修改。
     请务必关闭安全软件之后再安装。
 
     GMT 提供的安装包不支持 Windows XP。
@@ -20,6 +20,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位的安装包，可以直接下�
 1.  下载 GMT 安装包
 
     GMT 安装包：
+
     - `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
     - `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
 
@@ -31,11 +32,18 @@ GMT 为 Windows 用户提供了 32 位和 64 位的安装包，可以直接下�
 
 2.  安装 GMT
 
-    双击安装包即可安装。请注意，GMT 安装包中内置的 Ghostscript **不支持** 中文。
-    若想要 GMT 支持中文，注意在安装 GMT 时 **不勾选** Ghostscript 组件，其他所有选项都勾选上。
-    待 GMT 安装完成后再按照下面的步骤与注意事项自行安装 Ghostscript。
+    双击安装包即可安装。
 
-    如果不需要中文支持，则必须在 “Choose components” 页面，将所有选项都勾选上。
+    .. note::
+
+        GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片，因而 Ghostscript 是必须的。
+        但 GMT 安装包中内置的 Ghostscript **不支持**\ 中文。若想要 GMT 支持中文，
+        可以选择如下操作（可以参考 :doc:`/chinese/windows` 了解详细步骤与注意事项）：
+
+        - 安装 GMT 时，\ **不勾选** Ghostscript 组件，其他所有选项都勾选上
+        - GMT 安装完成后，再自行安装 Ghostscript
+
+        如果不需要中文支持，则必须在 “Choose components” 页面，将所有选项都勾选上。
 
     .. note::
 
