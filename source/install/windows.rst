@@ -1,7 +1,7 @@
 Windows 下安装 GMT
 ==================
 
-GMT 为 Windows 用户提供了 32 位和 64 位的安装包，可以直接下载安装使用。
+GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载安装使用。
 
 .. warning::
 
@@ -38,12 +38,12 @@ GMT 为 Windows 用户提供了 32 位和 64 位的安装包，可以直接下�
 
         GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片，因而 Ghostscript 是必须的。
         但 GMT 安装包中内置的 Ghostscript **不支持**\ 中文。若想要 GMT 支持中文，
-        可以选择如下操作（可以参考 :doc:`/chinese/windows` 了解详细步骤与注意事项）：
+        需要按照如下说明操作：
 
         - 安装 GMT 时，\ **不勾选** Ghostscript 组件，其他所有选项都勾选上
-        - GMT 安装完成后，再自行安装 Ghostscript
+        - GMT 安装完成后，再自行安装 Ghostscript，并参考 :doc:`/chinese/windows` 进一步配置中文
 
-        如果不需要中文支持，则必须在 “Choose components” 页面，将所有选项都勾选上。
+        如果不需要中文支持，则须在 “Choose components” 页面将所有选项都勾选上。
 
     .. note::
 
