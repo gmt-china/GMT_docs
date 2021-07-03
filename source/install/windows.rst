@@ -23,7 +23,7 @@ GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软�
 安装 GMT
 --------
 
-1.  下载 GMT
+1.  下载 GMT 安装包
 
     - `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
     - `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
