@@ -1,7 +1,7 @@
 Windows 下安装 GMT
 ==================
 
-GMT 为 Windows 用户提供了 32 位和 64位的安装包，可以直接下载安装使用。
+GMT 为 Windows 用户提供了 32 位和 64 位的安装包，可以直接下载安装使用。
 
 .. warning::
 
@@ -14,19 +14,20 @@ GMT 为 Windows 用户提供了 32 位和 64位的安装包，可以直接下载
 
     GMT 提供的安装包不支持 Windows XP。
 
-GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
-
-- `GDAL <https://gdal.org/>`_\ ：用于多种地学数据格式的转换
-- `FFmpeg <https://ffmpeg.org/>`_\ ：用于生成 mp4 或 webm 格式的动画
-- `Ghostscript <https://www.ghostscript.com/>`_\ : 用于生成 PDF、JPG 等图片格式
-
 安装 GMT
 --------
 
 1.  下载 GMT 安装包
 
+    GMT 安装包：
     - `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
     - `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
+
+    GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
+
+    - `GDAL <https://gdal.org/>`_\ ：用于多种地学数据格式的转换
+    - `FFmpeg <https://ffmpeg.org/>`_\ ：用于生成 mp4 或 webm 格式的动画
+    - `Ghostscript <https://www.ghostscript.com/>`_\ : 用于生成 PDF、JPG 等图片格式
 
 2.  安装 GMT
 
