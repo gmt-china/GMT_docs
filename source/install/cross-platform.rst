@@ -12,7 +12,7 @@ conda 的 `conda-forge <https://conda-forge.org/>`_ 通道提供了 GMT 安装�
 使用 conda 安装 GMT 的优点有：跨平台、安装简单、版本切换方便等。
 
 Anaconda 用户可以直接通过以下命令安装、升级以及卸载 GMT。
-参考 `Anaconda 简易教程 <https://seismo-learn.org/software/anaconda/>`__ 安装 Anaconda。
+可以参考 `Anaconda 简易教程 <https://seismo-learn.org/software/anaconda/>`__ 安装 Anaconda。
 
 安装 GMT
 ^^^^^^^^^
