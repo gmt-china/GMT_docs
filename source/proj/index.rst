@@ -23,7 +23,7 @@ GMT 读取数据的实际坐标，并将其转换或者投影到图片的对应�
    :show-code: false
    :caption: GMT支持的地图投影及坐标变换
 
-下表列出了 GMT 所支持的全部投影方式。
+:doc:`/option/J` 这一节简要介绍了 GMT 中指定投影方式的三种不同格式。下表列出了 GMT 所支持的全部投影方式。
 
 .. include:: ../option/projection-codes.rst_
 
