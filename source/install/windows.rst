@@ -6,7 +6,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 .. warning::
 
     - 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；
-      （2）是否为 **Administrator**\ 。以上两种情况都会导致 GMT 运行出错。
+      （2）是否为 **Administrator**\ 。以上两种情况都可能导致 GMT 运行出错。
       如果用户名不符合要求，请新建一个用户。然后使用新用户登录 Windows，再安装 GMT。
     - 360 等安全软件会在 GMT 安装过程中拦截 PATH 环境变量的修改。
       请务必关闭安全软件之后再安装。
@@ -80,7 +80,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 Visual Studio Code
 ^^^^^^^^^^^^^^^^^^
 
-Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能强大的编辑器。
+Visual Studio Code (VS Code) 是微软推出的一款免费、轻量且功能强大的编辑器。
 VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
 实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
 
@@ -134,7 +134,7 @@ GraphicsMagick
 GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要
 使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
 如有制作 GIF 动画的需求，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境
-变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gmt`` 命令。
+变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gm`` 命令。
 
 UnixTools
 ^^^^^^^^^
