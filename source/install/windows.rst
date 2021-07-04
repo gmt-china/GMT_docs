@@ -19,8 +19,8 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
     GMT 安装包：
 
-    - `gmt-6.2.0-win64.exe (64位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
-    - `gmt-6.2.0-win32.exe (32位) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
+    - `gmt-6.2.0-win64.exe（64 位） <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
+    - `gmt-6.2.0-win32.exe（32 位） <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
 
     GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 
@@ -120,8 +120,8 @@ GMT 安装包中自带了 Ghostscript，但其并不支持在 GMT 图片中添�
 
 安装包下载地址:
 
-- `gs9540w64.exe (64位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
-- `gs9540w32.exe (32位) <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
+- `gs9540w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
+- `gs9540w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
 
 .. warning::
 
