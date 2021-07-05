@@ -84,7 +84,7 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
    :show-code: true
    :width: 50%
    
-    gmt begin CN-buffer-fault png
+    gmt begin CN-buffer-fault png,pdf
         gmt basemap -R109/113/34/37 -JM15c -Ba
         echo 111 35.5 >center
         # draw a cirle with a radius of 100km
