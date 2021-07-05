@@ -29,7 +29,7 @@ rst_prolog = """
 """
 
 # -- General configuration ------------------------------------------------
-needs_sphinx = "1.8"
+needs_sphinx = "2.4"
 source_suffix = ".rst"
 source_encoding = "utf-8-sig"
 nitpicky = True
@@ -42,6 +42,7 @@ pygments_style = "sphinx"
 show_authors = True
 
 extensions = [
+    "sphinx.ext.duration",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_cjkspace.cjkspace",
