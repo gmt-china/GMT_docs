@@ -74,13 +74,13 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     Visual Studio Code (VS Code)，是微软推出的一款免费、轻量且功能强大的编辑器。
     VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
     实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
-    
+
     安装配置教程请参阅： https://gmt-china.org/blog/vscode-usage/
-    
+
     .. warning::
-    
+
         使用 VS Code 内置终端运行 Batch 绘图脚本时，\ **请一定要选择 CMD 终端，
-        绝对不要使用 PowerShell **\ 。PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
+        绝对不要使用 PowerShell**\ 。PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
         CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
 2.  安装 Git for Windows (**推荐需要在Bash下运行GMT的用户安装**)
@@ -123,7 +123,7 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
     GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不是 GMT 的一部分。
     如果想要在 Windows 下使用各种 Linux 的常用命令，
     推荐使用 GMT 中文社区整理的 Unix 小工具合集包 **UnixTools**\ ，其包含了如下程序：
-    
+
     - ``cat`` \：显示文件内容
     - ``cut``\ ：从指定文本中截取文本并输出至标准输出
     - ``gawk``\ ：处理文本信息的编程语言工具
@@ -142,10 +142,10 @@ GMT 安装包中不仅包含了GMT，还包含了运行GMT所需的如下软件�
 
     下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
     然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。
-    
+
     以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。
     如果你发现某些工具存在问题，或者觉得有其他需要的 Unix 工具没有被包含进来，
     请向我们反馈，我们会酌情考虑。
-    
+
     可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
     简易教程学习这些命令的基本用法。
