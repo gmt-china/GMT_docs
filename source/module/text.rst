@@ -56,7 +56,7 @@ text
 
     下图展示了 **-C** 选项的作用。
 
-    .. gmtplot:: /scripts/text_clearance.sh
+    .. gmtplot:: text/text_clearance.sh
        :show-code: false
        :width: 80%
 
@@ -181,7 +181,7 @@ text
 
     段头记录后即为要显示在图上的文本，每段数据之间用空行分隔。
 
-    .. gmtplot:: /scripts/text_-M.sh
+    .. gmtplot:: text/text_-M.sh
 
        段落模式示意图
 
