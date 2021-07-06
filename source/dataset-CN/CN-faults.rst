@@ -77,7 +77,7 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
 根据空间范围提取数据
 ++++++++++++++++++++++
 
-:doc:`/module/gmtselect`\ 模块，可实现矩形范围、缓冲区范围和多边形范围内空间数据的提取。
+:doc:`/module/gmtselect` 模块，可实现矩形范围、缓冲区范围和多边形范围内空间数据的提取。
 此处仅举其中一个例子。
 
 .. gmtplot::
@@ -97,16 +97,15 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
 数据来源及处理
 --------------
 
-1. 从\ `中国大陆1：400万活动断层数据库 
-<http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__\ 
-下载\ :file:`Active_fault.zip`\ 压缩包
+1. 从\ `中国大陆1：400万活动断层数据库 <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__\
+   下载 :file:`Active_fault.zip` 压缩包
 
-2. 使用\ :doc:`ogr2ogr </table/ogr2ogr>`\ 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式
+2. 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 （若不关注属性信息，GMT也可以直接读取Shapefile格式源数据绘图）\::
 
     ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp --config SHAPE_ENCODING "UTF-8"
 
-社区最终提供的\ :file:`CN-faults.gmt`\ 参考了
+社区最终提供的 :file:`CN-faults.gmt` 参考了
 《最新1/400万中国活动构造空间数据库的建立》（屈春燕，2008）
 对属性字段名称的缺失和错误部分进行了订正。
 
