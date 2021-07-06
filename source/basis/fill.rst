@@ -88,5 +88,5 @@
    GMT内置位图图案
 
 **下载：**
-:download:`PDF格式 <GMT_patterns.pdf>` |
-:download:`PNG格式 <GMT_patterns.png>`
+:download:`PDF 格式 <GMT_patterns.pdf>` |
+:download:`PNG 格式 <GMT_patterns.png>`
