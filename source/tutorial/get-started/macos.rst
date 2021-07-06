@@ -76,7 +76,7 @@ Bash脚本文件是一个纯文本文件，可以直接用文本编辑器打开�
 
 打开脚本文件后会看到如下内容::
 
-    #!/usr/bin/env bash
+    #!/usr/bin/env -S bash -e
     # GMT modern mode bash template
     # Date:    2019-09-10T00:44:39
     # User:    seisman
