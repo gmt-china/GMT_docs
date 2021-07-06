@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin plot_-Sw pdf,png
 gmt basemap -R0/10/0/5 -Jx1c -Ba1g1
 gmt plot -Sw2c -Glightblue << EOF

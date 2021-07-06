@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cat << EOF > fix.txt
 80      -8.5
 55      -7.5
