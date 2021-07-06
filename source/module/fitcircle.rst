@@ -71,6 +71,6 @@ fitcircle
 如下命令，用两种计算方法拟合了数据的大圆弧路径和小圆弧路径，并借助 :doc:`project`
 生成路径坐标。
 
-.. gmtplot:: /scripts/fitcircle_ex1.sh
+.. gmtplot:: fitcircle/fitcircle_ex1.sh
 
    fitcircle示例
