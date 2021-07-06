@@ -34,7 +34,7 @@ project
 
 下面详细解释一下这些变量的物理意义。
 
-.. gmtplot:: /scripts/project_sketch.sh
+.. gmtplot:: project/project_sketch.sh
    :width: 60%
    :show-code: false
 
