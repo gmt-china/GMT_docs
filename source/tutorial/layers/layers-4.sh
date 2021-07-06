@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 gmt begin layers png,pdf
 gmt basemap -JH180/15c -Rg -B0
-gmt grdimage @earth_relief_10m -Cetopo1 -I+d
+gmt grdimage @earth_relief_30m -Cetopo1 -I+d
 gmt colorbar -Bxa2000f+l"Elevation (m)"
 
 # 绘制震中位置
