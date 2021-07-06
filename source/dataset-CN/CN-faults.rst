@@ -107,9 +107,11 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
    下载 :file:`Active_fault.zip` 压缩包
 
 2. 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
-（若不关注属性信息，GMT也可以直接读取Shapefile格式源数据绘图）\::
 
-    ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp --config SHAPE_ENCODING "UTF-8"
+        ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp --config SHAPE_ENCODING "UTF-8"
+    
+    若不关注属性信息，GMT 也可以直接读取 Shapefile 格式源数据绘图。
+
 
 社区最终提供的 :file:`CN-faults.gmt` 参考了
 《最新1/400万中国活动构造空间数据库的建立》（屈春燕，2008）
