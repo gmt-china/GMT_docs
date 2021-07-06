@@ -32,7 +32,7 @@ plot
     下图中，黑色曲线为默认情况；红线为使用 ``-A`` 的效果；蓝线为使用 ``-Ap``
     的效果；黄线为使用 ``-Am`` 的效果：
 
-    .. gmtplot:: /scripts/plot_-A.sh
+    .. gmtplot:: plot/plot_-A.sh
        :width: 100%
        :show-code: false
 
@@ -55,7 +55,7 @@ plot
     除此以外，也可以使用 ``-C<color1>,<color2>,...`` 语法在
     命令行上临时构建一个颜色列表，其中 ``<color1>`` 对应Z值为0的颜色， ``<color2>``
     对应Z值为1的颜色，依次类推。
-    
+
     下面的例子展示了 ``-C<color1>,<color2>..`` 用法::
 
         gmt plot -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p -png test << EOF
@@ -237,7 +237,7 @@ plot
 
     下图给出了上面所给出的symbol所对应的符号：
 
-    .. gmtplot:: /scripts/plot_symbols.sh
+    .. gmtplot:: plot/plot_symbols.sh
        :width: 100%
        :show-code: false
 
@@ -330,7 +330,7 @@ plot
 
     下面的例子分别绘制了 ``+b`` 、 ``+c`` 、 ``+f`` 、 ``+s`` 、 ``+t`` 所对应的符号：
 
-    .. gmtplot:: /scripts/plot_-Sf.sh
+    .. gmtplot:: plot/plot_-Sf.sh
        :width: 100%
 
        plot -Sf示意图
@@ -387,7 +387,7 @@ plot
        ``-SM`` 会用直角符号来表示
     #. 圆弧的两端可加上额外的箭头，见 :doc:`/basis/vector` 一节
 
-    .. gmtplot:: /scripts/plot_-Sm.sh
+    .. gmtplot:: plot/plot_-Sm.sh
        :width: 50%
 
        plot -Sm 示意图
@@ -485,7 +485,7 @@ plot
 
     下面的示例分别用 ``-SW`` 和 ``-Sw`` 画了两个不同大小的楔形饼图：
 
-    .. gmtplot:: /scripts/plot_-Sw.sh
+    .. gmtplot:: plot/plot_-Sw.sh
        :width: 100%
 
        plot -Sw示意图。
@@ -552,7 +552,7 @@ plot
 
 .. gmtplot:: plot/gmt_custom_symbols_2.sh
     :width: 70%
-    
+
 多段数据
 --------
 
@@ -568,7 +568,7 @@ plot
 - ``-Z<zval>`` ：从cpt文件中查找Z值<zval>所对应的颜色作为填充色
 - ``-ZNaN`` ：从cpt文件中获取NaN颜色
 
-详情及示例参见 :ref:`table_ascii_id4` 
+详情及示例参见 :ref:`table_ascii_id4`
 
 示例
 ----
@@ -583,14 +583,14 @@ plot
 
 下面的脚本展示了 ``-F`` 选项的用法：
 
-.. gmtplot:: /scripts/plot_-F.sh
+.. gmtplot:: plot/plot_-F.sh
    :width: 100%
 
    plot -F选项示意图
 
 ``-L`` 选项的示例：
 
-.. gmtplot:: /scripts/plot_-L.sh
+.. gmtplot:: plot/plot_-L.sh
    :width: 100%
 
    plot -L选项示意图
