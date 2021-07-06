@@ -138,7 +138,7 @@ GMT 中文测试
 
 .. code-block:: bash
 
-   #!/bin/bash
+   #!/usr/bin/env bash
    gmt begin GMT_Chinese png,pdf
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black

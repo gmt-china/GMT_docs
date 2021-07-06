@@ -33,8 +33,8 @@ GMT 是地球科学最广泛使用的制图软件之一。
     :columns: 3
 
     - :doc:`标准选项 </option/index>`
-    - :doc:`投影方式 </option/J>`
-    - :doc:`配置参数 </conf/showcase>`
+    - :doc:`地图投影 </proj/index>`
+    - :doc:`配置参数 </conf/index>`
     - :doc:`模块列表 </module/index>`
 
     - :doc:`颜色名列表 </basis/color>`
@@ -45,7 +45,8 @@ GMT 是地球科学最广泛使用的制图软件之一。
     - :doc:`地学数据 </dataset/index>`
     - :doc:`引用 GMT </intro/citation>`
     - :doc:`学习资源 </intro/resources>`
-
+    - `GMT 官方文档 <https://docs.generic-mapping-tools.org/>`__
+    
 ----
 
 文档源码在 `GitHub <https://github.com/gmt-china/GMT_Docs>`_ 上开源，

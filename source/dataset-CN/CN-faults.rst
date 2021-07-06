@@ -1,10 +1,16 @@
 CN-faults: 中国断层数据
 =======================
 
+:贡献者: |刘珠妹|, |田冬冬|, |陈箫翰|
+
+----
+
 CN-faults 数据来自邓起东院士的中国活动构造图(1:400万)，
 由\ `国家地震科学数据中心 <http://datashare.igl.earthquake.cn/datashare>`__\ 提供。
 包含了中国区域内主要断层的地理位置以及断层属性，
 如断层名称、长度、走向、倾向、倾角、断层性质、最晚活动年代等。
+
+CN-faults 数据包含了中国区域内主要断层的地理位置信息。
 
 数据文件
 --------
@@ -94,7 +100,7 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
         rm center
     gmt end show
 
-数据来源及处理
+数据来源与处理
 --------------
 
 1. 从\ `中国大陆1：400万活动断层数据库 <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__\

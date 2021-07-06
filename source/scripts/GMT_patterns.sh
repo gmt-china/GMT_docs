@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 xwidth=0.45	# Width of each box (all units are in inches)
 ywidth=0.45	# Height of each box
 w=0.9		# Width of two adjacent boxes

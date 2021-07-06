@@ -74,7 +74,7 @@ Linux都自带了的文本编辑器 **gedit** 打开该脚本文件::
 
 打开脚本文件后会看到如下内容::
 
-    #!/usr/bin/env bash
+    #!/usr/bin/env -S bash -e
     # GMT modern mode bash template
     # Date:    2019-09-10T00:44:39
     # User:    seisman

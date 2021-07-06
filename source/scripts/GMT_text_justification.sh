@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin text_justification pdf,png
 gmt text -R0/10/0/2 -Jx2c -B1g1 -BWS -F+j+f20p,blue << EOF
 1 1 LT LT
