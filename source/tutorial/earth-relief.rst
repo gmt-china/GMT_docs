@@ -127,7 +127,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
     gmt end show
 
 制作 CPT 文件
------------
+-------------
 
 上面的示例中使用的是 GMT 的默认 CPT 文件。用户也可以使用 :doc:`/module/makecpt` 或
 :doc:`gmt:grd2cpt` 制作 CPT 文件。
