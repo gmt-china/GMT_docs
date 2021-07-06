@@ -107,11 +107,11 @@ velo
 示例
 ----
 
-.. gmtplot:: /scripts/velo_ex1.sh
+.. gmtplot:: velo/velo_ex1.sh
 
    velo示例图1
 
-.. gmtplot:: /scripts/velo_ex2.sh
+.. gmtplot:: velo/velo_ex2.sh
 
    velo示例图2
 
