@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cat << EOF > t.txt
 1 1
 2 3

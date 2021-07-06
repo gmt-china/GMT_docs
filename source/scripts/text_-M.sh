@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin text_-M png,pdf
 gmt text -R0/3/0/5 -JX3i -F+f+a+j -B1 -M -N << EOF
 > 0 -0.5 12p,black 0 LT 13p 3i j

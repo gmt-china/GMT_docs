@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 测线起点、长度、方位角
 profile_x=2

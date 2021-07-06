@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin plot_symbols pdf,png
 gmt plot -JX20c/2c -R0.5/13.5/0/4 -B1 -BS -S0.5c << EOF
 1 3 -

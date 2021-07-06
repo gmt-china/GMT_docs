@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin layers png,pdf
 
 # 绘制地形起伏底图

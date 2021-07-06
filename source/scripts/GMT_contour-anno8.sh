@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin contour_annot8 pdf,png
 gmt convert -i0,1,4 -Em150 transect.txt | gawk  '{print $1,$2,int($3)}' > fix2.txt
 gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 此处定义了函数plotpts，用于绘制图中绿色和蓝色的圆圈，并加上文字
 function plotpts

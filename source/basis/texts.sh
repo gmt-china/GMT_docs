@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin text_examples pdf,png
 gmt basemap -JX15c/1c -R0/5/0/1 -B+n
 for font in 30p 30p,8 30p,8,red 30p,Courier-Bold,blue 30p,5,blue=1p,black,solid 30p,5,-=1p,black,solid; do

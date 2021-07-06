@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 gmt begin text_escape_examples pdf,png
 gmt text -JX18c/-8c -R0/2/-1/9 -Bg1 -Bwsen -F+f -N  << EOF

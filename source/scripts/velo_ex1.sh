@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 gmt begin velo_ex1 png,pdf
 # 左边三个符号
