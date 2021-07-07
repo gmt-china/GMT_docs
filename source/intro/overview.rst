@@ -49,7 +49,7 @@ Florian Wobbe 和
 GMT的开发在 `GitHub <https://github.com/GenericMappingTools/gmt>`_ 上进行，
 任何用户均可通过多种方式向GMT做贡献。
 
-.. figure:: /images/GMT6_Summit_2019.jpg
+.. figure:: GMT6_Summit_2019.jpg
    :width: 80%
    :align: center
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Showing map directional roses
 gmt begin basemap_ex3 pdf,png
 gmt set FONT_LABEL 10p FONT_TITLE 12p MAP_ANNOT_OBLIQUE 34 MAP_TITLE_OFFSET 5p \

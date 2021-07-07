@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin grdedit_-E pdf,png
     gmt set MAP_FRAME_TYPE plain FONT_TITLE 18p MAP_TITLE_OFFSET 2p
     gmt subplot begin 1x4 -Fs6c/3c+p1p+w1p -Y15c -B+n

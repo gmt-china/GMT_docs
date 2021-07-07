@@ -1,6 +1,10 @@
 geo3al: 中国及邻区地质图数据
 ============================
 
+:贡献者: |徐弥坚|, |陈箫翰|, |刘珠妹|, |田冬冬|, |姚家园|
+
+----
+
 geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质图数据，
 是“\ `世界地质地图 <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”的一部分，
 数据分辨率为 1:5,000,000。
@@ -41,8 +45,8 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
    :width: 95%
    :align: center
 
-数据转换和处理流程
-------------------
+数据来源与处理
+--------------
 
 *以下内容仅供数据维护者参考，一般用户无需关心。*
 
@@ -76,7 +80,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 - 每个数据提供的属性可能不同，因而用户应查阅从源文件中解压得到的 ``.xml`` 文件
   以了解数据提供的元信息，并相应地修改绘图脚本。
 
-数据来源及引用
---------------
+数据引用
+--------
 
 - Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999, Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region: U.S. Geological Survey Open-File Report 97-470-F, 16 p., https://doi.org/10.3133/ofr97470F.

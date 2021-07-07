@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 gmt begin GMT_Chinese pdf,png
 gmt set FONT_TITLE 25p,41,black
 gmt set FONT_LABEL 15p,39,black

@@ -1,7 +1,7 @@
 GSHHG: 全球高分辨率海岸线数据
 =============================
 
-.. figure:: /images/gshhg.*
+.. figure:: gshhg.*
    :width: 75%
    :align: center
 
