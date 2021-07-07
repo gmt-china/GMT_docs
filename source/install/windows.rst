@@ -35,13 +35,15 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
     .. note::
 
         GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片，因而 Ghostscript 是必须的。
-        但 GMT 安装包中内置的 Ghostscript **不支持**\ 中文。若想要 GMT 支持中文，
-        需要按照如下说明操作：
+        但 GMT 安装包中内置的 Ghostscript **不支持**\ 中文。
+        
+        若需要 GMT 支持中文，则按照如下说明进行操作：
 
-        - 安装 GMT 时，\ **不勾选** Ghostscript 组件，其他所有选项都勾选上
-        - GMT 安装完成后，再自行安装 Ghostscript，并参考 :doc:`/chinese/windows` 进一步配置中文
+        - GMT 安装过程中，在 “Choose components” 页面\ **不勾选** Ghostscript 组件，
+          并将其他所有选项都勾选上
+        - GMT 安装完成后，参考《\ :doc:`/chinese/windows`\ 》安装 Ghostscript 并配置中文支持
 
-        如果不需要中文支持，则须在 “Choose components” 页面将所有选项都勾选上。
+        若不需要 GMT 支持中文，则在 “Choose components” 页面勾选全部选项。
 
     .. note::
 
@@ -105,28 +107,6 @@ Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
 
 - 下载地址：https://git-scm.com/download/win
 - 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
-
-Ghostscript
-^^^^^^^^^^^
-
-GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片，因而 Ghostscript 是必须的。
-GMT 安装包中自带了 Ghostscript，但其并不支持在 GMT 图片中添加中文。
-
-如果有在 GMT 图片中添加中文的需求，则需要在安装 GMT 时不安装 Ghostscript 组件，
-然后自己再自行安装 Ghostscript。安装 Ghostscript 的过程中记得勾选
-``Generate cidfmap for Windows CJK TrueType fonts`` 以生成中文字体配置文件。
-
-中文支持的详细配置步骤请参阅《\ :doc:`/chinese/windows`\ 》。
-
-安装包下载地址:
-
-- `gs9540w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
-- `gs9540w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
-
-.. warning::
-
-    请注意 Ghostscript 的版本！
-    由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^

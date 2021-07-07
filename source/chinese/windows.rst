@@ -4,8 +4,8 @@ Windows 下的 GMT 中文支持
 ghostscript 的中文支持
 ----------------------
 
-如果没有正确配置ghostscript的中文支持，GMT生成的PNG、PDF等格式的图片中的中文将会出现乱码。
-因此ghostscript的中文支持对于希望使用中文的用户来说是必须进行配置的。
+如果没有正确配置 ghostscript 的中文支持，GMT 生成的 PNG、PDF 等格式的图片中的中文将会出现乱码。
+因此 ghostscript 的中文支持对于希望使用中文的用户来说是必须进行配置的。
 
 .. warning::
 
@@ -15,8 +15,23 @@ ghostscript 的中文支持
    新手常常没有意识到自己安装GMT时勾选了Ghostscript组件，导致中文乱码出现。
    如果严格按照下列步骤配置，依然遇到了中文乱码问题，
    建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
+  
+安装包下载地址:
+  
+- `gs9540w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
+- `gs9540w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
+   
+.. warning::
+ 
+   请注意 Ghostscript 的版本！
+   由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
 
-在安装ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
+.. note::
+
+   安装 Ghostscript 的过程中记得勾选 ``Generate cidfmap for Windows CJK TrueType fonts``
+   以生成中文字体配置文件。
+
+在安装 ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
 生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
 
 为了能够在将PS文件转换为其他图片格式时也支持中文，需要设置环境变量 ``GS_FONTPATH``\ 。
