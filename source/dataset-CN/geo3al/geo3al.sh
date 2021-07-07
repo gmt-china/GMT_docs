@@ -7,7 +7,7 @@ data=geo3al.gmt
 cpt=geoage.cpt
 
 gmt begin geo3al pdf,png
-    # Paint the land use white color
+    # Paint the land using white color
     gmt coast -R70/150/13/55 -JM22c -Gwhite -Baf -BWsNe
 
     # Plot the geological map, colored by geologic ages
@@ -25,7 +25,7 @@ gmt begin geo3al pdf,png
     gmt convert $data -aI="TYPE" -S"-Ii" | gmt plot -Gp29+r500+f100+b-
     gmt convert $data -aI="TYPE" -S"-Iw" | gmt plot -Gp44+r500+f100+b-
 
-    # Paint the ocean and lake use color "cadetblue1"
+    # Paint the ocean and lake using color "cadetblue1"
     gmt coast -SCADETBLUE1
 
     # Plot geologic age legend
