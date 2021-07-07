@@ -222,7 +222,7 @@ X:
 
 第1个实例使用标注位置算法的默认值，沿等值线每1.5英寸放置一个标注:
 
-.. gmtplot:: /scripts/GMT_contour-anno1.sh
+.. gmtplot:: contour-anno1.sh
 
    通过指定 **-Gd** 选项的参数，确定了标注的位置(等值线上相距1.5英寸的点)
 
@@ -232,7 +232,7 @@ X:
 现在指定每条等值线上标注的个数。
 每条等值线上只放置1个标注，并且要求等值线的长度不小于1英寸，
 
-.. gmtplot:: /scripts/GMT_contour-anno2.sh
+.. gmtplot:: contour-anno2.sh
 
    通过指定 **-Gn** 选项的参数，确定了标注的位置(每条长度超过1英寸的等值线的中心位置)
 
@@ -246,7 +246,7 @@ X:
 为了帮助理解，通过指定选项 **-A** 中的 **+d*** 属性，
 采用了debug模式，即在每个给定位置上绘制了一个小圆圈。
 
-.. gmtplot:: /scripts/GMT_contour-anno3.sh
+.. gmtplot:: contour-anno3.sh
 
    通过指定 **-Gf** 选项的参数，确定了标注的位置(等值线上与给定点距离最小的点)
 
@@ -256,7 +256,7 @@ X:
 通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，
 将标注放置在直线段与等值线的交点。
 
-.. gmtplot:: /scripts/GMT_contour-anno4.sh
+.. gmtplot:: contour-anno4.sh
 
    通过指定 **-GL** 选项的参数确定了标注的位置(大圆弧与等值线的交点)
 
@@ -273,7 +273,7 @@ X:
 多段数据文件 *cross.txt* 中定义了三条曲线，
 在这三条曲线与等值线交点位置处放置了标注，
 
-.. gmtplot:: /scripts/GMT_contour-anno5.sh
+.. gmtplot:: contour-anno5.sh
 
    通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定了标注的位置
 
@@ -294,7 +294,7 @@ X:
 沿大圆弧每1000km放置一个标注，使用距离值作为标注的内容。
 标注的方向与大圆弧垂直：
 
-.. gmtplot:: /scripts/GMT_contour-anno6.sh
+.. gmtplot:: contour-anno6.sh
 
    通过指定 **-Sq** 选项的参数控制标注属性.
 
@@ -310,7 +310,7 @@ X:
 本实例中标注与大圆弧平行，以弧度指定标注位置，并添加弧度单位。
 文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。
 
-.. gmtplot:: /scripts/GMT_contour-anno7.sh
+.. gmtplot:: contour-anno7.sh
 
    另一个标注属性实例
 
@@ -322,7 +322,7 @@ X:
 因此需要使用 **awk** 程序从 *transect.txt* 文件中抽取距离为1500km倍数的记录，
 并创建一个新文件，指定标注的位置和内容：
 
-.. gmtplot:: /scripts/GMT_contour-anno8.sh
+.. gmtplot:: contour-anno8.sh
 
    标注的位置和内容来自不同的数据集
 
@@ -337,6 +337,6 @@ X:
 对等值线和线条进行了标注。
 完整的脚本如下：
 
-.. gmtplot:: /scripts/GMT_contour-anno9.sh
+.. gmtplot:: contour-anno9.sh
 
    Canary Islands到大西洋沿岸的海啸走时图，特别是纽约。当发生灾难性滑坡时，纽约将在8小时后遭遇大海啸。
