@@ -73,6 +73,7 @@ html_search_language = "zh"
 html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "sticky_navigation": False,
+    "includehidden": False,
 }
 html_context = {
     "display_github": True,
