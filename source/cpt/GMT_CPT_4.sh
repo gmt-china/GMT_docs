@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SIZE=w15c/0.25c
 
 gmt begin cpt_4 pdf,png

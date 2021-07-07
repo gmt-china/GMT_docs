@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 gmt begin legend pdf,png
 gmt makecpt -Cpanoply -T-8/8/1 -H > tt.cpt

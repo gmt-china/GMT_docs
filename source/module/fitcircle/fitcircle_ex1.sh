@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # test/fitcircle/circles.sh
 #
 # Tests gmt fitcircle on spherical data points

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 p1="30 -50"
 p2="200 45"
 gmt begin plot_-A pdf,png

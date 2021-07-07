@@ -41,7 +41,7 @@ jobs:
                         @earth_day_06m \
                         @earth_night_20m \
                         @earth_mask_05m
-          gmt grdcut @earth_relief_30s -R118/125/20/26 -G/dev/null
+          gmt grdcut @earth_relief_01m -R118/125/20/26 -G/dev/null
           # cache
           gmt which -Ga @age_chrons_GTS2012_2020.cpt \
                         @ternary.txt \
@@ -50,7 +50,7 @@ jobs:
           git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
           rm -rf china-geospatial-data/.git
           mv china-geospatial-data/* ~/.gmt/cache/
-          # Download custom symbol
+          # Download custom symbols
           git clone --depth 1 https://github.com/gmt-china/GMT_custom_symbols GMT_custom_symbols
           rm -rf GMT_custom_symbols/.git
           mv GMT_custom_symbols ~/.gmt/custom/
