@@ -98,26 +98,25 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
     PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
     CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
-Git for Windows
-^^^^^^^^^^^^^^^
+脚本工具
+^^^^^^^^^
 
-**推荐需要在 Bash 下运行 GMT 的用户安装 Git for Windows**\ 。
+Windows 用户可以使用 Bash 脚本编写并运行 GMT 命令。
+推荐 Bash 用户安装 **Git for Windows**\ ，以使用 Bash 编写脚本来运行 GMT。
+
+Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
+若想在 Batch 脚本使用 Linux 的常用命令，推荐安装 Unix 小工具合集包 **UnixTools**\ 。
+Windows 下的 Bash 用户不需要安装 UnixTools\ 。
+
+.. rubric:: Git for Windows
+
 Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
 方便用户在 Windows 下运行 Bash 脚本。
 
 - 下载地址：https://git-scm.com/download/win
 - 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
 
-GraphicsMagick
-^^^^^^^^^^^^^^
-
-GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要
-使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
-如有制作 GIF 动画的需求，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境
-变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gm`` 命令。
-
-UnixTools
-^^^^^^^^^
+.. rubric:: UnixTools
 
 GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不是 GMT 的一部分。
 如果想要在 Windows 下使用各种 Linux 的常用命令，
@@ -148,3 +147,11 @@ GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不�
 
 可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
 简易教程学习这些命令的基本用法。
+
+GraphicsMagick
+^^^^^^^^^^^^^^
+
+GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要
+使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
+如有制作 GIF 动画的需求，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境
+变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gm`` 命令。
