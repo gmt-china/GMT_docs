@@ -1,7 +1,7 @@
 GMT 中文手册
 ############
 
-.. image:: /images/combined_logo.*
+.. image:: https://raw.githubusercontent.com/gmt-china/logo/master/gmt-china-combined-logo.png
    :align: center
    :width: 80%
 
