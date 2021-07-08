@@ -36,7 +36,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
         GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片，因而 Ghostscript 是必须的。
         但 GMT 安装包中内置的 Ghostscript **不支持**\ 中文。
-        
+
         若需要 GMT 支持中文，则按照如下说明进行操作：
 
         - GMT 安装过程中，在 “Choose components” 页面\ **不勾选** Ghostscript 组件，
@@ -115,6 +115,8 @@ Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
 
 - 下载地址：https://git-scm.com/download/win
 - 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
+
+.. _unixtools:
 
 .. rubric:: UnixTools
 
