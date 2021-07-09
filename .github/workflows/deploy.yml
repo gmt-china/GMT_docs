@@ -83,8 +83,13 @@ jobs:
       - name: Push the documentation to gh-pages
         run: |
           cd deploy
+          # generate the .nojekyll file in the root directory
           touch .nojekyll
-          # Update the directory
+          # Use the old PDF documentation if the new PDF documentation is not built
+          if [ ! -f ../build/dirhtml/GMT_docs.pdf ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          fi
+          # Replace the old documentation with tht new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
           # let "latest" link to the latest version

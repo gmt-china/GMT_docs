@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 gmt begin layers png,pdf
 
-# 绘制地形起伏底图
+# Plot basemap and Earth relief
 gmt basemap -JH180/15c -Rg -B0
 gmt grdimage @earth_relief_30m -Cetopo1 -I+d
 gmt colorbar -Bxa2000f+l"Elevation (m)"
