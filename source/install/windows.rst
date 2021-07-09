@@ -62,8 +62,8 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
 3.  测试安装
 
-    安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 cmd。
-    在 cmd 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
+    安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 CMD。
+    在 CMD 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
 
 4.  升级 GMT
 
@@ -85,7 +85,7 @@ Visual Studio Code
 
 Visual Studio Code (VS Code) 是微软推出的一款免费、轻量且功能强大的编辑器。
 VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
-实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
+实时预览 PDF、JPG 以及 GIF 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
 
 安装和配置教程：
 
@@ -109,47 +109,47 @@ Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
 若想在 Batch 脚本使用 Linux 的常用命令，推荐安装 Unix 小工具合集包 **UnixTools**\ 。
 Windows 下的 Bash 用户不需要安装 UnixTools\ 。
 
-.. rubric:: Git for Windows
+- **Git for Windows**
 
-Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
-方便用户在 Windows 下运行 Bash 脚本。
+  Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
+  方便用户在 Windows 下运行 Bash 脚本。
 
-- 下载地址：https://git-scm.com/download/win
-- 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
+  - 下载地址：https://git-scm.com/download/win
+  - 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
 
 .. _unixtools:
 
-.. rubric:: UnixTools
+- **UnixTools**
 
-GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不是 GMT 的一部分。
-如果想要在 Windows 下使用各种 Linux 的常用命令，
-推荐使用 GMT 中文社区整理的 Unix 小工具合集包 **UnixTools**\ ，其包含了如下程序：
+  GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令，并不是 GMT 的一部分。
+  如果想要在 Windows 下使用各种 Linux 的常用命令，
+  推荐使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools，其包含了如下程序：
 
-- ``cat`` \：显示文件内容
-- ``cut``\ ：从指定文本中截取文本并输出至标准输出
-- ``gawk``\ ：处理文本信息的编程语言工具
-- ``grep``\ ：从指定文本或标准输入中识别并截取出特定字段等
-- ``head``\ ：输出一个或多个指定文本的前 n 行
-- ``join``\ ：将两个文件中文本一致的行连接并输出
-- ``md5sum``\ ：检验文本的 MD5 摘要
-- ``paste``\ ：并排输出两个文件的内容
-- ``printf``\ ：按 C 语言格式输出文本
-- ``sed``\ ：文本处理工具
-- ``sort``\ ：对文本文档进行排序
-- ``split``\ ：以行为单位切割文件
-- ``tail``\ ：显示文件尾端的 n 行数据
-- ``uniq``\ ：从文本中去除或禁止重复行
-- ``wc``\ ：输出指定文件的行数、字数和文本数据大小
+  - ``cat`` \：显示文件内容
+  - ``cut``\ ：从指定文本中截取文本并输出至标准输出
+  - ``gawk``\ ：处理文本信息的编程语言工具
+  - ``grep``\ ：从指定文本或标准输入中识别并截取出特定字段等
+  - ``head``\ ：输出一个或多个指定文本的前 n 行
+  - ``join``\ ：将两个文件中文本一致的行连接并输出
+  - ``md5sum``\ ：检验文本的 MD5 摘要
+  - ``paste``\ ：并排输出两个文件的内容
+  - ``printf``\ ：按 C 语言格式输出文本
+  - ``sed``\ ：文本处理工具
+  - ``sort``\ ：对文本文档进行排序
+  - ``split``\ ：以行为单位切割文件
+  - ``tail``\ ：显示文件尾端的 n 行数据
+  - ``uniq``\ ：从文本中去除或禁止重复行
+  - ``wc``\ ：输出指定文件的行数、字数和文本数据大小
 
-下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
-然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。
+  下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
+  然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。
 
-以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。
-如果你发现某些工具存在问题，或者觉得有其他需要的 Unix 工具没有被包含进来，
-请向我们反馈，我们会酌情考虑。
+  以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。
+  如果你发现某些工具存在问题，或者觉得有其他需要的 Unix 工具没有被包含进来，
+  请向我们反馈，我们会酌情考虑。
 
-可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
-简易教程学习这些命令的基本用法。
+  可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
+  简易教程学习这些命令的基本用法。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^
