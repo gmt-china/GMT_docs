@@ -4,7 +4,7 @@
 name: Deploy
 
 on:
-  #pull_request: # enable pull_request for testing
+  pull_request: # enable pull_request for testing
   push:
     branches:
       - master
@@ -70,8 +70,8 @@ jobs:
                         titlesec ulem upquote varwidth wrapfig xcolor xecjk \
                         xindy zhnumber
 
-      #- name: Build PDF
-      #  run: make build_pdf
+      - name: Build PDF
+        run: make build_pdf
 
       - name: Checkout the gh-pages branch
         uses: actions/checkout@v2.3.4
