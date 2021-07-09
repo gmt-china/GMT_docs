@@ -1,8 +1,8 @@
--Jg：正交投影
+-Jg：正射投影
 =============
 
-正交方位投影是一种从无穷远距离处的透视投影，因而常用于绘制从外太空看地球。
-与Lambert等面积投影以及立体投影类似，一次只能看到一个半球。
+正射方位投影是一种从无穷远距离处的透视投影，因而常用于绘制从外太空看地球。
+与 Lambert 等面积投影以及立体投影类似，一次只能看到一个半球。
 该投影既不是等面积也不是保角，在半球边界处有较大得畸变。
 从投影中心出发的任意方向是真实的。
 
@@ -19,12 +19,14 @@
   也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
 
 .. gmtplot::
-    :caption: 使用正交投影绘制半球
+    :caption: 使用正射投影绘制半球
     :width: 60%
 
     gmt coast -Rg -JG-75/41/12c -Bg -Dc -A5000 -Gpink -Sthistle -png GMT_orthographic
 
 **-Jg** 加上更多的参数时还可以用于绘制透视投影，以在二维平面内模拟从太空看三维的地球。
+该投影与正射投影类似，都是从空间进行透视投影。不同之处在于，正射投影的透视点在无穷远处，
+而透视投影可以指定透视点的位置，因此整体效果类似于从飞行器拍摄地球。
 具体的参数为：
 
 **-JG**\ *lon*/*lat*/*altitude*/*azimuth*/*tilt*/*twist*/*Width*/*Height*/*width*
@@ -37,14 +39,16 @@
 - *azimuth* 观察者的方位角（相对于北向顺时针旋转的角度）。默认值为90度，即从东向观测
 - *tilt* 倾角（单位为度）。即相对于天顶的角度，默认值为60度。
   若值为0则表示在天顶直接向下看，值为60则表示在天顶处沿着水平方向30度角的方向观察
-- *twist* 扭转角度，默认值为180度。
-  This is the boresight rotation (clockwise) of the image.
-  The twist of 180° in the example mimics the fact that the Space Shuttle flies upside down.
+- *twist* 扭转角度，即投影图像视轴的旋转。下图中 180° 的扭转模仿了飞行器倒置飞行时的情况。 
 - *Width*/*Height* 是视角的角度，单位为度，默认值为60。
   该值取决于你是否是使用裸眼观看（裸眼的角度一般是60度宽），或使用其它设备（如望远镜）
 - *width* 地图宽度
 - *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上1厘米对应真实地球 *xxxx* 厘米），
   也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+
+.. note::
+    由于透视投影类似从飞行器中观察地球，因此 *azimuth*，*tilt* 以及 *twist* 可以从飞行器姿态的角度
+    理解，分别对应航偏角，俯仰角以及翻滚角。*twist* 为180° 时，可以看作“头朝下”观察地球。
 
 .. gmtplot::
     :caption: 透视投影
