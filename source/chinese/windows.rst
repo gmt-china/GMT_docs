@@ -4,8 +4,8 @@ Windows 下的 GMT 中文支持
 ghostscript 的中文支持
 ----------------------
 
-如果没有正确配置 ghostscript 的中文支持，GMT 生成的 PNG、PDF 等格式的图片中的中文将会出现乱码。
-因此 ghostscript 的中文支持对于希望使用中文的用户来说是必须进行配置的。
+如果没有正确配置 Ghostscript 的中文支持，GMT 生成的 PNG、PDF 等格式的图片中的中文将会出现乱码。
+因此 Ghostscript 的中文支持对于希望使用中文的用户来说是必须进行配置的。
 
 .. warning::
 
