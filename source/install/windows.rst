@@ -43,6 +43,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
           并将其他所有选项都勾选上
         - GMT 安装完成后，参考《\ :doc:`/chinese/windows`\ 》安装 Ghostscript 并配置中文支持
 
+
         若不需要 GMT 支持中文，则在 “Choose components” 页面勾选全部选项。
 
     .. note::
