@@ -62,7 +62,7 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL: extract "断层名称" as "-L" value in segment headers
         # -Sq+Lh: set the label text from "-L" in segment headers        
-        gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11,39
+        gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11p,39
     gmt end show
 
 利用convert命令根据属性信息提取数据
