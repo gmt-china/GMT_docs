@@ -65,8 +65,8 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
         gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11,39
     gmt end show
 
-根据属性信息提取数据
-++++++++++++++++++++++
+利用convert命令根据属性信息提取数据
++++++++++++++++++++++++++++++++++
 
 .. gmtplot::
    :show-code: true
@@ -94,7 +94,6 @@ GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断�
         echo 111 35.5 200k| gmt plot -SE- -Wblue -fg
         # extracing faults in the circle
         gmt select CN-faults.gmt -C111/35.5+d100k -fg | gmt plot
-        rm center
     gmt end show
 
 数据来源与处理
