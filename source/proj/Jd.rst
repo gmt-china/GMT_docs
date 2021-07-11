@@ -1,9 +1,9 @@
--Jd：等距圆锥投影
-=================
+-JD：Equidistant conic
+======================
 
 维基链接：https://en.wikipedia.org/wiki/Equidistant_conic_projection
 
-等距圆锥投影由希腊哲学家Claudius Ptolemy于公元150年提出。其既不是保角也不是
+Equidistant conic（等距圆锥投影）由希腊哲学家 Claudius Ptolemy 于公元 150 年提出。其既不是保角也不是
 等面积，而是两种的折衷。在所有经线以及标准纬线上比例尺没有畸变。
 
 该投影的参数为：
