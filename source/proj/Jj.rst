@@ -3,10 +3,11 @@
 
 维基链接：https://en.wikipedia.org/wiki/Miller_cylindrical_projection
 
-Miller cylindrical（Miller 圆柱投影）由 Osborn Maitland Miller 于 1942 年提出，该投影既不是保角也不是等面积。
-所有的经线和纬线都是直线。该投影是 Mercator 与其他圆柱投影之间的折衷。在此投影中，
-纬线之间的间距使用了 Mercator 公式并乘以 0.8 倍的真实纬度，因而避免了极点的奇点，
-然后再将结果除以 0.8。
+Miller cylindrical（Miller 圆柱投影）由 Osborn Maitland Miller 于 1942 年提出，
+该投影既不是保角也不是等面积。所有的经线和纬线都是直线。
+该投影是 Mercator 与其他圆柱投影之间的折衷。
+在此投影中，纬线之间的间距使用了 Mercator 公式并乘以 0.8 倍的真实纬度，
+因而避免了极点的奇点，然后再将结果除以 0.8。
 
 该投影的参数为：
 

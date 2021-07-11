@@ -1,7 +1,7 @@
 -JX：Linear, logarithmic, power, and time
 =========================================
 
-GMT中笛卡尔坐标变换分为三类：
+GMT 中笛卡尔坐标变换分为三类：
 
 - Linear（线性坐标）
 - Logarithmic（log :math:`_{10}` 坐标）

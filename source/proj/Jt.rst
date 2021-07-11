@@ -3,7 +3,8 @@
 
 维基链接：https://en.wikipedia.org/wiki/Transverse_Mercator_projection
 
-Transverse Mercator（横轴 Mercator 投影）由 Johann Heinrich Lambert 于 1772 年提出。该投影中，圆柱与某条经线相切。
+Transverse Mercator（横轴 Mercator 投影）由 Johann Heinrich Lambert 于 1772 年提出。
+该投影中，圆柱与某条经线相切。
 在该经线处无畸变，离中心经线越远畸变越大，距离中心经线 90 度处的经线畸变达到无穷。
 中心经线和赤道都是直线，其余经线和纬线则是复杂曲线。
 

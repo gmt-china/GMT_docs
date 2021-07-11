@@ -3,9 +3,9 @@
 
 维基链接：https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system
 
-Universal Transverse Mercator （通用横轴 Mercator 投影，UTM)是横轴 Mercator 投影的一个特殊子集。此处，全球在南北纬 84 度
-之间被划分为 60 个区域，大多数区域的宽度都是6度。每一个区域都有各自位移的中心经线。
-进一步，每个区域都被划分为纬度带。
+Universal Transverse Mercator （通用横轴 Mercator 投影，UTM)是横轴 Mercator 投影的一个特殊子集。
+此处，全球在南北纬 84 度之间被划分为 60 个区域，大多数区域的宽度都是6度。
+每一个区域都有各自位移的中心经线。进一步，每个区域都被划分为纬度带。
 
 .. gmtplot:: GMT_utm_zones.sh
     :show-code: false

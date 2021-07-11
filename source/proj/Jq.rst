@@ -3,8 +3,9 @@
 
 维基链接：https://en.wikipedia.org/wiki/Equirectangular_projection
 
-Equidistant cylindrical（圆柱等距投影）是一个经度和纬度的线性缩放。最常用的形式是 Plate Carrée 投影，
-其中对经线和纬线的缩放比例是相同的。所有的经纬线都是直线。
+Equidistant cylindrical（圆柱等距投影）是一个经度和纬度的线性缩放。
+最常用的形式是 Plate Carrée 投影，其中对经线和纬线的缩放比例是相同的。
+所有的经纬线都是直线。
 
 该投影的参数为：
 

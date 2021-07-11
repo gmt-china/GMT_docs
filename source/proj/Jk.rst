@@ -8,8 +8,8 @@
 
 Eckert IV/VI equal area（Eckert IV/VI 等面积投影） 由 Max Eckert-Greiffendorff 于 1906 年提出，是伪圆柱等面积投影。
 中心经线以及所有的纬线都是直线，其余经线是等间隔分布的椭圆弧（IV）或正弦曲线（VI）。
-比例尺在纬线 40°30'（IV）和 49°16'（VI）是真实的。\ **-JKf**\ （f 代表 four）表示
-使用 Eckert IV 投影，\ **-JKs**\ （s 代表 six）表示使用 Eckert VI 投影。
+比例尺在纬线 40°30'（IV）和 49°16'（VI）是真实的。\
+**-JKf**\ （f 代表 four）表示使用 Eckert IV 投影，\ **-JKs**\ （s 代表 six）表示使用 Eckert VI 投影。
 若不指定 **f** 或 **s**\ ，则默认使用 Eckert VI 投影。
 
 该选项的参数为:

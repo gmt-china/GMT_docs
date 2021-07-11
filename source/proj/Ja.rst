@@ -3,8 +3,9 @@
 
 维基链接: https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection
 
-Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinrich Lambert 于 1772 年发展得到。通常用于绘制大区域地图（例如整个大洲或半球），
-该投影是方位等面积投影。在投影的中心畸变为 0，离投影中心越远畸变越大。该投影的参数为：
+Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinrich Lambert 于 1772 年发展得到。
+通常用于绘制大区域地图（例如整个大洲或半球），该投影是方位等面积投影。
+在投影的中心畸变为 0，离投影中心越远畸变越大。该投影的参数为：
 
 **-JA**\ *lon*/*lat*/[*distance*/]\ *width*
 或

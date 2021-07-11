@@ -3,9 +3,9 @@
 
 维基链接：https://en.wikipedia.org/wiki/Hammer_projection
 
-Hammer equal area（等面积 Hammer 投影）由德国数学家 Ernst von Hammer 于 1892 年提出，也被称为 Hammer-Aitoff 投影
-（Aitoff 投影与之看起来相似，但不等面积）。投影后的边界是一个椭圆，赤道和中心经线
-是直线，其余纬线和经线都是复杂曲线。
+Hammer equal area（等面积 Hammer 投影）由德国数学家 Ernst von Hammer 于 1892 年提出，
+也被称为 Hammer-Aitoff 投影（Aitoff 投影与之看起来相似，但不等面积）。
+投影后的边界是一个椭圆，赤道和中心经线是直线，其余纬线和经线都是复杂曲线。
 
 该投影的参数为：
 

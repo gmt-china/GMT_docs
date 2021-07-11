@@ -3,8 +3,8 @@
 
 维基链接：https://en.wikipedia.org/wiki/Cylindrical_equal-area_projection
 
-Cylindrical equal area（圆柱等面积投影）选择不同的标准纬线，则对应不同的圆柱投影。所有的这些圆柱投影都是等面积且不保角的。
-所有经线和纬线都是直线。在高纬度处畸变很大。
+Cylindrical equal area（圆柱等面积投影）选择不同的标准纬线，则对应不同的圆柱投影。
+所有的这些圆柱投影都是等面积且不保角的。所有经线和纬线都是直线。在高纬度处畸变很大。
 
 该投影的参数为：
 

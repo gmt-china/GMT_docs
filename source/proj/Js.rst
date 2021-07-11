@@ -3,7 +3,8 @@
 
 维基链接：https://en.wikipedia.org/wiki/Stereographic_projection
 
-General stereographic（立体等角投影）是保角方位投影，主要用于绘制南北极区域。在两极，所有经线都是直线，纬线则是圆弧。
+General stereographic（立体等角投影）是保角方位投影，主要用于绘制南北极区域。
+在两极，所有经线都是直线，纬线则是圆弧。
 
 该投影的参数：
 

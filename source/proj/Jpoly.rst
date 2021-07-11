@@ -3,8 +3,8 @@
 
 维基链接：https://en.wikipedia.org/wiki/Polyconic_projection
 
-(American) polyconic（多圆锥投影）既不是等面积也不是保角投影，沿着中心经线处畸变为 0。所有纬线的比例尺都是真实的，
-但其余经线则存在畸变。
+(American) polyconic（多圆锥投影）既不是等面积也不是保角投影，沿着中心经线处畸变为 0。
+所有纬线的比例尺都是真实的，但其余经线则存在畸变。
 
 .. gmtplot::
     :caption: 多圆锥投影

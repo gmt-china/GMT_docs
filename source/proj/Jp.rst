@@ -1,7 +1,7 @@
 -JP：Polar [azimuthal] (:math:`\theta, r`) (or cylindrical)
 ===========================================================
 
-Polar [azimuthal]（极坐标投影）用于绘制极坐标数据（即角度 :math:`\theta` 和半径 :math:`r`\ ）。
+Polar（极坐标投影）用于绘制极坐标数据（即角度 :math:`\theta` 和半径 :math:`r`\ ）。
 
 指定极坐标投影的语法为:
 

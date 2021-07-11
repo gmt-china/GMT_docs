@@ -3,8 +3,8 @@
 
 维基链接：https://en.wikipedia.org/wiki/Albers_projection
 
-Albers conic equal area（Albers 圆锥等面积投影）由 Heinrich C. Albers 于 1805 年提出，主要用于绘制东西方向范围很大的地图，
-尤其是美国地图。
+Albers conic equal area（Albers 圆锥等面积投影）由 Heinrich C. Albers 于 1805 年提出，
+主要用于绘制东西方向范围很大的地图，尤其是美国地图。
 
 此投影是圆锥、等面积投影。纬线是不等间隔分布的同心圆，在地球南北极处分布较密。
 经线则是等间隔分隔，并垂直切割纬线。
