@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 gmt begin layers png,pdf
 
-# 绘制地形起伏底图
+# Plot basemap and Earth relief
 gmt basemap -JH180/15c -Rg -B0
 gmt grdimage @earth_relief_30m -Cetopo1 -I+d
 gmt colorbar -Bxa2000f+l"Elevation (m)"
 
-# 绘制震中位置
+# Plot epicenter
 gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow << EOF
 130.72 32.78
 EOF
 
-# 绘制台站位置
+# Plot station locations
 gmt plot -St0.2c -W0.5p,black,solid -Gblack << EOF
 104.39 29.90
 13.14 52.50

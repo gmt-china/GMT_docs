@@ -12,6 +12,8 @@ GMT中笛卡尔坐标变换分为三类：
     gmt math -T0/100/1  T SQRT = sqrt.txt
     gmt math -T0/100/10 T SQRT = sqrt10.txt
 
+.. _-Jx_linear:
+
 笛卡尔线性坐标
 --------------
 
@@ -74,6 +76,8 @@ GMT中笛卡尔坐标变换分为三类：
     gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
     gmt end
 
+.. _-Jx_time:
+
 日期时间坐标
 ~~~~~~~~~~~~
 
@@ -91,6 +95,8 @@ GMT中笛卡尔坐标变换分为三类：
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham FORMAT_TIME_PRIMARY_MAP full
     gmt basemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d -Bya1Hg1h -BWsNe+glightyellow
     gmt end
+
+.. _-Jx_log:
 
 笛卡尔对数投影
 --------------
@@ -111,6 +117,8 @@ GMT中笛卡尔坐标变换分为三类：
 
 注意：若想要X轴和Y轴都使用对数投影，且X轴和Y轴比例尺不同，则必须在指定每个轴的
 比例尺时分别加上 **l**\ ，例如 **-JX10cl/6cl**\ 。
+
+.. _-Jx_power:
 
 笛卡尔指数投影
 --------------
