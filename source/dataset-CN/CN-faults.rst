@@ -65,8 +65,11 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
         gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11p,39
     gmt end show
 
-利用convert命令根据属性信息提取数据
-+++++++++++++++++++++++++++++++++
+根据属性信息提取数据
+++++++++++++++++++++
+
+可以使用 **convert** 模块的 **-S** 选项提取指定属性的数据。
+例如，下例中提取出“断层名称”为“红河断裂”的断层数据。
 
 .. gmtplot::
    :show-code: true
