@@ -61,7 +61,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
     gmt begin CN-faults-labeling png,pdf
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL="断层名称": set the "L" value (i.e., label) in segment headers using "断层名称"
-        # -Sq+Lh: set the label text from "-L" in segment headers        
+        # :+Lh: take the label text from the "L" value in the segment header
         gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11p,39
     gmt end show
 
