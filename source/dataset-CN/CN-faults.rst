@@ -102,8 +102,8 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 数据来源与处理
 --------------
 
-1. 从\ `中国大陆1：400万活动断层数据库 <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__\
-   下载 :file:`Active_fault.zip` 压缩包
+1.  下载 :file:`Active_fault.zip` 压缩包：\ `中国大陆地区 1:400 万活动断层数据库
+    <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__
 
 2. 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 
