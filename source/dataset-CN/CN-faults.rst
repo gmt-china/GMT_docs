@@ -47,7 +47,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 标注断层名
 ++++++++++
 
-GMT 中可以直接使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
+可以使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
 
 .. note::
 
