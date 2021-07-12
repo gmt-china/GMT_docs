@@ -76,7 +76,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
    :width: 50%
    
     gmt begin CN-single-fault png
-        gmt basemap -R98/105/22/27 -Ba 
+        gmt basemap -R98/105/22/27 -JM15c -Ba 
         # -S: output record contains specified field attribute
         gmt convert CN-faults.gmt -S"断层名称=红河断裂" | gmt plot
     gmt end show
