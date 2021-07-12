@@ -1,4 +1,4 @@
--JT：Transverse Mercator
+-JT: Transverse Mercator
 ========================
 
 维基链接：https://en.wikipedia.org/wiki/Transverse_Mercator_projection

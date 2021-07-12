@@ -1,4 +1,4 @@
--JB：Albers conic equal area
+-JB: Albers conic equal area
 ============================
 
 维基链接：https://en.wikipedia.org/wiki/Albers_projection

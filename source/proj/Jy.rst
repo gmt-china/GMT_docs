@@ -1,4 +1,4 @@
--JY：Cylindrical equal area
+-JY: Cylindrical equal area
 ===========================
 
 维基链接：https://en.wikipedia.org/wiki/Cylindrical_equal-area_projection

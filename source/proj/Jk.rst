@@ -1,4 +1,4 @@
--JK：Eckert equal area
+-JK: Eckert equal area
 ======================
 
 维基链接：

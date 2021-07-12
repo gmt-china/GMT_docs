@@ -1,4 +1,4 @@
--JS：General stereographic
+-JS: General stereographic
 ==========================
 
 维基链接：https://en.wikipedia.org/wiki/Stereographic_projection

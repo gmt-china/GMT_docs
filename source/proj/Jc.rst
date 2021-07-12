@@ -1,4 +1,4 @@
--JC：Cassini cylindrical
+-JC: Cassini cylindrical
 ========================
 
 维基链接：https://en.wikipedia.org/wiki/Cassini_projection

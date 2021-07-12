@@ -1,4 +1,4 @@
--JM：Mercator cylindrical
+-JM: Mercator cylindrical
 =========================
 
 维基链接：https://en.wikipedia.org/wiki/Mercator_projection

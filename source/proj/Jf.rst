@@ -1,4 +1,4 @@
--JF：Azimuthal gnomonic
+-JF: Azimuthal gnomonic
 =======================
 
 维基链接：https://en.wikipedia.org/wiki/Gnomonic_projection

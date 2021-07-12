@@ -1,4 +1,4 @@
--JD：Equidistant conic
+-JD: Equidistant conic
 ======================
 
 维基链接：https://en.wikipedia.org/wiki/Equidistant_conic_projection

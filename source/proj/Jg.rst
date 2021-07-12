@@ -1,4 +1,4 @@
--JG：Azimuthal orthographic/General perspective
+-JG: Azimuthal orthographic/General perspective
 ===============================================
 
 Azimuthal orthographic（正射方位投影）是一种从无穷远距离处的透视投影，因而常用于绘制从外太空看地球。

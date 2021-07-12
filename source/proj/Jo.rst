@@ -1,4 +1,4 @@
--JO：Oblique Mercator
+-JO: Oblique Mercator
 =====================
 
 维基链接：https://en.wikipedia.org/wiki/Space-oblique_Mercator_projection

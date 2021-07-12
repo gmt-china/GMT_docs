@@ -1,4 +1,4 @@
--JP：Polar/Cylindrical
+-JP: Polar/Cylindrical
 ======================
 
 Polar（极坐标投影）用于绘制极坐标数据（即角度 :math:`\theta` 和半径 :math:`r`\ ）。

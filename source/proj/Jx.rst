@@ -1,4 +1,4 @@
--JX：Linear, logarithmic, power, and time
+-JX: Linear, logarithmic, power, and time
 =========================================
 
 GMT 中笛卡尔坐标变换分为三类：
