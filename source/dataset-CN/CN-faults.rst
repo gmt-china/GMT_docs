@@ -105,11 +105,13 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 1.  下载 :file:`Active_fault.zip` 压缩包：\ `中国大陆地区 1:400 万活动断层数据库
     <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__
 
-2. 使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
+2.  格式转换
+
+    使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 
         ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp
     
-   若不关注属性信息，GMT 也可以直接读取 Shapefile 格式源数据绘图。
+    若不关注属性信息，也可以直接使用 GMT 读取 Shapefile 格式的源数据进行绘图。
 
 
 社区最终提供的 :file:`CN-faults.gmt` 参考了
