@@ -11,7 +11,7 @@ gmt begin GMT_cycle_6 pdf,png
     # Weekly histogram normalized for number of hours for a weekday in the 3-year data
     n_week_hours=$(gmt convert @NY_traffic.txt -ww | gmt select -Z0/0.999+c0 | gmt info -Fi -o2)
     gmt histogram @NY_traffic.txt -R0/7/2000/4000 -Wthick -Gred -T1 -Z0+w -By+l"Vehicles/hour" \
-      -i0,1+d${n_week_hours} -ww -c
+        -i0,1+d${n_week_hours} -ww -c
     # Daily histogram normalized for number of days in the 3-year data
     n_mondays=$(gmt convert @NY_traffic.txt -wd | gmt select -Z-0.5/0.5+c0 | gmt info -Fi -o2)
     gmt histogram @NY_traffic.txt -R0/24/0/8000 -Wthick -Gred -T1 -Z0+w -i0,1+d${n_mondays} -wd -c
