@@ -213,7 +213,7 @@ text
 
 下面的例子中设置文本框的相关属性：蓝色边框、淡蓝填充色、圆角矩形，空白为 ``100%/100%`` ::
 
-    gmt text -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -TO -C100%/100% -pdf text << EOF
+    gmt text -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -C100%/100%+tO -pdf text << EOF
     3   1   Text1
     6   3   Text2
     EOF
