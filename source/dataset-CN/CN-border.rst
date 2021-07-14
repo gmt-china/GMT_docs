@@ -85,6 +85,4 @@ CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://w
 CN-border 原始数据来自于\ `全国地理信息资源目录服务系统 <https://www.webmap.cn>`__\ ，
 其\ `版权声明 <https://www.webmap.cn/main.do?method=otherService&clickFlag=copyright>`__\ 中要求：
 
-::
-
     转载或引用本网站所有之内容须注明“转自（或引自）全国地理信息资源目录服务系统”字样，并标明本网网址 www.webmap.cn。
