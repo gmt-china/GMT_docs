@@ -20,5 +20,5 @@
 
 **论坛/讨论组**
 
-#. 地学 GMT 中文社区QQ群：1 群（218905582）；2 群（791856541）[**请勿重复加群!**]
+#. 地学 GMT 中文社区QQ群：1 群（218905582）；2 群（791856541）[**请勿重复加群!**] [`入群须知 <https://gmt-china.org/blog/community-guide/>`__]
 #. `GMT 官方论坛 <https://forum.generic-mapping-tools.org/>`_
