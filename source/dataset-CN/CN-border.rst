@@ -78,3 +78,8 @@ CN-border 数据提供了三个数据文件：
 CN-border 原始数据来自于 `1:100万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_\ ，
 并由\ `刘珠妹 <https://github.com/liuzhumei>`__ 处理得到 GMT 可使用的数据。
 **具体数据处理方式待补充**。
+
+数据引用
+--------
+
+使用 CN-border 数据，请注明“引自全国地理信息资源目录服务系统（www.webmap.cn）”。
