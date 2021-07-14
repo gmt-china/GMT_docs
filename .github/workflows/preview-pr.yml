@@ -60,7 +60,8 @@ jobs:
       - name: Optimize images
         run: |
           sudo snap install pngquant
-          pngquant --skip-if-larger --strip --force --ext .png build/dirhtml/_images/*.png
+          pngquant --version
+          pngquant --skip-if-larger --strip --force --ext .png --verbose build/dirhtml/_images/*.png
 
       - name: Deploy for preview
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
