@@ -101,3 +101,26 @@ VS code 执行GMT脚本过程
     
     如果你运行的是 bash 脚本，则必须在 ``gmt begin`` 之前添加一行 ``export GMT_SESSION_NAME=$$`` ，否则脚本运行将出现错误。
     详情请参阅 https://docs.gmt-china.org/latest/module/begin/#unix-shell
+
+为提高编码效率，推荐使用快捷键进行代码注释、代码运行、窗格切换等操作。
+键盘单击F1，调出 VS code 的命令面板，输入”shortcut“检索出快捷键编辑命令：
+
+.. image:: vscode_pic7.png
+   :width: 80%
+   :align: center
+   
+我们可以查询或自定义众多快捷键，包括但不限于行注释（Add Line Comment/Remove Line Comment）、
+窗口分割（View: Split Editor Down/Right/Up/Left）、窗口关闭（View：Close Editor）等。
+
+代码高亮设置
+------------
+
+Windows用户下载 :download:`replace_vscode.bat`\ 以及 :download:`batchfile.tmLanguage.json`\ 到任意目录，
+直接双击 ``replace_vscode.bat`` 重新启动 VS code 即可。
+
+如果提示错误，请手动复制 ``batchfile.tmLanguage.json`` 文件到以下路径替换原文件：
+``C:\Users\用户名\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\bat\syntaxes`` 
+
+Linux 和 Mac 用户与 Windows 类似，
+找到 ``Microsoft VS Code\resources\app\extensions\shellscript\syntaxes`` 文件夹，
+将 :download:`shell-unix-bash.tmLanguage.json` 文件替换原文件后重启 VScode 即可。
