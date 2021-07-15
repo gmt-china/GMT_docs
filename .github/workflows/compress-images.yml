@@ -1,0 +1,25 @@
+# This workflow compresses images in PRs
+name: Compress Images
+
+on:
+  pull_request:
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+      - '**.webp'
+
+jobs:
+  compress:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    name: Compress Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2.3.4
+
+      - name: Compress Images
+        uses: calibreapp/image-actions@1.1.0
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
