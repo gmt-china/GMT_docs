@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 gmt begin GMT_cycle_6 pdf,png
-  gmt set GMT_THEME cookbook
   gmt set TIME_WEEK_START Monday
   gmt subplot begin 2x2 -Fs15c/8c -M14p/6p -A \
     -T"Verrazzano-Narrows Bridge @%34%\337@%% Brooklyn Traffic [2018-2020]" -BWSrt
