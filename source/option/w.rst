@@ -54,7 +54,7 @@ GMT 提供了很多规定单位的标准时间循环以及用于其他笛卡尔�
    - **w** 代码（周循环）中范围为 0-1 的坐标代表一周的第一天（即星期一），但可以通过 :term:`TIME_WEEK_START` 修改
    - 使用 **-w** 选项时，除非已经单独设置，否则 GMT 会自动设置 **-f** 选项来表明使用的是绝对时间
    - 使用年循环 **a** 或周循环 **w** 时，横轴为时间轴，因此，可以使用与月份和工作日相关的配置参数，
-   如 :term:`GMT_LANGUAGE`\ 、\ :term:`FORMAT_TIME_PRIMARY_MAP` 以及 :term:`TIME_WEEK_START`\ 
+   如 :term:`GMT_LANGUAGE`\ 、\ :term:`FORMAT_TIME_PRIMARY_MAP` 以及 :term:`TIME_WEEK_START`
 
 下面将通过密西西比河在 1930–1940 年期间的日流量来演示 **-w** 选项的使用方法。
 
