@@ -43,6 +43,7 @@ pygments_style = "sphinx"
 show_authors = True
 
 extensions = [
+    "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
