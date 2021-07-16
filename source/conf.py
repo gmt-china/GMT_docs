@@ -27,6 +27,7 @@ rst_prolog = """
 .. |刘珠妹| replace:: `刘珠妹 <https://github.com/liuzhumei>`__
 .. |徐弥坚| replace:: `徐弥坚 <https://xumijian.me/>`__
 .. |邓山泉| replace:: `邓山泉 <https://github.com/sqdeng/>`__
+.. |周茂| replace:: `周茂 <https://github.com/ZMAlt>`__
 """
 
 # -- General configuration ------------------------------------------------
@@ -43,6 +44,7 @@ pygments_style = "sphinx"
 show_authors = True
 
 extensions = [
+    "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
@@ -78,7 +80,7 @@ html_title = project
 html_logo = None
 html_favicon = "favicon.ico"
 html_static_path = ["_static"]
-html_extra_path = ["CNAME"]
+html_extra_path = []
 html_last_updated_fmt = "%Y年%m月%d日"
 html_search_language = "zh"
 html_theme_options = {

@@ -1,35 +1,35 @@
-Linux/macOS 下编译GMT源码
-=========================
+Linux/macOS 下编译 GMT 源码
+===========================
 
-这一节介绍如何在 Linux 或者 macOS 下编译GMT源代码。Windows用户如果想编译
-GMT源码请参考GMT官方
+这一节介绍如何在 Linux 或者 macOS 下编译 GMT 源代码。
+Windows 用户如果想编译 GMT 源码请参考 GMT 官方\
 `编译指南 <https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md>`_\ 。
 
 编译及运行依赖
 --------------
 
-GMT的编译及运行需要如下软件：
+GMT 的编译及运行需要如下软件：
 
 - CMake: >=2.8.12
-- netCDF（>=4.0且支持netCDF-4/HDF5）
+- netCDF（>=4.0 且支持 netCDF-4/HDF5）
 - curl
 
 除此之外，还可以安装如下软件库以增强GMT的更多功能：
 
-- `Ghostscript <https://www.ghostscript.com/>`_: 生成PDF或者其他位图格式的图片
-- `GDAL <https://www.gdal.org/>`_: 读写其它地学常用的网格和图片格式
-- `PCRE <https://www.pcre.org/>`_: 正则表达式支持
-- `FFTW <http://www.fftw.org/>`_: 快速傅里叶变换库（>=3.3，macOS下不需要）
-- `GLib <https://developer.gnome.org/glib/>`_: GTHREAD多线程支持
-- LAPACK: 快速矩阵反演库 （macOS下不需要）
-- BLAS：快速矩阵运算库 （macOS下不需要）
-- `GraphicsMagick <http://www.graphicsmagick.org>`_: 生成GIF格式的动画
-- `FFmpeg <http://www.ffmpeg.org/>`_: 生成MP4格式的动画
+- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF 或者其他位图格式的图片
+- `GDAL <https://www.gdal.org/>`__\ ：读写其它地学常用的网格和图片格式
+- `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
+- `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
+- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持
+- LAPACK：快速矩阵反演库（macOS 下不需要）
+- BLAS：快速矩阵运算库（macOS 下不需要）
+- `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
+- `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
 
 安装依赖软件
 ------------
 
-对于Ubuntu/Debian::
+对于 Ubuntu/Debian::
 
     $ sudo apt update
     # 安装编译所需软件包
@@ -38,7 +38,7 @@ GMT的编译及运行需要如下软件：
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
-对于CentOS/RHEL::
+对于 CentOS/RHEL::
 
     $ sudo yum install epel-release
     # 安装编译所需软件包
@@ -48,7 +48,7 @@ GMT的编译及运行需要如下软件：
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
-对于Fedora用户::
+对于 Fedora 用户::
 
     # 安装编译所需软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
@@ -57,23 +57,23 @@ GMT的编译及运行需要如下软件：
     $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
-对于macOS用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
+对于 macOS 用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
 
     # 安装必须依赖
-    brew install cmake curl netcdf
+    $ brew install cmake curl netcdf
     brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 下载源码及数据
 --------------
 
-编译GMT需要下载如下三个文件：
+编译 GMT 需要下载如下三个文件：
 
 #. GMT 6.2.0 源码：`gmt-6.2.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.2.0-src.tar.gz>`_
-#. 全球海岸线数据GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
-#. 全球数字图表DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
+#. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
+#. 全球数字图表 DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
 
-安装GMT
--------
+安装 GMT
+--------
 
 将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装：
 
@@ -84,17 +84,17 @@ GMT的编译及运行需要如下软件：
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
    $ tar -xvf dcw-gmt-2.0.0.tar.gz
 
-   # 将gshhg和dcw数据复制到gmt的share目录下
+   # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
    $ mv gshhg-gmt-2.3.7 gmt-6.2.0/share/gshhg-gmt
    $ mv dcw-gmt-2.0.0 gmt-6.2.0/share/dcw-gmt
 
-   # 切换到gmt源码目录下
+   # 切换到 gmt 源码目录下
    $ cd gmt-6.2.0
 
-   # 用文本编辑器新建并打开CMake用户配置文件
-   # Linux用户
+   # 用文本编辑器新建并打开 CMake 用户配置文件
+   # Linux 用户
    $ gedit cmake/ConfigUser.cmake
-   # macOS用户
+   # macOS 用户
    $ touch cmake/ConfigUser.cmake
    $ open -a TextEdit cmake/ConfigUser.cmake
 
@@ -105,11 +105,11 @@ GMT的编译及运行需要如下软件：
     set (GMT_USE_THREADS TRUE)
     set (GMT_ENABLE_OPENMP TRUE)
 
-- **CMAKE_INSTALL_PREFIX** 用于设置GMT的安装路径，上面的语句会将GMT安装在
+- **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
   :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.2.0` 等有可读写
   权限的路径；
-- **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为GMT的某些模块
+- **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为 GMT 的某些模块
   增加多线程并行功能以加速计算，也可以不设置。
 
 .. tip::
@@ -120,17 +120,17 @@ GMT的编译及运行需要如下软件：
    进一步，可以将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
    :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
-继续执行如下命令以检查GMT的依赖是否满足::
+继续执行如下命令以检查 GMT 的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于GMT源码压缩包解压出来的 gmt-6.2.0 目录下，不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
+    # 注意，此处新建的 build 文件夹位于 GMT 源码压缩包解压出来的 gmt-6.2.0 目录下，不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
     $ mkdir build
     $ cd build/
     $ cmake ..
 
-``cmake ..`` 会检查系统软件是否满足GMT的依赖关系，过程中会输出大量信息，并
+``cmake ..`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
 在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
 正常情况下结果结果如下，若存在一些差异也没有问题。只要过程中不出现报错，即可。
-如果出现报错，则需要检查之前的步骤是否有误，检查完成后删除原build目录再新建build，
+如果出现报错，则需要检查之前的步骤是否有误，检查完成后删除原 build 目录再新建 build，
 继续执行 ``cmake ..``\ ，直到出现类似的检查结果::
 
     *
@@ -179,12 +179,12 @@ GMT的编译及运行需要如下软件：
 
 .. warning::
 
-    Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，
-    GMT在配置过程中可能会找到Anaconda提供的库文件，进而导致配置、编译或执行
+    Anaconda 用户请注意！由于 Anaconda 中也安装了 FFTW、GDAL、netCDF 等库文件，
+    GMT 在配置过程中可能会找到 Anaconda 提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
-    解决办法是，在 :file:`~/.bashrc` 中将 Anaconda 相关的环境变量注释掉，以保证GMT
-    在配置和编译过程中找到的不是 Anaconda 提供的库文件。待GMT安装完成后，再
+    解决办法是，在 :file:`~/.bashrc` 中将 Anaconda 相关的环境变量注释掉，以保证 GMT
+    在配置和编译过程中找到的不是 Anaconda 提供的库文件。待 GMT 安装完成后，再
     将 Anaconda 相关环境变量改回即可。
 
 检查完毕后，开始编译和安装::
@@ -194,16 +194,16 @@ GMT的编译及运行需要如下软件：
 
 .. note::
 
-   **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下
-   使用 **-j** 选项会导致编译过程卡死。Ubuntu用户建议在上面的两条命令中去掉 **-j** 选项。
+   **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些 Ubuntu 发行版下
+   使用 **-j** 选项会导致编译过程卡死。Ubuntu 用户建议在上面的两条命令中去掉 **-j** 选项。
 
 修改环境变量
 ------------
 
-打开终端，使用如下命令用文件编辑器打开Bash配置文件::
+打开终端，使用如下命令用文件编辑器打开 Bash 配置文件::
 
     # Linux 用户
-    gedit ~/.bashrc
+    $ gedit ~/.bashrc
 
     # macOS 用户
     open ~/.bash_profile
@@ -218,25 +218,25 @@ GMT的编译及运行需要如下软件：
 说明：
 
 - 第一个命令添加了环境变量 **GMT6HOME**
-- 第二个命令修改 GMT6 的 bin 目录加入到 **PATH** 中，使得终端可以找到GMT命令
-- 第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。
-  通常，32位系统的路径为 **lib**\ ，64位系统的路径为 **lib64**
+- 第二个命令修改 GMT6 的 :file:`bin` 目录加入到 **PATH** 中，使得终端可以找到 GMT 命令
+- 第三个命令将 GMT6 的 :file:`lib` 目录加入到动态链接库路径中。
+  通常，32 位系统的路径为 :file:`lib`\ ，64 位系统的路径为 :file:`lib64`
 
 测试是否安装成功
 ----------------
 
-重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功::
+重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
     $ gmt --version
     6.2.0
 
-升级/卸载GMT
-------------
+升级/卸载 GMT
+-------------
 
-按照上面的配置，GMT会被安装到 :file:`/opt/GMT-6.2.0` 目录下。若想要卸载GMT，
+按照上面的配置，GMT 会被安装到 :file:`/opt/GMT-6.2.0` 目录下。若想要卸载 GMT，
 可以直接删除整个 :file:`/opt/GMT-6.2.0` 即可。
 
-GMT不支持自动更新，因而若想要升级GMT，通常建议先卸载GMT，然后再下载新版源码
+GMT 不支持自动更新，因而若想要升级 GMT，通常建议先卸载 GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。
 
-当然，高级用户也可以同时安装多个版本的GMT，但需要注意环境变量 **PATH** 的设置。
+当然，高级用户也可以同时安装多个版本的 GMT，但需要注意环境变量 **PATH** 的设置。
