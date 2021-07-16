@@ -49,7 +49,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 .. note::
 
-    GMT的dmg安装包只支持 macOS >= 10.14。
+    GMT 的 DMG 安装包只支持 macOS >= 10.14。
 
 1. 下载：\ `gmt-6.2.0-darwin-x86_64.dmg (Intel) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__ |
    `gmt-6.2.0-darwin-arm64.dmg (ARM) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
@@ -68,7 +68,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
    .. note::
 
-      以上内容仅供参考，请务必根据GMT欢迎信息中的提示修改环境变量。
+      以上内容仅供参考，请务必根据 GMT 欢迎信息中的提示修改环境变量。
 
 4. 打开一个终端，输入如下命令，检测安装是否成功::
 
