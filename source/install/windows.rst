@@ -113,8 +113,8 @@ Windows 用户可以使用 Bash 脚本编写并运行 GMT 命令。推荐 Bash �
 .. rubric:: UnixTools
 
 Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
-GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令，并不是 GMT 的一部分。
-若想在 Batch 脚本使用 Linux 的常用命令，
+但是，GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 命令既不是 Windows 下的命令，
+不是 GMT 的一部分。因此，若想在 Batch 脚本使用 Linux 的常用命令，
 推荐安装和使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools。
 Windows 下的 Bash 用户不需要安装 UnixTools。
 
