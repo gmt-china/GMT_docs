@@ -16,11 +16,11 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
        $ brew update && brew upgrade
        $ brew install gmt
 
-    也可以使用如下命令安装GMT的最新开发版（即源码的master分支）::
+    也可以使用如下命令安装 GMT 的最新开发版（即源码的 master 分支）::
 
        $ brew install gmt --HEAD
 
-2.  安装GMT依赖的其它软件::
+2.  安装 GMT 依赖的其它软件::
 
        # 必须软件包
        $ brew install ghostscript
@@ -33,30 +33,30 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
        $ gmt --version
        6.2.0
 
-4.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
+4.  升级 GMT。当有新版本发布时，可以执行如下命令升级 GMT::
 
         brew upgrade gmt
 
-5.  如果需要卸载GMT，可以执行如下命令::
+5.  如果需要卸载 GMT，可以执行如下命令::
 
         brew uninstall gmt
 
 使用 GMT 安装包
 ---------------
 
-GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了GMT，还包含了运行GMT所需的
-Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
+GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了 GMT，还包含了运行 GMT 所需的
+Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用。
 
 .. note::
 
-    GMT的dmg安装包只支持 macOS >= 10.14。
+    GMT 的 DMG 安装包只支持 macOS >= 10.14。
 
 1. 下载：\ `gmt-6.2.0-darwin-x86_64.dmg (Intel) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__ |
    `gmt-6.2.0-darwin-arm64.dmg (ARM) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
 
-2. 双击 dmg 包，在弹出的Finder窗口中，将 **GMT-6.2.0.app** 拖动到 **Applications** 目录
+2. 双击 dmg 包，在弹出的 Finder 窗口中，将 :file:`GMT-6.2.0.app` 拖动到 :file:`Applications` 目录
 
-3. 在Finder中的 **Applications** 目录下，找到GMT图标以双击启动。
+3. 在 Finder 中的 :file`Applications 目录下，找到 GMT 图标以双击启动。
    GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
    提示将如下语句添加到 :file:`~/.bash_profile` 中以修改环境变量::
 
@@ -68,38 +68,38 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 
    .. note::
 
-      以上内容仅供参考，请务必根据GMT欢迎信息中的提示修改环境变量。
+      以上内容仅供参考，请务必根据 GMT 欢迎信息中的提示修改环境变量。
 
 4. 打开一个终端，输入如下命令，检测安装是否成功::
 
        $ gmt --version
        6.2.0
 
-5.  卸载GMT
+5.  卸载 GMT
 
     若想要卸载GMT，可直接到 **/Applications** 目录下找到 GMT，直接删除即可。
 
-6.  升级GMT
+6.  升级 GMT
 
-    GMT包不支持自动升级，因而要先删除旧GMT包，再下载新版安装包并按照上面的
-    步骤重新安装，即实现升级GMT。
+    GMT 包不支持自动升级，因而要先删除旧 GMT 包，再下载新版安装包并按照上面的
+    步骤重新安装，即实现升级 GMT。
 
 使用 Macports 安装
 ------------------
 
 `Macports <https://www.macports.org/>`_ 是 macOS 下的第三方软件包管理工具。
 
-1.  安装GMT::
+1.  安装 GMT::
 
         $ sudo port install gdal +hdf5 +netcdf +openjpeg
         $ sudo port install gmt6
 
-2.  GMT会安装在 :file:`/opt/local/lib/gmt6/` 目录下，需要将其 bin 目录添加至
+2.  GMT 会安装在 :file:`/opt/local/lib/gmt6/` 目录下，需要将其 :file:`bin` 目录添加至
     环境变量 **PATH** 中::
 
         $ echo 'export PATH=/opt/local/lib/gmt6/bin:$PATH' >> ~/.zshrc
 
-3.  安装GMT依赖的其他软件::
+3.  安装 GMT 依赖的其他软件::
 
         $ sudo port install graphicsmagick ffmpeg
 
@@ -108,11 +108,11 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
         $ gmt --version
         6.2.0
 
-5.  升级GMT。当有新版本发布时，可以执行如下命令升级GMT::
+5.  升级 GMT。当有新版本发布时，可以执行如下命令升级 GMT::
 
         $ sudo port selfupdate
         $ sudo port upgrade gmt6
 
-6.  如果需要卸载GMT，可以执行如下命令::
+6.  如果需要卸载 GMT，可以执行如下命令::
 
         $ sudo port uninstall gmt6
