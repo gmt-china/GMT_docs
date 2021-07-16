@@ -101,54 +101,47 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 脚本工具
 ^^^^^^^^^
 
-Windows 用户可以使用 Bash 脚本编写并运行 GMT 命令。
-推荐 Bash 用户安装 **Git for Windows**\ ，以使用 Bash 编写脚本来运行 GMT。
+.. rubric:: Git for Windows
 
-Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
-若想在 Batch 脚本使用 Linux 的常用命令，推荐安装 Unix 小工具合集包 **UnixTools**\ 。
-Windows 下的 Bash 用户不需要安装 UnixTools\ 。
+Windows 用户可以使用 Bash 脚本编写并运行 GMT 命令。推荐 Bash 用户安装 Git for Windows。
+其为 Windows 用户提供了 Bash 以及 Linux 的常用命令，方便用户在 Windows 下运行 Bash 脚本。
 
-- **Git for Windows**
-
-  Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
-  方便用户在 Windows 下运行 Bash 脚本。
-
-  - 下载地址：https://git-scm.com/download/win
-  - 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
+下载地址：https://git-scm.com/download/win
 
 .. _unixtools:
 
-- **UnixTools**
+.. rubric:: UnixTools
 
-  GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令，并不是 GMT 的一部分。
-  如果想要在 Windows 下使用各种 Linux 的常用命令，
-  推荐使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools，其包含了如下程序：
+Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
+GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令，并不是 GMT 的一部分。
+若想在 Batch 脚本使用 Linux 的常用命令，
+推荐安装和使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools。
+Windows 下的 Bash 用户不需要安装 UnixTools。
 
-  - ``cat`` \：显示文件内容
-  - ``cut``\ ：从指定文本中截取文本并输出至标准输出
-  - ``gawk``\ ：处理文本信息的编程语言工具
-  - ``grep``\ ：从指定文本或标准输入中识别并截取出特定字段等
-  - ``head``\ ：输出一个或多个指定文本的前 n 行
-  - ``join``\ ：将两个文件中文本一致的行连接并输出
-  - ``md5sum``\ ：检验文本的 MD5 摘要
-  - ``paste``\ ：并排输出两个文件的内容
-  - ``printf``\ ：按 C 语言格式输出文本
-  - ``sed``\ ：文本处理工具
-  - ``sort``\ ：对文本文档进行排序
-  - ``split``\ ：以行为单位切割文件
-  - ``tail``\ ：显示文件尾端的 n 行数据
-  - ``uniq``\ ：从文本中去除或禁止重复行
-  - ``wc``\ ：输出指定文件的行数、字数和文本数据大小
+下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
+然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
 
-  下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
-  然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。
+- ``cat`` \：显示文件内容
+- ``cut``\ ：从指定文本中截取文本并输出至标准输出
+- ``gawk``\ ：处理文本信息的编程语言工具
+- ``grep``\ ：从指定文本或标准输入中识别并截取出特定字段等
+- ``head``\ ：输出一个或多个指定文本的前 n 行
+- ``join``\ ：将两个文件中文本一致的行连接并输出
+- ``md5sum``\ ：检验文本的 MD5 摘要
+- ``paste``\ ：并排输出两个文件的内容
+- ``printf``\ ：按 C 语言格式输出文本
+- ``sed``\ ：文本处理工具
+- ``sort``\ ：对文本文档进行排序
+- ``split``\ ：以行为单位切割文件
+- ``tail``\ ：显示文件尾端的 n 行数据
+- ``uniq``\ ：从文本中去除或禁止重复行
+- ``wc``\ ：输出指定文件的行数、字数和文本数据大小
 
-  以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。
-  如果你发现某些工具存在问题，或者觉得有其他需要的 Unix 工具没有被包含进来，
-  请向我们反馈，我们会酌情考虑。
+可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
+简易教程学习这些命令的基本用法。
 
-  可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
-  简易教程学习这些命令的基本用法。
+以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。如果你发现某些工具存在问题，
+或者觉得有其他需要的 Unix 工具没有被包含进来，请向我们反馈，我们会酌情考虑。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^
