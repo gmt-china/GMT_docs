@@ -1,46 +1,46 @@
 引用
 ====
 
-若你发表的文章中包含了利用GMT制作的图件或利用GMT数据处理功能得到的结果，
-可以考虑在文中引用GMT的如下文章来回报GMT开发者。
+若你发表的文章中包含了利用 GMT 制作的图件或利用 GMT 数据处理功能得到的结果，
+可以考虑在文中引用 GMT 的如下文章来回报 GMT 开发者。
 
-**GMT6用户**:
+**GMT6 用户**:
     Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019).
     The Generic Mapping Tools Version 6.
     *Geochemistry, Geophysics, Geosystems*, 20, 5556–5564.
     https://doi.org/10.1029/2019GC008515
 
-**GMT5用户**:
+**GMT5 用户**:
     Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013).
     Generic Mapping Tools: Improved Version Released.
     *Eos, Transactions American Geophysical Union*, 94(45), 409–410.
     https://doi.org/10.1002/2013EO450001
 
-**GMT4/GMT3用户**:
+**GMT4/GMT3 用户**:
     Wessel, P., & Smith, W. H. F. (1998).
     New, improved version of Generic Mapping Tools released.
     *Eos, Transactions American Geophysical Union*, 79(47), 579.
     http://dx.doi.org/10.1029/98EO00426
 
-**GMT3.0用户**:
+**GMT3.0 用户**:
     Wessel, P., & Smith, W. H. F. (1995).
     New version of the Generic Mapping Tools released.
     *Eos, Transactions American Geophysical Union*, 76(33), 329.
     http://dx.doi.org/10.1029/95EO00198
 
-**GMT2用户**:
+**GMT2 用户**:
     Wessel, P., & Smith, W. H. F. (1991).
     Free software helps map and display data,
     *Eos, Transactions American Geophysical Union*, 72(41), 445–446.
     http://dx.doi.org/10.1029/90EO00319
 
-**GMT/MATLAB工具箱用户**:
+**GMT/MATLAB 工具箱用户**:
     Wessel, P., & Luis J. (2017).
     The GMT/MATLAB Toolbox.
     *Geochemistry, Geophysics, Geosystems*, 18, 811–823.
     http://dx.doi.org/10.1002/2016GC006723
 
-GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关文章包括：
+GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相关文章包括：
 
 :doc:`gmt:dimfilter` **模块**
     Kim, S.-S., & Wessel, P. (2008)
@@ -61,7 +61,7 @@ GMT的某些模块基于GMT团队单独发展并发表的算法。算法相关�
     *Geophysics*, 55(3), 293–305.
     http://dx.doi.org/10.1190/1.1442837
 
-**x2sys相关模块**
+**x2sys 相关模块**
     Wessel, P. (2010).
     Tools for analyzing intersecting tracks: The x2sys package.
     *Computers & Geosciences*, 36, 348–354.
