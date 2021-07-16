@@ -1,8 +1,8 @@
 Linux/macOS 下编译 GMT 源码
 ===========================
 
-这一节介绍如何在 Linux 或者 macOS 下编译 GMT 源代码。Windows 用户如果想编译
-GMT 源码请参考 GMT 官方
+这一节介绍如何在 Linux 或者 macOS 下编译 GMT 源代码。
+Windows 用户如果想编译 GMT 源码请参考 GMT 官方\
 `编译指南 <https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md>`_\ 。
 
 编译及运行依赖
@@ -16,15 +16,15 @@ GMT 的编译及运行需要如下软件：
 
 除此之外，还可以安装如下软件库以增强GMT的更多功能：
 
-- `Ghostscript <https://www.ghostscript.com/>`_: 生成 PDF 或者其他位图格式的图片
-- `GDAL <https://www.gdal.org/>`_: 读写其它地学常用的网格和图片格式
-- `PCRE <https://www.pcre.org/>`_: 正则表达式支持
-- `FFTW <http://www.fftw.org/>`_: 快速傅里叶变换库（>=3.3，macOS 下不需要）
-- `GLib <https://developer.gnome.org/glib/>`_: GTHREAD 多线程支持
-- LAPACK: 快速矩阵反演库 （macOS 下不需要）
-- BLAS：快速矩阵运算库 （macOS 下不需要）
-- `GraphicsMagick <http://www.graphicsmagick.org>`_: 生成 GIF 格式的动画
-- `FFmpeg <http://www.ffmpeg.org/>`_: 生成 MP4 格式的动画
+- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF 或者其他位图格式的图片
+- `GDAL <https://www.gdal.org/>`__\ ：读写其它地学常用的网格和图片格式
+- `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
+- `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
+- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持
+- LAPACK：快速矩阵反演库（macOS 下不需要）
+- BLAS：快速矩阵运算库（macOS 下不需要）
+- `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
+- `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
 
 安装依赖软件
 ------------
@@ -60,7 +60,7 @@ GMT 的编译及运行需要如下软件：
 对于 macOS 用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
 
     # 安装必须依赖
-    brew install cmake curl netcdf
+    $ brew install cmake curl netcdf
     brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 下载源码及数据
@@ -122,7 +122,7 @@ GMT 的编译及运行需要如下软件：
 
 继续执行如下命令以检查 GMT 的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于GMT源码压缩包解压出来的 gmt-6.2.0 目录下，不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
+    # 注意，此处新建的 build 文件夹位于 GMT 源码压缩包解压出来的 gmt-6.2.0 目录下，不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -203,7 +203,7 @@ GMT 的编译及运行需要如下软件：
 打开终端，使用如下命令用文件编辑器打开 Bash 配置文件::
 
     # Linux 用户
-    gedit ~/.bashrc
+    $ gedit ~/.bashrc
 
     # macOS 用户
     open ~/.bash_profile
@@ -218,9 +218,9 @@ GMT 的编译及运行需要如下软件：
 说明：
 
 - 第一个命令添加了环境变量 **GMT6HOME**
-- 第二个命令修改 GMT6 的 bin 目录加入到 **PATH** 中，使得终端可以找到 GMT 命令
-- 第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。
-  通常，32 位系统的路径为 **lib**\ ，64 位系统的路径为 **lib64**
+- 第二个命令修改 GMT6 的 :file:`bin` 目录加入到 **PATH** 中，使得终端可以找到 GMT 命令
+- 第三个命令将 GMT6 的 :file:`lib` 目录加入到动态链接库路径中。
+  通常，32 位系统的路径为 :file:`lib`\ ，64 位系统的路径为 :file:`lib64`
 
 测试是否安装成功
 ----------------

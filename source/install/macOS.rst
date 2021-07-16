@@ -54,9 +54,9 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 1. 下载：\ `gmt-6.2.0-darwin-x86_64.dmg (Intel) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__ |
    `gmt-6.2.0-darwin-arm64.dmg (ARM) <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
 
-2. 双击 dmg 包，在弹出的 Finder 窗口中，将 **GMT-6.2.0.app** 拖动到 **Applications** 目录
+2. 双击 dmg 包，在弹出的 Finder 窗口中，将 :file:`GMT-6.2.0.app` 拖动到 :file:`Applications` 目录
 
-3. 在 Finder 中的 **Applications** 目录下，找到GMT图标以双击启动。
+3. 在 Finder 中的 :file`Applications 目录下，找到 GMT 图标以双击启动。
    GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的
    提示将如下语句添加到 :file:`~/.bash_profile` 中以修改环境变量::
 
@@ -94,7 +94,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
         $ sudo port install gdal +hdf5 +netcdf +openjpeg
         $ sudo port install gmt6
 
-2.  GMT 会安装在 :file:`/opt/local/lib/gmt6/` 目录下，需要将其 bin 目录添加至
+2.  GMT 会安装在 :file:`/opt/local/lib/gmt6/` 目录下，需要将其 :file:`bin` 目录添加至
     环境变量 **PATH** 中::
 
         $ echo 'export PATH=/opt/local/lib/gmt6/bin:$PATH' >> ~/.zshrc

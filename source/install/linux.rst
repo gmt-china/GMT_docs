@@ -80,7 +80,7 @@ RHEL/CentOS
 
 .. note::
 
-    如果你已经安装了 EPEL 仓库提供的GMT软件包，你必须在使用 GMT 官方仓库
+    如果你已经安装了 EPEL 仓库提供的 GMT 软件包，你必须在使用 GMT 官方仓库
     前卸载旧的 GMT 安装包。使用如下命令::
 
         sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
@@ -108,4 +108,3 @@ ArchLinux 用户
 --------------
 
 ArchLinux 用户请参考 https://github.com/GenericMappingTools/gmt/wiki/Install-latest-GMT-on-ArchLinux
-
