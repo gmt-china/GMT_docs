@@ -31,9 +31,9 @@ GMT 的历史
 
 想了解更多关于 GMT 的历史故事，可以观看/收听下面的视频/音频：
 
-- Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访 http://www.dontpanicgeocast.com/?p=638
-- Don't Panic Geocast 对 Walter Smith 的采访 https://www.dontpanicgeocast.com/?p=742
-- Paul Wessel 在 GMT 20 周年的演讲 https://av.tib.eu/media/19869 或 https://youtu.be/2D_UlEZpxbU
+- Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访：http://www.dontpanicgeocast.com/?p=638
+- Don't Panic Geocast 对 Walter Smith 的采访：https://www.dontpanicgeocast.com/?p=742
+- Paul Wessel 在 GMT 20 周年的演讲：https://av.tib.eu/media/19869 或 https://youtu.be/2D_UlEZpxbU
 
 GMT 开发者
 ----------
