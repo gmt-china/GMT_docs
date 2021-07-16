@@ -56,8 +56,8 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
         1.  点击“计算机”→“属性”→“高级系统设置”→“环境变量”打开“环境变量”编辑工具
         2.  在“系统变量”部分中，选中 “Path” 并点击“编辑”
-        3.  在“变量值”的最后加上 GMT 的 :file:`bin` 目录的路径，例如 :file:`C:\\programs\\gmt6\\bin`\ 。
-            需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
+        3.  在“变量值”的最后加上 GMT 安装目录下的 :file:`bin` 目录的路径，
+            如 :file:`C:\\programs\\gmt6\\bin`\ 。需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
 
 3.  测试安装
 
@@ -119,7 +119,7 @@ GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令，并�
 Windows 下的 Bash 用户不需要安装 UnixTools。
 
 下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
-然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
+然后将解压得到的 exe 文件移动到 GMT 安装目录下的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
 
 - ``cat`` \：显示文件内容
 - ``cut``\ ：从指定文本中截取文本并输出至标准输出
@@ -146,7 +146,7 @@ Windows 下的 Bash 用户不需要安装 UnixTools。
 GraphicsMagick
 ^^^^^^^^^^^^^^
 
-GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要
-使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
-如有制作 GIF 动画的需求，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境
-变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gm`` 命令。
+GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
+`GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
+如需制作 GIF 动画，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
+以保证 GMT 可以找到其提供的 ``gm`` 命令。
