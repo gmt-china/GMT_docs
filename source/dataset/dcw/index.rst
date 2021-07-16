@@ -1,7 +1,7 @@
 DCW: 世界数字图表
 =================
 
-.. figure:: /images/dcw.*
+.. figure:: dcw.*
    :width: 75%
    :align: center
 

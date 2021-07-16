@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #
-# 中国及邻区地质图
+# Geological map of China and adjacent regions
 #
 
 data=geo3al.gmt
 cpt=geoage.cpt
 
 gmt begin geo3al pdf,png
-    # 绘制陆地为白色，即灰度 255
-    gmt coast -R70/150/13/55 -JM22c -G255 -Baf -BWsNe
+    # Paint the land using white color
+    gmt coast -R70/150/13/55 -JM22c -Gwhite -Baf -BWsNe
 
-    # Plot the geological map by geologic ages
+    # Plot the geological map, colored by geologic ages
     # -aZ="GEN_GLG": use the "GEN_GLG" metadata as the Z value
     # -G+z -C$cpt: the fill color is determined by the Z value and the CPT file
     gmt plot $data -C$cpt -aZ="GEN_GLG" -G+z
@@ -25,7 +25,7 @@ gmt begin geo3al pdf,png
     gmt convert $data -aI="TYPE" -S"-Ii" | gmt plot -Gp29+r500+f100+b-
     gmt convert $data -aI="TYPE" -S"-Iw" | gmt plot -Gp44+r500+f100+b-
 
-    # 绘制海洋或者湖泊为 CADETBLUE1 颜色
+    # Paint the ocean and lake using color "cadetblue1"
     gmt coast -SCADETBLUE1
 
     # Plot geologic age legend

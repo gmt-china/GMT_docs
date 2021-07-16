@@ -18,7 +18,7 @@ GMT5.3以后的用户在GMT执行路径（默认为 ``C:\programs\gmt5\bin`` ）
 - GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；
 - GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。
 
-.. figure:: /images/Matlab_path.png
+.. figure:: matlab_path.png
    :width: 100%
    :align: center
 

@@ -29,15 +29,15 @@ GMT 支持通过颜色名指定663种颜色。下图中列出了GMT支持的所�
 
 .. _color_list:
 
-.. figure:: /images/GMT_RGBchart_a4.*
+.. figure:: GMT_RGBchart_a4.*
    :width: 100%
    :align: center
 
 **GMT颜色表下载：**
-:download:`A4 PNG格式 </images/GMT_RGBchart_a4.png>` |
-:download:`A4 PDF格式 </images/GMT_RGBchart_a4.pdf>` |
-:download:`USLetter PNG格式 </images/GMT_RGBchart_letter.png>` |
-:download:`USLetter PDF格式 </images/GMT_RGBchart_letter.pdf>`
+:download:`A4 PNG 格式 <GMT_RGBchart_a4.png>` |
+:download:`A4 PDF 格式 <GMT_RGBchart_a4.pdf>` |
+:download:`USLetter PNG 格式 <GMT_RGBchart_letter.png>` |
+:download:`USLetter PDF 格式 <GMT_RGBchart_letter.pdf>`
 
 RGB
 ---
