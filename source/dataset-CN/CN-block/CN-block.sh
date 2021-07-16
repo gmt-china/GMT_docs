@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 gmt begin BLOCK png,pdf
     gmt gmtset MAP_ANNOT_OBLIQUE 6

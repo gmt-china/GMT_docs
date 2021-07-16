@@ -19,7 +19,6 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
-      # Cancel previous runs that are not completed
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.0
 
@@ -38,7 +37,6 @@ jobs:
           conda install gmt=${GMT_VERSION}
           pip install -r requirements.txt
 
-      # Download cached remote files (artifacts) from GitHub
       - name: Download remote data from GitHub
         uses: dawidd6/action-download-artifact@v2.14.0
         with:
@@ -83,8 +81,15 @@ jobs:
       - name: Push the documentation to gh-pages
         run: |
           cd deploy
+          # generate the .nojekyll file in the root directory
           touch .nojekyll
-          # Update the directory
+          # generate CNAME in the root directory
+          echo docs.gmt-china.org > CNAME
+          # Use the old PDF documentation if the new PDF documentation is not built
+          if [ ! -f ../build/dirhtml/GMT_docs.pdf ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          fi
+          # Replace the old documentation with tht new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
           # let "latest" link to the latest version

@@ -1,6 +1,10 @@
 CN-border: 中国国界省界数据
 ===========================
 
+:贡献者: |刘珠妹|, |田冬冬|, |陈箫翰|
+
+----
+
 GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦地区、藏南地区边界均存在明显差异，
 其他地方也存在微小差异。在正式出版的中外期刊上发表带有中国国界的地图时需要格外注意。
 2017 年国家测绘地理信息局发布的
@@ -68,9 +72,17 @@ CN-border 数据提供了三个数据文件：
         gmt inset end
     gmt end show
 
-数据来源及处理
+数据来源与处理
 --------------
 
-CN-border 原始数据来自于 `1:100万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_\ ，
+CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_\ ，
 并由\ `刘珠妹 <https://github.com/liuzhumei>`__ 处理得到 GMT 可使用的数据。
 **具体数据处理方式待补充**。
+
+数据引用
+--------
+
+CN-border 原始数据来自于\ `全国地理信息资源目录服务系统 <https://www.webmap.cn>`__\ ，
+其\ `版权声明 <https://www.webmap.cn/main.do?method=otherService&clickFlag=copyright>`__\ 中要求：
+
+    转载或引用本网站所有之内容须注明“转自（或引自）全国地理信息资源目录服务系统”字样，并标明本网网址 www.webmap.cn。

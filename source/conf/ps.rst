@@ -70,7 +70,7 @@ PS参数
             :caption: **PS_LINE_CAP** 控制线段端点绘图效果
             :width: 60%
 
-            #!/bin/bash
+            #!/usr/bin/env bash
             gmt begin line_cap pdf,png
             for cap in butt round square; do
             gmt plot -JX15c/2c -R-0.25/16/-0.5/1.5 -Y0.8c -W8p --PS_LINE_CAP=$cap << EOF
@@ -94,7 +94,7 @@ PS参数
             :caption: **PS_LINE_JOIN** 控制线段拐点绘制效果
             :width: 75%
 
-            #!/bin/bash
+            #!/usr/bin/env bash
             gmt begin line_join pdf,png
             gmt subplot begin 1x3 -Fs5c/5c -B+n
             for join in miter round bevel; do

@@ -34,16 +34,16 @@ jobs:
           --exclude "^https://www.bilibili.com/"
           --exclude "^https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$"
           --exclude "^https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$"
-          --exclude "https://www.eoas.ubc.ca/~rich/map.html"
-          --exclude "https://doi.org/10.1360/zd2003-33-S1-12"
           --verbose
           "repository/*.md"
           "documentation/latest/**/*.html"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
     - name: Create Issue From File
-      uses: peter-evans/create-issue-from-file@v3
+      uses: peter-evans/create-issue-from-file@v3.0.0
       with:
-        title: Link Checker Report
+        title: Link Checker Report on ${{ steps.date.outputs.date }}
         content-filepath: ./lychee/out.md

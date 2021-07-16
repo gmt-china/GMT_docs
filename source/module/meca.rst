@@ -210,7 +210,7 @@ meca
    :show-code: true
    :width: 75%
 
-    #!/bin/bash
+    #!/usr/bin/env bash
     gmt begin beachball_3 png,pdf
     gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSen
     gmt coast -Da -Ia/0.05,black
