@@ -56,13 +56,13 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
         1.  点击“计算机”→“属性”→“高级系统设置”→“环境变量”打开“环境变量”编辑工具
         2.  在“系统变量”部分中，选中 “Path” 并点击“编辑”
-        3.  在“变量值”的最后加上 GMT 的 :file:`bin` 目录的路径，例如 :file:`C:\\programs\\gmt6\\bin`\ 。
-            需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
+        3.  在“变量值”的最后加上 GMT 安装目录下的 :file:`bin` 目录的路径，
+            如 :file:`C:\\programs\\gmt6\\bin`\ 。需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
 
 3.  测试安装
 
-    安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 cmd。
-    在 cmd 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
+    安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 CMD。
+    在 CMD 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
 
 4.  升级 GMT
 
@@ -84,7 +84,7 @@ Visual Studio Code
 
 Visual Studio Code (VS Code) 是微软推出的一款免费、轻量且功能强大的编辑器。
 VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
-实时预览 jpg/gif/pdf 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
+实时预览 PDF、JPG 以及 GIF 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
 
 安装和配置教程：
 
@@ -101,28 +101,25 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 脚本工具
 ^^^^^^^^^
 
-Windows 用户可以使用 Bash 脚本编写并运行 GMT 命令。
-推荐 Bash 用户安装 **Git for Windows**\ ，以使用 Bash 编写脚本来运行 GMT。
-
-Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
-若想在 Batch 脚本使用 Linux 的常用命令，推荐安装 Unix 小工具合集包 **UnixTools**\ 。
-Windows 下的 Bash 用户不需要安装 UnixTools\ 。
-
 .. rubric:: Git for Windows
 
-Git for Windows 为 Windows 用户提供了 Bash 以及 Linux 的常用命令，
-方便用户在 Windows 下运行 Bash 脚本。
+Windows 用户可以使用 Bash 脚本编写并运行 GMT 命令。推荐 Bash 用户安装 Git for Windows。
+其为 Windows 用户提供了 Bash 以及 Linux 的常用命令，方便用户在 Windows 下运行 Bash 脚本。
 
-- 下载地址：https://git-scm.com/download/win
-- 教程链接：https://seismo-learn.org/seismology101/programming/version-control/
+下载地址：https://git-scm.com/download/win
 
 .. _unixtools:
 
 .. rubric:: UnixTools
 
-GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不是 GMT 的一部分。
-如果想要在 Windows 下使用各种 Linux 的常用命令，
-推荐使用 GMT 中文社区整理的 Unix 小工具合集包 **UnixTools**\ ，其包含了如下程序：
+Windows 用户也可以使用 Batch 脚本编写并运行 GMT 命令。
+但是，GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令既不是 Windows 下的命令，
+也不是 GMT 的一部分。因此，若想在 Batch 脚本使用 Linux 的常用命令，
+推荐安装和使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools。
+Windows 下的 Bash 用户不需要安装 UnixTools。
+
+下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
+然后将解压得到的 exe 文件移动到 GMT 安装目录下的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
 
 - ``cat`` \：显示文件内容
 - ``cut``\ ：从指定文本中截取文本并输出至标准输出
@@ -140,20 +137,16 @@ GMT 中文手册的实例中使用到的 **gawk** 等 Linux 下的命令并不�
 - ``uniq``\ ：从文本中去除或禁止重复行
 - ``wc``\ ：输出指定文件的行数、字数和文本数据大小
 
-下载 :download:`UnixTools.zip`，
-然后将解压得到的 exe 文件移动到 GMT 的 :file:`bin` 目录即可。
-
-以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。
-如果你发现某些工具存在问题，或者觉得有其他需要的 Unix 工具没有被包含进来，
-请向我们反馈，我们会酌情考虑。
-
 可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
 简易教程学习这些命令的基本用法。
+
+以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。如果你发现某些工具存在问题，
+或者觉得有其他需要的 Unix 工具没有被包含进来，请向我们反馈，我们会酌情考虑。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^
 
-GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要
-使用 `GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
-如有制作 GIF 动画的需求，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境
-变量 **PATH** 中，以保证 GMT 可以找到其提供的 ``gm`` 命令。
+GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
+`GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
+如需制作 GIF 动画，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
+以保证 GMT 可以找到其提供的 ``gm`` 命令。
