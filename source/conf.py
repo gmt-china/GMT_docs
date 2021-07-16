@@ -43,6 +43,7 @@ pygments_style = "sphinx"
 show_authors = True
 
 extensions = [
+    "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
@@ -76,9 +77,9 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 templates_path = ["_templates"]
 html_title = project
 html_logo = None
-html_favicon = "_static/favicon.ico"
+html_favicon = "favicon.ico"
 html_static_path = ["_static"]
-html_extra_path = ["CNAME"]
+html_extra_path = []
 html_last_updated_fmt = "%Y年%m月%d日"
 html_search_language = "zh"
 html_theme_options = {
