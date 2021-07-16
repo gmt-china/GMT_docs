@@ -59,6 +59,7 @@
     - :doc:`grdvolume`
     - :doc:`histogram`
     - :doc:`image`
+    - :doc:`img2google`
     - :doc:`inset`
     - :doc:`kml2gmt`
     - :doc:`legend`
@@ -122,7 +123,6 @@
     - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/gshhg/gshhg`
-    - :doc:`gmt:supplements/img/img2google`
     - :doc:`gmt:supplements/img/img2grd`
     - :doc:`gmt:supplements/mgd77/mgd77convert`
     - :doc:`gmt:supplements/mgd77/mgd77header`
@@ -483,7 +483,7 @@
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/gshhg/gshhg`            | Extract data tables from binary GSHHS or WDBII data files             |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:supplements/img/img2google`         | Create Google Earth KML tiles from bathymetry Mercator img grid       |
+| :doc:`img2google`                             | 由测深墨卡托 img 网格创建谷歌地球 KML 文件                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/img/img2grd`            | Extract a subset from an img file in Mercator or Geographic format    |
 +-----------------------------------------------+-----------------------------------------------------------------------+
@@ -554,6 +554,7 @@
    grdvolume
    histogram
    image
+   img2google
    inset
    kml2gmt
    legend
