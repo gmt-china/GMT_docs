@@ -164,7 +164,7 @@ polar
 示例
 ----
 
-.. gmtplot:: /scripts/polar_ex1.sh
+.. gmtplot:: polar/polar_ex1.sh
    :width: 60%
    :align: center
 

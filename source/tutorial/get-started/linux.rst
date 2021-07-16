@@ -11,7 +11,9 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 运行GMT
 -------
 
-启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
+启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于：
+
+.. code-block:: console
 
             GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
@@ -60,7 +62,7 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 .. note::
 
     本手册中所有示例均使用Bash脚本，要求读者对Bash脚本及Unix命令行有最基本的了解。
-    不了解的用户请阅读网络上Bash相关教程，或本手册中 :doc:`/tutorial/scripting` 一节。
+    不了解的用户请阅读网络上 Bash 相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
 
 查看并编辑脚本文件
 ------------------
@@ -72,7 +74,7 @@ Linux都自带了的文本编辑器 **gedit** 打开该脚本文件::
 
 打开脚本文件后会看到如下内容::
 
-    #!/usr/bin/env bash
+    #!/usr/bin/env -S bash -e
     # GMT modern mode bash template
     # Date:    2019-09-10T00:44:39
     # User:    seisman

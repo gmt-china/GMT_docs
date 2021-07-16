@@ -1,10 +1,181 @@
 模块手册
 ########
 
+**GMT 主程序与脚本**
+
+.. hlist::
+    :columns: 6
+
+    - :doc:`gmt`
+    - :doc:`gmt-config`
+
+**GMT 模块（已翻译整理）**
+
+.. hlist::
+    :columns: 6
+
+    - :doc:`basemap`
+    - :doc:`begin`
+    - :doc:`clear`
+    - :doc:`clip`
+    - :doc:`coast`
+    - :doc:`colorbar`
+    - :doc:`contour`
+    - :doc:`coupe`
+    - :doc:`docs`
+    - :doc:`end`
+    - :doc:`figure`
+    - :doc:`filter1d`
+    - :doc:`fitcircle`
+    - :doc:`gmtconnect`
+    - :doc:`gmtdefaults`
+    - :doc:`gmtget`
+    - :doc:`gmtinfo`
+    - :doc:`gmtlogo`
+    - :doc:`gmtselect`
+    - :doc:`gmtset`
+    - :doc:`gmtsimplify`
+    - :doc:`gmtwhich`
+    - :doc:`grd2cpt`
+    - :doc:`grd2xyz`
+    - :doc:`grdblend`
+    - :doc:`grdclip`
+    - :doc:`grdcontour`
+    - :doc:`grdconvert`
+    - :doc:`grdcut`
+    - :doc:`grdedit`
+    - :doc:`grdfill`
+    - :doc:`grdimage`
+    - :doc:`grdinfo`
+    - :doc:`grdlandmask`
+    - :doc:`grdmask`
+    - :doc:`grdpaste`
+    - :doc:`grdproject`
+    - :doc:`grdsample`
+    - :doc:`grdtrack`
+    - :doc:`grdtrend`
+    - :doc:`grdvector`
+    - :doc:`grdview`
+    - :doc:`grdvolume`
+    - :doc:`histogram`
+    - :doc:`image`
+    - :doc:`img2google`
+    - :doc:`img2grd`
+    - :doc:`inset`
+    - :doc:`kml2gmt`
+    - :doc:`legend`
+    - :doc:`makecpt`
+    - :doc:`mapproject`
+    - :doc:`meca`
+    - :doc:`plot`
+    - :doc:`polar`
+    - :doc:`project`
+    - :doc:`psconvert`
+    - :doc:`rose`
+    - :doc:`sac`
+    - :doc:`sample1d`
+    - :doc:`solar`
+    - :doc:`spectrum1d`
+    - :doc:`sph2grd`
+    - :doc:`subplot`
+    - :doc:`surface`
+    - :doc:`ternary`
+    - :doc:`text`
+    - :doc:`velo`
+    - :doc:`xyz2grd`
+
+**GMT 模块（尚未翻译整理，欢迎贡献）**
+
+.. hlist::
+    :columns: 6
+
+    - :doc:`gmt:batch`
+    - :doc:`gmt:blockmean`
+    - :doc:`gmt:blockmedian`
+    - :doc:`gmt:blockmode`
+    - :doc:`gmt:dimfilter`
+    - :doc:`gmt:events`
+    - :doc:`gmt:gmt2kml`
+    - :doc:`gmt:gmtbinstats`
+    - :doc:`gmt:gmtconvert`
+    - :doc:`gmt:gmtmath`
+    - :doc:`gmt:gmtregress`
+    - :doc:`gmt:gmtspatial`
+    - :doc:`gmt:gmtsplit`
+    - :doc:`gmt:gmtswitch`
+    - :doc:`gmt:gmtvector`
+    - :doc:`gmt:grd2kml`
+    - :doc:`gmt:grdfft`
+    - :doc:`gmt:grdgdal`
+    - :doc:`gmt:grdfilter`
+    - :doc:`gmt:grdgradient`
+    - :doc:`gmt:grdhisteq`
+    - :doc:`gmt:grdinterpolate`
+    - :doc:`gmt:grdmath`
+    - :doc:`gmt:grdmix`
+    - :doc:`gmt:greenspline`
+    - :doc:`gmt:mask`
+    - :doc:`gmt:movie`
+    - :doc:`gmt:nearneighbor`
+    - :doc:`gmt:plot3d`
+    - :doc:`gmt:sphdistance`
+    - :doc:`gmt:sphinterpolate`
+    - :doc:`gmt:sphtriangulate`
+    - :doc:`gmt:supplements/geodesy/earthtide`
+    - :doc:`gmt:supplements/geodesy/gpsgridder`
+    - :doc:`gmt:supplements/gshhg/gshhg`
+    - :doc:`gmt:supplements/mgd77/mgd77convert`
+    - :doc:`gmt:supplements/mgd77/mgd77header`
+    - :doc:`gmt:supplements/mgd77/mgd77info`
+    - :doc:`gmt:supplements/mgd77/mgd77list`
+    - :doc:`gmt:supplements/mgd77/mgd77magref`
+    - :doc:`gmt:supplements/mgd77/mgd77manage`
+    - :doc:`gmt:supplements/mgd77/mgd77path`
+    - :doc:`gmt:supplements/mgd77/mgd77sniffer`
+    - :doc:`gmt:supplements/mgd77/mgd77track`
+    - :doc:`gmt:supplements/potential/gmtflexure`
+    - :doc:`gmt:supplements/potential/gmtgravmag3d`
+    - :doc:`gmt:supplements/potential/gravfft`
+    - :doc:`gmt:supplements/potential/grdflexure`
+    - :doc:`gmt:supplements/potential/grdgravmag3d`
+    - :doc:`gmt:supplements/potential/grdredpol`
+    - :doc:`gmt:supplements/potential/grdseamount`
+    - :doc:`gmt:supplements/potential/talwani2d`
+    - :doc:`gmt:supplements/potential/talwani3d`
+    - :doc:`gmt:supplements/segy/segy2grd`
+    - :doc:`gmt:supplements/segy/segy`
+    - :doc:`gmt:supplements/segy/segyz`
+    - :doc:`gmt:supplements/spotter/backtracker`
+    - :doc:`gmt:supplements/spotter/gmtpmodeler`
+    - :doc:`gmt:supplements/spotter/grdpmodeler`
+    - :doc:`gmt:supplements/spotter/grdrotater`
+    - :doc:`gmt:supplements/spotter/grdspotter`
+    - :doc:`gmt:supplements/spotter/hotspotter`
+    - :doc:`gmt:supplements/spotter/originater`
+    - :doc:`gmt:supplements/spotter/polespotter`
+    - :doc:`gmt:supplements/spotter/rotconverter`
+    - :doc:`gmt:supplements/spotter/rotsmoother`
+    - :doc:`gmt:supplements/x2sys/x2sys_binlist`
+    - :doc:`gmt:supplements/x2sys/x2sys_cross`
+    - :doc:`gmt:supplements/x2sys/x2sys_datalist`
+    - :doc:`gmt:supplements/x2sys/x2sys_get`
+    - :doc:`gmt:supplements/x2sys/x2sys_init`
+    - :doc:`gmt:supplements/x2sys/x2sys_list`
+    - :doc:`gmt:supplements/x2sys/x2sys_merge`
+    - :doc:`gmt:supplements/x2sys/x2sys_put`
+    - :doc:`gmt:supplements/x2sys/x2sys_report`
+    - :doc:`gmt:supplements/x2sys/x2sys_solve`
+    - :doc:`gmt:trend1d`
+    - :doc:`gmt:trend2d`
+    - :doc:`gmt:triangulate`
+    - :doc:`gmt:wiggle`
+
+**GMT 模块（按功能分类）[包含了尚未翻译模块]**
+
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | **主程序/脚本**                               |                                                                       |
 +===============================================+=======================================================================+
-| :doc:`gmt`                                    | GMT主程序                                                             |
+| :doc:`gmt`                                    | GMT 主程序                                                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt-config`                             | 返回 GMT 动态函数库的基本信息                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------+
@@ -184,7 +355,7 @@
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:greenspline`                        | 使用格林函数样条进行插值                                              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:sph2grd`                            | 根据球谐系数计算网格                                                  |
+| :doc:`sph2grd`                                | 根据球谐系数计算网格                                                  |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:sphdistance`                        | 计算球面上的Voronoi距离、节点或natural nearest-neighbor grid          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
@@ -312,9 +483,9 @@
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/gshhg/gshhg`            | Extract data tables from binary GSHHS or WDBII data files             |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:supplements/img/img2google`         | Create Google Earth KML tiles from bathymetry Mercator img grid       |
+| :doc:`img2google`                             | 由测深墨卡托 img 网格创建谷歌地球 KML 文件                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:supplements/img/img2grd`            | Extract a subset from an img file in Mercator or Geographic format    |
+| :doc:`img2grd`            | 从墨卡托 img 格式文件中提取网格数据    |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/geodesy/gpsgridder`     | Interpolate GPS velocity vectors using Green's functions              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
@@ -383,6 +554,8 @@
    grdvolume
    histogram
    image
+   img2google
+   img2grd
    inset
    kml2gmt
    legend
@@ -398,6 +571,7 @@
    sample1d
    solar
    spectrum1d
+   sph2grd
    subplot
    surface
    ternary
