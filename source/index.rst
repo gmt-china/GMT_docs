@@ -76,8 +76,8 @@ GMT 是地球科学使用最广泛的制图软件之一。
    dataset/index
    dataset-CN/index
    chinese/index
-   api/index
    module/index
+   api/index
 
 .. toctree::
    :maxdepth: 3
