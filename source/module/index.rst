@@ -59,6 +59,8 @@
     - :doc:`grdvolume`
     - :doc:`histogram`
     - :doc:`image`
+    - :doc:`img2google`
+    - :doc:`img2grd`
     - :doc:`inset`
     - :doc:`kml2gmt`
     - :doc:`legend`
@@ -74,6 +76,7 @@
     - :doc:`sample1d`
     - :doc:`solar`
     - :doc:`spectrum1d`
+    - :doc:`sph2grd`
     - :doc:`subplot`
     - :doc:`surface`
     - :doc:`ternary`
@@ -115,15 +118,12 @@
     - :doc:`gmt:movie`
     - :doc:`gmt:nearneighbor`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:sph2grd`
     - :doc:`gmt:sphdistance`
     - :doc:`gmt:sphinterpolate`
     - :doc:`gmt:sphtriangulate`
     - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/gshhg/gshhg`
-    - :doc:`gmt:supplements/img/img2google`
-    - :doc:`gmt:supplements/img/img2grd`
     - :doc:`gmt:supplements/mgd77/mgd77convert`
     - :doc:`gmt:supplements/mgd77/mgd77header`
     - :doc:`gmt:supplements/mgd77/mgd77info`
@@ -355,7 +355,7 @@
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:greenspline`                        | 使用格林函数样条进行插值                                              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:sph2grd`                            | 根据球谐系数计算网格                                                  |
+| :doc:`sph2grd`                                | 根据球谐系数计算网格                                                  |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:sphdistance`                        | 计算球面上的Voronoi距离、节点或natural nearest-neighbor grid          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
@@ -483,9 +483,9 @@
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/gshhg/gshhg`            | Extract data tables from binary GSHHS or WDBII data files             |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:supplements/img/img2google`         | Create Google Earth KML tiles from bathymetry Mercator img grid       |
+| :doc:`img2google`                             | 由测深墨卡托 img 网格创建谷歌地球 KML 文件                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| :doc:`gmt:supplements/img/img2grd`            | Extract a subset from an img file in Mercator or Geographic format    |
+| :doc:`img2grd`            | 从墨卡托 img 格式文件中提取网格数据    |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | :doc:`gmt:supplements/geodesy/gpsgridder`     | Interpolate GPS velocity vectors using Green's functions              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
@@ -553,6 +553,8 @@
    grdvolume
    histogram
    image
+   img2google
+   img2grd
    inset
    kml2gmt
    legend
@@ -568,6 +570,7 @@
    sample1d
    solar
    spectrum1d
+   sph2grd
    subplot
    surface
    ternary
