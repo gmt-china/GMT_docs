@@ -37,14 +37,14 @@ GMT 的历史
 GMT 开发者
 ----------
 
-GMT 的核心开发者有 8 位：
-`Paul Wessel <http://www.soest.hawaii.edu/wessel/>`__\ 、
-`Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`__\ 、
-`Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`__\ 、
-`Joaquim F. Luis <http://joa-quim.pt/>`__\ 、
-`Leonardo Uieda <https://www.leouieda.com>`__\ 、
+GMT 的核心开发者有 8 位：\
+`Paul Wessel <http://www.soest.hawaii.edu/wessel/>`__\ 、\
+`Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`__\ 、\
+`Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`__\ 、\
+`Joaquim F. Luis <http://joa-quim.pt/>`__\ 、\
+`Leonardo Uieda <https://www.leouieda.com>`__\ 、\
 Florian Wobbe、
-`Dongdong Tian <https://me.seisman.info>`__\ 和
+`Dongdong Tian <https://me.seisman.info>`__ 和
 `Meghan Jones <https://github.com/meghanrjones>`__\ 。
 
 .. figure:: GMT6_Summit_2019.jpg
