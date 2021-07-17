@@ -1,7 +1,8 @@
-维护指南
+贡献指南
 ========
 
-读者可以阅读以下维护指南，以便更快、更有效地参与到文档的维护与更新之中。
+欢迎 GMT 中文用户参与到 GMT 中文手册的维护与更新中。
+可以阅读以下指南，以便更快、更有效地参与到文档的维护与更新之中。
 
 维护与更新
 ----------
@@ -33,6 +34,49 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 - ``gh-pages``: 存放文档网页的分支，自动更新，无需人工修改
 
 其它分支均属于短期分支，在合并到 ``master`` 分支后会删除。
+
+构建文档
+--------
+
+本文档使用基于 Python 的文档生成工具 `Sphinx <http://www.sphinx-doc.org/>`__ 构建得到。
+读者可以按照如下步骤在自己的计算机上构建网站。
+
+1.  安装 `Anaconda <https://seismo-learn.org/software/anaconda/>`__
+    （用于科学计算的 Python 发行版）
+
+2.  下载文档源码
+
+    ::
+
+        # 克隆源码，并进入源码目录
+        $ git clone --depth=100 https://github.com/gmt-china/GMT_docs.git
+        $ cd GMT_docs
+
+3.  安装 Sphinx 等文档所需依赖
+
+    ::
+
+        $ pip install -r requirements.txt
+
+4.  编译生成 HTML 格式的文档
+
+    执行以下命令即可编译生成 HTML 格式的文档（生成的文档位于 :file:`build/html/` 目录）。
+    直接用浏览器打开 :file:`build/html/index.html` 即可在本地预览。
+
+    ::
+
+        $ make html
+
+5.  编译生成 PDF 格式的文档
+
+    编译 PDF 文档需要先安装 TeXLive：
+
+    - Linux 用户：参考 http://blog.seisman.info/texlive-install
+    - macOS 用户：直接执行 ``brew cask install mactex-no-gui`` 安装 mactex
+
+    安装好 TeXLive 后，执行以下命令即可编译生成 PDF 格式的文档（即 :file:`build/latex/GMT_docs.pdf`\ ）::
+
+        $ make latexpdf
 
 文档风格
 --------
@@ -69,8 +113,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
 - 示例脚本尽量使用 Bash，非必须请勿使用 Perl、Python 等
 - ``master`` 分支中的所有脚本均使用现代模式
-- 所有脚本至少需要生成 PNG 格式的图片，建议使用 ``png,pdf`` 生成两种格式的图片，
-  别供网页版和 PDF 版使用
+- 所有脚本至少需要生成 PNG 格式的图片，建议使用 PNG、PDF 生成两种格式的图片，别供网页版和 PDF 版使用
 - 所有脚本以 ``gmt end show`` 结尾
 - 示例中注释尽量使用简单英文，更复杂的说明应考虑写到正文中
 
@@ -83,25 +126,21 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 - ``caption``\ ：图片标题
 - ``show-code``\ ：表示是否显示代码（\ ``true`` 或 ``false``\ ）
 
-该指令用法有两种：行内模式和脚本模式。
+该指令用法有两种：行内模式（直接在文档中写绘图代码）和脚本模式（将绘图代码写在脚本中）。
 
-- 行内模式：直接在文档中写绘图代码
+**行内模式**::
 
-  ::
+    .. gmtplot::
+        :caption: 图片标题
+        :width: 80%
 
-      .. gmtplot::
-          :caption: 图片标题
-          :width: 80%
+        gmt begin map png,pdf
+        gmt basemap -JX10c/10c -R0/10/0/10 -Baf
+        gmt end show
 
-          gmt begin map png,pdf
-          gmt basemap -JX10c/10c -R0/10/0/10 -Baf
-          gmt end show
+**脚本模式**::
 
-- 脚本模式：即将绘图代码写在脚本中
+    .. gmtplot:: /scripts/psmeca_ex1.sh
+        :width: 80%
 
-  ::
-
-      .. gmtplot:: /scripts/psmeca_ex1.sh
-          :width: 80%
-
-          图片标题
+        图片标题

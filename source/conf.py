@@ -10,8 +10,8 @@ import datetime
 
 # -- Project configuration ------------------------------------------------
 master_doc = "index"
-project = "GMT中文手册"
-author = "GMT中文社区"
+project = "GMT 中文手册"
+author = "GMT 中文社区"
 copyright = "2014-{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
@@ -36,7 +36,7 @@ source_suffix = ".rst"
 source_encoding = "utf-8-sig"
 nitpicky = True
 language = "zh_CN"
-today_fmt = "%Y年%m月%d日"
+today_fmt = "%Y 年 %m 月 %d 日"
 exclude_patterns = []
 
 highlight_language = "bash"
