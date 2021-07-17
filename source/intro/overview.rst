@@ -65,13 +65,14 @@ GMT 的特点
 
 #. 专注于地学制图
 
-   GMT 是一个专业的制图软件。因而，在绘制地图方面，GMT 可以更高效地绘制地图，
+   GMT 是一个专业的地学制图软件。因而，在绘制地图方面，GMT 可以更高效地绘制地图，
    且可以更简单地实现地学制图过程所需的数据处理等操作。
 
 #. 开源免费
 
-   GMT 是免费的开源软件，其源码遵循 `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`_
-   协议。任何人均可免费获得软件的源码，并可以自由复制、分发、修改。
+   GMT 是免费的开源软件，其源码遵循
+   `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`__ 协议。
+   任何人均可免费获得软件的源码，并可以自由复制、分发、修改。
 
 #. 跨平台
 
@@ -97,15 +98,15 @@ GMT 的特点
 
 #. 软件开发过程透明且活跃
 
-   GMT 的开发（修改、讨论与决议）都在 `GitHub <https://github.com/GenericMappingTools/gmt>`__ 上
-   公开进行。所有用户均可向 GMT 提交 bug 报告、申请增加新功能、参与讨论等，
+   GMT 的开发（修改、讨论与决议）都在 `GitHub <https://github.com/GenericMappingTools/gmt>`__
+   上公开进行。所有用户均可向 GMT 提交 bug 报告、申请增加新功能、参与讨论等，
    并可以通过多种不同方式（改进文档、修改源码等）向 GMT 做贡献。
 
 其他制图软件
 ------------
 
-除了 GMT 之外，还有很多其他软件也可以用于制图。以下仅列出一些地球科学领域
-常用的制图软件。其中 **√** 和 **X** 用于表示是否支持某一功能。
+除了 GMT 之外，还有很多其他软件也可以用于制图。
+以下仅列出一些地球科学领域常用的制图软件。其中，\ **√** 和 **X** 用于表示是否支持某一功能。
 
 .. table:: 地球科学常用绘图软件比较
     :align: center
@@ -129,6 +130,6 @@ GMT 的特点
 .. _gnuplot: http://www.gnuplot.info/
 
 .. [1] GMT 对三维图的支持很有限
-.. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`___
+.. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`__
 .. [3] 需要额外安装 `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`__
 .. [4] 需要额外安装 `ggmap <https://github.com/dkahle/ggmap>`__
