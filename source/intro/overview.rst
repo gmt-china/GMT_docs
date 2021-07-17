@@ -43,7 +43,7 @@ GMT 的核心开发者有 8 位：\
 `Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`__\ 、\
 `Joaquim F. Luis <http://joa-quim.pt/>`__\ 、\
 `Leonardo Uieda <https://www.leouieda.com>`__\ 、\
-Florian Wobbe、
+Florian Wobbe、\
 `Dongdong Tian <https://me.seisman.info>`__ 和
 `Meghan Jones <https://github.com/meghanrjones>`__\ 。
 
