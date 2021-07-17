@@ -130,17 +130,17 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
 **行内模式**::
 
-.. gmtplot::
-    :caption: 图片标题
-    :width: 80%
+    .. gmtplot::
+        :caption: 图片标题
+        :width: 80%
 
-    gmt begin map png,pdf
-    gmt basemap -JX10c/10c -R0/10/0/10 -Baf
-    gmt end show
+        gmt begin map png,pdf
+        gmt basemap -JX10c/10c -R0/10/0/10 -Baf
+        gmt end show
 
 **脚本模式**::
 
-.. gmtplot:: /scripts/psmeca_ex1.sh
-    :width: 80%
+    .. gmtplot:: /scripts/psmeca_ex1.sh
+        :width: 80%
 
-    图片标题
+        图片标题
