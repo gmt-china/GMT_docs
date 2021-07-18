@@ -18,5 +18,5 @@ ASCII 表格式最常用，因为其较直观，且可直接编辑。
 
 .. note::
 
-   GDAL 提供的 :doc:`/source/utilities/ogr2ogr` 命令可以将其它格式的表数据转换为
+   GDAL 提供的 :doc:`/utilities/ogr2ogr` 命令可以将其它格式的表数据转换为
    GMT 可识别的 GMT/OGR 格式。
