@@ -45,7 +45,7 @@ Florian Wobbe、\
 `Dongdong Tian <https://me.seisman.info>`__ 和
 `Meghan Jones <https://github.com/meghanrjones>`__\ 。
 
-.. figure:: https://github.com/GenericMappingTools/gmt/blob/master/doc/fig/GMT6_Summit_2019.jpg?raw=true
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT6_Summit_2019.jpg
    :alt: 2019 年 GMT 开发者峰会
    :align: center
    :width: 80%
