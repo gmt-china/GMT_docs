@@ -45,15 +45,15 @@ Florian Wobbe、\
 `Dongdong Tian <https://me.seisman.info>`__ 和
 `Meghan Jones <https://github.com/meghanrjones>`__\ 。
 
-.. figure:: GMT6_Summit_2019.jpg
-   :width: 80%
+.. image:: https://github.com/GenericMappingTools/gmt/blob/master/doc/fig/GMT6_Summit_2019.jpg?raw=true
+   :alt: 2019 年 GMT 开发者峰会
    :align: center
+   :width: 80%
 
-   GMT 部分核心开发者及指导委员会部分成员
-
-   从左至右依次为 Dongdong Tian、David Sandwell（指导委员会主席）、Walter H.F. Smith、
-   Paul Wessel、Joaquim Luis、Leonardo Uieda 和 Dave Caress（指导委员会成员）。
-   照片拍摄于 2019 年 7 月 29 日至 8 月 2 日在加州 La Jolla 举办的 GMT 开发者峰会。
+以上照片拍摄于 2019 年 7 月 29 日至 8 月 2 日在加州 La Jolla 举办的 GMT 开发者峰会。
+GMT 部分核心开发者及指导委员会部分成员参加该峰会（从左至右）：
+Dongdong Tian、David Sandwell（指导委员会主席）、Walter H.F. Smith、
+Paul Wessel、Joaquim Luis、Leonardo Uieda 和 Dave Caress（指导委员会成员）。
 
 GMT 的特点
 ----------
