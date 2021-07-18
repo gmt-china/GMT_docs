@@ -6,13 +6,13 @@
 
 **GMT6 用户**:
     Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019).
-    The Generic Mapping Tools Version 6.
+    The Generic Mapping Tools version 6.
     *Geochemistry, Geophysics, Geosystems*, 20, 5556–5564.
     https://doi.org/10.1029/2019GC008515
 
 **GMT5 用户**:
     Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013).
-    Generic Mapping Tools: Improved Version Released.
+    Generic Mapping Tools: Improved version released.
     *Eos, Transactions American Geophysical Union*, 94(45), 409–410.
     https://doi.org/10.1002/2013EO450001
 
@@ -30,7 +30,7 @@
 
 **GMT2 用户**:
     Wessel, P., & Smith, W. H. F. (1991).
-    Free software helps map and display data,
+    Free software helps map and display data.
     *Eos, Transactions American Geophysical Union*, 72(41), 445–446.
     http://dx.doi.org/10.1029/90EO00319
 
@@ -43,7 +43,7 @@
 GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相关文章包括：
 
 :doc:`gmt:dimfilter` **模块**
-    Kim, S.-S., & Wessel, P. (2008)
+    Kim, S.-S., & Wessel, P. (2008).
     Directional median filtering for regional-residual separation of bathymetry.
     *Geochemistry, Geophysics, Geosystems*, 9, Q03005.
     http://dx.doi.org/10.1029/2007GC001850
@@ -69,11 +69,11 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
 
 :doc:`gmt:greenspline` **模块**
     Wessel, P. (2009).
-    A General-purpose Green's function-based interpolator.
+    A general-purpose Green's function-based interpolator.
     *Computers & Geosciences*, 35, 1247–1254.
     http://dx.doi.org/10.1016/j.cageo.2008.08.012
 
-    Wessel, P. & Becker J. M. (2008).
+    Wessel, P. & Becker, J. M. (2008).
     Interpolation using a generalized Green's function for a spherical surface spline in tension.
     *Geophysical Journal International*, 174, 21–28.
     http://dx.doi.org/10.1111/j.1365-246X.2008.03829.x
