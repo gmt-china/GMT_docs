@@ -53,7 +53,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 1.  从 “\ `World Geologic Maps <https://certmapper.cr.usgs.gov/data/apps/world-maps/>`__\ ”
     下载 “Generalized Geology of the Far East” 对应的 Shapefile 压缩文件
 
-2.  使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
+2.  使用 :doc:`ogr2ogr </utilities/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 
         $ ogr2ogr -t_srs EPSG:4326 -f OGR_GMT geo3al.gmt geo3al.shp
 
