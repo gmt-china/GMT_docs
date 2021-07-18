@@ -20,7 +20,7 @@
 
    cross-platform
 
-需要修改和编译 GMT 源码的用户可以选择编译源码安装：
+某些 Linux 发行版未提供最新版本的 GMT 二进制包。可以选择编译源码安装：
 
 .. toctree::
    :maxdepth: 1
