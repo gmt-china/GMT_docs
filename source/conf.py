@@ -48,7 +48,6 @@ extensions = [
     "sphinx.ext.duration",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
-    "sphinx_cjkspace.cjkspace",
     "sphinx_copybutton",
     "sphinx_gmt.gmtplot",
 ]
