@@ -79,9 +79,7 @@ RHEL/CentOS 用户::
 
     $ sudo yum install gdal
 
-Ubuntu/Debian 用户：
-
-::
+Ubuntu/Debian 用户::
 
     $ sudo apt install gdal-bin
 
