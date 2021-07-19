@@ -85,7 +85,7 @@ Ubuntu/Debian 用户::
 
 .. note::
 
-    由于 Linux 发行版众多，使用其他发行版的用户请到 https://pkgs.org 自行搜索 gdal 的安装方法。
+    由于 Linux 发行版众多，使用其他发行版的用户请到 https://pkgs.org 自行搜索 GDAL 的安装方法。
 
 macOS
 ^^^^^
