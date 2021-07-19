@@ -4,6 +4,10 @@
 img2google
 ==========
 
+:贡献者: |周茂|, |田冬冬|, |姚家园|
+
+----
+
 :官方文档: :doc:`gmt:supplements/img/img2google`
 :简介: 由测深墨卡托 img 网格文件创建谷歌地球 KML 文件
 
