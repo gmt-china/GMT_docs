@@ -1,9 +1,9 @@
 -a 选项
 =======
 
-`GDAL <https://www.gdal.org/>`_ 中的 `ogr2ogr <https://www.gdal.org/ogr2ogr.html>`_
-工具可以将GMT不支持地理空间数据格式转换为GMT可识别的OGR/GMT格式。
-转换过程中保留了地理空间数据的非空间元数据。关于该格式的介绍，见 :doc:`/table/ogrgmt`\ 。
+GDAL 中的 :ref:`ogr2ogr <gdal_ogr2ogr>` 命令可以将 GMT 不支持地理空间数据格式
+转换为 GMT 可识别的 OGR/GMT 格式。转换过程中保留了地理空间数据的非空间元数据。
+关于该格式的介绍，见 :doc:`/table/ogrgmt`\ 。
 
 **-a** 选项用于建立非空间元数据与GMT输入/输出数据之间的联系。该选项的语法为：
 

@@ -107,7 +107,8 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 
 2.  格式转换
 
-    使用 :doc:`ogr2ogr </utilities/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
+    使用 GDAL 的 :ref:`ogr2ogr <gdal_ogr2ogr>` 命令
+    将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 
         ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp
 

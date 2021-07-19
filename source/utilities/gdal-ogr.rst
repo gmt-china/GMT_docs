@@ -130,6 +130,8 @@ Anaconda 用户可以直接通过以下命令安装、升级以及卸载 GDAL。
 
         $ conda remove gdal
 
+.. _gdal_ogr2ogr:
+
 ogr2ogr
 -------
 
