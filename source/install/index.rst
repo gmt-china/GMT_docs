@@ -6,7 +6,6 @@
 
 不同操作系统下安装 GMT 二进制包：
 
-
 .. toctree::
    :maxdepth: 1
 
@@ -17,12 +16,12 @@
    ubuntu-debian
    archlinux
 
-同时适用于 Linux、macOS 以及 Windows 的 GMT 二进制包安装（即跨平台安装）：
+跨平台软件包管理器 **conda** 为 Linux、macOS 和 Windows 提供了 GMT 二进制包：
 
 .. toctree::
    :maxdepth: 1
 
-   cross-platform
+   conda
 
 某些 Linux 发行版未提供最新版本的 GMT 二进制包。可以选择编译源码安装：
 
