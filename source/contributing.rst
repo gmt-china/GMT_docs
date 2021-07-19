@@ -19,6 +19,7 @@
 可以通过如下几种方式参与文档的维护与更新：
 
 1. 修改文档源码并提交 `Pull Request <https://github.com/gmt-china/GMT_docs/pulls>`__
+   （不熟悉 Pull Request 的读者可以参考 `Pull Request 流程 <https://seismo-learn.org/contributing/pull-request/>`__\ ）
 2. 在 GitHub 上的文档源码仓库下提交 `Issue <https://github.com/gmt-china/GMT_docs/issues>`__
 3. 在网页底部评论区留言
 4. 在 GitHub 上的文档源码仓库下的 Discussions 上留言（也可以直接点击文档网页左下角的“参与讨论”）
