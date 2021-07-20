@@ -18,7 +18,7 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
 
         $ sudo yum config-manager --set-enabled powertools
 
-3.  启用 GMT 官方 RPM 仓库
+3.  启用 GMT 官方 RPM 仓库::
 
         $ sudo yum install yum-plugin-copr
         $ sudo yum copr enable genericmappingtools/gmt
@@ -49,7 +49,7 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
 升级 GMT
 --------
 
-GMT 新版本发布后，执行如下命令升级 GMT:
+GMT 新版本发布后，执行如下命令升级 GMT::
 
     $ sudo yum update gmt
 
