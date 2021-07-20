@@ -3,7 +3,7 @@ CentOS 下安装 GMT
 
 CentOS 的 EPEL 源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
 
-CentOS 7、8 和 CentOS Stream 用户，可以启用
+CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
 
@@ -27,21 +27,25 @@ CentOS 7、8 和 CentOS Stream 用户，可以启用
 
         $ sudo yum install gmt
 
-5.  安装 GMT 相关工具以增强 GMT 功能::
+5.  安装 GMT 相关工具以增强 GMT 功能
 
-        # 地理数据格式转换工具（推荐）
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （推荐）::
+
         $ sudo yum install gdal
 
-        # 制作 GIF 格式动画需要 GraphicsMagick （可选）
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （可选）::
+
         $ sudo yum install GraphicsMagick
 
-        # 制作 MP4、WebM 格式动画需要 ffmpeg （可选）
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （可选）::
+
         $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
         $ sudo yum install ffmpeg
 
 .. note::
 
-    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须在使用 GMT 官方仓库前卸载旧的 GMT 安装包::
+    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须先卸载，
+    然后再使用 GMT 官方仓库提供的 GMT 安装包::
 
         $ sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
