@@ -13,5 +13,5 @@ Ubuntu 和 Debian 的官方源提供了 GMT 二进制包，可以直接使用如
 针对这种情况，有如下几种选择：
 
 #. 使用老版本 GMT
-#. :doc:`conda`
-#. :doc:`build-source`
+#. :doc:`conda` 【推荐】
+#. :doc:`build-source` 【推荐】 
