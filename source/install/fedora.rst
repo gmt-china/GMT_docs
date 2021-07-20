@@ -33,9 +33,6 @@ Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
         $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
         $ sudo dnf install ffmpeg
 
-    # 当有新版本发布时可直接更新
-    $ sudo dnf update gmt
-
 .. note::
 
     如果已经安装了 Fedora 官方源提供的 GMT 软件包，则必须先卸载，
