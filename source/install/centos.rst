@@ -1,9 +1,9 @@
-CentOS/RHEL 下安装 GMT
-======================
+CentOS 下安装 GMT
+=================
 
-CentOS/RHEL 的 EPEL 源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
+CentOS 的 EPEL 源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
 
-CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
+CentOS 7、8 和 CentOS Stream 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
 
@@ -14,7 +14,7 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
 
         $ sudo yum install epel-release
 
-2.  CentOS/RHEL 8 和 CentOS Stream 用户需要启用 powertools 源::
+2.  CentOS 8 和 CentOS Stream 用户需要启用 powertools 源::
 
         $ sudo yum config-manager --set-enabled powertools
 
@@ -26,7 +26,6 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
 4.  安装最新版 GMT::
 
         $ sudo yum install gmt
-
 
 5.  安装 GMT 相关工具以增强 GMT 功能::
 
@@ -52,7 +51,6 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
 GMT 新版本发布后，执行如下命令升级 GMT::
 
     $ sudo yum update gmt
-
 
 卸载 GMT
 --------
