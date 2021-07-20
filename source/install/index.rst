@@ -14,7 +14,6 @@
    fedora
    centos
    ubuntu-debian
-   archlinux
 
 跨平台软件包管理器 **conda** 为 Linux、macOS 和 Windows 提供了 GMT 二进制包：
 
