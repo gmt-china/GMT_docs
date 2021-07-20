@@ -10,7 +10,7 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
     # 安装 epel-release
     $ sudo yum install epel-release
 
-    # 启用 PowerTools 仓库 （仅限于 RHEL/CentOS 8 用户）
+    # 启用 PowerTools 仓库（仅限于 RHEL/CentOS 8 用户）
     $ sudo yum config-manager --set-enabled powertools
 
     # 启用 GMT 官方 RPM 仓库
@@ -37,7 +37,6 @@ CentOS/REHL 7、8 和 CentOS Stream 用户，可以启用
 
 .. note::
 
-    如果你已经安装了 EPEL 源提供的 GMT 软件包，你必须在使用 GMT 官方仓库
-    前卸载旧的 GMT 安装包。使用如下命令::
+    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须在使用 GMT 官方仓库前卸载旧的 GMT 安装包::
 
         $ sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
