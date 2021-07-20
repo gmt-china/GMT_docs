@@ -12,7 +12,7 @@
    windows
    macOS
    fedora
-   centos-rhel
+   centos
    ubuntu-debian
    archlinux
 
