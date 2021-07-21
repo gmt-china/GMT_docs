@@ -2,16 +2,16 @@ LaTeX 表达式
 ============
 
 GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，
-这些文本字符串包括使用 :doc:`/option/B`\ 在标题、子标题或标签中指定的字符串，
+这些文本字符串包括使用 :doc:`/option/B`\ 在标题、子标题或标签中指定的字符串，\
 也包括通过 :doc:`/module/text` 模块添加的单行文本。
-这些表达式必须使用成对的 `@[` 标识来实现转义（例如，"Plotting @[\\Delta \\sigma_{xx}^2@[" ），
-或者将表达式放在 <math> 和 </math> 中实现转义（例如，"Plotting <math>\Delta \sigma_{xx}^2</math>"）。
-如果文本字符串中存在上述标识，GMT 将使用 latex 和 dvips 命令（需提前安装 LaTeX 环境）把整行转换为 EPS 文件。
-然后将该 EPS 文件放置在对应的位置。
+GMT 中 LaTeX 表达式可以用两种不同的写法表示:
+
+1. 使用一对 @[，例如："Plotting @[\\Delta \\sigma_{xx}^2@["
+2. 使用 <math> </math> ，例如："Plotting <math>\Delta \sigma_{xx}^2</math>"
 
 .. note::
 
-    若要在 GMT 6.2 以前使用 LaTeX 请参考 https://blog.seisman.info/gmt-latex/
+    若要在 GMT 6.2 以前的版本使用 LaTeX，请参考 https://blog.seisman.info/gmt-latex/
 
 下面展示了一个使用 LaTeX 表达式的例子
 
@@ -19,7 +19,7 @@ GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，
     :width: 80%
     :show-code: true
 
-    在 x 轴标签中使用 LaTeX 表达式的实例 -Bxaf+l"@[\\nabla^4 \\psi - \\Delta \\sigma_{xx}^2@[ (MPa)"
+    分别在轴标签、题目以及 text 模块中使用 LaTeX 表达式的实例
 
 GMT 字体和 LaTeX
 ----------------
@@ -27,8 +27,11 @@ GMT 字体和 LaTeX
 LaTeX 是一个庞大且复杂的排版系统，有许多可选包，用户安装的 LaTeX 需包括所有 GMT 必须的包。
 通过包管理器安装 LaTeX 的方法请见 
 `wiki <https://github.com/GenericMappingTools/gmt/wiki/Install-LaTeX-for-GMT-LaTeX-Integration>`_ 。
-其中 GMT 必须的包有：fontenc 和 inputenc，必须的字体包括：\
-helvet，mathptmx，courier，symbol，avantgar，bookman，newcent，mathpazo，zapfchan 和 zapfding。
+其中 GMT 必须的包和字体包括：
+
+- 必需包：fontenc 和 inputenc
+- 必需字体：helvet，mathptmx，courier，symbol，avantgar，bookman，newcent，mathpazo，zapfchan 和 zapfding
+
 如果从 LaTeX 表达式到 EPS 文件的转换过程失败，请在终端中手动运行转换脚本以确定可能缺少哪些包或者字体。
 上述字体列表中的字体均可以匹配 GMT 中的字体。
 因此，如果用户通过 :term:`FONT_TITLE` 修改了标题默认的字体，
@@ -38,8 +41,13 @@ GMT 将在后台生成的 LaTeX 脚本中把该字体设置为默认字体。
 技术细节
 ---------
 
+GMT 中显示 LaTeX 表达式的原理为：\
+如果 GMT 在文本字符串中发现特殊标识（即 @[ 对或 <math> </math> 对），
+GMT 将使用 latex 和 dvips 命令（需提前安装 LaTeX 环境）把整行转换为 EPS 文件。
+然后将该 EPS 文件放置在对应的位置。
+
 这里通过一个实例来帮助用户排查 LaTeX 安装中可能存在的问题。假设用户使用 basemap 制作的图的标题为
--B+t"Use @[\\Delta g = 2\\pi\\rho Gh@[" 。
+-B+t"Use @[\Delta g = 2\pi\rho Gh@[" 。
 GMT 会为该 LaTeX 表达式创建一个临时目录，其中包含一个名为 :file:`gmt_eq.tex` 的文件::
 
     \documentclass{article}
