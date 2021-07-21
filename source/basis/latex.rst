@@ -6,7 +6,7 @@ GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，
 也包括通过 :doc:`/module/text` 模块添加的单行文本。
 GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 
-1. 使用一对 @[，例如："Plotting @[\\Delta \\sigma_{xx}^2@["
+1. 使用一对 @[，例如："Plotting @[\Delta \sigma_{xx}^2@["
 2. 使用 <math> </math> ，例如："Plotting <math>\Delta \sigma_{xx}^2</math>"
 
 .. note::
