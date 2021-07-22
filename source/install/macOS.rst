@@ -87,7 +87,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 使用 Macports 安装
 ------------------
 
-`Macports <https://www.macports.org/>`_ 是 macOS 下的第三方软件包管理工具。
+`Macports <https://www.macports.org/>`__ 是 macOS 下的第三方软件包管理工具。
 
 1.  安装 GMT::
 
