@@ -1,6 +1,10 @@
 LaTeX 表达式
 ============
 
+绘图过程中，用户可能会需要特殊字符标注或者显示公式以使图更加清晰和准确。
+GMT 已经可以实现打印简单的\ :doc:`special-character` 和\ :doc:`escape-character`，\
+但如果想实现更加复杂的特殊字符和公式，则需要借助功能强大的 LaTeX。
+
 GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，
 这些文本字符串包括使用 :doc:`/option/B`\ 在标题、子标题或标签中指定的字符串，\
 也包括通过 :doc:`/module/text` 模块添加的单行文本。
@@ -11,7 +15,8 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 
 .. note::
 
-    若要在 GMT 6.2 以前的版本使用 LaTeX，请参考 https://blog.seisman.info/gmt-latex/
+    1. 若要在 GMT 6.2 以前的版本使用 LaTeX，请参考 https://blog.seisman.info/gmt-latex/
+    2. LaTeX 数学符号可参考：`数学符号表 <http://math.ecnu.edu.cn/~jypan/Latex/docs/MathSymb.pdf>`__
 
 下面展示了一个使用 LaTeX 表达式的例子
 
