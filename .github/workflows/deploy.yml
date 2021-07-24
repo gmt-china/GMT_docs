@@ -54,9 +54,6 @@ jobs:
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
           ls -lhR ~/.gmt
 
-      - name: Build HTML
-        run: make build_html
-
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v1
 
@@ -67,6 +64,9 @@ jobs:
                         float ms needspace oberdiek parskip pdftexcmds tabulary \
                         titlesec ulem upquote varwidth wrapfig xcolor xecjk \
                         xindy zhnumber collection-fontsrecommended
+                        
+      - name: Build HTML
+        run: make build_html
 
       - name: Build PDF
         run: make build_pdf
