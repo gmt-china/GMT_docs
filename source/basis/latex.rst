@@ -6,12 +6,12 @@ GMT 已经可以实现打印简单的\ :doc:`special-character` 和\ :doc:`escap
 但如果想实现更加复杂的特殊字符和公式，则需要借助功能强大的 LaTeX。
 
 GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，
-这些文本字符串包括使用 :doc:`/option/B`\ 在标题、子标题或标签中指定的字符串，\
+这些文本字符串包括使用 :doc:`/option/B` 在标题、子标题或标签中指定的字符串，\
 也包括通过 :doc:`/module/text` 模块添加的单行文本。
 GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 
-1. 使用 ``@[ ... @[``\ ，例如：``"Plotting @[\Delta \sigma_{xx}^2@["``
-2. 使用 ``<math> ... </math>``\ ，例如：\ ``"Plotting <math>\Delta \sigma_{xx}^2</math>"``
+1. 使用 ``@[ ... @[``\ ，例如：``Plotting @[\Delta \sigma_{xx}^2@[``
+2. 使用 ``<math> ... </math>``\ ，例如：\ ``Plotting <math>\Delta \sigma_{xx}^2</math>``
 
 .. note::
 
