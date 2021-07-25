@@ -1,7 +1,7 @@
 LaTeX 表达式
 ============
 
-绘图过程中，用户可能会需要特殊字符标注或者显示公式以使图更加清晰和准确。
+绘图过程中，用户可能会需要特殊字符标注或者显示公式。
 GMT 已经可以实现打印简单的\ :doc:`special-character` 和\ :doc:`escape-character`，\
 但如果想实现更加复杂的特殊字符和公式，则需要借助功能强大的 LaTeX。
 
@@ -18,7 +18,7 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
     1. 若要在 GMT 6.2 以前的版本使用 LaTeX，请参考 https://blog.seisman.info/gmt-latex/
     2. LaTeX 数学符号可参考：`数学符号表 <http://math.ecnu.edu.cn/~jypan/Latex/docs/MathSymb.pdf>`__
 
-下面展示了一个使用 LaTeX 表达式的例子
+下面展示了一个在 GMT 中使用 LaTeX 表达式的例子
 
 .. gmtplot:: GMT_latex.sh
     :width: 80%
