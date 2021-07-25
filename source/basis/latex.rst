@@ -37,7 +37,7 @@ LaTeX 是一个庞大且复杂的排版系统，有许多可选包，用户安�
 - 必需包：fontenc 和 inputenc
 - 必需字体：helvet，mathptmx，courier，symbol，avantgar，bookman，newcent，mathpazo，zapfchan 和 zapfding
 
-上述必须包已经默认包含在所有的 LaTeX 发行版中，必须字体则可以在终端中执行 ``tlmgr install collection-fontsrecommended`` 安装。
+上述必需包已经默认包含在所有的 LaTeX 发行版中，必需字体则可以在终端中执行 ``tlmgr install collection-fontsrecommended`` 安装。
 上述字体列表中的字体均可以匹配 GMT 中的字体。
 因此，如果用户通过 :term:`FONT_TITLE` 修改了标题默认的字体，
 GMT 将在后台生成的 LaTeX 脚本中把该字体设置为默认字体。
