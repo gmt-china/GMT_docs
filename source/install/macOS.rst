@@ -32,8 +32,13 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
         $ brew install ghostscript
 
 
-        # 安装生成动画所需要的软件包（可选）
-        $ brew install graphicsmagick ffmpeg
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （可选）::
+
+        $ brew install graphicsmagick
+
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （可选）::
+
+        $ brew install ffmpeg
 
 3.  测试安装
 
