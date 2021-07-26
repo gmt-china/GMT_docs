@@ -14,8 +14,6 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 1.  安装 GMT
 
-1.  安装 GMT
-
     更新软件包的描述文件、Homebrew，并且更新所有软件包::
 
         $ brew update && brew upgrade
