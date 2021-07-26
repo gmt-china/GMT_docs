@@ -8,36 +8,54 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 ------------------
 
 `Homebrew <https://brew.sh/>`__ 是 macOS 下的第三方软件包管理工具。
-未安装 Homebrew 的用户，可以访问其\ `官网 <https://brew.sh/index_zh-cn>`__
-以了解如何安装与使用。
+未安装 Homebrew 的用户，可以参考
+《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》
+了解如何安装与使用。
 
-1.  安装 GMT::
+1.  安装 GMT
+
+1.  安装 GMT
+
+    更新软件包的描述文件、Homebrew，并且更新所有软件包::
 
         $ brew update && brew upgrade
+
+    安装最新的 GMT 稳定版本::
+
         $ brew install gmt
 
-    也可以使用如下命令安装 GMT 的最新开发版（即源码的 master 分支）::
+    也可以安装 GMT 开发版本（即源码的 master 分支）::
 
         $ brew install gmt --HEAD
 
-2.  安装 GMT 依赖的其它软件::
+2.  安装 GMT 依赖的其它软件
 
-        # 必须软件包
+    安装必须软件包::
+
         $ brew install ghostscript
+
 
         # 安装生成动画所需要的软件包（可选）
         $ brew install graphicsmagick ffmpeg
 
-3.  重新打开一个终端，检测安装是否成功::
+3.  测试安装
+
+
+    重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
         $ gmt --version
         6.2.0
 
-4.  升级 GMT。当有新版本发布时，可以执行如下命令升级 GMT::
+4.  升级 GMT
+
+    GMT 新版本发布后，执行如下命令升级 GMT::
 
         $ brew upgrade gmt
 
-5.  如果需要卸载 GMT，可以执行如下命令::
+5.  卸载 GMT
+
+
+    可以执行如下命令卸载 GMT::
 
         $ brew uninstall gmt
 
