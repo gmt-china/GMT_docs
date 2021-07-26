@@ -9,8 +9,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 `Homebrew <https://brew.sh/>`__ 是 macOS 下的第三方软件包管理工具。
 未安装 Homebrew 的用户，可以参考
-《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》
-了解如何安装与使用。
+《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》了解如何安装与使用。
 
 1.  安装 GMT
 
