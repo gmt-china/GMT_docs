@@ -75,7 +75,6 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 3. 在 Finder 的左侧边栏中点击 :file:`/Applications`\，找到 GMT 图标 -> 右键
    -> 按下 :kbd:`option` 键的同时鼠标点击“Open”选项。
-
    此时 macOS 系统会弹出警告窗口：“无法打开 GMT。因为 Apple 无法检测其是否为恶意软件”。
    在弹出的警告窗口中点击“Open”以忽略这一警告，并直接打开 GMT。
 
