@@ -76,7 +76,7 @@ legend
     若只使用 **-F** 而不使用其它子选项，则绘制图例框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
-    .. include:: expalin_-F_box.rst_
+    .. include:: explain_-F_box.rst_
 
 .. include:: explain_-J.rst_
 

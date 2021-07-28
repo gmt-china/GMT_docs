@@ -56,7 +56,7 @@ image
     若只使用 **-F** 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
-    .. include:: expalin_-F_box.rst_
+    .. include:: explain_-F_box.rst_
 
 .. _-G:
 
