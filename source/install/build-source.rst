@@ -2,8 +2,6 @@ Linux/macOS 下编译 GMT 源码
 ===========================
 
 这一节介绍如何在 Linux 或者 macOS 下编译 GMT 源代码。
-Windows 用户如果想编译 GMT 源码请参考 GMT 官方\
-`编译指南 <https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md>`_\ 。
 
 编译及运行依赖
 --------------
@@ -29,7 +27,7 @@ GMT 的编译及运行需要如下软件：
 安装依赖软件
 ------------
 
-对于 Ubuntu/Debian::
+Ubuntu/Debian::
 
     $ sudo apt update
     # 安装编译所需软件包
@@ -38,7 +36,7 @@ GMT 的编译及运行需要如下软件：
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
-对于 CentOS/RHEL::
+CentOS/RHEL::
 
     $ sudo yum install epel-release
     # 安装编译所需软件包
@@ -48,7 +46,7 @@ GMT 的编译及运行需要如下软件：
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
-对于 Fedora 用户::
+Fedora::
 
     # 安装编译所需软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
@@ -57,11 +55,11 @@ GMT 的编译及运行需要如下软件：
     $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
-对于 macOS 用户，建议使用 `Homebrew <https://brew.sh>`_ 安装依赖::
+macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 
     # 安装必须依赖
     $ brew install cmake curl netcdf
-    brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
+    $ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 下载源码及数据
 --------------
@@ -206,7 +204,7 @@ GMT 的编译及运行需要如下软件：
     $ gedit ~/.bashrc
 
     # macOS 用户
-    open ~/.bash_profile
+    $ open ~/.zshrc
 
 然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
 然后重启终端使其生效::
