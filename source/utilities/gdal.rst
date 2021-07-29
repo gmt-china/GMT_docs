@@ -1,5 +1,5 @@
-GDAL/OGR
-========
+GDAL
+====
 
 `GDAL <https://gdal.org/>`__\（\ **G**\ eospatial \ **D**\ ata \ **A**\ bstraction \ **L**\ ibrary）
 是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，

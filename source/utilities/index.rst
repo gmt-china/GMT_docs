@@ -5,5 +5,5 @@
 
 .. toctree::
     :maxdepth: 1
- 
-    gdal-ogr
+
+    gdal

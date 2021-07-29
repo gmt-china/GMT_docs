@@ -1,7 +1,7 @@
 -a 选项
 =======
 
-GDAL 中的 :ref:`ogr2ogr <gdal_ogr2ogr>` 命令可以将 GMT 不支持地理空间数据格式
+GDAL 中的 :ref:`ogr2ogr <ogr2ogr>` 命令可以将 GMT 不支持地理空间数据格式
 转换为 GMT 可识别的 OGR/GMT 格式。转换过程中保留了地理空间数据的非空间元数据。
 关于该格式的介绍，见 :doc:`/table/ogrgmt`\ 。
 
