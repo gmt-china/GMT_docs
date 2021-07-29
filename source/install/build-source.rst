@@ -36,7 +36,7 @@ Ubuntu/Debian::
     # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
-CentOS/RHEL::
+CentOS::
 
     $ sudo yum install epel-release
     # 安装编译所需软件包
