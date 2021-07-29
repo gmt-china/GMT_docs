@@ -2,7 +2,7 @@ LaTeX 表达式
 ============
 
 绘图过程中，用户可能会需要特殊字符标注或者显示公式。
-GMT 已经可以实现打印简单的\ :doc:`special-character` 和\ :doc:`escape-character`，
+GMT 已经可以实现打印简单的\ :doc:`special-character`\ 和\ :doc:`escape-character`，
 但如果想实现更加复杂的特殊字符和公式，则需要借助功能强大的 LaTeX。
 
 语法
@@ -49,13 +49,13 @@ GMT 将在后台生成的 LaTeX 脚本中把该字体设置为默认字体。
 技术细节
 ---------
 
-GMT 中显示 LaTeX 表达式的原理为：\
-如果 GMT 在文本字符串中发现特殊标识（即 @[ 对或 <math> </math> 对），
-GMT 将使用 latex 和 dvips 命令（需提前安装 LaTeX 环境）把整行转换为 EPS 文件。
+GMT 中显示 LaTeX 表达式的原理为：
+如果 GMT 在文本字符串中发现特殊标识（即 ``@[`` 对或 ``<math> </math>`` 对），
+GMT 将使用 ``latex`` 和 ``dvips`` 命令（需提前安装 LaTeX 环境）把整行转换为 EPS 文件。
 然后将该 EPS 文件放置在对应的位置。
 
 这里通过一个实例来帮助用户排查 LaTeX 安装中可能存在的问题。假设用户使用 basemap 制作的图的标题为
--B+t"Use @[\Delta g = 2\pi\rho Gh@[" 。
+``-B+t"Use @[\Delta g = 2\pi\rho Gh@["``\ 。
 GMT 会为该 LaTeX 表达式创建一个临时目录，其中包含一个名为 :file:`gmt_eq.tex` 的文件：
 
 .. code-block:: latex
