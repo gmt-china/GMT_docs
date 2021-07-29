@@ -18,6 +18,13 @@ Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
 
         $ sudo dnf install gmt
 
+    .. note::
+
+        如果已经安装了 Fedora 官方源提供的 GMT 软件包，则必须先卸载，
+        然后再使用 GMT 官方仓库提供的 GMT 安装包::
+
+            $ sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+
 3.  安装 GMT 相关工具以增强 GMT 功能
 
     地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （\ **推荐**\ ）::
@@ -32,13 +39,6 @@ Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
 
         $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
         $ sudo dnf install ffmpeg
-
-.. note::
-
-    如果已经安装了 Fedora 官方源提供的 GMT 软件包，则必须先卸载，
-    然后再使用 GMT 官方仓库提供的 GMT 安装包::
-
-        $ sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 升级 GMT
 --------

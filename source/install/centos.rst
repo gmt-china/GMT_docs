@@ -27,6 +27,13 @@ CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 
         $ sudo yum install gmt
 
+    .. note::
+
+        如果已经安装了 EPEL 源提供的 GMT 软件包，则必须先卸载，
+        然后再使用 GMT 官方仓库提供的 GMT 安装包::
+
+            $ sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+
 5.  安装 GMT 相关工具以增强 GMT 功能
 
     地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （\ **推荐**\ ）::
@@ -41,13 +48,6 @@ CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 
         $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
         $ sudo yum install ffmpeg
-
-.. note::
-
-    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须先卸载，
-    然后再使用 GMT 官方仓库提供的 GMT 安装包::
-
-        $ sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 升级 GMT
 --------
