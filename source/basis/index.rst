@@ -15,6 +15,7 @@ GMT 基础
    text
    special-character
    escape-character
+   latex
    vector
    line
    anchor
