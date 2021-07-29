@@ -23,7 +23,7 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 .. note::
 
     1. 若要在 GMT 6.2 以前的版本使用 LaTeX，请参考 https://blog.seisman.info/gmt-latex/
-    2. LaTeX 数学符号可参考：`数学符号表 <http://math.ecnu.edu.cn/~jypan/Latex/docs/MathSymb.pdf>`__
+    2. LaTeX 数学符号可参考：`数学符号表 <http://math.ecnu.edu.cn/~jypan/Latex/docs/MathSymb.pdf>`__
 
 下面展示了一个在 GMT 中使用 LaTeX 表达式的例子
 
