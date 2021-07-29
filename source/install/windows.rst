@@ -8,7 +8,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
     - 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；
       （2）是否为 **Administrator**\ 。以上两种情况都可能导致 GMT 运行出错。
       如果用户名不符合要求，请新建一个用户。然后使用新用户登录 Windows，再安装 GMT。
-    - 360 等安全软件会在 GMT 安装过程中拦截 PATH 环境变量的修改。
+    - 360 等安全软件会在 GMT 安装过程中拦截 **PATH** 环境变量的修改。
       请务必关闭安全软件之后再安装。
     - GMT 提供的安装包不支持 Windows XP。
 
@@ -17,16 +17,14 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
 1.  下载 GMT 安装包
 
-    GMT 安装包：
-
-    - `gmt-6.2.0-win64.exe（64 位） <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
-    - `gmt-6.2.0-win32.exe（32 位） <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
+    - 64 位安装包：\ `gmt-6.2.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
+    - 32 位安装包：\ `gmt-6.2.0-win32.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
 
     GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 
-    - `GDAL <https://gdal.org/>`_\ ：用于多种地学数据格式的转换
-    - `FFmpeg <https://ffmpeg.org/>`_\ ：用于生成 mp4 或 webm 格式的动画
-    - `Ghostscript <https://www.ghostscript.com/>`_\ : 用于生成 PDF、JPG 等图片格式
+    - `GDAL <https://gdal.org/>`__\ ：用于多种地学数据格式的转换
+    - `FFmpeg <https://ffmpeg.org/>`__\ ：用于生成 mp4 或 webm 格式的动画
+    - `Ghostscript <https://www.ghostscript.com/>`__\ : 用于生成 PDF、JPG 等图片格式
 
 2.  安装 GMT
 
@@ -43,7 +41,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
         - GMT 安装过程中，在 “Choose components” 页面\ **不勾选** Ghostscript 组件，
           并将其他所有选项都勾选上
-        - GMT 安装完成后，参考《\ :doc:`/chinese/windows`\ 》安装 Ghostscript 并配置中文支持
+        - GMT 安装完成后，参考《\ :doc:`/chinese/windows`\ 》单独安装 Ghostscript 并配置中文支持
 
     .. note::
 
@@ -99,7 +97,7 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
     CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
 脚本工具
-^^^^^^^^^
+^^^^^^^^
 
 .. rubric:: Git for Windows
 
@@ -140,8 +138,10 @@ Windows 下的 Bash 用户不需要安装 UnixTools。
 可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
 简易教程学习这些命令的基本用法。
 
-以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。如果你发现某些工具存在问题，
-或者觉得有其他需要的 Unix 工具没有被包含进来，请向我们反馈，我们会酌情考虑。
+.. note::
+
+    以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。如果你发现某些工具存在问题，
+    或者觉得有其他需要的 Unix 工具没有被包含进来，请向我们反馈，我们会酌情考虑。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^
