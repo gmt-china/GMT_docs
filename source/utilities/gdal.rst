@@ -1,7 +1,7 @@
 GDAL
 ====
 
-`GDAL <https://gdal.org/>`__\（\ **G**\ eospatial \ **D**\ ata \ **A**\ bstraction \ **L**\ ibrary）
+`GDAL <https://gdal.org/>`__\（\ **G**\ eospatial **D**\ ata **A**\ bstraction **L**\ ibrary）
 是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，
 支持多种光栅或矢量地理空间数据格式的互相转换和处理。
 
@@ -37,7 +37,7 @@ GDAL 要么已包含在 GMT 安装包中，要么作为必须包已被安装。
 ogr2ogr
 -------
 
-GDAL 提供的 ``ogr2ogr`` 命令可以实现这几十种地理矢量数据格式之间的互相转换。
+GDAL 提供的 ``ogr2ogr`` 命令可以实现几十种地理矢量数据格式之间的互相转换。
 因而，可以用其将任意地理矢量数据格式转换为 GMT 可识别的 OGR/GMT 格式，以供 GMT 直接使用。
 该命令的详细用法请参考 `ogr2ogr 官方文档 <https://gdal.org/programs/ogr2ogr.html#ogr2ogr>`__\ ，
 这里仅介绍该命令的基本用法：
