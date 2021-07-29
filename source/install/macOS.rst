@@ -68,7 +68,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
     GMT 的 dmg 安装包只支持 macOS >= 10.14。
 
-1. 下载：
+1. 下载
 
    - Intel：\ `gmt-6.2.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__
    - ARM：\ `gmt-6.2.0-darwin-arm64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
@@ -100,7 +100,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 6.  卸载 GMT
 
-    若想要卸载GMT，可直接到 **/Applications** 目录下找到 GMT，直接删除即可。
+    若想要卸载 GMT，可直接到 :file:`/Applications` 目录下找到 GMT，直接删除即可。
 
 7.  升级 GMT
 
