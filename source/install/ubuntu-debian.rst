@@ -18,12 +18,24 @@ Ubuntu/Debian 下安装 GMT
 
         $ sudo apt update
 
-2.  安装 GMT 及必须的依赖软件::
+2.  安装 GMT::
 
         $ sudo apt install gmt gmt-dcw gmt-gshhg
+
+3.  安装 GMT 相关工具
+
+    安装 Ghostscript （\ **必须**\ ）::
+
         $ sudo apt install ghostscript
 
-3.  安装 GMT 相关工具以增强 GMT 功能::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （\ **推荐**\ ）::
 
-        $ sudo apt install gdal-bin graphicsmagick ffmpeg
+        $ sudo apt install gdal-bin
 
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （\ **可选**\ ）::
+
+        $ sudo apt install graphicsmagick
+
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （\ **可选**\ ）::
+
+        $ sudo apt install ffmpeg
