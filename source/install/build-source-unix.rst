@@ -70,6 +70,14 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 #. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
 #. 全球数字图表 DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
 
+.. note::
+
+    如果想编译 GMT 开发版，可以使用如下命令获取 GMT 最新开发版源码::
+
+        $ git clone --depth 50 https://github.com/GenericMappingTools/gmt
+
+    其余操作与编译 GMT 正式版没有区别。
+
 安装 GMT
 --------
 
