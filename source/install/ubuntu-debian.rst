@@ -24,7 +24,7 @@ Ubuntu/Debian 下安装 GMT
 
 3.  安装 GMT 相关工具
 
-    安装 Ghostscript （\ **必须**\ ）::
+    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__\ （\ **必须**\ ）::
 
         $ sudo apt install ghostscript
 

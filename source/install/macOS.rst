@@ -27,7 +27,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 2.  安装 GMT 依赖的其它软件
 
-    安装 Ghostscript （\ **必须**\ ）::
+    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__\ （\ **必须**\ ）::
 
         $ brew install ghostscript
 
