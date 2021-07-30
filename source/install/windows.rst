@@ -93,7 +93,7 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 
     使用 VS Code 内置终端运行 Batch 绘图脚本时，\
     **请一定要选择 CMD 终端，绝对不要使用 PowerShell**\ 。
-    PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据等错误。
+    PowerShell 运行 Batch 绘图脚本会出现无法使用 GMT 远程数据等错误。
     CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
 脚本工具
