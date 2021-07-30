@@ -31,11 +31,11 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
         $ brew install ghostscript
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （可选）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （\ **可选**\ ）::
 
         $ brew install graphicsmagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （可选）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （\ **可选**\ ）::
 
         $ brew install ffmpeg
 
@@ -124,11 +124,11 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 3.  安装 GMT 依赖的其他软件
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （可选）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （\ **可选**\ ）::
 
         $ sudo port install graphicsmagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （可选）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （\ **可选**\ ）::
 
         $ sudo port install ffmpeg
 
