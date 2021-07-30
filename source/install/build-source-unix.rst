@@ -1,64 +1,64 @@
 Linux/macOS 下编译 GMT 源码
 ===========================
 
-这一节介绍如何在 Linux 或者 macOS 下编译 GMT 源代码。
+这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。
 
-编译及运行依赖
---------------
+安装依赖软件
+------------
 
-GMT 的编译及运行需要如下软件：
+GMT 的编译及运行依赖于其他软件。
 
-- CMake: >=2.8.12
-- netCDF（>=4.0 且支持 netCDF-4/HDF5）
-- curl
+必须的依赖软件包括：
 
-除此之外，还可以安装如下软件库以增强GMT的更多功能：
+- [CMake](https://cmake.org/)（>=2.8.12）
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）
+- [curl](https://curl.haxx.se/)
 
-- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF 或者其他位图格式的图片
-- `GDAL <https://www.gdal.org/>`__\ ：读写其它地学常用的网格和图片格式
+可选的依赖软件包括：
+
+ `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__\ ：读写多种地理空间数据格式
 - `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
-- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持
+- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）
 - LAPACK：快速矩阵反演库（macOS 下不需要）
 - BLAS：快速矩阵运算库（macOS 下不需要）
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
 - `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
 
-安装依赖软件
-------------
-
 Ubuntu/Debian::
 
     $ sudo apt update
-    # 安装编译所需软件包
+    # 安装必须软件包
     $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
+    # 安装可选软件包
     $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
-    # 安装制作动画所需的软件包
     $ sudo apt install graphicsmagick ffmpeg
 
 CentOS::
 
     $ sudo yum install epel-release
-    # 安装编译所需软件包
+    # 安装必须软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
+    # 安装可选软件包
     $ sudo yum install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    # 安装其他可选包
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
 Fedora::
 
-    # 安装编译所需软件包
+    # 安装必须软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
+    # 安装可选软件包
     $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    # 安装其他可选包
     $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
 macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 
-    # 安装必须依赖
+    # 安装必须软件包
     $ brew install cmake curl netcdf
+    # 安装可选软件包
     $ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 下载源码及数据
@@ -73,9 +73,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 安装 GMT
 --------
 
-将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装：
-
-.. code-block:: bash
+将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装::
 
    # 解压三个压缩文件
    $ tar -xvf gmt-6.2.0-src.tar.gz
@@ -99,28 +97,27 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.2.0")
-
     set (GMT_USE_THREADS TRUE)
-    set (GMT_ENABLE_OPENMP TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
   :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.2.0` 等有可读写
   权限的路径；
-- **GMT_USE_THREADS** 和 **GMT_ENABLE_OPENMP** 设置为 **TRUE** 会为 GMT 的某些模块
-  增加多线程并行功能以加速计算，也可以不设置。
+- **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
+  也可以不设置。
 
 .. tip::
 
    此处为了便于一般用户理解，只向 :file:`cmake/ConfigUser.cmake` 中写入了必要的语句。
-   用户可以将GMT提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
+   用户可以将 GMT 提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
    :file:`cmake/ConfigUser.cmake`\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
    进一步，可以将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
    :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
 继续执行如下命令以检查 GMT 的依赖是否满足::
 
-    # 注意，此处新建的 build 文件夹位于 GMT 源码压缩包解压出来的 gmt-6.2.0 目录下，不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
+    # 注意，此处新建的 build 文件夹位于 GMT 源码压缩包解压出来的 gmt-6.2.0 目录下
+    # 不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
     $ mkdir build
     $ cd build/
     $ cmake ..
@@ -181,9 +178,9 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
     GMT 在配置过程中可能会找到 Anaconda 提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
-    解决办法是，在 :file:`~/.bashrc` 中将 Anaconda 相关的环境变量注释掉，以保证 GMT
-    在配置和编译过程中找到的不是 Anaconda 提供的库文件。待 GMT 安装完成后，再
-    将 Anaconda 相关环境变量改回即可。
+    解决办法是，在 Shell 配置文件（\ :file:`~/.bashrc` 或 :file:`~/.zshrc`\ ）中
+    将 Anaconda 相关的环境变量注释掉，以保证 GMT 在配置和编译过程中找到的不是
+    Anaconda 提供的库文件。待 GMT 安装完成后，再将 Anaconda 相关环境变量改回即可。
 
 检查完毕后，开始编译和安装::
 
@@ -198,7 +195,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 修改环境变量
 ------------
 
-打开终端，使用如下命令用文件编辑器打开 Bash 配置文件::
+打开终端，使用如下命令用文件编辑器打开 Shell 配置文件::
 
     # Linux 用户
     $ gedit ~/.bashrc
@@ -216,7 +213,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 说明：
 
 - 第一个命令添加了环境变量 **GMT6HOME**
-- 第二个命令修改 GMT6 的 :file:`bin` 目录加入到 **PATH** 中，使得终端可以找到 GMT 命令
+- 第二个命令修改 GMT6 的 :file:`bin` 目录加入到 **PATH** 中，使得在终端或脚本中可以找到 GMT 命令
 - 第三个命令将 GMT6 的 :file:`lib` 目录加入到动态链接库路径中。
   通常，32 位系统的路径为 :file:`lib`\ ，64 位系统的路径为 :file:`lib64`
 
