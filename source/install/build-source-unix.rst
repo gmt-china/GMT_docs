@@ -10,14 +10,14 @@ GMT 的编译及运行依赖于其他软件。
 
 必须的依赖软件包括：
 
-- [CMake](https://cmake.org/)（>=2.8.12）
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）
-- [curl](https://curl.haxx.se/)
+- `CMake <https://cmake.org/>`__\ （>=2.8.12）
+- `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
+- `curl <https://curl.haxx.se/>`__
 
 可选的依赖软件包括：
 
- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__\ ：读写多种地理空间数据格式
+- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据
 - `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
 - `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）
@@ -28,6 +28,7 @@ GMT 的编译及运行依赖于其他软件。
 
 Ubuntu/Debian::
 
+    # 更新软件包列表
     $ sudo apt update
     # 安装必须软件包
     $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
@@ -37,6 +38,7 @@ Ubuntu/Debian::
 
 CentOS::
 
+    # 安装并启用 EPEL 源
     $ sudo yum install epel-release
     # 安装必须软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
@@ -54,7 +56,10 @@ Fedora::
     $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
-macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
+macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
+（未安装 Homebrew 的用户，可以参考
+《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》
+了解如何安装与使用）::
 
     # 安装必须软件包
     $ brew install cmake curl netcdf
@@ -110,16 +115,16 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖::
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
   :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
   一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.2.0` 等有可读写
-  权限的路径；
+  权限的路径
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
-  也可以不设置。
+  也可以不设置
 
 .. tip::
 
    此处为了便于一般用户理解，只向 :file:`cmake/ConfigUser.cmake` 中写入了必要的语句。
    用户可以将 GMT 提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
    :file:`cmake/ConfigUser.cmake`\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
-   进一步，可以将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
+   也可以进一步将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
    :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
 继续执行如下命令以检查 GMT 的依赖是否满足::
