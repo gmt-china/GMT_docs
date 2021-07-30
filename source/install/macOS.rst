@@ -13,7 +13,7 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 1.  安装 GMT
 
-    更新软件包的描述文件、Homebrew，并且更新所有软件包::
+    更新 Homebrew 以及软件包描述文件，并更新所有已安装的软件包::
 
         $ brew update && brew upgrade
 
@@ -21,13 +21,13 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
         $ brew install gmt
 
-    也可以安装 GMT 开发版本（即源码的 master 分支）::
+    也可以安装 GMT 开发版本（即 GMT 源码的 master 分支）::
 
         $ brew install gmt --HEAD
 
 2.  安装 GMT 依赖的其它软件
 
-    安装必须软件包::
+    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__\ （\ **必须**\ ）::
 
         $ brew install ghostscript
 
@@ -66,7 +66,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 .. note::
 
-    GMT 的 dmg 安装包只支持 macOS >= 10.14。
+    GMT 的 dmg 安装包只支持 macOS >= 10.15。
 
 1. 下载
 
@@ -122,9 +122,15 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
         $ echo 'export PATH=/opt/local/lib/gmt6/bin:$PATH' >> ~/.zshrc
 
-3.  安装 GMT 依赖的其他软件::
+3.  安装 GMT 依赖的其他软件
 
-        $ sudo port install graphicsmagick ffmpeg
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （可选）::
+
+        $ sudo port install graphicsmagick
+
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （可选）::
+
+        $ sudo port install ffmpeg
 
 4.  重新打开一个终端，检测安装是否成功::
 
