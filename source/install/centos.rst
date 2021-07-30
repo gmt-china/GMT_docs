@@ -8,7 +8,7 @@ CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 .. note::
 
     CentOS 的 EPEL 源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
-    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须先卸载，
+    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须先使用以下命令卸载，
     然后再使用 GMT 官方仓库提供的 GMT 安装包::
 
         $ sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
