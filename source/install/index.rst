@@ -27,4 +27,4 @@
 .. toctree::
    :maxdepth: 1
 
-   build-source
+   build-source-unix
