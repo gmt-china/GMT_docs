@@ -123,14 +123,20 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
    此处为了便于一般用户理解，只向 :file:`cmake/ConfigUser.cmake` 中写入了必要的语句。
    用户可以将 GMT 提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
-   :file:`cmake/ConfigUser.cmake`\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
+   :file:`cmake/ConfigUser.cmake` 并根据配置文件中的大量注释说明信息自行修改配置文件。
    也可以进一步将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
    :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
-继续执行如下命令以检查 GMT 的依赖是否满足::
+继续执行如下命令以检查 GMT 的依赖是否满足：
 
-    # 注意，此处新建的 build 文件夹位于 GMT 源码压缩包解压出来的 gmt-6.2.0 目录下
-    # 不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
+.. note::
+
+    以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
+    解压出来的 :file:`gmt-6.2.0` 目录下。
+    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`\ 。
+
+::
+
     $ mkdir build
     $ cd build/
     $ cmake ..
