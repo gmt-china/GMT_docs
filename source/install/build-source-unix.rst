@@ -26,15 +26,14 @@ GMT 的编译及运行依赖于其他软件。
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
 - `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
 
-Ubuntu/Debian::
+Fedora::
 
-    # 更新软件包列表
-    $ sudo apt update
     # 安装必须软件包
-    $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
+    $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
     # 安装可选软件包
-    $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
-    $ sudo apt install graphicsmagick ffmpeg
+    $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
+    $ sudo dnf install GraphicsMagick ffmpeg
 
 CentOS::
 
@@ -47,14 +46,15 @@ CentOS::
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
-Fedora::
+Ubuntu/Debian::
 
+    # 更新软件包列表
+    $ sudo apt update
     # 安装必须软件包
-    $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
+    $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
     # 安装可选软件包
-    $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
-    $ sudo dnf install GraphicsMagick ffmpeg
+    $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install graphicsmagick ffmpeg
 
 macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 （未安装 Homebrew 的用户，可以参考
