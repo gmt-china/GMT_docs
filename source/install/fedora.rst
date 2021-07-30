@@ -1,11 +1,17 @@
 Fedora 下安装 GMT
 =================
 
-Fedora 官方源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
-
 Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
+
+.. note::
+
+    Fedora 官方源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
+    如果已经安装了 Fedora 官方源提供的 GMT 软件包，则必须先卸载，
+    然后再使用 GMT 官方仓库提供的 GMT 安装包::
+
+        $ sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 安装 GMT
 --------

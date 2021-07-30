@@ -1,11 +1,17 @@
 CentOS 下安装 GMT
 =================
 
-CentOS 的 EPEL 源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
-
 CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
+
+.. note::
+
+    CentOS 的 EPEL 源提供了 GMT 二进制包，但通常其版本比较老，不建议安装使用。
+    如果已经安装了 EPEL 源提供的 GMT 软件包，则必须先卸载，
+    然后再使用 GMT 官方仓库提供的 GMT 安装包::
+
+        $ sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 
 安装 GMT
 --------
