@@ -18,7 +18,7 @@ Anaconda 用户可以直接通过以下命令安装、升级以及卸载 GMT。
 
         $ conda install gmt -c conda-forge
 
-    安装 GMT 开发版本::
+    也可以安装 GMT 开发版本（该开发版本会每隔几周更新一次）::
 
         $ conda install gmt -c conda-forge/label/dev
 
