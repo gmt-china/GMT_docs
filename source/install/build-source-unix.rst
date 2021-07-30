@@ -114,7 +114,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
   :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.2.0` 等有可读写
+  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.2.0` 等有可读写
   权限的路径
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
   也可以不设置
