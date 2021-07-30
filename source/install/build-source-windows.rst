@@ -1,7 +1,7 @@
 Windows 下编译 GMT 源码
 =======================
 
-这一节介绍如何在 Windows  下编译 GMT 源代码。
+这一节介绍如何在 Windows 下编译 GMT 源码。
 
 安装依赖软件
 ------------
@@ -10,14 +10,14 @@ GMT 的编译及运行依赖于其他软件。
 
 必须的依赖软件包括：
 
-- [CMake](https://cmake.org/)（>=2.8.12）
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）
-- [curl](https://curl.haxx.se/)
+- `CMake <https://cmake.org/>`__\ （>=2.8.12）
+- `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
+- `curl <https://curl.haxx.se/>`__
 
 可选的依赖软件包括：
 
- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__\ ：读写多种地理空间数据格式
+- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据
 - `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
 - `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）
@@ -69,31 +69,40 @@ GMT 的编译及运行依赖于其他软件。
 
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.2.0")
+    set (CMAKE_INSTALL_PREFIX "C:/programs/gmt6")
     set (GMT_USE_THREADS TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
   :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/software/GMT-6.2.0` 等有可读写
-  权限的路径；
+  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.2.0` 等有可读写
+  权限的路径
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
-  也可以不设置。
+  也可以不设置
 
 .. tip::
 
    此处为了便于一般用户理解，只向 :file:`cmake/ConfigUser.cmake` 中写入了必要的语句。
    用户可以将 GMT 提供的配置模板 :file:`cmake/ConfigUserTemplate.cmake` 复制为
-   :file:`cmake/ConfigUser.cmake`\ 并根据配置文件中的大量注释说明信息自行修改配置文件。
-   进一步，可以将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
+   :file:`cmake/ConfigUser.cmake` 并根据配置文件中的大量注释说明信息自行修改配置文件。
+   也可以进一步将高级配置模板 :file:`cmake/ConfigUserAdvancedTemplate.cmake` 复制为
    :file:`cmake/ConfigUserAdvanced.cmake` 并根据注释说明信息修改高级配置。
 
-继续执行如下命令以检查 GMT 的依赖是否满足::
+继续执行如下命令以检查 GMT 的依赖是否满足：
 
-    # 注意，此处新建的 build 文件夹位于 GMT 源码压缩包解压出来的 gmt-6.2.0 目录下
-    # 不是 gmt-6.2.0/cmake 目录下，更不是 /opt/GMT-6.2.0
+.. note::
+
+    以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
+    解压出来的 :file:`gmt-6.2.0` 目录下。
+    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`\ 。
+
+::
+
     $ mkdir build
     $ cd build/
-    $ cmake ..
+    # 64 位系统
+    $ cmake .. -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x64
+    # 32 位系统
+    $ cmake .. -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x86
 
 ``cmake ..`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
 在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
@@ -145,25 +154,10 @@ GMT 的编译及运行依赖于其他软件。
     -- Configuring done
     -- Generating done
 
-.. warning::
-
-    Anaconda 用户请注意！由于 Anaconda 中也安装了 FFTW、GDAL、netCDF 等库文件，
-    GMT 在配置过程中可能会找到 Anaconda 提供的库文件，进而导致配置、编译或执行
-    过程中出错。
-
-    解决办法是，在 Shell 配置文件（\ :file:`~/.bashrc` 或 :file:`~/.zshrc`\ ）中
-    将 Anaconda 相关的环境变量注释掉，以保证 GMT 在配置和编译过程中找到的不是
-    Anaconda 提供的库文件。待 GMT 安装完成后，再将 Anaconda 相关环境变量改回即可。
-
 检查完毕后，开始编译和安装::
 
-    $ make -j
-    $ sudo make -j install
-
-.. note::
-
-   **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些 Ubuntu 发行版下
-   使用 **-j** 选项会导致编译过程卡死。Ubuntu 用户建议在上面的两条命令中去掉 **-j** 选项。
+    $ cmake --build . --config Release
+    $ cmake --build . --target install --config Release
 
 修改环境变量
 ------------
