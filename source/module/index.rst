@@ -172,6 +172,54 @@
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
+使用 list-table:
+
+.. hlist::
+    :columns: 4
+
+    - :ref:`主程序/脚本 <module_programs>`
+    - :ref:`现代模式会话管理 <module_session_management>`
+
+.. list-table:: GMT 模块列表
+    :header-rows: 1
+
+    * - .. _module_programs:
+
+        **主程序/脚本**
+      -
+    * - :doc:`gmt`
+      -  GMT 主程序
+    * - :doc:`gmt-config`
+      - 返回 GMT 动态函数库的基本信息
+    * - .. _module_session_management:
+
+        **现代模式会话管理**
+      -
+    * - :doc:`begin`
+      - 初始化一个新的 GMT 现代模式会话
+    * - :doc:`clear`
+      - 删除缓存目录、数据目录、会话目录以及当前配置文件
+
+使用 csv table：
+
+.. hlist::
+    :columns: 4
+
+    - :ref:`主程序/脚本 <module_programs2>`
+    - :ref:`现代模式会话管理 <module_session_management2>`
+
+.. csv-table:: GMT 模块列表
+
+    **主程序/脚本**, .. _module_programs2:
+    :doc:`gmt`, GMT 主程序
+    :doc:`gmt-config`, 返回 GMT 动态函数库的基本信息
+    **现代模式会话管理**, .. _module_session_management2:
+    :doc:`begin`, 初始化一个新的 GMT 现代模式会话
+    :doc:`clear`, 删除缓存目录、数据目录、会话目录以及当前配置文件
+
+
+使用 simple table:
+
 .. hlist::
     :columns: 4
 
