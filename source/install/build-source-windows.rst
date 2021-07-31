@@ -3,6 +3,14 @@ Windows 下编译 GMT 源码
 
 这一节介绍如何在 Windows 下编译 GMT 源码。
 
+系统要求
+--------
+
+- Windows 10, 8.1 或 7
+- Visual Studio 2015 Update 3 or newer with "Desktop development with C++" installed
+- Git
+- CMake >= 3.12.4
+
 安装依赖软件
 ------------
 
@@ -25,6 +33,43 @@ GMT 的编译及运行依赖于其他软件。
 - BLAS：快速矩阵运算库（macOS 下不需要）
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
 - `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
+
+安装依赖软件
+^^^^^^^^^^^^
+
+- CMake
+- Ghostscript
+- GraphicksMagick
+- FFmpeg
+
+安装 Vcpkg
+^^^^^^^^^^
+
+::
+
+
+    cd C:\
+    git clone https://github.com/microsoft/vcpkg
+    cd C:\vcpkg
+    .\bootstrap-vcpkg.bat
+
+安装 GMT 依赖软件
+^^^^^^^^^^^^^^^^^
+
+::
+
+    # Build and install libraries
+    # If you want to build x64 libraries (recommended)
+    vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet x64-windows
+
+    # If you want to build x86 libraries
+    vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet x86-windows
+
+    # hook up user-wide integration (note: requires admin on first use)
+    vcpkg integrate install
+
+将 GDAL 的 bin 目录 ``C:\vcpkg\installed\x64-windows\tools\gdal`` 添加到 PATH，
+将 vcpkg 的 bin 目录 ``C:\vcpkg\installed\x64-windows\bin`` 添加到 PATH。
 
 下载源码及数据
 --------------
