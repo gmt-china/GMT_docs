@@ -177,7 +177,7 @@
 
     - :ref:`主程序/脚本 <program_scripts>`
     - :ref:`现代模式会话管理 <session_management>`
-    - :ref:`绘图相关模块 <plotting>`
+    - :ref:`绘图相关模块 <plotting_modules>`
     - :ref:`1D 数据处理 <1D_data_processing>`
     - :ref:`2D 数据处理 <2D_data_processing>`
     - :ref:`参数设置 <parameter_setting>`
@@ -206,7 +206,7 @@
 :doc:`figure`                                    设置当前图片的属性
 :doc:`inset`                                     管理和设置图中图模式
 :doc:`subplot`                                   管理和设置子图模式
-.. _plotting:
+.. _plotting_modules:
 **绘图相关模块**
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
@@ -312,7 +312,7 @@
 :doc:`gmt:gmt2kml`                               将GMT表数据转换为Google Earth的KML文件
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`psconvert`                                 将GMT生成的PS文件转换为其他图片格式
-.. _modules:
+.. _mgd77_modules:
 **mgd77 相关模块**
 :doc:`gmt:supplements/mgd77/mgd77convert`        Convert MGD77 data to other file formats
 :doc:`gmt:supplements/mgd77/mgd77header`         Create MGD77 headers from A77 files
