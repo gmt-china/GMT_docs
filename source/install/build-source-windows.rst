@@ -19,22 +19,16 @@ Windows 下编译 GMT 源码
 安装 vcpkg 及依赖软件
 ---------------------
 
-GMT 的编译及运行依赖于其他软件。
+GMT 的编译及运行依赖于其他库文件，包括：
 
-必须的依赖软件包括：
-
-- `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
-- `curl <https://curl.haxx.se/>`__
-
-可选的依赖软件包括：
-
-- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据
-- `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
-- `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
-- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）
-- LAPACK：快速矩阵反演库（macOS 下不需要）
-- BLAS：快速矩阵运算库（macOS 下不需要）
+- `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）[**必须**]
+- `curl <https://curl.haxx.se/>`__ [**必须**]
+- `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据 [**推荐**]
+- `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持 [**可选**]
+- `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3）[**可选**]
+- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）[**可选**]
+- LAPACK：快速矩阵反演库（macOS 下不需要）[**可选**]
+- BLAS：快速矩阵运算库（macOS 下不需要）[**可选**]
 
 Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这些依赖软件。
 
@@ -147,44 +141,50 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
     *  GMT Version:               : 6.2.0
     *
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-6.2.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.2.0/share/dcw-gmt (2.0.0)
-    *  Found GMT data server      : https://oceania.generic-mapping-tools.org
-    *  NetCDF library             : /usr/lib64/libnetcdf.so
-    *  NetCDF include dir         : /usr/include
-    *  GDAL library               : /usr/lib64/libgdal.so
-    *  GDAL include dir           : /usr/include/gdal
-    *  FFTW library               : /usr/lib64/libfftw3f.so
-    *  FFTW include dir           : /usr/include
+    *  Found GSHHG database       : D:/a/gmt/gmt/coastline/gshhg (2.3.7)
+    *  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.0.0)
+    *  Found GMT data server      : oceania
+    *  NetCDF library             : C:/vcpkg/installed/x64-windows/lib/netcdf.lib
+    *  NetCDF include dir         : C:/vcpkg/installed/x64-windows/include
+    *  Curl library               : C:/vcpkg/installed/x64-windows/lib/libcurl.lib
+    *  Curl include dir           :
+    *  GDAL library               :
+    *  GDAL include dir           : C:/vcpkg/installed/x64-windows/include
+    *  GEOS library               : C:/vcpkg/installed/x64-windows/lib/geos_c.lib
+    *  GEOS include dir           : C:/vcpkg/installed/x64-windows/include
+    *  FFTW library               : C:/vcpkg/installed/x64-windows/lib/fftw3f.lib
+    *  FFTW threads library       : C:/vcpkg/installed/x64-windows/lib/fftw3f.lib
+    *  FFTW include dir           : C:/vcpkg/installed/x64-windows/include
     *  Accelerate Framework       :
-    *  Regex support              : PCRE (/usr/lib64/libpcre.so)
-    *  ZLIB library               : /usr/lib64/libz.so
-    *  ZLIB include dir           : /usr/include
+    *  Regex support              : PCRE (C:/vcpkg/installed/x64-windows/lib/pcre.lib)
+    *  ZLIB library               : C:/vcpkg/installed/x64-windows/lib/zlib.lib
+    *  ZLIB include dir           : C:/vcpkg/installed/x64-windows/include
     *  LAPACK library             : yes
     *  BLAS library               : yes
     *  License restriction        : no
     *  Triangulation method       : Shewchuk
     *  OpenMP support             : enabled
-    *  GLIB GTHREAD support       : enabled
-    *  Build mode                 : shared
-    *  Build GMT core             : always [libgmt.so]
-    *  Build PSL library          : always [libpostscriptlight.so]
-    *  Build GMT supplements      : yes [supplements.so]
-    *  Build GMT Developer        : yes
+    *  GLIB GTHREAD support       : disabled
+    *  Build generator            : Ninja
+    *  Build GMT core             : always [gmt.dll]
+    *  Build PSL library          : always [postscriptlight.dll]
+    *  Build GMT supplements      : yes [supplements.dll]
+    *  Build GMT for developers   : yes
     *  Build proto supplements    : none
-    *  Found Ghostscript (gs)     : yes (9.50)
-    *  Found GraphicsMagick (gm)  : yes (1.3.33)
-    *  Found ffmpeg               : yes (4.2.1)
+    *  Build module links         : no
+    *  Found Ghostscript (gs)     : yes
+    *  Found GraphicsMagick (gm)  : yes
+    *  Found ffmpeg               : yes
     *  Found open                 : yes
-    *  Found ogr2ogr              : yes (2.4.2)
-    *  Found gdal_translate       : yes (2.4.2)
+    *  Found ogr2ogr              : yes (3.2.2)
+    *  Found gdal_translate       : yes (3.2.2)
+    -- Configuring done
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-6.2.0
-    *  GMT_DATADIR                : /opt/GMT-6.2.0/share
-    *  GMT_DOCDIR                 : /opt/GMT-6.2.0/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-6.2.0/share/man
-    -- Configuring done
+    *  Installing GMT in          : C:/programs/gmt6
+    *  GMT_DATADIR                : C:/programs/gmt6/share
+    *  GMT_DOCDIR                 : C:/programs/gmt6/share/doc
+    *  GMT_MANDIR                 : C:/programs/gmt6/share/man
     -- Generating done
 
 检查完毕后，开始编译和安装::
