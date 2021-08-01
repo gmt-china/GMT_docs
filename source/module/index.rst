@@ -181,7 +181,7 @@
     - :ref:`1D 数据处理 <module_1D_data_processing>`
     - :ref:`2D 数据处理 <module_2D_data_processing>`
     - :ref:`参数设置 <module_parameter_setting>`
-    - :ref:`信息提取 <module_information retrieval>`
+    - :ref:`信息提取 <module_information_retrieval>`
     - :ref:`格式转换 <module_format_conversion>`
     - :ref:`mgd77 相关模块 <module_mgd77>`
     - :ref:`x2sys 相关模块 <module_x2sys>`
