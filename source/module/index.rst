@@ -245,7 +245,7 @@
 ================================================ ========================================================================
 :doc:`gmt`                                       GMT 主程序
 :doc:`gmt-config`                                返回 GMT 动态函数库的基本信息
-**现代模式会话管理**                                .. _session_management:
+**现代模式会话管理**                             .. _session_management:
 :doc:`begin`                                     初始化一个新的 GMT 现代模式会话
 :doc:`clear`                                     删除缓存目录、数据目录、会话目录以及当前配置文件
 :doc:`docs`                                      打开指定模块的 HTML 文档
@@ -253,7 +253,7 @@
 :doc:`figure`                                    设置当前图片的属性
 :doc:`inset`                                     管理和设置图中图模式
 :doc:`subplot`                                   管理和设置子图模式
-**绘图相关模块** .. _plotting_modules:
+**绘图相关模块**                                 .. _plotting_modules:
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
 :doc:`plot`                                      在图上绘制线段、多边形和符号
