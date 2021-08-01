@@ -156,7 +156,8 @@
 .. gmtplot::
     :width: 50%
 
-    cat > lines.dat <<EOF>
+    cat > lines.dat <<EOF
+    >
     1 	2
     4 	2
     4 	8
@@ -179,7 +180,8 @@
 .. gmtplot::
     :width: 50%
 
-    cat > lines.dat <<EOF>
+    cat > lines.dat <<EOF
+    >
     1 	2
     4 	2
     4 	8
