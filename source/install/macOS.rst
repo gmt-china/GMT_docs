@@ -3,6 +3,8 @@ macOS 下安装 GMT
 
 :贡献者: |田冬冬|
 
+----
+
 macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
 工具进行安装。\ **推荐使用Homebrew**\ 。
 

@@ -3,6 +3,8 @@ Ubuntu/Debian 下安装 GMT
 
 :贡献者: |田冬冬|
 
+----
+
 .. note::
 
    由于 Ubuntu 和 Debian 自身的软件更新规则，官方软件源提供的通常都是老版本 GMT，
