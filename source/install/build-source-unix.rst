@@ -20,7 +20,7 @@ GMT 的编译及运行依赖于其他软件。
 - `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据
 - `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
-- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）
+- `GLib <https://wiki.gnome.org/Projects/GLib>`__\ ：GTHREAD 多线程支持（>=2.32）
 - LAPACK：快速矩阵反演库（macOS 下不需要）
 - BLAS：快速矩阵运算库（macOS 下不需要）
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
