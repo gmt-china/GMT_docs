@@ -172,54 +172,6 @@
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
-使用 list-table:
-
-.. hlist::
-    :columns: 4
-
-    - :ref:`主程序/脚本 <module_programs>`
-    - :ref:`现代模式会话管理 <module_session_management>`
-
-.. list-table:: GMT 模块列表
-    :header-rows: 1
-
-    * - .. _module_programs:
-
-        **主程序/脚本**
-      -
-    * - :doc:`gmt`
-      -  GMT 主程序
-    * - :doc:`gmt-config`
-      - 返回 GMT 动态函数库的基本信息
-    * - .. _module_session_management:
-
-        **现代模式会话管理**
-      -
-    * - :doc:`begin`
-      - 初始化一个新的 GMT 现代模式会话
-    * - :doc:`clear`
-      - 删除缓存目录、数据目录、会话目录以及当前配置文件
-
-使用 csv table：
-
-.. hlist::
-    :columns: 4
-
-    - :ref:`主程序/脚本 <module_programs2>`
-    - :ref:`现代模式会话管理 <module_session_management2>`
-
-.. csv-table:: GMT 模块列表
-
-    **主程序/脚本**, .. _module_programs2:
-    :doc:`gmt`, GMT 主程序
-    :doc:`gmt-config`, 返回 GMT 动态函数库的基本信息
-    **现代模式会话管理**, .. _module_session_management2:
-    :doc:`begin`, 初始化一个新的 GMT 现代模式会话
-    :doc:`clear`, 删除缓存目录、数据目录、会话目录以及当前配置文件
-
-
-使用 simple table:
-
 .. hlist::
     :columns: 4
 
@@ -238,11 +190,10 @@
     - :ref:`其他模块 <other_modules>`
     - :ref:`其他脚本 <other_scripts>`
 
-.. _program_scripts:
-
 ================================================ ========================================================================
-**主程序/脚本**
+模块类别和模块名                                 功能
 ================================================ ========================================================================
+**主程序/脚本**                                  .. _program_scripts:
 :doc:`gmt`                                       GMT 主程序
 :doc:`gmt-config`                                返回 GMT 动态函数库的基本信息
 **现代模式会话管理**                             .. _session_management:
@@ -284,8 +235,7 @@
 :doc:`grdcontour`                                根据网格文件绘制等值线
 :doc:`grdview`                                   利用网格文件绘制3D视角图或表面网格图
 :doc:`gmt:movie`                                 制作动画
-.. _1D_data_processing:
-**1D 数据处理**
+**1D 数据处理**                                  .. _1D_data_processing:
 :doc:`makecpt`                                   生成CPT文件
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
@@ -302,8 +252,7 @@
 :doc:`gmt:gmtspatial`                            线段和多边形的地理空间操作
 :doc:`gmt:gmtvector`                             2D和3D下笛卡尔矢量操作
 :doc:`gmt:gmtregress`                            1D数据的线性回归
-.. _2D_data_processing:
-**2D 数据处理**
+**2D 数据处理**                                  .. _2D_data_processing:
 :doc:`grdcut`                                    从一个网格文件中裁剪出一个矩形子区域生成新的网格文件
 :doc:`grdpaste`                                  将两个网格沿着其共同边界拼接成一个文件
 :doc:`grdblend`                                  将多个部分重叠的网格文件合并成一个网格文件
@@ -340,26 +289,22 @@
 :doc:`gmt:sphinterpolate`                        球面上张量数据的球面网格化
 :doc:`gmt:sphtriangulate`                        球面数据的Delaunay 或 Voronoi 构建
 :doc:`gmt:dimfilter`                             在空间域对网格数做方向性滤波
-.. _parameter_setting:
-**参数设置**
+**参数设置**                                     .. _parameter_setting:
 :doc:`gmtdefaults`                               列出所有GMT参数的当前值
 :doc:`gmtset`                                    修改单个或多个GMT参数的值
 :doc:`gmtget`                                    列出单个或多个GMT参数的当前值
-.. _information retrieval:
-**信息提取**
+**信息提取**                                     .. _information retrieval:
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`gmtinfo`                                   从表数据中提取信息
 :doc:`gmtwhich`                                  返回指定文件的完整路径
-.. _format_conversion:
-**格式转换**
+**格式转换**                                     .. _format_conversion:
 :doc:`xyz2grd`                                   将XYZ数据或Z数据转换成网格文件
 :doc:`grd2xyz`                                   将网格文件转换成表数据
 :doc:`kml2gmt`                                   将Google Earth的KML文件转换为GMT表数据
 :doc:`gmt:gmt2kml`                               将GMT表数据转换为Google Earth的KML文件
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`psconvert`                                 将GMT生成的PS文件转换为其他图片格式
-.. _mgd77_modules:
-**mgd77 相关模块**
+**mgd77 相关模块**                               .. _mgd77_modules:
 :doc:`gmt:supplements/mgd77/mgd77convert`        Convert MGD77 data to other file formats
 :doc:`gmt:supplements/mgd77/mgd77header`         Create MGD77 headers from A77 files
 :doc:`gmt:supplements/mgd77/mgd77info`           Extract information about MGD77 files
@@ -369,8 +314,7 @@
 :doc:`gmt:supplements/mgd77/mgd77path`           Return paths to MGD77 cruises and directories
 :doc:`gmt:supplements/mgd77/mgd77sniffer`        Along-track quality control of MGD77 cruises
 :doc:`gmt:supplements/mgd77/mgd77track`          Plot track-line map of MGD77 cruises
-.. _x2sys_modules:
-**x2sys 相关模块**
+**x2sys 相关模块**                               .. _x2sys_modules:
 :doc:`gmt:supplements/x2sys/x2sys_binlist`       Create bin index listing from track data files
 :doc:`gmt:supplements/x2sys/x2sys_cross`         Calculate crossovers between track data files
 :doc:`gmt:supplements/x2sys/x2sys_datalist`      Extract content of track data files
@@ -381,8 +325,7 @@
 :doc:`gmt:supplements/x2sys/x2sys_put`           Update track index database from track bin file
 :doc:`gmt:supplements/x2sys/x2sys_report`        Report statistics from crossover data base
 :doc:`gmt:supplements/x2sys/x2sys_solve`         Determine least-squares systematic correction from crossovers
-.. _spotter_modules:
-**SPOTTER 相关模块**
+**SPOTTER 相关模块**                             .. _spotter_modules:
 :doc:`gmt:supplements/spotter/backtracker`       Generate forward and backward flowlines and hotspot tracks
 :doc:`gmt:supplements/spotter/gmtpmodeler`       Evaluate a plate motion model at given locations
 :doc:`gmt:supplements/spotter/grdpmodeler`       Evaluate a plate motion model on a geographic grid
@@ -392,8 +335,7 @@
 :doc:`gmt:supplements/spotter/rotsmoother`       Get mean rotations and covarience from set of finate rotations
 :doc:`gmt:supplements/spotter/grdspotter`        Create CVA image from a gravity or topography grid
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
-.. _potential_modules:
-**POTENTIAL 相关模块**
+**POTENTIAL 相关模块**                           .. _potential_modules:
 :doc:`gmt:supplements/potential/gmtflexure`      Compute flexural deformation of 2-D loads, forces and bending moments
 :doc:`gmt:supplements/potential/grdflexure`      Compute flexural deformation of 3-D surfaces for various rheologies
 :doc:`gmt:supplements/potential/gmtgravmag3d`    Compute the gravity/magnetic anomaly of a 3-D body
@@ -403,15 +345,13 @@
 :doc:`gmt:supplements/potential/grdseamount`     Compute synthetic seamount bathymetry
 :doc:`gmt:supplements/potential/talwani2d`       Compute geopotential anomalies over 2-D bodies
 :doc:`gmt:supplements/potential/talwani3d`       Compute geopotential anomalies over 3-D bodies
-.. _other_modules:
-**其他模块**
+**其他模块**                                     .. _other_modules:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
 :doc:`gmt:supplements/gshhg/gshhg`               Extract data tables from binary GSHHS or WDBII data files
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
 :doc:`gmt:supplements/geodesy/gpsgridder`        Interpolate GPS velocity vectors using Green's functions
-.. _other_scripts:
-**其他脚本**
+**其他脚本**                                     .. _other_scripts:
 :doc:`gmt:gmtswitch`                             GMT多版本之间切换
 ================================================ ========================================================================
 
