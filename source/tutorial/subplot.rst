@@ -35,18 +35,18 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
     nrow=2
     ncol=3
     gmt begin subplot png,pdf
-    gmt subplot begin ${nrow} x${ncol} -Fs5c/3c -Blrtb
+    gmt subplot begin ${nrow}x${ncol} -Fs5c/3c -Blrtb
         for index in $(seq 0 $((nrow*ncol-1))); do
         i=$((index/ncol))
-        j=$((index% ncol))
+        j=$((index%ncol))
         echo 0.5 0.5 '@;red;'$i,$j'@;;' '(@;blue;'$index'@;;)' | gmt text -R0/1/0/1 -F+f20p -c
         done
     gmt subplot end
     gmt end show
 
 **subplot set** 用于激活指定的子图，接下来的所有绘图命令都将在该子图内进行绘制。
-为了指定某个子图，则需要知道每个子图的编号。GMT 中可以通过 ** 行号，列号 ** 或者
-** 索引号 ** （即第几个子图）的方式来指定子图。
+为了指定某个子图，则需要知道每个子图的编号。GMT 中可以通过 **行号,列号** 或者
+**索引号**\ （即第几个子图）的方式来指定子图。
 
 .. note::
 

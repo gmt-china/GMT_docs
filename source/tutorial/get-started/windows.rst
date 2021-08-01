@@ -32,7 +32,7 @@ GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
     options:
       --help              List descriptions of available GMT modules.
-      --new-script [=L]    Write GMT modern mode script template to stdout.
+      --new-script[=L]    Write GMT modern mode script template to stdout.
                           Optionally specify bash|csh|batch [Default is current shell].
       --new-glue=name     Write C code for external supplements to glue them to GMT.
       --show-bindir       Show directory with GMT executables.

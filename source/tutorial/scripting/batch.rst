@@ -22,11 +22,11 @@ Batch 基础
 	set region="0/10/0/10"
 
 	REM 在变量名前后加上 % 即可引用该变量的值
-	echo % projection% % region%
+	echo %projection% %region%
 
 	REM 执行 GMT 命令
 	gmt begin map
-	gmt basemap -J% projection% -R% region% -Baf
+	gmt basemap -J%projection% -R%region% -Baf
 
 	REM 输入数据
 	REM 有些命令需要读入数据。Bash 中有多种方法可以将数据传递给一个命令：
@@ -77,7 +77,7 @@ Bash 语法和 Batch 语法不同。本手册中所有脚本均使用 Bash 实�
 
 - 	注释符号： ``#`` 改成 ``REM``
 -	定义变量的方式： ``var=value`` 改成 ``set var=value``
-- 	引用变量的方式： ``$region`` 改成 ``% region%``
+- 	引用变量的方式： ``$region`` 改成 ``%region%``
 - 	删除文件的命令： ``rm`` 改成 ``del``
 - 	Bash 中可以使用倒引号 ``var=`cmd1``` 将命令 cmd1 的输出作为变量 var 的值。Batch 不支持这一语法，需要使用下面的命令实现类似功能::
 

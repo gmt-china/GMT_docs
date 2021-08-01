@@ -31,7 +31,7 @@ macOS 下可以使用 :kbd:`Command + 空格键` 启动 Splitlight，在弹出�
 
     options:
       --help              List descriptions of available GMT modules.
-      --new-script [=L]    Write GMT modern mode script template to stdout.
+      --new-script[=L]    Write GMT modern mode script template to stdout.
                           Optionally specify bash|csh|batch [Default is current shell].
       --new-glue=name     Write C code for external supplements to glue them to GMT.
       --show-bindir       Show directory with GMT executables.

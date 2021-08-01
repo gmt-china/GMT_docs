@@ -30,7 +30,7 @@
         5   7
         EOF
 
-    ** 需要注意：Windows Batch 不支持 EOF 语法！**
+    **需要注意：Windows Batch 不支持 EOF 语法！**
     因而 Batch 用户需要使用::
 
         echo 2 2  > points.dat
@@ -148,7 +148,7 @@
     6	8
 
 每个线段都包含了若干个数据点，在第一个数据点之前有一个 **>** 用于标记新的一段数据的开始。
-这种数据称之为 \ ** 多段数据 **\ 。
+这种数据称之为 \ **多段数据**\ 。
 
 与绘制一条线段的命令完全相同，由于输入数据中有两段数据，\ **plot** 模块为我们绘制出了
 两条线段。同样的，两条线段均为线宽为 **1p** 的红色实线。
@@ -156,7 +156,7 @@
 .. gmtplot::
     :width: 50%
 
-    cat > lines.dat <<EOF
+    cat > lines.dat << EOF
     >
     1 	2
     4 	2
@@ -180,7 +180,7 @@
 .. gmtplot::
     :width: 50%
 
-    cat > lines.dat <<EOF
+    cat > lines.dat << EOF
     >
     1 	2
     4 	2
