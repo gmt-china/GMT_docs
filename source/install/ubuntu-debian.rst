@@ -10,7 +10,7 @@ Ubuntu/Debian 下安装 GMT
 
    #. 使用老版本 GMT
    #. :doc:`conda` 【推荐】
-   #. :doc:`build-source` 【推荐】
+   #. :doc:`build-source-unix` 【推荐】
 
 通过如下命令，可以安装 Ubuntu/Debian 官方源提供的 GMT 二进制包。
 
