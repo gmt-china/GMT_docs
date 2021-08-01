@@ -1,19 +1,19 @@
-GMT初探: macOS篇
-================
+GMT 初探: macOS 篇
+==================
 
 启动终端
 --------
 
-GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图操作都需要通过
+GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图操作都需要通过
 在终端和脚本中执行命令来完成。
 
-macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜索框中输入
-“terminal”再按回车即可打开终端。
+macOS 下可以使用 :kbd:`Command + 空格键` 启动 Splitlight，在弹出的搜索框中输入
+“terminal” 再按回车即可打开终端。
 
-运行GMT
--------
+运行 GMT
+--------
 
-启动终端后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于：
+启动终端后，敲入 ``gmt`` 以执行 GMT 命令。你将看到 GMT 的欢迎界面信息，类似于：
 
 .. code-block:: console
 
@@ -31,7 +31,7 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 
     options:
       --help              List descriptions of available GMT modules.
-      --new-script[=L]    Write GMT modern mode script template to stdout.
+      --new-script [=L]    Write GMT modern mode script template to stdout.
                           Optionally specify bash|csh|batch [Default is current shell].
       --new-glue=name     Write C code for external supplements to glue them to GMT.
       --show-bindir       Show directory with GMT executables.
@@ -59,17 +59,17 @@ macOS下可以使用 :kbd:`Command+空格键` 启动Splitlight，在弹出的搜
 
     gmt --new-script > myplot.sh
 
-该命令会在当前目录生成一个GMT模板脚本，并保存到Bash脚本文件 :file:`myplot.sh` 中。
+该命令会在当前目录生成一个 GMT 模板脚本，并保存到 Bash 脚本文件 :file:`myplot.sh` 中。
 
 .. note::
 
-    本手册中所有示例均使用Bash脚本，要求读者对Bash脚本及Unix命令行有最基本的了解。
+    本手册中所有示例均使用 Bash 脚本，要求读者对 Bash 脚本及 Unix 命令行有最基本的了解。
     不了解的用户请阅读网络上 Bash 相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
 
 查看并编辑脚本文件
 ------------------
 
-Bash脚本文件是一个纯文本文件，可以直接用文本编辑器打开。比如，可以使用macOS自带的
+Bash 脚本文件是一个纯文本文件，可以直接用文本编辑器打开。比如，可以使用 macOS 自带的
 文本编辑器打开该脚本文件::
 
     open myplot.sh
@@ -89,7 +89,7 @@ Bash脚本文件是一个纯文本文件，可以直接用文本编辑器打开�
 其中，以 **#** 开头的行尾注释行，\ **export GMT_SESSION_NAME=$$** 这一行属于
 高级用法，可以忽略。核心内容只有两行，即 **gmt begin** 和 **gmt end** 这两行。
 
-编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加GMT命令，将脚本修改如下::
+编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加 GMT 命令，将脚本修改如下::
 
     #!/usr/bin/env -S bash -e
     # GMT modern mode bash template
@@ -106,11 +106,11 @@ Bash脚本文件是一个纯文本文件，可以直接用文本编辑器打开�
 执行脚本以绘图
 --------------
 
-回到终端，运行Bash脚本::
+回到终端，运行 Bash 脚本::
 
     bash myplot.sh
 
-待脚本执行完成后，会自动用macOS自带的PDF阅读器（即Preview）打开生成的PDF格式的
+待脚本执行完成后，会自动用 macOS 自带的 PDF 阅读器（即 Preview）打开生成的 PDF 格式的
 图片文件。你将看到如下图所示的图片：
 
 .. gmtplot::
@@ -127,8 +127,8 @@ Bash脚本文件是一个纯文本文件，可以直接用文本编辑器打开�
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end
 
-这基本上就是运行GMT脚本的基本流程，即：
+这基本上就是运行 GMT 脚本的基本流程，即：
 
 - 生成脚本模板
-- 编辑脚本，添加GMT绘图命令
+- 编辑脚本，添加 GMT 绘图命令
 - 运行脚本并查看绘图效果
