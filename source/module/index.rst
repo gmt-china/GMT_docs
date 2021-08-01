@@ -293,7 +293,7 @@
 :doc:`gmtdefaults`                               列出所有GMT参数的当前值
 :doc:`gmtset`                                    修改单个或多个GMT参数的值
 :doc:`gmtget`                                    列出单个或多个GMT参数的当前值
-**信息提取**                                     .. _module_information retrieval:
+**信息提取**                                     .. _module_information_retrieval:
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`gmtinfo`                                   从表数据中提取信息
 :doc:`gmtwhich`                                  返回指定文件的完整路径
