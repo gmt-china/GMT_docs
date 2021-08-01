@@ -12,7 +12,7 @@ Windows 下编译 GMT 源码
 - `Visual Studio <https://visualstudio.microsoft.com/zh-hans/>`__ \（安装时需要勾选 Desktop development with C++ 相关工具）
 - `Git <https://git-scm.com/downloads>`__
 - `CMake <https://cmake.org/download/>`__
-- `Ghostscript <https://www.ghostscript.com/>`__
+- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片 [**必须**]
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画 [**可选**]
 - `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画 [**可选**]
 
@@ -22,7 +22,7 @@ Windows 下编译 GMT 源码
 GMT 的编译及运行依赖于其他库文件，包括：
 
 - `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）[**必须**]
-- `curl <https://curl.haxx.se/>`__ [**必须**]
+- `curl <https://curl.haxx.se/>`__\ ：下载网络数据 [**必须**]
 - `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据 [**推荐**]
 - `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持 [**可选**]
 - `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3）[**可选**]
@@ -32,7 +32,7 @@ GMT 的编译及运行依赖于其他库文件，包括：
 
 Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这些依赖软件。
 
-首先，需要安装 vcpkg。打开 CMD，执行如下命令即可将 vcpkg 安装到 :file:`C:\vcpkg`
+首先，需要安装 vcpkg。打开 CMD 窗口，执行如下命令即可将 vcpkg 安装到 :file:`C:\vcpkg`
 目录下::
 
     $ cd C:\
@@ -48,7 +48,7 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
     以下假定使用的是 64 位 Windows 系统。对于 32 位 Windows 系统，需要将
     ``x64-windows`` 改成 ``x86-windows``\ 。
 
-::
+先打开一个 CMD 窗口，执行如下命令::
 
     $ vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet x64-windows
     $ vcpkg integrate install
@@ -80,7 +80,7 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 安装 GMT
 --------
 
-将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装::
+将下载的三个压缩文件放在同一个目录里。打开 Git Bash，并按照如下步骤进行安装::
 
    # 解压三个压缩文件
    $ tar -xvf gmt-6.2.0-src.tar.gz
@@ -209,10 +209,8 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 升级/卸载 GMT
 -------------
 
-按照上面的配置，GMT 会被安装到 :file:`/opt/GMT-6.2.0` 目录下。若想要卸载 GMT，
-可以直接删除整个 :file:`/opt/GMT-6.2.0` 即可。
+按照上面的配置，GMT 会被安装到 :file:`C:/programs/gmt6/` 目录下。若想要卸载 GMT，
+可以直接删除整个 :file:`C:/programs/gmt6` 即可。
 
 GMT 不支持自动更新，因而若想要升级 GMT，通常建议先卸载 GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。
-
-当然，高级用户也可以同时安装多个版本的 GMT，但需要注意环境变量 **PATH** 的设置。
