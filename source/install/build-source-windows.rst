@@ -1,24 +1,28 @@
 Windows 下编译 GMT 源码
 =======================
 
-这一节介绍如何在 Windows 下编译 GMT 源码。
+这一节介绍如何在 Windows 系统（Windows 10、Windows 8.1 或 Windows 7）下
+编译 GMT 源码。
 
-系统要求
---------
-
-- Windows 10, 8.1 或 7
-- Visual Studio 2015 Update 3 or newer with "Desktop development with C++" installed
-- Git
-- CMake >= 3.12.4
-
-安装依赖软件
+安装编译工具
 ------------
+
+在 Windows 下编译 GMT 源码，需要先自行下载并安装如下软件：
+
+- `Visual Studio <https://visualstudio.microsoft.com/zh-hans/>`__ \（安装时需要勾选 Desktop development with C++ 相关工具）
+- `Git <https://git-scm.com/downloads>`__
+- `CMake <https://cmake.org/download/>`__
+- `Ghostscript <https://www.ghostscript.com/>`__
+- `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画 [**可选**]
+- `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画 [**可选**]
+
+安装 vcpkg 及依赖软件
+---------------------
 
 GMT 的编译及运行依赖于其他软件。
 
 必须的依赖软件包括：
 
-- `CMake <https://cmake.org/>`__\ （>=2.8.12）
 - `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
 - `curl <https://curl.haxx.se/>`__
 
@@ -31,45 +35,36 @@ GMT 的编译及运行依赖于其他软件。
 - `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）
 - LAPACK：快速矩阵反演库（macOS 下不需要）
 - BLAS：快速矩阵运算库（macOS 下不需要）
-- `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
-- `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
 
-安装依赖软件
-^^^^^^^^^^^^
+Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这些依赖软件。
 
-- CMake
-- Ghostscript
-- GraphicksMagick
-- FFmpeg
+首先，需要安装 vcpkg。打开 CMD，执行如下命令即可将 vcpkg 安装到 :file:`C:\vcpkg`
+目录下::
 
-安装 Vcpkg
-^^^^^^^^^^
+    $ cd C:\
+    $ git clone https://github.com/microsoft/vcpkg
+    $ cd C:\vcpkg
+    $ .\bootstrap-vcpkg.bat
 
-::
+安装完成后，还需要将 vcpkg 的 bin 目录 ``C:\vcpkg\installed\x64-windows\bin``
+添加到环境变量 **PATH** 中。然后即可使用 vcpkg 安装 GMT 依赖的库文件。
 
+.. note::
 
-    cd C:\
-    git clone https://github.com/microsoft/vcpkg
-    cd C:\vcpkg
-    .\bootstrap-vcpkg.bat
-
-安装 GMT 依赖软件
-^^^^^^^^^^^^^^^^^
+    以下假定使用的是 64 位 Windows 系统。对于 32 位 Windows 系统，需要将
+    ``x64-windows`` 改成 ``x86-windows``\ 。
 
 ::
 
-    # Build and install libraries
-    # If you want to build x64 libraries (recommended)
-    vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet x64-windows
+    $ vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet x64-windows
+    $ vcpkg integrate install
 
-    # If you want to build x86 libraries
-    vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet x86-windows
+.. note::
 
-    # hook up user-wide integration (note: requires admin on first use)
-    vcpkg integrate install
+    由于 vcpkg 会从源码编译 GMT 所需的全部依赖库，因而这一步会耗时约 1 小时。
 
-将 GDAL 的 bin 目录 ``C:\vcpkg\installed\x64-windows\tools\gdal`` 添加到 PATH，
-将 vcpkg 的 bin 目录 ``C:\vcpkg\installed\x64-windows\bin`` 添加到 PATH。
+安装完成后，还需要将 GDAL 的 bin 目录 ``C:\vcpkg\installed\x64-windows\tools\gdal``
+添加到环境变量 **PATH** 以保证 GMT 可以调用 GDAL 提供的命令。
 
 下载源码及数据
 --------------
@@ -105,22 +100,15 @@ GMT 的编译及运行依赖于其他软件。
    # 切换到 gmt 源码目录下
    $ cd gmt-6.2.0
 
-   # 用文本编辑器新建并打开 CMake 用户配置文件
-   # Linux 用户
-   $ gedit cmake/ConfigUser.cmake
-   # macOS 用户
-   $ touch cmake/ConfigUser.cmake
-   $ open -a TextEdit cmake/ConfigUser.cmake
-
-向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
+打开 :file:`cmake` 目录，在其中创建文件 :file:`cmake/ConfigUser.cmake`\ ，
+并向文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "C:/programs/gmt6")
     set (GMT_USE_THREADS TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
-  :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.2.0` 等有可读写
-  权限的路径
+  :file:`C:/programs/gmt6` 目录下。用户也可以自行修改为其他路径，但路径中不可以
+  有空格
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
   也可以不设置
 
@@ -207,32 +195,13 @@ GMT 的编译及运行依赖于其他软件。
 修改环境变量
 ------------
 
-打开终端，使用如下命令用文件编辑器打开 Shell 配置文件::
-
-    # Linux 用户
-    $ gedit ~/.bashrc
-
-    # macOS 用户
-    $ open ~/.zshrc
-
-然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
-然后重启终端使其生效::
-
-    export GMT6HOME=/opt/GMT-6.2.0
-    export PATH=${GMT6HOME}/bin:$PATH
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
-
-说明：
-
-- 第一个命令添加了环境变量 **GMT6HOME**
-- 第二个命令修改 GMT6 的 :file:`bin` 目录加入到 **PATH** 中，使得在终端或脚本中可以找到 GMT 命令
-- 第三个命令将 GMT6 的 :file:`lib` 目录加入到动态链接库路径中。
-  通常，32 位系统的路径为 :file:`lib`\ ，64 位系统的路径为 :file:`lib64`
+安装完成后，需要将 GMT 的 bin 目录 ``C:/programs/gmt6/bin`` 添加到环境变量
+**PATH** 中。
 
 测试是否安装成功
 ----------------
 
-重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
+启动 CMD，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
     $ gmt --version
     6.2.0
