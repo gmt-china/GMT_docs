@@ -3,6 +3,8 @@
 
 :贡献者: |田冬冬|
 
+----
+
 `conda <https://conda.io/>`__ 是由 `Anaconda <https://www.anaconda.com/>`__
 提供的一个跨平台软件包管理器。conda 的 `conda-forge <https://conda-forge.org/>`__
 频道提供了 GMT 安装包。使用 conda 安装 GMT 的优点有：跨平台、安装简单、版本切换方便等。
