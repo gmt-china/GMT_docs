@@ -83,4 +83,4 @@ Linux 常用命令
 
 Bash 脚本本身功能有限，因而经常需要与 Linux 下的命令结合在一起使用。
 
-- `《地震 “学” 科研入门教程：Linux 常用命令》 <https://seismo-learn.org/seismology101/computer/commands/>`__
+- `《地震“学”科研入门教程：Linux 常用命令》 <https://seismo-learn.org/seismology101/computer/commands/>`__

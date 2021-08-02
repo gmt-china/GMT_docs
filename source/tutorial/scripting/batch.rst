@@ -52,7 +52,7 @@ Batch 基础
 	REM Batch 中可以将命令的输出写到文件中，然后用 set /p var=<file 的方式将文件中的内容作为变量的值
 	gmt info input.dat -I1/1 > tmp.dat
    	set /p new_region=<tmp.dat
-	gmt plot input.dat -J% projection% % new_region%
+	gmt plot input.dat -J%projection% %new_region%
 
 	REM 长命令续行符
 	REM 当一个命令较长时，可以将命令拆分为多行，每行行末用续行符 ^ 表示下一行命令
