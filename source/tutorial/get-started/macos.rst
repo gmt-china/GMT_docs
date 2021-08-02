@@ -7,7 +7,7 @@ GMT 初探: macOS 篇
 GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图操作都需要通过
 在终端和脚本中执行命令来完成。
 
-macOS 下可以使用 :kbd:`Command + 空格键` 启动 Splitlight，在弹出的搜索框中输入
+macOS 下可以使用 :kbd:`Command + 空格键` 启动 Spotlight，在弹出的搜索框中输入
 “terminal” 再按回车即可打开终端。
 
 运行 GMT
