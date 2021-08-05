@@ -16,9 +16,7 @@ GMT 支持多种格式的表数据：
 ASCII 表格式最常用，因为其较直观，且可直接编辑。
 二进制表和 netCDF 表相对不直观，但文件大小更小。
 
-GDAL 提供的 ``ogr2ogr`` 命令可以将其它格式的表数据转换为 GMT 可识别的 GMT/OGR 格式：
+.. note::
 
-.. toctree::
-   :maxdepth: 1
-
-   ogr2ogr
+   GDAL 提供的 :ref:`ogr2ogr <ogr2ogr>` 命令可以将其它格式的表数据转换为
+   GMT 可识别的 OGR/GMT 格式。

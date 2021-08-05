@@ -10,9 +10,9 @@ import datetime
 
 # -- Project configuration ------------------------------------------------
 master_doc = "index"
-project = "GMT中文手册"
-author = "GMT中文社区"
-copyright = "2014-{}, {}".format(datetime.date.today().year, author)
+project = "GMT 中文手册"
+author = "GMT 中文社区"
+copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
@@ -36,7 +36,7 @@ source_suffix = ".rst"
 source_encoding = "utf-8-sig"
 nitpicky = True
 language = "zh_CN"
-today_fmt = "%Y年%m月%d日"
+today_fmt = "%Y 年 %m 月 %d 日"
 exclude_patterns = []
 
 highlight_language = "bash"
@@ -48,8 +48,8 @@ extensions = [
     "sphinx.ext.duration",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
-    "sphinx_cjkspace.cjkspace",
     "sphinx_copybutton",
+    "sphinx_cjkspace.cjkspace",
     "sphinx_gmt.gmtplot",
 ]
 mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -75,19 +75,20 @@ import sphinx_rtd_theme
 
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-templates_path = ["_templates"]
-html_title = project
-html_logo = None
-html_favicon = "favicon.ico"
-html_static_path = ["_static"]
-html_extra_path = []
-html_last_updated_fmt = "%Y年%m月%d日"
-html_search_language = "zh"
 html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "sticky_navigation": False,
 }
+html_css_files = ["custom.css"]
+templates_path = ["_templates"]
+html_static_path = ["_static"]
+html_extra_path = []
+html_last_updated_fmt = "%Y 年 %m 月 %d 日"
+html_search_language = "zh"
+html_title = project
+
 html_context = {
+    "favicon": "favicon.ico",
     "display_github": True,
     "github_user": github_user,
     "github_repo": github_repo,
@@ -118,10 +119,6 @@ html_context = {
     ],
 }
 
-html_css_files = [
-    "custom.css",
-]
-
 # See https://github.com/rtfd/sphinx_rtd_theme/issues/761
 # Load custom stylesheets to support Algolia search.
 # html_css_files = [
@@ -138,9 +135,7 @@ html_css_files = [
 
 # -- Options for LaTeX output ---------------------------------------------
 latex_engine = "xelatex"
-latex_documents = [
-    (master_doc, "GMT_docs.tex", project, author, "ctexbook"),
-]
+latex_documents = [(master_doc, "GMT_docs.tex", project, author, "ctexbook")]
 latex_logo = None
 latex_toplevel_sectioning = "chapter"
 latex_additional_files = ["GMT_style.sty"]
