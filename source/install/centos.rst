@@ -1,6 +1,10 @@
 CentOS 下安装 GMT
 =================
 
+:贡献者: |田冬冬|
+
+----
+
 CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
