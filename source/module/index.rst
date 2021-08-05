@@ -82,6 +82,7 @@
     - :doc:`ternary`
     - :doc:`text`
     - :doc:`velo`
+    - :doc:`wiggle`
     - :doc:`xyz2grd`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
@@ -168,7 +169,6 @@
     - :doc:`gmt:trend1d`
     - :doc:`gmt:trend2d`
     - :doc:`gmt:triangulate`
-    - :doc:`gmt:wiggle`
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
@@ -226,7 +226,7 @@
 :doc:`ternary`                                   绘制三角图解
 :doc:`gmt:mask`                                  将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
-:doc:`gmt:wiggle`                                沿着测线绘制 z = f(x,y) 数据
+:doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
 :doc:`gmt:supplements/segy/segy`                 在图上绘制SEGY文件
 :doc:`gmt:supplements/segy/segyz`                在3D图上绘制SEGYZ文件
 :doc:`gmtlogo`                                   在图上绘制GMT图形logo
@@ -438,6 +438,7 @@
    ternary
    text
    velo
+   wiggle
    xyz2grd
 
 .. raw:: latex
