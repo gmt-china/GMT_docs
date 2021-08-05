@@ -74,9 +74,9 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 .. gmtplot::
    :show-code: true
    :width: 50%
-   
+
     gmt begin CN-single-fault png
-        gmt basemap -R98/105/22/27 -JM15c -Ba 
+        gmt basemap -R98/105/22/27 -JM15c -Ba
         # -S: output record contains specified field attribute
         gmt convert CN-faults.gmt -S"断层名称=红河断裂" | gmt plot
     gmt end show
@@ -90,7 +90,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 .. gmtplot::
    :show-code: true
    :width: 50%
-   
+
     gmt begin CN-buffer-fault png,pdf
         gmt basemap -R109/113/34/37 -JM15c -Ba
         # draw a circle with a radius of 100 km
@@ -107,10 +107,11 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 
 2.  格式转换
 
-    使用 :doc:`ogr2ogr </table/ogr2ogr>` 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
+    使用 GDAL 的 :ref:`ogr2ogr <ogr2ogr>` 命令
+    将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式::
 
         ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp
-    
+
     若不关注属性信息，也可以直接使用 GMT 读取 Shapefile 格式的源数据进行绘图。
 
 社区提供的 :file:`CN-faults.gmt` 文件还参考了《最新 1/400 万中国活动构造空间数据库的建立》，
@@ -119,7 +120,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 数据引用
 --------
 
-- 邓起东. 2007. 
+- 邓起东. 2007.
   中国活动构造图 (1:400 万).
   地震出版社.
 - 屈春燕. 2008.
@@ -127,6 +128,6 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
   地震地质, 30(1):298-304.
   http://dx.chinadoi.cn/10.3969/j.issn.0253-4967.2008.01.022
 - Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003.
-  Active tectonics and earthquake activities in China. 
+  Active tectonics and earthquake activities in China.
   Earth Science Frontiers, 10(S1): 66-73.
   https://en.cnki.com.cn/Article_en/CJFDTotal-DXQY2003S1011.htm.

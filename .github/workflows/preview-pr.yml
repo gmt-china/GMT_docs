@@ -16,7 +16,7 @@ jobs:
         shell: bash -l {0}
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.0
+        uses: styfle/cancel-workflow-action@0.9.1
 
       - name: Checkout
         uses: actions/checkout@v2.3.4
@@ -32,6 +32,8 @@ jobs:
         run: |
           conda install -c conda-forge gmt=${GMT_VERSION}
           pip install -r requirements.txt
+          # Install packages for GMT LaTeX integration 
+          sudo apt install texlive-latex-base texlive-binaries texlive-fonts-recommended
 
       - name: Download remote data from GitHub
         uses: dawidd6/action-download-artifact@v2.14.0

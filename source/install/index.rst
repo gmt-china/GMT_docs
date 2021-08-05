@@ -9,20 +9,22 @@
 .. toctree::
    :maxdepth: 1
 
-   linux
    windows
    macOS
+   fedora
+   centos
+   ubuntu-debian
 
-同时适用于 Linux、macOS 以及 Windows 的 GMT 二进制包安装（即跨平台安装）：
-
-.. toctree::
-   :maxdepth: 1
-
-   cross-platform
-
-需要修改和编译 GMT 源码的用户可以选择编译源码安装：
+跨平台软件包管理器 **conda** 为 Linux、macOS 和 Windows 提供了 GMT 二进制包：
 
 .. toctree::
    :maxdepth: 1
 
-   build-source
+   conda
+
+某些 Linux 发行版未提供最新版本的 GMT 二进制包。可以选择编译源码安装：
+
+.. toctree::
+   :maxdepth: 1
+
+   build-source-unix
