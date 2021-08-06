@@ -200,12 +200,12 @@ Bugs
 某些情况下，(x,y) 坐标的有效数字位数不足，导致局部方位角变化较大，异常摆动也较大。
 使用下面命令可以查看是否存在这种情况::
 
-    gmt mapproject -Af yourdata.xyz | more
+    gmt mapproject -Af yourdata.xyz
 
 如果存在上述情况，可以使用 :doc:`filter1d` 对数据滤波::
 
     awk '{ print NR, $0 }' yourdata.xyz \
-    | filter1d -Fb5 -N4 --FORMAT_FLOAT_OUT=%.12g > smoothed.xyz
+    | gmt filter1d -Fb5 -N4 --FORMAT_FLOAT_OUT=%.12g > smoothed.xyz
 
 上述命令使用了 5 个点的 boxcar 滤波，然后可以使用处理后的数据绘图。
 
