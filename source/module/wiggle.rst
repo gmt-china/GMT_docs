@@ -174,11 +174,10 @@ wiggle
     其中使用远程文件（文件名以 ``@`` 开头）的示例可以直接复制并粘贴到终端运行。
     其他需要输入文件的示例仅用于展示模块用法，由于未提供输入文件，不能执行。
 
-为了演示本模块的用法，这里首先使用 :doc:`gmt:gmtmath` 模块创建数据，\
-然后使用管道传输给 wiggle ::
+为了演示本模块的用法，这里首先使用 :doc:`gmt:gmtmath` 模块创建数据文件
+:download:`temp.dat </module/wiggle/temp.dat>`，然后使用 wiggle 绘制该数据::
 
-    gmt math -T-8/6/0.01 -N3/0 -C2 T 3 DIV 2 POW NEG EXP T PI 2 MUL MUL COS MUL 50 MUL = \
-    | gmt wiggle -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne -pdf map
+    gmt wiggle temp.dat -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne -pdf map
 
 使用 :file:`track.xym` 文件绘制沿轨磁异常，移去均值（32000 nTesla），
 比例尺设置为图上 1 cm 代表实际 500 nTesla。
