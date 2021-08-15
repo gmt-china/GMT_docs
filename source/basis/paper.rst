@@ -31,7 +31,7 @@ JPG（**推荐**）、BMP、PPM 和 TIFF 格式。
 PDF 和 PNG 格式的图片::
 
     gmt begin figname pdf,png
-        gmt ...
+        gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt end show
 
 .. tip::
