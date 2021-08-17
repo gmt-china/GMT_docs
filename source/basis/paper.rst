@@ -102,6 +102,4 @@ GMT 在绘图时，默认的绘图原点位于画布左下角 (12.7 cm, 12.7 cm)
 如果需要移动绘图原点，只能向右和向上移动，而不能向左或向下移动。向左或向下移动绘图原点，
 均可能使得部分图件超过画布左边距或下边界，导致图件被部分截断。
 
-TODO: 这里计划增加一张类似下面的图。
-
-.. figure:: https://docs.gmt-china.org/5.4/_images/paper-gmtplot-1.png
+.. figure:: https://user-images.githubusercontent.com/3974108/129662085-62875cc5-05b4-4123-a431-687cddfd89d9.png
