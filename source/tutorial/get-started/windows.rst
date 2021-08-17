@@ -1,20 +1,22 @@
-GMT初探: Windows篇
-==================
+GMT 初探: Windows 篇
+====================
 
-启动CMD命令行
--------------
+启动 CMD 命令行
+---------------
 
-GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图操作都需要通过
-在终端和脚本中执行命令来完成。Windows下的默认终端是“命令提示符”，
-也就是CMD命令行。
+GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图操作都需要通过
+在终端和脚本中执行命令来完成。Windows 下的默认终端是 “命令提示符”，
+也就是 CMD 命令行。
 
-点击“开始”→“附件”→“命令提示符”即可启动CMD，
-也可以直接在开始按钮中的搜索框中搜索“CMD”并启动。
+点击 “开始”→“附件”→“命令提示符” 即可启动 CMD，
+也可以直接在开始按钮中的搜索框中搜索 “CMD” 并启动。
 
-运行GMT
--------
+运行 GMT
+--------
 
-启动CMD后，敲入 ``gmt`` 以执行GMT命令。你将看到GMT的欢迎界面信息，类似于::
+启动 CMD 后，敲入 ``gmt`` 以执行 GMT 命令。你将看到 GMT 的欢迎界面信息，类似于：
+
+.. code-block:: console
 
             GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
@@ -58,25 +60,25 @@ GMT是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
     gmt --new-script > myplot.bat
 
-该命令会在当前目录生成一个GMT模板脚本，并保存到Batch脚本文件 :file:`myplot.bat` 中。
+该命令会在当前目录生成一个 GMT 模板脚本，并保存到 Batch 脚本文件 :file:`myplot.bat` 中。
 
 .. note::
 
-    Batch是Windows自带的脚本语言，但本教程中所有示例均使用Unix下常用的Bash脚本。
-    因而Windows用户有两种选择：
+    Batch 是 Windows 自带的脚本语言，但本教程中所有示例均使用 Unix 下常用的 Bash 脚本。
+    因而 Windows 用户有两种选择：
 
     #. 安装 `Git for Windows <https://git-scm.com/download/win>`_ 并使用其提供的
-       Bash，本手册中的所有命令都将可以直接使用。要求读者对Bash脚本及Unix命令行有最基本的了解。
-       不了解的用户请阅读网络上Bash相关教程，或本手册中 :doc:`/tutorial/scripting` 一节。
-    #. 继续使用Windows的Batch脚本。要求读者对Batch脚本和Bash脚本均有所了解，并
-       知道二者用法的差异，以便于将手册中的Bash脚本转换为Batch脚本。
-       不了解的用户请阅读网络上Bash和Batch相关教程，或本手册中
-       :doc:`/tutorial/scripting` 一节。
+       Bash，本手册中的所有命令都将可以直接使用。要求读者对 Bash 脚本及 Unix 命令行有最基本的了解。
+       不了解的用户请阅读网络上 Bash 相关教程，或本手册中 :doc:`/tutorial/scripting/index` 一节。
+    #. 继续使用 Windows 的 Batch 脚本。要求读者对 Batch 脚本和 Bash 脚本均有所了解，并
+       知道二者用法的差异，以便于将手册中的 Bash 脚本转换为 Batch 脚本。
+       不了解的用户请阅读网络上 Bash 和 Batch 相关教程，或本手册中
+       :doc:`/tutorial/scripting/index` 一节。
 
 查看并编辑脚本文件
 ------------------
 
-Batch脚本文件是一个纯文本文件，可以直接用文本编辑器打开。例如，Windows下自带的记事本
+Batch 脚本文件是一个纯文本文件，可以直接用文本编辑器打开。例如，Windows 下自带的记事本
 即可打开该脚本文件。
 
 打开脚本文件后会看到如下内容::
@@ -95,7 +97,7 @@ Batch脚本文件是一个纯文本文件，可以直接用文本编辑器打开
 其中，以 **REM** 开头的行尾注释行，\ **set GMT_SESSION_NAME=7492** 这一行属于
 高级用法，可以忽略。核心内容只有两行，即 **gmt begin** 和 **gmt end** 这两行。
 
-编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加GMT命令，将脚本修改如下::
+编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加 GMT 命令，将脚本修改如下::
 
     REM GMT modern mode batch template
     REM Date:    2019-09-02T23:34:25
@@ -113,11 +115,11 @@ Batch脚本文件是一个纯文本文件，可以直接用文本编辑器打开
 执行脚本以绘图
 --------------
 
-回到CMD，直接输入Batch脚本名以运行该脚本::
+回到 CMD，直接输入 Batch 脚本名以运行该脚本::
 
     myplot.bat
 
-待脚本执行完成后，会自动用PDF阅读器打开生成的PDF格式的图片文件。
+待脚本执行完成后，会自动用 PDF 阅读器打开生成的 PDF 格式的图片文件。
 你将看到如下图所示的图片。
 
 .. gmtplot::
@@ -134,8 +136,8 @@ Batch脚本文件是一个纯文本文件，可以直接用文本编辑器打开
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end
 
-这基本上就是运行GMT脚本的基本流程，即：
+这基本上就是运行 GMT 脚本的基本流程，即：
 
 - 生成脚本模板
-- 编辑脚本，添加GMT绘图命令
+- 编辑脚本，添加 GMT 绘图命令
 - 运行脚本并查看绘图效果

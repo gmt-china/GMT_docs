@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # 将三维地形、卫星图片以及断层线绘制在不同高度
 
 gmt begin 3D_earth_relief_1 pdf,png

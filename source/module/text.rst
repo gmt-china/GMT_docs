@@ -51,12 +51,12 @@ text
 
     - **+to**: 直角矩形 [默认值]
     - **+tO**: 圆角矩形
-    - **+Tc**: 凹矩形（与 **-M** 选项一起使用）
-    - **-TC**：凸矩形（与 **-M** 选项一起使用）
+    - **+tc**: 凹矩形（与 **-M** 选项一起使用）
+    - **+tC**：凸矩形（与 **-M** 选项一起使用）
 
     下图展示了 **-C** 选项的作用。
 
-    .. gmtplot:: /scripts/text_clearance.sh
+    .. gmtplot:: text/text_clearance.sh
        :show-code: false
        :width: 80%
 
@@ -181,7 +181,7 @@ text
 
     段头记录后即为要显示在图上的文本，每段数据之间用空行分隔。
 
-    .. gmtplot:: /scripts/text_-M.sh
+    .. gmtplot:: text/text_-M.sh
 
        段落模式示意图
 
@@ -213,7 +213,7 @@ text
 
 下面的例子中设置文本框的相关属性：蓝色边框、淡蓝填充色、圆角矩形，空白为 ``100%/100%`` ::
 
-    gmt text -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -TO -C100%/100% -pdf text << EOF
+    gmt text -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -C100%/100%+tO -pdf text << EOF
     3   1   Text1
     6   3   Text2
     EOF
