@@ -7,7 +7,7 @@ GSHHG: 全球高分辨率海岸线数据
 
    GSHHG: 全球高分辨率海岸线数据
 
-**GSHHG数据主页**\ ： http://www.soest.hawaii.edu/wessel/gshhg/
+**GSHHG数据主页**： http://www.soest.hawaii.edu/wessel/gshhg/
 
 GSHHG，全称为 A Global Self-consistent, Hierarchical, High-resolution Geography Database。
 GMT提供的GSHHG数据中包含了海岸线、河流和国界等数据。

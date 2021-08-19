@@ -20,15 +20,15 @@ GMT 的编译及运行依赖于其他软件。
 
 可选的依赖软件包括：
 
-- `Ghostscript <https://www.ghostscript.com/>`__\ ：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据
-- `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持
-- `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3，macOS 下不需要）
-- `GLib <https://wiki.gnome.org/Projects/GLib>`__\ ：GTHREAD 多线程支持（>=2.32）
+- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据
+- `PCRE <https://www.pcre.org/>`__：正则表达式支持
+- `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）
+- `GLib <https://wiki.gnome.org/Projects/GLib>`__：GTHREAD 多线程支持（>=2.32）
 - LAPACK：快速矩阵反演库（macOS 下不需要）
 - BLAS：快速矩阵运算库（macOS 下不需要）
-- `GraphicsMagick <http://www.graphicsmagick.org>`__\ ：生成 GIF 格式的动画
-- `FFmpeg <http://www.ffmpeg.org/>`__\ ：生成 MP4 格式的动画
+- `GraphicsMagick <http://www.graphicsmagick.org>`__：生成 GIF 格式的动画
+- `FFmpeg <http://www.ffmpeg.org/>`__：生成 MP4 格式的动画
 
 Fedora::
 

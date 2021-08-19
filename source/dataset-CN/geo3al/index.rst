@@ -14,7 +14,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 
 中文社区提供了可供 GMT 直接使用的数据文件：
 
-- :file:`geo3al.gmt`\ ：中国及邻区地质图数据
+- :file:`geo3al.gmt`：中国及邻区地质图数据
 
 数据的具体下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
@@ -22,11 +22,11 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 `geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__
 以获取元信息的更多细节）：
 
-- ``NAREA``\ ：地层多边形区域的面积（单位 :math:`m^2`）
-- ``PERIMETER``\ ：地层多边形区域的周长（单位 m）
-- ``TYPE``\ ：岩性
-- ``GLG``\ ：原始地图上显示地表露头的地质年代
-- ``GEN_GLG``\ ：编者从 ``GLG`` 中计算得到的地质年代，在单元年龄跨越一个以上地质年龄的情况下用“代”表示
+- ``NAREA``：地层多边形区域的面积（单位 :math:`m^2`）
+- ``PERIMETER``：地层多边形区域的周长（单位 m）
+- ``TYPE``：岩性
+- ``GLG``：原始地图上显示地表露头的地质年代
+- ``GEN_GLG``：编者从 ``GLG`` 中计算得到的地质年代，在单元年龄跨越一个以上地质年龄的情况下用“代”表示
 
 示例图
 ------
