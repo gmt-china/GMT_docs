@@ -48,19 +48,19 @@ PS参数
 
         可以取值为：
 
-        - **rle**\ ：Run-Length Encoding scheme
-        - **lzw**\ ：Lempel-Ziv-Welch compression
-        - **deflate**\ [,\ *level*\ ]\ ：DEFLATE 压缩，\ *level* 可以取1到9
-        - **none**\ ：不压缩，相当于 **deflate,5**
+        - **rle**：Run-Length Encoding scheme
+        - **lzw**：Lempel-Ziv-Welch compression
+        - **deflate**\ [,\ *level*\ ]：DEFLATE 压缩，\ *level* 可以取1到9
+        - **none**：不压缩，相当于 **deflate,5**
 
     **PS_LINE_CAP**
         控制线段的\ **端点**\ 的绘制方式 [**butt**]
 
         可以取如下值：
 
-        - **butt**\ ：不对端点做特殊处理，即端点是矩形（默认值）
-        - **round**\ ：端点处为直径与线宽相等的半圆弧
-        - **square**\ ：端点处为边长与线宽相等的半个正方形
+        - **butt**：不对端点做特殊处理，即端点是矩形（默认值）
+        - **round**：端点处为直径与线宽相等的半圆弧
+        - **square**：端点处为边长与线宽相等的半个正方形
 
         下图展示了该参数取不同值时线段端点的区别。需要注意，图中三条线段的
         长度是相同的，但因参数设置不同而导致线段看上去长度不同。

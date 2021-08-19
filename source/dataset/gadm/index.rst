@@ -1,7 +1,7 @@
 GADM: 全球行政区划数据库
 ========================
 
-**GADM主页**\ ：https://gadm.org/
+**GADM主页**：https://gadm.org/
 
 GADM，全称Database of Global Administrative Areas，是一个高精度的全球行政区划
 数据库。其包含了全球所有国家和地区的国界、省界、市界、区界等多个级别的行政区划边界数据。

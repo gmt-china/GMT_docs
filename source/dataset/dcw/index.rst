@@ -7,7 +7,7 @@ DCW: 世界数字图表
 
    DCW: 世界数字图表
 
-**DCW数据主页**\ ： http://www.soest.hawaii.edu/wessel/dcw/
+**DCW数据主页**： http://www.soest.hawaii.edu/wessel/dcw/
 
 DCW，全称为 Digital Chart of the World，即世界数字图表。
 GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其中包含了如下行政边界数据：

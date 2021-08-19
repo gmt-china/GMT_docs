@@ -31,9 +31,9 @@ CN-border 是 GMT 中文社区为用户提供的一套数字化的国界数据�
 
 CN-border 数据提供了三个数据文件：
 
-- :file:`CN-border-La.gmt`\ ：中国国界、省界、十段线以及南海诸岛数据
-- :file:`CN-border-L1.gmt`\ ：中国国界、十段线以及南海诸岛数据，不含省界数据
-- :file:`ten-dash-line.gmt`\ ：仅十段线数据
+- :file:`CN-border-La.gmt`：中国国界、省界、十段线以及南海诸岛数据
+- :file:`CN-border-L1.gmt`：中国国界、十段线以及南海诸岛数据，不含省界数据
+- :file:`ten-dash-line.gmt`：仅十段线数据
 
 具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
 
