@@ -50,7 +50,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
 
 地震学在绘制震源机制解时，就是将三维的辐射花样信息投影到一个水平面内。
 投影的方式有两种：Schmidt 网和 Wulff 网。其中 Schmidt 网使用的就是 Lambert 方位
-等面积投影（中心经纬度为 0/0），Wulff 网使用的则是等角度的立体投影（\ **-JS**\ ）。
+等面积投影（中心经纬度为 0/0），Wulff 网使用的则是等角度的立体投影（**-JS**\ ）。
 两种震源球投影方式如下图所示：
 
 .. gmtplot::

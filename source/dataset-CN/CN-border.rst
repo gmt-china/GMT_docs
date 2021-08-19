@@ -40,7 +40,7 @@ CN-border 数据提供了三个数据文件：
 示例图
 ------
 
-使用等距圆锥投影（\ **-JD**\ ）绘制中国国界省界数据：
+使用等距圆锥投影（**-JD**\ ）绘制中国国界省界数据：
 
 .. gmtplot::
    :show-code: true
@@ -52,7 +52,7 @@ CN-border 数据提供了三个数据文件：
         gmt plot CN-border-La.gmt -W0.1p
     gmt end show
 
-使用墨卡托投影（\ **-JM**\ ）绘制中国国界省界数据：
+使用墨卡托投影（**-JM**\ ）绘制中国国界省界数据：
 
 .. gmtplot::
    :show-code: true
