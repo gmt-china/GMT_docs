@@ -25,7 +25,7 @@ grdconvert
     要读入的网格文件。
 
     若读入的网格文件不是标准的netCDF格式文件，则需要加上 **=**\ *id* 以指定
-    网格文件格式（见 :doc:`/grid/format`\ ）。此外，
+    网格文件格式（见 :doc:`/grid/format`）。此外，
 
     - **+s**\ *scale* 对数据做比例缩放，即将数据乘以 *scale*
     - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset*
@@ -43,7 +43,7 @@ grdconvert
     要写入的网格文件。
 
     若要写的网格文件格式不是标准的netCDF格式，则需要加上 **=**\ *id* 以指定
-    网格文件格式（见 :doc:`/grid/format`\ ）。此外：
+    网格文件格式（见 :doc:`/grid/format`）。此外：
 
     - **+s**\ *scale* 对数据做比例缩放，即将数据乘以 *scale*
     - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset*

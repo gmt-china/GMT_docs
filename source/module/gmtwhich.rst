@@ -81,6 +81,6 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
 
     gmt which -Ga @earth_relief_10m
 
-从GMT数据服务器下载GMT示例数据。该数据会被下载到GMT缓存目录中（默认为 ``~/.gmt/cache``\ ）::
+从GMT数据服务器下载GMT示例数据。该数据会被下载到GMT缓存目录中（默认为 ``~/.gmt/cache``）::
 
     gmt which -Gc @hotspots.txt

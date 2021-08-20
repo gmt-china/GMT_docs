@@ -86,10 +86,10 @@ Helvetica（ *helvet* 包, 代码为 *phv* ），该 tex 文件会被转换为 D
 
     dvips -q -E gmt_eq.dvi -o equation.eps
 
-这两个命令通过 :file:`gmt_eq.sh` 脚本（在 windows 下为 :file:`gmt_eq.bat`\ ）执行。
+这两个命令通过 :file:`gmt_eq.sh` 脚本（在 windows 下为 :file:`gmt_eq.bat`）执行。
 如果命令成功执行，GMT 将读取 EPS 文件 :file:`equation.eps` 并放置在标题的位置。
 如果脚本由于某些原因执行失败，GMT 将报错并指导用户在临时目录中进行进一步排查。
-此时，用户可以运行 ``latex`` 命令来查看报错信息（但要去除重定向 ``> /dev/null``\ ）。
+此时，用户可以运行 ``latex`` 命令来查看报错信息（但要去除重定向 ``> /dev/null``）。
 通常情况下，报错信息会显示问题出现的原因，即缺少某种字体或其他信息。
 如果用户不能独立解决报错，请在 `GMT 官方 GitHub <https://github.com/GenericMappingTools/gmt/issues>`_
 上提 issue 并提供 LaTeX 脚本和报错信息。

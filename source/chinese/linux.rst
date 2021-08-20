@@ -21,7 +21,7 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 可以使用 `cjk-gs-support <https://github.com/texjporg/cjk-gs-support>`_
 项目提供的脚本 `cjk-gs-integrate.pl`_ 来实现ghostscript的中文支持。
 
-1.  从Windows下获取四种基本字体的字体文件（文件名类似于 ``simsun.ttc``\ ）并复制到
+1.  从Windows下获取四种基本字体的字体文件（文件名类似于 ``simsun.ttc``）并复制到
     ``/usr/share/fonts/winfonts/`` 目录下
 2.  下载脚本 `cjk-gs-integrate.pl`_
 3.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``，该命令由 TeXLive 提供。

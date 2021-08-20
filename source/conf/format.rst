@@ -17,7 +17,7 @@ FORMAT参数
         对于公历而言，可以将如下模板做合理组合：
 
         - **yyyy**：四位年份
-        - **yy**：两位年份（见 :term:`TIME_Y2K_OFFSET_YEAR`\ ）
+        - **yy**：两位年份（见 :term:`TIME_Y2K_OFFSET_YEAR`）
         - **mm**：两位月份
         - **o**：月份的名称简写
         - **dd**：两位日期
