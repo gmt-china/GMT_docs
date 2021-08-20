@@ -6,9 +6,9 @@
 控制。这一节则主要介绍矢量头的属性及控制方式。
 
 GMT 中能够绘制矢量的模块有
-:doc:`/module/plot`\ 、
-:doc:`gmt:plot3d`\ 、
-:doc:`/module/grdvector`\ 、
+:doc:`/module/plot`、
+:doc:`gmt:plot3d`、
+:doc:`/module/grdvector`、
 :doc:`/module/velo` \ 等。
 其中最常见的绘制矢量的模块是 :doc:`/module/plot`。
 

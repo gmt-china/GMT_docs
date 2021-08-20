@@ -71,7 +71,7 @@ grdlandmask
     在根据 **-N** 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。
     例如，海岸线穿过的网格单元值将被修改为 *cborder*\ ；同理，
     岛边界、湖内岛、湖内岛中的小湖边界穿过的网格单元值会被依次修改为
-    *lborder*\ 、\ *iborder*\ 、\ *pborder* 的值。
+    *lborder*、*iborder*、*pborder* 的值。
 
 .. _-N:
 

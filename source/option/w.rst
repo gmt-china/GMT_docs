@@ -28,7 +28,7 @@
 GMT 提供了很多规定单位的标准时间循环以及用于其他笛卡尔坐标的自定义循环。
 下表给出了每种循环的单位、周期以及相移。
 用户在使用时，只需指定相应的代码
-**y**\ 、\ **a**\ 、\ **w**\ 、\ **d**\ 、\ **h**\ 、\ **m**\ 、\ **s**\ 、\ **c**\ *period*\ [/*phase*]：
+**y**、**a**、**w**、**d**、**h**、**m**、**s**、**c**\ *period*\ [/*phase*]：
 
 .. table:: 标准时间循环代码
     :align: center
@@ -53,7 +53,7 @@ GMT 提供了很多规定单位的标准时间循环以及用于其他笛卡尔�
 
    - 使用年循环（**a** 代码）或周循环（**w** 代码）时，横轴为时间轴。
      因此，可以使用与月份和工作日相关的配置参数，
-     如 :term:`GMT_LANGUAGE`\ 、\ :term:`FORMAT_TIME_PRIMARY_MAP` 以及 :term:`TIME_WEEK_START`
+     如 :term:`GMT_LANGUAGE`、:term:`FORMAT_TIME_PRIMARY_MAP` 以及 :term:`TIME_WEEK_START`
    - 周循环（**w** 代码）中范围为 0-1 的坐标代表一周的第一天（即星期一），
      但可以通过 :term:`TIME_WEEK_START` 进行修改
    - 使用 **-w** 选项时，除非已经单独设置，否则 GMT 会自动设置 **-f** 选项来表明使用的是绝对时间

@@ -87,7 +87,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 **-D**\ [**i**]
 	将背景色和前景色分别设置为输出的CPT文件中最低值和最高值对应的颜色。
 	不设置本项时，GMT默认使用主CPT文件规定的背景色与前景色，或是采用配置参数
-	:term:`COLOR_BACKGROUND`\、\ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
+	:term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 	加上 **i** 则设置为主CPT文件中最低值和最高值对应的颜色。
 
 .. _-E:

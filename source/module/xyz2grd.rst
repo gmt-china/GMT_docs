@@ -13,8 +13,8 @@ xyz2grd
 
 注意，该模块只是将已存在的数据转换为网格数据，并不具备网格化/插值功能。
 若需要网格化功能，可以使用模块
-:doc:`gmt:surface`\ 、
-:doc:`gmt:greenspline`\ 、
+:doc:`gmt:surface`、
+:doc:`gmt:greenspline`、
 :doc:`gmt:nearneighbor`
 或 :doc:`gmt:triangulate`。
 
@@ -107,7 +107,7 @@ xyz2grd
     在确定数据的排列顺序时，需要指定数据的起点以及数据排序的方向。
 
     -  **数据起点**：可以取网格的四个顶点中的任意一个作为起点，四个顶点分别用
-       **TL**\ 、\ **TR**\ 、\ **BL**\ 和 **BR** 表示，
+       **TL**、**TR**、**BL**\ 和 **BR** 表示，
        其中 **T** 代表 Top，\ **B** 代表Bottom，\ **L** 代表Left，\ **R** 代表Right。
     -  **排序方式**\：选取数据顶点之后，数据可以是行优先也可以是列优先，所以有两种
        排序方式。若是行优先，则 T|B 位于 L|R 的前面；若列优先，则 L|R 位于 T|B 的前面。

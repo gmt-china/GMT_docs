@@ -79,7 +79,7 @@ GMT6 既支持传统的经典模式，也支持全新的现代模式。
 #. 去掉 **-K**, **-O**, **-P**, 重定向符号以及 PS 文件名
 #. 去掉多余的 **-J**, **-R** 选项
 #. 某些模块在现代模式下有新的名称。经典模式下以 **ps** 开头的模块省略 **ps**，
-   比如 **pscoast** → **coast**\ 、\ **psbasemap** → **basemap**。
+   比如 **pscoast** → **coast**、**psbasemap** → **basemap**。
    有三个模块属于例外，\ **psxy** → **plot**, **psxyz** → **plot3d**,
    **psscale** → **colorbar**
 #. 在需要绘制多子图、图中图时，考虑使用 **inset** 和 **subplot** 改写

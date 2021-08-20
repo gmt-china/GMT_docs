@@ -31,12 +31,12 @@ IO参数
     **IO_FIRST_HEADER**
         当整个数据文件中只有一个数据段时，是否要写这个数据段的文件头记录。
         默认情况下，只有当这个单独段的头段记录中有额外的内容时才会写该头记录。
-        可选的值包括 **always**\ 、\ **never** 和 **maybe** [**maybe**]
+        可选的值包括 **always**、**never** 和 **maybe** [**maybe**]
 
     **IO_COL_SEPARATOR**
         GMT输出ASCII表数据时列与列之间的分隔符 [tab]
 
-        可以取 **tab**\ 、\ **space**\ 、\ **comma** 和 **none**
+        可以取 **tab**、**space**、**comma** 和 **none**
 
     **IO_SEGMENT_MARKER**
         多段数据中每段数据开始的标识符 [**>**]

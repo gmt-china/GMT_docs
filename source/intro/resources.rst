@@ -7,8 +7,8 @@
 **入门教程**
 
 #. `GMT6 初学者视频教程 <https://www.bilibili.com/video/BV1C64y1m7qP>`__
-   （\ |刘珠妹|\ 、\ |陈箫翰|\ ）
-#. GMT 中文手册：\ :doc:`入门教程 </tutorial/started>`\ 、\ :doc:`进阶教程 </tutorial/advanced>`
+   （\ |刘珠妹|、|陈箫翰|\ ）
+#. GMT 中文手册：\ :doc:`入门教程 </tutorial/started>`、:doc:`进阶教程 </tutorial/advanced>`
 #. `GMT 官方入门教程 <https://docs.generic-mapping-tools.org/6.2/tutorial.html>`__
 #. `GMT 教學手冊 <http://gmt-tutorials.org/>`__\ （\ `鄭懷傑 <https://github.com/whyjz>`__\ ）
 

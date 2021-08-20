@@ -23,7 +23,7 @@ FORMAT参数
         - **dd**：两位日期
         - **jjj**：一年中的第几天
 
-        比如 **ddmmyyyy**\ 、\ **yy-mm-dd**\ 、\ **dd-o-yyyy**\ 、\ **yyyy/dd/mm**\ 、
+        比如 **ddmmyyyy**、**yy-mm-dd**、**dd-o-yyyy**、**yyyy/dd/mm**、
         **yyyy-jjj** 等。
 
         对于ISO周历而言，其模板格式为 **yyyy**\[-]\ **W**\[-]\ **ww**\ [-]\ **d**\，
@@ -46,7 +46,7 @@ FORMAT参数
         - 绘制月份名时的 **mm** 可以用 **o** 替代，即图上显示 Jan 而不是 01
         - 用 **u** 代替 **W**\ [-]\ **ww**，即图上显示 Week 10 而不是 W10
 
-        所有的日期文本字符串都由 :term:`GMT_LANGUAGE`\ 、
+        所有的日期文本字符串都由 :term:`GMT_LANGUAGE`、
         :term:`FORMAT_TIME_PRIMARY_MAP` 和 :term:`FORMAT_TIME_SECONDARY_MAP` 控制。
 
 时间的输入/输出/绘图格式
@@ -57,12 +57,12 @@ FORMAT参数
     **FORMAT_CLOCK_OUT**
         输出时间字符串时所使用的格式 [**hh:mm:ss**]
 
-        - **hh**\ 、\ **mm**\ 、\ **ss**\ 分别表示时、分、秒
+        - **hh**、**mm**、**ss**\ 分别表示时、分、秒
         - 若想要以浮点数输出最小单位（比如秒），可以加上 **.xxx**，比如
           **hh:mm:ss.xxx**\ 或者\ **hh:mm.xxx**\ ；否则只输出最小单位的整数部分。
           即输出为01:02:03而不是01:02:03.456。
         - 默认使用24小时制。若要使用12小时制，可以在字符串的最后加上
-          **am**\ 、\ **AM**\ 、\ **a.m.**\ 、\ **A.M.**。
+          **am**、**AM**、**a.m.**、**A.M.**。
           比如 **hha.m.** 等等。
         - 若时间格式模板以 **-** 开头，则输出时间字符串时不会输出前置0
         - 若时间格式模板为 **-**，则在输出日期时间时不输出时间字符串
@@ -164,7 +164,7 @@ FORMAT参数
         - **abbreviate**：显示简称，比如 Jan
         - **character**：显示单个字符，比如 J
 
-        还可以使用 **Full**\ 、\ **Abbreviate**\ 、\ **Character** 表示所有名字均大写。
+        还可以使用 **Full**、**Abbreviate**、**Character** 表示所有名字均大写。
 
         全称、简称以及单字符的定义见GMT安装目录下 :file:`share/localization` 目录中的
         语言定义文件。
