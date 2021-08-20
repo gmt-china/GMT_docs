@@ -45,7 +45,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
         - GMT 安装过程中，在 “Choose components” 页面\ **不勾选** Ghostscript 组件，
           并将其他所有选项都勾选上
-        - GMT 安装完成后，参考《\ :doc:`/chinese/windows`\ 》单独安装 Ghostscript 并配置中文支持
+        - GMT 安装完成后，参考《:doc:`/chinese/windows`》单独安装 Ghostscript 并配置中文支持
 
     .. note::
 
@@ -139,7 +139,7 @@ Windows 下的 Bash 用户不需要安装 UnixTools。
 - ``uniq``：从文本中去除或禁止重复行
 - ``wc``：输出指定文件的行数、字数和文本数据大小
 
-可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
+可以参考《`Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__》
 简易教程学习这些命令的基本用法。
 
 .. note::

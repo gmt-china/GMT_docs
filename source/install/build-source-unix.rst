@@ -62,7 +62,7 @@ Ubuntu/Debian::
 
 macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 （未安装 Homebrew 的用户，可以参考
-《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》
+《`macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__》
 了解如何安装与使用）::
 
     # 安装必须软件包
