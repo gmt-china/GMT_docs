@@ -6,7 +6,7 @@ GMT 中 :doc:`/module/histogram` 模块用于统计并绘制直方图。
 一个直方的宽度表示它的数据范围，长度表示位于该范围内的样本的数量或者比例。
 
 这一节中，我们通过绘制地震震源深度直方图来介绍直方图的绘制。
-以下示例使用的数据为  :download:`eq.dat </tutorial/histogram/eq.dat>`\ ，
+以下示例使用的数据为  :download:`eq.dat </tutorial/histogram/eq.dat>`，
 数据包含了三列，分别是地震的经度、纬度和深度。
 
 直方图根据直方的方向可以分为垂直直方图和水平直方图，也可以根据直方的长度的意义不同

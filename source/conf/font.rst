@@ -14,7 +14,7 @@ FONT参数
     **FONT_ANNOT_PRIMARY**
         一级（Primary）标注的字体 [**12p,Helvetica,black**]
 
-        若在该参数的值前加上 **+**\ ，则其它元素（如标题）的字体大小、偏移量、
+        若在该参数的值前加上 **+**，则其它元素（如标题）的字体大小、偏移量、
         刻度长度等参数值会 相对于 :term:`FONT_ANNOT_PRIMARY` 的成比例缩放。
 
     **FONT_ANNOT_SECONDARY**

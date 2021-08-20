@@ -24,7 +24,7 @@ GMT投影代码
 投影代码使用小写字母时，\ **-J** 的最后一个参数 *scale* 表示底图比例尺，
 即图上距离与真实地球距离之间的换算关系。\ *scale* 可以有两种格式：
 
-- 单个数字加单位，例如 **2c**\ ，表示真实地球距离的1度投影到画布上为2厘米
+- 单个数字加单位，例如 **2c**，表示真实地球距离的1度投影到画布上为2厘米
 - **1:xxxx** 格式，例如 **1:10000000** 表示画布上的1厘米对应真实地球距离的10000000厘米
 
 投影代码为大写字母时，\ **-J** 的最后一个参数 *width* 表示底图宽度。还可以加上
@@ -161,7 +161,7 @@ GMT+PROJ4
 
     -J+proj=merc+ellps=WGS84+units=m
 
-也可以直接使用 `EPSG codes <http://spatialreference.org>`_\ ，但需要设置环境变量
+也可以直接使用 `EPSG codes <http://spatialreference.org>`_，但需要设置环境变量
 **GDAL_DATA** 指向 GDAL 的 data 子目录。例如 **-JEPSG:4326** 表示使用 WGS-84 系统。
 
 对于 :doc:`gmt:mapproject` 和 :doc:`/module/grdproject` 模块，可以直接使用

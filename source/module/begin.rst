@@ -44,7 +44,7 @@ begin
 .. _fig-formats:
 
 *formats*
-    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**\ ，由
+    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**，由
     参数 :term:`GMT_GRAPHICS_FORMAT` 控制。
 
     GMT支持输出如下矢量图片格式：
@@ -67,7 +67,7 @@ begin
     指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，
     多个选项之间用逗号分隔。
 
-    默认值为 **A**\ ，表示将 **-A** 选项传给 :doc:`psconvert`\ 。
+    默认值为 **A**，表示将 **-A** 选项传给 :doc:`psconvert`\ 。
 
     其他可选的选项包括：
 
@@ -103,7 +103,7 @@ begin
     gmt ...
     gmt end
 
-开始一个GMT会话，并指定图片名为 *Figure_2*\ ，图片格式为PDF和PNG格式::
+开始一个GMT会话，并指定图片名为 *Figure_2*，图片格式为PDF和PNG格式::
 
     gmt begin Figure_2 pdf,png
     gmt ...

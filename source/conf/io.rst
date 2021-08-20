@@ -9,7 +9,7 @@ IO参数
     **IO_HEADER**
         指定输入/输出的表文件中是否有文件头记录 [**false**]
 
-        可以取 **true**\|\ **false**\ 。若值为 **true**\ ，则等效于使用 :doc:`/option/h`
+        可以取 **true**\|\ **false**\ 。若值为 **true**，则等效于使用 :doc:`/option/h`
 
     **IO_HEADER_MARKER**
         输入ASCII表文件中文件头记录的标识符 [**#%!;"'**]
@@ -69,7 +69,7 @@ IO参数
         控制写netCDF文件时Y方向和X方向的分块大小 [**auto**]
 
         分块过大或小于128通常会导致读写低性能，应尽量避免。Y方向和X方向的分块大小
-        用逗号分隔。若取 **auto**\ ，则GMT会自动在128到256之间选取合适的值。
+        用逗号分隔。若取 **auto**，则GMT会自动在128到256之间选取合适的值。
 
     **IO_NC4_DEFLATION_LEVEL**
         输出netCDF4格式的数据时所使用的压缩等级 [3]
@@ -103,7 +103,7 @@ IO参数
             ns         ns        a     a      -    16-bit integer netCDF grid with auto-scale and auto-offset
 
         要使用这一特性，需要将参数 :term:`IO_GRIDFILE_SHORTHAND` 设置为 **true**\ 。
-        此时，文件名 file.i2 等效于 file.i2=bs///32767\ ，
+        此时，文件名 file.i2 等效于 file.i2=bs///32767，
         wet.mask 等效于 wet.mask=bm+n0\ 。
 
     **IO_GRIDFILE_FORMAT**
