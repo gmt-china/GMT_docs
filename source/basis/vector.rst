@@ -10,7 +10,7 @@ GMT 中能够绘制矢量的模块有
 :doc:`gmt:plot3d`\ 、
 :doc:`/module/grdvector`\ 、
 :doc:`/module/velo` \ 等。
-其中最常见的绘制矢量的模块是 :doc:`/module/plot`\ 。
+其中最常见的绘制矢量的模块是 :doc:`/module/plot`。
 
 下面的命令使用 :doc:`/module/plot` 的 **-Sv** 选项绘制了一个最简单的矢量。
 

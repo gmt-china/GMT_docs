@@ -25,7 +25,7 @@ TIME参数
     **TIME_SYSTEM**
         :term:`TIME_EPOCH` 和 :term:`TIME_UNIT` 的合并版
 
-        即指定 :term:`TIME_SYSTEM` 相当于同时指定了 :term:`TIME_EPOCH` 和 :term:`TIME_UNIT`\ 。
+        即指定 :term:`TIME_SYSTEM` 相当于同时指定了 :term:`TIME_EPOCH` 和 :term:`TIME_UNIT`。
         可取如下值：
 
         - **JD**：等效于-4713-11-25T12:00:00 d

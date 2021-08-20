@@ -25,7 +25,7 @@ ghostscript中文配置
 
 不同系统下ghostscript的的中文配置文件的位置不同。此处以CentOS 7 为例。
 
-CentOS 7下，ghostscript的中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN``\ 。
+CentOS 7下，ghostscript的中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN``。
 若该文件不存在，则表明系统中未安装ghostscript中文配置文件。
 
 CentOS 7下ghostscript简体中文配置文件可以通过如下命令安装::
@@ -221,9 +221,9 @@ Ubuntu 14.04及之后的版本
         $ sudo update-gsfontmap
 
     该命令会将 ``/etc/ghostscript/cidfmap.d/*.conf`` 合并成单独的文件
-    ``/var/lib/ghostscript/fonts/cidfmap``\ 。gs 在需要中文字体时会读取
+    ``/var/lib/ghostscript/fonts/cidfmap``。gs 在需要中文字体时会读取
     ``/var/lib/ghostscript/fonts/cidfmap`` 而不是
-    ``/etc/ghostscript/cidfmap.d/*.conf``\ 。这是 Ubuntu/Debian 和 CentOS 的
+    ``/etc/ghostscript/cidfmap.d/*.conf``。这是 Ubuntu/Debian 和 CentOS 的
     一个很大不同。
 
 参考资料

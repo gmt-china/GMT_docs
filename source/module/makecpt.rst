@@ -35,7 +35,7 @@ makecpt
     默认不透明，即0。
 
 **-C**\ *cpt*
-    指定主CPT文件，默认值是GMT自带的 **rainbow**\ 。 `makecpt` 根据主CPT文件的配色方案，将z值范围拉伸至 **-T** 
+    指定主CPT文件，默认值是GMT自带的 **rainbow**。 `makecpt` 根据主CPT文件的配色方案，将z值范围拉伸至 **-T** 
     指定的范围，生成新的CPT。GMT自带的CPT文件的配色方案列表，请参见《 :doc:`/cpt/builtin-cpt` 》。
 
     除了GMT自带的CPT文件，也可以设为用户自定义的CPT文件，也可以是通过

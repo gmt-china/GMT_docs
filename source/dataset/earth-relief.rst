@@ -12,7 +12,7 @@ earth_relief: 全球地形起伏数据
 
 **earth_relief** 数据是 GMT 提供的全球地形起伏数据，其包含了全球陆地和洋底的高程数据。
 原始数据来源于公开数据，GMT 经过了一些预处理，提供了不同分辨率和不同配准方式的网格数据，
-以满足用户的不同需求。\ **earth_relief** 数据默认使用 GMT 内置 CPT 文件 *geo*\ 。
+以满足用户的不同需求。\ **earth_relief** 数据默认使用 GMT 内置 CPT 文件 *geo*。
 
 下表列出了GMT提供的 **earth_relief** 数据的代码、配准方式、分辨率以及文件大小。
 
@@ -86,7 +86,7 @@ earth_relief: 全球地形起伏数据
     当使用 **@earth_relief_01s** 或 **@earth_relief_03s** 时，GMT会自动对
     **@earth_relief_15s** 数据对增采样以填充缺失的海洋部分。
 -   如果想使用最原始的只包含陆地的SRTM地形数据，则可以使用 **@srtm_relief_03s**
-    或 **srtm_relief_01s**\ 。
+    或 **srtm_relief_01s**。
 -   大部分分辨率的数据都提供了网格线配准和像素配准两种方式的文件。
 
 数据来源及引用

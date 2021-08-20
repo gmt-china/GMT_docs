@@ -80,7 +80,7 @@ filter1d
 .. _-D:
 
 **-D**\ *increment*
-    当输入的时间序列是不等间隔采样时，需要使用该选项设置输出数据的分辨率 *increment*\ 。
+    当输入的时间序列是不等间隔采样时，需要使用该选项设置输出数据的分辨率 *increment*。
     所有横坐标（时间）都会被rounded off到 *increment* 的整数倍。
     当然，也可以使用 :doc:`sample1d` 对时间序列做重采样。
 

@@ -28,7 +28,7 @@ PARAMETER3 *value3*
 *PARAMETER* *value*
     要修改的GMT配置参数名 *PARAMETER* 以及想要设置的值 *value*
 
-    参数名和值必须成对存在。GMT配置参数见 :doc:`/conf/index`\ 。
+    参数名和值必须成对存在。GMT配置参数见 :doc:`/conf/index`。
 
 可选选项
 --------

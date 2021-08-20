@@ -137,7 +137,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
     以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
     解压出来的 :file:`gmt-6.2.0` 目录下。
-    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`\ 。
+    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`。
 
 ::
 

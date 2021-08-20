@@ -50,7 +50,7 @@ GDAL 的 :ref:`ogr2ogr <ogr2ogr>` 命令可以实现多种地理数据格式之�
 Geopackage转GMT
 ~~~~~~~~~~~~~~~
 
-以United States数据为例，解压得到文件 :file:`gadm36_USA.gpkg`\ 。使用如下命令查看文件的信息::
+以United States数据为例，解压得到文件 :file:`gadm36_USA.gpkg`。使用如下命令查看文件的信息::
 
     $ ogrinfo gadm36_USA.gpkg
     INFO: Open of `gadm36_USA.gpkg'
