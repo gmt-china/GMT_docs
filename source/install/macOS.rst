@@ -6,14 +6,14 @@ macOS 下安装 GMT
 ----
 
 macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
-工具进行安装。\ **推荐使用Homebrew**\ 。
+工具进行安装。**推荐使用Homebrew**。
 
 使用 Homebrew 安装
 ------------------
 
 `Homebrew <https://brew.sh/>`__ 是 macOS 下的第三方软件包管理工具。
 未安装 Homebrew 的用户，可以参考
-《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》了解如何安装与使用。
+《`macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__》了解如何安装与使用。
 
 1.  安装 GMT
 
@@ -31,15 +31,15 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 
 2.  安装 GMT 依赖的其它软件
 
-    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__\ （\ **必须**\ ）::
+    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__\ （**必须**）::
 
         $ brew install ghostscript
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （\ **可选**\ ）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （**可选**）::
 
         $ brew install graphicsmagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （\ **可选**\ ）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （**可选**）::
 
         $ brew install ffmpeg
 
@@ -79,7 +79,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 2. 双击 dmg 包，在弹出的 Finder 窗口中，将 :file:`GMT-6.2.0.app` 拖动到 :file:`Applications` 目录
 
-3. 在 Finder 的左侧边栏中点击 **Applications**\ ，找到 GMT 图标并右键点击，
+3. 在 Finder 的左侧边栏中点击 **Applications**，找到 GMT 图标并右键点击，
    按下 :kbd:`option` 键的同时鼠标点击“Open”选项。
    此时 macOS 系统会弹出警告窗口：“无法打开 GMT。因为 Apple 无法检测其是否为恶意软件”。
    在弹出的警告窗口中点击“Open”以忽略这一警告，并直接打开 GMT。
@@ -128,11 +128,11 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 3.  安装 GMT 依赖的其他软件
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （\ **可选**\ ）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （**可选**）::
 
         $ sudo port install graphicsmagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （\ **可选**\ ）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （**可选**）::
 
         $ sudo port install ffmpeg
 

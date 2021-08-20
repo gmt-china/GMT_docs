@@ -34,8 +34,8 @@ PS参数
     **PS_COMMENTS**
         生成的PS代码中是否包含注释信息 [**false**]
 
-        若为 **true**\ ，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
-        当你需要手动编辑PS文件时比较有用。默认情况下，其值为 **false**\ ，即PS文件中
+        若为 **true**，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，
+        当你需要手动编辑PS文件时比较有用。默认情况下，其值为 **false**，即PS文件中
         不会包含注释，此时生成的PS文件更小。
 
     **PS_CONVERT**
@@ -48,19 +48,19 @@ PS参数
 
         可以取值为：
 
-        - **rle**\ ：Run-Length Encoding scheme
-        - **lzw**\ ：Lempel-Ziv-Welch compression
-        - **deflate**\ [,\ *level*\ ]\ ：DEFLATE 压缩，\ *level* 可以取1到9
-        - **none**\ ：不压缩，相当于 **deflate,5**
+        - **rle**：Run-Length Encoding scheme
+        - **lzw**：Lempel-Ziv-Welch compression
+        - **deflate**\ [,\ *level*\ ]：DEFLATE 压缩，*level* 可以取1到9
+        - **none**：不压缩，相当于 **deflate,5**
 
     **PS_LINE_CAP**
         控制线段的\ **端点**\ 的绘制方式 [**butt**]
 
         可以取如下值：
 
-        - **butt**\ ：不对端点做特殊处理，即端点是矩形（默认值）
-        - **round**\ ：端点处为直径与线宽相等的半圆弧
-        - **square**\ ：端点处为边长与线宽相等的半个正方形
+        - **butt**：不对端点做特殊处理，即端点是矩形（默认值）
+        - **round**：端点处为直径与线宽相等的半圆弧
+        - **square**：端点处为边长与线宽相等的半个正方形
 
         下图展示了该参数取不同值时线段端点的区别。需要注意，图中三条线段的
         长度是相同的，但因参数设置不同而导致线段看上去长度不同。
@@ -84,10 +84,10 @@ PS参数
     **PS_LINE_JOIN**
         控制线段拐点的绘制方式 [**miter**]
 
-        可以取 **miter**\ 、\ **round**\ 、\ **bevel**\ 。
+        可以取 **miter**、**round**、**bevel**。
 
         下图展示了 **PS_LINE_JOIN** 取不同值时线段拐点的绘图效果。当线宽较小时，几乎
-        看不出来区别，这里为了显示的效果，将线宽设置为 20p\ 。
+        看不出来区别，这里为了显示的效果，将线宽设置为 20p。
 
         .. gmtplot::
             :show-code: false
@@ -184,7 +184,7 @@ PS参数
 
             仅GMT经典模式下有效，现代模式下纸张始终是 portrait 模式。
 
-        可以取 **portrait** 或 **landscape**\ 。
+        可以取 **portrait** 或 **landscape**。
 
     **PS_SCALE_X**
         绘图时X方向的全局比例 [1.0]

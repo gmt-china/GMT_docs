@@ -8,7 +8,7 @@ CN-border: 中国国界省界数据
 GMT 自带的国界线数据不符合中国领土主张。例如，阿克赛钦地区、藏南地区边界均存在明显差异，
 其他地方也存在微小差异。在正式出版的中外期刊上发表带有中国国界的地图时需要格外注意。
 2017 年国家测绘地理信息局发布的
-《\ `“问题地图”清查工作指南 <http://www.iap.cas.cn/xwzx/tzgg/201709/P020170911372769133133.pdf>`__\ 》
+《`“问题地图”清查工作指南 <http://www.iap.cas.cn/xwzx/tzgg/201709/P020170911372769133133.pdf>`__》
 中列出了绘图中应避免的若干错误。下面列出了绘制中国全图时的常见注意事项：
 
 - 阿克赛钦地区正确表示
@@ -31,16 +31,16 @@ CN-border 是 GMT 中文社区为用户提供的一套数字化的国界数据�
 
 CN-border 数据提供了三个数据文件：
 
-- :file:`CN-border-La.gmt`\ ：中国国界、省界、十段线以及南海诸岛数据
-- :file:`CN-border-L1.gmt`\ ：中国国界、十段线以及南海诸岛数据，不含省界数据
-- :file:`ten-dash-line.gmt`\ ：仅十段线数据
+- :file:`CN-border-La.gmt`：中国国界、省界、十段线以及南海诸岛数据
+- :file:`CN-border-L1.gmt`：中国国界、十段线以及南海诸岛数据，不含省界数据
+- :file:`ten-dash-line.gmt`：仅十段线数据
 
-具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
+具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`。
 
 示例图
 ------
 
-使用等距圆锥投影（\ **-JD**\ ）绘制中国国界省界数据：
+使用等距圆锥投影（**-JD**）绘制中国国界省界数据：
 
 .. gmtplot::
    :show-code: true
@@ -52,7 +52,7 @@ CN-border 数据提供了三个数据文件：
         gmt plot CN-border-La.gmt -W0.1p
     gmt end show
 
-使用墨卡托投影（\ **-JM**\ ）绘制中国国界省界数据：
+使用墨卡托投影（**-JM**）绘制中国国界省界数据：
 
 .. gmtplot::
    :show-code: true
@@ -75,14 +75,14 @@ CN-border 数据提供了三个数据文件：
 数据来源与处理
 --------------
 
-CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_\ ，
+CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_，
 并由\ `刘珠妹 <https://github.com/liuzhumei>`__ 处理得到 GMT 可使用的数据。
 **具体数据处理方式待补充**。
 
 数据引用
 --------
 
-CN-border 原始数据来自于\ `全国地理信息资源目录服务系统 <https://www.webmap.cn>`__\ ，
+CN-border 原始数据来自于\ `全国地理信息资源目录服务系统 <https://www.webmap.cn>`__，
 其\ `版权声明 <https://www.webmap.cn/main.do?method=otherService&clickFlag=copyright>`__\ 中要求：
 
     转载或引用本网站所有之内容须注明“转自（或引自）全国地理信息资源目录服务系统”字样，并标明本网网址 www.webmap.cn。

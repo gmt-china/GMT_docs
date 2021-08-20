@@ -35,14 +35,14 @@ GMT 开发者
 ----------
 
 GMT 的核心开发者有 8 位：\
-`Paul Wessel <http://www.soest.hawaii.edu/wessel/>`__\ 、\
-`Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`__\ 、\
-`Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`__\ 、\
-`Joaquim F. Luis <http://joa-quim.pt/>`__\ 、\
-`Leonardo Uieda <https://www.leouieda.com>`__\ 、\
+`Paul Wessel <http://www.soest.hawaii.edu/wessel/>`__、\
+`Walter H. F. Smith <https://www.star.nesdis.noaa.gov/star/Smith_WHF.php>`__、\
+`Remko Scharroo <https://www.researchgate.net/profile/Remko_Scharroo>`__、\
+`Joaquim F. Luis <http://joa-quim.pt/>`__、\
+`Leonardo Uieda <https://www.leouieda.com>`__、\
 Florian Wobbe、\
 `Dongdong Tian <https://me.seisman.info>`__ 和
-`Meghan Jones <https://github.com/meghanrjones>`__\ 。
+`Meghan Jones <https://github.com/meghanrjones>`__。
 
 .. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT6_Summit_2019.jpg
    :alt: 2019 年 GMT 开发者峰会
@@ -104,7 +104,7 @@ GMT 的特点
 
 除了 GMT 之外，还可以使用很多其他软件制图，以下仅列出一些地球科学领域常用的制图软件。
 
-.. table:: 地球科学常用绘图软件比较（\ **√** 和 **X** 表示是否支持某一功能）
+.. table:: 地球科学常用绘图软件比较（**√** 和 **X** 表示是否支持某一功能）
     :align: center
 
     ===============  ======  ======== ==============

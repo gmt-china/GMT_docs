@@ -75,7 +75,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
     - Linux 用户：参考 http://blog.seisman.info/texlive-install
     - macOS 用户：直接执行 ``brew cask install mactex-no-gui`` 安装 mactex
 
-    安装好 TeXLive 后，执行以下命令即可编译生成 PDF 格式的文档（即 :file:`build/latex/GMT_docs.pdf`\ ）::
+    安装好 TeXLive 后，执行以下命令即可编译生成 PDF 格式的文档（即 :file:`build/latex/GMT_docs.pdf`）::
 
         $ make latexpdf
 
@@ -124,9 +124,9 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 文档使用 Sphinx 扩展 `sphinx_gmt <https://github.com/GenericMappingTools/sphinx_gmt>`__
 提供的 ``gmtplot`` 指令自动执行脚本生成图片，同时将图片插入到文档中。该指令的常用选项有：
 
-- ``width``\ ： 图片在网页中的宽度（建议使用百分比表示，如 ``100%``\ ）
-- ``caption``\ ：图片标题
-- ``show-code``\ ：表示是否显示代码（\ ``true`` 或 ``false``\ ）
+- ``width``： 图片在网页中的宽度（建议使用百分比表示，如 ``100%``）
+- ``caption``：图片标题
+- ``show-code``：表示是否显示代码（\ ``true`` 或 ``false``）
 
 该指令用法有两种：行内模式（直接在文档中写绘图代码）和脚本模式（将绘图代码写在脚本中）。
 
@@ -151,7 +151,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 ------------
         
 社区绘图实例都位于 :file:`source/examples/` 目录下，每个文件夹包含一个实例，
-从 :file:`ex001` 开始顺序编号。例如，实例 1 的文件夹为 :file:`source/examples/ex001/`\ ，
+从 :file:`ex001` 开始顺序编号。例如，实例 1 的文件夹为 :file:`source/examples/ex001/`，
 该文件夹下需要包含如下信息：
 
 1. 描述文件 :file:`index.rst`\ （必须）
@@ -159,4 +159,4 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 3. 绘图所需数据 :file:`xxx.dat` （可选，数据应尽量小）
 
 简要描述绘图意义、所用核心模块的关键语法以及绘图必需的数据等。
-新增实例时，请参考\ `文档风格`_\ 和已有的\ :doc:`社区绘图实例 </examples/index>`\ 。
+新增实例时，请参考\ `文档风格`_\ 和已有的\ :doc:`社区绘图实例 </examples/index>`。
