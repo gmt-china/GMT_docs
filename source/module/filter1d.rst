@@ -46,14 +46,14 @@ filter1d
     *type* 用于指定滤波器类型，
     *width* 指定滤波器宽度（单位与时间数据相同）。
 
-    对于卷积滤波器，\ *type* 可以取：
+    对于卷积滤波器，*type* 可以取：
 
     - **b** Boxcar: 所有权重相同
     - **c** Cosine Arch: 权重为cosine曲线
     - **g** Gaussian: 权重为高斯函数
     - **f** Custom: 不指定 *width* 而是给定一个含单列数据的文件，以指定权重系数
 
-    对于非卷积滤波器，\ *type* 可以取：
+    对于非卷积滤波器，*type* 可以取：
 
     - **m** Median: 返回中位数
     - **p** Maximum likelihood probability (a mode estimator): Return modal value.

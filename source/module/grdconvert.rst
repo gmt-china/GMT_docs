@@ -55,7 +55,7 @@ grdconvert
     整型网格文件。
 
     当 *id*\ = *gd*\ 时，网格文件将使用GDAL库写入。此时可以进一步指定 *driver* 和 *datatype*。
-    *driver* 由GDAL提供（如 netCDF, GTiff 等），\ *datatype* 则可以取
+    *driver* 由GDAL提供（如 netCDF, GTiff 等），*datatype* 则可以取
     *u8*\|\ *u16*\|\ *i16*\|\ *u32*\|\ *i32*\|\ *float32*，
     其中 *i* 和 *u* 分别表示有符号和无符号整型。*datatype* 默认值为 *float32*。
 

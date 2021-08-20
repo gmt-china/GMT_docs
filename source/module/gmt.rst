@@ -10,7 +10,7 @@ GMT的数据处理和绘图功能均通过使用 **gmt** 调用相应模块来�
 
 **gmt** *module* *module-options*
 
-其中 *module* 是GMT模块名，\ *module-options* 是模块所支持的选项。
+其中 *module* 是GMT模块名，*module-options* 是模块所支持的选项。
 
 除了调用模块外，GMT还有自己的一些选项可以使用：
 

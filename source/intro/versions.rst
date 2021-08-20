@@ -8,7 +8,7 @@ GMT 版本号遵循“\ `语义化版本号规范 <https://semver.org/lang/zh-CN
 
     *major.minor.patch*
 
-其中，\ *major* 为主版本号，\ *minor* 为次版本号，\ *patch* 为补丁版本号，如 6.2.0。
+其中，*major* 为主版本号，*minor* 为次版本号，*patch* 为补丁版本号，如 6.2.0。
 
 根据“语义化版本号规范”的要求：
 
@@ -27,7 +27,7 @@ GMT 6.1.1 相对于 6.1.0 则主要是修复了一些 BUG。
 
         *major.minor.patch*\_\ *hash*\_\ *yyyy.mm.dd*
 
-    其中，\ *hash* 和 *yyyy.mm.dd* 是开发版中最新提交的 hash 值和日期。
+    其中，*hash* 和 *yyyy.mm.dd* 是开发版中最新提交的 hash 值和日期。
     例如，6.1.0_267ce55_2020.01.21 表示更新于 2020 年 1 月 21 日、
     hash 值为 267ce55 的 6.1.0 开发版。
 

@@ -50,7 +50,7 @@ PS参数
 
         - **rle**：Run-Length Encoding scheme
         - **lzw**：Lempel-Ziv-Welch compression
-        - **deflate**\ [,\ *level*\ ]：DEFLATE 压缩，\ *level* 可以取1到9
+        - **deflate**\ [,\ *level*\ ]：DEFLATE 压缩，*level* 可以取1到9
         - **none**：不压缩，相当于 **deflate,5**
 
     **PS_LINE_CAP**
