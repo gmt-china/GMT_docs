@@ -28,18 +28,18 @@ Ubuntu/Debian 下安装 GMT
 
 3.  安装 GMT 相关工具
 
-    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__（**必须**）::
+    生成 PDF、JPG 等图片格式需要 `Ghostscript <https://www.ghostscript.com/>`__\ （**必须**）::
 
         $ sudo apt install ghostscript
 
-    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__（**推荐**）::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**）::
 
         $ sudo apt install gdal-bin
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__（**可选**）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （**可选**）::
 
         $ sudo apt install graphicsmagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__（**可选**）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （**可选**）::
 
         $ sudo apt install ffmpeg

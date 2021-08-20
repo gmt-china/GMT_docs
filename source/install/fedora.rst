@@ -30,15 +30,15 @@ Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
 
 3.  安装 GMT 相关工具以增强 GMT 功能
 
-    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__（**推荐**）::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**）::
 
         $ sudo dnf install gdal
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__（**可选**）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （**可选**）::
 
         $ sudo dnf install GraphicsMagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__（**可选**）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （**可选**）::
 
         $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
         $ sudo dnf install ffmpeg

@@ -5,10 +5,10 @@ GMT 中文手册
    :align: center
    :width: 60%
 
-欢迎来到 `Generic Mapping Tools (GMT) <https://www.generic-mapping-tools.org>`_ 的世界。
+欢迎来到 `Generic Mapping Tools (GMT) <https://www.generic-mapping-tools.org>`__ 的世界。
 GMT 是地球科学使用最广泛的制图软件之一。
 
-本文档是由 `GMT中文社区 <https://gmt-china.org/>`_ 维护整理的 GMT 中文手册。
+本文档是由 `GMT中文社区 <https://gmt-china.org/>`__ 维护整理的 GMT 中文手册。
 手册详尽地介绍了 GMT 的用法并提供了大量的实用示例。
 其既可以作为初学者的入门读物，也可以作为日常使用的参考书。
 
