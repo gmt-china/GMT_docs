@@ -151,7 +151,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 ------------
         
 社区绘图实例都位于 :file:`source/examples/` 目录下，每个文件夹包含一个实例，
-从 :file:`ex001` 开始顺序编号。例如，实例 1 的文件夹为 :file:`source/examples/ex001/`\ ，
+从 :file:`ex001` 开始顺序编号。例如，实例 1 的文件夹为 :file:`source/examples/ex001/`，
 该文件夹下需要包含如下信息：
 
 1. 描述文件 :file:`index.rst`\ （必须）

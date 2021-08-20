@@ -39,7 +39,7 @@ ogr2ogr
 
 GDAL 提供的 ``ogr2ogr`` 命令可以实现几十种地理矢量数据格式之间的互相转换。
 因而，可以用其将任意地理矢量数据格式转换为 GMT 可识别的 OGR/GMT 格式，以供 GMT 直接使用。
-该命令的详细用法请参考 `ogr2ogr 官方文档 <https://gdal.org/programs/ogr2ogr.html>`__\ ，
+该命令的详细用法请参考 `ogr2ogr 官方文档 <https://gdal.org/programs/ogr2ogr.html>`__，
 这里仅介绍该命令的基本用法::
 
     $ ogr2ogr -f GMT 输出数据文件名 输入数据文件名
@@ -55,7 +55,7 @@ gdal_translate
 --------------
 
 GDAL 提供的 ``gdal_translate`` 命令可以实现多种地理空间光栅数据格式之间的互相转换。
-该命令的详细用法请参考 `gdal_translate 官方文档 <https://gdal.org/programs/gdal_translate.html>`__\ ，
+该命令的详细用法请参考 `gdal_translate 官方文档 <https://gdal.org/programs/gdal_translate.html>`__，
 这里只介绍该命令的基本用法::
 
     gdal_translate -of GMT 输入数据文件名 输出数据文件名

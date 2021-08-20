@@ -156,7 +156,7 @@ colorbar
 **-Q**
     使用对数坐标，刻度表示为10的次幂
 
-    CPT文件中所有的Z值都会被转换成 :math:`p = \log10(z)`\ ，其中整数的p会以10^p的格式标注。
+    CPT文件中所有的Z值都会被转换成 :math:`p = \log10(z)`，其中整数的p会以10^p的格式标注。
 
 .. include:: explain_-R.rst_
 

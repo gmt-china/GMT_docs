@@ -44,12 +44,12 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为::
 
 其中的细节不管，其大致意义为：
 
-- 第一行定义了字体名为 ``/BousungEG-Light-GB``\ ，
-  对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc``\ ，
+- 第一行定义了字体名为 ``/BousungEG-Light-GB``，
+  对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc``，
   也就是文泉驿正黑；
-- 第二行定义了字体名为 ``/GBZenKai-Medium``\ ，对应的字体文件也是文泉驿正黑；
-- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1``\ ，
-  这两种都对应于 ``/BousungEG-Light-GB``\ ，相当于给字体定义了别名。
+- 第二行定义了字体名为 ``/GBZenKai-Medium``，对应的字体文件也是文泉驿正黑；
+- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1``，
+  这两种都对应于 ``/BousungEG-Light-GB``，相当于给字体定义了别名。
 
 关于配置文件的几点说明：
 
@@ -83,7 +83,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 测试 ghostscript 对 Windows 中文字体的支持
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-下载PS测试文件 :download:`GMT_Chinese_Linux.ps </chinese/GMT_Chinese_Linux.ps>`\ ，
+下载PS测试文件 :download:`GMT_Chinese_Linux.ps </chinese/GMT_Chinese_Linux.ps>`，
 并打开终端用 ``gs GMT_Chinese_Linux.ps`` 命令查看该PS文件。
 若正确显示中文如下图，则表明 ghostscript 已支持 Windows 中文字体。
 
@@ -97,7 +97,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 
     PS 文件中要使用某个中文字体，需要用 ``FontName-CMap`` 的格式来调用。
     其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H``
-    和 ``GB-EUC-H``\ ， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
+    和 ``GB-EUC-H``， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
     字体的编码。
 
 GMT 中文支持
@@ -175,7 +175,7 @@ CentOS 6
 2.  ghostscript 中文配置文件中给定的字体路径： ``/usr/share/fonts/cjkuni/uming.ttc``
     和 ``/usr/share/fonts/cjkuni/ukai.ttc`` 是错误的。正确的字体路径是
     ``/usr/share/fonts/cjkui-uming/uming.ttc`` 和
-    ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``\ ，要注意改正。
+    ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``，要注意改正。
 
 Ubuntu 14.04及之后的版本
 ~~~~~~~~~~~~~~~~~~~~~~~~

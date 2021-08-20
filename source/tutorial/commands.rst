@@ -23,7 +23,7 @@ GMT 在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/
     本手册将只使用现代模式，而不介绍经典模式。
     GMT 新用户只需要按照本手册直接学习现代模式即可；
     对于 GMT 老用户，建议阅读 :doc:`/migrating/classic2modern`
-    或者观看视频教程 `GMT6 新特性 <https://www.bilibili.com/video/av73835957>`_\ ，
+    或者观看视频教程 `GMT6 新特性 <https://www.bilibili.com/video/av73835957>`_，
     并开始使用现代模式进行绘图。
 
 在前一节中我们使用 ``gmt --new-script`` 命令生成一个绘图模板。
@@ -51,7 +51,7 @@ GMT 在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/
 -   紧跟在图片文件名后的 **pdf** 指定了要生成的图片格式（若不指定格式，则默认图片格式为 PDF）。
     GMT 支持多种图片格式，pdf、ps、eps、jpg、png、bmp 等等。若想要一次性生成多种格式的图片，
     则可以使用逗号将多种格式连接起来，如 **pdf,png** 会同时生成 PDF 和 PNG 格式的图片
--   **gmt end** 后面加上 **show**\ ，则 GMT 会在绘图完成后，使用系统自带的阅读器
+-   **gmt end** 后面加上 **show**，则 GMT 会在绘图完成后，使用系统自带的阅读器
     软件自动打开生成的图片文件，供用户预览绘图效果
 
 绘制第一张图
@@ -78,7 +78,7 @@ GMT 在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/
 
 .. tip::
 
-    想了解 **gmt coast** 的具体用法？打开终端，敲入 ``gmt docs coast``\ ，
+    想了解 **gmt coast** 的具体用法？打开终端，敲入 ``gmt docs coast``，
     GMT 会自动帮你打开 **coast** 模块的说明文档。
 
 GMT 命令格式

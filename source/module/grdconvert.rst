@@ -33,7 +33,7 @@ grdconvert
 
     需要注意的是，在读入网格文件时，总是先缩放再偏移。
 
-    若 *id*\ =\ *gd*\ ，则使用GDAL库检测数据格式并读入数据。实际上，当GMT遇到
+    若 *id*\ =\ *gd*，则使用GDAL库检测数据格式并读入数据。实际上，当GMT遇到
     其无法识别的文件格式时，总是自动使用GDAL库读入数据，但可能会遇到问题，
     此时可以设置 *id*\ =\ *gd*\ 强制使用GDAL库读取。
 
@@ -56,7 +56,7 @@ grdconvert
 
     当 *id*\ = *gd*\ 时，网格文件将使用GDAL库写入。此时可以进一步指定 *driver* 和 *datatype*\ 。
     *driver* 由GDAL提供（如 netCDF, GTiff 等），\ *datatype* 则可以取
-    *u8*\|\ *u16*\|\ *i16*\|\ *u32*\|\ *i32*\|\ *float32*\ ，
+    *u8*\|\ *u16*\|\ *i16*\|\ *u32*\|\ *i32*\|\ *float32*，
     其中 *i* 和 *u* 分别表示有符号和无符号整型。\ *datatype* 默认值为 *float32*\ 。
 
     写网格文件时，可以考虑设置 :term:`IO_NC4_DEFLATION_LEVEL`

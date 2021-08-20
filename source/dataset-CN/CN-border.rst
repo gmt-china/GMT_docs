@@ -75,14 +75,14 @@ CN-border 数据提供了三个数据文件：
 数据来源与处理
 --------------
 
-CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_\ ，
+CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_，
 并由\ `刘珠妹 <https://github.com/liuzhumei>`__ 处理得到 GMT 可使用的数据。
 **具体数据处理方式待补充**。
 
 数据引用
 --------
 
-CN-border 原始数据来自于\ `全国地理信息资源目录服务系统 <https://www.webmap.cn>`__\ ，
+CN-border 原始数据来自于\ `全国地理信息资源目录服务系统 <https://www.webmap.cn>`__，
 其\ `版权声明 <https://www.webmap.cn/main.do?method=otherService&clickFlag=copyright>`__\ 中要求：
 
     转载或引用本网站所有之内容须注明“转自（或引自）全国地理信息资源目录服务系统”字样，并标明本网网址 www.webmap.cn。

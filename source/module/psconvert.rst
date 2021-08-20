@@ -79,7 +79,7 @@ psconvert
     - ``-A+p<pen>`` 为BoundingBox指定边框颜色，默认颜色为 ``0.25p,black``
 
     - **+g**\ *paint* 为图片的BoundingBox指定背景填充色
-    - **+p**\ [*pen*] 为图片的BoundingBox绘制边界 [若不指定 *pen*\ ，则默认 0.25p,black]
+    - **+p**\ [*pen*] 为图片的BoundingBox绘制边界 [若不指定 *pen*，则默认 0.25p,black]
     - **+n** 不做任何裁剪，以用于忽略到默认的裁剪设置
     - **+u** 先去掉GMT绘制的时间戳再裁剪
 

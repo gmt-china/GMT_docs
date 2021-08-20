@@ -43,7 +43,7 @@ Linux 和 macOS 用户需要先修改 GMT 中文语言文件的字符编码（Wi
 --------
 
 GMT支持中文的星期。要想使用中文表示星期几，需要设置 :term:`GMT_LANGUAGE` 为中文，
-即 ``cn1``\ ，并设置标注的字体为中文。
+即 ``cn1``，并设置标注的字体为中文。
 
 .. literalinclude:: chinese-weeks.sh
 
