@@ -38,7 +38,7 @@ GMT 字体和 LaTeX
 
 LaTeX 是一个庞大且复杂的排版系统，有许多可选包，用户安装的 LaTeX 需包括所有 GMT 必须的包。
 通过包管理器安装 LaTeX 的方法请见 
-`GMT Wiki <https://github.com/GenericMappingTools/gmt/wiki/Install-LaTeX-for-GMT-LaTeX-Integration>`__\ 。
+`GMT Wiki <https://github.com/GenericMappingTools/gmt/wiki/Install-LaTeX-for-GMT-LaTeX-Integration>`__。
 其中，GMT 必须的包和字体包括：
 
 - 必需包：fontenc 和 inputenc
@@ -63,7 +63,7 @@ GMT 将使用 ``latex`` 和 ``dvips`` 命令（需提前安装 LaTeX 环境）�
 
 这里通过一个实例来帮助用户排查 LaTeX 安装中可能存在的问题。
 假设用户使用 :doc:`/module/basemap` 制作的图的标题为
-``-B+t"Use @[\Delta g = 2\pi\rho Gh@["``\ 。
+``-B+t"Use @[\Delta g = 2\pi\rho Gh@["``。
 GMT 会为该 LaTeX 表达式创建一个临时目录，其中包含一个名为 :file:`gmt_eq.tex` 的文件：
 
 .. code-block:: latex

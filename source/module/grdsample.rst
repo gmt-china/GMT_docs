@@ -56,14 +56,14 @@ grdsample
 .. include:: explain_-R.rst_
 ..
 
-    若只使用 **-R** 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**\ 。
+    若只使用 **-R** 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**。
 
 .. _-T:
 
 **-T**
     交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入
     是像素点配准，则输出为网格线配准。注意，转换配准方式会导致高频信息的丢失，
-    详情见 :doc:`/grid/registration`\ 。
+    详情见 :doc:`/grid/registration`。
 
 .. include:: explain_-V.rst_
 

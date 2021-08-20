@@ -83,7 +83,7 @@
         控制表数据的数据类型，仅被外部接口使用 [**double**]
 
         可以取 **double**\ 、\ **single**\ 、\ **[u]long**\ 、\ **[u]int**\ 、
-        **[u]short**\ 、\ **[u]char**\ 。
+        **[u]short**\ 、\ **[u]char**。
 
     **GMT_CUSTOM_LIBS**
         要链接的自定义GMT库文件，默认值为空
@@ -119,7 +119,7 @@
 
         若设置语言为 **cn1** 即简体中文并正确设置中文字体，则GMT在绘制时可以显式
         “一月”、“星期一”、“周一”等中文。相关示例见
-        :doc:`/chinese/showcase`\ 。
+        :doc:`/chinese/showcase`。
 
     **GMT_COMPATIBILITY**
         是否开启兼容模式 [4]

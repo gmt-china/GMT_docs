@@ -9,7 +9,7 @@ MAP参数
     **MAP_FRAME_TYPE**
         底图边框类型 [**fancy**]
 
-        可选值包括 **inside**\|\ **plain**\|\ **graph**\|\ **fancy**\|\ **fancy+**\ 。
+        可选值包括 **inside**\|\ **plain**\|\ **graph**\|\ **fancy**\|\ **fancy+**。
 
         - 通常，地理投影默认使用 **fancy** 边框类型，而笛卡尔投影则默认使用 **plain** 边框类型。
           但某些地理投影比较特殊，只能使用 plain 边框类型。
@@ -43,7 +43,7 @@ MAP参数
 
         .. note::
 
-           不建议设置该参数。建议使用 **-B** 选项控制实际绘制的边，详情见 :doc:`/option/B`\ 。
+           不建议设置该参数。建议使用 **-B** 选项控制实际绘制的边，详情见 :doc:`/option/B`。
 
 标注相关参数
 ------------
@@ -62,7 +62,7 @@ MAP参数
     **MAP_DEGREE_SYMBOL**
         在地图上绘制“度”时所使用的符号 [degree]
 
-        可以取 **ring**\|\ **degree**\|\ **colon**\|\ **none**\ 。下图给出了取不同值时的绘图效果：
+        可以取 **ring**\|\ **degree**\|\ **colon**\|\ **none**。下图给出了取不同值时的绘图效果：
 
         .. gmtplot::
             :show-code: false
@@ -97,7 +97,7 @@ MAP参数
 
         .. note::
 
-           此参数仅对笛卡尔投影有效。对于地理投影，可使用 :term:`MAP_ANNOT_OBLIQUE`\ 。
+           此参数仅对笛卡尔投影有效。对于地理投影，可使用 :term:`MAP_ANNOT_OBLIQUE`。
 
     **MAP_ANNOT_OBLIQUE**
         控制倾斜地理投影下标注和刻度的显示 [**anywhere**]
@@ -241,7 +241,7 @@ MAP参数
     **MAP_LOGO**
         是否在左下角绘制GMT时间戳 [**false**]
 
-        可以取 **true**\|\ **false**，等效于在命令行中使用 :doc:`/option/U`\ 。
+        可以取 **true**\|\ **false**，等效于在命令行中使用 :doc:`/option/U`。
 
         .. note::
 

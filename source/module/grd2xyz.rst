@@ -86,7 +86,7 @@ XY坐标数据。
     - 若网格在X方向是周期的，输出数据时不需要包含x=xmax所在的列，则加上 **x**
     - 若网格在Y方向是周期的，输出数据时不需要包含y=ymax所在的行，则加上 **y**
 
-    若数据需要做字节交换，则加上 **w**\ 。最后需要指定数据以何种数据类型保存：
+    若数据需要做字节交换，则加上 **w**。最后需要指定数据以何种数据类型保存：
 
     - ``a`` ASCII表，每行输出一个Z值
     - ``c`` int8_t, signed 1-byte character
@@ -100,7 +100,7 @@ XY坐标数据。
     - ``f`` 4-byte floating point single precision
     - ``d`` 8-byte floating point double precision
 
-    默认值为 **-ZTLa**\ 。
+    默认值为 **-ZTLa**。
 
 .. include:: explain_-bo.rst_
 ..

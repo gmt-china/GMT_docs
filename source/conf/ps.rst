@@ -84,10 +84,10 @@ PS参数
     **PS_LINE_JOIN**
         控制线段拐点的绘制方式 [**miter**]
 
-        可以取 **miter**\ 、\ **round**\ 、\ **bevel**\ 。
+        可以取 **miter**\ 、\ **round**\ 、\ **bevel**。
 
         下图展示了 **PS_LINE_JOIN** 取不同值时线段拐点的绘图效果。当线宽较小时，几乎
-        看不出来区别，这里为了显示的效果，将线宽设置为 20p\ 。
+        看不出来区别，这里为了显示的效果，将线宽设置为 20p。
 
         .. gmtplot::
             :show-code: false
@@ -184,7 +184,7 @@ PS参数
 
             仅GMT经典模式下有效，现代模式下纸张始终是 portrait 模式。
 
-        可以取 **portrait** 或 **landscape**\ 。
+        可以取 **portrait** 或 **landscape**。
 
     **PS_SCALE_X**
         绘图时X方向的全局比例 [1.0]

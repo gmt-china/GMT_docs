@@ -67,7 +67,7 @@ solar
 **-G**\ [*fill*]
     根据晨昏线对黑夜区域填充颜色或图案，见 :doc:`/basis/fill`\。
     若不指定 *fill* 则剪裁黑夜区域，且需要通过 **gmt clip -C** 停止区域剪裁，
-    见 :doc:`clip`\ 。
+    见 :doc:`clip`。
 
 .. _-I:
 
@@ -143,7 +143,7 @@ solar
 .. _-W:
 
 **-W**\ [*pen*]
-    设置晨昏线的画笔属性，见 :doc:`/basis/pen`\ 。
+    设置晨昏线的画笔属性，见 :doc:`/basis/pen`。
 
 .. include:: explain_-XY.rst_
 

@@ -11,7 +11,7 @@ DIR参数
    
         也可用环境变量 **$GMT_CACHEDIR** 指定。若同时设置了 **DIR_CACHE** 和 **$GMT_CACHEDIR**，
         则 GMT 只会使用 **DIR_CACHE** 指定的目录。若该配置参数和环境变量均未定义，
-        则默认缓存目录为 :file:`~/.gmt/cache`\ 。
+        则默认缓存目录为 :file:`~/.gmt/cache`。
 
         可以使用 ``gmt clear cache`` 命令清空缓存目录。
 

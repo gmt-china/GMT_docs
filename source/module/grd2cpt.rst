@@ -75,7 +75,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 .. _-C:
 
 **-C**\ *cpt*
-    指定主CPT文件，默认值是GMT自带的 **rainbow**\ 。
+    指定主CPT文件，默认值是GMT自带的 **rainbow**。
     `grd2cpt` 根据主CPT文件的配色方案，将z值范围拉伸至grid文件的z值范围，生成新的CPT。
     GMT自带的CPT文件的配色方案列表，请参见《 :doc:`/cpt/builtin-cpt` 》。
 

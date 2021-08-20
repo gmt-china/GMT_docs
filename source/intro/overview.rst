@@ -42,7 +42,7 @@ GMT 的核心开发者有 8 位：\
 `Leonardo Uieda <https://www.leouieda.com>`__\ 、\
 Florian Wobbe、\
 `Dongdong Tian <https://me.seisman.info>`__ 和
-`Meghan Jones <https://github.com/meghanrjones>`__\ 。
+`Meghan Jones <https://github.com/meghanrjones>`__。
 
 .. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT6_Summit_2019.jpg
    :alt: 2019 年 GMT 开发者峰会
