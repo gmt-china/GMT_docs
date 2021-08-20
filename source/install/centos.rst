@@ -39,15 +39,15 @@ CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 
 5.  安装 GMT 相关工具以增强 GMT 功能
 
-    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**）::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__（**推荐**）::
 
         $ sudo yum install gdal
 
-    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （**可选**）::
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__（**可选**）::
 
         $ sudo yum install GraphicsMagick
 
-    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （**可选**）::
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__（**可选**）::
 
         $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
         $ sudo yum install ffmpeg

@@ -14,8 +14,8 @@ GMT 的编译及运行依赖于其他软件。
 
 必须的依赖软件包括：
 
-- `CMake <https://cmake.org/>`__\ （>=2.8.12）
-- `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
+- `CMake <https://cmake.org/>`__（>=2.8.12）
+- `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__（>=4.0 且支持 netCDF-4/HDF5）
 - `curl <https://curl.haxx.se/>`__
 
 可选的依赖软件包括：
