@@ -37,7 +37,7 @@ GMT也可以输出OGR/GMT格式的数据文件，此时可以使用 *col*\ =\ *n
 *type* 可以是 DOUBLE, FLOAT, INTEGER, CHAR, STRING, DATETIME 或 LOGICAL [默认为 DOUBLE]。
 
 与输入类似，\ *col* 也可以取 **D|G|L|T|W|Z** 中的一个，表示将头段记录中的
-对应信息（例如 **-W**\ *pen*\ ）保存起来。对于输出而言，
+对应信息（例如 **-W**\ *pen*）保存起来。对于输出而言，
 还需要加上 **+g**\ *geometry* 来指定数据的几何类型，\ *geometry* 可以取为
 POINT, LINE 或 POLY。若加上 **+G**\ ，则程序会自动将跨越国际日期变更线的
 线段或多边形分成多段*。

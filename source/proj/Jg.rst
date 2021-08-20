@@ -16,7 +16,7 @@ Azimuthal orthographic（正射方位投影）是一种从无穷远距离处的�
 - *distance* 是边界离投影中心的度数 [<=90，默认值为 90]
 - *width* 地图宽度
 - *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上 1 厘米对应真实地球 *xxxx* 厘米），
-  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*）
 
 .. gmtplot::
     :caption: 使用正射投影绘制半球
@@ -46,7 +46,7 @@ Azimuthal orthographic（正射方位投影）是一种从无穷远距离处的�
   该值取决于你是否是使用裸眼观看（裸眼的角度一般是 60 度宽），或使用其它设备（如望远镜）
 - *width* 地图宽度
 - *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上 1 厘米对应真实地球 *xxxx* 厘米），
-  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*）
 
 .. note::
     由于透视投影类似从空间的飞行器中观察地球，\
