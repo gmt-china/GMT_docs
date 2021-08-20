@@ -6,7 +6,7 @@ FONT参数
 .. glossary::
 
     **FONT**
-        同时设置所有FONT类参数（\ :term:`FONT_LOGO` 除外）的字体
+        同时设置所有FONT类参数（:term:`FONT_LOGO` 除外）的字体
 
     **FONT_ANNOT**
         同时设置 :term:`FONT_ANNOT_PRIMARY` 和 :term:`FONT_ANNOT_SECONDARY` 的值。

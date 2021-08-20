@@ -201,7 +201,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
     GMT 在配置过程中可能会找到 Anaconda 提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
-    解决办法是，在 Shell 配置文件（\ :file:`~/.bashrc` 或 :file:`~/.zshrc`）中
+    解决办法是，在 Shell 配置文件（:file:`~/.bashrc` 或 :file:`~/.zshrc`）中
     将 Anaconda 相关的环境变量注释掉，以保证 GMT 在配置和编译过程中找到的不是
     Anaconda 提供的库文件。待 GMT 安装完成后，再将 Anaconda 相关环境变量改回即可。
 
