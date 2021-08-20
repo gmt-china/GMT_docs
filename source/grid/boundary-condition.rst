@@ -14,7 +14,7 @@ GMT中网格文件的边界条件有三类：
 
 .. math:: \nabla^2 f = \frac{\partial}{\partial n} \nabla^2 f = 0
 
-其中 :math:`f(x, y)` 是网格文件内的值，\ :math:`\partial/\partial n` 是垂直于
+其中 :math:`f(x, y)` 是网格文件内的值，:math:`\partial/\partial n` 是垂直于
 这个方向的偏导。
 
 .. math:: \nabla^2 = \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}\right)

@@ -32,7 +32,7 @@ MAP参数
     **MAP_FRAME_WIDTH**
         设置底图类型为 **fancy** 时的边框宽度 [**5p**]
 
-        注意：对于 **fancy** 底图类型，\ :term:`MAP_FRAME_PEN` 自动设置为
+        注意：对于 **fancy** 底图类型，:term:`MAP_FRAME_PEN` 自动设置为
         :term:`MAP_FRAME_WIDTH` 的0.1倍。
 
     **MAP_FRAME_AXES**

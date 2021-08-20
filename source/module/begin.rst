@@ -142,7 +142,7 @@ UNIX shell 注意事项
 这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，
 在脚本开始的地方设置环境变量 **GMT_SESSION_NAME** 为进程ID。
 
-在Bash shell应该是（其中，\ ``$$`` 是特殊变量，用于表示当前进程ID）::
+在Bash shell应该是（其中，``$$`` 是特殊变量，用于表示当前进程ID）::
 
     export GMT_SESSION_NAME=$$
     gmt begin
