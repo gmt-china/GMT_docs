@@ -10,13 +10,13 @@ GMT的数据处理和绘图功能均通过使用 **gmt** 调用相应模块来�
 
 **gmt** *module* *module-options*
 
-其中 *module* 是GMT模块名，\ *module-options* 是模块所支持的选项。
+其中 *module* 是GMT模块名，*module-options* 是模块所支持的选项。
 
 除了调用模块外，GMT还有自己的一些选项可以使用：
 
 - **gmt --help**：列出GMT提供的所有模块名及其功能
 - **gmt --new-script**\ [=\ *L*\]：生成现代模式模板脚本。默认会根据当前Shell环境确定脚本语言，
-  用户也可以自行指定脚本语言 *L* （可以取 **bash**\ 、\ **csh**\ 或 **batch**\ ）
+  用户也可以自行指定脚本语言 *L* （可以取 **bash**、**csh**\ 或 **batch**）
 - **gmt --show-bindir**：显示GMT的bin目录
 - **gmt --show-citation**：显示GMT的参考文献引用信息
 - **gmt --show-cores**：显示当前计算机可以使用的核数

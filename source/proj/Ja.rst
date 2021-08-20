@@ -15,7 +15,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
 - *distance* 投影中心到边界的角度，默认值为 90，即距离投影中心各 90°，即整个半球
 - *width* 地图宽度
 - *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上1厘米对应真实地球 *xxxx* 厘米），
-  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*）
 
 矩形地图
 --------
@@ -36,7 +36,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
 半球地图
 --------
 
-要绘制半球地图，需要指定区域范围为整个地球，此时可以使用 **-Rg** 或 **-Rd**\ 。
+要绘制半球地图，需要指定区域范围为整个地球，此时可以使用 **-Rg** 或 **-Rd**。
 下图绘制了以南美洲为中心的半球图。
 
 .. gmtplot::
@@ -50,7 +50,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
 
 地震学在绘制震源机制解时，就是将三维的辐射花样信息投影到一个水平面内。
 投影的方式有两种：Schmidt 网和 Wulff 网。其中 Schmidt 网使用的就是 Lambert 方位
-等面积投影（中心经纬度为 0/0），Wulff 网使用的则是等角度的立体投影（\ **-JS**\ ）。
+等面积投影（中心经纬度为 0/0），Wulff 网使用的则是等角度的立体投影（**-JS**）。
 两种震源球投影方式如下图所示：
 
 .. gmtplot::

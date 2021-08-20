@@ -84,7 +84,7 @@ Linux 都自带了的文本编辑器 **gedit** 打开该脚本文件::
         # Place modern session commands here
     gmt end show
 
-其中，以 **#** 开头的行尾注释行，\ **export GMT_SESSION_NAME=$$** 这一行属于
+其中，以 **#** 开头的行尾注释行，**export GMT_SESSION_NAME=$$** 这一行属于
 高级用法，可以忽略。因而核心内容只有两行，即 **gmt begin** 和 **gmt end** 这两行。
 
 编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加 GMT 命令，将脚本修改如下::

@@ -62,7 +62,7 @@ Ubuntu/Debian::
 
 macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 （未安装 Homebrew 的用户，可以参考
-《\ `macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__\ 》
+《`macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__》
 了解如何安装与使用）::
 
     # 安装必须软件包
@@ -137,7 +137,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
     以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
     解压出来的 :file:`gmt-6.2.0` 目录下。
-    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`\ 。
+    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`。
 
 ::
 
@@ -149,7 +149,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
 正常情况下结果结果如下，若存在一些差异也没有问题。只要过程中不出现报错，即可。
 如果出现报错，则需要检查之前的步骤是否有误，检查完成后删除原 build 目录再新建 build，
-继续执行 ``cmake ..``\ ，直到出现类似的检查结果::
+继续执行 ``cmake ..``，直到出现类似的检查结果::
 
     *
     *  GMT Version:               : 6.2.0
@@ -201,7 +201,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
     GMT 在配置过程中可能会找到 Anaconda 提供的库文件，进而导致配置、编译或执行
     过程中出错。
 
-    解决办法是，在 Shell 配置文件（\ :file:`~/.bashrc` 或 :file:`~/.zshrc`\ ）中
+    解决办法是，在 Shell 配置文件（:file:`~/.bashrc` 或 :file:`~/.zshrc`）中
     将 Anaconda 相关的环境变量注释掉，以保证 GMT 在配置和编译过程中找到的不是
     Anaconda 提供的库文件。待 GMT 安装完成后，再将 Anaconda 相关环境变量改回即可。
 
@@ -238,7 +238,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 - 第一个命令添加了环境变量 **GMT6HOME**
 - 第二个命令修改 GMT6 的 :file:`bin` 目录加入到 **PATH** 中，使得在终端或脚本中可以找到 GMT 命令
 - 第三个命令将 GMT6 的 :file:`lib` 目录加入到动态链接库路径中。
-  通常，32 位系统的路径为 :file:`lib`\ ，64 位系统的路径为 :file:`lib64`
+  通常，32 位系统的路径为 :file:`lib`，64 位系统的路径为 :file:`lib64`
 
 测试是否安装成功
 ----------------

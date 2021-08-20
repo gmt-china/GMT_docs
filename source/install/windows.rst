@@ -10,7 +10,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 .. warning::
 
     - 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；
-      （2）是否为 **Administrator**\ 。以上两种情况都可能导致 GMT 运行出错。
+      （2）是否为 **Administrator**。以上两种情况都可能导致 GMT 运行出错。
       如果用户名不符合要求，请新建一个用户。然后使用新用户登录 Windows，再安装 GMT。
     - 360 等安全软件会在 GMT 安装过程中拦截 **PATH** 环境变量的修改。
       请务必关闭安全软件之后再安装。
@@ -45,7 +45,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
         - GMT 安装过程中，在 “Choose components” 页面\ **不勾选** Ghostscript 组件，
           并将其他所有选项都勾选上
-        - GMT 安装完成后，参考《\ :doc:`/chinese/windows`\ 》单独安装 Ghostscript 并配置中文支持
+        - GMT 安装完成后，参考《:doc:`/chinese/windows`》单独安装 Ghostscript 并配置中文支持
 
     .. note::
 
@@ -54,17 +54,17 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
             Warning! Failed to add GMT to PATH. Please add the GMT bin path to PATH manually.
 
         出现此警告的原因是系统的环境变量 **PATH** 太长，GMT 安装包无法直接修改。
-        解决办法是，先忽略这一警告，待安装完成后按照如下步骤手动修改系统环境变量 **PATH**\ 。
+        解决办法是，先忽略这一警告，待安装完成后按照如下步骤手动修改系统环境变量 **PATH**。
 
         1.  点击“计算机”→“属性”→“高级系统设置”→“环境变量”打开“环境变量”编辑工具
         2.  在“系统变量”部分中，选中 “Path” 并点击“编辑”
         3.  在“变量值”的最后加上 GMT 安装目录下的 :file:`bin` 目录的路径，
-            如 :file:`C:\\programs\\gmt6\\bin`\ 。需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
+            如 :file:`C:\\programs\\gmt6\\bin`。需要注意 **PATH** 变量值中多个路径之间用英文分号分隔
 
 3.  测试安装
 
     安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 CMD。
-    在 CMD 窗口中敲入 ``gmt --version``\ ，若出现 GMT 版本号则表示 GMT 安装成功。
+    在 CMD 窗口中敲入 ``gmt --version``，若出现 GMT 版本号则表示 GMT 安装成功。
 
 4.  升级 GMT
 
@@ -96,7 +96,7 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 .. warning::
 
     使用 VS Code 内置终端运行 Batch 绘图脚本时，\
-    **请一定要选择 CMD 终端，绝对不要使用 PowerShell**\ 。
+    **请一定要选择 CMD 终端，绝对不要使用 PowerShell**。
     PowerShell 运行 Batch 绘图脚本会出现无法使用 GMT 远程数据等错误。
     CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
@@ -139,18 +139,18 @@ Windows 下的 Bash 用户不需要安装 UnixTools。
 - ``uniq``：从文本中去除或禁止重复行
 - ``wc``：输出指定文件的行数、字数和文本数据大小
 
-可以参考《\ `Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__\ 》
+可以参考《`Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__》
 简易教程学习这些命令的基本用法。
 
 .. note::
 
-    以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__\ 。如果你发现某些工具存在问题，
+    以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__。如果你发现某些工具存在问题，
     或者觉得有其他需要的 Unix 工具没有被包含进来，请向我们反馈，我们会酌情考虑。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^
 
 GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
-`GraphicsMagick <http://www.graphicsmagick.org/>`_\ 。
+`GraphicsMagick <http://www.graphicsmagick.org/>`_。
 如需制作 GIF 动画，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 ``gm`` 命令。

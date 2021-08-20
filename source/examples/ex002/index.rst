@@ -14,7 +14,7 @@
 本示例将展示如何绘制震中距为30度的 PcP 和 PKiKP 震相的射线路径，
 同时绘制地球内的 410、660界面以及 CMB 和 ICB。
 脚本中调用 TauP 计算射线路径。
-没有安装 TauP 的用户可以直接下载示例射线路径数据 :download:`PKiKP.raypath.gmt` 和 :download:`PcP.raypath.gmt`\ 。
+没有安装 TauP 的用户可以直接下载示例射线路径数据 :download:`PKiKP.raypath.gmt` 和 :download:`PcP.raypath.gmt`。
 
 绘图脚本如下：
 
