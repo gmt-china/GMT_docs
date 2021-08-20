@@ -51,28 +51,28 @@
 
         可以取：
 
-        - **auto**\ ：自动选择合适的算法
-        - **fftw**\ [,\ *planner_flag*]\ ：FFTW算法，其中 *planner_flag* 可以取 **measure**\|\ **patient**\|\ **exhaustive**
+        - **auto**：自动选择合适的算法
+        - **fftw**\ [,\ *planner_flag*]：FFTW算法，其中 *planner_flag* 可以取 **measure**\|\ **patient**\|\ **exhaustive**
         - **accelerate** ：macOS下使用系统自带的Accelerate Framework（该算法要求采样点数必须为2的n次方）
-        - **kiss**\ ：kiss FFT
-        - **brenner**\ ：Brenner Legacy FFT
+        - **kiss**：kiss FFT
+        - **brenner**：Brenner Legacy FFT
 
     **GMT_INTERPOLANT**
         程序中一维插值所使用的算法 [**akima**]
 
-        - **linear**\ ：线性插值
-        - **akima**\ ：akima's spline
-        - **cubic**\ ：natural cubic spline
-        - **none**\ ：不插值
+        - **linear**：线性插值
+        - **akima**：akima's spline
+        - **cubic**：natural cubic spline
+        - **none**：不插值
 
     **GMT_EXTRAPOLATE_VAL**
         外插时超过数据区时如何处理 [NaN]
 
         可选值包括：
 
-        - **NaN**\ ：区域范围外的值一律为NaN
-        - **extrap**\ ： 使用外插算法计算的区域外的值
-        - **extrapval**\,\ *val*\ ：设置区域外的值为 *val*
+        - **NaN**：区域范围外的值一律为NaN
+        - **extrap**： 使用外插算法计算的区域外的值
+        - **extrapval**\,\ *val*：设置区域外的值为 *val*
 
 其它参数
 --------

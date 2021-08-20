@@ -45,18 +45,18 @@ GMT 有两种方式可以指定长度量的单位，即显式指定单位和隐�
 
 对于真实地球上的距离量而言，常用单位包括：
 
-- **d**\ ：弧度（\ **d**\ egree of arc）
-- **m**\ ：弧分（\ **m**\ inute of arc）
-- **s**\ ：弧秒（\ **s**\ econd of arc）
-- **k**\ ：千米（\ **k**\ ilometer）
-- **e**\ ：米（m\ **e**\ ter） ** 默认单位 **
+- **d**：弧度（\ **d**\ egree of arc）
+- **m**：弧分（\ **m**\ inute of arc）
+- **s**：弧秒（\ **s**\ econd of arc）
+- **k**：千米（\ **k**\ ilometer）
+- **e**：米（m\ **e**\ ter） ** 默认单位 **
 
 还有几个不常用的单位：
 
-- **f**\ ：英尺（\ **f**\ oot）
-- **M**\ ：Statute mile
-- **n**\ ：Nautical mile
-- **u**\ ：US Survey foot
+- **f**：英尺（\ **f**\ oot）
+- **M**：Statute mile
+- **n**：Nautical mile
+- **u**：US Survey foot
 
 对于一个距离量而言，若不指定单位，则默认其单位为 **e** （即 “米”）。
 当然还是建议为每个距离量显式指定其单位，使得命令更加清晰。

@@ -17,9 +17,9 @@ CN-block 数据提供了中国大陆及周边活动地块数据，是 GMT 中文
 
 CN-block 数据提供了三个数据文件:
 
-- :file:`CN-block-L1.gmt`\ ：一级地块边界数据
-- :file:`CN-block-L1-deduced.gmt`\ ：一级地块推断边界数据
-- :file:`CN-block-L2.gmt`\ ：二级地块边界数据
+- :file:`CN-block-L1.gmt`：一级地块边界数据
+- :file:`CN-block-L1-deduced.gmt`：一级地块推断边界数据
+- :file:`CN-block-L2.gmt`：二级地块边界数据
 
 具体的下载地址和使用方式请见: :doc:`/dataset-CN/index`\ 。
 

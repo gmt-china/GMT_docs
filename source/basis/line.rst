@@ -101,6 +101,6 @@
 
 除了上面提到的属性之外，GMT中还有一些参数可以影响线段的外观。这些参数包括：
 
-- :term:`PS_LINE_CAP`\ ：控制线段顶端的绘制方式
-- :term:`PS_LINE_JOIN`\ ：控制线段拐点/交点的绘制方式
-- :term:`PS_MITER_LIMIT`\ ：控制线段拐点在 ``miter`` 模式下的阈值
+- :term:`PS_LINE_CAP`：控制线段顶端的绘制方式
+- :term:`PS_LINE_JOIN`：控制线段拐点/交点的绘制方式
+- :term:`PS_MITER_LIMIT`：控制线段拐点在 ``miter`` 模式下的阈值
