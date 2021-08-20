@@ -55,7 +55,7 @@ grdinfo
 
         name w e s n z0 z1 dx dy nx ny [x0 y0 x1 y1] [med scale] [mean std rms] [n_nan] registration gtype
 
-    默认只输出前13列。方括号中的信息仅当使用 **-M**\ 、\ **-L1**\ 、\ **-L2**\ 、\ **-M**
+    默认只输出前13列。方括号中的信息仅当使用 **-M**、**-L1**、**-L2**、**-M**
     选项时才会输出。
 
     使用 **-Ct** 则将文件名 *name* 放在最后一列；使用 **-Cn** 则只输出数值列。

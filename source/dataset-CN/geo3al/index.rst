@@ -59,7 +59,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 
     - 原始数据使用的是以米为单位的投影坐标，而非以经纬度表示的地理坐标。因而在使用
       ``ogr2ogr`` 时需要加上 ``-t_srs EPSG:4326`` 参数进行坐标转换
-    - 转换时 :file:`.dbf`\ 、\ :file:`.prj`\ 、\ :file:`.shx` 等文件必须和
+    - 转换时 :file:`.dbf`、:file:`.prj`、:file:`.shx` 等文件必须和
       :file:`shp` 文件放在同一目录下
 
 数据转换与处理参考了如下博文：

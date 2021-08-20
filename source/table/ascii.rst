@@ -94,7 +94,7 @@ ASCII 表是最常见的数据形式，可以用编辑器直接编辑。ASCII �
     gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
 
 用户可以通过设置 :term:`IO_SEGMENT_MARKER` 将段头记录的
-标识符修改为任意字符，例如 **@**\ 、\ **%**\ 等。
+标识符修改为任意字符，例如 **@**、**%**\ 等。
 :term:`IO_SEGMENT_MARKER` 可以取两个特殊的值：
 
 - 取 **B** 表示用空行作为数据段的分隔符

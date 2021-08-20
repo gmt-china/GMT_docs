@@ -35,5 +35,5 @@ FONT参数
         图上方标题的字体 [**24p,Helvetica,black**]
 
     **FONT_TAG**
-        子图模式下每个子图编号（如 ``a)``\ 、\ ``ii)`` 等）的字体 [**20p,Helvetica,black**]
+        子图模式下每个子图编号（如 ``a)``、``ii)`` 等）的字体 [**20p,Helvetica,black**]
 
