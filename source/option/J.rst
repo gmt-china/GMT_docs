@@ -174,6 +174,6 @@ GMT+PROJ4
 所有的 `PROJ.4投影 <https://proj.org/operations/projections/index.html>`_。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被
 映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图
-比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：\ **+width=**\ *size*
+比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：**+width=**\ *size*
 和 **+scale=1:xxxx** 使得其与经典的GMT中的工作方式相似。
 也可以在投影参数的最后加上字符串 **/1:xxx** 来指定比例尺。

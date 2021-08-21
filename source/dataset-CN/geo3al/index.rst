@@ -16,7 +16,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 
 - :file:`geo3al.gmt`：中国及邻区地质图数据
 
-数据的具体下载地址和使用方式请见：\ :doc:`/dataset-CN/index`。
+数据的具体下载地址和使用方式请见：:doc:`/dataset-CN/index`。
 
 数据中包含了如下非空间元信息（可以参考
 `geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__

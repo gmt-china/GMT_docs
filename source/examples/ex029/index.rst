@@ -16,9 +16,9 @@
 
 示例中使用到的数据包括：
 
-- :file:`@earth_relief_06m`：\ :doc:`/dataset/earth-relief`
-- :file:`@earth_day_06m`：\ :doc:`/dataset/earth-images`
-- :file:`CN-faults.gmt`：\ :doc:`/dataset-CN/CN-faults`
+- :file:`@earth_relief_06m`：:doc:`/dataset/earth-relief`
+- :file:`@earth_day_06m`：:doc:`/dataset/earth-images`
+- :file:`CN-faults.gmt`：:doc:`/dataset-CN/CN-faults`
 
 下面的绘图脚本将三维地形、卫星图片以及断层线绘制在不同高度：
 
