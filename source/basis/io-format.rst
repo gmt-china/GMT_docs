@@ -56,7 +56,7 @@ GMT 所支持的数据类型主要分为四大类：地理坐标、绝对时间�
 
    #. GMT 的时间数据的默认输入/输出格式为 *yyyy-mm-dd*\ T\ *hh:mm:ss.xxx*。
       若想要输入其它格式的时间数据，需要修改配置参数 :term:`FORMAT_DATE_IN`
-      和 :term:`FORMAT_CLOCK_IN`\ ；
+      和 :term:`FORMAT_CLOCK_IN`；
       若想要输出其它格式的时间数据，需要修改配置参数 :term:`FORMAT_DATE_OUT`
       和 :term:`FORMAT_CLOCK_OUT`
    #. 若未指定 *date*，则默认 *date* 是今日
