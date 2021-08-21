@@ -35,7 +35,7 @@ CN-border 数据提供了三个数据文件：
 - :file:`CN-border-L1.gmt`：中国国界、十段线以及南海诸岛数据，不含省界数据
 - :file:`ten-dash-line.gmt`：仅十段线数据
 
-具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`。
+具体的下载地址和使用方式请见：:doc:`/dataset-CN/index`。
 
 示例图
 ------

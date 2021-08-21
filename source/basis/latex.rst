@@ -13,7 +13,7 @@ GMT 已经可以实现打印简单的\ :doc:`special-character`\ 和\ :doc:`esca
 ----
 
 GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，
-这些文本字符串包括使用 :doc:`/option/B` 在标题、子标题或标签中指定的字符串，\
+这些文本字符串包括使用 :doc:`/option/B` 在标题、子标题或标签中指定的字符串，
 也包括通过 :doc:`/module/text` 模块添加的单行文本。
 GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 
@@ -37,7 +37,7 @@ GMT 字体和 LaTeX
 ----------------
 
 LaTeX 是一个庞大且复杂的排版系统，有许多可选包，用户安装的 LaTeX 需包括所有 GMT 必须的包。
-通过包管理器安装 LaTeX 的方法请见 
+通过包管理器安装 LaTeX 的方法请见
 `GMT Wiki <https://github.com/GenericMappingTools/gmt/wiki/Install-LaTeX-for-GMT-LaTeX-Integration>`__。
 其中，GMT 必须的包和字体包括：
 

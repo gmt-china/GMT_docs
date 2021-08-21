@@ -23,7 +23,7 @@ GMT中可以用一个三位的八进制码指定一个特殊字符。八进制�
 :download:`八进制码表 PNG 版 <GMT_stand+_iso+.png>`
 
 **左右两张表分别是什么？该用哪一张？**
-GMT支持多种字符编码，其中最常用的编码是 \ **Standard+**\ 和
+GMT支持多种字符编码，其中最常用的编码是 **Standard+** 和
 **ISOLation1+**。通常，GMT的默认字符编码是 **ISOLatin1+**，所以只需要看左表即可；
 如果当前字符编码是 **Standard+**，则需要查询右表。
 可以通过 ``gmt get PS_CHAR_ENCODING`` 命令查到你所安装的GMT的默认字符编码方式。
