@@ -4,7 +4,7 @@
 版本号
 ------
 
-GMT 版本号遵循“\ `语义化版本号规范 <https://semver.org/lang/zh-CN>`__\ ”，其版本号格式为:
+GMT 版本号遵循“`语义化版本号规范 <https://semver.org/lang/zh-CN>`__”，其版本号格式为:
 
     *major.minor.patch*
 
