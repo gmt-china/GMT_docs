@@ -26,7 +26,7 @@ FORMAT参数
         比如 **ddmmyyyy**、**yy-mm-dd**、**dd-o-yyyy**、**yyyy/dd/mm**、
         **yyyy-jjj** 等。
 
-        对于ISO周历而言，其模板格式为 **yyyy**\[-]\ **W**\[-]\ **ww**\ [-]\ **d**\，
+        对于ISO周历而言，其模板格式为 **yyyy**\[-]\ **W**\[-]\ **ww**\ [-]\ **d**，
         表示某年的第ww周的第d天。比如 **yyyyWwwd** 或 **yyyy-Www** 等。
 
     **FORMAT_DATE_OUT**
