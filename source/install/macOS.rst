@@ -74,8 +74,8 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 1. 下载
 
-   - Intel：\ `gmt-6.2.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__
-   - ARM：\ `gmt-6.2.0-darwin-arm64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
+   - Intel：`gmt-6.2.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-x86_64.dmg>`__
+   - ARM：`gmt-6.2.0-darwin-arm64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-darwin-arm64.dmg>`__
 
 2. 双击 dmg 包，在弹出的 Finder 窗口中，将 :file:`GMT-6.2.0.app` 拖动到 :file:`Applications` 目录
 

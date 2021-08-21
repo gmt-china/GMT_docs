@@ -49,18 +49,18 @@ begin
 
     GMT支持输出如下矢量图片格式：
 
-    - ``pdf``：\ `Portable Document Format <https://zh.wikipedia.org/wiki/可移植文档格式>`_ [默认格式]
-    - ``ps``：\  `Plain PostScript <https://zh.wikipedia.org/wiki/PostScript>`_
-    - ``eps``：\ `Encapsulated PostScript <https://zh.wikipedia.org/wiki/EPS>`_
+    - ``pdf``：`Portable Document Format <https://zh.wikipedia.org/wiki/可移植文档格式>`_ [默认格式]
+    - ``ps``： `Plain PostScript <https://zh.wikipedia.org/wiki/PostScript>`_
+    - ``eps``：`Encapsulated PostScript <https://zh.wikipedia.org/wiki/EPS>`_
 
     GMT支持输出如下位图图片格式：
 
-    - ``bmp``：\ `Microsoft Bit Map <https://zh.wikipedia.org/wiki/BMP>`_
-    - ``jpg``：\ `Joint Photographic Experts Group Format <https://zh.wikipedia.org/wiki/JPEG>`_
-    - ``png``：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （不透明背景）
-    - ``PNG``：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （透明背景）
-    - ``ppm``：\ `Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
-    - ``tif``：\ `Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
+    - ``bmp``：`Microsoft Bit Map <https://zh.wikipedia.org/wiki/BMP>`_
+    - ``jpg``：`Joint Photographic Experts Group Format <https://zh.wikipedia.org/wiki/JPEG>`_
+    - ``png``：`Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （不透明背景）
+    - ``PNG``：`Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （透明背景）
+    - ``ppm``：`Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
+    - ``tif``：`Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
 
 *options*
     GMT现代模式本质上是先生成PS文件，再通过调用 :doc:`psconvert` 自动转换成用户
