@@ -1,12 +1,12 @@
-参数控制
-========
+配置参数的设置
+================
 
-本节介绍 GMT 配置参数及其设置方法。GMT 提供了 150 多个配置参数，
+本节介绍 GMT 配置参数及其设置的方法。GMT 提供了 150 多个配置参数，
 用于控制图形的外观（如底图边框的画笔粗细、颜色、文字标注的字体、大小和颜色等）
-和数据的处理方式（如插值使用的数学公式、地图投影使用的椭球等）等。
-这些配置参数一般都有默认值。如果不满意默认值的绘图或处理效果，
-可以重新设置参数的值以细致地调节图形的外观和数据的处理方式。
-例如，下面这幅图的标题相对于底图大了一些，显得不协调。这便产生了需要设置标题的字体的需求。
+和数据的处理方式（如插值使用的数学公式、地图投影使用的椭球等）。
+这些配置参数一般都有默认值。有时，这些默认值并不合适。例如，下面这幅图的标题相对于底图大了一些，
+显得不协调。遇到这样的不让人满意的情况，可以自行设置相关参数，
+以细致地调节图形的外观或数据的处理方式。
 
 .. gmtplot::
    :language: bash
@@ -14,8 +14,37 @@
 
    gmt basemap -JX4c -R0/1/0/1 -Bwsen+t'Title' -png conf0
 
-本节的第一小节介绍参数设置的方法，读者通过学习第一小节可以知道如何修改一个参数。
-后面两小节将指导用户如何依据自己的需求找到相应的参数。
+要设置参数，就需要解决两个问题：第一个问题是确定需要改哪一个参数，第二个问题才是如何改。
+
+确定参数的方法
+--------------
+
+参数的名称是由它控制的元素的属性决定的。上面的例子中的问题是标题的字体太大，
+因此需要修改的参数就是「标题的字体」。「标题（TITLE）」是该参数的元素，
+「字体（FONT）」则是属性。知道了想要设置的绘图元素或者属性，就可以尝试寻找相应的参数名。
+下面的命令可以找到和「标题（TITLE）」相关的参数::
+
+    $ gmt defaults | grep TITLE
+    FONT_TITLE                     = 24p,Helvetica,black
+    MAP_TITLE_OFFSET               = 14p
+
+下面的命令可以找到和「字体（FONT）」相关的参数::
+
+    $ gmt defaults | grep FONT
+    # FONT Parameters
+    FONT_ANNOT_PRIMARY             = 12p,Helvetica,black
+    FONT_ANNOT_SECONDARY           = 14p,Helvetica,black
+    FONT_HEADING                   = 32p,Helvetica,black
+    FONT_LABEL                     = 16p,Helvetica,black
+    FONT_LOGO                      = 8p,Helvetica,black
+    FONT_TAG                       = 20p,Helvetica,black
+    FONT_TITLE                     = 24p,Helvetica,black
+
+因为最常修改的是底图，所以建议读者记住底图各个元素的确切名称：
+
+.. figure:: ../basis/tutor_conf.png
+   :width: 100%
+   :align: center
 
 参数设置的方法
 ---------------
@@ -60,35 +89,3 @@
    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' --FONT_TITLE=12p,Times-Bold,blue
    gmt subplot end
    gmt end
-
-绘图元素的名称
-------------------
-
-下图展示了GMT的底图的各个元素的中英文名称。
-
-.. figure:: ../basis/tutor_conf.png
-   :width: 100%
-   :align: center
-
-寻找参数的方法
-------------------
-
-知道了想要设置的绘图元素或者属性，就可以尝试寻找相应的参数名。
-例如，参数 :term:`FONT_TITLE` 就是字体和标题合并起来的。
-下面的命令可以找到和标题相关的参数::
-
-    $ gmt defaults | grep TITLE
-    FONT_TITLE                     = 24p,Helvetica,black
-    MAP_TITLE_OFFSET               = 14p
-
-下面的命令可以找到和字体相关的参数::
-
-    $ gmt defaults | grep FONT
-    # FONT Parameters
-    FONT_ANNOT_PRIMARY             = 12p,Helvetica,black
-    FONT_ANNOT_SECONDARY           = 14p,Helvetica,black
-    FONT_HEADING                   = 32p,Helvetica,black
-    FONT_LABEL                     = 16p,Helvetica,black
-    FONT_LOGO                      = 8p,Helvetica,black
-    FONT_TAG                       = 20p,Helvetica,black
-    FONT_TITLE                     = 24p,Helvetica,black
