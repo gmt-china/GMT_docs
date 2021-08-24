@@ -66,7 +66,7 @@ GMT6 既支持传统的经典模式，也支持全新的现代模式。
 - :doc:`/module/inset` 模块：极大简化了图中图的绘制
 - :doc:`gmt:movie` 模块：极大简化了动画的制作
 - :doc:`/option/l`：极大简化了图例的设置与绘制
-- 提供了\ :doc:`当前 CPT </cpt/current-cpt>`\ 的功能，多数情况下无须将 CPT 写到文件中
+- 提供了\ :doc:`当前 CPT </cpt/current-cpt>` 的功能，多数情况下无须将 CPT 写到文件中
 
 这些更方便的功能会在后面的文档中更详细地介绍。
 
@@ -76,12 +76,12 @@ GMT6 既支持传统的经典模式，也支持全新的现代模式。
 将经典模式的脚本改成现代模式的脚本，基本可以遵循如下几点：
 
 #. 绘图脚本以 **gmt begin** *figure* 开头，以 **gmt end show** 结束
-#. 去掉 **-K**, **-O**, **-P**, 重定向符号以及 PS 文件名
-#. 去掉多余的 **-J**, **-R** 选项
+#. 去掉 **-K**、**-O**、**-P**，重定向符号以及 PS 文件名
+#. 去掉多余的 **-J**、**-R** 选项
 #. 某些模块在现代模式下有新的名称。经典模式下以 **ps** 开头的模块省略 **ps**，
-   比如 **pscoast** → **coast**、**psbasemap** → **basemap**。
-   有三个模块属于例外，**psxy** → **plot**, **psxyz** → **plot3d**,
-   **psscale** → **colorbar**
+   比如 **pscoast**→**coast**、**psbasemap**→**basemap**。
+   有三个模块属于例外，**psxy**→**plot**, **psxyz**→**plot3d**,
+   **psscale**→**colorbar**
 #. 在需要绘制多子图、图中图时，考虑使用 **inset** 和 **subplot** 改写
 #. 现代模式下 **makecpt** 和 **grd2cpt** 默认将生成的 CPT 作为当前 CPT，
    而不输出到文件中。这一特性在后面会具体介绍。如果需要生成 CPT 到文件中，
