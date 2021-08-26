@@ -16,7 +16,7 @@ General stereographic（立体等角投影）是保角方位投影，主要用�
 - *distance* 地图边界到投影中心的角度，默认值为 90 度
 - *width* 地图宽度
 - *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上 1 厘米对应真实地球 *xxxx* 厘米），
-  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*）
 
 默认情况下使用的地图比例因子为 0.996。尽管你可以通过 :term:`PROJ_SCALE_FACTOR` 修改
 地图比例因子，然而，当标准纬线被指定后，该比例因子则会被自动计算。

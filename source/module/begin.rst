@@ -32,7 +32,7 @@ begin
 --------
 
 *prefix*
-    图片文件名前缀，默认值为 **gmtsession**\ 。
+    图片文件名前缀，默认值为 **gmtsession**。
     图片文件名后缀由 *formats* 自动决定。
 
     如果一个GMT会话只用于进行计算而不绘图，或者需要绘制多张图，则不需要指定该参数。
@@ -44,30 +44,30 @@ begin
 .. _fig-formats:
 
 *formats*
-    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**\ ，由
+    图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 **pdf**，由
     参数 :term:`GMT_GRAPHICS_FORMAT` 控制。
 
     GMT支持输出如下矢量图片格式：
 
-    - ``pdf``\ ：\ `Portable Document Format <https://zh.wikipedia.org/wiki/可移植文档格式>`_ [默认格式]
-    - ``ps``\ ：\  `Plain PostScript <https://zh.wikipedia.org/wiki/PostScript>`_
-    - ``eps``\ ：\ `Encapsulated PostScript <https://zh.wikipedia.org/wiki/EPS>`_
+    - ``pdf``：`Portable Document Format <https://zh.wikipedia.org/wiki/可移植文档格式>`_ [默认格式]
+    - ``ps``： `Plain PostScript <https://zh.wikipedia.org/wiki/PostScript>`_
+    - ``eps``：`Encapsulated PostScript <https://zh.wikipedia.org/wiki/EPS>`_
 
     GMT支持输出如下位图图片格式：
 
-    - ``bmp``\ ：\ `Microsoft Bit Map <https://zh.wikipedia.org/wiki/BMP>`_
-    - ``jpg``\ ：\ `Joint Photographic Experts Group Format <https://zh.wikipedia.org/wiki/JPEG>`_
-    - ``png``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （不透明背景）
-    - ``PNG``\ ：\ `Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （透明背景）
-    - ``ppm``\ ：\ `Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
-    - ``tif``\ ：\ `Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
+    - ``bmp``：`Microsoft Bit Map <https://zh.wikipedia.org/wiki/BMP>`_
+    - ``jpg``：`Joint Photographic Experts Group Format <https://zh.wikipedia.org/wiki/JPEG>`_
+    - ``png``：`Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （不透明背景）
+    - ``PNG``：`Portable Network Graphics <https://zh.wikipedia.org/wiki/PNG>`_ （透明背景）
+    - ``ppm``：`Portable Pixel Map <https://zh.wikipedia.org/wiki/PBM格式>`_
+    - ``tif``：`Tagged Image Format File <https://zh.wikipedia.org/wiki/TIFF>`_
 
 *options*
     GMT现代模式本质上是先生成PS文件，再通过调用 :doc:`psconvert` 自动转换成用户
     指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，
     多个选项之间用逗号分隔。
 
-    默认值为 **A**\ ，表示将 **-A** 选项传给 :doc:`psconvert`\ 。
+    默认值为 **A**，表示将 **-A** 选项传给 :doc:`psconvert`。
 
     其他可选的选项包括：
 
@@ -103,7 +103,7 @@ begin
     gmt ...
     gmt end
 
-开始一个GMT会话，并指定图片名为 *Figure_2*\ ，图片格式为PDF和PNG格式::
+开始一个GMT会话，并指定图片名为 *Figure_2*，图片格式为PDF和PNG格式::
 
     gmt begin Figure_2 pdf,png
     gmt ...
@@ -142,7 +142,7 @@ UNIX shell 注意事项
 这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，
 在脚本开始的地方设置环境变量 **GMT_SESSION_NAME** 为进程ID。
 
-在Bash shell应该是（其中，\ ``$$`` 是特殊变量，用于表示当前进程ID）::
+在Bash shell应该是（其中，``$$`` 是特殊变量，用于表示当前进程ID）::
 
     export GMT_SESSION_NAME=$$
     gmt begin

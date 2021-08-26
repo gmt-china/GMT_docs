@@ -107,7 +107,7 @@ gmtlogo
 ----
 
 若想要绘制链接到GMT官网的二维码，可以使用 :doc:`plot` 提供的自定义符号
-**QR** 和 **QR_transparent**\ 。
+**QR** 和 **QR_transparent**。
 
 相关模块
 --------
