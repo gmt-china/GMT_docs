@@ -168,14 +168,7 @@ wiggle
 示例
 ----
 
-.. note::
-
-    下面展示了本模块的一些示例。
-    其中使用远程文件（文件名以 ``@`` 开头）的示例可以直接复制并粘贴到终端运行。
-    其他需要输入文件的示例仅用于展示模块用法，由于未提供输入文件，不能执行。
-
-为了演示本模块的用法，这里首先使用 :doc:`gmt:gmtmath` 模块创建数据文件
-:download:`temp.dat </module/wiggle/temp.dat>`，然后使用 wiggle 绘制该数据::
+下面的示例展示了如果使用 **wiggle** 模块绘图。示例中使用的数据为 :download:`temp.dat <temp.dat>`\ ：
 
     gmt wiggle temp.dat -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne -pdf map
 
