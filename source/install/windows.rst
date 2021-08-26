@@ -28,7 +28,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
     - `GDAL <https://gdal.org/>`__：用于多种地学数据格式的转换
     - `FFmpeg <https://ffmpeg.org/>`__：用于生成 mp4 或 webm 格式的动画
-    - `Ghostscript <https://www.ghostscript.com/>`__\ : 用于生成 PDF、JPG 等图片格式
+    - `Ghostscript <https://www.ghostscript.com/>`__：用于生成 PDF、JPG 等图片格式
 
 2.  安装 GMT
 
@@ -95,8 +95,7 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 
 .. warning::
 
-    使用 VS Code 内置终端运行 Batch 绘图脚本时，\
-    **请一定要选择 CMD 终端，绝对不要使用 PowerShell**。
+    使用 VS Code 内置终端运行 Batch 绘图脚本时，**请一定要选择 CMD 终端，绝对不要使用 PowerShell**。
     PowerShell 运行 Batch 绘图脚本会出现无法使用 GMT 远程数据等错误。
     CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
 
@@ -123,7 +122,7 @@ Windows 下的 Bash 用户不需要安装 UnixTools。
 下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
 然后将解压得到的 exe 文件移动到 GMT 安装目录下的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
 
-- ``cat`` \：显示文件内容
+- ``cat``：显示文件内容
 - ``cut``：从指定文本中截取文本并输出至标准输出
 - ``gawk``：处理文本信息的编程语言工具
 - ``grep``：从指定文本或标准输入中识别并截取出特定字段等
@@ -151,6 +150,6 @@ GraphicsMagick
 ^^^^^^^^^^^^^^
 
 GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
-`GraphicsMagick <http://www.graphicsmagick.org/>`_。
+`GraphicsMagick <http://www.graphicsmagick.org/>`__。
 如需制作 GIF 动画，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 ``gm`` 命令。
