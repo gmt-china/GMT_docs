@@ -24,6 +24,7 @@
     - :doc:`coupe`
     - :doc:`docs`
     - :doc:`end`
+    - :doc:`events`
     - :doc:`figure`
     - :doc:`filter1d`
     - :doc:`fitcircle`
