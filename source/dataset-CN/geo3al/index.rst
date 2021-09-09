@@ -22,7 +22,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 `geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__
 以获取元信息的更多细节）：
 
-- ``NAREA``：地层多边形区域的面积（单位 :math:`m^2`）
+- ``AREA``：地层多边形区域的面积（单位 :math:`m^2`）
 - ``PERIMETER``：地层多边形区域的周长（单位 m）
 - ``TYPE``：岩性
 - ``GLG``：原始地图上显示地表露头的地质年代
