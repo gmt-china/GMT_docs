@@ -17,7 +17,7 @@ Azimuthal equidistant（方位等距投影）最显著的特征是在图上测�
 - *distance* 是边界距离投影中心的度数，默认值为 180，即绘制全球图
 - *width* 地图宽度
 - *scale* 地图比例尺，可以取 1:*xxxx* 格式（图上1厘米对应真实地球 *xxxx* 厘米），
-  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*\ ）
+  也可以是 *radius*/*latitude*\ （表示从投影中心到纬线 *latitude* 在图上的距离为 *radius*）
 
 下图中，投影中心为 100°W/40°N，离投影中心 180 度的点在图中的最外边界处。
 

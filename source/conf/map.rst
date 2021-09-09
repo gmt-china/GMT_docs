@@ -9,7 +9,7 @@ MAP参数
     **MAP_FRAME_TYPE**
         底图边框类型 [**fancy**]
 
-        可选值包括 **inside**\|\ **plain**\|\ **graph**\|\ **fancy**\|\ **fancy+**\ 。
+        可选值包括 **inside**\|\ **plain**\|\ **graph**\|\ **fancy**\|\ **fancy+**。
 
         - 通常，地理投影默认使用 **fancy** 边框类型，而笛卡尔投影则默认使用 **plain** 边框类型。
           但某些地理投影比较特殊，只能使用 plain 边框类型。
@@ -32,7 +32,7 @@ MAP参数
     **MAP_FRAME_WIDTH**
         设置底图类型为 **fancy** 时的边框宽度 [**5p**]
 
-        注意：对于 **fancy** 底图类型，\ :term:`MAP_FRAME_PEN` 自动设置为
+        注意：对于 **fancy** 底图类型，:term:`MAP_FRAME_PEN` 自动设置为
         :term:`MAP_FRAME_WIDTH` 的0.1倍。
 
     **MAP_FRAME_AXES**
@@ -43,7 +43,7 @@ MAP参数
 
         .. note::
 
-           不建议设置该参数。建议使用 **-B** 选项控制实际绘制的边，详情见 :doc:`/option/B`\ 。
+           不建议设置该参数。建议使用 **-B** 选项控制实际绘制的边，详情见 :doc:`/option/B`。
 
 标注相关参数
 ------------
@@ -62,7 +62,7 @@ MAP参数
     **MAP_DEGREE_SYMBOL**
         在地图上绘制“度”时所使用的符号 [degree]
 
-        可以取 **ring**\|\ **degree**\|\ **colon**\|\ **none**\ 。下图给出了取不同值时的绘图效果：
+        可以取 **ring**\|\ **degree**\|\ **colon**\|\ **none**。下图给出了取不同值时的绘图效果：
 
         .. gmtplot::
             :show-code: false
@@ -97,7 +97,7 @@ MAP参数
 
         .. note::
 
-           此参数仅对笛卡尔投影有效。对于地理投影，可使用 :term:`MAP_ANNOT_OBLIQUE`\ 。
+           此参数仅对笛卡尔投影有效。对于地理投影，可使用 :term:`MAP_ANNOT_OBLIQUE`。
 
     **MAP_ANNOT_OBLIQUE**
         控制倾斜地理投影下标注和刻度的显示 [**anywhere**]
@@ -191,8 +191,8 @@ MAP参数
         在某些投影下，由于极点是单个点，常规的网格线绘制方法会导致极点处网格线
         非常密且不美观。该选项则用于解决这一问题。
 
-        若取值为 **none**\ ，则表示不对极点附近的网格线做特殊处理。
-        否则可以指定 *pc_lat*/*pc_dlon*\ ，表示在 -\ *pc_lat* 到 +\ *pc_lat* 纬度
+        若取值为 **none**，则表示不对极点附近的网格线做特殊处理。
+        否则可以指定 *pc_lat*/*pc_dlon*，表示在 -\ *pc_lat* 到 +\ *pc_lat* 纬度
         范围内正常绘制网格线；在大于 +\ *pc_lat* 和小于 -\ *pc_lat* 纬度区域内，则
         按照 *pc_dlon* 指定的经线间隔绘制网格线。GMT会在 ±\ *pc_lat* 纬度处绘制一个
         圈圈以分隔这两个纬度区间。
@@ -241,7 +241,7 @@ MAP参数
     **MAP_LOGO**
         是否在左下角绘制GMT时间戳 [**false**]
 
-        可以取 **true**\|\ **false**\ ，等效于在命令行中使用 :doc:`/option/U`\ 。
+        可以取 **true**\|\ **false**，等效于在命令行中使用 :doc:`/option/U`。
 
         .. note::
 

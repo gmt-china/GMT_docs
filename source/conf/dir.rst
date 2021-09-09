@@ -7,18 +7,18 @@ DIR参数
 .. glossary::
 
     **DIR_CACHE**
-        指定从 GMT 服务器下载的临时文件（以 **@** 开头，如 :file:`@hotspots.txt`\ ）的缓存目录。
+        指定从 GMT 服务器下载的临时文件（以 **@** 开头，如 :file:`@hotspots.txt`）的缓存目录。
    
-        也可用环境变量 **$GMT_CACHEDIR** 指定。若同时设置了 **DIR_CACHE** 和 **$GMT_CACHEDIR**\ ，
+        也可用环境变量 **$GMT_CACHEDIR** 指定。若同时设置了 **DIR_CACHE** 和 **$GMT_CACHEDIR**，
         则 GMT 只会使用 **DIR_CACHE** 指定的目录。若该配置参数和环境变量均未定义，
-        则默认缓存目录为 :file:`~/.gmt/cache`\ 。
+        则默认缓存目录为 :file:`~/.gmt/cache`。
 
         可以使用 ``gmt clear cache`` 命令清空缓存目录。
 
     **DIR_DATA**
         指定一个或多个存放常用数据文件的数据目录。
         
-        也可用环境变量 **$GMT_DATADIR** 指定。若同时设置了 **DIR_DATA** 和 **$GMT_DATADIR**\ ，
+        也可用环境变量 **$GMT_DATADIR** 指定。若同时设置了 **DIR_DATA** 和 **$GMT_DATADIR**，
         则 GMT 只会使用 **DIR_DATA** 指定的目录。若该配置参数和环境变量均未定义，则数据目录默认为空。
  
         多个目录之间用逗号分隔；以斜杠 :kbd:`/` 结尾的目录都会被递归搜索（Windows 不支持此功能）。

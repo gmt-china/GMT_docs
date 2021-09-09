@@ -13,9 +13,9 @@ CN-faults 数据来自于邓起东院士编制的《中国活动构造图（1:40
 数据文件
 --------
 
-CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主要断层
+CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要断层
 
-具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
+具体的下载地址和使用方式请见：:doc:`/dataset-CN/index`。
 
 示例图
 ------
@@ -102,7 +102,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 数据来源与处理
 --------------
 
-1.  下载 :file:`Active_fault.zip` 压缩包：\ `中国大陆地区 1:400 万活动断层数据库
+1.  下载 :file:`Active_fault.zip` 压缩包：`中国大陆地区 1:400 万活动断层数据库
     <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__
 
 2.  格式转换
