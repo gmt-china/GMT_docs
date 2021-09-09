@@ -27,7 +27,7 @@
     FONT_TITLE                     = 24p,Helvetica,black
     MAP_TITLE_OFFSET               = 14p
 
-下面的命令可以找到和「字体（FONT）」有关的参数::
+下面的命令可以找到和字体（FONT）有关的参数::
 
     $ gmt defaults | grep FONT
     # FONT Parameters
