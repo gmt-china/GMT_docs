@@ -7,8 +7,8 @@
    :maxdepth: 1
 
    histogram/index
+   conf
    oneliner
    inset
    subplot
    multifig
-   conf
