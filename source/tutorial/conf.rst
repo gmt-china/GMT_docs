@@ -41,7 +41,7 @@
 
 最常修改的是底图，所有建议读者记住底图各个元素的确切中英文名称：
 
-.. figure:: ../basis/tutor_conf.png
+.. figure:: tutor_conf.png
    :width: 100%
    :align: center
 
@@ -63,12 +63,8 @@
 
    gmt begin conf1 png
    gmt set FONT_TITLE 12p,Times-Bold,red # 全局设置标题的字体
-   gmt subplot begin 1x2 -Fs5c/3c
-   gmt subplot set 0
    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One'
-   gmt subplot set 1
-   gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two'
-   gmt subplot end
+   gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' -X6c
    gmt end
 
 临时设置则是通过为命令添加选项 ``--KEY=value`` 的形式实现的，其中的 KEY 是配置参数的名称，
@@ -84,10 +80,6 @@
    :caption: 标题字体的临时设置
 
    gmt begin conf2 png
-   gmt subplot begin 1x2 -Fs5c/3c
-   gmt subplot set 0
    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One' --FONT_TITLE=12p,Times-Bold,red
-   gmt subplot set 1
-   gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' --FONT_TITLE=12p,Times-Bold,blue
-   gmt subplot end
+   gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' --FONT_TITLE=12p,Times-Bold,blue -X6c
    gmt end
