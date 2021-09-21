@@ -23,7 +23,7 @@
 使用 :doc:`/module/gmtdefaults` 模块可以列出所有配置参数及其默认值。
 配置参数的名称是由它控制的元素的属性决定的，所以根据元素或属性的名称，即可找到对应的配置参数。
 上面的例子中的问题是标题的字体太大，因此需要修改的配置参数的元素是标题（TITLE)，
-而属性是字体（FONT)。下面的命令可以找到和标题（TITLE）有关的参数::
+而属性是字体（FONT)。执行 ``gmt defaults`` 命令并使用 ``grep`` 命令可以找到所有与标题（TITLE）有关的参数::
 
     $ gmt defaults | grep TITLE
     FONT_TITLE                     = 24p,Helvetica,black
