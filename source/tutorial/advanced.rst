@@ -7,7 +7,7 @@
    :maxdepth: 1
 
    histogram/index
-   conf
+   configurations
    oneliner
    inset
    subplot
