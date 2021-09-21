@@ -79,7 +79,7 @@
    :width: 50%
    :caption: 标题字体的临时设置
 
-   gmt begin conf2 png
-   gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One' --FONT_TITLE=12p,Times-Bold,red
-   gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' --FONT_TITLE=12p,Times-Bold,blue -X6c
-   gmt end
+    gmt begin conf2 png
+        gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One' --FONT_TITLE=12p,Times-Bold,red
+        gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' --FONT_TITLE=12p,Times-Bold,blue -X6c
+    gmt end
