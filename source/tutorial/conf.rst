@@ -43,7 +43,8 @@
     FONT_TAG                       = 20p,Helvetica,black
     FONT_TITLE                     = 24p,Helvetica,black
 
-最常修改的是底图，所有建议读者记住底图各个元素的确切中英文名称：
+下图展示了 GMT 绘图时底图中各个元素的英文名称以及本手册中对应的中文名称。
+建议读者记住底图各个元素的中英文名称以方便查找和修改。
 
 .. figure:: tutor_conf.png
    :width: 100%
