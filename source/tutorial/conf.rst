@@ -52,8 +52,8 @@
 只对该条命令有效。下面以配置参数 :term:`FONT_TITLE` 为例，
 介绍（全局和临时）设置标题（TITLE）的字体（FONT）的方法。
 
-全局设置需要使用 set 模块。用 set 模块做的设置对之后的所有命令都有效。在下面的例子中，
-使用 set 模块全局设置了标题的字体为 ``12p,Times-Bold,red``，
+全局设置需要使用 :doc:`/module/gmtset` 模块。用 :doc:`/module/gmtset` 模块做的设置对之后的所有命令都有效。在下面的例子中，
+使用 :doc:`/module/gmtset` 模块全局设置了标题的字体为 ``12p,Times-Bold,red``，
 所以后面的两个标题的字体都发生了相应的改变。
 
 .. gmtplot::
