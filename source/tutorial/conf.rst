@@ -69,7 +69,7 @@
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' -X6c
     gmt end
 
-临时设置则是通过为命令添加选项 ``--KEY=value`` 的形式实现的，其中的 KEY 是配置参数的名称，
+临时设置则是通过为命令添加选项 **--KEY=**\ *value* 的形式实现的，其中的 **KEY** 是配置参数的名称，
 而 value 是它的值。在下面的例子中，
 第一个绘制底图的命令增加了选项 ``--FONT_TITLE=12p,Times-Bold,red``，
 所以该底图的标题的字体是红色的。
