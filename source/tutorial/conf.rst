@@ -10,7 +10,9 @@
    :language: bash
    :width: 20%
 
-   gmt basemap -JX2c -R0/1/0/1 -Bwsen+t'Title' -png conf0
+    gmt begin conf0 png
+        gmt basemap -JX2c -R0/1/0/1 -Bwsen+t'Title' 
+    gmt end show
 
 要设置配置参数，就需要依次解决两个问题：第一个问题是确定需要修改的配置参数的名称，
 第二个问题是如何修改。所以，本节先介绍如何确定配置参数的名称，再介绍配置参数的设置方法。
