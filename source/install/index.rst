@@ -22,9 +22,11 @@
 
    conda
 
-某些 Linux 发行版未提供最新版本的 GMT 二进制包。可以选择编译源码安装：
+当你的 Linux 发行版没有提供 GMT 最新版本的二进制包，或者你想要使用 GMT 开发版源码，
+你可以选择编译 GMT 源码：
 
 .. toctree::
    :maxdepth: 1
 
    build-source-unix
+   build-source-windows
