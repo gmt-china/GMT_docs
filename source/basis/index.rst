@@ -7,7 +7,7 @@
 .. toctree::
    :maxdepth: 1
 
-   paper
+   canvas
    unit
    color
    pen
