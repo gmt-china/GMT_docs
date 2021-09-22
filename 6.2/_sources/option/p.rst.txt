@@ -15,7 +15,7 @@
 
 下图给出了2D底图下透视视角取不同值时所看到的底图。
 
-.. gmtplot:: p-option-example-2D.sh
+.. gmtplot:: p/p-option-example-2D.sh
    :show-code: false
 
 对于3D底图而言（使用了 **-JZ** 选项），默认会在Z轴底部绘制XY平面的边框。
@@ -28,7 +28,7 @@
 
     gmt basemap -R0/10/0/10/0/20 -JX3c -JZ3c -Baf -Bzaf -BwsENZ1+b -p135/40 -pdf 3D-map
 
-.. gmtplot:: p-option-example-3D.sh
+.. gmtplot:: p/p-option-example-3D.sh
    :show-code: false
 
 .. warning::

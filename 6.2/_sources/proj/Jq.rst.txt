@@ -1,10 +1,11 @@
--Jq：圆柱等距投影
-=================
+-JQ: Equidistant cylindrical
+============================
 
 维基链接：https://en.wikipedia.org/wiki/Equirectangular_projection
 
-这个简单的圆柱投影是一个经度和纬度的线性缩放。最常用的形式是Plate Carrée投影，
-其中对经线和纬线的缩放比例是相同的。所有的经纬线都是直线。
+Equidistant cylindrical（圆柱等距投影）是一个经度和纬度的线性缩放。
+最常用的形式是 Plate Carrée 投影，其中对经线和纬线的缩放比例是相同的。
+所有的经纬线都是直线。
 
 该投影的参数为：
 
@@ -15,10 +16,10 @@
 - *lon* 是中心经线，默认为地图区域的中心
 - *lat* 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线
 - *width* 地图宽度
-- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上1厘米对应真实地球 *xxxx* 厘米）
+- *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上 1 厘米对应真实地球 *xxxx* 厘米）
 
 .. gmtplot::
-    :caption: 使用Plate Carrée投影绘制全球地图
+    :caption: 使用 Plate Carrée 投影绘制全球地图
     :width: 85%
 
     gmt coast -Rg -JQ12c -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl

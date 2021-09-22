@@ -61,10 +61,10 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
     使用该选项时，GMT 会先按照 :doc:`/basis/input-files` 中指定的搜索顺序寻找文件，
     若未找到文件，才会尝试下载该文件：
 
-    - **-Gl**\ ： 下载到当前目录 [默认选项]
-    - **-Ga**\ ： 下载到用户目录的子目录中，如 :file:`server`\ 、\ :file:`cache` 子目录
-    - **-Gu**\ ： 下载到数据目录
-    - **-Gc**\ ： 下载到缓存目录
+    - **-Gl**： 下载到当前目录 [默认选项]
+    - **-Ga**： 下载到用户目录的子目录中，如 :file:`server`、:file:`cache` 子目录
+    - **-Gu**： 下载到数据目录
+    - **-Gc**： 下载到缓存目录
 
 .. include:: explain_-V.rst_
 
@@ -81,6 +81,6 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
 
     gmt which -Ga @earth_relief_10m
 
-从GMT数据服务器下载GMT示例数据。该数据会被下载到GMT缓存目录中（默认为 ``~/.gmt/cache``\ ）::
+从GMT数据服务器下载GMT示例数据。该数据会被下载到GMT缓存目录中（默认为 ``~/.gmt/cache``）::
 
     gmt which -Gc @hotspots.txt

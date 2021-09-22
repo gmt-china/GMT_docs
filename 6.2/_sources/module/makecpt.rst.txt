@@ -30,12 +30,12 @@ makecpt
 ----
 
 **-A**\ *transparency*\ [**+a**]
-    设置透明度，\ *transparency* 的取值范围是0到100。
+    设置透明度，*transparency* 的取值范围是0到100。
     加上 **+a** 则该透明度同时应用于前景色、背景色和NaN颜色。
     默认不透明，即0。
 
 **-C**\ *cpt*
-    指定主CPT文件，默认值是GMT自带的 **rainbow**\ 。 `makecpt` 根据主CPT文件的配色方案，将z值范围拉伸至 **-T** 
+    指定主CPT文件，默认值是GMT自带的 **rainbow**。 `makecpt` 根据主CPT文件的配色方案，将z值范围拉伸至 **-T** 
     指定的范围，生成新的CPT。GMT自带的CPT文件的配色方案列表，请参见《 :doc:`/cpt/builtin-cpt` 》。
 
     除了GMT自带的CPT文件，也可以设为用户自定义的CPT文件，也可以是通过
@@ -44,7 +44,7 @@ makecpt
 **-D**\ [**i**]
 	将背景色和前景色分别设置为输出的CPT文件中最低值和最高值对应的颜色。
 	不设置本项时，GMT默认使用主CPT文件规定的背景色与前景色，或是采用配置参数
-	:term:`COLOR_BACKGROUND`\、\ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
+	:term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 	加上 **i** 则设置为主CPT文件中最低值和最高值对应的颜色。
 	
 **-E**\ *nlevels*
@@ -74,8 +74,8 @@ makecpt
     定义要生成的CPT文件的Z值范围及Z值间隔
 
     - 若使用了 **-C** 选项且 *z_inc* 未指定，则Z值间隔的数目与输入的主CPT文件相同。
-    - 若 *z_inc* 后有 **+**\ ，则将 *z_inc* 解释为Z值间隔的数目而不是Z值间隔
-    - 也可以指定文件 *ztable*\ ，其中每行一个Z值
+    - 若 *z_inc* 后有 **+**，则将 *z_inc* 解释为Z值间隔的数目而不是Z值间隔
+    - 也可以指定文件 *ztable*，其中每行一个Z值
     - 若不使用 **-T** 选项，则默认使用主CPT文件中的Z值范围
 
 **-Z**

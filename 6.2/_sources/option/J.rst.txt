@@ -18,16 +18,16 @@ GMT投影代码
 
     **-J**\ :math:`\Delta`\ [*parameters*/]\ *width*
 
-其中，\ *δ* 和 *Δ* 用于指定投影代码，前者为小写字母，后者为大写字母。
+其中，*δ* 和 *Δ* 用于指定投影代码，前者为小写字母，后者为大写字母。
 *parameters* 是零个或多个由斜杠分隔的投影参数，参数数目由投影方式决定。
 
-投影代码使用小写字母时，\ **-J** 的最后一个参数 *scale* 表示底图比例尺，
-即图上距离与真实地球距离之间的换算关系。\ *scale* 可以有两种格式：
+投影代码使用小写字母时，**-J** 的最后一个参数 *scale* 表示底图比例尺，
+即图上距离与真实地球距离之间的换算关系。*scale* 可以有两种格式：
 
-- 单个数字加单位，例如 **2c**\ ，表示真实地球距离的1度投影到画布上为2厘米
+- 单个数字加单位，例如 **2c**，表示真实地球距离的1度投影到画布上为2厘米
 - **1:xxxx** 格式，例如 **1:10000000** 表示画布上的1厘米对应真实地球距离的10000000厘米
 
-投影代码为大写字母时，\ **-J** 的最后一个参数 *width* 表示底图宽度。还可以加上
+投影代码为大写字母时，**-J** 的最后一个参数 *width* 表示底图宽度。还可以加上
 子选项还进一步控制 *width* 的含义:
 
 - **+dw** 表示 *width* 为底图的宽度 [默认值]
@@ -52,7 +52,7 @@ GMT投影代码
 - **-JM15ch** 表示整个地图的高度是15厘米
 - **-JX10c/5c** 使用线性投影，地图的宽度是10厘米，高度为5厘米
 
-下表列出了GMT所支持的全部投影方式，详细介绍见 :doc:`/proj/index`\ 。
+下表列出了GMT所支持的全部投影方式，详细介绍见 :doc:`/proj/index`。
 
 .. include:: projection-codes.rst_
 
@@ -150,7 +150,7 @@ GMT+PROJ4
 
 从GMT6开始，GMT支持使用 PROJ.4 库来实现坐标和基准面的转换。这一特性是通过GDAL
 实现的，因而需要GMT在安装时链接到GDAL库。详细的 PROJ.4 语法见
-`<https://proj.org/apps/index.html>`_\ 。
+`<https://proj.org/apps/index.html>`_。
 
 在PROJ.4中，投影一般有很多参数，多个参数之间用空格分隔。在GMT中，可以将所有参数
 用双引号括起来::
@@ -161,7 +161,7 @@ GMT+PROJ4
 
     -J+proj=merc+ellps=WGS84+units=m
 
-也可以直接使用 `EPSG codes <http://spatialreference.org>`_\ ，但需要设置环境变量
+也可以直接使用 `EPSG codes <http://spatialreference.org>`_，但需要设置环境变量
 **GDAL_DATA** 指向 GDAL 的 data 子目录。例如 **-JEPSG:4326** 表示使用 WGS-84 系统。
 
 对于 :doc:`gmt:mapproject` 和 :doc:`/module/grdproject` 模块，可以直接使用
@@ -171,9 +171,9 @@ GMT+PROJ4
 
 对于使用 :doc:`gmt:mapproject` 和 :doc:`/module/grdproject` 进行点和网格
 文件的转换，GMT可以使用
-所有的 `PROJ.4投影 <https://proj.org/operations/projections/index.html>`_\ 。
+所有的 `PROJ.4投影 <https://proj.org/operations/projections/index.html>`_。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被
 映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图
-比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：\ **+width=**\ *size*
+比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：**+width=**\ *size*
 和 **+scale=1:xxxx** 使得其与经典的GMT中的工作方式相似。
 也可以在投影参数的最后加上字符串 **/1:xxx** 来指定比例尺。

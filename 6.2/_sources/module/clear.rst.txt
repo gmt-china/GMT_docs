@@ -18,18 +18,18 @@ clear
 --------
 
 **all**
-    删除所有项目，包括缓存目录（\ **~/.gmt/cache**\ ）、数据目录（\ **~/.gmt/server**\ ）、会话目录（\ **~/.gmt/sessions**\ ）以及当前配置文件
+    删除所有项目，包括缓存目录（**~/.gmt/cache**）、数据目录（**~/.gmt/server**）、会话目录（**~/.gmt/sessions**）以及当前配置文件
 
 **cache**
-    删除GMT缓存目录（默认为\ **~/.gmt/cache**\ ）及其内容
+    删除GMT缓存目录（默认为\ **~/.gmt/cache**）及其内容
 
 **data**\ [=\ *planet*]
-    删除GMT数据目录（默认为\ **~/.gmt/server**\ ）及其内容。
+    删除GMT数据目录（默认为\ **~/.gmt/server**）及其内容。
     加上 =\ *planet* 则只删除特定星球的数据。目前 *planet*
-    只可以取 **earth**\ 。
+    只可以取 **earth**。
 
 **sessions**
-    删除GMT会话目录（默认为\ **~/.gmt/sessions**\ ）及其内容。
+    删除GMT会话目录（默认为\ **~/.gmt/sessions**）及其内容。
 
     .. note::
 

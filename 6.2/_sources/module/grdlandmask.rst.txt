@@ -69,9 +69,9 @@ grdlandmask
     此外，还可以在 **-E** 选项后加上四个值 *cborder/lborder/iborder/pborder* 或
     一个值 *bordervalue* （表示四个值具有相同的值），以启用线段追踪模式。
     在根据 **-N** 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。
-    例如，海岸线穿过的网格单元值将被修改为 *cborder*\ ；同理，
+    例如，海岸线穿过的网格单元值将被修改为 *cborder*；同理，
     岛边界、湖内岛、湖内岛中的小湖边界穿过的网格单元值会被依次修改为
-    *lborder*\ 、\ *iborder*\ 、\ *pborder* 的值。
+    *lborder*、*iborder*、*pborder* 的值。
 
 .. _-N:
 
@@ -81,7 +81,7 @@ grdlandmask
     - **-N**\ *wet/dry* ：分别为水域和陆地设置不同的值
     - **-N**\ *ocean/land/lake/island/pond* ：分别为海洋、陆地、湖泊、岛屿、池塘设置不同的值
 
-    默认值为 **0/1/0/1/0** （即 **0/1**\ ），即将水域内的网格设置为0，将陆地内的
+    默认值为 **0/1/0/1/0** （即 **0/1**），即将水域内的网格设置为0，将陆地内的
     网格设置为1。
 
 .. include:: explain_-V.rst_
@@ -110,7 +110,7 @@ earth_mask 远程数据
 
 用 **grdlandmask** 模块生成高分辨率、全精度的掩膜数据会非常耗时。
 GMT官方提供了计算好的掩膜数据供用户直接使用。该数据分不同的分辨率，从15弧秒到1弧度不等。
-详情见 :doc:`/dataset/earth-mask`\ 。
+详情见 :doc:`/dataset/earth-mask`。
 
 示例
 ----

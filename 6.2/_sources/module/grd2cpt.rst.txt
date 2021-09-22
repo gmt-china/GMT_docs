@@ -68,14 +68,14 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 .. _-A:
 
 **-A**\ *transparency*\ [**+a**]
-    设置透明度，\ *transparency* 的取值范围是0到100。
+    设置透明度，*transparency* 的取值范围是0到100。
     加上 **+a** 则该透明度同时应用于前景色、背景色和NaN颜色。
     默认不透明，即0。
 
 .. _-C:
 
 **-C**\ *cpt*
-    指定主CPT文件，默认值是GMT自带的 **rainbow**\ 。
+    指定主CPT文件，默认值是GMT自带的 **rainbow**。
     `grd2cpt` 根据主CPT文件的配色方案，将z值范围拉伸至grid文件的z值范围，生成新的CPT。
     GMT自带的CPT文件的配色方案列表，请参见《 :doc:`/cpt/builtin-cpt` 》。
 
@@ -87,7 +87,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 **-D**\ [**i**]
 	将背景色和前景色分别设置为输出的CPT文件中最低值和最高值对应的颜色。
 	不设置本项时，GMT默认使用主CPT文件规定的背景色与前景色，或是采用配置参数
-	:term:`COLOR_BACKGROUND`\、\ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
+	:term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 	加上 **i** 则设置为主CPT文件中最低值和最高值对应的颜色。
 
 .. _-E:

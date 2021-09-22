@@ -22,15 +22,15 @@ CPT相关参数
 
         可以取如下值：
 
-        - **none**\ ：使用CPT文件中指定的 **COLOR_MODEL**
-        - **rgb**\ ：在RGB色彩空间中插值
-        - **hsv**\ ：在HSV色彩空间中插值
-        - **cmyk**\ ：假定颜色是CMYK色彩空间，但在RGB空间内插值
+        - **none**：使用CPT文件中指定的 **COLOR_MODEL**
+        - **rgb**：在RGB色彩空间中插值
+        - **hsv**：在HSV色彩空间中插值
+        - **cmyk**：假定颜色是CMYK色彩空间，但在RGB空间内插值
 
 光照相关参数
 ------------
 
-某些绘图模块（如 :doc:`/module/grdimage`\ 、\ :doc:`/module/colorbar`\ ）
+某些绘图模块（如 :doc:`/module/grdimage`、:doc:`/module/colorbar`）
 可以利用强度文件模拟光照效果。
 光照效果的实现，本质上是先将任意颜色转换成HSV模型，然后根据
 强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。

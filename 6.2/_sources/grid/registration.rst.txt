@@ -9,9 +9,9 @@ GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线
 而节点的位置有两种选择，即网格线配准（gridline registration）和像素配准（pixel registration）。
 GMT默认使用的是网格线配准方式。
 
-.. gmtplot:: GMT_grid_registration.sh
-   :show-code: false
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_registration.png
    :width: 75%
+   :align: center
 
    GMT网格配准方式
 
@@ -78,6 +78,6 @@ GMT提供了多种方式实现像素配准与网格配准的互相转换。
 采样点，因而低频信息得到了有效保留。图b给出了将像素配准转换为网格配准时重采样的
 转换函数，其显示了在重采样过程中，低频部分会保留，而高频部分振幅会被衰减。
 
-.. gmtplot:: GMT_grid2pix.sh
-   :show-code: false
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_grid2pix.png
    :width: 75%
+   :align: center
