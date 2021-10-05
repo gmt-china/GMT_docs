@@ -160,7 +160,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 下图展示了这三个名词在绘图时的具体含义。
 
 .. gmtplot:: B/B_afg.sh
-    :width: 600 px
+    :width: 60%
     :show-code: false
     
     GMT 坐标轴中的标注、刻度和网格线
@@ -211,7 +211,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot:: B/B_geo_1.sh
     :show-code: false
-    :width: 600 px
+    :width: 60%
 
     地理底图示例 1
 
@@ -222,7 +222,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot:: B/B_geo_2.sh
     :show-code: false
-    :width: 600 px
+    :width: 60%
 
     地理底图示例 2
 
@@ -242,7 +242,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot:: B/B_linear.sh
     :show-code: false
-    :width: 600 px
+    :width: 60%
 
     笛卡尔线性轴 
 
@@ -253,7 +253,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot::
     :show-code: true
-    :width: 600 px
+    :width: 60%
     :caption: 笛卡尔线性轴的倾斜标注
     
     gmt basemap -R2000/2020/35/45 -JX12c -Bxa2f+a-30 -BS -png GMT_-B_slanted
@@ -277,7 +277,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot:: B/B_log.sh
     :show-code: false
-    :width: 600 px
+    :width: 60%
 
     对数坐标轴
 
@@ -294,7 +294,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot:: B/B_pow.sh
     :show-code: false
-    :width: 600 px
+    :width: 60%
 
     指数投影坐标轴
 
@@ -364,7 +364,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 第一个例子展示了 2000 年春天的两个月，将这两个月的每周的第一天的日期标注出来：
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间轴示例 1
 
     gmt begin GMT_-B_time1 pdf,png
@@ -381,7 +381,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 图中下面的例子使用周来标注，上面的例子使用日期来标注。
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间轴示例 2
 
     gmt begin GMT_-B_time2 pdf,png
@@ -394,7 +394,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间示例 3
 
     gmt begin GMT_-B_time3 pdf,png
@@ -406,7 +406,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 这里使用了 **p** 属性和 **s** 属性，12 小时制，时间从右向左增加：
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间轴示例 4
 
     gmt begin GMT_-B_time4 pdf,png
@@ -417,7 +417,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 第五个例子用两种方式展示了几周的时间：
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间轴示例 5
 
     gmt begin GMT_-B_time5 png,pdf
@@ -431,7 +431,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 第六个例子展示了 1996 年的前 5 个月，每个月用月份的简写以及两位年份标注：
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间轴示例 6
 
     gmt begin GMT_-B_time6 pdf,png
@@ -442,7 +442,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 第七个例子展示了 2000 年末，2001 年初的部分时段，天用年积日（一年中第几天）的形式标注：
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 时间轴示例 7
 
     gmt begin GMT_-B_time7 pdf,png
@@ -459,13 +459,13 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 .. gmtplot:: 
     :show-code: true
-    :width: 600 px
+    :width: 60%
 
     gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -BS -png test1
 
 .. gmtplot:: 
     :show-code: true
-    :width: 600 px
+    :width: 60%
 
     gmt basemap -JX10c/5c -R-pi/pi/-1/1 -Bxapi4 -BS -png test2
 
@@ -498,7 +498,7 @@ GMT 允许用户定义标注来实现不规则间隔的标注，用法是 **-Bc*
 分别是 X 轴和 Y 轴的标注文件：
 
 .. gmtplot::
-    :width: 600 px
+    :width: 60%
     :caption: 自定义坐标轴
 
     cat << EOF >| xannots.txt
