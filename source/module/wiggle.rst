@@ -192,6 +192,10 @@ wiggle
     gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z1000 -B5 \
     -C32000 -Gred -I45 -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym
 
+除测线数据外，wiggle 模块也常用于绘制卫星沿轨观测序列，
+如 `GMT 官方示例 <https://docs.generic-mapping-tools.org/latest/gallery/ex09.html#example-09>`__ 。
+该示例使用 Geosat 卫星观测的沿轨海面高梯度数据来揭示海底构造和海岭。
+
 Bugs
 ----
 
