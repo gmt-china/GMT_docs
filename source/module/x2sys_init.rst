@@ -326,5 +326,5 @@ netCDF 观测文件通常不需要设置 scale 以及 NaN，因为这些都包�
 :doc:`gmt:supplements/x2sys/x2sys_put`,
 :doc:`gmt:supplements/x2sys/x2sys_report`,
 :doc:`gmt:supplements/x2sys/x2sys_solve`,
-:doc:`gmt:supplements/x2sys/x2sys_cross`
+:doc:`gmt:supplements/x2sys/x2sys_cross`,
 :doc:`gmt:supplements/x2sys/x2sys_merge`
