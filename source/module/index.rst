@@ -82,6 +82,7 @@
     - :doc:`ternary`
     - :doc:`text`
     - :doc:`velo`
+    - :doc:`x2sys_init`
     - :doc:`xyz2grd`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
@@ -159,7 +160,6 @@
     - :doc:`gmt:supplements/x2sys/x2sys_cross`
     - :doc:`gmt:supplements/x2sys/x2sys_datalist`
     - :doc:`gmt:supplements/x2sys/x2sys_get`
-    - :doc:`gmt:supplements/x2sys/x2sys_init`
     - :doc:`gmt:supplements/x2sys/x2sys_list`
     - :doc:`gmt:supplements/x2sys/x2sys_merge`
     - :doc:`gmt:supplements/x2sys/x2sys_put`
@@ -319,7 +319,7 @@
 :doc:`gmt:supplements/x2sys/x2sys_cross`         Calculate crossovers between track data files
 :doc:`gmt:supplements/x2sys/x2sys_datalist`      Extract content of track data files
 :doc:`gmt:supplements/x2sys/x2sys_get`           Get track listing from track index database
-:doc:`gmt:supplements/x2sys/x2sys_init`          Initialize a new x2sys track database
+:doc:`x2sys_init`                                初始化 x2sys 轨迹数据库
 :doc:`gmt:supplements/x2sys/x2sys_list`          Extract subset from crossover data base
 :doc:`gmt:supplements/x2sys/x2sys_merge`         Merge an updated COEs table (smaller) into the main table (bigger)
 :doc:`gmt:supplements/x2sys/x2sys_put`           Update track index database from track bin file
@@ -438,6 +438,7 @@
    ternary
    text
    velo
+   x2sys_init
    xyz2grd
 
 .. raw:: latex
