@@ -225,7 +225,7 @@ mapproject
 
 本示例中，Mercator每度表示为2cm::
 
-    gmt mapproject  -R105/108/33/36 -Jm2c << EOF
+    $ gmt mapproject  -R105/108/33/36 -Jm2c << EOF
     105 33
     106 34
     107 35
@@ -248,12 +248,12 @@ UTM转化为地理坐标
 ::
 
    # 将UTM坐标转换为经纬度
-   echo 311072.4 3542183.5 | gmt mapproject -Ju51/1:1 -C -F -I
+   $ echo 311072.4 3542183.5 | gmt mapproject -Ju51/1:1 -C -F -I
    # 输出结果：
    121.000000401   32.0000000858
 
    # 将Gauss-Kruger坐标转换为经纬度
-   echo 310996.760635 3543600.93152 | gmt mapproject -Ju51/1:1 -C -F -I --PROJ_SCALE_FACTOR=1
+   $ echo 310996.760635 3543600.93152 | gmt mapproject -Ju51/1:1 -C -F -I --PROJ_SCALE_FACTOR=1
    # 输出结果：
    121 31.9999999997
 
@@ -267,12 +267,12 @@ Gauss-Kruger坐标可直接使用UTM的-Ju投影，曲别在于Gauss-Kruger的�
 ::
 
    # 经纬度转换为Gauss-Kruger
-   echo 121 32 | gmt mapproject -Ju51/1:1 -C -F --PROJ_SCALE_FACTOR=1
+   $ echo 121 32 | gmt mapproject -Ju51/1:1 -C -F --PROJ_SCALE_FACTOR=1
    # 输出结果
    310996.760635 3543600.93152
 
    # 经纬度转换为UTM
-   echo 121 32 | gmt mapproject -Ju51/1:1 -C -F
+   $ echo 121 32 | gmt mapproject -Ju51/1:1 -C -F
    # 输出结果
    311072.361931 3542183.49115
 
@@ -280,5 +280,5 @@ Gauss-Kruger坐标可直接使用UTM的-Ju投影，曲别在于Gauss-Kruger的�
 计算点 (104.92, 29) 相对于点 (104.92, 31) 的方位角和大圆距离（单位为km）。
 下面的例子使用了\ ``-je``\ 选项以获得高精度的结果，详情可查\ ``-j``\ 选项::
 
-    echo 104.92 29 | gmt mapproject -Af104.92/31 -G104.92/31+uk -je
+    $ echo 104.92 29 | gmt mapproject -Af104.92/31 -G104.92/31+uk -je
     104.92  29      180     221.704999623
