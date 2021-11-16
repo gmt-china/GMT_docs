@@ -10,13 +10,20 @@ meca
 语法
 ----
 
-**gmt meca** [ *table* ] |-J|\ *parameters* |SYN_OPT-R|
-|-S|\ *<format><scale>*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
+**gmt meca** [ *table* ]
+|-J|\ *parameters*
+|SYN_OPT-R|
+|-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
+[ |-A|\ [**+p**\ *pen*][**+s**\ *size*] ]
 [ |SYN_OPT-B| ]
-[ |-C|\ [*pen*][**+s**\ *size*] ] [ |-D|\ *depmin*/*depmax* ]
-[ |-E|\ *fill*]
-[ |-F|\ *mode*\ [*args*] ] [ |-G|\ *fill*] [ |-L|\ [*pen*] ]
-[ |-M| ]
+[ |-C|\ *cpt* ]
+[ |-D|\ *depmin*/*depmax* ]
+[ |-E|\ *fill* ]
+[ |-F|\ *mode*\ [*args*] ]
+[ |-G|\ *fill* ]
+[ |-H|\ [*scale*] ]
+[ |-I|\ [*intens*] ]
+[ |-L|\ [*pen*] ]
 [ |-N| ]
 [ |-T|\ *nplane*\ [/*pen*] ]
 [ |SYN_OPT-U| ]
@@ -24,13 +31,12 @@ meca
 [ |-W|\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ *cpt*]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
