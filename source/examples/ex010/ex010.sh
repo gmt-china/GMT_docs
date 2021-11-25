@@ -4,7 +4,7 @@ R=70/135/15/55
 eqfile=eq.dat
 topodata=@earth_relief_06m
 
-gmt begin topo png
+gmt begin topo pdf,png
 gmt grdcut $topodata -R$R -GcutTopo.grd
 gmt grdgradient cutTopo.grd -Ne0.7 -A50 -GcutTopo_i.grd
 gmt grd2cpt cutTopo.grd -Cglobe -T-10000/10000/200 -Z -D
