@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 R=70/135/15/55
 eqfile=eq.dat
