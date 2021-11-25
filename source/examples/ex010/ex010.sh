@@ -12,7 +12,7 @@ gmt grd2cpt cutTopo.grd -Cglobe -T-10000/10000/200 -Z -D
 gmt set FORMAT_GEO_MAP=ddd:mm:ssF
 gmt basemap -R70/135/15/55 -JM15c -Ba10f5 -BWesN
 gmt grdimage cutTopo.grd -IcutTopo_i.grd -Q
-gmt coast -Dh -W1/0.2p -I1/0.25p -N1/0.5p
+gmt coast -W1/0.2p -I1/0.25p -N1/0.5p
 
 #绘制colorbar
 gmt colorbar -DjCB+w15c/0.5c+o0/-2c+h -Bxa2000f400+l"Elevation/m" -G-8000/8000
