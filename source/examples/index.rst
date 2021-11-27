@@ -15,8 +15,8 @@
 外部绘图实例
 ============
 
-- `GMT 官方示例 <https://docs.generic-mapping-tools.org/6.2/gallery.html>`__
-- `GMT 官方动画示例 <https://docs.generic-mapping-tools.org/6.2/animations.html>`__
+- `GMT 官方示例 <https://docs.generic-mapping-tools.org/6.3/gallery.html>`__
+- `GMT 官方动画示例 <https://docs.generic-mapping-tools.org/6.3/animations.html>`__
 - `GMT YouTube Channel <https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q>`__
 - `PyGMT Gallery <https://www.pygmt.org/latest/gallery/index.html>`__
 - `GMT and PyGMT plotting examples <https://github.com/michaelgrund/GMT-plotting>`__

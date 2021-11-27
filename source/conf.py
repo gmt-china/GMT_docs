@@ -16,7 +16,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.2"
+version = "6.3"
 release = version
 
 # -- Contributor information ---------------------------------------------
@@ -61,7 +61,7 @@ smartquotes_action = "qe"
 # Cross-refering other projects
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 intersphinx_mapping = {
-    "gmt": ("https://docs.generic-mapping-tools.org/6.2/", None),
+    "gmt": ("https://docs.generic-mapping-tools.org/6.3/", None),
 }
 
 # options for sphinx-copybutton
