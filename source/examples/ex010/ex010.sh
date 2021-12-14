@@ -8,7 +8,7 @@ gmt set FORMAT_GEO_MAP=ddd:mm:ssF
 gmt grdimage @earth_relief_02m -R70/135/15/55 -JM15c -Ba10f5 -BWesN -I+d
 
 #绘制colorbar
-gmt colorbar -DjCB+w15c/0.5c+o0/-2c+h -Bxa2000f400+l"Elevation/m" -G-8000/8000
+gmt colorbar -DjCB+w15c/0.5c+o0/-2c+h -Bxa2000f400+l"Elevation/m"
 
 #分震级绘制地震
 gawk '$3>=5.0 && $3<6.0 {print $1,$2,$3*0.04}' $eqfile | gmt plot -Sc -Gblue
