@@ -36,7 +36,7 @@ Fedora::
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
     # 安装可选软件包
     $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    $ sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
+    $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
 CentOS::
@@ -75,7 +75,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 编译 GMT 需要下载如下三个文件：
 
-#. GMT 6.2.0 源码：`gmt-6.2.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.2.0-src.tar.gz>`_
+#. GMT 6.3.0 源码：`gmt-6.3.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.gz>`_
 #. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
 #. 全球数字图表 DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
 
@@ -93,16 +93,16 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装::
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-6.2.0-src.tar.gz
+   $ tar -xvf gmt-6.3.0-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
    $ tar -xvf dcw-gmt-2.0.0.tar.gz
 
    # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.2.0/share/gshhg-gmt
-   $ mv dcw-gmt-2.0.0 gmt-6.2.0/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.3.0/share/gshhg-gmt
+   $ mv dcw-gmt-2.0.0 gmt-6.3.0/share/dcw-gmt
 
    # 切换到 gmt 源码目录下
-   $ cd gmt-6.2.0
+   $ cd gmt-6.3.0
 
    # 用文本编辑器新建并打开 CMake 用户配置文件
    # Linux 用户
@@ -113,12 +113,12 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.2.0")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.3.0")
     set (GMT_USE_THREADS TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
-  :file:`/opt/GMT-6.2.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.2.0` 等有可读写
+  :file:`/opt/GMT-6.3.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.3.0` 等有可读写
   权限的路径
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
   也可以不设置
@@ -136,8 +136,8 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 .. note::
 
     以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
-    解压出来的 :file:`gmt-6.2.0` 目录下。
-    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`。
+    解压出来的 :file:`gmt-6.3.0` 目录下。
+    不是 :file:`gmt-6.3.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.3.0`。
 
 ::
 
@@ -152,11 +152,11 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 继续执行 ``cmake ..``，直到出现类似的检查结果::
 
     *
-    *  GMT Version:               : 6.2.0
+    *  GMT Version:               : 6.3.0
     *
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-6.2.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.2.0/share/dcw-gmt (2.0.0)
+    *  Found GSHHG database       : /home/user/GMT/gmt-6.3.0/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.3.0/share/dcw-gmt (2.0.0)
     *  Found GMT data server      : https://oceania.generic-mapping-tools.org
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
@@ -188,10 +188,10 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
     *  Found gdal_translate       : yes (2.4.2)
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-6.2.0
-    *  GMT_DATADIR                : /opt/GMT-6.2.0/share
-    *  GMT_DOCDIR                 : /opt/GMT-6.2.0/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-6.2.0/share/man
+    *  Installing GMT in          : /opt/GMT-6.3.0
+    *  GMT_DATADIR                : /opt/GMT-6.3.0/share
+    *  GMT_DOCDIR                 : /opt/GMT-6.3.0/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.3.0/share/man
     -- Configuring done
     -- Generating done
 
@@ -229,7 +229,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
 然后重启终端使其生效::
 
-    export GMT6HOME=/opt/GMT-6.2.0
+    export GMT6HOME=/opt/GMT-6.3.0
     export PATH=${GMT6HOME}/bin:$PATH
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
@@ -246,13 +246,13 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
     $ gmt --version
-    6.2.0
+    6.3.0
 
 升级/卸载 GMT
 -------------
 
-按照上面的配置，GMT 会被安装到 :file:`/opt/GMT-6.2.0` 目录下。若想要卸载 GMT，
-可以直接删除整个 :file:`/opt/GMT-6.2.0` 即可。
+按照上面的配置，GMT 会被安装到 :file:`/opt/GMT-6.3.0` 目录下。若想要卸载 GMT，
+可以直接删除整个 :file:`/opt/GMT-6.3.0` 即可。
 
 GMT 不支持自动更新，因而若想要升级 GMT，通常建议先卸载 GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。

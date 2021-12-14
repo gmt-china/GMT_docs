@@ -1,12 +1,12 @@
 # GMT 中文手册
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
-[![Documentation version](https://img.shields.io/badge/版本-v6.2-blue.svg)](https://docs.gmt-china.org/6.2/)
+[![Documentation version](https://img.shields.io/badge/版本-v6.3-blue.svg)](https://docs.gmt-china.org/6.3/)
 ![Repository size](https://img.shields.io/github/repo-size/gmt-china/GMT_Docs)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 
-[在线阅读](https://docs.gmt-china.org/6.2/) |
-[PDF 下载](https://docs.gmt-china.org/6.2/GMT_docs.pdf) |
+[在线阅读](https://docs.gmt-china.org/6.3/) |
+[PDF 下载](https://docs.gmt-china.org/6.3/GMT_docs.pdf) |
 [文档源码](https://github.com/gmt-china/GMT_Docs) |
 [GMT 中文社区](https://gmt-china.org) |
 [GMT 官方网站](https://www.generic-mapping-tools.org) |

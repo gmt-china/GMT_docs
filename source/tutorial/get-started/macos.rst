@@ -17,7 +17,7 @@ macOS 下可以使用 :kbd:`Command + 空格键` 启动 Spotlight，在弹出的
 
 .. code-block:: console
 
-            GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
+            GMT - The Generic Mapping Tools, Version 6.3.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
             Supported in part by the US National Science Foundation (http://www.nsf.gov/)
