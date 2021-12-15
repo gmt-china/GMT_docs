@@ -59,14 +59,14 @@ GMT 的中文支持
 
 向 GMT自定义字体配置文件 ``C:\Users\用户名\.gmt\PSL_custom_fonts.txt`` 中加入如下语句::
 
-    STSong-Light--GB-EUC-H  0.700    1
-    STFangsong-Light--GB-EUC-H  0.700    1
-    STHeiti-Regular--GB-EUC-H   0.700   1
-    STKaiti-Regular--GB-EUC-H   0.700   1
-    STSong-Light--GB-EUC-V  0.700    1
-    STFangsong-Light--GB-EUC-V  0.700    1
-    STHeiti-Regular--GB-EUC-V   0.700   1
-    STKaiti-Regular--GB-EUC-V   0.700   1
+    STSong-Light-UniGB-UTF8-H  0.700    1
+    STFangsong-Light-UniGB-UTF8-H  0.700    1
+    STHeiti-Regular-UniGB-UTF8-H   0.700   1
+    STKaiti-Regular-UniGB-UTF8-H   0.700   1
+    STSong-Light-UniGB-UTF8-V  0.700    1
+    STFangsong-Light-UniGB-UTF8-V  0.700    1
+    STHeiti-Regular-UniGB-UTF8-V   0.700   1
+    STKaiti-Regular-UniGB-UTF8-V   0.700   1
 
 用 ``gmt text -L`` 查看 GMT 字体::
 
@@ -76,19 +76,21 @@ GMT 的中文支持
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light--GB-EUC-H
-    40 STFangsong-Light--GB-EUC-H
-    41 STHeiti-Regular--GB-EUC-H
-    42 STKaiti-Regular--GB-EUC-H
-    43 STSong-Light--GB-EUC-V
-    44 STFangsong-Light--GB-EUC-V
-    45 STHeiti-Regular--GB-EUC-V
-    46 STKaiti-Regular--GB-EUC-V
+    39: STSong-Light-UniGB-UTF8-H
+    40: STFangsong-Light-UniGB-UTF8-H
+    41: STHeiti-Regular-UniGB-UTF8-H
+    42: STKaiti-Regular-UniGB-UTF8-H
+    43: STSong-Light-UniGB-UTF8-V
+    44: STFangsong-Light-UniGB-UTF8-V
+    45: STHeiti-Regular-UniGB-UTF8-V
+    46: STKaiti-Regular-UniGB-UTF8-V
 
 可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。
-其中 ``STSong-Light-GB-EUC-H`` 即为宋体，``GB-EUC`` 是文字编码方式，
+其中 ``STSong-Light-UniGB-UTF8-H`` 即为宋体，``UniGB-UTF8`` 是文字编码方式，
 ``H`` 表示文字水平排列，``V`` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
+
+配置成功后， **GMT** 本体和 **PyGMT** 均可使用中文。
 
 GMT 中文测试
 ------------
@@ -99,27 +101,13 @@ GMT 中文测试
 
 .. warning::
 
-   目前发现 **Git Bash** 运行Bash脚本时， ``echo`` 生成文件使用的是 UTF8 编码，
-   从而可能会导致中文乱码。建议在有中文需求时使用bat脚本，或者避免在Bash脚本
-   中使用 ``echo`` 。
+   GMT 6.3 版本与旧版不同，只能使用 **UTF-8** 编码方式才能正确显示中文。
+   使用 **ANSI** 或 **GB2312** 编码方式均会导致中文乱码。
 
-使用\ **记事本**\ 和 **Notepad++** 的用户，应注意含中文的bat文件和输入数据文件都应以 **ANSI** 编码保存，
-使用其他编码方式则极可能出现乱码。Notepad++除了注意要选择 “ 编码 -> 使用ANSI编码 ” 以外，还应该选中
-“ 设置 -> 首选项 -> 新建 -> 编码 -> ANSI ”。
-
-**Visual Studio Code** 用户，应注意确保含中文的bat文件和输入数据文件都采用 **GB2312** 编码方式。
-在Visual Studio Code右下角状态栏中可以查看并修改当前文件的编码方式。
+用户应注意确保含中文的bat文件和输入数据文件都采用 **UTF-8** 编码方式。
+在 **Visual Studio Code** 右下角状态栏中可以查看并修改当前文件的编码方式。
 
 .. literalinclude:: GMT_Chinese.bat
-
-.. note::
-
-    GMT 6.x 目前在Windows下处理中文时存在BUG，可能会出现某些中文正常显示，某些
-    不正常显示的情况。使用::
-
-        gmt set PS_CHAR_ENCODING Standard+
-
-    可临时避免这一BUG。
 
 成图效果如下：
 
