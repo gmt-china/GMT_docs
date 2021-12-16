@@ -18,8 +18,8 @@ ghostscript 的中文支持
   
 安装包下载地址:
   
-- `gs9540w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
-- `gs9540w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
+- `gs9550w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9550/gs9550w64.exe>`__
+- `gs9550w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9550/gs9550w32.exe>`__
    
 .. warning::
  
