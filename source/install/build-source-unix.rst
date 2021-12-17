@@ -77,7 +77,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 #. GMT 6.3.0 源码：`gmt-6.3.0-src.tar.xz <http://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.xz>`_
 #. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
-#. 全球数字图表 DCW：`dcw-gmt-2.0.1.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.1/dcw-gmt-2.0.1.tar.gz>`_
+#. 全球数字图表 DCW：`dcw-gmt-2.0.2.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.2/dcw-gmt-2.0.2.tar.gz>`_
 
 .. note::
 
@@ -95,11 +95,11 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
    # 解压三个压缩文件
    $ tar -xvf gmt-6.3.0-src.tar.xz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-2.0.1.tar.gz
+   $ tar -xvf dcw-gmt-2.0.2.tar.gz
 
    # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
    $ mv gshhg-gmt-2.3.7 gmt-6.3.0/share/gshhg-gmt
-   $ mv dcw-gmt-2.0.1 gmt-6.3.0/share/dcw-gmt
+   $ mv dcw-gmt-2.0.2 gmt-6.3.0/share/dcw-gmt
 
    # 切换到 gmt 源码目录下
    $ cd gmt-6.3.0
@@ -156,7 +156,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
     *
     *  Options:
     *  Found GSHHG database       : /home/user/GMT/gmt-6.3.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.3.0/share/dcw-gmt (2.0.1)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.3.0/share/dcw-gmt (2.0.2)
     *  Found GMT data server      : oceania
     *  NetCDF library             : /usr/lib/x86_64-linux-gnu/libnetcdf.so
     *  NetCDF include dir         : /usr/include
