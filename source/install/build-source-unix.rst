@@ -75,9 +75,9 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 编译 GMT 需要下载如下三个文件：
 
-#. GMT 6.3.0 源码：`gmt-6.3.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.gz>`_
+#. GMT 6.3.0 源码：`gmt-6.3.0-src.tar.xz <http://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.xz>`_
 #. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
-#. 全球数字图表 DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
+#. 全球数字图表 DCW：`dcw-gmt-2.0.1.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.1/dcw-gmt-2.0.1.tar.gz>`_
 
 .. note::
 
@@ -93,13 +93,13 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装::
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-6.3.0-src.tar.gz
+   $ tar -xvf gmt-6.3.0-src.tar.xz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-2.0.0.tar.gz
+   $ tar -xvf dcw-gmt-2.0.1.tar.gz
 
    # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
    $ mv gshhg-gmt-2.3.7 gmt-6.3.0/share/gshhg-gmt
-   $ mv dcw-gmt-2.0.0 gmt-6.3.0/share/dcw-gmt
+   $ mv dcw-gmt-2.0.1 gmt-6.3.0/share/dcw-gmt
 
    # 切换到 gmt 源码目录下
    $ cd gmt-6.3.0
@@ -156,36 +156,42 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
     *
     *  Options:
     *  Found GSHHG database       : /home/user/GMT/gmt-6.3.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.3.0/share/dcw-gmt (2.0.0)
-    *  Found GMT data server      : https://oceania.generic-mapping-tools.org
-    *  NetCDF library             : /usr/lib64/libnetcdf.so
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.3.0/share/dcw-gmt (2.0.1)
+    *  Found GMT data server      : oceania
+    *  NetCDF library             : /usr/lib/x86_64-linux-gnu/libnetcdf.so
     *  NetCDF include dir         : /usr/include
-    *  GDAL library               : /usr/lib64/libgdal.so
+    *  Curl library               : /usr/lib/x86_64-linux-gnu/libcurl.so
+    *  Curl include dir           : /usr/include/x86_64-linux-gnu
+    *  GDAL library               : /usr/lib/libgdal.so
     *  GDAL include dir           : /usr/include/gdal
-    *  FFTW library               : /usr/lib64/libfftw3f.so
+    *  GEOS library               : /usr/lib/x86_64-linux-gnu/libgeos_c.so
+    *  GEOS include dir           : /usr/include
+    *  FFTW library               : /usr/lib/x86_64-linux-gnu/libfftw3f.so
+    *  FFTW threads library       : /usr/lib/x86_64-linux-gnu/libfftw3f_threads.so
     *  FFTW include dir           : /usr/include
     *  Accelerate Framework       :
-    *  Regex support              : PCRE (/usr/lib64/libpcre.so)
-    *  ZLIB library               : /usr/lib64/libz.so
+    *  Regex support              : PCRE (/usr/lib/x86_64-linux-gnu/libpcre.so)
+    *  ZLIB library               : /usr/lib/x86_64-linux-gnu/libz.so
     *  ZLIB include dir           : /usr/include
     *  LAPACK library             : yes
     *  BLAS library               : yes
     *  License restriction        : no
     *  Triangulation method       : Shewchuk
-    *  OpenMP support             : enabled
-    *  GLIB GTHREAD support       : enabled
-    *  Build mode                 : shared
+    *  OpenMP support             : disabled (GMT_ENABLE_OPENMP not set)
+    *  GLIB GTHREAD support       : enabled (2.64.6)
+    *  Build generator            : Unix Makefiles
     *  Build GMT core             : always [libgmt.so]
     *  Build PSL library          : always [libpostscriptlight.so]
     *  Build GMT supplements      : yes [supplements.so]
-    *  Build GMT Developer        : yes
+    *  Build GMT for developers   : yes
     *  Build proto supplements    : none
+    *  Build module links         : no
     *  Found Ghostscript (gs)     : yes (9.50)
-    *  Found GraphicsMagick (gm)  : yes (1.3.33)
-    *  Found ffmpeg               : yes (4.2.1)
-    *  Found open                 : yes
-    *  Found ogr2ogr              : yes (2.4.2)
-    *  Found gdal_translate       : yes (2.4.2)
+    *  Found GraphicsMagick (gm)  : yes (1.3.35)
+    *  Found ffmpeg               : yes (4.2.4)
+    *  Found open                 : no
+    *  Found ogr2ogr              : yes (3.0.4)
+    *  Found gdal_translate       : yes (3.0.4)
     *
     *  Locations:
     *  Installing GMT in          : /opt/GMT-6.3.0
