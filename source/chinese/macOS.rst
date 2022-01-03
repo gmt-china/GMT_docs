@@ -10,7 +10,9 @@ ghostscript的中文支持
 `cjk-gs-support <https://github.com/texjporg/cjk-gs-support>`_ 项目提供的脚本
 `cjk-gs-integrate.pl`_ 实现。
 
-1.  下载脚本 `cjk-gs-integrate.pl`_
+1.  下载脚本 `cjk-gs-integrate.pl`_ 以及对应于 macOS 系统版本的数据库文件，
+    如 `cjkgs-macos-highsierra.dat <https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjkgs-macos-highsierra.dat>`_
+    (不同版本对应的文件详见 `cjk-gs-support README-macos <https://github.com/texjporg/cjk-gs-support/blob/master/README-macos.md>`_)。
 2.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``，该命令由 TeXLive 提供。
     执行 ``kpsewhich --version`` 检查 ``kpsewhich`` 这个命令是否存在。若不存在，则
     需要单独安装。使用homebrew安装 basictex 或 mactex-no-gui::
@@ -23,9 +25,13 @@ ghostscript的中文支持
 
 3.  执行脚本::
 
-        $ sudo perl cjk-gs-integrate.pl
+        $ perl cjk-gs-integrate.pl --fontdef-add=/path_to_your_database_file/cjkgs-macos-highsierra.dat
 
-    该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。
+    该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。请注意脚本执行时的log中的输出位置，类似::
+    
+        cjk-gs-integrate: output is going to /usr/local/share/ghostscript/9.55.0/Resource
+        
+    后续创建gmt的字体配置文件会用到。
 
 .. _cjk-gs-integrate.pl: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
 
@@ -37,18 +43,20 @@ GMT的中文支持
     $ touch ~/.gmt/PSL_custom_fonts.txt
     $ open ~/.gmt/PSL_custom_fonts.txt
 
-打开 GMT 字体配置文件，在文件中加入如下语句::
+打开 GMT 字体配置文件，在文件中加入如下语句并保存::
 
-    STSong-Light--UniGB-UTF8-H  0.700    1
-    STFangsong-Light--UniGB-UTF8-H  0.700    1
-    STHeiti-Regular--UniGB-UTF8-H   0.700   1
-    STKaiti-Regular--UniGB-UTF8-H   0.700   1
-    STSong-Light--UniGB-UTF8-V  0.700    1
-    STFangsong-Light--UniGB-UTF8-V  0.700    1
-    STHeiti-Regular--UniGB-UTF8-V   0.700   1
-    STKaiti-Regular--UniGB-UTF8-V   0.700   1
+    STSong-Light-UniGB-UTF8-H  0.700    1
+    STFangsong-Light-UniGB-UTF8-H  0.700    1
+    STHeiti-Regular-UniGB-UTF8-H   0.700   1
+    STKaiti-Regular-UniGB-UTF8-H   0.700   1
+    STSong-Light-UniGB-UTF8-V  0.700    1
+    STFangsong-Light-UniGB-UTF8-V  0.700    1
+    STHeiti-Regular-UniGB-UTF8-V   0.700   1
+    STKaiti-Regular-UniGB-UTF8-V   0.700   1
 
 这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。
+第一列是上文 ghostscript 中文支持中脚本 ``cjk-gs-integrate.pl`` 的输出位置下 ``/font/`` 子文件夹下的文件名。
+建议检查一下 ``font`` 目录下新增文件的文件名中是否存在对应这里的文件。
 
 用 ``gmt text -L`` 命令查看 GMT 当前的字体配置::
 
@@ -58,14 +66,14 @@ GMT的中文支持
     0   Helvetica
     1   Helvetica-Bold
     ...    ......
-    39 STSong-Light--UniGB-UTF8-H
-    40 STFangsong-Light--UniGB-UTF8-H
-    41 STHeiti-Regular--UniGB-UTF8-H
-    42 STKaiti-Regular--UniGB-UTF8-H
-    43 STSong-Light--UniGB-UTF8-V
-    44 STFangsong-Light--UniGB-UTF8-V
-    45 STHeiti-Regular--UniGB-UTF8-V
-    46 STKaiti-Regular--UniGB-UTF8-V
+    39 STSong-Light-UniGB-UTF8-H
+    40 STFangsong-Light-UniGB-UTF8-H
+    41 STHeiti-Regular-UniGB-UTF8-H
+    42 STKaiti-Regular-UniGB-UTF8-H
+    43 STSong-Light-UniGB-UTF8-V
+    44 STFangsong-Light-UniGB-UTF8-V
+    45 STHeiti-Regular-UniGB-UTF8-V
+    46 STKaiti-Regular-UniGB-UTF8-V
 
 其中 39-46 号字体为新添加的中文字体。
 以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
