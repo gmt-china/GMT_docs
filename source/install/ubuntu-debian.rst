@@ -32,7 +32,7 @@ Ubuntu/Debian 下安装 GMT
 
         $ sudo apt install ghostscript
 
-    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**）::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**，未安装则无法使用高精度地形数据）::
 
         $ sudo apt install gdal-bin
 
