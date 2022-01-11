@@ -34,8 +34,8 @@ Fedora::
 
     # 安装必须软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
-    # 安装可选软件包
     $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    # 安装可选软件包
     $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
@@ -45,8 +45,8 @@ CentOS::
     $ sudo yum install epel-release
     # 安装必须软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
-    # 安装可选软件包
     $ sudo yum install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    # 安装可选软件包
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
@@ -56,8 +56,8 @@ Ubuntu/Debian::
     $ sudo apt update
     # 安装必须软件包
     $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
-    # 安装可选软件包
     $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    # 安装可选软件包
     $ sudo apt install graphicsmagick ffmpeg
 
 macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
@@ -67,7 +67,6 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
     # 安装必须软件包
     $ brew install cmake curl netcdf
-    # 安装可选软件包
     $ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 
 下载源码及数据
