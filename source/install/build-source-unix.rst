@@ -21,7 +21,7 @@ GMT 的编译及运行依赖于其他软件。
 可选的依赖软件包括：
 
 - `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据
+- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据（未安装则无法使用高精度地形数据）
 - `PCRE <https://www.pcre.org/>`__：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）
 - `GLib <https://wiki.gnome.org/Projects/GLib>`__：GTHREAD 多线程支持（>=2.32）
@@ -34,8 +34,8 @@ Fedora::
 
     # 安装必须软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
-    # 安装可选软件包
     $ sudo dnf install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    # 安装可选软件包
     $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
 
@@ -45,8 +45,8 @@ CentOS::
     $ sudo yum install epel-release
     # 安装必须软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
-    # 安装可选软件包
     $ sudo yum install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    # 安装可选软件包
     $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
     $ sudo yum install GraphicsMagick ffmpeg
 
@@ -56,8 +56,8 @@ Ubuntu/Debian::
     $ sudo apt update
     # 安装必须软件包
     $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
-    # 安装可选软件包
     $ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    # 安装可选软件包
     $ sudo apt install graphicsmagick ffmpeg
 
 macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
@@ -67,8 +67,9 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
     # 安装必须软件包
     $ brew install cmake curl netcdf
+    $ brew install ghostscript gdal pcre2 glib fftw 
     # 安装可选软件包
-    $ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
+    $ brew install graphicsmagick ffmpeg
 
 下载源码及数据
 --------------
