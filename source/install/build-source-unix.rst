@@ -67,7 +67,9 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
     # 安装必须软件包
     $ brew install cmake curl netcdf
-    $ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
+    $ brew install ghostscript gdal pcre2 glib fftw 
+    # 安装可选软件包
+    $ brew install graphicsmagick ffmpeg
 
 下载源码及数据
 --------------
