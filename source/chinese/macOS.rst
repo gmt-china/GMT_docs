@@ -10,9 +10,7 @@ ghostscript的中文支持
 `cjk-gs-support <https://github.com/texjporg/cjk-gs-support>`_ 项目提供的脚本
 `cjk-gs-integrate.pl`_ 实现。
 
-1.  下载脚本 `cjk-gs-integrate.pl`_ 以及对应于 macOS 系统版本的数据库文件，
-    如 `cjkgs-macos-highsierra.dat <https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjkgs-macos-highsierra.dat>`_
-    (不同版本对应的文件详见 `cjk-gs-support README-macos <https://github.com/texjporg/cjk-gs-support/blob/master/README-macos.md>`_)。
+1.  下载脚本 `cjk-gs-integrate.pl`_ 以及对应于 macOS 系统版本的数据库文件 `cjkgs-macos-highsierra.dat`_。
 2.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``，该命令由 TeXLive 提供。
     执行 ``kpsewhich --version`` 检查 ``kpsewhich`` 这个命令是否存在。若不存在，则
     需要单独安装。使用homebrew安装 basictex 或 mactex-no-gui::
@@ -34,6 +32,7 @@ ghostscript的中文支持
     后续创建gmt的字体配置文件会用到。
 
 .. _cjk-gs-integrate.pl: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
+.. _cjkgs-macos-highsierra.dat: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjkgs-macos-highsierra.dat
 
 GMT的中文支持
 -------------
