@@ -32,7 +32,8 @@ ghostscript的中文支持
     后续创建gmt的字体配置文件会用到。
 
 .. _cjk-gs-integrate.pl: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
-.. _cjkgs-macos-highsierra.dat: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjkgs-macos-highsierra.dat
+.. _cjkgs-macos-highsierra.dat: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/database/cjkgs-macos-highsierra.dat
+
 
 GMT的中文支持
 -------------
