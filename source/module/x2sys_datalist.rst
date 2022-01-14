@@ -1,5 +1,5 @@
 .. index:: !x2sys_datalist
-.. include:: common_SYN_OPTS.rst_
+.. include:: common_SYN_OPTs.rst_
 
 x2sys_datalist
 ==============
