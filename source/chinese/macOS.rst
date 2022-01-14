@@ -21,9 +21,9 @@ ghostscript的中文支持
 
     安装完成后关闭当前终端，打开一个新终端使其生效。
 
-3.  执行脚本::
+3.  将脚本和数据库文件放在同一个目录下，执行::
 
-        $ perl cjk-gs-integrate.pl --fontdef-add=/path_to_your_database_file/cjkgs-macos-highsierra.dat
+        $ perl cjk-gs-integrate.pl --fontdef-add=cjkgs-macos-highsierra.dat
 
     该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。请注意脚本执行时的log中的输出位置，类似::
     
