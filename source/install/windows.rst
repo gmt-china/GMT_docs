@@ -14,6 +14,7 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
       如果用户名不符合要求，请新建一个用户。然后使用新用户登录 Windows，再安装 GMT。
     - 360 等安全软件会在 GMT 安装过程中拦截 **PATH** 环境变量的修改。
       请务必关闭安全软件之后再安装。
+    - 建议将 GMT 安装在 C 盘默认目录。安装在其他分区可能会导致下载高精度地形数据时出错。
     - GMT 提供的安装包不支持 Windows XP。
 
 安装 GMT
@@ -21,8 +22,8 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
 1.  下载 GMT 安装包
 
-    - 64 位安装包：`gmt-6.2.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win64.exe>`__
-    - 32 位安装包：`gmt-6.2.0-win32.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.2.0-win32.exe>`__
+    - 64 位安装包：`gmt-6.3.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.3.0-win64.exe>`__
+    - 32 位安装包：`gmt-6.3.0-win32.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.3.0-win32.exe>`__
 
     GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 

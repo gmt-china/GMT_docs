@@ -13,8 +13,8 @@ Ubuntu/Debian 下安装 GMT
    针对这种情况，有如下几种选择：
 
    #. 使用老版本 GMT
-   #. :doc:`conda`【推荐】
-   #. :doc:`build-source-unix`【推荐】
+   #. :doc:`conda` 【推荐】
+   #. :doc:`build-source-unix` 【推荐】
 
 通过如下命令，可以安装 Ubuntu/Debian 官方源提供的 GMT 二进制包。
 
@@ -32,7 +32,7 @@ Ubuntu/Debian 下安装 GMT
 
         $ sudo apt install ghostscript
 
-    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**）::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**必须**，未安装则无法使用高精度地形数据）::
 
         $ sudo apt install gdal-bin
 
