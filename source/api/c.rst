@@ -8,5 +8,5 @@ C/Fortran用户可以在自己的程序中直接调用这两套API，以实现�
 这部分内容涉及到底层API，通常只有高级用户才会涉及到。
 本手册不会翻译整理相关内容。有需要的用户请自行阅读官方文档。
 
-- `GMT API <https://docs.generic-mapping-tools.org/latest/api.html>`_
-- `PostScriptLight <https://docs.generic-mapping-tools.org/latest/postscriptlight.html>`_
+- `GMT API <https://docs.generic-mapping-tools.org/latest/devdocs/api.html>`_
+- `PostScriptLight <https://docs.generic-mapping-tools.org/latest/devdocs/postscriptlight.html>`_

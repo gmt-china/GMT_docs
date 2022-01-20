@@ -30,7 +30,7 @@ Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
 
 3.  安装 GMT 相关工具以增强 GMT 功能
 
-    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**推荐**）::
+    地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__\ （**必须**，未安装则无法使用高精度地形数据）::
 
         $ sudo dnf install gdal
 

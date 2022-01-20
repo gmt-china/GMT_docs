@@ -49,14 +49,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 
 可以使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
 
-.. note::
-
-   由于中文手册服务器上未设置 GMT 中文支持，故而下图中断层名显示乱码。
-   对于用户而言，若已经正确设置 GMT 中文支持，则应可正常显示中文。
-
-.. gmtplot::
-   :show-code: true
-   :width: 50%
+.. code-block::
 
     gmt begin CN-faults-labeling png,pdf
         gmt coast -JM10c -RTW -Baf -W0.5p,black
@@ -64,6 +57,9 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
         # :+Lh: take the label text from the "L" value in the segment header
         gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11p,39
     gmt end show
+
+.. figure:: https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png
+   :width: 50%
 
 根据属性信息提取数据
 ++++++++++++++++++++

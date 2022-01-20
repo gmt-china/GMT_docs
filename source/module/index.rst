@@ -82,6 +82,17 @@
     - :doc:`ternary`
     - :doc:`text`
     - :doc:`velo`
+    - :doc:`wiggle`
+    - :doc:`x2sys_binlist`
+    - :doc:`x2sys_cross`
+    - :doc:`x2sys_datalist`
+    - :doc:`x2sys_get`
+    - :doc:`x2sys_init`
+    - :doc:`x2sys_list`
+    - :doc:`x2sys_merge`
+    - :doc:`x2sys_put`
+    - :doc:`x2sys_report`
+    - :doc:`x2sys_solve`
     - :doc:`xyz2grd`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
@@ -155,20 +166,9 @@
     - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
-    - :doc:`gmt:supplements/x2sys/x2sys_binlist`
-    - :doc:`gmt:supplements/x2sys/x2sys_cross`
-    - :doc:`gmt:supplements/x2sys/x2sys_datalist`
-    - :doc:`gmt:supplements/x2sys/x2sys_get`
-    - :doc:`gmt:supplements/x2sys/x2sys_init`
-    - :doc:`gmt:supplements/x2sys/x2sys_list`
-    - :doc:`gmt:supplements/x2sys/x2sys_merge`
-    - :doc:`gmt:supplements/x2sys/x2sys_put`
-    - :doc:`gmt:supplements/x2sys/x2sys_report`
-    - :doc:`gmt:supplements/x2sys/x2sys_solve`
     - :doc:`gmt:trend1d`
     - :doc:`gmt:trend2d`
     - :doc:`gmt:triangulate`
-    - :doc:`gmt:wiggle`
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
@@ -226,7 +226,7 @@
 :doc:`ternary`                                   绘制三角图解
 :doc:`gmt:mask`                                  将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
-:doc:`gmt:wiggle`                                沿着测线绘制 z = f(x,y) 数据
+:doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
 :doc:`gmt:supplements/segy/segy`                 在图上绘制SEGY文件
 :doc:`gmt:supplements/segy/segyz`                在3D图上绘制SEGYZ文件
 :doc:`gmtlogo`                                   在图上绘制GMT图形logo
@@ -315,16 +315,16 @@
 :doc:`gmt:supplements/mgd77/mgd77sniffer`        Along-track quality control of MGD77 cruises
 :doc:`gmt:supplements/mgd77/mgd77track`          Plot track-line map of MGD77 cruises
 **x2sys 相关模块**                               .. _module_x2sys:
-:doc:`gmt:supplements/x2sys/x2sys_binlist`       Create bin index listing from track data files
-:doc:`gmt:supplements/x2sys/x2sys_cross`         Calculate crossovers between track data files
-:doc:`gmt:supplements/x2sys/x2sys_datalist`      Extract content of track data files
-:doc:`gmt:supplements/x2sys/x2sys_get`           Get track listing from track index database
-:doc:`gmt:supplements/x2sys/x2sys_init`          Initialize a new x2sys track database
-:doc:`gmt:supplements/x2sys/x2sys_list`          Extract subset from crossover data base
-:doc:`gmt:supplements/x2sys/x2sys_merge`         Merge an updated COEs table (smaller) into the main table (bigger)
-:doc:`gmt:supplements/x2sys/x2sys_put`           Update track index database from track bin file
-:doc:`gmt:supplements/x2sys/x2sys_report`        Report statistics from crossover data base
-:doc:`gmt:supplements/x2sys/x2sys_solve`         Determine least-squares systematic correction from crossovers
+:doc:`x2sys_binlist`                             从轨迹观测文件创建网格索引列表
+:doc:`x2sys_cross`                               计算轨迹观测数据之间的交叉点
+:doc:`x2sys_datalist`                            提取轨迹数据文件中的内容
+:doc:`x2sys_get`                                 从轨迹网格索引列表中筛选轨迹列表
+:doc:`x2sys_init`                                初始化 x2sys 轨迹数据库
+:doc:`x2sys_list`                                从交叉点计算结果中提取子集
+:doc:`x2sys_merge`                               合并交叉带你列表
+:doc:`x2sys_put`                                 从轨迹网格索引文件更新轨迹数据库
+:doc:`x2sys_report`                              统计交叉点信息
+:doc:`x2sys_solve`                               使用最小二乘平差改正系统误差
 **SPOTTER 相关模块**                             .. _module_spotter:
 :doc:`gmt:supplements/spotter/backtracker`       Generate forward and backward flowlines and hotspot tracks
 :doc:`gmt:supplements/spotter/gmtpmodeler`       Evaluate a plate motion model at given locations
@@ -438,6 +438,17 @@
    ternary
    text
    velo
+   wiggle
+   x2sys_binlist
+   x2sys_cross
+   x2sys_datalist
+   x2sys_get
+   x2sys_init
+   x2sys_list
+   x2sys_merge
+   x2sys_put
+   x2sys_report
+   x2sys_solve
    xyz2grd
 
 .. raw:: latex
