@@ -249,7 +249,7 @@
 :doc:`spectrum1d`                                计算一个时间序列的自功率谱，或两个时间序列的互功率谱
 :doc:`gmt:gmtmath`                               对表数据进行数学计算操作
 :doc:`mapproject`                                地图变换的正变换和逆变换
-:doc:`gmtspatial`                            点、线段和多边形的地理空间操作
+:doc:`gmtspatial`                                点、线段和多边形的地理空间操作
 :doc:`gmt:gmtvector`                             2D和3D下笛卡尔矢量操作
 :doc:`gmt:gmtregress`                            1D数据的线性回归
 **2D 数据处理**                                  .. _module_2D_data_processing:
