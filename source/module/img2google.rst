@@ -127,7 +127,7 @@ img2google
 ------
 
 topo.18.1.img 和其他由 Sandwell/Smith 使用卫星测高数据构建的墨卡托格网，参见
-http://topex.ucsd.edu
+https://topex.ucsd.edu
 
 相关模块
 --------
