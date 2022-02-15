@@ -26,7 +26,7 @@ jobs:
         path: documentation
 
     - name: Link Checker
-      uses: lycheeverse/lychee-action@v1.2.0
+      uses: lycheeverse/lychee-action@v1.2.1
       with:
         # 429: Too many requests
         args: >
@@ -34,6 +34,7 @@ jobs:
           --exclude "^https://www.bilibili.com/"
           --exclude "^https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$"
           --exclude "^https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$"
+          --exclude "^mailto:"
           --verbose
           "repository/*.md"
           "documentation/latest/**/*.html"

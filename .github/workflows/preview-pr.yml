@@ -33,10 +33,11 @@ jobs:
           conda install -c conda-forge gmt=${GMT_VERSION}
           pip install -r requirements.txt
           # Install packages for GMT LaTeX integration
+          sudo apt update
           sudo apt install texlive-latex-base texlive-binaries texlive-fonts-recommended
 
       - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v2.16.0
+        uses: dawidd6/action-download-artifact@v2.17.0
         with:
           workflow: cache-data.yml
           workflow_conclusion: success

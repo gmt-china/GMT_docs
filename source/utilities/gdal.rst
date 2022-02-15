@@ -21,7 +21,7 @@ GDAL/OGR 有两个核心部分：
 
 - GDAL 部分：支持多种光栅地理空间数据格式的互相转换，
   如常见的 netCDF、GeoTiff、HDF5、XYZ 等，
-  详见\ `光栅格式列表 <http://www.gdal.org/formats_list.html>`__
+  详见\ `光栅格式列表 <https://gdal.org/drivers/raster/index.html>`__
 - OGR 部分：支持多种矢量数据格式的互相转换，
   如常见的 OGR/GMT（即 GMT）、Shapefile 、KML、MapInfo、Excel 等，
   详见\ `矢量格式列表 <https://gdal.org/drivers/vector/index.html>`__

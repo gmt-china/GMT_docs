@@ -151,4 +151,4 @@ GMT/MATLAB 工具包用户请引用如下文章:
 - Wessel, P., and J. F. Luis
   The GMT/MATLAB Toolbox,
   *Geochem. Geophys. Geosyst.*, **18(2)**, 811-823, 2017.
-  `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_
+  `doi:10.1002/2016GC006723 <https://dx.doi.org/10.1002/2016GC006723>`_
