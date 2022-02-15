@@ -615,10 +615,3 @@ plot
    :width: 100%
 
    plot -F选项示意图
-
-``-L`` 选项的示例：
-
-.. gmtplot:: plot/plot_-L.sh
-   :width: 100%
-
-   plot -L选项示意图
