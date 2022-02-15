@@ -158,18 +158,39 @@ plot
     .. gmtplot:: plot/plot_-L_1.sh
        :width: 100%
 
-       -L和-G选项不同搭配方式的效果试试
+       -L和-G选项不同搭配方式的效果
 
-    **-L** 选项还可以绘制包络：
+    **-L** 选项还可以绘制两类包络：一类是围绕线条的包络，另一类是到指定位置的包络。
+    首先来看围绕线条的包络：
 
-    #. ``+d`` build symmetrical envelope around y(x) using deviations dy(x) given in extra column 3
-    #. ``+D`` build asymmetrical envelope around y(x) using deviations dy1(x) and dy2(x) from extra columns 3-4.
-    #. ``+b`` build asymmetrical envelope around y(x) using bounds yl(x) and yh(x) from extra columns 3-4.
+    #. ``+d`` 围绕线条绘制对称的包络，包络相对于线条的y轴幅度由数据文件内的第三列给出
+    #. ``+D`` 围绕线条绘制不对称的包络，包络相对于线条的y轴幅度由数据文件内的第三、四列给出
+    #. ``+b`` 围绕线条绘制不对称的包络，包络的y轴范围由数据文件内的第三、四列给出
 
-    #. ``+xl|r|<x0>`` connect first and last point to anchor points at either xmin, xmax, or x0
-    #. ``+yb|t|<y0>`` connect first and last point to anchor points at either ymin, ymax, or y0.
+    下面的例子分别绘制了上述三种情形。第一幅图使用``+d``选项，数据的第三列分别是2、2、3和1，
+    所以包络的上下范围在线条的每一个数据点处距离线条的距离就是2、2、3和1。
+    第二幅图使用``+D``选项，数据的第三列分别是2、2、3和1，
+    所以包络的下范围在线条的每一个数据点处距离线条的距离就是2、2、3和1，
+    也就是和第一幅图完全相同。但是，上范围的距离使用的是数据文件的第四列，也就是4、3、2和1。
+    第三幅图使用``+b``选项，包络的范围与线条的位置无关。第三、四列数据分别决定了包络的上下范围。
+    当第三、四列数据交叉的时候，包络图形随之出现打结的现象。
 
-    Polygon may be painted (**-G**) and optionally outlined by adding **+p**\ *pen* [no outline].
+    .. gmtplot:: plot/plot_-L_2.sh
+       :width: 100%
+
+       围绕线条的包络
+
+    再来看指定位置的包络：
+
+    #. ``+xl|r|<x0>`` 包络范围是从线条到线条的点的x轴最小、大值和固定值
+    #. ``+yb|t|<y0>`` 包络范围是从线条到线条的点的y轴最小、大值和固定值
+
+    例子如下：
+
+    .. gmtplot:: plot/plot_-L_3.sh
+       :width: 100%
+
+       到指定位置的包络
 
 **-N**\ [**c**\|\ **r**]
     区域范围外的符号不会被裁剪，而会被正常绘制。
