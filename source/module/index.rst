@@ -78,6 +78,9 @@
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
+    - :doc:`sphdistance`
+    - :doc:`sphinterpolate`
+    - :doc:`sphtriangulate`
     - :doc:`subplot`
     - :doc:`surface`
     - :doc:`ternary`
@@ -129,9 +132,6 @@
     - :doc:`gmt:movie`
     - :doc:`gmt:nearneighbor`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:sphdistance`
-    - :doc:`gmt:sphinterpolate`
-    - :doc:`gmt:sphtriangulate`
     - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/gshhg/gshhg`
@@ -285,9 +285,9 @@
 :doc:`gmt:trend2d`                               二维数据的多项式拟合
 :doc:`gmt:greenspline`                           使用格林函数样条进行插值
 :doc:`sph2grd`                                   根据球谐系数计算网格
-:doc:`gmt:sphdistance`                           计算球面上的Voronoi距离、节点或natural nearest-neighbor grid
-:doc:`gmt:sphinterpolate`                        球面上张量数据的球面网格化
-:doc:`gmt:sphtriangulate`                        球面数据的Delaunay 或 Voronoi 构建
+:doc:`sphdistance`                               计算球面上的 Voronoi 距离、节点或自然最邻近网格
+:doc:`sphinterpolate`                            球面数据的网格化
+:doc:`sphtriangulate`                            球面数据的 Delaunay 三角网或 Voronoi 图构建
 :doc:`gmt:dimfilter`                             在空间域对网格数做方向性滤波
 **参数设置**                                     .. _module_parameter_setting:
 :doc:`gmtdefaults`                               列出所有GMT参数的当前值
@@ -434,6 +434,9 @@
    solar
    spectrum1d
    sph2grd
+   sphdistance
+   sphinterpolate
+   sphtriangulate
    subplot
    surface
    ternary
