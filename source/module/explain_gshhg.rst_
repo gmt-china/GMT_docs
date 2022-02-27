@@ -1,0 +1,16 @@
+GSHHG 信息
+----------
+
+GSHHG (The Global Self-consistent, Hierarchical, High-resolution Geography 
+Database) 最初为 GSHHS，是一个海岸线数据库，主要有三个来源：World Vector
+Shorelines (WVS，不包括南极洲), CIA World Data Bank II (WDBII), 和 Atlas of
+the Cryosphere (AC，只包含南极洲)。
+除了南极洲，所有的 1 级多边形（海陆边界）都来自更准确的 WVS，所有的更高级别
+的多边形（2-4 级，湖泊边界、湖中岛边界和湖中岛中湖边界）来自 WDBII。南极洲
+的海岸线有两种：冰盖的边界和陆地的边界，可以使用 **-A** 选项选择。为了将 WVS
+、WDBII 和 AC 数据转换为 GMT 可用的格式，GMT 已经进行了多种处理，包括：由线段
+组建多边形，去重，以及校正多边形之间的交叉等。每个多边形的面积已经被计算出来，
+因此，用户可以自己选择不绘制小于最小面积的多边形，还可以限制绘制的多边形的级别
+，见 **-A** 选项。绘制海岸线时，还可以使用不同的精细程度，其中低分辨率的海岸线
+是由 Douglas-Peucker 算法简化得到的。河流和边界的分类遵循 WDBII。详细细节见
+`GSHHG <https://github.com/GenericMappingTools/gshhg-gmt#readme>`__ 。

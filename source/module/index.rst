@@ -32,6 +32,7 @@
     - :doc:`gmtget`
     - :doc:`gmtinfo`
     - :doc:`gmtlogo`
+    - :doc:`gmtmath`
     - :doc:`gmtselect`
     - :doc:`gmtset`
     - :doc:`gmtsimplify`
@@ -50,6 +51,7 @@
     - :doc:`grdinfo`
     - :doc:`grdlandmask`
     - :doc:`grdmask`
+    - :doc:`grdmath`
     - :doc:`grdpaste`
     - :doc:`grdproject`
     - :doc:`grdsample`
@@ -113,7 +115,6 @@
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:gmtbinstats`
     - :doc:`gmt:gmtconvert`
-    - :doc:`gmt:gmtmath`
     - :doc:`gmt:gmtregress`
     - :doc:`gmt:gmtsplit`
     - :doc:`gmt:gmtswitch`
@@ -125,7 +126,6 @@
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdinterpolate`
-    - :doc:`gmt:grdmath`
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:mask`
@@ -247,7 +247,7 @@
 :doc:`gmtconnect`                                将端点接近的线段连接起来
 :doc:`sample1d`                                  对1D表数据进行重采样
 :doc:`spectrum1d`                                计算一个时间序列的自功率谱，或两个时间序列的互功率谱
-:doc:`gmt:gmtmath`                               对表数据进行数学计算操作
+:doc:`gmtmath`                                   对表数据进行数学计算操作
 :doc:`mapproject`                                地图变换的正变换和逆变换
 :doc:`gmtspatial`                                点、线段和多边形的地理空间操作
 :doc:`gmt:gmtvector`                             2D和3D下笛卡尔矢量操作
@@ -269,7 +269,7 @@
 :doc:`grdtrend`                                  拟合网格的趋势面并计算残差
 :doc:`grdproject`                                对网格数据做地图变换和逆变换
 :doc:`grdmask`                                   根据多边形数据或点数据创建mask网格文件
-:doc:`gmt:grdmath`                               对网格文件做数学计算操作
+:doc:`grdmath`                                   对网格文件做数学计算操作
 :doc:`gmt:grdfilter`                             对网格文件做空间域或时间域滤波
 :doc:`gmt:grdfft`                                对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
@@ -388,6 +388,7 @@
    gmtget
    gmtinfo
    gmtlogo
+   gmtmath 
    gmtselect
    gmtset
    gmtsimplify
@@ -406,6 +407,7 @@
    grdinfo
    grdlandmask
    grdmask
+   grdmath
    grdpaste
    grdproject
    grdsample
