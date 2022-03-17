@@ -13,6 +13,9 @@ Anaconda 用户可以直接通过以下命令安装、升级以及卸载 GMT。
 未安装 Anaconda 的用户可以参考《`Anaconda 简易教程 <https://seismo-learn.org/software/anaconda/>`__》
 安装 Anaconda。
 
+此外请注意，在 base 环境下安装 GMT 会出现运行报错的问题。用户应该新建并激活一个新环境，
+在新环境中执行以下安装步骤。
+
 安装 GMT
 --------
 
