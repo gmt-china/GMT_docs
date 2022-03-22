@@ -81,7 +81,7 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository
 
       - name: Create comment
-        uses: peter-evans/create-or-update-comment@v1.4.5
+        uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
@@ -92,7 +92,7 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository && steps.fc.outputs.comment-id == 0
 
       - name: Update comment
-        uses: peter-evans/create-or-update-comment@v1.4.5
+        uses: peter-evans/create-or-update-comment@v2
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
