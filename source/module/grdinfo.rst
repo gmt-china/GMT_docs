@@ -210,7 +210,7 @@ grdinfo
     $ gmt grdinfo @earth_relief_30m.grd
     earth_relief_30m.grd: Title: Earth Relief at 30 arc minutes
     earth_relief_30m.grd: Command: grdfilter SRTM15+V2.nc -Fg55.6 -D1 -I30m -rg -Gearth_relief_30m.grd=ns --IO_NC4_DEFLATION_LEVEL=9 --PROJ_ELLIPSOID=Sphere
-    earth_relief_30m.grd: Remark: Obtained by Gaussian Cartesian filtering (55.6 km fullwidth) from SRTM15+V2.nc [Tozer et al., 2019; http://dx.doi.org/10.1029/2019EA000658]
+    earth_relief_30m.grd: Remark: Obtained by Gaussian Cartesian filtering (55.6 km fullwidth) from SRTM15+V2.nc [Tozer et al., 2019; https://dx.doi.org/10.1029/2019EA000658]
     earth_relief_30m.grd: Gridline node registration used [Geographic grid]
     earth_relief_30m.grd: Grid file format: ns = GMT netCDF format (16-bit integer), CF-1.7
     earth_relief_30m.grd: x_min: -180 x_max: 180 x_inc: 0.5 (30 min) name: longitude n_columns: 721
