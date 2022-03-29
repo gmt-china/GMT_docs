@@ -35,7 +35,7 @@ x2sys_cross
 --------
 
 *tracks*
-    可以是一个或者多个 ASCII，二进制或 COARDS netCDF 1-D 沿轨数据文件。
+    可以是一个或者多个 ASCII，二进制或 COARDS NetCDF 1-D 沿轨数据文件。
     如果输入的沿轨数据文件很多，可以把所有的文件名放在一个轨迹列表文件中，
     然后使用 = 后紧跟轨迹列表文件名的形式，例如，如果轨迹列表文件名为
     tracks.lis，即为 =tracks.lis 。如果 tracks.lis 中的轨迹文件名不包含
@@ -47,7 +47,7 @@ x2sys_cross
 .. _-T:
 
 **-T**\ *TAG*
-    指定 x2sys TAG 
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------
@@ -61,7 +61,7 @@ x2sys_cross
 .. _-C:
 
 **-C**\ [*runtimes*]
-    将每个轨迹对的计算时间添加大进程信息中，使用 *runtimes* 文件来保存这些
+    将每个轨迹对的计算时间添加到进程信息中，使用 *runtimes* 文件来保存这些
     信息。此选项的目的是通过所有的计算时间来将其分配到子进程中，使用多进程
     加速计算。参见 x2sys 源码中的 MATLAB 函数 *split_file4coes.m*
 
@@ -106,8 +106,6 @@ x2sys_cross
     **-Sh** 不限制速度，但是设置一个较低的速度，如果低于该速度，
     就不计算朝向（即设置为 NaN）[默认计算朝向，不计算速度]
 
-.. include:: explain_-V.rst_
-
 .. _-W:
 
 **-W**\ *size*
@@ -117,6 +115,8 @@ x2sys_cross
 
 **-Z**
     只输出在交叉点处每个测线的值 [默认输出每个测线的值和平均值]
+
+.. include:: explain_-V.rst_
 
 .. include:: explain_-bo.rst_
 

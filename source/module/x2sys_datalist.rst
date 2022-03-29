@@ -54,7 +54,7 @@ x2sys_datalist
 .. _-T:
 
 **-T**\ *TAG*
-    指定 x2sys TAG 
+    指定 x2sys TAG，参见 :doc:`x2sys_init` 
 
 可选选项
 --------
@@ -62,10 +62,7 @@ x2sys_datalist
 .. _-A:
 
 **-A**
-    通过轨迹的权重来消除两个轨迹在交叉点的不符值；
-    平差后的文件名为 *track.cplumn.adj* ，位于 **$X2SYS_HOME**/*TAG*
-    文件夹中。仅当存在对应的平差文件时，才进行平差，即分配误差。
-    [默认不分配]
+    通过轨迹的权重来消除两个轨迹在交叉点的不符值
 
 .. _-E:
 
@@ -80,15 +77,15 @@ x2sys_datalist
 .. _-I:
 
 **-I**\ [*list*]
-    *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算。
+    *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算
     [默认包含所有的轨迹]
 
 .. _-L:
 
 **-L**\ [*corrections*]
-    如果存在改正值，对观测量进行最优改正，*corrections* 为改正表。
+    如果存在改正值，对观测量进行最优改正，*corrections* 为改正表，该改正表可以由 :doc:`x2sys_solve` 生成
     [默认使用位于 **$X2SYS_HOME**/*TAG* 文件夹中的 TAG_corrections.txt]
-    对于改正表文件的格式，见下面的 CORRECTIONS
+    对于改正表文件的格式，见 `Corrections`_
 
 .. include:: explain_-R.rst_
 
@@ -125,15 +122,15 @@ Corrections
 
 改正值文件是一个 ASCII 文件，其中包含了改正必须的系数和参数。
 该文件通常由 :doc:`x2sys_solve` 模块生成，可以使用 # 进行注释，
-所有改正值的格式为：
+所有改正值的格式为 ::
 
-*trackID observation correction*
+    trackID observation correction
 
 其中 *trackID* 是轨迹名称，*observation* 是某个观测量，
 *correction* 由一个或多个空格分隔的项 *term* ，观测量输出的时候会减去这些量。
-*term* 的语法为：
+*term* 的语法为 ::
 
-*factor*\ [\*[*function*]([*scale*](\ *abbrev*\ [-*origin*]))[^\ *power*]]
+    *factor*\ [\*[*function*]([*scale*](\ *abbrev*\ [-*origin*]))[^\ *power*]]
 
 括号中的项是可选的（必须严格按照指示使用括号）。除了 *term* 之间的空格，
 其他部分不能有多余的空格。
