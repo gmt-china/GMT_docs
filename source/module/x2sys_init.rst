@@ -46,19 +46,38 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
   使用 **x2sys_init** 命令指定的标签 TAG 是后续命令中必须的关键参数。
 - :doc:`x2sys_binlist` 将创建一个粗略的轨迹经过的网格列表，即轨迹网格索引文件，
   用于表示每个轨迹数据的位置以及观测数据个数等信息
-- :doc:`x2sys_put` 使用轨迹网格索引文件更新 TAG 数据库
-- :doc:`x2sys_get` 用于寻找满足某些条件的轨迹
-- :doc:`x2sys_cross` 计算给定轨迹列表中的轨迹的交叉点
-- :doc:`x2sys_report` 统计交叉点信息
-- :doc:`x2sys_list` 筛选交叉点
-- :doc:`x2sys_solve` 基于 x2sys_cross 确定的交叉点进行交叉点平差
-- :doc:`x2sys_datalist` 提取交叉点平差后的改正值，以便后续分析
+- :doc:`x2sys_put` 使用轨迹网格索引文件更新 TAG 数据库，该选项在拥有多批次观测数据
+  时可用来更新数据
+- :doc:`x2sys_get` 用于寻找满足某些条件的轨迹，**-A** 选项结果可作为 x2sys_cross 的
+  输入以提高寻找交叉点的效率
+- :doc:`x2sys_cross` 计算给定轨迹列表中的轨迹的交叉点，也可给出交叉点不符值和均值
+- :doc:`x2sys_report` 统计交叉点结果信息
+- :doc:`x2sys_list` 从交叉点结果中提取信息，通常用于为 x2sys_solve 进行交叉点平差做
+  数据准备
+- :doc:`x2sys_solve` 基于 x2sys_cross 确定的交叉点以及 x2sys_list 提取的辅助数据进行
+  交叉点平差
+- :doc:`x2sys_datalist` 提取测线数据，也可将改正值应用于测线
 - :doc:`x2sys_merge` 合并交叉点列表
 
 .. note::
 
     使用 x2sys_init 命令前，需首先设置环境变量 ``X2SYS_HOME`` 为某个拥有写权限的文件夹，
     以便 x2sys 可跟踪具体的设置。
+
+整个数据处理流程可简化为：
+
+1. 初始化（x2sys_init）
+
+2. 计算交叉点（x2sys_cross）
+
+3. 交叉点平差前数据准备（x2sys_list）
+
+4. 交叉点平差（x2sys_solve）
+
+5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 **-L** 选项均
+   可实现，推荐使用 x2sys_datalist）
+
+下面将主要介绍 x2sys_init 模块，其他模块可参考对应模块文档。
 
 语法
 ----
@@ -81,15 +100,19 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 --------
 
 *TAG*
-    数据类型的标签，x2sys_init 将创建一个以 *TAG* 命名的文件夹来保存相关信息
+    数据类型的标签，x2sys_init 将创建一个以 *TAG* 命名的文件夹来保存相关配置信息。后续
+    模块将依赖该配置信息进行数据处理
 
 .. _-D:
 
 **-D**\ *fmtfile*
-    *fmtfile* 文件定义了当前处理的数据文件的格式（见下文中的格式定义）。
-    如果 *fmtfile* 不在当前文件夹下，则需要指定完整路径。
+    *fmtfile* 文件定义了当前处理的数据文件的格式（见下文中的 `格式定义文件`_ ）。
+    如果 *fmtfile* 不在当前文件夹下，则需要指定完整路径。若 *fmtfile* 不包含后缀，GMT 
+    会假定使用自带的格式定义文件，这些文件位于 ``gmt --show-sharedir`` 结果的 *x2sys*
+    文件夹下，见 `内置格式定义文件`_ 。
     如果 **-D** 选项没有指定，GMT 将自动使用 *TAG*\ .fmt，不管其是否存在。
-    **注** ：已经弃用的 ``.def`` 后缀的文件可以正常工作，但不推荐使用，应该考虑改变后缀。
+    **注** ：已经弃用的 ``.def`` 后缀的文件可以正常工作，但不推荐使用，应该考虑改变后缀
+    ，见 `废弃用法`_ 。
 
 可选选项
 --------
@@ -97,7 +120,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 .. _-E:
 
 **-E**\ *suffix*
-    指定处理数据文件的后缀。如果不给定，GMT 将使用 **-D** 选项中的前缀作为后缀（见 **-D** 选项）。
+    指定处理数据文件的后缀。如果不指定，GMT 将使用 **-D** 选项中的前缀作为后缀（见 **-D** 选项）。
 
 .. _-F:
 
@@ -107,7 +130,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 .. _-G:
 
 **-Gd**\|\ **g**
-    选择使用地理坐标。追加 **d** 表明经度范围为 -180 到 180 度。
+    选择使用地理坐标。追加 **d** 表明经度范围为 -180 到 180 度，
     追加 **g** 表明经度范围为 0 到 360 度。
 
 .. _-I:
@@ -132,7 +155,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
     - **n** nautical miles 或 knots
     - **u** survey feet 或 survey feet/s). 
 
-    默认地，当使用了 **-G** 选项时，设置为 **-Ndk** **-Nse** （km 和 m/s），
+    默认地，当使用了 **-G** 选项时，自动设置为 **-Ndk** **-Nse** （km 和 m/s），
     其他情况设置为 **-Ndc** 和 **-Nsc** 。
 
 .. include:: explain_-R.rst_
@@ -167,18 +190,18 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 
 1. **ASCII** 用来表明该数据文件为 ASCII 格式
 2. **BINARY** 表明该数据文件为二进制格式
-3. **NETCDF** 表明该数据文件为 1-D netCDF 格式
+3. **NETCDF** 表明该数据文件为 1-D NetCDF 格式
 4. **SKIP** 可接收一个参数，表示读取 ASCII 格式的数据文件时跳过的行数或
    读取二进制文件时跳过的字节数
 5. **GEO** 表明数据文件的坐标为地理坐标，与 **-G** 的作用相同
-6. **MULTISEG** 表明每个文件均包括多段数据，中间使用 GMT 段分隔符分开（不适用于 netCDF 格式）
+6. **MULTISEG** 表明每个文件均包括多段数据，中间使用 GMT 段分隔符分开（不适用于 NetCDF 格式）
 
 列信息
 ~~~~~~
 
-列信息中包含多行，其中每行表示不同的变量，每行都含有 7 列，每列均代表特殊的含义：
+列信息中包含多行，其中每行表示不同的变量，每行都含有 7 列，每列均代表特殊的含义 ::
 
-*name type NaN NaN-proxy scale offset oformat*
+    name  type  NaN  NaN-proxy  scale  offset  oformat
 
 1. *name* 变量的名称。其中，坐标是必须的变量，且其名称只能为 *lon* 和 *lat* 
    （笛卡尔坐标时为 *x* 和 *y* ）。时间变量为可选的，*time* 表示绝对时间，
@@ -218,7 +241,7 @@ GMT 内置了一些格式定义文件，包括：
 - geoz 与 *geo* 相同，但包含 z 值
 
 如果用户的轨迹数据文件为上述类型中的某一种，例如为普通的 magd77 ASCII 文件，
-可以之间使用 **-Dmgd77** ，无需手动编写格式定义文件。
+可以直接使用 **-Dmgd77** ，无需手动编写格式定义文件。
 以上格式定义文件均可在 **GMT_SHAREDIR** 目录下的 x2sys 文件夹中找到。
 
 示例
@@ -251,7 +274,7 @@ lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。
 
 这里设置 TAG 为 LINE。当 x2sys 试图读取观测数据时，将首先在当前文件夹中寻找数据，
 然后在 :file:`LINE_paths.txt` 中查找其他的目录列表。因此，这里创建 :file:`LINE_paths.txt`
-文件，内容为完整的数据所在的路径。
+文件，内容为数据所在的路径，必须使用绝对路径。
 
 所有的 TAG 相关的文件，包括格式定义文件，TAG 文件以及创建的数据库等将保存在
 **$X2SYS_HOME**\ /*TAG* 文件夹中，此处为 **$X2SYS_HOME**\ /LINE。
@@ -304,9 +327,9 @@ GMT 已经自带了 MGD77，MGD77+ 以及 mgg 观测数据的格式定义文件�
     obs2    h       Y       -32768      0.1     0       %6.1f
     obs3    h       N       0           0.1     0       %6.1f
 
-**1-D netCDF 文件**
+**1-D NetCDF 文件**
 
-最后，假定用户的观测文件为 netCDF 格式，且符合 COARDS 约定，含有同样的观测数据，即
+最后，假定用户的观测文件为 NetCDF 格式，且符合 COARDS 约定，含有同样的观测数据，即
 lon，lat，time，obs1，obs2，obs3，则格式定义文件为::
 
     # Format define file for the netCDF COARDS line format
@@ -320,7 +343,7 @@ lon，lat，time，obs1，obs2，obs3，则格式定义文件为::
     obs2    d       N       0           1       0       %6.1f
     obs3    d       N       0           1       0       %6.1f
 
-netCDF 观测文件通常不需要设置 scale 以及 NaN，因为这些都包含在 netCDF 自己的格式描述中。
+NetCDF 观测文件通常不需要设置 scale 以及 NaN，因为这些都包含在 NetCDF 自己的格式描述中。
 
 废弃用法
 --------

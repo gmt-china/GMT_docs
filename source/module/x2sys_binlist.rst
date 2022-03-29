@@ -61,7 +61,7 @@ x2sys_binlist
 
 **-D**
     计算每个和轨迹相交的网格的累积距离。距离的输出位于 *flags* 后。
-    距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 
+    距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 中的 **-N** 选项 
 
 .. _-E:
 

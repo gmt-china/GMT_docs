@@ -34,7 +34,7 @@ x2sys_put
 .. _-T:
 
 **-T**\ *TAG*
-    指定 x2sys TAG
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------
