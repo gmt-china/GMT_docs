@@ -71,4 +71,4 @@ earth_age: 地球洋壳年龄数据
 数据来源及引用
 --------------
 
-- Seton et al., 2020, https://dx.doi.org/10.1029/2020GC009214
+- Seton et al., 2020, https://doi.org/10.1029/2020GC009214
