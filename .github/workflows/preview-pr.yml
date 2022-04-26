@@ -21,16 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Miniconda
+      # Install Mambaforge with conda-forge dependencies
+      - name: Setup Mambaforge
         uses: conda-incubator/setup-miniconda@v2.1.1
         with:
-          python-version: 3.8
-          channels: conda-forge
-          miniconda-version: "latest"
+          python-version: 3.9
+          channels: conda-forge,nodefaults
+          channel-priority: strict
+          miniforge-version: latest
+          miniforge-variant: Mambaforge
+          mamba-version: "*"
+          use-mamba: true
 
       - name: Install packages
         run: |
-          conda install -c conda-forge gmt=${GMT_VERSION}
+          mamba install -c conda-forge gmt=${GMT_VERSION}
           pip install -r requirements.txt
           # Install packages for GMT LaTeX integration
           sudo apt update
