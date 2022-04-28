@@ -98,6 +98,8 @@ html_context = {
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Passed to sphinxcontrib.datatemplates
+    "siteurl": f"https://docs.gmt-china.org/{version}",
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 

@@ -7,11 +7,11 @@
 .. cssclass:: gmtgallery
 
 {% for fig in group['gallery'] %}
--  .. figure:: https://docs.gmt-china.org/6.3/_images/{{ fig["image"] }}
+-  .. figure:: {{ config.html_context["siteurl"] }}/_images/{{ fig["image"] }}
       :align: center
-      :target: https://docs.gmt-china.org/6.3/{{ fig["target"] }}
+      :target: {{ config.html_context["siteurl"] }}/{{ fig["target"] }}
 
-      `{{ fig["title"] }} <https://docs.gmt-china.org/6.3/{{ fig["target"] }}>`__
+      `{{ fig["title"] }} <{{ config.html_context["siteurl"] }}/{{ fig["target"] }}>`__
 
 {% endfor %}
 {% endfor %}
