@@ -52,6 +52,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_cjkspace.cjkspace",
     "sphinx_gmt.gmtplot",
+    "sphinxcontrib.datatemplates",
 ]
 mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
