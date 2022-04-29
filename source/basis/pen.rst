@@ -119,6 +119,8 @@ GMT中可以通过两种方式指定画笔宽度：
     10 2
     EOF
 
+.. _fig:pen-styles:
+
 .. gmtplot:: pens.sh
     :show-code: false
     :width: 75%
