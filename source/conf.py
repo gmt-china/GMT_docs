@@ -52,6 +52,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_cjkspace.cjkspace",
     "sphinx_gmt.gmtplot",
+    "sphinxcontrib.datatemplates",
 ]
 mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
@@ -97,6 +98,8 @@ html_context = {
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Passed to sphinxcontrib.datatemplates
+    "siteurl": f"https://docs.gmt-china.org/{version}",
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 

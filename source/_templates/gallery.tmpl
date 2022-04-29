@@ -1,0 +1,18 @@
+{# Template for the gallery page #}
+
+{% for group in data %}
+{{ group['title'] }}
+==========================
+
+.. cssclass:: gmtgallery
+
+{% for fig in group['gallery'] %}
+-  .. figure:: {{ config.html_context["siteurl"] }}/_images/{{ fig["image"] }}
+      :align: center
+      :target: {{ config.html_context["siteurl"] }}/{{ fig["target"] }}
+
+      `{{ fig["title"] }} <{{ config.html_context["siteurl"] }}/{{ fig["target"] }}>`__
+
+{% endfor %}
+{% endfor %}
+
