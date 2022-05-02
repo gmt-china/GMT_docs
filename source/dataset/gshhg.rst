@@ -42,7 +42,7 @@ GMT现代模式下，默认使用 **-Da** 选项，**a** 表示 **a**\ uto，
 .. gmtplot::
     :show-code: false
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt set MAP_TITLE_OFFSET -15p FONT_TITLE 15p,Courier-Bold
     gmt subplot begin 1x5 -Fs4c -JM4c -R-158.3/-157.6/21.2/21.8 -B+n -M0
     gmt coast -B+t"-Df" -W1p -Df -c

@@ -121,7 +121,7 @@ Linux 都自带了的文本编辑器 **gedit** 打开该脚本文件::
     # User:    seisman
     # Purpose: Purpose of this script
     export GMT_SESSION_NAME=$$	# Set a unique session name
-    gmt begin figurename png,pdf
+    gmt begin figurename
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 

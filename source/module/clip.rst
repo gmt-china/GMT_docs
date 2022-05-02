@@ -136,7 +136,7 @@ clip
 
 ::
 
-    gmt begin example png,pdf
+    gmt begin example
     # 打开裁剪路径
     gmt clip -R0/6/0/6 -Jx2.5c -W1p,blue << EOF
     0 0

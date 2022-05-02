@@ -217,7 +217,7 @@ meca
    :width: 75%
 
     #!/usr/bin/env bash
-    gmt begin beachball_3 png,pdf
+    gmt begin beachball_3
     gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSen
     gmt coast -Da -Ia/0.05,black
     gmt makecpt -T0/100/20

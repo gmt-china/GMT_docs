@@ -165,7 +165,7 @@ solar
 .. gmtplot::
    :width: 60%
 
-    gmt begin solar png,pdf
+    gmt begin solar
       gmt coast -Rd -JKs0/10i -Dl -A5000 -W0.5p -S175/210/255 -Bafg --MAP_FRAME_TYPE=plain
 
       # 绘制晨昏线

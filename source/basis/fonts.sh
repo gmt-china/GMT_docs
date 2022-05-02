@@ -43,7 +43,7 @@ ZapfChancery-MediumItalic
 ZapfDingbats
 EOF
 
-gmt begin GMT_fonts png,pdf
+gmt begin GMT_fonts
 gmt set MAP_FRAME_PEN thinner
 gmt plot -R0/5.4/0/$y0 -Jx1i -B0 << EOF
 >

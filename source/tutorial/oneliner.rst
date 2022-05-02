@@ -3,7 +3,7 @@ GMT 单行模式
 
 在之前的教程中，有很多示例都只需要一个 GMT 命令即可完成绘图。比如::
 
-    gmt begin GlobalMap png,pdf
+    gmt begin GlobalMap
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 

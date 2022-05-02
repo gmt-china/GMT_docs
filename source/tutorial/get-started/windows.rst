@@ -132,7 +132,7 @@ Batch 脚本文件是一个纯文本文件，可以直接用文本编辑器打�
     # User:    seisman
     # Purpose: Purpose of this script
     export GMT_SESSION_NAME=$$	# Set a unique session name
-    gmt begin figurename png,pdf
+    gmt begin figurename
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 

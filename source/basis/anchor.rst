@@ -17,7 +17,7 @@
     :show-code: false
     :width: 70%
 
-    gmt begin anchor-1 png,pdf
+    gmt begin anchor-1
     gmt set MAP_TICK_LENGTH_PRIMARY 20p MAP_TICK_PEN_PRIMARY 1p
     gmt basemap -R0/10/0/6 -JX10c/6c -BENlb -Bxf5 -Byf3
     gmt plot -Sc0.3c -Gred -N << EOF
@@ -62,7 +62,7 @@
     :show-code: false
     :width: 70%
 
-    gmt begin anchor-2 png,pdf
+    gmt begin anchor-2
     gmt basemap -Rg -JH10c -B0
     gmt text -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N << EOF
     TL TL TL
@@ -96,7 +96,7 @@
     :show-code: false
     :width: 70%
 
-    gmt begin anchor-3 png,pdf
+    gmt begin anchor-3
     gmt colorbar -D0c/0c+w10c/1.5c+h -B0 -Cpolar
     gmt basemap -R0/10/0/6 -JX10c/1.5c -B0
     gmt text -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N << EOF

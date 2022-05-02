@@ -17,7 +17,7 @@ GMT 的 :doc:`/module/text` 模块可以用于添加文字。
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
     gmt text << EOF
     5 1 GMT TEXT1
@@ -45,7 +45,7 @@ GMT 的 :doc:`/module/text` 模块可以用于添加文字。
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
     gmt text -F+f16p,1,red+a30 << EOF
     5 1 GMT TEXT1
@@ -66,7 +66,7 @@ GMT 的 :doc:`/module/text` 模块可以用于添加文字。
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
     gmt text -F+f16p,1,red+a30 -W1p -Glightblue -C25%/25% << EOF
     5 1 GMT TEXT1
@@ -95,7 +95,7 @@ GMT 的 :doc:`/module/text` 模块可以用于添加文字。
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
     gmt text -F+f16p,1,red+jTL -W1p << EOF
     5 1 GMT TEXT1
@@ -113,7 +113,7 @@ GMT 的 :doc:`/module/text` 模块可以用于添加文字。
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
     gmt text -F+f16p,1,red+jTL -D0.5c/0.5c -W1p << EOF
     5 1 GMT TEXT1
@@ -140,7 +140,7 @@ GMT 的 :doc:`/module/text` 模块可以用于添加文字。
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
     gmt text -F+f+a+j -W1p -Glightblue << EOF
     5 1 12p,0,red       0   TL GMT TEXT1

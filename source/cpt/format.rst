@@ -41,7 +41,7 @@ CPT文件可以分成两类，一种适用于分类数据，一种适用于常�
 .. gmtplot::
     :width: 75%
 
-    gmt begin categorical-cpt png,pdf
+    gmt begin categorical-cpt
 
     # 写一个分类CPT到文件 types.cpt
     cat > types.cpt << EOF
@@ -141,7 +141,7 @@ GMT对于常规CPT文件的格式由如下要求：
 .. gmtplot::
     :width: 50%
 
-    gmt begin regular-cpt png,pdf
+    gmt begin regular-cpt
 
     # 连续型CPT
     cat > continuous.cpt << EOF

@@ -68,7 +68,7 @@ GMT 在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/
     :width: 80%
     :caption: 使用 GMT 绘制的第一张图
 
-    gmt begin GlobalMap png,pdf
+    gmt begin GlobalMap
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 

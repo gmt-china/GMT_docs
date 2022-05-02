@@ -1,4 +1,4 @@
-gmt begin symbols png,pdf
+gmt begin symbols
 gmt basemap -R1/15/0/2 -Jx1c -B+n
 gmt plot -S -W1p << EOF
 1 1 0.5c -

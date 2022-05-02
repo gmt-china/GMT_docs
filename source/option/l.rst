@@ -48,7 +48,7 @@
 .. gmtplot::
    :width: 75%
 
-   gmt begin fruit png,pdf
+   gmt begin fruit
      gmt plot -R0/7.2/3/7.2 -Jx2c @Table_5_11.txt -Sc0.35c -Glightgreen -Wfaint -lApples+H"LEGEND"+D+jTR+f16p
      gmt plot @Table_5_11.txt -St0.35c -Gorange -B -BWStr -lOranges
    gmt end show

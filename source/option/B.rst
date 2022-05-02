@@ -424,7 +424,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 5
 
-    gmt begin GMT_-B_time5 png,pdf
+    gmt begin GMT_-B_time5
         gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character \
             FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
         gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpxa1K -Bsxa1U -BS

@@ -136,7 +136,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
         :caption: 图片标题
         :width: 80%
 
-        gmt begin map png,pdf
+        gmt begin map
         gmt basemap -JX10c/10c -R0/10/0/10 -Baf
         gmt end show
 

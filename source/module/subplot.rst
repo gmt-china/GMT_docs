@@ -289,7 +289,7 @@ subplot end 语法
 
 .. gmtplot::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt subplot set 0,0
         gmt basemap -R0/10/0/10 -Baf
@@ -306,7 +306,7 @@ subplot end 语法
 
 注意子图索引号从0开始::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt subplot set 0
         gmt basemap -R0/10/0/10 -Baf
@@ -323,7 +323,7 @@ subplot end 语法
 
 每次使用 **subplot set** 但不指定子图行列号或索引号，则会自动激活“下一个”子图::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt subplot set
         gmt basemap -R0/10/0/10 -Baf
@@ -341,7 +341,7 @@ subplot end 语法
 :doc:`/option/c` 的功能与 **subplot set** 类似，可以用于激活指定的子图。
 其后可以接子图行列号或索引号，也可以只使用 **-c** 自动激活下一个子图::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt basemap -R0/10/0/10 -Baf -c
         gmt basemap -R0/10/0/10 -Baf -c
@@ -354,7 +354,7 @@ subplot end 语法
 
 .. gmtplot::
 
-    gmt begin panels png,pdf
+    gmt begin panels
       gmt subplot begin 2x2 -Fs10c/5cc -M5p -A -SCb -SRl -Bwstr
         gmt subplot set
         gmt basemap -R0/80/0/10

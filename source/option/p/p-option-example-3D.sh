@@ -1,4 +1,4 @@
-gmt begin p-option-example-3D png,pdf
+gmt begin p-option-example-3D
 gmt set FONT_ANNOT_PRIMARY 8p
 gmt set MAP_FRAME_PEN 1p
 gmt set MAP_TICK_LENGTH_PRIMARY 4p/2p

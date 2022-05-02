@@ -1,4 +1,4 @@
-gmt begin Jp png,pdf
+gmt begin Jp
 gmt set FORMAT_GEO_MAP +D FONT_TITLE 14p,1,red
 gmt basemap -JP5c  -R0/360/0/1 -Bxa45f -B+t"-JP5c -R0/360/0/1" -Y10c
 gmt basemap -JP5c+a -R0/360/0/1 -Bxa45f -B+t"-JP5c+a -R0/360/0/1" -X8c
