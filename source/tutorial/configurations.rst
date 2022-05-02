@@ -12,7 +12,7 @@
    :language: bash
    :width: 20%
 
-    gmt begin conf0 pdf,png
+    gmt begin conf0
         gmt basemap -JX2c -R0/1/0/1 -Bwsen+t'Title' 
     gmt end show
 
@@ -67,7 +67,7 @@
    :width: 50%
    :caption: 标题字体的全局设置
 
-    gmt begin conf1 pdf,png
+    gmt begin conf1
         gmt set FONT_TITLE 12p,Times-Bold,red # 全局设置标题的字体
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One'
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' -X6c
@@ -85,7 +85,7 @@
    :width: 50%
    :caption: 标题字体的临时设置
 
-    gmt begin conf2 pdf,png
+    gmt begin conf2
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One' --FONT_TITLE=12p,Times-Bold,red
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' -X6c
     gmt end

@@ -373,7 +373,7 @@ subplot end 语法
 
 .. gmtplot::
 
-    gmt begin map pdf,png
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/3c -A -M0
 
         gmt subplot set 0

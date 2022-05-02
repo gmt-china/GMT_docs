@@ -174,7 +174,7 @@ wiggle
     :show-code: true
     :width: 600 px
 
-    gmt begin wiggle_exam pdf,png
+    gmt begin wiggle_exam
     gmt wiggle temp.dat -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne
     gmt end
 

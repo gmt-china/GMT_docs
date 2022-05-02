@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin grdedit_-E pdf,png
+gmt begin grdedit_-E
     gmt set MAP_FRAME_TYPE plain FONT_TITLE 18p MAP_TITLE_OFFSET 2p
     gmt subplot begin 1x4 -Fs6c/3c+p1p+w1p -Y15c -B+n
         gmt grdimage @earth_relief_30m -Jx? -B+t"Original" -Cgeo -c

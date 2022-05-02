@@ -6,7 +6,7 @@
 data=geo3al.gmt
 cpt=geoage.cpt
 
-gmt begin geo3al pdf,png
+gmt begin geo3al
     # Paint the land using white color
     gmt coast -R70/150/13/55 -JM22c -Gwhite -Baf -BWsNe
 

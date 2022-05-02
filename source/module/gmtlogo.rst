@@ -98,7 +98,7 @@ gmtlogo
 .. gmtplot::
    :width: 80%
 
-   gmt begin logo pdf,png
+   gmt begin logo
    gmt basemap -R0/10/0/10 -JX10c/5c -Baf -BWSen
    gmt logo -DjTL+w3c+o0.25c -F
    gmt end show

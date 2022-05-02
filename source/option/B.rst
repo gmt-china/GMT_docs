@@ -371,7 +371,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 1
 
-    gmt begin GMT_-B_time1 pdf,png
+    gmt begin GMT_-B_time1
         gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
         gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpxa7Rf1d -Bsxa1O -BS
     gmt end
@@ -388,7 +388,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 2
 
-    gmt begin GMT_-B_time2 pdf,png
+    gmt begin GMT_-B_time2
         gmt set FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
         gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpxa6Hf1h -Bsxa1K -BS
         gmt basemap -Bpxa6Hf1h -Bsxa1D -BS -Y0.65i
@@ -401,7 +401,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间示例 3
 
-    gmt begin GMT_-B_time3 pdf,png
+    gmt begin GMT_-B_time3
         gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
         gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpxa3Of1o -Bsxa1Y -BS
     gmt end
@@ -413,7 +413,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 4
 
-    gmt begin GMT_-B_time4 pdf,png
+    gmt begin GMT_-B_time4
         gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
         gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpxa15mf5m -Bsxa1H -BS
     gmt end
@@ -438,7 +438,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 6
 
-    gmt begin GMT_-B_time6 pdf,png
+    gmt begin GMT_-B_time6
         gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
         gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Bxa1Of1d -BS
     gmt end
@@ -449,7 +449,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 7
 
-    gmt begin GMT_-B_time7 pdf,png
+    gmt begin GMT_-B_time7
         gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
         gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpxa5Df1d -Bsxa1Y -BS
     gmt end
@@ -524,7 +524,7 @@ GMT 允许用户定义标注来实现不规则间隔的标注，用法是 **-Bc*
     6.2831852	ag	2@~p@~
     EOF
 
-    gmt begin GMT_-B_custom pdf,png
+    gmt begin GMT_-B_custom
         gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u" Ma" \
             -Bpycyannots.txt -Bsxcxannots.txt -BWS+glightblue \
             --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p

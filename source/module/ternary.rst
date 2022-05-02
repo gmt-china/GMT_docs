@@ -165,7 +165,7 @@ ternary
 .. gmtplot::
    :width: 70%
 
-    gmt begin map pdf,png
+    gmt begin map
     gmt makecpt -Cturbo -T0/80/10
     gmt ternary @ternary.txt -R0/100/0/100/0/100 -JX6i -Sc0.1c -C -LWater/Air/Limestone \
         -Baafg+l"Water component"+u" %" -Bbafg+l"Air component"+u" %" -Bcagf+l"Limestone component"+u" %" \

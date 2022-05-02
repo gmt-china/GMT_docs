@@ -36,7 +36,7 @@ GMT 中能够绘制矢量的模块有
     .. gmtplot::
         :show-code: false
 
-        gmt begin vector-head pdf,png
+        gmt begin vector-head
         for symbol in t c a A i I; do
             echo 1 1 0 3 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b${symbol} -W1.5p -Gred -X2.2c
             echo 3 0.5 -Sv0.5c+b$symbol | gmt text -F+f7p,9 -N
@@ -62,7 +62,7 @@ GMT 中能够绘制矢量的模块有
     .. gmtplot::
         :show-code: false
 
-        gmt begin vector-shape pdf,png
+        gmt begin vector-shape
         for shape in -2 -1 0 1 2; do
             echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
             echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
@@ -113,7 +113,7 @@ GMT提供了三类矢量：
 .. gmtplot::
     :caption: 三种矢量：（左）笛卡尔矢量；（中）地理矢量；（右）弧形矢量
 
-    gmt begin arrows pdf,png
+    gmt begin arrows
     # 笛卡尔矢量
     echo 0.5 1.5 4.5 1.5 | gmt plot -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred
     # 地理矢量

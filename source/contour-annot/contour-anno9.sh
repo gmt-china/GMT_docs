@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin contour_annot9 pdf,png
+gmt begin contour_annot9
 gmt set FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
 gmt project -E-74/41 -C-17/28 -G10 -Q > great_NY_Canaries.txt
 gmt project -E-74/41 -C2.33/48.87 -G100 -Q > great_NY_Paris.txt

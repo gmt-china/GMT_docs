@@ -29,7 +29,7 @@
     :show-code: false
     :caption: 线段起点偏移示意图
 
-    gmt begin line_offset pdf,png
+    gmt begin line_offset
     gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
     gmt basemap -R8/32/40/44 -JM5i -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain
@@ -64,7 +64,7 @@
     2	1.5
     EOF
 
-    gmt begin line_bezier pdf,png
+    gmt begin line_bezier
     gmt plot line.txt -R-0.25/4.25/-0.2/2.2 -JX3i/1.25i -W2p
     gmt plot line.txt -Sc0.1i -Gred -Wfaint
     gmt plot line.txt -W2p+s -X3i
@@ -88,7 +88,7 @@
     :show-code: false
     :caption: 线条端点箭头示意图
 
-    gmt begin line_arrow pdf,png
+    gmt begin line_arrow
     gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
     gmt plot line.txt -R8/32/40/44 -JM5i -Wfaint,red -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain

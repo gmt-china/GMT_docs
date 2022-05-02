@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin plot_-Sf pdf,png
+gmt begin plot_-Sf
 gmt basemap -R150/200/20/50 -JM15c -B10
 gmt plot -Sf2c/0.1i+l+b -Gblack -W << EOF
 155 30

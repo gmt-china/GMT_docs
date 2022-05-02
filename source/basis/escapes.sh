@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gmt begin text_escape_examples pdf,png
+gmt begin text_escape_examples
 gmt text -JX18c/-8c -R0/2/-1/9 -Bg1 -Bwsen -F+f -N  << EOF
 0.5  -0.5 10p,5,black Input
 1.5  -0.5 10p,5,black Output

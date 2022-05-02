@@ -42,7 +42,7 @@ GMT 中笛卡尔坐标变换分为三类：
     :caption: 笛卡尔坐标的线性变换
     :width: 60%
 
-    gmt begin GMT_linear pdf,png
+    gmt begin GMT_linear
     gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
     gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
     gmt end
@@ -71,7 +71,7 @@ GMT 中笛卡尔坐标变换分为三类：
     :caption: 地理坐标的线性变换
     :width: 60%
 
-    gmt begin GMT_linear_d pdf,png
+    gmt begin GMT_linear_d
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
     gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
     gmt end
@@ -91,7 +91,7 @@ Time（时间日期坐标）也可以用线性投影绘制，此时需要告诉G
     :caption: 日期时间坐标的线性变换
     :width: 60%
 
-    gmt begin GMT_linear_cal pdf,png
+    gmt begin GMT_linear_cal
     gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_CLOCK_MAP=-hham FORMAT_TIME_PRIMARY_MAP full
     gmt basemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d -Bya1Hg1h -BWsNe+glightyellow
     gmt end
@@ -110,7 +110,7 @@ Time（时间日期坐标）也可以用线性投影绘制，此时需要告诉G
     :caption: 对数投影
     :width: 60%
 
-    gmt begin GMT_log pdf,png
+    gmt begin GMT_log
     gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque -Wthick,blue,- -h sqrt.txt
     gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
     gmt end
@@ -133,7 +133,7 @@ Time（时间日期坐标）也可以用线性投影绘制，此时需要告诉G
     :caption: 指数变换
     :width: 60%
 
-    gmt begin GMT_pow pdf,png
+    gmt begin GMT_pow
     gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory -Wthick sqrt.txt
     gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
     gmt end

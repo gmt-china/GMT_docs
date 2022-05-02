@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 p1="30 -50"
 p2="200 45"
-gmt begin plot_-A pdf,png
+gmt begin plot_-A
 gmt basemap -JM15c -R0/220/-60/60 -Bx60 -By30
 gmt plot -W2p << EOF
 $p1

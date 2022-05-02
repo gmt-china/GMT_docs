@@ -25,7 +25,7 @@ cat << EOF > t2.txt
 8   4
 EOF
 # -Fcs: 默认的连接方式
-gmt begin plot_-F pdf,png
+gmt begin plot_-F
 gmt basemap -R0/50/0/45 -Jx0.06i -Ba10 -BWSne
 gmt plot -W1p t[12].txt
 plotpts TWO DATA TABLES

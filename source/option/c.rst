@@ -22,7 +22,7 @@
 .. gmtplot::
     :width: 75%
 
-    gmt begin subplot pdf,png
+    gmt begin subplot
         gmt set FONT_TAG 15p,1
         gmt subplot begin 2x2 -Fs5c/3c -A'(a)'+JTL+o0.2c/0.4c -M0.5c/0.2c -R0/5/0/5
             # 在第一个子图内绘图

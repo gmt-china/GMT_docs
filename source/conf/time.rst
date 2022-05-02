@@ -90,7 +90,7 @@ TIME参数
         .. gmtplot::
             :show-code: false
 
-            gmt begin time pdf,png
+            gmt begin time
             gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Abbr FONT_ANNOT_PRIMARY +9p
             gmt basemap -R1997-01-01T/1997-07-01T/0/2 -JX10c/2c -Ba1Of1o -BWSen
             for value in off +1o -1o; do

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin GMT_cycle_4 pdf,png
+gmt begin GMT_cycle_4
     gmt subplot begin 1x2 -Fs8c/10c -BWSrt -T"Mississippi river annual discharge" -A+jTR
     gmt plot @mississippi.txt -i1+s1e-3,0 -R0/50/0/1 -W0.25p,blue -Byaf+l"Normalized year" \
         -Bxaf+l"10@+3@+ m@+3@+/s" -wy+c1 -c

@@ -25,7 +25,7 @@ Mercator 投影是各种地图投影中最著名的一个，其由 Gerardus Merc
     :caption: Mercator 投影
     :width: 85%
 
-    gmt begin GMT_mercator pdf,png
+    gmt begin GMT_mercator
     gmt set MAP_FRAME_TYPE fancy+
     gmt coast -R0/360/-70/70 -Jm0.03c -Bxa60f15 -Bya30f15 -Dc -A5000 -Gred
     gmt end

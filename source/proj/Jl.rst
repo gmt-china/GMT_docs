@@ -27,7 +27,7 @@ Lambert 保角投影场用于绘制美国地图，两个固定的标准纬线是
     :caption: Lambert 保角圆锥投影
     :width: 85%
 
-    gmt begin GMT_lambert_conic pdf,png
+    gmt begin GMT_lambert_conic
     gmt set MAP_FRAME_TYPE fancy FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.15c
     gmt coast -R-130/-70/24/52 -JL-100/35/33/45/12c -Bag -Dl -N1/thick,red -N2/thin -A500 -Gtan -Wthinnest,white -Sblue
     gmt end

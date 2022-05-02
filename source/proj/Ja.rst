@@ -28,7 +28,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
     :caption: 使用 Lambert 方位等面积投影绘制矩形地图
     :width: 75%
 
-    gmt begin GMT_lambert_az_rect pdf,png
+    gmt begin GMT_lambert_az_rect
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0
     gmt coast -R0/-40/60/-10+r -JA30/-30/12c -Bag -Dl -A500 -Gp10+r300 -Wthinnest
     gmt end
@@ -58,7 +58,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
     :caption: 震源球投影：等面积的 Schmidt 网和等角度的 Wulff 网
     :width: 75%
 
-    gmt begin J_stereonets pdf,png
+    gmt begin J_stereonets
     gmt basemap -R0/360/-90/90 -JA0/0/1.75i -Bg15
     echo "180 -90 SCHMIDT" | gmt text -N -D0/-0.2c -F+f12p,Helvetica-Bold+jTC
     gmt basemap -JS0/0/1.75i -Bg15 -X2.75i
