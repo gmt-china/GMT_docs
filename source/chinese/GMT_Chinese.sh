@@ -13,4 +13,4 @@ gmt text -R0/8/0/4 -JX12c/4c -Bxaf+l"X轴" -Byaf+l"Y轴" -BWSen+t"中文标题" 
 6 3.5 25p,45,red   中文黑体
 7 3.5 25p,46,green 中文楷体
 EOF
-gmt end
+gmt end show

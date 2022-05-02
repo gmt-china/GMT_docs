@@ -17,4 +17,4 @@ gmt subplot begin 1x4 -Fs4c/4c -M1c/10p
     p=y135/40/10
     gmt basemap -R0/10/0/10/0/20 -JZ4c -Baf -Bzaf -BwsENZ1+b+t"-p$p" -p$p -c
 gmt subplot end
-gmt end
+gmt end show

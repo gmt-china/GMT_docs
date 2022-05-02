@@ -176,7 +176,7 @@ wiggle
 
     gmt begin wiggle_exam
     gmt wiggle temp.dat -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne
-    gmt end
+    gmt end show
 
 考虑另外一个示例：使用 :file:`track.xym` 文件绘制沿轨磁异常，移去均值（32000 nTesla），
 比例尺设置为图上 1 cm 代表实际 500 nTesla。

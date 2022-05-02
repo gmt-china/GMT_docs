@@ -44,7 +44,7 @@ General stereographic（立体等角投影）是保角方位投影，主要用�
     gmt begin GMT_stereographic_rect
     gmt set MAP_ANNOT_OBLIQUE lon_horizontal,lat_horizontal,tick_extend,tick_normal
     gmt coast -R-25/59/70/72+r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -Slightgray
-    gmt end
+    gmt end show
 
 一般立体地图
 ------------
@@ -56,4 +56,4 @@ General stereographic（立体等角投影）是保角方位投影，主要用�
     gmt begin GMT_stereographic_general
     gmt set MAP_ANNOT_OBLIQUE separate
     gmt coast -R100/-42/160/-8+r -JS130/-30/12c -Bag -Dl -A500 -Ggreen -Slightblue -Wthinnest
-    gmt end
+    gmt end show

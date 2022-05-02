@@ -11,4 +11,4 @@ EOF
 gmt plot -Sm0.2c+b+l -Gblack -W0.5p,blue << EOF
 3 1 1 10 150
 EOF
-gmt end
+gmt end show

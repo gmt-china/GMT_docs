@@ -36,6 +36,6 @@
             # 移动到第四个子图
             gmt basemap -Ba -BWSen -c
         gmt subplot end
-    gmt end
+    gmt end show
 
 关于子图模式的更多细节，见 :doc:`子图模式 </module/subplot>` 一节。

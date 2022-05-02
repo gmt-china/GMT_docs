@@ -19,4 +19,4 @@ gmt subplot begin 3x5 -Fs4c/4c -M1c/10p
     gmt basemap -R0/10/0/10 -Baf -BWSen+t"azim=45 evel=30" -p45/30 -c
     gmt basemap -R0/10/0/10 -Baf -BWSen+t"azim=0 evel=30" -p0/30 -c
 gmt subplot end
-gmt end
+gmt end show

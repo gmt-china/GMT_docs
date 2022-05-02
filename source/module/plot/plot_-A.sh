@@ -19,4 +19,4 @@ gmt plot -Am -W2p,yellow << EOF
 $p1
 $p2
 EOF
-gmt end
+gmt end show

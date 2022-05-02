@@ -30,4 +30,4 @@ gmt text -F+f15p,9 << EOF
 12 1 -Sx
 13 1 -Sy
 EOF
-gmt end
+gmt end show

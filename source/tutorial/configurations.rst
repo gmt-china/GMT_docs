@@ -71,7 +71,7 @@
         gmt set FONT_TITLE 12p,Times-Bold,red # 全局设置标题的字体
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One'
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' -X6c
-    gmt end
+    gmt end show
 
 临时设置则是通过为命令添加选项 **--KEY=**\ *value* 的形式实现的，
 其中 **KEY** 是配置参数的名称，*value* 是配置参数的值。在下面的例子中，
@@ -88,4 +88,4 @@
     gmt begin conf2
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title One' --FONT_TITLE=12p,Times-Bold,red
         gmt basemap -JX5c -R0/1/0/1 -Bwsen+t'Title Two' -X6c
-    gmt end
+    gmt end show

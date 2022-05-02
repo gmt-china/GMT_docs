@@ -85,4 +85,4 @@ $r 0 TC r
 0 $s MR s
 EOF
 
-gmt end
+gmt end show

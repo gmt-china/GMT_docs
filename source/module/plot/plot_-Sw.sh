@@ -7,4 +7,4 @@ EOF
 gmt plot -SW3c -Glightblue << EOF
 6 2 0 45
 EOF
-gmt end
+gmt end show

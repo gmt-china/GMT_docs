@@ -7,4 +7,4 @@ for font in 30p 30p,8 30p,8,red 30p,Courier-Bold,blue 30p,5,blue=1p,black,solid 
 	2.2 0.5 LM 15p,8,black $font
 	EOF
 done
-gmt end
+gmt end show

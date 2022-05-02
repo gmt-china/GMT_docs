@@ -80,4 +80,4 @@ gmt polar -D87/35 -M4i -N -Sc0.3i -Qe -B0 -B+t"Tibet earthquake (1997) - polarit
 69 131.7 15 d
 70 114.1 15 c
 EOF
-gmt end
+gmt end show

@@ -34,4 +34,4 @@ gmt text -F+f10p,9 -D0c/-0.7c -N << EOF
 14 1 -Sx
 15 1 -Sy
 EOF
-gmt end
+gmt end show

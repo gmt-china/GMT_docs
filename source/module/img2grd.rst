@@ -222,7 +222,7 @@ grdgradient 生成一个光照文件::
     gmt begin
         gmt grdimage merc_grav_2.nc -Iillum.nc -Cgrav.cpt -Jx0.1i
         gmt basemap -R-40/40/-70.023256525/-29.9368261101 -Jm0.1i -Ba10
-    gmt end
+    gmt end show
 
 如果要从 img 文件中只获取地理坐标的约束数据值，则需要同时使用 **-T**\ 2 选项，使用 grd2xyz 输出数据值，通过管道和``grep -v NaN``
 可以消除 NaN 值。

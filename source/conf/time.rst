@@ -98,7 +98,7 @@ TIME参数
                 echo 1997-03-05 1 | gmt plot -Sc0.2c -Gred
                 echo 1997-03-05 1 $value | gmt text -F+jBC -D0c/0.2c
             done
-            gmt end
+            gmt end show
 
     **TIME_INTERVAL_FRACTION**
         确定时间轴开头和结尾的部分时间间隔是否需要标注 [0.5]

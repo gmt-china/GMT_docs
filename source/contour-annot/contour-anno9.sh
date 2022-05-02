@@ -24,4 +24,4 @@ cat << EOF | gmt text -Gwhite -Wthin -Dj0.1i/0.1i -F+f8p,Bookman-Demi+j
 17W	28N	CT	Canaries
 EOF
 rm topo5_int.nc
-gmt end
+gmt end show

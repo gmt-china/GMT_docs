@@ -51,7 +51,7 @@ GMT现代模式下，默认使用 **-Da** 选项，**a** 表示 **a**\ uto，
     gmt coast -B+t"-Dl" -W1p -Dl -c
     gmt coast -B+t"-Dc" -W1p -Dc -c
     gmt subplot end
-    gmt end
+    gmt end show
 
 数据内容
 --------

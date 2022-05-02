@@ -32,4 +32,4 @@ gmt text -JX18c/-8c -R0/2/-1/9 -Bg1 -Bwsen -F+f -N  << EOF
 0.5  8.5 10p,8,black Stresses are @@~s@@~@@+*@@+@@-xx@@- MPa
 1.5  8.5 -,-,black Stresses are @~s@~@+*@+@-xx@- MPa
 EOF
-gmt end
+gmt end show

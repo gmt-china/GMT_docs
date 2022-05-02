@@ -134,7 +134,7 @@ Batch 脚本文件是一个纯文本文件，可以直接用文本编辑器打�
     export GMT_SESSION_NAME=$$	# Set a unique session name
     gmt begin figurename png,pdf
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
-    gmt end
+    gmt end show
 
 这基本上就是运行 GMT 脚本的基本流程，即：
 

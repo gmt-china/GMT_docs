@@ -121,7 +121,7 @@ sphinterpolate
     gmt begin mars
         gmt sphinterpolate @mars370d.txt -Rg -I1 -Qp -Gmars.nc
         gmt grdimage mars.nc -JH0/4.5i -B30g30
-    gmt end
+    gmt end show
 
 使用无张力的插值，由 :file:`testdata.txt` 生成全球 1 度分辨率网格 ::
 

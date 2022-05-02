@@ -101,7 +101,7 @@ begin
 
     gmt begin
     gmt ...
-    gmt end
+    gmt end show
 
 开始一个GMT会话，并指定图片名为 *Figure_2*，图片格式为PDF和PNG格式::
 
@@ -126,7 +126,7 @@ GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，G
     gmt begin map ps
     gmt set PS_MEDIA A3
     gmt ...
-    gmt end
+    gmt end show
 
 UNIX shell 注意事项
 -------------------

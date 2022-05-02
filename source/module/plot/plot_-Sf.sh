@@ -21,4 +21,4 @@ gmt plot -Sf1c/0.1i+l+t -Gwhite -W -B10 << EOF
 195 30
 200 40
 EOF
-gmt end
+gmt end show

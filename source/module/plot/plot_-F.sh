@@ -51,5 +51,5 @@ echo 10 35 | gmt plot -Sa0.4c -Gred -Wfaint
 gmt plot -W1p t[12].txt -Fna -X3.25i
 plotpts NETWORK
 
-gmt end
+gmt end show
 rm t[12].txt

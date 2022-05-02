@@ -79,7 +79,7 @@ PS参数
             EOF
             echo 10.5 0 $cap | gmt text -F+jML+f12p,8
             done
-            gmt end
+            gmt end show
 
     **PS_LINE_JOIN**
         控制线段拐点的绘制方式 [**miter**]

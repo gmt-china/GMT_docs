@@ -213,7 +213,7 @@ sac
     gmt begin map pdf
     gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
     saclst stlo stla f *.z | gmt plot -St0.4c -Gblack -i1,2
-    gmt end
+    gmt end show
 
 相关模块
 --------

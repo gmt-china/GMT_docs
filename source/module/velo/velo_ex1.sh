@@ -18,4 +18,4 @@ gmt velo -Sw3c/1.e7 -W1p -D2 << EOF
 241.7 34.7  4.46E-09 3.07E-08
 EOF
 gmt coast -W1p -Di
-gmt end
+gmt end show

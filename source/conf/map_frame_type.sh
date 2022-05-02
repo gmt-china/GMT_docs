@@ -8,4 +8,4 @@ gmt basemap -JX? -R0/10/0/10 -Baf -BWSen+t"plain" -c --MAP_FRAME_TYPE=plain
 gmt basemap -JX? -R0/10/0/10 -Baf -BWSen+t"inside" -c --MAP_FRAME_TYPE=inside
 gmt basemap -JX? -R0/10/0/10 -Baf -BWS+t"graph" -c --MAP_FRAME_TYPE=graph
 gmt subplot end
-gmt end
+gmt end show

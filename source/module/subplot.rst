@@ -300,7 +300,7 @@ subplot end 语法
         gmt subplot set 1,1
         gmt basemap -R0/10/0/10 -Baf
         gmt subplot end
-    gmt end
+    gmt end show
 
 **方法2: 使用 subplot set 指定子图索引号**
 
@@ -317,7 +317,7 @@ subplot end 语法
         gmt subplot set 3
         gmt basemap -R0/10/0/10 -Baf
         gmt subplot end
-    gmt end
+    gmt end show
 
 **方法3: 使用 subplot set 但不指定子图号**
 
@@ -334,7 +334,7 @@ subplot end 语法
         gmt subplot set
         gmt basemap -R0/10/0/10 -Baf
         gmt subplot end
-    gmt end
+    gmt end show
 
 **方法4: 使用 -c 选项**
 
@@ -348,7 +348,7 @@ subplot end 语法
         gmt basemap -R0/10/0/10 -Baf -c
         gmt basemap -R0/10/0/10 -Baf -c
         gmt subplot end
-    gmt end
+    gmt end show
 
 下面展示了如何设置一个2x2的图，并设置共用X和Y轴:
 
@@ -365,7 +365,7 @@ subplot end 语法
         gmt subplot set
         gmt basemap
       gmt subplot end
-    gmt end
+    gmt end show
 
 下面的示例展示了如何绘制一个不完全规则的子图。这个示例中，实际上只使用了子图0、
 2、3，而第一张图同时占据了子图0和1的空间。在这种情况下，GMT的自动编号功能无法
@@ -386,7 +386,7 @@ subplot end 语法
         gmt basemap -R0/20/0/10 -JX? -Baf -BWSen
 
         gmt subplot end
-    gmt end
+    gmt end show
 
 相关模块
 --------

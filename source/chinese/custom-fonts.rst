@@ -150,7 +150,7 @@ GMT 中文测试
    7 2.5 35p,41,yellow GMT黑体
    7 1.0 35p,42,green GMT楷体
    EOF
-   gmt end
+   gmt end show
 
 成图效果如下：
 

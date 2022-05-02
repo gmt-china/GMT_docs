@@ -20,4 +20,4 @@ gmt text -F+f15p,9 -JZ -Glightblue@30 -Z -N -p << EOF
 0 4 2 4
 0 2 4 +b
 EOF
-gmt end
+gmt end show

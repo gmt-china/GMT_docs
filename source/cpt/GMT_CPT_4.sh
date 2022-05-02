@@ -15,4 +15,4 @@ gmt colorbar -CIcpt_z.cpt -Dn0.5/0.55+jCM+$SIZE+h+e+n -B+l"-Iz"
 gmt colorbar -CIcpt_cz.cpt -Dn0.5/0.7+jCM+$SIZE+h+e+n -B+l"-Icz"
 
 rm Icpt*.cpt
-gmt end
+gmt end show

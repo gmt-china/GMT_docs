@@ -11,4 +11,4 @@ gmt basemap -R1997T/1998T/0/10 -JX25c/4c -Bpxa1O -Byaf -BWSen
 # FORMAT_TIME_PRIMARY_MAP 为 abbreviated 表示显示“一”
 gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP abbreviated
 gmt basemap -R1997T/1998T/0/10 -JX25c/4c -Bpxa1O -Byaf -BWSen -Y-6c
-gmt end
+gmt end show

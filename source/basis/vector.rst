@@ -41,7 +41,7 @@ GMT 中能够绘制矢量的模块有
             echo 1 1 0 3 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b${symbol} -W1.5p -Gred -X2.2c
             echo 3 0.5 -Sv0.5c+b$symbol | gmt text -F+f7p,9 -N
         done
-        gmt end
+        gmt end show
 
     - **l**\|\ **r** 表示只绘制矢量头的左半边或右半边（默认两边都绘制）。其中左定义为从矢量起点看向终点时的左侧
     - **f**\|\ **r** 在 **+m** 中用于指定矢量头的方向沿着正方向或逆方向（默认为正方向，即从起点指向终点）
@@ -67,7 +67,7 @@ GMT 中能够绘制矢量的模块有
             echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
             echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
         done
-        gmt end
+        gmt end show
 
 矢量头线条颜色和填充色
 ----------------------
@@ -120,7 +120,7 @@ GMT提供了三类矢量：
     echo 10 -35 90 8000 | gmt plot -R0/90/-41.17/41.17 -JM1.75i -S=0.2i+b+e -W1.5p -Gred -X2i
     # 弧形矢量
     echo 0.5 0.5 0.9i 0 90 | gmt plot -R0/5/0/5 -JX1.75i -Sm0.2i+b+e -W1.5p -Gred -X2i
-    gmt end
+    gmt end show
 
 笛卡尔矢量和地理矢量
 ~~~~~~~~~~~~~~~~~~~~

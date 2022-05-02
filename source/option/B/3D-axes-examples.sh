@@ -7,4 +7,4 @@ gmt subplot begin 1x5 -Fs4c/4c -M2c
     gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -Bwesnz1234+t"-Bwesnz1234" -p130/30 -c
     gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+b+t"-BwesnZ+b" -p130/30 -c
 gmt subplot end
-gmt end
+gmt end show

@@ -97,4 +97,4 @@ gmt text -Y${dy}i -F+f+j << EOF
 EOF
 
 rm tt.d
-gmt end
+gmt end show

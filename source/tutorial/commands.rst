@@ -33,7 +33,7 @@ GMT 在绘图时，总是以 :doc:`/module/begin` 开始，并以 :doc:`/module/
     #
     # 其它命令，包括 GMT 绘图命令、数据处理命令以及其它 UNIX 命令
     #
-    gmt end
+    gmt end show
 
 你可以直接执行这个脚本，但是因为这里什么命令也没用，所以这个脚本不会生成任何图片。
 

@@ -7,4 +7,4 @@ for pen in 0.5p green thin,red,- fat,. 0.1c,120-1-1 faint,0/0/255,..- 4p,red,9_4
 	EOF
     echo 10.5 0 $pen | gmt text -F+jML+f12p,8
 done
-gmt end
+gmt end show

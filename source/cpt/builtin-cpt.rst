@@ -17,7 +17,7 @@ CPT文件，可以用如下命令绘制得到（将选项 **-C**\ *cpt* 中的 *
     gmt begin CPT
     gmt makecpt -Ccpt -T-1/1/0.25
     gmt colorbar -Dx0c/0c+w10c/1c+h -B0
-    gmt end
+    gmt end show
 
 图中黑色三角和白色三角分别表示该CPT拥有一个HARD HINGE或SOFT HINGE。
 关于HARD和SOFT HINGE的定义会在下一节详细介绍。

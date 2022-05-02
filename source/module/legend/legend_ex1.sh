@@ -36,4 +36,4 @@ T There is no easy way to predetermine how many lines may be required
 T so we may have to adjust the height to get the right size box.
 EOF
 rm -f tt.cpt
-gmt end
+gmt end show

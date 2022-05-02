@@ -74,7 +74,7 @@ MAP参数
                 gmt basemap -R0/2/0/1 -JM5c -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -c
             done
             gmt subplot end
-            gmt end
+            gmt end show
 
     **MAP_ANNOT_ORTHO**
         控制笛卡尔投影下哪些轴的标注垂直于轴 [**we**]
@@ -93,7 +93,7 @@ MAP参数
                 gmt basemap -R0/5/0/5 -Baf -B+t"$axes" --MAP_ANNOT_ORTHO=$axes -c
             done
             gmt subplot end
-            gmt end
+            gmt end show
 
         .. note::
 
@@ -209,7 +209,7 @@ MAP参数
                 gmt coast -Rg -JA280/30/? -Bg -B+t"$cap" -Dc -A1000 -Gnavy --MAP_POLAR_CAP=$cap -c
             done
             gmt subplot end
-            gmt end
+            gmt end show
 
 标题相关参数
 ------------
@@ -274,4 +274,4 @@ MAP参数
                 echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
                 echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
             done
-            gmt end
+            gmt end show

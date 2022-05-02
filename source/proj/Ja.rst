@@ -31,7 +31,7 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
     gmt begin GMT_lambert_az_rect
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0
     gmt coast -R0/-40/60/-10+r -JA30/-30/12c -Bag -Dl -A500 -Gp10+r300 -Wthinnest
-    gmt end
+    gmt end show
 
 半球地图
 --------
@@ -63,4 +63,4 @@ Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinri
     echo "180 -90 SCHMIDT" | gmt text -N -D0/-0.2c -F+f12p,Helvetica-Bold+jTC
     gmt basemap -JS0/0/1.75i -Bg15 -X2.75i
     echo "180 -90 WULFF" | gmt text -N -D0/-0.2c -F+f12p,Helvetica-Bold+jTC
-    gmt end
+    gmt end show

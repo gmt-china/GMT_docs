@@ -10,5 +10,5 @@ gmt begin plot_-L_2
 gmt plot $cmd -BWStr+t"-L\053d" -L+d
 gmt plot $cmd -BWStr+t"-L\053D" -L+D -X6c
 gmt plot $cmd -BWStr+t"-L\053b" -L+b -X6c
-gmt end
+gmt end show
 rm t.txt

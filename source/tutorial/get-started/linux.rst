@@ -123,7 +123,7 @@ Linux 都自带了的文本编辑器 **gedit** 打开该脚本文件::
     export GMT_SESSION_NAME=$$	# Set a unique session name
     gmt begin figurename png,pdf
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
-    gmt end
+    gmt end show
 
 这基本上就是运行 GMT 脚本的基本流程，即：
 
