@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Magnetic rose with a specified declination
 gmt begin basemap_ex4
-gmt basemap -R-10/-2/12.8812380332/0.661018975345r -JOc0/0/50/60/7i -Baf -BWSne -X1.25i \
+gmt basemap -R-10/-2/12.8812380332/0.661018975345+r -JOc0/0/50/60/7i -Baf -BWSne -X1.25i \
         --MAP_ANNOT_OBLIQUE=34 --FONT_ANNOT_PRIMARY=12p
 gmt basemap -Tmg-2/0.5+w2.5i+d-14.5+t45/10/5+i0.25p,blue+p0.25p,red+l+jCM \
 	--FONT_ANNOT_PRIMARY=9p,Helvetica,blue --FONT_ANNOT_SECONDARY=12p,Helvetica,red \
