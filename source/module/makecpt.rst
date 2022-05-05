@@ -1,4 +1,5 @@
 .. index:: ! makecpt
+.. include:: common_SYN_OPTs.rst_
 
 makecpt
 =======
@@ -12,18 +13,18 @@ makecpt
 在经典模式中，CPT文件的内容会输出到屏幕标准输出中。
 而在现代模式中，该命令不会生成显式的CPT文件，而是隐式地将其自动设置为后面的绘图命令的默认CPT文件。
 因此无法使用经典的 ``gmt makecpt > cpt`` 方式生成CPT文件。如果需要在现代模式中生成CPT文件，
-则可以使用 **-H** 选项： ``gmt makecpt -H > cpt`` 。
+则可以使用 |-H| 选项： ``gmt makecpt -H > cpt`` 。
 关于经典模式和现代模式的语法区别，建议阅读《 :doc:`/migrating/classic2modern` 》。
 
 **-T** 选项所指定的z值范围以外的数值，将分别使用3种颜色来表示，分别是：
 背景色 (B，background color，表示低于最小z值时所对应的颜色)、
 前景色 (F，foreground color，表示高于最大z值时所对应的颜色)、
 以及NaN颜色 (N，表示z值被定义为NaN时对应的颜色，即z值未定义的情况)。
-默认情况下，这三种颜色会沿用 **-C** 选项所指定的主CPT文件的设置，但也可以使用 **-D** 选项进行修改。
+默认情况下，这三种颜色会沿用 |-C| 选项所指定的主CPT文件的设置，但也可以使用 |-D| 选项进行修改。
 或者使用 :doc:`gmtset` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。
 
-颜色模式 (RGB, HSV, CMYK) 会沿用 **-C** 选项所指定的主CPT文件的设置。
+颜色模式 (RGB, HSV, CMYK) 会沿用 |-C| 选项所指定的主CPT文件的设置。
 或者使用 :doc:`gmtset` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
 
 选项
@@ -35,7 +36,7 @@ makecpt
     默认不透明，即0。
 
 **-C**\ *cpt*
-    指定主CPT文件，默认值是GMT自带的 **rainbow**。 `makecpt` 根据主CPT文件的配色方案，将z值范围拉伸至 **-T** 
+    指定主CPT文件，默认值是GMT自带的 **rainbow**。 `makecpt` 根据主CPT文件的配色方案，将z值范围拉伸至 |-T|
     指定的范围，生成新的CPT。GMT自带的CPT文件的配色方案列表，请参见《 :doc:`/cpt/builtin-cpt` 》。
 
     除了GMT自带的CPT文件，也可以设为用户自定义的CPT文件，也可以是通过
@@ -46,7 +47,7 @@ makecpt
 	不设置本项时，GMT默认使用主CPT文件规定的背景色与前景色，或是采用配置参数
 	:term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 	加上 **i** 则设置为主CPT文件中最低值和最高值对应的颜色。
-	
+
 **-E**\ *nlevels*
     生成的CPT文件会被重采样为 *nlevels* 个等间距的切片。
 
@@ -56,13 +57,13 @@ makecpt
     使用 **-Fh** ，输出的CPT以h-s-v方式指定颜色；
     使用 **-Fc** ，输出的CPT以c/m/y/k方式指定颜色；
     附加 **+c** 以分类格式编写离散型调色板。
-    
+
 **-G**\ *zlo*\ /\ *zhi*
     截断主CPT文件，将主CPT的最小和最大z值分别限制为 *zlo* 与 *zhi*。
 
 **-H**\
     仅限现代模式：
-    默认情况下是将CPT保存为隐藏的当前CPT，加上 **-H** 命令会显式地将CPT写入标准输出。
+    默认情况下是将CPT保存为隐藏的当前CPT，加上 |-H| 命令会显式地将CPT写入标准输出。
     在写制作动画的脚本时，需要传递显式命名的CPT文件，因此需要使用本功能。
     建议阅读《 :doc:`/migrating/classic2modern` 》。
 
@@ -73,10 +74,10 @@ makecpt
 **-T**\ *z_min*/*z_max*\[/*z_inc*\[**+n**]] 或 **-T**\ *ztable*
     定义要生成的CPT文件的Z值范围及Z值间隔
 
-    - 若使用了 **-C** 选项且 *z_inc* 未指定，则Z值间隔的数目与输入的主CPT文件相同。
+    - 若使用了 |-C| 选项且 *z_inc* 未指定，则Z值间隔的数目与输入的主CPT文件相同。
     - 若 *z_inc* 后有 **+n**，则将 *z_inc* 解释为Z值间隔的数目而不是Z值间隔
     - 也可以指定文件 *ztable*，其中每行一个Z值
-    - 若不使用 **-T** 选项，则默认使用主CPT文件中的Z值范围
+    - 若不使用 |-T| 选项，则默认使用主CPT文件中的Z值范围
 
 **-Z**
     生成连续CPT文件。默认生成不连续CPT文件，即每个Z值切片内为同一颜色
