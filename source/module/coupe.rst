@@ -184,6 +184,8 @@ coupe
 
 .. include:: explain_-V.rst_
 
+.. _-W:
+
 **-W**\ [*pen*]
     设置断层平面的画笔属性 [默认为 default,black,solid]
 

@@ -18,35 +18,46 @@ gmtconnect
 选项
 ----
 
-``-C[<closed>]``
-    将所有闭合多边形写到文件 ``<closed>`` （默认文件名为 ``gmtconnect_closed.txt`` ）i
+.. _-C:
+
+**-C**\ [*closed*]
+    将所有闭合多边形写到文件 *closed* （默认文件名为 ``gmtconnect_closed.txt`` ）i
     中并将其他数据段写到标准输出。
 
     使用该选项不会对线段做连接。
 
-``-D[<template>]``
+.. _-D:
+
+**-D**\ [*template*]
     对于多段数据文件，将每段数据分别输出到不同的数据文件中。
 
-    ``<template>`` 是文件名的模板，该模板中必须包含一个整型参数的格式，比如
+    *template* 是文件名的模板，该模板中必须包含一个整型参数的格式，比如
     ``%d`` 或 ``%08d`` ，也可以在整型参数格式前加上字符参数格式 ``%c`` ，实际
     输出时会被C或O代替，分别表示closed和open。
 
     默认的模板为 ``gmtconnect_segment_%d.txt`` 。
 
-``-L[<linkfile>]``
+.. _-L:
+
+**-L**\ [*linkfile*]
     将连接信息写到指定的文件中，默认文件名为 ``gmtconnect_link.txt`` 。
 
     对于每段数据而言，会写入原始的数据段ID；对于线段的起始点和终点而言，会报告
     离得最近的线段的ID，以及两个线段端点之间的距离。
 
-``-Q[<template>]``
+.. _-Q:
+
+**-Q**\ [*template*]
     Used with |-D| to a list file with the names of the individual
     output files. Optionally, append a filename template for the
     individual file names; this template **may** contain a C format
     specifier that can format an character (C or O for closed or open,
     respectively). [Default is gmtconnect_list.txt].
 
-``-T[<cutoff>[<unit>]][/<nn_dist>]``
+
+.. _-T:
+
+**-T**\ [*cutoff*\ [**+s**\ *sdist*]]
     Specifies the separation tolerance in the data coordinate units [0];
     append distance unit (see UNITS). If two lines has end-points that
     are closer than this cutoff they will be joined. Optionally, append
