@@ -118,7 +118,7 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
         gmt set GMT_DATA_SERVER http://china.generic-mapping-tools.org
 
     然后将生成的 :file:`gmt.conf` 文件复制到GMT用户目录 :file:`~/.gmt` (Linux/macOS)
-    或 :file:`C:\Users\XXX\.gmt`\ （Windows）下。
+    或 :file:`C:\\Users\\XXX\\.gmt`\ （Windows）下。
 
 离线使用
 ~~~~~~~~
