@@ -248,12 +248,6 @@ GMT中共有14种图例类型，列举如下：
 
    legend示例图1
 
-.. gmtplot:: legend/legend_ex2.sh
-   :width: 100%
-   :align: center
-
-   自定义线段+符号图例
-
 相关模块
 --------
 
