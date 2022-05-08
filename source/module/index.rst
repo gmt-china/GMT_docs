@@ -89,17 +89,26 @@
     - :doc:`text`
     - :doc:`velo`
     - :doc:`wiggle`
+    - :doc:`xyz2grd`
+    - :doc:`x2sys_init`
     - :doc:`x2sys_binlist`
     - :doc:`x2sys_cross`
     - :doc:`x2sys_datalist`
     - :doc:`x2sys_get`
-    - :doc:`x2sys_init`
     - :doc:`x2sys_list`
     - :doc:`x2sys_merge`
     - :doc:`x2sys_put`
     - :doc:`x2sys_report`
     - :doc:`x2sys_solve`
-    - :doc:`xyz2grd`
+    - :doc:`gmtflexure`
+    - :doc:`gmtgravmag3d`
+    - :doc:`gravfft`
+    - :doc:`grdflexure`
+    - :doc:`grdgravmag3d`
+    - :doc:`grdredpol`
+    - :doc:`grdseamount`
+    - :doc:`talwani2d`
+    - :doc:`talwani3d`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -144,15 +153,6 @@
     - :doc:`gmt:supplements/mgd77/mgd77path`
     - :doc:`gmt:supplements/mgd77/mgd77sniffer`
     - :doc:`gmt:supplements/mgd77/mgd77track`
-    - :doc:`gmt:supplements/potential/gmtflexure`
-    - :doc:`gmt:supplements/potential/gmtgravmag3d`
-    - :doc:`gmt:supplements/potential/gravfft`
-    - :doc:`gmt:supplements/potential/grdflexure`
-    - :doc:`gmt:supplements/potential/grdgravmag3d`
-    - :doc:`gmt:supplements/potential/grdredpol`
-    - :doc:`gmt:supplements/potential/grdseamount`
-    - :doc:`gmt:supplements/potential/talwani2d`
-    - :doc:`gmt:supplements/potential/talwani3d`
     - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
@@ -445,17 +445,26 @@
    text
    velo
    wiggle
+   xyz2grd
+   x2sys_init
    x2sys_binlist
    x2sys_cross
    x2sys_datalist
    x2sys_get
-   x2sys_init
    x2sys_list
    x2sys_merge
    x2sys_put
    x2sys_report
    x2sys_solve
-   xyz2grd
+   gmtflexure
+   gmtgravmag3d
+   gravfft
+   grdflexure
+   grdgravmag3d
+   grdredpol
+   grdseamount
+   talwani2d
+   talwani3d
 
 .. raw:: latex
 
