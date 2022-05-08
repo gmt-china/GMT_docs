@@ -12,10 +12,12 @@ fitcircle
 必选选项
 --------
 
-``<table>``
+*table*
     输入数据
 
-``-L<norm>``
+.. _-L:
+
+**-L**\ *norm*
 
     - ``-L1`` 解法1
     - ``-L2`` 解法2
@@ -45,7 +47,9 @@ fitcircle
 选项
 ----
 
-``-Ff|m|n|s|c``
+.. _-F:
+
+**-F**\ **f**\|\ **m**\|\ **n**\|\ **s**\|\ **c**
     控制输出格式。
 
     正常情况下，该命令会将计算结果以较复杂的形式输出。使用 ``-F`` 选项，则只
@@ -57,7 +61,9 @@ fitcircle
     - ``s`` south pole of great circle
     - ``c`` pole of small circle and its colatitude, which requires ``-S``
 
-``-S[<lat>]``
+.. _-S:
+
+**-S**\ *lat*
     拟合小圆弧而不是大圆弧
 
     The pole will be constrained to lie on the great circle connecting the pole

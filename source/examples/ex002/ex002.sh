@@ -3,7 +3,7 @@
 # 绘制地球内部主要界面
 #
 
-gmt begin earth-discontinuities pdf,png
+gmt begin earth-discontinuities
 gmt set MAP_GRID_PEN_PRIMARY 1p
 # 绘制地表
 gmt basemap -JP10c+a+t15 -R-10/40/0/6371 -Byg6371 -BS

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SIZE=w15c/0.25c
 
-gmt begin cpt_4 pdf,png
+gmt begin cpt_4
 gmt makecpt -Chaxby -T-10/10/1 -H > Icpt.cpt
 gmt makecpt -Chaxby -T-10/10/1 -H -Iz > Icpt_z.cpt
 gmt makecpt -Chaxby -T-10/10/1 -H -Ic > Icpt_c.cpt
@@ -15,4 +15,4 @@ gmt colorbar -CIcpt_z.cpt -Dn0.5/0.55+jCM+$SIZE+h+e+n -B+l"-Iz"
 gmt colorbar -CIcpt_cz.cpt -Dn0.5/0.7+jCM+$SIZE+h+e+n -B+l"-Icz"
 
 rm Icpt*.cpt
-gmt end
+gmt end show

@@ -39,12 +39,12 @@ x2sys_report
 .. _-C:
 
 **-C**\ *column*
-    指定要处理的列，列名必须是已经在交叉点文件中存在的。
+    指定要处理的列，列名必须是已经在格式定义文件中存在的，见 :doc:`x2sys_init` 
     
 .. _-T:
     
 **-T**\ *TAG*
-    指定 x2sys TAG 
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------
@@ -66,9 +66,9 @@ x2sys_report
 .. _-L:
 
 **-L**\ [*corrections*]
-    对选择观测量进行最优改正，*corrections* 为改正表。
+    对选择观测量进行最优改正，*corrections* 为改正表，该改正表可以由 :doc:`x2sys_solve` 生成
     [默认使用位于 **$X2SYS_HOME**/*TAG* 文件夹中的 TAG_corrections.txt]
-    对于改正表文件的格式，见 :doc:`x2sys_datalist`
+    对于改正表文件的格式，见 :doc:`x2sys_datalist` 的 Corrections 章节
 
 .. _-N:
 

@@ -6,7 +6,7 @@ earth_mask: 地球掩膜数据
     :width: 80%
     :caption: 地球掩膜数据
 
-    gmt begin GMT_earthmask png,pdf
+    gmt begin GMT_earthmask
     gmt makecpt -Clightblue,burlywood,blue,red,white -T-0.5/4.5/1 -N
     gmt grdimage @earth_mask_05m -JQ0/15c -Baf -BWsNe
     gmt legend -DJBC+w15c+o0/0.5c -F+p1p << EOF

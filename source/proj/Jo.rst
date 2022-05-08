@@ -54,8 +54,8 @@ Oblique Mercator（倾斜 Mercator 投影）常用于绘制沿着倾斜方向横
     :caption: 使用 **-Joc** 倾斜 Mercator 投影
     :width: 25%
 
-    gmt begin GMT_obl_baja png,pdf
+    gmt begin GMT_obl_baja
     gmt set MAP_ANNOT_OBLIQUE lon_horizontal,lat_horizontal,tick_extend
     gmt coast -R122W/35N/107W/22N+r -JOa120W/25N/-30/6c+v -Gsienna -Ba5g5 -B+f \
         -N1/1p -EUS+gburlywood -Smintcream -TdjBL+w0.5i+l
-    gmt end
+    gmt end show

@@ -23,22 +23,27 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
 
       - name: Checkout
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
 
-      - name: Setup Miniconda
+      # Install Mambaforge with conda-forge dependencies
+      - name: Setup Mambaforge
         uses: conda-incubator/setup-miniconda@v2.1.1
         with:
-          python-version: 3.8
-          channels: conda-forge
-          miniconda-version: "latest"
+          python-version: 3.9
+          channels: conda-forge,nodefaults
+          channel-priority: strict
+          miniforge-version: latest
+          miniforge-variant: Mambaforge
+          mamba-version: "*"
+          use-mamba: true
 
       - name: Install packages
         run: |
-          conda install gmt=${GMT_VERSION}
+          mamba install gmt=${GMT_VERSION}
           pip install -r requirements.txt
 
       - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v2.17.0
+        uses: dawidd6/action-download-artifact@v2.19.0
         with:
           workflow: cache-data.yml
           workflow_conclusion: success
@@ -55,7 +60,7 @@ jobs:
           ls -lhR ~/.gmt
 
       - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v1
+        uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install LaTeX packages
         run: |
@@ -74,7 +79,7 @@ jobs:
         run: make build_pdf
 
       - name: Checkout the gh-pages branch
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: deploy

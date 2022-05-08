@@ -21,7 +21,7 @@ GMT 中使用 :doc:`/module/coast` 模块绘制海岸线。
     :width: 80%
     :caption: 美国海岸线
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
         gmt coast -R-130/-50/20/60 -JM15c -Baf -W0.5p,black
     gmt end show
 
@@ -37,7 +37,7 @@ GMT 中使用 :doc:`/module/coast` 模块绘制海岸线。
     :width: 80%
     :caption: 绘制海岸线
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
         gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black
     gmt end show
 
@@ -49,7 +49,7 @@ GMT 中使用 :doc:`/module/coast` 模块绘制海岸线。
     :width: 80%
     :caption: 绘制海岸线和湖岸线
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
         gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred
     gmt end show
 
@@ -64,7 +64,7 @@ GMT 默认会把这些岛屿和湖泊都画出来。如果能够只绘制比较�
     :width: 80%
     :caption: 设置要绘制的对象的最小面积
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
         gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred -A5000
     gmt end show
 
@@ -81,7 +81,7 @@ GMT 默认会把这些岛屿和湖泊都画出来。如果能够只绘制比较�
     :width: 80%
     :caption: 填充颜色
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
         gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
     gmt end show
 
@@ -101,7 +101,7 @@ GMT 默认会把这些岛屿和湖泊都画出来。如果能够只绘制比较�
     :width: 80%
     :caption: 绘制国界与州界
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
         gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
     gmt end show
 
@@ -135,6 +135,6 @@ GMT 默认会把这些岛屿和湖泊都画出来。如果能够只绘制比较�
     :width: 80%
     :caption: 添加比例尺
 
-    gmt begin coastline png,pdf
+    gmt begin coastline
     gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -Lg-60/25+c25+w1000k+f+u
     gmt end show

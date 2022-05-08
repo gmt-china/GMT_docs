@@ -48,7 +48,7 @@ CN-border 数据提供了三个数据文件：
    :show-code: true
    :width: 75%
 
-    gmt begin CN-border-JD pdf,png
+    gmt begin CN-border-JD
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
         gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -Ba10f5g10 -Lg85/11+c11+w900k+f+u
         gmt plot CN-border-La.gmt -W0.1p
@@ -60,7 +60,7 @@ CN-border 数据提供了三个数据文件：
    :show-code: true
    :width: 75%
 
-    gmt begin CN-border-JM pdf,png
+    gmt begin CN-border-JM
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
         # 绘制中国地图
         gmt coast -JM105/35/10c -R70/138/13/56 -Ba10f5g10 -G244/243/239 -S167/194/223

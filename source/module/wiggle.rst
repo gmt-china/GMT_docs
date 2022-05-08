@@ -115,12 +115,12 @@ wiggle
     追加 **+n** 子选项为填充负异常区域。
     追加 **+n+p** 为使用相同的方式填充正异常和负异常区域。
 
-    **注**：如果需要设置正异常和负异常使用不同的填充方式，需要重复使用 **-G** 选项。
+    **注**：如果需要设置正异常和负异常使用不同的填充方式，需要重复使用 |-G| 选项。
 
 .. _-I:
 
 **-I**\ *fix_az*
-    绘制异常值时使用固定方位角（见 **-A** 选项）。
+    绘制异常值时使用固定方位角（见 |-A| 选项）。
     使用该选项时，轨迹法线的方位角将被 *fixed_az* 覆盖。
 
 .. _-T:
@@ -174,9 +174,9 @@ wiggle
     :show-code: true
     :width: 600 px
 
-    gmt begin wiggle_exam pdf,png
+    gmt begin wiggle_exam
     gmt wiggle temp.dat -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne
-    gmt end
+    gmt end show
 
 考虑另外一个示例：使用 :file:`track.xym` 文件绘制沿轨磁异常，移去均值（32000 nTesla），
 比例尺设置为图上 1 cm 代表实际 500 nTesla。
@@ -186,8 +186,8 @@ wiggle
     gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z500 -B5 \
     -C32000 -Gred -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym
 
-上述示例中，正异常绘制方向为北方向，使用 **-D** 选项设置比例尺长度为 1000 nT 。
-如果要设置绘制正异常的方位角为固定的 45 度，可使用 **-I** 选项::
+上述示例中，正异常绘制方向为北方向，使用 |-D| 选项设置比例尺长度为 1000 nT 。
+如果要设置绘制正异常的方位角为固定的 45 度，可使用 |-I| 选项::
 
     gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z1000 -B5 \
     -C32000 -Gred -I45 -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym

@@ -47,7 +47,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
     :width: 100%
     :caption: 全球地形起伏图
 
-    gmt begin global_relief png,pdf
+    gmt begin global_relief
     gmt grdimage @earth_relief_30m -JH180/10c
     gmt end show
 
@@ -62,7 +62,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
     :width: 70%
     :caption: 台湾区域地形图
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen
     gmt end show
 
@@ -79,7 +79,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
     :width: 70%
     :caption: 带光照效果的台湾区域地形图
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt end show
 
@@ -99,7 +99,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar
     gmt end show
@@ -109,7 +109,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -Bxaf+l"Elevation (m)"
     gmt end show
@@ -121,7 +121,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l"m"
     gmt end show
@@ -139,7 +139,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
     gmt makecpt -Cglobe -T-8000/8000
     gmt grdimage @earth_relief_01m -I+d

@@ -6,7 +6,7 @@ cat << EOF > t.txt
 4 4
 EOF
 cmd='t.txt -R0/5/0/5 -JX4c -W1p -Ba1f1'
-gmt begin plot_-L_1 pdf,png
+gmt begin plot_-L_1
 gmt plot $cmd -BWStr+t'No -G or -L'
 gmt plot $cmd -BWStr+t'-G Only' -Gorange -X5c
 # -L选项中的+p子选项对画笔的外观设置一律无效

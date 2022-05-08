@@ -12,7 +12,7 @@ sphinterpolate
 :简介:
 
 **sphinterpolate** 读取 lon，lat，z 形式的文件，进行 Delaunay 三角剖分并作球面张力插值。
-通过 **-Q** 选项可以使用不同的插值方法。
+通过 |-Q| 选项可以使用不同的插值方法。
 
 语法
 ----
@@ -121,7 +121,7 @@ sphinterpolate
     gmt begin mars
         gmt sphinterpolate @mars370d.txt -Rg -I1 -Qp -Gmars.nc
         gmt grdimage mars.nc -JH0/4.5i -B30g30
-    gmt end
+    gmt end show
 
 使用无张力的插值，由 :file:`testdata.txt` 生成全球 1 度分辨率网格 ::
 
@@ -132,7 +132,7 @@ sphinterpolate
 
 STRIPACK 算法需要输入中不包含重复点。
 :doc:`blockmean` 等模块可以将多个接近的点合并成单个点。**sphinterpolate**
-的 **-D** 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
+的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 
 参考文献

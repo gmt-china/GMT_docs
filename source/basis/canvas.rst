@@ -32,7 +32,7 @@ GMT 支持多种矢量图片格式和位图图片格式：
 也可以同时指定生成多种图片格式，多种图片格式之间用逗号分隔开。例如，下面的示例指定同时生成
 PDF 和 PNG 格式的图片::
 
-    gmt begin figname pdf,png
+    gmt begin figname
         gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt end show
 

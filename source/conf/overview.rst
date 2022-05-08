@@ -30,7 +30,7 @@ GMT提供了多种方法来控制或修改配置参数的值。
         # 设置全局参数 FONT_ANNOT_PRIMARY 的值为 12p,Times-Bold,red
         gmt set FONT_ANNOT_PRIMARY 12p,Times-Bold,red
         gmt basemap ...
-        gmt end
+        gmt end show
 
 **设置临时参数**
     在单个命令上加上 **--KEY**\=\ *value* 可以临时设置配置参数的值。此类参数仅对当前
@@ -43,7 +43,7 @@ GMT提供了多种方法来控制或修改配置参数的值。
         gmt basemap ... --FONT_ANNOT_PRIMARY=12p,Times-Bold,red
         # 使用默认参数绘制底图
         gmt basemap ...
-        gmt end
+        gmt end show
 
 **使用配置文件设置全局参数**
     可以将需要配置的一系列参数值写到GMT配置文件 :file:`gmt.conf` 中。

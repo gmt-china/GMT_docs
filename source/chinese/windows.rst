@@ -15,14 +15,14 @@ ghostscript 的中文支持
    新手常常没有意识到自己安装GMT时勾选了Ghostscript组件，导致中文乱码出现。
    如果严格按照下列步骤配置，依然遇到了中文乱码问题，
    建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
-  
+
 安装包下载地址:
-  
-- `gs9540w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w64.exe>`__
-- `gs9540w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9540/gs9540w32.exe>`__
-   
+
+- `gs9561w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/gs9561w64.exe>`__
+- `gs9561w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/gs9561w32.exe>`__
+
 .. warning::
- 
+
    请注意 Ghostscript 的版本！
    由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
 

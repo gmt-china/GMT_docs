@@ -75,7 +75,7 @@ earth_relief: 全球地形起伏数据
 --------
 
 -   数据会自动下载并保存到 **~/.gmt/server/earth/earth_relief** 目录下
--   15弧秒的数据来源于 SRTM15+ [http://dx.doi.org/10.1029/2019EA000658]
+-   15弧秒的数据来源于 SRTM15+ [https://doi.org/10.1029/2019EA000658]
 -   30弧秒及更低分辨率的全球地形数据均是SRTM15+ 的衍生产品。
     GMT利用笛卡尔高斯滤波对其进行重采样以防止混叠现象，并保留了原始15弧秒数据的
     纬度依赖的分辨率信息。
@@ -92,6 +92,6 @@ earth_relief: 全球地形起伏数据
 数据来源及引用
 --------------
 
-#. SRTM15+: http://dx.doi.org/10.1029/2019EA000658
+#. SRTM15+: https://doi.org/10.1029/2019EA000658
 #. SRTMGL3数据: https://lpdaac.usgs.gov/products/srtmgl3v003/
 #. SRTMGL1数据: https://lpdaac.usgs.gov/products/srtmgl1v003/

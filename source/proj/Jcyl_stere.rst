@@ -38,7 +38,7 @@ Cylindrical stereographic（圆柱立体投影）不像其它的圆柱投影那�
     :caption: 使用 Gall 立体投影绘制世界地图
     :width: 85%
 
-    gmt begin GMT_gall_stereo pdf,png
+    gmt begin GMT_gall_stereo
     gmt set FORMAT_GEO_MAP dddA
     gmt coast -R-180/180/-60/80 -JCyl_stere/0/45/12c -Bxa60f30g30 -Bya30g30 -A5000 -Wblack -Gseashell4 -Santiquewhite1
-    gmt end
+    gmt end show

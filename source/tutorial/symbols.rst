@@ -27,7 +27,7 @@
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c << EOF
     2 3
     5 6
@@ -41,7 +41,7 @@
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c -W1p,black -Gred << EOF
     2 3
     5 6
@@ -68,7 +68,7 @@
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc -W1p,black -Gred << EOF
     2 3 0.3
     5 6 0.8
@@ -97,7 +97,7 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt makecpt -Chot -T0/3/1
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c -W1p,black -C << EOF
     2   3   0
@@ -120,7 +120,7 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt basemap -R0/10/0/10 -JX10c/10c -Baf
     gmt plot -S0.5c -W1p,black -Gred << EOF
     2 3 c
@@ -145,7 +145,7 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt makecpt -Chot -T0/3/1
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -S -W1p,black -C << EOF
     2   3   0   0.3 c
