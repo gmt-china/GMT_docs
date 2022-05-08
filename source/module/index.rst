@@ -100,6 +100,15 @@
     - :doc:`x2sys_report`
     - :doc:`x2sys_solve`
     - :doc:`xyz2grd`
+    - :doc:`mgd77manage`
+    - :doc:`mgd77convert`
+    - :doc:`mgd77header`
+    - :doc:`mgd77info`
+    - :doc:`mgd77list`
+    - :doc:`mgd77magref`
+    - :doc:`mgd77path`
+    - :doc:`mgd77sniffer`
+    - :doc:`mgd77track`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -135,15 +144,6 @@
     - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/gshhg/gshhg`
-    - :doc:`gmt:supplements/mgd77/mgd77convert`
-    - :doc:`gmt:supplements/mgd77/mgd77header`
-    - :doc:`gmt:supplements/mgd77/mgd77info`
-    - :doc:`gmt:supplements/mgd77/mgd77list`
-    - :doc:`gmt:supplements/mgd77/mgd77magref`
-    - :doc:`gmt:supplements/mgd77/mgd77manage`
-    - :doc:`gmt:supplements/mgd77/mgd77path`
-    - :doc:`gmt:supplements/mgd77/mgd77sniffer`
-    - :doc:`gmt:supplements/mgd77/mgd77track`
     - :doc:`gmt:supplements/potential/gmtflexure`
     - :doc:`gmt:supplements/potential/gmtgravmag3d`
     - :doc:`gmt:supplements/potential/gravfft`
@@ -305,15 +305,15 @@
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`psconvert`                                 将GMT生成的PS文件转换为其他图片格式
 **mgd77 相关模块**                               .. _module_mgd77:
-:doc:`gmt:supplements/mgd77/mgd77convert`        Convert MGD77 data to other file formats
-:doc:`gmt:supplements/mgd77/mgd77header`         Create MGD77 headers from A77 files
-:doc:`gmt:supplements/mgd77/mgd77info`           Extract information about MGD77 files
-:doc:`gmt:supplements/mgd77/mgd77list`           Extract data from MGD77 files
-:doc:`gmt:supplements/mgd77/mgd77magref`         Evaluate the IGRF or CM4 magnetic field models
-:doc:`gmt:supplements/mgd77/mgd77manage`         Manage the content of MGD77+ files
-:doc:`gmt:supplements/mgd77/mgd77path`           Return paths to MGD77 cruises and directories
-:doc:`gmt:supplements/mgd77/mgd77sniffer`        Along-track quality control of MGD77 cruises
-:doc:`gmt:supplements/mgd77/mgd77track`          Plot track-line map of MGD77 cruises
+:doc:`mgd77manage`                               管理 MGD77+ 文件
+:doc:`mgd77convert`                              将 MGD77 数据转换为其他格式
+:doc:`mgd77header`                               从 A77 文件创建 MGD77 头部信息
+:doc:`mgd77info`                                 提取 MGD77 文件信息
+:doc:`mgd77list`                                 提取 MGD77 文件中的数据
+:doc:`mgd77magref`                               计算 IGRF 或 CM4 磁场模型
+:doc:`mgd77path`                                 返回 MGD77 测线路径
+:doc:`mgd77sniffer`                              MGD77 测线沿轨质量控制
+:doc:`mgd77track`                                绘制 MGD77 测线轨迹
 **x2sys 相关模块**                               .. _module_x2sys:
 :doc:`x2sys_binlist`                             从轨迹观测文件创建网格索引列表
 :doc:`x2sys_cross`                               计算轨迹观测数据之间的交叉点
@@ -456,6 +456,15 @@
    x2sys_report
    x2sys_solve
    xyz2grd
+   mgd77manage
+   mgd77convert
+   mgd77header
+   mgd77info
+   mgd77list
+   mgd77magref
+   mgd77path
+   mgd77sniffer
+   mgd77track
 
 .. raw:: latex
 
