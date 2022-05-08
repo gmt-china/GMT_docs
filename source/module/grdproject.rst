@@ -39,7 +39,7 @@ grdproject
     逆变换，将矩形区域变换成地理区域。
 
 ``-Mc|i|p``
-    指定投影后的测量单位，默认值由参数 ``PROJ_LENGTH_UNIT`` 决定。
+    指定投影后的测量单位，默认值由参数 :term:`PROJ_LENGTH_UNIT` 决定。
 
 示例
 ----

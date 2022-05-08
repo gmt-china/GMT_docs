@@ -6,7 +6,7 @@ earth_day 和 earth_night: 地球昼夜卫星影像
     :width: 80%
     :caption: 地球昼夜卫星影像
 
-    gmt begin earth-image png,pdf
+    gmt begin earth-image
         gmt grdmath -Rd -I20m -r $(gmt solar -C -o0:1 -I+d2008-08-08T01:00) 2 DAYNIGHT = w.grd
         gmt grdmix @earth_day_20m @earth_night_20m -Ww.grd -Gview.tif
         gmt grdimage view.tif

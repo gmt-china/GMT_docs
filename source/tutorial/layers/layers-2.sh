@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin layers png,pdf
+gmt begin layers
 
 # Plot basemap and Earth relief
 gmt basemap -JH180/15c -Rg -B0

@@ -13,6 +13,11 @@ Anaconda 用户可以直接通过以下命令安装、升级以及卸载 GMT。
 未安装 Anaconda 的用户可以参考《`Anaconda 简易教程 <https://seismo-learn.org/software/anaconda/>`__》
 安装 Anaconda。
 
+Anaconda 的 base 环境下默认安装了数百个软件包，其中部分软件包与 GMT 存在冲突，
+导致 base 环境下 GMT 会出现运行报错的问题。Anaconda 用户必须新建并激活一个新环境安装使用 GMT。
+
+我们推荐用户使用只提供了必须依赖包的 miniconda，以节省硬盘空间并且避免 base 环境下的 GMT 运行问题。
+
 安装 GMT
 --------
 

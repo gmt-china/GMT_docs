@@ -59,7 +59,7 @@ gmtlogo
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制GMT logo的背景面板属性
 
-    若只使用 **-F** 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
+    若只使用 |-F| 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
@@ -98,7 +98,7 @@ gmtlogo
 .. gmtplot::
    :width: 80%
 
-   gmt begin logo pdf,png
+   gmt begin logo
    gmt basemap -R0/10/0/10 -JX10c/5c -Baf -BWSen
    gmt logo -DjTL+w3c+o0.25c -F
    gmt end show

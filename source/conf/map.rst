@@ -67,14 +67,14 @@ MAP参数
         .. gmtplot::
             :show-code: false
 
-            gmt begin map_degree_symbol pdf,png
+            gmt begin map_degree_symbol
             gmt set FONT_TITLE 18p MAP_TITLE_OFFSET 0p
             gmt subplot begin 1x4 -Fs5c
             for symbol in ring degree colon none; do
                 gmt basemap -R0/2/0/1 -JM5c -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -c
             done
             gmt subplot end
-            gmt end
+            gmt end show
 
     **MAP_ANNOT_ORTHO**
         控制笛卡尔投影下哪些轴的标注垂直于轴 [**we**]
@@ -87,13 +87,13 @@ MAP参数
         .. gmtplot::
             :show-code: false
 
-            gmt begin map_annot_ortho pdf,png
+            gmt begin map_annot_ortho
             gmt subplot begin 1x4 -Fs5c
             for axes in we sn wesn z; do
                 gmt basemap -R0/5/0/5 -Baf -B+t"$axes" --MAP_ANNOT_ORTHO=$axes -c
             done
             gmt subplot end
-            gmt end
+            gmt end show
 
         .. note::
 
@@ -202,14 +202,14 @@ MAP参数
         .. gmtplot::
             :show-code: false
 
-            gmt begin map pdf,png
+            gmt begin map
             gmt set FONT_TITLE 15p MAP_TITLE_OFFSET -5p
             gmt subplot begin 1x3 -Fs5c -M0c
             for cap in none 85/90 80/60; do
                 gmt coast -Rg -JA280/30/? -Bg -B+t"$cap" -Dc -A1000 -Gnavy --MAP_POLAR_CAP=$cap -c
             done
             gmt subplot end
-            gmt end
+            gmt end show
 
 标题相关参数
 ------------
@@ -269,9 +269,9 @@ MAP参数
         .. gmtplot::
             :show-code: false
 
-            gmt begin vector-shape pdf,png
+            gmt begin vector-shape
             for shape in -2 -1 0 1 2; do
                 echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
                 echo 3 0.5 +h$shape | gmt text -F+f8p,9 -N
             done
-            gmt end
+            gmt end show

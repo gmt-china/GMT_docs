@@ -18,8 +18,8 @@ subplot
 
 在子图模式中，需要注意如下几点：
 
-- **-X** 和 **-Y** 选项无法在子图模式中使用，可以使用 **-C** 选项作为替代
-- 在使用 **-J** 选项时，可以使用 **?** 来指定地图宽度或比例尺，此时，GMT会根据
+- |-X| 和 |-Y| 选项无法在子图模式中使用，可以使用 |-C| 选项作为替代
+- 在使用 |-J| 选项时，可以使用 **?** 来指定地图宽度或比例尺，此时，GMT会根据
   子图的大小自动确定最合适的地图尺寸
 - 对于笛卡尔投影，若想要X和Y轴共用相同的比例尺，则可以使用 **-Jx?**
 
@@ -98,8 +98,8 @@ subplot begin 语法
         第一列为4厘米宽，第二列为8厘米宽，所有列的高度均为4厘米高。
         注意，宽度值或高度值的数目必须是一个或者与行数/列数相匹配。
 
-        对于地理地图而言，每张子图的高度由地图区域 **-R** 以及投影方式 **-J** 决定。
-        有两个选择：(1) 指定子图高度为0，并同时指定 **-R** 和 **-J**，
+        对于地理地图而言，每张子图的高度由地图区域 |-R| 以及投影方式 |-J| 决定。
+        有两个选择：(1) 指定子图高度为0，并同时指定 |-R| 和 **-J**，
         利用其计算每张子图的高度，但要求所有子图必须共享相同的研究区域和投影方式；
         (2) 不断尝试并修改子图的高度以得到最佳的绘图布局。
 
@@ -153,7 +153,7 @@ subplot begin 语法
 
     .. note::
 
-       在子图模式内不能使用 **-X** 和 **-Y**，可以使用 **-C** 作为替代。
+       在子图模式内不能使用 |-X| 和 **-Y**，可以使用 |-C| 作为替代。
 
 .. include:: explain_-J.rst_
 
@@ -202,7 +202,7 @@ subplot begin 语法
 **-T**\ *heading*
     设置整张图的总标题，标题文字的属性由 :term:`FONT_HEADING` 控制。
 
-    每张子图各自的标题可以用 **-B** 或 **-S** 选项控制。
+    每张子图各自的标题可以用 |-B| 或 |-S| 选项控制。
 
 .. include:: explain_-V.rst_
 
@@ -243,10 +243,10 @@ subplot set 语法
     若不指定子图行列号或索引号，则自动激活“下一个”子图。
 
 **-A**\ *fixedlabel*
-    设置当前子图的编号，忽略 **subplot begin** 中 **-A** 选项设置的自动编号。
+    设置当前子图的编号，忽略 **subplot begin** 中 |-A| 选项设置的自动编号。
 
     这一选项可以用于临时修改单个子图的编号，但该选项只能修改编号字符串，
-    其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 **-A** 选项。
+    其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 |-A| 选项。
 
 **-C**\ *side*/*clearance*
     设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。
@@ -258,7 +258,7 @@ subplot set 语法
 
     .. note::
 
-       在子图模式下不能使用 **-X** 和 **-Y**，可以使用 **-C** 作为替代。
+       在子图模式下不能使用 |-X| 和 **-Y**，可以使用 |-C| 作为替代。
 
 subplot end
 -----------
@@ -289,7 +289,7 @@ subplot end 语法
 
 .. gmtplot::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt subplot set 0,0
         gmt basemap -R0/10/0/10 -Baf
@@ -300,13 +300,13 @@ subplot end 语法
         gmt subplot set 1,1
         gmt basemap -R0/10/0/10 -Baf
         gmt subplot end
-    gmt end
+    gmt end show
 
 **方法2: 使用 subplot set 指定子图索引号**
 
 注意子图索引号从0开始::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt subplot set 0
         gmt basemap -R0/10/0/10 -Baf
@@ -317,13 +317,13 @@ subplot end 语法
         gmt subplot set 3
         gmt basemap -R0/10/0/10 -Baf
         gmt subplot end
-    gmt end
+    gmt end show
 
 **方法3: 使用 subplot set 但不指定子图号**
 
 每次使用 **subplot set** 但不指定子图行列号或索引号，则会自动激活“下一个”子图::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt subplot set
         gmt basemap -R0/10/0/10 -Baf
@@ -334,27 +334,27 @@ subplot end 语法
         gmt subplot set
         gmt basemap -R0/10/0/10 -Baf
         gmt subplot end
-    gmt end
+    gmt end show
 
 **方法4: 使用 -c 选项**
 
 :doc:`/option/c` 的功能与 **subplot set** 类似，可以用于激活指定的子图。
 其后可以接子图行列号或索引号，也可以只使用 **-c** 自动激活下一个子图::
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/2.5c -A
         gmt basemap -R0/10/0/10 -Baf -c
         gmt basemap -R0/10/0/10 -Baf -c
         gmt basemap -R0/10/0/10 -Baf -c
         gmt basemap -R0/10/0/10 -Baf -c
         gmt subplot end
-    gmt end
+    gmt end show
 
 下面展示了如何设置一个2x2的图，并设置共用X和Y轴:
 
 .. gmtplot::
 
-    gmt begin panels png,pdf
+    gmt begin panels
       gmt subplot begin 2x2 -Fs10c/5cc -M5p -A -SCb -SRl -Bwstr
         gmt subplot set
         gmt basemap -R0/80/0/10
@@ -365,7 +365,7 @@ subplot end 语法
         gmt subplot set
         gmt basemap
       gmt subplot end
-    gmt end
+    gmt end show
 
 下面的示例展示了如何绘制一个不完全规则的子图。这个示例中，实际上只使用了子图0、
 2、3，而第一张图同时占据了子图0和1的空间。在这种情况下，GMT的自动编号功能无法
@@ -373,7 +373,7 @@ subplot end 语法
 
 .. gmtplot::
 
-    gmt begin map pdf,png
+    gmt begin map
         gmt subplot begin 2x2 -Fs5c/3c -A -M0
 
         gmt subplot set 0
@@ -386,7 +386,7 @@ subplot end 语法
         gmt basemap -R0/20/0/10 -JX? -Baf -BWSen
 
         gmt subplot end
-    gmt end
+    gmt end show
 
 相关模块
 --------

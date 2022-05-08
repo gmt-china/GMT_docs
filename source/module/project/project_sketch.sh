@@ -14,7 +14,7 @@ read p q r s << EOF
 $(echo $x0 $y0 | gmt project -C$profile_x/$profile_y -A$profile_az -Fpqrs)
 EOF
 
-gmt begin project_sketch png,pdf
+gmt begin project_sketch
 
 p_az=$((270 - $profile_az))
 # 绘制原始坐标系
@@ -85,4 +85,4 @@ $r 0 TC r
 0 $s MR s
 EOF
 
-gmt end
+gmt end show

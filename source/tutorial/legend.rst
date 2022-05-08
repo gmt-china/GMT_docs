@@ -17,7 +17,7 @@ GMT 中使用 :doc:`/module/legend` 模块添加图例。
 .. gmtplot::
     :width: 50%
 
-    gmt begin auto-legend png,pdf
+    gmt begin auto-legend
     gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt plot -W1p,blue -l"Profile" << EOF
     3 3
@@ -46,7 +46,7 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
 .. gmtplot::
     :width: 50%
 
-    gmt begin auto-legend png,pdf
+    gmt begin auto-legend
     gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt plot -W1p,blue -l"Profile" << EOF
     3 3
@@ -93,7 +93,7 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
 .. gmtplot::
     :width: 70%
 
-	gmt begin map png,pdf
+	gmt begin map
 	gmt basemap -R0/10/0/8 -JX10c/8c -Baf -BWSen
 	cat > legend.txt << EOF
 	# symbols

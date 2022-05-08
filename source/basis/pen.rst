@@ -119,6 +119,8 @@ GMT中可以通过两种方式指定画笔宽度：
     10 2
     EOF
 
+.. _fig:pen-styles:
+
 .. gmtplot:: pens.sh
     :show-code: false
     :width: 75%
@@ -131,7 +133,7 @@ GMT中可以通过两种方式指定画笔宽度：
     :show-code: false
     :width: 75%
 
-    gmt begin rail-trail png,pdf
+    gmt begin rail-trail
     gmt basemap -R0/10/0/4 -Jx1c -B+n
     # 绘制黑色线段
     gmt plot -W5p,black << EOF
@@ -143,4 +145,4 @@ GMT中可以通过两种方式指定画笔宽度：
     1 2
     9 2
     EOF
-    gmt end
+    gmt end show

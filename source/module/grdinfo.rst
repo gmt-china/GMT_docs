@@ -63,7 +63,7 @@ grdinfo
     *registration* 为网格的配准方式，0表示网格线配准，1表示像素配准；
     *gtype* 表示数据类型，0表示笛卡尔数据，1表示地理数据。
 
-    若与 **-I** 选项一起使用，则输出格式为::
+    若与 |-I| 选项一起使用，则输出格式为::
 
         NF w e s n z0 z1
 
@@ -74,13 +74,13 @@ grdinfo
 **-D**\ [*xoff*\ [/*yoff*]][**+i**]
     将网格区域划分为多个子区域，并报告子区域的范围。
 
-    子区域大小为 *dx* 乘 *dy*，由 **-I** 选项控制。
+    子区域大小为 *dx* 乘 *dy*，由 |-I| 选项控制。
     *xoff/yoff* 用于指定多个子区域之间的重叠区域。
     **+i** 子选项表明若该子区域内无数据则忽略该区域。
-    若使用 **-C** 选项则以 *w e s n* 格式输出每个子区域的区域范围，
+    若使用 |-C| 选项则以 *w e s n* 格式输出每个子区域的区域范围，
     使用 **-Ct** 则在最后一列以 **-R**\ *w/e/s/n* 格式输出子区域数据范围。
 
-    **-D** 选项示例::
+    |-D| 选项示例::
 
         $ gmt grdinfo @earth_relief_30m -D -I180/90
         -R-180/0/-90/0
@@ -88,7 +88,7 @@ grdinfo
         -R-180/0/0/90
         -R0/180/0/90
 
-    **-D** 与 **-C** 一起使用::
+    |-D| 与 |-C| 一起使用::
 
         $ gmt grdinfo @earth_relief_30m -D -I180/90 -C
         -180	0	-90	0
@@ -110,7 +110,7 @@ grdinfo
 .. _-F:
 
 **-F**
-    以每行输出一个信息的方式的输出信息。该选项不得与 **-C** 一起使用。
+    以每行输出一个信息的方式的输出信息。该选项不得与 |-C| 一起使用。
 
 .. _-I:
 
@@ -123,9 +123,9 @@ grdinfo
     - **-Ir** 以 **-R**\ *w/e/s/n* 输出真实的网格区域范围
     - **-Ii** 以 **-R**\ *w/e/s/n* 输出 **img** 补充包生成的网格文件的精确范围
     - **-Ib** 输出区域范围对应的四个顶点的坐标
-    - **-I** 不加任何选项以 **-I**\ *xinc*\ [/*yinc*] 形式输出网格间隔
+    - |-I| 不加任何选项以 **-I**\ *xinc*\ [/*yinc*] 形式输出网格间隔
 
-    **-I** 选项示例::
+    |-I| 选项示例::
 
         $ gmt grdinfo @earth_relief_30m -I
         -I30m
@@ -170,7 +170,7 @@ grdinfo
 **-T**\ [*dz*]\ [**+a**\ [*alpha*]]\ [**+s**]
     以 **-T**\ *zmin/zmax* 或 **-T**\ *zmin/zmax/dz* 的格式输出Z值范围
 
-    若只使用 **-T** 选项，则以 **-T**\ *zmin/zmax* 格式输出Z值范围；
+    若只使用 |-T| 选项，则以 **-T**\ *zmin/zmax* 格式输出Z值范围；
     若使用 *dz* 则先提取Z的最小最大值，并做微调使得最值是 *dz* 的整数倍，并
     以 **-T**\ *zmin/zmax/dz* 格式输出。
 
@@ -210,7 +210,7 @@ grdinfo
     $ gmt grdinfo @earth_relief_30m.grd
     earth_relief_30m.grd: Title: Earth Relief at 30 arc minutes
     earth_relief_30m.grd: Command: grdfilter SRTM15+V2.nc -Fg55.6 -D1 -I30m -rg -Gearth_relief_30m.grd=ns --IO_NC4_DEFLATION_LEVEL=9 --PROJ_ELLIPSOID=Sphere
-    earth_relief_30m.grd: Remark: Obtained by Gaussian Cartesian filtering (55.6 km fullwidth) from SRTM15+V2.nc [Tozer et al., 2019; http://dx.doi.org/10.1029/2019EA000658]
+    earth_relief_30m.grd: Remark: Obtained by Gaussian Cartesian filtering (55.6 km fullwidth) from SRTM15+V2.nc [Tozer et al., 2019; https://doi.org/10.1029/2019EA000658]
     earth_relief_30m.grd: Gridline node registration used [Geographic grid]
     earth_relief_30m.grd: Grid file format: ns = GMT netCDF format (16-bit integer), CF-1.7
     earth_relief_30m.grd: x_min: -180 x_max: 180 x_inc: 0.5 (30 min) name: longitude n_columns: 721

@@ -6,6 +6,7 @@
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
 
 import os
+import sys
 import datetime
 
 # -- Project configuration ------------------------------------------------
@@ -44,6 +45,7 @@ highlight_language = "bash"
 pygments_style = "sphinx"
 show_authors = True
 
+sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
@@ -51,9 +53,15 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_cjkspace.cjkspace",
-    "sphinx_gmt.gmtplot",
+    "gmtplot",
+    "sphinxcontrib.datatemplates",
 ]
 mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+
+# gmtplot extension
+gmtplot_global_config = {
+    "GMT_GRAPHICS_FORMAT": "ps",
+}
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
 smartquotes_action = "qe"
@@ -97,6 +105,8 @@ html_context = {
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Passed to sphinxcontrib.datatemplates
+    "siteurl": f"https://docs.gmt-china.org/{version}",
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 

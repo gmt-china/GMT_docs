@@ -92,7 +92,6 @@ VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Ba
 安装和配置教程：
 
 - https://gmt-china.org/blog/vscode-usage/
-- https://seismo-learn.org/seismology101/computer/editor/#vs-code
 
 .. warning::
 
@@ -120,7 +119,7 @@ Windows 用户也可以编写 Batch 脚本来执行 GMT 命令。
 推荐安装和使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools。
 Windows 下的 Bash 用户不需要安装 UnixTools。
 
-下载 :download:`UnixTools.zip <https://gmt-china.org/data/UnixTools.zip>`，
+下载 :download:`UnixTools.zip <UnixTools.zip>`，
 然后将解压得到的 exe 文件移动到 GMT 安装目录下的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
 
 - ``cat``：显示文件内容

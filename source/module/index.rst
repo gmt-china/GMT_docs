@@ -27,6 +27,7 @@
     - :doc:`figure`
     - :doc:`filter1d`
     - :doc:`fitcircle`
+    - :doc:`gmtbinstats`
     - :doc:`gmtconnect`
     - :doc:`gmtdefaults`
     - :doc:`gmtget`
@@ -37,6 +38,8 @@
     - :doc:`gmtset`
     - :doc:`gmtsimplify`
     - :doc:`gmtspatial`
+    - :doc:`gmtsplit`
+    - :doc:`gmtvector`
     - :doc:`gmtwhich`
     - :doc:`grd2cpt`
     - :doc:`grd2xyz`
@@ -60,6 +63,7 @@
     - :doc:`grdvector`
     - :doc:`grdview`
     - :doc:`grdvolume`
+    - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
     - :doc:`img2google`
@@ -69,7 +73,9 @@
     - :doc:`legend`
     - :doc:`makecpt`
     - :doc:`mapproject`
+    - :doc:`mask`
     - :doc:`meca`
+    - :doc:`nearneighbor`
     - :doc:`plot`
     - :doc:`polar`
     - :doc:`project`
@@ -87,6 +93,7 @@
     - :doc:`surface`
     - :doc:`ternary`
     - :doc:`text`
+    - :doc:`triangulate`
     - :doc:`velo`
     - :doc:`wiggle`
     - :doc:`x2sys_binlist`
@@ -122,12 +129,9 @@
     - :doc:`gmt:dimfilter`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtbinstats`
     - :doc:`gmt:gmtconvert`
     - :doc:`gmt:gmtregress`
-    - :doc:`gmt:gmtsplit`
     - :doc:`gmt:gmtswitch`
-    - :doc:`gmt:gmtvector`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdfft`
     - :doc:`gmt:grdgdal`
@@ -137,9 +141,7 @@
     - :doc:`gmt:grdinterpolate`
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
-    - :doc:`gmt:mask`
     - :doc:`gmt:movie`
-    - :doc:`gmt:nearneighbor`
     - :doc:`gmt:plot3d`
     - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
@@ -168,7 +170,6 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:trend1d`
     - :doc:`gmt:trend2d`
-    - :doc:`gmt:triangulate`
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
@@ -212,10 +213,10 @@
 :doc:`colorbar`                                  在图上绘制色标
 :doc:`legend`                                    绘制图例
 :doc:`histogram`                                 统计并绘制直方图
-:doc:`rose`                                      绘制极坐标下的直方图（sector图、rose图或windrose图）
+:doc:`rose`                                      绘制极坐标下的直方图（sector 图、rose 图或 windrose 图）
 :doc:`gmt:events`                                绘制特定时刻的事件符号和标签信息
-:doc:`gmt:plot3d`                                在3D图上绘制线段、多边形和符号
-:doc:`image`                                     将EPS或光栅图片放在图上
+:doc:`gmt:plot3d`                                在 3D 图上绘制线段、多边形和符号
+:doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
 :doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
@@ -224,64 +225,65 @@
 :doc:`velo`                                      在地图上绘制速度矢量、十字线、楔形图
 :doc:`coupe`                                     绘制震源机制解的剖面图
 :doc:`ternary`                                   绘制三角图解
-:doc:`gmt:mask`                                  将没有数据覆盖的区域裁剪或覆盖住
+:doc:`mask`                                      将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
-:doc:`gmt:supplements/segy/segy`                 在图上绘制SEGY文件
-:doc:`gmt:supplements/segy/segyz`                在3D图上绘制SEGYZ文件
-:doc:`gmtlogo`                                   在图上绘制GMT图形logo
+:doc:`gmt:supplements/segy/segy`                 在图上绘制 SEGY 文件
+:doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
+:doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
 :doc:`grdimage`                                  在图上绘制网格数据
 :doc:`grdcontour`                                根据网格文件绘制等值线
-:doc:`grdview`                                   利用网格文件绘制3D视角图或表面网格图
+:doc:`grdview`                                   利用网格文件绘制 3D 视角图或表面网格图
 :doc:`gmt:movie`                                 制作动画
 **1D 数据处理**                                  .. _module_1D_data_processing:
-:doc:`makecpt`                                   生成CPT文件
+:doc:`makecpt`                                   生成 CPT 文件
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
 :doc:`gmt:gmtconvert`                            表数据格式转换、列提取、列粘贴
 :doc:`gmt:trend1d`                               一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
-:doc:`gmtsimplify`                               使用Douglas-Peucker算法对线段做简化
-:doc:`filter1d`                                  对1D表数据做时间域滤波
+:doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
+:doc:`filter1d`                                  对 1D 表数据做时间域滤波
 :doc:`gmtconnect`                                将端点接近的线段连接起来
-:doc:`sample1d`                                  对1D表数据进行重采样
+:doc:`sample1d`                                  对 1D 表数据进行重采样
 :doc:`spectrum1d`                                计算一个时间序列的自功率谱，或两个时间序列的互功率谱
 :doc:`gmtmath`                                   对表数据进行数学计算操作
 :doc:`mapproject`                                地图变换的正变换和逆变换
 :doc:`gmtspatial`                                点、线段和多边形的地理空间操作
-:doc:`gmt:gmtvector`                             2D和3D下笛卡尔矢量操作
-:doc:`gmt:gmtregress`                            1D数据的线性回归
+:doc:`gmtvector`                                 2D 和 3D 下笛卡尔矢量操作
+:doc:`gmt:gmtregress`                            1D 数据的线性回归
 **2D 数据处理**                                  .. _module_2D_data_processing:
 :doc:`grdcut`                                    从一个网格文件中裁剪出一个矩形子区域生成新的网格文件
 :doc:`grdpaste`                                  将两个网格沿着其共同边界拼接成一个文件
 :doc:`grdblend`                                  将多个部分重叠的网格文件合并成一个网格文件
 :doc:`gmt:grdtrack`                              获取指定地理位置处的网格值
 :doc:`gmt:grdgradient`                           计算网格的方向梯度
-:doc:`grdclip`                                   对网格文件的Z值做裁剪
+:doc:`grdclip`                                   对网格文件的 Z 值做裁剪
 :doc:`grd2xyz`                                   将网格文件转换成表数据
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`grdedit`                                   修改网格文件的头段或内容
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`grdsample`                                 对网格文件做重采样
-:doc:`grdlandmask`                               根据海岸线数据创建陆地-海洋的mask网格文件
+:doc:`grdlandmask`                               根据海岸线数据创建陆地-海洋的 mask 网格文件
 :doc:`grdvolume`                                 计算网格数据中某个等值线所包围的表面积和体积
 :doc:`grdtrend`                                  拟合网格的趋势面并计算残差
 :doc:`grdproject`                                对网格数据做地图变换和逆变换
-:doc:`grdmask`                                   根据多边形数据或点数据创建mask网格文件
+:doc:`grdmask`                                   根据多边形数据或点数据创建 mask 网格文件
 :doc:`grdmath`                                   对网格文件做数学计算操作
 :doc:`gmt:grdfilter`                             对网格文件做空间域或时间域滤波
 :doc:`gmt:grdfft`                                对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
 :doc:`gmt:grdhisteq`                             对网格做直方图均衡
-:doc:`grd2cpt`                                   根据网格文件的值生成CPT文件
-:doc:`gmt:blockmean`                             使用L2范式对 (x,y,z) 数据做区块平均
-:doc:`gmt:blockmedian`                           使用L1范式对 (x,y,z) 数据做区块平均
+:doc:`grd2cpt`                                   根据网格文件的值生成 CPT 文件
+:doc:`gmt:blockmean`                             使用 L2 范式对 (x,y,z) 数据做区块平均
+:doc:`gmt:blockmedian`                           使用 L1 范式对 (x,y,z) 数据做区块平均
 :doc:`gmt:blockmode`                             使用模估计对 (x,y,z) 数据做区块平均
+:doc:`gmtbinstats`                               统计落入网格节点的数据
 :doc:`surface`                                   使用可调节张量连续曲率样条插值法对数据进行网格化
-:doc:`gmt:gmtsplit`                              将表数据拆分为单独的数据段
-:doc:`gmt:triangulate`                           对表数据做三角剖分和网格化
-:doc:`gmt:nearneighbor`                          使用 "Nearest neighbor" 算法对数据进行网格化
+:doc:`gmtsplit`                                  将表数据拆分为单独的数据段
+:doc:`triangulate`                               对表数据做三角剖分、Voronoi 图计算和网格化
+:doc:`nearneighbor`                              使用 "Nearest neighbor" 算法对数据进行网格化
 :doc:`gmt:trend2d`                               二维数据的多项式拟合
 :doc:`gmt:greenspline`                           使用格林函数样条进行插值
 :doc:`sph2grd`                                   根据球谐系数计算网格
@@ -290,20 +292,20 @@
 :doc:`sphtriangulate`                            球面数据的 Delaunay 三角网或 Voronoi 图构建
 :doc:`gmt:dimfilter`                             在空间域对网格数做方向性滤波
 **参数设置**                                     .. _module_parameter_setting:
-:doc:`gmtdefaults`                               列出所有GMT参数的当前值
-:doc:`gmtset`                                    修改单个或多个GMT参数的值
-:doc:`gmtget`                                    列出单个或多个GMT参数的当前值
+:doc:`gmtdefaults`                               列出所有 GMT 参数的当前值
+:doc:`gmtset`                                    修改单个或多个 GMT 参数的值
+:doc:`gmtget`                                    列出单个或多个 GMT 参数的当前值
 **信息提取**                                     .. _module_information_retrieval:
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`gmtinfo`                                   从表数据中提取信息
 :doc:`gmtwhich`                                  返回指定文件的完整路径
 **格式转换**                                     .. _module_format_conversion:
-:doc:`xyz2grd`                                   将XYZ数据或Z数据转换成网格文件
+:doc:`xyz2grd`                                   将 XYZ 数据或 Z 数据转换成网格文件
 :doc:`grd2xyz`                                   将网格文件转换成表数据
-:doc:`kml2gmt`                                   将Google Earth的KML文件转换为GMT表数据
-:doc:`gmt:gmt2kml`                               将GMT表数据转换为Google Earth的KML文件
+:doc:`kml2gmt`                                   将 Google Earth 的 KML 文件转换为 GMT 表数据
+:doc:`gmt:gmt2kml`                               将 GMT 表数据转换为 Google Earth 的 KML 文件
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
-:doc:`psconvert`                                 将GMT生成的PS文件转换为其他图片格式
+:doc:`psconvert`                                 将 GMT 生成的 PS 文件转换为其他图片格式
 **mgd77 相关模块**                               .. _module_mgd77:
 :doc:`mgd77manage`                               管理 MGD77+ 文件
 :doc:`mgd77convert`                              将 MGD77 数据转换为其他格式
@@ -347,7 +349,7 @@
 :doc:`gmt:supplements/potential/talwani3d`       Compute geopotential anomalies over 3-D bodies
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
-:doc:`gmt:supplements/gshhg/gshhg`               Extract data tables from binary GSHHS or WDBII data files
+:doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
 :doc:`gmt:supplements/geodesy/gpsgridder`        Interpolate GPS velocity vectors using Green's functions
@@ -383,6 +385,7 @@
    fitcircle
    gmt
    gmt-config
+   gmtbinstats
    gmtconnect
    gmtdefaults
    gmtget
@@ -393,6 +396,8 @@
    gmtset
    gmtsimplify
    gmtspatial
+   gmtsplit
+   gmtvector
    gmtwhich
    grd2cpt
    grd2xyz
@@ -416,6 +421,7 @@
    grdvector
    grdview
    grdvolume
+   gshhg
    histogram
    image
    img2google
@@ -425,7 +431,9 @@
    legend
    makecpt
    mapproject
+   mask
    meca
+   nearneighbor
    plot
    polar
    project
@@ -443,6 +451,7 @@
    surface
    ternary
    text
+   triangulate
    velo
    wiggle
    x2sys_binlist
