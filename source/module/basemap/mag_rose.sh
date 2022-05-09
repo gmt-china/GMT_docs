@@ -9,8 +9,9 @@ gmt basemap -Tmg-2/0.5+w2.5i+d-14.5+t45/10/5+i0.25p,blue+p0.25p,red+l+jCM \
     --MAP_FRAME_WIDTH=10p --COLOR_BACKGROUND=green --MAP_DEFAULT_PEN=2p,darkgreen \
     --COLOR_BACKGROUND=darkgreen --MAP_VECTOR_SHAPE=0.5 --MAP_TICK_PEN_SECONDARY=thinner,red \
     --MAP_TICK_PEN_PRIMARY=thinner,blue
-gmt basemap -DjTR+w2.9i/3.9i+o0.05i -F+p+ggray95
-echo "5.5 3.8 GMT DEFAULTS" | gmt text -R0/7/0/5 -Jx1i -F+f14p,Helvetica-Bold+jCM
+gmt inset begin -DjTR+w2.9i/3.9i+o0.05i -F+p+ggray95
+gmt inset end
+echo "5.5 3.8 GMT DEFAULTS" | gmt text -R0/7/0/4 -Jx1i -F+f14p,Helvetica-Bold+jCM
 gmt text -F+f12p+jLM << EOF
 4.1 3.50 FONT_TITLE
 4.1 3.25 MAP_TITLE_OFFSET
