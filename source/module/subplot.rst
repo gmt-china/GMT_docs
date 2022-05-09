@@ -355,9 +355,9 @@ subplot end 语法
 .. gmtplot::
 
     gmt begin panels
-      gmt subplot begin 2x2 -Fs10c/5c -M5p -A -SCb -SRl -Bwstr
+      gmt subplot begin 2x2 -Fs10c/5c -M5p -A -SCb -SRl -Bwstr -R0/80/0/10
         gmt subplot set
-        gmt basemap -R0/80/0/10
+        gmt basemap
         gmt subplot set
         gmt basemap
         gmt subplot set
