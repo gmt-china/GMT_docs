@@ -58,11 +58,6 @@ extensions = [
 ]
 mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
-# gmtplot extension
-gmtplot_global_config = {
-    "GMT_GRAPHICS_FORMAT": "ps",
-}
-
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
 smartquotes_action = "qe"
 
