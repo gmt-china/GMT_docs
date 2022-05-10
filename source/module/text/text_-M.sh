@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin text_-M png,pdf
+gmt begin text_-M
 gmt text -R0/3/0/5 -JX8c/3c -F+f+a+j -Baf -M -N << EOF
 > 0 -1 12p,black 0 LT 13p 8c j
 @%5%Figure 1.@%% This illustration shows nothing useful, but it still needs

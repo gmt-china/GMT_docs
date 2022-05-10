@@ -15,12 +15,12 @@
 指定的起点和终点间存在一定的偏移量。该子选项的语法是：
 **+o**\ *offset*\ [*u*]
 
-- 若只给了一个 *offset*\ ，则表示起点和终点共用同一个偏移量
+- 若只给了一个 *offset*，则表示起点和终点共用同一个偏移量
 - 也可以用 *offset*/*offset* 分别为起点和终点指定不同的偏移量
 - 对于每个偏移量，都可以使用长度单位 **c**\|\ **i**\|\ **p** 或距离单位
 
 下面的示例展示了 **+o** 子选项的用法和使用效果。
-图中，细线和粗线使用了相同的输入数据，其中细线没有使用 **+o**\ ，
+图中，细线和粗线使用了相同的输入数据，其中细线没有使用 **+o**，
 此时线段的起点和终点与数据指定的点重合；
 粗线在绘制线条时使用了 **-W2p+o1c/500k** 选项，
 即在起点处偏移1厘米，在终点处偏移500千米。
@@ -29,7 +29,7 @@
     :show-code: false
     :caption: 线段起点偏移示意图
 
-    gmt begin line_offset pdf,png
+    gmt begin line_offset
     gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
     gmt basemap -R8/32/40/44 -JM5i -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain
@@ -40,7 +40,7 @@
     27.1 42.3 +9.5 500 km
     EOF
     rm line.txt
-    gmt end
+    gmt end show
 
 线条平滑
 --------
@@ -50,7 +50,7 @@
 需要注意的是：该样条平滑是对投影后的2D坐标进行处理的，并不针对原始坐标（即
 其不是一个球面样条插值）。
 
-下图中，左图使用了 **-W2p** 选项，右边使用了 **-W2p+s**\ 。
+下图中，左图使用了 **-W2p** 选项，右边使用了 **-W2p+s**。
 
 .. gmtplot::
     :show-code: false
@@ -64,13 +64,13 @@
     2	1.5
     EOF
 
-    gmt begin line_bezier pdf,png
+    gmt begin line_bezier
     gmt plot line.txt -R-0.25/4.25/-0.2/2.2 -JX3i/1.25i -W2p
     gmt plot line.txt -Sc0.1i -Gred -Wfaint
     gmt plot line.txt -W2p+s -X3i
     gmt plot line.txt -Sc0.1i -Gred -Wfaint
     rm line.txt
-    gmt end
+    gmt end show
 
 端点箭头
 --------
@@ -79,7 +79,7 @@
 可以在线段的一端或两段绘制端点箭头。该子选项的语法为：
 **+v**\ [**b**\|\ **e**]\ *vspecs*
 
-- 默认会在线段两端都加上箭头，\ **b**\|\ **e** 表示只绘制开头或结尾的箭头
+- 默认会在线段两端都加上箭头，**b**\|\ **e** 表示只绘制开头或结尾的箭头
 - *vspecs* 用于指定端点箭头的属性，详见 :doc:`vector`
 
 下图中细线是通常绘制的线段，粗线使用的选项是 **-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue**
@@ -88,19 +88,19 @@
     :show-code: false
     :caption: 线条端点箭头示意图
 
-    gmt begin line_arrow pdf,png
+    gmt begin line_arrow
     gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
     gmt plot line.txt -R8/32/40/44 -JM5i -Wfaint,red -Bxaf -Bya2f1 -BWSne --MAP_FRAME_TYPE=plain
     gmt plot line.txt -W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue --MAP_VECTOR_SHAPE=0.5
     rm line.txt
-    gmt end
+    gmt end show
 
 其它属性
 --------
 
 除了上面提到的属性之外，GMT中还有一些参数可以影响线段的外观。这些参数包括：
 
-- :term:`PS_LINE_CAP`\ ：控制线段顶端的绘制方式
-- :term:`PS_LINE_JOIN`\ ：控制线段拐点/交点的绘制方式
-- :term:`PS_MITER_LIMIT`\ ：控制线段拐点在 ``miter`` 模式下的阈值
+- :term:`PS_LINE_CAP`：控制线段顶端的绘制方式
+- :term:`PS_LINE_JOIN`：控制线段拐点/交点的绘制方式
+- :term:`PS_MITER_LIMIT`：控制线段拐点在 ``miter`` 模式下的阈值

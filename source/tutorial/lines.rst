@@ -37,10 +37,10 @@
         echo 8 2 >> points.dat
         echo 5 7 >> points.dat
 
-    将数据写到文件 :file:`points.dat`\ 。
+    将数据写到文件 :file:`points.dat`。
     其它示例也有相同的问题，Batch 用户自行修改，不再专门解释。
 
-图中，\ **plot** 模块在绘图时自动将三个点连接起来，绘制出了一条线段。
+图中，**plot** 模块在绘图时自动将三个点连接起来，绘制出了一条线段。
 
 .. gmtplot::
     :width: 50%
@@ -51,7 +51,7 @@
     5   7
     EOF
 
-    gmt begin SimpleLine png,pdf
+    gmt begin SimpleLine
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat
     gmt end show
@@ -60,7 +60,7 @@
 画笔属性包括三个部分：线宽、颜色以及线型，三者之间用逗号隔开。
 
 下面的脚本中，我们给 **plot** 模块添加了 **-W2p,red,-** 选项，
-即设置了画笔属性为 **2p** 宽的红色虚线。\ **p** 是 GMT 中的一个长度单位。
+即设置了画笔属性为 **2p** 宽的红色虚线。**p** 是 GMT 中的一个长度单位。
 
 .. gmtplot::
     :width: 50%
@@ -71,13 +71,13 @@
     5   7
     EOF
 
-    gmt begin SimpleLine png,pdf
+    gmt begin SimpleLine
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -W2p,red,-
     gmt end show
 
 你可以尝试修改线宽、颜色和线型，并查看绘图效果。几种常见的线型包括
-``-``\ 、\ ``.``\ 、\ ``.-``\ 和 \ ``-.``\ 。
+``-``、``.``、``.-``\ 和 \ ``-.``。
 
 绘制一个多边形
 --------------
@@ -94,7 +94,7 @@
     5   7
     EOF
 
-    gmt begin polygon png,pdf
+    gmt begin polygon
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -W4p,lightblue -L
     gmt end show
@@ -110,7 +110,7 @@
     5   7
     EOF
 
-    gmt begin polygon png,pdf
+    gmt begin polygon
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -W4p,lightblue -Glightred -L
     gmt end show
@@ -127,7 +127,7 @@
     5   7
     EOF
 
-    gmt begin polygon png,pdf
+    gmt begin polygon
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -Glightred -L
     gmt end show
@@ -148,9 +148,9 @@
     6	8
 
 每个线段都包含了若干个数据点，在第一个数据点之前有一个 **>** 用于标记新的一段数据的开始。
-这种数据称之为\ **多段数据**\ 。
+这种数据称之为\ **多段数据**。
 
-与绘制一条线段的命令完全相同，由于输入数据中有两段数据，\ **plot** 模块为我们绘制出了
+与绘制一条线段的命令完全相同，由于输入数据中有两段数据，**plot** 模块为我们绘制出了
 两条线段。同样的，两条线段均为线宽为 **1p** 的红色实线。
 
 .. gmtplot::
@@ -167,7 +167,7 @@
     6	8
     EOF
 
-    gmt begin MultiLines png,pdf
+    gmt begin MultiLines
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot lines.dat -W1p,red
     gmt end show
@@ -191,7 +191,7 @@
     6	8
     EOF
 
-    gmt begin MultiPolygons png,pdf
+    gmt begin MultiPolygons
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot lines.dat -W1p,red -L -Glightred
     gmt end show
@@ -216,7 +216,7 @@
     250 	30
     EOF
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
         gmt plot twopoints.dat -W2p,red
         gmt plot twopoints.dat -W2p,blue -A

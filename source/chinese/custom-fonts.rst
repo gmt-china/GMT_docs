@@ -25,7 +25,7 @@ ghostscript中文配置
 
 不同系统下ghostscript的的中文配置文件的位置不同。此处以CentOS 7 为例。
 
-CentOS 7下，ghostscript的中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN``\ 。
+CentOS 7下，ghostscript的中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN``。
 若该文件不存在，则表明系统中未安装ghostscript中文配置文件。
 
 CentOS 7下ghostscript简体中文配置文件可以通过如下命令安装::
@@ -44,12 +44,12 @@ CentOS 7 中 ghostscript 中文配置文件的默认内容为::
 
 其中的细节不管，其大致意义为：
 
-- 第一行定义了字体名为 ``/BousungEG-Light-GB``\ ，
-  对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc``\ ，
+- 第一行定义了字体名为 ``/BousungEG-Light-GB``，
+  对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc``，
   也就是文泉驿正黑；
-- 第二行定义了字体名为 ``/GBZenKai-Medium``\ ，对应的字体文件也是文泉驿正黑；
-- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1``\ ，
-  这两种都对应于 ``/BousungEG-Light-GB``\ ，相当于给字体定义了别名。
+- 第二行定义了字体名为 ``/GBZenKai-Medium``，对应的字体文件也是文泉驿正黑；
+- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1``，
+  这两种都对应于 ``/BousungEG-Light-GB``，相当于给字体定义了别名。
 
 关于配置文件的几点说明：
 
@@ -83,7 +83,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 测试 ghostscript 对 Windows 中文字体的支持
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-下载PS测试文件 :download:`GMT_Chinese_Linux.ps </chinese/GMT_Chinese_Linux.ps>`\ ，
+下载PS测试文件 :download:`GMT_Chinese_Linux.ps </chinese/GMT_Chinese_Linux.ps>`，
 并打开终端用 ``gs GMT_Chinese_Linux.ps`` 命令查看该PS文件。
 若正确显示中文如下图，则表明 ghostscript 已支持 Windows 中文字体。
 
@@ -97,7 +97,7 @@ Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体�
 
     PS 文件中要使用某个中文字体，需要用 ``FontName-CMap`` 的格式来调用。
     其中 ``FontName`` 即 gs 中文配置文件中给定的字体名。CMap 可以取 ``UniGB-UTF8-H``
-    和 ``GB-EUC-H``\ ， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
+    和 ``GB-EUC-H``， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文
     字体的编码。
 
 GMT 中文支持
@@ -115,9 +115,9 @@ GMT 中文支持
 
 第一列为字体名，第二列为字母 A 的高度，第三列与编码有关。
 
-用 ``gmt pstext -L`` 命令查看 GMT 当前的字体配置::
+用 ``gmt text -L`` 命令查看 GMT 当前的字体配置::
 
-    $ gmt pstext -L
+    $ gmt text -L
     Font #  Font Name
     ------------------------------------
     0   Helvetica
@@ -139,7 +139,7 @@ GMT 中文测试
 .. code-block:: bash
 
    #!/usr/bin/env bash
-   gmt begin GMT_Chinese png,pdf
+   gmt begin GMT_Chinese
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black
 
@@ -150,7 +150,7 @@ GMT 中文测试
    7 2.5 35p,41,yellow GMT黑体
    7 1.0 35p,42,green GMT楷体
    EOF
-   gmt end
+   gmt end show
 
 成图效果如下：
 
@@ -175,7 +175,7 @@ CentOS 6
 2.  ghostscript 中文配置文件中给定的字体路径： ``/usr/share/fonts/cjkuni/uming.ttc``
     和 ``/usr/share/fonts/cjkuni/ukai.ttc`` 是错误的。正确的字体路径是
     ``/usr/share/fonts/cjkui-uming/uming.ttc`` 和
-    ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``\ ，要注意改正。
+    ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``，要注意改正。
 
 Ubuntu 14.04及之后的版本
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,9 +221,9 @@ Ubuntu 14.04及之后的版本
         $ sudo update-gsfontmap
 
     该命令会将 ``/etc/ghostscript/cidfmap.d/*.conf`` 合并成单独的文件
-    ``/var/lib/ghostscript/fonts/cidfmap``\ 。gs 在需要中文字体时会读取
+    ``/var/lib/ghostscript/fonts/cidfmap``。gs 在需要中文字体时会读取
     ``/var/lib/ghostscript/fonts/cidfmap`` 而不是
-    ``/etc/ghostscript/cidfmap.d/*.conf``\ 。这是 Ubuntu/Debian 和 CentOS 的
+    ``/etc/ghostscript/cidfmap.d/*.conf``。这是 Ubuntu/Debian 和 CentOS 的
     一个很大不同。
 
 参考资料

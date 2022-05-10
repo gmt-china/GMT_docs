@@ -34,8 +34,8 @@ Sinusoidal equal area（正弦曲线投影）是等面积投影，是已知的�
    :caption:  使用间断正弦曲线投影绘制世界地图
    :width: 85%
 
-   gmt begin GMT_sinus_int pdf,png
+   gmt begin GMT_sinus_int
    gmt coast -R200/340/-90/90 -Ji0.04c -Bg -A10000 -Dc -Gdarkred -Sazure
    gmt coast -R-20/60/-90/90 -Bg -Dc -A10000 -Gdarkgreen -Sazure -X5.6c
    gmt coast -R60/200/-90/90 -Bg -Dc -A10000 -Gdarkblue -X3.2c
-   gmt end
+   gmt end show

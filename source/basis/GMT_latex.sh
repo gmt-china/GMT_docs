@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin GMT_latex pdf,png
+gmt begin GMT_latex
     gmt basemap -R-200/200/0/50 -JX15c/4c \
         -BSwen+t"Use <math>\Delta g = 2\pi\rho Gh</math>" \
         -Bxaf+l"@[\nabla^4 \psi - \Delta \sigma_{xx}^2@[ (MPa)"

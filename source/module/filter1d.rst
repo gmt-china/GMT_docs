@@ -9,7 +9,7 @@ filter1d
 
 **filter1d** 用于对多列时间序列数据做时间域滤波。用户需要指定哪一列数据代表时间（即
 自变量）。若输入的时间序列是等间隔且无间断或outliers则滤波速度较快。对于有
-间断的不等间隔数据，需要使用 **-L** **-Q** 或 **-S** 选项。
+间断的不等间隔数据，需要使用 |-L| **-Q** 或 |-S| 选项。
 
 对于空间序列数据，提供了一个选项用于计算沿着测线的距离，并以此作为滤波的自变量。
 
@@ -46,14 +46,14 @@ filter1d
     *type* 用于指定滤波器类型，
     *width* 指定滤波器宽度（单位与时间数据相同）。
 
-    对于卷积滤波器，\ *type* 可以取：
+    对于卷积滤波器，*type* 可以取：
 
     - **b** Boxcar: 所有权重相同
     - **c** Cosine Arch: 权重为cosine曲线
     - **g** Gaussian: 权重为高斯函数
     - **f** Custom: 不指定 *width* 而是给定一个含单列数据的文件，以指定权重系数
 
-    对于非卷积滤波器，\ *type* 可以取：
+    对于非卷积滤波器，*type* 可以取：
 
     - **m** Median: 返回中位数
     - **p** Maximum likelihood probability (a mode estimator): Return modal value.
@@ -80,7 +80,7 @@ filter1d
 .. _-D:
 
 **-D**\ *increment*
-    当输入的时间序列是不等间隔采样时，需要使用该选项设置输出数据的分辨率 *increment*\ 。
+    当输入的时间序列是不等间隔采样时，需要使用该选项设置输出数据的分辨率 *increment*。
     所有横坐标（时间）都会被rounded off到 *increment* 的整数倍。
     当然，也可以使用 :doc:`sample1d` 对时间序列做重采样。
 

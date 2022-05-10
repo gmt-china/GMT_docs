@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gmt begin velo_ex1 png,pdf
+gmt begin velo_ex1
 # 左边三个符号
 gmt velo -JM15c -R241/242/34/35 -B0.5 -BWeSn+tvelo \
         -Sw3c/1.e7 -W1p -G60 -E210 -D2 << EOF
@@ -18,4 +18,4 @@ gmt velo -Sw3c/1.e7 -W1p -D2 << EOF
 241.7 34.7  4.46E-09 3.07E-08
 EOF
 gmt coast -W1p -Di
-gmt end
+gmt end show

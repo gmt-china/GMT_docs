@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Showing map directional roses
-gmt begin basemap_ex3 pdf,png
+gmt begin basemap_ex3
 gmt set FONT_LABEL 10p FONT_TITLE 12p MAP_ANNOT_OBLIQUE 34 MAP_TITLE_OFFSET 5p \
 	MAP_FRAME_WIDTH 3p FORMAT_GEO_MAP dddF FONT_ANNOT_PRIMARY 10p
 gmt basemap -R-5/5/-5/5 -Jm0.15i -Ba5f -BWSne+t"-Tdg0/0+w1i+l" -Tdg0/0+w1i+l -X1i

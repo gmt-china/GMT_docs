@@ -24,4 +24,4 @@ gmt text -F+f << EOF
 8 4.0 20p,43,red   竖排文字
 EOF
 
-gmt end
+gmt end show

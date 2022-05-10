@@ -22,4 +22,4 @@ for cpt in $(ls ${GMT_SHAREDIR}/cpt/*.cpt); do
         echo 3 0 | gmt plot -St0.2c -Gwhite -Wfaint -D0/-0.2c -N
     fi
 done
-gmt end
+gmt end show

@@ -7,7 +7,7 @@ GSHHG: 全球高分辨率海岸线数据
 
    GSHHG: 全球高分辨率海岸线数据
 
-**GSHHG数据主页**\ ： http://www.soest.hawaii.edu/wessel/gshhg/
+**GSHHG数据主页**： http://www.soest.hawaii.edu/wessel/gshhg/
 
 GSHHG，全称为 A Global Self-consistent, Hierarchical, High-resolution Geography Database。
 GMT提供的GSHHG数据中包含了海岸线、河流和国界等数据。
@@ -33,7 +33,7 @@ GSHHG提供了五种不同分辨率的数据，以满足不同的需求。五种
 在绘制全球地图时，可以用 **-Dc** 指定使用最低分辨率的数据，以避免绘制了大量细节而导致
 绘图速度慢且文件太大；
 在绘制几度范围的小区域地图时，则可以使用 **-Df** 指定使用最高分辨率的数据。
-GMT现代模式下，默认使用 **-Da** 选项，\ **a** 表示 **a**\ uto，
+GMT现代模式下，默认使用 **-Da** 选项，**a** 表示 **a**\ uto，
 即GMT会根据当前绘图区域的大小自动选择合适的数据分辨率。
 
 下面的示例绘制了一个小区域的海岸线边界，可以看到 **-D** 取不同分辨率时边界
@@ -42,7 +42,7 @@ GMT现代模式下，默认使用 **-Da** 选项，\ **a** 表示 **a**\ uto，
 .. gmtplot::
     :show-code: false
 
-    gmt begin map png,pdf
+    gmt begin map
     gmt set MAP_TITLE_OFFSET -15p FONT_TITLE 15p,Courier-Bold
     gmt subplot begin 1x5 -Fs4c -JM4c -R-158.3/-157.6/21.2/21.8 -B+n -M0
     gmt coast -B+t"-Df" -W1p -Df -c
@@ -51,7 +51,7 @@ GMT现代模式下，默认使用 **-Da** 选项，\ **a** 表示 **a**\ uto，
     gmt coast -B+t"-Dl" -W1p -Dl -c
     gmt coast -B+t"-Dc" -W1p -Dc -c
     gmt subplot end
-    gmt end
+    gmt end show
 
 数据内容
 --------
@@ -94,7 +94,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - 10: Irrigation canals.
 
 :doc:`/module/coast` 模块的 **-I** 选项可以用于绘制不同等级的河流，其基本语法
-为 **-I**\ *level*/*pen*\ 。其中 *level* 除了可以取1至10之外，还可以取：
+为 **-I**\ *level*/*pen*。其中 *level* 除了可以取1至10之外，还可以取：
 
 - **a**: 所有河流和运河，即包含0-10等级的所有河流
 - **A**: 除了河流湖之外的所有河流和运河，即包含1-10等级的河流
@@ -115,7 +115,7 @@ GSHHG数据中包含了海岸线数据、河流数据和国界数据。
 - 3: 海洋边界
 
 :doc:`/module/coast` 模块的 **-N** 选项可以用于绘制不同等级的国界线，其基本
-语法为 **-N**\ *level*/*pen*\ 。其中 *level* 可以取1至3，也可以
+语法为 **-N**\ *level*/*pen*。其中 *level* 可以取1至3，也可以
 取 **a** \（表示所有边界）。该选项可以重复多次使用，
 为不同等级的国界设置不同的画笔属性。
 

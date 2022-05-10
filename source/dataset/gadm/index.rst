@@ -1,7 +1,7 @@
 GADM: 全球行政区划数据库
 ========================
 
-**GADM主页**\ ：https://gadm.org/
+**GADM主页**：https://gadm.org/
 
 GADM，全称Database of Global Administrative Areas，是一个高精度的全球行政区划
 数据库。其包含了全球所有国家和地区的国界、省界、市界、区界等多个级别的行政区划边界数据。
@@ -50,7 +50,7 @@ GDAL 的 :ref:`ogr2ogr <ogr2ogr>` 命令可以实现多种地理数据格式之�
 Geopackage转GMT
 ~~~~~~~~~~~~~~~
 
-以United States数据为例，解压得到文件 :file:`gadm36_USA.gpkg`\ 。使用如下命令查看文件的信息::
+以United States数据为例，解压得到文件 :file:`gadm36_USA.gpkg`。使用如下命令查看文件的信息::
 
     $ ogrinfo gadm36_USA.gpkg
     INFO: Open of `gadm36_USA.gpkg'
@@ -85,8 +85,8 @@ Shapefile转GMT
 数据分级
 --------
 
-提取得到的数据文件的文件名类似 :file:`gadm36_USA_0.gmt`\ ，其中 **USA** 为国家/地区
-代码，\ **0** 表示行政等级。
+提取得到的数据文件的文件名类似 :file:`gadm36_USA_0.gmt`，其中 **USA** 为国家/地区
+代码，**0** 表示行政等级。
 
 以美国数据为例，其数据包含了三个等级：
 
@@ -135,7 +135,7 @@ Shapefile转GMT
 ~~~~~~~~~~~~~~~~~~~~~~
 
 2 级数据中包含了美国所有的县级边界。此处以Alabama州为例，用上述方法在USA的2级数据文件
-中提取该州的州界和县界 :file:`Alabama.gmt`\ ，绘图效果如下：
+中提取该州的州界和县界 :file:`Alabama.gmt`，绘图效果如下：
 
 .. literalinclude:: gadm_level2.sh
 

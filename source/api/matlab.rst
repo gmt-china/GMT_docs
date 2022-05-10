@@ -112,7 +112,7 @@ GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或I
     gmt('grdimage -JX8c -Ba -P -C -G > crap_img.ps', G, cpt);
     gmt('destroy');
 
-上例中，\ ``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G``\ ，
+上例中，``grdimage`` 命令需要两个输入参数：颜色表 ``cpt`` 和格网数据 ``G``，
 两者先后顺序不可交换。强制性输入参数（本例中的 ``G`` ）要在所有可选参数
 （本例中的 ``cpt`` ）之前。若有多个选项参数，强制性输入参数写在最前，
 然后按顺序给出可选参数。
@@ -151,4 +151,4 @@ GMT/MATLAB 工具包用户请引用如下文章:
 - Wessel, P., and J. F. Luis
   The GMT/MATLAB Toolbox,
   *Geochem. Geophys. Geosyst.*, **18(2)**, 811-823, 2017.
-  `doi:10.1002/2016GC006723 <http://dx.doi.org/10.1002/2016GC006723>`_
+  `doi:10.1002/2016GC006723 <https://doi.org/10.1002/2016GC006723>`_

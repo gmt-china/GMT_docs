@@ -27,12 +27,12 @@
 
     **GMT_DATA_SERVER_LIMIT**
         从GMT服务器上下载的单个文件的大小上限，默认无限制。
-        可以给定文件大小上限的字节数，也可以加上 **k**\ 、\ **m**\ 或 **g** 表示
+        可以给定文件大小上限的字节数，也可以加上 **k**、**m**\ 或 **g** 表示
         KB、MB 或 GB。
 
     **GMT_DATA_UPDATE_INTERVAL**
         指定远程数据目录文件的更新频率，默认为1天 [1d]。
-        时间单位可以取 **d** （天)、\ **w** （周）或 **o**\ （月）。
+        时间单位可以取 **d** （天)、**w** （周）或 **o**\ （月）。
 
 算法选择相关参数
 ----------------
@@ -51,28 +51,28 @@
 
         可以取：
 
-        - **auto**\ ：自动选择合适的算法
-        - **fftw**\ [,\ *planner_flag*]\ ：FFTW算法，其中 *planner_flag* 可以取 **measure**\|\ **patient**\|\ **exhaustive**
+        - **auto**：自动选择合适的算法
+        - **fftw**\ [,\ *planner_flag*]：FFTW算法，其中 *planner_flag* 可以取 **measure**\|\ **patient**\|\ **exhaustive**
         - **accelerate** ：macOS下使用系统自带的Accelerate Framework（该算法要求采样点数必须为2的n次方）
-        - **kiss**\ ：kiss FFT
-        - **brenner**\ ：Brenner Legacy FFT
+        - **kiss**：kiss FFT
+        - **brenner**：Brenner Legacy FFT
 
     **GMT_INTERPOLANT**
         程序中一维插值所使用的算法 [**akima**]
 
-        - **linear**\ ：线性插值
-        - **akima**\ ：akima's spline
-        - **cubic**\ ：natural cubic spline
-        - **none**\ ：不插值
+        - **linear**：线性插值
+        - **akima**：akima's spline
+        - **cubic**：natural cubic spline
+        - **none**：不插值
 
     **GMT_EXTRAPOLATE_VAL**
         外插时超过数据区时如何处理 [NaN]
 
         可选值包括：
 
-        - **NaN**\ ：区域范围外的值一律为NaN
-        - **extrap**\ ： 使用外插算法计算的区域外的值
-        - **extrapval**\,\ *val*\ ：设置区域外的值为 *val*
+        - **NaN**：区域范围外的值一律为NaN
+        - **extrap**： 使用外插算法计算的区域外的值
+        - **extrapval**\,\ *val*：设置区域外的值为 *val*
 
 其它参数
 --------
@@ -82,8 +82,8 @@
     **GMT_EXPORT_TYPE**
         控制表数据的数据类型，仅被外部接口使用 [**double**]
 
-        可以取 **double**\ 、\ **single**\ 、\ **[u]long**\ 、\ **[u]int**\ 、
-        **[u]short**\ 、\ **[u]char**\ 。
+        可以取 **double**、**single**、**[u]long**、**[u]int**、
+        **[u]short**、**[u]char**。
 
     **GMT_CUSTOM_LIBS**
         要链接的自定义GMT库文件，默认值为空
@@ -95,7 +95,7 @@
         该参数用于指定自定义动态库函数的路径，多个路径之间用逗号分隔。
         路径可以是共享库文件的绝对路径，也可以是其所在的目录。若路径是一个目录名，
         该目录必须需斜杠或反斜杠结尾，表明使用该目录下的全部共享库文件。
-        在Windows下，若目录名是 **/**\ ，则表示在GMT的bin目录下的 **gmt_plugins**
+        在Windows下，若目录名是 **/**，则表示在GMT的bin目录下的 **gmt_plugins**
         子目录下寻找库文件。
 
     **GMT_LANGUAGE**
@@ -119,7 +119,7 @@
 
         若设置语言为 **cn1** 即简体中文并正确设置中文字体，则GMT在绘制时可以显式
         “一月”、“星期一”、“周一”等中文。相关示例见
-        :doc:`/chinese/showcase`\ 。
+        :doc:`/chinese/showcase`。
 
     **GMT_COMPATIBILITY**
         是否开启兼容模式 [4]

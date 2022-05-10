@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 地震随震中距与反方位角的分布图
+# 地震台站为中心的地震分布图
 #
 
 # 假定台站位于 105E，30N 处
@@ -9,7 +9,7 @@ stla=30
 # 使用 -JE 投影（四个参数: 中心经度/中心纬度/最大震中距/图片宽度）
 J=E$stlo/$stla/90/10c
 
-gmt begin map png,pdf
+gmt begin map
 gmt set FORMAT_GEO_MAP=+D
 gmt coast -J$J -Rg -A10000 -Ggrey
 

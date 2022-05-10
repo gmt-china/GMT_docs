@@ -1,13 +1,13 @@
-GMT 基础
+基础知识
 ########
 
-这一章介绍 GMT 所有模块的通用基础知识。
-推荐 GMT 常用用户通读本节所有内容，了解和掌握这些 GMT 基础。
+这一章介绍使用 GMT 所需要了解的通用基础知识。
+用户应通读本章所有内容，了解和掌握这些 GMT 基础。
 
 .. toctree::
    :maxdepth: 1
 
-   paper
+   canvas
    unit
    color
    pen

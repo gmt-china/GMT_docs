@@ -3,14 +3,14 @@ GMT 单行模式
 
 在之前的教程中，有很多示例都只需要一个 GMT 命令即可完成绘图。比如::
 
-    gmt begin GlobalMap png,pdf
+    gmt begin GlobalMap
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
     gmt end show
 
 在这种简单的情况下，每次都需要写 **gmt begin** 和 **gmt end** 未免有些麻烦。
 
 针对这种简单情况，GMT 提供了 “单行模式”。即当绘图只需要一个 GMT 命令时，
-可省略 **gmt begin** 和 **gmt end**\ ，只需要在绘图命令后加上
+可省略 **gmt begin** 和 **gmt end**，只需要在绘图命令后加上
 **-**\ *format* *figname* 即可。
 
 例如，上面的三行命令可以用单行模式写成一行命令::

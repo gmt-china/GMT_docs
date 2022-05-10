@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin embellishment pdf,png
+gmt begin embellishment
 gmt basemap -R0/1/0/1 -JX5i/2i -Ba1f0.5 -BwSnE+gbisque
 gmt plot -W1p -Glightgreen -L << EOF
 0.14	0.375
@@ -55,4 +55,4 @@ echo 0 0.75 0 1 | gmt plot -N -Sv0.2i+bt+et+s -W1p -D-0.2i/0
 echo 0 1 0.14 1 | gmt plot -N -Sv0.2i+bt+et+s -W1p -D0/0.2i
 echo 0.07 1 dx  | gmt text -N -F+f12p,Times-Italic+jCM -Gwhite -D0/0.2i
 echo 0 0.875 dy | gmt text -N -F+f12p,Times-Italic+jCM -Gwhite -D-0.2i/0
-gmt end
+gmt end show

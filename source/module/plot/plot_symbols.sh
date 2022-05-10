@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin plot_symbols pdf,png
+gmt begin plot_symbols
 gmt plot -JX20c/2c -R0.5/13.5/0/4 -B1 -BS -S0.5c << EOF
 1 3 -
 2 3 +
@@ -30,4 +30,4 @@ gmt text -F+f15p,9 << EOF
 12 1 -Sx
 13 1 -Sy
 EOF
-gmt end
+gmt end show

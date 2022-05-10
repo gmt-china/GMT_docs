@@ -17,7 +17,7 @@ GMT 中使用 :doc:`/module/legend` 模块添加图例。
 .. gmtplot::
     :width: 50%
 
-    gmt begin auto-legend png,pdf
+    gmt begin auto-legend
     gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt plot -W1p,blue -l"Profile" << EOF
     3 3
@@ -46,7 +46,7 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
 .. gmtplot::
     :width: 50%
 
-    gmt begin auto-legend png,pdf
+    gmt begin auto-legend
     gmt basemap -R0/10/0/10 -JX10c -Baf
     gmt plot -W1p,blue -l"Profile" << EOF
     3 3
@@ -75,7 +75,7 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
 如果对于自动生成的图例不满意，还可以使用 :doc:`/module/legend` 模块绘制更复杂的图例，
 其输入文件有自己的一套规则，详情见 :doc:`/module/legend` 模块的说明文档。
 这节只介绍最简单也最常用的图例，即符号和线条的图例。
-针对绘制符号和线条，\ :doc:`/module/legend` 的输入格式为：
+针对绘制符号和线条，:doc:`/module/legend` 的输入格式为：
 
     **S** *dx1* *symbol* *size* *fill* *pen* *dx2* *text*
 
@@ -93,7 +93,7 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
 .. gmtplot::
     :width: 70%
 
-	gmt begin map png,pdf
+	gmt begin map
 	gmt basemap -R0/10/0/8 -JX10c/8c -Baf -BWSen
 	cat > legend.txt << EOF
 	# symbols

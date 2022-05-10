@@ -1,4 +1,5 @@
 .. index:: ! rose
+.. include:: common_SYN_OPTs.rst_
 
 rose
 ====
@@ -24,7 +25,7 @@ rose
 
     - 默认扇页宽度为0，即windrose图
     - 若扇页宽度不为0，则表示绘制sector图
-    - 若扇页宽度不为0且使用了 **-Ar**\ ，则表示绘制rose图
+    - 若扇页宽度不为0且使用了 **-Ar**，则表示绘制rose图
 
 **-B**
     此模块中，X表示径向距离，Y表示方位角。Y轴的标签是图片的标题，比例尺长度由
@@ -39,7 +40,7 @@ rose
         mean_az, mean_r, mean_resultant, max_r, scaled_mean_r, length_sum, n, sign@alpha
 
     其中最后一项可以取0或1，取决于平均结果是否significant at the level of
-    confidence set via **-Q**.
+    confidence set via |-Q|.
 
 **-D**
     对扇页对偏移，使得其位于每个间隔的中间，即第一个扇页的中心在0度处

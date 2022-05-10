@@ -1,4 +1,4 @@
-gmt begin B-axes png,pdf
+gmt begin B-axes
 gmt set FONT_TITLE 20p MAP_FRAME_PEN 3p
 gmt basemap -R0/4/0/4 -JX8c -BWSEN+t"2D Basemap"
 gmt text -F+f15p,9 -Glightblue@30 -N << EOF
@@ -20,4 +20,4 @@ gmt text -F+f15p,9 -JZ -Glightblue@30 -Z -N -p << EOF
 0 4 2 4
 0 2 4 +b
 EOF
-gmt end
+gmt end show
