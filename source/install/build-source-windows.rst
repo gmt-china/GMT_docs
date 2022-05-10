@@ -26,7 +26,6 @@ GMT 的编译及运行依赖于其他库文件，包括：
 - `GDAL <https://www.gdal.org/>`__\ ：读写多种格式的地理空间数据 [**推荐**]
 - `PCRE <https://www.pcre.org/>`__\ ：正则表达式支持 [**可选**]
 - `FFTW <http://www.fftw.org/>`__\ ：快速傅里叶变换库（>=3.3）[**可选**]
-- `GLib <https://developer.gnome.org/glib/>`__\ ：GTHREAD 多线程支持（>=2.32）[**可选**]
 - LAPACK：快速矩阵反演库（macOS 下不需要）[**可选**]
 - BLAS：快速矩阵运算库（macOS 下不需要）[**可选**]
 
@@ -39,9 +38,6 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
     $ git clone https://github.com/microsoft/vcpkg
     $ cd C:\vcpkg
     $ .\bootstrap-vcpkg.bat
-
-安装完成后，还需要将 vcpkg 的 bin 目录 ``C:\vcpkg\installed\x64-windows\bin``
-添加到环境变量 **PATH** 中。然后即可使用 vcpkg 安装 GMT 依赖的库文件。
 
 .. note::
 
@@ -65,9 +61,9 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 
 编译 GMT 需要下载如下三个文件：
 
-#. GMT 6.2.0 源码：`gmt-6.2.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.2.0-src.tar.gz>`_
-#. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
-#. 全球数字图表 DCW：`dcw-gmt-2.0.0.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.0.0/dcw-gmt-2.0.0.tar.gz>`_
+#. GMT 6.3.0 源码：`gmt-6.3.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.gz>`__
+#. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`__
+#. 全球数字图表 DCW：`dcw-gmt-2.1.0.tar.gz <https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.1.0.tar.gz>`__
 
 .. note::
 
@@ -83,28 +79,25 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 将下载的三个压缩文件放在同一个目录里。打开 Git Bash，并按照如下步骤进行安装::
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-6.2.0-src.tar.gz
+   $ tar -xvf gmt-6.3.0-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-2.0.0.tar.gz
+   $ tar -xvf dcw-gmt-2.1.0.tar.gz
 
    # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.2.0/share/gshhg-gmt
-   $ mv dcw-gmt-2.0.0 gmt-6.2.0/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.3.0/share/gshhg-gmt
+   $ mv dcw-gmt-2.1.0 gmt-6.3.0/share/dcw-gmt
 
    # 切换到 gmt 源码目录下
-   $ cd gmt-6.2.0
+   $ cd gmt-6.3.0
 
 打开 :file:`cmake` 目录，在其中创建文件 :file:`cmake/ConfigUser.cmake`\ ，
 并向文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "C:/programs/gmt6")
-    set (GMT_USE_THREADS TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
   :file:`C:/programs/gmt6` 目录下。用户也可以自行修改为其他路径，但路径中不可以
   有空格
-- **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
-  也可以不设置
 
 .. tip::
 
@@ -119,8 +112,8 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 .. note::
 
     以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
-    解压出来的 :file:`gmt-6.2.0` 目录下。
-    不是 :file:`gmt-6.2.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.2.0`\ 。
+    解压出来的 :file:`gmt-6.3.0` 目录下。
+    不是 :file:`gmt-6.3.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.3.0`\ 。
 
 ::
 
@@ -138,11 +131,11 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 继续执行 ``cmake ..``\ ，直到出现类似的检查结果::
 
     *
-    *  GMT Version:               : 6.2.0
+    *  GMT Version:               : 6.3.0
     *
     *  Options:
     *  Found GSHHG database       : D:/a/gmt/gmt/coastline/gshhg (2.3.7)
-    *  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.0.0)
+    *  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.1.0)
     *  Found GMT data server      : oceania
     *  NetCDF library             : C:/vcpkg/installed/x64-windows/lib/netcdf.lib
     *  NetCDF include dir         : C:/vcpkg/installed/x64-windows/include
@@ -204,7 +197,7 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 启动 CMD，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
     $ gmt --version
-    6.2.0
+    6.3.0
 
 升级/卸载 GMT
 -------------
