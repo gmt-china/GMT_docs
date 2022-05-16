@@ -1,4 +1,6 @@
 gmt begin map pdf,png
+REM GMT 6.3 中含中文的脚本在最开头必须设置 chcp 936
+chcp 936
 REM GMT在Windows下处理中文存在一些已知BUG
 REM 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
 gmt set PS_CHAR_ENCODING Standard+
