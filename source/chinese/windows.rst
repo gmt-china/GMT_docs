@@ -120,6 +120,10 @@ GMT 中文测试
         gmt set PS_CHAR_ENCODING Standard+
 
     可临时避免这一BUG。
+    
+    此外，GMT 6.3 每一行含中文的命令前都必须加一句 ``chcp 936`` ，否则将出现乱码::
+    
+        chcp 936
 
 成图效果如下：
 
