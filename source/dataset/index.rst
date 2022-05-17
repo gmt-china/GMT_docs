@@ -60,4 +60,4 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
 :ref:`ogr2ogr` 或 :ref:`gdal_translate` 命令转换为 GMT 可识别的数据格式。
 下面列出一些地学数据的链接：
 
-- `Geologic maps of US states <https://mrdata.usgs.gov/geology/state/>`__
+- `Geologic maps of US states <https://mrdata.usgs.gov/geology/state/>`__: 美国地质图
