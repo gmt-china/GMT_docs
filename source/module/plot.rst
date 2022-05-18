@@ -389,10 +389,9 @@ plot
         :width: 50%
         :align: center
         :alt: GMT 内置自定义符号
-
-    这些自定义符号可能仍然无法满足广大 GMT 用户的需求，
-    因而社区维护了一套常用的但还没有被 GMT 官方内置的自定义符号。
-    详细使用方法见\ `绘制 GMT 社区自定义符号`_。
+        
+    如果这些内置自定义符号无法满足需求，用户可以自行制作自定义符号文件并使用。
+    详细使用方法见\ `制作和使用自定义符号`_。
 
 ``-Sl<size>+t<string>+j<justify>``
     绘制文本字符串
@@ -561,11 +560,12 @@ plot
 
 .. _gmt-custom-symbols:
 
-绘制 GMT 社区自定义符号
-------------------------
+制作和使用自定义符号
+--------------------
 
-社区维护了一套 `GMT 自定义符号 <https://github.com/gmt-china/GMT_custom_symbols>`__，
-会持续更新一些常用的但还没有被 GMT 官方内置的自定义符号。
+如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据 
+`GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html>`__
+的格式要求自行制作自定义符号文件。
 
 使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 :file:`name.def`：
 
@@ -573,14 +573,9 @@ plot
 #. :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
 #. :file:`$GMT_SHAREDIR/custom` 目录
 
-将下载的社区自定义符号复制到以上任一路径，即可使用这些自定义符号。
+用户可以将自己制作的自定义符号复制到以上任一路径即可正常使用。
 建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows 用户）下。
-
-绘制自定义符号示例脚本如下：
-
-.. gmtplot:: plot/gmt_custom_symbols_2.sh
-    :width: 70%
 
 多段数据
 --------
