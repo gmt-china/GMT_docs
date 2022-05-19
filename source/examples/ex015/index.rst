@@ -17,8 +17,8 @@
 
 **数据下载：**
 
-- [gps_campagin.txt](/example/ex015/gps_campagin.txt): Velocities of campagin stations with respective to EURASIA plate from 1999-2014
-- [gps_continuous.txt](/example/ex015/gps_continuous.txt): Velocities of continuous stations with respective to EURASIA plate from 1999-2014
+- :download:`gps_campagin.txt`: Velocities of campagin stations with respective to EURASIA plate from 1999-2014
+- :download:`gps_continuous.txt`: Velocities of continuous stations with respective to EURASIA plate from 1999-2014
 
 .. gmtplot:: ex015.sh
    :width: 50%
