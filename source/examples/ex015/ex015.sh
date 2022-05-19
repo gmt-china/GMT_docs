@@ -20,8 +20,8 @@ gmt plot CN-border-L1.gmt -W1p,-
 # -W控制矢量线及误差椭圆的轮廓的宽度,颜色,线型
 # -G矢量头的填充色
 # -A控制矢量的属性，0.15c是矢量头的大小，+e表示在矢量尾端绘制箭头，+p0.75p,blue设置矢量箭头轮廓的属性
-awk '{print $1,$2,$3,$4,$5,$6,0}' gps_campagin.txt | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,blue -Gblue -W0.5p,blue
-awk '{print $1,$2,$3,$4,$5,$6,0}' gps_continuous.txt | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,red -Gred -W0.5p,red
+gawk '{print $1,$2,$3,$4,$5,$6,0}' gps_campagin.txt | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,blue -Gblue -W0.5p,blue
+gawk '{print $1,$2,$3,$4,$5,$6,0}' gps_continuous.txt | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,red -Gred -W0.5p,red
 
 # 添加图例
 # 此处在底图右下角，设置了一个宽 3.5c 高 2c 的底图
