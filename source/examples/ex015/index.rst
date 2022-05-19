@@ -9,7 +9,7 @@
 
 本示例展示如何使用 :doc:`/module/velo` 模块绘制 GPS 速度场。
 
-示例中所使用的 GPS 数据来自于 [Zhao et al., Geod. Geodyn., 2015](https://doi.org/10.1016/j.geog.2014.12.006)
+示例中所使用的 GPS 数据来自于 `Zhao et al., Geod. Geodyn., 2015 <https://doi.org/10.1016/j.geog.2014.12.006>`__
 的补充材料。
 
 本示例仅用于演示，不保证数据的完整性与可靠性。需要使用相关数据的用户请自行
