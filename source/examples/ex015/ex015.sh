@@ -27,16 +27,16 @@ gawk '{print $1,$2,$3,$4,$5,$6,0}' gps_continuous.txt | gmt velo -Se0.05c/0.95+f
 # 此处在底图右下角，设置了一个宽 3.5c 高 2c 的底图
 # 底图范围为 0/1/0/1，矢量箭头和文字的位置需对应该小图中的位置
 gmt inset begin -DjBR -F+gwhite -R0/1/0/1 -JX3.5c/2c
-	echo 0.05 0.75 '20\2611 mm/yr' | gmt text -F+f7p+jML
-	echo 0.05 0.50 20 0 1 1 0 | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,blue -Gblue -W0.5p,blue
-	echo 0.05 0.25 20 0 1 1 0 | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,red -Gred -W0.5p,red
-	gmt text -F+f6p+jML -M <<- EOF
-	> 0.4 0.50 0.25 2c c
-	Continuous Station
-	1998-2014
-	> 0.4 0.25 0.25 2c c
-	Campaign Stations
-	2009-2014
-	EOF
+    echo 0.05 0.75 '20\2611 mm/yr' | gmt text -F+f7p+jML
+    echo 0.05 0.50 20 0 1 1 0 | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,blue -Gblue -W0.5p,blue
+    echo 0.05 0.25 20 0 1 1 0 | gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,red -Gred -W0.5p,red
+    gmt text -F+f6p+jML -M <<- EOF
+    > 0.4 0.50 0.25 2c c
+    Continuous Station
+    1998-2014
+    > 0.4 0.25 0.25 2c c
+    Campaign Stations
+    2009-2014
+    EOF
 gmt inset end
 gmt end show
