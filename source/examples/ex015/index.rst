@@ -21,5 +21,5 @@
 - :download:`gps_continuous.txt`: Velocities of continuous stations with respective to EURASIA plate from 1999-2014
 
 .. gmtplot:: ex015.sh
-   :width: 50%
+   :width: 80%
    :show-code: true
