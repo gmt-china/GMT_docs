@@ -39,6 +39,5 @@ Continuous Station
 Campaign Stations
 2009-2014
 EOF
-
 gmt inset end
 gmt end show
