@@ -13,8 +13,8 @@ talwani2d
 
 **talwani2d** 读取一个多段表文件（或标准输入）。该文件包含一个或多个二维实体
 的横截面，横截面为多边形。每段的头部信息中必须包含密度参数：*density*，为该
-实体的密度（单个实体的密度可以被 **-D** 选项设置的密度常数覆盖）。GMT 可通过
-设置 **-T** 计算位于某等距格网的异常，或者使用 **-N** 计算点上的异常值。
+实体的密度（单个实体的密度可以被 |-D| 选项设置的密度常数覆盖）。GMT 可通过
+设置 |-T| 计算位于某等距格网的异常，或者使用 |-N| 计算点上的异常值。
 计算的异常可包括，自由空气重力异常，垂直重力梯度异常或者大地水准面异常。同时
 可以使用选项控制轴的单位和方向。
 
@@ -44,7 +44,7 @@ talwani2d
 *table*
     一个或者多个 ASCII 文件，用来描述一个或者多个实体的横截面多边形。如果
     多边形没有闭合，GMT 讲自动闭合并删除重复的多边形顶点。每段的头部信息中
-    必须包含密度参数，单位为 kg/m^3 或 g/cm^3，见 **-D** 选项。如果不指定
+    必须包含密度参数，单位为 kg/m^3 或 g/cm^3，见 |-D| 选项。如果不指定
     文件，就从标准输入中读取数据。
 
 可选选项
@@ -88,7 +88,7 @@ talwani2d
 .. _-T:
 
 **-T**\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list*
-    指定一个等距的网格，在该网格计算异常值。见 生成一维数组 xxx
+    指定一个等距的网格，在该网格计算异常值。见 `生成一维数组`_
 
 .. include:: explain_-V.rst_
 
@@ -140,8 +140,11 @@ talwani2d
 注意事项
 --------
 
-2—D 实体的大地水准面异常是对数规律变化的，因此没有自然参考面。GMT 中将
-xxx
+The 2-D geoid anomaly is a logarithmic potential and thus has no natural reference
+level. We simply remove the most negative (if density contrast is positive) or 
+positive (if density contrast is negative) computed value from all values, rendering
+the entire anomaly positive (or negative). You can use :doc:`gmtmath` to change the
+zero level to suit your needs
 
 参考文献
 --------
@@ -154,7 +157,7 @@ Chapman, M. E., 1979, Techniques for interpretation of geoid anomalies,
 
 Kim, S.-S., and P. Wessel, 2016, New analytic solutions for modeling vertical
 gravity gradient anomalies, *Geochem. Geophys. Geosyst., 17*,
-`http://dx.doi.org/10.1002/2016GC006263 <http://dx.doi.org/10.1002/2016GC006263>`_.
+`http://doi.org/10.1002/2016GC006263 <http://doi.org/10.1002/2016GC006263>`_.
 
 Talwani, M., J. L. Worzel, and M. Landisman, 1959, Rapid gravity computations for
 two-dimensional bodies with application to the Mendocino submarine fracture zone,
