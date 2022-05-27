@@ -3,8 +3,6 @@
 
 :贡献者: SeisPider
 
----
-
 使用 :doc:`/module/grdvector` 模块绘制矢量场，需要提供矢量场的 X 分量和 Y 分量。
 
 本文所使用的示例数据，包含四列信息：
@@ -17,3 +15,4 @@
 示例数据下载 :download:`velocity.dat`
 
 .. gmtplot:: ex017.sh
+   :width: 75%
