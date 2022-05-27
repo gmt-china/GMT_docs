@@ -5,16 +5,15 @@
 
 ---
 
-本文介绍如何使用 :doc:`/module/grdvector` 模块绘制矢量场。
+使用 :doc:`/module/grdvector` 模块绘制矢量场，需要提供矢量场的 X 分量和 Y 分量。
 
-[速度矢量](/example/ex017/velo.gmt) |
-[板块位置](/example/ex017/slab.gmt) |
-[应力张量](/example/ex017/stresstensor.gmt)
+本文所使用的示例数据，包含四列信息：
 
-Bash 绘图脚本如下:
+    X位置   Y位置    矢量X分量   矢量Y分量
 
-{{< gmt-code "subslab" >}}
+示例中使用 :doc:`/module/xyz2grd` 模块分别生成矢量X分量和矢量Y分量的网格文件，
+再使用 :doc:`/module/grdvector` 模块进行绘制，最后生成图例。
 
-绘图效果如下:
+示例数据下载 :download:`velocity.dat`
 
-{{< figure src="/example/ex017/subslab.png" title="矢量绘制示例" width="800px">}}
+.. gmtplot:: ex017.sh
