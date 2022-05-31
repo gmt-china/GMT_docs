@@ -114,6 +114,7 @@
     - :doc:`grdgravmag3d`
     - :doc:`grdredpol`
     - :doc:`grdseamount`
+    - :doc:`gravprisms`
     - :doc:`talwani2d`
     - :doc:`talwani3d`
 
@@ -337,15 +338,16 @@
 :doc:`gmt:supplements/spotter/grdspotter`        Create CVA image from a gravity or topography grid
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
 **POTENTIAL 相关模块**                           .. _module_potential:
-:doc:`gmt:supplements/potential/gmtflexure`      Compute flexural deformation of 2-D loads, forces and bending moments
-:doc:`gmt:supplements/potential/grdflexure`      Compute flexural deformation of 3-D surfaces for various rheologies
-:doc:`gmt:supplements/potential/gmtgravmag3d`    Compute the gravity/magnetic anomaly of a 3-D body
-:doc:`gmt:supplements/potential/grdgravmag3d`    Computes the gravity effect of one (or two) grids
-:doc:`gmt:supplements/potential/gravfft`         Compute gravitational attraction of 3-D surfaces and a little more
-:doc:`gmt:supplements/potential/grdredpol`       Compute the Continuous Reduction To the Pole, AKA differential RTP
-:doc:`gmt:supplements/potential/grdseamount`     Compute synthetic seamount bathymetry
-:doc:`gmt:supplements/potential/talwani2d`       Compute geopotential anomalies over 2-D bodies
-:doc:`gmt:supplements/potential/talwani3d`       Compute geopotential anomalies over 3-D bodies
+:doc:`gmtflexure`                                计算 2-D 载荷产生的力，弯矩以及形变
+:doc:`grdflexure`                                计算 3-D 载荷在不同流变基础下产生的形变
+:doc:`gmtgravmag3d`                              计算 3-D 实体产生的重力/磁异常
+:doc:`grdgravmag3d`                              计算一个或者两个网格的重力/磁异常
+:doc:`gravfft`                                   网格重力的谱计算，均衡，导纳，以及相干性计算
+:doc:`grdredpol`                                 Compute the Continuous Reduction To the Pole, AKA differential RTP
+:doc:`grdseamount`                               创建合成海山
+:doc:`gravprisms`                                计算三维垂直棱柱（可变密度海山）产生的位异常
+:doc:`talwani2d`                                 计算 2-D 实体产生的位异常
+:doc:`talwani3d`                                 计算 3-D 实体产生的位异常
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
@@ -471,6 +473,7 @@
    grdgravmag3d
    grdredpol
    grdseamount
+   gravprisms
    talwani2d
    talwani3d
 
