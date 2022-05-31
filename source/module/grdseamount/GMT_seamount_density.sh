@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Show the seamount density model offered in grdseamount
-gmt begin GMT_seamount_density png,pdf
+gmt begin GMT_seamount_density
 	echo 0 0 50 6000 | gmt grdseamount -H6000/2500/3000+p1+d0 -Kmodel.grd -Cc -F0.2
 	gmt makecpt -Cbilbao -T2500/3000 --COLOR_NAN=white
 	# Plot density reference model above

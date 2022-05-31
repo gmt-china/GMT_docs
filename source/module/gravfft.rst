@@ -46,7 +46,8 @@ gravfft
 
 *ingrid*\ [=\ *ID*\|\ ?\ *varname*][**+b**\ *band*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*][**+s**\ *scale*]
-    输入网格名
+    
+输入网格名
 
 .. _-G:
 
