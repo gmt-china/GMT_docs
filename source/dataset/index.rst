@@ -39,7 +39,7 @@ GMT 远程数据是指保存在 GMT 数据服务器的数据。使用某个远�
    earth-age
    earth-images
    earth-mask
-   earth_geoid
+   earth-geoid
 
 自定义数据
 ----------
