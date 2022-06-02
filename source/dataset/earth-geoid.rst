@@ -5,12 +5,13 @@ earth_geoid: EGM2008 全球大地水准面模型
    :show-code: false
    :width: 75%
 
-   gmt grdimage @earth_geoid_20m -png,pdf earth_geoid
+   gmt grdimage @earth_geoid_20m_p -png,pdf earth_geoid
 
 数据简介
 --------
 
-**earth_geoid** 是 GMT 所提供的 EGM2008 [Pavlis et al., 2012] 大地水准面模型
+**earth_geoid** 是 GMT 所提供的 EGM2008 [Pavlis et al., 2012] 大地水准面模型。
+数据单位为米。
 
 下表列出了 **earth_geoid** 数据的代码、配准方式、分辨率以及文件大小。
 
@@ -39,7 +40,7 @@ earth_geoid: EGM2008 全球大地水准面模型
 当需要使用大地水准面数据时，可以直接通过 **@earth_geoid_**\ *rru*\[_\ *reg*] 的形式调用这些
 大地水准面数据，其中 *rru* 是网格文件的分辨率代码（上表第一列），*reg* 是要使用的
 配准方式代码（上表第二列）。配准方式代码是可选的，若不指定，则默认返回像素配准的
-网格数据（若不存在，则返回网格线配准的数据）
+网格数据（若不存在，则返回网格线配准的数据）。如果未指定 CPT 文件，则默认调用 *turbo* 进行绘图。
 
 数据来源及引用
 --------------
