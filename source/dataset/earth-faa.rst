@@ -10,7 +10,7 @@ earth_faa: IGPP 全球自由空气异常数据
 数据简介
 --------
 
-**earth_faa** 是 GMT 所提供的全球自由空气异常数据。其中海洋区域的数据来自于 
+**earth_faa** 是 GMT 提供的全球自由空气异常数据。其中海洋区域的数据来自于 
 `David Sandwell 等 <https://topex.ucsd.edu/marine_grav/mar_grav.html>`_
 ，陆地区域的数据来自于 EGM2008 模型 [Pavlis et al., 2012]。
 ±80˚ 以外的极地区域没有数据覆盖，以 NaN 填充。数据单位为 mGal。
