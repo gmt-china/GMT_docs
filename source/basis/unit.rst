@@ -45,9 +45,9 @@ GMT 有两种方式可以指定长度量的单位，即显式指定单位和隐�
 
 对于真实地球上的距离量而言，常用单位包括：
 
-- **d**：弧度（**d**\ egree of arc）
-- **m**：弧分（**m**\ inute of arc）
-- **s**：弧秒（**s**\ econd of arc）
+- **d**：度（**d**\ egree of arc）
+- **m**：分（**m**\ inute of arc）
+- **s**：秒（**s**\ econd of arc）
 - **k**：千米（**k**\ ilometer）
 - **e**：米（m\ **e**\ ter） ** 默认单位 **
 

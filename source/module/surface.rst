@@ -107,7 +107,7 @@ surface
 示例
 --------
 
-将ASCII数据 hawaii_5x5.xyg 网格化为5弧分，设置 *tension_factor* = 0.25 :
+将ASCII数据 hawaii_5x5.xyg 网格化为5分，设置 *tension_factor* = 0.25 :
 
    ::
 

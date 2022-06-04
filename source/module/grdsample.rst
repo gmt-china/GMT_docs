@@ -93,7 +93,7 @@ grdsample
 示例
 ----
 
-将5x5弧分的数据采样成1x1弧分::
+将5x5分的数据采样成1x1分::
 
     gmt grdsample @earth_relief_05m -R0/20/0/20 -I1m -Gtopo_1m.nc
 
