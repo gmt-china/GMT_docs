@@ -166,7 +166,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 .. gmtplot:: B/B_afg.sh
     :width: 60%
     :show-code: false
-    
+
     GMT 坐标轴中的标注、刻度和网格线
 
 *interval* 用于设置这三个属性的间隔，它是一个或多个 [**a**\|\ **f**\|\ **g**]\ *stride*\ [*phase*][*unit*]
@@ -221,8 +221,8 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 图中轴和边框属性设置为 ``-Ba1f15mg5m -BS``
 
-下图同时使用了 **p** 和 **s** 两级属性。这里 **p** 属性用于显示弧度，**s**
-属性用于显示弧分。
+下图同时使用了 **p** 和 **s** 两级属性。这里 **p** 属性用于显示度，**s**
+属性用于显示分。
 
 .. gmtplot:: B/B_geo_2.sh
     :show-code: false
@@ -248,7 +248,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :show-code: false
     :width: 60%
 
-    笛卡尔线性轴 
+    笛卡尔线性轴
 
 上图对应的选项设置为 ``-R0/12/0/0.95 -JX3i/0.3i -Ba4f2g1+lFrequency+u" %" -BS``
 
@@ -259,7 +259,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :show-code: true
     :width: 60%
     :caption: 笛卡尔线性轴的倾斜标注
-    
+
     gmt basemap -R2000/2020/35/45 -JX12c -Bxa2f+a-30 -BS -png GMT_-B_slanted
 
 笛卡尔 log\ :sub:`10`\ 轴
@@ -363,7 +363,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 .. note::
 
     - 时间轴的标注（月、周以及天的名字）可能会同时受 :term:`GMT_LANGUAGE`，:term:`FORMAT_TIME_PRIMARY_MAP`
-      以及 :term:`FORMAT_TIME_SECONDARY_MAP` 参数的影响。 
+      以及 :term:`FORMAT_TIME_SECONDARY_MAP` 参数的影响。
 
 第一个例子展示了 2000 年春天的两个月，将这两个月的每周的第一天的日期标注出来：
 
@@ -461,13 +461,13 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 其格式为 [*s*]\ **pi**\ [*f*]，其中 s 表示标注间隔是 :math:`\pi` 的 s 倍，
 而 f 表示标注间隔为 :math:`\pi` 的 f 分之一。
 
-.. gmtplot:: 
+.. gmtplot::
     :show-code: true
     :width: 60%
 
     gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -BS -png test1
 
-.. gmtplot:: 
+.. gmtplot::
     :show-code: true
     :width: 60%
 

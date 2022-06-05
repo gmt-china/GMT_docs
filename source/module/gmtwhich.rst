@@ -77,7 +77,7 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
 
     gmt which myjunk.txt
 
-下载并返回GMT提供的10弧分精度的全球地形起伏数据::
+下载并返回GMT提供的10分精度的全球地形起伏数据::
 
     gmt which -Ga @earth_relief_10m
 
