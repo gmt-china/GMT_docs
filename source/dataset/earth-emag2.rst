@@ -1,4 +1,4 @@
-earth_mag: EMAG2 全球磁异常模型
+earth_mag 和 earth_mag4km: EMAG2 全球磁异常模型
 =======================================
 
 .. gmtplot::
