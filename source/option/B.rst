@@ -60,7 +60,7 @@
 
 *axes* 用于控制要绘制哪些边以及这些边是否有刻度或标注。*axes* 的格式为::
 
-    WSENZ[1234]wesez[1234]lrbtu
+    WSENZ[1234]wsenz[1234]lrbtu
 
 .. gmtplot:: B/axes.sh
     :show-code: false
