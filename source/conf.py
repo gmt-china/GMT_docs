@@ -97,7 +97,7 @@ if not os.getenv("CI"):  # build locally
     siteurl_for_gallery = ""
 else  # Using CI
     if os.getenv("GITHUB_REF_NAME") != "master":  # not in master branch. Preview mode.
-        siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv("GITHUB_REF_NAME")}"
+        siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv('GITHUB_REF_NAME')}"
 
 html_context = {
     "favicon": "favicon.ico",
