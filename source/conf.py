@@ -91,6 +91,14 @@ html_last_updated_fmt = "%Y 年 %m 月 %d 日"
 html_search_language = "zh"
 html_title = project
 
+# set site url of the image gallery for different use cases
+siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+if not os.getenv("CI"):  # build locally
+    siteurl_for_gallery = ""
+else  # Using CI
+    if os.getenv("GITHUB_REF_NAME") != "master":  # not in master branch. Preview mode.
+        siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv("GITHUB_REF_NAME")}"
+
 html_context = {
     "favicon": "favicon.ico",
     "display_github": True,
@@ -101,7 +109,7 @@ html_context = {
     "theme_vcs_pageview_mode": "blob",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     # Passed to sphinxcontrib.datatemplates
-    "siteurl": f"https://docs.gmt-china.org/{version}",
+    "siteurl": siteurl_for_gallery,
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 
