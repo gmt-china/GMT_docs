@@ -87,7 +87,7 @@ DCW 数据时只绘制中国区域以外的部分。具体示例脚本如下：
 
 .. gmtplot::
     :show-code: true
-    :width: 75%
+    :width: 90%
 
     gmt begin CN-border-neighbouring-countries
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
