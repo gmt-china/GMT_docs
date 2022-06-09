@@ -343,7 +343,7 @@
 :doc:`gmtgravmag3d`                              计算 3-D 实体产生的重力/磁异常
 :doc:`grdgravmag3d`                              计算一个或者两个网格的重力/磁异常
 :doc:`gravfft`                                   网格重力的谱计算，均衡，导纳，以及相干性计算
-:doc:`grdredpol`                                 Compute the Continuous Reduction To the Pole, AKA differential RTP
+:doc:`grdredpol`                                 计算连续化极（Reduction To the Pole, RTP）
 :doc:`grdseamount`                               创建合成海山
 :doc:`gravprisms`                                计算三维垂直棱柱（可变密度海山）产生的位异常
 :doc:`talwani2d`                                 计算 2-D 实体产生的位异常
