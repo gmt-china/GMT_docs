@@ -7,11 +7,19 @@
 .. cssclass:: gmtgallery
 
 {% for fig in group['gallery'] %}
+{% if fig["image"].startswith("http") %}  {# absolute URL for external images #}
+-  .. figure:: {{ fig["image"] }}
+      :align: center
+      :target: {{ config.html_context["siteurl"] }}/{{ fig["target"] }}
+
+      `{{ fig["title"] }} <{{ config.html_context["siteurl"] }}/{{ fig["target"] }}>`__
+{% else %}  {# internal images #}
 -  .. figure:: {{ config.html_context["siteurl"] }}/_images/{{ fig["image"] }}.png
       :align: center
       :target: {{ config.html_context["siteurl"] }}/{{ fig["target"] }}#gmtplot-{{ fig["image"] }}
 
       `{{ fig["title"] }} <{{ config.html_context["siteurl"] }}/{{ fig["target"] }}>`__
+{% endif %}
 
 {% endfor %}
 {% endfor %}
