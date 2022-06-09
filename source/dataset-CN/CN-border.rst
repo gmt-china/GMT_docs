@@ -76,9 +76,9 @@ CN-border 数据提供了三个数据文件：
 
 
 绘制中国及临国国界
------------------
+------------------
 
-中国国界数据 `CN-border-La.gmt` 和 `CN-border-L1.gmt` 只提供了中国的国界和省界信息。
+中国国界数据 :file:`CN-border-La.gmt` 和 :file:`CN-border-L1.gmt` 只提供了中国的国界和省界信息。
 若需要同时绘制中国以及邻国国界，则由于 CN-border 数据与 GMT 内置的 DCW 数据中国界不一致
 而出现问题。
 
