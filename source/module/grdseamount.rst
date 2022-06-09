@@ -359,7 +359,7 @@ grdseamount
 使其在两个扇形位置从 0 开始，然后在滑坡的扇形区域变速变化，较大的 p 值对应快速
 增大，较小的 p 对应快速变小。该参数可以使滑坡扇形时更加平滑。
 
-.. gmtplot:: grdseamount/GMT_seamount_azi.sh
+.. gmtplot:: grdseamount/GMT_seamount_azim.sh
     :width: 60%
     :show-code: false
 
