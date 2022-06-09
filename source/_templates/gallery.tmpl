@@ -35,8 +35,8 @@
 		{% set image = fig["image"] %}
 		{% set link, link_type = fig["target"], "doc" %}
 	{% else %}  {# internal images #}
-		{% set image = config.html_context["siteurl"]/_images/fig["image"].png %}
-		{% set link, link_type = gmtplot-fig["image"], "ref" %}
+		{% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
+		{% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
 	{% endif %}
 
     .. grid-item-card:: {{ fig["title"] }}
@@ -44,6 +44,6 @@
         :link: {{ link }}
         :link-type: {{ link_type }}
 
-{% endfor %}
+	{% endfor %}
 {% endfor %}
 
