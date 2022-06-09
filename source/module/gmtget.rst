@@ -105,7 +105,7 @@ gmtget
 
     gmt get -Ddata=earth -N
 
-只下载大于或等于 **1X1** 弧分的地球掩膜数据和白昼影像数据::
+只下载大于或等于 **1X1** 分的地球掩膜数据和白昼影像数据::
 
     gmt get -Ddata=earth_mask,earth_day -I1m
 

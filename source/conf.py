@@ -58,11 +58,6 @@ extensions = [
 ]
 mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
-# gmtplot extension
-gmtplot_global_config = {
-    "GMT_GRAPHICS_FORMAT": "ps",
-}
-
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
 smartquotes_action = "qe"
 
@@ -96,6 +91,13 @@ html_last_updated_fmt = "%Y 年 %m 月 %d 日"
 html_search_language = "zh"
 html_title = project
 
+# set site url of the image gallery for different use cases
+siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+if not os.getenv("CI"):  # build locally
+    siteurl_for_gallery = ""
+elif os.getenv("GITHUB_HEAD_REF"):  # GITHUB_HEAD_REF is only defined for PR.
+    siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv('GITHUB_HEAD_REF')}"
+
 html_context = {
     "favicon": "favicon.ico",
     "display_github": True,
@@ -106,7 +108,7 @@ html_context = {
     "theme_vcs_pageview_mode": "blob",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     # Passed to sphinxcontrib.datatemplates
-    "siteurl": f"https://docs.gmt-china.org/{version}",
+    "siteurl": siteurl_for_gallery,
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 

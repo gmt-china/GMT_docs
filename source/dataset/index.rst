@@ -8,10 +8,10 @@
 2. GMT 远程数据：GMT 官方整理的保存在远程 GMT 数据服务器中的数据
 3. 自定义数据：用户自行准备的数据
 
-.. toctree::   
+.. toctree::
    :maxdepth: 1
    :hidden:
- 
+
    usage
 
 GMT 内置数据
@@ -39,6 +39,9 @@ GMT 远程数据是指保存在 GMT 数据服务器的数据。使用某个远�
    earth-age
    earth-images
    earth-mask
+   earth-geoid
+   earth-faa
+   earth-mag
 
 自定义数据
 ----------
@@ -52,3 +55,12 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
    gadm/index
    PB2002/index
    /dataset-CN/index
+
+其他地学数据
+------------
+
+用户还可以在网上找到更多其他地学相关数据。可根据需求自行下载，并使用 GDAL 提供的
+:ref:`ogr2ogr` 或 :ref:`gdal_translate` 命令转换为 GMT 可识别的数据格式。
+下面列出一些地学数据的链接：
+
+- 美国地质图：`Geologic maps of US states <https://mrdata.usgs.gov/geology/state/>`__

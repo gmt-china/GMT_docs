@@ -6,35 +6,39 @@ Options
 
 The ``gmtplot`` directive supports the following options:
 
-    show-code : bool
-        Whether to display the source code. The default can be changed using the
-        ``gmtplot_show_code`` variable in ``conf.py``.
+show-code
+    Whether to show the source code. The default can be changed by the
+    ``gmtplot_show_code`` variable in ``conf.py``.
 
-    language : {'python', 'bash'}
-        Specify the language of the source code. The default can be changed using the
-        `highlight_language` variable in conf.py.
+language
+    Specify the language of the source code: either "bash" or "python".
 
-    caption : str
-        Caption of the rendered figure.
+caption
+    Caption of the rendered figure.
 
-Additionally, this directive supports options of the ``figure`` and ``literalinclude``
-directives.
+Additionally, this directive also supports options of the standard ``figure``
+and ``literalinclude`` directives.
 
 Configuration options
 ---------------------
 
 The following options can be set in ``conf.py`` and will apply globally:
 
-    gmtplot_show_code : bool
-        Default value for the ``show-code`` option.
+gmtplot_show_code
+    Default value for the ``show-code`` option. Default is ``True``.
 
-    gmtplot_basedir : str
-        Base directory, to which ``gmtplot`` file names are relative to. If None or
-        empty, file names are relative to the directory where the file containing the
-        directive is. However, if it is absolute (starting with ``/``), it is relative
-        to the top source directory.
-    gmtplot_global_config : dict
-        A dict of GMT's configurations.
+gmtplot_basedir
+    Base directory, to which ``gmtplot`` file names are relative to. If None or
+    empty, file names are relative to the directory where the file containing the
+    directive is. However, if it is absolute (starting with ``/``), it is relative
+    to the top source directory. Default is ``None``.
+
+gmtplot_figure_align
+    The figure alignment. Default is ``"center"``.
+
+gmtplot_gmt_config
+    A dict of GMT settings that are applied to all GMT scripts.
+    Default is ``{"GMT_GRAPHICS_FORMAT": "ps"}``.
 
 """
 
@@ -74,54 +78,43 @@ TEMPLATE = """
 
 
 def _option_language(arg):
-    """Check language option."""
+    """
+    Check language option.
+    """
     return directives.choice(arg, ("bash", "python"))
 
 
 def _option_boolean(arg):
-    # pylint: disable=no-else-return
-    """Check boolean options."""
+    """
+    Check boolean options.
+    """
     if not arg or not arg.strip():  # no argument given, assume used as a flag
         return True
-    elif arg.strip().lower() in ("no", "0", "false"):
+    if arg.strip().lower() in ("no", "0", "false"):
         return False
-    elif arg.strip().lower() in ("yes", "1", "true"):
+    if arg.strip().lower() in ("yes", "1", "true"):
         return True
-    else:
-        raise ValueError('f"{arg}" unknown boolean')
+    raise ValueError('f"{arg}" unknown boolean')
 
 
 def _option_align(arg):
-    """Check align option."""
+    """
+    Check align option.
+    """
     return directives.choice(
         arg, ("top", "middle", "bottom", "left", "center", "right")
     )
 
 
-def _set_gmt_datadir(cwd):
-    """Set evirionment variable GMT_DATADIR so that script can access
-    its data files.
-
-    Retures
-    =======
-    old_gmt_datadir : str
-        Previous value of GMT_DATADIR.
+def _updated_gmt_datadir(code_dir):
     """
-    old_gmt_datadir = os.environ.get("GMT_DATADIR")
-    if old_gmt_datadir:
+    Add the code's current directory to evirionment variable GMT_DATADIR
+    so that script can access its data files.
+    """
+    if os.environ.get("GMT_DATADIR") is not None:
         sep = ";" if sys.platform == "win32" else ":"
-        os.environ["GMT_DATADIR"] = str(cwd) + sep + os.environ["GMT_DATADIR"]
-    else:
-        os.environ["GMT_DATADIR"] = str(cwd)
-    return old_gmt_datadir
-
-
-def _reset_gmt_datadir(old_gmt_datadir):
-    """Reset environment variable GMT_DATADIR to its old value."""
-    if old_gmt_datadir:
-        os.environ["GMT_DATADIR"] = old_gmt_datadir
-    else:
-        del os.environ["GMT_DATADIR"]
+        return f"{sep}".join([str(code_dir), os.environ["GMT_DATADIR"]])
+    return str(code_dir)
 
 
 @contextmanager
@@ -140,6 +133,17 @@ def environ(env):
                 del os.environ[key]
             else:
                 os.environ[key] = value
+
+
+def _write_gmt_config(gmt_config, cwd):
+    """
+    Write GMT settings to a gmt.conf file in the current directory.
+    """
+    if not gmt_config:
+        return
+    with open(Path(cwd, "gmt.conf"), "w", encoding="utf-8") as fconf:
+        for key, value in gmt_config.items():
+            fconf.write(f"{key} = {value}")
 
 
 def _search_images(cwd):
@@ -178,46 +182,36 @@ def _search_images(cwd):
         else:  # No PNG and PS found
             return []
 
-def write_gmt_config(gmt_config):
-    """
-    Write a gmt.conf file.
-    """
-    if not gmt_config:
-        pass
-    with open("gmt.conf", "w", encoding="utf-8") as fp:
-        for key, value in gmt_config.items():
-            fp.write(f"{key} = {value}")
 
-
-def eval_bash(code, code_dir, output_dir, output_base, gmt_config=None):
+def eval_bash(code, code_dir, output_dir, output_base, config=None):
     """
     Execute a multi-line block of bash code and copy the generated image files
     to specified output directory.
     """
-    cwd = os.getcwd()
-    with tempfile.TemporaryDirectory() as tmpdir, environ({"GMT_END_SHOW": "off"}):
-        os.chdir(tmpdir)
-        write_gmt_config(gmt_config)
-        Path("script.sh").write_text(code, encoding="utf-8")
-        old_gmt_datadir = _set_gmt_datadir(code_dir)
+    with environ(
+        {"GMT_END_SHOW": "off", "GMT_DATADIR": _updated_gmt_datadir(code_dir)}
+    ), tempfile.TemporaryDirectory() as tmpdir:
+        Path(tmpdir, "gmtplot-script.sh").write_text(code, encoding="utf-8")
+        if config.gmtplot_gmt_config:
+            _write_gmt_config(config.gmtplot_gmt_config, cwd=tmpdir)
         proc = subprocess.run(
-            "bash script.sh",
-            shell=True,
+            ["bash", "-e", Path(tmpdir, "gmtplot-script.sh")],
             check=False,
+            cwd=tmpdir,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )
-        _reset_gmt_datadir(old_gmt_datadir)
         if proc.returncode != 0:
             raise RuntimeError(
-                "GMT bash failed:\n"
-                'STDOUT: {proc.stdout.decode("utf-8")}\n'
-                'STDERR: {proc.stderr.decode("utf-8")}'
+                "\nGMT bash failed:\n"
+                f"{code}"
+                f"STDOUT: {proc.stdout.decode('utf-8')}"
+                f"STDERR: {proc.stderr.decode('utf-8')}"
             )
         for image in _search_images(tmpdir):
             shutil.move(image, Path(output_dir, output_base).with_suffix(image.suffix))
-    os.chdir(cwd)
-    return output_base + ".*"
+        return f"{output_base}.*"
+
 
 class _CatchDisplay:
     "Class to temporarily catch sys.displayhook"
@@ -241,8 +235,10 @@ class _CatchDisplay:
         self.output = output
 
 
-def eval_python(code, code_dir, output_dir, output_base, filename="<string>", gmt_config=None):
-    # pylint: disable=exec-used
+def eval_python(
+    code, code_dir, output_dir, output_base, filename="<string>", config=None
+):
+    # pylint: disable=exec-used,too-many-arguments
     """
     Execute a multi-line block of Python code and copy the generated image files
     to specified output directory.
@@ -256,19 +252,18 @@ def eval_python(code, code_dir, output_dir, output_base, filename="<string>", gm
         to_exec, to_eval = tree.body, []
 
     cwd = os.getcwd()
-    with tempfile.TemporaryDirectory() as tmpdir:
+    with environ(
+        {"GMT_END_SHOW": "off", "GMT_DATADIR": _updated_gmt_datadir(code_dir)}
+    ), tempfile.TemporaryDirectory() as tmpdir:
         os.chdir(tmpdir)
-        write_gmt_config(gmt_config)
-        old_gmt_datadir = _set_gmt_datadir(code_dir)
-
+        if config.gmtplot_gmt_config:
+            _write_gmt_config(config.gmtplot_gmt_config, cwd=".")
         for node in to_exec:
             exec(
                 compile(
                     ast.Module([node], type_ignores=[]), filename=filename, mode="exec"
                 )
             )
-        _reset_gmt_datadir(old_gmt_datadir)
-
         images = _search_images(tmpdir)
         if images:
             for image in images:
@@ -288,40 +283,43 @@ def eval_python(code, code_dir, output_dir, output_base, filename="<string>", gm
                 catch_display.output.data
             )
     os.chdir(cwd)
-    return output_base + ".*"
+    return f"{output_base}.*"
 
 
-def render_figure(code, code_dir, language, output_dir, output_base, gmt_config=None):
+def render_figure(code, code_dir, language, output_dir, output_base, config=None):
     """
     Run a GMT code and save the images in *output_dir* with file names
     derived from *output_base*.
     """
+    # pylint: disable=too-many-arguments
     if language == "bash":
-        figname = eval_bash(code, code_dir, output_dir, output_base, gmt_config)
+        figname = eval_bash(code, code_dir, output_dir, output_base, config=config)
     elif language == "python":
-        figname = eval_python(code, code_dir, output_dir, output_base, gmt_config)
+        figname = eval_python(code, code_dir, output_dir, output_base, config=config)
     return figname
 
 
 def guess_language(filename):
-    # pylint: disable=no-else-return
-    """Guess language from suffix of the script."""
+    """
+    Guess language from suffix of the script.
+    """
     suffix = Path(filename).suffix
     if suffix in [".sh", ".bash"]:
         return "bash"
-    elif suffix == ".py":
+    if suffix == ".py":
         return "python"
-    else:
-        raise ValueError(f"Cannot guess language from {filename}")
+    raise ValueError(f"Cannot guess language for file {filename}.")
 
 
 def get_suffix_from_language(language):
-    """Determine suffix from language."""
+    """
+    Determine suffix from language.
+    """
     if language == "bash":
-        suffix = "sh"
-    elif language == "python":
-        suffix = "py"
-    return suffix
+        return "sh"
+    if language == "python":
+        return "py"
+    raise ValueError(f"Unrecognized language {language}.")
 
 
 class GMTPlotDirective(Directive):
@@ -334,7 +332,7 @@ class GMTPlotDirective(Directive):
     optional_arguments = 1
     final_argument_whitespace = False
 
-    # options list of literalinclude directive
+    # options for the literalinclude directive
     options_code = {
         "dedent": int,
         "linenos": directives.flag,
@@ -353,7 +351,7 @@ class GMTPlotDirective(Directive):
         "emphasize-lines": directives.unchanged_required,
         "name": directives.unchanged,
     }
-    # options list of figure directive
+    # options for the figure directive
     options_figure = {
         "alt": directives.unchanged,
         "height": directives.length_or_unitless,
@@ -362,6 +360,7 @@ class GMTPlotDirective(Directive):
         "align": _option_align,
         "class": directives.class_option,
     }
+    # options for the gmtplot directive
     option_spec = {
         "show-code": _option_boolean,
         "caption": directives.unchanged,
@@ -381,11 +380,8 @@ class GMTPlotDirective(Directive):
 
         # Get the name of the rst source file we are currently processing
         rst_file = Path(document["source"])
-
         # current working directory of the rst source file
         cwd = rst_file.parent
-
-        caption = ""
 
         if self.arguments:  # load codes from a file
             # Guess language from suffix of the script
@@ -401,18 +397,16 @@ class GMTPlotDirective(Directive):
                 code_file = Path(env.app.srcdir, self.arguments[0][1:])
             else:  # relative to current rst file's path
                 code_file = Path(cwd, self.arguments[0])
-            code_file = code_file.absolute()
-            code_basedir = code_file.parent
+            code_basedir = code_file.absolute().parent
             code = code_file.read_text(encoding="utf-8")
-
             # If there is content, it will be passed as a caption.
             caption = "\n".join(self.content)
         else:  # inline codes
-            self.options.setdefault("language", config.highlight_language)
+            if "language" not in self.options:
+                self.options["language"] = config.highlight_language
             code_basedir = cwd
             code = textwrap.dedent("\n".join(map(str, self.content)))
-            if "caption" in self.options:
-                caption = self.options["caption"]
+            caption = self.options["caption"] if "caption" in self.options else ""
 
         # use the md5sum value of the code as the basename of script and image files
         output_base = md5(code.encode()).hexdigest()
@@ -421,6 +415,7 @@ class GMTPlotDirective(Directive):
         suffix = get_suffix_from_language(self.options["language"])
         code_file = Path(cwd, f"{output_base}.{suffix}")
 
+        code_opts = ""
         if self.options["show-code"]:
             code_opts = []
             for key, val in self.options.items():
@@ -428,8 +423,6 @@ class GMTPlotDirective(Directive):
                     code_opts.append(f":{key}:")
                 elif key in self.options_code:
                     code_opts.append(f":{key}: {val}")
-        else:
-            code_opts = ""
 
         image_opts = [
             f":{key}: {val}"
@@ -449,7 +442,7 @@ class GMTPlotDirective(Directive):
 
         # make figures
         image = render_figure(
-            code, code_basedir, self.options["language"], builddir, output_base, config.gmtplot_global_config
+            code, code_basedir, self.options["language"], builddir, output_base, config
         )
 
         gmtplot_block = (
@@ -483,7 +476,7 @@ def setup(app):
     app.add_config_value("gmtplot_basedir", None, True)
     app.add_config_value("gmtplot_show_code", True, True)
     app.add_config_value("gmtplot_figure_align", "center", True)
-    app.add_config_value("gmtplot_global_config", None, True)
+    app.add_config_value("gmtplot_gmt_config", {"GMT_GRAPHICS_FORMAT": "ps"}, True)
     metadata = {
         "version": "0.3.0",
         "parallel_read_safe": True,
