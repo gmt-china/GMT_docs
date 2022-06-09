@@ -97,7 +97,7 @@ DCW 数据时只绘制中国区域以外的部分。具体示例脚本如下：
         # 使用 clip 命令和 CN-border-L1.gmt 数据将中国区域裁剪出来
         gmt clip CN-border-L1.gmt -N
             # 绘制中国邻国国界，AF 至 VN 是中国的 14 个邻国的国界代码
-            gmt coast -EAF,BT,IN,KZ,KG,LA,MN,MM,NP,KP,PK,RU,TJ,VN+p0.1p
+            gmt coast -EAF,BT,IN,KZ,KG,LA,MN,MM,NP,KP,PK,RU,TJ,VN+p0.2p,blue
         gmt clip -C
     gmt end show
 
