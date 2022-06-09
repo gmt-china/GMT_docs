@@ -167,7 +167,7 @@ subplot begin 语法
     #. 取一个值，表示子图四个方向的空白 [默认值为 :term:`FONT_ANNOT_PRIMARY` 规定的字体大小]
     #. 取两个值，表示子图的水平和垂直方向的空白，两个值之间用斜杠分隔
     #. 取四个值，表示子图的左右下上四个方向的空白，四个值之间用斜杠分隔
-    
+
     *margins* 允许设置为负值，进一步缩小子图间距。
 
 .. |Add_-R| replace:: 该选项会应用于所有子图
@@ -355,9 +355,9 @@ subplot end 语法
 .. gmtplot::
 
     gmt begin panels
-      gmt subplot begin 2x2 -Fs10c/5cc -M5p -A -SCb -SRl -Bwstr
+      gmt subplot begin 2x2 -Fs10c/5c -M5p -A -SCb -SRl -Bwstr -R0/80/0/10
         gmt subplot set
-        gmt basemap -R0/80/0/10
+        gmt basemap
         gmt subplot set
         gmt basemap
         gmt subplot set

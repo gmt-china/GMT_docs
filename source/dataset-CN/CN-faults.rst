@@ -60,6 +60,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 
 .. figure:: https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png
    :width: 50%
+   :align: center
 
 根据属性信息提取数据
 ++++++++++++++++++++
