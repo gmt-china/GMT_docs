@@ -13,12 +13,15 @@
         {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
         {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
     {% endif %}
-    .. grid-item-card:: {{ fig["title"] }}
+    .. grid-item-card::
         :margin: 0 2 0 0
         :text-align: center
         :img-top: {{ image }}
         :link: {{ link }}
         :link-type: {{ link_type }}
+        
+        +++
+        {{ fig["title"] }}
     {% endfor %}
 {% endfor %}
 
