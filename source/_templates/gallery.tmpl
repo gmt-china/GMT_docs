@@ -1,14 +1,11 @@
 {# Template for the gallery page #}
 
 {% for group in data %}
-{{ group['title'] }}
+{{ group["title"] }}
 ==========================
 
 .. grid:: 2 3 3 4
-    :margin: 0 3 0 0
-    :text-align: center
-
-    {% for fig in group['gallery'] %}
+    {% for fig in group["gallery"] %}
     {% if fig["image"].startswith("http") %}  {# absolute URL for external images #}
         {% set image = fig["image"] %}
         {% set link, link_type = fig["target"], "doc" %}
@@ -17,6 +14,8 @@
         {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
     {% endif %}
     .. grid-item-card:: {{ fig["title"] }}
+        :margin: 0 3 0 0
+        :text-align: center
         :img-top: {{ image }}
         :link: {{ link }}
         :link-type: {{ link_type }}
