@@ -205,9 +205,8 @@ IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
 :doc:`mgd77list`,
-:doc:`mgd77magref`
 :doc:`mgd77manage`,
 :doc:`mgd77path`,
 :doc:`mgd77track`,
-:doc:`mgdsniffer`,
+:doc:`mgd77sniffer`,
 :doc:`mgd77track`

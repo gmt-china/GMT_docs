@@ -464,7 +464,7 @@ IGF (International Gravity reference Field)
 ----
 
 MGD77 (Marine Geophysical Data Exchange Format) 格式见
-`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.>`_
+`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt>`__
 
 IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 
@@ -473,10 +473,9 @@ IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
-:doc:`mgd77list`,
 :doc:`mgd77magref`
 :doc:`mgd77manage`,
 :doc:`mgd77path`,
 :doc:`mgd77track`,
-:doc:`mgdsniffer`,
+:doc:`mgd77sniffer`,
 :doc:`mgd77track`

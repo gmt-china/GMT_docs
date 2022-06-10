@@ -40,7 +40,7 @@ mgd77path
 
 **-I**\ **a\|c\|m\|t**
     忽略某些数据格式的文件。**a\|c\|m\|t** 分别表示忽略 MGD77 ASCII、MGD77+ NetCDF、
-    MGD77T ASCII 、tab 分隔的普通文本文件。该选项可以重复使用以忽略多个格
+    MGD77T ASCII 、tab 分隔的普通文本文件。该选项可以重复使用以忽略多种格式
 
 .. include:: explain_-V.rst_
 
@@ -65,7 +65,7 @@ mgd77path
 --------
 
 MDG77 格式见
-`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.>`_
+`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt>`__
 
 相关模块
 --------
@@ -77,5 +77,5 @@ MDG77 格式见
 :doc:`mgd77manage`,
 :doc:`mgd77info`,
 :doc:`mgd77track`,
-:doc:`mgdsniffer`,
+:doc:`mgd77sniffer`,
 :doc:`mgd77track`

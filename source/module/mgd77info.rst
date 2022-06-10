@@ -11,7 +11,7 @@ mgd77info
 以 km 为单位的测线长度，经纬度范围，观测个数。并可通过选项指定查看 MGD77 头部数据还是
 其成员信息。
 
-使用 x2sys 模块可获得哪些轨迹穿过给定区域以及可用的观测类型等信息。
+使用 x2sys 模块（见 :doc:`x2sys_init` ）可获得哪些轨迹穿过给定区域以及可用的观测类型等信息。
 
 **mgd77** 文件格式相关信息见 `参考文献`_
 
@@ -45,7 +45,7 @@ mgd77info
 
 **-E**\ [**m**\|\ **e**]
     为每条测线输出单行的总结。
-    **m** 选项只对每个 MGD77 字段中非 NaN 值计数
+    **m** 选项只对每个 MGD77 字段中非 NaN 值计数，
     **e** 选项对其他字段中非 NaN 值计数
 
 .. _-I:
@@ -58,7 +58,7 @@ mgd77info
 
 **-L**\ [**v**]
     不显示测线信息。只输出 GEOSAR 机构 2 个字符代码以及其名称列表。
-    **v** 选项可同时显示每个机构的船只 的 4 个字符代码列表。由于上述两列表均十分长，
+    **v** 选项可同时显示每个机构测量船的 4 个字符代码列表。由于上述两列表均十分长，
     影响阅读体验，因此这里不给出列表，请用户自己运行命令查看。
 
 .. _-M:
@@ -69,7 +69,7 @@ mgd77info
     - **f** 选项用于展示格式，每行输出一个记录，包括参数和值，可以对该输出结果使用
       Unix 文本工具进行搜索。或者，可以追加特定参数的名称 *item* ，或者使用参数的编号。
       
-    - **r** 选项用欧展示原始的，punchcard 格式的 MGD77 头部信息
+    - **r** 选项用于展示原始的，punchcard 格式的 MGD77 头部信息
 
     - **e** 选行用于展示 MGD77+ E77 状态
 
@@ -110,7 +110,7 @@ mgd77info
 --------
 
 MGD77 (Marine Geophysical Data Exchange Format) 格式见
-`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.>`_
+`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt>`__
 
 相关模块
 --------
@@ -122,6 +122,6 @@ MGD77 (Marine Geophysical Data Exchange Format) 格式见
 :doc:`mgd77manage`,
 :doc:`mgd77path`,
 :doc:`mgd77track`,
-:doc:`mgdsniffer`,
+:doc:`mgd77sniffer`,
 :doc:`mgd77track`,
 :doc:`x2sys_init`

@@ -8,7 +8,7 @@ mgd77header
 :简介: 由 A77 文件创建 MGD77 头段记录
 
 **mgd77header** 通过读取 A77 文件生成 MGD77 头段记录，以确定时间、空间范围、
-存在的数据列以及经过的 10 度网格。也可以使用 **-H** 选项读取一个包含头段
+存在的数据列以及经过的 10 度大小的网格。也可以使用 |-H| 选项读取一个包含头段
 记录的文件。输出头段记录结果为 MGD77 格式或者列表形式。
 
 语法
@@ -38,11 +38,11 @@ mgd77header
 
 **-Mf**\ [*item*]\|\ **r**\|\ **t**
     列出每个测线的头段信息。**f** 选项用于格式化输出，每行一个条目，后续可使用 Unix
-    文本处理命令进行筛选，也可以附加特定参数的名称 *item* ；其中参数的名称不必写全，
+    文本处理命令进行筛选。也可以附加特定参数的名称 *item* ，其中参数的名称不必写全，
     只需最前面或者最后面少数几个连续的字符，其他用 ``-`` 代替就可正确识别出对应的
     参数。若参数名为 ``-`` ，则输出所有参数名称列表。此外，也可以指定参数的编号。
-    对于原始的 punchcard-formatted MGD77 合适，需要 **r** 选项，对于 MGD77T 格式，需要
-    **t** 选项。
+    对于原始的 punchcard-formatted MGD77 格式，需要同时使用 **r** 选项，对于 MGD77T 
+    格式，需要同时使用 **t** 选项。
 
 .. include:: explain_-V.rst_
 
@@ -137,17 +137,16 @@ mgd77header
 ----
 
 MGD77 (Marine Geophysical Data Exchange Format) 格式见
-`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.>`_
+`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt>`__
 
 相关模块
 --------
 
 :doc:`mgd77convert`,
-:doc:`mgd77header`,
 :doc:`mgd77list`,
 :doc:`mgd77magref`
 :doc:`mgd77manage`,
 :doc:`mgd77path`,
 :doc:`mgd77track`,
-:doc:`mgdsniffer`,
+:doc:`mgd77sniffer`,
 :doc:`mgd77track`

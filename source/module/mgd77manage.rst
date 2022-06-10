@@ -1,6 +1,10 @@
 .. index:: ! mgd77manage
 .. include:: common_SYN_OPTs.rst
 
+mgd77manage
+===========
+
+这里首先介绍 mgd77 整个包：
 
 mgd77 模块
 ==========
@@ -9,7 +13,28 @@ mgd77 模块
 National Centers for Environmental Information，NCEI) 机构下的海洋地球物理
 数据。在不同的时期，针对上述数据，NCEI 开发了多种数据格式，MGD77 格式为
 1977 年针对沿测线重力，磁，测深以及地震等观测开发的格式，目前已经成为国际
-数据交换的标准，并在某个版本中加入了制表符分隔的 MGD77T 格式。
+数据交换的标准，并在某个版本中加入了制表符分隔的 MGD77T 格式。目前 **mgd77**
+主要包括下面 9 个命令：
+
+- :doc:`mgd77magage` 管理 MGD77+ 文件
+
+- :doc:`mgd77convert` 将 MGD77 数据转换为其他格式
+
+- :doc:`mgd77header` 从 A77 文件创建 MGD77 头部信息
+
+- :doc:`mgd77info` 提取 MGD77 文件信息
+
+- :doc:`mgd77list` 提取 MGD77 文件中的数据
+
+- :doc:`mgd77magref` 计算 IGRF 或 CM4 磁场模型
+
+- :doc:`mgd77path` 返回 MGD77 测线路径
+
+- :doc:`mgd77sniffer` MGD77 测线沿轨质量控制
+
+- :doc:`mgd77track` 绘制 MGD77 测线轨迹
+
+下面将做整体介绍：
 
 **1. 前言**
 
@@ -61,12 +86,12 @@ cruises.lis 文件中包含了所有需要转换的文件名。新生成的 nc �
    转换为 m 时甚至可能出现 1.8288 的因子。
 
 #. 当记录数据或者处理数据时，由于沿轨的纬度、航向或者其他和时间相关的
-   因素可能会导致未知的系统误差。这种误差又是可以通过后期的数据分析解决，
+   因素可能会导致未知的系统误差。这种误差有时可以通过后期的数据分析解决，
    例如沿轨和跨轨的检查，通过数据分析可生成改正项，并应用到数据中改正
    这些误差的影响。但这些改正项在新出现观测数据后可能会变化，因此是
-   一种段时间的改正，需要随着数据的加入不断更新。
+   一种短时间的改正，需要随着数据的加入不断更新。
 
-#. 单个数据带你或者数据序列可能会超出数据实际范围或者在其他方面突破
+#. 单个数据或者数据序列可能会超出数据实际范围或者在其他方面突破
    某种限制，这种数据是不符合实际的。此外，即使在实际范围内，也存在
    连续数据突变的情况，这同样是不符合实际的。因此，可以对每个数据点
    生成一个 GOOD 或者 BAD 的标志来标记这些数据。
@@ -102,10 +127,14 @@ mgd77manage
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77manage`
 :简介: 管理 MGD77+ 文件
 
+
+:官方文档: :doc:`gmt:supplements/mgd77/mgd77manage`
+:简介: 管理 MGD77+ 文件
+
 **mgd77manage** 用来处理在 MGD77+ NetCDF 文件中的自定义列。用户可以删除列，增加列，
 更新已经存在的列，或使用 e77 文件进行误差改正。新数据可以来自 ASCII 表文件，或基于
 现有的列和理论表达式，或对网格进行沿轨采样得到。新数据将以自定义数据列的形式追加
-到 MGD77+ 文件中具体见 `mgd77模块` 部分。
+到 MGD77+ 文件中具体见 `mgd77 模块`_ 。
 
 语法
 ----
@@ -225,7 +254,7 @@ f2c 转换到 C 语言，最终 Paul Wessel 改成 GMT 风格。
 ----
 
 MDG77 格式见
-`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.>`_
+`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt>`__
 
 IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 
@@ -236,7 +265,6 @@ IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 :doc:`mgd77header`,
 :doc:`mgd77list`,
 :doc:`mgd77magref`
-:doc:`mgd77manage`,
 :doc:`mgd77info`,
 :doc:`mgd77track`,
 :doc:`mgdsniffer`,

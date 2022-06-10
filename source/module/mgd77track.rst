@@ -141,7 +141,7 @@ mgd77track
 ----
 
 MGD77 (Marine Geophysical Data Exchange Format) 格式见
-`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.>`_
+`http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt. <http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt>`__
 
 相关模块
 --------
@@ -152,6 +152,4 @@ MGD77 (Marine Geophysical Data Exchange Format) 格式见
 :doc:`mgd77magref`
 :doc:`mgd77manage`,
 :doc:`mgd77path`,
-:doc:`mgd77track`,
-:doc:`mgd77sniffer`,
-:doc:`mgd77`
+:doc:`mgd77sniffer`
