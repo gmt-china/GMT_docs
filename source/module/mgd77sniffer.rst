@@ -4,7 +4,7 @@
 mgd77sniffer
 ============
 
-:官方文档:
+:官方文档: :doc:`gmt:supplements/mgd77/mgd77sniffer`
 :简介: MGD77 沿轨质量控制
 
 **mgd77sniffer** 

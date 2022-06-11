@@ -4,7 +4,7 @@
 mgd77track
 ==========
 
-:官方文档:
+:官方文档: :doc:`gmt:supplements/mgd77/mgd77track`
 :简介: 绘制 MGD77 测线轨迹
 
 语法
@@ -80,10 +80,6 @@ mgd77track
 **-I**\ **a\|c\|m\|t**
     忽略某些数据格式的文件。**a\|c\|m\|t** 分别表示忽略 MGD77 ASCII、MGD77+ NetCDF、
     MGD77T ASCII 、tab 分隔的普通文本文件。该选项可以重复使用以忽略多个格式
-
-.. _-G:
-
-**-G**\ **d**\|\ **t**\|\ **n**\ *gap*
 
 .. _-L:
 

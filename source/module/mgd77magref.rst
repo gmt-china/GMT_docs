@@ -4,7 +4,7 @@
 mgd77magref
 ===========
 
-:官方文档:
+:官方文档: :doc:`gmt:supplements/mgd77/mgd77magref`
 :简介: 计算 IGRF 或 CM4 地磁参考场模型值
 
 **mgd77magref** 在特定的时间和位置计算 IGRF 或 CM4 地磁参考场模型值。
@@ -71,7 +71,7 @@ mgd77magref
 
 **-E**\ *f107file*
     指定备用文件，其中包含 CM4 absolute F10.7 solar radio flux [F107_mon.plt].
-    页可以指定单个索引用于所有的数据
+    也可以指定单个索引用于所有的数据
 
 .. _-F:
 

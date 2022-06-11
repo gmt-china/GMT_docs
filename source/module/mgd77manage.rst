@@ -7,7 +7,7 @@ mgd77manage
 这里首先介绍 mgd77 整个包：
 
 mgd77 模块
-==========
+----------
 
 本模块主要用来管理和处理美国 NGDC (National Geophysical Data Center，现为
 National Centers for Environmental Information，NCEI) 机构下的海洋地球物理
@@ -123,10 +123,6 @@ cruises.lis 文件中包含了所有需要转换的文件名。新生成的 nc �
 
 mgd77manage
 ===========
-
-:官方文档: :doc:`gmt:supplements/mgd77/mgd77manage`
-:简介: 管理 MGD77+ 文件
-
 
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77manage`
 :简介: 管理 MGD77+ 文件
