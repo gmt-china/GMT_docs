@@ -64,3 +64,4 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
 下面列出一些地学数据的链接：
 
 - 美国地质图：`Geologic maps of US states <https://mrdata.usgs.gov/geology/state/>`__
+- 全球地质构造图：https://github.com/dhasterok/global_tectonics
