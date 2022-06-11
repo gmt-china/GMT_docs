@@ -6,7 +6,7 @@ gmt begin 3d_faultslip
     gmt set MAP_FRAME_TYPE plain #设置边框类型
     gmt set MAP_GRID_PEN 0p,gray,- #设置网格线
     
-    gmt basemap -R97.3/99.5/34.3/35/-25/0 -JX6i/4i -JZ2i -Bxa0.25f0.125g0.125 -Bya0.25f0.125g0.125 -Bza10f5g5 -Bz+l"Depth(km)" -BwSEnZ -p160/20
+    gmt basemap -R97.3/99.5/34.3/35/-25/0 -JX15c/10c -JZ5c -Bxa0.25f0.125g0.125 -Bya0.25f0.125g0.125 -Bza10f5g5 -Bz+l"Depth(km)" -BwSEnZ -p160/20
     gmt makecpt -Cwhite,lightblue,yellow,red -T0/5.5/0.2 -Z
     gmt plot3d slip_3dgrid.gmtline -C -L -p -W0p,gray #绘制断层
     
