@@ -7,6 +7,7 @@ gmt begin 3d_faultslip
     gmt set MAP_GRID_PEN 0p,gray,- #设置网格线
     
     gmt basemap -R97.3/99.5/34.3/35/-25/0 -JX15c/10c -JZ5c -Bxa0.25fg -Bya0.25fg -Bza10f5g5+l"Depth (km)" -BwSEnZ -p160/20
+    # 为滑移位错量制作 CPT。滑移位错量最小值为 0， 最大值为 5.5
     gmt makecpt -Cwhite,lightblue,yellow,red -T0/5.5/0.2 -Z
     gmt plot3d slip_3dgrid.gmt -C -L -p -W0p,gray #绘制断层
     
