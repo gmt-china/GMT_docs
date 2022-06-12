@@ -28,6 +28,6 @@
 
 下面的示例展示了如何基于以上方法绘制三维有限断层模型。
 
-断层示例数据下载： :download:`slip_3dgrid.gmtline`
+断层示例数据下载： :download:`slip_3dgrid.gmt`
 
 .. gmtplot:: ex030.sh
