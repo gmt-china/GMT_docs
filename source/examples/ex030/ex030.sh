@@ -12,11 +12,9 @@ gmt begin 3d_faultslip
     # 绘制有限断层模型
     gmt plot3d slip_3dgrid.gmt -C -L -W0p,gray -p
     
-    gmt set FONT_ANNOT_PRIMARY 7p
-    gmt set MAP_ANNOT_OFFSET_PRIMARY 2p
-    gmt set FONT_LABEL 8p
-    gmt set MAP_FRAME_PEN thinner
-    gmt set MAP_TICK_LENGTH 2p
+    # 绘制 colorbar
+    gmt set FONT_ANNOT_PRIMARY 7p FONT_LABEL 8p
+    gmt set MAP_ANNOT_OFFSET_PRIMARY 2p MAP_FRAME_PEN thinner MAP_TICK_LENGTH 2p
     
     gmt colorbar -C -DjBL+w2.5c/0.3c+h+o1.3c/2c+ml -Ba1 -Bx+l"slip(cm)"
 gmt end show
