@@ -66,4 +66,4 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
 - 美国地质图：https://mrdata.usgs.gov/geology/state/
 - 全球地质构造图：https://github.com/dhasterok/global_tectonics
 - 全球布格重力异常：https://bgi.obs-mip.fr/data-products/grids-and-models/wgm2012-global-model/
-- 中国区域地表热流：https://www.sciencedirect.com/science/article/abs/pii/S004019511930006X
+- 中国区域地表热流：https://doi.org/10.1016/j.tecto.2019.01.006
