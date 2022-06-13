@@ -54,7 +54,7 @@ GMT 是地球科学使用最广泛的制图软件之一。
    tutorial/started
    tutorial/advanced
 
-.. only:: html
+.. only:: html or dirhtml
 
     .. toctree::
         :maxdepth: 3
@@ -63,7 +63,7 @@ GMT 是地球科学使用最广泛的制图软件之一。
 
         gallery/index
 
-.. only:: not html
+.. only:: not dirhtml
 
     .. toctree::
         :maxdepth: 3
