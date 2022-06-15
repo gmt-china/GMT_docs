@@ -258,7 +258,7 @@
 :doc:`grdblend`                                  将多个部分重叠的网格文件合并成一个网格文件
 :doc:`gmt:grdtrack`                              获取指定地理位置处的网格值
 :doc:`gmt:grdgradient`                           计算网格的方向梯度
-:doc:`grdclip`                                   修改网格文件的 Z 值
+:doc:`grdclip`                                   对网格文件的Z值进行截断
 :doc:`grd2xyz`                                   将网格文件转换成表数据
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`grdedit`                                   修改网格文件的头段或内容
