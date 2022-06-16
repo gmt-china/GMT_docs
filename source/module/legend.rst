@@ -9,6 +9,7 @@ legend
 
 **legend** 模块用于绘制图例，图例由图例文件控制。如无特别说明，
 标注的字体由 :term:`FONT_ANNOT_PRIMARY` 控制。
+希望使用中文图例的时候，请注意必须将 :term:`FONT_ANNOT_PRIMARY` 设置为中文字体。
 
 语法
 ----
