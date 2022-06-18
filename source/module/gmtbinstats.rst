@@ -163,9 +163,9 @@ gmtbinstats
 相关模块
 --------
 
-:doc:`blockmean`,
-:doc:`blockmedian`,
-:doc:`blockmode`,
+:doc:`gmt:blockmean`,
+:doc:`gmt:blockmedian`,
+:doc:`gmt:blockmode`,
 :doc:`nearneighbor`,
 :doc:`triangulate`,
 :doc:`xyz2grd`
