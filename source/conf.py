@@ -53,6 +53,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_cjkspace.cjkspace",
+    "sphinx_design",
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]

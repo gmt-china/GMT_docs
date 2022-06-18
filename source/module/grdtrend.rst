@@ -44,7 +44,7 @@ grdtrend
 示例
 ----
 
-从网格文件中移除线性趋势，并将结果写到残差文件中::
+从网格文件中移除线性趋势，并将残差结果写到网格文件中::
 
     gmt grdtrend hawaii_topo.nc -N3 -Dhawaii_residual.nc
 

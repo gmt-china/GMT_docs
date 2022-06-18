@@ -74,7 +74,6 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
     :width: 60%
 
     gmt begin map
-      gmt set FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 0p
       gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.1c -T"My Subplot Heading"
         gmt subplot set 0
         gmt basemap -R0/10/0/10 -JX? -Baf -BWSen
