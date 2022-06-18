@@ -5,7 +5,7 @@ Fedora 下安装 GMT
 
 ----
 
-Fedora 33、Fedora 34 和 Fedora rawhide 用户，可以启用
+Fedora 34、Fedora 35、Fedora 36 和 Fedora rawhide 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
 
