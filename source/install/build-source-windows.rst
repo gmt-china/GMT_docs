@@ -63,7 +63,7 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
 
 #. GMT 6.3.0 源码：`gmt-6.3.0-src.tar.gz <http://mirrors.ustc.edu.cn/gmt/gmt-6.3.0-src.tar.gz>`__
 #. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`__
-#. 全球数字图表 DCW：`dcw-gmt-2.1.0.tar.gz <https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.1.0.tar.gz>`__
+#. 全球数字图表 DCW：`dcw-gmt-2.1.1.tar.gz <https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.1.1.tar.gz>`__
 
 .. note::
 
@@ -81,11 +81,11 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
    # 解压三个压缩文件
    $ tar -xvf gmt-6.3.0-src.tar.gz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-2.1.0.tar.gz
+   $ tar -xvf dcw-gmt-2.1.1.tar.gz
 
    # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
    $ mv gshhg-gmt-2.3.7 gmt-6.3.0/share/gshhg-gmt
-   $ mv dcw-gmt-2.1.0 gmt-6.3.0/share/dcw-gmt
+   $ mv dcw-gmt-2.1.1 gmt-6.3.0/share/dcw-gmt
 
    # 切换到 gmt 源码目录下
    $ cd gmt-6.3.0
@@ -135,7 +135,7 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
     *
     *  Options:
     *  Found GSHHG database       : D:/a/gmt/gmt/coastline/gshhg (2.3.7)
-    *  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.1.0)
+    *  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.1.1)
     *  Found GMT data server      : oceania
     *  NetCDF library             : C:/vcpkg/installed/x64-windows/lib/netcdf.lib
     *  NetCDF include dir         : C:/vcpkg/installed/x64-windows/include
