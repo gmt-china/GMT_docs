@@ -177,4 +177,4 @@ ternary
 
 :doc:`basemap`,
 :doc:`plot`,
-:doc:`plot3d`
+:doc:`gmt:plot3d`

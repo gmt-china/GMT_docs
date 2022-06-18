@@ -108,5 +108,5 @@ caricature, *Can. Cartogr.*, **10**, 112-122, 1973.
 --------
 
 :doc:`gmtconnect`,
-:doc:`gmtconvert`,
+:doc:`gmt:gmtconvert`,
 :doc:`gmtselect`

@@ -157,7 +157,7 @@ sphdistance
 --------
 
 STRIPACK 算法需要输入中不包含重复点。
-:doc:`blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
+:doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
 的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 

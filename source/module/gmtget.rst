@@ -116,6 +116,5 @@ gmtget
 相关模块
 --------
 
-:doc:`gmt.conf`,
 :doc:`gmtdefaults`,
 :doc:`gmtset`

@@ -132,7 +132,7 @@ gmtsplit
         gmt wiggle -R300/315/12/20 -Jm0.6i -Baf -B+tJA020015 -T1 \
         -W0.75p -Ggray -Z200 -pdf JA020015_wiggles
 
-原始测量数据为 MGD77 格式，因此建议使用 :doc:`mgd77list <supplements/mgd77/mgd77list>`
+原始测量数据为 MGD77 格式，因此建议使用 :doc:`mgd77list`
 模块提取 dist 和 azim 而不是使用 **gmtsplit** 计算。
 
 将一个包含经纬度以及重力观测值的二进制双精度文件，拆分为 survey_xxxx.txt 形式的一系列
@@ -144,5 +144,5 @@ gmtsplit
 --------
 
 :doc:`filter1d`,
-:doc:`mgd77list <supplements/mgd77/mgd77list>`,
+:doc:`mgd77list`,
 :doc:`wiggle`
