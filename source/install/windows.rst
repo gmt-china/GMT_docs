@@ -89,9 +89,7 @@ Visual Studio Code (VS Code) 是微软推出的一款免费、轻量且功能强
 VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
 实时预览 PDF、JPG 以及 GIF 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
 
-安装和配置教程：
-
-- https://gmt-china.org/blog/vscode-usage/
+安装和配置教程：https://gmt-china.org/blog/vscode-usage/
 
 .. warning::
 
