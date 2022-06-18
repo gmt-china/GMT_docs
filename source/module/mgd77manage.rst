@@ -1,5 +1,5 @@
 .. index:: ! mgd77manage
-.. include:: common_SYN_OPTs.rst
+.. include:: common_SYN_OPTs.rst_
 
 mgd77manage
 ===========
@@ -16,7 +16,7 @@ National Centers for Environmental Information，NCEI) 机构下的海洋地球�
 数据交换的标准，并在某个版本中加入了制表符分隔的 MGD77T 格式。目前 **mgd77**
 主要包括下面 9 个命令：
 
-- :doc:`mgd77magage` 管理 MGD77+ 文件
+- :doc:`mgd77manage` 管理 MGD77+ 文件
 
 - :doc:`mgd77convert` 将 MGD77 数据转换为其他格式
 
@@ -195,7 +195,7 @@ mgd77manage
 
     - **D** 与 **d** 功能类似，但在没有给定距离的点，内插得到其更新值
 
-    - **e** 从当前路径或者 $MGD77_HOME/E77 路径中寻找 :doc:`mgd77sniffrer` 生成
+    - **e** 从当前路径或者 $MGD77_HOME/E77 路径中寻找 :doc:`mgd77sniffer` 生成
       的 *GEODAS_ID.e77* E77 日志，使用该日志检查数据并修改头部信息，为某些系统
       误差提供改正项（例如缩放尺度和偏移量），指定某个异常应用观测值中重新计算（
       例如：从  **mtf1** 和 最新的 IGRF 计算 **mag** ），并增加或者更新特殊的列
@@ -349,5 +349,5 @@ IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 :doc:`mgd77magref`
 :doc:`mgd77info`,
 :doc:`mgd77track`,
-:doc:`mgdsniffer`,
+:doc:`mgd77sniffer`,
 :doc:`mgd77track`
