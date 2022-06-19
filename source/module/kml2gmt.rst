@@ -43,7 +43,7 @@ kml2gmt
     从 *ExtendData* 属性中获取高程信息，且忽略 *z* 坐标。
 
     KML提供了多种机制来通过 *ExtendData* 储存信息，但GMT只实现了
-    *<SimpleData name="string">* 一种。该选项会自动启动 **-Z** 选项。
+    *<SimpleData name="string">* 一种。该选项会自动启动 |-Z| 选项。
 
 .. _-F:
 
@@ -90,5 +90,5 @@ kml2gmt
 
 :doc:`gmt:supplements/img/img2google`,
 :doc:`psconvert`,
-:doc:`gmt2kml`,
+:doc:`gmt:gmt2kml`,
 :doc:`gmtspatial`

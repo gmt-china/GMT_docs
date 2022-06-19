@@ -71,7 +71,7 @@ PS参数
             :width: 60%
 
             #!/usr/bin/env bash
-            gmt begin line_cap pdf,png
+            gmt begin line_cap
             for cap in butt round square; do
             gmt plot -JX15c/2c -R-0.25/16/-0.5/1.5 -Y0.8c -W8p --PS_LINE_CAP=$cap << EOF
             0       0
@@ -79,7 +79,7 @@ PS参数
             EOF
             echo 10.5 0 $cap | gmt text -F+jML+f12p,8
             done
-            gmt end
+            gmt end show
 
     **PS_LINE_JOIN**
         控制线段拐点的绘制方式 [**miter**]
@@ -95,7 +95,7 @@ PS参数
             :width: 75%
 
             #!/usr/bin/env bash
-            gmt begin line_join pdf,png
+            gmt begin line_join
             gmt subplot begin 1x3 -Fs5c/5c -B+n
             for join in miter round bevel; do
             gmt plot -R0/10/0/10 -W20p -L -B0+t"$join" --PS_LINE_JOIN=$join -c << EOF

@@ -42,18 +42,18 @@ grd2cpt
 **grd2cpt** 读取一个或多个grid文件，并生成对应的CPT文件。在经典模式中，CPT文件的内容会输出到屏幕标准输出中。
 而在现代模式中，该命令不会生成显式的CPT文件，而是隐式地将其自动设置为后面的绘图命令的默认CPT文件。
 因此无法使用经典的 ``gmt grd2cpt grid > cpt`` 方式生成CPT文件。如果需要在现代模式中生成CPT文件，
-则可以使用 **-H** 选项： ``gmt grd2cpt grid -H > cpt`` 。
+则可以使用 |-H| 选项： ``gmt grd2cpt grid -H > cpt`` 。
 关于经典模式和现代模式的语法区别，建议阅读《 :doc:`/migrating/classic2modern` 》。
 
 grid文件的z值范围以外的数值，将分别使用3种颜色来表示，分别是：
 背景色 (B，background color，表示低于最小z值时所对应的颜色)、
 前景色 (F，foreground color，表示高于最大z值时所对应的颜色)、
 以及NaN颜色 (N，表示z值被定义为NaN时对应的颜色，即z值未定义的情况)。
-默认情况下，这三种颜色会沿用 **-C** 选项所指定的主CPT文件的设置，但也可以使用 **-D** 选项进行修改。
+默认情况下，这三种颜色会沿用 |-C| 选项所指定的主CPT文件的设置，但也可以使用 |-D| 选项进行修改。
 或者使用 :doc:`gmtset` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。
 
-颜色模式 (RGB, HSV, CMYK) 会沿用 **-C** 选项所指定的主CPT文件的设置。
+颜色模式 (RGB, HSV, CMYK) 会沿用 |-C| 选项所指定的主CPT文件的设置。
 或者使用 :doc:`gmtset` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
 
 必选选项
@@ -113,7 +113,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 
 **-H**\
     仅限现代模式：
-    默认情况下是将CPT保存为隐藏的当前CPT，加上 **-H** 命令会显式地将CPT写入标准输出。
+    默认情况下是将CPT保存为隐藏的当前CPT，加上 |-H| 命令会显式地将CPT写入标准输出。
     在写制作动画的脚本时，需要传递显式命名的CPT文件，因此需要使用本功能。
     建议阅读《 :doc:`/migrating/classic2modern` 》。
 
@@ -143,7 +143,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     强制生成连续的CPT文件（默认为离散不连续的CPT）。
 
 .. |Add_-bo| replace:: [Default is 2]. This option
-    only applies if **-E** selects CDF output.
+    only applies if |-E| selects CDF output.
 .. include:: explain_-bo.rst_
 
 .. include:: explain_help.rst_
@@ -153,7 +153,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 示例
 --------
 
-根据0/60/0/60范围内的5弧分精度的地形起伏数据，以GMT自带的geo为主CPT文件，生成对称的CPT::
+根据0/60/0/60范围内的5分精度的地形起伏数据，以GMT自带的geo为主CPT文件，生成对称的CPT::
 
     gmt grd2cpt @earth_relief_05m -R0/60/0/60 -Cgeo -Su
 

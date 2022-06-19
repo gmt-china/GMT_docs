@@ -51,7 +51,7 @@ surface
 
 其中 *t* 是0到1之间的张量因子， :math:`\nabla` 是拉普拉斯算子。
 对于势能场数据，建议 *t* ~ 0.25 。对于陡峭的地形数据，则建议 *t* ~ 0.35。
-建议用户事先使用 :doc:`blockmean`， :doc:`blockmedian`，或 :doc:`blockmode` 预处理数据，
+建议用户事先使用 :doc:`gmt:blockmean`， :doc:`gmt:blockmedian`，或 :doc:`gmt:blockmode` 预处理数据，
 以避免空间假频与消除冗余数据。解微分方程时，采用自然边界条件。对于经度范围是360度的地理数据，
 将会采用周期边界条件。
 
@@ -107,7 +107,7 @@ surface
 示例
 --------
 
-将ASCII数据 hawaii_5x5.xyg 网格化为5弧分，设置 *tension_factor* = 0.25 :
+将ASCII数据 hawaii_5x5.xyg 网格化为5分，设置 *tension_factor* = 0.25 :
 
    ::
 

@@ -12,7 +12,7 @@ sphdistance
 :简介: 在球上创建 Voronoi 距离，节点或自然最邻近网格
 
 **sphdistance** 读取一个或多个 ASCII（或二进制）坐标文件，使用所有的坐标创建 Voronoi 图。
-得到的多边形用来创建球面上的网格，其中网格值为到坐标文件中坐标的最近距离（见 **-E** ）
+得到的多边形用来创建球面上的网格，其中网格值为到坐标文件中坐标的最近距离（见 |-E| ）
 。 创建 Voronoi 图使用 STRIPACK 算法。可以使用 :doc:`sphtriangulate` 提前创建多边形文件
 以节省时间和运行时所需的空间。
 
@@ -52,7 +52,7 @@ sphdistance
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
 
-    输出网格文件名，其中各子选项的含义见 
+    输出网格文件名，其中各子选项的含义见
     `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
 
 .. include:: explain_-I.rst_
@@ -67,7 +67,7 @@ sphdistance
 **-C**
     用于节省内存。该模块默认在运算过程中同时保存地理坐标和笛卡尔坐标，但对于大型数据
     集，这可能会占据很大内存，因此使用该选项可以只保留其中一种坐标以节省内存，必要的
-    时候 GMT 会自动实现坐标转换。在使用 **-Q** 选项时，该选项无用
+    时候 GMT 会自动实现坐标转换。在使用 |-Q| 选项时，该选项无用
 
 .. _-D:
 
@@ -83,7 +83,7 @@ sphdistance
 
     - **n** 将网格值设置为所在多边形的 ID
 
-    - **z** 将网格值设置为所在多边形的节点（即 Delaunay 三角网的外接圆圆心）上的值 
+    - **z** 将网格值设置为所在多边形的节点（即 Delaunay 三角网的外接圆圆心）上的值
 
     *dist* 为在球面弧上进行重采样的间隔，默认为 1，单位为度。
 
@@ -91,19 +91,19 @@ sphdistance
 
 **-L**\ *unit*
     指定距离计算的单位，可选项包括 **e** (m)， **f** (foot)， **k** (km)，
-    **M** (mile)，**n** (nautical mile)，**u** (survey foot)，或 **d** (spherical degree)    
+    **M** (mile)，**n** (nautical mile)，**u** (survey foot)，或 **d** (spherical degree)
 
 .. _-N:
 
 **-N**\ *nodetable*
     从 *nodetable* 文件度读取每个 Voronoi 多边形相关的节点坐标和面积等信息 [默认从
-    输出 ASCII 文件的段信息中获取]。 
+    输出 ASCII 文件的段信息中获取]。
 
 .. _-Q:
 
 **-Q**\ *voronoi.txt*
     指定 Voronoi 多边形文件 [默认使用输入数据构建 Voronoi 图]。输入数据为二进制文件，
-    需要 **-N** 选项指定节点信息。
+    需要 |-N| 选项指定节点信息。
 
 .. include:: explain_-V.rst_
 
@@ -150,15 +150,15 @@ sphdistance
     gmt sphtriangulate testdata.txt -Qv > voronoi.txt
     gmt sphdistance -Qvoronoi.txt -Rg -I1 -Gglobedist.nc
 
-此外， `GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.3/gallery/ex35.html>`__
+此外， `GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.4/gallery/ex35.html>`__
 展示了使用本模块和全球海岸线创建海洋到海岸线的距离网格。
 
 注意事项
 --------
 
 STRIPACK 算法需要输入中不包含重复点。
-:doc:`blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
-的 **-D** 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
+:doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
+的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 
 参考文献

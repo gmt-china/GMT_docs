@@ -48,7 +48,7 @@ CN-border 数据提供了三个数据文件：
    :show-code: true
    :width: 75%
 
-    gmt begin CN-border-JD pdf,png
+    gmt begin CN-border-JD
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
         gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -Ba10f5g10 -Lg85/11+c11+w900k+f+u
         gmt plot CN-border-La.gmt -W0.1p
@@ -60,7 +60,7 @@ CN-border 数据提供了三个数据文件：
    :show-code: true
    :width: 75%
 
-    gmt begin CN-border-JM pdf,png
+    gmt begin CN-border-JM
         gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
         # 绘制中国地图
         gmt coast -JM105/35/10c -R70/138/13/56 -Ba10f5g10 -G244/243/239 -S167/194/223
@@ -74,11 +74,40 @@ CN-border 数据提供了三个数据文件：
         gmt inset end
     gmt end show
 
+
+绘制中国及临国国界
+------------------
+
+中国国界数据 :file:`CN-border-La.gmt` 和 :file:`CN-border-L1.gmt` 只提供了中国的国界和省界信息。
+若需要同时绘制中国以及邻国国界，则由于 CN-border 数据与 GMT 内置的 DCW 数据的国界不一致
+而出现问题。
+
+为了同时绘制中国以及邻国国界，需要先使用 CN-border 数据将中国区域裁剪出来，在使用 GMT 内置
+DCW 数据时只绘制中国区域以外的部分。具体示例脚本如下：  
+
+.. gmtplot::
+    :show-code: true
+    :width: 90%
+
+    gmt begin CN-border-neighbouring-countries
+        gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
+        gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -Ba10f5g10 -Lg85/11+c11+w900k+f+u
+
+        # 使用 clip 命令和 CN-border-L1.gmt 数据将中国区域裁剪出来
+        gmt clip CN-border-L1.gmt -N
+            # 绘制中国邻国国界，AF 至 VN 是中国的 14 个邻国的国界代码
+            gmt coast -EAF,BT,IN,KZ,KG,LA,MN,MM,NP,KP,PK,RU,TJ,VN+p0.1p
+        gmt clip -C
+        
+        # 绘制中国国界
+        gmt plot CN-border-La.gmt -W0.1p
+    gmt end show
+
 数据来源与处理
 --------------
 
-CN-border 原始数据来自于 `1:100 万全国基础地理数据库 <https://www.webmap.cn/commres.do?method=result100W>`_，
-并由\ `刘珠妹 <https://github.com/liuzhumei>`__ 处理得到 GMT 可使用的数据。
+CN-border 原始数据来自于 `1:100 万全国基础地理数据库 (2015 版) <https://www.webmap.cn/commres.do?method=result100W>`_，
+并由\ `刘珠妹 <https://github.com/liuzhumei>`__\ 处理得到 GMT 可使用的数据。
 **具体数据处理方式待补充**。
 
 数据引用

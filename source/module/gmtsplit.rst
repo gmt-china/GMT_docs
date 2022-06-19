@@ -40,7 +40,7 @@ gmtsplit
 
 *table*
     输入表文件，可以为 2 列，3 列或者 5 列，数据值为 (x,y,[z[,d,h]])。
-    默认情况下认为输入只包含 3 列，若输入数据为 5 列，使用 **-S** 选项确保 d
+    默认情况下认为输入只包含 3 列，若输入数据为 5 列，使用 |-S| 选项确保 d
     不是递减的
 
 可选选项
@@ -65,7 +65,7 @@ gmtsplit
 
 **-F**\ *xy\_filter*/*z\_filter*
     对数据进行滤波，假定数据为 d 列（x 的增量）的函数。*xy\_filter* 和 *z\_filter*
-    分别为 x，y 值和 z 值的滤波的长度，单位和距离单位相同（见 **-S** ）。如果长度
+    分别为 x，y 值和 z 值的滤波的长度，单位和距离单位相同（见 |-S| ）。如果长度
     为 0 ，即不进行滤波。滤波长度的绝对值的是余弦滤波总的窗口宽度，如果长度为
     正值，则数据为低通滤波，如果为负值，则为高通滤波。如果 *z\_filter* 不为 0，则
     在拆分之前对数据滤波，因此边缘效应只会发生在整体数据的开始和结尾处，在每段数据
@@ -132,7 +132,7 @@ gmtsplit
         gmt wiggle -R300/315/12/20 -Jm0.6i -Baf -B+tJA020015 -T1 \
         -W0.75p -Ggray -Z200 -pdf JA020015_wiggles
 
-原始测量数据为 MGD77 格式，因此建议使用 :doc:`mgd77list <supplements/mgd77/mgd77list>`
+原始测量数据为 MGD77 格式，因此建议使用 :doc:`mgd77list`
 模块提取 dist 和 azim 而不是使用 **gmtsplit** 计算。
 
 将一个包含经纬度以及重力观测值的二进制双精度文件，拆分为 survey_xxxx.txt 形式的一系列
@@ -144,5 +144,5 @@ gmtsplit
 --------
 
 :doc:`filter1d`,
-:doc:`mgd77list <supplements/mgd77/mgd77list>`,
+:doc:`mgd77list`,
 :doc:`wiggle`

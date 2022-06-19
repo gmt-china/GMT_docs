@@ -34,7 +34,7 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
     #!/usr/bin/env bash
     nrow=2
     ncol=3
-    gmt begin subplot png,pdf
+    gmt begin subplot
     gmt subplot begin ${nrow}x${ncol} -Fs5c/3c -Blrtb
         for index in $(seq 0 $((nrow*ncol-1))); do
         i=$((index/ncol))
@@ -73,8 +73,7 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
-      gmt set FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 0p
+    gmt begin map
       gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.1c -T"My Subplot Heading"
         gmt subplot set 0
         gmt basemap -R0/10/0/10 -JX? -Baf -BWSen
@@ -125,7 +124,7 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
       gmt set FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 10p
       gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.2c -T"My Subplot Heading" -SRl -SCb -BWSrt
         gmt basemap -R0/10/0/10 -JX? -c
@@ -153,7 +152,7 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
 .. gmtplot::
     :width: 75%
 
-    gmt begin complex-subplot png,pdf
+    gmt begin complex-subplot
       gmt subplot begin 1x2 -Ff15c/3c -A -BWSen
         gmt subplot set 0 -A'(b)'
         gmt basemap -R0/10/0/10 -JX?

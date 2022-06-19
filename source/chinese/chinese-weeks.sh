@@ -11,4 +11,4 @@ gmt basemap -R1969-7-21T/1969-7-28T/0/4 -JX15c/3c -Bpxa1K -Byaf -BWSen
 # FORMAT_TIME_PRIMARY_MAP 为 abbreviated 表示显示“周一”
 gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP abbreviated
 gmt basemap -R1969-7-21T/1969-7-28T/0/4 -JX15c/3c -Bpxa1K -Byaf -BWSen -Y-5c
-gmt end
+gmt end show

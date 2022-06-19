@@ -6,6 +6,7 @@
 # 2. http://www.sphinx-doc.org/en/stable/latex.html
 
 import os
+import sys
 import datetime
 
 # -- Project configuration ------------------------------------------------
@@ -16,7 +17,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.3"
+version = "6.4"
 release = version
 
 # -- Contributor information ---------------------------------------------
@@ -44,6 +45,7 @@ highlight_language = "bash"
 pygments_style = "sphinx"
 show_authors = True
 
+sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
@@ -51,9 +53,11 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_cjkspace.cjkspace",
-    "sphinx_gmt.gmtplot",
+    "sphinx_design",
+    "gmtplot",
+    "sphinxcontrib.datatemplates",
 ]
-mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+#mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
 smartquotes_action = "qe"
@@ -61,7 +65,7 @@ smartquotes_action = "qe"
 # Cross-refering other projects
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 intersphinx_mapping = {
-    "gmt": ("https://docs.generic-mapping-tools.org/6.3/", None),
+    "gmt": ("https://docs.generic-mapping-tools.org/6.4/", None),
 }
 
 # options for sphinx-copybutton
@@ -88,6 +92,13 @@ html_last_updated_fmt = "%Y 年 %m 月 %d 日"
 html_search_language = "zh"
 html_title = project
 
+# set site url of the image gallery for different use cases
+siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+if not os.getenv("CI"):  # build locally
+    siteurl_for_gallery = ""
+elif os.getenv("GITHUB_HEAD_REF"):  # GITHUB_HEAD_REF is only defined for PR.
+    siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv('GITHUB_HEAD_REF')}"
+
 html_context = {
     "favicon": "favicon.ico",
     "display_github": True,
@@ -97,6 +108,8 @@ html_context = {
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
+    # Passed to sphinxcontrib.datatemplates
+    "siteurl": siteurl_for_gallery,
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 

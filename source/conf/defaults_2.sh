@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-gmt begin defaults_2 pdf,png
+gmt begin defaults_2
 gmt set MAP_FRAME_TYPE plain FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0i \
 	FONT_ANNOT_PRIMARY +8p MAP_ANNOT_OBLIQUE anywhere MAP_FRAME_AXES=WSEN
-gmt basemap -X1.5i -R-90/20/-55/25r -JOc-80/25.5/2/69/2.25i -Ba10f5g5
+gmt basemap -X1.5i -R-90/20/-55/25+r -JOc-80/25.5/2/69/2.25i -Ba10f5g5
 gmt text -R0/2.25/0/2 -Jx1i -N -F+f7p,Helvetica-Bold,blue+j << EOF
 -0.15 0.15  RB MAP_ORIGIN_X
 0.28  -0.2  LM MAP_ORIGIN_Y
@@ -40,4 +40,4 @@ gmt plot -Wthinnest,- -X-0.5i -Y-0.5i << EOF
 0.1	0.1
 0.75	0.1
 EOF
-gmt end
+gmt end show

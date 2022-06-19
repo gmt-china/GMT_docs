@@ -16,11 +16,11 @@ grdsample
 
 网格文件插值方式有多种，默认使用 bicubic 插值，可以使用 **-n** 选项设置其它插值方式。
 该模块可以安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能
-存在混叠效应，因而需要在插值前使用 :doc:`grdfft` 或 :doc:`grdfilter`
+存在混叠效应，因而需要在插值前使用 :doc:`gmt:grdfft` 或 :doc:`gmt:grdfilter`
 对网格文件做滤波。
 
-若省略 **-R** 选项，则输出网格与输入网格的区域范围相同；若省略 **-I** 选项，
-则输出网格间距与输入网格间距相同。**-r** 和 **-T** 均可用于修改网格配准方式。
+若省略 |-R| 选项，则输出网格与输入网格的区域范围相同；若省略 |-I| 选项，
+则输出网格间距与输入网格间距相同。**-r** 和 |-T| 均可用于修改网格配准方式。
 若省略这两个选项，则输出网格的配准方式与输入网格相同。
 
 语法
@@ -56,7 +56,7 @@ grdsample
 .. include:: explain_-R.rst_
 ..
 
-    若只使用 **-R** 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**。
+    若只使用 |-R| 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**。
 
 .. _-T:
 
@@ -88,12 +88,12 @@ grdsample
   周围4x4个节点。bilinear插值算法只需要周围的2x2个节点，但其只是零阶连续。
   若光滑性很重要，则使用bicubic算法；若需要尽量避免NaN值的传播，则使用bilinear算法。
 - 除了插值之外，还可以使用 :doc:`grd2xyz` 将网格数据转换为表数据，然后
-  将输出交给 :doc:`surface` 或 :doc:`greenspline` 重新网格化。
+  将输出交给 :doc:`surface` 或 :doc:`gmt:greenspline` 重新网格化。
 
 示例
 ----
 
-将5x5弧分的数据采样成1x1弧分::
+将5x5分的数据采样成1x1分::
 
     gmt grdsample @earth_relief_05m -R0/20/0/20 -I1m -Gtopo_1m.nc
 
@@ -111,7 +111,7 @@ Marks, K. M., and W. H. F. Smith, 2007, Some remarks on resolving seamounts in s
 --------
 
 :doc:`grdedit`,
-:doc:`grdfft`,
-:doc:`grdfilter`,
-:doc:`greenspline`,
+:doc:`gmt:grdfft`,
+:doc:`gmt:grdfilter`,
+:doc:`gmt:greenspline`,
 :doc:`surface`

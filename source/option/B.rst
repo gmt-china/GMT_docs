@@ -60,7 +60,7 @@
 
 *axes* 用于控制要绘制哪些边以及这些边是否有刻度或标注。*axes* 的格式为::
 
-    WSENZ[1234]wesez[1234]lrbtu
+    WSENZ[1234]wsenz[1234]lrbtu
 
 .. gmtplot:: B/axes.sh
     :show-code: false
@@ -166,7 +166,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 .. gmtplot:: B/B_afg.sh
     :width: 60%
     :show-code: false
-    
+
     GMT 坐标轴中的标注、刻度和网格线
 
 *interval* 用于设置这三个属性的间隔，它是一个或多个 [**a**\|\ **f**\|\ **g**]\ *stride*\ [*phase*][*unit*]
@@ -221,8 +221,8 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 
 图中轴和边框属性设置为 ``-Ba1f15mg5m -BS``
 
-下图同时使用了 **p** 和 **s** 两级属性。这里 **p** 属性用于显示弧度，**s**
-属性用于显示弧分。
+下图同时使用了 **p** 和 **s** 两级属性。这里 **p** 属性用于显示度，**s**
+属性用于显示分。
 
 .. gmtplot:: B/B_geo_2.sh
     :show-code: false
@@ -248,7 +248,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :show-code: false
     :width: 60%
 
-    笛卡尔线性轴 
+    笛卡尔线性轴
 
 上图对应的选项设置为 ``-R0/12/0/0.95 -JX3i/0.3i -Ba4f2g1+lFrequency+u" %" -BS``
 
@@ -259,7 +259,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :show-code: true
     :width: 60%
     :caption: 笛卡尔线性轴的倾斜标注
-    
+
     gmt basemap -R2000/2020/35/45 -JX12c -Bxa2f+a-30 -BS -png GMT_-B_slanted
 
 笛卡尔 log\ :sub:`10`\ 轴
@@ -363,7 +363,7 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 .. note::
 
     - 时间轴的标注（月、周以及天的名字）可能会同时受 :term:`GMT_LANGUAGE`，:term:`FORMAT_TIME_PRIMARY_MAP`
-      以及 :term:`FORMAT_TIME_SECONDARY_MAP` 参数的影响。 
+      以及 :term:`FORMAT_TIME_SECONDARY_MAP` 参数的影响。
 
 第一个例子展示了 2000 年春天的两个月，将这两个月的每周的第一天的日期标注出来：
 
@@ -371,10 +371,10 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 1
 
-    gmt begin GMT_-B_time1 pdf,png
+    gmt begin GMT_-B_time1
         gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
         gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpxa7Rf1d -Bsxa1O -BS
-    gmt end
+    gmt end show
 
 需要注意，**-Bsa1O** 指定了次级标注的间隔为一个月，由于此处使用的是大写的 **O**，
 因而具体的显示方式由 :term:`FORMAT_DATE_MAP` 决定。
@@ -388,11 +388,11 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 2
 
-    gmt begin GMT_-B_time2 pdf,png
+    gmt begin GMT_-B_time2
         gmt set FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
         gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpxa6Hf1h -Bsxa1K -BS
         gmt basemap -Bpxa6Hf1h -Bsxa1D -BS -Y0.65i
-    gmt end
+    gmt end show
 
 第三个例子展示了两年的时间，并标注了每年以及每三个月。
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
@@ -401,10 +401,10 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间示例 3
 
-    gmt begin GMT_-B_time3 pdf,png
+    gmt begin GMT_-B_time3
         gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
         gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpxa3Of1o -Bsxa1Y -BS
-    gmt end
+    gmt end show
 
 第四个例子展示了一天中的几个小时，通过在 **-R** 选项中指定 **t** 来使用相对时间坐标。
 这里使用了 **p** 属性和 **s** 属性，12 小时制，时间从右向左增加：
@@ -413,10 +413,10 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 4
 
-    gmt begin GMT_-B_time4 pdf,png
+    gmt begin GMT_-B_time4
         gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
         gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpxa15mf5m -Bsxa1H -BS
-    gmt end
+    gmt end show
 
 第五个例子用两种方式展示了几周的时间：
 
@@ -424,13 +424,13 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 5
 
-    gmt begin GMT_-B_time5 png,pdf
+    gmt begin GMT_-B_time5
         gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character \
             FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
         gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpxa1K -Bsxa1U -BS
         gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
         gmt basemap -Bpxa3Kf1k -Bsxa1r -BS -Y0.65i
-    gmt end
+    gmt end show
 
 第六个例子展示了 1996 年的前 5 个月，每个月用月份的简写以及两位年份标注：
 
@@ -438,10 +438,10 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 6
 
-    gmt begin GMT_-B_time6 pdf,png
+    gmt begin GMT_-B_time6
         gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
         gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Bxa1Of1d -BS
-    gmt end
+    gmt end show
 
 第七个例子展示了 2000 年末，2001 年初的部分时段，天用年积日（一年中第几天）的形式标注：
 
@@ -449,10 +449,10 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
     :width: 60%
     :caption: 时间轴示例 7
 
-    gmt begin GMT_-B_time7 pdf,png
+    gmt begin GMT_-B_time7
         gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
         gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpxa5Df1d -Bsxa1Y -BS
-    gmt end
+    gmt end show
 
 弧度轴 :math:`\pi` 的标注
 -------------------------
@@ -461,13 +461,13 @@ X 轴、Y 轴、Z 轴，每条轴都有很多属性，包括刻度间隔、网�
 其格式为 [*s*]\ **pi**\ [*f*]，其中 s 表示标注间隔是 :math:`\pi` 的 s 倍，
 而 f 表示标注间隔为 :math:`\pi` 的 f 分之一。
 
-.. gmtplot:: 
+.. gmtplot::
     :show-code: true
     :width: 60%
 
     gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -BS -png test1
 
-.. gmtplot:: 
+.. gmtplot::
     :show-code: true
     :width: 60%
 
@@ -524,7 +524,7 @@ GMT 允许用户定义标注来实现不规则间隔的标注，用法是 **-Bc*
     6.2831852	ag	2@~p@~
     EOF
 
-    gmt begin GMT_-B_custom pdf,png
+    gmt begin GMT_-B_custom
         gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u" Ma" \
             -Bpycyannots.txt -Bsxcxannots.txt -BWS+glightblue \
             --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p

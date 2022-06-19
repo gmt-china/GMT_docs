@@ -51,7 +51,7 @@
     5   7
     EOF
 
-    gmt begin SimpleLine png,pdf
+    gmt begin SimpleLine
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat
     gmt end show
@@ -71,7 +71,7 @@
     5   7
     EOF
 
-    gmt begin SimpleLine png,pdf
+    gmt begin SimpleLine
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -W2p,red,-
     gmt end show
@@ -94,7 +94,7 @@
     5   7
     EOF
 
-    gmt begin polygon png,pdf
+    gmt begin polygon
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -W4p,lightblue -L
     gmt end show
@@ -110,7 +110,7 @@
     5   7
     EOF
 
-    gmt begin polygon png,pdf
+    gmt begin polygon
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -W4p,lightblue -Glightred -L
     gmt end show
@@ -127,7 +127,7 @@
     5   7
     EOF
 
-    gmt begin polygon png,pdf
+    gmt begin polygon
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot points.dat -Glightred -L
     gmt end show
@@ -167,7 +167,7 @@
     6	8
     EOF
 
-    gmt begin MultiLines png,pdf
+    gmt begin MultiLines
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot lines.dat -W1p,red
     gmt end show
@@ -191,7 +191,7 @@
     6	8
     EOF
 
-    gmt begin MultiPolygons png,pdf
+    gmt begin MultiPolygons
         gmt basemap -JX10c -R0/10/0/10 -Baf
         gmt plot lines.dat -W1p,red -L -Glightred
     gmt end show
@@ -216,7 +216,7 @@
     250 	30
     EOF
 
-    gmt begin map png,pdf
+    gmt begin map
         gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
         gmt plot twopoints.dat -W2p,red
         gmt plot twopoints.dat -W2p,blue -A

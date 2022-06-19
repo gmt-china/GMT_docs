@@ -26,15 +26,17 @@ jobs:
         path: documentation
 
     - name: Link Checker
-      uses: lycheeverse/lychee-action@v1.3.2
+      uses: lycheeverse/lychee-action@v1.5.0
       with:
         # 429: Too many requests
         args: >
           --accept 429
+          --exclude-all-private
+          --exclude "^mailto:"
           --exclude "^https://www.bilibili.com/"
           --exclude "^https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$"
           --exclude "^https://download1.rpmfusion.org/free/el/rpmfusion-free-release-$"
-          --exclude "^mailto:"
+          --exclude "^https://doi.org/"
           --verbose
           "repository/*.md"
           "documentation/latest/**/*.html"
@@ -44,7 +46,7 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
 
     - name: Create Issue From File
-      uses: peter-evans/create-issue-from-file@v3.0.0
+      uses: peter-evans/create-issue-from-file@v4
       with:
         title: Link Checker Report on ${{ steps.date.outputs.date }}
         content-filepath: ./lychee/out.md

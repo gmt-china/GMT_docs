@@ -27,7 +27,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
    :show-code: true
    :width: 75%
 
-    gmt begin CN-faults png,pdf
+    gmt begin CN-faults
         gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
         gmt plot CN-faults.gmt -W1p,red
     gmt end show
@@ -39,7 +39,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
    :show-code: true
    :width: 50%
 
-    gmt begin CN-regional-faults png,pdf
+    gmt begin CN-regional-faults
         gmt basemap -JM15c -R95/105/25/35 -Baf
         gmt plot CN-faults.gmt -W1p,red
     gmt end show
@@ -51,7 +51,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 
 .. code-block::
 
-    gmt begin CN-faults-labeling png,pdf
+    gmt begin CN-faults-labeling
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL="断层名称": set the "L" value (i.e., label) in segment headers using "断层名称"
         # :+Lh: take the label text from the "L" value in the segment header
@@ -60,6 +60,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 
 .. figure:: https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png
    :width: 50%
+   :align: center
 
 根据属性信息提取数据
 ++++++++++++++++++++
@@ -87,7 +88,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
    :show-code: true
    :width: 50%
 
-    gmt begin CN-buffer-fault png,pdf
+    gmt begin CN-buffer-fault
         gmt basemap -R109/113/34/37 -JM15c -Ba
         # draw a circle with a radius of 100 km
         echo 111 35.5 200k | gmt plot -SE- -Wblue -fg

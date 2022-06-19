@@ -13,8 +13,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      GMT_VERSION: 6.3.0
-      GMT_DOC_VERSION: 6.3
+      GMT_VERSION: 6.4.0
+      GMT_DOC_VERSION: 6.4
     defaults:
       run:
         shell: bash -l {0}
@@ -25,20 +25,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Miniconda
+      # Install Mambaforge with conda-forge dependencies
+      - name: Setup Mambaforge
         uses: conda-incubator/setup-miniconda@v2.1.1
         with:
-          python-version: 3.8
-          channels: conda-forge
-          miniconda-version: "latest"
+          python-version: 3.9
+          channels: conda-forge,nodefaults
+          channel-priority: strict
+          miniforge-version: latest
+          miniforge-variant: Mambaforge
+          mamba-version: "*"
+          use-mamba: true
 
       - name: Install packages
         run: |
-          conda install gmt=${GMT_VERSION}
+          mamba install gmt=${GMT_VERSION}
           pip install -r requirements.txt
 
       - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v2.17.0
+        uses: dawidd6/action-download-artifact@v2.21.0
         with:
           workflow: cache-data.yml
           workflow_conclusion: success
@@ -55,7 +60,7 @@ jobs:
           ls -lhR ~/.gmt
 
       - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v1
+        uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install LaTeX packages
         run: |

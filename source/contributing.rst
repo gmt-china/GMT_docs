@@ -31,7 +31,6 @@
 GitHub 上托管的文档仓库中存在如下长期分支：
 
 - ``master``: 主分支，对应 GMT6 最新版本的文档源码，所有绘图命令均使用现代模式
-- ``5.4``: 对应 GMT5 版本的文档，所有绘图命令均使用经典模式 (该分支已不再维护)
 - ``gh-pages``: 存放文档网页的分支，自动更新，无需人工修改
 
 其它分支均属于短期分支，在合并到 ``master`` 分支后会删除。
@@ -45,18 +44,18 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 1.  安装 `Anaconda <https://seismo-learn.org/software/anaconda/>`__
     （用于科学计算的 Python 发行版）
 
-2.  下载文档源码
+2.  下载文档源码及源码中所需的地学数据
 
     ::
 
-        # 克隆源码，并进入源码目录
-        $ git clone --depth=100 https://github.com/gmt-china/GMT_docs.git
-        $ cd GMT_docs
+        $ git clone --depth=1 https://github.com/gmt-china/china-geospatial-data.git
+        $ git clone --depth=10 https://github.com/gmt-china/GMT_docs.git
 
 3.  安装 Sphinx 等文档所需依赖
 
     ::
 
+        $ cd GMT_docs
         $ pip install -r requirements.txt
 
 4.  编译生成 HTML 格式的文档
@@ -66,6 +65,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
     ::
 
+        $ export GMT_DATADIR=/full/path/to/china-geospatial-data
         $ make html
 
 5.  编译生成 PDF 格式的文档
@@ -136,7 +136,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
         :caption: 图片标题
         :width: 80%
 
-        gmt begin map png,pdf
+        gmt begin map
         gmt basemap -JX10c/10c -R0/10/0/10 -Baf
         gmt end show
 
@@ -159,4 +159,4 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 3. 绘图所需数据 :file:`xxx.dat` （可选，数据应尽量小）
 
 简要描述绘图意义、所用核心模块的关键语法以及绘图必需的数据等。
-新增实例时，请参考\ `文档风格`_\ 和已有的\ :doc:`社区绘图实例 </examples/index>`。
+新增实例时，请参考\ `文档风格`_\ 和已有的\ :doc:`社区绘图实例 </gallery/index>`。

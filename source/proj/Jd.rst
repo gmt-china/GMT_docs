@@ -23,7 +23,7 @@ Equidistant conic（等距圆锥投影）由希腊哲学家 Claudius Ptolemy 于
     :caption: 等距圆锥地图投影
     :width: 85%
 
-    gmt begin GMT_equidistant_conic pdf,png
+    gmt begin GMT_equidistant_conic
     gmt set FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.15c
     gmt coast -R-88/-70/18/24 -JD-79/21/19/23/12c -Bag -Di -N1/thick,red -Glightgreen -Wthinnest
-    gmt end
+    gmt end show

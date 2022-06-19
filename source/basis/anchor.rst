@@ -17,7 +17,7 @@
     :show-code: false
     :width: 70%
 
-    gmt begin anchor-1 png,pdf
+    gmt begin anchor-1
     gmt set MAP_TICK_LENGTH_PRIMARY 20p MAP_TICK_PEN_PRIMARY 1p
     gmt basemap -R0/10/0/6 -JX10c/6c -BENlb -Bxf5 -Byf3
     gmt plot -Sc0.3c -Gred -N << EOF
@@ -50,7 +50,7 @@
     BC BC BC
     BR BR BR
     EOF
-    gmt end
+    gmt end show
 
 此处的矩形元素并不一定是一个真正的矩形，GMT中很多绘图元素都可以抽象为一个矩形元素。
 例如常规的矩形底图、非矩形的地理底图、比例尺、色标、指南针、文本字符串等，
@@ -62,7 +62,7 @@
     :show-code: false
     :width: 70%
 
-    gmt begin anchor-2 png,pdf
+    gmt begin anchor-2
     gmt basemap -Rg -JH10c -B0
     gmt text -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N << EOF
     TL TL TL
@@ -87,7 +87,7 @@
     10 3
     10 6
     EOF
-    gmt end
+    gmt end show
 
 指南针、比例尺、图例、色标、文本字符串等也可以抽象为一个矩形，也有自己的锚点。
 下图展示了色标的9个锚点的位置：
@@ -96,7 +96,7 @@
     :show-code: false
     :width: 70%
 
-    gmt begin anchor-3 png,pdf
+    gmt begin anchor-3
     gmt colorbar -D0c/0c+w10c/1.5c+h -B0 -Cpolar
     gmt basemap -R0/10/0/6 -JX10c/1.5c -B0
     gmt text -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N << EOF
@@ -122,4 +122,4 @@
     10 3
     10 6
     EOF
-    gmt end
+    gmt end show
