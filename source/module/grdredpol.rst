@@ -104,7 +104,7 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 
 .. include:: explain_-V.rst_
 
-.. include:: explain_-n.rst
+.. include:: explain_-n.rst_
 
 示例
 ----

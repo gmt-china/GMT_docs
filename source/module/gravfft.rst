@@ -279,7 +279,7 @@ J. Geophys. Res., 106(B9), 19,431–19,441,
 相关模块
 --------
 
-:doc:`grdfft`,
+:doc:`gmt:grdfft`,
 :doc:`gmtflexure`,
 :doc:`grdflexure`,
 :doc:`gmtgravmag3d`,

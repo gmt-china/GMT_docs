@@ -200,7 +200,7 @@ gravprisms
 ----
 
 假定某棱柱构成的高斯海山高度为 6000 m，底部半径为 30 km，总共包括 2828 个棱柱，
-通过 :doc:`plot3d` 可绘制该海山 ::
+通过 :doc:`gmt:plot3d` 可绘制该海山 ::
 
     gmt plot3d -R-30/30/-30/30/0/7000 -JX12c -JZ3c -Ggray -So1q+b @prisms.txt -B \
         -Wfaint -p200/20 -pdf smt
