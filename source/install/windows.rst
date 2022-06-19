@@ -22,8 +22,8 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
 1.  下载 GMT 安装包
 
-    - 64 位安装包：`gmt-6.3.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.3.0-win64.exe>`__
-    - 32 位安装包：`gmt-6.3.0-win32.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.3.0-win32.exe>`__
+    - 64 位安装包：`gmt-6.4.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.4.0-win64.exe>`__
+    - 32 位安装包：`gmt-6.4.0-win32.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.4.0-win32.exe>`__
 
     GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 

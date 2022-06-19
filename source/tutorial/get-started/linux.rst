@@ -15,7 +15,7 @@ GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
 .. code-block:: console
 
-            GMT - The Generic Mapping Tools, Version 6.3.0 [64-bit] [8 cores]
+            GMT - The Generic Mapping Tools, Version 6.4.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
             Supported in part by the US National Science Foundation (http://www.nsf.gov/)

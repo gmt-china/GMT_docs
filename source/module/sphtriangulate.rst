@@ -139,8 +139,8 @@ sphtriangulate
 
     gmt sphtriangulate globalnodes.txt -Qd -A > global_tri.txt
 
-除上述示例外，`GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.3/gallery/ex35.html>`__
-和 `示例 48 <https://docs.generic-mapping-tools.org/6.3/gallery/ex48.html>`__
+除上述示例外，`GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.4/gallery/ex35.html>`__
+和 `示例 48 <https://docs.generic-mapping-tools.org/6.4/gallery/ex48.html>`__
 也使用了该模块。
 
 注意事项
