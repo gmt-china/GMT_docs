@@ -283,6 +283,6 @@ GDAL/GMT 格式的文件被认为是完整的数据集，因此在使用该模�
 相关模块
 --------
 
-:doc:`gmtconvert`，
+:doc:`gmt:gmtconvert`，
 :doc:`gmtselect`，
 :doc:`gmtsimplify`，

@@ -52,7 +52,7 @@ sphdistance
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
 
-    输出网格文件名，其中各子选项的含义见 
+    输出网格文件名，其中各子选项的含义见
     `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
 
 .. include:: explain_-I.rst_
@@ -83,7 +83,7 @@ sphdistance
 
     - **n** 将网格值设置为所在多边形的 ID
 
-    - **z** 将网格值设置为所在多边形的节点（即 Delaunay 三角网的外接圆圆心）上的值 
+    - **z** 将网格值设置为所在多边形的节点（即 Delaunay 三角网的外接圆圆心）上的值
 
     *dist* 为在球面弧上进行重采样的间隔，默认为 1，单位为度。
 
@@ -91,13 +91,13 @@ sphdistance
 
 **-L**\ *unit*
     指定距离计算的单位，可选项包括 **e** (m)， **f** (foot)， **k** (km)，
-    **M** (mile)，**n** (nautical mile)，**u** (survey foot)，或 **d** (spherical degree)    
+    **M** (mile)，**n** (nautical mile)，**u** (survey foot)，或 **d** (spherical degree)
 
 .. _-N:
 
 **-N**\ *nodetable*
     从 *nodetable* 文件度读取每个 Voronoi 多边形相关的节点坐标和面积等信息 [默认从
-    输出 ASCII 文件的段信息中获取]。 
+    输出 ASCII 文件的段信息中获取]。
 
 .. _-Q:
 
@@ -150,14 +150,14 @@ sphdistance
     gmt sphtriangulate testdata.txt -Qv > voronoi.txt
     gmt sphdistance -Qvoronoi.txt -Rg -I1 -Gglobedist.nc
 
-此外， `GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.3/gallery/ex35.html>`__
+此外， `GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.4/gallery/ex35.html>`__
 展示了使用本模块和全球海岸线创建海洋到海岸线的距离网格。
 
 注意事项
 --------
 
 STRIPACK 算法需要输入中不包含重复点。
-:doc:`blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
+:doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
 的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 

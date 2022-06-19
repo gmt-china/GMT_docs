@@ -46,7 +46,7 @@ colorbar
     设置colorbar的标注、刻度和网格线间隔。
 
     在不使用 |-B| 选项或不指定标注间隔时，默认会根据CPT文件中每一行的内容
-    对colorbar进行标注，具体见 :doc:`/cpt/index`。**-B** 选项的具体说明
+    对colorbar进行标注，具体见 :doc:`/cpt/index`。|-B| 选项的具体说明
     见 :doc:`/option/B`。
 
     默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
@@ -208,6 +208,6 @@ colorbar
 
 :doc:`makecpt`
 :doc:`gmtlogo`,
-:doc:`grd2cpt`
+:doc:`grd2cpt`,
 :doc:`image`,
 :doc:`legend`

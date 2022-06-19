@@ -90,5 +90,5 @@ kml2gmt
 
 :doc:`gmt:supplements/img/img2google`,
 :doc:`psconvert`,
-:doc:`gmt2kml`,
+:doc:`gmt:gmt2kml`,
 :doc:`gmtspatial`
