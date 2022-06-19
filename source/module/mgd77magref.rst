@@ -195,7 +195,7 @@ Total field，偏角和倾角 ::
 参考
 ----
 
-CM4 见 `<https://onlinelibrary.wiley.com/doi/10.1111/j.1365-246X.2004.02421.x>`__
+CM4 见 `<https://doi.org/10.1111/j.1365-246X.2004.02421.x>`__
 
 IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 
