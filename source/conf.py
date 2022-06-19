@@ -49,6 +49,7 @@ sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
+    "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
