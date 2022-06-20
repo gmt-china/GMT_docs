@@ -24,7 +24,7 @@ inset begin语法
 **gmt inset begin**
 |-D|\ *inset-box*
 [ |-F|\ *box* ]
-[ |-M|\ *margins* ]
+[ |-C|\ *clearance* ]
 [ |-N| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
@@ -66,9 +66,9 @@ inset begin语法
 
     .. include:: explain_-F_box.rst_
 
-.. _-M:
+.. _-C:
 
-**-M**\ *margins*
+**-C**\ *clearance*
     小图区域内部的额外空白区域 [默认值没有空白]。其可以取三种形式：
 
     - 一个值，表示四个边的空白相同
