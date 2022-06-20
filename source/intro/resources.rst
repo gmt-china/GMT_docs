@@ -8,14 +8,14 @@
 
 #. `GMT6 初学者视频教程 <https://www.bilibili.com/video/BV1C64y1m7qP>`__\ （|刘珠妹|、|陈箫翰|）
 #. GMT 中文手册：:doc:`入门教程 </tutorial/started>`、:doc:`进阶教程 </tutorial/advanced>`
-#. `GMT 官方入门教程 <https://docs.generic-mapping-tools.org/6.4/tutorial.html>`__
+#. :gmt-docs:`GMT 官方入门教程 <tutorial.html>`
 #. `GMT 教學手冊 <http://gmt-tutorials.org/>`__\ （`鄭懷傑 <https://github.com/whyjz>`__）
 
 **参考手册**
 
 #. `GMT 中文手册 <https://docs.gmt-china.org/>`__
-#. `GMT 官方参考手册 <https://docs.generic-mapping-tools.org/6.4/cookbook.html>`__
-#. `GMT 官方模块手册 <https://docs.generic-mapping-tools.org/6.4/modules.html>`__
+#. :gmt-docs:`GMT 官方参考手册 <cookbook.html>`
+#. :gmt-docs:`GMT 官方参考手册 <modules.html>`
 
 **论坛/讨论组**
 

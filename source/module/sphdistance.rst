@@ -150,7 +150,7 @@ sphdistance
     gmt sphtriangulate testdata.txt -Qv > voronoi.txt
     gmt sphdistance -Qvoronoi.txt -Rg -I1 -Gglobedist.nc
 
-此外， `GMT 官方示例 35 <https://docs.generic-mapping-tools.org/6.4/gallery/ex35.html>`__
+此外，:gmt-docs:`GMT 官方示例 35 <gallery/ex35.html>`
 展示了使用本模块和全球海岸线创建海洋到海岸线的距离网格。
 
 注意事项

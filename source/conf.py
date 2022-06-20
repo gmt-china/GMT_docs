@@ -49,6 +49,7 @@ sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
+    "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
@@ -65,7 +66,12 @@ smartquotes_action = "qe"
 # Cross-refering other projects
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 intersphinx_mapping = {
-    "gmt": ("https://docs.generic-mapping-tools.org/6.4/", None),
+    "gmt": (f"https://docs.generic-mapping-tools.org/{version}/", None),
+}
+
+# Configure links to GMT docs
+extlinks = {
+    "gmt-docs": (f"https://docs.generic-mapping-tools.org/{version}/%s", None),
 }
 
 # options for sphinx-copybutton
