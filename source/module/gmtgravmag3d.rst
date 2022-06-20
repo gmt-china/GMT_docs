@@ -115,8 +115,7 @@ gmtgravmag3d
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
 
-    输出网格文件名，其中各子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read`。
 
 .. _-E:
 
