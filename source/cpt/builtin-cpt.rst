@@ -5,7 +5,7 @@ GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展�
 具体如何使用这些内置CPT文件会在后面做进一步介绍。
 
 下面列出了GMT内置的部分CPT文件的具体配色以及CPT文件名（位于图下方）。
-用户可以参阅 `官方手册 <https://docs.generic-mapping-tools.org/latest/cookbook/cpts.html>`__ 了解更多内置CPT配色文件。
+用户可以参阅 :gmt-docs:`官方手册 <cookbook/cpts.html>` 了解更多内置CPT配色文件。
 每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到
 （将选项 **-C**\ *cpt* 中的 *cpt* 替换为相应的CPT即可）::
 
