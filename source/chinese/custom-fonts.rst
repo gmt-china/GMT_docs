@@ -140,6 +140,9 @@ GMT 中文测试
 
    #!/usr/bin/env bash
    gmt begin GMT_Chinese
+   # GMT处理中文存在一些已知BUG
+   # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
+   gmt set PS_CHAR_ENCODING Standard+
    gmt set FONT_TITLE 30p,39,black
    gmt set FONT_LABEL 15p,39,black
 

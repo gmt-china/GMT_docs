@@ -52,6 +52,9 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 .. code-block::
 
     gmt begin CN-faults-labeling
+        # GMT处理中文存在一些已知BUG
+        # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
+        gmt set PS_CHAR_ENCODING Standard+
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL="断层名称": set the "L" value (i.e., label) in segment headers using "断层名称"
         # :+Lh: take the label text from the "L" value in the segment header
