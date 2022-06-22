@@ -1,22 +1,22 @@
 Windows 下的 GMT 中文支持
 =========================
 
+:贡献者: |田冬冬|, |陈箫翰|
+:最近更新日期: 2022-06-21
+
 ghostscript 的中文支持
 ----------------------
 
-如果没有正确配置 Ghostscript 的中文支持，GMT 生成的 PNG、PDF 等格式的图片中的中文将会出现乱码。
-因此 Ghostscript 的中文支持对于希望使用中文的用户来说是必须进行配置的。
+GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片。如果没有正确配置
+Ghostscript 的中文支持，GMT 生成的图片中的中文将会出现乱码。因此必须首先
+配置 Ghostscript 的中文支持，但 GMT 安装包中内置的 Ghostscript **不支持**\ 中文。
 
-.. warning::
+若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后
+再自行安装 Ghostscript。对于已安装 GMT 的用户，建议先卸载 GMT，再
+按照《 :doc:`/install/windows` 》一节的步骤重新安装 GMT，安装过程中注意
+不勾选 Ghostscript。
 
-   GMT安装包中内置的 Ghostscript 不支持中文。
-   若想要GMT支持中文，注意在安装GMT时不勾选Ghostscript组件，待GMT安装完成后再自行安装 Ghostscript。
-
-   新手常常没有意识到自己安装GMT时勾选了Ghostscript组件，导致中文乱码出现。
-   如果严格按照下列步骤配置，依然遇到了中文乱码问题，
-   建议卸载GMT，并按照《 :doc:`/install/windows` 》章节的步骤与要求重新安装GMT与Ghostscript。
-
-安装包下载地址:
+Ghostscript 安装包下载地址:
 
 - `gs9561w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/gs9561w64.exe>`__
 - `gs9561w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/gs9561w32.exe>`__
@@ -53,7 +53,6 @@ GMT 的中文支持
     Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
     常常将文件名错误写成 ``PSL_custom_fonts.txt.txt``，导致中文字体添加失败。
     因此强烈建议在\ **资源管理器** -> **查看**\ 中开启显示文件扩展名:
-
 
     .. image:: chinese-extension.png
 
@@ -120,10 +119,10 @@ GMT 中文测试
         gmt set PS_CHAR_ENCODING Standard+
 
     可临时避免这一BUG。
-    
+
     此外，GMT 6.3 中每句使用中文的命令之前，
     以及使用echo命令输出含中文的文件之前，必须设置 ``chcp 936`` ，否则将出现乱码::
-    
+
         chcp 936
 
 成图效果如下：
