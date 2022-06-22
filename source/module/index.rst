@@ -96,17 +96,27 @@
     - :doc:`triangulate`
     - :doc:`velo`
     - :doc:`wiggle`
+    - :doc:`xyz2grd`
+    - :doc:`x2sys_init`
     - :doc:`x2sys_binlist`
     - :doc:`x2sys_cross`
     - :doc:`x2sys_datalist`
     - :doc:`x2sys_get`
-    - :doc:`x2sys_init`
     - :doc:`x2sys_list`
     - :doc:`x2sys_merge`
     - :doc:`x2sys_put`
     - :doc:`x2sys_report`
     - :doc:`x2sys_solve`
-    - :doc:`xyz2grd`
+    - :doc:`gmtflexure`
+    - :doc:`gmtgravmag3d`
+    - :doc:`gravfft`
+    - :doc:`grdflexure`
+    - :doc:`grdgravmag3d`
+    - :doc:`grdredpol`
+    - :doc:`grdseamount`
+    - :doc:`gravprisms`
+    - :doc:`talwani2d`
+    - :doc:`talwani3d`
     - :doc:`mgd77manage`
     - :doc:`mgd77convert`
     - :doc:`mgd77header`
@@ -145,16 +155,6 @@
     - :doc:`gmt:plot3d`
     - :doc:`gmt:supplements/geodesy/earthtide`
     - :doc:`gmt:supplements/geodesy/gpsgridder`
-    - :doc:`gmt:supplements/gshhg/gshhg`
-    - :doc:`gmt:supplements/potential/gmtflexure`
-    - :doc:`gmt:supplements/potential/gmtgravmag3d`
-    - :doc:`gmt:supplements/potential/gravfft`
-    - :doc:`gmt:supplements/potential/grdflexure`
-    - :doc:`gmt:supplements/potential/grdgravmag3d`
-    - :doc:`gmt:supplements/potential/grdredpol`
-    - :doc:`gmt:supplements/potential/grdseamount`
-    - :doc:`gmt:supplements/potential/talwani2d`
-    - :doc:`gmt:supplements/potential/talwani3d`
     - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
@@ -338,15 +338,16 @@
 :doc:`gmt:supplements/spotter/grdspotter`        Create CVA image from a gravity or topography grid
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
 **POTENTIAL 相关模块**                           .. _module_potential:
-:doc:`gmt:supplements/potential/gmtflexure`      Compute flexural deformation of 2-D loads, forces and bending moments
-:doc:`gmt:supplements/potential/grdflexure`      Compute flexural deformation of 3-D surfaces for various rheologies
-:doc:`gmt:supplements/potential/gmtgravmag3d`    Compute the gravity/magnetic anomaly of a 3-D body
-:doc:`gmt:supplements/potential/grdgravmag3d`    Computes the gravity effect of one (or two) grids
-:doc:`gmt:supplements/potential/gravfft`         Compute gravitational attraction of 3-D surfaces and a little more
-:doc:`gmt:supplements/potential/grdredpol`       Compute the Continuous Reduction To the Pole, AKA differential RTP
-:doc:`gmt:supplements/potential/grdseamount`     Compute synthetic seamount bathymetry
-:doc:`gmt:supplements/potential/talwani2d`       Compute geopotential anomalies over 2-D bodies
-:doc:`gmt:supplements/potential/talwani3d`       Compute geopotential anomalies over 3-D bodies
+:doc:`gmtflexure`                                计算 2-D 载荷产生的力，弯矩以及形变
+:doc:`grdflexure`                                计算 3-D 载荷在不同流变基础下产生的形变
+:doc:`gmtgravmag3d`                              计算 3-D 实体产生的重力/磁异常
+:doc:`grdgravmag3d`                              计算一个或者两个网格的重力/磁异常
+:doc:`gravfft`                                   网格重力的谱计算，均衡，导纳，以及相干性计算
+:doc:`grdredpol`                                 计算连续化极（Reduction To the Pole, RTP）
+:doc:`grdseamount`                               创建合成海山
+:doc:`gravprisms`                                计算三维垂直棱柱（可变密度海山）产生的位异常
+:doc:`talwani2d`                                 计算 2-D 实体产生的位异常
+:doc:`talwani3d`                                 计算 3-D 实体产生的位异常
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
@@ -454,17 +455,27 @@
    triangulate
    velo
    wiggle
+   xyz2grd
+   x2sys_init
    x2sys_binlist
    x2sys_cross
    x2sys_datalist
    x2sys_get
-   x2sys_init
    x2sys_list
    x2sys_merge
    x2sys_put
    x2sys_report
    x2sys_solve
-   xyz2grd
+   gmtflexure
+   gmtgravmag3d
+   gravfft
+   grdflexure
+   grdgravmag3d
+   grdredpol
+   grdseamount
+   gravprisms
+   talwani2d
+   talwani3d
    mgd77manage
    mgd77convert
    mgd77header
