@@ -117,6 +117,6 @@ separation of geophysical data, *Math. Geol.*, **30**\ (4), 391-408.
 相关模块
 --------
 
-:doc:`grdfilter`,
+:doc:`gmt:grdfilter`,
 :doc:`grdmask`,
 :doc:`grdmath`
