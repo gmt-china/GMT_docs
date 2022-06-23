@@ -60,9 +60,8 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
     4 6
     8 5
     EOF
-    gmt legend -DjBR+o0.1c/0.1c -F+p1p+glightblue
-    # 如果使用中文图例，则需要在上面命令的基础上设置图例为中文字体
-    # 示例： gmt legend -DjBR+o0.1c/0.1c -F+p1p+glightblue --FONT_ANNOT_PRIMARY=12p,41,black
+    # 设置图例宽的属性，并修改图例里文字的字体
+    gmt legend -DjBR+o0.1c/0.1c -F+p1p+glightblue --FONT_ANNOT_PRIMARY=12p,1,black
     gmt end show
 
 这个示例中，我们显式调用了 **legend** 选项，并设置了 **-D** 和 **-F** 选项。
