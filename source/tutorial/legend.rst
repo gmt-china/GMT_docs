@@ -41,7 +41,7 @@ GMT 中使用 :doc:`/module/legend` 模块添加图例。
 
 GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调用 **legend** 模块，
 而是 GMT 在绘图结束时自动调用了 **legend** 添加图例。我们也可以显式调用
-**legend** 模块，并设置图例的更多属性。
+**legend** 模块，并设置图例的更多属性，例如为中文图例设置字体等等。
 
 .. gmtplot::
     :width: 50%
@@ -61,6 +61,8 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
     8 5
     EOF
     gmt legend -DjBR+o0.1c/0.1c -F+p1p+glightblue
+    # 如果使用中文图例，则需要在上面命令的基础上设置图例为中文字体
+    # 示例： gmt legend -DjBR+o0.1c/0.1c -F+p1p+glightblue --FONT_ANNOT_PRIMARY=12p,41,black
     gmt end show
 
 这个示例中，我们显式调用了 **legend** 选项，并设置了 **-D** 和 **-F** 选项。
