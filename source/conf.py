@@ -112,7 +112,7 @@ html_context = {
     "github_repo": github_repo,
     "github_version": "master",
     "conf_py_path": "/source/",
-    "theme_vcs_pageview_mode": "blob",
+    "theme_vcs_pageview_mode": "edit",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     # Passed to sphinxcontrib.datatemplates
     "siteurl": siteurl_for_gallery,
