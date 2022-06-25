@@ -69,6 +69,29 @@ jobs:
       - name: Build HTML
         run: make build_html
 
+      - name: Prepare the documentation for deployment
+        run: |
+          cd deploy
+          # generate the .nojekyll file in the root directory
+          touch .nojekyll
+          # generate CNAME in the root directory
+          echo docs.gmt-china.org > CNAME
+          # Use the old PDF documentation because the new PDF documentation is not built
+          cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          # Replace the old documentation with tht new one.
+          rm -rvf ${GMT_DOC_VERSION}
+          cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
+          # let "latest" link to the latest version
+          rm -f latest
+          ln -sf ${GMT_DOC_VERSION} latest
+          cd ..
+
+      - name: Deploy the HTML documentation to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: deploy
+
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v2
 
@@ -87,21 +110,6 @@ jobs:
 
       # - name: Push the documentation to gh-pages
       #   run: |
-      #     cd deploy
-      #     # generate the .nojekyll file in the root directory
-      #     touch .nojekyll
-      #     # generate CNAME in the root directory
-      #     echo docs.gmt-china.org > CNAME
-      #     # Use the old PDF documentation if the new PDF documentation is not built
-      #     if [ ! -f ../build/dirhtml/GMT_docs.pdf ]; then
-      #       cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
-      #     fi
-      #     # Replace the old documentation with tht new one.
-      #     rm -rvf ${GMT_DOC_VERSION}
-      #     cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
-      #     # let "latest" link to the latest version
-      #     rm -f latest
-      #     ln -sf ${GMT_DOC_VERSION} latest
       #     # commit all changes
       #     git add -A .
       #     git status
