@@ -85,28 +85,28 @@ jobs:
           path: deploy
           fetch-depth: 0
 
-      - name: Push the documentation to gh-pages
-        run: |
-          cd deploy
-          # generate the .nojekyll file in the root directory
-          touch .nojekyll
-          # generate CNAME in the root directory
-          echo docs.gmt-china.org > CNAME
-          # Use the old PDF documentation if the new PDF documentation is not built
-          if [ ! -f ../build/dirhtml/GMT_docs.pdf ]; then
-            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
-          fi
-          # Replace the old documentation with tht new one.
-          rm -rvf ${GMT_DOC_VERSION}
-          cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
-          # let "latest" link to the latest version
-          rm -f latest
-          ln -sf ${GMT_DOC_VERSION} latest
-          # commit all changes
-          git add -A .
-          git status
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          message="Deploy ${GITHUB_SHA::8}"
-          git commit --amend --reset-author -m "$message"
-          git push -fq origin gh-pages 2>&1 >/dev/null
+      # - name: Push the documentation to gh-pages
+      #   run: |
+      #     cd deploy
+      #     # generate the .nojekyll file in the root directory
+      #     touch .nojekyll
+      #     # generate CNAME in the root directory
+      #     echo docs.gmt-china.org > CNAME
+      #     # Use the old PDF documentation if the new PDF documentation is not built
+      #     if [ ! -f ../build/dirhtml/GMT_docs.pdf ]; then
+      #       cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+      #     fi
+      #     # Replace the old documentation with tht new one.
+      #     rm -rvf ${GMT_DOC_VERSION}
+      #     cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
+      #     # let "latest" link to the latest version
+      #     rm -f latest
+      #     ln -sf ${GMT_DOC_VERSION} latest
+      #     # commit all changes
+      #     git add -A .
+      #     git status
+      #     git config user.email "github-actions[bot]@users.noreply.github.com"
+      #     git config user.name "github-actions[bot]"
+      #     message="Deploy ${GITHUB_SHA::8}"
+      #     git commit --amend --reset-author -m "$message"
+      #     git push -fq origin gh-pages 2>&1 >/dev/null
