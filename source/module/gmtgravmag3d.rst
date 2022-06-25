@@ -5,7 +5,7 @@ gmtgravmag3d
 =============
 
 :贡献者: |周茂|
-:最近更新日期: 2022-06-21
+:最近更新日期: 2022-06-25
 
 ----
 
@@ -30,6 +30,10 @@ gmtgravmag3d
 [ |-Z|\ *level* ]
 [ |SYN_OPT-V| ]
 [ **-fg**]
+[ |SYN_OPT-h| ]
+[ |SYN_OPT-i| ]
+[ |SYN_OPT-o| ]
+[ |SYN_OPT-r| ]
 [ |SYN_OPT--| ]
 
 必选选项
@@ -116,7 +120,7 @@ gmtgravmag3d
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
 
-    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read`。
+    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read` 。
 
 .. _-E:
 
@@ -149,6 +153,14 @@ gmtgravmag3d
 
 .. include:: explain_-f.rst_
 
+.. include:: explain_-h.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_-ocols.rst_
+
+.. include:: explain_nodereg.rst_
+
 .. include:: explain_help.rst_
 
 网格距离单位
@@ -177,5 +189,6 @@ polyhedral bodies and translation into magnetic anomalies, *Geophysics*,
 --------
 
 :doc:`grdgravmag3d`,
+:doc:`gravprisms`,
 :doc:`talwani2d`,
 :doc:`talwani3d`
