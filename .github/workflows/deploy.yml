@@ -109,13 +109,15 @@ jobs:
       - name: Build PDF
         run: make build_pdf
 
-      # - name: Push the documentation to gh-pages
-      #   run: |
-      #     # commit all changes
-      #     git add -A .
-      #     git status
-      #     git config user.email "github-actions[bot]@users.noreply.github.com"
-      #     git config user.name "github-actions[bot]"
-      #     message="Deploy ${GITHUB_SHA::8}"
-      #     git commit --amend --reset-author -m "$message"
-      #     git push -fq origin gh-pages 2>&1 >/dev/null
+      - name: Prepare the documentation for deployment
+        run: |
+          cd deploy
+          cp build/dirhtml/GMT_Docs.pdf ${GMT_DOC_VERSION}/
+          cd ..
+
+      - name: Deploy the PDF documentation to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: deploy
+          publish_branch: gh-pages-testing
