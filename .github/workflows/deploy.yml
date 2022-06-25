@@ -4,7 +4,7 @@
 name: Deploy
 
 on:
-  pull_request: # enable pull_request for testing
+  # pull_request: # enable pull_request for testing
   push:
     branches:
       - master
@@ -92,7 +92,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
-          publish_branch: gh-pages-testing
 
       - name: Install TinyTeX
         uses: r-lib/actions/setup-tinytex@v2
@@ -120,4 +119,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
-          publish_branch: gh-pages-testing
