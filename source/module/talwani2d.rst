@@ -127,7 +127,7 @@ talwani2d
 计算 2-D 实体在一个等距剖面形成的重力异常，其横截面文件为 :file:`body2d.txt`
 ，相对密度为 1700 km/m^3 （该相对密度为地壳平均密度和海水密度之差），
 所有距离的单位设置为常数::
-    
+
     gmt talwani2d -T-200/200/2 body2d.txt -D1700 -Ff > 2dgrav.txt
 
 使用同样的实体，计算其在给定 :file:`crossing.txt` 测线上的垂直重力梯度异常::
@@ -142,7 +142,7 @@ talwani2d
 --------
 
 The 2-D geoid anomaly is a logarithmic potential and thus has no natural reference
-level. We simply remove the most negative (if density contrast is positive) or 
+level. We simply remove the most negative (if density contrast is positive) or
 positive (if density contrast is negative) computed value from all values, rendering
 the entire anomaly positive (or negative). You can use :doc:`gmtmath` to change the
 zero level to suit your needs
@@ -158,7 +158,7 @@ Chapman, M. E., 1979, Techniques for interpretation of geoid anomalies,
 
 Kim, S.-S., and P. Wessel, 2016, New analytic solutions for modeling vertical
 gravity gradient anomalies, *Geochem. Geophys. Geosyst., 17*,
-`http://doi.org/10.1002/2016GC006263 <http://doi.org/10.1002/2016GC006263>`_.
+`https://doi.org/10.1002/2016GC006263 <https://doi.org/10.1002/2016GC006263>`_.
 
 Talwani, M., J. L. Worzel, and M. Landisman, 1959, Rapid gravity computations for
 two-dimensional bodies with application to the Mendocino submarine fracture zone,

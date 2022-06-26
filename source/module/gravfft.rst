@@ -54,9 +54,9 @@ gravfft
 .. _-G:
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**][:*driver*\ [*dataType*][**+c**\ *options*]]
-    
+
     输出网格名，计算实体对该网格内的点的异常值。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 
+    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
 
 可选选项
 --------
@@ -111,13 +111,13 @@ gravfft
     ，误差（1 倍）以及可选的理论导纳。追加子选项可进行详细设置：
 
     - **w** 输出波长，而不是频率（或称波数）
-    
+
     - **k** 设置波长的单位为千米，默认为 m
-    
+
     - **c** 计算相干谱而不是导纳
-    
+
     - **b** 输出第四列，其为底部加载的理论导纳
-    
+
     - **t** 同为理论导纳，但为从顶部加载的弹性板理论导纳
 
 .. include:: explain_fft.rst_
@@ -141,7 +141,7 @@ gravfft
     *rm*，*rw* 以及 *ri* 分别为载荷、地幔、海水以及填充物的密度，使用 SI 单位。
     如果不指定 *ri* ，则其等于 *rl* 。使用 |-Z| 设置地幔平均深度。如果弹性板
     厚度 *te* 大于 1e10，则将被解析为抗扰刚度。**+m** 选项用来输出带有 Moho
-    面效应的网格，见 |-F| 。如果 *te* = 0，则响应函数变为 Airy 模型。使用 
+    面效应的网格，见 |-F| 。如果 *te* = 0，则响应函数变为 Airy 模型。使用
     **-T+m** 时会默认设置 **-N+h**
 
 .. _-W:
@@ -174,7 +174,7 @@ gravfft
 --------
 
 NetCDF COARDS 网格将会被自动识别为地理网格。对于其他格式的地理网格，可使用
-|SYN_OPT-f| 将单位转换为 m。如果地理网格接近两级，则应考虑使用 
+|SYN_OPT-f| 将单位转换为 m。如果地理网格接近两级，则应考虑使用
 :doc:`grdproject` 投影后计算。
 
 Plate Flexure
@@ -205,7 +205,7 @@ Plate Flexure
 这里使用减而不是加的原因为，布格异常假定改正了水层导致的质量亏损，所以应该加
 water_g.grd，因为水的密度比下面的岩石小。
 
-接下来计算地壳地幔的贡献，并叠加到海底异常中。假定地壳厚度为 6 km，密度为 
+接下来计算地壳地幔的贡献，并叠加到海底异常中。假定地壳厚度为 6 km，密度为
 2700，地幔密度为 3300；可以重复使用用于计算水层异常的命令，但密度对比设置
 为 600。但上述计算需要提前知道平均 Moho 面深度，可以通过对网格进行一定的
 缩放或者偏移实现。这里需要注意偏移的符号，因为 z 轴向上为正 ::
@@ -266,13 +266,13 @@ water_g.grd，因为水的密度比下面的岩石小。
 Luis, J.F. and M.C. Neves. 2006, The isostatic compensation of the
 Azores Plateau: a 3D admittance and coherence analysis. J. Geothermal
 Volc. Res. Volume 156, Issues 1-2, Pages 10–22,
-`http://doi.org/10.1016/j.jvolgeores.2006.03.010 <http://doi.org/10.1016/j.jvolgeores.2006.03.010>`_
+`https://doi.org/10.1016/j.jvolgeores.2006.03.010 <https://doi.org/10.1016/j.jvolgeores.2006.03.010>`_
 
 Parker, R. L., 1972, The rapid calculation of potential anomalies, Geophys. J., 31, 447–455.
 
 Wessel. P., 2001, Global distribution of seamounts inferred from gridded Geosat/ERS-1 altimetry,
 J. Geophys. Res., 106(B9), 19,431–19,441,
-`http://doi.org/10.1029/2000JB000083 <http://doi.org/10.1029/2000JB000083>`_
+`https://doi.org/10.1029/2000JB000083 <https://doi.org/10.1029/2000JB000083>`_
 
 相关模块
 --------
