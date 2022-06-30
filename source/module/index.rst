@@ -388,6 +388,7 @@
    gmt-config
    gmtbinstats
    gmtconnect
+   gmtconvert
    gmtdefaults
    gmtget
    gmtinfo
