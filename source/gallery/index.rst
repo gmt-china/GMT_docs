@@ -8,7 +8,7 @@
 外部绘图实例
 ############
 
-- :gmt-docs:`GMT 官方示例 <gallery.html>`__
+- :gmt-docs:`GMT 官方示例 <gallery.html>`
 - :gmt-docs:`GMT 官方动画示例 <animations.html>`
 - `GMT YouTube Channel <https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q>`__
 - `PyGMT Gallery <https://www.pygmt.org/latest/gallery/index.html>`__
