@@ -50,6 +50,7 @@
     - :doc:`grdcut`
     - :doc:`grdedit`
     - :doc:`grdfill`
+    - :doc:`grdgdal`
     - :doc:`grdimage`
     - :doc:`grdinfo`
     - :doc:`grdlandmask`
@@ -144,7 +145,6 @@
     - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdfft`
-    - :doc:`gmt:grdgdal`
     - :doc:`gmt:grdfilter`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
@@ -350,6 +350,7 @@
 :doc:`talwani3d`                                 计算 3-D 实体产生的位异常
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
@@ -409,6 +410,7 @@
    grdcut
    grdedit
    grdfill
+   grdgdal
    grdimage
    grdinfo
    grdlandmask
