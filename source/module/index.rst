@@ -49,6 +49,7 @@
     - :doc:`grdconvert`
     - :doc:`grdcut`
     - :doc:`grdedit`
+    - :doc:`grdfft`
     - :doc:`grdfill`
     - :doc:`grdimage`
     - :doc:`grdinfo`
@@ -143,7 +144,6 @@
     - :doc:`gmt:gmtregress`
     - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdfft`
     - :doc:`gmt:grdgdal`
     - :doc:`gmt:grdfilter`
     - :doc:`gmt:grdgradient`
@@ -272,7 +272,7 @@
 :doc:`grdmask`                                   根据多边形数据或点数据创建 mask 网格文件
 :doc:`grdmath`                                   对网格文件做数学计算操作
 :doc:`gmt:grdfilter`                             对网格文件做空间域或时间域滤波
-:doc:`gmt:grdfft`                                对网格文件在波数域或频率域做操作
+:doc:`grdfft`                                    对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
 :doc:`gmt:grdhisteq`                             对网格做直方图均衡
 :doc:`grd2cpt`                                   根据网格文件的值生成 CPT 文件
@@ -408,6 +408,7 @@
    grdconvert
    grdcut
    grdedit
+   grdfft
    grdfill
    grdimage
    grdinfo
