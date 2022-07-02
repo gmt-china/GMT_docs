@@ -12,7 +12,7 @@ grdgdal
 :官方文档: :doc:`gmt:grdgdal`
 :简介: 从 gmt 执行 GDAL 光栅相关的程序
 
-**grdgdal** 封装了一部分 `GDAL </source/utilities/gdal>` 程序（当前包含 gdalinfo，gdaldem，gdal_grid，gdal_translate，
+**grdgdal** 封装了一部分 :doc:`GDAL </source/utilities/gdal>` 程序（当前包含 gdalinfo，gdaldem，gdal_grid，gdal_translate，
 gdal_rasterize 以及 gdalwarp），因此可以在该模块中实现上述命令的功能。考虑到 gmt 和 GDAL
 的语法差异较大，本模块仅提供了较少的 GMT 风格的选项，而是使用 |-F| 选项将 GDAL 风格的语法
 传递给 GDAL。因此，要使用该模块的用户可能需要查阅 GDAL 文档来了解其用法。
