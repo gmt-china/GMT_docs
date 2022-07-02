@@ -28,7 +28,8 @@ jobs:
 
       - name: Download remote data
         run: |
-          gmt which -Ga @earth_relief_30m \
+          gmt which -Ga @earth_relief_30m_g \
+                        @earth_relief_30m_p \
                         @earth_relief_20m \
                         @earth_relief_10m \
                         @earth_relief_06m \
@@ -37,7 +38,10 @@ jobs:
                         @earth_day_20m \
                         @earth_day_06m \
                         @earth_night_20m \
-                        @earth_mask_05m
+                        @earth_mask_05m \
+                        @earth_mag4km_20m \
+                        @earth_geoid_20m_p \
+                        @earth_faa_20m
           gmt grdcut @earth_relief_01m -R118/125/20/26 -G/dev/null
           # cache
           gmt which -Ga @age_chrons_GTS2012_2020.cpt \
