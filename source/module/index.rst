@@ -147,7 +147,6 @@
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdfft`
     - :doc:`gmt:grdfilter`
-    - :doc:`gmt:grdgdal`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdinterpolate`
