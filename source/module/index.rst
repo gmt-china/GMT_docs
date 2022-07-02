@@ -29,6 +29,7 @@
     - :doc:`fitcircle`
     - :doc:`gmtbinstats`
     - :doc:`gmtconnect`
+    - :doc:`gmtconvert`
     - :doc:`gmtdefaults`
     - :doc:`gmtget`
     - :doc:`gmtinfo`
@@ -141,7 +142,6 @@
     - :doc:`gmt:dimfilter`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtconvert`
     - :doc:`gmt:gmtregress`
     - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
@@ -241,7 +241,7 @@
 :doc:`makecpt`                                   生成 CPT 文件
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
-:doc:`gmt:gmtconvert`                            表数据格式转换、列提取、列粘贴
+:doc:`gmtconvert`                                表数据格式转换、列提取、列粘贴
 :doc:`gmt:trend1d`                               一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
 :doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
@@ -390,6 +390,7 @@
    gmt-config
    gmtbinstats
    gmtconnect
+   gmtconvert
    gmtdefaults
    gmtget
    gmtinfo
