@@ -30,6 +30,7 @@
     - :doc:`fitcircle`
     - :doc:`gmtbinstats`
     - :doc:`gmtconnect`
+    - :doc:`gmtconvert`
     - :doc:`gmtdefaults`
     - :doc:`gmtget`
     - :doc:`gmtinfo`
@@ -53,6 +54,7 @@
     - :doc:`grdfft`
     - :doc:`grdfill`
     - :doc:`grdfilter`
+    - :doc:`grdgdal`
     - :doc:`grdimage`
     - :doc:`grdinfo`
     - :doc:`grdlandmask`
@@ -141,11 +143,9 @@
     - :doc:`gmt:blockmode`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtconvert`
     - :doc:`gmt:gmtregress`
     - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdgdal`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdinterpolate`
@@ -240,7 +240,7 @@
 :doc:`makecpt`                                   生成 CPT 文件
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
-:doc:`gmt:gmtconvert`                            表数据格式转换、列提取、列粘贴
+:doc:`gmtconvert`                                表数据格式转换、列提取、列粘贴
 :doc:`gmt:trend1d`                               一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
 :doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
@@ -350,6 +350,7 @@
 :doc:`talwani3d`                                 计算 3-D 实体产生的位异常
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
@@ -389,6 +390,7 @@
    gmt-config
    gmtbinstats
    gmtconnect
+   gmtconvert
    gmtdefaults
    gmtget
    gmtinfo
@@ -412,6 +414,7 @@
    grdfft
    grdfill
    grdfilter
+   grdgdal
    grdimage
    grdinfo
    grdlandmask
