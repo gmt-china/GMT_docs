@@ -5,7 +5,7 @@ dimfilter
 =========
 
 :贡献者: |周茂|
-:最近更新日期: 2022-07-05
+:最近更新日期: 2022-07-16
 
 ----
 
@@ -119,8 +119,10 @@ dimfilter
 .. _-Q:
 
 **-Q**
+    该模式输入数据不是常见的网格格式，而是 :doc:`grd2zyz` 的 **-Z**
+    选项输出的形式作为输入。使用该模式输出的结果为均值，MAD 以及中值，
+    可用于进一步的误差分析，可见 `脚本模版`_
     
-
 .. include:: explain_-V.rst_
 
 .. include:: explain_-f.rst_
@@ -133,6 +135,42 @@ dimfilter
 
 示例
 ----
+
+远程文件 @earth_relief_05m 是一个 5 分分辨率的测深网格，对其使用 300
+km 半径的中值滤波，设定范围为 150E ~ 250E，10N ~ 40N，输出结果分辨率
+为 0.5 度。为了防止中值被地形坡度影响，将滤波窗口划分为 6 个扇形，从
+6 个扇形中的中值中选择最小值，使用球面距离计算 ::
+
+    gmt dimfilter @earth_relief_05m -Gfiltered_pacific.nc -Fm600 -D4 -Nl6 -R150/250/10/40 -I0.5 -V
+
+假定文件 cape_verde.nc 是一个范围为 32W ~ 15W，8N ~ 25N，分辨率为 0.5
+分才到测深文件，如果要去除该文件中的小尺度特征以观察 swell，为防止边缘
+效应的影响，将输出结果限定为 27.5W ~ 20.5W，12.5N ~ 19.5N，分辨率为 2
+分。使用笛卡尔距离计算 ::
+
+    gmt dimfilter cape_verde.nc -Gt.nc -Fm220 -Nl8 -D2 -R-27.5/-20.5/12.5/19.5 -I2m -V
+    gmt grdfilter t.nc -Gcape_swell.nc -Fg50 -D2 -V
+
+假定对某一区域的测深文件进行一系列的滤波，结果为 fxxx.nc，其中 xxx 表示
+滤波半径，可对这一系列文件进行趋势分析，并得到每个点的 MAD(median absolute
+devuation) ::
+
+    gmt grd2xyz f100.nc -Z > f100.txt
+    gmt grd2xyz f110.nc -Z > f110.txt
+    gmt grd2xyz f120.nc -Z > f120.txt
+    gmt grd2xyz f130.nc -Z > f130.txt
+    paste f100.txt f110.txt f120.txt f130.txt > depths.txt
+    gmt dimfilter depths.txt -Q > output.z
+
+上述 **paste** 为 Unix/Linux 命令，用于在水平方向合并多个文件。
+
+注意事项
+--------
+
+当输入为地理坐标网格时，卷积滤波都会对滤波权重进行归一化，以使用滤波
+窗口大小的随纬度的变化。并能在跨越 360 度或者包含极点时进行正确的处理。
+但是非卷积滤波器，不使用权重，因此只能在笛卡尔坐标网格使用。如果要使用
+这些滤波，则应先进行投影后使用。
 
 脚本模版
 --------
