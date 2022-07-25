@@ -22,6 +22,7 @@
     - :doc:`colorbar`
     - :doc:`contour`
     - :doc:`coupe`
+    - :doc:`dimfilter`
     - :doc:`docs`
     - :doc:`end`
     - :doc:`figure`
@@ -52,6 +53,7 @@
     - :doc:`grdedit`
     - :doc:`grdfft`
     - :doc:`grdfill`
+    - :doc:`grdfilter`
     - :doc:`grdgdal`
     - :doc:`grdimage`
     - :doc:`grdinfo`
@@ -139,14 +141,11 @@
     - :doc:`gmt:blockmean`
     - :doc:`gmt:blockmedian`
     - :doc:`gmt:blockmode`
-    - :doc:`gmt:dimfilter`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:gmtregress`
     - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdfft`
-    - :doc:`gmt:grdfilter`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdinterpolate`
@@ -272,7 +271,7 @@
 :doc:`grdproject`                                对网格数据做地图变换和逆变换
 :doc:`grdmask`                                   根据多边形数据或点数据创建 mask 网格文件
 :doc:`grdmath`                                   对网格文件做数学计算操作
-:doc:`gmt:grdfilter`                             对网格文件做空间域或时间域滤波
+:doc:`grdfilter`                                 对网格文件做空间域或时间域滤波
 :doc:`grdfft`                                    对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
 :doc:`gmt:grdhisteq`                             对网格做直方图均衡
@@ -291,7 +290,7 @@
 :doc:`sphdistance`                               计算球面上的 Voronoi 距离、节点或自然最邻近网格
 :doc:`sphinterpolate`                            球面数据的网格化
 :doc:`sphtriangulate`                            球面数据的 Delaunay 三角网或 Voronoi 图构建
-:doc:`gmt:dimfilter`                             在空间域对网格数做方向性滤波
+:doc:`dimfilter`                                 在空间域对网格数据做方向中值滤波
 **参数设置**                                     .. _module_parameter_setting:
 :doc:`gmtdefaults`                               列出所有 GMT 参数的当前值
 :doc:`gmtset`                                    修改单个或多个 GMT 参数的值
@@ -381,6 +380,7 @@
    colorbar
    contour
    coupe
+   dimfilter
    docs
    end
    figure
@@ -413,6 +413,7 @@
    grdedit
    grdfft
    grdfill
+   grdfilter
    grdgdal
    grdimage
    grdinfo
