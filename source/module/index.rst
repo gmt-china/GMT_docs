@@ -102,6 +102,8 @@
     - :doc:`velo`
     - :doc:`wiggle`
     - :doc:`xyz2grd`
+    - :doc:`earthtide`
+    - :doc:`gpsgridder`
     - :doc:`x2sys_init`
     - :doc:`x2sys_binlist`
     - :doc:`x2sys_cross`
@@ -153,8 +155,6 @@
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/geodesy/earthtide`
-    - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
@@ -354,7 +354,8 @@
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
-:doc:`gmt:supplements/geodesy/gpsgridder`        Interpolate GPS velocity vectors using Green's functions
+:doc:`gpsgridder`                                使用格林函数内插 GPS 速度向量
+:doc:`earthtide`                                 计算固体地球潮汐网格或者时间序列
 **其他脚本**                                     .. _other_scripts:
 :doc:`gmt:gmtswitch`                             GMT多版本之间切换
 ================================================ ========================================================================
@@ -462,6 +463,8 @@
    velo
    wiggle
    xyz2grd
+   earthtide
+   gpsgridder
    x2sys_init
    x2sys_binlist
    x2sys_cross
