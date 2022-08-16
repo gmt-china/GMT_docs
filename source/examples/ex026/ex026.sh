@@ -16,7 +16,7 @@ gmt begin profile
     gmt text tmp1 -F+f15p -D0c/0.2c 
     
     # 沿测线AB绘制地形高度
-    gmt basemap -R0/15/-4000/6000 -JX12c/3c -Bya4000+l"Elevation (m)" -Bxa2f1+l"Distance"+u"\260" -BWSrt -Y-4.5c
+    gmt basemap -R0/15/-4000/6000 -JX12c/3c -Bya4000+l"Elevation (m)" -Bxa2f1+l"Distance"+u"\260" -BWSrt -Y12c
     # 标注AB位置
     echo 0 7000 A | gmt text -F+f10p+jBC -N
     echo 15 7000 B | gmt text -F+f10p+jBC -N
