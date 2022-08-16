@@ -57,6 +57,9 @@ jobs:
           git clone --depth 1 https://github.com/gmt-china/GMT_custom_symbols GMT_custom_symbols
           rm -rf GMT_custom_symbols/.git
           mv GMT_custom_symbols ~/.gmt/custom/
+          # Download plate boundary types data
+          wget https://github.com/dhasterok/global_tectonics/blob/main/plates%26provinces/gmt/boundaries.gmt
+          mv boundaries.gmt ~/.gmt/cache/
 
       - name: Upload artifacts to GitHub
         uses: actions/upload-artifact@v3
