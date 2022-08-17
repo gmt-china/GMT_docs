@@ -9,7 +9,7 @@ global_tectonics 是一个较新的全球地质构造数据集，提供 shp, gmt
 使用示例
 --------
 
-数据文件 ``boundaries.gmt`` 包含了7种类型的板块边界数据。提取不同类型板块边界，需要使用 ``gmtconvert -S`` 命令。
+数据文件 ``boundaries.gmt`` 包含了7种类型的板块边界数据。提取不同类型板块边界，需要使用 :doc:`/module/gmtconvert` 模块的 **-S** 选项。
 详细的数据说明请阅读参考文献。
 
 .. gmtplot:: boundaries.sh
