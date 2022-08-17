@@ -18,4 +18,4 @@ global_tectonics 是一个较新的全球地质构造数据集，提供 shp, gmt
 引用信息
 --------
 
-Derrick Hasterok, Jacqueline A. Halpin, Alan S. Collins, Martin Hand, Corné Kreemer, Matthew G. Gard, Stijn Glorie, New Maps of Global Geological Provinces and Tectonic Plates, Earth-Science Reviews, Volume 231, 2022, 104069, ISSN 0012-8252, https://doi.org/10.1016/j.earscirev.2022.104069.
+Hasterok, D., Halpin, J. A., Collins, A. S., Hand, M., Kreemer, C., Gard, M. G., & Glorie, S. (2022). New Maps of Global Geological Provinces and Tectonic Plates. Earth-Science Reviews, 231, 104069. https://doi.org/10.1016/j.earscirev.2022.104069
