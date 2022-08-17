@@ -30,10 +30,12 @@ jobs:
         run: |
           gmt which -Ga @earth_relief_30m_g \
                         @earth_relief_30m_p \
-                        @earth_relief_20m \
+                        @earth_relief_20m_p \
+                        @earth_relief_20m_g \
                         @earth_relief_10m \
                         @earth_relief_06m \
                         @earth_relief_05m \
+                        @earth_relief_04m \
                         @earth_age_06m \
                         @earth_day_20m \
                         @earth_day_06m \
@@ -58,7 +60,7 @@ jobs:
           rm -rf GMT_custom_symbols/.git
           mv GMT_custom_symbols ~/.gmt/custom/
           # Download plate boundary types data
-          wget https://github.com/dhasterok/global_tectonics/blob/main/plates%26provinces/gmt/boundaries.gmt
+          wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
           mv boundaries.gmt ~/.gmt/cache/
 
       - name: Upload artifacts to GitHub
