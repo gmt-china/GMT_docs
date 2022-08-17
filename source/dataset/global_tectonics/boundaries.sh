@@ -15,4 +15,4 @@ gmt begin boundaries
 
     # 设置图例属性
     gmt legend -DJMR+o0.1c -F+p1p+gwhite
-gmt end
+gmt end show
