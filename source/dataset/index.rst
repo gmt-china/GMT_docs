@@ -54,6 +54,7 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
 
    gadm/index
    PB2002/index
+   global_tectonics/index
    /dataset-CN/index
 
 其他地学数据
