@@ -50,6 +50,7 @@ jobs:
                         @ternary.txt \
                         @mississippi.txt \
                         @NY_traffic.txt \
+                        @Table_5_11.txt \
                         @sunglasses.eps
           # Download the china-geospatial-data datasets
           git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
@@ -61,7 +62,9 @@ jobs:
           mv GMT_custom_symbols ~/.gmt/custom/
           # Download plate boundary types data
           wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
-          mv boundaries.gmt ~/.gmt/cache/
+          wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/plates.gmt
+          wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
+          mv boundaries.gmt plates.gmt global_gprv.gmt ~/.gmt/cache/
 
       - name: Upload artifacts to GitHub
         uses: actions/upload-artifact@v3
