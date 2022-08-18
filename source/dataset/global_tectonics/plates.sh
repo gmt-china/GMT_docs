@@ -5,7 +5,7 @@ gmt begin plates
     gmt coast -Gwhite -S167/194/223
 
     # 从crust_type头段中提取出所有大陆地壳板块，并填充橘黄色，设置透明度80%
-    gmt convert plates.gmt -S"crust_type=continental" | gmt plot -Gorange -t80 -l"continental crust plates"
+    gmt convert plates.gmt -S"crust_type=continental" | gmt plot -Gorange@80 -l"continental crust plates"
 
     # 从plate_type头段中提取出所有变形带板块，并填充红色，设置透明度50%
     gmt convert plates.gmt -S"plate_type=deformation zone" | gmt plot -W0p -Gred -L -t50 -l"deformation zone"
