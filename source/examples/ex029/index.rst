@@ -40,6 +40,6 @@
 
 .. literalinclude:: Hefei.sh
 
-.. image:: https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png
+.. image:: https://user-images.githubusercontent.com/26203721/185333355-a57cdc9b-8327-4721-9304-5867ab3b629a.jpg
    :width: 100%
    :align: center
