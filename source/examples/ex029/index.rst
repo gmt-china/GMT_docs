@@ -33,3 +33,13 @@
 .. gmtplot:: ex029_2.sh
     :width: 75%
     :show-code: true
+
+除了 GMT 自带的卫星图像数据以外，读者还可以使用开源软件 QGIS (https://www.qgis.org/zh-Hans/site/)
+导出精度更高的谷歌卫星图像，并用于 GMT 绘图。在下面的例子中， ``grdview`` 命令将 QGIS 导出的合肥地区卫星图像 ``Hefei.tiff`` 叠加在三维地形图上，
+绘制出了清晰度更高的图片。QGIS 导出卫星图像适用于作图范围较小的情况。
+
+.. literalinclude:: Hefei.sh
+
+.. image:: https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png
+   :width: 100%
+   :align: center
