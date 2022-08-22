@@ -22,6 +22,7 @@
 
 数据文件为两列，第一列是以 “YYYY-mm-ddThh:mm:ss” 格式给出的地震发震时刻，第二列是地震震级。
 使用 :doc:`/module/plot` 模块的 **-Sb** 选项可以将以上格式的数据绘制为地震 M-T 图。
+示例数据：:download:`mt.txt`
 
 .. gmtplot:: ex012.sh
     :width: 80%
