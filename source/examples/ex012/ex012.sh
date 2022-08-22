@@ -3,6 +3,7 @@
 gmt begin mt
     # 设置 SECONDARY TICK 长度为 0
     gmt set MAP_TICK_LENGTH_SECONDARY 0p
+    # 设置地图上的时间只显示年份和月份
     gmt set FORMAT_DATE_MAP yyyy-mm
 
     # -Sb0.005c 中 0.005c 代表每条线的宽度
