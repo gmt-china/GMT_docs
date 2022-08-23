@@ -11,7 +11,9 @@
     :width: 90%
 
     #!/usr/bin/env bash
-    gmt begin Small_area
+    gmt begin small_area
+        # 设置绘图时以“度:分:秒”的格式显示坐标
+        gmt set FORMAT_GEO_MAP ddd:mm:ss.xxxF
         # 指定作图区域为东经121度52分38.3秒到122度51分7.2秒，北纬29度57分21.3秒到30度52分0.8秒
         gmt basemap -JM10c -R121:52:38.3/122:51:7.2/29:57:21.3/30:52:0.8 -Baf
         gmt coast  -G244/243/239 -S167/194/223
