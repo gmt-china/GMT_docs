@@ -13,7 +13,7 @@ gmt begin map
     gmt basemap -R118:04:09.1/118:12:36.0/24:25:12.6/24:33:23.0 -JM4c -Bxa5mf -Bya4mf -B+t"Amap (GCJ-02 to WGS84)"
     # 加载高德地图
     gmt grdimage amap.tif -Ve
-    # 以最高经度绘制 GMT 自带的海岸线数据，并绘制比例尺
+    # 以最高精度绘制 GMT 自带的海岸线数据，并绘制比例尺
     gmt coast -W0.5p -Lg118:11:00/24:27:00+c118:11:00/24:27:00+w2k+u -Df
 
     # -X5.5c 将绘图原点右移5.5厘米
