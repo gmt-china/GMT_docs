@@ -7,7 +7,7 @@
 GMT 没有下载此类地图的功能。本社区修改了开源地图下载工具 `Google-Map-Downloader <https://github.com/zhengjie9510/google-map-downloader>`__ ，
 征得原作者同意，在 GMT 中文社区提供高德和谷歌地图卫星图下载工具:
 
-- :download:`downloader_gmtchina.py`: 
+- :download:`downloader_gmtchina.py`
 
 国内的地图服务均进行过GCJ02坐标系加密，因此这个工具对高德地图、高德卫星图与谷歌地图进行了GCJ02到WGS84坐标系的变换。谷歌卫星图则不需要进行变换。
 此外，境内用户需确保能够正常使用谷歌地图网页版才能使用本工具下载谷歌地图。
@@ -17,9 +17,9 @@ GMT 没有下载此类地图的功能。本社区修改了开源地图下载工�
     $ conda install -c anaconda numpy pillow py-opencv
     $ conda install -c conda-forge gdal 
 
-提供如下参数运行脚本，即可下载 tif 格式地图:
+提供如下参数运行脚本，即可下载 tif 格式地图::
 
-    $ # python downloader_gmtchina.py 起始经度 结束经度 起始纬度 结束纬度 地图分辨率 输出图片文件名 地图来源
+    $ python downloader_gmtchina.py 起始经度 结束经度 起始纬度 结束纬度 地图分辨率 输出图片文件名 地图来源
     
 地图分辨率取 0 - 22 之间的整数，值越高分辨率越大。地图来源目前可以选择以下四个:
 
@@ -32,7 +32,7 @@ google      谷歌地图
 google_sat  谷歌卫星图
 =========== =========
 
-以厦门市为例，使用如下参数下载四种地图:
+以厦门市为例，使用如下参数下载四种地图::
 
     $ python downloader_gmtchina.py 118.055917 118.244753 24.399450 24.559724 12 google.tif google
     $ python downloader_gmtchina.py 118.055917 118.244753 24.399450 24.559724 16 google_sat.tif google_sat
@@ -48,5 +48,6 @@ google_sat  谷歌卫星图
 .. image:: https://user-images.githubusercontent.com/26203721/186561576-cf6b7b29-7f29-4157-851a-23ec6ad51353.jpg
    :width: 95%
    :align: center
+
 
 通过对比可见 GMT 自带的海岸线数据在绘图区域较小时精度很差。
