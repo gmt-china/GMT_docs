@@ -7,25 +7,7 @@
 GMT 没有下载此类地图的功能。
 征得原作者同意，本社区修改了开源地图下载工具 `Google-Map-Downloader <https://github.com/zhengjie9510/google-map-downloader>`__ ，
 添加了适合境内用户的高德地图下载源。
-修改后的地图下载工具可 `点击此处下载 <https://github.com/CovMat/google-map-downloader/blob/master/downloader_gmtchina.py>`__ 。
-
-国内的地图服务均进行过GCJ02坐标系加密，因此这个工具对高德地图、高德卫星图与谷歌地图进行了GCJ02到WGS84坐标系的变换。谷歌卫星图则不需要进行变换。
-此外，境内用户需确保能够正常使用谷歌地图网页版才能使用本工具下载谷歌地图。
-
-提供如下参数运行脚本，即可下载 tif 格式地图::
-
-    $ python downloader_gmtchina.py 起始经度 结束经度 起始纬度 结束纬度 地图层级 输出图片文件名 地图来源
-    
-地图层级取 0 - 22 之间的整数，值越高分辨率越大。地图来源目前可以选择以下四个:
-
-=========== =========
-代码         地图来源
-=========== =========
-amap        高德地图
-amap_sat    高德卫星图
-google      谷歌地图
-google_sat  谷歌卫星图
-=========== =========
+修改后的地图下载工具可 `点击此处下载 <https://github.com/CovMat/google-map-downloader>`__ 。
 
 以厦门市为例，使用如下参数下载四种地图::
 
