@@ -5,9 +5,9 @@
 
 当绘图区域非常小时，GMT 自带的海岸线数据与地形数据精度较差，不适宜用来绘制底图。对于这种情况，读者可以使用公开的地图或卫星图接口（例如高德地图、谷歌地图等）绘制底图。
 GMT 没有下载此类地图的功能。
-征得原作者同意，本社区修改了开源地图下载工具 `Google-Map-Downloader <https://github.com/zhengjie9510/google-map-downloader>`__ ，
-添加了适合境内用户的高德地图下载源。
-修改后的地图下载工具可 `点击此处下载 <https://github.com/CovMat/google-map-downloader>`__ 。
+`google-map-downloader <https://github.com/CovMat/google-map-downloader>`__ 中的
+`downloader_gmtchina.py <https://github.com/CovMat/google-map-downloader/blob/master/downloader_gmtchina.py>`__ 脚本支持可以下载高德地图及卫星图以及
+谷歌地图及卫星图。详细用法见 google-map-downloader 的官方说明文档。
 
 以厦门市为例，使用如下参数下载四种地图::
 
