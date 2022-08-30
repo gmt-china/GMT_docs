@@ -111,7 +111,7 @@ begin
 
 设置额外的参数以控制生成图片时的额外空白::
 
-    gmt begin map pdf,png A+m1c
+    gmt begin map pdf,png I+m1c
     gmt ...
     gmt end show
 
