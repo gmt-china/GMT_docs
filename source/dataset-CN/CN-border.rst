@@ -106,7 +106,7 @@ DCW 数据时只绘制中国区域以外的部分。具体示例脚本如下：
 数据来源与处理
 --------------
 
-CN-border 原始数据来自于 `1:100 万全国基础地理数据库 (2015 版) <https://www.webmap.cn/commres.do?method=result100W>`_，
+CN-border 原始数据来自于 `1:100 万全国基础地理数据库 (2021 版) <https://www.webmap.cn/commres.do?method=result100W>`_，
 并由\ `刘珠妹 <https://github.com/liuzhumei>`__\ 处理得到 GMT 可使用的数据。
 **具体数据处理方式待补充**。
 
