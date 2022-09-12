@@ -5,6 +5,13 @@ Fedora 下安装 GMT
 
 ----
 
+.. tip::
+
+    Fedora 的官方软件源服务器位于境外，因此国内的用户通常无法正常连接，导致以下安装命令无法正常运行。
+    国内用户必须先按照如下步骤将软件源服务器切换为国内的服务器：
+    
+    Fedora: http://mirrors.ustc.edu.cn/help/fedora.html
+
 Fedora 34、Fedora 35、Fedora 36 和 Fedora rawhide 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。

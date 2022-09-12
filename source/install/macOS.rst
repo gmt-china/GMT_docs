@@ -15,6 +15,13 @@ macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew �
 未安装 Homebrew 的用户，可以参考
 《`macOS 配置指南 <https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew>`__》了解如何安装与使用。
 
+.. tip::
+
+    Homebrew 的官方软件源服务器位于境外，因此国内的用户通常无法正常连接，导致以下安装命令无法正常运行。
+    国内用户必须先按照如下步骤将软件源服务器切换为国内的服务器：
+    
+    Homebrew: https://mirrors.ustc.edu.cn/help/brew.git.html
+
 1.  安装 GMT
 
     更新 Homebrew 以及软件包描述文件，并更新所有已安装的软件包::

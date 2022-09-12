@@ -18,6 +18,13 @@ Ubuntu/Debian 下安装 GMT
 
 通过如下命令，可以安装 Ubuntu/Debian 官方源提供的 GMT 二进制包。
 
+.. tip::
+
+    Ubuntu 的官方软件源服务器位于境外，因此国内的用户通常无法正常连接，导致以下安装命令无法正常运行。
+    国内用户必须先按照如下步骤将软件源服务器切换为国内的服务器：
+    
+    Ubuntu: https://mirrors.ustc.edu.cn/help/ubuntu.html
+
 1.  更新软件包列表::
 
         $ sudo apt update

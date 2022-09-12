@@ -31,6 +31,19 @@ GMT 的编译及运行依赖于其他软件。
 - `GraphicsMagick <http://www.graphicsmagick.org>`__：生成 GIF 格式的动画
 - `FFmpeg <http://www.ffmpeg.org/>`__：生成 MP4 格式的动画
 
+.. tip::
+
+    Linux/Homebrew 的官方软件源服务器位于境外，因此国内的用户通常无法正常连接，导致以下安装命令无法正常运行。
+    国内用户必须先按照如下步骤将软件源服务器切换为国内的服务器：
+    
+    Fedora: http://mirrors.ustc.edu.cn/help/fedora.html
+    
+    CentOS: http://mirrors.ustc.edu.cn/help/centos.html 以及 https://mirrors.ustc.edu.cn/help/epel.html
+    
+    Ubuntu: https://mirrors.ustc.edu.cn/help/ubuntu.html
+    
+    Homebrew: https://mirrors.ustc.edu.cn/help/brew.git.html
+
 Fedora::
 
     # 安装必须软件包
@@ -42,7 +55,7 @@ Fedora::
 
 CentOS::
 
-    # 安装并启用 EPEL 源
+    # 安装并启用 EPEL 源（已切换国内服务器的用户无需执行本命令）
     $ sudo yum install epel-release
     # 安装必须软件包
     $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel

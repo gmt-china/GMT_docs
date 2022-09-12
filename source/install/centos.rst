@@ -5,6 +5,13 @@ CentOS 下安装 GMT
 
 ----
 
+.. tip::
+
+    CentOS 的官方软件源服务器位于境外，因此国内的用户通常无法正常连接，导致以下安装命令无法正常运行。
+    国内用户必须先按照如下步骤将软件源服务器切换为国内的服务器：
+    
+    CentOS: http://mirrors.ustc.edu.cn/help/centos.html 以及 https://mirrors.ustc.edu.cn/help/epel.html
+
 CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 `GMT 官方 RPM 仓库 <https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/>`__
 以安装 GMT 最新版本。
@@ -20,7 +27,7 @@ CentOS 7、CentOS 8 以及 CentOS Stream 用户，可以启用
 安装 GMT
 --------
 
-1.  安装并启用 EPEL 源::
+1.  安装并启用 EPEL 源（已切换国内服务器的用户无需执行本命令）::
 
         $ sudo yum install epel-release
 
