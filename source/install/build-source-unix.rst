@@ -108,7 +108,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
    # 用文本编辑器新建并打开 CMake 用户配置文件
    # Linux 用户
-   $ gedit cmake/ConfigUser.cmake
+   $ vi cmake/ConfigUser.cmake
    # macOS 用户
    $ touch cmake/ConfigUser.cmake
    $ open -a TextEdit cmake/ConfigUser.cmake
@@ -229,7 +229,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 打开终端，使用如下命令用文件编辑器打开 Shell 配置文件::
 
     # Linux 用户
-    $ gedit ~/.bashrc
+    $ vi ~/.bashrc
 
     # macOS 用户
     $ open ~/.zshrc
