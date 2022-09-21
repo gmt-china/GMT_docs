@@ -17,10 +17,3 @@ GMT 中文支持实例：
    :maxdepth: 1
 
    showcase
-
-除了 GMT 默认支持的多种字体外，用户还可以自行配置和使用其他字体（如其他西文字体、中日韩字体）：
-
-.. toctree::
-   :maxdepth: 1
-
-   custom-fonts
