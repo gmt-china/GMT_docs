@@ -3,47 +3,37 @@ Linux 下的 GMT 中文支持
 
 本文介绍如何让 GMT 在 Linux 下支持中文。
 
-.. warning::
-
-    据用户反映，按照本文的步骤操作可能会导致ghostscript无法正常使用。
-
-    若出现该问题，可以执行 ``sudo perl cjk-gs-integrate.pl --remove`` 命令
-    撤销 cjk-gs-integrate.pl 脚本的操作。
-
-    若需要GMT中文支持，请转向 :doc:`custom-fonts` 一文。
-
 ghostscript的中文支持
 ---------------------
 
 Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字体：宋体、仿宋、黑体和楷体。
 对于 Windows 下的其他中文字体、Linux 的其他中文字体甚至日韩字体来说，方法类似。
 
-可以使用 `cjk-gs-support <https://github.com/texjporg/cjk-gs-support>`_
-项目提供的脚本 `cjk-gs-integrate.pl`_ 来实现ghostscript的中文支持。
+首先新建一个目录，用于存放字体文件和配置文件::
 
-1.  从Windows下获取四种基本字体的字体文件（文件名 ``simsun.ttc`` ``simfang.ttc`` ``simhei.ttc`` ``simkai.ttc`` ，
-    注意区分大小写）并复制到
-    ``/usr/share/fonts/winfonts/`` 目录下
-2.  下载脚本 `cjk-gs-integrate.pl`_
-3.  ``cjk-gs-integrate.pl`` 脚本的执行依赖于命令 ``kpsewhich``，该命令由 TeXLive 提供。
-    执行 ``kpsewhich --version`` 检查 ``kpsewhich`` 这个命令是否存在。若不存在，则
-    需要单独安装。
+    sudo mkdir /winfonts
+    sudo chmod -R 777 /winfonts
 
-    对于Ubuntu/Debian用户，执行::
+从Windows的系统字体目录(通常是 ``C:\Windows\Fonts`` )中，找到以下四种基本字体的字体文件:
 
-        sudo apt install texlive-binaries
+ - 宋体 常规 (文件名 ``simsun.ttc`` )
+ - 仿宋 常规 (文件名 ``simfang.ttf`` )
+ - 黑体 常规 (文件名 ``simhei.ttf`` )
+ - 楷体 常规 (文件名 ``simkai.ttf`` )
 
-    对于CentOS/RHEL/Fedora用户，执行::
+并复制到刚才新建的 ``/winfonts/`` 目录下。
 
-        sudo yum install texlive-kpathsea-bin
+在 ``/winfonts/`` 目录下创建字体配置文件::
 
-4.  执行脚本::
+    $ touch /winfonts/cidfmap
+    $ gedit /winfonts/cidfmap
+    
+在文件中加入如下内容并保存::
 
-        $ sudo perl cjk-gs-integrate.pl
-
-    该脚本会自动搜索系统中自带的中文字体，并生成gs支持中文所需的配置文件。
-
-.. _cjk-gs-integrate.pl: https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
+    /STSong-Light <</FileType /TrueType /Path (/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    /STFangsong-Light <</FileType /TrueType /Path (/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    /STHeiti-Regular <</FileType /TrueType /Path (/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    /STKaiti-Regular <</FileType /TrueType /Path (/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
 
 GMT的中文支持
 -------------
@@ -91,8 +81,12 @@ GMT 中文测试
 
 .. note::
 
-    GMT 6.x 目前在处理中文时存在BUG，可能会出现某些中文正常显示，某些
-    不正常显示的情况。使用::
+    凡是使用到中文字体的画图脚本，都应该在编辑器中使用 UTF8 编码。并且应该设置中文字体所在的路径::
+
+        gmt set PS_CONVERT="C-I/winfonts"
+
+    此外GMT 6.x 目前在处理中文时存在BUG，可能会出现某些中文正常显示，某些
+    不正常显示的情况。需要使用::
 
         gmt set PS_CHAR_ENCODING Standard+
 
