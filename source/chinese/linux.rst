@@ -11,15 +11,15 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 
 首先新建一个目录，用于存放字体文件和配置文件::
 
-    sudo mkdir /winfonts
-    sudo chmod -R 777 /winfonts
+    $ sudo mkdir /winfonts
+    $ sudo chmod -R 777 /winfonts
 
-从Windows的系统字体目录(通常是 ``C:\Windows\Fonts`` )中，找到以下四种基本字体的字体文件:
+从Windows的系统字体目录（通常是 ``C:\Windows\Fonts`` ）中，找到以下四种基本字体的字体文件:
 
- - 宋体 常规 (文件名 ``simsun.ttc`` )
- - 仿宋 常规 (文件名 ``simfang.ttf`` )
- - 黑体 常规 (文件名 ``simhei.ttf`` )
- - 楷体 常规 (文件名 ``simkai.ttf`` )
+ - 宋体 常规 ( ``simsun.ttc`` )
+ - 仿宋 常规 ( ``simfang.ttf`` )
+ - 黑体 常规 ( ``simhei.ttf`` )
+ - 楷体 常规 ( ``simkai.ttf`` )
 
 并复制到刚才新建的 ``/winfonts/`` 目录下。
 
