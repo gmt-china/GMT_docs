@@ -9,10 +9,9 @@ ghostscript的中文支持
 Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字体：宋体、仿宋、黑体和楷体。
 对于 Windows 和 Linux/macOS 的其他中文字体甚至日韩字体来说，方法类似。
 
-首先新建一个目录，用于存放字体文件和配置文件::
+首先在 ``~/.gmt`` 新建一个目录，用于存放字体文件和配置文件::
 
-    $ sudo mkdir /winfonts
-    $ sudo chmod -R 777 /winfonts
+    $ mkdir -p ~/.gmt/winfonts
 
 从 Windows 的系统字体目录（通常是 ``C:\Windows\Fonts`` ）中，找到以下四种基本字体的字体文件:
 
@@ -21,23 +20,15 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
  - 黑体 常规 ( ``simhei.ttf`` )
  - 楷体 常规 ( ``simkai.ttf`` )
 
-并复制到刚才新建的 ``/winfonts/`` 目录下。
+并复制到刚才新建的 ``~/.gmt/winfonts/`` 目录下。
 
-在 ``/winfonts/`` 目录下创建字体配置文件::
+在 ``~/.gmt`` 目录下创建字体配置文件::
 
-    $ # Linux系统
-    $ touch /winfonts/cidfmap
-    $ gedit /winfonts/cidfmap
-    $ # macOS系统
-    $ touch /winfonts/cidfmap
-    $ open /winfonts/cidfmap
-    
-在文件中加入如下内容并保存::
-
-    /STSong-Light <</FileType /TrueType /Path (/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
-    /STFangsong-Light <</FileType /TrueType /Path (/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
-    /STHeiti-Regular <</FileType /TrueType /Path (/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
-    /STKaiti-Regular <</FileType /TrueType /Path (/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    $ HOME=$(echo ~)
+    $ echo "/STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;" > ~/.gmt/cidfmap
+    $ echo "/STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
+    $ echo "/STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
+    $ echo "/STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
 
 GMT的中文支持
 -------------
@@ -89,9 +80,9 @@ GMT 中文测试
 
 .. note::
 
-    凡是使用到中文字体的画图脚本，都应该在编辑器中使用 UTF8 编码。并且应该设置中文字体所在的路径::
+    凡是使用到中文字体的画图脚本，都应该在编辑器中使用 UTF8 编码。并且应该设置字体配置文件cidfmap所在的路径::
 
-        gmt set PS_CONVERT="C-I/winfonts"
+        gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的路径"
 
     此外GMT 6.x 目前在处理中文时存在BUG，可能会出现某些中文正常显示，某些
     不正常显示的情况。需要使用::
@@ -114,4 +105,4 @@ GMT 中文测试
 
     生成的 PNG、JPG格式的图片中可直接显示中文，
     而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开
-    无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。
+    无法显示中文（出现空白或竖排字体错位），使用 Adobe Reader 打开则可以正常显示中文。
