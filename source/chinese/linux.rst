@@ -1,13 +1,13 @@
-Linux 下的 GMT 中文支持
+Linux/macOS 下的 GMT 中文支持
 =======================
 
-本文介绍如何让 GMT 在 Linux 下支持中文。
+本文介绍如何让 GMT 在 Linux/macOS 下支持中文。
 
 ghostscript的中文支持
 ---------------------
 
 Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字体：宋体、仿宋、黑体和楷体。
-对于 Windows 下的其他中文字体、Linux 的其他中文字体甚至日韩字体来说，方法类似。
+对于 Windows 下的其他中文字体、Linux/macOS 的其他中文字体甚至日韩字体来说，方法类似。
 
 首先新建一个目录，用于存放字体文件和配置文件::
 
@@ -25,8 +25,12 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 
 在 ``/winfonts/`` 目录下创建字体配置文件::
 
+    $ # Linux系统
     $ touch /winfonts/cidfmap
     $ gedit /winfonts/cidfmap
+    $ # macOS系统
+    $ touch /winfonts/cidfmap
+    $ open /winfonts/cidfmap
     
 在文件中加入如下内容并保存::
 
@@ -40,8 +44,12 @@ GMT的中文支持
 
 在 ``~/.gmt``\ （若无该文件夹，请自行新建）下创建字体配置文件::
 
+    $ # Linux系统
     $ touch ~/.gmt/PSL_custom_fonts.txt
     $ gedit ~/.gmt/PSL_custom_fonts.txt
+    $ # macOS系统
+    $ touch ~/.gmt/PSL_custom_fonts.txt
+    $ open ~/.gmt/PSL_custom_fonts.txt
 
 打开 GMT 字体配置文件，在文件中加入如下语句::
 
@@ -101,3 +109,9 @@ GMT 中文测试
 .. figure:: GMT_chinese.*
    :width: 100%
    :align: center
+
+.. note::
+
+    生成的 PNG、JPG格式的图片中可直接显示中文，
+    而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开
+    无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。
