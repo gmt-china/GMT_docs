@@ -24,7 +24,6 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 
 在 ``~/.gmt`` 目录下创建字体配置文件::
 
-    $ HOME=$(echo ~)
     $ echo "/STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;" > ~/.gmt/cidfmap
     $ echo "/STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
     $ echo "/STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
