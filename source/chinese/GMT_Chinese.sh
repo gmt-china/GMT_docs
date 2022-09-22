@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 gmt begin GMT_Chinese png,pdf
 # 设置中文字体配置文件cidfmap的路径
-gmt set PS_CONVERT="C-I$(echo ~)/.gmt"
+gmt set PS_CONVERT="C-I${HOME}/.gmt"
 
 # GMT处理中文存在一些已知BUG
 # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
