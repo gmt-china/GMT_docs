@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-gmt begin GMT_Chinese
+gmt begin GMT_Chinese png,pdf
 # 设置中文字体配置文件cidfmap的路径
 gmt set PS_CONVERT="C-I$(echo ~)/.gmt"
 
