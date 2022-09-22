@@ -139,7 +139,7 @@ GMT 中文测试
 .. code-block:: bash
 
    #!/usr/bin/env bash
-   gmt begin GMT_Chinese
+   gmt begin GMT_Chinese_Basic
    # GMT处理中文存在一些已知BUG
    # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
    gmt set PS_CHAR_ENCODING Standard+
@@ -157,7 +157,7 @@ GMT 中文测试
 
 成图效果如下：
 
-.. figure:: GMT_chinese.png
+.. figure:: GMT_Chinese_Basic.png
    :width: 100%
    :align: center
 
