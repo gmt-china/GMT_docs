@@ -27,7 +27,7 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 GMT的中文支持
 -------------
 
-在 ``~/.gmt``\ 下创建字体配置文件::
+在 ``~/.gmt``\ 下创建字体配置文件 ``PSL_custom_fonts.txt``::
 
     $ touch ~/.gmt/PSL_custom_fonts.txt
     # Linux系统
