@@ -8,7 +8,7 @@ GMT 中国用户经常会绘制带中文的图片，本章主要介绍 GMT 的�
 .. toctree::
    :maxdepth: 1
 
-   linux
+   unix
    windows
    
 GMT 中文支持实例：
