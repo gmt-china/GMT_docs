@@ -34,11 +34,10 @@ GMT的中文支持
 
 在 ``~/.gmt``\ 下创建字体配置文件::
 
-    $ # Linux系统
     $ touch ~/.gmt/PSL_custom_fonts.txt
+    # Linux系统
     $ gedit ~/.gmt/PSL_custom_fonts.txt
-    $ # macOS系统
-    $ touch ~/.gmt/PSL_custom_fonts.txt
+    # macOS系统
     $ open ~/.gmt/PSL_custom_fonts.txt
 
 打开 GMT 字体配置文件，在文件中加入如下语句::
