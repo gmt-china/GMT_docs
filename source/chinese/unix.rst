@@ -75,7 +75,7 @@ GMT 中文测试
 
     凡是使用到中文字体的画图脚本，都应该设置字体配置文件cidfmap所在的目录::
 
-        gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的路径"
+        gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的目录"
 
     此外GMT 6.x 目前在处理中文时存在BUG，可能会出现某些中文正常显示，某些
     不正常显示的情况。需要使用::
