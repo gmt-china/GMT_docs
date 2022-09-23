@@ -24,10 +24,12 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 
 在 ``~/.gmt`` 目录下创建字体配置文件::
 
-    $ echo "/STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;" > ~/.gmt/cidfmap
-    $ echo "/STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
-    $ echo "/STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
-    $ echo "/STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;" >> ~/.gmt/cidfmap
+    cat > ~/.gmt/cidfmap << EOF
+    /STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    /STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    /STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    /STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+    EOF
 
 GMT的中文支持
 -------------
@@ -78,7 +80,7 @@ GMT 中文测试
 
 .. note::
 
-    凡是使用到中文字体的画图脚本，都应该在编辑器中使用 UTF8 编码。并且应该设置字体配置文件cidfmap所在的路径::
+    凡是使用到中文字体的画图脚本，都应该设置字体配置文件cidfmap所在的路径::
 
         gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的路径"
 
