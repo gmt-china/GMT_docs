@@ -46,8 +46,6 @@ sphdistance
 
 .. include:: explain_intables.rst_
 
-.. _-G:
-
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
@@ -62,19 +60,13 @@ sphdistance
 可选选项
 --------
 
-.. _-C:
-
 **-C**
     用于节省内存。该模块默认在运算过程中同时保存地理坐标和笛卡尔坐标，但对于大型数据
     集，这可能会占据很大内存，因此使用该选项可以只保留其中一种坐标以节省内存，必要的
     时候 GMT 会自动实现坐标转换。在使用 |-Q| 选项时，该选项无用
 
-.. _-D:
-
 **-D**
     用于删掉重复点 [默认不删除，即假定数据中不存在重复]
-
-.. _-E:
 
 **-Ed**\|\ **n**\|\ **z**\ [*dist*]
     指定球面网格中每个网格值的类型。
@@ -87,19 +79,13 @@ sphdistance
 
     *dist* 为在球面弧上进行重采样的间隔，默认为 1，单位为度。
 
-.. _-L:
-
 **-L**\ *unit*
     指定距离计算的单位，可选项包括 **e** (m)， **f** (foot)， **k** (km)，
     **M** (mile)，**n** (nautical mile)，**u** (survey foot)，或 **d** (spherical degree)
 
-.. _-N:
-
 **-N**\ *nodetable*
     从 *nodetable* 文件度读取每个 Voronoi 多边形相关的节点坐标和面积等信息 [默认从
     输出 ASCII 文件的段信息中获取]。
-
-.. _-Q:
 
 **-Q**\ *voronoi.txt*
     指定 Voronoi 多边形文件 [默认使用输入数据构建 Voronoi 图]。输入数据为二进制文件，
