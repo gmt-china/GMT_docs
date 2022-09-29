@@ -32,7 +32,7 @@ MAP参数
     **MAP_FRAME_WIDTH**
         设置底图类型为 **fancy** 时的边框宽度 [**5p**]
 
-        注意： 本设置选项对于 **-Jx** 或 **-JX** 投影的笛卡尔坐标系底图无效。
+        注意： 该参数对笛卡尔坐标系底图无效。
         对于 **fancy** 底图类型，:term:`MAP_FRAME_PEN` 自动设置为
         :term:`MAP_FRAME_WIDTH` 的0.1倍。
 
