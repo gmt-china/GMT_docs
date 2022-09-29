@@ -27,7 +27,7 @@ MAP参数
         和5倍。箭头的形状还可以由 :term:`MAP_VECTOR_SHAPE` 控制。
 
     **MAP_FRAME_PEN**
-        底图为 **-Jx** 或 **-JX** 投影的笛卡尔坐标系时，或边框类型为 **plain** 时边框的画笔属性 [**thicker,black**]
+        底图为笛卡尔坐标系或边框类型为 **plain** 的地理坐标系时，边框的画笔属性 [**thicker,black**]
 
     **MAP_FRAME_WIDTH**
         设置底图类型为 **fancy** 时的边框宽度 [**5p**]
