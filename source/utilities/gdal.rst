@@ -58,11 +58,11 @@ GDAL 提供的 ``gdal_translate`` 命令可以实现多种地理空间光栅数�
 该命令的详细用法请参考 `gdal_translate 官方文档 <https://gdal.org/programs/gdal_translate.html>`__，
 这里只介绍该命令的基本用法::
 
-    gdal_translate -of GMT 输入数据文件名 输出数据文件名
+    gdal_translate -of 格式 输入数据文件名 输出数据文件名
 
 例如，将 GeoTiff 格式的数据文件数据 :file:`srtm_56_05.tif` 转换为 GMT 使用的 netCDF 格式::
 
-    gdal_translate -of GMT srtm_56_05.tif srtm_56_05.nc
+    gdal_translate -of netCDF srtm_56_05.tif srtm_56_05.nc
 
 .. note::
 
@@ -71,4 +71,4 @@ GDAL 提供的 ``gdal_translate`` 命令可以实现多种地理空间光栅数�
 
         $ gdal_translate --formats
 
-    若输出中不包含 GMT，则表示当前 GDAL 不支持 GMT 的 netCDF 格式。
+    若输出中不包含 netCDF，则表示当前 GDAL 不支持 GMT 的 netCDF 格式。
