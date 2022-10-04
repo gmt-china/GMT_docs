@@ -63,12 +63,3 @@ GDAL 提供的 ``gdal_translate`` 命令可以实现多种地理空间光栅数�
 例如，将 GeoTiff 格式的数据文件数据 :file:`srtm_56_05.tif` 转换为 GMT 使用的 netCDF 格式::
 
     gdal_translate -of netCDF srtm_56_05.tif srtm_56_05.nc
-
-.. note::
-
-    GDAL 默认不支持读写 GMT 的 netCDF 格式。可以使用如下命令检查当前系统安装的
-    ``gdal_translate`` 支持哪些格式::
-
-        $ gdal_translate --formats
-
-    若输出中不包含 netCDF，则表示当前 GDAL 不支持 GMT 的 netCDF 格式。
