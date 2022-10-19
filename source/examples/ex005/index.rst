@@ -15,7 +15,7 @@ GMT 自身并没有绘制双 Y 轴图的功能，读者可以在相同位置绘�
         gmt math -T0/10pi/0.1 T SQR = sqr.txt
         
         # 首先绘制 Sin 函数图层
-        # 设置坐标轴边框颜色为蓝色，标注字体为蓝色，刻度线为蓝色，标签字体为蓝色
+        # 设置坐标轴边框颜色、标注字体、刻度线、标签字体为蓝色
         gmt set MAP_FRAME_PEN thicker,blue
         gmt set FONT_ANNOT_PRIMARY 12p,Helvetica,blue
         gmt set MAP_TICK_PEN_PRIMARY thinner,blue
@@ -25,7 +25,7 @@ GMT 自身并没有绘制双 Y 轴图的功能，读者可以在相同位置绘�
         gmt plot sin.txt -W1p,blue
         
         # 然后绘制 sqr 函数图层，直接在相同位置叠加
-        # 设置坐标轴边框颜色为红色，标注字体为红色，刻度线为红色，标签字体为红色
+        # 设置坐标轴边框颜色、标注字体、刻度线、标签字体为红色
         gmt set MAP_FRAME_PEN thicker,red
         gmt set FONT_ANNOT_PRIMARY 12p,Helvetica,red
         gmt set MAP_TICK_PEN_PRIMARY thinner,red
