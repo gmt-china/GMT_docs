@@ -24,10 +24,8 @@ GMT 自身并没有绘制双 Y 轴图的功能，读者可以在相同位置绘�
         
         # 然后绘制 sqr 函数图层，直接在相同位置叠加
         # 设置坐标轴边框颜色、标注字体、刻度线、标签字体为红色
-        gmt set MAP_FRAME_PEN thicker,red
-        gmt set FONT_ANNOT_PRIMARY 12p,Helvetica,red
-        gmt set MAP_TICK_PEN_PRIMARY thinner,red
-        gmt set FONT_LABEL 16p,Helvetica,red
+        gmt set MAP_FRAME_PEN red FONT_ANNOT_PRIMARY red
+        gmt set MAP_TICK_PEN_PRIMARY red FONT_LABEL red
         # -R选项中改变y轴的范围
         # x轴设置相同，y轴标注间隔100，只绘制右边框(E)
         gmt basemap -R0/30/0/1000 -JX10c/5c -Bxaf -Bya200+lSqr -BE
