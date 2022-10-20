@@ -16,10 +16,8 @@ GMT 自身并没有绘制双 Y 轴图的功能，读者可以在相同位置绘�
         
         # 首先绘制 Sin 函数图层
         # 设置坐标轴边框颜色、标注字体、刻度线、标签字体为蓝色
-        gmt set MAP_FRAME_PEN thicker,blue
-        gmt set FONT_ANNOT_PRIMARY 12p,Helvetica,blue
-        gmt set MAP_TICK_PEN_PRIMARY thinner,blue
-        gmt set FONT_LABEL 16p,Helvetica,blue
+        gmt set MAP_FRAME_PEN blue MAP_TICK_PEN_PRIMARY blue
+        gmt set FONT_ANNOT_PRIMARY blue FONT_LABEL blue
         # 设置x轴，y轴自动间隔，只绘制下边框(S)和左边框(W)
         gmt basemap -R0/30/-1.5/1.5 -JX10c/5c -Bxaf -Byaf+lSin -BWS
         gmt plot sin.txt -W1p,blue
