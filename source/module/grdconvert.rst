@@ -21,17 +21,20 @@ grdconvert
 必选选项
 --------
 
-*ingrdfile*\ [=id[**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*]]
+*ingrdfile*\ [=\ *id*\|\ ?\ *varname*][**+b**\ *band*][**+d**\ *divisor*][**+n**\ *invalid*]\
+[**+o**\ *offset*][**+s**\ *scale*]
     要读入的网格文件。
 
     若读入的网格文件不是标准的netCDF格式文件，则需要加上 **=**\ *id* 以指定
-    网格文件格式（见 :doc:`/grid/format`）。此外，
+    网格文件格式。如果是多变量网格文件，需加上 ?\ *varname* 指定某个变量（见 :doc:`/grid/format`）。此外，
 
-    - **+s**\ *scale* 对数据做比例缩放，即将数据乘以 *scale*
+    - **+b**\ *band* 指定抽取出某个波段，编号 *band* 从0开始计数
+    - **+d**\ *divisor* 将数据除以 *divisor* 
+    - **+s**\ *scale* 将数据乘以 *scale*
     - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset*
     - **+n**\ *invalid* 数据中哪个值表示无效值
 
-    需要注意的是，在读入网格文件时，总是先缩放再偏移。
+    需要注意的是，在读入网格文件时，总是先进行乘除再偏移。
 
     若 *id*\ =\ *gd*，则使用GDAL库检测数据格式并读入数据。实际上，当GMT遇到
     其无法识别的文件格式时，总是自动使用GDAL库读入数据，但可能会遇到问题，
@@ -39,17 +42,21 @@ grdconvert
 
 .. _-G:
 
-**-G**\ *outgrdfile*\ [=id[**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*]][*:driver*\ [/*datatype*]]]
+**-G**\ *outgrdfile*\ [=\ *id*][**+d**\ *divisor*][**+n**\ *invalid*]\
+[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]\
+[:*driver*\ [*dataType*][**+c**\ *options*]]
+
     要写入的网格文件。
 
     若要写的网格文件格式不是标准的netCDF格式，则需要加上 **=**\ *id* 以指定
     网格文件格式（见 :doc:`/grid/format`）。此外：
 
-    - **+s**\ *scale* 对数据做比例缩放，即将数据乘以 *scale*
-    - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset*
+    - **+d**\ *divisor* 将数据除以 *divisor* 
+    - **+s**\ *scale* 将数据乘以 *scale*
+    - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset* 
     - **+n**\ *invalid* 数据中哪个值表示无效值
 
-    需要注意的是，在写网格文件时，总是先偏移再缩放。
+    需要注意的是，在写网格文件时，总是先偏移再乘除。
     若想要将数据以整型保存以减小文件大小，子选项 **+s** 和 **+o** 经常会用到。
     此外，还可以使用 **+sa+oa** 让GMT自动选择合适的比例因子和偏移量以生成
     整型网格文件。
@@ -97,6 +104,12 @@ GMT默认只能读取并处理2D单变量网格。对于多变量、多维度网
 
 示例
 ----
+
+从一个含有红绿蓝三个波段数据的tif文件中分别抽出三个波段的数据::
+
+    gmt grdconvert map.tif+b0 -Gred.nc
+    gmt grdconvert map.tif+b1 -Ggreen.nc
+    gmt grdconvert map.tif+b2 -Gblue.nc
 
 将网格文件转换成四字节native浮点型网格::
 
