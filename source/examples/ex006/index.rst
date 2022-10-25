@@ -49,7 +49,6 @@
     gmt begin track_sample
         # 绘制底图
         gmt basemap -R7.5/10.5/49/50.5 -JM10c -Baf
-        gmt grdimage @earth_relief_15s -I+d -Cwhite,gray
         
         # 将原始数据处理为需要的格式
         gmt convert data.txt -Fv -o0:4 > trackv.txt
