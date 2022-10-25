@@ -116,6 +116,10 @@ grdimage
 示例
 ----
 
+使用红绿蓝三个波段的网格文件合成假彩色图像（从tif中抽取红绿蓝波段请参考 :doc:`/module/grdconvert` 中的示例）::
+
+    gmt grdimage red.nc green.nc blue.nc -JX10c -Baf -pdf rgbimage
+
 使用默认的光照效果::
 
     gmt grdimage stuff.nc -JX6i+ -I+d -pdf map
