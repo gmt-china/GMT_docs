@@ -52,7 +52,7 @@
         gmt grdimage @earth_relief_04m -I+d -Cwhite,gray
         
         # 将原始数据处理为需要的格式
-        gmt convert data.txt -Fv -o0,1,2,3,4 > trackv.txt
+        gmt convert data.txt -Fv -o0:4 > trackv.txt
         # 根据飞行的高度范围生成cpt
         gmt makecpt -T0/20000/1 -Z -Cseis
         # 根据飞行高度，绘制颜色渐变的线段
