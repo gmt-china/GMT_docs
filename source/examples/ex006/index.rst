@@ -3,6 +3,10 @@
 绘制颜色渐变的线段
 ====================
 
+:示例贡献者: 陈箫翰
+
+----
+
 绘制颜色渐变的线段，需要使用 ``gmt convert`` 进行数据处理，之后再使用 ``gmt plot -Sv+s -W+cl -C`` 绘图。
 
 假设有一个飞机飞行跟踪数据，格式如下::
@@ -59,3 +63,7 @@
         
         rm trackv.txt
     gmt end show
+    
+参考链接
+------------
+https://forum.generic-mapping-tools.org/t/how-to-color-line-segments-according-z-value/2832/7
