@@ -173,7 +173,7 @@ blockmode
 
 :doc:`blockmedian`,
 :doc:`blockmean`,
-:doc:`greenspline`,
+:doc:`gmt:greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,

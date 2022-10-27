@@ -175,7 +175,7 @@ double 类型精度 ::
 
 :doc:`blockmean`,
 :doc:`blockmode`,
-:doc:`greenspline`,
+:doc:`gmt:greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,

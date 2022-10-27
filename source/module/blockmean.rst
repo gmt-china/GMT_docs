@@ -158,7 +158,7 @@ blockmean
 
 :doc:`blockmedian`,
 :doc:`blockmode`,
-:doc:`greenspline`,
+:doc:`gmt:greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,
