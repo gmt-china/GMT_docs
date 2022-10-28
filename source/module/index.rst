@@ -276,9 +276,9 @@
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
 :doc:`gmt:grdhisteq`                             对网格做直方图均衡
 :doc:`grd2cpt`                                   根据网格文件的值生成 CPT 文件
-:doc:`blockmean`                                 使用 L2 范式对 (x,y,z) 数据做区块平均
-:doc:`blockmedian`                               使用 L1 范式对 (x,y,z) 数据做区块平均
-:doc:`blockmode`                                 使用模估计对 (x,y,z) 数据做区块平均
+:doc:`blockmean`                                 使用均值估计对 (x,y,z) 数据做区块处理
+:doc:`blockmedian`                               使用中位数估计对 (x,y,z) 数据做区块处理
+:doc:`blockmode`                                 使用众数估计对 (x,y,z) 数据做区块处理
 :doc:`gmtbinstats`                               统计落入网格节点的数据
 :doc:`surface`                                   使用可调节张量连续曲率样条插值法对数据进行网格化
 :doc:`gmtsplit`                                  将表数据拆分为单独的数据段
