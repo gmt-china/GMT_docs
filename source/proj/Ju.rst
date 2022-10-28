@@ -3,9 +3,12 @@
 
 维基链接：https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system
 
-Universal Transverse Mercator （通用横轴 Mercator 投影，UTM)是横轴 Mercator 投影的一个特殊子集。
-此处，全球在南北纬 84 度之间被划分为 60 个区域，大多数区域的宽度都是6度。
-每一个区域都有各自位移的中心经线。进一步，每个区域都被划分为纬度带。
+Universal Transverse Mercator （通用横轴 Mercator 投影，UTM）是横轴 Mercator 投影的一个特殊子集。
+此投影将全球的南纬 80 到北纬 84 度之间被划分为多个区域，大多数区域的宽度（即经度间隔）
+都是 6 度，以 1-60 表示经度区间编号；大多数区域的高度（即纬度间隔）为 8 度，在最北的纬度区间
+（北纬 74 度以北）则被延伸至北纬 84 度，以覆盖所有陆地区域，纬度区域编号为 C-X，但其中不包含 I
+和 O，以避免与数字 0 和 1 混淆。在南纬 80 度以南以及北纬 84 度以北，则为划分为单独的 4 个区块，
+这四个区域不包含经纬度编号，直接使用 A、B、Y、Z 分别代表四个区域；详细分区见下图。
 
 .. gmtplot:: GMT_utm_zones.sh
     :show-code: false
@@ -18,7 +21,9 @@ Universal Transverse Mercator （通用横轴 Mercator 投影，UTM)是横轴 Me
 或
 **-Ju**\ *zone*/*scale*
 
-- *zone* 可以取 1-60、A、B、Y、Z，负值表示南半球的区域，也可以加上 C-H 以及 J-N 来指定纬度带。
+- *zone* 可以取 1-60[C-X]、A、B、Y、Z，编号含义见上文描述，其中纬度编号是可选的，如果
+  不指定，则可以在经度编号数字前分别加 ``-`` 或 ``+`` 分别表示南半球和北半球，但无法进一步
+  精确到某个区块
 - *width* 地图宽度
 - *scale* 地图比例尺，即每度在图上的长度或 1:*xxxx* （图上 1 厘米对应真实地球 *xxxx* 厘米）
 
