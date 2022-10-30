@@ -89,8 +89,8 @@ GMT 中文测试
 成图效果如下：
 
 .. gmtplot:: GMT_Chinese.sh
-    :show-code: false
-    :width: 100%
+    :show-code: true
+    :width: 50%
 
 .. note::
 
