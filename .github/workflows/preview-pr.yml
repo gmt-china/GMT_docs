@@ -41,28 +41,6 @@ jobs:
           sudo apt update
           sudo apt install texlive-latex-base texlive-binaries texlive-fonts-recommended
 
-      - name: Set up Chinese support
-        run: |
-          sudo apt install ghostscript texlive-lang-chinese
-          ls -l /usr/share/ghostscript/9.50/Resource/*
-          wget https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl
-          sudo apt install texlive-binaries
-          sudo perl cjk-gs-integrate.pl
-          ls -l /usr/share/ghostscript/9.50/Resource/*
-          cat /usr/share/ghostscript/9.50/Resource/Init/cidfmap
-          cat /usr/share/ghostscript/9.50/Resource/Init/cidfmap.aliases
-          mkdir ~/.gmt
-          cat > ~/.gmt/PSL_custom_fonts.txt << EOF
-          STSong-Light-UniGB-UTF8-H  0.700    1
-          STFangsong-Light-UniGB-UTF8-H  0.700    1
-          STHeiti-Regular-UniGB-UTF8-H   0.700   1
-          STKaiti-Regular-UniGB-UTF8-H   0.700   1
-          STSong-Light--UniGB-UTF8-V  0.700    1
-          STFangsong-Light--UniGB-UTF8-V  0.700    1
-          STHeiti-Regular--UniGB-UTF8-V   0.700   1
-          STKaiti-Regular--UniGB-UTF8-V   0.700   1
-          EOF
-
       - name: Download remote data from GitHub
         uses: dawidd6/action-download-artifact@v2.24.0
         with:
@@ -78,6 +56,25 @@ jobs:
           # Change modification times of the two files, so GMT won't refresh it
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
           ls -lhR ~/.gmt
+
+      - name: Set up Chinese support
+        run: |
+          cat > ~/.gmt/cidfmap << EOF
+          /STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          EOF 
+          cat > ~/.gmt/PSL_custom_fonts.txt << EOF
+          STSong-Light--UniGB-UTF8-H  0.700    1
+          STFangsong-Light--UniGB-UTF8-H  0.700    1
+          STHeiti-Regular--UniGB-UTF8-H   0.700   1
+          STKaiti-Regular--UniGB-UTF8-H   0.700   1
+          STSong-Light--UniGB-UTF8-V  0.700    1
+          STFangsong-Light--UniGB-UTF8-V  0.700    1
+          STHeiti-Regular--UniGB-UTF8-V   0.700   1
+          STKaiti-Regular--UniGB-UTF8-V   0.700   1
+          EOF
           gmt text -L
 
       - name: Build HTML

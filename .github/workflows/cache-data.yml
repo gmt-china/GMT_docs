@@ -67,6 +67,11 @@ jobs:
           wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
           mv boundaries.gmt plates.gmt global_gprv.gmt ~/.gmt/cache/
 
+          # Download Chinese fonts
+          git clone --depth 1 git@github.com:ZMAlt/winfonts.git
+          rm -rf winfonts/.git
+          mv winfonts ~/.gmt/
+
       - name: Upload artifacts to GitHub
         uses: actions/upload-artifact@v3
         with:
