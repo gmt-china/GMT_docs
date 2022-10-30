@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gmt begin legend pdf,png
+gmt begin legend
 gmt makecpt -Cpanoply -T-8/8/1 -H > tt.cpt
 gmt set FONT_ANNOT_PRIMARY 12p
 gmt legend -R0/10/0/10 -JM6i -Dx0.5i/0.5i+w5i+jBL+l1.2 -C0.1i/0.1i -F+p+gazure1+r -B5f1 << EOF
@@ -36,4 +36,4 @@ T There is no easy way to predetermine how many lines may be required
 T so we may have to adjust the height to get the right size box.
 EOF
 rm -f tt.cpt
-gmt end
+gmt end show

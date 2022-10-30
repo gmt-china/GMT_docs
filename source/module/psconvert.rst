@@ -14,14 +14,14 @@ psconvert
 ----
 
 **gmt psconvert** *psfile(s)*
-[ |-A|\ *params* ]
+[ |-A|\ [**+r**][**+u**] ]
 [ |-C|\ *gs_option* ]
 [ |-D|\ *outdir* ]
 [ |-E|\ *resolution* ]
 [ |-F|\ *out_name* ]
 [ |-G|\ *ghost_path* ]
 [ |-H|\ *factor* ]
-[ |-I| ]
+[ |-I|\ [**+m**\ *margins*][**+s**\ [**m**]\ *width*\ [/\ *height*]][**+S**\ *scale*] ]
 [ |-L|\ *listfile* ]
 [ **-Mb**\|\ **f**\ *pslayer* ]
 [ |-Q|\ [**g**\|\ **p**\|\ **t**][1\|2\|4] ]
@@ -39,48 +39,18 @@ psconvert
     要转换格式的 PS 文件名
 
     默认会在当前目录下生成与与原始PS文件相同文件名的新格式文件，文件后缀由文件格式决定。
-    可以使用 **-F** 设置文件名，使用 **-D** 设置文件后缀。
+    可以使用 |-F| 设置文件名，使用 |-D| 设置文件后缀。
 
 可选选项
 --------
 
 .. _-A:
 
-**-A**\ [**+g**\ *paint*][**+m**\ *margins*][**+n**][**+p**\ [*pen*]][**+r**][**+s**\ [**m**]\|\ **S**\ *width*\ [**u**]/\ *height*\ [**u**]][**+u**]
-    对输出的图片做裁边。
+**-A**\ [**+r**][**+u**]
+    根据图片内容的大小对画布做裁剪
 
-    默认情况下，转换得到的图片的大小由PS文件的纸张尺寸决定。通常画图的时候是
-    不会把一张A4纸画满的，所以在图片周围就会出现多余的白色部分。
-
-    **-A** 选项会对PS文件进行裁剪，仅保留其中有绘图的部分，即裁去白边::
-
-        gmt psconvert -A test.ps
-
-    默认的裁剪方式会将图片裁剪到尽可能小。如果想要图片周围有额外的白色区域，
-    可以使用 **+m**\ *margins* 指定额外的空白量。其中 *margins* 可以取：
-
-    - 一个数，表示四条边的额外边距相同，如 ``-A0.5c``
-    - 两个数字，表示分别指定X和Y方向的额外边距，如 ``-A0.5c/1c``
-    - 四个数字，表示分别指定左右下上四条边的边距，如 ``-A0.5c/0.5c/0.5c/0.5c``
-
-    **-A+s** 可以直接指定最终图片的尺寸：
-
-    - **-A+s**\ *width* 指定最终生成的图片的宽度，高度自动决定。程序会对图片做
-      插值以保证 **-E** 设置的DPI值
-    - **-A+S**\ *scale* 指定图片的缩放比例
-    - **-A+sm**\ *width*/*height* 设置图片所允许的最大尺寸。若原始图片的宽度
-      不大于 *width* 则使用图片的原始尺寸，\ *height* 同理。
-
-    其它子选项：
-
-    - **-A+r** 使得在计算图片大小时使用 ``round`` 函数而不是 ``ceil`` 函数，
+    - **+r** 使得在计算图片大小时使用 ``round`` 函数而不是 ``ceil`` 函数，
       这会对裁剪造成极其微小的区别，仅当要处理非常小的图片时才需要使用。
-    - ``-A+g<paint>`` 为BoundingBox指定填充色
-    - ``-A+p<pen>`` 为BoundingBox指定边框颜色，默认颜色为 ``0.25p,black``
-
-    - **+g**\ *paint* 为图片的BoundingBox指定背景填充色
-    - **+p**\ [*pen*] 为图片的BoundingBox绘制边界 [若不指定 *pen*\ ，则默认 0.25p,black]
-    - **+n** 不做任何裁剪，以用于忽略到默认的裁剪设置
     - **+u** 先去掉GMT绘制的时间戳再裁剪
 
 .. _-C:
@@ -89,9 +59,9 @@ psconvert
     额外传递给 Ghostscript 的选项
 
     该选项用于在调用 Ghostscript 时传给 Ghostscript 额外的选项，若要额外给
-    Ghostscript增加多个选项，可重复使用 **-C** 命令。
+    Ghostscript增加多个选项，可重复使用 |-C| 命令。
 
-    在Windows下，若PS文件中含中文，则可能需要使用 **-C** 选项告诉Ghostscript字体路径::
+    在Windows下，若PS文件中含中文，则可能需要使用 |-C| 选项告诉Ghostscript字体路径::
 
         gmt psconvert -C-sFONTPATH=C:\Windows\Fonts chinese.ps
 
@@ -100,8 +70,8 @@ psconvert
 **-D**\ *outdir*
     设置输出目录
 
-    默认情况下，会在PS文件同一目录中生成其他图片文件，使用 **-D** 选项
-    可以指定输出目录。\ **-D.** 表示在当前目录输出。
+    默认情况下，会在PS文件同一目录中生成其他图片文件，使用 |-D| 选项
+    可以指定输出目录。**-D.** 表示在当前目录输出。
 
 .. _-E:
 
@@ -116,9 +86,9 @@ psconvert
     指定输出的文件名
 
     默认使用使用输入的PS文件名，并修改其后缀作为输出文件的文件名。
-    比如 *test.ps* 转换出的JPG格式的图片则为 *test.jpg*\ 。
+    比如 *test.ps* 转换出的JPG格式的图片则为 *test.jpg*。
 
-    **-F** 选项可强制指定输出文件名，文件后缀由输出的文件格式自动决定。
+    |-F| 选项可强制指定输出文件名，文件后缀由输出的文件格式自动决定。
 
 .. _-G:
 
@@ -126,14 +96,14 @@ psconvert
     指定Ghostscript可执行文件的路径
 
     **psconvert** 底层调用了 Ghostscript 来实现PS到其他格式的转换，因而成功转换的
-    前提是必须能够找到 Ghostscript 的可执行文件。\ **-G** 选项即用于显式指定
+    前提是必须能够找到 Ghostscript 的可执行文件。**-G** 选项即用于显式指定
     ghostscript可执行文件的路径。
 
     说明：
 
     - Linux下一般不需要设置Ghostscript的路径，除非你自己重新编译并安装到了非标准路径下
     - Windows下，一般也不需要使用该选项，程序会自动从注册表里获取路径信息
-    - 如果从注册表中获取路径失败，则必须使用 **-G** 选项指定路径，如 ``-GC:\programs\gs\gs9.02\bin\gswin64c``
+    - 如果从注册表中获取路径失败，则必须使用 |-G| 选项指定路径，如 ``-GC:\programs\gs\gs9.02\bin\gswin64c``
 
 .. _-H:
 
@@ -146,14 +116,28 @@ psconvert
 
 .. _-I:
 
-**-I**
-    Enforce gray-shades by using ICC profiles.  Ghostscript versions
-    >= 9.00 change gray-shades by using ICC profiles.  Ghostscript 9.05
-    and above provide the '-dUseFastColor=true' option to prevent that
-    and that is what **psconvert** does by default, unless option **-I** is
-    set.  Note that for Ghostscript >= 9.00 and < 9.05 the gray-shade
-    shifting is applied to all but PDF format.  We have no solution to
-    offer other than upgrade Ghostscript.
+**-I**\ [**+m**\ *margins*][**+s**\ [**m**]\ *width*\ [/\ *height*]][**+S**\ *scale*]
+    默认情况下，转换得到的图片的大小由 PS 文件的纸张尺寸决定。通常画图的时候是
+    不会把一张A4纸画满的，所以在图片周围就会出现多余的白色部分。
+
+    |-A| 选项会对 PS 文件进行裁剪，仅保留其中有绘图的部分，即裁去白边::
+
+        gmt psconvert -A test.ps
+
+    默认的裁剪方式会将图片裁剪到尽可能小。如果想要图片周围有额外的白色区域，
+    可以使用 **+m**\ *margins* 指定额外的空白量。其中 *margins* 可以取：
+
+    - 一个数，表示四条边的额外边距相同，如 ``-I+m0.5c``
+    - 两个数字，表示分别指定X和Y方向的额外边距，如 ``-I+m0.5c/1c``
+    - 四个数字，表示分别指定左右下上四条边的边距，如 ``-I+m0.5c/0.5c/0.5c/0.5c``
+
+    **-I+s** 可以直接指定最终图片的尺寸：
+
+    - **-I+s**\ *width* 指定最终生成的图片的宽度，高度自动决定。程序会对图片做
+      插值以保证 |-E| 设置的DPI值
+    - **-I+S**\ *scale* 指定图片的缩放比例
+    - **-I+sm**\ *width*/*height* 设置图片所允许的最大尺寸。若原始图片的宽度
+      不大于 *width* 则使用图片的原始尺寸，*height* 同理。
 
 .. _-L:
 
@@ -165,6 +149,16 @@ psconvert
 **-Mb**\|\ **f**\ *pslayer*
     将 PS 文件 *pslayer* 作为背景或前景 PS 图层。
 
+.. _-N:
+
+**-N**\ [**+f**\ *fade*][**+g**\ *paint*][**+i**][**+p**\ [*pen*]]
+    为裁剪后的图片增加填充色、阴影以及绘制边框
+
+    - **+f**\ *fade* 为整张图添加阴影。*fade* 取值为0到100，默认值为0
+    - **+g**\ *paint* 为图片增加背景填充色
+    - **+p**\ *pen* 绘制图片边框，并指定画笔属性，默认画笔为 ``0.25p,black``
+    - **+i** 将图片转换为灰度图
+
 .. _-P:
 
 **-P**
@@ -175,8 +169,8 @@ psconvert
 **-Q**\ [**g**\|\ **p**\|\ **t**][1\|2\|4]
     设置图片(**g**) 或文字(**t**) 的抗锯齿选项。
 
-    对于矢量格式，默认不做抗锯齿处理。对于光栅格式，默认参数为 **-Qt4**\ ；
-    对于透明PNG格式而言，默认参数是 **-Qt4 -Qg2**\ 。
+    对于矢量格式，默认不做抗锯齿处理。对于光栅格式，默认参数为 **-Qt4**；
+    对于透明PNG格式而言，默认参数是 **-Qt4 -Qg2**。
 
     **-Qp** 表示打开生成GeoPDF开头（需要使用 **-Tf** 选项）。
 
@@ -212,7 +206,7 @@ psconvert
     - EPS格式可以与其他格式合在一起使用。比如 **-Tef** 会同时生成EPS和PDF文件。
       除此之外，该模块一次只能转换一种格式，比如 **-Tbf** 则只会生成PDF格式
     - **-TF** 会将多个PS/PDF文件转换并合并成一个多页的PDF文件，需要使用
-      **-F** 选项指定输出的文件名
+      |-F| 选项指定输出的文件名
 
     转换为PDF格式::
 

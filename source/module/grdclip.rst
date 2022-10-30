@@ -5,7 +5,7 @@ grdclip
 ========
 
 :官方文档: :doc:`gmt:grdclip`
-:简介: 根据网格文件的Z值对网格进行裁剪
+:简介: 对网格文件的 Z 值进行截断
 
 语法
 ----
@@ -49,10 +49,10 @@ grdclip
     将所有小于 *low* 的值设置为 *below*
 
 **-Si**\ *low/high/between*
-    将所有在 *low* 和 *high* 范围内的值设置为 *between*\ 。该选项可多次使用
+    将所有在 *low* 和 *high* 范围内的值设置为 *between*。该选项可多次使用
 
 **-Sr**\ *old/new*
-    将所有等于 *old* 的值设置为 *new*\ 。该选项可以多次使用
+    将所有等于 *old* 的值设置为 *new*。该选项可以多次使用
 
 .. include:: explain_-V.rst_
 

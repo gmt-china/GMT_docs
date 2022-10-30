@@ -11,7 +11,7 @@ img2google
 :官方文档: :doc:`gmt:supplements/img/img2google`
 :简介: 由测深墨卡托 img 网格文件创建谷歌地球 KML 文件
 
-**img2google** 是一个 shell 脚本。脚本读取 1x1 弧分的墨卡托 img 文件，
+**img2google** 是一个 shell 脚本。脚本读取 1x1 分的墨卡托 img 文件，
 并为指定区域创建一个谷歌地球 KML 文件和相关的 PNG 切片。如果没有给定输入
 文件，该模块自动使用 topo.18.1.img。
 
@@ -127,7 +127,7 @@ img2google
 ------
 
 topo.18.1.img 和其他由 Sandwell/Smith 使用卫星测高数据构建的墨卡托格网，参见
-http://topex.ucsd.edu
+https://topex.ucsd.edu
 
 相关模块
 --------

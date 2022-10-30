@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-gmt begin GMT_Chinese pdf,png
+gmt begin GMT_Chinese png,pdf
+# 设置中文字体配置文件 cidfmap 的目录
+gmt set PS_CONVERT="C-I${HOME}/.gmt"
+
+# GMT处理中文存在一些已知BUG
+# 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
+gmt set PS_CHAR_ENCODING Standard+
 gmt set FONT_TITLE 25p,41,black
 gmt set FONT_LABEL 15p,39,black
 
@@ -13,4 +19,4 @@ gmt text -R0/8/0/4 -JX12c/4c -Bxaf+l"X轴" -Byaf+l"Y轴" -BWSen+t"中文标题" 
 6 3.5 25p,45,red   中文黑体
 7 3.5 25p,46,green 中文楷体
 EOF
-gmt end
+gmt end show

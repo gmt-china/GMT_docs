@@ -22,7 +22,7 @@ GMT模块 :doc:`/module/makecpt` 和 :doc:`gmt:grd2cpt` 可以内置CPT文件为
 注：这些CPT的调整选项顺序也是有优先级的。比如 ``-Iz`` 使用后，所有其他的更改
 都是基于z值反向的前提进行的。
 
-CPT文件可以在 :doc:`/module/grdimage`\ 、:doc:`/module/plot`\ 、:doc:`gmt:plot3d`
+CPT文件可以在 :doc:`/module/grdimage`、:doc:`/module/plot`、:doc:`gmt:plot3d`
 等命令中使用。通常，你可以使用 :doc:`/module/makecpt` 或 :doc:`gmt:grd2cpt`
 对已有的CPT（比如GMT内置的CPT）文件进行重采样，
 并适应你目前所使用的数据范围。当然，也可以自己手写CPT文件，或使用 ``awk`` 、
@@ -93,4 +93,4 @@ GMT 内置的 CPT 文件都是动态的。
 绘制的区域高程值是非对称的，从-8000米到3000米（下图）。由于hinge值的存在，负高程
 依旧由海蓝色拉伸填充，正高程则由大地色压缩填充。
 
-注：若要实现hinge分界效果，``makecpt`` 命令中的 ``-T`` 选项不可设置 ``/<z_int>``。
+注：若要实现hinge分界效果，:doc:`/module/makecpt` 命令中的 **-T** 选项不可设置 *inc*。

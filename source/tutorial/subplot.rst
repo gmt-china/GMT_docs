@@ -22,8 +22,8 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
 
     gmt subplot begin 2x3 -Fs5c/3c
 
-定义了一个 2 行 3 列的子图布局，注意中间为小写英文字母 **x**\ ，
-不是星号或其他符号。\ **-Fs5c/3c** 则指定了每个子图区域的宽度为 5 厘米，
+定义了一个 2 行 3 列的子图布局，注意中间为小写英文字母 **x**，
+不是星号或其他符号。**-Fs5c/3c** 则指定了每个子图区域的宽度为 5 厘米，
 高度为 3 厘米。相邻子图之间的间隔则可以用 **-M** 选项控制。
 最终得到的子图布局如下图所示：
 
@@ -34,7 +34,7 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
     #!/usr/bin/env bash
     nrow=2
     ncol=3
-    gmt begin subplot png,pdf
+    gmt begin subplot
     gmt subplot begin ${nrow}x${ncol} -Fs5c/3c -Blrtb
         for index in $(seq 0 $((nrow*ncol-1))); do
         i=$((index/ncol))
@@ -73,8 +73,7 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
-      gmt set FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 0p
+    gmt begin map
       gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.1c -T"My Subplot Heading"
         gmt subplot set 0
         gmt basemap -R0/10/0/10 -JX? -Baf -BWSen
@@ -90,18 +89,18 @@ N 行 M 列的规则网格区域，每个网格区域内都可以包含一张独
       gmt subplot end
     gmt end show
 
-在这个例子中，我们用 **subplot begin** 定义了一个 2 行 2 列（\ **2x2**\ ）的子图布局，
-每个子图区域宽 5 厘米高 3 厘米（\ **-Fs5c/3c**\ ）。除此之外，我们还使用了一些可选
+在这个例子中，我们用 **subplot begin** 定义了一个 2 行 2 列（**2x2**）的子图布局，
+每个子图区域宽 5 厘米高 3 厘米（**-Fs5c/3c**）。除此之外，我们还使用了一些可选
 选项对图的细节进行微调：
 
 -   **-A**: 对每个子图进行自动编号 abcd
 -   **-M0.2c/0.1c**: 调整相邻子图之间的空白距离，X 方向间隔为 0.2 厘米，Y 方向间隔为 0.1 厘米
 -   **-T"My Subplot Heading"**: 为整张图加上一个总标题
--   调整子图编号的大小（:term:`FONT_TAG`\ ）、总标题文字大小（:term:`FONT_HEADING`\ ）
-    以及总标题相对于底图的偏移量（:term:`MAP_HEADING_OFFSET`\ ）
+-   调整子图编号的大小（:term:`FONT_TAG`）、总标题文字大小（:term:`FONT_HEADING`）
+    以及总标题相对于底图的偏移量（:term:`MAP_HEADING_OFFSET`）
 
 在子图模式内，我们使用 **subplot set 0** 的方式依次激活每个子图。在每个子图内绘图时，
-我们使用了线性投影方式 **-JX?**\ 。通常我们需要指定图片的宽度或高度，这里我们使用了
+我们使用了线性投影方式 **-JX?**。通常我们需要指定图片的宽度或高度，这里我们使用了
 **?** 让 GMT 根据子图区域的大小自动帮我们选择最合适的子图宽度。
 
 .. tip::
@@ -125,7 +124,7 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
 .. gmtplot::
     :width: 60%
 
-    gmt begin map png,pdf
+    gmt begin map
       gmt set FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 10p
       gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.2c -T"My Subplot Heading" -SRl -SCb -BWSrt
         gmt basemap -R0/10/0/10 -JX? -c
@@ -135,8 +134,8 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
       gmt subplot end
     gmt end show
 
-**-SRl** 表示一行内（\ **R**\ ow\ ）的子图共用 Y 轴，且只在左边（\ **l**\ ）轴显示标注，
-**-SCb** 表示一列内（\ **C**\ olumn\ ）的子图共用 X 轴，且只在底部（\ **b**\ ）轴显示标注。
+**-SRl** 表示一行内（**R**\ ow\ ）的子图共用 Y 轴，且只在左边（**l**）轴显示标注，
+**-SCb** 表示一列内（**C**\ olumn\ ）的子图共用 X 轴，且只在底部（**b**）轴显示标注。
 
 当然你也可以不使用 **-S** 选项，而是在每个子图中使用不同的 **-B** 选项分别
 为每个子图设置不同的轴属性。
@@ -153,7 +152,7 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
 .. gmtplot::
     :width: 75%
 
-    gmt begin complex-subplot png,pdf
+    gmt begin complex-subplot
       gmt subplot begin 1x2 -Ff15c/3c -A -BWSen
         gmt subplot set 0 -A'(b)'
         gmt basemap -R0/10/0/10 -JX?

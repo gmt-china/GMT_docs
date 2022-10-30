@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gmt begin velo_ex2 png,pdf
+gmt begin velo_ex2
 gmt velo -R-10/10/-10/10 -Wthin,red -Se0.2c/0.39/12 -B1g1 \
         -BWeSn -Jx0.2i -Ggreen -Eblue -L -N -A1c+p3p+e << EOF
 # Long.   Lat.   Evel   Nvel   Esig   Nsig  CorEN SITE
@@ -22,4 +22,4 @@ gmt velo -Se0.2c/0.39/14 -A0.25c+p0.25p+e << EOF
    5.     0.    -6.0    4.0     6.0    4.0 -0.300  -6x4
    0.    -5.     6.0   -4.0     6.0    4.0 -0.500  6x-4
 EOF
-gmt end
+gmt end show

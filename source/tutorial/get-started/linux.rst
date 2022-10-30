@@ -15,7 +15,7 @@ GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 
 .. code-block:: console
 
-            GMT - The Generic Mapping Tools, Version 6.2.0 [64-bit] [8 cores]
+            GMT - The Generic Mapping Tools, Version 6.4.0 [64-bit] [8 cores]
             (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
             Supported in part by the US National Science Foundation (http://www.nsf.gov/)
@@ -84,7 +84,7 @@ Linux 都自带了的文本编辑器 **gedit** 打开该脚本文件::
         # Place modern session commands here
     gmt end show
 
-其中，以 **#** 开头的行尾注释行，\ **export GMT_SESSION_NAME=$$** 这一行属于
+其中，以 **#** 开头的行尾注释行，**export GMT_SESSION_NAME=$$** 这一行属于
 高级用法，可以忽略。因而核心内容只有两行，即 **gmt begin** 和 **gmt end** 这两行。
 
 编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加 GMT 命令，将脚本修改如下::
@@ -121,9 +121,9 @@ Linux 都自带了的文本编辑器 **gedit** 打开该脚本文件::
     # User:    seisman
     # Purpose: Purpose of this script
     export GMT_SESSION_NAME=$$	# Set a unique session name
-    gmt begin figurename png,pdf
+    gmt begin figurename
         gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
-    gmt end
+    gmt end show
 
 这基本上就是运行 GMT 脚本的基本流程，即：
 

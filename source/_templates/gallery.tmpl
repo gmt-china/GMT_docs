@@ -1,0 +1,27 @@
+{# Template for the gallery page #}
+
+{% for group in data %}
+{{ group["title"] }}
+==========================
+
+.. grid:: 2 3 3 4
+    {% for fig in group["gallery"] %}
+    {% if fig["image"].startswith("http") %}  {# absolute URL for external images #}
+        {% set image = fig["image"] %}
+        {% set link, link_type = "/" + fig["target"], "doc" %}
+    {% else %}  {# internal images #}
+        {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
+        {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
+    {% endif %}
+    .. grid-item-card::
+        :margin: 0 2 0 0
+        :text-align: center
+        :link: {{ link }}
+        :link-type: {{ link_type }}
+
+        .. figure:: {{ image }}
+        +++
+        **{{ fig["title"] }}**
+    {% endfor %}
+{% endfor %}
+

@@ -10,13 +10,20 @@ meca
 语法
 ----
 
-**gmt meca** [ *table* ] |-J|\ *parameters* |SYN_OPT-R|
-|-S|\ *<format><scale>*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
+**gmt meca** [ *table* ]
+|-J|\ *parameters*
+|SYN_OPT-R|
+|-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
+[ |-A|\ [**+p**\ *pen*][**+s**\ *size*] ]
 [ |SYN_OPT-B| ]
-[ |-C|\ [*pen*][**+s**\ *size*] ] [ |-D|\ *depmin*/*depmax* ]
-[ |-E|\ *fill*]
-[ |-F|\ *mode*\ [*args*] ] [ |-G|\ *fill*] [ |-L|\ [*pen*] ]
-[ |-M| ]
+[ |-C|\ *cpt* ]
+[ |-D|\ *depmin*/*depmax* ]
+[ |-E|\ *fill* ]
+[ |-F|\ *mode*\ [*args*] ]
+[ |-G|\ *fill* ]
+[ |-H|\ [*scale*] ]
+[ |-I|\ [*intens*] ]
+[ |-L|\ [*pen*] ]
 [ |-N| ]
 [ |-T|\ *nplane*\ [/*pen*] ]
 [ |SYN_OPT-U| ]
@@ -24,13 +31,12 @@ meca
 [ |-W|\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ *cpt*]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
@@ -55,12 +61,12 @@ meca
 **-A**\ [**+p**\ *pen*][**+s**\ *size*]
     在 (*newX*,\ *newY*) 处绘制震源球
 
-    默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 **-A** 选项，
+    默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 |-A| 选项，
     则将震源球绘制在 (*newX*,\ *newY*) 处，在震源位置绘制一个小圆，
     并将 (*X*,\ *Y*) 和 (*newX*,\ *newY*) 连线。
 
-    *pen* 控制连线的画笔属性，\ **+s**\ *size* 指定圆的大小。
-    [默认使用 **-W** 选项的 *pen* 属性，\ *size* 为0]
+    *pen* 控制连线的画笔属性，**+s**\ *size* 指定圆的大小。
+    [默认使用 |-W| 选项的 *pen* 属性，*size* 为0]
 
 .. _-C:
 
@@ -85,8 +91,8 @@ meca
 **-Fa**\ [*size*\ [/*Psymbol*\ [*Tsymbol*]]]
     计算并在震源球上P轴和T轴处绘制符号。
     *size* 是符号大小；
-    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\|\ **d**\|\ **h**\|\ **i**\|\ **p**\|\ **s**\|\ **t**\|\ **x**\ ，
-    具体含义见 :doc:`plot` **-S** 选项 [默认值为 6p/cc]
+    *Psymbol* 和 *Tsymbol* 符号可以取 **c**\|\ **d**\|\ **h**\|\ **i**\|\ **p**\|\ **s**\|\ **t**\|\ **x**，
+    具体含义见 :doc:`plot` |-S| 选项 [默认值为 6p/cc]
 
 **-Fe**\ *fill*
     设置T轴符号的填充色
@@ -117,12 +123,12 @@ meca
 .. _-L:
 
 **-L**\ [*pen*]
-    设置震源球外部轮廓的线条属性[默认由 **-W** 选项决定]
+    设置震源球外部轮廓的线条属性[默认由 |-W| 选项决定]
 
 .. _-M:
 
 **-M**
-    所有震级使用相同的大小。震源球大小由 **-S** 选项的 *scale* 参数决定。
+    所有震级使用相同的大小。震源球大小由 |-S| 选项的 *scale* 参数决定。
 
 .. _-N:
 
@@ -142,8 +148,8 @@ meca
 
     *pen* 为画笔属性。
 
-    对于双力偶机制解而言，\ **-T** 选项只绘制震源球的圆周和断层平面，不填充颜色；
-    对于非双力偶机制解而言，\ **-T0** 在震源球的基础上覆盖上透明的断层平面。
+    对于双力偶机制解而言，**-T** 选项只绘制震源球的圆周和断层平面，不填充颜色；
+    对于非双力偶机制解而言，**-T0** 在震源球的基础上覆盖上透明的断层平面。
 
 .. include:: explain_-U.rst_
 
@@ -154,7 +160,7 @@ meca
 **-W**\ *pen*
     同时设置所有线条以及符号轮廓的画笔属性以及标题颜色。
 
-    该选项设置的属性可以被 **-C**\ 、\ **-L**\ 、\ **-T**\ 、\ **-Fp**\ 、
+    该选项设置的属性可以被 **-C**、**-L**、**-T**、**-Fp**、
     **-Ft**\ 或 **-Fz** 指定的属性替代。
 
 .. include:: explain_-XY.rst_
@@ -211,7 +217,7 @@ meca
    :width: 75%
 
     #!/usr/bin/env bash
-    gmt begin beachball_3 png,pdf
+    gmt begin beachball_3
     gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSen
     gmt coast -Da -Ia/0.05,black
     gmt makecpt -T0/100/20

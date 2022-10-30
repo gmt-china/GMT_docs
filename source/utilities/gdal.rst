@@ -1,7 +1,7 @@
 GDAL
 ====
 
-`GDAL <https://gdal.org/>`__\（\ **G**\ eospatial **D**\ ata **A**\ bstraction **L**\ ibrary）
+`GDAL <https://gdal.org/>`__\（**G**\ eospatial **D**\ ata **A**\ bstraction **L**\ ibrary）
 是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，
 支持多种光栅或矢量地理空间数据格式的互相转换和处理。
 
@@ -21,7 +21,7 @@ GDAL/OGR 有两个核心部分：
 
 - GDAL 部分：支持多种光栅地理空间数据格式的互相转换，
   如常见的 netCDF、GeoTiff、HDF5、XYZ 等，
-  详见\ `光栅格式列表 <http://www.gdal.org/formats_list.html>`__
+  详见\ `光栅格式列表 <https://gdal.org/drivers/raster/index.html>`__
 - OGR 部分：支持多种矢量数据格式的互相转换，
   如常见的 OGR/GMT（即 GMT）、Shapefile 、KML、MapInfo、Excel 等，
   详见\ `矢量格式列表 <https://gdal.org/drivers/vector/index.html>`__
@@ -29,7 +29,7 @@ GDAL/OGR 有两个核心部分：
 安装
 ----
 
-《\ :doc:`GMT 安装 </install/index>`\ 》中介绍了各种操作系统下安装 GMT 的方法。
+《:doc:`GMT 安装 </install/index>`》中介绍了各种操作系统下安装 GMT 的方法。
 GDAL 要么已包含在 GMT 安装包中，要么作为推荐包已被安装。
 
 .. _ogr2ogr:
@@ -39,7 +39,7 @@ ogr2ogr
 
 GDAL 提供的 ``ogr2ogr`` 命令可以实现几十种地理矢量数据格式之间的互相转换。
 因而，可以用其将任意地理矢量数据格式转换为 GMT 可识别的 OGR/GMT 格式，以供 GMT 直接使用。
-该命令的详细用法请参考 `ogr2ogr 官方文档 <https://gdal.org/programs/ogr2ogr.html>`__\ ，
+该命令的详细用法请参考 `ogr2ogr 官方文档 <https://gdal.org/programs/ogr2ogr.html>`__，
 这里仅介绍该命令的基本用法::
 
     $ ogr2ogr -f GMT 输出数据文件名 输入数据文件名
@@ -55,20 +55,11 @@ gdal_translate
 --------------
 
 GDAL 提供的 ``gdal_translate`` 命令可以实现多种地理空间光栅数据格式之间的互相转换。
-该命令的详细用法请参考 `gdal_translate 官方文档 <https://gdal.org/programs/gdal_translate.html>`__\ ，
+该命令的详细用法请参考 `gdal_translate 官方文档 <https://gdal.org/programs/gdal_translate.html>`__，
 这里只介绍该命令的基本用法::
 
-    gdal_translate -of GMT 输入数据文件名 输出数据文件名
+    gdal_translate -of 格式 输入数据文件名 输出数据文件名
 
 例如，将 GeoTiff 格式的数据文件数据 :file:`srtm_56_05.tif` 转换为 GMT 使用的 netCDF 格式::
 
-    gdal_translate -of GMT srtm_56_05.tif srtm_56_05.nc
-
-.. note::
-
-    GDAL 默认不支持读写 GMT 的 netCDF 格式。可以使用如下命令检查当前系统安装的
-    ``gdal_translate`` 支持哪些格式::
-
-        $ gdal_translate --formats
-
-    若输出中不包含 GMT，则表示当前 GDAL 不支持 GMT 的 netCDF 格式。
+    gdal_translate -of netCDF srtm_56_05.tif srtm_56_05.nc

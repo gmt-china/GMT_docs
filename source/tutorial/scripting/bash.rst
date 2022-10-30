@@ -6,7 +6,7 @@ Bash 基础
 
 用文本编辑器创建一个后缀名为 **.sh** 的文件，向其中写入 Bash 命令并保存，即得到一个 Bash 脚本。
 
-打开终端，在终端中输入 ``bash script.sh``\，即可执行 Bash 脚本 :file:`script.sh`\ 。
+打开终端，在终端中输入 ``bash script.sh``\，即可执行 Bash 脚本 :file:`script.sh`。
 也可以执行命令 ``chmod +x script.sh`` 给脚本可执行权限，然后即可在终端输入
 ``./script.sh``\ 运行 “可执行” 的脚本。
 

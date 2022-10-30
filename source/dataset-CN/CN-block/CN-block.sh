@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gmt begin BLOCK png,pdf
+gmt begin BLOCK
     gmt gmtset MAP_ANNOT_OBLIQUE 6
     gmt gmtset MAP_TICK_LENGTH_PRIMARY 0
     gmt gmtset MAP_FRAME_TYPE plain

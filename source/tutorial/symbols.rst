@@ -8,9 +8,9 @@
 符号一览
 --------
 
-**plot** 模块绘制符号需要使用 **-S** 选项。\ **-S** 选项后面紧跟着符号类型代码，
+**plot** 模块绘制符号需要使用 **-S** 选项。**-S** 选项后面紧跟着符号类型代码，
 以及符号大小。GMT 中常见的十几种简单符号及其对应的符号类型代码如下图所示。
-比如 **c** 代表圆（\ **c**\ ircle），\ **t** 代表三角形（\ **t**\ riangle）。
+比如 **c** 代表圆（**c**\ ircle），**t** 代表三角形（**t**\ riangle）。
 
 .. gmtplot:: symbols.sh
     :show-code: false
@@ -18,7 +18,7 @@
 绘制简单符号
 ------------
 
-以绘制圆圈为例，通过查询文档或者看上图可知，圆圈对应的符号类型代码为 **c**\ 。
+以绘制圆圈为例，通过查询文档或者看上图可知，圆圈对应的符号类型代码为 **c**。
 **-Sc0.5c** 则表示绘制直径为 0.5 厘米的圆圈。
 为了绘制圆圈，我们需要给定圆圈的位置，因而输入数据中需要提供圆圈的 X 和 Y 坐标。
 
@@ -27,7 +27,7 @@
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c << EOF
     2 3
     5 6
@@ -41,7 +41,7 @@
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c -W1p,black -Gred << EOF
     2 3
     5 6
@@ -62,13 +62,13 @@
 若想要绘制大小变化的符号，则需要在输入数据中额外加上一列以控制每个符号的大小，
 同时，在 **-S** 选项中则不再需要指定符号大小。
 
-下面的示例中，\ **-Sc** 中没有指定圆圈大小，此时输入数据的第三列控制圆圈大小。
+下面的示例中，**-Sc** 中没有指定圆圈大小，此时输入数据的第三列控制圆圈大小。
 由此，我们即得到了大小变化的符号。
 
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc -W1p,black -Gred << EOF
     2 3 0.3
     5 6 0.8
@@ -97,7 +97,7 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt makecpt -Chot -T0/3/1
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c -W1p,black -C << EOF
     2   3   0
@@ -109,18 +109,18 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 绘制不同的符号
 --------------
 
-前面说到，\ **-S** 选项中指定不同的符号类型代码则代表绘制不同的符号，但每次只能
+前面说到，**-S** 选项中指定不同的符号类型代码则代表绘制不同的符号，但每次只能
 指定一种符号类型代码。如果想要不同的数据使用不同的符号绘制，则可以只指定符号大小
 而不指定符号类型代码，并在输入数据的最后一列指定符号类型代码。
 
 下面的示例中，我们使用 **-S0.5c** 指定了符号的大小，但是没有指定符号类型。
-输入数据的最后一列中 **c**\ 、\ **t**\ 和 **i** 则分别为三个数据指定了各自的
+输入数据的最后一列中 **c**、**t**\ 和 **i** 则分别为三个数据指定了各自的
 符号类型。
 
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt basemap -R0/10/0/10 -JX10c/10c -Baf
     gmt plot -S0.5c -W1p,black -Gred << EOF
     2 3 c
@@ -145,7 +145,7 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 .. gmtplot::
     :width: 60%
 
-    gmt begin symbols png,pdf
+    gmt begin symbols
     gmt makecpt -Chot -T0/3/1
     gmt plot -R0/10/0/10 -JX10c/10c -Baf -S -W1p,black -C << EOF
     2   3   0   0.3 c

@@ -6,16 +6,16 @@ CN-faults: 中国断层数据
 ----
 
 CN-faults 数据来自于邓起东院士编制的《中国活动构造图（1:400 万）》，
-由\ `国家地震科学数据中心 <http://datashare.igl.earthquake.cn/datashare>`__\ 提供原始数据。
+由\ `国家地震科学数据中心 <https://data.earthquake.cn/>`__\ 提供原始数据。
 数据包含了中国区域内主要断层的地理位置以及断层属性，
 如断层名称、长度、走向、倾向、倾角、断层性质、最晚活动年代等。
 
 数据文件
 --------
 
-CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主要断层
+CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要断层
 
-具体的下载地址和使用方式请见：\ :doc:`/dataset-CN/index`\ 。
+具体的下载地址和使用方式请见：:doc:`/dataset-CN/index`。
 
 示例图
 ------
@@ -27,7 +27,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
    :show-code: true
    :width: 75%
 
-    gmt begin CN-faults png,pdf
+    gmt begin CN-faults
         gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
         gmt plot CN-faults.gmt -W1p,red
     gmt end show
@@ -39,7 +39,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
    :show-code: true
    :width: 50%
 
-    gmt begin CN-regional-faults png,pdf
+    gmt begin CN-regional-faults
         gmt basemap -JM15c -R95/105/25/35 -Baf
         gmt plot CN-faults.gmt -W1p,red
     gmt end show
@@ -49,21 +49,21 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 
 可以使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
 
-.. note::
+.. code-block::
 
-   由于中文手册服务器上未设置 GMT 中文支持，故而下图中断层名显示乱码。
-   对于用户而言，若已经正确设置 GMT 中文支持，则应可正常显示中文。
-
-.. gmtplot::
-   :show-code: true
-   :width: 50%
-
-    gmt begin CN-faults-labeling png,pdf
+    gmt begin CN-faults-labeling
+        # GMT处理中文存在一些已知BUG
+        # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
+        gmt set PS_CHAR_ENCODING Standard+
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL="断层名称": set the "L" value (i.e., label) in segment headers using "断层名称"
         # :+Lh: take the label text from the "L" value in the segment header
         gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11p,39
     gmt end show
+
+.. figure:: https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png
+   :width: 50%
+   :align: center
 
 根据属性信息提取数据
 ++++++++++++++++++++
@@ -91,7 +91,7 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
    :show-code: true
    :width: 50%
 
-    gmt begin CN-buffer-fault png,pdf
+    gmt begin CN-buffer-fault
         gmt basemap -R109/113/34/37 -JM15c -Ba
         # draw a circle with a radius of 100 km
         echo 111 35.5 200k | gmt plot -SE- -Wblue -fg
@@ -102,8 +102,8 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`\ ：中国区域主�
 数据来源与处理
 --------------
 
-1.  下载 :file:`Active_fault.zip` 压缩包：\ `中国大陆地区 1:400 万活动断层数据库
-    <http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html>`__
+1.  下载 :file:`Active_fault.zip` 压缩包：`中国大陆地区 1:400 万活动断层数据库
+    <https://data.earthquake.cn/datashare/report.shtml?PAGEID=datasourcelist&dt=ff8080826e16801d016eb119cb350006>`__
 
 2.  格式转换
 

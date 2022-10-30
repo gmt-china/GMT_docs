@@ -28,7 +28,7 @@ PARAMETER3 *value3*
 *PARAMETER* *value*
     要修改的GMT配置参数名 *PARAMETER* 以及想要设置的值 *value*
 
-    参数名和值必须成对存在。GMT配置参数见 :doc:`/conf/index`\ 。
+    参数名和值必须成对存在。GMT配置参数见 :doc:`/conf/index`。
 
 可选选项
 --------
@@ -44,9 +44,9 @@ PARAMETER3 *value3*
 **-D**\ [**s**\|\ **u**]
     在系统默认配置的基础上修改参数值
 
-    - **-D**\ ：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）
-    - **-Du**\ ：使用US单位制下的默认参数文件
-    - **-Ds**\ ：使用SI单位制下的默认参数文件
+    - **-D**：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）
+    - **-Du**：使用US单位制下的默认参数文件
+    - **-Ds**：使用SI单位制下的默认参数文件
 
 .. _-G:
 
@@ -82,6 +82,5 @@ FAQ
 相关模块
 --------
 
-:doc:`gmt.conf`,
 :doc:`gmtdefaults`,
 :doc:`gmtget`

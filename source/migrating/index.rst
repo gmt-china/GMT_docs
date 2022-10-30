@@ -12,9 +12,9 @@ GMT 在大版本升级时（如 GMT5 升级为 GMT6），语法及用法上会�
 
 这一章将介绍如何实现：
 
-- 将 GMT4 脚本迁移到 GMT5：\ :doc:`/migrating/4to5`
-- 将 GMT5 脚本迁移到 GMT6：\ :doc:`/migrating/5to6`
-- 将经典模式语法迁移到 GMT6 现代模式语法：\ :doc:`/migrating/classic2modern`
+- 将 GMT4 脚本迁移到 GMT5：:doc:`/migrating/4to5`
+- 将 GMT5 脚本迁移到 GMT6：:doc:`/migrating/5to6`
+- 将经典模式语法迁移到 GMT6 现代模式语法：:doc:`/migrating/classic2modern`
 
 .. toctree::
    :hidden:

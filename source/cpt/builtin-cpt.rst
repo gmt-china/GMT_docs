@@ -4,7 +4,8 @@
 GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展示GMT内置CPT的配色，
 具体如何使用这些内置CPT文件会在后面做进一步介绍。
 
-下面列出了GMT内置的若干个CPT文件的具体配色以及CPT文件名（位于图下方）。
+下面列出了GMT内置的部分CPT文件的具体配色以及CPT文件名（位于图下方）。
+用户可以参阅 :gmt-docs:`官方手册 <cookbook/cpts.html>` 了解更多内置CPT配色文件。
 每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到
 （将选项 **-C**\ *cpt* 中的 *cpt* 替换为相应的CPT即可）::
 
@@ -17,7 +18,7 @@ CPT文件，可以用如下命令绘制得到（将选项 **-C**\ *cpt* 中的 *
     gmt begin CPT
     gmt makecpt -Ccpt -T-1/1/0.25
     gmt colorbar -Dx0c/0c+w10c/1c+h -B0
-    gmt end
+    gmt end show
 
 图中黑色三角和白色三角分别表示该CPT拥有一个HARD HINGE或SOFT HINGE。
 关于HARD和SOFT HINGE的定义会在下一节详细介绍。

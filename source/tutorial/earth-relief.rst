@@ -13,12 +13,12 @@ GMT 中 :doc:`/module/grdimage` 模块可以绘制二维网格，其原理是建
 
 要绘制全球或区域地形起伏图，首先需要拥有地形起伏数据，即不同经纬度处的高程或海深数据。
 GMT 收集整理并提供了一套全球地形起伏数据，供用户直接使用。
-这套地形起伏数据分为包含了从 60 弧分到 1 弧秒的多种不同精度的全球地形起伏数据，
+这套地形起伏数据分为包含了从 60 分到 1 秒的多种不同精度的全球地形起伏数据，
 以满足不同的绘图区域大小的需求。
 
 GMT 用户可以通过给定文件名 :file:`@earth_relief_xxx` 的方式来指定要使用某个精度的地形。
-*xxx* 用于指定数据精度，例如 **15m**\ 、\ **01m**\ 和 \ **15s** 分别表示数据分辨率为
-15 弧分、1 弧分和 15 弧秒。1 弧秒约为 30 米，1 弧分约为 2 千米。
+*xxx* 用于指定数据精度，例如 **15m**、**01m**\ 和 \ **15s** 分别表示数据分辨率为
+15 分、1 分和 15 秒。1 秒约为 30 米，1 分约为 2 千米。
 
 .. note::
 
@@ -35,19 +35,19 @@ GMT 用户可以通过给定文件名 :file:`@earth_relief_xxx` 的方式来指�
 GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录中，当以后再使用该文件时，
 则直接读取本地文件，而无需重新下载该数据。
 
-关于全球地形起伏数据的详细介绍见 :doc:`/dataset/earth-relief`\ 。
+关于全球地形起伏数据的详细介绍见 :doc:`/dataset/earth-relief`。
 
 绘制全球地形起伏图
 ------------------
 
-下面我们将使用 **grdimage** 模块绘制 30 弧分精度的全球地形起伏数据（\ :file:`@earth_relief_30m`\ ）。
+下面我们将使用 **grdimage** 模块绘制 30 分精度的全球地形起伏数据（:file:`@earth_relief_30m`）。
 不同的高程用不同的颜色表示，从中我们很容易看出不同地区的地形变化。
 
 .. gmtplot::
     :width: 100%
     :caption: 全球地形起伏图
 
-    gmt begin global_relief png,pdf
+    gmt begin global_relief
     gmt grdimage @earth_relief_30m -JH180/10c
     gmt end show
 
@@ -56,13 +56,13 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 
 想要绘制区域地形起伏？只需要在 **grdimage** 模块中使用 **-R** 选项指定
 区域经纬度范围即可。这里我们设置了绘图区域为 118°E 至 125°E、20°N 至 26°N。
-由于绘图区域比较小，所以我们选用了更高精度的 1 弧分的地形起伏数据。
+由于绘图区域比较小，所以我们选用了更高精度的 1 分的地形起伏数据。
 
 .. gmtplot::
     :width: 70%
     :caption: 台湾区域地形图
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen
     gmt end show
 
@@ -79,7 +79,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
     :width: 70%
     :caption: 带光照效果的台湾区域地形图
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt end show
 
@@ -91,7 +91,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 添加色标
 --------
 
-前面提到，\ **grdimage** 绘制地形起伏数据本质上就是将高程的数值与颜色之间对应起来。
+前面提到，**grdimage** 绘制地形起伏数据本质上就是将高程的数值与颜色之间对应起来。
 二者之间的对应关系由色标文件（即 CPT 文件）决定。那么，上图使用的是怎么样的 CPT 呢？
 高程数值与颜色之间的对应关系又是怎样的呢？不同的颜色代表的具体数值又是多少呢？
 这就需要用 :doc:`/module/colorbar` 向图中添加色标。
@@ -99,7 +99,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar
     gmt end show
@@ -109,19 +109,19 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -Bxaf+l"Elevation (m)"
     gmt end show
 
 当然，我们还可以更进一步调整色标的位置、长度等属性。下面的脚本中，我们使用了
-**-D** 选项将色标放在了地形起伏图的右侧中间（\ **JMR**\ ）向右偏移 1.5 厘米，
-色标长度为 10 厘米，并将标签放在了色标左侧（\ **+ml**\ ）。
+**-D** 选项将色标放在了地形起伏图的右侧中间（**JMR**）向右偏移 1.5 厘米，
+色标长度为 10 厘米，并将标签放在了色标左侧（**+ml**）。
 
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt grdimage @earth_relief_01m -JM15c -R118/125/20/26 -Baf -BWSen -I+d
     gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l"m"
     gmt end show
@@ -139,7 +139,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 .. gmtplot::
     :width: 70%
 
-    gmt begin taiwan_relief png,pdf
+    gmt begin taiwan_relief
     gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
     gmt makecpt -Cglobe -T-8000/8000
     gmt grdimage @earth_relief_01m -I+d
