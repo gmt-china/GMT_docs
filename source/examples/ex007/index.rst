@@ -43,11 +43,9 @@
     
     gmt begin custom
         # 生成指北针符号自定义文件
-        cat > compass.def << EOF
+        cat > compass.def << 'EOF'
     N: 1 a
-    # Linux Shell 中 $ 符号代表shell变量，因此会引起冲突。需要使用 \$ 进行转义
-    # 如果直接在编辑器中编辑def文件，则应该使用 $
-    \$1 O
+    $1 O
     0 0.5 M -Gblack
     0.25 -0.5 D
     0 -0.3 D
