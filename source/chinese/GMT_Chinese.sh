@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 gmt begin GMT_Chinese png,pdf
 # 设置中文字体配置文件 cidfmap 的目录
+
+echo "-----------------"
+echo "${HOME}"
+cat ${HOME}/.gmt/cidfmap
 gmt set PS_CONVERT="C-I${HOME}/.gmt"
 
 # GMT处理中文存在一些已知BUG
