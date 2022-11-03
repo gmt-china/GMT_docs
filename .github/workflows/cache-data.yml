@@ -3,7 +3,7 @@ name: Cache data
 
 on:
   # Uncomment the 'pull_request' line below to manually re-cache data artifacts
-  # pull_request:
+  pull_request:
   # Schedule runs on 12 noon every Sunday
   schedule:
     - cron: '0 12 * * 0'
@@ -72,6 +72,24 @@ jobs:
           rm -rf winfonts/.git
           mv winfonts ~/.gmt/
 
+          cat > ~/.gmt/cidfmap << EOF
+          /STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          EOF
+ 
+          cat > ~/.gmt/PSL_custom_fonts.txt << EOF
+          STSong-Light--UniGB-UTF8-H  0.700    1
+          STFangsong-Light--UniGB-UTF8-H  0.700    1
+          STHeiti-Regular--UniGB-UTF8-H   0.700   1
+          STKaiti-Regular--UniGB-UTF8-H   0.700   1
+          STSong-Light--UniGB-UTF8-V  0.700    1
+          STFangsong-Light--UniGB-UTF8-V  0.700    1
+          STHeiti-Regular--UniGB-UTF8-V   0.700   1
+          STKaiti-Regular--UniGB-UTF8-V   0.700   1
+          EOF
+ 
       - name: Upload artifacts to GitHub
         uses: actions/upload-artifact@v3
         with:
@@ -81,3 +99,5 @@ jobs:
               ~/.gmt/server
               ~/.gmt/custom
               ~/.gmt/winfonts
+              ~/.gmt/cidfmap
+              ~/.gmt/PSL_custom_fonts.txt
