@@ -73,23 +73,21 @@ GMT 中文测试
 
 .. note::
 
-    凡是使用到中文字体的画图脚本，都应该设置字体配置文件cidfmap所在的目录::
+    凡是使用到中文字体的画图脚本，都应该设置字体配置文件 cidfmap 所在的目录::
 
         gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的目录"
 
-    此外GMT 6.x 目前在处理中文时存在BUG，可能会出现某些中文正常显示，某些
+    此外 GMT 6.x 目前在处理中文时存在 BUG，可能会出现某些中文正常显示，某些
     不正常显示的情况。需要使用如下命令来避免这一 BUG::
 
         gmt set PS_CHAR_ENCODING Standard+
 
-    请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
+    请自行确认你的中文字体编号。如果编号不是 39 到 46，请自行修改以下测试脚本。
 
-.. literalinclude:: GMT_Chinese.sh
-
-成图效果如下：
+测试脚本和成图效果如下：
 
 .. gmtplot:: GMT_Chinese.sh
-    :show-code: false
+    :show-code: true
     :width: 100%
 
 .. note::

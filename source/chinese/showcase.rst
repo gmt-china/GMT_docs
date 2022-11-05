@@ -10,11 +10,9 @@ GMT 中文效果演示
 - 中图中 Y 轴标签与 X 轴平行
 - 右图中 Y 轴标签单独绘制并使用了竖排中文字体。
 
-.. literalinclude:: chinese-texts.sh
-
-.. figure:: chinese-texts.*
-   :align: center
-   :width: 80%
+.. gmtplot:: chinese-texts.sh
+    :show-code: true
+    :width: 80%
 
 中文月份
 --------
@@ -34,10 +32,8 @@ Linux 和 macOS 用户需要先修改 GMT 中文语言文件的字符编码（Wi
 
 设置 :term:`GMT_LANGUAGE` 为中文（即 ``cn1``），并设置标注字体为中文。
 
-.. literalinclude:: chinese-months.sh
-
-.. figure:: chinese-months.*
-   :align: center
+.. gmtplot:: chinese-months.sh
+   :show-code: true
    :width: 80%
 
 中文星期
@@ -46,10 +42,8 @@ Linux 和 macOS 用户需要先修改 GMT 中文语言文件的字符编码（Wi
 GMT 支持中文的星期。要想使用中文表示星期几，需要设置 :term:`GMT_LANGUAGE` 为中文，
 即 ``cn1``，并设置标注的字体为中文。
 
-.. literalinclude:: chinese-weeks.sh
-
-.. figure:: chinese-weeks.*
-   :align: center
+.. gmtplot:: chinese-weeks.sh
+   :show-code: true
    :width: 80%
 
 中文玫瑰图
@@ -64,8 +58,6 @@ GMT 绘制的玫瑰图同样支持中文，但除设置 :term:`GMT_LANGUAGE` 为
     C	3	South		S	南
     C	4	North		N	北
 
-.. literalinclude:: chinese-compass.sh
-
-.. figure:: chinese-compass.*
-   :align: center
+.. gmtplot:: chinese-compass.sh
+   :show-code: true
    :width: 80%
