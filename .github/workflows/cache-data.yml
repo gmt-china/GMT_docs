@@ -72,6 +72,7 @@ jobs:
           rm -rf winfonts/.git
           mv winfonts ~/.gmt/
 
+          # create gs fontmap file for GMT Chinese support
           cat > ~/.gmt/cidfmap << EOF
           /STSong-Light <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
           /STFangsong-Light <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
@@ -79,6 +80,7 @@ jobs:
           /STKaiti-Regular <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
           EOF
  
+          # create font configuration file for GMT Chinese support.
           cat > ~/.gmt/PSL_custom_fonts.txt << EOF
           STSong-Light--UniGB-UTF8-H  0.700    1
           STFangsong-Light--UniGB-UTF8-H  0.700    1
