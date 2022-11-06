@@ -58,6 +58,8 @@ GMT 绘制的玫瑰图同样支持中文，但除设置 :term:`GMT_LANGUAGE` 为
     C	3	South		S	南
     C	4	North		N	北
 
-.. gmtplot:: chinese-compass.sh
-   :show-code: true
+.. literalinclude:: chinese-compass.sh
+
+.. figure:: chinese-compass.*
    :width: 80%
+   :align: center
