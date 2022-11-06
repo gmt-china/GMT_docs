@@ -1,7 +1,8 @@
 gmt begin chinese-compass png
 
+    # 设置中文字体配置文件 cidfmap 的目录，windows 下无需此设置
     gmt set PS_CONVERT="C-I${HOME}/.gmt"
-    # 设置GMT语言为中文
+    # 设置 GMT 语言为中文
     gmt set GMT_LANGUAGE cn1
     # 设置标注的字体为中文字体
     gmt set FONT_TITLE 12p,39
