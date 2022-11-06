@@ -23,132 +23,207 @@ CPT文件，可以用如下命令绘制得到（将选项 **-C**\ *cpt* 中的 *
 图中黑色三角和白色三角分别表示该CPT拥有一个HARD HINGE或SOFT HINGE。
 关于HARD和SOFT HINGE的定义会在下一节详细介绍。
 
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/abyss.*        | .. figure:: cpt/acton.*        | .. figure:: cpt/bamako.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    abyss                       |    acton                       |    bamako                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/bathy.*        | .. figure:: cpt/batlow.*       | .. figure:: cpt/berlin.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    bathy                       |    batlow                      |    berlin                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/bilbao.*       | .. figure:: cpt/broc.*         | .. figure:: cpt/brocO.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    bilbao                      |    broc                        |    brocO                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/buda.*         | .. figure:: cpt/categorical.*  | .. figure:: cpt/cool.*         |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    buda                        |    categorical                 |    cool                        |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/copper.*       | .. figure:: cpt/cork.*         | .. figure:: cpt/corkO.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    copper                      |    cork                        |    corkO                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/cubhelix.*     | .. figure:: cpt/cyclic.*       | .. figure:: cpt/davos.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    cubhelix                    |    cyclic                      |    davos                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/dem1.*         | .. figure:: cpt/dem2.*         | .. figure:: cpt/dem3.*         |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    dem1                        |    dem2                        |    dem3                        |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/dem4.*         | .. figure:: cpt/devon.*        | .. figure:: cpt/drywet.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    dem4                        |    devon                       |    drywet                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/earth.*        | .. figure:: cpt/elevation.*    | .. figure:: cpt/etopo1.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    earth                       |    elevation                   |    etopo1                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/gebco.*        | .. figure:: cpt/geo.*          | .. figure:: cpt/globe.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    gebco                       |    geo                         |    globe                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/gray.*         | .. figure:: cpt/grayC.*        | .. figure:: cpt/hawaii.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    gray                        |    grayC                       |    hawaii                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/haxby.*        | .. figure:: cpt/hot.*          | .. figure:: cpt/ibcso.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    haxby                       |    hot                         |    ibcso                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/imola.*        | .. figure:: cpt/inferno.*      | .. figure:: cpt/jet.*          |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    imola                       |    inferno                     |    jet                         |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/lajolla.*      | .. figure:: cpt/lapaz.*        | .. figure:: cpt/lisbon.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    lajolla                     |    lapaz                       |    lisbon                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/mag.*          | .. figure:: cpt/magma.*        | .. figure:: cpt/nighttime.*    |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    mag                         |    magma                       |    nighttime                   |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/no_green.*     | .. figure:: cpt/nuuk.*         | .. figure:: cpt/ocean.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    no_green                    |    nuuk                        |    ocean                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/oleron.*       | .. figure:: cpt/oslo.*         | .. figure:: cpt/paired.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    oleron                      |    oslo                        |    paired                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/panoply.*      | .. figure:: cpt/plasma.*       | .. figure:: cpt/polar.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    panoply                     |    plasma                      |    polar                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/rainbow.*      | .. figure:: cpt/red2green.*    | .. figure:: cpt/relief.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    rainbow                     |    red2green                   |    relief                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/roma.*         | .. figure:: cpt/romaO.*        | .. figure:: cpt/seafloor.*     |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    roma                        |    romaO                       |    seafloor                    |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/sealand.*      | .. figure:: cpt/seis.*         | .. figure:: cpt/split.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    sealand                     |    seis                        |    split                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/srtm.*         | .. figure:: cpt/terra.*        | .. figure:: cpt/tofino.*       |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    srtm                        |    terra                       |    tofino                      |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/tokyo.*        | .. figure:: cpt/topo.*         | .. figure:: cpt/turbo.*        |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    tokyo                       |    topo                        |    turbo                       |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/turku.*        | .. figure:: cpt/vik.*          | .. figure:: cpt/vikO.*         |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    turku                       |    vik                         |    vikO                        |
-+--------------------------------+--------------------------------+--------------------------------+
-| .. figure:: cpt/viridis.*      | .. figure:: cpt/world.*        | .. figure:: cpt/wysiwyg.*      |
-|    :align: center              |    :align: center              |    :align: center              |
-|                                |                                |                                |
-|    viridis                     |    world                       |    wysiwyg                     |
-+--------------------------------+--------------------------------+--------------------------------+
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/acton.*             | .. figure:: cpt/SCM/actonS.*            | .. figure:: cpt/SCM/bam.*               |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/acton                            |    SCM/actonS                           |    SCM/bam                              |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/bamO.*              | .. figure:: cpt/SCM/bamako.*            | .. figure:: cpt/SCM/bamakoS.*           |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/bamO                             |    SCM/bamako                           |    SCM/bamakoS                          |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/batlow.*            | .. figure:: cpt/SCM/batlowK.*           | .. figure:: cpt/SCM/batlowS.*           |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/batlow                           |    SCM/batlowK                          |    SCM/batlowS                          |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/batlowW.*           | .. figure:: cpt/SCM/berlin.*            | .. figure:: cpt/SCM/bilbao.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/batlowW                          |    SCM/berlin                           |    SCM/bilbao                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/bilbaoS.*           | .. figure:: cpt/SCM/broc.*              | .. figure:: cpt/SCM/brocO.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/bilbaoS                          |    SCM/broc                             |    SCM/brocO                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/buda.*              | .. figure:: cpt/SCM/budaS.*             | .. figure:: cpt/SCM/bukavu.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/buda                             |    SCM/budaS                            |    SCM/bukavu                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/cork.*              | .. figure:: cpt/SCM/corkO.*             | .. figure:: cpt/SCM/davos.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/cork                             |    SCM/corkO                            |    SCM/davos                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/davosS.*            | .. figure:: cpt/SCM/devon.*             | .. figure:: cpt/SCM/devonS.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/davosS                           |    SCM/devon                            |    SCM/devonS                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/fes.*               | .. figure:: cpt/SCM/grayC.*             | .. figure:: cpt/SCM/grayCS.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/fes                              |    SCM/grayC                            |    SCM/grayCS                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/hawaii.*            | .. figure:: cpt/SCM/hawaiiS.*           | .. figure:: cpt/SCM/imola.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/hawaii                           |    SCM/hawaiiS                          |    SCM/imola                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/imolaS.*            | .. figure:: cpt/SCM/lajolla.*           | .. figure:: cpt/SCM/lajollaS.*          |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/imolaS                           |    SCM/lajolla                          |    SCM/lajollaS                         |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/lapaz.*             | .. figure:: cpt/SCM/lapazS.*            | .. figure:: cpt/SCM/lisbon.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/lapaz                            |    SCM/lapazS                           |    SCM/lisbon                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/nuuk.*              | .. figure:: cpt/SCM/nuukS.*             | .. figure:: cpt/SCM/oleron.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/nuuk                             |    SCM/nuukS                            |    SCM/oleron                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/oslo.*              | .. figure:: cpt/SCM/osloS.*             | .. figure:: cpt/SCM/roma.*              |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/oslo                             |    SCM/osloS                            |    SCM/roma                             |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/romaO.*             | .. figure:: cpt/SCM/tofino.*            | .. figure:: cpt/SCM/tokyo.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/romaO                            |    SCM/tofino                           |    SCM/tokyo                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/tokyoS.*            | .. figure:: cpt/SCM/turku.*             | .. figure:: cpt/SCM/turkuS.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/tokyoS                           |    SCM/turku                            |    SCM/turkuS                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/SCM/vanimo.*            | .. figure:: cpt/SCM/vik.*               | .. figure:: cpt/SCM/vikO.*              |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    SCM/vanimo                           |    SCM/vik                              |    SCM/vikO                             |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/algae.*         | .. figure:: cpt/cmocean/amp.*           | .. figure:: cpt/cmocean/balance.*       |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/algae                        |    cmocean/amp                          |    cmocean/balance                      |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/curl.*          | .. figure:: cpt/cmocean/deep.*          | .. figure:: cpt/cmocean/delta.*         |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/curl                         |    cmocean/deep                         |    cmocean/delta                        |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/dense.*         | .. figure:: cpt/cmocean/diff.*          | .. figure:: cpt/cmocean/gray.*          |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/dense                        |    cmocean/diff                         |    cmocean/gray                         |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/haline.*        | .. figure:: cpt/cmocean/ice.*           | .. figure:: cpt/cmocean/matter.*        |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/haline                       |    cmocean/ice                          |    cmocean/matter                       |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/oxy.*           | .. figure:: cpt/cmocean/phase.*         | .. figure:: cpt/cmocean/rain.*          |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/oxy                          |    cmocean/phase                        |    cmocean/rain                         |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/solar.*         | .. figure:: cpt/cmocean/speed.*         | .. figure:: cpt/cmocean/tarn.*          |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/solar                        |    cmocean/speed                        |    cmocean/tarn                         |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/tempo.*         | .. figure:: cpt/cmocean/thermal.*       | .. figure:: cpt/cmocean/topo.*          |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/tempo                        |    cmocean/thermal                      |    cmocean/topo                         |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cmocean/turbid.*        | .. figure:: cpt/cpt-city/cubhelix.*     | .. figure:: cpt/cpt-city/dem1.*         |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cmocean/turbid                       |    cpt-city/cubhelix                    |    cpt-city/dem1                        |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/cpt-city/dem4.*         | .. figure:: cpt/cpt-city/elevation.*    | .. figure:: cpt/gmt/abyss.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    cpt-city/dem4                        |    cpt-city/elevation                   |    gmt/abyss                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/bathy.*             | .. figure:: cpt/gmt/categorical.*       | .. figure:: cpt/gmt/cyclic.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/bathy                            |    gmt/categorical                      |    gmt/cyclic                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/dem2.*              | .. figure:: cpt/gmt/dem3.*              | .. figure:: cpt/gmt/drywet.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/dem2                             |    gmt/dem3                             |    gmt/drywet                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/earth.*             | .. figure:: cpt/gmt/etopo1.*            | .. figure:: cpt/gmt/gebco.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/earth                            |    gmt/etopo1                           |    gmt/gebco                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/geo.*               | .. figure:: cpt/gmt/globe.*             | .. figure:: cpt/gmt/gray.*              |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/geo                              |    gmt/globe                            |    gmt/gray                             |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/haxby.*             | .. figure:: cpt/gmt/ibcso.*             | .. figure:: cpt/gmt/mag.*               |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/haxby                            |    gmt/ibcso                            |    gmt/mag                              |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/nighttime.*         | .. figure:: cpt/gmt/no_green.*          | .. figure:: cpt/gmt/ocean.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/nighttime                        |    gmt/no_green                         |    gmt/ocean                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/paired.*            | .. figure:: cpt/gmt/rainbow.*           | .. figure:: cpt/gmt/red2green.*         |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/paired                           |    gmt/rainbow                          |    gmt/red2green                        |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/relief.*            | .. figure:: cpt/gmt/seafloor.*          | .. figure:: cpt/gmt/sealand.*           |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/relief                           |    gmt/seafloor                         |    gmt/sealand                          |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/seis.*              | .. figure:: cpt/gmt/split.*             | .. figure:: cpt/gmt/srtm.*              |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/seis                             |    gmt/split                            |    gmt/srtm                             |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/terra.*             | .. figure:: cpt/gmt/topo.*              | .. figure:: cpt/gmt/world.*             |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/terra                            |    gmt/topo                             |    gmt/world                            |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/gmt/wysiwyg.*           | .. figure:: cpt/google/turbo.*          | .. figure:: cpt/matlab/cool.*           |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    gmt/wysiwyg                          |    google/turbo                         |    matlab/cool                          |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/matlab/copper.*         | .. figure:: cpt/matlab/hot.*            | .. figure:: cpt/matlab/jet.*            |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    matlab/copper                        |    matlab/hot                           |    matlab/jet                           |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/matlab/polar.*          | .. figure:: cpt/matplotlib/inferno.*    | .. figure:: cpt/matplotlib/magma.*      |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    matlab/polar                         |    matplotlib/inferno                   |    matplotlib/magma                     |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
+| .. figure:: cpt/matplotlib/plasma.*     | .. figure:: cpt/matplotlib/viridis.*    | .. figure:: cpt/panoply/panoply.*       |
+|    :align: center                       |    :align: center                       |    :align: center                       |
+|                                         |                                         |                                         |
+|    matplotlib/plasma                    |    matplotlib/viridis                   |    panoply/panoply                      |
++-----------------------------------------+-----------------------------------------+-----------------------------------------+
 
 GMT内置CPT文件中，某些是针对特定的需求设计的，因而常用于特定的图件中：
 
