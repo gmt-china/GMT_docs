@@ -62,6 +62,7 @@ jobs:
           cat ~/.gmt/PSL_custom_fonts.txt
           cd `gmt --show-sharedir`/localization
           cp gmt_cn1.locale gmt_cn1.locale_old
+          iconv -l
           iconv -f GBK -t UTF8 gmt_cn1.locale_old > gmt_cn1.locale
 
       - name: Build HTML
