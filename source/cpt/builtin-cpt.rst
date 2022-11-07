@@ -6,7 +6,7 @@ GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展�
 
 下面列出了 GMT 内置的 CPT 文件的具体配色以及 CPT 文件名（位于图下方）。
 用户可以参阅 :gmt-docs:`官方手册 <cookbook/cpts.html>` 了解更多内置CPT配色文件。
-内置CPT根据其来源可以分为以下几个大类（以下称为 ``section`` ）：
+内置CPT根据其来源可以分为以下几个大类（以下称为 `section` ）：
 
 * **gmt**: 与老版本GMT兼容的经典CPT文件;
 * **SCM**: 由 Fabio Crameri 制作的科学配图用CPT文件;
