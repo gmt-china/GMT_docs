@@ -4,19 +4,34 @@
 GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展示GMT内置CPT的配色，
 具体如何使用这些内置CPT文件会在后面做进一步介绍。
 
-下面列出了GMT内置的部分CPT文件的具体配色以及CPT文件名（位于图下方）。
+下面列出了 GMT 内置的 CPT 文件的具体配色以及 CPT 文件名（位于图下方）。
 用户可以参阅 :gmt-docs:`官方手册 <cookbook/cpts.html>` 了解更多内置CPT配色文件。
-每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到
-（将选项 **-C**\ *cpt* 中的 *cpt* 替换为相应的CPT即可）::
+内置CPT根据其来源可以分为以下几个大类（以下称为 `section` ）：
 
-    gmt colorbar -Dx0c/0c+w10c/1c+h -B0 -Ccpt -pdf CPT
+* **gmt**: GMT 开发者制作的 CPT 文件;
+* **SCM**: 由 Fabio Crameri 制作的科学配图用CPT文件;
+* **cmocean**: 由 Kirsten Thyng 制作的海洋专用CPT文件;
+* **cpt-city**: 从 cpt-city 引入的CPT文件;
+* **google**: 由 Google 开发的CPT文件;
+* **matlab**: 从 Matlab 引入的CPT文件;
+* **matplotlib**: 从 matplotlib 引入的CPT文件;
+* **panoply**: 从 Panoply 引入的CPT文件.
+
+使用某个内置CPT文件时，完整的引用格式是 **-C**\ [*section*/] *cpt* 。其中 *cpt* 是某个 *section* 以下具体的CPT名字
+（注意不需要 **.cpt** 扩展名）。如果省略 *section* 则会自动遍历查找，使用第一个找到的 *cpt* 。
+例如 **-Cglobe** 等同于 **-Cgmt/globe** 。
+
+每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到
+（将选项 **-C**\ *section/cpt* 中的 *section/cpt* 替换为相应的CPT即可）::
+
+    gmt colorbar -Dx0c/0c+w10c/1c+h -B0 -Csection/cpt -pdf CPT
 
 下面的色标是利用 :doc:`/module/makecpt` 对原始CPT文件做离散处理得到的单色型
-CPT文件，可以用如下命令绘制得到（将选项 **-C**\ *cpt* 中的 *cpt* 替换为相应的CPT即可）
+CPT文件，可以用如下命令绘制得到（将选项 **-C**\ *section/cpt* 中的 *section/cpt* 替换为相应的CPT即可）
 ::
 
     gmt begin CPT
-    gmt makecpt -Ccpt -T-1/1/0.25
+    gmt makecpt -Csection/cpt -T-1/1/0.25
     gmt colorbar -Dx0c/0c+w10c/1c+h -B0
     gmt end show
 
