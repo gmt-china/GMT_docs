@@ -49,21 +49,21 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 
 可以使用 :doc:`/module/plot` 模块的 **-Sq** 选项标注断层名。
 
-.. code-block::
+.. gmtplot:: 
+    :show-code: true
+    :width: 50%
 
-    gmt begin CN-faults-labeling
-        # GMT处理中文存在一些已知BUG
+    gmt begin CN-faults-labeling png
+        # 设置中文字体配置文件 cidfmap 的目录，Windows 下无需此设置
+        gmt set PS_CONVERT="C-I${HOME}/.gmt"
+        # GMT 处理中文存在一些已知 BUG
         # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
         gmt set PS_CHAR_ENCODING Standard+
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL="断层名称": set the "L" value (i.e., label) in segment headers using "断层名称"
         # :+Lh: take the label text from the "L" value in the segment header
-        gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f11p,39
+        gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f6p,39
     gmt end show
-
-.. figure:: https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png
-   :width: 50%
-   :align: center
 
 根据属性信息提取数据
 ++++++++++++++++++++
