@@ -1,6 +1,6 @@
 gmt begin chinese-weeks png
 
-    # 设置中文字体配置文件 cidfmap 的目录，windows 下无需此设置
+    # 设置中文字体配置文件 cidfmap 的目录，Windows 下无需此设置
     gmt set PS_CONVERT="C-I${HOME}/.gmt"
     # 设置 GMT 语言为中文
     gmt set GMT_LANGUAGE cn1
