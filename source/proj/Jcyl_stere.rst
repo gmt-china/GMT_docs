@@ -1,4 +1,4 @@
--JCyl_stere: Cylindrical stereographic
+-JCyl_stere: 圆柱立体投影
 ======================================
 
 维基链接：https://en.wikipedia.org/wiki/Gall_stereographic_projection

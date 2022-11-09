@@ -1,4 +1,4 @@
--JL: Lambert conic conformal
+-JL: Lambert 圆锥保角投影
 ============================
 
 维基链接：https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection

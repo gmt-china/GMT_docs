@@ -1,4 +1,4 @@
--JH: Hammer equal area
+-JH: 等面积 Hammer 投影
 ======================
 
 维基链接：https://en.wikipedia.org/wiki/Hammer_projection

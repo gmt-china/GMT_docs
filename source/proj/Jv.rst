@@ -1,5 +1,5 @@
--JV: Van der Grinten
-====================
+-JV: Van der Grinten 投影
+==========================
 
 维基链接：https://en.wikipedia.org/wiki/Van_der_Grinten_projection
 

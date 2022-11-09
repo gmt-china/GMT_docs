@@ -1,4 +1,4 @@
--JS: General stereographic
+-JS: 立体等角投影
 ==========================
 
 维基链接：https://en.wikipedia.org/wiki/Stereographic_projection

@@ -1,4 +1,4 @@
--JPoly: (American) polyconic
+-JPoly: (American) 多圆锥投影
 ============================
 
 维基链接：https://en.wikipedia.org/wiki/Polyconic_projection

@@ -1,4 +1,4 @@
--JJ: Miller cylindrical
+-JJ: Miller 圆柱投影
 =======================
 
 维基链接：https://en.wikipedia.org/wiki/Miller_cylindrical_projection

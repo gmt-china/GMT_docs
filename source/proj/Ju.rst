@@ -1,4 +1,4 @@
--JU: Universal Transverse Mercator (UTM)
+-JU: 通用横轴 Mercator 投影 (UTM)
 ========================================
 
 维基链接：https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system

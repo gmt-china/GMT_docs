@@ -1,5 +1,5 @@
--JO: Oblique Mercator
-=====================
+-JO: 倾斜 Mercator 投影
+==========================
 
 维基链接：https://en.wikipedia.org/wiki/Space-oblique_Mercator_projection
 

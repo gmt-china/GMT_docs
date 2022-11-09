@@ -1,4 +1,4 @@
--JE: Azimuthal equidistant
+-JE: 方位等距投影
 ==========================
 
 维基链接：https://en.wikipedia.org/wiki/Azimuthal_equidistant_projection

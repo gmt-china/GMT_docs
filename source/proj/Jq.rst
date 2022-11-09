@@ -1,4 +1,4 @@
--JQ: Equidistant cylindrical
+-JQ: 圆柱等距投影
 ============================
 
 维基链接：https://en.wikipedia.org/wiki/Equirectangular_projection

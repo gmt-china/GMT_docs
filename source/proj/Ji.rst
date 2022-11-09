@@ -1,4 +1,4 @@
--JI: Sinusoidal equal area
+-JI: 正弦曲线投影
 ==========================
 
 维基链接：https://en.wikipedia.org/wiki/Sinusoidal_projection

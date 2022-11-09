@@ -1,4 +1,4 @@
--JD: Equidistant conic
+-JD: 等距圆锥投影
 ======================
 
 维基链接：https://en.wikipedia.org/wiki/Equidistant_conic_projection

@@ -1,4 +1,4 @@
--JK: Eckert equal area
+-JK: Eckert 等面积投影
 ======================
 
 维基链接：

@@ -1,4 +1,4 @@
--JF: Azimuthal gnomonic
+-JF: 球心方位投影
 =======================
 
 维基链接：https://en.wikipedia.org/wiki/Gnomonic_projection

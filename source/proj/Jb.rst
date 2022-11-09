@@ -1,4 +1,4 @@
--JB: Albers conic equal area
+-JB: Albers 圆锥等面积投影
 ============================
 
 维基链接：https://en.wikipedia.org/wiki/Albers_projection

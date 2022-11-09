@@ -1,5 +1,5 @@
--JW: Mollweide
-==============
+-JW: Mollweide 伪圆柱等面积投影
+==========================================
 
 维基链接：https://en.wikipedia.org/wiki/Mollweide_projection
 

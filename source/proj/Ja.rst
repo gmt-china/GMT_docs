@@ -1,4 +1,4 @@
--JA: Lambert azimuthal equal area
+-JA: Lambert 方位等面积投影
 =================================
 
 维基链接: https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection
