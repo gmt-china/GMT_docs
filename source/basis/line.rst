@@ -53,7 +53,7 @@
 下图中，左图使用了 **-W2p** 选项，右边使用了 **-W2p+s**。
 
 .. gmtplot::
-    :show-code: false
+    :show-code: true
     :caption: 线条自动样条插值示意图
 
     cat << EOF > line.txt
