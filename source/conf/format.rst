@@ -177,5 +177,5 @@ FORMAT参数
     **FORMAT_TIME_STAMP**
         GMT时间戳中时间信息的显示格式 [**%Y %b %d %H:%M:%S**]
 
-        该选项的值用C函数 `strftime <http://www.cplusplus.com/reference/ctime/strftime/>`_
+        该选项的值用 C 函数 **strftime**
         解析，故而理论上可以包含任意文本。
