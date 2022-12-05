@@ -8,6 +8,7 @@
 
     - :doc:`gmt`
     - :doc:`gmt-config`
+    - :doc:`gmtswitch`
 
 **GMT 模块（已翻译整理）**
 
@@ -144,7 +145,6 @@
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:gmtregress`
-    - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
@@ -356,7 +356,7 @@
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
 :doc:`gmt:supplements/geodesy/gpsgridder`        Interpolate GPS velocity vectors using Green's functions
 **其他脚本**                                     .. _other_scripts:
-:doc:`gmt:gmtswitch`                             GMT多版本之间切换
+:doc:`gmtswitch`                                 GMT 多版本之间切换
 ================================================ ========================================================================
 
 .. raw:: latex
@@ -404,6 +404,7 @@
    gmtsimplify
    gmtspatial
    gmtsplit
+   gmtswitch
    gmtvector
    gmtwhich
    grd2cpt
