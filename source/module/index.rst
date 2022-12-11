@@ -67,6 +67,7 @@
     - :doc:`grdpaste`
     - :doc:`grdproject`
     - :doc:`grdsample`
+    - :doc:`grdselect`
     - :doc:`grdtrack`
     - :doc:`grdtrend`
     - :doc:`grdvector`
@@ -265,6 +266,7 @@
 :doc:`grdedit`                                   修改网格文件的头段或内容
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`grdsample`                                 对网格文件做重采样
+:doc:`grdselect`                                 根据多个空间标准选择网格数据
 :doc:`grdlandmask`                               根据海岸线数据创建陆地-海洋的 mask 网格文件
 :doc:`grdvolume`                                 计算网格数据中某个等值线所包围的表面积和体积
 :doc:`grdtrend`                                  拟合网格的趋势面并计算残差
@@ -427,6 +429,7 @@
    grdpaste
    grdproject
    grdsample
+   grdselect
    grdtrack
    grdtrend
    grdvector
