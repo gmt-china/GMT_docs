@@ -24,8 +24,9 @@ Ghostscript 安装包下载地址:
 .. warning::
 
    请注意 Ghostscript 的版本！
-   由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51、9.52 和 10.0.0 版本的 Ghostscript
-   (Ghostscript 10.0.0 不支持半透明效果)。
+   由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
+   此外 GMT 6.4 以及之前的版本有bug，与 Ghostscript 10.0.0 不兼容。
+   GMT 6.4 + Ghostscript 10.0.0 的组合无法绘制出半透明效果的图片。
 
 .. note::
 
