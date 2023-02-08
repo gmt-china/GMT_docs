@@ -70,7 +70,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 .. note::
 
-    GMT 的 dmg 安装包只支持 macOS >= 10.15。
+    GMT 的 dmg 安装包只支持 macOS >= 12。
 
 1. 下载
 

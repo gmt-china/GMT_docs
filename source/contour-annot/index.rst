@@ -216,6 +216,8 @@ X:
 首先，在实例1中，采用部分全球大地水准面数据(geoid)，绘制了等值线。
 所选择的区域包含了大地水准面的两级，Indian Low和New Guinea High。
 
+示例数据下载 :download:`geoid.nc` 、 :download:`transect.txt` 、 :download:`cross.txt` 
+
 
 等距离放置标注
 ~~~~~~~~~~~~~~~~~~
