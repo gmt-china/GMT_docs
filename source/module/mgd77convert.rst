@@ -128,7 +128,7 @@ mgd77convert
 其他工具
 --------
 
-MGD77+ NetCDF 文件符合 CF 1.0 和 COARDS 标准，可以使用 NetCDF 库自带的 ncdump 命令或 ncView 等
+MGD77+ NetCDF 文件符合 CF 1.0 和 COARDS 标准，可以使用 NetCDF 库自带的 ``ncdump`` 命令或 ncView 等
 通用工具查看文件信息。
 
 参考

@@ -1,7 +1,7 @@
 查看 netCDF 文件
 ================
 
-使用 NetCDF 库自带的 ncdump 命令可以很方便地查看 NetCDF 文件内容。
+使用 NetCDF 库自带的 ``ncdump`` 命令可以很方便地查看 NetCDF 文件内容。
 由于 NetCDF 库为 GMT 必需依赖库，因此安装好 GMT 后，通常已成功安装
 该库及 ncdump 等命令，如果无法直接执行该命令，可尝试通过添加环境
 变量解决。
