@@ -154,7 +154,7 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
 在使用数据库里的数据时，就可以直接指定数据文件名，GMT 会自动到 **GMT_DATADIR**
 所指定的目录中寻找该数据，而无需指定数据文件的完整路径。
 
-Linux 和 macOS 用户可以把数据库放在 :file:`~/GMTDB`\ 目录下，
+Linux 和 macOS 用户可以把数据放在 :file:`~/GMTDB`\ 目录下，
 然后在 :file:`~/.bashrc` 中添加如下语句::
 
     export GMT_DATADIR=~/GMTDB
