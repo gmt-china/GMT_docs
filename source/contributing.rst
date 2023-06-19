@@ -97,7 +97,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 ^^^^^^^^
 
 1.  所有教程均采用 `reStructuredText <https://docutils.sourceforge.io/rst.html>`__
-    语言编写，可参考 `reStructuredText 备忘单 <https://seismo-learn.org/contributing/restructuredtext/>`__
+    语言编写，可参考 `reStructuredText Cheatsheet <https://docs.generic-mapping-tools.org/latest/devdocs/rst-cheatsheet.html>`__
     学习其常用语法。
 2.  reStructuredText 文档的一级标题、二级标题和三级标题，分别用 ``=``、``-`` 和 ``^``
     符号标识
