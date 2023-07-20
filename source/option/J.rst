@@ -60,7 +60,7 @@ GMT + PROJ
 ----------
 
 从 GMT6 开始，GMT 支持使用 PROJ 库来实现坐标和基准面的转换。这一特性是通过 GDAL
-实现的。详细的 PROJ 语法见 `<https://proj.org/apps/index.html>`_。
+实现的。详细的 PROJ 语法见 `<https://proj.org/en/latest/apps/index.html>`_。
 
 在 GMT 中使用 PROJ 和单独使用 PROJ 提供的 **proj** 和 **cs2cs** 命令非常相似。
 在 PROJ 中，投影一般有很多参数，多个参数之间用空格分隔。在 GMT 中，可以将所有参数
@@ -82,7 +82,7 @@ GMT + PROJ
 
 对于使用 :doc:`/module/mapproject` 和 :doc:`/module/grdproject` 进行点和网格
 文件的转换，GMT 可以使用
-所有的 `PROJ 投影 <https://proj.org/operations/projections/index.html>`_。
+所有的 `PROJ 投影 <https://proj.org/en/latest/operations/projections/index.html>`_。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ 的投影方式可以被
 映射到 GMT 的投影语法中, 只能使用这些投影绘图；另一方面，由于 PROJ 不是一个绘图库，
 其不支持设置地图比例尺或地图大小，因而，GMT 为 PROJ 语法引入了两个扩展：**+width=**\ *size*
