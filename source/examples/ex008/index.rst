@@ -40,27 +40,22 @@ GEOS 的 julia/python 库实现上述功能，上述封装无需多边形到线�
         gmt spatial -Qc1000+h tw.geo -fg > tw_temp.geo
         # 生成缓冲区，宽度为 0.5 度
         gmt spatial tw_temp.geo -Sb0.5 > tw_buffer.geo
-        gmt plot -R116/124/20/26 -JQ5i tw.geo -W0.5p,black -B
-        gmt plot tw_buffer.geo -W0.5p,red
-    
-    gmt end show
 
-
-.. gmtplot::
-    :caption: 海岸线缓冲区(使用投影)
-    :width: 60%
-    
-    gmt begin coast_proj_buffer
-
-        gmt coast -ETW -M -Dc > tw.geo
-        gmt spatial -Qc1000+h tw.geo -fg > tw_temp.geo
         # 坐标投影
         gmt mapproject -R116/124/20/26 -Jh1:1 -C -F tw_temp.geo > tw_temp.car
         # 生成缓冲区, 0.5 度约为 56 km
         gmt spatial tw_temp.car -Sb56000 > tw_buffer.car
         # 逆投影
-        gmt mapproject -R116/124/20/26 -Jh1:1 -C -F -I tw_buffer.car > tw_buffer.geo
+        gmt mapproject -R116/124/20/26 -Jh1:1 -C -F -I tw_buffer.car > tw_buffer_proj.geo
+
         gmt plot -R116/124/20/26 -JQ5i tw.geo -W0.5p,black -B
         gmt plot tw_buffer.geo -W0.5p,red
-
+        gmt plot tw_buffer_proj.geo -W0.5p,blue
+    
     gmt end show
+
+通过手动编辑缓冲区文件，可得到下图。
+
+.. figure:: coast_buffer.png
+   :width: 60%
+   :align: center
