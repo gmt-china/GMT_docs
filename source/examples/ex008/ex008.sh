@@ -25,9 +25,9 @@ cat > testline3.txt << EOF
 9.4 49.6
 EOF
 
-gmt spatial testline1.txt -Sb0.05n > testline1_buffer.txt
-gmt spatial testline2.txt -Sb0.05n > testline2_buffer.txt
-gmt spatial testline3.txt -Sb0.05n > testline3_buffer.txt
+gmt spatial testline1.txt -Sb0.05 > testline1_buffer.txt
+gmt spatial testline2.txt -Sb0.05 > testline2_buffer.txt
+gmt spatial testline3.txt -Sb0.05 > testline3_buffer.txt
 
 gmt begin buffer png
   gmt basemap -R7.5/10/49.5/51 -JX15c -B
