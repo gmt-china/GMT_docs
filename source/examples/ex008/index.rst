@@ -19,7 +19,7 @@ GMT 的 :doc:`source/module/gmtspatial` 通过调用 `Geos 库<https://libgeos.o
 图中出现的异常点。目前该 bug 还未精确定位和修复。在实际使用中，如果生成缓冲区不是明显的凹多边形，且该
 部分丢失的区域不影响显示或后续分析，用户可手动删除位于缓冲区文件尾部的异常点。更加稳健的做法为使
 GEOS 的 julia/python 库实现上述功能，上述封装无需多边形到线数据的转换，因此不存在该 bug。此外，还
-可使用 GMT 的 julia 封装 `GMT.jl <>https://github.com/GenericMappingTools/GMT.jl` 中的 `buffer`
+可使用 GMT 的 julia 封装 `GMT.jl <https://github.com/GenericMappingTools/GMT.jl>`__ 中的 `buffer`
 函数，该函数通过 GDAL 调用 GEOS，同样不存在上述 bug。
 
 目前，缓冲区生成算法是基于笛卡尔坐标实现的，因此会将输入的地理坐标假定为笛卡尔
