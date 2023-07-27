@@ -7,7 +7,7 @@
 
 ----
 
-GMT 的 :doc:`source/module/gmtspatial` 通过调用 `Geos 库<https://libgeos.org/>`__ 可实现部分 GIS
+GMT 的 :doc:`/module/gmtspatial` 通过调用 `Geos 库 <https://libgeos.org/>`__ 可实现部分 GIS
 分析功能，包括生成缓冲区。下面对笛卡尔坐标多边形/线数据生成缓冲区。
 
 .. gmtplot:: ex008.sh
@@ -25,7 +25,7 @@ GEOS 的 julia/python 库实现上述功能，上述封装无需多边形到线�
 目前，缓冲区生成算法是基于笛卡尔坐标实现的，因此会将输入的地理坐标假定为笛卡尔
 坐标，这在使用地理坐标时，通常是不合适的。正常的做法是，先将多边形坐标投影，然后计算
 缓冲区，最后再将缓冲区做投影逆变换得到地理坐标，其中的投影变换或逆变换可通过
-:doc:`source/module/mapproject` 实现，选择的投影最好为等面积投影。下面分别展示不使用投影
+:doc:`/module/mapproject` 实现，选择的投影最好为等面积投影。下面分别展示不使用投影
 和使用投影的地理坐标缓冲区计算。
 
 .. gmtplot::
