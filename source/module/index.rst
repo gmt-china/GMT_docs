@@ -4,7 +4,7 @@
 **GMT 主程序与脚本**
 
 .. hlist::
-    :columns: 6
+    :columns: 5
 
     - :doc:`gmt`
     - :doc:`gmt-config`
@@ -13,7 +13,7 @@
 **GMT 模块（已翻译整理）**
 
 .. hlist::
-    :columns: 6
+    :columns: 5
 
     - :doc:`basemap`
     - :doc:`begin`
@@ -142,7 +142,7 @@
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
 .. hlist::
-    :columns: 6
+    :columns: 5
 
     - :doc:`gmt:batch`
     - :doc:`gmt:events`
@@ -401,7 +401,7 @@
    gmtget
    gmtinfo
    gmtlogo
-   gmtmath 
+   gmtmath
    gmtselect
    gmtset
    gmtsimplify
