@@ -6,7 +6,7 @@
 
 每个配置参数都有一个系统默认值。使用::
 
-    gmt defaults -D
+    gmt defaults
 
 即可查看所有GMT配置参数及其默认值。
 
