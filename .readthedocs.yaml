@@ -9,6 +9,12 @@ build:
   os: ubuntu-22.04
   tools:
     python: "mambaforge-4.10"
+    jobs:
+      pre_build:
+        # Download the china-geospatial-data datasets
+        - git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
+        - rm -rf china-geospatial-data/.git
+        - mv china-geospatial-data/* ~/.gmt/cache/
 
 # Build documentation in the "source/" directory with Sphinx
 sphinx:
