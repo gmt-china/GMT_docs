@@ -102,8 +102,8 @@ html_title = project
 siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
 if not os.getenv("CI"):  # build locally
     siteurl_for_gallery = ""
-elif os.getenv("GITHUB_HEAD_REF"):  # GITHUB_HEAD_REF is only defined for PR.
-    siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv('GITHUB_HEAD_REF')}"
+elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
+    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
 
 html_context = {
     "favicon": "favicon.ico",
