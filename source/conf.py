@@ -99,11 +99,12 @@ html_search_language = "zh"
 html_title = project
 
 # set site url of the image gallery for different use cases
-siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
-if not os.getenv("CI"):  # build locally
-    siteurl_for_gallery = ""
+if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
+    siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+else:  # build locally
+    siteurl_for_gallery = ""
 
 html_context = {
     "favicon": "favicon.ico",
