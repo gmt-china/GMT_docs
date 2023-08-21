@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Download some datasets and make changes for CI.
-# 
+#
 
 # Create the .gmt folder
 mkdir ~/.gmt
@@ -74,3 +74,6 @@ STHeiti-Regular--UniGB-UTF8-V   0.700   1
 STKaiti-Regular--UniGB-UTF8-V   0.700   1
 EOF
 
+# Fix the gmt_cn1.locale file
+mkdir -p ~/.gmt/localization
+iconv -f GBK -t UTF-8 $(gmt --show-sharedir)/localization/gmt_cn1.locale > ~/.gmt/localization/gmt_cn1.locale
