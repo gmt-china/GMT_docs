@@ -11,6 +11,7 @@ build:
     python: "mambaforge-4.10"
   jobs:
     pre_build:
+      - mkdir -p ~/.gmt/cache
       # Download the china-geospatial-data datasets
       - git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
       - rm -rf china-geospatial-data/.git
