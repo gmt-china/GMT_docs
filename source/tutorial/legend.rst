@@ -1,6 +1,10 @@
 添加图例
 ========
 
+:视频讲解: https://www.bilibili.com/video/BV13j411q79A
+
+---
+
 绘制了线条与符号后，通常还需要添加图例，以解释不同数据的含义。
 GMT 中使用 :doc:`/module/legend` 模块添加图例。
 
