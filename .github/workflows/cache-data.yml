@@ -20,14 +20,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.2.0
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1.4.3
         with:
-          channels: conda-forge
-          miniconda-version: "latest"
-
-      - name: Install GMT
-        run: conda install -c conda-forge gmt=6.4.0
+          environment-name: gmt-docs
+          condarc: |
+            channels:
+              - conda-forge
+              - nodefaults
+          create-args: >-
+            gmt=6.4.0
 
       - name: Download CI data
         run: bash scripts/setup-ci.sh
