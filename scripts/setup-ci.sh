@@ -44,9 +44,9 @@ rm -rf GMT_custom_symbols/.git
 mv GMT_custom_symbols ~/.gmt/custom/
 
 # Download plate boundary types data
-wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
-wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/plates.gmt
-wget https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/plates.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
 mv boundaries.gmt plates.gmt global_gprv.gmt ~/.gmt/cache/
 
 # Download Chinese fonts
@@ -56,10 +56,10 @@ mv winfonts ~/.gmt/
 
 # Create gs fontmap file for GMT Chinese support
 cat > ~/.gmt/cidfmap << EOF
-/STSong-Light <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
-/STFangsong-Light <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
-/STHeiti-Regular <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
-/STKaiti-Regular <</FileType /TrueType /Path (/home/runner/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+/STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
+/STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+/STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+/STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
 EOF
 
 # Create font configuration file for GMT Chinese support.
