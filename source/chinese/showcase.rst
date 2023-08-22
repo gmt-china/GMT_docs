@@ -26,7 +26,7 @@ Linux 和 macOS 用户需要先修改 GMT 中文语言文件的字符编码（Wi
 
     # 备份中文语言文件
     cp gmt_cn1.locale gmt_cn1.locale_old
-    
+
     # 将中文编码方式从默认的 GB2312 修改为 UTF8 编码，这样才能正常显示中文月份，星期，指南针等
     iconv -f GBK -t UTF8 gmt_cn1.locale_old > gmt_cn1.locale
 
@@ -58,8 +58,6 @@ GMT 绘制的玫瑰图同样支持中文，但除设置 :term:`GMT_LANGUAGE` 为
     C	3	South		S	南
     C	4	North		N	北
 
-.. literalinclude:: chinese-compass.sh
-
-.. figure:: chinese-compass.*
+.. gmtplot:: chinese-compass.sh
+   :show-code: true
    :width: 80%
-   :align: center
