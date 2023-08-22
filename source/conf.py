@@ -111,7 +111,7 @@ html_context = {
     "display_github": True,
     "github_user": github_user,
     "github_repo": github_repo,
-    "github_version": "master",
+    "github_version": "main",
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "edit",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
