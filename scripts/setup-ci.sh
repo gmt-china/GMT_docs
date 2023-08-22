@@ -77,3 +77,9 @@ EOF
 # Fix the gmt_cn1.locale file
 mkdir -p ~/.gmt/localization
 iconv -f GBK -t UTF-8 $(gmt --show-sharedir)/localization/gmt_cn1.locale > ~/.gmt/localization/gmt_cn1.locale
+
+# Check
+ls -lhR ~/.gmt
+gmt text -L
+cat ~/.gmt/cidfmap
+cat ~/.gmt/PSL_custom_fonts.txt
