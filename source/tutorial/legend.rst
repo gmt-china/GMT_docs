@@ -1,6 +1,12 @@
 添加图例
 ========
 
+.. raw:: html
+
+   <iframe src="//player.bilibili.com/player.html?aid=447610668&bvid=BV13j411q79A&cid=1240906532&page=1" width="800" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+----
+
 绘制了线条与符号后，通常还需要添加图例，以解释不同数据的含义。
 GMT 中使用 :doc:`/module/legend` 模块添加图例。
 

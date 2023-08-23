@@ -99,18 +99,19 @@ html_search_language = "zh"
 html_title = project
 
 # set site url of the image gallery for different use cases
-siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
-if not os.getenv("CI"):  # build locally
+if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
+    siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
+    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+else:  # build locally
     siteurl_for_gallery = ""
-elif os.getenv("GITHUB_HEAD_REF"):  # GITHUB_HEAD_REF is only defined for PR.
-    siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv('GITHUB_HEAD_REF')}"
 
 html_context = {
     "favicon": "favicon.ico",
     "display_github": True,
     "github_user": github_user,
     "github_repo": github_repo,
-    "github_version": "master",
+    "github_version": "main",
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "edit",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',

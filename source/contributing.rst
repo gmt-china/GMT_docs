@@ -30,10 +30,10 @@
 
 GitHub 上托管的文档仓库中存在如下长期分支：
 
-- ``master``: 主分支，对应 GMT6 最新版本的文档源码，所有绘图命令均使用现代模式
+- ``main``: 主分支，对应 GMT6 最新版本的文档源码，所有绘图命令均使用现代模式
 - ``gh-pages``: 存放文档网页的分支，自动更新，无需人工修改
 
-其它分支均属于短期分支，在合并到 ``master`` 分支后会删除。
+其它分支均属于短期分支，在合并到 ``main`` 分支后会删除。
 
 构建文档
 --------
@@ -97,7 +97,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 ^^^^^^^^
 
 1.  所有教程均采用 `reStructuredText <https://docutils.sourceforge.io/rst.html>`__
-    语言编写，可参考 `reStructuredText 备忘单 <https://seismo-learn.org/contributing/restructuredtext/>`__
+    语言编写，可参考 `reStructuredText Cheatsheet <https://docs.generic-mapping-tools.org/latest/devdocs/rst-cheatsheet.html>`__
     学习其常用语法。
 2.  reStructuredText 文档的一级标题、二级标题和三级标题，分别用 ``=``、``-`` 和 ``^``
     符号标识
@@ -113,7 +113,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 ^^^^^^^^
 
 - 示例脚本尽量使用 Bash，非必须请勿使用 Perl、Python 等
-- ``master`` 分支中的所有脚本均使用现代模式
+- ``main`` 分支中的所有脚本均使用现代模式
 - 所有脚本至少需要生成 PNG 格式的图片，建议使用 PNG、PDF 生成两种格式的图片，别供网页版和 PDF 版使用
 - 所有脚本以 ``gmt end show`` 结尾
 - 示例中加入必要的注释，用于说明某个代码段、某个命令选项的功能及其他重要信息，

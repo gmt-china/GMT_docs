@@ -4,18 +4,22 @@
 **GMT 主程序与脚本**
 
 .. hlist::
-    :columns: 6
+    :columns: 4
 
     - :doc:`gmt`
     - :doc:`gmt-config`
+    - :doc:`gmtswitch`
 
 **GMT 模块（已翻译整理）**
 
 .. hlist::
-    :columns: 6
+    :columns: 4
 
     - :doc:`basemap`
     - :doc:`begin`
+    - :doc:`blockmean`
+    - :doc:`blockmedian`
+    - :doc:`blockmode`
     - :doc:`clear`
     - :doc:`clip`
     - :doc:`coast`
@@ -64,6 +68,7 @@
     - :doc:`grdpaste`
     - :doc:`grdproject`
     - :doc:`grdsample`
+    - :doc:`grdselect`
     - :doc:`grdtrack`
     - :doc:`grdtrend`
     - :doc:`grdvector`
@@ -105,6 +110,8 @@
     - :doc:`velo`
     - :doc:`wiggle`
     - :doc:`xyz2grd`
+    - :doc:`earthtide`
+    - :doc:`gpsgridder`
     - :doc:`x2sys_init`
     - :doc:`x2sys_binlist`
     - :doc:`x2sys_cross`
@@ -138,15 +145,11 @@
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
 .. hlist::
-    :columns: 6
+    :columns: 4
 
     - :doc:`gmt:batch`
-    - :doc:`gmt:blockmean`
-    - :doc:`gmt:blockmedian`
-    - :doc:`gmt:blockmode`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
@@ -155,8 +158,6 @@
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/geodesy/earthtide`
-    - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
@@ -265,6 +266,7 @@
 :doc:`grdedit`                                   修改网格文件的头段或内容
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`grdsample`                                 对网格文件做重采样
+:doc:`grdselect`                                 根据多个空间标准选择网格数据
 :doc:`grdlandmask`                               根据海岸线数据创建陆地-海洋的 mask 网格文件
 :doc:`grdvolume`                                 计算网格数据中某个等值线所包围的表面积和体积
 :doc:`grdtrend`                                  拟合网格的趋势面并计算残差
@@ -276,9 +278,9 @@
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
 :doc:`gmt:grdhisteq`                             对网格做直方图均衡
 :doc:`grd2cpt`                                   根据网格文件的值生成 CPT 文件
-:doc:`gmt:blockmean`                             使用 L2 范式对 (x,y,z) 数据做区块平均
-:doc:`gmt:blockmedian`                           使用 L1 范式对 (x,y,z) 数据做区块平均
-:doc:`gmt:blockmode`                             使用模估计对 (x,y,z) 数据做区块平均
+:doc:`blockmean`                                 使用均值估计对 (x,y,z) 数据做区块处理
+:doc:`blockmedian`                               使用中位数估计对 (x,y,z) 数据做区块处理
+:doc:`blockmode`                                 使用众数估计对 (x,y,z) 数据做区块处理
 :doc:`gmtbinstats`                               统计落入网格节点的数据
 :doc:`surface`                                   使用可调节张量连续曲率样条插值法对数据进行网格化
 :doc:`gmtsplit`                                  将表数据拆分为单独的数据段
@@ -354,9 +356,10 @@
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
-:doc:`gmt:supplements/geodesy/gpsgridder`        Interpolate GPS velocity vectors using Green's functions
+:doc:`gpsgridder`                                使用格林函数内插 GPS 速度向量
+:doc:`earthtide`                                 计算固体地球潮汐网格或者时间序列
 **其他脚本**                                     .. _other_scripts:
-:doc:`gmt:gmtswitch`                             GMT多版本之间切换
+:doc:`gmtswitch`                                 GMT 多版本之间切换
 ================================================ ========================================================================
 
 .. raw:: latex
@@ -374,6 +377,9 @@
 
    basemap
    begin
+   blockmean
+   blockmedian
+   blockmode
    clear
    clip
    coast
@@ -402,6 +408,7 @@
    gmtsimplify
    gmtspatial
    gmtsplit
+   gmtswitch
    gmtvector
    gmtwhich
    grd2cpt
@@ -424,6 +431,7 @@
    grdpaste
    grdproject
    grdsample
+   grdselect
    grdtrack
    grdtrend
    grdvector
@@ -465,6 +473,8 @@
    velo
    wiggle
    xyz2grd
+   earthtide
+   gpsgridder
    x2sys_init
    x2sys_binlist
    x2sys_cross

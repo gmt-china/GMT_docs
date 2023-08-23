@@ -101,12 +101,11 @@ L，M，C[L，M]，S[L，M]
 示例
 ------
 
-使用 :file:`egm96_to360.txt` 球谐系数文件创建 1 x 1 度全球网格::
+使用 :file:`egm96_to36.txt` 球谐系数文件创建 1 x 1 度全球网格::
 
-    gmt sph2grd @EGM96_to_360.txt -GEGM96_to_360.nc -Rg -I1 -V
+    gmt sph2grd @EGM96_to_36.txt -GEGM96_to_36.nc -Rg -I1 -V
 
-由于 |-D| 选项还未实施，该命令结果没有物理意义。\ :file:`EGM96_to_360.txt` 远程文件已经失效，
-可从 https://cddis.nasa.gov/926/egm96/getit.html 下载。
+由于 |-D| 选项还未实施，该命令结果没有物理意义。
 
 参考文献
 ----------
