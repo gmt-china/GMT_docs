@@ -17,11 +17,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      GMT_VERSION: 6.4.0
       GMT_DOC_VERSION: 6.4
+
     defaults:
       run:
         shell: bash -l {0}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -48,19 +49,22 @@ jobs:
           name: gmt-cache
           path: .gmt
 
-      # Move downloaded files to ~/.gmt directory and list them
       - name: Move and list downloaded remote files
         run: |
-          mkdir -p ~/.gmt
-          mv .gmt/* ~/.gmt
+          # move the .gmt directory to the HOME directory
+          mv .gmt ~/
           # Change modification times of the two files, so GMT won't refresh it
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
           ls -lhR ~/.gmt
-          # Chinese configuration
-          gmt text -L
-          cat ~/.gmt/cidfmap
-          cat ~/.gmt/PSL_custom_fonts.txt
 
+      # Because building the PDF document is slow, the building and deployment
+      # process is designed as follows:
+      #
+      # 1. Build the HTML document and use the old PDF document if available
+      # 2. Deploy the HTML document
+      # 3. Build the PDF document
+      # 4. Deploy the PDF document
+      #
       - name: Build HTML
         run: make build_html
 
@@ -72,7 +76,9 @@ jobs:
           # generate CNAME in the root directory
           echo docs.gmt-china.org > CNAME
           # Use the old PDF documentation because the new PDF documentation is not built
-          cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          if [ -e ${GMT_DOC_VERSION}/GMT_docs.pdf ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          fi
           # Replace the old documentation with tht new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
@@ -98,8 +104,7 @@ jobs:
         run: make build_pdf
 
       - name: Prepare the documentation for deployment
-        run: |
-          cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+        run: cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v3
