@@ -56,7 +56,8 @@ GitHub 上托管的文档仓库中存在如下长期分支：
     ::
 
         $ cd GMT_docs
-        $ pip install -r requirements.txt
+        $ conda env create -f environment.yml
+        $ conda activate gmtdocs
 
 4.  编译生成 HTML 格式的文档
 
