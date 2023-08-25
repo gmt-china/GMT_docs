@@ -92,14 +92,7 @@ jobs:
         uses: r-lib/actions/setup-tinytex@v2
 
       - name: Install LaTeX packages
-        run: |
-          tlmgr update --self
-          tlmgr install capt-of caption colortbl ctex enumitem everysel fancyhdr fandol \
-                        float ms needspace oberdiek parskip pdftexcmds tabulary \
-                        titlesec ulem upquote varwidth wrapfig xcolor xecjk \
-                        xindy zhnumber
-          # install packages for GMT LaTeX integration
-          tlmgr install collection-fontsrecommended
+        run: bash scripts/setup-latex.sh
 
       - name: Build PDF
         run: make build_pdf
