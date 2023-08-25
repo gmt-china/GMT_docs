@@ -11,7 +11,7 @@ on:
 jobs:
   gmt_cache:
     name: Cache GMT artifacts
-    runs-on: macOS-latest  # must be macos
+    runs-on: macOS-latest  # must be macOS
     defaults:
       run:
         shell: bash -l {0}
@@ -23,7 +23,7 @@ jobs:
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v1.4.3
         with:
-          environment-name: gmt-docs
+          environment-name: gmtdocs
           condarc: |
             channels:
               - conda-forge
@@ -31,9 +31,10 @@ jobs:
           create-args: >-
             gmt=6.4.0
 
-      - name: Download CI data
+      - name: Download data and change configurations
         run: bash scripts/setup-ci.sh
 
+      # We don't want to cache GMT's sessions directory
       - name: Clear GMT's sessions
         # Can't use 'gmt clear sessions' because it returns non-zero exit code
         # when sessions directory don't exist.
