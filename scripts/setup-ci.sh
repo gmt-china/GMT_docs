@@ -5,24 +5,25 @@
 
 # Create the .gmt folder
 mkdir ~/.gmt
+
 # Download the GMT remote datasets
 gmt which -Ga @earth_relief_30m_g \
             @earth_relief_30m_p \
             @earth_relief_20m_p \
             @earth_relief_20m_g \
-            @earth_relief_10m \
-            @earth_relief_06m \
-            @earth_relief_05m \
-            @earth_relief_04m \
+            @earth_relief_10m_p \
+            @earth_relief_06m_p \
+            @earth_relief_05m_p \
+            @earth_relief_04m_p \
             @earth_age_06m_p \
-            @earth_day_20m \
-            @earth_day_06m \
-            @earth_night_20m \
+            @earth_day_20m_p \
+            @earth_day_06m_p \
+            @earth_night_20m_p \
             @earth_mask_05m_p \
-            @earth_mag4km_20m \
+            @earth_mag4km_20m_p \
             @earth_geoid_20m_p \
             @earth_faa_20m_p
-gmt grdcut @earth_relief_01m -R118/125/20/26 -G/dev/null
+gmt grdcut @earth_relief_01m_p -R118/125/20/26 -G/dev/null
 
 # Download GMT cache files
 gmt which -Ga @age_chrons_GTS2012_2020.cpt \
