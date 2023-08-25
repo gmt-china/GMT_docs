@@ -57,6 +57,14 @@ jobs:
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
           ls -lhR ~/.gmt
 
+      # Because building the PDF document is slow, the building and deployment
+      # process is designed as follows:
+      #
+      # 1. Build the HTML document and use the old PDF document if available
+      # 2. Deploy the HTML document
+      # 3. Build the PDF document
+      # 4. Deploy the PDF document
+      #
       - name: Build HTML
         run: make build_html
 
@@ -68,7 +76,9 @@ jobs:
           # generate CNAME in the root directory
           echo docs.gmt-china.org > CNAME
           # Use the old PDF documentation because the new PDF documentation is not built
-          cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          if [ -e ${GMT_DOC_VERSION}/GMT_docs.pdf ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          fi
           # Replace the old documentation with tht new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
@@ -94,8 +104,7 @@ jobs:
         run: make build_pdf
 
       - name: Prepare the documentation for deployment
-        run: |
-          cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+        run: cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v3
