@@ -1,4 +1,7 @@
 # GMT 中文手册
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
 [![Documentation version](https://img.shields.io/badge/版本-v6.4-blue.svg)](https://docs.gmt-china.org/latest/)
@@ -36,3 +39,25 @@ GMT 是地球科学使用最广泛的制图软件之一。
 
 - 署名：必须提到原作者，提供指向此许可协议的链接，表明是否有做修改
 - 非商业性使用：不能对本作品进行任何形式的商业性使用
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ZMAlt"><img src="https://avatars.githubusercontent.com/u/35285040?v=4?s=100" width="100px;" alt="Mao Zhou"/><br /><sub><b>Mao Zhou</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3AZMAlt" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=ZMAlt" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
