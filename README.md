@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#贡献者-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -42,7 +42,7 @@ GMT 是地球科学使用最广泛的制图软件之一。
 
 ## 贡献者 ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+GMT 中文手册由以下贡献者维护：
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -60,4 +60,17 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+不同的 Emoji 所代表的贡献类型如下表所示：
+
+| Emoji | 类型 | 说明 |
+|---|---|---|
+| 🐛 | bug | 报告 Bug |
+| 🔣 | data | 整理数据 |
+| 📖 | doc | 撰写文档 |
+| 🎨 | design | 网页设计 |
+| 💡 | example | 增添示例 |
+| 🤔 | ideas | 建议与想法 |
+| 🚧 | maintenance | 底层维护 |
+| 👀 | review | 审核文档 |
+| 📹 | video | 录制视频教程 |
+
