@@ -50,7 +50,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://seisman.info"><img src="https://avatars.githubusercontent.com/u/3974108?v=4?s=100" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#ideas-seisman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-seisman" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://seisman.info"><img src="https://avatars.githubusercontent.com/u/3974108?v=4?s=100" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#ideas-seisman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-seisman" title="Maintenance">🚧</a> <a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aseisman" title="Bug reports">🐛</a> <a href="#blog-seisman" title="Blogposts">📝</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=seisman" title="Code">💻</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=seisman" title="Documentation">📖</a> <a href="#example-seisman" title="Examples">💡</a> <a href="#infra-seisman" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#question-seisman" title="Answering Questions">💬</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3Aseisman" title="Reviewed Pull Requests">👀</a> <a href="#tutorial-seisman" title="Tutorials">✅</a></td>
     </tr>
   </tbody>
 </table>
