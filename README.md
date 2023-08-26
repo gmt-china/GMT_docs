@@ -40,9 +40,9 @@ GMT 是地球科学使用最广泛的制图软件之一。
 - 署名：必须提到原作者，提供指向此许可协议的链接，表明是否有做修改
 - 非商业性使用：不能对本作品进行任何形式的商业性使用
 
-## Contributors ✨
+## 贡献者 ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+GMT 中文手册由以下贡献者维护：
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -60,4 +60,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+不同的 Emoji 所代表的贡献类型如下表所示：
+
+| Emoji | 类型 | 说明 |
+|---|---|---|
+| 🐛 | bug | 报告 Bug |
+| 🔣 | data | 整理数据 |
+| 📖 | doc | 撰写文档 |
+| 🎨 | design | 网页设计 |
+| 💡 | example | 增添示例 |
+| 🤔 | ideas | 建议与想法 |
+| 🚧 | maintenance | 底层维护 |
+| 👀 | review | 审核文档 |
+| 📹 | video | 录制视频教程 |
