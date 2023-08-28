@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -54,6 +54,7 @@ GMT 中文手册由以下贡献者维护：
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/CovMat"><img src="https://avatars.githubusercontent.com/u/26203721?v=4?s=100" width="100px;" alt="Xiaohan Chen"/><br /><sub><b>Xiaohan Chen</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ACovMat" title="Bug reports">🐛</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=CovMat" title="Documentation">📖</a> <a href="#example-CovMat" title="Examples">💡</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3ACovMat" title="Reviewed Pull Requests">👀</a> <a href="#video-CovMat" title="Videos">📹</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://core-man.github.io/academic/"><img src="https://avatars.githubusercontent.com/u/50591376?v=4?s=100" width="100px;" alt="Yao Jiayuan"/><br /><sub><b>Yao Jiayuan</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Acore-man" title="Bug reports">🐛</a> <a href="#data-core-man" title="Data">🔣</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=core-man" title="Documentation">📖</a> <a href="#design-core-man" title="Design">🎨</a> <a href="#ideas-core-man" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3Acore-man" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ZMAlt"><img src="https://avatars.githubusercontent.com/u/35285040?v=4?s=100" width="100px;" alt="Mao Zhou"/><br /><sub><b>Mao Zhou</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=ZMAlt" title="Documentation">📖</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3AZMAlt" title="Reviewed Pull Requests">👀</a> <a href="#example-ZMAlt" title="Examples">💡</a> <a href="#ideas-ZMAlt" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/wangliang1989"><img src="https://avatars.githubusercontent.com/u/12059719?v=4?s=100" width="100px;" alt="王亮"/><br /><sub><b>王亮</b></sub></a><br /><a href="#example-wangliang1989" title="Examples">💡</a> <a href="#ideas-wangliang1989" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>
