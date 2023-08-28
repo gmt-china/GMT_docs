@@ -87,4 +87,4 @@ GMT 是地球科学使用最广泛的制图软件之一。
    utilities/index
    contour-annot/index
    contributing
-   贡献者列表 <https://github.com/gmt-china/GMT_docs/graphs/contributors>
+   贡献者 <https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85->
