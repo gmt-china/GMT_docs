@@ -50,7 +50,7 @@ GMT 中文手册由以下贡献者维护：
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://seisman.info"><img src="https://avatars.githubusercontent.com/u/3974108?v=4?s=100" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#ideas-seisman" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aseisman" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://seisman.info"><img src="https://avatars.githubusercontent.com/u/3974108?v=4?s=100" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#ideas-seisman" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aseisman" title="Bug reports">🐛</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=seisman" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
