@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -51,6 +51,7 @@ GMT 中文手册由以下贡献者维护：
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://seisman.info"><img src="https://avatars.githubusercontent.com/u/3974108?v=4?s=100" width="100px;" alt="Dongdong Tian"/><br /><sub><b>Dongdong Tian</b></sub></a><br /><a href="#ideas-seisman" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-seisman" title="Maintenance">🚧</a> <a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aseisman" title="Bug reports">🐛</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=seisman" title="Documentation">📖</a> <a href="#example-seisman" title="Examples">💡</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3Aseisman" title="Reviewed Pull Requests">👀</a> <a href="#data-seisman" title="Data">🔣</a> <a href="#design-seisman" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/CovMat"><img src="https://avatars.githubusercontent.com/u/26203721?v=4?s=100" width="100px;" alt="Xiaohan Chen"/><br /><sub><b>Xiaohan Chen</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ACovMat" title="Bug reports">🐛</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=CovMat" title="Documentation">📖</a> <a href="#example-CovMat" title="Examples">💡</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3ACovMat" title="Reviewed Pull Requests">👀</a> <a href="#video-CovMat" title="Videos">📹</a></td>
     </tr>
   </tbody>
 </table>
