@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -56,6 +56,7 @@ GMT 中文手册由以下贡献者维护：
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ZMAlt"><img src="https://avatars.githubusercontent.com/u/35285040?v=4?s=100" width="100px;" alt="Mao Zhou"/><br /><sub><b>Mao Zhou</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=ZMAlt" title="Documentation">📖</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3AZMAlt" title="Reviewed Pull Requests">👀</a> <a href="#example-ZMAlt" title="Examples">💡</a> <a href="#ideas-ZMAlt" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3AZMAlt" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/wangliang1989"><img src="https://avatars.githubusercontent.com/u/12059719?v=4?s=100" width="100px;" alt="王亮"/><br /><sub><b>王亮</b></sub></a><br /><a href="#example-wangliang1989" title="Examples">💡</a> <a href="#ideas-wangliang1989" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/gmt-china/GMT_docs/commits?author=wangliang1989" title="Documentation">📖</a> <a href="https://github.com/gmt-china/GMT_docs/pulls?q=is%3Apr+reviewed-by%3Awangliang1989" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sqdeng"><img src="https://avatars.githubusercontent.com/u/23623969?v=4?s=100" width="100px;" alt="sqdeng"/><br /><sub><b>sqdeng</b></sub></a><br /><a href="#example-sqdeng" title="Examples">💡</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/liuzhumei"><img src="https://avatars.githubusercontent.com/u/10167345?v=4?s=100" width="100px;" alt="liuzhumei"/><br /><sub><b>liuzhumei</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aliuzhumei" title="Bug reports">🐛</a> <a href="#example-liuzhumei" title="Examples">💡</a></td>
     </tr>
   </tbody>
 </table>
