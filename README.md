@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -65,6 +65,7 @@ GMT 中文手册由以下贡献者维护：
       <td align="center" valign="top" width="14.28%"><a href="https://tchel.github.io"><img src="https://avatars.githubusercontent.com/u/20499442?v=4?s=100" width="100px;" alt="Tche LIU"/><br /><sub><b>Tche LIU</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ATcheL" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lxrat"><img src="https://avatars.githubusercontent.com/u/26783212?v=4?s=100" width="100px;" alt="lxrat"/><br /><sub><b>lxrat</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Alxrat" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/cugliming"><img src="https://avatars.githubusercontent.com/u/32346042?v=4?s=100" width="100px;" alt="Liming Li"/><br /><sub><b>Liming Li</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=cugliming" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://xiaoledeng.github.io/publications/"><img src="https://avatars.githubusercontent.com/u/7454909?v=4?s=100" width="100px;" alt="Xiao-Le Deng"/><br /><sub><b>Xiao-Le Deng</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Axiaoledeng" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
