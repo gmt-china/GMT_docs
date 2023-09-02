@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -60,6 +60,7 @@ GMT 中文手册由以下贡献者维护：
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ohaiyofei"><img src="https://avatars.githubusercontent.com/u/14980765?v=4?s=100" width="100px;" alt="Fei Chen"/><br /><sub><b>Fei Chen</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aohaiyofei" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://tchel.github.io"><img src="https://avatars.githubusercontent.com/u/20499442?v=4?s=100" width="100px;" alt="Tche LIU"/><br /><sub><b>Tche LIU</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ATcheL" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
