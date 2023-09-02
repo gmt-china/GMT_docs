@@ -1,6 +1,6 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
@@ -62,6 +62,7 @@ GMT 中文手册由以下贡献者维护：
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/zhaozhiyuan1989"><img src="https://avatars.githubusercontent.com/u/23535406?v=4?s=100" width="100px;" alt="赵志远"/><br /><sub><b>赵志远</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Azhaozhiyuan1989" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ohaiyofei"><img src="https://avatars.githubusercontent.com/u/14980765?v=4?s=100" width="100px;" alt="Fei Chen"/><br /><sub><b>Fei Chen</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Aohaiyofei" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://tchel.github.io"><img src="https://avatars.githubusercontent.com/u/20499442?v=4?s=100" width="100px;" alt="Tche LIU"/><br /><sub><b>Tche LIU</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ATcheL" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lxrat"><img src="https://avatars.githubusercontent.com/u/26783212?v=4?s=100" width="100px;" alt="lxrat"/><br /><sub><b>lxrat</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3Alxrat" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://seispider.top/"><img src="https://avatars.githubusercontent.com/u/19745601?v=4?s=100" width="100px;" alt="Xiao Xiao"/><br /><sub><b>Xiao Xiao</b></sub></a><br /><a href="#example-SeisPider" title="Examples">💡</a></td>
     </tr>
   </tbody>
