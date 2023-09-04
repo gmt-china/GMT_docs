@@ -34,6 +34,13 @@ jobs:
       - name: Download data and change configurations
         run: bash scripts/setup-ci.sh
 
+      - name: Check files
+        run: |
+          ls -lhR ~/.gmt
+          gmt text -L
+          cat ~/.gmt/cidfmap
+          cat ~/.gmt/PSL_custom_fonts.txt
+
       # We don't want to cache GMT's sessions directory
       - name: Clear GMT's sessions
         # Can't use 'gmt clear sessions' because it returns non-zero exit code
