@@ -86,7 +86,7 @@ EOF
 mkdir -p ~/.gmt/localization
 iconv -f GBK -t UTF-8 $(gmt --show-sharedir)/localization/gmt_cn1.locale > ~/.gmt/localization/gmt_cn1.locale
 # The WESN patch is required for GMT<=6.4
-cat > ~/.gmt/localization/gmt_cn1.locale << EOF
+cat >> ~/.gmt/localization/gmt_cn1.locale << EOF
 C   1       West            W       西
 C   2       East            E       东
 C   3       South           S       南
