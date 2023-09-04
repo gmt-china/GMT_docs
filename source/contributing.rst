@@ -175,7 +175,7 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
         $ bash scripts/setup-latex.sh
 
-8.  编译生成 PDF 格式的文档
+7.  编译生成 PDF 格式的文档
 
     ::
 
