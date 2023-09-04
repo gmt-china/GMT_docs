@@ -126,8 +126,8 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 构建文档
 --------
 
-本文档使用基于 Python 的文档生成工具 `Sphinx <http://www.sphinx-doc.org/>`__ 构建得到。
-读者可以按照如下步骤在自己的计算机上构建网站。
+本手册使用基于 Python 的文档生成工具 `Sphinx <http://www.sphinx-doc.org/>`__ 构建。
+读者可以按照如下步骤在自己的计算机上构建得到 HTML 和 PDF 格式的文档。
 
 1.  安装 `Anaconda <https://seismo-learn.org/software/anaconda/>`__
 2.  下载文档源码
@@ -145,17 +145,17 @@ GitHub 上托管的文档仓库中存在如下长期分支：
         $ conda activate gmtdocs
 
 
-4.  下载文档所需的地学数据并配置中文
+4.  下载文档所需的地学数据并配置中文支持
 
     .. warning::
 
         执行以下脚本会修改 :file:`~/.gmt` 文件夹中的内容。
-        执行脚本前请务必阅读脚本源码以了解该脚本具体做了什么。     
+        执行脚本前请务必阅读脚本源码以了解该脚本具体做了什么。
 
     ::
 
         $ bash scripts/setup-ci.sh
-   
+
 5.  编译生成 HTML 格式的文档
 
     ::
@@ -165,16 +165,13 @@ GitHub 上托管的文档仓库中存在如下长期分支：
     编译生成的 HTML 格式的文档 :file:`build/html/` 目录。
     直接用浏览器打开 :file:`build/html/index.html` 即可在本地预览。
 
-6.  安装 TeXLive 
+6.  安装 LaTeX 相关软件
 
-    编译 PDF 文档需要先安装 TeXLive：
+    构建 PDF 格式的文档需要安装 LaTeX 相关软件。用户可以选择安装
+    `TeXLive <https://tug.org/texlive/>`__
+    或者更轻量级的 `TinyTeX <https://yihui.org/tinytex/>`__\ 。
 
-    - Linux 用户：参考 http://blog.seisman.info/texlive-install
-    - macOS 用户：直接执行 ``brew cask install mactex-no-gui`` 安装 mactex
-
-7.  安装 LaTeX 包
-
-    ::
+    安装完 TeXLive 或 TinyTex 后，还需要安装构建文档所需的 LaTeX 包::
 
         $ bash scripts/setup-latex.sh
 
@@ -184,4 +181,4 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
         $ make latexpdf
 
-    编译生成 PDF 格式的文档位于 :file:`build/latex/GMT_docs.pdf`）
+    编译生成 PDF 格式的文档的路径为 :file:`build/latex/GMT_docs.pdf`
