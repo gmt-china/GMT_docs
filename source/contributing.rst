@@ -41,51 +41,6 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
 其它分支均属于短期分支，在合并到 ``main`` 分支后会删除。
 
-构建文档
---------
-
-本文档使用基于 Python 的文档生成工具 `Sphinx <http://www.sphinx-doc.org/>`__ 构建得到。
-读者可以按照如下步骤在自己的计算机上构建网站。
-
-1.  安装 `Anaconda <https://seismo-learn.org/software/anaconda/>`__
-    （用于科学计算的 Python 发行版）
-
-2.  下载文档源码及源码中所需的地学数据
-
-    ::
-
-        $ git clone --depth=1 https://github.com/gmt-china/china-geospatial-data.git
-        $ git clone --depth=10 https://github.com/gmt-china/GMT_docs.git
-
-3.  安装 Sphinx 等文档所需依赖
-
-    ::
-
-        $ cd GMT_docs
-        $ conda env create -f environment.yml
-        $ conda activate gmtdocs
-
-4.  编译生成 HTML 格式的文档
-
-    执行以下命令即可编译生成 HTML 格式的文档（生成的文档位于 :file:`build/html/` 目录）。
-    直接用浏览器打开 :file:`build/html/index.html` 即可在本地预览。
-
-    ::
-
-        $ export GMT_DATADIR=/full/path/to/china-geospatial-data
-        $ make html
-
-5.  编译生成 PDF 格式的文档
-
-    编译 PDF 文档需要先安装 TeXLive：
-
-    - Linux 用户：参考 http://blog.seisman.info/texlive-install
-    - macOS 用户：直接执行 ``brew cask install mactex-no-gui`` 安装 mactex
-
-    安装好 TeXLive 后，执行以下命令即可编译生成 PDF 格式的文档（即 :file:`build/latex/GMT_docs.pdf`）::
-
-        $ make latexpdf
-
 文档风格
 --------
 
@@ -167,3 +122,48 @@ GitHub 上托管的文档仓库中存在如下长期分支：
 
 简要描述绘图意义、所用核心模块的关键语法以及绘图必需的数据等。
 新增实例时，请参考\ `文档风格`_\ 和已有的\ :doc:`社区绘图实例 </gallery/index>`。
+
+构建文档
+--------
+
+本文档使用基于 Python 的文档生成工具 `Sphinx <http://www.sphinx-doc.org/>`__ 构建得到。
+读者可以按照如下步骤在自己的计算机上构建网站。
+
+1.  安装 `Anaconda <https://seismo-learn.org/software/anaconda/>`__
+    （用于科学计算的 Python 发行版）
+
+2.  下载文档源码及源码中所需的地学数据
+
+    ::
+
+        $ git clone --depth=1 https://github.com/gmt-china/china-geospatial-data.git
+        $ git clone --depth=10 https://github.com/gmt-china/GMT_docs.git
+
+3.  安装 Sphinx 等文档所需依赖
+
+    ::
+
+        $ cd GMT_docs
+        $ conda env create -f environment.yml
+        $ conda activate gmtdocs
+
+4.  编译生成 HTML 格式的文档
+
+    执行以下命令即可编译生成 HTML 格式的文档（生成的文档位于 :file:`build/html/` 目录）。
+    直接用浏览器打开 :file:`build/html/index.html` 即可在本地预览。
+
+    ::
+
+        $ export GMT_DATADIR=/full/path/to/china-geospatial-data
+        $ make html
+
+5.  编译生成 PDF 格式的文档
+
+    编译 PDF 文档需要先安装 TeXLive：
+
+    - Linux 用户：参考 http://blog.seisman.info/texlive-install
+    - macOS 用户：直接执行 ``brew cask install mactex-no-gui`` 安装 mactex
+
+    安装好 TeXLive 后，执行以下命令即可编译生成 PDF 格式的文档（即 :file:`build/latex/GMT_docs.pdf`）::
+
+        $ make latexpdf
