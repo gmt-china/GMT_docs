@@ -22,18 +22,6 @@
     *Eos, Transactions American Geophysical Union*, 79(47), 579.
     https://doi.org/10.1029/98EO00426
 
-**GMT3.0 用户**:
-    Wessel, P., & Smith, W. H. F. (1995).
-    New version of the Generic Mapping Tools released.
-    *Eos, Transactions American Geophysical Union*, 76(33), 329.
-    https://doi.org/10.1029/95EO00198
-
-**GMT2 用户**:
-    Wessel, P., & Smith, W. H. F. (1991).
-    Free software helps map and display data.
-    *Eos, Transactions American Geophysical Union*, 72(41), 445–446.
-    https://doi.org/10.1029/90EO00319
-
 **GMT/MATLAB 工具箱用户**:
     Wessel, P., & Luis J. (2017).
     The GMT/MATLAB Toolbox.
@@ -42,20 +30,20 @@
 
 GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相关文章包括：
 
-:doc:`gmt:dimfilter` **模块**
+:doc:`/module/dimfilter` **模块**
     Kim, S.-S., & Wessel, P. (2008).
     Directional median filtering for regional-residual separation of bathymetry.
     *Geochemistry, Geophysics, Geosystems*, 9, Q03005.
     https://doi.org/10.1029/2007GC001850
 
-:doc:`gmt:supplements/potential/grdredpol` **模块**
+:doc:`/module/grdredpol` **模块**
     Luis, J. F. & Miranda, J. M. (2008).
     Reevaluation of magnetic chrons in the North Atlantic between 35°N and 47°N:
     Implications for the formation of the  Azores Triple Junction and associated plateau.
     *Journal of Geophysical Research*, 113, B10105.
     https://doi.org/10.1029/2007JB005573
 
-:doc:`gmt:surface` **模块**
+:doc:`/module/surface` **模块**
     Smith, W. H. F., & Wessel, P. (1990).
     Gridding with continuous curvature splines in tension.
     *Geophysics*, 55(3), 293–305.
