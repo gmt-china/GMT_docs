@@ -98,34 +98,3 @@ GMT 的特点
    GMT 的开发（修改、讨论与决议）都在 `GitHub <https://github.com/GenericMappingTools/gmt>`__
    上公开进行。所有用户均可向 GMT 提交 bug 报告、申请增加新功能、参与讨论等，
    并可以通过多种不同方式（改进文档、修改源码等）向 GMT 做贡献。
-
-其他制图软件
-------------
-
-除了 GMT 之外，还可以使用很多其他软件制图，以下仅列出一些地球科学领域常用的制图软件。
-
-.. table:: 地球科学常用绘图软件比较（**√** 和 **X** 表示是否支持某一功能）
-    :align: center
-
-    ===============  ======  ======== ==============
-    软件名称         二维图  三维图   地图
-    ===============  ======  ======== ==============
-    `GMT`_           √       √ [1]_   √
-    `Matplotlib`_    √       √        √ [2]_
-    Microsoft Excel  √       √        √
-    `Origin`_        √       √        X
-    Matlab           √       √        √ [3]_
-    `ggplot2`_       √       X        √ [4]_
-    `gnuplot`_       √       √        X
-    ===============  ======  ======== ==============
-
-.. _GMT: https://www.generic-mapping-tools.org/
-.. _Matplotlib: https://matplotlib.org/
-.. _Origin: https://www.originlab.com/
-.. _ggplot2: https://ggplot2.tidyverse.org/
-.. _gnuplot: http://www.gnuplot.info/
-
-.. [1] GMT 对三维图的支持很有限
-.. [2] 需要额外安装 `Cartopy <https://scitools.org.uk/cartopy/>`__
-.. [3] 需要额外安装 `M_Map <https://www.eoas.ubc.ca/~rich/map.html>`__
-.. [4] 需要额外安装 `ggmap <https://github.com/dkahle/ggmap>`__
