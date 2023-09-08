@@ -7,6 +7,5 @@
    :maxdepth: 1
 
    overview
-   versions
    citation
    resources
