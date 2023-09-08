@@ -39,16 +39,16 @@ GMT 是地球科学使用最广泛的制图软件之一。
     - :doc:`特殊字符一览 </basis/special-character>`
 
     - :doc:`地学数据 </dataset/index>`
-    - :doc:`学习资源 </intro/resources>`
+    - :ref:`学习资源 <resources>`
     - `GMT 官方文档 <https://docs.generic-mapping-tools.org/>`__
-    - :doc:`引用 GMT </intro/citation>`
+    - :ref:`引用 GMT <citations>`
 
 .. toctree::
    :maxdepth: 3
    :caption: GMT 入门
    :hidden:
 
-   intro/index
+   intro
    install/index
    migrating/index
    tutorial/started
