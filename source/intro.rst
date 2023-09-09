@@ -4,8 +4,7 @@
 GMT 是什么
 ==========
 
-GMT，全称 Generic Mapping Tools，中文一般译为“通用制图工具”，
-其官方网站是：https://www.generic-mapping-tools.org。
+GMT，全称 Generic Mapping Tools，中文一般译为“通用制图工具”。
 
 GMT 是地球科学领域使用最广泛的制图软件之一，具有强大的绘图功能和数据处理功能。
 
