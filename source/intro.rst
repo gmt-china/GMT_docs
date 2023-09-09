@@ -64,13 +64,13 @@ GMT 的特点
 #. 专注于地学制图
 
    GMT 是一个专业的地学制图软件。在绘制地图方面，GMT 不仅可以更高效地绘制地图，
-   而且可以更简单地实现地学制图过程所需的数据处理等操作。
+   而且可以更简单地实现制图过程所需的数据处理等操作。
 
 #. 开源免费
 
-   GMT 是免费的开源软件，其源码遵循
+   GMT 是免费的开源软件，源码遵循
    `GNU LGPL <https://zh.wikipedia.org/zh-cn/GNU宽通用公共许可证>`__ 协议。
-   任何人均可免费获得软件的源码，并可以自由复制、分发以及修改。
+   任何人均可免费获得软件源码并自由复制、分发及修改。
 
 #. 跨平台
 
@@ -103,10 +103,7 @@ GMT 的特点
 GMT 版本号
 ==========
 
-GMT 版本号遵循“`语义化版本号规范 <https://semver.org/lang/zh-CN>`__”，其版本号格式为:
-
-    *major.minor.patch*
-
+GMT 版本号遵循“`语义化版本号规范 <https://semver.org/lang/zh-CN>`__”，其版本号格式为 *major.minor.patch*。
 其中，*major* 为主版本号，*minor* 为次版本号，*patch* 为补丁版本号，如 6.2.0。
 
 根据“语义化版本号规范”的要求：
@@ -219,14 +216,11 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
 
 #. `GMT 中文手册 <https://docs.gmt-china.org/>`__
 #. :gmt-docs:`GMT 官方参考手册 <cookbook.html>`
-#. :gmt-docs:`GMT 官方参考手册 <modules.html>`
+#. :gmt-docs:`GMT 官方模块手册 <modules.html>`
 
 **论坛/讨论组**
 
-#. 地学 GMT 中文社区 QQ 群：
+#. 地学 GMT 中文社区 QQ 群 [**请勿重复加群！**\ 入群前请先阅读“`入群须知 <https://gmt-china.org/blog/community-guide/>`__”]：
     - QQ 1 群：218905582
     - QQ 2 群：791856541
-
-   **请勿重复加群！**\ 入群前请先阅读“`入群须知 <https://gmt-china.org/blog/community-guide/>`__”
-
 #. `GMT 官方论坛 <https://forum.generic-mapping-tools.org/>`__
