@@ -6,8 +6,12 @@ macOS 下安装 GMT
 
 ----
 
-macOS 下安装 GMT 有多种方式，可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
-工具。**推荐使用Homebrew**。
+macOS 下安装 GMT 有多种方式：
+
+1. `使用 Homebrew 安装`_ [**推荐**]
+2. `使用 GMT 安装包`_
+3. `使用 MacPorts 安装`_
+4. :doc:`conda`
 
 使用 Homebrew 安装
 ------------------
