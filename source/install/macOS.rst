@@ -1,12 +1,13 @@
 macOS 下安装 GMT
 ================
 
-:贡献者: |田冬冬|
+:撰写: |田冬冬|, |姚家园|
+:最近更新日期: 2022-08-04
 
 ----
 
-macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
-工具进行安装。**推荐使用Homebrew**。
+macOS 下安装 GMT 有多种方式，可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理
+工具。**推荐使用Homebrew**。
 
 使用 Homebrew 安装
 ------------------
@@ -111,10 +112,10 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
     GMT 包不支持自动升级，因而要先删除旧 GMT 包，再下载新版安装包并按照上面的
     步骤重新安装，即实现升级 GMT。
 
-使用 Macports 安装
+使用 MacPorts 安装
 ------------------
 
-`Macports <https://www.macports.org/>`__ 是 macOS 下的第三方软件包管理工具。
+`MacPorts <https://www.macports.org/>`__ 是 macOS 下的第三方软件包管理工具。
 
 1.  安装 GMT::
 
