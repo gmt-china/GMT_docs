@@ -34,6 +34,14 @@ Anaconda 的 base 环境下默认安装了数百个软件包，其中部分软�
 
         $ conda install gmt -c conda-forge/label/dev
 
+    制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__\ （**可选**）::
+
+        $ conda install graphicsmagick -c conda-forge
+
+    制作 MP4、WebM 格式的动画需要 `FFmpeg <https://ffmpeg.org/>`__\ （**可选**）::
+
+        $ conda install ffmpeg -c conda-forge
+
 2.  测试安装
 
     ::
