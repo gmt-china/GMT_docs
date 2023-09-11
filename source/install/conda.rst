@@ -19,7 +19,7 @@ Anaconda 或 Miniconda 中自带了 conda 工具。
 Anaconda 的 base 环境下默认安装了数百个软件包，其中部分软件包与 GMT 存在冲突，
 导致 base 环境下 GMT 无法正常安装，因而，Anaconda 用户必须新建并激活一个新环境安装使用 GMT。
 
-推荐用户使用 Miniconda，以节省硬盘空间并 GMT 包与已有安装包冲突的问题。
+推荐用户使用 Miniconda，可以避免 GMT 包与已有安装包冲突的问题，也更节省硬盘空间。
 
 安装 GMT
 --------
