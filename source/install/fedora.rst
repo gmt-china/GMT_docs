@@ -28,7 +28,8 @@ Fedora 37、Fedora 38 和 Fedora rawhide 的官方源中提供了 GMT 6.4.0，�
 
 制作 MP4、WebM 格式的动画需要 FFmpeg [**可选**]::
 
-    $ sudo dnf install ffmpeg-free
+    $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
+    $ sudo dnf install ffmpeg
 
 使用 GMT 官方 RPM 仓库安装 GMT
 ------------------------------
