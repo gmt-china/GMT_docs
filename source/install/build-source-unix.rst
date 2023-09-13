@@ -1,11 +1,13 @@
 Linux/macOS 下编译 GMT 源码
 ===========================
 
-:贡献者: |田冬冬|
+:撰写: |田冬冬|
+:最近更新日期: 2022-06-19
 
 ----
 
-这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。
+这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。仅供需要自行编译 GMT 最新版本或开发
+版本的读者参考。
 
 安装依赖软件
 ------------
@@ -39,17 +41,6 @@ Fedora::
     # 安装可选软件包
     $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
-
-CentOS::
-
-    # 安装并启用 EPEL 源
-    $ sudo yum install epel-release
-    # 安装必须软件包
-    $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
-    $ sudo yum install ghostscript gdal gdal-devel geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    # 安装可选软件包
-    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
-    $ sudo yum install GraphicsMagick ffmpeg
 
 Ubuntu/Debian::
 
