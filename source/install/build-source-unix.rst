@@ -19,11 +19,11 @@ GMT 的编译及运行依赖于其他软件。
 - `CMake <https://cmake.org/>`__\ （>=2.8.12）
 - `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
 - `curl <https://curl.haxx.se/>`__
+- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据
 
 可选的依赖软件包括：
 
-- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据（未安装则无法使用高精度地形数据）
 - `GEOS <https://libgeos.org/>`__：地理信息系统的几何算法库
 - `PCRE <https://www.pcre.org/>`__：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）
@@ -78,7 +78,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
         $ git clone --depth 50 https://github.com/GenericMappingTools/gmt
 
-    其余操作与编译 GMT 正式版没有区别。
+    其余操作与编译 GMT 正式版基本没有区别。
 
 安装 GMT
 --------
