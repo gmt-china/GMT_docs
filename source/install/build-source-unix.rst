@@ -37,7 +37,7 @@ Fedora::
 
     # 安装必须软件包
     $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
-    $ sudo dnf install ghostscript gdal gdal-devel geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    $ sudo dnf install ghostscript xdg-utils gdal gdal-devel geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     # 安装可选软件包
     $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
@@ -48,7 +48,7 @@ Ubuntu/Debian::
     $ sudo apt update
     # 安装必须软件包
     $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
-    $ sudo apt install ghostscript gdal-bin libgdal-dev libgeos-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install ghostscript xdg-utils gdal-bin libgdal-dev libgeos-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     # 安装可选软件包
     $ sudo apt install graphicsmagick ffmpeg
 

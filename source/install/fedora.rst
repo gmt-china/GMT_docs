@@ -31,7 +31,7 @@ Fedora 37、Fedora 38 和 Fedora rawhide 的官方源中提供了 GMT 6.4.0，�
 
 制作 GIF 格式的动画需要 `GraphicsMagick <http://www.graphicsmagick.org/>`__ [**可选**]::
 
-        $ sudo dnf install GraphicsMagick
+    $ sudo dnf install GraphicsMagick
 
 制作 MP4、WebM 格式的动画需要 FFmpeg [**可选**]::
 

@@ -30,6 +30,10 @@ Ubuntu 23.04 和 Debian 12 官方源中提供了 GMT 6.4.0，可直接通过如�
 
         $ sudo apt install ghostscript
 
+    自动打开生成的图片需要 ``xdg-utils``::
+
+        $ sudo apt install xdg-utils
+
     地理空间数据格式转换工具 `GDAL <https://gdal.org/>`__ [**必须**]::
 
         $ sudo apt install gdal-bin
