@@ -1,11 +1,13 @@
 Linux/macOS 下编译 GMT 源码
 ===========================
 
-:贡献者: |田冬冬|
+:撰写: |田冬冬|
+:最近更新日期: 2022-06-19
 
 ----
 
-这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。
+这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。仅供需要自行编译 GMT 最新版本或开发
+版本的读者参考。
 
 安装依赖软件
 ------------
@@ -17,11 +19,11 @@ GMT 的编译及运行依赖于其他软件。
 - `CMake <https://cmake.org/>`__\ （>=2.8.12）
 - `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
 - `curl <https://curl.haxx.se/>`__
+- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据
 
 可选的依赖软件包括：
 
-- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据（未安装则无法使用高精度地形数据）
 - `GEOS <https://libgeos.org/>`__：地理信息系统的几何算法库
 - `PCRE <https://www.pcre.org/>`__：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）
@@ -39,17 +41,6 @@ Fedora::
     # 安装可选软件包
     $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
-
-CentOS::
-
-    # 安装并启用 EPEL 源
-    $ sudo yum install epel-release
-    # 安装必须软件包
-    $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
-    $ sudo yum install ghostscript gdal gdal-devel geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    # 安装可选软件包
-    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
-    $ sudo yum install GraphicsMagick ffmpeg
 
 Ubuntu/Debian::
 
@@ -87,7 +78,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
         $ git clone --depth 50 https://github.com/GenericMappingTools/gmt
 
-    其余操作与编译 GMT 正式版没有区别。
+    其余操作与编译 GMT 正式版基本没有区别。
 
 安装 GMT
 --------
