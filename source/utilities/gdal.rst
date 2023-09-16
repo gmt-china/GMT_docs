@@ -1,6 +1,12 @@
 GDAL
 ====
 
+:撰写: |田冬冬|, |姚家园|
+:审核: |陈箫翰|
+:最近更新日期: 2022-10-04
+
+----
+
 `GDAL <https://gdal.org/>`__\（**G**\ eospatial **D**\ ata **A**\ bstraction **L**\ ibrary）
 是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，
 支持多种光栅或矢量地理空间数据格式的互相转换和处理。
@@ -31,6 +37,12 @@ GDAL/OGR 有两个核心部分：
 
 《:doc:`GMT 安装 </install/index>`》中介绍了各种操作系统下安装 GMT 的方法。
 GDAL 要么已包含在 GMT 安装包中，要么作为推荐包已被安装。
+
+GDAL 命令
+---------
+
+GDAL 提供了几十个不同功能的程序，这里仅介绍比较常用的几个程序。更完整的程序列表见
+https://gdal.org/programs/index.html。
 
 .. _ogr2ogr:
 
