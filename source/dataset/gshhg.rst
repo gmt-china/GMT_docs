@@ -8,7 +8,8 @@ GSHHG: 全球高分辨率海岸线数据
 
 .. gmtplot::
     :show-code: false
-    :caption: "GSHHG: 全球高分辨率海岸线数据"
+    :caption: GSHHG: 全球高分辨率海岸线数据
+    :width: 80%
 
     gmt coast -Rg -JN10c -Gblack -B0 -png gshhg
 
@@ -152,5 +153,6 @@ GSHHG 数据中包含了海岸线数据、河流数据和国界数据。
 绘制海岸线、国界和美国州界：
 
 .. gmtplot::
+    :width: 75%
 
     gmt coast -R-130/-70/24/52 -JM15c -Ba -Dh -A1000 -W1/0.5p -N1/thick,red -N2/thinner -png map
