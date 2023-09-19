@@ -24,9 +24,8 @@ GMT 提供的 GSHHG 数据中包含了海岸线、河流和国界等数据。
     数据的图件时都可能存在问题。
 
 GMT的 :doc:`/module/coast` 模块可以直接绘制 GSHHG 中的数据，也可以使用
-:doc:`/module/coast` 的 **-M** 选项将数据导出为纯文本文件供其它程序使用。
-这一节将利用 :doc:`/module/coast` 模块介绍 GSHHG 数据。
-关于 :doc:`/module/coast` 模块的详细用法，见 :doc:`/module/coast` 模块的说明文档。
+**coast** 的 **-M** 选项将数据导出为纯文本文件供其它程序使用。
+这一节将利用 **coast** 模块介绍 GSHHG 数据。
 
 数据分辨率
 ----------
