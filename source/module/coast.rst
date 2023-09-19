@@ -7,7 +7,7 @@ coast
 :官方文档: :doc:`gmt:coast`
 :简介: 在地图上绘制海岸线、河流、国界线
 
-**coast** 模块利用 GMT 自带的 :doc:`GSHHG数据</dataset/gshhg/index>` 和
+**coast** 模块利用 GMT 自带的 :doc:`GSHHG数据</dataset/gshhg>` 和
 :doc:`DCW数据 </dataset/dcw/index>` 绘制海岸线、河流、政治边界，
 还可以裁剪陆地区域或水域，也可以将数据导出到文件中。
 
@@ -249,7 +249,7 @@ coast
 示例
 ----
 
-在入门教程 :doc:`/tutorial/coastline` 和 :doc:`/dataset/gshhg/index` 均提供了
+在入门教程 :doc:`/tutorial/coastline` 和 :doc:`/dataset/gshhg` 均提供了
 一些 **coast** 的使用实例。
 
 绘制非洲地图，并绘制河流、国界，以及设置不同的填充色::

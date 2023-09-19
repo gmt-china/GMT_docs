@@ -6,11 +6,11 @@ GSHHG: 全球高分辨率海岸线数据
 
 ----
 
-.. figure:: gshhg.*
-   :width: 75%
-   :align: center
+.. gmtplot::
+    :show-code: false
+    :caption: "GSHHG: 全球高分辨率海岸线数据"
 
-   GSHHG: 全球高分辨率海岸线数据
+    gmt coast -Rg -JN10c -Gblack -B0 -png gshhg
 
 - **数据主页**: https://github.com/GenericMappingTools/gshhg-gmt
 - **版本**: v2.3.7 (2020-02-16)
