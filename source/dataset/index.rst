@@ -23,7 +23,7 @@ GMT 内置数据是指在安装 GMT 时就已经安装了的数据，因而可�
 .. toctree::
    :maxdepth: 1
 
-   gshhg
+   gshhg/index
    dcw/index
 
 GMT 远程数据
