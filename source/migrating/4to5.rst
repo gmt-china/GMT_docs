@@ -1,7 +1,8 @@
 GMT4 → GMT5
 ===========
 
-:贡献者: |田冬冬|
+:撰写: |田冬冬|
+:最近更新日期: 2021-08-21
 
 ----
 
@@ -28,35 +29,35 @@ GMT4 中的所有\ **命令**\ 在 GMT5 中都变成了 **gmt** 命令的\ **模
 GMT 提供了脚本 **gmt5syntax**，可以自动在 GMT4 命令前加上 **gmt**，该脚本位于
 GMT 的 :file:`share/tools` 目录下。该脚本的使用方法也很简单::
 
-    gmt5syntax old_script.sh > new_script.sh
+    $ gmt5syntax old_script.sh > new_script.sh
 
 如果不愿意修改原脚本，GMT 还为旧命令提供了软链接，使得依然可以直接使用 **psbasemap** 等命令，
-但极其不推荐这一方法。为旧命令生成软链接有多种方法，用户可任选其一即可：
+但\ **极其不推荐这一方法**\ 。为旧命令生成软链接有多种方法，用户可任选其一即可：
 
-#.  如果你是自行编译 GMT 源码并安装，则可以在 :file:`cmake/ConfigUser.cmake` 中加上
+#.  如果你是自行编译 GMT 源码，则可以在 :file:`cmake/ConfigUser.cmake` 中加上
     ``set (GMT_INSTALL_MODULE_LINKS TRUE)`` 再进行编译安装
 
 #.  GMT 提供了一个脚本，可以用于检查软连接是否存在，同时也可以创建或删除软连接。
     对于已经安装 GMT 的用户，可以执行以下命令以检查软连接是否已经存在::
 
-        $(gmt --show-sharedir)/tools/gmt_links.sh
+        $ $(gmt --show-sharedir)/tools/gmt_links.sh
 
     执行如下命令为所有旧 GMT 命令创建软连接（可能需要 root 权限）::
 
-        $(gmt --show-sharedir)/tools/gmt_links.sh create
+        $ $(gmt --show-sharedir)/tools/gmt_links.sh create
 
     也可以执行如下命令删除已有的软连接::
 
-        $(gmt --show-sharedir)/tools/gmt_links.sh delete
+        $ $(gmt --show-sharedir)/tools/gmt_links.sh delete
 
 #.  对于 Bash 用户，可以直接在 Bash 脚本、终端或者 Bash 配置文件中加入如下语句::
 
-        source $(gmt --show-sharedir)/tools/gmt_functions.sh
+        $ source $(gmt --show-sharedir)/tools/gmt_functions.sh
 
     该脚本会为所有旧命令构建一个等效的 bash 函数。
 
 #.  对于 csh 用户，可以直接在 csh 脚本、终端或者 csh 配置文件中加入如下语句::
 
-        source `gmt --show-sharedir`/tools/gmt_aliases.csh
+        $ source `gmt --show-sharedir`/tools/gmt_aliases.csh
 
     该脚本会为所有旧命令构建一个等效的 csh 别名。
