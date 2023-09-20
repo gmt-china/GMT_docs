@@ -67,32 +67,22 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 安装可选软件
 ------------
 
+为了更好地使用 GMT，用户可以根据自己的实际需求选择安装如下软件。
+
+脚本工具
+^^^^^^^^
+
+.. rubric:: Git for Windows
+
+Windows 用户可以编写 Bash 脚本来执行 GMT 命令。推荐 Bash 用户安装 Git for Windows。
+其为 Windows 用户提供了 Bash 以及 Linux 的常用命令，方便用户在 Windows 下运行 Bash 脚本。
+
+下载地址：https://git-scm.com/download/win
+
 GraphicsMagick
 ^^^^^^^^^^^^^^
 
 GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
 `GraphicsMagick <http://www.graphicsmagick.org/>`__。
-如有制作 GIF 动画的需求，则可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
+如需制作 GIF 动画，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 ``gm`` 命令。
-
-安装 Bash 环境
---------------
-
-GMT 可以直接在 Windows 下的 Batch 脚本中使用，但由于 Batch 脚本自身功能的局限性，无法完全发挥
-GMT 的强大功能。因而，建议 Windows 用户安装 Bash 环境并编写 Bash 脚本来使用 GMT。
-
-使用 Bash 环境的优势在于：
-
-1. Bash 语法比 Batch 语法更丰富，提供了更多的功能
-2. Bash 环境提供了多个可用于数据处理的命令行工具，为 GMT 数据处理和进一步绘图提供了支撑
-3. 本教程中所有脚本均为 Bash 语法，读者可不做修改直接在 Bash 环境中执行
-
-在 Windows 下使用 Bash 环境的方式有很多，如:
-
-1. `Git for Windodws <https://gitforwindows.org/>`__
-2. `Cygwin <https://cygwin.com/>`__
-3. `MSYS2 <https://www.msys2.org/>`__
-4. `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/>`__
-
-用户可以根据自己的喜欢选择合适的 Bash 环境。对于不熟悉 Bash 环境的用户，可以直接安装
-Git for Windows。
