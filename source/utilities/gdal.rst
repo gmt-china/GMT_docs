@@ -32,15 +32,6 @@ GDAL/OGR 有两个核心部分：
   如常见的 OGR/GMT（即 GMT）、Shapefile 、KML、MapInfo、Excel 等，
   详见\ `矢量格式列表 <https://gdal.org/drivers/vector/index.html>`__
 
-安装
-----
-
-《:doc:`GMT 安装 </install/index>`》中介绍了各种操作系统下安装 GMT 的方法。
-GDAL 要么已包含在 GMT 安装包中，要么作为推荐包已被安装。
-
-GDAL 命令
----------
-
 GDAL 提供了几十个不同功能的程序，这里仅介绍比较常用的几个程序。更完整的程序列表见
 https://gdal.org/programs/index.html。
 
