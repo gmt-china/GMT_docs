@@ -3,7 +3,7 @@ GDAL
 
 :撰写: |田冬冬|, |姚家园|
 :审核: |陈箫翰|
-:最近更新日期: 2022-10-04
+:最近更新日期: 2023-09-21
 
 ----
 
@@ -43,7 +43,7 @@ GDAL 提供的 ``ogr2ogr`` 命令可以实现几十种地理矢量数据格式�
 
 该命令的基本用法是::
 
-    $ ogr2ogr -f GMT 输出数据文件名 输入数据文件名
+    ogr2ogr -f GMT 输出数据文件名 输入数据文件名
 
 当输出文件名为空（即 ``""``）时，则输出数据与输入数据的文件名相同，仅后缀不同。
 
@@ -58,9 +58,9 @@ GDAL 提供的 ``ogr2ogr`` 命令可以实现几十种地理矢量数据格式�
         $ ogr2ogr -f GMT "" gadm41_USA_0.json
 
 3.  将 Geopackage 格式的数据文件 :file:`gadm41_USA.gpkg` 转换为 GMT 格式。
+
     与 Shapefile 和 GeoJSON 格式不同的是，Geopackage 格式中可以包含多个 layer 的
     数据，因而在转换时需要指定提取哪个 layer 的数据。
-
     使用 ``ogrinfo`` 命令可以查看数据的基本属性::
 
         $ ogrinfo gadm41_USA.gpkg
@@ -76,6 +76,8 @@ GDAL 提供的 ``ogr2ogr`` 命令可以实现几十种地理矢量数据格式�
         $ ogr2ogr -f GMT "" gadm41_USA.gpkg ADM_ADM_0
         $ ogr2ogr -f GMT "" gadm41_USA.gpkg ADM_ADM_1
         $ ogr2ogr -f GMT "" gadm41_USA.gpkg ADM_ADM_2
+
+    三个命令分别生成文件 ``ADM_ADM_0.gmt``、``ADM_ADM_1.gmt`` 和 ``ADM_ADM_2.gmt``。
 
 .. _gdal_translate:
 
