@@ -1,0 +1,59 @@
+#
+# Check the GMT Chinese
+#
+name: Chinese support
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  macos:
+    runs-on: macos-latest
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1.4.4
+        with:
+          environment-name: gmt
+          condarc: |
+            channels:
+              - conda-forge
+              - nodefaults
+          create-args: >-
+            gmt=6.4.0
+
+      - name: Setup Chinese
+        run: |
+          mkdir -p ~/.gmt/winfonts/
+          git clone --depth 1 https://github.com/ZMAlt/winfonts
+          mv winfonts/*.ttf winfonts/*.ttc ~/.gmt/winfonts
+          rm -rf winfonts
+
+          cat > ~/.gmt/cidfmap << EOF
+          /STSong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simsun.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STFangsong-Light <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simfang.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          /STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
+          EOF
+
+          cat > ~/.gmt/PSL_custom_fonts.txt << EOF
+          STSong-Light--UniGB-UTF8-H  0.700    1
+          STFangsong-Light--UniGB-UTF8-H  0.700    1
+          STHeiti-Regular--UniGB-UTF8-H   0.700   1
+          STKaiti-Regular--UniGB-UTF8-H   0.700   1
+          STSong-Light--UniGB-UTF8-V  0.700    1
+          STFangsong-Light--UniGB-UTF8-V  0.700    1
+          STHeiti-Regular--UniGB-UTF8-V   0.700   1
+          STKaiti-Regular--UniGB-UTF8-V   0.700   1
+          EOF
