@@ -61,5 +61,16 @@ jobs:
       - name: Run the Chinese script
         run: bash source/chinese/GMT_Chinese.sh
 
-      - name: Check
-        run: ls source/chinese/GMT_Chinese.png source/chinese/GMT_Chinese.pdf
+      - name: Setup continuous machine learning (CML)
+        uses: iterative/setup-cml@v1.2.3
+
+      # workaround from https://github.com/iterative/cml/issues/1377
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: '16'
+
+      - name: Comment
+        run: |
+          echo '![](source/chinese/GMT_Chinese.png)' > report.md
+          cml comment update report.md
