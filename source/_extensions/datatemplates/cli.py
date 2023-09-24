@@ -7,8 +7,8 @@ import pprint
 
 import jinja2
 
-from sphinxcontrib.datatemplates import helpers
-from sphinxcontrib.datatemplates import loaders
+from datatemplates import helpers
+from datatemplates import loaders
 
 
 def main():

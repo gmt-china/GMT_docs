@@ -6,7 +6,7 @@ from . import directive, domain
 LOG = logging.getLogger(__name__)
 
 __version__ = pbr.version.VersionInfo(
-    "sphinxcontrib.datatemplates").version_string()
+    "datatemplates").version_string()
 
 
 def setup(app):

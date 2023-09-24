@@ -12,7 +12,7 @@ from docutils.statemachine import ViewList
 from sphinx.jinja2glue import BuiltinTemplateLoader
 from sphinx.util import logging
 from sphinx.util.nodes import nested_parse_with_titles
-from sphinxcontrib.datatemplates import helpers, loaders
+from datatemplates import helpers, loaders
 
 LOG = logging.getLogger(__name__)
 _default_templates = None
