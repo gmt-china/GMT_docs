@@ -13,6 +13,9 @@
         {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
         {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
     {% endif %}
+    {% if fig["script"] is defined %}
+        {% set image = config.html_context["siteurl"] + "/_images/" + md5(fig["script"]) + ".png" %}
+    {% endif %}
     .. grid-item-card::
         :margin: 0 2 0 0
         :text-align: center
