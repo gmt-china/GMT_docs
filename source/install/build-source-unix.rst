@@ -24,6 +24,7 @@ GMT 的编译及运行依赖于其他软件。
 
 可选的依赖软件包括：
 
+- `Ninja <https://ninja-build.org/>__: 快速的构建系统 [可选但推荐]
 - `GEOS <https://libgeos.org/>`__：地理信息系统的几何算法库
 - `PCRE <https://www.pcre.org/>`__：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）
@@ -36,7 +37,7 @@ GMT 的编译及运行依赖于其他软件。
 Fedora::
 
     # 安装必须软件包
-    $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel gdal gdal-devel
+    $ sudo dnf install gcc cmake ninja-build glibc netcdf-devel libcurl-devel gdal gdal-devel
     $ sudo dnf install geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
     $ sudo dnf install ghostscript xdg-utils
     # 安装可选软件包
@@ -48,7 +49,7 @@ Ubuntu/Debian::
     # 更新软件包列表
     $ sudo apt update
     # 安装必须软件包
-    $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev gdal-bin libgdal-dev
+    $ sudo apt install build-essential cmake ninja-build libcurl4-gnutls-dev libnetcdf-dev gdal-bin libgdal-dev
     $ sudo apt install libgeos-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
     $ sudo apt install ghostscript xdg-utils
     # 安装可选软件包
@@ -60,7 +61,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 了解如何安装与使用）::
 
     # 安装必须软件包
-    $ brew install cmake curl netcdf
+    $ brew install cmake ninja curl netcdf
     $ brew install ghostscript gdal geos pcre2 glib fftw
     # 安装可选软件包
     $ brew install graphicsmagick ffmpeg
@@ -138,13 +139,13 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
     $ mkdir build
     $ cd build/
-    $ cmake ..
+    $ cmake .. -G Ninja
 
-``cmake ..`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
+``cmake .. -G Ninja`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
 在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
 正常情况下结果结果如下，若存在一些差异也没有问题。只要过程中不出现报错，即可。
 如果出现报错，则需要检查之前的步骤是否有误，检查完成后删除原 build 目录再新建 build，
-继续执行 ``cmake ..``，直到出现类似的检查结果::
+继续执行 ``cmake .. -G Ninja``，直到出现类似的检查结果::
 
     *
     *  GMT Version:               : 6.4.0
@@ -208,13 +209,8 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 检查完毕后，开始编译和安装::
 
-    $ make -j
-    $ sudo make -j install
-
-.. note::
-
-   **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些 Ubuntu 发行版下
-   使用 **-j** 选项会导致编译过程卡死。Ubuntu 用户建议在上面的两条命令中去掉 **-j** 选项。
+    $ cmake --build .
+    $ sudo cmake --build . --target install
 
 修改环境变量
 ------------
