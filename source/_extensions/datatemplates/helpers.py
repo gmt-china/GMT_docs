@@ -58,3 +58,12 @@ def escape_rst_url(s):
     :param s: String for escaping
     """
     return "\\".join(s)
+
+
+import hashlib
+
+def md5(file):
+    print("##", file, "##")
+    with open(file, 'r') as fp:
+        data = fp.read()
+        return hashlib.md5(data.encode()).hexdigest()

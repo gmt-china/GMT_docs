@@ -92,6 +92,7 @@ class DataTemplateBase(rst.Directive):
             helpers.make_list_table_from_mappings,
             'escape_rst': helpers.escape_rst,
             'escape_rst_url': helpers.escape_rst_url,
+            "md5": helpers.md5,
             'data': data,
             'config': config,
             'options': self.options,
