@@ -1,12 +1,10 @@
-import pbr.version
 from sphinx.util import logging
 
 from . import directive, domain
 
 LOG = logging.getLogger(__name__)
 
-__version__ = pbr.version.VersionInfo(
-    "datatemplates").version_string()
+__version__ = "0.9.2"
 
 
 def setup(app):
