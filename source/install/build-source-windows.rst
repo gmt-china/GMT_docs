@@ -17,6 +17,7 @@ Windows 下编译 GMT 源码
 - `Visual Studio <https://visualstudio.microsoft.com/zh-hans/>`__ \（安装时需要勾选 Desktop development with C++ 相关工具）
 - `Git <https://git-scm.com/downloads>`__
 - `CMake <https://cmake.org/download/>`__
+- `Ninja <https://ninja-build.org/>__: 快速的构建系统 [可选但推荐]
 - `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片 [**必须**]
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\：生成 GIF 格式的动画 [**可选**]
 - `FFmpeg <http://www.ffmpeg.org/>`__：生成 MP4 格式的动画 [**可选**]
@@ -125,9 +126,9 @@ Windows 下可以通过 C++ 库管理器 `vcpkg <https://vcpkg.io>`__ 安装这�
     $ mkdir build
     $ cd build/
     # 64 位系统
-    $ cmake .. -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x64
+    $ cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x64
     # 32 位系统
-    $ cmake .. -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x86
+    $ cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -DCMAKE_GENERATOR_PLATFORM=x86
 
 ``cmake ..`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
 在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
