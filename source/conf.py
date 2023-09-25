@@ -58,6 +58,7 @@ extensions = [
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
+template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
