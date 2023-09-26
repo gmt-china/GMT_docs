@@ -58,6 +58,8 @@ extensions = [
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
+# use custom templater bridge defined in _extensions/templatebridge.py
+template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
