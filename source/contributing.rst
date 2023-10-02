@@ -116,17 +116,11 @@
 :file:`source/gallery/gallery.yaml` 文件。
 每个示例对应一个记录，每个记录的格式如下::
 
-    - image: 7b2bde15fb251533e033c4653ebfd207
+    - script: path/to/script.sh
       title: 绘制 GPS 速度场
       target: examples/ex015/
 
-其中：
-
-- ``image`` 为图片名，其可以有两种形式：
-
-  - 完整的 URL
-  - 一个由字母和数字组成的字符串，为生成该图片的脚本的 MD5 值，可通过在网页文档中点击对应图片，然后从 URL 中提取
-
+- ``script`` 指定了生成图片的脚本在 `source` 目录下的路径
 - ``title`` 是显示在图片下方的标题
 - ``target`` 是点击图片时要跳转的链接，可以是某个页面的路径，也可以是某个页面的锚点名称
 
