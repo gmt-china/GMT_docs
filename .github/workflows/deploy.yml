@@ -27,13 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout the gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: deploy
-          fetch-depth: 0
-
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v1.4.4
         with:
@@ -67,6 +60,13 @@ jobs:
       #
       - name: Build HTML
         run: make build_html
+
+      - name: Checkout the gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: deploy
+          fetch-depth: 0
 
       - name: Prepare the documentation for deployment
         run: |
