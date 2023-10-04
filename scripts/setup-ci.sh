@@ -54,7 +54,8 @@ rm -rf china-geospatial-data
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/plates.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
-mv boundaries.gmt plates.gmt global_gprv.gmt ~/.gmt/cache/
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/oc_boundaries.gmt
+mv boundaries.gmt plates.gmt global_gprv.gmt oc_boundaries.gmt ~/.gmt/cache/
 
 # 5. Download Chinese font files for GMT Chinese support
 mkdir -p ~/.gmt/winfonts/
