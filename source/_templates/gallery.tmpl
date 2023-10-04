@@ -7,7 +7,7 @@
 .. grid:: 2 3 3 4
     {% for fig in group["gallery"] %}
     {% if fig["script"] is defined %}
-        {% set md5value = (config.html_context["basedir"] + "/" + fig["script"]) | filemd5 %}
+        {% set md5value = (config.html_context["basedir"] + fig["script"]) | filemd5 %}
         {% set image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
         {% set link, link_type = "gmtplot-" + md5value, "ref" %}
     {% else %}

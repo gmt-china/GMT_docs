@@ -103,10 +103,10 @@ html_title = project
 # set site url of the image gallery for different use cases
 if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
     siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
-    basedir_for_gallery = "source"
+    basedir_for_gallery = "source/"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
-    basedir_for_gallery = ""
+    basedir_for_gallery = "./"
 else:  # build locally
     siteurl_for_gallery = ""
 
