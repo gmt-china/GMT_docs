@@ -103,8 +103,10 @@ html_title = project
 # set site url of the image gallery for different use cases
 if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
     siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+    basedir_for_gallery = "source/"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    basedir_for_gallery = "./"
 else:  # build locally
     siteurl_for_gallery = ""
 
@@ -119,6 +121,7 @@ html_context = {
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     # Passed to sphinxcontrib.datatemplates
     "siteurl": siteurl_for_gallery,
+    "basedir": basedir_for_gallery,
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 
