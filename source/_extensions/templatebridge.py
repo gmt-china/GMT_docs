@@ -10,8 +10,6 @@ def _filemd5(file):
     """
     Return the MD5 hash of the file contents.
     """
-    import os
-    print("###", os.getcwd(), "###")
     with open(file, "r") as fp:
         data = fp.read()
         return hashlib.md5(data.encode()).hexdigest()
