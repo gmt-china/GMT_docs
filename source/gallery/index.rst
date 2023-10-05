@@ -12,7 +12,7 @@
     .. toctree::
         :glob:
 
-        examples/ex*/index
+        /examples/ex*/index
 
 外部绘图实例
 ############
