@@ -5,7 +5,7 @@
 
     .. datatemplate:yaml:: gallery.yaml
         :template: gallery.tmpl
-           :multiple-documents:
+        :multiple-documents:
 
 .. only:: latex
 
