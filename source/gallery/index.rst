@@ -1,9 +1,18 @@
 社区绘图实例
 ############
 
-.. datatemplate:yaml:: gallery.yaml
-   :template: gallery.tmpl
-   :multiple-documents:
+.. only:: html
+
+    .. datatemplate:yaml:: gallery.yaml
+        :template: gallery.tmpl
+        :multiple-documents:
+
+.. only:: latex
+
+    .. toctree::
+        :glob:
+
+        /examples/ex*/index
 
 外部绘图实例
 ############

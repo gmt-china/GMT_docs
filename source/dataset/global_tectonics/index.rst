@@ -1,34 +1,55 @@
 global_tectonics: 全球地质构造数据
 ==================================
 
-:撰写: |陈箫翰|
-:最近更新日期: 2022-08-18
+:撰写: |陈箫翰|, |田冬冬|
+:最近更新日期: 2023-10-04
 
 ----
 
-global_tectonics 是一个较新的全球地质构造数据集，提供 shp、GMT、KML 格式数据的下载。
+global_tectonics 是一个全球地质构造数据集，提供 Shapefile、GMT、KML 格式数据的下载。
 
 - 官方网站: https://github.com/dhasterok/global_tectonics
 - GMT 格式数据下载: https://github.com/dhasterok/global_tectonics/tree/main/plates%26provinces/gmt
 
+数据简介
+--------
+
+global_tectonics 数据集中提供了四个数据文件：
+
+- `boundaries.gmt`: 板块边界数据
+- `plates.gmt`: 板块数据
+- `global_gprv.gmt`: 地质块体数据
+- `oc_boundaries.gmt`: 海陆边界线
+
+更详细的数据说明请阅读数据的参考文献。
+
 使用示例
 --------
 
-下面仅展示数据使用的几个示例，更详细的数据说明请阅读数据的参考文献。
+boundaries.gmt
+~~~~~~~~~~~~~~
 
-数据文件 ``boundaries.gmt`` 包含了 7 种类型的板块边界数据。提取不同类型板块边界，
-需要使用 :doc:`/module/gmtconvert` 模块的 **-S** 选项。
+数据文件 ``boundaries.gmt`` 包含了 7 种类型的板块边界数据。每段数据的头段记录中
+包含了板块边界的名称、板块边界类型、相邻的两个板块名以及长度等信息。
+下面的示例使用 :doc:`/module/gmtconvert` 模块的 **-S** 选项提取不同类型的板块
+边界并分别绘制：
 
 .. gmtplot:: boundaries.sh
    :width: 80%
 
-数据文件 ``plates.gmt`` 的头段记录中包含了每个板块的名字、属性、性质、面积等数据。
+plates.gmt
+~~~~~~~~~~
+
+数据文件 ``plates.gmt`` 包含了各个板块的多边形数据。每段数据的头段记录中包含了板块名字、属性、性质、面积等数据。
 使用 :doc:`/module/gmtconvert` 模块可以提取出特定板块的数据进行绘图。
 下面的例子展示了如何根据头段记录提取大陆地壳板块、变形带板块，以及提取青藏高原板块、
 华北板块。
 
 .. gmtplot:: plates.sh
    :width: 80%
+
+global_gprv.gmt
+~~~~~~~~~~~~~~~
 
 数据文件 ``global_gprv.gmt`` 的头段记录中包含了不同地质区域的名字、属性、地质历史事件、
 面积等数据。使用 :doc:`/module/gmtconvert` 模块可以提取出特定地质区域的数据进行绘图。
@@ -37,6 +58,14 @@ global_tectonics 是一个较新的全球地质构造数据集，提供 shp、GM
 提取南海盆地和鄂尔多斯地块的数据。
 
 .. gmtplot:: global_gprv.sh
+   :width: 80%
+
+oc_boundaries.gmt
+~~~~~~~~~~~~~~~~~
+
+数据文件 `oc_boundaries.gmt` 包含了全球的海陆边界线。
+
+.. gmtplot:: oc_boundaries.sh 
    :width: 80%
 
 引用信息
