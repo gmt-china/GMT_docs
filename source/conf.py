@@ -136,7 +136,11 @@ html_context = {
         ),
         (
             '<i class="fa fa-book fa-fw"></i> 手册 PDF',
-            "https://docs.gmt-china.org/{}/GMT_docs.pdf".format(version),
+            f"https://docs.gmt-china.org/{version}/GMT_docs.pdf",
+        ),
+        (
+            '<i class="fa fa-book fa-fw"></i> 手册 HTML 压缩包',
+            f"https://docs.gmt-china.org/{version}/GMT_docs.zip",
         ),
         (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',

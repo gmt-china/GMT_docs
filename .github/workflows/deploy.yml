@@ -53,10 +53,11 @@ jobs:
       # Because building the PDF document is slow, the building and deployment
       # process is designed as follows:
       #
-      # 1. Build the HTML document and use the old PDF document if available
+      # 1. Build the HTML document and use the old PDF document and HTML zip if available
       # 2. Deploy the HTML document
-      # 3. Build the PDF document
-      # 4. Deploy the PDF document
+      # 3. Build the HTML document again (html, not dirhtml) and make a zip
+      # 4. Build the PDF document
+      # 5. Deploy the PDF document and HTML zip
       #
       - name: Build HTML
         run: make build_html
@@ -79,6 +80,10 @@ jobs:
           if [ -e ${GMT_DOC_VERSION}/GMT_docs.pdf ]; then
             cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
           fi
+          # Use the old HTML zip because the new HTML zip is not built
+          if [ -e ${GMT_DOC_VERSION}/GMT_docs.zip ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.zip ../build/dirhtml/
+          fi
           # Replace the old documentation with tht new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
@@ -100,11 +105,18 @@ jobs:
       - name: Install LaTeX packages
         run: bash scripts/setup-latex.sh
 
-      - name: Build PDF
-        run: make build_pdf
+      - name: Build the HMTL zip
+        run: |
+          make html
+          mv build/html GMT_docs
+          zip -r GMT_docs.zip GMT_docs
+          rm -r GMT_docs
+          mv GMT_docs.zip deploy/${GMT_DOC_VERSION}/
 
-      - name: Prepare the documentation for deployment
-        run: cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+      - name: Build PDF
+        run: |
+          make build_pdf
+          cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v3
