@@ -43,6 +43,15 @@ GMT 是地球科学使用最广泛的制图软件之一。
     - `GMT 官方文档 <https://docs.generic-mapping-tools.org/>`__
     - :ref:`引用 GMT <citations>`
 
+.. rubric:: 文档下载
+
+.. hlist::
+    :columns: 3
+
+    - `GMT 中文手册源码 <https://github.com/gmt-china/GMT_docs>`__
+    - `GMT 中文手册 PDF <https://docs.gmt-china.org/6.4/GMT_docs.pdf>`__
+    - `GMT 中文手册 HTML ZIP <https://docs.gmt-china.org/6.4/GMT_docs.zip>`__
+
 .. toctree::
    :maxdepth: 3
    :caption: GMT 入门
