@@ -131,18 +131,6 @@ html_context = {
             "https://gmt-china.org",
         ),
         (
-            '<i class="fa fa-github fa-fw"></i> 手册源码',
-            github_url,
-        ),
-        (
-            '<i class="fa fa-book fa-fw"></i> 手册 PDF',
-            f"https://docs.gmt-china.org/{version}/GMT_docs.pdf",
-        ),
-        (
-            '<i class="fa fa-book fa-fw"></i> 手册 HTML 压缩包',
-            f"https://docs.gmt-china.org/{version}/GMT_docs.zip",
-        ),
-        (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',
             f"{github_url}/discussions",
         ),
