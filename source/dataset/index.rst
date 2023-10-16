@@ -1,6 +1,24 @@
 地学数据集
 ##########
 
+.. list-table:: 地学数据集 
+   :widths: 20 60 20
+   :header-rows: 1
+
+   * - 名称
+     - 描述
+     - 类型
+   * - :doc:`GSHHG <gshhg>`
+     - 全球高分辨率海岸线数据
+     - GMT 内置数据
+   * - :doc:`DCW <dcw/index>`
+     - 世界数字图表
+     - GMT 内置数据
+   * - `earth_age <https://www.generic-mapping-tools.org/remote-datasets/earth-age.html>`__
+     - 地球洋壳年龄数据
+     - GMT 远程数据
+
+
 使用 GMT 绘图时，经常用到一些特定的地学数据，如国界线、地形起伏数据等。
 这些数据一般不需要任何改动即可用在多种图件中。根据使用方法的不同，分为三类：
 
