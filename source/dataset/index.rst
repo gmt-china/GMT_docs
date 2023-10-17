@@ -32,10 +32,16 @@ GMT 远程数据是指保存在 GMT 数据服务器的数据。使用某个远�
 - `earth_day & earth_night：NASA 全球昼夜影像 <https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html>`__
 - `earth_wdmam：WDMAM 全球数字磁异常 <https://www.generic-mapping-tools.org/remote-datasets/earth-wdmam.html>`__
 
-.. rubric:: 社区维护数据
+.. rubric:: 自定义数据
 
 除了 GMT 官方提供的内置数据和远程数据外，用户还可以自行准备数据，建立 GMT 数据库，供 GMT 使用。
 GMT 中文社区整理了一些自定义数据，供用户选用：
+
+- :doc:`gadm/index`
+- :doc:`PB2002/index`
+- :doc:`global_tectonics/index`
+
+.. rubric:: 其他数据
 
 用户还可以在网上找到更多其他地学相关数据。可根据需求自行下载，并使用 GDAL 提供的
 :ref:`ogr2ogr` 或 :ref:`gdal_translate` 命令转换为 GMT 可识别的数据格式。
