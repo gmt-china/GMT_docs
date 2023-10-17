@@ -59,6 +59,16 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
    usage
    gshhg
    dcw/index
+   earth_age：EarthByte 全球洋壳年龄数据 <https://www.generic-mapping-tools.org/remote-datasets/earth-age.html>
+   earth_geoid：EGM2008 全球大地水准面 <https://www.generic-mapping-tools.org/remote-datasets/earth-geoid.html>
+   earth_mag：EMAG2 全球磁异常模型 <https://www.generic-mapping-tools.org/remote-datasets/earth-mag.html>
+   earth_relief：IGPP 全球地形起伏 <https://www.generic-mapping-tools.org/remote-datasets/earth-relief.html>
+   earth_mask：GSHHG 全球掩膜数据 <https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html>
+   earth_faa：IGPP 全球自由空气异常 <https://www.generic-mapping-tools.org/remote-datasets/earth-faa.html>
+   earth_gebco：GEBCO 全球地形起伏 <https://www.generic-mapping-tools.org/remote-datasets/earth-gebco.html>
+   earth_vgg：IGPP 全球垂直重力梯度 <https://www.generic-mapping-tools.org/remote-datasets/earth-vgg.html>
+   earth_day & earth_night：NASA 全球昼夜影像 <https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html>
+   earth_wdmam：WDMAM 全球数字磁异常 <https://www.generic-mapping-tools.org/remote-datasets/earth-wdmam.html>
    gadm/index
    PB2002/index
    global_tectonics/index
