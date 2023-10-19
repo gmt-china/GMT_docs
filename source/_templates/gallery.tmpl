@@ -14,7 +14,11 @@
     {% else %}
         {% if fig["image"].startswith("http") %}  {# absolute URL for external images #}
             {% set image = fig["image"] %}
-            {% set link, link_type = "/" + fig["target"], "doc" %}
+            {% if fig["target"].startswith("http") %} {# absolute URL #}
+                {% set link, link_type = fig["target"], "url" %}
+            {% else %} 
+                {% set link, link_type = "/" + fig["target"], "doc" %}
+            {% endif %}
         {% else %}  {# internal images #}
             {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
             {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
