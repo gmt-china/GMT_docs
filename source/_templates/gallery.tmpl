@@ -16,7 +16,7 @@
             {% set image = fig["image"] %}
             {% if fig["target"].startswith("http") %} {# absolute URL #}
                 {% set link, link_type = fig["target"], "url" %}
-            {% else %} 
+            {% else %}
                 {% set link, link_type = "/" + fig["target"], "doc" %}
             {% endif %}
         {% else %}  {# internal images #}
@@ -24,6 +24,7 @@
             {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
         {% endif %}
     {% endif %}
+
     .. grid-item-card::
         :margin: 0 2 0 0
         :text-align: center
