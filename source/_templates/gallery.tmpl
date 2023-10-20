@@ -5,6 +5,8 @@
 ==========================
 
 .. grid:: 2 3 3 4
+    :gutter: 1
+
     {% for fig in group["gallery"] %}
     {% if fig["script"] is defined %}
         {% set md5value = (config.html_context["basedir"] + fig["script"]) | filemd5 %}
@@ -15,7 +17,7 @@
             {% set image = fig["image"] %}
             {% if fig["target"].startswith("http") %} {# absolute URL #}
                 {% set link, link_type = fig["target"], "url" %}
-            {% else %} 
+            {% else %}
                 {% set link, link_type = "/" + fig["target"], "doc" %}
             {% endif %}
         {% else %}  {# internal images #}
