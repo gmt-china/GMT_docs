@@ -91,6 +91,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "sticky_navigation": False,
+    "includehidden": False,
 }
 html_css_files = ["custom.css"]
 templates_path = ["_templates"]
