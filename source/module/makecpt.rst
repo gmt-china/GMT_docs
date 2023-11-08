@@ -75,7 +75,7 @@ makecpt
 **-A**\ *transparency*\ [**+a**]
     设置透明度，*transparency* 的取值范围是 0 到 100。
     加上 **+a** 则将该透明度同时应用于前景色、背景色和 NaN 颜色
-    [默认不透明, 即 *transparency* 为 0]
+    [默认不透明, 即 *transparency* 为 0]。
 
 .. _-C:
 
@@ -86,8 +86,8 @@ makecpt
 **-D**\ [**i**\|\ **o**]
     将背景色和前景色分别设置为 CPT 文件中最小值和最大值对应的颜色, **i** 和 **o** 分别
     表示使用输出 CPT 或者输入 CPT [默认为 **-D** 或 **-Do**, 即输出 CPT 的背景色和前景色]。
-	不设置本项时，GMT 默认使用主 CPT 文件规定的背景色与前景色，或是采用配置参数
-	:term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
+    不设置本项时，GMT 默认使用主 CPT 文件规定的背景色与前景色，或是采用配置参数
+    :term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 
 .. _-E:
 
@@ -140,7 +140,7 @@ makecpt
 **-I**\ [**c**][**z**]
     - **-Ic** 选项翻转颜色的顺序，包括前景色和背景色以及 :term:`COLOR_BACKGROUND` 和
       :term:`COLOR_FOREGROUND` 参数设置的前景色和背景色[默认]。详细用法和说明见
-      :doc:`/cpt/makecpt`
+      :doc:`/cpt/makecpt` 。
 
     - **-Iz** 选项翻转 CPT 的 *z* 值（不包括前景色、背景色）。该操作发生于 |-G| 和 |-T|
       选项之前，因此使用上述两选项时，需先考虑 **-Iz** 操作后的 *z* 值的实际范围。
@@ -198,7 +198,7 @@ makecpt
 .. _-Z:
 
 **-Z**
-    生成连续 CPT 文件。默认生成不连续 CPT 文件，即每个 Z 值切片内为同一颜色
+    生成连续 CPT 文件。默认生成不连续 CPT 文件，即每个 Z 值切片内为同一颜色。
 
 .. include:: explain_-V.rst_
 
