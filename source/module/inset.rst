@@ -23,9 +23,11 @@ inset begin语法
 
 **gmt inset begin**
 |-D|\ *inset-box*
+[ |-C|\ [*side*]\ *clearance* ]
 [ |-F|\ *box* ]
-[ |-C|\ *clearance* ]
 [ |-N| ]
+[ |SYN_OPT-R| ]
+[ |-J|\ *parameters* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 
@@ -79,6 +81,10 @@ inset begin语法
 
 **-N**
     不裁剪超过小图区域边界的部分。
+
+.. include:: explain_-R.rst_
+
+.. include:: explain_-J.rst_
 
 .. include:: explain_-V.rst_
 
