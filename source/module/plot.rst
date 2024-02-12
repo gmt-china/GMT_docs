@@ -563,8 +563,8 @@ plot
 制作和使用自定义符号
 --------------------
 
-如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据 
-`GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html>`__
+如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据
+`GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/reference/custom-symbols.html>`__
 的格式要求自行制作自定义符号文件。
 
 使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 :file:`name.def`：

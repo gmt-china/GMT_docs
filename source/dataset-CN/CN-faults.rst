@@ -130,4 +130,3 @@ CN-faults 提供了一个数据文件 :file:`CN-faults.gmt`：中国区域主要
 - Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003.
   Active tectonics and earthquake activities in China.
   Earth Science Frontiers, 10(S1): 66-73.
-  https://en.cnki.com.cn/Article_en/CJFDTotal-DXQY2003S1011.htm.

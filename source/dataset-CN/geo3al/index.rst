@@ -19,7 +19,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 数据的具体下载地址和使用方式请见：:doc:`/dataset-CN/index`。
 
 数据中包含了如下非空间元信息（可以参考
-`geo3al.shp.xml <https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml>`__
+`geo3al.shp.xml <https://www.sciencebase.gov/catalog/file/get/60abc7f9d34ea221ce51e5ee?f=__disk__8d%2Fb6%2Fc0%2F8db6c0b602ae57f8aaacfb088b6e33c4019de3e8>`__
 以获取元信息的更多细节）：
 
 - ``AREA``：地层多边形区域的面积（单位 :math:`m^2`）
