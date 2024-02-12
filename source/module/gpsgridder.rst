@@ -211,6 +211,6 @@ Sandwell, D. T. and P. Wessel, 2016, Interpolation of 2-D Vector Data Using Cons
 相关模块
 --------
 
-:doc:`greenspline` 
+:doc:`gmt:greenspline`
 :doc:`nearneighbor` 
 :doc:`surface` 
