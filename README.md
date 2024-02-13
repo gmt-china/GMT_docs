@@ -4,7 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
-[![Documentation version](https://img.shields.io/badge/版本-v6.4-blue.svg)](https://docs.gmt-china.org/latest/)
+[![Documentation version](https://img.shields.io/badge/版本-v6.5-blue.svg)](https://docs.gmt-china.org/latest/)
 ![Repository size](https://img.shields.io/github/repo-size/gmt-china/GMT_Docs)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
 

@@ -49,8 +49,8 @@ GMT 是地球科学使用最广泛的制图软件之一。
     :columns: 3
 
     - `GMT 中文手册源码 <https://github.com/gmt-china/GMT_docs>`__
-    - `GMT 中文手册 PDF <https://docs.gmt-china.org/6.4/GMT_docs.pdf>`__
-    - `GMT 中文手册 HTML ZIP <https://docs.gmt-china.org/6.4/GMT_docs.zip>`__
+    - `GMT 中文手册 PDF <https://docs.gmt-china.org/6.5/GMT_docs.pdf>`__
+    - `GMT 中文手册 HTML ZIP <https://docs.gmt-china.org/6.5/GMT_docs.zip>`__
 
 .. toctree::
    :maxdepth: 3

@@ -53,7 +53,7 @@ macOS 下安装 GMT 有多种方式：
     重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
         $ gmt --version
-        6.4.0
+        6.5.0
 
 4.  升级 GMT
 
@@ -79,10 +79,10 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 
 1. 下载
 
-   - Intel：`gmt-6.4.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.4.0-darwin-x86_64.dmg>`__
-   - ARM：`gmt-6.4.0-darwin-arm64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.4.0-darwin-arm64.dmg>`__
+   - Intel：`gmt-6.5.0-darwin-x86_64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-darwin-x86_64.dmg>`__
+   - ARM：`gmt-6.5.0-darwin-arm64.dmg <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-darwin-arm64.dmg>`__
 
-2. 双击 dmg 包，在弹出的 Finder 窗口中，将 :file:`GMT-6.4.0.app` 拖动到 :file:`Applications` 目录
+2. 双击 dmg 包，在弹出的 Finder 窗口中，将 :file:`GMT-6.5.0.app` 拖动到 :file:`Applications` 目录
 
 3. 在 Finder 的左侧边栏中点击 **Applications**，找到 GMT 图标并右键点击，
    按下 :kbd:`option` 键的同时鼠标点击“Open”选项。
@@ -92,7 +92,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 4. GMT 会启动一个终端并显示欢迎信息。根据欢迎信息中的
    提示将如下语句添加到 :file:`~/.zshrc` 中以修改环境变量::
 
-       export GMTHOME=/Applications/GMT-6.4.0.app/Contents/Resources
+       export GMTHOME=/Applications/GMT-6.5.0.app/Contents/Resources
        export PATH=${GMTHOME}/bin:${PATH}
        export PROJ_LIB=$GMTHOME/share/proj
        export GS_LIB=$GMTHOME/share/ghostscript/Resource/Init
@@ -105,7 +105,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 5. 打开一个终端，输入如下命令，检测安装是否成功::
 
        $ gmt --version
-       6.4.0
+       6.5.0
 
 6.  卸载 GMT
 
@@ -144,7 +144,7 @@ Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用�
 4.  重新打开一个终端，检测安装是否成功::
 
         $ gmt --version
-        6.4.0
+        6.5.0
 
 5.  升级 GMT。当有新版本发布时，可以执行如下命令升级 GMT::
 
