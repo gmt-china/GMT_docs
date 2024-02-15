@@ -18,15 +18,16 @@ Ghostscript 的中文支持，GMT 生成的图片中的中文将会出现乱码�
 
 Ghostscript 安装包下载地址:
 
-- `gs9561w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/gs9561w64.exe>`__
-- `gs9561w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/gs9561w32.exe>`__
+- `gs10020w64.exe（64 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10020/gs10020w64.exe>`__
+- `gs10020w32.exe（32 位） <https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10020/gs10020w32.exe>`__
 
 .. warning::
 
    请注意 Ghostscript 的版本！
    由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
    此外 GMT 6.4 以及之前的版本有 bug，与 Ghostscript 10.0.0 不兼容，
-   导致 GMT 6.4 + Ghostscript 10.0.0 的组合无法绘制出半透明效果的图片。
+   导致 GMT 6.4 + Ghostscript 10.0.0 的组合无法绘制出半透明效果的图片，
+   请使用 GMT 6.5 + Ghostscript 10.02.0。
 
 .. note::
 
