@@ -190,7 +190,7 @@ meca
    :show-code: true
    :width: 75%
 
-    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png,pdf beachball_1 << EOF
+    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png beachball_1 << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
     104.33 31.91 39.8 32 64 85 7 0 0 A
     104.11 31.52 27.1 22 53 57 6 0 0 B
@@ -202,14 +202,11 @@ meca
    :show-code: true
    :width: 75%
 
-    #!/usr/bin/env bash
-    gmt begin beachball_2
-    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M << EOF
+    gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M -png beachball_2 << EOF
     # 经度 纬度 深度(km) strike dip rake 震级 newX newY ID
     104.33 31.91 39.8 32 64 85 7 0 0 A
     104.11 31.52 27.1 22 53 57 6 0 0 B
     EOF
-    gmt end show
 
 .. _gmt-meca-cpt-example:
 
