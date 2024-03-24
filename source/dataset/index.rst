@@ -38,6 +38,7 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
 - :doc:`gadm/index`
 - :doc:`PB2002/index`
 - :doc:`global_tectonics/index`
+- :doc:`WSM_2016/index`
 
 用户还可以在网上找到更多其他地学相关数据。可根据需求自行下载，并使用 GDAL 提供的
 :ref:`ogr2ogr` 或 :ref:`gdal_translate` 命令转换为 GMT 可识别的数据格式。
@@ -68,3 +69,4 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
    gadm/index
    PB2002/index
    global_tectonics/index
+   WSM_2016/index
