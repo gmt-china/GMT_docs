@@ -62,3 +62,8 @@
         
     gmt end show
     
+地应力符号也较为常用，本社区也提供了相应的实例作为参考，供读者下载 :download:`Custom_Symbol_Stress.zip` 
+
+.. gmtplot:: Custom_Symbol_Stress.sh
+    :caption: 绘制地应力符号
+    :width: 100%
