@@ -80,6 +80,6 @@ $1 O
 0 0 0.25 d
 EOF
     # 使用 awk 命令提取该类型的测点数据并绘制
-    awk -F, '($6 == "DIF") {print $4, $3, $5}' wsm2016.csv | gmt plot -SkBS/0.1c -W0p,black -Gblack
+    awk -F, '($6 == "DIF") {print $4, $3, $5}' wsm2016.csv | gmt plot -SkDIF/0.1c -W0p,black -Gblack
 
 gmt end show
