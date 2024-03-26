@@ -63,12 +63,12 @@ $1 O
 EOF
 
     # 使用 gawk 命令提取该类型的测点数据并绘制
-    gawk -F, "($6 == \"FMF\" || $6 == \"FMS\" || $6 == \"FMA\") {print $4, $3, $5}" wsm2016.csv | gmt plot -Skfocal_mec/0.1c -W0p,yellow -Gyellow
-    gawk -F, "($6 == \"BO\" || $6 == \"BOC\" || $6 == \"BOT\") {print $4, $3, $5}" wsm2016.csv | gmt plot -Skborehole_collapse/0.1c -W0p,orange -Gorange
-    gawk -F, "$6 == \"OC\" {print $4, $3, $5}" wsm2016.csv | gmt plot -Skstress_relief/0.1c -W0p,blue
-    gawk -F, "($6 == \"HF\" || $6 == \"HFG\" || $6 == \"HFM\" || $6 == \"HFP\") {print $4, $3, $5}" wsm2016.csv | gmt plot -Skhydra_fract/0.1c -W0p,red -Gred
-    gawk -F, "($6 == \"GFI\" || $6 == \"GFM\" || $6 == \"GFS\") {print $4, $3, $5}" wsm2016.csv | gmt plot -Skfault_slip/0.1c -W0p,green -Ggreen
-    gawk -F, "($6 == \"BS\") {print $4, $3, $5}" wsm2016.csv | gmt plot -SkBS/0.1c -W0p,pink -Gpink
-    gawk -F, "($6 == \"DIF\") {print $4, $3, $5}" wsm2016.csv | gmt plot -SkDIF/0.1c -W0p,black -Gblack
+    gawk -F, '($6 == "FMF" || $6 == "FMS" || $6 == "FMA") {print $4, $3, $5}' wsm2016.csv | gmt plot -Skfocal_mec/0.1c -W0p,yellow -Gyellow
+    gawk -F, '($6 == "BO" || $6 == "BOC" || $6 == "BOT") {print $4, $3, $5}' wsm2016.csv | gmt plot -Skborehole_collapse/0.1c -W0p,orange -Gorange
+    gawk -F, '$6 == "OC" {print $4, $3, $5}' wsm2016.csv | gmt plot -Skstress_relief/0.1c -W0p,blue
+    gawk -F, '($6 == "HF" || $6 == "HFG" || $6 == "HFM" || $6 == "HFP") {print $4, $3, $5}' wsm2016.csv | gmt plot -Skhydra_fract/0.1c -W0p,red -Gred
+    gawk -F, '($6 == "GFI" || $6 == "GFM" || $6 == "GFS") {print $4, $3, $5}' wsm2016.csv | gmt plot -Skfault_slip/0.1c -W0p,green -Ggreen
+    gawk -F, '($6 == "BS") {print $4, $3, $5}' wsm2016.csv | gmt plot -SkBS/0.1c -W0p,pink -Gpink
+    gawk -F, '($6 == "DIF") {print $4, $3, $5}' wsm2016.csv | gmt plot -SkDIF/0.1c -W0p,black -Gblack
 
 gmt end show
