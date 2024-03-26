@@ -62,7 +62,7 @@ $1 O
 0 0 0.25 d
 EOF
 
-    # 使用 awk 命令提取该类型的测点数据并绘制
+    # 使用 gawk 命令提取该类型的测点数据并绘制
     gawk -F, "($6 == \"FMF\" || $6 == \"FMS\" || $6 == \"FMA\") {print $4, $3, $5}" wsm2016.csv | gmt plot -Skfocal_mec/0.1c -W0p,yellow -Gyellow
     gawk -F, "($6 == \"BO\" || $6 == \"BOC\" || $6 == \"BOT\") {print $4, $3, $5}" wsm2016.csv | gmt plot -Skborehole_collapse/0.1c -W0p,orange -Gorange
     gawk -F, "$6 == \"OC\" {print $4, $3, $5}" wsm2016.csv | gmt plot -Skstress_relief/0.1c -W0p,blue
