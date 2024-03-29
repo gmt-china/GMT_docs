@@ -62,25 +62,25 @@ coupe
 **-A**
     以多种方式指定剖面
 
-**-Aa**\ *lon1/lat1/lon2/lat2/[**+d**\ *dip*][**+w**\ *width*]
+**-Aa**\ *lon1/lat1/lon2/lat2/\ [**+d**\ *dip*][**+w**\ *width*]
 
     - *lon1/lat1* 剖面起点的经纬度
     - *lon2/lat2* 剖面终点的经纬度
     - *dip* 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）
     - *width* 剖面的宽度，单位为km（即剖面不是一个平面，而是一个有厚度的长方体）
 
-**-Ab**\ *lon1/lat1/strike/p\_length/[**+d**\ *dip*][**+w**\ *width*]
+**-Ab**\ *lon1/lat1/strike/p\_length/\ [**+d**\ *dip*][**+w**\ *width*]
 
     - *lon1/lat1* 剖面起点的经纬度
     - *strike* 是剖面的走向的方位角
     - *p_length* 是剖面的长度，单位km
     - 其他参数与 **-Aa** 相同
 
-**-Ac**\ *x1/y1/x2/y2/[**+d**\ *dip*][**+w**\ *width*]
+**-Ac**\ *x1/y1/x2/y2/\ [**+d**\ *dip*][**+w**\ *width*]
 
     与 **-Aa** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
 
-**-Ad**\ *x1/y1/strike/p\_length/[**+d**\ *dip*][**+w**\ *width*]
+**-Ad**\ *x1/y1/strike/p\_length/\ [**+d**\ *dip*][**+w**\ *width*]
     与 **-Ab** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
 
 .. include:: explain_meca_-S.rst_
