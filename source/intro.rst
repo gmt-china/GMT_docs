@@ -221,7 +221,7 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
 **参考手册**
 
 #. `GMT 中文手册 <https://docs.gmt-china.org/>`__
-#. :gmt-docs:`GMT 官方参考手册 <cookbook.html>`
+#. :gmt-docs:`GMT 官方参考手册 <reference.html>`
 #. :gmt-docs:`GMT 官方模块手册 <modules.html>`
 
 **论坛/讨论组**
