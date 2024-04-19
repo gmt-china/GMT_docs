@@ -4,9 +4,13 @@
 
 gmt begin profile
 
-    # 绘制地形图
     gmt basemap -JM12c -R122/149/30/48 -Baf
-    gmt grdimage @earth_relief_04m -Cglobe -I+d
+    # 让0到2000m海拔的颜色从白，灰再到黑色渐变，生成cpt
+    gmt makecpt -Cwhite,gray,black -T0/2000 -Z
+    # 绘制灰度地形底图
+    gmt grdimage @earth_relief_04m -C -I+d
+    # 用蓝色填充海洋
+    gmt coast -S167/194/223
     # 选取测线AB
     echo 126 42 A > tmp1
     echo 146 40 B >> tmp1
