@@ -32,7 +32,7 @@ gravfft
 [ |-C|\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w** ]
 [ |-D|\ *density*\|\ *rhogrid* ]
 [ |-E|\ *n_terms* ]
-[ |-F|\ [**f**\ [**+s**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**] ]
+[ |-F|\ [**f**\ [**+s**\|\ **z**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**] ]
 [ |-I|\ **w**\|\ **b**\|\ **c**\|\ **t**\|\ **k** ]
 [ |-N|\ *params* ]
 [ |-Q| ]
@@ -54,9 +54,9 @@ gravfft
 .. _-G:
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**][:*driver*\ [*dataType*][**+c**\ *options*]]
-    
+
     输出网格名，计算实体对该网格内的点的异常值。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 
+    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
 
 可选选项
 --------
