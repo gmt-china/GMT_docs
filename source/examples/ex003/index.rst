@@ -27,7 +27,7 @@
 
     gmt grdimage other-data.nc -Iearth-relief-data.nc+d ...
 
-此时，GMT 会自动计算地形起伏数据 earth-relief-data.nc 的梯度，并在绘制原始
+在 ``-I`` 末尾加上 ``+d`` ，GMT 会自动计算地形起伏数据 earth-relief-data.nc 的梯度，并在绘制原始
 网格数据 other-data.nc 用自动计算出的梯度数据进行明暗调制。
 
 下面的示例展示了在绘制洋壳年龄数据时如何增加地形起伏效果。原始洋壳年龄数据

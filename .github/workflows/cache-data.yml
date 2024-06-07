@@ -11,54 +11,44 @@ on:
 jobs:
   gmt_cache:
     name: Cache GMT artifacts
-    runs-on: macOS-latest  # must be macos
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -l {0}
 
     steps:
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1.9.0
         with:
-          channels: conda-forge
-          miniconda-version: "latest"
+          environment-name: gmtdocs
+          condarc: |
+            channels:
+              - conda-forge
+              - nodefaults
+          create-args: >-
+            gmt=6.5.0
 
-      - name: Install GMT
-        run: conda install -c conda-forge gmt=6.4.0
+      - name: Download data and change configurations
+        run: bash scripts/setup-ci.sh
 
-      - name: Download remote data
+      - name: Check files
         run: |
-          gmt which -Ga @earth_relief_30m \
-                        @earth_relief_20m \
-                        @earth_relief_10m \
-                        @earth_relief_06m \
-                        @earth_relief_05m \
-                        @earth_age_06m \
-                        @earth_day_20m \
-                        @earth_day_06m \
-                        @earth_night_20m \
-                        @earth_mask_05m
-          gmt grdcut @earth_relief_01m -R118/125/20/26 -G/dev/null
-          # cache
-          gmt which -Ga @age_chrons_GTS2012_2020.cpt \
-                        @ternary.txt \
-                        @mississippi.txt \
-                        @NY_traffic.txt \
-                        @sunglasses.eps
-          # Download the china-geospatial-data datasets
-          git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
-          rm -rf china-geospatial-data/.git
-          mv china-geospatial-data/* ~/.gmt/cache/
-          # Download custom symbols
-          git clone --depth 1 https://github.com/gmt-china/GMT_custom_symbols GMT_custom_symbols
-          rm -rf GMT_custom_symbols/.git
-          mv GMT_custom_symbols ~/.gmt/custom/
+          ls -lhR ~/.gmt
+          gmt text -L
+          cat ~/.gmt/cidfmap
+          cat ~/.gmt/PSL_custom_fonts.txt
+
+      # We don't want to cache GMT's sessions directory
+      - name: Clear GMT's sessions
+        # Can't use 'gmt clear sessions' because it returns non-zero exit code
+        # when sessions directory don't exist.
+        run: rm -rf ~/.gmt/sessions
 
       - name: Upload artifacts to GitHub
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gmt-cache
-          path: |
-              ~/.gmt/cache
-              ~/.gmt/server
-              ~/.gmt/custom
+          path: ~/.gmt

@@ -10,7 +10,7 @@ talwani3d
 ----
 
 :官方文档: :doc:`gmt:supplements/potential/talwani3d`
-:简介: 使用 Talwani 方法计算三维物体形成的位异常
+:简介: 使用 Talwani 方法计算三维实体形成的位异常
 
 **talwani3d** 读取一个多段表文件（或标准输入）。该文件包含一个三维物体在不同的
 高度 *z-level* 下的轮廓，每段均代表一个轮廓。每段的头部信息必须包括高度
@@ -158,7 +158,7 @@ talwani3d
 
 Kim, S.-S., and P. Wessel, 2016, New analytic solutions for modeling vertical
 gravity gradient anomalies, *Geochem. Geophys. Geosyst., 17*,
-`http://doi.org/10.1002/2016GC006263 <http://doi.org/10.1002/2016GC006263>`_.
+`https://doi.org/10.1002/2016GC006263 <https://doi.org/10.1002/2016GC006263>`_.
 
 Talwani, M., and M. Ewing, 1960, Rapid computation of gravitational attraction of
 three-dimensional bodies of arbitrary shape, *Geophysics, 25*, 203-225.

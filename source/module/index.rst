@@ -4,24 +4,29 @@
 **GMT 主程序与脚本**
 
 .. hlist::
-    :columns: 6
+    :columns: 4
 
     - :doc:`gmt`
     - :doc:`gmt-config`
+    - :doc:`gmtswitch`
 
 **GMT 模块（已翻译整理）**
 
 .. hlist::
-    :columns: 6
+    :columns: 4
 
     - :doc:`basemap`
     - :doc:`begin`
+    - :doc:`blockmean`
+    - :doc:`blockmedian`
+    - :doc:`blockmode`
     - :doc:`clear`
     - :doc:`clip`
     - :doc:`coast`
     - :doc:`colorbar`
     - :doc:`contour`
     - :doc:`coupe`
+    - :doc:`dimfilter`
     - :doc:`docs`
     - :doc:`end`
     - :doc:`figure`
@@ -29,6 +34,7 @@
     - :doc:`fitcircle`
     - :doc:`gmtbinstats`
     - :doc:`gmtconnect`
+    - :doc:`gmtconvert`
     - :doc:`gmtdefaults`
     - :doc:`gmtget`
     - :doc:`gmtinfo`
@@ -49,7 +55,10 @@
     - :doc:`grdconvert`
     - :doc:`grdcut`
     - :doc:`grdedit`
+    - :doc:`grdfft`
     - :doc:`grdfill`
+    - :doc:`grdfilter`
+    - :doc:`grdgdal`
     - :doc:`grdimage`
     - :doc:`grdinfo`
     - :doc:`grdlandmask`
@@ -58,6 +67,7 @@
     - :doc:`grdpaste`
     - :doc:`grdproject`
     - :doc:`grdsample`
+    - :doc:`grdselect`
     - :doc:`grdtrack`
     - :doc:`grdtrend`
     - :doc:`grdvector`
@@ -97,6 +107,8 @@
     - :doc:`velo`
     - :doc:`wiggle`
     - :doc:`xyz2grd`
+    - :doc:`earthtide`
+    - :doc:`gpsgridder`
     - :doc:`x2sys_init`
     - :doc:`x2sys_binlist`
     - :doc:`x2sys_cross`
@@ -130,22 +142,13 @@
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
 .. hlist::
-    :columns: 6
+    :columns: 4
 
     - :doc:`gmt:batch`
-    - :doc:`gmt:blockmean`
-    - :doc:`gmt:blockmedian`
-    - :doc:`gmt:blockmode`
-    - :doc:`gmt:dimfilter`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtconvert`
     - :doc:`gmt:gmtregress`
-    - :doc:`gmt:gmtswitch`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdfft`
-    - :doc:`gmt:grdgdal`
-    - :doc:`gmt:grdfilter`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdinterpolate`
@@ -153,8 +156,6 @@
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/geodesy/earthtide`
-    - :doc:`gmt:supplements/geodesy/gpsgridder`
     - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
@@ -240,7 +241,7 @@
 :doc:`makecpt`                                   生成 CPT 文件
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
-:doc:`gmt:gmtconvert`                            表数据格式转换、列提取、列粘贴
+:doc:`gmtconvert`                                表数据格式转换、列提取、列粘贴
 :doc:`gmt:trend1d`                               一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
 :doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
@@ -265,20 +266,21 @@
 :doc:`grdedit`                                   修改网格文件的头段或内容
 :doc:`grdinfo`                                   从网格文件中提取基本信息
 :doc:`grdsample`                                 对网格文件做重采样
+:doc:`grdselect`                                 根据多个空间标准选择网格数据
 :doc:`grdlandmask`                               根据海岸线数据创建陆地-海洋的 mask 网格文件
 :doc:`grdvolume`                                 计算网格数据中某个等值线所包围的表面积和体积
 :doc:`grdtrend`                                  拟合网格的趋势面并计算残差
 :doc:`grdproject`                                对网格数据做地图变换和逆变换
 :doc:`grdmask`                                   根据多边形数据或点数据创建 mask 网格文件
 :doc:`grdmath`                                   对网格文件做数学计算操作
-:doc:`gmt:grdfilter`                             对网格文件做空间域或时间域滤波
-:doc:`gmt:grdfft`                                对网格文件在波数域或频率域做操作
+:doc:`grdfilter`                                 对网格文件做空间域或时间域滤波
+:doc:`grdfft`                                    对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
 :doc:`gmt:grdhisteq`                             对网格做直方图均衡
 :doc:`grd2cpt`                                   根据网格文件的值生成 CPT 文件
-:doc:`gmt:blockmean`                             使用 L2 范式对 (x,y,z) 数据做区块平均
-:doc:`gmt:blockmedian`                           使用 L1 范式对 (x,y,z) 数据做区块平均
-:doc:`gmt:blockmode`                             使用模估计对 (x,y,z) 数据做区块平均
+:doc:`blockmean`                                 使用均值估计对 (x,y,z) 数据做区块处理
+:doc:`blockmedian`                               使用中位数估计对 (x,y,z) 数据做区块处理
+:doc:`blockmode`                                 使用众数估计对 (x,y,z) 数据做区块处理
 :doc:`gmtbinstats`                               统计落入网格节点的数据
 :doc:`surface`                                   使用可调节张量连续曲率样条插值法对数据进行网格化
 :doc:`gmtsplit`                                  将表数据拆分为单独的数据段
@@ -290,7 +292,7 @@
 :doc:`sphdistance`                               计算球面上的 Voronoi 距离、节点或自然最邻近网格
 :doc:`sphinterpolate`                            球面数据的网格化
 :doc:`sphtriangulate`                            球面数据的 Delaunay 三角网或 Voronoi 图构建
-:doc:`gmt:dimfilter`                             在空间域对网格数做方向性滤波
+:doc:`dimfilter`                                 在空间域对网格数据做方向中值滤波
 **参数设置**                                     .. _module_parameter_setting:
 :doc:`gmtdefaults`                               列出所有 GMT 参数的当前值
 :doc:`gmtset`                                    修改单个或多个 GMT 参数的值
@@ -350,12 +352,14 @@
 :doc:`talwani3d`                                 计算 3-D 实体产生的位异常
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
 :doc:`img2grd`                                   从墨卡托 img 格式文件中提取网格数据
-:doc:`gmt:supplements/geodesy/gpsgridder`        Interpolate GPS velocity vectors using Green's functions
+:doc:`gpsgridder`                                使用格林函数内插 GPS 速度向量
+:doc:`earthtide`                                 计算固体地球潮汐网格或者时间序列
 **其他脚本**                                     .. _other_scripts:
-:doc:`gmt:gmtswitch`                             GMT多版本之间切换
+:doc:`gmtswitch`                                 GMT 多版本之间切换
 ================================================ ========================================================================
 
 .. raw:: latex
@@ -373,12 +377,16 @@
 
    basemap
    begin
+   blockmean
+   blockmedian
+   blockmode
    clear
    clip
    coast
    colorbar
    contour
    coupe
+   dimfilter
    docs
    end
    figure
@@ -388,16 +396,18 @@
    gmt-config
    gmtbinstats
    gmtconnect
+   gmtconvert
    gmtdefaults
    gmtget
    gmtinfo
    gmtlogo
-   gmtmath 
+   gmtmath
    gmtselect
    gmtset
    gmtsimplify
    gmtspatial
    gmtsplit
+   gmtswitch
    gmtvector
    gmtwhich
    grd2cpt
@@ -408,7 +418,10 @@
    grdconvert
    grdcut
    grdedit
+   grdfft
    grdfill
+   grdfilter
+   grdgdal
    grdimage
    grdinfo
    grdlandmask
@@ -417,6 +430,7 @@
    grdpaste
    grdproject
    grdsample
+   grdselect
    grdtrack
    grdtrend
    grdvector
@@ -456,6 +470,8 @@
    velo
    wiggle
    xyz2grd
+   earthtide
+   gpsgridder
    x2sys_init
    x2sys_binlist
    x2sys_cross

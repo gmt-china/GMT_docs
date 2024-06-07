@@ -1,0 +1,9 @@
+ASCII 格式精度
+--------------
+
+ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+:term:`FORMAT_GEO_OUT` ；控制绝对时间的的参数包括 :term:`FORMAT_DATE_OUT`
+和 :term:`FORMAT_CLOCK_OUT` ；普通浮点数通过参数 :term:`FORMAT_FLOAT_OUT`
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+:term:`FORMAT_FLOAT_OUT` 指定更多的有效数字。

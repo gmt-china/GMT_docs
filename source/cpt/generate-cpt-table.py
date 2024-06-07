@@ -8,21 +8,21 @@ for i in range(0, len(lines) - 1, 3):
     cpt_left = os.path.splitext(lines[i])[0]
     cpt_middle = os.path.splitext(lines[i+1])[0]
     cpt_right = os.path.splitext(lines[i+2])[0]
-    print('+--------------------------------+--------------------------------+--------------------------------+')
+    print('+-----------------------------------------+-----------------------------------------+-----------------------------------------+')
     print('| .. figure:: cpt/{}.* {} | .. figure:: cpt/{}.* {} | .. figure:: cpt/{}.* {} |'.format(cpt_left,
-                                                                                                   " " * (11 - len(cpt_left)),
+                                                                                                   " " * (20 - len(cpt_left)),
                                                                                                    cpt_middle,
-                                                                                                   " " * (11 - len(cpt_middle)),
+                                                                                                   " " * (20 - len(cpt_middle)),
                                                                                                    cpt_right,
-                                                                                                   " " * (11 - len(cpt_right))))
-    print('|    :align: center              |    :align: center              |    :align: center              |')
-    print('|                                |                                |                                |')
+                                                                                                   " " * (20 - len(cpt_right))))
+    print('|    :align: center                       |    :align: center                       |    :align: center                       |')
+    print('|                                         |                                         |                                         |')
     print('|    {} {} |    {} {} |    {} {} |'.format(cpt_left,
-                                                      " " * (26 - len(cpt_left)),
+                                                      " " * (35 - len(cpt_left)),
                                                       cpt_middle,
-                                                      " " * (26 - len(cpt_middle)),
+                                                      " " * (35 - len(cpt_middle)),
                                                       cpt_right,
-                                                      " " * (26 - len(cpt_right))))
+                                                      " " * (35 - len(cpt_right))))
 # cpt_left = os.path.splitext(lines[-1])[0]
 # print('+--------------------------------+--------------------------------+')
 # print('| .. figure:: cpt/{}.* {} | {} |'.format(cpt_left, " " * (11 - len(cpt_left)), " " * 30))
@@ -30,4 +30,4 @@ for i in range(0, len(lines) - 1, 3):
 # print('|                                |                                |')
 # print('|    {} {} | {} |'.format(cpt_left, " " * (26 - len(cpt_left)), " " * 30))
 
-print('+--------------------------------+--------------------------------+--------------------------------+')
+print('+-----------------------------------------+-----------------------------------------+-----------------------------------------+')

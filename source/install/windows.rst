@@ -1,8 +1,8 @@
 Windows 下安装 GMT
 ==================
 
-:贡献者: |田冬冬|, |陈箫翰|
-:最近更新日期: 2022-06-21
+:撰写: |田冬冬|, |陈箫翰|, |姚家园|, |周茂|
+:最近更新日期: 2023-09-20
 
 ----
 
@@ -11,20 +11,16 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 .. warning::
 
     - 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；
-      （2）是否为 **Administrator**。以上两种情况都可能导致 GMT 运行出错。
+      （2）是否包含中文。以上两种情况都可能导致 GMT 运行出错。
       如果用户名不符合要求，请新建一个用户。然后使用新用户登录 Windows，再安装 GMT。
     - 360 等安全软件会在 GMT 安装过程中拦截 **PATH** 环境变量的修改。
       请务必关闭安全软件之后再安装。
-    - 建议将 GMT 安装在 C 盘默认目录。安装在其他分区可能会导致下载高精度地形数据时出错。
     - GMT 提供的安装包不支持 Windows XP。
 
 安装 GMT
 --------
 
-1.  下载 GMT 安装包
-
-    - 64 位安装包：`gmt-6.4.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.4.0-win64.exe>`__
-    - 32 位安装包：`gmt-6.4.0-win32.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.4.0-win32.exe>`__
+1.  下载 GMT 安装包 `gmt-6.5.0-win64.exe <http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-win64.exe>`__
 
     GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 
@@ -62,80 +58,38 @@ GMT 为 Windows 用户提供了 32 位和 64 位安装包，可以直接下载�
 
 5.  卸载 GMT
 
-    若想要卸载 GMT，可以进入 GMT 安装目录，找到并双击执行 ``Uninstall.exe`` 即可完成卸载。
+    若想要卸载 GMT，可以进入系统的设置 -> 应用，或控制面板 -> 卸载程序进行卸载。
     偶尔会遇到卸载不干净的情况，可以等卸载程序执行完成后再手动删除 GMT 安装目录即可。
 
 安装可选软件
 ------------
-
-为了更好地使用 GMT，用户可以根据自己的实际需求选择安装如下软件。
-
-Visual Studio Code
-^^^^^^^^^^^^^^^^^^
-
-Visual Studio Code (VS Code) 是微软推出的一款免费、轻量且功能强大的编辑器。
-VS Code 不仅支持一键执行、语法高亮、分屏显示，还可实现 Batch/Bash 脚本的丝滑切换运行、
-实时预览 PDF、JPG 以及 GIF 等格式的图件、脚本报错信息显示。因此，非常适合全平台下执行 GMT 脚本。
-
-安装和配置教程：https://gmt-china.org/blog/vscode-usage/
-
-.. warning::
-
-    使用 VS Code 内置终端运行 Batch 绘图脚本时，**请一定要选择 CMD 终端，绝对不要使用 PowerShell**。
-    PowerShell 运行 Batch 绘图脚本会出现无法使用 GMT 远程数据等错误。
-    CMD 终端的切换方法在上面的安装配置教程中已有详细说明。
-
-脚本工具
-^^^^^^^^
-
-.. rubric:: Git for Windows
-
-Windows 用户可以编写 Bash 脚本来执行 GMT 命令。推荐 Bash 用户安装 Git for Windows。
-其为 Windows 用户提供了 Bash 以及 Linux 的常用命令，方便用户在 Windows 下运行 Bash 脚本。
-
-下载地址：https://git-scm.com/download/win
-
-.. _unixtools:
-
-.. rubric:: UnixTools
-
-Windows 用户也可以编写 Batch 脚本来执行 GMT 命令。
-但是，GMT 中文手册的实例中使用到的 ``gawk`` 等 Linux 下的命令既不是 Windows 下的命令，
-也不是 GMT 的一部分。因此，若想在 Batch 脚本使用 Linux 的常用命令，
-推荐安装和使用 GMT 中文社区整理的 Unix 小工具合集包 UnixTools。
-Windows 下的 Bash 用户不需要安装 UnixTools。
-
-下载 :download:`UnixTools.zip <UnixTools.zip>`，
-然后将解压得到的 exe 文件移动到 GMT 安装目录下的 :file:`bin` 目录即可。UnixTools 包含了如下程序：
-
-- ``cat``：显示文件内容
-- ``cut``：从指定文本中截取文本并输出至标准输出
-- ``gawk``：处理文本信息的编程语言工具
-- ``grep``：从指定文本或标准输入中识别并截取出特定字段等
-- ``head``：输出一个或多个指定文本的前 n 行
-- ``join``：将两个文件中文本一致的行连接并输出
-- ``md5sum``：检验文本的 MD5 摘要
-- ``paste``：并排输出两个文件的内容
-- ``printf``：按 C 语言格式输出文本
-- ``sed``：文本处理工具
-- ``sort``：对文本文档进行排序
-- ``split``：以行为单位切割文件
-- ``tail``：显示文件尾端的 n 行数据
-- ``uniq``：从文本中去除或禁止重复行
-- ``wc``：输出指定文件的行数、字数和文本数据大小
-
-可以参考《`Linux 常用命令 <https://seismo-learn.org/seismology101/computer/commands/>`__》
-简易教程学习这些命令的基本用法。
-
-.. note::
-
-    以上 Unix 工具均提取自 `MS4W <https://www.ms4w.com/>`__。如果你发现某些工具存在问题，
-    或者觉得有其他需要的 Unix 工具没有被包含进来，请向我们反馈，我们会酌情考虑。
 
 GraphicsMagick
 ^^^^^^^^^^^^^^
 
 GMT 的 :doc:`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
 `GraphicsMagick <http://www.graphicsmagick.org/>`__。
-如需制作 GIF 动画，可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
+如有制作 GIF 动画的需求，则可以安装这个软件，并将其 :file:`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 ``gm`` 命令。
+
+安装 Bash 环境
+--------------
+
+GMT 可以直接在 Windows 下的 Batch 脚本中使用，但由于 Batch 脚本自身功能的局限性，无法完全发挥
+GMT 的强大功能。因而，建议 Windows 用户安装 Bash 环境并编写 Bash 脚本来使用 GMT。
+
+使用 Bash 环境的优势在于：
+
+1. Bash 语法比 Batch 语法更丰富，提供了更多的功能
+2. Bash 环境提供了多个可用于数据处理的命令行工具，为 GMT 数据处理和进一步绘图提供了支撑
+3. 本教程中所有脚本均为 Bash 语法，读者可不做修改直接在 Bash 环境中执行
+
+在 Windows 下使用 Bash 环境的方式有很多，如:
+
+1. `Git for Windodws <https://gitforwindows.org/>`__
+2. `Cygwin <https://cygwin.com/>`__
+3. `MSYS2 <https://www.msys2.org/>`__
+4. `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/>`__
+
+用户可以根据自己的喜欢选择合适的 Bash 环境。对于不熟悉 Bash 环境的用户，可以直接安装
+Git for Windows。

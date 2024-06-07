@@ -17,7 +17,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.4"
+version = "6.5"
 release = version
 
 # -- Contributor information ---------------------------------------------
@@ -58,6 +58,8 @@ extensions = [
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
+# use custom templater bridge defined in _extensions/templatebridge.py
+template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
@@ -99,23 +101,27 @@ html_search_language = "zh"
 html_title = project
 
 # set site url of the image gallery for different use cases
-siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
-if not os.getenv("CI"):  # build locally
+if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
+    siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+    basedir_for_gallery = "source/"
+elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
+    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    basedir_for_gallery = "./"
+else:  # build locally
     siteurl_for_gallery = ""
-elif os.getenv("GITHUB_HEAD_REF"):  # GITHUB_HEAD_REF is only defined for PR.
-    siteurl_for_gallery = f"https://gmt-china.github.io/sitepreview/gmt-china/GMT_docs/{os.getenv('GITHUB_HEAD_REF')}"
 
 html_context = {
     "favicon": "favicon.ico",
     "display_github": True,
     "github_user": github_user,
     "github_repo": github_repo,
-    "github_version": "master",
+    "github_version": "main",
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "edit",
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     # Passed to sphinxcontrib.datatemplates
     "siteurl": siteurl_for_gallery,
+    "basedir": basedir_for_gallery,
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 
@@ -123,14 +129,6 @@ html_context = {
         (
             '<i class="fa fa-globe fa-fw"></i> GMT 中文社区',
             "https://gmt-china.org",
-        ),
-        (
-            '<i class="fa fa-github fa-fw"></i> 手册源码',
-            github_url,
-        ),
-        (
-            '<i class="fa fa-book fa-fw"></i> 手册 PDF',
-            "https://docs.gmt-china.org/{}/GMT_docs.pdf".format(version),
         ),
         (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',

@@ -108,7 +108,7 @@ GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，G
 开启一个新绘图，名为GlobalMap，图片格式为JPEG，并对图片进行裁剪，四边均保留1厘米的空白::
 
     gmt begin
-    gmt figure GlobalMap jpg A+m1c
+    gmt figure GlobalMap jpg I+m1c
     gmt ...
     gmt end show
 

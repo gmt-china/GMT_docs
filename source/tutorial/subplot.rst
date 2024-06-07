@@ -153,15 +153,15 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
     :width: 75%
 
     gmt begin complex-subplot
-      gmt subplot begin 1x2 -Ff15c/3c -A -BWSen
-        gmt subplot set 0 -A'(b)'
+      gmt subplot begin 1x2 -Ff15c/3c -A'(b)' -BWSen
+        gmt subplot set 0
         gmt basemap -R0/10/0/10 -JX?
-        gmt subplot set 1 -A'(c)'
+        gmt subplot set 1
         gmt basemap -R0/10/0/10 -JX?
       gmt subplot end
 
-      gmt subplot begin 1x1 -Ff15c/3c -A -Yh+1c
-        gmt subplot set 0 -A'(a)'
+      gmt subplot begin 1x1 -Ff15c/3c -A'(a)' -Yh+1c
+        gmt subplot set 0
         gmt basemap -R0/10/0/10 -JX? -BWSen -Bxa2f1 -Bya2f1
       gmt subplot end
     gmt end show

@@ -115,10 +115,12 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
 
     对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为::
 
-        gmt set GMT_DATA_SERVER http://china.generic-mapping-tools.org
+        gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
 
     然后将生成的 :file:`gmt.conf` 文件复制到GMT用户目录 :file:`~/.gmt` (Linux/macOS)
     或 :file:`C:\\Users\\XXX\\.gmt`\ （Windows）下。
+
+    请注意GMT 6.4 及其之前的版本，都无法正常使用科大镜像下载数据。因此强烈建议国内用户使用GMT 6.5 及其以上版本。
 
 离线使用
 ~~~~~~~~
@@ -149,12 +151,12 @@ GMT为每种远程数据都提供了不同的分辨率和配准方式的数据�
 自定义数据
 ----------
 
-使用自定义数据（即建立 GMT 数据库）的方法很简单，只要将数据集中放在某个特定目录下，
+使用自定义数据（即建立 GMT 数据库）的方法很简单，只要将数据集中放在任意一个目录下，
 然后修改环境变量 **GMT_DATADIR** 使得其包含该目录即可。
 在使用数据库里的数据时，就可以直接指定数据文件名，GMT 会自动到 **GMT_DATADIR**
 所指定的目录中寻找该数据，而无需指定数据文件的完整路径。
 
-Linux 和 macOS 用户可以把数据库放在 :file:`~/GMTDB`\ 目录下，
+Linux 和 macOS 用户可以把数据放在 :file:`~/GMTDB`\ 目录下，
 然后在 :file:`~/.bashrc` 中添加如下语句::
 
     export GMT_DATADIR=~/GMTDB

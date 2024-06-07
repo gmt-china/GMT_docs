@@ -1,11 +1,13 @@
 Linux/macOS 下编译 GMT 源码
 ===========================
 
-:贡献者: |田冬冬|
+:撰写: |田冬冬|
+:最近更新日期: 2022-06-19
 
 ----
 
-这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。
+这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。仅供需要自行编译 GMT 最新版本或开发
+版本的读者参考。
 
 安装依赖软件
 ------------
@@ -17,11 +19,12 @@ GMT 的编译及运行依赖于其他软件。
 - `CMake <https://cmake.org/>`__\ （>=2.8.12）
 - `netCDF <https://www.unidata.ucar.edu/software/netcdf/>`__\ （>=4.0 且支持 netCDF-4/HDF5）
 - `curl <https://curl.haxx.se/>`__
+- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
+- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据
 
 可选的依赖软件包括：
 
-- `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片
-- `GDAL <https://www.gdal.org/>`__：读写多种格式的地理空间数据（未安装则无法使用高精度地形数据）
+- `Ninja <https://ninja-build.org/>__: 快速的构建系统 [可选但推荐]
 - `GEOS <https://libgeos.org/>`__：地理信息系统的几何算法库
 - `PCRE <https://www.pcre.org/>`__：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）
@@ -34,30 +37,21 @@ GMT 的编译及运行依赖于其他软件。
 Fedora::
 
     # 安装必须软件包
-    $ sudo dnf install gcc cmake make glibc netcdf-devel libcurl-devel
-    $ sudo dnf install ghostscript gdal gdal-devel geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    $ sudo dnf install gcc cmake ninja-build glibc netcdf-devel libcurl-devel gdal gdal-devel
+    $ sudo dnf install geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+    $ sudo dnf install ghostscript xdg-utils
     # 安装可选软件包
     $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
     $ sudo dnf install GraphicsMagick ffmpeg
-
-CentOS::
-
-    # 安装并启用 EPEL 源
-    $ sudo yum install epel-release
-    # 安装必须软件包
-    $ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
-    $ sudo yum install ghostscript gdal gdal-devel geos-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
-    # 安装可选软件包
-    $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-`rpm -E %rhel`.noarch.rpm
-    $ sudo yum install GraphicsMagick ffmpeg
 
 Ubuntu/Debian::
 
     # 更新软件包列表
     $ sudo apt update
     # 安装必须软件包
-    $ sudo apt install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
-    $ sudo apt install ghostscript gdal-bin libgdal-dev libgeos-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install build-essential cmake ninja-build libcurl4-gnutls-dev libnetcdf-dev gdal-bin libgdal-dev
+    $ sudo apt install libgeos-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+    $ sudo apt install ghostscript xdg-utils
     # 安装可选软件包
     $ sudo apt install graphicsmagick ffmpeg
 
@@ -67,7 +61,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 了解如何安装与使用）::
 
     # 安装必须软件包
-    $ brew install cmake curl netcdf
+    $ brew install cmake ninja curl netcdf
     $ brew install ghostscript gdal geos pcre2 glib fftw
     # 安装可选软件包
     $ brew install graphicsmagick ffmpeg
@@ -77,9 +71,9 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 编译 GMT 需要下载如下三个文件：
 
-#. GMT 6.4.0 源码：`gmt-6.4.0-src.tar.xz <http://mirrors.ustc.edu.cn/gmt/gmt-6.4.0-src.tar.xz>`_
+#. GMT 6.5.0 源码：`gmt-6.5.0-src.tar.xz <http://mirrors.ustc.edu.cn/gmt/gmt-6.5.0-src.tar.xz>`_
 #. 全球海岸线数据 GSHHG：`gshhg-gmt-2.3.7.tar.gz <http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz>`_
-#. 全球数字图表 DCW：`dcw-gmt-2.1.1.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.1.1/dcw-gmt-2.1.1.tar.gz>`_
+#. 全球数字图表 DCW：`dcw-gmt-2.1.2.tar.gz <https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.1.2/dcw-gmt-2.1.2.tar.gz>`_
 
 .. note::
 
@@ -87,7 +81,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
         $ git clone --depth 50 https://github.com/GenericMappingTools/gmt
 
-    其余操作与编译 GMT 正式版没有区别。
+    其余操作与编译 GMT 正式版基本没有区别。
 
 安装 GMT
 --------
@@ -95,16 +89,16 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装::
 
    # 解压三个压缩文件
-   $ tar -xvf gmt-6.4.0-src.tar.xz
+   $ tar -xvf gmt-6.5.0-src.tar.xz
    $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-   $ tar -xvf dcw-gmt-2.1.1.tar.gz
+   $ tar -xvf dcw-gmt-2.1.2.tar.gz
 
    # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
-   $ mv gshhg-gmt-2.3.7 gmt-6.4.0/share/gshhg-gmt
-   $ mv dcw-gmt-2.1.1 gmt-6.4.0/share/dcw-gmt
+   $ mv gshhg-gmt-2.3.7 gmt-6.5.0/share/gshhg-gmt
+   $ mv dcw-gmt-2.1.2 gmt-6.5.0/share/dcw-gmt
 
    # 切换到 gmt 源码目录下
-   $ cd gmt-6.4.0
+   $ cd gmt-6.5.0
 
    # 用文本编辑器新建并打开 CMake 用户配置文件
    # Linux 用户
@@ -115,12 +109,12 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 向 :file:`cmake/ConfigUser.cmake` 文件中加入如下语句::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.4.0")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.5.0")
     set (GMT_USE_THREADS TRUE)
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
-  :file:`/opt/GMT-6.4.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.4.0` 等有可读写
+  :file:`/opt/GMT-6.5.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 :file:`/home/xxx/opt/GMT-6.5.0` 等有可读写
   权限的路径
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
   也可以不设置
@@ -138,27 +132,27 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 .. note::
 
     以下的 ``mkdir build`` 命令新建的 :file:`build` 文件夹位于 GMT 源码压缩包
-    解压出来的 :file:`gmt-6.4.0` 目录下。
-    不是 :file:`gmt-6.4.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.4.0`。
+    解压出来的 :file:`gmt-6.5.0` 目录下。
+    不是 :file:`gmt-6.5.0/cmake` 目录下，更不是 :file:`/opt/GMT-6.5.0`。
 
 ::
 
     $ mkdir build
     $ cd build/
-    $ cmake ..
+    $ cmake .. -G Ninja
 
-``cmake ..`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
+``cmake .. -G Ninja`` 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
 在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
 正常情况下结果结果如下，若存在一些差异也没有问题。只要过程中不出现报错，即可。
 如果出现报错，则需要检查之前的步骤是否有误，检查完成后删除原 build 目录再新建 build，
-继续执行 ``cmake ..``，直到出现类似的检查结果::
+继续执行 ``cmake .. -G Ninja``，直到出现类似的检查结果::
 
     *
-    *  GMT Version:               : 6.4.0
+    *  GMT Version:               : 6.5.0
     *
     *  Options:
-    *  Found GSHHG database       : /home/user/GMT/gmt-6.4.0/share/gshhg (2.3.7)
-    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.4.0/share/dcw-gmt (2.1.1)
+    *  Found GSHHG database       : /home/user/GMT/gmt-6.5.0/share/gshhg (2.3.7)
+    *  Found DCW-GMT database     : /home/user/GMT/gmt-6.5.0/share/dcw-gmt (2.1.2)
     *  Found GMT data server      : oceania
     *  NetCDF library             : /usr/lib/x86_64-linux-gnu/libnetcdf.so
     *  NetCDF include dir         : /usr/include
@@ -196,10 +190,10 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
     *  Found gdal_translate       : yes (3.0.4)
     *
     *  Locations:
-    *  Installing GMT in          : /opt/GMT-6.4.0
-    *  GMT_DATADIR                : /opt/GMT-6.4.0/share
-    *  GMT_DOCDIR                 : /opt/GMT-6.4.0/share/doc
-    *  GMT_MANDIR                 : /opt/GMT-6.4.0/share/man
+    *  Installing GMT in          : /opt/GMT-6.5.0
+    *  GMT_DATADIR                : /opt/GMT-6.5.0/share
+    *  GMT_DOCDIR                 : /opt/GMT-6.5.0/share/doc
+    *  GMT_MANDIR                 : /opt/GMT-6.5.0/share/man
     -- Configuring done
     -- Generating done
 
@@ -215,13 +209,8 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 
 检查完毕后，开始编译和安装::
 
-    $ make -j
-    $ sudo make -j install
-
-.. note::
-
-   **-j** 选项可以实现并行编译以减少编译时间。但据用户报告，某些 Ubuntu 发行版下
-   使用 **-j** 选项会导致编译过程卡死。Ubuntu 用户建议在上面的两条命令中去掉 **-j** 选项。
+    $ cmake --build .
+    $ sudo cmake --build . --target install
 
 修改环境变量
 ------------
@@ -237,7 +226,7 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
 然后重启终端使其生效::
 
-    export GMT6HOME=/opt/GMT-6.4.0
+    export GMT6HOME=/opt/GMT-6.5.0
     export PATH=${GMT6HOME}/bin:$PATH
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
@@ -254,13 +243,13 @@ macOS 用户可以使用 `Homebrew <https://brew.sh>`__ 安装依赖
 重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功::
 
     $ gmt --version
-    6.4.0
+    6.5.0
 
 升级/卸载 GMT
 -------------
 
-按照上面的配置，GMT 会被安装到 :file:`/opt/GMT-6.4.0` 目录下。若想要卸载 GMT，
-可以直接删除整个 :file:`/opt/GMT-6.4.0` 即可。
+按照上面的配置，GMT 会被安装到 :file:`/opt/GMT-6.5.0` 目录下。若想要卸载 GMT，
+可以直接删除整个 :file:`/opt/GMT-6.5.0` 即可。
 
 GMT 不支持自动更新，因而若想要升级 GMT，通常建议先卸载 GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。
