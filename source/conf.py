@@ -109,7 +109,7 @@ elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     basedir_for_gallery = "./"
 else:  # build locally
     siteurl_for_gallery = ""
-    basedir_for_gallery = ""
+    basedir_for_gallery = "source/"
 
 html_context = {
     "favicon": "favicon.ico",
