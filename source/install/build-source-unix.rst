@@ -24,7 +24,7 @@ GMT 的编译及运行依赖于其他软件。
 
 可选的依赖软件包括：
 
-- `Ninja <https://ninja-build.org/>__: 快速的构建系统 [可选但推荐]
+- `Ninja <https://ninja-build.org/>`__: 快速的构建系统 [可选但推荐]
 - `GEOS <https://libgeos.org/>`__：地理信息系统的几何算法库
 - `PCRE <https://www.pcre.org/>`__：正则表达式支持
 - `FFTW <http://www.fftw.org/>`__：快速傅里叶变换库（>=3.3，macOS 下不需要）

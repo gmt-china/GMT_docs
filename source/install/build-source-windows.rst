@@ -17,7 +17,7 @@ Windows 下编译 GMT 源码
 - `Visual Studio <https://visualstudio.microsoft.com/zh-hans/>`__ \（安装时需要勾选 Desktop development with C++ 相关工具）
 - `Git <https://git-scm.com/downloads>`__
 - `CMake <https://cmake.org/download/>`__
-- `Ninja <https://ninja-build.org/>__: 快速的构建系统 [可选但推荐]
+- `Ninja <https://ninja-build.org/>`__: 快速的构建系统 [可选但推荐]
 - `Ghostscript <https://www.ghostscript.com/>`__：生成 PDF、JPG 等格式的图片 [**必须**]
 - `GraphicsMagick <http://www.graphicsmagick.org>`__\：生成 GIF 格式的动画 [**可选**]
 - `FFmpeg <http://www.ffmpeg.org/>`__：生成 MP4 格式的动画 [**可选**]

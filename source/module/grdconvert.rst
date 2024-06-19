@@ -29,7 +29,7 @@ grdconvert
     网格文件格式。如果是多变量网格文件，需加上 ?\ *varname* 指定某个变量（见 :doc:`/grid/format`）。此外，
 
     - **+b**\ *band* 指定抽取出某个波段，编号 *band* 从0开始计数
-    - **+d**\ *divisor* 将数据除以 *divisor* 
+    - **+d**\ *divisor* 将数据除以 *divisor*
     - **+s**\ *scale* 将数据乘以 *scale*
     - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset*
     - **+n**\ *invalid* 数据中哪个值表示无效值
@@ -51,9 +51,9 @@ grdconvert
     若要写的网格文件格式不是标准的netCDF格式，则需要加上 **=**\ *id* 以指定
     网格文件格式（见 :doc:`/grid/format`）。此外：
 
-    - **+d**\ *divisor* 将数据除以 *divisor* 
+    - **+d**\ *divisor* 将数据除以 *divisor*
     - **+s**\ *scale* 将数据乘以 *scale*
-    - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset* 
+    - **+o**\ *offset* 对数据做偏移，即将数据加上 *offset*
     - **+n**\ *invalid* 数据中哪个值表示无效值
 
     需要注意的是，在写网格文件时，总是先偏移再乘除。
