@@ -4,6 +4,11 @@
 mgd77convert
 ============
 
+:贡献者: |周茂|
+:最近更新日期: 2024-06-21
+
+----
+
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77convert`
 :简介: 将 MGD77 数据转换为其他格式
 
