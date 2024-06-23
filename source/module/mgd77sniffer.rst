@@ -4,6 +4,11 @@
 mgd77sniffer
 ============
 
+:贡献者: |周茂|
+:最近更新日期: 2024-06-21
+
+----
+
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77sniffer`
 :简介: MGD77 沿轨质量控制
 
@@ -65,7 +70,7 @@ mgd77sniffer
 
     - **-Dd** 输出观测值和网格数据的差值，需要 |-G| 选项，数据信息包括为
       ``lat lon dist cruiseZ gridZ diff [cruiseZ2 gridZ2 diff2 …]``
-      
+
       注：从观测值中减去网格值，因此正值意味着观测值大于网格值，对于多个网格，以命令行
       的顺序展示结果。
 
@@ -164,7 +169,7 @@ mgd77sniffer
     信息可以确定该限制文件的具体值， ``mgd77sniffer -Dl -L<yourlimitsfile>`` 。
 
     下面展示了一个示例文件，其中 ``--`` 表示使用默认值。
-    
+
     +--------------+--------+---------+------------+-----------+
     | # abbrev     | min    | max     | maxSlope   | maxArea   |
     +--------------+--------+---------+------------+-----------+
@@ -280,7 +285,7 @@ E77 误差格式
 ------------
 
 **头部信息**
-    
+
 与测量船有关的信息，如 NCEI 和调查机构的识别代码，测量时间，双向传递时间的校正信息，
 数据精度警告，以及从全球网格比较中得到的系统缩放信息，DC 偏移以及相关系数等信息。
 
@@ -324,7 +329,7 @@ E77 误差格式
 误差类型描述：
 
 #. NAV(navigation)
-    
+
     - 0 - fine
     - A - time out of range
     - B - time decreasing
@@ -334,7 +339,7 @@ E77 误差格式
     - F - lon undefined
 
 #. VAL(value)
-    
+
     - 0 - fine
     - K - twt invalid
     - L - depth invalid
