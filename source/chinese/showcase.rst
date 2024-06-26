@@ -49,14 +49,7 @@ GMT 支持中文的星期。要想使用中文表示星期几，需要设置 :te
 中文玫瑰图
 ----------
 
-GMT 绘制的玫瑰图同样支持中文，但除设置 :term:`GMT_LANGUAGE` 为中文，即 ``cn1`` 外，
-由于 GMT 自带的 gmt_cn1.locale 文件中没有给出方向的汉化，因此用户需手动修改上述转换
-编码后的文件（见 `中文月份`_ ），将其最后四行替换为如下四行::
-
-    C	1	West		W	西
-    C	2	East		E	东
-    C	3	South		S	南
-    C	4	North		N	北
+GMT 绘制的玫瑰图同样支持中文。
 
 .. gmtplot:: chinese-compass.sh
    :show-code: true
