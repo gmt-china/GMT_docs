@@ -5,8 +5,8 @@ gmt begin canvas_plot_origin png
     echo 0 0 180 2.54c | gmt plot -Sv0.4c+b+e+gblack -W1p -N
     echo 0 0 270 2.54c | gmt plot -Sv0.4c+b+e+gblack -W1p -N
     echo 0 0 | gmt plot -Sc0.4c -Gred -N
-    echo 0 0 12.7 cm | gmt text -F+f15p,1,red -N -D-1.25c/0.4c
-    echo 0 0 12.7 cm | gmt text -F+f15p,1,red+a270 -N -D0.4c/-1.25c
+    echo 0 0 1.0 m | gmt text -F+f15p,1,red -N -D-1.25c/0.4c
+    echo 0 0 1.0 m | gmt text -F+f15p,1,red+a270 -N -D0.4c/-1.25c
 
     # plot the canvas
     gmt basemap -R0/30/0/30 -Jx1c -Bg1 -Xf0c -Yf0 --MAP_GRID_PEN=0.2p,gray20
