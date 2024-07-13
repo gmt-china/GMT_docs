@@ -95,6 +95,7 @@ GMT 在绘图时，默认的绘图原点（即底图边框左下角）位于画�
 均可能使得部分图件超过画布左边界或下边界，导致图件被部分截断。
 
 .. gmtplot:: canvas_plot_origin.sh
+    :show-code: false
    :width: 85%
    :align: center
 
