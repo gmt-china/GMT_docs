@@ -158,7 +158,7 @@ Bendat 和 Piersol [1986] 中的算法。
 ----
 
 **spectrum1d** 输出的单位为功率谱密度的单位，因此，要以数据的平方的量纲作为单位，
-就必须除以采样间隔 `dt`。（如果想对谱坐归一化，则可从 Parseval 定理中得到缩放因子，
+就必须除以采样间隔 `dt`。（如果想对谱做归一化，则可从 Parseval 定理中得到缩放因子，
 Parseval 定理为：输入数据的平方和等于 **spectrum1d** 输出的平方和。）
 
 假定存在一个数据，`X(t)`，计算其离散傅立叶变换（DFT），结果为 `X(f)`，将其与自身
@@ -177,56 +177,36 @@ P_useful(f)。除了 Welch 方法，另外还有多种计算功率谱密度的�
     - "maxumum entropy", "Berg", "Box-Jenkins", "ARMA" 或者 "ARIMA" 等方法
 
 Welch 方法是一种久经考验的方法。在 Welch 方法中，用户需指定一个数据长度 N，这样
-对数据进行分段，对
+对数据进行分段，以长度为 N 的数据段分别计算谱。谱的频率采样为 *k* /(*N* \* *delta_t*)，
+其中 *k* 为整数，采样个数为 *N*（由于谱结果是偶函数，因此计算结果存在一半的冗余）。
+如果原始数据 x(t) 的长度为 *M*，则 P_useful 的方差会以 *N/M* 的比例减小。因此，
+用户可选择远小于 *M* 的 *N* 值以得到较低方差的 P_useful。但这种做法在不同方面
+需要互相妥协。
 
-*Welch*\ 's method is a tried-and-true method. In his method, you choose a segment length,
-**-S**\ *N*, so that estimates will be made from segments of length *N*. The frequency samples
-(in cycles per delta_t unit) of your P_useful will then be at *k* /(*N* \* *delta_t*),
-where *k* is an integer, and you will get *N* samples (since the spectrum is an even
-function of *f*, only *N*/2 of them are really useful). If the length of your entire
-data set, x(t), is *M* samples long, then the variance in your P_useful will decrease
-in proportion to *N/M*. Thus you need to choose *N* << *M* to get very low noise and
-high confidence in P_useful. There is a trade-off here; see below.
+Welch 方法中同时对每段长度为 *N* 的数据的功率谱估计中使用了 Hann 窗，这也会减小
+谱估计的方差。这种做法同时会削弱功率谱的旁瓣泄漏并使谱估计更加平滑。但这样会使
+每个估计的带宽轻微地增大，因为在 *k* 位置的频率采样会与 *k+1* 位置的估计存在较小
+的相关（实际上，对周期图方法的结果做平滑也会导致类似的效果）。
 
-There is an additional reduction in variance in that Welch's method uses a Von Hann
-spectral window on each sample of length *N*. This reduces side lobe leakage and has
-the effect of smoothing the (*N* segment) periodogram as if the X(f) had been
-convolved with [1/4, 1/2, 1/4] prior to forming P_useful. But this slightly widens
-the spectral bandwidth of each estimate, because the estimate at frequency sample *k*
-is now a little correlated with the estimate at frequency sample k+1. (Of course this
-would also happen if you simply formed P_raw and then smoothed it.)
+最后，Welch 方法同样使用数据重叠处理。由于 Hann 窗是一种两端尖灭的窗，因此对长度
+*N* 的窗来说，窗中间位置的数据对结果贡献最大。因此，在下一段谱估计中，只将
+窗口移动 *N/2* 长度，这样可以保证在上一段数据中贡献较小的两端数据在当前段估计中
+有较大的贡献。这样会进一步平滑结果并保证每个数据都能对最后的结果有近似相等的贡献。
 
-Finally, *Welch*\ 's method also uses overlapped processing. Since the Von Hann window is
-large in the middle and tapers to near zero at the ends, only the middle of the segment
-of length *N* contributes much to its estimate. Therefore in taking the next segment
-of data, we move ahead in the x(t) sequence only *N*/2 points. In this way, the next
-segment gets large weight where the segments on either side of it will get little weight,
-and vice versa. This doubles the smoothing effect and ensures that (if *N* << *M*)
-nearly every point in x(t) contributes with nearly equal weight in the final answer.
+Welch 方法被广泛使用并研究，它的结果非常可靠且其统计属性也被较好地研究。因此，它
+被类似 "Random Data: Analysis and Measurement Procedures" [*Bendat and Piersol*, 1986]
+等教科书中推荐使用。
 
-*Welch*\ 's method of spectral estimation has been widely used and widely studied. It is very
-reliable and its statistical properties are well understood. It is highly recommended in
-such textbooks as "Random Data: Analysis and Measurement Procedures" [*Bendat and Piersol*, 1986].
+上文中提到的妥协指的是分辨率和方差之间的妥协，这种妥协是广泛存在的，更高的谱分辨率
+通常意味着较大的噪声。Welch 方法也是类似的，谱估计较低的噪声水平通常是通过设置
+*N* << *M* 实现的，这样只能在谱估计中得到 *N* 个采样，可识别的最长周期为 *N* \* *delta_t*。
+因此，噪声水平的降低导致了谱采样个数的减少以及可识别长周期长度的减小。相反地，如果
+选择的 *N* 接近于 *M*，则谱估计的统计属性会非常差，但会得到很多采样以及识别出更长
+的周期。
 
-In all problems of estimating parameters from data, there is a classic trade-off between
-resolution and variance. If you want to try to squeeze more resolution out of your data
-set, then you have to be willing to accept more noise in the estimates. The same trade-off
-is evident here in Welch's method. If you want to have very low noise in the spectral
-estimates, then you have to choose *N* << *M*, and this means that you get only *N*
-samples of the spectrum, and the longest period that you can resolve is only *N* \* *delta_t*.
-So you see that reducing the noise lowers the number of spectral samples and lowers the
-longest period. Conversely, if you choose *N* approaching *M*, then you approach the
-periodogram with its very bad statistical properties, but you get lots of samples and
-a large fundamental period.
-
-The other spectral estimation methods also can do a good job. Welch's method was selected
-because the way it works, how one can code it, and its effects on statistical distributions,
-resolution, side-lobe leakage, bias, variance, etc. are all easily understood. Some of the
-other methods (e.g. Maximum Entropy) tend to hide where some of these trade-offs are
-happening inside a "black box".
-
-
-
+其他谱密度的估计方法也能得到较好的结果。之所以选择 Welch 方法，因为它的统计属性、
+分辨率、旁瓣泄漏、偏移和方差等属性都比较容易且容易实现。一些其他的方法（例如
+Maximum Entropy）则倾向于将这些妥协包装在一个黑匣子中。
 
 相关模块
 --------
