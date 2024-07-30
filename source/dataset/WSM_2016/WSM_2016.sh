@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 下载数据文件
-wget -q https://datapub.gfz-potsdam.de/download/10.5880.WSM.2016.001/wsm2016.csv
+wget -q --no-check-certificate https://datapub.gfz-potsdam.de/download/10.5880.WSM.2016.001/wsm2016.csv
 
 gmt begin wsm2016
     # 绘制底图
