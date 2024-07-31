@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特殊字符 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="转义序列" href="../escape-character/" />
+    <link rel="prev" title="文字" href="../text/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">基础知识</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../canvas/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">特殊字符</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">八进制码指定特殊字符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">使用12号或34号字体输入特殊字符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">特殊字符小结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">小练习</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/">LaTeX 表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">基础知识</a> &raquo;</li>
+      <li>特殊字符</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/special-character.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>特殊字符<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<p>除了键盘上可以直接输入的一般字符之外，GMT还可以打印一些常用的特殊字符，如大小写的希腊字母、加减号、大于等于号等。</p>
+<p>这些特殊字符无法通过键盘直接输入，GMT中可以通过输入八进制码的方式指定特殊字符。</p>
+<section id="id2">
+<h2>八进制码指定特殊字符<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>GMT中可以用一个三位的八进制码指定一个特殊字符。八进制码与特殊字符之间的对应关系，可以通过查询下表得到：</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/GMT_stand+_iso+.png"><img alt="../../_images/GMT_stand+_iso+.png" src="../../_images/GMT_stand+_iso+.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">ISOLation1+ 和 Standard+ 编码下的八进制码</span><a class="headerlink" href="#id6" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p><strong>下载：</strong>
+<a class="reference download internal" download="" href="../../_downloads/9a37202fb5b33f18fb6e3008140c374f/GMT_stand%2B_iso%2B.pdf"><code class="xref download docutils literal notranslate"><span class="pre">八进制码表</span> <span class="pre">PDF</span> <span class="pre">版</span></code></a> |
+<a class="reference download internal" download="" href="../../_downloads/c332f222f6597f560296e9a0083dbec8/GMT_stand%2B_iso%2B.png"><code class="xref download docutils literal notranslate"><span class="pre">八进制码表</span> <span class="pre">PNG</span> <span class="pre">版</span></code></a></p>
+<p><strong>左右两张表分别是什么？该用哪一张？</strong>
+GMT支持多种字符编码，其中最常用的编码是 <strong>Standard+</strong> 和
+<strong>ISOLation1+</strong>。通常，GMT的默认字符编码是 <strong>ISOLatin1+</strong>，所以只需要看左表即可；如果当前字符编码是 <strong>Standard+</strong>，则需要查询右表。可以通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">get</span> <span class="pre">PS_CHAR_ENCODING</span></code> 命令查到你所安装的GMT的默认字符编码方式。</p>
+<p><strong>这张表如何查询呢？</strong>
+假如你的GMT的默认字符编码方式为 <strong>ISOLation1+</strong> 编码。假如想要输入加减号 <code class="docutils literal notranslate"><span class="pre">±</span></code>，查左表可知，加减号位于第 <strong>26x</strong> 行、第 1 列，因而其八进制码为 <code class="docutils literal notranslate"><span class="pre">\261</span></code>。而如果你的GMT默认字符编码为 <strong>Standard+</strong> 编码，则 <code class="docutils literal notranslate"><span class="pre">±</span></code> 对应的八进制码则是 <code class="docutils literal notranslate"><span class="pre">\234</span></code>。因而，当你需要输入某个特殊字符时，只需要输入其对应的八进制码即可。</p>
+</section>
+<section id="id3">
+<h2>使用12号或34号字体输入特殊字符<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>如果文本使用了12号字体（Symbol）或34号字体（ZapfDingbats），则此时八进制码具有不同的含义。需要查询下表：</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/GMT_symbol_dingbats.png"><img alt="../../_images/GMT_symbol_dingbats.png" src="../../_images/GMT_symbol_dingbats.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Symbol和Pifont字体八进制码</span><a class="headerlink" href="#id7" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>当文本字体为12号字体（Symbol字符集）时，应查询左表，例如字符 <code class="docutils literal notranslate"><span class="pre">λ</span></code> 对应的八进制码为 <code class="docutils literal notranslate"><span class="pre">\154</span></code>。当文本字体为34号字体（Pifont ZapfDingbats）时，应查询右表。</p>
+<p><strong>下载：</strong>
+<a class="reference download internal" download="" href="../../_downloads/c4e5526692b4b2849402c95143fd0c8a/GMT_symbol_dingbats.pdf"><code class="xref download docutils literal notranslate"><span class="pre">特殊字体八进制码</span> <span class="pre">PDF</span> <span class="pre">版</span></code></a> |
+<a class="reference download internal" download="" href="../../_downloads/1d3072d509f0c1fd560694e6a3cbe38a/GMT_symbol_dingbats.png"><code class="xref download docutils literal notranslate"><span class="pre">特殊字体八进制码</span> <span class="pre">PNG</span> <span class="pre">版</span></code></a></p>
+</section>
+<section id="id4">
+<h2>特殊字符小结<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>GMT中特殊字符可以通过八进制码的方式输入。想要输入特殊字符，首先需要找到该字符对应的八进制码。从上面四张表中找到自己需要的特殊符号的八进制码及其位于哪张表内。总共分四种情况：</p>
+<ol class="arabic simple">
+<li><p>字符在 <strong>ISOLatin1+</strong> 表内：可以直接使用该字符对应的八进制码</p></li>
+<li><p>字符在 <strong>Standard+</strong> 表内：该表内的字符是与 <strong>ISOLatin1+</strong> 中的字符完全重合的，建议在 <strong>ISOLatin1+</strong> 表中找到自己需要的字符，然后使用其对应的八进制吗</p></li>
+<li><p>字符在 <strong>Symbol</strong> 表内：将文本字体设置为12号字体，并使用该字符对应的八进制码</p></li>
+<li><p>字符在 <strong>ZapfDingbats</strong> 表内：将文本字体设置为34号字体，并使用该字符对应的八进制码</p></li>
+</ol>
+</section>
+<section id="id5">
+<h2>小练习<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>使用 <strong>ISOLatin1+</strong> 表中的八进制码输入字符 <code class="docutils literal notranslate"><span class="pre">±</span> <span class="pre">234</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">2</span> <span class="se">\2</span><span class="m">61</span> <span class="m">234</span> <span class="p">|</span> gmt text -Jx1c -R0/10/0/4 -Baf -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+<p>试验之后会发现，图上显示的是 <code class="docutils literal notranslate"><span class="pre">261</span> <span class="pre">234</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">±</span> <span class="pre">234</span></code>。产生这一现象的原因是因为反斜杠在很多脚本语言里有特殊的含义，此处反斜杠首先被bash所解释，真正传给
+GMT的是 <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">261</span> <span class="pre">234</span></code>。针对这种情况，有四种解决办法:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. 使用两个反斜杠来代替一个反斜杠</span>
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">2</span> <span class="se">\\</span><span class="m">261</span> <span class="m">234</span> <span class="p">|</span> gmt text -Jx1c -R0/10/0/4 -Baf -pdf <span class="nb">test</span>
+
+<span class="c1"># 2. 使用单引号将字符串括起来</span>
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">2</span> <span class="s1">&#39;\261 234&#39;</span> <span class="p">|</span> gmt text -Jx1c -R0/10/0/4 -Baf -pdf <span class="nb">test</span>
+
+<span class="c1">#. 3. 使用EOF输入字符串</span>
+gmt text -Jx1c -R0/10/0/4 -Baf -pdf <span class="nb">test</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 2 \261 234</span>
+<span class="s">EOF</span>
+
+<span class="c1">#. 4. 从文本文件中读取字符串</span>
+gmt text input.txt -JX10c/10c -R0/10/0/10 -F+f15p,12 -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+<p>输入希腊字母，此时需要指定文本使用12号字体（即 <strong>-F+f15p,12</strong> 选项）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="s1">&#39;\141&#39;</span> <span class="p">|</span> gmt text -JX10c/10c -R0/10/0/10 -Baf -F+f15p,12 -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+<p>如果需要在一堆正常字符中插入一个Symbol表中的特殊字符，可以使用转义字符（下一节会详细介绍） <strong>&#64;~</strong> 或 <strong>&#64;%12%</strong> 临时将字体Symbol字体。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10 -JX10c/10c -BWSne -Bx2+l<span class="s2">&quot;T@~\161@~t&quot;</span> -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../text/" class="btn btn-neutral float-left" title="文字" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../escape-character/" class="btn btn-neutral float-right" title="转义序列" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
