@@ -1,7 +1,7 @@
 ---
-"\u5BA1\u6838": "{{ \u59DA\u5BB6\u56ED }}, {{ \u5468\u8302 }}"
-"\u64B0\u5199": "{{ \u7530\u51AC\u51AC }}"
-"\u6700\u8FD1\u66F4\u65B0\u65E5\u671F": '2023-09-09'
+"审核": "{{ 姚家园 }}, {{ 周茂 }}"
+"撰写": "{{ 田冬冬 }}"
+"最近更新日期": '2023-09-09'
 ---
 
 # 简介
@@ -44,7 +44,7 @@ GMT 的核心开发者有 8 位：[Paul Wessel](http://www.soest.hawaii.edu/wess
 
 :::{figure} https://docs.generic-mapping-tools.org/latest/_images/GMT6_Summit_2019.jpg
 :align: center
-:alt: "2019 \u5E74 GMT \u5F00\u53D1\u8005\u5CF0\u4F1A"
+:alt: "2019 年 GMT 开发者峰会"
 :width: 80%
 
 GMT 部分核心开发者及指导委员会部分成员
