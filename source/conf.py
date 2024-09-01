@@ -20,6 +20,18 @@ github_url = f"https://github.com/{github_user}/{github_repo}"
 version = "6.5"
 release = version
 
+# -- Contributor information ---------------------------------------------
+rst_prolog = """
+.. |田冬冬| replace:: `田冬冬 <https://me.seisman.info/>`__
+.. |姚家园| replace:: `姚家园 <https://github.com/core-man>`__
+.. |陈箫翰| replace:: `陈箫翰 <https://github.com/CovMat>`__
+.. |刘珠妹| replace:: `刘珠妹 <https://github.com/liuzhumei>`__
+.. |徐弥坚| replace:: `徐弥坚 <https://xumijian.me/>`__
+.. |邓山泉| replace:: `邓山泉 <https://github.com/sqdeng/>`__
+.. |周茂| replace:: `周茂 <https://github.com/ZMAlt>`__
+.. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
+"""
+
 # -- General configuration ------------------------------------------------
 needs_sphinx = "2.4"
 source_suffix = ".rst"
