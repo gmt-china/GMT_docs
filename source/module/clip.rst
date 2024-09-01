@@ -148,6 +148,29 @@ clip
     # 关闭裁剪路径
     gmt clip -C -B
     gmt end show
+    
+限制作图范围，仅在指定范围内对陆地填色
+
+.. gmtplot::
+   :show-code: true
+   
+   gmt begin example2
+      gmt basemap -Rg -JG120/30N/10c -Bg
+      gmt coast -Gbrown -Wfaint
+      # 创建多边形边界数据文件，按逆时针顺序给出各个顶点坐标
+      echo 73:33:00 3:51:00 > tmp.txt
+      echo 135:5:00 3:51:00 >> tmp.txt
+      echo 135:5:00 53:33:00 >> tmp.txt
+      echo 73:33:00 53:33:00 >> tmp.txt
+      # 打开裁剪
+      gmt clip tmp.txt 
+      # 画图命令仅在多边形范围内有效：只对范围内陆地填色
+      gmt coast -Gbisque
+      # 关闭裁剪路径
+      gmt clip -C
+      # 绘制边界轮廓
+      gmt plot tmp.txt -W2p,blue -L
+   gmt end show
 
 相关模块
 --------
