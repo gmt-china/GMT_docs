@@ -152,6 +152,7 @@ clip
 限制作图范围，仅在指定范围内对陆地填色
 
 .. gmtplot::
+   :width: 60%
    :show-code: true
    
    gmt begin example2
