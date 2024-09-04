@@ -159,10 +159,10 @@ clip
       gmt basemap -Rg -JG120/30N/10c -Bg
       gmt coast -Gbrown -Wfaint
       # 创建多边形边界数据文件，按逆时针顺序给出各个顶点坐标
-      echo 73:33:00 3:51:00 > tmp.txt
-      echo 135:5:00 3:51:00 >> tmp.txt
-      echo 135:5:00 53:33:00 >> tmp.txt
-      echo 73:33:00 53:33:00 >> tmp.txt
+      echo 74 4 > tmp.txt
+      echo 135 4 >> tmp.txt
+      echo 135 53 >> tmp.txt
+      echo 74 53 >> tmp.txt
       # 打开裁剪
       gmt clip tmp.txt 
       # 画图命令仅在多边形范围内有效：只对范围内陆地填色
