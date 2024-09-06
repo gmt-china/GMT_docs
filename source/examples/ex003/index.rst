@@ -19,10 +19,10 @@
     gmt grdimage other-data.nc -Iearth-relief-gradient.nc ...
 
 这一操作要求地形起伏数据、地形起伏梯度数据、要绘制的原始网格数据，三者必须有
-相同的区域范围、网格间隔和配准方式。因而，实际应用时，用户可能需要对地形起伏数据
-做裁剪（:doc:`/module/grdcut` 模块）和重采样（``grdsample`` 模块）。
+相同的区域范围、网格间隔和 :doc:`/grid/registration` 。因而，实际应用时，用户可能需要对地形起伏数据
+做裁剪（:doc:`/module/grdcut` 模块）和重采样（:doc:`/module/grdsample` 模块）。
 
-当要绘制的原始网格数据与地形起伏数据具有相同的区域范围、网格间隔和配准方式时，
+当要绘制的原始网格数据与地形起伏数据具有相同的区域范围、网格间隔和 :doc:`/grid/registration` 时，
 上面的伪代码可以简化为如下伪代码::
 
     gmt grdimage other-data.nc -Iearth-relief-data.nc+d ...
