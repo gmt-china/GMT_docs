@@ -1,7 +1,6 @@
--JB: Albers conic equal area
-============================
+# -JB: Albers conic equal area
 
-维基链接：https://en.wikipedia.org/wiki/Albers_projection
+维基链接：<https://en.wikipedia.org/wiki/Albers_projection>
 
 Albers conic equal area（Albers 圆锥等面积投影）由 Heinrich C. Albers 于 1805 年提出，
 主要用于绘制东西方向范围很大的地图，尤其是美国地图。
@@ -14,9 +13,9 @@ Albers conic equal area（Albers 圆锥等面积投影）由 Heinrich C. Albers 
 
 该投影方式的参数为：
 
-**-JB**\ *lon*/*lat*/*lat1*/*lat2*/*width*
+**-JB***lon*/*lat*/*lat1*/*lat2*/*width*
 或
-**-Jb**\ *lon*/*lat*/*lat1*/*lat2*/*scale*
+**-Jb***lon*/*lat*/*lat1*/*lat2*/*scale*
 
 - *lon* 和 *lat* 是投影中心的位置
 - *lat1* 和 *lat2* 是两条标准纬线
@@ -25,6 +24,7 @@ Albers conic equal area（Albers 圆锥等面积投影）由 Heinrich C. Albers 
 
 下图绘制了台湾附近的区域，投影中心位于 125°E/20°N，25 度和 45 度纬线是两条标准纬线。
 
+```{eval-rst}
 .. gmtplot::
     :caption: Albers 圆锥等面积投影
     :width: 75%
@@ -33,3 +33,4 @@ Albers conic equal area（Albers 圆锥等面积投影）由 Heinrich C. Albers 
     gmt set MAP_GRID_CROSS_SIZE_PRIMARY 0
     gmt coast -R110/140/20/35 -JB125/20/25/45/12c -Bag -Dl -Ggreen -Wthinnest -A250
     gmt end show
+```
