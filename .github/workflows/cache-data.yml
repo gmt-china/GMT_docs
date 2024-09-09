@@ -7,6 +7,7 @@ on:
   # Schedule runs on 12 noon every Sunday
   schedule:
     - cron: '0 12 * * 0'
+  workflow_dispatch:
 
 jobs:
   gmt_cache:
@@ -45,7 +46,9 @@ jobs:
       - name: Clear GMT's sessions
         # Can't use 'gmt clear sessions' because it returns non-zero exit code
         # when sessions directory don't exist.
-        run: rm -rf ~/.gmt/sessions
+        run: |
+          rm -rvf ~/.gmt/sessions
+          ls -lhR ~/.gmt
 
       - name: Upload artifacts to GitHub
         uses: actions/upload-artifact@v4
