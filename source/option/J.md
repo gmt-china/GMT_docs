@@ -1,5 +1,4 @@
--J 选项
-=======
+# -J 选项
 
 **-J** 选项用于指定坐标变换方式或地图投影方式，即将数据投影到画布上所采用的函数。
 
@@ -8,14 +7,13 @@
 - GMT 投影代码
 - GMT + PROJ 投影代码
 
-GMT 投影代码
-------------
+## GMT 投影代码
 
 **-J** 选项有两种写法:
 
-    **-J**\ :math:`\delta`\ [*parameters*/]\ *scale*
-
-    **-J**\ :math:`\Delta`\ [*parameters*/]\ *width*
+> **-J**$\delta$\[*parameters*/\]*scale*
+>
+> **-J**$\Delta$\[*parameters*/\]*width*
 
 其中，*δ* 和 *Δ* 用于指定投影代码，前者为小写字母，后者为大写字母。
 *parameters* 是零个或多个由斜杠分隔的投影参数，参数数目由投影方式决定。
@@ -29,17 +27,17 @@ GMT 投影代码
 投影代码为大写字母时，**-J** 的最后一个参数 *width* 表示底图宽度。还可以加上
 子选项还进一步控制 *width* 的含义:
 
-- **+dw** 表示 *width* 为底图的宽度 [默认值]
+- **+dw** 表示 *width* 为底图的宽度 \[默认值\]
 - **+dh** 表示 *width* 为底图的高度
 - **+du** 表示 *width* 为底图维度中最大的那个维度的长度
 - **+dl** 表示 *width* 为底图维度中最小的那个维度的长度
 
-.. note::
+:::{note}
+几乎所有地图投影方式，都只能指定底图宽度或高度中的任一个，而不能同时指定二者，
+因为地图高度会由地图宽度和投影方式自动决定。
 
-   几乎所有地图投影方式，都只能指定底图宽度或高度中的任一个，而不能同时指定二者，
-   因为地图高度会由地图宽度和投影方式自动决定。
-
-   画图时通常建议使用大写投影代码以直接指定图片宽度，除非需要明确指定比例尺。
+画图时通常建议使用大写投影代码以直接指定图片宽度，除非需要明确指定比例尺。
+:::
 
 例如：
 
@@ -51,40 +49,47 @@ GMT 投影代码
 - **-JM15ch** 表示整个地图的高度是 15 厘米
 - **-JX10c/5c** 使用线性投影，地图的宽度是 10 厘米，高度为 5 厘米
 
-下表列出了 GMT 所支持的全部投影方式，详细介绍见 :doc:`/proj/index`。
+下表列出了 GMT 所支持的全部投影方式，详细介绍见 {doc}`/proj/index`。
 
+```{eval-rst}
 .. include:: projection-codes.rst_
+```
 
-GMT + PROJ
-----------
+## GMT + PROJ
 
 从 GMT6 开始，GMT 支持使用 PROJ 库来实现坐标和基准面的转换。这一特性是通过 GDAL
-实现的。详细的 PROJ 语法见 `<https://proj.org/en/latest/apps/index.html>`_。
+实现的。详细的 PROJ 语法见 [https://proj.org/en/latest/apps/index.html](https://proj.org/en/latest/apps/index.html)。
 
 在 GMT 中使用 PROJ 和单独使用 PROJ 提供的 **proj** 和 **cs2cs** 命令非常相似。
 在 PROJ 中，投影一般有很多参数，多个参数之间用空格分隔。在 GMT 中，可以将所有参数
-用双引号括起来::
+用双引号括起来:
 
-    -J"+proj=merc +ellps=WGS84 +units=m"
+```
+-J"+proj=merc +ellps=WGS84 +units=m"
+```
 
-或直接将所有参数连在一起::
+或直接将所有参数连在一起:
 
-    -J+proj=merc+ellps=WGS84+units=m
+```
+-J+proj=merc+ellps=WGS84+units=m
+```
 
-也可以直接使用 `EPSG codes <http://spatialreference.org>`_。
+也可以直接使用 [EPSG codes](http://spatialreference.org)。
 例如 **-JEPSG:4326** 表示使用 WGS-84 系统。
 
-对于 :doc:`/module/mapproject` 和 :doc:`/module/grdproject` 模块，可以直接使用
-**+to** 关键字直接指定要将 A 参考系统转换为 B 参考系统，而不需要中间步骤。例如::
+对于 {doc}`/module/mapproject` 和 {doc}`/module/grdproject` 模块，可以直接使用
+**+to** 关键字直接指定要将 A 参考系统转换为 B 参考系统，而不需要中间步骤。例如:
 
-    -JEPSG:4326+to+proj=aeqd+ellps=WGS84+units=m
+```
+-JEPSG:4326+to+proj=aeqd+ellps=WGS84+units=m
+```
 
-对于使用 :doc:`/module/mapproject` 和 :doc:`/module/grdproject` 进行点和网格
+对于使用 {doc}`/module/mapproject` 和 {doc}`/module/grdproject` 进行点和网格
 文件的转换，GMT 可以使用
-所有的 `PROJ 投影 <https://proj.org/en/latest/operations/projections/index.html>`_。
+所有的 [PROJ 投影](https://proj.org/en/latest/operations/projections/index.html)。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ 的投影方式可以被
 映射到 GMT 的投影语法中, 只能使用这些投影绘图；另一方面，由于 PROJ 不是一个绘图库，
-其不支持设置地图比例尺或地图大小，因而，GMT 为 PROJ 语法引入了两个扩展：**+width=**\ *size*
+其不支持设置地图比例尺或地图大小，因而，GMT 为 PROJ 语法引入了两个扩展：**+width=***size*
 和 **+scale=1:xxxx** 使得其与经典的 GMT 中的工作方式相似。
 此外，也可以在投影参数的最后加上字符串 **/1:xxx** 来指定比例尺。
 
@@ -98,31 +103,39 @@ GMT + PROJ
 假定存在一点经纬度坐标 (87，0)，现将其转换为西安 80 坐标系，西安 80 坐标系
 为投影坐标系，为减小变形，使用 3 度或者 6 度高斯投影分带分别用于大比例尺和中比例尺
 应用。上述坐标在 3 度分带中的代号为 29，通过
-`EPSG codes <http://spatialreference.org>`_ 可以查询到其对应的 EPSG 代码为 2353，
-因此，可用如下代码投影::
+[EPSG codes](http://spatialreference.org) 可以查询到其对应的 EPSG 代码为 2353，
+因此，可用如下代码投影:
 
-    $ echo 87 0 | gmt mapproject -J"EPSG:2353"
-    29500000	0
+```
+$ echo 87 0 | gmt mapproject -J"EPSG:2353"
+29500000    0
+```
 
 结果中横轴坐标 2950000 中 29 为带号，根据投影规则，为防止投影后的横轴坐标出现负值，投影
 后需将横坐标加 500 km，由于经度 87 度刚好位于该投影带的中央经线上，所以其横坐标为 500000；
 纬度为 0 度，位于赤道上，其纵坐标也为 0。在上述 EPSG 代码查询中，同时可获得其 PROJ 投影
-语法为 ``+proj=tmerc +lat_0=0 +lon_0=87 +k=1 +x_0=29500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs``，
-因此，将有下面的等价语句::
+语法为 `+proj=tmerc +lat_0=0 +lon_0=87 +k=1 +x_0=29500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs`，
+因此，将有下面的等价语句:
 
-    $ echo 87 0 | gmt mapproject -J"+proj=tmerc +lat_0=0 +lon_0=87 +k=1 +x_0=29500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs"
-    29500000    0
+```
+$ echo 87 0 | gmt mapproject -J"+proj=tmerc +lat_0=0 +lon_0=87 +k=1 +x_0=29500000 +y_0=0 +a=6378140 +b=6356755.288157528 +units=m +no_defs"
+29500000    0
+```
 
-上述仅给出 3 度带投影的例子，6 度带投影类似::
+上述仅给出 3 度带投影的例子，6 度带投影类似:
 
-    $ echo 87 0 | gmt mapproject -J"EPSG:2329"
-    15500000	0
+```
+$ echo 87 0 | gmt mapproject -J"EPSG:2329"
+15500000    0
+```
 
 **投影转换**
 
-下面使用 **+to** 来实现投影转换，将上述 3 度带投影转换为 6 度带投影::
+下面使用 **+to** 来实现投影转换，将上述 3 度带投影转换为 6 度带投影:
 
-    $ echo 29500000    0 | gmt mapproject -J"EPSG:2353 +to EPSG:2329"
-    15500000    0
+```
+$ echo 29500000    0 | gmt mapproject -J"EPSG:2353 +to EPSG:2329"
+15500000    0
+```
 
 将其中的 EPSG 代码替换为对应的代码则可实现任意投影的转换。
