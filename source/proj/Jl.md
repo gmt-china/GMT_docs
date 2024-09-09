@@ -1,7 +1,6 @@
--JL: Lambert conic conformal
-============================
+# -JL: Lambert conic conformal
 
-维基链接：https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection
+维基链接：<https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection>
 
 Lambert conic conformal（Lambert 圆锥保角投影）由 Johann Heinrich Lambert 于 1772 年提出，
 主要用于绘制东西方向范围很大的地图。
@@ -12,9 +11,9 @@ Lambert conic conformal（Lambert 圆锥保角投影）由 Johann Heinrich Lambe
 
 该投影的参数为：
 
-**-JL**\ *lon0*/*lat0*/*lat1*/*lat2*/*width*
+**-JL***lon0*/*lat0*/*lat1*/*lat2*/*width*
 或
-**-Jl**\ *lon0*/*lat0*/*lat1*/*lat2*/*scale*
+**-Jl***lon0*/*lat0*/*lat1*/*lat2*/*scale*
 
 - *lon0* 和 *lat0* 是投影中心的位置
 - *lat1* 和 *lat2* 是两条标准纬线
@@ -23,6 +22,7 @@ Lambert conic conformal（Lambert 圆锥保角投影）由 Johann Heinrich Lambe
 
 Lambert 保角投影场用于绘制美国地图，两个固定的标准纬线是 33°N 和 45°N。
 
+```{eval-rst}
 .. gmtplot::
     :caption: Lambert 保角圆锥投影
     :width: 85%
@@ -31,3 +31,4 @@ Lambert 保角投影场用于绘制美国地图，两个固定的标准纬线是
     gmt set MAP_FRAME_TYPE fancy FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY 0.15c
     gmt coast -R-130/-70/24/52 -JL-100/35/33/45/12c -Bag -Dl -N1/thick,red -N2/thin -A500 -Gtan -Wthinnest,white -Sblue
     gmt end show
+```
