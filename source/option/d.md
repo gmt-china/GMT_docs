@@ -1,5 +1,4 @@
--d 选项
-=======
+# -d 选项
 
 **-d** 选项用于将某些特定值当作NaN。
 
@@ -9,9 +8,9 @@ GMT中用NaN表示数据缺失。某些情况下，用户可能会用类似-9999
 
 **-d** 选项的语法是：
 
-    **-d**\ [**i**\|\ **o**]\ *nodata*
+> **-d**\[**i**|**o**\]*nodata*
 
-- **-d**\ *nodata* 将输入数据中的 *nodata* 替换成NaN；同时，将输出数据中的NaN
+- **-d***nodata* 将输入数据中的 *nodata* 替换成NaN；同时，将输出数据中的NaN
   替换成 *nodata*
-- **-di**\ *nodata* 对于输入数据，将数据中的 *nodata* 替换成NaN
-- **-do**\ *nodata* 对于输出数据，将数据中的NaN在输出时替换成 *nodata*
+- **-di***nodata* 对于输入数据，将数据中的 *nodata* 替换成NaN
+- **-do***nodata* 对于输出数据，将数据中的NaN在输出时替换成 *nodata*
