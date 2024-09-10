@@ -6,7 +6,7 @@
 
 :::{glossary}
 **COLOR_BACKGROUND**
-: 数据Z值小于CPT文件中最小值时使用的背景色 \[black\]
+    数据Z值小于CPT文件中最小值时使用的背景色 \[black\]
 
 **COLOR_FOREGROUND**
 
