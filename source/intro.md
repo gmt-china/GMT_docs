@@ -221,7 +221,7 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
 
 **论坛/讨论组**
 
-1. 地学 GMT 中文社区 QQ 群 \[**请勿重复加群！**入群前请先阅读“[入群须知](https://gmt-china.org/blog/community-guide/)”\]：
+1. 地学 GMT 中文社区 QQ 群 [**请勿重复加群！** 入群前请先阅读“[入群须知](https://gmt-china.org/blog/community-guide/)”]：
 
    - QQ 1 群：218905582
    - QQ 2 群：791856541
