@@ -7,11 +7,12 @@
 
 macOS 下安装 GMT 有多种方式：
 
-1. [使用 Homebrew 安装](使用 Homebrew 安装) \[**推荐**\]
+1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
 2. [使用 GMT 安装包](使用 GMT 安装包)
 3. [使用 MacPorts 安装](使用 MacPorts 安装)
 4. {doc}`conda`
 
+(使用 Homebrew 安装)=
 ## 使用 Homebrew 安装
 
 [Homebrew](https://brew.sh/) 是 macOS 下的第三方软件包管理工具。
