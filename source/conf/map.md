@@ -4,7 +4,7 @@
 
 ::::{glossary}
 **MAP_FRAME_TYPE**
-    底图边框类型 \[**fancy**\]
+    底图边框类型 [**fancy**]
 
     可选值包括 **inside**|**plain**|**graph**|**fancy**|**fancy+**。
 
@@ -21,7 +21,7 @@
     ```
 
     对于 **graph** 类型，默认箭头的顶端超过坐标轴顶点7.5%。可以通过使用
-    **graph,***length*\[%\] 的方式指定超过的长度或百分比。坐标轴的宽度
+    **graph,**_length_[%] 的方式指定超过的长度或百分比。坐标轴的宽度
     由 {term}`MAP_FRAME_WIDTH` 决定，箭头的长度和宽度则分别是该宽度的10倍
     和5倍。箭头的形状还可以由 {term}`MAP_VECTOR_SHAPE` 控制。
 

@@ -81,7 +81,7 @@ FONT_TITLE                     = 24p,Helvetica,black
     gmt end show
 ```
 
-临时设置则是通过为命令添加选项 **--KEY=***value* 的形式实现的，
+临时设置则是通过为命令添加选项 **--KEY=**_value_ 的形式实现的，
 其中 **KEY** 是配置参数的名称，*value* 是配置参数的值。在下面的例子中，
 在绘制左边的底图时使用了选项 `--FONT_TITLE=12p,Times-Bold,red`，
 所以该底图的标题的字体是红色的。由于临时设置仅对当前命令有效，其不会影响到

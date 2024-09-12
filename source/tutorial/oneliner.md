@@ -12,7 +12,7 @@ gmt end show
 
 针对这种简单情况，GMT 提供了 “单行模式”。即当绘图只需要一个 GMT 命令时，
 可省略 **gmt begin** 和 **gmt end**，只需要在绘图命令后加上
-**-***format* *figname* 即可。
+**-**_format figname_ 即可。
 
 例如，上面的三行命令可以用单行模式写成一行命令:
 

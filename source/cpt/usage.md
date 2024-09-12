@@ -5,5 +5,5 @@
 
 在文件名后加上后缀 **+u**|**U***unit* 还可以对CPT文件中的Z值进行缩放。
 
-- *filename.cpt***+u***unit* 可以将Z值从 *unit* 变换为以米为单位
-- *filename.cpt***+U***unit* 可以将Z值从以米为单位变换成 *unit*
+- *filename.cpt*__+u__*unit* 可以将Z值从 *unit* 变换为以米为单位
+- *filename.cpt*__+U__*unit* 可以将Z值从以米为单位变换成 *unit*

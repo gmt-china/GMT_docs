@@ -7,11 +7,12 @@
 
 macOS 下安装 GMT 有多种方式：
 
-1. [使用 Homebrew 安装] \[**推荐**\]
-2. [使用 GMT 安装包]
-3. [使用 MacPorts 安装]
+1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
+2. [使用 GMT 安装包](macos-bundle)
+3. [使用 MacPorts 安装](macos-macports)
 4. {doc}`conda`
 
+(macos-homebrew)=
 ## 使用 Homebrew 安装
 
 [Homebrew](https://brew.sh/) 是 macOS 下的第三方软件包管理工具。
@@ -83,6 +84,7 @@ macOS 下安装 GMT 有多种方式：
    $ brew uninstall gmt
    ```
 
+(macos-bundle)=
 ## 使用 GMT 安装包
 
 GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了 GMT，还包含了运行 GMT 所需的
@@ -135,6 +137,7 @@ GMT 的 dmg 安装包只支持 macOS >= 12。
    GMT 包不支持自动升级，因而要先删除旧 GMT 包，再下载新版安装包并按照上面的
    步骤重新安装，即实现升级 GMT。
 
+(macos-macports)=
 ## 使用 MacPorts 安装
 
 [MacPorts](https://www.macports.org/) 是 macOS 下的第三方软件包管理工具。

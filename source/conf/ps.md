@@ -12,7 +12,7 @@
     - **Standard+**
     - **ISOLatin1**
     - **ISOLatin1+**
-    - **ISO-8859-***x*（x取值为1-10或13-15）
+    - **ISO-8859-**_x_（x取值为1-10或13-15）
 
     若安装GMT时使用SI单位制，则默认值为 **ISOLatin1+** 编码；否则使用 **Standard+** 编码。
 
@@ -79,7 +79,7 @@
        echo 10.5 0 $cap | gmt text -F+jML+f12p,8
        done
        gmt end show
-   ```
+    ```
 
 **PS_LINE_JOIN**
     控制线段拐点的绘制方式 \[**miter**\]
@@ -109,7 +109,7 @@
        done
        gmt subplot end
        gmt end show
-   ```
+    ```
 
 **PS_MITER_LIMIT**
     设置 {term}`PS_LINE_JOIN` 取 **miter** 时拐点的角度阈值 \[35\]

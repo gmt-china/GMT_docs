@@ -89,7 +89,7 @@
 所有的 [PROJ 投影](https://proj.org/en/latest/operations/projections/index.html)。
 但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ 的投影方式可以被
 映射到 GMT 的投影语法中, 只能使用这些投影绘图；另一方面，由于 PROJ 不是一个绘图库，
-其不支持设置地图比例尺或地图大小，因而，GMT 为 PROJ 语法引入了两个扩展：**+width=***size*
+其不支持设置地图比例尺或地图大小，因而，GMT 为 PROJ 语法引入了两个扩展：**+width=**_size_
 和 **+scale=1:xxxx** 使得其与经典的 GMT 中的工作方式相似。
 此外，也可以在投影参数的最后加上字符串 **/1:xxx** 来指定比例尺。
 

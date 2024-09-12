@@ -39,10 +39,10 @@ netCDF格式的设计相当灵活，单个netCDF文件中可以包含**多个多
 ## 读取二维多变量netCDF文件
 
 对于包含多个二维变量的netCDF网格文件，GMT默认会读取第一个二维变量作为Z值，并
-忽略其余的二维变量。用户可以通过在网格文件名后加上后缀 **?***varname* 的方式指定
+忽略其余的二维变量。用户可以通过在网格文件名后加上后缀 **?**_varname_ 的方式指定
 要读取某个特定的二维变量，即：
 
-> *filename***?***varname*
+> *filename*__?__*varname*
 
 其中 *varname* 是netCDF文件中包含的变量名，其可以通过netCDF提供的命令
 `ncdump -c file.nc` 得到。
