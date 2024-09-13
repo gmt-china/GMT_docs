@@ -1,38 +1,39 @@
-# 地学数据集
+(setup-database)=
+# 自定义数据
 
-使用 GMT 绘图时，经常用到一些特定的地学数据，如国界线、地形起伏数据等。
-这些数据一般不需要任何改动即可用在多种图件中。根据使用方法的不同，分为三类：
+使用自定义数据（即建立 GMT 数据库）的方法很简单，只要将数据集中放在任意一个目录下，
+然后修改环境变量 **GMT_DATADIR** 使得其包含该目录即可。
+在使用数据库里的数据时，就可以直接指定数据文件名，GMT 会自动到 **GMT_DATADIR**
+所指定的目录中寻找该数据，而无需指定数据文件的完整路径。
 
-1. GMT 内置数据：GMT 官方整理的内置于 GMT 软件包中的数据
-2. GMT 远程数据：GMT 官方整理的保存在远程 GMT 数据服务器中的数据
-3. 自定义数据：用户自行准备的数据
+Linux 和 macOS 用户可以把数据放在 {file}`~/GMTDB`目录下，
+然后在 {file}`~/.bashrc` 中添加如下语句:
 
-```{rubric} GMT 内置数据
+```
+export GMT_DATADIR=~/GMTDB
 ```
 
-GMT 内置了如下数据，可以直接在 GMT 中使用：
+Windows 用户可以把数据放在 **D:\\GMTDB** （路径最好不要有空格）目录下，
+然后打开“我的电脑”->“属性”->“高级”->“环境变量”，添加环境变量，变量名为 **GMT_DATADIR**，
+值为 **D:\\GMTDB**，最后可能需要重启电脑使得环境变量生效。
 
-- {doc}`gshhg`
-- {doc}`dcw/index`
+如果喜欢将不同的数据分类放在不同的目录下，则可以向 **GMT_DATADIR** 添加多个目录。
+多个目录之间用逗号 **,** 分隔。例如:
 
-```{rubric} GMT 远程数据
+```
+export GMT_DATADIR=~/GMTDB/data1,~/GMTDB/data2
 ```
 
-GMT 远程数据位于 GMT 数据服务器，在 GMT 中使用时会自动下载。GMT 提供了如下远程数据：
+Linux 和 macOS 用户，可以进一步简化为:
 
-- [earth_age：EarthByte 全球洋壳年龄数据](https://www.generic-mapping-tools.org/remote-datasets/earth-age.html)
-- [earth_geoid：EGM2008 全球大地水准面](https://www.generic-mapping-tools.org/remote-datasets/earth-geoid.html)
-- [earth_mag：EMAG2 全球磁异常模型](https://www.generic-mapping-tools.org/remote-datasets/earth-mag.html)
-- [earth_relief：IGPP 全球地形起伏](https://www.generic-mapping-tools.org/remote-datasets/earth-relief.html)
-- [earth_mask：GSHHG 全球掩膜数据](https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html)
-- [earth_faa：IGPP 全球自由空气异常](https://www.generic-mapping-tools.org/remote-datasets/earth-faa.html)
-- [earth_gebco：GEBCO 全球地形起伏](https://www.generic-mapping-tools.org/remote-datasets/earth-gebco.html)
-- [earth_vgg：IGPP 全球垂直重力梯度](https://www.generic-mapping-tools.org/remote-datasets/earth-vgg.html)
-- [earth_day & earth_night：NASA 全球昼夜影像](https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html)
-- [earth_wdmam：WDMAM 全球数字磁异常](https://www.generic-mapping-tools.org/remote-datasets/earth-wdmam.html)
-
-```{rubric} 自定义数据
 ```
+export GMT_DATADIR=~/GMTDB/
+```
+
+**GMT_DATADIR** 中的目录若以 **/** 结尾，GMT 则会在 {file}`~/GMTDB` 及其子目录下递归地
+寻找文件。注意，Windows 不支持这一功能。
+
+# 全球地学数据集
 
 用户可以自行在网络上找到更多地学数据，建立 GMT 数据库，供 GMT 使用。
 GMT 中文社区整理了一些自定义数据，供用户选用：
@@ -48,26 +49,11 @@ GMT 中文社区整理了一些自定义数据，供用户选用：
 
 - 美国地质图：<https://mrdata.usgs.gov/geology/state/>
 - 全球布格重力异常：<https://bgi.obs-mip.fr/grids-and-models-2/>
-- 中国区域地表热流：<https://doi.org/10.1016/j.tecto.2019.01.006>
-- 1:100万全国标准基础地理数据: <https://gmt-china.org/blog/national-geographic-database/>
 
 ```{toctree}
 :hidden: true
 :maxdepth: 1
 
-usage
-gshhg
-dcw/index
-earth_age：EarthByte 全球洋壳年龄数据 <https://www.generic-mapping-tools.org/remote-datasets/earth-age.html>
-earth_geoid：EGM2008 全球大地水准面 <https://www.generic-mapping-tools.org/remote-datasets/earth-geoid.html>
-earth_mag：EMAG2 全球磁异常模型 <https://www.generic-mapping-tools.org/remote-datasets/earth-mag.html>
-earth_relief：IGPP 全球地形起伏 <https://www.generic-mapping-tools.org/remote-datasets/earth-relief.html>
-earth_mask：GSHHG 全球掩膜数据 <https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html>
-earth_faa：IGPP 全球自由空气异常 <https://www.generic-mapping-tools.org/remote-datasets/earth-faa.html>
-earth_gebco：GEBCO 全球地形起伏 <https://www.generic-mapping-tools.org/remote-datasets/earth-gebco.html>
-earth_vgg：IGPP 全球垂直重力梯度 <https://www.generic-mapping-tools.org/remote-datasets/earth-vgg.html>
-earth_day & earth_night：NASA 全球昼夜影像 <https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html>
-earth_wdmam：WDMAM 全球数字磁异常 <https://www.generic-mapping-tools.org/remote-datasets/earth-wdmam.html>
 gadm/index
 PB2002/index
 global_tectonics/index

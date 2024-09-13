@@ -28,3 +28,10 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 并将压缩包内的所有文件解压至这个目录中。
 然后就可以在 GMT 命令中直接使用该目录下的数据文件，而不用指定绝对路径。
 请阅读本章其他小节以了解每个数据的具体用法与示例。
+
+## 其他中国数据集
+
+下面列出了其他未经整理的中国地学数据集，用户可从对应网址中下载并使用：
+
+- 中国区域地表热流：<https://doi.org/10.1016/j.tecto.2019.01.006>
+- 1:100万全国标准基础地理数据: <https://gmt-china.org/blog/national-geographic-database/>
