@@ -34,7 +34,7 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 - 岩性从数据的 `TYPE` 属性中提取，用不同的填充图案表示
 
 示例代码中使用的地质年代 CPT 色标文件 {download}`geoage.cpt`
-修改自 [GTS2012_epochs](http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt)。
+修改自 [GTS2012_epochs](http://seaviewsensing.com/pub/cpt-city/heine/GTS2012_epochs.cpt)。
 
 ```{literalinclude} geo3al.sh
 ```

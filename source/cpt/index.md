@@ -18,5 +18,5 @@ current-cpt
 
 除了以上各小节介绍的 CPT 资源，还可以访问以下链接获取更多 CPT 资源：
 
-1. <http://soliton.vm.bytemark.co.uk/pub/cpt-city/>
+1. <http://seaviewsensing.com/pub/cpt-city/index.html>
 2. <http://www.fabiocrameri.ch/colourmaps.php>

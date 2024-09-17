@@ -82,7 +82,7 @@ myst_substitutions = {
     "刘珠妹": "[刘珠妹](https://github.com/liuzhumei)",
     "徐弥坚": "[徐弥坚](https://xumijian.me/)",
     "邓山泉": "[邓山泉](https://github.com/sqdeng/)",
-    "周茂": "[周茂](https://github.com/ZMAlt>)",
+    "周茂": "[周茂](https://github.com/ZMAlt)",
     "王亮": "[王亮](https://github.com/wangliang1989)",
 }
 

@@ -20,7 +20,7 @@ makecpt
 
 该命令基于主 CPT 创建用户所需的 CPT，获得的 CPT 可以是离散或连续的，颜色也可相对
 主 CPT 反转。如果需使用 GMT 之外的 CPT 作为主 CPT，可在
-`cpt-city <http://soliton.vm.bytemark.co.uk/pub/cpt-city/>`_ 中查询。
+`cpt-city <http://seaviewsensing.com/pub/cpt-city/index.html>`_ 中查询。
 
 |-T| 选项所指定的 z 值范围以外的数值，分别使用 3 种颜色来表示，分别为：
 
