@@ -21,11 +21,11 @@
 | [地球水陆掩膜](https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html)                   | `earth_mask`                          |       |                   | 由 {doc}`module/grdlandmask` 计算得到                 |
 | [地球到海岸线距离](https://www.generic-mapping-tools.org/remote-datasets/earth-dist.html)               | `earth_dist`                          | km    | @earth_dist       | 由 {doc}`module/grdmath` 计算得到                     |
 | [地球昼夜卫星影像](https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html)           | `earth_day` 或 <br>`earth_night`      |       |                   | 来自 NASA                                             |
-| [月球地形起伏](https://www.generic-mapping-tools.org/remote-datasets/moon-relief.html)                  | `moon_relief`                         | m     | @moon_relief      | 来自 USGS                                             |
-| [金星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/venus-relief.html)                 | `venus_relief`                        | m     | @venus_relief     | 来自 USGS                                             |
+| [火星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/mars-relief.html)                  | `mars_relief`                         | m     | @mars_relief      | 来自 NASA                                             |
 | [水星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/mercury-relief.html)               | `mercury_relief`                      | m     | @mercury_relief   | 来自 USGS                                             |
-| [火星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/mars-relief.html)                  | `mars_relief`                         | m     | @mars_relief      | 来自 USGS                                             |
+| [月球地形起伏](https://www.generic-mapping-tools.org/remote-datasets/moon-relief.html)                  | `moon_relief`                         | m     | @moon_relief      | 来自 USGS                                             |
 | [冥王星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/pluto-relief.html)               | `pluto_relief`                        | m     | @pluto_relief     | 来自 USGS                                             |
+| [金星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/venus-relief.html)                 | `venus_relief`                        | m     | @venus_relief     | 来自 NASA                                             |
 
 
 ## 使用方式
@@ -35,7 +35,7 @@
 **@**_remote_name_\_*rr*_u_\_*reg*
 
 - **@** 符号用于告诉 GMT 这是一个远程数据
-- *remote_data* 是远程数据的具体名字
+- *remote_name* 是远程数据的具体名字
 - *rr* 是一个两位整数，用于指定要使用的数据分辨率，单位由 *u* 指定。
   单位 *u* 可以取为 **d**、**m** 或 **s** 分别表示度、分和秒
 - *reg* 指定了数据的网格配准方式，可以取 **g** 或 **p**，分别表示网格线配准或像素配准。
