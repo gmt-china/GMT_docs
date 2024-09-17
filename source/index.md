@@ -90,9 +90,7 @@ cpt/index
 option/index
 proj/index
 conf/index
-dataset-GMT/index
 dataset/index
-dataset-CN/index
 chinese/index
 api/index
 module/index
