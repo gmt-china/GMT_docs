@@ -32,7 +32,6 @@ GMT 远程数据位于 GMT 数据服务器，在 GMT 中使用时会自动下载
 :maxdepth: 1
 
 remote-dataset
-dcw/index
 ```
 
 
