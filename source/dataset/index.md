@@ -37,8 +37,8 @@ GMT 远程数据位于 GMT 数据服务器，在 GMT 中使用时会自动下载
 | [地球洋壳年龄](https://www.generic-mapping-tools.org/remote-datasets/earth-age.html)                  | `earth_age`                           | @earth_age      | 来自 EarthByte                                        |
 | [地球平均稳态海面地形](https://www.generic-mapping-tools.org/remote-datasets/earth-mdt.html)          | `earth_mdt`                           | @earth_mdt      | CNES 发布，IGPP 重处理                                |
 | [地球平均海平面](https://www.generic-mapping-tools.org/remote-datasets/earth-mss.html)                | `earth_mss`                           | @earth_mss      | CNES 发布，IGPP 重处理                                |
-| [地球水陆掩膜](https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html)                 | `earth_mask`                          |                 | 由 {doc}`module/grdlandmask` 计算得到                 |
-| [地球到海岸线距离](https://www.generic-mapping-tools.org/remote-datasets/earth-dist.html)             | `earth_dist`                          | @earth_dist     | 由 {doc}`module/grdmath` 计算得到                     |
+| [地球水陆掩膜](https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html)                 | `earth_mask`                          |                 | 由 {doc}`/module/grdlandmask` 计算得到                |
+| [地球到海岸线距离](https://www.generic-mapping-tools.org/remote-datasets/earth-dist.html)             | `earth_dist`                          | @earth_dist     | 由 {doc}`/module/grdmath` 计算得到                    |
 | [地球昼夜卫星影像](https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html)         | `earth_day` 或 <br>`earth_night`      |                 | 来自 NASA                                             |
 | [火星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/mars-relief.html)                | `mars_relief`                         | @mars_relief    | 来自 NASA                                             |
 | [水星地形起伏](https://www.generic-mapping-tools.org/remote-datasets/mercury-relief.html)             | `mercury_relief`                      | @mercury_relief | 来自 USGS                                             |
