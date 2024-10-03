@@ -11,7 +11,7 @@ GMT 内置数据和远程数据并不能满足所有用户的需求，GMT 中文
 
 gshhg
 dcw/index
-remote-data
+remote-dataset
 CN-border
 CN-faults
 CN-block/index
