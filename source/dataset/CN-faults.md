@@ -9,11 +9,15 @@ CN-faults 数据来自于邓起东院士编制的《中国活动构造图（1:40
 数据包含了中国区域内主要断层的地理位置以及断层属性，
 如断层名称、长度、走向、倾向、倾角、断层性质、最晚活动年代等。
 
-## 数据文件
+## 数据下载
 
-CN-faults 提供了一个数据文件 {file}`CN-faults.gmt`：中国区域主要断层
+- 项目主页： <https://github.com/gmt-china/china-geospatial-data>
+- 下载地址： <https://github.com/gmt-china/china-geospatial-data/releases>
 
-具体的下载地址和使用方式请见：{doc}`/dataset-CN/index`。
+macOS/Linux 用户请下载数据 {file}`china-geospatial-data-UTF8.zip`（UTF8 编码），
+Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 编码）。
+
+数据包中的数据文件 {file}`CN-faults.gmt` 即为中国区域主要断层。
 
 ## 示例图
 

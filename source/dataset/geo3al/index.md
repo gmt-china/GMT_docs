@@ -8,13 +8,19 @@ geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质
 是“[世界地质地图](https://certmapper.cr.usgs.gov/data/apps/world-maps/)”的一部分，
 数据分辨率为 1:5,000,000。
 
-## 数据文件
+## 数据下载
 
-中文社区提供了可供 GMT 直接使用的数据文件：
+**下载数据**
+
+- 项目主页： <https://github.com/gmt-china/china-geospatial-data>
+- 下载地址： <https://github.com/gmt-china/china-geospatial-data/releases>
+
+macOS/Linux 用户请下载数据 {file}`china-geospatial-data-UTF8.zip`（UTF8 编码），
+Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 编码）。
+
+数据包中提供了可供 GMT 直接使用的数据文件：
 
 - {file}`geo3al.gmt`：中国及邻区地质图数据
-
-数据的具体下载地址和使用方式请见：{doc}`/dataset-CN/index`。
 
 数据中包含了如下非空间元信息（可以参考
 [geo3al.shp.xml](https://www.sciencebase.gov/catalog/file/get/60abc7f9d34ea221ce51e5ee?f=__disk__8d%2Fb6%2Fc0%2F8db6c0b602ae57f8aaacfb088b6e33c4019de3e8)

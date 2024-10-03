@@ -12,15 +12,19 @@ CN-block 数据提供了中国大陆及周边活动地块数据，是 GMT 中文
 :width: 80%
 ```
 
-## 数据文件
+## 数据下载
 
-CN-block 数据提供了三个数据文件:
+- 项目主页： <https://github.com/gmt-china/china-geospatial-data>
+- 下载地址： <https://github.com/gmt-china/china-geospatial-data/releases>
+
+macOS/Linux 用户请下载数据 {file}`china-geospatial-data-UTF8.zip`（UTF8 编码），
+Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 编码）。
+
+数据包中提供了三个地块有关的数据文件:
 
 - {file}`CN-block-L1.gmt`：一级地块边界数据
 - {file}`CN-block-L1-deduced.gmt`：一级地块推断边界数据
 - {file}`CN-block-L2.gmt`：二级地块边界数据
-
-具体的下载地址和使用方式请见: {doc}`/dataset-CN/index`。
 
 ## 示例图
 
