@@ -91,7 +91,6 @@ option/index
 proj/index
 conf/index
 dataset/index
-dataset-CN/index
 chinese/index
 api/index
 module/index
