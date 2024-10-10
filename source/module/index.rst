@@ -171,6 +171,17 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:trend1d`
     - :doc:`gmt:trend2d`
+    - :doc:`gmt:supplements/seis/grdshake`
+    - :doc:`gmt:supplements/seis/grdvs30`
+    - :doc:`gmt:supplements/windbarbs/psbarb`
+    - :doc:`gmt:supplements/windbarbs/grdbarb`
+    - :doc:`gmt:supplements/gsfml/fzanalyzer`
+    - :doc:`gmt:supplements/gsfml/fzblender`
+    - :doc:`gmt:supplements/gsfml/fzinformer`
+    - :doc:`gmt:supplements/gsfml/fzmapper`
+    - :doc:`gmt:supplements/gsfml/fzmodeler`
+    - :doc:`gmt:supplements/gsfml/fzprofiler`
+    - :doc:`gmt:supplements/gsfml/mlconverter`
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
@@ -189,6 +200,9 @@
     - :ref:`x2sys 相关模块 <module_x2sys>`
     - :ref:`SPOTTER 相关模块 <module_spotter>`
     - :ref:`POTENTIAL 相关模块 <module_potential>`
+    - :ref:`seis` 相关模块 <module_seis>`
+    - :ref:`windbarbs` 相关模块 <module_windbarbs>`
+    - :ref:`GSFML` 相关模块 <module_gsfml>`
     - :ref:`其他模块 <module_other>`
     - :ref:`其他脚本 <other_scripts>`
 
@@ -220,11 +234,7 @@
 :doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
-:doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
-:doc:`meca`                                      在地图上绘制震源机制解
-:doc:`polar`                                     在震源球上绘制台站极性
 :doc:`velo`                                      在地图上绘制速度矢量、十字线、楔形图
-:doc:`coupe`                                     绘制震源机制解的剖面图
 :doc:`ternary`                                   绘制三角图解
 :doc:`mask`                                      将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
@@ -350,6 +360,24 @@
 :doc:`gravprisms`                                计算三维垂直棱柱（可变密度海山）产生的位异常
 :doc:`talwani2d`                                 计算 2-D 实体产生的位异常
 :doc:`talwani3d`                                 计算 3-D 实体产生的位异常
+**seis 相关模块**                                .. _module_seis:
+:doc:`coupe`                                     绘制震源机制解的剖面图
+:doc:`meca`                                      在地图上绘制震源机制解
+:doc:`polar`                                     在震源球上绘制台站极性
+:doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
+:doc:`gmt:supplements/seis/grdshake`             Compute Peak Ground Acceleration/Velocity and Intensity
+:doc:`gmt:supplements/seis/grdvs30`              Convert topographic slope to Vs30 velocities
+**windbarbs 相关模块**                           .. _module_windbarbs:
+:doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
+:doc:`gmt:supplements/windbarbs/grdbarb`         Plot wind barb field from two component grids
+**GSFML 相关模块**                               .. _module_gsfml:
+:doc:`gmt:supplements/gsfml/fzanalyzer`          Analysis of fracture zones using crossing profiles
+:doc:`gmt:supplements/gsfml/fzblender`           Produce a smooth blended FZ trace
+:doc:`gmt:supplements/gsfml/fzinformer`          Bash script to plot statistical information related to fracture zones
+:doc:`gmt:supplements/gsfml/fzmapper`            Bash script to plot fracture zone cross-profiles on a Mercator map
+:doc:`gmt:supplements/gsfml/fzmodeler`           Bash script to build fracture zone cross-profile model
+:doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
+:doc:`gmt:supplements/gsfml/mlconverter`         Convert chrons to ages using selected magnetic timescale
 **其他模块**                                     .. _module_other:
 :doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
 :doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
