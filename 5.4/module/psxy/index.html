@@ -1,0 +1,1005 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13.56 psxy &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/psxy.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="13.57 sample1d" href="../sample1d/" />
+    <link rel="prev" title="13.55 psvelo" href="../psvelo/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">13 模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">13.1 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.2 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">13.3 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.4 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.5 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.6 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.7 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.8 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.9 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.10 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.11 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">13.12 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.13 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.14 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2rgb/">13.15 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.16 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.17 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.18 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.19 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.20 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.21 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.22 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.23 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.24 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.25 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.26 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdraster/">13.27 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.28 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.29 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.30 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.31 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.32 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.33 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">13.34 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.35 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.36 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.37 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.38 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psbasemap/">13.39 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psclip/">13.40 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoast/">13.41 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.42 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoupe/">13.43 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pshistogram/">13.44 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psimage/">13.45 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pslegend/">13.46 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psmeca/">13.47 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pspolar/">13.48 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psrose/">13.49 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssac/">13.50 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psscale/">13.51 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssolar/">13.52 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psternary/">13.53 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pstext/">13.54 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psvelo/">13.55 psvelo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.56 psxy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.56.1 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s">13.56.2 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.56.3 输入数据格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.56.4 多段数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.56.5 示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.57 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.58 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.59 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">13 模块手册</a> &raquo;</li>
+        
+      <li>13.56 psxy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/module/psxy.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="psxy">
+<span id="index-0"></span><h1>13.56 psxy<a class="headerlink" href="#psxy" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/psxy.html" title="(在 GMT v5.4.6)"><span>psxy</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在图上绘制线段、多边形和符号</td>
+</tr>
+</tbody>
+</table>
+<p>该命令既可以用于画线段（多边形可以认为是闭合的线段）也可以用于画符号，唯一的区别在于是否使用了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项。在不使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的情况下，默认会将所有的数据点连成线，使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项则仅在数据点所在位置绘制符号。</p>
+<div class="section" id="id1">
+<h2>13.56.1 可选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A[m|p|x|y]</span></code></dt>
+<dd><p class="first">修改两点间的连接方式。</p>
+<p>地理投影下，两点之间默认沿着大圆弧连接。</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-A</span></code> ：忽略当前的投影方式，直接用直线连接两点</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Am</span></code> ：先沿着经线画，再沿着纬线画</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ap</span></code> ：先沿着纬线画，再沿着经线画</li>
+</ol>
+<p>笛卡尔坐标下，两点之间默认用直线连接。</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Ax</span></code> 先沿着X轴画，再沿着Y轴画</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ay</span></code> 先沿着Y轴画，再沿着X轴画</li>
+</ol>
+<p>下图中，黑色曲线为默认情况；红线为使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的效果；蓝线为使用 <code class="docutils literal notranslate"><span class="pre">-Ap</span></code>
+的效果；黄线为使用 <code class="docutils literal notranslate"><span class="pre">-Am</span></code> 的效果：</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/psxy_-A.png"><img alt="../../_images/psxy_-A.png" src="../../_images/psxy_-A.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">psxy -A选项示意图</span></p>
+</div>
+<p class="last">注：由于这里投影比较特别，所以沿着经线的线和沿着纬线的线，看上去都是直线，在其他投影方式下可能不会是这样。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
+<dd><p class="first">指定CPT文件或颜色列表</p>
+<p>该选项后跟一个CPT文件名，也可以使用 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;,...</span></code> 语法在命令行上临时构建一个颜色列表，其中 <code class="docutils literal notranslate"><span class="pre">&lt;color1&gt;</span></code> 对应Z值为0的颜色， <code class="docutils literal notranslate"><span class="pre">&lt;color2&gt;</span></code>
+对应Z值为1的颜色，依次类推。</p>
+<ol class="arabic simple">
+<li>若绘制符号（即使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项），则符号的填充色由数据的第三列Z值决定，其他数据列依次后移一列</li>
+<li>若绘制线段或多边形（即未使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项），则需要在多段数据的头段中指定
+<code class="docutils literal notranslate"><span class="pre">-Z&lt;val&gt;</span></code> ，然后从cpt文件中查找 <code class="docutils literal notranslate"><span class="pre">&lt;val&gt;</span></code> 所对应的颜色，以控制线段或多边形的线条颜色</li>
+</ol>
+<p>下面的例子展示了 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;..</span></code> 用法:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; -Z0</span>
+<span class="s">1 1</span>
+<span class="s">2 2</span>
+<span class="s">&gt; -Z1</span>
+<span class="s">3 3</span>
+<span class="s">4 4</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;dx&gt;/&lt;dy&gt;</span></code></dt>
+<dd><p class="first">设置符号的偏移量。</p>
+<p class="last">该选项会将要绘制的符号或线段在给定坐标的基础上偏移 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;/&lt;dy&gt;</span></code> 距离。若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> ，则默认 <code class="docutils literal notranslate"><span class="pre">dy=dx</span></code> 。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E[x|y|X|Y][+a][+cl|f][+n][+w&lt;cap&gt;][+p&lt;pen&gt;]</span></code></dt>
+<dd><p class="first">绘制误差棒。</p>
+<p>默认会绘制X和Y两个方向的误差棒。 <code class="docutils literal notranslate"><span class="pre">x|y</span></code> 表示只绘制X方向和/或Y方向的误差棒，此时输入数据的格式为（具体格式由选项决定）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X  Y   <span class="o">[</span>size<span class="o">]</span>     <span class="o">[</span>X_error<span class="o">]</span>    <span class="o">[</span>Y_error<span class="o">]</span>  <span class="o">[</span>others<span class="o">]</span>
+</pre></div>
+</div>
+<p>例如，X方向误差为1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Ex -W2p &gt; test.ps
+</pre></div>
+</div>
+<p>X方向误差为1，Y方向误差为0.5:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="m">0</span>.5 <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy -W2p &gt; test.ps
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">+a</span></code> 表示X方向和/或Y方向为非对称误差棒，此时输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X  Y   <span class="o">[</span>size<span class="o">]</span>   <span class="o">[</span>X_left_error X_right_error<span class="o">]</span>  <span class="o">[</span>Y_left_error Y_right_error<span class="o">]</span> <span class="o">[</span>others<span class="o">]</span>
+</pre></div>
+</div>
+<p>例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="m">0</span>.4 <span class="m">0</span>.5 <span class="m">0</span>.25 <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy+a -W2p &gt; test.ps
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 则绘制box-and-whisker（即stem-and-leaf）符号。以 <code class="docutils literal notranslate"><span class="pre">-EX</span></code>
+为例，此时数据数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X中位数  Y  <span class="m">0</span>%位数 <span class="m">25</span>%位数 <span class="m">75</span>%位数 <span class="m">100</span>%位数
+</pre></div>
+</div>
+<p>25%到75%之间的方框内可以用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项填充颜色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">4</span> <span class="m">4</span>.25 <span class="m">5</span>.4 <span class="m">7</span> <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -EX -Gred -W2p &gt; test.ps
+</pre></div>
+</div>
+<ul class="last simple">
+<li>若使用 <code class="docutils literal notranslate"><span class="pre">-EXY</span></code> ，则输入数据中至少需要10列；</li>
+<li>若在X或Y后加上了 <code class="docutils literal notranslate"><span class="pre">+n</span></code> ，则需要在额外的第5列数据指定中位数的不确定性。</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;cap&gt;</span></code> 控制误差棒顶端帽子的长度，默认值为7p</li>
+<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 控制误差棒的画笔属性，默认值为 <code class="docutils literal notranslate"><span class="pre">defalut,black,solid</span></code></li>
+<li>在使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项时，可以从CPT文件中查找到符号所对应的颜色<ul>
+<li><code class="docutils literal notranslate"><span class="pre">+c</span></code> 表明将颜色应用于符号填充色和误差棒画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">+cf</span></code> 表明仅将颜色用于填充符号</li>
+<li><code class="docutils literal notranslate"><span class="pre">+cl</span></code> 表面仅将颜色用于设置误差棒画笔属性，并关闭符号填充色</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[c|n|r][a|f|s|r|&lt;refpoint&gt;]</span></code></dt>
+<dd><p class="first">修改数据点的分组和连接方式。</p>
+<p>数据的分组方式有三种：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code> 忽略所有数据段头记录，即将所有文件内的所有数据点作为一个单独的组，并将第一个文件的第一个数据点作为该组的参考点</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> 将每个文件内的所有点分在一个组，并将每一组内的第一个点作为该组的参考点</li>
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code> 每段数据内的点作为一组，并将每段数据的第一个点作为该组的参考点</li>
+<li><code class="docutils literal notranslate"><span class="pre">r</span></code> 每段数据内的点作为一组，并将每段数据的第一个点作为该组的参考点，每次连线后将前一个点作为新的参考点，该选项仅与 <code class="docutils literal notranslate"><span class="pre">-Fr</span></code> 连用（似乎与
+<code class="docutils literal notranslate"><span class="pre">-Fcs</span></code> 等效？）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;refpoint&gt;</span></code> 指定某个点为所有组共同的参考点</li>
+</ol>
+<p>在确定分组后，还可以额外定义组内各点的连接方式：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> 将组内的点连接成连续的线段</li>
+<li><code class="docutils literal notranslate"><span class="pre">r</span></code> 将组内的所有点与组内的参考点连线</li>
+<li><code class="docutils literal notranslate"><span class="pre">n</span></code> 将每个组内的所有点互相连线</li>
+</ul>
+<p class="last">在不使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项的情况下，默认值为 <code class="docutils literal notranslate"><span class="pre">-Fcs</span></code> 。该选项的具体示例在后面给出。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt>
+<dd>设置符号或多边形的填充色。多段数据中数据段头记录中的 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项会覆盖命令行中的设置。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;intens&gt;</span></code></dt>
+<dd><p class="first">模拟光照效果</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;intens&gt;</span></code> 的取值范围为-1到1，用于对填充色做微调以模拟光照效果。正值表示亮色，负值表示暗色，零表示原色。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[+b|d|D][+xl|r|&lt;x0&gt;][+yl|r|&lt;y0&gt;][+p&lt;pen&gt;]</span></code></dt>
+<dd><p class="first">构建闭合多边形。</p>
+<p>默认情况下，psxy只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <strong>-L</strong> 则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
+<p>除了简单的首尾相连之外，还可以给线段加上包络线（类似于线段的误差）：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">+d</span></code> build symmetrical envelope around y(x) using deviations dy(x) given in extra column 3</li>
+<li><code class="docutils literal notranslate"><span class="pre">+D</span></code> build asymmetrical envelope around y(x) using deviations dy1(x) and dy2(x) from extra columns 3-4.</li>
+<li><code class="docutils literal notranslate"><span class="pre">+b</span></code> build asymmetrical envelope around y(x) using bounds yl(x) and yh(x) from extra columns 3-4.</li>
+<li><code class="docutils literal notranslate"><span class="pre">+xl|r|&lt;x0&gt;</span></code> connect first and last point to anchor points at either xmin, xmax, or x0</li>
+<li><code class="docutils literal notranslate"><span class="pre">+yb|t|&lt;y0&gt;</span></code> connect first and last point to anchor points at either ymin, ymax, or y0.</li>
+</ol>
+<p class="last">Polygon may be painted (<strong>-G</strong>) and optionally outlined by adding <strong>+p</strong><em>pen</em> [no outline].</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N[r|c]</span></code></dt>
+<dd><p class="first">区域范围外的符号不会被裁剪，而会被正常绘制。</p>
+<p>默认情况下，位于 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 范围外的符号不会被绘制的。使用该选项使得即便符号的坐标位于 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 指定的范围外，也会被绘制。需要注意的是，该选项对线段或多边形无效，线段和多边形总会被区域的范围裁剪。</p>
+<p>对于存在周期性的地图而言，若符号出现在重复边界上，则会被重复绘制两次。比如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/360/-60/60 -JM10c -Bx60 -By15 -Sc2c &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<span class="s">360 0</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>会在地图的左右边界处分别两个半圆，该行为可以通过 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项修改：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-N</span></code> 关闭裁剪，符号仅绘制一次</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Nr</span></code> 关闭裁剪，但符号依然绘制两次</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Nc</span></code> 不关闭裁剪，但符号仅绘制一次</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
+<dd><p class="first">忽略所有输入文件，包括标准输入流</p>
+<p>该选项会忽略命令行中的输入文件以及标准输入流，在Linux下相当于将空文件
+<code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> 作为输入文件，因而该命令不会在PS文件中绘制任何图形。</p>
+<p>该选项有如下几个用途：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-J$J</span> <span class="pre">-R$R</span> <span class="pre">-T</span> <span class="pre">-K</span> <span class="pre">&gt;</span> <span class="pre">$PS</span></code> 只写入文件头，见 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的介绍</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-J$J</span> <span class="pre">-R$R</span> <span class="pre">-T</span> <span class="pre">-O</span> <span class="pre">&gt;&gt;</span> <span class="pre">$PS</span></code> 只写入文件尾，见 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的介绍</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-J$J</span> <span class="pre">-R$R</span> <span class="pre">-T</span> <span class="pre">-X10c</span> <span class="pre">-Y10c</span> <span class="pre">&gt;&gt;</span> <span class="pre">$PS</span></code> 只移动坐标原点而不绘制任何图形</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W[&lt;pen&gt;][&lt;attr&gt;]</span></code></dt>
+<dd><p class="first">设置线段或符号轮廓的画笔属性。</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 见 <a class="reference internal" href="../../basis/pen/"><span class="doc">画笔</span></a> 一节</li>
+<li>若使用了 <code class="docutils literal notranslate"><span class="pre">+cl</span></code> 则表示线条颜色由CPT文件控制</li>
+<li>若使用了 <code class="docutils literal notranslate"><span class="pre">+cf</span></code> 则符号的填充色由CPT文件控制</li>
+<li>若使用了 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则表示线条颜色和符号填充色同时由CPT文件控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项后还可以加上额外的选项，可以指定线条的额外属性，见 <a class="reference internal" href="../../basis/line/"><span class="doc">线条属性</span></a> 一节</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="s">
+<h2>13.56.2 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项，则表示要绘制符号。 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的基本语法是:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-S<span class="o">[</span>&lt;symbol&gt;<span class="o">][</span>&lt;size&gt;<span class="o">[</span>&lt;u&gt;<span class="o">]]</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;symbol&gt;</span></code> 指定了符号类型， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为符号的大小， <code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 的单位。</p>
+<p>不同的符号类型，需要的输入数据格式也不同，但可以统一写成（用 <code class="docutils literal notranslate"><span class="pre">...</span></code> 代表某符号特有的输入列）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   ...
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-S-|+|a|c|d|g|h|i|n|s|t|x|y|p</span></code></dt>
+<dd><p class="first">绘制一些简单的符号。</p>
+<p>这几个符号比较简单，输入数据中不需要额外的列：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-S-</span></code> ：短横线， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是短横线的长度；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-S+</span></code> ：加号， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是加号的外接圆的直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sa</span></code> ：五角星（st<strong>a</strong>r）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sc</span></code> ：圆（<strong>c</strong>ircle）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为圆的直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sd</span></code> ：菱形（<strong>d</strong>iamond）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sg</span></code> ：八边形（octa<strong>g</strong>on）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sh</span></code> ：六边形（<strong>h</strong>exagon）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Si</span></code> ：倒三角（<strong>i</strong>nverted triangle）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sn</span></code> ：五边形（pe<strong>n</strong>tagon）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sp</span></code> ：点，不需要指定 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> ，点的大小始终为一个像素点；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ss</span></code> ：正方形（<strong>s</strong>quare）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-St</span></code> ：三角形（<strong>t</strong>riangle）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sx</span></code> ：叉号（cross）， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为外接圆直径；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sy</span></code> ：短竖线， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为短竖线的长度；</li>
+</ul>
+<p>对于小写符号 <code class="docutils literal notranslate"><span class="pre">acdghinst</span></code> ， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 表示外接圆直径；对于大写符号 <code class="docutils literal notranslate"><span class="pre">ACDGHINST</span></code>， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 表示符号的面积与直径为 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code>
+的圆的面积相同。</p>
+<p>下图给出了上面所给出的symbol所对应的符号：</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/psxy_symbols.png"><img alt="psxy simple symbols" src="../../_images/psxy_symbols.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">psxy -S选项示意图</span></p>
+</div>
+<p class="last">除了上述简单的符号之外，还有更多复杂的符号。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sb|B[&lt;size&gt;[&lt;u&gt;]][b[&lt;base&gt;]]</span></code></dt>
+<dd><p class="first">绘制垂直bar。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Sb</span></code> 用于在X坐标处绘制一个从 <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> 到Y位置的垂直bar。</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是bar宽度，其单位可以是长度单位 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code> ，也可以用 <code class="docutils literal notranslate"><span class="pre">u</span></code>
+表示X方向单位</li>
+<li>若不指定 <code class="docutils literal notranslate"><span class="pre">b&lt;base&gt;</span></code> ，其默认值为ymin</li>
+<li>指定 <code class="docutils literal notranslate"><span class="pre">b&lt;base&gt;</span></code> ，为所有数据点指定base值</li>
+<li>加上 <code class="docutils literal notranslate"><span class="pre">b</span></code> 但未指定 <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> ，则需要额外的一列数据来指定base的值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-SB</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-Sb</span></code> 类似，区别在于 <code class="docutils literal notranslate"><span class="pre">-SB</span></code> 绘制水平bar</li>
+</ol>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/10/0/5 -JX15c/5c -B1 -Sb1cb &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<span class="s">2 3 1 0.5</span>
+<span class="s">4 2 1 1.5</span>
+<span class="s">8 4 1 2.5</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Se|E</span></code></dt>
+<dd><p class="first">绘制椭圆</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Se</span></code> 用于绘制椭圆。对于椭圆而言， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是不需要的。此时输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   方向   长轴长度    短轴长度
+</pre></div>
+</div>
+<p>其中方向是相对于水平方向逆时针旋转的角度，两个轴的长度都使用长度单位，即 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">-SE</span></code> 选项与 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 类似，区别在于：</p>
+<ul class="simple">
+<li>第三列为方位角（相对于正北方向旋转的角度）。该角度会根据所选取的地图投影变换成角度</li>
+<li>对于线性投影，长短轴的长度单位为数据单位，即与 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 中数据范围的单位相同</li>
+<li>对于地理投影，长轴和短轴的长度单位为千米，且不可更改</li>
+</ul>
+<p>用长度单位指定一个椭圆:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">180</span> <span class="m">0</span> <span class="m">45</span> 5c 3c <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -Se &gt; test.ps
+</pre></div>
+</div>
+<p>线性投影下 <code class="docutils literal notranslate"><span class="pre">-SE</span></code> 的长短轴的单位为数据单位:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">180</span> <span class="m">0</span> <span class="m">45</span> <span class="m">300</span> <span class="m">100</span> <span class="p">|</span> gmt psxy -R0/360/-90/90 -JX10c -B60 -SE &gt; test.ps
+</pre></div>
+</div>
+<p>地理投影下 <code class="docutils literal notranslate"><span class="pre">-SE</span></code> 的长短轴的单位是地理单位，默认长度单位为千米:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">45</span> <span class="m">22200</span> <span class="m">11100</span> <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -SE &gt; test.ps
+<span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">45</span> 200d  100d  <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -SE &gt; test2.ps
+</pre></div>
+</div>
+<p>若长短轴长度相等，则椭圆退化成圆，可以用于绘制直径以千米为单位的圆，从而解决了
+<code class="docutils literal notranslate"><span class="pre">-Sc</span></code> 只能用长度单位而不能用距离单位画圆的不足。这一特性可以用于绘制等震中距线。比如如下命令可以绘制30度等震中距线:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">0</span> 60d 60d <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -SE &gt; test.ps
+</pre></div>
+</div>
+<p>上面示例的输入数据中，方向和短轴长度都是多余的，所以GMT提供了 <code class="docutils literal notranslate"><span class="pre">-SE-[&lt;size&gt;]</span></code>
+选项用于绘制直径为 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 的圆，若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> ，则需要在数据中指定圆的直径。比如30度和60度等震中距线可以用如下命令绘制:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/360/-90/90 -JN15c -B60 -SE- &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<span class="s">180 0 60d</span>
+<span class="s">180 0 120d</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sf&lt;gap&gt;[/&lt;size&gt;][+l|+r][+b+c+f+s+t][+o&lt;offset&gt;][+p[&lt;pen&gt;]]</span></code></dt>
+<dd><p class="first">绘制front，即在线段上加上符号以表示断层等front</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 线段上符号之间的距离，若 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 为负值，则解释为线段上符号的个数</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为符号大小<ol class="arabic">
+<li>若省略了 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> ，则默认为 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 的30%</li>
+<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 为负值，则 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是必须的</li>
+</ol>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">+l</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+r</span></code> 分别表示将符号画在线段的左侧还是右侧，默认是绘制在线段中间</li>
+<li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 符号为box</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c</span></code> 符号为circle</li>
+<li><code class="docutils literal notranslate"><span class="pre">+t</span></code> 符号为triangle</li>
+<li><code class="docutils literal notranslate"><span class="pre">+f</span></code> 符号表示断层（fault），默认值。</li>
+<li><code class="docutils literal notranslate"><span class="pre">+s</span></code> 符号表示断层的滑动（slip），用于表示左旋或右旋断层。其可以接受一个可选的参数来控制绘制矢量时的角度。也可以用 <code class="docutils literal notranslate"><span class="pre">+S</span></code> 绘制一个弧形箭头</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;offset&gt;</span></code> 将线段上的第一个符号相对于线段的起点偏离 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 距离，默认值为0</li>
+<li>默认符号的颜色与线段颜色相同（ <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项），可以使用 <code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 为符号单独指定颜色，也可以使用 <code class="docutils literal notranslate"><span class="pre">+p</span></code> ，即不绘制符号的轮廓。</li>
+</ol>
+<p>下面的例子分别绘制了 <code class="docutils literal notranslate"><span class="pre">+b</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+f</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+s</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 所对应的符号：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">150</span>/200/20/50
+<span class="nv">J</span><span class="o">=</span>M15c
+<span class="nv">PS</span><span class="o">=</span>psxy_-Sf.ps
+gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -B10 -K &gt; <span class="nv">$PS</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.1i+l+b -Gblack -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">155 30</span>
+<span class="s">160 40</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.1i+l+c -Gblue -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">165 30</span>
+<span class="s">170 40</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.1i+l+f -Gred -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">175 30</span>
+<span class="s">180 40</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.3i+l+s+o1 -Gyellow -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">185 30</span>
+<span class="s">190 40</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf1c/0.1i+l+t -Gwhite -W -B10 -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">195 30</span>
+<span class="s">200 40</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="last figure align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/psxy_-Sf.png"><img alt="psxy -Sf example" src="../../_images/psxy_-Sf.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">psxy -Sf示意图</span></p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sj|J</span></code></dt>
+<dd><p class="first">绘制旋转矩形</p>
+<p>其输入数据为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   方向    X轴长度   Y轴长度
+</pre></div>
+</div>
+<p>方向为相对于水平方向逆时针旋转的角度。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-SJ</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-Sj</span></code> 类似，区别在于：</p>
+<ol class="arabic simple">
+<li>输入的第三列是方位角</li>
+<li>对于地理投影，X轴和Y轴长度的单位为地理单位，默认为 km</li>
+<li>对于线性投影，X轴和Y轴长度的单位与 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中数据范围的单位相同</li>
+</ol>
+<p class="last">若矩形的长宽相等，则矩形退化成正方形，此时可以使用 <code class="docutils literal notranslate"><span class="pre">-SJ-&lt;size&gt;</span></code> 。
+<code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是正方形的长度，若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 则需要在输入数据的第三列指定长度。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sk&lt;name&gt;/&lt;size&gt;</span></code></dt>
+<dd><p class="first">绘制自定义的符号。</p>
+<p class="last">GMT支持自定义符号，该选项会依次在当前目录、 <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code> 、 <code class="docutils literal notranslate"><span class="pre">$GMT_SHAREDIR/custom</span></code>
+目录中寻找自定义符号的定义文件 <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;.def</span></code> 。定义文件中的符号默认其大小为1，然后会根据 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 对其进行缩放。关于如何自定义符号，见中文手册。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sl&lt;size&gt;+t&lt;string&gt;+j&lt;justify&gt;</span></code></dt>
+<dd><p class="first">绘制文本字符串</p>
+<p>该选项的功能与 <a class="reference internal" href="../pstext/"><span class="doc">pstext</span></a> 类似，不知道为何要设计这个选项。</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 文本串的大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">+t&lt;string&gt;</span></code> 指定文本串</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 修改文本串的对齐方式，默认为 <code class="docutils literal notranslate"><span class="pre">CM</span></code></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sm|M&lt;size&gt;</span></code></dt>
+<dd><p class="first">绘制数学圆弧</p>
+<p>输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X  Y  radius_of_arc  start_direction  stop_direction
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为矢量箭头的长度</li>
+<li>圆弧的线宽由 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项设定</li>
+<li><code class="docutils literal notranslate"><span class="pre">-SM</span></code> 选项与 <code class="docutils literal notranslate"><span class="pre">-Sm</span></code> 完全相同，只是当圆弧的夹角恰好是90度是，
+<code class="docutils literal notranslate"><span class="pre">-SM</span></code> 会用直角符号来表示</li>
+<li>圆弧的两端可加上额外的箭头，见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/4/0.5/1.5
+<span class="nv">J</span><span class="o">=</span>X6c/3c
+<span class="nv">PS</span><span class="o">=</span>psxy_-Sm.ps
+
+gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Bxa1g1 -Bya0.5g0.5 -BWSen -K &gt; <span class="nv">$PS</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sc0.15c -Gblack -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">1 1</span>
+<span class="s">3 1</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sm0.2c+b+e+g -Gblack -W0.5p,red -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">1 1 1 10 60</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sm0.2c+b+l -Gblack -W0.5p,blue -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">3 1 1 10 150</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
+
+rm gmt.*
+</pre></div>
+</div>
+<div class="last figure align-center" id="id8">
+<a class="reference internal image-reference" href="../../_images/psxy_-Sm.png"><img alt="psxy angle arc" src="../../_images/psxy_-Sm.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">psxy -Sm 示意图</span></p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sq[&lt;type&gt;]&lt;info&gt;[:&lt;labelinfo&gt;]</span></code></dt>
+<dd><p class="first">绘制quoted lines，即带标注的线段，比如等值线、带断层名的断层线等</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 有6种可选的方式：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">d&lt;dist&gt;[&lt;u&gt;]/[&lt;frac&gt;]</span></code> 指定标签之间的距离，单位 <code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code> ；
+<code class="docutils literal notranslate"><span class="pre">&lt;frac&gt;</span></code> 表示将第一个标签放在距离quoted lines起点 <code class="docutils literal notranslate"><span class="pre">&lt;frac&gt;*&lt;dist&gt;</span></code> 处</li>
+<li><code class="docutils literal notranslate"><span class="pre">D&lt;dist&gt;[&lt;u&gt;]/[&lt;frac&gt;]</span></code> 指定标签之间的距离，单位 <code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">e|f|k|M|n|u|d|m|s</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">f&lt;ffile.d&gt;</span></code> 根据ASCII文件 <code class="docutils literal notranslate"><span class="pre">&lt;ffile.d&gt;</span></code> 的内容确定标签的位置。仅当
+<code class="docutils literal notranslate"><span class="pre">&lt;ffile.d&gt;</span></code> 中指定的标签位置与quoted lines上数据点的位置完全匹配时才会被绘制</li>
+<li><code class="docutils literal notranslate"><span class="pre">l&lt;line1&gt;[,&lt;line2&gt;,...]</span></code> 指定一个或多个以逗号分隔的线段，标签会放在线段与quoted line相交的地方。 <code class="docutils literal notranslate"><span class="pre">&lt;line&gt;</span></code> 的格式为
+<code class="docutils literal notranslate"><span class="pre">start_lon/start_lat/stop_lon/stop_lat</span></code> ，其中 <code class="docutils literal notranslate"><span class="pre">start_lon/start_lat</span></code>
+以及 <code class="docutils literal notranslate"><span class="pre">stop_lon/stop_lat</span></code> 可以用锚点中的两字符替换。</li>
+<li><code class="docutils literal notranslate"><span class="pre">L&lt;line1&gt;[,&lt;line2&gt;,...]</span></code> 与 <code class="docutils literal notranslate"><span class="pre">l</span></code> 类似，只是将线段解释为两点之间的大圆路径</li>
+<li><code class="docutils literal notranslate"><span class="pre">n&lt;n_label&gt;</span></code> 指定等间隔标签的数目，见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">N&lt;n_label&gt;</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">s&lt;n_label&gt;</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">S&lt;n_label&gt;</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">x&lt;xfile.d&gt;</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">X&lt;xfile.d&gt;</span></code> 见官方文档</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;labelinfo&gt;</span></code> 用于控制标签的格式，其可以是下面子选项的任意组合，详情见官方文档：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">+a&lt;angle&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+c&lt;dx&gt;/&lt;dy&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+d</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+e</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+f&lt;font&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+g&lt;color&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;just&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+L&lt;label&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+n&lt;dx&gt;/&lt;dy&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+o</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+r&lt;min_rad&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+t[&lt;file&gt;]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+u&lt;unit&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+v</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+w</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+x[&lt;first&gt;,&lt;last&gt;]</span></code></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sr</span></code></dt>
+<dd><p class="first">绘制矩形</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 对该符号无效，其输入格式为:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   X轴长度   Y轴长度
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-SR</span></code></dt>
+<dd><p class="first">绘制圆角矩形</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 对该符号无用。其输入格式为:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   X轴长度     Y轴长度     圆角半径
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sv|V|=</span></code></dt>
+<dd><p class="first">绘制矢量</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 用于绘制矢量，输入数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   方向    长度
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 为矢量箭头的长度</li>
+<li>矢量宽度由 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 控制</li>
+<li>更多箭头的属性见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">-SV</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 类似，区别在于第三列是方位角而不是方向</li>
+<li><code class="docutils literal notranslate"><span class="pre">-S=</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-SV</span></code> 类似，区别在于第四列长度的单位是地理单位</li>
+</ol>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span> <span class="m">2</span> <span class="m">45</span> 5c <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sv1c+e -W2p &gt; test.ps
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sw|W[+a|+r]</span></code></dt>
+<dd><p class="first">绘制楔形饼图（pie <strong>w</strong>edge），即饼图中的一个切片。加上 <code class="docutils literal notranslate"><span class="pre">+a</span></code> 表示只绘制弧线， <code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示只绘制径向线。</p>
+<p>楔形饼图所需要的输入数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   start_direction     stop_direcrion
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是楔形饼图所对应的圆的<strong>直径</strong></li>
+<li>对于 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> ，第三、四列是楔形的开始和结束方向，其中方向定义为相对于
+X轴正方向（即东向）逆时针旋转的角度</li>
+<li>对于 <code class="docutils literal notranslate"><span class="pre">-SW</span></code> ，第三、四列是楔形的开始和结束方位角，其中方位角定义为相对于北向顺时针旋转的角度。对于地理楔形而言， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 代表径向地理距离而不是</li>
+</ol>
+<p>下面的示例分别用 <code class="docutils literal notranslate"><span class="pre">-SW</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> 画了两个不同大小的楔形饼图：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/10/0/5
+<span class="nv">J</span><span class="o">=</span>x1c
+<span class="nv">PS</span><span class="o">=</span>psxy_-Sw.ps
+gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Ba1g1 -K &gt; <span class="nv">$PS</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sw2c -Glightblue -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">2 2 0 45</span>
+<span class="s">EOF</span>
+
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -SW3c -Glightblue -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">6 2 0 45</span>
+<span class="s">EOF</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
+
+rm gmt.*
+</pre></div>
+</div>
+<div class="last figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/psxy_-Sw.png"><img alt="psxy pie wedge" src="../../_images/psxy_-Sw.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">psxy -Sw示意图。</span></p>
+<div class="legend">
+左边-Sw，右边-SW；图中1格表示1cm。</div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S~[d|D|f|l|L|n|N|s|S|x|X]&lt;info&gt;[:&lt;symbolinfo&gt;]</span></code></dt>
+<dd>绘制decorated line，即带有符号的线段。详见官方文档。</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>13.56.3 输入数据格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项相对复杂，与不同的选项连用，或者后面接不同的参数，所需要的输入数据的格式也不同。不管是什么符号，至少都需要给定符号的位置，即X和Y是必须的:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y
+</pre></div>
+</div>
+<p>不同的符号，可能还需要额外的信息，统一写成（用 <code class="docutils literal notranslate"><span class="pre">...</span></code> 代表某符号特有的输入列）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   ...
+</pre></div>
+</div>
+<p>若 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 指定了符号类型但未指定大小，即 <code class="docutils literal notranslate"><span class="pre">-S&lt;symbol&gt;</span></code> ，若该符号类型需要指定大小，则需要将符号大小放在输入数据的<strong>第三列</strong>，其他输入数据的列号延后，此时数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   size    ...
+</pre></div>
+</div>
+<p>若size&lt;=0，则跳过该记录行。</p>
+<p>若 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项后未指定符号代码，则符号代码必须位于输入文件的<strong>最后一列</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   ...   symbol
+</pre></div>
+</div>
+<p>若使用了 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项，则符号的填充色由数据的第三列决定，其他字段依次后移:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y  <span class="o">[</span>Z<span class="o">]</span>   ...  symbol
+</pre></div>
+</div>
+<p>因而总结一下输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>x  y  <span class="o">[</span>Z<span class="o">]</span>  <span class="o">[</span>size<span class="o">]</span>  ...   <span class="o">[</span>symbol<span class="o">]</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">...</span></code> 为某些符号所要求的特殊的数据列， <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 是未指定符号时必须的输入列， <code class="docutils literal notranslate"><span class="pre">size</span></code> 是未指定大小时的输入列。</p>
+</div>
+<div class="section" id="id3">
+<h2>13.56.4 多段数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>对于多段数据而言，每段数据的头段记录中都可以包含一些选项，以使得不同段数据拥有不同的属性。头段记录中的选项会覆盖命令中选项的参数：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Gfill</span></code> ：设置当前段数据的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-G-</span></code> ：对当前数据段关闭填充</li>
+<li><code class="docutils literal notranslate"><span class="pre">-G</span></code> ：恢复到默认填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code> ：设置当前段数据的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-W</span></code> ：恢复到默认画笔属性 <code class="docutils literal notranslate"><span class="pre">MAP_DEFAULT_PEN</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-W-</span></code> ：不绘制轮廓</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Z&lt;zval&gt;</span></code> ：从cpt文件中查找Z值&lt;zval&gt;所对应的颜色作为填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-ZNaN</span></code> ：从cpt文件中获取NaN颜色</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>13.56.5 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>最简单的命令，绘制线段或多边形，此时数据输入需要两列，即X和Y:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/10/0/10 -JX10c -B1 &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<span class="s">3 5</span>
+<span class="s">5 8</span>
+<span class="s">7 4</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>下面的脚本展示了 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项的用法：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ps</span><span class="o">=</span>psxy_-F.ps
+
+<span class="c1"># 此处定义了函数plotpts，用于绘制图中绿色和蓝色的圆圈，并加上文字</span>
+<span class="k">function</span> plotpts
+<span class="o">{</span>
+    <span class="c1"># Plots the two data tables and places given text</span>
+	gmt psxy -R -J -O -K -Sc0.2c -Ggreen -Wfaint t1.txt
+	gmt psxy -R -J -O -K -Sc0.2c -Gblue -Wfaint t2.txt
+	<span class="nb">echo</span> <span class="nv">$*</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+cTL+jTL+f12p -Dj0.05i
+<span class="o">}</span>
+<span class="c1"># 生成测试用的第一个数据文件</span>
+cat <span class="s">&lt;&lt; EOF &gt; t1.txt</span>
+<span class="s">10	10</span>
+<span class="s">48	15</span>
+<span class="s">28	20</span>
+<span class="s">&gt;</span>
+<span class="s">40	40</span>
+<span class="s">30	5</span>
+<span class="s">5	15</span>
+<span class="s">EOF</span>
+<span class="c1"># 生成测试用的第二个数据文件</span>
+cat <span class="s">&lt;&lt; EOF &gt; t2.txt</span>
+<span class="s">7	20</span>
+<span class="s">29	11</span>
+<span class="s">8	4</span>
+<span class="s">EOF</span>
+<span class="nv">scl</span><span class="o">=</span><span class="m">0</span>.06i
+<span class="c1"># -Fcs: 默认的连接方式</span>
+gmt psxy -R0/50/0/45 -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span> -P -Ba10 -BWSne -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -K &gt; <span class="nv">$ps</span>
+plotpts TWO DATA TABLES &gt;&gt; <span class="nv">$ps</span>
+
+<span class="c1"># -Fra</span>
+gmt psxy -R -J -Ba10 -BwSnE -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fra -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
+plotpts DATASET ORIGIN &gt;&gt; <span class="nv">$ps</span>
+
+<span class="c1"># -Frf</span>
+gmt psxy -R -J -W1p -Ba10 -BWSne t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Frf -O -K -X-3.25i -Y3.15i &gt;&gt; <span class="nv">$ps</span>
+plotpts TABLE ORIGIN &gt;&gt; <span class="nv">$ps</span>
+
+<span class="c1"># -Frs</span>
+gmt psxy -R -J -Ba10 -BwSnE -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Frs -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
+plotpts SEGMENT ORIGIN &gt;&gt; <span class="nv">$ps</span>
+
+<span class="c1"># -Fr10/35</span>
+gmt psxy -R -J -Ba10 -BWSne -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fr10/35 -O -K -X-3.25i -Y3.15i &gt;&gt; <span class="nv">$ps</span>
+plotpts FIXED ORIGIN &gt;&gt; <span class="nv">$ps</span>
+<span class="nb">echo</span> <span class="m">10</span> <span class="m">35</span> <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.4c -Gred -Wfaint &gt;&gt; <span class="nv">$ps</span>
+
+<span class="c1"># -Fna</span>
+gmt psxy -R -J -Ba10 -BwSnE -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fna -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
+plotpts NETWORK &gt;&gt; <span class="nv">$ps</span>
+
+gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
+rm gmt.* t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt
+</pre></div>
+</div>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="../../_images/psxy_-F.png"><img alt="../../_images/psxy_-F.png" src="../../_images/psxy_-F.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">psxy -F选项示意图</span></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项的示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ps</span><span class="o">=</span>psxy_-L.ps
+cat <span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">1 1</span>
+<span class="s">2 3</span>
+<span class="s">3 2</span>
+<span class="s">4 4</span>
+<span class="s">EOF</span>
+gmt psxy -R0/5/0/5 -JX3i -K -B0 t.txt -Gred -W2p -L+xl &gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+xr -X3.25i &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+x4.5 -X3.25i &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+yt -X-6.5i -Y3.25i &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+yb -X3.25i &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+y4 -X3.25i &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
+rm gmt.* t.txt
+</pre></div>
+</div>
+<div class="figure align-center" id="id11">
+<a class="reference internal image-reference" href="../../_images/psxy_-L.png"><img alt="../../_images/psxy_-L.png" src="../../_images/psxy_-L.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">psxy -L选项示意图</span></p>
+</div>
+<p>更多示例见 <a class="reference internal" href="../../gallery/lines/"><span class="doc">绘制线条</span></a>。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sample1d/" class="btn btn-neutral float-right" title="13.57 sample1d" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../psvelo/" class="btn btn-neutral float-left" title="13.55 psvelo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
