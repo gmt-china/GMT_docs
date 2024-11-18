@@ -200,9 +200,9 @@
     - :ref:`x2sys 相关模块 <module_x2sys>`
     - :ref:`SPOTTER 相关模块 <module_spotter>`
     - :ref:`POTENTIAL 相关模块 <module_potential>`
-    - :ref:`seis` 相关模块 <module_seis>`
-    - :ref:`windbarbs` 相关模块 <module_windbarbs>`
-    - :ref:`GSFML` 相关模块 <module_gsfml>`
+    - :ref:`seis 相关模块 <module_seis>`
+    - :ref:`windbarbs 相关模块 <module_windbarbs>`
+    - :ref:`GSFML 相关模块 <module_gsfml>`
     - :ref:`其他模块 <module_other>`
     - :ref:`其他脚本 <other_scripts>`
 
