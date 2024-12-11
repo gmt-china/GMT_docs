@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>gmtselect &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="gmtset" href="../gmtset/" />
+    <link rel="prev" title="gmtlogo" href="../gmtlogo/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gmtselect</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">七个空间准则</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">准则1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">准则2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">准则3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">准则4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">准则5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">准则6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">准则7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">其他选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">模块手册</a> &raquo;</li>
+        
+      <li>gmtselect</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/gmtselect.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="index-0"></span><div class="section" id="gmtselect">
+<h1>gmtselect<a class="headerlink" href="#gmtselect" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.1/gmtselect.html" title="(在 GMT v6.1)"><span>gmtselect</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>筛选符合某个特定准则的数据</p>
+</dd>
+</dl>
+<p>该命令会从输入文件中读取前两列作为经度和纬度，并判断该点是否符合一定的空间准则，以筛选出符合条件的记录。输入文件中仅前两列会被使用。</p>
+<p>七个空间准则包括：</p>
+<ol class="arabic simple">
+<li><p>在矩形区域内（ <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> ）</p></li>
+<li><p>与点文件中的每个点的距离在一定范围之内</p></li>
+<li><p>与线文件中的每条线的距离在一定范围之内</p></li>
+<li><p>在多边形文件所指定的多边形内</p></li>
+<li><p>在某个地理区域内（需要海岸线数据）</p></li>
+<li><p>Z 值在某个范围内</p></li>
+<li><p>该点所在的网格单元内具有有效值（即非零和非NaN的值）</p></li>
+</ol>
+<div class="section" id="id1">
+<h2>七个空间准则<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>准则1<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 筛选出在该区域内的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="k">select</span> points.xy -R0/5/0/5
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>准则2<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>筛选所有与点文件中的每个点的距离在一定范围内的点。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;pointfile&gt;+d&lt;dist&gt;[&lt;unit&gt;]</span></code></dt><dd><p>该准则会筛选出与文件 <code class="docutils literal notranslate"><span class="pre">&lt;pointfile&gt;</span></code> 中的每个点的距离在 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code>
+之内的记录。</p>
+<p>若 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 等于0，则 <code class="docutils literal notranslate"><span class="pre">&lt;pointfile&gt;</span></code> 中的第三列是每个数据点各自的影响半径，即筛选出不在任何一个数据点的影响半径内的点。默认情况下
+<code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 是笛卡尔坐标系下的距离，单位为用户单位。若指定 <code class="docutils literal notranslate"><span class="pre">-fg</span></code>
+选项，则表明 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 为球面距离。若使用了 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> ，则
+<code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 表示投影后的纸面距离，单位由参数 <code class="docutils literal notranslate"><span class="pre">PROJ_LENGTH_UNIT</span></code> 决定。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h3>准则3<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>筛选所有与线文件中的每条线的距离在一定范围之内的点。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;linefile&gt;+d&lt;dist&gt;[&lt;unit&gt;][+p]</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&lt;linefile&gt;</span></code> 中包含了一系列线段，该准则会筛选出与这些线段的距离不超过
+<code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 的记录。</p>
+<p>若 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 等于零，则可以在 <code class="docutils literal notranslate"><span class="pre">&lt;linefile&gt;</span></code> 中每段数据的段头记录中使用
+<code class="docutils literal notranslate"><span class="pre">-D&lt;dist&gt;</span></code> 参数，为每个线段分别指定距离值。</p>
+<p>默认情况下 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 是笛卡尔坐标系下的距离，单位为用户单位。若指定
+<code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项，则表明 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 为球面距离。若使用了 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> ，则 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 表示投影后的纸面距离，单位由 <code class="docutils literal notranslate"><span class="pre">PROJ_LENGTH_UNIT</span></code> 决定。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">+p</span></code> 则会将数据点垂直投影到线段上，只有投影位置在线段的两个端点内的记录才会被保留，即只有线段左右一定距离内的点才会被保留，超过线段两端点的点不会被保留。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h3>准则4<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>筛选出在某个多边形内的点。</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;polygonfile&gt;</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&lt;polygonfile&gt;</span></code> 中可以包含一个或多个多边形，该选项筛选出所有在多边形内的记录。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id6">
+<h3>准则5<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>根据地理特征信息筛选数据。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;wet&gt;/&lt;dry&gt;</span></code></dt><dd><p>跳过或保留陆地（dry）/海湖（wet）区域内的点。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;wet&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dry&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">s</span></code> 或 <code class="docutils literal notranslate"><span class="pre">k</span></code> ，分别表示 skip 和 keep。默认值为 <code class="docutils literal notranslate"><span class="pre">-Ns/k</span></code> ，即保留所有位于陆地上的记录，并跳过所有海洋、湖泊中的记录。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;ocean&gt;/&lt;land&gt;/&lt;lake&gt;/&lt;island&gt;/&lt;pond&gt;</span></code></dt><dd><p>进一步细分地理特征，五项分别表示海洋、陆地、湖泊、岛屿、池塘(?)。每一项均可以取 <code class="docutils literal notranslate"><span class="pre">s</span></code> 或 <code class="docutils literal notranslate"><span class="pre">k</span></code> ，分别表示 skip 和 keep。默认值为 <code class="docutils literal notranslate"><span class="pre">-Ns/k/s/k/s</span></code> ，等效于 <code class="docutils literal notranslate"><span class="pre">-Ns/k</span></code>，即仅保留所有陆地上的记录。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[a|f|h|i|l|c][+]</span></code></dt><dd><p>选择海岸线数据的精度，仅与 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项一起使用有效。见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中
+<code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项的介绍。</p>
+</dd>
+</dl>
+<dl id="a">
+<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>]</dt><dd><p>不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
+<p>在绘制湖泊时，若不管湖泊的面积大小而把所有湖泊的边界都画上去，可能导致图看上去比较乱，该选项用于对湖泊进行筛选。面积小于 <em>min_area</em> 平方千米或者湖泊级别不在 [<em>min_level</em>,<em>max_level</em>] 范围的边界都不会被绘制。默认值为 <strong>0/0/4</strong>，即绘制所有湖泊边界，即绘制0到4级所有级别的面积大于0的湖泊。</p>
+<p>对于level=2，即湖岸线，包括常规的湖以及很宽的河流。加上 <strong>+r</strong> 则只绘制河流，加上 <strong>+l</strong> 则只绘制常规湖。</p>
+<p>对于南极洲而言，因为有冰层的存在，所以海岸线有多种处理方式：</p>
+<ul class="simple">
+<li><p><strong>+ai</strong> 用ice shell boundary作为南极洲的海岸线，默认值</p></li>
+<li><p><strong>+ag</strong> 以ice grounding line作为海岸线</p></li>
+<li><p><strong>+as</strong> 忽略南纬60度以南的海岸线，用户可以使用 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 绘制自己的南极洲海岸线</p></li>
+<li><p><strong>+aS</strong> 忽略南纬60度以北的海岸线</p></li>
+</ul>
+<p><strong>+p</strong><em>precent</em>：一个多边形，降低精度后，边数减少，面积变化，当面积变化过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积之比小于 <em>percent</em> 的多边形。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h3>准则6<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>筛选Z值在某个范围内的点</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;min&gt;[/&lt;max&gt;][+c&lt;col&gt;]</span></code></dt><dd><p>判断记录的Z值是否在 <code class="docutils literal notranslate"><span class="pre">&lt;min&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;max&gt;</span></code> 之间或等于 NaN。</p>
+<p>若省略 <code class="docutils literal notranslate"><span class="pre">&lt;max&gt;</span></code> 则判断Z值是否等于 <code class="docutils literal notranslate"><span class="pre">&lt;min&gt;</span></code> 。若不限制范围的上限或下限，i
+可以使用 <code class="docutils literal notranslate"><span class="pre">-</span></code> 代替。</p>
+<p>若第三列Z值代表时间，想要判断Z值是否在某个时间范围内，需要使用 <code class="docutils literal notranslate"><span class="pre">-f2T</span></code>
+选项。</p>
+<p>可以使用 <code class="docutils literal notranslate"><span class="pre">+c&lt;col&gt;</span></code> 指定记录中的某一列作为Z值，默认以第三列（col=2）作为Z值。若想要对多列做类似的测试，可以重复使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项，每次指定不同的列号。注意：当多次使用 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项时，不可使用 <code class="docutils literal notranslate"><span class="pre">-Iz</span></code> 选项。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id8">
+<h3>准则7<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>根据数据点所在的网格单元内具有有效值（即非零和非NaN的值）来筛选数据。</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;gridmask&gt;</span></code></dt><dd><p>使用 <code class="docutils literal notranslate"><span class="pre">-G&lt;gridmask&gt;</span></code> 指定一个网格文件。对于每个数据点而言，判断其对应的网格单元是否具有有效值（即非零或非NaN的值），若该网格单元有有效值，则保留该数据点。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>其他选项<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-E[fn]</span></code></dt><dd><p>在判断点是否在一个多边形内时，默认会将恰好在多边形边界线上的点也认为是在多边形内，使用该选项会将多边形上的点认为是在多边形外部。
+<code class="docutils literal notranslate"><span class="pre">f</span></code> 和 <code class="docutils literal notranslate"><span class="pre">n</span></code> 分别修改 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项的行为。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[cfglrsz]</span></code></dt><dd><p>对七个准则取反，即筛选出不符合准则的记录。c、f、g、l、r、s、z分别对应于
+<code class="docutils literal notranslate"><span class="pre">-C</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id10">
+<h2>示例<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>筛选与 <code class="docutils literal notranslate"><span class="pre">pts.txt</span></code> 中所有点的距离在300 km以内，与 <code class="docutils literal notranslate"><span class="pre">lines.txt</span></code> 中线段的距离在100 km以外的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="k">select</span> lonlatfile -fg -Cpts.txt+d300k -Llines.txt+d100k -Il &gt; subset
+</pre></div>
+</div>
+<p>此处需要使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 以告知程序正在处理地理数据。</p>
+<p>筛选某个区域内所有不在陆地上的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="k">select</span> data.txt -R120/121/22/24 -Dh -Nk/s &gt; subset
+</pre></div>
+</div>
+<p>筛选 <code class="docutils literal notranslate"><span class="pre">quakes.txt</span></code> 中所有位于多边形区域内的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="k">select</span> quakes.txt -Flonlatpath.txt -fg &gt; subset
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">stations.txt</span></code> 中的点投影后与 <code class="docutils literal notranslate"><span class="pre">origin.txt</span></code> 的距离在5 cm之内的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="k">select</span> stations.txt -Corigin.txt+d5 -R20/50/-10/20 -JM20c <span class="se">\</span>
+    --PROJ_LENGTH_UNIT<span class="o">=</span>cm &gt; subset
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../gmtset/" class="btn btn-neutral float-right" title="gmtset" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../gmtlogo/" class="btn btn-neutral float-left" title="gmtlogo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
