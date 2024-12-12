@@ -105,7 +105,7 @@ gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
 同样，可以将 {term}`IO_SEGMENT_MARKER` 设置为两个以逗号分隔的字符，则为输入和
 输出指定了不同的段分隔符。
 
-(table_ascii_id4)=
+(table-ascii-attrs)=
 
 ## 数据段头记录中的额外属性
 
