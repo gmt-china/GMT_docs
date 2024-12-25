@@ -111,17 +111,15 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 
 ## 数据属性说明
 
-- FZN_Ch: Fracture zone name in simplified Chinese
-- FZN_En: Fracture zone name in English
-- FN_Ch: Fault name in simplified Chinese
-- FN_En: Fault name in English
-- FSN_Ch: Fault segment in simplified Chinese
-- FSN_En: Fault segment in English
-- Fea_Ch: Kinetic property and detectability of the fault segment in simplified Chinese
-- Fea_En: Kinetic property and detectability of the fault segment in English
-- AGE: Latest active age (code)
-- AGE_Des: Latest active age
-- RefE: Data source. It encompasses References, Work Content or Reference Scale.
+- FZN_Ch: 中文断裂带名称  
+- FZN_En: 英文断裂带名称  
+- FN_Ch: 中文断层名称  
+- FN_En: 英文断层名称  
+- FSN_Ch: 中文断层属性
+- FSN_En: 英文断层属性
+- AGE: 最近活动时代（代码）  
+- AGE_Des: 最近活动时代
+- RefE: 数据来源，包括参考文献、工作内容或参考规模。
 
 ## 数据引用
 
