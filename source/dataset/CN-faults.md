@@ -109,6 +109,19 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 
 [https://doi.org/10.12031/activefault.china.400.2023.db](https://doi.org/10.12031/activefault.china.400.2023.db)
 
+## 数据处理说明
+
+由于原始数据存在少量几何要素为空的错误记录，gmt在直接读取shp文件时会中断报错，
+导致绘图数据不完整。因此本社区提供的数据文件经过了如下处理步骤：
+
+1. 在gis软件中剔除3个几何错误要素（FID编号分别为5784、6429、8424）
+
+2. 通过ogr2ogr命令，将原始shp文件转为OGR_GMT格式：
+
+```
+ogr2ogr -f "OGR_GMT" CAFD400_V2023_1.gmt CAFD400_V2023_1.shp
+```
+
 ## 数据属性说明
 
 - FZN_Ch: 中文断裂带名称  
