@@ -109,6 +109,20 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 
 [https://doi.org/10.12031/activefault.china.400.2023.db](https://doi.org/10.12031/activefault.china.400.2023.db)
 
+## 数据属性说明
+
+- FZN_Ch: Fracture zone name in simplified Chinese
+- FZN_En: Fracture zone name in English
+- FN_Ch: Fault name in simplified Chinese
+- FN_En: Fault name in English
+- FSN_Ch: Fault segment in simplified Chinese
+- FSN_En: Fault segment in English
+- Fea_Ch: Kinetic property and detectability of the fault segment in simplified Chinese
+- Fea_En: Kinetic property and detectability of the fault segment in English
+- AGE: Latest active age (code)
+- AGE_Des: Latest active age
+- RefE: Data source. It encompasses References, Work Content or Reference Scale.
+
 ## 数据引用
 
 Wu, X., Xu, X., Yu, G., Ren, J., Yang, X., Chen, G., Xu, C., Du, K., Huang, X., Yang, H., Li, K., and Hao, H.: The China Active Faults Database (CAFD) and its web system, Earth Syst. Sci. Data, 16, 3391–3417, https://doi.org/10.5194/essd-16-3391-2024, 2024.
