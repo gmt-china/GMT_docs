@@ -29,7 +29,7 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
    :width: 75%
 
     gmt begin CN-faults
-        gmt coast -JM15c -R60/150/10/55 -Baf -W0.5p,black -A10000
+        gmt coast -JM15c -R60/150/0/60 -Baf -W0.5p,black -A10000
         gmt plot CN-faults.gmt -W1p,red
     gmt end show
 ```
