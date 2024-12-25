@@ -63,9 +63,9 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
         # 需要设置 PS_CHAR_ENCODING 为 Standard 以绕过这一BUG
         gmt set PS_CHAR_ENCODING Standard
         gmt coast -JM10c -RTW -Baf -W0.5p,black
-        # -aL="断层名称": set the "L" value (i.e., label) in segment headers using "断层名称"
+        # -aL="FZN_Ch": set the "L" value (i.e., label) in segment headers using "断裂带名称"
         # :+Lh: take the label text from the "L" value in the segment header
-        gmt convert CN-faults.gmt -aL="断层名称" | gmt plot -Sqn1:+Lh+f6p,39
+        gmt convert CN-faults.gmt -aL="FZN_Ch" | gmt plot -Sqn1:+Lh+f6p,39
     gmt end show
 ```
 
