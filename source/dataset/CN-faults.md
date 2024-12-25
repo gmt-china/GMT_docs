@@ -4,10 +4,10 @@
 
 ---
 
-CN-faults 数据来自于邓起东院士编制的《中国活动构造图（1:400 万）》，
-由[国家地震科学数据中心](https://data.earthquake.cn/)提供原始数据。
-数据包含了中国区域内主要断层的地理位置以及断层属性，
-如断层名称、长度、走向、倾向、倾角、断层性质、最晚活动年代等。
+CN-faults 数据来自于中国活断层数据库2023版（CAFDv2023），
+于2024年7月由中国地震局地质研究所徐锡伟研究团队发布。
+该数据库基于约110个活动断层测绘项目和20个城市地区活动断层勘探项目成果汇编更新而成，
+反映了中国及邻区活断层调查综合成果。 CAFD（2023）是对第五代区划图成果CAFD(2015)的更新版本。
 
 ## 数据下载
 
@@ -105,33 +105,10 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
     gmt end show
 ```
 
-## 数据来源与处理
+## 数据来源
 
-1. 下载 {file}`Active_fault.zip` 压缩包：[中国大陆地区 1:400 万活动断层数据库](https://data.earthquake.cn/datashare/report.shtml?PAGEID=datasourcelist&dt=ff8080826e16801d016eb119cb350006)
-
-2. 格式转换
-
-   使用 GDAL 的 {ref}`ogr2ogr <ogr2ogr>` 命令
-   将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式:
-
-   ```
-   ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp
-   ```
-
-   若不关注属性信息，也可以直接使用 GMT 读取 Shapefile 格式的源数据进行绘图。
-
-社区提供的 {file}`CN-faults.gmt` 文件还参考了《最新 1/400 万中国活动构造空间数据库的建立》，
-对部分属性字段名称的缺失和错误进行了修正。
+[https://doi.org/10.12031/activefault.china.400.2023.db](https://doi.org/10.12031/activefault.china.400.2023.db)
 
 ## 数据引用
 
-- 邓起东. 2007.
-  中国活动构造图 (1:400 万).
-  地震出版社.
-- 屈春燕. 2008.
-  最新 1/400 万中国活动构造空间数据库的建立.
-  地震地质, 30(1):298-304.
-  <http://dx.chinadoi.cn/10.3969/j.issn.0253-4967.2008.01.022>
-- Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003.
-  Active tectonics and earthquake activities in China.
-  Earth Science Frontiers, 10(S1): 66-73.
+Wu, X., Xu, X., Yu, G., Ren, J., Yang, X., Chen, G., Xu, C., Du, K., Huang, X., Yang, H., Li, K., and Hao, H.: The China Active Faults Database (CAFD) and its web system, Earth Syst. Sci. Data, 16, 3391–3417, https://doi.org/10.5194/essd-16-3391-2024, 2024.
