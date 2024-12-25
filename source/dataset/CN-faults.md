@@ -63,9 +63,9 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
         # 需要设置 PS_CHAR_ENCODING 为 Standard 以绕过这一BUG
         gmt set PS_CHAR_ENCODING Standard
         gmt coast -JM10c -RTW -Baf -W0.5p,black
-        # -aL="FZN_Ch": set the "L" value (i.e., label) in segment headers using "断裂带名称"
+        # -aL="FN_Ch": set the "L" value (i.e., label) in segment headers using "断层名称"
         # :+Lh: take the label text from the "L" value in the segment header
-        gmt convert CN-faults.gmt -aL="FZN_Ch" | gmt plot -Sqn1:+Lh+f6p,39
+        gmt convert CN-faults.gmt -aL="FN_Ch" | gmt plot -Sqn1:+Lh+f6p,39
     gmt end show
 ```
 
@@ -82,7 +82,7 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
     gmt begin CN-single-fault png
         gmt basemap -R98/105/22/27 -JM15c -Ba
         # -S: output record contains specified field attribute
-        gmt convert CN-faults.gmt -S"断层名称=红河断裂" | gmt plot
+        gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" | gmt plot
     gmt end show
 ```
 
@@ -128,8 +128,10 @@ ogr2ogr -f "OGR_GMT" CAFD400_V2023_1.gmt CAFD400_V2023_1.shp
 - FZN_En: 英文断裂带名称  
 - FN_Ch: 中文断层名称  
 - FN_En: 英文断层名称  
-- FSN_Ch: 中文断层属性
-- FSN_En: 英文断层属性
+- FSN_Ch: 中文断层分段
+- FSN_En: 英文断层分段
+- Fea_Ch: 中文断层分段运动学性质和可探测性
+- Fea_En: 英文断层分段运动学性质和可探测性
 - AGE: 最近活动时代（代码）  
 - AGE_Des: 最近活动时代
 - RefE: 数据来源，包括参考文献、工作内容或参考规模。
