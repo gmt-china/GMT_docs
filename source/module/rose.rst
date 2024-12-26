@@ -62,6 +62,9 @@ rose
 
         n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum
 
+**-JX**\ *diameter*
+    设置rose图的直径。本模块只能使用这种投影方式。如果不设置，直径默认为7.5cm。
+
 ``-L[<wlabel>,<elabel>,<slabel>,<nlabel>]``
     指定0、90、180、270度处的标签。
 
