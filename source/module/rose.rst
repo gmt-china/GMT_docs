@@ -35,10 +35,10 @@ rose
     此模块中，X表示径向距离，Y表示方位角。Y轴的标签是图片的标题，比例尺长度由
     径向网格间隔决定。
 
-``-Cm[+w]<mode_file>``
-    绘制矢量以显示 ``<mode_file>`` 中指定的主方向。
+``-Em|[+w]mode_file``
+    绘制矢量以显示 ``mode_file`` 中指定的主方向。
 
-    使用 ``-Cm`` 则计算并绘制平均方向。使用 ``-Cm+w<mode_file>`` 则将计算得到的
+    使用 ``-Em`` 则计算并绘制平均方向。使用 ``-Em+w<mode_file>`` 则将计算得到的
     平均方向及其他统计结果以如下格式保存到文件中::
 
         mean_az, mean_r, mean_resultant, max_r, scaled_mean_r, length_sum, n, sign@alpha
