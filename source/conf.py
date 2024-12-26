@@ -9,9 +9,6 @@ import os
 import sys
 import datetime
 
-import warnings
-warnings.filterwarnings("ignore", category=UserWarning, message=".*duplicate label.*")
-
 # -- Project configuration ------------------------------------------------
 master_doc = "index"
 project = "GMT 中文手册"
@@ -61,8 +58,6 @@ extensions = [
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
-# suppress_warnings = ['ref.duplicate_label']
-
 # use custom templater bridge defined in _extensions/templatebridge.py
 template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -214,7 +209,3 @@ latex_elements = {
     "maketitle" : "\\maketitle",
     "releasename": "v",  # the default is "Release" or "发布"
 }
-
-# def setup(app):
-#     # Suppress specific warnings
-#     app.registry.warnings_suppressed.add('duplicate label')
