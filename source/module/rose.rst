@@ -62,6 +62,9 @@ rose
 
         n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum
 
+**-JX**\ *diameter*
+    设置rose图的直径。本模块只能使用这种投影方式。如果不设置，直径默认为7.5cm。
+
 ``-L[<wlabel>,<elabel>,<slabel>,<nlabel>]``
     指定0、90、180、270度处的标签。
 
@@ -70,7 +73,7 @@ rose
     #. 只使用 ``-L`` 但无其他参数表示不显示所有标签
 
 ``-M<parameters>``
-    与 ``-C`` 选项一起使用以修改矢量的属性。具体属性见 :doc:`/basis/vector` 一节
+    与 ``-E`` 选项一起使用以修改矢量的属性。具体属性见 :doc:`/basis/vector` 一节
 
 ``-Q[<alpha>]``
     设置置信水平，用于决定平均结果是否显著，默认值为 0.05。
@@ -88,10 +91,8 @@ rose
     - 方位角范围取 ``0/360`` 以绘制 full circle
 
 
-``-S[n]<plot_radius>[u]``
-    指定圆的半径。
-
-    ``-Sn`` 会将输入的半径归一化到0到1。
+**-S[+a]**
+    将输入的半径归一化到0到1。如果使用 **+a** 则进一步将绘制出的面积归一化。
 
 **-T**
     指定输入数据为 orientation 数据（即数据范围在0-180度范围内）而不是0-360度
@@ -99,10 +100,10 @@ rose
     First as *azimuth* and second as *azimuth + 180*.
     Ignored if range is given as -90/90 or 0/180.
 
-``-W[v]<pen>``
+**-W**\ *pen*
     设置扇区边框的画笔属性。
 
-    ``-Wv<pen>`` 可用于设置绘制矢量时所需的画笔属性。
+    ``-Wv<pen>`` 可用于设置绘制矢量时所需的画笔属性。此时需要设置 ``-E`` 选项。
 
 ``-Zu|<scale>``
     将数据的半径乘以 ``<scale>`` ，比如 ``-Z0.001`` 会将数据的单位从m变成km。
