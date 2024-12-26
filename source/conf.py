@@ -9,6 +9,9 @@ import os
 import sys
 import datetime
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, message=".*duplicate label.*")
+
 # -- Project configuration ------------------------------------------------
 master_doc = "index"
 project = "GMT 中文手册"
@@ -58,7 +61,7 @@ extensions = [
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
-suppress_warnings = ['ref.duplicate_label']
+# suppress_warnings = ['ref.duplicate_label']
 
 # use custom templater bridge defined in _extensions/templatebridge.py
 template_bridge = "templatebridge.MyTemplateBridge"
