@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line
 SPHINXBUILD   = sphinx-build
-SPHINXOPTS    = -j auto -n -w warnings.txt
+SPHINXOPTS    = -j auto -n
 SOURCEDIR     = source
 BUILDDIR      = build
 DOCNAME       = GMT_docs
@@ -19,7 +19,6 @@ help:
 # "make mode" option. $(O) is meant as a shortcut for $(SPHINXOPTS)
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	grep -v "duplicate label" warnings.txt
 
 build: build_html build_pdf
 
