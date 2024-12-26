@@ -209,3 +209,7 @@ latex_elements = {
     "maketitle" : "\\maketitle",
     "releasename": "v",  # the default is "Release" or "发布"
 }
+
+def setup(app)
+    # Suppress specific warnings
+    app.registry.warnings_suppressed.add('duplicate label')
