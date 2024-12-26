@@ -7,7 +7,7 @@ rose
 :官方文档: :doc:`gmt:rose`
 :简介: 绘制极坐标下的直方图（sector图、rose图或windrose图）
 
-可选选项
+必须选项
 --------
 
 *table*
@@ -15,26 +15,30 @@ rose
 
         length  azimuth
 
-    若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项，
-    此时所有的长度都默认为单位长度。
+    此时绘制的是windrose图。
+    若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项。
+    如果使用 **-A** 选项可以绘制sector图或rose图。
+
+可选选项
+--------
 
 .. _-A:
 
-**-A**\ [**r**]\ *sector_width*
+**-A**\ *sector_width*\ [**+r**]
     指定扇页宽度，单位为度
 
     - 默认扇页宽度为0，即windrose图
     - 若扇页宽度不为0，则表示绘制sector图
-    - 若扇页宽度不为0且使用了 **-Ar**，则表示绘制rose图
+    - 若扇页宽度不为0且使用了 **+r**，则表示绘制rose图
 
 **-B**
     此模块中，X表示径向距离，Y表示方位角。Y轴的标签是图片的标题，比例尺长度由
     径向网格间隔决定。
 
-``-Cm[+w]<mode_file>``
-    绘制矢量以显示 ``<mode_file>`` 中指定的主方向。
+``-Em|[+w]mode_file``
+    绘制矢量以显示 ``mode_file`` 中指定的主方向。
 
-    使用 ``-Cm`` 则计算并绘制平均方向。使用 ``-Cm+w<mode_file>`` 则将计算得到的
+    使用 ``-Em`` 则计算并绘制平均方向。使用 ``-Em+w<mode_file>`` 则将计算得到的
     平均方向及其他统计结果以如下格式保存到文件中::
 
         mean_az, mean_r, mean_resultant, max_r, scaled_mean_r, length_sum, n, sign@alpha
