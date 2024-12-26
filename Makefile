@@ -19,7 +19,7 @@ help:
 # "make mode" option. $(O) is meant as a shortcut for $(SPHINXOPTS)
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-        grep -v "duplicate label" warnings.txt
+	grep -v "duplicate label" warnings.txt
 
 build: build_html build_pdf
 
