@@ -58,6 +58,8 @@ extensions = [
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
+suppress_warnings = ['ref.duplicate_label']
+
 # use custom templater bridge defined in _extensions/templatebridge.py
 template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -210,6 +212,6 @@ latex_elements = {
     "releasename": "v",  # the default is "Release" or "发布"
 }
 
-def setup(app):
-    # Suppress specific warnings
-    app.registry.warnings_suppressed.add('duplicate label')
+# def setup(app):
+#     # Suppress specific warnings
+#     app.registry.warnings_suppressed.add('duplicate label')
