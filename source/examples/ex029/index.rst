@@ -20,7 +20,7 @@
 
 - :file:`@earth_relief_06m`：`earth_relief <https://www.generic-mapping-tools.org/remote-datasets/earth-relief.html>`__
 - :file:`@earth_day_06m`：`earth_day & earth_night <https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html>`__
-- :file:`CN-faults.gmt`：:doc:`/dataset-CN/CN-faults`
+- :file:`CN-faults.gmt`：:doc:`/dataset/CN-faults/`
 
 下面的绘图脚本将三维地形、卫星图片以及断层线绘制在不同高度：
 
