@@ -7,7 +7,7 @@ rose
 :官方文档: :doc:`gmt:rose`
 :简介: 绘制极坐标下的直方图（sector图、rose图或windrose图）
 
-可选选项
+必须选项
 --------
 
 *table*
@@ -18,6 +18,9 @@ rose
     此时绘制的是windrose图。
     若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项。
     如果使用 **-A** 选项可以绘制sector图或rose图。
+
+可选选项
+--------
 
 .. _-A:
 
