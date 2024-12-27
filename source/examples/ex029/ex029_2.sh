@@ -17,7 +17,7 @@ gmt begin 3D_earth_relief_2
     # 绘制卫星图片，-G 表示在 DEM 上贴卫星图片
     gmt grdview @earth_relief_06m -R101/108/35/42/-1000/5000 -JM10c -JZ4c -N-1000+ggray -Gday.tif -Qi -Ba -Bz -BwsENZ -p60/25   
     # 绘制断层线
-    gmt plot3d faults.xyz -W1p,brown -p -JZ
+    gmt plot3d faults.xyz -W1p,brown -p -i0,1,3
     # 绘制指北针
     gmt basemap -TdjLT+w1.5c+l+o1c -p60/25/2000
 
