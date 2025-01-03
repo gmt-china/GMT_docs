@@ -11,7 +11,7 @@
 ## 安装 miniforge
 
 用户可以参考 https://mirror.nju.edu.cn/help/miniforge 
-安装 miniforge。
+安装 miniforge，选择安装 Mambaforge-* 系列的包。
 
 ## 安装 GMT
 
