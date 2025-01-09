@@ -60,8 +60,8 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
         # 设置中文字体配置文件 cidfmap 的目录，Windows 下无需此设置
         gmt set PS_CONVERT="C-I${HOME}/.gmt"
         # GMT 处理中文存在一些已知 BUG
-        # 需要设置 PS_CHAR_ENCODING 为 Standard 以绕过这一BUG
-        gmt set PS_CHAR_ENCODING Standard
+        # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
+        gmt set PS_CHAR_ENCODING Standard+
         gmt coast -JM10c -RTW -Baf -W0.5p,black
         # -aL="FN_Ch": set the "L" value (i.e., label) in segment headers using "FN_Ch"
         # :+Lh: take the label text from the "L" value in the segment header
