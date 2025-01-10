@@ -11,7 +11,7 @@ colorbar
 标注的字体由 :term:`FONT_ANNOT_PRIMARY` 控制。
  **colorbar** 模块绘制的色条边框，
 它的粗细、刻度线属性、标签属性等设置方式与绘图边框的设置相同。
-可以在命令中使用 ``--FONT_ANNOT_PRIMARY=12p,Times-Bold,red`` 进行临时修改，
+可以在命令中使用例如 ``--FONT_ANNOT_PRIMARY=12p,Times-Bold,red`` 这样的方式进行临时修改，
 避免和绘图边框的设置发生冲突。
 
 **gmt colorbar**
