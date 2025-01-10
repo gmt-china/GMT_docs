@@ -20,22 +20,16 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-build: build_html build_html_zip build_pdf
-
-build_html: $(HTML)
-
-build_html_zip: html
+htmlzip: html
 	cp -r $(BUILDDIR)/html $(BUILDDIR)/$(DOCNAME)
-	cd $(BUILDDIR)
-	zip -r $(DOCNAME).zip $(DOCNAME)
-	rm -r $(DOCNAME)
+	cd $(BUILDDIR); zip -r $(DOCNAME).zip $(DOCNAME); rm -r $(DOCNAME); cd ..
 
-build_pdf: latex
+pdf: latex
 	tectonic $(BUILDDIR)/latex/$(DOCNAME).tex
 	mv $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(DOCNAME).pdf
 
 # reduce file size of the final PDF documentation
-optimize_pdf: build_pdf
+optimize_pdf: pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
 		-dNOPAUSE -dQUIET -dBATCH \
 		-sOutputFile=$(BUILDDIR)/$(DOCNAME).optimized.pdf \

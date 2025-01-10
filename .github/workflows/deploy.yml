@@ -53,7 +53,7 @@ jobs:
       # 5. Deploy the PDF document and HTML zip
       #
       - name: Build HTML
-        run: make build_html
+        run: make dirhtml
 
       - name: Checkout the gh-pages branch
         uses: actions/checkout@v4
@@ -94,7 +94,7 @@ jobs:
 
       - name: Build the HMTL zip
         run: |
-          make build_html_zip
+          make htmlzip
           mv build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
 
       - name: Setup tectonic
@@ -102,7 +102,7 @@ jobs:
 
       - name: Build the PDF
         run: |
-          make build_pdf
+          make pdf optimize_pdf
           cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
