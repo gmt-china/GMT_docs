@@ -31,24 +31,17 @@ jobs:
         uses: mamba-org/setup-micromamba@v2.0.3
         with:
           environment-file: environment.yml
-          cache-downloads: true
+          cache-downloads: false
           cache-environment: true
 
-      - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v7
-        with:
-          workflow: cache-data.yml
-          workflow_conclusion: success
-          name: gmt-cache
-          path: .gmt
-
-      - name: Move and list downloaded remote files
+      - name: Download and list cached files
         run: |
-          # move the .gmt directory to the HOME directory
-          mv .gmt ~/
+          gh run download --name gmt-cache --dir ~/.gmt/
           # Change modification times of the two files, so GMT won't refresh it
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
           ls -lhR ~/.gmt
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       # Because building the PDF document is slow, the building and deployment
       # process is designed as follows:
@@ -60,7 +53,7 @@ jobs:
       # 5. Deploy the PDF document and HTML zip
       #
       - name: Build HTML
-        run: make build_html
+        run: make dirhtml
 
       - name: Checkout the gh-pages branch
         uses: actions/checkout@v4
@@ -99,24 +92,18 @@ jobs:
           force_orphan: true
           publish_dir: deploy
 
-      - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-
-      - name: Install LaTeX packages
-        run: bash scripts/setup-latex.sh
-
       - name: Build the HMTL zip
         run: |
-          make html
-          mv build/html GMT_docs
-          zip -r GMT_docs.zip GMT_docs
-          rm -r GMT_docs
-          mv GMT_docs.zip deploy/${GMT_DOC_VERSION}/
+          make htmlzip
+          mv build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
 
-      - name: Build PDF
+      - name: Setup tectonic
+        uses: wtfjoke/setup-tectonic@v3
+
+      - name: Build the PDF
         run: |
-          make build_pdf
-          cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          make pdf optimize_pdf
+          cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v4
