@@ -4,7 +4,7 @@
 name: Deploy
 
 on:
-  # pull_request: # enable pull_request for testing
+  pull_request: # enable pull_request for testing
   push:
     branches:
       - main
@@ -31,20 +31,18 @@ jobs:
         uses: mamba-org/setup-micromamba@v2.0.3
         with:
           environment-file: environment.yml
-          cache-downloads: true
+          cache-downloads: false
           cache-environment: true
 
-      - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v7
+      - name: Download GMT cache from GitHub
+        uses: actions/download-artifact@v4.1.8
         with:
-          workflow: cache-data.yml
-          workflow_conclusion: success
           name: gmt-cache
           path: .gmt
 
       - name: Move and list downloaded remote files
         run: |
-          # move the .gmt directory to the HOME directory
+          # Move the .gmt directory to the HOME directory
           mv .gmt ~/
           # Change modification times of the two files, so GMT won't refresh it
           touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
@@ -99,12 +97,6 @@ jobs:
           force_orphan: true
           publish_dir: deploy
 
-      - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-
-      - name: Install LaTeX packages
-        run: bash scripts/setup-latex.sh
-
       - name: Build the HMTL zip
         run: |
           make html
@@ -113,10 +105,16 @@ jobs:
           rm -r GMT_docs
           mv GMT_docs.zip deploy/${GMT_DOC_VERSION}/
 
-      - name: Build PDF
+      - name: Setup tectonic
+        uses: wtfjoke/setup-tectonic@v3
+
+      - name: Build the PDF
         run: |
-          make build_pdf
-          cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          make latex
+          cd build/latex/
+          tectonic GMT_docs.tex
+          cd ../../
+          cp build/latex/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v4
