@@ -10,6 +10,8 @@ legend
 **legend** 模块用于绘制图例，图例由图例文件控制。如无特别说明，
 标注的字体由 :term:`FONT_ANNOT_PRIMARY` 控制。
 若图例中含有中文，必须将 :term:`FONT_ANNOT_PRIMARY` 设置为中文字体。
+可以在命令中使用例如 ``--FONT_ANNOT_PRIMARY=12p,40,red`` 这样的方式进行临时修改，
+避免和绘图边框的设置发生冲突。
 
 语法
 ----
