@@ -203,6 +203,10 @@ sac
 
     gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
+.. image:: https://private-user-images.githubusercontent.com/26203721/402445855-10ac01c3-06f1-47ec-bbaf-ebbaf7c0863f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzY3NDk5MTcsIm5iZiI6MTczNjc0OTYxNywicGF0aCI6Ii8yNjIwMzcyMS80MDI0NDU4NTUtMTBhYzAxYzMtMDZmMS00N2VjLWJiYWYtZWJiYWY3YzA4NjNmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTEzVDA2MjY1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY2ODQ4NzI5MjljYWZjNGViZjQyODZiNmQ0ZjM4OTY2ODk0NzJkOTY4ZDU4M2QxNWI0ZTY5OTJiODczMDdiODQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jIDWz1UyYpb6XnRLPaFX7rnEtShqmtanMBnoaA0ue4o
+   :width: 100%
+   :align: center
+
 利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在距离剖面上::
 
     gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
