@@ -211,8 +211,9 @@ sac
 利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在地图上::
 
     gmt begin map pdf
-    gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
-    saclst stlo stla f *.z | gmt plot -St0.4c -Gblack -i1,2
+        gmt coast -G244/243/239 -S167/194/223 -R-120/-40/35/65 -Baf -JM15c
+        gmt sac *.z -M1i -S300c
+        saclst stlo stla f *.z | gmt plot -St0.4c -Gred -i1,2
     gmt end show
 
 相关模块
