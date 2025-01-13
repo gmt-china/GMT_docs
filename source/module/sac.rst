@@ -198,14 +198,15 @@ sac
 示例
 ----
 
-利用 SAC 的命令 **funcgen seismogram** 生成了波形，想要绘制单个波形，并分别为
-正负部分涂色::
+利用 SAC 的命令 **funcgen seismogram** 生成单个波形文件 *seis.SAC* 并绘制，
+分别为正负部分涂色::
 
     gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
 .. image:: https://raw.githubusercontent.com/CovMat/gmt-sac-example-figure/main/ex1.png
    :width: 100%
    :align: center
+
 
 利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在距离剖面上::
 
@@ -215,6 +216,7 @@ sac
 .. image:: https://raw.githubusercontent.com/CovMat/gmt-sac-example-figure/main/ex2.png
    :width: 100%
    :align: center
+
 
 利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在地图上::
 
@@ -227,6 +229,7 @@ sac
 .. image:: https://raw.githubusercontent.com/CovMat/gmt-sac-example-figure/main/ex3.png
    :width: 100%
    :align: center
+
 
 相关模块
 --------
