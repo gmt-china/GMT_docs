@@ -203,12 +203,12 @@ sac
 
     gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
-利用 SAC 命令 **datagen sub tel *.z** 生成多个波形，将其绘制在距离剖面上::
+利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在距离剖面上::
 
     gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
          -Ed -M1.5c -W0.5p,red -png distance_profile
 
-利用 SAC 命令 **datagen sub tel *.z** 生成多个波形，将其绘制在地图上::
+利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在地图上::
 
     gmt begin map pdf
     gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
