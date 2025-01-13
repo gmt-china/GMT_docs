@@ -212,6 +212,10 @@ sac
     gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
          -Ed -M1.5c -W0.5p,red -png distance_profile
 
+.. image:: https://private-user-images.githubusercontent.com/26203721/402445859-61f58c8c-78cb-4c7b-ab73-f5fc0f8e114f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzY3NTAwNzksIm5iZiI6MTczNjc0OTc3OSwicGF0aCI6Ii8yNjIwMzcyMS80MDI0NDU4NTktNjFmNThjOGMtNzhjYi00YzdiLWFiNzMtZjVmYzBmOGUxMTRmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTEzVDA2MjkzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThiYzE2NDdmNjUzNWFiODYxN2YyNzQ2ODdjNGI2ZTE5ZDcxNzZkOTE2YmU1ODM1YWFmNjRkNWI1OTJjOWRhMzEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.SI82Y30MXlCFbC_Syg6EPLoAkbuJ5Vw7XBUVh8RmSds
+   :width: 100%
+   :align: center
+
 利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在地图上::
 
     gmt begin map pdf
@@ -219,6 +223,10 @@ sac
         gmt sac *.z -M1i -S300c
         saclst stlo stla f *.z | gmt plot -St0.4c -Gred -i1,2
     gmt end show
+
+.. image:: https://private-user-images.githubusercontent.com/26203721/402445862-10d15e15-1a5a-47d9-9e4a-d3496f414103.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzY3NTAwNzksIm5iZiI6MTczNjc0OTc3OSwicGF0aCI6Ii8yNjIwMzcyMS80MDI0NDU4NjItMTBkMTVlMTUtMWE1YS00N2Q5LTllNGEtZDM0OTZmNDE0MTAzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAxMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMTEzVDA2MjkzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQxNDE3NWEzZDA0ODQzNThhNmZjN2MzOGMwNGU4Mzg2NDMzNGRiZmI1MTYzNDMxZTRjOWZhNzVjYjRlODRhNTQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.6lz-9fNe2wQzpunyRzKSiZuuO0Z_HcZxKqY6srX33gY
+   :width: 100%
+   :align: center
 
 相关模块
 --------
