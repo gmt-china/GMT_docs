@@ -73,6 +73,7 @@
     - :doc:`grdvector`
     - :doc:`grdview`
     - :doc:`grdvolume`
+		- :doc:`grdvs30`
     - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
@@ -172,7 +173,6 @@
     - :doc:`gmt:trend1d`
     - :doc:`gmt:trend2d`
     - :doc:`gmt:supplements/seis/grdshake`
-    - :doc:`gmt:supplements/seis/grdvs30`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
     - :doc:`gmt:supplements/gsfml/fzanalyzer`
@@ -366,7 +366,7 @@
 :doc:`polar`                                     在震源球上绘制台站极性
 :doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
 :doc:`gmt:supplements/seis/grdshake`             Compute Peak Ground Acceleration/Velocity and Intensity
-:doc:`gmt:supplements/seis/grdvs30`              Convert topographic slope to Vs30 velocities
+:doc:`grdvs30`                                   计算 Vs30 速度模型
 **windbarbs 相关模块**                           .. _module_windbarbs:
 :doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
 :doc:`gmt:supplements/windbarbs/grdbarb`         Plot wind barb field from two component grids
