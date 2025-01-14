@@ -203,7 +203,7 @@ sac
 
     gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
-.. image:: https://raw.githubusercontent.com/CovMat/gmt-sac-example-figure/main/ex1.png
+.. image:: https://github.com/user-attachments/assets/80d57cb7-ae5e-4351-a6f6-4e9ac48579a4
    :width: 100%
    :align: center
 
@@ -213,7 +213,7 @@ sac
     gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
          -Ed -M1.5c -W0.5p,red -png distance_profile
 
-.. image:: https://raw.githubusercontent.com/CovMat/gmt-sac-example-figure/main/ex2.png
+.. image:: https://github.com/user-attachments/assets/d5f0d76a-3ff9-4914-a12b-bbc67fae62f4
    :width: 100%
    :align: center
 
@@ -226,7 +226,7 @@ sac
         saclst stlo stla f *.z | gmt plot -St0.4c -Gred -i1,2
     gmt end show
 
-.. image:: https://raw.githubusercontent.com/CovMat/gmt-sac-example-figure/main/ex3.png
+.. image:: https://github.com/user-attachments/assets/670740ed-6114-40ff-a2c1-f3d7e54ccb26
    :width: 100%
    :align: center
 
