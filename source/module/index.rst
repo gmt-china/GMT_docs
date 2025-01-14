@@ -73,7 +73,7 @@
     - :doc:`grdvector`
     - :doc:`grdview`
     - :doc:`grdvolume`
-		- :doc:`grdvs30`
+    - :doc:`grdvs30`
     - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
