@@ -1,4 +1,5 @@
 .. index:: ! grdvs30
+.. include:: common_SYN_OPTs.rst_
 
 grdvs30
 =======
@@ -18,10 +19,10 @@ Vs30，即上部30米内的时间平均剪切波速度，是地震工程领域�
 ----
 
 **gmt grdvs30** *ingrid* 
-|-G|\ *outgrid*\ 
-|-C|\ *val*\|\ *fname*\[\ **+g**\] 
-[ |SYN_OPT-R| ]
-[ |-W|\ *water_vel*\ ]
+ |-G|\ *outgrid*\ 
+ |-C|\ *val*\|\ *fname*\[\ **+g**\] 
+ [ |SYN_OPT-R| ]
+ [ |-W|\ *water_vel*\ ]
 
 必选选项
 --------
