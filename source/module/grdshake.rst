@@ -63,25 +63,18 @@ grdshake
 示例
 -----
 
-使用先前计算的 Vs30 速度模型，针对一次发生在断层上的地震事件（震级为7），
+使用计算好的 Vs30 速度模型，针对一次发生在断层上的地震事件（震级为7），
 计算地表峰值烈度。其断层迹线坐标保存在 *line.dat* 文件中::
 
     gmt grdshake vs30.grd -Gshake_intensity.grd -Lline.dat -Ci -M7
 
-计算并绘制发生在红河断裂的一个9级地震，在四川省造成的地表峰值烈度：
+计算并绘制发生在红河断裂的一个9级地震，在四川省造成的地表峰值烈度::
 
-.. gmtplot::
-    :show-code: true
-    :width: 100%
-
-     #!/usr/bin/env bash
      gmt begin grdshake-example
          gmt basemap -R95/105/20/35 -JM15c -Baf
-         # 使用04m的地形数据，计算 Vs30 估计值，并将克拉通值设为1
-         echo 0 0 > fake
-         echo 1 0 >> fake
-         echo 1 1 >> fake
-         gmt grdvs30 @earth_relief_10m_p -R95/105/20/35 -Gvs30.grd -C@cratons.xy
+         # global_vs30.grd是USGS计算好的全球Vs30速度模型网格文件
+         # 具体可以参考 https://earthquake.usgs.gov/data/vs30/ 自行下载，并获取更多信息
+         gmt grdcut global_vs30.grd -R95/105/20/35 -Gvs30.grd
          # 提取红河断裂的数据，保存在line.dat文件中
          gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
          # 计算地表峰值烈度
@@ -89,7 +82,7 @@ grdshake
          # 绘制地表峰值烈度
          gmt grd2cpt -Cseis -Gintensity.grd -Z -D
          gmt grdimage intensity.grd -C
-         rm fake vs30.grd line.dat intensity.grd
+         rm vs30.grd line.dat intensity.grd
      gmt end show
 
 
