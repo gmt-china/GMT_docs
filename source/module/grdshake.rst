@@ -2,13 +2,13 @@
 .. include:: common_SYN_OPTs.rst_
 
 grdshake
-========
+==========
 
 :官方文档: :doc:`gmt:supplements/seis/grdshake`
 :简介: 使用 Vs30 速度模型计算地表峰值速度、加速度、烈度。
 
 语法
-----
+------
 
 **gmt grdshake** *ingrid* |-G|\ *outgrid*
 |-L|\ *fault.dat*
@@ -18,7 +18,7 @@ grdshake
 [ |SYN_OPT-R| ]
 
 必选选项
--------
+---------
 
 *ingrid*
     Vs30 速度模型网格文件
@@ -41,7 +41,7 @@ grdshake
 
 
 可选选项
---------
+---------
 
 .. _-C:
 
@@ -61,7 +61,7 @@ grdshake
 .. include:: explain_-R.rst_
 
 示例
-----
+-----
 
 使用先前计算的 Vs30 速度模型，针对一次发生在断层上的地震事件（震级为7），
 计算地表峰值烈度。其断层迹线坐标保存在 *line.dat* 文件中::
@@ -79,7 +79,7 @@ grdshake
     gmt begin grdshake-example
         gmt basemap -R95/105/20/35 -JM15c -Baf
         # 使用04m的地形数据，计算 Vs30 估计值，并将克拉通值设为1
-        gmt grdvs30 @earth_relief_04m_p -R95/105/20/35 -C1 -Gvs30.grd
+        gmt grdvs30 @earth_relief_04m_p -R95/105/20/35 -C0.99 -Gvs30.grd
         # 提取红河断裂的数据，保存在line.dat文件中
         gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
         # 计算地表峰值烈度
@@ -92,6 +92,6 @@ grdshake
     gmt end show
 
 参考
-----
+-----
 
 :doc:`grdvs30`
