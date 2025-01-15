@@ -80,7 +80,7 @@ grdshake
          # 计算地表峰值烈度
          gmt grdshake vs30.grd -Gintensity.grd -Lline.dat -Ci -M9
          # 绘制地表峰值烈度
-         gmt grd2cpt -Cseis -Gintensity.grd -Z -D
+         gmt grd2cpt -Cseis intensity.grd -Z -D
          gmt grdimage intensity.grd -C
          # 绘制省界，断层
          gmt plot CN-border-La.gmt -W0.5p
