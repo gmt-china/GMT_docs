@@ -82,10 +82,15 @@ grdshake
         gmt grdcut @earth_relief_04m_p -R95/105/20/35 -Gtopo.grd
         # 计算 topo.grd 网格的 Vs30 估计值，并将克拉通值设为1
         gmt grdvs30 topo.grd -C1 -Gvs30.grd
+        # 提取红河断裂的数据，保存在line.dat文件中
+        gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
         # 计算地表峰值烈度
+        gmt grdshake vs30.grd -Gintensity.grd -Lline.dat -Ci -M9
+        # 绘制地表峰值烈度
+        gmt grd2cpt -Cseis -Gintensity.grd -Z -D
+        gmt grdimage intensity.grd -C
 
-
-        rm topo.grd vs30.grd
+        rm topo.grd vs30.grd line.dat intensity.grd
     gmt end show
 
 参考
