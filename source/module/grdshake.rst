@@ -81,7 +81,7 @@ grdshake
          echo 0 0 > fake
          echo 1 0 >> fake
          echo 1 1 >> fake
-         gmt grdvs30 @earth_relief_10m_p -R95/105/20/35 -Cfake -Gvs30.grd
+         gmt grdvs30 @earth_relief_10m_p -R95/105/20/35 -Gvs30.grd -C@cratons.xy
          # 提取红河断裂的数据，保存在line.dat文件中
          gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
          # 计算地表峰值烈度
