@@ -74,6 +74,7 @@
     - :doc:`grdview`
     - :doc:`grdvolume`
     - :doc:`grdvs30`
+    - :doc:`grdshake`
     - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
@@ -172,7 +173,6 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:trend1d`
     - :doc:`gmt:trend2d`
-    - :doc:`gmt:supplements/seis/grdshake`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
     - :doc:`gmt:supplements/gsfml/fzanalyzer`
