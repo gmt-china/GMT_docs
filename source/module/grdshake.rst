@@ -91,8 +91,11 @@ grdshake
          rm vs30.grd line.dat intensity.grd
      gmt end show
 
+.. image:: ？
+   :width: 100%
+   :align: center
 
-参考
------
+相关模块
+---------
 
 :doc:`grdvs30`
