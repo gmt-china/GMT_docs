@@ -1,16 +1,14 @@
 .. index:: ! grdshake
-.. include:: ../module_supplements_purpose.rst_
+.. include:: common_SYN_OPTs.rst_
 
-********
 grdshake
-********
+========
 
-|grdshake_purpose|
+:官方文档: :doc:`gmt:supplements/seis/grdshake`
+:简介: 使用 Vs30 速度模型计算地表峰值速度、加速度、烈度。
 
-Synopsis
---------
-
-.. include:: ../../common_SYN_OPTs.rst_
+语法
+----
 
 **gmt grdshake** *ingrid* |-G|\ *outgrid*
 |-L|\ *fault.dat*
@@ -18,57 +16,47 @@ Synopsis
 [ |-C|\ *a,v,i* ]
 [ |-F|\ *mecatype* ]
 [ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-:| ]
 
-|No-spaces|
-
-Description
------------
-
-Takes Vs30 velocity grid and compute the Peak Ground Acceleration/Velocity and Intensity 
-
-
-Required Arguments
-------------------
+必选选项
+-------
 
 *ingrid*
-    This is the input grid file.
+    Vs30 速度模型网格文件
 
 .. _-G:
 
 **-G**\ *outgrid*
-    This is the output grid file. If more than one component is set via |-C| then <outgrid> must contain %%s to format component code.
-
+    输出文件名。如果通过 |\-C| 设置了多个分量，
+    则 <outgrid> 必须包含 %%s 以格式化分量代码。
+    
 .. _-L:
 
 **-L**\ *fault.dat*
-    Name of a file with the coordinates of the fault trace.
+    断层坐标文件名
 
 .. _-M:
 
 **-M**\ *mag*
-    Select the magnitude of the event.
+    地震事件的震级
 
 
-Optional Arguments
-------------------
+可选选项
+--------
 
 .. _-C:
 
 **-C**\ *a,v,i*
-    List of comma-separated components to be written as grids (requires |-G|). Choose from, *a*\ (cceleration),
-    *v*\ (elocity), *i*\ (ntensity) [Default is *i*].
+    以逗号隔开的需要计算的分量 (多个分量要求在 |-G| 有对应设置)。
+    可以选择 *a*\ (cceleration，加速度)， *v*\ (elocity，速度)， *i*\ (ntensity，烈度) [默认为 *i*]。
 
 .. _-F:
 
 **-F**\ *1*\|\ *2*\|\ *3*\|\ *4*
-    Select the focal mechanism type (e.g. **-F**\1 or **-F**\2 ...)
-       - 1 unknown [Default].
-       - 2 strike-slip.
-       - 3 normal.
-       - 4 thrust.
+    选择震源机制类型 ( **-F**\1 或 **-F**\2 ...)
+       - 1 未知 [默认值]
+       - 2 走滑
+       - 3 正断层
+       - 4 逆冲
 
 .. _-R:
 
