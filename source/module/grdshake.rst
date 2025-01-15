@@ -32,7 +32,7 @@ grdshake
 .. _-L:
 
 **-L**\ *fault.dat*
-    断层坐标文件名
+    断层迹线坐标文件名
 
 .. _-M:
 
@@ -58,35 +58,18 @@ grdshake
        - 3 正断层
        - 4 逆冲
 
-.. _-R:
+.. include:: explain_-R.rst_
 
-.. |Add_-R| replace:: This defines the subregion to be operated out.
-.. include:: ../../explain_-R.rst_
+示例
+----
 
-.. _-V:
-
-.. |Add_-V| unicode:: 0x20 .. just an invisible code
-.. include:: ../../explain_-V.rst_
-
-.. include:: ../../explain_-icols.rst_
-
-.. include:: ../../explain_colon.rst_
-
-.. include:: ../../explain_help.rst_
-
-
-Examples
---------
-
-To compute the intensity grid using the previously computed Vs30 velocities (*vs30.grd*) of an
-event with magnitude 7 occurred along a fault whose trace is coordinates are provide in the
-*line.dat* file, do::
+使用先前计算的 Vs30 速度模型，针对一次发生在断层上的地震事件（震级为7），
+其断层迹线坐标保存在 *line.dat* 文件中::
 
     gmt grdshake vs30.grd -Gshake_intensity.grd -Lline.dat -Ci -M7 -V
 
 
-See Also
---------
+参考
+----
 
-:doc:`grdvs30`,
-:doc:`gmt </gmt>`
+:doc:`grdvs30`
