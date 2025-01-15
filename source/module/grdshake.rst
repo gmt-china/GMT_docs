@@ -82,6 +82,11 @@ grdshake
          # 绘制地表峰值烈度
          gmt grd2cpt -Cseis -Gintensity.grd -Z -D
          gmt grdimage intensity.grd -C
+         # 绘制省界，断层
+         gmt plot CN-border-La.gmt -W0.5p
+         gmt plot CN-faults.gmt -W0.1p,gray
+         gmt plot line.dat -W0.2p,red
+
          rm vs30.grd line.dat intensity.grd
      gmt end show
 
