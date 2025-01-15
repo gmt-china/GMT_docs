@@ -74,24 +74,23 @@ grdshake
     :show-code: true
     :width: 100%
 
-    #!/usr/bin/env bash
-    gmt begin grdshake-example
-        gmt basemap -R95/105/20/35 -JM15c -Baf
-        # 使用04m的地形数据，计算 Vs30 估计值，并将克拉通值设为1
-　　　　　echo 0 0 > fake
-        echo 1 0 >> fake
-        echo 1 1 >> fake
-        gmt grdvs30 @earth_relief_04m_p -R95/105/20/35 -Cfake -Gvs30.grd
-        # 提取红河断裂的数据，保存在line.dat文件中
-        gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
-        # 计算地表峰值烈度
-        gmt grdshake vs30.grd -Gintensity.grd -Lline.dat -Ci -M9
-        # 绘制地表峰值烈度
-        gmt grd2cpt -Cseis -Gintensity.grd -Z -D
-        gmt grdimage intensity.grd -C
-
-        rm fake vs30.grd line.dat intensity.grd
-    gmt end show
+     #!/usr/bin/env bash
+     gmt begin grdshake-example
+         gmt basemap -R95/105/20/35 -JM15c -Baf
+         # 使用04m的地形数据，计算 Vs30 估计值，并将克拉通值设为1
+　　　　　 echo 0 0 > fake
+         echo 1 0 >> fake
+         echo 1 1 >> fake
+         gmt grdvs30 @earth_relief_04m_p -R95/105/20/35 -Cfake -Gvs30.grd
+         # 提取红河断裂的数据，保存在line.dat文件中
+         gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
+         # 计算地表峰值烈度
+         gmt grdshake vs30.grd -Gintensity.grd -Lline.dat -Ci -M9
+         # 绘制地表峰值烈度
+         gmt grd2cpt -Cseis -Gintensity.grd -Z -D
+         gmt grdimage intensity.grd -C
+         rm fake vs30.grd line.dat intensity.grd
+     gmt end show
 
 
 参考
