@@ -78,7 +78,14 @@ grdshake
 
     gmt begin grdshake-example
         gmt basemap -R95/105/20/35 -JM15c -Baf
+        # 使用04m的地形数据
+        gmt grdcut @earth_relief_04m_p -R95/105/20/35 -Gtopo.grd
+        # 计算 topo.grd 网格的 Vs30 估计值，并将克拉通值设为1
+        gmt grdvs30 topo.grd -C1 -Gvs30.grd
+        # 计算地表峰值烈度
 
+
+        rm topo.grd vs30.grd
     gmt end show
 
 参考
