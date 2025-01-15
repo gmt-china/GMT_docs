@@ -64,10 +64,21 @@ grdshake
 ----
 
 使用先前计算的 Vs30 速度模型，针对一次发生在断层上的地震事件（震级为7），
-其断层迹线坐标保存在 *line.dat* 文件中::
+计算地表峰值烈度。其断层迹线坐标保存在 *line.dat* 文件中::
 
     gmt grdshake vs30.grd -Gshake_intensity.grd -Lline.dat -Ci -M7
 
+计算并绘制发生在红河断裂的一个9级地震，在四川省造成的地表峰值烈度：
+
+.. gmtplot::
+   :show-code: true
+   :width: 100%
+
+    #!/usr/bin/env bash
+
+    gmt begin grdshake-example
+        
+    gmt end show
 
 参考
 ----
