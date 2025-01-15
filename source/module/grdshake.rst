@@ -77,7 +77,8 @@ grdshake
     #!/usr/bin/env bash
 
     gmt begin grdshake-example
-        
+        gmt basemap -R95/105/20/35 -JM15c -Baf
+
     gmt end show
 
 参考
