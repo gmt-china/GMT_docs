@@ -66,7 +66,7 @@ grdshake
 使用先前计算的 Vs30 速度模型，针对一次发生在断层上的地震事件（震级为7），
 其断层迹线坐标保存在 *line.dat* 文件中::
 
-    gmt grdshake vs30.grd -Gshake_intensity.grd -Lline.dat -Ci -M7 -V
+    gmt grdshake vs30.grd -Gshake_intensity.grd -Lline.dat -Ci -M7
 
 
 参考
