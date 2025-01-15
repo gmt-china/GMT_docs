@@ -78,10 +78,8 @@ grdshake
 
     gmt begin grdshake-example
         gmt basemap -R95/105/20/35 -JM15c -Baf
-        # 使用04m的地形数据
-        gmt grdcut @earth_relief_04m_p -R95/105/20/35 -Gtopo.grd
-        # 计算 topo.grd 网格的 Vs30 估计值，并将克拉通值设为1
-        gmt grdvs30 topo.grd -C1 -Gvs30.grd
+        # 使用04m的地形数据，计算 Vs30 估计值，并将克拉通值设为1
+        gmt grdvs30 @earth_relief_04m_p -R95/105/20/35 -C1 -Gvs30.grd
         # 提取红河断裂的数据，保存在line.dat文件中
         gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" -o0,1 > line.dat
         # 计算地表峰值烈度
