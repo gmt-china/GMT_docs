@@ -78,7 +78,7 @@ grdshake
      gmt begin grdshake-example
          gmt basemap -R95/105/20/35 -JM15c -Baf
          # 使用04m的地形数据，计算 Vs30 估计值，并将克拉通值设为1
-　　　　　 echo 0 0 > fake
+         echo 0 0 > fake
          echo 1 0 >> fake
          echo 1 1 >> fake
          gmt grdvs30 @earth_relief_10m_p -R95/105/20/35 -Cfake -Gvs30.grd
