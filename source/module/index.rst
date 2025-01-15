@@ -365,7 +365,7 @@
 :doc:`meca`                                      在地图上绘制震源机制解
 :doc:`polar`                                     在震源球上绘制台站极性
 :doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
-:doc:`gmt:supplements/seis/grdshake`             Compute Peak Ground Acceleration/Velocity and Intensity
+:doc:`grdshake`                                  计算地表峰值加速度、速度、烈度
 :doc:`grdvs30`                                   计算 Vs30 速度模型
 **windbarbs 相关模块**                           .. _module_windbarbs:
 :doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
