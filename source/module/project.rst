@@ -133,7 +133,7 @@ project
 
     #!/usr/bin/env bash
     gmt begin ex
-        a=118/22
+        a=122/22
         ap=148/46
         # 从GMT远程服务器下载示例地震目录文件
         gmt which -Gl @quakes_2018.txt
@@ -146,6 +146,12 @@ project
         # 根据深度绘制不同颜色的圆点
         gmt makecpt -Cmagma -T0/600/1 -I
         gmt colorbar -Bxaf -C
-        gmt plot quakes_2018.txt -Sc0.1c -C -W0.1
+        gmt plot quakes_2018.txt -Sc0.2c -C -W0.1
 
+        # 绘制地表
+        gmt basemap -JP10c+a+t18 -R0/36/5711/6371 -Byg6371 -BS -Y11c
+        # 绘制 410 界面
+        gmt basemap -Byg6371+5961 -BS
+        # 绘制 660 界面
+        gmt basemap -Byg6371+5711 -BS
     gmt end show
