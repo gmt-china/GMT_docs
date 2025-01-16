@@ -132,16 +132,20 @@ project
    :width: 100%
 
     #!/usr/bin/env bash
-    gmt begin ex009
+    gmt begin ex
+        a=118/22
+        ap=148/46
         # 从GMT远程服务器下载示例地震目录文件
         gmt which -Gl @quakes_2018.txt
 
         gmt basemap -JM10c -R116/149/20/48 -Baf
         gmt grdimage @earth_relief_04m_p -Cgeo
+        # 绘制剖面
+        gmt project -C${a} -E${ap} -G0.1 | gmt plot -W1p,cyan
         # 示例文件前三列分别为经度、纬度、深度
         # 根据深度绘制不同颜色的圆点
         gmt makecpt -Cmagma -T0/600/1 -I
         gmt colorbar -Bxaf -C
-        gmt plot quakes_2018.txt -Sc0.05c -Gred -W0.1
+        gmt plot quakes_2018.txt -Sc0.1c -C -W0.1
 
     gmt end show
