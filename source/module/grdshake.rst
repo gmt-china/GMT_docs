@@ -92,7 +92,7 @@ grdshake
          rm vs30.grd line.dat intensity.grd
      gmt end show
 
-.. image:: ？
+.. image:: https://github.com/user-attachments/assets/b7bfa241-7850-4b9b-ad75-4612dad8c1e1
    :width: 100%
    :align: center
 
