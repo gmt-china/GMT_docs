@@ -21,7 +21,7 @@ GMT 配合使用 Bash 脚本命令，可以实现相当强大的功能（参考 
         
         gmt basemap -JM10c -R308/352/-12/24 -Baf
         gmt grdimage @earth_relief_10m_p -Cgeo
-        gmt colorbar -Bxaf
+        gmt colorbar -Bxaf -C
         # 示例文件三列分别为经度、纬度、震级。
         # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整圆点直径的计算参数
         gawk '{print $1, $2, 0.2*($3-4.0)}' quakes_07.txt | gmt plot -Scc -Gred -W0.1
