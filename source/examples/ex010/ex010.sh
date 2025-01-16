@@ -18,7 +18,7 @@ gmt begin ex010
     close(cmd)                    # 关闭命令管道
     # 输出修改后的内容
     print $1, $2, timestamp
-    }' data.txt > tmp2.txt
+    }' tmp1.txt > tmp2.txt
     # 自动获取发震时刻的最大最小值，并转换为浮点数
     
     
