@@ -125,3 +125,16 @@ project
 已知某点，根据方位角和大圆距离计算另一点。已知一点(120, 25)，根据方位角 45 度，大圆距离 123 千米的点位置 ::
 
     gmt project -C120/25 -A45 -L0/123 -G123 -Q | tail -1
+
+
+.. gmtplot::
+   :show-code: true
+   :width: 100%
+
+    #!/usr/bin/env bash
+    gmt begin ex
+        gmt which -Gl @quakes_07.txt
+        gmt basemap -JM15c -R310/350/-10/22 -Baf
+        gmt grdimage @earth_relief_30m -Celevation
+        gawk '{print $1, $2, 0.04*($3+1)}' quakes_07.txt | gmt plot -Sc -Gred -W0.1p
+    gmt end show
