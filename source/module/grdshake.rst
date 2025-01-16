@@ -87,7 +87,7 @@ grdshake
          # 绘制省界，断层
          gmt plot CN-border-La.gmt -W0.5p
          gmt plot CN-faults.gmt -W1p,gray
-         gmt plot line.dat -W2p,red
+         gmt plot line.dat -W4p,white
 
          rm vs30.grd line.dat intensity.grd
      gmt end show
