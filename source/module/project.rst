@@ -126,6 +126,7 @@ project
 
     gmt project -C120/25 -A45 -L0/123 -G123 -Q | tail -1
 
+根据地震目录数据，将地震事件投影到深度剖面并绘制：
 
 .. gmtplot::
    :show-code: true
@@ -154,6 +155,6 @@ project
         gmt basemap -Byg6371+5961 -BS
         # 绘制 660 界面
         gmt basemap -Byg6371+5711 -BS
-        # 把数据投影到 a-ap 剖面
-        gmt project quakes_2018.txt -C${a} -E${ap} -Fpz -Lw | gawk '{print $1,6371-$2,$2}' | gmt plot -Sc0.15c -C -W0.1p
+        # 把数据投影到 a-ap 剖面，限制为剖面两侧30度范围的数据
+        gmt project quakes_2018.txt -C${a} -E${ap} -Fpz -Lw -W-30/30 | gawk '{print $1,6371-$2,$2}' | gmt plot -Sc0.15c -C -W0.1p
     gmt end show
