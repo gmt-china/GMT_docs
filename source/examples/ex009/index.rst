@@ -31,7 +31,7 @@ GMT 配合使用 Bash 脚本命令，可以实现相当强大的功能（参考 
         c6=$(gawk '6<=$3 && $3<7 {count++}END{print count}' quakes_07.txt | tr -d '\n\r')
 
         # 输出统计结果
-        gmt basemap -JX5c/-5c -R0/10/0/10 -Y4c -X10c
+        gmt basemap -JX5c/-5c -R0/10/0/10 -Y4c -X10c -Brt
         # 
         echo 1 2 | gmt plot -Sc0.2c -Gred -W0.1p
         echo 2 2 4\<\=mag\<5: ${c4} | gmt text -F+f14p+jML
