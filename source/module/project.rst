@@ -136,7 +136,7 @@ project
         # 从GMT远程服务器下载示例地震目录文件
         gmt which -Gl @quakes_2018.txt
 
-        gmt basemap -JM10c -R122/149/10/48 -Baf
+        gmt basemap -JM10c -R122/149/25/48 -Baf
         gmt grdimage @earth_relief_30m_p -Cgeo
         gmt colorbar -Bxaf -C
         # 示例文件三列分别为经度、纬度、震级。
