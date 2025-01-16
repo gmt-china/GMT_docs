@@ -137,10 +137,11 @@ project
         gmt which -Gl @quakes_2018.txt
 
         gmt basemap -JM10c -R116/149/20/48 -Baf
-        gmt grdimage @earth_relief_10m -Cgeo
+        gmt grdimage @earth_relief_04m_p -Cgeo
+        # 示例文件前三列分别为经度、纬度、深度
+        # 根据深度绘制不同颜色的圆点
+        gmt makecpt -Cmagma -T0/600/1 -I
         gmt colorbar -Bxaf -C
-        # 示例文件三列分别为经度、纬度、震级。
-        # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整圆点直径的计算参数
         gmt plot quakes_2018.txt -Sc0.05c -Gred -W0.1
 
     gmt end show
