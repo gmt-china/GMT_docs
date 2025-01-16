@@ -20,10 +20,12 @@ gmt begin ex010
     print $1, $2, timestamp
     }' tmp1.txt > tmp2.txt
     # 自动获取发震时刻浮点数时间戳的最大最小值
-    start=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
-    
+    start=$(gmt info tmp2.txt -C -o4 | tr -d '\n')
+    end=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
+    duration=$(echo "$end - $start" | bc)
     
     gmt basemap ${R} -JM15c -Baf
+    gmt plot tmp2.txt -Sc0.3c -W
     
     rm tmp1.txt tmp2.txt
 gmt end show
