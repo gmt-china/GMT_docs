@@ -125,3 +125,22 @@ project
 已知某点，根据方位角和大圆距离计算另一点。已知一点(120, 25)，根据方位角 45 度，大圆距离 123 千米的点位置 ::
 
     gmt project -C120/25 -A45 -L0/123 -G123 -Q | tail -1
+
+
+.. gmtplot::
+   :show-code: true
+   :width: 100%
+
+    #!/usr/bin/env bash
+    gmt begin ex009
+        # 从GMT远程服务器下载示例地震目录文件
+        gmt which -Gl @quakes_2018.txt
+
+        gmt basemap -JQ10c -Rg -Baf
+        gmt grdimage @earth_relief_30m_p -Cgeo
+        gmt colorbar -Bxaf -C
+        # 示例文件三列分别为经度、纬度、震级。
+        # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整圆点直径的计算参数
+        # gawk '{print $1, $2, 0.2*($3-4.0)}' quakes_07.txt | gmt plot -Scc -Gred -W0.1
+
+    gmt end show
