@@ -42,7 +42,6 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @mississippi.txt \
             @NY_traffic.txt \
             @Table_5_11.txt \
-            @sunglasses.eps \
             @Wessel_GJI_Fig_5.txt \
             @quakes_07.txt \
             @quakes_2018.txt
