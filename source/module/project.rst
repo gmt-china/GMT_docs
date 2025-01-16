@@ -139,13 +139,32 @@ project
         # 从GMT远程服务器下载示例地震目录文件
         gmt which -Gl @quakes_07.txt
         
-        gmt basemap -JM10c -R308/352/-8/24 -Baf
+        gmt basemap -JM10c -R308/352/-12/24 -Baf
         gmt grdimage @earth_relief_20m_p -Celevation
         # 示例文件三列分别为经度、纬度、震级。
         # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整原点半径的计算参数
-        gawk '{print $1, $2, 1.0*($3-4.0)}' quakes_07.txt | gmt plot -Scc -Gred -W0.1p
+        gawk '{print $1, $2, 0.2*($3-4.0)}' quakes_07.txt | gmt plot -Scc -Gred -W0.1p
         #
         gmt project -C${a} -E${ap} -G0.1 | gmt plot -W1p,cyan
 
+        # 统计不同震级
+        c1=$(gawk '3<=$3 && $3<4 {count++}END{print count}' quakes_07.txt | tr -d '\n\r')
+        c2=$(gawk '4<=$3 && $3<5 {count++}END{print count}' quakes_07.txt | tr -d '\n\r')
+        c3=$(gawk '5<=$3 && $3<6 {count++}END{print count}' quakes_07.txt | tr -d '\n\r')
+        c4=$(gawk '6<=$3 && $3<7 {count++}END{print count}' quakes_07.txt | tr -d '\n\r')
 
+        # 输出统计结果
+        gmt basemap -JX5c/-5c -R0/10/0/10 -Baf -Y6c -X12c
+        # 
+    echo 1 1 | gmt plot -Sc0.08 -Gred -W0.1p
+    echo 2 1 0\<\=mag\<1: ${c1} | gmt text -F+f14p+jML
+
+    echo 1 2 | gmt plot -Sc0.12 -Gred -W0.1p
+    echo 2 2 1\<\=mag\<2: ${c2} | gmt text -F+f14p+jML
+
+    echo 1 3 | gmt plot -Sc0.16 -Gred -W0.1p
+    echo 2 3 2\<\=mag\<3: ${c3} | gmt text -F+f14p+jML
+
+    echo 1 4 | gmt plot -Sc0.20 -Gred -W0.1p
+    echo 2 4 3\<\=mag\<4: ${c4} | gmt text -F+f14p+jML
     gmt end show
