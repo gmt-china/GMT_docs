@@ -141,6 +141,6 @@ project
         gmt colorbar -Bxaf -C
         # 示例文件三列分别为经度、纬度、震级。
         # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整圆点直径的计算参数
-        # gawk '{print $1, $2, 0.2*($3-4.0)}' quakes_07.txt | gmt plot -Scc -Gred -W0.1
+        gmt plot quakes_2018.txt -Sc0.1c -Gred -W0.1
 
     gmt end show
