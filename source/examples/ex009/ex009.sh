@@ -19,7 +19,7 @@ gmt begin ex009
         gmt basemap -JX5c/-5c -R0/10/0/10 -Y4c -X10.5c -Brt
         #
         echo 1 2 | gmt plot -Sc0.2c -Gred -W0.1p
-        echo 2 2 4\<\=mag\<5: ${c4} | gmt text -F+f14p+jML
+        echo 2 2 '4<=mag<5:' ${c4} | gmt text -F+f14p+jML
 
         echo 1 4 | gmt plot -Sc0.4c -Gred -W0.1p
         echo 2 4 5\<\=mag\<6: ${c5} | gmt text -F+f14p+jML
