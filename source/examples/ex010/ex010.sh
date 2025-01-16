@@ -19,7 +19,8 @@ gmt begin ex010
     # 输出修改后的内容
     print $1, $2, timestamp
     }' tmp1.txt > tmp2.txt
-    # 自动获取发震时刻的最大最小值，并转换为浮点数
+    # 自动获取发震时刻浮点数时间戳的最大最小值
+    start=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
     
     
     gmt basemap ${R} -JM15c -Baf
