@@ -22,7 +22,7 @@ gmt begin ex009
         echo 2 2 '4<=mag<5:' ${c4} | gmt text -F+f14p+jML
 
         echo 1 4 | gmt plot -Sc0.4c -Gred -W0.1p
-        echo 2 4 5\<\=mag\<6: ${c5} | gmt text -F+f14p+jML
+        echo 2 4 '5<=mag<6:' ${c5} | gmt text -F+f14p+jML
 
         echo 1 6 | gmt plot -Sc0.6c -Gred -W0.1p
         echo 2 6 6\<\=mag\<7: ${c6} | gmt text -F+f14p+jML
