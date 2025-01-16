@@ -154,4 +154,6 @@ project
         gmt basemap -Byg6371+5961 -BS
         # 绘制 660 界面
         gmt basemap -Byg6371+5711 -BS
+        # 把数据投影到 a-ap 剖面
+        gawk '{print $1,$2,$3+5711}' quakes_2018.txt | gmt project -C${a} -E${ap} -Fpz -Lw | gmt plot -Sc0.2c -C -W0.1p
     gmt end show
