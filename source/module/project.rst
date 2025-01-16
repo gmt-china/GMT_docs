@@ -133,8 +133,19 @@ project
 
     #!/usr/bin/env bash
     gmt begin ex
+        a=310/22
+        ap=350/-10
+
+        # 从GMT远程服务器下载示例地震目录文件
         gmt which -Gl @quakes_07.txt
-        gmt basemap -JM15c -R310/350/-10/22 -Baf
-        gmt grdimage @earth_relief_30m -Celevation
-        gawk '{print $1, $2, 0.04*($3+1)}' quakes_07.txt | gmt plot -Sc -Gred -W0.1p
+        
+        gmt basemap -JM10c -R308/352/-8/24 -Baf
+        gmt grdimage @earth_relief_20m_p -Celevation
+        # 示例文件三列分别为经度、纬度、震级。
+        # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整原点半径的计算参数
+        gawk '{print $1, $2, 1.0*($3-4.0)}' quakes_07.txt | gmt plot -Scc -Gred -W0.1p
+        #
+        gmt project -C${a} -E${ap} -G0.1 | gmt plot -W1p,cyan
+
+
     gmt end show
