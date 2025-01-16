@@ -136,11 +136,11 @@ project
         # 从GMT远程服务器下载示例地震目录文件
         gmt which -Gl @quakes_2018.txt
 
-        gmt basemap -JM10c -R122/149/25/48 -Baf
-        gmt grdimage @earth_relief_30m_p -Cgeo
+        gmt basemap -JM10c -R116/149/20/48 -Baf
+        gmt grdimage @earth_relief_10m -Cgeo
         gmt colorbar -Bxaf -C
         # 示例文件三列分别为经度、纬度、震级。
         # 根据震级绘制不同大小的圆点。用户可以根据自己数据震级的最大最小值，调整圆点直径的计算参数
-        gmt plot quakes_2018.txt -Sc0.01c -Gred -W0.1
+        gmt plot quakes_2018.txt -Sc0.05c -Gred -W0.1
 
     gmt end show
