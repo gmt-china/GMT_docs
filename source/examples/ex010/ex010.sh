@@ -21,12 +21,16 @@ gmt begin ex010
     # 自动获取发震时刻浮点数时间戳的最大最小值
     start=$(gmt info tmp2.txt -C -o4 | tr -d '\n')
     end=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
-    
-    # 自动获取作图范围
-    R=$(gmt info data.txt -Ib -i7,6 | tr -d '\n')
-    gmt basemap ${R} -JM15c -Baf
+    # 最大最小值对应的可读时间
+    # ${start%.*}：取整数部分。
+    # ${start#*.}：取小数部分。
+    t1=$(date -d @"${start%.*}" +"%Y-%m-%dT%H:%M:%S.$(printf "%03d" ${start#*.})")
+    t2=$(date -d @"${end%.*}" +"%Y-%m-%dT%H:%M:%S.$(printf "%03d" ${end#*.})")
+
+    # 
     gmt makecpt -Chot -T${start}/${end}/100+n -Z -Di
-    gmt plot tmp2.txt -Sc0.2c -W -C
+    gmt plot tmp2.txt -Sc0.2c -W -C -Ra -JM15c -Baf
+    gmt colorbar -R${t1}/${t2}/0/1 -Bpxa6O -Bsxa1Y -BS -C
     
     rm tmp1.txt tmp2.txt
 gmt end show
