@@ -234,6 +234,8 @@ meca
     gmt colorbar -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm
     gmt end show
 
+.. gmtplot:: meca/meca_ex.sh
+
 相关模块
 --------
 
