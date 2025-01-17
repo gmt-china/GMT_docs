@@ -5,7 +5,6 @@ gmt begin ex010
     echo
     script_dir=$(dirname "$(realpath "$0")")
     echo "$script_dir"
-    ls pwd
     ls $script_dir
     # 将原始数据转换为经度、纬度、标准时间的格式
     gawk '{printf "%.3f %.3f %d-%d-%dT%d:%d:%.3f", $8,$7,$1,$2,$3,$4,$5,$6}' data.txt > tmp1.txt
