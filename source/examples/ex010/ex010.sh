@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-set -x
 gmt begin ex010
-    script_dir=$(dirname "$(realpath "$0")")
-    ls $script_dir
-    ls $GMT_DATADIR
+    # 假设数据文件放置在${GMT_DATADIR}目录中
     # 将原始数据转换为经度、纬度、标准时间的格式
-    gawk '{printf "%.3f %.3f %d-%d-%dT%d:%d:%.3f", $8,$7,$1,$2,$3,$4,$5,$6}' ${GMT_DATADIR}/data.txt > tmp1.txt
+    gawk '{printf "%.3f %.3f %d-%d-%dT%d:%d:%.3f\n", $8,$7,$1,$2,$3,$4,$5,$6}' ${GMT_DATADIR}/data.txt > tmp1.txt
     # 使用 gawk 结合 date 命令，将 data.txt 文件中第三列的时间格式 YYYY-mm-ddThh:mm:ss 转换为包含浮点秒的 UNIX 时间戳。
     gawk '{
     # 提取第三列时间
@@ -24,7 +21,6 @@ gmt begin ex010
     # 自动获取发震时刻浮点数时间戳的最大最小值
     start=$(gmt info tmp2.txt -C -o4 | tr -d '\n')
     end=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
-    duration=$(echo "$end - $start" | bc)
     
     # 自动获取作图范围
     R=$(gmt info data.txt -I2/2 -i7,6 | tr -d '\n')
