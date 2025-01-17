@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 set -x
 gmt begin ex010
-    pwd
-    ls -l data.txt
-    chmod +r data.txt
     # 将原始数据转换为经度、纬度、标准时间的格式
-    gawk '{printf "%.3f %.3f %d-%d-%dT%d:%d:%.3f", $8,$7,$1,$2,$3,$4,$5,$6}' data.txt > tmp1.txt
+    $(gawk '{printf "%.3f %.3f %d-%d-%dT%d:%d:%.3f", $8,$7,$1,$2,$3,$4,$5,$6}' data.txt > tmp1.txt)
     # 使用 gawk 结合 date 命令，将 data.txt 文件中第三列的时间格式 YYYY-mm-ddThh:mm:ss 转换为包含浮点秒的 UNIX 时间戳。
-    gawk '{
+    $(gawk '{
     # 提取第三列时间
     time=$3
     # 分解日期和时间
@@ -20,7 +17,7 @@ gmt begin ex010
     close(cmd)                    # 关闭命令管道
     # 输出修改后的内容
     print $1, $2, timestamp
-    }' tmp1.txt > tmp2.txt
+    }' tmp1.txt > tmp2.txt)
     # 自动获取发震时刻浮点数时间戳的最大最小值
     start=$(gmt info tmp2.txt -C -o4 | tr -d '\n')
     end=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
