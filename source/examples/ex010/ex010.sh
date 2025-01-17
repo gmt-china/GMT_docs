@@ -9,8 +9,8 @@ gmt begin ex010
     
     # 根据发震时刻绘制不同颜色的圆点
     gmt makecpt -Chot -T${start}/${end}/100+n -Z -Di
-    gmt plot tmp1.txt -Sc0.2c -W -C -Ra -JM15c -Baf
-    gmt colorbar -Bpxa6O -Bsxa1Y -C
+    gmt plot tmp1.txt -Sc0.1c -W -C -Ra -JM15c -Baf
+    gmt colorbar -Bxaf -C
     # 绘制省界，断层
     gmt plot CN-border-La.gmt -W0.5p
     gmt plot CN-faults.gmt -W1p,gray
