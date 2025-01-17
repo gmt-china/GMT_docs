@@ -23,9 +23,10 @@ gmt begin ex010
     end=$(gmt info tmp2.txt -C -o5 | tr -d '\n')
     
     # 自动获取作图范围
-    R=$(gmt info data.txt -I2/2 -i7,6 | tr -d '\n')
+    R=$(gmt info data.txt -Ib -i7,6 | tr -d '\n')
     gmt basemap ${R} -JM15c -Baf
-    gmt plot tmp2.txt -Sc0.3c -W
+    gmt makecpt -Chot -T${start}/${end}/100+n -Z -Di
+    gmt plot tmp2.txt -Sc0.2c -W -C
     
     rm tmp1.txt tmp2.txt
 gmt end show
