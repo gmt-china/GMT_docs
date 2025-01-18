@@ -121,16 +121,15 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 示例
 --------
 
-To plot the SEGY file wa1.segy with normalized traces plotted at true
-offset locations, clipped at ±3 and with wiggle trace and positive
-variable area shading in black, use
+绘制 SEGY 文件 **wa1.segy**，其中归一化的地震道按照真实偏移位置绘制，
+振幅限制在 ±3，并以黑色显示振幅曲线和正值区域填充
 
 ::
 
   gmt segy wa1.segy -JX5i/-5i -R0/100/0/10 -D1 -C3 -N -So -W -Fblack -pdf segy
 
-To plot the SEGY file wa1.segy with traces plotted at true cdp\*0.1,
-clipped at ±3, with bias -1 and negative variable area shaded red, use
+绘制 SEGY 文件 **wa1.segy**，其中地震道按照真实的 CDP*0.1 绘制，
+振幅限制在 ±3，偏移值为 -1，并以红色填充负值区域
 
 ::
 
