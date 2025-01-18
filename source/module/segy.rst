@@ -135,4 +135,5 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
   gmt segy wa1.segy -JX5i/-5i -R0/100/0/10 -D1 -C3 -Sc -Qx0.1 -Fred -Qb-1 -I -pdf segy
 
-:: gmt
+
+:: gmtplot : segy/segy_ex.sh
