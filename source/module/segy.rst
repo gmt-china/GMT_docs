@@ -49,50 +49,43 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
 注意： *必须* 在 |-W| 和 |-F| 之中指定至少一个选项。
 
-Optional Arguments
+可选选项
 ------------------
 
 .. _-A:
 
 **-A**
-    Flip the default byte-swap state (default assumes data have a
-    bigendian byte-order).
+    切换默认的字节顺序状态（默认假设数据为大端字节序）。
 
 .. _-C:
 
 **-C**\ *clip*
-    Sample value at which to clip data (clipping is applied to both
-    positive and negative values).
+    设置进行数据裁剪的采样值（裁剪同时应用于正值和负值）。
 
 .. _-E:
 
 **-E**\ *error*
-    Allow *error* difference between requested and actual trace
-    locations when using |-T| option.
+    使用 |-T| 选项时，允许请求的道位置与实际道位置之间存在误差范围 *error* 。
 
 .. _-I:
 
 **-I**
-    Fill negative rather than positive excursions.
+    填充负偏移而非正偏移
 
 .. _-L:
 
 **-L**
-    Override number of samples per trace in reel header (program
-    attempts to determine number of samples from each trace header if
-    possible to allow for variable length traces).
+    覆盖卷头中每道的样本数量（程序会尝试根据每道头部确定样本数量，以支持变长道）
 
 .. _-M:
 
 **-M**
-    Override number of traces specified in reel header. Program detects
-    end of file (relatively) gracefully, but this parameter limits
-    number of traces that the program attempts to read.
+    覆盖卷头中指定的道数。程序会相对优雅地检测文件结束，但此参数限制了程序尝试读取的道数。
 
 .. _-N:
 
 **-N**
-    Normalize trace by dividing by rms amplitude over full trace length.
+    通过全道长度上的均方根振幅(rms amplitude)归一化地震道
 
 .. _-Q:
 
