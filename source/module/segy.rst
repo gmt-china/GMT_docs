@@ -113,38 +113,13 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 **-T**\ *filename*
     仅绘制其位置对应于 *filename* 中列出位置的道。道的列出顺序无关紧要——程序会在整个空间中检查每个道。
 
-.. |Add_-U| replace:: |Add_-U_links|
-.. include:: ../../explain_-U.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
-.. |Add_-V| replace:: |Add_-V_links|
-.. include:: /explain_-V.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
-.. |Add_-XY| replace:: |Add_-XY_links|
-.. include:: ../../explain_-XY.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
 .. _-Z:
 
 **-Z**
-    Do not plot traces with zero rms amplitude.
+    不绘制 rms amplitude 为0的道。
 
-.. |Add_perspective| unicode:: 0x20 .. just an invisible code
-.. include:: ../../explain_perspective.rst_
-
-.. include:: ../../explain_-t.rst_
-.. include:: ../../explain_help.rst_
-
-.. module_common_ends
-
-Examples
+示例
 --------
-
-.. include:: ../../oneliner_info.rst_
 
 To plot the SEGY file wa1.segy with normalized traces plotted at true
 offset locations, clipped at ±3 and with wiggle trace and positive
@@ -161,3 +136,4 @@ clipped at ±3, with bias -1 and negative variable area shaded red, use
 
   gmt segy wa1.segy -JX5i/-5i -R0/100/0/10 -D1 -C3 -Sc -Qx0.1 -Fred -Qb-1 -I -pdf segy
 
+:: gmt
