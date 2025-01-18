@@ -95,6 +95,7 @@
     - :doc:`rose`
     - :doc:`sac`
     - :doc:`sample1d`
+    - :doc:`segy`
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
@@ -159,7 +160,6 @@
     - :doc:`gmt:movie`
     - :doc:`gmt:plot3d`
     - :doc:`gmt:supplements/segy/segy2grd`
-    - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -239,7 +239,7 @@
 :doc:`mask`                                      将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
-:doc:`gmt:supplements/segy/segy`                 在图上绘制 SEGY 文件
+:doc:`segy`                                      在图上绘制 SEGY 文件
 :doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
 :doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
@@ -459,11 +459,13 @@
    grdproject
    grdsample
    grdselect
+   grdshake
    grdtrack
    grdtrend
    grdvector
    grdview
    grdvolume
+   grdvs30
    gshhg
    histogram
    image
@@ -484,6 +486,7 @@
    rose
    sac
    sample1d
+   segy
    solar
    spectrum1d
    sph2grd
