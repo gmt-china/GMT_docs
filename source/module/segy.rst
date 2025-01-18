@@ -90,31 +90,28 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 .. _-Q:
 
 **-Q**\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value*
-    Can be used to change 5 different settings depending on the directive (repeatable):
-       **-Qb**\ *bias* to bias scaled traces (-**Qb**\ -0.1 subtracts 0.1 from values).
+    可以通过指令修改五种不同的设置（可重复使用）：
+       **-Qb**\ *bias* 为缩放后的地震道添加偏移 (-**Qb**\ -0.1 从值中减去0.1).
 
-       **-Qi**\ *dpi* sets the dots-per-inch resolution of the image [300].
+       **-Qi**\ *dpi* 设置图像的每英寸像素点分辨率 [默认值300].
 
-       **-Qu**\ *redvel* to apply reduction velocity (negative value removes reduction already present).
+       **-Qu**\ *redvel* 应用减速速度（负值移除已有的减速）。
 
-       **-Qx**\ *mult* to multiply trace locations by *mult*.
+       **-Qx**\ *mult* 将道位置乘以 *mult* 倍。
 
-       **-Qy**\ *dy* to override sample interval in SEGY reel header.
+       **-Qy**\ *dy* 覆盖 SEGY 卷头中的采样间隔。
 
 .. _-S:
 
 **-S**\ *header*
-    Read trace locations from trace headers: header is either **c** for CDP,
-    **o** for offset, or **b**\ *num* to read a long starting at byte *num* in the
-    header (first byte corresponds to *num* = 0). Default has location given
-    by trace number.
+    从道头headers读取道位置 : header 设置为 **c** 表示 CDP,
+    **o** 表示偏移, 设置为 **b**\ *num* 表示从头部的第 *num* 字节（第一个字节对应 num = 0）读取一个长整型数。
+    默认情况下，道位置由道编号决定。
 
 .. _-T:
 
 **-T**\ *filename*
-    Plot only traces whose location corresponds to a list given in
-    *filename*. Order in which traces are listed is not significant -
-    the entire space is checked for each trace.
+    仅绘制其位置对应于 *filename* 中列出位置的道。道的列出顺序无关紧要——程序会在整个空间中检查每个道。
 
 .. |Add_-U| replace:: |Add_-U_links|
 .. include:: ../../explain_-U.rst_
