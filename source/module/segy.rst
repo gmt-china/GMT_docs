@@ -12,10 +12,8 @@ segy
 
 SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节的二进制卷头、以及每道 240 字节的头部
 
-Synopsis
---------
-
-.. include:: ../../common_SYN_OPTs.rst_
+语法
+------
 
 **gmt segy** *SEGYfile* |-J|\ *parameters*
 |SYN_OPT-R|
@@ -27,76 +25,29 @@ Synopsis
 [ |-Q|\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
 [ |-S|\ *header* ]
 [ |-T|\ *filename* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
 
-.. module_common_begins
-
-Description
------------
-
-Reads a native (IEEE) format SEGY file and produces a
-plot of the seismic data. The *imagemask* operator is used
-so that the seismic data are plotted as a 1-bit deep bitmap in a single
-(user-specified) color or gray shade, with a transparent background. The
-bitmap resolution is taken from the current GMT defaults. The
-seismic traces may be plotted at their true locations using information
-in the trace headers (in which case order of the traces in the file is
-not significant). Standard GMT geometry routines are used so that in
-principle any map projection may be used, however it is likely that the
-geographic projections will lead to unexpected results. Beware also that
-some parameters have non-standard meanings.
-
-Note that the order of operations before the seismic data are plotted is
-deviation\*[clip]([bias]+[normalize](sample value)). Deviation
-determines how far *in the plot coordinates* a
-[normalized][biased][clipped] sample value of 1 plots from the trace
-location.
-
-The SEGY file should be a disk image of the tape format (i.e., 3200 byte
-text header, which is ignored, 400 byte binary reel header, and 240 byte
-header for each trace) with samples as native real\*4 (IEEE real on all
-the platforms to which I have access).
-
-Required Arguments
+必须选项
 ------------------
 
 *SEGYfile*
-    Seismic SEGY data set to be imaged.
-
-.. |Add_-J| replace:: |Add_-J_links|
-.. include:: /explain_-J.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
-.. _-R:
-
-.. |Add_-Rgeo| unicode:: 0x20 .. just an invisible code
-.. include:: ../../explain_-Rgeo.rst_
+    地震 SEGY 数据文件
 
 .. _-D:
 
 **-D**\ *deviation*
-    gives the deviation in X units of the plot for 1.0 on the scaled
-    trace.
+   表示在缩放后的地震道上，值为 1.0 时在绘图中 X 轴单位上的偏移量。
 
 .. _-F:
 
 **-F**\ [*color*]
-    Fill trace (variable area, defaults to filling positive). Specify
-    the *color* with which the imagemask is filled.
+    填充地震道（可变面积，默认填充正值）。指定用于填充 **imagemask** 的颜色 *color* 。
 
 .. _-W:
 
 **-W**
-    Draw wiggle trace.
+    绘制波形道。
 
-You *must* specify at least one of |-W| and |-F|.
+注意： *必须* 在 |-W| 和 |-F| 之中指定至少一个选项。
 
 Optional Arguments
 ------------------
