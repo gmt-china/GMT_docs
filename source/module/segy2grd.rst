@@ -38,7 +38,7 @@ segy2grd
 
 .. _-I:
 
-**-I**\ *x_inc*\ [*y_inc*]
+**-I**\ *x_inc*\ /[*y_inc*]
     *x_inc* [以及可选的 *y_inc*] 是网格间距。可以在数值后添加 **m** 表示分钟，或添加 **s** 表示秒。
 
 可选选项
@@ -88,8 +88,6 @@ segy2grd
 从 SEGY 文件 test.segy 创建网格文件，根据 CDP 编号定位道集，其中每千米有 10 个 CDP，采样间隔为 0.1。由于网格间隔大于 SEGY 文件的采样间隔，因此单个样本将在网格单元内进行平均::
 
     gmt segy2grd test.segy -Gtest.nc -R0/100/0/10 -I0.5/0.2 -Qx0.1 -Qy0.1
-
-.. gmtplot:: segy2grd/segy2grd_ex.sh
 
 参考
 --------
