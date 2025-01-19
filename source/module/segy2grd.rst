@@ -26,39 +26,31 @@ segy2grd
 [ |-Q|\ **x**\|\ **y**\ *value* ]
 [ |-S|\ [*header*] ]
 
-Required Arguments
+必须选项
 ------------------
 
-*segyfile* is an IEEE floating point SEGY file. Traces are all assumed to start at 0 time/depth.
+*segyfile* 
+    *segyfile* 是一个 IEEE 浮点数格式的 SEGY 文件。所有的道集都假定从 0 时间/深度域开始。
 
 .. _-G:
 
-.. |Add_outgrid| replace:: Give the name of the output grid file.
-.. include:: /explain_grd_inout.rst_
-    :start-after: outgrid-syntax-begins
-    :end-before: outgrid-syntax-ends
+**-G**outgrid
+    输出的网格文件名
 
 .. _-I:
 
-**-I**
-    *x_inc* [and optionally *y_inc*] is the grid spacing. Append **m**
-    to indicate minutes or **s** to indicate seconds.
+**-I**\ *x_inc*\ [*y_inc*]
+    *x_inc* [以及可选的 *y_inc*] 是网格间距。可以在数值后添加 **m** 表示分钟，或添加 **s** 表示秒。
 
-.. _-R:
-
-.. |Add_-Rgeo| unicode:: 0x20 .. just an invisible code
-.. include:: ../../explain_-Rgeo.rst_
-
-Optional Arguments
+可选选项
 ------------------
 
 .. _-A:
 
 **-A**\ [**n**\|\ **z**]
-    Add up multiple values that belong to the same node (same as
-    **-Az**). Append **n** to simply count the number of data points
-    that were assigned to each node. [Default (no |-A| option) will
-    calculate mean value]. Not used for simple mapping.
+    将属于同一节点(相同坐标)的多个值相加(等同于 **-Az**)。
+    添加 **n** 则仅统计分配到每个节点的数据点数量。
+    [默认情况下(不使用 **-A** 选项)会计算平均值]。该选项不用于简单映射。
 
 .. _-D:
 
