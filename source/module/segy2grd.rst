@@ -89,9 +89,9 @@ segy2grd
 
     gmt segy2grd test.segy -Gtest.nc -R0/100/0/10 -I0.5/0.2 -Qx0.1 -Qy0.1
 
-参考
+相关模块
 --------
 
-:doc:`grd2xyz </grd2xyz>`,
+:doc:`grd2xyz`,
 :doc:`segy`,
-:doc:`xyz2grd </xyz2grd>`
+:doc:`xyz2grd`
