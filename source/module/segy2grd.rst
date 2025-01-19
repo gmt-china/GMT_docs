@@ -20,7 +20,6 @@ segy2grd
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ |-A|\ [**n**\|\ **z**] ]
-[ |-D|\ |SYN_OPT-D2| ]
 [ |-L|\ [*nsamp*] ]
 [ |-M|\ [*ntraces*] ]
 [ |-Q|\ **x**\|\ **y**\ *value* ]
@@ -52,54 +51,34 @@ segy2grd
     添加 **n** 则仅统计分配到每个节点的数据点数量。
     [默认情况下(不使用 **-A** 选项)会计算平均值]。该选项不用于简单映射。
 
-.. _-D:
-
-.. include:: ../../explain_-D_cap.rst_
-
 .. _-L:
 
-**-L**
-    Let *nsamp* override number of samples in each trace.
+**-L**\ [*nsamp*]
+    使用 *nsamp* 覆盖每道的采样点数
 
 .. _-M:
 
 **-M**\ [*ntraces*]
-    Fix number of traces to read in. Default tries to read 10000 traces.
-    **-M**\ 0 will read number in binary header, **-M**\ *ntraces* will
-    attempt to read only *n* traces.
+    设定要读取的道数。默认尝试读取10000道。
+    **-M**0 将读取二进制头中指定的道数，
+    **-M***ntraces* 将尝试仅读取 *n* 道。
 
 .. _-Q:
 
 **-Q**\ **x**\|\ **y**\ *value*
-    Can be used to change two different settings depending on the directive:
-       **-Qx**\ *x-scale* applies scalar *x-scale* to coordinates in trace
-       header to match the coordinates specified in |-R|.
+    根据不同指令可用于更改两种不同的设置:
+       **-Qx**\ *x-scale* 对道头中的坐标应用缩放因子 *x-scale* ，使其匹配 -R 中指定的坐标范围
 
-       **-Qy**\ *s_int* specifies sample interval as *s_int* if incorrect in the SEGY file.
-       Repeatable.
+       **-Qy**\ *s_int* 当 SEGY 文件中的采样间隔不正确时，指定采样间隔为 *s_int* 。可重复使用。
 
 .. _-S:
 
 **-S**\ [*header*]
-    Set variable spacing; *header* is **c** for cdp, **o** for offset, or **b**\ *number*
-    for 4-byte float starting at byte *number*. If |-S| not set, assumes even
-    spacing of samples at the *x_inc, y_inc* supplied with |-I|.
+    设置可变间距。 *header* 可以是 **c** 表示 CDP(共同深度点)，**o** 表示偏移量，
+    或 **b***number* 表示从第 *number* 字节开始的4字节浮点数。
+    如果未设置 **-S**，则假定样本按照 **-I** 提供的 *x_inc, y_inc* 进行均匀间隔。
 
-.. |Add_-V| replace:: |Add_-V_links|
-.. include:: /explain_-V.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
-.. |Add_-di| replace:: Also sets nodes with no input SEGY coverage to this value
-    [Default is NaN].
-.. include:: ../../explain_-di.rst_
-
-.. |Add_nodereg| unicode:: 0x20 .. just an invisible code
-.. include:: ../../explain_nodereg.rst_
-
-.. include:: ../../explain_help.rst_
-
-Examples
+示例
 --------
 
 To create a grid file from an even spaced SEGY file test.segy, try::
