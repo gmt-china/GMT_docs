@@ -33,7 +33,7 @@ segy2grd
 
 .. _-G:
 
-**-G**outgrid
+**-G**\ outgrid
     输出的网格文件名
 
 .. _-I:
@@ -60,8 +60,8 @@ segy2grd
 
 **-M**\ [*ntraces*]
     设定要读取的道数。默认尝试读取10000道。
-    **-M**0 将读取二进制头中指定的道数，
-    **-M***ntraces* 将尝试仅读取 *n* 道。
+    **-M**\ 0 将读取二进制头中指定的道数，
+    **-M**\ *ntraces* 将尝试仅读取 *n* 道。
 
 .. _-Q:
 
@@ -75,31 +75,23 @@ segy2grd
 
 **-S**\ [*header*]
     设置可变间距。 *header* 可以是 **c** 表示 CDP(共同深度点)，**o** 表示偏移量，
-    或 **b***number* 表示从第 *number* 字节开始的4字节浮点数。
-    如果未设置 **-S**，则假定样本按照 **-I** 提供的 *x_inc, y_inc* 进行均匀间隔。
+    或 **b**\ *number* 表示从第 *number* 字节开始的4字节浮点数。
+    如果未设置 **-S**，则假定样本按照 **-I** 提供的 *x_inc* , *y_inc* 进行均匀间隔。
 
 示例
 --------
 
-To create a grid file from an even spaced SEGY file test.segy, try::
+从一个等间距的 SEGY 文件 test.segy 创建网格文件，读取每道上 18-25 秒时间域(或千米深度域)的数据，第一道会被假定位于 X=198 的位置::
 
-    gmt segy2grd test.segy -I0.1/0.1 -Gtest.nc -R198/208/18/25 -V
+    gmt segy2grd test.segy -I0.1/0.1 -Gtest.nc -R198/208/18/25
 
-Note that this will read in 18-25s (or km) on each trace, but the
-first trace will be assumed to be at X=198
+从 SEGY 文件 test.segy 创建网格文件，根据 CDP 编号定位道集，其中每千米有 10 个 CDP，采样间隔为 0.1。由于网格间隔大于 SEGY 文件的采样间隔，因此单个样本将在网格单元内进行平均::
 
-To create a grid file from the SEGY file test.segy, locating traces
-according to the CDP number, where there are 10 CDPs per km and the
-sample interval is 0.1, try::
-
-    gmt segy2grd test.segy -Gtest.nc -R0/100/0/10 -I0.5/0.2 -V -Qx0.1 -Qy0.1
-
-Because the grid interval is larger than the SEGY file sampling, the
-individual samples will be averaged in bins
+    gmt segy2grd test.segy -Gtest.nc -R0/100/0/10 -I0.5/0.2 -Qx0.1 -Qy0.1
 
 See Also
 --------
 
-:doc:`gmt </gmt>`, :doc:`grd2xyz </grd2xyz>`,
-:doc:`grdedit </grdedit>`, :doc:`segy`,
+:doc:`grd2xyz </grd2xyz>`,
+:doc:`segy`,
 :doc:`xyz2grd </xyz2grd>`
