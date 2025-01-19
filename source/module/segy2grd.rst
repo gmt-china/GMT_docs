@@ -1,16 +1,18 @@
 .. index:: ! segy2grd
-.. include:: ../module_supplements_purpose.rst_
+.. include:: common_SYN_OPTs.rst_
 
-********
 segy2grd
-********
+=============
 
-|segy2grd_purpose|
+:官方文档: :doc:`gmt:supplements/segy/segy2grd`
+:简介: 
 
-Synopsis
+**segy2grd** 用于读取 IEEE SEGY 文件并创建二进制网格文件。它可以执行简单的映射(相当于 xyz2grd -Z)，或者在单个网格单元包含 SEGY 文件中多个样本值的情况下进行更复杂的平均值计算。
+
+如果某些节点没有填充数据，**segy2grd** 会进行报告。这些未被约束的节点会被设置为用户指定的值[默认值为 NaN]。对于包含多个值的节点，将被设为这些值的平均值。
+
+语法
 --------
-
-.. include:: ../../common_SYN_OPTs.rst_
 
 **gmt segy2grd**
 *segyfile*
@@ -23,24 +25,6 @@ Synopsis
 [ |-M|\ [*ntraces*] ]
 [ |-Q|\ **x**\|\ **y**\ *value* ]
 [ |-S|\ [*header*] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
-
-|No-spaces|
-
-Description
------------
-
-**segy2grd** reads an IEEE SEGY file and creates a binary grid file.
-Either a simple mapping (equivalent to :doc:`xyz2grd </xyz2grd>` -Z) or a more complicated
-averaging where a particular grid cell includes values from more than
-one sample in the SEGY file can be done. **segy2grd** will report if
-some of the nodes are not filled in with data. Such unconstrained nodes
-are set to a value specified by the user [Default is NaN]. Nodes with
-more than one value will be set to the average value.
 
 Required Arguments
 ------------------
