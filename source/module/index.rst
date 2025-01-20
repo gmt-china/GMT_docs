@@ -241,7 +241,6 @@
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
 :doc:`segy`                                      在图上绘制 SEGY 文件
 :doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
-:doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
 :doc:`grdimage`                                  在图上绘制网格数据
@@ -380,7 +379,7 @@
 :doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
 :doc:`gmt:supplements/gsfml/mlconverter`         Convert chrons to ages using selected magnetic timescale
 **其他模块**                                     .. _module_other:
-:doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
