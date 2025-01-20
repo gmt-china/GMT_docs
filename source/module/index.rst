@@ -96,6 +96,7 @@
     - :doc:`sac`
     - :doc:`sample1d`
     - :doc:`segy`
+    - :doc:`segy2grd`
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
@@ -159,7 +160,6 @@
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -379,7 +379,7 @@
 :doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
 :doc:`gmt:supplements/gsfml/mlconverter`         Convert chrons to ages using selected magnetic timescale
 **其他模块**                                     .. _module_other:
-:doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
@@ -487,6 +487,7 @@
    sac
    sample1d
    segy
+   segy2grd
    solar
    spectrum1d
    sph2grd
