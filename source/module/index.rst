@@ -96,6 +96,7 @@
     - :doc:`sac`
     - :doc:`sample1d`
     - :doc:`segy`
+    - :doc:`segy2grd`
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
@@ -159,7 +160,6 @@
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
     - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/segy/segy2grd`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -241,6 +241,7 @@
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
 :doc:`segy`                                      在图上绘制 SEGY 文件
 :doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
+:doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
 :doc:`grdimage`                                  在图上绘制网格数据
@@ -487,6 +488,7 @@
    sac
    sample1d
    segy
+   segy2grd
    solar
    spectrum1d
    sph2grd
