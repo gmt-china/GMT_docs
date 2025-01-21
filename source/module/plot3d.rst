@@ -33,7 +33,7 @@ plot3d
 描述
 -----------
 
-从文件或标准输入读取 (*x, y, z*) 三列数据，并在 3D 空间中绘制线条、多边形或符号。
+从文件或标准输入读取至少 (*x, y, z*) 三列数据，并在 3D 空间中绘制线条、多边形或符号。
 如果选择了符号但未指定符号大小，则将第四列数据解释为符号大小。符号大小小于或等于 0 的数据将被跳过。
 如果未指定符号，则输入数据的最后一列必须包含符号代码（参见下方 |-S| 选项）。
 如果未使用 |-S| 选项，将绘制连接数据点的线条。要显式闭合多边形，请使用 |-L| 选项。
@@ -43,27 +43,17 @@ plot3d
 必须选项
 ------------------
 
-.. |Add_intables| unicode:: 0x20 .. just an invisible code
-.. include:: explain_intables.rst_
+*table*
+    输入数据文件文件名。
 
-.. |Add_-J| replace:: |Add_-J_links|
 .. include:: explain_-J.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
 
 .. _-Jz:
 
-.. include:: explain_-Jz.rst_
+**-Jz**\|\ **Z**\ *parameters*
+    设置Z轴的缩放比例，设置方式与 -Jx|X 相同。
 
-.. |Add_-R| replace:: |Add_-R_auto_table|
-.. include:: explain_-R.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
-.. |Add_-Rz| unicode:: 0x20 .. just an invisible code
-.. include:: explain_-Rz.rst_
-
-Optional Arguments
+可选选项
 ------------------
 
 .. _-A:
