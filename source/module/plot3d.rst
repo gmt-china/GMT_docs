@@ -1,16 +1,17 @@
 .. index:: ! plot3d
-.. include:: module_core_purpose.rst_
+.. include:: common_SYN_OPTs.rst_
+
 
 ******
 plot3d
 ******
 
-|plot3d_purpose|
+:官方文档: :doc:`gmt:plot3d`
+:简介: 在3D视角图中绘制符号、线段或多边形
 
-Synopsis
+
+语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt plot3d** [ *table* ] |-J|\ *parameters*
 |-Jz|\ \|\ **Z**\ *parameters*
@@ -26,27 +27,8 @@ Synopsis
 [ |-N| ]
 [ |-Q| ]
 [ |-S|\ [*symbol*][*size*][/*size_y*] ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
 [ |-W|\ [*pen*][*attr*] ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
 [ |-Z|\ *value*\|\ *file*]\ [**+t**\|\ **T**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-l| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-tv| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
 
 .. module_common_begins
 
