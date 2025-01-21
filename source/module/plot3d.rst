@@ -30,25 +30,17 @@ plot3d
 [ |-W|\ [*pen*][*attr*] ]
 [ |-Z|\ *value*\|\ *file*]\ [**+t**\|\ **T**] ]
 
-.. module_common_begins
-
-Description
+描述
 -----------
 
-Reads (*x, y, z*) triplets from *files* [or standard input] and
-will plot lines, polygons, or symbols
-at those locations in 3-D. If a symbol is selected and no symbol size
-given, then we will interpret the fourth column of the input data
-as symbol size. Symbols whose *size* is <= 0 are skipped. If no symbols
-are specified then the symbol code (see |-S| below) must be present as
-last column in the input. If |-S| is not used, a line connecting the
-data points will be drawn instead. To explicitly close polygons, use
-|-L|. Select a fill with |-G|. If |-G| is set, |-W| will control
-whether the polygon outline is drawn or not. If a symbol is selected,
-|-G| and |-W| determine the fill and outline/no outline,
-respectively.
+从文件或标准输入读取 (*x, y, z*) 三列数据，并在 3D 空间中绘制线条、多边形或符号。
+如果选择了符号但未指定符号大小，则将第四列数据解释为符号大小。符号大小小于或等于 0 的数据将被跳过。
+如果未指定符号，则输入数据的最后一列必须包含符号代码（参见下方 |-S| 选项）。
+如果未使用 |-S| 选项，将绘制连接数据点的线条。要显式闭合多边形，请使用 |-L| 选项。
+使用 |-G| 选择填充颜色。如果设置了 |-G| ，|-W| 将控制是否绘制多边形的边框。
+如果选择了绘制符号，|-G| 和 |-W| 分别决定填充颜色和是否显示边框。
 
-Required Arguments
+必须选项
 ------------------
 
 .. |Add_intables| unicode:: 0x20 .. just an invisible code
