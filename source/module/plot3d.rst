@@ -138,6 +138,10 @@ plot3d
         也可以为统一颜色（大写 **U** 和 **O**）。柱体还可以通过 **+v|i** 修饰符表示多波段符号。
 
     **-So**\ *size*\ [**c**\|\ **i**\|\ **p**\|\ **q**][**+b**\ \|\ **B**\ [*base*]][**+v**\|\ **i**\ *nz*]
+        柱体（3D）从基底延伸到 z 坐标。 *size* 设置基底宽度（如果 **xsize** 和 **ysize** 不相同，则分别使用它们）。
+        可以用 **xsize** 和 **ysize** 作为两个额外的数据列。默认情况下，基底 *base* 为 0。附加 **+b**\ *base* 来更改此值。
+        如果未附加 *base* ，则从最后一列输入数据中读取该值。如果柱体的高度是相对于基底来测量的，请使用 **+B**\ [*base*] [相对于原点]。
+        为了模拟阴影，面颜色将会修改。使用 **-SO** 来禁用 3D 照明。通常情况下，只有一个 z 值会被考虑。对于多波段柱体，可以附加 **+vnz**（并通过输入提供相对于基底的 **nz** 个完整的 z 值），或者附加 **+inz**（并期望 **nz** 个增量 **dz**，这些增量必须求和得到实际的 z 值）。多波段柱体修饰符需要 **-C**，其 z 值必须等于波段号（0, 1, …, nz-1），以分配波段颜色。因此，输入记录可以是 **(x y z1 z2 … zn)** 或 **(x y dz1 dz2 … dzn)**。
         c\ **o**\ lumn (3-D) extending from *base* to *z*.  The *size* sets base width
         (Use *xsize/ysize* if they are not the same).  Append **q** if *size* is a quantity in the users' x-units
         [Default is plot-distance units].  If no *size* is given we expect both *xsize*
