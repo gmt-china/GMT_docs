@@ -89,6 +89,7 @@
     - :doc:`meca`
     - :doc:`nearneighbor`
     - :doc:`plot`
+    - :doc:`plot3d`
     - :doc:`polar`
     - :doc:`project`
     - :doc:`psconvert`
@@ -159,7 +160,6 @@
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
-    - :doc:`gmt:plot3d`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -224,6 +224,7 @@
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
 :doc:`plot`                                      在图上绘制线段、多边形和符号
+:doc:`plot3d`                                    在三维视角绘制线段、多边形和符号
 :doc:`text`                                      在图上写文本
 :doc:`colorbar`                                  在图上绘制色标
 :doc:`legend`                                    绘制图例
@@ -480,6 +481,7 @@
    meca
    nearneighbor
    plot
+   plot3d
    polar
    project
    psconvert
