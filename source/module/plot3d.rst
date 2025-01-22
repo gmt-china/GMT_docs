@@ -148,24 +148,12 @@ plot3d
         因此，输入记录可以是 **(x y z1 z2 … zn)** 或 **(x y dz1 dz2 … dzn)**。
         
     **-Su**\ *size*\ [**c**\|\ **i**\|\ **p**\|\ **q**]
-        c\ **u**\ be (3-D).  The *size* sets length of all sides. Append
-        **q** if *size* is a quantity in x-units [Default is plot-distance units].
-        The facet colors will be modified to simulate shading.
-        Use **-SU** to disable 3-D illumination.
-
-.. |Add_-U| replace:: |Add_-U_links|
-.. include:: explain_-U.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
-.. |Add_-V| replace:: |Add_-V_links|
-.. include:: explain_-V.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
+        绘制三维立方体。*size* 参数设定所有边的长度。如果 *size* 是以 x 单位表示的数量，则在后面添加 **q** [默认使用绘图距离单位]。
+        立方体各个面的颜色会被调整以模拟阴影效果。使用 **-SU** 可以禁用三维光照效果。
 
 .. _-W:
 
-**-W**\ [*pen*][*attr*] :ref:`(more ...) <-Wpen_attrib>`
+**-W**\ [*pen*][*attr*] 
     Set pen attributes for lines or the outline of symbols [Defaults:
     *width* = 0.25p, *color* = black, *style* = solid]. Modifiers can be used to change the
     appearance of the line:
