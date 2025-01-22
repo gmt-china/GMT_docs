@@ -229,5 +229,5 @@ https://docs.generic-mapping-tools.org/latest/gallery/ex10.html ::
 				-F+glightgrey+pthinner+s-4p/-6p/grey20@40 -p @legend_10.txt
 		gmt end show
 
-    .. figure:: https://docs.generic-mapping-tools.org/latest/_images/ex10.png
-        :align: center
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/ex10.png
+    :align: center
