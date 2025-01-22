@@ -181,78 +181,22 @@ plot3d
     * **+t** - 改为调节多边形或线条的透明度；z 值将被假定为 0-100% 范围内的透明度。
     * **+T** - 通过 *file* 提供两列数据：最后一列必须是 z 值，倒数第二列必须是透明度值(范围为 0-100%)。
 
-    
-.. include:: explain_-aspatial.rst_
-
-.. |Add_-bi| replace:: [Default is the required number of columns given the chosen settings].
-.. include:: explain_-bi.rst_
-
-.. |Add_-di| unicode:: 0x20 .. just an invisible code
-.. include:: explain_-di.rst_
-
-.. |Add_-e| unicode:: 0x20 .. just an invisible code
-.. include:: explain_-e.rst_
-
-.. |Add_-f| unicode:: 0x20 .. just an invisible code
-.. include:: explain_-f.rst_
-
-.. |Add_-g| replace:: The **-g** option is ignored if |-S| is set.
-.. include:: explain_-g.rst_
-
-.. |Add_-h| unicode:: 0x20 .. just an invisible code
-.. include:: explain_-h.rst_
-
-.. include:: explain_-icols.rst_
-
-.. |Add_-l| unicode:: 0x20 .. just an invisible code
-.. include:: explain_-l.rst_
-
-.. |Add_perspective| unicode:: 0x20 .. just an invisible code
-.. include:: explain_perspective.rst_
-
-.. include:: explain_-qi.rst_
-
-.. include:: explain_-tv_full.rst_
-
-.. include:: explain_-w.rst_
-
-.. include:: explain_colon.rst_
-
-.. include:: explain_help.rst_
-
-.. include:: explain_distunits.rst_
-
-.. include:: explain_vectors.rst_
-
-.. module_common_ends
-
-.. include:: auto_legend_info.rst_
-
-Examples
+示例
 --------
 
-.. include:: explain_example.rst_
-
-.. include:: oneliner_info.rst_
-
-To plot blue columns (width = 1.25 cm) at the positions listed in the
-file heights.xyz on a 3-D projection of the space (0-10), (0-10),
-(0-100), with tickmarks every 2, 2, and 10, viewing it from the
-southeast at 30 degree elevation::
+在三维空间(0-10)、(0-10)、(0-100)的投影上，按照 heights.xyz 文件中列出的位置绘制蓝色柱状图(宽度 = 1.25 厘米)，
+刻度间隔分别为 2、2、10，从东南方向以 30 度仰角进行观察：::
 
     gmt plot3d heights.xyz -R0/10/0/10/0/100 -Jx1.25c -Jz0.125c -So1.25c \
               -Gblue -Bx2+lXLABEL -By2+lYLABEL -Bz10+lZLABEL -B+t"3-D PLOT" -p135/30 \
               -U+c -W -pdf heights
 
-To plot a point with color and outline dictated by the *t.cpt* file for the *level*-value 65::
+根据 *level* 值 65，使用 *t.cpt* 文件指定的颜色和轮廓来绘制一个点::
 
     echo 175 30 0 | gmt plot3d -R150/200/20/50 -JM15c -B -Sc0.5c -Z65 -G+z -Ct.cpt -pdf map
 
-.. include:: plot3d_notes.rst_
+社区绘图示例
+--------------
 
-See Also
---------
-
-:doc:`gmt`, :doc:`gmt.conf`,
-:doc:`gmtcolors`,
-:doc:`basemap`, :doc:`plot`
+:doc:`/examples
+/ex029/`, :doc:`/examples/ex030/`
