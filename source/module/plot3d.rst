@@ -169,26 +169,19 @@ plot3d
 .. _-Z:
 
 **-Z**\ *value*\|\ *file*\ [**+t**\|\ **T**]
-    Control the color and|or transparency of line and polygons.
-    Instead of specifying a line or polygon fill and outline color via |-G| and |-W|,
-    pass a color lookup table via |-C|. Then, select one of two modes:
+    控制线条和多边形的颜色或透明度。本选项需要使用 **-C** 指定cpt，然后选择以下两种模式之一：
+    1. 添加一个 *value*，颜色通过 CPT 查找。
+    2. 提供一个文件 *file* 的名称，该文件为输入数据中的每个多边形或线条提供一个 z 值(从最后一列读取)。
 
-    1. Append a *value* and the color is looked-up via the CPT.
-    2. Give the name of a *file* with one z-value (read from the last column) for each polygon
-       or line in the input data.
+    要应用颜色，我们必须将 **-G** 或 **-W** 选项与 **-Z** 结合使用：
+    * **-G+z** - 将颜色应用于多边形填充。
+    * **-W+z** - 将颜色应用于画笔。
 
-    To apply the color we must use the |-G| or |-W| options in conjunction with |-Z|:
+    使用两个修饰符来同时处理透明度或颜色：
+    * **+t** - 改为调节多边形或线条的透明度；z 值将被假定为 0-100% 范围内的透明度。
+    * **+T** - 通过 *file* 提供两列数据：最后一列必须是 z 值，倒数第二列必须是透明度值(范围为 0-100%)。
 
-    - **-G+z** - Apply the color to the polygon fill.
-    - **-W+z** - Apply the color to the pen instead.
-
-    Two modifiers is used to also handle transparency and|or color:
-
-    - **+t** - Modulate the transparency of the polygon or line instead; the
-      *z*-value will be assumed to be transparency in the 0-100 % range.
-    - **+T** - Supply two columns via *file*: The last column must be the *z*-value
-      while the penultimate column must have transparencies (in 0-100 % range).
-
+    
 .. include:: explain_-aspatial.rst_
 
 .. |Add_-bi| replace:: [Default is the required number of columns given the chosen settings].
