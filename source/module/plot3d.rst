@@ -120,15 +120,46 @@ plot3d
 .. _-Q:
 
 **-Q**
-    Turn off the automatic sorting of items based on their distance from the
-    viewer. The default is to sort the items so that items in the foreground
-    are plotted after items in the background.
+    关闭基于与观察者距离的自动排序。默认情况下，会对项目进行排序，使前景中的项目在背景中的项目之后绘制。
 
 .. _-S:
 
-.. include:: explain_symbols.rst_
+**-S**\ [*symbol*][*size*]
+    本命令可以绘制所有 *plot* 命令支持的二维符号，但注意在视觉效果上仅仅是从三维视角观察平面符号。
+    例如只能绘制出三维视角观察的平面圆点，而无法绘制一个三维球体。
 
-.. include:: explain_3D_symbols.rst_
+    此外还支持以下真正的三维符号绘制:
+
+    .. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_base_symbols3D.*
+        :width: 600 px
+        :align: center
+
+        Both the cube and column symbols are 3-D, and can have their colors
+        modulated based on the view point (lower case **u** and **o**) or be
+        of uniform color (upper case **U** and **O**). The column may also
+        be a multiband symbol using the **+v**\|\ **i** modifiers.
+
+    **-So**\ *size*\ [**c**\|\ **i**\|\ **p**\|\ **q**][**+b**\ \|\ **B**\ [*base*]][**+v**\|\ **i**\ *nz*]
+        c\ **o**\ lumn (3-D) extending from *base* to *z*.  The *size* sets base width
+        (Use *xsize/ysize* if they are not the same).  Append **q** if *size* is a quantity in the users' x-units
+        [Default is plot-distance units].  If no *size* is given we expect both *xsize*
+        and *ysize* as two extra data columns.  By default, *base* = 0.  Append
+        **+b**\ *base* to change this value.  If *base* is not appended then we read it
+        from the last input data column.  Use **+B**\ [*base*] if the column height
+        is measured relative to *base* [Relative to origin].
+        The facet colors will be modified to simulate shading.  Use **-SO** to disable 3-D illumination.
+        Normally a single *z* value is considered.  For multi-band columns, append either
+        **+v**\ *nz* (and provide *nz* complete *z*-values relative to *base* via the input)
+        or append **+i**\ *nz* (and expect *nz* increments *dz* that must be summed
+        to yield actual *z* values).  The multi-band column modifiers requires **-C** whose
+        *z* values must equal the band number (0, 1, ..., *nz*\ -1) to assign the band color.
+        Thus, input records are either (*x y z1 z2 ... zn*) or (*x y dz1 dz2 ... dzn*).
+
+    **-Su**\ *size*\ [**c**\|\ **i**\|\ **p**\|\ **q**]
+        c\ **u**\ be (3-D).  The *size* sets length of all sides. Append
+        **q** if *size* is a quantity in x-units [Default is plot-distance units].
+        The facet colors will be modified to simulate shading.
+        Use **-SU** to disable 3-D illumination.
 
 .. |Add_-U| replace:: |Add_-U_links|
 .. include:: explain_-U.rst_
