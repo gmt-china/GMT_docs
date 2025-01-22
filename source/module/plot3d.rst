@@ -84,9 +84,8 @@ plot3d
 .. _-D:
 
 **-D**\ *dx*/*dy*\ [/*dz*]
-    Offset the plot symbol or line locations by the given amounts
-    *dx/dy*\ [*dz*] [Default is no offset].  You may append dimensional
-    units from **c**\ \|\ **i**\ \|\ **p** to each value.
+    将绘图符号或线的位置按指定的偏移量 *dx*/*dy*\ [/*dz*] 偏移 [默认无偏移]。
+    可以为每个值附加尺寸单位，例如 **c**（厘米）、**i**（英寸）或 **p**（点）。
 
 .. _-G:
 
