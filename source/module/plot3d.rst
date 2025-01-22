@@ -21,8 +21,6 @@ plot3d
 [ |-C|\ *cpt* ]
 [ |-D|\ *dx*/*dy*\ [/*dz*] ]
 [ |-G|\ *fill*\|\ **+z** ]
-[ |-H|\ [*scale*] ]
-[ |-I|\ [*intens*] ]
 [ |-L|\ [**+b**\|\ **d**\|\ **D**][**+xl**\|\ **r**\|\ *x0*][**+yl**\|\ **r**\|\ *y0*][**+p**\ *pen*] ]
 [ |-N| ]
 [ |-Q| ]
@@ -93,22 +91,6 @@ plot3d
     选择符号或多边形的填充颜色或图案 [默认无填充]。
     请注意，本命令会首先在输入数据文件的所有段头中搜索 **-G** 和 **-W** 字符串，任何找到的值都会覆盖本设置。  
     如果设置了 **-Z**，可以使用 **-G+z** 通过 **-Ccpt** 和获取的 z 值指定填充颜色。  
-
-.. _-H:
-
-**-H**\ [*scale*]
-    Scale symbol sizes and pen widths on a per-record basis using the *scale* read from the
-    data set, given as the first column after the (optional) *w* and *size* columns [no scaling].
-    The symbol size is either provided by |-S| or via the input *size* column.  Alternatively,
-    append a constant *scale* that should be used instead of reading a scale column.
-
-.. _-I:
-
-**-I**\ *intens*
-    Use the supplied *intens* value (nominally in the ±1 range) to
-    modulate the fill color by simulating illumination [none]. If no intensity
-    is provided we will instead read *intens* from the first data column after
-    the symbol parameters (if given).
 
 .. _-L:
 
