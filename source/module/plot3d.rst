@@ -154,34 +154,18 @@ plot3d
 .. _-W:
 
 **-W**\ [*pen*][*attr*] 
-    Set pen attributes for lines or the outline of symbols [Defaults:
-    *width* = 0.25p, *color* = black, *style* = solid]. Modifiers can be used to change the
-    appearance of the line:
+    设置线条或符号轮廓的画笔属性 [默认值：*width*(宽度) = 0.25p，*color*(颜色) = 黑色，*style*(样式) = 实线]。可以使用以下修饰符来改变线条的外观：
 
-    - **+c** - Determine how the color from the cpt file lookup is applied to symbol 
-      and|or fill.  Append **l** to have the color of the line to be taken from the CPT (see
-      |-C|). If instead **f** is appended then the color from the cpt file is applied
-      to symbol fill.  If no argument is given the we use the color for both pen and fill.
-    - **+o** - Append *offset*\ [*unit*] and we will start and stop drawing the line at the
-      given distance *offset* from the end point. Append a *unit* from **c**\|\ **i**\|\ **p** to
-      indicate plot distance offsets on the map or append map distance units instead (see Units below)
-      [Cartesian distances]. Give *offset* as *b_offset*/*e_offset* if the beginning and end of the
-      line should have different offsets.
-    - **+s** - Draw the line using a Bezier spline [linear spline].
-    - **+v** - Given [**b**\|\ **e**]\ *vspecs*, we place a vector head at the ends of the lines. Prepend
-      **b** (beginning) or **e** (end) to add a vector at only one end [Default is shared specs for both end of the line].
-      **Note**: Because **+v** may take additional modifiers it must necessarily be given
-      at the end of the pen specification. See the `Vector Attributes`_ for more information or such modifiers.
-    - **+z** - If |-Z| is set, assign pen color via **-C**\ *cpt* and the *z*-values obtained
-      (same if transparency is set via |-Z|).  Finally, if pen *color* = *auto*\ [*-segment*] or *auto-table* then
-      we will cycle through the pen colors implied by :term:`COLOR_SET` and change on a per-segment
-      or per-table basis.  The *width*, *style*, or *transparency* settings are unchanged.
-
-.. |Add_-XY| replace:: |Add_-XY_links|
-.. include:: explain_-XY.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
+    * **+c** - 将从 cpt 文件查找的颜色应用到符号或填充。添加 **l** 表示线条颜色将从 CPT 获取(参见 **-C**)。
+               如果添加 **f**，则 cpt 文件中的颜色将应用于符号填充。如果未给出参数，则颜色同时用于画笔和填充。
+    * **+o** - 添加 *offset*\ [*unit*]，将在距离端点给定 *offset* 距离处开始和停止绘制线条。
+               添加 **c**|**i**|**p** 中的一个 *unit* 表示地图上的绘图距离偏移，或者添加地图距离单位[默认是笛卡尔距离]。
+               如果线条的起点和终点需要不同的偏移量，请将 *offset* 写作 *b_offset*/*e_offset* 的形式。
+    * **+s** - 使用贝塞尔样条绘制线条[默认是线性样条]。
+    * **+v** - 给定 [**b**\|\ **e**]\ *vspecs*，在线条端点添加矢量箭头。在前面添加 **b**(起点)或 **e**(终点)可以仅在一端添加矢量[默认对线条两端都添加]。
+               **注意**：由于 **+v** 可能需要额外的修饰符，因此它必须放在画笔规格的最后。更多关于此类修饰符的信息，请参见矢量属性。
+    * **+z** - 如果设置了 **-Z**，则通过 **-C**\ *cpt* 和获得的 *z* 值分配画笔颜色(如果通过 **-Z** 设置透明度也是如此)。
+    
 .. _-Z:
 
 **-Z**\ *value*\|\ *file*\ [**+t**\|\ **T**]
