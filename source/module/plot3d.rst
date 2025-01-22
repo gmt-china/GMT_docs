@@ -95,17 +95,17 @@ plot3d
 .. _-L:
 
 **-L**\ [**+b**\|\ **d**\|\ **D**][**+xl**\|\ **r**\|\ *x0*][**+yb**\|\ **t**\|\ *y0*][**+p**\ *pen*]
-    Force closed polygons.  Alternatively, append modifiers to build a polygon from a line segment:
+    强制闭合多边形。或者附加以下选项从线段构建多边形：  
 
-    - **+d** - Build a symmetrical envelope around *y*\ (*x*) using deviations *dy*\ (*x*) given in extra column 3.
-    - **+D** - Build an asymmetrical envelope around *y*\ (*x*) using deviations *dy1*\ (*x*) and *dy2*\ (*x*) from extra columns 3-4.
-    - **+b** - Build an asymmetrical envelope around *y*\ (*x*) using bounds *yl*\ (*x*) and *yh*\ (*x*) from extra columns 3-4.
-    - **+x** - Connect first and last point to anchor points at either *xmin* (append **l**), *xmax* (append **r**), or *x0* (append it).
-    - **+y** - Connect first and last point to anchor points at either *ymin* (append **b**), *xmax* (append **t**), or *y0* (append it).
+    - **+d** - 使用额外的第 3 列中提供的偏差值 **dy(x)**，围绕 **y(x)** 构建对称包络。  
+    - **+D** - 使用额外的第 3-4 列中的偏差值 **dy1(x)** 和 **dy2(x)**，围绕 **y(x)** 构建非对称包络。  
+    - **+b** - 使用额外的第 3-4 列中提供的边界值 **yl(x)** 和 **yh(x)**，围绕 **y(x)** 构建非对称包络。  
+    - **+x** - 将首点和末点连接到锚点 **xmin**（附加 **l**）、**xmax**（附加 **r**）或 **x0**（附加 **it**）。  
+    - **+y** - 将首点和末点连接到锚点 **ymin**（附加 **b**）、**ymax**（附加 **t**）或 **y0**（附加 **it**）。  
 
-    Such polygons may be painted (|-G|) and optionally outlined by adding modifier **+p**\ *pen* [no outline].
-    **Note**: When option |-Z| is passed via segment headers you will need |-L| to ensure
-    your segments are interpreted as polygons, else they will be seen as lines.
+    这些多边形可以通过 **-G** 着色，并可通过添加修饰符 **+ppen** 来描边 [默认无描边]。  
+
+    **注意：** 如果数据段头使用了 **-Z** 选项，则需要使用 **-L** 以确保数据被解释为多边形，否则它们将被视为线段。
 
 .. _-N:
 
