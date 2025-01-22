@@ -72,29 +72,14 @@ plot3d
 
     注意：在 **plot3d** 中，**-A** 选项要求 z 坐标为常数。
 
-.. |Add_-B| replace:: |Add_-B_links|
-.. include:: explain_-B.rst_
-    :start-after: **Syntax**
-    :end-before: **Description**
-
 .. _-C:
 
 **-C**\ *cpt*
-    Give a CPT or specify **-C**\ *color1,color2*\ [*,color3*\ ,...]
-    to build a linear continuous CPT from those colors automatically.
-    In this case *color*\ **n** can be a r/g/b triplet, a color name,
-    or an HTML hexadecimal color (e.g. #aabbcc ).
-    If |-S| is set, let symbol fill color be
-    determined by the *value* in the fourth column. Additional fields are
-    shifted over by one column (optional *size* would be in 5th rather than
-    4th field, etc.). An exception to this rule is for multi-band 3-D
-    columns where each band gets its color from each slice in the CPT.
-    If |-S| is not set, then it expects the user to
-    supply a multisegment file where each segment header contains a
-    **-Z**\ *value* string. The *value* will control the color of the line or
-    polygon (if |-L| is set) via the CPT.  Alternatively, see the |-Z|
-    option for how to assign *z*-values. **Note**: If modern mode and no
-    argument is given then we select the current CPT.
+    提供一个 CPT 文件或使用 **-C**\ *color1,color2*\ [*,color3*\ ,...] 来自动从这些颜色生成线性连续的 CPT。
+    如果使用了 **-S**，符号的填充颜色将由第四列的值决定。其他字段依次向后移动一列（符号大小将位于第 5 列而不是第 4 列，以此类推）。  
+    如果未使用 **-S**，则需要提供一个多段数据文件，其中每个段的头部包含 **-Z**\ *value*，该值通过 CPT 控制线条或多边形（如果设置了 **-L**）的颜色。 
+    
+    另外，可以参阅 -Z 选项了解如何分配 z 值。
 
 .. _-D:
 
