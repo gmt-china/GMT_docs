@@ -89,14 +89,10 @@ plot3d
 
 .. _-G:
 
-**-G**\ *fill* :ref:`(more ...) <-Gfill_attrib>`
-    Select color or pattern for filling of symbols or polygons [Default is no fill].
-    Note that the module will search for |-G| and |-W| strings in all the
-    segment headers and let any values thus found over-ride the command line settings.
-    If |-Z| is set, use **-G+z** to assign fill color via **-C**\ *cpt* and the
-    *z*-values obtained.  Finally, if *fill* = *auto*\ [*-segment*] or *auto-table* then
-    we will cycle through the fill colors implied by :term:`COLOR_SET` and change on a per-segment
-    or per-table basis.  Any *transparency* setting is unchanged.
+**-G**\ *fill* 
+    选择符号或多边形的填充颜色或图案 [默认无填充]。
+    请注意，本命令会首先在输入数据文件的所有段头中搜索 **-G** 和 **-W** 字符串，任何找到的值都会覆盖本设置。  
+    如果设置了 **-Z**，可以使用 **-G+z** 通过 **-Ccpt** 和获取的 z 值指定填充颜色。  
 
 .. _-H:
 
