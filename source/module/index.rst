@@ -231,7 +231,6 @@
 :doc:`histogram`                                 统计并绘制直方图
 :doc:`rose`                                      绘制极坐标下的直方图（sector 图、rose 图或 windrose 图）
 :doc:`gmt:events`                                绘制特定时刻的事件符号和标签信息
-:doc:`gmt:plot3d`                                在 3D 图上绘制线段、多边形和符号
 :doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
