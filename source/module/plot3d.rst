@@ -134,10 +134,8 @@ plot3d
         :width: 600 px
         :align: center
 
-        Both the cube and column symbols are 3-D, and can have their colors
-        modulated based on the view point (lower case **u** and **o**) or be
-        of uniform color (upper case **U** and **O**). The column may also
-        be a multiband symbol using the **+v**\|\ **i** modifiers.
+        立方体和柱体符号都是 3D 的，其颜色可以根据视角进行调节（小写 **u** 和 **o**），
+        也可以为统一颜色（大写 **U** 和 **O**）。柱体还可以通过 **+v|i** 修饰符表示多波段符号。
 
     **-So**\ *size*\ [**c**\|\ **i**\|\ **p**\|\ **q**][**+b**\ \|\ **B**\ [*base*]][**+v**\|\ **i**\ *nz*]
         c\ **o**\ lumn (3-D) extending from *base* to *z*.  The *size* sets base width
