@@ -110,14 +110,12 @@ plot3d
 .. _-N:
 
 **-N**\ [**c**\|\ **r**]
-    Do **not** clip symbols that fall outside map border [Default plots points
-    whose coordinates are strictly inside the map border only]. For periodic (360-longitude)
-    maps we must plot all symbols twice in case they are clipped by the repeating
-    boundary. The |-N| will turn off clipping and not plot repeating symbols.
-    Use **-Nr** to turn off clipping but retain the plotting of such repeating symbols, or
-    use **-Nc** to retain clipping but turn off plotting of repeating symbols.
-    **Note**: A plain |-N| may also be used with lines or polygons but note that this deactivates
-    any consideration of periodicity (e.g., longitudes) and may have unintended consequences.
+    不要裁剪落在地图边界外的符号 [默认仅绘制坐标严格位于地图边界内的点]。
+    对于周期性（360 度经度）的地图，可能需要将所有符号绘制两次，以防它们被重复的边界裁剪。  
+
+    - 使用 **-N** 可关闭裁剪，并且不绘制重复的符号。  
+    - 使用 **-Nr** 可关闭裁剪，同时保留重复符号的绘制。  
+    - 使用 **-Nc** 可保留裁剪，但关闭重复符号的绘制。  
 
 .. _-Q:
 
