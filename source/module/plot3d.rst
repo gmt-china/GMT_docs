@@ -209,7 +209,8 @@ plot3d
 官方绘图示例
 --------------
 
-```
+https://docs.generic-mapping-tools.org/latest/gallery/ex10.html ::
+
 #!/usr/bin/env bash
 #		GMT EXAMPLE 10
 #
@@ -227,7 +228,6 @@ gmt begin ex10
 	gmt legend -JZ -DjLB+o0.5c+w3.5c/0+jBL --FONT=Helvetica-Bold \
 		-F+glightgrey+pthinner+s-4p/-6p/grey20@40 -p @legend_10.txt
 gmt end show
-```
 
     .. figure:: https://docs.generic-mapping-tools.org/latest/_images/ex10.png
         :align: center
