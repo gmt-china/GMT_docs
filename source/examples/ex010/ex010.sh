@@ -8,7 +8,4 @@ gmt begin ex010
     gmt makecpt -Chot ${T_cpt} -Z -Di
     gmt plot data.txt -Sc0.1c -W -C -Ra -JM15c -Baf -i1,2,0
     gmt colorbar -Bxaf -C
-    # 绘制省界，断层
-    gmt plot CN-border-La.gmt -W0.5p
-    gmt plot CN-faults.gmt -W1p,gray
 gmt end show
