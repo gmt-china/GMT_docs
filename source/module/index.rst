@@ -89,6 +89,7 @@
     - :doc:`meca`
     - :doc:`nearneighbor`
     - :doc:`plot`
+    - :doc:`plot3d`
     - :doc:`polar`
     - :doc:`project`
     - :doc:`psconvert`
@@ -159,7 +160,6 @@
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
-    - :doc:`gmt:plot3d`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -224,13 +224,13 @@
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
 :doc:`plot`                                      在图上绘制线段、多边形和符号
+:doc:`plot3d`                                    在三维视角绘制线段、多边形和符号
 :doc:`text`                                      在图上写文本
 :doc:`colorbar`                                  在图上绘制色标
 :doc:`legend`                                    绘制图例
 :doc:`histogram`                                 统计并绘制直方图
 :doc:`rose`                                      绘制极坐标下的直方图（sector 图、rose 图或 windrose 图）
 :doc:`gmt:events`                                绘制特定时刻的事件符号和标签信息
-:doc:`gmt:plot3d`                                在 3D 图上绘制线段、多边形和符号
 :doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
@@ -480,6 +480,7 @@
    meca
    nearneighbor
    plot
+   plot3d
    polar
    project
    psconvert
