@@ -66,13 +66,9 @@ gmt end show
 并且 GMT 会在绘图结束后自动打开生成的图片文件。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: first-plot.sh
     :width: 80%
     :caption: 使用 GMT 绘制的第一张图
-
-    gmt begin GlobalMap
-        gmt coast -Rg -JH15c -Gpurple -Baf -B+t"My First Plot"
-    gmt end show
 ```
 
 :::{tip}
