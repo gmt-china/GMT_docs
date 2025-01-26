@@ -1,0 +1,16 @@
+**-C**\ [[*section*/] *master\_cpt*\ [**+h**\ [*hinge*]][**+u**\|\ **U**\ *unit*]\|\ *local\_cpt*\|\ *color1,color2*\ [,\ *color3*\ ,...]]
+    输入主 CPT 文件名。一般情况下，输入文件为 GMT 内置 CPT (请见 :doc:`/cpt/builtin-cpt`)
+    之一，可通过 *master\_cpt* 或 *section*/*master\_cpt* 的形式指定，但不能带有 **.cpt**
+    后缀。
+    如果主 CPT 中存在软铰链（soft-hinge），则可使用 **+h** 激活铰链，其铰链值为 0。如果
+    CPT 中存在硬铰链（hard-hinge），则使用 **+h**\ [*hinge*] 激活铰链，并可修改铰链值
+    为 *hinge* 。
+    对于不存在铰链的内置 CPT，用户可使用 **+U**\ *unit* 将 z 值从其他单位转换为米，或使用
+    **+u**\ *unit* 将米转换为其他单位，*unit* 可以从
+    **e**\|\ **f**\|\ **k**\|\ **M**\|\ **n**\|\ **u** 中取值，详见 :doc:`/basis/unit`。
+
+    主 CPT 也可以为用户自己的 CPT 文件，这时，CPT 必须带有 **.cpt** 后缀。
+
+    此外，除设置主 CPT 文件名外, 也可指定一个颜色序列 *color1,color2*\ [*,color3*\ ,...]
+    创建线性连续 CPT，其中 *z* 值从 0 开始，每种颜色递增 1。这种情况下，*color*\ **n**
+    可以为 r/g/b 三元数（见 :doc:`/basis/color`）或者 HTML 16 进制颜色 (例如，#aabbcc)。

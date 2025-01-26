@@ -7,7 +7,7 @@ rose
 :官方文档: :doc:`gmt:rose`
 :简介: 绘制极坐标下的直方图（sector图、rose图或windrose图）
 
-可选选项
+必须选项
 --------
 
 *table*
@@ -15,26 +15,30 @@ rose
 
         length  azimuth
 
-    若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项，
-    此时所有的长度都默认为单位长度。
+    此时绘制的是windrose图。
+    若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项。
+    如果使用 **-A** 选项可以绘制sector图或rose图。
+
+可选选项
+--------
 
 .. _-A:
 
-**-A**\ [**r**]\ *sector_width*
+**-A**\ *sector_width*\ [**+r**]
     指定扇页宽度，单位为度
 
     - 默认扇页宽度为0，即windrose图
     - 若扇页宽度不为0，则表示绘制sector图
-    - 若扇页宽度不为0且使用了 **-Ar**，则表示绘制rose图
+    - 若扇页宽度不为0且使用了 **+r**，则表示绘制rose图
 
 **-B**
     此模块中，X表示径向距离，Y表示方位角。Y轴的标签是图片的标题，比例尺长度由
     径向网格间隔决定。
 
-``-Cm[+w]<mode_file>``
-    绘制矢量以显示 ``<mode_file>`` 中指定的主方向。
+``-Em|[+w]mode_file``
+    绘制矢量以显示 ``mode_file`` 中指定的主方向。
 
-    使用 ``-Cm`` 则计算并绘制平均方向。使用 ``-Cm+w<mode_file>`` 则将计算得到的
+    使用 ``-Em`` 则计算并绘制平均方向。使用 ``-Em+w<mode_file>`` 则将计算得到的
     平均方向及其他统计结果以如下格式保存到文件中::
 
         mean_az, mean_r, mean_resultant, max_r, scaled_mean_r, length_sum, n, sign@alpha
@@ -58,6 +62,9 @@ rose
 
         n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum
 
+**-JX**\ *diameter*
+    设置rose图的直径。本模块只能使用这种投影方式。如果不设置，直径默认为7.5cm。
+
 ``-L[<wlabel>,<elabel>,<slabel>,<nlabel>]``
     指定0、90、180、270度处的标签。
 
@@ -66,7 +73,7 @@ rose
     #. 只使用 ``-L`` 但无其他参数表示不显示所有标签
 
 ``-M<parameters>``
-    与 ``-C`` 选项一起使用以修改矢量的属性。具体属性见 :doc:`/basis/vector` 一节
+    与 ``-E`` 选项一起使用以修改矢量的属性。具体属性见 :doc:`/basis/vector` 一节
 
 ``-Q[<alpha>]``
     设置置信水平，用于决定平均结果是否显著，默认值为 0.05。
@@ -84,10 +91,8 @@ rose
     - 方位角范围取 ``0/360`` 以绘制 full circle
 
 
-``-S[n]<plot_radius>[u]``
-    指定圆的半径。
-
-    ``-Sn`` 会将输入的半径归一化到0到1。
+**-S[+a]**
+    将输入的半径归一化到0到1。如果使用 **+a** 则进一步将绘制出的面积归一化。
 
 **-T**
     指定输入数据为 orientation 数据（即数据范围在0-180度范围内）而不是0-360度
@@ -95,10 +100,10 @@ rose
     First as *azimuth* and second as *azimuth + 180*.
     Ignored if range is given as -90/90 or 0/180.
 
-``-W[v]<pen>``
+**-W**\ *pen*
     设置扇区边框的画笔属性。
 
-    ``-Wv<pen>`` 可用于设置绘制矢量时所需的画笔属性。
+    ``-Wv<pen>`` 可用于设置绘制矢量时所需的画笔属性。此时需要设置 ``-E`` 选项。
 
 ``-Zu|<scale>``
     将数据的半径乘以 ``<scale>`` ，比如 ``-Z0.001`` 会将数据的单位从m变成km。

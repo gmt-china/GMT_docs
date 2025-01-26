@@ -7,6 +7,7 @@ on:
   # Schedule runs on 12 noon every Sunday
   schedule:
     - cron: '0 12 * * 0'
+  workflow_dispatch:
 
 jobs:
   gmt_cache:
@@ -21,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v1.4.4
+        uses: mamba-org/setup-micromamba@v2.0.4
         with:
           environment-name: gmtdocs
           condarc: |
@@ -29,7 +30,7 @@ jobs:
               - conda-forge
               - nodefaults
           create-args: >-
-            gmt=6.4.0
+            gmt=6.5.0
 
       - name: Download data and change configurations
         run: bash scripts/setup-ci.sh
@@ -45,10 +46,11 @@ jobs:
       - name: Clear GMT's sessions
         # Can't use 'gmt clear sessions' because it returns non-zero exit code
         # when sessions directory don't exist.
-        run: rm -rf ~/.gmt/sessions
+        run: rm -rvf ~/.gmt/sessions
 
       - name: Upload artifacts to GitHub
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: gmt-cache
           path: ~/.gmt
+          include-hidden-files: true

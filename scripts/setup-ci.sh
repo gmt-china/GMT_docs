@@ -42,8 +42,9 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @mississippi.txt \
             @NY_traffic.txt \
             @Table_5_11.txt \
-            @sunglasses.eps \
-            @Wessel_GJI_Fig_5.txt
+            @Wessel_GJI_Fig_5.txt \
+            @quakes_07.txt \
+            @quakes_2018.txt
 
 # 3. Download the china-geospatial-data dataset
 git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
@@ -86,10 +87,3 @@ EOF
 # 8. Fix the gmt_cn1.locale file for GMT Chinese support
 mkdir -p ~/.gmt/localization
 iconv -f GBK -t UTF-8 $(gmt --show-sharedir)/localization/gmt_cn1.locale > ~/.gmt/localization/gmt_cn1.locale
-# The WESN patch is required for GMT<=6.4
-cat >> ~/.gmt/localization/gmt_cn1.locale << EOF
-C   1       West            W       西
-C   2       East            E       东
-C   3       South           S       南
-C   4       North           N       北
-EOF

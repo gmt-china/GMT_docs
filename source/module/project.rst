@@ -125,3 +125,9 @@ project
 已知某点，根据方位角和大圆距离计算另一点。已知一点(120, 25)，根据方位角 45 度，大圆距离 123 千米的点位置 ::
 
     gmt project -C120/25 -A45 -L0/123 -G123 -Q | tail -1
+
+根据地震目录数据，将地震事件投影到深度剖面并绘制：
+
+.. gmtplot:: project/project_ex.sh
+   :show-code: true
+   :width: 100%

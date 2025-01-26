@@ -4,6 +4,11 @@
 mgd77magref
 ===========
 
+:贡献者: |周茂|
+:最近更新日期: 2024-06-21
+
+----
+
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77magref`
 :简介: 计算 IGRF 或 CM4 地磁参考场模型值
 
@@ -115,8 +120,8 @@ mgd77magref
     **9** means Core field from IGRF and other contributions from CM4.
 
     **注** ：不要同时使用 **0** 和 **9** 。
-    将上述数字（1-7）并列可以得到组合效果，例如 **-Ft**/**12** 将计算 Core field 和 
-    Lithosoheric 产生的总场。**-Ft**/**934** 为使用 IGRF 的 Core field 和 CM4 的 
+    将上述数字（1-7）并列可以得到组合效果，例如 **-Ft**/**12** 将计算 Core field 和
+    Lithosoheric 产生的总场。**-Ft**/**934** 为使用 IGRF 的 Core field 和 CM4 的
     Primay 和 Induced Magetospheric field 相加的结果。输出数据的格式与字符出现的顺序
     有关，默认为 **-Frthxyzdi**/**1** ，也可以使用 **-o** 选项进一步筛选。
 
@@ -177,13 +182,13 @@ mgd77magref
 
 如果输入文件为二进制，则绝对时间被保存为相对于选定的历元（某个时刻）的相对时间。但是由于
 参考历元并没有保存在数据文件中，因此解码绝对时间可能会出现问题。这种情况下，MGD77 默认使
-用 Unix 系统时间，因此，用户需要确保带时间的二进制数据使用相同的时间系统，见 
+用 Unix 系统时间，因此，用户需要确保带时间的二进制数据使用相同的时间系统，见
 :term:`TIME_SYSTEM`
 
 示例
 ----
 
-在给定的点，十进制时间为 2000.0 时，计算除岩石圈和 toroidal field 外所有的贡献的 CM4 
+在给定的点，十进制时间为 2000.0 时，计算除岩石圈和 toroidal field 外所有的贡献的 CM4
 Total field，偏角和倾角 ::
 
     echo -28 38 0 2000.0 | gmt mgd77magref -A+y -Ftdi/13456

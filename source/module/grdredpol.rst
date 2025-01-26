@@ -5,7 +5,7 @@ grdredpol
 =========
 
 :贡献者: |周茂|
-:最近更新日期: 2022-06-21
+:最近更新日期: 2024-06-07
 
 ----
 
@@ -13,7 +13,7 @@ grdredpol
 :简介: 计算连续化极（Continuous Reduction To the Pole，RTP）
 
 **grdredpol** 读取一个磁异常文件并计算化极后的异常。
-This anomaly is the one that would have been produce if the bodies were 
+This anomaly is the one that would have been produce if the bodies were
 magnetized vertically and the anomalies were observed at the geomagnetic pole.
 标准的 RTP 程序假定磁化方向和地磁场在整个区域是一致的。这些假设对于小区域
 来说是合理的，但是大区域不成立。

@@ -50,7 +50,7 @@ plot
     #. 若绘制符号（即使用 **-S** 选项），则符号的填充色由数据的第三列Z值决定，
        其他数据列依次后移一列。
     #. 若绘制线段或多边形（即未使用 **-S** 选项），则需要在多段数据的数据段头记录中指定
-       **-Z**\ *val* (参见 :ref:`table_ascii_id4` )，CPT文件中 *val* 所对应的颜色，
+       **-Z**\ *val* (参见 :ref:`table-ascii-attrs` )，CPT文件中 *val* 所对应的颜色，
        即为线段或多边形的线条颜色。如果要设置为多边形的填充色，注意应该要额外使用 |-L| 选项构建闭合多边形。
 
     除此以外，也可以使用 ``-C<color1>,<color2>,...`` 语法在
@@ -563,8 +563,8 @@ plot
 制作和使用自定义符号
 --------------------
 
-如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据 
-`GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/cookbook/custom-symbols.html>`__
+如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据
+`GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/reference/custom-symbols.html>`__
 的格式要求自行制作自定义符号文件。
 
 使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 :file:`name.def`：
@@ -592,7 +592,7 @@ plot
 - ``-Z<zval>`` ：从cpt文件中查找Z值<zval>所对应的颜色作为填充色
 - ``-ZNaN`` ：从cpt文件中获取NaN颜色
 
-详情及示例参见 :ref:`table_ascii_id4`
+详情及示例参见 :ref:`table-ascii-attrs`
 
 示例
 ----

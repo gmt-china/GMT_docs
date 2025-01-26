@@ -20,20 +20,21 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-build: build_html build_pdf
+htmlzip: html
+	cp -r $(BUILDDIR)/html $(BUILDDIR)/$(DOCNAME)
+	cd $(BUILDDIR); zip -r $(DOCNAME).zip $(DOCNAME); rm -r $(DOCNAME); cd ..
 
-build_html: $(HTML)
-
-build_pdf: latexpdf optimize_pdf
-	cp $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(HTML)/
+pdf: latex
+	tectonic $(BUILDDIR)/latex/$(DOCNAME).tex
+	mv $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(DOCNAME).pdf
 
 # reduce file size of the final PDF documentation
-optimize_pdf: latexpdf
+optimize_pdf: pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
 		-dNOPAUSE -dQUIET -dBATCH \
-		-sOutputFile=$(BUILDDIR)/latex/$(DOCNAME).optimized.pdf \
-		$(BUILDDIR)/latex/$(DOCNAME).pdf
-	mv $(BUILDDIR)/latex/$(DOCNAME).optimized.pdf $(BUILDDIR)/latex/$(DOCNAME).pdf
+		-sOutputFile=$(BUILDDIR)/$(DOCNAME).optimized.pdf \
+		$(BUILDDIR)/$(DOCNAME).pdf
+	mv $(BUILDDIR)/$(DOCNAME).optimized.pdf $(BUILDDIR)/$(DOCNAME).pdf
 
 serve: $(HTML)
 	cd $(BUILDDIR)/$(HTML) && python -m http.server
