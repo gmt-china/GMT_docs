@@ -51,10 +51,10 @@ import tempfile
 import textwrap
 from contextlib import contextmanager
 from pathlib import Path
+import hashlib
 
 import jinja2
 from docutils.parsers.rst import Directive, directives
-from sphinx.util import md5
 
 TEMPLATE = """
 {%- if show_code -%}
@@ -409,7 +409,7 @@ class GMTPlotDirective(Directive):
             caption = self.options["caption"] if "caption" in self.options else ""
 
         # use the md5sum value of the code as the basename of script and image files
-        output_base = md5(code.encode()).hexdigest()
+        output_base = hashlib.md5(code.encode()).hexdigest()
 
         # determine unique code filename under current working directory
         suffix = get_suffix_from_language(self.options["language"])
