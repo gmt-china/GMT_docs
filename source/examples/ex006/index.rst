@@ -18,7 +18,7 @@
     9.98304 49.5649 18531
     9.97812 49.5673 18425
     ...
-    
+
 示例数据下载： :download:`data.txt`
 
 我们首先使用 ``gmt convert`` 命令将其变换为矢量格式::
@@ -46,24 +46,10 @@
 
 示例代码如下：
 
-.. gmtplot::
+.. gmtplot:: ex006.sh
     :caption: 绘制颜色渐变的线段
     :width: 100%
-    
-    gmt begin track_sample
-        # 绘制底图
-        gmt basemap -R7.5/10.5/49/50.5 -JM10c -Baf
-        
-        # 将原始数据处理为需要的格式
-        gmt convert data.txt -Fv -o0:4 > trackv.txt
-        # 根据飞行的高度范围生成cpt
-        gmt makecpt -T0/20000/1 -Z -Cseis
-        # 根据飞行高度，绘制颜色渐变的线段
-        gmt plot trackv.txt -Sv1p+s -W2p+cl -C
-        
-        rm trackv.txt
-    gmt end show
-    
+
 参考链接
 ------------
 https://forum.generic-mapping-tools.org/t/how-to-color-line-segments-according-z-value/2832/7
