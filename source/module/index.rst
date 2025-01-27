@@ -40,6 +40,7 @@
     - :doc:`gmtinfo`
     - :doc:`gmtlogo`
     - :doc:`gmtmath`
+    - :doc:`gmtregress`
     - :doc:`gmtselect`
     - :doc:`gmtset`
     - :doc:`gmtsimplify`
@@ -108,6 +109,8 @@
     - :doc:`surface`
     - :doc:`ternary`
     - :doc:`text`
+    - :doc:`trend1d`
+    - :doc:`trend2d`
     - :doc:`triangulate`
     - :doc:`velo`
     - :doc:`wiggle`
@@ -152,7 +155,6 @@
     - :doc:`gmt:batch`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtregress`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
@@ -252,7 +254,7 @@
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
 :doc:`gmtconvert`                                表数据格式转换、列提取、列粘贴
-:doc:`gmt:trend1d`                               一维数据的多项式拟合
+:doc:`trend1d`                                   一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
 :doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
 :doc:`filter1d`                                  对 1D 表数据做时间域滤波
@@ -263,12 +265,12 @@
 :doc:`mapproject`                                地图变换的正变换和逆变换
 :doc:`gmtspatial`                                点、线段和多边形的地理空间操作
 :doc:`gmtvector`                                 2D 和 3D 下笛卡尔矢量操作
-:doc:`gmt:gmtregress`                            1D 数据的线性回归
+:doc:`gmtregress`                                1D 数据的线性回归
 **2D 数据处理**                                  .. _module_2D_data_processing:
 :doc:`grdcut`                                    从一个网格文件中裁剪出一个矩形子区域生成新的网格文件
 :doc:`grdpaste`                                  将两个网格沿着其共同边界拼接成一个文件
 :doc:`grdblend`                                  将多个部分重叠的网格文件合并成一个网格文件
-:doc:`gmt:grdtrack`                              获取指定地理位置处的网格值
+:doc:`grdtrack`                                  获取指定地理位置处的网格值
 :doc:`gmt:grdgradient`                           计算网格的方向梯度
 :doc:`grdclip`                                   对网格文件的 Z 值进行截断
 :doc:`grd2xyz`                                   将网格文件转换成表数据
@@ -296,7 +298,7 @@
 :doc:`gmtsplit`                                  将表数据拆分为单独的数据段
 :doc:`triangulate`                               对表数据做三角剖分、Voronoi 图计算和网格化
 :doc:`nearneighbor`                              使用 "Nearest neighbor" 算法对数据进行网格化
-:doc:`gmt:trend2d`                               二维数据的多项式拟合
+:doc:`trend2d`                                   二维数据的多项式拟合
 :doc:`gmt:greenspline`                           使用格林函数样条进行插值
 :doc:`sph2grd`                                   根据球谐系数计算网格
 :doc:`sphdistance`                               计算球面上的 Voronoi 距离、节点或自然最邻近网格
@@ -429,7 +431,8 @@
    gmtget
    gmtinfo
    gmtlogo
-   gmtmath
+   gmtmath 
+   gmtregress
    gmtselect
    gmtset
    gmtsimplify
@@ -499,6 +502,8 @@
    surface
    ternary
    text
+   trend1d
+   trend2d
    triangulate
    velo
    wiggle
