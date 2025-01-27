@@ -17,7 +17,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.4"
+version = "6.5"
 release = version
 
 # -- Contributor information ---------------------------------------------
@@ -47,21 +47,44 @@ show_authors = True
 
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
+    "myst_parser",
     "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
-    "sphinx_cjkspace.cjkspace",
     "sphinx_design",
     "gmtplot",
     "sphinxcontrib.datatemplates",
 ]
+# use custom templater bridge defined in _extensions/templatebridge.py
+template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
 smartquotes_action = "qe"
+
+# MyST configurations.
+# Reference: https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "substitution",
+]
+
+myst_substitutions = {
+    "田冬冬": "[田冬冬](https://me.seisman.info/)",
+    "姚家园": "[姚家园](https://github.com/core-man)",
+    "陈箫翰": "[陈箫翰](https://github.com/CovMat)",
+    "刘珠妹": "[刘珠妹](https://github.com/liuzhumei)",
+    "徐弥坚": "[徐弥坚](https://xumijian.me/)",
+    "邓山泉": "[邓山泉](https://github.com/sqdeng/)",
+    "周茂": "[周茂](https://github.com/ZMAlt)",
+    "王亮": "[王亮](https://github.com/wangliang1989)",
+}
 
 # Cross-refering other projects
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
@@ -101,10 +124,13 @@ html_title = project
 # set site url of the image gallery for different use cases
 if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
     siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
+    basedir_for_gallery = "source/"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    basedir_for_gallery = "./"
 else:  # build locally
     siteurl_for_gallery = ""
+    basedir_for_gallery = "source/"
 
 html_context = {
     "favicon": "favicon.ico",
@@ -117,6 +143,7 @@ html_context = {
     "metatags": '<meta name="msvalidate.01" content="C8D87DC3FFCED00C7F2FC8FD35051386" />',
     # Passed to sphinxcontrib.datatemplates
     "siteurl": siteurl_for_gallery,
+    "basedir": basedir_for_gallery,
     # Enable version switch on GitHub Actions
     "enable_versions_switch": True if os.getenv("GITHUB_ACTIONS") else False,
 
@@ -124,14 +151,6 @@ html_context = {
         (
             '<i class="fa fa-globe fa-fw"></i> GMT 中文社区',
             "https://gmt-china.org",
-        ),
-        (
-            '<i class="fa fa-github fa-fw"></i> 手册源码',
-            github_url,
-        ),
-        (
-            '<i class="fa fa-book fa-fw"></i> 手册 PDF',
-            "https://docs.gmt-china.org/{}/GMT_docs.pdf".format(version),
         ),
         (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',

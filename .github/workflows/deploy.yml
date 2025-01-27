@@ -17,52 +17,50 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      GMT_VERSION: 6.4.0
-      GMT_DOC_VERSION: 6.4
+      GMT_DOC_VERSION: 6.5
+
     defaults:
       run:
         shell: bash -l {0}
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v2.0.4
+        with:
+          environment-file: environment.yml
+          cache-downloads: false
+          cache-environment: true
+
+      - name: Download and list cached files
+        run: |
+          gh run download --name gmt-cache --dir ~/.gmt/
+          # Change modification times of the two files, so GMT won't refresh it
+          touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
+          ls -lhR ~/.gmt
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # Because building the PDF document is slow, the building and deployment
+      # process is designed as follows:
+      #
+      # 1. Build the HTML document and use the old PDF document and HTML zip if available
+      # 2. Deploy the HTML document
+      # 3. Build the HTML document again (html, not dirhtml) and make a zip
+      # 4. Build the PDF document
+      # 5. Deploy the PDF document and HTML zip
+      #
+      - name: Build HTML
+        run: make dirhtml
 
       - name: Checkout the gh-pages branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: gh-pages
           path: deploy
           fetch-depth: 0
-
-      - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v1.4.3
-        with:
-          environment-file: environment.yml
-          cache-downloads: true
-          cache-environment: true
-
-      - name: Download remote data from GitHub
-        uses: dawidd6/action-download-artifact@v2.27.0
-        with:
-          workflow: cache-data.yml
-          workflow_conclusion: success
-          name: gmt-cache
-          path: .gmt
-
-      # Move downloaded files to ~/.gmt directory and list them
-      - name: Move and list downloaded remote files
-        run: |
-          mkdir -p ~/.gmt
-          mv .gmt/* ~/.gmt
-          # Change modification times of the two files, so GMT won't refresh it
-          touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
-          ls -lhR ~/.gmt
-          # Chinese configuration
-          gmt text -L
-          cat ~/.gmt/cidfmap
-          cat ~/.gmt/PSL_custom_fonts.txt
-
-      - name: Build HTML
-        run: make build_html
 
       - name: Prepare the documentation for deployment
         run: |
@@ -72,7 +70,13 @@ jobs:
           # generate CNAME in the root directory
           echo docs.gmt-china.org > CNAME
           # Use the old PDF documentation because the new PDF documentation is not built
-          cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          if [ -e ${GMT_DOC_VERSION}/GMT_docs.pdf ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
+          fi
+          # Use the old HTML zip because the new HTML zip is not built
+          if [ -e ${GMT_DOC_VERSION}/GMT_docs.zip ]; then
+            cp ${GMT_DOC_VERSION}/GMT_docs.zip ../build/dirhtml/
+          fi
           # Replace the old documentation with tht new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
@@ -82,34 +86,27 @@ jobs:
           cd ..
 
       - name: Deploy the HTML documentation to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
 
-      - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-
-      - name: Install LaTeX packages
+      - name: Build the HMTL zip
         run: |
-          tlmgr update --self
-          tlmgr install capt-of caption colortbl ctex enumitem everysel fancyhdr fandol \
-                        float ms needspace oberdiek parskip pdftexcmds tabulary \
-                        titlesec ulem upquote varwidth wrapfig xcolor xecjk \
-                        xindy zhnumber
-          # install packages for GMT LaTeX integration
-          tlmgr install collection-fontsrecommended
+          make htmlzip
+          mv build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
 
-      - name: Build PDF
-        run: make build_pdf
+      - name: Setup tectonic
+        uses: wtfjoke/setup-tectonic@v3
 
-      - name: Prepare the documentation for deployment
+      - name: Build the PDF
         run: |
-          cp build/dirhtml/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          make pdf optimize_pdf
+          cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
       - name: Deploy the PDF documentation to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true

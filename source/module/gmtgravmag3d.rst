@@ -5,7 +5,7 @@ gmtgravmag3d
 =============
 
 :贡献者: |周茂|
-:最近更新日期: 2022-06-21
+:最近更新日期: 2024-02-17
 
 ----
 
@@ -30,13 +30,38 @@ gmtgravmag3d
 [ |-Z|\ *level* ]
 [ |SYN_OPT-V| ]
 [ **-fg**]
+[ |SYN_OPT-h| ]
+[ |SYN_OPT-i| ]
+[ |SYN_OPT-o| ]
+[ |SYN_OPT-r| ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
+必选选项（不是全部都必选）
+---------------------------
 
-*xyz_file*
-    输入表数据。格式见 |-T| 选项
+.. _-C:
+
+**-C**\ *density*
+    以国际单位制设置多面体的密度。该选项与 |-H| 互斥
+
+.. _-H:
+
+**-H**\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip*
+    设置计算磁异常的参数。*f_dec*/*f_dip* 表示地磁偏角和地磁倾角，单位为 m。
+    *m_int*/*m_dec*/*m_dip* 分别为物体磁强度、偏角和倾角。
+
+.. _-F:
+
+**-F**\ *xy_file*
+    计算异常的位置，与 |-G| 选项互斥
+
+.. _-G:
+
+**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
+[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
+[:*driver*\ [*dataType*][**+c**\ *options*]]
+
+    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read` 。
 
 .. _-M:
 
@@ -46,7 +71,7 @@ gmtgravmag3d
 
     - *x0* 和 *y0* 为几何体中心的水平坐标 [默认为(0,0)，Z 轴朝上]
 
-    - *npts* 是圆的点数
+    - *npts* 是构成一个圆的离散点的个数
 
     - *n_slices* 为当物体由切片构成时，切片的个数 [默认为 5 ]。
 
@@ -79,6 +104,8 @@ gmtgravmag3d
 
     - *sphere,rad/z_center[/x0/y0/npts/n_slices]* 球，中心深度为 *z_center* ，其他参数如上。
 
+.. include:: explain_-R.rst_
+
 .. _-T:
 
 **-Tv**\ *vert_file* 或者 **-Tr|s**\ *raw_file*
@@ -86,42 +113,29 @@ gmtgravmag3d
     两种选项都用来提供闭合的曲面
 
     **-Tv**\ *vert_file*
-    
+
+    必须同时输入 *xyz_file* 文件。
     给定闭合曲面的的顶点文件 *vert_file* 。文件格式和 :doc:`triangulate` 模块生成的格式相同。
-    如果 *xyz_file* 文件可以为 3，4，5，6 或者 8 列，3 列的情况下，表明磁强度/密度假定为常数，
-    。4-6 列分别表示，磁强度，倾角，以及偏角；8 列时表示，磁场倾角、偏角以及物体的磁强度、
-    倾角和偏角。在大于 3 列的情况下，|-H| 选项被忽略。
+    如果 *xyz_file* 文件可以为 3，4，5，6 或者 8 列。
+
+    - 3 列的情况下，表明磁强度/密度假定为常数，由 |-C| 和 |-H| 控制
+    - 4-6 列分别表示，磁强度，倾角，以及偏角
+    - 8 列时表示，磁场倾角、偏角以及物体的磁强度、倾角和偏角。
+
+    在大于 3 列的情况下，|-H| 选项被忽略。
 
     **-Tr|s**\ *raw_file*
 
     *raw_file* 文件为 N 行 9 列，其中每个三角形占据一行，每个顶点 3 个坐标，即为 9 列。
     **-Ts** 选项表明曲面文件是 ASCII STL (Stereo Lithographic) 格式。
-    
+
 可选选项
 --------
-
-.. _-C:
-
-**-C**\ *density*
-    以国际单位制设置多面体的密度。该选项与 |-H| 互斥
-
-.. _-F:
-
-**-F**\ *xy_file*
-    计算磁异常的位置，与 |-G| 选项互斥
-
-.. _-G:
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read`。
 
 .. _-E:
 
 **-E**\ [*thickness*]
-    设置层厚度为 *thickness* ，单位为 m，默认为 0。只有多面体为非彼和情况下，想要
+    设置层厚度为 *thickness* ，单位为 m，默认为 0。只有多面体为非闭合的情况下，想要
     计算一定厚度的层形成的异常时才可用该选项
 
 .. _-L:
@@ -129,15 +143,11 @@ gmtgravmag3d
 **-L**\ [*z_observation*]
     设置观测水平面，默认为 0，同时也是计算异常的高度面
 
-.. include:: explain_-I.rst_
-
-.. include:: explain_-R.rst_
-
 .. _-S:
 
 **-S**\ *radius*
     以 km 为单位设置搜索半径。当输出点距离三角形中心的距离大于该半径时，则不考虑该
-    三角形。使用该选项可以加快计算速度，但是计算结果回变得不准确
+    三角形。使用该选项可以加快计算速度，但是计算结果会变得不准确
 
 .. _-Z:
 
@@ -148,6 +158,14 @@ gmtgravmag3d
 .. include:: explain_-V.rst_
 
 .. include:: explain_-f.rst_
+
+.. include:: explain_-h.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_-ocols.rst_
+
+.. include:: explain_nodereg.rst_
 
 .. include:: explain_help.rst_
 
@@ -177,5 +195,6 @@ polyhedral bodies and translation into magnetic anomalies, *Geophysics*,
 --------
 
 :doc:`grdgravmag3d`,
+:doc:`gravprisms`,
 :doc:`talwani2d`,
 :doc:`talwani3d`

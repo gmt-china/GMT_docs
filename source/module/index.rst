@@ -74,6 +74,8 @@
     - :doc:`grdvector`
     - :doc:`grdview`
     - :doc:`grdvolume`
+    - :doc:`grdvs30`
+    - :doc:`grdshake`
     - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
@@ -88,12 +90,15 @@
     - :doc:`meca`
     - :doc:`nearneighbor`
     - :doc:`plot`
+    - :doc:`plot3d`
     - :doc:`polar`
     - :doc:`project`
     - :doc:`psconvert`
     - :doc:`rose`
     - :doc:`sac`
     - :doc:`sample1d`
+    - :doc:`segy`
+    - :doc:`segy2grd`
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
@@ -157,9 +162,6 @@
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
-    - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/segy/segy2grd`
-    - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -171,6 +173,17 @@
     - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
+    - :doc:`gmt:trend1d`
+    - :doc:`gmt:trend2d`
+    - :doc:`gmt:supplements/windbarbs/psbarb`
+    - :doc:`gmt:supplements/windbarbs/grdbarb`
+    - :doc:`gmt:supplements/gsfml/fzanalyzer`
+    - :doc:`gmt:supplements/gsfml/fzblender`
+    - :doc:`gmt:supplements/gsfml/fzinformer`
+    - :doc:`gmt:supplements/gsfml/fzmapper`
+    - :doc:`gmt:supplements/gsfml/fzmodeler`
+    - :doc:`gmt:supplements/gsfml/fzprofiler`
+    - :doc:`gmt:supplements/gsfml/mlconverter`
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
@@ -189,6 +202,9 @@
     - :ref:`x2sys 相关模块 <module_x2sys>`
     - :ref:`SPOTTER 相关模块 <module_spotter>`
     - :ref:`POTENTIAL 相关模块 <module_potential>`
+    - :ref:`seis 相关模块 <module_seis>`
+    - :ref:`windbarbs 相关模块 <module_windbarbs>`
+    - :ref:`GSFML 相关模块 <module_gsfml>`
     - :ref:`其他模块 <module_other>`
     - :ref:`其他脚本 <other_scripts>`
 
@@ -210,26 +226,22 @@
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
 :doc:`plot`                                      在图上绘制线段、多边形和符号
+:doc:`plot3d`                                    在三维视角绘制线段、多边形和符号
 :doc:`text`                                      在图上写文本
 :doc:`colorbar`                                  在图上绘制色标
 :doc:`legend`                                    绘制图例
 :doc:`histogram`                                 统计并绘制直方图
 :doc:`rose`                                      绘制极坐标下的直方图（sector 图、rose 图或 windrose 图）
 :doc:`gmt:events`                                绘制特定时刻的事件符号和标签信息
-:doc:`gmt:plot3d`                                在 3D 图上绘制线段、多边形和符号
 :doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
-:doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
-:doc:`meca`                                      在地图上绘制震源机制解
-:doc:`polar`                                     在震源球上绘制台站极性
 :doc:`velo`                                      在地图上绘制速度矢量、十字线、楔形图
-:doc:`coupe`                                     绘制震源机制解的剖面图
 :doc:`ternary`                                   绘制三角图解
 :doc:`mask`                                      将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
-:doc:`gmt:supplements/segy/segy`                 在图上绘制 SEGY 文件
+:doc:`segy`                                      在图上绘制 SEGY 文件
 :doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
 :doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
@@ -350,8 +362,26 @@
 :doc:`gravprisms`                                计算三维垂直棱柱（可变密度海山）产生的位异常
 :doc:`talwani2d`                                 计算 2-D 实体产生的位异常
 :doc:`talwani3d`                                 计算 3-D 实体产生的位异常
+**seis 相关模块**                                .. _module_seis:
+:doc:`coupe`                                     绘制震源机制解的剖面图
+:doc:`meca`                                      在地图上绘制震源机制解
+:doc:`polar`                                     在震源球上绘制台站极性
+:doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
+:doc:`grdshake`                                  计算地表峰值加速度、速度、烈度
+:doc:`grdvs30`                                   计算 Vs30 速度模型
+**windbarbs 相关模块**                           .. _module_windbarbs:
+:doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
+:doc:`gmt:supplements/windbarbs/grdbarb`         Plot wind barb field from two component grids
+**GSFML 相关模块**                               .. _module_gsfml:
+:doc:`gmt:supplements/gsfml/fzanalyzer`          Analysis of fracture zones using crossing profiles
+:doc:`gmt:supplements/gsfml/fzblender`           Produce a smooth blended FZ trace
+:doc:`gmt:supplements/gsfml/fzinformer`          Bash script to plot statistical information related to fracture zones
+:doc:`gmt:supplements/gsfml/fzmapper`            Bash script to plot fracture zone cross-profiles on a Mercator map
+:doc:`gmt:supplements/gsfml/fzmodeler`           Bash script to build fracture zone cross-profile model
+:doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
+:doc:`gmt:supplements/gsfml/mlconverter`         Convert chrons to ages using selected magnetic timescale
 **其他模块**                                     .. _module_other:
-:doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
@@ -432,11 +462,13 @@
    grdproject
    grdsample
    grdselect
+   grdshake
    grdtrack
    grdtrend
    grdvector
    grdview
    grdvolume
+   grdvs30
    gshhg
    histogram
    image
@@ -451,12 +483,15 @@
    meca
    nearneighbor
    plot
+   plot3d
    polar
    project
    psconvert
    rose
    sac
    sample1d
+   segy
+   segy2grd
    solar
    spectrum1d
    sph2grd

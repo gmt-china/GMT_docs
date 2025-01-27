@@ -62,27 +62,25 @@ coupe
 **-A**
     以多种方式指定剖面
 
-**-Aa**\ *lon1/lat1/lon2/lat2/dip/p\_width/dmin/dmax*\ [**+f**]
+**-Aa**\ *lon1/lat1/lon2/lat2/\ [**+d**\ *dip*][**+w**\ *width*]
 
     - *lon1/lat1* 剖面起点的经纬度
     - *lon2/lat2* 剖面终点的经纬度
     - *dip* 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）
-    - *p_width* 剖面的宽度（即剖面不是一个平面，而是一个有厚度的长方体）
-    - *dmin/dmax* 是沿着最速下降方向（“北”方向）的最小、最大距离（对于垂直平面，可以理解为限制地震深度范围）
-    - **+f** 表示根据剖面的参数自动计算边框的范围
+    - *width* 剖面的宽度，单位为km（即剖面不是一个平面，而是一个有厚度的长方体）
 
-**-Ab**\ *lon1/lat1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**]
+**-Ab**\ *lon1/lat1/strike/p\_length/\ [**+d**\ *dip*][**+w**\ *width*]
 
     - *lon1/lat1* 剖面起点的经纬度
-    - *strike* 是剖面的走向
-    - *p_length* 是剖面的长度
+    - *strike* 是剖面的走向的方位角
+    - *p_length* 是剖面的长度，单位km
     - 其他参数与 **-Aa** 相同
 
-**-Ac**\ *x1/y1/x2/y2/dip/p\_width/dmin/dmax*\ [**+f**]
+**-Ac**\ *x1/y1/x2/y2/\ [**+d**\ *dip*][**+w**\ *width*]
 
     与 **-Aa** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
 
-**-Ad**\ *x1/y1/strike/p\_length/dip/p\_width/dmin/dmax*\ [**+f**]
+**-Ad**\ *x1/y1/strike/p\_length/\ [**+d**\ *dip*][**+w**\ *width*]
     与 **-Ab** 选项相同，只是 *x/y* 为笛卡尔坐标而不是地理坐标
 
 .. include:: explain_meca_-S.rst_
@@ -220,7 +218,7 @@ coupe
 
     #!/usr/bin/env bash
     gmt begin profile
-    gmt coupe -JX15c/-6c -Sd0.8 -Aa130/43/140/36/90/100/0/700+f -Gblack -Q -N << EOF
+    gmt coupe -JX15c/-6c -Sd0.8 -Aa130/43/140/36+d90+r -Gblack -Q -N << EOF
     131.55 41.48 579  1.14 -0.10 -1.04 -0.51 -2.21 -0.99 26 X Y
     133.74 41.97 604  6.19 -1.14 -5.05 -0.72 -9.03 -4.24 25 X Y
     135.52 37.64 432  0.95  0.11 -1.06 -0.20 -2.32  0.90 25 X Y

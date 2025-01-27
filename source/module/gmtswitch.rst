@@ -93,7 +93,7 @@ Windows
 永久模式使用开源的可执行程序 **EditPath** 来修改注册表中的用户路径。之所以
 被称为永久模式，是因为这些修改会一直保持到下一次修改，请见
 
-http://www.softpedia.com/get/Tweak/Registry-Tweak/EditPath.shtml
+https://www.softpedia.com/get/Tweak/Registry-Tweak/EditPath.shtml
 
 其中 *editpath.exe* 必须已经添加到 Windows 的路径中。
 
