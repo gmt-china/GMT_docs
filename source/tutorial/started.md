@@ -13,7 +13,7 @@ scripting/index
 basemap
 coastline
 lines
-symbols
+symbols/index
 texts
 legend
 earth-relief
