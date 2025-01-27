@@ -24,32 +24,16 @@
 下面的示例中在 (2,3)、(5,6)、(8,2) 三个点绘制了三个直径为 0.5 厘米的圆圈。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: symbols-1.sh
     :width: 60%
-
-    gmt begin symbols
-    gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c << EOF
-    2 3
-    5 6
-    8 2
-    EOF
-    gmt end show
 ```
 
 与绘制线段和多边形类似，我们可以使用 **-W** 选项控制符号轮廓的画笔属性，
 使用 **-G** 选项为符号设置填充色。下面的命令就绘制了三个黑边红色圆圈。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: symbols-2.sh
     :width: 60%
-
-    gmt begin symbols
-    gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c -W1p,black -Gred << EOF
-    2 3
-    5 6
-    8 2
-    EOF
-    gmt end show
 ```
 
 若想要绘制其它符号，则只需要使用对应的符号类型代码即可。例如，将 **-Sc0.5c**
@@ -68,16 +52,8 @@
 由此，我们即得到了大小变化的符号。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: symbols-3.sh
     :width: 60%
-
-    gmt begin symbols
-    gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc -W1p,black -Gred << EOF
-    2 3 0.3
-    5 6 0.8
-    8 2 0.5
-    EOF
-    gmt end show
 ```
 
 ## 颜色变化的符号
@@ -98,17 +74,8 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 填充色。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: symbols-4.sh
     :width: 60%
-
-    gmt begin symbols
-    gmt makecpt -Chot -T0/3/1
-    gmt plot -R0/10/0/10 -JX10c/10c -Baf -Sc0.5c -W1p,black -C << EOF
-    2   3   0
-    5   6   1
-    8   2   2
-    EOF
-    gmt end show
 ```
 
 ## 绘制不同的符号
@@ -122,17 +89,8 @@ X 和 Y 坐标的基础上额外加一列 Z 值，用于控制符号的填充色
 符号类型。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: symbols-5.sh
     :width: 60%
-
-    gmt begin symbols
-    gmt basemap -R0/10/0/10 -JX10c/10c -Baf
-    gmt plot -S0.5c -W1p,black -Gred << EOF
-    2 3 c
-    5 6 t
-    8 2 i
-    EOF
-    gmt end show
 ```
 
 ## 大小、颜色和符号类型都变化的符号
@@ -150,15 +108,6 @@ X   Y   Z   size    symbol
 即第三列控制符号填充色，第四列为符号大小，最后一列为符号类型代码。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: symbols-6.sh
     :width: 60%
-
-    gmt begin symbols
-    gmt makecpt -Chot -T0/3/1
-    gmt plot -R0/10/0/10 -JX10c/10c -Baf -S -W1p,black -C << EOF
-    2   3   0   0.3 c
-    5   6   1   0.8 t
-    8   2   2   0.5 i
-    EOF
-    gmt end show
 ```
