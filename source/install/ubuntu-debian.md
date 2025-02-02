@@ -12,8 +12,6 @@ Ubuntu/Debian 官方源提供了 GMT 二进制包，可直接使用 `apt` 安装
 2. {doc}`conda` \[**推荐**\]
 3. {doc}`build-source-unix` \[**推荐**\]
 
-Ubuntu 23.04 和 Debian 12 官方源中提供了 GMT 6.4.0，可直接通过如下命令安装 GMT。
-
 1. 更新软件包列表:
 
    ```

@@ -198,22 +198,38 @@ sac
 示例
 ----
 
-利用 SAC 的命令 **funcgen seismogram** 生成了波形，想要绘制单个波形，并分别为
-正负部分涂色::
+利用 SAC 的命令 **funcgen seismogram** 生成单个波形文件 *seis.SAC* 并绘制，
+分别为正负部分涂色::
 
     gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
-利用 SAC 命令 **datagen sub tel *.z** 生成多个波形，将其绘制在距离剖面上::
+.. image:: https://github.com/user-attachments/assets/80d57cb7-ae5e-4351-a6f6-4e9ac48579a4
+   :width: 100%
+   :align: center
+
+
+利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在距离剖面上::
 
     gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
          -Ed -M1.5c -W0.5p,red -png distance_profile
 
-利用 SAC 命令 **datagen sub tel *.z** 生成多个波形，将其绘制在地图上::
+.. image:: https://github.com/user-attachments/assets/d5f0d76a-3ff9-4914-a12b-bbc67fae62f4
+   :width: 100%
+   :align: center
+
+
+利用 SAC 命令 **datagen sub teleseis *.z** 生成多个波形，将其绘制在地图上::
 
     gmt begin map pdf
-    gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
-    saclst stlo stla f *.z | gmt plot -St0.4c -Gblack -i1,2
+        gmt coast -G244/243/239 -S167/194/223 -R-120/-40/35/65 -Baf -JM15c
+        gmt sac *.z -M1i -S300c
+        saclst stlo stla f *.z | gmt plot -St0.4c -Gred -i1,2
     gmt end show
+
+.. image:: https://github.com/user-attachments/assets/670740ed-6114-40ff-a2c1-f3d7e54ccb26
+   :width: 100%
+   :align: center
+
 
 相关模块
 --------

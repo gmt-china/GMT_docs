@@ -40,6 +40,7 @@
     - :doc:`gmtinfo`
     - :doc:`gmtlogo`
     - :doc:`gmtmath`
+    - :doc:`gmtregress`
     - :doc:`gmtselect`
     - :doc:`gmtset`
     - :doc:`gmtsimplify`
@@ -73,6 +74,8 @@
     - :doc:`grdvector`
     - :doc:`grdview`
     - :doc:`grdvolume`
+    - :doc:`grdvs30`
+    - :doc:`grdshake`
     - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
@@ -87,12 +90,15 @@
     - :doc:`meca`
     - :doc:`nearneighbor`
     - :doc:`plot`
+    - :doc:`plot3d`
     - :doc:`polar`
     - :doc:`project`
     - :doc:`psconvert`
     - :doc:`rose`
     - :doc:`sac`
     - :doc:`sample1d`
+    - :doc:`segy`
+    - :doc:`segy2grd`
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
@@ -103,6 +109,8 @@
     - :doc:`surface`
     - :doc:`ternary`
     - :doc:`text`
+    - :doc:`trend1d`
+    - :doc:`trend2d`
     - :doc:`triangulate`
     - :doc:`velo`
     - :doc:`wiggle`
@@ -147,7 +155,6 @@
     - :doc:`gmt:batch`
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:gmtregress`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
@@ -155,9 +162,6 @@
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
-    - :doc:`gmt:plot3d`
-    - :doc:`gmt:supplements/segy/segy2grd`
-    - :doc:`gmt:supplements/segy/segy`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -169,10 +173,6 @@
     - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
-    - :doc:`gmt:trend1d`
-    - :doc:`gmt:trend2d`
-    - :doc:`gmt:supplements/seis/grdshake`
-    - :doc:`gmt:supplements/seis/grdvs30`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
     - :doc:`gmt:supplements/gsfml/fzanalyzer`
@@ -200,9 +200,9 @@
     - :ref:`x2sys 相关模块 <module_x2sys>`
     - :ref:`SPOTTER 相关模块 <module_spotter>`
     - :ref:`POTENTIAL 相关模块 <module_potential>`
-    - :ref:`seis` 相关模块 <module_seis>`
-    - :ref:`windbarbs` 相关模块 <module_windbarbs>`
-    - :ref:`GSFML` 相关模块 <module_gsfml>`
+    - :ref:`seis 相关模块 <module_seis>`
+    - :ref:`windbarbs 相关模块 <module_windbarbs>`
+    - :ref:`GSFML 相关模块 <module_gsfml>`
     - :ref:`其他模块 <module_other>`
     - :ref:`其他脚本 <other_scripts>`
 
@@ -224,13 +224,13 @@
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
 :doc:`plot`                                      在图上绘制线段、多边形和符号
+:doc:`plot3d`                                    在三维视角绘制线段、多边形和符号
 :doc:`text`                                      在图上写文本
 :doc:`colorbar`                                  在图上绘制色标
 :doc:`legend`                                    绘制图例
 :doc:`histogram`                                 统计并绘制直方图
 :doc:`rose`                                      绘制极坐标下的直方图（sector 图、rose 图或 windrose 图）
 :doc:`gmt:events`                                绘制特定时刻的事件符号和标签信息
-:doc:`gmt:plot3d`                                在 3D 图上绘制线段、多边形和符号
 :doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
@@ -239,7 +239,7 @@
 :doc:`mask`                                      将没有数据覆盖的区域裁剪或覆盖住
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
-:doc:`gmt:supplements/segy/segy`                 在图上绘制 SEGY 文件
+:doc:`segy`                                      在图上绘制 SEGY 文件
 :doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
 :doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
@@ -252,7 +252,7 @@
 :doc:`gmtselect`                                 根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
 :doc:`gmtconvert`                                表数据格式转换、列提取、列粘贴
-:doc:`gmt:trend1d`                               一维数据的多项式拟合
+:doc:`trend1d`                                   一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
 :doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
 :doc:`filter1d`                                  对 1D 表数据做时间域滤波
@@ -263,12 +263,12 @@
 :doc:`mapproject`                                地图变换的正变换和逆变换
 :doc:`gmtspatial`                                点、线段和多边形的地理空间操作
 :doc:`gmtvector`                                 2D 和 3D 下笛卡尔矢量操作
-:doc:`gmt:gmtregress`                            1D 数据的线性回归
+:doc:`gmtregress`                                1D 数据的线性回归
 **2D 数据处理**                                  .. _module_2D_data_processing:
 :doc:`grdcut`                                    从一个网格文件中裁剪出一个矩形子区域生成新的网格文件
 :doc:`grdpaste`                                  将两个网格沿着其共同边界拼接成一个文件
 :doc:`grdblend`                                  将多个部分重叠的网格文件合并成一个网格文件
-:doc:`gmt:grdtrack`                              获取指定地理位置处的网格值
+:doc:`grdtrack`                                  获取指定地理位置处的网格值
 :doc:`gmt:grdgradient`                           计算网格的方向梯度
 :doc:`grdclip`                                   对网格文件的 Z 值进行截断
 :doc:`grd2xyz`                                   将网格文件转换成表数据
@@ -296,7 +296,7 @@
 :doc:`gmtsplit`                                  将表数据拆分为单独的数据段
 :doc:`triangulate`                               对表数据做三角剖分、Voronoi 图计算和网格化
 :doc:`nearneighbor`                              使用 "Nearest neighbor" 算法对数据进行网格化
-:doc:`gmt:trend2d`                               二维数据的多项式拟合
+:doc:`trend2d`                                   二维数据的多项式拟合
 :doc:`gmt:greenspline`                           使用格林函数样条进行插值
 :doc:`sph2grd`                                   根据球谐系数计算网格
 :doc:`sphdistance`                               计算球面上的 Voronoi 距离、节点或自然最邻近网格
@@ -365,8 +365,8 @@
 :doc:`meca`                                      在地图上绘制震源机制解
 :doc:`polar`                                     在震源球上绘制台站极性
 :doc:`sac`                                       在地图上绘制 SAC 格式的地震波形数据
-:doc:`gmt:supplements/seis/grdshake`             Compute Peak Ground Acceleration/Velocity and Intensity
-:doc:`gmt:supplements/seis/grdvs30`              Convert topographic slope to Vs30 velocities
+:doc:`grdshake`                                  计算地表峰值加速度、速度、烈度
+:doc:`grdvs30`                                   计算 Vs30 速度模型
 **windbarbs 相关模块**                           .. _module_windbarbs:
 :doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
 :doc:`gmt:supplements/windbarbs/grdbarb`         Plot wind barb field from two component grids
@@ -379,7 +379,7 @@
 :doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
 :doc:`gmt:supplements/gsfml/mlconverter`         Convert chrons to ages using selected magnetic timescale
 **其他模块**                                     .. _module_other:
-:doc:`gmt:supplements/segy/segy2grd`             Converting SEGY data to a GMT grid
+:doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
 :doc:`gshhg`                                     从 GSHHG 或 WDBII 数据文件中提取数据
 :doc:`img2google`                                由测深墨卡托 img 网格创建谷歌地球 KML 文件
@@ -430,6 +430,7 @@
    gmtinfo
    gmtlogo
    gmtmath
+   gmtregress
    gmtselect
    gmtset
    gmtsimplify
@@ -459,11 +460,13 @@
    grdproject
    grdsample
    grdselect
+   grdshake
    grdtrack
    grdtrend
    grdvector
    grdview
    grdvolume
+   grdvs30
    gshhg
    histogram
    image
@@ -478,12 +481,15 @@
    meca
    nearneighbor
    plot
+   plot3d
    polar
    project
    psconvert
    rose
    sac
    sample1d
+   segy
+   segy2grd
    solar
    spectrum1d
    sph2grd
@@ -494,6 +500,8 @@
    surface
    ternary
    text
+   trend1d
+   trend2d
    triangulate
    velo
    wiggle

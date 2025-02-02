@@ -90,6 +90,7 @@ cpt/index
 option/index
 proj/index
 conf/index
+theme/index
 dataset/index
 chinese/index
 api/index

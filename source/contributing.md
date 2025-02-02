@@ -127,7 +127,7 @@
 本手册使用基于 Python 的文档生成工具 [Sphinx](http://www.sphinx-doc.org/) 构建。
 读者可以按照如下步骤在自己的计算机上构建得到 HTML 和 PDF 格式的文档。
 
-1. 安装 [Anaconda](https://seismo-learn.org/software/anaconda/)
+1. 安装 [conda](https://seismo-learn.org/software/conda/)
 
 2. 下载文档源码
 
@@ -163,22 +163,10 @@
    编译生成的 HTML 格式的文档 {file}`build/html/` 目录。
    直接用浏览器打开 {file}`build/html/index.html` 即可在本地预览。
 
-6. 安装 LaTeX 相关软件
-
-   构建 PDF 格式的文档需要安装 LaTeX 相关软件。用户可以选择安装
-   [TeXLive](https://tug.org/texlive/)
-   或者更轻量级的 [TinyTeX](https://yihui.org/tinytex/)。
-
-   安装完 TeXLive 或 TinyTex 后，还需要安装构建文档所需的 LaTeX 包:
+6. 安装 [tectonic](https://tectonic-typesetting.github.io/) 并编译生成 PDF 格式的文档
 
    ```
-   $ bash scripts/setup-latex.sh
+   $ conda install tectonic
+   $ make pdf
    ```
-
-7. 编译生成 PDF 格式的文档
-
-   ```
-   $ make latexpdf
-   ```
-
-   编译生成 PDF 格式的文档的路径为 {file}`build/latex/GMT_docs.pdf`
+   编译生成 PDF 格式的文档的路径为 {file}`build/GMT_docs.pdf`

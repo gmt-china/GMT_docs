@@ -13,8 +13,6 @@ GMT 最新版本。
 
 ## 使用 Fedora 官方源安装 GMT
 
-Fedora 37、Fedora 38 和 Fedora rawhide 的官方源中提供了 GMT 6.4.0，可以直接安装。
-
 安装 GMT:
 
 ```
