@@ -173,8 +173,6 @@
     - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
-    - :doc:`gmt:trend1d`
-    - :doc:`gmt:trend2d`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
     - :doc:`gmt:supplements/gsfml/fzanalyzer`
@@ -431,7 +429,7 @@
    gmtget
    gmtinfo
    gmtlogo
-   gmtmath 
+   gmtmath
    gmtregress
    gmtselect
    gmtset
