@@ -6,7 +6,6 @@ gmt begin ex010
     
     # 根据发震时刻绘制不同颜色的圆点
     gmt makecpt -Chot ${T_cpt} -Z -Di
-    # -Ra 表示根据本条命令的输入数据自动计算出一个合适 -R 范围
-    gmt plot data.txt -Sc0.2c -W -C -Ra -JM15c -Baf -i1,2,0
+    gmt plot data.txt -Sc0.2c -W -C -JM15c -Baf -i1,2,0
     gmt colorbar -Bxaf -C
 gmt end show
