@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>grdcontour &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grdconvert" href="../grdconvert/" />
+    <link rel="prev" title="grdclip" href="../grdclip/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grdcontour</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">模块手册</a> &raquo;</li>
+        
+      <li>grdcontour</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/grdcontour.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="grdcontour">
+<span id="index-0"></span><h1>grdcontour<a class="headerlink" href="#grdcontour" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.1/grdcontour.html" title="(在 GMT v6.1)"><span>grdcontour</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>根据网格文件绘制等值线</p>
+</dd>
+</dl>
+<div class="section" id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt grdcontour</strong> <em>grid</em>
+<a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<strong>n</strong>|<em>contours</em>][<em>labelinfo</em>] ]
+[ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>contours</em>|<em>cpt</em> ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>template</em> ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>l</strong>|<strong>r</strong>] ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>|<strong>n</strong>|<strong>l</strong>|<strong>L</strong>|<strong>x</strong>|<strong>X</strong>]<em>params</em> ]
+[ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>low/high</em>|<strong>n</strong>|<strong>N</strong>|<strong>P</strong>|<strong>p</strong> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<em>cpt</em>] ]
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong>[<em>cut</em>][<strong>+z</strong>] ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>smoothfactor</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<strong>h</strong>|<strong>l</strong>][<strong>+a</strong>][<strong>+d</strong><em>gap</em>[/<em>length</em>]][<strong>+l</strong>[<em>labels</em>]] ]
+[ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>type</em>]<em>pen</em>[<strong>+c</strong>[<strong>l</strong>|<strong>f</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>[<strong>+s</strong><em>factor</em>][<strong>+o</strong><em>shift</em>][<strong>+p</strong>] ]
+[ <strong>-bo</strong><a class="reference internal" href="../../option/binary/"><span class="doc">binary</span></a> ]
+[ <strong>-do</strong><a class="reference internal" href="../../option/d/"><span class="doc">nodata</span></a> ]
+[ <strong>-e</strong><a class="reference internal" href="../../option/e/"><span class="doc">regexp</span></a> ]
+[ <strong>-f</strong><a class="reference internal" href="../../option/f/"><span class="doc">flags</span></a> ]
+[ <strong>-ho</strong>[<em>n</em>] ]
+[ <strong>-l</strong><a class="reference internal" href="../../option/l/"><span class="doc">flags</span></a> ]
+[ <strong>-p</strong><a class="reference internal" href="../../option/p/"><span class="doc">flags</span></a> ]
+[ <strong>-t</strong><a class="reference internal" href="../../option/t/"><span class="doc">transp</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</div>
+<div class="section" id="id2">
+<h2>描述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p><strong>grdcontour</strong> 读取一个二维grid网格文件，并绘制等值线</p>
+</div>
+<div class="section" id="id3">
+<h2>必选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="simple">
+<dt><em>grid</em></dt><dd><p>二维grid网格文件</p>
+</dd>
+</dl>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt><dd><p>设置地图投影方式</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<dl class="simple" id="a">
+<dt><strong>-A</strong>[<strong>n</strong>]|[<em>contours</em>][<em>labelinfo</em>]</dt><dd><p><strong>-A</strong><em>contours</em> 设置标注间隔，如果在 <strong>-C</strong> 选项中指定标注间隔的话，这里的设置会被覆盖。<strong>-An</strong> 则为不进行标注。也可以用 <code class="docutils literal notranslate"><span class="pre">-A20,80,100</span></code> 类似的用法，对指定的等值线进行标注。如果只想要标注一条等值线，需要在末尾加上逗号，例如 <code class="docutils literal notranslate"><span class="pre">-A20,</span></code> ，这样 <code class="docutils literal notranslate"><span class="pre">20</span></code> 就不会被认为是标注间隔。
+<em>labelinfo</em> 代表可以在最后追加下列额外选项:</p>
+</dd>
+</dl>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>+a</strong><em>angle</em></dt><dd><p>设置标注的旋转角度 <em>angle</em> 。也可以写成 <code class="docutils literal notranslate"><span class="pre">+an</span></code> 表示标注垂直于等值线。默认设置为 <code class="docutils literal notranslate"><span class="pre">+ap</span></code> 表示标注平行于等值线。 <code class="docutils literal notranslate"><span class="pre">+apu</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+apd</span></code> 表示设置方向朝向山顶还是山底。</p>
+</dd>
+<dt><strong>+c</strong><em>dx</em>[/<em>dy</em>]</dt><dd><p>设置标签和文本之间的间隙。</p>
+</dd>
+<dt><strong>+f</strong><em>font</em></dt><dd><p>设置字体。默认会使用 <a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 设定的字体，但字体大小会变成9p。</p>
+</dd>
+<dt><strong>+g</strong>[<em>color</em>]</dt><dd><p>设置标注文本的背景颜色，不设置本项时标注文本的背景是透明的。</p>
+</dd>
+<dt><strong>+o</strong></dt><dd><p>将文本框形状设置为圆角矩形。不能和 <strong>+v</strong> 一起使用。</p>
+</dd>
+<dt><strong>+p</strong>[<em>pen</em>]</dt><dd><p>设置文本框轮廓的线型，不设置本项时无轮廓。</p>
+</dd>
+<dt><strong>+u</strong><em>unit</em></dt><dd><p>在所有标注后面加上单位 <em>unit</em> 。</p>
+</dd>
+<dt><strong>+v</strong></dt><dd><p>将标注文本顺着等值线弯曲。</p>
+</dd>
+<dt><strong>+=</strong><em>prefix</em></dt><dd><p>在所有标注前面加上前缀 <em>prefix</em> 。</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple" id="b">
+<dt><strong>-B</strong><em>parameters</em> <a class="reference internal" href="../../option/B/"><span class="doc">(more …)</span></a></dt><dd><p>设置底图边框和轴属性</p>
+</dd>
+</dl>
+<dl id="c">
+<dt><strong>-C</strong><em>contours</em></dt><dd><p>指定绘制等值线的形式，具体说明如下:</p>
+<ol class="arabic simple">
+<li><p>如果 <em>contours</em> 是一个以 “.cpt” 结尾的文件名，GMT会查找对应的CPT文件，把CPT文件中的颜色块的边界绘制为等值线，并进行标注。如果使用了 <code class="docutils literal notranslate"><span class="pre">-An</span></code> 选项则只绘制等值线不标注。</p></li>
+<li><p>如果 <em>contours</em> 是一个不以 “.cpt” 结尾的文件名，GMT会读取其中的内容作为等值线设置。每行为一条等值线的设置，以如下格式给出：
+<em>contour-level</em> [<em>angle</em>] <strong>C</strong>|<strong>c</strong>|<strong>A</strong>|<strong>a</strong> [<em>pen</em>]，中括号表示可选项。
+<strong>C</strong> 或 <strong>c</strong> 表示绘制等值线但不标注，而 <strong>A</strong> 或 <strong>a</strong> 表示绘制等值线并进行标注。
+<em>angle</em> 设置标注的旋转角。 <em>pen</em> 设置等值线的线型。</p></li>
+<li><p>如果 <em>contours</em> 是一串用逗号隔开的数字，例如 <code class="docutils literal notranslate"><span class="pre">-C20,80,100</span></code> ，则绘制对应的等值线。如果只想要绘制一条等值线，需要在末尾加上逗号，例如 <code class="docutils literal notranslate"><span class="pre">-C20,</span></code> 。</p></li>
+<li><p>如果没有指定 <em>contours</em> ，则默认使用当前CPT文件。</p></li>
+<li><p>如果 <em>contours</em> 是一个常数，则以这个常数为间隔绘制等值线。</p></li>
+</ol>
+<p>如果 <strong>-C</strong> 和 <strong>-A</strong> 都没有指定的话，则自动计算合适的间隔绘制标注等值线。</p>
+</dd>
+</dl>
+<dl class="simple" id="l">
+<dt><strong>-L</strong><em>low/high</em>|<strong>n</strong>|<strong>N</strong>|<strong>P</strong>|<strong>p</strong></dt><dd><p>不绘制小于 <em>low</em> 大于 <em>high</em> 的等值线。 也可以设置为 <strong>-Ln</strong> 只绘制负值，或 <strong>-Lp</strong> 只绘制正值。使用大写的 <strong>-LN</strong> 或 <strong>-LP</strong> 表示包括0等值线。</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<em>cpt</em>]</dt><dd><p>指定 <em>cpt</em> 文件，对等值线之间的区域填充颜色。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+<blockquote>
+<div><p>对于三维透视图（<a class="reference internal" href="../../option/p/"><span class="doc">-p 选项</span></a>） ，可以加上 /<em>zmin</em>/<em>zmax</em> 指定Z轴的范围。</p>
+</div></blockquote>
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<em>type</em>]<em>pen</em>[<strong>+c</strong>[<strong>l</strong>|<strong>f</strong>]] <a class="reference external" href="https://docs.generic-mapping-tools.org/6.1/gmt.html#set-pens" title="(在 GMT v6.1)"><span class="xref std std-ref">(more …)</span></a></dt><dd><p>设置等值线的线型。默认情况下，有标注的等值线线型 <em>pen</em> 为 <code class="docutils literal notranslate"><span class="pre">0.75p,black</span></code> ，无标注的等值线线型 <em>pen</em> 为 <code class="docutils literal notranslate"><span class="pre">0.25p,black</span></code> 。如果要设置有标注的等值线线型，<em>type</em> 应该设置为 <strong>a</strong> ，例如 <code class="docutils literal notranslate"><span class="pre">-Wa1.75p,red</span></code> 。无标注的等值线线型，<em>type</em> 应该设置为 <strong>c</strong> ，例如 <code class="docutils literal notranslate"><span class="pre">-Wc1.25p,red</span></code> 。如果加上 <strong>+cl</strong> ，则使用 <strong>-C</strong> 选项所指定的CPT文件为不同的等值线设置颜色;
+如果使用 <strong>+cf</strong> ，则为标注设置颜色;
+使用 <strong>+c</strong> 则同时为等值线和标注设置颜色。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>使用网格文件AK_gulf_grav.nc，以25为间隔绘制等值线，以50为间隔标注，标注文字大小10p:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour AK_gulf_grav.nc -JM16c -C25 -A50+f10p -B
+</pre></div>
+</div>
+<p>只绘制50和150两条等值线，只标注100等值线:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour AK_gulf_grav.nc -JM16c -C50,150 -A100,+f10p -B
+</pre></div>
+</div>
+<p>以10为间隔绘制等值线，以50为间隔标注，设置图标题为”Gravity Anomalies”。将有标注的等值线设置为粗红线，将无标注的等值线设置为蓝色的细短划线:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour AK_gulf_grav.nc -C10 -A50 -B -B+t<span class="s2">&quot;Gravity Anomalies&quot;</span> -Wathick,red -Wcthinnest,blue,-
+</pre></div>
+</div>
+<p>将负值等值线设置为蓝色，正值等值线设置为红色，0等值线设置为黑色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin alaska_grav4
+  grdcontour AK_gulf_grav.nc -C10 -A50 -B -B+t<span class="s2">&quot;Gravity Anomalies&quot;</span> -Ln -Wathick,blue -Wcthinnest,blue,-
+  grdcontour AK_gulf_grav.nc -C10 -A50 -Lp -Wathick,red -Wcthinnest,red,-
+  grdcontour AK_gulf_grav.nc -A0,
+gmt end show
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../grdconvert/" class="btn btn-neutral float-right" title="grdconvert" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../grdclip/" class="btn btn-neutral float-left" title="grdclip" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
