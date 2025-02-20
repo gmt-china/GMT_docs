@@ -57,12 +57,6 @@ clip
     若在开启裁剪后有使用 |-X| 或 |-Y| 移动过坐标原点，则在关闭裁剪路径时也需要
     使用 |-X| 或 |-Y| 选项。
 
-.. include:: explain_-J.rst_
-
-.. include:: explain_-R.rst_
-
-.. include:: explain_-Rz.rst_
-
 可选选项
 --------
 
@@ -134,21 +128,6 @@ clip
 示例
 ----
 
-::
-
-    gmt begin example
-    # 打开裁剪路径
-    gmt clip -R0/6/0/6 -Jx2.5c -W1p,blue << EOF
-    0 0
-    5 1
-    5 5
-    EOF
-    # 其他绘图命令
-    gmt plot @tut_data.txt -Gred -Sc2c
-    # 关闭裁剪路径
-    gmt clip -C -B
-    gmt end show
-    
 限制作图范围，仅在指定范围内对陆地填色
 
 .. gmtplot::
