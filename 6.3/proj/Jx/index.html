@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-JX: Linear, logarithmic, power, and time &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-JP: Polar/Cylindrical" href="../Jp/" />
+    <link rel="prev" title="地图投影" href="../" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地图投影</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-JX: Linear, logarithmic, power, and time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jx-linear">笛卡尔线性坐标</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">常规浮点数坐标</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">地理坐标</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jx-time">日期时间坐标</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#jx-log">笛卡尔对数投影</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jx-power">笛卡尔指数投影</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Jp/">-JP: Polar/Cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ja/">-JA: Lambert azimuthal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">-JB: Albers conic equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jc/">-JC: Cassini cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">-JCyl_stere: Cylindrical stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">-JD: Equidistant conic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">-JE: Azimuthal equidistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">-JF: Azimuthal gnomonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">-JG: Azimuthal orthographic/General perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">-JH: Hammer equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">-JI: Sinusoidal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">-JJ: Miller cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jk/">-JK: Eckert equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jl/">-JL: Lambert conic conformal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">-JM: Mercator cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">-JN: Robinson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">-JO: Oblique Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">-JPoly: (American) polyconic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">-JQ: Equidistant cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">-JR: Winkel Tripel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">-JS: General stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">-JT: Transverse Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">-JU: Universal Transverse Mercator (UTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">-JV: Van der Grinten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">-JW: Mollweide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">-JY: Cylindrical equal area</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">地图投影</a> &raquo;</li>
+      <li>-JX: Linear, logarithmic, power, and time</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/proj/Jx.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jx-linear-logarithmic-power-and-time">
+<h1>-JX: Linear, logarithmic, power, and time<a class="headerlink" href="#jx-linear-logarithmic-power-and-time" title="Permalink to this heading"></a></h1>
+<p>GMT 中笛卡尔坐标变换分为三类：</p>
+<ul class="simple">
+<li><p>Linear（线性坐标）</p></li>
+<li><p>Logarithmic（log <span class="math notranslate nohighlight">\(_{10}\)</span> 坐标）</p></li>
+<li><p>Power（指数坐标）</p></li>
+</ul>
+<p>在开始之前，先用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmtmath.html" title="(在 GMT v6.3)"><span>gmtmath</span></a> 生成两个数据以供接下来示例使用:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/100/1  T <span class="nv">SQRT</span> <span class="o">=</span> sqrt.txt
+gmt math -T0/100/10 T <span class="nv">SQRT</span> <span class="o">=</span> sqrt10.txt
+</pre></div>
+</div>
+<section id="jx-linear">
+<span id="id1"></span><h2>笛卡尔线性坐标<a class="headerlink" href="#jx-linear" title="Permalink to this heading"></a></h2>
+<p>笛卡尔线性坐标可以通过四种方式指定：</p>
+<ul class="simple">
+<li><p><strong>-Jx</strong><em>scale</em> X轴和Y轴拥有相同的比例尺 <em>scale</em></p></li>
+<li><p><strong>-JX</strong><em>width</em> X轴和Y轴拥有相同的长度 <em>width</em></p></li>
+<li><p><strong>-Jx</strong><em>xscale</em>/<em>yscale</em> 分别为X轴和Y轴指定不同的比例尺</p></li>
+<li><p><strong>-JX</strong><em>width</em>/<em>height</em> 分别为X轴和Y轴指定不同的长度</p></li>
+</ul>
+<p>笛卡尔线性坐标的使用场景可以分为三类：</p>
+<ol class="arabic simple">
+<li><p>常规的浮点数坐标</p></li>
+<li><p>地理坐标</p></li>
+<li><p>日期时间坐标</p></li>
+</ol>
+<section id="id2">
+<h3>常规浮点数坐标<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>对于常规的浮点型数据而言，选择笛卡尔线性坐标意味着对输入坐标做简单的线性变换
+<span class="math notranslate nohighlight">\(u' = a u + b\)</span>，即将输入坐标 <span class="math notranslate nohighlight">\(u\)</span> 投影到纸张坐标 <span class="math notranslate nohighlight">\(u'\)</span>。</p>
+<p>下面的命令将函数 <span class="math notranslate nohighlight">\(y=\sqrt{x}\)</span> 用笛卡尔线性变换画在图上。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear
+gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
+gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-1520a8587964ef425cbfdb6dc08c5925">
+<a class="reference internal image-reference" href="../../_images/1520a8587964ef425cbfdb6dc08c5925.png"><img alt="../../_images/1520a8587964ef425cbfdb6dc08c5925.png" src="../../_images/1520a8587964ef425cbfdb6dc08c5925.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">笛卡尔坐标的线性变换</span><a class="headerlink" href="#gmtplot-1520a8587964ef425cbfdb6dc08c5925" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>说明：</p>
+<ul class="simple">
+<li><p>正常情况下，X轴向右递增，Y轴向上递增。有些时候可能需要X轴向左递增或者Y轴向下递增（比如Y轴是深度时），只要将轴的比例尺或者轴长度设置为负值即可。</p></li>
+<li><p>若指定X轴的长度，并设置Y轴的长度为0，则会根据X轴的长度和范围计算出X轴的比例尺，并对Y轴使用相同的比例尺，进而计算出Y轴的长度，即 <strong>-JX10c/0c</strong>，<strong>-JX0c/10c</strong> 同理。</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>地理坐标<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>理论上地理坐标应该用地理投影画，而不应该用线性投影，但是有时候可能的确需要使用线性投影。用线性投影绘制地理坐标时会碰到一个问题，即经度有一个360度的周期性。因而在使用线性投影时需要通知GMT数据实际上是地理坐标。有三种办法：</p>
+<ol class="arabic simple">
+<li><p>在 <strong>-R</strong> 后、数据范围前加上 <strong>g</strong> 或 <strong>d</strong>，比如 <strong>-Rg-55/305/-90/90</strong></p></li>
+<li><p>在 <strong>-Jx</strong> 或 <strong>-JX</strong> 选项的最后加上 <strong>g</strong> 或 <strong>d</strong>，比如 <strong>-JX10c/6cd</strong></p></li>
+<li><p>使用 <strong>-fg</strong> 选项</p></li>
+</ol>
+<p>下面的例子用线性投影绘制了一个中心位于125°E的世界地图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_d
+gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
+gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-f446106f8930e87a18fcda6cbf52cde5">
+<a class="reference internal image-reference" href="../../_images/f446106f8930e87a18fcda6cbf52cde5.png"><img alt="../../_images/f446106f8930e87a18fcda6cbf52cde5.png" src="../../_images/f446106f8930e87a18fcda6cbf52cde5.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">地理坐标的线性变换</span><a class="headerlink" href="#gmtplot-f446106f8930e87a18fcda6cbf52cde5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="jx-time">
+<span id="id4"></span><h3>日期时间坐标<a class="headerlink" href="#jx-time" title="Permalink to this heading"></a></h3>
+<p>Time（时间日期坐标）也可以用线性投影绘制，此时需要告诉GMT输入坐标是绝对时间还是相对时间。</p>
+<p>可以通过在 <strong>-Jx</strong> 或 <strong>-JX</strong> 的最后加上 <strong>T</strong> 或 <strong>t</strong>，不过实际上 <strong>-R</strong>
+选项中已经指定了时间范围，所以没有必要在 <strong>-J</strong> 和 <strong>-R</strong> 选项中都指定。当 <strong>-R</strong> 和 <strong>-J</strong> 选项给出的坐标类型相冲突时，GMT会给出警告，并以 <strong>-JX</strong> 选项为准。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_cal
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FORMAT_TIME_PRIMARY_MAP full
+gmt basemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d -Bya1Hg1h -BWsNe+glightyellow
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-d6a56a56fddb4bb54d57466b9d1e45c3">
+<a class="reference internal image-reference" href="../../_images/d6a56a56fddb4bb54d57466b9d1e45c3.png"><img alt="../../_images/d6a56a56fddb4bb54d57466b9d1e45c3.png" src="../../_images/d6a56a56fddb4bb54d57466b9d1e45c3.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">日期时间坐标的线性变换</span><a class="headerlink" href="#gmtplot-d6a56a56fddb4bb54d57466b9d1e45c3" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="jx-log">
+<span id="id5"></span><h2>笛卡尔对数投影<a class="headerlink" href="#jx-log" title="Permalink to this heading"></a></h2>
+<p>对数变换 <span class="math notranslate nohighlight">\(\log_{10}\)</span> 的数学表示是 <span class="math notranslate nohighlight">\(u' = a \log_{10}(u) + b\)</span> ，可以通过在比例尺或轴长度后加上 <strong>l</strong> 指定。</p>
+<p>下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_log
+gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque -Wthick,blue,- -h sqrt.txt
+gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-c6f711ebc6964450aab4149339e65adf">
+<a class="reference internal image-reference" href="../../_images/c6f711ebc6964450aab4149339e65adf.png"><img alt="../../_images/c6f711ebc6964450aab4149339e65adf.png" src="../../_images/c6f711ebc6964450aab4149339e65adf.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">对数投影</span><a class="headerlink" href="#gmtplot-c6f711ebc6964450aab4149339e65adf" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>注意：若想要X轴和Y轴都使用对数投影，且X轴和Y轴比例尺不同，则必须在指定每个轴的比例尺时分别加上 <strong>l</strong>，例如 <strong>-JX10cl/6cl</strong>。</p>
+</section>
+<section id="jx-power">
+<span id="id6"></span><h2>笛卡尔指数投影<a class="headerlink" href="#jx-power" title="Permalink to this heading"></a></h2>
+<p>指数投影的函数表示是 <span class="math notranslate nohighlight">\(u' = a u^b + c\)</span> ，使得用户可以绘制类似
+<span class="math notranslate nohighlight">\(x^p\)</span> - <span class="math notranslate nohighlight">\(y^q\)</span> 这样的函数关系。如果选 p=0.5、q=1
+则相对于绘制 <strong>x</strong> 与 <span class="math notranslate nohighlight">\(\sqrt{x}\)</span> 的函数曲线。</p>
+<p>要使用指数投影，需要在比例尺或轴长度后加上 <strong>p</strong><em>exp</em>，其中 <em>exp</em> 是要使用的指数。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_pow
+gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory -Wthick sqrt.txt
+gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-e3b3e32c76dff95be0a82940f798ffcd">
+<a class="reference internal image-reference" href="../../_images/e3b3e32c76dff95be0a82940f798ffcd.png"><img alt="../../_images/e3b3e32c76dff95be0a82940f798ffcd.png" src="../../_images/e3b3e32c76dff95be0a82940f798ffcd.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">指数变换</span><a class="headerlink" href="#gmtplot-e3b3e32c76dff95be0a82940f798ffcd" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../" class="btn btn-neutral float-left" title="地图投影" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Jp/" class="btn btn-neutral float-right" title="-JP: Polar/Cylindrical" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
