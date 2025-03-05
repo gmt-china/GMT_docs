@@ -57,6 +57,12 @@ clip
     若在开启裁剪后有使用 |-X| 或 |-Y| 移动过坐标原点，则在关闭裁剪路径时也需要
     使用 |-X| 或 |-Y| 选项。
 
+.. include:: explain_-J.rst_
+
+.. include:: explain_-R.rst_
+
+.. include:: explain_-Rz.rst_
+
 可选选项
 --------
 
