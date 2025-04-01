@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mgd77list &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="mgd77magref" href="../mgd77magref/" />
+    <link rel="prev" title="mgd77info" href="../mgd77info/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangiulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mgd77list</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">重新计算的异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#igrf-international-geomagnetic-reference-field">IGRF (International Geomagnetic Reference Field)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#igf-international-gravity-reference-field">IGF (International Gravity reference Field)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">改正表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>mgd77list</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/mgd77list.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="mgd77list">
+<h1>mgd77list<a class="headerlink" href="#mgd77list" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/supplements/mgd77/mgd77list.html" title="(在 GMT v6.3)"><span>mgd77list</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>从 MGD77 文件中提取数据</p>
+</dd>
+</dl>
+<p><strong>mgd77list</strong> 读取 MGD77 文件并生成 ASCII 或二进制表数据。MGD77 文件包括测线信息，比如
+ID，时间，位置，控制代码和地球物理观测，其中地球物理观测数据可能包括：重力，磁，水深等，因此还可能包括对这些观测数据的改正，例如：Eotvos 改正和 diurnal 改正。MGD77+ NetCDF 文件还可能包含其他用户自定义信息，见 <a class="reference internal" href="../mgd77info/"><span class="doc">mgd77info</span></a> 的 <strong>-C</strong> 选项；若想添加自定义列，参考
+<a class="reference internal" href="../mgd77manage/"><span class="doc">mgd77manage</span></a> 。用户可以提取包括上面信息以及下面信息的任意组合，其中包括 8 个计算量（距离、航向、航向变化、速度、Carter 改正、Eotvos 改正以及重力和磁的全球参考场）和时间的子部分（年、月、日、时、分、秒）以及 GEODAS id 以及权重（见 <strong>-W</strong> ）等。通过指定沿轨的累积时间或距离或者指定地理区域，可以选定特定的数据。提取出来的数据可以使用一定的逻辑判断来进一步筛选。如果需要提取多个测线的信息，则多个测线之间由段信息分隔。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p><strong>gmt mgd77list</strong> <em>GEODAS-ids</em> <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong><em>columns</em>[,<em>logic</em>][:<em>bittests</em>]
+[ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><strong>c</strong>|<strong>d</strong>|<strong>f</strong>|<strong>m</strong>|<strong>t</strong><em>code</em>[<strong>+f</strong>] ]
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><strong>A</strong>|<strong>a</strong><em>startdate</em> ]
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><strong>B</strong>|<strong>b</strong><em>stopdate</em> ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> ]
+[ <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><strong>a</strong><em>startrec</em> ]
+[ <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><strong>b</strong><em>stoprec</em> ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong><strong>a|c|m|t</strong> ]
+[ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong>[<em>corrtable</em>] ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><strong>d</strong>|<strong>s</strong><em>unit</em> ]
+[ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong><strong>a</strong>|<strong>c</strong>|<strong>v</strong><em>min</em>/<em>max</em> ]
+[ <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong><strong>a</strong><em>startdist</em> ]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong><strong>b</strong><em>stopdist</em> ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>[<strong>m</strong>|<strong>e</strong>] ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong><em>weight</em> ]
+[ <a class="reference internal" href="#z"><span><strong>-Z</strong></span></a></strong><strong>n</strong>|<strong>p</strong> ]
+[ <strong>-bo</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#bo-full" title="(在 GMT v6.3)"><span class="xref std std-ref">binary</span></a> ]
+[ <strong>-h</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#h-full" title="(在 GMT v6.3)"><span class="xref std std-ref">headers</span></a> ]
+[ <strong>-j</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#distcalc-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl>
+<dt><em>NGDC-ids</em></dt><dd><p>可以是 5 种说明符种的一种或者几种:</p>
+<ol class="arabic simple">
+<li><p>8 个字符的 GEODAS ID，例如：01010083，JA010010</p></li>
+<li><p>2 个字符的机构 ID，将会返回所有该机构的测线</p></li>
+<li><p>4 个字符代码，返回对应机构和测量船的测线，机构和测量船的代码见 <a class="reference internal" href="../mgd77info/"><span class="doc">mgd77info</span></a> <strong>-L</strong></p></li>
+<li><p>=<em>list</em> ，<em>list</em> 文件中包含 GEODAS ID 列表，每行一个记录</p></li>
+<li><p>什么都不指定，返回所有的测线</p></li>
+</ol>
+<p>如果不指定文件扩展名，则搜索下面 4 个扩展名。搜素顺序为：</p>
+<ul class="simple">
+<li><p>MGD77+ (“.nc”)</p></li>
+<li><p>MGD77T (“.m77t”)</p></li>
+<li><p>MGD77 (“.mgd77”)</p></li>
+<li><p>普通文本文件 (“.dat”)</p></li>
+</ul>
+<p>使用 <strong>-I</strong> 选项可以略过其中的某种或几种格式。</p>
+<p>搜索文件时首先在当前目录查找，如果未设置 <strong>$MGD77_HOME</strong>, 则在默认的
+<strong>$GMT_SHAREDIR</strong>/mgd77 目录查找，如果设置了 <strong>$MGD77_HOME</strong>，则在其下的 <strong>$MGD77_HOME</strong>/mgd77_paths.txt 文件中保存的路径中查找。</p>
+</dd>
+</dl>
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>columns</em>[,<em>logic</em>][:<em>bittests</em>]</dt><dd><p>指定输出列 <em>columns</em> ，<em>columns</em> 中的多列必须使用逗号分隔，列名为缩写，按给定的顺序输出。如果列名为大写字母，则表示该列输出中不能存在 NaN。除非经过设置，否则，输出的 ASCII 文件将使用 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定的格式。所有的可用的列名的缩写如下表：</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>列名</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>recno</strong></p></td>
+<td><p>计数器</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dst</strong></p></td>
+<td><p>数字记录类型，通常为 3 或者 5 （Y2K-compliant 测量）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>id</strong></p></td>
+<td><p>测量 ID 字符串</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ngdcid</strong></p></td>
+<td><p>8 字符的 NGDC（现在为 NCEI）测线 ID 字符串（通常是文件前缀）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>time</strong></p></td>
+<td><div class="line-block">
+<div class="line">时间，从绝对时间（默认），相对时间，以及小数年时间中选择，其中三种时间的参</div>
+<div class="line">数设置分别为：</div>
+<div class="line">- 绝对时间：<a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> 和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a></div>
+<div class="line">- 相对时间：<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 和 <a class="reference internal" href="../../conf/time/#term-TIME_SYSTEM"><span class="xref std std-term">TIME_SYSTEM</span></a> 或者（</div>
+<div class="line"><a class="reference internal" href="../../conf/time/#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a> 和 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> ）</div>
+<div class="line">- 小数年时间：<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>lon</strong></p></td>
+<td><p>经度，格式由 <a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> 指定</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>lat</strong></p></td>
+<td><p>纬度，格式由 <a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> 指定</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>twt</strong></p></td>
+<td><p>双程传播时间，单位 s</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>depth</strong></p></td>
+<td><p>改正后的测深，单位为 m，正值，表示海面下深度</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mtf1</strong></p></td>
+<td><p>传感器 1 的总磁场强度，单位 nTesla</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>mtf2</strong></p></td>
+<td><p>传感器 2 的总磁场强度，单位 nTesla</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mag</strong></p></td>
+<td><p>残余磁异常，单位 nTesla</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>gobs</strong></p></td>
+<td><p>重力，单位 mgal</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>faa</strong></p></td>
+<td><p>自由空气重力异常，单位 mgal</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ptc</strong></p></td>
+<td><p>位置类型代码，1 为固定位置，3 为内插位置，9 为未指定</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>bcc</strong></p></td>
+<td><div class="line-block">
+<div class="line">测深改正代码。</div>
+<div class="line">- 01-55 Mattews zone 改正，</div>
+<div class="line">- 59 Mattews 改正，但未指定 zone，</div>
+<div class="line">- 60 S，Kuwahara formula for T-S，</div>
+<div class="line">_ 61 Wilson formula for T-S，</div>
+<div class="line">- 62 Del Grosso formula for T-S，</div>
+<div class="line">- 63 Carter’s tables，88 其他，在头部记录中，</div>
+<div class="line">- 99 未指定</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>btc</strong></p></td>
+<td><p>测深类型代码，1 观测值，3 内插值，9 未指定</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>msens</strong></p></td>
+<td><div class="line-block">
+<div class="line">评估残余磁场的传感器，1 第一个或者 leading 传感器，2 第二个或 trailing</div>
+<div class="line">传感器，9 未指定</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>msd</strong></p></td>
+<td><p>磁传感器深度（或高度），单位 m，向下为正</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>diur</strong></p></td>
+<td><p>磁 diurnal 改正，单位 nTesla</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>eot</strong></p></td>
+<td><p>Eotvos 改正，单位 mgal</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sln</strong></p></td>
+<td><p>Seismic Line Number 字符串</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>sspn</strong></p></td>
+<td><p>Seismic Shot Point Number 字符串</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nqc</strong></p></td>
+<td><p>导航质量代码，5 怀疑（测量机构），6 怀疑（NCEI）, 9 确定没问题</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>year</strong></p></td>
+<td><p>年</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>month</strong></p></td>
+<td><p>月</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>day</strong></p></td>
+<td><p>日</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hour</strong></p></td>
+<td><p>时</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>min</strong></p></td>
+<td><p>分</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sec</strong></p></td>
+<td><p>秒</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>dist</strong></p></td>
+<td><p>沿轨距离，计算方法见 <strong>-j</strong> ，单位见 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> [km]</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>az</strong></p></td>
+<td><p>方位角，从北方向顺时针计算，单位 度</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>cc</strong></p></td>
+<td><p>航向变更，单位 度</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>vel</strong></p></td>
+<td><p>速度，单位见 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> [m/s]</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>weight</strong></p></td>
+<td><p>该数据集权重，见 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>carter</strong></p></td>
+<td><p>Carter 深度改正（必须有 <strong>twt</strong> 的前提下）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>igrf</strong></p></td>
+<td><p>国际地磁参考场（总场），单位 nTesla</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ngrav</strong></p></td>
+<td><div class="line-block">
+<div class="line">国际重力参考场，即正常重力，单位 mgal。</div>
+<div class="line">- 默认使用头部记录中的  Gravity Theoretical Formula Code 参数</div>
+<div class="line">- 如果该参数未设置就使用 IGF80。也可以使用</div>
+<div class="line"><strong>-Af</strong> 指定</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>ceot</strong></p></td>
+<td><div class="line-block">
+<div class="line">从导航信息中计算 Eotvos 改正，</div>
+<div class="line">E = 7.5038 * V * cos(lat) * sin(az) + 0.004154 * V^2</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>处上述列名外，下表中还列出了一些其他可识别的参数：</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>mgd77</strong></p></td>
+<td><p>输出所有的 27 个 MGD77 字段</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>mgd77t</strong></p></td>
+<td><p>输出所有的 26 个 MGD77T 字段</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>geo</strong></p></td>
+<td><p>输出 10 个字段，分别为 <strong>time</strong> ，<strong>lon</strong>，<strong>lat</strong> 和 7 个地球物理观测 <strong>twt</strong>，<strong>depth</strong>，<strong>mtf1</strong>，<strong>mtf2</strong>，<strong>mag</strong>，<strong>gobs</strong>，和 <strong>faa</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dat</strong></p></td>
+<td><p>和 <strong>mgd77t</strong> 相同，但是使用 plain 表文件顺序</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>all</strong></p></td>
+<td><p>返回文件中所有数据列</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>allt</strong></p></td>
+<td><p>与 <strong>mgd77t</strong> 相同，但是时间项输出为 日期-时间 格式</p></td>
+</tr>
+</tbody>
+</table>
+<p>在这些集合后面使用 <strong>+</strong> 追加 <strong>dist</strong>，<strong>azim</strong>，<strong>cc</strong>，<strong>vel</strong>，和 <strong>weight</strong> 将可输出对应信息。对上面提取的结果还可进行逻辑测试，其中 <em>logic</em> 由一个或多个逗号分隔的
+<em>par</em><strong>OP</strong><em>value</em> 指令组成，其中 <em>par</em> 是上面列出的列名中的一个，<strong>OP</strong> 为逻辑运算符（&lt;，&lt;=，=，!=，&gt;=，&gt;，|），<em>value</em> 为常数。符点数进行数值比较，字符参数进行词法比较。位比较（ | ）中 <em>value</em> 中必须至少有一个位的结果是 1；且最少有一个逻辑通过测试测可以输出结果。但如果使用大写列名，则必须所有的逻辑测试通过才可输出。</p>
+<p><strong>注</strong> ：(1) 指定对某列进行逻辑判断并不意味着该列被输出，输出必须经过指定。(2) 某些运算符是特殊的 Unix 字符，建议在 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 整个参数外添加引号。(3) 逻辑测试仅适用于观测数据，派生数据，例如距离和速度等，必须使用 <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong> ，<a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> ，<a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 等选项。</p>
+<p>对于 MGD77+ 文件，可以追加 :<em>bittests</em> ，即一个冒号，后面为一个或多个逗号分隔的 +-<em>col</em>
+项。+ 表示所选位必须是 1（打开），- 表示必须为 0（关闭）。所有的位必须都通过测试。默认情况下，具有特殊的 <strong>MGD77_flags</strong> 列的 MGD77+ 文件将使用这些标志，并且将与打开（ON）位相关的观测设置为 NaN，即表示出现错误。<code class="docutils literal notranslate"><span class="pre">:</span></code> 后面不添加任何信息将关闭此行为。需要注意的是，这些记录标志和用于沿轨的系统改正不同，后者不能使用 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项。</p>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl id="a">
+<dt><strong>-A</strong><strong>c</strong>|<strong>d</strong>|<strong>f</strong>|<strong>m</strong>|<strong>t</strong><em>code</em>[<strong>+f</strong>]</dt><dd><p>默认情况下，改正后的测深（ <strong>depth</strong> ），残余磁异常（ <strong>mag</strong> ），自由空气重力异常（
+<strong>faa</strong> ），以及 Carter 深度改正（ <strong>carter</strong> ）如果被 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项选择的话，都会按原样输出；<strong>-A</strong> 选项可改变该行为。对于上面的每种数据，都有 2-4 种方法来调整数据。通过
+<strong>c</strong>，<strong>d</strong> 和 <strong>f</strong> 或者 <strong>m</strong> 可分别选择上述对应的变量。也可以通过数字代码相加的和表示选择多种处理。例如，<strong>-Ac</strong>3 将首先尝试使用 <strong>-Ac</strong>1 表示的方法来估计 Carter
+改正，但如果深度为 NaN，将使用 <strong>-Ac</strong>2 表示的方法。在所有的情况下，如果计算过程中存在 NaN，则会导致结果为 NaN。使用 <strong>+f</strong> 选项将会重新计算异常，即使文件中异常为 NaN。此外，用户可以使用 <strong>-At</strong> 为没有时间的测线通过距离和持续的时间来创建伪时间。</p>
+</dd>
+<dt><strong>-Ac</strong></dt><dd><p>设置计算 <strong>carter</strong> 改正的方法。C(<strong>twt</strong>) Carter 改正的深度（同时依赖 <strong>lon</strong> 和
+<strong>lat</strong> ）；U(<strong>twt</strong>, <em>v</em>) 是未改正的深度（U = <strong>twt</strong> * <em>v</em> / 2 ），其中的 <em>v</em>
+使用 MGD77 头部信息中的 “Assumed Sound Velocity” 参数，如果该速度为无效值，则假定为
+1500 m/s，也可以自己设定 <em>v</em> 并追加 m/s 作为单位；TU(<strong>depth</strong>, <em>v</em>) 是从未改正的深度计算的双程传播时间；TC(<strong>depth</strong>) 是通过 Carter 改正后得到的深度计算的双程传播时间。下面介绍可选择的选项：</p>
+<p><strong>-Ac1</strong>[,<em>v</em>] 返回 U(<strong>twt</strong>, <em>v</em>) 和 <strong>depth</strong> 的差 [默认]</p>
+<p><strong>-Ac2</strong>[,<em>v</em>] 返回 U(<strong>twt</strong>, <em>v</em>) 和 Carter (<strong>twt</strong>) 的差</p>
+<p><strong>-Ac4</strong>[,<em>v</em>] 返回未改正的 <strong>depth</strong> 和 Carter (TU(<strong>depth</strong>)) 的差</p>
+<p><strong>-Ac8</strong>[,<em>v</em>] 返回 U(TC(<strong>depth</strong>), <em>v</em>) 和 <strong>depth</strong> 的差</p>
+</dd>
+<dt><strong>-Ad</strong></dt><dd><p>确定如何获取 <strong>depth</strong> 输出：</p>
+<p><strong>-Ad1</strong> 返回储存在数据集中的 <strong>depth</strong> [默认]</p>
+<p><strong>-Ad2</strong>[,<em>v</em>] 返回计算的未改正的深度 U(<strong>twt</strong>, <em>v</em>)</p>
+<p><strong>-Ad4</strong> 返回计算的改正后的深度 C(<strong>twt</strong>)</p>
+</dd>
+<dt><strong>-Af</strong></dt><dd><p>确定如何获取 <strong>faa</strong> 输出。如果计算中需要 <strong>ngrav</strong> （即International Gravity reference
+Field, IGF 或正常重力），则根据 MGD77 标题参数中的 “Theoretical Gravity Formula Code”计算重力异常，如果上述代码不存在或无效，默认设置为 4。可以在下面 4 个代码中选择来设置重力参考场：</p>
+<ul class="simple">
+<li><p>1 代表 Heiskanen 1924</p></li>
+<li><p>2 代表 IGF 1930</p></li>
+<li><p>3 代表 IGF 1967</p></li>
+<li><p>4 代表 IGF 1980</p></li>
+</ul>
+<p>可设置的选项如下:</p>
+<p><strong>-Af1</strong>[,<em>field</em>] 返回储存在数据集中的 <strong>faa</strong> [默认]。可使用 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项输出 <strong>ngrav</strong></p>
+<p><strong>-Af2</strong>[,<em>field</em>] 返回 <strong>gobs</strong> 和 <strong>ngrav</strong> 的差</p>
+<p><strong>-Af4</strong>[,<em>field</em>] 返回以下结果 <strong>gobs</strong> + <strong>eot</strong> - <strong>ngrav</strong></p>
+<p><strong>-Af8</strong>[,<em>field</em>] 返回以下结果 <strong>gobs</strong> + <strong>pred_eot</strong> - <strong>ngrav</strong></p>
+</dd>
+<dt><strong>-Am</strong></dt><dd><p>确定如果获取 <strong>mag</strong> 输出。文件中可能存在一个或者两个测量值（<strong>mtf1</strong> 和 <strong>mtf2</strong> ），<strong>msens</strong>
+可表明其中哪个传感器优先。可设置的选项如下：</p>
+<p><strong>-Am1</strong> 返回储存在数据集中的 <strong>mag</strong> [默认]</p>
+<p><strong>-Am2</strong> 返回 <strong>mgfx</strong> 和 <strong>igrf</strong> 的差，其中 <strong>x</strong> 由 <strong>msens</strong> 指定，可以为 1 或者 2，表示优先使用的传感器，如果未指定则默认为 1</p>
+<p><strong>-Am4</strong> 返回 <strong>mgfx</strong> 和 <strong>igrf</strong> 的差，其中 <strong>x</strong> 由 <strong>msens</strong> 指定，可以为 1 或者 2，表示优先使用的传感器，如果未指定则默认为 2</p>
+<p><strong>-Amc</strong><em>offset</em> 使用由于测量位置和船位置不同（导航引起）导致的改正值。通过将总磁场重新差值到船所在的位置得到（可能存在一定的偏移 <em>offset</em> ）。由于插值以及导航质量差可能会导致出现重复点。GMT 已经采取一定措施处理这些情况，但不能保证全部处理干净。内插算法使用
+<a class="reference internal" href="../../conf/misc/#term-GMT_INTERPOLANT"><span class="xref std std-term">GMT_INTERPOLANT</span></a> 设置的算法。<em>offset</em> 的默认单位为 m，可以通过 <strong>f</strong>，<strong>k</strong>，<strong>M</strong>
+或 <strong>u</strong> 设置为英尺，km，英里，海里和 survery 英尺。</p>
+</dd>
+<dt><strong>-At</strong></dt><dd><p>使用已知的测线观测时长来计算测线缺失的时间记录，该计算时间记录为伪时间记录</p>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-Da</strong><em>startdate</em></dt><dd><p>不列出开始日期 <em>startdata</em> 之前收集的数据，<em>startdata</em> 格式为 yyyy-mm-dd<strong>T</strong>[hh:mm:ss]。使用 <strong>-DA</strong> 可排除缺失时间记录的数据。[默认输出所有数据]</p>
+</dd>
+<dt><strong>-Db</strong><em>stopdate</em></dt><dd><p>不列出截止日期 <em>stopdata</em> 之后收集的数据，<em>stopdata</em> 格式为 yyyy-mm-dd<strong>T</strong>[hh:mm:ss]。使用 <strong>-DB</strong> 可排除缺失时间记录的数据。[默认输出所有数据]</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-E</strong></dt><dd><p>精确匹配，仅输出指定的列 [默认输出至少一个匹配的列]</p>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-Ga</strong><em>startrec</em></dt><dd><p>不列出在 <em>startrec</em> 之前的记录 [默认为 0，即第一个记录]</p>
+</dd>
+<dt><strong>-Gb</strong><em>stoprec</em></dt><dd><p>不列出在 <em>stoprec</em> 之后的记录 [默认为最后一个记录]</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong><strong>a|c|m|t</strong></dt><dd><p>忽略某些数据格式的文件。<strong>a|c|m|t</strong> 分别表示忽略 MGD77 ASCII、MGD77+ NetCDF、MGD77T ASCII 、tab 分隔的普通文本文件。该选项可以重复使用以忽略多个格式</p>
+</dd>
+</dl>
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<em>corrtable</em>]</dt><dd><p>使用改正表 <em>corrtable</em> 中的值来做改正[默认使用 <strong>$MGD77_HOME</strong> 文件夹下的
+mgd77_corrections.txt 文件作为改正表]。改正表格式见 <a class="reference internal" href="#id6">改正表</a></p>
+</dd>
+</dl>
+<dl id="n">
+<dt><strong>-Nd</strong>|<strong>s</strong><em>unit</em></dt><dd><p>设置距离和速度的单位。
+<strong>d</strong> 表示距离，<strong>s</strong> 表示速度，然后可以分别指定距离和速度的单位。</p>
+<ul class="simple">
+<li><p><strong>e</strong> m 或 m/s，</p></li>
+<li><p><strong>f</strong> feet 或 feet/s</p></li>
+<li><p><strong>k</strong> km 或 kms/hr</p></li>
+<li><p><strong>m</strong> miles 或 miles/hr</p></li>
+<li><p><strong>n</strong> nautical miles 或 knots</p></li>
+<li><p><strong>u</strong> survey feet 或 survey feet/s).</p></li>
+</ul>
+<p>默认地，设置为 <strong>-Ndk</strong> <strong>-Nse</strong> （km 和 m/s）</p>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Qa</strong><em>min</em>/<em>max</em></dt><dd><p>指定可接受的方位角范围 <em>min</em>/<em>max</em> ，只输出该方位角范围内的记录 [0/360]。</p>
+</dd>
+<dt><strong>-Qc</strong><em>min</em>/<em>max</em></dt><dd><p>指定航向改变的范围 <em>min</em>/<em>max</em> ，只输出该范围内的记录 [-360/+360]。使用 <strong>-QC</strong>
+可在判断前先取绝对值。</p>
+</dd>
+<dt><strong>-Qv</strong><em>min</em>/<em>max</em></dt><dd><p>指定速度范围 <em>min</em>/<em>max</em> ，只输出该范围内的记录 [0/infinity]。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-Sa</strong><em>startdist</em></dt><dd><p>只列出测线累积距离大于 <em>startdist</em> 的数据，可追加单位。</p>
+</dd>
+<dt><strong>-Sb</strong><em>stopdist</em></dt><dd><p>只列出测线累积距离小于 <em>stopdist</em> 的数据，可追加单位。</p>
+</dd>
+</dl>
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<strong>m</strong>|<strong>e</strong>]</dt><dd><p>关闭基于 MGD77+ 文件中的改正项的自动调整，用于抵消源机构使用 MGD77+ 导出数据创建 MGD77
+时使用的错误的单位等问题，普通 MGD77 文件不受该选项影响。<strong>m</strong> 表示只用于 MGD77 文件中存在的变量，<strong>e</strong> 表示只用于扩展的变量，默认两者都包括。<strong>注</strong> ：基于记录的 E77 标志（仅限于 MGD77+ 文件）不被视为系统误差改正。相反，这些位标志可以通过 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项中的冒号来控制。</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>weight</em></dt><dd><p>为数据设置权重。权重的输出必须在 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项中设置。如果使用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/blockmean.html" title="(在 GMT v6.3)"><span>blockmean</span></a> ，
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/blockmedian.html" title="(在 GMT v6.3)"><span>blockmedian</span></a> ，<a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/blockmode.html" title="(在 GMT v6.3)"><span>blockmode</span></a> 模块进行加权平均处理数据，可使用该选项</p>
+</dd>
+</dl>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><strong>n</strong>|<strong>p</strong></dt><dd><p>为低于海平面的 <strong>depth</strong>，<strong>carter</strong> 和 <strong>msd</strong> 指定符号，<strong>-Zn</strong> 指定为负的测深，默认使用 <strong>-Zp</strong> 表示向下为正</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输出的数据格式</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="../../option/distcal/"><span class="doc">(more …)</span></a></dt><dd><p>设置球面距离的计算方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>从 <code class="file docutils literal notranslate"><span class="pre">01010047.mgd77</span></code> 文件中提取 distance，heading，gravity 以及 bathymetry，将数据限定为 June 3 1971 20:45 以后，且累积观测距离小于 5000 km 的范围内</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="m">01010047</span> -Da1971-06-03T20:45 -Sb5000 -Fdist,azim,faa,depth &gt; myfile.txt
+</pre></div>
+</div>
+<p>使用 <code class="file docutils literal notranslate"><span class="pre">Cruises.lis</span></code> 文件中列出的所有测线中的自由空气重力异常以便后续作为 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/blockmean.html" title="(在 GMT v6.3)"><span>blockmean</span></a>
+和 <a class="reference internal" href="../surface/"><span class="doc">surface</span></a> 模块的输入，数据必须在限定的区域内，且输出为二进制</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -Flon,lat,faa -R-40/-30/25/35 -bo &gt; allgrav.b
+</pre></div>
+</div>
+<p>从 <code class="file docutils literal notranslate"><span class="pre">Cruises.lis</span></code> 中列出的测线数据中提取深度超过 9000 m 且未插值（ <strong>btc</strong> != 1 ）的数据的位置</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -F<span class="s2">&quot;depth,DEPTH&gt;9000,BTC!=1&quot;</span> &gt; really_deep.txt
+</pre></div>
+</div>
+<p>从所有的 MGD77+ NetCDF 文件中提取 dist，faa，和 grav12_2 ，要求这些字段的值不能为 NaN，测线文件的 ID 位于 <code class="file docutils literal notranslate"><span class="pre">Cruises.lis</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -E -Ia -F<span class="s2">&quot;dist,faa,grav12_2,depth&lt;3000&quot;</span> &gt; <span class="se">\</span>
+    shallow_grav.txt
+</pre></div>
+</div>
+<p>与上例使用相同的数据，但只提取 faa 的位标志为 BAD 的数据</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -E -Ia -F<span class="s2">&quot;dist,faa,grav12_2:+faa&quot;</span> &gt; bad_grav.txt
+</pre></div>
+</div>
+<p>输出所有测线中的 lon，lat，mag 和 faa，根据最新的参考字段计算 mag 和 faa 的残余量</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -Flon,lat,mag,faa -Af2,4 -Am2 &gt; data.txt
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>重新计算的异常<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p>当通过 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> 选项显式地或通过 MGD77+ 文件中 E77 元数据隐式地指定重新计算异常时，GMT 只计算原始异常中不为 NaN 的异常。这样的做的原因是，许多异常列包括手动编辑的修改，这些结果不能被重新计算。</p>
+</section>
+<section id="igrf-international-geomagnetic-reference-field">
+<h2>IGRF (International Geomagnetic Reference Field)<a class="headerlink" href="#igrf-international-geomagnetic-reference-field" title="Permalink to this heading"></a></h2>
+<p>IGRF 基于英国地质调查局的 Susan Macmilan 编写的 Fortran 程序，由 Algrave 大学的 Joaquim 通过
+f2c 转换到 C 语言，最终 Paul Wessel 改成 GMT 风格。</p>
+</section>
+<section id="igf-international-gravity-reference-field">
+<h2>IGF (International Gravity reference Field)<a class="headerlink" href="#igf-international-gravity-reference-field" title="Permalink to this heading"></a></h2>
+<p>这里给出代码中使用的公式</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="nv">g</span> <span class="o">=</span> <span class="m">978052</span>.0 * <span class="o">[</span><span class="m">1</span> + <span class="m">0</span>.005285 * sin^2<span class="o">(</span>lat<span class="o">)</span> - 7e-6 * sin^2<span class="o">(</span><span class="m">2</span>*lat<span class="o">)</span> + 27e-6 * cos^2<span class="o">(</span>lat<span class="o">)</span> * cos^2<span class="o">(</span>lon-18<span class="o">)]</span>
+
+<span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="nv">g</span> <span class="o">=</span> <span class="m">978049</span>.0 * <span class="o">[</span><span class="m">1</span> + <span class="m">0</span>.0052884 * sin^2<span class="o">(</span>lat<span class="o">)</span> - <span class="m">0</span>.0000059 * sin^2<span class="o">(</span><span class="m">2</span>*lat<span class="o">)]</span>
+
+<span class="o">(</span><span class="m">3</span><span class="o">)</span> <span class="nv">g</span> <span class="o">=</span> <span class="m">978031</span>.846 * <span class="o">[</span><span class="m">1</span> + <span class="m">0</span>.0053024 * sin^2<span class="o">(</span>lat<span class="o">)</span> - <span class="m">0</span>.0000058 * sin^2<span class="o">(</span><span class="m">2</span>*lat<span class="o">)]</span>
+
+<span class="o">(</span><span class="m">4</span><span class="o">)</span> <span class="nv">g</span> <span class="o">=</span> <span class="m">978032</span>.67714 * <span class="o">[(</span><span class="m">1</span> + <span class="m">0</span>.00193185138639 * sin^2<span class="o">(</span>lat<span class="o">))</span> / sqrt <span class="o">(</span><span class="m">1</span> - <span class="m">0</span>.00669437999013 * sin^2<span class="o">(</span>lat<span class="o">))]</span>
+</pre></div>
+</div>
+<p>如果您发现上述公式存在问题，请向
+<a class="reference external" href="https://github.com/GenericMappingTools/gmt">GMT 官方</a> 报告。</p>
+</section>
+<section id="id6">
+<h2>改正表<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>改正表是一个 ASCII 文件，其中包含实施改正所需的系数和参数。文件头部可以存在以 <code class="docutils literal notranslate"><span class="pre">#</span></code> 为开头的注释，改正记录的格式如下</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cruiseID observation correction
+</pre></div>
+</div>
+<p>其中 <em>cruiseID</em> 为测线 ID，NCEI 定义的前缀，<em>observation</em> 为 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项里列名表中的某个列名，
+<em>correction</em> 由一项或者多项组成，所有的项在输出观测值前都被扣除，每项的格式为</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>factor<span class="o">[</span>*<span class="o">[</span><span class="k">function</span><span class="o">]([</span>scale<span class="o">](</span>abbrev<span class="o">[</span>-origin<span class="o">]))[</span>^power<span class="o">]]</span>
+</pre></div>
+</div>
+<p>其中方括号中的值是可选的，除不同项之间，其他地方不允许有空格。<em>factor</em> 是基函数的幅值，可选的
+<em>function</em> 可以是 sin，cos，或者 exp。可选的 <em>scale</em> 和 <em>origin</em> 用于对参数进行一定的转换。
+<em>abbrev</em> 参数是上面列出的列名之一。如果 <em>origin</em> 为 <strong>T</strong> ，则将其替换为文件中第一个 <em>abbrev</em>
+值（通常同于时间）。如果第一条记录为 NaN，则将 <em>origin</em> 设置为 0。在乘以幅度前，可也对整个表达式设置一定的幂指数 <em>power</em> 。</p>
+<p>下面是对测线 99999999 的虚构数据的改正示例，三行分别表示：对深度 <strong>depth</strong> 进行 Carter 改正，对自由空气重力异常 <strong>faa</strong> 移除线性趋势，对磁异常 <strong>mag</strong> 进行依赖航向和纬度的改正，对重力
+<strong>gobs</strong> 需要添加 10 mGal 的增量</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">99999999</span> depth <span class="m">1</span>.0*<span class="o">((</span>carter<span class="o">))</span>
+
+<span class="m">99999999</span> faa <span class="m">14</span>.1 1e-5*<span class="o">((</span>time-T<span class="o">))</span>
+
+<span class="m">99999999</span> mag <span class="m">0</span>.5*cos<span class="o">(</span><span class="m">0</span>.5*<span class="o">(</span>azim-19<span class="o">))</span>^2 <span class="m">1</span>.0*exp<span class="o">(</span>-1e-3<span class="o">(</span>lat<span class="o">))</span>^1.5
+
+<span class="m">99999999</span> gobs -10
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>参考<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<p>MGD77 (Marine Geophysical Data Exchange Format) 格式见
+<a class="reference external" href="http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt">http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.</a></p>
+<p>IGRF 见 <a class="reference external" href="https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html">https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html</a></p>
+</section>
+<section id="id8">
+<h2>相关模块<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../mgd77convert/"><span class="doc">mgd77convert</span></a>,
+<a class="reference internal" href="../mgd77header/"><span class="doc">mgd77header</span></a>,
+<a class="reference internal" href="../mgd77magref/"><span class="doc">mgd77magref</span></a>
+<a class="reference internal" href="../mgd77manage/"><span class="doc">mgd77manage</span></a>,
+<a class="reference internal" href="../mgd77path/"><span class="doc">mgd77path</span></a>,
+<a class="reference internal" href="../mgd77track/"><span class="doc">mgd77track</span></a>,
+<a class="reference internal" href="../mgd77sniffer/"><span class="doc">mgd77sniffer</span></a>,
+<a class="reference internal" href="../mgd77track/"><span class="doc">mgd77track</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mgd77info/" class="btn btn-neutral float-left" title="mgd77info" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../mgd77magref/" class="btn btn-neutral float-right" title="mgd77magref" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
