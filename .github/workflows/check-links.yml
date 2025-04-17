@@ -46,10 +46,14 @@ jobs:
 
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
     - name: Create Issue From File
-      uses: peter-evans/create-issue-from-file@v5
-      with:
-        title: Link Checker Report on ${{ steps.date.outputs.date }}
-        content-filepath: ./lychee/out.md
+      if: steps.lychee.outputs.exit_code != 0
+      run: |
+        cd repository/
+        title="Link Checker Report on ${CURRENT_DATE}"
+        gh issue create --title "$title" --body-file /tmp/lychee-out.md
+      env:
+        GH_TOKEN: ${{ github.token }}
+        CURRENT_DATE: ${{ steps.date.outputs.date }}
