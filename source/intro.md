@@ -34,6 +34,7 @@ GMT 是地球科学领域使用最广泛的制图软件之一，具有强大的�
 - Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访：<https://www.dontpanicgeocast.com/166>
 - Don't Panic Geocast 对 Walter Smith 的采访：<https://www.dontpanicgeocast.com/195>
 - Paul Wessel 在 GMT 20 周年的演讲：<https://av.tib.eu/media/19869> 或 <https://youtu.be/2D_UlEZpxbU>
+- Paul Wessel 关于 GMT 发展史的文章: [The origins of the generic mapping tools: From table tennis to geoscience](https://doi.org/10.1029/2023CN000231)
 
 ## GMT 开发者
 
@@ -128,6 +129,13 @@ hash 值为 267ce55 的 6.1.0 开发版。
 若你发表的文章中包含了利用 GMT 制作的图件或利用 GMT 数据处理功能得到的结果，
 可以考虑在文中引用 GMT 的如下文章来回报 GMT 开发者。
 
+**GMT 发展史**:
+
+: Wessel, P. (2024).
+  The origins of the generic mapping tools: From table tennis to geoscience.
+  *Perspectives of Earth and Space Scientists*, 5, e2023CN000231.
+  <https://doi.org/10.1029/2023CN000231>
+
 **GMT6 用户**:
 
 : Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019).
@@ -157,6 +165,13 @@ hash 值为 267ce55 的 6.1.0 开发版。
   <https://doi.org/10.1002/2016GC006723>
 
 GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相关文章包括：
+
+动画模块 **movie**
+
+: Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024).
+  The Generic Mapping Tools and Animations for the Masses.
+  *Geochemistry, Geophysics, Geosystems*, 25(6).
+  <https://doi.org/10.1029/2024GC011545>
 
 {doc}`/module/dimfilter` **模块**
 
