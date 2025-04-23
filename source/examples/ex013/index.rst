@@ -9,6 +9,6 @@
 
 使用 GMT 内置的行政区划边界裁剪出区域并绘制地形图。
 
-.. gmtplot:: ex013
+.. gmtplot:: ex013.sh
     :width: 80%
     :show-code: true
