@@ -129,19 +129,19 @@ hash 值为 267ce55 的 6.1.0 开发版。
 若你发表的文章中包含了利用 GMT 制作的图件或利用 GMT 数据处理功能得到的结果，
 可以考虑在文中引用 GMT 的如下文章来回报 GMT 开发者。
 
-**GMT 发展史**:
-
-: Wessel, P. (2024).
-  The origins of the generic mapping tools: From table tennis to geoscience.
-  *Perspectives of Earth and Space Scientists*, 5, e2023CN000231.
-  <https://doi.org/10.1029/2023CN000231>
-
 **GMT6 用户**:
 
 : Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019).
   The Generic Mapping Tools version 6.
   *Geochemistry, Geophysics, Geosystems*, 20, 5556–5564.
   <https://doi.org/10.1029/2019GC008515>
+
+**GMT 发展史**:
+
+: Wessel, P. (2024).
+  The origins of the generic mapping tools: From table tennis to geoscience.
+  *Perspectives of Earth and Space Scientists*, 5, e2023CN000231.
+  <https://doi.org/10.1029/2023CN000231>
 
 **GMT5 用户**:
 
@@ -166,7 +166,7 @@ hash 值为 267ce55 的 6.1.0 开发版。
 
 GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相关文章包括：
 
-动画模块 **movie**
+**movie** 模块
 
 : Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024).
   The Generic Mapping Tools and Animations for the Masses.
