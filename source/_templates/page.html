@@ -1,0 +1,19 @@
+{% extends "!page.html" %}
+
+{% block content %}
+  {% if meta.author or meta.reviewer or last_updated %}
+  <div style="padding: 0.75em 1em; background: #f8f9fa; border-left: 4px solid #d0d0d0; margin-bottom: 1.5em; border-radius: 4px; font-size: 0.9em; color: #333;">
+    {% if meta.author %}
+      <div>✍️ <strong>Author:</strong> {{ meta.author }}</div>
+    {% endif %}
+    {% if meta.reviewer %}
+      <div>👀 <strong>Reviewer:</strong> {{ meta.reviewer }}</div>
+    {% endif %}
+    {% if last_updated %}
+      <div>🕒 <strong>Last updated:</strong> {{ last_updated }}</div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {{ super() }}
+{% endblock %}
