@@ -6,7 +6,7 @@
 ```
 
 欢迎来到 [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org) 的世界。
-GMT 是地球科学使用最广泛的制图软件之一。
+GMT 是地球科学里使用最广泛的制图软件之一。
 
 本文档是由 [GMT中文社区](https://gmt-china.org/) 维护整理的 GMT 中文手册。
 手册详尽地介绍了 GMT 的用法并提供了大量的实用示例。
@@ -17,7 +17,7 @@ GMT 是地球科学使用最广泛的制图软件之一。
 
 本手册主要包含如下三个部分：
 
-1. **GMT 入门**：介绍 GMT 的历史、版本以及安装方法等，并为初学者提供了 GMT 入门和进阶教程。
+1. **GMT 入门**：介绍 GMT 的历史、版本以及安装方法等，并为初学者提供了入门和进阶教程。
    初学者应完整阅读“GMT 入门”，也可观看配套的
    《[GMT6 初学者视频教程](https://www.bilibili.com/video/BV1C64y1m7qP)》，
    并通过练习掌握 GMT 的基本用法。
