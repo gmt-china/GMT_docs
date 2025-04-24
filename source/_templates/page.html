@@ -10,11 +10,8 @@
       {% if meta.reviewer %}
         {% set _ = parts.append("🧐 " ~ (meta.reviewer if meta.reviewer is string else meta.reviewer | join(", "))) %}
       {% endif %}
-      {% if meta.created_date %}
-        {% set _ = parts.append("📅 " ~ meta.created_date) %}
-      {% endif %}
-      {% if meta.updated_date %}
-        {% set _ = parts.append("⚡ " ~ meta.updated_date) %}
+      {% if meta.date %}
+        {% set _ = parts.append("📅 " ~ meta.date) %}
       {% endif %}
       {{ parts | join(" &nbsp;•&nbsp; ") }}
     </div>

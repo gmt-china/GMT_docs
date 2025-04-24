@@ -1,7 +1,7 @@
 ---
-author: Alice Example, Charlie Writer
-reviewer: Bob Reviewer, Dana Proof
-updated_date: Apr 24, 2025
+author: 田冬冬
+reviewer: 姚家园, 周茂
+date: 2025-04-24
 ---
 
 # 简介
