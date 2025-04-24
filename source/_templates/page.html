@@ -4,19 +4,19 @@
   {% if meta.author or meta.reviewer or meta.created_date or meta.updated_date %}
     <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 0.5em;">
       {% set parts = [] %}
-      {% if meta.created_date %}
-        {% set _ = parts.append("📝 " ~ meta.created_date) %}
-      {% endif %}
-      {% if meta.updated_date %}
-        {% set _ = parts.append("🔄 " ~ meta.updated_date) %}
-      {% endif %}
       {% if meta.author %}
-        {% set _ = parts.append("👤 " ~ (meta.author if meta.author is string else meta.author | join(", "))) %}
+        {% set _ = parts.append("✍️ " ~ (meta.author if meta.author is string else meta.author | join(", "))) %}
       {% endif %}
       {% if meta.reviewer %}
-        {% set _ = parts.append("👀 " ~ (meta.reviewer if meta.reviewer is string else meta.reviewer | join(", "))) %}
+        {% set _ = parts.append("🧐 " ~ (meta.reviewer if meta.reviewer is string else meta.reviewer | join(", "))) %}
       {% endif %}
-      {{ parts | join(" | ") }}
+      {% if meta.created_date %}
+        {% set _ = parts.append("📅 " ~ meta.created_date) %}
+      {% endif %}
+      {% if meta.updated_date %}
+        {% set _ = parts.append("⚡ " ~ meta.updated_date) %}
+      {% endif %}
+      {{ parts | join(" &nbsp;•&nbsp; ") }}
     </div>
   {% endif %}
   {{ super() }}
