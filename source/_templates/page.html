@@ -1,8 +1,11 @@
 {% extends "!page.html" %}
 
 {% block content %}
+  {% set body_parts = body.split('</h1>', 1) %}
+  {{ body_parts[0] }}</h1>
+
   {% if meta.author or meta.reviewer or last_updated %}
-  <div style="padding: 0.75em 1em; background: #f8f9fa; border-left: 4px solid #d0d0d0; margin-bottom: 1.5em; border-radius: 4px; font-size: 0.9em; color: #333;">
+  <div style="padding: 0.75em 1em; background: #f8f9fa; border-left: 4px solid #d0d0d0; margin-top: 0.5em; margin-bottom: 1.5em; border-radius: 4px; font-size: 0.9em; color: #333;">
     {% if meta.author %}
       <div>✍️ <strong>Author:</strong> {{ meta.author }}</div>
     {% endif %}
@@ -15,5 +18,5 @@
   </div>
   {% endif %}
 
-  {{ super() }}
+  {{ body_parts[1] }}
 {% endblock %}
