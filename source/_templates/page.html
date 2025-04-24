@@ -1,0 +1,20 @@
+{% extends "!page.html" %}
+
+{% block body %}
+  {% if meta.author or meta.reviewer or meta.created_date or meta.updated_date %}
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      {% set parts = [] %}
+      {% if meta.author %}
+        {% set _ = parts.append("✍️ " ~ (meta.author if meta.author is string else meta.author | join(", "))) %}
+      {% endif %}
+      {% if meta.reviewer %}
+        {% set _ = parts.append("🧐 " ~ (meta.reviewer if meta.reviewer is string else meta.reviewer | join(", "))) %}
+      {% endif %}
+      {% if meta.date %}
+        {% set _ = parts.append("📅 " ~ meta.date) %}
+      {% endif %}
+      {{ parts | join(" &nbsp;•&nbsp; ") }}
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
