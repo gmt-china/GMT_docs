@@ -1,8 +1,8 @@
 # 简介
 
-:审核: {{ 姚家园 }}, {{ 周茂 }}
-:撰写: {{ 田冬冬 }}
-:最近更新日期: 2023-09-09
+:author: Alice Example, Charlie Writer
+:reviewer: Bob Reviewer, Dana Proof
+:date: Apr 24, 2025
 
 ---
 
