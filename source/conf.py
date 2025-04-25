@@ -157,6 +157,16 @@ html_context = {
             f"{github_url}/discussions",
         ),
     ],
+    "contributors": {
+        "田冬冬": "https://me.seisman.info/",
+        "姚家园": "https://github.com/core-man",
+        "陈箫翰": "https://github.com/CovMat",
+        "刘珠妹": "https://github.com/liuzhumei",
+        "徐弥坚": "https://xumijian.me/",
+        "邓山泉": "https://github.com/sqdeng/",
+        "周茂": "https://github.com/ZMAlt",
+        "王亮": "https://github.com/wangliang1989",
+    }
 }
 
 # See https://github.com/rtfd/sphinx_rtd_theme/issues/761
