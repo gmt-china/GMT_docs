@@ -3,7 +3,14 @@
 {% macro render_user_list(users, icon) %}
   {{ icon }}
   {%- for user in users if user.strip() %}
-    <a href="{{ contributors.get(user.strip(), '#') }}" target="_blank" rel="noopener">{{ user.strip() }}</a>{{ ", " if not loop.last }}
+    {%- set name = user.strip() %}
+    {%- set url = github_users.get(name) %}
+    {%- if url %}
+      <a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>
+    {%- else %}
+      {{ name }}
+    {%- endif %}
+    {{ ", " if not loop.last }}
   {%- endfor %}
 {% endmacro %}
 
@@ -19,11 +26,11 @@
         {% set reviewers = meta.reviewer if meta.reviewer is sequence else meta.reviewer.split(",") %}
         {% set _ = parts.append(render_user_list(reviewers, "🧐")) %}
       {% endif %}
-      {% if meta.created_date %}
-        {% set _ = parts.append("📅 " ~ meta.created_date) %}
+      {% if meta.date %}
+        {% set _ = parts.append("📅 " ~ meta.date) %}
       {% endif %}
       {% if meta.updated_date %}
-        {% set _ = parts.append("⚡ " ~ meta.updated_date) %}
+        {% set _ = parts.append("⚡ " ~ meta.date) %}
       {% endif %}
       {{ parts | join(" &nbsp;•&nbsp; ") }}
     </div>
