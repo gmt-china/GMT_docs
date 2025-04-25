@@ -19,11 +19,11 @@
     <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
       {% set parts = [] %}
       {% if meta.author %}
-        {% set authors = meta.author if meta.author is sequence else meta.author.split(",") %}
+        {% set authors = meta.author if meta.author is sequence else meta.author.split(",") | map('trim') | reject('equalto', '') | list %}
         {% set _ = parts.append(render_user_list(authors, "✍️")) %}
       {% endif %}
       {% if meta.reviewer %}
-        {% set reviewers = meta.reviewer if meta.reviewer is sequence else meta.reviewer.split(",") %}
+        {% set reviewers = meta.reviewer if meta.reviewer is sequence else meta.reviewer.split(",") | map('trim') | reject('equalto', '') | list %}
         {% set _ = parts.append(render_user_list(reviewers, "🧐")) %}
       {% endif %}
       {% if meta.date %}
