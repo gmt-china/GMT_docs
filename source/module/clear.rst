@@ -17,6 +17,12 @@ clear
 可选选项
 --------
 
+    .. note::
+
+       注意除了 ``gmt clear settings`` 以外，本页面其他命令都不应该在画图脚本里使用。
+       否则有相当大的可能性会出现 ``gmt [ERROR]: Shared GMT module not found:`` 等等ERROR报错。
+       应当单独打开一个终端窗口执行这些命令。
+
 **all**
     删除所有项目，包括缓存目录（**~/.gmt/cache**）、数据目录（**~/.gmt/server**）、会话目录（**~/.gmt/sessions**）以及当前配置文件
 
@@ -38,10 +44,6 @@ clear
        会导致残留会话目录。
 
        因而可以不定期地执行 **gmt clear sessions** 删除残留的会话目录。
-
-       注意永远不应该在画图脚本中执行 **gmt clear sessions** ，
-       否则有相当大的可能性会出现 ``gmt [ERROR]: Shared GMT module not found:`` 的ERROR报错。
-       应当单独打开一个终端窗口执行这条命令。
 
 **settings**
     现代模式下删除当前会话的GMT配置参数文件（即 gmt.conf），
