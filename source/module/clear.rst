@@ -39,6 +39,9 @@ clear
 
        因而可以不定期地执行 **gmt clear sessions** 删除残留的会话目录。
 
+       实践中如果需要在绘图脚本里使用 **gmt clear sessions** ，应该在 **gmt end** 之后。
+       否则有相当大的可能性会出现 ``gmt [ERROR]: Shared GMT module not found:`` 的ERROR报错。
+
 **settings**
     现代模式下删除当前会话的GMT配置参数文件（即 gmt.conf），
     使得所有参数回到GMT系统默认值。
