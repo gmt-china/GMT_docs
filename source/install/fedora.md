@@ -1,13 +1,12 @@
-# Fedora 下安装 GMT
-
-:撰写: {{ 田冬冬 }}
-:最近更新日期: 2023-09-12
-
+---
+:author: 甜的
+:date: 2023-09-12
 ---
 
-Fedora 官方源提供了 GMT 二进制包，可直接使用 `dnf` 安装，但官方源提供的
-可能不是 GMT 最新版本。为解决此问题，GMT 官方制作了一个 RPM 仓库，可用于安装
-GMT 最新版本。
+# Fedora 下安装 GMT
+
+Fedora 官方源提供了 GMT 二进制包，可直接使用 `dnf` 安装，但官方源提供的可能不是 GMT
+最新版本。为解决此问题，GMT 官方制作了一个 RPM 仓库，可用于安装 GMT 最新版本。
 
 用户可以使用 `dnf info GMT` 命令查看官方源提供的 GMT 的版本。
 
@@ -25,19 +24,19 @@ $ sudo dnf install GMT GMT-common GMT-dev GMT-doc
 $ sudo dnf install dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 ```
 
-生成 PDF、JPG 等图片格式需要 Ghostscript \[**必须**\]:
+生成 PDF、JPG 等图片格式需要 Ghostscript [**必须**]:
 
 ```
 $ sudo dnf install ghostscript
 ```
 
-制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) \[**可选**\]:
+制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) [**可选**]:
 
 ```
 $ sudo dnf install GraphicsMagick
 ```
 
-制作 MP4、WebM 格式的动画需要 FFmpeg \[**可选**\]:
+制作 MP4、WebM 格式的动画需要 FFmpeg [**可选**]:
 
 ```
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
