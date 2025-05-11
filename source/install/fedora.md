@@ -1,6 +1,6 @@
 ---
-:author: 甜的
-:date: 2023-09-12
+author: 田冬冬
+date: 2023-09-12
 ---
 
 # Fedora 下安装 GMT

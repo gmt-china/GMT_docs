@@ -1,9 +1,9 @@
-# Ubuntu/Debian 下安装 GMT
-
-:撰写: {{ 田冬冬 }}
-:最近更新日期: 2023-09-12
-
 ---
+author: 田冬冬
+date: 2023-09-12
+---
+
+# Ubuntu/Debian 下安装 GMT
 
 Ubuntu/Debian 官方源提供了 GMT 二进制包，可直接使用 `apt` 安装，
 但官方源提供的可能不是 GMT 最新版本。针对这种情况，有如下几种选择：
