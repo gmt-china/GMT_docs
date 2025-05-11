@@ -22,7 +22,7 @@ grdcontour
 [ |-G|\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
 [ |-L|\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
 [ |-N|\ [*cpt*] ]
-[ |-Q|\ [*cut*][**+z**] ]
+[ |-Q|\ [*n*\|\ *length*\ [*unit*]][**+z**] ]
 [ |SYN_OPT-Rz| ]
 [ |-S|\ *smoothfactor* ]
 [ |-T|\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
@@ -31,7 +31,7 @@ grdcontour
 [ |-W|\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ [**+s**\ *factor*][**+o**\ *shift*][**+p**] ]
+[ |-Z|\ [**+o**\ *shift*][**+s**\ *factor*][**+p**] ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]
 [ |SYN_OPT-e| ]
@@ -45,7 +45,7 @@ grdcontour
 描述
 -----------
 
-**grdcontour** 读取一个二维grid网格文件，并绘制等值线 
+**grdcontour** 读取一个二维grid网格文件，并绘制等值线。或者将等值线的x、y、z位置保存到一个或多个输出文件（或标准输出），不绘制图像。
 
 必选选项
 ------------------
@@ -92,7 +92,28 @@ grdcontour
     (5) 如果 *contours* 是一个常数，则以这个常数为间隔绘制等值线。
 
     如果 |-C| 和 |-A| 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
+
+.. _-D:
+
+**-D**\ *template* 
+    将等值线转存为线段文件，不绘制图像。后面可以加上C语言的 `printf <https://linux.die.net/man/3/printf>`_ 函数
+    的格式说明符作为输出文件名模板。如果不指定文件名模板则全部打印到标准输出。如果文件名不含格式说明符则全部输出到
+    单个文件。  
+
+    + 如果有浮点数格式(e.g., %6.2f)，其被替换为等值线的z值。
+    + 如果有整数格式(e.g., %06d)，其被替换为等值线的计数索引。
+    + 如果有字符格式(%c)，其被替换为 C 或 O ，分别代表闭合等值线和开放等值线。
     
+    这3个说明符可以任何顺序组合在一起，以定义输出的文件名。
+
+    例如，只给定 %c 则输出两个文件，只给定 %f 则等值线的每一级输出为一个文件，给定 %d 则每条等值线输出到独立文件中。
+
+.. _-F:
+
+**-F**\ [**l**\|\ **r**]
+    使用 |-D| 时，设置按顺序输出等值线的线段。 **-Fl** （默认值）表示沿着高z值在左侧的等值线方向， 
+    **-Fr** 表示沿着高z值在右侧的等值线方向，不使用 **-F** 则为任意方向。
+
 .. _-G:
 
 .. warning::
@@ -117,9 +138,43 @@ grdcontour
 **-N**\ [*cpt*]
     指定 *cpt* 文件，对等值线之间的区域填充颜色。
 
+.. _-Q:
+
+**-Q**\ [*n*\|\ *length*\ [*unit*]][**+z**]
+    不绘制少于 *n* 个点的等值线（默认绘制所有等值线）。或者，以距离 *unit* 为单位给出最小等值线长度 *length* ，
+    其中 *unit* 可使用地理距离单位 **d|m|s|e|f|k|M|n|u** ，
+    也可使用 **c**\ （用户坐标的笛卡尔距离）和 **C**\ （坐标投影后的笛卡尔距离）。可加上 **+z** 以去除零等值线。
+
+
 .. include:: explain_-R.rst_
 
 .. include:: explain_-Rz.rst_
+
+.. _-S:
+    
+**-S**\ *smoothfactor*
+    在 *网格尺寸/smoothfactor* 间隔下重采样等值线。 
+
+.. _-T:
+
+**-T**\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]]
+    在最内层闭合等值线上每隔一段 *gap* 距离向着下降方向的刻度。
+    用户可以加上 **h** 或 **l** 来选择分别只在极大值区域或极小值区域绘制。还支持以下选项：  
+
+    + **+a** - 对所有闭合等值线绘制刻度，而不只是最内层。
+    + **+d** - 后面加上 *gap*\ [/*length*] 来设置刻度间的距离 *gap* 以及刻度线长度 *length*
+      （可加上单位 **c**\ ，\ **i**\ 或\ **p**），默认 15\ **p**\ /\ 3\ **p** 。
+    + **+l** - 在极小值和极大值区域中的最内层闭合等值线中心进行标注。
+      如果不设置 *label* 则使用 **-** 和 **+** 作为标注。如果正好为两个字符，例如 **+l**\ *LH* ，
+      则极小值和极大值区域各取一个字符作为标注（ *L* 和 *H* ）。
+      对于更复杂的标签，用逗号分隔字符串（例如，\ **+l**\ *lo,hi* ）。
+      如果使用 |-C| 给定了文件，且设置了 |-T| ，则只有被标记为大写字母 C 或 A 
+      的等值线才会有刻度和极大极小值标注。 **注意：** 极大极小值标注有时可能在最内层等值线的外面，
+      因为仅使用了等值线坐标的平均值来确定标注坐标。
+
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
 
 .. _-W:
 
@@ -131,26 +186,58 @@ grdcontour
     如果使用 **+cf** ，则为标注设置颜色;
     使用 **+c** 则同时为等值线和标注设置颜色。
 
+.. include:: explain_-XY.rst_
+
+.. _-Z:
+
+**-Z**\ [**+o**\ *shift*][**+s**\ *factor*][**+p**]
+    在计算等值线之前，从数据中减去 *shift* 再乘以 *factor* （默认-o0+s1）。
+    在 |-A|\ ，\ |-C|\ 和\ |-L|\ 中指定的值是缩放之后的。
+    后面加上 **-p** 表明网格数据的z值是360度周期循环的（例如相位数据，角度分布），
+    这要求零等值线必须特殊处理。
+
+.. include:: explain_-bo.rst_
+
+.. include:: explain_-do.rst_
+
+.. include:: explain_-f.rst_
+
+.. include:: explain_-h.rst_
+
+.. include:: explain_-l.rst_
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
+
+
 示例
 --------
 
 使用网格文件AK_gulf_grav.nc，以25为间隔绘制等值线，以50为间隔标注，标注文字大小10p::
 
-    gmt grdcontour AK_gulf_grav.nc -JM16c -C25 -A50+f10p -B
+    gmt grdcontour @AK_gulf_grav.nc -JM16c -C25 -A50+f10p -B -pdf alaska_grav1
 
 只绘制50和150两条等值线，只标注100等值线::
 
-    gmt grdcontour AK_gulf_grav.nc -JM16c -C50,150 -A100,+f10p -B
+    gmt grdcontour @AK_gulf_grav.nc -JM16c -C50,150 -A100,+f10p -B -pdf alaska_grav2
 
 以10为间隔绘制等值线，以50为间隔标注，设置图标题为"Gravity Anomalies"。
 将有标注的等值线设置为粗红线，将无标注的等值线设置为蓝色的细短划线::
 
-    gmt grdcontour AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Wathick,red -Wcthinnest,blue,-
+    gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Wathick,red -Wcthinnest,blue,- -pdf alaska_grav3
 
 将负值等值线设置为蓝色，正值等值线设置为红色，0等值线设置为黑色::
 
     gmt begin alaska_grav4
-      grdcontour AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Ln -Wathick,blue -Wcthinnest,blue,-
-      grdcontour AK_gulf_grav.nc -C10 -A50 -Lp -Wathick,red -Wcthinnest,red,-
-      grdcontour AK_gulf_grav.nc -A0,
+      gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Ln -Wathick,blue -Wcthinnest,blue,-
+      gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -Lp -Wathick,red -Wcthinnest,red,-
+      gmt grdcontour @AK_gulf_grav.nc -A0,
     gmt end show
+
+分两个文件 contours_C.txt 和 contours_O.txt 保存闭合等值线和开放等值线::
+
+    gmt grdcontour @AK_gulf_grav.nc -C150 -S4 -DAK_contours_%c.txt
+
