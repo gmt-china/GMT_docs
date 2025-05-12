@@ -1,9 +1,9 @@
-# 使用 conda 安装 GMT
-
-:撰写: {{ 田冬冬 }}, {{ 姚家园 }}, {{ 陈箫翰 }}
-:最近更新日期: 2025-01-03
-
 ---
+author: 田冬冬, 姚家园, 陈箫翰
+date: 2025-01-03
+---
+
+# 使用 conda 安装 GMT
 
 [conda](https://docs.conda.io/en/latest/) 是一个跨平台的包管理管理工具，其可以用于安装 GMT。
 
@@ -31,13 +31,13 @@
    $ conda install gmt -c conda-forge/label/dev
    ```
 
-   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/)（**可选**）:
+   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) [**可选**]:
 
    ```
    $ conda install graphicsmagick
    ```
 
-   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/)（**可选**）:
+   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/) [**可选**]:
 
    ```
    $ conda install ffmpeg
