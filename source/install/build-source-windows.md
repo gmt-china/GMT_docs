@@ -1,10 +1,11 @@
-# Windows 下编译 GMT 源码
-
-:审核: {{ 刘珠妹 }}
-:撰写: {{ 田冬冬 }}
-:最近更新日期: 2023-09-13
+---
+author: 田冬冬
+reviewer: 刘珠妹
+date: 2023-09-13
 
 ---
+
+# Windows 下编译 GMT 源码
 
 这一节介绍如何在 Windows 系统下编译 GMT 源码，仅供需要自行编译 GMT 源码的读者参考。
 
@@ -15,22 +16,22 @@
 - [Visual Studio](https://visualstudio.microsoft.com/zh-hans/) （安装时需要勾选 Desktop development with C++ 相关工具）
 - [Git](https://git-scm.com/downloads)
 - [CMake](https://cmake.org/download/)
-- [Ninja](https://ninja-build.org/): 快速的构建系统 \[可选但推荐\]
-- [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 \[**必须**\]
-- [GraphicsMagick](http://www.graphicsmagick.org)：生成 GIF 格式的动画 \[**可选**\]
-- [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 \[**可选**\]
+- [Ninja](https://ninja-build.org/): 快速的构建系统 [可选但推荐]
+- [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+- [GraphicsMagick](http://www.graphicsmagick.org)：生成 GIF 格式的动画 [**可选**]
+- [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
 ## 安装 vcpkg 及依赖软件
 
 GMT 的编译及运行依赖于其他库文件，包括：
 
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）\[**必须**\]
-- [curl](https://curl.haxx.se/)：下载网络数据 \[**必须**\]
-- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 \[**推荐**\]
-- [PCRE](https://www.pcre.org/)：正则表达式支持 \[**可选**\]
-- [FFTW](http://www.fftw.org/)：快速傅里叶变换库（>=3.3）\[**可选**\]
-- LAPACK：快速矩阵反演库 \[**可选**\]
-- BLAS：快速矩阵运算库 \[**可选**\]
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）[**必须**]
+- [curl](https://curl.haxx.se/)：下载网络数据 [**必须**]
+- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**推荐**]
+- [PCRE](https://www.pcre.org/)：正则表达式支持 [**可选**]
+- [FFTW](http://www.fftw.org/)：快速傅里叶变换库（>=3.3）[**可选**]
+- LAPACK：快速矩阵反演库 [**可选**]
+- BLAS：快速矩阵运算库 [**可选**]
 
 Windows 下可以通过 C++ 库管理器 [vcpkg](https://vcpkg.io) 安装这些依赖软件。
 
