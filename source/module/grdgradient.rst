@@ -238,6 +238,6 @@ IEEE, Vol. 69, No. 1, January 1981, pp. 14-47.
 :doc:`grdmath`,
 :doc:`grdimage`,
 :doc:`grdview`,
-:doc:`gmt:grdvector`
+:doc:`grdvector`
 
 
