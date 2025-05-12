@@ -94,11 +94,11 @@ grdimage
 
     可以通过三种方式设置光照效果:
 
-    #. 给定一个Z值范围为(-1,1)的网格文件，该文件可以用 ``grdgradient`` 生成
+    #. 给定一个Z值范围为(-1,1)的网格文件，该文件可以用 :doc:`grdgradient` 生成
     #. 给定一个常数作为光照强度
-    #. 不指定光照强度文件，只使用 ``-I+d`` 则会自动调用 ``grdgradient``
+    #. 不指定光照强度文件，只使用 ``-I+d`` 则会自动调用 :doc:`grdgradient` 
        并使用默认参数 ``+a-45+nt1+m0`` 计算输入网格数据的梯度作为光照强度文件。用户
-       也可以使用 ``-I+a<azimuth>+n<args>+m<ambient>`` 自定义 grdgradient 的 -A 和 -N 选项进行计算。
+       也可以使用 ``-I+a<azimuth>+n<args>+m<ambient>`` 自定义 :doc:`grdgradient` 的 **-A** 和 **-N** 选项进行计算。
 
 **-M**
     使用YIQ转换强制将其转换为灰度图。

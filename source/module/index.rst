@@ -60,6 +60,7 @@
     - :doc:`grdfill`
     - :doc:`grdfilter`
     - :doc:`grdgdal`
+    - :doc:`grdgradient`
     - :doc:`grdimage`
     - :doc:`grdinfo`
     - :doc:`grdlandmask`
@@ -156,7 +157,6 @@
     - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdgradient`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdinterpolate`
     - :doc:`gmt:grdmix`
@@ -269,7 +269,7 @@
 :doc:`grdpaste`                                  将两个网格沿着其共同边界拼接成一个文件
 :doc:`grdblend`                                  将多个部分重叠的网格文件合并成一个网格文件
 :doc:`grdtrack`                                  获取指定地理位置处的网格值
-:doc:`gmt:grdgradient`                           计算网格的方向梯度
+:doc:`grdgradient`                               计算网格的方向梯度
 :doc:`grdclip`                                   对网格文件的 Z 值进行截断
 :doc:`grd2xyz`                                   将网格文件转换成表数据
 :doc:`grdconvert`                                在不同的网格格式之间互相转换

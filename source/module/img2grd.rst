@@ -213,7 +213,7 @@ merc_grav.nc 有 2400 x 2039 个像素。如果图的宽度为 8 英寸，每英
     gmt img2grd -M world_grav.img.7.2 -Gmerc_grav_2.nc -R-40/40/-70/-30 -N3 -V
 
 调整以后的区域为 **-R**-40/40/-70.023256525/-29.9368261101 ，输出结果为 800 x 601 个像素。下面可以生成一个可以使用
-grdgradient 生成一个光照文件::
+:doc:`grdgradient` 生成一个光照文件::
 
     gmt grdgradient merc_grav_2.nc -Gillum.nc -A0/270 -Ne0.6
 
