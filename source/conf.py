@@ -30,6 +30,7 @@ rst_prolog = """
 .. |邓山泉| replace:: `邓山泉 <https://github.com/sqdeng/>`__
 .. |周茂| replace:: `周茂 <https://github.com/ZMAlt>`__
 .. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
+.. |朱邓达| replace:: `朱邓达 <https://github.com/Dengda98>`__
 """
 
 # -- General configuration ------------------------------------------------
