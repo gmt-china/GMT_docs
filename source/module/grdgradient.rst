@@ -1,14 +1,13 @@
-.. index:: ! grdgradient
+---
+author: 朱邓达
+date: 2025-05-12
+---
 
+.. index:: ! grdgradient
 
 ************
 grdgradient
 ************
-
-:贡献者: `朱邓达 <https://github.com/Dengda98>`_
-:最近更新日期: 2025-05-12
-
-----
 
 :官方文档: :doc:`gmt:grdgradient`
 :简介: 从网格文件中计算方向导数（光照强度）或梯度
