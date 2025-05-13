@@ -201,7 +201,7 @@ grdgradient
 
 .. include:: explain_example.rst_
 
-在远程文件 @earth_relief_05 中使用指数归一化梯度在[-0.6,0.6]范围内模拟北、西方向的光源，
+在远程文件 @earth_relief_05m 中使用指数归一化梯度在[-0.6,0.6]范围内模拟北、西方向的光源，
 制作一个文件来照亮部分数据::
 
     gmt grdgradient @earth_relief_05m -R0/20/0/20 -A0/270 -Ggradients.nc -Ne0.6 -V
