@@ -85,6 +85,7 @@ myst_substitutions = {
     "邓山泉": "[邓山泉](https://github.com/sqdeng/)",
     "周茂": "[周茂](https://github.com/ZMAlt)",
     "王亮": "[王亮](https://github.com/wangliang1989)",
+    "朱邓达": "[朱邓达](https://github.com/Dengda98)",
 }
 
 # Cross-refering other projects
@@ -167,6 +168,7 @@ html_context = {
         "邓山泉": "https://github.com/sqdeng/",
         "周茂": "https://github.com/ZMAlt",
         "王亮": "https://github.com/wangliang1989",
+        "朱邓达": "https://github.com/Dengda98",
     }
 }
 
