@@ -1,7 +1,5 @@
----
-author: 朱邓达
-date: 2025-05-12
----
+:author: 朱邓达
+:date: 2025-05-12
 
 .. index:: ! grdgradient
 
