@@ -8,9 +8,8 @@ colorbar
 :简介: 在地图上绘制灰色或彩色色条
 
 请注意，GMT在使用 ``colorbar`` 命令绘制色条时，本质上是绘制了一个在x或y方向被“拍扁”的新的笛卡尔坐标系底图。
-因此建议用户在实际绘制一张图片时，最后再绘制色条，避免影响其他图层的绘制。并且可能需要重新设置 ``-B`` 选项的参数。
 如果想要修改色条刻度的字体大小、刻度线粗细、边框粗细等属性，应当把色条看成一个新的笛卡尔坐标底图，
-在使用 ``colorbar`` 命令之前再次使用 ``gmt set`` 命令修改相关配置参数，或使用 ``--PARAMETER=value`` 语法。
+使用 ``--PARAMETER=value`` 语法临时修改GMT参数的值，可重复多次使用。参数列表见 :doc:`/conf/index`
 
 **gmt colorbar**
 [ |SYN_OPT-B| ]
@@ -211,7 +210,7 @@ colorbar
 相关模块
 --------
 
-:doc:`makecpt`
+:doc:`makecpt`,
 :doc:`gmtlogo`,
 :doc:`grd2cpt`,
 :doc:`image`,
