@@ -140,7 +140,7 @@ grdtrack
     搜索每条交叉测线的 z 值临界点作为沿测线距离的函数。该选项只能与 |-C| 以及单个网格同时使用。
     一条交叉测线的对应结果输出一行，每列按顺序包括
     
-    + *dist, lonc, latc, distc, azimuthc, zc* - 最大z值的位置及相关量。
+    + *dist, lonc, latc, distc, azimuthc, zc* - 最大 z 值的位置及相关量。
     + *lonl, latl, distl* - 交叉测线从左至右首个大于 *z0* 值的位置（左临界点）。
     + *lonr, latr, distr* - 交叉测线从右至左首个大于 *z0* 值的位置（右临界点）。
     + *width* - 左右临界点的间距。
