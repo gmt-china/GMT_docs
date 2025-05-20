@@ -199,7 +199,8 @@ grdtrack
       如果叠加方法为 **a|m|p** ，则再加上置信区间的下界和上界。
     + 对于在 |-C| 输出的基础上新增的列，始终按照叠加结果 (**+a**)，叠加偏差 (**+d**) 和残差 (**+r**) 的顺序，
       实际输出几列取决于是否使用对应选项。当输入多个网格时，结果按照该顺序为一组进行重复。
-    + **-S** 的使用可见 `官方示例(33) <https://docs.generic-mapping-tools.org/dev/gallery/ex33.html>`_ 。
+    
+    该选项较为复杂，关于该选项的的使用示例见 `官方示例(33) <https://docs.generic-mapping-tools.org/dev/gallery/ex33.html>`_ 。
 
 .. _-T:
 
