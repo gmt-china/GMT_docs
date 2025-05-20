@@ -286,19 +286,19 @@ grdtrack
     
     gmt grdtrack track_4.xyg -Ghawaii_topo.nc -h > track_4.xygt
     
-沿着文件 cruise_track.xy 中提供的( *lon, lat* )坐标，对 Sandwell/Smith IMG 格式文件 topo.8.2.img
-（基于墨卡托网格的2min分辨率预测水深数据）和年龄网格文件 age.3.2.nc (Muller et al.) 进行采样::
+沿着文件 cruise_track.xy 中提供的( *lon, lat* )坐标，对 Sandwell/Smith 海深文件 topo_19.1.nc
+和年龄网格文件 age.3.2.nc (Muller et al.) 进行采样::
     
-    gmt grdtrack cruise_track.xy -Gtopo.8.2.img,1,1 -Gage.3.2.nc > depths-age.txt
+    gmt grdtrack cruise_track.xy -Gtopo_19.1.nc -Gage.3.2.nc > depths-age.txt
     
-沿着文件 track.xy 定义的测线，每隔25km创建与之垂直的交叉测线，采样间隔为3km，对 Sandwell/Smith IMG 格式文件
-grav.18.1.img （基于墨卡托网格的1min分辨率自由空气异常）::
+沿着文件 track.xy 定义的测线，每隔 25km 创建与之垂直的交叉测线，采样间隔为 3km，对 Sandwell/Smith
+重力异常文件 grav_32.1.nc 采样::
     
-    gmt grdtrack track.xy -Ggrav.18.1.img,0.1,1 -C100k/3/25 -Ar > xprofiles.txt
+    gmt grdtrack track.xy -Ggrav_32.1.nc -C100k/3/25 -Ar > xprofiles.txt
 
 与上面类似，但确定沿测线的中心异常位置，阈值为 25 mGal ::
     
-    gmt grdtrack track.xy -Ggrav.18.1.img,0.1,1 -C100k/3/25 -F+z25 > locations.txt
+    gmt grdtrack track.xy -Ggrav_32.1.nc -C100k/3/25 -F+z25 > locations.txt
     
 沿着网格文件 data.nc 的左下角到右上角进行采样，使用间距1km的测地线，输出包括距离::
     
