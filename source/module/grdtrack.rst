@@ -254,13 +254,9 @@ grdtrack
 
 .. include:: explain_help.rst_
 
-
-
 .. include:: explain_distunits.rst_
 
-
 .. include:: explain_precisison.rst_
-
 
 网格重采样的后果
 -------------------
