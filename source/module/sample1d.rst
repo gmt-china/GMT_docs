@@ -7,7 +7,7 @@ sample1d
 ========
 
 :官方文档: :doc:`gmt:sample1d`
-:简介: 对1D表数据进行重采样
+:简介: 对 1D 表数据进行重采样
 
 语法
 --------
@@ -41,15 +41,15 @@ sample1d
 描述
 -----------    
 
-**sample1d** 从文件（或标准输入）读取一个多列的ASCII格式（或二进制）数据，
+**sample1d** 从文件（或标准输入）读取一个多列的 ASCII 格式（或二进制）数据，
 对时间序列或指定测线点位进行重采样。其中独立变量
 （即单调递增或递减的变量，以下称之为 *time* ）
-默认位于首列，用户可指定其他列作为独立变量。等距采样或任意采样均可。
-所有列都将基于新的采样间隔重新采样。包括平滑样条(smoothing spline)在内，
-还有多种插值方案可供选择。其中，平滑样条通过在拟合误差和曲率之间进行权衡
+默认位于首列，用户可指定其他列作为独立变量。可以使用等距或其他指定采样。
+所有列都将基于新的采样间隔重新采样。除平滑样条 （smoothing spline）方法外，
+还可选择多种插值方法。其中，平滑样条通过在拟合误差和曲率之间进行权衡
 （即不完全精确拟合数据点以换取更平滑的曲线）来实现平滑效果。
-不支持输入数据范围外做外推插值。通过使用 |-C| 指定CPT，
-我们将基于输入数据最后一列做颜色插值，将 *r,g,b,a* 添加到输出。
+本模块不支持输入数据范围外做外推插值。通过使用 |-C| 指定 CPT，
+本模块将基于输入数据最后一列做颜色插值，将 *r,g,b,a* 添加到输出。
 
 必选选项
 ------------------
@@ -97,7 +97,7 @@ sample1d
 .. _-N:
 
 **-N**\ *col*
-    选择独立变量 *time* 的列索引 *col* ，默认为0（即首列）。
+    选择独立变量 *time* 的列索引 *col* ，默认为 0（即首列）。
 
 .. _-T:
 
@@ -149,7 +149,7 @@ sample1d
 注意
 ----
 平滑样条 :math:`s(t)` 通过设置拟合因子 :math:`p` 在最小化拟合误差
-（完全拟合所有点，对应 :math:`p` 很大）和最小化曲率（ :math:`p` 接近0）之间进行权衡。
+（完全拟合所有点，对应 :math:`p` 很大）和最小化曲率（ :math:`p` 接近 0）之间进行权衡。
 具体而言，我们想要最小化以下泛函
 
 .. math::
@@ -176,20 +176,19 @@ sample1d
 
 .. include:: explain_example.rst_
 
-为了使用Akima样条等距1km重采样文件 profiles.tdgmb，其中包含(time,distance,gravity,magnetics,bathymetry)的记录，
-运行::
+使用 Akima 样条以 1 km 为间隔重采样文件 `profiles.tdgmb`，文件格式为: time, distance, gravity, magnetics, bathymetry ::
 
     gmt sample1d profiles.tdgmb -N1 -Fa -T1 > profiles_equi_d.tdgmb
 
-使用三次样条插值，在 grav_pos.dg 指定的点位上采样文件 depths.txt，运行::
+使用三次样条插值，在 `grav_pos.dg` 指定的点位上采样文件 `depths.txt` ::
 
     gmt sample1d depths.txt -Tgrav_pos.dg -Fc > new_depths.txt
 
-将0到6之间的数据用三次样条重采样为0.01间隔，不输出数据而是输出一阶偏导（即斜率）::
+将 0 到 6 之间的数据以 0.01 为间隔用三次样条重采样，不输出数据而是输出一阶偏导（即斜率）::
 
     gmt sample1d points.txt -T0/6/0.01 -Fc+d1 > slopes.txt
 
-测线数据中包含经度、纬度和深度，将其采样为每2海里一个点::
+测线数据中包含经度、纬度和深度，将其采样为每 2 海里一个点::
 
     gmt sample1d track.txt -T2n -AR > new_track.txt
 
@@ -197,11 +196,11 @@ sample1d
 
     gmt sample1d track.txt -T2n -Af > new_track.txt
 
-沿着恒向线采样每5km一个点::
+以 5 km 为间隔，沿着恒向线采样 ::
 
     gmt sample1d track.txt -T5k -AR+l > new_track.txt
 
-在文件 temperatures.txt 中采样2000年到2018年每月温度::
+在文件 `temperatures.txt` 中采样 2000 年到 2018 年每月温度::
 
     gmt sample1d temperatures.txt -T2000T/2018T/1o > monthly_temp.txt
 
@@ -209,9 +208,8 @@ sample1d
 
     gmt sample1d @topo_crossection.txt -T300/500/0.1 -Fs0.001 > smooth.txt
 
+相关模块
+--------
 
-
-相关
-----
 :doc:`gmt:greenspline`,
 :doc:`filter1d`
