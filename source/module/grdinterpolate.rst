@@ -42,7 +42,7 @@ grdinterpolate
 描述
 -----------
 
-**grdinterpolate** 读取一个netCDF 格式的 3D 网格（以下称之为 cube ）或一系列 2D 网格层
+**grdinterpolate** 读取一个 netCDF 格式的 3D 网格（以下称之为 cube ）或一系列 2D 网格层
 （以下称每个 2D 网格层为 layer，按顺序堆叠形成第三个维度），
 沿着第三个维度（以下称之为 level ）对一个或多个 level 做插值。
 要求 cube 的数据维度包含两个共有的 *x* 和 *y* 维度，第三个维度通常为距离或时间。
@@ -55,7 +55,7 @@ grdinterpolate
 ------------------
 
 *cube*
-    指定netCDF格式的 3D 输入网格。或者使用 |-Z| 时，此处可指定一系列 2D 网格层 (layer)。
+    指定 netCDF 格式的 3D 输入网格。或者使用 |-Z| 时，此处可指定一系列 2D 网格层 (layer)。
 
 .. _-G:
 
@@ -115,14 +115,14 @@ grdinterpolate
     + 如果 |-E|\ ，\ |-S| 和 |-T| 均未使用，则将输入的 cube 拆分，输出为一系列的 layer，
       这要求 |-G| 文件名中包含 C 语言浮点数格式，可使用 |-R| 指定范围。
 
-.. include:: explain_-V.rst_
-
 .. _-Z:
 
 **-Z**\ [*levels*]
     读取命令行中传入的所有 2D 网格作为一个 cube 的每个 layer（默认读取一个 cube 文件）。
     可指定 *levels* 来控制这些 2D 网格如何组合成一个 cube，即为这些 2D 网格分配其所在level。
     *levels* 的设置方式和 |-T| 一致，若不设置则默认 level 为从 0 开始的整数。
+
+.. include:: explain_-V.rst_
 
 .. include:: explain_colon.rst_
 
