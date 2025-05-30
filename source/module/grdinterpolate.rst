@@ -70,12 +70,12 @@ grdinterpolate
 
 .. include:: explain_-D_cap.rst_
 
+.. include:: explain_lines.rst_
+
 .. note::
 
     当前 GMT 6.5 版本无法在 |-E| 中正确设置距离单位，该 bug 会在下个版本修复，详见 
     `PR #8734 <https://github.com/GenericMappingTools/gmt/pull/8734>`_ 。
-
-.. include:: explain_lines.rst_
 
 .. include:: explain_interpolant.rst_
 
