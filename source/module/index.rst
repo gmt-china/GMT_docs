@@ -63,6 +63,7 @@
     - :doc:`grdgradient`
     - :doc:`grdimage`
     - :doc:`grdinfo`
+    - :doc:`grdinterpolate`
     - :doc:`grdlandmask`
     - :doc:`grdmask`
     - :doc:`grdmath`
@@ -158,7 +159,6 @@
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdhisteq`
-    - :doc:`gmt:grdinterpolate`
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
     - :doc:`gmt:movie`
@@ -275,6 +275,7 @@
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`grdedit`                                   修改网格文件的头段或内容
 :doc:`grdinfo`                                   从网格文件中提取基本信息
+:doc:`grdinterpolate`                            插值三维网格
 :doc:`grdsample`                                 对网格文件做重采样
 :doc:`grdselect`                                 根据多个空间标准选择网格数据
 :doc:`grdlandmask`                               根据海岸线数据创建陆地-海洋的 mask 网格文件
