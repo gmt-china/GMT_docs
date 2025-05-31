@@ -1,3 +1,6 @@
+:author: 田冬冬, 陈箫翰, 朱邓达
+:date: 2025-05-11
+
 .. index:: ! grdcontour
 
 
