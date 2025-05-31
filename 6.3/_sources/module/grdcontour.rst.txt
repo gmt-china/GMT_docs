@@ -1,0 +1,143 @@
+.. index:: ! grdcontour
+
+
+**********
+grdcontour
+**********
+
+:官方文档: :doc:`gmt:grdcontour`
+:简介: 根据网格文件绘制等值线
+
+语法
+--------
+
+.. include:: common_SYN_OPTs.rst_
+
+**gmt grdcontour** *grid*
+|-J|\ *parameters* [ |-A|\ [**n**\|\ *contours*][*labelinfo*] ]
+[ |SYN_OPT-B| ]
+[ |-C|\ *contours*\|\ *cpt* ]
+[ |-D|\ *template* ]
+[ |-F|\ [**l**\|\ **r**] ]
+[ |-G|\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
+[ |-L|\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
+[ |-N|\ [*cpt*] ]
+[ |-Q|\ [*cut*][**+z**] ]
+[ |SYN_OPT-Rz| ]
+[ |-S|\ *smoothfactor* ]
+[ |-T|\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
+[ |SYN_OPT-U| ]
+[ |SYN_OPT-V| ]
+[ |-W|\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
+[ |SYN_OPT-X| ]
+[ |SYN_OPT-Y| ]
+[ |-Z|\ [**+s**\ *factor*][**+o**\ *shift*][**+p**] ]
+[ |SYN_OPT-bo| ]
+[ |SYN_OPT-do| ]
+[ |SYN_OPT-e| ]
+[ |SYN_OPT-f| ]
+[ **-ho**\ [*n*] ]
+[ |SYN_OPT-l| ]
+[ |SYN_OPT-p| ]
+[ |SYN_OPT-t| ]
+[ |SYN_OPT--| ]
+
+描述
+-----------
+
+**grdcontour** 读取一个二维grid网格文件，并绘制等值线 
+
+必选选项
+------------------
+
+*grid*
+    二维grid网格文件
+
+.. include:: explain_-J.rst_
+
+可选选项
+------------------
+
+.. _-A:
+
+**-A**\ [**n**]\|\ [*contours*][*labelinfo*]
+    **-A**\ *contours* 设置标注间隔，如果在 |-C| 选项中指定标注间隔的话，
+    这里的设置会被覆盖。**-An** 则为不进行标注。也可以用 ``-A20,80,100`` 类似的用法，对指定的
+    等值线进行标注。如果只想要标注一条等值线，需要在末尾加上逗号，例如 ``-A20,`` ，这样 ``20`` 就不会被认为是标注间隔。
+    *labelinfo* 代表可以在最后追加下列额外选项:
+
+.. include:: explain_clabelinfo.rst_
+
+.. include:: explain_-B.rst_
+
+.. _-C:
+
+**-C**\ *contours*
+    指定绘制等值线的形式，具体说明如下:
+
+    (1) 如果 *contours* 是一个以 ".cpt" 结尾的文件名，GMT会查找对应的CPT文件，
+        把CPT文件中的颜色块的边界绘制为等值线，并进行标注。如果使用了 ``-An`` 选项则只绘制等值线不标注。
+
+    (2) 如果 *contours* 是一个不以 ".cpt" 结尾的文件名，GMT会读取其中的内容作为等值线设置。
+        每行为一条等值线的设置，以如下格式给出：
+        *contour-level* [*angle*] **C**\|\ **c**\|\ **A**\|\ **a** [*pen*]，中括号表示可选项。
+        **C** 或 **c** 表示绘制等值线但不标注，而 **A** 或 **a** 表示绘制等值线并进行标注。
+        *angle* 设置标注的旋转角。 *pen* 设置等值线的线型。
+
+    (3) 如果 *contours* 是一串用逗号隔开的数字，例如 ``-C20,80,100`` ，则绘制对应的等值线。
+        如果只想要绘制一条等值线，需要在末尾加上逗号，例如 ``-C20,`` 。
+
+    (4) 如果没有指定 *contours* ，则默认使用当前CPT文件。
+
+    (5) 如果 *contours* 是一个常数，则以这个常数为间隔绘制等值线。
+
+    如果 |-C| 和 |-A| 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
+
+.. _-L:
+
+**-L**\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p**
+    不绘制小于 *low* 大于 *high* 的等值线。 也可以设置为 **-Ln** 只绘制负值，
+    或 **-Lp** 只绘制正值。使用大写的 **-LN** 或 **-LP** 表示包括0等值线。
+
+.. _-N:
+
+**-N**\ [*cpt*]
+    指定 *cpt* 文件，对等值线之间的区域填充颜色。
+
+.. include:: explain_-R.rst_
+
+.. include:: explain_-Rz.rst_
+
+.. _-W:
+
+**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`
+    设置等值线的线型。默认情况下，有标注的等值线线型 *pen* 为 ``0.75p,black`` ，
+    无标注的等值线线型 *pen* 为 ``0.25p,black`` 。如果要设置有标注的等值线线型，*type* 应该设置为 **a** ，
+    例如 ``-Wa1.75p,red`` 。无标注的等值线线型，*type* 应该设置为 **c** ，例如 ``-Wc1.25p,red`` 。
+    如果加上 **+cl** ，则使用 |-C| 选项所指定的CPT文件为不同的等值线设置颜色;
+    如果使用 **+cf** ，则为标注设置颜色;
+    使用 **+c** 则同时为等值线和标注设置颜色。
+
+示例
+--------
+
+使用网格文件AK_gulf_grav.nc，以25为间隔绘制等值线，以50为间隔标注，标注文字大小10p::
+
+    gmt grdcontour AK_gulf_grav.nc -JM16c -C25 -A50+f10p -B
+
+只绘制50和150两条等值线，只标注100等值线::
+
+    gmt grdcontour AK_gulf_grav.nc -JM16c -C50,150 -A100,+f10p -B
+
+以10为间隔绘制等值线，以50为间隔标注，设置图标题为"Gravity Anomalies"。
+将有标注的等值线设置为粗红线，将无标注的等值线设置为蓝色的细短划线::
+
+    gmt grdcontour AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Wathick,red -Wcthinnest,blue,-
+
+将负值等值线设置为蓝色，正值等值线设置为红色，0等值线设置为黑色::
+
+    gmt begin alaska_grav4
+      grdcontour AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Ln -Wathick,blue -Wcthinnest,blue,-
+      grdcontour AK_gulf_grav.nc -C10 -A50 -Lp -Wathick,red -Wcthinnest,red,-
+      grdcontour AK_gulf_grav.nc -A0,
+    gmt end show
