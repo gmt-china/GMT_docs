@@ -1,3 +1,6 @@
+:author: 田冬冬, 王亮, 陈箫翰, 朱邓达
+:date: 2025-06-08
+
 .. index:: ! subplot
 .. include:: common_SYN_OPTs.rst_
 
