@@ -135,7 +135,7 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
 
     gmt begin map
       gmt set FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 10p
-      gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.2c -T"My Subplot Heading" -SRl -SCb -BWSrt
+      gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.2c -T"My Subplot Heading" -Srl -Scb -BWSrt
         gmt basemap -R0/10/0/10 -JX? -c
         gmt basemap -R0/20/0/10 -JX? -c
         gmt basemap -R0/10/0/20 -JX? -c
@@ -144,8 +144,8 @@ X 轴范围。此时可以使用 **-S** 选项设置各子图之间共用 X 或 
     gmt end show
 ```
 
-**-SRl** 表示一行内（**R**ow）的子图共用 Y 轴，且只在左边（**l**）轴显示标注，
-**-SCb** 表示一列内（**C**olumn）的子图共用 X 轴，且只在底部（**b**）轴显示标注。
+**-Srl** 表示一行内（**r**ow）的子图共用 Y 轴，且只在左边（**l**）轴显示标注，
+**-Scb** 表示一列内（**c**olumn）的子图共用 X 轴，且只在底部（**b**）轴显示标注。
 
 当然你也可以不使用 **-S** 选项，而是在每个子图中使用不同的 **-B** 选项分别
 为每个子图设置不同的轴属性。
