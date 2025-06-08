@@ -144,7 +144,7 @@ grdinterpolate
 
 .. include:: explain_-n.rst_
 
-.. include:: explain_-o.rst_
+.. include:: explain_-ocols.rst_
 
 .. include:: explain_-q.rst_
 

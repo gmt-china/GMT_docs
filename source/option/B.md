@@ -17,7 +17,7 @@ date: 2025-05-22
 2. 若命令中仅出现 **-B**，后面没有任何子选项或字符，则默认绘制上下左右四个轴，
    只在左轴和下轴绘制刻度并标注；其效果等效于 `-BWSrt`，具体参数含义见下文。
 
-(frame-setting)=
+(frame_setting)=
 
 ## 边框设置
 
@@ -113,7 +113,7 @@ gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t"-BwesnZ" -p
     :show-code: false
 ```
 
-(axes-setting)=
+(axes_setting)=
 
 ## 轴设置
 
@@ -329,7 +329,7 @@ gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf test
 图中分别使用 `-R0/100/0/0.9 -JX3ip0.5/0.25i -Ba20f10g5`
 和 `-R0/100/0/0.9 -JX3ip0.5/0.25i -Ba3f2g1p` 设置轴属性
 
-(time-axes)=
+(time_axes)=
 
 ## 时间轴
 

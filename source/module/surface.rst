@@ -67,7 +67,7 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. include:: explain_intables.rst_
 
-.. include:: explain_grd_inout.rst_
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -92,7 +92,8 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     GMT 内部，用于处理的中间临时网格的收敛值为最终网格的收敛值除以网格间距的倍数。
 
 .. include:: explain_-J.rst_
-
+..
+    
     该设置仅用于将投影信息输出到最终的网格中，在实际计算中并不会使用。
 
 .. _-D:
