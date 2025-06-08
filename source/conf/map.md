@@ -66,6 +66,7 @@
     ```{eval-rst}
     .. gmtplot::
        :show-code: false
+       
        gmt begin map_degree_symbol
            gmt set FONT_TITLE 18p MAP_TITLE_OFFSET 0p
            gmt subplot begin 2x2 -Fs5c/2c -M1c

@@ -452,8 +452,10 @@
    grdfill
    grdfilter
    grdgdal
+   grdgradient
    grdimage
    grdinfo
+   grdinterpolate
    grdlandmask
    grdmask
    grdmath

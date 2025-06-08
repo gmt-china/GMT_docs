@@ -90,7 +90,7 @@ ogr2ogr -f GMT 输出数据文件名 输入数据文件名
 
    三个命令分别生成文件 `ADM_ADM_0.gmt`、`ADM_ADM_1.gmt` 和 `ADM_ADM_2.gmt`。
 
-(gdal-translate)=
+(gdal_translate)=
 
 ## gdal_translate
 

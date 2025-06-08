@@ -112,7 +112,7 @@ grdtrack
     - **+l**，默认情况下，输出整条交叉测线，使用该选项仅保留左半支。
     - **+r**，同上，仅保留右半支。
     - **+d**\ *value* 为交叉测线的走向加上偏离角 *value* 
-    - **+f** \ *value* 指定所有交叉测线为固定走向 *value* 。
+    - **+f**\ *value* 指定所有交叉测线为固定走向 *value* 。
 
     输出结果中每列为 *lon, lat, dist, azimuth, z1, z2, ..., zn* ，其中 *zi* 
     表示第 *i* 个网格在 *(lon, lat)* 位置的采样值。
@@ -242,7 +242,7 @@ grdtrack
 
 .. include:: explain_-n.rst_
 
-.. include:: explain_-o.rst_
+.. include:: explain_-ocols.rst_
 
 .. include:: explain_-q.rst_
 
