@@ -7,7 +7,7 @@
 
 可以用以下多种方式指定数据范围。
 
-1. **-R***xmin*/*xmax*/*ymin*/*ymax*\[**+u**_unit_\]
+1. **-R***xmin*/*xmax*/*ymin*/*ymax*[**+u**_unit_]
 
    通过给定X方向和Y方向的最大最小值来指定数据范围，是最常见的指定数据范围的方式。
    常用于指定笛卡尔数据的范围以及经线和纬线是直线的投影方式下的地理区域。
@@ -16,8 +16,8 @@
    如果使用了 **+u**_unit_ 指定距离{doc}`/basis/unit`，则 *xmin*/*xmax*/*ymin*/*ymax*
    为投影后坐标，投影方式和投影中心由 {doc}`/option/J` 指定。
    对于中心为 *(0,0)* 的投影区域，该用法可简化为 
-   **-R**_halfwidth_[*halfheight*]**+u**_unit_ ，其中 *halfheight* 默认和 
-   _halfwidth_ 一致，这种简化写法必须指定 **+u**_unit_ 。
+   **-R**_halfwidth_[*halfheight*]**+u**_unit_，其中 *halfheight* 默认和 
+   _halfwidth_ 一致，这种简化写法必须指定 **+u**_unit_。
 
 2. **-R**_xlleft_/*ylleft*/*xuright*/_yuright_**+r**
 
