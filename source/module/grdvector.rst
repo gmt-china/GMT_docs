@@ -143,8 +143,7 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
         :width: 500 px
         :caption: 在正向和反向的 X, Y 方向下，使用 |-T| （蓝线）和不使用 |-T| （红线）的结果。
 
-        # 脚本参考自官方测试源码 test/grdvector/cartvec.sh
-        ps=cartvec.ps
+        # 脚本参考自官方源码 test/grdvector/cartvec.sh，改编为现代模式
         gmt xyz2grd -R-1/1/-2/2 -I1 -Gr.nc << EOF
         0	0	1
         0	-1	0.5
@@ -153,19 +152,26 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
         0	0	60
         0	-1	-100
         EOF
-
-        gmt grdvector r.nc az.nc -A -JX2.5i -Q0.3i+e -W3p,red -Gred -Si1i -P -K -Bafg10 -BWSne > $ps
-        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
-        gmt pstext -R -J -O -K -F+f14p+jTL+cTL+t"(c)ORIG" -Dj0.1i >> $ps
-        gmt grdvector r.nc az.nc -A -JX2.5i/-2.5i -Q0.3i+e -W3p,red -Gred -Si1i -O -K -Bafg10 -BWSne -X3.5i >> $ps
-        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
-        gmt pstext -R -J -O -K -F+f14p+jTL+cTL+t"(d)NEG Y" -Dj0.1i >> $ps
-        gmt grdvector r.nc az.nc -A -JX-2.5i/2.5i -Q0.3i+e -W3p,red -Gred -Si1i -O -K -Bafg10 -BWSne -X-3.5i -Y3i >> $ps
-        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
-        gmt pstext -R -J -O -K -F+f14p+jTL+cTL+t"(a)NEG X" -Dj0.1i >> $ps
-        gmt grdvector r.nc az.nc -A -JX-2.5i/-2.5i -Q0.3i+e -W3p,red -Gred -Si1i -O -K -Bafg10 -BWSne -X3.5i >> $ps
-        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
-        gmt pstext -R -J -O -F+f14p+jTL+cTL+t"(b)NEG X,Y" -Dj0.1i >> $ps
+        gmt begin grdvector-T png
+        gmt subplot begin 2x2 -Fs2.5i/2.5i -M0.3i -Bafg -BWSne -A+JTC+o0/0.1i -Rr.nc
+            gmt subplot set 0 -A"(a) ORIG"
+            gmt basemap -JX? -Bx+l"X" -By+l"Y"
+            gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt subplot set 1 -A"(b) NEG X"
+            gmt basemap -JX-2.5i/2.5i -Bx+l"\035X" -By+l"Y"
+            gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt subplot set 2 -A"(c) NEG Y"
+            gmt basemap -JX2.5i/-2.5i -Bx+l"X" -By+l"\035Y"
+            gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt subplot set 3 -A"(d) NEG X,Y"
+            gmt basemap -JX-2.5i/-2.5i -Bx+l"\035X" -By+l"\035Y"
+            gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+        gmt subplot end
+        gmt end show
 
 .. include:: explain_-U.rst_
 
