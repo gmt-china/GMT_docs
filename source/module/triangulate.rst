@@ -149,6 +149,8 @@ triangiulate
 
 .. include:: explain_help.rst_
 
+.. include:: explain_float.rst_
+
 .. include:: explain_inside.rst_
 
 示例

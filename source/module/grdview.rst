@@ -57,14 +57,7 @@ grdview
 
 .. include:: explain_-B.rst_
 
-.. _-C:
-
-**-C**\ [*cpt* \| *master*\ [**+i**\ *zinc*] \| *color1,color2*\ [,\ *color3*\ ,...]]
-    绘制网格文件所使用的CPT。
-
-    也可以直接使用GMT自带的CPT文件名，此时GMT会自动根据网格文件的Z值范围将
-    自带的CPT采样成16级的连续CPT文件。也可以通过 **-C**\ *color1*,\ *color2*\[,\ *color3*,..]
-    的语法构建一个线性连续CPT文件。
+.. include:: use_cpt_grd.rst_
 
 .. _-I:
 

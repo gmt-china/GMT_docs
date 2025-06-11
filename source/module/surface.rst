@@ -203,6 +203,8 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. include:: explain_distunits.rst_
 
+.. include:: explain_float.rst_
+
 示例
 ----
 
