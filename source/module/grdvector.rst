@@ -1,4 +1,8 @@
+:author: 朱邓达, 田冬冬
+:date: 2025-06-11
+
 .. index:: ! grdvector
+.. include:: common_SYN_OPTs.rst_
 
 grdvector
 =========
@@ -6,73 +10,195 @@ grdvector
 :官方文档: :doc:`gmt:grdvector`
 :简介: 根据两个网格文件绘制矢量场
 
-该命令会读取两个2D网格文件并绘制矢量场。两个网格文件分别代表平面内矢量场的
-X分量和Y分量，最终矢量场用不同长度和方向的箭头表示。两个网格文件，也可以分别
-是极坐标下r方向和theta方向的分量。
+语法
+--------
+
+**gmt grdvector** *grid1* *grid2* |-J|\ *parameters*
+[ |-A| ]
+[ |SYN_OPT-B| ]
+[ |-C|\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
+[ |-G|\ *fill* ]
+[ |-I|\ [**x**]\ *dx*\ [/*dy*] ]
+[ |-N| ] [ |-Q|\ *parameters* ]
+[ |SYN_OPT-R| ]
+[ |-S|\ [**i**\|\ **l**]\ *scale*\ [**+c**\ [[*slon*/]\ *slat*]][**+s**\ *refsize*] ]
+[ |-T| ]
+[ |SYN_OPT-U| ]
+[ |SYN_OPT-V| ]
+[ |-W|\ *pen*\ [**+c**] ]
+[ |SYN_OPT-X| ]
+[ |SYN_OPT-Y| ]
+[ |-Z| ]
+[ |SYN_OPT-f| ]
+[ |SYN_OPT-l| ]
+[ |SYN_OPT-p| ]
+[ |SYN_OPT-t| ]
+[ |SYN_OPT--| ]
+
+描述
+-----------
+
+该命令会读取两个 2D 网格文件并绘制矢量场。两个网格文件分别代表 :math:`(x,y)` 平面内矢量场的
+X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。两个网格文件，也可以分别
+是极坐标下 :math:`(r,\theta)` 的分量 （见 |-A| 和 |-Z| ）。
 
 必选选项
 --------
 
-``<compx.nc>``
-    矢量场的X分量网格
+*grid1*
+    矢量场的 X 分量网格文件
 
-``<compy.nc>``
-    矢量场的Y分量网格
+*grid2*
+    矢量场的 Y 分量网格文件
+
+两个网格文件顺序很重要，对于 :math:`(x,y)` ，两个文件分别为 X 分量和 Y 分量。
+对于 :math:`(r,\theta)` ，两个文件分别为大小 :math:`r` 和 角度 :math:`\theta` ，
+其中角度可以是方向角（ |-A| ， 从东向逆时针测量）或方位角（ |-Z| ， 从北向顺时针测量）。
+
+
+
 
 可选选项
 --------
 
-``-A``
-    输入数据为极坐标表示。即网格文件包含的是 (r, theta) 分量而不是 (x, y) 分量
+.. _-A:
 
-``-C[<cpt>]``
-    根据矢量的长度决定矢量的颜色。
+**-A**
+    输入数据为极坐标表示。即网格文件包含的是 :math:`(r,\theta)` 分量而不是 :math:`(x,y)` 分量。
 
-    有三种方式：
+.. include:: explain_-B.rst_
 
-    #. 指定用户自己的CPT文件
-    #. 使用GMT自带的CPT文件（默认是rainbow），该命令会根据网格的Z值范围，自动
-       生成一个16级的连续CPT文件
-    #. 指定 ``-C<color1>,<color2>[,<color3>,...]`` ，根据这些颜色自动构建一个
-       线性连续CPT文件
+.. include:: use_cpt_grd.rst_
 
-``-G<fill>``
-    设置矢量内部的填充色
 
-``-I[x]<dx>[/<dy>]``
-    每隔 ``<dx>`` 和 ``<dy>`` 绘制一个矢量。其中 ``<dx>`` 和 ``<dy>`` 必须是
-    原始网格间隔的整数倍， ``<dx>`` 和 ``<dy>`` 后加上m表示分，加上s表示秒。
+.. _-G:
 
-    也可以使用 ``-Ix<dx>/<dy>`` ，此时 ``<dx>`` 和 ``<dy>`` 表示倍数。
+**-G**\ *fill*
+    设置矢量头填充色 *fill* （默认不填充）。 *fill* 也可通过 |-Q| 指定。
 
-``-N``
-    不裁剪地图边界外的矢量。
+.. _-I:
 
-``-Q<parameters>``
-    修改矢量的属性。见 :doc:`/basis/vector` 一节。
+**-I**\ [**x**]\ *dx*\ [/*dy*]
+    每隔 *dx* 和 *dy* 绘制一个矢量。其中 *dx* 和 *dy* 必须是
+    原始网格间隔的整数倍， *dx* 和 *dy* 后加上 **m** 表示分，加上 **s** 表示秒。
+    也可以使用 **-Ix**\ *multx*\ [/*multy*] ，此时 *multx* 和 *multy* 表示倍数。
+    默认绘制每个节点上的矢量。
 
-``-S[i|l]<scale>``
-    设置矢量长度的缩放比例。
+.. include:: explain_-J.rst_
 
-    对于笛卡尔数据而言，缩放比例即图上单位距离所对应的实际数据的多少，默认值为1。
-    可以加上 ``c|i|p`` 以指定测量单位。
+.. _-N:
 
-    ``-Sl<scale>`` 表示所有矢量拥有固定的长度。
+**-N**
+    不裁剪地图边界外的矢量（默认裁剪）。
 
-    对于地理数据而言，缩放比例表示每千米所对应的数据单位。使用 ``-Si<scale>``
-    则缩放比例表示每数据单位所对应的千米数。
+.. _-Q:
 
-``-T``
-    该选项意味着笛卡尔数据的方位角会根据X和Y方向缩放比例的符号而改变。
+**-Q**\ *parameters*
+    修改矢量的属性，使用 **-Q**\ *size* 指定矢量头的大小 *size*（默认为 0 ，即仅绘制线条）。
+    更多矢量属性控制详见 :doc:`/basis/vector` 一节。
 
-``-W<pen>``
-    设置矢量轮廓的画笔属性。
+.. include:: explain_-R.rst_
 
-``-Z``
-    与 ``-A`` 选项一起使用，表明输入的theta分量数据表示方位角而不是方向信息。
+.. _-S:
+
+**-S**\ [**i**\|\ **l**]\ *scale*\ [**+c**\ [[*slon*/]\ *slat*]][**+s**\ *refsize*]
+    设置矢量长度的缩放比例 *scale* 。
+
+    对于笛卡尔数据而言，缩放比例 *scale* 即单位绘图距离所对应的实际数据的多少。
+    可以加上 **c|i|p** 以指定绘图单位，若不指定则使用 :term:`PROJ_LENGTH_UNIT` 。
+    通过绘图单位缩放转换的矢量长度将绘制为直线笛卡尔矢量，其长度不受地图投影和坐标位置的影响。
+    例如 **-S5c** 表示大小为 5 的矢量在图上为 1 cm。
+
+    对于地理数据而言，缩放比例 *scale* 表示单位地理距离（见 `距离单位`_ ）所对应的实际数据的多少。
+    矢量大小（即实际数据）被缩放到给定距离单位中的地理距离，最后投影到地球上以给出绘图距离。
+    这些是沿着大圆路径的地理矢量，它们的长度可能受到地图投影及坐标的影响。
+    例如 **-S10k** 表示大小为 10 的矢量在地图为 1 km。
+
+    - **-Si**\ *scale* - 缩放比例 *scale* 表示单位实际数据所对应的绘图距离或地理距离。
+
+    - **-Sl**\ *length* - 所有矢量拥有固定的绘图长度 *length*。
+    
+    更详细的解释见 `矢量缩放与单位的影响`_ 。
+    
+    使用 |-V| 可以报告所有绘制矢量的最小值、最大值和平均值，以及所有绘制矢量的绘制长度。
+    如果使用 :doc:`/option/l` 自动生成图例，则需要以下一到两个子选项：
+
+    - **+c**\ [[*slon*/]\ *slat*] - 控制地图上地理矢量的参考长度。笛卡尔矢量不可用该选项。
+      参考长度选择在纬度 *slat* 位置，也可指定经度 *slon* 作倾斜投影（默认为中央经线）。
+      如果使用 **+c** 但无参数，则选择地图中点的矢量长度作为参考长度。
+
+    - **+s**\ *refsize* - 使用实际数据作为矢量的参考大小。例如，选择板块运动速率 25 mm/yr
+      作为参考，使用 **+s25** ，对应 :doc:`/option/l` 指定 **-l**\ "Velocity (25 mm/yr)"。
+      如果不指定 *refsize* ，则默认为上述的 *scale* 参数。
+
+.. _-T:
+
+**-T**
+    该选项意味着笛卡尔数据的方位角会根据 X 和 Y 方向符号而改变（默认不改变）。
+    这个选项对于坐标反向时很有用，例如 **-JX5c/-2.5c** ，Y 轴向下为正，
+    只有使用 |-T| 才能正确处理矢量的方位角，见下方示例。
+
+    .. gmtplot::
+        :show-code: false
+        :width: 500 px
+        :caption: 在正向和反向的 X, Y 方向下，使用 |-T| （蓝线）和不使用 |-T| （红线）的结果。
+
+        # 脚本参考自官方测试源码 test/grdvector/cartvec.sh
+        ps=cartvec.ps
+        gmt xyz2grd -R-1/1/-2/2 -I1 -Gr.nc << EOF
+        0	0	1
+        0	-1	0.5
+        EOF
+        gmt xyz2grd -R-1/1/-2/2 -I1 -Gaz.nc << EOF
+        0	0	60
+        0	-1	-100
+        EOF
+
+        gmt grdvector r.nc az.nc -A -JX2.5i -Q0.3i+e -W3p,red -Gred -Si1i -P -K -Bafg10 -BWSne > $ps
+        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
+        gmt pstext -R -J -O -K -F+f14p+jTL+cTL+t"(c)ORIG" -Dj0.1i >> $ps
+        gmt grdvector r.nc az.nc -A -JX2.5i/-2.5i -Q0.3i+e -W3p,red -Gred -Si1i -O -K -Bafg10 -BWSne -X3.5i >> $ps
+        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
+        gmt pstext -R -J -O -K -F+f14p+jTL+cTL+t"(d)NEG Y" -Dj0.1i >> $ps
+        gmt grdvector r.nc az.nc -A -JX-2.5i/2.5i -Q0.3i+e -W3p,red -Gred -Si1i -O -K -Bafg10 -BWSne -X-3.5i -Y3i >> $ps
+        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
+        gmt pstext -R -J -O -K -F+f14p+jTL+cTL+t"(a)NEG X" -Dj0.1i >> $ps
+        gmt grdvector r.nc az.nc -A -JX-2.5i/-2.5i -Q0.3i+e -W3p,red -Gred -Si1i -O -K -Bafg10 -BWSne -X3.5i >> $ps
+        gmt grdvector r.nc az.nc -A -T -J -Q0.1i+ec -W1p,blue -Gblue -Si1i -O -K >> $ps
+        gmt pstext -R -J -O -F+f14p+jTL+cTL+t"(b)NEG X,Y" -Dj0.1i >> $ps
+
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
+
+.. _-W:
+
+**-W**\ *pen*\ [**+c**\]
+    设置矢量轮廓的画笔属性。如果加上 **+c** ，则矢量头颜色和线条由 CPT 指定 （见 |-C| ）。
+
+.. include:: explain_-XY.rst_
+
+.. _-Z:
+
+**-Z**
+    输入的 :math:`\theta` 分量数据表示方位角而不是方向信息，自动使用 |-A|。
+
+.. include:: explain_-f.rst_
+
+.. include:: explain_-l.rst_
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
+
+.. include:: explain_distunits.rst_
 
 示例
 ----
+
+.. include:: explain_example.rst_
 
 对矢量长度进行缩放，使得图上1英寸代表实际的10个数据单位::
 
@@ -81,3 +207,48 @@ X分量和Y分量，最终矢量场用不同长度和方向的箭头表示。两
 绘制地理数据，缩放比例为每个数据单位对应200 km，每隔3个网格点绘制一个矢量::
 
     gmt grdvector comp_x.nc comp_y.nc -Ix3 -JH0/20c -Q0.1i+e+jc -S200 -pdf globe
+
+矢量缩放与单位的影响
+--------------------
+
+使用 |-S| 指定矢量缩放需要仔细思考，因为看起来可能有些反直觉。如 |-S| 中所解释的，
+其指定的是每个绘图单位或地理距离单位所对应的实际数据多少。
+所选择的绘图或距离单位将影响所选择的矢量类型。通常，程序会首先计算每个节点上矢量的大小 
+:math:`r` （极坐标数据直接提取）。矢量大小可以是任何单位，
+这里假设我们的网格记录地球水平磁场的长期变化，单位为 nTesla/year，
+在某特定节点上，其值为 28 nTesla/year（在某个方向上）。
+如果你指定缩放因子 *scale* 的单位为绘图单位 **c|i|p** 则表明你选择了 **笛卡尔矢量** 。
+我们进一步假设你设置了 **-S**\ *10c* ，这表明你希望 10 nTesla/year 
+的数据对应绘制 1 cm 长度。在程序内部，模块会将该缩放因子转为绘图比例 
+1/10 = 0.1 每 nTesla/year。对于大小为 28 nTesla/year 的矢量，模块会将其乘以绘图比例，
+最终得到图上 2.8 cm 长的矢量。最终不会加入实际数据单位。
+如果我们希望在图例中绘制一条 10 nTesla/year 的参考矢量，则其绘制长度 10 x 0.1 = 1 cm ，
+因为笛卡尔矢量缩放后的长度是恒定的，不依赖于投影和矢量位置，
+即 10 nTesla/year 的矢量在图上各处均为 1 cm。
+
+让我们将这种效果与使用地理距离单位的情况进行对比，假设使用 **-S**\ *0.5k* 
+（0.5 nTesla/year 每千米），这表明你选择了 **地理矢量** 。
+在程序内部，模块会将该缩放因子转为地图比例 2 km 每 nTesta/year。
+对于大小为 28 nTesla/year 的矢量，其在地图上的长度为 28 x 2 km = 56 km。
+同样，最终不会加入实际数据单位。现在，需要将这 56 km 长的矢量投影到地球上，
+而由于地图投影产生的扭曲，56 km 长的矢量长度在绘图上将是地图投影、地图比例和矢量位置的函数。
+例如在墨卡托地图上，赤道正东 56 公里的矢量基本等于 0.5 度经度，
+但在北纬 60 度，它更像是 1 度经度。
+这种影响的结果是，当用户想要在图例中添加 10 nTesla/year 的参考向量时，
+就会面临该问题：绘制的长度通常取决于纬度，因此参考比例尺只在对应纬度附近有用。
+
+也可以使用相反的设置， **-Si**\ *scale* 。当提供 *scale* 倒数更方便时，这个变式很有用。
+对于笛卡尔矢量，我们可替换为 **-Si**\ *0.1c* 表明想绘制 0.1 cm 每 nTesta/year。
+同样的，对于地理矢量，我们也可替换为 **-Si**\ *2k* 表明想绘制 2 km 每 nTesta/year。
+随着 **-Si** 的参数变大，绘制的矢量也变长，而随着 **-S** 的参数变大，绘制的矢量变短。
+
+注意
+-----
+
+请注意，使用 |-I| 可能会导致混叠，除非网格在新的间隔上平滑变化。
+通常最好对网格进行滤波，并以更大的网格间隔重新采样，再使用这些网格而不是原始网格。
+
+相关模块
+----------
+:doc:`grdcontour`,
+:doc:`plot`
