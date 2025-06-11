@@ -126,6 +126,8 @@ nearneighbor
 
 .. include:: explain_distunits.rst_
 
+.. include:: explain_float.rst_
+
 示例
 ----
 

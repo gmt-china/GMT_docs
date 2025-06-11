@@ -59,6 +59,8 @@ grdconvert
 GMT默认只能读取并处理2D单变量网格。对于多变量、多维度网格文件，需要使用额外的语法
 指定要读取的变量或维度，详情见 :doc:`/grid/read`。
 
+.. include:: explain_float.rst_
+
 示例
 ----
 

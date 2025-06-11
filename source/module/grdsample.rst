@@ -77,6 +77,8 @@ grdsample
 
 .. include:: explain_help.rst_
 
+.. include:: explain_float.rst_
+
 注意事项
 --------
 
