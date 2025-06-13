@@ -96,6 +96,12 @@ Font #  Font Name
 `H` 表示文字水平排列，`V` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
 
+:::{note}
+6.5版本下，可能出现配置`C:\Users\用户名\.gmt\PSL_custom_fonts.txt`文件后，
+运行`gmt text -L`不显示中文字体的情况。此时需要查看是否存在`C:\Users\用户名\GMT_HOME`
+文件夹，若存在则需要配置`C:\Users\用户名\GMT_HOME\.gmt\PSL_custom_fonts.txt`文件，
+内容同上。完成后再用 `gmt text -L` 检查中文字体。
+
 ## GMT 中文测试
 
 :::{note}
