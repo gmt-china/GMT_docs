@@ -106,6 +106,8 @@ grdimage
 
 .. include:: explain_-t.rst_
 
+.. include:: explain_grdresample.rst_
+
 示例
 ----
 
