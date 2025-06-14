@@ -196,6 +196,8 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
 .. include:: explain_help.rst_
 
+.. include:: macos_preview_issue.rst_
+
 示例
 ----
 

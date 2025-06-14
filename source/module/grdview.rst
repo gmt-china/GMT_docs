@@ -113,6 +113,8 @@ grdview
         
 .. include:: explain_perspective.rst_
 
+.. include:: macos_preview_issue.rst_
+
 示例
 --------
 
