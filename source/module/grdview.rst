@@ -102,6 +102,8 @@ grdview
         
 .. include:: explain_perspective.rst_
 
+.. include:: explain_grdresample.rst_
+
 .. include:: macos_preview_issue.rst_
 
 示例
