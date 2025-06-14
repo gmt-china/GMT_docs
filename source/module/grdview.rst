@@ -59,18 +59,7 @@ grdview
 
 .. include:: use_cpt_grd.rst_
 
-.. _-I:
-
-**-I**\ [*intensfile*\|\ *intensity*\|\ *modifiers*]
-    增加光照效果
-
-    可以通过三种方式设置光照效果:
-
-    #. 给定一个Z值范围为(-1,1)的网格文件，该文件可以用 :doc:`grdgradient` 生成
-    #. 给定一个常数作为光照强度
-    #. 不指定光照强度文件，只使用 ``-I+`` 则会自动调用 :doc:`grdgradient` 
-       并使用参数 ``-A-45 -Nt1`` 计算输入网格数据的梯度作为光照强度文件。用户
-       可以使用 ``+a<azimuth>+n<args>`` 以自定义 :doc:`grdgradient` 的 **-A** 和 **-N** 选项
+.. include:: explain_intense.rst_
 
 .. _-N:
 
