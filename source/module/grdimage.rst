@@ -232,6 +232,8 @@ GMT 通过图片文件的特殊字节来自动识别图像格式。对于可能�
 GMT 会判断其属于哪种类型，并相应地进行处理。如果用户最喜欢的图像格式未被自动识别，
 那么请告知 GMT 它的特殊字节，以便添加支持。
 
+.. include:: explain_grdresample.rst_
+
 .. include:: macos_preview_issue.rst_
 
 示例
