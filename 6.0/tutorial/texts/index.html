@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>添加文字 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/tutorial/texts.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="添加图例" href="../legend/" />
+    <link rel="prev" title="绘制符号" href="../symbols/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/">GMT初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/">命令初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/">脚本编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coastline/">绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">绘制线段和多边形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">绘制符号</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">添加文字</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">最简单的示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">文字属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">文本框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">对齐方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">文本偏移量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">变化的文字属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT多图模式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">入门教程</a> &raquo;</li>
+        
+      <li>添加文字</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/tutorial/texts.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>添加文字<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT的 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块可以用于添加文字。</p>
+<div class="section" id="id2">
+<h2>最简单的示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>若需要添加文字，则输入数据中必须给出文字的X和Y坐标以及具体的文字。因而，输入数据有三列:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   text
+</pre></div>
+</div>
+<p>下面的示例首先用 <strong>basemap</strong> 模块绘制了一张底图，然后使用 <strong>text</strong> 模块在底图的不同位置添加了文字。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
+gmt text <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 1 GMT TEXT1</span>
+<span class="s">5 3 GMT TEXT2</span>
+<span class="s">5 5 GMT TEXT3</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/texts-gmtplot-0.png"><img alt="../../_images/texts-gmtplot-0.png" src="../../_images/texts-gmtplot-0.png" style="width: 60%;" /></a>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>文字属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>当然，我们可以为文字设置更丰富的属性，比如文字大小、字体、文字颜色以及文字旋转角度等。这可以通过 <strong>-F</strong> 选项来实现。</p>
+<p><strong>-F+f</strong><em>font</em> 可以设置文字的属性，包括文字大小、字体和颜色，三者之间用逗号分隔。
+<strong>-F+a</strong> 则可以设置文字的旋转角度。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">GMT默认支持35种字体，可以使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span> <span class="pre">-L</span></code> 查看GMT支持的字体名及其对应的字体编号。</p>
+</div>
+<p>下面的示例中，<strong>-F+f16p,1,red+a30</strong> 即表示文字大小为16p，字体为1号字体，颜色为红色，文字旋转角度为30度。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
+gmt text -F+f16p,1,red+a30 <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 1 GMT TEXT1</span>
+<span class="s">5 3 GMT TEXT2</span>
+<span class="s">5 5 GMT TEXT3</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/texts-gmtplot-1.png"><img alt="../../_images/texts-gmtplot-1.png" src="../../_images/texts-gmtplot-1.png" style="width: 60%;" /></a>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>文本框<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>对于每个文本字符串，我们还可以为其加上文本框。</p>
+<ul class="simple">
+<li><strong>-W</strong> 选项控制文本框的画笔属性</li>
+<li><strong>-G</strong> 选项控制文本框的填充色</li>
+<li><strong>-C</strong> 选项控制文字与文本框之间的空白</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
+gmt text -F+f16p,1,red+a30 -W1p -Glightblue -C25%/25% <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 1 GMT TEXT1</span>
+<span class="s">5 3 GMT TEXT2</span>
+<span class="s">5 5 GMT TEXT3</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/texts-gmtplot-2.png"><img alt="../../_images/texts-gmtplot-2.png" src="../../_images/texts-gmtplot-2.png" style="width: 60%;" /></a>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>对齐方式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>对于任意一个文本，我们还可以设置其对齐方式与偏移量。GMT中文本的默认对齐方式为居中对齐，即将整个文本的中心放在指定的X和Y坐标处。当然，用户也可以自行指定文本的对齐方式。</p>
+<p>文本的对齐方式由水平对齐方式和垂直对齐方式共同决定。水平对齐方式有三种：左对齐（<strong>L</strong>eft）、居中对齐（<strong>C</strong>enter）和右对齐（<strong>R</strong>ight）。垂直对齐方式有三种：顶部对齐（<strong>T</strong>op）、居中对齐（<strong>M</strong>iddle）和底部对齐（<strong>B</strong>ottom）。三种水平对齐方式和三种垂直对齐方式，构成了文本的9种对齐方式。</p>
+<p><strong>-F+j</strong> 用于指定文本对齐方式。下面的示例中，<strong>-F+jTL</strong> 表示文本对齐方式为 <strong>TL</strong>（Top + Left），即表示以左上角方式对齐。从下图中可以看到，三个文本框的左上角被放在了(5,1)、(5,3)和(5,5) 处。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
+gmt text -F+f16p,1,red+jTL -W1p <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 1 GMT TEXT1</span>
+<span class="s">5 3 GMT TEXT2</span>
+<span class="s">5 5 GMT TEXT3</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/texts-gmtplot-3.png"><img alt="../../_images/texts-gmtplot-3.png" src="../../_images/texts-gmtplot-3.png" style="width: 60%;" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>文本偏移量<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>使用 <strong>-D</strong> 选项还可以对文本设置额外的偏移量。下面的示例中，
+<strong>-D0.5c/0.5c</strong> 分别设置了文本在X方向和Y方向的偏移量。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
+gmt text -F+f16p,1,red+jTL -D0.5c/0.5c -W1p <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 1 GMT TEXT1</span>
+<span class="s">5 3 GMT TEXT2</span>
+<span class="s">5 5 GMT TEXT3</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/texts-gmtplot-4.png"><img alt="../../_images/texts-gmtplot-4.png" src="../../_images/texts-gmtplot-4.png" style="width: 60%;" /></a>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>变化的文字属性<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>如果想要不同的文字有不同的文本属性，可以多次调用 <strong>text</strong> 模块，每次设置不同的文本属性。当然，还有更加灵活的办法，可以一个命令中实现变化的文字属性。</p>
+<p>下面的例子中，使用了 <strong>-F+f+a+j</strong> 选项。上面已经介绍到，<strong>+f</strong> 设置文本属性，
+<strong>+a</strong> 设置文本旋转角度，<strong>+j</strong> 设置文本对齐方式。但我们并没有指定具体的属性值，因而需要在输入数据中增加额外的数据列。输入数据的格式由 <strong>+f</strong>、<strong>+a</strong>和
+<strong>+j</strong> 的顺序决定，因而此时输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   font    angle   justification   text
+</pre></div>
+</div>
+<p>下面的示例中，第三列为字体属性，第四列为文本旋转角度，第五列为文本对齐方式。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+gmt basemap -R0/10/0/6 -JX10c/6c -Bafg1 -BWSen
+gmt text -F+f+a+j -W1p -Glightblue <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 1 12p,0,red       0   TL GMT TEXT1</span>
+<span class="s">5 3 15p,1,blue      30  MC GMT TEXT2</span>
+<span class="s">5 5 18p,2,yellow    180 TL GMT TEXT3</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/texts-gmtplot-5.png"><img alt="../../_images/texts-gmtplot-5.png" src="../../_images/texts-gmtplot-5.png" style="width: 60%;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../legend/" class="btn btn-neutral float-right" title="添加图例" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../symbols/" class="btn btn-neutral float-left" title="绘制符号" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
