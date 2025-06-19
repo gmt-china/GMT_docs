@@ -65,7 +65,7 @@ GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
 
 ### GraphicsMagick
 
-GMT 的 {doc}`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
+GMT 的 {doc}`/module/movie` 模块在制作 GIF 格式的动画时需要使用
 [GraphicsMagick](http://www.graphicsmagick.org/)。
 如有制作 GIF 动画的需求，则可以安装这个软件，并将其 {file}`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 `gm` 命令。

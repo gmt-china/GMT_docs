@@ -90,6 +90,7 @@
     - :doc:`mapproject`
     - :doc:`mask`
     - :doc:`meca`
+    - :doc:`movie`
     - :doc:`nearneighbor`
     - :doc:`plot`
     - :doc:`plot3d`
@@ -161,7 +162,6 @@
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdmix`
     - :doc:`gmt:greenspline`
-    - :doc:`gmt:movie`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -246,7 +246,7 @@
 :doc:`grdimage`                                  在图上绘制网格数据
 :doc:`grdcontour`                                根据网格文件绘制等值线
 :doc:`grdview`                                   利用网格文件绘制 3D 视角图或表面网格图
-:doc:`gmt:movie`                                 制作动画
+:doc:`movie`                                     制作动画
 **1D 数据处理**                                  .. _module_1D_data_processing:
 :doc:`makecpt`                                   生成 CPT 文件
 :doc:`gmtselect`                                 根据多个准则筛选数据
@@ -482,6 +482,7 @@
    mapproject
    mask
    meca
+   movie
    nearneighbor
    plot
    plot3d

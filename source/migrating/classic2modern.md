@@ -66,7 +66,7 @@ gmt end show
 
 - {doc}`/module/subplot` 模块：极大简化了多子图的绘制
 - {doc}`/module/inset` 模块：极大简化了图中图的绘制
-- {doc}`gmt:movie` 模块：极大简化了动画的制作
+- {doc}`/module/movie` 模块：极大简化了动画的制作
 - {doc}`/option/l`：极大简化了图例的设置与绘制
 - 提供了{doc}`当前 CPT </cpt/current-cpt>` 的功能，多数情况下无须将 CPT 写到文件中
 
