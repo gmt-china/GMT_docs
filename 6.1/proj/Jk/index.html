@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>-Jk：Eckert投影 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-Jl：Lambert圆锥保角投影" href="../Jl/" />
+    <link rel="prev" title="-Jj：Miller圆柱投影" href="../Jj/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地图投影</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Jx/">-Jx：笛卡尔变换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jp/">-Jp：极坐标线性投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ja/">-Ja：Lambert方位等面积投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">-Jb：Albers圆锥等面积投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jc/">-Jc：Cassini圆柱投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">-Jcyl_stere：圆柱立体投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">-Jd：等距圆锥投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">-Je：方位等距投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">-Jf：球心方位投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">-Jg：正交投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">-Jh：等面积Hammer投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">-Ji：正弦曲线投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">-Jj：Miller圆柱投影</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-Jk：Eckert投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jl/">-Jl：Lambert圆锥保角投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">-Jm：Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">-Jn：Robinson投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">-Jo：倾斜Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">-Jpoly：多圆锥投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">-Jq：圆柱等距投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">-Jr：Winkel Tripel投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">-Js：立体等角投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">-Jt：横向Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">-Ju：通用横向Mercator(UTM)投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">-Jv：Van der Grinten投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">-Jw：Mollweide投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">-Jy：圆柱等面积投影</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">地图投影</a> &raquo;</li>
+        
+      <li>-Jk：Eckert投影</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/proj/Jk.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jk-eckert">
+<h1>-Jk：Eckert投影<a class="headerlink" href="#jk-eckert" title="永久链接至标题">¶</a></h1>
+<p>维基链接：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Eckert_IV_projection">https://en.wikipedia.org/wiki/Eckert_IV_projection</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Eckert_VI_projection">https://en.wikipedia.org/wiki/Eckert_VI_projection</a></p></li>
+</ul>
+<p>Eckert IV和VI投影由Max Eckert-Greiffendorff于1906年提出，是伪圆柱等面积投影。中心经线以及所有的纬线都是直线，其余经线是等间隔分布的椭圆弧（IV）或正弦曲线（VI）。比例尺在纬线40°30’（IV）和49°16’（VI）是真实的。<strong>-JKf</strong>（f代表four）表示使用Eckert IV投影，<strong>-JKs</strong>（s代表six）表示使用Eckert VI投影。若不指定 <strong>f</strong> 或 <strong>s</strong>，则默认使用Eckert VI投影。</p>
+<p>该选项的参数为:</p>
+<p><strong>-JK</strong>[<strong>f</strong>|<strong>s</strong>][<em>lon</em>/]<em>width</em>
+或
+<strong>-Jk</strong>[<strong>f</strong>|<strong>s</strong>][<em>lon</em>/]<em>scale</em></p>
+<ul class="simple">
+<li><p><em>lon</em> 为中心经度 [默认为地图区域的中心]</p></li>
+<li><p><em>width</em> 地图宽度</p></li>
+<li><p><em>scale</em> 地图比例尺，即每度在图上的长度或 1:<em>xxxx</em> （图上1厘米对应真实地球 <em>xxxx</em> 厘米）</p></li>
+</ul>
+<p>Eckert IV示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JKf12c -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -png GMT_eckert4
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/Jk-gmtplot-0.png"><img alt="../../_images/Jk-gmtplot-0.png" src="../../_images/Jk-gmtplot-0.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-text">Eckert IV投影绘制全球图</span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
+</div>
+<p>Eckert VI示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JKs12c -Bg -Dc -A10000 -Wthinnest -Givory -Sbisque3 -png GMT_eckert4
+</pre></div>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/Jk-gmtplot-1.png"><img alt="../../_images/Jk-gmtplot-1.png" src="../../_images/Jk-gmtplot-1.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-text">Eckert VI投影绘制全球图</span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../Jl/" class="btn btn-neutral float-right" title="-Jl：Lambert圆锥保角投影" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../Jj/" class="btn btn-neutral float-left" title="-Jj：Miller圆柱投影" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
