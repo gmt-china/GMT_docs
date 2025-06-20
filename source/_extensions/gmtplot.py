@@ -155,13 +155,13 @@ def _search_images(cwd):
     """
     cwd = Path(cwd)
     png_images = list(cwd.glob("*.png"))
-    pdf_images = list(cwd.glob("*.pdf"))
     ps_images = list(cwd.glob("*.ps"))
     gif_images = list(cwd.glob("*.gif"))
 
     if len(png_images) > 1:
         raise ValueError("More than one figure generated in one GMT plot.")
     elif len(png_images) == 1:
+        pdf_images = list(cwd.glob("*.pdf"))
         if len(pdf_images) == 1:
             return [png_images[0], pdf_images[0]]
         else:
