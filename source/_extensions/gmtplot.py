@@ -155,32 +155,42 @@ def _search_images(cwd):
     """
     cwd = Path(cwd)
     png_images = list(cwd.glob("*.png"))
+    pdf_images = list(cwd.glob("*.pdf"))
+    ps_images = list(cwd.glob("*.ps"))
+    gif_images = list(cwd.glob("*.gif"))
 
     if len(png_images) > 1:
         raise ValueError("More than one figure generated in one GMT plot.")
     elif len(png_images) == 1:
-        pdf_images = list(cwd.glob("*.pdf"))
         if len(pdf_images) == 1:
             return [png_images[0], pdf_images[0]]
         else:
             return [png_images[0]]
-    else:  # no PNG found
-        ps_images = list(cwd.glob("*.ps"))
-        if len(ps_images) > 1:
-            raise ValueError("More than one figure generated in one GMT plot.")
-        elif len(ps_images) == 1:  # PS found
-            cmd = "gmt psconvert -A -P -T{} {}"
-            subprocess.run(cmd.format("g", ps_images[0]), shell=True, check=False)
-            subprocess.run(cmd.format("f", ps_images[0]), shell=True, check=False)
-            png_images = list(cwd.glob("*.png"))
-            pdf_images = list(cwd.glob("*.pdf"))
+    
+    # no PNG found, try to found PS
+    elif len(ps_images) > 1:  
+        raise ValueError("More than one figure generated in one GMT plot.")
+    elif len(ps_images) == 1:  # PS found
+        cmd = "gmt psconvert -A -P -T{} {}"
+        subprocess.run(cmd.format("g", ps_images[0]), shell=True, check=False)
+        subprocess.run(cmd.format("f", ps_images[0]), shell=True, check=False)
+        png_images = list(cwd.glob("*.png"))
+        pdf_images = list(cwd.glob("*.pdf"))
 
-            if len(png_images) == 1 and len(pdf_images) == 1:
-                return [png_images[0], pdf_images[0]]
-            else:
-                return []
-        else:  # No PNG and PS found
+        if len(png_images) == 1 and len(pdf_images) == 1:
+            return [png_images[0], pdf_images[0]]
+        else:
             return []
+    
+    # try to found GIF
+    elif len(gif_images) > 1:  
+        raise ValueError("More than one figure generated in one GMT plot.")
+    elif len(gif_images) == 1:
+        return [gif_images[0]]
+    
+    # Nothing valid found
+    else:  
+        return []
 
 
 def eval_bash(code, code_dir, output_dir, output_base, config=None):
