@@ -23,11 +23,8 @@ gmt begin
     echo \${MOVIE_COL0} \${MOVIE_COL1} | gmt plot -Sc0.1i -Gred 
     echo 0 1.6 a = \${MOVIE_COL0} | gmt text -F+f14p,2+jTL -N -Dj0.1i/0.1i
 
-    # echo \$MOVIE_FRAME \$MOVIE_ITEM \$MOVIE_NAME 
 gmt end
 EOF
 
-
 # 调用 movie 模块
-# gmt movie main.sh -Sbpre.sh -C12cx7cx100 -Tsin_point -Z -Nanim -D5 -Fgif+l
-gmt movie main.sh -Sbpre.sh -C1200x700x100+c -Tsin_point -Z -Nanim -D5 -Fgif+l
+gmt movie main.sh -Sbpre.sh -C12cx7cx100 -Tsin_point -Z -Nanim -D5 -Fgif+l
