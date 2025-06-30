@@ -49,6 +49,12 @@ movie
 并可选择组合成动画（这最后一步需要外部工具，这些工具必须存在于用户的路径中；
 请参阅下面的 `技术细节`_ ）。用户可以根据需要添加片头、淡入淡出效果、标签和进度指示器。
 
+:download:`Source Code <https://dengda98.github.io/zh/posts/tech/gmt_movie/movie_ex01.sh>`
+
+.. figure:: https://dengda98.github.io/zh/posts/tech/gmt_movie/anim01.gif
+    :width: 500 px
+    :align: center
+
 必选选项
 --------
 
@@ -70,9 +76,11 @@ movie
     + 使用专有名称指定预设格式（见下方表格 :ref:`Presets <tbl-presets>` 第一列的名称）。
     
     + 用户可指定自定义布局 *width*\ **x**\ *height*\ **x**\ *dpu* ，
-      其中像素密度 *dpu* （dots-per-unit）为每单位大小内的像素点数
-      （在预设格式中像素密度会自动计算）。也可以在后面加上 **+c** 或
-      **+i** 指定 *dpu* 的单位大小为每厘米 (cm) 或每英寸 (inches) 。
+      其中画布宽度 *width* 和画布高度 *height* 后可接单位 **c|i** ，
+      像素密度 *dpu* （dots-per-unit）为每单位大小内的像素点数
+      （在预设格式中像素密度会自动计算）。
+      *width* 和 *height* 也可以指定为像素级宽度和长度，此时需在 *dpu* 后面加上 **+c** 或
+      **+i** 以表明 *dpu* 的单位大小为每厘米 (cm) 或每英寸 (inches) 。
 
     **注：** 用户设定的 :term:`PROJ_LENGTH_UNIT` 将决定 **movie** 模块使用 SI 或 US 单位。
 
@@ -663,6 +671,12 @@ GMT 建议用户参考这篇有用的
 再使用 **movie** 模块生成 GIF 动图::
 
     gmt movie globe.sh -Nglobe -T360 -Fgif -C6ix6ix100 -Lf -P
+
+:download:`Source Code <https://dengda98.github.io/zh/posts/tech/gmt_movie/movie_ex02.sh>`
+
+.. figure:: https://dengda98.github.io/zh/posts/tech/gmt_movie/globe.gif
+    :width: 500 px
+    :align: center
 
 在执行过程结束时，用户会发现了 GIF 文件 *globel.gif* 以及一个目录 *glob* ，
 其中包含了全部 360 张 PNG 图片。请注意， *globe.sh* 脚本中没有包含任何反映图表名称、
