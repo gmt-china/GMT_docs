@@ -6,7 +6,7 @@
 **MAP_FRAME_TYPE**
     底图边框类型 [**fancy**]
 
-    可选值包括 **inside**|**plain**|**graph**|**fancy**|**fancy+**。
+    可选值包括 **inside**|**plain**|**graph**|**graph-origin**|**fancy**|**fancy+**。
 
     - 通常，地理投影默认使用 **fancy** 边框类型，而笛卡尔投影则默认使用 **plain** 边框类型。
       但某些地理投影比较特殊，只能使用 plain 边框类型。
