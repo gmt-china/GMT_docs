@@ -6,11 +6,20 @@
 **MAP_FRAME_TYPE**
     底图边框类型 [**fancy**]
 
-    可选值包括 **inside**|**plain**|**graph**|**graph-origin**|**fancy**|**fancy+**。
+    可选值包括 **inside**|**plain**|**graph**|**graph-origin**|**fancy**|**fancy+**|**fancy-rounded**。
 
     - 通常，地理投影默认使用 **fancy** 边框类型，而笛卡尔投影则默认使用 **plain** 边框类型。
-      但某些地理投影比较特殊，只能使用 plain 边框类型。
-    - **fancy+** 相对于 **fancy** 的区别在于，边框的拐角为圆角
+      但某些地理投影比较特殊，例如倾斜墨卡托投影（Oblique Mercator），只能使用 **plain** 边框类型。
+    - 对于所有边界刻度和标注必须在地图内部的情况（例如，准备输出GeoTIFF），使用 **inside**。
+    - **fancy+** 相对于 **fancy** 的区别在于，边框的拐角为圆角。与 **fancy-rounded** 效果一致。
+    - 对于 **graph** 类型，默认箭头的顶端超过坐标轴顶点 7.5%。可以通过使用
+    **graph,**_length_[%] 的方式指定超过的长度(**c|i|p**)或百分比(**%**)。
+    坐标轴的宽度由 {term}`MAP_FRAME_WIDTH` 决定，箭头的长度和宽度则分别是该宽度的 10 倍
+    和 5 倍。箭头的形状还可以由 {term}`MAP_VECTOR_SHAPE` 控制。
+    - **graph-origin** 类型在 **graph** 类型基础上将 **W** 轴 和 **S** 轴移动到数据原点[0/0]。
+    在该类型下，仅可选择 **W** 和 **S** 轴（或 **w,s,l,b** 轴），而忽略 **E** 和 **N** 轴（或 **e,n,r,t** 轴）。
+    轴交点处不作刻度标注。可使用 **+o**_xorig/yorig_ 自定义数据原点作为轴交点，
+    或者简写为 **+oc** 选择当前数据范围的中点。
 
     下图给出了不同的底图边框类型的效果：
 
@@ -19,11 +28,6 @@
        :show-code: false
        :caption: GMT底图边框类型
     ```
-
-    对于 **graph** 类型，默认箭头的顶端超过坐标轴顶点7.5%。可以通过使用
-    **graph,**_length_[%] 的方式指定超过的长度或百分比。坐标轴的宽度
-    由 {term}`MAP_FRAME_WIDTH` 决定，箭头的长度和宽度则分别是该宽度的10倍
-    和5倍。箭头的形状还可以由 {term}`MAP_VECTOR_SHAPE` 控制。
 
 **MAP_FRAME_PEN**
     底图为笛卡尔坐标系或边框类型为 **plain** 的地理坐标系时，边框的画笔属性 \[**thicker,black**\]
