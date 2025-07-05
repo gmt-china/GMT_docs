@@ -37,7 +37,7 @@
 
 :::{glossary}
 **GMT_TRIANGULATE**
-    设置 {doc}`/module/triangulate` 模块中算法代码的来源 \[**Shewchuk**\]
+    设置 {doc}`/module/triangulate` 模块中算法代码的来源 [**Shewchuk**]
 
     {doc}`/module/triangulate` 模块的核心源码有两个版本，
     Watson 的版本遵循GPL，Shewchuk 的版本不遵循GPL。
@@ -148,7 +148,7 @@
 
 **GMT_GRAPHICS_DPU**
     在不指定分辨率的情况下请求远程网格数据集时（例如，*@earth_relief*），图像的默认dpu
-    （dots-per-unit，每单位大小中的像素点数），后跟 "i" 表示为 dpi， "c" 表示 dpc。 \[**300i**\]
+    （dots-per-unit，每单位大小中的像素点数），后跟 "i" 表示为 dpi， "c" 表示 dpc。[**300i**]
 
 **GMT_GRAPHICS_FORMAT**
     现代模式下默认的图片文件格式 \[pdf\]
