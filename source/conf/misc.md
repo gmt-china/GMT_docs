@@ -37,9 +37,9 @@
 
 :::{glossary}
 **GMT_TRIANGULATE**
-    设置 {doc}`gmt:triangulate` 模块中算法代码的来源 \[Watson\]
+    设置 {doc}`/module/triangulate` 模块中算法代码的来源 [**Shewchuk**]
 
-    {doc}`gmt:triangulate` 模块的核心源码有两个版本，
+    {doc}`/module/triangulate` 模块的核心源码有两个版本，
     Watson 的版本遵循GPL，Shewchuk 的版本不遵循GPL。
     该选项用于控制要使用哪个版本，Shewchuk 版本拥有更多功能。
 
@@ -146,10 +146,14 @@
     - **readonly** 只能读不能写
     - **false** 不显示历史文件
 
+**GMT_GRAPHICS_DPU**
+    在不指定分辨率的情况下请求远程网格数据集时（例如，*@earth_relief*），图像的默认dpu
+    （dots-per-unit，每单位大小中的像素点数），后跟 "i" 表示为 dpi， "c" 表示 dpc。[**300i**]
+
 **GMT_GRAPHICS_FORMAT**
     现代模式下默认的图片文件格式 \[pdf\]
 
-**GMT_MAX_CORE**
+**GMT_MAX_CORES**
     多进程并行程序所最多能使用的核数 \[0\]
 
     默认值0表示尽可能使用所有核

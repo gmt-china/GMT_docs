@@ -32,6 +32,9 @@
 **FONT_TITLE**
     图上方标题的字体 \[**24p,Helvetica,black**\]
 
+**FONT_SUBTITLE**
+    图上方副标题的字体 [**18p,Helvetica,black**]
+
 **FONT_TAG**
     子图模式下每个子图编号（如 `a)`、`ii)` 等）的字体 \[**20p,Helvetica,black**\]
 :::
