@@ -1,7 +1,7 @@
 .. index:: ! triangulate
 .. include:: common_SYN_OPTs.rst_
 
-triangiulate
+triangulate
 ============
 
 :官方文档: :doc:`gmt:triangulate`
