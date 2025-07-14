@@ -29,6 +29,7 @@
     - :doc:`dimfilter`
     - :doc:`docs`
     - :doc:`end`
+    - :doc:`events`
     - :doc:`figure`
     - :doc:`filter1d`
     - :doc:`fitcircle`
@@ -156,7 +157,6 @@
     :columns: 4
 
     - :doc:`gmt:batch`
-    - :doc:`gmt:events`
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdhisteq`
@@ -230,7 +230,7 @@
 :doc:`legend`                                    绘制图例
 :doc:`histogram`                                 统计并绘制直方图
 :doc:`rose`                                      绘制极坐标下的直方图（sector 图、rose 图或 windrose 图）
-:doc:`gmt:events`                                绘制特定时刻的事件符号和标签信息
+:doc:`events`                                    绘制特定时刻的事件符号和标签信息
 :doc:`image`                                     将 EPS 或光栅图片放在图上
 :doc:`solar`                                     计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 :doc:`clip`                                      打开或关闭多边形裁剪路径
@@ -418,6 +418,7 @@
    dimfilter
    docs
    end
+   events
    figure
    filter1d
    fitcircle

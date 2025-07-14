@@ -422,7 +422,7 @@ movie
 #. 用户有一个数据表格 *timefile* ，其中包含了每条记录的绝对时间。
    用户希望随着时间的推移来展示这些记录，但不显示未来发生的记录。
    此效果可通过设置 :doc:`/option/q` 来选择输入行，
-   或使用 :doc:`gmt:events` 模块来实现。
+   或使用 :doc:`events` 模块来实现。
 #. 用户有一个三维网格（或者是一系列二维网格的堆叠）并且想要沿着垂直轴进行插值
    （例如深度轴）。在这种情况下，用户将使用 :doc:`grdinterpolate` 模块，
    让主脚本获取对应于正确动画时刻的切片（这可能是两个不同深度之间的插值），
@@ -710,5 +710,5 @@ Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024). The Generic Mapping Tools 
 :doc:`gmtmath`,
 :doc:`grdinterpolate`,
 :doc:`grdmath`,
-:doc:`gmt:events`
+:doc:`events`
 
