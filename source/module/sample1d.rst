@@ -218,5 +218,5 @@ sample1d
 相关模块
 --------
 
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`filter1d`

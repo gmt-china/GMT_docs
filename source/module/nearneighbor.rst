@@ -152,10 +152,10 @@ nearneighbor
 相关模块
 --------
 
-:doc:`gmt:blockmean`,
-:doc:`gmt:blockmedian`,
-:doc:`gmt:blockmode`,
-:doc:`gmt:greenspline`,
+:doc:`blockmean`,
+:doc:`blockmedian`,
+:doc:`blockmode`,
+:doc:`greenspline`,
 :doc:`sphtriangulate`,
 :doc:`surface`,
 :doc:`triangulate`

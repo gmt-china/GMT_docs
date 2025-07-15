@@ -13,10 +13,10 @@ xyz2grd
 
 注意，该模块只是将已存在的数据转换为网格数据，并不具备网格化/插值功能。
 若需要网格化功能，可以使用模块
-:doc:`gmt:surface`、
-:doc:`gmt:greenspline`、
-:doc:`gmt:nearneighbor`
-或 :doc:`gmt:triangulate`。
+:doc:`surface`、
+:doc:`greenspline`、
+:doc:`nearneighbor`
+或 :doc:`triangulate`。
 
 语法
 ----
@@ -184,7 +184,7 @@ xyz2grd
 :doc:`grd2xyz`,
 :doc:`grdedit`,
 :doc:`grdconvert`,
-:doc:`gmt:greenspline`,
-:doc:`gmt:nearneighbor`,
-:doc:`gmt:surface`,
-:doc:`gmt:triangulate`
+:doc:`greenspline`,
+:doc:`nearneighbor`,
+:doc:`surface`,
+:doc:`triangulate`
