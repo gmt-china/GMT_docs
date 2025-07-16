@@ -79,6 +79,7 @@
     - :doc:`grdvolume`
     - :doc:`grdvs30`
     - :doc:`grdshake`
+    - :doc:`greenspline`
     - :doc:`gshhg`
     - :doc:`histogram`
     - :doc:`image`
@@ -161,7 +162,6 @@
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdmix`
-    - :doc:`gmt:greenspline`
     - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -298,7 +298,7 @@
 :doc:`triangulate`                               对表数据做三角剖分、Voronoi 图计算和网格化
 :doc:`nearneighbor`                              使用 "Nearest neighbor" 算法对数据进行网格化
 :doc:`trend2d`                                   二维数据的多项式拟合
-:doc:`gmt:greenspline`                           使用格林函数样条进行插值
+:doc:`greenspline`                           使用格林函数样条进行插值
 :doc:`sph2grd`                                   根据球谐系数计算网格
 :doc:`sphdistance`                               计算球面上的 Voronoi 距离、节点或自然最邻近网格
 :doc:`sphinterpolate`                            球面数据的网格化
@@ -471,6 +471,7 @@
    grdview
    grdvolume
    grdvs30
+   greenspline
    gshhg
    histogram
    image

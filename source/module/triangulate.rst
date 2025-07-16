@@ -201,7 +201,7 @@ algorithms, *Photogrammetric Eng. & Remote Sensing*, **70** (8), 957-962.
 相关模块
 --------
 
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`contour`,
 :doc:`sphdistance`,
