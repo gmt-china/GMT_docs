@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>earth_mask: 地球掩膜数据 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="GADM: 全球行政区划数据库" href="../gadm/" />
+    <link rel="prev" title="earth_day 和 earth_night: 地球昼夜卫星影像" href="../earth-images/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../usage/">使用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../#gmt">GMT 内置数据</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../#id2">GMT 远程数据</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../earth-relief/">earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../earth-age/">earth_age: 地球洋壳年龄数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../earth-images/">earth_day 和 earth_night: 地球昼夜卫星影像</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">earth_mask: 地球掩膜数据</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">数据介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">使用方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">技术细节</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../#id3">自定义数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">地学数据集</a> &raquo;</li>
+      <li>earth_mask: 地球掩膜数据</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/dataset/earth-mask.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="earth-mask">
+<h1>earth_mask: 地球掩膜数据<a class="headerlink" href="#earth-mask" title="永久链接至标题"></a></h1>
+<p><a class="reference download internal" download="" href="../../_downloads/a72526f7fe21c1fb94faef8d4b57ecac/earth-mask-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/earth-mask-gmtplot-0.png"><img alt="../../_images/earth-mask-gmtplot-0.png" src="../../_images/earth-mask-gmtplot-0.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">地球掩膜数据</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h2>数据介绍<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>地球掩膜数据指明了地表的水陆地理特征。该网格数据的Z值只有5个值。这5个值从0到4依次指代海洋（ocean）、陆地（land）、湖泊（lake）、湖中岛（island-in-lake）和岛中湖（pond-in-island-in-lake）。</p>
+<p>该数据的主要作用是对网格数据进行掩膜操作，以孤立出仅位于陆地或海洋的数据。该掩膜数据可以用 <strong>grdlandmask</strong> 模块生成，但对于高分辨率、全精度
+GSHHG数据而言，这一过程通常非常耗时。因而GMT官方提供了计算好的掩膜数据供用户使用。该数据也分不同的分辨率，从15弧秒到1弧度不等。</p>
+<p>下表列出了GMT提供的地球掩膜数据 <strong>earth_mask</strong> 的代码、配准方式、分辨率以及文件大小。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>代码</p></th>
+<th class="head"><p>配准方式</p></th>
+<th class="head"><p>分辨率</p></th>
+<th class="head"><p>大小</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>01d</p></td>
+<td><p>g,p</p></td>
+<td><p>1 弧度</p></td>
+<td><p>20 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>30m</p></td>
+<td><p>g,p</p></td>
+<td><p>30 弧分</p></td>
+<td><p>24 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>20m</p></td>
+<td><p>g,p</p></td>
+<td><p>20 弧分</p></td>
+<td><p>30 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>15m</p></td>
+<td><p>g,p</p></td>
+<td><p>15 弧分</p></td>
+<td><p>35 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>10m</p></td>
+<td><p>g,p</p></td>
+<td><p>10 弧分</p></td>
+<td><p>57 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>06m</p></td>
+<td><p>g,p</p></td>
+<td><p>6 弧分</p></td>
+<td><p>106 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>05m</p></td>
+<td><p>g,p</p></td>
+<td><p>5 弧分</p></td>
+<td><p>117 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>04m</p></td>
+<td><p>g,p</p></td>
+<td><p>4 弧分</p></td>
+<td><p>149 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>03m</p></td>
+<td><p>g,p</p></td>
+<td><p>3 弧分</p></td>
+<td><p>209 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>02m</p></td>
+<td><p>g,p</p></td>
+<td><p>2 弧分</p></td>
+<td><p>393 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>01m</p></td>
+<td><p>g,p</p></td>
+<td><p>1 弧分</p></td>
+<td><p>998 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>30s</p></td>
+<td><p>g,p</p></td>
+<td><p>30 弧秒</p></td>
+<td><p>2.6 MB</p></td>
+</tr>
+<tr class="row-even"><td><p>15s</p></td>
+<td><p>g,p</p></td>
+<td><p>15 弧秒</p></td>
+<td><p>7.5 MB</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>代码中 <strong>d</strong>、<strong>m</strong>和 <strong>s</strong> 表示弧度、弧分和弧秒</p></li>
+<li><p>配准方式中 <strong>g</strong> 和 <strong>p</strong> 分别表示网格线配准和像素配准</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>使用方法<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>当需要使用地球掩膜数据时，可以通过 <strong>&#64;earth_mask_</strong><em>rru</em>[_<em>reg</em>] 的形式调用。其中 <em>rru</em> 是网格文件的分辨率代码（上表第一列），<em>reg</em> 是要使用的配准方式代码（上表第二列）。配准方式代码是可选的，若不指定，则默认返回像素配准的网格数据。如果命令中使用了 <strong>-R</strong> 选项，则只会读取该区域内的掩膜数据。</p>
+<p>查看30弧分的地球掩膜数据的信息:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @earth_mask_30m
+</pre></div>
+</div>
+<p>如果用户希望仅仅获得海洋或者水陆的掩膜，需要使用 <strong>grdmath</strong> 模块对掩膜数据进行调整。下面给出一些例子。</p>
+<p>利用 <strong>grdmath</strong> 将掩膜数据 <strong>earth_mask_01m_g</strong> 中大于（GT）0 的为 1, 其余为 0。这就意味着海洋部分改为0，其余均为1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath @earth_mask_01m_g <span class="m">0</span> <span class="nv">GT</span> <span class="o">=</span> ocean_land.grd
+</pre></div>
+</div>
+<p>生成一个像素配准的掩膜数据，其陆地上为NaN，海洋中为1，可以用:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath @earth_mask_01m_p <span class="m">0</span> LE <span class="m">0</span> <span class="nv">NAN</span> <span class="o">=</span> land_NaN.grd
+</pre></div>
+</div>
+<p>生成一个像素配准的掩膜数据，其湖泊中值为1，其余地方均为NaN:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath @earth_mask_01m <span class="m">2</span> EQ <span class="m">0</span> <span class="nv">NAN</span> <span class="o">=</span> lakes_and_NaN.grd
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>技术细节<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>数据会自动下载并保存到 <strong>~/.gmt/server/earth/earth_mask</strong> 目录下</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../earth-images/" class="btn btn-neutral float-left" title="earth_day 和 earth_night: 地球昼夜卫星影像" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../gadm/" class="btn btn-neutral float-right" title="GADM: 全球行政区划数据库" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
