@@ -13,7 +13,17 @@ Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字�
 $ mkdir -p ~/.gmt/winfonts
 ```
 
-从 Windows 的系统字体目录（通常是 `C:\Windows\Fonts` ）中，找到以下四种基本字体的字体文件：宋体(`simsun.ttc`)、仿宋(`simfang.ttf`)、黑体(`simhei.ttf`)和楷体(`simkai.ttf`)并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
+下载以下四种基本字体的字体文件：
+
+- 宋体([simsun.ttc](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simsun.ttc))
+ 
+- 仿宋([simfang.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simfang.ttf))
+
+- 黑体([simhei.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simhei.ttf))
+  
+- 楷体([simkai.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simhei.ttf))
+
+并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
 
 在 `~/.gmt` 目录下创建字体配置文件 `cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
 
