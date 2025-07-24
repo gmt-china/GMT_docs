@@ -21,7 +21,7 @@ $ mkdir -p ~/.gmt/winfonts
 
 - 黑体([simhei.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simhei.ttf))
   
-- 楷体([simkai.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simhei.ttf))
+- 楷体([simkai.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simkai.ttf))
 
 并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
 
