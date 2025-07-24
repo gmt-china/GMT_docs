@@ -25,6 +25,8 @@ $ mkdir -p ~/.gmt/winfonts
 
 并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
 
+用户也可以从 Windows 的系统字体目录（通常是 `C:\Windows\Fonts` ）中，找到这四种基本字体的字体文件。
+
 在 `~/.gmt` 目录下创建字体配置文件 `cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
 
 ```
