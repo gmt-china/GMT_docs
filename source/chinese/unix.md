@@ -16,11 +16,8 @@ $ mkdir -p ~/.gmt/winfonts
 下载以下四种基本字体的字体文件：
 
 - 宋体([simsun.ttc](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simsun.ttc))
- 
 - 仿宋([simfang.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simfang.ttf))
-
 - 黑体([simhei.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simhei.ttf))
-  
 - 楷体([simkai.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simkai.ttf))
 
 并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
