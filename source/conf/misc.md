@@ -5,10 +5,6 @@
 ## 数据下载相关参数
 
 :::{glossary}
-**GMT_AUTO_DOWNLOAD**
-    是否允许自动从GMT服务器（由 {term}`GMT_DATA_SERVER` 控制）下载数据文件到用户目录 {file}`~/.gmt` 下。
-    可以取 **on** 或者 **off** \[**on**\]
-
 **GMT_DATA_SERVER**
     GMT数据服务器地址，默认使用SOEST官方镜像 \[<https://oceania.generic-mapping-tools.org/>\]
 
@@ -18,14 +14,14 @@
     对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为:
 
     ```
-    gmt set GMT_DATA_SERVER http://china.generic-mapping-tools.org
+    gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
     ```
 
     然后将生成的 `gmt.conf` 文件复制到GMT用户目录 `~/.gmt` (Linux/macOS)
     或 `C:\Users\XXX\.gmt` (Windows) 下。
 
 **GMT_DATA_SERVER_LIMIT**
-    从GMT服务器上下载的单个文件的大小上限，默认无限制。
+    从GMT服务器上下载的单个文件的大小上限，默认无限制 [unlimited]。
     可以给定文件大小上限的字节数，也可以加上 **k**、**m**或 **g** 表示 KB、MB 或 GB。
 
 **GMT_DATA_UPDATE_INTERVAL**
