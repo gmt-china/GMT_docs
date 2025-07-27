@@ -21,7 +21,7 @@
     或 `C:\Users\XXX\.gmt` (Windows) 下。
 
 **GMT_DATA_SERVER_LIMIT**
-    从GMT服务器上下载的单个文件的大小上限，默认无限制 \[unlimited\]。
+    从GMT服务器上下载的单个文件的大小上限，默认无限制 [unlimited]。
     可以给定文件大小上限的字节数，也可以加上 **k**、**m**或 **g** 表示 KB、MB 或 GB。
 
 **GMT_DATA_UPDATE_INTERVAL**
