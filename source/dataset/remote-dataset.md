@@ -67,10 +67,8 @@ gmt grdcut @earth_relief_02m_g -Gearth_at_2m.grd
 
 1. 通过参数 {term}`GMT_DATA_SERVER` 设置使用离你最近的GMT数据服务器以加快下载速度
 2. 通过参数 {term}`GMT_DATA_SERVER_LIMIT` 设置允许下载的远程数据的文件大小，默认无限制
-3. 使用参数 {term}`GMT_AUTO_DOWNLOAD` 彻底关闭数据自动下载功能。
-   若关闭，你将无法再下载或更新远程数据，但已下载到本地的数据依然可以使用。
-4. 通过参数 {term}`GMT_DATA_UPDATE_INTERVAL` 控制检查远程数据是否更新的频率 \[默认为每天检查一次\]
-5. 通过 {doc}`/module/clear` 命令清理整个 *server* 目录下的远程数据或部分数据
+3. 通过参数 {term}`GMT_DATA_UPDATE_INTERVAL` 控制检查远程数据是否更新的频率 \[默认为每天检查一次\]
+4. 通过 {doc}`/module/clear` 命令清理整个 *server* 目录下的远程数据或部分数据
 
 :::{note}
 GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
