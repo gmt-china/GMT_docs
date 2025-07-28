@@ -14,8 +14,8 @@ GMT 是一个纯命令行软件，没有任何的图形界面。所有的绘图�
 启动 CMD 后，敲入 `gmt` 以执行 GMT 命令。你将看到 GMT 的欢迎界面信息，类似于：
 
 ```console
-        GMT - The Generic Mapping Tools, Version 6.5.0 [64-bit] [8 cores]
-        (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
+        GMT - The Generic Mapping Tools, Version 6.6.0 [64-bit] [8 cores]
+        (c) 1991-2025 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
         Supported in part by the US National Science Foundation (http://www.nsf.gov/)
         and volunteers from around the world.
@@ -82,7 +82,7 @@ Batch 脚本文件是一个纯文本文件，可以直接用文本编辑器打�
 
 ```
 REM GMT modern mode batch template
-REM Date:    2019-09-02T23:34:25
+REM Date:    2025-09-02T23:34:25
 REM User:    seisman
 REM Purpose: Purpose of this script
 REM Set a unique session name:
@@ -100,7 +100,7 @@ gmt end show
 
 ```
 REM GMT modern mode batch template
-REM Date:    2019-09-02T23:34:25
+REM Date:    2025-09-02T23:34:25
 REM User:    seisman
 REM Purpose: Purpose of this script
 REM Set a unique session name:
