@@ -18,7 +18,7 @@ GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
 
 ## 安装 GMT
 
-1. 下载 GMT 安装包 [gmt-6.6.0-win64.exe](http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.6.0-win64.exe)
+1. 下载 GMT 安装包 [gmt-6.6.0-win64.exe](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-win64.exe)
 
    GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 
