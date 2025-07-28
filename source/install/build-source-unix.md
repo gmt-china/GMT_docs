@@ -74,8 +74,8 @@ $ brew install graphicsmagick ffmpeg
 
 编译 GMT 需要下载如下三个文件：
 
-1. GMT 6.6.0 源码：[gmt-6.6.0-src.tar.xz](http://mirrors.ustc.edu.cn/gmt/gmt-6.6.0-src.tar.xz)
-2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz)
+1. GMT 6.6.0 源码：[gmt-6.6.0-src.tar.xz](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-src.tar.xz)
+2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz)
 3. 全球数字图表 DCW：[dcw-gmt-2.2.0.tar.gz](https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.2.0/dcw-gmt-2.2.0.tar.gz)
 
 :::{note}
@@ -191,7 +191,7 @@ $ cmake .. -G Ninja
 *  Build GMT for developers   : yes
 *  Build proto supplements    : none
 *  Build module links         : no
-*  Found Ghostscript (gs)     : yes (9.50)
+*  Found Ghostscript (gs)     : yes (10.05.1)
 *  Found GraphicsMagick (gm)  : yes (1.3.35)
 *  Found ffmpeg               : yes (4.2.4)
 *  Found open                 : no
