@@ -68,9 +68,9 @@ $ vcpkg integrate install
 
 编译 GMT 需要下载如下三个文件：
 
-1. GMT 6.6.0 源码：[gmt-6.6.0-src.tar.gz](http://mirrors.ustc.edu.cn/gmt/gmt-6.6.0-src.tar.gz)
-2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz)
-3. 全球数字图表 DCW：[dcw-gmt-2.2.0.tar.gz](https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.2.0.tar.gz)
+1. GMT 6.6.0 源码：[gmt-6.6.0-src.tar.gz](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-src.tar.gz)
+2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz)
+3. 全球数字图表 DCW：[dcw-gmt-2.2.0.tar.gz](https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.2.0/dcw-gmt-2.2.0.tar.gz)
 
 :::{note}
 如果想编译 GMT 开发版，可以使用如下命令获取 GMT 最新开发版源码:
