@@ -1,6 +1,6 @@
 # Windows 下的 GMT 中文支持
 
-:最近更新日期: 2022-06-21
+:最近更新日期: 2025-07-28
 :贡献者: {{ 田冬冬 }}, {{ 陈箫翰 }}
 
 ---
@@ -18,14 +18,11 @@ Ghostscript 的中文支持，GMT 生成的图片中的中文将会出现乱码�
 
 Ghostscript 安装包下载地址:
 
-- [gs10030w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10030/gs10030w64.exe)
+- [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
 
 :::{warning}
 请注意 Ghostscript 的版本！
 由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
-此外 GMT 6.4 以及之前的版本有 bug，与 Ghostscript 10.0.0 不兼容，
-导致 GMT 6.4 + Ghostscript 10.0.0 的组合无法绘制出半透明效果的图片，
-请使用 GMT 6.5 + Ghostscript 10.03.0。
 :::
 
 :::{note}
@@ -35,12 +32,6 @@ Ghostscript 安装包下载地址:
 
 在安装 ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
 生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
-
-为了能够在将PS文件转换为其他图片格式时也支持中文，需要设置环境变量 `GS_FONTPATH`。
-具体步骤如下：
-
-1. 点击“计算机”->“属性”->“高级系统设置”->“环境变量”打开“环境变量”编辑工具
-2. 在“系统变量”部分中，新建变量 `GS_FONTPATH` 并设置其值为 `C:\Windows\fonts`
 
 ## GMT 的中文支持
 
