@@ -1,6 +1,6 @@
 ---
 author: 田冬冬, 姚家园
-date: 2022-08-04
+date: 2025-07-28
 ---
 
 # macOS 下安装 GMT
@@ -8,9 +8,8 @@ date: 2022-08-04
 macOS 下安装 GMT 有多种方式：
 
 1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
-2. [使用 GMT 安装包](macos-bundle)
-3. [使用 MacPorts 安装](macos-macports)
-4. {doc}`conda`
+2. [使用 MacPorts 安装](macos-macports)
+3. {doc}`conda`
 
 (macos-homebrew)=
 ## 使用 Homebrew 安装
@@ -65,7 +64,7 @@ macOS 下安装 GMT 有多种方式：
 
    ```
    $ gmt --version
-   6.5.0
+   6.6.0
    ```
 
 4. 升级 GMT
@@ -83,59 +82,6 @@ macOS 下安装 GMT 有多种方式：
    ```
    $ brew uninstall gmt
    ```
-
-(macos-bundle)=
-## 使用 GMT 安装包
-
-GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了 GMT，还包含了运行 GMT 所需的
-Ghostscript、GDAL、GraphicsMagick 和 FFmpeg，可以直接双击安装使用。
-
-:::{note}
-GMT 的 dmg 安装包只支持 macOS >= 12。
-:::
-
-1. 下载
-
-   - Intel：[gmt-6.5.0-darwin-x86_64.dmg](http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-darwin-x86_64.dmg)
-   - ARM：[gmt-6.5.0-darwin-arm64.dmg](http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-darwin-arm64.dmg)
-
-2. 双击 dmg 包，在弹出的 Finder 窗口中，将 {file}`GMT-6.5.0.app` 拖动到 {file}`Applications` 目录
-
-3. 在 Finder 的左侧边栏中点击 **Applications**，找到 GMT 图标并右键点击，
-   按下 {kbd}`option` 键的同时鼠标点击“Open”选项。
-   此时 macOS 系统会弹出警告窗口：“无法打开 GMT。因为 Apple 无法检测其是否为恶意软件”。
-   在弹出的警告窗口中点击“Open”以忽略这一警告，并直接打开 GMT。
-
-4. GMT 会启动一个终端并显示欢迎信息。根据欢迎信息中的
-   提示将如下语句添加到 {file}`~/.zshrc` 中以修改环境变量:
-
-   ```
-   export GMTHOME=/Applications/GMT-6.5.0.app/Contents/Resources
-   export PATH=${GMTHOME}/bin:${PATH}
-   export PROJ_LIB=$GMTHOME/share/proj
-   export GS_LIB=$GMTHOME/share/ghostscript/Resource/Init
-   export MAGICK_CONFIGURE_PATH=$GMTHOME/lib/GraphicsMagick/config
-   ```
-
-   :::{note}
-   以上 `export` 语句仅供参考，请务必根据你看到的 GMT 欢迎信息中的提示修改环境变量。
-   :::
-
-5. 打开一个终端，输入如下命令，检测安装是否成功:
-
-   ```
-   $ gmt --version
-   6.5.0
-   ```
-
-6. 卸载 GMT
-
-   若想要卸载 GMT，可直接到 {file}`/Applications` 目录下找到 GMT，直接删除即可。
-
-7. 升级 GMT
-
-   GMT 包不支持自动升级，因而要先删除旧 GMT 包，再下载新版安装包并按照上面的
-   步骤重新安装，即实现升级 GMT。
 
 (macos-macports)=
 ## 使用 MacPorts 安装
@@ -174,7 +120,7 @@ GMT 的 dmg 安装包只支持 macOS >= 12。
 
    ```
    $ gmt --version
-   6.5.0
+   6.6.0
    ```
 
 5. 升级 GMT。当有新版本发布时，可以执行如下命令升级 GMT:
