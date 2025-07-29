@@ -52,10 +52,10 @@ mv china-geospatial-data/*.gmt ~/.gmt/cache/
 rm -rf china-geospatial-data
 
 # 4. Download plate boundary types data used in docs
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/plates.gmt
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/oc_boundaries.gmt
+wget -q https://raw.githubusercontent.com/CovMat/global_tectonics/refs/heads/For_gmt_china_docs/plates%26provinces/gmt/boundaries.gmt
+wget -q https://raw.githubusercontent.com/CovMat/global_tectonics/refs/heads/For_gmt_china_docs/plates%26provinces/gmt/plates.gmt
+wget -q https://raw.githubusercontent.com/CovMat/global_tectonics/refs/heads/For_gmt_china_docs/plates%26provinces/gmt/global_gprv.gmt
+wget -q https://raw.githubusercontent.com/CovMat/global_tectonics/refs/heads/For_gmt_china_docs/plates%26provinces/gmt/oc_boundaries.gmt
 mv boundaries.gmt plates.gmt global_gprv.gmt oc_boundaries.gmt ~/.gmt/cache/
 
 # 5. Download Chinese font files for GMT Chinese support

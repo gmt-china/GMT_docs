@@ -8,7 +8,7 @@
 global_tectonics 是一个全球地质构造数据集，提供 Shapefile、GMT、KML 格式数据的下载。
 
 - 官方网站: <https://github.com/dhasterok/global_tectonics>
-- GMT 格式数据下载: <https://github.com/dhasterok/global_tectonics/tree/main/plates%26provinces/gmt>
+- GMT 格式数据下载: <https://github.com/CovMat/global_tectonics/tree/For_gmt_china_docs/plates%26provinces/gmt>
 
 ## 数据简介
 
