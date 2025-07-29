@@ -23,6 +23,9 @@ Ghostscript 安装包下载地址:
 :::{warning}
 请注意 Ghostscript 的版本！
 由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
+此外某些 GMT 和 Ghostscript 的版本组合会造成半透明效果失效等等诸多问题，
+对于 GMT 6.4.0 及其他较低版本，建议使用 Ghostscript 9.53-9.56；
+对于 GMT 6.5.0 则建议使用 Ghostscript 10.03 之后的新版本。
 :::
 
 :::{note}
