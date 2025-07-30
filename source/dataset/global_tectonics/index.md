@@ -1,23 +1,22 @@
 # global_tectonics: 全球地质构造数据
 
 :撰写: {{ 陈箫翰 }}, {{ 田冬冬 }}
-:最近更新日期: 2023-10-04
+:最近更新日期: 2025-07-30
 
 ---
 
 global_tectonics 是一个全球地质构造数据集，提供 Shapefile、GMT、KML 格式数据的下载。
 
 - 官方网站: <https://github.com/dhasterok/global_tectonics>
-- GMT 格式数据下载: <https://github.com/dhasterok/global_tectonics/tree/main/plates%26provinces/gmt>
 
-## 数据简介
+## 数据简介与GMT格式下载
 
 global_tectonics 数据集中提供了四个数据文件：
 
-- `boundaries.gmt`: 板块边界数据
-- `plates.gmt`: 板块数据
-- `global_gprv.gmt`: 地质块体数据
-- `oc_boundaries.gmt`: 海陆边界线
+- `boundaries.gmt` : [板块边界数据](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt)
+- `plates.gmt` : [板块数据](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt)
+- `global_gprv.gmt` : [地质块体数据](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt)
+- `oc_boundaries.gmt` : [海陆边界线](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt)
 
 更详细的数据说明请阅读数据的参考文献。
 
