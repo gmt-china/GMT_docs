@@ -139,3 +139,12 @@ $ echo 29500000    0 | gmt mapproject -J"EPSG:2353 +to EPSG:2329"
 ```
 
 将其中的 EPSG 代码替换为对应的代码则可实现任意投影的转换。
+
+**Spilhaus投影**
+
+Spilhaus投影是一种以海洋为主视角的投影，以南极洲为中心进行展开，将世界海洋呈现为一体，适合在海洋学研究领域进行展示洋流的绘图等等。
+
+```{eval-rst}
+.. gmtplot:: J/spilhaus.sh
+    :show-code: true
+```
