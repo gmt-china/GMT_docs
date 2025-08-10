@@ -1,7 +1,7 @@
-.. index:: ! gmtdefaults
+.. index:: ! defaults
 .. include:: common_SYN_OPTs.rst_
 
-gmtdefaults
+defaults
 ===========
 
 :官方文档: :doc:`gmt:gmtdefaults`
@@ -46,5 +46,5 @@ gmtdefaults
 相关模块
 --------
 
-:doc:`gmtget`,
-:doc:`gmtset`
+:doc:`get`,
+:doc:`set`

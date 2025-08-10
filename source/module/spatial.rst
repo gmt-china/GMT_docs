@@ -1,7 +1,7 @@
-.. index:: ! gmtspatial
+.. index:: ! spatial
 .. include:: common_SYN_OPTs.rst_
 
-gmtspatial
+spatial
 ==========
 
 :贡献者: |周茂|
@@ -12,7 +12,7 @@ gmtspatial
 :简介: 对点，线和多边形进行地理空间操作
 
 
-**gmtspatial** 读取一个或者多个文件，文件中包含线或多边形等特征，对这些
+**spatial** 读取一个或者多个文件，文件中包含线或多边形等特征，对这些
 特性进行操作，包括：面积计算，多边形相交等。
 
 语法
@@ -277,12 +277,12 @@ gmtspatial
 --------
 
 GDAL/GMT 格式的文件被认为是完整的数据集，因此在使用该模块时，不能同时输入多个
-该格式的文件。正确的做法是先使用 :doc:`gmt:gmtconvert` 模块转换为普通的表数据，
+该格式的文件。正确的做法是先使用 :doc:`convert` 模块转换为普通的表数据，
 然后再使用该模块。
 
 相关模块
 --------
 
-:doc:`gmt:gmtconvert`，
-:doc:`gmtselect`，
-:doc:`gmtsimplify`，
+:doc:`convert`,
+:doc:`select`,
+:doc:`simplify`

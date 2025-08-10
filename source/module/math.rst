@@ -1,7 +1,7 @@
-.. index:: ! gmtmath
+.. index:: ! math
 .. include:: common_SYN_OPTs.rst_
 
-gmtmath
+math
 =======
 
 :贡献者: |周茂|
@@ -9,7 +9,7 @@ gmtmath
 :官方文档: :doc:`gmt:gmtmath`
 :简介: 表数据的逆波兰表示法（RPN）计算
 
-**gmtmath** 使用逆波兰表示法（Reverse Polish Notation）对一个或多个表数据文件或者
+**math** 使用逆波兰表示法（Reverse Polish Notation）对一个或多个表数据文件或者
 常量进行加减乘除等操作。逆波兰表示法是一种后缀表示法，即将运算符写在操作数之后。
 该模块可以计算任意复杂的运算。模块默认逐元素进行计算操作。其中某些运算符仅
 需要一个参数。如果输入中不含表文件，则可以使用 |-T| 或 |-N| 选项。默认
@@ -736,7 +736,7 @@ gmtmath
 
     gmt math -T0/360/1 2 PI MUL 360 DIV T MUL STO@kT COS @kT 2 MUL COS ADD @kT 3 MUL COS ADD = harmonics.txt
 
-使用 **gmtmath** 实现标量计算（不含输入文件）可以使用 |-Q| 选项，
+使用 **math** 实现标量计算（不含输入文件）可以使用 |-Q| 选项，
 计算 kei(((1 + 1.75)/2.2) + cos (60)) 并将结果赋值给 shell 中的变量 z ::
 
     z=`gmt math -Q 1 1.75 ADD 2.2 DIV 60 COSD ADD KEI =`
@@ -745,7 +745,7 @@ gmtmath
 
     set hue=`gmt math -Q 255 255 0 RGB2HSV POP POP =`
 
-下面将展示使用 **gmtmath** 求解方程组。假设当前存在一个增广矩阵 [ A ｜b ]，
+下面将展示使用 **math** 求解方程组。假设当前存在一个增广矩阵 [ A ｜b ]，
 A 为系数矩阵，b 为等号右边的常数列，求解的方程组为 A \* x = b 。**LSQFIT** 操作符可实现
 方程的求解，但前提是使用 |-A| 选项正确放置参数。假定表数据文件 :file:`ty.txt` 包含 
 t 和 y(t) 两列，拟合模型为 y(t) = a + b\*t + c\*H(t-t0) ，其中 H 为给定 t0 = 1.55 的

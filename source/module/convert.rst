@@ -1,7 +1,7 @@
-.. index:: ! gmtconvert
+.. index:: ! convert
 .. include:: common_SYN_OPTs.rst_
 
-gmtconvert
+convert
 ===========
 
 :贡献者: |周茂|
@@ -297,5 +297,5 @@ profile_005001.txt ... 等单独的文件中::
 相关模块
 --------
 
-:doc:`gmtinfo`,
-:doc:`gmtselect`
+:doc:`info`,
+:doc:`select`

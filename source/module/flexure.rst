@@ -1,7 +1,7 @@
-.. index:: ! gmtflexure
+.. index:: ! flexure
 .. include:: common_SYN_OPTs.rst_
 
-gmtflexure
+flexure
 ==========
 
 :贡献者: |周茂|
@@ -12,7 +12,7 @@ gmtflexure
 :官方文档: :doc:`gmt:supplements/potential/gmtflexure`
 :简介: 计算 2-D 载荷产生的力，弯矩和挠曲变形
 
-**gmtflexure** 使用一系列可选选项，例如边界条件、预变形、可变刚度以及恢复力等
+**flexure** 使用一系列可选选项，例如边界条件、预变形、可变刚度以及恢复力等
 信息计算二维载荷的挠曲变形。该模块的解是对微分方程进行有限差分近似获得的
 [*Bodine*,\ 1980]。
 

@@ -1,19 +1,19 @@
-.. index:: ! gmtbinstats
+.. index:: ! binstats
 .. include:: common_SYN_OPTs.rst_
 
-gmtbinstats
+binstats
 ===========
 
 :官方文档: :doc:`gmt:gmtbinstats`
 :简介: 对落入网格节点内的空间数据进行统计
 
-**gmtbinstats** 将表数据放到网格中，对给定半径的每个节点的数据进行统计，例如：
+**binstats** 将表数据放到网格中，对给定半径的每个节点的数据进行统计，例如：
 面积归一化，密度估计等操作。网格的节点可以为矩形或六边形。
 
 语法
 ----
 
-**gmt gmtbinstats** [ *table* ] |-G|\ *outgrid*
+**gmt binstats** [ *table* ] |-G|\ *outgrid*
 |SYN_OPT-I|
 |-C|\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
 |SYN_OPT-R|
@@ -152,13 +152,13 @@ gmtbinstats
 半径 1000 km 内的人口，使用默认投影和颜色绘制网格 ::
 
     gmt begin map
-    gmt gmtbinstats @capitals.gmt -a2=population -Rg -I5 -Cz -Gpop.nc -S1000k
+    gmt binstats @capitals.gmt -a2=population -Rg -I5 -Cz -Gpop.nc -S1000k
         gmt grdimage pop.nc -B
     gmt end show
 
 对文件 :file:`mydata.txt` 中的数据进行六边形网格的分选，计算每个节点中点的个数 ::
 
-    gmt gmtbinstats mydata.txt -R0/5/0/3 -I1 -Th -Cn > counts.txt
+    gmt binstats mydata.txt -R0/5/0/3 -I1 -Th -Cn > counts.txt
 
 相关模块
 --------
