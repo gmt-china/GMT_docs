@@ -13,7 +13,7 @@ Spilhaus投影是一种以海洋为主视角的投影，以南极洲为中心进
 - *width* 地图宽度
 
 ```{eval-rst}
-.. gmtplot:: J/spilhaus.sh
+.. gmtplot:: Jspilhaus/spilhaus.sh
     :width: 85%
     :show-code: true
 ```
