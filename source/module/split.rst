@@ -1,20 +1,20 @@
-.. index:: ! gmtsplit
+.. index:: ! split
 .. include:: common_SYN_OPTs.rst_
 
-gmtsplit
+split
 ========
 
 :官方文档: :doc:`gmt:gmtsplit`
 :简介: 将表数据拆分成单独的段
 
-**gmtsplit** 将表数据拆分以使每段数据都具有近乎恒定的方位角。该模块可认为
+**split** 将表数据拆分以使每段数据都具有近乎恒定的方位角。该模块可认为
 是数据提取和 :doc:`wiggle` 模块之间的一个数据过滤模块，也可以用来将一个大的
 数据集分割成小段。
 
 语法
 ----
 
-**gmt gmtsplit** [ *table* ]
+**gmt split** [ *table* ]
 [ |-A|\ *azimuth*/*tolerance* ]
 [ |-C|\ *course_change*]
 [ |-D|\ *minimum_distance* ]
@@ -133,7 +133,7 @@ gmtsplit
         -W0.75p -Ggray -Z200 -pdf JA020015_wiggles
 
 原始测量数据为 MGD77 格式，因此建议使用 :doc:`mgd77list`
-模块提取 dist 和 azim 而不是使用 **gmtsplit** 计算。
+模块提取 dist 和 azim 而不是使用 **split** 计算。
 
 将一个包含经纬度以及重力观测值的二进制双精度文件，拆分为 survey_xxxx.txt 形式的一系列
 文件，拆分原则为间隙大于 100 km ::

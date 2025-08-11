@@ -1,7 +1,7 @@
-.. index:: ! gmtregress
+.. index:: ! regress
 .. include:: common_SYN_OPTs.rst_
 
-gmtregress
+regress
 ==========
 
 :贡献者: |周茂|
@@ -121,7 +121,7 @@ gmtregress
    x 坐标的平均值、y 坐标的平均值、拟合直线的角度、misfit、斜率、截距、
    斜率的标准差、截距的标准差。对于 **-Ey** 的情况，同时输出
 
-2. 对于直线拟合之外的更一般的线性模型的回归，请参阅 :doc:`gmtmath` 的 **-A**
+2. 对于直线拟合之外的更一般的线性模型的回归，请参阅 :doc:`math` 的 **-A**
    选项以及 **LSQFIT** 或者 **SVDFIT** 操作符。
 
 
@@ -147,6 +147,6 @@ equations for the slope, intercept, and standard errors of the best straight lin
 相关模块
 --------
 
-:doc:`gmtmath`,
+:doc:`math`,
 :doc:`trend1d`,
 :doc:`trend2d`

@@ -1,7 +1,7 @@
-.. index:: ! gmtgravmag3d
+.. index:: ! gravmag3d
 .. include:: common_SYN_OPTs.rst_
 
-gmtgravmag3d
+gravmag3d
 =============
 
 :贡献者: |周茂|
@@ -12,7 +12,7 @@ gmtgravmag3d
 :官方文档: :doc:`gmt:supplements/potential/gmtgravmag3d`
 :简介: 计算使用 Okabe 方法计算三维物体的重力异常或磁异常
 
-**gmtgravmag3d** 用来计算由一组三角形描述的多面体的重力异常或磁异常。输出可以在
+**gravmag3d** 用来计算由一组三角形描述的多面体的重力异常或磁异常。输出可以在
 指定的位置上，也可以在网格上。该方法计算速度并不快，但优势在于可以计算任意复杂
 形状导致的异常。
 
@@ -182,7 +182,7 @@ gmtgravmag3d
 指定的位置，物体磁偏角为 10 度，倾角为 60，强度为 10 Am，位于 -10 度的偏角，40 度
 倾角的磁场中 ::
 
-    gmt gmtgravmag3d -R-15/15/-15/15 -I1 -H10/60/10/-10/40 -M+sprism,1/1/1/-5/-10/1 -Gcube_mag_anom.grd
+    gmt gravmag3d -R-15/15/-15/15 -I1 -H10/60/10/-10/40 -M+sprism,1/1/1/-5/-10/1 -Gcube_mag_anom.grd
 
 参考文献
 --------

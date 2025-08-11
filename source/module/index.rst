@@ -17,6 +17,7 @@
 
     - :doc:`basemap`
     - :doc:`begin`
+    - :doc:`binstats`
     - :doc:`blockmean`
     - :doc:`blockmedian`
     - :doc:`blockmode`
@@ -24,8 +25,11 @@
     - :doc:`clip`
     - :doc:`coast`
     - :doc:`colorbar`
+    - :doc:`connect`
     - :doc:`contour`
+    - :doc:`convert`
     - :doc:`coupe`
+    - :doc:`defaults`
     - :doc:`dimfilter`
     - :doc:`docs`
     - :doc:`end`
@@ -33,22 +37,18 @@
     - :doc:`figure`
     - :doc:`filter1d`
     - :doc:`fitcircle`
-    - :doc:`gmtbinstats`
-    - :doc:`gmtconnect`
-    - :doc:`gmtconvert`
-    - :doc:`gmtdefaults`
-    - :doc:`gmtget`
-    - :doc:`gmtinfo`
-    - :doc:`gmtlogo`
-    - :doc:`gmtmath`
-    - :doc:`gmtregress`
-    - :doc:`gmtselect`
-    - :doc:`gmtset`
-    - :doc:`gmtsimplify`
-    - :doc:`gmtspatial`
-    - :doc:`gmtsplit`
-    - :doc:`gmtvector`
-    - :doc:`gmtwhich`
+    - :doc:`get`
+    - :doc:`info`
+    - :doc:`logo`
+    - :doc:`math`
+    - :doc:`regress`
+    - :doc:`select`
+    - :doc:`set`
+    - :doc:`simplify`
+    - :doc:`spatial`
+    - :doc:`split`
+    - :doc:`vector`
+    - :doc:`which`
     - :doc:`grd2cpt`
     - :doc:`grd2xyz`
     - :doc:`grdblend`
@@ -132,8 +132,8 @@
     - :doc:`x2sys_put`
     - :doc:`x2sys_report`
     - :doc:`x2sys_solve`
-    - :doc:`gmtflexure`
-    - :doc:`gmtgravmag3d`
+    - :doc:`flexure`
+    - :doc:`gravmag3d`
     - :doc:`gravfft`
     - :doc:`grdflexure`
     - :doc:`grdgravmag3d`
@@ -241,7 +241,7 @@
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
 :doc:`segy`                                      在图上绘制 SEGY 文件
 :doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
-:doc:`gmtlogo`                                   在图上绘制 GMT 图形 logo
+:doc:`logo`                                      在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
 :doc:`grdimage`                                  在图上绘制网格数据
 :doc:`grdcontour`                                根据网格文件绘制等值线
@@ -249,21 +249,21 @@
 :doc:`movie`                                     制作动画
 **1D 数据处理**                                  .. _module_1D_data_processing:
 :doc:`makecpt`                                   生成 CPT 文件
-:doc:`gmtselect`                                 根据多个准则筛选数据
+:doc:`select`                                    根据多个准则筛选数据
 :doc:`project`                                   将数据点投影到线或大圆路径上，生成测线，坐标转换
-:doc:`gmtconvert`                                表数据格式转换、列提取、列粘贴
+:doc:`convert`                                   表数据格式转换、列提取、列粘贴
 :doc:`trend1d`                                   一维数据的多项式拟合
 :doc:`fitcircle`                                 拟合球面上数据点的平均位置及圆弧
-:doc:`gmtsimplify`                               使用 Douglas-Peucker 算法对线段做简化
+:doc:`simplify`                                  使用 Douglas-Peucker 算法对线段做简化
 :doc:`filter1d`                                  对 1D 表数据做时间域滤波
-:doc:`gmtconnect`                                将端点接近的线段连接起来
+:doc:`connect`                                   将端点接近的线段连接起来
 :doc:`sample1d`                                  对 1D 表数据进行重采样
 :doc:`spectrum1d`                                计算一个时间序列的自功率谱，或两个时间序列的互功率谱
-:doc:`gmtmath`                                   对表数据进行数学计算操作
+:doc:`math`                                      对表数据进行数学计算操作
 :doc:`mapproject`                                地图变换的正变换和逆变换
-:doc:`gmtspatial`                                点、线段和多边形的地理空间操作
-:doc:`gmtvector`                                 2D 和 3D 下笛卡尔矢量操作
-:doc:`gmtregress`                                1D 数据的线性回归
+:doc:`spatial`                                   点、线段和多边形的地理空间操作
+:doc:`vector`                                    2D 和 3D 下笛卡尔矢量操作
+:doc:`regress`                                   1D 数据的线性回归
 **2D 数据处理**                                  .. _module_2D_data_processing:
 :doc:`grdcut`                                    从一个网格文件中裁剪出一个矩形子区域生成新的网格文件
 :doc:`grdpaste`                                  将两个网格沿着其共同边界拼接成一个文件
@@ -292,9 +292,9 @@
 :doc:`blockmean`                                 使用均值估计对 (x,y,z) 数据做区块处理
 :doc:`blockmedian`                               使用中位数估计对 (x,y,z) 数据做区块处理
 :doc:`blockmode`                                 使用众数估计对 (x,y,z) 数据做区块处理
-:doc:`gmtbinstats`                               统计落入网格节点的数据
+:doc:`binstats`                                  统计落入网格节点的数据
 :doc:`surface`                                   使用可调节张量连续曲率样条插值法对数据进行网格化
-:doc:`gmtsplit`                                  将表数据拆分为单独的数据段
+:doc:`split`                                     将表数据拆分为单独的数据段
 :doc:`triangulate`                               对表数据做三角剖分、Voronoi 图计算和网格化
 :doc:`nearneighbor`                              使用 "Nearest neighbor" 算法对数据进行网格化
 :doc:`trend2d`                                   二维数据的多项式拟合
@@ -305,13 +305,13 @@
 :doc:`sphtriangulate`                            球面数据的 Delaunay 三角网或 Voronoi 图构建
 :doc:`dimfilter`                                 在空间域对网格数据做方向中值滤波
 **参数设置**                                     .. _module_parameter_setting:
-:doc:`gmtdefaults`                               列出所有 GMT 参数的当前值
-:doc:`gmtset`                                    修改单个或多个 GMT 参数的值
-:doc:`gmtget`                                    列出单个或多个 GMT 参数的当前值
+:doc:`defaults`                                  列出所有 GMT 参数的当前值
+:doc:`set`                                       修改单个或多个 GMT 参数的值
+:doc:`get`                                       列出单个或多个 GMT 参数的当前值
 **信息提取**                                     .. _module_information_retrieval:
 :doc:`grdinfo`                                   从网格文件中提取基本信息
-:doc:`gmtinfo`                                   从表数据中提取信息
-:doc:`gmtwhich`                                  返回指定文件的完整路径
+:doc:`info`                                      从表数据中提取信息
+:doc:`which`                                     返回指定文件的完整路径
 **格式转换**                                     .. _module_format_conversion:
 :doc:`xyz2grd`                                   将 XYZ 数据或 Z 数据转换成网格文件
 :doc:`grd2xyz`                                   将网格文件转换成表数据
@@ -351,9 +351,9 @@
 :doc:`gmt:supplements/spotter/grdspotter`        Create CVA image from a gravity or topography grid
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
 **POTENTIAL 相关模块**                           .. _module_potential:
-:doc:`gmtflexure`                                计算 2-D 载荷产生的力，弯矩以及形变
+:doc:`flexure`                                   计算 2-D 载荷产生的力，弯矩以及形变
 :doc:`grdflexure`                                计算 3-D 载荷在不同流变基础下产生的形变
-:doc:`gmtgravmag3d`                              计算 3-D 实体产生的重力/磁异常
+:doc:`gravmag3d`                                 计算 3-D 实体产生的重力/磁异常
 :doc:`grdgravmag3d`                              计算一个或者两个网格的重力/磁异常
 :doc:`gravfft`                                   网格重力的谱计算，均衡，导纳，以及相干性计算
 :doc:`grdredpol`                                 计算连续化极（Reduction To the Pole, RTP）
@@ -406,6 +406,7 @@
 
    basemap
    begin
+   binstats
    blockmean
    blockmedian
    blockmode
@@ -413,8 +414,11 @@
    clip
    coast
    colorbar
+   connect
    contour
+   convert
    coupe
+   defaults
    dimfilter
    docs
    end
@@ -422,25 +426,21 @@
    figure
    filter1d
    fitcircle
+   get
    gmt
    gmt-config
-   gmtbinstats
-   gmtconnect
-   gmtconvert
-   gmtdefaults
-   gmtget
-   gmtinfo
-   gmtlogo
-   gmtmath
-   gmtregress
-   gmtselect
-   gmtset
-   gmtsimplify
-   gmtspatial
-   gmtsplit
    gmtswitch
-   gmtvector
-   gmtwhich
+   info
+   logo
+   math
+   regress
+   select
+   set
+   simplify
+   spatial
+   split
+   vector
+   which
    grd2cpt
    grd2xyz
    grdblend
@@ -524,8 +524,8 @@
    x2sys_put
    x2sys_report
    x2sys_solve
-   gmtflexure
-   gmtgravmag3d
+   flexure
+   gravmag3d
    gravfft
    grdflexure
    grdgravmag3d

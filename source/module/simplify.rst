@@ -1,13 +1,13 @@
-.. index:: ! gmtsimplify
+.. index:: ! simplify
 .. include:: common_SYN_OPTs.rst_
 
-gmtsimplify
+simplify
 ===========
 
 :官方文档: :doc:`gmt:gmtsimplify`
 :简介: 使用Douglas-Peucker算法对线段做简化
 
-**gmtsimplify** 模块读取一个或多个数据文件，并使用 Douglas-Peucker 算法对复杂多边形
+**simplify** 模块读取一个或多个数据文件，并使用 Douglas-Peucker 算法对复杂多边形
 进行简化，用曲线近似表示为一系列点并减少点的数量，并保证每个点与直线的偏离都在可容忍的范围内。
 
 语法
@@ -86,7 +86,7 @@ gmtsimplify
 注意事项
 --------
 
-**gmtsimplify** 对于线段和闭合多边形的处理方式略有区别。
+**simplify** 对于线段和闭合多边形的处理方式略有区别。
 显式闭合的线段（即线段的首尾坐标相同）会被认为是闭合多边形，
 否则视为线段。被当作多边形的线段可以被简化为无面积的3点多边形，
 其不会被输出。
@@ -107,6 +107,6 @@ caricature, *Can. Cartogr.*, **10**, 112-122, 1973.
 相关模块
 --------
 
-:doc:`gmtconnect`,
-:doc:`gmt:gmtconvert`,
-:doc:`gmtselect`
+:doc:`connect`,
+:doc:`convert`,
+:doc:`select`

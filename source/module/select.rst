@@ -1,7 +1,7 @@
-.. index:: ! gmtselect
+.. index:: ! select
 .. include:: common_SYN_OPTs.rst_
 
-gmtselect
+select
 =========
 
 :官方文档: :doc:`gmt:gmtselect`

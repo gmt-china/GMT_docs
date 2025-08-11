@@ -1,7 +1,7 @@
-.. index:: ! gmtlogo
+.. index:: ! logo
 .. include:: common_SYN_OPTs.rst_
 
-gmtlogo
+logo
 =======
 
 :官方文档: :doc:`gmt:gmtlogo`

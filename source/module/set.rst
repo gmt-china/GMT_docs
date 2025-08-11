@@ -1,7 +1,7 @@
-.. index:: ! gmtset
+.. index:: ! set
 .. include:: common_SYN_OPTs.rst_
 
-gmtset
+set
 ======
 
 :官方文档: :doc:`gmt:gmtset`
@@ -82,5 +82,5 @@ FAQ
 相关模块
 --------
 
-:doc:`gmtdefaults`,
-:doc:`gmtget`
+:doc:`defaults`,
+:doc:`get`

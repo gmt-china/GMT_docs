@@ -89,7 +89,7 @@ gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
 ## 离线使用
 
 如果你即将有一段无网络或低网速的时间，或者你不希望在第一次需要某个数据等待数据的
-下载，你可以使用 {doc}`/module/gmtget` 模块将数据提前下载到本地。
+下载，你可以使用 {doc}`/module/get` 模块将数据提前下载到本地。
 
 你可以下载所有远程数据:
 
@@ -115,7 +115,7 @@ gmt get -Ddata=earth_relief,earth_mask
 gmt get -Ddata=earth_relief -I1m
 ```
 
-更多功能，见 {doc}`/module/gmtget` 模块文档。
+更多功能，见 {doc}`/module/get` 模块文档。
 
 (setup-database)=
 

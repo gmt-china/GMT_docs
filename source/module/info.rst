@@ -1,7 +1,7 @@
-.. index:: ! gmtinfo
+.. index:: ! info
 .. include:: common_SYN_OPTs.rst_
 
-gmtinfo
+info
 =======
 
 :官方文档: :doc:`gmt:gmtinfo`
