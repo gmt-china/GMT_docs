@@ -8,7 +8,7 @@ Spilhaus投影是一种以海洋为主视角的投影，以南极洲为中心进
 
 投影需要的参数如下：
 
-**-J+proj=spilhaus+width=** *width* 
+**-J+proj=spilhaus+width=**_width_
 
 - *width* 地图宽度
 
