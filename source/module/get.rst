@@ -1,10 +1,10 @@
-.. index:: ! gmtget
+.. index:: ! get
 .. include:: common_SYN_OPTs.rst_
 
-gmtget
+get
 ======
 
-:官方文档: :doc:`gmt:gmtget`
+:官方文档: :doc:`gmt:get`
 :简介: 列出单个或多个GMT配置参数的当前值、下载数据集
 
 语法
@@ -116,5 +116,5 @@ gmtget
 相关模块
 --------
 
-:doc:`gmtdefaults`,
-:doc:`gmtset`
+:doc:`defaults`,
+:doc:`set`

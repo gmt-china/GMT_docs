@@ -1,7 +1,7 @@
-.. index:: ! gmtwhich
+.. index:: ! which
 .. include:: common_SYN_OPTs.rst_
 
-gmtwhich
+which
 ========
 
 :官方文档: :doc:`gmt:gmtwhich`

@@ -1,13 +1,13 @@
-.. index:: ! gmtvector
+.. index:: ! vector
 .. include:: common_SYN_OPTs.rst_
 
-gmtvector
+vector
 =========
 
 :官方文档: :doc:`gmt:gmtvector`
 :简介: 操作二维和三维笛卡尔坐标向量
 
-**gmtvector** 读取含有 (x, y)，(x, y, z)，(r, theta) 或 (lon, lat) 等坐标的表文件。
+**vector** 读取含有 (x, y)，(x, y, z)，(r, theta) 或 (lon, lat) 等坐标的表文件。
 给定 **-fg** 时，将坐标假定为地理坐标并只包含两列，将其转换到单位球上的三维笛卡尔
 坐标；使用 **-Ci** 选项时，则表明输入数据为 (x, y) 或 (x, y, z)；默认情况下，输入文件的坐标
 为 (r, theta) 形式的极坐标。如果不给定输入文件，则可以通过 |-A| 选项传递单个向量。
@@ -194,4 +194,5 @@ gmtvector
 相关模块
 --------
 
-:doc:`project`, :doc:`mapproject`
+:doc:`project`,
+:doc:`mapproject`

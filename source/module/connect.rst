@@ -1,7 +1,7 @@
-.. index:: ! gmtconnect
+.. index:: ! connect
 .. include:: common_SYN_OPTs.rst_
 
-gmtconnect
+connect
 ==========
 
 :官方文档: :doc:`gmt:gmtconnect`
