@@ -18,7 +18,7 @@
     ```
 
     然后将生成的 `gmt.conf` 文件复制到GMT用户目录 `~/.gmt` (Linux/macOS)
-    或 `C:\Users\XXX\.gmt` (Windows) 下。
+    或 `C:\Users\当前用户名\.gmt` (Windows) 下。
 
 **GMT_DATA_SERVER_LIMIT**
     从GMT服务器上下载的单个文件的大小上限，默认无限制 [unlimited]。
