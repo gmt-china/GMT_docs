@@ -1,6 +1,6 @@
 ---
-author: 田冬冬, 姚家园, 陈箫翰, 周茂
-date: 2025-05-22
+author: 田冬冬, 姚家园, 陈箫翰, 周茂, Chenjie-98
+date: 2025-08-15
 ---
 
 # -B 选项
@@ -373,14 +373,10 @@ gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf test
 第一个例子展示了 2000 年春天的两个月，将这两个月的每周的第一天的日期标注出来：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_1.sh
     :width: 60%
     :caption: 时间轴示例 1
-
-    gmt begin GMT_-B_time1
-        gmt set FORMAT_DATE_MAP=-o FONT_ANNOT_PRIMARY +9p
-        gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpxa7Rf1d -Bsxa1O -BS
-    gmt end show
+    :show-code: true
 ```
 
 需要注意，**-Bsa1O** 指定了次级标注的间隔为一个月，由于此处使用的是大写的 **O**，
@@ -392,85 +388,57 @@ gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf test
 图中下面的例子使用周来标注，上面的例子使用日期来标注。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_2.sh
     :width: 60%
     :caption: 时间轴示例 2
-
-    gmt begin GMT_-B_time2
-        gmt set FORMAT_DATE_MAP "o dd" FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
-        gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpxa6Hf1h -Bsxa1K -BS
-        gmt basemap -Bpxa6Hf1h -Bsxa1D -BS -Y0.65i
-    gmt end show
+    :show-code: true
 ```
 
 第三个例子展示了两年的时间，并标注了每年以及每三个月。
 年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_3.sh
     :width: 60%
-    :caption: 时间示例 3
-
-    gmt begin GMT_-B_time3
-        gmt set FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-        gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpxa3Of1o -Bsxa1Y -BS
-    gmt end show
+    :caption: 时间示例 3    
+    :show-code: true
 ```
 
 第四个例子展示了一天中的几个小时，通过在 **-R** 选项中指定 **t** 来使用相对时间坐标。
 这里使用了 **p** 属性和 **s** 属性，12 小时制，时间从右向左增加：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_4.sh
     :width: 60%
     :caption: 时间轴示例 4
-
-    gmt begin GMT_-B_time4
-        gmt set FORMAT_CLOCK_MAP=-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-        gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpxa15mf5m -Bsxa1H -BS
-    gmt end show
+    :show-code: true
 ```
 
 第五个例子用两种方式展示了几周的时间：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_5.sh
     :width: 60%
     :caption: 时间轴示例 5
-
-    gmt begin GMT_-B_time5
-        gmt set FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character \
-            FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
-        gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpxa1K -Bsxa1U -BS
-        gmt set FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
-        gmt basemap -Bpxa3Kf1k -Bsxa1r -BS -Y0.65i
-    gmt end show
+    :show-code: true
 ```
 
 第六个例子展示了 1996 年的前 5 个月，每个月用月份的简写以及两位年份标注：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_6.sh
     :width: 60%
     :caption: 时间轴示例 6
-
-    gmt begin GMT_-B_time6
-        gmt set FORMAT_DATE_MAP "o yy" FORMAT_TIME_PRIMARY_MAP Abbreviated
-        gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Bxa1Of1d -BS
-    gmt end show
+    :show-code: true
 ```
 
 第七个例子展示了 2000 年末，2001 年初的部分时段，天用年积日（一年中第几天）的形式标注：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_time_axes_7.sh
     :width: 60%
     :caption: 时间轴示例 7
-
-    gmt begin GMT_-B_time7
-        gmt set FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION 0.05 FONT_ANNOT_PRIMARY +9p
-        gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpxa5Df1d -Bsxa1Y -BS
-    gmt end show
+    :show-code: true
 ```
 
 ## 弧度轴 $\pi$ 的标注
@@ -511,7 +479,8 @@ coord   type   [label]
 
 - *type* 是如下几个字符的组合
 
-  - **a** 或 **i** 前者为 annotation，后者表示 interval annotation，
+  - **a** 或 **i** 前者为 annotation，标注位置对齐刻度线；
+    后者表示 interval annotation，标注位置在区间中间。
     在一个标注文件中，**a** 和 **i** 只能出现其中的任意一个
   - **f** 表示刻度，即 frame tick
   - **g** 表示网格线，即 gridline
@@ -526,32 +495,17 @@ coord   type   [label]
 分别是 X 轴和 Y 轴的标注文件：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: B/B_custom_axes_1.sh
     :width: 60%
     :caption: 自定义坐标轴
+    :show-code: true
+```
 
-    cat << EOF >| xannots.txt
-    416.0       ig      Devonian
-    443.7       ig      Silurian
-    488.3       ig      Ordovician
-    542 ig      Cambrian
-    EOF
-    cat << EOF >| yannots.txt
-    0   a
-    1   a
-    2   f
-    2.71828     ag      e
-    3   f
-    3.1415926   ag      @~p@~
-    4   f
-    5   f
-    6   f
-    6.2831852   ag      2@~p@~
-    EOF
+自定义轴的另一个实际应用是以罗马数字标注地震烈度图的 colorbar 。
 
-    gmt begin GMT_-B_custom
-        gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u" Ma" \
-            -Bpycyannots.txt -Bsxcxannots.txt -BWS+glightblue \
-            --MAP_ANNOT_OFFSET_SECONDARY=10p --MAP_GRID_PEN_SECONDARY=2p
-    gmt end show
+```{eval-rst}
+.. gmtplot:: B/B_custom_axes_2.sh
+    :width: 80%
+    :caption: colorbar 中使用罗马数字标注
+    :show-code: true
 ```
