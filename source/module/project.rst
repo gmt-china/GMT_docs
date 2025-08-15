@@ -112,7 +112,7 @@ project
 
     gmt project ship_03.txt -C330/-18 -T53/21 -S -Fpz -Q > ship_proj.txt
 
-指定测线的起点和终点，在测线上每隔10千米生成一个点。距离测线起点的距离 *p* 单位为千米::
+指定测线的起点和终点，在测线上每隔10千米生成一个点。距离测线起点的距离单位为千米::
 
     gmt project -C-50/10 -E-10/30 -G10 -Q > great_circle_points.xyp
 
