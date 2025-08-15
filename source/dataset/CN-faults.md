@@ -88,7 +88,7 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 
 ### 根据空间范围提取数据
 
-{doc}`/module/gmtselect` 模块，可实现矩形范围、缓冲区范围和多边形范围内空间数据的提取。
+{doc}`/module/select` 模块，可实现矩形范围、缓冲区范围和多边形范围内空间数据的提取。
 此处仅以缓冲区范围为例。
 
 ```{eval-rst}

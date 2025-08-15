@@ -81,7 +81,7 @@ gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
 ```
 
 然后将生成的 {file}`gmt.conf` 文件复制到GMT用户目录 {file}`~/.gmt` (Linux/macOS)
-或 {file}`C:\\Users\\XXX\\.gmt`（Windows）下。
+或 {file}`C:\\Users\\当前用户名\\.gmt`（Windows）下。
 
 请注意GMT 6.4 及其之前的版本，都无法正常使用科大镜像下载数据。因此强烈建议国内用户使用GMT 6.5 及其以上版本。
 :::
