@@ -69,7 +69,7 @@ WSENZ[1234]wsenz[1234]lrbtu
 ```{eval-rst}
 .. gmtplot:: B/axes.sh
     :show-code: false
-    :width: 60%
+    :width: 80%
 ```
 
 二维底图（上图中的左图）有四条边，分别用东西南北（WSEN 或 wsen）或左右上下（lrtb）的
@@ -112,7 +112,7 @@ gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t"-BwesnZ" -p
 ```{eval-rst}
 .. gmtplot:: B/3D-axes-examples.sh
     :show-code: false
-    :width: 60%
+    :width: 80%
 ```
 
 (axes_setting)=
@@ -481,7 +481,7 @@ coord   type   [label]
 
 - *type* 是如下几个字符的组合
 
-  - **a** 或 **i** 前者为 annotation，标注位置对齐刻度线；
+  - **a** 或 **i** 。前者为 annotation，标注位置对齐刻度线；
     后者表示 interval annotation，标注位置在区间中间。
     在一个标注文件中，**a** 和 **i** 只能出现其中的任意一个
   - **f** 表示刻度，即 frame tick
