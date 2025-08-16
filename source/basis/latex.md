@@ -27,9 +27,12 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 下面展示了一个在 GMT 中使用 LaTeX 表达式的例子
 
 ```{eval-rst}
-.. gmtplot:: GMT_latex.sh
-    :width: 80%
+.. gmt:: GMT_latex.sh
     :show-code: true
+
+.. image:: https://github.com/user-attachments/assets/d173ad00-53f8-44da-810a-97b5d6d956ba
+   :width: 80%
+   :align: center
 
     在轴标签、标题以及 :doc:`/module/text` 模块中使用 LaTeX 表达式
 ```
