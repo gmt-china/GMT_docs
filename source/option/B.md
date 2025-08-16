@@ -1,5 +1,5 @@
 ---
-author: 田冬冬, 姚家园, 陈箫翰, 周茂, Chenjie-98
+author: 田冬冬, 姚家园, 陈箫翰, 周茂
 date: 2025-08-15
 ---
 
@@ -500,14 +500,5 @@ coord   type   [label]
 .. gmtplot:: B/B_custom_axes_1.sh
     :width: 60%
     :caption: 自定义坐标轴
-    :show-code: true
-```
-
-自定义轴的另一个实际应用是以罗马数字标注地震烈度图的 colorbar 。
-
-```{eval-rst}
-.. gmtplot:: B/B_custom_axes_2.sh
-    :width: 80%
-    :caption: colorbar 中使用罗马数字标注
     :show-code: true
 ```
