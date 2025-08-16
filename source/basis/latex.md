@@ -27,8 +27,7 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 下面展示了一个在 GMT 中使用 LaTeX 表达式的例子
 
 ```{eval-rst}
-.. gmt:: GMT_latex.sh
-    :show-code: true
+.. literalinclude:: GMT_latex.sh
 ```
 
 ```{eval-rst}
