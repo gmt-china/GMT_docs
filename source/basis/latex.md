@@ -29,7 +29,9 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 ```{eval-rst}
 .. gmt:: GMT_latex.sh
     :show-code: true
+```
 
+```{eval-rst}
 .. image:: https://github.com/user-attachments/assets/d173ad00-53f8-44da-810a-97b5d6d956ba
    :width: 80%
    :align: center
