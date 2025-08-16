@@ -31,12 +31,12 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
 ```
 
 ```{eval-rst}
-.. image:: https://github.com/user-attachments/assets/d173ad00-53f8-44da-810a-97b5d6d956ba
+.. image:: https://github.com/user-attachments/assets/fff7ec3f-9d19-4e7f-ba81-6013167acfa4
    :width: 80%
    :align: center
-
-    在轴标签、标题以及 :doc:`/module/text` 模块中使用 LaTeX 表达式
 ```
+    在轴标签、标题以及 :doc:`/module/text` 模块中使用 LaTeX 表达式
+
 
 ## GMT 字体和 LaTeX
 
