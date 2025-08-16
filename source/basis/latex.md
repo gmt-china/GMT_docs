@@ -24,7 +24,7 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
    中的符号表章节
 :::
 
-下面展示了一个在 GMT 中使用 LaTeX 表达式的例子。在轴标签、标题以及 :doc:`/module/text` 模块中使用 LaTeX 表达式
+下面展示了一个在 GMT 中使用 LaTeX 表达式的例子。在轴标签、标题以及 {doc}`/module/text` 模块中使用 LaTeX 表达式
 
 ```{eval-rst}
 .. literalinclude:: GMT_latex.sh
