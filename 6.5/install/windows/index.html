@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows 下安装 GMT &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="macOS 下安装 GMT" href="../macOS/" />
+    <link rel="prev" title="安装" href="../" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">安装</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Windows 下安装 GMT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">安装 GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装可选软件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#graphicsmagick">GraphicsMagick</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bash">安装 Bash 环境</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macOS/">macOS 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fedora/">Fedora 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-debian/">Ubuntu/Debian 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conda/">使用 conda 安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-source-unix/">Linux/macOS 下编译 GMT 源码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-source-windows/">Windows 下编译 GMT 源码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">安装</a></li>
+      <li class="breadcrumb-item active">Windows 下安装 GMT</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/install/windows.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://github.com/core-man" target="_blank" rel="noopener">姚家园</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2023-09-20
+    </div>
+  
+  
+  <section class="tex2jax_ignore mathjax_ignore" id="windows-gmt">
+<h1>Windows 下安装 GMT<a class="headerlink" href="#windows-gmt" title="Link to this heading"></a></h1>
+<p>GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<ul class="simple">
+<li><p>安装前请检查你的 Windows 登录用户名：（1）是否包含空格；（2）是否包含中文。
+以上两种情况都可能导致 GMT 运行出错。如果用户名不符合要求，请新建一个用户，然后使用
+新用户登录 Windows，再安装 GMT。</p></li>
+<li><p>360 等安全软件会在 GMT 安装过程中拦截 <strong>PATH</strong> 环境变量的修改。
+请务必关闭安全软件之后再安装。</p></li>
+<li><p>GMT 提供的安装包不支持 Windows XP。</p></li>
+</ul>
+</div>
+<section id="gmt">
+<h2>安装 GMT<a class="headerlink" href="#gmt" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>下载 GMT 安装包 <a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-win64.exe">gmt-6.5.0-win64.exe</a></p>
+<p>GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gdal.org/">GDAL</a>：用于多种地学数据格式的转换</p></li>
+<li><p><a class="reference external" href="https://ffmpeg.org/">FFmpeg</a>：用于生成 mp4 或 webm 格式的动画</p></li>
+<li><p><a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a>：用于生成 PDF、JPG 等图片格式</p></li>
+</ul>
+</li>
+<li><p>安装 GMT</p>
+<p>双击安装包即可安装。在 “Choose components” 页面应勾选全部选项。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>安装过程中可能会出现如下警告:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Warning!<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>GMT<span class="w"> </span>to<span class="w"> </span>PATH.<span class="w"> </span>Please<span class="w"> </span>add<span class="w"> </span>the<span class="w"> </span>GMT<span class="w"> </span>bin<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>PATH<span class="w"> </span>manually.
+</pre></div>
+</div>
+<p>出现此警告的原因是系统的环境变量 <strong>PATH</strong> 太长，GMT 安装包无法直接修改。
+解决办法是，先忽略这一警告，待安装完成后按照如下步骤手动修改系统环境变量 <strong>PATH</strong>。</p>
+<ol class="arabic simple">
+<li><p>点击“计算机”→“属性”→“高级系统设置”→“环境变量”打开“环境变量”编辑工具</p></li>
+<li><p>在“系统变量”部分中，选中 “Path” 并点击“编辑”</p></li>
+<li><p>在“变量值”的最后加上 GMT 安装目录下的 <code class="file docutils literal notranslate"><span class="pre">bin</span></code> 目录的路径，
+如 <code class="file docutils literal notranslate"><span class="pre">C:\programs\gmt6\bin</span></code>。需要注意 <strong>PATH</strong> 变量值中多个路径之间用英文分号分隔</p></li>
+</ol>
+</div>
+</li>
+<li><p>测试安装</p>
+<p>安装完成后，点击“开始”→“所有程序”→“附件”→“命令提示符”以启动 CMD。
+在 CMD 窗口中敲入 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--version</span></code>，若出现 GMT 版本号则表示 GMT 安装成功。</p>
+</li>
+<li><p>升级 GMT</p>
+<p>GMT 目前不具备自动更新功能。如果想要升级新版本，通常需要先卸载旧版本。
+卸载完成后，再下载并安装新版安装包以完成升级。</p>
+</li>
+<li><p>卸载 GMT</p>
+<p>若想要卸载 GMT，可以进入系统的设置 -&gt; 应用，或控制面板 -&gt; 卸载程序进行卸载。
+偶尔会遇到卸载不干净的情况，可以等卸载程序执行完成后再手动删除 GMT 安装目录即可。</p>
+</li>
+</ol>
+</section>
+<section id="id1">
+<h2>安装可选软件<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="graphicsmagick">
+<h3>GraphicsMagick<a class="headerlink" href="#graphicsmagick" title="Link to this heading"></a></h3>
+<p>GMT 的 <a class="reference internal" href="../../module/movie/"><span class="doc">movie</span></a> 模块在制作 GIF 格式的动画时需要使用
+<a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>。
+如有制作 GIF 动画的需求，则可以安装这个软件，并将其 <code class="file docutils literal notranslate"><span class="pre">bin</span></code> 目录加入到系统环境变量 <strong>PATH</strong> 中，
+以保证 GMT 可以找到其提供的 <code class="docutils literal notranslate"><span class="pre">gm</span></code> 命令。</p>
+</section>
+</section>
+<section id="bash">
+<h2>安装 Bash 环境<a class="headerlink" href="#bash" title="Link to this heading"></a></h2>
+<p>GMT 可以直接在 Windows 下的 Batch 脚本中使用，但由于 Batch 脚本自身功能的局限性，无法完全发挥
+GMT 的强大功能。因而，建议 Windows 用户安装 Bash 环境并编写 Bash 脚本来使用 GMT。</p>
+<p>使用 Bash 环境的优势在于：</p>
+<ol class="arabic simple">
+<li><p>Bash 语法比 Batch 语法更丰富，提供了更多的功能</p></li>
+<li><p>Bash 环境提供了多个可用于数据处理的命令行工具，为 GMT 数据处理和进一步绘图提供了支撑</p></li>
+<li><p>本教程中所有脚本均为 Bash 语法，读者可不做修改直接在 Bash 环境中执行</p></li>
+</ol>
+<p>在 Windows 下使用 Bash 环境的方式有很多，如:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://gitforwindows.org/">Git for Windodws</a></p></li>
+<li><p><a class="reference external" href="https://cygwin.com/">Cygwin</a></p></li>
+<li><p><a class="reference external" href="https://www.msys2.org/">MSYS2</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux (WSL)</a></p></li>
+</ol>
+<p>用户可以根据自己的喜欢选择合适的 Bash 环境。对于不熟悉 Bash 环境的用户，可以直接安装
+Git for Windows。</p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../" class="btn btn-neutral float-left" title="安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../macOS/" class="btn btn-neutral float-right" title="macOS 下安装 GMT" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

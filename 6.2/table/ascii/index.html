@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASCII 表 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="二进制表" href="../binary/" />
+    <link rel="prev" title="表数据" href="../" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">表数据</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ASCII 表</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">ASCII 表简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">文件头记录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">多段数据与数据段头记录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-ascii-id4">数据段头记录中的额外属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">二进制表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netcdf/">netCDF表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shapefile/">Shapefile格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ogrgmt/">OGR/GMT矢量数据格式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">表数据</a> &raquo;</li>
+      <li>ASCII 表</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/table/ascii.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ascii">
+<h1>ASCII 表<a class="headerlink" href="#ascii" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>ASCII 表简介<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>ASCII 表是最常见的数据形式，可以用编辑器直接编辑。ASCII 表常用于表示点、线或多边形。表数据中有 N 行 M 列，每行称为一个记录，每列称为一个字段。一个记录内的字段之间用空格、制表符、逗号或分号分隔。每个字段可以是整数（如 <strong>12</strong>）、浮点数（如 <strong>20.34</strong>）、地理坐标（如 <strong>12:23:44.5W</strong>）、绝对时间（如 <strong>2010-10-20T10:30:53.250</strong>）、相对时间（如 <strong>30t</strong>）。此外，GMT 还可以处理大多数CVS（Comma-Separated Values）文件，包括被双引号扩起来的数字。以如下文件为例，</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a comment line</span>
+<span class="c1"># lon      lat  evdp</span>
+<span class="c1"># This is another comment line</span>
+<span class="m">133</span>.949  <span class="m">34</span>.219  <span class="m">20</span>
+<span class="m">133</span>.528  <span class="m">34</span>.676  <span class="m">15</span>
+<span class="m">130</span>.233  <span class="m">33</span>.410  <span class="m">43</span>
+<span class="m">135</span>.133  <span class="m">35</span>.313  <span class="m">35</span>
+<span class="m">131</span>.377  <span class="m">34</span>.398  <span class="m">22</span>
+<span class="m">132</span>.792  <span class="m">34</span>.457  <span class="m">34</span>
+<span class="m">133</span>.620  <span class="m">34</span>.936  <span class="m">6</span>
+<span class="m">131</span>.101  <span class="m">32</span>.811  <span class="m">23</span>
+<span class="m">129</span>.435  <span class="m">33</span>.212  <span class="m">55</span>
+<span class="m">133</span>.144  <span class="m">33</span>.647  <span class="m">67</span>
+</pre></div>
+</div>
+<p>记录中以 <strong>#</strong> 开头的行，即第一列是 <strong>#</strong> 的记录，会被当做注释行直接忽略，不算在 N 个记录之内。所以这个 ASCII 表可以认为有 10 行 3 列，三列数据分别代表经度、纬度和深度。</p>
+<p>不同的模块和选项的组合通常会对数据的列数有不同的要求，每列数据的含义也会不同。因而需要根据具体情况去准备数据。准备数据的过程中可能会用到 GMT 的 <a class="reference internal" href="../../option/io/"><span class="doc">-i 和 -o 选项</span></a> 以及 <strong>gawk</strong> 等工具。</p>
+<p>在输出 ASCII 表时，字段之间默认用 TAB 键分隔，可以通过修改 <a class="reference internal" href="../../conf/io/#term-IO_COL_SEPARATOR"><span class="xref std std-term">IO_COL_SEPARATOR</span></a> 来设置字段的分隔符，</p>
+</section>
+<section id="id2">
+<h2>文件头记录<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>在第一个记录前，可以有一个或多个与数据无关的记录，称为文件头记录（file header records）。以 <strong>#</strong> 开头的注释行也算作是文件头记录的一部分，只是其会被自动忽略。其它不以 <strong>#</strong> 开头但与数据无关的行，也是文件头记录。当存在这些非注释行的文件头记录时，则需要使用 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a> 选项或设置参数 <a class="reference internal" href="../../conf/io/#term-IO_N_HEADER_RECS"><span class="xref std std-term">IO_N_HEADER_RECS</span></a>
+跳过这些文件头记录。</p>
+<p>下面的ASCII表中有四个文件头记录（3个注释行和1个非注释行），需要使用 <strong>-h4</strong> 选项跳过该文件头段记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a comment line</span>
+<span class="c1"># lon      lat  evdp</span>
+<span class="c1"># This is another comment line</span>
+<span class="m">2015</span>-01-05 <span class="m">10</span>:20:30.456 <span class="m">15</span> <span class="m">45</span> <span class="m">60</span> <span class="m">6</span>.0
+<span class="m">133</span>.949  <span class="m">34</span>.219  <span class="m">20</span>
+<span class="m">133</span>.528  <span class="m">34</span>.676  <span class="m">15</span>
+<span class="m">130</span>.233  <span class="m">33</span>.410  <span class="m">43</span>
+<span class="m">135</span>.133  <span class="m">35</span>.313  <span class="m">35</span>
+<span class="m">131</span>.377  <span class="m">34</span>.398  <span class="m">22</span>
+<span class="m">132</span>.792  <span class="m">34</span>.457  <span class="m">34</span>
+<span class="m">133</span>.620  <span class="m">34</span>.936  <span class="m">6</span>
+<span class="m">131</span>.101  <span class="m">32</span>.811  <span class="m">23</span>
+<span class="m">129</span>.435  <span class="m">33</span>.212  <span class="m">55</span>
+<span class="m">133</span>.144  <span class="m">33</span>.647  <span class="m">67</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>多段数据与数据段头记录<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>以绘制断层为例，在绘制断层的时候，可以将每条断层线的经纬度信息分别放在单独的文件中。但当断层数量很多时，这样做会导致目录下有太多数据文件而混乱不堪。为了解决类似的问题，GMT引入了多段数据的概念。</p>
+<p>多段数据，顾名思义，就是一个文件中包含了多个数据段。为了区分每个数据段，需要在每段数据的开头加上一个额外的数据段头记录（segment header records）来标记一段新数据的开始。</p>
+<p>数据段头记录总是以某个特定的字符作为开头，GMT默认的段头记录的标识符为 <strong>&gt;</strong>，即所有以 <strong>&gt;</strong> 开头的行都会被认为是一个段头记录，其标志着新一段数据的开始。</p>
+<p>下面是一个包含两个数据段的多段数据，每段数据分别构成一个多边形:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;
+<span class="m">10</span>  <span class="m">20</span>
+<span class="m">15</span>  <span class="m">30</span>
+<span class="m">5</span>   <span class="m">25</span>
+&gt;
+<span class="m">20</span>  <span class="m">20</span>
+<span class="m">35</span>  <span class="m">30</span>
+<span class="m">40</span>  <span class="m">40</span>
+<span class="m">35</span>  <span class="m">40</span>
+</pre></div>
+</div>
+<p>可以使用如下命令绘制上面的多段文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
+</pre></div>
+</div>
+<p>用户可以通过设置 <a class="reference internal" href="../../conf/io/#term-IO_SEGMENT_MARKER"><span class="xref std std-term">IO_SEGMENT_MARKER</span></a> 将段头记录的标识符修改为任意字符，例如 <strong>&#64;</strong>、<strong>%</strong>等。
+<a class="reference internal" href="../../conf/io/#term-IO_SEGMENT_MARKER"><span class="xref std std-term">IO_SEGMENT_MARKER</span></a> 可以取两个特殊的值：</p>
+<ul class="simple">
+<li><p>取 <strong>B</strong> 表示用空行作为数据段的分隔符</p></li>
+<li><p>取 <strong>N</strong> 表示用一个所有列都是NaN的记录作为数据段分隔符</p></li>
+</ul>
+<p>同样，可以将 <a class="reference internal" href="../../conf/io/#term-IO_SEGMENT_MARKER"><span class="xref std std-term">IO_SEGMENT_MARKER</span></a> 设置为两个以逗号分隔的字符，则为输入和输出指定了不同的段分隔符。</p>
+</section>
+<section id="table-ascii-id4">
+<span id="id4"></span><h2>数据段头记录中的额外属性<a class="headerlink" href="#table-ascii-id4" title="永久链接至标题"></a></h2>
+<p>数据段头记录不仅用于标记数据段的开始，还可以额外指定该段数据的其它属性。比如在绘制线段时，可以在段头记录中加上如下一系列选项，以分别控制每段线段的属性：</p>
+<ul class="simple">
+<li><p><strong>-W</strong> 指定当前数据段的画笔颜色</p></li>
+<li><p><strong>-G</strong> 指定当前数据段的填充色</p></li>
+<li><p><strong>-Z</strong> 设置当前数据段对应的Z值，并从CPT文件中获取Z值对应的颜色作为其颜色</p></li>
+<li><p><strong>-L</strong> 设置当前数据段的标签信息</p></li>
+<li><p><strong>-T</strong> 设置当前数据段的一般描述信息</p></li>
+<li><p><strong>-Ph</strong> 表明当前数据段构成的闭合多边形位于另一个闭合多边形的内部</p></li>
+<li><p>…</p></li>
+</ul>
+<p>下面的多段数据，分别设置两段数据拥有不同的画笔颜色和填充色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; -W2p,red -Glightred
+<span class="m">10</span>  <span class="m">20</span>
+<span class="m">15</span>  <span class="m">30</span>
+<span class="m">12</span>  <span class="m">25</span>
+&gt; -W2p,blue -Glightblue
+<span class="m">22</span>  <span class="m">20</span>
+<span class="m">30</span>  <span class="m">30</span>
+<span class="m">40</span>  <span class="m">50</span>
+<span class="m">35</span>  <span class="m">44</span>
+</pre></div>
+</div>
+<p>可以使用如下命令绘制上面的多段数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
+</pre></div>
+</div>
+<p>查看绘图结果可以发现，数据段头记录中的选项参数会覆盖命令行中相应选项的值。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../" class="btn btn-neutral float-left" title="表数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../binary/" class="btn btn-neutral float-right" title="二进制表" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
