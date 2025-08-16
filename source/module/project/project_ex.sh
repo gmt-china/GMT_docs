@@ -7,7 +7,7 @@ gmt begin ex
 
     gmt basemap -JM10c -R116/149/20/48 -Baf
     gmt grdimage @earth_relief_04m_p -Cgeo
-    # 绘制剖面
+    # 绘制 a-ap 测线。生成测线时以0.1度为间隔输出坐标点。
     gmt project -C${a} -E${ap} -G0.1 | gmt plot -W1p,cyan
     # 示例文件前三列分别为经度、纬度、深度
     # 根据深度绘制不同颜色的圆点
