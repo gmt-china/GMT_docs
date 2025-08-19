@@ -24,15 +24,18 @@ GMT 中 LaTeX 表达式可以用两种不同的写法表示:
    中的符号表章节
 :::
 
-下面展示了一个在 GMT 中使用 LaTeX 表达式的例子
+下面展示了一个在 GMT 中使用 LaTeX 表达式的例子。在轴标签、标题以及 {doc}`/module/text` 模块中使用 LaTeX 表达式：
 
 ```{eval-rst}
-.. gmtplot:: GMT_latex.sh
-    :width: 80%
-    :show-code: true
-
-    在轴标签、标题以及 :doc:`/module/text` 模块中使用 LaTeX 表达式
+.. literalinclude:: GMT_latex.sh
 ```
+
+```{eval-rst}
+.. image:: https://github.com/user-attachments/assets/fff7ec3f-9d19-4e7f-ba81-6013167acfa4
+   :width: 80%
+   :align: center
+```
+
 
 ## GMT 字体和 LaTeX
 
