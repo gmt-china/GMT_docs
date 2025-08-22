@@ -450,10 +450,16 @@ plot
     有6种可选的方式控制标注文字：
 
     **d**\ *dist*\ [**c**\|\ **i**\|\ **p**][/\ *frac*]
-        小写 **d** 指定标注之间的距离 *dist* ，单位为 **c** (cm), **i** (inch), **p** (points)。
 
     **D**\ *dist*\ [**d**\|\ **e**\|\ **f**\|\ **k**\|\ **m**\|\ **M**\|\ **n**\|\ **s**][/\ *frac*]
-        大写 
+        小写 **d** 指定标注之间的距离 *dist* ，单位为 **c** (cm), **i** (inch), **p** (points)。
+        默认值为 *10c* 。
+
+        大写 **D** 指定标注之间的地理距离 *dist* ，单位为 **e** (m), **f** (foot), **k** (km),
+        **M** (mile), **n** (nautical mile), **u** (US survey foot),
+        **d** (arc degree 弧度), **m** (arc minute 弧分), **s** (arc second 弧秒)。
+
+        可选选项
 
     #. ``d<dist>[<u>]/[<frac>]`` 指定标签之间的距离，单位 ``<u>`` 为 ``c|i|p`` ；
        ``<frac>`` 表示将第一个标签放在距离quoted lines起点 ``<frac>*<dist>`` 处
