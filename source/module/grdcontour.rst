@@ -127,13 +127,6 @@ grdcontour
 
 .. include:: explain_contlabel.rst_
 
-**-Gd**\ *dist*\ [**c**\|\ **i**\|\ **p**] 或 **-GD**\ *dist*\ [**d**\|\ **e**\|\ **f**\|\ **k**\|\ **m**\|\ **M**\|\ **n**\|\ **s**]
-    该选项控制标注在等值线上的位置。
-    使用小写的 **d** ，并指定标注之间的距离 *dist* 和单位 **c** (cm)、 **i** (inch)或 **p** (points)。
-    如果使用大写的 **D**，则表示距离 *dist* 是地图上的距离，单位也应该从以下几个地理距离单位中选择：
-    **e** (m), **f** (foot), **k** (km), **M** (mile), **n** (nautical mile),
-    **u** (US survey foot), **d** (arc degree), **m** (arc minute), **s** (arc second)。
-
 .. _-L:
 
 **-L**\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p**
