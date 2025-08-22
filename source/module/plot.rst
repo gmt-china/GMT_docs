@@ -351,23 +351,65 @@ plot
     默认情况下多个波段都绘制在一个条状符号上，附加 **+s** 让多波段绘制为相邻的多个条状符号。
     可选参数 *gap* 表示在相邻条状符号之间添加间隔，间隔宽度为 *size* 的百分比 *gap* 。此时 *size* 定义为多个条状符号加间隔的总宽度。
 
-    ``-Sb`` 用于在X坐标处绘制一个从 ``<base>`` 到Y位置的垂直bar。
+    绘制多波段条状符号需要使用CPT文件以及 |-C| 选项指定颜色，其中CPT文件的取值范围必须是 0, 1, ..., *nx* - 1。
+    输入数据的格式为(*x1 y x2 ... xn*)或(*dx1 y dx2 ... dxn*)。
 
-    #. ``<size>`` 是bar宽度，其单位可以是长度单位 ``c|i|p`` ，也可以用 ``u``
-       表示X方向单位
-    #. 若不指定 ``b<base>`` ，其默认值为ymin
-    #. 指定 ``b<base>`` ，为所有数据点指定base值
-    #. 加上 ``b`` 但未指定 ``<base>`` ，则需要额外的一列数据来指定base的值
-    #. ``-SB`` 与 ``-Sb`` 类似，区别在于 ``-SB`` 绘制水平bar
+**-SB**\ [*size*\ [**c**\|\ **i**\|\ **p**\|\ **q**]][**+b**\ \|\ **B**\ [*base*]][**+v**\|\ **i**\ *nx*][**+s**\ [*gap*]]
+    与前者类似，区别在于绘制的是水平条状符号。
 
-    ::
+.. rubric:: 矢量符号
 
-        gmt plot -R0/10/0/5 -JX15c/5c -B1 -Sb1cb -png test << EOF
-        2 3 1 0.5
-        4 2 1 1.5
-        8 4 1 2.5
-        EOF
+矢量符号需要长度和方向，或矢量终点坐标等参数。通过附加选项可以定制矢量头的样式。
 
+.. gmtplot:: plot/GMT_base_symbols5.sh
+    :width: 80%
+    :show-code: false
+
+**-Sm**\ *size*\ [**+**\ *vecmodifiers*]
+    绘制数学圆弧，输入数据的格式为::
+
+        X  Y  radius  start  stop
+    
+    其中 *radius* 为圆弧半径， *start* 和 *stop* 定义为水平方向起始的逆时针角度。
+    默认圆弧两端无矢量头，可以通过附加选项 **+**\ *vecmodifiers* 添加，见 :doc:`/basis/vector` 一节。 *size* 定义为矢量头的长度。
+    圆弧的线宽由 |-W| 选项设定，矢量头的轮廓线宽默认为圆弧线宽的一半。
+
+**-SM**\ *size*\ [**+**\ *vecmodifiers*]
+    与前者类似，唯一的区别为当圆弧的夹角恰好是90度时会用直角符号来表示。
+
+.. gmtplot:: plot/plot_-Sm.sh
+    :width: 50%
+    :show-code: true
+
+    plot -Sm|M 示意图
+
+**-Sv**\ *size*\ [**+**\ *vecmodifiers*]
+    绘制矢量，输入数据格式为::
+
+        X   Y   direction   length
+
+    其中 *direction* 定义为水平方向起始的逆时针角度， *length* 为矢量长度， *size* 为矢量头的长度。
+    矢量杆的宽度颜色等属性由 |-W| 控制，矢量头的轮廓线宽默认为其一半。
+    更多矢量头的属性可以通过 **+**\ *vecmodifiers* 添加，见 :doc:`/basis/vector` 一节。
+
+**-SV**\ *size*\ [**+**\ *vecmodifiers*]
+    与前者类似，唯一的区别为第三列是方位角而不是方向，即以正北为起点顺时针旋转的角度。
+
+**-S=**\ *size*\ [**+**\ *vecmodifiers*]
+    绘制地理矢量，区别在于第三列是方位角（即以正北为起点顺时针旋转的角度），第四列长度的单位是地理单位（默认为km）。
+
+.. rubric:: 自定义符号
+
+**-S**\ [**k**\ *name*\ [/\ *size*]]
+    绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：
+
+    .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
+        :width: 50%
+        :align: center
+        :alt: GMT 内置自定义符号
+        
+    如果这些内置自定义符号无法满足需求，用户可以自行制作自定义符号文件并使用。
+    详细使用方法见\ `制作和使用自定义符号`_。
 
 ``-Sf<gap>[/<size>][+l|+r][+b+c+f+s+t][+o<offset>][+p[<pen>]]``
     绘制front，即在线段上加上符号以表示断层等front
@@ -397,34 +439,6 @@ plot
        plot -Sf示意图
 
 
-``-Sk<name>/<size>``
-    绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：
-
-    .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
-        :width: 50%
-        :align: center
-        :alt: GMT 内置自定义符号
-        
-    如果这些内置自定义符号无法满足需求，用户可以自行制作自定义符号文件并使用。
-    详细使用方法见\ `制作和使用自定义符号`_。
-
-``-Sm|M<size>``
-    绘制数学圆弧
-
-    输入数据的格式为::
-
-        X  Y  radius_of_arc  start_direction  stop_direction
-
-    #. ``<size>`` 为矢量箭头的长度
-    #. 圆弧的线宽由 ``-W`` 选项设定
-    #. ``-SM`` 选项与 ``-Sm`` 完全相同，只是当圆弧的夹角恰好是90度是，
-       ``-SM`` 会用直角符号来表示
-    #. 圆弧的两端可加上额外的箭头，见 :doc:`/basis/vector` 一节
-
-    .. gmtplot:: plot/plot_-Sm.sh
-       :width: 50%
-
-       plot -Sm 示意图
 
 ``-Sq[<type>]<info>[:<labelinfo>]``
     绘制quoted lines，即带标注的线段，比如等值线、带断层名的断层线等
@@ -469,23 +483,7 @@ plot
     #. ``+w``
     #. ``+x[<first>,<last>]``
 
-``-Sv|V|=``
-    绘制矢量
 
-    **-Sv** 用于绘制矢量，输入数据格式为::
-
-        X   Y   方向    长度
-
-    #. 方向定义为以水平/正东为起点，逆时针旋转的角度
-    #. *size* 为矢量箭头的长度
-    #. 矢量宽度由 ``-W`` 控制
-    #. 更多箭头的属性见 :doc:`/basis/vector` 一节
-    #. ``-SV`` 与 ``-Sv`` 类似，区别在于第三列是方位角而不是方向，即以正北为起点顺时针旋转的角度
-    #. ``-S=`` 与 ``-SV`` 类似，区别在于第四列长度的单位是地理单位
-
-    ::
-
-        echo 2 2 45 5c | gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sv1c+e -W2p -png test
 
 ``-S~[d|D|f|l|L|n|N|s|S|x|X]<info>[:<symbolinfo>]``
     绘制decorated line，即带有符号的线段。详见官方文档。
