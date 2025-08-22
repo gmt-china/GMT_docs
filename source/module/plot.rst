@@ -355,10 +355,6 @@ plot
 
 矢量符号需要长度和方向，或矢量终点坐标等参数。通过附加选项可以定制矢量头的样式。
 
-.. gmtplot:: plot/GMT_base_symbols5.sh
-    :width: 80%
-    :show-code: false
-
 **-Sm**\ *size*\ [**+**\ *vecmodifiers*]
     绘制数学圆弧，输入数据的格式为::
 
@@ -391,6 +387,10 @@ plot
 
 **-S=**\ *size*\ [**+**\ *vecmodifiers*]
     绘制地理矢量，区别在于第三列是方位角（即以正北为起点顺时针旋转的角度），第四列长度的单位是地理单位（默认为km）。
+
+.. gmtplot:: plot/GMT_base_symbols5.sh
+    :width: 80%
+    :show-code: true
 
 .. rubric:: 自定义符号
 
