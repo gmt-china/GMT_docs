@@ -6,6 +6,7 @@
 :maxdepth: 1
 
 histogram/index
+contour/index
 configurations
 oneliner
 inset
