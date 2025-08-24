@@ -24,7 +24,7 @@ gmt which -Ga @earth_relief_30m_g \
             @earth_relief_20m_g \
             @earth_relief_10m_p \
             @earth_relief_06m_p \
-            @earth_relief_05m_p \
+            @earth_relief_05m_g \
             @earth_relief_04m_p \
             @earth_age_06m_p \
             @earth_day_20m_p \
@@ -44,7 +44,8 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @Table_5_11.txt \
             @Wessel_GJI_Fig_5.txt \
             @quakes_07.txt \
-            @quakes_2018.txt
+            @quakes_2018.txt \
+            @App_O_ttt.nc
 
 # 3. Download the china-geospatial-data dataset
 git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
