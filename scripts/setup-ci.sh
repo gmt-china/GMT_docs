@@ -45,7 +45,9 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @Wessel_GJI_Fig_5.txt \
             @quakes_07.txt \
             @quakes_2018.txt \
-            @App_O_ttt.nc
+            @App_O_ttt.nc \
+            @App_O_geoid.nc \
+            @sunglasses.eps
 
 # 3. Download the china-geospatial-data dataset
 git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data

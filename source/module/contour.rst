@@ -111,6 +111,8 @@ contour
 
 .. include:: explain_contlabel.rst_
 
+    **-G** 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`_gmt-grdcontour-examples` 小节
+
 .. _-W:
 
 **-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`

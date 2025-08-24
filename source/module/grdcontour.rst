@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰, 朱邓达
-:date: 2025-08-22
+:date: 2025-08-25
 
 .. index:: ! grdcontour
 
@@ -212,32 +212,52 @@ grdcontour
 
 .. include:: explain_help.rst_
 
+.. _gmt-grdcontour-examples:
 
 示例
 --------
 
-使用网格文件AK_gulf_grav.nc，以25为间隔绘制等值线，以50为间隔标注，标注文字大小10p::
+第1个实例绘制等值线并沿等值线每1.5英寸放置一个标注::
 
-    gmt grdcontour @AK_gulf_grav.nc -JM16c -C25 -A50+f10p -B -pdf alaska_grav1
+    .. gmtplot:: grdcontour/contour-anno1.sh
+        :width: 80%
+        :show-code: true
 
-只绘制50和150两条等值线，只标注100等值线::
+   通过指定 **-Gd** 选项的参数，确定了标注的位置(等值线上相距1.5英寸的点)
 
-    gmt grdcontour @AK_gulf_grav.nc -JM16c -C50,150 -A100,+f10p -B -pdf alaska_grav2
+第2个实例指定每条等值线上标注的个数。每条等值线上只放置1个标注，并且要求等值线的长度不小于1英寸::
 
-以10为间隔绘制等值线，以50为间隔标注，设置图标题为"Gravity Anomalies"。
-将有标注的等值线设置为粗红线，将无标注的等值线设置为蓝色的细短划线::
+    .. gmtplot:: grdcontour/contour-anno2.sh
+        :width: 80%
+        :show-code: true
 
-    gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Wathick,red -Wcthinnest,blue,- -pdf alaska_grav3
+    通过指定 **-Gn** 选项的参数，确定了标注的位置(每条长度超过1英寸的等值线的中心位置)
 
-将负值等值线设置为蓝色，正值等值线设置为红色，0等值线设置为黑色::
+第3个实例给定标注所在位置的坐标。由于坐标不是严格位于等值线上，因此需要在参数中指定标注位置与等值线距离的上限。
+模块会根据等值线的几何形状，自动计算标注的角度::
 
-    gmt begin alaska_grav4
-      gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -B -B+t"Gravity Anomalies" -Ln -Wathick,blue -Wcthinnest,blue,-
-      gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -Lp -Wathick,red -Wcthinnest,red,-
-      gmt grdcontour @AK_gulf_grav.nc -A0,
-    gmt end show
+    .. gmtplot:: grdcontour/contour-anno3.sh
+        :width: 80%
+        :show-code: true
 
-分两个文件 contours_C.txt 和 contours_O.txt 保存闭合等值线和开放等值线::
+    通过指定 **-Gf** 选项的参数，确定了标注的位置(等值线上与给定点距离最小的点)
 
-    gmt grdcontour @AK_gulf_grav.nc -C150 -S4 -DAK_contours_%c.txt
+第4个实例通过指定 **-Gl** 或 **-GL** 选项的参数来定义线段，将标注放置在直线段与等值线的交点::
 
+    .. gmtplot:: grdcontour/contour-anno4.sh
+        :width: 80%
+        :show-code: true
+
+    通过指定 **-GL** 选项的参数确定了标注的位置(大圆弧与等值线的交点)
+
+图中的标注位于数据最值点连线(**Z-/Z+**)与等值线的交点。图中最值点连线为两点之间的大圆弧，在其与等值线交点位置处放置了标注。
+同一幅地图中，可以分别指定多条线段。
+
+如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，可以使用广义的相交算法确定标注的位置。
+多段数据文件 *cross.txt* 中定义了三条折线，模块在这三条折线与等值线交点位置处进行标注::
+
+    .. gmtplot:: grdcontour/contour-anno5.sh
+        :width: 80%
+        :show-code: true
+
+    通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定了标注的位置
