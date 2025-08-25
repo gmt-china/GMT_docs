@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.1 画布 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/basis/paper.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="4.2 单位" href="../unit/" />
+    <link rel="prev" title="4 GMT基础" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">4 GMT基础</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1 画布</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.1.1 图片格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.1.2 画布尺寸</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.1.3 画布颜色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.1.4 画布方向</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.1.5 底图原点</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">4.2 单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">4.3 颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">4.13 数据类型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">4 GMT基础</a> &raquo;</li>
+        
+      <li>4.1 画布</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/basis/paper.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>4.1 画布<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>要画一张图，首先需要准备一个画布。GMT 默认的画布是 A4 大小的横置的白色PS文件。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">本节介绍的内容，涉及到后面的一些知识。因而这里只是做简单介绍，具体的操作看不懂也没关系。</p>
+</div>
+<div class="section" id="id2">
+<h2>4.1.1 图片格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT支持多种矢量图片格式和位图图片格式。</p>
+<p>矢量图片格式包括PDF（推荐使用）、PS、EPS和SVG格式；位图图片格式包括PNG（推荐）、JPG（推荐）、BMP、PPM和TIFF格式。</p>
+<p>GMT默认生成的都是PS格式的图片，要想生成其他格式的图片，则可以调用
+<a class="reference internal" href="../../module/psconvert/"><span class="doc">psconvert</span></a> 模块将PS图片转换为PDF或JPG等格式的图片。具体命令为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 生成PDF格式的图片</span>
+gmt psconvert -A -P -Tf xxx.ps
+
+<span class="c1"># 生成JPG格式的图片</span>
+gmt psconvert -A -P -Tj xxx.ps
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>4.1.2 画布尺寸<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>GMT默认的画布尺寸为A4，即 <code class="docutils literal notranslate"><span class="pre">210mmx297mm</span></code>。</p>
+<p>通过修改 GMT 参数 <a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 可以控制画布的默认尺寸。GMT提供了几十种预定义的画布尺寸，还支持自定义尺寸，详情见 <a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 的说明。</p>
+</div>
+<div class="section" id="id4">
+<h2>4.1.3 画布颜色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>默认的画布颜色为白色，可以通过设置 <a class="reference internal" href="../../conf/ps/#ps-page-color"><span class="std std-ref">PS_PAGE_COLOR</span></a> 来修改画布颜色。</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">若设置画布颜色为其他颜色，则使用 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 将 PS 文件转化为其他图片格式时无法使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项进行裁边。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>4.1.4 画布方向<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>取一张 A4 纸放在桌面上，有两种放置的方式：竖着放和横着放。如图所示：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/769157800dddb8d19aab003da64da6f4/paper-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/paper-gmtplot-0.png" src="../../_images/paper-gmtplot-0.png" />
+</div>
+<p>图中左边把纸张竖着放的称为Portrait（肖像）模式，右边把纸张横着放的方式称为
+Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，风景是矮胖的，就需要横着拍。</p>
+<p>由于历史原因，GMT中画布的默认放置方式是Landscape模式。有两种方式可以修改画布方向：</p>
+<ol class="arabic simple">
+<li>在第一个<strong>绘图</strong>命令中使用 <a class="reference internal" href="../../option/P/"><span class="doc">-P 选项</span></a></li>
+<li>设置GMT参数 <a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a> 为 <code class="docutils literal notranslate"><span class="pre">portrait</span></code></li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p class="last">Linux下默认的PS阅读器evince可以自动识别两种模式，Landscape模式的PS文件横着放，Portrait模式的文件竖着放，所以看上去总是对的。而 <code class="docutils literal notranslate"><span class="pre">gs</span></code> 无法自动识别两种模式，总是将文件竖着放，因而用gs看Landscape模式的PS文件时就会很别扭。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>4.1.5 底图原点<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>准备好画布之后，可不能随便找一个点就开始画了，还需要定义底图的原点。GMT默认的底图原点距左下角 <code class="docutils literal notranslate"><span class="pre">(1i,1i)</span></code>，即坐标原点离纸张左下角的距离是水平方向偏移1英寸，垂直方向偏移1英寸。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/0bcb9d54f729d8aa6c8b046a9185a51e/paper-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/paper-gmtplot-1.png" src="../../_images/paper-gmtplot-1.png" />
+</div>
+<p>图中所示是一个完整的A4画布。其中灰色实线的间距是 1 cm，灰色虚线（右键查看大图）的间距是 0.5 cm。图中的底图用如下命令得到:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/10c -B1 -B+glightblue &gt; map.ps
+</pre></div>
+</div>
+<p>该命令中，<code class="docutils literal notranslate"><span class="pre">-JX10c/10c</span></code> 规定了底图的宽和高都是 10 cm，可以看到，底图的左边界位于
+<code class="docutils literal notranslate"><span class="pre">1i</span></code>，右边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处，下边界位于 <code class="docutils literal notranslate"><span class="pre">1i</span></code>，上边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处。</p>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">此处提到的底图原点是指矩形底图的坐标轴的左下角相对于画布左下角的位置，而不包括坐标轴的标注或标签部分。</p>
+</div>
+<p>可以在命令中使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 来修改底图的原点位置。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../unit/" class="btn btn-neutral float-right" title="4.2 单位" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral float-left" title="4 GMT基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
