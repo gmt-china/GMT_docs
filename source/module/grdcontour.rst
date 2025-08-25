@@ -215,13 +215,13 @@ grdcontour
 基础示例
 ----------
 
-使用网格文件AK_gulf_grav.nc，以25为间隔绘制等值线，以50为间隔标注，标注文字大小10p。
+使用网格文件AK_gulf_grav.nc，以10为间隔绘制等值线，以20为间隔标注，标注文字大小10p。
 
 .. gmtplot:: grdcontour/contour-ex1.sh
     :width: 80%
     :show-code: true
 
-只绘制50和150两条等值线，只标注100等值线。
+只绘制20和60两条等值线，只标注40等值线。
 
 .. gmtplot:: grdcontour/contour-ex2.sh
     :width: 80%
