@@ -212,10 +212,42 @@ grdcontour
 
 .. include:: explain_help.rst_
 
+基础示例
+----------
+
+使用网格文件AK_gulf_grav.nc，以25为间隔绘制等值线，以50为间隔标注，标注文字大小10p。
+
+.. gmtplot:: grdcontour/contour-ex1.sh
+    :width: 80%
+    :show-code: true
+
+只绘制50和150两条等值线，只标注100等值线。
+
+.. gmtplot:: grdcontour/contour-ex2.sh
+    :width: 80%
+    :show-code: true
+
+以10为间隔绘制等值线，以50为间隔标注，设置图标题为"Gravity Anomalies"。
+将有标注的等值线设置为粗红线，将无标注的等值线设置为蓝色的细短划线。
+
+.. gmtplot:: grdcontour/contour-ex3.sh
+    :width: 80%
+    :show-code: true
+
+将负值等值线设置为蓝色，正值等值线设置为红色，0等值线设置为黑色。
+
+.. gmtplot:: grdcontour/contour-ex4.sh
+    :width: 80%
+    :show-code: true
+
+分两个文件 *contours_C.txt* 和 *contours_O.txt* 保存闭合等值线和开放等值线::
+
+    gmt grdcontour @AK_gulf_grav.nc -C150 -S4 -DAK_contours_%c.txt
+
 .. _gmt-grdcontour-examples:
 
-示例
---------
+进阶示例
+----------
 
 第1个实例绘制等值线，并通过指定 **-Gd** 选项的参数，沿等值线每1.5英寸放置一个标注。
 
