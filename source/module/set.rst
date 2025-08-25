@@ -65,9 +65,7 @@ PARAMETER3 *value3*
 示例
 ----
 
-修改主标注字体为Helvetica，字号为12p，设置网格交叉线的尺寸为0.2厘米::
-
-    gmt set FONT_ANNOT_PRIMARY 12p,Helvetica MAP_GRID_CROSS_SIZE_PRIMARY 0.2c
+访问 :doc:`/tutorial/configurations` 以查看更多示例。
 
 FAQ
 ---
