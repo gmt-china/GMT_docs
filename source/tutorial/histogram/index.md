@@ -19,7 +19,9 @@ GMT 中默认绘制垂直直方图。绘制直方图只需要一列数据，而�
 直接使用下面的命令:
 
 ```
-gmt histogram eq.dat -i2 -png map
+gmt begin map
+    gmt histogram eq.dat -i2
+gmt end show
 ```
 
 会得到如下报错信息:
@@ -45,7 +47,9 @@ histogram [ERROR]: Must specify either fill (-G) or lookup colors (-C), outline 
    :width: 50%
    :caption: 垂直直方图
 
-   gmt histogram eq.dat -Baf -T5 -W1p -i2 -png hist1
+   gmt begin hist1
+      gmt histogram eq.dat -Baf -T5 -W1p -i2
+   gmt end show
 ```
 
 由此，我们得到了一张非常简单的直方图。从直方图中我们对数据也有了基本的认识。
@@ -61,7 +65,9 @@ histogram [ERROR]: Must specify either fill (-G) or lookup colors (-C), outline 
    :width: 75%
    :caption: 添加选项的垂直直方图
 
-   gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l"Depth" -Byaf+l"Counts" -BWSen -D -W1p -Gred -T5 -i2 -png hist2
+   gmt begin hist2
+      gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l"Depth" -Byaf+l"Counts" -BWSen -D -W1p -Gred -T5 -i2
+   gmt end show
 ```
 
 - **-JX15c/9c** 指定了整张直方图的宽度和高度。若不指定，GMT 会自动指定一个合适的值
@@ -84,7 +90,9 @@ histogram [ERROR]: Must specify either fill (-G) or lookup colors (-C), outline 
    :width: 75%
    :caption: 水平直方图
 
-   gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l"Depth" -Byaf+l"Counts" -BWSen -A -D -W1p -Gred -T5 -i2 -png hist3
+   gmt begin hist3
+      gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l"Depth" -Byaf+l"Counts" -BWSen -A -D -W1p -Gred -T5 -i2
+   gmt end show
 ```
 
 ## 百分比直方图
@@ -98,7 +106,9 @@ histogram [ERROR]: Must specify either fill (-G) or lookup colors (-C), outline 
    :width: 75%
    :caption: 添加选项的垂直直方图
 
-   gmt histogram eq.dat -JX15c/9c -Bxaf+l"Depth" -Byaf+l"Counts"+u"%" -BWSen -Z1 -W1p -Gred -T5 -i2 -png hist4
+   gmt begin hist4
+      gmt histogram eq.dat -JX15c/9c -Bxaf+l"Depth" -Byaf+l"Counts"+u"%" -BWSen -Z1 -W1p -Gred -T5 -i2
+   gmt end show
 ```
 
 这个命令中，由于纵轴的含义变了，之前的 **-R** 选项就不再合适了，因而我们去除了
