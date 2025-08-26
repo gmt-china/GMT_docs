@@ -48,6 +48,7 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @App_O_ttt.nc \
             @App_O_geoid.nc \
             @AK_gulf_grav.nc \
+            @App_O_transect.txt \
             @sunglasses.eps
 
 # 3. Download the china-geospatial-data dataset
