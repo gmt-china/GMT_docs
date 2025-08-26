@@ -126,7 +126,7 @@ contour
 示例
 --------
 
-使用 GMT 远程数据服务器上的数据文件 *@Table_5.11.txt* ，以25为间隔绘制等值线，以50为间隔标注：
+使用 GMT 远程数据服务器上的数据文件 *@Table_5_11.txt* ，以25为间隔绘制等值线，以50为间隔标注：
 
 .. gmtplot:: contour/contour_ex1.sh
     :width: 80%
