@@ -126,17 +126,17 @@ contour
 示例
 --------
 
-使用数据文件Table_5.11.txt，以25为间隔绘制等值线，以50为间隔标注：
+使用 GMT 远程数据服务器上的数据文件 *@Table_5.11.txt* ，以25为间隔绘制等值线，以50为间隔标注：
 
-   ::
-
-    gmt contour Table_5_11.txt -Wthin -C25 -A50 -B
+.. gmtplot:: contour/contour_ex1.sh
+    :width: 80%
+    :show-code: true
 
 只绘制并标注750和800两条等值线：
 
-   ::
-
-    gmt contour Table_5_11.txt -A750,800 -W0.5p -B
+.. gmtplot:: contour/contour_ex2.sh
+    :width: 80%
+    :show-code: true
 
 使用CPT文件temp.cpt定义的间隔绘制等值线
 
