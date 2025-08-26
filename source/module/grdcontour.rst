@@ -217,26 +217,26 @@ grdcontour
 
 使用网格文件AK_gulf_grav.nc，以10为间隔绘制等值线，以20为间隔标注，标注文字大小10p。
 
-.. gmtplot:: grdcontour/contour-ex1.sh
+.. gmtplot:: grdcontour/grdcontour-ex1.sh
     :width: 80%
     :show-code: true
 
 只绘制20和60两条等值线，只标注40等值线。
 
-.. gmtplot:: grdcontour/contour-ex2.sh
+.. gmtplot:: grdcontour/grdcontour-ex2.sh
     :width: 80%
     :show-code: true
 
 以10为间隔绘制等值线，以50为间隔标注，设置图标题为"Gravity Anomalies"。
 将有标注的等值线设置为粗红线，将无标注的等值线设置为蓝色的细短划线。
 
-.. gmtplot:: grdcontour/contour-ex3.sh
+.. gmtplot:: grdcontour/grdcontour-ex3.sh
     :width: 80%
     :show-code: true
 
 将负值等值线设置为蓝色，正值等值线设置为红色，0等值线设置为黑色。
 
-.. gmtplot:: grdcontour/contour-ex4.sh
+.. gmtplot:: grdcontour/grdcontour-ex4.sh
     :width: 80%
     :show-code: true
 
@@ -251,13 +251,13 @@ grdcontour
 
 第1个实例绘制等值线，并通过指定 **-Gd** 选项的参数，沿等值线每1.5英寸放置一个标注。
 
-.. gmtplot:: grdcontour/contour-anno1.sh
+.. gmtplot:: grdcontour/grdcontour-annot1.sh
     :width: 80%
     :show-code: true
 
 第2个实例通过指定 **-Gn** 选项的参数，指定每条等值线上标注的个数。每条等值线上只放置1个标注，并且要求等值线的长度不小于1英寸。
 
-.. gmtplot:: grdcontour/contour-anno2.sh
+.. gmtplot:: grdcontour/grdcontour-annot2.sh
     :width: 80%
     :show-code: true
 
@@ -265,14 +265,14 @@ grdcontour
 由于坐标不是严格位于等值线上，因此需要在参数中指定标注位置与等值线距离的上限。标注的位置为等值线上与给定点距离最小的点。
 模块会根据等值线的几何形状，自动计算标注的角度。
 
-.. gmtplot:: grdcontour/contour-anno3.sh
+.. gmtplot:: grdcontour/grdcontour-annot3.sh
     :width: 80%
     :show-code: true
 
 第4个实例通过指定 **-GL** 选项的参数来定义线段，将标注放置在大圆弧线段与等值线的交点。
 图中的标注位于数据最值点连线(**Z-/Z+**)与等值线的交点。同一幅地图中，可以分别指定多条线段。
 
-.. gmtplot:: grdcontour/contour-anno4.sh
+.. gmtplot:: grdcontour/grdcontour-annot4.sh
     :width: 80%
     :show-code: true
 
@@ -280,6 +280,6 @@ grdcontour
 通过指定 **-GX** 选项的参数(多段数据文件 *cross.txt* )，确定标注的位置。
 多段数据文件 *cross.txt* 中定义了三条折线，模块在这三条折线与等值线交点位置处进行标注。
 
-.. gmtplot:: grdcontour/contour-anno5.sh
+.. gmtplot:: grdcontour/grdcontour-annot5.sh
     :width: 80%
     :show-code: true
