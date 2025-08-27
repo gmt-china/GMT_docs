@@ -1,0 +1,1 @@
+gmt grdimage @earth_relief_20m -png,pdf earth_relief
