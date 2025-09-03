@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>GMT中文效果演示 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="自定义字体原理" href="../custom-fonts/" />
+    <link rel="prev" title="Windows 下的 GMT 中文支持" href="../windows/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">中文支持</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../linux/">Linux 下的 GMT 中文支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macOS/">macOS 下的 GMT 中文支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">Windows 下的 GMT 中文支持</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GMT中文效果演示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">中文文字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">中文月份</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">中文星期</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">自定义字体原理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">中文支持</a> &raquo;</li>
+        
+      <li>GMT中文效果演示</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/chinese/showcase.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gmt">
+<h1>GMT中文效果演示<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>中文文字<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>本例中展示了如何在绘图时使用中文标签和中文标题，以及如何打印横排和竖排的中文。</p>
+<ul class="simple">
+<li><p>左图中Y轴标签与纵轴平行</p></li>
+<li><p>中图中Y轴标签与X轴平行</p></li>
+<li><p>右图中Y轴标签单独绘制并使用了竖排中文字体。</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-texts png
+<span class="c1"># 左图</span>
+gmt <span class="nb">set</span> FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
+gmt basemap -R0/10/0/5 -JX6c/4c -Bxaf+l<span class="s2">&quot;横轴&quot;</span> -Byaf+l<span class="s2">&quot;纵轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span>
+gmt text -F+f <span class="s">&lt;&lt; EOF</span>
+<span class="s">3 2.5 20p,39,black 横排文字</span>
+<span class="s">8 4.0 20p,43,red   竖排文字</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 中图</span>
+gmt <span class="nb">set</span> FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
+gmt basemap -R0/10/0/5 -JX6c/4c -Bxaf+l<span class="s2">&quot;横轴&quot;</span> -Byaf+L<span class="s2">&quot;纵轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -X9c
+gmt text -F+f <span class="s">&lt;&lt; EOF</span>
+<span class="s">3 2.5 20p,39,black 横排文字</span>
+<span class="s">8 4.0 20p,43,red   竖排文字</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 右图</span>
+gmt <span class="nb">set</span> FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
+gmt basemap -R0/10/0/5 -JX6c/4c -Bxaf+l<span class="s2">&quot;横轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -X9c
+gmt basemap -Byaf+L<span class="s2">&quot;纵轴&quot;</span> -BW --FONT_LABEL<span class="o">=</span>16p,43,black --MAP_LABEL_OFFSET<span class="o">=</span>20p
+gmt text -F+f <span class="s">&lt;&lt; EOF</span>
+<span class="s">3 2.5 20p,39,black 横排文字</span>
+<span class="s">8 4.0 20p,43,red   竖排文字</span>
+<span class="s">EOF</span>
+
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/chinese-texts.png"><img alt="../../_images/chinese-texts.png" src="../../_images/chinese-texts.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>中文月份<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT 可以绘制中文的月份。</p>
+<p>Linux 和 macOS 用户需要先修改 GMT 中文语言文件的字符编码（Windows 用户不需要）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 进入 GMT 语言定义文件所在目录</span>
+<span class="nb">cd</span> <span class="sb">`</span>gmt --show-sharedir<span class="sb">`</span>/localization
+
+<span class="c1"># 备份中文语言文件</span>
+cp gmt_cn1.locale gmt_cn1.locale_old
+<span class="c1"># 将中文编码方式从默认的 GB2312 修改为 UTF8 编码，这样才能正常显示中文月份</span>
+iconv -f GBK -t UTF8 gmt_cn1.locale
+</pre></div>
+</div>
+<p>设置 <a class="reference internal" href="../../conf/misc/#term-GMT_LANGUAGE"><span class="xref std std-term">GMT_LANGUAGE</span></a> 为中文（即 <code class="docutils literal notranslate"><span class="pre">cn1</span></code>），并设置标注字体为中文。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-months png
+<span class="c1"># 设置GMT语言为中文</span>
+gmt <span class="nb">set</span> GMT_LANGUAGE cn1
+<span class="c1"># 设置标注的字体为中文字体</span>
+gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 16p,39,black
+
+<span class="c1"># FORMAT_TIME_PRIMARY_MAP 为 full 表示显示“一月”</span>
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP full
+gmt basemap -R1997T/1998T/0/10 -JX25c/4c -Bpxa1O -Byaf -BWSen
+
+<span class="c1"># FORMAT_TIME_PRIMARY_MAP 为 abbreviated 表示显示“一”</span>
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP abbreviated
+gmt basemap -R1997T/1998T/0/10 -JX25c/4c -Bpxa1O -Byaf -BWSen -Y-6c
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/chinese-months.png"><img alt="../../_images/chinese-months.png" src="../../_images/chinese-months.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>中文星期<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>GMT支持中文的星期。要想使用中文表示星期几，需要设置 <a class="reference internal" href="../../conf/misc/#term-GMT_LANGUAGE"><span class="xref std std-term">GMT_LANGUAGE</span></a> 为中文，即 <code class="docutils literal notranslate"><span class="pre">cn1</span></code>，并设置标注的字体为中文。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-weeks png
+<span class="c1"># 设置GMT语言为中文</span>
+gmt <span class="nb">set</span> GMT_LANGUAGE cn1
+<span class="c1"># 设置标注的字体为中文字体</span>
+gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 12p,39
+
+<span class="c1"># FORMAT_TIME_PRIMARY_MAP 为 full 表示显示“星期一”</span>
+gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP full
+gmt basemap -R1969-7-21T/1969-7-28T/0/4 -JX15c/3c -Bpxa1K -Byaf -BWSen
+
+<span class="c1"># FORMAT_TIME_PRIMARY_MAP 为 abbreviated 表示显示“周一”</span>
+gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP abbreviated
+gmt basemap -R1969-7-21T/1969-7-28T/0/4 -JX15c/3c -Bpxa1K -Byaf -BWSen -Y-5c
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/chinese-weeks.png"><img alt="../../_images/chinese-weeks.png" src="../../_images/chinese-weeks.png" style="width: 80%;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../custom-fonts/" class="btn btn-neutral float-right" title="自定义字体原理" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../windows/" class="btn btn-neutral float-left" title="Windows 下的 GMT 中文支持" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
