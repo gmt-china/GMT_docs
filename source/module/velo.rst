@@ -130,17 +130,17 @@ velo
 ----
 
 .. gmtplot:: velo/velo_ex1.sh
-    :width: 80%
+    :width: 60%
 
     velo示例图1
 
 .. gmtplot:: velo/velo_ex2.sh
-    :width: 80%
+    :width: 60%
 
     velo示例图2
 
 下面的示例展示了如何绘制应变十字线:
 
 .. gmtplot:: velo/velo_ex3.sh
-    :width: 80%
+    :width: 60%
 
