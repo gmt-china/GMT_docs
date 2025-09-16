@@ -1,16 +1,20 @@
 ---
-author: 田冬冬
-date: 2023-09-12
+author: 田冬冬, 陈箫翰
+date: 2025-09-12
 ---
 
 # Ubuntu/Debian 下安装 GMT
 
 Ubuntu/Debian 官方源提供了 GMT 二进制包，可直接使用 `apt` 安装，
-但官方源提供的可能不是 GMT 最新版本。针对这种情况，有如下几种选择：
+但官方源提供的可能不是 GMT 最新版本。可以使用以下命令查询官方源提供的最高版本：
 
-1. 使用老版本 GMT
-2. {doc}`conda` [**推荐**]
-3. {doc}`build-source-unix` [**推荐**]
+```
+$ apt-cache madison gmt
+```
+
+用户如果想使用最新版本的 GMT ，可以选择其他安装方式：
+1. {doc}`conda` [**推荐**]
+2. {doc}`build-source-unix` 
 
 下面是使用 Ubuntu/Debian 官方源安装 GMT 的步骤：
 
