@@ -9,7 +9,7 @@ Ubuntu/Debian 官方源提供了 GMT 二进制包，可直接使用 `apt` 安装
 但官方源提供的可能不是 GMT 最新版本。可以使用以下命令查询官方源提供的最高版本：
 
 ```
-$ sudo apt-cache madison gmt-common
+$ apt-cache madison gmt
 ```
 
 用户如果想使用最新版本的 GMT ，可以选择其他安装方式：
