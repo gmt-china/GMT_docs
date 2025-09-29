@@ -1,5 +1,5 @@
 :author: 朱邓达
-:date: 2025-05-29
+:date: 2025-09-29
 
 .. index:: ! grdinterpolate
 
@@ -72,11 +72,6 @@ grdinterpolate
 
 .. include:: explain_lines.rst_
 
-.. note::
-
-    当前 GMT 6.5 版本无法在 |-E| 中正确设置距离单位，该 bug 会在下个版本修复，详见 
-    `PR #8734 <https://github.com/GenericMappingTools/gmt/pull/8734>`_ 。
-
 .. include:: explain_interpolant.rst_
 
 .. include:: explain_-R.rst_
@@ -93,14 +88,6 @@ grdinterpolate
     默认情况下，表数据输出到标准输出。使用 |-G| 可指定输出文件名。
     或者如果希望每个点位的序列输出到单独文件，可在 |-G| 指定的文件名中包含 C 语言的整数格式 (e.g., %d)，
     此时将根据点数创建单独的输出文件。
-
-.. note::
-
-    当前 GMT 6.5 版本 |-S| 无法与 |-T| 同时使用（会报错），该 bug 会在下个版本修复，详见 
-    `PR #8733 <https://github.com/GenericMappingTools/gmt/pull/8733>`_ 。 
-    对于 |-T| 选项，程序内部是使用 :doc:`sample1d` 模块对 level 之间进行插值，
-    因此可将 |-S| 和 |-T| 拆分成 **grdinterpolate -S** 和 **sample1d -T -N2** 分开执行，
-    以暂时回避此 bug。
 
 .. _-T:
 
