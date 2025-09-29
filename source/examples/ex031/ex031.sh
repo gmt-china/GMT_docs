@@ -7,7 +7,7 @@ wget "https://ds.iris.edu/files/products/emc/emc-files/S362ANI_percent.nc"
 
 gmt begin 3d_vert_slice
     # 构建底图
-    gmt basemap -Rg -JQ10c -Baf
+    gmt basemap -Rg -JQ10c -Baf -Yc
     # 绘制地形
     gmt grdimage @earth_relief_05m_g
 
