@@ -5,11 +5,11 @@
 # 下载示例模型文件
 wget "https://ds.iris.edu/files/products/emc/emc-files/S362ANI_percent.nc"
 
-gmt begin 3d_vert_slice png,pdf
+gmt begin 3d_vert_slice
     # 构建底图
     gmt basemap -Rg -JQ10c -Baf
     # 绘制地形
-    gmt grdimage @earth_relief_05m
+    gmt grdimage @earth_relief_05m_g
 
     # 创建测线，点距为1度
     D1=0
@@ -26,10 +26,10 @@ gmt begin 3d_vert_slice png,pdf
     T="-T$T1/$T2/$dT"
 
     # 计算该测线下的垂直切片
-    # 在当前 GMT 6.5 版本下，grdinterpolate -S 和 -T 同时使用存在 bug，
-    # gmt grdinterpolate S362ANI_percent.nc?dvs -Sprof $T > samp
+    gmt grdinterpolate S362ANI_percent.nc?dvs -Sprof $T > samp
+    # 在 GMT 6.5 以及更低版本中，grdinterpolate -S 和 -T 同时使用存在 bug。
     # 以上命令可暂时替换为下方命令来回避此 bug
-    gmt grdinterpolate S362ANI_percent.nc?dvs -Sprof | gmt sample1d $T -N2 > samp
+    # gmt grdinterpolate S362ANI_percent.nc?dvs -Sprof | gmt sample1d $T -N2 > samp
 
     # 将表数据转为网格文件
     gmt xyz2grd samp -Gvs_slice.nc -i3,2,4 -R$D1/$D2/$T1/$T2 -I$dD+e/$dT+e
