@@ -1,6 +1,6 @@
 gmt begin B-axes
 gmt set FONT_TITLE 20p MAP_FRAME_PEN 3p
-gmt basemap -R0/4/0/4 -JX8c -BWSEN+t"2D Basemap"
+gmt basemap -R0/4/0/4 -JX8c -BWSEN+t"2D Basemap" -Xc
 gmt text -F+f15p,9 -Glightblue@30 -N << EOF
 0 2 W,w,l
 4 2 E,e,r
