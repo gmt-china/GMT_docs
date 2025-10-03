@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13 模块手册 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/index.html"/>
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="13.1 filter1d" href="filter1d/" />
+    <link rel="prev" title="12.4 自定义字体" href="../chinese/custom-fonts/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">12 中文支持</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13 模块手册</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filter1d/">13.1 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitcircle/">13.2 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt/">13.3 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt-config/">13.4 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt5syntax/">13.5 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtconnect/">13.6 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtdefaults/">13.7 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtget/">13.8 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtinfo/">13.9 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtlogo/">13.10 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtselect/">13.11 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtset/">13.12 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtsimplify/">13.13 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtwhich/">13.14 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grd2rgb/">13.15 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grd2xyz/">13.16 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdblend/">13.17 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdclip/">13.18 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdcut/">13.19 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdedit/">13.20 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdimage/">13.21 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdinfo/">13.22 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdlandmask/">13.23 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdmask/">13.24 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdpaste/">13.25 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdproject/">13.26 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdraster/">13.27 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdconvert/">13.28 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdsample/">13.29 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdtrack/">13.30 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdtrend/">13.31 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdvector/">13.32 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdvolume/">13.33 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isogmt/">13.34 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kml2gmt/">13.35 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makecpt/">13.36 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapproject/">13.37 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/">13.38 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psbasemap/">13.39 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psclip/">13.40 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pscoast/">13.41 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psconvert/">13.42 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pscoupe/">13.43 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pshistogram/">13.44 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psimage/">13.45 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pslegend/">13.46 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psmeca/">13.47 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pspolar/">13.48 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psrose/">13.49 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssac/">13.50 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psscale/">13.51 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssolar/">13.52 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psternary/">13.53 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pstext/">13.54 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psvelo/">13.55 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psxy/">13.56 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample1d/">13.57 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum1d/">13.58 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xyz2grd/">13.59 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../">首页</a> &raquo;</li>
+        
+      <li>13 模块手册</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/module/index.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>13 模块手册<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>主程序/脚本</strong></th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="gmt/"><span class="doc">gmt</span></a></td>
+<td>GMT主程序</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="isogmt/"><span class="doc">isogmt</span></a></td>
+<td>在“隔离模式”下运行GMT命令或脚本</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="gmt5syntax/"><span class="doc">gmt5syntax</span></a></td>
+<td>将旧的GMT4脚本修改成新的 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">&lt;module&gt;</span></code> 语法</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmt-config/"><span class="doc">gmt-config</span></a></td>
+<td>返回 GMT 动态函数库的基本信息</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmtswitch.html" title="(在 GMT v5.4.6)"><span>gmtswitch</span></a></td>
+<td>GMT多版本之间切换</td>
+</tr>
+<tr class="row-odd"><td><strong>绘图相关模块</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="psbasemap/"><span class="doc">psbasemap</span></a></td>
+<td>绘制底图</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pscoast/"><span class="doc">pscoast</span></a></td>
+<td>在地图上绘制海岸线、河流、国界线</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="psxy/"><span class="doc">psxy</span></a></td>
+<td>在图上绘制线段、多边形和符号</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pstext/"><span class="doc">pstext</span></a></td>
+<td>在图上写文本</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="psscale/"><span class="doc">psscale</span></a></td>
+<td>在图上绘制色标</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pslegend/"><span class="doc">pslegend</span></a></td>
+<td>绘制图例</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pshistogram/"><span class="doc">pshistogram</span></a></td>
+<td>统计并绘制直方图</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="psrose/"><span class="doc">psrose</span></a></td>
+<td>绘制极坐标下的直方图（sector图、rose图或windrose图）</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/psxyz.html" title="(在 GMT v5.4.6)"><span>psxyz</span></a></td>
+<td>在3D图上绘制线段、多边形和符号</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="psimage/"><span class="doc">psimage</span></a></td>
+<td>将EPS或光栅图片放在图上</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pssolar/"><span class="doc">pssolar</span></a></td>
+<td>计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="psclip/"><span class="doc">psclip</span></a></td>
+<td>打开或关闭多边形裁剪路径</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pssac/"><span class="doc">pssac</span></a></td>
+<td>在地图上绘制 SAC 格式的地震波形数据</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="psmeca/"><span class="doc">psmeca</span></a></td>
+<td>在地图上绘制震源机制解</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pspolar/"><span class="doc">pspolar</span></a></td>
+<td>在震源球上绘制台站极性</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="psvelo/"><span class="doc">psvelo</span></a></td>
+<td>在地图上绘制速度矢量、十字线、楔形图</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pscoupe/"><span class="doc">pscoupe</span></a></td>
+<td>绘制震源机制解的剖面图</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="psternary/"><span class="doc">psternary</span></a></td>
+<td>绘制三角图解</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/psmask.html" title="(在 GMT v5.4.6)"><span>psmask</span></a></td>
+<td>将没有数据覆盖的区域裁剪或覆盖住</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/pscontour.html" title="(在 GMT v5.4.6)"><span>pscontour</span></a></td>
+<td>使用直接三角化法对数据进行等值线绘制</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/pswiggle.html" title="(在 GMT v5.4.6)"><span>pswiggle</span></a></td>
+<td>沿着测线绘制 z = f(x,y) 数据</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/segy/pssegy.html" title="(在 GMT v5.4.6)"><span>pssegy</span></a></td>
+<td>在图上绘制SEGY文件</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/segy/pssegyz.html" title="(在 GMT v5.4.6)"><span>pssegyz</span></a></td>
+<td>在3D图上绘制SEGYZ文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmtlogo/"><span class="doc">gmtlogo</span></a></td>
+<td>在图上绘制GMT图形logo</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdvector/"><span class="doc">grdvector</span></a></td>
+<td>根据两个网格文件绘制矢量场</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdimage/"><span class="doc">grdimage</span></a></td>
+<td>在图上绘制网格数据</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdcontour.html" title="(在 GMT v5.4.6)"><span>grdcontour</span></a></td>
+<td>根据网格文件绘制等值线</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdview.html" title="(在 GMT v5.4.6)"><span>grdview</span></a></td>
+<td>利用网格文件绘制3D视角图或表面网格图</td>
+</tr>
+<tr class="row-even"><td><strong>1D 数据处理</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="makecpt/"><span class="doc">makecpt</span></a></td>
+<td>生成CPT文件</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="gmtselect/"><span class="doc">gmtselect</span></a></td>
+<td>根据多个准则筛选数据</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="project/"><span class="doc">project</span></a></td>
+<td>将数据点投影到线或大圆路径上，生成测线，坐标转换</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmtconvert.html" title="(在 GMT v5.4.6)"><span>gmtconvert</span></a></td>
+<td>表数据格式转换、列提取、列粘贴</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/trend1d.html" title="(在 GMT v5.4.6)"><span>trend1d</span></a></td>
+<td>一维数据的多项式拟合</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="fitcircle/"><span class="doc">fitcircle</span></a></td>
+<td>拟合球面上数据点的平均位置及圆弧</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmtsimplify/"><span class="doc">gmtsimplify</span></a></td>
+<td>使用Douglas-Peucker算法对线段做简化</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="filter1d/"><span class="doc">filter1d</span></a></td>
+<td>对1D表数据做时间域滤波</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmtconnect/"><span class="doc">gmtconnect</span></a></td>
+<td>将端点接近的线段连接起来</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sample1d/"><span class="doc">sample1d</span></a></td>
+<td>对1D表数据进行重采样</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="spectrum1d/"><span class="doc">spectrum1d</span></a></td>
+<td>计算一个时间序列的自功率谱，或两个时间序列的互功率谱</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmtmath.html" title="(在 GMT v5.4.6)"><span>gmtmath</span></a></td>
+<td>对表数据进行数学计算操作</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/mapproject.html" title="(在 GMT v5.4.6)"><span>mapproject</span></a></td>
+<td>地图变化的正变化和逆变换</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmtspatial.html" title="(在 GMT v5.4.6)"><span>gmtspatial</span></a></td>
+<td>线段和多边形的地理空间操作</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmtvector.html" title="(在 GMT v5.4.6)"><span>gmtvector</span></a></td>
+<td>2D和3D下笛卡尔矢量操作</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmtregress.html" title="(在 GMT v5.4.6)"><span>gmtregress</span></a></td>
+<td>1D数据的线性回归</td>
+</tr>
+<tr class="row-odd"><td><strong>2D 数据处理</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdcut/"><span class="doc">grdcut</span></a></td>
+<td>从一个网格文件中裁剪出一个矩形子区域生成新的网格文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdpaste/"><span class="doc">grdpaste</span></a></td>
+<td>将两个网格沿着其共同边界拼接成一个文件</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdblend/"><span class="doc">grdblend</span></a></td>
+<td>将多个部分重叠的网格文件合并成一个网格文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdtrack.html" title="(在 GMT v5.4.6)"><span>grdtrack</span></a></td>
+<td>获取指定地理位置处的网格值</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdgradient.html" title="(在 GMT v5.4.6)"><span>grdgradient</span></a></td>
+<td>计算网格的方向梯度</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdclip/"><span class="doc">grdclip</span></a></td>
+<td>对网格文件的Z值做裁剪</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grd2xyz/"><span class="doc">grd2xyz</span></a></td>
+<td>将网格文件转换成表数据</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdconvert/"><span class="doc">grdconvert</span></a></td>
+<td>在不同的网格格式之间互相转换</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdedit/"><span class="doc">grdedit</span></a></td>
+<td>修改网格文件的头段或内容</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdinfo/"><span class="doc">grdinfo</span></a></td>
+<td>从网格文件中提取基本信息</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdraster/"><span class="doc">grdraster</span></a></td>
+<td>从二进制数据中提取子区域并保存为GMT网格文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdsample/"><span class="doc">grdsample</span></a></td>
+<td>对网格文件做重采样</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdlandmask/"><span class="doc">grdlandmask</span></a></td>
+<td>根据海岸线数据创建陆地-海洋的mask网格文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdvolume/"><span class="doc">grdvolume</span></a></td>
+<td>计算网格数据中某个等值线所包围的表面积和体积</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grd2rgb/"><span class="doc">grd2rgb</span></a></td>
+<td>将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdtrend/"><span class="doc">grdtrend</span></a></td>
+<td>拟合网格的趋势面并计算残差</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdproject/"><span class="doc">grdproject</span></a></td>
+<td>对网格数据做地图变换和逆变换</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdmask/"><span class="doc">grdmask</span></a></td>
+<td>根据多边形数据或点数据创建mask网格文件</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdmath.html" title="(在 GMT v5.4.6)"><span>grdmath</span></a></td>
+<td>对网格文件做数学计算操作</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdfilter.html" title="(在 GMT v5.4.6)"><span>grdfilter</span></a></td>
+<td>对网格文件做空间域或时间域滤波</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdfft.html" title="(在 GMT v5.4.6)"><span>grdfft</span></a></td>
+<td>对网格文件在波数域或频率域做操作</td>
+</tr>
+<tr class="row-odd"><td><span class="xref std std-doc">grdfill</span></td>
+<td>对网格文件中的无值区域进行插值</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grdhisteq.html" title="(在 GMT v5.4.6)"><span>grdhisteq</span></a></td>
+<td>对网格做直方图均衡</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/grd2cpt.html" title="(在 GMT v5.4.6)"><span>grd2cpt</span></a></td>
+<td>根据网格文件的值生成CPT文件</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/blockmean.html" title="(在 GMT v5.4.6)"><span>blockmean</span></a></td>
+<td>使用L2范式对 (x,y,z) 数据做区块平均</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/blockmedian.html" title="(在 GMT v5.4.6)"><span>blockmedian</span></a></td>
+<td>使用L1范式对 (x,y,z) 数据做区块平均</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/blockmode.html" title="(在 GMT v5.4.6)"><span>blockmode</span></a></td>
+<td>使用模估计对 (x,y,z) 数据做区块平均</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/surface.html" title="(在 GMT v5.4.6)"><span>surface</span></a></td>
+<td>使用可调节张量连续曲率样条插值法对数据进行网格化</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/splitxyz.html" title="(在 GMT v5.4.6)"><span>splitxyz</span></a></td>
+<td>将表数据拆分为单独的数据段</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/triangulate.html" title="(在 GMT v5.4.6)"><span>triangulate</span></a></td>
+<td>对表数据做三角剖分和网格化</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/nearneighbor.html" title="(在 GMT v5.4.6)"><span>nearneighbor</span></a></td>
+<td>使用 “Nearest neighbor” 算法对数据进行网格化</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/trend2d.html" title="(在 GMT v5.4.6)"><span>trend2d</span></a></td>
+<td>二维数据的多项式拟合</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/greenspline.html" title="(在 GMT v5.4.6)"><span>greenspline</span></a></td>
+<td>使用格林函数样条进行插值</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/sph2grd.html" title="(在 GMT v5.4.6)"><span>sph2grd</span></a></td>
+<td>根据球谐系数计算网格</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/sphdistance.html" title="(在 GMT v5.4.6)"><span>sphdistance</span></a></td>
+<td>计算球面上的Voronoi距离、节点或natural nearest-neighbor grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/sphinterpolate.html" title="(在 GMT v5.4.6)"><span>sphinterpolate</span></a></td>
+<td>球面上张量数据的球面网格化</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/sphtriangulate.html" title="(在 GMT v5.4.6)"><span>sphtriangulate</span></a></td>
+<td>球面数据的Delaunay 或 Voronoi 构建</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/misc/dimfilter.html" title="(在 GMT v5.4.6)"><span>dimfilter</span></a></td>
+<td>在空间域对网格数做方向性滤波</td>
+</tr>
+<tr class="row-even"><td><strong>参数设置</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmtdefaults/"><span class="doc">gmtdefaults</span></a></td>
+<td>列出所有GMT参数的当前值</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="gmtset/"><span class="doc">gmtset</span></a></td>
+<td>修改单个或多个GMT参数的值</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmtget/"><span class="doc">gmtget</span></a></td>
+<td>列出单个或多个GMT参数的当前值</td>
+</tr>
+<tr class="row-even"><td><strong>信息提取</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdinfo/"><span class="doc">grdinfo</span></a></td>
+<td>从网格文件中提取基本信息</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="gmtinfo/"><span class="doc">gmtinfo</span></a></td>
+<td>从表数据中提取信息</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="gmtwhich/"><span class="doc">gmtwhich</span></a></td>
+<td>返回指定文件的完整路径</td>
+</tr>
+<tr class="row-even"><td><strong>格式转换</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="xyz2grd/"><span class="doc">xyz2grd</span></a></td>
+<td>将XYZ数据或Z数据转换成网格文件</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grd2xyz/"><span class="doc">grd2xyz</span></a></td>
+<td>将网格文件转换成表数据</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="kml2gmt/"><span class="doc">kml2gmt</span></a></td>
+<td>将Google Earth的KML文件转换为GMT表数据</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/gmt2kml.html" title="(在 GMT v5.4.6)"><span>gmt2kml</span></a></td>
+<td>将GMT表数据转换为Google Earth的KML文件</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdconvert/"><span class="doc">grdconvert</span></a></td>
+<td>在不同的网格格式之间互相转换</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="psconvert/"><span class="doc">psconvert</span></a></td>
+<td>将GMT生成的PS文件转换为其他图片格式</td>
+</tr>
+<tr class="row-odd"><td><strong>mgd77相关模块</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77convert.html" title="(在 GMT v5.4.6)"><span>mgd77convert</span></a></td>
+<td>Convert MGD77 data to other file formats</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77header.html" title="(在 GMT v5.4.6)"><span>mgd77header</span></a></td>
+<td>Create MGD77 headers from A77 files</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77info.html" title="(在 GMT v5.4.6)"><span>mgd77info</span></a></td>
+<td>Extract information about MGD77 files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77list.html" title="(在 GMT v5.4.6)"><span>mgd77list</span></a></td>
+<td>Extract data from MGD77 files</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77magref.html" title="(在 GMT v5.4.6)"><span>mgd77magref</span></a></td>
+<td>Evaluate the IGRF or CM4 magnetic field models</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77manage.html" title="(在 GMT v5.4.6)"><span>mgd77manage</span></a></td>
+<td>Manage the content of MGD77+ files</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77path.html" title="(在 GMT v5.4.6)"><span>mgd77path</span></a></td>
+<td>Return paths to MGD77 cruises and directories</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77sniffer.html" title="(在 GMT v5.4.6)"><span>mgd77sniffer</span></a></td>
+<td>Along-track quality control of MGD77 cruises</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/mgd77/mgd77track.html" title="(在 GMT v5.4.6)"><span>mgd77track</span></a></td>
+<td>Plot track-line map of MGD77 cruises</td>
+</tr>
+<tr class="row-odd"><td><strong>x2sys相关模块</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_binlist.html" title="(在 GMT v5.4.6)"><span>x2sys_binlist</span></a></td>
+<td>Create bin index listing from track data files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_cross.html" title="(在 GMT v5.4.6)"><span>x2sys_cross</span></a></td>
+<td>Calculate crossovers between track data files</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_datalist.html" title="(在 GMT v5.4.6)"><span>x2sys_datalist</span></a></td>
+<td>Extract content of track data files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_get.html" title="(在 GMT v5.4.6)"><span>x2sys_get</span></a></td>
+<td>Get track listing from track index database</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_init.html" title="(在 GMT v5.4.6)"><span>x2sys_init</span></a></td>
+<td>Initialize a new x2sys track database</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_list.html" title="(在 GMT v5.4.6)"><span>x2sys_list</span></a></td>
+<td>Extract subset from crossover data base</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_merge.html" title="(在 GMT v5.4.6)"><span>x2sys_merge</span></a></td>
+<td>Merge an updated COEs table (smaller) into the main table (bigger)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_put.html" title="(在 GMT v5.4.6)"><span>x2sys_put</span></a></td>
+<td>Update track index database from track bin file</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_report.html" title="(在 GMT v5.4.6)"><span>x2sys_report</span></a></td>
+<td>Report statistics from crossover data base</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/x2sys/x2sys_solve.html" title="(在 GMT v5.4.6)"><span>x2sys_solve</span></a></td>
+<td>Determine least-squares systematic correction from crossovers</td>
+</tr>
+<tr class="row-even"><td><strong>SPOTTER相关模块</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/backtracker.html" title="(在 GMT v5.4.6)"><span>backtracker</span></a></td>
+<td>Generate forward and backward flowlines and hotspot tracks</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/gmtpmodeler.html" title="(在 GMT v5.4.6)"><span>gmtpmodeler</span></a></td>
+<td>Evaluate a plate motion model at given locations</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/grdpmodeler.html" title="(在 GMT v5.4.6)"><span>grdpmodeler</span></a></td>
+<td>Evaluate a plate motion model on a geographic grid</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/grdrotater.html" title="(在 GMT v5.4.6)"><span>grdrotater</span></a></td>
+<td>Finite rotation reconstruction of geographic grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/originator.html" title="(在 GMT v5.4.6)"><span>originator</span></a></td>
+<td>Associate seamounts with nearest hotspot point sources</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/rotconverter.html" title="(在 GMT v5.4.6)"><span>rotconverter</span></a></td>
+<td>Manipulate total reconstruction and stage rotations</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/rotsmoother.html" title="(在 GMT v5.4.6)"><span>rotsmoother</span></a></td>
+<td>Get mean rotations and covarience from set of finate rotations</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/grdspotter.html" title="(在 GMT v5.4.6)"><span>grdspotter</span></a></td>
+<td>Create CVA image from a gravity or topography grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/spotter/hotspotter.html" title="(在 GMT v5.4.6)"><span>hotspotter</span></a></td>
+<td>Create CVA image from seamount locations</td>
+</tr>
+<tr class="row-even"><td><strong>POTENTIAL相关模块</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/gmtflexure.html" title="(在 GMT v5.4.6)"><span>gmtflexure</span></a></td>
+<td>Compute flexural deformation of 2-D loads, forces and bending moments</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/grdflexure.html" title="(在 GMT v5.4.6)"><span>grdflexure</span></a></td>
+<td>Compute flexural deformation of 3-D surfaces for various rheologies</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/gmtgravmag3d.html" title="(在 GMT v5.4.6)"><span>gmtgravmag3d</span></a></td>
+<td>Compute the gravity/magnetic anomaly of a 3-D body</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/grdgravmag3d.html" title="(在 GMT v5.4.6)"><span>grdgravmag3d</span></a></td>
+<td>Computes the gravity effect of one (or two) grids</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/gravfft.html" title="(在 GMT v5.4.6)"><span>gravfft</span></a></td>
+<td>Compute gravitational attraction of 3-D surfaces and a little more</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/grdredpol.html" title="(在 GMT v5.4.6)"><span>grdredpol</span></a></td>
+<td>Compute the Continuous Reduction To the Pole, AKA differential RTP</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/grdseamount.html" title="(在 GMT v5.4.6)"><span>grdseamount</span></a></td>
+<td>Compute synthetic seamount bathymetry</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/gpsgridder.html" title="(在 GMT v5.4.6)"><span>gpsgridder</span></a></td>
+<td>Interpolate GPS velocity vectors using Green’s functions</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/talwani2d.html" title="(在 GMT v5.4.6)"><span>talwani2d</span></a></td>
+<td>Compute geopotential anomalies over 2-D bodies</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/potential/talwani3d.html" title="(在 GMT v5.4.6)"><span>talwani3d</span></a></td>
+<td>Compute geopotential anomalies over 3-D bodies</td>
+</tr>
+<tr class="row-odd"><td><strong>其他模块</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/segy/segy2grd.html" title="(在 GMT v5.4.6)"><span>segy2grd</span></a></td>
+<td>Converting SEGY data to a GMT grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/gshhg/gshhg.html" title="(在 GMT v5.4.6)"><span>gshhg</span></a></td>
+<td>Extract data tables from binary GSHHS or WDBII data files</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/img/img2google.html" title="(在 GMT v5.4.6)"><span>img2google</span></a></td>
+<td>Create Google Earth KML tiles from bathymetry Mercator img grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/supplements/img/img2grd.html" title="(在 GMT v5.4.6)"><span>img2grd</span></a></td>
+<td>Extract a subset from an img file in Mercator or Geographic format</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="filter1d/" class="btn btn-neutral float-right" title="13.1 filter1d" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../chinese/custom-fonts/" class="btn btn-neutral float-left" title="12.4 自定义字体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
