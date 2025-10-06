@@ -22,24 +22,24 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 语法
 --------
 
-**gmt segyz** *SEGYfile* |-J|\\ *parameters*
-|-J|\\ **z**|\\ **Z**\\ *parameters*
-|SYN\_OPT-Rz|
-|-D|\\ *deviation* |-F|\\ [*color*] |-W|
-[ |-C|\\ *clip* ]
-[ |-I| ] [ |-L|\\ *nsamp* ]
-[ |-M|\\ *ntrace* ]
+**gmt segyz** *SEGYfile* |-J|\ *parameters*
+|-J|\ **z**\|\ **Z**\ *parameters*
+|SYN_OPT-Rz|
+|-D|\ *deviation* |-F|\ [*color*] |-W|
+[ |-C|\ *clip* ]
+[ |-I| ] [ |-L|\ *nsamp* ]
+[ |-M|\ *ntrace* ]
 [ |-N| ]
-[ |-Q|\\ **b**|\\ **i**|\\ **u**|\\ **x**|\\ **y**\\ *value* ]
-[ |-S|\\ *header\_x*/*header\_y* ]
-[ |SYN\_OPT-U| ]
-[ |SYN\_OPT-V| ]
-[ |SYN\_OPT-X| ]
-[ |SYN\_OPT-Y| ]
+[ |-Q|\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
+[ |-S|\ *header_x*/*header_y* ]
+[ |SYN_OPT-U| ]
+[ |SYN_OPT-V| ]
+[ |SYN_OPT-X| ]
+[ |SYN_OPT-Y| ]
 [ |-Z| ]
-[ |SYN\_OPT-p| ]
-[ |SYN\_OPT-t| ]
-[ |SYN\_OPT--| ]
+[ |SYN_OPT-p| ]
+[ |SYN_OPT-t| ]
+[ |SYN_OPT--| ]
 
 必须选项
 ------------------
@@ -139,6 +139,5 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 相关模块
 --------
 
-:doc:`gmt </gmt>`,
 :doc:`segy`,
 :doc:`segy2grd`
