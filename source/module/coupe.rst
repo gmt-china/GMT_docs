@@ -25,29 +25,36 @@ coupe
 语法
 ----
 
-**gmt coupe** [ *files* ] |-J|\ *parameters*
-|SYN_OPT-R| |-A|\ *parameters*
-|-S|\ *<format><scale>*\ [**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
+**gmt coupe**
+[ *table* ]
+|-J|\ *parameters*
+|SYN_OPT-R|
+|-A|\ **a**\|\ **b**\|\ **c**\|\ **d**\ *params*\ [**+c**\ [**n**\|\ **t**]][**+d**\ *dip*][**+r**\ [**a**\|\ **e**\|\ *dx*]][**+w**\ *width*][**+z**\ [**s**]\ **a**\|\ **e**\|\ *dz*\|\ *min*/*max*]
+|-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
 [ |SYN_OPT-B| ]
+[ |-C|\ *cpt* ]
+[ |-D|\ [**+c**][**+g**\ [*fill*]][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+s**\ [*symbol*]\ *size*] ]
 [ |-E|\ *fill* ]
 [ |-F|\ *mode*\ [*args*] ]
 [ |-G|\ *fill* ]
-[ |-L|\ *[pen]* ]
-[ |-M| ] [ |-N| ]
+[ |-H|\ [*scale*] ]
+[ |-I|\ [*intens*] ]
+[ |-L|\ [*pen*] ]
+[ |-N| ]
 [ |-Q| ]
-[ |-T|\ *nplane*\ [/*pen*] ]
+[ |-T|\ [*plane*]\ [**+p**\ *pen*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |-W|\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ *cpt* ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ |SYN_OPT-qi| ]
+[ |SYN_OPT-tv| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
