@@ -240,7 +240,7 @@
 :doc:`contour`                                   使用直接三角化法对数据进行等值线绘制
 :doc:`wiggle`                                    沿着测线绘制 z = f(x,y) 数据
 :doc:`segy`                                      在图上绘制 SEGY 文件
-:doc:`gmt:supplements/segy/segyz`                在 3D 图上绘制 SEGYZ 文件
+:doc:`segyz`                                     在 3D 图上绘制 SEGYZ 文件
 :doc:`logo`                                      在图上绘制 GMT 图形 logo
 :doc:`grdvector`                                 根据两个网格文件绘制矢量场
 :doc:`grdimage`                                  在图上绘制网格数据
