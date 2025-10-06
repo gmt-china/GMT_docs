@@ -476,7 +476,7 @@ def setup(app):
     app.add_config_value("gmtplot_basedir", None, True)
     app.add_config_value("gmtplot_show_code", True, True)
     app.add_config_value("gmtplot_figure_align", "center", True)
-    app.add_config_value("gmtplot_gmt_config", {"GMT_GRAPHICS_FORMAT": "ps"}, True)
+    app.add_config_value("gmtplot_gmt_config", {"GMT_GRAPHICS_FORMAT": "png"}, True)
     metadata = {
         "version": "0.3.0",
         "parallel_read_safe": True,
