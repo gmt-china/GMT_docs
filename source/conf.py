@@ -31,6 +31,7 @@ rst_prolog = """
 .. |周茂| replace:: `周茂 <https://github.com/ZMAlt>`__
 .. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
 .. |朱邓达| replace:: `朱邓达 <https://github.com/Dengda98>`__
+.. |何星辰| replace:: `何星辰 <https://github.com/Chuan1937>`__
 """
 
 # -- General configuration ------------------------------------------------
@@ -86,6 +87,7 @@ myst_substitutions = {
     "周茂": "[周茂](https://github.com/ZMAlt)",
     "王亮": "[王亮](https://github.com/wangliang1989)",
     "朱邓达": "[朱邓达](https://github.com/Dengda98)",
+    "何星辰": "[何星辰](https://github.com/Chuan1937)",
 }
 
 # Cross-refering other projects
@@ -169,6 +171,7 @@ html_context = {
         "周茂": "https://github.com/ZMAlt",
         "王亮": "https://github.com/wangliang1989",
         "朱邓达": "https://github.com/Dengda98",
+        "何星辰": "https://github.com/Chuan1937",
     }
 }
 
