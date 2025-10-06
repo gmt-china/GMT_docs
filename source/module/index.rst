@@ -104,6 +104,7 @@
     - :doc:`sample1d`
     - :doc:`segy`
     - :doc:`segy2grd`
+    - :doc:`segyz`
     - :doc:`solar`
     - :doc:`spectrum1d`
     - :doc:`sph2grd`
@@ -162,7 +163,6 @@
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdmix`
-    - :doc:`gmt:supplements/segy/segyz`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
     - :doc:`gmt:supplements/spotter/grdpmodeler`
@@ -496,6 +496,7 @@
    sample1d
    segy
    segy2grd
+   segyz
    solar
    spectrum1d
    sph2grd
