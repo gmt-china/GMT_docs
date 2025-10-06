@@ -33,7 +33,7 @@ Polar（极坐标投影）用于绘制极坐标数据（即角度 $\theta$ 和�
 下面给出了一些极坐标的示例以展示极坐标的用法：
 
 ```{eval-rst}
-.. gmtplot:: Jp.sh
+.. gmtplot:: Jp/Jp.sh
    :width: 85%
 
    极坐标用法示例
