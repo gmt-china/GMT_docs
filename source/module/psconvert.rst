@@ -61,10 +61,6 @@ psconvert
     该选项用于在调用 Ghostscript 时传给 Ghostscript 额外的选项，若要额外给
     Ghostscript增加多个选项，可重复使用 |-C| 命令。
 
-    在Windows下，若PS文件中含中文，则可能需要使用 |-C| 选项告诉Ghostscript字体路径::
-
-        gmt psconvert -C-sFONTPATH=C:\Windows\Fonts chinese.ps
-
 .. _-D:
 
 **-D**\ *outdir*
@@ -212,7 +208,7 @@ psconvert
 
         gmt psconvert -Tf test.ps
 
-    利用一堆PS文件生成一个多页PDF::
+    利用多个PS文件生成一个多页PDF::
 
         gmt psconvert -TF -Fout *.ps
 
