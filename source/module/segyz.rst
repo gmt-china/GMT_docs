@@ -134,8 +134,8 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 要绘制 SEGY 文件 **wa1.segy**，使用归一化的道，在真实的偏移距位置绘制，裁剪值为 ±3，同时绘制变密度波形和黑色的正半周变面积填充，使用以下命令：
 
 ::
-
-​    gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
+    
+​gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
 
 错误处理
 --------
