@@ -152,6 +152,7 @@
     - :doc:`mgd77path`
     - :doc:`mgd77sniffer`
     - :doc:`mgd77track`
+    - :doc:`mlconverter`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -181,7 +182,7 @@
     - :doc:`gmt:supplements/gsfml/fzmapper`
     - :doc:`gmt:supplements/gsfml/fzmodeler`
     - :doc:`gmt:supplements/gsfml/fzprofiler`
-    - :doc:`gmt:supplements/gsfml/mlconverter`
+
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
 
@@ -378,7 +379,7 @@
 :doc:`gmt:supplements/gsfml/fzmapper`            Bash script to plot fracture zone cross-profiles on a Mercator map
 :doc:`gmt:supplements/gsfml/fzmodeler`           Bash script to build fracture zone cross-profile model
 :doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
-:doc:`gmt:supplements/gsfml/mlconverter`         Convert chrons to ages using selected magnetic timescale
+:doc:`mlconverter`                               使用选定的磁性地磁时间尺度将磁性带转换为地质年龄
 **其他模块**                                     .. _module_other:
 :doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
 :doc:`grdgdal`                                   在 GMT 中运行 GDAL 命令
