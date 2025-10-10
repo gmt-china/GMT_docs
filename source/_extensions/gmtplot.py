@@ -478,7 +478,7 @@ def setup(app):
     app.add_config_value("gmtplot_figure_align", "center", True)
     app.add_config_value("gmtplot_gmt_config", {"GMT_GRAPHICS_FORMAT": "eps"}, True)
     metadata = {
-        "version": "0.3.0",
+        "version": "0.4.0",
         "parallel_read_safe": True,
         "parallel_write_safe": True,
     }
