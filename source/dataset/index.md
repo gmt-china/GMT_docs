@@ -12,7 +12,7 @@ GMT 内置数据和远程数据并不能满足所有用户的需求，GMT 中文
 gshhg
 dcw/index
 remote-dataset
-CN-border
+CN-border/index
 CN-faults
 CN-block/index
 geo3al/index
