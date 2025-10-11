@@ -75,13 +75,18 @@ mlconverter
     并将结果缩放至 0–1 范围内，最后四舍五入到最接近的 0.25。
 
 .. include:: explain_-V.rst_
-.. include:: explain_-bi.rst_
+    
+.. include:: explain_-bo.rst_
 
-.. include:: explain_-di.rst_
+.. include:: explain_-do.rst_
 
 .. include:: explain_-icols.rst_
 
+.. include:: explain_-ocols.rst_
+
 .. include:: explain_-qi.rst_
+
+.. include:: explain_help.rst_
 
 示例
 --------
