@@ -37,6 +37,7 @@
     - :doc:`figure`
     - :doc:`filter1d`
     - :doc:`fitcircle`
+    - :doc:`fzanalyzer`
     - :doc:`get`
     - :doc:`info`
     - :doc:`logo`
@@ -175,7 +176,6 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
-    - :doc:`gmt:supplements/gsfml/fzanalyzer`
     - :doc:`gmt:supplements/gsfml/fzblender`
     - :doc:`gmt:supplements/gsfml/fzinformer`
     - :doc:`gmt:supplements/gsfml/fzmapper`
@@ -372,7 +372,7 @@
 :doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
 :doc:`gmt:supplements/windbarbs/grdbarb`         Plot wind barb field from two component grids
 **GSFML 相关模块**                               .. _module_gsfml:
-:doc:`gmt:supplements/gsfml/fzanalyzer`          Analysis of fracture zones using crossing profiles
+:doc:`fzanalyzer`                                使用交叉剖面分析断裂带
 :doc:`gmt:supplements/gsfml/fzblender`           Produce a smooth blended FZ trace
 :doc:`gmt:supplements/gsfml/fzinformer`          Bash script to plot statistical information related to fracture zones
 :doc:`gmt:supplements/gsfml/fzmapper`            Bash script to plot fracture zone cross-profiles on a Mercator map
