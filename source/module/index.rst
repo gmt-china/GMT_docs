@@ -37,7 +37,6 @@
     - :doc:`figure`
     - :doc:`filter1d`
     - :doc:`fitcircle`
-    - :doc:`fzanalyzer`
     - :doc:`get`
     - :doc:`info`
     - :doc:`logo`
@@ -154,6 +153,7 @@
     - :doc:`mgd77sniffer`
     - :doc:`mgd77track`
     - :doc:`mlconverter`
+    - :doc:`fzanalyzer`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 

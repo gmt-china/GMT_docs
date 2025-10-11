@@ -45,15 +45,16 @@ fzanalyzer
 
 *crossprofiles*
     该文件是使用 :doc:`grdtrack` 命令并带有 **-C** 选项，
-从一个或多个断裂带（FZ）的近似数字化轨迹（包含 *lon*, *lat*）生成的横剖面表格。
-此表格是一个 ASCII（或二进制，参见 **-bi**）文件，必须包含 7 个数据列：
+    从一个或多个断裂带（FZ）的近似数字化轨迹（包含 *lon*, *lat*）生成的横剖面表格。
+    此表格是一个 ASCII（或二进制，参见 **-bi**）文件，必须包含 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
 
 .. _-F:
 
 **-F**\ *fzlines*
-    其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用 **-D** 选项获得的重采样轨迹文件。
-与 *crossprofiles* 文件类似，该文件必须包含相同的 7 个数据列：
+    其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用
+     **-D** 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
+     该文件必须包含相同的 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
 
 可选选项
@@ -143,7 +144,8 @@ fzanalyzer
 最近断裂带距离
 --------
 
-可以使用 :doc:`grdmath` 来生成制作剖面所需的“最近断裂带距离”网格（单位：公里）。对于 Nazca plate ，示例如下::
+可以使用 :doc:`grdmath` 来生成制作剖面所需的“最近断裂带距离”网格（单位：公里）。
+对于 Nazca plate ，示例如下::
 
     gmt grdmath -R-120/-65/-50/5 -I5m -fg digitize.txt LDIST DEG2KM = dist2fz.nc
 
@@ -173,26 +175,31 @@ fzanalyzer
 **fzanalyzer** 最多可以生成三个输出文件，具体说明如下：
 
     1. 文件 *prefix*\_analysis.txt 包含每条横剖面的分析结果。该文件共有 61 列输出数据，
-    包含拟合值或观测值（参见“确定参数”部分）。此文件可被 :doc:`fzblender` 使用，以生成对断裂带的平滑且最优的拟合。
+    包含拟合值或观测值（参见“确定参数”部分）。此文件可被 :doc:`fzblender` 使用，
+    以生成对断裂带的平滑且最优的拟合。
 
-    2. 文件 *prefix*\_cross.txt 包含每条横剖面的观测值和最佳拟合模型的预测值。可用于逐剖面绘图或结果的可视化分析。
+    2. 文件 *prefix*\_cross.txt 包含每条横剖面的观测值和最佳拟合模型的预测值。
+    可用于逐剖面绘图或结果的可视化分析。
 
     3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(|-S|) 或 C shell 脚本(|-S|\ **c**)，
     其中包含命令行指定的所有参数作为 shell 变量。你可以在自定义绘图或分析脚本中引用这些变量。
 
-    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 作为 :doc:`grdtrack` **-D** 的输出文件名，
-    因为绘图脚本会以此文件为输入。
+    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 
+    作为 :doc:`grdtrack` **-D** 的输出文件名，因为绘图脚本会以此文件为输入。
 
 示例
 --------
 
-为了分析数字化的断裂带（FZ），我们使用 Sandwell/Smith 的 VGG 数据（1 分钟分辨率的垂直重力梯度，@earth_vgg_01m）、
+为了分析数字化的断裂带（FZ），我们使用 Sandwell/Smith 的 VGG 数据
+（1 分钟分辨率的垂直重力梯度，@earth_vgg_01m）、
 1 分钟分辨率的地壳年龄网格（@earth_ages_01m）以及最近断裂带距离网格（单位：km）。
-假设多段文件 `fz_digitized.txt` 中包含潜在的断裂带位置，我们设置横剖面长度为 40 km，剖面间隔为 5 km，沿横剖面的采样间隔为 2 km，并运行命令::
+假设多段文件 `fz_digitized.txt` 中包含潜在的断裂带位置，我们设置横剖面长度为 40 km，
+剖面间隔为 5 km，沿横剖面的采样间隔为 2 km，并运行命令::
 
     gmt grdtrack fz_digitized.txt -C40k/2k/5k -G@earth_vgg_01m -G@earth_ages_01m -Gdist.nc -Dtraces_resampled.txt -fg --FORMAT_GEO_OUT=ddd.xxxx --FORMAT_FLOAT_OUT=%.1f > xprofiles.txt
 
-生成的这两个数据表即可用于 **fzanalyzer** 分析轨迹。此处，我们设置中央走廊宽度为 20 km，并接受大部分参数的默认值::
+生成的这两个数据表即可用于 **fzanalyzer** 分析轨迹。此处，
+我们设置中央走廊宽度为 20 km，并接受大部分参数的默认值::
 
     gmt fzanalyzer xprofiles.txt -D20 -Ftraces_resampled.txt -Ttraces -S --FORMAT_GEO_OUT=ddd.xxxx --FORMAT_FLOAT_OUT=%.1f
 
@@ -289,6 +296,7 @@ fzanalyzer
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, A., Whittaker, J. M., Myhill, R., Chandler, M. T.,
-2015, "Semiautomatic fracture zone tracking", *Geochem. Geophys. Geosyst.*, 16 (7), 2462–2472.
-https://doi.org/10.1002/2015GC005853.
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, A., 
+Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
+"Semiautomatic fracture zone tracking", *Geochem. 
+Geophys. Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.
