@@ -12,10 +12,13 @@ fzanalyzer
 :官方文档: :doc:`gmt:supplements/gsfml/fzanalyzer`
 :简介: 使用交叉剖面分析断裂带
 
-**fzanalyzer** 是 (Global Seafloor Fabric and Magnetic Lineation Project) 的一部分。( 简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。\
-它读取由 :doc:`grdtrack` 生成的已处理断裂带（FZ）轨迹和横剖面数据。然后通过检查与 FZ 走向正交的剖面来分析每条 FZ 的轨迹，\
-并使用一种由 “Atlantic-style” 对称槽和 “Pacific-style” 不对称偶极状异常混合组成的模型，并结合一些外围隆起进行建模。\
-我们还仅拟合对称槽模型，并检查经验数据的最小值和槽宽。随后对数据槽的宽度以及由各种模型给出的最佳 FZ 位置的:math:`1-\sigma`不确定性进行估计。\
+**fzanalyzer** 是 (Global Seafloor Fabric and Magnetic Lineation Project) 的一部分。
+( 简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
+它读取由 :doc:`grdtrack` 生成的已处理断裂带（FZ）轨迹和横剖面数据。
+然后通过检查与 FZ 走向正交的剖面来分析每条 FZ 的轨迹，
+并使用一种由 “Atlantic-style” 对称槽和 “Pacific-style” 不对称偶极状异常混合组成的模型，
+并结合一些外围隆起进行建模。我们还仅拟合对称槽模型，并检查经验数据的最小值和槽宽。
+随后对数据槽的宽度以及由各种模型给出的最佳 FZ 位置的:math:`1-\sigma`不确定性进行估计。
 我们还计算若干统计指标，并返回沿每条 FZ 距离变化的所有模型参数。
 
 语法
@@ -41,14 +44,15 @@ fzanalyzer
 ------------------
 
 *crossprofiles*
-    该文件是使用 :doc:`grdtrack` 命令并带有 **-C** 选项，从一个或多个断裂带（FZ）的近似数字化轨迹（包含 *lon*, *lat*）生成的横剖面表格。\
+    该文件是使用 :doc:`grdtrack` 命令并带有 **-C** 选项，
+从一个或多个断裂带（FZ）的近似数字化轨迹（包含 *lon*, *lat*）生成的横剖面表格。
 此表格是一个 ASCII（或二进制，参见 **-bi**）文件，必须包含 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
 
 .. _-F:
 
 **-F**\ *fzlines*
-    其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用 **-D** 选项获得的重采样轨迹文件。\
+    其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用 **-D** 选项获得的重采样轨迹文件。
 与 *crossprofiles* 文件类似，该文件必须包含相同的 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
 
@@ -133,7 +137,7 @@ fzanalyzer
 按上述顺序排列。
 
 其中最关键的是 *VGG 网格文件*。
-如果你没有或不关心年龄和距离信息，可以创建全为 NaN 的虚拟网格文件。\
+如果你没有或不关心年龄和距离信息，可以创建全为 NaN 的虚拟网格文件。
 你可以使用 :doc:`grdtrack` 的 **-C** 和 **-D** 选项来设计横剖面布局并生成重新采样的断裂带轨迹。
 
 最近断裂带距离
@@ -143,8 +147,9 @@ fzanalyzer
 
     gmt grdmath -R-120/-65/-50/5 -I5m -fg digitize.txt LDIST DEG2KM = dist2fz.nc
 
-由于对大量断裂带（FZ）进行该计算的速度较慢，因此没有必要在 **-I** 中使用过高的分辨率，\
-因为距离变化是平滑的，插值结果也会近似正确。建议生成一个全球网格，但将其划分为四个象限（或更小的区域块），并在多核计算机上并行运行。
+由于对大量断裂带（FZ）进行该计算的速度较慢，因此没有必要在 **-I** 中使用过高的分辨率，
+因为距离变化是平滑的，插值结果也会近似正确。建议生成一个全球网格，但将其划分为四个象限（或更小的区域块），
+并在多核计算机上并行运行。
 例如，要通过象限方式生成全球网格，可以运行以下命令::
 
     gmt grdmath -R0/180/0/90 -I2m -fg -V3 global_FZ.txt LDIST DEG2KM = WN.nc
@@ -167,21 +172,22 @@ fzanalyzer
 
 **fzanalyzer** 最多可以生成三个输出文件，具体说明如下：
 
-    1. 文件 *prefix*\_analysis.txt 包含每条横剖面的分析结果。该文件共有 61 列输出数据，\
+    1. 文件 *prefix*\_analysis.txt 包含每条横剖面的分析结果。该文件共有 61 列输出数据，
     包含拟合值或观测值（参见“确定参数”部分）。此文件可被 :doc:`fzblender` 使用，以生成对断裂带的平滑且最优的拟合。
 
     2. 文件 *prefix*\_cross.txt 包含每条横剖面的观测值和最佳拟合模型的预测值。可用于逐剖面绘图或结果的可视化分析。
 
-    3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(|-S|) 或 C shell 脚本(|-S|\ **c**)，其中包含命令行指定的所有参数作为 shell 变量。\
-    你可以在自定义绘图或分析脚本中引用这些变量。
+    3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(|-S|) 或 C shell 脚本(|-S|\ **c**)，
+    其中包含命令行指定的所有参数作为 shell 变量。你可以在自定义绘图或分析脚本中引用这些变量。
 
-    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 作为 :doc:`grdtrack` **-D** 的输出文件名，因为绘图脚本会以此文件为输入。
+    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 作为 :doc:`grdtrack` **-D** 的输出文件名，
+    因为绘图脚本会以此文件为输入。
 
 示例
 --------
 
-为了分析数字化的断裂带（FZ），我们使用 Sandwell/Smith 的 VGG 数据（1 分钟分辨率的垂直重力梯度，@earth_vgg_01m）、\
-1 分钟分辨率的地壳年龄网格（@earth_ages_01m）以及最近断裂带距离网格（单位：km）。\
+为了分析数字化的断裂带（FZ），我们使用 Sandwell/Smith 的 VGG 数据（1 分钟分辨率的垂直重力梯度，@earth_vgg_01m）、
+1 分钟分辨率的地壳年龄网格（@earth_ages_01m）以及最近断裂带距离网格（单位：km）。
 假设多段文件 `fz_digitized.txt` 中包含潜在的断裂带位置，我们设置横剖面长度为 40 km，剖面间隔为 5 km，沿横剖面的采样间隔为 2 km，并运行命令::
 
     gmt grdtrack fz_digitized.txt -C40k/2k/5k -G@earth_vgg_01m -G@earth_ages_01m -Gdist.nc -Dtraces_resampled.txt -fg --FORMAT_GEO_OUT=ddd.xxxx --FORMAT_FLOAT_OUT=%.1f > xprofiles.txt
