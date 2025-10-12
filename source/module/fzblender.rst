@@ -13,7 +13,7 @@ fzblender
 :简介: 生成平滑的加权混合 FZ 轨迹
 
 **fzblender** 是 (Global Seafloor Fabric and Magnetic Lineation Project)
- 的一部分。(简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
+的一部分。(简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
 它读取由 :doc:`fzanalyzer` 生成的分析文件，并可选择沿轨迹对结果进行滤波。
 然后，基于指定的信号代码， **fzblender** 将生成一个最优断裂带（FZ）轨迹，
 该轨迹是用户原始数字化轨迹与一个或多个由 :doc:`fzanalyzer` 
