@@ -206,8 +206,8 @@ fzblender
 :doc:`fzinformer`,
 :doc:`fzmapper`,
 :doc:`fzmodeler`,
-:doc:`fzprofiler`
-:doc:`filter1d`
+:doc:`fzprofiler`,
+:doc:`filter1d`,
 :doc:`mlconverter`
 
 参考文献
