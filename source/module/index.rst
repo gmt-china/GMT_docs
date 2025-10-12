@@ -154,6 +154,7 @@
     - :doc:`mgd77track`
     - :doc:`mlconverter`
     - :doc:`fzblender`
+    - :doc:`fzanalyzer`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -177,7 +178,6 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
-    - :doc:`gmt:supplements/gsfml/fzanalyzer`
     - :doc:`gmt:supplements/gsfml/fzinformer`
     - :doc:`gmt:supplements/gsfml/fzmapper`
     - :doc:`gmt:supplements/gsfml/fzmodeler`
@@ -375,6 +375,8 @@
 **GSFML 相关模块**                               .. _module_gsfml:
 :doc:`gmt:supplements/gsfml/fzanalyzer`          Analysis of fracture zones using crossing profiles
 :doc:`fzblender`                                 生成平滑的加权混合 FZ 轨迹
+:doc:`fzanalyzer`                                使用交叉剖面分析断裂带
+:doc:`gmt:supplements/gsfml/fzblender`           Produce a smooth blended FZ trace
 :doc:`gmt:supplements/gsfml/fzinformer`          Bash script to plot statistical information related to fracture zones
 :doc:`gmt:supplements/gsfml/fzmapper`            Bash script to plot fracture zone cross-profiles on a Mercator map
 :doc:`gmt:supplements/gsfml/fzmodeler`           Bash script to build fracture zone cross-profile model
