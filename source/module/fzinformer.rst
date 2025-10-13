@@ -65,11 +65,8 @@ fzinformer
 .. _-T:
 
 **-T**\ *prefix*
-     设置在运行 :doc:`fzanalyzer` 和 :doc:`fzblender` 时使用的文件名前缀
-     [默认值为 fztrack]。
-     此处使用的文件为 *prefix*\ _analysis.txt
-        （若使用 |-D|，则为 *prefix*\ _filtered.txt）
-     以及 *prefix*\ _blend.txt。
+     设置在运行 :doc:`fzanalyzer` 和 :doc:`fzblender` 时使用的文件名前缀[默认值为 fztrack]。
+     此处使用的文件为 *prefix*\ _analysis.txt（若使用 |-D|，则为 *prefix*\ _filtered.txt）以及 *prefix*\ _blend.txt。
 
 .. _-W:
 
