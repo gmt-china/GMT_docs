@@ -545,6 +545,9 @@
    mgd77path
    mgd77sniffer
    mgd77track
+   mlconverter
+   fzblender
+   fzanalyzer
 
 .. raw:: latex
 
