@@ -6,7 +6,7 @@
 .. include:: common_SYN_OPTs.rst_
 
 greenspline
-=========
+===========
 
 :官方文档: :doc:`gmt:greenspline`
 :简介: 使用格林函数样条进行插值
