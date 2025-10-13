@@ -14,7 +14,7 @@ fzmapper
 
 **fzmapper** 是一个脚本，是 (Global Seafloor Fabric and Magnetic Lineation Project)
 的一部分。(简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
-该脚本用于根据处理后的断裂带（FZ）迹线和由 :doc:`grdtrack ` 生成的横断面数据，
+该脚本用于根据处理后的断裂带（FZ）迹线和由 :doc:`grdtrack` 生成的横断面数据，
 来绘制横断面的墨卡托（Mercator）投影地图。
 此外，还可选择叠加分析结果与混合模型（blend）结果。
 
@@ -78,7 +78,7 @@ fzmapper
 
 .. _-W:
 
-**-W**\ *width*\ [**c**|\ **i**|\ **p**]
+**-W**\ *width*\ [**c**\|\ **i**\|\ **p**]
      设置墨卡托投影地图的 *宽度*。
      若未指定单位，则默认使用 GMT 当前的 :term:`PROJ_LENGTH_UNIT` 单位。
 
