@@ -155,6 +155,7 @@
     - :doc:`mlconverter`
     - :doc:`fzblender`
     - :doc:`fzanalyzer`
+    - :doc:`fzmapper`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -179,7 +180,6 @@
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
     - :doc:`gmt:supplements/gsfml/fzinformer`
-    - :doc:`gmt:supplements/gsfml/fzmapper`
     - :doc:`gmt:supplements/gsfml/fzmodeler`
     - :doc:`gmt:supplements/gsfml/fzprofiler`
 
@@ -376,7 +376,7 @@
 :doc:`fzblender`                                 生成平滑的加权混合 FZ 轨迹
 :doc:`fzanalyzer`                                使用交叉剖面分析断裂带
 :doc:`gmt:supplements/gsfml/fzinformer`          Bash script to plot statistical information related to fracture zones
-:doc:`gmt:supplements/gsfml/fzmapper`            Bash script to plot fracture zone cross-profiles on a Mercator map
+:doc:`fzmapper`                                  在墨卡托地图上绘制断裂带交叉剖面的 Bash 脚本
 :doc:`gmt:supplements/gsfml/fzmodeler`           Bash script to build fracture zone cross-profile model
 :doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
 :doc:`mlconverter`                               使用选定的磁性地磁时间尺度将磁性带转换为地质年龄
