@@ -6,8 +6,6 @@ date: 2023-09-21
 
 # GDAL
 
----
-
 [GDAL](https://gdal.org/)（**G**eospatial **D**ata **A**bstraction **L**ibrary）
 是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，
 支持多种光栅或矢量地理空间数据格式的互相转换和处理。
