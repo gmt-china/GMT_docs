@@ -114,7 +114,7 @@ fzmodeler
 
 **-T**\ *prefix*
      设置模型剖面输出文件的前缀 [默认 fzprof]。
-     若使用 |-T -|，则将模型剖面输出到标准输出（stdout）。
+     若使用 ``T -``，则将模型剖面输出到标准输出（stdout）。
 
 .. include:: explain_-V.rst_
 
