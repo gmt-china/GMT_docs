@@ -16,7 +16,7 @@ fzmodeler
 的一部分。(简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
 该脚本根据选定的模型参数生成一个合成的横断面模型，并可选择将该剖面绘制为 PDF 图像。其所评估的模型为：
 
-math::`z(x) = A[mG_1 + (1 - m)(uG_2 - G_0)]`
+:math:`z(x) = A[mG_1 + (1 - m)(uG_2 - G_0)]`
 
 其中：
 
