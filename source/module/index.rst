@@ -181,6 +181,7 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
+    - :doc:`gmt:supplements/gsfml/fzmodeler`
     - :doc:`gmt:supplements/gsfml/fzprofiler`
 
 
@@ -375,6 +376,7 @@
 **GSFML 相关模块**                               .. _module_gsfml:
 :doc:`fzblender`                                 生成平滑的加权混合 FZ 轨迹
 :doc:`fzanalyzer`                                使用交叉剖面分析断裂带
+:doc:`fzmapper`                                  在墨卡托地图上绘制断裂带交叉剖面的 Bash 脚本
 :doc:`fzinformer`                                绘制与断裂带相关的统计信息的 Bash 脚本
 :doc:`fzmapper`                                  在墨卡托地图上绘制断裂带交叉剖面的 Bash 脚本
 :doc:`fzmodeler`                                 构建断裂带交叉剖面模型的 Bash 脚本
@@ -551,8 +553,7 @@
    fzinformer
    fzmapper 
    fzmodeler
-   
-
+      
 .. raw:: latex
 
    % revert back to subsections
