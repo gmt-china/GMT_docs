@@ -105,7 +105,7 @@ fzmapper
 :doc:`mlconverter`, 
 :doc:`fzinformer`, 
 :doc:`fzmodeler`, 
-:doc:`fzprofiler`
+:doc:`fzprofiler`,
 :doc:`grdtrack`
 
 参考文献
