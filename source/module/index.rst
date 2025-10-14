@@ -180,8 +180,6 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
-    - :doc:`gmt:supplements/gsfml/fzinformer`
-    - :doc:`gmt:supplements/gsfml/fzmapper`
     - :doc:`gmt:supplements/gsfml/fzmodeler`
     - :doc:`gmt:supplements/gsfml/fzprofiler`
 
