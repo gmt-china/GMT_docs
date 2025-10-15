@@ -181,8 +181,6 @@
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
     - :doc:`gmt:supplements/windbarbs/grdbarb`
-    - :doc:`gmt:supplements/gsfml/fzmodeler`
-    - :doc:`gmt:supplements/gsfml/fzprofiler`
 
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
@@ -380,7 +378,7 @@
 :doc:`fzinformer`                                绘制与断裂带相关的统计信息的 Bash 脚本
 :doc:`fzmapper`                                  在墨卡托地图上绘制断裂带交叉剖面的 Bash 脚本
 :doc:`fzmodeler`                                 构建断裂带交叉剖面模型的 Bash 脚本
-:doc:`gmt:supplements/gsfml/fzprofiler`          Bash script to plot fracture zone cross-profiles
+:doc:`fzprofiler`                                绘制断裂带交叉剖面图的 Bash 脚本
 :doc:`mlconverter`                               使用选定的磁性地磁时间尺度将磁性带转换为地质年龄
 **其他模块**                                     .. _module_other:
 :doc:`segy2grd`                                  将 SEGY 文件转换为网格文件
@@ -553,6 +551,7 @@
    fzinformer
    fzmapper 
    fzmodeler
+   fzprofiler
       
 .. raw:: latex
 
