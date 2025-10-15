@@ -158,6 +158,9 @@
     - :doc:`fzmapper`
     - :doc:`fzinformer`
     - :doc:`fzmodeler`
+    - :doc:`fzprofiler`
+    - :doc:`grdbarb`
+    - :doc:`psbarb`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -179,7 +182,6 @@
     - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
-    - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
@@ -368,7 +370,7 @@
 :doc:`grdshake`                                  计算地表峰值加速度、速度、烈度
 :doc:`grdvs30`                                   计算 Vs30 速度模型
 **windbarbs 相关模块**                           .. _module_windbarbs:
-:doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
+:doc:`psbarb`                                    在 2D 和 3D 中绘制凤羽场
 :doc:`grdbarb`                                   从两个分量网格中绘制风羽场
 **GSFML 相关模块**                               .. _module_gsfml:
 :doc:`fzblender`                                 生成平滑的加权混合 FZ 轨迹
@@ -552,6 +554,7 @@
    fzmodeler
    fzprofiler
    grdbarb
+   psbarb
       
 .. raw:: latex
 
