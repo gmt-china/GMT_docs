@@ -15,7 +15,6 @@ grdbarb
 **grdbarb** 读取两个二维网格文件，分别表示风场的 *x* 分量和 *y* 分量，并通过绘制风羽（wind barbs）的方式生成风场图，风羽的方向与羽毛形状根据文件中的信息确定。
 另外，也可以提供极坐标 (*r*, *theta*) 网格数据来代替笛卡尔坐标输入。
 
-
 语法
 --------
 
@@ -46,10 +45,9 @@ grdbarb
 ------------------
 
 *compx.nc*
-　　包含风场的 x 分量。（参见 :ref:`网格文件格式 <grd_in>`）
-
+包含风场的 x 分量。（参见 :doc:`explain_grd_in`）
 *compy.nc*
-　　包含风场的 y 分量。（参见 :ref:`网格文件格式 <grd_in>`）
+包含风场的 y 分量。（参见 :doc:`explain_grd_in`）
 
 .. include:: explain_-J.rst_
 
