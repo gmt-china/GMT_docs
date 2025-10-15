@@ -10,4 +10,4 @@ gmt begin map2
     gmt colorbar -Baf
 
     rm tmp.grd
-gmt end
+gmt end show
