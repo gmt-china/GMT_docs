@@ -45,9 +45,9 @@ grdbarb
 ------------------
 
 *compx.nc*
-包含风场的 x 分量。（参见 :doc:`explain_grd_in`）
+包含风场的 x 分量。（参见 {ref}`grid-registration` ）
 *compy.nc*
-包含风场的 y 分量。（参见 :doc:`explain_grd_in`）
+包含风场的 y 分量。（参见 {ref}`grid-registration` ）
 
 .. include:: explain_-J.rst_
 
