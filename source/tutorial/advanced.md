@@ -7,6 +7,7 @@
 
 histogram/index
 xyz2grd/index
+surface/index
 configurations
 oneliner
 inset
