@@ -180,7 +180,6 @@
     - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
-    - :doc:`gmt:supplements/windbarbs/grdbarb`
 
 
 **GMT 模块（按功能分类）[包含了尚未翻译模块]**
@@ -370,7 +369,7 @@
 :doc:`grdvs30`                                   计算 Vs30 速度模型
 **windbarbs 相关模块**                           .. _module_windbarbs:
 :doc:`gmt:supplements/windbarbs/psbarb`          Plot wind barbs in 2-D and 3-D
-:doc:`gmt:supplements/windbarbs/grdbarb`         Plot wind barb field from two component grids
+:doc:`grdbarb`                                   从两个分量网格中绘制风羽场
 **GSFML 相关模块**                               .. _module_gsfml:
 :doc:`fzblender`                                 生成平滑的加权混合 FZ 轨迹
 :doc:`fzanalyzer`                                使用交叉剖面分析断裂带
@@ -552,6 +551,7 @@
    fzmapper 
    fzmodeler
    fzprofiler
+   grdbarb
       
 .. raw:: latex
 
