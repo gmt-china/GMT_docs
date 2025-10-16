@@ -9,12 +9,12 @@ author: 陈箫翰
 某些情况下我们希望利用这些以散点形式不等间隔分布的数据点，插值并绘制出这一片区域的数据分布图。
 但是 {doc}`/module/xyz2grd` 模块对于不等间隔的数据并不具备插值功能。
 处理不等间隔的数据，可以使用模块
-:doc:`/module/surface`、
-:doc:`/module/greenspline`、
-:doc:`/module/nearneighbor`
-或 :doc:`/module/triangulate`。
+{doc}`/module/surface`、
+{doc}`/module/greenspline`、
+{doc}`/module/nearneighbor`
+或 {doc}`/module/triangulate`。
 
-本章节我们将以 :doc:`/module/surface` 模块为例，介绍对不等间隔数据插值并进行网格化后绘图的方法。
+本章节我们将以 {doc}`/module/surface` 模块为例，介绍对不等间隔数据插值并进行网格化后绘图的方法。
 
 ## 示例数据
 
