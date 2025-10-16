@@ -20,7 +20,7 @@ originater
 输出包含输入记录，并为每个最近的 *n_hs* 个热点附加四个额外字段：
 热点 ID（例如 HWI）、最近流线段的阶段 ID、海山的伪年龄，
 以及与热点的最近距离（单位 km）。参见选项 **-:** 了解如何读取
- (*latitude*, *longitude*, *height*, *radius*, *crustal_age*) 格式的文件。
+(*latitude*, *longitude*, *height*, *radius*, *crustal_age*) 格式的文件。
 
 语法
 --------
@@ -52,7 +52,38 @@ originater
 
 .. include:: explain_intables.rst_
 
-.. include:: explain_rots.rst_
+.. _-E:
+
+**-E** *rot_file* | *ID1-ID2* | *lon*/*lat*/*angle* [**+i**]
+
+    可以通过以下三种方式指定旋转：
+
+    * **方式 1：提供一个包含旋转参数的文件。**
+    该文件必须为每个旋转提供一条记录，每条记录应遵循以下格式：
+
+    *lon lat tstart [tstop] angle* [ *khat a b c d e f g df* ]
+
+    其中：
+
+    * *tstart* 和 *tstop* 为阶段（stage）的起止年龄（单位为百万年 Myr）；
+    * *lon*、*lat* 和 *angle* 分别表示经度、纬度和旋转角度（单位为度）。
+    * *tstart* 与 *tstop* 分别代表阶段的老端和年轻端。
+    * 若记录中未给出 *tstop*，则该记录表示一次**总重建旋转（total reconstruction rotation）**，此时 *tstop* 默认设置为 0，并且文件中所有记录都不应再指定 *tstop*。
+    * 如果旋转具有协方差矩阵 **C**，可通过方括号中的 9 个可选参数指定。
+        此时 **C** = (*g* / *khat*) × [ *a b d; b c e; d e f ]，
+        即 **C** 由三个行向量组成。
+    * 若拟合旋转的自由度 (*df*) 为 0 或未给出，则默认设为 10000。
+    * 空行或以 `#` 开头的行将被忽略。
+
+    * **方式 2：提供两个构造板块 ID 组成的文件名（例如 PAC-MBL）。**
+    此时程序将从 **GPlates 旋转数据库** 中提取相应的旋转记录。
+    若未找到匹配的旋转数据，将返回错误。
+
+    * **方式 3：直接指定经度、纬度和旋转角度。**
+    即以 *lon*/*lat*/*angle* 的形式（单位为度，并用 `/` 分隔）给出单个总重建旋转。
+
+    无论使用哪种方式，都可以在参数末尾追加 **+i**，表示需要对旋转进行**反转（invert rotation）**。
+
 
 .. _-F:
 
@@ -119,7 +150,7 @@ originater
 **-T**  
     截断超过 |-N| 指定上限年龄的海山年龄 [默认不截断]。
 
-.. include:: /explain_-V.rst_
+.. include:: explain_-V.rst_
 
 .. _-W:
 
@@ -151,6 +182,15 @@ originater
 
 .. include:: explain_-Rgeo.rst_
 
+大地坐标与地心坐标
+--------
+
+所有球面旋转操作都在地心坐标下进行。
+这意味着输入的数据点和网格被视为大地坐标，需要首先转换为地心坐标；
+旋转操作完成后，重建得到的点会再转换回大地坐标。
+如果将椭球体设置参数 **PROJ_ELLIPSOID** 改为 *Sphere*，则可以跳过这种默认行为。
+
+
 示例
 --------
 
@@ -165,20 +205,12 @@ originater
     echo "1.55 -8.43 52.3" | gmt originater -FONeill_2005_hotspots.txt \
   -EOMS2005_APM_fixed.txt -Q1/120 -Lt
 
-其中 52.3 Ma 为观测年龄。输出为：
-
-  70 -95.486 52.3
-
-若使用移动热点模型，命令为::
+其中 52.3 Ma 为观测年龄。输出为：70 -95.486 52.3。若使用移动热点模型，命令为::
 
     echo "1.55 -8.43 52.3" | gmt originater -FONeill_2005_hotspots.txt+d \
   -EOMS2005_APM_smooth.txt -Q1/120 -Lt
 
-输出为：
-
-  80 -213.135 52.3
-
-负距离表示最近接点位于热点以东。
+输出为：80 -213.135 52.3负距离表示最近接点位于热点以东。
 
 备注
 --------
