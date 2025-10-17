@@ -54,7 +54,7 @@ originater
 
 .. _-E:
 
-**-F**\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+**-E**\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 
     可以通过以下三种方式指定旋转：
 
