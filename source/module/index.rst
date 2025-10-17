@@ -163,6 +163,7 @@
     - :doc:`originater`
     - :doc:`rotsmoother`
     - :doc:`grdhisteq`
+    - :doc:`backtracker`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -173,7 +174,6 @@
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdmix`
-    - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
     - :doc:`gmt:supplements/spotter/grdpmodeler`
     - :doc:`gmt:supplements/spotter/grdrotater`
@@ -342,7 +342,7 @@
 :doc:`x2sys_report`                              统计交叉点信息
 :doc:`x2sys_solve`                               使用最小二乘平差改正系统误差
 **SPOTTER 相关模块**                             .. _module_spotter:
-:doc:`gmt:supplements/spotter/backtracker`       Generate forward and backward flowlines and hotspot tracks
+:doc:`backtracker`                               生成前向和后向流线和热点轨迹
 :doc:`gmt:supplements/spotter/gmtpmodeler`       Evaluate a plate motion model at given locations
 :doc:`gmt:supplements/spotter/grdpmodeler`       Evaluate a plate motion model on a geographic grid
 :doc:`gmt:supplements/spotter/grdrotater`        Finite rotation reconstruction of geographic grid
@@ -557,6 +557,7 @@
    originater
    rotsmoother
    grdhisteq
+   backtracker
       
 .. raw:: latex
 

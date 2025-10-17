@@ -47,7 +47,7 @@ originater
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
-必需参数
+必选选项
 ------------------
 
 .. include:: explain_intables.rst_

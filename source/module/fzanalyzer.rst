@@ -40,7 +40,7 @@ fzanalyzer
 [ |SYN_OPT-o| ]
 [ |SYN_OPT--| ]
 
-必须选项
+必选选项
 ------------------
 
 *crossprofiles*
