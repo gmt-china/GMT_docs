@@ -161,6 +161,7 @@
     - :doc:`fzprofiler`
     - :doc:`grdbarb`
     - :doc:`originater`
+    - :doc:`rotsmoother`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -180,7 +181,6 @@
     - :doc:`gmt:supplements/spotter/hotspotter`
     - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/spotter/rotconverter`
-    - :doc:`gmt:supplements/spotter/rotsmoother`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -348,7 +348,7 @@
 :doc:`gmt:supplements/spotter/grdrotater`        Finite rotation reconstruction of geographic grid
 :doc:`originater`                                将海山与最近的热点点源关联起来
 :doc:`gmt:supplements/spotter/rotconverter`      Manipulate total reconstruction and stage rotations
-:doc:`gmt:supplements/spotter/rotsmoother`       Get mean rotations and covarience from set of finate rotations
+:doc:`rotsmoother`                               从有限旋转集中获取平均旋转和协方差矩阵
 :doc:`gmt:supplements/spotter/grdspotter`        Create CVA image from a gravity or topography grid
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
 **POTENTIAL 相关模块**                           .. _module_potential:
@@ -555,6 +555,7 @@
    fzprofiler
    grdbarb
    originater
+   rotsmoother
       
 .. raw:: latex
 
