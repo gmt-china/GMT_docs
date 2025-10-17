@@ -162,6 +162,7 @@
     - :doc:`grdbarb`
     - :doc:`originater`
     - :doc:`rotsmoother`
+    - :doc:`grdhisteq`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -171,7 +172,6 @@
     - :doc:`gmt:batch`
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdhisteq`
     - :doc:`gmt:grdmix`
     - :doc:`gmt:supplements/spotter/backtracker`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
@@ -556,6 +556,7 @@
    grdbarb
    originater
    rotsmoother
+   grdhisteq
       
 .. raw:: latex
 
