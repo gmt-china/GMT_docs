@@ -68,10 +68,10 @@ originater
         * *tstart* 和 *tstop* 为阶段（stage）的起止年龄（单位为百万年 Myr）；
         * *lon*、*lat* 和 *angle* 分别表示经度、纬度和旋转角度（单位为度）。
         * *tstart* 与 *tstop* 分别代表阶段的老端和年轻端。
-        * 若记录中未给出 *tstop*，则该记录表示一次**总重建旋转（total reconstruction rotation）**，
+        * 若记录中未给出 *tstop*，则该记录表示一次总重建旋转，
         此时 *tstop* 默认设置为 0，并且文件中所有记录都不应再指定 *tstop*。
         * 如果旋转具有协方差矩阵 **C**，可通过方括号中的 9 个可选参数指定。
-            此时 **C** = (*g* / *khat*) × [ *a b d; b c e; d e f ]，
+            此时 **C** = (*g* / *khat*) × [ a b d; b c e; d e f ]，
             即 **C** 由三个行向量组成。
         * 若拟合旋转的自由度 (*df*) 为 0 或未给出，则默认设为 10000。
         * 空行或以 `#` 开头的行将被忽略。
@@ -82,7 +82,7 @@ originater
 
     * **方式 3：直接指定经度、纬度和旋转角度。**
         即以 *lon*/*lat*/*angle* 的形式（单位为度，并用 `/` 分隔）给出单个总重建旋转。
-        无论使用哪种方式，都可以在参数末尾追加 **+i**，表示需要对旋转进行**反转（invert rotation）**。
+        无论使用哪种方式，都可以在参数末尾追加 **+i**，表示需要对旋转进行反转。
 
 .. _-F:
 
@@ -189,7 +189,6 @@ originater
 旋转操作完成后，重建得到的点会再转换回大地坐标。
 如果将椭球体设置参数 **PROJ_ELLIPSOID** 改为 *Sphere*，则可以跳过这种默认行为。
 
-
 示例
 --------
 
@@ -220,11 +219,10 @@ GMT 内置 EarthByte 旋转模型 `Global_EarthByte_230-0Ma_GK07_AREPS.rot`。
 相关模块
 --------
 
-
 :doc:`grdrotater`,  
 :doc:`grdspotter`,  
 :doc:`project`,  
-:doc:`mapproject `,  
+:doc:`mapproject`,  
 :doc:`backtracker`,  
 :doc:`gmtpmodeler`,  
 :doc:`grdpmodeler`,  
