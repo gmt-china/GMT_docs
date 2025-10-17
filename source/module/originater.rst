@@ -12,7 +12,7 @@ originater
 :官方文档: :doc:`gmt:supplements/spotter/originater`
 :简介: 将海山与最近的热点点源关联起来
 
-**originater** 从 *table*（或标准输入）中读取 
+**originater** 从 *table* （或标准输入）中读取 
 (*longitude*, *latitude*, *height*, *radius*, *crustal_age*) 数据记录，  
 并使用给定的绝对板块运动（APM）阶段或整体重建旋转文件，以及热点位置列表，  
 来确定每个海山最可能的起源（热点）。它通过计算随时间变化的流线，
