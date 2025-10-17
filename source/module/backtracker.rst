@@ -12,9 +12,8 @@ backtracker
 :官方文档: :doc:`gmt:supplements/spotter/backtracker`  
 :简介: 生成前向和后向流线和热点轨迹
 
-
-**backtracker** 从 *infiles*（或标准输入）中读取 (*longitude, latitude, age*) 三列数据，
-并使用指定的旋转参数计算旋转后的 (*x, y, t*) 坐标。
+**backtracker** 从 *infiles* （或标准输入）中读取 ( *longitude, latitude, age* ) 三列数据，
+并使用指定的旋转参数计算旋转后的 ( *x, y, t* ) 坐标。
 它可以执行两种操作：
 （1）计算最终位置[默认]，
 （2）或在初始位置与最终位置之间生成一个采样轨迹（流线或热点轨迹）[*Wessel*, 1999]。
@@ -65,9 +64,9 @@ backtracker
 .. _-A:
 
 **-A**\ [*young*/*old*]
-    与 **-Lb**|\ **f** 联用，用于限制输出轨迹的预测年龄区间，
+    与 **-Lb**\|\ **f** 联用，用于限制输出轨迹的预测年龄区间，
     仅输出年龄介于 *young* 和 *old* 之间的部分。
-    如果使用 **-LB**|\ **F**，则限制条件适用于阶段编号（id 1 表示最年轻阶段）。
+    如果使用 **-LB**\|\ **F**，则限制条件适用于阶段编号（id 1 表示最年轻阶段）。
     若未指定区间，则期望输入文件的第 4、5 列分别提供各记录的年龄上下限。
 
 .. _-D:
@@ -173,7 +172,7 @@ backtracker
 --------
 
 要使用 DC85.txt 中的欧拉极点，将文件 *seamounts.txt* 中的
- (*x, y, t*) 点回溯到其起源点（假定为热点），运行::
+(*x, y, t*) 点回溯到其起源点（假定为热点），运行::
 
     gmt backtracker seamounts.txt -Db -EDC85.txt > newpos.txt
 
@@ -193,7 +192,7 @@ backtracker
     echo -155.2872 19.3972 80 | gmt backtracker -Df -Lb1 -ED2012.txt -FD2012_HI_drift.txt > traildrift.txt
 
 若要预测在无地幔柱漂移的情况下，由太平洋绝对板块运动模型
- *Doubrovine et al.* [2012] 所产生的夏威夷-皇帝海山链，运行::
+*Doubrovine et al.* [2012] 所产生的夏威夷-皇帝海山链，运行::
 
     echo -155.2872 19.3972 80 | gmt backtracker -Df -Lb1 -ED2012.txt > trail.txt
 
@@ -225,4 +224,4 @@ p. 319.
 Doubrovine, P. V., B. Steinberger, and T. H. Torsvik, 2012, 
 Absolute plate motions in a reference frame defined by moving hot spots in the Pacific, 
 Atlantic, and Indian oceans, *J. Geophys. Res.*, **117**\ (B09101),
- https://doi.org/10.1029/2011jb009072.
+https://doi.org/10.1029/2011jb009072.
