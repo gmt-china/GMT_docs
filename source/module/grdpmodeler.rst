@@ -138,7 +138,7 @@ grdpmodeler
 
 要重复相同的练习，但将输出的 *lon, lat, age, xorigin, yorigin* 保存到一个表格中，请使用::
 
-    S gmt grdpmodeler pac_age.nc -EPac_APM.txt -V -Fpac_clip_path.txt -SXY > origin.txt
+    gmt grdpmodeler pac_age.nc -EPac_APM.txt -V -Fpac_clip_path.txt -SXY > origin.txt
 
 
 备注
