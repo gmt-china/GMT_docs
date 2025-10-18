@@ -164,6 +164,7 @@
     - :doc:`rotsmoother`
     - :doc:`grdhisteq`
     - :doc:`backtracker`
+    - :doc:`grdrotater`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -176,7 +177,6 @@
     - :doc:`gmt:grdmix`
     - :doc:`gmt:supplements/spotter/gmtpmodeler`
     - :doc:`gmt:supplements/spotter/grdpmodeler`
-    - :doc:`gmt:supplements/spotter/grdrotater`
     - :doc:`gmt:supplements/spotter/grdspotter`
     - :doc:`gmt:supplements/spotter/hotspotter`
     - :doc:`gmt:supplements/spotter/polespotter`
@@ -345,7 +345,7 @@
 :doc:`backtracker`                               生成前向和后向流线和热点轨迹
 :doc:`gmt:supplements/spotter/gmtpmodeler`       Evaluate a plate motion model at given locations
 :doc:`gmt:supplements/spotter/grdpmodeler`       Evaluate a plate motion model on a geographic grid
-:doc:`gmt:supplements/spotter/grdrotater`        Finite rotation reconstruction of geographic grid
+:doc:`grdrotater`                                地理网格的有限旋转重构
 :doc:`originater`                                将海山与最近的热点点源关联起来
 :doc:`gmt:supplements/spotter/rotconverter`      Manipulate total reconstruction and stage rotations
 :doc:`rotsmoother`                               从有限旋转集中获取平均旋转和协方差矩阵
@@ -558,6 +558,7 @@
    rotsmoother
    grdhisteq
    backtracker
+   grdrotater
       
 .. raw:: latex
 
