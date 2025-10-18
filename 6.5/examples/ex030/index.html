@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制三维有限断层模型 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="绘制三维速度模型的任意垂直切片" href="../ex031/" />
+    <link rel="prev" title="绘制三维地形图" href="../ex029/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../gallery/">社区绘图实例</a></li>
+      <li class="breadcrumb-item active">绘制三维有限断层模型</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/examples/ex030/index.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+  
+  <section id="id1">
+<h1>绘制三维有限断层模型<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">示例贡献者<span class="colon">:</span></dt>
+<dd class="field-odd"><p>菲林可乐（作者）、李水平（作者）、陈箫翰（修订）</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>使用 GMT 绘制有限断层模型的关键，是利用 <code class="docutils literal notranslate"><span class="pre">plot3d</span> <span class="pre">-C</span> <span class="pre">-L</span></code> 命令选项绘制一个个小多边形并填充颜色。
+这就要求用户在绘图之前必须以特定的格式准备数据。以绘制三维有限断层模型为例，用户必须准备好如下格式的多段数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 数据头段</span>
+&gt;<span class="w">  </span>-Z1.800000e-01
+<span class="w"> </span><span class="c1"># 经度 纬度 深度</span>
+<span class="w"> </span><span class="m">99</span>.3785<span class="w">  </span><span class="m">34</span>.5324<span class="w">  </span>-0.0010
+<span class="w"> </span><span class="m">99</span>.3574<span class="w">  </span><span class="m">34</span>.5279<span class="w">  </span>-0.0010
+<span class="w"> </span><span class="m">99</span>.3569<span class="w">  </span><span class="m">34</span>.5297<span class="w">  </span>-1.9900
+<span class="w"> </span><span class="m">99</span>.3779<span class="w">  </span><span class="m">34</span>.5342<span class="w">  </span>-1.9900
+&gt;<span class="w">  </span>-Z5.000000e-02
+<span class="w"> </span><span class="m">99</span>.3574<span class="w">  </span><span class="m">34</span>.5279<span class="w">  </span>-0.0010
+<span class="w"> </span><span class="m">99</span>.3363<span class="w">  </span><span class="m">34</span>.5233<span class="w">  </span>-0.0010
+<span class="w"> </span><span class="m">99</span>.3358<span class="w">  </span><span class="m">34</span>.5252<span class="w">  </span>-1.9900
+<span class="w"> </span><span class="m">99</span>.3569<span class="w">  </span><span class="m">34</span>.5297<span class="w">  </span>-1.9900
+...
+</pre></div>
+</div>
+<p>不同小多边形的数据以 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 符号分开，每段数据给出这个小多边形的所有顶点坐标，按顺时针或逆时针顺序排列。
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 符号后面以 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项给出这个小多边形对应的 Z 值。绘图时将根据这个 Z 值对多边形填充不同的颜色。
+这种多段数据格式的详细说明请参考 <a class="reference internal" href="../../table/ascii/#table-ascii-attrs"><span class="std std-ref">数据段头记录中的额外属性</span></a> 。</p>
+<p>有些三维有限断层反演程序给出的不是以上格式的数据，而是给出每一个小矩形中心坐标、矩形长宽、走向倾向倾角。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">     </span>lat_deg<span class="w">     </span>lon_deg<span class="w">    </span>depth_km<span class="w">   </span>length_km<span class="w">    </span>width_km<span class="w">  </span>slp_strk_m<span class="w">  </span>slp_ddip_m<span class="w">    </span>slp_am_m<span class="w">  </span>strike_deg<span class="w">     </span>dip_deg<span class="w">    </span>rake_deg<span class="w"> </span>sig_stk_MPa<span class="w"> </span>sig_ddi_MPa<span class="w"> </span>sig_nrm_MPa
+<span class="w">     </span><span class="m">34</span>.7982<span class="w">     </span><span class="m">97</span>.5406<span class="w">      </span><span class="m">0</span>.8874<span class="w">      </span><span class="m">1</span>.9546<span class="w">      </span><span class="m">1</span>.8890<span class="w">      </span><span class="m">0</span>.2690<span class="w">     </span>-0.3206<span class="w">      </span><span class="m">0</span>.4186<span class="w">    </span><span class="m">102</span>.8566<span class="w">     </span><span class="m">69</span>.9500<span class="w">     </span><span class="m">50</span>.0000<span class="w">      </span><span class="m">1</span>.7759<span class="w">     </span>-1.5403<span class="w">      </span><span class="m">0</span>.2174
+<span class="w">     </span><span class="m">34</span>.7925<span class="w">     </span><span class="m">97</span>.5389<span class="w">      </span><span class="m">2</span>.6611<span class="w">      </span><span class="m">1</span>.9548<span class="w">      </span><span class="m">1</span>.8890<span class="w">      </span><span class="m">0</span>.2156<span class="w">     </span>-0.2569<span class="w">      </span><span class="m">0</span>.3354<span class="w">    </span><span class="m">102</span>.8566<span class="w">     </span><span class="m">69</span>.8445<span class="w">     </span><span class="m">50</span>.0000<span class="w">      </span><span class="m">0</span>.8002<span class="w">     </span>-0.7488<span class="w">      </span><span class="m">0</span>.0076
+<span class="w">     </span><span class="m">34</span>.7868<span class="w">     </span><span class="m">97</span>.5372<span class="w">      </span><span class="m">4</span>.4338<span class="w">      </span><span class="m">1</span>.9549<span class="w">      </span><span class="m">1</span>.8890<span class="w">      </span><span class="m">0</span>.2255<span class="w">     </span>-0.2688<span class="w">      </span><span class="m">0</span>.3508<span class="w">    </span><span class="m">102</span>.8567<span class="w">     </span><span class="m">69</span>.7391<span class="w">     </span><span class="m">50</span>.0000<span class="w">      </span><span class="m">0</span>.7526<span class="w">     </span>-0.8695<span class="w">     </span>-0.0233
+...
+</pre></div>
+</div>
+<p>对于这种数据可以参考 <a class="reference external" href="https://github.com/CovMat/plotting_3D_FFM">plotting_3D_FFM</a> 进行转换。</p>
+<p>下面的示例展示了如何基于以上方法绘制三维有限断层模型。</p>
+<p>断层示例数据下载： <a class="reference download internal" download="" href="../../_downloads/2986f975e013fddc66a7e48e77f3541c/slip_3dgrid.gmt"><code class="xref download docutils literal notranslate"><span class="pre">slip_3dgrid.gmt</span></code></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># 绘制三维有限断层模型</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>3d_faultslip
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_FRAME_TYPE<span class="w"> </span>plain<span class="w"> </span><span class="c1">#设置边框类型</span>
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_GRID_PEN<span class="w"> </span>0p,gray,-<span class="w"> </span><span class="c1">#设置网格线</span>
+<span class="w">    </span>
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-R97.3/99.5/34.3/35/-25/0<span class="w"> </span>-JX15c/10c<span class="w"> </span>-JZ5c<span class="w"> </span>-Bxa0.25fg<span class="w"> </span>-Bya0.25fg<span class="w"> </span>-Bza10fg+l<span class="s2">&quot;Depth (km)&quot;</span><span class="w"> </span>-BwSEnZ<span class="w"> </span>-p160/20
+<span class="w">    </span><span class="c1"># 为滑移位错量制作 CPT。滑移位错量最小值为 0， 最大值为 5.5</span>
+<span class="w">    </span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cwhite,lightblue,yellow,red<span class="w"> </span>-T0/5.5/0.2<span class="w"> </span>-Z
+<span class="w">    </span><span class="c1"># 绘制有限断层模型</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot3d<span class="w"> </span>slip_3dgrid.gmt<span class="w"> </span>-C<span class="w"> </span>-L<span class="w"> </span>-W0p,gray<span class="w"> </span>-p
+<span class="w">    </span>
+<span class="w">    </span><span class="c1"># 绘制 colorbar</span>
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>FONT_ANNOT_PRIMARY<span class="w"> </span>7p<span class="w"> </span>FONT_LABEL<span class="w"> </span>8p
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_ANNOT_OFFSET_PRIMARY<span class="w"> </span>2p<span class="w"> </span>MAP_FRAME_PEN<span class="w"> </span>thinner<span class="w"> </span>MAP_TICK_LENGTH<span class="w"> </span>2p
+<span class="w">    </span>gmt<span class="w"> </span>colorbar<span class="w"> </span>-C<span class="w"> </span>-DjBL+w2.5c/0.3c+h+o1.3c/2c+ml<span class="w"> </span>-Ba1<span class="w"> </span>-Bx+l<span class="s2">&quot;slip(cm)&quot;</span>
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-ca530adf4c88d02f61decf4a4b296529">
+<img alt="../../_images/ca530adf4c88d02f61decf4a4b296529.png" src="../../_images/ca530adf4c88d02f61decf4a4b296529.png" />
+</figure>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../ex029/" class="btn btn-neutral float-left" title="绘制三维地形图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../ex031/" class="btn btn-neutral float-right" title="绘制三维速度模型的任意垂直切片" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
