@@ -1,11 +1,23 @@
 ---
 author: 田冬冬, 陈箫翰, 姚家园, 周茂
-date: 2025-07-28
+date: 2025-10-18
 ---
 
 # Windows 下安装 GMT
 
-GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
+```{raw} html
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115347168500735&bvid=BV1Yb4jzQEXK&cid=32955633403&p=1" width="800" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+```
+
+## WSL2环境安装 GMT
+
+对于 Windows 用户，我们强烈建议参考上面的视频教程，通过WSL2安装使用。如果用户出于某些原因不愿意使用WSL2，可以通过下面的安装包安装。
+
+请注意使用下面的安装包安装的 GMT 默认只能使用 Batch 脚本进行绘图，本手册提供的部分示例代码无法直接运行。
+用户需要参考 {doc}`/tutorial/scripting/batch` 中的内容将手册里的 Bash 脚本改写为 Batch 脚本后才可正常运行。
+也可以额外自行安装配置安装 Bash 环境后运行。
+
+## 使用安装包安装 GMT
 
 :::{warning}
 - 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；（2）是否包含中文。
@@ -15,8 +27,6 @@ GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
   请务必关闭安全软件之后再安装。
 - GMT 提供的安装包不支持 Windows XP。
 :::
-
-## 安装 GMT
 
 1. 下载 GMT 安装包 [gmt-6.6.0-win64.exe](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-win64.exe)
 
@@ -61,16 +71,16 @@ GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
    若想要卸载 GMT，可以进入系统的设置 -> 应用，或控制面板 -> 卸载程序进行卸载。
    偶尔会遇到卸载不干净的情况，可以等卸载程序执行完成后再手动删除 GMT 安装目录即可。
 
-## 安装可选软件
+### 安装可选软件
 
-### GraphicsMagick
+#### GraphicsMagick
 
 GMT 的 {doc}`/module/movie` 模块在制作 GIF 格式的动画时需要使用
 [GraphicsMagick](http://www.graphicsmagick.org/)。
 如有制作 GIF 动画的需求，则可以安装这个软件，并将其 {file}`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 `gm` 命令。
 
-## 安装 Bash 环境
+### 安装 Bash 环境
 
 GMT 可以直接在 Windows 下的 Batch 脚本中使用，但由于 Batch 脚本自身功能的局限性，无法完全发挥
 GMT 的强大功能。因而，建议 Windows 用户安装 Bash 环境并编写 Bash 脚本来使用 GMT。
