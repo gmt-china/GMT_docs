@@ -1,5 +1,6 @@
 .. index:: ! grdrotater
 .. include:: module_supplements_purpose.rst_
+.. include:: common_SYN_OPTs.rst_
 
 grdrotater
 =============
@@ -152,7 +153,7 @@ grdrotater
     gmt grdmath 1 rot_gridA.nc ISNAN SUB 1 rot_gridB.nc ISNAN SUB 2 EQ = overlap.nc
 
 网格 *overlap.nc* 在重叠区域的值为 1，其他区域为 0。
-你可以将其用作掩膜，或通过 :doc:`grdcontour` |-D| 提取轮廓多边形。
+可以将其用作掩码，或通过 :doc:`grdcontour` |-D| 提取轮廓多边形。
 
 备注
 --------
