@@ -167,6 +167,7 @@
     - :doc:`grdrotater`
     - :doc:`grdpmodeler`
     - :doc:`gmtpmodeler`
+    - :doc:`rotconverter`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -180,7 +181,6 @@
     - :doc:`gmt:supplements/spotter/grdspotter`
     - :doc:`gmt:supplements/spotter/hotspotter`
     - :doc:`gmt:supplements/spotter/polespotter`
-    - :doc:`gmt:supplements/spotter/rotconverter`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -347,7 +347,7 @@
 :doc:`grdpmodeler`                               评估地理网格上的板块运动模型
 :doc:`grdrotater`                                地理网格的有限旋转重构
 :doc:`originater`                                将海山与最近的热点点源关联起来
-:doc:`gmt:supplements/spotter/rotconverter`      Manipulate total reconstruction and stage rotations
+:doc:`rotconverter`                              操纵总重建和阶段旋转
 :doc:`rotsmoother`                               从有限旋转集中获取平均旋转和协方差矩阵
 :doc:`gmt:supplements/spotter/grdspotter`        Create CVA image from a gravity or topography grid
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
@@ -561,6 +561,7 @@
    grdrotater
    grdpmodeler
    gmtpmodeler
+   rotconverter
       
 .. raw:: latex
 
