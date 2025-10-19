@@ -10,7 +10,7 @@ pmodeler
 
 ----
 
-:官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler.rst`  
+:官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler`  
 :简介: 评估特定位置的板块运动模型
 
 **pmodeler** 读取包含 *lon*, *lat*，以及可选 *age* 三列的表格文件，
