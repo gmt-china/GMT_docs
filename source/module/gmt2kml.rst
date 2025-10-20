@@ -14,12 +14,14 @@ gmt2kml
 :简介: 将 GMT 数据表转换为 Google Earth KML 文件
 
 **2kml** 读取一个或多个 GMT 表格文件，并将它们转换为使用
- Google Earth KML 格式的单个输出文件。
+Google Earth KML 格式的单个输出文件。
 数据可以表示点、线、面或波动，你可以指定额外属性，如标题、海拔模式、颜色、笔宽、透明度、
 区域以及数据描述。还可以将特征延伸到底面（假设高于地面），并为点符号使用自定义图标。
 最后，可以根据细节等级设置、海拔、区域控制可见性，包括在 Google Earth 加载时的状态，
 以及随缩放变化的淡入淡出效果。输入文件应包含以下列：
+
 *lon* *lat* [ *alt* ] [ *timestart* [ *timestop* ] ]
+
 其中 *lon* 和 *lat* 对所有特征都是必需的，*alt* 对所有特征都是可选的
 （参见 |-A| 和 |-C|），*timestart* 和 *timestop* 适用于事件和时间跨度特征。
 对于波动，*alt* 列是必需的，但应表示沿轨迹的数据异常，例如重力、磁力等。
@@ -75,8 +77,8 @@ gmt2kml
 **-A**\ **a**\|\ **g**\|\ **s**\ [*alt*\|\ **x**\ *scale*]
     选择 Google Earth 认可的三种海拔模式之一，确定特征的高度（以米为单位）：
     **a** 绝对高度，**g** 相对地面高度，**s** 相对海底高度。
-    要将特征绘制在固定海拔上，可附加高度 *alt*（单位：米）。
-    使用 0 可将特征固定在选定参考面。或者附加 **x**\ *scale* 来按该比例缩放输入文件中的海拔。
+    要将特征绘制在固定海拔上，可附加高度 alt（单位：米）。
+    使用 0 可将特征固定在选定参考面。或者附加  **x**\ *scale*  来按该比例缩放输入文件中的海拔。
     如果未附加值，则海拔（米）从输入文件第 3 列读取。[默认情况下，特征固定在海面或地面]。
 
 .. _-C:
@@ -103,16 +105,14 @@ gmt2kml
 **-F**\ **e**\|\ **l**\|\ **p**\|\ **s**\|\ **t**\|\ **w**
     设置特征类型。输入文件前两列应为 (*lon*, *lat*)。当需要高度或值（
     即未使用 |-A| 给出高度，或 |-C| 设置）时，
-    第 3 列需要包含 *altitude*（米）或 *value*。选择以下指令：
+    第 3 列需要包含 altitude 或 value。选择以下指令：
 
     - **e**\ vent: 仅在特定 *time* 可见的符号，时间在下一列给出。
     - **l**\ ine: 使用 |-W| 设置的属性绘制线。
     - **p**\ olygon: 使用 |-G| 和 |-W| 设置的属性绘制面。
     - **s**\ ymbol: 永远可见的普通符号。
-    - **t**\ imespan: 仅在下一两列指定的时间段内激活的符号（含 *timestart*, *timestop*）。
-             使用 NaN 表示无限时间范围。
-    - **w**\ iggle: 第 3 列必须包含数据异常。如果还需要绘制轨迹本身，则单独使用 **-Fl**。
-             参见 |-Q| 获取附加参数。
+    - **t**\ imespan: 仅在下一两列指定的时间段内激活的符号（含 *timestart*, *timestop*）。使用 NaN 表示无限时间范围。
+    - **w**\ iggle: 第 3 列必须包含数据异常。如果还需要绘制轨迹本身，则单独使用 **-Fl**。参见 |-Q| 获取附加参数。
 
     **注意**：如果使用时间，格式应为 ISO yyyy-mm-ddThh:mm:ss[.xxx] 或 
     GMT 相对时间格式（参见 **-f**）。对于指令 **e**\|\ **s**\|\ **t**，
@@ -131,7 +131,7 @@ gmt2kml
 
 **-I**\ *icon*
     指定用于符号的替代图标 URL [默认 Google Earth 圆形]。若 URL 以 + 开头，
-    则在名称前加 `http://maps.google.com/mapfiles/kml/`。
+    则在名称前加 ``http://maps.google.com/mapfiles/kml/``。
     若完全关闭图标（例如只想使用文本标签），使用 **-I-**。
 
 .. _-K:
@@ -239,7 +239,7 @@ gmt2kml
 要根据远程文件 @kml_pointsets.txt 的 CPT 绘制彩色符号，先生成 CPT，再创建 KML 文件::
 
     gmt makecpt -Ccategorical > categories.cpt
-gmt 2kml @kml_pointsets.txt -Ccategories.cpt > points.kml
+    gmt 2kml @kml_pointsets.txt -Ccategories.cpt > points.kml
 
 将包含点位置 (*lon, lat*) 的文件转换为红色圆形符号的 KML 文件，尝试::
 
@@ -263,8 +263,8 @@ gmt 2kml @kml_pointsets.txt -Ccategories.cpt > points.kml
 从网格 temp.nc 中提取每 10 单位的等值线和标签，并以 75% 透明红色线和红色标签（不透明）绘制 KML，尝试::
 
     gmt grdcontour temp.nc -Jx1id -A10+tlabel.txt -C10 -Dcontours.txt
-gmt 2kml    contours.txt -Fl -W1p,red@75 -K > contours.kml
-gmt 2kml    -O -Nt -Fs -Sn2 -Gred@0+n label.txt -I- >> contours.kml
+    gmt 2kml    contours.txt -Fl -W1p,red@75 -K > contours.kml
+    gmt 2kml    -O -Nt -Fs -Sn2 -Gred@0+n label.txt -I- >> contours.kml
 
 将等值线绘制为线并使用 CPT 文件 contours.cpt 上色，尝试::
 
@@ -284,12 +284,13 @@ Google Earth 在跨经线绘制填充面时存在问题。
 如特征未显示且无错误，可尝试通过拆分文件减小大小。
 
 构建 KMZ 文件
+--------
 
 使用 KMZ 格式更优，因为占用空间小。KMZ 是 KML 文件及其引用的图像、图标或数据文件的压缩包。
 可将大数据集分组到 Folders 中。Document 可包含任意数量文件夹。
 可用脚本和 **-K**、|-O| 选项创建复合 KML 文件。参见 |-T| 了解文件夹/文档切换。
 gmt_shell_scripts.sh 中的 gmt_build_kmz 可协助将多个
- KML 文件（及引用图片）打包为 KMZ 文件。
+KML 文件（及引用图片）打包为 KMZ 文件。
 需先 source gmt_shell_scripts.sh。
 
 KML 层级
@@ -355,7 +356,7 @@ GMT 按特征类型（使用 |-O|、|-K| 或 **-T/**\ *foldername*）、
 --------
 
 **2kml** 会扫描段头中 **-L**"*some label*\ " [参见 |-N|] 和
- **-T**"*some text description*\ "。如存在，将解析为当前特征的名称和描述标签。
+**-T**"*some text description*\ "。如存在，将解析为当前特征的名称和描述标签。
 
 相关模块
 --------
