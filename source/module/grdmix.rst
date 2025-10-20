@@ -15,7 +15,7 @@ grdmix
 
 **grdmix** 将执行涉及图像和网格的各种操作。
 我们可以使用 *alpha* 网格、图像或常数，为输入的 *raster1* 图像添加新的 alpha（透明度）层；
-或者使用 *weights* 对 *raster1* 和 *raster2*（网格或图像）进行混合，
+或者使用 *weights* 对 *raster1* 和 *raster2* （网格或图像）进行混合，
 *raster1* 的权重为 *weights*，而 *raster2* 的权重为 *1 - weights*，并将结果保存为 *outfile*。
 另外，我们还可以将图像分解为其组成部分（红、绿、蓝或灰度）网格层，或从归一化的分量网格构建图像。
 所有操作都支持使用 *intensity* 网格调整最终彩色图像的亮度、将彩色图像转换为单色图像或移除 alpha 层。
