@@ -156,7 +156,7 @@ polespotter
 
     gmt polespotter -Ahills.txt -Ffractures.txt -D10 -Gpoles.nc -R0/360/0/90 -I1 -V -Ss+l > lines.txt
 
-然后可使用 :doc:`grdimage </grdimage>` 进行绘图。
+然后可使用 :doc:`grdimage` 进行绘图。
 
 相关模块
 --------
