@@ -169,6 +169,9 @@
     - :doc:`gmtpmodeler`
     - :doc:`rotconverter`
     - :doc:`grdspotter`
+    - :doc:`polespotter`
+    - :doc:`hotspotter`
+    - :doc:`grdmix`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -178,9 +181,6 @@
     - :doc:`gmt:batch`
     - :doc:`gmt:gmt2kml`
     - :doc:`gmt:grd2kml`
-    - :doc:`gmt:grdmix`
-    - :doc:`gmt:supplements/spotter/hotspotter`
-    - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -285,6 +285,7 @@
 :doc:`grdproject`                                对网格数据做地图变换和逆变换
 :doc:`grdmask`                                   根据多边形数据或点数据创建 mask 网格文件
 :doc:`grdmath`                                   对网格文件做数学计算操作
+:doc:`grdmix`                                    混合和变换网格和图像
 :doc:`grdfilter`                                 对网格文件做空间域或时间域滤波
 :doc:`grdfft`                                    对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
@@ -350,7 +351,8 @@
 :doc:`rotconverter`                              操纵总重建和阶段旋转
 :doc:`rotsmoother`                               从有限旋转集中获取平均旋转和协方差矩阵
 :doc:`grdspotter`                                从重力或地形网格创建 CVA 网格
-:doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
+:doc:`polespotter`                               找到给定断裂带和深渊山脉的阶段极点
+:doc:`hotspotter`                                从海山位置创建 CVA 网格
 **POTENTIAL 相关模块**                           .. _module_potential:
 :doc:`flexure`                                   计算 2-D 载荷产生的力，弯矩以及形变
 :doc:`grdflexure`                                计算 3-D 载荷在不同流变基础下产生的形变
@@ -563,6 +565,9 @@
    gmtpmodeler
    rotconverter
    grdspotter
+   polespotter
+   hotspotter
+   grdmix
       
 .. raw:: latex
 
