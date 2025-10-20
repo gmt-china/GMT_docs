@@ -172,6 +172,7 @@
     - :doc:`polespotter`
     - :doc:`hotspotter`
     - :doc:`grdmix`
+    - :doc:`grd2kml`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -180,7 +181,6 @@
 
     - :doc:`gmt:batch`
     - :doc:`gmt:gmt2kml`
-    - :doc:`gmt:grd2kml`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -317,6 +317,7 @@
 **格式转换**                                     .. _module_format_conversion:
 :doc:`xyz2grd`                                   将 XYZ 数据或 Z 数据转换成网格文件
 :doc:`grd2xyz`                                   将网格文件转换成表数据
+:doc:`grd2kml`                                   从单个网格创建 KML 分级切片图像
 :doc:`kml2gmt`                                   将 Google Earth 的 KML 文件转换为 GMT 表数据
 :doc:`gmt:gmt2kml`                               将 GMT 表数据转换为 Google Earth 的 KML 文件
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
@@ -568,6 +569,7 @@
    polespotter
    hotspotter
    grdmix
+   grd2kml
       
 .. raw:: latex
 
