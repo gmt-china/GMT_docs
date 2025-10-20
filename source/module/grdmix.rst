@@ -22,7 +22,7 @@ grdmix
 所有的 *raster?*、*alpha*、*intensity* 和 *weights* 文件必须具有相同的尺寸。
 可选的 *alpha*、*intensity* 和 *weights* 文件也可以替换为常数值。
 
-.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_mixing.*
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_mixing.png
     :width: 600 px
     :align: center
 
