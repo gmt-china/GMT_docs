@@ -169,6 +169,7 @@
     - :doc:`gmtpmodeler`
     - :doc:`rotconverter`
     - :doc:`grdspotter`
+    - :doc:`polespotter`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -180,7 +181,6 @@
     - :doc:`gmt:grd2kml`
     - :doc:`gmt:grdmix`
     - :doc:`gmt:supplements/spotter/hotspotter`
-    - :doc:`gmt:supplements/spotter/polespotter`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -350,6 +350,7 @@
 :doc:`rotconverter`                              操纵总重建和阶段旋转
 :doc:`rotsmoother`                               从有限旋转集中获取平均旋转和协方差矩阵
 :doc:`grdspotter`                                从重力或地形网格创建 CVA 网格
+:doc:`polespotter`                               找到给定断裂带和深渊山脉的阶段极点
 :doc:`gmt:supplements/spotter/hotspotter`        Create CVA image from seamount locations
 **POTENTIAL 相关模块**                           .. _module_potential:
 :doc:`flexure`                                   计算 2-D 载荷产生的力，弯矩以及形变
@@ -563,6 +564,7 @@
    gmtpmodeler
    rotconverter
    grdspotter
+   polespotter
       
 .. raw:: latex
 
