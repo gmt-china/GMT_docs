@@ -10,10 +10,11 @@ gmt2kml
 
 ----
 
-:官方文档: :doc:`gmt:supplements/gmt2kml`  
+:官方文档: :doc:`gmt:gmt2kml`  
 :简介: 将 GMT 数据表转换为 Google Earth KML 文件
 
-**2kml** 读取一个或多个 GMT 表格文件，并将它们转换为使用 Google Earth KML 格式的单个输出文件。
+**2kml** 读取一个或多个 GMT 表格文件，并将它们转换为使用
+ Google Earth KML 格式的单个输出文件。
 数据可以表示点、线、面或波动，你可以指定额外属性，如标题、海拔模式、颜色、笔宽、透明度、
 区域以及数据描述。还可以将特征延伸到底面（假设高于地面），并为点符号使用自定义图标。
 最后，可以根据细节等级设置、海拔、区域控制可见性，包括在 Google Earth 加载时的状态，
@@ -114,7 +115,8 @@ gmt2kml
              参见 |-Q| 获取附加参数。
 
     **注意**：如果使用时间，格式应为 ISO yyyy-mm-ddThh:mm:ss[.xxx] 或 
-    GMT 相对时间格式（参见 **-f**）。对于指令 **e**\|\ **s**\|\ **t**，符号通过 |-I| 设置。
+    GMT 相对时间格式（参见 **-f**）。对于指令 **e**\|\ **s**\|\ **t**，
+    符号通过 |-I| 设置。
 
 
 .. _-G:
@@ -122,7 +124,8 @@ gmt2kml
 **-G**\ [*color*]\ [**+f**\|\ **n**]
     设置填充颜色（**+f**，默认）或标签字体颜色（**+n**）。
     填充颜色应用于符号、延伸、面和正异常波动 [默认为 75% 透明浅橙色]。
-    使用 **-G+f** 可关闭填充。文本标签：指定字体颜色 [默认白色]，使用 **-G+n** 可禁用标签。
+    使用 **-G+f** 可关闭填充。文本标签：指定字体颜色 [默认白色]，
+    使用 **-G+n** 可禁用标签。
 
 .. _-I:
 
@@ -140,13 +143,16 @@ gmt2kml
 
 **-L**\ *name1*,\ *name2*,...
     扩展数据。附加一列或多列名称，用逗号分隔。我们期望输入文件中存在对应数据列，
-    并在 KML 文件中作为 Extended Data 编码，在 Google Earth 中选择项目时可在气球显示属性。
-    如果可用数值列比扩展数据少 1，则将剩余文本作为最后一列扩展数据；否则，将文本拆分为单词作为单独列。
+    并在 KML 文件中作为 Extended Data 编码，
+    在 Google Earth 中选择项目时可在气球显示属性。
+    如果可用数值列比扩展数据少 1，则将剩余文本作为最后一列扩展数据；
+    否则，将文本拆分为单词作为单独列。
 
 .. _-N:
 
 **-N**\ [**t**\|\ *col*\|\ *name\_template*\|\ *name*]
-    默认情况下，如果段头包含 **-L**"label string"，将用作 KML 特征名称（面、线段或符号集合）。
+    默认情况下，如果段头包含 **-L**"label string"，
+    将用作 KML 特征名称（面、线段或符号集合）。
     默认名称为 "Line %d" 或 "Point Set %d"。每个点将按段名加序号命名。可选：
 
 
@@ -272,7 +278,8 @@ gmt 2kml    -O -Nt -Fs -Sn2 -Gred@0+n label.txt -I- >> contours.kml
 局限
 --------
 
-Google Earth 在跨经线绘制填充面时存在问题。目前必须手动将跨越日期变更线的多边形分成西、
+Google Earth 在跨经线绘制填充面时存在问题。
+目前必须手动将跨越日期变更线的多边形分成西、
 东两部分并分别绘制。Google Earth 还有其他文件大小或线长的限制，未记录。
 如特征未显示且无错误，可尝试通过拆分文件减小大小。
 
@@ -281,7 +288,8 @@ Google Earth 在跨经线绘制填充面时存在问题。目前必须手动将�
 使用 KMZ 格式更优，因为占用空间小。KMZ 是 KML 文件及其引用的图像、图标或数据文件的压缩包。
 可将大数据集分组到 Folders 中。Document 可包含任意数量文件夹。
 可用脚本和 **-K**、|-O| 选项创建复合 KML 文件。参见 |-T| 了解文件夹/文档切换。
-gmt_shell_scripts.sh 中的 gmt_build_kmz 可协助将多个 KML 文件（及引用图片）打包为 KMZ 文件。
+gmt_shell_scripts.sh 中的 gmt_build_kmz 可协助将多个
+ KML 文件（及引用图片）打包为 KMZ 文件。
 需先 source gmt_shell_scripts.sh。
 
 KML 层级
@@ -341,16 +349,13 @@ GMT 按特征类型（使用 |-O|、|-K| 或 **-T/**\ *foldername*）、
 
 </Document>
 
-[ KML trailer information
-
-
-; not present if |-K| was used ]
+[ KML trailer information; not present if |-K| was used ]
 
 分段信息
 --------
 
-**2kml** 会扫描段头中 **-L**"*some label*\ " [参见 |-N|] 和 **-T**"*some text description*\ "。
-如存在，将解析为当前特征的名称和描述标签。
+**2kml** 会扫描段头中 **-L**"*some label*\ " [参见 |-N|] 和
+ **-T**"*some text description*\ "。如存在，将解析为当前特征的名称和描述标签。
 
 相关模块
 --------
