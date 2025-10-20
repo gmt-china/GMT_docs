@@ -148,7 +148,7 @@ grdspotter
 
     gmt grdspotter Pac_res_topo.nc -EDC85.txt -GCVA.nc -R190/220/15/25 -I2m -N145 -Tt -V
 
-然后可使用 :doc:`grdimage </grdimage>` 进行绘图。
+然后可使用 :doc:`grdimage` 进行绘图。
 
 备注
 --------
