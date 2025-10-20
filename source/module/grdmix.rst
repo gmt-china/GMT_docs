@@ -10,7 +10,7 @@ grdmix
 
 ----
 
-:官方文档: :doc:`gmt:supplements/grdmix`  
+:官方文档: :doc:`gmt:grdmix`  
 :简介: 混合和变换网格和图像
 
 **grdmix** 将执行涉及图像和网格的各种操作。
