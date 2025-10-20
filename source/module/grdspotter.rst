@@ -159,10 +159,10 @@ GMT 提供了 EarthByte 旋转模型 Global_EarthByte_230-0Ma_GK07_AREPS.rot。
 相关模块
 --------
 
-:doc:`gmt </gmt>`,
-:doc:`grdimage </grdimage>`,
-:doc:`project </project>`,
-:doc:`mapproject </mapproject>`,
+:doc:`gmt`,
+:doc:`grdimage`,
+:doc:`project`,
+:doc:`mapproject`,
 :doc:`backtracker`,
 :doc:`gmtpmodeler`,
 :doc:`grdpmodeler`,
