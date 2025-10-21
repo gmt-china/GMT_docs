@@ -214,9 +214,9 @@ batch
 
 - *batch_init*  
   初始化变量并包含可选 *includefile* 内容。
-- *batch_preflight*（可选，来自 **-Sb**）  
+- *batch_preflight* （可选，来自 **-Sb**）  
   准备所需数据文件。
-- *batch_postflight*（可选，来自 **-Sf**）  
+- *batch_postflight* （可选，来自 **-Sf**）  
   在所有作业完成后处理文件。
 - *batch_job*  
   接受作业编号并处理数据。
