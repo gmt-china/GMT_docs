@@ -319,7 +319,7 @@ macOS 问题
 --------
 
 默认同时打开的文件数在 macOS 上相对较小，执行大量作业时可能出现 "Too many open files" 错误。可参考
-`文章 <https://superuser.com/questions/433746/is-there-a-fix-for-the-too-many-open-files-in-system-error-on-os-x-10-7-1>`_ 解决。
+`链接 <https://superuser.com/questions/433746/is-there-a-fix-for-the-too-many-open-files-in-system-error-on-os-x-10-7-1>`_ 解决。
 
 相关模块
 --------
