@@ -174,13 +174,13 @@
     - :doc:`grdmix`
     - :doc:`grd2kml`
     - :doc:`gmt2kml`
+    - :doc:`batch`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
 .. hlist::
     :columns: 4
 
-    - :doc:`gmt:batch`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -394,6 +394,7 @@
 :doc:`earthtide`                                 计算固体地球潮汐网格或者时间序列
 **其他脚本**                                     .. _other_scripts:
 :doc:`gmtswitch`                                 GMT 多版本之间切换
+:doc:`batch`                                     自动化批处理作业处理
 ================================================ ========================================================================
 
 .. raw:: latex
@@ -571,6 +572,7 @@
    grdmix
    grd2kml
    gmt2kml
+   batch
       
 .. raw:: latex
 
