@@ -6,7 +6,7 @@ batch
 =============
 
 :贡献者: |何星辰|
-:最近更新日期: 2025-10-20
+:最近更新日期: 2025-10-21
 
 ----
 
@@ -193,28 +193,29 @@ batch
 构建主脚本
 --------
 
-如果调用间没有变化，批处理序列没有意义。为了实现变化，*mainscript* 需要访问不同的数据集、
+如果调用间没有变化，批处理序列没有意义。为了实现变化， *mainscript* 需要访问不同的数据集、
 数据子集，或作业参数不同，或以上组合。策略如下：
 
-#. 通过 |-T| 提供的 *timefile* 列出特定数据文件，*mainscript* 
+- 通过 |-T| 提供的 *timefile* 列出特定数据文件， *mainscript* 
 使用 **BATCH_TEXT** 或 **BATCH_WORD?** 访问特定作业文件名。
-#. 对于 3D 网格（或 2D 网格堆叠），沿垂直于切片的轴（时间或深度）插值，
+- 对于 3D 网格（或 2D 网格堆叠），沿垂直于切片的轴（时间或深度）插值，
 可使用 :doc:`grdinterpolate` 获取临时切片网格进行处理。
-#. 可使用 :doc:`gmtmath` 或 :doc:`grdmath` 动态生成数据，
+- 可使用 :doc:`gmtmath` 或 :doc:`grdmath` 动态生成数据，
 或每个作业稍作不同处理（使用 *timefile* 参数）。
-#. 利用 *timefile* 传递任何所需参数。
+- 利用 *timefile* 传递任何所需参数。
 
 技术细节
 --------
 
-**batch** 模块创建多个隐藏脚本：*batch_init*（初始化变量并包含可选 *includefile* 内容）、
+**batch** 模块创建多个隐藏脚本： *batch_init* 
+（初始化变量并包含可选 *includefile* 内容）、
 *batch_preflight*（可选，来自 **-Sb**，准备所需数据文件）、
 *batch_postflight*（可选，来自 **-Sf**，在所有作业完成后处理文件）、
-*batch_job*（接受作业编号并处理数据）、*batch_cleanup*（结束时删除临时文件）。
+*batch_job*（接受作业编号并处理数据）， *batch_cleanup* （结束时删除临时文件）。
 每个作业有单独 *batch_params_######* 脚本提供作业特定变量。
-*preflight* 和 *postflight* 可访问 *batch_init* 信息，*batch_job* 
+*preflight* 和 *postflight* 可访问 *batch_init* 信息， *batch_job* 
 还可访问作业特定参数文件。使用 |-Q| 可仅生成这些脚本以供检查。
-注意：*mainscript* 为每个作业复制，多个作业可同时在所有可用核心运行。
+注意： *mainscript* 为每个作业复制，多个作业可同时在所有可用核心运行。
 多线程 GMT 模块限制为单核心调用。每个作业确保创建唯一文件，以便 **batch** 判断作业完成并启动下一个。
 
 Shell 脚本局限
@@ -242,24 +243,24 @@ Shell 脚本局限
 滤波宽度从 10 到 200 km，步长 10 km。所有网格完成后，计算标准差。示例操作::
 
     cat << EOF > pre.sh
-gmt begin
-    gmt math -o0 -T10/200/10 T = widths.txt
-    gmt grdcut -R-10/20/-10/20 @earth_relief_02m -Gdata.grd
-gmt end
-EOF
-cat << 'EOF' > main.sh
-gmt begin
-    gmt grdfilter data.grd -Fg${BATCH_COL0}+h -G${BATCH_NAME}.grd -D2
-gmt end
-EOF
-cat << 'EOF' > post.sh
-gmt begin ${BATCH_PREFIX} pdf
-    gmt grdmath ${BATCH_PREFIX}_*.grd -S STD = ${BATCH_PREFIX}_std.grd
-    gmt grdimage ${BATCH_PREFIX}_std.grd -B -B+t"STD of Gaussians residuals" -Chot
-    gmt coast -Wthin,white
-gmt end show
-EOF
-gmt batch main.sh -Sbpre.sh -Sfpost.sh -Twidths.txt -Nfilter -V -Z
+    gmt begin
+        gmt math -o0 -T10/200/10 T = widths.txt
+        gmt grdcut -R-10/20/-10/20 @earth_relief_02m -Gdata.grd
+    gmt end
+    EOF
+    cat << 'EOF' > main.sh
+    gmt begin
+        gmt grdfilter data.grd -Fg${BATCH_COL0}+h -G${BATCH_NAME}.grd -D2
+    gmt end
+    EOF
+    cat << 'EOF' > post.sh
+    gmt begin ${BATCH_PREFIX} pdf
+        gmt grdmath ${BATCH_PREFIX}_*.grd -S STD = ${BATCH_PREFIX}_std.grd
+        gmt grdimage ${BATCH_PREFIX}_std.grd -B -B+t"STD of Gaussians residuals" -Chot
+        gmt coast -Wthin,white
+    gmt end show
+    EOF
+    gmt batch main.sh -Sbpre.sh -Sfpost.sh -Twidths.txt -Nfilter -V -Z
 
 当然，变量的使用语法会根据脚本语言而有所不同。在这里，
 我们实际上是动态生成 pre.sh、main.sh 和 post.sh 脚本，
@@ -277,21 +278,21 @@ gmt batch main.sh -Sbpre.sh -Sfpost.sh -Twidths.txt -Nfilter -V -Z
 在这里，我们将 EOF 标签用引号包围，以防止未转义的变量被解释::
 
     cat << EOF > pre.sh
-gmt begin
-    gmt coast -E=EU+l > countries.txt
-gmt end
-EOF
-cat << 'EOF' > main.sh
-gmt begin ${BATCH_NAME} pdf
-    gmt coast -R${BATCH_WORD0}+r2 -JQ10c -Glightgray -Slightblue -B -B+t"${BATCH_WORD1}" -E${BATCH_WORD0}+gred+p0.5p
-    echo ${BATCH_WORD0} | gmt text -F+f16p+jTL+cTL -Gwhite -W1p
-gmt end
-EOF
-cat << 'EOF' > post.sh
-gmt psconvert -TF -F${BATCH_PREFIX} ${BATCH_PREFIX}_*.pdf
-rm -f ${BATCH_PREFIX}_*.pdf
-EOF
-gmt batch main.sh -Sbpre.sh -Sfpost.sh -Tcountries.txt+w"\t" -Ncountries -V -W -Z
+    gmt begin
+        gmt coast -E=EU+l > countries.txt
+    gmt end
+    EOF
+    cat << 'EOF' > main.sh
+    gmt begin ${BATCH_NAME} pdf
+        gmt coast -R${BATCH_WORD0}+r2 -JQ10c -Glightgray -Slightblue -B -B+t"${BATCH_WORD1}" -E${BATCH_WORD0}+gred+p0.5p
+        echo ${BATCH_WORD0} | gmt text -F+f16p+jTL+cTL -Gwhite -W1p
+    gmt end
+    EOF
+    cat << 'EOF' > post.sh
+    gmt psconvert -TF -F${BATCH_PREFIX} ${BATCH_PREFIX}_*.pdf
+    rm -f ${BATCH_PREFIX}_*.pdf
+    EOF
+    gmt batch main.sh -Sbpre.sh -Sfpost.sh -Tcountries.txt+w"\t" -Ncountries -V -W -Z
 
 macOS 问题
 --------
@@ -303,6 +304,6 @@ macOS 问题
 --------
 
 :doc:`gmt`,
-:doc:`gmtmath`,
+:doc:`math`,
 :doc:`grdinterpolate`,
 :doc:`grdmath`
