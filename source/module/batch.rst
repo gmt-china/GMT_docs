@@ -197,28 +197,43 @@ batch
 数据子集，或作业参数不同，或以上组合。策略如下：
 
 - 通过 |-T| 提供的 *timefile* 列出特定数据文件， *mainscript* 
-使用 **BATCH_TEXT** 或 **BATCH_WORD?** 访问特定作业文件名。
+  使用 **BATCH_TEXT** 或 **BATCH_WORD?** 访问特定作业文件名。
 
 - 对于 3D 网格（或 2D 网格堆叠），沿垂直于切片的轴（时间或深度）插值，
-可使用 :doc:`grdinterpolate` 获取临时切片网格进行处理。
+  可使用 :doc:`grdinterpolate` 获取临时切片网格进行处理。
 
 - 可使用 :doc:`gmtmath` 或 :doc:`grdmath` 动态生成数据，
-或每个作业稍作不同处理（使用 *timefile* 参数）。
+  或每个作业稍作不同处理（使用 *timefile* 参数）。
 
 - 利用 *timefile* 传递任何所需参数。
 
 技术细节
 --------
 
-**batch** 模块创建多个隐藏脚本： *batch_init* （初始化变量并包含可选 *includefile* 内容）、
-*batch_preflight*（可选，来自  **-Sb**，准备所需数据文件）、
-*batch_postflight*（可选，来自 **-Sf**，在所有作业完成后处理文件）、
-*batch_job*（接受作业编号并处理数据）， *batch_cleanup* （结束时删除临时文件）。
-每个作业有单独 *batch_params_######* 脚本提供作业特定变量。
-*preflight* 和 *postflight* 可访问 *batch_init* 信息， *batch_job* 
-还可访问作业特定参数文件。使用 |-Q| 可仅生成这些脚本以供检查。
-注意： *mainscript* 为每个作业复制，多个作业可同时在所有可用核心运行。
-多线程 GMT 模块限制为单核心调用。每个作业确保创建唯一文件，以便 **batch** 判断作业完成并启动下一个。
+**batch** 模块会创建多个隐藏脚本：
+
+- *batch_init*  
+  初始化变量并包含可选 *includefile* 内容。
+- *batch_preflight*（可选，来自 **-Sb**）  
+  准备所需数据文件。
+- *batch_postflight*（可选，来自 **-Sf**）  
+  在所有作业完成后处理文件。
+- *batch_job*  
+  接受作业编号并处理数据。
+- *batch_cleanup*  
+  结束时删除临时文件。
+
+每个作业有单独的 *batch_params_######* 脚本，用于提供作业特定变量。
+
+*preflight* 和 *postflight* 可访问 *batch_init* 信息，  
+*batch_job* 还可访问作业特定参数文件。
+
+使用 |-Q| 可仅生成这些脚本以供检查。
+
+注意：*mainscript* 会为每个作业复制，多个作业可同时在所有可用核心上运行。  
+多线程 GMT 模块将限制为单核心调用。  
+每个作业都会确保创建唯一文件，以便 **batch** 判断作业完成并启动下一个。
+
 
 Shell 脚本局限
 --------
