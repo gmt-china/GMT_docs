@@ -174,13 +174,13 @@
     - :doc:`grdmix`
     - :doc:`grd2kml`
     - :doc:`gmt2kml`
+    - :doc:`batch`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
 .. hlist::
     :columns: 4
 
-    - :doc:`gmt:batch`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -221,6 +221,7 @@
 :doc:`figure`                                    设置当前图片的属性
 :doc:`inset`                                     管理和设置图中图模式
 :doc:`subplot`                                   管理和设置子图模式
+:doc:`batch`                                     自动化批处理作业处理
 **绘图相关模块**                                 .. _module_plotting:
 :doc:`basemap`                                   绘制底图
 :doc:`coast`                                     在地图上绘制海岸线、河流、国界线
@@ -571,6 +572,7 @@
    grdmix
    grd2kml
    gmt2kml
+   batch
       
 .. raw:: latex
 
