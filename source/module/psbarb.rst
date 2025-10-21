@@ -182,7 +182,7 @@ psbarb
 **-W**\ *pen*
     使用新的 *pen* 并开启轮廓。
 **-W**
-    恢复默认画笔 :term:`MAP_DEFAULT_PEN`（如果命令行未设置）。
+    恢复默认画笔 :term:`MAP_DEFAULT_PEN` （如果命令行未设置）。
 **-W-**
     关闭轮廓。
 **-Z**\ *zval*
