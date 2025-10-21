@@ -239,7 +239,7 @@ Shell 脚本局限
 --------
 
 由于无法控制 shell（如 bash 或 csh）在两个进程间管道的实现（通常涉及子 shell），
-建议避免在主脚本中使用 GMT 模块间管道（例如 gmt blockmean ... | gmt surface ...）。
+建议避免在主脚本中使用 GMT 模块间管道（例如 `gmt blockmean ... | gmt surface ...`）。
 批处理同时运行多个实例时，子 shell 可能导致 GMT 历史文件损坏，出现错误信息。
 建议将管道拆分为使用临时文件的两步。
 非 GMT 模块与 GMT 模块间的管道不受影响（如 echo ... | gmt convert ...）。
