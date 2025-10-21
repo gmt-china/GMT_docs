@@ -173,6 +173,7 @@
     - :doc:`hotspotter`
     - :doc:`grdmix`
     - :doc:`grd2kml`
+    - :doc:`gmt2kml`
 
 **GMT 模块（尚未翻译整理，欢迎贡献）**
 
@@ -180,7 +181,6 @@
     :columns: 4
 
     - :doc:`gmt:batch`
-    - :doc:`gmt:gmt2kml`
     - :doc:`gmt:supplements/windbarbs/psbarb`
 
 
@@ -570,6 +570,7 @@
    hotspotter
    grdmix
    grd2kml
+   gmt2kml
       
 .. raw:: latex
 
