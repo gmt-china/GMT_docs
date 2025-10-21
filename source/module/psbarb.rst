@@ -14,8 +14,8 @@ psbarb
 :官方文档: :doc:`gmt:supplements/windbarbs/psbarb`  
 :简介: 在 2D 和 3D 中绘制风羽
 
-**barb** 从 *files*（或标准输入）读取 (x, y, 方位角, 风速) 数据，
-并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 **-JZ|z**，
+**barb** 从 *files* （或标准输入）读取 (x, y, 方位角, 风速) 数据，
+并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 **-JZ|z** 
 则 **barb** 会将输入数据的第三列解释为 z 值，并在三维中绘制风羽。
 如果未通过 **-Q** 指定风羽长度，则 **barb** 会将输入数据的第三列和第四列分别解释为风羽长度和宽度。
 使用 **-G** 选择填充颜色。如果设置了 **-G**，则 **-W** 将控制是否绘制轮廓。
@@ -164,8 +164,8 @@ psbarb
 在三维空间 (0-10), (0-10), (0-100) 上绘制蓝色柱状图（宽度 = 1.25 cm），
 位置由 heights.xyz 文件指定，每 2, 2, 10 设置刻度，从东南方向以 30° 仰角观察，可使用::
 
-    gmt barb heights.xyz -R0/10/0/10/0/100 -Jx1.25c -Jz0.125c -So1.25c -Gblue \
--Bx2+lXLABEL -By2+lYLABEL -Bz10+lZLABEL -B+t"3-D PLOT" -p135/30 -Uc -W -pdf heights
+    gmt psbarb heights.xyz -R0/10/0/10/0/100 -Jx1.25c -Jz0.125c -So1.25c -Gblue \
+         -Bx2+lXLABEL -By2+lYLABEL -Bz10+lZLABEL -B+t"3-D PLOT" -p135/30 -Uc -W -P > heights.ps
 
 
 段头解析
@@ -182,7 +182,7 @@ psbarb
 **-W**\ *pen*
     使用新的 *pen* 并开启轮廓。
 **-W**
-    恢复默认画笔 :term:`MAP_DEFAULT_PEN <MAP_DEFAULT_PEN>`（如果命令行未设置）。
+    恢复默认画笔 :term:`MAP_DEFAULT_PEN`（如果命令行未设置）。
 **-W-**
     关闭轮廓。
 **-Z**\ *zval*
@@ -193,6 +193,6 @@ psbarb
 相关模块
 --------
 
-:doc:`gmtcolors`
+:doc:`colorbar`
 :doc:`grdbarb`, 
 :doc:`plot3d`
