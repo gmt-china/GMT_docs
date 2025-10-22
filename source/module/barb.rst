@@ -1,9 +1,9 @@
-.. index:: ! psbarb
+.. index:: ! barb
 .. include:: module_core_purpose.rst_
 .. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
-psbarb
+barb
 =============
 
 :贡献者: |何星辰|
@@ -11,7 +11,7 @@ psbarb
 
 ----
 
-:官方文档: :doc:`gmt:supplements/windbarbs/psbarb`  
+:官方文档: :doc:`gmt:supplements/windbarbs/barb`  
 :简介: 在 2D 和 3D 中绘制风羽
 
 **barb** 从 *files* （或标准输入）读取 (x, y, 方位角, 风速) 数据，
@@ -23,8 +23,7 @@ psbarb
 语法
 --------
 
-**psbarb**
-[ *table* ]
+**barb** [ *table* ]
 |-J|\ *parameters* |-J|\ **z**\ \|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
 [ |SYN_OPT-B| ]
@@ -32,10 +31,8 @@ psbarb
 [ |-D|\ *dx*/*dy*\ [/*dz*] ]
 [ |-G|\ *fill* ]
 [ |-I|\ *intens* ]
-[ |-K| ]
 [ |-N| ]
-[ |-O| ] [ |-P| ]
-[ |-Q|\ *parameters* ]
+[ |-Q|\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*][**+z**] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |-W|\ [*pen*][*attr*] ]
@@ -164,8 +161,8 @@ psbarb
 在三维空间 (0-10), (0-10), (0-100) 上绘制蓝色柱状图（宽度 = 1.25 cm），
 位置由 heights.xyz 文件指定，每 2, 2, 10 设置刻度，从东南方向以 30° 仰角观察，可使用::
 
-    gmt psbarb heights.xyz -R0/10/0/10/0/100 -Jx1.25c -Jz0.125c -So1.25c -Gblue \
-         -Bx2+lXLABEL -By2+lYLABEL -Bz10+lZLABEL -B+t"3-D PLOT" -p135/30 -Uc -W -P > heights.ps
+    gmt barb heights.xyz -R0/10/0/10/0/100 -Jx1.25c -Jz0.125c -So1.25c -Gblue \
+         -Bx2+lXLABEL -By2+lYLABEL -Bz10+lZLABEL -B+t"3-D PLOT" -p135/30 -Uc -W -pdf heights
 
 
 段头解析
