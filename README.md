@@ -72,6 +72,7 @@ GMT 中文手册由以下贡献者维护：
       <td align="center" valign="top" width="14.28%"><a href="http://blog.rampant.life"><img src="https://avatars.githubusercontent.com/u/5670700?v=4?s=100" width="100px;" alt="H.F."/><br /><sub><b>H.F.</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3AJiangXL" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://berginjay.github.io"><img src="https://avatars.githubusercontent.com/u/30320251?v=4?s=100" width="100px;" alt="Bojun"/><br /><sub><b>Bojun</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ABerginJay" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Dengda98"><img src="https://avatars.githubusercontent.com/u/100606975?v=4?s=100" width="100px;" alt="Dengda Zhu"/><br /><sub><b>Dengda Zhu</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=Dengda98" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Chuan1937"><img src="https://avatars.githubusercontent.com/u/99251452?v=4" width="100px;" alt="Xingchen He"/><br /><sub><b>Xingchen He</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=Xingchen He" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
