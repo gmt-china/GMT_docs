@@ -367,7 +367,7 @@
 :doc:`grdshake`                                  计算地表峰值加速度、速度、烈度
 :doc:`grdvs30`                                   计算 Vs30 速度模型
 **windbarbs 相关模块**                           .. _module_windbarbs:
-:doc:`barb`                                    在 2D 和 3D 中绘制风羽
+:doc:`barb`                                      在 2D 和 3D 中绘制风羽
 :doc:`grdbarb`                                   从两个分量网格中绘制风羽场
 **GSFML 相关模块**                               .. _module_gsfml:
 :doc:`fzblender`                                 生成平滑的加权混合 FZ 轨迹
