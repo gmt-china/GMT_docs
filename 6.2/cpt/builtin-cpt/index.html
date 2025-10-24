@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>内置CPT &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="制作CPT" href="../makecpt/" />
+    <link rel="prev" title="CPT类型" href="../format/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">颜色表 CPT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">CPT类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">制作CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../current-cpt/">当前CPT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">颜色表 CPT</a> &raquo;</li>
+      <li>内置CPT</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/cpt/builtin-cpt.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cpt">
+<h1>内置CPT<a class="headerlink" href="#cpt" title="永久链接至标题"></a></h1>
+<p>GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展示GMT内置CPT的配色，具体如何使用这些内置CPT文件会在后面做进一步介绍。</p>
+<p>下面列出了GMT内置的若干个CPT文件的具体配色以及CPT文件名（位于图下方）。每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到（将选项 <strong>-C</strong><em>cpt</em> 中的 <em>cpt</em> 替换为相应的CPT即可）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt colorbar -Dx0c/0c+w10c/1c+h -B0 -Ccpt -pdf CPT
+</pre></div>
+</div>
+<p>下面的色标是利用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 对原始CPT文件做离散处理得到的单色型
+CPT文件，可以用如下命令绘制得到（将选项 <strong>-C</strong><em>cpt</em> 中的 <em>cpt</em> 替换为相应的CPT即可）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CPT
+gmt makecpt -Ccpt -T-1/1/0.25
+gmt colorbar -Dx0c/0c+w10c/1c+h -B0
+gmt end
+</pre></div>
+</div>
+<p>图中黑色三角和白色三角分别表示该CPT拥有一个HARD HINGE或SOFT HINGE。关于HARD和SOFT HINGE的定义会在下一节详细介绍。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-center" id="id1">
+<img alt="../../_images/abyss.png" src="../../_images/abyss.png" />
+<figcaption>
+<p><span class="caption-text">abyss</span><a class="headerlink" href="#id1" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id2">
+<img alt="../../_images/acton.png" src="../../_images/acton.png" />
+<figcaption>
+<p><span class="caption-text">acton</span><a class="headerlink" href="#id2" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id3">
+<img alt="../../_images/bamako.png" src="../../_images/bamako.png" />
+<figcaption>
+<p><span class="caption-text">bamako</span><a class="headerlink" href="#id3" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id4">
+<img alt="../../_images/bathy.png" src="../../_images/bathy.png" />
+<figcaption>
+<p><span class="caption-text">bathy</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id5">
+<img alt="../../_images/batlow.png" src="../../_images/batlow.png" />
+<figcaption>
+<p><span class="caption-text">batlow</span><a class="headerlink" href="#id5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id6">
+<img alt="../../_images/berlin.png" src="../../_images/berlin.png" />
+<figcaption>
+<p><span class="caption-text">berlin</span><a class="headerlink" href="#id6" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id7">
+<img alt="../../_images/bilbao.png" src="../../_images/bilbao.png" />
+<figcaption>
+<p><span class="caption-text">bilbao</span><a class="headerlink" href="#id7" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id8">
+<img alt="../../_images/broc.png" src="../../_images/broc.png" />
+<figcaption>
+<p><span class="caption-text">broc</span><a class="headerlink" href="#id8" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id9">
+<img alt="../../_images/brocO.png" src="../../_images/brocO.png" />
+<figcaption>
+<p><span class="caption-text">brocO</span><a class="headerlink" href="#id9" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id10">
+<img alt="../../_images/buda.png" src="../../_images/buda.png" />
+<figcaption>
+<p><span class="caption-text">buda</span><a class="headerlink" href="#id10" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id11">
+<img alt="../../_images/categorical.png" src="../../_images/categorical.png" />
+<figcaption>
+<p><span class="caption-text">categorical</span><a class="headerlink" href="#id11" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id12">
+<img alt="../../_images/cool.png" src="../../_images/cool.png" />
+<figcaption>
+<p><span class="caption-text">cool</span><a class="headerlink" href="#id12" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id13">
+<img alt="../../_images/copper.png" src="../../_images/copper.png" />
+<figcaption>
+<p><span class="caption-text">copper</span><a class="headerlink" href="#id13" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id14">
+<img alt="../../_images/cork.png" src="../../_images/cork.png" />
+<figcaption>
+<p><span class="caption-text">cork</span><a class="headerlink" href="#id14" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id15">
+<img alt="../../_images/corkO.png" src="../../_images/corkO.png" />
+<figcaption>
+<p><span class="caption-text">corkO</span><a class="headerlink" href="#id15" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id16">
+<img alt="../../_images/cubhelix.png" src="../../_images/cubhelix.png" />
+<figcaption>
+<p><span class="caption-text">cubhelix</span><a class="headerlink" href="#id16" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id17">
+<img alt="../../_images/cyclic.png" src="../../_images/cyclic.png" />
+<figcaption>
+<p><span class="caption-text">cyclic</span><a class="headerlink" href="#id17" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id18">
+<img alt="../../_images/davos.png" src="../../_images/davos.png" />
+<figcaption>
+<p><span class="caption-text">davos</span><a class="headerlink" href="#id18" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id19">
+<img alt="../../_images/dem1.png" src="../../_images/dem1.png" />
+<figcaption>
+<p><span class="caption-text">dem1</span><a class="headerlink" href="#id19" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id20">
+<img alt="../../_images/dem2.png" src="../../_images/dem2.png" />
+<figcaption>
+<p><span class="caption-text">dem2</span><a class="headerlink" href="#id20" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id21">
+<img alt="../../_images/dem3.png" src="../../_images/dem3.png" />
+<figcaption>
+<p><span class="caption-text">dem3</span><a class="headerlink" href="#id21" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id22">
+<img alt="../../_images/dem4.png" src="../../_images/dem4.png" />
+<figcaption>
+<p><span class="caption-text">dem4</span><a class="headerlink" href="#id22" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id23">
+<img alt="../../_images/devon.png" src="../../_images/devon.png" />
+<figcaption>
+<p><span class="caption-text">devon</span><a class="headerlink" href="#id23" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id24">
+<img alt="../../_images/drywet.png" src="../../_images/drywet.png" />
+<figcaption>
+<p><span class="caption-text">drywet</span><a class="headerlink" href="#id24" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id25">
+<img alt="../../_images/earth.png" src="../../_images/earth.png" />
+<figcaption>
+<p><span class="caption-text">earth</span><a class="headerlink" href="#id25" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id26">
+<img alt="../../_images/elevation.png" src="../../_images/elevation.png" />
+<figcaption>
+<p><span class="caption-text">elevation</span><a class="headerlink" href="#id26" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id27">
+<img alt="../../_images/etopo1.png" src="../../_images/etopo1.png" />
+<figcaption>
+<p><span class="caption-text">etopo1</span><a class="headerlink" href="#id27" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id28">
+<img alt="../../_images/gebco.png" src="../../_images/gebco.png" />
+<figcaption>
+<p><span class="caption-text">gebco</span><a class="headerlink" href="#id28" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id29">
+<img alt="../../_images/geo.png" src="../../_images/geo.png" />
+<figcaption>
+<p><span class="caption-text">geo</span><a class="headerlink" href="#id29" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id30">
+<img alt="../../_images/globe.png" src="../../_images/globe.png" />
+<figcaption>
+<p><span class="caption-text">globe</span><a class="headerlink" href="#id30" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id31">
+<img alt="../../_images/gray.png" src="../../_images/gray.png" />
+<figcaption>
+<p><span class="caption-text">gray</span><a class="headerlink" href="#id31" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id32">
+<img alt="../../_images/grayC.png" src="../../_images/grayC.png" />
+<figcaption>
+<p><span class="caption-text">grayC</span><a class="headerlink" href="#id32" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id33">
+<img alt="../../_images/hawaii.png" src="../../_images/hawaii.png" />
+<figcaption>
+<p><span class="caption-text">hawaii</span><a class="headerlink" href="#id33" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id34">
+<img alt="../../_images/haxby.png" src="../../_images/haxby.png" />
+<figcaption>
+<p><span class="caption-text">haxby</span><a class="headerlink" href="#id34" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id35">
+<img alt="../../_images/hot.png" src="../../_images/hot.png" />
+<figcaption>
+<p><span class="caption-text">hot</span><a class="headerlink" href="#id35" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id36">
+<img alt="../../_images/ibcso.png" src="../../_images/ibcso.png" />
+<figcaption>
+<p><span class="caption-text">ibcso</span><a class="headerlink" href="#id36" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id37">
+<img alt="../../_images/imola.png" src="../../_images/imola.png" />
+<figcaption>
+<p><span class="caption-text">imola</span><a class="headerlink" href="#id37" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id38">
+<img alt="../../_images/inferno.png" src="../../_images/inferno.png" />
+<figcaption>
+<p><span class="caption-text">inferno</span><a class="headerlink" href="#id38" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id39">
+<img alt="../../_images/jet.png" src="../../_images/jet.png" />
+<figcaption>
+<p><span class="caption-text">jet</span><a class="headerlink" href="#id39" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id40">
+<img alt="../../_images/lajolla.png" src="../../_images/lajolla.png" />
+<figcaption>
+<p><span class="caption-text">lajolla</span><a class="headerlink" href="#id40" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id41">
+<img alt="../../_images/lapaz.png" src="../../_images/lapaz.png" />
+<figcaption>
+<p><span class="caption-text">lapaz</span><a class="headerlink" href="#id41" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id42">
+<img alt="../../_images/lisbon.png" src="../../_images/lisbon.png" />
+<figcaption>
+<p><span class="caption-text">lisbon</span><a class="headerlink" href="#id42" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id43">
+<img alt="../../_images/mag.png" src="../../_images/mag.png" />
+<figcaption>
+<p><span class="caption-text">mag</span><a class="headerlink" href="#id43" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id44">
+<img alt="../../_images/magma.png" src="../../_images/magma.png" />
+<figcaption>
+<p><span class="caption-text">magma</span><a class="headerlink" href="#id44" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id45">
+<img alt="../../_images/nighttime.png" src="../../_images/nighttime.png" />
+<figcaption>
+<p><span class="caption-text">nighttime</span><a class="headerlink" href="#id45" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id46">
+<img alt="../../_images/no_green.png" src="../../_images/no_green.png" />
+<figcaption>
+<p><span class="caption-text">no_green</span><a class="headerlink" href="#id46" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id47">
+<img alt="../../_images/nuuk.png" src="../../_images/nuuk.png" />
+<figcaption>
+<p><span class="caption-text">nuuk</span><a class="headerlink" href="#id47" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id48">
+<img alt="../../_images/ocean.png" src="../../_images/ocean.png" />
+<figcaption>
+<p><span class="caption-text">ocean</span><a class="headerlink" href="#id48" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id49">
+<img alt="../../_images/oleron.png" src="../../_images/oleron.png" />
+<figcaption>
+<p><span class="caption-text">oleron</span><a class="headerlink" href="#id49" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id50">
+<img alt="../../_images/oslo.png" src="../../_images/oslo.png" />
+<figcaption>
+<p><span class="caption-text">oslo</span><a class="headerlink" href="#id50" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id51">
+<img alt="../../_images/paired.png" src="../../_images/paired.png" />
+<figcaption>
+<p><span class="caption-text">paired</span><a class="headerlink" href="#id51" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id52">
+<img alt="../../_images/panoply.png" src="../../_images/panoply.png" />
+<figcaption>
+<p><span class="caption-text">panoply</span><a class="headerlink" href="#id52" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id53">
+<img alt="../../_images/plasma.png" src="../../_images/plasma.png" />
+<figcaption>
+<p><span class="caption-text">plasma</span><a class="headerlink" href="#id53" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id54">
+<img alt="../../_images/polar.png" src="../../_images/polar.png" />
+<figcaption>
+<p><span class="caption-text">polar</span><a class="headerlink" href="#id54" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id55">
+<img alt="../../_images/rainbow.png" src="../../_images/rainbow.png" />
+<figcaption>
+<p><span class="caption-text">rainbow</span><a class="headerlink" href="#id55" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id56">
+<img alt="../../_images/red2green.png" src="../../_images/red2green.png" />
+<figcaption>
+<p><span class="caption-text">red2green</span><a class="headerlink" href="#id56" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id57">
+<img alt="../../_images/relief.png" src="../../_images/relief.png" />
+<figcaption>
+<p><span class="caption-text">relief</span><a class="headerlink" href="#id57" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id58">
+<img alt="../../_images/roma.png" src="../../_images/roma.png" />
+<figcaption>
+<p><span class="caption-text">roma</span><a class="headerlink" href="#id58" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id59">
+<img alt="../../_images/romaO.png" src="../../_images/romaO.png" />
+<figcaption>
+<p><span class="caption-text">romaO</span><a class="headerlink" href="#id59" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id60">
+<img alt="../../_images/seafloor.png" src="../../_images/seafloor.png" />
+<figcaption>
+<p><span class="caption-text">seafloor</span><a class="headerlink" href="#id60" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id61">
+<img alt="../../_images/sealand.png" src="../../_images/sealand.png" />
+<figcaption>
+<p><span class="caption-text">sealand</span><a class="headerlink" href="#id61" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id62">
+<img alt="../../_images/seis.png" src="../../_images/seis.png" />
+<figcaption>
+<p><span class="caption-text">seis</span><a class="headerlink" href="#id62" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id63">
+<img alt="../../_images/split.png" src="../../_images/split.png" />
+<figcaption>
+<p><span class="caption-text">split</span><a class="headerlink" href="#id63" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id64">
+<img alt="../../_images/srtm.png" src="../../_images/srtm.png" />
+<figcaption>
+<p><span class="caption-text">srtm</span><a class="headerlink" href="#id64" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id65">
+<img alt="../../_images/terra.png" src="../../_images/terra.png" />
+<figcaption>
+<p><span class="caption-text">terra</span><a class="headerlink" href="#id65" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id66">
+<img alt="../../_images/tofino.png" src="../../_images/tofino.png" />
+<figcaption>
+<p><span class="caption-text">tofino</span><a class="headerlink" href="#id66" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id67">
+<img alt="../../_images/tokyo.png" src="../../_images/tokyo.png" />
+<figcaption>
+<p><span class="caption-text">tokyo</span><a class="headerlink" href="#id67" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id68">
+<img alt="../../_images/topo.png" src="../../_images/topo.png" />
+<figcaption>
+<p><span class="caption-text">topo</span><a class="headerlink" href="#id68" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id69">
+<img alt="../../_images/turbo.png" src="../../_images/turbo.png" />
+<figcaption>
+<p><span class="caption-text">turbo</span><a class="headerlink" href="#id69" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id70">
+<img alt="../../_images/turku.png" src="../../_images/turku.png" />
+<figcaption>
+<p><span class="caption-text">turku</span><a class="headerlink" href="#id70" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id71">
+<img alt="../../_images/vik.png" src="../../_images/vik.png" />
+<figcaption>
+<p><span class="caption-text">vik</span><a class="headerlink" href="#id71" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id72">
+<img alt="../../_images/vikO.png" src="../../_images/vikO.png" />
+<figcaption>
+<p><span class="caption-text">vikO</span><a class="headerlink" href="#id72" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id73">
+<img alt="../../_images/viridis.png" src="../../_images/viridis.png" />
+<figcaption>
+<p><span class="caption-text">viridis</span><a class="headerlink" href="#id73" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id74">
+<img alt="../../_images/world.png" src="../../_images/world.png" />
+<figcaption>
+<p><span class="caption-text">world</span><a class="headerlink" href="#id74" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id75">
+<img alt="../../_images/wysiwyg.png" src="../../_images/wysiwyg.png" />
+<figcaption>
+<p><span class="caption-text">wysiwyg</span><a class="headerlink" href="#id75" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>GMT内置CPT文件中，某些是针对特定的需求设计的，因而常用于特定的图件中：</p>
+<ol class="arabic simple">
+<li><p>海深：abyss、bathy、gebco、ibcso</p></li>
+<li><p>陆地高程：elevation</p></li>
+<li><p>全球地形起伏：dem1、dem2、dem3、dem4、earth、etopo1、geo、globe、oleron
+relief、terra、topo、world</p></li>
+<li><p>地震成像：seis、polar</p></li>
+<li><p>分类型数据：categorical</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../format/" class="btn btn-neutral float-left" title="CPT类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../makecpt/" class="btn btn-neutral float-right" title="制作CPT" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
