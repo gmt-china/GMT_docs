@@ -40,7 +40,8 @@
     参考 {term}`FORMAT_DATE_IN` 和 {term}`FORMAT_DATE_OUT` 的相关说明。除此之外，
 
     - 绘制月份名时的 **mm** 可以用 **o** 替代，即图上显示 Jan 而不是 01
-    - 用 **u** 代替 **W**\[-\]**ww**，即图上显示 Week 10 而不是 W10
+    - 用 **u** 代替 **W**\[-\]**ww**，即图上显示 Week 10 而不是 W1
+    -  **dd** 必须和 **mm** 或 **o** 一起使用，不可单独使用
 
     所有的日期文本字符串都由 {term}`GMT_LANGUAGE`、{term}`FORMAT_TIME_PRIMARY_MAP` 和
     {term}`FORMAT_TIME_SECONDARY_MAP` 控制。
