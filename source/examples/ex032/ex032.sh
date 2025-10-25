@@ -17,11 +17,13 @@ gmt begin taihu png
         gmt subplot set 0                 
         gmt grdimage "$DEM_FILE" -Cgeo 
         gmt plot "$LAKE_FILE" -W0.4p,red    # 绘制红色湖泊轮廓线
+        gmt basemap -B+t"Taihu Lake Outline"
 
         # 右图：绘制湖泊填充
         gmt subplot set 1
         gmt grdimage "$DEM_FILE" -Cgeo
         gmt plot "$LAKE_FILE" -Gdeepskyblue  # 填充湖泊为深蓝色
+        gmt basemap -B+t"Taihu Lake Fill"
 
     gmt subplot end  
 gmt end show        
