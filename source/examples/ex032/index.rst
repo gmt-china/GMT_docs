@@ -35,7 +35,7 @@
 而岛屿保持透明或背景色，实现真实湖泊与岛屿的可视化效果。
 
 以下示例以太湖为例展示具体操作。由于太湖范围较大，
-可通过 [Overpass Turbo](https://overpass-turbo.eu/) 网站获取太湖及其岛屿的矢量数据，
+可通过  `Overpass Turbo <https://overpass-turbo.eu/>`_ 网站获取太湖及其岛屿的矢量数据，
 查询语句如下::
 
     relation["name"="太湖"];
@@ -44,7 +44,7 @@
 将查询结果导出为 GeoJSON 格式，然后使用如下命令转换为 GMT 格式::
 
     ogr2ogr -f "GMT" taihu.gmt taihu.geojson
-    
+
 此外，也可直接下载预制文件：
 - :download:`taihu.gmt`
 
