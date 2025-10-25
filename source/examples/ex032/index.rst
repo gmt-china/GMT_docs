@@ -41,9 +41,12 @@
     relation["name"="太湖"];
     out geom;
 
-将查询结果导出为 GeoJSON 格式，即可用于后续 GMT 绘图。
+将查询结果导出为 GeoJSON 格式，然后使用如下命令转换为 GMT 格式::
+
+    ogr2ogr -f "GMT" taihu.gmt taihu.geojson
+    
 此外，也可直接下载预制文件：
-- :download:`taihu.geojson`
+- :download:`taihu.gmt`
 
 在下图示例中，左图展示了湖泊轮廓绘制效果，右图展示了湖泊填充效果，
 其中岛屿保持透明，从而形成完整、真实的带岛屿湖泊可视化。
