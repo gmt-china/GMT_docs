@@ -86,6 +86,7 @@
     - :doc:`img2google`
     - :doc:`img2grd`
     - :doc:`inset`
+    - :doc:`isf`
     - :doc:`kml2gmt`
     - :doc:`legend`
     - :doc:`makecpt`
@@ -316,6 +317,7 @@
 :doc:`gmt:gmt2kml`                               将 GMT 表数据转换为 Google Earth 的 KML 文件
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`psconvert`                                 将 GMT 生成的 PS 文件转换为其他图片格式
+:doc:`isf`                                       将 ISF 格式的地震目录数据转换为 GMT 表数据
 **mgd77 相关模块**                               .. _module_mgd77:
 :doc:`mgd77manage`                               管理 MGD77+ 文件
 :doc:`mgd77convert`                              将 MGD77 数据转换为其他格式
@@ -477,6 +479,7 @@
    img2google
    img2grd
    inset
+   isf
    kml2gmt
    legend
    makecpt

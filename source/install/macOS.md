@@ -8,8 +8,7 @@ date: 2025-07-28
 macOS 下安装 GMT 有多种方式：
 
 1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
-2. [使用 MacPorts 安装](macos-macports)
-3. {doc}`conda`
+2. {doc}`conda`
 
 (macos-homebrew)=
 ## 使用 Homebrew 安装
@@ -81,57 +80,4 @@ macOS 下安装 GMT 有多种方式：
 
    ```
    $ brew uninstall gmt
-   ```
-
-(macos-macports)=
-## 使用 MacPorts 安装
-
-[MacPorts](https://www.macports.org/) 是 macOS 下的第三方软件包管理工具。
-
-1. 安装 GMT:
-
-   ```
-   $ sudo port install gdal +hdf5 +netcdf +openjpeg
-   $ sudo port install gmt6
-   ```
-
-2. GMT 会安装在 {file}`/opt/local/lib/gmt6/` 目录下，需要将其 {file}`bin` 目录添加至
-   环境变量 **PATH** 中:
-
-   ```
-   $ echo 'export PATH=/opt/local/lib/gmt6/bin:$PATH' >> ~/.zshrc
-   ```
-
-3. 安装 GMT 依赖的其他软件
-
-   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/)（**可选**）:
-
-   ```
-   $ sudo port install graphicsmagick
-   ```
-
-   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/)（**可选**）:
-
-   ```
-   $ sudo port install ffmpeg
-   ```
-
-4. 重新打开一个终端，检测安装是否成功:
-
-   ```
-   $ gmt --version
-   6.6.0
-   ```
-
-5. 升级 GMT。当有新版本发布时，可以执行如下命令升级 GMT:
-
-   ```
-   $ sudo port selfupdate
-   $ sudo port upgrade gmt6
-   ```
-
-6. 如果需要卸载 GMT，可以执行如下命令:
-
-   ```
-   $ sudo port uninstall gmt6
    ```
