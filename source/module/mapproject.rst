@@ -4,8 +4,8 @@
 mapproject
 ==========
 
-:贡献者: `@cugliming <https://github.com/cugliming/>`_，|周茂|
-:最近更新日期: 2022-12-05
+:author: Liming Li, 周茂
+:date: 2022-12-05
 
 ----
 

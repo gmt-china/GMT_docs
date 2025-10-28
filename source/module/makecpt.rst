@@ -4,8 +4,8 @@
 makecpt
 =======
 
-:贡献者: |周茂|, |田冬冬|, |陈箫翰|, `Liming Li <https://github.com/cugliming>`_
-:最近更新日期: 2023-11-07
+:author: 周茂, 田冬冬, 陈箫翰, `Liming Li <https://github.com/cugliming>`_
+:date: 2023-11-07
 
 ----
 

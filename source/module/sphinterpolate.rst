@@ -4,7 +4,7 @@
 sphinterpolate
 ==============
 
-:贡献者: |周茂|
+:author: 周茂
 
 ----
 
