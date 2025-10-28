@@ -13,8 +13,8 @@ macOS 下可以使用 {kbd}`Command + 空格键` 启动 Spotlight，在弹出的
 启动终端后，敲入 `gmt` 以执行 GMT 命令。你将看到 GMT 的欢迎界面信息，类似于：
 
 ```console
-        GMT - The Generic Mapping Tools, Version 6.5.0 [64-bit] [8 cores]
-        (c) 1991-2021 The GMT Team (https://www.generic-mapping-tools.org/team.html).
+        GMT - The Generic Mapping Tools, Version 6.6.0 [64-bit] [8 cores]
+        (c) 1991-2025 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
         Supported in part by the US National Science Foundation (http://www.nsf.gov/)
         and volunteers from around the world.
@@ -78,7 +78,7 @@ open myplot.sh
 ```
 #!/usr/bin/env -S bash -e
 # GMT modern mode bash template
-# Date:    2019-09-10T00:44:39
+# Date:    2025-09-10T00:44:39
 # User:    seisman
 # Purpose: Purpose of this script
 export GMT_SESSION_NAME=$$  # Set a unique session name
@@ -95,7 +95,7 @@ gmt end show
 ```
 #!/usr/bin/env -S bash -e
 # GMT modern mode bash template
-# Date:    2019-09-10T00:44:39
+# Date:    2025-09-10T00:44:39
 # User:    seisman
 # Purpose: Purpose of this script
 export GMT_SESSION_NAME=$$  # Set a unique session name

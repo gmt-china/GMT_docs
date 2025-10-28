@@ -23,3 +23,4 @@
 - `PyGMT Gallery <https://www.pygmt.org/latest/gallery/index.html>`__
 - `GMT and PyGMT plotting examples <https://github.com/michaelgrund/GMT-plotting>`__
 - `NZ Antarctic Science Conference 2021 poster <https://github.com/weiji14/nzasc2021>`__
+- `使用PyGMT提取三维切片并绘制三维速度模型 <https://github.com/Luojiahong/PyGMT_3D_mapview>`__

@@ -15,22 +15,22 @@ jobs:
 
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         path: repository
 
     - name: Checkout the website
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         ref: gh-pages
         path: documentation
 
     - name: Link Checker
-      uses: lycheeverse/lychee-action@v2.2.0
+      uses: lycheeverse/lychee-action@v2.6.1
       with:
         # 429: Too many requests
         args: >
-          --accept 429
+          --accept 200,429
           --exclude-all-private
           --exclude "^mailto:"
           --exclude "^https://www.bilibili.com/"
@@ -46,10 +46,14 @@ jobs:
 
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
     - name: Create Issue From File
-      uses: peter-evans/create-issue-from-file@v5
-      with:
-        title: Link Checker Report on ${{ steps.date.outputs.date }}
-        content-filepath: ./lychee/out.md
+      if: steps.lychee.outputs.exit_code != 0
+      run: |
+        cd repository/
+        title="Link Checker Report on ${CURRENT_DATE}"
+        gh issue create --title "$title" --body-file /tmp/lychee-out.md
+      env:
+        GH_TOKEN: ${{ github.token }}
+        CURRENT_DATE: ${{ steps.date.outputs.date }}

@@ -134,6 +134,7 @@ grdselect
     *n* 默认为 0。该选项不能用于图片
 
 .. include:: explain_-R.rst_
+..
     
     列出与 |-R| 选项设置的范围重合的网格
 

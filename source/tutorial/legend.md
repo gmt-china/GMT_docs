@@ -1,7 +1,5 @@
 # 添加图例
 
----
-
 ```{raw} html
 <iframe src="//player.bilibili.com/player.html?aid=447610668&bvid=BV13j411q79A&cid=1240906532&page=1" width="800" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ```
@@ -11,11 +9,11 @@ GMT 中使用 {doc}`/module/legend` 模块添加图例。
 
 ## 自动图例
 
-在使用 {doc}`/module/plot` 模块绘制线条或符号时，可以额外加上 **-l***label*
-选项以指定当前线段或符号的图例标签。
+在使用 {doc}`/module/plot` 模块绘制线条或符号时，可以额外加上 {doc}`/option/l`
+以指定当前线段或符号的图例标签。
 
-下面的示例中，我们利用前面学到的知识绘制了线段和两种符号，同时使用了 **-l**
-选项为线段和符号均添加了标签。在绘图结束时，GMT 会自动根据命令中提供的信息
+下面的示例中，我们利用前面学到的知识绘制了线段和两种符号，同时使用了 {doc}`/option/l`
+为线段和符号均添加了标签。在绘图结束时，GMT 会自动根据命令中提供的信息
 在右上角绘制了图例。
 
 ```{eval-rst}
@@ -39,14 +37,14 @@ GMT 中使用 {doc}`/module/legend` 模块添加图例。
     gmt end show
 ```
 
-还可以为 **-l** 选项加上其它子选项以控制图例的位置、大小以及其它显示效果，
+还可以为 {doc}`/option/l` 加上其它子选项以控制图例的位置、大小以及其它显示效果，
 在本教程中不再赘述。
 
 ## 设置图例属性
 
-GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调用 **legend** 模块，
-而是 GMT 在绘图结束时自动调用了 **legend** 添加图例。我们也可以显式调用
-**legend** 模块，并设置图例的更多属性。
+GMT 使用 {doc}`/module/legend` 模块添加图例。上面的示例中我们并没有调用 {doc}`/module/legend` 模块，
+而是 GMT 在绘图结束时自动调用了 {doc}`/module/legend` 添加图例。我们也可以显式调用
+{doc}`/module/legend` 模块，并设置图例的更多属性。
 
 ```{eval-rst}
 .. gmtplot::
@@ -71,7 +69,7 @@ GMT 使用 **legend** 模块添加图例。上面的示例中我们并没有调�
     gmt end show
 ```
 
-这个示例中，我们显式调用了 **legend** 选项，并设置了 **-D** 和 **-F** 选项。
+这个示例中，我们显式调用了 {doc}`/module/legend` 模块，并设置了 **-D** 和 **-F** 选项。
 
 - **jBR** 表示将图例放在底图的右下角（BottomRight）
 - **+o0.1c/0.1c** 表示将图例在右下角的基础上再加上额外的偏移量

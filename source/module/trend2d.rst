@@ -1,7 +1,7 @@
-.. index:: ! trend1d
+.. index:: ! trend2d
 .. include:: common_SYN_OPTs.rst_
 
-trend1d
+trend2d
 =======
 
 :贡献者: |周茂|
@@ -9,10 +9,9 @@ trend1d
 
 ----
 
-:官方文档: :doc:`gmt:trend1d`
-:简介: 网格重力的谱计算，均衡，导纳，以及相干性计算
+:官方文档: :doc:`gmt:trend2d`
+:简介: 二维数据的多项式拟合
 
-**gravfft** 包括 3 种模式。
 
 语法
 ----
@@ -34,14 +33,6 @@ trend1d
 .. include:: explain_help.rst_
 
 
-注意事项
---------
-
-NetCDF COARDS 网格将会被自动识别为地理网格。对于其他格式的地理网格，可使用
-|SYN_OPT-f| 将单位转换为 m。如果地理网格接近两级，则应考虑使用
-:doc:`grdproject` 投影后计算。
-
-
 示例
 ----
 
@@ -52,11 +43,6 @@ NetCDF COARDS 网格将会被自动识别为地理网格。对于其他格式的
 相关模块
 --------
 
-:doc:`gmt:grdfft`,
-:doc:`gmtflexure`,
-:doc:`grdflexure`,
-:doc:`gmtgravmag3d`,
-:doc:`grdgravmag3d`,
-:doc:`grdseamount`,
-:doc:`talwani2d`,
-:doc:`talwani3d`
+:doc:`gmtmath`,
+:doc:`grdtrend`,
+:doc:`trend1d`

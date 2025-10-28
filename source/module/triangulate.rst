@@ -1,7 +1,7 @@
 .. index:: ! triangulate
 .. include:: common_SYN_OPTs.rst_
 
-triangiulate
+triangulate
 ============
 
 :官方文档: :doc:`gmt:triangulate`
@@ -149,6 +149,8 @@ triangiulate
 
 .. include:: explain_help.rst_
 
+.. include:: explain_float.rst_
+
 .. include:: explain_inside.rst_
 
 示例
@@ -199,7 +201,7 @@ algorithms, *Photogrammetric Eng. & Remote Sensing*, **70** (8), 957-962.
 相关模块
 --------
 
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`contour`,
 :doc:`sphdistance`,

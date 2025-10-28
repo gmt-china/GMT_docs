@@ -1,4 +1,5 @@
 .. index:: ! spectrum1d
+.. include:: common_SYN_OPTs.rst_
 
 spectrum1d
 ==========
@@ -161,10 +162,10 @@ Bendat 和 Piersol [1986] 中的算法。
 就必须除以采样间隔 `dt`。（如果想对谱做归一化，则可从 Parseval 定理中得到缩放因子，
 Parseval 定理为：输入数据的平方和等于 **spectrum1d** 输出的平方和。）
 
-假定存在一个数据，`X(t)`，计算其离散傅立叶变换（DFT），结果为 `X(f)`，将其与自身
+假定存在一个数据， `X(t)` ，计算其离散傅立叶变换（DFT），结果为 `X(f)` ，将其与自身
 的复数共轭相乘，即得到周期图 ::
 
-    P_raw(f) = X(f) * X'(f)
+    P_raw(f) = X(f) * X\'(f)
 
 
 实际中，P_raw 的噪声会非常地大，因此需要平滑或者平均等方法得到一个实用的估计
@@ -214,7 +215,7 @@ Maximum Entropy）则倾向于将这些妥协包装在一个黑匣子中。
 :doc:`grdfft`
 
 参考文献
--------
+----------
 
 Bendat, J. S., and A. G. Piersol, 1986, Random Data, 2nd revised ed., John Wiley & Sons.
 
