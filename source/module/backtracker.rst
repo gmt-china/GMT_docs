@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-17
+
 .. index:: ! backtracker
 .. include:: module_supplements_purpose.rst_
 
 backtracker
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-17
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/backtracker`  
 :简介: 生成前向和后向流线和热点轨迹
