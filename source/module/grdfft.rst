@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2022-06-29
+
+----
+
 .. index:: ! grdfft
 .. include:: common_SYN_OPTs.rst_
 
 grdfft
 ======
 
-:author: 周茂
-:date: 2022-06-29
 
 ----
 

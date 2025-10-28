@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2022-06-21
+
+----
+
 .. index:: ! gravprisms
 .. include:: common_SYN_OPTs.rst_
 
 gravprisms
 ==========
 
-:author: 周茂
-:date: 2022-06-21
 
 ----
 

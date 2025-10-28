@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2022-07-18
+
+----
+
 .. index:: ! grdfilter
 .. include:: common_SYN_OPTs.rst_
 
 grdfilter
 =========
 
-:author: 周茂
-:date: 2022-07-18
 
 ----
 

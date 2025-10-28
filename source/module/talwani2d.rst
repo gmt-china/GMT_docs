@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-02-21
+
+----
+
 .. index:: ! talwani2d
 .. include:: common_SYN_OPTs.rst_
 
 talwani2d
 =========
 
-:author: 周茂
-:date: 2024-02-21
 
 ----
 
@@ -171,4 +174,3 @@ two-dimensional bodies with application to the Mendocino submarine fracture zone
 :doc:`gravfft`,
 :doc:`gmtgravmag3d`,
 :doc:`grdgravmag3d`
-

@@ -1,13 +1,16 @@
+:author: 周茂
+:date: 2022-11-01
+
+----
+
+
+----
+
 .. index:: ! trend2d
 .. include:: common_SYN_OPTs.rst_
 
 trend2d
 =======
-
-:author: 周茂
-:date: 2022-11-01
-
-----
 
 :官方文档: :doc:`gmt:trend2d`
 :简介: 二维数据的多项式拟合

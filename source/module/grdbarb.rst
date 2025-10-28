@@ -1,11 +1,14 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-15
+
+----
+
 .. index:: ! grdbarb
 .. include:: common_SYN_OPTs.rst_
 
 grdbarb
 =============
 
-:author: 何星辰, 田冬冬
-:date: 2025-10-15
 
 ----
 

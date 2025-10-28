@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-06-07
+
+----
+
 .. index:: ! grdseamount
 .. include:: common_SYN_OPTs.rst_
 
 grdseamount
 ===========
 
-:author: 周茂
-:date: 2024-06-07
 
 ----
 

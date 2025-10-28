@@ -1,13 +1,16 @@
+:author: 何星辰
+:date: 2025-10-06
+
+----
+
+
+----
+
 .. index:: ! segyz
 .. include:: common_SYN_OPTs.rst_
 
 segyz
 =============
-
-:author: 何星辰
-:date: 2025-10-06
-
-----
 
 :官方文档: :doc:`gmt:supplements/segy/segyz`
 :简介: **segyz** 用于读取原生(IEEE)格式的 SEGY 文件，并绘制地震数据。

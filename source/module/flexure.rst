@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-02-17
+
+----
+
 .. index:: ! flexure
 .. include:: common_SYN_OPTs.rst_
 
 flexure
 ==========
 
-:author: 周茂
-:date: 2024-02-17
 
 ----
 

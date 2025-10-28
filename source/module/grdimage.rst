@@ -1,6 +1,9 @@
 :author: 田冬冬, 朱邓达
 :date: 2025-06-14
 
+----
+
+
 .. index:: ! grdimage
 .. include:: common_SYN_OPTs.rst_
 

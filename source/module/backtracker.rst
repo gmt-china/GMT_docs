@@ -1,11 +1,14 @@
+:author: 何星辰
+:date: 2025-10-17
+
+----
+
 .. index:: ! backtracker
 .. include:: module_supplements_purpose.rst_
 
 backtracker
 =============
 
-:author: 何星辰
-:date: 2025-10-17
 
 ----
 

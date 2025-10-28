@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-10-23
+
+----
+
 .. index:: ! regress
 .. include:: common_SYN_OPTs.rst_
 
 regress
 ==========
 
-:author: 周茂
-:date: 2024-10-23
 
 ----
 

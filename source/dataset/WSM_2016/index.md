@@ -1,9 +1,12 @@
-# WSM_2016: 全球地应力数据
-
 :author: 陈箫翰, 田冬冬
 :date: 2024-03-24
 
 ---
+
+
+---
+
+# WSM_2016: 全球地应力数据
 
 World Stress Map Database Release 2016 是一个全球地应力数据库，提供 csv、xlsx、KML 格式数据的下载。
 

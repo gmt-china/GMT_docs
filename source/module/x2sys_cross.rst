@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: !x2sys_cross
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_cross
 ===========
 
-:author: 周茂
 
 ----
 

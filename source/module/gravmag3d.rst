@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-02-17
+
+----
+
 .. index:: ! gravmag3d
 .. include:: common_SYN_OPTs.rst_
 
 gravmag3d
 =============
 
-:author: 周茂
-:date: 2024-02-17
 
 ----
 

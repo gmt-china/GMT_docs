@@ -1,11 +1,14 @@
+:author: 何星辰
+:date: 2025-10-17
+
+----
+
 .. index:: ! rotsmoother
 .. include:: common_SYN_OPTs.rst_
 
 rotsmoother
 =============
 
-:author: 何星辰
-:date: 2025-10-17
 
 ----
 
@@ -145,4 +148,3 @@ rotsmoother
 :doc:`hotspotter`,
 :doc:`originater`,
 :doc:`rotconverter`
-

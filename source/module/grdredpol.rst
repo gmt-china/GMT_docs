@@ -1,13 +1,16 @@
+:author: 周茂
+:date: 2024-06-07
+
+----
+
+
+----
+
 .. index:: ! grdredpol
 .. include:: common_SYN_OPTs.rst_
 
 grdredpol
 =========
-
-:author: 周茂
-:date: 2024-06-07
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/grdredpol`
 :简介: 计算连续化极（Continuous Reduction To the Pole，RTP）

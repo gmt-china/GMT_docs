@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-06-07
+
+----
+
 .. index:: ! grdflexure
 .. include:: common_SYN_OPTs.rst_
 
 grdflexure
 ==========
 
-:author: 周茂
-:date: 2024-06-07
 
 ----
 

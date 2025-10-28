@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2024-02-21
+
+----
+
 .. index:: ! talwani3d
 .. include:: common_SYN_OPTs.rst_
 
 talwani3d
 =========
 
-:author: 周茂
-:date: 2024-02-21
 
 ----
 

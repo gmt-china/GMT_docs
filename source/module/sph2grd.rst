@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: ! sph2grd
 .. include:: common_SYN_OPTs.rst_
 
 sph2grd
 ========
 
-:author: 周茂
 
 ----
 

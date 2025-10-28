@@ -1,11 +1,14 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-13
+
+----
+
 .. index:: ! fzmapper
 .. include:: common_SYN_OPTs.rst_
 
 fzmapper
 =============
 
-:author: 何星辰, 田冬冬
-:date: 2025-10-13
 
 ----
 

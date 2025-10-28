@@ -1,14 +1,17 @@
+:author: 何星辰
+:date: 2025-10-19
+
+----
+
+
+----
+
 .. index:: ! rotconverter
 .. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 rotconverter
 =============
-
-:author: 何星辰
-:date: 2025-10-19
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/rotconverter`  
 :简介: 操纵总重建和阶段旋转

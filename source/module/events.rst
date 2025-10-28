@@ -1,6 +1,9 @@
 :author: 朱邓达
-:reviewer: 周茂
 :date: 2025-07-07
+
+----
+
+:reviewer: 周茂
 
 .. index:: ! events
 .. include:: common_SYN_OPTs.rst_

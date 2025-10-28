@@ -1,11 +1,14 @@
+:author: 何星辰
+:date: 2025-10-17
+
+----
+
 .. index:: ! grdhisteq
 .. include:: common_SYN_OPTs.rst_
 
 grdhisteq
 =============
 
-:author: 何星辰
-:date: 2025-10-17
 
 ----
 
@@ -124,4 +127,3 @@ grdhisteq
 :doc:`grdmath`, 
 :doc:`grdview`, 
 :doc:`makecpt`
-

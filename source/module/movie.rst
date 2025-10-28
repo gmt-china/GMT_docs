@@ -1,6 +1,9 @@
 :author: 朱邓达
 :date: 2025-06-18
 
+----
+
+
 .. index:: ! movie
 .. include:: common_SYN_OPTs.rst_
 
@@ -711,4 +714,3 @@ Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024). The Generic Mapping Tools 
 :doc:`grdinterpolate`,
 :doc:`grdmath`,
 :doc:`events`
-

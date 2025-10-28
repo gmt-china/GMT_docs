@@ -1,3 +1,8 @@
+:author: 何星辰
+:date: 2025-10-18
+
+----
+
 .. index:: ! grdpmodeler
 .. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
@@ -5,8 +10,6 @@
 grdpmodeler
 =============
 
-:author: 何星辰
-:date: 2025-10-18
 
 ----
 

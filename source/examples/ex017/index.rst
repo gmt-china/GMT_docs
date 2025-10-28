@@ -1,9 +1,12 @@
+:author: SeisPider
+
+----
+
 :orphan:
 
 绘制矢量场
 ==========
 
-:author: SeisPider
 
 使用 :doc:`/module/grdvector` 模块绘制矢量场，需要提供矢量场的 X 分量和 Y 分量。
 

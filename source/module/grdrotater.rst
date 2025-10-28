@@ -1,3 +1,8 @@
+:author: 何星辰
+:date: 2025-10-18
+
+----
+
 .. index:: ! grdrotater
 .. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
@@ -5,8 +10,6 @@
 grdrotater
 =============
 
-:author: 何星辰
-:date: 2025-10-18
 
 ----
 

@@ -1,6 +1,9 @@
 :author: 朱邓达, 田冬冬
 :date: 2025-07-10
 
+----
+
+
 .. index:: ! sample1d
 
 sample1d

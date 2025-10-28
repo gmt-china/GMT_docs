@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: ! sphtriangulate
 .. include:: common_SYN_OPTs.rst_
 
 sphtriangulate
 ==============
 
-:author: 周茂
 
 ----
 

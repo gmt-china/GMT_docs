@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: ! x2sys_binlist
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_binlist
 =============
 
-:author: 周茂
 
 ----
 

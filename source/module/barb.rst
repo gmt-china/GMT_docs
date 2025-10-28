@@ -1,13 +1,15 @@
+:author: 何星辰
+:date: 2025-10-21
+
+----
+
 .. index:: ! barb
 .. include:: module_core_purpose.rst_
 .. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 barb
-=============
 
-:author: 何星辰
-:date: 2025-10-21
 
 ----
 
@@ -22,7 +24,6 @@ barb
 
 语法
 --------
-
 **barb** [ *table* ]
 |-J|\ *parameters* |-J|\ **z**\ \|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
@@ -51,7 +52,6 @@ barb
 
 必选选项
 ------------------
-
 .. _-J:
 
 .. include:: explain_-J.rst_
@@ -66,7 +66,6 @@ barb
 
 可选选项
 ------------------
-
 .. include:: explain_intables.rst_
 
 .. include:: explain_-B.rst_
@@ -153,7 +152,6 @@ barb
 
 示例
 --------
-
 .. include:: explain_example.rst_
 
 .. include:: oneliner_info.rst_
@@ -167,7 +165,6 @@ barb
 
 段头解析
 --------
-
 段头记录可以包含以下一个或多个选项：
 
 **-G**\ *fill*
@@ -189,7 +186,6 @@ barb
 
 相关模块
 --------
-
 :doc:`colorbar`
 :doc:`grdbarb`, 
 :doc:`plot3d`

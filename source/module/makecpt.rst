@@ -1,11 +1,14 @@
+:author: 周茂, 田冬冬, 陈箫翰, `Liming Li <https://github.com/cugliming>`_
+:date: 2023-11-07
+
+----
+
 .. index:: ! makecpt
 .. include:: common_SYN_OPTs.rst_
 
 makecpt
 =======
 
-:author: 周茂, 田冬冬, 陈箫翰, `Liming Li <https://github.com/cugliming>`_
-:date: 2023-11-07
 
 ----
 

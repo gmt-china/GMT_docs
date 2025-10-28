@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: ! spatial
 .. include:: common_SYN_OPTs.rst_
 
 spatial
 ==========
 
-:author: 周茂
 
 ----
 

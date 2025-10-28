@@ -1,11 +1,14 @@
+:author: 周茂
+:date: 2022-07-02
+
+----
+
 .. index:: ! grdgdal
 .. include:: common_SYN_OPTs.rst_
 
 grdgdal
 =======
 
-:author: 周茂
-:date: 2022-07-02
 
 ----
 

@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: ! img2grd
 .. include:: common_SYN_OPTs.rst_
 
 img2grd
 ========
 
-:author: 周茂
 
 ----
 

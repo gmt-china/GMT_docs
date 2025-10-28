@@ -1,9 +1,12 @@
+:author: 周茂
+
+----
+
 .. index:: ! gmtswitch
 
 gmtswitch
 ==========
 
-:author: 周茂
 
 ----
 
@@ -130,4 +133,3 @@ https://www.softpedia.com/get/Tweak/Registry-Tweak/EditPath.shtml
     gmtswitch g4_32 2
 
 不指定任何参数，可以查看帮助手册。
-

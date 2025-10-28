@@ -1,10 +1,13 @@
+:author: 周茂
+
+----
+
 .. index:: !x2sys_put
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_put
 =========
 
-:author: 周茂
 
 ----
 

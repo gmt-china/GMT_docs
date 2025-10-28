@@ -1,11 +1,14 @@
+:author: 何星辰
+:date: 2025-10-13
+
+----
+
 .. index:: ! fzinformer
 .. include:: common_SYN_OPTs.rst_
 
 fzinformer
 =============
 
-:author: 何星辰
-:date: 2025-10-13
 
 ----
 
