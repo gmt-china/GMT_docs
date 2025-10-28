@@ -1,10 +1,10 @@
-# 简介
-
-:审核: {{ 姚家园 }}, {{ 周茂 }}
-:撰写: {{ 田冬冬 }}
-:最近更新日期: 2023-09-09
-
 ---
+author: 田冬冬
+reviewer: 姚家园, 周茂
+date: 2025-10-13
+---
+
+# 简介
 
 ## GMT 是什么
 
@@ -27,13 +27,14 @@ GMT 是地球科学领域使用最广泛的制图软件之一，具有强大的�
 - 1998 年 11 月 8 日，GMT3 发布
 - 2005 年 10 月 1 日，GMT4 发布
 - 2013 年 11 月 5 日，GMT5 发布
-- 2019 年 11 月 1 日，GMT6 发布（目前最新版本 GMT 6.5.0 发布于 2024 年 01 月 07 日）
+- 2019 年 11 月 1 日，GMT6 发布（目前最新版本 GMT 6.6.0 发布于 2025 年 07 月 27 日）
 
 想了解更多关于 GMT 的历史故事，可以观看/收听下面的视频/音频：
 
 - Don't Panic Geocast 对 Paul Wessel 和 Leonardo Uieda 的采访：<https://www.dontpanicgeocast.com/166>
 - Don't Panic Geocast 对 Walter Smith 的采访：<https://www.dontpanicgeocast.com/195>
 - Paul Wessel 在 GMT 20 周年的演讲：<https://av.tib.eu/media/19869> 或 <https://youtu.be/2D_UlEZpxbU>
+- Paul Wessel 关于 GMT 发展史的文章: [The origins of the generic mapping tools: From table tennis to geoscience](https://doi.org/10.1029/2023CN000231)
 
 ## GMT 开发者
 
@@ -135,6 +136,13 @@ hash 值为 267ce55 的 6.1.0 开发版。
   *Geochemistry, Geophysics, Geosystems*, 20, 5556–5564.
   <https://doi.org/10.1029/2019GC008515>
 
+**GMT 发展史**:
+
+: Wessel, P. (2024).
+  The origins of the generic mapping tools: From table tennis to geoscience.
+  *Perspectives of Earth and Space Scientists*, 5, e2023CN000231.
+  <https://doi.org/10.1029/2023CN000231>
+
 **GMT5 用户**:
 
 : Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J., & Wobbe, F. (2013).
@@ -157,6 +165,13 @@ hash 值为 267ce55 的 6.1.0 开发版。
   <https://doi.org/10.1002/2016GC006723>
 
 GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相关文章包括：
+
+**movie** 模块
+
+: Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024).
+  The Generic Mapping Tools and Animations for the Masses.
+  *Geochemistry, Geophysics, Geosystems*, 25(6).
+  <https://doi.org/10.1029/2024GC011545>
 
 {doc}`/module/dimfilter` **模块**
 
@@ -208,7 +223,7 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
 
 **入门教程**
 
-1. [GMT6 初学者视频教程](https://www.bilibili.com/video/BV1C64y1m7qP)（{{ 刘珠妹 }}、{{ 陈箫翰 }}）
+1. [GMT6 初学者视频教程](https://www.bilibili.com/video/BV1Yb4jzQEXK)（{{ 田冬冬 }}、{{ 刘珠妹 }}、{{ 陈箫翰 }}）
 2. GMT 中文手册：{doc}`入门教程 </tutorial/started>`、{doc}`进阶教程 </tutorial/advanced>`
 3. {gmt-docs}`GMT 官方入门教程 <tutorial.html>`
 4. [GMT 教學手冊](http://gmt-tutorials.org/)（[鄭懷傑](https://github.com/whyjz)）

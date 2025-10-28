@@ -4,7 +4,7 @@ GMT 可以绘制地图的经纬度轴、绝对时间轴、相对时间轴以及�
 具体请参考 {doc}`/option/B`。不同的坐标轴需要的数据类型也不同。
 GMT 所支持的数据类型主要分为四大类：地理坐标、绝对时间坐标、相对时间坐标、一般浮点数。
 
-(geographic-coordinates)=
+(geographic_coordinates)=
 
 ## 地理坐标
 
@@ -22,7 +22,7 @@ GMT 所支持的数据类型主要分为四大类：地理坐标、绝对时间�
    例如，**123:27W** 代表西经 123 度27分，
    **123:27:15.120W** 表示西经 123 度 27 分 15.12 秒。
 
-(absolute-time-coordinates)=
+(absolute_time_coordinates)=
 
 ## 绝对时间坐标
 
@@ -62,7 +62,7 @@ GMT 所支持的数据类型主要分为四大类：地理坐标、绝对时间�
 5. GMT 在程序内部会将所有绝对时间转换成相对于特定时刻的秒数
 :::
 
-(relative-time-coordinates)=
+(relative_time_coordinates)=
 
 ## 相对时间坐标
 
@@ -80,7 +80,7 @@ GMT 所支持的数据类型主要分为四大类：地理坐标、绝对时间�
    {term}`TIME_UNIT` 时刻
 2. 在命令行中使用 **-ft** 选项（不需要在数据后加 **t**），表明当前数据是相对时间坐标
 
-(float-coordinates)=
+(float_coordinates)=
 
 ## 一般浮点数
 

@@ -149,7 +149,7 @@ Trans. Math. Software*, **23**\ (3), 435-442.
 相关模块
 --------
 
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphdistance`,
 :doc:`sphtriangulate`,

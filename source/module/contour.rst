@@ -1,3 +1,6 @@
+:author: 田冬冬, 陈箫翰, 朱邓达
+:date: 2025-08-22
+
 .. index:: ! contour
 
 
@@ -100,16 +103,15 @@ contour
     
 .. _-G:
 
+**-G**\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params*
+
 .. warning::
     某些时候等值线图会出现标注数字消失不见的情况。这是由于数字被标注在绘图范围外所致。
     这种情况应该使用下面的 **-G** 选项手动设置标注在等值线上的位置。
 
-**-Gd**\ *dist*\ [**c**\|\ **i**\|\ **p**] 或 **-GD**\ *dist*\ [**d**\|\ **e**\|\ **f**\|\ **k**\|\ **m**\|\ **M**\|\ **n**\|\ **s**]
-    该选项控制标注在等值线上的位置。
-    使用小写的 **d** ，并指定标注之间的距离 *dist* 和单位 **c** (cm)、 **i** (inch)或 **p** (points)。
-    如果使用大写的 **D**，则表示距离 *dist* 是地图上的距离，单位也应该从以下几个地理距离单位中选择：
-    **e** (m), **f** (foot), **k** (km), **M** (mile), **n** (nautical mile),
-    **u** (US survey foot), **d** (arc degree), **m** (arc minute), **s** (arc second)。
+.. include:: explain_contlabel.rst_
+
+**-G** 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
 
 .. _-W:
 
@@ -124,17 +126,17 @@ contour
 示例
 --------
 
-使用数据文件Table_5.11.txt，以25为间隔绘制等值线，以50为间隔标注：
+使用 GMT 远程数据服务器上的数据文件 *@Table_5_11.txt* ，以25为间隔绘制等值线，以50为间隔标注：
 
-   ::
-
-    gmt contour Table_5_11.txt -Wthin -C25 -A50 -B
+.. gmtplot:: contour/contour_ex1.sh
+    :width: 80%
+    :show-code: true
 
 只绘制并标注750和800两条等值线：
 
-   ::
-
-    gmt contour Table_5_11.txt -A750,800 -W0.5p -B
+.. gmtplot:: contour/contour_ex2.sh
+    :width: 80%
+    :show-code: true
 
 使用CPT文件temp.cpt定义的间隔绘制等值线
 

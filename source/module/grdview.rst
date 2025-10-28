@@ -57,27 +57,9 @@ grdview
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. include:: use_cpt_grd.rst_
 
-**-C**\ [*cpt* \| *master*\ [**+i**\ *zinc*] \| *color1,color2*\ [,\ *color3*\ ,...]]
-    绘制网格文件所使用的CPT。
-
-    也可以直接使用GMT自带的CPT文件名，此时GMT会自动根据网格文件的Z值范围将
-    自带的CPT采样成16级的连续CPT文件。也可以通过 **-C**\ *color1*,\ *color2*\[,\ *color3*,..]
-    的语法构建一个线性连续CPT文件。
-
-.. _-I:
-
-**-I**\ [*intensfile*\|\ *intensity*\|\ *modifiers*]
-    增加光照效果
-
-    可以通过三种方式设置光照效果:
-
-    #. 给定一个Z值范围为(-1,1)的网格文件，该文件可以用 ``grdgradient`` 生成
-    #. 给定一个常数作为光照强度
-    #. 不指定光照强度文件，只使用 ``-I+`` 则会自动调用 ``grdgradient``
-       并使用参数 ``-A-45 -Nt1`` 计算输入网格数据的梯度作为光照强度文件。用户
-       可以使用 ``+a<azimuth>+n<args>`` 以自定义 grdgradient 的 -A 和 -N 选项
+.. include:: explain_intense.rst_
 
 .. _-N:
 
@@ -119,6 +101,10 @@ grdview
         [默认: width = 0.25p, color = black, style = solid]。
         
 .. include:: explain_perspective.rst_
+
+.. include:: explain_grdresample.rst_
+
+.. include:: macos_preview_issue.rst_
 
 示例
 --------

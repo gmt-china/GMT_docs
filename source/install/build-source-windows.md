@@ -1,10 +1,11 @@
-# Windows 下编译 GMT 源码
-
-:审核: {{ 刘珠妹 }}
-:撰写: {{ 田冬冬 }}
-:最近更新日期: 2023-09-13
+---
+author: 田冬冬
+reviewer: 刘珠妹
+date: 2025-07-28
 
 ---
+
+# Windows 下编译 GMT 源码
 
 这一节介绍如何在 Windows 系统下编译 GMT 源码，仅供需要自行编译 GMT 源码的读者参考。
 
@@ -15,22 +16,22 @@
 - [Visual Studio](https://visualstudio.microsoft.com/zh-hans/) （安装时需要勾选 Desktop development with C++ 相关工具）
 - [Git](https://git-scm.com/downloads)
 - [CMake](https://cmake.org/download/)
-- [Ninja](https://ninja-build.org/): 快速的构建系统 \[可选但推荐\]
-- [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 \[**必须**\]
-- [GraphicsMagick](http://www.graphicsmagick.org)：生成 GIF 格式的动画 \[**可选**\]
-- [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 \[**可选**\]
+- [Ninja](https://ninja-build.org/): 快速的构建系统 [可选但推荐]
+- [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+- [GraphicsMagick](http://www.graphicsmagick.org)：生成 GIF 格式的动画 [**可选**]
+- [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
 ## 安装 vcpkg 及依赖软件
 
 GMT 的编译及运行依赖于其他库文件，包括：
 
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）\[**必须**\]
-- [curl](https://curl.haxx.se/)：下载网络数据 \[**必须**\]
-- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 \[**推荐**\]
-- [PCRE](https://www.pcre.org/)：正则表达式支持 \[**可选**\]
-- [FFTW](http://www.fftw.org/)：快速傅里叶变换库（>=3.3）\[**可选**\]
-- LAPACK：快速矩阵反演库 \[**可选**\]
-- BLAS：快速矩阵运算库 \[**可选**\]
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）[**必须**]
+- [curl](https://curl.haxx.se/)：下载网络数据 [**必须**]
+- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**推荐**]
+- [PCRE](https://www.pcre.org/)：正则表达式支持 [**可选**]
+- [FFTW](http://www.fftw.org/)：快速傅里叶变换库（>=3.3）[**可选**]
+- LAPACK：快速矩阵反演库 [**可选**]
+- BLAS：快速矩阵运算库 [**可选**]
 
 Windows 下可以通过 C++ 库管理器 [vcpkg](https://vcpkg.io) 安装这些依赖软件。
 
@@ -52,7 +53,7 @@ $ .\bootstrap-vcpkg.bat
 先打开一个 CMD 窗口，执行如下命令:
 
 ```
-$ vcpkg install netcdf-c gdal[core,tools,default-features] pcre2 fftw3[core,threads] clapack openblas --triplet x64-windows
+$ vcpkg install netcdf-c gdal[core,tools,geos,netcdf] pcre2 fftw3[core,threads] clapack openblas --triplet x64-windows
 $ vcpkg integrate install
 ```
 
@@ -67,9 +68,9 @@ $ vcpkg integrate install
 
 编译 GMT 需要下载如下三个文件：
 
-1. GMT 6.5.0 源码：[gmt-6.5.0-src.tar.gz](http://mirrors.ustc.edu.cn/gmt/gmt-6.5.0-src.tar.gz)
-2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz)
-3. 全球数字图表 DCW：[dcw-gmt-2.1.2.tar.gz](https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.1.2.tar.gz)
+1. GMT 6.6.0 源码：[gmt-6.6.0-src.tar.gz](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-src.tar.gz)
+2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz)
+3. 全球数字图表 DCW：[dcw-gmt-2.2.0.tar.gz](https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.2.0/dcw-gmt-2.2.0.tar.gz)
 
 :::{note}
 如果想编译 GMT 开发版，可以使用如下命令获取 GMT 最新开发版源码:
@@ -87,16 +88,16 @@ $ git clone --depth 50 https://github.com/GenericMappingTools/gmt
 
 ```
 # 解压三个压缩文件
-$ tar -xvf gmt-6.5.0-src.tar.gz
+$ tar -xvf gmt-6.6.0-src.tar.gz
 $ tar -xvf gshhg-gmt-2.3.7.tar.gz
-$ tar -xvf dcw-gmt-2.1.2.tar.gz
+$ tar -xvf dcw-gmt-2.2.0.tar.gz
 
 # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
-$ mv gshhg-gmt-2.3.7 gmt-6.5.0/share/gshhg-gmt
-$ mv dcw-gmt-2.1.2 gmt-6.5.0/share/dcw-gmt
+$ mv gshhg-gmt-2.3.7 gmt-6.6.0/share/gshhg-gmt
+$ mv dcw-gmt-2.2.0 gmt-6.6.0/share/dcw-gmt
 
 # 切换到 gmt 源码目录下
-$ cd gmt-6.5.0
+$ cd gmt-6.6.0
 ```
 
 打开 {file}`cmake` 目录，在其中创建文件 {file}`cmake/ConfigUser.cmake`，
@@ -122,8 +123,8 @@ set (CMAKE_INSTALL_PREFIX "C:/programs/gmt6")
 
 :::{note}
 以下的 `mkdir build` 命令新建的 {file}`build` 文件夹位于 GMT 源码压缩包
-解压出来的 {file}`gmt-6.5.0` 目录下。
-不是 {file}`gmt-6.5.0/cmake` 目录下，更不是 {file}`/opt/GMT-6.5.0`。
+解压出来的 {file}`gmt-6.6.0` 目录下。
+不是 {file}`gmt-6.6.0/cmake` 目录下，更不是 {file}`/opt/GMT-6.6.0`。
 :::
 
 ```
@@ -143,11 +144,11 @@ $ cmake .. -G Ninja -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.c
 
 ```
 *
-*  GMT Version:               : 6.5.0
+*  GMT Version:               : 6.6.0
 *
 *  Options:
 *  Found GSHHG database       : D:/a/gmt/gmt/coastline/gshhg (2.3.7)
-*  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.1.2)
+*  Found DCW-GMT database     : D:/a/gmt/gmt/coastline/dcw (2.2.0)
 *  Found GMT data server      : oceania
 *  NetCDF library             : C:/vcpkg/installed/x64-windows/lib/netcdf.lib
 *  NetCDF include dir         : C:/vcpkg/installed/x64-windows/include
@@ -211,7 +212,7 @@ $ cmake --build . --target install --config Release
 
 ```
 $ gmt --version
-6.5.0
+6.6.0
 ```
 
 ## 升级/卸载 GMT

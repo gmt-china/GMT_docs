@@ -1,7 +1,7 @@
 .. index:: ! trend2d
 .. include:: common_SYN_OPTs.rst_
 
-trend1d
+trend2d
 =======
 
 :贡献者: |周茂|
