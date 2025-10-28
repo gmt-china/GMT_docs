@@ -17,7 +17,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.5"
+version = "6.6"
 release = version
 
 # -- Contributor information ---------------------------------------------
@@ -30,6 +30,8 @@ rst_prolog = """
 .. |邓山泉| replace:: `邓山泉 <https://github.com/sqdeng/>`__
 .. |周茂| replace:: `周茂 <https://github.com/ZMAlt>`__
 .. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
+.. |朱邓达| replace:: `朱邓达 <https://github.com/Dengda98>`__
+.. |何星辰| replace:: `何星辰 <https://github.com/Chuan1937>`__
 """
 
 # -- General configuration ------------------------------------------------
@@ -84,6 +86,8 @@ myst_substitutions = {
     "邓山泉": "[邓山泉](https://github.com/sqdeng/)",
     "周茂": "[周茂](https://github.com/ZMAlt)",
     "王亮": "[王亮](https://github.com/wangliang1989)",
+    "朱邓达": "[朱邓达](https://github.com/Dengda98)",
+    "何星辰": "[何星辰](https://github.com/Chuan1937)",
 }
 
 # Cross-refering other projects
@@ -157,6 +161,18 @@ html_context = {
             f"{github_url}/discussions",
         ),
     ],
+    "contributors": {
+        "田冬冬": "https://me.seisman.info/",
+        "姚家园": "https://github.com/core-man",
+        "陈箫翰": "https://github.com/CovMat",
+        "刘珠妹": "https://github.com/liuzhumei",
+        "徐弥坚": "https://xumijian.me/",
+        "邓山泉": "https://github.com/sqdeng/",
+        "周茂": "https://github.com/ZMAlt",
+        "王亮": "https://github.com/wangliang1989",
+        "朱邓达": "https://github.com/Dengda98",
+        "何星辰": "https://github.com/Chuan1937",
+    }
 }
 
 # See https://github.com/rtfd/sphinx_rtd_theme/issues/761

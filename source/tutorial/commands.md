@@ -62,7 +62,7 @@ gmt end show
 即可实现用 GMT 绘图。
 
 下面的脚本使用 {doc}`/module/coast` 绘制了一张全球地图。
-执行该脚本，会生成文件名为 {file}`GlobalMap`、格式为 PNG 和 PDF 的图片文件，
+执行该脚本，会生成文件名为 {file}`GlobalMap`、格式为 PDF 的图片文件，
 并且 GMT 会在绘图结束后自动打开生成的图片文件。
 
 ```{eval-rst}

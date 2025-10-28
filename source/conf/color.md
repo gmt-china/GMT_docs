@@ -6,10 +6,13 @@
 
 :::{glossary}
 **COLOR_BACKGROUND**
-    数据Z值小于CPT文件中最小值时使用的背景色 \[black\]
+    数据Z值小于CPT文件中最小值时使用的背景色 [**black**]
 
 **COLOR_FOREGROUND**
-    数据Z值大于CPT文件中最大值时使用的前景色 \[white\]
+    数据Z值大于CPT文件中最大值时使用的前景色 [**white**]
+
+**COLOR_CPT**
+    不指定 CPT 时的默认 CPT。当网格文件有默认 CPT 时将忽略此设置。[**turbo**] 
 
 **COLOR_NAN**
     数值Z值为 NaN 时使用的颜色 \[127.5\]
@@ -23,6 +26,10 @@
     - **rgb**：在RGB色彩空间中插值
     - **hsv**：在HSV色彩空间中插值
     - **cmyk**：假定颜色是CMYK色彩空间，但在RGB空间内插值
+
+**COLOR_SET**
+    默认的以逗号分隔的颜色列表（或分类 CPT 名称），用于自动、顺序的颜色分配。
+    [**#0072BD,#D95319,#EDB120,#7E2F8E,#77AC30,#4DBEEE,#A2142F**]
 :::
 
 ## 光照相关参数

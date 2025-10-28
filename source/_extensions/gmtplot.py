@@ -150,8 +150,8 @@ def _search_images(cwd):
     # pylint: disable=no-else-return,no-else-raise
     """
     Search images in PNG and PDF format in a specified directory.
-    If .png and .pdf files are not found and .ps file is found, then
-    convert .ps file to PNG and PDF format.
+    If .png and .pdf files are not found and .eps file is found, then
+    convert .eps file to PNG and PDF format.
     """
     cwd = Path(cwd)
     png_images = list(cwd.glob("*.png"))
@@ -165,10 +165,10 @@ def _search_images(cwd):
         else:
             return [png_images[0]]
     else:  # no PNG found
-        ps_images = list(cwd.glob("*.ps"))
+        ps_images = list(cwd.glob("*.eps"))
         if len(ps_images) > 1:
             raise ValueError("More than one figure generated in one GMT plot.")
-        elif len(ps_images) == 1:  # PS found
+        elif len(ps_images) == 1:  # EPS found
             cmd = "gmt psconvert -A -P -T{} {}"
             subprocess.run(cmd.format("g", ps_images[0]), shell=True, check=False)
             subprocess.run(cmd.format("f", ps_images[0]), shell=True, check=False)
@@ -179,7 +179,7 @@ def _search_images(cwd):
                 return [png_images[0], pdf_images[0]]
             else:
                 return []
-        else:  # No PNG and PS found
+        else:  # No PNG and EPS found
             return []
 
 
@@ -476,9 +476,9 @@ def setup(app):
     app.add_config_value("gmtplot_basedir", None, True)
     app.add_config_value("gmtplot_show_code", True, True)
     app.add_config_value("gmtplot_figure_align", "center", True)
-    app.add_config_value("gmtplot_gmt_config", {"GMT_GRAPHICS_FORMAT": "ps"}, True)
+    app.add_config_value("gmtplot_gmt_config", {"GMT_GRAPHICS_FORMAT": "eps"}, True)
     metadata = {
-        "version": "0.3.0",
+        "version": "0.4.0",
         "parallel_read_safe": True,
         "parallel_write_safe": True,
     }

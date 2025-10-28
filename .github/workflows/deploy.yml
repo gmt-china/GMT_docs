@@ -17,7 +17,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      GMT_DOC_VERSION: 6.5
+      GMT_DOC_VERSION: 6.6
 
     defaults:
       run:
@@ -25,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v2.0.4
+        uses: mamba-org/setup-micromamba@v2.0.7
         with:
           environment-file: environment.yml
           cache-downloads: false
@@ -56,7 +56,7 @@ jobs:
         run: make dirhtml
 
       - name: Checkout the gh-pages branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: gh-pages
           path: deploy
@@ -98,7 +98,7 @@ jobs:
           mv build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
 
       - name: Setup tectonic
-        uses: wtfjoke/setup-tectonic@v3
+        uses: wtfjoke/setup-tectonic@v4
 
       - name: Build the PDF
         run: |

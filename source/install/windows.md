@@ -1,16 +1,16 @@
-# Windows 下安装 GMT
-
-:撰写: {{ 田冬冬 }}, {{ 陈箫翰 }}, {{ 姚家园 }}, {{ 周茂 }}
-:最近更新日期: 2023-09-20
-
 ---
+author: 田冬冬, 陈箫翰, 姚家园, 周茂
+date: 2025-07-28
+---
+
+# Windows 下安装 GMT
 
 GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
 
 :::{warning}
-- 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；
-  （2）是否包含中文。以上两种情况都可能导致 GMT 运行出错。
-  如果用户名不符合要求，请新建一个用户。然后使用新用户登录 Windows，再安装 GMT。
+- 安装前请检查你的 Windows 登录用户名：（1）是否包含空格；（2）是否包含中文。
+  以上两种情况都可能导致 GMT 运行出错。如果用户名不符合要求，请新建一个用户，然后使用
+  新用户登录 Windows，再安装 GMT。
 - 360 等安全软件会在 GMT 安装过程中拦截 **PATH** 环境变量的修改。
   请务必关闭安全软件之后再安装。
 - GMT 提供的安装包不支持 Windows XP。
@@ -18,7 +18,7 @@ GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
 
 ## 安装 GMT
 
-1. 下载 GMT 安装包 [gmt-6.5.0-win64.exe](http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.5.0-win64.exe)
+1. 下载 GMT 安装包 [gmt-6.6.0-win64.exe](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-win64.exe)
 
    GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 
@@ -65,7 +65,7 @@ GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
 
 ### GraphicsMagick
 
-GMT 的 {doc}`gmt:movie` 模块在制作 GIF 格式的动画时需要使用
+GMT 的 {doc}`/module/movie` 模块在制作 GIF 格式的动画时需要使用
 [GraphicsMagick](http://www.graphicsmagick.org/)。
 如有制作 GIF 动画的需求，则可以安装这个软件，并将其 {file}`bin` 目录加入到系统环境变量 **PATH** 中，
 以保证 GMT 可以找到其提供的 `gm` 命令。

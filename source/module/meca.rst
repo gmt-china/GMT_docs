@@ -49,6 +49,11 @@ meca
 
 .. include:: explain_-R.rst_
 
+.. note::
+
+    请注意，下面的各个震源机制解格式中，
+    设置新的震源球放置位置 *newX* 和 *newY* 必须另外再加上 |-A| 选项后才可生效。
+
 .. include:: explain_meca_-S.rst_
 
 可选选项

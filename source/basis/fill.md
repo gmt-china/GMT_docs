@@ -71,7 +71,7 @@ echo 5 5 | gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc4c -Gfill -pdf test
 - **-Gp7+bred+r300**
 - **-Gp7+bred+f-+r300**
 
-(gmt-patterns)=
+(gmt_patterns)=
 
 ## 附录: GMT预定义填充图案
 

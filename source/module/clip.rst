@@ -134,21 +134,6 @@ clip
 示例
 ----
 
-::
-
-    gmt begin example
-    # 打开裁剪路径
-    gmt clip -R0/6/0/6 -Jx2.5c -W1p,blue << EOF
-    0 0
-    5 1
-    5 5
-    EOF
-    # 其他绘图命令
-    gmt plot @tut_data.txt -Gred -Sc2c
-    # 关闭裁剪路径
-    gmt clip -C -B
-    gmt end show
-    
 限制作图范围，仅在指定范围内对陆地填色
 
 .. gmtplot::

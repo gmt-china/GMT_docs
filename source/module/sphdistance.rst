@@ -129,6 +129,8 @@ sphdistance
 
 .. include:: explain_help.rst_
 
+.. include:: explain_float.rst_
+
 示例
 ----
 

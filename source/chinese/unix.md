@@ -7,13 +7,23 @@
 Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字体：宋体、仿宋、黑体和楷体。
 对于 Windows 和 Linux/macOS 的其他中文字体甚至日韩字体来说，方法类似。
 
-首先在 `~/.gmt` 新建一个目录，用于存放字体文件和配置文件:
+首先新建目录，用于存放字体文件和配置文件:
 
 ```
 $ mkdir -p ~/.gmt/winfonts
+# -p 选项会自动创建 ~/.gmt 和 ~/.gmt/winfonts 两级目录
 ```
 
-从 Windows 的系统字体目录（通常是 `C:\Windows\Fonts` ）中，找到以下四种基本字体的字体文件：宋体(`simsun.ttc`)、仿宋(`simfang.ttf`)、黑体(`simhei.ttf`)和楷体(`simkai.ttf`)并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
+下载以下四种基本字体的字体文件：
+
+- 宋体([simsun.ttc](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simsun.ttc))
+- 仿宋([simfang.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simfang.ttf))
+- 黑体([simhei.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simhei.ttf))
+- 楷体([simkai.ttf](https://github.com/ZMAlt/winfonts/raw/refs/heads/main/simkai.ttf))
+
+并复制到刚才新建的 `~/.gmt/winfonts/` 目录下。
+
+用户也可以从 Windows 的系统字体目录（通常是 `C:\Windows\Fonts` ）中，找到这四种基本字体的字体文件。
 
 在 `~/.gmt` 目录下创建字体配置文件 `cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
 

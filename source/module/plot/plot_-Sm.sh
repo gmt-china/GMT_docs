@@ -8,7 +8,7 @@ EOF
 gmt plot -Sm0.2c+b+e+g -Gblack -W0.5p,red << EOF
 1 1 1 10 60
 EOF
-gmt plot -Sm0.2c+b+l -Gblack -W0.5p,blue << EOF
-3 1 1 10 150
+gmt plot -SM0.2c+b+l -Gblack -W0.5p,blue << EOF
+3 1 1 10 100
 EOF
 gmt end show

@@ -24,7 +24,7 @@ gmt which -Ga @earth_relief_30m_g \
             @earth_relief_20m_g \
             @earth_relief_10m_p \
             @earth_relief_06m_p \
-            @earth_relief_05m_p \
+            @earth_relief_05m_g \
             @earth_relief_04m_p \
             @earth_age_06m_p \
             @earth_day_20m_p \
@@ -35,6 +35,7 @@ gmt which -Ga @earth_relief_30m_g \
             @earth_geoid_20m_p \
             @earth_faa_20m_p
 gmt grdcut @earth_relief_01m_p -R118/125/20/26 -G/dev/null
+gmt grdcut @earth_relief_15s_p -R119/121/30/32 -G/dev/null
 
 # 2. Download GMT cache files used in the docs
 gmt which -Ga @age_chrons_GTS2012_2020.cpt \
@@ -44,7 +45,12 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @Table_5_11.txt \
             @Wessel_GJI_Fig_5.txt \
             @quakes_07.txt \
-            @quakes_2018.txt
+            @quakes_2018.txt \
+            @App_O_ttt.nc \
+            @App_O_geoid.nc \
+            @AK_gulf_grav.nc \
+            @App_O_transect.txt \
+            @sunglasses.eps
 
 # 3. Download the china-geospatial-data dataset
 git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
@@ -52,10 +58,10 @@ mv china-geospatial-data/*.gmt ~/.gmt/cache/
 rm -rf china-geospatial-data
 
 # 4. Download plate boundary types data used in docs
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/boundaries.gmt
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/plates.gmt
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/global_gprv.gmt
-wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/main/plates%26provinces/gmt/oc_boundaries.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt
+wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt
 mv boundaries.gmt plates.gmt global_gprv.gmt oc_boundaries.gmt ~/.gmt/cache/
 
 # 5. Download Chinese font files for GMT Chinese support
