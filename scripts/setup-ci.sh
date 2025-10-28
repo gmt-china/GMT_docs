@@ -35,6 +35,7 @@ gmt which -Ga @earth_relief_30m_g \
             @earth_geoid_20m_p \
             @earth_faa_20m_p
 gmt grdcut @earth_relief_01m_p -R118/125/20/26 -G/dev/null
+gmt grdcut @earth_relief_15s_p -R119/121/30/32 -G/dev/null
 
 # 2. Download GMT cache files used in the docs
 gmt which -Ga @age_chrons_GTS2012_2020.cpt \
