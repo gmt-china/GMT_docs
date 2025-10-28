@@ -45,8 +45,7 @@
 
     ogr2ogr -f "GMT" taihu.gmt taihu.geojson
 
-此外，也可直接下载预制文件：
- :download:`taihu.gmt`
+此外，也可直接下载预制文件： :download:`taihu.gmt`
 
 在下图示例中，左图展示了湖泊轮廓绘制效果，右图展示了湖泊填充效果，
 其中岛屿保持透明，从而形成完整、真实的带岛屿湖泊可视化。
