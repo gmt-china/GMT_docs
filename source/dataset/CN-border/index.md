@@ -69,7 +69,7 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 DCW 数据时只绘制中国区域以外的部分。具体示例脚本如下：
 
 ```{eval-rst}
-.. gmtplot:: CN-border-neighbouring-countries.sh
+.. gmtplot:: CN-border-neighboring-countries.sh
     :show-code: true
     :width: 90%
 ```
