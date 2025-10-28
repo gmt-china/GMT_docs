@@ -8,7 +8,7 @@ date: 2025-07-28
 macOS 下安装 GMT 有多种方式：
 
 1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
-3. {doc}`conda`
+2. {doc}`conda`
 
 (macos-homebrew)=
 ## 使用 Homebrew 安装
