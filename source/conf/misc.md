@@ -5,10 +5,6 @@
 ## 数据下载相关参数
 
 :::{glossary}
-**GMT_AUTO_DOWNLOAD**
-    是否允许自动从GMT服务器（由 {term}`GMT_DATA_SERVER` 控制）下载数据文件到用户目录 {file}`~/.gmt` 下。
-    可以取 **on** 或者 **off** \[**on**\]
-
 **GMT_DATA_SERVER**
     GMT数据服务器地址，默认使用SOEST官方镜像 \[<https://oceania.generic-mapping-tools.org/>\]
 
@@ -18,14 +14,14 @@
     对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为:
 
     ```
-    gmt set GMT_DATA_SERVER http://china.generic-mapping-tools.org
+    gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
     ```
 
     然后将生成的 `gmt.conf` 文件复制到GMT用户目录 `~/.gmt` (Linux/macOS)
-    或 `C:\Users\XXX\.gmt` (Windows) 下。
+    或 `C:\Users\当前用户名\.gmt` (Windows) 下。
 
 **GMT_DATA_SERVER_LIMIT**
-    从GMT服务器上下载的单个文件的大小上限，默认无限制。
+    从GMT服务器上下载的单个文件的大小上限，默认无限制 [unlimited]。
     可以给定文件大小上限的字节数，也可以加上 **k**、**m**或 **g** 表示 KB、MB 或 GB。
 
 **GMT_DATA_UPDATE_INTERVAL**
@@ -37,9 +33,9 @@
 
 :::{glossary}
 **GMT_TRIANGULATE**
-    设置 {doc}`gmt:triangulate` 模块中算法代码的来源 \[Watson\]
+    设置 {doc}`/module/triangulate` 模块中算法代码的来源 [**Shewchuk**]
 
-    {doc}`gmt:triangulate` 模块的核心源码有两个版本，
+    {doc}`/module/triangulate` 模块的核心源码有两个版本，
     Watson 的版本遵循GPL，Shewchuk 的版本不遵循GPL。
     该选项用于控制要使用哪个版本，Shewchuk 版本拥有更多功能。
 
@@ -146,10 +142,14 @@
     - **readonly** 只能读不能写
     - **false** 不显示历史文件
 
+**GMT_GRAPHICS_DPU**
+    在不指定分辨率的情况下请求远程网格数据集时（例如，*@earth_relief*），图像的默认dpu
+    （dots-per-unit，每单位大小中的像素点数），后跟 "i" 表示为 dpi， "c" 表示 dpc。[**300i**]
+
 **GMT_GRAPHICS_FORMAT**
     现代模式下默认的图片文件格式 \[pdf\]
 
-**GMT_MAX_CORE**
+**GMT_MAX_CORES**
     多进程并行程序所最多能使用的核数 \[0\]
 
     默认值0表示尽可能使用所有核

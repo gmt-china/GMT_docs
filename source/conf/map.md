@@ -6,11 +6,20 @@
 **MAP_FRAME_TYPE**
     底图边框类型 [**fancy**]
 
-    可选值包括 **inside**|**plain**|**graph**|**fancy**|**fancy+**。
+    可选值包括 **inside**|**plain**|**graph**|**graph-origin**|**fancy**|**fancy+**|**fancy-rounded**。
 
     - 通常，地理投影默认使用 **fancy** 边框类型，而笛卡尔投影则默认使用 **plain** 边框类型。
-      但某些地理投影比较特殊，只能使用 plain 边框类型。
-    - **fancy+** 相对于 **fancy** 的区别在于，边框的拐角为圆角
+      但某些地理投影比较特殊，例如倾斜墨卡托投影（Oblique Mercator），只能使用 **plain** 边框类型。
+    - 对于所有边界刻度和标注必须在地图内部的情况（例如，准备输出GeoTIFF），使用 **inside**。
+    - **fancy+** 相对于 **fancy** 的区别在于，边框的拐角为圆角。与 **fancy-rounded** 效果一致。
+    - 对于 **graph** 类型，默认箭头的顶端超过坐标轴顶点 7.5%。可以通过使用
+    **graph,**_length_[%] 的方式指定超过的长度(**c|i|p**)或百分比(**%**)。
+    坐标轴的宽度由 {term}`MAP_FRAME_WIDTH` 决定，箭头的长度和宽度则分别是该宽度的 10 倍
+    和 5 倍。箭头的形状还可以由 {term}`MAP_VECTOR_SHAPE` 控制。
+    - **graph-origin** 类型在 **graph** 类型基础上将 **W** 轴 和 **S** 轴移动到数据原点[0/0]。
+    在该类型下，仅可选择 **W** 和 **S** 轴（或 **w,s,l,b** 轴），而忽略 **E** 和 **N** 轴（或 **e,n,r,t** 轴）。
+    轴交点处不作刻度标注。可使用 **+o**_xorig/yorig_ 自定义数据原点作为轴交点，
+    或者简写为 **+oc** 选择当前数据范围的中点。
 
     下图给出了不同的底图边框类型的效果：
 
@@ -20,13 +29,11 @@
        :caption: GMT底图边框类型
     ```
 
-    对于 **graph** 类型，默认箭头的顶端超过坐标轴顶点7.5%。可以通过使用
-    **graph,**_length_[%] 的方式指定超过的长度或百分比。坐标轴的宽度
-    由 {term}`MAP_FRAME_WIDTH` 决定，箭头的长度和宽度则分别是该宽度的10倍
-    和5倍。箭头的形状还可以由 {term}`MAP_VECTOR_SHAPE` 控制。
-
 **MAP_FRAME_PEN**
     底图为笛卡尔坐标系或边框类型为 **plain** 的地理坐标系时，边框的画笔属性 \[**thicker,black**\]
+
+**MAP_FRAME_PERCENT**
+    设置底图类型为 **fancy** 时边框内部粗线条的宽度占 {term}`MAP_FRAME_WIDTH` 的百分比 [**100**]
 
 **MAP_FRAME_WIDTH**
     设置底图类型为 **fancy** 时的边框宽度 \[**5p**\]
@@ -66,14 +73,14 @@
     ```{eval-rst}
     .. gmtplot::
        :show-code: false
-
+       
        gmt begin map_degree_symbol
-       gmt set FONT_TITLE 18p MAP_TITLE_OFFSET 0p
-       gmt subplot begin 1x4 -Fs5c
-       for symbol in ring degree colon none; do
-           gmt basemap -R0/2/0/1 -JM5c -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -c
-       done
-       gmt subplot end
+           gmt set FONT_TITLE 18p MAP_TITLE_OFFSET 0p
+           gmt subplot begin 2x2 -Fs5c/2c -M1c
+               for symbol in ring degree colon none; do
+                   gmt basemap -R0/2/0/1 -JM5c -Baf -BWSen+t"$symbol" --MAP_DEGREE_SYMBOL=$symbol -c
+               done
+           gmt subplot end
        gmt end show
     ```
 
@@ -127,7 +134,15 @@
 
 :::{glossary}
 **MAP_LABEL_OFFSET**
-    轴标注底部与轴标签顶部间的距离 \[8p\]
+    {term}`MAP_LABEL_MODE` 位置与轴标签间的偏移距离 [8p]
+
+**MAP_LABEL_MODE**
+    指定从何处测量标签偏移量：
+
+    - **annot** : 从轴标注开始测量
+    - **axis** : 从轴开始测量
+
+    使用斜线分隔可为x轴和y轴设置不同的模式 [**annot/axis**]
 :::
 
 ## 刻度相关参数
@@ -276,4 +291,14 @@
        done
        gmt end show
     ```
+
+**MAP_EMBELLISHMENT_MODE**
+    确定地图修饰物（如方向或磁场玫瑰图、地图比例尺或垂直数据比例尺）
+    是否应该具有随特征大小缩放的属性（**auto**）或完全使用手动设置（**manual**）。[**auto**]
+
+**MAP_SYMBOL_PEN_SCALE**
+    指定一个0-1之间的比例或百分比，用于将不可填充的符号（**x, y, +** 和 **-**）
+    大小转换为用于描划这些符号的笔的宽度 [**15%**]。
+    如果设置为0，则不做此类转换，并且画笔设置必须依赖于 **-W** 或模块默认值。
+
 ::::

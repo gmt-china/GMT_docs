@@ -67,10 +67,8 @@ gmt grdcut @earth_relief_02m_g -Gearth_at_2m.grd
 
 1. 通过参数 {term}`GMT_DATA_SERVER` 设置使用离你最近的GMT数据服务器以加快下载速度
 2. 通过参数 {term}`GMT_DATA_SERVER_LIMIT` 设置允许下载的远程数据的文件大小，默认无限制
-3. 使用参数 {term}`GMT_AUTO_DOWNLOAD` 彻底关闭数据自动下载功能。
-   若关闭，你将无法再下载或更新远程数据，但已下载到本地的数据依然可以使用。
-4. 通过参数 {term}`GMT_DATA_UPDATE_INTERVAL` 控制检查远程数据是否更新的频率 \[默认为每天检查一次\]
-5. 通过 {doc}`/module/clear` 命令清理整个 *server* 目录下的远程数据或部分数据
+3. 通过参数 {term}`GMT_DATA_UPDATE_INTERVAL` 控制检查远程数据是否更新的频率 [默认为每天检查一次]
+4. 通过 {doc}`/module/clear` 命令清理整个 *server* 目录下的远程数据或部分数据
 
 :::{note}
 GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
@@ -83,7 +81,7 @@ gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
 ```
 
 然后将生成的 {file}`gmt.conf` 文件复制到GMT用户目录 {file}`~/.gmt` (Linux/macOS)
-或 {file}`C:\\Users\\XXX\\.gmt`（Windows）下。
+或 {file}`C:\\Users\\当前用户名\\.gmt`（Windows）下。
 
 请注意GMT 6.4 及其之前的版本，都无法正常使用科大镜像下载数据。因此强烈建议国内用户使用GMT 6.5 及其以上版本。
 :::
@@ -91,7 +89,7 @@ gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
 ## 离线使用
 
 如果你即将有一段无网络或低网速的时间，或者你不希望在第一次需要某个数据等待数据的
-下载，你可以使用 {doc}`/module/gmtget` 模块将数据提前下载到本地。
+下载，你可以使用 {doc}`/module/get` 模块将数据提前下载到本地。
 
 你可以下载所有远程数据:
 
@@ -117,7 +115,7 @@ gmt get -Ddata=earth_relief,earth_mask
 gmt get -Ddata=earth_relief -I1m
 ```
 
-更多功能，见 {doc}`/module/gmtget` 模块文档。
+更多功能，见 {doc}`/module/get` 模块文档。
 
 (setup-database)=
 

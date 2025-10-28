@@ -1,9 +1,9 @@
 # GMT 中文手册
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Deploy](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/gmt-china/GMT_docs/actions/workflows/deploy.yml)
-[![Documentation version](https://img.shields.io/badge/版本-v6.5-blue.svg)](https://docs.gmt-china.org/latest/)
+[![Documentation version](https://img.shields.io/badge/版本-v6.6-blue.svg)](https://docs.gmt-china.org/latest/)
 ![Repository size](https://img.shields.io/github/repo-size/gmt-china/GMT_Docs)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
 
@@ -71,6 +71,8 @@ GMT 中文手册由以下贡献者维护：
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SeisPiano"><img src="https://avatars.githubusercontent.com/u/107676207?v=4?s=100" width="100px;" alt="Yuechu Wu"/><br /><sub><b>Yuechu Wu</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=SeisPiano" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://blog.rampant.life"><img src="https://avatars.githubusercontent.com/u/5670700?v=4?s=100" width="100px;" alt="H.F."/><br /><sub><b>H.F.</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3AJiangXL" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://berginjay.github.io"><img src="https://avatars.githubusercontent.com/u/30320251?v=4?s=100" width="100px;" alt="Bojun"/><br /><sub><b>Bojun</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/issues?q=author%3ABerginJay" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Dengda98"><img src="https://avatars.githubusercontent.com/u/100606975?v=4?s=100" width="100px;" alt="Dengda Zhu"/><br /><sub><b>Dengda Zhu</b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=Dengda98" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Chuan1937"><img src="https://avatars.githubusercontent.com/u/99251452?v=4?s=100" width="100px;" alt="Xingchen He "/><br /><sub><b>Xingchen He </b></sub></a><br /><a href="https://github.com/gmt-china/GMT_docs/commits?author=Chuan1937" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

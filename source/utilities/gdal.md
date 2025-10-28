@@ -1,10 +1,10 @@
-# GDAL
-
-:审核: {{ 陈箫翰 }}
-:撰写: {{ 田冬冬 }}, {{ 姚家园 }}
-:最近更新日期: 2023-09-21
-
 ---
+author: 田冬冬, 姚家园
+review: 陈箫翰
+date: 2023-09-21
+---
+
+# GDAL
 
 [GDAL](https://gdal.org/)（**G**eospatial **D**ata **A**bstraction **L**ibrary）
 是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，
@@ -88,7 +88,7 @@ ogr2ogr -f GMT 输出数据文件名 输入数据文件名
 
    三个命令分别生成文件 `ADM_ADM_0.gmt`、`ADM_ADM_1.gmt` 和 `ADM_ADM_2.gmt`。
 
-(gdal-translate)=
+(gdal_translate)=
 
 ## gdal_translate
 

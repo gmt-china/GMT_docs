@@ -11,12 +11,12 @@ xyz2grd
 若某些节点没有数据值，则这些节点会被赋值为NaN；
 若某个节点由多个数据值，则该节点的值为所有数据点的平均值。
 
-注意，该模块只是将已存在的数据转换为网格数据，并不具备网格化/插值功能。
-若需要网格化功能，可以使用模块
-:doc:`gmt:surface`、
-:doc:`gmt:greenspline`、
-:doc:`gmt:nearneighbor`
-或 :doc:`gmt:triangulate`。
+注意，该模块将 **等间隔** 数据转换为网格数据，对于不等间隔的数据并不具备网格化/插值功能。
+若需要处理不等间隔的数据，可以使用模块
+:doc:`surface`、
+:doc:`greenspline`、
+:doc:`nearneighbor`
+或 :doc:`triangulate`。
 
 语法
 ----
@@ -160,6 +160,7 @@ xyz2grd
 
 .. include:: explain_help.rst_
 
+.. include:: explain_float.rst_
 
 示例
 ----
@@ -183,7 +184,7 @@ xyz2grd
 :doc:`grd2xyz`,
 :doc:`grdedit`,
 :doc:`grdconvert`,
-:doc:`gmt:greenspline`,
-:doc:`gmt:nearneighbor`,
-:doc:`gmt:surface`,
-:doc:`gmt:triangulate`
+:doc:`greenspline`,
+:doc:`nearneighbor`,
+:doc:`surface`,
+:doc:`triangulate`

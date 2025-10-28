@@ -19,10 +19,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v2.0.4
+        uses: mamba-org/setup-micromamba@v2.0.7
         with:
           environment-name: gmtdocs
           condarc: |
@@ -30,7 +30,7 @@ jobs:
               - conda-forge
               - nodefaults
           create-args: >-
-            gmt=6.5.0
+            gmt=6.6.0
 
       - name: Download data and change configurations
         run: bash scripts/setup-ci.sh

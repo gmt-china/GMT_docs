@@ -77,6 +77,8 @@ grdsample
 
 .. include:: explain_help.rst_
 
+.. include:: explain_float.rst_
+
 注意事项
 --------
 
@@ -88,7 +90,7 @@ grdsample
   周围4x4个节点。bilinear插值算法只需要周围的2x2个节点，但其只是零阶连续。
   若光滑性很重要，则使用bicubic算法；若需要尽量避免NaN值的传播，则使用bilinear算法。
 - 除了插值之外，还可以使用 :doc:`grd2xyz` 将网格数据转换为表数据，然后
-  将输出交给 :doc:`surface` 或 :doc:`gmt:greenspline` 重新网格化。
+  将输出交给 :doc:`surface` 或 :doc:`greenspline` 重新网格化。
 
 示例
 ----
@@ -113,5 +115,5 @@ Marks, K. M., and W. H. F. Smith, 2007, Some remarks on resolving seamounts in s
 :doc:`grdedit`,
 :doc:`gmt:grdfft`,
 :doc:`gmt:grdfilter`,
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`surface`
