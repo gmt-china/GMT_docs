@@ -5,6 +5,8 @@
 
 ---
 
+# Windows 下的 GMT 中文支持
+
 ## ghostscript 的中文支持
 
 GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片。如果没有正确配置
