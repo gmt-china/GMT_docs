@@ -1,9 +1,6 @@
 :author: 朱邓达
 :date: 2025-10-28
 
-----
-
-
 .. index:: ! isf
 .. include:: common_SYN_OPTs.rst_
 

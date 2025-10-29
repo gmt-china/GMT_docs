@@ -1,11 +1,6 @@
 :author: 何星辰
 :date: 2025-10-06
 
-----
-
-
-----
-
 .. index:: ! segyz
 .. include:: common_SYN_OPTs.rst_
 

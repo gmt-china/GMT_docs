@@ -1,8 +1,6 @@
 :author: 何星辰
 :date: 2025-10-21
 
-----
-
 .. index:: ! barb
 .. include:: module_core_purpose.rst_
 .. include:: module_supplements_purpose.rst_

@@ -1,8 +1,6 @@
 :author: 周茂
 :date: 2022-10-23
 
-----
-
 .. index:: ! block_median 
 .. include:: common_SYN_OPTs.rst_
 

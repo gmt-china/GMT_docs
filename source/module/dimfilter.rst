@@ -1,8 +1,6 @@
 :author: 周茂
 :date: 2022-07-16
 
-----
-
 .. index:: ! dimfilter
 .. include:: common_SYN_OPTs.rst_
 

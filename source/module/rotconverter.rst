@@ -1,11 +1,6 @@
 :author: 何星辰
 :date: 2025-10-19
 
-----
-
-
-----
-
 .. index:: ! rotconverter
 .. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_

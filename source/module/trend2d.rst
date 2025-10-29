@@ -1,11 +1,6 @@
 :author: 周茂
 :date: 2022-11-01
 
-----
-
-
-----
-
 .. index:: ! trend2d
 .. include:: common_SYN_OPTs.rst_
 

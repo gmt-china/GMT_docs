@@ -1,11 +1,6 @@
 :author: 周茂
 :date: 2022-06-30
 
-----
-
-
-----
-
 .. index:: ! convert
 .. include:: common_SYN_OPTs.rst_
 

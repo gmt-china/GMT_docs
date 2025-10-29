@@ -1,8 +1,6 @@
 :author: 周茂, 陈箫翰
 :date: 2024-07-21
 
-----
-
 .. index:: ! surface
 .. include:: common_SYN_OPTs.rst_
 

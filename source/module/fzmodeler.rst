@@ -1,8 +1,6 @@
 :author: 何星辰, 田冬冬
 :date: 2025-10-13
 
-----
-
 .. index:: ! fzmodeler
 .. include:: common_SYN_OPTs.rst_
 

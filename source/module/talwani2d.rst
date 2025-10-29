@@ -1,8 +1,6 @@
 :author: 周茂
 :date: 2024-02-21
 
-----
-
 .. index:: ! talwani2d
 .. include:: common_SYN_OPTs.rst_
 

@@ -1,9 +1,6 @@
 :author: 田冬冬, 陈箫翰, 朱邓达
 :date: 2025-08-22
 
-----
-
-
 .. index:: ! contour
 
 

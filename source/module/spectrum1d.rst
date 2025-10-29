@@ -1,11 +1,6 @@
 :author: 田冬冬, 周茂
 :date: 2024-07-03
 
-----
-
-
-----
-
 .. index:: ! spectrum1d
 .. include:: common_SYN_OPTs.rst_
 

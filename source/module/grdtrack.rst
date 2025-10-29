@@ -1,9 +1,6 @@
 :author: 朱邓达, 周茂, 田冬冬
 :date: 2025-05-17
 
-----
-
-
 .. index:: ! grdtrack
 
 grdtrack

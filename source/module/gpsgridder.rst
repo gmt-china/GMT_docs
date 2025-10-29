@@ -1,8 +1,6 @@
 :author: 周茂
 :date: 2022-02-07
 
-----
-
 .. index:: ! gpsgridder
 .. include:: common_SYN_OPTs.rst_
 
@@ -216,4 +214,4 @@ Sandwell, D. T. and P. Wessel, 2016, Interpolation of 2-D Vector Data Using Cons
 
 :doc:`gmt:greenspline`
 :doc:`nearneighbor` 
-:doc:`surface` 
+:doc:`surface`

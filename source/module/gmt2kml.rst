@@ -1,8 +1,6 @@
 :author: 何星辰
 :date: 2025-10-20
 
-----
-
 .. index:: ! gmt2kml
 .. include:: module_core_purpose.rst_
 .. include:: common_SYN_OPTs.rst_

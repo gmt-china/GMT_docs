@@ -1,9 +1,6 @@
 :author: 朱邓达, 田冬冬
 :date: 2025-06-11
 
-----
-
-
 .. index:: ! grdvector
 .. include:: common_SYN_OPTs.rst_
 

@@ -1,9 +1,6 @@
 :author: 朱邓达
 :date: 2025-05-12
 
-----
-
-
 .. index:: ! grdgradient
 
 ************
@@ -239,4 +236,3 @@ IEEE, Vol. 69, No. 1, January 1981, pp. 14-47.
 :doc:`grdimage`,
 :doc:`grdview`,
 :doc:`grdvector`
-

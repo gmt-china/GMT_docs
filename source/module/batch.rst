@@ -1,8 +1,6 @@
 :author: 何星辰, 周茂
 :date: 2025-10-21
 
-----
-
 .. index:: ! batch
 .. include:: module_core_purpose.rst_
 .. include:: common_SYN_OPTs.rst_

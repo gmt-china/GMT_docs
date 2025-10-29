@@ -1,11 +1,6 @@
 :author: 周茂
 :date: 2022-10-14
 
-----
-
-
-----
-
 .. index:: ! earthtide
 .. include:: common_SYN_OPTs.rst_
 

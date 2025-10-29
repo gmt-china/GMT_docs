@@ -1,9 +1,6 @@
 :author: 朱邓达
 :date: 2025-06-18
 
-----
-
-
 .. index:: ! movie
 .. include:: common_SYN_OPTs.rst_
 

@@ -1,8 +1,6 @@
 :author: 周茂
 :date: 2023-02-06
 
-----
-
 .. index:: ! trend1d
 .. include:: common_SYN_OPTs.rst_
 

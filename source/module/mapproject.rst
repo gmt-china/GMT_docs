@@ -1,8 +1,6 @@
 :author: Liming Li, 周茂
 :date: 2022-12-05
 
-----
-
 .. index:: ! mapproject
 .. include:: common_SYN_OPTs.rst_
 

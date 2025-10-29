@@ -1,8 +1,6 @@
 :author: 何星辰
 :date: 2025-10-17
 
-----
-
 .. index:: ! grdhisteq
 .. include:: common_SYN_OPTs.rst_
 

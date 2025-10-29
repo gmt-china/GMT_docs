@@ -1,11 +1,6 @@
 :author: 周茂
 :date: 2022-06-21
 
-----
-
-
-----
-
 .. index:: ! gravfft
 .. include:: common_SYN_OPTs.rst_
 

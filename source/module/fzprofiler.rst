@@ -1,8 +1,6 @@
 :author: 何星辰, 田冬冬
 :date: 2025-10-15
 
-----
-
 .. index:: ! fzprofiler
 .. include:: common_SYN_OPTs.rst_
 
@@ -117,4 +115,3 @@ A., Whittaker, J. M., Myhill, R., Chandler, M. T.,
 2015, "Semiautomatic fracture zone tracking", 
 *Geochem. Geophys. Geosyst.*, 16 (7), 2462–2472.
 https://doi.org/10.1002/2015GC005853.
-

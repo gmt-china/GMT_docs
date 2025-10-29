@@ -1,8 +1,6 @@
 :author: 朱邓达
 :date: 2025-07-07
 
-----
-
 :reviewer: 周茂
 
 .. index:: ! events
