@@ -1,7 +1,5 @@
 :author: 周茂
 
-----
-
 .. index:: !x2sys_datalist
 .. include:: common_SYN_OPTs.rst_
 

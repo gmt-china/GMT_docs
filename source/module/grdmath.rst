@@ -1,7 +1,5 @@
 :author: Caesar（自然资源部第一海洋研究所）, 周茂
 
-----
-
 .. index:: ! grdmath
 .. include:: common_SYN_OPTs.rst_
 

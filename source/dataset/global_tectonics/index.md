@@ -1,5 +1,7 @@
-:author: 陈箫翰, 田冬冬
-:date: 2025-07-30
+---
+author: 陈箫翰, 田冬冬
+date: 2025-07-30
+---
 
 # global_tectonics: 全球地质构造数据
 

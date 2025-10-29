@@ -1,7 +1,5 @@
 :author: 周茂
 
-----
-
 .. index:: ! gmtswitch
 
 gmtswitch

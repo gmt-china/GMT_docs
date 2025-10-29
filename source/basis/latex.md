@@ -1,8 +1,5 @@
-:author: 周茂
-
 ---
-
-
+author: 周茂
 ---
 
 # LaTeX 表达式
