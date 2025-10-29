@@ -7,9 +7,6 @@
 originater
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/originater`
 :简介: 将海山与最近的热点点源关联起来
 

@@ -8,9 +8,6 @@
 gmt2kml
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:gmt2kml`  
 :简介: 将 GMT 数据表转换为 Google Earth KML 文件
 

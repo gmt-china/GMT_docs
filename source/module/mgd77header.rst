@@ -7,9 +7,6 @@
 mgd77header
 ===========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77header`
 :简介: 由 A77 文件创建 MGD77 头段记录
 

@@ -7,9 +7,6 @@
 gmtswitch
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:gmtswitch`
 :说明: 在不同的 GMT 版本之间切换
 

@@ -7,9 +7,6 @@
 mgd77list
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77list`
 :简介: 从 MGD77 文件中提取数据
 

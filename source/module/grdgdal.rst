@@ -7,9 +7,6 @@
 grdgdal
 =======
 
-
-----
-
 :官方文档: :doc:`gmt:grdgdal`
 :简介: 从 gmt 执行 GDAL 光栅相关的程序
 

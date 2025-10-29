@@ -7,9 +7,6 @@
 blockmedian
 ===========
 
-
-----
-
 :官方文档: :doc:`gmt:blockmedian`
 :简介: 使用中值估计对表数据做区域处理 
 

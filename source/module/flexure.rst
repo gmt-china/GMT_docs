@@ -7,9 +7,6 @@
 flexure
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/gmtflexure`
 :简介: 计算 2-D 载荷产生的力，弯矩和挠曲变形
 

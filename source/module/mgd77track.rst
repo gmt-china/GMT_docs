@@ -7,9 +7,6 @@
 mgd77track
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77track`
 :简介: 绘制 MGD77 测线轨迹
 

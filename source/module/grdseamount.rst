@@ -7,9 +7,6 @@
 grdseamount
 ===========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/grdseamount`
 :简介: 创建合成海山（包括高斯、抛物线、多项式、圆锥、圆盘形状的圆形或椭圆型海山）
 

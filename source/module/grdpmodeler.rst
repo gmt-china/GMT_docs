@@ -8,9 +8,6 @@
 grdpmodeler
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/grdpmodeler`  
 :简介: 评估地理网格上的板块运动模型
 

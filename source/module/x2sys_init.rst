@@ -8,9 +8,6 @@
 x2sys_init
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_init`
 :简介: 初始化 x2sys 数据库
 

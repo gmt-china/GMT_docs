@@ -8,9 +8,6 @@
 hotspotter
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/hotspotter`  
 :简介: 从海山位置创建 CVA 网格
 

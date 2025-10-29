@@ -8,9 +8,6 @@
 x2sys_list
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_list`
 :简介: 从交叉点计算结果中提取数据
 

@@ -7,9 +7,6 @@
 gravmag3d
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/gmtgravmag3d`
 :简介: 计算使用 Okabe 方法计算三维物体的重力异常或磁异常
 

@@ -7,9 +7,6 @@
 gravprisms
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/gravprisms`
 :简介: 计算三维垂直棱柱产生的位异常
 

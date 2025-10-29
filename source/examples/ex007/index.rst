@@ -40,5 +40,3 @@
 .. gmtplot:: ex007.sh
     :caption: 绘制自定义符号
     :width: 100%
-
-

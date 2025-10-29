@@ -7,9 +7,6 @@
 makecpt
 =======
 
-
-----
-
 :官方文档: :doc:`gmt:makecpt`
 :简介: 制作 GMT CPT 文件
 

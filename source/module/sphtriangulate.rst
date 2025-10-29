@@ -8,9 +8,6 @@
 sphtriangulate
 ==============
 
-
-----
-
 :官方文档: :doc:`gmt:sphtriangulate`
 :简介: 创建球面 Delaunay 三角网或 Voronoi 图
 

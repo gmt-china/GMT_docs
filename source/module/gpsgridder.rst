@@ -7,9 +7,6 @@
 gpsgridder
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/geodesy/gpsgridder`
 :简介: 使用格林函数内插 GPS 应变以分析弹性形变
 

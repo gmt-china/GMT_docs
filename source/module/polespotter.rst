@@ -8,9 +8,6 @@
 polespotter
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/polespotter`  
 :简介: 找到给定断裂带和深渊山脉的阶段极点
 

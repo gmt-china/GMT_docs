@@ -7,9 +7,6 @@
 grdgravmag3d
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/grdgravmag3d`
 :简介: 使用 Okabe 方法计算一个（或两个）网格形成的重力异常
 

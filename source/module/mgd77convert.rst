@@ -7,9 +7,6 @@
 mgd77convert
 ============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77convert`
 :简介: 将 MGD77 数据转换为其他格式
 

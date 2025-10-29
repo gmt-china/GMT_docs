@@ -7,9 +7,6 @@
 trend1d
 =======
 
-
-----
-
 :官方文档: :doc:`gmt:trend1d`
 :简介: 一维数据的多项式/Fourier 拟合
 

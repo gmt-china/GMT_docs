@@ -7,9 +7,6 @@
 fzblender
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/gsfml/fzblender`
 :简介: 生成平滑的加权混合 FZ 轨迹
 

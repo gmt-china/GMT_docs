@@ -7,9 +7,6 @@
 grdflexure
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/grdflexure`
 :简介: 计算 3-D 载荷在多种流变学条件下产生的挠曲变形
 

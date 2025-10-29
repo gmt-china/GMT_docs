@@ -8,9 +8,6 @@
 x2sys_solve
 ===========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_solve`
 :简介: 使用最小二乘平差计算系统误差改正值，即交叉点平差
 

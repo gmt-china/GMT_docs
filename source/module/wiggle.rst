@@ -8,9 +8,6 @@
 wiggle
 ======
 
-
-----
-
 :官方文档: :doc:`gmt:wiggle`
 :简介: 绘制沿轨 z = f(x,y) 异常
 

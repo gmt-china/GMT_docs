@@ -7,9 +7,6 @@
 grdbarb
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/windbarbs/grdbarb`
 :简介: 从两个分量网格中绘制风羽场
 

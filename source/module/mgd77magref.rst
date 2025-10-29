@@ -7,9 +7,6 @@
 mgd77magref
 ===========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77magref`
 :简介: 计算 IGRF 或 CM4 地磁参考场模型值
 

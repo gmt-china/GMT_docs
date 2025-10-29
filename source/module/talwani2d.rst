@@ -7,9 +7,6 @@
 talwani2d
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/talwani2d`
 :简介: 使用 Talwani 方法计算二维物体形成的位异常
 

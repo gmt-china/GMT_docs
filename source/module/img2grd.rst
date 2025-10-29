@@ -8,9 +8,6 @@
 img2grd
 ========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/img/img2grd`
 :简介: 从墨卡托 img 格式文件中提取网格数据
 

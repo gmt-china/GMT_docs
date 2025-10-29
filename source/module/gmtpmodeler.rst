@@ -6,10 +6,7 @@
 .. include:: common_SYN_OPTs.rst_
 
 pmodeler
-=============
-
-
-----
+==============
 
 :官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler`  
 :简介: 评估特定位置的板块运动模型

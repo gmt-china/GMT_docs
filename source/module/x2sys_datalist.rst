@@ -8,9 +8,6 @@
 x2sys_datalist
 ==============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_datalist`
 :简介: 提取轨迹观测数据
 

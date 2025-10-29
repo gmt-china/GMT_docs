@@ -8,9 +8,6 @@
 grdrotater
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/grdrotater`  
 :简介: 地理网格的有限旋转重构
 

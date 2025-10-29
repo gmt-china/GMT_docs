@@ -7,9 +7,6 @@
 dimfilter
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:dimfilter`
 :简介: 在空间域对网格进行方向中值（DIrectional Median, DIM）滤波
 

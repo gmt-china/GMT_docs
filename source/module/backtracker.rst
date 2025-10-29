@@ -7,9 +7,6 @@
 backtracker
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/backtracker`  
 :简介: 生成前向和后向流线和热点轨迹
 

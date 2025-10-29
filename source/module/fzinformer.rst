@@ -7,9 +7,6 @@
 fzinformer
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/gsfml/fzinformer`
 :简介: 绘制与断裂带相关的统计信息的 Bash 脚本
 

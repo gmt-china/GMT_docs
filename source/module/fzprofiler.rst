@@ -7,9 +7,6 @@
 fzprofiler
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/gsfml/fzprofiler`
 :简介: 绘制断裂带交叉剖面图的 Bash 脚本
 

@@ -7,9 +7,6 @@
 talwani3d
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/potential/talwani3d`
 :简介: 使用 Talwani 方法计算三维实体形成的位异常
 

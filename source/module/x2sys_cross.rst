@@ -8,9 +8,6 @@
 x2sys_cross
 ===========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_cross`
 :简介: 计算轨迹之间的交叉点 
 

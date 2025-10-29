@@ -7,9 +7,6 @@
 regress
 ==========
 
-
-----
-
 :官方文档: :doc:`gmt:gmtregress`
 :简介: 一维数据线性回归
 

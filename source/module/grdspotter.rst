@@ -8,9 +8,6 @@
 grdspotter
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/grdspotter`  
 :简介: 从重力或地形网格创建 CVA 网格
 

@@ -8,9 +8,6 @@
 x2sys_report
 ============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_report`
 :简介: 对交叉点信息进行统计
 

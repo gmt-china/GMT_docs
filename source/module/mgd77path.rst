@@ -7,9 +7,6 @@
 mgd77path
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77path`
 :简介: 返回 MGD77 的路径和文件夹
 

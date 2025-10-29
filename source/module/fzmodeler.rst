@@ -7,9 +7,6 @@
 fzmodeler
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/gsfml/fzmodeler`
 :简介: 构建断裂带交叉剖面模型的 Bash 脚本
 

@@ -8,9 +8,6 @@
 x2sys_get
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_get`
 :简介: 从 TAG 数据库中查询轨迹
 

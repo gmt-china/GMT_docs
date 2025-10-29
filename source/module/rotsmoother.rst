@@ -7,9 +7,6 @@
 rotsmoother
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/spotter/rotsmoother`
 :简介: 从有限旋转集中获取平均旋转和协方差矩阵
 

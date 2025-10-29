@@ -8,9 +8,6 @@
 x2sys_put
 =========
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_put`
 :简介: 从已有的网格索引列表更新 TAG 轨迹数据库
 

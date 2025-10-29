@@ -7,9 +7,6 @@
 fzmapper
 =============
 
-
-----
-
 :官方文档: :doc:`gmt:supplements/gsfml/fzmapper`
 :简介: 在墨卡托地图上绘制断裂带交叉剖面的 Bash 脚本
 

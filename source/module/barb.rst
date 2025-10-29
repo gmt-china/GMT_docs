@@ -7,9 +7,7 @@
 .. include:: common_SYN_OPTs.rst_
 
 barb
-
-
-----
+=============
 
 :官方文档: :doc:`gmt:supplements/windbarbs/barb`  
 :简介: 在 2D 和 3D 中绘制风羽
