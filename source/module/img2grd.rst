@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! img2grd
 .. include:: common_SYN_OPTs.rst_
 
 img2grd
 ========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/img/img2grd`
 :简介: 从墨卡托 img 格式文件中提取网格数据

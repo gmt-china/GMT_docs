@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! sphtriangulate
 .. include:: common_SYN_OPTs.rst_
 
 sphtriangulate
 ==============
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:sphtriangulate`
 :简介: 创建球面 Delaunay 三角网或 Voronoi 图

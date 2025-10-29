@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-06-30
+
 .. index:: ! convert
 .. include:: common_SYN_OPTs.rst_
 
 convert
 ===========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-06-30
-
-----
 
 :官方文档: :doc:`gmt:gmtconvert`
 :简介: 对表数据进行格式转换，粘贴以及提取列等操作
@@ -28,7 +26,6 @@ convert
 输入以及输出都可能包含多个头部信息。
 
 语法
-----
 
 **gmt convert** [ *table* ]
 [ |-A| ]
@@ -60,12 +57,10 @@ convert
 [ |SYN_OPT--| ]
 
 必选选项
---------
 
 .. include:: explain_intables.rst_
 
 可选选项
---------
 
 .. _-A:
 
@@ -225,7 +220,6 @@ convert
 .. include:: explain_precision.rst_
 
 示例
-----
 
 将二进制文件 :file:`test.b` （单精度）转换为 4 列的 ASCII 文件 ::
 
@@ -295,7 +289,6 @@ profile_005001.txt ... 等单独的文件中::
     gmt convert junk.txt -q~1000-2000 > good.txt
 
 相关模块
---------
 
 :doc:`info`,
 :doc:`select`

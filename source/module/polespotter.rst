@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-20
+
 .. index:: ! polespotter
 .. include:: common_SYN_OPTs.rst_
 
 polespotter
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-20
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/polespotter`  
 :简介: 找到给定断裂带和深渊山脉的阶段极点

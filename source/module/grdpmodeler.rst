@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-18
+
 .. index:: ! grdpmodeler
 .. include:: common_SYN_OPTs.rst_
 
 grdpmodeler
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-18
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/grdpmodeler`  
 :简介: 评估地理网格上的板块运动模型

@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-10-23
+
 .. index:: ! blockmode
 .. include:: common_SYN_OPTs.rst_
 
 blockmode
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-10-23
-
-----
 
 :官方文档: :doc:`gmt:blockmode`
 :简介: 使用众数估计对表数据做区块处理 

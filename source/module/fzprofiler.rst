@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-15
+
 .. index:: ! fzprofiler
 .. include:: common_SYN_OPTs.rst_
 
 fzprofiler
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-15
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzprofiler`
 :简介: 绘制断裂带交叉剖面图的 Bash 脚本
@@ -114,5 +112,3 @@ A., Whittaker, J. M., Myhill, R., Chandler, M. T.,
 2015, "Semiautomatic fracture zone tracking", 
 *Geochem. Geophys. Geosyst.*, 16 (7), 2462–2472.
 https://doi.org/10.1002/2015GC005853.
-
-

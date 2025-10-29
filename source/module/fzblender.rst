@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-12
+
 .. index:: ! fzblender
 .. include:: common_SYN_OPTs.rst_
 
 fzblender
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-12
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzblender`
 :简介: 生成平滑的加权混合 FZ 轨迹

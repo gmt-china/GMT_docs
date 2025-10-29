@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-20
+
 .. index:: ! gmt2kml
 .. include:: common_SYN_OPTs.rst_
 
 gmt2kml
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-20
-
-----
 
 :官方文档: :doc:`gmt:gmt2kml`  
 :简介: 将 GMT 数据表转换为 Google Earth KML 文件

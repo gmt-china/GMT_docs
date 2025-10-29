@@ -12,4 +12,3 @@ GMT 自身并没有绘制双 Y 轴图的功能，读者可以在相同位置绘�
 .. gmtplot:: ex005.sh
     :caption: 双 Y 轴图
     :width: 100%
-

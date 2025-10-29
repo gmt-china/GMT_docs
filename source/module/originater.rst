@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-16
+
 .. index:: ! originater
 .. include:: common_SYN_OPTs.rst_
 
 originater
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-16
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/originater`
 :简介: 将海山与最近的热点点源关联起来

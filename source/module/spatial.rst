@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! spatial
 .. include:: common_SYN_OPTs.rst_
 
 spatial
 ==========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:gmtspatial`
 :简介: 对点，线和多边形进行地理空间操作

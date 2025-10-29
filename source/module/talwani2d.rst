@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-02-21
+
 .. index:: ! talwani2d
 .. include:: common_SYN_OPTs.rst_
 
 talwani2d
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-02-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/talwani2d`
 :简介: 使用 Talwani 方法计算二维物体形成的位异常
@@ -171,4 +169,3 @@ two-dimensional bodies with application to the Mendocino submarine fracture zone
 :doc:`gravfft`,
 :doc:`gmtgravmag3d`,
 :doc:`grdgravmag3d`
-

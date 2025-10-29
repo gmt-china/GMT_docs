@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-13
+
 .. index:: ! fzinformer
 .. include:: common_SYN_OPTs.rst_
 
 fzinformer
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-13
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzinformer`
 :简介: 绘制与断裂带相关的统计信息的 Bash 脚本

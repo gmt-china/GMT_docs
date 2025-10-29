@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: !x2sys_solve
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_solve
 ===========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_solve`
 :简介: 使用最小二乘平差计算系统误差改正值，即交叉点平差

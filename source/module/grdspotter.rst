@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-19
+
 .. index:: ! grdspotter
 .. include:: common_SYN_OPTs.rst_
 
 grdspotter
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-19
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/grdspotter`  
 :简介: 从重力或地形网格创建 CVA 网格

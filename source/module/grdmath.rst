@@ -1,12 +1,10 @@
+:author: Caesar（自然资源部第一海洋研究所）, 周茂
+
 .. index:: ! grdmath
 .. include:: common_SYN_OPTs.rst_
 
 grdmath
 =======
-
-:贡献者: Caesar（自然资源部第一海洋研究所），|周茂|
-
-----
 
 :官方文档: :doc:`gmt:grdmath`
 :简介: 网格数据的逆波兰表示法（RPN）计算

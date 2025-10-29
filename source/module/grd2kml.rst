@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-20
+
 .. index:: ! grd2kml
 .. include:: common_SYN_OPTs.rst_
 
 grd2kml
 =======
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-20
-
-----
 
 :官方文档: :doc:`gmt:grd2kml`  
 :简介: 从单个网格创建 KML 分级切片图像

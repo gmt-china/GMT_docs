@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-21
+
 .. index:: ! barb
 .. include:: common_SYN_OPTs.rst_
 
 barb
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/windbarbs/barb`  
 :简介: 在 2D 和 3D 中绘制风羽
@@ -20,7 +18,6 @@ barb
 
 语法
 --------
-
 **barb** [ *table* ]
 |-J|\ *parameters* |-J|\ **z**\ \|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
@@ -49,7 +46,6 @@ barb
 
 必选选项
 ------------------
-
 .. _-J:
 
 .. include:: explain_-J.rst_
@@ -64,7 +60,6 @@ barb
 
 可选选项
 ------------------
-
 .. include:: explain_intables.rst_
 
 .. include:: explain_-B.rst_
@@ -151,7 +146,6 @@ barb
 
 示例
 --------
-
 .. include:: explain_example.rst_
 
 在三维空间 (0-10), (0-10), (0-100) 上绘制蓝色柱状图（宽度 = 1.25 cm），
@@ -163,7 +157,6 @@ barb
 
 段头解析
 --------
-
 段头记录可以包含以下一个或多个选项：
 
 **-G**\ *fill*
@@ -185,7 +178,6 @@ barb
 
 相关模块
 --------
-
 :doc:`colorbar`
 :doc:`grdbarb`, 
 :doc:`plot3d`

@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-06-21
+
 .. index:: ! mgd77header
 .. include:: common_SYN_OPTs.rst_
 
 mgd77header
 ===========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-06-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77header`
 :简介: 由 A77 文件创建 MGD77 头段记录

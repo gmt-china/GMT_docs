@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-17
+
 .. index:: ! grdhisteq
 .. include:: common_SYN_OPTs.rst_
 
 grdhisteq
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-17
-
-----
 
 :官方文档: :doc:`gmt:grdhisteq`
 :简介: 对网格做直方图均衡
@@ -124,4 +122,3 @@ grdhisteq
 :doc:`grdmath`, 
 :doc:`grdview`, 
 :doc:`makecpt`
-

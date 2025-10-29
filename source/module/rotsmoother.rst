@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-17
+
 .. index:: ! rotsmoother
 .. include:: common_SYN_OPTs.rst_
 
 rotsmoother
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-17
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/rotsmoother`
 :简介: 从有限旋转集中获取平均旋转和协方差矩阵
@@ -145,4 +143,3 @@ rotsmoother
 :doc:`hotspotter`,
 :doc:`originater`,
 :doc:`rotconverter`
-

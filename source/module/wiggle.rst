@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! wiggle
 .. include:: common_SYN_OPTs.rst_
 
 wiggle
 ======
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:wiggle`
 :简介: 绘制沿轨 z = f(x,y) 异常

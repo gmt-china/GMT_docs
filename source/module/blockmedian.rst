@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-10-23
+
 .. index:: ! block_median 
 .. include:: common_SYN_OPTs.rst_
 
 blockmedian
 ===========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-10-23
-
-----
 
 :官方文档: :doc:`gmt:blockmedian`
 :简介: 使用中值估计对表数据做区域处理 

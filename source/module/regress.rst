@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-10-23
+
 .. index:: ! regress
 .. include:: common_SYN_OPTs.rst_
 
 regress
 ==========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-10-23
-
-----
 
 :官方文档: :doc:`gmt:gmtregress`
 :简介: 一维数据线性回归

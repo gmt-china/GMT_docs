@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-11
+
 .. index:: ! fzanalyzer
 .. include:: common_SYN_OPTs.rst_
 
 fzanalyzer
 ==========
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-11
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzanalyzer`
 :简介: 使用交叉剖面分析断裂带

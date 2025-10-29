@@ -3,7 +3,6 @@
 
 .. index:: ! contour
 
-
 *********
 contour
 *********

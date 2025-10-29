@@ -1,13 +1,11 @@
+:author: 周茂, 田冬冬, 陈箫翰, `Liming Li <https://github.com/cugliming>`_
+:date: 2023-11-07
+
 .. index:: ! makecpt
 .. include:: common_SYN_OPTs.rst_
 
 makecpt
 =======
-
-:贡献者: |周茂|, |田冬冬|, |陈箫翰|, `Liming Li <https://github.com/cugliming>`_
-:最近更新日期: 2023-11-07
-
-----
 
 :官方文档: :doc:`gmt:makecpt`
 :简介: 制作 GMT CPT 文件

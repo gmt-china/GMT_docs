@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-15
+
 .. index:: ! grdbarb
 .. include:: common_SYN_OPTs.rst_
 
 grdbarb
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-15
-
-----
 
 :官方文档: :doc:`gmt:supplements/windbarbs/grdbarb`
 :简介: 从两个分量网格中绘制风羽场

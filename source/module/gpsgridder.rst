@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-02-07
+
 .. index:: ! gpsgridder
 .. include:: common_SYN_OPTs.rst_
 
 gpsgridder
 ==========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-02-07
-
-----
 
 :官方文档: :doc:`gmt:supplements/geodesy/gpsgridder`
 :简介: 使用格林函数内插 GPS 应变以分析弹性形变
@@ -213,4 +211,4 @@ Sandwell, D. T. and P. Wessel, 2016, Interpolation of 2-D Vector Data Using Cons
 
 :doc:`gmt:greenspline`
 :doc:`nearneighbor` 
-:doc:`surface` 
+:doc:`surface`

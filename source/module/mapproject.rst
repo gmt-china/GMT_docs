@@ -1,13 +1,11 @@
+:author: Liming Li, 周茂
+:date: 2022-12-05
+
 .. index:: ! mapproject
 .. include:: common_SYN_OPTs.rst_
 
 mapproject
 ==========
-
-:贡献者: `@cugliming <https://github.com/cugliming/>`_，|周茂|
-:最近更新日期: 2022-12-05
-
-----
 
 :官方文档: :doc:`gmt:mapproject`
 :简介: 地图投影的正反变换、数据转换以及大地测量计算

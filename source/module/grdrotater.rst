@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-18
+
 .. index:: ! grdrotater
 .. include:: common_SYN_OPTs.rst_
 
 grdrotater
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-18
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/grdrotater`  
 :简介: 地理网格的有限旋转重构

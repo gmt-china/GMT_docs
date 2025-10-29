@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-06-21
+
 .. index:: ! gravfft
 .. include:: common_SYN_OPTs.rst_
 
 gravfft
 =======
-
-:贡献者: |周茂|
-:最近更新日期: 2022-06-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/gravfft`
 :简介: 网格重力的谱计算，均衡，导纳，以及相干性计算

@@ -7,7 +7,6 @@
 movie
 =====
 
-
 :官方文档: :doc:`gmt:movie`
 :简介: 制作动画
 
@@ -711,4 +710,3 @@ Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024). The Generic Mapping Tools 
 :doc:`grdinterpolate`,
 :doc:`grdmath`,
 :doc:`events`
-

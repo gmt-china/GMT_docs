@@ -1,13 +1,11 @@
+:author: 田冬冬, 周茂
+:date: 2024-07-03
+
 .. index:: ! spectrum1d
 .. include:: common_SYN_OPTs.rst_
 
 spectrum1d
 ==========
-
-:贡献者: |田冬冬|，|周茂|
-:最近更新日期: 2024-07-03
-
-----
 
 :官方文档: :doc:`gmt:spectrum1d`
 :简介: 计算一个时间序列的自功率谱，或两个时间序列的互功率谱

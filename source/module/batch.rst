@@ -1,13 +1,11 @@
+:author: 何星辰, 周茂
+:date: 2025-10-21
+
 .. index:: ! batch
 .. include:: common_SYN_OPTs.rst_
     
 batch
 =====
-
-:贡献者: |何星辰|，|周茂|
-:最近更新日期: 2025-10-21
-
-----
 
 :官方文档: :doc:`gmt:batch`  
 :简介: 自动化批处理作业处理

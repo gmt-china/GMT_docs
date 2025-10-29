@@ -1,8 +1,8 @@
-# LaTeX 表达式
-
-:贡献者: {{ 周茂 }}
-
 ---
+author: 周茂
+---
+
+# LaTeX 表达式
 
 绘图过程中，用户可能会需要特殊字符标注或者显示公式。
 GMT 已经可以实现打印简单的{doc}`special-character`和{doc}`escape-character`，

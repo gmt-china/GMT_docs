@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-19
+
 .. index:: ! gmtpmodeler
 .. include:: common_SYN_OPTs.rst_
 
 pmodeler
-=============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-19
-
-----
+==============
 
 :官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler`  
 :简介: 评估特定位置的板块运动模型

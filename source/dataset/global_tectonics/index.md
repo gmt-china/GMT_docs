@@ -1,9 +1,9 @@
-# global_tectonics: 全球地质构造数据
-
-:撰写: {{ 陈箫翰 }}, {{ 田冬冬 }}
-:最近更新日期: 2025-07-30
-
 ---
+author: 陈箫翰, 田冬冬
+date: 2025-07-30
+---
+
+# global_tectonics: 全球地质构造数据
 
 global_tectonics 是一个全球地质构造数据集，提供 Shapefile、GMT、KML 格式数据的下载。
 
