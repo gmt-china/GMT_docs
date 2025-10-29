@@ -2,11 +2,10 @@
 :date: 2025-10-20
 
 .. index:: ! grd2kml
-.. include:: module_core_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 grd2kml
-=============
+=======
 
 :官方文档: :doc:`gmt:grd2kml`  
 :简介: 从单个网格创建 KML 分级切片图像
@@ -141,7 +140,7 @@ grd2kml
 .. include:: explain_distunits.rst_
 
 四叉树构建
---------
+----------
 
 输入网格必须在经纬度方向上具有相同间距。若不满足此条件，可使用 :doc:`grdsample` 预处理。
 我们通过 :doc:`grdcut` 扩展网格，使其形成可被连续二等分的正方形区域，

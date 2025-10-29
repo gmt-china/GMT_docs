@@ -142,7 +142,6 @@ grdbarb
 --------
 
 .. include:: explain_example.rst_
-.. include:: oneliner_info.rst_
 
 若要根据文件 `r.nc` 和 `theta.nc` 绘制风场图，使用 0.1 英寸长的风羽并将其居中于节点位置，命令如下::
 

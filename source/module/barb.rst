@@ -2,8 +2,6 @@
 :date: 2025-10-21
 
 .. index:: ! barb
-.. include:: module_core_purpose.rst_
-.. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 barb
@@ -149,8 +147,6 @@ barb
 示例
 --------
 .. include:: explain_example.rst_
-
-.. include:: oneliner_info.rst_
 
 在三维空间 (0-10), (0-10), (0-100) 上绘制蓝色柱状图（宽度 = 1.25 cm），
 位置由 heights.xyz 文件指定，每 2, 2, 10 设置刻度，从东南方向以 30° 仰角观察，可使用::
