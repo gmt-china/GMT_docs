@@ -2,7 +2,7 @@
 .. include:: common_SYN_OPTs.rst_
 
 grd2kml
-=============
+=======
 
 :贡献者: |何星辰|
 :最近更新日期: 2025-10-20
@@ -142,7 +142,7 @@ grd2kml
 .. include:: explain_distunits.rst_
 
 四叉树构建
---------
+----------
 
 输入网格必须在经纬度方向上具有相同间距。若不满足此条件，可使用 :doc:`grdsample` 预处理。
 我们通过 :doc:`grdcut` 扩展网格，使其形成可被连续二等分的正方形区域，
