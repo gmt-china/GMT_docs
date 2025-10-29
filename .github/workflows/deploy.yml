@@ -53,7 +53,9 @@ jobs:
       # 5. Deploy the PDF document and HTML zip
       #
       - name: Build HTML
-        run: make dirhtml
+        run: |
+          make dirhtml
+          cat sphinx_warnings.txt
 
       - name: Checkout the gh-pages branch
         uses: actions/checkout@v5
