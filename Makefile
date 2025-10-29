@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line
 SPHINXBUILD   = sphinx-build
-SPHINXOPTS    = -j auto -n
+SPHINXOPTS    = -j auto -n -w sphinx_warnings.txt
 SOURCEDIR     = source
 BUILDDIR      = build
 DOCNAME       = GMT_docs
