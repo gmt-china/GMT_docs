@@ -1,6 +1,4 @@
 .. index:: ! barb
-.. include:: module_core_purpose.rst_
-.. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 barb

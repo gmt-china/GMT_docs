@@ -1,5 +1,4 @@
 .. index:: ! polespotter
-.. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 polespotter

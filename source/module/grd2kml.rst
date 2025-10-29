@@ -1,5 +1,4 @@
 .. index:: ! grd2kml
-.. include:: module_core_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 grd2kml
