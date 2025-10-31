@@ -84,8 +84,6 @@ grdbarb
     追加 **m** 表示以弧分为单位，**s** 表示以弧秒为单位。
     或者使用 **-Ix** 指定倍率 *multx*\ [/*multy*] [默认绘制所有节点]。
 
-.. include:: explain_-K.rst_
-
 .. _-N:
 
 **-N**
