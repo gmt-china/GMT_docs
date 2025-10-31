@@ -24,7 +24,7 @@ GMT 也有多种不同的安装方式。用户可以根据需求选择适合的�
 :::
 
 :::{grid-item-card}  Linux (Fedora)
-- [使用 Fedora 官方源安装 GMT](fedora)
+- [使用 Fedora 官方源安装 GMT](fedora)
 - [使用 GMT 官方 RPM 仓库安装 GMT](fedora)
 - [使用 conda 安装 GMT](conda)
 - [编译 GMT 源码](build-source-unix)
