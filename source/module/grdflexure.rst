@@ -476,7 +476,7 @@ Wessel, P., 2016, Regional–residual separation of bathymetry and revised estim
 相关模块
 --------
 
-:doc:`gmtflexure`,
+:doc:`flexure`,
 :doc:`grdfft`,
 :doc:`gravfft`,
 :doc:`grdmath`,

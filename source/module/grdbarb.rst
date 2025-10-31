@@ -155,6 +155,6 @@ grdbarb
 相关模块
 --------
 
-:doc:`gmtcolors`,
+:doc:`colorbar`,
 :doc:`grdvector`, 
 :doc:`barb`

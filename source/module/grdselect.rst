@@ -190,7 +190,7 @@ grdselect
 相关模块
 --------
 
-:doc:`gmtselect`,
+:doc:`select`,
 :doc:`grd2xyz`,
 :doc:`grdedit`,
 :doc:`grdinfo`

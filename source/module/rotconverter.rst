@@ -154,7 +154,7 @@ GMT 发布了 EarthByte 旋转模型 Global\_EarthByte\_230-0Ma\_GK07\_AREPS.rot
 :doc:`backtracker`,
 :doc:`grdrotater`,
 :doc:`grdspotter`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`hotspotter`,

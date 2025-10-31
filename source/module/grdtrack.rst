@@ -308,7 +308,7 @@ grdtrack
 
 相关
 ----
-:doc:`gmtconvert`,
+:doc:`convert`,
 :doc:`text`,
 :doc:`sample1d`,
 :doc:`project`,

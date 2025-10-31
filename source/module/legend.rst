@@ -256,7 +256,7 @@ GMT中共有14种图例类型，列举如下：
 相关模块
 --------
 
-:doc:`gmtlogo`,
+:doc:`logo`,
 :doc:`basemap`,
 :doc:`text`,
 :doc:`plot`

@@ -1,7 +1,7 @@
 :author: 何星辰
 :date: 2025-10-19
 
-.. index:: ! gmtpmodeler
+.. index:: ! pmodeler
 .. include:: common_SYN_OPTs.rst_
 
 pmodeler
@@ -82,7 +82,7 @@ pmodeler
     此选项可用于生成某一时刻的模型快照。  
     若输入表中未包含年龄列，则必须使用此选项。
 
-.. include:: /explain_-V.rst_
+.. include:: explain_-V.rst_
 
 .. include:: explain_-bi.rst_
 

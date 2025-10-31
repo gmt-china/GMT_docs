@@ -165,8 +165,8 @@ polespotter
 :doc:`project`,
 :doc:`mapproject`,
 :doc:`backtracker`,
-:doc:`gmtpmodeler`,
-:doc:`gmtvector`,
+:doc:`pmodeler`,
+:doc:`vector`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`originater`

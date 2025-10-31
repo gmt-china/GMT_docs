@@ -88,7 +88,7 @@ kml2gmt
 相关模块
 --------
 
-:doc:`gmt:supplements/img/img2google`,
+:doc:`img2google`,
 :doc:`psconvert`,
-:doc:`gmt:gmt2kml`,
-:doc:`gmtspatial`
+:doc:`gmt2kml`,
+:doc:`spatial`

@@ -167,5 +167,5 @@ three-dimensional bodies of arbitrary shape, *Geophysics, 25*, 203-225.
 :doc:`talwani2d`,
 :doc:`grdmath`,
 :doc:`gravfft`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`
