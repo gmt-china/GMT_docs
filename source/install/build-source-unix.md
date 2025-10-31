@@ -15,7 +15,7 @@ GMT 的编译及运行依赖于其他软件。
 必须的依赖软件包括：
 
 - [CMake](https://cmake.org/)
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)
 - [curl](https://curl.haxx.se/)
 - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片
 - [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据

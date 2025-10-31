@@ -25,7 +25,7 @@ date: 2025-07-28
 
 GMT 的编译及运行依赖于其他库文件，包括：
 
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）[**必须**]
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/) [**必须**]
 - [curl](https://curl.haxx.se/)：下载网络数据 [**必须**]
 - [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**推荐**]
 - [PCRE](https://www.pcre.org/)：正则表达式支持 [**可选**]
