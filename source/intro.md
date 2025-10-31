@@ -22,10 +22,12 @@ GMT 是地球科学领域使用最广泛的制图软件之一，具有强大的�
 
 ## GMT 的历史
 
-- 1988 年，Paul Wessel 和 Walter H.F. Smith 开发了 GMT 的最原始版本 GMT 1.0
+- 1988 年，[Paul Wessel](https://en.wikipedia.org/wiki/P%C3%A5l_Wessel) 和 
+  [Walter H.F. Smith](https://en.wikipedia.org/wiki/Walter_H._F._Smith) 
+  开发了 GMT 的最原始版本 GMT 1.0
 - 1991 年 8 月 10 日，GMT2 发布
-- 1998 年 11 月 8 日，GMT3 发布
-- 2005 年 10 月 1 日，GMT4 发布
+- 1995 年 8 月 11 日，GMT3 发布
+- 2004 年 10 月 1 日，GMT4 发布
 - 2013 年 11 月 5 日，GMT5 发布
 - 2019 年 11 月 1 日，GMT6 发布（目前最新版本 GMT 6.6.0 发布于 2025 年 07 月 27 日）
 
