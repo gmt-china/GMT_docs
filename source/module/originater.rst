@@ -149,7 +149,7 @@ originater
 
 .. include:: explain_-Rgeo.rst_
 
-.. include:: explain_-geodetic.rst_
+.. include:: explain_geodetic.rst_
 
 示例
 --------
