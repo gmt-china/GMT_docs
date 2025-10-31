@@ -155,6 +155,5 @@ grdbarb
 相关模块
 --------
 
-:doc:`colorbar`,
 :doc:`grdvector`, 
 :doc:`barb`
