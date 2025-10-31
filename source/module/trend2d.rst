@@ -37,6 +37,6 @@ trend2d
 相关模块
 --------
 
-:doc:`gmtmath`,
+:doc:`math`,
 :doc:`grdtrend`,
 :doc:`trend1d`

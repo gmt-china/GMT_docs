@@ -186,7 +186,7 @@ GMT 内置 EarthByte 旋转模型 `Global_EarthByte_230-0Ma_GK07_AREPS.rot`。
 :doc:`project`,  
 :doc:`mapproject`,  
 :doc:`backtracker`,  
-:doc:`gmtpmodeler`,  
+:doc:`pmodeler`,  
 :doc:`grdpmodeler`,  
 :doc:`grdrotater`,  
 :doc:`hotspotter`

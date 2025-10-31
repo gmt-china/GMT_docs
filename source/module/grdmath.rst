@@ -811,7 +811,7 @@ Publishing Corp.
 相关模块
 --------
 
-:doc:`gmtmath`,
+:doc:`math`,
 :doc:`grd2xyz`,
 :doc:`grdedit`,
 :doc:`grdinfo`,

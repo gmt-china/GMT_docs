@@ -213,7 +213,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 --------
 
 :doc:`makecpt`,
-:doc:`gmtlogo`,
+:doc:`logo`,
 :doc:`grd2cpt`,
 :doc:`image`,
 :doc:`legend`

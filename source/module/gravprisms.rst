@@ -248,7 +248,7 @@ for the prism, *J. Geod., 74*, 552–560,
 :doc:`grdmath`,
 :doc:`gravfft`,
 :doc:`grdseamount`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`,
 :doc:`talwani3d`,
 :doc:`talwani2d`

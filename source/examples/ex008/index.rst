@@ -5,7 +5,7 @@
 绘制缓冲区
 ===========
 
-GMT 的 :doc:`/module/gmtspatial` 通过调用 `Geos 库 <https://libgeos.org/>`__ 可实现部分 GIS
+GMT 的 :doc:`/module/spatial` 通过调用 `Geos 库 <https://libgeos.org/>`__ 可实现部分 GIS
 分析功能，包括生成缓冲区。下面对笛卡尔坐标多边形/线数据生成缓冲区。
 
 .. gmtplot:: ex008.sh
