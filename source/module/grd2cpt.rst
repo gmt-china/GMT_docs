@@ -50,11 +50,11 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 前景色 (F，foreground color，表示高于最大z值时所对应的颜色)、
 以及NaN颜色 (N，表示z值被定义为NaN时对应的颜色，即z值未定义的情况)。
 默认情况下，这三种颜色会沿用 |-C| 选项所指定的主CPT文件的设置，但也可以使用 |-D| 选项进行修改。
-或者使用 :doc:`gmtset` 命令对 :term:`COLOR_BACKGROUND`\、
+或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。
 
 颜色模式 (RGB, HSV, CMYK) 会沿用 |-C| 选项所指定的主CPT文件的设置。
-或者使用 :doc:`gmtset` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
+或者使用 :doc:`set` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
 
 必选选项
 ------------------

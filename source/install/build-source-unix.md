@@ -14,8 +14,8 @@ GMT 的编译及运行依赖于其他软件。
 
 必须的依赖软件包括：
 
-- [CMake](https://cmake.org/)（>=2.8.12）
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）
+- [CMake](https://cmake.org/)
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)
 - [curl](https://curl.haxx.se/)
 - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片
 - [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据
@@ -206,16 +206,6 @@ $ cmake .. -G Ninja
 -- Configuring done
 -- Generating done
 ```
-
-:::{warning}
-Anaconda 用户请注意！由于 Anaconda 中也安装了 FFTW、GDAL、netCDF 等库文件，
-GMT 在配置过程中可能会找到 Anaconda 提供的库文件，进而导致配置、编译或执行
-过程中出错。
-
-解决办法是，在 Shell 配置文件（{file}`~/.bashrc` 或 {file}`~/.zshrc`）中
-将 Anaconda 相关的环境变量注释掉，以保证 GMT 在配置和编译过程中找到的不是
-Anaconda 提供的库文件。待 GMT 安装完成后，再将 Anaconda 相关环境变量改回即可。
-:::
 
 检查完毕后，开始编译和安装:
 

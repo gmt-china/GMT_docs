@@ -437,5 +437,5 @@ Pure Appl. Geophys., 157, 1097-1114,
 
 :doc:`grdmath`,
 :doc:`gravfft`,
-:doc:`gmtflexure`,
+:doc:`flexure`,
 :doc:`grdflexure`

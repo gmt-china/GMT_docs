@@ -131,7 +131,7 @@ image
 相关模块
 --------
 
-:doc:`gmtlogo`
+:doc:`logo`
 :doc:`legend`,
 :doc:`colorbar`
 :doc:`plot`,

@@ -77,19 +77,6 @@ myst_enable_extensions = [
     "substitution",
 ]
 
-myst_substitutions = {
-    "田冬冬": "[田冬冬](https://me.seisman.info/)",
-    "姚家园": "[姚家园](https://github.com/core-man)",
-    "陈箫翰": "[陈箫翰](https://github.com/CovMat)",
-    "刘珠妹": "[刘珠妹](https://github.com/liuzhumei)",
-    "徐弥坚": "[徐弥坚](https://xumijian.me/)",
-    "邓山泉": "[邓山泉](https://github.com/sqdeng/)",
-    "周茂": "[周茂](https://github.com/ZMAlt)",
-    "王亮": "[王亮](https://github.com/wangliang1989)",
-    "朱邓达": "[朱邓达](https://github.com/Dengda98)",
-    "何星辰": "[何星辰](https://github.com/Chuan1937)",
-}
-
 # Cross-refering other projects
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 intersphinx_mapping = {

@@ -164,7 +164,7 @@ GMT 附带了 EarthByte 旋转模型 `Global_EarthByte_230-0Ma_GK07_AREPS.rot`�
 
 :doc:`backtracker`,
 :doc:`grdcontour`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdmath`,
 :doc:`grdpmodeler`,
 :doc:`grdspotter`,

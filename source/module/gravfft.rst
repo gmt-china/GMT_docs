@@ -277,9 +277,9 @@ J. Geophys. Res., 106(B9), 19,431–19,441,
 --------
 
 :doc:`gmt:grdfft`,
-:doc:`gmtflexure`,
+:doc:`flexure`,
 :doc:`grdflexure`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`,
 :doc:`grdseamount`,
 :doc:`talwani2d`,

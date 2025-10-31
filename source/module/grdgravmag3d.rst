@@ -174,6 +174,6 @@ polyhedral bodies and translation into magnetic anomalies, *Geophysics*,
 相关模块
 --------
 
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`talwani3d`,
 :doc:`talwani2d`
