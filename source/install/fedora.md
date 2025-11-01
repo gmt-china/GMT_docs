@@ -1,6 +1,6 @@
 ---
 author: 田冬冬
-date: 2023-09-12
+date: 2025-11-01
 ---
 
 # Fedora 下安装 GMT
@@ -24,21 +24,16 @@ $ sudo dnf install GMT GMT-common GMT-dev GMT-doc
 $ sudo dnf install dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
 ```
 
-生成 PDF、JPG 等图片格式需要 Ghostscript [**必须**]:
+GMT的运行还依赖以下软件：
+
+- [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+- [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
+- [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
 ```
 $ sudo dnf install ghostscript
-```
-
-制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) [**可选**]:
-
-```
 $ sudo dnf install GraphicsMagick
-```
 
-制作 MP4、WebM 格式的动画需要 FFmpeg [**可选**]:
-
-```
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
 $ sudo dnf install ffmpeg
 ```
@@ -72,21 +67,18 @@ $ sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-hig
 
 3. 安装 GMT 相关工具以增强 GMT 功能
 
-   地理空间数据格式转换工具 [GDAL](https://gdal.org/) \[**必须**\]:
+   GMT 的运行还依赖以下软件：
+
+   - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+   - [GDAL](https://gdal.org/)：地理空间数据格式转换工具 [**非必须但建议安装**]
+   - [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
+   - [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
    ```
+   $ sudo dnf install ghostscript
    $ sudo dnf install gdal
-   ```
-
-   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) \[**可选**\]:
-
-   ```
    $ sudo dnf install GraphicsMagick
-   ```
 
-   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/) \[**可选**\]:
-
-   ```
    $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
    $ sudo dnf install ffmpeg
    ```
