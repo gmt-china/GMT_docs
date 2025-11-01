@@ -10,7 +10,7 @@
     - :doc:`gmt-config`
     - :doc:`gmtswitch`
 
-**GMT 模块（已翻译整理）**
+**GMT 模块**
 
 .. hlist::
     :columns: 4

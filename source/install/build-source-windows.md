@@ -27,7 +27,7 @@ GMT 的编译及运行依赖于其他库文件，包括：
 
 - [netCDF](https://www.unidata.ucar.edu/software/netcdf/) [**必须**]
 - [curl](https://curl.haxx.se/)：下载网络数据 [**必须**]
-- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**推荐**]
+- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**必须**]
 - [PCRE](https://www.pcre.org/)：正则表达式支持 [**可选**]
 - [FFTW](http://www.fftw.org/)：快速傅里叶变换库（>=3.3）[**可选**]
 - LAPACK：快速矩阵反演库 [**可选**]

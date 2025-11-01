@@ -32,8 +32,10 @@ GMT 的编译及运行依赖于其他软件。
 - [GraphicsMagick](http://www.graphicsmagick.org)：生成 GIF 格式的动画
 - [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画
 
-Fedora:
 
+::::{tab-set}
+
+:::{tab-item} Fedora
 ```
 # 安装必须软件包
 $ sudo dnf install gcc cmake ninja-build glibc netcdf-devel libcurl-devel gdal gdal-devel
@@ -43,9 +45,9 @@ $ sudo dnf install ghostscript xdg-utils
 $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
 $ sudo dnf install GraphicsMagick ffmpeg
 ```
+:::
 
-Ubuntu/Debian:
-
+:::{tab-item} Ubuntu/Debian
 ```
 # 更新软件包列表
 $ sudo apt update
@@ -56,12 +58,9 @@ $ sudo apt install ghostscript xdg-utils
 # 安装可选软件包
 $ sudo apt install graphicsmagick ffmpeg
 ```
+:::
 
-macOS 用户可以使用 [Homebrew](https://brew.sh) 安装依赖
-（未安装 Homebrew 的用户，可以参考
-《[macOS 配置指南](https://seismo-learn.org/seismology101/computer/macos-setup/#homebrew)》
-了解如何安装与使用）:
-
+:::{tab-item} macOS
 ```
 # 安装必须软件包
 $ brew install cmake ninja curl netcdf
@@ -69,6 +68,8 @@ $ brew install ghostscript gdal geos pcre2 glib fftw
 # 安装可选软件包
 $ brew install graphicsmagick ffmpeg
 ```
+:::
+::::
 
 ## 下载源码及数据
 
