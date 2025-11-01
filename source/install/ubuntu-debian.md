@@ -1,6 +1,6 @@
 ---
 author: 田冬冬, 陈箫翰
-date: 2025-09-12
+date: 2025-11-01
 ---
 
 # Ubuntu/Debian 下安装 GMT
@@ -14,7 +14,7 @@ $ apt-cache madison gmt
 
 用户如果想使用最新版本的 GMT ，可以选择其他安装方式：
 1. {doc}`conda` [**推荐**]
-2. {doc}`build-source-unix` 
+2. {doc}`build-source-unix`
 
 下面是使用 Ubuntu/Debian 官方源安装 GMT 的步骤：
 
@@ -30,34 +30,20 @@ $ apt-cache madison gmt
    $ sudo apt install gmt gmt-dcw gmt-gshhg
    ```
 
-3. 安装 GMT 相关工具
+3. 安装 GMT 依赖的其它软件
 
-   生成 PDF、JPG 等图片格式需要 [Ghostscript](https://www.ghostscript.com/) [**必须**]:
+   GMT 的运行还依赖以下软件：
 
-   ```
-   $ sudo apt install ghostscript
-   ```
-
-   自动打开生成的图片需要 `xdg-utils`:
+   - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+   - [GDAL](https://gdal.org/)：地理空间数据格式转换工具 [**必须**]
+   - `xgd-utils`：自动打开生成的图片需要 [**非必须但建议安装**]
+   - [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
+   - [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
    ```
    $ sudo apt install xdg-utils
-   ```
-
-   地理空间数据格式转换工具 [GDAL](https://gdal.org/) [**必须**]:
-
-   ```
    $ sudo apt install gdal-bin
-   ```
-
-   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) [**可选**]:
-
-   ```
+   $ sudo apt install ghostscript
    $ sudo apt install graphicsmagick
-   ```
-
-   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/) [**可选**]:
-
-   ```
    $ sudo apt install ffmpeg
    ```

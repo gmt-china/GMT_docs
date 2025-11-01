@@ -1,6 +1,6 @@
 ---
 author: 田冬冬, 姚家园, 陈箫翰
-date: 2025-07-28
+date: 2025-11-01
 ---
 
 # 使用 conda 安装 GMT
@@ -31,15 +31,17 @@ date: 2025-07-28
    $ conda install gmt -c conda-forge/label/dev
    ```
 
-   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/) [**可选**]:
+2. 安装 GMT 依赖的其它软件
 
+   GMT的运行还依赖以下软件：
+
+   - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+   - [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
+   - [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
+
+   安装 GMT 时已自动安装 Ghostscript。使用如下命令可安装其他依赖：
    ```
    $ conda install graphicsmagick
-   ```
-
-   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/) [**可选**]:
-
-   ```
    $ conda install ffmpeg
    ```
 
