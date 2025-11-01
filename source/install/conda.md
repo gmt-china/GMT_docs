@@ -7,9 +7,9 @@ date: 2025-11-01
 
 [conda](https://docs.conda.io/en/latest/) 是一个跨平台的包管理管理工具，其可以用于安装 GMT。
 
-`conda` 一般无法直接安装。Mambaforge 是一个轻量级的 Python 发行版，其内置了 `conda` 包管理器。
-因而可以通过安装 Mambaforge 来安装 `conda`。
-用户可以参考《[conda 教程](https://seismo-learn.org/software/conda/)》安装 Mambaforge 并学习
+`conda` 一般无法直接安装。Miniforge 是一个轻量级的 Python 发行版，其内置了 `conda` 包管理器。
+因而可以通过安装 Miniforge 来安装 `conda`。
+用户可以参考《[conda 教程](https://seismo-learn.org/software/conda/)》安装 Miniforge 并学习
 使用 `conda` 的基本功能。
 
 1. 安装 GMT
