@@ -12,31 +12,48 @@ Fedora 官方源提供了 GMT 二进制包，可直接使用 `dnf` 安装，但�
 
 ## 使用 Fedora 官方源安装 GMT
 
-安装 GMT:
+1. 安装 GMT 及 GMT 内置数据包
 
-```
-$ sudo dnf install GMT GMT-common GMT-dev GMT-doc
-```
+   ```
+   $ sudo dnf install GMT GMT-dev GMT-doc
+   $ sudo dnf install dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+   ```
 
-安装 GMT 所需的 GSHHG 和 DCW 数据:
+2. 安装 GMT 依赖的其它软件
 
-```
-$ sudo dnf install dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
-```
+   GMT的运行还依赖以下软件：
 
-GMT的运行还依赖以下软件：
+   - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+   - [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
+   - [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
-- [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
-- [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
-- [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
+   ```
+   $ sudo dnf install ghostscript
+   $ sudo dnf install GraphicsMagick
 
-```
-$ sudo dnf install ghostscript
-$ sudo dnf install GraphicsMagick
+   $ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
+   $ sudo dnf install ffmpeg
+   ```
 
-$ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-`rpm -E %fedora`.noarch.rpm
-$ sudo dnf install ffmpeg
-```
+3. 测试安装。打开终端，键入如下命令。若正确显示 GMT 版本号，则表示安装成功：
+
+   ```
+   $ gmt --version
+   6.6.0
+   ```
+
+4. GMT 新版本发布后，若需要升级到新版本，可以执行如下命令：
+
+   ```
+   $ sudo dnf upgrade GMT GMT-dev GMT-doc
+   ```
+
+5. 若需要卸载 GMT，可以执行如下命令：
+
+   ```
+   $ sudo dnf remove GMT GMT-dev GMT-doc
+   $ sudo dnf remove dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+   ```
 
 ## 使用 GMT 官方 RPM 仓库安装 GMT
 
@@ -53,13 +70,13 @@ $ sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-hig
 ```
 :::
 
-1. 启用 GMT 官方 RPM 仓库:
+1. 启用 GMT 官方 RPM 仓库：
 
    ```
    $ sudo dnf copr enable genericmappingtools/gmt
    ```
 
-2. 安装最新版 GMT:
+2. 安装最新版 GMT：
 
    ```
    $ sudo dnf install gmt
@@ -83,13 +100,13 @@ $ sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-hig
    $ sudo dnf install ffmpeg
    ```
 
-4. GMT 新版本发布后，执行如下命令升级 GMT:
+4. GMT 新版本发布后，若需要升级到新版本，可以执行如下命令：
 
    ```
-   $ sudo dnf update gmt
+   $ sudo dnf upgrade gmt
    ```
 
-5. 可以执行如下命令卸载 GMT:
+5. 若需要卸载 GMT，可以执行如下命令：
 
    ```
    $ sudo dnf remove gmt dcw-gmt gshhg-gmt

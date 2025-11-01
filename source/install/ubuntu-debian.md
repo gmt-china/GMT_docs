@@ -18,19 +18,14 @@ $ apt-cache madison gmt
 
 下面是使用 Ubuntu/Debian 官方源安装 GMT 的步骤：
 
-1. 更新软件包列表:
+1. 安装 GMT 及 GMT 内置数据包
 
    ```
    $ sudo apt update
-   ```
-
-2. 安装 GMT:
-
-   ```
    $ sudo apt install gmt gmt-dcw gmt-gshhg
    ```
 
-3. 安装 GMT 依赖的其它软件
+2. 安装 GMT 依赖的其它软件
 
    GMT 的运行还依赖以下软件：
 
@@ -46,4 +41,23 @@ $ apt-cache madison gmt
    $ sudo apt install ghostscript
    $ sudo apt install graphicsmagick
    $ sudo apt install ffmpeg
+   ```
+
+3. 测试安装。打开终端，键入如下命令。若正确显示 GMT 版本号，则表示安装成功：
+
+   ```
+   $ gmt --version
+   6.6.0
+   ```
+
+4. GMT 新版本发布后，若需要升级到新版本，可以执行如下命令：
+
+   ```
+   $ sudo apt upgrade gmt
+   ```
+
+5. 若需要卸载 GMT，可以执行如下命令：
+
+   ```
+   $ sudo apt remove gmt gmt-dcw gmt-gshhg
    ```
