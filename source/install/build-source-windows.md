@@ -53,7 +53,7 @@ $ .\bootstrap-vcpkg.bat
 先打开一个 CMD 窗口，执行如下命令:
 
 ```
-$ vcpkg install netcdf-c gdal[core,tools,geos,netcdf] pcre2 fftw3[core,threads] clapack openblas --triplet x64-windows
+$ vcpkg install --recurse netcdf-c gdal[core,tools,geos,netcdf,png,openjpeg,jpeg,gif] pcre2 fftw3[core,threads] clapack openblas --triplet x64-windows
 $ vcpkg integrate install
 ```
 
