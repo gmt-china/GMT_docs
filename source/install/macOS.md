@@ -3,15 +3,7 @@ author: 田冬冬, 姚家园
 date: 2025-11-01
 ---
 
-# macOS 下安装 GMT
-
-macOS 下安装 GMT 有多种方式：
-
-1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
-2. {doc}`conda`
-
-(macos-homebrew)=
-## 使用 Homebrew 安装
+# macOS 下使用 Homebrew 安装 GMT
 
 [Homebrew](https://brew.sh/) 是 macOS 下的第三方软件包管理工具。
 未安装 Homebrew 的用户，可以参考

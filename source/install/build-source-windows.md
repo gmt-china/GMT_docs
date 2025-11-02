@@ -1,8 +1,6 @@
 ---
-author: 田冬冬
-reviewer: 刘珠妹
+author: 田冬冬, 刘珠妹
 date: 2025-07-28
-
 ---
 
 # Windows 下编译 GMT 源码
