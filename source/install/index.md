@@ -9,29 +9,32 @@ GMT 也有多种不同的安装方式，但基本可以分为三种：
 
 用户可以结合自身需求选择合适的安装方式。
 
-**Windows**
+::::{grid} 4
 
+:::{grid-item-card} Windows
 - [使用官方安装包](windows)
 - [使用 conda 安装](conda)
 - [编译源码](build-source-windows)
+:::
 
-**macOS**
-
+:::{grid-item-card} macOS
 - [使用 Homebrew 安装](macOS)
 - [使用 conda 安装](conda)
 - [编译源码](build-source-unix)
+:::
 
-**Linux (Ubuntu/Debian)**
-
+:::{grid-item-card} Linux (Ubuntu/Debian)
 - [使用 apt 安装](ubuntu-debian)
 - [使用 conda 安装](conda)
 - [编译源码](build-source-unix)
+:::
 
-**Linux (Fedora)**
-
+:::{grid-item-card} Linux (Fedora)
 - [使用 dnf 安装](fedora)
 - [使用 conda 安装](conda)
 - [编译源码](build-source-unix)
+:::
+::::
 
 ```{toctree}
 :maxdepth: 1
