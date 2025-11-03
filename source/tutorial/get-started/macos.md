@@ -66,7 +66,7 @@ gmt --new-script > myplot.sh
 
 :::{note}
 本手册中所有示例均使用 Bash 脚本，要求读者对 Bash 脚本及 Unix 命令行有最基本的了解。
-不了解的用户请阅读网络上 Bash 相关教程，或本手册中 {doc}`/tutorial/scripting/index` 一节。
+不了解的用户请阅读网络上 Bash 相关教程。
 :::
 
 ## 查看并编辑脚本文件

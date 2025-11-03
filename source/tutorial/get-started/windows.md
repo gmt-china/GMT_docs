@@ -69,13 +69,44 @@ gmt --new-script > myplot.bat
 Batch 是 Windows 自带的脚本语言，但本教程中所有示例均使用 Unix 下常用的 Bash 脚本。
 因而 Windows 用户有两种选择：
 
-1. 安装 [Git for Windows](https://git-scm.com/download/win) 并使用其提供的
-   Bash，本手册中的所有命令都将可以直接使用。要求读者对 Bash 脚本及 Unix 命令行有最基本的了解。
-   不了解的用户请阅读网络上 Bash 相关教程，或本手册中 {doc}`/tutorial/scripting/index` 一节。
+1. 安装 [Git for Windows](https://git-scm.com/download/win) 并使用其提供的 Bash，
+   本手册中的所有命令都将可以直接使用。要求读者对 Bash 脚本及 Unix 命令行有最基本的了解。
+   不了解的用户请阅读网络上 Bash 相关教程。[**推荐**]
 2. 继续使用 Windows 的 Batch 脚本。要求读者对 Batch 脚本和 Bash 脚本均有所了解，并
    知道二者用法的差异，以便于将手册中的 Bash 脚本转换为 Batch 脚本。
-   不了解的用户请阅读网络上 Bash 和 Batch 相关教程，或本手册中
-   {doc}`/tutorial/scripting/index` 一节。
+   不了解的用户请阅读网络上 Bash 和 Batch 相关教程。
+
+将 Bash 脚本转换为 Batch 脚本，需要注意如下几点：
+
+- 注释符号： `#` 改成 `REM`
+- 定义变量的方式： `var=value` 改成 `set var=value`
+- 引用变量的方式： `$region` 改成 `%region%`
+- 删除文件的命令： `rm` 改成 `del`
+- Bash 中可以使用倒引号 `` var=`cmd1` `` 将命令 cmd1 的输出作为变量 `var` 的值。
+  Batch 不支持这一语法，需要使用下面的命令实现类似功能:
+  ```
+  cmd1 > tmp.dat
+  set /p var=<tmp.dat
+  ```
+
+- Bash 中可以使用 `EOF` 将多行数据传递给一个命令。例如:
+
+  ```
+  gmt plot << EOF
+  1 2
+  3 4
+  5 6
+  EOF
+  ```
+
+  Batch 不支持这一语法，只能多次使用 `echo` 命令将数据输出到同一文件中，再将文件传递给命令使用:
+
+  ```
+  echo 1 2 >  tmp.dat
+  echo 3 4 >> tmp.dat
+  echo 5 6 >> tmp.dat
+  gmt plot tmp.dat
+  ```
 :::
 
 ## 查看并编辑脚本文件
