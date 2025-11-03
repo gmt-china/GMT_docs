@@ -134,7 +134,7 @@ rotconverter
 假设对称扩张，请尝试::
 
     gmt rotconverter PL1-PL2.RPM -M -Fs > PL1-PL2_half.RPM
-gmt rotconverter - PL1-PL2.RPM -M -Fs > PL2-PL1_half.RPM
+    gmt rotconverter - PL1-PL2.RPM -M -Fs > PL2-PL1_half.RPM
 
 要基于 GPlates 旋转数据库，使用板块环路 India-Central Indian Basin-Antarctica-Africa，
 计算印度相对于固定非洲的旋转，请尝试::
