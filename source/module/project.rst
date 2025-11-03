@@ -1,4 +1,5 @@
 .. index:: ! project
+.. include:: common_SYN_OPTs.rst_
 
 project
 =======
