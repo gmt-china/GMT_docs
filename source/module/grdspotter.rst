@@ -129,7 +129,7 @@ grdspotter
 **-Z**\ *z_min*\ [/*z_max*\ [/*z_inc*]]
     忽略 z 值低于 *z_min* [0] 且可选高于 *z_max* [无穷大] 的节点。
     给出 *z_min/z_max/z_inc* 可为每个 *z* 切片生成单独的
-     CVA 网格 [默认生成一个 CVA 网格]。多切片模式不能与 |-M| 一起使用。
+    CVA 网格 [默认生成一个 CVA 网格]。多切片模式不能与 |-M| 一起使用。
 
 .. include:: explain_nodereg.rst_
 
