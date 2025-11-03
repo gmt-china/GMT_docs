@@ -54,8 +54,6 @@ xyz2grd
 **-G**\ *grdfile*
     生成的网格文件名
 
-.. _-I:
-
 .. include:: explain_-I.rst_
 
 .. include:: explain_-R.rst_

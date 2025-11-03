@@ -46,13 +46,10 @@ barb
 
 必选选项
 ------------------
-.. _-J:
 
 .. include:: explain_-J.rst_
 
 .. include:: explain_-Jz.rst_
-
-.. _-R:
 
 .. include:: explain_-Rgeo.rst_
 

@@ -49,15 +49,9 @@ hotspotter
 
 .. include:: explain_rots.rst_
 
-.. _-G:
-
 .. include:: explain_grd_out.rst_
 
-.. _-I:
-
 .. include:: explain_-I.rst_
-
-.. _-R:
 
 .. include:: explain_-Rgeo.rst_
 

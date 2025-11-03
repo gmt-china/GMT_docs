@@ -70,11 +70,7 @@ polespotter
 **-F**\ *fracturezones*
     含有多个断裂带线段的文件。这些线被认为反映了海底形成时围绕旋转极点的小圆。
 
-.. _-G:
-
 .. include:: explain_grd_out.rst_
-
-.. _-I:
 
 .. include:: explain_-I.rst_
 
@@ -82,8 +78,6 @@ polespotter
 
 **-N**
     归一化网格，使最大值等于 1 [默认不归一化]。
-
-.. _-R:
 
 .. include:: explain_-Rgeo.rst_
 

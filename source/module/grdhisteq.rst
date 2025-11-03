@@ -62,8 +62,6 @@ grdhisteq
 **-D** [*file*]
     将层级信息输出到 *file*，若未指定文件则输出到标准输出。
 
-.. _-G:
-
 .. include:: explain_grd_out.rst_
 
 .. _-N:
