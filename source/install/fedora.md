@@ -3,7 +3,7 @@ author: 田冬冬
 date: 2025-11-01
 ---
 
-# Fedora 下安装 GMT
+# Fedora 下使用 dnf 安装 GMT
 
 Fedora 官方源提供了 GMT 二进制包，可直接使用 `dnf` 安装，但官方源提供的可能不是 GMT
 最新版本。为解决此问题，GMT 官方制作了一个 RPM 仓库，可用于安装 GMT 最新版本。

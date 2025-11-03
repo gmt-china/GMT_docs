@@ -3,7 +3,7 @@ author: 田冬冬, 陈箫翰, 姚家园, 周茂
 date: 2025-07-28
 ---
 
-# Windows 下安装 GMT
+# Windows 下使用安装包安装 GMT
 
 GMT 为 Windows 用户提供了安装包，可以直接下载安装使用。
 
