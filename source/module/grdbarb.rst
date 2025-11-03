@@ -103,7 +103,7 @@ grdbarb
     - **+s** - 设置长羽对应的风速 [默认 5]。
     - **+w** - 设置风羽的宽度。
 
-
+.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
 .. include:: explain_-Rgeo.rst_
 
 .. _-T:

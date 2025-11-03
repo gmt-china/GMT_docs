@@ -147,8 +147,6 @@ originater
 
 .. include:: explain_help.rst_
 
-.. include:: explain_-Rgeo.rst_
-
 .. include:: explain_geodetic.rst_
 
 示例
