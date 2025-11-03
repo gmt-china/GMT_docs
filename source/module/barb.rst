@@ -51,6 +51,7 @@ barb
 
 .. include:: explain_-Jz.rst_
 
+.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
 .. include:: explain_-Rgeo.rst_
 
 .. include:: explain_-Rz.rst_

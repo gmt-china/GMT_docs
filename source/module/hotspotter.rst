@@ -53,6 +53,7 @@ hotspotter
 
 .. include:: explain_-I.rst_
 
+.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
 可选选项
