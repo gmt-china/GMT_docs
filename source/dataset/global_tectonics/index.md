@@ -13,10 +13,10 @@ global_tectonics 是一个全球地质构造数据集，提供 Shapefile、GMT�
 
 global_tectonics 数据集中提供了四个数据文件：
 
-- `boundaries.gmt` : [板块边界数据](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt)
-- `plates.gmt` : [板块数据](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt)
-- `global_gprv.gmt` : [地质块体数据](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt)
-- `oc_boundaries.gmt` : [海陆边界线](https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt)
+- 板块边界数据 : {download}`boundaries.gmt <https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt>`
+- 板块数据 : {download}`plates.gmt <https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt>`
+- 地质块体数据 : {download}`global_gprv.gmt <https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt>`
+- 海陆边界线 : {download}`oc_boundaries.gmt <https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt>`
 
 更详细的数据说明请阅读数据的参考文献。
 
