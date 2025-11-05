@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-06-21
+
 .. index:: ! mgd77list
 .. include:: common_SYN_OPTs.rst_
 
 mgd77list
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-06-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77list`
 :简介: 从 MGD77 文件中提取数据

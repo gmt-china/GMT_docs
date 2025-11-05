@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-07-02
+
 .. index:: ! grdgdal
 .. include:: common_SYN_OPTs.rst_
 
 grdgdal
 =======
-
-:贡献者: |周茂|
-:最近更新日期: 2022-07-02
-
-----
 
 :官方文档: :doc:`gmt:grdgdal`
 :简介: 从 gmt 执行 GDAL 光栅相关的程序

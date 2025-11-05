@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-10-23
+
 .. index:: ! blockmean
 .. include:: common_SYN_OPTs.rst_
 
 blockmean
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-10-23
-
-----
 
 :官方文档: :doc:`gmt:blockmean`
 :简介: 使用均值估计对表数据做区块平均 

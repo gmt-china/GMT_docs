@@ -1,14 +1,11 @@
+:author: 何星辰
+:date: 2025-10-20
+
 .. index:: ! hotspotter
-.. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 hotspotter
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-20
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/hotspotter`  
 :简介: 从海山位置创建 CVA 网格
@@ -52,16 +49,11 @@ hotspotter
 
 .. include:: explain_rots.rst_
 
-.. _-G:
-
 .. include:: explain_grd_out.rst_
-
-.. _-I:
 
 .. include:: explain_-I.rst_
 
-.. _-R:
-
+.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
 可选选项
@@ -138,7 +130,7 @@ GMT 随附地球字节旋转模型 **Global_EarthByte_230-0Ma_GK07_AREPS.rot**�
 :doc:`project`,
 :doc:`mapproject`,
 :doc:`backtracker`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`originater`

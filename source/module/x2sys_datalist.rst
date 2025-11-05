@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: !x2sys_datalist
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_datalist
 ==============
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_datalist`
 :简介: 提取轨迹观测数据

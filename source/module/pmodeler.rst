@@ -1,14 +1,11 @@
-.. index:: ! gmtpmodeler
-.. include:: module_supplements_purpose.rst_
+:author: 何星辰
+:date: 2025-10-19
+
+.. index:: ! pmodeler
 .. include:: common_SYN_OPTs.rst_
 
 pmodeler
-=============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-19
-
-----
+==============
 
 :官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler`  
 :简介: 评估特定位置的板块运动模型
@@ -85,7 +82,7 @@ pmodeler
     此选项可用于生成某一时刻的模型快照。  
     若输入表中未包含年龄列，则必须使用此选项。
 
-.. include:: /explain_-V.rst_
+.. include:: explain_-V.rst_
 
 .. include:: explain_-bi.rst_
 

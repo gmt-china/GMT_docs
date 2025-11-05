@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: !x2sys_report
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_report
 ============
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_report`
 :简介: 对交叉点信息进行统计

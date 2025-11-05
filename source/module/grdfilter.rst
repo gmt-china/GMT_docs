@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-07-18
+
 .. index:: ! grdfilter
 .. include:: common_SYN_OPTs.rst_
 
 grdfilter
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-07-18
-
-----
 
 :官方文档: :doc:`gmt:grdfilter`
 :简介: 在空间（或时间）域中对网格滤波

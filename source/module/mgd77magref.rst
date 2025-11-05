@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-06-21
+
 .. index:: ! mgd77magref
 .. include:: common_SYN_OPTs.rst_
 
 mgd77magref
 ===========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-06-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77magref`
 :简介: 计算 IGRF 或 CM4 地磁参考场模型值

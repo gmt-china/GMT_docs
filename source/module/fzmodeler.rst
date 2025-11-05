@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-13
+
 .. index:: ! fzmodeler
 .. include:: common_SYN_OPTs.rst_
 
 fzmodeler
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-13
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzmodeler`
 :简介: 构建断裂带交叉剖面模型的 Bash 脚本

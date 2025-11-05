@@ -1,11 +1,9 @@
+:author: 周茂
+
 .. index:: ! gmtswitch
 
 gmtswitch
 ==========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:gmtswitch`
 :说明: 在不同的 GMT 版本之间切换
@@ -130,4 +128,3 @@ https://www.softpedia.com/get/Tweak/Registry-Tweak/EditPath.shtml
     gmtswitch g4_32 2
 
 不指定任何参数，可以查看帮助手册。
-

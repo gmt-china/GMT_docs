@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-02-21
+
 .. index:: ! talwani2d
 .. include:: common_SYN_OPTs.rst_
 
 talwani2d
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-02-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/talwani2d`
 :简介: 使用 Talwani 方法计算二维物体形成的位异常
@@ -144,7 +142,7 @@ talwani2d
 The 2-D geoid anomaly is a logarithmic potential and thus has no natural reference
 level. We simply remove the most negative (if density contrast is positive) or
 positive (if density contrast is negative) computed value from all values, rendering
-the entire anomaly positive (or negative). You can use :doc:`gmtmath` to change the
+the entire anomaly positive (or negative). You can use :doc:`math` to change the
 zero level to suit your needs
 
 参考文献
@@ -169,6 +167,5 @@ two-dimensional bodies with application to the Mendocino submarine fracture zone
 
 :doc:`talwani3d`,
 :doc:`gravfft`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`
-

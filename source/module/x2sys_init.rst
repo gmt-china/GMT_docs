@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! x2sys_init
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_init
 ==========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_init`
 :简介: 初始化 x2sys 数据库

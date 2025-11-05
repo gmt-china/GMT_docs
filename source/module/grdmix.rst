@@ -1,14 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-20
+
 .. index:: ! grdmix
-.. include:: module_core_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 grdmix
 =============
-
-:贡献者: |何星辰|，|田冬冬|
-:最近更新日期: 2025-10-20
-
-----
 
 :官方文档: :doc:`gmt:grdmix`  
 :简介: 混合和变换网格和图像

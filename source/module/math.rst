@@ -1,10 +1,10 @@
+:author: 周茂
+
 .. index:: ! math
 .. include:: common_SYN_OPTs.rst_
 
 math
 =======
-
-:贡献者: |周茂|
 
 :官方文档: :doc:`gmt:gmtmath`
 :简介: 表数据的逆波兰表示法（RPN）计算

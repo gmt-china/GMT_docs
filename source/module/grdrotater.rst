@@ -1,14 +1,11 @@
+:author: 何星辰
+:date: 2025-10-18
+
 .. index:: ! grdrotater
-.. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 grdrotater
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-18
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/grdrotater`  
 :简介: 地理网格的有限旋转重构
@@ -81,6 +78,7 @@ grdrotater
 **-N**
     不输出旋转后的多边形轮廓线 [默认将其写入标准输出，或通过 |-D| 写入文件]。
 
+.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
 .. _-S:
@@ -167,7 +165,7 @@ GMT 附带了 EarthByte 旋转模型 `Global_EarthByte_230-0Ma_GK07_AREPS.rot`�
 
 :doc:`backtracker`,
 :doc:`grdcontour`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdmath`,
 :doc:`grdpmodeler`,
 :doc:`grdspotter`,

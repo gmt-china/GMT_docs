@@ -1,6 +1,7 @@
 :author: 朱邓达
-:reviewer: 周茂
 :date: 2025-07-15
+
+:reviewer: 周茂
 
 .. index:: ! greenspline
 .. include:: common_SYN_OPTs.rst_
@@ -322,7 +323,7 @@ greenspline
 1-D 示例
 ------------
 
-使用 :doc:`gmtmath` 生成的高斯随机数据 (*x*, *y*)，保存在 *1D.txt* ，
+使用 :doc:`math` 生成的高斯随机数据 (*x*, *y*)，保存在 *1D.txt* ，
 重采样到 0 到 10 之间，步长 0.1，使用最小曲率样条插值::
 
     gmt begin 1D
@@ -406,7 +407,7 @@ greenspline
    对数据进行预处理，以避免混叠，并且还可以控制 *n* 的大小。
    具体来说，如果 *n* = 1024，则仅需要 8 Mb 的内存，但当 *n* = 10240 时，则需要 800 Mb 的内存。
    请注意，**greenspline** 完全支持 64 位标准（如果按此编译的话）。
-   对于球面数据，用户可以考虑使用 :doc:`gmtspatial` 最近邻来降采样。
+   对于球面数据，用户可以考虑使用 :doc:`spatial` 最近邻来降采样。
 
 #. 当数据点之间的距离与数据的整体范围相比非常接近时，系数的求逆运算可能会出现数值不稳定的情况。
    为解决此问题，用户可以对数据进行预处理，例如通过对相邻的密集数据点进行平均处理。
@@ -470,7 +471,7 @@ Wessel, P., 2009, A general-purpose Green's function interpolator,
 相关模块
 -------------
 
-:doc:`gmtmath`,
+:doc:`math`,
 :doc:`nearneighbor`,
 :doc:`plot`,
 :doc:`sample1d`,

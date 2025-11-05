@@ -1,10 +1,11 @@
+:author: 周茂
+
 .. index:: !grdselect
 .. include:: common_SYN_OPTs.rst_
 
 grdselect
 =========
 
-:贡献者: |周茂|
 :最近更新时间: 2022-12-11
 
 ----
@@ -189,7 +190,7 @@ grdselect
 相关模块
 --------
 
-:doc:`gmtselect`,
+:doc:`select`,
 :doc:`grd2xyz`,
 :doc:`grdedit`,
 :doc:`grdinfo`

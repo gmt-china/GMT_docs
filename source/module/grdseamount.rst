@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-06-07
+
 .. index:: ! grdseamount
 .. include:: common_SYN_OPTs.rst_
 
 grdseamount
 ===========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-06-07
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/grdseamount`
 :简介: 创建合成海山（包括高斯、抛物线、多项式、圆锥、圆盘形状的圆形或椭圆型海山）
@@ -439,5 +437,5 @@ Pure Appl. Geophys., 157, 1097-1114,
 
 :doc:`grdmath`,
 :doc:`gravfft`,
-:doc:`gmtflexure`,
+:doc:`flexure`,
 :doc:`grdflexure`

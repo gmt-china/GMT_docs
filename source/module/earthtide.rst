@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-10-14
+
 .. index:: ! earthtide
 .. include:: common_SYN_OPTs.rst_
 
 earthtide
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-10-14
-
-----
 
 :官方文档: :doc:`gmt:supplements/geodesy/earthtide`
 :简介: 计算固体地球潮汐网格或者时间序列

@@ -1,14 +1,11 @@
+:author: 何星辰
+:date: 2025-10-19
+
 .. index:: ! rotconverter
-.. include:: module_supplements_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 rotconverter
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-19
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/rotconverter`  
 :简介: 操纵总重建和阶段旋转
@@ -137,7 +134,7 @@ rotconverter
 假设对称扩张，请尝试::
 
     gmt rotconverter PL1-PL2.RPM -M -Fs > PL1-PL2_half.RPM
-gmt rotconverter - PL1-PL2.RPM -M -Fs > PL2-PL1_half.RPM
+    gmt rotconverter - PL1-PL2.RPM -M -Fs > PL2-PL1_half.RPM
 
 要基于 GPlates 旋转数据库，使用板块环路 India-Central Indian Basin-Antarctica-Africa，
 计算印度相对于固定非洲的旋转，请尝试::
@@ -157,7 +154,7 @@ GMT 发布了 EarthByte 旋转模型 Global\_EarthByte\_230-0Ma\_GK07\_AREPS.rot
 :doc:`backtracker`,
 :doc:`grdrotater`,
 :doc:`grdspotter`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`hotspotter`,

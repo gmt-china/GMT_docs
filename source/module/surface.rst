@@ -1,13 +1,11 @@
+:author: 周茂, 陈箫翰
+:date: 2024-07-21
+
 .. index:: ! surface
 .. include:: common_SYN_OPTs.rst_
 
 surface
 =======
-
-:贡献者: |周茂|，|陈箫翰|
-:最近更新日期: 2024-07-21
-
-----
 
 :官方文档: :doc:`gmt:surface`
 :简介: 使用可调节张力连续曲率样条插值法对数据进行网格化

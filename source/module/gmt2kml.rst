@@ -1,14 +1,11 @@
+:author: 何星辰
+:date: 2025-10-20
+
 .. index:: ! gmt2kml
-.. include:: module_core_purpose.rst_
 .. include:: common_SYN_OPTs.rst_
 
 gmt2kml
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-20
-
-----
 
 :官方文档: :doc:`gmt:gmt2kml`  
 :简介: 将 GMT 数据表转换为 Google Earth KML 文件
@@ -284,7 +281,7 @@ Google Earth 在跨经线绘制填充面时存在问题。
 如特征未显示且无错误，可尝试通过拆分文件减小大小。
 
 构建 KMZ 文件
---------
+-------------
 
 使用 KMZ 格式更优，因为占用空间小。KMZ 是 KML 文件及其引用的图像、图标或数据文件的压缩包。
 可将大数据集分组到 Folders 中。Document 可包含任意数量文件夹。
@@ -361,7 +358,7 @@ GMT 按特征类型（使用 |-O|、|-K| 或 **-T/**\ *foldername*）、
 相关模块
 --------
 
-:doc:`gmt_shell_functions.sh`,
+:doc:`gmt:gmt_shell_functions.sh`,
 :doc:`grd2kml`,
 :doc:`img2google`,
 :doc:`kml2gmt`,

@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-02-17
+
 .. index:: ! gravmag3d
 .. include:: common_SYN_OPTs.rst_
 
 gravmag3d
 =============
-
-:贡献者: |周茂|
-:最近更新日期: 2024-02-17
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/gmtgravmag3d`
 :简介: 计算使用 Okabe 方法计算三维物体的重力异常或磁异常

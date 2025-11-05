@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-06-21
+
 .. index:: ! gravprisms
 .. include:: common_SYN_OPTs.rst_
 
 gravprisms
 ==========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-06-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/gravprisms`
 :简介: 计算三维垂直棱柱产生的位异常
@@ -250,7 +248,7 @@ for the prism, *J. Geod., 74*, 552–560,
 :doc:`grdmath`,
 :doc:`gravfft`,
 :doc:`grdseamount`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`,
 :doc:`talwani3d`,
 :doc:`talwani2d`

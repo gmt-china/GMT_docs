@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: !x2sys_get
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_get
 =========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_get`
 :简介: 从 TAG 数据库中查询轨迹

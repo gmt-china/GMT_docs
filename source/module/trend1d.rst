@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2023-02-06
+
 .. index:: ! trend1d
 .. include:: common_SYN_OPTs.rst_
 
 trend1d
 =======
-
-:贡献者: |周茂|
-:最近更新日期: 2023-02-06
-
-----
 
 :官方文档: :doc:`gmt:trend1d`
 :简介: 一维数据的多项式/Fourier 拟合
@@ -173,6 +171,6 @@ Revised Edition, Academic Press, San Diego.
 --------
 
 :doc:`trend2d`,
-:doc:`gmtregress`,
+:doc:`regress`,
 :doc:`grdtrend`,
-:doc:`gmtmath`
+:doc:`math`

@@ -1,12 +1,9 @@
 :orphan:
 
+:author: `liaoweiyang2017 <https://github.com/liaoweiyang2017>`__, 田冬冬
+
 绘制点线图及图例
 ================
-
-:示例贡献者: `liaoweiyang2017 <https://github.com/liaoweiyang2017>`__、
-            |田冬冬|
-
-----
 
 :doc:`/module/plot` 模块可以绘制散点图也可以绘制线段，但不直接支持绘制点线图。
 

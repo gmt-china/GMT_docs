@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-11
+
 .. index:: ! fzanalyzer
 .. include:: common_SYN_OPTs.rst_
 
 fzanalyzer
 ==========
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-11
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzanalyzer`
 :简介: 使用交叉剖面分析断裂带
@@ -53,9 +51,9 @@ fzanalyzer
 
 **-F**\ *fzlines*
     其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用
-     **-D** 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
-     该文件必须包含相同的 7 个数据列：
-    *lon, lat, dist, azimuth, vgg, age, fzdist*。
+    **-D** 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
+    该文件必须包含相同的 7 个数据列：
+    *lon, lat, dist, azimuth, vgg, age, fzdist* 。
 
 可选选项
 ------------------
@@ -81,20 +79,20 @@ fzanalyzer
 .. _-D:
 
 **-D**\ *corrwidth*
-    指定中心走廊宽度 *corrwidth*（单位：km）[默认 25]。
+    指定中心走廊宽度 *corrwidth* （单位：km）[默认 25]。
     此走廊用于限定断裂带（FZ）槽位置在重新定位时允许偏离中心的最大范围。
 
 .. _-I:
 
 **-I**\ *FZ*\ [/*profile*]
     默认情况下，程序会分析所有断裂带（FZ）生成的横剖面。
-    但你可以使用 |-I| 指定特定的断裂带 *id*（首个为 0）。
+    但你可以使用 |-I| 指定特定的断裂带 *id* （首个为 0）。
     还可指定仅处理该断裂带中的某一个 *profile* [默认处理全部]。
     注意，输出文件仍会包含所有剖面，但仅所选剖面对应的导出参数为非零。
 
 .. _-S:
 
-**-S**\ [**b**|\ **c**]
+**-S**\ [**b**\|\ **c**]
     以命令行选项设置的参数输出，格式适用于直接嵌入 Bourne/bash shell 脚本中。
     若附加 **c**，则输出为 csh/tcsh 语法格式。
 

@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! sphinterpolate
 .. include:: common_SYN_OPTs.rst_
 
 sphinterpolate
 ==============
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:sphinterpolate`
 :简介:

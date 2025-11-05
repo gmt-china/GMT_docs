@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-13
+
 .. index:: ! fzmapper
 .. include:: common_SYN_OPTs.rst_
 
 fzmapper
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-13
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzmapper`
 :简介: 在墨卡托地图上绘制断裂带交叉剖面的 Bash 脚本

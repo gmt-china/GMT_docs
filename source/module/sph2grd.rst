@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! sph2grd
 .. include:: common_SYN_OPTs.rst_
 
 sph2grd
 ========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:sph2grd`
 :简介: 使用球谐系数计算网格

@@ -1,13 +1,11 @@
+:author: 何星辰
+:date: 2025-10-17
+
 .. index:: ! backtracker
-.. include:: module_supplements_purpose.rst_
+.. include:: common_SYN_OPTs.rst_
 
 backtracker
 =============
-
-:贡献者: |何星辰|
-:最近更新日期: 2025-10-17
-
-----
 
 :官方文档: :doc:`gmt:supplements/spotter/backtracker`  
 :简介: 生成前向和后向流线和热点轨迹
@@ -205,7 +203,7 @@ GMT 自带 EarthByte 旋转模型文件 **Global_EarthByte_230-0Ma_GK07_AREPS.ro
 相关模块
 --------
 
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`grdspotter`,

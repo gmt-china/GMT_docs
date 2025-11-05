@@ -7,7 +7,6 @@
 movie
 =====
 
-
 :官方文档: :doc:`gmt:movie`
 :简介: 制作动画
 
@@ -406,7 +405,7 @@ movie
 
 在执行 **movie** 前，如果在主脚本 *mainscript* 所在目录下有 gmt.conf 文件，
 那么它将在所有创建和执行的脚本中被共享使用，除非用户的脚本在启动新的现代模式会话时使用了
-**-C** 选项。更改 GMT 默认设置的首选方式是在输入脚本中使用 :doc:`gmtset` 命令。
+**-C** 选项。更改 GMT 默认设置的首选方式是在输入脚本中使用 :doc:`set` 命令。
 **注：** 每个脚本都是在独立的现代模式下运行的，
 因此试图通过在运行时创建一个 gmt.conf 文件以供其他脚本使用是徒劳的。
 
@@ -427,7 +426,7 @@ movie
    （例如深度轴）。在这种情况下，用户将使用 :doc:`grdinterpolate` 模块，
    让主脚本获取对应于正确动画时刻的切片（这可能是两个不同深度之间的插值），
    并使用这个临时网格文件来制作帧图。
-#. 用户可能正在使用 :doc:`gmtmath` 或 :doc:`grdmath` 动态地创建数据，并显示这些数据；
+#. 用户可能正在使用 :doc:`math` 或 :doc:`grdmath` 动态地创建数据，并显示这些数据；
    或者可能每帧稍微不同地处理数据（使用 *timefile* 中的参数），并展示不同处理的帧之间的变化。
 
 画布
@@ -707,8 +706,7 @@ Wessel, P., Esteban, F., & Delaviel-Anger, G. (2024). The Generic Mapping Tools 
 相关模块
 -----------
 
-:doc:`gmtmath`,
+:doc:`math`,
 :doc:`grdinterpolate`,
 :doc:`grdmath`,
 :doc:`events`
-

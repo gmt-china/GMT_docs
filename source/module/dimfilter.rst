@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-07-16
+
 .. index:: ! dimfilter
 .. include:: common_SYN_OPTs.rst_
 
 dimfilter
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2022-07-16
-
-----
 
 :官方文档: :doc:`gmt:dimfilter`
 :简介: 在空间域对网格进行方向中值（DIrectional Median, DIM）滤波

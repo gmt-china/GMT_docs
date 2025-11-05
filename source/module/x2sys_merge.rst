@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: !x2sys_merge
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_merge
 ===========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_merge`
 :简介: 合并交叉点文件

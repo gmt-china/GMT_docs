@@ -1,13 +1,11 @@
+:author: 何星辰, 田冬冬
+:date: 2025-10-11
+
 .. index:: ! mlconverter
 .. include:: common_SYN_OPTs.rst_
 
 mlconverter
 =============
-
-:贡献者: |何星辰|, |田冬冬|
-:最近更新日期: 2025-10-11
-
-----
 
 :官方文档: :doc:`gmt:supplements/gsfml/mlconverter`
 :简介: 使用选定的磁性地磁时间尺度将磁性带转换为地质年龄

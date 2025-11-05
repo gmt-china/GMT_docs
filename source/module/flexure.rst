@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-02-17
+
 .. index:: ! flexure
 .. include:: common_SYN_OPTs.rst_
 
 flexure
 ==========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-02-17
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/gmtflexure`
 :简介: 计算 2-D 载荷产生的力，弯矩和挠曲变形

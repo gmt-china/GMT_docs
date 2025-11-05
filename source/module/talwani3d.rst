@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-02-21
+
 .. index:: ! talwani3d
 .. include:: common_SYN_OPTs.rst_
 
 talwani3d
 =========
-
-:贡献者: |周茂|
-:最近更新日期: 2024-02-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/talwani3d`
 :简介: 使用 Talwani 方法计算三维实体形成的位异常
@@ -169,5 +167,5 @@ three-dimensional bodies of arbitrary shape, *Geophysics, 25*, 203-225.
 :doc:`talwani2d`,
 :doc:`grdmath`,
 :doc:`gravfft`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`

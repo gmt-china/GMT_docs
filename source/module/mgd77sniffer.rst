@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-06-21
+
 .. index:: ! mgd77sniffer
 .. include:: common_SYN_OPTs.rst_
 
 mgd77sniffer
 ============
-
-:贡献者: |周茂|
-:最近更新日期: 2024-06-21
-
-----
 
 :官方文档: :doc:`gmt:supplements/mgd77/mgd77sniffer`
 :简介: MGD77 沿轨质量控制

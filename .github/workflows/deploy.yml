@@ -53,7 +53,9 @@ jobs:
       # 5. Deploy the PDF document and HTML zip
       #
       - name: Build HTML
-        run: make dirhtml
+        run: |
+          make dirhtml
+          cat sphinx_warnings.txt
 
       - name: Checkout the gh-pages branch
         uses: actions/checkout@v5
@@ -77,7 +79,7 @@ jobs:
           if [ -e ${GMT_DOC_VERSION}/GMT_docs.zip ]; then
             cp ${GMT_DOC_VERSION}/GMT_docs.zip ../build/dirhtml/
           fi
-          # Replace the old documentation with tht new one.
+          # Replace the old documentation with the new one.
           rm -rvf ${GMT_DOC_VERSION}
           cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
           # let "latest" link to the latest version
@@ -105,7 +107,7 @@ jobs:
           make pdf optimize_pdf
           cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
 
-      - name: Deploy the PDF documentation to gh-pages
+      - name: Deploy the PDF and HTML zip documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

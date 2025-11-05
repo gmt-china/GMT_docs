@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! x2sys_binlist
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_binlist
 =============
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_binlist`
 :简介: 使用沿轨观测文件创建网格索引列表

@@ -1,13 +1,11 @@
+:author: 周茂, 田冬冬, 陈箫翰, `Liming Li <https://github.com/cugliming>`_
+:date: 2023-11-07
+
 .. index:: ! makecpt
 .. include:: common_SYN_OPTs.rst_
 
 makecpt
 =======
-
-:贡献者: |周茂|, |田冬冬|, |陈箫翰|, `Liming Li <https://github.com/cugliming>`_
-:最近更新日期: 2023-11-07
-
-----
 
 :官方文档: :doc:`gmt:makecpt`
 :简介: 制作 GMT CPT 文件
@@ -29,12 +27,12 @@ makecpt
     - 以及 NaN 值颜色 (N)，表示 z 值被定义为 NaN 时对应的颜色，即 z 值未定义的情况
 
 默认情况下，这三种颜色会沿用 |-C| 选项所指定的主 CPT 文件的设置，但也可以使用 |-D| 、
-|-M| 以及 |-N| 选项修改。或者使用 :doc:`gmtset` 命令对 :term:`COLOR_BACKGROUND`\、
+|-M| 以及 |-N| 选项修改。或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。需注意，选项总会覆盖
 自定义参数值。
 
 颜色模式 (RGB, HSV, CMYK) 会沿用 |-C| 选项所指定的主 CPT 文件的设置。
-或者使用 :doc:`gmtset` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
+或者使用 :doc:`set` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
 
 语法
 ----

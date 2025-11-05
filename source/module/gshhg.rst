@@ -138,7 +138,7 @@ gshhg
 gshhg 读取的文件为原始的二进制多边形文件，可通过
 `NCEI Shoreline Coastline Resources <https://www.ngdc.noaa.gov/mgg/shorelines/>`_ 或
 `SOEST GSHHG Site <https://www.soest.hawaii.edu/pwessel/gshhg>`_ 获得。
-需要注意的是，这里的数据和 gmt 中 :doc:`gmtselect`，:doc:`grdlandmask`，
+需要注意的是，这里的数据和 gmt 中 :doc:`select` ， :doc:`grdlandmask`，
 以及 :doc:`coast` 模块用的 NetCDF 格式的数据是不同的
 
 技术细节

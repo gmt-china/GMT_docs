@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2024-02-19
+
 .. index:: ! grdgravmag3d
 .. include:: common_SYN_OPTs.rst_
 
 grdgravmag3d
 =============
-
-:贡献者: |周茂|
-:最近更新日期: 2024-02-19
-
-----
 
 :官方文档: :doc:`gmt:supplements/potential/grdgravmag3d`
 :简介: 使用 Okabe 方法计算一个（或两个）网格形成的重力异常
@@ -176,6 +174,6 @@ polyhedral bodies and translation into magnetic anomalies, *Geophysics*,
 相关模块
 --------
 
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`talwani3d`,
 :doc:`talwani2d`

@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! img2google
 .. include:: common_SYN_OPTs.rst_
 
 img2google
 ==========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:supplements/img/img2google`
 :简介: 由测深墨卡托 img 网格文件创建谷歌地球 KML 文件

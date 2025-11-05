@@ -1,12 +1,10 @@
+:author: 周茂
+
 .. index:: ! sphdistance
 .. include:: common_SYN_OPTs.rst_
 
 sphdistance
 ===========
-
-:贡献者: |周茂|
-
-----
 
 :官方文档: :doc:`gmt:sphdistance`
 :简介: 在球上创建 Voronoi 距离，节点或自然最邻近网格

@@ -1,13 +1,11 @@
+:author: 周茂
+:date: 2022-06-29
+
 .. index:: ! grdfft
 .. include:: common_SYN_OPTs.rst_
 
 grdfft
 ======
-
-:贡献者: |周茂|
-:最近更新日期: 2022-06-29
-
-----
 
 :官方文档: :doc:`gmt:grdfft`
 :简介: 在谱域中对网格进行数学运算
