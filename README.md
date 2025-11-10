@@ -17,6 +17,10 @@
 
 ![GMT/China logo](https://raw.githubusercontent.com/gmt-china/logo/master/gmt-china-combined-logo.png)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=gmt-china/GMT_docs&type=Date)](https://star-history.com/#gmt-china/GMT_docs&Date)
+
 欢迎来到 [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org) 的世界。
 GMT 是地球科学使用最广泛的制图软件之一。
 
