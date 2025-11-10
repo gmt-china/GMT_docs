@@ -358,7 +358,7 @@ GMT 按特征类型（使用 |-O|、|-K| 或 **-T/**\ *foldername*）、
 相关模块
 --------
 
-:doc:`gmt_shell_functions.sh`,
+:doc:`gmt:gmt_shell_functions.sh`,
 :doc:`grd2kml`,
 :doc:`img2google`,
 :doc:`kml2gmt`,

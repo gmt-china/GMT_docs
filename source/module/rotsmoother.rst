@@ -137,7 +137,7 @@ rotsmoother
 --------
 
 :doc:`backtracker`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdspotter`,
 :doc:`hotspotter`,

@@ -10,7 +10,7 @@
     - :doc:`gmt-config`
     - :doc:`gmtswitch`
 
-**GMT 模块（已翻译整理）**
+**GMT 模块**
 
 .. hlist::
     :columns: 4
@@ -167,7 +167,7 @@
     - :doc:`backtracker`
     - :doc:`grdrotater`
     - :doc:`grdpmodeler`
-    - :doc:`gmtpmodeler`
+    - :doc:`pmodeler`
     - :doc:`rotconverter`
     - :doc:`grdspotter`
     - :doc:`polespotter`
@@ -341,7 +341,7 @@
 :doc:`x2sys_solve`                               使用最小二乘平差改正系统误差
 **SPOTTER 相关模块**                             .. _module_spotter:
 :doc:`backtracker`                               生成前向和后向流线和热点轨迹
-:doc:`gmtpmodeler`                               评估特定位置的板块运动模型
+:doc:`pmodeler`                                  评估特定位置的板块运动模型
 :doc:`grdpmodeler`                               评估地理网格上的板块运动模型
 :doc:`grdrotater`                                地理网格的有限旋转重构
 :doc:`originater`                                将海山与最近的热点点源关联起来
@@ -560,7 +560,7 @@
    backtracker
    grdrotater
    grdpmodeler
-   gmtpmodeler
+   pmodeler
    rotconverter
    grdspotter
    polespotter

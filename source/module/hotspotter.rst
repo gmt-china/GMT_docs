@@ -49,16 +49,11 @@ hotspotter
 
 .. include:: explain_rots.rst_
 
-.. _-G:
-
 .. include:: explain_grd_out.rst_
-
-.. _-I:
 
 .. include:: explain_-I.rst_
 
-.. _-R:
-
+.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
 可选选项
@@ -135,7 +130,7 @@ GMT 随附地球字节旋转模型 **Global_EarthByte_230-0Ma_GK07_AREPS.rot**�
 :doc:`project`,
 :doc:`mapproject`,
 :doc:`backtracker`,
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`originater`

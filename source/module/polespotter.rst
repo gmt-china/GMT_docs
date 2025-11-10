@@ -70,11 +70,7 @@ polespotter
 **-F**\ *fracturezones*
     含有多个断裂带线段的文件。这些线被认为反映了海底形成时围绕旋转极点的小圆。
 
-.. _-G:
-
 .. include:: explain_grd_out.rst_
-
-.. _-I:
 
 .. include:: explain_-I.rst_
 
@@ -83,8 +79,7 @@ polespotter
 **-N**
     归一化网格，使最大值等于 1 [默认不归一化]。
 
-.. _-R:
-
+.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
 .. _-S:
@@ -103,7 +98,7 @@ polespotter
 
 **-Sp**
     Pole 模式表示我们搜索给定网格上的所有极点，并确定与所有给定线约束的加权卡方误差。
-    此模式需要 |-G|、|-R|、|-I|（可选 **-r**）。
+    此模式需要 |-G|、|-R|、|-I| （可选 **-r** ）。
 
 **-Ss**\ [**+c**\ *xfile*][**+l**]
     Spot 模式表示我们计算断裂带的平分线和沿深海丘的经线，并确定所有这些大圆的交点。
@@ -165,8 +160,8 @@ polespotter
 :doc:`project`,
 :doc:`mapproject`,
 :doc:`backtracker`,
-:doc:`gmtpmodeler`,
-:doc:`gmtvector`,
+:doc:`pmodeler`,
+:doc:`vector`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`originater`

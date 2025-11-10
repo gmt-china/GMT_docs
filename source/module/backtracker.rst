@@ -2,6 +2,7 @@
 :date: 2025-10-17
 
 .. index:: ! backtracker
+.. include:: common_SYN_OPTs.rst_
 
 backtracker
 =============
@@ -202,7 +203,7 @@ GMT 自带 EarthByte 旋转模型文件 **Global_EarthByte_230-0Ma_GK07_AREPS.ro
 相关模块
 --------
 
-:doc:`gmtpmodeler`,
+:doc:`pmodeler`,
 :doc:`grdpmodeler`,
 :doc:`grdrotater`,
 :doc:`grdspotter`,

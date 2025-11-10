@@ -171,6 +171,6 @@ Revised Edition, Academic Press, San Diego.
 --------
 
 :doc:`trend2d`,
-:doc:`gmtregress`,
+:doc:`regress`,
 :doc:`grdtrend`,
-:doc:`gmtmath`
+:doc:`math`

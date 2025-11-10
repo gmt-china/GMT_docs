@@ -22,10 +22,12 @@ GMT 是地球科学领域使用最广泛的制图软件之一，具有强大的�
 
 ## GMT 的历史
 
-- 1988 年，Paul Wessel 和 Walter H.F. Smith 开发了 GMT 的最原始版本 GMT 1.0
+- 1988 年，[Paul Wessel](https://en.wikipedia.org/wiki/P%C3%A5l_Wessel) 和 
+  [Walter H.F. Smith](https://en.wikipedia.org/wiki/Walter_H._F._Smith) 
+  开发了 GMT 的最原始版本 GMT 1.0
 - 1991 年 8 月 10 日，GMT2 发布
-- 1998 年 11 月 8 日，GMT3 发布
-- 2005 年 10 月 1 日，GMT4 发布
+- 1995 年 8 月 11 日，GMT3 发布
+- 2004 年 10 月 1 日，GMT4 发布
 - 2013 年 11 月 5 日，GMT5 发布
 - 2019 年 11 月 1 日，GMT6 发布（目前最新版本 GMT 6.6.0 发布于 2025 年 07 月 27 日）
 
@@ -223,7 +225,10 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
 
 **入门教程**
 
-1. [GMT6 初学者视频教程](https://www.bilibili.com/video/BV1Yb4jzQEXK)（{{ 田冬冬 }}、{{ 刘珠妹 }}、{{ 陈箫翰 }}）
+1. [GMT6 初学者视频教程](https://www.bilibili.com/video/BV1Yb4jzQEXK)
+  （[田冬冬](https://me.seisman.info/)、
+   [刘珠妹](https://github.com/liuzhumei)、
+   [陈箫翰](https://github.com/CovMat)）
 2. GMT 中文手册：{doc}`入门教程 </tutorial/started>`、{doc}`进阶教程 </tutorial/advanced>`
 3. {gmt-docs}`GMT 官方入门教程 <tutorial.html>`
 4. [GMT 教學手冊](http://gmt-tutorials.org/)（[鄭懷傑](https://github.com/whyjz)）

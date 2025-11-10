@@ -1,8 +1,6 @@
 ---
-author: 田冬冬
-reviewer: 刘珠妹
+author: 田冬冬, 刘珠妹
 date: 2025-07-28
-
 ---
 
 # Windows 下编译 GMT 源码
@@ -25,9 +23,9 @@ date: 2025-07-28
 
 GMT 的编译及运行依赖于其他库文件，包括：
 
-- [netCDF](https://www.unidata.ucar.edu/software/netcdf/)（>=4.0 且支持 netCDF-4/HDF5）[**必须**]
+- [netCDF](https://www.unidata.ucar.edu/software/netcdf/) [**必须**]
 - [curl](https://curl.haxx.se/)：下载网络数据 [**必须**]
-- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**推荐**]
+- [GDAL](https://www.gdal.org/)：读写多种格式的地理空间数据 [**必须**]
 - [PCRE](https://www.pcre.org/)：正则表达式支持 [**可选**]
 - [FFTW](http://www.fftw.org/)：快速傅里叶变换库（>=3.3）[**可选**]
 - LAPACK：快速矩阵反演库 [**可选**]
@@ -53,7 +51,7 @@ $ .\bootstrap-vcpkg.bat
 先打开一个 CMD 窗口，执行如下命令:
 
 ```
-$ vcpkg install netcdf-c gdal[core,tools,geos,netcdf] pcre2 fftw3[core,threads] clapack openblas --triplet x64-windows
+$ vcpkg install --recurse netcdf-c gdal[core,tools,geos,netcdf,png,openjpeg,jpeg,gif] pcre2 fftw3[core,threads] clapack openblas --triplet x64-windows
 $ vcpkg integrate install
 ```
 

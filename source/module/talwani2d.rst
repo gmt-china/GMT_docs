@@ -142,7 +142,7 @@ talwani2d
 The 2-D geoid anomaly is a logarithmic potential and thus has no natural reference
 level. We simply remove the most negative (if density contrast is positive) or
 positive (if density contrast is negative) computed value from all values, rendering
-the entire anomaly positive (or negative). You can use :doc:`gmtmath` to change the
+the entire anomaly positive (or negative). You can use :doc:`math` to change the
 zero level to suit your needs
 
 参考文献
@@ -167,5 +167,5 @@ two-dimensional bodies with application to the Mendocino submarine fracture zone
 
 :doc:`talwani3d`,
 :doc:`gravfft`,
-:doc:`gmtgravmag3d`,
+:doc:`gravmag3d`,
 :doc:`grdgravmag3d`

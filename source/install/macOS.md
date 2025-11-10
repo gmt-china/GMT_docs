@@ -1,17 +1,9 @@
 ---
 author: 田冬冬, 姚家园
-date: 2025-07-28
+date: 2025-11-01
 ---
 
-# macOS 下安装 GMT
-
-macOS 下安装 GMT 有多种方式：
-
-1. [使用 Homebrew 安装](macos-homebrew) [**推荐**]
-2. {doc}`conda`
-
-(macos-homebrew)=
-## 使用 Homebrew 安装
+# macOS 下使用 Homebrew 安装 GMT
 
 [Homebrew](https://brew.sh/) 是 macOS 下的第三方软件包管理工具。
 未安装 Homebrew 的用户，可以参考
@@ -39,44 +31,32 @@ macOS 下安装 GMT 有多种方式：
 
 2. 安装 GMT 依赖的其它软件
 
-   生成 PDF、JPG 等图片格式需要 [Ghostscript](https://www.ghostscript.com/)（**必须**）:
+   GMT 的运行还依赖以下软件：
+
+   - [Ghostscript](https://www.ghostscript.com/)：生成 PDF、JPG 等格式的图片 [**必须**]
+   - [GraphicsMagick](http://www.graphicsmagick.org)：制作 GIF 格式的动画 [**可选**]
+   - [FFmpeg](http://www.ffmpeg.org/)：生成 MP4 格式的动画 [**可选**]
 
    ```
    $ brew install ghostscript
-   ```
-
-   制作 GIF 格式的动画需要 [GraphicsMagick](http://www.graphicsmagick.org/)（**可选**）:
-
-   ```
    $ brew install graphicsmagick
-   ```
-
-   制作 MP4、WebM 格式的动画需要 [FFmpeg](https://ffmpeg.org/)（**可选**）:
-
-   ```
    $ brew install ffmpeg
    ```
 
-3. 测试安装
-
-   重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功:
+3. 测试安装。打开终端，键入如下命令。若正确显示 GMT 版本号，则表示安装成功：
 
    ```
    $ gmt --version
    6.6.0
    ```
 
-4. 升级 GMT
-
-   GMT 新版本发布后，执行如下命令升级 GMT:
+4. GMT 新版本发布后，若需要升级到新版本，可以执行如下命令：
 
    ```
    $ brew upgrade gmt
    ```
 
-5. 卸载 GMT
-
-   可以执行如下命令卸载 GMT:
+5. 若需要卸载 GMT，可以执行如下命令：
 
    ```
    $ brew uninstall gmt

@@ -1,3 +1,8 @@
+---
+author: 田冬冬
+date: 2022-05-22
+---
+
 # GMT 初探: Linux 篇
 
 ## 启动终端
@@ -59,7 +64,7 @@ gmt --new-script > myplot.sh
 
 :::{note}
 本手册中所有示例均使用 Bash 脚本，要求读者对 Bash 脚本及 Unix 命令行有最基本的了解。
-不了解的用户请阅读网络上 Bash 相关教程，或本手册中 {doc}`/tutorial/scripting/index` 一节。
+不了解的用户请阅读网络上 Bash 相关教程。
 :::
 
 ## 查看并编辑脚本文件
@@ -85,7 +90,7 @@ gmt begin figurename
 gmt end show
 ```
 
-其中，以 **#** 开头的行尾注释行，**export GMT_SESSION_NAME=\$\$** 这一行属于
+其中，以 **#** 开头的行是注释行，可以忽略。**export GMT_SESSION_NAME=\$\$** 这一行属于
 高级用法，可以忽略。因而核心内容只有两行，即 **gmt begin** 和 **gmt end** 这两行。
 
 编辑脚本，在 **gmt begin** 和 **gmt end** 中间添加 GMT 命令，将脚本修改如下:

@@ -46,14 +46,12 @@ barb
 
 必选选项
 ------------------
-.. _-J:
 
 .. include:: explain_-J.rst_
 
 .. include:: explain_-Jz.rst_
 
-.. _-R:
-
+.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
 .. include:: explain_-Rgeo.rst_
 
 .. include:: explain_-Rz.rst_
