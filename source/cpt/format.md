@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, liuzhumei
+date: 2024-09-09
+---
+
 # CPT类型
 
 CPT文件可以分成两类，一种适用于分类数据，一种适用于常规数据。

@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Mao Zhou, Xiaohan Chen, sqdeng
+:date: 2022-06-18
 .. index:: ! ternary
 .. include:: common_SYN_OPTs.rst_
 

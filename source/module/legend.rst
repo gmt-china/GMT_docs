@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Xiaohan Chen, Dengda Zhu, Mao Zhou, 王亮, 赵志远
+:date: 2025-10-31
 .. index:: ! legend
 .. include:: common_SYN_OPTs.rst_
 

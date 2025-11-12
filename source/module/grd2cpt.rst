@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Dengda Zhu, Xiaohan Chen
+:date: 2025-10-31
 .. index:: ! grd2cpt
 
 *******

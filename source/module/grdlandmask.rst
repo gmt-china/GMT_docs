@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Mao Zhou
+:date: 2024-02-12
 .. index:: ! grdlandmask
 .. include:: common_SYN_OPTs.rst_
 

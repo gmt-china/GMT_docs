@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan, Mao Zhou, 王亮, 陈箫翰, Tche Liu, Xiaohan Chen
+date: 2025-10-24
+---
+
 # GMT 中文手册
 
 ```{image} https://raw.githubusercontent.com/gmt-china/logo/master/gmt-china-combined-logo.png

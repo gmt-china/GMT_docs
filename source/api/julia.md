@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-10
+---
+
 # GMT.jl
 
 [Julia](https://julialang.org) 是一种为高性能计算设计的高级通用动态编程语言。

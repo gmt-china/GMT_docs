@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, Xiaohan Chen
+date: 2024-09-09
+---
+
 # -JE: Azimuthal equidistant
 
 维基链接：<https://en.wikipedia.org/wiki/Azimuthal_equidistant_projection>

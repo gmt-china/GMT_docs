@@ -1,3 +1,8 @@
+---
+author: Dengda Zhu, Dongdong Tian
+date: 2025-07-06
+---
+
 # COLOR参数
 
 这一节列出所有与颜色相关的配置参数，参数的默认值在中括号内列出。

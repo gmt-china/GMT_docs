@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Mao Zhou, Yao Jiayuan
+:date: 2022-06-22
 .. index:: ! grdvolume
 .. include:: common_SYN_OPTs.rst_
 

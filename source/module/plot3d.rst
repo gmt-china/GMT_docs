@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Dengda Zhu, Xiaohan Chen
+:date: 2025-06-11
 .. index:: ! plot3d
 .. include:: common_SYN_OPTs.rst_
 

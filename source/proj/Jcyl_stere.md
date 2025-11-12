@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-09
+---
+
 # -JCyl_stere: Cylindrical stereographic
 
 维基链接：<https://en.wikipedia.org/wiki/Gall_stereographic_projection>

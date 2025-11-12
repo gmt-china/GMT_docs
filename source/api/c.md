@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-10
+---
+
 # GMT C API
 
 GMT 为 C/Fortran 程序提供了两套API，包括GMT API和PostScriptLight绘图库。

@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Yao Jiayuan, Xiaohan Chen
+:date: 2022-06-13
 .. index:: ! grdtrend
 
 grdtrend

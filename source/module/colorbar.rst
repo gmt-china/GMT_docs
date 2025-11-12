@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Dengda Zhu, Mao Zhou, Xiaohan Chen, sqdeng
+:date: 2025-10-31
 .. index:: ! colorbar
 .. include:: common_SYN_OPTs.rst_
 

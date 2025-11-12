@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Tche LIU
+:date: 2022-11-17
 .. index:: ! grdmask
 
 grdmask

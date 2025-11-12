@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-09
+---
+
 # 二进制表
 
 简单地说，ASCII表与二进制表的区别在于前者使用 `fprintf` 输出而后者使用

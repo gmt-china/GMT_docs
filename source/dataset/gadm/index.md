@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan, liuzhumei
+date: 2024-09-10
+---
+
 # GADM: 全球行政区划数据库
 
 **GADM主页**：<https://gadm.org/>

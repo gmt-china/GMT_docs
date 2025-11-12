@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Xiaohan Chen, 陈箫翰
+date: 2025-10-14
+---
+
 # 添加图例
 
 ```{raw} html

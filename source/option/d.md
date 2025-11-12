@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-09
+---
+
 # -d 选项
 
 **-d** 选项用于将某些特定值当作NaN。

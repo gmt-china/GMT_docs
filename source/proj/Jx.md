@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou
+date: 2025-01-27
+---
+
 # -JX: Linear, logarithmic, power, and time
 
 GMT 中笛卡尔坐标变换分为三类：

@@ -1,3 +1,5 @@
+:author: Dongdong Tian
+:date: 2019-11-25
 .. index:: ! grdpaste
 .. include:: common_SYN_OPTs.rst_
 

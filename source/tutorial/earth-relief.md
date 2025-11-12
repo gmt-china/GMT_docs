@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, Yao Jiayuan, 王亮
+date: 2024-09-04
+---
+
 # 绘制地形起伏
 
 绘制地图时另一个常见的需求是绘制全球或者区域的地形起伏作为底图。

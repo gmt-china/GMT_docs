@@ -1,3 +1,8 @@
+---
+author: Dengda Zhu, Dongdong Tian, Xiaohan Chen
+date: 2025-07-06
+---
+
 # MAP参数
 
 ## 边框相关参数

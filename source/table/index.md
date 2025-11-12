@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan
+date: 2024-09-09
+---
+
 # 表数据
 
 表数据（table data）用于表征点、线以及多边形等，也称列数据或多列数据。

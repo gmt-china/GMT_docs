@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Dengda Zhu, 王亮, 陈箫翰
+:date: 2025-11-03
 .. index:: ! xyz2grd
 .. include:: common_SYN_OPTs.rst_
 

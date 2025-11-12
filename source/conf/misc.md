@@ -1,3 +1,8 @@
+---
+author: Dengda Zhu, Dongdong Tian, Mao Zhou, Xiaohan Chen, 陈箫翰
+date: 2025-08-14
+---
+
 # 其他参数
 
 本节介绍 GMT 中的其他参数，参数的默认值在中括号内列出。

@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, Xiaohan Chen, Yao Jiayuan, 陈箫翰
+date: 2025-09-22
+---
+
 # ASCII 表
 
 ## ASCII 表简介

@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Mao Zhou
+:date: 2022-05-05
 .. index:: ! mask
 .. include:: common_SYN_OPTs.rst_
 

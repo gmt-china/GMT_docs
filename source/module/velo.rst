@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Xiaohan Chen, He Xingchen, 王亮, 陈箫翰
+:date: 2025-10-29
 .. index:: ! velo
 
 velo

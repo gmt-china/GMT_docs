@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan
+date: 2024-09-10
+---
+
 # 版本迁移
 
 GMT 在大版本升级时（如 GMT5 升级为 GMT6），语法及用法上会发生一些变化。

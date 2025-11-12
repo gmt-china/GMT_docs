@@ -1,3 +1,5 @@
+:author: Dongdong Tian, 陈箫翰, Mao Zhou, sqdeng
+:date: 2025-08-14
 .. index:: ! get
 .. include:: common_SYN_OPTs.rst_
 

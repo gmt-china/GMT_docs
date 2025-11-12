@@ -1,3 +1,8 @@
+---
+author: Dengda Zhu, Dongdong Tian
+date: 2025-06-08
+---
+
 # 修饰物
 
 GMT除了可以绘制线段、符号、矢量外，还可以绘制如下修饰物：

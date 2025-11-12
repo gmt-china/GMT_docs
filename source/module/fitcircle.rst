@@ -1,3 +1,5 @@
+:author: Dongdong Tian
+:date: 2022-05-05
 .. index:: ! fitcircle
 
 fitcircle

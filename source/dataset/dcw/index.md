@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-10
+---
+
 # DCW: 世界数字图表
 
 :::{figure} dcw.*

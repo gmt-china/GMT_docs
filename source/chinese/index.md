@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Xiaohan Chen, Yao Jiayuan
+date: 2024-09-10
+---
+
 # 中文支持
 
 GMT 中国用户经常会绘制带中文的图片，本章主要介绍 GMT 的中文支持。

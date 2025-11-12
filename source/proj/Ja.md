@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou
+date: 2024-09-09
+---
+
 # -JA: Lambert azimuthal equal area
 
 维基链接: <https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection>

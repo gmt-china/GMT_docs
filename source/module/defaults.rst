@@ -1,3 +1,5 @@
+:author: Dongdong Tian, 陈箫翰
+:date: 2025-08-11
 .. index:: ! defaults
 .. include:: common_SYN_OPTs.rst_
 

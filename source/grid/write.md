@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan
+date: 2024-09-09
+---
+
 # 写 netCDF 文件
 
 ## 文件名格式

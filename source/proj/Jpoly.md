@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou
+date: 2024-09-09
+---
+
 # -JPoly: (American) polyconic
 
 维基链接：<https://en.wikipedia.org/wiki/Polyconic_projection>

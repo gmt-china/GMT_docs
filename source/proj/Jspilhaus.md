@@ -1,3 +1,8 @@
+---
+author: 陈箫翰
+date: 2025-08-11
+---
+
 # -J+proj=spilhaus: Spilhaus World Ocean Map Projection
 
 维基链接：<https://en.wikipedia.org/wiki/Athelstan_Spilhaus>

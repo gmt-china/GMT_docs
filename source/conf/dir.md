@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, 陈箫翰
+date: 2025-08-14
+---
+
 # DIR参数
 
 可以使用 {doc}`/module/set` 设定一些专用的目录位置，如数据文件和程序设置的目录。

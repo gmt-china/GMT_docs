@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-09
+---
+
 # -V 选项
 
 **-V** 选项控制命令的verbose等级，以输出不同等级的命令执行信息，

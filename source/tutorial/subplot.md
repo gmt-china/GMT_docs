@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan, Dengda Zhu, Xiaohan Chen
+date: 2025-06-08
+---
+
 # GMT 子图模式
 
 有些时候，尤其是发表文章时，需要将多张独立的图放在一张图中，并编号 abcd，

@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou
+date: 2024-09-09
+---
+
 # -JR: Winkel Tripel
 
 维基链接：<https://en.wikipedia.org/wiki/Winkel_tripel_projection>

@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan, Mao Zhou, 陈箫翰
+date: 2025-08-11
+---
+
 # 地图投影
 
 GMT 读取数据的实际坐标，并将其转换或者投影到图片的对应位置。当前，GMT 支持 30 多种坐标变换或投影方式。

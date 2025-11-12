@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Dengda Zhu, Xiaohan Chen, Yao Jiayuan
+date: 2025-06-09
+---
+
 # -R 选项
 
 **-R** 选项用于指定要绘制的数据范围或地图区域。该选项的参数可以用多种方式指定，

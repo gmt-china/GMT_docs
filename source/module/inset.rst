@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Mao Zhou, Xiaohan Chen
+:date: 2024-01-17
 .. index:: ! inset
 .. include:: common_SYN_OPTs.rst_
 

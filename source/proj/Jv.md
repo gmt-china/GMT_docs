@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou
+date: 2024-09-09
+---
+
 # -JV: Van der Grinten
 
 维基链接：<https://en.wikipedia.org/wiki/Van_der_Grinten_projection>

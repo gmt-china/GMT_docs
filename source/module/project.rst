@@ -1,3 +1,5 @@
+:author: Dongdong Tian, 王亮, Xiaohan Chen, 陈箫翰, Dengda Zhu, Jiayuan Yao
+:date: 2025-11-03
 .. index:: ! project
 .. include:: common_SYN_OPTs.rst_
 

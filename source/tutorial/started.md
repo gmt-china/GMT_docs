@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan, 王亮
+date: 2025-11-03
+---
+
 # 入门教程
 
 《入门教程》通过一系列简单的示例介绍如何使用 GMT 实现最基本的绘图功能，

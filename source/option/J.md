@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, sqdeng, Mao Zhou, Yao Jiayuan
+date: 2025-05-23
+---
+
 # -J 选项
 
 **-J** 选项用于指定坐标变换方式或地图投影方式，即将数据投影到画布上所采用的函数。

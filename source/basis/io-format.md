@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan, Dengda Zhu
+date: 2025-06-08
+---
+
 # 数据类型
 
 GMT 可以绘制地图的经纬度轴、绝对时间轴、相对时间轴以及笛卡尔坐标轴，

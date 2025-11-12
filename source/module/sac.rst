@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Xiaohan Chen
+:date: 2025-01-14
 .. index:: ! sac
 .. include:: common_SYN_OPTs.rst_
 

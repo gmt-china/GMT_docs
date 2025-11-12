@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Mao Zhou, Xingchen He, He Xingchen, Xiaohan Chen, Dengda Zhu, Yao Jiayuan, 陈箫翰
+:date: 2025-10-31
 模块手册
 ########
 

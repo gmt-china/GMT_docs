@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, 陈箫翰
+date: 2025-08-14
+---
+
 # -JP: Polar/Cylindrical
 
 Polar（极坐标投影）用于绘制极坐标数据（即角度 $\theta$ 和半径 $r$）。

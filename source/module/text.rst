@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Yao Jiayuan, sqdeng
+:date: 2022-05-05
 .. index:: ! text
 .. include:: common_SYN_OPTs.rst_
 

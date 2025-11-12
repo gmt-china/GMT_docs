@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Xiaohan Chen, Yao Jiayuan, Mao Zhou, 王亮, 陈箫翰
+:date: 2025-10-28
 社区绘图实例
 ############
 

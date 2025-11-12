@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, lxrat
+date: 2024-09-12
+---
+
 # -p 选项
 
 **-p** 选项用于控制2D底图或3D底图的透视视角。

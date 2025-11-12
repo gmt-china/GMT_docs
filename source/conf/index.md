@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, Yao Jiayuan
+date: 2024-09-10
+---
+
 ```{index} ! gmt.conf
 ```
 

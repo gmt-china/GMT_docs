@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan
+date: 2024-09-12
+---
+
 # 读 netCDF 文件
 
 netCDF格式的设计相当灵活，单个netCDF文件中可以包含**多个多维变量**。

@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-12
+---
+
 # 使用CPT
 
 命令行指定CPT文件名后，GMT会依次在当前目录、 {file}`~/.gmt` 和 {file}`${GMTHOME}/share/cpt/`

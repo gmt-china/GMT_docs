@@ -1,3 +1,8 @@
+---
+author: 陈箫翰, Mao Zhou, Xiaohan Chen
+date: 2025-08-14
+---
+
 # GMT 远程数据
 
 GMT 远程数据位于 GMT 数据服务器，在 GMT 中使用时会自动下载。

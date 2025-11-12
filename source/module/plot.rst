@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Xiaohan Chen, 陈箫翰, Mao Zhou, 王亮, He Xingchen, Yao Jiayuan
+:date: 2025-10-31
 .. index:: ! plot
 .. include:: common_SYN_OPTs.rst_
 

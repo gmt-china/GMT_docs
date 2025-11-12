@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, 王亮
+date: 2024-09-10
+---
+
 # GMT 中文效果演示
 
 ## 中文文字

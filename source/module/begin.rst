@@ -1,3 +1,5 @@
+:author: Dongdong Tian, 王亮
+:date: 2022-08-30
 .. index:: ! begin
 .. include:: common_SYN_OPTs.rst_
 

@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-09
+---
+
 (grid-registration)=
 
 # 网格配准

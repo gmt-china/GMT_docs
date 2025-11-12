@@ -1,3 +1,5 @@
+:author: Dongdong Tian, Xiaohan Chen, Mao Zhou, 王亮, 陈箫翰
+:date: 2025-10-08
 .. index:: ! meca
 .. include:: common_SYN_OPTs.rst_
 
