@@ -7,11 +7,11 @@
 barb
 =============
 
-:官方文档: :doc:`gmt:supplements/windbarbs/barb`  
+:官方文档: :doc:`gmt:supplements/windbarbs/barb`
 :简介: 在 2D 和 3D 中绘制风羽
 
 **barb** 从 *files* （或标准输入）读取 (x, y, 方位角, 风速) 数据，
-并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 **-JZ|z** 
+并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 **-JZ|z**
 则 **barb** 会将输入数据的第三列解释为 z 值，并在三维中绘制风羽。
 如果未通过 **-Q** 指定风羽长度，则 **barb** 会将输入数据的第三列和第四列分别解释为风羽长度和宽度。
 使用 **-G** 选择填充颜色。如果设置了 **-G**，则 **-W** 将控制是否绘制轮廓。
@@ -48,8 +48,6 @@ barb
 ------------------
 
 .. include:: explain_-J.rst_
-
-.. include:: explain_-Jz.rst_
 
 .. |Add_-Rgeo| replace:: |Add_-R_auto_table|
 .. include:: explain_-Rgeo.rst_
