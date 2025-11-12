@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Mao Zhou, Yao Jiayuan
+date: 2024-09-13
+---
+
 # -a 选项
 
 **语法**

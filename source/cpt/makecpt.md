@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian, Yao Jiayuan
+date: 2024-09-09
+---
+
 # 制作CPT
 
 GMT模块 {doc}`/module/makecpt` 和 {doc}`gmt:grd2cpt` 可以内置CPT文件为基础，针对用户自己的数据

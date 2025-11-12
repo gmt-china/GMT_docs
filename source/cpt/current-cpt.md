@@ -1,3 +1,8 @@
+---
+author: Dongdong Tian
+date: 2024-09-09
+---
+
 # 当前CPT
 
 在现代模式下，几乎不需要显式命名CPT。当某个模块创建CPT时，例如grd2cpt，makecpt，或者没有颜色表可用时的grdimage，GMT会将CPT写入会话目录中的隐藏文件中。
