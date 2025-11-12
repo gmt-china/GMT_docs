@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 周茂, 陈箫翰
+date: 2024-09-09
+---
+
 # -JE: Azimuthal equidistant
 
 维基链接：<https://en.wikipedia.org/wiki/Azimuthal_equidistant_projection>

@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 周茂, 陈箫翰
+date: 2025-08-23
+---
+
 # -JG: Azimuthal orthographic/General perspective
 
 Azimuthal orthographic（正射方位投影）是一种从无穷远距离处的透视投影，因而常用于绘制从外太空看地球。

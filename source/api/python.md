@@ -1,3 +1,8 @@
+---
+author: 田冬冬
+date: 2024-09-10
+---
+
 # PyGMT
 
 从GMT 6.0 开始，GMT提供了Python接口，用户可以在Python中直接调用GMT绘图。
