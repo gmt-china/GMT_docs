@@ -2,14 +2,13 @@
 
 :::{only} html
 
-    :::{datatemplate}
-        :yaml: gallery.yaml
+    :::{datatemplate:yaml} gallery.yaml
         :template: gallery.tmpl
         :multiple-documents:
     :::
 :::
 
-:::{onl} latex
+:::{only} latex
 
     :::{toctree}
         :glob:
