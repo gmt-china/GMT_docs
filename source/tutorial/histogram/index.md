@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 王亮, 陈箫翰
+date: 2025-08-25
+---
+
 # 绘制直方图
 
 GMT 中 {doc}`/module/histogram` 模块用于统计并绘制直方图。

@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 姚家园
+date: 2024-09-10
+---
+
 # API
 
 GMT 提供了 API (Application Program Interface，即应用程序接口)，

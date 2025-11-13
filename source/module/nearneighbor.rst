@@ -1,3 +1,5 @@
+:author: 田冬冬, 周茂, 朱邓达
+:date: 2025-07-16
 .. index:: ! nearneighbor
 .. include:: common_SYN_OPTs.rst_
 

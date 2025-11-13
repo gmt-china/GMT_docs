@@ -1,3 +1,5 @@
+:author: 陈箫翰, 何星辰
+:date: 2025-10-29
 .. index:: ! grdvs30
 .. include:: common_SYN_OPTs.rst_
 

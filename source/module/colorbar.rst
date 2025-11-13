@@ -1,3 +1,5 @@
+:author: 田冬冬, 朱邓达, 周茂, 邓山泉, 陈箫翰
+:date: 2025-10-31
 .. index:: ! colorbar
 .. include:: common_SYN_OPTs.rst_
 

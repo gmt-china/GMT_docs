@@ -1,3 +1,5 @@
+:author: 田冬冬, 姚家园, 陈箫翰
+:date: 2025-08-11
 .. index:: ! which
 .. include:: common_SYN_OPTs.rst_
 

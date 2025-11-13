@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 姚家园, 周茂
+date: 2024-09-16
+---
+
 # 颜色表 CPT
 
 CPT 全称 Color Palette Table，也称为颜色表、调色板或色标文件。
