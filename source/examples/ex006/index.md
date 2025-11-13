@@ -1,9 +1,8 @@
-:orphan:
+---
+author: 陈箫翰
+---
 
-:author: 陈箫翰
-
-绘制颜色渐变的线段
-====================
+# 绘制颜色渐变的线段
 
 绘制颜色渐变的线段，需要使用 ``gmt convert`` 进行数据处理，之后再使用 ``gmt plot -Sv+s -W+cl -C`` 绘图。
 
@@ -17,7 +16,7 @@
     9.97812 49.5673 18425
     ...
 
-示例数据下载： :download:`data.txt`
+示例数据下载： {download}`data.txt <data.txt>`
 
 我们首先使用 ``gmt convert`` 命令将其变换为矢量格式::
 
@@ -44,10 +43,12 @@
 
 示例代码如下：
 
+```{eval-rst}
 .. gmtplot:: ex006.sh
     :caption: 绘制颜色渐变的线段
     :width: 100%
+```
 
-参考链接
-------------
+## 参考链接
+
 https://forum.generic-mapping-tools.org/t/how-to-color-line-segments-according-z-value/2832/7

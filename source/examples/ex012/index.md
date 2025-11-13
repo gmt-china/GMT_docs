@@ -1,11 +1,10 @@
-:orphan:
+---
+author: 戴宗辉, 王亮, 陈箫翰
+---
 
-:author: 戴宗辉, 王亮, 陈箫翰
+# 绘制地震 M-T 图
 
-绘制地震 M-T 图
-===============
-
-绘制地震 M-T 图的前提条件是要学会利用 :doc:`/option/B` 选项绘制时间轴底图。关于时间轴底图的绘制方法请参考 :ref:`time_axes`。
+绘制地震 M-T 图的前提条件是要学会利用 {doc}`/option/B` 选项绘制时间轴底图。关于时间轴底图的绘制方法请参考 {ref}`time_axes`。
 此外，用户还必须按照如下格式准备好绘制地震 M-T 图所用的数据::
 
     # 日期T时间     震级
@@ -19,10 +18,12 @@
     ...
 
 数据文件为两列，第一列是以 “YYYY-mm-ddThh:mm:ss” 格式给出的地震发震时刻，第二列是地震震级。
-使用 :doc:`/module/plot` 模块的 **-Sb** 选项可以将以上格式的数据绘制为地震 M-T 图。
+使用 {doc}`/module/plot` 模块的 **-Sb** 选项可以将以上格式的数据绘制为地震 M-T 图。
 
-示例数据：:download:`mt.txt`
+示例数据：{download}`mt.txt <mt.txt>`
 
+```{eval-rst}
 .. gmtplot:: ex012.sh
     :width: 80%
     :show-code: true
+```
