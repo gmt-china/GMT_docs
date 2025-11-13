@@ -14,7 +14,7 @@ date: 2025-10-24
 1. 准备湖泊及其岛屿的多边形数据，并按照 GMT ``> -Ph`` 语法将岛屿标记为洞；
 2. 使用 {doc}`/module/plot` 模块绘制多边形，使用 **-G** 选项指定湖水填充颜色。
 
-典型伪代码示例如下::
+典型伪代码示例如下:
 
     gmt plot -R0/10/0/10 -JX10c -Baf -Gblue -png map << EOF
     >
@@ -37,12 +37,12 @@ date: 2025-10-24
 
 以下示例以太湖为例展示具体操作。由于太湖范围较大，
 可通过 [Overpass Turbo](https://overpass-turbo.eu/) 网站获取太湖及其岛屿的矢量数据，
-查询语句如下::
+查询语句如下:
 
     relation["name"="太湖"];
     out geom;
 
-将查询结果导出为 GeoJSON 格式，然后使用如下命令转换为 GMT 格式::
+将查询结果导出为 GeoJSON 格式，然后使用如下命令转换为 GMT 格式:
 
     ogr2ogr -f "GMT" taihu.gmt taihu.geojson
 

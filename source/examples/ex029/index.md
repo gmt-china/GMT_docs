@@ -4,7 +4,7 @@ author: 刘珠妹, 陈箫翰
 
 # 绘制三维地形图
 
-**视频讲解**: https://www.bilibili.com/video/BV1Xh411e7fi/
+**视频讲解**: [https://www.bilibili.com/video/BV1Xh411e7fi/](https://www.bilibili.com/video/BV1Xh411e7fi/)
 
 绘制三维地形图的核心是 {doc}`/module/grdview` 模块以及 **-JZ** 选项。
 使用 **-JZ** 选项设置 Z 方向上的缩放比例，同时也必须在 **-R** 选项中设置 Z 方向上的最小值和最大值。

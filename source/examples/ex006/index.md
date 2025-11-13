@@ -6,7 +6,7 @@ author: 陈箫翰
 
 绘制颜色渐变的线段，需要使用 ``gmt convert`` 进行数据处理，之后再使用 ``gmt plot -Sv+s -W+cl -C`` 绘图。
 
-假设有一个飞机飞行跟踪数据，格式如下::
+假设有一个飞机飞行跟踪数据，格式如下:
 
     # 经度 纬度 高度
     10.016 49.5493 18825
@@ -18,11 +18,11 @@ author: 陈箫翰
 
 示例数据下载： {download}`data.txt <data.txt>`
 
-我们首先使用 ``gmt convert`` 命令将其变换为矢量格式::
+我们首先使用 ``gmt convert`` 命令将其变换为矢量格式:
 
     gmt convert data.txt -Fv -o0:4
 
-选项 ``-Fv`` 将原始的三列数据变换为向量起点终点格式::
+选项 ``-Fv`` 将原始的三列数据变换为向量起点终点格式:
 
     # 原始数据的xyz值    原始数据里下一个点的xyz值
     10.016  49.5493 18825   10.0032 49.5554 18700
@@ -30,7 +30,7 @@ author: 陈箫翰
     10.0032 49.5554 18575   9.98304 49.5649 18531
     ...
 
-我们只需要前5列数据进行绘图，选项 ``-o0:4`` 即为只保留前5列输出::
+我们只需要前5列数据进行绘图，选项 ``-o0:4`` 即为只保留前5列输出:
 
     # 原始数据的xyz值    原始数据里下一个点的xy值
     10.016  49.5493 18825   10.0032 49.5554
@@ -51,4 +51,4 @@ author: 陈箫翰
 
 ## 参考链接
 
-https://forum.generic-mapping-tools.org/t/how-to-color-line-segments-according-z-value/2832/7
+[https://forum.generic-mapping-tools.org/t/how-to-color-line-segments-according-z-value/2832/7](https://forum.generic-mapping-tools.org/t/how-to-color-line-segments-according-z-value/2832/7)

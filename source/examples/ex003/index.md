@@ -5,7 +5,7 @@ date: 2025-08-15
 
 # 使用地形起伏数据对其他非地形起伏数据进行明暗调制
 
-在使用 {doc}`/module/grdimage` 绘制\ **非**\ 地形起伏的网格数据时，有时会想要给
+在使用 {doc}`/module/grdimage` 绘制 **非** 地形起伏的网格数据时，有时会想要给
 绘制的图件加上地形起伏的效果，使得图件在展示原始数据的同时还能显示地形变化，且
 使得图片更加有立体感。
 
@@ -15,7 +15,7 @@ date: 2025-08-15
 2. 使用 {doc}`/module/grdimage` 模块绘制网格数据，同时 **-I** 选项指定前一步
    生成的地形起伏梯度文件
 
-伪代码为::
+伪代码为:
 
     gmt grdgradient earth-relief-data.nc -Gearth-relief-gradient.nc ...
     gmt grdimage other-data.nc -Iearth-relief-gradient.nc ...
@@ -25,7 +25,7 @@ date: 2025-08-15
 做裁剪（{doc}`/module/grdcut` 模块）和重采样（{doc}`/module/grdsample` 模块）。
 
 当要绘制的原始网格数据与地形起伏数据具有相同的区域范围、网格间隔和 {doc}`/grid/registration` 时，
-上面的伪代码可以简化为如下伪代码::
+上面的伪代码可以简化为如下伪代码:
 
     gmt grdimage other-data.nc -Iearth-relief-data.nc+d ...
 
