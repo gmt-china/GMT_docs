@@ -1,3 +1,5 @@
+:author: 田冬冬, 王亮
+:date: 2020-03-23
 .. index:: ! gmt-config
 
 gmt-config

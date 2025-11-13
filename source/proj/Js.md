@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 周茂
+date: 2024-09-09
+---
+
 # -JS: General stereographic
 
 维基链接：<https://en.wikipedia.org/wiki/Stereographic_projection>

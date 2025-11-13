@@ -1,3 +1,8 @@
+---
+author: 田冬冬
+date: 2024-09-09
+---
+
 (grid-registration)=
 
 # 网格配准

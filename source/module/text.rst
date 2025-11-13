@@ -1,3 +1,5 @@
+:author: 田冬冬, 姚家园, 邓山泉
+:date: 2022-05-05
 .. index:: ! text
 .. include:: common_SYN_OPTs.rst_
 

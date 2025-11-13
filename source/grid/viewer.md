@@ -1,3 +1,8 @@
+---
+author: 田冬冬
+date: 2024-09-09
+---
+
 # 查看 netCDF 文件
 
 使用 NetCDF 库自带的 `ncdump` 命令可以很方便地查看 NetCDF 文件内容。

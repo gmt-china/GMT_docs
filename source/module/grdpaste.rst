@@ -1,3 +1,5 @@
+:author: 田冬冬
+:date: 2019-11-25
 .. index:: ! grdpaste
 .. include:: common_SYN_OPTs.rst_
 
