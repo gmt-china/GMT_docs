@@ -1,3 +1,5 @@
+:author: 田冬冬, 王亮
+:date: 2022-08-30
 .. index:: ! figure
 .. include:: common_SYN_OPTs.rst_
 

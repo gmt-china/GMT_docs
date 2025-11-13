@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 周茂
+date: 2025-01-27
+---
+
 # -JX: Linear, logarithmic, power, and time
 
 GMT 中笛卡尔坐标变换分为三类：

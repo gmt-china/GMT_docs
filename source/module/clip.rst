@@ -1,3 +1,5 @@
+:author: 田冬冬, 陈箫翰
+:date: 2025-03-05
 .. index:: ! clip
 .. include:: common_SYN_OPTs.rst_
 

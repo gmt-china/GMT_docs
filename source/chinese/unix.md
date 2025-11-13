@@ -1,3 +1,8 @@
+---
+author: 陈箫翰, 田冬冬
+date: 2025-10-31
+---
+
 # Linux/macOS 下的 GMT 中文支持
 
 本文介绍如何让 GMT 在 Linux/macOS 下支持中文。
