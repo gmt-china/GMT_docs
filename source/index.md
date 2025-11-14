@@ -1,8 +1,3 @@
----
-author: 田冬冬, 姚家园, 周茂, 陈箫翰, 王亮, Tche Liu
-date: 2025-10-24
----
-
 # GMT 中文手册
 
 ```{image} https://raw.githubusercontent.com/gmt-china/logo/master/gmt-china-combined-logo.png
