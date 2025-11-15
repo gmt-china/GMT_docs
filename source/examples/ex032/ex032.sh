@@ -2,7 +2,7 @@
 #
 LAKE_FILE="taihu.gmt"          # 太湖湖泊边界的 GMT 格式文件
 
-gmt begin taihu png
+gmt begin taihu
 
     gmt subplot begin 1x2 -Fs6i/6i -A -M0.5i -R119/121/30/32 -JM6i
 
