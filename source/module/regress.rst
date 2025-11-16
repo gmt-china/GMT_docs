@@ -82,6 +82,8 @@ regress
     :width: 400 px
     :align: center
 
+.. _-N:
+
 .. _-W:
 
 **-W**\ [**w**]\ [**x**]\ [**y**]\ [**r**]
