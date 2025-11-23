@@ -169,7 +169,7 @@ def _search_images(cwd):
         if len(ps_images) > 1:
             raise ValueError("More than one figure generated in one GMT plot.")
         elif len(ps_images) == 1:  # EPS found
-            cmd = "gmt psconvert -A -P -T{} {}"
+            cmd = "gmt psconvert -A -P -C-I${HOME}/.gmt -T{} {}"
             subprocess.run(cmd.format("g", ps_images[0]), shell=True, check=False)
             subprocess.run(cmd.format("f", ps_images[0]), shell=True, check=False)
             png_images = list(cwd.glob("*.png"))
