@@ -18,7 +18,7 @@ gshhg
 dcw/index
 remote-dataset
 CN-border/index
-CN-faults
+CN-faults/index
 CN-block/index
 geo3al/index
 gadm/index
