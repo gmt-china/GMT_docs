@@ -42,9 +42,9 @@ date: 2024-09-12
     不会包含注释，此时生成的PS文件更小。
 
 **PS_CONVERT**
-    现在模式下在执行 `gmt end` 命令时GMT会自动调用 {doc}`/module/psconvert`
+    现代模式下在执行 `gmt end` 命令时GMT会自动调用 {doc}`/module/psconvert`
     生成用户指定格式的图片。该选项用于控制调用 **psconvert** 时的默认参数，
-    多个参数之间以逗号分隔 \[**A**\]
+    多个参数之间以逗号分隔。请注意参数最前面不要加 `-` 。 \[**A**\]
 
 **PS_IMAGE_COMPRESS**
     设置PS中的图像压缩算法 \[**deflate,5**\]
