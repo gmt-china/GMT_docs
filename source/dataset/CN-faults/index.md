@@ -1,5 +1,6 @@
 ---
 author: 刘珠妹, 田冬冬, 陈箫翰
+date: 2025-11-23
 ---
 
 # CN-faults: 中国断层数据
@@ -24,66 +25,65 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 ### 绘制全国断层
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: CN-faults.sh
    :show-code: true
    :width: 75%
-
-    gmt begin CN-faults
-        gmt coast -JM15c -R60/150/0/60 -Baf -W0.5p,black -A10000
-        gmt plot CN-faults.gmt -W1p,red
-    gmt end show
 ```
 
 ### 绘制区域断层
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: CN-regional-faults.sh
    :show-code: true
    :width: 50%
-
-    gmt begin CN-regional-faults
-        gmt basemap -JM15c -R95/105/25/35 -Baf
-        gmt plot CN-faults.gmt -W1p,red
-    gmt end show
 ```
 
 ### 标注断层名
 
-可以使用 {doc}`/module/plot` 模块的 **-Sq** 选项标注断层名。
+使用 {doc}`/module/convert` 模块提取数据并修改段头记录信息。
+`-aL="FN_Ch"` 使用OGR/GMT矢量数据格式文件中的 `FN_Ch` 字段，将它的值设置为数据段头记录中标签信息（即 `-L` ）。
+详细说明请参考 {doc}`/option/a` 和 {doc}`/table/ascii` 。
+
+```
+$ gmt convert CN-faults.gmt -aL="FN_Ch"
+> -L招远—黄墩断裂
+119.237289736   35.50975368     0
+119.277799736   35.55371168     0
+119.318480736   35.61789268     0
+119.377370736   35.70849468     0
+119.418367736   35.75389168     0
+> -L百尺河断裂
+119.360213473   36.138556029    0
+119.596289331   36.123075645    0
+119.647890612   36.119205548    0
+...
+```
+
+提取出的数据使用 Shell 管道 `|` 传送给 {doc}`/module/plot` 模块，并用 **-Sq** 选项标注断层名。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: CN-faults-labeling.sh
     :show-code: true
     :width: 50%
-
-    gmt begin CN-faults-labeling png
-        # 设置中文字体配置文件 cidfmap 的目录，Windows 下无需此设置
-        gmt set PS_CONVERT="C-I${HOME}/.gmt"
-        # GMT 处理中文存在一些已知 BUG
-        # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
-        gmt set PS_CHAR_ENCODING Standard+
-        gmt coast -JM10c -RTW -Baf -W0.5p,black
-        # -aL="FN_Ch": set the "L" value (i.e., label) in segment headers using "FN_Ch"
-        # :+Lh: take the label text from the "L" value in the segment header
-        gmt convert CN-faults.gmt -aL="FN_Ch" | gmt plot -Sqn1:+Lh+f6p,39
-    gmt end show
 ```
 
 ### 根据属性信息提取数据
 
-可以使用 **convert** 模块的 **-S** 选项提取指定属性的数据。
-例如，下例中提取出“断层名称”为“红河断裂”的断层数据。
+使用 {doc}`/module/convert` 模块的 **-S** 选项提取指定属性的数据。
+例如，下例中提取出“断层名称”为“红河断裂”的断层数据：
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: CN-single-fault.sh
    :show-code: true
    :width: 50%
+```
 
-    gmt begin CN-single-fault png
-        gmt basemap -R98/105/22/27 -JM15c -Ba
-        # -S: output record contains specified field attribute
-        gmt convert CN-faults.gmt -S"FN_Ch=红河断裂" | gmt plot
-    gmt end show
+提取出“断层名称”为“红河断裂”的断层数据，并标注断层英文名：
+
+```{eval-rst}
+.. gmtplot:: CN-single-fault-labeling.sh
+   :show-code: true
+   :width: 50%
 ```
 
 ### 根据空间范围提取数据
@@ -92,17 +92,9 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 此处仅以缓冲区范围为例。
 
 ```{eval-rst}
-.. gmtplot::
+.. gmtplot:: CN-buffer-fault.sh
    :show-code: true
    :width: 50%
-
-    gmt begin CN-buffer-fault
-        gmt basemap -R109/113/34/37 -JM15c -Ba
-        # draw a circle with a radius of 100 km
-        echo 111 35.5 200k | gmt plot -SE- -Wblue -fg
-        # extract faults within the circle
-        gmt select CN-faults.gmt -C111/35.5+d100k -fg | gmt plot
-    gmt end show
 ```
 
 ## 数据来源
