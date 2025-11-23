@@ -41,8 +41,8 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 ### 标注断层名
 
 使用 {doc}`/module/convert` 模块提取数据并修改段头记录信息。
-`-aL="FN_Ch"` 使用OGR/GMT矢量数据格式文件中的 `FN_Ch` 字段，将它的值设置为数据段头记录中标签信息（即 `-L` ）。
-详细说明请参考 {doc}`/option/a` 和 {doc}`/table/ascii` 。
+其中 `-aL="FN_Ch"` 使用OGR/GMT矢量数据格式文件中的 `FN_Ch` 字段，将它的值设置为数据段头记录中标签信息（即 `-L` ）。
+详细说明请参考 {doc}`/option/a` 和 {ref}`table-ascii-attrs` 。
 
 ```
 $ gmt convert CN-faults.gmt -aL="FN_Ch"
