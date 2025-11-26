@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9.2 -Jp：极坐标线性投影 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/proj/Jp.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="9.3 -Ja：Lambert方位等面积投影" href="../Ja/" />
+    <link rel="prev" title="9.1 -Jx：笛卡尔变换" href="../Jx/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">9 投影方式</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Jx/">9.1 -Jx：笛卡尔变换</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9.2 -Jp：极坐标线性投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ja/">9.3 -Ja：Lambert方位等面积投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">9.4 -Jb：Albers圆锥等面积投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jc/">9.5 -Jc：Cassini圆柱投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">9.6 -Jcyl_stere：圆柱立体投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">9.7 -Jd：等距圆锥投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">9.8 -Je：方位等距投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">9.9 -Jf：球心方位投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">9.10 -Jg：正交投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">9.11 -Jh：等面积Hammer投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">9.12 -Ji：正弦曲线投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">9.13 -Jj：Miller圆柱投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jk/">9.14 -Jk：Eckert投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jl/">9.15 -Jl：Lambert圆锥保角投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">9.16 -Jm：Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">9.17 -Jn：Robinson投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">9.18 -Jo：倾斜Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">9.19 -Jpoly：多圆锥投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">9.20 -Jq：圆柱等距投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">9.21 -Jr：Winkel Tripel投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">9.22 -Js：立体等角投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">9.23 -Jt：横向Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">9.24 -Ju：通用横向Mercator(UTM)投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">9.25 -Jv：Van der Grinten投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">9.26 -Jw：Mollweide投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">9.27 -Jy：圆柱等面积投影</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">9 投影方式</a> &raquo;</li>
+        
+      <li>9.2 -Jp：极坐标线性投影</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/proj/Jp.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jp">
+<h1>9.2 -Jp：极坐标线性投影<a class="headerlink" href="#jp" title="永久链接至标题">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">-Jp</span></code> 投影用于绘制极坐标数据（即角度 <span class="math notranslate nohighlight">\(\theta\)</span> 和半径 <span class="math notranslate nohighlight">\(r\)</span>）。</p>
+<p>指定极坐标投影的语法为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-Jp<span class="o">[</span>a<span class="o">]</span>&lt;scale&gt;<span class="o">[</span>/&lt;theta0&gt;<span class="o">][</span>r<span class="o">][</span>z<span class="o">]</span>
+-JP<span class="o">[</span>a<span class="o">]</span>&lt;width&gt;<span class="o">[</span>/&lt;theta0&gt;<span class="o">][</span>r<span class="o">][</span>z<span class="o">]</span>
+</pre></div>
+</div>
+<p>其中</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Jp&lt;scale&gt;</span></code> 表示指定比例尺，<code class="docutils literal notranslate"><span class="pre">-JP&lt;width&gt;</span></code> 表示指定整张图的宽度</li>
+<li>默认情况下，角度 <span class="math notranslate nohighlight">\(\theta\)</span> 是指相当于水平方向逆时针旋转的角度（标准定义）；在 <code class="docutils literal notranslate"><span class="pre">p</span></code> 或 <code class="docutils literal notranslate"><span class="pre">P</span></code> 后插入 <code class="docutils literal notranslate"><span class="pre">a</span></code> 表明输入数据是相对于北方向顺时针旋转的角度（地理学中的方位角）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;theta_0&gt;</span></code> 表示对坐标轴进行旋转的角度，默认值为0</li>
+<li><code class="docutils literal notranslate"><span class="pre">z</span></code> 表示将 r 轴标记为深度而不是半径</li>
+<li><code class="docutils literal notranslate"><span class="pre">r</span></code> 表示将径向方向反转，此时r轴范围应在0到90之间</li>
+</ul>
+<p>下面给出了一些极坐标的示例以展示极坐标的用法：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_GEO_MAP +D FONT_TITLE 14p,1,red
+gmt psbasemap -JP5c  -R0/360/0/1 -Bxa45f -B+t<span class="s2">&quot;-JP5c -R0/360/0/1&quot;</span> -Y10c -K &gt; Jp.ps
+gmt psbasemap -JPa5c -R0/360/0/1 -Bxa45f -B+t<span class="s2">&quot;-JPa5c -R0/360/0/1&quot;</span> -X8c -K -O &gt;&gt; Jp.ps
+gmt psbasemap -JPa5c -R0/90/0/1 -Bxa45f -Bya0.2 -BWNe+t<span class="s2">&quot;-JPa5c -R0/90/0/1&quot;</span> -X8c -K -O &gt;&gt; Jp.ps
+gmt psbasemap -JPa5c/45 -R0/90/0/1 -Bxa45f -Bya0.2 -BWNse+t<span class="s2">&quot;-JPa5c/45 -R0/90/0/1&quot;</span> -X-16c -Y-6.5c -K -O &gt;&gt; Jp.ps
+gmt psbasemap -JPa5c/45 -R0/90/3480/6371 -Bxa45f -Bya -BWNse+t<span class="s2">&quot;-JPa5c/45 -R0/90/3480/6371&quot;</span> -X8c -Y1c -K -O &gt;&gt; Jp.ps
+gmt psbasemap -JPa5c/45z -R0/90/3480/6371 -Bxa45f -Bya -BWNse+t<span class="s2">&quot;-JPa5c/45z -R0/90/3480/6371&quot;</span> -X8c -O &gt;&gt; Jp.ps
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/Jp-gmtplot-0.png" src="../../_images/Jp-gmtplot-0.png" />
+<p class="caption"><span class="caption-text">极坐标用法示例</span></p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Ja/" class="btn btn-neutral float-right" title="9.3 -Ja：Lambert方位等面积投影" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Jx/" class="btn btn-neutral float-left" title="9.1 -Jx：笛卡尔变换" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

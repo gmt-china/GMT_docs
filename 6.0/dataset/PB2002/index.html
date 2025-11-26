@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PB2002: 全球板块边界数据 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/dataset/PB2002/index.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="中文支持" href="../../chinese/" />
+    <link rel="prev" title="GADM: 全球行政区划数据库" href="../gadm/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">地学数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">GSHHG: 全球高分辨率海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">GADM: 全球行政区划数据库</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PB2002: 全球板块边界数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">数据下载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">引用信息</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">地学数据集</a> &raquo;</li>
+        
+      <li>PB2002: 全球板块边界数据</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/dataset/PB2002/index.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pb2002">
+<h1>PB2002: 全球板块边界数据<a class="headerlink" href="#pb2002" title="永久链接至标题">¶</a></h1>
+<p>PB2002 是常用的一个全球板块边界数据，其包含了14个大板块和38个小板块，共计52个板块的边界数据。</p>
+<ul class="simple">
+<li>官方网站: <a class="reference external" href="http://peterbird.name/publications/2003_PB2002/2003_PB2002.htm">http://peterbird.name/publications/2003_PB2002/2003_PB2002.htm</a></li>
+<li>原始数据下载地址: <a class="reference external" href="http://peterbird.name/oldFTP/PB2002/">http://peterbird.name/oldFTP/PB2002/</a></li>
+<li>数据格式说明: <a class="reference external" href="http://peterbird.name/oldFTP/PB2002/2001GC000252_readme.txt">http://peterbird.name/oldFTP/PB2002/2001GC000252_readme.txt</a></li>
+</ul>
+<div class="section" id="id1">
+<h2>数据下载<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>原始数据的格式无法直接用于GMT绘图。这里我们从官方网站下载了 <code class="docutils literal notranslate"><span class="pre">PB2002_plates.dig.txt</span></code>
+和 <code class="docutils literal notranslate"><span class="pre">PB2002_boundaries.dig.txt</span></code> 数据，并将其段头记录做了修改以供GMT用户使用。</p>
+<p>可供GMT直接使用的数据下载地址:</p>
+<ul class="simple">
+<li><a class="reference download internal" download="" href="../../_downloads/7380dd3b6de0df605b193d0987c81492/PB2002_plates.dig.txt"><code class="xref download docutils literal notranslate"><span class="pre">PB2002_plates.dig.txt</span></code></a></li>
+<li><a class="reference download internal" download="" href="../../_downloads/2c21d3cae73e71e583a0e402539901f8/PB2002_boundaries.dig.txt"><code class="xref download docutils literal notranslate"><span class="pre">PB2002_boundaries.dig.txt</span></code></a></li>
+</ul>
+<p>两个数据是等效的，区别在于 <strong>PB2002_plates.dig.txt</strong> 中数据分为52段，每段数据对应一个板块边界闭合多边形，每段数据的段头记录为该段数据的板块名称缩写。</p>
+<p><strong>PB2002_boundaries.dig.txt</strong> 中数据分为229段，其将相邻板块的共同边界分为不同的段列出来。段头记录中包含了两个板块的名称缩写，以及板块数据来源的参考文献。</p>
+</div>
+<div class="section" id="id2">
+<h2>使用示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在绘图方面，两个数据没有区别。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin PB2002 pdf,png
+gmt coast -JH20c -Rg -B0 -B+t<span class="s1">&#39;PB2002&#39;</span> -W1/0.1p,black -A1000
+gmt plot PB2002_boundaries.dig.txt -W0.5p,red
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/index-gmtplot-0.png"><img alt="../../_images/index-gmtplot-0.png" src="../../_images/index-gmtplot-0.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">PB2002 全球板块边界</span></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>引用信息<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>Bird, P. (2003) An updated digital model of plate boundaries, <em>Geochemistry Geophysics Geosystems</em>, 4(3), 1027, doi:10.1029/2001GC000252.</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../chinese/" class="btn btn-neutral float-right" title="中文支持" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gadm/" class="btn btn-neutral float-left" title="GADM: 全球行政区划数据库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
