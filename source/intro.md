@@ -204,7 +204,7 @@ GMT 的某些模块基于 GMT 团队单独发展并发表的算法。算法相�
   *Computers & Geosciences*, 36, 348–354.
   <https://doi.org/10.1016/j.cageo.2009.05.009>
 
-{doc}`gmt:greenspline` **模块**
+{doc}`/module/greenspline` **模块**
 
 : Wessel, P. (2009).
   A general-purpose Green's function-based interpolator.
