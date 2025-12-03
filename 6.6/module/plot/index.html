@@ -1,0 +1,1235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>plot &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="plot3d" href="../plot3d/" />
+    <link rel="prev" title="nearneighbor" href="../nearneighbor/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s"><em>-S</em> 选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-custom-symbols">制作和使用自定义符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">多段数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">基础示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f"><em>-F</em> 选项示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sq"><em>-Sq</em> 选项示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">plot</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/plot.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://github.com/wangliang1989" target="_blank" rel="noopener">王亮</a>
+    , 
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    , 
+      <a href="https://github.com/core-man" target="_blank" rel="noopener">姚家园</a>
+    
+ &nbsp;•&nbsp; 📅 2025-10-31
+    </div>
+  
+  
+  <span class="target" id="index-0"></span><section id="plot">
+<h1>plot<a class="headerlink" href="#plot" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/plot.html" title="（在 GMT v6.6）"><span>plot</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>在图上绘制线段、多边形和符号</p>
+</dd>
+</dl>
+<p>该命令既可以绘制线段和多边形（多边形是闭合的线段），也可以绘制符号。
+唯一的区别在于是否使用了 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 选项：</p>
+<ul class="simple">
+<li><p>不使用 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 选项，默认将所有的数据点连成线，即绘制线段或多边形</p></li>
+<li><p>使用 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 选项，则仅在数据点所在位置绘制符号</p></li>
+</ul>
+<section id="id1">
+<h2>可选选项<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>-A</strong>[<strong>m</strong>|<strong>p</strong>|<strong>x</strong>|<strong>y</strong>]</dt><dd><p>修改两点间的连接方式。</p>
+<p>地理投影下，两点之间默认沿着大圆弧连接。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-A</span></code> ：忽略当前的投影方式，直接用直线连接两点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Am</span></code> ：先沿着经线画，再沿着纬线画</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Ap</span></code> ：先沿着纬线画，再沿着经线画</p></li>
+</ol>
+<p>笛卡尔坐标下，两点之间默认用直线连接。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-Ax</span></code> 先沿着X轴画，再沿着Y轴画</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Ay</span></code> 先沿着Y轴画，再沿着X轴画</p></li>
+</ol>
+<p>下图中，黑色曲线为默认情况；红线为使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的效果；蓝线为使用 <code class="docutils literal notranslate"><span class="pre">-Ap</span></code>
+的效果；黄线为使用 <code class="docutils literal notranslate"><span class="pre">-Am</span></code> 的效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/89840e93b188c8827606c1b18c5633e5/4125205fa5ee28478e4c308aa1be7447.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-4125205fa5ee28478e4c308aa1be7447">
+<a class="reference internal image-reference" href="../../_images/4125205fa5ee28478e4c308aa1be7447.png"><img alt="../../_images/4125205fa5ee28478e4c308aa1be7447.png" src="../../_images/4125205fa5ee28478e4c308aa1be7447.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">plot -A选项示意图</span><a class="headerlink" href="#gmtplot-4125205fa5ee28478e4c308aa1be7447" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>注：由于这里投影比较特别，所以沿着经线的线和沿着纬线的线，看上去都是直线，
+在其他投影方式下可能不会是这样。</p>
+</dd>
+<dt><strong>-C</strong><em>cpt</em></dt><dd><p>指定CPT文件或颜色列表</p>
+<p>该选项后跟一个CPT文件名，使符号和多边形的填充颜色、线段和多边形的线条颜色由 Z 值决定。</p>
+<ol class="arabic simple">
+<li><p>若绘制符号（即使用 <strong>-S</strong> 选项），则符号的填充色由数据的第三列Z值决定，
+其他数据列依次后移一列。</p></li>
+<li><p>若绘制线段或多边形（即未使用 <strong>-S</strong> 选项），则需要在多段数据的数据段头记录中指定
+<strong>-Z</strong><em>val</em> (参见 <a class="reference internal" href="../../table/ascii/#table-ascii-attrs"><span class="std std-ref">数据段头记录中的额外属性</span></a> )，CPT文件中 <em>val</em> 所对应的颜色，
+即为线段或多边形的线条颜色。如果要设置为多边形的填充色，注意应该要额外使用 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 选项构建闭合多边形。</p></li>
+</ol>
+<p>除此以外，也可以使用 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;,...</span></code> 语法在
+命令行上临时构建一个颜色列表，其中 <code class="docutils literal notranslate"><span class="pre">&lt;color1&gt;</span></code> 对应Z值为0的颜色， <code class="docutils literal notranslate"><span class="pre">&lt;color2&gt;</span></code>
+对应Z值为1的颜色，依次类推。</p>
+<p>下面的例子展示了 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;..</span></code> 用法:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>plot<span class="w"> </span>-JX10c/10c<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-B1<span class="w"> </span>-Cblue,red<span class="w"> </span>-W2p<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; -Z0</span>
+<span class="s">1 1</span>
+<span class="s">2 2</span>
+<span class="s">&gt; -Z1</span>
+<span class="s">3 3</span>
+<span class="s">4 4</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>-D</strong><em>dx</em>/<em>dy</em></dt><dd><p>设置符号的偏移量。
+该选项会将要绘制的符号或线段在给定坐标的基础上偏移 <em>dx</em>/<em>dy</em> 距离。
+若未指定 <em>dy</em>，则默认 <em>dy</em> = <em>dx</em>。</p>
+</dd>
+<dt><strong>-E</strong>[<strong>x</strong>|<strong>y</strong>|<strong>X</strong>|<strong>Y</strong>][<strong>+a</strong>][<strong>+cl</strong>|<strong>f</strong>][<strong>+n</strong>][<strong>+w</strong><em>cap</em>][<strong>+p</strong><em>pen</em>]</dt><dd><p>绘制误差棒。
+默认会绘制X和Y两个方向的误差棒。 <code class="docutils literal notranslate"><span class="pre">x|y</span></code> 表示只绘制X方向和/或Y方向的误差棒，
+此时输入数据的格式为（具体格式由选项决定）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">  </span>Y<span class="w">   </span><span class="o">[</span>size<span class="o">]</span><span class="w">     </span><span class="o">[</span>X_error<span class="o">]</span><span class="w">    </span><span class="o">[</span>Y_error<span class="o">]</span><span class="w">  </span><span class="o">[</span>others<span class="o">]</span>
+</pre></div>
+</div>
+<p>例如，X方向误差为1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-JX10c/10c<span class="w"> </span>-B1<span class="w"> </span>-Sc0.1c<span class="w"> </span>-Ex<span class="w"> </span>-W2p<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>X方向误差为1，Y方向误差为0.5:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-JX10c/10c<span class="w"> </span>-B1<span class="w"> </span>-Sc0.1c<span class="w"> </span>-Exy<span class="w"> </span>-W2p<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>使用 <strong>+a</strong> 表示X方向和/或Y方向为非对称误差棒，此时输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">  </span>Y<span class="w">   </span><span class="o">[</span>size<span class="o">]</span><span class="w">   </span><span class="o">[</span>X_left_error<span class="w"> </span>X_right_error<span class="o">]</span><span class="w">  </span><span class="o">[</span>Y_left_error<span class="w"> </span>Y_right_error<span class="o">]</span><span class="w"> </span><span class="o">[</span>others<span class="o">]</span>
+</pre></div>
+</div>
+<p>例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>.4<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span><span class="m">0</span>.25<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-JX10c/10c<span class="w"> </span>-B1<span class="w"> </span>-Sc0.1c<span class="w"> </span>-Exy+a<span class="w"> </span>-W2p<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 则绘制box-and-whisker（即stem-and-leaf）符号。以 <code class="docutils literal notranslate"><span class="pre">-EX</span></code>
+为例，此时数据数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X中位数<span class="w">  </span>Y<span class="w">  </span><span class="m">0</span>%位数<span class="w"> </span><span class="m">25</span>%位数<span class="w"> </span><span class="m">75</span>%位数<span class="w"> </span><span class="m">100</span>%位数
+</pre></div>
+</div>
+<p>25%到75%之间的方框内可以用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项填充颜色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span>.25<span class="w"> </span><span class="m">5</span>.4<span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-JX10c/10c<span class="w"> </span>-B1<span class="w"> </span>-Sc0.1c<span class="w"> </span>-EX<span class="w"> </span>-Gred<span class="w"> </span>-W2p<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>若使用 <code class="docutils literal notranslate"><span class="pre">-EXY</span></code> ，则输入数据中至少需要10列；</p></li>
+<li><p>若在X或Y后加上了 <code class="docutils literal notranslate"><span class="pre">+n</span></code> ，则需要在额外的第5列数据指定中位数的不确定性。</p></li>
+<li><p><strong>+w</strong><em>cap</em> 控制误差棒顶端帽子的长度，默认值为7p</p></li>
+<li><p><strong>+p</strong><em>pen</em> 控制误差棒的画笔属性，默认值为 <code class="docutils literal notranslate"><span class="pre">defalut,black,solid</span></code></p></li>
+<li><p>在使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项时，可以从CPT文件中查找到符号所对应的颜色</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">+c</span></code> 表明将颜色应用于符号填充色和误差棒画笔属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+cf</span></code> 表明仅将颜色用于填充符号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+cl</span></code> 表面仅将颜色用于设置误差棒画笔属性，并关闭符号填充色</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt><strong>-F</strong>[<strong>c</strong>|<strong>n</strong>|<strong>r</strong>][<strong>a</strong>|<strong>f</strong>|<strong>s</strong>|<strong>r</strong>|<em>refpoint</em>]</dt><dd><p>修改数据点的分组和连接方式。</p>
+<p>数据的分组方式有三种：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> 忽略所有数据段头记录，即将所有文件内的所有数据点作为一个单独的组，
+并将第一个文件的第一个数据点作为该组的参考点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> 将每个文件内的所有点分在一个组，并将每一组内的第一个点作为该组的参考点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> 每段数据内的点作为一组，并将每段数据的第一个点作为该组的参考点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> 每段数据内的点作为一组，并将每段数据的第一个点作为该组的参考点，
+每次连线后将前一个点作为新的参考点，该选项仅与 <code class="docutils literal notranslate"><span class="pre">-Fr</span></code> 连用（似乎与
+<code class="docutils literal notranslate"><span class="pre">-Fcs</span></code> 等效？）</p></li>
+<li><p><em>refpoint</em> 指定某个点为所有组共同的参考点</p></li>
+</ol>
+<p>在确定分组后，还可以额外定义组内各点的连接方式：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> 将组内的点连接成连续的线段</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> 将组内的所有点与组内的参考点连线</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> 将每个组内的所有点互相连线</p></li>
+</ul>
+<p>在不使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项的情况下，默认值为 <code class="docutils literal notranslate"><span class="pre">-Fcs</span></code> 。该选项的具体示例在后面给出。</p>
+</dd>
+<dt><strong>-G</strong><em>fill</em></dt><dd><p>设置符号或多边形的填充色。多段数据中数据段头记录中的 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项会覆盖命令行中的设置。</p>
+</dd>
+<dt><strong>-I</strong><em>intens</em></dt><dd><p>模拟光照效果</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;intens&gt;</span></code> 的取值范围为-1到1，用于对填充色做微调以模拟光照效果。正值
+表示亮色，负值表示暗色，零表示原色。</p>
+</dd>
+<dt><strong>-L</strong>[<strong>+b</strong>|<strong>d</strong>|<strong>D</strong>][<strong>+xl</strong>|<strong>r</strong>|<em>x0</em>][<strong>+yb</strong>|<strong>t</strong>|<em>y0</em>][<strong>+p</strong><em>pen</em>]</dt><dd><p>将第一个和最后一个数据点连接起来。</p>
+<p>plot 在绘制线条时，默认只将输入文本中相邻的数据点用线条连接起来。
+使用 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 选项后，plot 会额外地再将第一个和最后一个数据点连接起来，形成封闭的图形。
+如果第一个和最后一个数据点的连线和其它连线交叉，就会形成不止一个封闭图形。
+<a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 选项常常和 <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong> 选项同时使用以进行颜色填充。下面看不同搭配的画图效果:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">1 1</span>
+<span class="s">2 3</span>
+<span class="s">3 2</span>
+<span class="s">4 4</span>
+<span class="s">EOF</span>
+<span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;t.txt -R0/5/0/5 -JX4c -W1p -Ba1f1&#39;</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-L_1
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s1">&#39;No -G or -L&#39;</span>
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s1">&#39;-G Only&#39;</span><span class="w"> </span>-Gorange<span class="w"> </span>-X5c
+<span class="c1"># -L选项中的+p子选项对画笔的外观设置一律无效</span>
+<span class="c1"># 没有-G选项时，使用-L选项必须使用+p子选项，但相关设置无效</span>
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s1">&#39;-L Only&#39;</span><span class="w"> </span>-L+p10p,blue<span class="w"> </span>-X5c
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s1">&#39;both -G and -L&#39;</span><span class="w"> </span>-Gorange<span class="w"> </span>-L+p10p,blue<span class="w"> </span>-X5c
+gmt<span class="w"> </span>end<span class="w"> </span>show
+rm<span class="w"> </span>t.txt
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-0a24074e6a0e0af45ec85b047e8c119e">
+<a class="reference internal image-reference" href="../../_images/0a24074e6a0e0af45ec85b047e8c119e.png"><img alt="../../_images/0a24074e6a0e0af45ec85b047e8c119e.png" src="../../_images/0a24074e6a0e0af45ec85b047e8c119e.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">-L 和 -G 选项不同搭配方式的效果</span><a class="headerlink" href="#gmtplot-0a24074e6a0e0af45ec85b047e8c119e" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 选项还可以绘制两类包络：一类是围绕线条的包络，另一类是到指定位置的包络。
+首先来看围绕线条的包络：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+d</span></code> 围绕线条绘制对称的包络，包络相对于线条的y轴幅度由数据文件内的第三列给出</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+D</span></code> 围绕线条绘制不对称的包络，包络相对于线条的y轴幅度由数据文件内的第三、四列给出</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+b</span></code> 围绕线条绘制不对称的包络，包络的y轴范围由数据文件内的第三、四列给出</p></li>
+</ol>
+<p>下面的例子分别绘制了上述三种情形。第一幅图使用 <code class="docutils literal notranslate"><span class="pre">+d</span></code> 选项，数据的第三列分别是2、2、3和1，
+所以包络的上下范围在线条的每一个数据点处距离线条的距离就是2、2、3和1。
+第二幅图使用 <code class="docutils literal notranslate"><span class="pre">+D</span></code> 选项，数据的第三列分别是2、2、3和1，
+所以包络的下范围在线条的每一个数据点处距离线条的距离就是2、2、3和1，
+也就是和第一幅图完全相同。但是，上范围的距离使用的是数据文件的第四列，也就是4、3、2和1。
+第三幅图使用 <code class="docutils literal notranslate"><span class="pre">+b</span></code> 选项，包络的范围与线条的位置无关。第三、四列数据分别决定了包络的上下范围。
+当第三、四列数据交叉的时候，包络图形随之出现打结的现象。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">1 1 2 4</span>
+<span class="s">2 3 2 3</span>
+<span class="s">3 2 3 2</span>
+<span class="s">4 4 1 1</span>
+<span class="s">EOF</span>
+<span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;t.txt -R0/5/-2/8 -JX5c -W2p -Ba1f1 -Glightred&#39;</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-L_2
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053d&quot;</span><span class="w"> </span>-L+d
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053D&quot;</span><span class="w"> </span>-L+D<span class="w"> </span>-X6c
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053b&quot;</span><span class="w"> </span>-L+b<span class="w"> </span>-X6c
+gmt<span class="w"> </span>end<span class="w"> </span>show
+rm<span class="w"> </span>t.txt
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-46d7ac73b3c80678e1868fed2901182c">
+<a class="reference internal image-reference" href="../../_images/46d7ac73b3c80678e1868fed2901182c.png"><img alt="../../_images/46d7ac73b3c80678e1868fed2901182c.png" src="../../_images/46d7ac73b3c80678e1868fed2901182c.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">围绕线条的包络</span><a class="headerlink" href="#gmtplot-46d7ac73b3c80678e1868fed2901182c" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>再来看指定位置的包络：</p>
+<ol class="arabic simple">
+<li><p><strong>+xl</strong>|<strong>r</strong>|<em>x0</em> 包络范围是从线条到线条的点的x轴最小、大值和固定值</p></li>
+<li><p><strong>+yb</strong>|<strong>t</strong>|<em>y0</em> 包络范围是从线条到线条的点的y轴最小、大值和固定值</p></li>
+</ol>
+<p>例子如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">1 1</span>
+<span class="s">2 3</span>
+<span class="s">3 2</span>
+<span class="s">4 4</span>
+<span class="s">EOF</span>
+<span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;t.txt -R0/5/0/5 -JX5c -W2p -Ba1f1 -Glightred&#39;</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-L_3
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053xl&quot;</span><span class="w"> </span>-L+xl
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053xr&quot;</span><span class="w"> </span>-L+xr<span class="w"> </span>-X6c
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053x4.5&quot;</span><span class="w"> </span>-L+x4.5<span class="w"> </span>-X6c
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053yt&quot;</span><span class="w"> </span>-L+yt<span class="w"> </span>-X-12c<span class="w"> </span>-Y6.5c
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053yb&quot;</span><span class="w"> </span>-L+yb<span class="w"> </span>-X6c
+gmt<span class="w"> </span>plot<span class="w"> </span><span class="nv">$cmd</span><span class="w"> </span>-BWStr+t<span class="s2">&quot;-L\053y4&quot;</span><span class="w"> </span>-L+y4<span class="w"> </span>-X6c
+gmt<span class="w"> </span>end<span class="w"> </span>show
+rm<span class="w"> </span>t.txt
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-fd225c9af745936c036cbc3acf386917">
+<a class="reference internal image-reference" href="../../_images/fd225c9af745936c036cbc3acf386917.png"><img alt="../../_images/fd225c9af745936c036cbc3acf386917.png" src="../../_images/fd225c9af745936c036cbc3acf386917.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">到指定位置的包络</span><a class="headerlink" href="#gmtplot-fd225c9af745936c036cbc3acf386917" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</dd>
+<dt><strong>-N</strong>[<strong>c</strong>|<strong>r</strong>]</dt><dd><p>区域范围外的符号不会被裁剪，而会被正常绘制。</p>
+<p>默认情况下，位于 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 范围外的符号不会被绘制的。使用该选项使得即便符号的
+坐标位于 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 指定的范围外，也会被绘制。需要注意的是，该选项对线段或多边
+形无效，线段和多边形总会被区域的范围裁剪。</p>
+<p>对于存在周期性的地图而言，若符号出现在重复边界上，则会被重复绘制两次。比如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/360/-60/60<span class="w"> </span>-JM10c<span class="w"> </span>-Bx60<span class="w"> </span>-By15<span class="w"> </span>-Sc2c<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">360 0</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>会在地图的左右边界处分别两个半圆，该行为可以通过 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项修改：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-N</span></code> 关闭裁剪，符号仅绘制一次</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Nr</span></code> 关闭裁剪，但符号依然绘制两次</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Nc</span></code> 不关闭裁剪，但符号仅绘制一次</p></li>
+</ol>
+</dd>
+<dt><strong>-W</strong>[<em>pen</em>][<strong>+cl</strong>|<strong>+cf</strong>|<strong>+c</strong>]</dt><dd><p>设置线段或符号轮廓的画笔属性。</p>
+<ol class="arabic simple">
+<li><p><em>pen</em> 具体设置见 <a class="reference internal" href="../../basis/pen/"><span class="doc">画笔</span></a> 一节，用于修改线条的宽度、颜色、线型(例如点线、虚线、点划线等)</p></li>
+<li><p>若使用了 <code class="docutils literal notranslate"><span class="pre">+cl</span></code> 则表示线条颜色由CPT文件控制</p></li>
+<li><p>若使用了 <code class="docutils literal notranslate"><span class="pre">+cf</span></code> 则符号的填充色由CPT文件控制</p></li>
+<li><p>若使用了 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则表示线条颜色和符号填充色同时由CPT文件控制</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项后还可以加上额外的选项，可以指定线条的额外属性，见 <a class="reference internal" href="../../basis/line/"><span class="doc">线条属性</span></a> 一节</p></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="s">
+<h2><em>-S</em> 选项<a class="headerlink" href="#s" title="Link to this heading"></a></h2>
+<p>使用 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 选项，则表示要绘制符号。 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 选项的基本语法是:</p>
+<p><strong>-S</strong>[<em>symbol</em>][<em>size</em>]</p>
+<p>其中 <em>symbol</em> 指定了符号类型， <em>size</em> 为符号的大小，后面可添加单位。</p>
+<p>不同的符号类型，需要的输入数据格式也不同，但可以统一写成（用 <code class="docutils literal notranslate"><span class="pre">...</span></code> 代表某符号
+特有的输入列）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>...
+</pre></div>
+</div>
+<p class="rubric">基本符号</p>
+<p><strong>-S</strong><em>-|+|a|c|d|g|h|i|n|s|t|x|y|p</em></p>
+<p>14种简单的基本符号只需要一个参数 <em>size</em></p>
+<p><a class="reference download internal" download="" href="../../_downloads/cd8037002fd9f872fda36246e86f2ad9/65d96ec218c41382930282a90544e3f1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-65d96ec218c41382930282a90544e3f1">
+<a class="reference internal image-reference" href="../../_images/65d96ec218c41382930282a90544e3f1.png"><img alt="../../_images/65d96ec218c41382930282a90544e3f1.png" src="../../_images/65d96ec218c41382930282a90544e3f1.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">14种简单的基本符号，细圆圈表示相同 <em>size</em> 的外接圆。</span><a class="headerlink" href="#gmtplot-65d96ec218c41382930282a90544e3f1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>-S-</strong><em>size</em> ：短横线</p></li>
+<li><p><strong>-S+</strong><em>size</em> ：加号</p></li>
+<li><p><strong>-Sa</strong><em>size</em> ：五角星</p></li>
+<li><p><strong>-Sc</strong><em>size</em> ：圆</p></li>
+<li><p><strong>-Sd</strong><em>size</em> ：菱形</p></li>
+<li><p><strong>-Sg</strong><em>size</em> ：八边形</p></li>
+<li><p><strong>-Sh</strong><em>size</em> ：六边形</p></li>
+<li><p><strong>-Si</strong><em>size</em> ：倒三角</p></li>
+<li><p><strong>-Sn</strong><em>size</em> ：五边形</p></li>
+<li><p><strong>-Sp</strong><em>size</em> ：点</p></li>
+<li><p><strong>-Ss</strong><em>size</em> ：正方形</p></li>
+<li><p><strong>-St</strong><em>size</em> ：三角形</p></li>
+<li><p><strong>-Sx</strong><em>size</em> ：叉号</p></li>
+<li><p><strong>-Sy</strong><em>size</em> ：短竖线</p></li>
+</ul>
+<p>对于大写符号 <code class="docutils literal notranslate"><span class="pre">ACDGHINST</span></code>， <em>size</em> 表示符号的面积与直径为 <em>size</em> 的圆的面积相同。
+4种符号 <strong>-</strong>|<strong>+</strong>|<strong>x</strong>|<strong>y</strong> 是线符号，
+可以使用 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> 选项控制线宽， <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong> 或 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项控制颜色（本例中为 <code class="docutils literal notranslate"><span class="pre">-Glightblue</span> <span class="pre">-W1p</span></code> ）。
+而其他符号 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> 选项控制轮廓线属性， <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong> 或 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项控制填充色。</p>
+<p class="rubric">复杂符号</p>
+<p>5种复杂符号需要两个或更多的参数，还可以添加附加选项实现更多显示效果</p>
+<p><a class="reference download internal" download="" href="../../_downloads/61bf76a2ca67ae63f836e31f0f3ead9a/dedf7d99b70a28fd14e97eeafd692df2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-dedf7d99b70a28fd14e97eeafd692df2">
+<a class="reference internal image-reference" href="../../_images/dedf7d99b70a28fd14e97eeafd692df2.png"><img alt="../../_images/dedf7d99b70a28fd14e97eeafd692df2.png" src="../../_images/dedf7d99b70a28fd14e97eeafd692df2.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">5种多参数符号。大写形式 <strong>E</strong>, <strong>J</strong>, <strong>W</strong> 与小写形式 <strong>e</strong>, <strong>j</strong>, <strong>w</strong> 的区别在于大写形式使用地理方位角与地理距离。</span><a class="headerlink" href="#gmtplot-dedf7d99b70a28fd14e97eeafd692df2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl>
+<dt><strong>-Se</strong>[<em>direction</em>/]<em>major_axis</em>[/<em>minor_axis</em>]</dt><dd><p>绘制椭圆。三个参数分别为方向、长轴长度、短轴长度。其中方向是相对于水平方向逆时针旋转的角度，两个轴的长度都使用长度单位，即 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code></p>
+<p>这三个参数也可以在选项中省略，在输入数据中为每个椭圆单独指定。此时输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>方向<span class="w">   </span>长轴长度<span class="w">    </span>短轴长度
+</pre></div>
+</div>
+<p>这个选项绘制的椭圆形状大小不会受到底图地理投影方式的影响。</p>
+</dd>
+<dt><strong>-SE</strong>[<em>azimuth</em>/]<em>major_axis</em>[/<em>minor_axis</em>]</dt><dd><p>绘制椭圆。与前者类似，区别在于：</p>
+<ul class="simple">
+<li><p>使用方位角（相对于正北方向顺时针旋转的度数）。该方位角会根据所选取的地图投影变换成角度</p></li>
+<li><p>对于线性投影，长短轴的长度单位为数据单位，即与 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 中数据范围的单位相同</p></li>
+<li><p>对于地理投影，长短轴的长度单位必须设置为地理距离单位（例如千米 <em>k</em> 、弧度 <em>d</em> ）</p></li>
+</ul>
+<p>如果想使用地理单位绘制一个圆形，可以简单使用 <strong>-SE-</strong> 。此时输入数据只需要一个参数即该圆的直径。</p>
+</dd>
+<dt><strong>-Sj</strong>[<em>direction</em>/]<em>width</em>[/<em>height</em>]</dt><dd><p>绘制旋转矩形。三个参数分别为方向、宽度、高度。其中方向是相对于水平方向逆时针旋转的角度。
+这三个参数也可以在选项中省略，在输入数据中为每个矩形单独指定。此时输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>方向<span class="w">   </span>宽度<span class="w">    </span>高度
+</pre></div>
+</div>
+</dd>
+<dt><strong>-SJ</strong>[<em>azimuth</em>/]<em>width</em>[/<em>height</em>]</dt><dd><p>绘制旋转矩形。与前者类似，区别在于：</p>
+<ul class="simple">
+<li><p>使用方位角（相对于正北方向顺时针旋转的度数）。该方位角会根据所选取的地图投影变换成角度</p></li>
+<li><p>对于线性投影，长短轴的长度单位为数据单位，即与 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 中数据范围的单位相同</p></li>
+<li><p>对于地理投影，长短轴的长度单位必须设置为地理距离单位（例如千米 <em>k</em> 、弧度 <em>d</em> ）</p></li>
+</ul>
+<p>如果想使用地理单位绘制一个正方形，可以简单使用 <strong>-SJ-</strong> 。此时输入数据只需要一个参数即边长。</p>
+</dd>
+<dt><strong>-Sr</strong><em>width</em>/<em>height</em></dt><dd><p>绘制矩形。与 <strong>-Sj</strong> 类似，区别在于只需要两个参数，不进行旋转。</p>
+<p>如果使用 <strong>-Sr+s</strong> ，则输入数据分别为矩形的两个对角顶点的X和Y坐标。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">139</span>.2<span class="w"> </span><span class="m">34</span>.8<span class="w"> </span><span class="m">140</span>.5<span class="w"> </span><span class="m">36</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sr+s<span class="w"> </span>-W1p,blue
+</pre></div>
+</div>
+</dd>
+<dt><strong>-SR</strong><em>width</em>/<em>height</em>/<em>radius</em></dt><dd><p>绘制圆角矩形。 <em>radius</em> 为圆角半径。</p>
+</dd>
+<dt><strong>-Sw</strong>[<em>outer</em>[/<em>startdir</em>/<em>stopdir</em>]][<strong>+a</strong>[<em>dr</em>]][<strong>+i</strong>[<em>inner</em>]][<strong>+p</strong><em>pen</em>][<strong>+r</strong>[<em>da</em>]]</dt><dd><p>绘制楔形图。需要的3个参数分别为外直径 <em>outer</em> ，起始角度 <em>startdir</em> 和结束角度 <em>stopdir</em> （相对于水平方向逆时针旋转的角度）。
+附加 <strong>+i</strong> 可以进一步指定内直径 <em>inner</em> （默认为0）。附加 <strong>+a</strong>[<em>dr</em>] 表示只绘制弧线。如果附加了 <em>dr</em> ，则以 <em>dr</em> 为径向间隔绘制弧线。
+附加 <strong>+r</strong>[<em>da</em>] 表示只绘制径向线。如果附加了 <em>da</em> ，则以 <em>da</em> 为弧向间隔绘制径向线。</p>
+</dd>
+<dt><strong>-SW</strong>[<em>outer</em>[/<em>startaz</em>/<em>stopaz</em>]][<strong>+a</strong>[<em>dr</em>]][<strong>+i</strong>[<em>inner</em>]][<strong>+p</strong><em>pen</em>][<strong>+r</strong>[<em>da</em>]]</dt><dd><p>绘制楔形图。与前者类似，区别在于使用起始方位角 <em>startaz</em> 和结束方位角 <em>stopaz</em> （相对于正北方向顺时针旋转的度数），
+以及内直径和外直径都使用地理距离（默认为km）。</p>
+</dd>
+</dl>
+<p class="rubric">条状符号</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># Plot plot bar symbol for the man page</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>GMT_base_symbols4
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; ttv.d</span>
+<span class="s">1	1	0</span>
+<span class="s">2	3	1</span>
+<span class="s">EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; tth.d</span>
+<span class="s">1	1	0</span>
+<span class="s">3	2	0.7</span>
+<span class="s">EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; ttm.d</span>
+<span class="s">0.2	1	1.8	0.4	1.1</span>
+<span class="s">0.3	2	0.8	0.2	0.8</span>
+<span class="s">EOF</span>
+<span class="w">    </span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cjet<span class="w"> </span>-T0/4/1
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/3.5/0/3.75<span class="w"> </span>-JX2i/1i<span class="w"> </span>-Bag1<span class="w"> </span>-BWS<span class="w"> </span>-Sb0.2i+b<span class="w"> </span>-Glightblue<span class="w"> </span>-W0.5p<span class="w"> </span>-X0.5i<span class="w"> </span>-Y1i<span class="w"> </span>ttv.d<span class="w"> </span>--MAP_FRAME_TYPE<span class="o">=</span>graph<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Bag1<span class="w"> </span>-BWS<span class="w"> </span>-SB0.2i+b<span class="w"> </span>-Glightred<span class="w"> </span>-W0.5p<span class="w"> </span>-X2.5i<span class="w"> </span>tth.d<span class="w"> </span>--MAP_FRAME_TYPE<span class="o">=</span>graph<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Bag1<span class="w"> </span>-BWS<span class="w"> </span>-SB0.2i+i4<span class="w"> </span>-C<span class="w"> </span>-W0.5p<span class="w"> </span>-X2.5i<span class="w"> </span>ttm.d<span class="w"> </span>--MAP_FRAME_TYPE<span class="o">=</span>graph<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Bag1<span class="w"> </span>-BWS<span class="w"> </span>-SB0.2i+i4+s25<span class="w"> </span>-C<span class="w"> </span>-W0.25p<span class="w"> </span>-X2.5i<span class="w"> </span>ttm.d<span class="w"> </span>--MAP_FRAME_TYPE<span class="o">=</span>graph<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-154d90d6280448269686971f74628fb5">
+<a class="reference internal image-reference" href="../../_images/154d90d6280448269686971f74628fb5.png"><img alt="../../_images/154d90d6280448269686971f74628fb5.png" src="../../_images/154d90d6280448269686971f74628fb5.png" style="width: 80%;" />
+</a>
+</figure>
+<dl>
+<dt><strong>-Sb</strong>[<em>size</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>|<strong>q</strong>]][<strong>+b</strong>|<strong>B</strong>[<em>base</em>]][<strong>+v</strong>|<strong>i</strong><em>ny</em>][<strong>+s</strong>[<em>gap</em>]]</dt><dd><p>绘制垂直条状符号，从 <em>base</em> 到坐标Y。 <em>size</em> 为宽度，可以使用 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 这样的长度单位，也可以使用 <strong>q</strong> 表示X方向单位。
+默认情况下 <em>base</em> = 0，附加 <strong>+b</strong>[<em>base</em>] 可以修改。如果只附加 <strong>+b</strong> 但没有设置 <em>base</em> ，则需要额外的最后一列数据来指定 <em>base</em> 的值。
+使用 <strong>+B</strong>[<em>base</em>] ，条状符号的高度将从 <em>base</em> 起算（默认从原点起算）。</p>
+<p>普通条状符号只需要一列Y值输入数据。如果想绘制多波段条状符号，需要附加 <strong>+v</strong>|<strong>i</strong><em>ny</em> ，其中 <em>ny</em> 表示波段数量。输入数据中也需要有 <em>ny</em> 列Y值。
+这里 <strong>+i</strong> 表示以 <em>dy</em> 为步长累加条状的值， <strong>+v</strong> 表示按递增顺序获得相对于 <em>base</em> 的完整值。</p>
+<p>默认情况下多个波段都绘制在一个条状符号上，附加 <strong>+s</strong> 让多波段绘制为相邻的多个条状符号。
+可选参数 <em>gap</em> 表示在相邻条状符号之间添加间隔，间隔宽度为 <em>size</em> 的百分比 <em>gap</em> 。此时 <em>size</em> 定义为多个条状符号加间隔的总宽度。</p>
+<p>绘制多波段条状符号需要使用CPT文件以及 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项指定颜色，其中CPT文件的取值范围必须是 0, 1, …, <em>nx</em> - 1。
+输入数据的格式为(<em>x1 y x2 … xn</em>)或(<em>dx1 y dx2 … dxn</em>)。</p>
+</dd>
+<dt><strong>-SB</strong>[<em>size</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>|<strong>q</strong>]][<strong>+b</strong>|<strong>B</strong>[<em>base</em>]][<strong>+v</strong>|<strong>i</strong><em>nx</em>][<strong>+s</strong>[<em>gap</em>]]</dt><dd><p>与前者类似，区别在于绘制的是水平条状符号。</p>
+</dd>
+</dl>
+<p class="rubric">矢量符号</p>
+<p>矢量符号需要长度和方向，或矢量终点坐标等参数。通过附加选项可以定制矢量头的样式。</p>
+<dl>
+<dt><strong>-Sm</strong><em>size</em>[<strong>+</strong><em>vecmodifiers</em>]</dt><dd><p>绘制数学圆弧，输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">  </span>Y<span class="w">  </span>radius<span class="w">  </span>start<span class="w">  </span>stop
+</pre></div>
+</div>
+<p>其中 <em>radius</em> 为圆弧半径， <em>start</em> 和 <em>stop</em> 定义为水平方向起始的逆时针角度。
+默认圆弧两端无矢量头，可以通过附加选项 <strong>+</strong><em>vecmodifiers</em> 添加，见 <a class="reference internal" href="../../basis/vector/"><span class="doc">矢量/箭头</span></a> 一节。 <em>size</em> 定义为矢量头的长度。
+圆弧的线宽由 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> 选项设定，矢量头的轮廓线宽默认为圆弧线宽的一半。</p>
+</dd>
+<dt><strong>-SM</strong><em>size</em>[<strong>+</strong><em>vecmodifiers</em>]</dt><dd><p>与前者类似，唯一的区别为当圆弧的夹角恰好是90度时会用直角符号来表示。</p>
+</dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-Sm
+gmt<span class="w"> </span>basemap<span class="w"> </span>-R0/4/0.5/1.5<span class="w"> </span>-JX6c/3c<span class="w"> </span>-Bxa1g1<span class="w"> </span>-Bya0.5g0.5<span class="w"> </span>-BWSen
+gmt<span class="w"> </span>plot<span class="w"> </span>-Sc0.15c<span class="w"> </span>-Gblack<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">1 1</span>
+<span class="s">3 1</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-Sm0.2c+b+e+g<span class="w"> </span>-Gblack<span class="w"> </span>-W0.5p,red<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">1 1 1 10 60</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-SM0.2c+b+l<span class="w"> </span>-Gblack<span class="w"> </span>-W0.5p,blue<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">3 1 1 10 100</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-6f0950d2fe5fae361eb420a45f49986b">
+<a class="reference internal image-reference" href="../../_images/6f0950d2fe5fae361eb420a45f49986b.png"><img alt="../../_images/6f0950d2fe5fae361eb420a45f49986b.png" src="../../_images/6f0950d2fe5fae361eb420a45f49986b.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">plot -Sm|M 示意图</span><a class="headerlink" href="#gmtplot-6f0950d2fe5fae361eb420a45f49986b" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<dl>
+<dt><strong>-Sv</strong><em>size</em>[<strong>+</strong><em>vecmodifiers</em>]</dt><dd><p>绘制矢量，输入数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>direction<span class="w">   </span>length
+</pre></div>
+</div>
+<p>其中 <em>direction</em> 定义为水平方向起始的逆时针角度， <em>length</em> 为矢量长度， <em>size</em> 为矢量头的长度。
+矢量杆的宽度颜色等属性由 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> 控制，矢量头的轮廓线宽默认为其一半。
+更多矢量头的属性可以通过 <strong>+</strong><em>vecmodifiers</em> 添加，见 <a class="reference internal" href="../../basis/vector/"><span class="doc">矢量/箭头</span></a> 一节。</p>
+</dd>
+<dt><strong>-SV</strong><em>size</em>[<strong>+</strong><em>vecmodifiers</em>]</dt><dd><p>与前者类似，唯一的区别为第三列是方位角而不是方向，即以正北为起点顺时针旋转的角度。</p>
+</dd>
+<dt><strong>-S=</strong><em>size</em>[<strong>+</strong><em>vecmodifiers</em>]</dt><dd><p>绘制地理矢量，区别在于第三列是方位角（即以正北为起点顺时针旋转的角度），第四列长度的单位是地理单位（默认为km）。</p>
+</dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># Demonstrate a few arrows</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>GMT_base_symbols5
+<span class="c1"># Cartesian straight arrows</span>
+<span class="w">	</span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/5/0/5<span class="w"> </span>-JX1.75i<span class="w"> </span>-Sv0.3i+s+e+bi<span class="w"> </span>-W2p<span class="w"> </span>-Gred<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">0.5	1.0	4.5	2.5	</span>
+<span class="s">EOF</span>
+<span class="c1"># Circular arrows</span>
+<span class="w">	</span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sm0.3i+bt+e<span class="w"> </span>-W2p<span class="w"> </span>-Gred<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5<span class="w"> </span>-X2i<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">1	0.3	2c	0	90	</span>
+<span class="s">EOF</span>
+<span class="c1"># Geo arrows</span>
+<span class="w">	</span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/90/-41.17/41.17<span class="w"> </span>-JM1.75i<span class="w"> </span>-S<span class="o">=</span><span class="m">0</span>.3i+b+er<span class="w"> </span>-W2p<span class="w"> </span>-Gred<span class="w"> </span>--MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5<span class="w"> </span>-X2i<span class="w"> </span>--MAP_FRAME_TYPE<span class="o">=</span>plain<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">10	-35	80	8000	</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-11bbd5d54f81bfe3ce47e051d453ee12">
+<a class="reference internal image-reference" href="../../_images/11bbd5d54f81bfe3ce47e051d453ee12.png"><img alt="../../_images/11bbd5d54f81bfe3ce47e051d453ee12.png" src="../../_images/11bbd5d54f81bfe3ce47e051d453ee12.png" style="width: 80%;" />
+</a>
+</figure>
+<p class="rubric">自定义符号</p>
+<dl>
+<dt><strong>-S</strong>[<strong>k</strong><em>name</em>[/<em>size</em>]]</dt><dd><p>绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：</p>
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png"><img alt="GMT 内置自定义符号" class="align-center" src="https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png" style="width: 50%;" />
+</a>
+<p>如果这些内置自定义符号无法满足需求，用户可以自行制作自定义符号文件并使用。
+详细使用方法见<a class="reference internal" href="#id3">制作和使用自定义符号</a>。</p>
+</dd>
+</dl>
+<p class="rubric">带修饰物的线条</p>
+<p>第一种类型的带修饰物线条，通常用于绘制气象锋面、断层线等。线条修饰物由附加选项控制，线条属性由 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> 选项控制。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># Plot front symbols for use on man page</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>GMT_base_symbols7
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">0	0</span>
+<span class="s">10	20</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># Centered symbols using fixed interval, then same with just 1 centered symbol</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R-2/12/-10/30<span class="w"> </span>-JX1i<span class="w"> </span>-W1p<span class="w"> </span>-Glightblue<span class="w"> </span>-Sf0.4i/0.07i+b<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Glightred<span class="w"> </span>-Sf0.4i/0.1i+c+r<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-Sf0.4i/0.1i+f<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Sf0.4i/0.2i+S+r<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-Sf0.2i/0.05i+t+l<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-Sf-1/0.1i+b<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-Sf-1/0.1i+c<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-Sf-1/0.1i+f<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Sf-1/0.4i+S+l<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Glightorange<span class="w"> </span>-Sf-1/0.1i+t<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>-Glightgreen<span class="w"> </span>-Sf-1/0.1i+v<span class="w"> </span>-X0.6i<span class="w"> </span>t.txt
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-bb4e31f34398b31b2a0776dd54eb0aa1">
+<a class="reference internal image-reference" href="../../_images/bb4e31f34398b31b2a0776dd54eb0aa1.png"><img alt="../../_images/bb4e31f34398b31b2a0776dd54eb0aa1.png" src="../../_images/bb4e31f34398b31b2a0776dd54eb0aa1.png" style="width: 80%;" />
+</a>
+</figure>
+<p><strong>-Sf</strong>[±]<em>gap</em>[/<em>size</em>][<strong>+l</strong>|<strong>+r</strong>][<strong>+b</strong>|<strong>c</strong>|<strong>f</strong>|<strong>s</strong>[<em>angle</em>]|<strong>t</strong>|<strong>v</strong>][<strong>+o</strong><em>offset</em>][<strong>+p</strong>[<em>pen</em>]]</p>
+<blockquote>
+<div><ul>
+<li><p><em>gap</em> 线段上符号之间的距离，若为负值，则解释为线段上符号的个数。</p></li>
+<li><p><em>size</em> 为符号大小</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>若省略了 <em>size</em> ，则默认为 <em>gap</em> 的30%</p></li>
+<li><p>若 <em>gap</em> 为负值，则 <em>size</em> 不可省略</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>+l</strong> 和 <strong>+r</strong> 分别表示将符号画在线段的左侧还是右侧，默认是绘制在线段中间</p></li>
+<li><p><strong>+b</strong> 符号为box</p></li>
+<li><p><strong>+c</strong> 符号为circle</p></li>
+<li><p><strong>+t</strong> 符号为triangle</p></li>
+<li><p><strong>+f</strong> 符号表示断层（fault），默认值。</p></li>
+<li><p><strong>+s</strong> 符号表示断层的滑动（slip），用于表示左旋或右旋断层。
+可选的参数 <em>angle</em> 控制绘制矢量时的角度（默认为20）。
+用 <strong>+S</strong> 绘制一个弧形箭头。</p></li>
+<li><p><strong>+o</strong><em>offset</em> 将线段上的第一个符号相对于线段的起点偏离 <em>offset</em> 距离，默认值为0</p></li>
+<li><p>默认符号的线属性与线段相同（ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> 选项），可以使用 <strong>+p</strong><em>pen</em> 为符号单独指定线属性。
+使用 <strong>+p</strong> 则不绘制符号的轮廓。</p></li>
+<li><p><strong>+i</strong> 将隐藏线段只绘制符号。</p></li>
+</ul>
+</div></blockquote>
+<p>第二种类型的带修饰物线条是带标注文字的线段，常用于绘制断层名的断层线。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># Plot plot quoted line symbols for use on man page</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>GMT_base_symbols8
+<span class="w">    </span>gmt<span class="w"> </span>math<span class="w"> </span>-T0/360/1<span class="w"> </span>T<span class="w"> </span><span class="m">5</span><span class="w"> </span>MUL<span class="w"> </span>COSD<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="nv">MUL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>t.txt
+<span class="w">    </span><span class="c1"># Just a cosine with line-following constant text a few times</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/360/-10/10<span class="w"> </span>-JM6i<span class="w"> </span>-W2.5p,6_4:0<span class="w"> </span>-Sqn4:+l<span class="s2">&quot;wiggly line&quot;</span>+v+f12p,Times-Roman,red<span class="w"> </span>t.txt<span class="w"> </span>--PS_LINE_CAP<span class="o">=</span>round
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-224b88fcdec5ff978445453891d95cff">
+<a class="reference internal image-reference" href="../../_images/224b88fcdec5ff978445453891d95cff.png"><img alt="../../_images/224b88fcdec5ff978445453891d95cff.png" src="../../_images/224b88fcdec5ff978445453891d95cff.png" style="width: 80%;" />
+</a>
+</figure>
+<dl>
+<dt><strong>-Sq</strong><strong>d</strong>|<strong>D</strong>|<strong>f</strong>|<strong>l</strong>|<strong>L</strong>|<strong>n</strong>|<strong>N</strong>|<strong>s</strong>|<strong>S</strong>|<strong>x</strong>|<strong>X</strong><em>posinfo</em>[:<em>labelinfo</em>]</dt><dd><p>有6种可选的方式控制标注文字：</p>
+<p><strong>d</strong><em>dist</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>][/<em>frac</em>]</p>
+<dl>
+<dt><strong>D</strong><em>dist</em>[<strong>d</strong>|<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>m</strong>|<strong>M</strong>|<strong>n</strong>|<strong>s</strong>][/<em>frac</em>]</dt><dd><p>小写 <strong>d</strong> 指定标注之间的距离 <em>dist</em> ，单位为 <strong>c</strong> (cm), <strong>i</strong> (inch), <strong>p</strong> (points)。
+默认值为 <em>10c</em> 。</p>
+<p>大写 <strong>D</strong> 指定标注之间的地理距离 <em>dist</em> ，单位为 <strong>e</strong> (m), <strong>f</strong> (foot), <strong>k</strong> (km),
+<strong>M</strong> (mile), <strong>n</strong> (nautical mile), <strong>u</strong> (US survey foot),
+<strong>d</strong> (arc degree 弧度), <strong>m</strong> (arc minute 弧分), <strong>s</strong> (arc second 弧秒)。</p>
+<p>可选选项 <em>frac</em> 表示将第一个标注放在距离线段起点 <code class="docutils literal notranslate"><span class="pre">frac</span> <span class="pre">*</span> <span class="pre">dist</span></code> 处，默认值为0.25。</p>
+</dd>
+<dt><strong>f</strong><em>file.txt</em>[/<em>slop</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>]]</dt><dd><p>读取 ASCII 文本文件 <em>file.txt</em>，将标注放置在文件中指定的坐标位置。
+坐标位置和线段间的距离小于 <em>slop</em> 才会绘制标志文字。默认值为0即只绘制位于线段上的坐标。</p>
+</dd>
+<dt><strong>l</strong>|<strong>L</strong><em>line1</em>[,<em>line2</em>,…]</dt><dd><p>每个 <em>line</em> 的格式为 <em>start_lon</em>/<em>start_lat</em>/<em>stop_lon</em>/<em>stop_lat</em> ，标注文字会绘制在这些 <em>line</em> 与线段的交点。
+小写的 <strong>l</strong> 表示直线，而大写的 <strong>L</strong> 表示使用大圆路径。</p>
+</dd>
+<dt><strong>n</strong>|<strong>N</strong><em>n_label</em>[/<em>min_dist</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>]]</dt><dd><p>指定线段上等间隔标注的个数，默认为1即只绘制一个标注。
+小写的 <strong>n</strong> 表示标注位置在每段间隔的中心，而大写的 <strong>N</strong> 表示标注位置在每段间隔的起点。</p>
+<p>可选选项 /<em>min_dist</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>] 指定相邻标注的最小距离。
+该选项同时限制了只能在长度大于 <em>min_dist</em> 的线段上进行标注。</p>
+</dd>
+<dt><strong>s</strong>|<strong>S</strong><em>n_label</em>[/<em>min_dist</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>]]</dt><dd><p>与 <strong>n</strong>|<strong>N</strong><em>n_label</em> 相同，但输入数据会被解释为一系列的两点线段。</p>
+</dd>
+<dt><strong>x</strong>|<strong>X</strong><em>xfile.txt</em></dt><dd><p>读取 ASCII 文本格式的多段数据文件 <em>xfile.txt</em> ，标签文字会绘制在这些多段数据与线段的交点。
+大写的 <strong>X</strong> 会先将输入数据重采样为大圆弧线。
+添加可选选项 <strong>+r</strong><em>radius</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>] 可以设置 x-y 平面上标注文字之间的最小间距。</p>
+</dd>
+</dl>
+<p>可选选项 <em>labelinfo</em> 用于控制文字的格式，其可以是下面子选项的任意组合：</p>
+<dl class="simple">
+<dt><strong>+a</strong><em>angle</em></dt><dd><p>设置文字相对于线段的角度。可以设置为 <strong>+an</strong> 表示文字垂直于线段。默认为 <strong>+ap</strong> 表示文字与线段平行。</p>
+</dd>
+<dt><strong>+c</strong><em>dx</em>[/<em>dy</em>]</dt><dd><p>设置文字与文本框之间的边距。可以添加单位 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 或百分号 % 表示边距相对字体大小的百分比，默认为15%。</p>
+</dd>
+<dt><strong>+f</strong><em>font</em></dt><dd><p>设置字体属性，默认为9p。</p>
+</dd>
+<dt><strong>+g</strong>[<em>color</em>]</dt><dd><p>绘制一个不透明的文本框背景。</p>
+</dd>
+<dt><strong>+i</strong></dt><dd><p>不绘制线段，只绘制标注文字。</p>
+</dd>
+<dt><strong>+l</strong><em>label</em></dt><dd><p>手动设置固定的标注文字。</p>
+</dd>
+<dt><strong>+Lh</strong></dt><dd><p>从数据头段中读取标注文字。</p>
+</dd>
+<dt><strong>+Ld</strong></dt><dd><p>采用笛卡尔坐标系内的距离作为标注内容，在后面附加 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 之一指定单位。</p>
+</dd>
+<dt><strong>+LD</strong></dt><dd><p>采用实际的地理距离作为标注内容，在后面附加 <strong>d|e|f|k|n|M|n|s</strong> 之一指定单位，默认为弧度 <strong>d</strong> 。</p>
+</dd>
+<dt><strong>+Lf</strong></dt><dd><p>从 <strong>f</strong><em>file.txt</em> 的第二列之后读取所有文字作为标注内容（不包括第二列）。</p>
+</dd>
+<dt><strong>+Lx</strong></dt><dd><p>从 <strong>x</strong>|<strong>X</strong><em>xfile.txt</em> 文件头段中读取标注文字。</p>
+</dd>
+<dt><strong>+n</strong><em>dx</em>[/<em>dy</em>]</dt><dd><p>偏移标注文字的位置，可以使用单位 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 。不能与 <strong>+v</strong> 一起使用。</p>
+</dd>
+<dt><strong>+o</strong></dt><dd><p>使用圆角矩形文本框。不能与 <strong>+v</strong> 一起使用。</p>
+</dd>
+<dt><strong>+p</strong>[<em>pen</em>]</dt><dd><p>设置文本框轮廓线型。</p>
+</dd>
+<dt><strong>+r</strong><em>min_rad</em></dt><dd><p>当线段的曲率半径小于 <em>min_rad</em> 不绘制文字。</p>
+</dd>
+<dt><strong>+t</strong>[<em>file</em>]</dt><dd><p>将每个标注文字的 <em>x, y, angle, text</em> 保存进文件 <em>file</em> [Line_labels.txt]。</p>
+</dd>
+<dt><strong>+u</strong><em>unit</em></dt><dd><p>在所有标注后面附加 <em>unit</em> 作为单位。 <em>unit</em> 可以是一个用双引号括起来的任意字符串。</p>
+</dd>
+<dt><strong>+v</strong></dt><dd><p>标注文字沿着线段弯曲。</p>
+</dd>
+<dt><strong>+=</strong><em>prefix</em></dt><dd><p>在所有标注前面添加前缀 <em>prefix</em> 。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>标注文字的控制示例可以参考 <a class="reference internal" href="#gmt-plot-sq-examples"><span class="std std-ref">-Sq 选项示例</span></a></p>
+</section>
+<section id="id2">
+<h2>输入数据格式<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项相对复杂，与不同的选项连用，或者后面接不同的参数，所需要的输入数据的
+格式也不同。不管是什么符号，至少都需要给定符号的位置，即X和Y是必须的:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y
+</pre></div>
+</div>
+<p>不同的符号，可能还需要额外的信息，统一写成（用 <code class="docutils literal notranslate"><span class="pre">...</span></code> 代表某符号特有的输入列）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>...
+</pre></div>
+</div>
+<p>若 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 指定了符号类型但未指定大小，即 <code class="docutils literal notranslate"><span class="pre">-S&lt;symbol&gt;</span></code> ，若该符号类型需要指定
+大小，则需要将符号大小放在输入数据的<strong>第三列</strong>，其他输入数据的列号延后，
+此时数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>size<span class="w">    </span>...
+</pre></div>
+</div>
+<p>若size&lt;=0，则跳过该记录行。</p>
+<p>若 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项后未指定符号代码，则符号代码必须位于输入文件的<strong>最后一列</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">   </span>...<span class="w">   </span>symbol
+</pre></div>
+</div>
+<p>若使用了 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项，则符号的填充色由数据的第三列决定，其他字段依次后移:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">   </span>Y<span class="w">  </span><span class="o">[</span>Z<span class="o">]</span><span class="w">   </span>...<span class="w">  </span>symbol
+</pre></div>
+</div>
+<p>因而总结一下输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>x<span class="w">  </span>y<span class="w">  </span><span class="o">[</span>Z<span class="o">]</span><span class="w">  </span><span class="o">[</span>size<span class="o">]</span><span class="w">  </span>...<span class="w">   </span><span class="o">[</span>symbol<span class="o">]</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">...</span></code> 为某些符号所要求的特殊的数据列， <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 是未指定符号时必须的
+输入列， <code class="docutils literal notranslate"><span class="pre">size</span></code> 是未指定大小时的输入列。</p>
+</section>
+<section id="gmt-custom-symbols">
+<span id="id3"></span><h2>制作和使用自定义符号<a class="headerlink" href="#gmt-custom-symbols" title="Link to this heading"></a></h2>
+<p>如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据
+<a class="reference external" href="https://docs.generic-mapping-tools.org/latest/reference/custom-symbols.html">GMT 自定义符号文件</a>
+的格式要求自行制作自定义符号文件。</p>
+<p>使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 <code class="file docutils literal notranslate"><span class="pre">name.def</span></code>：</p>
+<ol class="arabic simple">
+<li><p>当前目录，即运行脚本所在目录</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">~/.gmt/custom</span></code> 目录（Linux 和 macOS 用户）或 <code class="file docutils literal notranslate"><span class="pre">C:\Users\你的当前用户名\.gmt\custom</span></code> 目录（Windows用户）</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">$GMT_SHAREDIR/custom</span></code> 目录</p></li>
+</ol>
+<p>用户可以将自己制作的自定义符号复制到以上任一路径即可正常使用。
+建议放在 <code class="file docutils literal notranslate"><span class="pre">~/.gmt/custom</span></code> 目录（Linux 和 macOS 用户）或
+<code class="file docutils literal notranslate"><span class="pre">C:\Users\你的当前用户名\.gmt\custom</span></code> 目录（Windows 用户）下。</p>
+</section>
+<section id="id4">
+<h2>多段数据<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>对于多段数据而言，每段数据的头段记录中都可以包含一些选项，以使得不同段数据拥有
+不同的属性。头段记录中的选项会覆盖命令中选项的参数：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gfill</span></code> ：设置当前段数据的填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G-</span></code> ：对当前数据段关闭填充</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G</span></code> ：恢复到默认填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code> ：设置当前段数据的画笔属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-W</span></code> ：恢复到默认画笔属性 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-W-</span></code> ：不绘制轮廓</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Z&lt;zval&gt;</span></code> ：从cpt文件中查找Z值&lt;zval&gt;所对应的颜色作为填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-ZNaN</span></code> ：从cpt文件中获取NaN颜色</p></li>
+</ul>
+<p>详情及示例参见 <a class="reference internal" href="../../table/ascii/#table-ascii-attrs"><span class="std std-ref">数据段头记录中的额外属性</span></a></p>
+</section>
+<section id="id5">
+<h2>基础示例<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>最简单的命令，绘制线段或多边形，此时数据输入需要两列，即X和Y:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>plot<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-JX10c<span class="w"> </span>-B1<span class="w"> </span>-png<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">3 5</span>
+<span class="s">5 8</span>
+<span class="s">7 4</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="f">
+<h2><em>-F</em> 选项示例<a class="headerlink" href="#f" title="Link to this heading"></a></h2>
+<p>下面的脚本展示了 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项的用法：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="c1"># 此处定义了函数plotpts，用于绘制图中绿色和蓝色的圆圈，并加上文字</span>
+<span class="k">function</span><span class="w"> </span>plotpts
+<span class="o">{</span>
+<span class="w">    </span><span class="c1"># Plots the two data tables and places given text</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sc0.2c<span class="w"> </span>-Ggreen<span class="w"> </span>-Wfaint<span class="w"> </span>t1.txt
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sc0.2c<span class="w"> </span>-Gblue<span class="w"> </span>-Wfaint<span class="w"> </span>t2.txt
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$*</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>text<span class="w"> </span>-F+cTL+jTL+f12p<span class="w"> </span>-Dj0.05i
+<span class="o">}</span>
+<span class="c1"># 生成测试用的第一个数据文件</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t1.txt</span>
+<span class="s">10 10</span>
+<span class="s">48 15</span>
+<span class="s">28 20</span>
+<span class="s">&gt;</span>
+<span class="s">40 40</span>
+<span class="s">30  5</span>
+<span class="s">5  15</span>
+<span class="s">EOF</span>
+<span class="c1"># 生成测试用的第二个数据文件</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t2.txt</span>
+<span class="s">7  20</span>
+<span class="s">29 11</span>
+<span class="s">8   4</span>
+<span class="s">EOF</span>
+<span class="c1"># -Fcs: 默认的连接方式</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-F
+gmt<span class="w"> </span>basemap<span class="w"> </span>-R0/50/0/45<span class="w"> </span>-Jx0.06i<span class="w"> </span>-Ba10<span class="w"> </span>-BWSne
+gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt
+plotpts<span class="w"> </span>TWO<span class="w"> </span>DATA<span class="w"> </span>TABLES
+
+<span class="c1"># -Fra</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt<span class="w"> </span>-Fra<span class="w"> </span>-X3.25i
+plotpts<span class="w"> </span>DATASET<span class="w"> </span>ORIGIN
+
+<span class="c1"># -Frf</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt<span class="w"> </span>-Frf<span class="w"> </span>-X-3.25i<span class="w"> </span>-Y3.15i
+plotpts<span class="w"> </span>TABLE<span class="w"> </span>ORIGIN
+
+<span class="c1"># -Frs</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt<span class="w"> </span>-Frs<span class="w"> </span>-X3.25i
+plotpts<span class="w"> </span>SEGMENT<span class="w"> </span>ORIGIN
+
+<span class="c1"># -Fr10/35</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt<span class="w"> </span>-Fr10/35<span class="w"> </span>-X-3.25i<span class="w"> </span>-Y3.15i
+plotpts<span class="w"> </span>FIXED<span class="w"> </span>ORIGIN
+<span class="nb">echo</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">35</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sa0.4c<span class="w"> </span>-Gred<span class="w"> </span>-Wfaint
+
+<span class="c1"># -Fna</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-W1p<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt<span class="w"> </span>-Fna<span class="w"> </span>-X3.25i
+plotpts<span class="w"> </span>NETWORK
+
+gmt<span class="w"> </span>end<span class="w"> </span>show
+rm<span class="w"> </span>t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-32a985b027152642d9fa6e073b79d6fd">
+<a class="reference internal image-reference" href="../../_images/32a985b027152642d9fa6e073b79d6fd.png"><img alt="../../_images/32a985b027152642d9fa6e073b79d6fd.png" src="../../_images/32a985b027152642d9fa6e073b79d6fd.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">plot -F选项示意图</span><a class="headerlink" href="#gmtplot-32a985b027152642d9fa6e073b79d6fd" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sq">
+<span id="gmt-plot-sq-examples"></span><h2><em>-Sq</em> 选项示例<a class="headerlink" href="#sq" title="Link to this heading"></a></h2>
+<p>对于用法较为复杂的 <em>-Sq</em> 选项，可以通过以下三个示例帮助理解学习。
+示例中用到的数据文件 <em>&#64;App_O_transect.txt</em> 是 GMT 远程数据服务器自带数据，
+该数据为地球大地水准面最值点之间的大圆弧路径，并且沿着该大圆弧从 ETOPO5 数据集中提取了高程数据。
+数据格式为 <em>经度、纬度、距离、大地水准面、高程</em> 。</p>
+<p>第一个示例沿大圆弧距离放置标注和不透明文本框。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-Sq_1
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-R50/160/-15/15<span class="w"> </span>-JM5.3i<span class="w"> </span>-Gburlywood<span class="w"> </span>-Sazure<span class="w"> </span>-A500<span class="w"> </span>-B20f10<span class="w"> </span>-BWSne
+<span class="w">    </span><span class="c1"># -SqD1000k 大圆弧每1000km放置一个标注</span>
+<span class="w">    </span><span class="c1"># +g 绘制一个不透明的文本框背景</span>
+<span class="w">    </span><span class="c1"># +LD 使用距离值作为标注的内容，单位和 -SqD 的单位保持一致</span>
+<span class="w">    </span><span class="c1"># +an 标注文字的方向与大圆弧垂直</span>
+<span class="w">    </span><span class="c1"># +p 添加文本框的轮廓线</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-SqD1000k:+g+LD+an+p<span class="w"> </span>-Wthick<span class="w"> </span>@App_O_transect.txt
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-b75feb31bf532a6cb1c513a09e4acad9">
+<a class="reference internal image-reference" href="../../_images/b75feb31bf532a6cb1c513a09e4acad9.png"><img alt="../../_images/b75feb31bf532a6cb1c513a09e4acad9.png" src="../../_images/b75feb31bf532a6cb1c513a09e4acad9.png" style="width: 80%;" />
+</a>
+</figure>
+<p>第二个示例沿大圆弧距离放置标注和反色圆角矩形文本框。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-Sq_2
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-R50/160/-15/15<span class="w"> </span>-JM5.3i<span class="w"> </span>-Gburlywood<span class="w"> </span>-Sazure<span class="w"> </span>-A500<span class="w"> </span>-B20f10<span class="w"> </span>-BWSne
+<span class="w">    </span><span class="c1"># -SqD15d 大圆弧每15弧度放置一个标注</span>
+<span class="w">    </span><span class="c1"># +gblack 文本框背景黑色，+fwhite 标注文字白色</span>
+<span class="w">    </span><span class="c1"># +o 使用圆角矩形文本框</span>
+<span class="w">    </span><span class="c1"># +u@. 添加度单位。详细可以参考 基础知识 -&gt; 转义序列 章节了解如何输出度符号</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-SqD15d:+gblack+fwhite+LD+o+u@.<span class="w"> </span>-Wthick<span class="w"> </span>@App_O_transect.txt
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-b37a5a8e7b953528548663715595620c">
+<a class="reference internal image-reference" href="../../_images/b37a5a8e7b953528548663715595620c.png"><img alt="../../_images/b37a5a8e7b953528548663715595620c.png" src="../../_images/b37a5a8e7b953528548663715595620c.png" style="width: 80%;" />
+</a>
+</figure>
+<p>第三个示例采用沿大圆弧的海底地形数据作为标注的内容，按照沿大圆弧的距离，每1500km放置一个标注。
+因此需要使用 <strong>gawk</strong> 程序从 <em>&#64;App_O_transect.txt</em> 文件中抽取距离为1500km倍数的记录，并创建一个新文件，指定标注的位置和内容。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>plot_-Sq_3
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-R50/160/-15/15<span class="w"> </span>-JM5.3i<span class="w"> </span>-Gburlywood<span class="w"> </span>-Sazure<span class="w"> </span>-A500<span class="w"> </span>-B20f10<span class="w"> </span>-BWSne
+<span class="w">    </span><span class="c1"># -i0,1,4 提取数据文件中的第1，2，5列</span>
+<span class="w">    </span><span class="c1"># -Em150 每150行提取一个数据。原数据的测线为每 10km 一个测点，这项的意思即为每 1500km 提取一个数据</span>
+<span class="w">    </span><span class="c1"># 提取出的第1，2，5列通过管道传送给 gawk 时，就变成了第1，2，3列。</span>
+<span class="w">    </span><span class="c1"># int($3) 将第三列数据取整</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>-i0,1,4<span class="w"> </span>-Em150<span class="w"> </span>@App_O_transect.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>gawk<span class="w"> </span><span class="s1">&#39;{print $1,$2,int($3)}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>fix2.txt
+<span class="w">    </span><span class="c1"># -Sqffix2.txt 读取 fix2.txt 前两列作为标注文字的坐标</span>
+<span class="w">    </span><span class="c1"># +Lf 从 fix2.txt 第二列之后读取所有文字作为标注内容</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sqffix2.txt:+g+an+p+Lf+u<span class="s2">&quot; m&quot;</span>+f8p<span class="w"> </span>-Wthick<span class="w"> </span>@App_O_transect.txt
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-b3ae96553a78582522e267cd0559e233">
+<a class="reference internal image-reference" href="../../_images/b3ae96553a78582522e267cd0559e233.png"><img alt="../../_images/b3ae96553a78582522e267cd0559e233.png" src="../../_images/b3ae96553a78582522e267cd0559e233.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../nearneighbor/" class="btn btn-neutral float-left" title="nearneighbor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../plot3d/" class="btn btn-neutral float-right" title="plot3d" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 12 月 03 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
