@@ -11,8 +11,8 @@ GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线
 $x = x_{min}, x_{min} + x_{inc}, x_{min} + 2 \cdot x_{inc}, \ldots, x_{max}$
 和 $y = y_{min}, y_{min} + y_{inc}, y_{min} + 2 \cdot y_{inc}, \ldots, y_{max}$ 处。
 而节点的位置有两种选择，即网格线配准（gridline registration）和像素配准（pixel registration）。
-默认情况下，GMT认为输入/输出的网格文件都采用网格线配准方式。
-使用 {doc}`/option/nodereg` 则可以显式指定输入/输出的网格文件的配准方式。
+GMT 默认采用网格线配准方式。
+使用 {doc}`/option/nodereg` 则可以显式指定配准方式。
 
 :::{figure} https://docs.generic-mapping-tools.org/latest/_images/GMT_registration.png
 :align: center
