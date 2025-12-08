@@ -15,7 +15,7 @@ date: 2024-09-09
 GMT中可以用一个三位的八进制码指定一个特殊字符。八进制码与特殊字符之间的对应
 关系，可以通过查询下表得到：
 
-:::{figure} GMT_stand+_iso+.*
+:::{figure} https://docs.generic-mapping-tools.org/latest/_images/GMT_App_F_stand+_iso+.png
 :align: center
 :width: 100%
 
@@ -23,8 +23,7 @@ ISOLation1+ 和 Standard+ 编码下的八进制码
 :::
 
 **下载：**
-{download}`八进制码表 PDF 版 <GMT_stand+_iso+.pdf>` |
-{download}`八进制码表 PNG 版 <GMT_stand+_iso+.png>`
+{download}`八进制码表 PDF 版 <https://docs.generic-mapping-tools.org/latest/_downloads/5e57ceb8ceac7fb1193bc266eb35f558/GMT_App_F_stand%2B_iso%2B.pdf>` 
 
 **左右两张表分别是什么？该用哪一张？**
 GMT支持多种字符编码，其中最常用的编码是 **Standard+** 和
@@ -45,7 +44,7 @@ GMT支持多种字符编码，其中最常用的编码是 **Standard+** 和
 如果文本使用了12号字体（Symbol）或34号字体（ZapfDingbats），则此时八进制码
 具有不同的含义。需要查询下表：
 
-:::{figure} GMT_symbol_dingbats.*
+:::{figure} https://docs.generic-mapping-tools.org/latest/_images/GMT_App_F_symbol_dingbats.png
 :align: center
 :width: 100%
 
@@ -57,8 +56,7 @@ Symbol和Pifont字体八进制码
 当文本字体为34号字体（Pifont ZapfDingbats）时，应查询右表。
 
 **下载：**
-{download}`特殊字体八进制码 PDF 版 <GMT_symbol_dingbats.pdf>` |
-{download}`特殊字体八进制码 PNG 版 <GMT_symbol_dingbats.png>`
+{download}`特殊字体八进制码 PDF 版 <https://docs.generic-mapping-tools.org/latest/_downloads/ef801362d57ad917caab91046983a94c/GMT_App_F_symbol_dingbats.pdf>`
 
 ## 特殊字符小结
 
