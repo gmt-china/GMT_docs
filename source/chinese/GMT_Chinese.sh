@@ -2,7 +2,7 @@
 gmt begin GMT_Chinese png,pdf
 # 设置中文字体配置文件 cidfmap 的目录
 gmt set PS_CONVERT="C-I${HOME}/.gmt/"
-# 如果有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720，可以去掉横杆后，以逗号分隔添加在后面
+# 如果有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720，可以去掉横杠后，以逗号分隔添加在后面
 # 例如：gmt set PS_CONVERT="C-I${HOME}/.gmt/,I+m0.5c,E720"
 # 以上命令的等效写法是：
 # gmt begin GMT_Chinese png,pdf C-I${HOME}/.gmt/
