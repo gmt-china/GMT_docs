@@ -1,6 +1,6 @@
 ---
 author: 田冬冬
-date: 2024-09-09
+date: 2025-12-09
 ---
 
 # 特殊字符
@@ -31,6 +31,9 @@ GMT支持多种字符编码，其中最常用的编码是 **Standard+** 和
 **ISOLation1+**。通常，GMT的默认字符编码是 **ISOLatin1+**，所以只需要看左表即可；
 如果当前字符编码是 **Standard+**，则需要查询右表。
 可以通过 `gmt get PS_CHAR_ENCODING` 命令查到你所安装的GMT的默认字符编码方式。
+
+如果查询到的字符编码是 **ISOLatin1** 或 **Standard**，则表格中的浅绿色扩展字符无法使用。
+用户必须设置 {term}`PS_CHAR_ENCODING` 为 **ISOLatin1+** 或 **Standard+** 后才能正常使用这些扩展字符。
 
 **这张表如何查询呢？**
 假如你的GMT的默认字符编码方式为 **ISOLation1+** 编码。
