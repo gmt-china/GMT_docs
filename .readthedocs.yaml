@@ -10,6 +10,8 @@ build:
   tools:
     python: "mambaforge-23.11"
   jobs:
+    post_checkout:
+      - git fetch --unshallow || true
     pre_build:
       - bash scripts/setup-ci.sh
 
