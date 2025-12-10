@@ -59,6 +59,7 @@ extensions = [
     "sphinx_design",
     "gmtplot",
     "sphinxcontrib.datatemplates",
+    "sphinx_last_updated_by_git"
 ]
 # use custom templater bridge defined in _extensions/templatebridge.py
 template_bridge = "templatebridge.MyTemplateBridge"
