@@ -1,5 +1,5 @@
 :author: 田冬冬, 王亮
-:date: 2022-08-30
+:date: 2025-12-09
 .. index:: ! begin
 .. include:: common_SYN_OPTs.rst_
 
@@ -66,23 +66,20 @@ begin
 
 *options*
     GMT现代模式本质上是先生成PS文件，再通过调用 :doc:`psconvert` 自动转换成用户
-    指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，
-    多个选项之间用逗号分隔。
+    指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，注意要去掉选项前的横杠。
+    多个选项之间用逗号分隔。例如 ``-I+m0.5c -E720``，写作 ``I+m0.5c,E720``。
 
-    默认值为 **A**，表示将 |-A| 选项传给 :doc:`psconvert`。
+    默认值为 ``A``，表示将 **-A** 选项传给 :doc:`psconvert`。
 
     其他可选的选项包括：
 
-    - **A**\ [*args*]: 裁剪图片
-    - **C**\ *args*: 额外传递给Ghostscript的选项
+    - **A**\ [**+r**][**+u**]: 裁剪图片
+    - **C**\ *gs_option*: 额外传递给Ghostscript的选项
     - **D**\ *dir*: 指定图片的输出目录
     - **E**\ *dpi*: 设置图片分辨率
-    - **H**\ *factor*: 对图片做平滑以避免混叠
-    - **M**\ *args*: 为当前图片叠加前景图片或背景图片
-    - **Q**\ *args*: 设置图像和文本的抗锯齿选项
-    - **S** : 把 Ghostscript 命令输出到标准错误输出，且不删除所有中间文件
+    - 等等
 
-    详细解释见 :doc:`psconvert` 的说明文档。
+    详细解释以及其他更多选项见 :doc:`psconvert` 的说明文档。
 
 .. _-C:
 
