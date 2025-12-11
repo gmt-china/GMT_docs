@@ -42,27 +42,18 @@ cat > ~/.gmt/cidfmap << EOF
 EOF
 ```
 
-ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.html#how-ghostscript-finds-files)，
-会搜寻系统环境变量 `$GS_LIB` 中指定的目录。打开终端，使用如下命令用文件编辑器打开 Shell 配置文件:
-
-```
-# Linux 用户
-$ gedit ~/.bashrc
-
-# macOS 用户
-$ open ~/.zshrc
-```
-
-然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
-然后重启终端使其生效:
-
-```
-export GS_LIB=${HOME}/.gmt/:${GS_LIB}
-```
-
 ## GMT的中文支持
 
-在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
+ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.html#how-ghostscript-finds-files)，
+会搜寻 `gs -I` 选项中指定的目录。既可以每次都使用 {doc}`/module/psconvert` 的 **-C** 选项将 `cidfmap` 所在的目录传递给 `gs -I`。
+也可以用如下方法配置 {term}`PS_CONVERT` 的全局设置，简化今后的画图脚本：
+
+```
+$ echo >> ~/.gmt/gmt.conf
+$ echo PS_CONVERT = C-I${HOME}/.gmt/ >> ~/.gmt/gmt.conf
+```
+
+接下来，还需要在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
 
 ```
 $ touch ~/.gmt/PSL_custom_fonts.txt
