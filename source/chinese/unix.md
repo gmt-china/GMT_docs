@@ -45,12 +45,15 @@ EOF
 ## GMT的中文支持
 
 ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.html#how-ghostscript-finds-files)，
-会搜寻 `gs -I` 选项中指定的目录。既可以每次都使用 {doc}`/module/psconvert` 的 **-C** 选项将 `cidfmap` 所在的目录传递给 `gs -I`。
-也可以用如下方法配置 {term}`PS_CONVERT` 的全局设置，简化今后的画图脚本：
+会搜寻 `gs -I` 选项中指定的目录。既可以在经典模式中使用 {doc}`/module/psconvert` 的 **-C** 选项将 `cidfmap` 所在的目录传递给 `gs -I`。
+也可以在现代模式中配置 {doc}`/module/begin` 的选项，将参数先传递给 {doc}`/module/psconvert` 的 **-C** 选项，
+执行 {doc}`/module/end` 时会调用 {doc}`/module/psconvert`，再将参数传递给 `gs -I`：
 
 ```
-$ echo >> ~/.gmt/gmt.conf
-$ echo PS_CONVERT = C-I${HOME}/.gmt/ >> ~/.gmt/gmt.conf
+gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/
+# 如果在中文绘图脚本中，有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720
+# 可以去掉横杠后以逗号分隔，添加在后面：
+# gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/,I+m0.5c,E720
 ```
 
 接下来，还需要在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
