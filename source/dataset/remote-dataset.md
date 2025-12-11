@@ -82,11 +82,11 @@ GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列�
 对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为:
 
 ```
-# Linux/macOS 系统中打开终端
+# Linux/macOS/WSL 系统中打开终端
 $ echo >> ~/.gmt/gmt.conf
 $ echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> ~/.gmt/gmt.conf
 
-# Windows 系统中打开 cmd
+# Windows 系统中打开 cmd（适用于使用安装包方式安装的 GMT）
 C:\Windows\system32> cd /d C:\Users\当前用户名\.gmt
 C:\Users\当前用户名\.gmt> echo >> gmt.conf
 C:\Users\当前用户名\.gmt> echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> gmt.conf
