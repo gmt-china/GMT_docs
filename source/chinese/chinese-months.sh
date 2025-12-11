@@ -1,4 +1,4 @@
-gmt begin chinese-months
+gmt begin chinese-months C-I${HOME}/.gmt/
 
     # 设置 GMT 语言为中文
     gmt set GMT_LANGUAGE cn1
