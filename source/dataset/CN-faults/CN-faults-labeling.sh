@@ -1,4 +1,4 @@
-gmt begin CN-faults-labeling
+gmt begin CN-faults-labeling C-I${HOME}/.gmt/
     # GMT 处理中文存在一些已知 BUG
     # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
     gmt set PS_CHAR_ENCODING Standard+
