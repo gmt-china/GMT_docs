@@ -1,4 +1,4 @@
-gmt begin chinese-weeks C-I${HOME}/.gmt/
+gmt begin chinese-weeks pdf C-I${HOME}/.gmt/
 
     # 设置 GMT 语言为中文
     gmt set GMT_LANGUAGE cn1
