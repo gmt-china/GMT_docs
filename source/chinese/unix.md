@@ -1,6 +1,6 @@
 ---
 author: 陈箫翰, 田冬冬
-date: 2025-10-31
+date: 2025-12-11
 ---
 
 # Linux/macOS 下的 GMT 中文支持
@@ -30,7 +30,8 @@ $ mkdir -p ~/.gmt/winfonts
 
 用户也可以从 Windows 的系统字体目录（通常是 `C:\Windows\Fonts` ）中，找到这四种基本字体的字体文件。
 
-在 `~/.gmt` 目录下创建字体配置文件 `cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
+在 `~/.gmt` 目录下创建[字体配置文件](https://ghostscript.readthedocs.io/en/latest/Fonts.html#fonts-html)
+`cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
 
 ```
 cat > ~/.gmt/cidfmap << EOF
@@ -39,6 +40,24 @@ cat > ~/.gmt/cidfmap << EOF
 /STHeiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simhei.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
 /STKaiti-Regular <</FileType /TrueType /Path (${HOME}/.gmt/winfonts/simkai.ttf) /SubfontId 0 /CSI [(GB1) 4] >> ;
 EOF
+```
+
+ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.html#how-ghostscript-finds-files)，
+会搜寻系统环境变量 `$GS_LIB` 中指定的目录。打开终端，使用如下命令用文件编辑器打开 Shell 配置文件:
+
+```
+# Linux 用户
+$ gedit ~/.bashrc
+
+# macOS 用户
+$ open ~/.zshrc
+```
+
+然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
+然后重启终端使其生效:
+
+```
+export GS_LIB=${HOME}/.gmt/
 ```
 
 ## GMT的中文支持
@@ -93,13 +112,7 @@ Font #  Font Name
 ## GMT 中文测试
 
 :::{note}
-凡是使用到中文字体的画图脚本，都应该设置字体配置文件 cidfmap 所在的目录:
-
-```
-gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的目录"
-```
-
-此外 GMT 6.x 目前在处理中文时存在 BUG，可能会出现某些中文正常显示，某些
+GMT 6.x 目前在处理中文时存在 BUG，可能会出现某些中文正常显示，某些
 不正常显示的情况。需要使用如下命令来避免这一 BUG:
 
 ```
