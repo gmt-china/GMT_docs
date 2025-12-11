@@ -1,6 +1,6 @@
 ---
 author: 刘珠妹, 田冬冬, 陈箫翰
-date: 2025-11-23
+date: 2025-12-11
 ---
 
 # CN-faults: 中国断层数据
@@ -78,12 +78,13 @@ $ gmt convert CN-faults.gmt -aL="FN_Ch"
    :width: 50%
 ```
 
-提取出“断层名称”为“红河断裂”的断层数据，并标注断层英文名：
+提取出“断层名称”为“红河断裂”的断层数据，并标注断层英文名。
+同时本例也展示了断层名标注数量过多过密情况下的调整方式：
 
 ```{eval-rst}
 .. gmtplot:: CN-single-fault-labeling.sh
    :show-code: true
-   :width: 50%
+   :width: 100%
 ```
 
 ### 根据空间范围提取数据
