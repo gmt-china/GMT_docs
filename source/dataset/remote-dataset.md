@@ -1,6 +1,6 @@
 ---
 author: 陈箫翰, 周茂
-date: 2025-08-14
+date: 2025-12-11
 ---
 
 # GMT 远程数据
@@ -82,11 +82,15 @@ GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列�
 对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为:
 
 ```
-gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
-```
+# Linux/macOS 系统中打开终端
+$ echo >> ~/.gmt/gmt.conf
+$ echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> ~/.gmt/gmt.conf
 
-然后将生成的 {file}`gmt.conf` 文件复制到GMT用户目录 {file}`~/.gmt` (Linux/macOS)
-或 {file}`C:\\Users\\当前用户名\\.gmt`（Windows）下。
+# Windows 系统中打开 cmd
+C:\Windows\system32> cd /d C:\Users\当前用户名\.gmt
+C:\Users\当前用户名\.gmt> echo >> gmt.conf
+C:\Users\当前用户名\.gmt> echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> gmt.conf
+```
 
 请注意GMT 6.4 及其之前的版本，都无法正常使用科大镜像下载数据。因此强烈建议国内用户使用GMT 6.5 及其以上版本。
 :::
