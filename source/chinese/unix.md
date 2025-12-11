@@ -1,6 +1,6 @@
 ---
 author: 陈箫翰, 田冬冬
-date: 2025-10-31
+date: 2025-12-11
 ---
 
 # Linux/macOS 下的 GMT 中文支持
@@ -30,7 +30,8 @@ $ mkdir -p ~/.gmt/winfonts
 
 用户也可以从 Windows 的系统字体目录（通常是 `C:\Windows\Fonts` ）中，找到这四种基本字体的字体文件。
 
-在 `~/.gmt` 目录下创建字体配置文件 `cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
+在 `~/.gmt` 目录下创建[字体配置文件](https://ghostscript.readthedocs.io/en/latest/Fonts.html#fonts-html)
+`cidfmap` （ghostscript无法直接识别 `${HOME}` 变量，所以请将下列语句复制粘贴到终端中执行）:
 
 ```
 cat > ~/.gmt/cidfmap << EOF
@@ -43,7 +44,19 @@ EOF
 
 ## GMT的中文支持
 
-在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
+ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.html#how-ghostscript-finds-files)，
+会搜寻 `gs -I` 选项中指定的目录。既可以在经典模式中使用 {doc}`/module/psconvert` 的 **-C** 选项将 `cidfmap` 所在的目录传递给 `gs -I`。
+也可以在现代模式中配置 {doc}`/module/begin` 的选项，将参数先传递给 {doc}`/module/psconvert` 的 **-C** 选项，
+执行 {doc}`/module/end` 时会调用 {doc}`/module/psconvert`，再将参数传递给 `gs -I`：
+
+```
+gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/
+# 如果在中文绘图脚本中，有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720
+# 可以去掉横杠后以逗号分隔，添加在后面：
+# gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/,I+m0.5c,E720
+```
+
+接下来，还需要在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
 
 ```
 $ touch ~/.gmt/PSL_custom_fonts.txt
@@ -93,13 +106,7 @@ Font #  Font Name
 ## GMT 中文测试
 
 :::{note}
-凡是使用到中文字体的画图脚本，都应该设置字体配置文件 cidfmap 所在的目录:
-
-```
-gmt set PS_CONVERT="C-I字体配置文件cidfmap所在的目录"
-```
-
-此外 GMT 6.x 目前在处理中文时存在 BUG，可能会出现某些中文正常显示，某些
+GMT 6.x 目前在处理中文时存在 BUG，可能会出现某些中文正常显示，某些
 不正常显示的情况。需要使用如下命令来避免这一 BUG:
 
 ```
