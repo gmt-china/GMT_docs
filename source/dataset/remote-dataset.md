@@ -85,6 +85,7 @@ GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列�
 # Linux/macOS 系统中打开终端
 $ echo >> ~/.gmt/gmt.conf
 $ echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> ~/.gmt/gmt.conf
+
 # Windows 系统中打开 cmd
 C:\Windows\system32> cd /d C:\Users\当前用户名\.gmt
 C:\Users\当前用户名\.gmt> echo >> gmt.conf
