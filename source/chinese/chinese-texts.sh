@@ -1,4 +1,4 @@
-gmt begin chinese-texts pdf C-I${HOME}/.gmt/
+gmt begin chinese-texts png,pdf C-I${HOME}/.gmt/
 
 # 左图
 gmt set FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
