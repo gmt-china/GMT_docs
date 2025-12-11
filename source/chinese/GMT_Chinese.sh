@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
-gmt begin GMT_Chinese
-# 如果在中文绘图脚本中，有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720
-# 可以去掉横杠后以逗号分隔，使用 gmt set 命令覆盖全局设置。
-# 例如：gmt set PS_CONVERT="C-I${HOME}/.gmt/,I+m0.5c,E720"
-# 以上命令的等效写法是：
-# gmt begin GMT_Chinese png,pdf C-I${HOME}/.gmt/,I+m0.5c,E720
-
+gmt begin GMT_Chinese C-I${HOME}/.gmt/
 # GMT 处理中文存在一些已知BUG
 # 需要设置 PS_CHAR_ENCODING 为 Standard+ 以绕过这一BUG
 gmt set PS_CHAR_ENCODING Standard+
