@@ -57,7 +57,7 @@ $ open ~/.zshrc
 然后重启终端使其生效:
 
 ```
-export GS_LIB=${HOME}/.gmt/
+export GS_LIB=${HOME}/.gmt/:${GS_LIB}
 ```
 
 ## GMT的中文支持
