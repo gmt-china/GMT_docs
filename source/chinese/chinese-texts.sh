@@ -1,7 +1,4 @@
-gmt begin chinese-texts png
-
-# 设置中文字体配置文件 cidfmap 的目录，Windows 下无需此设置
-gmt set PS_CONVERT="C-I${HOME}/.gmt"
+gmt begin chinese-texts png,pdf C-I${HOME}/.gmt/
 
 # 左图
 gmt set FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black

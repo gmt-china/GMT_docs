@@ -141,7 +141,7 @@ GMT 会自动从服务器下载该数据并保存到本地的 GMT 数据目录�
 ## 制作 CPT 文件
 
 上面的示例中使用的是 GMT 的默认 CPT 文件。用户也可以使用 {doc}`/module/makecpt` 或
-{doc}`gmt:grd2cpt` 制作 CPT 文件。
+{doc}`/module/grd2cpt` 制作 CPT 文件。
 
 下面的示例中，我们使用 {doc}`/module/makecpt` 模块在 GMT 内置 CPT **globe** 的基础
 上生成了一个 -8000 到 8000 范围内的新 CPT 文件。生成的 CPT 文件将作为当前 CPT 文件，供
