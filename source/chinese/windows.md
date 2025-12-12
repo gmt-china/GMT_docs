@@ -124,7 +124,7 @@ Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40�
 请自行确认你的中文字体编号。如果编号不是40到47，请自行修改以下测试脚本。
 :::
 
-```{literalinclude} GMT_Chinese.bat
+```bat GMT_Chinese.bat
 ```
 
 :::{note}
