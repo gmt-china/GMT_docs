@@ -14,7 +14,7 @@ Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，
 
 但 GMT 安装包中内置的 Ghostscript 是一个精简的版本，缺失了支持 CID 字体的必要文件，因此 **不支持**中文。
 
-若需要 GMT 支持中文，需要用户自行安装一个完整版的 Ghostscript。完整版安装包下载地址:
+若需要 GMT 支持中文，用户必须自行安装一个完整版的 Ghostscript。完整版安装包下载地址:
 
 - [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
 
@@ -99,19 +99,19 @@ Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40�
 
 ## 将 Windows 的 ANSI 编码修改为 UTF-8
 
-在 Windows 上，标准的C语言 main(int argc, char *argv[]) 函数默认是从系统获取 ANSI 编码（在中文系统下就是 GBK）的参数，而不是 UTF-8。
-为此我们需要开启 Windows 的 "Beta版: 使用 Unicode UTF-8 提供全球语言支持"，
+在 Windows 上，标准的C语言 `main(int argc, char *argv[])` 函数默认是从系统获取 ANSI 编码（在中文系统下就是 GBK）的参数，而不是 UTF-8。
+为此我们需要开启 Windows 的 **Beta版: 使用 Unicode UTF-8 提供全球语言支持**，
 这是 Windows 10/11 专门为解决标准的C语言程序不支持 UTF-8 而提供的系统级功能。
 开启这个选项后，Windows 会把系统的“ANSI 代码页”强制改为 UTF-8。
-所有使用 main(argc, argv) 接收参数的C语言程序，都会自动接收到 UTF-8 编码。
+所有使用 `main(int argc, char *argv[])` 接收参数的C语言程序，都会自动接收到 UTF-8 编码。
 
 操作步骤：
 
 1. 按下 `Win + R`，输入 `intl.cpl`，回车打开 “区域” 设置。
 2. 点击 “管理” 标签页。
 3. 点击 “更改系统区域设置...” 按钮。
-4. 关键步骤： 勾选 “Beta 版: 使用 Unicode UTF-8 提供全球语言支持”。
-5. 点击确定。注意必须重启电脑后才能生效。
+4. 关键步骤： 勾选 **Beta 版: 使用 Unicode UTF-8 提供全球语言支持**。
+5. 点击确定。注意必须 **重启电脑**后才能生效。
 
 :::{warning}
 副作用警告： 这个设置是全局的。开启后，某些非常古老的中文软件（例如十几年前的游戏或行业软件）可能会出现乱码。
@@ -124,7 +124,7 @@ Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40�
 请自行确认你的中文字体编号。如果编号不是40到47，请自行修改以下测试脚本。
 :::
 
-```bat GMT_Chinese.bat
+```{literalinclude} GMT_Chinese.bat
 ```
 
 :::{note}
