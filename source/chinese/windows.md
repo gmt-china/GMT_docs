@@ -26,13 +26,8 @@ Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，
 对于 GMT 6.5.0 则建议使用 Ghostscript 10.03 之后的新版本。
 :::
 
-:::{note}
-安装 Ghostscript 的过程中记得勾选 `Generate cidfmap for Windows CJK TrueType fonts`
-以生成中文字体配置文件。
-:::
-
-在安装 Ghostscript 的过程中，会有一个生成 cidfmap 的选项，选中该选项则表示会为当前系统自动
-生成中文所需的 cidfmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
+在安装 Ghostscript 的过程中，会有一个生成 cidfmap 的选项 `Generate cidfmap for Windows CJK TrueType fonts`。
+选中该选项则表示会为当前系统自动生成中文所需的 cidfmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
 
 GMT 默认会调用自带的精简版 Ghostscript。我们只需要简单将其重命名，就能让 GMT 调用完整版的 Ghostscript。
 打开命令提示符 cmd，输入以下命令查找 GMT 的安装目录，进入该目录将精简版 Ghostscript 重命名即可：
