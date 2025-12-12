@@ -1,22 +1,20 @@
 ---
 author: 田冬冬, 陈箫翰
-date: 2025-07-28
+date: 2025-12-12
 ---
 
 # Windows 下的 GMT 中文支持
 
-## ghostscript 的中文支持
+## Ghostscript 的中文支持
 
-GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片。如果没有正确配置
-Ghostscript 的中文支持，GMT 生成的图片中的中文将会出现乱码。因此必须首先
-配置 Ghostscript 的中文支持，但 GMT 安装包中内置的 Ghostscript **不支持**中文。
+GMT 需要使用 Ghostscript 将 PostScript 文件转换为 PDF、JPG 等格式的图片。
+PostScript CID 字体（Character Identifier Font，字符标识符字体）是
+Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，合称 CJK）的排版和打印问题而开发的一种字体格式架构，
+专门为了让电脑和打印机能够高效处理成千上万个汉字。
 
-若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后
-再自行安装 Ghostscript。对于已安装 GMT 的用户，建议先卸载 GMT，再
-按照《 {doc}`/install/windows` 》一节的步骤重新安装 GMT，安装过程中注意
-不勾选 Ghostscript。
+但 GMT 安装包中内置的 Ghostscript 是一个精简的版本，缺失了支持 CID 字体的必要文件，因此 **不支持**中文。
 
-Ghostscript 安装包下载地址:
+若需要 GMT 支持中文，需要用户自行安装一个完整版的 Ghostscript。完整版安装包下载地址:
 
 - [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
 
@@ -33,81 +31,98 @@ Ghostscript 安装包下载地址:
 以生成中文字体配置文件。
 :::
 
-在安装 ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
-生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
+在安装 Ghostscript 的过程中，会有一个生成 cidfmap 的选项，选中该选项则表示会为当前系统自动
+生成中文所需的 cidfmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
+
+GMT 默认会调用自带的精简版 Ghostscript。我们只需要简单将其重命名，就能让 GMT 调用完整版的 Ghostscript。
+打开命令提示符 cmd，输入以下命令查找 GMT 的安装目录，进入该目录将精简版 Ghostscript 重命名即可：
+
+```cmd
+C:\Windows\system32> where gmt
+c:\programs\gmt6\bin\gmt.exe
+C:\Windows\system32> cd /d c:\programs\gmt6\bin\
+c:\programs\gmt6\bin> ren gswin64c.exe gswin64c.exe.bak
+c:\programs\gmt6\bin> where gswin64c
+C:\Program Files\gs\gs10.05.1\bin\gswin64c.exe
+```
+
+请注意，如果 `where gmt` 或 `where gswin64c` 出现多个结果，说明系统中同时安装了多个 GMT 或 Ghostscript。
+这种情况极易发生冲突，必要时需要卸载多余的 GMT 或 Ghostscript。
 
 ## GMT 的中文支持
 
-新建GMT自定义字体配置文件 `C:\Users\用户名\.gmt\PSL_custom_fonts.txt`
-（注意 `用户名` 应该替换为实际的用户名。
-若不存在 `C:\Users\用户名\.gmt` 目录则需新建该目录。
-Win10 用户可以直接新建文件夹。Win7 的文件管理器无法新建
-以 **.** 开头的文件夹，因而需要打开CMD，然后执行命令 `mkdir .gmt` 以创建该文件夹）。
+打开命令提示符 cmd，输入以下命令创建 GMT 配置文件目录，并创建 GMT 自定义字体配置文件：
 
-:::{note}
-Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
-常常将文件名错误写成 `PSL_custom_fonts.txt.txt`，导致中文字体添加失败。
-因此强烈建议在**资源管理器** -> **查看**中开启显示文件扩展名:
-
-```{image} chinese-extension.png
+```cmd
+C:\Windows\system32> cd /d %USERPROFILE%
+C:\Users\当前用户名> mkdir .gmt
+C:\Users\当前用户名> REM 注释：如果目录已存在会提示 A subdirectory or file .gmt already exists.
+C:\Users\当前用户名> cd .gmt
+C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
 ```
-:::
 
-向 GMT自定义字体配置文件 `C:\Users\用户名\.gmt\PSL_custom_fonts.txt` 中加入如下语句:
+向 GMT自定义字体配置文件 `C:\Users\当前用户名\.gmt\PSL_custom_fonts.txt` 中加入如下内容并保存:
 
 ```
-STSong-Light--GB-EUC-H  0.700    1
-STFangsong-Light--GB-EUC-H  0.700    1
-STHeiti-Regular--GB-EUC-H   0.700   1
-STKaiti-Regular--GB-EUC-H   0.700   1
-STSong-Light--GB-EUC-V  0.700    1
-STFangsong-Light--GB-EUC-V  0.700    1
-STHeiti-Regular--GB-EUC-V   0.700   1
-STKaiti-Regular--GB-EUC-V   0.700   1
+dummy  0.700    1
+STSong-Light--UniGB-UTF8-H  0.700    1
+STFangsong-Light--UniGB-UTF8-H  0.700    1
+STHeiti-Regular--UniGB-UTF8-H   0.700   1
+STKaiti-Regular--UniGB-UTF8-H   0.700   1
+STSong-Light--UniGB-UTF8-V  0.700    1
+STFangsong-Light--UniGB-UTF8-V  0.700    1
+STHeiti-Regular--UniGB-UTF8-V   0.700   1
+STKaiti-Regular--UniGB-UTF8-V   0.700   1
 ```
 
 用 `gmt text -L` 查看 GMT 字体:
 
-```
-$ gmt text -L
-Font #  Font Name
-------------------------------------
-0   Helvetica
-1   Helvetica-Bold
+```cmd
+C:\Users\当前用户名\.gmt> gmt text -L
 ...    ......
-39 STSong-Light--GB-EUC-H
-40 STFangsong-Light--GB-EUC-H
-41 STHeiti-Regular--GB-EUC-H
-42 STKaiti-Regular--GB-EUC-H
-43 STSong-Light--GB-EUC-V
-44 STFangsong-Light--GB-EUC-V
-45 STHeiti-Regular--GB-EUC-V
-46 STKaiti-Regular--GB-EUC-V
+39: dummy
+40: STSong-Light--UniGB-UTF8-H
+41: STFangsong-Light--UniGB-UTF8-H
+42: STHeiti-Regular--UniGB-UTF8-H
+43: STKaiti-Regular--UniGB-UTF8-H
+44: STSong-Light--UniGB-UTF8-V
+45: STFangsong-Light--UniGB-UTF8-V
+46: STHeiti-Regular--UniGB-UTF8-V
+47: STKaiti-Regular--UniGB-UTF8-V
 ```
 
-可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。
-其中 `STSong-Light-GB-EUC-H` 即为宋体，`GB-EUC` 是文字编码方式，
+Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40才开始生效。因此编号39需要用一个不存在的假字体占位。
+新添加的四种中文字体对应的字体编号为 40 到 47。
+其中 `STSong-Light--UniGB-UTF8-H` 即为宋体，`UniGB-UTF8` 是文字编码方式，
 `H` 表示文字水平排列，`V` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
+
+## 将 Windows 的 ANSI 编码修改为 UTF-8
+
+在 Windows 上，标准的C语言 main(int argc, char *argv[]) 函数默认是从系统获取 ANSI 编码（在中文系统下就是 GBK）的参数，而不是 UTF-8。
+为此我们需要开启 Windows 的 "Beta版: 使用 Unicode UTF-8 提供全球语言支持"，
+这是 Windows 10/11 专门为解决标准的C语言程序不支持 UTF-8 而提供的系统级功能。
+开启这个选项后，Windows 会把系统的“ANSI 代码页”强制改为 UTF-8。
+所有使用 main(argc, argv) 接收参数的C语言程序，都会自动接收到 UTF-8 编码。
+
+操作步骤：
+
+1. 按下 `Win + R`，输入 `intl.cpl`，回车打开 “区域” 设置。
+2. 点击 “管理” 标签页。
+3. 点击 “更改系统区域设置...” 按钮。
+4. 关键步骤： 勾选 “Beta 版: 使用 Unicode UTF-8 提供全球语言支持”。
+5. 点击确定。注意必须重启电脑后才能生效。
+
+:::{warning}
+副作用警告： 这个设置是全局的。开启后，某些非常古老的中文软件（例如十几年前的游戏或行业软件）可能会出现乱码。
+如果发现其他软件乱码，取消勾选并重启即可恢复。
+:::
 
 ## GMT 中文测试
 
 :::{note}
-请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
+请自行确认你的中文字体编号。如果编号不是40到47，请自行修改以下测试脚本。
 :::
-
-:::{warning}
-目前发现 **Git Bash** 运行Bash脚本时， `echo` 生成文件使用的是 UTF8 编码，
-从而可能会导致中文乱码。建议在有中文需求时使用bat脚本，或者避免在Bash脚本
-中使用 `echo` 。
-:::
-
-使用**记事本**和 **Notepad++** 的用户，应注意含中文的bat文件和输入数据文件都应以 **ANSI** 编码保存，
-使用其他编码方式则极可能出现乱码。Notepad++除了注意要选择 “ 编码 -> 使用ANSI编码 ” 以外，还应该选中
-“ 设置 -> 首选项 -> 新建 -> 编码 -> ANSI ”。
-
-**Visual Studio Code** 用户，应注意确保含中文的bat文件和输入数据文件都采用 **GB2312** 编码方式。
-在Visual Studio Code右下角状态栏中可以查看并修改当前文件的编码方式。
 
 ```{literalinclude} GMT_Chinese.bat
 ```
@@ -121,13 +136,6 @@ gmt set PS_CHAR_ENCODING Standard+
 ```
 
 可临时避免这一BUG。
-
-此外，GMT 6.3 及之后的版本每句使用中文的命令之前，
-以及使用echo命令输出含中文的文件之前，必须设置 `chcp 936` ，否则将出现乱码:
-
-```
-chcp 936
-```
 :::
 
 成图效果如下：
