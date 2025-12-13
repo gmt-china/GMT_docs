@@ -26,7 +26,7 @@ basemap
 :option:`-T`\ *mag_rose*
 [ :option:`-A`\ [*file*] ]
 [ :option:`-F`\ *box* ]
-:doc:`可选的通用标准选项 </option>`
+:doc:`可选的通用标准选项 </option/index>`
 **--PAR**\ =\ :doc:`配置参数临时设置 <conf/overview>`
 
 必选选项
