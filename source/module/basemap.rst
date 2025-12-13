@@ -45,10 +45,6 @@ basemap
 
 .. include:: explain_-J.rst_
 
-.. option:: -R
-
-    **-R**\ *xmin*/*xmax*/*ymin*/*ymax*\ [**+r**][**+u**\ *unit*] :doc:`(more ...) </option/R>`
-    
 .. include:: explain_-R.rst_
 
 .. include:: explain_-Rz.rst_
