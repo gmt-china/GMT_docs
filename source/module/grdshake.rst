@@ -1,7 +1,10 @@
 :author: 陈箫翰
 :date: 2025-01-16
+
 .. index:: ! grdshake
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: grdshake
 
 grdshake
 ==========

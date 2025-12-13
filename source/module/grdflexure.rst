@@ -4,6 +4,8 @@
 .. index:: ! grdflexure
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdflexure
+
 grdflexure
 ==========
 

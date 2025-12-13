@@ -4,6 +4,8 @@
 .. index:: ! grdspotter
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdspotter
+
 grdspotter
 =============
 

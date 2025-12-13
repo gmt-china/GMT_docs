@@ -2,6 +2,8 @@
 :date: 2025-05-17
 
 .. index:: ! grdtrack
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdtrack
 
 grdtrack
 ========
@@ -11,8 +13,6 @@ grdtrack
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdtrack** [ *table* ] |-G|\ *grd1* [ |-G|\ *grd2* ... ]
 [ |-A|\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+l**] ]

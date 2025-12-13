@@ -1,6 +1,9 @@
 :author: 田冬冬, Tche LIU
 :date: 2022-11-17
+
 .. index:: ! grdmask
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdmask
 
 grdmask
 =======

@@ -2,18 +2,17 @@
 :date: 2025-05-12
 
 .. index:: ! grdgradient
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdgradient
 
-************
 grdgradient
-************
+=============
 
 :官方文档: :doc:`gmt:grdgradient`
 :简介: 从网格文件中计算方向导数（光照强度）或梯度
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdgradient** *ingrid*
 |-G|\ *outgrid*

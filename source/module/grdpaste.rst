@@ -3,6 +3,8 @@
 .. index:: ! grdpaste
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdpaste
+
 grdpaste
 ========
 

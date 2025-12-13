@@ -1,20 +1,18 @@
 :author: 周茂
+:date: 2022-12-11
 
 .. index:: !grdselect
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdselect
+
 grdselect
 =========
-
-:最近更新时间: 2022-12-11
-
-----
 
 :官方文档: :doc:`gmt:grdselect`
 :简介: 使用一定的空间标准对 2—D 网格、图像或 3-D 网格进行范围筛选或者确定并集
 
 **grdselect** 读取一个或者多个图像或者网格，可对数据数据xxx
-
 
 语法
 ----

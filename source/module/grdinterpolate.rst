@@ -2,18 +2,17 @@
 :date: 2025-09-29
 
 .. index:: ! grdinterpolate
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdinterpolate
 
-***************
 grdinterpolate
-***************
+====================
 
 :官方文档: :doc:`gmt:grdinterpolate`
 :简介: 从一个 3D 网格 (cube) 或堆叠的一系列 2D 网格 (layer) 中采样一个 3D 网格，或一系列 2D 网格，或 1D 序列。
 
 语法
 ------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdinterpolate** *cube* | *grd1 grd2 ...*
 |-G|\ *outfile*

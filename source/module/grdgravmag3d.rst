@@ -4,6 +4,8 @@
 .. index:: ! grdgravmag3d
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdgravmag3d
+
 grdgravmag3d
 =============
 

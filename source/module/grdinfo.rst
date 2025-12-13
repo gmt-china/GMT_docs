@@ -3,6 +3,8 @@
 .. index:: ! grdinfo
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdinfo
+
 grdinfo
 =======
 
