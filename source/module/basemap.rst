@@ -3,7 +3,6 @@
 
 .. index:: ! basemap
 .. program:: basemap
-.. include:: common_SYN_OPTs.rst_
 
 basemap
 =======
@@ -21,33 +20,19 @@ basemap
 ----
 
 **gmt basemap**
-|SYN_OPT-J|
-|SYN_OPT-R|
-|SYN_OPT-B|
+**-B**\ :doc:`(参数说明) </option/B>`
+:option:`-L`\ *scalebar*
+:option:`-T`\ *rose*
+:option:`-T`\ *mag_rose*
 [ :option:`-A`\ [*file*] ]
 [ :option:`-F`\ *box* ]
-[ :option:`-L`\ *scalebar* ]
-[ |SYN_OPT-U| ]
-[ :option:`-T`\ *rose* ]
-[ :option:`-T`\ *mag_rose* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
+:doc:`可选的通用标准选项 </option>`
+**--PAR**\ =\ :doc:`配置参数临时设置 <conf/overview>`
 
 必选选项
 --------
 
-:option:`-B` :option:`-L` :option:`-T` 三个选项中必须至少使用一个。
-
-.. include:: explain_-J.rst_
-
-.. include:: explain_-R.rst_
-
-.. include:: explain_-Rz.rst_
+**-B**, :option:`-L`, :option:`-T`三个选项中必须至少使用一个。
 
 .. include:: explain_-B.rst_
 
@@ -85,20 +70,6 @@ basemap
     该选项默认会同时控制比例尺和方向玫瑰的背景边框。
     加上 **l**\|\ **t** 则表示只控制 :option:`-L` 或 :option:`-T`
     选项绘制的特征。
-
-.. include:: explain_-U.rst_
-
-.. include:: explain_-V.rst_
-
-.. include:: explain_-XY.rst_
-
-.. include:: explain_-f.rst_
-
-.. include:: explain_perspective.rst_
-
-.. include:: explain_-t.rst_
-
-.. include:: explain_help.rst_
 
 示例
 ----
