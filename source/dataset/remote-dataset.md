@@ -87,7 +87,7 @@ $ echo >> ~/.gmt/gmt.conf
 $ echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> ~/.gmt/gmt.conf
 
 # Windows 系统中打开 cmd（适用于使用安装包方式安装的 GMT）
-C:\Windows\system32> cd /d C:\Users\当前用户名\.gmt
+C:\Windows\system32> cd /d %USERPROFILE%\.gmt
 C:\Users\当前用户名\.gmt> echo >> gmt.conf
 C:\Users\当前用户名\.gmt> echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> gmt.conf
 ```
