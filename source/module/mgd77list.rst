@@ -4,6 +4,8 @@
 .. index:: ! mgd77list
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mgd77list
+
 mgd77list
 =========
 

@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2022-02-28
 
 .. index:: ! math
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: math
 
 math
 =======

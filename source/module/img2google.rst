@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2021-07-17
 
 .. index:: ! img2google
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: img2google
 
 img2google
 ==========

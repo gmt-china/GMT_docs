@@ -4,6 +4,8 @@
 .. index:: ! talwani3d
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: talwani3d
+
 talwani3d
 =========
 

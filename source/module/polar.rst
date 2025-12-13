@@ -3,6 +3,8 @@
 .. index:: ! polar
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: polar
+
 polar
 =====
 

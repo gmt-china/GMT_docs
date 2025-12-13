@@ -3,6 +3,8 @@
 .. index:: ! kml2gmt
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: kml2gmt
+
 kml2gmt
 =======
 

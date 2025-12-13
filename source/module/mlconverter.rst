@@ -4,6 +4,8 @@
 .. index:: ! mlconverter
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mlconverter
+
 mlconverter
 =============
 

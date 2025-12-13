@@ -3,6 +3,8 @@
 .. index:: ! gshhg
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: gshhg
+
 gshhg
 =====
 

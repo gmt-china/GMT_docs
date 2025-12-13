@@ -2,6 +2,9 @@
 :date: 2025-07-10
 
 .. index:: ! sample1d
+.. include:: common_SYN_OPTs.rst_
+
+.. program:: sample1d
 
 sample1d
 ========
@@ -11,8 +14,6 @@ sample1d
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt sample1d** [ *table* ]
 [ |-A|\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+d**][**+l**] ]

@@ -4,6 +4,8 @@
 .. index:: ! mgd77path
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mgd77path
+
 mgd77path
 =========
 

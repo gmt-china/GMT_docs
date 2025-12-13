@@ -3,6 +3,8 @@
 .. index:: ! sac
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: sac
+
 sac
 ===
 

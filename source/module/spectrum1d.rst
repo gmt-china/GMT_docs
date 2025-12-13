@@ -4,6 +4,8 @@
 .. index:: ! spectrum1d
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: spectrum1d
+
 spectrum1d
 ==========
 

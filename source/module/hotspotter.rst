@@ -4,6 +4,8 @@
 .. index:: ! hotspotter
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: hotspotter
+
 hotspotter
 =============
 

@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2022-01-17
 
 .. index:: ! wiggle
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: wiggle
 
 wiggle
 ======

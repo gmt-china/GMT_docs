@@ -4,6 +4,8 @@
 .. index:: ! makecpt
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: makecpt
+
 makecpt
 =======
 

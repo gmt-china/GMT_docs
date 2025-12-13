@@ -3,6 +3,8 @@
 .. index:: ! xyz2grd
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: xyz2grd
+
 xyz2grd
 =======
 

@@ -4,6 +4,8 @@
 .. index:: ! grdvector
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdvector
+
 grdvector
 =========
 

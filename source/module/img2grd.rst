@@ -1,7 +1,10 @@
-:author: 周茂
+:author: 周茂,  田冬冬
+:date: 2021-07-17
 
 .. index:: ! img2grd
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: img2grd
 
 img2grd
 ========

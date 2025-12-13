@@ -3,6 +3,8 @@
 .. index:: ! meca
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: meca
+
 meca
 ====
 

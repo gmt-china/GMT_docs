@@ -3,6 +3,8 @@
 .. index:: ! nearneighbor
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: nearneighbor
+
 nearneighbor
 ============
 

@@ -4,6 +4,8 @@
 .. index:: ! surface
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: surface
+
 surface
 =======
 

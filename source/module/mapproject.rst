@@ -4,6 +4,8 @@
 .. index:: ! mapproject
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mapproject
+
 mapproject
 ==========
 

@@ -3,6 +3,8 @@
 .. index:: ! rose
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: rose
+
 rose
 ====
 

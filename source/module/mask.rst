@@ -3,6 +3,8 @@
 .. index:: ! mask
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mask
+
 mask
 ====
 

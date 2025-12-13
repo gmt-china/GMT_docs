@@ -4,6 +4,8 @@
 .. index:: ! mgd77track
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mgd77track
+
 mgd77track
 ==========
 

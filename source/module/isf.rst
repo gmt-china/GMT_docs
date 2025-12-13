@@ -4,6 +4,8 @@
 .. index:: ! isf
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: isf
+
 isf
 ==========
 

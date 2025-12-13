@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2022-02-09
 
 .. index:: ! spatial
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: spatial
 
 spatial
 ==========

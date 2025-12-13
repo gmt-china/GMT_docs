@@ -3,6 +3,8 @@
 .. index:: ! legend
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: legend
+
 legend
 ======
 

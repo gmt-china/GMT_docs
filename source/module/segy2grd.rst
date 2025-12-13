@@ -3,6 +3,8 @@
 .. index:: ! segy2grd
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: segy2grd
+
 segy2grd
 =============
 

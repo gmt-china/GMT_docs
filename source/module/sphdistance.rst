@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2021-07-17
 
 .. index:: ! sphdistance
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: sphdistance
 
 sphdistance
 ===========

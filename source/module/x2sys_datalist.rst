@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2022-01-12
 
 .. index:: !x2sys_datalist
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: x2sys_datalist
 
 x2sys_datalist
 ==============

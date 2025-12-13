@@ -3,6 +3,8 @@
 .. index:: ! logo
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: logo
+
 logo
 =======
 

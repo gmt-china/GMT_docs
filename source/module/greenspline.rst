@@ -1,10 +1,10 @@
-:author: 朱邓达
+:author: 朱邓达, 周茂
 :date: 2025-07-15
-
-:reviewer: 周茂
 
 .. index:: ! greenspline
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: greenspline
 
 greenspline
 ===========

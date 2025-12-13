@@ -4,6 +4,8 @@
 .. index:: ! regress
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: regress
+
 regress
 ==========
 

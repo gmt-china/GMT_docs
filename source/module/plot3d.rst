@@ -2,11 +2,10 @@
 :date: 2025-06-11
 .. index:: ! plot3d
 .. include:: common_SYN_OPTs.rst_
+.. program:: plot3d
 
-
-******
 plot3d
-******
+========
 
 :官方文档: :doc:`gmt:plot3d`
 :简介: 在3D视角图中绘制符号、线段或多边形

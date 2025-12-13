@@ -3,6 +3,8 @@
 .. index:: ! grdvs30
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdvs30
+
 grdvs30
 =======
 

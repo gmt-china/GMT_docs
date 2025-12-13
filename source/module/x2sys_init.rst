@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2021-11-04
 
 .. index:: ! x2sys_init
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: x2sys_init
 
 x2sys_init
 ==========

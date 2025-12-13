@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2022-02-20
 
 .. index:: ! sphinterpolate
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: sphinterpolate
 
 sphinterpolate
 ==============

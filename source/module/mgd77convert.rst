@@ -4,6 +4,8 @@
 .. index:: ! mgd77convert
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: mgd77convert
+
 mgd77convert
 ============
 

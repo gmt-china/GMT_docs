@@ -1,18 +1,17 @@
 :author: 田冬冬, 朱邓达, 陈箫翰
 :date: 2025-06-15
 .. index:: ! grdview
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdview
 
-*******
 grdview
-*******
+==========
 
 :官方文档: :doc:`gmt:grdview`
 :简介: 利用网格文件绘制3D视角图或表面网格图
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdview** *reliefgrid* |-J|\ *parameters*
 [ |SYN_OPT-B| ]
