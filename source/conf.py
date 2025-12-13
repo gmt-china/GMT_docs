@@ -36,7 +36,10 @@ rst_prolog = """
 
 # -- General configuration ------------------------------------------------
 needs_sphinx = "2.4"
-source_suffix = ".rst"
+source_suffix = {
+    '.rst': 'restructuredtext',  # 遇到 .rst 用默认解析器
+    '.md': 'markdown',           # 遇到 .md 用 MyST 解析器
+}
 source_encoding = "utf-8-sig"
 nitpicky = True
 language = "zh_CN"
