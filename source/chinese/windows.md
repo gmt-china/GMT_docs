@@ -32,7 +32,7 @@ Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，
 GMT 默认会调用自带的精简版 Ghostscript。我们只需要简单将其重命名，就能让 GMT 调用完整版的 Ghostscript。
 打开命令提示符 cmd，输入以下命令查找 GMT 的安装目录，进入该目录将精简版 Ghostscript 重命名即可：
 
-```
+```doscon
 C:\Windows\system32> where gmt
 c:\programs\gmt6\bin\gmt.exe
 C:\Windows\system32> cd /d c:\programs\gmt6\bin\
@@ -48,7 +48,7 @@ C:\Program Files\gs\gs10.05.1\bin\gswin64c.exe
 
 打开命令提示符 cmd，输入以下命令创建 GMT 配置文件目录，并创建 GMT 自定义字体配置文件：
 
-```
+```doscon
 C:\Windows\system32> cd /d %USERPROFILE%
 C:\Users\当前用户名> mkdir .gmt
 C:\Users\当前用户名> REM 注释：如果目录已存在会提示 A subdirectory or file .gmt already exists.
@@ -72,7 +72,7 @@ STKaiti-Regular--UniGB-UTF8-V   0.700   1
 
 用 `gmt text -L` 查看 GMT 字体:
 
-```
+```doscon
 C:\Users\当前用户名\.gmt> gmt text -L
 ...    ......
 39: dummy
@@ -120,6 +120,7 @@ Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40�
 :::
 
 ```{literalinclude} GMT_Chinese.bat
+:language: bat
 ```
 
 :::{note}
