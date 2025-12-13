@@ -20,12 +20,12 @@ basemap
 语法
 ----
 
-**gmt basemap** :option:`-J`\ *parameters*
-|SYN_OPT-Rz|
+**gmt basemap**
+|SYN_OPT-J|
+|SYN_OPT-R|
+|SYN_OPT-B|
 [ :option:`-A`\ [*file*] ]
-[ |SYN_OPT-B| ]
 [ :option:`-F`\ *box* ]
-[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ :option:`-L`\ *scalebar* ]
 [ |SYN_OPT-U| ]
 [ :option:`-T`\ *rose* ]
