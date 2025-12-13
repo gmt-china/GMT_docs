@@ -2,8 +2,8 @@
 :date: 2022-06-19
 
 .. index:: ! basemap
-.. include:: common_SYN_OPTs.rst_
 .. program:: basemap
+.. include:: common_SYN_OPTs.rst_
 
 basemap
 =======

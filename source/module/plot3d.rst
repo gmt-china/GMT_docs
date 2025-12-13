@@ -47,7 +47,7 @@ plot3d
 
 .. include:: explain_-J.rst_
 
-.. _-Jz:
+.. option:: -Jz
 
 **-Jz**\|\ **Z**\ *parameters*
     设置Z轴的缩放比例，设置方式与 -Jx|X 相同。

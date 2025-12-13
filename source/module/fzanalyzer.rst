@@ -12,7 +12,7 @@ fzanalyzer
 :官方文档: :doc:`gmt:supplements/gsfml/fzanalyzer`
 :简介: 使用交叉剖面分析断裂带
 
-**fzanalyzer** 是 (Global Seafloor Fabric and Magnetic Lineation Project) 的一部分。
+ **fzanalyzer** 是 (Global Seafloor Fabric and Magnetic Lineation Project) 的一部分
 ( 简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
 它读取由 :doc:`grdtrack` 生成的已处理断裂带（FZ）轨迹和横剖面数据。
 然后通过检查与 FZ 走向正交的剖面来分析每条 FZ 的轨迹，

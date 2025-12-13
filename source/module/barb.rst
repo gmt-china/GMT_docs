@@ -2,8 +2,8 @@
 :date: 2025-10-21
 
 .. index:: ! barb
-.. include:: common_SYN_OPTs.rst_
 .. program:: barb
+.. include:: common_SYN_OPTs.rst_
 
 barb
 =============

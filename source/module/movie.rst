@@ -311,9 +311,7 @@ movie
     或者，添加 **s** 只构建 movie 脚本，但不做任何运行。
     一个例外是从 |-Sb| 指定后台脚本总是被执行，因为它可能在构建 movie 脚本时产生所需的数据。
 
-.. option:: -S
-
-.. _-Sb:
+.. option:: -Sb
 
 **-Sb**\ *background*
     指定一个 GMT 现代模式脚本 *background* （使用与 *mainscript* 相同的脚本语言编写），
@@ -326,7 +324,7 @@ movie
        
     另外，*background* 可以是与画布尺寸完全匹配的 *PostScript* 或 *EPS* 图。
 
-.. _-Sf:
+.. option:: -Sf
 
 **-Sf**\ *foreground*
     指定一个 GMT 现代模式脚本 *foreground* （使用与 *mainscript* 相同的脚本语言编写），

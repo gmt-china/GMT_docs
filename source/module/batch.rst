@@ -2,8 +2,8 @@
 :date: 2025-10-21
 
 .. index:: ! batch
-.. include:: common_SYN_OPTs.rst_
 .. program:: batch
+.. include:: common_SYN_OPTs.rst_
     
 batch
 =====
@@ -117,14 +117,14 @@ batch
     唯一例外是可选 *preflight* 脚本（**-Sb**），始终执行，
     因为可能产生构建主批处理脚本所需的数据。
 
-.. _-Sb:
+.. option:: -Sb
 
 **-Sb**\ *preflight*
     可选 GMT 现代模式 *preflight* 脚本（与 *mainscript* 同语言），
     可下载或复制数据文件，或创建 *mainscript* 所需的文件（如 *timefile*）。
     总是在主批处理序列之前执行。
 
-.. _-Sf:
+.. option:: -Sf
 
 **-Sf**\ *postflight*
     可选 *postflight* 脚本（与 *mainscript* 同语言），可在所有作业完成后执行最终处理，

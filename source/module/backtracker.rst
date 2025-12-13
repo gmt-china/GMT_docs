@@ -2,8 +2,8 @@
 :date: 2025-10-17
 
 .. index:: ! backtracker
-.. include:: common_SYN_OPTs.rst_
 .. program:: backtracker
+.. include:: common_SYN_OPTs.rst_
 
 backtracker
 =============
