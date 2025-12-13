@@ -3,7 +3,6 @@
 
 .. index:: ! backtracker
 .. program:: backtracker
-.. include:: common_SYN_OPTs.rst_
 
 backtracker
 =============
@@ -23,30 +22,21 @@ backtracker
 语法
 --------
 
-**gmt backtracker** [ *table* ]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-[ |-A|\ [*young*/*old*] ]
-[ |-D|\ **f**\|\ **b** ]
-[ |-F|\ *driftfile* ]
-[ |-L|\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*] ]
-[ |-M|\ [*factor*] ]
-[ |-N|\ *upper_age* ]
-[ |-Q|\ *fixed_age* ]
-[ |-S|\ *filestem* ]
-[ |-T|\ *zero_age* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**a**\|\ **t**] ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt backtracker**
+*table*
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+[ :option:`-A`\ [*young*/*old*] ]
+[ :option:`-D`\ **f**\|\ **b** ]
+[ :option:`-F`\ *driftfile* ]
+[ :option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*] ]
+[ :option:`-M`\ [*factor*] ]
+[ :option:`-N`\ *upper_age* ]
+[ :option:`-Q`\ *fixed_age* ]
+[ :option:`-S`\ *filestem* ]
+[ :option:`-T`\ *zero_age* ]
+[ :option:`-W`\ [**a**\|\ **t**] ]
+[ :doc:`可选的通用标准选项 </option/index>` ]
+**--PAR**\ =\ :doc:`配置参数临时设置 </conf/overview>`
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 
@@ -128,8 +118,6 @@ backtracker
 **-T**\ *zero_age*
     设置当前时间[默认 0 Ma]。
 
-.. include:: explain_-V.rst_
-
 .. option:: -W
 
 **-W**\ [**a**\|\ **t**]
@@ -139,30 +127,6 @@ backtracker
     在这 2–3 个基本输出后，
     程序将输出方位角、长轴、短轴（单位：km），表示 95% 置信椭圆。
     参见 |-D| 了解旋转方向的控制。
-
-.. include:: explain_-bi.rst_
-
-.. include:: explain_-bo.rst_
-
-.. include:: explain_-d.rst_
-
-.. include:: explain_-e.rst_
-
-.. include:: explain_-f.rst_
-
-.. include:: explain_-h.rst_
-
-.. include:: explain_-icols.rst_
-
-.. include:: explain_-ocols.rst_
-
-.. include:: explain_-q.rst_
-
-.. include:: explain_-s.rst_
-
-.. include:: explain_colon.rst_
-
-.. include:: explain_help.rst_
 
 .. include:: explain_geodetic.rst_
 

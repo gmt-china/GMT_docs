@@ -26,13 +26,13 @@ basemap
 :option:`-T`\ *mag_rose*
 [ :option:`-A`\ [*file*] ]
 [ :option:`-F`\ *box* ]
-:doc:`可选的通用标准选项 </option/index>`
-**--PAR**\ =\ :doc:`配置参数临时设置 <conf/overview>`
+[ :doc:`可选的通用标准选项 </option/index>` ]
+**--PAR**\ =\ :doc:`配置参数临时设置 </conf/overview>`
 
 必选选项
 --------
 
-**-B**, :option:`-L`, :option:`-T`三个选项中必须至少使用一个。
+**-B**, :option:`-L`, :option:`-T` 三个选项中必须至少使用一个。
 
 .. include:: explain_-B.rst_
 
