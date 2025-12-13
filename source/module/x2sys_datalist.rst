@@ -49,7 +49,7 @@ x2sys_datalist
     中的路径和位于 \*.gmt 中的 **$GMT_SHAREDIR**\/mgg/gmtfile_paths 中查找
     轨迹数据。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init` 
@@ -57,28 +57,28 @@ x2sys_datalist
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     通过轨迹的权重来消除两个轨迹在交叉点的不符值
 
-.. _-E:
+.. option:: -E
 
 **-E**
     输出两个轨迹的信息作为头部信息 [默认不写入这些头部信息]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *name1*,\ *name2*,...
     指定要输出的变量列表，每个变量以逗号分隔[默认输出所有列]
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [*list*]
     *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算
     [默认包含所有的轨迹]
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*corrections*]
     如果存在改正值，对观测量进行最优改正，*corrections* 为改正表，该改正表可以由 :doc:`x2sys_solve` 生成
@@ -87,7 +87,7 @@ x2sys_datalist
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     使用该选项后，所有的列均为 NaN 的行将不输出 [默认输出所有行]

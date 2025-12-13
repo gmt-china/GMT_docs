@@ -3,6 +3,8 @@
 .. index:: ! grdcut
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdcut
+
 grdcut
 ======
 
@@ -36,7 +38,7 @@ grdcut
 *ingrid*
     输入网格文件名
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*
     输出网格文件名
@@ -46,7 +48,7 @@ grdcut
 
 .. include:: explain_-J.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [*nodata*]
     允许新网格的区域范围超过原网格的区域范围。
@@ -62,7 +64,7 @@ grdcut
 
    指定要截取的网格子区域的范围。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *lon/lat/radius*\ [**+n**]
     指定圆心位置（*lon/lat*）及其半径（*radius*，可指定 `距离单位`_\ ），
@@ -71,7 +73,7 @@ grdcut
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [*min/max*]\ [**+n**\|\ **N**\|\ **r**]
     确定一个新的矩形区域，使得所有该区域外的节点值都在指定的Z值范围 *min/max* 外。

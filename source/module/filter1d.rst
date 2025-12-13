@@ -3,6 +3,8 @@
 .. index:: ! filter1d
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: filter1d
+
 filter1d
 ========
 
@@ -39,7 +41,7 @@ filter1d
 必选选项
 --------
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **type**\ *width*\ [*modifier*]
     设置滤波器类型
@@ -79,36 +81,36 @@ filter1d
 
 .. include:: explain_intables.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *increment*
     当输入的时间序列是不等间隔采样时，需要使用该选项设置输出数据的分辨率 *increment*。
     所有横坐标（时间）都会被rounded off到 *increment* 的整数倍。
     当然，也可以使用 :doc:`sample1d` 对时间序列做重采样。
 
-.. _-E:
+.. option:: -E
 
 **-E**
     输出时间序列的首尾端数据。默认情况下，首尾两端都会丢失半滤波器宽度的数据点
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *lack_width*
     检查数据间断。若输入数据存在超过 *lack_width* 的间断，则该数据点不输出值。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *t_col*
     指定哪一列数据包含自变量（即时间）。默认值为0，即第一列。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *q_factor*
     通过检查卷积过程中的平均权重以评估输出值的质量因子。
 
     *q_factor* 的取值为0到1，若某点的卷积的平均权重小于 *q_factor* 则不输出该点。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *symmetry_factor*
     检查数据关于时间窗中心的对称性。
@@ -116,7 +118,7 @@ filter1d
     *symmetry_factor* 的取值范围为0到1。
     若 ( (abs(n_left - n_right)) / (n_left + n_right) ) > factor，则该点不输出值。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
     生成时间序列

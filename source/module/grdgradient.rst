@@ -48,7 +48,7 @@ grdgradient
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *azim*\ [/\ *azim2*] 
     给定光源方位角，计算方向导数。 *azim* 为方位角（度），
@@ -64,7 +64,7 @@ grdgradient
     最后，如果 *azim* 是一个和 *ingrid* 相同区域、间隔、配准的网格文件，
     则计算方向导数时每个节点有各自的方位角。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**a**][**c**][**n**][**o**]
     不指定方向(\ |-A|)，而是计算每个节点的正梯度（上升）的方向。支持以下选项：
@@ -75,7 +75,7 @@ grdgradient
     + **o** - 输出角度范围使用半圆定向（0~180度）而不是默认的全圆定向（0~360度）。
       例如全圆定向的30°和210°在半圆定向中均为30°，因为其位于同一延长线上。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [**m**][**s**][**p**]\ *azim*\ /\ *elev*\ [**+a**\ *ambient*][**+d**\ *diffuse*][**+p**\ *specular*][**+s**\ *shine*]
     计算朗伯辐射(Lambertian radiance)以用于 :doc:`/module/grdimage` 和 :doc:`/module/grdview` 。
@@ -95,7 +95,7 @@ grdgradient
       此时 *azim* 和 *elev* 分别固定为315和45，忽略用户设置。
     + **m** - 与ESRI的hillshade算法类似，但更快。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*] 
     归一化（默认不做归一化）。实际梯度 :math:`g` 被偏移和缩放成 :math:`g_n` ，幅值为 *amp* 。
@@ -114,7 +114,7 @@ grdgradient
     详见 |-Q| 。最后，可使用 **+a**\ *ambient* 给归一化之后的梯度整体加上 
     *ambient* 。
 
-.. _-Q:
+.. option:: -Q
     
 **-Q**\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*]
     控制 |-N| 的归一化。当需要对多个网格进行相同的归一化处理（即相同的偏移 *offset* 和标准差 *sigma*），
@@ -126,7 +126,7 @@ grdgradient
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *slopfile*
     将梯度矢量的大小输出到网格文件 *slopfile* 。要求和 |-D| 使用，此时 |-G| 变为可选项。

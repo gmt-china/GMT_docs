@@ -48,7 +48,7 @@ mgd77track
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**c**][*size*][**+i**\ *spacing*]
     标注测线，追加 **c** 选项表示使用 cruise ID 进行标注，默认使用文件名前缀。
@@ -58,19 +58,19 @@ mgd77track
 
 .. include:: explain_-B.rst_
 
-.. _-D:
+.. option:: -D
 
 **-Da**\ *startdate*
     不绘制 *startdate* （yyyy-mm-dd\ **T**\ [hh:mm:ss]）时刻之前的数据，默认为第一天
 **-Db**\ *stopdate*
     不绘制 *stopdate* （yyyy-mm-dd\ **T**\ [hh:mm:ss]）时刻之后的数据，默认为最后一天
 
-.. _-F:
+.. option:: -F
 
 **-F**
     如果 MGD77+ 文件中存在 error flag，不应用这些 flag，默认情况下会应用
 
-.. _-G:
+.. option:: -G
 
 **-G**\ **d**\|\ **t**\|\ **n**\ *gap*
     如果测线中两个点的距离超过 **d**\ *gap* (km) 或者时间超过 **t**\ *gap* (minutes)
@@ -78,20 +78,20 @@ mgd77track
     每 N 个点绘制一个点，这对于减小图所占的空间很有必要，但是不能和 **d** 以及 **t**
     选项共用。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ **a\|c\|m\|t**
     忽略某些数据格式的文件。**a\|c\|m\|t** 分别表示忽略 MGD77 ASCII、MGD77+ NetCDF、
     MGD77T ASCII 、tab 分隔的普通文本文件。该选项可以重复使用以忽略多个格式
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *trackticks*
     在轨迹上放置时间或者距离标记。例如，**a**\ 500\ **ka**\ 24\ **ht**\ 6\ **h**
     表示每 500 km 标注，每 24 小时标注，每 500 km 和 6 小时绘制刻度线。时间和距离
     单位也可以是 **d** （天）和 **n** （nautical miles）。
 
-.. _-S:
+.. option:: -S
 
 **-Sa**\ *startdist*
     不绘制从港口出发累积距离小于 *startdist* 米的数据，默认为 0，可追加单位：
@@ -100,7 +100,7 @@ mgd77track
     不绘制从港口出发累积距离大于 *stopdist* 米的数据，默认为整个测线长度，
     可追加单位：**k** 为 km，**M** 为 miles，**n** 为 nautical miles
 
-.. _-T:
+.. option:: -T
 
 **-TT**\|\ **t**\|\ **d**\ *ms*,\ *mc*,\ *mfs*,\ *mf*,\ *mfc*
     控制三种标记的属性，**T** 为新一天的第一个时间标记，**t** 同一天的其他时间
@@ -108,7 +108,7 @@ mgd77track
     *markersize* ，*markercolor* ，*markerfontsize* ，*markerfont* 和 *markerfontcolor*
     。重复使用 **-T** 选项可设置不同的标记。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*pen*]
     设置绘制轨迹线的属性，默认 width = defaults，color = black，style = solid。

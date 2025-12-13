@@ -2,19 +2,17 @@
 :date: 2025-08-25
 
 .. index:: ! grdcontour
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdcontour
 
-
-**********
 grdcontour
-**********
+=============
 
 :官方文档: :doc:`gmt:grdcontour`
 :简介: 根据网格文件绘制等值线
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdcontour** *grid*
 |-J|\ *parameters* [ |-A|\ [**n**\|\ *contours*][*labelinfo*] ]
@@ -61,7 +59,7 @@ grdcontour
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**n**]\|\ [*contours*][*labelinfo*]
     **-A**\ *contours* 设置标注间隔，如果在 |-C| 选项中指定标注间隔的话，
@@ -73,7 +71,7 @@ grdcontour
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *contours*
     指定绘制等值线的形式，具体说明如下:
@@ -96,7 +94,7 @@ grdcontour
 
     如果 |-C| 和 |-A| 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *template* 
     将等值线转存为线段文件，不绘制图像。后面可以加上C语言的 `printf <https://linux.die.net/man/3/printf>`_ 函数
@@ -111,13 +109,13 @@ grdcontour
 
     例如，只给定 %c 则输出两个文件，只给定 %f 则等值线的每一级输出为一个文件，给定 %d 则每条等值线输出到独立文件中。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**l**\|\ **r**]
     使用 |-D| 时，设置按顺序输出等值线的线段。 **-Fl** （默认值）表示沿着高z值在左侧的等值线方向， 
     **-Fr** 表示沿着高z值在右侧的等值线方向，不使用 **-F** 则为任意方向。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params*
 
@@ -127,18 +125,18 @@ grdcontour
 
 .. include:: explain_contlabel.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p**
     不绘制小于 *low* 大于 *high* 的等值线。 也可以设置为 **-Ln** 只绘制负值，
     或 **-Lp** 只绘制正值。使用大写的 **-LN** 或 **-LP** 表示包括0等值线。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [*cpt*]
     指定 *cpt* 文件，对等值线之间的区域填充颜色。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [*n*\|\ *length*\ [*unit*]][**+z**]
     不绘制少于 *n* 个点的等值线（默认绘制所有等值线）。或者，以距离 *unit* 为单位给出最小等值线长度 *length* ，
@@ -150,12 +148,12 @@ grdcontour
 
 .. include:: explain_-Rz.rst_
 
-.. _-S:
+.. option:: -S
     
 **-S**\ *smoothfactor*
     在 *网格尺寸/smoothfactor* 间隔下重采样等值线。 
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]]
     在最内层闭合等值线上每隔一段 *gap* 距离向着下降方向的刻度。
@@ -176,7 +174,7 @@ grdcontour
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`
     设置等值线的线型。默认情况下，有标注的等值线线型 *pen* 为 ``0.75p,black`` ，
@@ -188,7 +186,7 @@ grdcontour
 
 .. include:: explain_-XY.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [**+o**\ *shift*][**+s**\ *factor*][**+p**]
     在计算等值线之前，从数据中减去 *shift* 再乘以 *factor* （默认-o0+s1）。

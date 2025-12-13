@@ -42,7 +42,7 @@ grdpmodeler
 
 .. include:: explain_rots.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *flags*
     指定要计算的模型预测类型，可附加一个或多个标识符：
@@ -65,7 +65,7 @@ grdpmodeler
     输入的地理网格文件名（经度、纬度坐标），其数值为地壳年龄（单位：Myr）。
     如果未提供网格文件，可使用 |-R|、|-I| 和可选的 **-r** 定义计算域。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *polygonfile*
     指定一个多段闭合多边形文件，描述模型计算的区域内部。
@@ -79,7 +79,7 @@ grdpmodeler
 .. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *age*
     使用固定年龄进行模型计算（即忽略输入年龄网格中的年龄值）。

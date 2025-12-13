@@ -48,22 +48,22 @@ split
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *azimuth*/*tolerance*
     计算方位角，只输出和方位角 *azimuth* 相差小于 *tolerance* 的段
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *course\_change*
     当检测到航向发生变化且超过 *course\_change* 时，结束该航段
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *minimum\_distance*
     输出总长度大于 *minimum\_distance* 的段，默认值为 0
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *xy\_filter*/*z\_filter*
     对数据进行滤波，假定数据为 d 列（x 的增量）的函数。*xy\_filter* 和 *z\_filter*
@@ -74,7 +74,7 @@ split
     的头尾则不会有。如果 *xy\_filter* 不为 0，数据将先被拆分，然后对每段的 x 和 y 
     值滤波，即在每段首尾都可能存在边缘效应，但是可以避免低通滤波将测线拐弯处舍入。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *template*
     将拆分后的每段都单独输出到文件 [默认在一个文件输出所有段]。可以追加一个格式化
@@ -83,13 +83,13 @@ split
     输出文件格式有关]。或者给出一个带有两个 C 语言格式的模版，使用表数据的编号和
     段号生成文件名。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *flags*
     设置输出列包含 *xyzdh* 中的哪些列以及其顺序，中间不需要使用空格，且必须使用小写
     字母，默认为 **-Q**\ *xyzdh* ；如果输入只包含两列，则为 **-Q**\ *xydh* 。
 
-.. _-S:
+.. option:: -S
 
 **-S**
     支持包含 d 和 h 的列，这时输入数据为 x,y,z,d,h。其中 d 和 h 分别表示 x 的增量和

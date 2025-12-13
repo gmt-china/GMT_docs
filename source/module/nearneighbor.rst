@@ -57,7 +57,7 @@ nearneighbor
 *table*
     输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 |-W| 选项）
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
@@ -70,7 +70,7 @@ nearneighbor
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *search_radius*
     设置 *search_radius* ，即上图中的 R，可在后面追加单位
@@ -78,12 +78,12 @@ nearneighbor
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *empty*
     指定空节点的值为 *empty* ，默认为 NaN
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *sectors*\ [**+m**\ *min_sectors*]\|\ **n**
     以每个网格节点为中心可以将圆形的搜索区域划分为扇区 *sectors* 。**+m** 选项
@@ -93,7 +93,7 @@ nearneighbor
     sectos = min_sectors = 4。每个扇区最接近的值才会被用来计算加权值，远处的点
     则被忽略。使用 **-Nn** 可以调用 GDAL 的最邻近算法，而不是用 GMT 的该算法。
 
-.. _-W:
+.. option:: -W
 
 **-W**
     表明输入数据的第四列为权重，该权重与距离权重因子相乘即为最终权重

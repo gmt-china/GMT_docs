@@ -1,7 +1,9 @@
 :author: 田冬冬, 周茂, 王亮
 :date: 2022-06-19
+
 .. index:: ! basemap
 .. include:: common_SYN_OPTs.rst_
+.. program:: basemap
 
 basemap
 =======
@@ -56,7 +58,7 @@ basemap
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [*file*]
     不绘制图形，仅输出矩形底图的边框坐标。
@@ -70,7 +72,7 @@ basemap
     - 该选项似乎仅适用于矩形底图边框，非矩形边框会输出一堆NaN
     - 边框的采样间隔由参数 :term:`MAP_LINE_STEP` 决定
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**l**\|\ **t**][**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制比例尺和方向玫瑰的背景面板属性

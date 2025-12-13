@@ -4,6 +4,8 @@
 .. index:: ! grd2kml
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grd2kml
+
 grd2kml
 =======
 
@@ -47,7 +49,7 @@ grd2kml
 
 .. include:: explain_grd_in.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *prefix*
     设置用于顶层 KML 文件名及输出目录名称的唯一前缀 [默认：GMT_Quadtree]。
@@ -56,7 +58,7 @@ grd2kml
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ **a**\|\ **g**\|\ **s**\ [*altitude*]
     选择 Google Earth 支持的三种高度模式之一，确定图层的高度（单位：米）：
@@ -65,11 +67,11 @@ grd2kml
     使用 0 表示将图层贴合到参考面（如地面或海面）。  
     [默认：图块贴合到地面或海面。]
 
-.. _-C:
+.. option:: -C
 
 .. include:: use_cpt_grd.rst_
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *URL*
     若不希望将所有文件保存在本地，可指定远程站点的 URL 作为前缀。
@@ -78,7 +80,7 @@ grd2kml
     这样，你可以通过邮件或下载方式分享 *prefix*.kml，
     用户在 Google Earth 中打开后将自动从远程服务器加载所需文件。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *filtercode*
     指定用于网格降采样的滤波器。
@@ -86,18 +88,18 @@ grd2kml
     、 **m** （中值）[默认：Gaussian]。
     滤波宽度会自动随四叉树层级调整。
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *scale*
     设置传递给 :doc:`psconvert` 的亚像素平滑尺度，以提高光栅化质量
     （等同于 :doc:`psconvert` 的 |-H| 选项）[默认无平滑]。
     当未使用 |-W| 时，该选项被忽略。
 
-.. _-I:
+.. option:: -I
 
 .. include:: explain_intense.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *tilesize*
     设置图块的固定尺寸。必须为 2 的整数幂。
@@ -105,20 +107,20 @@ grd2kml
     **注意**：对于全球网格（即经度范围为 360° 的数据），若未指定 |-L|，
     则自动设置 *tilesize* = 360。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*extra*]
     增加超出原数据分辨率所需的额外层级 [默认无]。
     这样 GMT 将通过插值生成更高分辨率的图块，而不是让 Google Earth 自行插值。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *title*
     设置顶层文档的标题（即其描述信息）。
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*]
     提供一个包含等值线值与画笔样式的文件，用于在影像上叠加等值线 [默认无等值线]。

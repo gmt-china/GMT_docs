@@ -4,6 +4,8 @@
 .. index:: ! gravmag3d
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: gravmag3d
+
 gravmag3d
 =============
 
@@ -37,23 +39,23 @@ gravmag3d
 必选选项（不是全部都必选）
 ---------------------------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *density*
     以国际单位制设置多面体的密度。该选项与 |-H| 互斥
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip*
     设置计算磁异常的参数。*f_dec*/*f_dip* 表示地磁偏角和地磁倾角，单位为 m。
     *m_int*/*m_dec*/*m_dip* 分别为物体磁强度、偏角和倾角。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *xy_file*
     计算异常的位置，与 |-G| 选项互斥
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
@@ -61,7 +63,7 @@ gravmag3d
 
     输出网格文件名，其中各子选项的含义见 :doc:`/grid/read` 。
 
-.. _-M:
+.. option:: -M
 
 **-M+s**\ *body,params*
     创建几何体并计算形成的重力异常和磁异常。该选项为 **-Tr**\ /**-Ts** 选项的替代。
@@ -104,7 +106,7 @@ gravmag3d
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-Tv**\ *vert_file* 或者 **-Tr|s**\ *raw_file*
 
@@ -130,24 +132,24 @@ gravmag3d
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [*thickness*]
     设置层厚度为 *thickness* ，单位为 m，默认为 0。只有多面体为非闭合的情况下，想要
     计算一定厚度的层形成的异常时才可用该选项
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*z_observation*]
     设置观测水平面，默认为 0，同时也是计算异常的高度面
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *radius*
     以 km 为单位设置搜索半径。当输出点距离三角形中心的距离大于该半径时，则不考虑该
     三角形。使用该选项可以加快计算速度，但是计算结果会变得不准确
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [*level*]
     设置参考平面的高度为 *level* ，默认为 0。当三角形构成的多面体不闭合并使用该不闭合

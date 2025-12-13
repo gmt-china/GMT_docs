@@ -46,7 +46,7 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 *infile*
     ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体 |-A| 使用的程序有关
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
     选择要运行的 GDAL 程序，*prog* 可选的值包括：*info*，*dem*，*grid*，*rasterize*，
@@ -59,12 +59,12 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 可选选项
 --------
 
-.. _-F:
+.. option:: -F
 
 **-F**\ "*gdal opts*"
     传递给 |-A| 指定的程序的选项列表，用双引号扩起来
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [**+r**\ [**+w**]]
     |-M| 后不加任何选项时，使用 GDAL 读和写数据。

@@ -3,6 +3,8 @@
 .. index:: ! end
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: end
+
 end
 ===
 

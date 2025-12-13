@@ -47,17 +47,17 @@ polespotter
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *abyssalhills*
     含有多个深海丘线段的文件。这些线被认为反映了海底形成时指向旋转极点的大圆方向。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *step*
     设置所有生成的大圆的线增量（单位：km）[默认 5]。实际间距将被调整为沿完整圆周的整数步数。
 
-.. _-E:
+.. option:: -E
 
 **-E**
     为 **a**\ byssal hills 或 **f**\ racture zones 
@@ -65,7 +65,7 @@ polespotter
     使用 **-Ea**\ *sigma* 设置前者 [1]，使用 **-Ef**\ *sigma* 设置后者 [1]。
     这些 *sigma* 值随后用于形成权重 = 1/*sigma*。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *fracturezones*
     含有多个断裂带线段的文件。这些线被认为反映了海底形成时围绕旋转极点的小圆。
@@ -74,7 +74,7 @@ polespotter
 
 .. include:: explain_-I.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**
     归一化网格，使最大值等于 1 [默认不归一化]。
@@ -82,7 +82,7 @@ polespotter
 .. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
 
-.. _-S:
+.. option:: -S
 
 **-Sl**\|\ **p**\|\ **s**\ [*modifiers*]
     设置本次运行的扫描模式。从 **l**\ ines， **p**\ oles 或 **s**\ pots 中选择。

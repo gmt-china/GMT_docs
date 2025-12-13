@@ -39,7 +39,7 @@ isf
 .. |Add_-Rgeo| replace:: |Add_-R_auto_table|
 .. include:: explain_-Rgeo.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *date_start*\ [/*date_end*]
     仅处理发震时刻在特定时间范围内的事件，时间格式为 ISO， e.g. 2000-04-25
@@ -47,7 +47,7 @@ isf
     + 仅设置 *date_start* 表示仅处理时间范围在 *date >= date_start* 的部分。
     + 设置 *date_start* 和 *date_end* 表示处理时间范围在 *date_start <= date <= date_end* 的部分。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**a**]
     仅处理有震源机制解的事件。
@@ -67,7 +67,7 @@ isf
       + **4**,\ **5**,\ **6** - 走向，倾角，滑动角
       + **7** - 震级
 
-.. _-N:
+.. option:: -N
 
 **-N**
     跳过最后 5 列 *[year month day hour minute]* 的时间信息 [默认输出] 。

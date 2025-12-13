@@ -47,7 +47,7 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
     输入磁异常网格名。各子选项含义见
     `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *rtp_grd*
     RTP 结果网格文件名
@@ -55,48 +55,48 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *dec/dip*
     使用恒定的偏角和倾角
 
-.. _-E:
+.. option:: -E
 
 **-Ei**\ *inc_grd* **-Ed**\ *dec_grd*
     从 *inc_grd* 和 *dec_grd* 中获取磁化倾角和偏角，默认使用 IGRF 计算。
     **注** ：这两个网格不需要与输入的磁异常一致，范围和分辨率都可以不同。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *m/n*
     滤波窗口大小，*m* 和 *n* 分别为行和列，默认为 25/25
 
-.. _-M:
+.. option:: -M
 
 **-M**\ **m**\|\ **r**
     设置边界条件，**m**\|\ **r** 分别表示镜像对称或者以边缘对称
 
-.. _-N:
+.. option:: -N
 
 **-N**
     不使用泰勒展开
 
-.. _-R:
+.. option:: -R
 
 **-R**\ *west*/*east*/*south*/*north*
     设置输入点的区域，默认与输入相同
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *year*
     IGRF 程序用于计算每个点的偏角和请教的年份，默认为 2000 年 
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *width*
     滑动窗口的大小，单位为度，默认为 5 度
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *filter_grd*
     输出滤波文件
