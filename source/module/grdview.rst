@@ -1,18 +1,17 @@
 :author: 田冬冬, 朱邓达, 陈箫翰
 :date: 2025-06-15
 .. index:: ! grdview
+.. include:: common_SYN_OPTs.rst_
+.. program:: grdview
 
-*******
 grdview
-*******
+==========
 
 :官方文档: :doc:`gmt:grdview`
 :简介: 利用网格文件绘制3D视角图或表面网格图
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdview** *reliefgrid* |-J|\ *parameters*
 [ |SYN_OPT-B| ]
@@ -49,7 +48,7 @@ grdview
 
 .. include:: explain_-J.rst_
 
-.. _-Jz:
+.. option:: -Jz
 
 **-Jz**\|\ **Z**\ *parameters*
     设置Z轴的缩放比例，设置方式与 -Jx|X 相同。若忽略此选项将生成平面图。
@@ -63,17 +62,17 @@ grdview
 
 .. include:: explain_intense.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *level*\ [**+g**\ *fill*]
     在 *z=level* 位置处绘制一个平面， **+g** 设置平面和数据曲面之间截面的填充色。
 
-.. _-G:
+.. option:: -G
 
 |-G|\ *drapegrid* \| |-G|\ *grd_r* |-G|\ *grd_g* |-G|\ *grd_b*
     在三维表面上贴图。该贴图可以是一个彩色图片，也可以是三个单波段文件，分别代表R、G、B的强度值，每个文件像素值范围是0-255。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *args*\ [**+m**]
     #. **-Qm** 表示生成网格线图（mesh，默认）。也可以用 **-Qm**\ *color* 的形式生成不同底色的网格线。
@@ -88,7 +87,7 @@ grdview
 
 .. include:: explain_-Rz.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ **c**\|\ **m**\|\ **f**\ *pen*
 

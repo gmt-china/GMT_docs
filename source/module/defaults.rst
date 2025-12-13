@@ -3,6 +3,8 @@
 .. index:: ! defaults
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: defaults
+
 defaults
 ===========
 
@@ -22,7 +24,7 @@ defaults
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**u**\|\ **s**]
     打印系统默认参数值

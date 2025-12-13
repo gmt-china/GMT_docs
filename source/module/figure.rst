@@ -3,6 +3,8 @@
 .. index:: ! figure
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: figure
+
 figure
 ======
 

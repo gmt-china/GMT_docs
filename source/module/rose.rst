@@ -3,6 +3,8 @@
 .. index:: ! rose
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: rose
+
 rose
 ====
 
@@ -24,7 +26,7 @@ rose
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *sector_width*\ [**+r**]
     指定扇页宽度，单位为度

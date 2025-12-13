@@ -3,6 +3,8 @@
 .. index:: ! grdfill
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdfill
+
 grdfill
 =======
 
@@ -30,7 +32,7 @@ grdfill
 *ingrid*
     输入网格文件
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *mode*\ [*arg*]
     填充“洞”所使用的算法
@@ -43,7 +45,7 @@ grdfill
       分别是X方向和Y方向的网格数目。也可以指定 *radius* 为搜索半径
       （单位是节点数）。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*
     输出网格文件
@@ -51,7 +53,7 @@ grdfill
 可选选项
 --------
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [*nodata*]
     所有值等于 *nodata* 的节点都被认为为“hole”，默认值为NaN
@@ -61,7 +63,7 @@ grdfill
 
    该选项定义了要处理了子区域范围。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [**p**]
     不填充“洞”，仅列出每个“洞”所处的子区域的范围

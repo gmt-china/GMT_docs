@@ -2,6 +2,8 @@
 :date: 2022-06-13
 .. index:: ! grdtrend
 
+.. program:: grdtrend
+
 grdtrend
 ==========
 

@@ -2,18 +2,17 @@
 :date: 2025-08-22
 
 .. index:: ! contour
+.. include:: common_SYN_OPTs.rst_
+.. program:: contour
 
-*********
 contour
-*********
+=========
 
 :官方文档: :doc:`gmt:contour`
 :简介: 使用直接三角化法对数据进行等值线绘制
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt contour** [ *table* ] |-J|\ *parameters*
 |SYN_OPT-Rz|
@@ -65,7 +64,7 @@ contour
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**n**\|\ *contours*][*labelinfo*]
     **-A**\ *contours* 设置标注间隔，如果在 |-C| 选项中指定标注间隔的话，
@@ -77,7 +76,7 @@ contour
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *contours*
     指定绘制等值线的形式，具体说明如下:
@@ -100,7 +99,7 @@ contour
 
     如果 |-C| 和 |-A| 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
     
-.. _-G:
+.. option:: -G
 
 **-G**\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params*
 
@@ -112,7 +111,7 @@ contour
 
 **-G** 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`
     设置等值线的线型。默认情况下，有标注的等值线线型 *pen* 为 ``0.75p,black`` ，

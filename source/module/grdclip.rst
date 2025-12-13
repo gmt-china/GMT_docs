@@ -3,6 +3,8 @@
 .. index:: !grdclip
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: grdclip
+
 grdclip
 ========
 
@@ -28,7 +30,7 @@ grdclip
 *ingrid*
     输入网格文件名
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*
     输出网格文件名
@@ -42,7 +44,7 @@ grdclip
     指定要截取的网格区域。若该选项指定的范围超过了网格文件的边界，则仅提取二者
     公共的区域。
 
-.. _-S:
+.. option:: -S
 
 **-Sa**\ *high/above*
     将所有大于 *high* 的值设置为 *above*

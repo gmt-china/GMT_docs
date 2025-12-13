@@ -3,6 +3,8 @@
 .. index:: ! colorbar
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: colorbar
+
 colorbar
 ========
 
@@ -46,7 +48,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 可选选项
 --------
 
-.. _-B:
+.. option:: -B
 
 **-B**\ [**p**\|\ **s**]\ *parameters*
     设置colorbar的标注、刻度和网格线间隔。
@@ -59,7 +61,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     colorbar的右边；对于垂直colorbar而言，X轴的标签放在colorbar的右边，Y轴标签
     放在colorbar的上边。除非在 |-D| 选项中使用了 **+m** 子选项。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*cpt*]
     要绘制的CPT文件。
@@ -70,7 +72,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     对于现代模式，若未指定 *cpt* 或者未使用 |-C| 选项，则使用当前CPT。
     经典模式下，若未指定 |-C| 则从标准输入中读入CPT。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ [**+w**\ *length*\ [/\ *width*]]\ [**+e**\ [**b**\|\ **f**][*length*]][**+h**\|\ **v**][**+j**\ *justify*]\ [**+m**\ [**a**\|\ **c**\|\ **l**\|\ **u**]][**+n**\ [*txt*]][**+o**\ *dx*\ [/*dy*]]
     指定色标的尺寸和位置。
@@ -109,7 +111,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     - 放在右上角: **-DjTR+w2c/0.5c+o-1c/0c**
     - 放在右下角: **-DjBR+w2c/0.5c+o-1c/0c**
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制色标后的背景边框
@@ -119,13 +121,13 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
     .. include:: explain_-F_box.rst_
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *zlow*\ /\ *zhigh*
     对CPT文件做截断，即只绘制 *zlow* 到 *zhigh* 之间的部分。
     若其中某个值等于NaN，则不对CPT的那一端做处理。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [*max_intens*\|\ *low_i*/*high_i*]
     为色标加上光照效果
@@ -135,7 +137,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
 .. include:: explain_-J.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [**i**][*gap*]
     生成等大小的颜色矩形。
@@ -146,12 +148,12 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     若使用了 **i** 则标注每个间隔范围。若使用了 |-I| 选项，则每个矩形有自己的
     颜色以及自己的光照强度。
 
-.. _-M:
+.. option:: -M
 
 **-M**
     使用YIQ变换将色标变成单调灰度色标
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [**p**\|\ *dpi*]
     控制色标的图形表示方式
@@ -159,7 +161,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     - **-Np** 用颜色矩形来表示（比如离散的颜色）
     - |-N| 用图形表示（比如连续的颜色），可以加上 *dpi* 指定绘制色标时的等效DPI，默认值为600
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     使用对数坐标，刻度表示为10的次幂
@@ -168,7 +170,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     去除不同色块之间的黑色网格线
@@ -177,14 +179,14 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *scale*
     将CPT文件中所有的Z值乘以比例因子 *scale*
 
 .. include:: explain_-XY.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *zfile*
     *zfile* 文件用于指定每个颜色块的宽度。

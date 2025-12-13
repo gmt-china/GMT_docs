@@ -4,6 +4,8 @@
 .. index:: ! trend2d
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: trend2d
+
 trend2d
 =======
 

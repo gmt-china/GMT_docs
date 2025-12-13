@@ -3,6 +3,8 @@
 .. index:: ! clip
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: clip
+
 clip
 ====
 
@@ -48,7 +50,7 @@ clip
 必选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*n*]
     结束当前裁剪路径。
@@ -70,7 +72,7 @@ clip
 
 .. include:: explain_intables.rst_
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**m**\|\ **p**\|\ **x**\|\ **y**]
     修改两点间的连接方式
@@ -88,13 +90,13 @@ clip
 
 .. include:: explain_-B.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**
     反转“区域内”和“区域外”的概念，即只有在多边形外的部分才是裁剪区域，绘图时
     只有在多边形外的才会被绘制。该选项不能与 |-B| 选项连用。
 
-.. _-T:
+.. option:: -T
 
 **-T**
     不需要任何输入数据。根据 |-R| 选项将整个地图区域裁剪出来，
@@ -104,7 +106,7 @@ clip
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *pen*
     绘制裁剪路径的轮廓 [默认不绘制]

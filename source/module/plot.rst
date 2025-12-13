@@ -3,6 +3,8 @@
 .. index:: ! plot
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: plot
+
 plot
 ====
 

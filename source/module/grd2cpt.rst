@@ -1,18 +1,18 @@
 :author: 田冬冬, 朱邓达, 陈箫翰
 :date: 2025-10-31
 .. index:: ! grd2cpt
+.. include:: common_SYN_OPTs.rst_
 
-*******
+.. program:: grd2cpt
+
 grd2cpt
-*******
+===========
 
 :官方文档: :doc:`gmt:grd2cpt`
 :简介: 根据grid文件生成CPT
 
 语法
 --------
-
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grd2cpt** *grid*
 [ |-A|\ *transparency*\ [**+a**] ]
@@ -67,14 +67,14 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *transparency*\ [**+a**]
     设置透明度，*transparency* 的取值范围是0到100。
     加上 **+a** 则该透明度同时应用于前景色、背景色和NaN颜色。
     默认不透明，即0。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *cpt*
     指定主CPT文件，默认值是GMT自带的 **rainbow**。
@@ -84,7 +84,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     除了GMT自带的CPT文件，也可以设为用户自定义的CPT文件，也可以是通过
     **-C**\ *color1*,\ *color2*\[,\ *color3*] 语法指定一个线性连续变化的颜色列表。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**i**]
 	将背景色和前景色分别设置为输出的CPT文件中最低值和最高值对应的颜色。
@@ -92,12 +92,12 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 	:term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 	加上 **i** 则设置为主CPT文件中最低值和最高值对应的颜色。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *nlevels*
     生成的CPT文件会被重采样为 *nlevels* 个等间距的切片。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**R|r|h|c**][**+c**]
     使用默认选项 **-FR** ，输出的CPT以r/g/b，灰度值，或名称指定颜色；
@@ -106,12 +106,12 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     使用 **-Fc** ，输出的CPT以c/m/y/k方式指定颜色；
     附加 **+c** 以分类格式编写离散型调色板。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *zlo*\ /\ *zhi*
     截断主CPT文件，将主CPT的最小和最大z值分别限制为 *zlo* 与 *zhi*。
 
-.. _-H:
+.. option:: -H
 
 **-H**\
     仅限现代模式：
@@ -119,7 +119,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     在写制作动画的脚本时，需要传递显式命名的CPT文件，因此需要使用本功能。
     建议阅读《 :doc:`/migrating/classic2modern` 》。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [**c**][**z**]
 	利用 **-Iz** 选项倒转CPT的z值指向（不包括前景色、背景色）。
@@ -127,19 +127,19 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ **h**\|\ **l**\|\ **m**\|\ **u**
     强制生成0对称的CPT (范围从 -*R* 到 +\ *R*)。 **-Sl** : *R* =\|zmin\|, **-Su** : *R* =
     \|zmax\|, **-Sm** : *R* = min(\|zmin\|, \|zmax\|), **-Sh** : *R* =
     max(\|zmin\|, \|zmax\|).
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *start/stop/inc* 
     定义要生成的CPT文件的Z值范围( *start* to *stop* )及Z值间隔(*inc*)。
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**
     强制生成连续的CPT文件（默认为离散不连续的CPT）。

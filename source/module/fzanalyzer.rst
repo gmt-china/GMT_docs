@@ -4,13 +4,15 @@
 .. index:: ! fzanalyzer
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: fzanalyzer
+
 fzanalyzer
 ==========
 
 :官方文档: :doc:`gmt:supplements/gsfml/fzanalyzer`
 :简介: 使用交叉剖面分析断裂带
 
-**fzanalyzer** 是 (Global Seafloor Fabric and Magnetic Lineation Project) 的一部分。
+ **fzanalyzer** 是 (Global Seafloor Fabric and Magnetic Lineation Project) 的一部分
 ( 简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
 它读取由 :doc:`grdtrack` 生成的已处理断裂带（FZ）轨迹和横剖面数据。
 然后通过检查与 FZ 走向正交的剖面来分析每条 FZ 的轨迹，
@@ -47,7 +49,7 @@ fzanalyzer
     此表格是一个 ASCII（或二进制，参见 **-bi**）文件，必须包含 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *fzlines*
     其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用
@@ -58,7 +60,7 @@ fzanalyzer
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *min*/*max*/*inc*
     指定一个或三个参数，用于控制模型信号混合的方式。
@@ -67,7 +69,7 @@ fzanalyzer
     *inc* 为搜索时使用的步进增量 [默认 0.05]。
     若只需指定一个固定的不对称值（不进行搜索），则只需提供该单一值。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *min*/*max*/*inc*
     指定一个或三个参数，用于控制 “compression” 模型信号的搜索方式。
@@ -76,13 +78,13 @@ fzanalyzer
     *inc* 为搜索步进增量 [默认 0.05]。
     若只需指定一个固定压缩值（不进行搜索），则只需提供该单一值。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *corrwidth*
     指定中心走廊宽度 *corrwidth* （单位：km）[默认 25]。
     此走廊用于限定断裂带（FZ）槽位置在重新定位时允许偏离中心的最大范围。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *FZ*\ [/*profile*]
     默认情况下，程序会分析所有断裂带（FZ）生成的横剖面。
@@ -90,18 +92,18 @@ fzanalyzer
     还可指定仅处理该断裂带中的某一个 *profile* [默认处理全部]。
     注意，输出文件仍会包含所有剖面，但仅所选剖面对应的导出参数为非零。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [**b**\|\ **c**]
     以命令行选项设置的参数输出，格式适用于直接嵌入 Bourne/bash shell 脚本中。
     若附加 **c**，则输出为 csh/tcsh 语法格式。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *prefix*
     设置所有输出文件所使用的文件名前缀 [默认 *fztrack*]。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *min*/*max*/*inc*
     指定三个参数，用于控制断裂带（FZ）横向信号建模的方式。

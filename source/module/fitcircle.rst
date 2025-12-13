@@ -1,6 +1,8 @@
 :author: 田冬冬
 :date: 2022-05-05
 .. index:: ! fitcircle
+.. include:: common_SYN_OPTs.rst_
+.. program:: fitcircle
 
 fitcircle
 =========
@@ -17,7 +19,7 @@ fitcircle
 *table*
     输入数据
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *norm*
 
@@ -49,7 +51,7 @@ fitcircle
 选项
 ----
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **f**\|\ **m**\|\ **n**\|\ **s**\|\ **c**
     控制输出格式。
@@ -63,7 +65,7 @@ fitcircle
     - ``s`` south pole of great circle
     - ``c`` pole of small circle and its colatitude, which requires ``-S``
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *lat*
     拟合小圆弧而不是大圆弧

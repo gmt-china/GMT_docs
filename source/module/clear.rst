@@ -3,6 +3,8 @@
 .. index:: ! clear
 .. include:: common_SYN_OPTs.rst_
 
+.. program:: clear
+
 clear
 =====
 

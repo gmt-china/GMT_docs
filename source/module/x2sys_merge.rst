@@ -1,7 +1,10 @@
 :author: 周茂
+:date: 2022-01-12
 
 .. index:: !x2sys_merge
 .. include:: common_SYN_OPTs.rst_
+
+.. program:: x2sys_merge
 
 x2sys_merge
 ===========
@@ -23,12 +26,12 @@ x2sys_merge
 必选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *main_COElist.txt*
     指定主要的交叉点文件 *main_COElist.txt*
 
-.. _-M:
+.. option:: -M
 
 **-M**\ *new_COElist.txt*
     指定新的交叉点文件 *new_COElist.txt*
