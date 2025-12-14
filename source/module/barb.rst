@@ -3,7 +3,6 @@
 
 .. index:: ! barb
 .. program:: barb
-.. include:: common_SYN_OPTs.rst_
 
 barb
 =============
@@ -12,54 +11,45 @@ barb
 :简介: 在 2D 和 3D 中绘制风羽
 
 **barb** 从 *files* （或标准输入）读取 (x, y, 方位角, 风速) 数据，
-并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 **-JZ|z**
+并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 :option:`-JZ|z`
 则 **barb** 会将输入数据的第三列解释为 z 值，并在三维中绘制风羽。
-如果未通过 **-Q** 指定风羽长度，则 **barb** 会将输入数据的第三列和第四列分别解释为风羽长度和宽度。
-使用 **-G** 选择填充颜色。如果设置了 **-G**，则 **-W** 将控制是否绘制轮廓。
+如果未通过 :option:`-Q` 指定风羽长度，则 **barb** 会将输入数据的第三列和第四列分别解释为风羽长度和宽度。
+使用 :option:`-G` 选择填充颜色。如果设置了 :option:`-G` ，则 :option:`-W` 将控制是否绘制轮廓。
 
 语法
 --------
-**barb** [ *table* ]
-|-J|\ *parameters* |-J|\ **z**\ \|\ **Z**\ *parameters*
-|SYN_OPT-Rz|
-[ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
-[ |-D|\ *dx*/*dy*\ [/*dz*] ]
-[ |-G|\ *fill* ]
-[ |-I|\ *intens* ]
-[ |-N| ]
-[ |-Q|\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*][**+z**] ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*pen*][*attr*] ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT-:| ]
+**barb**
+[ *table* ]
+:option:`-J`
+:option:`-R`
+[
+:option:`-C`
+:option:`-D`
+:option:`-G`
+:option:`-I`
+:option:`-N`
+:option:`-Q`
+:option:`-W`
+:doc:`可选的通用标准选项 </option/index>`
+**--PAR**\ =\ :doc:`配置参数临时设置 </conf/overview>`
+]
+
 
 必选选项
 ------------------
 
+.. option:: -J
+
 .. include:: explain_-J.rst_
 
-.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
-.. include:: explain_-Rgeo.rst_
+.. option:: -R
 
-.. include:: explain_-Rz.rst_
+.. include:: explain_-R.rst_
 
 可选选项
 ------------------
-.. include:: explain_intables.rst_
 
-.. include:: explain_-B.rst_
+.. include:: explain_intables.rst_
 
 .. option:: -C
 
@@ -78,7 +68,7 @@ barb
 
 **-G**\ *fill*
     为符号或多边形选择填充颜色或图案 [默认不填充]。
-    注意 **barb** 会在所有段头中搜索 |-G| 和 |-W|，并覆盖命令行设置。
+    注意 **barb** 会在所有段头中搜索 :option:`-G` 和 :option:`-W` ，并覆盖命令行设置。
 
 .. option:: -I
 
@@ -107,39 +97,12 @@ barb
     - **+w** - 设置风羽宽度  
     - **+z** - 输入 (u,v) 分量而非 (方位角, 风速)  
 
-
-.. include:: explain_-U.rst_
-
-.. include:: explain_-V.rst_
-
 .. option:: -W
 
 **-W**\ [*pen*][*attr*] :ref:`(more ...) <-Wpen_attrib>`
     设置线条或符号轮廓画笔属性 [默认：宽度=默认，颜色=黑色，样式=实线]。
     若附加 **+cl** 修饰符，则线条颜色取自 CPT (**-C**)；若附加 **+cf**，
     则符号填充取 CPT 颜色。使用 **+c** 可同时应用两者。
-
-.. include:: explain_-XY.rst_
-
-.. include:: explain_-bi.rst_
-
-.. include:: explain_-di.rst_
-
-.. include:: explain_-e.rst_
-
-.. include:: explain_-f.rst_
-
-.. include:: explain_-h.rst_
-
-.. include:: explain_-icols.rst_
-
-.. include:: explain_perspective.rst_
-
-.. include:: explain_-t.rst_
-
-.. include:: explain_colon.rst_
-
-.. include:: explain_help.rst_
 
 示例
 --------
