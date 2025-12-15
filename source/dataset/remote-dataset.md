@@ -79,15 +79,19 @@ gmt grdcut @earth_relief_02m_g -Gearth_at_2m.grd
 GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
 <https://www.generic-mapping-tools.org/mirrors> 页面。
 
-对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为:
+对于国内用户，建议直接使用中科大LUG提供的国内镜像。
+
+Linux/macOS/WSL 系统的修改方式为打开终端：
 
 ```
-# Linux/macOS/WSL 系统中打开终端
 $ echo >> ~/.gmt/gmt.conf
 $ echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> ~/.gmt/gmt.conf
+```
 
-# Windows 系统中打开 cmd（适用于使用安装包方式安装的 GMT）
-C:\Windows\system32> cd /d C:\Users\当前用户名\.gmt
+Windows 系统则为打开命令提示符 cmd（适用于使用安装包方式安装的 GMT）：
+
+```doscon
+C:\Windows\system32> cd /d %USERPROFILE%\.gmt
 C:\Users\当前用户名\.gmt> echo >> gmt.conf
 C:\Users\当前用户名\.gmt> echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> gmt.conf
 ```
