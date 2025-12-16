@@ -31,11 +31,24 @@ batch
     * - 输入数据
       - *mainscript* 
     * - 必须选项
-      - :option:`-N`  :option:`-N`
+      - 选项与参数
+
+        .. list-table::
+
+            * - :option:`-N`
+              - **-N**\ *prefix*
+            * - :option:`-T`
+              - **-T**\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
+
     * - 可选选项
       - :option:`-D`  :option:`-F`  :option:`-I`  :option:`-M`  :option:`-Q`  :option:`-Sb`  :option:`-Sf`  :option:`-W`  :option:`-Z`  
     * - 可选的通用标准选项
-      - :doc:`GMT 标准选项列表 </option/index>`
+      - 选项与参数说明
+
+        .. list-table::
+
+            * - :doc:`/option/V`
+
     * - :doc:`配置参数临时设置 </conf/overview>`
       - **--PAR**\ =\ *value*
 
