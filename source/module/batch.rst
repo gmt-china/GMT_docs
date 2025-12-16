@@ -36,9 +36,9 @@ batch
         .. list-table::
 
             * - :option:`-N`
-              - **-N**\ *prefix*
+              - *prefix*
             * - :option:`-T`
-              - **-T**\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
+              - *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
 
     * - 可选选项
       - :option:`-D`  :option:`-F`  :option:`-I`  :option:`-M`  :option:`-Q`  :option:`-Sb`  :option:`-Sf`  :option:`-W`  :option:`-Z`  
