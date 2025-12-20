@@ -110,12 +110,12 @@ GMT 只支持用户名为字母、数字、下划线的组合。如果登录用�
 输入以下命令检查 **PATH**环境变量：
 
 ```doscon
-> echo %PATH%| find /i "%SystemRoot%\System32" >nul && echo [√] || echo [X]
+> echo %PATH% | find /i "%SystemRoot%\System32" >nul && echo [√] || echo [X]
 [√] 表示 PATH 中包含了 System32 目录
 [X] 警告 PATH 中丢失了 System32 目录
 ```
 
-如果 **PATH**环境变量中丢失了 System32 目录，那么将无法正常运行 bat 画图脚本。
+如果 **PATH** 环境变量中丢失了 System32 目录，那么将无法正常运行 bat 脚本。
 出现这个问题的原因通常是杀毒软件/安全软件/电脑管家等所谓的“系统优化”的结果。
 需要按照如下步骤手动添加系统环境变量 **PATH**：
 
