@@ -20,7 +20,7 @@ class MyTemplateBridge(BuiltinTemplateLoader):
     Inherit from the default template bridge and add custom filters.
     """
 
-    def init(self, builder, template_name):
-        super().init(builder, template_name)
+    def init(self, builder):
+        super().init(builder)
         # Add custom filters
         self.environment.filters["filemd5"] = _filemd5
