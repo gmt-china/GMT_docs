@@ -30,53 +30,29 @@ backtracker
     * - 输入数据（可选）
       - *table*
     * - 必须选项与参数
-
-        .. list-table::
-
-            * - :option:`-E`
-              - *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-
+      - + :option:`-E` *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
     * - 可选选项与参数
-
-        .. list-table::
-
-            * - :option:`-A`
-              - [*young*/*old*]
-            * - :option:`-D`
-              - **f**\|\ **b**
-            * - :option:`-F`
-              - *driftfile*
-            * - :option:`-L`
-              - **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
-            * - :option:`-M`
-              - [*factor*]
-            * - :option:`-N`
-              - *upper_age*
-            * - :option:`-Q`
-              - *fixed_age*
-            * - :option:`-S`
-              - *filestem*
-            * - :option:`-T`
-              - *zero_age*
-            * - :option:`-W`
-              - [**a**\|\ **t**]
-
+      - + :option:`-A` [*young*/*old*]
+        + :option:`-D` **f**\|\ **b**
+        + :option:`-F` *driftfile*
+        + :option:`-L` **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
+        + :option:`-M` [*factor*]
+        + :option:`-N` *upper_age*
+        + :option:`-Q` *fixed_age*
+        + :option:`-S` *filestem*
+        + :option:`-T` *zero_age*
+        + :option:`-W` [**a**\|\ **t**]
     * - 可选的通用选项
-
-        .. list-table::
-
-            * - :doc:`/option/V`
-            * - :doc:`/option/binary`
-            * - :doc:`/option/d`
-            * - :doc:`/option/e`
-            * - :doc:`/option/f`
-            * - :doc:`/option/h`
-            * - :doc:`/option/io`
-            * - :doc:`/option/q`
-            * - :doc:`/option/s`
-            * - :doc:`/option/colon`
-            * - :doc:`/option/V`
-
+      - | :doc:`/option/V`
+        | :doc:`/option/binary`
+        | :doc:`/option/d`
+        | :doc:`/option/e`
+        | :doc:`/option/f`
+        | :doc:`/option/h`
+        | :doc:`/option/io`
+        | :doc:`/option/q`
+        | :doc:`/option/s`
+        | :doc:`/option/colon`
     * - :doc:`配置参数临时设置 </conf/overview>`
       - **--PAR**\ =\ *value*
 
