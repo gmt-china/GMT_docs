@@ -1,8 +1,8 @@
 :author: 何星辰
-:date: 2025-10-17
+:date: 2025-12-22
 
 .. index:: ! backtracker
-.. include:: common_SYN_OPTs.rst_
+.. program:: backtracker
 
 backtracker
 =============
@@ -22,44 +22,82 @@ backtracker
 语法
 --------
 
-**gmt backtracker** [ *table* ]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-[ |-A|\ [*young*/*old*] ]
-[ |-D|\ **f**\|\ **b** ]
-[ |-F|\ *driftfile* ]
-[ |-L|\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*] ]
-[ |-M|\ [*factor*] ]
-[ |-N|\ *upper_age* ]
-[ |-Q|\ *fixed_age* ]
-[ |-S|\ *filestem* ]
-[ |-T|\ *zero_age* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**a**\|\ **t**] ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+.. list-table::
+    :stub-columns: 1
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
+    * - 模块
+      - **gmt backtracker**
+    * - 输入数据（可选）
+      - *table*
+    * - 必须选项与参数
 
-必选选项
+        .. list-table::
+
+            * - :option:`-E`
+              - *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+
+    * - 可选选项与参数
+
+        .. list-table::
+
+            * - :option:`-A`
+              - [*young*/*old*]
+            * - :option:`-D`
+              - **f**\|\ **b**
+            * - :option:`-F`
+              - *driftfile*
+            * - :option:`-L`
+              - **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
+            * - :option:`-M`
+              - [*factor*]
+            * - :option:`-N`
+              - *upper_age*
+            * - :option:`-Q`
+              - *fixed_age*
+            * - :option:`-S`
+              - *filestem*
+            * - :option:`-T`
+              - *zero_age*
+            * - :option:`-W`
+              - [**a**\|\ **t**]
+
+    * - 可选的通用选项
+
+        .. list-table::
+
+            * - :doc:`/option/V`
+            * - :doc:`/option/binary`
+            * - :doc:`/option/d`
+            * - :doc:`/option/e`
+            * - :doc:`/option/f`
+            * - :doc:`/option/h`
+            * - :doc:`/option/io`
+            * - :doc:`/option/q`
+            * - :doc:`/option/s`
+            * - :doc:`/option/colon`
+            * - :doc:`/option/V`
+
+    * - :doc:`配置参数临时设置 </conf/overview>`
+      - **--PAR**\ =\ *value*
+
+**注意**：选项和参数之间不允许有任何空格。
+
+输入数据（可选）
 ------------------
 
 .. include:: explain_intables.rst_
 
-.. include:: explain_rots.rst_
-
-可选选项
+必须选项与参数
 ------------------
 
-.. _-A:
+.. option:: -E
+
+.. include:: explain_rots.rst_
+
+可选选项与参数
+------------------
+
+.. option:: -A
 
 **-A**\ [*young*/*old*]
     与 **-Lb**\|\ **f** 联用，用于限制输出轨迹的预测年龄区间，
@@ -67,7 +105,7 @@ backtracker
     如果使用 **-LB**\|\ **F**，则限制条件适用于阶段编号（id 1 表示最年轻阶段）。
     若未指定区间，则期望输入文件的第 4、5 列分别提供各记录的年龄上下限。
 
-.. _-D:
+.. option:: -D
 
 **-Df**\|\ **b**
     设置时间方向：**-Df** 表示时间向后（从年轻到年老位置），
@@ -75,18 +113,18 @@ backtracker
     **注意**：对于 **-Db**，输入位置的年龄即为该点的实际年龄；
     而对于 **-Df**，输入的年龄对应的是重建点的时间。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *driftfile*
     提供一个包含 (*lon, lat, age*) 记录的文件，描述当前热点随时间的运动历史。
     反演时程序将根据输入的第 3 列（即年龄）插值热点在该时间的位置，
     并据此调整输入点或路径的位置变化[默认无漂移]。
     **注意**：
-    (1) 使用 |-F| 时，|-L| 的 *step* 单位为时间（百万年）；
+    (1) 使用 :option:`-F` 时， :option:`-L` 的 *step* 单位为时间（百万年）；
     (2) 漂移仅在回溯点（**-Db**）或预测海山链（**-Df -Lb**）时考虑；
-    (3) 不能与 |-M| 同时使用。
+    (3) 不能与 :option:`-M` 同时使用。
 
-.. _-L:
+.. option:: -L
 
 **-Lf**\|\ **b**\|\ **F**\|\ **B**\ [*step*]
     指定在初始与最终位置之间生成采样路径：
@@ -95,41 +133,39 @@ backtracker
     若 *step* < 0 或未指定，则仅返回旋转时间。
     当使用 **-LF** 或 **-LB** 时，
     输出的第 3 列为阶段编号（1 为最年轻阶段）[默认输出沿轨迹预测年龄]。
-    可通过 |-D| 控制路径方向。
+    可通过 :option:`-D` 控制路径方向。
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [*factor*]
     将输出的张开角按 *factor* 缩放[默认 0.5]。
     通常用于获取计算流线所需的半扩张速率。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *upper_age*
     设置向过去扩展最老阶段旋转的最大时间上限[默认不扩展]。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *fixed_age*
     为所有位置指定固定年龄。仅需输入 (*lon, lat*) 
     两列[默认期望三列（longitude, latitude, age）]。
     适用于输入为等时线点的情况。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *filestem*
-    当启用 |-L| 时，轨迹默认以多段文件形式写入标准输出。
+    当启用 :option:`-L` 时，轨迹默认以多段文件形式写入标准输出。
     通过指定 *filestem*，可令每条轨迹分别写入 *filestem.#* 文件，其中 *#* 为轨迹编号，
     该编号同时写入输出的第 4 列。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *zero_age*
     设置当前时间[默认 0 Ma]。
 
-.. include:: explain_-V.rst_
-
-.. _-W:
+.. option:: -W
 
 **-W**\ [**a**\|\ **t**]
     旋转给定的输入点 (*lon, lat, time*)，并计算投影点的置信椭圆。
@@ -137,32 +173,7 @@ backtracker
     可追加 **t** 或 **a**，分别表示在输出中追加时间或角度。
     在这 2–3 个基本输出后，
     程序将输出方位角、长轴、短轴（单位：km），表示 95% 置信椭圆。
-    参见 |-D| 了解旋转方向的控制。
-
-
-.. include:: explain_-bi.rst_
-
-.. include:: explain_-bo.rst_
-
-.. include:: explain_-d.rst_
-
-.. include:: explain_-e.rst_
-
-.. include:: explain_-f.rst_
-
-.. include:: explain_-h.rst_
-
-.. include:: explain_-icols.rst_
-
-.. include:: explain_-ocols.rst_
-
-.. include:: explain_-q.rst_
-
-.. include:: explain_-s.rst_
-
-.. include:: explain_colon.rst_
-
-.. include:: explain_help.rst_
+    参见 :option:`-D` 了解旋转方向的控制。
 
 .. include:: explain_geodetic.rst_
 
