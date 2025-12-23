@@ -78,7 +78,9 @@ backtracker
 可选选项与参数
 ------------------
 
-.. option:: -A
+.. container:: ghost-wrapper
+
+    .. option:: -A
 
 **-A**\ [*young*/*old*]
     与 **-Lb**\|\ **f** 联用，用于限制输出轨迹的预测年龄区间，

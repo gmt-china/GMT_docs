@@ -58,3 +58,17 @@ code.xref.std-option {
     padding-right: 0;
     margin-right: 0; /* 保险起见，把外边距也去掉 */
 }
+
+/* 让 .. option:: 变成一个看不见的像素点 */
+.ghost-wrapper {
+    visibility: hidden;   /* 隐身 */
+    height: 0;            /* 高度压扁 */
+    margin: 0;            /* 去除外边距 */
+    padding: 0;           /* 去除内边距 */
+    overflow: hidden;     /* 隐藏溢出的内容 */
+    position: relative;   /* 保持相对定位，作为锚点坐标 */
+
+    /* 有些主题给 container 加了默认样式，这里强制覆盖 */
+    border: none !important;
+    background: none !important;
+}
