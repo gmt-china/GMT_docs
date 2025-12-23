@@ -22,44 +22,29 @@ backtracker
 语法
 --------
 
-.. list-table::
-    :stub-columns: 1
-
-    * - 模块
-      - **gmt backtracker**
-
-    * - 输入数据（可选）
-      - *table*
-
-    * - 必须选项与参数
-      - :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-
-    * - 可选选项与参数
-      - :option:`-A`\ [*young*/*old*]
-        :option:`-D`\ **f**\|\ **b**
-        :option:`-F`\ *driftfile*
-        :option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
-        :option:`-M`\ [*factor*]
-        :option:`-N`\ *upper_age*
-        :option:`-Q`\ *fixed_age*
-        :option:`-S`\ *filestem*
-        :option:`-T`\ *zero_age*
-        :option:`-W`\ [**a**\|\ **t**]
-
-    * - 可选的通用选项
-      - :doc:`/option/V` |
-        :doc:`/option/binary` |
-        :doc:`/option/d` |
-        :doc:`/option/e` |
-        :doc:`/option/f` |
-        :doc:`/option/h` |
-        :doc:`/option/io` |
-        :doc:`/option/q` |
-        :doc:`/option/s` |
-        :doc:`/option/colon`
-
-    * - :doc:`配置参数临时设置 </conf/overview>`
-      - **--PAR**\ =\ *value*
+**gmt backtracker** *table*
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-A`\ [*young*/*old*]
+:option:`-D`\ **f**\|\ **b**
+:option:`-F`\ *driftfile*
+:option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
+:option:`-M`\ [*factor*]
+:option:`-N`\ *upper_age*
+:option:`-Q`\ *fixed_age*
+:option:`-S`\ *filestem*
+:option:`-T`\ *zero_age*
+:option:`-W`\ [**a**\|\ **t**]
+:doc:`-V </option/V>`
+:doc:`-b </option/binary>`
+:doc:`-d </option/d>`
+:doc:`-e </option/e>`
+:doc:`-f </option/f>`
+:doc:`-h </option/h>`
+:doc:`-i -o </option/io>`
+:doc:`-q </option/q>`
+:doc:`-s </option/s>`
+:doc:`-: </option/colon>`
+:doc:`--PAR=value </conf/overview>`
 
 **注意**：选项和参数之间不允许有任何空格。
 
@@ -71,7 +56,9 @@ backtracker
 必须选项与参数
 ------------------
 
-.. option:: -E
+.. container:: ghost-wrapper
+
+    .. option:: -E
 
 .. include:: explain_rots.rst_
 
@@ -88,7 +75,9 @@ backtracker
     如果使用 **-LB**\|\ **F**，则限制条件适用于阶段编号（id 1 表示最年轻阶段）。
     若未指定区间，则期望输入文件的第 4、5 列分别提供各记录的年龄上下限。
 
-.. option:: -D
+.. container:: ghost-wrapper
+
+    .. option:: -D
 
 **-Df**\|\ **b**
     设置时间方向：**-Df** 表示时间向后（从年轻到年老位置），
@@ -96,7 +85,9 @@ backtracker
     **注意**：对于 **-Db**，输入位置的年龄即为该点的实际年龄；
     而对于 **-Df**，输入的年龄对应的是重建点的时间。
 
-.. option:: -F
+.. container:: ghost-wrapper
+
+    .. option:: -F
 
 **-F**\ *driftfile*
     提供一个包含 (*lon, lat, age*) 记录的文件，描述当前热点随时间的运动历史。
@@ -107,7 +98,9 @@ backtracker
     (2) 漂移仅在回溯点（**-Db**）或预测海山链（**-Df -Lb**）时考虑；
     (3) 不能与 :option:`-M` 同时使用。
 
-.. option:: -L
+.. container:: ghost-wrapper
+    
+    .. option:: -L
 
 **-Lf**\|\ **b**\|\ **F**\|\ **B**\ [*step*]
     指定在初始与最终位置之间生成采样路径：
@@ -118,37 +111,49 @@ backtracker
     输出的第 3 列为阶段编号（1 为最年轻阶段）[默认输出沿轨迹预测年龄]。
     可通过 :option:`-D` 控制路径方向。
 
-.. option:: -M
+.. container:: ghost-wrapper
+    
+    .. option:: -M
 
 **-M**\ [*factor*]
     将输出的张开角按 *factor* 缩放[默认 0.5]。
     通常用于获取计算流线所需的半扩张速率。
 
-.. option:: -N
+.. container:: ghost-wrapper
+    
+    .. option:: -N
 
 **-N**\ *upper_age*
     设置向过去扩展最老阶段旋转的最大时间上限[默认不扩展]。
 
-.. option:: -Q
+.. container:: ghost-wrapper
+    
+    .. option:: -Q
 
 **-Q**\ *fixed_age*
     为所有位置指定固定年龄。仅需输入 (*lon, lat*) 
     两列[默认期望三列（longitude, latitude, age）]。
     适用于输入为等时线点的情况。
 
-.. option:: -S
+.. container:: ghost-wrapper
+    
+    .. option:: -S
 
 **-S**\ *filestem*
     当启用 :option:`-L` 时，轨迹默认以多段文件形式写入标准输出。
     通过指定 *filestem*，可令每条轨迹分别写入 *filestem.#* 文件，其中 *#* 为轨迹编号，
     该编号同时写入输出的第 4 列。
 
-.. option:: -T
+.. container:: ghost-wrapper
+    
+    .. option:: -T
 
 **-T**\ *zero_age*
     设置当前时间[默认 0 Ma]。
 
-.. option:: -W
+.. container:: ghost-wrapper
+    
+    .. option:: -W
 
 **-W**\ [**a**\|\ **t**]
     旋转给定的输入点 (*lon, lat, time*)，并计算投影点的置信椭圆。
