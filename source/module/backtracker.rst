@@ -17,7 +17,7 @@ backtracker
 （2）或在初始位置与最终位置之间生成一个采样轨迹（流线或热点轨迹）[*Wessel*, 1999]。
 
 在第一种模式下，输入数据前三列必须为 (longitude, latitude, age)，后续可包含其他字段。
-参见选项 **-:** 了解如何读取 (latitude, longitude, age) 格式的文件。
+参见 :doc:`/option/colon` 了解如何读取 (latitude, longitude, age) 格式的文件。
 
 语法
 --------
@@ -27,32 +27,37 @@ backtracker
 
     * - 模块
       - **gmt backtracker**
+
     * - 输入数据（可选）
       - *table*
+
     * - 必须选项与参数
-      - + :option:`-E` *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+      - :option:`-E` *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+
     * - 可选选项与参数
-      - + :option:`-A` [*young*/*old*]
-        + :option:`-D` **f**\|\ **b**
-        + :option:`-F` *driftfile*
-        + :option:`-L` **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
-        + :option:`-M` [*factor*]
-        + :option:`-N` *upper_age*
-        + :option:`-Q` *fixed_age*
-        + :option:`-S` *filestem*
-        + :option:`-T` *zero_age*
-        + :option:`-W` [**a**\|\ **t**]
+      - :option:`-A`\ [*young*/*old*]
+        :option:`-D`\ **f**\|\ **b**
+        :option:`-F`\ *driftfile*
+        :option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
+        :option:`-M`\ [*factor*]
+        :option:`-N`\ *upper_age*
+        :option:`-Q`\ *fixed_age*
+        :option:`-S`\ *filestem*
+        :option:`-T`\ *zero_age*
+        :option:`-W`\ [**a**\|\ **t**]
+
     * - 可选的通用选项
-      - | :doc:`/option/V`
-        | :doc:`/option/binary`
-        | :doc:`/option/d`
-        | :doc:`/option/e`
-        | :doc:`/option/f`
-        | :doc:`/option/h`
-        | :doc:`/option/io`
-        | :doc:`/option/q`
-        | :doc:`/option/s`
-        | :doc:`/option/colon`
+      - :doc:`/option/V` |
+        :doc:`/option/binary` |
+        :doc:`/option/d` |
+        :doc:`/option/e` |
+        :doc:`/option/f` |
+        :doc:`/option/h` |
+        :doc:`/option/io` |
+        :doc:`/option/q` |
+        :doc:`/option/s` |
+        :doc:`/option/colon`
+
     * - :doc:`配置参数临时设置 </conf/overview>`
       - **--PAR**\ =\ *value*
 
