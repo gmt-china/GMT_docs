@@ -32,7 +32,7 @@ backtracker
       - *table*
 
     * - 必须选项与参数
-      - :option:`-E` *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+      - :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 
     * - 可选选项与参数
       - :option:`-A`\ [*young*/*old*]
