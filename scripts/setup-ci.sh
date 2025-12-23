@@ -39,6 +39,7 @@ gmt grdcut @earth_relief_15s_p -R119/121/30/32 -G/dev/null
 
 # 2. Download GMT cache files used in the docs
 gmt which -Ga @age_chrons_GTS2012_2020.cpt \
+            @earth_age.cpt \
             @ternary.txt \
             @mississippi.txt \
             @NY_traffic.txt \
@@ -50,7 +51,8 @@ gmt which -Ga @age_chrons_GTS2012_2020.cpt \
             @App_O_geoid.nc \
             @AK_gulf_grav.nc \
             @App_O_transect.txt \
-            @sunglasses.eps
+            @sunglasses.eps \
+            @SOEST_block4.png
 
 # 3. Download the china-geospatial-data dataset
 git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geospatial-data
