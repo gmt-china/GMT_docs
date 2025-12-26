@@ -3,7 +3,11 @@ author: 田冬冬, 陈箫翰
 date: 2025-12-12
 ---
 
-# Windows 下的 GMT 中文支持
+# Windows 下的 GMT 中文支持（UTF8编码）
+
+中文版 Windows 系统的默认使用 GB 编码。本篇通过将系统编码修改为 UTF8，实现 GMT 的中文支持。
+如果不愿意修改系统的编码，则需要在每次画图时，修改 GMT 画图脚本以及数据文件为 GB 编码。
+有这部分需求的用户请参考另一篇配置指南： {doc}`/chinese/windows_GB`
 
 ## Ghostscript 的中文支持
 
@@ -121,7 +125,7 @@ Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40�
 请自行确认你的中文字体编号。如果编号不是40到47，请自行修改以下测试脚本。
 :::
 
-```{literalinclude} GMT_Chinese.bat
+```{literalinclude} GMT_Chinese_UTF8.bat
 :language: bat
 ```
 
