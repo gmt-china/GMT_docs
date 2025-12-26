@@ -38,22 +38,17 @@ Ghostscript 安装包下载地址:
 
 ## GMT 的中文支持
 
-新建GMT自定义字体配置文件 `C:\Users\用户名\.gmt\PSL_custom_fonts.txt`
-（注意 `用户名` 应该替换为实际的用户名。
-若不存在 `C:\Users\用户名\.gmt` 目录则需新建该目录。
-Win10 用户可以直接新建文件夹。Win7 的文件管理器无法新建
-以 **.** 开头的文件夹，因而需要打开CMD，然后执行命令 `mkdir .gmt` 以创建该文件夹）。
+打开命令提示符 cmd，输入以下命令创建 GMT 配置文件目录，并创建 GMT 自定义字体配置文件：
 
-:::{note}
-Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
-常常将文件名错误写成 `PSL_custom_fonts.txt.txt`，导致中文字体添加失败。
-因此强烈建议在**资源管理器** -> **查看**中开启显示文件扩展名:
-
-```{image} chinese-extension.png
+```doscon
+C:\Windows\system32> cd /d %USERPROFILE%
+C:\Users\当前用户名> mkdir .gmt
+C:\Users\当前用户名> REM 注释：如果目录已存在会提示 A subdirectory or file .gmt already exists.
+C:\Users\当前用户名> cd .gmt
+C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
 ```
-:::
 
-向 GMT自定义字体配置文件 `C:\Users\用户名\.gmt\PSL_custom_fonts.txt` 中加入如下语句:
+向 GMT自定义字体配置文件 `C:\Users\当前用户名\.gmt\PSL_custom_fonts.txt` 中加入如下内容并保存:
 
 ```
 STSong-Light--GB-EUC-H  0.700    1
