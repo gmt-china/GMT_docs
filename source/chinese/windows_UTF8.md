@@ -13,11 +13,10 @@ date: 2025-12-26
 
 ## 将 Windows 的 ANSI 编码修改为 UTF-8
 
-在 Windows 上，标准的C语言 `main(int argc, char *argv[])` 函数默认是从系统获取 ANSI 编码（在中文系统下就是 GBK）的参数，而不是 UTF-8。
+在 Windows 上，GMT 默认是从系统获取 ANSI 编码的参数（在中文系统下就是 GBK），而不是 UTF-8。
 为此我们需要开启 Windows 的 **Beta版: 使用 Unicode UTF-8 提供全球语言支持**，
-这是 Windows 10/11 专门为解决标准的C语言程序不支持 UTF-8 而提供的系统级功能。
-开启这个选项后，Windows 会把系统的“ANSI 代码页”强制改为 UTF-8。
-所有使用 `main(int argc, char *argv[])` 接收参数的C语言程序，都会自动接收到 UTF-8 编码。
+这是 Windows 10/11 专门为解决此类程序不支持 UTF-8 而提供的系统级功能。
+开启这个选项后，Windows 会把系统的“ANSI 代码页”强制改为 UTF-8。所有程序都会自动接收到 UTF-8 编码。
 
 操作步骤：
 
@@ -32,7 +31,7 @@ date: 2025-12-26
 日常使用。如果影响，取消勾选并重启即可恢复。
 
 1. 某些非常古老的中文软件（例如十几年前的游戏或行业软件）可能会出现乱码
-2. 在 FAT32 格式的 U 盘中读写**文件名过长**的文件将出现报错 `0x800700EA`
+2. 在 FAT32 格式的 U 盘中读写 **文件名过长**的文件将出现报错 `0x800700EA`
 3. Windows 自带的记事本默认会以 UTF-8 编码打开文件，因而打开 GB 编码的文件会乱码。用支持任意切换编码的编辑器软件打开这些文件（例如 VScode），另存为 UTF-8 编码即可
 :::
 
@@ -51,7 +50,7 @@ Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，
 
 Ghostscript 完整版安装包下载地址:
 
-- [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
+- [gs10060w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/gs10060w64.exe)
 
 :::{warning}
 请注意 Ghostscript 的版本！
@@ -70,7 +69,7 @@ Ghostscript 完整版安装包下载地址:
 C:\Windows\system32> where gmt
 c:\programs\gmt6\bin\gmt.exe
 C:\Windows\system32> where gswin64c
-C:\Program Files\gs\gs10.05.1\bin\gswin64c.exe
+C:\Program Files\gs\gs10.06.0\bin\gswin64c.exe
 ```
 
 如果出现多个结果，说明系统中同时存在多个 GMT 或 Ghostscript。这种情况极易发生冲突和中文乱码。
