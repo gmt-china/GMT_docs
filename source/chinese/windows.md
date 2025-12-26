@@ -20,7 +20,7 @@ Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，
 
 Ghostscript 完整版安装包下载地址:
 
-- [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
+- [gs10060w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/gs10060w64.exe)
 
 :::{warning}
 请注意 Ghostscript 的版本！
