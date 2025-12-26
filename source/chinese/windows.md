@@ -3,7 +3,7 @@ author: 田冬冬, 陈箫翰
 date: 2025-07-28
 ---
 
-# Windows 下的 GMT 中文支持
+# Windows 下的 GMT 中文支持（GB编码）
 
 ## ghostscript 的中文支持
 
