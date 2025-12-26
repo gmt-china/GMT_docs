@@ -39,7 +39,7 @@ Ghostscript 完整版安装包下载地址:
 C:\Windows\system32> where gmt
 c:\programs\gmt6\bin\gmt.exe
 C:\Windows\system32> where gswin64c
-C:\Program Files\gs\gs10.05.1\bin\gswin64c.exe
+C:\Program Files\gs\gs10.06.0\bin\gswin64c.exe
 ```
 
 如果出现多个结果，说明系统中同时存在多个 GMT 或 Ghostscript。这种情况极易发生冲突和中文乱码。
