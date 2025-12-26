@@ -5,18 +5,20 @@ date: 2025-07-28
 
 # Windows 下的 GMT 中文支持（GB编码）
 
-## ghostscript 的中文支持
+## Ghostscript 的中文支持
 
-GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片。如果没有正确配置
-Ghostscript 的中文支持，GMT 生成的图片中的中文将会出现乱码。因此必须首先
-配置 Ghostscript 的中文支持，但 GMT 安装包中内置的 Ghostscript **不支持**中文。
+GMT 需要使用 Ghostscript 将 PostScript 文件转换为 PDF、JPG 等格式的图片。
+PostScript CID 字体（Character Identifier Font，字符标识符字体）是
+Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，合称 CJK）的排版和打印问题而开发的一种字体格式架构，
+专门为了让电脑和打印机能够高效处理成千上万个汉字。
 
-若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后
-再自行安装 Ghostscript。对于已安装 GMT 的用户，建议先卸载 GMT，再
-按照《 {doc}`/install/windows` 》一节的步骤重新安装 GMT，安装过程中注意
-不勾选 Ghostscript。
+但 GMT 安装包中内置的 Ghostscript 是一个精简的版本，缺失了支持 CID 字体的必要文件，因此 **不支持**中文。
 
-Ghostscript 安装包下载地址:
+若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后再自行安装一个完整版的 Ghostscript。
+对于已安装 GMT 的用户，必须先卸载 GMT，再按照《 {doc}`/install/windows` 》一节的步骤重新安装 GMT，安装过程中注意
+**不勾选** Ghostscript。
+
+Ghostscript 完整版安装包下载地址:
 
 - [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
 
@@ -28,13 +30,20 @@ Ghostscript 安装包下载地址:
 对于 GMT 6.5.0 则建议使用 Ghostscript 10.03 之后的新版本。
 :::
 
-:::{note}
-安装 Ghostscript 的过程中记得勾选 `Generate cidfmap for Windows CJK TrueType fonts`
-以生成中文字体配置文件。
-:::
+在安装 Ghostscript 的过程中，会有一个生成 cidfmap 的选项 `Generate cidfmap for Windows CJK TrueType fonts`。
+选中该选项则表示会为当前系统自动生成中文所需的 cidfmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
 
-在安装 ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
-生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
+完成后打开命令提示符 cmd，输入以下命令。如果操作正常那么命令都只有一个输出结果：
+
+```doscon
+C:\Windows\system32> where gmt
+c:\programs\gmt6\bin\gmt.exe
+C:\Windows\system32> where gswin64c
+C:\Program Files\gs\gs10.05.1\bin\gswin64c.exe
+```
+
+如果出现多个结果，说明系统中同时存在多个 GMT 或 Ghostscript。这种情况极易发生冲突和中文乱码。
+用户需要仔细检查步骤是否有错漏，并卸载多余的软件。
 
 ## GMT 的中文支持
 
@@ -42,8 +51,7 @@ Ghostscript 安装包下载地址:
 
 ```doscon
 C:\Windows\system32> cd /d %USERPROFILE%
-C:\Users\当前用户名> mkdir .gmt
-C:\Users\当前用户名> REM 注释：如果目录已存在会提示 A subdirectory or file .gmt already exists.
+C:\Users\当前用户名> if not exist .gmt mkdir .gmt
 C:\Users\当前用户名> cd .gmt
 C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
 ```
