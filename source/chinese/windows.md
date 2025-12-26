@@ -109,7 +109,7 @@ Font #  Font Name
 **Visual Studio Code** 用户，应注意确保含中文的bat文件和输入数据文件都采用 **GB2312** 编码方式。
 在Visual Studio Code右下角状态栏中可以查看并修改当前文件的编码方式。
 
-```{literalinclude} GMT_Chinese_GB.bat
+```{literalinclude} GMT_Chinese.bat
 ```
 
 :::{note}

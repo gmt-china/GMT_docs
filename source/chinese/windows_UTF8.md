@@ -7,7 +7,7 @@ date: 2025-12-12
 
 中文版 Windows 系统的默认使用 GB 编码。本篇通过将系统编码修改为 UTF8，实现 GMT 的中文支持。
 如果不愿意修改系统的编码，则需要在每次画图时，修改 GMT 画图脚本以及数据文件为 GB 编码。
-有这部分需求的用户请参考另一篇配置指南： {doc}`/chinese/windows_GB`
+有这部分需求的用户请参考另一篇配置指南： {doc}`/chinese/windows`
 
 ## Ghostscript 的中文支持
 
