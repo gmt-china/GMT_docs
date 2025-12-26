@@ -42,8 +42,7 @@ Ghostscript 安装包下载地址:
 
 ```doscon
 C:\Windows\system32> cd /d %USERPROFILE%
-C:\Users\当前用户名> mkdir .gmt
-C:\Users\当前用户名> REM 注释：如果目录已存在会提示 A subdirectory or file .gmt already exists.
+C:\Users\当前用户名> if not exist .gmt mkdir .gmt
 C:\Users\当前用户名> cd .gmt
 C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
 ```
