@@ -41,7 +41,6 @@ GMT 需要使用 Ghostscript 将 PostScript 文件转换为 PDF、JPG 等格式�
 PostScript CID 字体（Character Identifier Font，字符标识符字体）是
 Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，合称 CJK）的排版和打印问题而开发的一种字体格式架构，
 专门为了让电脑和打印机能够高效处理成千上万个汉字。
-
 但 GMT 安装包中内置的 Ghostscript 是一个精简的版本，缺失了支持 CID 字体的必要文件，因此 **不支持**中文。
 
 若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后再自行安装一个完整版的 Ghostscript。
