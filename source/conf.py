@@ -189,6 +189,7 @@ latex_elements = {
     "papersize": "b4paper",
     "pointsize": "12pt",
     "extraclassoptions": "UTF8,oneside,punct=CCT",
+    "preamble": r"\input{GMT_style.sty}",
     "figure_align": "H",
     "geometry": r"\usepackage[top=3.0cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}",
     # customized tableofcontents
