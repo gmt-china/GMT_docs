@@ -53,7 +53,7 @@ show_authors = True
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "myst_parser",
-    "sphinx_rtd_theme",                     # add the theme as an extension so that translation works
+    "sphinx_rtd_theme",  # add the theme as an extension so that translation works
     "sphinx.ext.duration",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
