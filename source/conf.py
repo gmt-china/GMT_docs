@@ -213,7 +213,4 @@ latex_elements = {
     "fontenc"   : "",
     "maketitle" : "\\maketitle",
     "releasename": "v",  # the default is "Release" or "发布"
-    'preamble': r'''
-    \input{GMT_style.sty}
-    ''',
 }
