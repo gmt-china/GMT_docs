@@ -60,7 +60,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_design",
-    "gmtplot",                              # _extensions/gmtplot.py
+    "gmtplot",  # _extensions/gmtplot.py
     "sphinxcontrib.datatemplates",
     'hide_options',                         # 隐藏所有的 option 节点。 _extensions/hide_options.py
 ]
