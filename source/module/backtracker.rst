@@ -60,8 +60,6 @@ backtracker
 必须选项
 ------------------
 
-.. option:: -E
-
 .. include:: explain_rots.rst_
 
 可选选项
