@@ -53,15 +53,16 @@ show_authors = True
 sys.path.append(os.path.abspath("_extensions"))
 extensions = [
     "myst_parser",
-    "sphinx_rtd_theme",  # add the theme as an extension so that translation works
+    "sphinx_rtd_theme",                     # add the theme as an extension so that translation works
     "sphinx.ext.duration",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_design",
-    "gmtplot",
+    "gmtplot",                              # _extensions/gmtplot.py
     "sphinxcontrib.datatemplates",
+    'hide_options',                         # 隐藏所有的 option 节点。 _extensions/hide_options.py
 ]
 # use custom templater bridge defined in _extensions/templatebridge.py
 template_bridge = "templatebridge.MyTemplateBridge"
@@ -214,59 +215,5 @@ latex_elements = {
     "releasename": "v",  # the default is "Release" or "发布"
     'preamble': r'''
     \input{GMT_style.sty}
-    % 让 LaTeX 遇到 hidden-opt 这个类时隐藏但不删除锚点。
-    \makeatletter
-    \newenvironment{sphinxclasshidden-opt}{%
-        % 1. 强制创建一个垂直位置，以便锚点能落在这里
-        \leavevmode
-        % 2. 开启一个高度为 0 的盒子，内容会“浮动”在页面上但不占位置
-        \vbox to 0pt\bgroup
-            \fontsize{1sp}{1sp}\selectfont % 使用 1sp (最小单位) 替代 0pt，避免渲染引擎报错
-            \color{white}                  % 颜色设为白色
-            \hsize=\textwidth              % 保持宽度一致
-    }{%
-        \egroup % 结束盒子
-        % 3. 向上回退一行间距，防止留下空行
-        \vspace{-\baselineskip}
-    }
-    \makeatother
     ''',
 }
-# 编写一个简单的自定义转换器 (Transform)，自动遍历所有文档，找到所有的 option 节点。
-# 自动给所有的 option 创建一个新的容器包裹它，给容器添加隐藏类 hidden-opt。通过 LaTeX 统一隐藏这些标记。
-from docutils import nodes
-from sphinx import addnodes
-from sphinx.transforms import SphinxTransform
-
-class AutoHideOption(SphinxTransform):
-    # 在解析完成后、写入文件前运行
-    default_priority = 800
-
-    def apply(self):
-        # 找到所有的 option 指令生成的节点
-        # 使用 list(traverse) 避免在遍历时修改树结构导致的问题
-        for node in list(self.document.traverse(addnodes.desc)):
-            # 检查是否为 option 类型的描述列表
-            if node.get('objtype') == 'option':
-                # 1. 创建一个容器节点
-                wrapper = nodes.container()
-                # 2. 给容器添加隐藏类
-                wrapper['classes'].append('hidden-opt')
-                
-                # 3. 将原节点包装起来
-                # 注意：这里需要先找到父节点进行替换
-                # 执行替换：将原本的 node 放入 wrapper
-                parent = node.parent
-                if parent:
-                    node.replace_self(wrapper)
-                    wrapper.append(node)
-
-def setup(app):
-    app.add_transform(AutoHideOption)
-    
-    # 必须返回 metadata 字典，以支持并行编译 (Parallel Read/Write)
-    return {
-        'version': '0.1',
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
-    }

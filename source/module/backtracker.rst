@@ -3,6 +3,7 @@
 
 .. index:: ! backtracker
 .. program:: backtracker
+.. include:: common_SYN_OPTs.rst_
 
 backtracker
 =============
@@ -22,32 +23,34 @@ backtracker
 语法
 --------
 
-**gmt backtracker** *table*
+**gmt backtracker**
+[ *table* ]
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-:option:`-A`\ [*young*/*old*]
-:option:`-D`\ **f**\|\ **b**
-:option:`-F`\ *driftfile*
-:option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*]
-:option:`-M`\ [*factor*]
-:option:`-N`\ *upper_age*
-:option:`-Q`\ *fixed_age*
-:option:`-S`\ *filestem*
-:option:`-T`\ *zero_age*
-:option:`-W`\ [**a**\|\ **t**]
-:option:`-V`
-:option:`-b`
-:option:`-d`
-:option:`-e`
-:option:`-f`
-:option:`-h`
-:option:`-i`
-:option:`-o`
-:option:`-q`
-:option:`-s`
-:option:`-:`
-:doc:`--PAR=value </conf/overview>`
+[ :option:`-A`\ [*young*/*old*] ]
+[ :option:`-D`\ **f**\|\ **b** ]
+[ :option:`-F`\ *driftfile* ]
+[ :option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*] ]
+[ :option:`-M`\ [*factor*] ]
+[ :option:`-N`\ *upper_age* ]
+[ :option:`-Q`\ *fixed_age* ]
+[ :option:`-S`\ *filestem* ]
+[ :option:`-T`\ *zero_age* ]
+[ :option:`-V` ]
+[ :option:`-W`\ [**a**\|\ **t**] ]
+[ :option:`-bi` ]
+[ :option:`-bo` ]
+[ :option:`-d` ]
+[ :option:`-e` ]
+[ :option:`-f` ]
+[ :option:`-h` ]
+[ :option:`-i` ]
+[ :option:`-o` ]
+[ :option:`-q` ]
+[ :option:`-s` ]
+[ :option:`-:` ]
+[ |SYN_OPT--| ]
 
-**注意**：选项和参数之间不允许有任何空格。
+|No-spaces|
 
 输入数据（可选）
 ------------------
@@ -61,7 +64,7 @@ backtracker
 
 .. include:: explain_rots.rst_
 
-可选特有选项
+可选选项
 ------------------
 
 .. option:: -A
@@ -132,6 +135,8 @@ backtracker
 **-T**\ *zero_age*
     设置当前时间[默认 0 Ma]。
 
+.. include:: explain_-V.rst_
+
 .. option:: -W
 
 **-W**\ [**a**\|\ **t**]
@@ -142,12 +147,9 @@ backtracker
     程序将输出方位角、长轴、短轴（单位：km），表示 95% 置信椭圆。
     参见 :option:`-D` 了解旋转方向的控制。
 
-可选标准通用选项
-------------------
+.. include:: explain_-bi.rst_
 
-.. include:: explain_-V.rst_
-
-.. include:: explain_-binary.rst_
+.. include:: explain_-bo.rst_
 
 .. include:: explain_-d.rst_
 
@@ -166,6 +168,8 @@ backtracker
 .. include:: explain_-s.rst_
 
 .. include:: explain_colon.rst_
+
+.. include:: explain_help.rst_
 
 .. include:: explain_geodetic.rst_
 
