@@ -34,16 +34,17 @@ backtracker
 :option:`-S`\ *filestem*
 :option:`-T`\ *zero_age*
 :option:`-W`\ [**a**\|\ **t**]
-:doc:`-V </option/V>`
-:doc:`-b </option/binary>`
-:doc:`-d </option/d>`
-:doc:`-e </option/e>`
-:doc:`-f </option/f>`
-:doc:`-h </option/h>`
-:doc:`-i -o </option/io>`
-:doc:`-q </option/q>`
-:doc:`-s </option/s>`
-:doc:`-: </option/colon>`
+:option:`-V`
+:option:`-b`
+:option:`-d`
+:option:`-e`
+:option:`-f`
+:option:`-h`
+:option:`-i`
+:option:`-o`
+:option:`-q`
+:option:`-s`
+:option:`-:`
 :doc:`--PAR=value </conf/overview>`
 
 **注意**：选项和参数之间不允许有任何空格。
@@ -53,21 +54,17 @@ backtracker
 
 .. include:: explain_intables.rst_
 
-必须选项与参数
+必须选项
 ------------------
 
-.. container:: ghost-wrapper
-
-    .. option:: -E
+.. option:: -E
 
 .. include:: explain_rots.rst_
 
-可选选项与参数
+可选特有选项
 ------------------
 
-.. container:: ghost-wrapper
-
-    .. option:: -A
+.. option:: -A
 
 **-A**\ [*young*/*old*]
     与 **-Lb**\|\ **f** 联用，用于限制输出轨迹的预测年龄区间，
@@ -75,9 +72,7 @@ backtracker
     如果使用 **-LB**\|\ **F**，则限制条件适用于阶段编号（id 1 表示最年轻阶段）。
     若未指定区间，则期望输入文件的第 4、5 列分别提供各记录的年龄上下限。
 
-.. container:: ghost-wrapper
-
-    .. option:: -D
+.. option:: -D
 
 **-Df**\|\ **b**
     设置时间方向：**-Df** 表示时间向后（从年轻到年老位置），
@@ -85,9 +80,7 @@ backtracker
     **注意**：对于 **-Db**，输入位置的年龄即为该点的实际年龄；
     而对于 **-Df**，输入的年龄对应的是重建点的时间。
 
-.. container:: ghost-wrapper
-
-    .. option:: -F
+.. option:: -F
 
 **-F**\ *driftfile*
     提供一个包含 (*lon, lat, age*) 记录的文件，描述当前热点随时间的运动历史。
@@ -98,9 +91,7 @@ backtracker
     (2) 漂移仅在回溯点（**-Db**）或预测海山链（**-Df -Lb**）时考虑；
     (3) 不能与 :option:`-M` 同时使用。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -L
+.. option:: -L
 
 **-Lf**\|\ **b**\|\ **F**\|\ **B**\ [*step*]
     指定在初始与最终位置之间生成采样路径：
@@ -111,49 +102,37 @@ backtracker
     输出的第 3 列为阶段编号（1 为最年轻阶段）[默认输出沿轨迹预测年龄]。
     可通过 :option:`-D` 控制路径方向。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -M
+.. option:: -M
 
 **-M**\ [*factor*]
     将输出的张开角按 *factor* 缩放[默认 0.5]。
     通常用于获取计算流线所需的半扩张速率。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -N
+.. option:: -N
 
 **-N**\ *upper_age*
     设置向过去扩展最老阶段旋转的最大时间上限[默认不扩展]。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -Q
+.. option:: -Q
 
 **-Q**\ *fixed_age*
     为所有位置指定固定年龄。仅需输入 (*lon, lat*) 
     两列[默认期望三列（longitude, latitude, age）]。
     适用于输入为等时线点的情况。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -S
+.. option:: -S
 
 **-S**\ *filestem*
     当启用 :option:`-L` 时，轨迹默认以多段文件形式写入标准输出。
     通过指定 *filestem*，可令每条轨迹分别写入 *filestem.#* 文件，其中 *#* 为轨迹编号，
     该编号同时写入输出的第 4 列。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -T
+.. option:: -T
 
 **-T**\ *zero_age*
     设置当前时间[默认 0 Ma]。
 
-.. container:: ghost-wrapper
-    
-    .. option:: -W
+.. option:: -W
 
 **-W**\ [**a**\|\ **t**]
     旋转给定的输入点 (*lon, lat, time*)，并计算投影点的置信椭圆。
@@ -162,6 +141,31 @@ backtracker
     在这 2–3 个基本输出后，
     程序将输出方位角、长轴、短轴（单位：km），表示 95% 置信椭圆。
     参见 :option:`-D` 了解旋转方向的控制。
+
+可选标准通用选项
+------------------
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-binary.rst_
+
+.. include:: explain_-d.rst_
+
+.. include:: explain_-e.rst_
+
+.. include:: explain_-f.rst_
+
+.. include:: explain_-h.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_-ocols.rst_
+
+.. include:: explain_-q.rst_
+
+.. include:: explain_-s.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_geodetic.rst_
 
