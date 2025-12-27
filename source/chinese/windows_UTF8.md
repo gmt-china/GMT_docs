@@ -1,9 +1,39 @@
 ---
-author: 田冬冬, 陈箫翰
-date: 2025-12-27
+author: 陈箫翰, 田冬冬
+date: 2025-12-26
 ---
 
-# Windows 下的 GMT 中文支持（GB编码）
+# Windows 下的 GMT 中文支持（UTF-8编码）
+
+由于历史原因，Windows 系统中文版下中文默认使用 GB 编码，而目前主流的编码方式是 UTF-8。
+本篇通过将 Windows 系统中文默认编码修改为 UTF-8 实现 GMT 的中文支持。其优点在于，
+使用了更现代的 UTF-8 编码，但修改系统默认编码可能会产生一些副作用（见下文）。
+
+如果不愿意修改系统默认中文编码，请参考另一篇配置指南： {doc}`/chinese/windows`。
+
+## 将 Windows 的 ANSI 编码修改为 UTF-8
+
+在 Windows 上，GMT 默认是从系统获取 ANSI 编码的参数（在中文系统下就是 GBK），而不是 UTF-8。
+为此我们需要开启 Windows 的 **Beta版: 使用 Unicode UTF-8 提供全球语言支持**，
+这是 Windows 10/11 专门为解决这类问题而提供的系统级功能。
+开启这个选项后，Windows 会把系统的“ANSI 代码页”强制改为 UTF-8。所有程序都会自动接收到 UTF-8 编码。
+
+操作步骤：
+
+1. 按下 `Win + R`，输入 `intl.cpl`，回车打开 “区域” 设置。
+2. 点击 “管理” 标签页。
+3. 点击 “更改系统区域设置...” 按钮。
+4. 关键步骤： 勾选 **Beta 版: 使用 Unicode UTF-8 提供全球语言支持**。
+5. 点击确定。注意必须 **重启电脑**后才能生效。
+
+:::{warning}
+本设置的修改是全局的。开启后，可能产生如下副作用。用户请自行判断这些副作用是否会影响自己的
+日常使用。如果影响，取消勾选并重启即可恢复。
+
+1. 某些非常古老的中文软件（例如十几年前的游戏或行业软件）可能会出现乱码
+2. 在 FAT32 格式的 U 盘中读写 **文件名过长**的文件将出现报错 `0x800700EA`
+3. Windows 自带的记事本默认会以 UTF-8 编码打开文件，因而打开 GB 编码的文件会乱码。用支持任意切换编码的编辑器软件打开这些文件（例如 VScode），另存为 UTF-8 编码即可
+:::
 
 ## Ghostscript 的中文支持
 
@@ -58,60 +88,49 @@ C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
 向 GMT自定义字体配置文件 `C:\Users\当前用户名\.gmt\PSL_custom_fonts.txt` 中加入如下内容并保存:
 
 ```
-STSong-Light--GB-EUC-H  0.700    1
-STFangsong-Light--GB-EUC-H  0.700    1
-STHeiti-Regular--GB-EUC-H   0.700   1
-STKaiti-Regular--GB-EUC-H   0.700   1
-STSong-Light--GB-EUC-V  0.700    1
-STFangsong-Light--GB-EUC-V  0.700    1
-STHeiti-Regular--GB-EUC-V   0.700   1
-STKaiti-Regular--GB-EUC-V   0.700   1
+dummy  0.700    1
+STSong-Light--UniGB-UTF8-H  0.700    1
+STFangsong-Light--UniGB-UTF8-H  0.700    1
+STHeiti-Regular--UniGB-UTF8-H   0.700   1
+STKaiti-Regular--UniGB-UTF8-H   0.700   1
+STSong-Light--UniGB-UTF8-V  0.700    1
+STFangsong-Light--UniGB-UTF8-V  0.700    1
+STHeiti-Regular--UniGB-UTF8-V   0.700   1
+STKaiti-Regular--UniGB-UTF8-V   0.700   1
 ```
 
 用 `gmt text -L` 查看 GMT 字体:
 
-```
-$ gmt text -L
-Font #  Font Name
-------------------------------------
-0   Helvetica
-1   Helvetica-Bold
+```doscon
+C:\Users\当前用户名\.gmt> gmt text -L
 ...    ......
-39 STSong-Light--GB-EUC-H
-40 STFangsong-Light--GB-EUC-H
-41 STHeiti-Regular--GB-EUC-H
-42 STKaiti-Regular--GB-EUC-H
-43 STSong-Light--GB-EUC-V
-44 STFangsong-Light--GB-EUC-V
-45 STHeiti-Regular--GB-EUC-V
-46 STKaiti-Regular--GB-EUC-V
+39: dummy
+40: STSong-Light--UniGB-UTF8-H
+41: STFangsong-Light--UniGB-UTF8-H
+42: STHeiti-Regular--UniGB-UTF8-H
+43: STKaiti-Regular--UniGB-UTF8-H
+44: STSong-Light--UniGB-UTF8-V
+45: STFangsong-Light--UniGB-UTF8-V
+46: STHeiti-Regular--UniGB-UTF8-V
+47: STKaiti-Regular--UniGB-UTF8-V
 ```
 
-可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。
-其中 `STSong-Light-GB-EUC-H` 即为宋体，`GB-EUC` 是文字编码方式，
+:::{warning}
+Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40才开始生效。因此编号39需要用一个不存在的假字体占位。新添加的四种中文字体对应的字体编号为 40 到 47。
+:::
+
+其中 `STSong-Light--UniGB-UTF8-H` 即为宋体，`UniGB-UTF8` 是文字编码方式，
 `H` 表示文字水平排列，`V` 表示竖排文字。
 强烈建议在执行测试脚本前确认自己的中文字体编号。
 
 ## GMT 中文测试
 
 :::{note}
-请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
+请自行确认你的中文字体编号。如果编号不是40到47，请自行修改以下测试脚本。
 :::
 
-:::{warning}
-目前发现 **Git Bash** 运行Bash脚本时， `echo` 生成文件使用的是 UTF8 编码，
-从而可能会导致中文乱码。建议在有中文需求时使用bat脚本，或者避免在Bash脚本
-中使用 `echo` 。
-:::
-
-使用**记事本**和 **Notepad++** 的用户，应注意含中文的bat文件和输入数据文件都应以 **ANSI** 编码保存，
-使用其他编码方式则极可能出现乱码。Notepad++除了注意要选择 “ 编码 -> 使用ANSI编码 ” 以外，还应该选中
-“ 设置 -> 首选项 -> 新建 -> 编码 -> ANSI ”。
-
-**Visual Studio Code** 用户，应注意确保含中文的bat文件和输入数据文件都采用 **GB2312** 编码方式。
-在Visual Studio Code右下角状态栏中可以查看并修改当前文件的编码方式。
-
-```{literalinclude} GMT_Chinese.bat
+```{literalinclude} GMT_Chinese_UTF8.bat
+:language: bat
 ```
 
 :::{note}
@@ -123,13 +142,6 @@ gmt set PS_CHAR_ENCODING Standard+
 ```
 
 可临时避免这一BUG。
-
-此外，GMT 6.3 及之后的版本每句使用中文的命令之前，
-以及使用echo命令输出含中文的文件之前，必须设置 `chcp 936` ，即 GB 编码。否则将出现乱码:
-
-```
-chcp 936
-```
 :::
 
 成图效果如下：
