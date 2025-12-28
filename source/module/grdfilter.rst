@@ -2,6 +2,7 @@
 :date: 2022-07-18
 
 .. index:: ! grdfilter
+.. program:: grdfilter
 .. include:: common_SYN_OPTs.rst_
 
 grdfilter

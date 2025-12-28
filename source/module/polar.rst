@@ -1,6 +1,7 @@
 :author: 田冬冬, 朱邓达, 王亮
 :date: 2025-06-11
 .. index:: ! polar
+.. program:: polar
 .. include:: common_SYN_OPTs.rst_
 
 polar

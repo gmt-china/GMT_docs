@@ -2,6 +2,7 @@
 :date: 2022-07-16
 
 .. index:: ! dimfilter
+.. program:: dimfilter
 .. include:: common_SYN_OPTs.rst_
 
 dimfilter

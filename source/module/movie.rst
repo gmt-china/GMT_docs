@@ -2,6 +2,7 @@
 :date: 2025-06-18
 
 .. index:: ! movie
+.. program:: movie
 .. include:: common_SYN_OPTs.rst_
 
 movie

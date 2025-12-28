@@ -4,6 +4,7 @@
 :reviewer: 周茂
 
 .. index:: ! greenspline
+.. program:: greenspline
 .. include:: common_SYN_OPTs.rst_
 
 greenspline

@@ -1,6 +1,7 @@
 :author: 田冬冬, 周茂, 陈箫翰
 :date: 2025-08-11
 .. index:: ! simplify
+.. program:: simplify
 .. include:: common_SYN_OPTs.rst_
 
 simplify

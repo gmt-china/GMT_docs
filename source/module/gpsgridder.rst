@@ -2,6 +2,7 @@
 :date: 2022-02-07
 
 .. index:: ! gpsgridder
+.. program:: gpsgridder
 .. include:: common_SYN_OPTs.rst_
 
 gpsgridder

@@ -2,6 +2,7 @@
 :date: 2025-10-15
 
 .. index:: ! grdbarb
+.. program:: grdbarb
 .. include:: common_SYN_OPTs.rst_
 
 grdbarb

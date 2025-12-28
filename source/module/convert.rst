@@ -2,6 +2,7 @@
 :date: 2022-06-30
 
 .. index:: ! convert
+.. program:: convert
 .. include:: common_SYN_OPTs.rst_
 
 convert

@@ -2,6 +2,7 @@
 :date: 2025-10-21
 
 .. index:: ! barb
+.. program:: barb
 .. include:: common_SYN_OPTs.rst_
 
 barb

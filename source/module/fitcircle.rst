@@ -1,6 +1,7 @@
 :author: 田冬冬
 :date: 2022-05-05
 .. index:: ! fitcircle
+.. program:: fitcircle
 
 fitcircle
 =========

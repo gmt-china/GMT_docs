@@ -2,6 +2,7 @@
 :date: 2025-08-25
 
 .. index:: ! grdcontour
+.. program:: grdcontour
 
 
 **********

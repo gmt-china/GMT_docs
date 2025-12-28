@@ -2,6 +2,7 @@
 :date: 2024-06-07
 
 .. index:: ! grdseamount
+.. program:: grdseamount
 .. include:: common_SYN_OPTs.rst_
 
 grdseamount

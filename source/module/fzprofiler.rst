@@ -2,6 +2,7 @@
 :date: 2025-10-15
 
 .. index:: ! fzprofiler
+.. program:: fzprofiler
 .. include:: common_SYN_OPTs.rst_
 
 fzprofiler

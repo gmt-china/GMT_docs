@@ -2,6 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77track
+.. program:: mgd77track
 .. include:: common_SYN_OPTs.rst_
 
 mgd77track

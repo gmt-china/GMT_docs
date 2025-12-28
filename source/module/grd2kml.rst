@@ -2,6 +2,7 @@
 :date: 2025-10-20
 
 .. index:: ! grd2kml
+.. program:: grd2kml
 .. include:: common_SYN_OPTs.rst_
 
 grd2kml

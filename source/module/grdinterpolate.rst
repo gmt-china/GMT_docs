@@ -2,6 +2,7 @@
 :date: 2025-09-29
 
 .. index:: ! grdinterpolate
+.. program:: grdinterpolate
 
 ***************
 grdinterpolate

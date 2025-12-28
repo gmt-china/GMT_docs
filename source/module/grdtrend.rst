@@ -1,6 +1,7 @@
 :author: 姚家园, 田冬冬, 陈箫翰
 :date: 2022-06-13
 .. index:: ! grdtrend
+.. program:: grdtrend
 
 grdtrend
 ==========

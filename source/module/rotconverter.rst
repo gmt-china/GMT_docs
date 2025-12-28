@@ -2,6 +2,7 @@
 :date: 2025-10-19
 
 .. index:: ! rotconverter
+.. program:: rotconverter
 .. include:: common_SYN_OPTs.rst_
 
 rotconverter

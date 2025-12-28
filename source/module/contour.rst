@@ -2,6 +2,7 @@
 :date: 2025-08-22
 
 .. index:: ! contour
+.. program:: contour
 
 *********
 contour

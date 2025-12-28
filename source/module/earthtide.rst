@@ -2,6 +2,7 @@
 :date: 2022-10-14
 
 .. index:: ! earthtide
+.. program:: earthtide
 .. include:: common_SYN_OPTs.rst_
 
 earthtide

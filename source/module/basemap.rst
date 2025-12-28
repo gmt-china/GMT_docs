@@ -1,6 +1,7 @@
 :author: 田冬冬, 周茂, 王亮
 :date: 2022-06-19
 .. index:: ! basemap
+.. program:: basemap
 .. include:: common_SYN_OPTs.rst_
 
 basemap

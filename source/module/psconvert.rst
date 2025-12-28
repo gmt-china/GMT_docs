@@ -1,6 +1,7 @@
 :author: 田冬冬, 邓山泉, 陈箫翰
 :date: 2025-10-09
-.. index:: !psconvert
+.. index:: ! psconvert
+.. program:: psconvert
 .. include:: common_SYN_OPTs.rst_
 
 psconvert

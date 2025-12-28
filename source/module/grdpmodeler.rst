@@ -2,6 +2,7 @@
 :date: 2025-10-18
 
 .. index:: ! grdpmodeler
+.. program:: grdpmodeler
 .. include:: common_SYN_OPTs.rst_
 
 grdpmodeler

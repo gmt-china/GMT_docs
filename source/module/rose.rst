@@ -1,6 +1,7 @@
 :author: 田冬冬, 陈箫翰
 :date: 2024-12-26
 .. index:: ! rose
+.. program:: rose
 .. include:: common_SYN_OPTs.rst_
 
 rose

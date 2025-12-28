@@ -2,6 +2,7 @@
 :date: 2025-10-21
 
 .. index:: ! batch
+.. program:: batch
 .. include:: common_SYN_OPTs.rst_
     
 batch

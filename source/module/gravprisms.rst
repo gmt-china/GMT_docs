@@ -2,6 +2,7 @@
 :date: 2022-06-21
 
 .. index:: ! gravprisms
+.. program:: gravprisms
 .. include:: common_SYN_OPTs.rst_
 
 gravprisms

@@ -2,6 +2,7 @@
 :date: 2025-10-11
 
 .. index:: ! fzanalyzer
+.. program:: fzanalyzer
 .. include:: common_SYN_OPTs.rst_
 
 fzanalyzer

@@ -1,6 +1,7 @@
 :author: 田冬冬, 周茂
 :date: 2024-02-12
 .. index:: ! grdlandmask
+.. program:: grdlandmask
 .. include:: common_SYN_OPTs.rst_
 
 grdlandmask

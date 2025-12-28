@@ -1,6 +1,7 @@
 :author: 田冬冬, 周茂
 :date: 2022-06-19
 .. index:: ! coast
+.. program:: coast
 .. include:: common_SYN_OPTs.rst_
 
 coast

@@ -1,6 +1,7 @@
 :author: 周茂
 
 .. index:: ! wiggle
+.. program:: wiggle
 .. include:: common_SYN_OPTs.rst_
 
 wiggle

@@ -2,6 +2,7 @@
 :date: 2025-10-18
 
 .. index:: ! grdrotater
+.. program:: grdrotater
 .. include:: common_SYN_OPTs.rst_
 
 grdrotater

@@ -2,6 +2,7 @@
 :date: 2025-10-28
 
 .. index:: ! isf
+.. program:: isf
 .. include:: common_SYN_OPTs.rst_
 
 isf

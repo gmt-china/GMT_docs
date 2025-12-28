@@ -2,6 +2,7 @@
 :date: 2023-11-07
 
 .. index:: ! makecpt
+.. program:: makecpt
 .. include:: common_SYN_OPTs.rst_
 
 makecpt

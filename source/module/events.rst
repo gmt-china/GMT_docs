@@ -3,6 +3,7 @@
 :date: 2025-07-07
 
 .. index:: ! events
+.. program:: events
 .. include:: common_SYN_OPTs.rst_
 
 events

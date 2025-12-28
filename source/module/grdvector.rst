@@ -2,6 +2,7 @@
 :date: 2025-06-11
 
 .. index:: ! grdvector
+.. program:: grdvector
 .. include:: common_SYN_OPTs.rst_
 
 grdvector

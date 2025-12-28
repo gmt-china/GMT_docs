@@ -2,6 +2,7 @@
 :date: 2024-07-03
 
 .. index:: ! spectrum1d
+.. program:: spectrum1d
 .. include:: common_SYN_OPTs.rst_
 
 spectrum1d

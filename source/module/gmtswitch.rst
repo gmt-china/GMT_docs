@@ -1,6 +1,7 @@
 :author: 周茂
 
 .. index:: ! gmtswitch
+.. program:: gmtswitch
 
 gmtswitch
 ==========

@@ -2,6 +2,7 @@
 :date: 2022-06-21
 
 .. index:: ! gravfft
+.. program:: gravfft
 .. include:: common_SYN_OPTs.rst_
 
 gravfft

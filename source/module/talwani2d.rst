@@ -2,6 +2,7 @@
 :date: 2024-02-21
 
 .. index:: ! talwani2d
+.. program:: talwani2d
 .. include:: common_SYN_OPTs.rst_
 
 talwani2d
