@@ -47,3 +47,35 @@ figcaption {
     padding-top: 10px;
     font-style: italic;
 }
+
+/* 针对 :option: 的样式， !important 强制覆盖主题的设置 */
+code.xref.std-option {
+    background-color: transparent !important; /* 去掉背景 */
+    border: none !important;            /* 去掉边框 */
+
+    font-family: inherit !important;    /* 取消等宽字体，继承正文字体 */
+    font-size: 100% !important;         /* 强制字号与正文 1:1 */
+    color: #007bff !important;          /* 现代标准链接蓝 */
+
+    padding-left: 0 !important; /* 去除左右多余的内边距 */
+    padding-right: 0 !important;
+    margin-right: 0 !important; /* 保险起见，把外边距也去掉 */
+}
+/* 鼠标悬停时的效果，增加交互感 */
+code.xref.std-option:hover {
+    color: #0056b3 !important;          /* 悬停时颜色加深 */
+    text-decoration: underline;
+}
+/* 网页版中不显示 conf.py 中自定义的类 hidden-opt 
+   让 .. option:: 变成一个看不见的像素点 */
+.hidden-opt {
+    visibility: hidden;   
+    height: 0;           
+    margin: 0;           
+    padding: 0;           
+    overflow: hidden;     
+    position: relative;   
+
+    border: none !important;
+    background: none !important;
+}
