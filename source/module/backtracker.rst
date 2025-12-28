@@ -38,7 +38,7 @@ backtracker
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**a**\|\ **t**] ]
 [ :option:`-bi`\ *binary* ]
-[ :option:`-bo`\ binary ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ nodata\ [**+c**\ *col*] ]
 [ :option:`-e`\ regexp ]
 [ :option:`-f`\ flags ]
