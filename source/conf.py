@@ -62,7 +62,7 @@ extensions = [
     "sphinx_design",
     "gmtplot",  # _extensions/gmtplot.py
     "sphinxcontrib.datatemplates",
-    'hide_options',  # 隐藏所有的 option 节点。 _extensions/hide_options.py
+    "hide_options",  # _extensions/hide_options.py
 ]
 # use custom templater bridge defined in _extensions/templatebridge.py
 template_bridge = "templatebridge.MyTemplateBridge"
