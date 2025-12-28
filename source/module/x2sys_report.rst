@@ -17,14 +17,14 @@ x2sys_report
 语法
 ----
 
-**gmt x2sys_report** :option:`-C`\ *column* |-T|\ *TAG* [ *coedbase.txt* ]
+**gmt x2sys_report** :option:`-C`\ *column* :option:`-T`\ *TAG* [ *coedbase.txt* ]
 [ :option:`-A` ]
-[ |-I|\ [*list*] ]
-[ |-L|\ [*corrections*] ]
-[ |-N|\ *nx_min* ]
-[ |-Q|\ **e**\|\ **i** ]
+[ :option:`-I`\ [*list*] ]
+[ :option:`-L`\ [*corrections*] ]
+[ :option:`-N`\ *nx_min* ]
+[ :option:`-Q`\ **e**\|\ **i** ]
 [ [ |SYN_OPT-R| ]
-[ |-S|\ *track* ]
+[ :option:`-S`\ *track* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 

@@ -24,15 +24,15 @@ fzanalyzer
 --------
 
 **gmt fzanalyzer** *crossprofiles*
-|-F|\ *fzlines*
+:option:`-F`\ *fzlines*
 [ :option:`-A`\ *min*/*max*/*inc* ]
 [ :option:`-C`\ *min*/*max*/*inc* ]
-[ |-D|\ *corrwidth* ]
-[ |-I|\ *FZ*\ [/*profile*] ]
-[ |-S|\ [**b**\|\ **c**]]
-[ |-T|\ *prefix* ]
+[ :option:`-D`\ *corrwidth* ]
+[ :option:`-I`\ *FZ*\ [/*profile*] ]
+[ :option:`-S`\ [**b**\|\ **c**]]
+[ :option:`-T`\ *prefix* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *min*/*max*/*inc* ]
+[ :option:`-W`\ *min*/*max*/*inc* ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]
 [ |SYN_OPT-i| ]
@@ -87,7 +87,7 @@ fzanalyzer
 
 **-I**\ *FZ*\ [/*profile*]
     默认情况下，程序会分析所有断裂带（FZ）生成的横剖面。
-    但你可以使用 |-I| 指定特定的断裂带 *id* （首个为 0）。
+    但你可以使用 :option:`-I` 指定特定的断裂带 *id* （首个为 0）。
     还可指定仅处理该断裂带中的某一个 *profile* [默认处理全部]。
     注意，输出文件仍会包含所有剖面，但仅所选剖面对应的导出参数为非零。
 
@@ -109,7 +109,7 @@ fzanalyzer
     其中，*min* 为最小 FZ 信号宽度（单位：km），用于非线性宽度搜索 [默认 1]；
     *max* 为最大宽度 [默认 50]；
     *inc* 为宽度搜索的步进增量 [默认 1]。
-    建议根据具体研究区域调整合适的取值范围并相应设置 |-W|。
+    建议根据具体研究区域调整合适的取值范围并相应设置 :option:`-W`。
     若选择的范围过宽，可能导致模型拟合受到与 FZ 槽无关的数据特征干扰，从而产生虚假结果。
 
 .. include:: explain_-V.rst_
@@ -180,7 +180,7 @@ fzanalyzer
     2. 文件 *prefix*\_cross.txt 包含每条横剖面的观测值和最佳拟合模型的预测值。
     可用于逐剖面绘图或结果的可视化分析。
 
-    3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(|-S|) 或 C shell 脚本(|-S|\ **c**)，
+    3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(:option:`-S`) 或 C shell 脚本(:option:`-S`\ **c**)，
     其中包含命令行指定的所有参数作为 shell 变量。你可以在自定义绘图或分析脚本中引用这些变量。
 
     4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 

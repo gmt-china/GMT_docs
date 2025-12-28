@@ -21,7 +21,7 @@ fzmodeler
 
 其中：
 
-* *A* 表示幅值（由 |-N| 控制），
+* *A* 表示幅值（由 :option:`-N` 控制），
 * *m* 表示不对称性（由 :option:`-A` 控制），
 * *u* 表示压缩率（由 :option:`-C` 控制）。
 
@@ -46,16 +46,16 @@ fzmodeler
 
 **fzmodeler** [ :option:`-A`\ *asymmetry* ]
 [ :option:`-C`\ *compression* ]
-[ |-D|\ *min*/*max*/*inc* ]
-[ |-G|\ *comp* ]
-[ |-M| ]
-[ |-N|\ *amplitude* ]
-[ |-O| ]
-[ |-P| ]
-[ |-S|\ *shift* ]
-[ |-T|\ *prefix* ]
+[ :option:`-D`\ *min*/*max*/*inc* ]
+[ :option:`-G`\ *comp* ]
+[ :option:`-M` ]
+[ :option:`-N`\ *amplitude* ]
+[ :option:`-O` ]
+[ :option:`-P` ]
+[ :option:`-S`\ *shift* ]
+[ :option:`-T`\ *prefix* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *width* ]
+[ :option:`-W`\ *width* ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 
@@ -76,7 +76,7 @@ fzmodeler
 
 **-D**\ *min*/*max*/*inc*
      设置评估模型的自变量范围。
-     若使用 |-M| 选项，则范围以 km 为单位；否则，*min* 和 *max* 被认为是纬度（单位：度），*inc* 被解析为弧分 [-5/5/2 或 -100/100/2，取决于是否使用 |-M|]。
+     若使用 :option:`-M` 选项，则范围以 km 为单位；否则，*min* 和 *max* 被认为是纬度（单位：度），*inc* 被解析为弧分 [-5/5/2 或 -100/100/2，取决于是否使用 :option:`-M`]。
 
 .. _-G:
 
@@ -86,7 +86,7 @@ fzmodeler
 .. _-M:
 
 **-M**
-     当选定 |-D| 范围时，以纬度为单位，增量为弧分 [默认单位为 km]。
+     当选定 :option:`-D` 范围时，以纬度为单位，增量为弧分 [默认单位为 km]。
 
 .. _-N:
 
@@ -97,7 +97,7 @@ fzmodeler
 
 **-O**
      不生成独立 PDF 图，而是将 PostScript 叠加层输出到标准输出（stdout），
-     即使用 GMT 经典代码 **-O -K** 选项绘图。需要（或自动设置）|-P|。
+     即使用 GMT 经典代码 **-O -K** 选项绘图。需要（或自动设置）:option:`-P`。
 
 .. _-P:
 

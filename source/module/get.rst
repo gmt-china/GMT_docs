@@ -15,12 +15,12 @@ get
 
 **gmt get**
 [ *PARAMETER1* *PARAMETER2* *PARAMETER3* ... ]
-[ |-D|\ *selection* ]
-[ |-G|\ *defaultsfile* ]
-[ |-I|\ *inc[m|s]* ]
-[ |-L| ]
-[ |-N| ]
-[ |-Q| ]
+[ :option:`-D`\ *selection* ]
+[ :option:`-G`\ *defaultsfile* ]
+[ :option:`-I`\ *inc[m|s]* ]
+[ :option:`-L` ]
+[ :option:`-N` ]
+[ :option:`-Q` ]
 [ |SYN_OPT-V| ]
 
 必选选项
@@ -58,7 +58,7 @@ get
 .. _-I:
 
 **-I**\ *inc*\ [**m**\|\ **s**]
-    与 |-D| 结合使用。下载网格间距大于或等于 *inc* 的网格数据。默认无限制。
+    与 :option:`-D` 结合使用。下载网格间距大于或等于 *inc* 的网格数据。默认无限制。
 
 .. _-L:
 
@@ -71,13 +71,13 @@ get
 .. _-N:
 
 **-N**
-    与 |-D| 结合使用，使得下载的 **JP2000** 压缩格式文件在本地不会自动转化为 **netCDF** 网格文件。
+    与 :option:`-D` 结合使用，使得下载的 **JP2000** 压缩格式文件在本地不会自动转化为 **netCDF** 网格文件。
     这种操作可以加快下载数据的速度，等到需要使用数据时再进行格式转换。
 
 .. _-Q:
 
 **-Q**
-    与 |-D| （和 |-I| ）结合使用，提供一个可下载数据集的列表。
+    与 :option:`-D` （和 :option:`-I` ）结合使用，提供一个可下载数据集的列表。
     输出格式为::
 
        planet group dataset size nitems remark
@@ -97,7 +97,7 @@ get
     $ gmt get MAP_GRID_CROSS_SIZE_PRIMARY MAP_GRID_CROSS_SIZE_SECONDARY
     24p,Helvetica,black 16p,Helvetica,black
 
-使用 |-L| 选项一行显示一个参数值::
+使用 :option:`-L` 选项一行显示一个参数值::
 
     $ gmt get FONT_TITLE FONT_LABEL MAP_FRAME_TYPE -L
     24p,Helvetica,black

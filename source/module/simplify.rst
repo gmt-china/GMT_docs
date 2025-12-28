@@ -18,7 +18,7 @@ simplify
 
 **gmt simplify**
 [ *table* ]
-|-T|\ *tolerance*
+:option:`-T`\ *tolerance*
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]

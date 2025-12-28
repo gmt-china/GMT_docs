@@ -18,9 +18,9 @@ grdfill
 
 **gmt grdfill** *ingrid*
 :option:`-A`\ *mode*\ [*arg*]
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 [ |SYN_OPT-R| ]
-[ |-L|\ [**p**] ]
+[ :option:`-L`\ [**p**] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT--| ]
@@ -67,7 +67,7 @@ grdfill
 **-L**\ [**p**]
     不填充“洞”，仅列出每个“洞”所处的子区域的范围
 
-    |-G| 选项会被忽略。**-Lp** 表示输出每个子区域对应的闭合多边形。
+    :option:`-G` 选项会被忽略。**-Lp** 表示输出每个子区域对应的闭合多边形。
 
 .. include:: explain_-V.rst_
 

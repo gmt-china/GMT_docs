@@ -20,11 +20,11 @@ XY坐标数据。
 
 **gmt grd2xyz** *grid*
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-F|\ [**f**\|\ **i**] ]
+[ :option:`-F`\ [**f**\|\ **i**] ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [**a**\|\ *weight*] ]
-[ |-Z|\ [*flags*] ]
+[ :option:`-W`\ [**a**\|\ *weight*] ]
+[ :option:`-Z`\ [*flags*] ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-d| ]
 [ |SYN_OPT-f| ]
@@ -111,7 +111,7 @@ XY坐标数据。
 .. include:: explain_-bo.rst_
 ..
 
-    该选项只适用于以二进制格式输出XYZ数据。若需要只输出Z值，可以使用 |-Z| 选项。
+    该选项只适用于以二进制格式输出XYZ数据。若需要只输出Z值，可以使用 :option:`-Z` 选项。
 
 .. include:: explain_-d.rst_
 

@@ -18,15 +18,15 @@ gravmag3d
 语法
 ----
 
-**gmt gravmag3d** *xyz_file* |-T|\ **v**\ *vert_file* OR |-T|\ **r\|s**\ *raw_file* OR |-M|\ **+s**\ *body,params*
+**gmt gravmag3d** *xyz_file* :option:`-T`\ **v**\ *vert_file* OR :option:`-T`\ **r\|s**\ *raw_file* OR :option:`-M`\ **+s**\ *body,params*
 [ :option:`-C`\ *density* ]
-[ |-E|\ *thickness* ]
-[ |-F|\ *xy_file* ]
-[ |-G|\ *outgrid* ]
-[ |-H|\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip* ]
-[ |-L|\ *z_observation* ]
-[ |-S|\ *radius* ]
-[ |-Z|\ *level* ]
+[ :option:`-E`\ *thickness* ]
+[ :option:`-F`\ *xy_file* ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-H`\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip* ]
+[ :option:`-L`\ *z_observation* ]
+[ :option:`-S`\ *radius* ]
+[ :option:`-Z`\ *level* ]
 [ |SYN_OPT-V| ]
 [ **-fg**]
 [ |SYN_OPT-h| ]
@@ -41,7 +41,7 @@ gravmag3d
 .. _-C:
 
 **-C**\ *density*
-    以国际单位制设置多面体的密度。该选项与 |-H| 互斥
+    以国际单位制设置多面体的密度。该选项与 :option:`-H` 互斥
 
 .. _-H:
 
@@ -52,7 +52,7 @@ gravmag3d
 .. _-F:
 
 **-F**\ *xy_file*
-    计算异常的位置，与 |-G| 选项互斥
+    计算异常的位置，与 :option:`-G` 选项互斥
 
 .. _-G:
 
@@ -117,11 +117,11 @@ gravmag3d
     给定闭合曲面的的顶点文件 *vert_file* 。文件格式和 :doc:`triangulate` 模块生成的格式相同。
     如果 *xyz_file* 文件可以为 3，4，5，6 或者 8 列。
 
-    - 3 列的情况下，表明磁强度/密度假定为常数，由 :option:`-C` 和 |-H| 控制
+    - 3 列的情况下，表明磁强度/密度假定为常数，由 :option:`-C` 和 :option:`-H` 控制
     - 4-6 列分别表示，磁强度，倾角，以及偏角
     - 8 列时表示，磁场倾角、偏角以及物体的磁强度、倾角和偏角。
 
-    在大于 3 列的情况下，|-H| 选项被忽略。
+    在大于 3 列的情况下，:option:`-H` 选项被忽略。
 
     **-Tr|s**\ *raw_file*
 

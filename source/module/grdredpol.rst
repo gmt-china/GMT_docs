@@ -26,17 +26,17 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 ----
 
 **gmt grdredpol** *ingrid*
-|-G|\ *rtp_grd*
+:option:`-G`\ *rtp_grd*
 [ :option:`-C`\ *dec/dip* ]
-[ |-E|\ **i**\ *inc_grd* ]
-[ |-E|\ **d**\ *dec_grd* ]
-[ |-F|\ *m/n* ]
-[ |-M|\ **m**\|\ **r** ]
-[ |-N| ]
-[ |-W|\ *win_width* ]
+[ :option:`-E`\ **i**\ *inc_grd* ]
+[ :option:`-E`\ **d**\ *dec_grd* ]
+[ :option:`-F`\ *m/n* ]
+[ :option:`-M`\ **m**\|\ **r** ]
+[ :option:`-N` ]
+[ :option:`-W`\ *win_width* ]
 [ |SYN_OPT-V| ]
-[ |-T|\ *year* ]
-[ |-Z|\ *filtergrd* ]
+[ :option:`-T`\ *year* ]
+[ :option:`-Z`\ *filtergrd* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-n| ]
 [ |SYN_OPT--| ]

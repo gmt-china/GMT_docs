@@ -18,12 +18,12 @@ x2sys_datalist
 
 **gmt x2sys_datalist** *track(s)* **-T**\ *TAG*
 [ :option:`-A` ]
-[ |-E| ]
-[ |-F|\ *name1*,\ *name2*,... ]
-[ |-I|\ [*list*] ]
-[ |-L|\ [*corrections*] ]
+[ :option:`-E` ]
+[ :option:`-F`\ *name1*,\ *name2*,... ]
+[ :option:`-I`\ [*list*] ]
+[ :option:`-L`\ [*corrections*] ]
 [ |SYN_OPT-R| ]
-[ |-S| ] [
+[ :option:`-S` ] [
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]

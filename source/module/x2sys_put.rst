@@ -20,7 +20,7 @@ x2sys_put
 语法
 ----
 
-**gmt x2sys_put** [ *info.tbf* ] |-T|\ *TAG* [ |-D| ] [ |-F| ]
+**gmt x2sys_put** [ *info.tbf* ] :option:`-T`\ *TAG* [ :option:`-D` ] [ :option:`-F` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 
@@ -70,7 +70,7 @@ x2sys 数据库
 命名为 *TAG*\ \_tracks.d；
 第二个文件的名字为 *TAG*\ \_index.b，是一个二进制文件，其中包含哪条轨迹经过
 哪些网格等信息，在经过该网格时，有哪些观测量。网格是由 :doc:`x2sys_init`
-模块在 *TAG* 初始化时，使用 :option:`-R` 和 |-I| 选项生成的。
+模块在 *TAG* 初始化时，使用 :option:`-R` 和 :option:`-I` 选项生成的。
 所有的数据库文件都储存在 **$X2SYS_HOME**/*TAG* 文件夹中。
 禁止用户手动编辑这些文件。
 

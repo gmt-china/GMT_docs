@@ -11,7 +11,7 @@ grdmath
 :简介: 网格数据的逆波兰表示法（RPN）计算
 
 **grdmath** 使用逆波兰表示法对网格文件或常量进行逐元素运算，最终结果写入到新的网格文件。
-若不给定网格文件，则必须使用 :option:`-R` 与 |-I| 选项生成网格文件。 **= outgrid** 可在计算
+若不给定网格文件，则必须使用 :option:`-R` 与 :option:`-I` 选项生成网格文件。 **= outgrid** 可在计算
 中多次使用以保存中间结果。复杂的或频繁使用的运算可赋值给变量或使用宏。
 
 语法
@@ -19,11 +19,11 @@ grdmath
 
 **gmt grdmath**
 [ |SYN_OPT-Area| ]
-[ |-D|\ *resolution*\ [**+f**] ]
+[ :option:`-D`\ *resolution*\ [**+f**] ]
 [ |SYN_OPT-I| ]
-[ |-M| ] [ |-N| ]
+[ :option:`-M` ] [ :option:`-N` ]
 [ |SYN_OPT-R| ]
-[ |-S| ]
+[ :option:`-S` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
@@ -654,7 +654,7 @@ grdmath
    :term:`PROJ_GEODESIC` 中设置使用其他算法以平衡精度和效率。
 
    **LDISTG** 和 **LDIST** 作用类似，但是 **LDISTG** 使用 GSHHG 数据运算。其中
-   GSHHG 数据来自 |-D| 和 :option:`-A` 选项。
+   GSHHG 数据来自 :option:`-D` 和 :option:`-A` 选项。
 
 #. **POINT** 读取一个 ASCII 文件，计算 x 和 y 的平均值并放在堆栈中。如果输入数据
    为地理坐标，使用平均 3D 向量来确定平均位置。
@@ -662,7 +662,7 @@ grdmath
 #. **PLM** 和 **PLMg** 运算符用来计算 L 阶 M 次的缔合勒让德函数；M 参数
    的范围应该满足 0 <= M <= L，参数为纬度的正弦值。 **PLM** 运算符没有经过标准化，
    并且乘以 phase (-1)^M。 **PLMg** 使用大地测量/地球物理常见的标准化。使用
-   |-M| 参数可以附加球谐系数 C 和 S。 **PLM** 在较高的阶次就会出现溢出，具
+   :option:`-M` 参数可以附加球谐系数 C 和 S。 **PLM** 在较高的阶次就会出现溢出，具
    体和纬度相关， **PLMg** 则可以保证在 3000 阶以下都不会溢
 
 #. **YLM** 和 **YLGM** 用于计算网格所有位置的 L 阶 M 次标准化后的球谐函数，

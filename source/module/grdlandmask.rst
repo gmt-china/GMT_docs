@@ -18,14 +18,14 @@ grdlandmask
 ----
 
 **gmt grdlandmask**
-|-G|\ *mask_grd_file*
+:option:`-G`\ *mask_grd_file*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ |SYN_OPT-Area| ]
-[ |-D|\ *resolution*\ [**+f**] ]
-[ |-E|\ [*bordervalues*] ]
-[ |-N|\ *maskvalues* ]
-[ |-V|\ [*level*] ] [ |SYN_OPT-r| ]
+[ :option:`-D`\ *resolution*\ [**+f**] ]
+[ :option:`-E`\ [*bordervalues*] ]
+[ :option:`-N`\ *maskvalues* ]
+[ :option:`-V`\ [*level*] ] [ |SYN_OPT-r| ]
 [ |SYN_OPT-x| ]
 [ |SYN_OPT--| ]
 
@@ -69,9 +69,9 @@ grdlandmask
     默认情况下，恰好位于海岸线多边形边界上的节点当作是在多边形的内部，使用该选项
     则会将其认为是在多边形的外部。
 
-    此外，还可以在 |-E| 选项后加上四个值 *cborder/lborder/iborder/pborder* 或
+    此外，还可以在 :option:`-E` 选项后加上四个值 *cborder/lborder/iborder/pborder* 或
     一个值 *bordervalue* （表示四个值具有相同的值），以启用线段追踪模式。
-    在根据 |-N| 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。
+    在根据 :option:`-N` 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。
     例如，海岸线穿过的网格单元值将被修改为 *cborder*；同理，
     岛边界、湖内岛、湖内岛中的小湖边界穿过的网格单元值会被依次修改为
     *lborder*、*iborder*、*pborder* 的值。

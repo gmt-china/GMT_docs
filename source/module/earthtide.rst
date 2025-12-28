@@ -19,13 +19,13 @@ earthtide
 ----
 
 **gmt earthtide**
-|-T|\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
-|-G|\ *outgrid*
+:option:`-T`\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list*
+:option:`-G`\ *outgrid*
 [ :option:`-C`\ *x|e,y|n,z|v* ]
 [ |SYN_OPT-I| ]
-[ |-L|\ *lon/lat* ]
+[ :option:`-L`\ *lon/lat* ]
 [ |SYN_OPT-R| ]
-[ |-S| ]
+[ :option:`-S` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-r| ]
 [ |SYN_OPT--| ]
@@ -41,7 +41,7 @@ earthtide
 
 **-S**
     输出太阳和月亮的地理坐标以及其距离，单位为米。输出为 Mx7 的矩阵，
-    M 为时刻的个数（通过 |-T| 设置），7 列分别代表：时间，太阳经度，
+    M 为时刻的个数（通过 :option:`-T` 设置），7 列分别代表：时间，太阳经度，
     太阳纬度，太阳距离，月亮经度，月亮纬度，月亮距离
 
 .. _-L:
@@ -56,11 +56,11 @@ earthtide
 .. _-C:
 
 **-C**\ **x**\|\ **e**,\ **y**\|\ **n**,\ **z**\|\ **v**
-    设置需要计算的固体地球潮汐分量及其保存的网格。该选项需要 |-G| 选项。
+    设置需要计算的固体地球潮汐分量及其保存的网格。该选项需要 :option:`-G` 选项。
     不同选项之间使用逗号分隔：**x** 或 **e** 为东向分量；**y** 或 **n**
     为北向分量，**z** 或 **v** 为垂直分量。例如，**-Ce**,\ **v** 将输出
     写入两个网格，一个为东向分量网格，一个为垂直分量网格。如果设置了
-    |-G| ，但不指定 :option:`-C` ，则默认为垂直分量。
+    :option:`-G` ，但不指定 :option:`-C` ，则默认为垂直分量。
 
 .. include:: explain_-I.rst_
 
@@ -68,7 +68,7 @@ earthtide
 
 .. _-T:
 
-**-T**\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
+**-T**\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list*
     指定计算的时间序列的起始时间 *min* ，终止时间 *max* 和步长 *inc* 。
 
 .. include:: explain_-bo.rst_
@@ -87,7 +87,7 @@ earthtide
 ----
 
 计算 2018 年 6 月 18 日中午，固体地球潮汐垂直分量网格，网格的分辨率为
-30 m（使用默认的 :option:`-R` 和 |-I| 选项） ::
+30 m（使用默认的 :option:`-R` 和 :option:`-I` 选项） ::
 
     gmt earthtide -T2018-06-18T12:00:00 -Gsolid_tide_up.grd
 

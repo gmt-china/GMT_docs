@@ -19,16 +19,16 @@ inset
 - **inset end** 用于结束图中图模式，所有的操作都会回到原大图中。
 
 在图中图中，用户可以使用任意的投影方式和投影区域。若投影方式中底图宽度或
-比例用 ``?`` 表示，则会根据 |-D| 选项设置的小图尺寸自动确定小图的投影参数。
+比例用 ``?`` 表示，则会根据 :option:`-D` 选项设置的小图尺寸自动确定小图的投影参数。
 
 inset begin语法
 ---------------
 
 **gmt inset begin**
-|-D|\ *inset-box*
+:option:`-D`\ *inset-box*
 [ :option:`-C`\ [*side*]\ *clearance* ]
-[ |-F|\ *box* ]
-[ |-N| ]
+[ :option:`-F`\ *box* ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
 [ :option:`-J`\ *parameters* ]
 [ |SYN_OPT-V| ]
@@ -66,7 +66,7 @@ inset begin语法
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     设置小图区域的背景面板属性。
 
-    若只使用 |-F| 而不使用其它子选项，则会在小图周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在小图周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_

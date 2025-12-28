@@ -27,11 +27,11 @@ clip
 [ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
 [ |SYN_OPT-B| ]
 :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
-[ |-N| ]
-[ |-T| ]
+[ :option:`-N` ]
+[ :option:`-T` ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*pen*] ]
+[ :option:`-W`\ [*pen*] ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-bi| ]
@@ -57,8 +57,8 @@ clip
     默认会关闭所有已开启的裁剪路径。使用 **-C**\ *n* 则仅关闭当前所有处于激活状态下的
     裁剪路径中的其中 *n* 个。
 
-    若在开启裁剪后有使用 |-X| 或 |-Y| 移动过坐标原点，则在关闭裁剪路径时也需要
-    使用 |-X| 或 |-Y| 选项。
+    若在开启裁剪后有使用 :option:`-X` 或 :option:`-Y` 移动过坐标原点，则在关闭裁剪路径时也需要
+    使用 :option:`-X` 或 :option:`-Y` 选项。
 
 .. include:: explain_-J.rst_
 

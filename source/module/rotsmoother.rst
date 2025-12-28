@@ -20,12 +20,12 @@ rotsmoother
 **gmt rotsmoother** [ *table* ]
 [ :option:`-A` ]
 [ :option:`-C` ]
-[ |-N| ]
-[ |-S| ]
-[ |-T|\ *ages* ]
+[ :option:`-N` ]
+[ :option:`-S` ]
+[ :option:`-T`\ *ages* ]
 [ |SYN_OPT-V| ]
-[ |-W| ]
-[ |-Z| ]
+[ :option:`-W` ]
+[ :option:`-Z` ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
 [ |SYN_OPT-e| ]
@@ -52,8 +52,8 @@ rotsmoother
 
 **-A**
     使用张开角（opening angles）作为时间的代理。当无法为旋转指定时间时适用。
-    在这种情况下，输入应包含 *lon lat angle* [*weight*] 记录，且 |-T| 的设置将对应于角度而非时间。
-    默认情况下，输入应为 *lon lat time angle* [*weight*]，且 |-T| 表示时间。
+    在这种情况下，输入应包含 *lon lat angle* [*weight*] 记录，且 :option:`-T` 的设置将对应于角度而非时间。
+    默认情况下，输入应为 *lon lat time angle* [*weight*]，且 :option:`-T` 表示时间。
 
 .. _-C:
 

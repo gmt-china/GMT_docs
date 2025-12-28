@@ -15,8 +15,8 @@ dimfilter
 为多个扇区，对每个扇区进行一级或者二级滤波，并根据二级滤波选择最终的结果。
 这种划分多个扇区的做法与普通中值滤波的区别在于可以避免在具有一定倾斜趋势的
 区域中某些特征（以对海底地形滤波为例，特征可能为海山）导致的中值偏离的情况。
-输出网格可以使用 :option:`-R` 进行裁剪，或者使用 |-I| 设置新的网格间隔；裁剪可以避
-免边缘效应。|-Q| 选项用于误差分析模式并且输入文件中包含滤波深度。
+输出网格可以使用 :option:`-R` 进行裁剪，或者使用 :option:`-I` 设置新的网格间隔；裁剪可以避
+免边缘效应。:option:`-Q` 选项用于误差分析模式并且输入文件中包含滤波深度。
 **dimfilter** 不会向其他滤波一样产生平滑的输出，因为其返回 N 个扇区中的 N
 个中值中的最小值。除非数据数据中无噪声，否则输出结果可能很不平滑。因此，通
 常建议对网格进行一次额外的滤波（例如，使用 :doc:`grdfilter` ）。
@@ -25,15 +25,15 @@ dimfilter
 ----
 
 **gmt dimfilter** *ingrid*
-|-D|\ *0-4*
-|-F|\ **x**\ *width*\ [*modifier*]
-|-G|\ *outgrid*
-|-N|\ **x**\ *sectors*\ [*modifier*]
-[ |-L| ]
-[ |-Q| ]
+:option:`-D`\ *0-4*
+:option:`-F`\ **x**\ *width*\ [*modifier*]
+:option:`-G`\ *outgrid*
+:option:`-N`\ **x**\ *sectors*\ [*modifier*]
+[ :option:`-L` ]
+[ :option:`-Q` ]
 [ |SYN_OPT-I| ]
 [ |SYN_OPT-R| ]
-[ |-T| ]
+[ :option:`-T` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-h| ]
@@ -175,7 +175,7 @@ devuation) ::
 --------
 
 dim.template.sh 是一个脚本框架，可在其中进行完整的 dim 分析，包括 MAD 分析，
-通过 |-L| 选项可以获取。
+通过 :option:`-L` 选项可以获取。
 
 参考文献
 --------

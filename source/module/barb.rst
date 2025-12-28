@@ -26,14 +26,14 @@ barb
 |SYN_OPT-Rz|
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ *dx*/*dy*\ [/*dz*] ]
-[ |-G|\ *fill* ]
-[ |-I|\ *intens* ]
-[ |-N| ]
-[ |-Q|\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*][**+z**] ]
+[ :option:`-D`\ *dx*/*dy*\ [/*dz*] ]
+[ :option:`-G`\ *fill* ]
+[ :option:`-I`\ *intens* ]
+[ :option:`-N` ]
+[ :option:`-Q`\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*][**+z**] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*pen*][*attr*] ]
+[ :option:`-W`\ [*pen*][*attr*] ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-a| ]
@@ -80,7 +80,7 @@ barb
 
 **-G**\ *fill*
     为符号或多边形选择填充颜色或图案 [默认不填充]。
-    注意 **barb** 会在所有段头中搜索 |-G| 和 |-W|，并覆盖命令行设置。
+    注意 **barb** 会在所有段头中搜索 :option:`-G` 和 :option:`-W`，并覆盖命令行设置。
 
 .. _-I:
 

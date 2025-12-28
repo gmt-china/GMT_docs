@@ -37,18 +37,18 @@ gpsgridder
 ----
 
 **gmt gpsgridder** [ *table* ]
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 [ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
-[ |-E|\ [*misfitfile*] ]
-[ |-F|\ [**d**\|\ **f**]\ *fudge* ]
+[ :option:`-E`\ [*misfitfile*] ]
+[ :option:`-F`\ [**d**\|\ **f**]\ *fudge* ]
 [ |SYN_OPT-I| ]
-[ |-L| ]
-[ |-N|\ *nodefile* ]
+[ :option:`-L` ]
+[ :option:`-N`\ *nodefile* ]
 [ |SYN_OPT-R| ]
-[ |-S|\ *nu* ]
-[ |-T|\ *maskgrid* ]
+[ :option:`-S`\ *nu* ]
+[ :option:`-T`\ *maskgrid* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [**+s**\|\ **w**] ]
+[ :option:`-W`\ [**+s**\|\ **w**] ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
 [ |SYN_OPT-e| ]
@@ -65,14 +65,14 @@ gpsgridder
 
 *table*
     输入数据文件，其中数据为离散点的 GPS 应变。输入格式必须为 *x y u v* [ *du dv* ]
-    （设置不确定度或者权请见 |-W| ）。如果输入数据为地理坐标，必须使用 **-fg** , gmt
+    （设置不确定度或者权请见 :option:`-W` ）。如果输入数据为地理坐标，必须使用 **-fg** , gmt
     则以平地球近似来计算距离
 
 .. include:: explain_grd_out.rst_
     
-- 如果设置了 :option:`-R` 和 |-I|，则输出两个网格，分别为 u 和 v 分量。
-- 如果设置了 |-T| 选项，则输出两个文本文件，分别为离散点上的 u 和 v 分量
-- 如果设置了 |-N| 选项，输出单个文本文件。
+- 如果设置了 :option:`-R` 和 :option:`-I`，则输出两个网格，分别为 u 和 v 分量。
+- 如果设置了 :option:`-T` 选项，则输出两个文本文件，分别为离散点上的 u 和 v 分量
+- 如果设置了 :option:`-N` 选项，输出单个文本文件。
 
 可选选项
 --------
@@ -106,9 +106,9 @@ gpsgridder
 **-E**\ [*misfitfile*]
     在输入数据位置处计算拟合值，并报告 u 和 v 的残差的统计值（mean, std, rms）。
     可追加一个文件 *misfitfile* ，将统计数据写入文件中，在 u 和 v 两列之后增加两列，
-    用于存放拟合值和残差。如果设置了 |-W| 选项，将再追加两列，存放 :math:`\chi_u^2`
+    用于存放拟合值和残差。如果设置了 :option:`-W` 选项，将再追加两列，存放 :math:`\chi_u^2`
     和 :math:`\chi_v^2` 。如果设置了 :option:`-C` 选项，将不输出上述内容，而是输出特征值
-    的编号，特征值以及残差的方差，rms，rms_u 和 rms_v。如果同时使用了 |-W| ， 则
+    的编号，特征值以及残差的方差，rms，rms_u 和 rms_v。如果同时使用了 :option:`-W` ， 则
     同样追加输出 :math:`\chi^2` ，:math:`\chi_u^2` ，:math:`\chi_v^2`
 
 .. _-F:
@@ -131,8 +131,8 @@ gpsgridder
 .. _-N:
 
 **-N**\ *nodefile*
-    计算 *nodefile* 中位置处的应变并在其后追加 *w* 值，并输出到 |-G| 设置的
-    文件中，不指定 |-G| 时，输出到标准输出。该选项无需使用 :option:`-R` 和 |-I| 选项
+    计算 *nodefile* 中位置处的应变并在其后追加 *w* 值，并输出到 :option:`-G` 设置的
+    文件中，不指定 :option:`-G` 时，输出到标准输出。该选项无需使用 :option:`-R` 和 :option:`-I` 选项
 
 .. include:: explain_-R.rst_
 
@@ -145,7 +145,7 @@ gpsgridder
 .. _-T:
 
 **-T**\ *maskgrid*
-    只计算 *maskgrid* 文件中指定的节点的值，该选项无需使用 :option:`-R` 和 |-I|
+    只计算 *maskgrid* 文件中指定的节点的值，该选项无需使用 :option:`-R` 和 :option:`-I`
 
 .. _-W:
 
@@ -153,7 +153,7 @@ gpsgridder
     输入文件必须在最后两列中提供 *u* 和 *v* 的一倍不确定度。如果不确定度是
     一倍中误差，则使用 1/(sigma^2) 作为权重计算，即默认情况，或使用 **+s**
     的情况。如果不确定度为权重，则使用 **+w** ，将输入数据直接作为权重。需要
-    注意的是，只有设置了 :option:`-C` 时，|-W| 才有效。
+    注意的是，只有设置了 :option:`-C` 时，:option:`-W` 才有效。
 
 .. include:: explain_-V.rst_
 

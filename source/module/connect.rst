@@ -51,7 +51,7 @@ connect
 .. _-Q:
 
 **-Q**\ [*template*]
-    Used with |-D| to a list file with the names of the individual
+    Used with :option:`-D` to a list file with the names of the individual
     output files. Optionally, append a filename template for the
     individual file names; this template **may** contain a C format
     specifier that can format an character (C or O for closed or open,

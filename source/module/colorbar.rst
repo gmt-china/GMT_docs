@@ -17,24 +17,24 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 **gmt colorbar**
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ *refpoint* ]
-[ |-F|\ *panel* ]
-[ |-G|\ *zlo*\ /\ *zhi* ]
-[ |-I|\ [*max\_intens*\|\ *low_i*/*high_i*] ]
+[ :option:`-D`\ *refpoint* ]
+[ :option:`-F`\ *panel* ]
+[ :option:`-G`\ *zlo*\ /\ *zhi* ]
+[ :option:`-I`\ [*max\_intens*\|\ *low_i*/*high_i*] ]
 [ :option:`-J`\ *parameters* ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
-[ |-L|\ [**i**][*gap*] ]
-[ |-M| ]
-[ |-N|\ [**p**\|\ *dpi* ]]
-[ |-Q| ]
+[ :option:`-L`\ [**i**][*gap*] ]
+[ :option:`-M` ]
+[ :option:`-N`\ [**p**\|\ *dpi* ]]
+[ :option:`-Q` ]
 [ |SYN_OPT-R| ]
-[ |-S| ]
+[ :option:`-S` ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *scale* ]
+[ :option:`-W`\ *scale* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ *zfile* ]
+[ :option:`-Z`\ *zfile* ]
 [ |SYN_OPT-p| ]
 [ |SYN_OPT-t| ]
 [ |SYN_OPT--| ]
@@ -58,7 +58,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
     默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
     colorbar的右边；对于垂直colorbar而言，X轴的标签放在colorbar的右边，Y轴标签
-    放在colorbar的上边。除非在 |-D| 选项中使用了 **+m** 子选项。
+    放在colorbar的上边。除非在 :option:`-D` 选项中使用了 **+m** 子选项。
 
 .. _-C:
 
@@ -115,7 +115,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制色标后的背景边框
 
-    若只使用 |-F| 而不使用其它子选项，则会在色标周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在色标周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
@@ -144,7 +144,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     默认情况下，会根据CPT文件中Z值的范围决定颜色矩形的大小。若使用该选项，则
     会忽略 :option:`-B` 选项设置的间隔。若指定了 *gap* 且CPT文件是离散的，则使用
     每个矩形的Z值下边界作为标注且将标注放在矩形的正中间。
-    若使用了 **i** 则标注每个间隔范围。若使用了 |-I| 选项，则每个矩形有自己的
+    若使用了 **i** 则标注每个间隔范围。若使用了 :option:`-I` 选项，则每个矩形有自己的
     颜色以及自己的光照强度。
 
 .. _-M:
@@ -158,7 +158,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     控制色标的图形表示方式
 
     - **-Np** 用颜色矩形来表示（比如离散的颜色）
-    - |-N| 用图形表示（比如连续的颜色），可以加上 *dpi* 指定绘制色标时的等效DPI，默认值为600
+    - :option:`-N` 用图形表示（比如连续的颜色），可以加上 *dpi* 指定绘制色标时的等效DPI，默认值为600
 
 .. _-Q:
 

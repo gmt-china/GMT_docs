@@ -31,22 +31,22 @@ Google Earth KML 格式的单个输出文件。
 **gmt 2kml** [ *table* ]
 [ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*alt*\|\ **x**\ *scale*] ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ *descriptfile* ]
-[ |-E|\ [**+e**][**+s**] ]
-[ |-F|\ **e**\|\ **l**\|\ **p**\|\ **s**\|\ **t**\|\ **w** ]
-[ |-G|\ [*color*]\ [**+f**\|\ **n**] ]
-[ |-I|\ *icon* ]
-[ |-K| ]
-[ |-L|\ *name1*,\ *name2*,... ]
-[ |-N|\ [**t**\|\ *col*\|\ *name\_template*\|\ *name*] ]
-[ |-O| ]
-[ |-Q|\ **a**\|\ **i**\|\ **s**\ *arg* ]
+[ :option:`-D`\ *descriptfile* ]
+[ :option:`-E`\ [**+e**][**+s**] ]
+[ :option:`-F`\ **e**\|\ **l**\|\ **p**\|\ **s**\|\ **t**\|\ **w** ]
+[ :option:`-G`\ [*color*]\ [**+f**\|\ **n**] ]
+[ :option:`-I`\ *icon* ]
+[ :option:`-K` ]
+[ :option:`-L`\ *name1*,\ *name2*,... ]
+[ :option:`-N`\ [**t**\|\ *col*\|\ *name\_template*\|\ *name*] ]
+[ :option:`-O` ]
+[ :option:`-Q`\ **a**\|\ **i**\|\ **s**\ *arg* ]
 [ :option:`-R`\ **e**\|\ *w/e/s/n* ]
-[ |-S|\ **c**\|\ **n**\ *scale*] ]
-[ |-T|\ *title*\ [/*foldername*] ]
+[ :option:`-S`\ **c**\|\ **n**\ *scale*] ]
+[ :option:`-T`\ *title*\ [/*foldername*] ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*pen*][*attr*] ]
-[ |-Z|\ [**+a**\ *alt_min/alt_max*]\ [**+f**\ *minfade/maxfade*]\ [**+l**\ *minLOD/maxLOD*]\ [**+o**][**+v**] ]
+[ :option:`-W`\ [*pen*][*attr*] ]
+[ :option:`-Z`\ [**+a**\ *alt_min/alt_max*]\ [**+f**\ *minfade/maxfade*]\ [**+l**\ *minLOD/maxLOD*]\ [**+o**][**+v**] ]
 [ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -106,15 +106,15 @@ Google Earth KML 格式的单个输出文件。
     第 3 列需要包含 altitude 或 value。选择以下指令：
 
     - **e**\ vent: 仅在特定 *time* 可见的符号，时间在下一列给出。
-    - **l**\ ine: 使用 |-W| 设置的属性绘制线。
-    - **p**\ olygon: 使用 |-G| 和 |-W| 设置的属性绘制面。
+    - **l**\ ine: 使用 :option:`-W` 设置的属性绘制线。
+    - **p**\ olygon: 使用 :option:`-G` 和 :option:`-W` 设置的属性绘制面。
     - **s**\ ymbol: 永远可见的普通符号。
     - **t**\ imespan: 仅在下一两列指定的时间段内激活的符号（含 *timestart*, *timestop*）。使用 NaN 表示无限时间范围。
-    - **w**\ iggle: 第 3 列必须包含数据异常。如果还需要绘制轨迹本身，则单独使用 **-Fl**。参见 |-Q| 获取附加参数。
+    - **w**\ iggle: 第 3 列必须包含数据异常。如果还需要绘制轨迹本身，则单独使用 **-Fl**。参见 :option:`-Q` 获取附加参数。
 
     **注意**：如果使用时间，格式应为 ISO yyyy-mm-ddThh:mm:ss[.xxx] 或 
     GMT 相对时间格式（参见 **-f**）。对于指令 **e**\|\ **s**\|\ **t**，
-    符号通过 |-I| 设置。
+    符号通过 :option:`-I` 设置。
 
 
 .. _-G:
@@ -286,7 +286,7 @@ Google Earth 在跨经线绘制填充面时存在问题。
 
 使用 KMZ 格式更优，因为占用空间小。KMZ 是 KML 文件及其引用的图像、图标或数据文件的压缩包。
 可将大数据集分组到 Folders 中。Document 可包含任意数量文件夹。
-可用脚本和 **-K**、|-O| 选项创建复合 KML 文件。参见 |-T| 了解文件夹/文档切换。
+可用脚本和 **-K**、:option:`-O` 选项创建复合 KML 文件。参见 :option:`-T` 了解文件夹/文档切换。
 gmt_shell_scripts.sh 中的 gmt_build_kmz 可协助将多个
 KML 文件（及引用图片）打包为 KMZ 文件。
 需先 source gmt_shell_scripts.sh。
@@ -294,11 +294,11 @@ KML 文件（及引用图片）打包为 KMZ 文件。
 KML 层级
 --------
 
-GMT 按特征类型（使用 |-O|、|-K| 或 **-T/**\ *foldername*）、
-输入文件（非标准输入时）及线段（段头名称或 |-N|）将特征存入层级文件夹。
+GMT 按特征类型（使用 :option:`-O`、:option:`-K` 或 **-T/**\ *foldername*）、
+输入文件（非标准输入时）及线段（段头名称或 :option:`-N`）将特征存入层级文件夹。
 在 Google Earth 中可方便切换文档内容。示例：
 
-[ KML header information; not present if |-O| was used ]
+[ KML header information; not present if :option:`-O` was used ]
 
 <Document><name>GMT Data Document</name>
 
@@ -348,12 +348,12 @@ GMT 按特征类型（使用 |-O|、|-K| 或 **-T/**\ *foldername*）、
 
 </Document>
 
-[ KML trailer information; not present if |-K| was used ]
+[ KML trailer information; not present if :option:`-K` was used ]
 
 分段信息
 --------
 
-**2kml** 会扫描段头中 **-L**"*some label*\ " [参见 |-N|] 和
+**2kml** 会扫描段头中 **-L**"*some label*\ " [参见 :option:`-N`] 和
 **-T**"*some text description*\ "。如存在，将解析为当前特征的名称和描述标签。
 
 相关模块

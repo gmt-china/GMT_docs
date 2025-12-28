@@ -22,10 +22,10 @@ kml2gmt
 ----
 
 **gmt kml2gmt** [ *kmlfiles* ]
-[ |-E| ]
-[ |-F|\ **s**\|\ **l**\|\ **p** ]
+[ :option:`-E` ]
+[ :option:`-F`\ **s**\|\ **l**\|\ **p** ]
 [ |SYN_OPT-V| ]
-[ |-Z| ]
+[ :option:`-Z` ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]
 [ |SYN_OPT-:| ]
@@ -46,7 +46,7 @@ kml2gmt
     从 *ExtendData* 属性中获取高程信息，且忽略 *z* 坐标。
 
     KML提供了多种机制来通过 *ExtendData* 储存信息，但GMT只实现了
-    *<SimpleData name="string">* 一种。该选项会自动启动 |-Z| 选项。
+    *<SimpleData name="string">* 一种。该选项会自动启动 :option:`-Z` 选项。
 
 .. _-F:
 

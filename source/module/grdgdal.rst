@@ -13,7 +13,7 @@ grdgdal
 
 **grdgdal** 封装了一部分 :doc:`GDAL </utilities/gdal>` 程序（当前包含 gdalinfo，gdaldem，gdal_grid，gdal_translate，
 gdal_rasterize 以及 gdalwarp），因此可以在该模块中实现上述命令的功能。考虑到 gmt 和 GDAL
-的语法差异较大，本模块仅提供了较少的 GMT 风格的选项，而是使用 |-F| 选项将 GDAL 风格的语法
+的语法差异较大，本模块仅提供了较少的 GMT 风格的选项，而是使用 :option:`-F` 选项将 GDAL 风格的语法
 传递给 GDAL。因此，要使用该模块的用户可能需要查阅 GDAL 文档来了解其用法。
 
 本模块在输出网格时，提供了一个选项来设置使用 GMT 或 GDAL 来写网格文件。两种方式各有优缺点。
@@ -26,9 +26,9 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 
 **gmt grdgdal** *infile*
 :option:`-A`\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
-|-G|\ *outfile*
-[ |-F|\ "*gd opts*"]
-[ |-M|\ [**+r**\ [**+w**]]]
+:option:`-G`\ *outfile*
+[ :option:`-F`\ "*gd opts*"]
+[ :option:`-M`\ [**+r**\ [**+w**]]]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
@@ -68,11 +68,11 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 .. _-M:
 
 **-M**\ [**+r**\ [**+w**]]
-    |-M| 后不加任何选项时，使用 GDAL 读和写数据。
+    :option:`-M` 后不加任何选项时，使用 GDAL 读和写数据。
 
     - **+r** 使用 GDAL 读数据，使用 GMT 写数据，当读 OGR 格式数据时，该选项为必须
 
-    - **+w** 与 |-M| 相同
+    - **+w** 与 :option:`-M` 相同
 
 .. include:: explain_-R.rst_
 

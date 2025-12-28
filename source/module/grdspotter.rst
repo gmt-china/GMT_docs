@@ -20,20 +20,20 @@ grdspotter
 --------
 
 **gmt grdspotter** *ingrid*
-|-E|\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
-|-G|\ *outgrid*
+:option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-G`\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-A`\ *agegrid* ]
-[ |-D|\ **i**\|\ **p**\ *grid* ]
-[ |-L|\ *IDgrid* ]
-[ |-M| ]
-[ |-N|\ *upper_age* ]
-[ |-Q|\ *IDinfo* ]
-[ |-S| ]
-[ |-T|\ **t**\|\ **u**\ *fixed_val* ] [
+[ :option:`-D`\ **i**\|\ **p**\ *grid* ]
+[ :option:`-L`\ *IDgrid* ]
+[ :option:`-M` ]
+[ :option:`-N`\ *upper_age* ]
+[ :option:`-Q`\ *IDinfo* ]
+[ :option:`-S` ]
+[ :option:`-T`\ **t**\|\ **u**\ *fixed_val* ] [
 [ |SYN_OPT-V| ]
-[ |-W|\ *n\_try* ]]
+[ :option:`-W`\ *n\_try* ]]
 [ **-Z**\ *z_min*\ [/*z_max*\ [/*z_inc*]] ]
 [ |SYN_OPT-r| ]
 [ |SYN_OPT--| ]
@@ -62,7 +62,7 @@ grdspotter
 **-A**\ *agegrid*
     提供一个与输入数据网格配准的地壳年龄网格。
     这些年龄将作为构建流线时使用的上限年龄 
-    [默认将流线延伸到旋转文件中发现的最老年龄；但请参见 |-N|]。
+    [默认将流线延伸到旋转文件中发现的最老年龄；但请参见 :option:`-N`]。
 
 .. _-D:
 
@@ -76,15 +76,15 @@ grdspotter
 
 **-L**\ *IDgrid*
     提供一个与输入数据网格配准的网格，其中包含每个节点的海山链 ID。
-    此选项要求同时使用 |-Q|。
+    此选项要求同时使用 :option:`-Q`。
 
 .. _-M:
 
 **-M**
-    当使用 |-D| 和/或 |-P| 时，不尝试将所有流线保留在内存中。
+    当使用 :option:`-D` 和/或 :option:`-P` 时，不尝试将所有流线保留在内存中。
     如果内存不足，可以使用此选项在计算时动态生成流线。
     由于我们无法重用为 CVA 步骤计算的流线，因此会变慢。
-    不能与 |-W| 或 |-Z| 的多切片模式一起使用。
+    不能与 :option:`-W` 或 :option:`-Z` 的多切片模式一起使用。
 
 .. _-N:
 
@@ -97,7 +97,7 @@ grdspotter
     可给出 (1) 单个 ID，或 (2) 包含 ID 列表的文件名 [默认使用所有 ID]。
     文件中的每一行应为 TAG ID [w e s n]。
     可选的 *w/e/s/n* 缩放框表示仅当在该区域内时才跟踪流线 [默认使用 :option:`-R` 设置的区域]。
-    需要 |-L|。
+    需要 :option:`-L`。
 
 .. _-S:
 
@@ -108,8 +108,8 @@ grdspotter
 
 **-T**\ **t**\|\ **u**\ *fixed_val*
     选择调整年龄的方法；可重复。选择 **-Tt** 截断通过 :option:`-A` 
-    选项提供的超过 |-N| 设置上限的地壳年龄 [不截断]，
-    或选择 |-T|\ **u**\ *fixed_val* 表示在节点通过 |-Z| 所隐含的测试后，
+    选项提供的超过 :option:`-N` 设置上限的地壳年龄 [不截断]，
+    或选择 :option:`-T`\ **u**\ *fixed_val* 表示在节点通过 :option:`-Z` 所隐含的测试后，
     在计算中使用此 *fixed_val* 替代 [默认使用各个节点值]。
 
 .. include:: explain_-V.rst_
@@ -118,14 +118,14 @@ grdspotter
 
 **-W**\ *n\_try*
     获取 *n_try* 次最大 CVA 位置的自助法估计；
-    经度和纬度结果写入标准输出 [默认无自助法]。不能与 |-M| 一起使用。
+    经度和纬度结果写入标准输出 [默认无自助法]。不能与 :option:`-M` 一起使用。
 
 .. _-Z:
 
 **-Z**\ *z_min*\ [/*z_max*\ [/*z_inc*]]
     忽略 z 值低于 *z_min* [0] 且可选高于 *z_max* [无穷大] 的节点。
     给出 *z_min/z_max/z_inc* 可为每个 *z* 切片生成单独的
-    CVA 网格 [默认生成一个 CVA 网格]。多切片模式不能与 |-M| 一起使用。
+    CVA 网格 [默认生成一个 CVA 网格]。多切片模式不能与 :option:`-M` 一起使用。
 
 .. include:: explain_nodereg.rst_
 

@@ -16,9 +16,9 @@ isf
 
 **gmt gmtisf** *ISFfile*
 [ |SYN_OPT-R| ]
-[ |-D|\ *date_start*\ [/*date_end*] ]
-[ |-F|\ [**a**] ]
-[ |-N| ]
+[ :option:`-D`\ *date_start*\ [/*date_end*] ]
+[ :option:`-F`\ [**a**] ]
+[ :option:`-N` ]
 [ |SYN_OPT--| ]
 
 描述

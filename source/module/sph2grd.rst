@@ -17,14 +17,14 @@ L，M，C[L，M]，S[L，M]
 -----
 
 **gmt sph2grd** [table]
-|-G|\ *grdfile*
-|-I|\ *increment*
+:option:`-G`\ *grdfile*
+:option:`-I`\ *increment*
 |SYN_OPT-R|\ *region*
-[ |-D|\ [**g**\|\ **n**] ]
-[ |-E|\ ]
-[ |-F|\ [**k**]\ *filter* ]
-[ |-N|\ [norm] ]
-[ |-Q|\ ]
+[ :option:`-D`\ [**g**\|\ **n**] ]
+[ :option:`-E`\ ]
+[ :option:`-F`\ [**k**]\ *filter* ]
+[ :option:`-N`\ [norm] ]
+[ :option:`-Q`\ ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-h| ]
@@ -57,7 +57,7 @@ L，M，C[L，M]，S[L，M]
 
 **-D**\ [**g**\|\ **n**]
     利用位模型计算场。\ **-Dg** 表示计算引力场，\ **-Dn** 表示计算大地水准
-    [ 同时使用 |-E| 选项将会计算基于椭球的场 ]。( 目前该选项还没有实现)
+    [ 同时使用 :option:`-E` 选项将会计算基于椭球的场 ]。( 目前该选项还没有实现)
 
 .. _-E:
 
@@ -106,7 +106,7 @@ L，M，C[L，M]，S[L，M]
 
     gmt sph2grd @EGM96_to_36.txt -GEGM96_to_36.nc -Rg -I1 -V
 
-由于 |-D| 选项还未实施，该命令结果没有物理意义。
+由于 :option:`-D` 选项还未实施，该命令结果没有物理意义。
 
 参考文献
 ----------

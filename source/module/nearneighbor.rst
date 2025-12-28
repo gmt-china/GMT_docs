@@ -30,14 +30,14 @@ nearneighbor
 语法
 ----
 
-**gmt nearneighbor** [ *table* ] |-G|\ *outgrid*
+**gmt nearneighbor** [ *table* ] :option:`-G`\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
-|-S|\ *search_radius*
-[ |-E|\ *empty* ]
-[|-N|\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n**]
+:option:`-S`\ *search_radius*
+[ :option:`-E`\ *empty* ]
+[:option:`-N`\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n**]
 [ |SYN_OPT-V| ]
-[ |-W| ]
+[ :option:`-W` ]
 [ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -56,7 +56,7 @@ nearneighbor
 --------
 
 *table*
-    输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 |-W| 选项）
+    输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 :option:`-W` 选项）
 
 .. _-G:
 
@@ -89,7 +89,7 @@ nearneighbor
 **-N**\ *sectors*\ [**+m**\ *min_sectors*]\|\ **n**
     以每个网格节点为中心可以将圆形的搜索区域划分为扇区 *sectors* 。**+m** 选项
     用来设置最少搜索的扇区 *min_sectors* ，即至少 *min_sectors* 个扇区至少含有
-    一个数据时，才计算最终的加权值；未通过此测试的节点值被设置为 NaN，见 |-E| 。
+    一个数据时，才计算最终的加权值；未通过此测试的节点值被设置为 NaN，见 :option:`-E` 。
     如果不设置该选项，GMT 至少设置 50% 的扇区来计算加权值，默认情况下，
     sectos = min_sectors = 4。每个扇区最接近的值才会被用来计算加权值，远处的点
     则被忽略。使用 **-Nn** 可以调用 GDAL 的最邻近算法，而不是用 GMT 的该算法。

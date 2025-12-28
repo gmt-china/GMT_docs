@@ -13,11 +13,11 @@ grdconvert
 语法
 ----
 
-**gmt grdconvert** *ingrdfile* |-G|\ *outgrdfile*
-[ |-N| ]
+**gmt grdconvert** *ingrdfile* :option:`-G`\ *outgrdfile*
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
-[ |-Z|\ [**+s**\ *factor*][**+o**\ *offset*] ]
+[ :option:`-Z`\ [**+s**\ *factor*][**+o**\ *offset*] ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT--| ]
 

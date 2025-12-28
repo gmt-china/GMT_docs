@@ -28,18 +28,18 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 **gmt segyz** *SEGYfile* :option:`-J`\ *parameters*
 :option:`-J`\ **z**\|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
-|-D|\ *deviation* |-F|\ [*color*] |-W|
+:option:`-D`\ *deviation* :option:`-F`\ [*color*] :option:`-W`
 [ :option:`-C`\ *clip* ]
-[ |-I| ] [ |-L|\ *nsamp* ]
-[ |-M|\ *ntrace* ]
-[ |-N| ]
-[ |-Q|\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
-[ |-S|\ *header_x*/*header_y* ]
+[ :option:`-I` ] [ :option:`-L`\ *nsamp* ]
+[ :option:`-M`\ *ntrace* ]
+[ :option:`-N` ]
+[ :option:`-Q`\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
+[ :option:`-S`\ *header_x*/*header_y* ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z| ]
+[ :option:`-Z` ]
 [ |SYN_OPT-p| ]
 [ |SYN_OPT-t| ]
 [ |SYN_OPT--| ]
@@ -68,7 +68,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 **-W**
     绘制波形道。
 
-注意： *必须* 在 |-W| 和 |-F| 之中指定至少一个选项。
+注意： *必须* 在 :option:`-W` 和 :option:`-F` 之中指定至少一个选项。
 
 可选选项
 ------------------

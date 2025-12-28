@@ -11,20 +11,20 @@ sphinterpolate
 :简介:
 
 **sphinterpolate** 读取 lon，lat，z 形式的文件，进行 Delaunay 三角剖分并作球面张力插值。
-通过 |-Q| 选项可以使用不同的插值方法。
+通过 :option:`-Q` 选项可以使用不同的插值方法。
 
 语法
 ----
 
 **gmt sphinterpolate** [ *table* ]
-|-G|\ *grdfile*
+:option:`-G`\ *grdfile*
 |SYN_OPT-I|
 |SYN_OPT-R|
-[ |-D|\ [*east*] ]
-[ |-Q|\ *mode*\ [*options*] ]
-[ |-T| ]
+[ :option:`-D`\ [*east*] ]
+[ :option:`-Q`\ *mode*\ [*options*] ]
+[ :option:`-T` ]
 [ |SYN_OPT-V| ]
-[ |-Z| ]
+[ :option:`-Z` ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
@@ -131,7 +131,7 @@ sphinterpolate
 
 STRIPACK 算法需要输入中不包含重复点。
 :doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphinterpolate**
-的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
+的 :option:`-D` 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 
 参考文献

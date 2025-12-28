@@ -12,14 +12,14 @@ x2sys_get
 
 **x2sys_get** 将会从 TAG 数据库中查询满足需求的轨迹数据并返回。
 查询条件可以是选定的区域，也可以是满足某些数据条件。
-使用 |-L| 选项可列出所有可能存在的交叉点的测线对。
+使用 :option:`-L` 选项可列出所有可能存在的交叉点的测线对。
 
 语法
 ----
 
-**gmt x2sys_get** |-T|\ *TAG* [ :option:`-C` ] [ |-F|\ *flags* ] [ |-G| ]
-[ |-L|\ [*list*]\ [**+i**] ]
-[ |-N|\ *flags* ] [
+**gmt x2sys_get** :option:`-T`\ *TAG* [ :option:`-C` ] [ :option:`-F`\ *flags* ] [ :option:`-G` ]
+[ :option:`-L`\ [*list*]\ [**+i**] ]
+[ :option:`-N`\ *flags* ] [
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]

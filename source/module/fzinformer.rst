@@ -19,13 +19,13 @@ fzinformer
 语法
 --------
 
-**fzinformer** [ |-D| ]
-[ |-F|\ *max* ]
-[ |-I|\ *profile* ] 
-[ |-N|\ *max* ] 
-[ |-S|\ *max* ]
-[ |-T|\ *prefix* ]
-[ |-W|\ *max* ]
+**fzinformer** [ :option:`-D` ]
+[ :option:`-F`\ *max* ]
+[ :option:`-I`\ *profile* ] 
+[ :option:`-N`\ *max* ] 
+[ :option:`-S`\ *max* ]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-W`\ *max* ]
 [ |SYN_OPT-V| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
@@ -65,7 +65,7 @@ fzinformer
 
 **-T**\ *prefix*
      设置在运行 :doc:`fzanalyzer` 和 :doc:`fzblender` 时使用的文件名前缀[默认值为 fztrack]。
-     此处使用的文件为 *prefix*\ _analysis.txt（若使用 |-D|，则为 *prefix*\ _filtered.txt）以及 *prefix*\ _blend.txt。
+     此处使用的文件为 *prefix*\ _analysis.txt（若使用 :option:`-D`，则为 *prefix*\ _filtered.txt）以及 *prefix*\ _blend.txt。
 
 .. _-W:
 

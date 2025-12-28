@@ -22,11 +22,11 @@ logo
 语法
 ----
 
-**gmt logo** [ |-D|\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
-[ |-F|\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
+**gmt logo** [ :option:`-D`\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
+[ :option:`-F`\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
 [ :option:`-J`\ *parameters* ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |SYN_OPT-Rz| ]
-[ |-S|\ [**l**\|\ **n**\|\ **u**] ]
+[ :option:`-S`\ [**l**\|\ **n**\|\ **u**] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-X| ]
@@ -62,7 +62,7 @@ logo
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制GMT logo的背景面板属性
 
-    若只使用 |-F| 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_

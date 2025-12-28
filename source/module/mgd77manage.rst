@@ -141,11 +141,11 @@ mgd77manage
 
 **gmt mgd77manage** *GEODAS-ids*
 [ :option:`-A`\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]\ ]
-[ |-D|\ *abbrev1*,\ *abbrev2*,...) ]
-[ |-E|\ *empty* ]
-[ |-F| ]
-[ |-I|\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment* ]
-[ |-N|\ *unit* ]
+[ :option:`-D`\ *abbrev1*,\ *abbrev2*,...) ]
+[ :option:`-E`\ *empty* ]
+[ :option:`-F` ]
+[ :option:`-I`\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment* ]
+[ :option:`-N`\ *unit* ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]

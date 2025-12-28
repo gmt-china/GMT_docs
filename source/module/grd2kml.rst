@@ -15,7 +15,7 @@ grd2kml
 **grd2kml** 读取一个二维网格文件，并使用所选的图块大小生成 PNG 或 JPG 图像
 以及适用于 Google Earth 的 KML 文件四叉树（quadtree）。
 我们根据四叉树的不同视图层级，对网格进行高斯滤波降采样（可通过选项选择其他滤波器）。
-可选地，通过提供 ±1 范围内的强度网格文件，或自动从输入网格派生强度（见 |-I| ），
+可选地，通过提供 ±1 范围内的强度网格文件，或自动从输入网格派生强度（见 :option:`-I` ），
 可添加光照效果。超出 ±1 范围的强度值将被裁剪。
 地图颜色通过色标（CPT）查表定义，可选择是否叠加等值线。
 如果选择生成纯图块（即未指定等值线），则 PNG 图像由 :doc:`grdimage` 直接输出；
@@ -25,17 +25,17 @@ grd2kml
 --------
 
 **gmt grd2kml** *ingrid*
-|-N|\ *prefix*
+:option:`-N`\ *prefix*
 [ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-E|\ *URL* ]
-[ |-F|\ *filtercode* ]
-[ |-H|\ *scale* ]
-[ |-I|\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
-[ |-L|\ *tilesize* ]
-[ |-S|\ [*extra*] ]
-[ |-T|\ *title* ]
-[ |-W|\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*] ]
+[ :option:`-E`\ *URL* ]
+[ :option:`-F`\ *filtercode* ]
+[ :option:`-H`\ *scale* ]
+[ :option:`-I`\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
+[ :option:`-L`\ *tilesize* ]
+[ :option:`-S`\ [*extra*] ]
+[ :option:`-T`\ *title* ]
+[ :option:`-W`\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-n| ]
@@ -91,8 +91,8 @@ grd2kml
 
 **-H**\ *scale*
     设置传递给 :doc:`psconvert` 的亚像素平滑尺度，以提高光栅化质量
-    （等同于 :doc:`psconvert` 的 |-H| 选项）[默认无平滑]。
-    当未使用 |-W| 时，该选项被忽略。
+    （等同于 :doc:`psconvert` 的 :option:`-H` 选项）[默认无平滑]。
+    当未使用 :option:`-W` 时，该选项被忽略。
 
 .. _-I:
 
@@ -103,7 +103,7 @@ grd2kml
 **-L**\ *tilesize*
     设置图块的固定尺寸。必须为 2 的整数幂。
     常用值：256 或 512 [默认 256]。
-    **注意**：对于全球网格（即经度范围为 360° 的数据），若未指定 |-L|，
+    **注意**：对于全球网格（即经度范围为 360° 的数据），若未指定 :option:`-L`，
     则自动设置 *tilesize* = 360。
 
 .. _-S:
@@ -123,7 +123,7 @@ grd2kml
 
 **-W**\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*]
     提供一个包含等值线值与画笔样式的文件，用于在影像上叠加等值线 [默认无等值线]。
-    因此，使用 |-W| 时图块将通过 PostScript 渲染生成，速度较慢。
+    因此，使用 :option:`-W` 时图块将通过 PostScript 渲染生成，速度较慢。
     若 *cfile* 无效，则认为输入为 *pen*，并依据 :option:`-C` 所定义的 *cpt* 自动绘制等值线。
     等值线通过 :doc:`grdcontour` 绘制。
     **注意**：画笔宽度指的是最高分辨率图块的宽度；
@@ -165,7 +165,7 @@ grd2kml
 因此无法在所有层级使用相同厚度的等值线笔宽。
 输入的画笔宽度应视为最高分辨率层的宽度。
 由于生成的图像分辨率（dpi）比常规 GMT 图低得多，
-建议使用亚像素平滑（|-H|）以改善等值线外观。
+建议使用亚像素平滑（:option:`-H`）以改善等值线外观。
 生成 PostScript 图块及平滑处理均会显著增加计算时间。
 
 备注

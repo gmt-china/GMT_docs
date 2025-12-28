@@ -24,14 +24,14 @@ polespotter
 
 **gmt polespotter**
 [ :option:`-A`\ *abyssalhills* ]
-[ |-D|\ *spacing* ]
-[ |-E|\ **a**\|\ **f**\ *sigma* ]
-[ |-F|\ *fracturezones* ]
-[ |-G|\ *outgrid* ]
+[ :option:`-D`\ *spacing* ]
+[ :option:`-E`\ **a**\|\ **f**\ *sigma* ]
+[ :option:`-F`\ *fracturezones* ]
+[ :option:`-G`\ *outgrid* ]
 [ |SYN_OPT-I| ]
-[ |-N| ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
-[ |-S|\ **l**\|\ **p**\|\ **s**\ [*modifiers*] ]
+[ :option:`-S`\ **l**\|\ **p**\|\ **s**\ [*modifiers*] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -99,7 +99,7 @@ polespotter
 
 **-Sp**
     Pole 模式表示我们搜索给定网格上的所有极点，并确定与所有给定线约束的加权卡方误差。
-    此模式需要 |-G|、:option:`-R`、|-I| （可选 **-r** ）。
+    此模式需要 :option:`-G`、:option:`-R`、:option:`-I` （可选 **-r** ）。
 
 **-Ss**\ [**+c**\ *xfile*][**+l**]
     Spot 模式表示我们计算断裂带的平分线和沿深海丘的经线，并确定所有这些大圆的交点。
@@ -137,7 +137,7 @@ polespotter
 
 #. 每个输入线必须包含两个或多个点，每两个连续点定义一个大圆线段。
 对于断裂带，这些点应被足够密集地数字化，以便两点间的大圆能近似小圆。
-#. 所有线段具有相同的角度不确定性 [1，除非通过 |-E| 改变]。
+#. 所有线段具有相同的角度不确定性 [1，除非通过 :option:`-E` 改变]。
 然而，单个线段可通过在段头中添加 **-D**\ *sigma* 参数（单位：度）来覆盖此权重。
 
 示例

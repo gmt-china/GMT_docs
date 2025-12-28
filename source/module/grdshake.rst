@@ -13,11 +13,11 @@ grdshake
 语法
 ------
 
-**gmt grdshake** *ingrid* |-G|\ *outgrid*
-|-L|\ *fault.dat*
-|-M|\ *mag*
+**gmt grdshake** *ingrid* :option:`-G`\ *outgrid*
+:option:`-L`\ *fault.dat*
+:option:`-M`\ *mag*
 [ :option:`-C`\ *a,v,i* ]
-[ |-F|\ *mecatype* ]
+[ :option:`-F`\ *mecatype* ]
 [ |SYN_OPT-R| ]
 
 必选选项
@@ -50,7 +50,7 @@ grdshake
 .. _-C:
 
 **-C**\ *a,v,i*
-    以逗号隔开的需要计算的分量 (多个分量要求在 |-G| 有对应设置)。
+    以逗号隔开的需要计算的分量 (多个分量要求在 :option:`-G` 有对应设置)。
     可以选择 *a*\ (cceleration，加速度)， *v*\ (elocity，速度)， *i*\ (ntensity，烈度) [默认为 *i*]。
 
 .. _-F:

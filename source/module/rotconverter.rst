@@ -22,12 +22,12 @@ rotconverter
 --------
 
 **gmt rotconverter** [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
-[ :option:`-A` ] [ |-D| ]
-[ |-F|\ **s**\|\ **t** ]
-[ |-G| ]
-[ |-M|\ [*fact*] ]
-[ |-N| ] [ |-S| ]
-[ |-T| ] [ |-W| ]
+[ :option:`-A` ] [ :option:`-D` ]
+[ :option:`-F`\ **s**\|\ **t** ]
+[ :option:`-G` ]
+[ :option:`-M`\ [*fact*] ]
+[ :option:`-N` ] [ :option:`-S` ]
+[ :option:`-T` ] [ :option:`-W` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT--| ]
@@ -79,7 +79,7 @@ rotconverter
 **-M**\ [*fact*]
     输出时将张开角度缩放 *fact* 倍 [0.5]。
     通常用于获取流线所需的半速率。
-    需要阶段极点输出（参见 |-F|）。
+    需要阶段极点输出（参见 :option:`-F`）。
 
 .. _-N:
 
@@ -110,7 +110,7 @@ rotconverter
 限制
 --------
 
-请注意，|-N|、|-S| 和 |-W| 只能同时使用一个。
+请注意，:option:`-N`、:option:`-S` 和 :option:`-W` 只能同时使用一个。
 
 示例
 --------

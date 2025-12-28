@@ -22,14 +22,14 @@ ternary
 [ :option:`-R`\ *amin*\ /*amax*\ /*bmin*\ /*bmax*\ /*cmin*\ /*cmax* ]
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *cpt* ]
-[ |-G|\ *fill* ]
-[ |-L|\ *a*\ /*b*\ /*c* ]
-[ |-M| ]
-[ |-N| ]
-[ |-S|\ [*symbol*][*size*] ]
+[ :option:`-G`\ *fill* ]
+[ :option:`-L`\ *a*\ /*b*\ /*c* ]
+[ :option:`-M` ]
+[ :option:`-N` ]
+[ :option:`-S`\ [*symbol*][*size*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*pen*][*attr*] ]
+[ :option:`-W`\ [*pen*][*attr*] ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-bi| ]
@@ -48,7 +48,7 @@ ternary
 必须选项
 --------
 
-必须使用 |-M| 或者 :option:`-R` 和 **-J**。
+必须使用 :option:`-M` 或者 :option:`-R` 和 **-J**。
 
 可选选项
 --------
@@ -69,7 +69,7 @@ ternary
 **-C**\ *cpt* 或 **-C**\ *color1,color2*\ [*,color3*\ ,...]
     指定CPT文件，或者跟上一系列以逗号分隔的颜色以构建一个线性连续CPT
 
-    若使用了 |-S| 选项，则符号填充色由第四列数值决定，其它字段向右移动一列
+    若使用了 :option:`-S` 选项，则符号填充色由第四列数值决定，其它字段向右移动一列
     （即若需要指定符号大小，符号大小应置于第5列）。
 
     现代模式下，若不指定CPT，则使用当前CPT。
@@ -79,7 +79,7 @@ ternary
 **-G**\ *fill*
     指定符号填充色。
 
-    对于多段数据，段头记录中的 |-G| 字符串会覆盖命令行中该选项的值。
+    对于多段数据，段头记录中的 :option:`-G` 字符串会覆盖命令行中该选项的值。
 
 .. _-J:
 
@@ -121,7 +121,7 @@ ternary
 **-S**\ [*symbol*][*size*]
     指定要绘制的符号类型及大小
 
-    详见 :doc:`plot` 中的 |-S| 选项。
+    详见 :doc:`plot` 中的 :option:`-S` 选项。
 
 .. include:: explain_-U.rst_
 

@@ -22,12 +22,12 @@ hotspotter
 --------
 
 **gmt hotspotter** [*table*]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-|-G|\ *outgrid*
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-G`\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
-[ |-N|\ *upper_age* ]
-[ |-S| ] [ |-T| ]
+[ :option:`-N`\ *upper_age* ]
+[ :option:`-S` ] [ :option:`-T` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -79,7 +79,7 @@ hotspotter
 .. _-T:
 
 **-T**
-    截断超过通过 |-N| 设置的上限年龄的海山年龄 [默认不截断]。
+    截断超过通过 :option:`-N` 设置的上限年龄的海山年龄 [默认不截断]。
 
 .. include:: explain_-V.rst_
 

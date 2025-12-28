@@ -15,27 +15,27 @@ mgd77sniffer
 沿轨的梯度以及观测数据与重力和测深模型之间的差异。默认情况下，检测到的数据问题通常会
 导致每个扫描记录出现多条消息。使用计算机可解析的格式（见 `E77 误差格式`_ ）可选择输
 出数据中存在的问题（ **-De** 选项）。默认误差阈值来自 1952 年到 2006 年 1 约期间收集
-的所有 MGD77 地球物理数据的直方图。使用 |-L| 选项可以调整阈值。
+的所有 MGD77 地球物理数据的直方图。使用 :option:`-L` 选项可以调整阈值。
 
 语法
 ----
 
 **gmt mgd77sniffer** *GEODAS-ids* [ :option:`-A`\ *fieldabbrev*,\ *scale*,\ *offset* ]
 [ :option:`-C`\ *maxspd* ]
-[ |-D|\ **d**\|\ **e**\|\ **E**\|\ **f**\|\ **l**\|\ **m**\|\ **s**\|\ **v**\ [**r**] ]
-[ |-E| ]
-[ |-G|\ *fieldabbrev*,\ *imggrid*,\ *scale*,\ *mode* or |-G|\ *fieldabbrev*,\ *grid* ]
-[ |-H| ]
-[ |-I|\ *fieldabbrev*,\ *rec1*,\ *recN* ]
-[ |-L|\ *custom-limits-file* ]
-[ |-M| ]
-[ |-N| ]
+[ :option:`-D`\ **d**\|\ **e**\|\ **E**\|\ **f**\|\ **l**\|\ **m**\|\ **s**\|\ **v**\ [**r**] ]
+[ :option:`-E` ]
+[ :option:`-G`\ *fieldabbrev*,\ *imggrid*,\ *scale*,\ *mode* or :option:`-G`\ *fieldabbrev*,\ *grid* ]
+[ :option:`-H` ]
+[ :option:`-I`\ *fieldabbrev*,\ *rec1*,\ *recN* ]
+[ :option:`-L`\ *custom-limits-file* ]
+[ :option:`-M` ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
-[ |-S|\ **d**\|\ **s**\|\ **t** ]
-[ |-T|\ *gap* ]
+[ :option:`-S`\ **d**\|\ **s**\|\ **t** ]
+[ :option:`-T`\ *gap* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ **c**\|\ **g**\|\ **o**\|\ **s**\|\ **t**\|\ **v**\|\ **x** ]
-[ |-Z|\ *level* ]
+[ :option:`-W`\ **c**\|\ **g**\|\ **o**\|\ **s**\|\ **t**\|\ **v**\|\ **x** ]
+[ :option:`-Z`\ *level* ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]
 [ |SYN_OPT-n| ]
@@ -58,7 +58,7 @@ mgd77sniffer
 .. _-C:
 
 **-C**\ *maxspd*
-    以 m/s 为单位设置最大船速，或使用 |-N| 选项设置使用节作为速度单位。默认船速
+    以 m/s 为单位设置最大船速，或使用 :option:`-N` 选项设置使用节作为速度单位。默认船速
     超过10 m/s (~ 20 节)即被标记为超过最大船速。
 
 .. _-D:
@@ -67,7 +67,7 @@ mgd77sniffer
     抑制默认的警告输出并且仅逐行输出数据值、梯度以及观测值与网格的差、E77 错误总结以及
     新创建的列等。追加 **r** 表示包含所有的数据，默认省略存在导航错误的数据。
 
-    - **-Dd** 输出观测值和网格数据的差值，需要 |-G| 选项，数据信息包括为
+    - **-Dd** 输出观测值和网格数据的差值，需要 :option:`-G` 选项，数据信息包括为
       ``lat lon dist cruiseZ gridZ diff [cruiseZ2 gridZ2 diff2 …]``
 
       注：从观测值中减去网格值，因此正值意味着观测值大于网格值，对于多个网格，以命令行
@@ -83,7 +83,7 @@ mgd77sniffer
       不同的观测值来说通常是不同的，因为他们的仪器采样率不同，输出格式信息包括：
       ``d[twt] ds d[depth] ds d[mtf1] ds d[mtf2] ds d[mag] ds d[diur] ds d[msd] ds d[gobs] ds d[eot] ds d[faa] ds``
 
-    - **-Dl** 显示 mgd77sniffer 的限制，该选项的输出可以为 |-L| 选项提供参考。不需要额外
+    - **-Dl** 显示 mgd77sniffer 的限制，该选项的输出可以为 :option:`-L` 选项提供参考。不需要额外
       的参数，数据信息包括 ``fieldabbrev min max maxSlope maxArea``
 
     - **-Dm** 以符合 Y2K MGD77 格式输出 MGD77 数据
@@ -91,7 +91,7 @@ mgd77sniffer
     - **-Dn** 每条记录输出到海岸线的距离。需要 **-Gnav** 选项，输出信息包括：
       ``lat lon dist distToCoast``
 
-    - **-Ds** 输出速度以及地球物理观测的梯度。梯度的类型与 |-S| 设置结果一致（默认为空间梯度），
+    - **-Ds** 输出速度以及地球物理观测的梯度。梯度的类型与 :option:`-S` 设置结果一致（默认为空间梯度），
       输出信息包括
       ``speed d[twt] d[depth] d[mtf1] d[mtf2] d[mag] d[diur] d[msd] d[gobs] d[eot] d[faa]``
 
@@ -125,7 +125,7 @@ mgd77sniffer
     - **-G**\ *fieldabbrev*,\ *grid* 将测量数据与其他 GMT 可识别的网格数据比较。
       *fieldabbrev* 为字段缩写，*grid* 为网格文件名。
 
-    该模块同时支持和多个网格比较，只需多次使用 |-G| 选项即可。
+    该模块同时支持和多个网格比较，只需多次使用 :option:`-G` 选项即可。
 
     网格比较会激活几种错误检查：
 
@@ -142,7 +142,7 @@ mgd77sniffer
 .. _-H:
 
 **-H**
-    只能与 |-G| 选项同时使用。设置计算船测数据与网格数据之间偏差的时机，默认
+    只能与 :option:`-G` 选项同时使用。设置计算船测数据与网格数据之间偏差的时机，默认
     情况下，只有在比较了完整的观测数据集后，然后才能通过最小二乘分析得到得到
     可靠的估计。
 
@@ -163,8 +163,8 @@ mgd77sniffer
 **-L**\ *custom-limits-file*
     使用文件 *custom-limits-file* 覆盖默认的错误检查限制。字段信息如
     `Mgd77 字段信息`_ 所示。文件中每行均包含一个字段记录，可以包括
-    最大值，最小值，最大梯度，最大面积等。最大梯度与 |-S| 选项中设置
-    的梯度一致。|-G| 选项使用最大面积作为阈值。使用 **-Dl** 生成的
+    最大值，最小值，最大梯度，最大面积等。最大梯度与 :option:`-S` 选项中设置
+    的梯度一致。:option:`-G` 选项使用最大面积作为阈值。使用 **-Dl** 生成的
     信息可以确定该限制文件的具体值， ``mgd77sniffer -Dl -L<yourlimitsfile>`` 。
 
     下面展示了一个示例文件，其中 ``--`` 表示使用默认值。
@@ -229,7 +229,7 @@ mgd77sniffer
 
     - **x** 警告的总结
 
-    默认情况下输出所有警告信息。该选项与 |-D| 选项不兼容
+    默认情况下输出所有警告信息。该选项与 :option:`-D` 选项不兼容
 
 .. _-Z:
 
@@ -277,7 +277,7 @@ Mgd77 字段信息
 网格文件信息
 ------------
 
-对于 |-G| ，网格必须使用 Sandwell&Smith img 网格文件或者 GMT 支持的任何网格类型，
+对于 :option:`-G` ，网格必须使用 Sandwell&Smith img 网格文件或者 GMT 支持的任何网格类型，
 img 文件为没有头部信息的球墨卡托 2 字节网格。
 
 E77 误差格式

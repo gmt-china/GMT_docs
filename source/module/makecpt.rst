@@ -14,21 +14,21 @@ makecpt
 在经典模式中，CPT 文件的内容会输出到屏幕标准输出中。
 而在现代模式中，该命令不会生成显式的 CPT 文件，而是隐式地将其自动设置为后续命令的默认 CPT 文件。
 因此无法使用经典的 ``gmt makecpt xxx > cpt`` 方式生成 CPT 文件。如果需要在现代模式中生成 CPT 文件，
-则可以使用 |-H| 选项： ``gmt makecpt xxx -H > cpt`` 。
+则可以使用 :option:`-H` 选项： ``gmt makecpt xxx -H > cpt`` 。
 关于经典模式和现代模式的语法区别，建议阅读 :doc:`/migrating/classic2modern` 章节。
 
 该命令基于主 CPT 创建用户所需的 CPT，获得的 CPT 可以是离散或连续的，颜色也可相对
 主 CPT 反转。如果需使用 GMT 之外的 CPT 作为主 CPT，可在
 `cpt-city <http://seaviewsensing.com/pub/cpt-city/index.html>`_ 中查询。
 
-|-T| 选项所指定的 z 值范围以外的数值，分别使用 3 种颜色来表示，分别为：
+:option:`-T` 选项所指定的 z 值范围以外的数值，分别使用 3 种颜色来表示，分别为：
 
     - 背景色 (B，background color), 表示低于最小 z 值时所对应的颜色
     - 前景色 (F，foreground color), 表示高于最大 z 值时所对应的颜色
     - 以及 NaN 值颜色 (N)，表示 z 值被定义为 NaN 时对应的颜色，即 z 值未定义的情况
 
-默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主 CPT 文件的设置，但也可以使用 |-D| 、
-|-M| 以及 |-N| 选项修改。或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
+默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主 CPT 文件的设置，但也可以使用 :option:`-D` 、
+:option:`-M` 以及 :option:`-N` 选项修改。或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。需注意，选项总会覆盖
 自定义参数值。
 
@@ -41,20 +41,20 @@ makecpt
 **gmt makecpt**
 [ :option:`-A`\ *transparency*\ [**+a**] ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ [**i**\|\ **o**] ]
-[ |-E|\ [*nlevels*] ]
-[ |-F|\ [**R**\|\ **r**\|\ **h**\|\ **c**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
-[ |-G|\ *zlo*\ /\ *zhi* ]
-[ |-H| ]
-[ |-I|\ [**c**][**z**] ]
-[ |-M| ]
-[ |-N| ]
-[ |-Q| ]
-[ |-S|\ *mode* ]
-[ |-T|\ [*min*/*max*/*inc*\ [**+b**\|\ **i**\|\ **l**\|\ **n**]\|\ *file*\|\ *list*] ]
-[ |-V|\ [*level*] ]
-[ |-W|\ [**w**] ]
-[ |-Z| ]
+[ :option:`-D`\ [**i**\|\ **o**] ]
+[ :option:`-E`\ [*nlevels*] ]
+[ :option:`-F`\ [**R**\|\ **r**\|\ **h**\|\ **c**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
+[ :option:`-G`\ *zlo*\ /\ *zhi* ]
+[ :option:`-H` ]
+[ :option:`-I`\ [**c**][**z**] ]
+[ :option:`-M` ]
+[ :option:`-N` ]
+[ :option:`-Q` ]
+[ :option:`-S`\ *mode* ]
+[ :option:`-T`\ [*min*/*max*/*inc*\ [**+b**\|\ **i**\|\ **l**\|\ **n**]\|\ *file*\|\ *list*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**w**] ]
+[ :option:`-Z` ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-h| ]
@@ -92,7 +92,7 @@ makecpt
 
 **-E**\ [*nlevels*]
     从命令行或者标准输入中读取表数据文件，使用最后一列决定数据的范围，*nlevels* 表示
-    生成的 CPT 文件会被重采样为 *nlevels* 个等间距的切片，上述两者即等同于 |-T| 选项
+    生成的 CPT 文件会被重采样为 *nlevels* 个等间距的切片，上述两者即等同于 :option:`-T` 选项
     作用。使用 **-i** 选项可选择其他列决定数据范围，二进制文件则需同时使用 **-bi** 。
     如果不给定 *nlevels* 参数，则默认其等于主 CPT 中切片数。
 
@@ -117,7 +117,7 @@ makecpt
 
     附加 **+k**\ *keys* 选项表示使用字符而不是数字设置分类 CPT 的键值。*keys* 可以是
     一个文件，其中包含键值列表；*keys* 也可以是单个字符，例如：D，则键值列表为 D、E、F...。
-    如果是逗号分隔的键值列表，则应使用 |-T| 选项，而不是该选项。
+    如果是逗号分隔的键值列表，则应使用 :option:`-T` 选项，而不是该选项。
 
 .. _-G:
 
@@ -141,7 +141,7 @@ makecpt
       :term:`COLOR_FOREGROUND` 参数设置的前景色和背景色[默认]。详细用法和说明见
       :doc:`/cpt/makecpt` 。
 
-    - **-Iz** 选项翻转 CPT 的 *z* 值（不包括前景色、背景色）。该操作发生于 |-G| 和 |-T|
+    - **-Iz** 选项翻转 CPT 的 *z* 值（不包括前景色、背景色）。该操作发生于 :option:`-G` 和 :option:`-T`
       选项之前，因此使用上述两选项时，需先考虑 **-Iz** 操作后的 *z* 值的实际范围。
 
 .. _-M:
@@ -149,7 +149,7 @@ makecpt
 **-M**
     使用 gmt.conf 文件或者命令行中设置的 :term:`COLOR_BACKGROUND` ，
     :term:`COLOR_FOREGROUND` 和 :term:`COLOR_NAN` 覆盖 CPT 中的前景色、背景色和 NaN 值
-    的颜色。如果和 |-D| 同时使用，则前景色和背景色均被 |-D| 覆盖。
+    的颜色。如果和 :option:`-D` 同时使用，则前景色和背景色均被 :option:`-D` 覆盖。
 
 .. _-N:
 
@@ -159,13 +159,13 @@ makecpt
 .. _-Q:
 
 **-Q**
-    |-T| 选项输入为对数值 log10(z) 时，通过对数值分配颜色，但是输出结果仍为原值 *z*。
+    :option:`-T` 选项输入为对数值 log10(z) 时，通过对数值分配颜色，但是输出结果仍为原值 *z*。
 
 .. _-S:
 
 **-S**\ *mode*
     从命令行或者标准输入中读取表数据文件，使用 **-i** 选项可调整输入列，从该文件中
-    确定适合 |-T| 选项的范围。下述选项给出确定范围的类型：
+    确定适合 :option:`-T` 选项的范围。下述选项给出确定范围的类型：
 
     - **-Sr** 使用 min/max 作为范围
     - **-S**\ *inc*\ [**+d**] 使用 min/max 作为范围，但四舍五入到最近的 *inc*, 以
@@ -226,7 +226,7 @@ makecpt
 离散 CPT 和连续 CPT
 -------------------
 
-所有的 CPT 都可以拉伸，但只建议使用连续 CPT 在 |-T| 指定的新节点上采样，如果
+所有的 CPT 都可以拉伸，但只建议使用连续 CPT 在 :option:`-T` 指定的新节点上采样，如果
 使用离散 CPT 采样，则会警告，但仍可使用。GMT 这样做的原因是防止重采样
 原始 CPT 导致混叠。
 
