@@ -52,7 +52,7 @@ backtracker
 
 |No-spaces|
 
-输入数据（可选）
+输入数据
 ------------------
 
 .. include:: explain_intables.rst_
