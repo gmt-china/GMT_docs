@@ -42,7 +42,7 @@ backtracker
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
-[ :option:`-h`\ headers ]
+[ :option:`-h`\ *headers* ]
 [ :option:`-i`\ flags ]
 [ :option:`-o`\ flags ]
 [ :option:`-q`\ flags ]
