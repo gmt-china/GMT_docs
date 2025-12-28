@@ -37,7 +37,7 @@ backtracker
 [ :option:`-T`\ *zero_age* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**a**\|\ **t**] ]
-[ :option:`-bi`\ binary ]
+[ :option:`-bi`\ *binary* ]
 [ :option:`-bo`\ binary ]
 [ :option:`-d`\ nodata\ [**+c**\ *col*] ]
 [ :option:`-e`\ regexp ]
