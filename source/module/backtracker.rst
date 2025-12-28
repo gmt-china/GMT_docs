@@ -45,7 +45,7 @@ backtracker
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
-[ :option:`-q`\ flags ]
+[ :option:`-q`\ *flags* ]
 [ :option:`-s`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
