@@ -29,7 +29,7 @@ grdblend
 |-G|\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
-[ |-C|\ **f**\|\ **l**\|\ **o**\|\ **u**\ [**+n**\|\ **p**] ]
+[ :option:`-C`\ **f**\|\ **l**\|\ **o**\|\ **u**\ [**+n**\|\ **p**] ]
 [ |-N|\ *nodata* ]
 [ |-Q| ]
 [ |-Z|\ *scale* ]

@@ -23,7 +23,7 @@ polespotter
 --------
 
 **gmt polespotter**
-[ |-A|\ *abyssalhills* ]
+[ :option:`-A`\ *abyssalhills* ]
 [ |-D|\ *spacing* ]
 [ |-E|\ **a**\|\ **f**\ *sigma* ]
 [ |-F|\ *fracturezones* ]

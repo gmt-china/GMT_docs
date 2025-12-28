@@ -17,8 +17,8 @@ x2sys_cross
 语法
 ----
 
-**gmt x2sys_cross** *track(s)* |-T|\ *TAG* [ |-A|\ *pairs* ]
-[ |-C|\ [*runtimes*] ]
+**gmt x2sys_cross** *track(s)* |-T|\ *TAG* [ :option:`-A`\ *pairs* ]
+[ :option:`-C`\ [*runtimes*] ]
 [ |-D|\ [**S**\|\ **N**] ]
 [ |-I|\ **l**\|\ **a**\|\ **c** ]
 [ |-Q|\ **e**\|\ **i** ]

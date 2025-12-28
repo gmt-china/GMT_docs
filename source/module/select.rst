@@ -28,7 +28,7 @@ select
 
 **gmt select** [ *table* ]
 [ |SYN_OPT-Area| ]
-[ |-C|\ *pointfile*\ \|\ *lon*/*lat*\ **+d**\ *dist* ]
+[ :option:`-C`\ *pointfile*\ \|\ *lon*/*lat*\ **+d**\ *dist* ]
 [ |-D|\ *resolution*\ [**+f**] ]
 [ |-E|\ [**f**][**n**] ]
 [ |-F|\ *polygonfile* ]

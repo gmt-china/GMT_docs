@@ -22,8 +22,8 @@ fzmodeler
 其中：
 
 * *A* 表示幅值（由 |-N| 控制），
-* *m* 表示不对称性（由 |-A| 控制），
-* *u* 表示压缩率（由 |-C| 控制）。
+* *m* 表示不对称性（由 :option:`-A` 控制），
+* *u* 表示压缩率（由 :option:`-C` 控制）。
 
 这里，:math:`G_0` 是高斯函数（Gaussian function），
 :math:`G_1` 和 :math:`G_2` 分别是其前两个水平方向导数。
@@ -44,8 +44,8 @@ fzmodeler
 语法
 --------
 
-**fzmodeler** [ |-A|\ *asymmetry* ]
-[ |-C|\ *compression* ]
+**fzmodeler** [ :option:`-A`\ *asymmetry* ]
+[ :option:`-C`\ *compression* ]
 [ |-D|\ *min*/*max*/*inc* ]
 [ |-G|\ *comp* ]
 [ |-M| ]

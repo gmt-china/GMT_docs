@@ -17,7 +17,7 @@ x2sys_datalist
 ----
 
 **gmt x2sys_datalist** *track(s)* **-T**\ *TAG*
-[ |-A| ]
+[ :option:`-A` ]
 [ |-E| ]
 [ |-F|\ *name1*,\ *name2*,... ]
 [ |-I|\ [*list*] ]

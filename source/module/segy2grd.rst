@@ -22,7 +22,7 @@ segy2grd
 |-G|\ *grdfile*
 |SYN_OPT-I|
 |SYN_OPT-R|
-[ |-A|\ [**n**\|\ **z**] ]
+[ :option:`-A`\ [**n**\|\ **z**] ]
 [ |-L|\ [*nsamp*] ]
 [ |-M|\ [*ntraces*] ]
 [ |-Q|\ **x**\|\ **y**\ *value* ]

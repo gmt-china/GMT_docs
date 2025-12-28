@@ -20,7 +20,7 @@ legend
 **gmt legend** [ *specfile* ]
 |-D|\ *refpoint*
 [ |SYN_OPT-B| ]
-[ |-C|\ *dx*/*dy* ]
+[ :option:`-C`\ *dx*/*dy* ]
 [ |-F|\ *box* ]
 [ :option:`-J`\ *parameters* ]
 [ |SYN_OPT-R| ]
@@ -132,7 +132,7 @@ GMT中共有14种图例类型，列举如下：
 
     - *offset* 是colorbar相对于图例框左边界的距离
     - *height* 是colorbar高度，其后可以加上子选项 [**+e**\ [**b**\|\ **f**][*length*]][**+h**][**+m**\ [**a**\|\ **c**\|\ **l**\|\ **u**]][**+n**\ [*txt*]]
-    - *optional arguments* 为 :doc:`colorbar` 模块的其它选项，如 |-B| **-I** |-L| **-M** |-N| **-S** |-Z| **-p**
+    - *optional arguments* 为 :doc:`colorbar` 模块的其它选项，如 :option:`-B` **-I** |-L| **-M** |-N| **-S** |-Z| **-p**
 
 **C** *textcolor*
     接下来的文本所使用的颜色

@@ -26,7 +26,7 @@ inset begin语法
 
 **gmt inset begin**
 |-D|\ *inset-box*
-[ |-C|\ [*side*]\ *clearance* ]
+[ :option:`-C`\ [*side*]\ *clearance* ]
 [ |-F|\ *box* ]
 [ |-N| ]
 [ |SYN_OPT-R| ]

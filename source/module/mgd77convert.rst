@@ -18,7 +18,7 @@ mgd77convert
 
 **gmt mgd77convert** *GEODAS-ids* |-F|\ **a**\|\ **c**\|\ **m**\|\ **t**
 |-T|\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
-[ |-C| ]
+[ :option:`-C` ]
 [ |-D| ]
 [ |-L|\ [**w**][**e**][**+l**] ]
 [ |SYN_OPT-V| ]

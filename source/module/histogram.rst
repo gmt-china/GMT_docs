@@ -18,9 +18,9 @@ histogram
 **gmt histogram** [ *table* ]
 :option:`-J`\ **x**\|\ **X**\ *parameters*
 |-T|\ [*min/max*\ /]\ *inc*\ [**+n**] \|\ |-T|\ *file*\|\ *list*
-[ |-A| ]
+[ :option:`-A` ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
+[ :option:`-C`\ *cpt* ]
 [ |-D|\ [**+b**][**+f**\ *font*][**+o**\ *off*][**+r**] ]
 [ |-F| ]
 [ |-G|\ *fill* ]

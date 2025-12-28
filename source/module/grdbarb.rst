@@ -22,9 +22,9 @@ grdbarb
 **grdbarb**
 *compx.nc* *compy.nc*
 **-J**\ *parameters*
-[ |-A| ]
+[ :option:`-A` ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
+[ :option:`-C`\ *cpt* ]
 [ |-G|\ *fill* ]
 [ |-I|\ [**x**]\ *dx*\ [/*dy*] ]
 [ |-N| ]

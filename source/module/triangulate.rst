@@ -24,7 +24,7 @@ triangulate
 ----
 
 **gmt triangulate** [ *table* ]
-[ |-C|\ *slpfile* ]
+[ :option:`-C`\ *slpfile* ]
 [ |-D|\ **x**\|\ **y** ]
 [ |-E|\ *empty* ]
 [ |-G|\ *outgrid* ]

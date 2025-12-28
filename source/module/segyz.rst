@@ -29,7 +29,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 :option:`-J`\ **z**\|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
 |-D|\ *deviation* |-F|\ [*color*] |-W|
-[ |-C|\ *clip* ]
+[ :option:`-C`\ *clip* ]
 [ |-I| ] [ |-L|\ *nsamp* ]
 [ |-M|\ *ntrace* ]
 [ |-N| ]

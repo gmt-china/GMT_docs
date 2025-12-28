@@ -20,8 +20,8 @@ mgd77sniffer
 语法
 ----
 
-**gmt mgd77sniffer** *GEODAS-ids* [ |-A|\ *fieldabbrev*,\ *scale*,\ *offset* ]
-[ |-C|\ *maxspd* ]
+**gmt mgd77sniffer** *GEODAS-ids* [ :option:`-A`\ *fieldabbrev*,\ *scale*,\ *offset* ]
+[ :option:`-C`\ *maxspd* ]
 [ |-D|\ **d**\|\ **e**\|\ **E**\|\ **f**\|\ **l**\|\ **m**\|\ **s**\|\ **v**\ [**r**] ]
 [ |-E| ]
 [ |-G|\ *fieldabbrev*,\ *imggrid*,\ *scale*,\ *mode* or |-G|\ *fieldabbrev*,\ *grid* ]

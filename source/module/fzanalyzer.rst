@@ -25,8 +25,8 @@ fzanalyzer
 
 **gmt fzanalyzer** *crossprofiles*
 |-F|\ *fzlines*
-[ |-A|\ *min*/*max*/*inc* ]
-[ |-C|\ *min*/*max*/*inc* ]
+[ :option:`-A`\ *min*/*max*/*inc* ]
+[ :option:`-C`\ *min*/*max*/*inc* ]
 [ |-D|\ *corrwidth* ]
 [ |-I|\ *FZ*\ [/*profile*] ]
 [ |-S|\ [**b**\|\ **c**]]

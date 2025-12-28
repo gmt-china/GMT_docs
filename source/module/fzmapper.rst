@@ -20,7 +20,7 @@ fzmapper
 语法
 --------
 
-**fzmapper** [ |-A| ]
+**fzmapper** [ :option:`-A` ]
 [ |-F|\ *origfile* ]
 [ |-G|\ *vgg_grid* ]
 [ |-L|\ *labelint* ] 
@@ -73,7 +73,7 @@ fzmapper
      输入文件包括 *prefix*\ _cross.txt、*prefix*\ _par.txt，以及由 :doc:`grdtrack`
      生成的重采样输出文件 *prefix*\ _resampled.txt。
      当使用 |-S| 选项时，还会加载由 :doc:`fzblender` 生成的 *prefix*\ _blend.txt；
-     若使用 |-A| 选项，还会加载由 :doc:`fzanalyzer` 生成的 *prefix*\ _analysis.txt。
+     若使用 :option:`-A` 选项，还会加载由 :doc:`fzanalyzer` 生成的 *prefix*\ _analysis.txt。
 
 .. _-W:
 

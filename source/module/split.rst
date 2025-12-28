@@ -18,8 +18,8 @@ split
 ----
 
 **gmt split** [ *table* ]
-[ |-A|\ *azimuth*/*tolerance* ]
-[ |-C|\ *course_change*]
+[ :option:`-A`\ *azimuth*/*tolerance* ]
+[ :option:`-C`\ *course_change*]
 [ |-D|\ *minimum_distance* ]
 [ |-F|\ *xy\_filter*/*z\_filter* ]
 [ |-N|\ *template* ]

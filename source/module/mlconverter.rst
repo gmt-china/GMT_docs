@@ -18,7 +18,7 @@ mlconverter
 --------
 
 **gmt mlconverter** [ *ML_data* ]
-[ |-A| ]
+[ :option:`-A` ]
 [ |-G|\ [**s**] ]
 [ |-I|\ *FZid* ] 
 [ |-T|\ **c**\|\ **g**\|\ **o**\|\ **s** ]

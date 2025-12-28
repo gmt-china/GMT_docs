@@ -16,7 +16,7 @@ grdshake
 **gmt grdshake** *ingrid* |-G|\ *outgrid*
 |-L|\ *fault.dat*
 |-M|\ *mag*
-[ |-C|\ *a,v,i* ]
+[ :option:`-C`\ *a,v,i* ]
 [ |-F|\ *mecatype* ]
 [ |SYN_OPT-R| ]
 

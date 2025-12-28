@@ -17,7 +17,7 @@ mgd77track
 **gmt mgd77track** *GEODAS-ids*
 |SYN_OPT-R|
 :option:`-J`\ *parameters*
-[ |-A|\ [**c**][*size*][**+i**\ *spacing*] ]
+[ :option:`-A`\ [**c**][*size*][**+i**\ *spacing*] ]
 [ |SYN_OPT-B| ]
 [ **-Da**\ *startdate* ]
 [ |-D|\ **b**\ *stopdate* ]

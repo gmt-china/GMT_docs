@@ -18,7 +18,7 @@ grdvolume
 ----
 
 **gmt grdvolume** *grdfile*
-[ |-C|\ *cval* or |-C|\ *low/high/delta* or |-C|\ **r**\ *low/high* or |-C|\ **r**\ *cval*]
+[ :option:`-C`\ *cval* or :option:`-C`\ *low/high/delta* or :option:`-C`\ **r**\ *low/high* or :option:`-C`\ **r**\ *cval*]
 [ |-L|\ *base* ]
 [ |SYN_OPT-R| ]
 [ |-S|\ [*unit*] ]

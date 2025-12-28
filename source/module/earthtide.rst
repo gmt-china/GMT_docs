@@ -21,7 +21,7 @@ earthtide
 **gmt earthtide**
 |-T|\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
 |-G|\ *outgrid*
-[ |-C|\ *x|e,y|n,z|v* ]
+[ :option:`-C`\ *x|e,y|n,z|v* ]
 [ |SYN_OPT-I| ]
 [ |-L|\ *lon/lat* ]
 [ |SYN_OPT-R| ]
@@ -60,7 +60,7 @@ earthtide
     不同选项之间使用逗号分隔：**x** 或 **e** 为东向分量；**y** 或 **n**
     为北向分量，**z** 或 **v** 为垂直分量。例如，**-Ce**,\ **v** 将输出
     写入两个网格，一个为东向分量网格，一个为垂直分量网格。如果设置了
-    |-G| ，但不指定 |-C| ，则默认为垂直分量。
+    |-G| ，但不指定 :option:`-C` ，则默认为垂直分量。
 
 .. include:: explain_-I.rst_
 

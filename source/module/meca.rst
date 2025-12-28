@@ -17,9 +17,9 @@ meca
 :option:`-J`\ *parameters*
 |SYN_OPT-R|
 |-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
-[ |-A|\ [**+p**\ *pen*][**+s**\ *size*] ]
+[ :option:`-A`\ [**+p**\ *pen*][**+s**\ *size*] ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
+[ :option:`-C`\ *cpt* ]
 [ |-D|\ *depmin*/*depmax* ]
 [ |-E|\ *fill* ]
 [ |-F|\ *mode*\ [*args*] ]
@@ -55,7 +55,7 @@ meca
 .. note::
 
     请注意，下面的各个震源机制解格式中，
-    设置新的震源球放置位置 *newX* 和 *newY* 必须另外再加上 |-A| 选项后才可生效。
+    设置新的震源球放置位置 *newX* 和 *newY* 必须另外再加上 :option:`-A` 选项后才可生效。
 
 .. include:: explain_meca_-S.rst_
 
@@ -69,7 +69,7 @@ meca
 **-A**\ [**+p**\ *pen*][**+s**\ *size*]
     在 (*newX*,\ *newY*) 处绘制震源球
 
-    默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 |-A| 选项，
+    默认会在数据输入所指定的 (*X*,\ *Y*) 坐标处绘制震源球。使用 :option:`-A` 选项，
     则将震源球绘制在 (*newX*,\ *newY*) 处，在震源位置绘制一个小圆，
     并将 (*X*,\ *Y*) 和 (*newX*,\ *newY*) 连线。
 

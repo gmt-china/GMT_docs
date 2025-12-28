@@ -22,7 +22,7 @@ rotconverter
 --------
 
 **gmt rotconverter** [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
-[ |-A| ] [ |-D| ]
+[ :option:`-A` ] [ |-D| ]
 [ |-F|\ **s**\|\ **t** ]
 [ |-G| ]
 [ |-M|\ [*fact*] ]

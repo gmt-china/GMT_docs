@@ -22,7 +22,7 @@ grdrotater
 **gmt grdrotater** *ingrid*
 |-E|\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 |-G|\ *outgrid*
-[ |-A|\ *region* ]
+[ :option:`-A`\ *region* ]
 [ |-D|\ *rotoutline* ]
 [ |-F|\ *polygonfile* ]
 [ |-N| ]
@@ -58,7 +58,7 @@ grdrotater
 
 **-A**\ *region*
     直接指定旋转后网格的区域范围。默认情况下，输出网格的范围与旋转后的区域完全匹配；
-    使用 |-A| 可将输出范围裁剪或扩展为指定的 *region*。
+    使用 :option:`-A` 可将输出范围裁剪或扩展为指定的 *region*。
 
 .. _-D:
 
