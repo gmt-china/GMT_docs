@@ -25,9 +25,9 @@ mgd77info
 **gmt mgd77info** *GEODAS-ids*
 [ :option:`-C`\ [**m**\|\ **e**] ]
 [ :option:`-E`\ [**m**\|\ **e**] ]
-[ |-I|\ **a\|c\|m\|t** ]
-[ |-M|\ **f**\ [*item*]\|\ **r**\|\ **e**\|\ **h** ]
-[ |-L|\ [**v**] ]
+[ :option:`-I`\ **a\|c\|m\|t** ]
+[ :option:`-M`\ **f**\ [*item*]\|\ **r**\|\ **e**\|\ **h** ]
+[ :option:`-L`\ [**v**] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 

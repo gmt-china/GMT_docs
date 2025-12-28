@@ -22,9 +22,9 @@ split
 [ :option:`-C`\ *course_change*]
 [ :option:`-D`\ *minimum_distance* ]
 [ :option:`-F`\ *xy\_filter*/*z\_filter* ]
-[ |-N|\ *template* ]
-[ |-Q|\ *flags* ]
-[ |-S| ]
+[ :option:`-N`\ *template* ]
+[ :option:`-Q`\ *flags* ]
+[ :option:`-S` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -43,7 +43,7 @@ split
 
 *table*
     输入表文件，可以为 2 列，3 列或者 5 列，数据值为 (x,y,[z[,d,h]])。
-    默认情况下认为输入只包含 3 列，若输入数据为 5 列，使用 |-S| 选项确保 d
+    默认情况下认为输入只包含 3 列，若输入数据为 5 列，使用 :option:`-S` 选项确保 d
     不是递减的
 
 可选选项
@@ -68,7 +68,7 @@ split
 
 **-F**\ *xy\_filter*/*z\_filter*
     对数据进行滤波，假定数据为 d 列（x 的增量）的函数。*xy\_filter* 和 *z\_filter*
-    分别为 x，y 值和 z 值的滤波的长度，单位和距离单位相同（见 |-S| ）。如果长度
+    分别为 x，y 值和 z 值的滤波的长度，单位和距离单位相同（见 :option:`-S` ）。如果长度
     为 0 ，即不进行滤波。滤波长度的绝对值的是余弦滤波总的窗口宽度，如果长度为
     正值，则数据为低通滤波，如果为负值，则为高通滤波。如果 *z\_filter* 不为 0，则
     在拆分之前对数据滤波，因此边缘效应只会发生在整体数据的开始和结尾处，在每段数据

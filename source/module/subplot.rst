@@ -22,7 +22,7 @@ subplot
 
 在子图模式中，需要注意如下几点：
 
-- |-X| 和 |-Y| 选项无法在子图模式中使用，可以使用 :option:`-C` 选项作为替代
+- :option:`-X` 和 :option:`-Y` 选项无法在子图模式中使用，可以使用 :option:`-C` 选项作为替代
 - 在使用 :option:`-J` 选项时，可以使用 **?** 来指定地图宽度或比例尺，此时，GMT会根据
   子图的大小自动确定最合适的地图尺寸
 - 对于笛卡尔投影，若想要X和Y轴共用相同的比例尺，则可以使用 **-Jx?**
@@ -38,10 +38,10 @@ subplot begin 语法
 [ :option:`-D` ]
 [ |SYN_OPT-B| ]
 [ |SYN_OPT-J| ]
-[ |-M|\ *margins* ]
+[ :option:`-M`\ *margins* ]
 [ |SYN_OPT-R| ]
-[ |-S|\ *layout* ]
-[ |-T|\ *title* ]
+[ :option:`-S`\ *layout* ]
+[ :option:`-T`\ *title* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
@@ -169,17 +169,17 @@ subplot begin 语法
 
     .. note::
 
-       在子图模式内不能使用 |-X| 和 |-Y| ，可以使用 :option:`-C` 作为替代。 
+       在子图模式内不能使用 :option:`-X` 和 :option:`-Y` ，可以使用 :option:`-C` 作为替代。 
 
 .. _-D:
 
 **-D**
     根据已有的默认设置（基于 gmt.conf 文件或 **--PAR**\ *=value* ）
-    以及 :option:`-B`\ ，:option:`-C`\ ，|-M| 和 |-S| 设置，仅确定图片尺寸（如果使用 **-Ff** ）
+    以及 :option:`-B`\ ，:option:`-C`\ ，:option:`-M` 和 :option:`-S` 设置，仅确定图片尺寸（如果使用 **-Ff** ）
     和子图间距，而不绘制和标注任何底图（默认绘制和标注指定子图的底图）。
     当你想先绘制和标注部分子图的底图，之后再分别在子图内绘制数据而不再重绘底图时，
     该选项很有用。对于两次使用 **gmt subplot** 规划的子图区域，
-    使用不同的 :option:`-B`\ ，:option:`-C`\ ，|-M| 和 |-S| 可能导致子图区域不对齐，
+    使用不同的 :option:`-B`\ ，:option:`-C`\ ，:option:`-M` 和 :option:`-S` 可能导致子图区域不对齐，
     这时使用 :option:`-D` 可将二者对齐。
     相关使用示例详见 `PR #4993 <https://github.com/GenericMappingTools/gmt/pull/4993>`_ 。
     **注：** 要求 :option:`-F` 保持一致。
@@ -242,7 +242,7 @@ subplot begin 语法
 **-T**\ *heading*
     设置整张图的总标题，标题文字的属性由 :term:`FONT_HEADING` 控制。
 
-    每张子图各自的标题可以用 :option:`-B` 或 |-S| 选项控制。
+    每张子图各自的标题可以用 :option:`-B` 或 :option:`-S` 选项控制。
 
 .. include:: explain_-V.rst_
 
@@ -299,10 +299,10 @@ subplot set 语法
 
     .. note::
 
-       在子图模式下不能使用 |-X| 和 |-Y| ，可以使用 :option:`-C` 作为替代。
+       在子图模式下不能使用 :option:`-X` 和 :option:`-Y` ，可以使用 :option:`-C` 作为替代。
 
 现在可以执行任意数量的绘图命令，并且所有输出都将指向所选的子图。
-subplot 机制要求新子图的第一个绘图命令负责绘制底图。一些底图细节已通过 **subplot begin** 中的 |-S| 
+subplot 机制要求新子图的第一个绘图命令负责绘制底图。一些底图细节已通过 **subplot begin** 中的 :option:`-S` 
 设置，如果需要重新设置底图和轴的一些属性，则需要在第一个绘图命令中通过 :option:`-B` 选项进行设置。
 
 

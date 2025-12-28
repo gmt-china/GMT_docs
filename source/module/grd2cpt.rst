@@ -21,19 +21,19 @@ grd2cpt
 [ :option:`-D`\ [**i**\|\ **o**] ]
 [ :option:`-E`\ [*nlevels*][**+c**][**+f**\ *file*] ]
 [ :option:`-F`\ [**R**\|\ **r**\|\ **h**\|\ **c**][**+c**\ [*label*]] ]
-[ |-G|\ *zlo*\ /\ *zhi* ]
-[ |-H| ]
-[ |-I|\ [**c**][**z**] ]
-[ |-L|\ *minlimit/maxlimit* ]
-[ |-M| ]
-[ |-N| ]
-[ |-Q|\ [**i**\|\ **o**] ]
+[ :option:`-G`\ *zlo*\ /\ *zhi* ]
+[ :option:`-H` ]
+[ :option:`-I`\ [**c**][**z**] ]
+[ :option:`-L`\ *minlimit/maxlimit* ]
+[ :option:`-M` ]
+[ :option:`-N` ]
+[ :option:`-Q`\ [**i**\|\ **o**] ]
 [ |SYN_OPT-R| ]
-[ |-S|\ **h**\|\ **l**\|\ **m**\|\ **u** ]
-[ |-T|\ *start/stop/inc* ]
+[ :option:`-S`\ **h**\|\ **l**\|\ **m**\|\ **u** ]
+[ :option:`-T`\ *start/stop/inc* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [**w**] ]
-[ |-Z| ]
+[ :option:`-W`\ [**w**] ]
+[ :option:`-Z` ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-o| ]
@@ -45,7 +45,7 @@ grd2cpt
 **grd2cpt** 读取一个或多个grid文件，并生成对应的CPT文件。在经典模式中，CPT文件的内容会输出到屏幕标准输出中。
 而在现代模式中，该命令不会生成显式的CPT文件，而是隐式地将其自动设置为后面的绘图命令的默认CPT文件。
 因此无法使用经典的 ``gmt grd2cpt grid > cpt`` 方式生成CPT文件。如果需要在现代模式中生成CPT文件，
-则可以使用 |-H| 选项： ``gmt grd2cpt grid -H > cpt`` 。
+则可以使用 :option:`-H` 选项： ``gmt grd2cpt grid -H > cpt`` 。
 关于经典模式和现代模式的语法区别，建议阅读《 :doc:`/migrating/classic2modern` 》。
 
 grid文件的z值范围以外的数值，将分别使用3种颜色来表示，分别是：
@@ -116,7 +116,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 
 **-H**\
     仅限现代模式：
-    默认情况下是将CPT保存为隐藏的当前CPT，加上 |-H| 命令会显式地将CPT写入标准输出。
+    默认情况下是将CPT保存为隐藏的当前CPT，加上 :option:`-H` 命令会显式地将CPT写入标准输出。
     在写制作动画的脚本时，需要传递显式命名的CPT文件，因此需要使用本功能。
     建议阅读《 :doc:`/migrating/classic2modern` 》。
 

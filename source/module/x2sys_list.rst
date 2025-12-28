@@ -17,18 +17,18 @@ x2sys_list
 语法
 ----
 
-**gmt x2sys_list** :option:`-C`\ *column* |-T|\ *TAG* [ *coedbase.txt* ]
+**gmt x2sys_list** :option:`-C`\ *column* :option:`-T`\ *TAG* [ *coedbase.txt* ]
 [ :option:`-A`\ *asymm_max* ]
 [ :option:`-E` ]
 [ :option:`-F`\ *flags* ]
-[ |-I|\ [*list*] ]
-[ |-L|\ [*corrections*] ]
-[ |-N|\ *nx_min*\ [**+p**] ]
-[ |-Q|\ **e**\|\ **i** ]
+[ :option:`-I`\ [*list*] ]
+[ :option:`-L`\ [*corrections*] ]
+[ :option:`-N`\ *nx_min*\ [**+p**] ]
+[ :option:`-Q`\ **e**\|\ **i** ]
 [ |SYN_OPT-R| ]
-[ |-S|\ *track*\ [**+b**] ]
+[ :option:`-S`\ *track*\ [**+b**] ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*list*] ]
+[ :option:`-W`\ [*list*] ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT--| ]
 

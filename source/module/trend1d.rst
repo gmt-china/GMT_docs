@@ -20,11 +20,11 @@ trend1d
 
 **gmt trend1d** [ *table* ]
 :option:`-F`\ **xymrw**\|\ **p**\|\ **P**\|\ **c**
-|-N|\ *params*
+:option:`-N`\ *params*
 [ :option:`-C`\ *condition_number* ]
-[ |-I|\ [*confidence_level*] ]
+[ :option:`-I`\ [*confidence_level*] ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [**+s**] ]
+[ :option:`-W`\ [**+s**] ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
 [ |SYN_OPT-e| ]
@@ -78,7 +78,7 @@ trend1d
     基函数前，首先对 x 进行归一化的处理。
     三角基函数都使用 *x*' = (2*pi*(*x-origin*\ )/*length*) 归一化，
     多项式使用 *x*' = 2*(*x-x_mid*)/(*xmax - xmin*) 归一化。追加
-    **+r** 选项可获得更加稳健的解。[默认使用最小二乘拟合]。使用 |-V|
+    **+r** 选项可获得更加稳健的解。[默认使用最小二乘拟合]。使用 :option:`-V`
     选项可看到模型的文本展示。
 
 可选选项

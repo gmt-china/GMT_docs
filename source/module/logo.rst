@@ -26,7 +26,7 @@ logo
 [ :option:`-F`\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
 [ :option:`-J`\ *parameters* ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |SYN_OPT-Rz| ]
-[ |-S|\ [**l**\|\ **n**\|\ **u**] ]
+[ :option:`-S`\ [**l**\|\ **n**\|\ **u**] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-X| ]

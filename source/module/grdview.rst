@@ -18,16 +18,16 @@ grdview
 **gmt grdview** *reliefgrid* :option:`-J`\ *parameters*
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ [*cpt*]]
-[ |-G|\ *drapegrid* \| |-G|\ *grd_r* |-G|\ *grd_g* |-G|\ *grd_b* ]
-[ |-I|\ [*intensgrid*\|\ *intensity*\|\ *modifiers*] ]
+[ :option:`-G`\ *drapegrid* \| :option:`-G`\ *grd_r* :option:`-G`\ *grd_g* :option:`-G`\ *grd_b* ]
+[ :option:`-I`\ [*intensgrid*\|\ *intensity*\|\ *modifiers*] ]
 [ |-Jz|\ \|\ **Z**\ *parameters* ]
-[ |-N|\ *level*\ [**+g**\ *fill*] ]
-[ |-Q|\ *args*\ [**+m**] ]
+[ :option:`-N`\ *level*\ [**+g**\ *fill*] ]
+[ :option:`-Q`\ *args*\ [**+m**] ]
 [ |SYN_OPT-Rz| ]
-[ |-S|\ *smooth* ]
-[ |-T|\ [**+o**\ [*pen*]][**+s**] ]
+[ :option:`-S`\ *smooth* ]
+[ :option:`-T`\ [**+o**\ [*pen*]][**+s**] ]
 [ |SYN_OPT-U| ]
-[ |-W|\ **c|m|f**\ *pen* ]
+[ :option:`-W`\ **c|m|f**\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-f| ]
@@ -71,7 +71,7 @@ grdview
 
 .. _-G:
 
-|-G|\ *drapegrid* \| |-G|\ *grd_r* |-G|\ *grd_g* |-G|\ *grd_b*
+:option:`-G`\ *drapegrid* \| :option:`-G`\ *grd_r* :option:`-G`\ *grd_g* :option:`-G`\ *grd_b*
     在三维表面上贴图。该贴图可以是一个彩色图片，也可以是三个单波段文件，分别代表R、G、B的强度值，每个文件像素值范围是0-255。
 
 .. _-Q:
@@ -80,7 +80,7 @@ grdview
     #. **-Qm** 表示生成网格线图（mesh，默认）。也可以用 **-Qm**\ *color* 的形式生成不同底色的网格线。
     #. **-Qmx** 或 **-Qmy** 生成仅有x或y方向线条的瀑布图（waterfall）。同样可以指定底色。
     #. **-Qs** 生成表面图（surface），颜色由 :option:`-C` 选项指定。**-Qsm** 则在表面图上叠加格网线。
-    #. **-Qi** 生成图像（image），与 |-G| 选项一同使用绘制三维贴图。后面可加dpi参数（默认dpi=100）。
+    #. **-Qi** 生成图像（image），与 :option:`-G` 选项一同使用绘制三维贴图。后面可加dpi参数（默认dpi=100）。
     #. **-Qc** 与 **-Qi** 类似，不同的是 **-Qc** 将 Z=NaN 的节点透明化。
     
     **+m** 表示强制转化为灰度图像，适用于 **-Qs**。
@@ -100,7 +100,7 @@ grdview
         设置mesh网格的线型。 [默认: width = 0.25p, color = black, style = solid]。
         只有使用了 **-Qm** 或 **-Qsm** 才会绘制mesh网格线。
     **-Wf**
-        如果设置了 |-N| 绘制平面，该选项设置平面和数据曲面之间截面的轮廓的线型。 
+        如果设置了 :option:`-N` 绘制平面，该选项设置平面和数据曲面之间截面的轮廓的线型。 
         [默认: width = 0.25p, color = black, style = solid]。
         
 .. include:: explain_perspective.rst_

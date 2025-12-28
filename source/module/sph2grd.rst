@@ -17,14 +17,14 @@ L，M，C[L，M]，S[L，M]
 -----
 
 **gmt sph2grd** [table]
-|-G|\ *grdfile*
-|-I|\ *increment*
+:option:`-G`\ *grdfile*
+:option:`-I`\ *increment*
 |SYN_OPT-R|\ *region*
 [ :option:`-D`\ [**g**\|\ **n**] ]
 [ :option:`-E`\ ]
 [ :option:`-F`\ [**k**]\ *filter* ]
-[ |-N|\ [norm] ]
-[ |-Q|\ ]
+[ :option:`-N`\ [norm] ]
+[ :option:`-Q`\ ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-h| ]

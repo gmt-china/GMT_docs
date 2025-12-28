@@ -14,12 +14,12 @@ grdclip
 ----
 
 **gmt grdclip** *ingrid*
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 [ |SYN_OPT-R| ]
-[ |-S|\ **a**\ *high/above* ]
-[ |-S|\ **b**\ *low/below* ]
-[ |-S|\ **i**\ *low/high/between* ]
-[ |-S|\ **r**\ *old/new* ]
+[ :option:`-S`\ **a**\ *high/above* ]
+[ :option:`-S`\ **b**\ *low/below* ]
+[ :option:`-S`\ **i**\ *low/high/between* ]
+[ :option:`-S`\ **r**\ *old/new* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 

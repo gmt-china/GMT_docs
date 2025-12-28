@@ -19,15 +19,15 @@ sphdistance
 ----
 
 **gmt sphdistance** [ *table* ]
-|-G|\ *grdfile*
+:option:`-G`\ *grdfile*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-C` ]
 [ :option:`-D` ]
 [ :option:`-E`\ **d**\|\ **n**\|\ **z**\ [*dist*] ]
-[ |-L|\ *unit* ]
-[ |-N|\ *nodetable* ]
-[ |-Q|\ *voronoi.txt* ]
+[ :option:`-L`\ *unit* ]
+[ :option:`-N`\ *nodetable* ]
+[ :option:`-Q`\ *voronoi.txt* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -66,7 +66,7 @@ sphdistance
 **-C**
     用于节省内存。该模块默认在运算过程中同时保存地理坐标和笛卡尔坐标，但对于大型数据
     集，这可能会占据很大内存，因此使用该选项可以只保留其中一种坐标以节省内存，必要的
-    时候 GMT 会自动实现坐标转换。在使用 |-Q| 选项时，该选项无用
+    时候 GMT 会自动实现坐标转换。在使用 :option:`-Q` 选项时，该选项无用
 
 .. _-D:
 
@@ -102,7 +102,7 @@ sphdistance
 
 **-Q**\ *voronoi.txt*
     指定 Voronoi 多边形文件 [默认使用输入数据构建 Voronoi 图]。输入数据为二进制文件，
-    需要 |-N| 选项指定节点信息。
+    需要 :option:`-N` 选项指定节点信息。
 
 .. include:: explain_-V.rst_
 

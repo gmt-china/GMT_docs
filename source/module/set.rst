@@ -19,7 +19,7 @@ set
 ----
 
 **gmt set**
-[ :option:`-C` \| :option:`-D`\ [**s**\|\ **u**] \| |-G|\ *defaultsfile* ]
+[ :option:`-C` \| :option:`-D`\ [**s**\|\ **u**] \| :option:`-G`\ *defaultsfile* ]
 [ **-**\ [**BJRXxYycp**]\ *value* ]
 PARAMETER1 *value1*
 PARAMETER2 *value2*

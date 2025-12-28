@@ -19,13 +19,13 @@ fzprofiler
 语法
 --------
 
-**fzprofiler** [ |-H|\ *height*\ [**c**\|\ **i**\|\ **p**] ]
-[ |-I|\ *profile* ] 
-[ |-L|\ *inc* ]
-[ |-M|\ *ncols* ]
-[ |-T|\ *prefix* ]
+**fzprofiler** [ :option:`-H`\ *height*\ [**c**\|\ **i**\|\ **p**] ]
+[ :option:`-I`\ *profile* ] 
+[ :option:`-L`\ *inc* ]
+[ :option:`-M`\ *ncols* ]
+[ :option:`-T`\ *prefix* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *width*\ [**c**\|\ **i**\|\ **p**] ]
+[ :option:`-W`\ *width*\ [**c**\|\ **i**\|\ **p**] ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 
@@ -47,7 +47,7 @@ fzprofiler
 
 **-L**\ *inc*
     决定绘制哪些剖面。默认绘制每一个剖面 (*inc* = 1)。
-    使用 |-L| 可以选择每隔 *inc* 个剖面绘制一次 [默认值为 1]。
+    使用 :option:`-L` 可以选择每隔 *inc* 个剖面绘制一次 [默认值为 1]。
 
 .. _-N:
 
@@ -66,7 +66,7 @@ fzprofiler
 .. _-W:
 
 **-W**\ *width*\ [**c**\|\ **i**\|\ **p**]
-    设置单个剖面图的宽度。单位同 |-H|。
+    设置单个剖面图的宽度。单位同 :option:`-H`。
 
 图像特征
 --------

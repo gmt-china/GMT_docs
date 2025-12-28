@@ -14,7 +14,7 @@ talwani2d
 **talwani2d** 读取一个多段表文件（或标准输入）。该文件包含一个或多个二维物体
 的横截面，横截面为多边形。每段的头部信息中必须包含密度参数：*density*，为该
 物体的密度（单个物体的密度可以被 :option:`-D` 选项设置的密度常数覆盖）。GMT 可通过
-设置 |-T| 计算位于某等距格网的异常，或者使用 |-N| 计算点上的异常值。
+设置 :option:`-T` 计算位于某等距格网的异常，或者使用 :option:`-N` 计算点上的异常值。
 计算的异常可包括，自由空气重力异常，垂直重力梯度异常或者大地水准面异常。同时
 可以使用选项控制轴的单位和方向。
 
@@ -24,10 +24,10 @@ talwani2d
 **gmt talwani2d** [ *table* ]
 [ :option:`-A` ] [ :option:`-D`\ *density* ] ]
 [ :option:`-F`\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
-[ |-M|\ [**h**]\ [**v**] ]
-[ |-N|\ *trackfile* ]
-[ |-T|\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list* ]
-[ |-Z|\ *level*\ [*ymin*\ /*ymax*] ]
+[ :option:`-M`\ [**h**]\ [**v**] ]
+[ :option:`-N`\ *trackfile* ]
+[ :option:`-T`\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list* ]
+[ :option:`-Z`\ *level*\ [*ymin*\ /*ymax*] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-d| ]

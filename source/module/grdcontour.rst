@@ -23,19 +23,19 @@ grdcontour
 [ :option:`-C`\ *contours*\|\ *cpt* ]
 [ :option:`-D`\ *template* ]
 [ :option:`-F`\ [**l**\|\ **r**] ]
-[ |-G|\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
-[ |-L|\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
-[ |-N|\ [*cpt*] ]
-[ |-Q|\ [*n*\|\ *length*\ [*unit*]][**+z**] ]
+[ :option:`-G`\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
+[ :option:`-L`\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
+[ :option:`-N`\ [*cpt*] ]
+[ :option:`-Q`\ [*n*\|\ *length*\ [*unit*]][**+z**] ]
 [ |SYN_OPT-Rz| ]
-[ |-S|\ *smoothfactor* ]
-[ |-T|\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
+[ :option:`-S`\ *smoothfactor* ]
+[ :option:`-T`\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
+[ :option:`-W`\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ [**+o**\ *shift*][**+s**\ *factor*][**+p**] ]
+[ :option:`-Z`\ [**+o**\ *shift*][**+s**\ *factor*][**+p**] ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]
 [ |SYN_OPT-e| ]
@@ -169,7 +169,7 @@ grdcontour
       如果不设置 *label* 则使用 **-** 和 **+** 作为标注。如果正好为两个字符，例如 **+l**\ *LH* ，
       则极小值和极大值区域各取一个字符作为标注（ *L* 和 *H* ）。
       对于更复杂的标签，用逗号分隔字符串（例如，\ **+l**\ *lo,hi* ）。
-      如果使用 :option:`-C` 给定了文件，且设置了 |-T| ，则只有被标记为大写字母 C 或 A 
+      如果使用 :option:`-C` 给定了文件，且设置了 :option:`-T` ，则只有被标记为大写字母 C 或 A 
       的等值线才会有刻度和极大极小值标注。 **注意：** 极大极小值标注有时可能在最内层等值线的外面，
       因为仅使用了等值线坐标的平均值来确定标注坐标。
 
@@ -193,7 +193,7 @@ grdcontour
 
 **-Z**\ [**+o**\ *shift*][**+s**\ *factor*][**+p**]
     在计算等值线之前，从数据中减去 *shift* 再乘以 *factor* （默认-o0+s1）。
-    在 :option:`-A`\ ，\ :option:`-C`\ 和\ |-L|\ 中指定的值是缩放之后的。
+    在 :option:`-A`\ ，\ :option:`-C`\ 和\ :option:`-L`\ 中指定的值是缩放之后的。
     后面加上 **-p** 表明网格数据的z值是360度周期循环的（例如相位数据，角度分布），
     这要求零等值线必须特殊处理。
 

@@ -47,7 +47,7 @@ rose
         mean_az, mean_r, mean_resultant, max_r, scaled_mean_r, length_sum, n, sign@alpha
 
     其中最后一项可以取0或1，取决于平均结果是否significant at the level of
-    confidence set via |-Q|.
+    confidence set via :option:`-Q`.
 
 **-D**
     对扇页对偏移，使得其位于每个间隔的中间，即第一个扇页的中心在0度处

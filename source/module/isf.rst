@@ -18,7 +18,7 @@ isf
 [ |SYN_OPT-R| ]
 [ :option:`-D`\ *date_start*\ [/*date_end*] ]
 [ :option:`-F`\ [**a**] ]
-[ |-N| ]
+[ :option:`-N` ]
 [ |SYN_OPT--| ]
 
 描述

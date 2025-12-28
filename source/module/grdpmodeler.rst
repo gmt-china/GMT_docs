@@ -23,10 +23,10 @@ grdpmodeler
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 **-S**\ *flags*
 [ :option:`-F`\ *polygonfile* ]
-[ |-G|\ *outgrid* ]
+[ :option:`-G`\ *outgrid* ]
 [ |SYN_OPT-I| ]
 [ |SYN_OPT-R| ]
-[ |-T|\ *age* ]
+[ :option:`-T`\ *age* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -64,7 +64,7 @@ grdpmodeler
 
 *ingrid*
     输入的地理网格文件名（经度、纬度坐标），其数值为地壳年龄（单位：Myr）。
-    如果未提供网格文件，可使用 :option:`-R`、|-I| 和可选的 **-r** 定义计算域。
+    如果未提供网格文件，可使用 :option:`-R`、:option:`-I` 和可选的 **-r** 定义计算域。
 
 .. _-F:
 

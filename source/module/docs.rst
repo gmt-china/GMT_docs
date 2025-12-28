@@ -18,8 +18,8 @@ docs
 ----
 
 **gmt docs**
-[ |-Q| ]
-[ |-S| ]
+[ :option:`-Q` ]
+[ :option:`-S` ]
 [ |SYN_OPT-V| ]
 *module-name*
 [*-option*]
@@ -62,7 +62,7 @@ docs
 **-**\ *option*
     指定选项（例如 **-R**），则 **docs** 会打开模块文档并定位到模块文档的该选项处。
 
-    注意，该功能对本地文档无效，因而当使用该功能时GMT会默认添加 |-S| 选项以打开
+    注意，该功能对本地文档无效，因而当使用该功能时GMT会默认添加 :option:`-S` 选项以打开
     远程文档。
 
 .. include:: explain_-V.rst_

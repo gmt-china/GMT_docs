@@ -21,11 +21,11 @@ fzinformer
 
 **fzinformer** [ :option:`-D` ]
 [ :option:`-F`\ *max* ]
-[ |-I|\ *profile* ] 
-[ |-N|\ *max* ] 
-[ |-S|\ *max* ]
-[ |-T|\ *prefix* ]
-[ |-W|\ *max* ]
+[ :option:`-I`\ *profile* ] 
+[ :option:`-N`\ *max* ] 
+[ :option:`-S`\ *max* ]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-W`\ *max* ]
 [ |SYN_OPT-V| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。

@@ -25,10 +25,10 @@ basemap
 [ |SYN_OPT-B| ]
 [ :option:`-F`\ *box* ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
-[ |-L|\ *scalebar* ]
+[ :option:`-L`\ *scalebar* ]
 [ |SYN_OPT-U| ]
-[ |-T|\ *rose* ]
-[ |-T|\ *mag_rose* ]
+[ :option:`-T`\ *rose* ]
+[ :option:`-T`\ *mag_rose* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
@@ -40,7 +40,7 @@ basemap
 必选选项
 --------
 
-:option:`-B` |-L| |-T| 三个选项中必须至少使用一个。
+:option:`-B` :option:`-L` :option:`-T` 三个选项中必须至少使用一个。
 
 .. include:: explain_-J.rst_
 
@@ -82,7 +82,7 @@ basemap
     .. include:: explain_-F_box.rst_
 
     该选项默认会同时控制比例尺和方向玫瑰的背景边框。
-    加上 **l**\|\ **t** 则表示只控制 |-L| 或 |-T|
+    加上 **l**\|\ **t** 则表示只控制 :option:`-L` 或 :option:`-T`
     选项绘制的特征。
 
 .. include:: explain_-U.rst_

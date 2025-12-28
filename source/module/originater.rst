@@ -28,14 +28,14 @@ originater
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-F`\ *hs_file*\ [**+d**]
 [ :option:`-D`\ *d_km* ]
-[ |-L|\ [**l**\|\ **t**\|\ **w**\| **L**\|\ **T**\|\ **W**] ]
-[ |-N|\ *upper_age* ]
-[ |-Q|\ *r/t* ]
-[ |-S|\ [*n_hs*] ]
-[ |-T| ]
+[ :option:`-L`\ [**l**\|\ **t**\|\ **w**\| **L**\|\ **T**\|\ **W**] ]
+[ :option:`-N`\ *upper_age* ]
+[ :option:`-Q`\ *r/t* ]
+[ :option:`-S`\ [*n_hs*] ]
+[ :option:`-T` ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *maxdist* ]
-[ |-Z| ]
+[ :option:`-W`\ *maxdist* ]
+[ :option:`-Z` ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
@@ -90,7 +90,7 @@ originater
 .. _-L:
 
 **-L**\ [**l**\|\ **t**\|\ **w**\| **L**\|\ **T**\|\ **W**]  
-    仅输出最近热点的最近接点（忽略 |-S|）。  
+    仅输出最近热点的最近接点（忽略 :option:`-S`）。  
     选项说明：  
     - **-Lt** → (*time*, *dist*, *z*) [默认]  
     - **-Lw** → (*omega*, *dist*, *z*)  
@@ -116,7 +116,7 @@ originater
 .. _-T:
 
 **-T**  
-    截断超过 |-N| 指定上限年龄的海山年龄 [默认不截断]。
+    截断超过 :option:`-N` 指定上限年龄的海山年龄 [默认不截断]。
 
 .. include:: explain_-V.rst_
 

@@ -73,7 +73,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 
 4. 交叉点平差（x2sys_solve）
 
-5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 |-L| 选项均
+5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 :option:`-L` 选项均
    可实现，推荐使用 x2sys_datalist）
 
 下面将主要介绍 x2sys_init 模块，其他模块可参考对应模块文档。
@@ -86,12 +86,12 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 :option:`-D`\ *fmtfile*
 [ :option:`-E`\ *suffix* ]
 [ :option:`-F` ]
-[ |-G|\ **d**\|\ **g** ]
-[ |-I|\ *dx*\ [/*dy*] ]
-[ |-N|\ **d**\|\ **s**\ *unit* ]
+[ :option:`-G`\ **d**\|\ **g** ]
+[ :option:`-I`\ *dx*\ [/*dy*] ]
+[ :option:`-N`\ **d**\|\ **s**\ *unit* ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ **t**\|\ **d**\ *gap* ]
+[ :option:`-W`\ **t**\|\ **d**\ *gap* ]
 [ |SYN_OPT-j| ]
 [ |SYN_OPT--| ]
 
@@ -135,7 +135,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 .. _-I:
 
 **-I**\ *dx*\ [/*dy*]
-    |-I| 选项主要用来指定在 :doc:`x2sys_binlist` 
+    :option:`-I` 选项主要用来指定在 :doc:`x2sys_binlist` 
     模块中创建的网格的间隔，*dx* 为横向间隔，*dy* 为纵向间隔，*dy* 为可选的，
     不指定时，使用 *dx* 作为纵向间隔。
     追加 *m* 或 *s* 用来指定间隔在地理坐标中的单位为角分或角秒。
@@ -154,7 +154,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
     - **n** nautical miles 或 knots
     - **u** survey feet 或 survey feet/s). 
 
-    默认地，当使用了 |-G| 选项时，自动设置为 **-Ndk** **-Nse** （km 和 m/s），
+    默认地，当使用了 :option:`-G` 选项时，自动设置为 **-Ndk** **-Nse** （km 和 m/s），
     其他情况设置为 **-Ndc** 和 **-Nsc** 。
 
 .. include:: explain_-R.rst_
@@ -166,7 +166,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 **-Wt**\|\ **d**\ *gap*
     该选项主要用于考虑轨迹数据中的缺失点或观测间隔很大的点。
     **t** 设置最大的时间间隙 *gap* （使用用户定义的单位，通常为秒）；
-    **d** 设置最大的距离间隙 *gap* （单位见 |-N| 选项）。
+    **d** 设置最大的距离间隙 *gap* （单位见 :option:`-N` 选项）。
     若交叉点两侧的数据点之间的时间或距离大于 *gap* , 
     则认为当前轨迹数据存在缺失数据，不用来计算交叉点并平差。
 
@@ -192,7 +192,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 3. **NETCDF** 表明该数据文件为 1-D NetCDF 格式
 4. **SKIP** 可接收一个参数，表示读取 ASCII 格式的数据文件时跳过的行数或
    读取二进制文件时跳过的字节数
-5. **GEO** 表明数据文件的坐标为地理坐标，与 |-G| 的作用相同
+5. **GEO** 表明数据文件的坐标为地理坐标，与 :option:`-G` 的作用相同
 6. **MULTISEG** 表明每个文件均包括多段数据，中间使用 GMT 段分隔符分开（不适用于 NetCDF 格式）
 
 列信息
@@ -282,7 +282,7 @@ lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。
 （3）创建 tbf 文件。使用 **x2sys_init** 创建数据库以后，可以使用下面两步填充数据库。
 首先运行 :doc:`x2sys_binlist` ，使用沿轨观测文件创建一个或多个多段
 轨迹网格索引文件（track bin-index file，tbf）。文件中的信息包括：每个轨道经过哪些
-1x1 度（见 |-I| ）的网格，以及含有哪些观测（这里为 obs1，obs2，obs3，
+1x1 度（见 :option:`-I` ）的网格，以及含有哪些观测（这里为 obs1，obs2，obs3，
 但并非所有的轨迹都含有这 3 种观测）。
 例如：如果用于将所有的数据文件名保存在 :file:`tracks.lis` ，则可以运行::
 
@@ -301,7 +301,7 @@ lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。
 **MGD77[+] 文件**
 
 GMT 已经自带了 MGD77，MGD77+ 以及 mgg 观测数据的格式定义文件。
-对于这些数据，设置 **-j** 和 |-N| 将默认使用大圆距离，单位为 km，速度单位为 m/s。
+对于这些数据，设置 **-j** 和 :option:`-N` 将默认使用大圆距离，单位为 km，速度单位为 m/s。
 由 NCEI 创建的 MGD77 数据可使用下面命令初始化::
 
     gmt x2sys_init MGD77 -V -Dmgd77 -Emgd77 -Rd -Gd -Nsn -I1/1 -Wt900 -Wd5

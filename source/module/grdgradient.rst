@@ -17,14 +17,14 @@ grdgradient
 .. include:: common_SYN_OPTs.rst_
 
 **gmt grdgradient** *ingrid*
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 [ :option:`-A`\ *azim*\ [/\ *azim2*] ]
 [ :option:`-D`\ [**a**][**c**][**n**][**o**] ]
 [ :option:`-E`\ [**m**][**s**][**p**]\ *azim*\ /\ *elev*\ [**+a**\ *ambient*][**+d**\ *diffuse*][**+p**\ *specular*][**+s**\ *shine*] ]
-[ |-N|\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*] ]
-[ |-Q|\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*] ]
+[ :option:`-N`\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*] ]
+[ :option:`-Q`\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*] ]
 [ |SYN_OPT-Rz| ]
-[ |-S|\ *slopfile* ]
+[ :option:`-S`\ *slopfile* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-n| ]
@@ -34,7 +34,7 @@ grdgradient
 描述
 -----------
 
-**grdgradient** 从网格文件中计算给定方向的方向导数(\ :option:`-A`)，或梯度的方向(\ :option:`-D`)和大小(\ |-S|)。
+**grdgradient** 从网格文件中计算给定方向的方向导数(\ :option:`-A`)，或梯度的方向(\ :option:`-D`)和大小(\ :option:`-S`)。
 
 边界的梯度计算取决于网格的边界条件（详见中文文档 :doc:`/option/n` 或官方文档 |SYN_OPT-n| ）。
 
@@ -112,16 +112,16 @@ grdgradient
       其中 :math:`\sigma` 为 *sigma* ，如果未给定则使用 :math:`(g-o)` 的L2范数。
       
     为了继续使用之前运行该命令计算的 :math:`o` 和/或 :math:`\sigma`，可不指定对应的具体数值，
-    详见 |-Q| 。最后，可使用 **+a**\ *ambient* 给归一化之后的梯度整体加上 
+    详见 :option:`-Q` 。最后，可使用 **+a**\ *ambient* 给归一化之后的梯度整体加上 
     *ambient* 。
 
 .. _-Q:
     
 **-Q**\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*]
-    控制 |-N| 的归一化。当需要对多个网格进行相同的归一化处理（即相同的偏移 *offset* 和标准差 *sigma*），
-    用户必须使用 |-N| 传入这些值。然而，用户从网格中计算出这些值并不方便。
+    控制 :option:`-N` 的归一化。当需要对多个网格进行相同的归一化处理（即相同的偏移 *offset* 和标准差 *sigma*），
+    用户必须使用 :option:`-N` 传入这些值。然而，用户从网格中计算出这些值并不方便。
     可使用 **-Qc** 将计算的 *offset* 和 *sigma* 保存到一个统计文件中，如果这时不需要输出网格文件，
-    可不指定 |-G| 。后续运行该命令时，可只使用 **-Qr** 来读取这些值。
+    可不指定 :option:`-G` 。后续运行该命令时，可只使用 **-Qr** 来读取这些值。
     使用 **-QR** 则读取后删除该统计文件。
     也可以加上 **+f**\ *file* 来指定读/写特定文件（默认为当前系统TMP目录下的grdgradient.stat文件）。
 
@@ -130,7 +130,7 @@ grdgradient
 .. _-S:
 
 **-S**\ *slopfile*
-    将梯度矢量的大小输出到网格文件 *slopfile* 。要求和 :option:`-D` 使用，此时 |-G| 变为可选项。
+    将梯度矢量的大小输出到网格文件 *slopfile* 。要求和 :option:`-D` 使用，此时 :option:`-G` 变为可选项。
 
 .. include:: explain_-V.rst_
 
@@ -153,12 +153,12 @@ grdgradient
 提示
 ------------
 
-+ 如果你不知道怎么设置 |-N| 来为 :doc:`/module/grdimage` 和 :doc:`/module/grdview` 创建光照强度文件，
++ 如果你不知道怎么设置 :option:`-N` 来为 :doc:`/module/grdimage` 和 :doc:`/module/grdview` 创建光照强度文件，
   **-Ne**\ 0.6 是一个不错的尝试。
 + 通常，255个色调对于可视化的目的来说已经足够了。可在输出文件名 *outgrid* 后面加上 *=nb/a* ，
   这可以节省75%的磁盘空间。 *=nb/a* 效果是输出网格文件格式为8-bit的整数，包含缩放因子。
 + 如果你想为一个大数据集的子区域制作多个光照图，且要求在所有地图上保持一致的照明效果，
-  使用 |-N| 选项并为每个地图提供相同的 *sigma* 和 *offset* 。一个不错的尝试是 *offset* = 0， 
+  使用 :option:`-N` 选项并为每个地图提供相同的 *sigma* 和 *offset* 。一个不错的尝试是 *offset* = 0， 
   *sigma* 通过 :doc:`/module/grdinfo` **-L2** 或 **-L1** 应用于未归一化的梯度网格得到。
 + 如果您只需要网格的x或y导数，请使用 :doc:`/module/grdmath` 。
 
@@ -171,10 +171,10 @@ grdgradient
 这会导致同一大型网格中的不同区块计算出不同的偏移量和标准差，最终使得相同方向的光照强度值在整张地图上呈现不一致。
 此类问题可能导致区块拼接处出现肉眼可见的色差/明暗变化。有以下两种解决方法：
 
-(1) 手动指定参数。使用 |-N| 强制指定相同的 *offset* 和 *sigma* ，这适用于已知标准化参数的情况。
+(1) 手动指定参数。使用 :option:`-N` 强制指定相同的 *offset* 和 *sigma* ，这适用于已知标准化参数的情况。
 
 (2) 自动传递参数（推荐工作流）。首先对完整网格（或计算机能处理的最大网格分区）运行 :doc:`/module/grdgradient` **-Qc** ，
-    该操作会生成包含全局 *offset* 和 *sigma* 的隐藏统计文件。然后在后续各区块计算时，在 |-N| 后添加无参数的
+    该操作会生成包含全局 *offset* 和 *sigma* 的隐藏统计文件。然后在后续各区块计算时，在 :option:`-N` 后添加无参数的
     **+o** 和/或 **-s** ，同时指定 **-Qr** 以从统计文件中读取参数。在处理最后一个区块时可改用 **-QR** 
     使程序读取统计文件后自动删除。
     
@@ -213,7 +213,7 @@ grdgradient
 
     gmt grdgradient topo.nc -A30 -Nt0.6 -Qc -V
 
-其中没有指定 |-G| ，不会有网格文件输出，仅创建隐藏的统计文件。
+其中没有指定 :option:`-G` ，不会有网格文件输出，仅创建隐藏的统计文件。
 
 使用先前确定的 *offset* 和 *sigma* 对 tile_3.nc 的光照强度进行归一化::
 

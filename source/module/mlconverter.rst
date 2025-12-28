@@ -19,9 +19,9 @@ mlconverter
 
 **gmt mlconverter** [ *ML_data* ]
 [ :option:`-A` ]
-[ |-G|\ [**s**] ]
-[ |-I|\ *FZid* ] 
-[ |-T|\ **c**\|\ **g**\|\ **o**\|\ **s** ]
+[ :option:`-G`\ [**s**] ]
+[ :option:`-I`\ *FZid* ] 
+[ :option:`-T`\ **c**\|\ **g**\|\ **o**\|\ **s** ]
 [ |SYN_OPT-V| ]
 
 注意：选项标志与其对应的参数之间不允许有空格。

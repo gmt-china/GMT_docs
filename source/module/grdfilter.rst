@@ -12,7 +12,7 @@ grdfilter
 :简介: 在空间（或时间）域中对网格滤波
 
 **grdfilter** 使用卷积、非卷积各向同性或矩形滤波器对网格进行滤波。输出网格可以
-设置新的区域（:option:`-R`），间隔（|-I|）或者配准方式（|-T|）。这样可以在数据足够
+设置新的区域（:option:`-R`），间隔（:option:`-I`）或者配准方式（:option:`-T`）。这样可以在数据足够
 大的情况下，可去掉网格边缘以避免滤波的边缘效应。如果滤波器为低通滤波，则输出结果
 的频率可能低于输入的采样频率。**注**：频域（或称波数域）滤波，见 :doc:`grdfft`。
 
@@ -21,11 +21,11 @@ grdfilter
 
 **gmt grdfilter** *ingrid* :option:`-D`\ *distance_flag*
 :option:`-F`\ **x**\ *width*\ [/*width2*][*modifiers*]
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 [ |SYN_OPT-I| ]
-[ |-N|\ **i**\|\ **p**\|\ **r** ]
+[ :option:`-N`\ **i**\|\ **p**\|\ **r** ]
 [ |SYN_OPT-R| ]
-[ |-T| ]
+[ :option:`-T` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-r| ]
@@ -134,7 +134,7 @@ grdfilter
 
 #. 使用 **-D5** 选项时，输入墨卡托网格必须由 :doc:`img2grd` 的 **-C** 选项
    生成，因此 y 值的原点为赤道（即 x = y = 0 对应于 lon = lat = 0）
-#. |-I| 选项设置的新的 *x\_inc* ， *y\_inc* 如果不是输入数据的间隔的整数倍，
+#. :option:`-I` 选项设置的新的 *x\_inc* ， *y\_inc* 如果不是输入数据的间隔的整数倍，
    则滤波会非常慢
 
 示例

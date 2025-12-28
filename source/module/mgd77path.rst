@@ -18,7 +18,7 @@ mgd77path
 ----
 
 **gmt mgd77path** *GEODAS-ids* [ :option:`-A`\ [**c**] ] [ :option:`-D` ]
-[ |-I|\ **a\|c\|m\|t** ]
+[ :option:`-I`\ **a\|c\|m\|t** ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 

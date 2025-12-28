@@ -22,13 +22,13 @@ fzmapper
 
 **fzmapper** [ :option:`-A` ]
 [ :option:`-F`\ *origfile* ]
-[ |-G|\ *vgg_grid* ]
-[ |-L|\ *labelint* ] 
-[ |-O| ]
-[ |-S| ]
-[ |-T|\ *prefix* ]
+[ :option:`-G`\ *vgg_grid* ]
+[ :option:`-L`\ *labelint* ] 
+[ :option:`-O` ]
+[ :option:`-S` ]
+[ :option:`-T`\ *prefix* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *width*\ [**c**\|\ **i**\|\ **p**] ]
+[ :option:`-W`\ *width*\ [**c**\|\ **i**\|\ **p**] ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 
@@ -72,7 +72,7 @@ fzmapper
      [默认值为 fztrack]。
      输入文件包括 *prefix*\ _cross.txt、*prefix*\ _par.txt，以及由 :doc:`grdtrack`
      生成的重采样输出文件 *prefix*\ _resampled.txt。
-     当使用 |-S| 选项时，还会加载由 :doc:`fzblender` 生成的 *prefix*\ _blend.txt；
+     当使用 :option:`-S` 选项时，还会加载由 :doc:`fzblender` 生成的 *prefix*\ _blend.txt；
      若使用 :option:`-A` 选项，还会加载由 :doc:`fzanalyzer` 生成的 *prefix*\ _analysis.txt。
 
 .. _-W:

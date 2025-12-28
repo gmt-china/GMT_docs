@@ -18,19 +18,19 @@ polar
 
 **gmt polar** [ *table* ] :option:`-D`\ *lon/lat* :option:`-J`\ *parameters*
 |SYN_OPT-R|
-|-M|\ *size*\ [**+m**\ *mag*]
-|-S|\ *<symbol><size>*
+:option:`-M`\ *size*\ [**+m**\ *mag*]
+:option:`-S`\ *<symbol><size>*
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*] ]
 [ :option:`-E`\ *fill* ]
 [ :option:`-F`\ *fill* ]
-[ |-G|\ *fill* ]
-[ |-N| ]
-[ |-Q|\ *mode*\ [*args*] ]
-[ |-T|\ *angle*/*form*/*justify*/*fontsize* ]
+[ :option:`-G`\ *fill* ]
+[ :option:`-N` ]
+[ :option:`-Q`\ *mode*\ [*args*] ]
+[ :option:`-T`\ *angle*/*form*/*justify*/*fontsize* ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *pen* ]
+[ :option:`-W`\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-di| ]
@@ -72,7 +72,7 @@ polar
 .. _-M:
 
 **-M**\ *size*\ [**+m**\ *mag*]
-    震源球尺寸，需要与 :doc:`meca` 模块中 |-S| 选项的参数保持一致
+    震源球尺寸，需要与 :doc:`meca` 模块中 :option:`-S` 选项的参数保持一致
 
     **+m**\ *mag* 可以用于指定当前地震的震级，此时 *size* 表示5级地震震源球的
     大小，当前地震的实际大小为 *mag* / 5.0 * *size*。
@@ -81,7 +81,7 @@ polar
     选择符号以及符号的大小。
 
     符号可以取 **a**, **c**, **d**, **h**, **i**, **p**, **s**, **t**, **x**。
-    符号的具体含义见 :doc:`plot` 模块的 |-S| 选项。
+    符号的具体含义见 :doc:`plot` 模块的 :option:`-S` 选项。
 
 可选选项
 --------

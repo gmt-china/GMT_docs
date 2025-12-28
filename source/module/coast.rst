@@ -25,18 +25,18 @@ coast
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-E`\ *dcw* ]
 [ :option:`-F`\ *box* ]
-[ |-G|\ [*fill*] ]
-[ |-I|\ *river*\ [/\ *pen*] ]
+[ :option:`-G`\ [*fill*] ]
+[ :option:`-I`\ *river*\ [/\ *pen*] ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
-[ |-L|\ *scalebar* ]
-[ |-M| ]
-[ |-N|\ *border*\ [/*pen*] ]
-[ |-Q| ]
-[ |-S|\ [*fill*] ]
-[ |-T|\ *rose* ]
+[ :option:`-L`\ *scalebar* ]
+[ :option:`-M` ]
+[ :option:`-N`\ *border*\ [/*pen*] ]
+[ :option:`-Q` ]
+[ :option:`-S`\ [*fill*] ]
+[ :option:`-T`\ *rose* ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*level*/]\ *pen* ]
+[ :option:`-W`\ [*level*/]\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-bo| ]
@@ -65,7 +65,7 @@ coast
 **-C**\ *fill*\ [**+l**\|\ **+r**]
     设置湖泊与河流湖的颜色。
 
-    默认情况下，湖泊与河流湖会被当做wet区域，直接使用 |-S| 指定的填充值。
+    默认情况下，湖泊与河流湖会被当做wet区域，直接使用 :option:`-S` 指定的填充值。
     使用 **+l** 或 **+r** 可以为湖泊或河流湖单独指定颜色。
 
 .. _-D:
@@ -114,7 +114,7 @@ coast
     若想要不同的区域有不同的画笔或填充属性，则需要多次使用 :option:`-E` 选项，每次
     指定不同的区域以及不同的画笔或填充属性。
 
-    若使用了 :option:`-E` 但不指定 :option:`-J` 和 |-M| 则会以 **-R**\ *w/e/s/n* 的
+    若使用了 :option:`-E` 但不指定 :option:`-J` 和 :option:`-M` 则会以 **-R**\ *w/e/s/n* 的
     形式输出对应行政区域的区域范围。
 
 .. _-F:
@@ -128,7 +128,7 @@ coast
     .. include:: explain_-F_box.rst_
 
     该选项默认会同时控制比例尺和方向玫瑰的背景边框。
-    加上 **l**\|\ **t** 则表示只控制 |-L| 或 |-T| 选项绘制的特征。
+    加上 **l**\|\ **t** 则表示只控制 :option:`-L` 或 :option:`-T` 选项绘制的特征。
 
 .. _-G:
 
@@ -174,7 +174,7 @@ coast
     将边界数据以多段ASCII表或二进制表的形式导出到标准输出
 
     使用该选项，则只导出数据而不绘图。
-    该选项需要与 :option:`-E`, |-I|, |-N| 或 |-W| 选项一起使用。
+    该选项需要与 :option:`-E`, :option:`-I`, :option:`-N` 或 :option:`-W` 选项一起使用。
 
 .. _-N:
 
@@ -196,10 +196,10 @@ coast
 **-Q**
     关闭区域裁剪。
 
-    使用 |-G| 和 |-S| 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令
+    使用 :option:`-G` 和 :option:`-S` 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令
     中只有在裁剪区域内的部分才会被绘制。在绘图结束后，需要关闭裁剪，就需要再次调用
-    **coast**，并加上 |-Q| 选项。若在开启裁剪后使用了 |-X| 和 |-Y| 选项，
-    则在关闭时也要记得使用 |-X| 和 |-Y|。
+    **coast**，并加上 :option:`-Q` 选项。若在开启裁剪后使用了 :option:`-X` 和 :option:`-Y` 选项，
+    则在关闭时也要记得使用 :option:`-X` 和 :option:`-Y`。
 
 .. _-S:
 
@@ -232,11 +232,11 @@ coast
 
     使用时需要注意：
 
-    - 不使用 |-W| 选项，则不绘制任何shore
-    - 使用 |-W|，给定画笔属性 *pen*，但不给出 *level*，则绘制
+    - 不使用 :option:`-W` 选项，则不绘制任何shore
+    - 使用 :option:`-W`，给定画笔属性 *pen*，但不给出 *level*，则绘制
       四个level的shore
-    - 在同一个命令中可以多次使用 |-W|，以指定不同 *level* 的shore的画笔属性
-    - |-W| 选项中 *level* 是可选的，而 *pen* 是必须的！因而 **-W2**
+    - 在同一个命令中可以多次使用 :option:`-W`，以指定不同 *level* 的shore的画笔属性
+    - :option:`-W` 选项中 *level* 是可选的，而 *pen* 是必须的！因而 **-W2**
       会被解释为所有level的画笔属性，而不是level 2
 
 .. include:: explain_-XY.rst_

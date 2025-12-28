@@ -28,7 +28,7 @@ inset begin语法
 :option:`-D`\ *inset-box*
 [ :option:`-C`\ [*side*]\ *clearance* ]
 [ :option:`-F`\ *box* ]
-[ |-N| ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
 [ :option:`-J`\ *parameters* ]
 [ |SYN_OPT-V| ]

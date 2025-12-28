@@ -21,14 +21,14 @@ grdrotater
 
 **gmt grdrotater** *ingrid*
 :option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 [ :option:`-A`\ *region* ]
 [ :option:`-D`\ *rotoutline* ]
 [ :option:`-F`\ *polygonfile* ]
-[ |-N| ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
-[ |-S| ]
-[ |-T|\ *ages* ]
+[ :option:`-S` ]
+[ :option:`-T`\ *ages* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -65,7 +65,7 @@ grdrotater
 **-D**\ *rotoutline*
     指定输出旋转后网格轮廓线的文件名。它表示网格在指定时间重建后的轮廓。
     若涉及多个重建时间，则 *rotoutline* 必须包含 C 格式化说明符来输出时间。
-    若仅指定一个时间且未使用 :option:`-D`，则轮廓将输出到标准输出（除非使用 |-N|）。
+    若仅指定一个时间且未使用 :option:`-D`，则轮廓将输出到标准输出（除非使用 :option:`-N`）。
 
 .. _-F:
 
@@ -95,7 +95,7 @@ grdrotater
     - 对于等间隔的时间范围，格式为 **-T**\ *start*\ /\ *stop*\ /\ *inc*；
     若希望 *inc* 表示“点数”，请追加 **+n**。
     - 若为不等间距时间序列，请通过文件第一列提供，例如 **-T**\ *agefile*。
-    若未指定 |-T| 且 :option:`-E` 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
+    若未指定 :option:`-T` 且 :option:`-E` 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
 
 
 .. include:: explain_-V.rst_

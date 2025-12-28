@@ -33,17 +33,17 @@ grdmix
 
 **gmt grdmix**
 *raster1* [ *raster2* [ *raster3*]]
-|-G|\ *outfile*
+:option:`-G`\ *outfile*
 [ :option:`-A`\ *alpha*\ [**+o**] ]
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
 [ :option:`-D` ]
-[ |-I|\ *intensity* ]
-[ |-M| ]
-[ |-N|\ [**i**\|\ **o**][*divisor*] ]
-[ |-Q| ]
+[ :option:`-I`\ *intensity* ]
+[ :option:`-M` ]
+[ :option:`-N`\ [**i**\|\ **o**][*divisor*] ]
+[ :option:`-Q` ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *weights* ]
+[ :option:`-W`\ *weights* ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT--| ]
 
@@ -89,9 +89,9 @@ grdmix
     这些网格的数值必须全部处于 0–1 范围内
     （如果不是，可使用 **-Ni**）。
     可选地，可使用 :option:`-A` 为颜色添加透明度，
-    或使用 |-I| 为颜色添加强度后再输出图像。
+    或使用 :option:`-I` 为颜色添加强度后再输出图像。
     对于三个输入层，输入顺序必须为红网格、绿网格、蓝网格。
-    也可以只提供单个输入图像，再通过 :option:`-A` 或 |-I| 增强。
+    也可以只提供单个输入图像，再通过 :option:`-A` 或 :option:`-I` 增强。
     **注意**：要使用 CPT 查找表从单个输入网格生成图像，
     请参阅 :option:`-C` 的长格式说明。
 
@@ -106,7 +106,7 @@ grdmix
     如果图像包含 alpha（透明）层，将额外输出一个网格。
     所有输出网格的数值都保持原始图像的 0–255 范围；
     但可使用 **-No** 将其归一化至 0–1 范围。
-    输出名称由 |-G| 指定的名称模板生成，
+    输出名称由 :option:`-G` 指定的名称模板生成，
     其中必须包含 C 格式字符串 “%c”。
     该代码将分别被替换为 R、G、B 和 A（对于彩色图像），
     或 g、A（对于灰度图像）。

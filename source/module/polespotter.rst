@@ -27,11 +27,11 @@ polespotter
 [ :option:`-D`\ *spacing* ]
 [ :option:`-E`\ **a**\|\ **f**\ *sigma* ]
 [ :option:`-F`\ *fracturezones* ]
-[ |-G|\ *outgrid* ]
+[ :option:`-G`\ *outgrid* ]
 [ |SYN_OPT-I| ]
-[ |-N| ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
-[ |-S|\ **l**\|\ **p**\|\ **s**\ [*modifiers*] ]
+[ :option:`-S`\ **l**\|\ **p**\|\ **s**\ [*modifiers*] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -99,7 +99,7 @@ polespotter
 
 **-Sp**
     Pole 模式表示我们搜索给定网格上的所有极点，并确定与所有给定线约束的加权卡方误差。
-    此模式需要 |-G|、:option:`-R`、|-I| （可选 **-r** ）。
+    此模式需要 :option:`-G`、:option:`-R`、:option:`-I` （可选 **-r** ）。
 
 **-Ss**\ [**+c**\ *xfile*][**+l**]
     Spot 模式表示我们计算断裂带的平分线和沿深海丘的经线，并确定所有这些大圆的交点。

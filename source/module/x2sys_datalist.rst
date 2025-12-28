@@ -20,10 +20,10 @@ x2sys_datalist
 [ :option:`-A` ]
 [ :option:`-E` ]
 [ :option:`-F`\ *name1*,\ *name2*,... ]
-[ |-I|\ [*list*] ]
-[ |-L|\ [*corrections*] ]
+[ :option:`-I`\ [*list*] ]
+[ :option:`-L`\ [*corrections*] ]
 [ |SYN_OPT-R| ]
-[ |-S| ] [
+[ :option:`-S` ] [
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]

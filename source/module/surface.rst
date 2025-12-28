@@ -32,22 +32,22 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 语法
 ----
 
-**gmt surface** [ *table* ] |-G|\ *outgrid*
+**gmt surface** [ *table* ] :option:`-G`\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-A`\ *aspect_ratio*\|\ **m** ]
 [ :option:`-C`\ *convergence_limit*\ [%] ]
 [ :option:`-J`\ *parameters* ]
 [ :option:`-D`\ *breakline_file*\ [**+z**\ [*level*]] ]
-[ |-L|\ **l**\ *lower* ] [ |-L|\ **u**\ *upper* ]
-[ |-M|\ *max_radius* ]
-[ |-N|\ *max_iterations* ]
-[ |-Q|\ [**r**] ]
-[ |-S|\ *search_radius*\ [**m**\|\ **s**] ]
-[ |-T|\ [**b**\|\ **i**]\ *tension_factor* ]
+[ :option:`-L`\ **l**\ *lower* ] [ :option:`-L`\ **u**\ *upper* ]
+[ :option:`-M`\ *max_radius* ]
+[ :option:`-N`\ *max_iterations* ]
+[ :option:`-Q`\ [**r**] ]
+[ :option:`-S`\ *search_radius*\ [**m**\|\ **s**] ]
+[ :option:`-T`\ [**b**\|\ **i**]\ *tension_factor* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*logfile*] ]
-[ |-Z|\ *over-relaxation_factor* ]
+[ :option:`-W`\ [*logfile*] ]
+[ :option:`-Z`\ *over-relaxation_factor* ]
 [ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -137,7 +137,7 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 **-Q**\ [**r**]
     输出本模块建议运行时使用的网格维度。该选项主要目的为建议一个最优的网格维度以
     允许本模块可使用多次中间步骤以加快计算并得到更好的结果。当用户得到此建议维度
-    时，可使用 :option:`-R` 和 |-I| 设置新的结果，并在后续使用 :doc:`grdsample` 或
+    时，可使用 :option:`-R` 和 :option:`-I` 设置新的结果，并在后续使用 :doc:`grdsample` 或
     :doc:`grdcut` 以得到用户原本希望的维度和范围。
     另外，可追加 **r** 使 **surface** 完全按照 :option:`-R` 指定的范围计算结果 [默认会自动
     寻找稍大的区域，然后在输出时将区域裁剪为 :option:`-R` 设置的范围。]
@@ -242,7 +242,7 @@ ASCII 数据 `hawaii_5x5.xyg` 为经 :doc:`blockmean` 处理后的数据，使�
 使用球近似，即大圆距离（译注：椭球的大小是影响该距离的主要因素，球近似不是
 主要因素）。对于纬度，GMT 将 y 方向的距离除以每维度所对应的距离，对于经度，则
 除以平均纬度对应的距离。因此，转换后的度与用户输出的增量可能不完全一致。这
-其中所涉及到的舍入是用户所不希望的，并会导致网格的维度为素数。|-Q| 选项可用来
+其中所涉及到的舍入是用户所不希望的，并会导致网格的维度为素数。:option:`-Q` 选项可用来
 处理这种情况，但间隔转换导致的无穷小数仍然难以有效解决。因此，不要使用长度
 单位设置间隔是一种比较好的方法，设置为角度、角分、角秒可以得到更加干净的结果，
 因为这样网格的维度是可控的并且可避免舍入误差。

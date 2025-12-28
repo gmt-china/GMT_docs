@@ -15,18 +15,18 @@ grdtrack
 
 .. include:: common_SYN_OPTs.rst_
 
-**gmt grdtrack** [ *table* ] |-G|\ *grd1* [ |-G|\ *grd2* ... ]
+**gmt grdtrack** [ *table* ] :option:`-G`\ *grd1* [ :option:`-G`\ *grd2* ... ]
 [ :option:`-A`\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+l**] ]
 [ :option:`-C`\ *length*/\ *ds*\ [*/spacing*][**+a**\|\ **v**][**d**\|\ **f**\ *value*][**l**\|\ **r**] ]
 [ :option:`-D`\ *dfile* ]
 [ :option:`-E`\ *table*\|\ *origin*\|\ *line*\ [,\ *line*\ ,...\ ][**+a**\ *az*][**+c**][**+d**][**+g**][**+i**\ *inc*][**+l**\ *length*][**+n**\ *np*][**+o**\ *az*][**+p**][**+r**\ *radius*][**+x**] ]
 [ :option:`-F`\ [**+b**][**+n**][**+r**][**+z**\ *z0*] ]
-[ |-N| ]
+[ :option:`-N` ]
 [ |SYN_OPT-R| ]
-[ |-S|\ [**a**\|\ **l**\|\ **L**\|\ **m**\|\ **p**\|\ **u**\|\ **U**][**+a**][**+c**\ *fact*][**+d**][**+r**][**+s**\ [*file*]] ]
-[ |-T|\ [*radius*][**+e**\|\ **p**] ]
-[ |-V|\ [*level*] ]
-[ |-Z| ]
+[ :option:`-S`\ [**a**\|\ **l**\|\ **L**\|\ **m**\|\ **p**\|\ **u**\|\ **U**][**+a**][**+c**\ *fact*][**+d**][**+r**][**+s**\ [*file*]] ]
+[ :option:`-T`\ [*radius*][**+e**\|\ **p**] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-Z` ]
 [ |SYN_OPT-a| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -68,7 +68,7 @@ grdtrack
 .. _-G:
 
 **-G**\ *gridfile*
-    *gridfile* 为一个 2-D 网格。你可以多次使用 |-G| 或者使用 **-G+l**\ *list* 来传入多个网格，
+    *gridfile* 为一个 2-D 网格。你可以多次使用 :option:`-G` 或者使用 **-G+l**\ *list* 来传入多个网格，
     其中 *list* 为一个文本文件，网格名称在每行的第一个非数值列。
     网格插值结果顺序按照输入顺序。 
     

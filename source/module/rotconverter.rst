@@ -24,10 +24,10 @@ rotconverter
 **gmt rotconverter** [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
 [ :option:`-A` ] [ :option:`-D` ]
 [ :option:`-F`\ **s**\|\ **t** ]
-[ |-G| ]
-[ |-M|\ [*fact*] ]
-[ |-N| ] [ |-S| ]
-[ |-T| ] [ |-W| ]
+[ :option:`-G` ]
+[ :option:`-M`\ [*fact*] ]
+[ :option:`-N` ] [ :option:`-S` ]
+[ :option:`-T` ] [ :option:`-W` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT--| ]
@@ -110,7 +110,7 @@ rotconverter
 限制
 --------
 
-请注意，|-N|、|-S| 和 |-W| 只能同时使用一个。
+请注意，:option:`-N`、:option:`-S` 和 :option:`-W` 只能同时使用一个。
 
 示例
 --------

@@ -26,15 +26,15 @@ grdselect
 [ :option:`-D`\ *inc* ]
 [ :option:`-E`\ [**b**] ]
 [ :option:`-F`\ *polygonfile*\ [**+i**\|\ **o**] ]
-[ |-G| ]
-[ |-I|\ [**C**][**D**][**F**][**L**][**N**][**R**][**W**][**Z**][**r**] ]
-[ |-L|\ *linefile* ]
-[ |-M|\ *margins* ]
-[ |-N|\ **l**\|\ **h**\ [*n*] ]
+[ :option:`-G` ]
+[ :option:`-I`\ [**C**][**D**][**F**][**L**][**N**][**R**][**W**][**Z**][**r**] ]
+[ :option:`-L`\ *linefile* ]
+[ :option:`-M`\ *margins* ]
+[ :option:`-N`\ **l**\|\ **h**\ [*n*] ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [*wmin*\ /*wmax*] ]
-[ |-Z|\ [*zmin*\ /*zmax*]] ]
+[ :option:`-W`\ [*wmin*\ /*wmax*] ]
+[ :option:`-Z`\ [*zmin*\ /*zmax*]] ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-o| ]
@@ -61,8 +61,8 @@ grdselect
 
     可追加 **+i** 子选项，将经纬度方向的间隔进行一定程度的舍入以应用到最终的区域。
     **l** 和 **h** 分别采用最小的网格间隔或者最大的网格间隔，或者可以指定间隔 *inc* 。
-    如果不使用 :option:`-A` ，则只列出所有通过以下选项 :option:`-C` :option:`-D` :option:`-F` |-L| |-N| :option:`-R` |-W|
-    |-Z| 设置的测试的文件名，与 |-I| 同时使用，则列出未通过测试的文件名
+    如果不使用 :option:`-A` ，则只列出所有通过以下选项 :option:`-C` :option:`-D` :option:`-F` :option:`-L` :option:`-N` :option:`-R` :option:`-W`
+    :option:`-Z` 设置的测试的文件名，与 :option:`-I` 同时使用，则列出未通过测试的文件名
 
 .. _-C:
 
@@ -106,10 +106,10 @@ grdselect
     - **C** 列出不包含 :option:`-C` 设置的任何点的网格
     - **D** 列出和 :option:`-D` 指定的分辨率不匹配的网格
     - **F** 列出不与 :option:`-F` 指定多边形存在交集的网格
-    - **N** 列出不满足 |-N| 选项的网格
+    - **N** 列出不满足 :option:`-N` 选项的网格
     - **R** 列出不与 :option:`-R` 相交的网格
-    - **W** 列出不在 |-W| 范围内的网格
-    - **Z** 列出不在 |-Z| 范围内的网格
+    - **W** 列出不在 :option:`-W` 范围内的网格
+    - **Z** 列出不在 :option:`-Z` 范围内的网格
     - **r** 列出不与 |SYN_OPT-r| 指定的配准方式相同的网格
 
 .. _-L:
@@ -149,7 +149,7 @@ grdselect
 .. _-Z:
 
 **-Z**\ [*zmin*]\ /[*zmax*]
-    与 |-W| 相同，但用于 z 值
+    与 :option:`-W` 相同，但用于 z 值
 
 .. include:: explain_-V.rst_
 

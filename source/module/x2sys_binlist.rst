@@ -16,14 +16,14 @@ x2sys_binlist
 *flags*\ [, *dist*]，其中 *lon* 和 *lat* 是网格中心坐标，*index* 是网格在
 一维排列下的序号，*flags* 是一个标志，描述了在当前网格中包含了哪几种观测数据。
 可选的 *dist* 信息需要 :option:`-D` 选项。输入的轨迹数据文件可以是任意格式，但必须使用
-|-T| 选项指定 TAG 以便 gmt 能识别这种格式。网格的索引列表仅能粗略地表示轨迹的
+:option:`-T` 选项指定 TAG 以便 gmt 能识别这种格式。网格的索引列表仅能粗略地表示轨迹的
 走向并用于建立轨迹数据库以便各种查询。在使用本命令前，必须已经使用
 :doc:`x2sys_init` 进行了初始化。
 
 语法
 ----
 
-**gmt x2sys_binlist** *track(s)* |-T|\ *TAG*
+**gmt x2sys_binlist** *track(s)* :option:`-T`\ *TAG*
 [ :option:`-D` ]
 [ :option:`-E` ]
 [ |SYN_OPT-V| ]
@@ -60,7 +60,7 @@ x2sys_binlist
 
 **-D**
     计算每个和轨迹相交的网格的累积距离。距离的输出位于 *flags* 后。
-    距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 中的 |-N| 选项 
+    距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 中的 :option:`-N` 选项 
 
 .. _-E:
 

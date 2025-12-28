@@ -17,18 +17,18 @@ wiggle
 语法
 ----
 
-**gmt wiggle** [ *table* ] :option:`-J`\ *parameters* |SYN_OPT-Rz| |-Z|\ *scale*
+**gmt wiggle** [ *table* ] :option:`-J`\ *parameters* |SYN_OPT-Rz| :option:`-Z`\ *scale*
 [ :option:`-A`\ [*azimuth*] ]
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *center* ]
 [ :option:`-D`\ *refpoint* ]
 [ :option:`-F`\ *panel* ]
-[ |-G|\ *fill*\ [**+n**][**+p**] ]
-[ |-I|\ *fix_az* ]
-[ |-T|\ *pen* ]
+[ :option:`-G`\ *fill*\ [**+n**][**+p**] ]
+[ :option:`-I`\ *fix_az* ]
+[ :option:`-T`\ *pen* ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *pen* ]
+[ :option:`-W`\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |SYN_OPT-bi| ]
@@ -114,7 +114,7 @@ wiggle
     追加 **+n** 子选项为填充负异常区域。
     追加 **+n+p** 为使用相同的方式填充正异常和负异常区域。
 
-    **注**：如果需要设置正异常和负异常使用不同的填充方式，需要重复使用 |-G| 选项。
+    **注**：如果需要设置正异常和负异常使用不同的填充方式，需要重复使用 :option:`-G` 选项。
 
 .. _-I:
 
@@ -186,7 +186,7 @@ wiggle
     -C32000 -Gred -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym
 
 上述示例中，正异常绘制方向为北方向，使用 :option:`-D` 选项设置比例尺长度为 1000 nT 。
-如果要设置绘制正异常的方位角为固定的 45 度，可使用 |-I| 选项::
+如果要设置绘制正异常的方位角为固定的 45 度，可使用 :option:`-I` 选项::
 
     gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z1000 -B5 \
     -C32000 -Gred -I45 -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym

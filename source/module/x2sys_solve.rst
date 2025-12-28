@@ -16,10 +16,10 @@ x2sys_solve
 语法
 ----
 
-**gmt x2sys_solve** :option:`-C`\ *column* |-T|\ *TAG* :option:`-E`\ **c**\|\ **d**\|\ **g**\|\ **h**\|\ **s**\|\ **y**\|\ **z**
+**gmt x2sys_solve** :option:`-C`\ *column* :option:`-T`\ *TAG* :option:`-E`\ **c**\|\ **d**\|\ **g**\|\ **h**\|\ **s**\|\ **y**\|\ **z**
 [ *COE_list.txt* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [**+u**] ]
+[ :option:`-W`\ [**+u**] ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-x| ]

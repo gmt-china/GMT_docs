@@ -22,17 +22,17 @@ psconvert
 [ :option:`-D`\ *outdir* ]
 [ :option:`-E`\ *resolution* ]
 [ :option:`-F`\ *out_name* ]
-[ |-G|\ *ghost_path* ]
-[ |-H|\ *factor* ]
-[ |-I|\ [**+m**\ *margins*][**+s**\ [**m**]\ *width*\ [/\ *height*]][**+S**\ *scale*] ]
-[ |-L|\ *listfile* ]
+[ :option:`-G`\ *ghost_path* ]
+[ :option:`-H`\ *factor* ]
+[ :option:`-I`\ [**+m**\ *margins*][**+s**\ [**m**]\ *width*\ [/\ *height*]][**+S**\ *scale*] ]
+[ :option:`-L`\ *listfile* ]
 [ **-Mb**\|\ **f**\ *pslayer* ]
-[ |-Q|\ [**g**\|\ **p**\|\ **t**][1\|2\|4] ]
-[ |-S| ]
-[ |-T|\ **b**\|\ **e**\|\ **E**\|\ **f**\|\ **F**\|\ **j**\|\ **g**\|\ **G**\|\ **m**\|\ **s**\|\ **t**\ [**+m**] ]
+[ :option:`-Q`\ [**g**\|\ **p**\|\ **t**][1\|2\|4] ]
+[ :option:`-S` ]
+[ :option:`-T`\ **b**\|\ **e**\|\ **E**\|\ **f**\|\ **F**\|\ **j**\|\ **g**\|\ **G**\|\ **m**\|\ **s**\|\ **t**\ [**+m**] ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *params* ]
-[ |-Z| ]
+[ :option:`-W`\ *params* ]
+[ :option:`-Z` ]
 [ |SYN_OPT--| ]
 
 必须选项
@@ -102,7 +102,7 @@ psconvert
 
     - Linux下一般不需要设置Ghostscript的路径，除非你自己重新编译并安装到了非标准路径下
     - Windows下，一般也不需要使用该选项，程序会自动从注册表里获取路径信息
-    - 如果从注册表中获取路径失败，则必须使用 |-G| 选项指定路径，如 ``-GC:\programs\gs\gs9.02\bin\gswin64c``
+    - 如果从注册表中获取路径失败，则必须使用 :option:`-G` 选项指定路径，如 ``-GC:\programs\gs\gs9.02\bin\gswin64c``
 
 .. _-H:
 

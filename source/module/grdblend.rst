@@ -17,7 +17,7 @@ grdblend
 
 - 某个节点只有一个值：使用该值填充该节点
 - 某个节点有多个值：对多个值计算其权重均值并赋值给该节点
-- 某个节点没有值：该节点的值由 |-N| 选项控制，默认为NaN
+- 某个节点没有值：该节点的值由 :option:`-N` 选项控制，默认为NaN
 
 输入网格数据中，若网格节点配准方式或网格间隔与输出数据不同，则会自动调用
 :doc:`grdsample` 对这些网格数据进行重采样。
@@ -26,15 +26,15 @@ grdblend
 ----
 
 **gmt grdblend** [ *blendfile* \| *grid1* *grid2* ... ]
-|-G|\ *outgrid*
+:option:`-G`\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-C`\ **f**\|\ **l**\|\ **o**\|\ **u**\ [**+n**\|\ **p**] ]
-[ |-N|\ *nodata* ]
-[ |-Q| ]
-[ |-Z|\ *scale* ]
+[ :option:`-N`\ *nodata* ]
+[ :option:`-Q` ]
+[ :option:`-Z`\ *scale* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ [**z**] ]
+[ :option:`-W`\ [**z**] ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-n| ]
 [ |SYN_OPT-r| ]

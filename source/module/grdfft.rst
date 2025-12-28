@@ -24,16 +24,16 @@ grdfft
 ----
 
 **gmt grdfft** *ingrid* [ *ingrid2* ]
-[ |-G|\ *outfile*\|\ *table* ]
+[ :option:`-G`\ *outfile*\|\ *table* ]
 [ :option:`-A`\ *azimuth* ]
 [ :option:`-C`\ *zlevel* ]
 [ :option:`-D`\ [*scale*\|\ **g**] ]
 [ :option:`-E`\ [**r**\|\ **x**\|\ **y**][**+w**\ [**k**]][**+n**] ]
 [ :option:`-F`\ [**r**\|\ **x**\|\ **y**]\ *params* ]
-[ |-I|\ [*scale*\|\ **g**] ]
-[ |-N|\ *params* ]
-[ |-Q|\ ]
-[ |-S|\ *scale* ]
+[ :option:`-I`\ [*scale*\|\ **g**] ]
+[ :option:`-N`\ *params* ]
+[ :option:`-Q`\ ]
+[ :option:`-S`\ *scale* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT--| ]
@@ -77,7 +77,7 @@ grdfft
     计算径向[\ **r**\ ]谱。将 **x** 或者 **y** 直接跟在 :option:`-E` 后表示计算
     x 或者 y 方向的谱。该选项不产生网格文件。
     如果输入网格文件数为 1，则 f（即频率或波数），power[f]，以及 power[f] 
-    的 1 倍标准差将通过 |-G| 选项写到输出文件中 [默认为标准输出]。
+    的 1 倍标准差将通过 :option:`-G` 选项写到输出文件中 [默认为标准输出]。
     如果输入网格数为 2，f 和其他 8 个量将被写入到文件中，分别为 Xpower[f]，
     Ypower[f]，coherent power[f]，noise power[f]，phase[f]，admittance[f]，
     gain[f]，coherency[f]。每个量后面还包括其 1 倍标准差估计值，因此最终的
@@ -132,7 +132,7 @@ grdfft
 .. _-Q:
 
 **-Q**
-    不进行波数操作。当只需输出二维谱时和 |-N| 选项同时使用，通常用于输出中间
+    不进行波数操作。当只需输出二维谱时和 :option:`-N` 选项同时使用，通常用于输出中间
     结果。
 
 .. _-S:

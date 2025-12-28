@@ -24,7 +24,7 @@ pmodeler
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 **-S**\ *flags*
 [ :option:`-F`\ *polygonfile* ]
-[ |-T|\ *age* ]
+[ :option:`-T`\ *age* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]

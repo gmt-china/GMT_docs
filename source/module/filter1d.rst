@@ -12,7 +12,7 @@ filter1d
 
 **filter1d** 用于对多列时间序列数据做时间域滤波。用户需要指定哪一列数据代表时间（即
 自变量）。若输入的时间序列是等间隔且无间断或outliers则滤波速度较快。对于有
-间断的不等间隔数据，需要使用 |-L| **-Q** 或 |-S| 选项。
+间断的不等间隔数据，需要使用 :option:`-L` **-Q** 或 :option:`-S` 选项。
 
 对于空间序列数据，提供了一个选项用于计算沿着测线的距离，并以此作为滤波的自变量。
 
@@ -21,9 +21,9 @@ filter1d
 
 **gmt filter1d** [ *table* ] :option:`-F`\ *type<width>*\ [*modifier*]
 [ :option:`-D`\ *increment* ] [ :option:`-E` ]
-[ |-L|\ *lack\_width* ] [ |-N|\ *t\_col* ] [ |-Q|\ *q\_factor* ]
-[ |-S|\ *symmetry\_factor* ]
-[ |-T|\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ |-T|\ *file*\|\ *list* ]
+[ :option:`-L`\ *lack\_width* ] [ :option:`-N`\ *t\_col* ] [ :option:`-Q`\ *q\_factor* ]
+[ :option:`-S`\ *symmetry\_factor* ]
+[ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]
@@ -119,7 +119,7 @@ filter1d
 
 .. _-T:
 
-**-T**\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
+**-T**\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list*
     生成时间序列
 
     生成从 *min* 到 *max* 间隔为 *inc* 的等间隔数列。

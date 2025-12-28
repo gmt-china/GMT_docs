@@ -22,12 +22,12 @@ grdedit
 **gmt grdedit** *grid* [ :option:`-A` ] [ :option:`-C` ]
 [ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
 [ :option:`-E`\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
-[ |-G|\ *outgrid* ]
+[ :option:`-G`\ *outgrid* ]
 [ :option:`-J`\ *parameters* ]
-[ |-L|\ [**+n**\|\ **p**] ]
-[ |-N|\ *table* ]
+[ :option:`-L`\ [**+n**\|\ **p**] ]
+[ :option:`-N`\ *table* ]
 [ |SYN_OPT-R| ]
-[ |-S| ] [ |-T| ]
+[ :option:`-S` ] [ :option:`-T` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -63,7 +63,7 @@ grdedit
 .. _-E:
 
 **-E**\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**]
-    对网格做变换。该选项与除 |-G| 外的其它选项不兼容
+    对网格做变换。该选项与除 :option:`-G` 外的其它选项不兼容
 
     - **-Ea** 旋转180度
     - **-Eh** 水平翻转网格（从左到右）

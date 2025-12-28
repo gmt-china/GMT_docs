@@ -21,15 +21,15 @@ grdgravmag3d
 **gmt grdgravmag3d** *grdfile_top* [*grdfile_bot*] [ :option:`-C`\ *density* ]
 [ :option:`-E`\ *thickness* ]
 [ :option:`-F`\ *xy_file* ]
-[ |-G|\ *outgrid* ]
-[ |-H|\ *args* ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-H`\ *args* ]
 [ |SYN_OPT-I| ]
-[ |-L|\ *z_obs* ]
-[ |-Q|\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*] ]
+[ :option:`-L`\ *z_obs* ]
+[ :option:`-Q`\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*] ]
 [ |SYN_OPT-R| ]
-[ |-S|\ *radius* ]
+[ :option:`-S`\ *radius* ]
 [ |SYN_OPT-V| ]
-[ |-Z|\ *level*\ [**b**\|\ **t**] ]
+[ :option:`-Z`\ *level*\ [**b**\|\ **t**] ]
 [ |SYN_OPT-f| ]
 [ **-x**\ *+a|n|-n* ]
 [ |SYN_OPT--| ]
@@ -45,12 +45,12 @@ grdgravmag3d
 
 **-C**\ *density*
     设置物体密度，单位为 kg/m^3。也可使用一个网格文件提供其可变的密度。该选项与
-    |-H| 不能同时使用
+    :option:`-H` 不能同时使用
 
 .. _-F:
 
 **-F**\ *xy_file*
-    计算位于 *xy_file* 文件中的点上的异常值。该选项与 |-G| 选项不能同时使用
+    计算位于 *xy_file* 文件中的点上的异常值。该选项与 :option:`-G` 选项不能同时使用
 
 .. _-G:
 

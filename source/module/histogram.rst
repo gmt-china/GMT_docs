@@ -17,26 +17,26 @@ histogram
 
 **gmt histogram** [ *table* ]
 :option:`-J`\ **x**\|\ **X**\ *parameters*
-|-T|\ [*min/max*\ /]\ *inc*\ [**+n**] \|\ |-T|\ *file*\|\ *list*
+:option:`-T`\ [*min/max*\ /]\ *inc*\ [**+n**] \|\ :option:`-T`\ *file*\|\ *list*
 [ :option:`-A` ]
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-D`\ [**+b**][**+f**\ *font*][**+o**\ *off*][**+r**] ]
 [ :option:`-F` ]
-[ |-G|\ *fill* ]
+[ :option:`-G`\ *fill* ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
-[ |-I|\ [**o**\|\ **O**] ]
-[ |-L|\ **l**\|\ **h**\|\ **b**] ]
-[ |-N|\ [*mode*][**+p**\ *pen*] ]
-[ |-Q|\ **r** ]
+[ :option:`-I`\ [**o**\|\ **O**] ]
+[ :option:`-L`\ **l**\|\ **h**\|\ **b**] ]
+[ :option:`-N`\ [*mode*][**+p**\ *pen*] ]
+[ :option:`-Q`\ **r** ]
 [ |SYN_OPT-R| ]
-[ |-S| ]
+[ :option:`-S` ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *pen* ]
+[ :option:`-W`\ *pen* ]
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
-[ |-Z|\ [*type*][**+w**] ]
+[ :option:`-Z`\ [*type*][**+w**] ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
@@ -111,7 +111,7 @@ histogram
 **-I**\ [**o**\|\ **O**]
     返回计算结果不绘图。
 
-    - |-I| 返回 *xmin xmax ymin ymax*，即数据的最小值、最大值和统计数量的最小值、最大值
+    - :option:`-I` 返回 *xmin xmax ymin ymax*，即数据的最小值、最大值和统计数量的最小值、最大值
     - **-Io** 输出各个直方的的X值和Y值
     - **-IO** 输出各个直方的的X值和Y值，即使Y=0
 

@@ -19,14 +19,14 @@ segy2grd
 
 **gmt segy2grd**
 *segyfile*
-|-G|\ *grdfile*
+:option:`-G`\ *grdfile*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-A`\ [**n**\|\ **z**] ]
-[ |-L|\ [*nsamp*] ]
-[ |-M|\ [*ntraces*] ]
-[ |-Q|\ **x**\|\ **y**\ *value* ]
-[ |-S|\ [*header*] ]
+[ :option:`-L`\ [*nsamp*] ]
+[ :option:`-M`\ [*ntraces*] ]
+[ :option:`-Q`\ **x**\|\ **y**\ *value* ]
+[ :option:`-S`\ [*header*] ]
 
 必须选项
 ------------------

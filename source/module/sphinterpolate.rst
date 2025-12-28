@@ -11,20 +11,20 @@ sphinterpolate
 :简介:
 
 **sphinterpolate** 读取 lon，lat，z 形式的文件，进行 Delaunay 三角剖分并作球面张力插值。
-通过 |-Q| 选项可以使用不同的插值方法。
+通过 :option:`-Q` 选项可以使用不同的插值方法。
 
 语法
 ----
 
 **gmt sphinterpolate** [ *table* ]
-|-G|\ *grdfile*
+:option:`-G`\ *grdfile*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-D`\ [*east*] ]
-[ |-Q|\ *mode*\ [*options*] ]
-[ |-T| ]
+[ :option:`-Q`\ *mode*\ [*options*] ]
+[ :option:`-T` ]
 [ |SYN_OPT-V| ]
-[ |-Z| ]
+[ :option:`-Z` ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]

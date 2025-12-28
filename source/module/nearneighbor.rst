@@ -30,14 +30,14 @@ nearneighbor
 语法
 ----
 
-**gmt nearneighbor** [ *table* ] |-G|\ *outgrid*
+**gmt nearneighbor** [ *table* ] :option:`-G`\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
-|-S|\ *search_radius*
+:option:`-S`\ *search_radius*
 [ :option:`-E`\ *empty* ]
-[|-N|\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n**]
+[:option:`-N`\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n**]
 [ |SYN_OPT-V| ]
-[ |-W| ]
+[ :option:`-W` ]
 [ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
@@ -56,7 +56,7 @@ nearneighbor
 --------
 
 *table*
-    输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 |-W| 选项）
+    输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 :option:`-W` 选项）
 
 .. _-G:
 

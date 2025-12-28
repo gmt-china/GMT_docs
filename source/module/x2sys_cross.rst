@@ -17,14 +17,14 @@ x2sys_cross
 语法
 ----
 
-**gmt x2sys_cross** *track(s)* |-T|\ *TAG* [ :option:`-A`\ *pairs* ]
+**gmt x2sys_cross** *track(s)* :option:`-T`\ *TAG* [ :option:`-A`\ *pairs* ]
 [ :option:`-C`\ [*runtimes*] ]
 [ :option:`-D`\ [**S**\|\ **N**] ]
-[ |-I|\ **l**\|\ **a**\|\ **c** ]
-[ |-Q|\ **e**\|\ **i** ]
-[ |-S|\ **l**\|\ **u**\|\ **h**\ *speed* ]
+[ :option:`-I`\ **l**\|\ **a**\|\ **c** ]
+[ :option:`-Q`\ **e**\|\ **i** ]
+[ :option:`-S`\ **l**\|\ **u**\|\ **h**\ *speed* ]
 [ |SYN_OPT-V| ]
-[ |-W|\ *size* ] [ |-Z| ]
+[ :option:`-W`\ *size* ] [ :option:`-Z` ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]
 [ |SYN_OPT--| ]
@@ -55,7 +55,7 @@ x2sys_cross
 
 **-A**\ *pairs*
     只处理 *pairs* 文件中包含的轨迹对 [默认对所有的轨迹对计算交叉点]。
-    *pairs* 可以使用 :doc:`x2sys_get` 的 |-L| 选项生成。
+    *pairs* 可以使用 :doc:`x2sys_get` 的 :option:`-L` 选项生成。
 
 .. _-C:
 

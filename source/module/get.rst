@@ -16,11 +16,11 @@ get
 **gmt get**
 [ *PARAMETER1* *PARAMETER2* *PARAMETER3* ... ]
 [ :option:`-D`\ *selection* ]
-[ |-G|\ *defaultsfile* ]
-[ |-I|\ *inc[m|s]* ]
-[ |-L| ]
-[ |-N| ]
-[ |-Q| ]
+[ :option:`-G`\ *defaultsfile* ]
+[ :option:`-I`\ *inc[m|s]* ]
+[ :option:`-L` ]
+[ :option:`-N` ]
+[ :option:`-Q` ]
 [ |SYN_OPT-V| ]
 
 必选选项
@@ -77,7 +77,7 @@ get
 .. _-Q:
 
 **-Q**
-    与 :option:`-D` （和 |-I| ）结合使用，提供一个可下载数据集的列表。
+    与 :option:`-D` （和 :option:`-I` ）结合使用，提供一个可下载数据集的列表。
     输出格式为::
 
        planet group dataset size nitems remark
@@ -97,7 +97,7 @@ get
     $ gmt get MAP_GRID_CROSS_SIZE_PRIMARY MAP_GRID_CROSS_SIZE_SECONDARY
     24p,Helvetica,black 16p,Helvetica,black
 
-使用 |-L| 选项一行显示一个参数值::
+使用 :option:`-L` 选项一行显示一个参数值::
 
     $ gmt get FONT_TITLE FONT_LABEL MAP_FRAME_TYPE -L
     24p,Helvetica,black

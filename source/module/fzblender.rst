@@ -32,12 +32,12 @@ fzblender
 **gmt fzblender** [ :option:`-D` ]
 [ :option:`-E`\ *sfilter* ]
 [ :option:`-F`\ *pfilter* ]
-[ |-I|\ *FZid* ] 
-[ |-Q|\ *q_min*/*q_max* ]
-[ |-S|\ **b**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*] ] 
-[ |-T|\ *prefix* ]
+[ :option:`-I`\ *FZid* ] 
+[ :option:`-Q`\ *q_min*/*q_max* ]
+[ :option:`-S`\ **b**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*] ] 
+[ :option:`-T`\ *prefix* ]
 [ |SYN_OPT-V| ]
-[ |-Z|\ *acut*/*vcut*/*fcut*/*wcut* ]
+[ :option:`-Z`\ *acut*/*vcut*/*fcut*/*wcut* ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 
@@ -83,7 +83,7 @@ fzblender
 
 **-I**\ *FZid*
     默认情况下，会分析所有 FZ 的横剖面。
-    你也可以使用 |-I| 指定特定的 *FZid*（第一个 *FZid* 为 0）。
+    你也可以使用 :option:`-I` 指定特定的 *FZid*（第一个 *FZid* 为 0）。
 
 .. _-Q:
 
@@ -93,8 +93,8 @@ fzblender
     分配给模型 FZ 轨迹的质量权重为*w_q(d)* = (*q(d)* - *q_min*) / (*q_max* - *q_min*)，
     若 *w_q(d)* > *q_max* 则 *w_q(d)* = 1，
     若 *w_q(d)* < *q_min* 则 *w_q(d)* = 0。
-    可通过 |-Q| 改变此权重分配。分配给数字化 FZ 轨迹的质量权重为
-    *w_q(d)* = 1 - mean{模型质量权重}（参见 |-S|）。质量指数的计算请参见 |-Z|。
+    可通过 :option:`-Q` 改变此权重分配。分配给数字化 FZ 轨迹的质量权重为
+    *w_q(d)* = 1 - mean{模型质量权重}（参见 :option:`-S`）。质量指数的计算请参见 :option:`-Z`。
 
 .. _-S:
 
@@ -178,7 +178,7 @@ fzblender
 注意事项
 --------
 
-需要注意的是，在 |-S| 的各指令中，**e** 与众不同，
+需要注意的是，在 :option:`-S` 的各指令中，**e** 与众不同，
 它反映了基于理论预测的 FZ 位置估计，即 FZ 横切可能对应于 VGG 最陡坡度的位置。
 因此，该位置会与槽中心偏移几公里（除非混合主要为 “Atlantic” 风格），
 将其与其他指令组合使用通常效果不佳。最好单独使用，并配合滤波。

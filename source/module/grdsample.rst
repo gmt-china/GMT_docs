@@ -22,17 +22,17 @@ grdsample
 存在混叠效应，因而需要在插值前使用 :doc:`gmt:grdfft` 或 :doc:`gmt:grdfilter`
 对网格文件做滤波。
 
-若省略 :option:`-R` 选项，则输出网格与输入网格的区域范围相同；若省略 |-I| 选项，
-则输出网格间距与输入网格间距相同。**-r** 和 |-T| 均可用于修改网格配准方式。
+若省略 :option:`-R` 选项，则输出网格与输入网格的区域范围相同；若省略 :option:`-I` 选项，
+则输出网格间距与输入网格间距相同。**-r** 和 :option:`-T` 均可用于修改网格配准方式。
 若省略这两个选项，则输出网格的配准方式与输入网格相同。
 
 语法
 ----
 
-**gmt grdsample** *in_grdfile* |-G|\ *out_grdfile*
+**gmt grdsample** *in_grdfile* :option:`-G`\ *out_grdfile*
 [ |SYN_OPT-I| ]
 [ |SYN_OPT-R| ]
-[ |-T| ]
+[ :option:`-T` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-n| ]
