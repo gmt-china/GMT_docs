@@ -17,8 +17,8 @@ mgd77magref
 ----
 
 **gmt mgd77magref** [ *inputfile* ]
-[ |-A|\ [**+a**\ *alt*\ ][**+t**\ *date*\ ][**+y**] ]
-[ |-C|\ *cm4file* ]
+[ :option:`-A`\ [**+a**\ *alt*\ ][**+t**\ *date*\ ][**+y**] ]
+[ :option:`-C`\ *cm4file* ]
 [ |-D|\ *Dstfile* ]
 [ |-E|\ *f107file* ]
 [ |-F|\ *flags* ]

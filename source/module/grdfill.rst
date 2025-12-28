@@ -17,7 +17,7 @@ grdfill
 ----
 
 **gmt grdfill** *ingrid*
-|-A|\ *mode*\ [*arg*]
+:option:`-A`\ *mode*\ [*arg*]
 |-G|\ *outgrid*
 [ |SYN_OPT-R| ]
 [ |-L|\ [**p**] ]

@@ -41,7 +41,7 @@ gshhg
 语法
 ----
 
-**gmt gshhg** *binaryfile.b* [ |-A|\ *min* ] [ |-G| ] [ |-I|\ *id* ]
+**gmt gshhg** *binaryfile.b* [ :option:`-A`\ *min* ] [ |-G| ] [ |-I|\ *id* ]
 [ |-L| ] [ |-N|\ *level* ] [ |-Q|\ **e**\|\ **i** ]
 [ |SYN_OPT-bo| ]
 [ |SYN_OPT-do| ]

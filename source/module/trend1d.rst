@@ -21,7 +21,7 @@ trend1d
 **gmt trend1d** [ *table* ]
 |-F|\ **xymrw**\|\ **p**\|\ **P**\|\ **c**
 |-N|\ *params*
-[ |-C|\ *condition_number* ]
+[ :option:`-C`\ *condition_number* ]
 [ |-I|\ [*confidence_level*] ]
 [ |SYN_OPT-V| ]
 [ |-W|\ [**+s**] ]

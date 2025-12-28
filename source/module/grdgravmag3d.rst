@@ -18,7 +18,7 @@ grdgravmag3d
 语法
 ----
 
-**gmt grdgravmag3d** *grdfile_top* [*grdfile_bot*] [ |-C|\ *density* ]
+**gmt grdgravmag3d** *grdfile_top* [*grdfile_bot*] [ :option:`-C`\ *density* ]
 [ |-E|\ *thickness* ]
 [ |-F|\ *xy_file* ]
 [ |-G|\ *outgrid* ]

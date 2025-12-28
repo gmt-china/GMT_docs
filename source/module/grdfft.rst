@@ -25,8 +25,8 @@ grdfft
 
 **gmt grdfft** *ingrid* [ *ingrid2* ]
 [ |-G|\ *outfile*\|\ *table* ]
-[ |-A|\ *azimuth* ]
-[ |-C|\ *zlevel* ]
+[ :option:`-A`\ *azimuth* ]
+[ :option:`-C`\ *zlevel* ]
 [ |-D|\ [*scale*\|\ **g**] ]
 [ |-E|\ [**r**\|\ **x**\|\ **y**][**+w**\ [**k**]][**+n**] ]
 [ |-F|\ [**r**\|\ **x**\|\ **y**]\ *params* ]

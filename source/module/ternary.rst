@@ -21,7 +21,7 @@ ternary
 [ **-JX**\ *width* ]
 [ :option:`-R`\ *amin*\ /*amax*\ /*bmin*\ /*bmax*\ /*cmin*\ /*cmax* ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
+[ :option:`-C`\ *cpt* ]
 [ |-G|\ *fill* ]
 [ |-L|\ *a*\ /*b*\ /*c* ]
 [ |-M| ]
@@ -62,7 +62,7 @@ ternary
 
     与常规图不同，三角图有三条不同的边。三条边从下面这条边开始，
     逆时针旋转，分别称为 **a**、**b**、**c**。
-    其余用法与标准选项 |-B| 相同。
+    其余用法与标准选项 :option:`-B` 相同。
 
 .. _-C:
 

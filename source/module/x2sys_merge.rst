@@ -18,7 +18,7 @@ x2sys_merge
 语法
 ----
 
-**gmt x2sys_merge** |-A|\ *main_COElist.txt* |-M|\ *new_COElist.txt*
+**gmt x2sys_merge** :option:`-A`\ *main_COElist.txt* |-M|\ *new_COElist.txt*
 [ |SYN_OPT--| ]
 
 必选选项

@@ -20,8 +20,8 @@ img2google
 **img2google**
 |SYN_OPT-R|
 [ *imgfile* ]
-[ |-A|\ *mode*\ [*altitude*] ]
-[ |-C| ]
+[ :option:`-A`\ *mode*\ [*altitude*] ]
+[ :option:`-C` ]
 [ |-F|\ *fademin/fademax* ]
 [ |-G|\ *prefix* ]
 [ |-L|\ *LODmin/LODmax* ]

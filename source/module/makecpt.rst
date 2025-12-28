@@ -27,20 +27,20 @@ makecpt
     - 前景色 (F，foreground color), 表示高于最大 z 值时所对应的颜色
     - 以及 NaN 值颜色 (N)，表示 z 值被定义为 NaN 时对应的颜色，即 z 值未定义的情况
 
-默认情况下，这三种颜色会沿用 |-C| 选项所指定的主 CPT 文件的设置，但也可以使用 |-D| 、
+默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主 CPT 文件的设置，但也可以使用 |-D| 、
 |-M| 以及 |-N| 选项修改。或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。需注意，选项总会覆盖
 自定义参数值。
 
-颜色模式 (RGB, HSV, CMYK) 会沿用 |-C| 选项所指定的主 CPT 文件的设置。
+颜色模式 (RGB, HSV, CMYK) 会沿用 :option:`-C` 选项所指定的主 CPT 文件的设置。
 或者使用 :doc:`set` 命令对 :term:`COLOR_MODEL` 进行自定义修改。
 
 语法
 ----
 
 **gmt makecpt**
-[ |-A|\ *transparency*\ [**+a**] ]
-[ |-C|\ *cpt* ]
+[ :option:`-A`\ *transparency*\ [**+a**] ]
+[ :option:`-C`\ *cpt* ]
 [ |-D|\ [**i**\|\ **o**] ]
 [ |-E|\ [*nlevels*] ]
 [ |-F|\ [**R**\|\ **r**\|\ **h**\|\ **c**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
@@ -181,7 +181,7 @@ makecpt
 **-T**\ [*min*/*max*/*inc*\ [**+b**\|\ **i**\|\ **l**\|\ **n**]\|\ *file*\|\ *list*]
     定义要生成的 CPT 文件的 z 值范围及 z 值间隔。该选项可有如下几种形式：
 
-    - 若使用了 |-C| 选项且 *inc* 未指定，则 z 值间隔的数目与输入的主 CPT 文件相同
+    - 若使用了 :option:`-C` 选项且 *inc* 未指定，则 z 值间隔的数目与输入的主 CPT 文件相同
     - 若 *inc* 后有 **+n** ，则将 *inc* 解释为 z 值间隔的数目而不是 z 值间隔
     - 使用一个文件给定数值列表
     - 使用一个数值列表

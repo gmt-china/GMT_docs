@@ -22,7 +22,7 @@ talwani2d
 ----
 
 **gmt talwani2d** [ *table* ]
-[ |-A| ] [ |-D|\ *density* ] ]
+[ :option:`-A` ] [ |-D|\ *density* ] ]
 [ |-F|\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
 [ |-M|\ [**h**]\ [**v**] ]
 [ |-N|\ *trackfile* ]

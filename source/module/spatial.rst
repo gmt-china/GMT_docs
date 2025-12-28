@@ -18,8 +18,8 @@ spatial
 ----
 
 **gmt spatial** [ *table* ]
-[ |-A|\ [**a**\ *min_dist*][*unit*]]
-[ |-C| ]
+[ :option:`-A`\ [**a**\ *min_dist*][*unit*]]
+[ :option:`-C` ]
 [ |-D|\ [**+a**\ *amax*][**+c\|C**\ *cmax*][**+d**\ *dmax*][**+f**\ *file*][**+p**][**+s**\ *fact*] ]
 [ |-E|\ **+p**\|\ **+n** ]
 [ |-F|\ [**l**] ]

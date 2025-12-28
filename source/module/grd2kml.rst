@@ -26,8 +26,8 @@ grd2kml
 
 **gmt grd2kml** *ingrid*
 |-N|\ *prefix*
-[ |-A|\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
-[ |-C|\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
+[ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
+[ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
 [ |-E|\ *URL* ]
 [ |-F|\ *filtercode* ]
 [ |-H|\ *scale* ]
@@ -124,7 +124,7 @@ grd2kml
 **-W**\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*]
     提供一个包含等值线值与画笔样式的文件，用于在影像上叠加等值线 [默认无等值线]。
     因此，使用 |-W| 时图块将通过 PostScript 渲染生成，速度较慢。
-    若 *cfile* 无效，则认为输入为 *pen*，并依据 |-C| 所定义的 *cpt* 自动绘制等值线。
+    若 *cfile* 无效，则认为输入为 *pen*，并依据 :option:`-C` 所定义的 *cpt* 自动绘制等值线。
     等值线通过 :doc:`grdcontour` 绘制。
     **注意**：画笔宽度指的是最高分辨率图块的宽度；
     对于低一层的图块，其宽度按比例 *scale* [默认 sqrt(2)] 缩减。

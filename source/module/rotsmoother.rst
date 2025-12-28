@@ -18,8 +18,8 @@ rotsmoother
 --------
 
 **gmt rotsmoother** [ *table* ]
-[ |-A| ]
-[ |-C| ]
+[ :option:`-A` ]
+[ :option:`-C` ]
 [ |-N| ]
 [ |-S| ]
 [ |-T|\ *ages* ]

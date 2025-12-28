@@ -35,8 +35,8 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 **gmt surface** [ *table* ] |-G|\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
-[ |-A|\ *aspect_ratio*\|\ **m** ]
-[ |-C|\ *convergence_limit*\ [%] ]
+[ :option:`-A`\ *aspect_ratio*\|\ **m** ]
+[ :option:`-C`\ *convergence_limit*\ [%] ]
 [ :option:`-J`\ *parameters* ]
 [ |-D|\ *breakline_file*\ [**+z**\ [*level*]] ]
 [ |-L|\ **l**\ *lower* ] [ |-L|\ **u**\ *upper* ]
@@ -223,7 +223,7 @@ ASCII 数据 `hawaii_5x5.xyg` 为经 :doc:`blockmean` 处理后的数据，使�
 格网化地理坐标数据：边界条件
 ----------------------------
 
-**surface** 内部执行的有限差分算法基于笛卡尔坐标，因此设置了 |-A| 选项以适应
+**surface** 内部执行的有限差分算法基于笛卡尔坐标，因此设置了 :option:`-A` 选项以适应
 不同纬度下不同方向（即经度和纬度方向）的纵横比。当输出地理坐标网格的经度范围
 为 0～360 范围时，将在经度方向实施周期边界条件。但是，在极点处，却不能使用该
 边界条件，因为在极点处的有限差分解时无效的（在极点处，网格间隔为 0）。如果

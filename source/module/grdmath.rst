@@ -654,7 +654,7 @@ grdmath
    :term:`PROJ_GEODESIC` 中设置使用其他算法以平衡精度和效率。
 
    **LDISTG** 和 **LDIST** 作用类似，但是 **LDISTG** 使用 GSHHG 数据运算。其中
-   GSHHG 数据来自 |-D| 和 |-A| 选项。
+   GSHHG 数据来自 |-D| 和 :option:`-A` 选项。
 
 #. **POINT** 读取一个 ASCII 文件，计算 x 和 y 的平均值并放在堆栈中。如果输入数据
    为地理坐标，使用平均 3D 向量来确定平均位置。

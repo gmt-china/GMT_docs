@@ -17,8 +17,8 @@ x2sys_report
 语法
 ----
 
-**gmt x2sys_report** |-C|\ *column* |-T|\ *TAG* [ *coedbase.txt* ]
-[ |-A| ]
+**gmt x2sys_report** :option:`-C`\ *column* |-T|\ *TAG* [ *coedbase.txt* ]
+[ :option:`-A` ]
 [ |-I|\ [*list*] ]
 [ |-L|\ [*corrections*] ]
 [ |-N|\ *nx_min* ]

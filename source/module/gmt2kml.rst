@@ -21,7 +21,7 @@ Google Earth KML 格式的单个输出文件。
 *lon* *lat* [ *alt* ] [ *timestart* [ *timestop* ] ]
 
 其中 *lon* 和 *lat* 对所有特征都是必需的，*alt* 对所有特征都是可选的
-（参见 |-A| 和 |-C|），*timestart* 和 *timestop* 适用于事件和时间跨度特征。
+（参见 :option:`-A` 和 :option:`-C`），*timestart* 和 *timestop* 适用于事件和时间跨度特征。
 对于波动，*alt* 列是必需的，但应表示沿轨迹的数据异常，例如重力、磁力等。
 这些值将被缩放以产生沿线的偏移距离（以度为单位）。
 
@@ -29,8 +29,8 @@ Google Earth KML 格式的单个输出文件。
 --------
 
 **gmt 2kml** [ *table* ]
-[ |-A|\ **a**\|\ **g**\|\ **s**\ [*alt*\|\ **x**\ *scale*] ]
-[ |-C|\ *cpt* ]
+[ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*alt*\|\ **x**\ *scale*] ]
+[ :option:`-C`\ *cpt* ]
 [ |-D|\ *descriptfile* ]
 [ |-E|\ [**+e**][**+s**] ]
 [ |-F|\ **e**\|\ **l**\|\ **p**\|\ **s**\|\ **t**\|\ **w** ]
@@ -102,7 +102,7 @@ Google Earth KML 格式的单个输出文件。
 
 **-F**\ **e**\|\ **l**\|\ **p**\|\ **s**\|\ **t**\|\ **w**
     设置特征类型。输入文件前两列应为 (*lon*, *lat*)。当需要高度或值（
-    即未使用 |-A| 给出高度，或 |-C| 设置）时，
+    即未使用 :option:`-A` 给出高度，或 :option:`-C` 设置）时，
     第 3 列需要包含 altitude 或 value。选择以下指令：
 
     - **e**\ vent: 仅在特定 *time* 可见的符号，时间在下一列给出。

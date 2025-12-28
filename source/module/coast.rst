@@ -21,7 +21,7 @@ coast
 |SYN_OPT-R|
 [ |SYN_OPT-Area| ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *fill*\ [**+l**\|\ **+r**] ]
+[ :option:`-C`\ *fill*\ [**+l**\|\ **+r**] ]
 [ |-D|\ *resolution*\ [**+f**] ]
 [ |-E|\ *dcw* ]
 [ |-F|\ *box* ]
@@ -88,7 +88,7 @@ coast
     利用DCW数据绘制或导出行政区划边界（洲界、国界、省界）
 
     GMT自带了DCW（Digital Chart of World）数据，即全球的行政区划数据。
-    其包含了全球各国国界和省界数据。该数据独立于GSHHG数据，因而 |-A| 和 |-D|
+    其包含了全球各国国界和省界数据。该数据独立于GSHHG数据，因而 :option:`-A` 和 |-D|
     选项对该数据无效。关于DCW数据及其用法的详细介绍见 :doc:`/dataset/dcw/index`。
 
     通过指定一个或多个以逗号分隔的区域代码 *code* 即可指定一个或多个行政区域。

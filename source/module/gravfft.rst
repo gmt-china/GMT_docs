@@ -29,7 +29,7 @@ gravfft
 
 **gmt gravfft** *ingrid* [ *ingrid2* ]
 |-G|\ *outgrid*
-[ |-C|\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w** ]
+[ :option:`-C`\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w** ]
 [ |-D|\ *density*\|\ *rhogrid* ]
 [ |-E|\ *n_terms* ]
 [ |-F|\ [**f**\ [**+s**\|\ **z**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**] ]

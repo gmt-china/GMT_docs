@@ -19,9 +19,9 @@ plot3d
 **gmt plot3d** [ *table* ] :option:`-J`\ *parameters*
 |-Jz|\ \|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
-[ |-A|\ [**m**\|\ **p**\|\ **x**\|\ **y**\|\ **r**\|\ **t**] ]
+[ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**\|\ **r**\|\ **t**] ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
+[ :option:`-C`\ *cpt* ]
 [ |-D|\ *dx*/*dy*\ [/*dz*] ]
 [ |-G|\ *fill*\|\ **+z** ]
 [ |-L|\ [**+b**\|\ **d**\|\ **D**][**+xl**\|\ **r**\|\ *x0*][**+yl**\|\ **r**\|\ *y0*][**+p**\ *pen*] ]

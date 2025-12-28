@@ -15,7 +15,7 @@ solar
 
 **gmt solar**
 [ |SYN_OPT-B| ]
-[ |-C| ]
+[ :option:`-C` ]
 [ |-G|\ [*fill*] ]
 [ |-I|\ [*lon/lat*][**+d**\ *date*][**+z**\ *TZ*] ]
 [ :option:`-J`\ *parameters* ]
@@ -102,7 +102,7 @@ solar
 
 **-N**
     反转晨昏线“内”和“外”概念颠倒。仅可与 |-G| 一起使用以剪裁出白昼区，
-    不可与 |-B| 一同使用。
+    不可与 :option:`-B` 一同使用。
 
 .. include:: explain_-R.rst_
 

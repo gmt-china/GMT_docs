@@ -22,7 +22,7 @@ sphdistance
 |-G|\ *grdfile*
 |SYN_OPT-I|
 |SYN_OPT-R|
-[ |-C| ]
+[ :option:`-C` ]
 [ |-D| ]
 [ |-E|\ **d**\|\ **n**\|\ **z**\ [*dist*] ]
 [ |-L|\ *unit* ]

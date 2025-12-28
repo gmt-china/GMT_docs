@@ -29,8 +29,8 @@ convert
 语法
 
 **gmt convert** [ *table* ]
-[ |-A| ]
-[ |-C|\ [**+l**\ *min*][**+u**\ *max*][**+i**]]
+[ :option:`-A` ]
+[ :option:`-C`\ [**+l**\ *min*][**+u**\ *max*][**+i**]]
 [ |-D|\ [*template*\ [**+o**\ *orig*]] ]
 [ |-E|\ [**f**\|\ **l**\|\ **m**\|\ **M**\ *stride*] ]
 [ |-F|\ [**c**\|\ **n**\|\ **p**\|\ **v**][**a**\|\ **t**\|\ **s**\|\ **r**\|\ *refpoint*] ]
@@ -231,7 +231,7 @@ convert
     gmt convert test.txt -bo > test.b
 
 将 :file:`left.txt` （共两列）的第二列和 :file:`right.txt` 的第一列作为
-坐标输入并绘制。这里的思路是：先使用 |-A| 选项将两个文件水平方向合并，在
+坐标输入并绘制。这里的思路是：先使用 :option:`-A` 选项将两个文件水平方向合并，在
 合并后的结果中提取数据 ::
 
     gmt convert left.txt right.txt -A -o1,2 | gmt plot ...

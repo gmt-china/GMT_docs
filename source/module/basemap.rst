@@ -21,7 +21,7 @@ basemap
 
 **gmt basemap** :option:`-J`\ *parameters*
 |SYN_OPT-Rz|
-[ |-A|\ [*file*] ]
+[ :option:`-A`\ [*file*] ]
 [ |SYN_OPT-B| ]
 [ |-F|\ *box* ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
@@ -40,7 +40,7 @@ basemap
 必选选项
 --------
 
-|-B| |-L| |-T| 三个选项中必须至少使用一个。
+:option:`-B` |-L| |-T| 三个选项中必须至少使用一个。
 
 .. include:: explain_-J.rst_
 

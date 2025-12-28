@@ -25,7 +25,7 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 ----
 
 **gmt grdgdal** *infile*
-|-A|\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
+:option:`-A`\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
 |-G|\ *outfile*
 [ |-F|\ "*gd opts*"]
 [ |-M|\ [**+r**\ [**+w**]]]
@@ -45,7 +45,7 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 --------
 
 *infile*
-    ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体 |-A| 使用的程序有关
+    ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体 :option:`-A` 使用的程序有关
 
 .. _-A:
 
@@ -63,7 +63,7 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 .. _-F:
 
 **-F**\ "*gdal opts*"
-    传递给 |-A| 指定的程序的选项列表，用双引号扩起来
+    传递给 :option:`-A` 指定的程序的选项列表，用双引号扩起来
 
 .. _-M:
 

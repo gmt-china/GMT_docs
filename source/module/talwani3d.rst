@@ -22,7 +22,7 @@ talwani3d
 ----
 
 **gmt talwani3d** [ *table* ]
-[ |-A| ]
+[ :option:`-A` ]
 [ |-D|\ *density* ] ]
 [ |-F|\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
 [ |-G|\ *outfile* ]

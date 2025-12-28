@@ -28,7 +28,7 @@ begin
 [ *prefix* ]
 [ *formats* ]
 [ *options* ]
-[ |-C| ]
+[ :option:`-C` ]
 [ |SYN_OPT-V| ]
 
 可选选项

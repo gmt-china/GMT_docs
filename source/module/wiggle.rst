@@ -18,9 +18,9 @@ wiggle
 ----
 
 **gmt wiggle** [ *table* ] :option:`-J`\ *parameters* |SYN_OPT-Rz| |-Z|\ *scale*
-[ |-A|\ [*azimuth*] ]
+[ :option:`-A`\ [*azimuth*] ]
 [ |SYN_OPT-B| ]
-[ |-C|\ *center* ]
+[ :option:`-C`\ *center* ]
 [ |-D|\ *refpoint* ]
 [ |-F|\ *panel* ]
 [ |-G|\ *fill*\ [**+n**][**+p**] ]
@@ -119,7 +119,7 @@ wiggle
 .. _-I:
 
 **-I**\ *fix_az*
-    绘制异常值时使用固定方位角（见 |-A| 选项）。
+    绘制异常值时使用固定方位角（见 :option:`-A` 选项）。
     使用该选项时，轨迹法线的方位角将被 *fixed_az* 覆盖。
 
 .. _-T:

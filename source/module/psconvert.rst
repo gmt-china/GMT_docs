@@ -17,8 +17,8 @@ psconvert
 ----
 
 **gmt psconvert** *psfile(s)*
-[ |-A|\ [**+r**][**+u**] ]
-[ |-C|\ *gs_option* ]
+[ :option:`-A`\ [**+r**][**+u**] ]
+[ :option:`-C`\ *gs_option* ]
 [ |-D|\ *outdir* ]
 [ |-E|\ *resolution* ]
 [ |-F|\ *out_name* ]
@@ -62,7 +62,7 @@ psconvert
     额外传递给 Ghostscript 的选项
 
     该选项用于在调用 Ghostscript 时传给 Ghostscript 额外的选项，若要额外给
-    Ghostscript增加多个选项，可重复使用 |-C| 命令。
+    Ghostscript增加多个选项，可重复使用 :option:`-C` 命令。
 
 .. _-D:
 
@@ -119,7 +119,7 @@ psconvert
     默认情况下，转换得到的图片的大小由 PS 文件的纸张尺寸决定。通常画图的时候是
     不会把一张A4纸画满的，所以在图片周围就会出现多余的白色部分。
 
-    |-A| 选项会对 PS 文件进行裁剪，仅保留其中有绘图的部分，即裁去白边::
+    :option:`-A` 选项会对 PS 文件进行裁剪，仅保留其中有绘图的部分，即裁去白边::
 
         gmt psconvert -A test.ps
 
