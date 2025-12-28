@@ -1,6 +1,7 @@
 :author: 田冬冬, 陈箫翰
 :date: 2022-06-15
-.. index:: !grdclip
+.. index:: ! grdclip
+.. program:: grdclip
 .. include:: common_SYN_OPTs.rst_
 
 grdclip

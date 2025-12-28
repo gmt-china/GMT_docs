@@ -2,6 +2,7 @@
 :date: 2025-10-20
 
 .. index:: ! gmt2kml
+.. program:: gmt2kml
 .. include:: common_SYN_OPTs.rst_
 
 gmt2kml

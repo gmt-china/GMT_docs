@@ -2,6 +2,7 @@
 :date: 2025-10-11
 
 .. index:: ! mlconverter
+.. program:: mlconverter
 .. include:: common_SYN_OPTs.rst_
 
 mlconverter

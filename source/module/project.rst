@@ -1,6 +1,7 @@
 :author: 田冬冬, 陈箫翰, 王亮, 姚家园, 朱邓达
 :date: 2025-11-03
 .. index:: ! project
+.. program:: project
 .. include:: common_SYN_OPTs.rst_
 
 project

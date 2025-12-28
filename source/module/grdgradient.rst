@@ -2,6 +2,7 @@
 :date: 2025-05-12
 
 .. index:: ! grdgradient
+.. program:: grdgradient
 
 ************
 grdgradient

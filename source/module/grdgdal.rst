@@ -2,6 +2,7 @@
 :date: 2022-07-02
 
 .. index:: ! grdgdal
+.. program:: grdgdal
 .. include:: common_SYN_OPTs.rst_
 
 grdgdal

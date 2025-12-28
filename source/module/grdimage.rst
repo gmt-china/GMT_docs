@@ -2,6 +2,7 @@
 :date: 2025-06-14
 
 .. index:: ! grdimage
+.. program:: grdimage
 .. include:: common_SYN_OPTs.rst_
 
 grdimage

@@ -2,6 +2,7 @@
 :date: 2022-10-23
 
 .. index:: ! blockmode
+.. program:: blockmode
 .. include:: common_SYN_OPTs.rst_
 
 blockmode

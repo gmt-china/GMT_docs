@@ -1,6 +1,7 @@
 :author: 周茂
 
-.. index:: !x2sys_datalist
+.. index:: ! x2sys_datalist
+.. program:: x2sys_datalist
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_datalist

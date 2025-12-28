@@ -2,6 +2,7 @@
 :date: 2025-10-19
 
 .. index:: ! grdspotter
+.. program:: grdspotter
 .. include:: common_SYN_OPTs.rst_
 
 grdspotter

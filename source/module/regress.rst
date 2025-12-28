@@ -2,6 +2,7 @@
 :date: 2024-10-23
 
 .. index:: ! regress
+.. program:: regress
 .. include:: common_SYN_OPTs.rst_
 
 regress

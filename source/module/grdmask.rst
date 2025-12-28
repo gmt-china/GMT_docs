@@ -1,6 +1,7 @@
 :author: 田冬冬, Tche LIU
 :date: 2022-11-17
 .. index:: ! grdmask
+.. program:: grdmask
 
 grdmask
 =======

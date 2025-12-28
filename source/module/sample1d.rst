@@ -2,6 +2,7 @@
 :date: 2025-07-10
 
 .. index:: ! sample1d
+.. program:: sample1d
 
 sample1d
 ========

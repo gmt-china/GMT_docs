@@ -1,6 +1,7 @@
 :author: 周茂
 
 .. index:: ! sphtriangulate
+.. program:: sphtriangulate
 .. include:: common_SYN_OPTs.rst_
 
 sphtriangulate

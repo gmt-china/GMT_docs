@@ -2,6 +2,7 @@
 :date: 2025-10-06
 
 .. index:: ! segyz
+.. program:: segyz
 .. include:: common_SYN_OPTs.rst_
 
 segyz

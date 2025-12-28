@@ -2,6 +2,7 @@
 :date: 2025-05-17
 
 .. index:: ! grdtrack
+.. program:: grdtrack
 
 grdtrack
 ========

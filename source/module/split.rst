@@ -1,6 +1,7 @@
 :author: 周茂, 田冬冬, 陈箫翰
 :date: 2025-08-11
 .. index:: ! split
+.. program:: split
 .. include:: common_SYN_OPTs.rst_
 
 split

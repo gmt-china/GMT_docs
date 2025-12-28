@@ -2,6 +2,7 @@
 :date: 2025-10-17
 
 .. index:: ! rotsmoother
+.. program:: rotsmoother
 .. include:: common_SYN_OPTs.rst_
 
 rotsmoother

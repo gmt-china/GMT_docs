@@ -1,6 +1,7 @@
 :author: 田冬冬, 陈箫翰, 周茂, 王亮
 :date: 2025-10-08
 .. index:: ! meca
+.. program:: meca
 .. include:: common_SYN_OPTs.rst_
 
 meca

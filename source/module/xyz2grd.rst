@@ -1,6 +1,7 @@
 :author: 田冬冬, 朱邓达, 王亮, 陈箫翰
 :date: 2025-11-03
 .. index:: ! xyz2grd
+.. program:: xyz2grd
 .. include:: common_SYN_OPTs.rst_
 
 xyz2grd

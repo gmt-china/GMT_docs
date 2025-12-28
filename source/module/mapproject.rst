@@ -2,6 +2,7 @@
 :date: 2022-12-05
 
 .. index:: ! mapproject
+.. program:: mapproject
 .. include:: common_SYN_OPTs.rst_
 
 mapproject

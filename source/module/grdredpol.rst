@@ -2,6 +2,7 @@
 :date: 2024-06-07
 
 .. index:: ! grdredpol
+.. program:: grdredpol
 .. include:: common_SYN_OPTs.rst_
 
 grdredpol

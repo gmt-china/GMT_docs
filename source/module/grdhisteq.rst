@@ -2,6 +2,7 @@
 :date: 2025-10-17
 
 .. index:: ! grdhisteq
+.. program:: grdhisteq
 .. include:: common_SYN_OPTs.rst_
 
 grdhisteq

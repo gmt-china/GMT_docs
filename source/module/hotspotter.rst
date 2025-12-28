@@ -2,6 +2,7 @@
 :date: 2025-10-20
 
 .. index:: ! hotspotter
+.. program:: hotspotter
 .. include:: common_SYN_OPTs.rst_
 
 hotspotter

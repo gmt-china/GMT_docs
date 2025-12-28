@@ -1,6 +1,7 @@
 :author: 田冬冬, 陈箫翰, 周茂, 邓山泉
 :date: 2025-08-14
 .. index:: ! get
+.. program:: get
 .. include:: common_SYN_OPTs.rst_
 
 get

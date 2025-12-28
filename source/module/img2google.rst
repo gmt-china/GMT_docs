@@ -1,6 +1,7 @@
 :author: 周茂
 
 .. index:: ! img2google
+.. program:: img2google
 .. include:: common_SYN_OPTs.rst_
 
 img2google

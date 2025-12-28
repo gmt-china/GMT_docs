@@ -1,6 +1,7 @@
 :author: 周茂
 
-.. index:: !x2sys_get
+.. index:: ! x2sys_get
+.. program:: x2sys_get
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_get

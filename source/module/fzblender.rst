@@ -2,6 +2,7 @@
 :date: 2025-10-12
 
 .. index:: ! fzblender
+.. program:: fzblender
 .. include:: common_SYN_OPTs.rst_
 
 fzblender

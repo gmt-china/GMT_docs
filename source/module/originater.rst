@@ -2,6 +2,7 @@
 :date: 2025-10-16
 
 .. index:: ! originater
+.. program:: originater
 .. include:: common_SYN_OPTs.rst_
 
 originater

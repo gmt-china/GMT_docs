@@ -1,6 +1,7 @@
 :author: 田冬冬, 陈箫翰
 :date: 2025-08-11
 .. index:: ! defaults
+.. program:: defaults
 .. include:: common_SYN_OPTs.rst_
 
 defaults

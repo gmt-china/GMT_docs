@@ -1,6 +1,7 @@
 :author: 田冬冬, 周茂, 朱邓达
 :date: 2025-10-31
 .. index:: ! gshhg
+.. program:: gshhg
 .. include:: common_SYN_OPTs.rst_
 
 gshhg

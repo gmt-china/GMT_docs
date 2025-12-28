@@ -2,6 +2,7 @@
 :date: 2025-06-08
 
 .. index:: ! subplot
+.. program:: subplot
 .. include:: common_SYN_OPTs.rst_
 
 subplot

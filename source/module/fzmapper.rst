@@ -2,6 +2,7 @@
 :date: 2025-10-13
 
 .. index:: ! fzmapper
+.. program:: fzmapper
 .. include:: common_SYN_OPTs.rst_
 
 fzmapper

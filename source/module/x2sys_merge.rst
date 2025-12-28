@@ -1,6 +1,7 @@
 :author: 周茂
 
-.. index:: !x2sys_merge
+.. index:: ! x2sys_merge
+.. program:: x2sys_merge
 .. include:: common_SYN_OPTs.rst_
 
 x2sys_merge

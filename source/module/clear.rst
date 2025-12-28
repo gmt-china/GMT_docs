@@ -1,6 +1,7 @@
 :author: 田冬冬, 王亮, 陈箫翰
 :date: 2025-05-08
 .. index:: ! clear
+.. program:: clear
 .. include:: common_SYN_OPTs.rst_
 
 clear

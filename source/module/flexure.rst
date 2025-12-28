@@ -2,6 +2,7 @@
 :date: 2024-02-17
 
 .. index:: ! flexure
+.. program:: flexure
 .. include:: common_SYN_OPTs.rst_
 
 flexure

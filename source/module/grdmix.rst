@@ -2,6 +2,7 @@
 :date: 2025-10-20
 
 .. index:: ! grdmix
+.. program:: grdmix
 .. include:: common_SYN_OPTs.rst_
 
 grdmix
