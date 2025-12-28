@@ -11,7 +11,7 @@ blockmedian
 :官方文档: :doc:`gmt:blockmedian`
 :简介: 使用中值估计对表数据做区域处理 
 
-**blockmedian** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 |-R| 和 |-I| 定义
+**blockmedian** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 |-I| 定义
 的每个区块输出一个中间的位置和值到标准输出。使用 |-G| 可直接输出为网格文件。在进行
 :doc:`surface` 模块时，为避免短波信号混淆，应提前使用 :doc:`blockmedian` ，**blockmedian**
 , 或 :doc:`blockmode` 。这些操作在用来抽稀数据或者平均数据时很有用。用户可通过设置

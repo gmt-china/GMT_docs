@@ -113,13 +113,13 @@ grdgravmag3d
 .. _-Q:
 
 **-Q**\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*]
-    基于 |-R| 选项扩展计算区域
+    基于 :option:`-R` 选项扩展计算区域
 
       **-Qn**\ *n_pad* 扩展边缘 *n_pad* * dx[/dy] 大小的范围，*n_pad* 为点数
 
       **-Q**\ *pad_dist* 只在东西方向分别扩展 *pad_dist* 大小的范围，*pad_dist* 为距离
 
-      **-Q**\ *region* 与 |-R| 选项语法相同
+      **-Q**\ *region* 与 :option:`-R` 选项语法相同
 
 .. include:: explain_-R.rst_
 

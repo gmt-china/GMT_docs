@@ -11,7 +11,7 @@ blockmode
 :官方文档: :doc:`gmt:blockmode`
 :简介: 使用众数估计对表数据做区块处理 
 
-**blockmode** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 |-R| 和 |-I| 定义
+**blockmode** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 |-I| 定义
 的每个区块输出一个位置和值的众数估计到标准输出。使用 |-G| 可直接输出为网格文件。在进行
 :doc:`surface` 模块时，为避免短波信号混淆，应提前使用 **blockmode** ，:doc:`blockmedian`
 , 或 :doc:`blockmean` 。这些操作在用来抽稀数据或者平均数据时很有用。用户可通过设置

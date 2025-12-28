@@ -190,7 +190,7 @@ GMT中共有14种图例类型，列举如下：
     :doc:`basemap` 模块的 |-L| 选项。
 
     若想要为比例尺加上背景面板，则可以使用 :doc:`basemap` 的 |-F| 选项。
-    此外，还可以加上 |-R| 和 :option:`-J` 指定比例尺所使用的投影参数。
+    此外，还可以加上 :option:`-R` 和 :option:`-J` 指定比例尺所使用的投影参数。
 
 **N** [*ncolumns* or *relwidth1 relwidth2 ... relwidthn*]
     修改图例中的列数 [默认为1列]

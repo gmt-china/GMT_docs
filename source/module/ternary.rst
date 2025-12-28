@@ -19,7 +19,7 @@ ternary
 
 **gmt ternary** [ *table* ]
 [ **-JX**\ *width* ]
-[ |-R|\ *amin*\ /*amax*\ /*bmin*\ /*bmax*\ /*cmin*\ /*cmax* ]
+[ :option:`-R`\ *amin*\ /*amax*\ /*bmin*\ /*bmax*\ /*cmin*\ /*cmax* ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt* ]
 [ |-G|\ *fill* ]
@@ -48,7 +48,7 @@ ternary
 必须选项
 --------
 
-必须使用 |-M| 或者 |-R| 和 **-J**。
+必须使用 |-M| 或者 :option:`-R` 和 **-J**。
 
 可选选项
 --------
