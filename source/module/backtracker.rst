@@ -43,7 +43,7 @@ backtracker
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
-[ :option:`-i`\ flags ]
+[ :option:`-i`\ *flags* ]
 [ :option:`-o`\ flags ]
 [ :option:`-q`\ flags ]
 [ :option:`-s`\ flags ]
