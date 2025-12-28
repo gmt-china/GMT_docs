@@ -40,7 +40,7 @@ backtracker
 [ :option:`-bi`\ *binary* ]
 [ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
-[ :option:`-e`\ regexp ]
+[ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ flags ]
 [ :option:`-h`\ headers ]
 [ :option:`-i`\ flags ]
