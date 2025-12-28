@@ -20,11 +20,11 @@ grdrotater
 --------
 
 **gmt grdrotater** *ingrid*
-|-E|\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 |-G|\ *outgrid*
 [ :option:`-A`\ *region* ]
-[ |-D|\ *rotoutline* ]
-[ |-F|\ *polygonfile* ]
+[ :option:`-D`\ *rotoutline* ]
+[ :option:`-F`\ *polygonfile* ]
 [ |-N| ]
 [ |SYN_OPT-R| ]
 [ |-S| ]
@@ -65,19 +65,19 @@ grdrotater
 **-D**\ *rotoutline*
     指定输出旋转后网格轮廓线的文件名。它表示网格在指定时间重建后的轮廓。
     若涉及多个重建时间，则 *rotoutline* 必须包含 C 格式化说明符来输出时间。
-    若仅指定一个时间且未使用 |-D|，则轮廓将输出到标准输出（除非使用 |-N|）。
+    若仅指定一个时间且未使用 :option:`-D`，则轮廓将输出到标准输出（除非使用 |-N|）。
 
 .. _-F:
 
 **-F**\ *polygonfile*
     指定一个闭合的多段线多边形文件，定义网格内需要投影的区域
     [默认投影整个网格]。
-    **注意**：如果同时给出 |-F| 和 :option:`-R`，则以 :option:`-R` 为准。
+    **注意**：如果同时给出 :option:`-F` 和 :option:`-R`，则以 :option:`-R` 为准。
 
 .. _-N:
 
 **-N**
-    不输出旋转后的多边形轮廓线 [默认将其写入标准输出，或通过 |-D| 写入文件]。
+    不输出旋转后的多边形轮廓线 [默认将其写入标准输出，或通过 :option:`-D` 写入文件]。
 
 .. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
 .. include:: explain_-Rgeo.rst_
@@ -85,7 +85,7 @@ grdrotater
 .. _-S:
 
 **-S**
-    仅旋转多边形轮廓线，而不旋转网格（若未提供网格文件，则必须使用 |-F|）。
+    仅旋转多边形轮廓线，而不旋转网格（若未提供网格文件，则必须使用 :option:`-F`）。
 
 .. _-T:
 
@@ -95,7 +95,7 @@ grdrotater
     - 对于等间隔的时间范围，格式为 **-T**\ *start*\ /\ *stop*\ /\ *inc*；
     若希望 *inc* 表示“点数”，请追加 **+n**。
     - 若为不等间距时间序列，请通过文件第一列提供，例如 **-T**\ *agefile*。
-    若未指定 |-T| 且 |-E| 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
+    若未指定 |-T| 且 :option:`-E` 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
 
 
 .. include:: explain_-V.rst_
@@ -152,7 +152,7 @@ grdrotater
     gmt grdmath 1 rot_gridA.nc ISNAN SUB 1 rot_gridB.nc ISNAN SUB 2 EQ = overlap.nc
 
 网格 *overlap.nc* 在重叠区域的值为 1，其他区域为 0。
-可以将其用作掩码，或通过 :doc:`grdcontour` |-D| 提取轮廓多边形。
+可以将其用作掩码，或通过 :doc:`grdcontour` :option:`-D` 提取轮廓多边形。
 
 备注
 --------

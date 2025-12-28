@@ -83,9 +83,9 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 
 **gmt x2sys_init** 
 *TAG* 
-|-D|\ *fmtfile*
-[ |-E|\ *suffix* ]
-[ |-F| ]
+:option:`-D`\ *fmtfile*
+[ :option:`-E`\ *suffix* ]
+[ :option:`-F` ]
 [ |-G|\ **d**\|\ **g** ]
 [ |-I|\ *dx*\ [/*dy*] ]
 [ |-N|\ **d**\|\ **s**\ *unit* ]
@@ -109,7 +109,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
     如果 *fmtfile* 不在当前文件夹下，则需要指定完整路径。若 *fmtfile* 不包含后缀，GMT 
     会假定使用自带的格式定义文件，这些文件位于 ``gmt --show-sharedir`` 结果的 *x2sys*
     文件夹下，见 `内置格式定义文件`_ 。
-    如果 |-D| 选项没有指定，GMT 将自动使用 *TAG*\ .fmt，不管其是否存在。
+    如果 :option:`-D` 选项没有指定，GMT 将自动使用 *TAG*\ .fmt，不管其是否存在。
     **注** ：已经弃用的 ``.def`` 后缀的文件可以正常工作，但不推荐使用，应该考虑改变后缀
     ，见 `废弃用法`_ 。
 
@@ -119,7 +119,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 .. _-E:
 
 **-E**\ *suffix*
-    指定处理数据文件的后缀。如果不指定，GMT 将使用 |-D| 选项中的前缀作为后缀（见 |-D| 选项）。
+    指定处理数据文件的后缀。如果不指定，GMT 将使用 :option:`-D` 选项中的前缀作为后缀（见 :option:`-D` 选项）。
 
 .. _-F:
 
@@ -277,7 +277,7 @@ lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。
 
 所有的 TAG 相关的文件，包括格式定义文件，TAG 文件以及创建的数据库等将保存在
 **$X2SYS_HOME**\ /*TAG* 文件夹中，此处为 **$X2SYS_HOME**\ /LINE。
-**x2sys_init** 将会复制 |-D| 选项设置的 \*.fmt 到该文件夹下，以便后续的 x2sys 命令使用。
+**x2sys_init** 将会复制 :option:`-D` 选项设置的 \*.fmt 到该文件夹下，以便后续的 x2sys 命令使用。
 
 （3）创建 tbf 文件。使用 **x2sys_init** 创建数据库以后，可以使用下面两步填充数据库。
 首先运行 :doc:`x2sys_binlist` ，使用沿轨观测文件创建一个或多个多段

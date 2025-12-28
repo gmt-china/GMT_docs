@@ -25,7 +25,7 @@ blockmedian
 |SYN_OPT-R|
 [ :option:`-A`\ *fields* ]
 [ :option:`-C` ]
-[ |-E|\ [**b**\|\ **r**\|\ **s**\ [**+l**\|\ **h**]] ]
+[ :option:`-E`\ [**b**\|\ **r**\|\ **s**\ [**+l**\|\ **h**]] ]
 [ |-G|\ [*grdfile*] ]
 [ |-Q| ]
 [ |-T|\ *quantile* ]

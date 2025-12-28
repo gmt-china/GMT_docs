@@ -20,8 +20,8 @@ gravmag3d
 
 **gmt gravmag3d** *xyz_file* |-T|\ **v**\ *vert_file* OR |-T|\ **r\|s**\ *raw_file* OR |-M|\ **+s**\ *body,params*
 [ :option:`-C`\ *density* ]
-[ |-E|\ *thickness* ]
-[ |-F|\ *xy_file* ]
+[ :option:`-E`\ *thickness* ]
+[ :option:`-F`\ *xy_file* ]
 [ |-G|\ *outgrid* ]
 [ |-H|\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip* ]
 [ |-L|\ *z_observation* ]

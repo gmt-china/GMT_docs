@@ -18,10 +18,10 @@ legend
 ----
 
 **gmt legend** [ *specfile* ]
-|-D|\ *refpoint*
+:option:`-D`\ *refpoint*
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *dx*/*dy* ]
-[ |-F|\ *box* ]
+[ :option:`-F`\ *box* ]
 [ :option:`-J`\ *parameters* ]
 [ |SYN_OPT-R| ]
 [ |-S|\ *scale* ]
@@ -77,7 +77,7 @@ legend
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制图例的背景面板属性
 
-    若只使用 |-F| 而不使用其它子选项，则绘制图例框。
+    若只使用 :option:`-F` 而不使用其它子选项，则绘制图例框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
@@ -189,7 +189,7 @@ GMT中共有14种图例类型，列举如下：
     *length* 为比例尺长度，其后可以接长度单位，以及多个子选项。子选项的具体含义见
     :doc:`basemap` 模块的 |-L| 选项。
 
-    若想要为比例尺加上背景面板，则可以使用 :doc:`basemap` 的 |-F| 选项。
+    若想要为比例尺加上背景面板，则可以使用 :doc:`basemap` 的 :option:`-F` 选项。
     此外，还可以加上 :option:`-R` 和 :option:`-J` 指定比例尺所使用的投影参数。
 
 **N** [*ncolumns* or *relwidth1 relwidth2 ... relwidthn*]
@@ -198,7 +198,7 @@ GMT中共有14种图例类型，列举如下：
     该记录仅对 **S** 和 **L** 记录有效。该记录指定的列数会一直有效直到再次
     使用 **N** 记录。
     *ncolumns* 用于指定若干个等宽的列，*relwidth1 relwidth2 ... relwidthn*
-    用于指定每列所占的相对宽度，所有宽度的和应等于 |-D| 选项所设置的宽度相等。
+    用于指定每列所占的相对宽度，所有宽度的和应等于 :option:`-D` 选项所设置的宽度相等。
 
 **P** *paragraph-mode-header-for-pstext*
     在图例中添加文本段落，参考 :doc:`text` 命令中的段落模式

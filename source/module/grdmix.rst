@@ -36,7 +36,7 @@ grdmix
 |-G|\ *outfile*
 [ :option:`-A`\ *alpha*\ [**+o**] ]
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-D| ]
+[ :option:`-D` ]
 [ |-I|\ *intensity* ]
 [ |-M| ]
 [ |-N|\ [**i**\|\ **o**][*divisor*] ]

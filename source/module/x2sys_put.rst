@@ -20,7 +20,7 @@ x2sys_put
 语法
 ----
 
-**gmt x2sys_put** [ *info.tbf* ] |-T|\ *TAG* [ |-D| ] [ |-F| ]
+**gmt x2sys_put** [ *info.tbf* ] |-T|\ *TAG* [ :option:`-D` ] [ :option:`-F` ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 

@@ -22,7 +22,7 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
 **gmt which** *files*
 [ :option:`-A` ]
 [ :option:`-C` ]
-[ |-D| ]
+[ :option:`-D` ]
 [ |-G|\ [**a**\|\ **c**\|\ **l**\|\ **u**] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]

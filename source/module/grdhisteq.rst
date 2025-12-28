@@ -36,7 +36,7 @@ grdhisteq
 --------
 
 **gmt grdhisteq** *ingrid* [ |-G|\ *outgrid* ]
-[ :option:`-C`\ *n_cells* ] [ |-D|\ [*file*] ] [ |-N|\ [*norm*] ]
+[ :option:`-C`\ *n_cells* ] [ :option:`-D`\ [*file*] ] [ |-N|\ [*norm*] ]
 [ |-Q| ]
 [ |SYN_OPT-R| ]
 [ |SYN_OPT-V| ]

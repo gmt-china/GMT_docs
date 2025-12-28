@@ -17,7 +17,7 @@ grdshake
 |-L|\ *fault.dat*
 |-M|\ *mag*
 [ :option:`-C`\ *a,v,i* ]
-[ |-F|\ *mecatype* ]
+[ :option:`-F`\ *mecatype* ]
 [ |SYN_OPT-R| ]
 
 必选选项

@@ -19,8 +19,8 @@ grdgravmag3d
 ----
 
 **gmt grdgravmag3d** *grdfile_top* [*grdfile_bot*] [ :option:`-C`\ *density* ]
-[ |-E|\ *thickness* ]
-[ |-F|\ *xy_file* ]
+[ :option:`-E`\ *thickness* ]
+[ :option:`-F`\ *xy_file* ]
 [ |-G|\ *outgrid* ]
 [ |-H|\ *args* ]
 [ |SYN_OPT-I| ]
@@ -127,7 +127,7 @@ grdgravmag3d
 .. _-S:
 
 **-S**\ *radius*
-    以 km 为单位设置搜索半径，仅在两网格模式或者使用 |-E| 时有效，默认为 30 km。该选项通过
+    以 km 为单位设置搜索半径，仅在两网格模式或者使用 :option:`-E` 时有效，默认为 30 km。该选项通过
     不计算与当前节点距离大于 *radius* 的棱柱的影响来加快计算速度，但会导致结果不准确。
 
 .. include:: explain_-V.rst_

@@ -21,9 +21,9 @@ pmodeler
 --------
 
 **gmt pmodeler** *table*
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 **-S**\ *flags*
-[ |-F|\ *polygonfile* ]
+[ :option:`-F`\ *polygonfile* ]
 [ |-T|\ *age* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]

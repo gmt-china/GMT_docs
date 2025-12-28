@@ -23,7 +23,7 @@ basemap
 |SYN_OPT-Rz|
 [ :option:`-A`\ [*file*] ]
 [ |SYN_OPT-B| ]
-[ |-F|\ *box* ]
+[ :option:`-F`\ *box* ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-L|\ *scalebar* ]
 [ |SYN_OPT-U| ]
@@ -76,7 +76,7 @@ basemap
 **-F**\ [**l**\|\ **t**][**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制比例尺和方向玫瑰的背景面板属性
 
-    若只使用 |-F| 而不使用其它子选项，则会在比例尺或方向玫瑰的周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在比例尺或方向玫瑰的周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_

@@ -26,7 +26,7 @@ barb
 |SYN_OPT-Rz|
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ *dx*/*dy*\ [/*dz*] ]
+[ :option:`-D`\ *dx*/*dy*\ [/*dz*] ]
 [ |-G|\ *fill* ]
 [ |-I|\ *intens* ]
 [ |-N| ]

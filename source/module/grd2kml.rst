@@ -28,8 +28,8 @@ grd2kml
 |-N|\ *prefix*
 [ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-E|\ *URL* ]
-[ |-F|\ *filtercode* ]
+[ :option:`-E`\ *URL* ]
+[ :option:`-F`\ *filtercode* ]
 [ |-H|\ *scale* ]
 [ |-I|\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
 [ |-L|\ *tilesize* ]

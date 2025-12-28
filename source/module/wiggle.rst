@@ -21,8 +21,8 @@ wiggle
 [ :option:`-A`\ [*azimuth*] ]
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *center* ]
-[ |-D|\ *refpoint* ]
-[ |-F|\ *panel* ]
+[ :option:`-D`\ *refpoint* ]
+[ :option:`-F`\ *panel* ]
 [ |-G|\ *fill*\ [**+n**][**+p**] ]
 [ |-I|\ *fix_az* ]
 [ |-T|\ *pen* ]
@@ -185,7 +185,7 @@ wiggle
     gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z500 -B5 \
     -C32000 -Gred -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym
 
-上述示例中，正异常绘制方向为北方向，使用 |-D| 选项设置比例尺长度为 1000 nT 。
+上述示例中，正异常绘制方向为北方向，使用 :option:`-D` 选项设置比例尺长度为 1000 nT 。
 如果要设置绘制正异常的方位角为固定的 45 度，可使用 |-I| 选项::
 
     gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z1000 -B5 \

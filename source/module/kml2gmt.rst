@@ -22,8 +22,8 @@ kml2gmt
 ----
 
 **gmt kml2gmt** [ *kmlfiles* ]
-[ |-E| ]
-[ |-F|\ **s**\|\ **l**\|\ **p** ]
+[ :option:`-E` ]
+[ :option:`-F`\ **s**\|\ **l**\|\ **p** ]
 [ |SYN_OPT-V| ]
 [ |-Z| ]
 [ |SYN_OPT-bo| ]

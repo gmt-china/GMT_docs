@@ -21,7 +21,7 @@ binstats
 :option:`-C`\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
 |SYN_OPT-R|
 |-S|\ *search_radius*
-[ |-E|\ *empty* ]
+[ :option:`-E`\ *empty* ]
 [ |-N| ]
 [ |-T|\ [**h**\|\ **r**] ]
 [ |SYN_OPT-V| ]

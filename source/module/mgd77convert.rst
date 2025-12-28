@@ -16,10 +16,10 @@ mgd77convert
 语法
 ----
 
-**gmt mgd77convert** *GEODAS-ids* |-F|\ **a**\|\ **c**\|\ **m**\|\ **t**
+**gmt mgd77convert** *GEODAS-ids* :option:`-F`\ **a**\|\ **c**\|\ **m**\|\ **t**
 |-T|\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
 [ :option:`-C` ]
-[ |-D| ]
+[ :option:`-D` ]
 [ |-L|\ [**w**][**e**][**+l**] ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
@@ -74,7 +74,7 @@ mgd77convert
     默认情况下，MGD77+ netCDF 文件中使用的存储类型远超过 ASCII MGD77 格式的精度。对于
     **faa**，**eot**，**mag**，**diur** 和 **msd** 5 种观测，使用 2 字节整数，表明在
     MGD77 格式中精度为 0.1 mGal，0.1 nTesla 和 1 m。在某些情况下，这些观测可能使用 4 字节
-    整数，对应的精度为 10 nGal、10 fTesla 和 0.01 mm。该 |-D| 选项即表明观测为 4 字节整数。
+    整数，对应的精度为 10 nGal、10 fTesla 和 0.01 mm。该 :option:`-D` 选项即表明观测为 4 字节整数。
 
 .. _-L:
 

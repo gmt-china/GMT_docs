@@ -25,9 +25,9 @@ originater
 --------
 
 **gmt originater** [ *table* ]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-|-F|\ *hs_file*\ [**+d**]
-[ |-D|\ *d_km* ]
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-F`\ *hs_file*\ [**+d**]
+[ :option:`-D`\ *d_km* ]
 [ |-L|\ [**l**\|\ **t**\|\ **w**\| **L**\|\ **T**\|\ **W**] ]
 [ |-N|\ *upper_age* ]
 [ |-Q|\ *r/t* ]

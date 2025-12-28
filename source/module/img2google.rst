@@ -22,7 +22,7 @@ img2google
 [ *imgfile* ]
 [ :option:`-A`\ *mode*\ [*altitude*] ]
 [ :option:`-C` ]
-[ |-F|\ *fademin/fademax* ]
+[ :option:`-F`\ *fademin/fademax* ]
 [ |-G|\ *prefix* ]
 [ |-L|\ *LODmin/LODmax* ]
 [ |-N|\ *layername* ]

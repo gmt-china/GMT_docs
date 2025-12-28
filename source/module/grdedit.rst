@@ -20,8 +20,8 @@ grdedit
 ----
 
 **gmt grdedit** *grid* [ :option:`-A` ] [ :option:`-C` ]
-[ |-D|\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
-[ |-E|\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
+[ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
+[ :option:`-E`\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
 [ |-G|\ *outgrid* ]
 [ :option:`-J`\ *parameters* ]
 [ |-L|\ [**+n**\|\ **p**] ]

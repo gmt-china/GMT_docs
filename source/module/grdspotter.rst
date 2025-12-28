@@ -20,12 +20,12 @@ grdspotter
 --------
 
 **gmt grdspotter** *ingrid*
-|-E|\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 |-G|\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-A`\ *agegrid* ]
-[ |-D|\ **i**\|\ **p**\ *grid* ]
+[ :option:`-D`\ **i**\|\ **p**\ *grid* ]
 [ |-L|\ *IDgrid* ]
 [ |-M| ]
 [ |-N|\ *upper_age* ]
@@ -81,7 +81,7 @@ grdspotter
 .. _-M:
 
 **-M**
-    当使用 |-D| 和/或 |-P| 时，不尝试将所有流线保留在内存中。
+    当使用 :option:`-D` 和/或 |-P| 时，不尝试将所有流线保留在内存中。
     如果内存不足，可以使用此选项在计算时动态生成流线。
     由于我们无法重用为 CVA 步骤计算的流线，因此会变慢。
     不能与 |-W| 或 |-Z| 的多切片模式一起使用。

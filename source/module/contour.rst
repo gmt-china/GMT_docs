@@ -21,7 +21,7 @@ contour
 [ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *contours* ]
-[ |-D|\ [*template*] ] [ |-E|\ *indexfile* ]
+[ :option:`-D`\ [*template*] ] [ :option:`-E`\ *indexfile* ]
 [ |-G|\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
 [ |-I| ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-L|\ *pen* ] [ |-N| ]

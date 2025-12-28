@@ -19,8 +19,8 @@ filter1d
 语法
 ----
 
-**gmt filter1d** [ *table* ] |-F|\ *type<width>*\ [*modifier*]
-[ |-D|\ *increment* ] [ |-E| ]
+**gmt filter1d** [ *table* ] :option:`-F`\ *type<width>*\ [*modifier*]
+[ :option:`-D`\ *increment* ] [ :option:`-E` ]
 [ |-L|\ *lack\_width* ] [ |-N|\ *t\_col* ] [ |-Q|\ *q\_factor* ]
 [ |-S|\ *symmetry\_factor* ]
 [ |-T|\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ |-T|\ *file*\|\ *list* ]

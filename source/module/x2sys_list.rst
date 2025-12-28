@@ -19,8 +19,8 @@ x2sys_list
 
 **gmt x2sys_list** :option:`-C`\ *column* |-T|\ *TAG* [ *coedbase.txt* ]
 [ :option:`-A`\ *asymm_max* ]
-[ |-E| ]
-[ |-F|\ *flags* ]
+[ :option:`-E` ]
+[ :option:`-F`\ *flags* ]
 [ |-I|\ [*list*] ]
 [ |-L|\ [*corrections*] ]
 [ |-N|\ *nx_min*\ [**+p**] ]

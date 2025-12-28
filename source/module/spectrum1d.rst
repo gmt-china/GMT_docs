@@ -43,7 +43,7 @@ Bendat 和 Piersol [1986] 中的算法。
 ----
 
 **gmt spectrum1d** [ *table* ] [ |-S|\ *segment_size* ]
-[ :option:`-C`\ [**acgnopxy**] ] [ |-D|\ *dt* ] [ |-L|\ [**h**\|\ **m**] ]
+[ :option:`-C`\ [**acgnopxy**] ] [ :option:`-D`\ *dt* ] [ |-L|\ [**h**\|\ **m**] ]
 [ |-N|\ [*name_stem*] ] [ |-T| ] [ |-W| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-d| ]

@@ -46,7 +46,7 @@ fzmodeler
 
 **fzmodeler** [ :option:`-A`\ *asymmetry* ]
 [ :option:`-C`\ *compression* ]
-[ |-D|\ *min*/*max*/*inc* ]
+[ :option:`-D`\ *min*/*max*/*inc* ]
 [ |-G|\ *comp* ]
 [ |-M| ]
 [ |-N|\ *amplitude* ]
@@ -86,7 +86,7 @@ fzmodeler
 .. _-M:
 
 **-M**
-     当选定 |-D| 范围时，以纬度为单位，增量为弧分 [默认单位为 km]。
+     当选定 :option:`-D` 范围时，以纬度为单位，增量为弧分 [默认单位为 km]。
 
 .. _-N:
 

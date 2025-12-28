@@ -24,9 +24,9 @@ polespotter
 
 **gmt polespotter**
 [ :option:`-A`\ *abyssalhills* ]
-[ |-D|\ *spacing* ]
-[ |-E|\ **a**\|\ **f**\ *sigma* ]
-[ |-F|\ *fracturezones* ]
+[ :option:`-D`\ *spacing* ]
+[ :option:`-E`\ **a**\|\ **f**\ *sigma* ]
+[ :option:`-F`\ *fracturezones* ]
 [ |-G|\ *outgrid* ]
 [ |SYN_OPT-I| ]
 [ |-N| ]
@@ -137,7 +137,7 @@ polespotter
 
 #. 每个输入线必须包含两个或多个点，每两个连续点定义一个大圆线段。
 对于断裂带，这些点应被足够密集地数字化，以便两点间的大圆能近似小圆。
-#. 所有线段具有相同的角度不确定性 [1，除非通过 |-E| 改变]。
+#. 所有线段具有相同的角度不确定性 [1，除非通过 :option:`-E` 改变]。
 然而，单个线段可通过在段头中添加 **-D**\ *sigma* 参数（单位：度）来覆盖此权重。
 
 示例

@@ -21,7 +21,7 @@ greenspline
 [ :option:`-A`\ *gradfile*\ **+f**\ **0**\|\ **1**\|\ **2**\|\ **3**\|\ **4**\|\ **5** ]
 [ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
 [ |SYN_OPT-D3| ]
-[ |-E|\ [*misfitfile*][**+r**\ *reportfile*] ]
+[ :option:`-E`\ [*misfitfile*][**+r**\ *reportfile*] ]
 [ |-I|\ *xinc*\ [/*yinc*\ [/*zinc*]] ]
 [ |-L|\ [**t**][**r**] ]
 [ |-N|\ *nodefile* ]

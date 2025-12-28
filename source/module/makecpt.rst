@@ -27,7 +27,7 @@ makecpt
     - 前景色 (F，foreground color), 表示高于最大 z 值时所对应的颜色
     - 以及 NaN 值颜色 (N)，表示 z 值被定义为 NaN 时对应的颜色，即 z 值未定义的情况
 
-默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主 CPT 文件的设置，但也可以使用 |-D| 、
+默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主 CPT 文件的设置，但也可以使用 :option:`-D` 、
 |-M| 以及 |-N| 选项修改。或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。需注意，选项总会覆盖
 自定义参数值。
@@ -41,9 +41,9 @@ makecpt
 **gmt makecpt**
 [ :option:`-A`\ *transparency*\ [**+a**] ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ [**i**\|\ **o**] ]
-[ |-E|\ [*nlevels*] ]
-[ |-F|\ [**R**\|\ **r**\|\ **h**\|\ **c**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
+[ :option:`-D`\ [**i**\|\ **o**] ]
+[ :option:`-E`\ [*nlevels*] ]
+[ :option:`-F`\ [**R**\|\ **r**\|\ **h**\|\ **c**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
 [ |-G|\ *zlo*\ /\ *zhi* ]
 [ |-H| ]
 [ |-I|\ [**c**][**z**] ]
@@ -149,7 +149,7 @@ makecpt
 **-M**
     使用 gmt.conf 文件或者命令行中设置的 :term:`COLOR_BACKGROUND` ，
     :term:`COLOR_FOREGROUND` 和 :term:`COLOR_NAN` 覆盖 CPT 中的前景色、背景色和 NaN 值
-    的颜色。如果和 |-D| 同时使用，则前景色和背景色均被 |-D| 覆盖。
+    的颜色。如果和 :option:`-D` 同时使用，则前景色和背景色均被 :option:`-D` 覆盖。
 
 .. _-N:
 

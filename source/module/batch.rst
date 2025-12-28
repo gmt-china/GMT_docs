@@ -27,8 +27,8 @@ batch
 **gmt batch** *mainscript*
 |-N|\ *prefix*
 |-T|\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
-[ |-D| ]
-[ |-F|\ *template* ]
+[ :option:`-D` ]
+[ :option:`-F`\ *template* ]
 [ |-I|\ *includefile* ]
 [ |-M|\ [*job*] ]
 [ |-Q|\ [**s**] ]
@@ -173,7 +173,7 @@ batch
 尾随文本可通过 **BATCH_TEXT** 访问，若启用 **+w** 分词，
 则还可通过 **BATCH_WORD0**、 **BATCH_WORD1** 等访问。注意：
 处理脚本生成的产品应使用 **BATCH_NAME** 作为前缀，
-以便自动移动到起始目录（除非使用 |-D|）。使用 |-F| 可基于 |-T| 输入参数生成更灵活的产品名称。
+以便自动移动到起始目录（除非使用 :option:`-D`）。使用 :option:`-F` 可基于 |-T| 输入参数生成更灵活的产品名称。
 
 数据文件
 --------

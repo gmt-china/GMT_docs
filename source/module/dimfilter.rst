@@ -25,8 +25,8 @@ dimfilter
 ----
 
 **gmt dimfilter** *ingrid*
-|-D|\ *0-4*
-|-F|\ **x**\ *width*\ [*modifier*]
+:option:`-D`\ *0-4*
+:option:`-F`\ **x**\ *width*\ [*modifier*]
 |-G|\ *outgrid*
 |-N|\ **x**\ *sectors*\ [*modifier*]
 [ |-L| ]

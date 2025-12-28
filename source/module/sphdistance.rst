@@ -11,7 +11,7 @@ sphdistance
 :简介: 在球上创建 Voronoi 距离，节点或自然最邻近网格
 
 **sphdistance** 读取一个或多个 ASCII（或二进制）坐标文件，使用所有的坐标创建 Voronoi 图。
-得到的多边形用来创建球面上的网格，其中网格值为到坐标文件中坐标的最近距离（见 |-E| ）
+得到的多边形用来创建球面上的网格，其中网格值为到坐标文件中坐标的最近距离（见 :option:`-E` ）
 。 创建 Voronoi 图使用 STRIPACK 算法。可以使用 :doc:`sphtriangulate` 提前创建多边形文件
 以节省时间和运行时所需的空间。
 
@@ -23,8 +23,8 @@ sphdistance
 |SYN_OPT-I|
 |SYN_OPT-R|
 [ :option:`-C` ]
-[ |-D| ]
-[ |-E|\ **d**\|\ **n**\|\ **z**\ [*dist*] ]
+[ :option:`-D` ]
+[ :option:`-E`\ **d**\|\ **n**\|\ **z**\ [*dist*] ]
 [ |-L|\ *unit* ]
 [ |-N|\ *nodetable* ]
 [ |-Q|\ *voronoi.txt* ]
@@ -159,7 +159,7 @@ sphdistance
 
 STRIPACK 算法需要输入中不包含重复点。
 :doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphdistance**
-的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
+的 :option:`-D` 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 
 参考文献

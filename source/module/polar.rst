@@ -16,14 +16,14 @@ polar
 语法
 ----
 
-**gmt polar** [ *table* ] |-D|\ *lon/lat* :option:`-J`\ *parameters*
+**gmt polar** [ *table* ] :option:`-D`\ *lon/lat* :option:`-J`\ *parameters*
 |SYN_OPT-R|
 |-M|\ *size*\ [**+m**\ *mag*]
 |-S|\ *<symbol><size>*
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*] ]
-[ |-E|\ *fill* ]
-[ |-F|\ *fill* ]
+[ :option:`-E`\ *fill* ]
+[ :option:`-F`\ *fill* ]
 [ |-G|\ *fill* ]
 [ |-N| ]
 [ |-Q|\ *mode*\ [*args*] ]

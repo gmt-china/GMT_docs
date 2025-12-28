@@ -22,7 +22,7 @@ hotspotter
 --------
 
 **gmt hotspotter** [*table*]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 |-G|\ *outgrid*
 |SYN_OPT-I|
 |SYN_OPT-R|

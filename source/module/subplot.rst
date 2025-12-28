@@ -32,10 +32,10 @@ subplot begin 语法
 
 **gmt subplot begin**
 *nrows*\ **x**\ *ncols*
-|-F|\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
+:option:`-F`\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
 [ :option:`-A`\ [*autotag*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+j**\|\ **J**\ *refpoint*][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+r**\|\ **R**][**+s**\ [[*dx*/*dy*][/*shade*]]][**+v**]]
 [ :option:`-C`\ [*side*]\ *clearance* ]
-[ |-D| ]
+[ :option:`-D` ]
 [ |SYN_OPT-B| ]
 [ |SYN_OPT-J| ]
 [ |-M|\ *margins* ]
@@ -180,9 +180,9 @@ subplot begin 语法
     当你想先绘制和标注部分子图的底图，之后再分别在子图内绘制数据而不再重绘底图时，
     该选项很有用。对于两次使用 **gmt subplot** 规划的子图区域，
     使用不同的 :option:`-B`\ ，:option:`-C`\ ，|-M| 和 |-S| 可能导致子图区域不对齐，
-    这时使用 |-D| 可将二者对齐。
+    这时使用 :option:`-D` 可将二者对齐。
     相关使用示例详见 `PR #4993 <https://github.com/GenericMappingTools/gmt/pull/4993>`_ 。
-    **注：** 要求 |-F| 保持一致。
+    **注：** 要求 :option:`-F` 保持一致。
 
 .. include:: explain_-J.rst_
 

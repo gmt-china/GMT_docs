@@ -24,7 +24,7 @@ vector
 **gmt vector** [ *table* ]
 [ :option:`-A`\ **m**\ [*conf*]\|\ *vector* ]
 [ :option:`-C`\ [**i**\|\ **o**] ]
-[ |-E| ]
+[ :option:`-E` ]
 [ |-N| ]
 [ |-S|\ *vector* ]
 [ |-T|\ **a**\|\ **d**\|\ **D**\|\ **p**\ *azim*\|\ **r**\ [*arg*]\|\ **R**\|\ **s**\|\ **t**\ [*arg*]\|\ **x** ]

@@ -39,8 +39,8 @@ gpsgridder
 **gmt gpsgridder** [ *table* ]
 |-G|\ *outgrid*
 [ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
-[ |-E|\ [*misfitfile*] ]
-[ |-F|\ [**d**\|\ **f**]\ *fudge* ]
+[ :option:`-E`\ [*misfitfile*] ]
+[ :option:`-F`\ [**d**\|\ **f**]\ *fudge* ]
 [ |SYN_OPT-I| ]
 [ |-L| ]
 [ |-N|\ *nodefile* ]

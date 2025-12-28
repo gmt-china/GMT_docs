@@ -29,9 +29,9 @@ select
 **gmt select** [ *table* ]
 [ |SYN_OPT-Area| ]
 [ :option:`-C`\ *pointfile*\ \|\ *lon*/*lat*\ **+d**\ *dist* ]
-[ |-D|\ *resolution*\ [**+f**] ]
-[ |-E|\ [**f**][**n**] ]
-[ |-F|\ *polygonfile* ]
+[ :option:`-D`\ *resolution*\ [**+f**] ]
+[ :option:`-E`\ [**f**][**n**] ]
+[ :option:`-F`\ *polygonfile* ]
 [ |-G|\ *gridmask* ]
 [ |-I|\ [**cfglrsz**] ]
 [ :option:`-J`\ *parameters* ]
@@ -133,7 +133,7 @@ select
 
 **-D**\ *resolution*\ [**+f**]
     选择海岸线数据的精度，仅与 |-N| 选项一起使用有效。见 :doc:`coast` 中
-    |-D| 选项的介绍。
+    :option:`-D` 选项的介绍。
 
 .. include:: explain_-A.rst_
 
@@ -180,7 +180,7 @@ select
 
 **-E**\ [**f**][**n**]
     在判断点是否在一个多边形内时，默认会将恰好在多边形边界线上的点也认为是在多边形内，使用该选项会将多边形上的点认为是在多边形外部。
-    **f** 和 **n** 分别修改 |-F| 和 |-N| 选项的行为。
+    **f** 和 **n** 分别修改 :option:`-F` 和 |-N| 选项的行为。
 
 .. _-I:
 

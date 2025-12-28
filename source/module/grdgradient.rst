@@ -19,8 +19,8 @@ grdgradient
 **gmt grdgradient** *ingrid*
 |-G|\ *outgrid*
 [ :option:`-A`\ *azim*\ [/\ *azim2*] ]
-[ |-D|\ [**a**][**c**][**n**][**o**] ]
-[ |-E|\ [**m**][**s**][**p**]\ *azim*\ /\ *elev*\ [**+a**\ *ambient*][**+d**\ *diffuse*][**+p**\ *specular*][**+s**\ *shine*] ]
+[ :option:`-D`\ [**a**][**c**][**n**][**o**] ]
+[ :option:`-E`\ [**m**][**s**][**p**]\ *azim*\ /\ *elev*\ [**+a**\ *ambient*][**+d**\ *diffuse*][**+p**\ *specular*][**+s**\ *shine*] ]
 [ |-N|\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*] ]
 [ |-Q|\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*] ]
 [ |SYN_OPT-Rz| ]
@@ -34,7 +34,7 @@ grdgradient
 描述
 -----------
 
-**grdgradient** 从网格文件中计算给定方向的方向导数(\ :option:`-A`)，或梯度的方向(\ |-D|)和大小(\ |-S|)。
+**grdgradient** 从网格文件中计算给定方向的方向导数(\ :option:`-A`)，或梯度的方向(\ :option:`-D`)和大小(\ |-S|)。
 
 边界的梯度计算取决于网格的边界条件（详见中文文档 :doc:`/option/n` 或官方文档 |SYN_OPT-n| ）。
 
@@ -130,7 +130,7 @@ grdgradient
 .. _-S:
 
 **-S**\ *slopfile*
-    将梯度矢量的大小输出到网格文件 *slopfile* 。要求和 |-D| 使用，此时 |-G| 变为可选项。
+    将梯度矢量的大小输出到网格文件 *slopfile* 。要求和 :option:`-D` 使用，此时 |-G| 变为可选项。
 
 .. include:: explain_-V.rst_
 

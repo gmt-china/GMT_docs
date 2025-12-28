@@ -22,8 +22,8 @@ mgd77sniffer
 
 **gmt mgd77sniffer** *GEODAS-ids* [ :option:`-A`\ *fieldabbrev*,\ *scale*,\ *offset* ]
 [ :option:`-C`\ *maxspd* ]
-[ |-D|\ **d**\|\ **e**\|\ **E**\|\ **f**\|\ **l**\|\ **m**\|\ **s**\|\ **v**\ [**r**] ]
-[ |-E| ]
+[ :option:`-D`\ **d**\|\ **e**\|\ **E**\|\ **f**\|\ **l**\|\ **m**\|\ **s**\|\ **v**\ [**r**] ]
+[ :option:`-E` ]
 [ |-G|\ *fieldabbrev*,\ *imggrid*,\ *scale*,\ *mode* or |-G|\ *fieldabbrev*,\ *grid* ]
 [ |-H| ]
 [ |-I|\ *fieldabbrev*,\ *rec1*,\ *recN* ]
@@ -229,7 +229,7 @@ mgd77sniffer
 
     - **x** 警告的总结
 
-    默认情况下输出所有警告信息。该选项与 |-D| 选项不兼容
+    默认情况下输出所有警告信息。该选项与 :option:`-D` 选项不兼容
 
 .. _-Z:
 

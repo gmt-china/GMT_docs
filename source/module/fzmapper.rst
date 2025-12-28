@@ -21,7 +21,7 @@ fzmapper
 --------
 
 **fzmapper** [ :option:`-A` ]
-[ |-F|\ *origfile* ]
+[ :option:`-F`\ *origfile* ]
 [ |-G|\ *vgg_grid* ]
 [ |-L|\ *labelint* ] 
 [ |-O| ]

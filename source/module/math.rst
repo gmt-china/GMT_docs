@@ -22,7 +22,7 @@ math
 
 **gmt math** [ :option:`-A`\ *t_f(t)*\ [**+e**]\ [**+r**]\ [**+s**\|\ **w**] ]
 [ :option:`-C`\ *cols* ]
-[ |-E|\ *eigen* ]
+[ :option:`-E`\ *eigen* ]
 [ |-I| ]
 [ |-N|\ *n\_col*\ [/*t_col*] ]
 [ |-Q|\ [**c**\|\ **i**\|\ **p**\|\ **n**] ]

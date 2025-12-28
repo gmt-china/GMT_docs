@@ -36,9 +36,9 @@ coupe
 |-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
 [ |SYN_OPT-B| ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ [**+c**][**+g**\ [*fill*]][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+s**\ [*symbol*]\ *size*] ]
-[ |-E|\ *fill* ]
-[ |-F|\ *mode*\ [*args*] ]
+[ :option:`-D`\ [**+c**][**+g**\ [*fill*]][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+s**\ [*symbol*]\ *size*] ]
+[ :option:`-E`\ *fill* ]
+[ :option:`-F`\ *mode*\ [*args*] ]
 [ |-G|\ *fill* ]
 [ |-H|\ [*scale*] ]
 [ |-I|\ [*intens*] ]
@@ -140,7 +140,7 @@ coupe
     具体含义见 :doc:`plot` |-S| 选项 [默认值为 6\ **p**/**cc**]
 
 **-Fe**\ *fill*
-    设置T轴符号的填充色。默认为 |-E| 控制。
+    设置T轴符号的填充色。默认为 :option:`-E` 控制。
 
 **-Fg**\ *fill*
     设置P轴符号的填充色。默认为 |-G| 控制。

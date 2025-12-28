@@ -18,9 +18,9 @@ grd2cpt
 **gmt grd2cpt** *grid*
 [ :option:`-A`\ *transparency*\ [**+a**] ]
 [ :option:`-C`\ *cpt* ]
-[ |-D|\ [**i**\|\ **o**] ]
-[ |-E|\ [*nlevels*][**+c**][**+f**\ *file*] ]
-[ |-F|\ [**R**\|\ **r**\|\ **h**\|\ **c**][**+c**\ [*label*]] ]
+[ :option:`-D`\ [**i**\|\ **o**] ]
+[ :option:`-E`\ [*nlevels*][**+c**][**+f**\ *file*] ]
+[ :option:`-F`\ [**R**\|\ **r**\|\ **h**\|\ **c**][**+c**\ [*label*]] ]
 [ |-G|\ *zlo*\ /\ *zhi* ]
 [ |-H| ]
 [ |-I|\ [**c**][**z**] ]
@@ -52,7 +52,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
 背景色 (B，background color，表示低于最小z值时所对应的颜色)、
 前景色 (F，foreground color，表示高于最大z值时所对应的颜色)、
 以及NaN颜色 (N，表示z值被定义为NaN时对应的颜色，即z值未定义的情况)。
-默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主CPT文件的设置，但也可以使用 |-D| 选项进行修改。
+默认情况下，这三种颜色会沿用 :option:`-C` 选项所指定的主CPT文件的设置，但也可以使用 :option:`-D` 选项进行修改。
 或者使用 :doc:`set` 命令对 :term:`COLOR_BACKGROUND`\、
 \ :term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 进行自定义修改。
 
@@ -146,7 +146,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     强制生成连续的CPT文件（默认为离散不连续的CPT）。
 
 .. |Add_-bo| replace:: [Default is 2]. This option
-    only applies if |-E| selects CDF output.
+    only applies if :option:`-E` selects CDF output.
 .. include:: explain_-bo.rst_
 
 .. include:: explain_help.rst_
