@@ -19,8 +19,10 @@ barb
 
 语法
 --------
-**barb** [ *table* ]
-|-J|\ *parameters* |-J|\ **z**\ \|\ **Z**\ *parameters*
+**barb**
+[ *table* ]
+:option:`-J`\ *parameters*
+:option:`-J`\ **z**\ \|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt* ]

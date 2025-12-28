@@ -16,7 +16,7 @@ histogram
 ----
 
 **gmt histogram** [ *table* ]
-|-J|\ **x**\|\ **X**\ *parameters*
+:option:`-J`\ **x**\|\ **X**\ *parameters*
 |-T|\ [*min/max*\ /]\ *inc*\ [**+n**] \|\ |-T|\ *file*\|\ *list*
 [ |-A| ]
 [ |SYN_OPT-B| ]
@@ -24,7 +24,7 @@ histogram
 [ |-D|\ [**+b**][**+f**\ *font*][**+o**\ *off*][**+r**] ]
 [ |-F| ]
 [ |-G|\ *fill* ]
-[ |-J|\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-I|\ [**o**\|\ **O**] ]
 [ |-L|\ **l**\|\ **h**\|\ **b**] ]
 [ |-N|\ [*mode*][**+p**\ *pen*] ]

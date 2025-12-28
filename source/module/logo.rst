@@ -24,7 +24,7 @@ logo
 
 **gmt logo** [ |-D|\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
 [ |-F|\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
-[ |-J|\ *parameters* ] [ |-J|\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-J`\ *parameters* ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |SYN_OPT-Rz| ]
 [ |-S|\ [**l**\|\ **n**\|\ **u**] ]
 [ |SYN_OPT-U| ]

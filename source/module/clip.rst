@@ -22,11 +22,11 @@ clip
 语法
 ----
 
-**gmt clip** [ *table* ] |-J|\ *parameters* |-C|\ [*n*]
+**gmt clip** [ *table* ] :option:`-J`\ *parameters* |-C|\ [*n*]
 |SYN_OPT-Rz|
 [ |-A|\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
 [ |SYN_OPT-B| ]
-|-J|\ **z**\|\ **Z**\ *parameters* ]
+:option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-N| ]
 [ |-T| ]
 [ |SYN_OPT-U| ]

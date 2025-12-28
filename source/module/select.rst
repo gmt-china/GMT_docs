@@ -34,7 +34,7 @@ select
 [ |-F|\ *polygonfile* ]
 [ |-G|\ *gridmask* ]
 [ |-I|\ [**cfglrsz**] ]
-[ |-J|\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
 [ |-L|\ *linefile*\ **+d**\ *dist*\ [**+p**] ]
 [ |-N|\ *maskvalues* ]
 [ |SYN_OPT-R| ]
@@ -77,7 +77,7 @@ select
 
     如果只有一个基准点，可以简单使用 **-C**\ *lon*/*lat*\ **+d**\ *dist* 。
 
-    如果同时使用 |-R| 和 |-J| 选项，则表示基于投影后的图片纸面上的距离进行判断（详情请参考末尾的例子）。
+    如果同时使用 |-R| 和 :option:`-J` 选项，则表示基于投影后的图片纸面上的距离进行判断（详情请参考末尾的例子）。
 
 准则3
 +++++

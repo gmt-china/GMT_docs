@@ -15,7 +15,7 @@ grdview
 
 .. include:: common_SYN_OPTs.rst_
 
-**gmt grdview** *reliefgrid* |-J|\ *parameters*
+**gmt grdview** *reliefgrid* :option:`-J`\ *parameters*
 [ |SYN_OPT-B| ]
 [ |-C|\ [*cpt*]]
 [ |-G|\ *drapegrid* \| |-G|\ *grd_r* |-G|\ *grd_g* |-G|\ *grd_b* ]

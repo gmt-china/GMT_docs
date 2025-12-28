@@ -18,7 +18,7 @@ grdcontour
 .. include:: common_SYN_OPTs.rst_
 
 **gmt grdcontour** *grid*
-|-J|\ *parameters* [ |-A|\ [**n**\|\ *contours*][*labelinfo*] ]
+:option:`-J`\ *parameters* [ |-A|\ [**n**\|\ *contours*][*labelinfo*] ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *contours*\|\ *cpt* ]
 [ |-D|\ *template* ]

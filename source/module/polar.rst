@@ -16,7 +16,7 @@ polar
 语法
 ----
 
-**gmt polar** [ *table* ] |-D|\ *lon/lat* |-J|\ *parameters*
+**gmt polar** [ *table* ] |-D|\ *lon/lat* :option:`-J`\ *parameters*
 |SYN_OPT-R|
 |-M|\ *size*\ [**+m**\ *mag*]
 |-S|\ *<symbol><size>*

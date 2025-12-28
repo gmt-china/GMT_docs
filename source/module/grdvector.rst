@@ -14,7 +14,7 @@ grdvector
 语法
 --------
 
-**gmt grdvector** *grid1* *grid2* |-J|\ *parameters*
+**gmt grdvector** *grid1* *grid2* :option:`-J`\ *parameters*
 [ |-A| ]
 [ |SYN_OPT-B| ]
 [ |-C|\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]

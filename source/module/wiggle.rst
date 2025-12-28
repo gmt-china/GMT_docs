@@ -17,7 +17,7 @@ wiggle
 语法
 ----
 
-**gmt wiggle** [ *table* ] |-J|\ *parameters* |SYN_OPT-Rz| |-Z|\ *scale*
+**gmt wiggle** [ *table* ] :option:`-J`\ *parameters* |SYN_OPT-Rz| |-Z|\ *scale*
 [ |-A|\ [*azimuth*] ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *center* ]

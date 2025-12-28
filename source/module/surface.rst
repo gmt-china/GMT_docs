@@ -37,7 +37,7 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 |SYN_OPT-R|
 [ |-A|\ *aspect_ratio*\|\ **m** ]
 [ |-C|\ *convergence_limit*\ [%] ]
-[ |-J|\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
 [ |-D|\ *breakline_file*\ [**+z**\ [*level*]] ]
 [ |-L|\ **l**\ *lower* ] [ |-L|\ **u**\ *upper* ]
 [ |-M|\ *max_radius* ]

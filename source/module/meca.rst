@@ -14,7 +14,7 @@ meca
 ----
 
 **gmt meca** [ *table* ]
-|-J|\ *parameters*
+:option:`-J`\ *parameters*
 |SYN_OPT-R|
 |-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
 [ |-A|\ [**+p**\ *pen*][**+s**\ *size*] ]

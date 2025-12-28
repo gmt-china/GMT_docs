@@ -23,7 +23,7 @@ grdedit
 [ |-D|\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
 [ |-E|\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
 [ |-G|\ *outgrid* ]
-[ |-J|\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
 [ |-L|\ [**+n**\|\ **p**] ]
 [ |-N|\ *table* ]
 [ |SYN_OPT-R| ]
@@ -86,7 +86,7 @@ grdedit
 .. include:: explain_-J.rst_
 ..
 
-    使用 |-J| 选项则将地理相关信息以 CF-1 兼容的元数据形式（可被GDAL识别）保存
+    使用 :option:`-J` 选项则将地理相关信息以 CF-1 兼容的元数据形式（可被GDAL识别）保存
     到 netCDF 文件中。
 
 .. _-L:
