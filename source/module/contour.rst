@@ -16,14 +16,14 @@ contour
 
 .. include:: common_SYN_OPTs.rst_
 
-**gmt contour** [ *table* ] |-J|\ *parameters*
+**gmt contour** [ *table* ] :option:`-J`\ *parameters*
 |SYN_OPT-Rz|
 [ |-A|\ [**n**\|\ *contours*][*labelinfo*] ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *contours* ]
 [ |-D|\ [*template*] ] [ |-E|\ *indexfile* ]
 [ |-G|\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
-[ |-I| ] [ |-J|\ **z**\|\ **Z**\ *parameters* ]
+[ |-I| ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-L|\ *pen* ] [ |-N| ]
 [ |-Q|\ [*cut*][**+z**] ]
 [ |-S|\ [*p*\|\ *t*] ]

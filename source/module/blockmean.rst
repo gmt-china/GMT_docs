@@ -11,7 +11,7 @@ blockmean
 :官方文档: :doc:`gmt:blockmean`
 :简介: 使用均值估计对表数据做区块平均 
 
-**blockmean** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 |-R| 和 |-I| 定义
+**blockmean** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 |-I| 定义
 的每个区块输出一个平均的位置和值到标准输出。使用 |-G| 可直接输出为网格文件。在进行
 :doc:`surface` 模块时，为避免短波信号混淆，应提前使用 **blockmean** ，:doc:`blockmedian`
 , 或 :doc:`blockmode` 。这些操作在用来抽稀数据或者平均数据时很有用。用户可通过设置

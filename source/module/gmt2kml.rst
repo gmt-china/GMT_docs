@@ -41,7 +41,7 @@ Google Earth KML 格式的单个输出文件。
 [ |-N|\ [**t**\|\ *col*\|\ *name\_template*\|\ *name*] ]
 [ |-O| ]
 [ |-Q|\ **a**\|\ **i**\|\ **s**\ *arg* ]
-[ |-R|\ **e**\|\ *w/e/s/n* ]
+[ :option:`-R`\ **e**\|\ *w/e/s/n* ]
 [ |-S|\ **c**\|\ **n**\ *scale*] ]
 [ |-T|\ *title*\ [/*foldername*] ]
 [ |SYN_OPT-V| ]

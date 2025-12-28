@@ -22,11 +22,11 @@ clip
 语法
 ----
 
-**gmt clip** [ *table* ] |-J|\ *parameters* |-C|\ [*n*]
+**gmt clip** [ *table* ] :option:`-J`\ *parameters* |-C|\ [*n*]
 |SYN_OPT-Rz|
 [ |-A|\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
 [ |SYN_OPT-B| ]
-|-J|\ **z**\|\ **Z**\ *parameters* ]
+:option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-N| ]
 [ |-T| ]
 [ |SYN_OPT-U| ]
@@ -98,7 +98,7 @@ clip
 .. _-T:
 
 **-T**
-    不需要任何输入数据。根据 |-R| 选项将整个地图区域裁剪出来，
+    不需要任何输入数据。根据 :option:`-R` 选项将整个地图区域裁剪出来，
     该选项不能与 |-B| 选项连用。
 
 .. include:: explain_-U.rst_

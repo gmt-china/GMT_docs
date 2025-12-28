@@ -18,7 +18,7 @@ solar
 [ |-C| ]
 [ |-G|\ [*fill*] ]
 [ |-I|\ [*lon/lat*][**+d**\ *date*][**+z**\ *TZ*] ]
-[ |-J|\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
 [ |-M| ]
 [ |-N| ]
 [ |SYN_OPT-R| ]

@@ -30,7 +30,7 @@ inset begin语法
 [ |-F|\ *box* ]
 [ |-N| ]
 [ |SYN_OPT-R| ]
-[ |-J|\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT--| ]
 

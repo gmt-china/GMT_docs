@@ -19,12 +19,12 @@ basemap
 语法
 ----
 
-**gmt basemap** |-J|\ *parameters*
+**gmt basemap** :option:`-J`\ *parameters*
 |SYN_OPT-Rz|
 [ |-A|\ [*file*] ]
 [ |SYN_OPT-B| ]
 [ |-F|\ *box* ]
-[ |-J|\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-L|\ *scalebar* ]
 [ |SYN_OPT-U| ]
 [ |-T|\ *rose* ]
@@ -63,7 +63,7 @@ basemap
     不绘制图形，仅输出矩形底图的边框坐标。
 
     该选项会将矩形底图的边框坐标输出到标准输出或文件中。使用该选项时，必须通过
-    |-J| 和 |-R| 指定绘图区域，且不能再使用其他选项。
+    :option:`-J` 和 :option:`-R` 指定绘图区域，且不能再使用其他选项。
     若不指定 *file* 则默认输出到标准输出，否则输出到文件 *file* 中。
 
     说明：

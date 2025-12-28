@@ -16,7 +16,7 @@ plot3d
 语法
 --------
 
-**gmt plot3d** [ *table* ] |-J|\ *parameters*
+**gmt plot3d** [ *table* ] :option:`-J`\ *parameters*
 |-Jz|\ \|\ **Z**\ *parameters*
 |SYN_OPT-Rz|
 [ |-A|\ [**m**\|\ **p**\|\ **x**\|\ **y**\|\ **r**\|\ **t**] ]

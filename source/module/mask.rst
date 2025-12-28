@@ -21,7 +21,7 @@ mask
 
 **gmt mask** [ *table* ]
 |SYN_OPT-I|
-|-J|\ *parameters*
+:option:`-J`\ *parameters*
 |SYN_OPT-R|
 [ |SYN_OPT-B| ]
 [ |-C| ]

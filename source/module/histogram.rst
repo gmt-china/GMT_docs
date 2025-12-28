@@ -16,7 +16,7 @@ histogram
 ----
 
 **gmt histogram** [ *table* ]
-|-J|\ **x**\|\ **X**\ *parameters*
+:option:`-J`\ **x**\|\ **X**\ *parameters*
 |-T|\ [*min/max*\ /]\ *inc*\ [**+n**] \|\ |-T|\ *file*\|\ *list*
 [ |-A| ]
 [ |SYN_OPT-B| ]
@@ -24,7 +24,7 @@ histogram
 [ |-D|\ [**+b**][**+f**\ *font*][**+o**\ *off*][**+r**] ]
 [ |-F| ]
 [ |-G|\ *fill* ]
-[ |-J|\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-I|\ [**o**\|\ **O**] ]
 [ |-L|\ **l**\|\ **h**\|\ **b**] ]
 [ |-N|\ [*mode*][**+p**\ *pen*] ]
@@ -64,7 +64,7 @@ histogram
     有多种方式可以指定统计直方：
 
     - **-T**\ *min/max/inc* 指定统计区间的最小值、最大值和直方间隔
-    - **-T**\ *inc* 只指定统计直方的间隔。统计区别最大和最小值由 |-R| 选项决定
+    - **-T**\ *inc* 只指定统计直方的间隔。统计区别最大和最小值由 :option:`-R` 选项决定
 
 
 可选选项

@@ -17,7 +17,7 @@ coast
 语法
 ----
 
-**gmt coast** |-J|\ *parameters*
+**gmt coast** :option:`-J`\ *parameters*
 |SYN_OPT-R|
 [ |SYN_OPT-Area| ]
 [ |SYN_OPT-B| ]
@@ -27,7 +27,7 @@ coast
 [ |-F|\ *box* ]
 [ |-G|\ [*fill*] ]
 [ |-I|\ *river*\ [/\ *pen*] ]
-[ |-J|\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ |-L|\ *scalebar* ]
 [ |-M| ]
 [ |-N|\ *border*\ [/*pen*] ]
@@ -114,7 +114,7 @@ coast
     若想要不同的区域有不同的画笔或填充属性，则需要多次使用 |-E| 选项，每次
     指定不同的区域以及不同的画笔或填充属性。
 
-    若使用了 |-E| 但不指定 |-J| 和 |-M| 则会以 **-R**\ *w/e/s/n* 的
+    若使用了 |-E| 但不指定 :option:`-J` 和 |-M| 则会以 **-R**\ *w/e/s/n* 的
     形式输出对应行政区域的区域范围。
 
 .. _-F:

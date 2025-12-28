@@ -31,7 +31,7 @@ sac
 语法
 ----
 
-**gmt sac** [ *saclist*\|\ *SACfiles* ] |-J|\ *parameters*
+**gmt sac** [ *saclist*\|\ *SACfiles* ] :option:`-J`\ *parameters*
 |SYN_OPT-R|
 [ |SYN_OPT-B| ]
 [ |-C|\ [*t0/t1*] ]
@@ -93,7 +93,7 @@ sac
     *t0* 和 *t1* 均是相对于参考时间的秒数，参考时间由 |-T| 选项决定。
     若未使用 |-T| 选项，则使用SAC头段中的参考时间（kzdate和kztime）。
 
-    若只使用了 |-C| 但未指定时间窗，则 *t0*/*t1* 由 |-R| 选项的
+    若只使用了 |-C| 但未指定时间窗，则 *t0*/*t1* 由 :option:`-R` 选项的
     *xmin*/*xmax* 决定。
 
 .. _-D:
