@@ -43,7 +43,7 @@ img2google
 *imgfile*
     Img 格式的测深/地形文件，比如由 Sandwell 和 Smith 创建的海底地形文件。
     如果当前文件夹中不存在该文件并且用户已经设置了环境变量 **$GMT_DATADIR**，
-    :doc:`supplements/img/img2grd` 将从 **$GMT_DATADIR** 中寻找 *imgfile*。
+    :doc:`img2grd` 将从 **$GMT_DATADIR** 中寻找 *imgfile*。
 
 .. option:: -A
 
