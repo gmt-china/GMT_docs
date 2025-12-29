@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-10-23
+:date: 2025-12-29
 
 .. index:: ! block_median 
 .. program:: block_median
@@ -20,7 +20,8 @@ blockmedian
 语法
 ----
 
-**gmt blockmedian** [ *table* ]
+**gmt blockmedian**
+[ *table* ]
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 [ :option:`-A`\ *fields* ]
@@ -45,10 +46,15 @@ blockmedian
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
+|No-spaces|
+
+输入数据
+------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-I.rst_
 
@@ -62,13 +68,13 @@ blockmedian
 **-A**\ *field*
    指定写入每个网格中的字段，该选项需要 :option:`-G` 选项。其中字段通过字符设置：
 
-   - **z** ：z 值的中值，见 **-T**
+   - **z** ：z 值的中值，见 :option:`-T`
    - **s** ：中值的 L1 范数（即 1.4826 \* 中位数绝对偏差）
    - **l** ：最小值
    - **h** ：最大值
    - **q25** ：25% 分位数
    - **q75** ：75% 分位数
-   - **w** ：权重，见 **-W**
+   - **w** ：权重，见 :option:`-W`
 
    **l**\|\ **q25**\|\ **q75**\|\ **h** 需要同时设置 **-Eb** 选项；
    默认字符为 **z**
@@ -174,7 +180,7 @@ double 类型精度 ::
 
 :doc:`blockmean`,
 :doc:`blockmode`,
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,
