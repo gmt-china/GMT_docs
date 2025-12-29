@@ -48,7 +48,9 @@ coast
 [ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
-必选选项
+|No-spaces|
+
+必须选项
 --------
 
 .. include:: explain_-J.rst_
