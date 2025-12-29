@@ -15,7 +15,7 @@ isf
 ----
 
 **gmt gmtisf** *ISFfile*
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-D`\ *date_start*\ [/*date_end*] ]
 [ :option:`-F`\ [**a**] ]
 [ :option:`-N` ]

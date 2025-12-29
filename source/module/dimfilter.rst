@@ -31,12 +31,12 @@ dimfilter
 :option:`-N`\ **x**\ *sectors*\ [*modifier*]
 [ :option:`-L` ]
 [ :option:`-Q` ]
-[ |SYN_OPT-I| ]
-[ |SYN_OPT-R| ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-R`\ *region* ]
 [ :option:`-T` ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
 [ |SYN_OPT--| ]
 
 必选选项

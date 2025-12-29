@@ -30,13 +30,13 @@ movie
 [ :option:`-M`\ [*frame*],[*format*][**+r**\ *dpu*][**+v**] ]
 [ :option:`-P`\ *progress* ]
 [ :option:`-Q`\ [**s**] ]
-[ |-Sb|\ *background* ]
-[ |-Sf|\ *foreground* ]
-[ |SYN_OPT-V| ]
+[ :option:`-Sb`\ *background* ]
+[ :option:`-Sf`\ *foreground* ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*dir*] ]
 [ :option:`-Z`\ [**s**] ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-x| ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
 描述
@@ -130,7 +130,7 @@ movie
     或提供一个数据集文件 *timefile* ，一个记录（即一行）对应一帧。
     列中的值将作为命名变量 **MOVIE_COL0** 、 **MOVIE_COL1** 等的形式提供给主脚本 
     *mainscript* ，而每行任何尾部文本都可以通过变量 **MOVIE_TEXT** 进行访问。
-    文件行数即为帧数。注意 *timefile* 文件可以在 *background* 脚本中创建（见 |-Sb| ），
+    文件行数即为帧数。注意 *timefile* 文件可以在 *background* 脚本中创建（见 :option:`-Sb` ），
     因此在 *background* 脚本执行前后 GMT 都会查找 *timefile* 是否存在。
     如果仅指定帧数 *nframes* ，则只有变量 **MOVIE_FRAME** 可用，因为没有数据文件。
     对于数组生成的一些细节参数，详见 `生成一维数组`_ 。还支持以下子选项：
@@ -308,7 +308,7 @@ movie
 **-Q**\ [**s**]
     用于调试：保留 GMT 创建的所有文件和目录以供检查。
     或者，添加 **s** 只构建 movie 脚本，但不做任何运行。
-    一个例外是从 |-Sb| 指定后台脚本总是被执行，因为它可能在构建 movie 脚本时产生所需的数据。
+    一个例外是从 :option:`-Sb` 指定后台脚本总是被执行，因为它可能在构建 movie 脚本时产生所需的数据。
 
 .. _-S:
 
@@ -447,7 +447,7 @@ movie
 用户应使用给定的画布尺寸来绘制图层，而 **movie** 会做适当转换将画布转换为图像像素尺寸。
 用户有责任使用 :option:`-X` 和 :option:`-Y` 来留出合适的边距以及在画布上对各绘图元素进行任何定位。
 为了减少处理时间，建议将动画的任何静态部分视为静态背景
-（由 *background* 脚本一次性生成；见 |-Sb|）和/或静态前景（由 *foreground* 一次性生成；见 |-Sf|）；然后 **movie** 会按帧组装这些层。
+（由 *background* 脚本一次性生成；见 :option:`-Sb`）和/或静态前景（由 *foreground* 一次性生成；见 :option:`-Sf`）；然后 **movie** 会按帧组装这些层。
 此外，任何在帧循环中使用的静态数据文件的计算都可以由 *background* 脚本完成。
 任何依赖帧号的数据或变量都必须通过主脚本计算或设置，或者按照上述方式通过参数提供。
 **注：** 使用变量 **MOVIE_WIDTH** 或 **MOVIE_HEIGHT** 
@@ -499,8 +499,8 @@ GIF 也可以由透明的 PNG 图像构建而成，这里每个额外的帧都�
 （由于文件扩展名取决于所使用的脚本语言，此处未列出扩展名）：
 
 + *movie_init* （初始化与画布大小和每单位点数相关的变量，并包含可选 *includefile* 的内容）
-+ *movie_preflight* （可选，因为它源自 |-Sb| 并计算所需的数据文件以及可能的背景层）
-+ *movie_postflight* （可选，因为它源自 |-Sf| 并构建前景层）
++ *movie_preflight* （可选，因为它源自 :option:`-Sb` 并计算所需的数据文件以及可能的背景层）
++ *movie_postflight* （可选，因为它源自 :option:`-Sf` 并构建前景层）
 + *movie_frame* （接受帧计数参数并构建帧图像）
 + *movie_cleanup* （在运行结束时删除临时文件）
 

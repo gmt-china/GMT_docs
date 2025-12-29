@@ -31,14 +31,14 @@ grdselect
 [ :option:`-L`\ *linefile* ]
 [ :option:`-M`\ *margins* ]
 [ :option:`-N`\ **l**\|\ **h**\ [*n*] ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*wmin*\ /*wmax*] ]
 [ :option:`-Z`\ [*zmin*\ /*zmax*]] ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-r| ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 必须选项
@@ -110,7 +110,7 @@ grdselect
     - **R** 列出不与 :option:`-R` 相交的网格
     - **W** 列出不在 :option:`-W` 范围内的网格
     - **Z** 列出不在 :option:`-Z` 范围内的网格
-    - **r** 列出不与 |SYN_OPT-r| 指定的配准方式相同的网格
+    - **r** 列出不与 :option:`-r`\ *reg* 指定的配准方式相同的网格
 
 .. _-L:
 

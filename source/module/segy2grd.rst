@@ -20,8 +20,8 @@ segy2grd
 **gmt segy2grd**
 *segyfile*
 :option:`-G`\ *grdfile*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-A`\ [**n**\|\ **z**] ]
 [ :option:`-L`\ [*nsamp*] ]
 [ :option:`-M`\ [*ntraces*] ]

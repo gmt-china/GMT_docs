@@ -22,8 +22,8 @@ grdspotter
 **gmt grdspotter** *ingrid*
 :option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-G`\ *outgrid*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-A`\ *agegrid* ]
 [ :option:`-D`\ **i**\|\ **p**\ *grid* ]
 [ :option:`-L`\ *IDgrid* ]
@@ -32,10 +32,10 @@ grdspotter
 [ :option:`-Q`\ *IDinfo* ]
 [ :option:`-S` ]
 [ :option:`-T`\ **t**\|\ **u**\ *fixed_val* ] [
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *n\_try* ]]
 [ **-Z**\ *z_min*\ [/*z_max*\ [/*z_inc*]] ]
-[ |SYN_OPT-r| ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。

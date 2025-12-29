@@ -22,13 +22,13 @@ grdfilter
 **gmt grdfilter** *ingrid* :option:`-D`\ *distance_flag*
 :option:`-F`\ **x**\ *width*\ [/*width2*][*modifiers*]
 :option:`-G`\ *outgrid*
-[ |SYN_OPT-I| ]
+[ :option:`-I`\ *increment* ]
 [ :option:`-N`\ **i**\|\ **p**\|\ **r** ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-T` ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-r| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 必选选项

@@ -146,12 +146,12 @@ mgd77manage
 [ :option:`-F` ]
 [ :option:`-I`\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment* ]
 [ :option:`-N`\ *unit* ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT-n| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-j`\ *flags* ]
+[ :option:`-n`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

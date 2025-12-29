@@ -19,9 +19,9 @@ x2sys_get
 
 **gmt x2sys_get** :option:`-T`\ *TAG* [ :option:`-C` ] [ :option:`-F`\ *flags* ] [ :option:`-G` ]
 [ :option:`-L`\ [*list*]\ [**+i**] ]
-[ :option:`-N`\ *flags* ] [
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
+[ :option:`-N`\ *flags* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 

@@ -26,7 +26,7 @@ x2sys_binlist
 **gmt x2sys_binlist** *track(s)* :option:`-T`\ *TAG*
 [ :option:`-D` ]
 [ :option:`-E` ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必选选项

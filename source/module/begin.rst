@@ -29,7 +29,7 @@ begin
 [ *formats* ]
 [ *options* ]
 [ :option:`-C` ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 可选选项
 --------

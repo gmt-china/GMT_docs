@@ -19,19 +19,19 @@ legend
 
 **gmt legend** [ *specfile* ]
 :option:`-D`\ *refpoint*
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *dx*/*dy* ]
 [ :option:`-F`\ *box* ]
 [ :option:`-J`\ *parameters* ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S`\ *scale* ]
 [ :option:`-T`\ *file* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必须选项

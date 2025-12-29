@@ -23,14 +23,14 @@ grdgravmag3d
 [ :option:`-F`\ *xy_file* ]
 [ :option:`-G`\ *outgrid* ]
 [ :option:`-H`\ *args* ]
-[ |SYN_OPT-I| ]
+[ :option:`-I`\ *increment* ]
 [ :option:`-L`\ *z_obs* ]
 [ :option:`-Q`\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*] ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S`\ *radius* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ *level*\ [**b**\|\ **t**] ]
-[ |SYN_OPT-f| ]
+[ :option:`-f`\ *flags* ]
 [ **-x**\ *+a|n|-n* ]
 [ |SYN_OPT--| ]
 
@@ -151,7 +151,7 @@ grdgravmag3d
 如果输入的笛卡尔网格的水平方向距离的单位不是米，可以通过对输入文件名
 **+u**\ *unit* 来将指定的单位转换为米。例如：对输入文件 **+uk** 将会把
 输入网格的 x 和 y 坐标的单位从 km 转换为 m。如果输入网格为地理网格，可以
-通过 |SYN_OPT-f| 将单位转换为米
+通过 :option:`-f`\ *flags* 将单位转换为米
 
 示例
 ----

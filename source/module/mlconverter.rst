@@ -22,7 +22,7 @@ mlconverter
 [ :option:`-G`\ [**s**] ]
 [ :option:`-I`\ *FZid* ] 
 [ :option:`-T`\ **c**\|\ **g**\|\ **o**\|\ **s** ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 注意：选项标志与其对应的参数之间不允许有空格。
 

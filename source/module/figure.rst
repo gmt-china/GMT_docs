@@ -25,7 +25,7 @@ figure
 *prefix*
 [ *formats* ]
 [ *options* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 必须选项
 --------

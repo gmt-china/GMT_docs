@@ -18,9 +18,9 @@ coast
 ----
 
 **gmt coast** :option:`-J`\ *parameters*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 [ |SYN_OPT-Area| ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *fill*\ [**+l**\|\ **+r**] ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-E`\ *dcw* ]
@@ -34,14 +34,14 @@ coast
 [ :option:`-Q` ]
 [ :option:`-S`\ [*fill*] ]
 [ :option:`-T`\ *rose* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*level*/]\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必选选项

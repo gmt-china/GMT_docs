@@ -19,7 +19,7 @@ regress
 
 .. note::
 
-    如果用户需要对 x 和 y 坐标的对数结果做拟合，可以使用 |SYN_OPT-i| 选项在读数据后
+    如果用户需要对 x 和 y 坐标的对数结果做拟合，可以使用 :option:`-i`\ *flags* 选项在读数据后
     将其转换为对数坐标
 
 语法
@@ -32,21 +32,21 @@ regress
 [ :option:`-N`\ **1**\|\ **2**\|\ **r**\|\ **w** ]
 [ :option:`-S`\ [**r**] ]
 [ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**w**]\ [**x**]\ [**y**]\ [**r**] ]
 [ :option:`-Z`\ [**+**\|\ **-**]\ *limit* ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-w| ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-b`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-w`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

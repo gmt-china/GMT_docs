@@ -23,7 +23,7 @@ Vs30，即上部30米内的时间平均剪切波速度，是地震工程领域�
 
 **gmt grdvs30** *ingrid* :option:`-G`\ *outgrid*
 :option:`-C`\ *val*\|\ *fname*\ [**+g**]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-W`\ *water_vel* ]
 
 必选选项

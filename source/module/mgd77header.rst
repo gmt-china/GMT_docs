@@ -21,7 +21,7 @@ mgd77header
 **gmt mgd77header** *GEODAS-id.a77*
 [ :option:`-H`\ *headertable* ]
 [ :option:`-M`\ **f**\ [*item*]\|\ **r**\|\ **t** ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必选选项

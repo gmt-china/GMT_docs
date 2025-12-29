@@ -55,10 +55,10 @@ makecpt
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**w**] ]
 [ :option:`-Z` ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

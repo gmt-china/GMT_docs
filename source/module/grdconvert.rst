@@ -15,10 +15,10 @@ grdconvert
 
 **gmt grdconvert** *ingrdfile* :option:`-G`\ *outgrdfile*
 [ :option:`-N` ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ [**+s**\ *factor*][**+o**\ *offset*] ]
-[ |SYN_OPT-f| ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

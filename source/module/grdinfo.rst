@@ -34,12 +34,12 @@ grdinfo
 [ :option:`-I`\ [*dx*\ [/*dy*]\|\ **b**\|\ **i**\|\ **r**] ]
 [ :option:`-L`\ [**0**\|\ **1**\|\ **2**\|\ **p**\|\ **a**] ]
 [ :option:`-M` ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-T`\ [*dz*]\ [**+a**\ [*alpha*]]\ [**+s**] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-o`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

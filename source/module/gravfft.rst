@@ -38,10 +38,10 @@ gravfft
 [ :option:`-Q` ]
 [ :option:`-S` ]
 [ :option:`-T`\ *te/rl/rm/rw*\ [*/ri*]\ [**+m**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *wd*\ [**k**] ]
 [ :option:`-Z`\ *zm*\ [*zl*] ]
-[ |SYN_OPT-f| ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项
@@ -157,7 +157,7 @@ gravfft
 
 .. include:: explain_-V.rst_
 
-|SYN_OPT-f|
+:option:`-f`\ *flags*
     地理坐标网格将会在平地球近似下将坐标单位转换为 m
 
 .. include:: explain_help.rst_
@@ -168,13 +168,13 @@ gravfft
 如果输入的笛卡尔网格的水平方向距离的单位不是米，可以通过对输入文件名
 **+u**\ *unit* 来将指定的单位转换为米。例如：对输入文件 **+uk** 将会把
 输入网格的 x 和 y 坐标的单位从 km 转换为 m。如果输入网格为地理网格，可以
-通过 |SYN_OPT-f| 将单位转换为米
+通过 :option:`-f`\ *flags* 将单位转换为米
 
 注意事项
 --------
 
 NetCDF COARDS 网格将会被自动识别为地理网格。对于其他格式的地理网格，可使用
-|SYN_OPT-f| 将单位转换为 m。如果地理网格接近两级，则应考虑使用
+:option:`-f`\ *flags* 将单位转换为 m。如果地理网格接近两级，则应考虑使用
 :doc:`grdproject` 投影后计算。
 
 Plate Flexure

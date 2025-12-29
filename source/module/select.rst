@@ -37,10 +37,10 @@ select
 [ :option:`-J`\ *parameters* ]
 [ :option:`-L`\ *linefile*\ **+d**\ *dist*\ [**+p**] ]
 [ :option:`-N`\ *maskvalues* ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-Z`\ *min*\ [/*max*]\ [**+a**]\ [**+c**\ *col*]\ [**+h**\ [**k**\|\ **s**]]\ [**+i**] ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-s| ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-s`\ *flags* ]
 
 必选选项
 ---------

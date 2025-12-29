@@ -33,8 +33,8 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 ----
 
 **gmt surface** [ *table* ] :option:`-G`\ *outgrid*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-A`\ *aspect_ratio*\|\ **m** ]
 [ :option:`-C`\ *convergence_limit*\ [%] ]
 [ :option:`-J`\ *parameters* ]
@@ -45,20 +45,20 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 [ :option:`-Q`\ [**r**] ]
 [ :option:`-S`\ *search_radius*\ [**m**\|\ **s**] ]
 [ :option:`-T`\ [**b**\|\ **i**]\ *tension_factor* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*logfile*] ]
 [ :option:`-Z`\ *over-relaxation_factor* ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必选选项

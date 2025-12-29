@@ -32,8 +32,8 @@ sac
 ----
 
 **gmt sac** [ *saclist*\|\ *SACfiles* ] :option:`-J`\ *parameters*
-|SYN_OPT-R|
-[ |SYN_OPT-B| ]
+:option:`-R`\ *region*
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ [*t0/t1*] ]
 [ :option:`-D`\ *dx*\ [/*dy*] ]
 [ :option:`-E`\ **a**\|\ **b**\|\ **k**\|\ **d**\|\ **n**\ [*n*]\|\ **u**\ [*n*] ]
@@ -43,14 +43,14 @@ sac
 [ :option:`-Q` ]
 [ :option:`-S`\ [**i**]\ *scale*\ [*unit*] ]
 [ :option:`-T`\ [**+t**\ *n*][**+r**\ *reduce_vel*][**+s**\ *shift*] ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必选选项

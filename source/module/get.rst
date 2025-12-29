@@ -21,7 +21,7 @@ get
 [ :option:`-L` ]
 [ :option:`-N` ]
 [ :option:`-Q` ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 必选选项
 --------

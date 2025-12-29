@@ -25,11 +25,11 @@ x2sys_list
 [ :option:`-L`\ [*corrections*] ]
 [ :option:`-N`\ *nx_min*\ [**+p**] ]
 [ :option:`-Q`\ **e**\|\ **i** ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S`\ *track*\ [**+b**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*list*] ]
-[ |SYN_OPT-bo| ]
+[ :option:`-bo`\ *binary* ]
 [ |SYN_OPT--| ]
 
 必选选项

@@ -19,14 +19,14 @@ grdlandmask
 
 **gmt grdlandmask**
 :option:`-G`\ *mask_grd_file*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ |SYN_OPT-Area| ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-E`\ [*bordervalues*] ]
 [ :option:`-N`\ *maskvalues* ]
-[ :option:`-V`\ [*level*] ] [ |SYN_OPT-r| ]
-[ |SYN_OPT-x| ]
+[ :option:`-V`\ [*level*] ] [ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
 必选选项

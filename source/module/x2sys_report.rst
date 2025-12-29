@@ -23,9 +23,9 @@ x2sys_report
 [ :option:`-L`\ [*corrections*] ]
 [ :option:`-N`\ *nx_min* ]
 [ :option:`-Q`\ **e**\|\ **i** ]
-[ [ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S`\ *track* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必选选项

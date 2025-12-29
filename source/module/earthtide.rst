@@ -22,12 +22,12 @@ earthtide
 :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list*
 :option:`-G`\ *outgrid*
 [ :option:`-C`\ *x|e,y|n,z|v* ]
-[ |SYN_OPT-I| ]
+[ :option:`-I`\ *increment* ]
 [ :option:`-L`\ *lon/lat* ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S` ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-r| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 必选选项

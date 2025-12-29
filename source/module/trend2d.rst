@@ -23,7 +23,7 @@ trend2d
 
 .. include:: explain_-V.rst_
 
-|SYN_OPT-f|
+:option:`-f`\ *flags*
     地理坐标网格将会在平地球近似下将坐标单位转换为 m
 
 .. include:: explain_help.rst_

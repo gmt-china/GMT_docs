@@ -15,10 +15,10 @@ mgd77track
 ----
 
 **gmt mgd77track** *GEODAS-ids*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 :option:`-J`\ *parameters*
 [ :option:`-A`\ [**c**][*size*][**+i**\ *spacing*] ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ **-Da**\ *startdate* ]
 [ :option:`-D`\ **b**\ *stopdate* ]
 [ :option:`-F` ]
@@ -28,13 +28,13 @@ mgd77track
 [ :option:`-S`\ **a**\ *startdist* ]
 [ :option:`-S`\ **b**\ *stopdist* ]
 [ :option:`-T`\ **T**\|\ **t**\|\ **d**\ *ms*,\ *mc*,\ *mfs*,\ *mf*,\ *mfc* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*pen*] ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必选选项

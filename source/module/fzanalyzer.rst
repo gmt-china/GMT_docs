@@ -31,12 +31,12 @@ fzanalyzer
 [ :option:`-I`\ *FZ*\ [/*profile*] ]
 [ :option:`-S`\ [**b**\|\ **c**]]
 [ :option:`-T`\ *prefix* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *min*/*max*/*inc* ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

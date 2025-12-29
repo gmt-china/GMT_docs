@@ -15,7 +15,7 @@ clear
 
 **gmt clear**
 **all** | **cache** | **data**\ [=\ *planet*] | **sessions** | **settings**
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 可选选项
 --------

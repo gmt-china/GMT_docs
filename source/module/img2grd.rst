@@ -36,7 +36,7 @@ Sandwell 和 Smith 模型的大小和文件名有一定规律，用于在 GMT �
 
 **gmt img2grd** *imgfile*
 :option:`-G`\ *grdfile*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 [ :option:`-D`\ [ *minlat/maxlat* ] ]
 [ :option:`-E` ]
 [ :option:`-I`\ *inc* ]
@@ -45,9 +45,9 @@ Sandwell 和 Smith 模型的大小和文件名有一定规律，用于在 GMT �
 [ :option:`-N`\ *navg* ]
 [ :option:`-S`\ [*scale*] ]
 [ :option:`-T`\ *type* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *maxlon* ]
-[ |SYN_OPT-n| ]
+[ :option:`-n`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项
