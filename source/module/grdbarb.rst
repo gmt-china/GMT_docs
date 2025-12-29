@@ -23,22 +23,22 @@ grdbarb
 *compx.nc* *compy.nc*
 **-J**\ *parameters*
 [ :option:`-A` ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-G`\ *fill* ]
 [ :option:`-I`\ [**x**]\ *dx*\ [/*dy*] ]
 [ :option:`-N` ]
 [ :option:`-Q`\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*] ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-T` ]
-[ |SYN_OPT-U| ]
+[ :option:`-U`\ [*stamp*] ]
 [ :option:`-W`\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ :option:`-Z` ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 
 **注意** ：选项标志和相关参数之间不允许有任何空格。
 

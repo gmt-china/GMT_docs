@@ -45,18 +45,18 @@ grdflexure
 [ :option:`-A`\ *Nx*/*Ny*/*Nxy* ]
 [ :option:`-C`\ **p**\|\ **y**\ *value* ]
 [ :option:`-F`\ *nu_a*\ [/*h_a*\ [**k**]/*nu_m*] ]
-[ :option:`-H`\ *rhogrid*
+[ :option:`-H`\ *rhogrid* ]
 [ :option:`-L`\ *list* ]
 [ :option:`-M`\ *tm* ]
 [ :option:`-N`\ *params* ]
 [ :option:`-Q` ]
 [ :option:`-S`\ *beta* ]
 [ :option:`-T`\ *t0*\ [/*t1*/*dt*\ [**+l**]]\ \|\ *file* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *wd*]\ [**k**]
 [ :option:`-Z`\ *zm*]\ [**k**]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-f| ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项
@@ -208,7 +208,7 @@ grdflexure
 
 .. include:: explain_-V.rst_
 
-|SYN_OPT-f|
+:option:`-f`\ *flags*
     地理坐标网格将会被转换为平地球下的米，其中使用椭球参数近似
 
 .. include:: explain_help.rst_
@@ -237,7 +237,7 @@ grdflexure
 如果输入的笛卡尔网格的水平方向距离的单位不是米，可以通过对输入文件名
 **+u**\ *unit* 来将指定的单位转换为米。例如：对输入文件 **+uk** 将会把
 输入网格的 x 和 y 坐标的单位从 km 转换为 m。如果输入网格为地理网格，可以
-通过 |SYN_OPT-f| 将单位转换为米。
+通过 :option:`-f`\ *flags* 将单位转换为米。
 
 注意事项
 --------

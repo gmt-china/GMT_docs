@@ -34,11 +34,11 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 [ :option:`-M`\ **m**\|\ **r** ]
 [ :option:`-N` ]
 [ :option:`-W`\ *win_width* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-T`\ *year* ]
 [ :option:`-Z`\ *filtergrd* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-n| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-n`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

@@ -30,14 +30,14 @@ grdsample
 ----
 
 **gmt grdsample** *in_grdfile* :option:`-G`\ *out_grdfile*
-[ |SYN_OPT-I| ]
-[ |SYN_OPT-R| ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-R`\ *region* ]
 [ :option:`-T` ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-x| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
 必选选项

@@ -36,9 +36,9 @@ grd2kml
 [ :option:`-S`\ [*extra*] ]
 [ :option:`-T`\ *title* ]
 [ :option:`-W`\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-n| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-n`\ *flags* ]
 [ |SYN_OPT--| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。

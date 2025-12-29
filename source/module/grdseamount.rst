@@ -32,8 +32,8 @@ grdseamount
 
 **gmt grdseamount** [ *table* ]
 :option:`-G`\ *outgrid*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-A`\ [*out*/*in*][**+s**\ *scale*] ]
 [ :option:`-C`\ [**c**\|\ **d**\|\ **g**\|\ **o**\|\ **p**] ]
 [ :option:`-D`\ *unit* ]
@@ -48,13 +48,13 @@ grdseamount
 [ :option:`-S`\ [**+a**\ [*az1*/*az2*]][**+b**\ [*beta*]][**+d**\ [*hc*]][**+h**\ [*h1*/*h2*]][**+p**\ [*power*]][**+t**\ [*t0*/*t1*]][**+u**\ [*u0*]][**+v**\ [*phi*]] ]
 [ :option:`-T`\ *t0*\ [/*t1*/*dt*]\ [**+l**] ]
 [ :option:`-Z`\ *level* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *avedensity* ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-r| ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 必选选项（如果不给定 :option:`-L` 选项）
@@ -107,7 +107,7 @@ grdseamount
 .. _-D:
 
 **-D**\ *unit*
-    设置数据文件中的水平距离的单位。对于地理坐标（ |SYN_OPT-f| ），不需要该
+    设置数据文件中的水平距离的单位。对于地理坐标（ :option:`-f`\ *flags* ），不需要该
     选项，在平地球的近似下，自动转换为 km
 
 .. _-E:
@@ -291,7 +291,7 @@ grdseamount
 
 .. include:: explain_-e.rst_
 
-|SYN_OPT-f|
+:option:`-f`\ *flags*
     地理坐标网格的坐标将会使用平地球近似转换为 km
 
 .. include:: explain_-h.rst_

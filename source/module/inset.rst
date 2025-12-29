@@ -29,9 +29,9 @@ inset begin语法
 [ :option:`-C`\ [*side*]\ *clearance* ]
 [ :option:`-F`\ *box* ]
 [ :option:`-N` ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-J`\ *parameters* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必须选项

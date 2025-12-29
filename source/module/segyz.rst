@@ -27,7 +27,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
 **gmt segyz** *SEGYfile* :option:`-J`\ *parameters*
 :option:`-J`\ **z**\|\ **Z**\ *parameters*
-|SYN_OPT-Rz|
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 :option:`-D`\ *deviation* :option:`-F`\ [*color*] :option:`-W`
 [ :option:`-C`\ *clip* ]
 [ :option:`-I` ] [ :option:`-L`\ *nsamp* ]
@@ -35,13 +35,13 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 [ :option:`-N` ]
 [ :option:`-Q`\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
 [ :option:`-S`\ *header_x*/*header_y* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ :option:`-Z` ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必须选项

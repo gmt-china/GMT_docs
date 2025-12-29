@@ -24,11 +24,11 @@ kml2gmt
 **gmt kml2gmt** [ *kmlfiles* ]
 [ :option:`-E` ]
 [ :option:`-F`\ **s**\|\ **l**\|\ **p** ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-Z` ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-:| ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必选选项

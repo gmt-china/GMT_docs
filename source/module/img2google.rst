@@ -18,7 +18,7 @@ img2google
 ----
 
 **img2google**
-|SYN_OPT-R|
+:option:`-R`\ *region*
 [ *imgfile* ]
 [ :option:`-A`\ *mode*\ [*altitude*] ]
 [ :option:`-C` ]
@@ -28,7 +28,7 @@ img2google
 [ :option:`-N`\ *layername* ]
 [ :option:`-T`\ *doctitle* ]
 [ :option:`-U`\ *URL* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ [+] ]
 [ |SYN_OPT--| ]
 

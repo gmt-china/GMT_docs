@@ -36,15 +36,15 @@ subplot begin 语法
 [ :option:`-A`\ [*autotag*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+j**\|\ **J**\ *refpoint*][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+r**\|\ **R**][**+s**\ [[*dx*/*dy*][/*shade*]]][**+v**]]
 [ :option:`-C`\ [*side*]\ *clearance* ]
 [ :option:`-D` ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ |SYN_OPT-J| ]
 [ :option:`-M`\ *margins* ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S`\ *layout* ]
 [ :option:`-T`\ *title* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ |SYN_OPT--| ]
 
 必须选项
@@ -272,7 +272,7 @@ subplot set 语法
 [ *row,col*\|\ *index* ]
 [ **-A**\ *fixedtag*]
 [ **-C**\ *side*\ /*clearance* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 可选选项
 --------
@@ -321,7 +321,7 @@ subplot end
 subplot end 语法
 ----------------
 
-**gmt subplot end** [ |SYN_OPT-V| ]
+**gmt subplot end** [ :option:`-V`\ [*level*] ]
 
 示例
 ----

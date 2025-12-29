@@ -27,17 +27,17 @@ grdblend
 
 **gmt grdblend** [ *blendfile* \| *grid1* *grid2* ... ]
 :option:`-G`\ *outgrid*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-C`\ **f**\|\ **l**\|\ **o**\|\ **u**\ [**+n**\|\ **p**] ]
 [ :option:`-N`\ *nodata* ]
 [ :option:`-Q` ]
 [ :option:`-Z`\ *scale* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**z**] ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-r| ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 必选选项

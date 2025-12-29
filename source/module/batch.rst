@@ -32,13 +32,13 @@ batch
 [ :option:`-I`\ *includefile* ]
 [ :option:`-M`\ [*job*] ]
 [ :option:`-Q`\ [**s**] ]
-[ |-Sb|\ *preflight* ]
-[ |-Sf|\ *postflight* ]
-[ |SYN_OPT-V| ]
+[ :option:`-Sb`\ *preflight* ]
+[ :option:`-Sf`\ *postflight* ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*dir*] ]
 [ :option:`-Z` ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-x| ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
@@ -91,7 +91,7 @@ batch
     (1) 如果 *timefile* 有尾随文本，
     可用单个 %s 在模板最后格式化；如果无 %s，则尾随文本不会使用。
     (2) 前 N 个格式语句用于转换 *timefile* 的前 N 列；不能跳过列或指定列顺序
-    （可用 |SYN_OPT-i| 重排输入顺序）。
+    （可用 :option:`-i`\ *flags* 重排输入顺序）。
     (3) 可使用最多五个数值语句（前提 *timefile* 有足够列）。
     例如 **-F**\ my_data_%05.2lf_%07.0lf_%s 使用 *timefile* 的前两列和尾随文本生成唯一前缀。
     注意：GMT 数据集内部使用双精度变量，即使列为整数也应使用浮点格式。

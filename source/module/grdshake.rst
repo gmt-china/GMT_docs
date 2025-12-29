@@ -18,7 +18,7 @@ grdshake
 :option:`-M`\ *mag*
 [ :option:`-C`\ *a,v,i* ]
 [ :option:`-F`\ *mecatype* ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 
 必选选项
 ---------

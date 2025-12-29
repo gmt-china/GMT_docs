@@ -17,28 +17,28 @@ binstats
 ----
 
 **gmt binstats** [ *table* ] :option:`-G`\ *outgrid*
-|SYN_OPT-I|
+:option:`-I`\ *increment*
 :option:`-C`\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
-|SYN_OPT-R|
+:option:`-R`\ *region*
 :option:`-S`\ *search_radius*
 [ :option:`-E`\ *empty* ]
 [ :option:`-N` ]
 [ :option:`-T`\ [**h**\|\ **r**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**+s**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必选选项

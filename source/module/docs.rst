@@ -20,7 +20,7 @@ docs
 **gmt docs**
 [ :option:`-Q` ]
 [ :option:`-S` ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 *module-name*
 [*-option*]
 

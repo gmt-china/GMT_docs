@@ -18,22 +18,22 @@ sphinterpolate
 
 **gmt sphinterpolate** [ *table* ]
 :option:`-G`\ *grdfile*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-D`\ [*east*] ]
 [ :option:`-Q`\ *mode*\ [*options*] ]
 [ :option:`-T` ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-Z` ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必选选项

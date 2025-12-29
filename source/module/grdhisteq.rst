@@ -38,9 +38,9 @@ grdhisteq
 **gmt grdhisteq** *ingrid* [ :option:`-G`\ *outgrid* ]
 [ :option:`-C`\ *n_cells* ] [ :option:`-D`\ [*file*] ] [ :option:`-N`\ [*norm*] ]
 [ :option:`-Q` ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-h| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-h`\ *headers* ]
 [ |SYN_OPT--| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。

@@ -89,10 +89,10 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 [ :option:`-G`\ **d**\|\ **g** ]
 [ :option:`-I`\ *dx*\ [/*dy*] ]
 [ :option:`-N`\ **d**\|\ **s**\ *unit* ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ **t**\|\ **d**\ *gap* ]
-[ |SYN_OPT-j| ]
+[ :option:`-j`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

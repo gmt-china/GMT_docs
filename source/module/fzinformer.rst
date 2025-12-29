@@ -26,7 +26,7 @@ fzinformer
 [ :option:`-S`\ *max* ]
 [ :option:`-T`\ *prefix* ]
 [ :option:`-W`\ *max* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 

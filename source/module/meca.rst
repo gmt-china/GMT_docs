@@ -15,10 +15,10 @@ meca
 
 **gmt meca** [ *table* ]
 :option:`-J`\ *parameters*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 :option:`-S`\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
 [ :option:`-A`\ [**+p**\ *pen*][**+s**\ *size*] ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-D`\ *depmin*/*depmax* ]
 [ :option:`-E`\ *fill* ]
@@ -29,18 +29,18 @@ meca
 [ :option:`-L`\ [*pen*] ]
 [ :option:`-N` ]
 [ :option:`-T`\ *nplane*\ [/*pen*] ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-:| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必须选项

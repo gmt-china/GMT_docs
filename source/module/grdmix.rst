@@ -41,10 +41,10 @@ grdmix
 [ :option:`-M` ]
 [ :option:`-N`\ [**i**\|\ **o**][*divisor*] ]
 [ :option:`-Q` ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *weights* ]
-[ |SYN_OPT-f| ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。

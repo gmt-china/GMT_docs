@@ -27,12 +27,12 @@ gravmag3d
 [ :option:`-L`\ *z_observation* ]
 [ :option:`-S`\ *radius* ]
 [ :option:`-Z`\ *level* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ **-fg**]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-r| ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-r`\ *reg* ]
 [ |SYN_OPT--| ]
 
 必选选项（不是全部都必选）

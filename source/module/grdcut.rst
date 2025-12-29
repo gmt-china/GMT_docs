@@ -22,13 +22,13 @@ grdcut
 ----
 
 **gmt grdcut** *ingrid* :option:`-G`\ *outgrid*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 [ :option:`-J`\ *parameters* ]
 [ :option:`-N`\ [*nodata*] ]
 [ :option:`-S`\ *lon/lat/radius*\ [**+n**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ [*min/max*]\ [**+n**\|\ **N**\|\ **r**] ]
-[ |SYN_OPT-f| ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

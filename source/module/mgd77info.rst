@@ -28,7 +28,7 @@ mgd77info
 [ :option:`-I`\ **a\|c\|m\|t** ]
 [ :option:`-M`\ **f**\ [*item*]\|\ **r**\|\ **e**\|\ **h** ]
 [ :option:`-L`\ [**v**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必选选项

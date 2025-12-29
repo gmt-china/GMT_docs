@@ -21,7 +21,7 @@ x2sys_put
 ----
 
 **gmt x2sys_put** [ *info.tbf* ] :option:`-T`\ *TAG* [ :option:`-D` ] [ :option:`-F` ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必选选项

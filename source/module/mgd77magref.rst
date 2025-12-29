@@ -24,12 +24,12 @@ mgd77magref
 [ :option:`-F`\ *flags* ]
 [ :option:`-G` ]
 [ :option:`-S`\ **c**\|\ **l**\ *low/high* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-:| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-b`\ *binary* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 可选选项

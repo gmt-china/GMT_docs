@@ -20,24 +20,24 @@ sphdistance
 
 **gmt sphdistance** [ *table* ]
 :option:`-G`\ *grdfile*
-|SYN_OPT-I|
-|SYN_OPT-R|
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
 [ :option:`-C` ]
 [ :option:`-D` ]
 [ :option:`-E`\ **d**\|\ **n**\|\ **z**\ [*dist*] ]
 [ :option:`-L`\ *unit* ]
 [ :option:`-N`\ *nodetable* ]
 [ :option:`-Q`\ *voronoi.txt* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-:| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-b`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-j`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必选选项

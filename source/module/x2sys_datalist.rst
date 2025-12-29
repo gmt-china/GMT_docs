@@ -22,12 +22,12 @@ x2sys_datalist
 [ :option:`-F`\ *name1*,\ *name2*,... ]
 [ :option:`-I`\ [*list*] ]
 [ :option:`-L`\ [*corrections*] ]
-[ |SYN_OPT-R| ]
-[ :option:`-S` ] [
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-h| ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-h`\ *headers* ]
 [ |SYN_OPT--| ]
 
 

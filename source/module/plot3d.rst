@@ -17,10 +17,10 @@ plot3d
 --------
 
 **gmt plot3d** [ *table* ] :option:`-J`\ *parameters*
-|-Jz|\ \|\ **Z**\ *parameters*
-|SYN_OPT-Rz|
+:option:`-Jz`\ \|\ **Z**\ *parameters*
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**\|\ **r**\|\ **t**] ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-D`\ *dx*/*dy*\ [/*dz*] ]
 [ :option:`-G`\ *fill*\|\ **+z** ]

@@ -40,21 +40,21 @@ convert
 [ :option:`-Q`\ [**~**]\ *selection*]
 [ :option:`-S`\ [**~**]\ *"search string"*\|\ **+f**\|\ *file*\ [**+e**] \| :option:`-S`\ [**~**]/\ *regexp*/[**i**][**+e**] ]
 [ :option:`-T`\ [**h**][**d**\ [[**~**]\ *selection*]] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**+n**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-b`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必选选项
@@ -267,7 +267,7 @@ convert
     # @D4.945000|-106500.00000000|-32700.00000000
     -9.36890245902635 39.367156766570389
 
-对上述文件，使用 |SYN_OPT-a| 提取属性 ELEVATION 的数据（下述两种等价） ::
+对上述文件，使用 :option:`-a`\ *flags* 提取属性 ELEVATION 的数据（下述两种等价） ::
 
     gmt convert file.gmt -a2=ELEVATION > xyz.dat
     gmt convert file.gmt -aELEVATION > xyz.dat

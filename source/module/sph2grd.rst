@@ -19,17 +19,17 @@ L，M，C[L，M]，S[L，M]
 **gmt sph2grd** [table]
 :option:`-G`\ *grdfile*
 :option:`-I`\ *increment*
-|SYN_OPT-R|\ *region*
+:option:`-R`\ *region*\ *region*
 [ :option:`-D`\ [**g**\|\ **n**] ]
 [ :option:`-E`\ ]
 [ :option:`-F`\ [**k**]\ *filter* ]
 [ :option:`-N`\ [norm] ]
 [ :option:`-Q`\ ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-r| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-r`\ *reg* ]
 [ **-x**\ [-]\ *n* ]
 [ |SYN_OPT--| ]
 

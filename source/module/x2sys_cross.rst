@@ -23,10 +23,10 @@ x2sys_cross
 [ :option:`-I`\ **l**\|\ **a**\|\ **c** ]
 [ :option:`-Q`\ **e**\|\ **i** ]
 [ :option:`-S`\ **l**\|\ **u**\|\ **h**\ *speed* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *size* ] [ :option:`-Z` ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
 [ |SYN_OPT--| ]
 
 

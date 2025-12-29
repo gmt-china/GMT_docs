@@ -22,8 +22,8 @@ grdpaste
 **gmt grdpaste**
 *file_a.nc file_b.nc*
 :option:`-G`\ *outfile.nc*
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

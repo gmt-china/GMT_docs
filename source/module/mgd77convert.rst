@@ -21,7 +21,7 @@ mgd77convert
 [ :option:`-C` ]
 [ :option:`-D` ]
 [ :option:`-L`\ [**w**][**e**][**+l**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ |SYN_OPT--| ]
 
 必选选项

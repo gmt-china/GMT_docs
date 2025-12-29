@@ -20,21 +20,21 @@ basemap
 ----
 
 **gmt basemap** :option:`-J`\ *parameters*
-|SYN_OPT-Rz|
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-A`\ [*file*] ]
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-F`\ *box* ]
 [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ :option:`-L`\ *scalebar* ]
-[ |SYN_OPT-U| ]
+[ :option:`-U`\ [*stamp*] ]
 [ :option:`-T`\ *rose* ]
 [ :option:`-T`\ *mag_rose* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必选选项

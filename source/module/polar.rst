@@ -17,10 +17,10 @@ polar
 ----
 
 **gmt polar** [ *table* ] :option:`-D`\ *lon/lat* :option:`-J`\ *parameters*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 :option:`-M`\ *size*\ [**+m**\ *mag*]
 :option:`-S`\ *<symbol><size>*
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*] ]
 [ :option:`-E`\ *fill* ]
 [ :option:`-F`\ *fill* ]
@@ -28,17 +28,17 @@ polar
 [ :option:`-N` ]
 [ :option:`-Q`\ *mode*\ [*args*] ]
 [ :option:`-T`\ *angle*/*form*/*justify*/*fontsize* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT-:| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必须选项

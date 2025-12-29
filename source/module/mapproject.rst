@@ -33,7 +33,7 @@ mapproject
 ----
 
 **gmt mapproject** [ *table* ] :option:`-J`\ *parameters*
-|SYN_OPT-R|
+:option:`-R`\ *region*
 [ :option:`-A`\ **b**\|\ **B**\|\ **f**\|\ **F**\|\ **o**\|\ **O**\ [*lon0*/*lat0*][**+v**] ]
 [ :option:`-C`\ [*dx*/*dy*][**+m**] ]
 [ :option:`-D`\ **c**\|\ **i**\|\ **p** ]
@@ -46,22 +46,22 @@ mapproject
 [ :option:`-Q`\ [**d**\|\ **e**] ]
 [ :option:`-S` ]
 [ :option:`-T`\ [**h**]\ *from*\ [/*to*] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**e**\|\ **E**\|\ **g**\|\ **h**\|\ **j**\|\ **n**\|\ **o**\|\ **O**\|\ **r**\|\ **R**\|\ **w**\|\ **x**][**+n**\ [*nx*\ [/*ny*]]] ]
 [ :option:`-Z`\ [*speed*][**+a**][**+i**][**+f**][**+t**\ *epoch*] ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
+[ :option:`-b`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-j`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
 必须选项

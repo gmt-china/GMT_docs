@@ -15,7 +15,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 使用 **--PAR**\ =\ *value* 语法临时修改GMT参数的值。参数列表见 :doc:`/conf/index`\ 。
 
 **gmt colorbar**
-[ |SYN_OPT-B| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-D`\ *refpoint* ]
 [ :option:`-F`\ *panel* ]
@@ -27,16 +27,16 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 [ :option:`-M` ]
 [ :option:`-N`\ [**p**\|\ *dpi* ]]
 [ :option:`-Q` ]
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-S` ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *scale* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ :option:`-Z`\ *zfile* ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
 必选选项

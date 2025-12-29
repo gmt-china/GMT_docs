@@ -43,9 +43,9 @@ gshhg
 
 **gmt gshhg** *binaryfile.b* [ :option:`-A`\ *min* ] [ :option:`-G` ] [ :option:`-I`\ *id* ]
 [ :option:`-L` ] [ :option:`-N`\ *level* ] [ :option:`-Q`\ **e**\|\ **i** ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-o| ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-o`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必选选项

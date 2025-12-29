@@ -18,7 +18,7 @@ end
 
 **gmt end**
 [ **show** ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 可选参数
 --------

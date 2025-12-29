@@ -19,10 +19,10 @@ grdfill
 **gmt grdfill** *ingrid*
 :option:`-A`\ *mode*\ [*arg*]
 :option:`-G`\ *outgrid*
-[ |SYN_OPT-R| ]
+[ :option:`-R`\ *region* ]
 [ :option:`-L`\ [**p**] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
 [ |SYN_OPT--| ]
 
 必须选项

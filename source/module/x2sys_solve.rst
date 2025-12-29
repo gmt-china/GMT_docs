@@ -18,11 +18,11 @@ x2sys_solve
 
 **gmt x2sys_solve** :option:`-C`\ *column* :option:`-T`\ *TAG* :option:`-E`\ **c**\|\ **d**\|\ **g**\|\ **h**\|\ **s**\|\ **y**\|\ **z**
 [ *COE_list.txt* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**+u**] ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-x| ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
 

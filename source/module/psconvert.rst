@@ -30,7 +30,7 @@ psconvert
 [ :option:`-Q`\ [**g**\|\ **p**\|\ **t**][1\|2\|4] ]
 [ :option:`-S` ]
 [ :option:`-T`\ **b**\|\ **e**\|\ **E**\|\ **f**\|\ **F**\|\ **j**\|\ **g**\|\ **G**\|\ **m**\|\ **s**\|\ **t**\ [**+m**] ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *params* ]
 [ :option:`-Z` ]
 [ |SYN_OPT--| ]
