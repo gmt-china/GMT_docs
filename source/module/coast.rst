@@ -1,5 +1,6 @@
 :author: 田冬冬, 周茂
-:date: 2022-06-19
+:date: 2025-12-30
+
 .. index:: ! coast
 .. program:: coast
 .. include:: common_SYN_OPTs.rst_
@@ -17,9 +18,11 @@ coast
 语法
 ----
 
-**gmt coast** :option:`-J`\ *parameters*
-:option:`-R`\ *region*
-[ |SYN_OPT-Area| ]
+**gmt coast**
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
+[ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *fill*\ [**+l**\|\ **+r**] ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]
@@ -27,7 +30,6 @@ coast
 [ :option:`-F`\ *box* ]
 [ :option:`-G`\ [*fill*] ]
 [ :option:`-I`\ *river*\ [/\ *pen*] ]
-[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ :option:`-L`\ *scalebar* ]
 [ :option:`-M` ]
 [ :option:`-N`\ *border*\ [/*pen*] ]
@@ -40,6 +42,8 @@ coast
 [ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
 [ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-g`\ *gaps* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
@@ -49,7 +53,7 @@ coast
 
 .. include:: explain_-J.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Jz.rst_
 
 .. include:: explain_-Rz.rst_
 
@@ -185,7 +189,7 @@ coast
 
     - ``1`` ：国界
     - ``2`` ：州界；（目前只有美国、加拿大、澳大利亚以及南美各国的数据）
-    - ``3`` ：Marine boundaries
+    - ``3`` ：海洋边界
     - ``a`` ：1-3的全部边界；
 
     *pen* 的默认属性为 **default,black,solid**。该选项可重复多次
@@ -242,6 +246,10 @@ coast
 .. include:: explain_-XY.rst_
 
 .. include:: explain_-bo.rst_
+
+.. include:: explain_-d.rst_
+
+.. include:: explain_-g.rst_
 
 .. include:: explain_perspective.rst_
 
