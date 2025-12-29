@@ -36,13 +36,13 @@ PARAMETER3 *value3*
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**
     将 GMT4 创建的 GMT4配置文件 :file:`.gmtdefaults4` 转换为GMT5及之后版本所使用的
     :file:`gmt.conf` 文件，并保留原GMT4配置文件。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**s**\|\ **u**]
     在系统默认配置的基础上修改参数值
@@ -51,7 +51,7 @@ PARAMETER3 *value3*
     - **-Du**：使用US单位制下的默认参数文件
     - **-Ds**：使用SI单位制下的默认参数文件
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *defaultsfile*
     指定要读取并修改的配置文件名 *defaultsfile*

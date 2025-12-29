@@ -35,12 +35,12 @@ x2sys_report
     输入 ASCII 格式交叉点文件名，该文件使用 :doc:`x2sys_cross` 模块生成。
     如果不指定输入文件，将从标准输入中读取数据。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *column*
     指定要处理的列，列名必须是已经在格式定义文件中存在的，见 :doc:`x2sys_init` 
     
-.. _-T:
+.. option:: -T
     
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init`
@@ -48,7 +48,7 @@ x2sys_report
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     通过轨迹的权重来消除两个轨迹在交叉点的不符值；
@@ -56,32 +56,32 @@ x2sys_report
     平差后的文件名为 *track.cplumn.adj* ，位于 **$X2SYS_HOME**/*TAG*
     文件夹中。具体处理过程见 *Mittal* [1984] 。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [*list*]
     *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算
     [默认包含所有的轨迹]。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*corrections*]
     对选择观测量进行最优改正，*corrections* 为改正表，该改正表可以由 :doc:`x2sys_solve` 生成
     [默认使用位于 **$X2SYS_HOME**/*TAG* 文件夹中的 TAG_corrections.txt]
     对于改正表文件的格式，见 :doc:`x2sys_datalist` 的 Corrections 章节
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *nx_min*
     只输出至少含有 *nx_min* 个交叉点的轨迹的交叉点信息 [默认为全部轨迹]
 
-.. _-Q:
+.. option:: -Q
 
 **-Qe**\|\ **i**
     **e** 表示外部交叉点，**i** 表示内部交叉点 [默认为外部交叉点]
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *track*
     指定单轨迹的名称，只输出和这条轨迹相关的交叉点的信息 

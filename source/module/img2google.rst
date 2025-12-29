@@ -45,31 +45,31 @@ img2google
     如果当前文件夹中不存在该文件并且用户已经设置了环境变量 **$GMT_DATADIR**，
     :doc:`gmt:supplements/img/img2grd` 将从 **$GMT_DATADIR** 中寻找 *imgfile*。
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *mode*\ [*altitude*]
     从谷歌地球可识别的 5 种高度模式中选择一种来确定生成的图像的高度（单位为 m）：
     **G** 为固定到地面，**g** 为相对地面一定高度，**a** 为绝对高度，**s** 为相对于海底
     的高度，**S** 为固定到海底[默认]。
 
-.. _-C:
+.. option:: -C
 
 **-C**
     打开裁剪以在图像中只显示在海平面以下的部分。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *fademin/fademax*
     设置几何体渐变从不透明到完全透明的距离。斜率值用屏幕像素表示，并分别应用于 LOD
     （可见度）限制的最小值和最大值。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *prefix*
     设置输出的图像的前缀（扩展名为自动设置）。默认使用命名方式为
     topoN\|S\ *<north>*\ E\|W<*west*\ >。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *LODmin/LODmax*
     以像素为单位设置细节 (LOD，可见度）的级别。
@@ -81,19 +81,19 @@ img2google
     视角太远而不能被绘制。*LODmax* 表示一个给定的区域的可视范围的最大极限。
     默认值为 1，表示 "激活区域为无限大"。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *layername*
     指定图层名（如果字符串中包含空格，使用双引号括起来）
     [默认为 topoN\|S<*north*>\ E\|W<*west*>]。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *doctitle*
     指定文档标题（如果字符串中包含空格，使用双引号括起来）
     [默认为 "Predicted bathymetry"]。
 
-.. _-U:
+.. option:: -U
 
 **-U**\ *URL*
     指定图像的远程 URL。默认图像和本地的 KML 文件对应。使用 **-U**
@@ -101,7 +101,7 @@ img2google
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [+]
     使用 zip（需预先安装）创建一个 \*.kmz 文件以方便分发；追加 **+**

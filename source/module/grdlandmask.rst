@@ -32,7 +32,7 @@ grdlandmask
 必选选项
 --------
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *mask_grd_file*
     生成的掩膜网格文件的文件名
@@ -46,7 +46,7 @@ grdlandmask
 
 .. include:: explain_-A.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *resolution*\ [**+f**]
     选择海岸线数据精度。
@@ -61,7 +61,7 @@ grdlandmask
     加上 **+f** 则命令在找不到当前指定的精度数据时，自动寻找更低精度的数据。
     选项海岸线数据的精度，见 :doc:`coast` 中的介绍。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [*bordervalues*]
     恰好落在海岸线多边形边界上的数据的处理方式。
@@ -76,7 +76,7 @@ grdlandmask
     岛边界、湖内岛、湖内岛中的小湖边界穿过的网格单元值会被依次修改为
     *lborder*、*iborder*、*pborder* 的值。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *maskvalues*
     设置网格节点的值。可以是数字，也可以是NaN。该选项可以取两种格式：

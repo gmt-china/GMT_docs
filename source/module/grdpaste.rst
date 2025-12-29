@@ -32,7 +32,7 @@ grdpaste
 *file_a.nc* *file_b.nc*
     要进行拼接的两个网格文件名
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outfile.nc*
     拼接后生成的网格文件名

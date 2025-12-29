@@ -53,7 +53,7 @@ wiggle
 
 .. include:: explain_-R.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *scale*
     以数据坐标单位或距离单位指定异常值的缩放因子（即比例尺）。
@@ -63,7 +63,7 @@ wiggle
 可选参数
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [*azimuth*]
     设置绘制正异常值的方位角，正异常将被“吸引”到该方向。
@@ -72,12 +72,12 @@ wiggle
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *center*
     绘图前从数据中减去 *center*，默认值为 0
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ \ **+w**\ *length*\ [**+j**\ *justify*]\ [**+a**\ **l**\|\ **r**]\ [**+o**\ *dx*\ [/*dy*]]\ [**+l**\ [*label*]]
     使用四种坐标系统定义比例尺的参考点，
@@ -98,7 +98,7 @@ wiggle
     **-Dj** 或者 **-DJ** 选项将会影响锚点的位置，
     详见\ `修饰物锚点 <https://docs.gmt-china.org/latest/basis/embellishment/#id6>`__ 。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]]\ [**+s**\ [[*dx*/*dy*/][*shade*]]]
     绘制比例尺的背景面板，
@@ -106,7 +106,7 @@ wiggle
 
     .. include:: explain_-F_box.rst_
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *fill*\ [**+n**][**+p**]
     设置异常值下的阴影填充的颜色和样式。 [默认不填充]
@@ -116,13 +116,13 @@ wiggle
 
     **注**：如果需要设置正异常和负异常使用不同的填充方式，需要重复使用 :option:`-G` 选项。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *fix_az*
     绘制异常值时使用固定方位角（见 :option:`-A` 选项）。
     使用该选项时，轨迹法线的方位角将被 *fixed_az* 覆盖。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *pen*
     绘制轨迹 [默认不绘制]。可以附加画笔属性 [默认值为： width = 0.25p，color = black，style = solid]。
@@ -131,7 +131,7 @@ wiggle
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *pen*
     设置异常值轮廓画笔属性 [默认没有轮廓]

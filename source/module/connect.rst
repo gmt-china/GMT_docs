@@ -21,7 +21,7 @@ connect
 选项
 ----
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*closed*]
     将所有闭合多边形写到文件 *closed* （默认文件名为 ``gmtconnect_closed.txt`` ）i
@@ -29,7 +29,7 @@ connect
 
     使用该选项不会对线段做连接。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [*template*]
     对于多段数据文件，将每段数据分别输出到不同的数据文件中。
@@ -40,7 +40,7 @@ connect
 
     默认的模板为 ``gmtconnect_segment_%d.txt`` 。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*linkfile*]
     将连接信息写到指定的文件中，默认文件名为 ``gmtconnect_link.txt`` 。
@@ -48,7 +48,7 @@ connect
     对于每段数据而言，会写入原始的数据段ID；对于线段的起始点和终点而言，会报告
     离得最近的线段的ID，以及两个线段端点之间的距离。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [*template*]
     Used with :option:`-D` to a list file with the names of the individual
@@ -58,7 +58,7 @@ connect
     respectively). [Default is gmtconnect_list.txt].
 
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [*cutoff*\ [**+s**\ *sdist*]]
     Specifies the separation tolerance in the data coordinate units [0];

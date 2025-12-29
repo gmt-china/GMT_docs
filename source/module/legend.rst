@@ -37,7 +37,7 @@ legend
 必须选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [/*height*]\ [**+j**\ *justify*]\ [**+l**\ *spacing*]\ [**+o**\ *dx*\ [/*dy*]]
     指定图例框的尺寸和位置
@@ -67,12 +67,12 @@ legend
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *dx*/*dy*
     设置图例边框与内部图例之间的空白 [默认值 4p/4p]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制图例的背景面板属性
@@ -86,12 +86,12 @@ legend
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *scale*
     对图例中的所有符号大小乘以 *scale* [默认值为 1]
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *file*
     将隐藏的图例文件输出到文件中 [仅适用于现代模式]

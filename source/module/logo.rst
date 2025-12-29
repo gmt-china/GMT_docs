@@ -42,7 +42,7 @@ logo
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]]
     设置logo在图中的位置
@@ -57,7 +57,7 @@ logo
     - **+o**\ *dx*/*dy* 在参考点的基础上设置logo的额外偏移量
     - **+w**\ *width* 设置logo的宽度
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制GMT logo的背景面板属性
@@ -70,7 +70,7 @@ logo
 .. include:: explain_-R.rst_
 .. include:: explain_-Rz.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [**l**\|\ **n**\|\ **u**]
     控制GMT logo中地图下方的文字

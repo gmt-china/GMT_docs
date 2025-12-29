@@ -55,7 +55,7 @@ ternary
 
 .. include:: explain_intables.rst_
 
-.. _-B:
+.. option:: -B
 
 **-B**\ [**a**\|\ **b**\|\ **c**]\ *args*
     设置三角图的三条边的属性。
@@ -64,7 +64,7 @@ ternary
     逆时针旋转，分别称为 **a**、**b**、**c**。
     其余用法与标准选项 :option:`-B` 相同。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *cpt* 或 **-C**\ *color1,color2*\ [*,color3*\ ,...]
     指定CPT文件，或者跟上一系列以逗号分隔的颜色以构建一个线性连续CPT
@@ -74,24 +74,24 @@ ternary
 
     现代模式下，若不指定CPT，则使用当前CPT。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *fill*
     指定符号填充色。
 
     对于多段数据，段头记录中的 :option:`-G` 字符串会覆盖命令行中该选项的值。
 
-.. _-J:
+.. option:: -J
 
 **-JX**\ *width*
     指定三角图的宽度
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *a*\ /*b*\ /*c*
     设置三个顶点的标签，标签距离顶点的距离为 :term:`MAP_LABEL_OFFSET` 三倍。
 
-.. _-M:
+.. option:: -M
 
 **-M**
     不绘图。将三角图数据 (*a*,\ *b*,\ *c*\ [,\ *z*]) 转换为笛卡尔坐标
@@ -106,17 +106,17 @@ ternary
 
         y =\frac{\sqrt{3}}{2\times 100}\times c
 
-.. _-N:
+.. option:: -N
 
 **-N**
     不裁剪落在三角图外的符号 [默认只绘制三角图内的符号]
 
-.. _-R:
+.. option:: -R
 
 **-R**\ *amin/amax/bmin/bmax/cmin/cmax*
     指定三条边 **a**、**b** 和 **c** 的最大最小值。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*symbol*][*size*]
     指定要绘制的符号类型及大小
@@ -127,7 +127,7 @@ ternary
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*pen*][*attr*]
     设置符号的画笔属性。

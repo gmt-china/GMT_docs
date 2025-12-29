@@ -39,7 +39,7 @@ grdvolume
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *cval* or **-C**\ *low/high/delta* or **-Cr**\ *low/high* or **-Cr**\ *cval*
     指定等值线（Z值平面）以计算由该等值线所包含的表面积、体积以及平均高度（体积/面积）。
@@ -52,19 +52,19 @@ grdvolume
     - **-Cr**\ *low/high* 计算两个Z值平面之间的体积
     - **-Cr**\ *cval* 计算  *cval* 到网格最小值范围内的体积
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *base*
     计算体积时加上从 z=\ *base* 到等值线的体积
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*unit*]
     对于地理网格，默认会将度转换为平面距离，默认单位为米。
     使用该选项指定其它长度单位，则输出的表面积单位为 *unit*\ :math:`^2`，
     输出的体积单位则是 z_unit * *unit*\ :math:`^2`。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [**c**\|\ **h**]
     找到最大平均高度所对应的等值线
@@ -76,7 +76,7 @@ grdvolume
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *fact*\ [/*shift*]
     将数据减去 *shift* 再乘以比例因子 *fact*

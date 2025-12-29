@@ -77,7 +77,7 @@ gpsgridder
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**]
     拟合曲面：通过 SVD 求解线性系统的样条参数，并去除某些特征值以得到平滑的结果；
@@ -101,7 +101,7 @@ gpsgridder
 
     同时使用两者即同时输出两种类型。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [*misfitfile*]
     在输入数据位置处计算拟合值，并报告 u 和 v 的残差的统计值（mean, std, rms）。
@@ -111,7 +111,7 @@ gpsgridder
     的编号，特征值以及残差的方差，rms，rms_u 和 rms_v。如果同时使用了 :option:`-W` ， 则
     同样追加输出 :math:`\chi^2` ，:math:`\chi_u^2` ，:math:`\chi_v^2`
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**d**\|\ **f**]\ *fudge*
     格林函数与 :math:`r^{-2}` 和 :math:`\log(r)` 是成正比的，因此，在 :math:`r=0` 时，
@@ -123,12 +123,12 @@ gpsgridder
 
 .. include:: explain_-I.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**
     在进行样条拟合的时候，不移去趋势。[默认移去趋势，拟合残差，然后恢复趋势]
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *nodefile*
     计算 *nodefile* 中位置处的应变并在其后追加 *w* 值，并输出到 :option:`-G` 设置的
@@ -136,18 +136,18 @@ gpsgridder
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *nu*
     设置 2-D 弹性板的泊松比，默认为 0.5。设置为 1 时，表明弹性板时刚性的，
     设置为 -1 表明两个方向的应变没有耦合关系
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *maskgrid*
     只计算 *maskgrid* 文件中指定的节点的值，该选项无需使用 :option:`-R` 和 :option:`-I`
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**+s**\|\ **w**]
     输入文件必须在最后两列中提供 *u* 和 *v* 的一倍不确定度。如果不确定度是

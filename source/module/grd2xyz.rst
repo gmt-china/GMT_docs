@@ -45,7 +45,7 @@ XY坐标数据。
 
 .. include:: dump_rgb.rst_
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**f**\|\ **i**]
     输出的XY坐标值用对应的列、行号替代
@@ -62,14 +62,14 @@ XY坐标数据。
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**a**\|\ *weight*]
     输出四列数据XYZW，其中W为 *weight* [*weight*\ 默认值为1]
 
     若使用 **-Wa** 则权重为每个节点所占据的面积。
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [*flags*]
     以 ASCII 或二进制形式输出Z值
