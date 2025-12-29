@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-10-23
+:date: 2025-12-29
 
 .. index:: ! blockmean
 .. program:: blockmean
@@ -20,7 +20,8 @@ blockmean
 语法
 ----
 
-**gmt blockmean** [ *table* ]
+**gmt blockmean**
+[ *table* ]
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 [ :option:`-A`\ *fields* ]
@@ -44,10 +45,15 @@ blockmean
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
+|No-spaces|
+
+输入数据
+------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-I.rst_
 
