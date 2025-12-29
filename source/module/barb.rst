@@ -12,17 +12,17 @@ barb
 :简介: 在 2D 和 3D 中绘制风羽
 
 **barb** 从 *files* （或标准输入）读取 (x, y, 方位角, 风速) 数据，
-并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 **-JZ|z**
+并生成用于在地图上绘制风羽的 PostScript 代码。如果设置了 :option:`-Jz|Z`
 则 **barb** 会将输入数据的第三列解释为 z 值，并在三维中绘制风羽。
-如果未通过 **-Q** 指定风羽长度，则 **barb** 会将输入数据的第三列和第四列分别解释为风羽长度和宽度。
-使用 **-G** 选择填充颜色。如果设置了 **-G**，则 **-W** 将控制是否绘制轮廓。
+如果未通过 :option:`-Q` 指定风羽长度，则 **barb** 会将输入数据的第三列和第四列分别解释为风羽长度和宽度。
+使用 :option:`-G` 选择填充颜色。如果设置了 :option:`-G`，则 :option:`-W` 将控制是否绘制轮廓。
 
 语法
 --------
 **barb**
 [ *table* ]
 :option:`-J`\ *parameters*
-:option:`-J`\ **z**\ \|\ **Z**\ *parameters*
+:option:`-Jz|Z`\ *parameters*
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *cpt* ]
@@ -46,20 +46,26 @@ barb
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
+[ |SYN_OPT--| ]
 
-必选选项
+|No-spaces|
+
+输入数据
+------------------
+
+.. include:: explain_intables.rst_
+
+必须选项
 ------------------
 
 .. include:: explain_-J.rst_
 
-.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-Jz.rst_
 
 .. include:: explain_-Rz.rst_
 
 可选选项
 ------------------
-.. include:: explain_intables.rst_
 
 .. include:: explain_-B.rst_
 
@@ -145,7 +151,6 @@ barb
 
 示例
 --------
-.. include:: explain_example.rst_
 
 在三维空间 (0-10), (0-10), (0-100) 上绘制蓝色柱状图（宽度 = 1.25 cm），
 位置由 heights.xyz 文件指定，每 2, 2, 10 设置刻度，从东南方向以 30° 仰角观察，可使用::
@@ -177,6 +182,6 @@ barb
 
 相关模块
 --------
-:doc:`colorbar`
+:doc:`colorbar`,
 :doc:`grdbarb`, 
 :doc:`plot3d`
