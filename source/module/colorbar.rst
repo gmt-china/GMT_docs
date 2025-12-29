@@ -1,5 +1,6 @@
 :author: 田冬冬, 朱邓达, 周茂, 邓山泉, 陈箫翰
-:date: 2025-10-31
+:date: 2025-12-30
+
 .. index:: ! colorbar
 .. program:: colorbar
 .. include:: common_SYN_OPTs.rst_
@@ -14,6 +15,9 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 如果想要修改色条刻度的字体大小、刻度线粗细、边框粗细等属性，应当把色条看成一个新的笛卡尔坐标底图，
 使用 **--PAR**\ =\ *value* 语法临时修改GMT参数的值。参数列表见 :doc:`/conf/index`\ 。
 
+语法
+----
+
 **gmt colorbar**
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *cpt* ]
@@ -22,7 +26,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 [ :option:`-G`\ *zlo*\ /\ *zhi* ]
 [ :option:`-I`\ [*max\_intens*\|\ *low_i*/*high_i*] ]
 [ :option:`-J`\ *parameters* ]
-[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-Jz|Z`\ *parameters* ]
 [ :option:`-L`\ [**i**][*gap*] ]
 [ :option:`-M` ]
 [ :option:`-N`\ [**p**\|\ *dpi* ]]
@@ -39,10 +43,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 [ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
-
-无
+|No-spaces|
 
 可选选项
 --------
@@ -136,6 +137,8 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
 .. include:: explain_-J.rst_
 
+.. include:: explain_-Jz.rst_
+
 .. option:: -L
 
 **-L**\ [**i**][*gap*]
@@ -167,7 +170,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
     CPT文件中所有的Z值都会被转换成 :math:`p = \log10(z)`，其中整数的p会以10^p的格式标注。
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Rz.rst_
 
 .. option:: -S
 
