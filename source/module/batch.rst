@@ -1,5 +1,5 @@
 :author: 何星辰, 周茂
-:date: 2025-10-21
+:date: 2025-12-29
 
 .. index:: ! batch
 .. program:: batch
@@ -24,7 +24,8 @@ batch
 语法
 ----
 
-**gmt batch** *mainscript*
+**gmt batch**
+*mainscript*
 :option:`-N`\ *prefix*
 :option:`-T`\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
 [ :option:`-D` ]
@@ -41,12 +42,13 @@ batch
 [ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
+|No-spaces|
 
-必选选项
+必须选项
 --------
 
 *mainscript*
+
     独立的 GMT 现代模式处理脚本的名称，用于执行参数相关的计算。
     脚本可以访问作业变量，如作业编号和下面定义的其他变量，
     并且可以使用 Bourne shell (.sh)、Bourne again shell (.bash)、
@@ -101,7 +103,7 @@ batch
 
 **-I**\ *includefile*
     将 *includefile* 的内容插入 batch_init.sh 脚本，
-    供所有批处理脚本访问。通常用于添加主脚本和可选 :option:`-S` 脚本可依赖的常量变量。
+    供所有批处理脚本访问。通常用于添加主脚本和可选的 :option:`-S` 脚本可依赖的常量变量。
 
 .. option:: -M
 
@@ -117,14 +119,15 @@ batch
     唯一例外是可选 *preflight* 脚本（**-Sb**），始终执行，
     因为可能产生构建主批处理脚本所需的数据。
 
-.. _-Sb:
+.. option:: -S
+.. option:: -Sb
 
 **-Sb**\ *preflight*
     可选 GMT 现代模式 *preflight* 脚本（与 *mainscript* 同语言），
     可下载或复制数据文件，或创建 *mainscript* 所需的文件（如 *timefile*）。
     总是在主批处理序列之前执行。
 
-.. _-Sf:
+.. option:: -Sf
 
 **-Sf**\ *postflight*
     可选 *postflight* 脚本（与 *mainscript* 同语言），可在所有作业完成后执行最终处理，
@@ -147,7 +150,7 @@ batch
 
 .. include:: explain_-f.rst_
 
-.. _-cores:
+.. option:: -x
 
 **-x**\ [[-]\ *n*]
     限制分发作业时使用的核心数量。默认尝试使用所有可用核心。
