@@ -1,5 +1,6 @@
 :author: 周茂, 田冬冬, 陈箫翰
-:date: 2025-08-11
+:date: 2025-12-29
+
 .. index:: ! binstats
 .. program:: binstats
 .. include:: common_SYN_OPTs.rst_
@@ -16,11 +17,13 @@ binstats
 语法
 ----
 
-**gmt binstats** [ *table* ] :option:`-G`\ *outgrid*
+**gmt binstats**
+[ *table* ]
+:option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-C`\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
 :option:`-R`\ *region*
-:option:`-S`\ *search_radius*
+:option:`-S`\ *radius*
 [ :option:`-E`\ *empty* ]
 [ :option:`-N` ]
 [ :option:`-T`\ [**h**\|\ **r**] ]
@@ -34,19 +37,23 @@ binstats
 [ :option:`-g`\ *gaps* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
-[ :option:`-n`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :option:`-w`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
+|No-spaces|
+
+输入数据
+------------------
 
 *table*
     2-4 列的表数据，当包含第四列时，其为权重，必须使用 :option:`-W` 选项来表明数据带权。
     **-Cn** 将会只接收两列数据。
+
+必选选项
+--------
 
 .. option:: -C
 
@@ -70,14 +77,7 @@ binstats
     - **U** 最大的负值
     - **z** 求和
 
-.. option:: -G
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -98,7 +98,7 @@ binstats
 
 .. option:: -S
 
-**-S**\ *search_radius*
+**-S**\ *radius*
     设置搜索范围，可追加单位。使用此选项时不能使用 :option:`-T` 选项
 
 .. option:: -T
@@ -106,8 +106,8 @@ binstats
 **-T**\ [**h**\|\ **r**]
     设置网格节点形状：
 
-    - **h** 六边形，仅适用于笛卡尔坐标。将六边形的中心和统计结果写到标准输出或 **-G**
-      指定的文件中；**-I** 设置仅针对 Y 坐标的增量，X 方向增量会自动计算，**-R** 设定的
+    - **h** 六边形，仅适用于笛卡尔坐标。将六边形的中心和统计结果写到标准输出或 :option:`-G`
+      指定的文件中；:option:`-I` 设置仅针对 Y 坐标的增量，X 方向增量会自动计算，:option:`-R` 设定的
       范围会被调整以适应整数个六边形
 
     - **r** 矩形，使用 :option:`-I` 可设置该矩形大小，将计算结果写到 :option:`-G` 指定的网格中
@@ -166,9 +166,9 @@ binstats
 相关模块
 --------
 
-:doc:`gmt:blockmean`,
-:doc:`gmt:blockmedian`,
-:doc:`gmt:blockmode`,
+:doc:`blockmean`,
+:doc:`blockmedian`,
+:doc:`blockmode`,
 :doc:`nearneighbor`,
 :doc:`triangulate`,
 :doc:`xyz2grd`
