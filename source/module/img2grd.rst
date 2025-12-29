@@ -231,4 +231,4 @@ merc_grav.nc 有 2400 x 2039 个像素。如果图的宽度为 8 英寸，每英
 --------
 
 :doc:`gmt`,
-:doc:`gmt:supplements/img/img2google`
+:doc:`img2google`

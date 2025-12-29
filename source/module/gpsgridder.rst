@@ -69,7 +69,7 @@ gpsgridder
     则以平地球近似来计算距离
 
 .. include:: explain_grd_out.rst_
-    
+
 - 如果设置了 :option:`-R` 和 :option:`-I`，则输出两个网格，分别为 u 和 v 分量。
 - 如果设置了 :option:`-T` 选项，则输出两个文本文件，分别为离散点上的 u 和 v 分量
 - 如果设置了 :option:`-N` 选项，输出单个文本文件。
@@ -85,7 +85,7 @@ gpsgridder
 
     - **n** 保留前 *value* 个最大的特征值
     - **r** 默认选项，保留与最大特征值的比值小于 *value* 的特征值 [0]
-    - **v** 保留所需的特征值，以确保模型预测方差分数大于 *value* 
+    - **v** 保留所需的特征值，以确保模型预测方差分数大于 *value*
 
     对于 **n** 和 **v** 选项，需在 *value* 后追加 % 以设置为百分数。
     此外，还可设置如下子选项：
@@ -210,6 +210,6 @@ Sandwell, D. T. and P. Wessel, 2016, Interpolation of 2-D Vector Data Using Cons
 相关模块
 --------
 
-:doc:`gmt:greenspline`
-:doc:`nearneighbor` 
+:doc:`greenspline`
+:doc:`nearneighbor`
 :doc:`surface`

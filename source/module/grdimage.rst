@@ -44,7 +44,7 @@ grdimage
 
 **grdimage** 读取一个二维网格文件，并通过构建一个矩形图像并根据 z 值和 CPT 文件为像素分配灰度
 （或颜色）来生成灰度阴影（或彩色）地图。可以通过提供一个强度值在 ±1 范围内的文件或指令从输入数据网格中推导强度值来添加光照。
-超出此范围的值将被裁剪。此类光照强度文件可使用 :doc:`grdgradient` 从网格创建，并可使用 :doc:`grdmath` 或 :doc:`gmt:grdhisteq` 进行修改。
+超出此范围的值将被裁剪。此类光照强度文件可使用 :doc:`grdgradient` 从网格创建，并可使用 :doc:`grdmath` 或 :doc:`grdhisteq` 进行修改。
 或者，传入 *image* ，它可以是一个图片文件（带地理参考或不带）。此时也可使用通过 :option:`-I` 选项提供的文件进行光照。
 这里，如果图片没有坐标，则使用强度文件的坐标。
 
@@ -86,7 +86,7 @@ grdimage
     可以添加 **+c**\ *options* 指定一个或多个拼接的 **GDAL -co** 选项的列表 *options* 。
     例如，输出 GeoPDF 并启用 TerraGo 格式，使用 *=PDF+cGEO_ENCODING=OGC_BP* 。
 
-    **注：** 
+    **注：**
     (1) 如果选择了 tiff 文件 (.tif)，具体输出格式需根据实际情况——如果指定的 GMT 投影语法可以转换到 `PROJ <https://proj.org/>`_ 语法，
     则输出为带有地理坐标信息的 GeoTIFF 图片，否则输出为普通 tiff。
     (2) 会丢失所有矢量元素。
@@ -115,7 +115,7 @@ grdimage
 
 **-G**\ *color*\ [**+b**\|\ **+f**]
     该选项仅当想生成黑白图（1-bit 图像）时才可用。
-    此时将输入作为透明掩码，并用指定的颜色 *color* 填充该掩码。 
+    此时将输入作为透明掩码，并用指定的颜色 *color* 填充该掩码。
     **+b** 表示绘制背景像素， **+f** 表示绘制前景像素（默认）。
 
 .. include:: explain_intense.rst_
@@ -136,22 +136,22 @@ grdimage
     处理网格或图片的透明度或不透明度。通常有以下几种情况：
 
     + 网格： **-Q**\ [**+z**\ *value*]
-      
+
       无参数的 :option:`-Q` 将值为 NaN 的节点处设置为透明色，使用 PostScript Level 3 的 color-masking 功能
       （PS 设备需支持 PS Level 3）。可使用子选项 **+z**\ *value* 将 NaN 值替换为 *value* 。
       此时每个像素点要么是不透明的颜色，要么是完全透明的。
-    
+
     + RGB 图片： **-Q**\ [*color*]
-    
+
       后跟 *color* 来将指定颜色 *color* （默认为白色）的像素设为完全透明。
       输出图像中的每个像素要么是不透明的，要么是透明的。
 
-    + Alpha 通道仅为 0 或 255 的 RGBA 图片： **-Q** 
-    
+    + Alpha 通道仅为 0 或 255 的 RGBA 图片： **-Q**
+
       将 Alpha=0 的像素设为完全透明，Alpha=255 为不透明。
-    
+
     + 渐变 Alpha 通道的 RGBA 图片： **-Q**\ [*color*][**+i**][**+t**]
-      
+
       将渐变透明度转换为模拟透明，此时每个像素点的颜色 *r,g,b* 转换公式为 :math:`r' = t R + (1-t) r` ，
       其中 :math:`t` 为透明度，:math:`R` 为透明色 *color* （默认为白色）。
       这种转换本质是颜色混合，而非真透明，产生的文件体积较小。
@@ -216,7 +216,7 @@ grdimage
 透明度的限制
 ---------------
 
-PostScript 图像模型不支持任何形式的透明度。然而，Adobe 添加了 
+PostScript 图像模型不支持任何形式的透明度。然而，Adobe 添加了
 `pdfMark <https://opensource.adobe.com/dc-acrobat-sdk-docs/library/pdfmark/index.html>`_ ，
 它使得 PostScript 能够指定透明度，但只有在使用 Adobe Distiller 或 GhostScript 将 PostScript 或 EPS 转换为 PDF 时才会激活。
 每个图形（例如多边形、线条、文本、图像）都可以指定透明度。
@@ -267,4 +267,4 @@ GMT 会判断其属于哪种类型，并相应地进行处理。如果用户最�
 :doc:`grdcontour`,
 :doc:`grdview`,
 :doc:`grdgradient`,
-:doc:`gmt:grdhisteq`
+:doc:`grdhisteq`

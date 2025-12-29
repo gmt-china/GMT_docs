@@ -357,8 +357,8 @@ ID，时间，位置，控制代码和地球物理观测，其中地球物理观
 .. option:: -W
 
 **-W**\ *weight*
-    为数据设置权重。权重的输出必须在 :option:`-F` 选项中设置。如果使用 :doc:`gmt:blockmean` ，
-    :doc:`gmt:blockmedian` ，:doc:`gmt:blockmode` 模块进行加权平均处理数据，可使用该选项
+    为数据设置权重。权重的输出必须在 :option:`-F` 选项中设置。如果使用 :doc:`blockmean` ，
+    :doc:`blockmedian` ，:doc:`blockmode` 模块进行加权平均处理数据，可使用该选项
 
 .. option:: -Z
 
@@ -384,7 +384,7 @@ ID，时间，位置，控制代码和地球物理观测，其中地球物理观
 
     gmt mgd77list 01010047 -Da1971-06-03T20:45 -Sb5000 -Fdist,azim,faa,depth > myfile.txt
 
-使用 :file:`Cruises.lis` 文件中列出的所有测线中的自由空气重力异常以便后续作为 :doc:`gmt:blockmean`
+使用 :file:`Cruises.lis` 文件中列出的所有测线中的自由空气重力异常以便后续作为 :doc:`blockmean`
 和 :doc:`surface` 模块的输入，数据必须在限定的区域内，且输出为二进制 ::
 
     gmt mgd77list `cat cruises.lis` -Flon,lat,faa -R-40/-30/25/35 -bo > allgrav.b

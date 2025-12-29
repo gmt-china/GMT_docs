@@ -19,7 +19,7 @@ grdsample
 
 网格文件插值方式有多种，默认使用 bicubic 插值，可以使用 **-n** 选项设置其它插值方式。
 该模块可以安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能
-存在混叠效应，因而需要在插值前使用 :doc:`gmt:grdfft` 或 :doc:`gmt:grdfilter`
+存在混叠效应，因而需要在插值前使用 :doc:`grdfft` 或 :doc:`grdfilter`
 对网格文件做滤波。
 
 若省略 :option:`-R` 选项，则输出网格与输入网格的区域范围相同；若省略 :option:`-I` 选项，
@@ -116,7 +116,7 @@ Marks, K. M., and W. H. F. Smith, 2007, Some remarks on resolving seamounts in s
 --------
 
 :doc:`grdedit`,
-:doc:`gmt:grdfft`,
-:doc:`gmt:grdfilter`,
+:doc:`grdfft`,
+:doc:`grdfilter`,
 :doc:`greenspline`,
 :doc:`surface`

@@ -120,5 +120,5 @@ and order normalized associated Legendre functions:
 -----------
 
 :doc:`gmt`,
-:doc:`gmt:grdfft`,
-:doc:`gmt:grdmath`
+:doc:`grdfft`,
+:doc:`grdmath`

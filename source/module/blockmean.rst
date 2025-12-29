@@ -9,7 +9,7 @@ blockmean
 =========
 
 :官方文档: :doc:`gmt:blockmean`
-:简介: 使用均值估计对表数据做区块平均 
+:简介: 使用均值估计对表数据做区块平均
 
 **blockmean** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 :option:`-I` 定义
 的每个区块输出一个平均的位置和值到标准输出。使用 :option:`-G` 可直接输出为网格文件。在进行
@@ -77,7 +77,7 @@ blockmean
 
 .. option:: -C
 
-**-C** 
+**-C**
     使用区块的中心作为输出位置，默认使用平均位置
 
 .. option:: -E
@@ -163,7 +163,7 @@ blockmean
 
 :doc:`blockmedian`,
 :doc:`blockmode`,
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,
