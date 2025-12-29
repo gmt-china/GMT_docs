@@ -64,7 +64,7 @@ meca
 
 .. include:: explain_-B.rst_
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**+p**\ *pen*][**+s**\ *size*]
     在 (*newX*,\ *newY*) 处绘制震源球
@@ -76,22 +76,22 @@ meca
     *pen* 控制连线的画笔属性，**+s**\ *size* 指定圆的大小。
     [默认使用 :option:`-W` 选项的 *pen* 属性，*size* 为0]
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *cpt*
     指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *depmin/depmax*
     只绘制震源深度在 *depmin* 和 *depmax* 之间的地震。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *fill*
     震源球拉伸部分的填充色[默认为白色]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *mode*\ [*args*]
     设置多个属性，可重复使用多次。
@@ -123,27 +123,27 @@ meca
 **-Fz**\ [*pen*]
     覆盖零迹矩张量的画笔属性
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *fill*
     指定压缩部分的填充色[默认值为黑色]
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*pen*]
     设置震源球外部轮廓的线条属性[默认由 :option:`-W` 选项决定]
 
-.. _-M:
+.. option:: -M
 
 **-M**
     所有震级使用相同的大小。震源球大小由 :option:`-S` 选项的 *scale* 参数决定。
 
-.. _-N:
+.. option:: -N
 
 **-N**
     地图区域外的震源球也要绘制，默认不绘制
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [*nplane*][**/**\ *pen*]
     绘制断层平面。
@@ -163,7 +163,7 @@ meca
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *pen*
     同时设置所有线条以及符号轮廓的画笔属性以及标题颜色。

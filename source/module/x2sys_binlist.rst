@@ -48,7 +48,7 @@ x2sys_binlist
     中的路径和位于 \*.gmt 中的 **$GMT_SHAREDIR**\/mgg/gmtfile_paths 中查找
     轨迹数据。
     
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init` 
@@ -56,13 +56,13 @@ x2sys_binlist
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**
     计算每个和轨迹相交的网格的累积距离。距离的输出位于 *flags* 后。
     距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 中的 :option:`-N` 选项 
 
-.. _-E:
+.. option:: -E
 
 **-E**
     在确定网格索引前，将地理坐标转换为圆柱等面积投影坐标。gmt 会使用

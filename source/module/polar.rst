@@ -64,12 +64,12 @@ polar
 
 .. include:: explain_-R.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *longitude/latitude*
     震源球的位置，需要与 :doc:`meca` 模块输入数据中震源球的位置相同
 
-.. _-M:
+.. option:: -M
 
 **-M**\ *size*\ [**+m**\ *mag*]
     震源球尺寸，需要与 :doc:`meca` 模块中 :option:`-S` 选项的参数保持一致
@@ -86,32 +86,32 @@ polar
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*]
     将震源球放在新的位置上，并将新位置与老位置之间连线。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *color*
     拉伸象限内台站的符号填充色 [默认为250]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *fill*
     设置震源球的背景色 [默认不填充]
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *color*
     压缩象限内台站的符号填充色 [默认为黑色]
 
-.. _-N:
+.. option:: -N
 
 **-N**
     不跳过地图边界外的符号
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *mode*\ [*args*]
     设置多个属性，该选项可重复使用。
@@ -136,7 +136,7 @@ polar
 **-Qt**\ *pen*
     *station_code* 的字体颜色
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *angle*/*form*/*justify*/*fontsize*
     将 *station_code* 写到图上，其余参数字符串的角度、形式、对齐方式和字体大小。
@@ -145,7 +145,7 @@ polar
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *pen*
     设置画笔属性

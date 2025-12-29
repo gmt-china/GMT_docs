@@ -32,24 +32,24 @@ fzprofiler
 可选选项
 ------------------
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *width*\ [**c**\|\ **i**\|\ **p**]
     设置单个剖面图的高度。如果未附加单位，则默认单位为 GMT 当前设置的 :term:`PROJ_LENGTH_UNIT`。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *profile*
     默认情况下，我们会将所有横断面剖面绘制为一个堆叠图。
     若要仅选择一个特定剖面，请指定其编号，其中 0 表示第一个剖面。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *inc*
     决定绘制哪些剖面。默认绘制每一个剖面 (*inc* = 1)。
     使用 :option:`-L` 可以选择每隔 *inc* 个剖面绘制一次 [默认值为 1]。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *ncols*
     设置剖面在图中的列数。
@@ -63,7 +63,7 @@ fzprofiler
     文件包括 *prefix*\ _cross.txt、*prefix*\ _analysis.txt、*prefix*\ _par.txt，
     以及由 :doc:`grdtrack` 生成的重采样输出文件 *prefix*\ _resampled.txt。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *width*\ [**c**\|\ **i**\|\ **p**]
     设置单个剖面图的宽度。单位同 :option:`-H`。

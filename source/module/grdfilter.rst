@@ -36,7 +36,7 @@ grdfilter
 
 .. include:: explain_grd_in.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *flag*
     距离 *flag* 用来设置滤波相关的宽度的单位和类型等信息：
@@ -56,7 +56,7 @@ grdfilter
     - *flag* = 5 ：网格(x,y) 的单位为墨卡托 **-Jm1** img 单位，*width* 为千米，
       使用球面距离计算
 
-.. _-F:
+.. option:: -F
 
 **-Fx**\ *width*\ [/*width2*][*modifiers*]
     设置滤波类型，可从卷积和非卷积滤波中选择。**x** 为滤波类型代码，后面的
@@ -101,7 +101,7 @@ grdfilter
 
 .. include:: explain_-I.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**\ **i**\|\ **p**\|\ **r**
     确定输入网格中的 NaN 值如何处理。
@@ -113,7 +113,7 @@ grdfilter
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-T**
     转换网格配准方式。或者使用 **-r**\ [**g**\|\ **p**] 显式指定输出网格的

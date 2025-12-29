@@ -53,30 +53,30 @@ grdhisteq
 可选选项
 ------------------
 
-.. _-C:
+.. option:: -C
 
 **-C** *n_cells*
     设置将数据范围划分为多少个区间（默认 16）。
 
-.. _-D:
+.. option:: -D
 
 **-D** [*file*]
     将层级信息输出到 *file*，若未指定文件则输出到标准输出。
 
 .. include:: explain_grd_out.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N** [*norm*]
     生成高斯输出。与 **-G** 一起使用可输出标准正态分布网格。
     若附加 *norm*，则强制值落在 ±*norm* 范围内（默认为标准正态分布）。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     选择二次（非线性）直方图均衡化方式（默认是线性）。
 
-.. _-R:
+.. option:: -R
 
 .. include:: explain_-R.rst_
 

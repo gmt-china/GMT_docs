@@ -62,7 +62,7 @@ grdseamount
 
 .. include:: explain_intables.rst_
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**][:*driver*\ [*dataType*][**+c**\ *options*]]
     输出网格文件名，其中各子选项的含义见
@@ -79,14 +79,14 @@ grdseamount
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [*out/in*][**+s**\ *scale*]
     创建一个 mask 网格以区分海山以及外部，分别用 *out* 和 *in* 表示内部和
     外部的值 [1/NaN]。海山的高度以及是否平顶不影响本选项，但 :option:`-L` ，:option:`-N`
     和 :option:`-Z` 选项不能和本选项同时使用。使用 **+s** 缩放海山的半径[1]。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [**c**\|\ **d**\|\ **g**\|\ **o**\|\ **p**]
     选择海山的形状函数： **c** （圆锥）， **d** （圆盘）， **g** （高斯），
@@ -104,13 +104,13 @@ grdseamount
 平顶海山相关的参数。平顶部分的半径为 :math:`r_t` , 对于圆盘形状海山，不存
 在该参数。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *unit*
     设置数据文件中的水平距离的单位。对于地理坐标（ :option:`-f`\ *flags* ），不需要该
     选项，在平地球的近似下，自动转换为 km
 
-.. _-E:
+.. option:: -E
 
 **-E**
     设置海山的基地为椭圆形状。如果使用该选项，则海山数据数据格式应该为：
@@ -122,14 +122,14 @@ grdseamount
     :width: 60%
     :show-code: false
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [*flattening*]
     该参数将海山截断为平顶海山。*flattening* 参数的范围从 0[不截断] 到 1，但不能为 1，
     如果不使用该选项，就默认在输入文件的最后一列读取该参数 [ 默认没有截断 ]。使用
     **-Cd** 选项时，忽略该选项。
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *H*/*rho_l*/*rho_h*\ [**+d**\ *densify*][**+p**\ *power*]
     设置参考海山密度相关的参数，该参数用于随深度变化的径向（即下图中的 r 轴向）密度函数。
@@ -151,7 +151,7 @@ grdseamount
     :width: 60%
     :show-code: false
 
-.. _-K:
+.. option:: -K
 
 **-K**\ *densitymodel*
     保存参考模型横截面的预测密度文件 *densitymodel* 。这里使用归一化的坐标，即
@@ -159,13 +159,13 @@ grdseamount
     **注** ：无需创建海山网格即可使用该选项，因此，:option:`-R`，:option:`-I`，:option:`-G` 和
     :option:`-D` 选项都不是必须的。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*hn*]
     输出海山的面积，体积和平均高度。不创建网格。
     使用 *hn* 参数来指定位于 *hn* 高度下的部分将不被统计以避免底部噪声的影响 [0]
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [*list*]
     在使用 :option:`-T` 参数的前提下，将所有输出网格文件对应的时间和名字输出到
@@ -174,12 +174,12 @@ grdseamount
     输出的序列将可以作为 :doc:`grdflexure` 模块的输入。
     使用 :option:`-M` 参数后的输出网格文件名为 *time reliefgrid *\ [ *densitygrid* ] *timetag*
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *norm*
     标准化海山网格，使得网格的最大高度等于 *norm*
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *bmode*/*fmode*\ [**+d**]
     只能和 :option:`-T` 选项共同使用。*bmode* 和 *fmode* 用来设置如何处理海山的变化,
@@ -217,7 +217,7 @@ grdseamount
 的比值。
 虚线为设置为 **c** 的情况；粗实线为设置为 **g** 的结果。
 
-.. _-S:
+.. option:: -S
 
 
 **-S**\ [**+a**\ [*az1*/*az2*]][**+b**\ [*beta*]][**+d**\ [*hc*]][**+h**\ [*h1*/*h2*]][**+p**\ [*power*]][**+t**\ [*t0*/*t1*]][**+u**\ [*u0*]][**+v**\ [*phi*]]
@@ -259,7 +259,7 @@ grdseamount
 都是从海山的高度以及形状中计算得到的。**注** ： :math:`h_2 > h_1` ；
 :math:`r_1 > r_2`
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *t0*\ [/*t1*/*dt*]\ [**+l**]
     设置海山演化序列的起始时间，终止时间和，时间间隔，分别为 *t0*, *t1*
@@ -270,7 +270,7 @@ grdseamount
     不追加时默认使用年。
     使用 :option:`-T` 选项时，将对每个时刻的海山都输出一个网格。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *avedensity*
     指定垂直平均密度的网格文件。如果设置了 :option:`-T` 选项，*avedensity* 必须是
@@ -278,7 +278,7 @@ grdseamount
     字符），将使用 :option:`-T` 选项对应的时间的网格文件，见 `网格文件名模版`_ 。
     需要使用 :option:`-H` 定义密度模型。
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *level*
     指定背景海深 [0]。由于所有的海山具有向上的地形，设置较大的负的 *level*

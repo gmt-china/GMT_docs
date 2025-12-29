@@ -44,7 +44,7 @@ dimfilter
 
 .. include:: explain_grd_in.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *flag*
     距离 *flag* 用来设置滤波相关的宽度的单位和类型等信息：
@@ -61,7 +61,7 @@ dimfilter
       lat 为对应的纬度，使用笛卡尔距离
     - *flag* = 4 ：网格(x,y) 的单位为度，*width* 单位为千米，使用球面距离计
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **x**\ *width*\ [**+l**\|\ **u**]
     设置一级滤波类型，可从卷积和非卷积滤波中选择。**x** 为滤波类型代码，后面的
@@ -80,7 +80,7 @@ dimfilter
       如果存在多个众数，则返回其平均数。追加 **+l** 和 **+u** 可分别选择
       多个众数中的最小值和最大值
 
-.. _-N:
+.. option:: -N
 
 **-N**\ **x**\ *sectors*\ [**+l**\|\ **u**]
     设置二级滤波类型，以及扇区的个数 *sectors* ，扇区个数必须为整数并大于
@@ -103,19 +103,19 @@ dimfilter
 
 .. include:: explain_-I.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**
     使用此选项将 dim.template.sh 脚本内容写到标准输出，不与其他选项组合使用
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-T**
     转换输出网格的配准方式，使其与输入网格相反
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     该模式输入数据不是常见的网格格式，而是 :doc:`grd2xyz` 的 **-Z**

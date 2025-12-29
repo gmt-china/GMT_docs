@@ -60,7 +60,7 @@ coast
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *fill*\ [**+l**\|\ **+r**]
     设置湖泊与河流湖的颜色。
@@ -68,7 +68,7 @@ coast
     默认情况下，湖泊与河流湖会被当做wet区域，直接使用 :option:`-S` 指定的填充值。
     使用 **+l** 或 **+r** 可以为湖泊或河流湖单独指定颜色。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *resolution*\ [**+f**]
     选择海岸线数据精度。
@@ -82,7 +82,7 @@ coast
     默认情况下，若找不到指定精度的海岸线数据，程序会自动报错退出。该选项中
     加上 **+f** 则命令在找不到当前指定的精度数据时，自动寻找更低精度的数据。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *code1,code2,...*\ [**+l**\|\ **L**][**+g**\ *fill*][**+p**\ *pen*][**+z**]
     利用DCW数据绘制或导出行政区划边界（洲界、国界、省界）
@@ -117,7 +117,7 @@ coast
     若使用了 :option:`-E` 但不指定 :option:`-J` 和 :option:`-M` 则会以 **-R**\ *w/e/s/n* 的
     形式输出对应行政区域的区域范围。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**l**\|\ **t**][**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制比例尺和玫瑰图的背景边框
@@ -130,7 +130,7 @@ coast
     该选项默认会同时控制比例尺和方向玫瑰的背景边框。
     加上 **l**\|\ **t** 则表示只控制 :option:`-L` 或 :option:`-T` 选项绘制的特征。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ [*fill*]
     设置dry区域的填充色或裁剪dry区域
@@ -138,7 +138,7 @@ coast
     **-G**\ *fill* 设置dry区域（一般指陆地）的填充色。
     若不指定 *fill* 则会将dry区域裁剪出来，使得接下来的绘图只有dry区域内的才会被绘制。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *river*\ [/*pen*]
     绘制河流。
@@ -168,7 +168,7 @@ coast
 
 .. include:: explain_-L_scale.rst_
 
-.. _-M:
+.. option:: -M
 
 **-M**
     将边界数据以多段ASCII表或二进制表的形式导出到标准输出
@@ -176,7 +176,7 @@ coast
     使用该选项，则只导出数据而不绘图。
     该选项需要与 :option:`-E`, :option:`-I`, :option:`-N` 或 :option:`-W` 选项一起使用。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *border*\ [/*pen*]
     绘制政治边界。
@@ -191,7 +191,7 @@ coast
     *pen* 的默认属性为 **default,black,solid**。该选项可重复多次
     使用，以指定不同级别边界的不同画笔属性。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     关闭区域裁剪。
@@ -201,7 +201,7 @@ coast
     **coast**，并加上 :option:`-Q` 选项。若在开启裁剪后使用了 :option:`-X` 和 :option:`-Y` 选项，
     则在关闭时也要记得使用 :option:`-X` 和 :option:`-Y`。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*fill*]
     设置wet区域的填充色或裁剪wet区域
@@ -215,7 +215,7 @@ coast
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*level*/]\ *pen*
     绘制岸线（shoreline）

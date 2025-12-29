@@ -41,7 +41,7 @@ sphinterpolate
 
 .. include:: explain_intables.rst_
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
@@ -57,13 +57,13 @@ sphinterpolate
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [*east*]
     用于删掉重复点 [默认不删除，即假定数据中不存在重复]；通过追加 *east* 参数表示不对在此经度
     上的点做重复检查
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *mode*\ [*options*]
     设置用于内插的计算张力因子的方法，用来保证局部形状特征或满足弧段约束 [默认没有张力]
@@ -80,14 +80,14 @@ sphinterpolate
       *U* 为数据偏差的加权平方和的上限。 *N* 为使用可变张力时的迭代次数。
 
 
-.. _-T:
+.. option:: -T
 
 **-T**
     使用可变张力; 使用 **-Qp** 选项时，忽略该选项
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**
     在内插前，使用最大数据范围 1/(max-min) 进行数据缩放 [默认不缩放]

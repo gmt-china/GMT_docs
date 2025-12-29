@@ -46,7 +46,7 @@ grdsample
 *in_grdfile*
     要重采样的2D网格文件
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *out_grdfile*
     输出的网格文件名
@@ -61,7 +61,7 @@ grdsample
 
     若只使用 :option:`-R` 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**。
 
-.. _-T:
+.. option:: -T
 
 **-T**
     交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入

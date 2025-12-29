@@ -58,7 +58,7 @@ grdinterpolate
 *cube*
     指定 netCDF 格式的 3D 输入网格。或者使用 :option:`-Z` 时，此处可指定一系列 2D 网格层 (layer)。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outfile*
     输出的 cube 插值结果。如果通过 :option:`-T` 仅指定单一 level，则退化为常规的 2D 网格。
@@ -77,7 +77,7 @@ grdinterpolate
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *x/y*\|\ *pointfile*\ [**+h**\ *header*]
     在给定点位 (*x/y*) 或 *pointfile* 文件中的多个点位处沿 level 轴插值，输出空间或时间序列。
@@ -90,7 +90,7 @@ grdinterpolate
     或者如果希望每个点位的序列输出到单独文件，可在 :option:`-G` 指定的文件名中包含 C 语言的整数格式 (e.g., %d)，
     此时将根据点数创建单独的输出文件。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
     定义要等距采样的 level 范围（从 *min* 到 *max* ）和步长 *inc* 
@@ -103,7 +103,7 @@ grdinterpolate
     + 如果 :option:`-E`\ ，\ :option:`-S` 和 :option:`-T` 均未使用，则将输入的 cube 拆分，输出为一系列的 layer，
       这要求 :option:`-G` 文件名中包含 C 语言浮点数格式，可使用 :option:`-R` 指定范围。
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [*levels*]
     读取命令行中传入的所有 2D 网格作为一个 cube 的每个 layer（默认读取一个 cube 文件）。

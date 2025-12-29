@@ -41,18 +41,18 @@ grdgravmag3d
     输入地形网格文件，输出结果为重力异常。如果输入 2 个网格文件，则计算两个地形
     网格围成的体积的重力异常或者磁异常。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *density*
     设置物体密度，单位为 kg/m^3。也可使用一个网格文件提供其可变的密度。该选项与
     :option:`-H` 不能同时使用
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *xy_file*
     计算位于 *xy_file* 文件中的点上的异常值。该选项与 :option:`-G` 选项不能同时使用
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
@@ -64,12 +64,12 @@ grdgravmag3d
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *thickness*
     设置层厚度为 *thickness* ，单位为 m，默认为 500 m
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *f_dec/f_dip/m_int/m_dec/m_dip*
 
@@ -105,12 +105,12 @@ grdgravmag3d
 
 .. include:: explain_-I.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *z_obs*
     设置观测水平面，默认为 0，同时也是计算异常的高度面
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*]
     基于 :option:`-R` 选项扩展计算区域
@@ -124,7 +124,7 @@ grdgravmag3d
 .. include:: explain_-R.rst_
 
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *radius*
     以 km 为单位设置搜索半径，仅在两网格模式或者使用 :option:`-E` 时有效，默认为 30 km。该选项通过
@@ -132,7 +132,7 @@ grdgravmag3d
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *level*\ [**b**\|\ **t**]
     设置参考平面，默认 *level* = 0。计算时将使用该参考面与地形网格构成的区域形成的异常。

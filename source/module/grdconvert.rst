@@ -32,7 +32,7 @@ grdconvert
 可选选项
 --------
 
-.. _-N:
+.. option:: -N
 
 **-N**
     在生成native二进制文件时，不将GMT网格文件头段写到文件中。
@@ -41,7 +41,7 @@ grdconvert
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [**+s**\ *factor*][**+o**\ *offset*]
     在写网格文件前，从数据中减去 *offset* 并将结果乘以 *factor*。

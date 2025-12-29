@@ -59,7 +59,7 @@ grdmath
 
     该选项仅适用于 **LDISTG** 运算符
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *resolution*\ [**+f**]
     设置 **LDISTG** 运算符使用的数据集的分辨率: 
@@ -73,13 +73,13 @@ grdmath
 
 .. include:: explain_-I.rst_
 
-.. _-M:
+.. option:: -M
 
 **-M**
     默认的导数计算单位为 z_units/x(或 y )\_units。使用该选项，可以将 dx 和 dy 的单位从度变为
     平地球近似下的米，因此最终单位变为 z_units/meter
 
-.. _-N:
+.. option:: -N
 
 **-N**
     操作多个网格时，关闭严格的范围匹配检查 [默认情况下，要求每个网格的范围和第一个网格的范围
@@ -87,7 +87,7 @@ grdmath
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     将下一个运算应用到所有的网格中，使最终结果为一个网格。必须在列出所有网格后才能使用该选项。

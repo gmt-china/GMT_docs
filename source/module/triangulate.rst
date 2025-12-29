@@ -59,7 +59,7 @@ triangulate
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *slpfile*
     读取坡度网格 *slpfile* （单位为度），并使用 CURVE 算法计算水深测量中传播的不确定性
@@ -67,17 +67,17 @@ triangulate
     信息通过网格获取。该选项不能和 **-D**，**-F**，**-M**，**-N**，**-Q**，**-S** 以及 **-T**
     选项共同使用。
 
-.. _-D:
+.. option:: -D
 
 **-Dx**\|\ **y**
     在设置 :option:`-G` 选项时，求 x 方向或 y 方向的导数
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *empty*
     使用 :option:`-G` 选项时，设置空节点的值，默认为 NaN
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
@@ -90,17 +90,17 @@ triangulate
 
 .. include:: explain_-J.rst_
 
-.. _-M:
+.. option:: -M
 
 **-M**
     将输出的三角网以多段线的形式输出，中间以段信息分隔 [默认输出顶点索引]
 
-.. _-N:
+.. option:: -N
 
 **-N**
     与 :option:`-G` 选项同时使用，用来将三角网的顶点输出到标准输出 [默认只输出网格]
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [**n**]
     输出 Voronoi 图的边，而不是三角网的边。需要和 :option:`-R` 同时使用，并且只有使用 Shewchuk
@@ -108,18 +108,18 @@ triangulate
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     以多边形的形式输出三角网，中间以段头信息分隔，不能和 :option:`-Q` 同时使用
 
-.. _-T:
+.. option:: -T
 
 **-T**
     即使使用 :option:`-G` 选项输出网格，仍然输出边或者多边形 [默认输出网格时不输出三角网或
     Voronoi 多边形]。
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**
     指定输出和输入为 (x,y,z) 形式的数据，使用 :option:`-G` 选项时，会自动使用该选项 [默认为 (x,y) ]
