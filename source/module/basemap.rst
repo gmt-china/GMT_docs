@@ -1,5 +1,6 @@
 :author: 田冬冬, 周茂, 王亮
-:date: 2022-06-19
+:date: 2025-12-29
+
 .. index:: ! basemap
 .. program:: basemap
 .. include:: common_SYN_OPTs.rst_
@@ -16,19 +17,22 @@ basemap
 - 绘制比例尺
 - 绘制方向玫瑰、磁场玫瑰图
 
+:option:`-B` :option:`-L` :option:`-T` 三个选项中必须至少使用一个。
+
 语法
 ----
 
-**gmt basemap** :option:`-J`\ *parameters*
+**gmt basemap**
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-A`\ [*file*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-F`\ *box* ]
-[ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ :option:`-L`\ *scalebar* ]
-[ :option:`-U`\ [*stamp*] ]
 [ :option:`-T`\ *rose* ]
 [ :option:`-T`\ *mag_rose* ]
+[ :option:`-U`\ [*stamp*] ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
 [ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
@@ -37,22 +41,16 @@ basemap
 [ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
+|No-spaces|
 
-:option:`-B` :option:`-L` :option:`-T` 三个选项中必须至少使用一个。
+必须选项
+--------
 
 .. include:: explain_-J.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Jz.rst_
 
 .. include:: explain_-Rz.rst_
-
-.. include:: explain_-B.rst_
-
-.. include:: explain_-L_scale.rst_
-
-.. include:: explain_-T_rose.rst_
 
 可选选项
 --------
@@ -71,6 +69,8 @@ basemap
     - 该选项似乎仅适用于矩形底图边框，非矩形边框会输出一堆NaN
     - 边框的采样间隔由参数 :term:`MAP_LINE_STEP` 决定
 
+.. include:: explain_-B.rst_
+
 .. option:: -F
 
 **-F**\ [**l**\|\ **t**][**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
@@ -84,6 +84,10 @@ basemap
     该选项默认会同时控制比例尺和方向玫瑰的背景边框。
     加上 **l**\|\ **t** 则表示只控制 :option:`-L` 或 :option:`-T`
     选项绘制的特征。
+
+.. include:: explain_-L_scale.rst_
+
+.. include:: explain_-T_rose.rst_
 
 .. include:: explain_-U.rst_
 
