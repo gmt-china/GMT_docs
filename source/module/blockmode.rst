@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-10-23
+:date: 2025-12-29
 
 .. index:: ! blockmode
 .. program:: blockmode
@@ -20,7 +20,8 @@ blockmode
 语法
 ----
 
-**gmt blockmode** [ *table* ]
+**gmt blockmode**
+[ *table* ]
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 [ :option:`-A`\ *fields* ]
@@ -45,10 +46,15 @@ blockmode
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-必选选项
---------
+|No-spaces|
+
+输入数据
+------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-I.rst_
 
@@ -66,7 +72,7 @@ blockmode
    - **s** ：众数的 L1 范数
    - **l** ：最小值
    - **h** ：最大值
-   - **w** ：权重，见 **-W**
+   - **w** ：权重，见 :option:`-W`
 
    **s**\|\ **l**\|\ **h** 需要同时设置 :option:`-E` 选项；默认字符为 **z**
 
@@ -79,9 +85,9 @@ blockmode
 .. option:: -D
 
 **-D**\ [*width*]\ [**+c**][**+a**\|\ **+l**\|\ **+h**]
-    通过直方图来计算众数，需设置直方图每个间隔的宽度 *width* 。**+c** 将直方图
+    通过直方图来计算众数，需设置直方图每个间隔的宽度 *width* 。 **+c** 将直方图
     的每个区间放在中间，一遍中间点是 *width* 的倍数。如果发现多个众数，通过设置
-    **+a** 可取其平均。**+l** 和 **+h** 分别返回较大的众数和较小的众数。如果
+    **+a** 可取其平均。 **+l** 和 **+h** 分别返回较大的众数和较小的众数。如果
     *width* 未设置，则默认设置为 1。对于整数数据和整数的 *width* ，默认使用
     **+c** 和 **+l** 。众数默认使用 Least Median of Squares 统计。
 
@@ -172,7 +178,7 @@ blockmode
 
 :doc:`blockmedian`,
 :doc:`blockmean`,
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,
