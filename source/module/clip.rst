@@ -1,5 +1,6 @@
 :author: 田冬冬, 陈箫翰
-:date: 2025-03-05
+:date: 2025-12-30
+
 .. index:: ! clip
 .. program:: clip
 .. include:: common_SYN_OPTs.rst_
@@ -17,16 +18,19 @@ clip
 一点绘制一条任意方向的射线，若该射线穿过裁剪路径线段奇数次，则该点位于裁剪
 区域内；若穿过偶数次，则该点位于裁剪区域外。**-N** 选项可以颠倒内外的定义。
 
-最后，记得再次调用 **gmt clip -C** 以关闭裁剪区域。
+最后，记得再次调用 :option:`-C` 以关闭裁剪区域。
 
 语法
 ----
 
-**gmt clip** [ *table* ] :option:`-J`\ *parameters* :option:`-C`\ [*n*]
+**gmt clip**
+[ *table* ]
+:option:`-C`\ [*n*]
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
-:option:`-J`\ **z**\|\ **Z**\ *parameters* ]
 [ :option:`-N` ]
 [ :option:`-T` ]
 [ :option:`-U`\ [*stamp*] ]
@@ -42,11 +46,19 @@ clip
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-p`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-必选选项
+|No-spaces|
+
+输入数据
+------------------
+
+.. include:: explain_intables.rst_
+
+必须选项
 --------
 
 .. option:: -C
@@ -62,14 +74,12 @@ clip
 
 .. include:: explain_-J.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Jz.rst_
 
 .. include:: explain_-Rz.rst_
 
 可选选项
 --------
-
-.. include:: explain_intables.rst_
 
 .. option:: -A
 
@@ -127,6 +137,8 @@ clip
 .. include:: explain_-icols.rst_
 
 .. include:: explain_perspective.rst_
+
+.. include:: explain_-qi.rst_
 
 .. include:: explain_-t.rst_
 
