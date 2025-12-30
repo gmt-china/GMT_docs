@@ -147,7 +147,6 @@ gmt connect segment_*.txt -T0.1 > new_segments.txt
 
 ```
 gmt connect my_lines.txt -T150e -DMap_segment_%04d.txt
-
 ```
 
 Bugs
