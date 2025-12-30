@@ -3,7 +3,6 @@
 
 .. index:: ! grdbarb
 .. program:: grdbarb
-.. include:: common_SYN_OPTs.rst_
 
 grdbarb
 =============

@@ -2,7 +2,6 @@
 
 .. index:: ! spatial
 .. program:: spatial
-.. include:: common_SYN_OPTs.rst_
 
 spatial
 ==========

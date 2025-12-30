@@ -2,7 +2,6 @@
 :date: 2022-05-05
 .. index:: ! text
 .. program:: text
-.. include:: common_SYN_OPTs.rst_
 
 text
 ====

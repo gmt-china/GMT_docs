@@ -3,7 +3,6 @@
 
 .. index:: ! basemap
 .. program:: basemap
-.. include:: common_SYN_OPTs.rst_
 
 basemap
 =======

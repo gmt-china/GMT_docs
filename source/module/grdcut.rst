@@ -2,7 +2,6 @@
 :date: 2022-05-05
 .. index:: ! grdcut
 .. program:: grdcut
-.. include:: common_SYN_OPTs.rst_
 
 grdcut
 ======

@@ -3,7 +3,6 @@
 
 .. index:: ! gravmag3d
 .. program:: gravmag3d
-.. include:: common_SYN_OPTs.rst_
 
 gravmag3d
 =============

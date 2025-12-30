@@ -14,7 +14,6 @@ grdgradient
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdgradient** *ingrid*
 :option:`-G`\ *outgrid*

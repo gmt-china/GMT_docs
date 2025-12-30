@@ -2,7 +2,6 @@
 :date: 2025-10-31
 .. index:: ! kml2gmt
 .. program:: kml2gmt
-.. include:: common_SYN_OPTs.rst_
 
 kml2gmt
 =======

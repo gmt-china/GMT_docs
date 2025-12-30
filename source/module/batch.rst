@@ -3,7 +3,6 @@
 
 .. index:: ! batch
 .. program:: batch
-.. include:: common_SYN_OPTs.rst_
     
 batch
 =====

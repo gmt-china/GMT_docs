@@ -2,7 +2,6 @@
 :date: 2025-06-11
 .. index:: ! grdconvert
 .. program:: grdconvert
-.. include:: common_SYN_OPTs.rst_
 
 grdconvert
 ==========

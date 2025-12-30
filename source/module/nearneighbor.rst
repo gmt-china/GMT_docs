@@ -2,7 +2,6 @@
 :date: 2025-07-16
 .. index:: ! nearneighbor
 .. program:: nearneighbor
-.. include:: common_SYN_OPTs.rst_
 
 nearneighbor
 ============

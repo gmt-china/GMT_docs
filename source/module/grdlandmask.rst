@@ -2,7 +2,6 @@
 :date: 2024-02-12
 .. index:: ! grdlandmask
 .. program:: grdlandmask
-.. include:: common_SYN_OPTs.rst_
 
 grdlandmask
 ===========
@@ -21,7 +20,7 @@ grdlandmask
 :option:`-G`\ *mask_grd_file*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
-[ |SYN_OPT-Area| ]
+[ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-E`\ [*bordervalues*] ]
 [ :option:`-N`\ *maskvalues* ]

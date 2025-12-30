@@ -2,7 +2,6 @@
 :date: 2025-10-31
 .. index:: ! image
 .. program:: image
-.. include:: common_SYN_OPTs.rst_
 
 image
 =====

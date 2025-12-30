@@ -3,7 +3,6 @@
 
 .. index:: ! fzmodeler
 .. program:: fzmodeler
-.. include:: common_SYN_OPTs.rst_
 
 fzmodeler
 =============

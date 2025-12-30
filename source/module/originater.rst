@@ -3,7 +3,6 @@
 
 .. index:: ! originater
 .. program:: originater
-.. include:: common_SYN_OPTs.rst_
 
 originater
 =============

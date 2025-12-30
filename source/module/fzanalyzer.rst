@@ -3,7 +3,6 @@
 
 .. index:: ! fzanalyzer
 .. program:: fzanalyzer
-.. include:: common_SYN_OPTs.rst_
 
 fzanalyzer
 ==========

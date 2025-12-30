@@ -2,7 +2,6 @@
 :date: 2022-06-22
 .. index:: ! grdvolume
 .. program:: grdvolume
-.. include:: common_SYN_OPTs.rst_
 
 grdvolume
 =========

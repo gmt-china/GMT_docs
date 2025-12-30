@@ -2,7 +2,6 @@
 :date: 2025-10-09
 .. index:: ! psconvert
 .. program:: psconvert
-.. include:: common_SYN_OPTs.rst_
 
 psconvert
 =========

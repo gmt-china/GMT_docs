@@ -2,7 +2,6 @@
 :date: 2025-08-25
 .. index:: ! set
 .. program:: set
-.. include:: common_SYN_OPTs.rst_
 
 set
 ======

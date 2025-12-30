@@ -2,7 +2,6 @@
 
 .. index:: ! sphinterpolate
 .. program:: sphinterpolate
-.. include:: common_SYN_OPTs.rst_
 
 sphinterpolate
 ==============

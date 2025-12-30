@@ -2,7 +2,6 @@
 :date: 2021-08-20
 .. index:: ! end
 .. program:: end
-.. include:: common_SYN_OPTs.rst_
 
 end
 ===

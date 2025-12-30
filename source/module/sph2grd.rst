@@ -2,7 +2,6 @@
 
 .. index:: ! sph2grd
 .. program:: sph2grd
-.. include:: common_SYN_OPTs.rst_
 
 sph2grd
 ========

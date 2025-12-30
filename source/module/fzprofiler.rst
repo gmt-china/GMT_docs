@@ -3,7 +3,6 @@
 
 .. index:: ! fzprofiler
 .. program:: fzprofiler
-.. include:: common_SYN_OPTs.rst_
 
 fzprofiler
 =============

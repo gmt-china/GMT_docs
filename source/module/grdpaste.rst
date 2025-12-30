@@ -2,7 +2,6 @@
 :date: 2019-11-25
 .. index:: ! grdpaste
 .. program:: grdpaste
-.. include:: common_SYN_OPTs.rst_
 
 grdpaste
 ========

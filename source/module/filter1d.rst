@@ -2,7 +2,6 @@
 :date: 2025-10-31
 .. index:: ! filter1d
 .. program:: filter1d
-.. include:: common_SYN_OPTs.rst_
 
 filter1d
 ========

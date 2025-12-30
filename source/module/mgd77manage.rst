@@ -3,7 +3,6 @@
 
 .. index:: ! mgd77manage
 .. program:: mgd77manage
-.. include:: common_SYN_OPTs.rst_
 
 mgd77manage
 ===========

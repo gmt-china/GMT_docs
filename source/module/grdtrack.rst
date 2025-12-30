@@ -13,7 +13,6 @@ grdtrack
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdtrack** [ *table* ] :option:`-G`\ *grd1* [ :option:`-G`\ *grd2* ... ]
 [ :option:`-A`\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+l**] ]

@@ -2,7 +2,6 @@
 :date: 2025-09-22
 .. index:: ! select
 .. program:: select
-.. include:: common_SYN_OPTs.rst_
 
 select
 =========
@@ -27,7 +26,7 @@ select
 -------
 
 **gmt select** [ *table* ]
-[ |SYN_OPT-Area| ]
+[ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
 [ :option:`-C`\ *pointfile*\ \|\ *lon*/*lat*\ **+d**\ *dist* ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-E`\ [**f**][**n**] ]
@@ -67,7 +66,7 @@ select
 
 .. option:: -C
 
-**-C**\ *pointfile*\ **+d**\ *dist*    
+**-C**\ *pointfile*\ **+d**\ *dist*
     ASCII文本文件 *pointfile* 中每一行是一个基准点的经纬度坐标。
     该准则会筛选出与任意一个基准点的距离在 *dist* 之内的记录。
 

@@ -2,7 +2,6 @@
 :date: 2022-05-05
 .. index:: ! solar
 .. program:: solar
-.. include:: common_SYN_OPTs.rst_
 
 solar
 =====

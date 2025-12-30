@@ -2,7 +2,6 @@
 :date: 2022-06-18
 .. index:: ! ternary
 .. program:: ternary
-.. include:: common_SYN_OPTs.rst_
 
 ternary
 =======

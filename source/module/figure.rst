@@ -2,7 +2,6 @@
 :date: 2022-08-30
 .. index:: ! figure
 .. program:: figure
-.. include:: common_SYN_OPTs.rst_
 
 figure
 ======

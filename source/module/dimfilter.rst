@@ -3,7 +3,6 @@
 
 .. index:: ! dimfilter
 .. program:: dimfilter
-.. include:: common_SYN_OPTs.rst_
 
 dimfilter
 =========

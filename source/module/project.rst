@@ -2,7 +2,6 @@
 :date: 2025-11-03
 .. index:: ! project
 .. program:: project
-.. include:: common_SYN_OPTs.rst_
 
 project
 =======

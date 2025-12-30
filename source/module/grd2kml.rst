@@ -3,7 +3,6 @@
 
 .. index:: ! grd2kml
 .. program:: grd2kml
-.. include:: common_SYN_OPTs.rst_
 
 grd2kml
 =======

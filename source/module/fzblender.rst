@@ -3,7 +3,6 @@
 
 .. index:: ! fzblender
 .. program:: fzblender
-.. include:: common_SYN_OPTs.rst_
 
 fzblender
 =============

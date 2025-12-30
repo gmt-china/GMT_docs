@@ -3,7 +3,6 @@
 
 .. index:: ! colorbar
 .. program:: colorbar
-.. include:: common_SYN_OPTs.rst_
 
 colorbar
 ========

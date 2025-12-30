@@ -3,7 +3,6 @@
 
 .. index:: ! clip
 .. program:: clip
-.. include:: common_SYN_OPTs.rst_
 
 clip
 ====

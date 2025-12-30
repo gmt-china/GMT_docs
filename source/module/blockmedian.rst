@@ -3,7 +3,6 @@
 
 .. index:: ! block_median 
 .. program:: block_median
-.. include:: common_SYN_OPTs.rst_
 
 blockmedian
 ===========

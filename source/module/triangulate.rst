@@ -2,7 +2,6 @@
 :date: 2025-07-16
 .. index:: ! triangulate
 .. program:: triangulate
-.. include:: common_SYN_OPTs.rst_
 
 triangulate
 ============

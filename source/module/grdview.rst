@@ -13,7 +13,6 @@ grdview
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdview** *reliefgrid* :option:`-J`\ *parameters*
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]

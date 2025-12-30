@@ -3,7 +3,6 @@
 
 .. index:: ! backtracker
 .. program:: backtracker
-.. include:: common_SYN_OPTs.rst_
 
 backtracker
 =============

@@ -3,7 +3,6 @@
 
 .. index:: ! polespotter
 .. program:: polespotter
-.. include:: common_SYN_OPTs.rst_
 
 polespotter
 =============

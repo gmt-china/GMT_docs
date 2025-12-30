@@ -3,7 +3,6 @@
 
 .. index:: ! grdpmodeler
 .. program:: grdpmodeler
-.. include:: common_SYN_OPTs.rst_
 
 grdpmodeler
 =============

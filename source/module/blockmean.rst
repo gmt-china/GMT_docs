@@ -3,7 +3,6 @@
 
 .. index:: ! blockmean
 .. program:: blockmean
-.. include:: common_SYN_OPTs.rst_
 
 blockmean
 =========

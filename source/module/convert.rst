@@ -3,7 +3,6 @@
 
 .. index:: ! convert
 .. program:: convert
-.. include:: common_SYN_OPTs.rst_
 
 convert
 ===========
