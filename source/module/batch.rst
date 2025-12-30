@@ -40,7 +40,7 @@ batch
 [ :option:`-Z` ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必须选项

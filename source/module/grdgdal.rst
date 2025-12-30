@@ -39,7 +39,7 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 [ :option:`-i`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-r`\ *reg* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

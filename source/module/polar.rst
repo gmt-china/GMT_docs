@@ -39,7 +39,7 @@ polar
 [ :option:`-i`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

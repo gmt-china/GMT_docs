@@ -29,7 +29,7 @@ kml2gmt
 [ :option:`-bo`\ *binary* ]
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

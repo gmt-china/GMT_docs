@@ -39,7 +39,7 @@ grdselect
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-r`\ *reg* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

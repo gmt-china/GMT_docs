@@ -27,7 +27,7 @@ grdlandmask
 [ :option:`-N`\ *maskvalues* ]
 [ :option:`-V`\ [*level*] ] [ :option:`-r`\ *reg* ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

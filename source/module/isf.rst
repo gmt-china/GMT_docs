@@ -19,7 +19,7 @@ isf
 [ :option:`-D`\ *date_start*\ [/*date_end*] ]
 [ :option:`-F`\ [**a**] ]
 [ :option:`-N` ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 --------

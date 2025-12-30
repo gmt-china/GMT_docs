@@ -39,7 +39,7 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 [ :option:`-Z`\ *filtergrd* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-n`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

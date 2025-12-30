@@ -30,7 +30,7 @@ mgd77magref
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 可选选项
 --------

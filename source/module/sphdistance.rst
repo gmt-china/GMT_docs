@@ -38,7 +38,7 @@ sphdistance
 [ :option:`-qi`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

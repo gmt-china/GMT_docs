@@ -44,7 +44,7 @@ originater
 [ :option:`-q`\ *flags* ]
 [ :option:`-s`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 ------------------

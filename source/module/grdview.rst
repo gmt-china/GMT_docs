@@ -34,7 +34,7 @@ grdview
 [ :option:`-n`\ *flags* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 -----------

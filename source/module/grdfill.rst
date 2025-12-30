@@ -23,7 +23,7 @@ grdfill
 [ :option:`-L`\ [**p**] ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-f`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

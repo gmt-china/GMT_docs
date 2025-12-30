@@ -51,7 +51,7 @@ sac
 [ :option:`-h`\ *headers* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

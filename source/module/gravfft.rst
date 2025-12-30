@@ -42,7 +42,7 @@ gravfft
 [ :option:`-W`\ *wd*\ [**k**] ]
 [ :option:`-Z`\ *zm*\ [*zl*] ]
 [ :option:`-f`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

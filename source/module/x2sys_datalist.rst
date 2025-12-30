@@ -28,7 +28,7 @@ x2sys_datalist
 [ :option:`-bo`\ *binary* ]
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-h`\ *headers* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

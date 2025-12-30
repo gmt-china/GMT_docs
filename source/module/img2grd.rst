@@ -48,7 +48,7 @@ Sandwell 和 Smith 模型的大小和文件名有一定规律，用于在 GMT �
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *maxlon* ]
 [ :option:`-n`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

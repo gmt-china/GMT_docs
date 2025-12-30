@@ -42,7 +42,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 [ :option:`-Z` ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 ------------------

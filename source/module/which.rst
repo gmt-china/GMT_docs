@@ -25,7 +25,7 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
 [ :option:`-D` ]
 [ :option:`-G`\ [**a**\|\ **c**\|\ **l**\|\ **u**] ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

@@ -152,7 +152,7 @@ mgd77manage
 [ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-j`\ *flags* ]
 [ :option:`-n`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

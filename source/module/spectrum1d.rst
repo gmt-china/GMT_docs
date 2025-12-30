@@ -54,7 +54,7 @@ Bendat 和 Piersol [1986] 中的算法。
 [ :option:`-i`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-s`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

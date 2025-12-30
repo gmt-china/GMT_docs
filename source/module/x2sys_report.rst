@@ -26,7 +26,7 @@ x2sys_report
 [ :option:`-R`\ *region* ]
 [ :option:`-S`\ *track* ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

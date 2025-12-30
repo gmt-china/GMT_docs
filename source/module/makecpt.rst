@@ -59,7 +59,7 @@ makecpt
 [ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

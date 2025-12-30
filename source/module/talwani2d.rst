@@ -37,7 +37,7 @@ talwani2d
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

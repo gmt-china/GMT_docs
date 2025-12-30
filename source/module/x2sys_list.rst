@@ -30,7 +30,7 @@ x2sys_list
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*list*] ]
 [ :option:`-bo`\ *binary* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

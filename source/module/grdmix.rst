@@ -45,7 +45,7 @@ grdmix
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *weights* ]
 [ :option:`-f`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

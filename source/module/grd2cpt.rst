@@ -37,7 +37,7 @@ grd2cpt
 [ :option:`-bo`\ *binary* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 -----------

@@ -20,7 +20,7 @@ mgd77path
 **gmt mgd77path** *GEODAS-ids* [ :option:`-A`\ [**c**] ] [ :option:`-D` ]
 [ :option:`-I`\ **a\|c\|m\|t** ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

@@ -42,7 +42,7 @@ grdtrack
 [ :option:`-s`\ *flags* ]
 [ :option:`-w`\ *flags* ]
 [ **-:**\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 -----------    

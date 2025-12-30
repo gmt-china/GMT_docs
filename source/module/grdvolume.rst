@@ -27,7 +27,7 @@ grdvolume
 [ :option:`-Z`\ *fact*\ [/*shift*] ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-o`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

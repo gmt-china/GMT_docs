@@ -32,7 +32,7 @@ XY坐标数据。
 [ :option:`-o`\ *flags* ]
 [ :option:`-qo`\ *flags* ]
 [ :option:`-s`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

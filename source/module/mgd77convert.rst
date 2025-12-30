@@ -22,7 +22,7 @@ mgd77convert
 [ :option:`-D` ]
 [ :option:`-L`\ [**w**][**e**][**+l**] ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

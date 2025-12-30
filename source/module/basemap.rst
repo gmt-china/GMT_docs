@@ -39,7 +39,7 @@ basemap
 [ :option:`-f`\ *flags* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必须选项
