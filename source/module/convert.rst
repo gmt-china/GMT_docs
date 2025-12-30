@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-06-30
+:date: 2025-12-30
 
 .. index:: ! convert
 .. program:: convert
@@ -27,8 +27,10 @@ convert
 输入以及输出都可能包含多个头部信息。
 
 语法
+-------
 
-**gmt convert** [ *table* ]
+**gmt convert**
+[ *table* ]
 [ :option:`-A` ]
 [ :option:`-C`\ [**+l**\ *min*][**+u**\ *max*][**+i**]]
 [ :option:`-D`\ [*template*\ [**+o**\ *orig*]] ]
@@ -42,6 +44,7 @@ convert
 [ :option:`-T`\ [**h**][**d**\ [[**~**]\ *selection*]] ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**+n**] ]
+[ :option:`-Z` ]
 [ :option:`-a`\ *flags* ]
 [ :option:`-b`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
@@ -57,11 +60,13 @@ convert
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-必选选项
+输入数据
+-----------
 
 .. include:: explain_intables.rst_
 
 可选选项
+-----------
 
 .. option:: -A
 
@@ -180,13 +185,19 @@ convert
     用来反转选择。如果要考虑数据后的文本的比较，则在 *selection* 的最后添加 *t* ，
     如果不指定数字列，则只考虑最后的文本比较。
 
+.. include:: explain_-V.rst_
+
 .. option:: -W
 
 **-W**\ [**+n**]
     将每个数据记录中最后的本文中的词转换为数字，并将这些数字追加到输出结果中。无法转换的
     词将设置为 NaN。使用 **+n** 可禁止输出包含 NaN 的数据行。
 
-.. include:: explain_-V.rst_
+.. option:: -Z
+
+**-Z**
+    转置数据集中的单个段。任何尾随文本都将丢失。
+    **注意**：如果使用二进制表，请添加 :option:`-V` 以报告转置后表的维度，因为在读取二进制转置表时，您需要指定 :option:`-bi`\ *ncols*。
 
 .. include:: explain_-aspatial.rst_
 
@@ -221,6 +232,7 @@ convert
 .. include:: explain_precision.rst_
 
 示例
+-----------
 
 将二进制文件 :file:`test.b` （单精度）转换为 4 列的 ASCII 文件 ::
 
@@ -290,6 +302,7 @@ profile_005001.txt ... 等单独的文件中::
     gmt convert junk.txt -q~1000-2000 > good.txt
 
 相关模块
+-----------
 
 :doc:`info`,
 :doc:`select`
