@@ -147,7 +147,7 @@ Google Earth KML 格式的单个输出文件。
 .. option:: -N
 
 **-N**\ [**t**\|\ *col*\|\ *name\_template*\|\ *name*]
-    默认情况下，如果段头包含 **-L**"label string"，
+    默认情况下，如果段头包含 :option:`-L`"label string"，
     将用作 KML 特征名称（面、线段或符号集合）。
     默认名称为 "Line %d" 或 "Point Set %d"。每个点将按段名加序号命名。可选：
 
@@ -241,12 +241,12 @@ Google Earth KML 格式的单个输出文件。
 
     gmt 2kml mypoints.txt -Gred+f -Fs > mypoints.kml
 
-将多段线文件（*lon, lat*）转换为 KML，段头含 **-L** 标签，
+将多段线文件（*lon, lat*）转换为 KML，段头含 :option:`-L` 标签，
 使用粗白笔，并设置文档标题，尝试::
 
     gmt 2kml mylines.txt -Wthick,white -Fl -T"Lines from here to there" > mylines.kml
 
-将多段面文件转换为 KML，段头含 **-L** 标签，使用粗黑笔和半透明黄色填充，
+将多段面文件转换为 KML，段头含 :option:`-L` 标签，使用粗黑笔和半透明黄色填充，
 设置文档标题，并指定区域限制，尝试::
 
     gmt 2kml mypolygons.txt -Gyellow@50+f -Fp -T"My polygons" -R30/90/-20/40 > mypolygons.kml
@@ -284,7 +284,7 @@ Google Earth 在跨经线绘制填充面时存在问题。
 
 使用 KMZ 格式更优，因为占用空间小。KMZ 是 KML 文件及其引用的图像、图标或数据文件的压缩包。
 可将大数据集分组到 Folders 中。Document 可包含任意数量文件夹。
-可用脚本和 **-K**、:option:`-O` 选项创建复合 KML 文件。参见 :option:`-T` 了解文件夹/文档切换。
+可用脚本和 :option:`-K`、:option:`-O` 选项创建复合 KML 文件。参见 :option:`-T` 了解文件夹/文档切换。
 gmt_shell_scripts.sh 中的 gmt_build_kmz 可协助将多个
 KML 文件（及引用图片）打包为 KMZ 文件。
 需先 source gmt_shell_scripts.sh。
@@ -351,7 +351,7 @@ GMT 按特征类型（使用 :option:`-O`、:option:`-K` 或 **-T/**\ *foldernam
 分段信息
 --------
 
-**2kml** 会扫描段头中 **-L**"*some label*\ " [参见 :option:`-N`] 和
+**2kml** 会扫描段头中 :option:`-L`"*some label*\ " [参见 :option:`-N`] 和
 **-T**"*some text description*\ "。如存在，将解析为当前特征的名称和描述标签。
 
 相关模块

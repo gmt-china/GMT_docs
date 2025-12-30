@@ -72,7 +72,7 @@ subplot begin 语法
       即按照整个图片的宽度和高度的几何平均值对边框宽度和标注字体大小进行自动缩放；
       **+as** 类似，但参考每个子图的宽度和高度的几何平均值。
 
-    **-F**\ [**f**]\ *width*/*height*\ [**+f**\ *wfracs*\ /*hfracs*]
+    :option:`-F`\ [**f**]\ *width*/*height*\ [**+f**\ *wfracs*\ /*hfracs*]
         指定整张图片的宽度 *width* 和高度 *height*。
 
         这种情况下，GMT会根据整张图片的尺寸以及子图的数目自动计算每张子图的尺寸。
@@ -106,7 +106,7 @@ subplot begin 语法
         注意，宽度值或高度值的数目必须是一个或者与行数/列数相匹配。
 
         对于地理地图而言，每张子图的高度由地图区域 :option:`-R` 以及投影方式 :option:`-J` 决定。
-        有两个选择：(1) 指定子图高度为0，并同时指定 :option:`-R` 和 **-J**，
+        有两个选择：(1) 指定子图高度为0，并同时指定 :option:`-R` 和 :option:`-J`，
         利用其计算每张子图的高度，但要求所有子图必须共享相同的研究区域和投影方式；
         (2) 不断尝试并修改子图的高度以得到最佳的绘图布局。
 
@@ -269,8 +269,8 @@ subplot set 语法
 
 **gmt subplot set**
 [ *row,col*\|\ *index* ]
-[ **-A**\ *fixedtag*]
-[ **-C**\ *side*\ /*clearance* ]
+[ :option:`-A`\ *fixedtag*]
+[ :option:`-C`\ *side*\ /*clearance* ]
 [ :option:`-V`\ [*level*] ]
 
 可选选项

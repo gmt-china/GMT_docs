@@ -63,8 +63,8 @@ triangulate
 
 **-C**\ *slpfile*
     读取坡度网格 *slpfile* （单位为度），并使用 CURVE 算法计算水深测量中传播的不确定性
-    (Zambo et al, 2016)。需要 :option:`-G` 选项指定输出网格，但不需要 :option:`-R` ，**-I** 等选项，这些
-    信息通过网格获取。该选项不能和 **-D**，**-F**，**-M**，**-N**，**-Q**，**-S** 以及 **-T**
+    (Zambo et al, 2016)。需要 :option:`-G` 选项指定输出网格，但不需要 :option:`-R` ，:option:`-I` 等选项，这些
+    信息通过网格获取。该选项不能和 :option:`-D`，:option:`-F`，:option:`-M`，:option:`-N`，:option:`-Q`，:option:`-S` 以及 :option:`-T`
     选项共同使用。
 
 .. option:: -D

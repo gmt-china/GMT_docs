@@ -48,7 +48,7 @@ ternary
 必须选项
 --------
 
-必须使用 :option:`-M` 或者 :option:`-R` 和 **-J**。
+必须使用 :option:`-M` 或者 :option:`-R` 和 :option:`-J`。
 
 可选选项
 --------
@@ -66,7 +66,7 @@ ternary
 
 .. option:: -C
 
-**-C**\ *cpt* 或 **-C**\ *color1,color2*\ [*,color3*\ ,...]
+**-C**\ *cpt* 或 :option:`-C`\ *color1,color2*\ [*,color3*\ ,...]
     指定CPT文件，或者跟上一系列以逗号分隔的颜色以构建一个线性连续CPT
 
     若使用了 :option:`-S` 选项，则符号填充色由第四列数值决定，其它字段向右移动一列

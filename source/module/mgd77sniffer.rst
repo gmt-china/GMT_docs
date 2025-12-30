@@ -108,7 +108,7 @@ mgd77sniffer
 **-G**\ *information*
     将船的测量数据和网格数据比较。可食用的格式包括：
 
-    - **-G**\ *fieldabbrev*,\ *imggrid*,\ *scale*,\ *mode* 将测量数据与 Sandwell/
+    - :option:`-G`\ *fieldabbrev*,\ *imggrid*,\ *scale*,\ *mode* 将测量数据与 Sandwell/
       Smith 网格数据 img 网格数据比较。*fieldabbrev* 为字段的缩写，见 `Mgd77 字段信息`_ ，
       然后为网格文件名 *imggrid* ，网格文件的缩放系数 *scale* ，以及 mode。mode 可
       以为如下值：
@@ -121,7 +121,7 @@ mgd77sniffer
 
       - 3 img 文件有约束代码，在约束处返回 1，其他位置返回 0
 
-    - **-G**\ *fieldabbrev*,\ *grid* 将测量数据与其他 GMT 可识别的网格数据比较。
+    - :option:`-G`\ *fieldabbrev*,\ *grid* 将测量数据与其他 GMT 可识别的网格数据比较。
       *fieldabbrev* 为字段缩写，*grid* 为网格文件名。
 
     该模块同时支持和多个网格比较，只需多次使用 :option:`-G` 选项即可。
@@ -147,7 +147,7 @@ mgd77sniffer
 
     - **-Hb** 同时分析临时的结果以及完整数据集的结果，并报告两者中间的优者
 
-    - **-Hd** 不进行临时数据分析，等价于 **-H**
+    - **-Hd** 不进行临时数据分析，等价于 :option:`-H`
 
     - **-Hf** 进行临时数据分析
 
@@ -218,7 +218,7 @@ mgd77sniffer
 
     - **g** radient 超出范围
 
-    - **o** 网格偏移，需要 **-G**\|\ **g**
+    - **o** 网格偏移，需要 :option:`-G`\|\ **g**
 
     - **s** 速度超出范围
 
@@ -233,7 +233,7 @@ mgd77sniffer
 .. option:: -Z
 
 **-Z**
-    标志的回归统计超过指定的置信水平，即 **-Z**\ 5 指出系数 m，b，rms 和 r 超过
+    标志的回归统计超过指定的置信水平，即 :option:`-Z`\ 5 指出系数 m，b，rms 和 r 超过
     95% 执行水平
 
 .. include:: explain_-V.rst_

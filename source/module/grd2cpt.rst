@@ -83,7 +83,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     GMT自带的CPT文件的配色方案列表，请参见《 :doc:`/cpt/builtin-cpt` 》。
 
     除了GMT自带的CPT文件，也可以设为用户自定义的CPT文件，也可以是通过
-    **-C**\ *color1*,\ *color2*\[,\ *color3*] 语法指定一个线性连续变化的颜色列表。
+    :option:`-C`\ *color1*,\ *color2*\[,\ *color3*] 语法指定一个线性连续变化的颜色列表。
 
 .. option:: -D
 

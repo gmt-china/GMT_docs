@@ -124,7 +124,7 @@ gravfft
 .. option:: -Q
 
 **-Q**
-    输出具有形变的地形网格，z 轴向上，其平均深度由 **-Z**\ *zm* 指定，模型
+    输出具有形变的地形网格，z 轴向上，其平均深度由 :option:`-Z`\ *zm* 指定，模型
     参数由 :option:`-T` 设置。这就是 "gravimetric Moho"。该选项默认使用 **-N+h**
 
 .. option:: -S

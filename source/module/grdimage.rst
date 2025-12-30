@@ -134,22 +134,22 @@ grdimage
 **-Q**\ [*color*][**+i**][**+t**][**+z**\ *value*]
     处理网格或图片的透明度或不透明度。通常有以下几种情况：
 
-    + 网格： **-Q**\ [**+z**\ *value*]
+    + 网格： :option:`-Q`\ [**+z**\ *value*]
 
       无参数的 :option:`-Q` 将值为 NaN 的节点处设置为透明色，使用 PostScript Level 3 的 color-masking 功能
       （PS 设备需支持 PS Level 3）。可使用子选项 **+z**\ *value* 将 NaN 值替换为 *value* 。
       此时每个像素点要么是不透明的颜色，要么是完全透明的。
 
-    + RGB 图片： **-Q**\ [*color*]
+    + RGB 图片： :option:`-Q`\ [*color*]
 
       后跟 *color* 来将指定颜色 *color* （默认为白色）的像素设为完全透明。
       输出图像中的每个像素要么是不透明的，要么是透明的。
 
-    + Alpha 通道仅为 0 或 255 的 RGBA 图片： **-Q**
+    + Alpha 通道仅为 0 或 255 的 RGBA 图片： :option:`-Q`
 
       将 Alpha=0 的像素设为完全透明，Alpha=255 为不透明。
 
-    + 渐变 Alpha 通道的 RGBA 图片： **-Q**\ [*color*][**+i**][**+t**]
+    + 渐变 Alpha 通道的 RGBA 图片： :option:`-Q`\ [*color*][**+i**][**+t**]
 
       将渐变透明度转换为模拟透明，此时每个像素点的颜色 *r,g,b* 转换公式为 :math:`r' = t R + (1-t) r` ，
       其中 :math:`t` 为透明度，:math:`R` 为透明色 *color* （默认为白色）。

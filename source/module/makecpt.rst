@@ -83,7 +83,7 @@ makecpt
 
 **-D**\ [**i**\|\ **o**]
     将背景色和前景色分别设置为 CPT 文件中最小值和最大值对应的颜色, **i** 和 **o** 分别
-    表示使用输出 CPT 或者输入 CPT [默认为 **-D** 或 **-Do**, 即输出 CPT 的背景色和前景色]。
+    表示使用输出 CPT 或者输入 CPT [默认为 :option:`-D` 或 **-Do**, 即输出 CPT 的背景色和前景色]。
     不设置本项时，GMT 默认使用主 CPT 文件规定的背景色与前景色，或是采用配置参数
     :term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
 
@@ -167,7 +167,7 @@ makecpt
     确定适合 :option:`-T` 选项的范围。下述选项给出确定范围的类型：
 
     - **-Sr** 使用 min/max 作为范围
-    - **-S**\ *inc*\ [**+d**] 使用 min/max 作为范围，但四舍五入到最近的 *inc*, 以
+    - :option:`-S`\ *inc*\ [**+d**] 使用 min/max 作为范围，但四舍五入到最近的 *inc*, 以
       *inc* 为间隔，追加 **+d** 生成离散 CPT
     - **-Sa**\ *scl* 以平均值为对称中心，*scl* * *sigma* 为单边宽度生成范围
     - **-Sm**\ *scl* 以中值为对称中心，*scl* * *sigma* 为单边宽度生成范围

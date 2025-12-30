@@ -106,7 +106,7 @@ mgd77track
     控制三种标记的属性，**T** 为新一天的第一个时间标记，**t** 同一天的其他时间
     标记，**d** 为距离标记。对于其中的每个标记，可以指定 5 个由逗号分隔的属性，
     *markersize* ，*markercolor* ，*markerfontsize* ，*markerfont* 和 *markerfontcolor*
-    。重复使用 **-T** 选项可设置不同的标记。
+    。重复使用 :option:`-T` 选项可设置不同的标记。
 
 .. option:: -W
 

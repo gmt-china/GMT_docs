@@ -20,7 +20,7 @@ rose
 
     此时绘制的是windrose图。
     若输入文件中只有azimuth一列数据，则此时需要使用 **-i0** 选项。
-    如果使用 **-A** 选项可以绘制sector图或rose图。
+    如果使用 :option:`-A` 选项可以绘制sector图或rose图。
 
 可选选项
 --------
