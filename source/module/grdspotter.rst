@@ -33,7 +33,7 @@ grdspotter
 [ :option:`-T`\ **t**\|\ **u**\ *fixed_val* ] [
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *n\_try* ]]
-[ **-Z**\ *z_min*\ [/*z_max*\ [/*z_inc*]] ]
+[ :option:`-Z`\ *z_min*\ [/*z_max*\ [/*z_inc*]] ]
 [ :option:`-r`\ *reg* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 

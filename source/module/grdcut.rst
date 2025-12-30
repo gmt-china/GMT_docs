@@ -103,7 +103,7 @@ grdcut
     gmt grdcut @earth_relief_06m -Goutput.nc -S45/30/500k+n
 
 对于一个倾斜投影的地图，由于 **grdcut** 获得的区域是由经线、纬度划分出来的
-矩形区域，而倾斜投影地图的边界不是由经纬线构成的，所以需要使用 :option:`-J` 和 **-R**
+矩形区域，而倾斜投影地图的边界不是由经纬线构成的，所以需要使用 :option:`-J` 和 :option:`-R`
 选项指定一个更大的矩形区域以包含倾斜投影地图的研究区域::
 
     gmt grdcut @earth_relief_02m -R160/20/220/30+r -Joc190/25.5/292/69/1 -Gdata.nc

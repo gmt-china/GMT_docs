@@ -42,7 +42,7 @@ fzanalyzer
 ------------------
 
 *crossprofiles*
-    该文件是使用 :doc:`grdtrack` 命令并带有 **-C** 选项，
+    该文件是使用 :doc:`grdtrack` 命令并带有 :option:`-C` 选项，
     从一个或多个断裂带（FZ）的近似数字化轨迹（包含 *lon*, *lat*）生成的横剖面表格。
     此表格是一个 ASCII（或二进制，参见 **-bi**）文件，必须包含 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
@@ -51,7 +51,7 @@ fzanalyzer
 
 **-F**\ *fzlines*
     其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用
-    **-D** 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
+    :option:`-D` 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
     该文件必须包含相同的 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist* 。
 
@@ -147,7 +147,7 @@ fzanalyzer
 
     gmt grdmath -R-120/-65/-50/5 -I5m -fg digitize.txt LDIST DEG2KM = dist2fz.nc
 
-由于对大量断裂带（FZ）进行该计算的速度较慢，因此没有必要在 **-I** 中使用过高的分辨率，
+由于对大量断裂带（FZ）进行该计算的速度较慢，因此没有必要在 :option:`-I` 中使用过高的分辨率，
 因为距离变化是平滑的，插值结果也会近似正确。建议生成一个全球网格，但将其划分为四个象限（或更小的区域块），
 并在多核计算机上并行运行。
 例如，要通过象限方式生成全球网格，可以运行以下命令::

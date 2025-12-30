@@ -130,8 +130,8 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 **-I**\ [*max_intens*\|\ *low_i*/*high_i*]
     为色标加上光照效果
 
-    - **-I**\ *max_intens* 设置光照强度为 [-\ *max_intens*, +\ *max_intens*]，默认值为[-1,+1]
-    - **-I**\ *low_i*/*high_i* 指定非对称的光照强度范围
+    - :option:`-I`\ *max_intens* 设置光照强度为 [-\ *max_intens*, +\ *max_intens*]，默认值为[-1,+1]
+    - :option:`-I`\ *low_i*/*high_i* 指定非对称的光照强度范围
 
 .. include:: explain_-J.rst_
 

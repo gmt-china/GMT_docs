@@ -78,9 +78,9 @@ rotsmoother
 **-T**\ *ages*
     设置所需的年龄分组。
     若只给定一个时间点，则附加所需的时间值，所有旋转将用于计算单个平均旋转。
-    若需按等间隔划分的重建年龄区间，请使用 **-T**\ *start*\ /\ *stop*\ /\ *inc*，
-    或 **-T**\ *start*\ /\ *stop*\ /\ *npoints*\ **+n**。
-    若为非等间隔的重建年龄集合，请通过文件的第一列传入，例如 **-T**\ *agefile*。
+    若需按等间隔划分的重建年龄区间，请使用 :option:`-T`\ *start*\ /\ *stop*\ /\ *inc*，
+    或 :option:`-T`\ *start*\ /\ *stop*\ /\ *npoints*\ **+n**。
+    若为非等间隔的重建年龄集合，请通过文件的第一列传入，例如 :option:`-T`\ *agefile*。
     我们读取或生成的年龄将作为分箱边界（bin boundaries），输出每个箱内所有旋转的平均时间。
 
 .. include:: explain_-V.rst_

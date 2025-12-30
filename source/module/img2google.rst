@@ -96,7 +96,7 @@ img2google
 .. option:: -U
 
 **-U**\ *URL*
-    指定图像的远程 URL。默认图像和本地的 KML 文件对应。使用 **-U**
+    指定图像的远程 URL。默认图像和本地的 KML 文件对应。使用 :option:`-U`
     可以设置图像的远程 URL。
 
 .. include:: explain_-V.rst_
@@ -110,7 +110,7 @@ img2google
 示例
 ----
 
-使用 *topo.18.1.img*，在 **-R**\ 170/180/20/30 区域创建一个 10x10
+使用 *topo.18.1.img*，在 :option:`-R`\ 170/180/20/30 区域创建一个 10x10
 度的谷歌地球 KML 切片，输出文件名为默认::
 
     img2google -R170/180/20/30

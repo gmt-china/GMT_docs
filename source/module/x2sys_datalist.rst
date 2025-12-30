@@ -16,7 +16,7 @@ x2sys_datalist
 语法
 ----
 
-**gmt x2sys_datalist** *track(s)* **-T**\ *TAG*
+**gmt x2sys_datalist** *track(s)* :option:`-T`\ *TAG*
 [ :option:`-A` ]
 [ :option:`-E` ]
 [ :option:`-F`\ *name1*,\ *name2*,... ]

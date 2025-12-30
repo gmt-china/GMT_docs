@@ -126,7 +126,7 @@ grdbarb
 .. option:: -Z
 
 **-Z**
-    表示提供的 theta 网格包含的是方位角而非方向（隐含启用 **-A**）。
+    表示提供的 theta 网格包含的是方位角而非方向（隐含启用 :option:`-A`）。
 
 .. include:: explain_-f.rst_
 

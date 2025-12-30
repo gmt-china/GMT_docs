@@ -69,7 +69,7 @@ contour
 .. option:: -A
 
 **-A**\ [**n**\|\ *contours*][*labelinfo*]
-    **-A**\ *contours* 设置标注间隔，如果在 :option:`-C` 选项中指定标注间隔的话，
+    :option:`-A`\ *contours* 设置标注间隔，如果在 :option:`-C` 选项中指定标注间隔的话，
     这里的设置会被覆盖。**-An** 则为不进行标注。也可以用 ``-A20,80,100`` 类似的用法，对指定的
     等值线进行标注。如果只想要标注一条等值线，需要在末尾加上逗号，例如 ``-A20,`` ，这样 ``20`` 就不会被认为是标注间隔。
     *labelinfo* 代表可以在最后追加下列额外选项:
@@ -123,7 +123,7 @@ contour
 
 .. include:: explain_contlabel.rst_
 
-    **-G** 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
+    :option:`-G` 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
 
 .. option:: -I
 

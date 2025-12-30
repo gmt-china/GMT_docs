@@ -92,7 +92,7 @@ grdseamount
     **o** （多项式）和 **p** （抛物线） [默认为高斯]。除圆盘外，其他所有的
     海山都可以使用带 *f* 参数的 :option:`-F` 选项来截断变成平顶海山。如果 :option:`-C`
     选项没有任何追加的字母，则从输入的最后一列中读取海山形状。如果不使用
-    **-C** 选项，默认为高斯海山。
+    :option:`-C` 选项，默认为高斯海山。
 
 .. gmtplot:: grdseamount/GMT_seamount_types.sh
     :width: 60%

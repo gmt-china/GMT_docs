@@ -95,7 +95,7 @@ psconvert
     指定Ghostscript可执行文件的路径
 
     **psconvert** 底层调用了 Ghostscript 来实现PS到其他格式的转换，因而成功转换的
-    前提是必须能够找到 Ghostscript 的可执行文件。**-G** 选项即用于显式指定
+    前提是必须能够找到 Ghostscript 的可执行文件。:option:`-G` 选项即用于显式指定
     ghostscript可执行文件的路径。
 
     说明：

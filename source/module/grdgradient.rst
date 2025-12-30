@@ -58,9 +58,9 @@ grdgradient
     其中 :math:`a` 为方位角 *azim* 。这使得 :math:`z(x,y)` 在沿着 :math:`a` 方向下降时能输出正值，
     这符合在 *x-y* 平面上方从 :math:`a` 方向对图像照明产生的阴影
     （见 :doc:`/module/grdimage` 和 :doc:`/module/grdview` ）。
-    你也可以指定两个方位角， **-A**\ *azim*\ [/\ *azim2*]，此时计算两个方向的方向导数，
+    你也可以指定两个方位角， :option:`-A`\ *azim*\ [/\ *azim2*]，此时计算两个方向的方向导数，
     每个节点取方向导数幅值较大的方向导数。这对于照明具有两个方向的线性结构的数据是有用的，
-    例如 **-A**\ *0/270* 表示从正北(top)和正西(left)两个方向照明。
+    例如 :option:`-A`\ *0/270* 表示从正北(top)和正西(left)两个方向照明。
     最后，如果 *azim* 是一个和 *ingrid* 相同区域、间隔、配准的网格文件，
     则计算方向导数时每个节点有各自的方位角。
 
@@ -102,7 +102,7 @@ grdgradient
     如果 *amp* 未给定，默认 *amp* = 1。如果偏移 *offset* 未给定，则设置为 :math:`g` 的平均值。
     支持以下选项，其中 :math:`o` 为 *offset* ， :math:`a` 为 *amp* ，
 
-    + **-N** - 根据 :math:`g_n = a\cdot \frac{g-o}{\max{|g-o|}}` 进行归一化。
+    + :option:`-N` - 根据 :math:`g_n = a\cdot \frac{g-o}{\max{|g-o|}}` 进行归一化。
     + **-Ne** - 使用类似于拉普拉斯分布的累积分布函数
       :math:`g_n = a\cdot\left( 1 - \exp{\left( \sqrt{2} \frac{g-o}{\sigma}\right)} \right)`
       进行归一化，其中 :math:`\sigma` 为 *sigma* ，如果未给定则使用 :math:`(g-o)` 的L1范数。

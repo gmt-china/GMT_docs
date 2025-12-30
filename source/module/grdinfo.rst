@@ -58,7 +58,7 @@ grdinfo
 
         name w e s n z0 z1 dx dy nx ny [x0 y0 x1 y1] [med scale] [mean std rms] [n_nan] registration gtype
 
-    默认只输出前13列。方括号中的信息仅当使用 **-M**、**-L1**、**-L2**、**-M**
+    默认只输出前13列。方括号中的信息仅当使用 :option:`-M`、**-L1**、**-L2**、:option:`-M`
     选项时才会输出。
 
     使用 **-Ct** 则将文件名 *name* 放在最后一列；使用 **-Cn** 则只输出数值列。
@@ -81,7 +81,7 @@ grdinfo
     *xoff/yoff* 用于指定多个子区域之间的重叠区域。
     **+i** 子选项表明若该子区域内无数据则忽略该区域。
     若使用 :option:`-C` 选项则以 *w e s n* 格式输出每个子区域的区域范围，
-    使用 **-Ct** 则在最后一列以 **-R**\ *w/e/s/n* 格式输出子区域数据范围。
+    使用 **-Ct** 则在最后一列以 :option:`-R`\ *w/e/s/n* 格式输出子区域数据范围。
 
     :option:`-D` 选项示例::
 
@@ -120,13 +120,13 @@ grdinfo
 **-I**\ [*dx*\ [/*dy*]\|\ **b**\|\ **i**\|\ **r**]
     报告网格数据的区域范围
 
-    使用 **-I**\ *dx*/*dy* 会先获取网格的区域范围，并对该范围做微调使得其是 *dx*
-    和 *dy* 的整数倍，并以 **-R**\ *w/e/s/n* 的形式输出。
+    使用 :option:`-I`\ *dx*/*dy* 会先获取网格的区域范围，并对该范围做微调使得其是 *dx*
+    和 *dy* 的整数倍，并以 :option:`-R`\ *w/e/s/n* 的形式输出。
 
-    - **-Ir** 以 **-R**\ *w/e/s/n* 输出真实的网格区域范围
-    - **-Ii** 以 **-R**\ *w/e/s/n* 输出 **img** 补充包生成的网格文件的精确范围
+    - **-Ir** 以 :option:`-R`\ *w/e/s/n* 输出真实的网格区域范围
+    - **-Ii** 以 :option:`-R`\ *w/e/s/n* 输出 **img** 补充包生成的网格文件的精确范围
     - **-Ib** 输出区域范围对应的四个顶点的坐标
-    - :option:`-I` 不加任何选项以 **-I**\ *xinc*\ [/*yinc*] 形式输出网格间隔
+    - :option:`-I` 不加任何选项以 :option:`-I`\ *xinc*\ [/*yinc*] 形式输出网格间隔
 
     :option:`-I` 选项示例::
 
@@ -171,11 +171,11 @@ grdinfo
 .. option:: -T
 
 **-T**\ [*dz*]\ [**+a**\ [*alpha*]]\ [**+s**]
-    以 **-T**\ *zmin/zmax* 或 **-T**\ *zmin/zmax/dz* 的格式输出Z值范围
+    以 :option:`-T`\ *zmin/zmax* 或 :option:`-T`\ *zmin/zmax/dz* 的格式输出Z值范围
 
-    若只使用 :option:`-T` 选项，则以 **-T**\ *zmin/zmax* 格式输出Z值范围；
+    若只使用 :option:`-T` 选项，则以 :option:`-T`\ *zmin/zmax* 格式输出Z值范围；
     若使用 *dz* 则先提取Z的最小最大值，并做微调使得最值是 *dz* 的整数倍，并
-    以 **-T**\ *zmin/zmax/dz* 格式输出。
+    以 :option:`-T`\ *zmin/zmax/dz* 格式输出。
 
     其它子选项：
 
