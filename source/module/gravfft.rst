@@ -26,13 +26,16 @@ gravfft
 语法
 ----
 
-**gmt gravfft** *ingrid* [ *ingrid2* ]
+**gmt gravfft**
+*ingrid*
+[ *ingrid2* ]
 :option:`-G`\ *outgrid*
 [ :option:`-C`\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w** ]
 [ :option:`-D`\ *density*\|\ *rhogrid* ]
 [ :option:`-E`\ *n_terms* ]
 [ :option:`-F`\ [**f**\ [**+s**\|\ **z**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**] ]
 [ :option:`-I`\ **w**\|\ **b**\|\ **c**\|\ **t**\|\ **k** ]
+[ :option:`-M`\ *mgal_at_45* ]
 [ :option:`-N`\ *params* ]
 [ :option:`-Q` ]
 [ :option:`-S` ]
@@ -43,19 +46,17 @@ gravfft
 [ :option:`-f`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
+------------------
+
+.. include:: explain_grd_in.rst_
+    对于交叉谱计算，还需要指定第二个网格 *ingrid2* 。
+
+必须选项
 --------
 
-*ingrid*\ [=\ *ID*\|\ ?\ *varname*][**+b**\ *band*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*][**+s**\ *scale*]
-    输入网格名。对于交叉谱计算，还需要指定第二个网格。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
-
-.. option:: -G
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**][:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名，计算实体对该网格内的点的异常值。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_out.rst_
+    输出网格文件存储实体对该网格内的点的异常值的计算结果。
 
 可选选项
 --------
@@ -119,13 +120,19 @@ gravfft
 
     - **t** 同为理论导纳，但为从顶部加载的弹性板理论导纳
 
+.. option:: -M
+
+**-M**\ *mgal_at_45*
+    指定 45 度纬度处的重力值，单位为毫伽 (mGal)（用于将重力异常转换为大地水准面高度）。
+    默认值为 980619.9203 mGal（Moritz 1980 年 IGF 值）。在处理其他行星的数据时，需要相应地更改此值。
+
 .. include:: explain_fft.rst_
 
 .. option:: -Q
 
 **-Q**
     输出具有形变的地形网格，z 轴向上，其平均深度由 :option:`-Z`\ *zm* 指定，模型
-    参数由 :option:`-T` 设置。这就是 "gravimetric Moho"。该选项默认使用 **-N+h**
+    参数由 :option:`-T` 设置。这就是 "gravimetric Moho"。该选项默认使用 :option:`-N`\ **+h**
 
 .. option:: -S
 
@@ -141,7 +148,7 @@ gravfft
     如果不指定 *ri* ，则其等于 *rl* 。使用 :option:`-Z` 设置地幔平均深度。如果弹性板
     厚度 *te* 大于 1e10，则将被解析为抗扰刚度。**+m** 选项用来输出带有 Moho
     面效应的网格，见 :option:`-F` 。如果 *te* = 0，则响应函数变为 Airy 模型。使用
-    **-T+m** 时会默认设置 **-N+h**
+    :option:`-T`\ **+m** 时会默认设置 :option:`-N`\ **+h**
 
 .. option:: -W
 
@@ -156,7 +163,7 @@ gravfft
 
 .. include:: explain_-V.rst_
 
-:option:`-f`\ *flags*
+.. include:: explain_-f.rst_
     地理坐标网格将会在平地球近似下将坐标单位转换为 m
 
 .. include:: explain_help.rst_
