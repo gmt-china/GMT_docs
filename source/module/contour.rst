@@ -1,12 +1,12 @@
 :author: 田冬冬, 陈箫翰, 朱邓达
-:date: 2025-08-22
+:date: 2025-12-30
 
 .. index:: ! contour
 .. program:: contour
+.. include:: common_SYN_OPTs.rst_
 
-*********
 contour
-*********
+==========
 
 :官方文档: :doc:`gmt:contour`
 :简介: 使用直接三角化法对数据进行等值线绘制
@@ -14,17 +14,20 @@ contour
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
-
-**gmt contour** [ *table* ] :option:`-J`\ *parameters*
+**gmt contour**
+[ *table* ]
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *contours* ]
-[ :option:`-D`\ [*template*] ] [ :option:`-E`\ *indexfile* ]
+[ :option:`-D`\ [*template*] ]
+[ :option:`-E`\ *indexfile* ]
 [ :option:`-G`\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
-[ :option:`-I` ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
-[ :option:`-L`\ *pen* ] [ :option:`-N` ]
+[ :option:`-I` ]
+[ :option:`-L`\ *pen* ]
+[ :option:`-N` ]
 [ :option:`-Q`\ [*cut*][**+z**] ]
 [ :option:`-S`\ [*p*\|\ *t*] ]
 [ :option:`-T`\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
@@ -36,31 +39,29 @@ contour
 [ :option:`-b`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-l`\ *flags* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
+[ :option:`-s`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-描述
------------
-
-读取一个ASCII或二进制格式的输入数据文件 *table* 并绘制出等值线。
-
-必选选项
+输入数据
 ------------------
 
-.. |Add_intables| unicode:: 0x20 .. just an invisible code
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-J.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Jz.rst_
 
-.. |Add_-Rz| unicode:: 0x20 .. just an invisible code
 .. include:: explain_-Rz.rst_
 
 可选选项
@@ -101,27 +102,112 @@ contour
 
     如果 :option:`-C` 和 :option:`-A` 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
     
+.. option:: -D
+
+**-D**\ [*template*]
+
+.. include:: explain_contdump.rst_
+
+.. option:: -E
+
+**-E**\ *indexfile*\ [**+b**]
+    指定包含网络信息的文件名。每条记录必须包含一个三角形的三个节点编号 [默认使用 Delaunay 三角剖分计算这些信息（见 :doc:`triangulate`）]。
+    如果 *indexfile* 是二进制文件，且其读取方式与二进制输入 *table* 相同，则可以附加 **+b** 以加快读取速度 [默认以 ASCII 格式读取节点]。
+
 .. option:: -G
 
 **-G**\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params*
 
 .. warning::
     某些时候等值线图会出现标注数字消失不见的情况。这是由于数字被标注在绘图范围外所致。
-    这种情况应该使用下面的 **-G** 选项手动设置标注在等值线上的位置。
+    这种情况应该使用下面的 :option:`-G` 选项手动设置标注在等值线上的位置。
 
 .. include:: explain_contlabel.rst_
 
-**-G** 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
+    **-G** 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
+
+.. option:: -I
+
+**-I**
+    使用 CPT 文件对三角形着色。
+
+.. option:: -L
+
+**-L**\ *pen*
+    指定画笔属性绘制底层的三角形网格 [默认不绘制网格]。
+
+.. option:: -N
+
+**-N**
+    对绘图边界外的图形不进行裁剪 [默认会进行裁剪]。
+
+.. option:: -Q
+
+**-Q**\ [*n*\|\ *length*\ [*unit*]][**+z**]
+    不绘制点数少于 *n* 的等值线 [默认绘制所有等值线]。
+    或者也可以指定最小等值线 *长度*（以距离单位表示，可用单位及距离计算方式见 :doc:`/basis/unit` ），
+    包括 **c**（使用用户坐标的笛卡尔距离）或 **C**（坐标投影后当前绘图单位下的绘图长度单位）。附加 **+z** 以排除零等值线。
+
+.. option:: -S
+
+**-S**\ [**p**\|\ **t**]
+    跳过所有落在区域外的输入 *x, y, z* 点 [默认使用三角剖分中的所有数据]。
+    或者使用 **-St** 跳过三个顶点均在区域外的三角形。不带修饰符的 :option:`-S` 默认为 **-Sp**。
+
+.. option:: -T
+
+**-T**\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]]
+
+.. include:: explain_contticks.rst_
+
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
 
 .. option:: -W
 
-**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`
+**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]]
     设置等值线的线型。默认情况下，有标注的等值线线型 *pen* 为 ``0.75p,black`` ，
     无标注的等值线线型 *pen* 为 ``0.25p,black`` 。如果要设置有标注的等值线线型，*type* 应该设置为 **a** ，
     例如 ``-Wa1.75p,red`` 。无标注的等值线线型，*type* 应该设置为 **c** ，例如 ``-Wc1.25p,red`` 。
     如果加上 **+cl** ，则使用 :option:`-C` 选项所指定的CPT文件为不同的等值线设置颜色;
     如果使用 **+cf** ，则为标注设置颜色;
     使用 **+c** 则同时为等值线和标注设置颜色。
+
+.. include:: explain_-XY.rst_
+
+.. include:: explain_-bi.rst_
+
+.. include:: explain_-bo.rst_
+
+.. include:: explain_-d.rst_
+
+.. include:: explain_-e.rst_
+
+.. include:: explain_-f.rst_
+
+.. include:: explain_-h.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_-l.rst_
+
+    通常，图例中默认选择带标注的等值线。通过将 *label* 设置为 [*annotcontlabel*][/*contlabel*] 格式，
+    可以改选普通等值线或者同时选择两者。如果任一标签中包含斜杠 (/) 字符，则改用 | 作为这两个标签的分隔符。
+
+.. include:: explain_-qi.rst_
+
+.. include:: explain_colon.rst_
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-s.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
+
+.. include:: explain_distunits.rst_
 
 示例
 --------
@@ -143,3 +229,14 @@ contour
    ::
 
     gmt contour temp.xyz -R0/150/0/100 -Jx0.1i -Ctemp.cpt -W0.25p
+
+相关模块
+--------
+
+:doc:`grdcontour`,
+:doc:`grdimage`,
+:doc:`nearneighbor`,
+:doc:`basemap`,
+:doc:`colorbar`,
+:doc:`surface`,
+:doc:`triangulate`
