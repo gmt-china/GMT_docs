@@ -41,7 +41,7 @@ polespotter
 [ :option:`-o`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 可选选项

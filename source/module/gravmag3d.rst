@@ -33,7 +33,7 @@ gravmag3d
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-r`\ *reg* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项（不是全部都必选）
 ---------------------------

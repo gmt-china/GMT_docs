@@ -19,7 +19,7 @@ grdconvert
 [ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ [**+s**\ *factor*][**+o**\ *offset*] ]
 [ :option:`-f`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

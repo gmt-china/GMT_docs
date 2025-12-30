@@ -41,7 +41,7 @@ grdhisteq
 [ :option:`-R`\ *region* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-h`\ *headers* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

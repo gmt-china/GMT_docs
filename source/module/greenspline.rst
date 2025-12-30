@@ -46,7 +46,7 @@ greenspline
 [ :option:`-w`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 描述

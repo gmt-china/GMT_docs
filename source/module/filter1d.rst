@@ -35,7 +35,7 @@ filter1d
 [ :option:`-j`\ *flags* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

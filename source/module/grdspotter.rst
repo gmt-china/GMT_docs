@@ -36,7 +36,7 @@ grdspotter
 [ :option:`-W`\ *n\_try* ]]
 [ **-Z**\ *z_min*\ [/*z_max*\ [/*z_inc*]] ]
 [ :option:`-r`\ *reg* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

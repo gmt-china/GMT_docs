@@ -28,7 +28,7 @@ earthtide
 [ :option:`-S` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-r`\ *reg* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

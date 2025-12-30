@@ -37,7 +37,7 @@ grdimage
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 --------

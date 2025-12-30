@@ -32,7 +32,7 @@ grdgravmag3d
 [ :option:`-Z`\ *level*\ [**b**\|\ **t**] ]
 [ :option:`-f`\ *flags* ]
 [ **-x**\ *+a|n|-n* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

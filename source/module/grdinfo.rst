@@ -40,7 +40,7 @@ grdinfo
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

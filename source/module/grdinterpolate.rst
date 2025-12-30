@@ -38,7 +38,7 @@ grdinterpolate
 [ :option:`-q`\ *flags* ]
 [ :option:`-s`\ *flags* ]
 [ **-:**\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 -----------

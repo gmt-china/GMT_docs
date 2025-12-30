@@ -32,7 +32,7 @@ inset begin语法
 [ :option:`-R`\ *region* ]
 [ :option:`-J`\ *parameters* ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

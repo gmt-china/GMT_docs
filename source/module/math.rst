@@ -40,7 +40,7 @@ math
 [ :option:`-q`\ *flags* ]
 [ :option:`-s`\ *flags* ]
 [ :option:`-w`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 *operand* [ *operand* ] **OPERATOR** [ *operand* ] **OPERATOR** ...
 **=** [ *outfile* ]
 

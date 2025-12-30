@@ -36,7 +36,7 @@ grdmath
 [ :option:`-n`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 *operand* [ *operand* ] **OPERATOR** [ *operand* ]
 **OPERATOR** ... **=** *outgrid*
 

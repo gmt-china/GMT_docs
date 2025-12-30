@@ -49,7 +49,7 @@ clip
 [ :option:`-qi`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 输入数据

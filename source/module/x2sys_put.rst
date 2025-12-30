@@ -22,7 +22,7 @@ x2sys_put
 
 **gmt x2sys_put** [ *info.tbf* ] :option:`-T`\ *TAG* [ :option:`-D` ] [ :option:`-F` ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

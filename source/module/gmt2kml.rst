@@ -57,7 +57,7 @@ Google Earth KML 格式的单个输出文件。
 [ :option:`-i`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 [ > *output.kml* ]
 
 

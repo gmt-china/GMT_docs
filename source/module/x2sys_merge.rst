@@ -19,7 +19,7 @@ x2sys_merge
 ----
 
 **gmt x2sys_merge** :option:`-A`\ *main_COElist.txt* :option:`-M`\ *new_COElist.txt*
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------
