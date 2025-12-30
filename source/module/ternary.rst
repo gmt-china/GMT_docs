@@ -180,4 +180,4 @@ ternary
 
 :doc:`basemap`,
 :doc:`plot`,
-:doc:`gmt:plot3d`
+:doc:`plot3d`

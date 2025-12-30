@@ -115,4 +115,4 @@ grdcut
 - :doc:`grdfill`
 - :doc:`grdinfo`
 - :doc:`grdpaste`
-- :doc:`gmt:surface`
+- :doc:`surface`

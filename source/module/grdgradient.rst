@@ -51,10 +51,10 @@ grdgradient
 
 .. option:: -A
 
-**-A**\ *azim*\ [/\ *azim2*] 
+**-A**\ *azim*\ [/\ *azim2*]
     给定光源方位角，计算方向导数。 *azim* 为方位角（度），
     在 *x-y* 平面从正北(*+y*)向着正东(*+x*)顺时针方向测量。
-    实际计算的是方向导数的相反数， 
+    实际计算的是方向导数的相反数，
     :math:`-\left( \frac{dz}{dx}\sin(a) + \frac{dz}{dy}\cos(a) \right)`，
     其中 :math:`a` 为方位角 *azim* 。这使得 :math:`z(x,y)` 在沿着 :math:`a` 方向下降时能输出正值，
     这符合在 *x-y* 平面上方从 :math:`a` 方向对图像照明产生的阴影
@@ -88,7 +88,7 @@ grdgradient
     + **+d**\ *diffuse* - 漫反射系数 [0.6]。
     + **+p**\ *specular* - 镜面反射系数 [0.4]。
     + **+s**\ *shine* - 镜面高光度 [10]。
-    
+
     **s|p|m** 指令可使用简化算法：
 
     + **s** - 简易朗伯算法（只要求 *azim* 和 *elev* ）。
@@ -98,25 +98,25 @@ grdgradient
 
 .. option:: -N
 
-**-N**\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*] 
+**-N**\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*]
     归一化（默认不做归一化）。实际梯度 :math:`g` 被偏移和缩放成 :math:`g_n` ，幅值为 *amp* 。
     如果 *amp* 未给定，默认 *amp* = 1。如果偏移 *offset* 未给定，则设置为 :math:`g` 的平均值。
     支持以下选项，其中 :math:`o` 为 *offset* ， :math:`a` 为 *amp* ，
 
     + **-N** - 根据 :math:`g_n = a\cdot \frac{g-o}{\max{|g-o|}}` 进行归一化。
-    + **-Ne** - 使用类似于拉普拉斯分布的累积分布函数 
-      :math:`g_n = a\cdot\left( 1 - \exp{\left( \sqrt{2} \frac{g-o}{\sigma}\right)} \right)` 
+    + **-Ne** - 使用类似于拉普拉斯分布的累积分布函数
+      :math:`g_n = a\cdot\left( 1 - \exp{\left( \sqrt{2} \frac{g-o}{\sigma}\right)} \right)`
       进行归一化，其中 :math:`\sigma` 为 *sigma* ，如果未给定则使用 :math:`(g-o)` 的L1范数。
     + **-Nt** - 使用类似于柯西分布的累计分布函数
       :math:`g_n = \frac{2a}{\pi} \tan^{-1} \left(\frac{g-o}{\sigma}\right)` 进行归一化，
       其中 :math:`\sigma` 为 *sigma* ，如果未给定则使用 :math:`(g-o)` 的L2范数。
-      
+
     为了继续使用之前运行该命令计算的 :math:`o` 和/或 :math:`\sigma`，可不指定对应的具体数值，
-    详见 :option:`-Q` 。最后，可使用 **+a**\ *ambient* 给归一化之后的梯度整体加上 
+    详见 :option:`-Q` 。最后，可使用 **+a**\ *ambient* 给归一化之后的梯度整体加上
     *ambient* 。
 
 .. option:: -Q
-    
+
 **-Q**\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*]
     控制 :option:`-N` 的归一化。当需要对多个网格进行相同的归一化处理（即相同的偏移 *offset* 和标准差 *sigma*），
     用户必须使用 :option:`-N` 传入这些值。然而，用户从网格中计算出这些值并不方便。
@@ -158,7 +158,7 @@ grdgradient
 + 通常，255个色调对于可视化的目的来说已经足够了。可在输出文件名 *outgrid* 后面加上 *=nb/a* ，
   这可以节省75%的磁盘空间。 *=nb/a* 效果是输出网格文件格式为8-bit的整数，包含缩放因子。
 + 如果你想为一个大数据集的子区域制作多个光照图，且要求在所有地图上保持一致的照明效果，
-  使用 :option:`-N` 选项并为每个地图提供相同的 *sigma* 和 *offset* 。一个不错的尝试是 *offset* = 0， 
+  使用 :option:`-N` 选项并为每个地图提供相同的 *sigma* 和 *offset* 。一个不错的尝试是 *offset* = 0，
   *sigma* 通过 :doc:`/module/grdinfo` **-L2** 或 **-L1** 应用于未归一化的梯度网格得到。
 + 如果您只需要网格的x或y导数，请使用 :doc:`/module/grdmath` 。
 
@@ -175,9 +175,9 @@ grdgradient
 
 (2) 自动传递参数（推荐工作流）。首先对完整网格（或计算机能处理的最大网格分区）运行 :doc:`/module/grdgradient` **-Qc** ，
     该操作会生成包含全局 *offset* 和 *sigma* 的隐藏统计文件。然后在后续各区块计算时，在 :option:`-N` 后添加无参数的
-    **+o** 和/或 **-s** ，同时指定 **-Qr** 以从统计文件中读取参数。在处理最后一个区块时可改用 **-QR** 
+    **+o** 和/或 **-s** ，同时指定 **-Qr** 以从统计文件中读取参数。在处理最后一个区块时可改用 **-QR**
     使程序读取统计文件后自动删除。
-    
+
 
 环境光
 -----------
@@ -231,7 +231,7 @@ IEEE, Vol. 69, No. 1, January 1981, pp. 14-47.
 --------
 
 :doc:`gmt`,
-:doc:`gmt:grdhisteq`,
+:doc:`grdhisteq`,
 :doc:`grdinfo`,
 :doc:`grdmath`,
 :doc:`grdimage`,
