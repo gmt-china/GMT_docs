@@ -3,7 +3,6 @@
 
 .. index:: ! hotspotter
 .. program:: hotspotter
-.. include:: common_SYN_OPTs.rst_
 
 hotspotter
 =============

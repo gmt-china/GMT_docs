@@ -3,7 +3,6 @@
 
 .. index:: ! grdseamount
 .. program:: grdseamount
-.. include:: common_SYN_OPTs.rst_
 
 grdseamount
 ===========

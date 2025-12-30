@@ -3,7 +3,6 @@
 
 .. index:: ! connect
 .. program:: connect
-.. include:: common_SYN_OPTs.rst_
 
 connect
 ==========

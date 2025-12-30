@@ -13,7 +13,6 @@ sample1d
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt sample1d** [ *table* ]
 [ :option:`-A`\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+d**][**+l**] ]

@@ -2,7 +2,6 @@
 :date: 2025-10-31
 .. index:: ! gshhg
 .. program:: gshhg
-.. include:: common_SYN_OPTs.rst_
 
 gshhg
 =====

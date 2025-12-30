@@ -15,7 +15,6 @@ grdcontour
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdcontour** *grid*
 :option:`-J`\ *parameters* [ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]

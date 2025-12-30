@@ -2,7 +2,6 @@
 :date: 2022-05-05
 .. index:: ! grdblend
 .. program:: grdblend
-.. include:: common_SYN_OPTs.rst_
 
 grdblend
 ========

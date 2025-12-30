@@ -3,7 +3,6 @@
 
 .. index:: ! mgd77sniffer
 .. program:: mgd77sniffer
-.. include:: common_SYN_OPTs.rst_
 
 mgd77sniffer
 ============

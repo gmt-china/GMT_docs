@@ -3,7 +3,6 @@
 
 .. index:: ! begin
 .. program:: begin
-.. include:: common_SYN_OPTs.rst_
 
 begin
 =====

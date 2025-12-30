@@ -2,7 +2,6 @@
 
 .. index:: ! x2sys_binlist
 .. program:: x2sys_binlist
-.. include:: common_SYN_OPTs.rst_
 
 x2sys_binlist
 =============

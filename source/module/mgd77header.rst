@@ -3,7 +3,6 @@
 
 .. index:: ! mgd77header
 .. program:: mgd77header
-.. include:: common_SYN_OPTs.rst_
 
 mgd77header
 ===========

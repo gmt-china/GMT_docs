@@ -2,7 +2,6 @@
 :date: 2024-01-17
 .. index:: ! inset
 .. program:: inset
-.. include:: common_SYN_OPTs.rst_
 
 inset
 =====

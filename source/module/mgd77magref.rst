@@ -3,7 +3,6 @@
 
 .. index:: ! mgd77magref
 .. program:: mgd77magref
-.. include:: common_SYN_OPTs.rst_
 
 mgd77magref
 ===========

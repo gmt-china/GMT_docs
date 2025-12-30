@@ -2,7 +2,6 @@
 
 .. index:: ! sphdistance
 .. program:: sphdistance
-.. include:: common_SYN_OPTs.rst_
 
 sphdistance
 ===========

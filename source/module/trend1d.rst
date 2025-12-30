@@ -3,7 +3,6 @@
 
 .. index:: ! trend1d
 .. program:: trend1d
-.. include:: common_SYN_OPTs.rst_
 
 trend1d
 =======

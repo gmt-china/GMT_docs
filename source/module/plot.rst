@@ -2,7 +2,6 @@
 :date: 2025-10-31
 .. index:: ! plot
 .. program:: plot
-.. include:: common_SYN_OPTs.rst_
 
 plot
 ====

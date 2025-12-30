@@ -2,7 +2,6 @@
 
 .. index:: ! grdmath
 .. program:: grdmath
-.. include:: common_SYN_OPTs.rst_
 
 grdmath
 =======
@@ -18,7 +17,7 @@ grdmath
 ----
 
 **gmt grdmath**
-[ |SYN_OPT-Area| ]
+[ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-I`\ *increment* ]
 [ :option:`-M` ] [ :option:`-N` ]
@@ -54,7 +53,7 @@ grdmath
 --------
 
 .. include:: explain_-A.rst_
-   
+
 .. note::
 
     该选项仅适用于 **LDISTG** 运算符
@@ -62,7 +61,7 @@ grdmath
 .. option:: -D
 
 **-D**\ *resolution*\ [**+f**]
-    设置 **LDISTG** 运算符使用的数据集的分辨率: 
+    设置 **LDISTG** 运算符使用的数据集的分辨率:
     (**f**)ull，(**h**)igh，(**i**)ntermediate，(**l**)ow 和 (**c**)rude。
     默认的 **l** 选项将数据集缩减为原本的 20%。如果请求的分辨率不存在，使用 **+f** 选项
     会自动选择一个较低的分辨率。
@@ -91,7 +90,7 @@ grdmath
 
 **-S**
     将下一个运算应用到所有的网格中，使最终结果为一个网格。必须在列出所有网格后才能使用该选项。
-    **注** ：仅能在改选项后使用 reduce 运算符，包括 
+    **注** ：仅能在改选项后使用 reduce 运算符，包括
     ADD，AND，MAD，LMSSCL，MAX，MEAN，MEDIAN，MIN，MODE，MUL，RMS，STD，SUB，VAR 或 XOR
 
 .. include:: explain_-V.rst_
@@ -666,7 +665,7 @@ grdmath
    体和纬度相关， **PLMg** 则可以保证在 3000 阶以下都不会溢
 
 #. **YLM** 和 **YLGM** 用于计算网格所有位置的 L 阶 M 次标准化后的球谐函数，
-   0 <= M <= L。结果返回两个网格，一个为球谐函数的实部网格，一个为虚部网格。使用 
+   0 <= M <= L。结果返回两个网格，一个为球谐函数的实部网格，一个为虚部网格。使用
    **POP** 可保存其中的任意一个，也可以使用两个连续的 *= file.nc* 同时保存。
 
    正交归一化的复数谐函数主要用于物理学和地震学，**YLM** 的平方在球面上的积分为
@@ -756,7 +755,7 @@ grdmath
 
     gmt grdmath ages.nc SQRT 350 MUL 2500 ADD = depths.nc
 
-从 :file:`s_xx.nc`，:file:`s_yy.nc` 和 :file:`s_xy.nc` 三个文件包含的应力张量中，根据 
+从 :file:`s_xx.nc`，:file:`s_yy.nc` 和 :file:`s_xy.nc` 三个文件包含的应力张量中，根据
 tan (2\*a) = 2 \* s_xy / (s_xx - s_yy) 求出最大主应力的角度，单位为度 ::
 
     gmt grdmath 2 s_xy.nc MUL s_xx.nc s_yy.nc SUB DIV ATAN 2 DIV = direction.nc
@@ -771,7 +770,7 @@ tan (2\*a) = 2 \* s_xy / (s_xx - s_yy) 求出最大主应力的角度，单位�
     gmt grdmath faa.nc DUP EXTREMA 2 EQ MUL DUP 100 GT MUL 0 NAN = z.nc
     gmt grd2xyz z.nc -s > max.xyz
 
-变量的使用: consider this radial wave where we store and recall the normalized 
+变量的使用: consider this radial wave where we store and recall the normalized
 radial arguments in radians ::
 
     gmt grdmath -R0/10/0/10 -I0.25 5 5 CDIST 2 MUL PI MUL 5 DIV STO@r COS @r SIN MUL = wave.nc

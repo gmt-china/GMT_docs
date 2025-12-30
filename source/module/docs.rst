@@ -3,7 +3,6 @@
 
 .. index:: ! docs
 .. program:: docs
-.. include:: common_SYN_OPTs.rst_
 
 docs
 ====

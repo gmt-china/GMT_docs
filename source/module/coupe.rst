@@ -3,7 +3,6 @@
 
 .. index:: ! coupe
 .. program:: coupe
-.. include:: common_SYN_OPTs.rst_
 
 coupe
 =====

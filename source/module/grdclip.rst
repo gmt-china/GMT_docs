@@ -2,7 +2,6 @@
 :date: 2022-06-15
 .. index:: ! grdclip
 .. program:: grdclip
-.. include:: common_SYN_OPTs.rst_
 
 grdclip
 ========

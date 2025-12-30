@@ -3,7 +3,6 @@
 
 .. index:: ! binstats
 .. program:: binstats
-.. include:: common_SYN_OPTs.rst_
 
 binstats
 ===========

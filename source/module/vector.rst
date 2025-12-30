@@ -2,7 +2,6 @@
 :date: 2025-08-11
 .. index:: ! vector
 .. program:: vector
-.. include:: common_SYN_OPTs.rst_
 
 vector
 =========

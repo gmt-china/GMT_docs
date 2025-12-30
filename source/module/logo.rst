@@ -2,7 +2,6 @@
 :date: 2025-08-11
 .. index:: ! logo
 .. program:: logo
-.. include:: common_SYN_OPTs.rst_
 
 logo
 =======

@@ -2,7 +2,6 @@
 
 .. index:: ! math
 .. program:: math
-.. include:: common_SYN_OPTs.rst_
 
 math
 =======

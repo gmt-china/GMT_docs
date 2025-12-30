@@ -3,7 +3,6 @@
 
 .. index:: ! fzinformer
 .. program:: fzinformer
-.. include:: common_SYN_OPTs.rst_
 
 fzinformer
 =============

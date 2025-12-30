@@ -3,7 +3,6 @@
 
 .. index:: ! coast
 .. program:: coast
-.. include:: common_SYN_OPTs.rst_
 
 coast
 =====

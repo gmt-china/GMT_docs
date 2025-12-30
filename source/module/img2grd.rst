@@ -2,7 +2,6 @@
 
 .. index:: ! img2grd
 .. program:: img2grd
-.. include:: common_SYN_OPTs.rst_
 
 img2grd
 ========

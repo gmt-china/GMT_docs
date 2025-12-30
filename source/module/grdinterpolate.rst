@@ -14,11 +14,10 @@ grdinterpolate
 语法
 ------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grdinterpolate** *cube* | *grd1 grd2 ...*
 :option:`-G`\ *outfile*
-[ |SYN_OPT-D3| ]
+[ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+v**\ *vname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
 [ :option:`-E`\ *line* ]
 [ :option:`-F`\ **a**\|\ **c**\|\ **e**\|\ **l**\|\ **n**\|\ **s**\ *p*\ [**+d1**\|\ **2**] ]
 [ :option:`-R`\ *region* ]
@@ -93,10 +92,10 @@ grdinterpolate
 .. option:: -T
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
-    定义要等距采样的 level 范围（从 *min* 到 *max* ）和步长 *inc* 
+    定义要等距采样的 level 范围（从 *min* 到 *max* ）和步长 *inc*
     （默认使用输入 cube 的每个 level ）。 具体详见 `生成一维数组`_ 。
 
-    **注：** 
+    **注：**
 
     + 如果使用了 :option:`-Z` ，且 :option:`-E`\ ，\ :option:`-S` 和 :option:`-T` 均未使用，则相当于将一系列 layer 组合成一个 cube 文件。
     + 对于 :option:`-E` 和 :option:`-S` ，可仅设置 :option:`-T`\ *min/max* 来限制 level 范围，而对原有的 level 之间不做插值。
@@ -161,8 +160,8 @@ GMT 可以识别 netCDF 网格文件中的时间坐标。网格文件中变量�
 创建序列
 ---------
 
-:option:`-S` 选项涉及表格的读取和输出，因此 **grdinterpolate** 
-模块也可以使用和表格输入输出相关的标准选项，例如 
+:option:`-S` 选项涉及表格的读取和输出，因此 **grdinterpolate**
+模块也可以使用和表格输入输出相关的标准选项，例如
 :doc:`/option/binary` ，:doc:`/option/io` 等。
 由于使用 :option:`-S` 提供的点位坐标不要求正好位于网格节点，
 本模块内部会使用 :doc:`grdtrack` 模块对每个layer做采样，

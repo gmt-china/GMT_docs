@@ -3,7 +3,6 @@
 
 .. index:: ! isf
 .. program:: isf
-.. include:: common_SYN_OPTs.rst_
 
 isf
 ==========

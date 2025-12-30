@@ -2,7 +2,6 @@
 :date: 2025-10-31
 .. index:: ! legend
 .. program:: legend
-.. include:: common_SYN_OPTs.rst_
 
 legend
 ======

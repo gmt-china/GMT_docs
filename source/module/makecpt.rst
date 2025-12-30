@@ -3,7 +3,6 @@
 
 .. index:: ! makecpt
 .. program:: makecpt
-.. include:: common_SYN_OPTs.rst_
 
 makecpt
 =======

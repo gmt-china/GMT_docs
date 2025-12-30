@@ -3,7 +3,6 @@
 
 .. index:: ! defaults
 .. program:: defaults
-.. include:: common_SYN_OPTs.rst_
 
 defaults
 ===========

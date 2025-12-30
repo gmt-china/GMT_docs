@@ -3,7 +3,6 @@
 
 .. index:: ! gravprisms
 .. program:: gravprisms
-.. include:: common_SYN_OPTs.rst_
 
 gravprisms
 ==========

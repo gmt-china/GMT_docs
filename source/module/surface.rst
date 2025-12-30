@@ -3,7 +3,6 @@
 
 .. index:: ! surface
 .. program:: surface
-.. include:: common_SYN_OPTs.rst_
 
 surface
 =======

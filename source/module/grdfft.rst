@@ -3,7 +3,6 @@
 
 .. index:: ! grdfft
 .. program:: grdfft
-.. include:: common_SYN_OPTs.rst_
 
 grdfft
 ======

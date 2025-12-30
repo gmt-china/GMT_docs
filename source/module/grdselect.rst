@@ -2,7 +2,6 @@
 
 .. index:: ! grdselect
 .. program:: grdselect
-.. include:: common_SYN_OPTs.rst_
 
 grdselect
 =========

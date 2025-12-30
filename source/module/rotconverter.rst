@@ -3,7 +3,6 @@
 
 .. index:: ! rotconverter
 .. program:: rotconverter
-.. include:: common_SYN_OPTs.rst_
 
 rotconverter
 =============

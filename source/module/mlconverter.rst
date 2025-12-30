@@ -3,7 +3,6 @@
 
 .. index:: ! mlconverter
 .. program:: mlconverter
-.. include:: common_SYN_OPTs.rst_
 
 mlconverter
 =============

@@ -13,7 +13,6 @@ grd2cpt
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
 
 **gmt grd2cpt** *grid*
 [ :option:`-A`\ *transparency*\ [**+a**] ]

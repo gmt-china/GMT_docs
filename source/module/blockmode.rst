@@ -3,7 +3,6 @@
 
 .. index:: ! blockmode
 .. program:: blockmode
-.. include:: common_SYN_OPTs.rst_
 
 blockmode
 =========

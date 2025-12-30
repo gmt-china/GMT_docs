@@ -2,7 +2,6 @@
 :date: 2025-01-20
 .. index:: ! segy2grd
 .. program:: segy2grd
-.. include:: common_SYN_OPTs.rst_
 
 segy2grd
 =============

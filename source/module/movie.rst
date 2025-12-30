@@ -3,7 +3,6 @@
 
 .. index:: ! movie
 .. program:: movie
-.. include:: common_SYN_OPTs.rst_
 
 movie
 =====
