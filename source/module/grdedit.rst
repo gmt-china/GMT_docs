@@ -36,7 +36,7 @@ grdedit
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

@@ -23,7 +23,7 @@ x2sys_solve
 [ :option:`-bi`\ *binary* ]
 [ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

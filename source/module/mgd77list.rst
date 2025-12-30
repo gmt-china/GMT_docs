@@ -45,7 +45,7 @@ ID，时间，位置，控制代码和地球物理观测，其中地球物理观
 [ :option:`-bo`\ *binary* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-j`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

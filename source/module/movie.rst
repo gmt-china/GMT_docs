@@ -37,7 +37,7 @@ movie
 [ :option:`-Z`\ [**s**] ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 --------

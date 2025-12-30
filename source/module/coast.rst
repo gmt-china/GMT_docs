@@ -46,7 +46,7 @@ coast
 [ :option:`-g`\ *gaps* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必须选项

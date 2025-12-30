@@ -27,7 +27,7 @@ x2sys_cross
 [ :option:`-W`\ *size* ] [ :option:`-Z` ]
 [ :option:`-bo`\ *binary* ]
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项

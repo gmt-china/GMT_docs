@@ -38,7 +38,7 @@ grdrotater
 [ :option:`-n`\ *flags* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 

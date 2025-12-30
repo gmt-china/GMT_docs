@@ -33,7 +33,7 @@ psconvert
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *params* ]
 [ :option:`-Z` ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

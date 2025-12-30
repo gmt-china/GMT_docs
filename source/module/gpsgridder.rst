@@ -58,7 +58,7 @@ gpsgridder
 [ :option:`-qi`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

@@ -41,7 +41,7 @@ meca
 [ :option:`-p`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

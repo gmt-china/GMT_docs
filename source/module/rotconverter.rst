@@ -30,7 +30,7 @@ rotconverter
 [ :option:`-T` ] [ :option:`-W` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-h`\ *headers* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 **注意**：选项标志和相关参数之间不允许有任何空格。
 

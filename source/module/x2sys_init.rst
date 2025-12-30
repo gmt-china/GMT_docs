@@ -93,7 +93,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ **t**\|\ **d**\ *gap* ]
 [ :option:`-j`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

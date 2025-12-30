@@ -57,7 +57,7 @@ grdflexure
 [ :option:`-Z`\ *zm*]\ [**k**]
 [ :option:`-h`\ *headers* ]
 [ :option:`-f`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

@@ -59,7 +59,7 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 [ :option:`-r`\ *reg* ]
 [ :option:`-w`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

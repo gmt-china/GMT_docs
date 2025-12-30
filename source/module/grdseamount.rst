@@ -55,7 +55,7 @@ grdseamount
 [ :option:`-f`\ *flags* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-r`\ *reg* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项（如果不给定 :option:`-L` 选项）
 --------------------------------

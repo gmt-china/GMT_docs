@@ -38,7 +38,7 @@ flexure
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------

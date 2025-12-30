@@ -37,7 +37,7 @@ sample1d
 [ :option:`-s`\ *flags* ]
 [ :option:`-w`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 描述
 -----------    

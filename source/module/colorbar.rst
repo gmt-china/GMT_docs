@@ -41,7 +41,7 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 [ :option:`-Z`\ *zfile* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 可选选项

@@ -21,7 +21,7 @@ grdclip
 [ :option:`-S`\ **i**\ *low/high/between* ]
 [ :option:`-S`\ **r**\ *old/new* ]
 [ :option:`-V`\ [*level*] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

@@ -30,7 +30,7 @@ simplify
 [ :option:`-o`\ *flags* ]
 [ :option:`-q`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------

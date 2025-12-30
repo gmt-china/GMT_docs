@@ -30,7 +30,7 @@ img2google
 [ :option:`-U`\ *URL* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ [+] ]
-[ |SYN_OPT--| ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------
