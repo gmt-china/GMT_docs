@@ -42,7 +42,6 @@ batch
 [ :option:`-x`\ [[-]n] ]
 [ |SYN_OPT--| ]
 
-|No-spaces|
 
 必须选项
 --------

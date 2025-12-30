@@ -46,7 +46,6 @@ blockmedian
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ |SYN_OPT--| ]
 
-|No-spaces|
 
 输入数据
 ------------------
