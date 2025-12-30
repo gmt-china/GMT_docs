@@ -24,7 +24,8 @@ dimfilter
 语法
 ----
 
-**gmt dimfilter** *ingrid*
+**gmt dimfilter**
+*ingrid*
 :option:`-D`\ *0-4*
 :option:`-F`\ **x**\ *width*\ [*modifier*]
 :option:`-G`\ *outgrid*
@@ -39,10 +40,13 @@ dimfilter
 [ :option:`-h`\ *headers* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+------------------
 
 .. include:: explain_grd_in.rst_
+
+必须选项
+--------
 
 .. option:: -D
 
@@ -80,6 +84,8 @@ dimfilter
       如果存在多个众数，则返回其平均数。追加 **+l** 和 **+u** 可分别选择
       多个众数中的最小值和最大值
 
+.. include:: explain_grd_out.rst_
+
 .. option:: -N
 
 **-N**\ **x**\ *sectors*\ [**+l**\|\ **u**]
@@ -96,24 +102,13 @@ dimfilter
       如果存在多个众数，则返回其平均数。追加 **+l** 和 **+u** 可分别选择
       多个众数中的最小值和最大值
 
-.. include:: explain_grd_out.rst_
-
 可选选项
 --------
-
-.. include:: explain_-I.rst_
 
 .. option:: -L
 
 **-L**
     使用此选项将 dim.template.sh 脚本内容写到标准输出，不与其他选项组合使用
-
-.. include:: explain_-R.rst_
-
-.. option:: -T
-
-**-T**
-    转换输出网格的配准方式，使其与输入网格相反
 
 .. option:: -Q
 
@@ -121,6 +116,15 @@ dimfilter
     该模式输入数据不是常见的网格格式，而是 :doc:`grd2xyz` 的 **-Z**
     选项输出的形式作为输入。使用该模式输出的结果为均值，MAD 以及中值，
     可用于进一步的误差分析，可见 `脚本模版`_
+
+.. include:: explain_-I.rst_
+
+.. include:: explain_-R.rst_
+
+.. option:: -T
+
+**-T**
+    转换输出网格的配准方式，使其与输入网格相反
     
 .. include:: explain_-V.rst_
 
