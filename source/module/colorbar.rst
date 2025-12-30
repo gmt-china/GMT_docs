@@ -43,7 +43,6 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 [ :option:`-t`\ *transp* ]
 [ |SYN_OPT--| ]
 
-|No-spaces|
 
 可选选项
 --------
