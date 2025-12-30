@@ -1,5 +1,6 @@
 :author: 田冬冬, 王亮
-:date: 2022-05-05
+:date: 2025-12-30
+
 .. index:: ! docs
 .. program:: docs
 .. include:: common_SYN_OPTs.rst_
@@ -84,7 +85,7 @@ docs
 
     gmt docs -Q -S grdimage
 
-查看 :doc:`coast` 的 :option:`-B` 选项::
+查看 :doc:`coast` 的 **-B** 选项::
 
     gmt docs coast -B
 

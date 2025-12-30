@@ -1,5 +1,6 @@
 :author: 田冬冬, 陈箫翰
-:date: 2025-08-11
+:date: 2025-12-30
+
 .. index:: ! defaults
 .. program:: defaults
 .. include:: common_SYN_OPTs.rst_
@@ -14,11 +15,6 @@ defaults
 ----
 
 **gmt defaults** [ :option:`-D`\ [**u**\|\ **s**] ]
-
-必选选项
---------
-
-无
 
 可选选项
 --------
