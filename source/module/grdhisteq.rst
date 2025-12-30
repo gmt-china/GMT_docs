@@ -43,7 +43,6 @@ grdhisteq
 [ :option:`-h`\ *headers* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
 必选选项
 ------------------
