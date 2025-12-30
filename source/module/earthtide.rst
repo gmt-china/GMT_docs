@@ -3,7 +3,6 @@
 
 .. index:: ! earthtide
 .. program:: earthtide
-.. include:: common_SYN_OPTs.rst_
 
 earthtide
 =========
