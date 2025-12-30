@@ -95,6 +95,5 @@ isf
 :doc:`meca`,
 :doc:`polar`,
 :doc:`coupe`,
-:doc:`gmt`, 
 :doc:`basemap`, 
 :doc:`plot`

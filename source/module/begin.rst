@@ -173,4 +173,3 @@ UNIX shell 注意事项
 :doc:`figure`,
 :doc:`inset`,
 :doc:`subplot`,
-:doc:`gmt`

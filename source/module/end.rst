@@ -54,4 +54,3 @@ end
 :doc:`figure`,
 :doc:`inset`,
 :doc:`subplot`,
-:doc:`gmt`

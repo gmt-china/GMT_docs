@@ -119,6 +119,5 @@ and order normalized associated Legendre functions:
 相关模块
 -----------
 
-:doc:`gmt`,
 :doc:`grdfft`,
 :doc:`grdmath`

@@ -321,7 +321,6 @@ macOS 问题
 相关模块
 --------
 
-:doc:`gmt`,
 :doc:`math`,
 :doc:`grdinterpolate`,
 :doc:`grdmath`

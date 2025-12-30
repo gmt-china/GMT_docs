@@ -191,7 +191,6 @@ grdmix
 相关模块
 --------
 
-:doc:`gmt`, 
 :doc:`grdblend`,
 :doc:`grdclip`,
 :doc:`grdcut`,

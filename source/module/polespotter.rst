@@ -152,7 +152,6 @@ polespotter
 相关模块
 --------
 
-:doc:`gmt`,
 :doc:`grdimage`,
 :doc:`grdrotater`,
 :doc:`grdspotter`,
