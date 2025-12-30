@@ -229,7 +229,6 @@ IEEE, Vol. 69, No. 1, January 1981, pp. 14-47.
 相关模块
 --------
 
-:doc:`gmt`,
 :doc:`grdhisteq`,
 :doc:`grdinfo`,
 :doc:`grdmath`,

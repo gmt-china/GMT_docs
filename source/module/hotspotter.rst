@@ -122,7 +122,6 @@ GMT 随附地球字节旋转模型 **Global_EarthByte_230-0Ma_GK07_AREPS.rot**�
 相关模块
 --------
 
-:doc:`gmt`,
 :doc:`grdimage`,
 :doc:`grdrotater`,
 :doc:`grdspotter`,

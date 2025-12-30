@@ -153,6 +153,5 @@ filter1d
 相关模块
 --------
 
-:doc:`gmt` ,
 :doc:`sample1d`,
 :doc:`split`
