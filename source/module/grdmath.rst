@@ -1,4 +1,5 @@
 :author: Caesar（自然资源部第一海洋研究所）, 周茂
+:date: 2025-12-30
 
 .. index:: ! grdmath
 .. program:: grdmath
