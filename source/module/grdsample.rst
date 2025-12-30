@@ -1,5 +1,6 @@
 :author: 田冬冬, 朱邓达, 周茂
 :date: 2025-07-16
+
 .. index:: ! grdsample
 .. program:: grdsample
 

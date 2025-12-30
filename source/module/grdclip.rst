@@ -1,5 +1,6 @@
 :author: 田冬冬, 陈箫翰
 :date: 2022-06-15
+
 .. index:: ! grdclip
 .. program:: grdclip
 
