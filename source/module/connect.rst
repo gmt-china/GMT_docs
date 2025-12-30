@@ -135,16 +135,12 @@ connect
 
 将线段文件 segment_*.txt（其笛卡尔坐标单位为厘米）尽可能地合并为最少的完整线条，假设端点的数字化误差最高可达 0.1 毫米::
 
-```
-gmt connect segment_*.txt -T0.1 > new_segments.txt
-```
+    gmt connect segment_*.txt -T0.1 > new_segments.txt
 
-将多段文件 my_lines.txt（其坐标为 *经度, 纬度*）中的线段尽可能地合并为最少的完整线条，
+将多段文件 my_lines.txt（其坐标为 *经度, 纬度*\ ）中的线段尽可能地合并为最少的完整线条，
 假设端点数字化误差最高可达 150 米，并将完整的线段写入名为 Map_segment_0001.txt、Map_segment_0002.txt 等的独立文件中::
 
-```
-gmt connect my_lines.txt -T150e -DMap_segment_%04d.txt
-```
+    gmt connect my_lines.txt -T150e -DMap_segment_%04d.txt
 
 Bugs
 --------
