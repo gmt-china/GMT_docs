@@ -139,7 +139,6 @@ connect
 
 ```
 gmt connect segment_*.txt -T0.1 > new_segments.txt
-
 ```
 
 将多段文件 my_lines.txt（其坐标为 *经度, 纬度*）中的线段尽可能地合并为最少的完整线条，
