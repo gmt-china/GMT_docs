@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-02-07
+:date: 2025-12-31
 
 .. index:: ! gpsgridder
 .. program:: gpsgridder
@@ -35,7 +35,8 @@ gpsgridder
 语法
 ----
 
-**gmt gpsgridder** [ *table* ]
+**gmt gpsgridder**
+[ *table* ]
 :option:`-G`\ *outgrid*
 [ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
 [ :option:`-E`\ [*misfitfile*] ]
@@ -59,13 +60,16 @@ gpsgridder
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+------------------
 
 *table*
     输入数据文件，其中数据为离散点的 GPS 应变。输入格式必须为 *x y u v* [ *du dv* ]
-    （设置不确定度或者权请见 :option:`-W` ）。如果输入数据为地理坐标，必须使用 **-fg** , gmt
+    （设置不确定度或者权请见 :option:`-W` ）。如果输入数据为地理坐标，必须使用 :option:`-f`\ **g** , gmt
     则以平地球近似来计算距离
+
+必须选项
+--------
 
 .. include:: explain_grd_out.rst_
 
@@ -160,8 +164,9 @@ gpsgridder
 
 .. include:: explain_-e.rst_
 
-**-fg**
-    地理坐标网格将会被转换为平地球近似下来计算
+.. include:: explain_-f.rst_
+
+    如果输入数据为地理坐标，必须使用 **-fg** ，地理坐标网格将会被转换为平地球近似下来计算。
 
 .. include:: explain_-h.rst_
 
@@ -209,6 +214,6 @@ Sandwell, D. T. and P. Wessel, 2016, Interpolation of 2-D Vector Data Using Cons
 相关模块
 --------
 
-:doc:`greenspline`
-:doc:`nearneighbor`
+:doc:`greenspline`,
+:doc:`nearneighbor`,
 :doc:`surface`
