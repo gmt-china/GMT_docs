@@ -1,5 +1,5 @@
 :author: 田冬冬, 朱邓达
-:date: 2025-10-31
+:date: 2025-12-30
 
 .. index:: ! filter1d
 .. program:: filter1d
@@ -19,12 +19,18 @@ filter1d
 语法
 ----
 
-**gmt filter1d** [ *table* ] :option:`-F`\ *type<width>*\ [*modifier*]
-[ :option:`-D`\ *increment* ] [ :option:`-E` ]
-[ :option:`-L`\ *lack\_width* ] [ :option:`-N`\ *t\_col* ] [ :option:`-Q`\ *q\_factor* ]
+**gmt filter1d**
+[ *table* ]
+:option:`-F`\ **type**\ *width*\ [**+h**]
+[ :option:`-D`\ *increment* ]
+[ :option:`-E` ]
+[ :option:`-L`\ *lack\_width* ]
+[ :option:`-N`\ *t\_col* ]
+[ :option:`-Q`\ *q\_factor* ]
 [ :option:`-S`\ *symmetry\_factor* ]
-[ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list* ]
+[ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+a**][**+e**\|\ **i**\|\ **n**]\|\ :option:`-T`\ *file*\|\ *list* ]
 [ :option:`-V`\ [*level*] ]
+[ :option:`-a`\ *flags* ]
 [ :option:`-b`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
@@ -34,15 +40,21 @@ filter1d
 [ :option:`-i`\ *flags* ]
 [ :option:`-j`\ *flags* ]
 [ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
+------------------
+
+.. include:: explain_intables.rst_
+
+必须选项
 --------
 
 .. option:: -F
 
-**-F**\ **type**\ *width*\ [*modifier*]
+**-F**\ **type**\ *width*\ [**+h**]
     设置滤波器类型
 
     滤波器分为两大类，卷积滤波器和非卷积滤波器。
@@ -59,10 +71,8 @@ filter1d
     对于非卷积滤波器，*type* 可以取：
 
     - **m** Median: 返回中位数
-    - **p** Maximum likelihood probability (a mode estimator): Return modal value.
-      If more than one mode is found we return their average value. Append - or +
-      to the filter width if you rather want to return the smallest or largest
-      of the modal values.
+    - **p** 最大似然概率（众数估计器）：返回众数。
+      如果发现多个众数，则返回它们的平均值。如果希望返回众数中的最小值或最大值，请分别附加 **+l** 或 **+u**。
     - **l** Lower: 返回所有值中的最小值
     - **L** Lower: 返回所有正值中的最小值
     - **u** Upper: 返回所有值中的最大值
@@ -75,10 +85,8 @@ filter1d
 
     该模块默认对数据进行低通滤波，加上 **+h** 选项则对数据进行高通滤波。
 
-选项
-----
-
-.. include:: explain_intables.rst_
+可选选项
+--------
 
 .. option:: -D
 
@@ -119,12 +127,14 @@ filter1d
 
 .. option:: -T
 
-**-T**\ [*min/max*\ /]\ *inc*\ [**+e**\|\ **+a**\|\ **n**] \|\ :option:`-T`\ *file*\|\ *list*
+**-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+e**\|\ **i**\|\ **n**]\|\ **-T**\ *file*\|\ *list*
     生成时间序列
 
     生成从 *min* 到 *max* 间隔为 *inc* 的等间隔数列。
 
 .. include:: explain_-V.rst_
+
+.. include:: explain_-aspatial.rst_
 
 .. include:: explain_-bi.rst_
 
@@ -146,9 +156,17 @@ filter1d
 
 .. include:: explain_-ocols.rst_
 
+.. include:: explain_-q.rst_
+
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_distunits.rst_
+
+.. include:: explain_precision.rst_
+
+.. include:: explain_array.rst_
 
 相关模块
 --------
