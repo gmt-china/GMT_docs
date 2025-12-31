@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰
-:date: 2022-06-15
+:date: 2025-12-31
 
 .. index:: ! grdclip
 .. program:: grdclip
@@ -10,6 +10,12 @@ grdclip
 :官方文档: :doc:`gmt:grdclip`
 :简介: 对网格文件的 Z 值进行截断
 
+**grdclip** 将把小于 *low* 的值设为 *below*，且/或将大于 *high* 的值设为 *above*。
+还可以指定一个或多个区间，将区间内的所有值都设为 *between*，或者替换特定的单个值。
+在图像处理中，当希望整个大陆或海洋呈现为单一颜色或灰度色调、需要裁剪数据值的范围或对数据值进行重新分类时，这些操作非常有用。
+*above* 、 *below* 、 *between* 、 *old* 和 *new* 可以是任何数值，甚至是 NaN（非数字）。
+必须至少选择一个 :option:`-S` 选项。使用 :option:`-R` 仅提取 *ingrid* 文件的某个范围内的数据。
+
 语法
 ----
 
@@ -17,23 +23,19 @@ grdclip
 *ingrid*
 :option:`-G`\ *outgrid*
 [ :option:`-R`\ *region* ]
-[ :option:`-S`\ **a**\ *high/above* ]
-[ :option:`-S`\ **b**\ *low/below* ]
+[ :option:`-S`\ **a**\ *high/above*\ [**+e**] ]
+[ :option:`-S`\ **b**\ *low/below*\ [**+e**] ]
 [ :option:`-S`\ **i**\ *low/high/between* ]
 [ :option:`-S`\ **r**\ *old/new* ]
 [ :option:`-V`\ [*level*] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 --------
 
-*ingrid*
-    输入网格文件名
+.. include:: explain_grd_in.rst_
 
-.. option:: -G
-
-**-G**\ *outgrid*
-    输出网格文件名
+.. include:: explain_grd_out.rst_
 
 可选选项
 --------
@@ -46,14 +48,15 @@ grdclip
 
 .. option:: -S
 
-**-Sa**\ *high/above*
-    将所有大于 *high* 的值设置为 *above*
+**-Sa**\ *high/above*\ [**+e**]
+    将所有大于 *high* 的值设置为 *above* 。使用 **+e** 则表示大于等于。
 
-**-Sb**\ *low/below*
-    将所有小于 *low* 的值设置为 *below*
+**-Sb**\ *low/below*\ [**+e**]
+    将所有小于 *low* 的值设置为 *below* 。使用 **+e** 则表示小于等于。
 
 **-Si**\ *low/high/between*
-    将所有在 *low* 和 *high* 范围内的值设置为 *between*。该选项可多次使用
+    将所有在 *low* 和 *high* 范围内的值设置为 *between*。该选项可多次使用。
+    注意区间边界为小于等于和大于等于。
 
 **-Sr**\ *old/new*
     将所有等于 *old* 的值设置为 *new*。该选项可以多次使用
