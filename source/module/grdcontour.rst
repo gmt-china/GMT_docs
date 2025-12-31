@@ -1,24 +1,25 @@
 :author: 田冬冬, 陈箫翰, 朱邓达
-:date: 2025-08-25
+:date: 2025-12-31
 
 .. index:: ! grdcontour
 .. program:: grdcontour
 
-
-**********
 grdcontour
-**********
+============
 
 :官方文档: :doc:`gmt:grdcontour`
 :简介: 根据网格文件绘制等值线
 
+**grdcontour** 读取一个二维grid网格文件，并绘制等值线。
+或者将等值线的 *x, y, z* 位置保存到一个或多个输出文件（或标准输出），不绘制图像。
+
 语法
 --------
 
-
 **gmt grdcontour** 
-*grid*
-:option:`-J`\ *parameters* [ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]
+*ingrid*
+:option:`-J`\ *parameters*
+[ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *contours*\|\ *cpt* ]
 [ :option:`-D`\ *template* ]
@@ -27,7 +28,7 @@ grdcontour
 [ :option:`-L`\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
 [ :option:`-N`\ [*cpt*] ]
 [ :option:`-Q`\ [*n*\|\ *length*\ [*unit*]][**+z**] ]
-[ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
+[ :option:`-R`\ *west*/*east*/*south*/*north*\ [**+r**][**+u**\ *unit*] ]
 [ :option:`-S`\ *smoothfactor* ]
 [ :option:`-T`\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
 [ :option:`-U`\ [*stamp*] ]
@@ -40,22 +41,19 @@ grdcontour
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
-[ **-ho**\ [*n*] ]
+[ :option:`-h`\ *headers* ]
 [ :option:`-l`\ *flags* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-描述
+输入数据
 -----------
 
-**grdcontour** 读取一个二维grid网格文件，并绘制等值线。或者将等值线的x、y、z位置保存到一个或多个输出文件（或标准输出），不绘制图像。
+.. include:: explain_grd_in.rst_
 
-必选选项
+必须选项
 ------------------
-
-*grid*
-    二维grid网格文件
 
 .. include:: explain_-J.rst_
 
@@ -137,7 +135,9 @@ grdcontour
 .. option:: -N
 
 **-N**\ [*cpt*]
-    指定 *cpt* 文件，对等值线之间的区域填充颜色。
+    使用 *cpt* 指定的离散颜色表填充等值线之间的区域。
+    同时可以使用 :option:`-C` 和 :option:`-A` 来控制等值线和标注。
+    如果未附加 *cpt*，则必须改为通过 :option:`-C` 提供离散颜色表。
 
 .. option:: -Q
 
@@ -146,10 +146,7 @@ grdcontour
     其中 *unit* 可使用地理距离单位 **d|m|s|e|f|k|M|n|u** ，
     也可使用 **c**\ （用户坐标的笛卡尔距离）和 **C**\ （坐标投影后的笛卡尔距离）。可加上 **+z** 以去除零等值线。
 
-
 .. include:: explain_-R.rst_
-
-.. include:: explain_-Rz.rst_
 
 .. option:: -S
     
@@ -179,10 +176,10 @@ grdcontour
 
 .. option:: -W
 
-**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`
+**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]]
     设置等值线的线型。默认情况下，有标注的等值线线型 *pen* 为 ``0.75p,black`` ，
-    无标注的等值线线型 *pen* 为 ``0.25p,black`` 。如果要设置有标注的等值线线型，*type* 应该设置为 **a** ，
-    例如 ``-Wa1.75p,red`` 。无标注的等值线线型，*type* 应该设置为 **c** ，例如 ``-Wc1.25p,red`` 。
+    无标注的等值线线型 *pen* 为 ``0.25p,black`` 。如果要设置有标注的等值线线型， *type* 应该设置为 **a** ，
+    例如 ``-Wa1.75p,red`` 。无标注的等值线线型， *type* 应该设置为 **c** ，例如 ``-Wc1.25p,red`` 。
     如果加上 **+cl** ，则使用 :option:`-C` 选项所指定的CPT文件为不同的等值线设置颜色;
     如果使用 **+cf** ，则为标注设置颜色;
     使用 **+c** 则同时为等值线和标注设置颜色。
@@ -194,7 +191,7 @@ grdcontour
 **-Z**\ [**+o**\ *shift*][**+s**\ *factor*][**+p**]
     在计算等值线之前，从数据中减去 *shift* 再乘以 *factor* （默认-o0+s1）。
     在 :option:`-A`\ ，\ :option:`-C`\ 和\ :option:`-L`\ 中指定的值是缩放之后的。
-    后面加上 **-p** 表明网格数据的z值是360度周期循环的（例如相位数据，角度分布），
+    后面加上 **+p** 表明网格数据的z值是360度周期循环的（例如相位数据，角度分布），
     这要求零等值线必须特殊处理。
 
 .. include:: explain_-bo.rst_
@@ -207,11 +204,28 @@ grdcontour
 
 .. include:: explain_-l.rst_
 
+    通常情况下，图例中会选择带标注的等值线。
+    可以通过将 *label* 设置为 [*annotcontlabel*][/*contlabel*] 这种格式，来选择普通等值线或两者都选。
+    如果其中任何一个标签包含斜杠 (/) 字符，则使用 | 作为这两个标签的分隔符。
+
 .. include:: explain_perspective.rst_
 
 .. include:: explain_-t.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_distunits.rst_
+
+.. include:: explain_precision.rst_
+
+注意事项
+---------
+
+等值线的角度是通过对沿等值线的 *n* 个点取平均值来计算的。
+如果得到的角度不理想，可以调整两个变量：通过 :option:`-A` 的 **+w** 修饰符更改 *n*，和/或通过 :option:`-S` 对等值线进行重采样。
+在 *n* 固定时， :option:`-S` 会使计算更加局部化；反之，在 :option:`-S` 保持不变的情况下增加 *n*，计算结果则会更加整体化。
+
+.. include:: auto_legend_info.rst_
 
 基础示例
 ----------
@@ -284,3 +298,11 @@ grdcontour
 .. gmtplot:: grdcontour/grdcontour-annot5.sh
     :width: 80%
     :show-code: true
+
+相关模块
+--------
+
+:doc:`basemap`,
+:doc:`grdimage`,
+:doc:`grdview`,
+:doc:`contour`
