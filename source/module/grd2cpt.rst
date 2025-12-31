@@ -76,7 +76,7 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     加上 **+a** 则该透明度同时应用于前景色、背景色和NaN颜色。
     默认不透明，即0。
 
-.. include:: create_cpt.rst_
+.. include:: use_cpt_grd.rst_
 
 .. option:: -D
 
