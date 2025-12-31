@@ -22,7 +22,8 @@ grdfft
 语法
 ----
 
-**gmt grdfft** *ingrid* [ *ingrid2* ]
+**gmt grdfft** 
+*ingrid* [ *ingrid2* ]
 [ :option:`-G`\ *outfile*\|\ *table* ]
 [ :option:`-A`\ *azimuth* ]
 [ :option:`-C`\ *zlevel* ]

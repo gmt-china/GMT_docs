@@ -29,7 +29,9 @@ grdsample
 语法
 ----
 
-**gmt grdsample** *in_grdfile* :option:`-G`\ *out_grdfile*
+**gmt grdsample** 
+*in_grdfile* 
+:option:`-G`\ *out_grdfile*
 [ :option:`-I`\ *increment* ]
 [ :option:`-R`\ *region* ]
 [ :option:`-T` ]

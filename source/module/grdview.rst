@@ -15,7 +15,9 @@ grdview
 --------
 
 
-**gmt grdview** *reliefgrid* :option:`-J`\ *parameters*
+**gmt grdview** 
+*reliefgrid* 
+:option:`-J`\ *parameters*
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ [*cpt*]]
 [ :option:`-G`\ *drapegrid* \| :option:`-G`\ *grd_r* :option:`-G`\ *grd_g* :option:`-G`\ *grd_b* ]

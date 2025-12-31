@@ -23,7 +23,8 @@ triangulate
 语法
 ----
 
-**gmt triangulate** [ *table* ]
+**gmt triangulate** 
+[ *table* ]
 [ :option:`-C`\ *slpfile* ]
 [ :option:`-D`\ **x**\|\ **y** ]
 [ :option:`-E`\ *empty* ]

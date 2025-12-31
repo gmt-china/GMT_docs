@@ -21,7 +21,9 @@ grdcut
 语法
 ----
 
-**gmt grdcut** *ingrid* :option:`-G`\ *outgrid*
+**gmt grdcut** 
+*ingrid* 
+:option:`-G`\ *outgrid*
 :option:`-R`\ *region*
 [ :option:`-J`\ *parameters* ]
 [ :option:`-N`\ [*nodata*] ]

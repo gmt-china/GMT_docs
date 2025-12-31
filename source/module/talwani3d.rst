@@ -20,7 +20,8 @@ talwani3d
 语法
 ----
 
-**gmt talwani3d** [ *table* ]
+**gmt talwani3d** 
+[ *table* ]
 [ :option:`-A` ]
 [ :option:`-D`\ *density* ]
 [ :option:`-F`\ **f**\|\ **n**\ [*lat*]\|\ **v** ]

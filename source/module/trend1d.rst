@@ -17,7 +17,8 @@ trend1d
 语法
 ----
 
-**gmt trend1d** [ *table* ]
+**gmt trend1d** 
+[ *table* ]
 :option:`-F`\ **xymrw**\|\ **p**\|\ **P**\|\ **c**
 :option:`-N`\ *params*
 [ :option:`-C`\ *condition_number* ]

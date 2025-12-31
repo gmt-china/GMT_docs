@@ -43,7 +43,8 @@ fzmodeler
 语法
 --------
 
-**fzmodeler** [ :option:`-A`\ *asymmetry* ]
+**fzmodeler** 
+[ :option:`-A`\ *asymmetry* ]
 [ :option:`-C`\ *compression* ]
 [ :option:`-D`\ *min*/*max*/*inc* ]
 [ :option:`-G`\ *comp* ]

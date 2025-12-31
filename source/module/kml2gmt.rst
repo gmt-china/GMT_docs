@@ -21,7 +21,8 @@ kml2gmt
 语法
 ----
 
-**gmt kml2gmt** [ *kmlfiles* ]
+**gmt kml2gmt** 
+[ *kmlfiles* ]
 [ :option:`-E` ]
 [ :option:`-F`\ **s**\|\ **l**\|\ **p** ]
 [ :option:`-V`\ [*level*] ]

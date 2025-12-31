@@ -16,7 +16,8 @@ mlconverter
 语法
 --------
 
-**gmt mlconverter** [ *ML_data* ]
+**gmt mlconverter** 
+[ *ML_data* ]
 [ :option:`-A` ]
 [ :option:`-G`\ [**s**] ]
 [ :option:`-I`\ *FZid* ] 

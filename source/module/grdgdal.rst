@@ -23,7 +23,8 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 语法
 ----
 
-**gmt grdgdal** *infile*
+**gmt grdgdal** 
+*infile*
 :option:`-A`\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
 :option:`-G`\ *outfile*
 [ :option:`-F`\ "*gd opts*"]

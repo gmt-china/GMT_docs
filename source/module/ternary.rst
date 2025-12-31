@@ -17,7 +17,8 @@ ternary
 语法
 ----
 
-**gmt ternary** [ *table* ]
+**gmt ternary** 
+[ *table* ]
 [ **-JX**\ *width* ]
 [ :option:`-R`\ *amin*\ /*amax*\ /*bmin*\ /*bmax*\ /*cmin*\ /*cmax* ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]

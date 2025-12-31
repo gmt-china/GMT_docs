@@ -16,7 +16,8 @@ psconvert
 语法
 ----
 
-**gmt psconvert** *psfile(s)*
+**gmt psconvert** 
+*psfile(s)*
 [ :option:`-A`\ [**+r**][**+u**] ]
 [ :option:`-C`\ *gs_option* ]
 [ :option:`-D`\ *outdir* ]

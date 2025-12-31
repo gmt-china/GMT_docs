@@ -17,7 +17,8 @@ spatial
 语法
 ----
 
-**gmt spatial** [ *table* ]
+**gmt spatial** 
+[ *table* ]
 [ :option:`-A`\ [**a**\ *min_dist*][*unit*]]
 [ :option:`-C` ]
 [ :option:`-D`\ [**+a**\ *amax*][**+c\|C**\ *cmax*][**+d**\ *dmax*][**+f**\ *file*][**+p**][**+s**\ *fact*] ]

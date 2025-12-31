@@ -18,7 +18,8 @@ grdspotter
 语法
 --------
 
-**gmt grdspotter** *ingrid*
+**gmt grdspotter**
+*ingrid*
 :option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*

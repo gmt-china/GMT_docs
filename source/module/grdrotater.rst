@@ -18,7 +18,8 @@ grdrotater
 语法
 --------
 
-**gmt grdrotater** *ingrid*
+**gmt grdrotater** 
+*ingrid*
 :option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-G`\ *outgrid*
 [ :option:`-A`\ *region* ]

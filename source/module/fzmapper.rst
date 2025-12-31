@@ -19,7 +19,8 @@ fzmapper
 语法
 --------
 
-**fzmapper** [ :option:`-A` ]
+**fzmapper** 
+[ :option:`-A` ]
 [ :option:`-F`\ *origfile* ]
 [ :option:`-G`\ *vgg_grid* ]
 [ :option:`-L`\ *labelint* ] 

@@ -30,7 +30,9 @@ nearneighbor
 语法
 ----
 
-**gmt nearneighbor** [ *table* ] :option:`-G`\ *outgrid*
+**gmt nearneighbor** 
+[ *table* ] 
+:option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 :option:`-S`\ *search_radius*

@@ -19,9 +19,10 @@ pmodeler
 语法
 --------
 
-**gmt pmodeler** *table*
+**gmt pmodeler** 
+*table*
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-**-S**\ *flags*
+:option:`-S`\ *flags*
 [ :option:`-F`\ *polygonfile* ]
 [ :option:`-T`\ *age* ]
 [ :option:`-V`\ [*level*] ]

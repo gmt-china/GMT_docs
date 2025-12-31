@@ -19,7 +19,10 @@ grdedit
 语法
 ----
 
-**gmt grdedit** *grid* [ :option:`-A` ] [ :option:`-C` ]
+**gmt grdedit** 
+*grid* 
+[ :option:`-A` ] 
+[ :option:`-C` ]
 [ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
 [ :option:`-E`\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
 [ :option:`-G`\ *outgrid* ]

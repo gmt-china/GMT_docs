@@ -23,7 +23,8 @@ originater
 语法
 --------
 
-**gmt originater** [ *table* ]
+**gmt originater** 
+[ *table* ]
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-F`\ *hs_file*\ [**+d**]
 [ :option:`-D`\ *d_km* ]

@@ -24,7 +24,9 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 语法
 --------
 
-**gmt segyz** *SEGYfile* :option:`-J`\ *parameters*
+**gmt segyz** 
+*SEGYfile* 
+:option:`-J`\ *parameters*
 :option:`-J`\ **z**\|\ **Z**\ *parameters*
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 :option:`-D`\ *deviation* :option:`-F`\ [*color*] :option:`-W`

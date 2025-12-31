@@ -22,7 +22,8 @@ fzanalyzer
 语法
 --------
 
-**gmt fzanalyzer** *crossprofiles*
+**gmt fzanalyzer** 
+*crossprofiles*
 :option:`-F`\ *fzlines*
 [ :option:`-A`\ *min*/*max*/*inc* ]
 [ :option:`-C`\ *min*/*max*/*inc* ]

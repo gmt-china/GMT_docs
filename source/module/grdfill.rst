@@ -16,7 +16,8 @@ grdfill
 语法
 ----
 
-**gmt grdfill** *ingrid*
+**gmt grdfill** 
+*ingrid*
 :option:`-A`\ *mode*\ [*arg*]
 :option:`-G`\ *outgrid*
 [ :option:`-R`\ *region* ]

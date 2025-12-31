@@ -20,7 +20,8 @@ math
 语法
 ----
 
-**gmt math** [ :option:`-A`\ *t_f(t)*\ [**+e**]\ [**+r**]\ [**+s**\|\ **w**] ]
+**gmt math** 
+[ :option:`-A`\ *t_f(t)*\ [**+e**]\ [**+r**]\ [**+s**\|\ **w**] ]
 [ :option:`-C`\ *cols* ]
 [ :option:`-E`\ *eigen* ]
 [ :option:`-I` ]

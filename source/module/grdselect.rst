@@ -20,7 +20,8 @@ grdselect
 语法
 ----
 
-**gmt grdselect** *source1 source2 ...*
+**gmt grdselect** 
+*source1 source2 ...*
 [ :option:`-A`\ **i**\|\ **u**\ [**+il**\|\ **h**\|\ *inc*] ]
 [ :option:`-C`\ *pointfile* ]
 [ :option:`-D`\ *inc* ]

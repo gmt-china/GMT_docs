@@ -13,7 +13,9 @@ grdconvert
 语法
 ----
 
-**gmt grdconvert** *ingrdfile* :option:`-G`\ *outgrdfile*
+**gmt grdconvert** 
+*ingrdfile* 
+:option:`-G`\ *outgrdfile*
 [ :option:`-N` ]
 [ :option:`-R`\ *region* ]
 [ :option:`-V`\ [*level*] ]

@@ -37,7 +37,8 @@ grdflexure
 语法
 ----
 
-**gmt grdflexure** *input*
+**gmt grdflexure** 
+*input*
 :option:`-D`\ *rm*/*rl*\ [/*ri*]\ /*rw*\ [**+r**\ *rr*]
 :option:`-E`\ [*Te*\ [**k**][/*Te2*\ [**k**]]]
 :option:`-G`\ *outgrid*

@@ -20,21 +20,13 @@ National Centers for Environmental Information，NCEI) 机构下的海洋地球�
 主要包括下面 9 个命令：
 
 - :doc:`mgd77manage` 管理 MGD77+ 文件
-
 - :doc:`mgd77convert` 将 MGD77 数据转换为其他格式
-
 - :doc:`mgd77header` 从 A77 文件创建 MGD77 头部信息
-
 - :doc:`mgd77info` 提取 MGD77 文件信息
-
 - :doc:`mgd77list` 提取 MGD77 文件中的数据
-
 - :doc:`mgd77magref` 计算 IGRF 或 CM4 磁场模型
-
 - :doc:`mgd77path` 返回 MGD77 测线路径
-
 - :doc:`mgd77sniffer` MGD77 测线沿轨质量控制
-
 - :doc:`mgd77track` 绘制 MGD77 测线轨迹
 
 下面将做整体介绍：
@@ -138,7 +130,8 @@ mgd77manage
 语法
 ----
 
-**gmt mgd77manage** *GEODAS-ids*
+**gmt mgd77manage** 
+*GEODAS-ids*
 [ :option:`-A`\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]\ ]
 [ :option:`-D`\ *abbrev1*,\ *abbrev2*,...) ]
 [ :option:`-E`\ *empty* ]

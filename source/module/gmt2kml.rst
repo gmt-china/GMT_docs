@@ -27,7 +27,8 @@ Google Earth KML 格式的单个输出文件。
 语法
 --------
 
-**gmt 2kml** [ *table* ]
+**gmt 2kml** 
+[ *table* ]
 [ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*alt*\|\ **x**\ *scale*] ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-D`\ *descriptfile* ]

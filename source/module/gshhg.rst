@@ -41,8 +41,14 @@ gshhg
 语法
 ----
 
-**gmt gshhg** *binaryfile.b* [ :option:`-A`\ *min* ] [ :option:`-G` ] [ :option:`-I`\ *id* ]
-[ :option:`-L` ] [ :option:`-N`\ *level* ] [ :option:`-Q`\ **e**\|\ **i** ]
+**gmt gshhg** 
+*binaryfile.b* 
+[ :option:`-A`\ *min* ] 
+[ :option:`-G` ] 
+[ :option:`-I`\ *id* ]
+[ :option:`-L` ]
+[ :option:`-N`\ *level* ]
+[ :option:`-Q`\ **e**\|\ **i** ]
 [ :option:`-bo`\ *binary* ]
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-o`\ *flags* ]

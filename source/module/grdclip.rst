@@ -13,7 +13,8 @@ grdclip
 语法
 ----
 
-**gmt grdclip** *ingrid*
+**gmt grdclip** 
+*ingrid*
 :option:`-G`\ *outgrid*
 [ :option:`-R`\ *region* ]
 [ :option:`-S`\ **a**\ *high/above* ]

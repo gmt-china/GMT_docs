@@ -16,7 +16,8 @@ grdcontour
 --------
 
 
-**gmt grdcontour** *grid*
+**gmt grdcontour** 
+*grid*
 :option:`-J`\ *parameters* [ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *contours*\|\ *cpt* ]
