@@ -26,7 +26,8 @@ select
 语法
 -------
 
-**gmt select** [ *table* ]
+**gmt select** 
+[ *table* ]
 [ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
 [ :option:`-C`\ *pointfile*\ \|\ *lon*/*lat*\ **+d**\ *dist* ]
 [ :option:`-D`\ *resolution*\ [**+f**] ]

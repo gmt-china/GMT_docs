@@ -19,7 +19,8 @@ mask
 语法
 ----
 
-**gmt mask** [ *table* ]
+**gmt mask** 
+[ *table* ]
 :option:`-I`\ *increment*
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*

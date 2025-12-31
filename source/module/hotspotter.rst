@@ -20,7 +20,8 @@ hotspotter
 语法
 --------
 
-**gmt hotspotter** [*table*]
+**gmt hotspotter** 
+[*table*]
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*

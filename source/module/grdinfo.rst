@@ -26,7 +26,8 @@ grdinfo
 语法
 ----
 
-**gmt grdinfo** *grdfiles*
+**gmt grdinfo** 
+*grdfiles*
 [ :option:`-C`\ [**n**\|\ **t**\] ]
 [ :option:`-D`\ [*xoff*\ [/*yoff*]][**+i**] ]
 [ :option:`-E`\ [**x**\|\ **y**][**+h**\|\ **H**\|\ **l**\|\ **L**] ]

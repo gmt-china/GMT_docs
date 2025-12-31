@@ -18,8 +18,8 @@ img2google
 ----
 
 **img2google**
-:option:`-R`\ *region*
 [ *imgfile* ]
+:option:`-R`\ *region*
 [ :option:`-A`\ *mode*\ [*altitude*] ]
 [ :option:`-C` ]
 [ :option:`-F`\ *fademin/fademax* ]

@@ -34,8 +34,11 @@ grdhisteq
 语法
 --------
 
-**gmt grdhisteq** *ingrid* [ :option:`-G`\ *outgrid* ]
-[ :option:`-C`\ *n_cells* ] [ :option:`-D`\ [*file*] ] [ :option:`-N`\ [*norm*] ]
+**gmt grdhisteq** 
+*ingrid* 
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-C`\ *n_cells* ]
+[ :option:`-D`\ [*file*] ] [ :option:`-N`\ [*norm*] ]
 [ :option:`-Q` ]
 [ :option:`-R`\ *region* ]
 [ :option:`-V`\ [*level*] ]

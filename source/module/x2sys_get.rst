@@ -17,7 +17,11 @@ x2sys_get
 语法
 ----
 
-**gmt x2sys_get** :option:`-T`\ *TAG* [ :option:`-C` ] [ :option:`-F`\ *flags* ] [ :option:`-G` ]
+**gmt x2sys_get** 
+:option:`-T`\ *TAG* 
+[ :option:`-C` ] 
+[ :option:`-F`\ *flags* ] 
+[ :option:`-G` ]
 [ :option:`-L`\ [*list*]\ [**+i**] ]
 [ :option:`-N`\ *flags* ]
 [ :option:`-R`\ *region* ]

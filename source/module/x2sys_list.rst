@@ -17,7 +17,9 @@ x2sys_list
 语法
 ----
 
-**gmt x2sys_list** :option:`-C`\ *column* :option:`-T`\ *TAG* [ *coedbase.txt* ]
+**gmt x2sys_list** 
+:option:`-C`\ *column* 
+:option:`-T`\ *TAG* [ *coedbase.txt* ]
 [ :option:`-A`\ *asymm_max* ]
 [ :option:`-E` ]
 [ :option:`-F`\ *flags* ]

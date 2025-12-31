@@ -23,7 +23,9 @@ x2sys_binlist
 语法
 ----
 
-**gmt x2sys_binlist** *track(s)* :option:`-T`\ *TAG*
+**gmt x2sys_binlist** 
+*track(s)* 
+:option:`-T`\ *TAG*
 [ :option:`-D` ]
 [ :option:`-E` ]
 [ :option:`-V`\ [*level*] ]

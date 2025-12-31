@@ -16,7 +16,9 @@ plot3d
 语法
 --------
 
-**gmt plot3d** [ *table* ] :option:`-J`\ *parameters*
+**gmt plot3d** 
+[ *table* ] 
+:option:`-J`\ *parameters*
 :option:`-Jz`\ \|\ **Z**\ *parameters*
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
 [ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**\|\ **r**\|\ **t**] ]

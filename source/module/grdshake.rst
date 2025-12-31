@@ -13,7 +13,9 @@ grdshake
 语法
 ------
 
-**gmt grdshake** *ingrid* :option:`-G`\ *outgrid*
+**gmt grdshake** 
+*ingrid* 
+:option:`-G`\ *outgrid*
 :option:`-L`\ *fault.dat*
 :option:`-M`\ *mag*
 [ :option:`-C`\ *a,v,i* ]

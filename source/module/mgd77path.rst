@@ -16,7 +16,10 @@ mgd77path
 语法
 ----
 
-**gmt mgd77path** *GEODAS-ids* [ :option:`-A`\ [**c**] ] [ :option:`-D` ]
+**gmt mgd77path** 
+*GEODAS-ids* 
+[ :option:`-A`\ [**c**] ] 
+[ :option:`-D` ]
 [ :option:`-I`\ **a\|c\|m\|t** ]
 [ :option:`-V`\ [*level*] ]
 [ :doc:`--PAR=value </conf/overview>` ]

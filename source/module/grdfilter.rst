@@ -18,7 +18,9 @@ grdfilter
 语法
 ----
 
-**gmt grdfilter** *ingrid* :option:`-D`\ *distance_flag*
+**gmt grdfilter** 
+*ingrid* 
+:option:`-D`\ *distance_flag*
 :option:`-F`\ **x**\ *width*\ [/*width2*][*modifiers*]
 :option:`-G`\ *outgrid*
 [ :option:`-I`\ *increment* ]

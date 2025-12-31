@@ -20,7 +20,7 @@ grdpmodeler
 **gmt grdpmodeler**
 [ *agegrdfile* ]
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-**-S**\ *flags*
+:option:`-S`\ *flags*
 [ :option:`-F`\ *polygonfile* ]
 [ :option:`-G`\ *outgrid* ]
 [ :option:`-I`\ *increment* ]

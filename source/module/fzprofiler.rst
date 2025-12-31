@@ -18,7 +18,8 @@ fzprofiler
 语法
 --------
 
-**fzprofiler** [ :option:`-H`\ *height*\ [**c**\|\ **i**\|\ **p**] ]
+**fzprofiler** 
+[ :option:`-H`\ *height*\ [**c**\|\ **i**\|\ **p**] ]
 [ :option:`-I`\ *profile* ] 
 [ :option:`-L`\ *inc* ]
 [ :option:`-M`\ *ncols* ]

@@ -13,7 +13,8 @@ mgd77track
 语法
 ----
 
-**gmt mgd77track** *GEODAS-ids*
+**gmt mgd77track** 
+*GEODAS-ids*
 :option:`-R`\ *region*
 :option:`-J`\ *parameters*
 [ :option:`-A`\ [**c**][*size*][**+i**\ *spacing*] ]

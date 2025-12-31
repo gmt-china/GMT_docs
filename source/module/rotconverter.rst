@@ -20,7 +20,8 @@ rotconverter
 语法
 --------
 
-**gmt rotconverter** [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
+**gmt rotconverter** 
+[ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
 [ :option:`-A` ] [ :option:`-D` ]
 [ :option:`-F`\ **s**\|\ **t** ]
 [ :option:`-G` ]

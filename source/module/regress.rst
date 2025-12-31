@@ -24,7 +24,9 @@ regress
 语法
 ----
 
-**gmt regress** [ *table* ] [ :option:`-A`\ [*min*\ /*max*\ /*inc*][**+f**\ [**n**\|\ **p**]] ]
+**gmt regress** 
+[ *table* ] 
+[ :option:`-A`\ [*min*\ /*max*\ /*inc*][**+f**\ [**n**\|\ **p**]] ]
 [ :option:`-C`\ *level* ]
 [ :option:`-E`\ **x**\|\ **y**\|\ **o**\|\ **r** ]
 [ :option:`-F`\ *flags* ]

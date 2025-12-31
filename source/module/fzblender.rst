@@ -28,7 +28,8 @@ fzblender
 语法
 --------
 
-**gmt fzblender** [ :option:`-D` ]
+**gmt fzblender** 
+[ :option:`-D` ]
 [ :option:`-E`\ *sfilter* ]
 [ :option:`-F`\ *pfilter* ]
 [ :option:`-I`\ *FZid* ] 

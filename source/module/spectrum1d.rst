@@ -41,9 +41,15 @@ Bendat 和 Piersol [1986] 中的算法。
 语法
 ----
 
-**gmt spectrum1d** [ *table* ] [ :option:`-S`\ *segment_size* ]
-[ :option:`-C`\ [**acgnopxy**] ] [ :option:`-D`\ *dt* ] [ :option:`-L`\ [**h**\|\ **m**] ]
-[ :option:`-N`\ [*name_stem*] ] [ :option:`-T` ] [ :option:`-W` ]
+**gmt spectrum1d** 
+[ *table* ] 
+[ :option:`-S`\ *segment_size* ]
+[ :option:`-C`\ [**acgnopxy**] ] 
+[ :option:`-D`\ *dt* ] 
+[ :option:`-L`\ [**h**\|\ **m**] ]
+[ :option:`-N`\ [*name_stem*] ] 
+[ :option:`-T` ] 
+[ :option:`-W` ]
 [ :option:`-b`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]

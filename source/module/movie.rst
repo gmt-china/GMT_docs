@@ -13,7 +13,8 @@ movie
 语法
 ----
 
-**gmt movie** *mainscript*
+**gmt movie** 
+*mainscript*
 :option:`-C`\ *canvassize*\ [**+c|i**]
 :option:`-N`\ *prefix*
 :option:`-T`\ *nframes*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]

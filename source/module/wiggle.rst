@@ -17,7 +17,11 @@ wiggle
 语法
 ----
 
-**gmt wiggle** [ *table* ] :option:`-J`\ *parameters* :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] :option:`-Z`\ *scale*
+**gmt wiggle** 
+[ *table* ] 
+:option:`-J`\ *parameters* 
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] 
+:option:`-Z`\ *scale*
 [ :option:`-A`\ [*azimuth*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
 [ :option:`-C`\ *center* ]

@@ -17,7 +17,8 @@ grdvolume
 语法
 ----
 
-**gmt grdvolume** *grdfile*
+**gmt grdvolume** 
+*grdfile*
 [ :option:`-C`\ *cval* or :option:`-C`\ *low/high/delta* or :option:`-C`\ **r**\ *low/high* or :option:`-C`\ **r**\ *cval*]
 [ :option:`-L`\ *base* ]
 [ :option:`-R`\ *region* ]

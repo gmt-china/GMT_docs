@@ -24,7 +24,8 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 语法
 ----
 
-**gmt grdredpol** *ingrid*
+**gmt grdredpol** 
+*ingrid*
 :option:`-G`\ *rtp_grd*
 [ :option:`-C`\ *dec/dip* ]
 [ :option:`-E`\ **i**\ *inc_grd* ]

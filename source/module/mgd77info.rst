@@ -21,7 +21,8 @@ mgd77info
 语法
 ----
 
-**gmt mgd77info** *GEODAS-ids*
+**gmt mgd77info** 
+*GEODAS-ids*
 [ :option:`-C`\ [**m**\|\ **e**] ]
 [ :option:`-E`\ [**m**\|\ **e**] ]
 [ :option:`-I`\ **a\|c\|m\|t** ]

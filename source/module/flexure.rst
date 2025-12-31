@@ -17,7 +17,8 @@ flexure
 语法
 ----
 
-**gmt flexure** :option:`-D`\ *rm*/*rl*\ [/*ri*]\ /*rw*
+**gmt flexure** 
+:option:`-D`\ *rm*/*rl*\ [/*ri*]\ /*rw*
 :option:`-E`\ *Te*\ [**k**]\|\ *D*\|\ *file*
 :option:`-Q`\ *args*
 [ :option:`-A`\ [**l**\|\ **r**]\ *bc*\ [/*args*] ]

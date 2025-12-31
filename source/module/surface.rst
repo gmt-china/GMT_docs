@@ -31,7 +31,9 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 语法
 ----
 
-**gmt surface** [ *table* ] :option:`-G`\ *outgrid*
+**gmt surface** 
+[ *table* ] 
+:option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 [ :option:`-A`\ *aspect_ratio*\|\ **m** ]

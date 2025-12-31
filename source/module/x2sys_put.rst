@@ -20,7 +20,11 @@ x2sys_put
 语法
 ----
 
-**gmt x2sys_put** [ *info.tbf* ] :option:`-T`\ *TAG* [ :option:`-D` ] [ :option:`-F` ]
+**gmt x2sys_put** 
+[ *info.tbf* ] 
+:option:`-T`\ *TAG* 
+[ :option:`-D` ] 
+[ :option:`-F` ]
 [ :option:`-V`\ [*level*] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 

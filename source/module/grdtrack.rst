@@ -14,7 +14,9 @@ grdtrack
 --------
 
 
-**gmt grdtrack** [ *table* ] :option:`-G`\ *grd1* [ :option:`-G`\ *grd2* ... ]
+**gmt grdtrack** 
+[ *table* ] 
+:option:`-G`\ *grd1* [ :option:`-G`\ *grd2* ... ]
 [ :option:`-A`\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+l**] ]
 [ :option:`-C`\ *length*/\ *ds*\ [*/spacing*][**+a**\|\ **v**][**d**\|\ **f**\ *value*][**l**\|\ **r**] ]
 [ :option:`-D`\ *dfile* ]

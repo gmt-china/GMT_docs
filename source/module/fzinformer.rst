@@ -18,7 +18,8 @@ fzinformer
 语法
 --------
 
-**fzinformer** [ :option:`-D` ]
+**fzinformer** 
+[ :option:`-D` ]
 [ :option:`-F`\ *max* ]
 [ :option:`-I`\ *profile* ] 
 [ :option:`-N`\ *max* ] 

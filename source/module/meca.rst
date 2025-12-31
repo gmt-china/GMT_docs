@@ -13,7 +13,8 @@ meca
 语法
 ----
 
-**gmt meca** [ *table* ]
+**gmt meca** 
+[ *table* ]
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*
 :option:`-S`\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]

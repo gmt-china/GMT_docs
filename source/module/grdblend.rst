@@ -25,7 +25,8 @@ grdblend
 语法
 ----
 
-**gmt grdblend** [ *blendfile* \| *grid1* *grid2* ... ]
+**gmt grdblend** 
+[ *blendfile* \| *grid1* *grid2* ... ]
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*

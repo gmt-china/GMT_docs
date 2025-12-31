@@ -17,7 +17,9 @@ x2sys_report
 语法
 ----
 
-**gmt x2sys_report** :option:`-C`\ *column* :option:`-T`\ *TAG* [ *coedbase.txt* ]
+**gmt x2sys_report** 
+:option:`-C`\ *column* 
+:option:`-T`\ *TAG* [ *coedbase.txt* ]
 [ :option:`-A` ]
 [ :option:`-I`\ [*list*] ]
 [ :option:`-L`\ [*corrections*] ]

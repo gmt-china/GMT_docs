@@ -15,7 +15,9 @@ mgd77convert
 语法
 ----
 
-**gmt mgd77convert** *GEODAS-ids* :option:`-F`\ **a**\|\ **c**\|\ **m**\|\ **t**
+**gmt mgd77convert** 
+*GEODAS-ids* 
+:option:`-F`\ **a**\|\ **c**\|\ **m**\|\ **t**
 :option:`-T`\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
 [ :option:`-C` ]
 [ :option:`-D` ]

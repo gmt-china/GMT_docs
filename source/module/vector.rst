@@ -21,7 +21,8 @@ vector
 语法
 ----
 
-**gmt vector** [ *table* ]
+**gmt vector** 
+[ *table* ]
 [ :option:`-A`\ **m**\ [*conf*]\|\ *vector* ]
 [ :option:`-C`\ [**i**\|\ **o**] ]
 [ :option:`-E` ]
