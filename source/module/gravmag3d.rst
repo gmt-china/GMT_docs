@@ -17,7 +17,9 @@ gravmag3d
 语法
 ----
 
-**gmt gravmag3d** *xyz_file* :option:`-T`\ **v**\ *vert_file* OR :option:`-T`\ **r\|s**\ *raw_file* OR :option:`-M`\ **+s**\ *body,params*
+**gmt gravmag3d**
+*xyz_file*
+:option:`-T`\ **v**\ *vert_file* OR :option:`-T`\ **r\|s**\ *raw_file* OR :option:`-M`\ **+s**\ *body,params*
 [ :option:`-C`\ *density* ]
 [ :option:`-E`\ *thickness* ]
 [ :option:`-F`\ *xy_file* ]
@@ -27,7 +29,7 @@ gravmag3d
 [ :option:`-S`\ *radius* ]
 [ :option:`-Z`\ *level* ]
 [ :option:`-V`\ [*level*] ]
-[ **-fg**]
+[ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
@@ -59,7 +61,7 @@ gravmag3d
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
 
-    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read` 。
+    输出网格文件名，其中各子选项的含义见 :doc:`/grid/write` 。
 
 .. option:: -M
 
