@@ -23,7 +23,8 @@ grd2kml
 语法
 --------
 
-**gmt grd2kml** *ingrid*
+**gmt grd2kml**
+*ingrid*
 :option:`-N`\ *prefix*
 [ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
@@ -40,11 +41,13 @@ grd2kml
 [ :option:`-n`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_grd_in.rst_
+
+必须选项
+------------------
 
 .. option:: -N
 
@@ -63,8 +66,6 @@ grd2kml
     若要固定在某一高度上绘制图层，可追加 altitude（米）。
     使用 0 表示将图层贴合到参考面（如地面或海面）。  
     [默认：图块贴合到地面或海面。]
-
-.. option:: -C
 
 .. include:: use_cpt_grd.rst_
 
@@ -89,10 +90,8 @@ grd2kml
 
 **-H**\ *scale*
     设置传递给 :doc:`psconvert` 的亚像素平滑尺度，以提高光栅化质量
-    （等同于 :doc:`psconvert` 的 :option:`-H` 选项）[默认无平滑]。
+    （等同于 :doc:`psconvert` 的 **-H** 选项）[默认无平滑]。
     当未使用 :option:`-W` 时，该选项被忽略。
-
-.. option:: -I
 
 .. include:: explain_intense.rst_
 
@@ -163,13 +162,13 @@ grd2kml
 因此无法在所有层级使用相同厚度的等值线笔宽。
 输入的画笔宽度应视为最高分辨率层的宽度。
 由于生成的图像分辨率（dpi）比常规 GMT 图低得多，
-建议使用亚像素平滑（:option:`-H`）以改善等值线外观。
+建议使用亚像素平滑（ :option:`-H` ）以改善等值线外观。
 生成 PostScript 图块及平滑处理均会显著增加计算时间。
 
 备注
 --------
 
-强度网格可通过 :doc:`grdgradient` 从数据网格生成，
+光照强度网格可通过 :doc:`grdgradient` 从数据网格生成，
 并可使用 :doc:`grdmath` 或 :doc:`grdhisteq` 进一步处理。
 若使用多个不同光照角度的强度网格，可通过 :doc:`grdmath` 合并。
 对于单一光照角度，也可使用自动光照模式。
