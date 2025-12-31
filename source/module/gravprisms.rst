@@ -29,7 +29,8 @@ gravprisms
 语法
 ----
 
-**gmt gravprisms** [ *table* ]
+**gmt gravprisms**
+[ *table* ]
 [ :option:`-A` ]
 [ :option:`-C`\ [**+q**][**+w**\ *file*][**+z**\ *dz*] ]
 [ :option:`-D`\ *density* ]
@@ -57,17 +58,13 @@ gravprisms
 [ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
     棱柱文件，格式为 *x y z z_low z_high [dx dy] [rho]* 。其中的可选项可以
     通过 :option:`-E` 和 :option:`-D` 控制。密度的单位可以是 kg/m^3 或者 g/cm^3 。如果使用
     :option:`-C` 选项，则无需输入文件。
-
-.. include:: explain_-I.rst_
-
-.. include:: explain_-R.rst_
 
 可选选项
 --------
@@ -118,11 +115,7 @@ gravprisms
 
     - **v** 垂直重力梯度
 
-.. option:: -G
-
-**-G**\ *outfile*
-    输出网格文件名，计算该网格上的异常，可设置子选项，其中子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+.. include:: explain_grd_out.rst_
 
 .. option:: -H
 
@@ -131,6 +124,8 @@ gravprisms
     ，以及固定的参考高度 *H* 。使用 **+d** 和 **+p** 分别设置水压驱动的侧翼
     密度的增量 [0] 以及幂指数变化 [1，线性变化]。该选项需要 :option:`-S` 选项。细节
     请参考 :doc:`grdseamount` 。
+
+.. include:: explain_-I.rst_
 
 .. option:: -L
 
@@ -149,6 +144,8 @@ gravprisms
     指定计算异常所处的测线，结果输出到标准输出。如果没设置 :option:`-Z` 选项，则
     *trackfile* 必须有 3 列，最后一列为 z 值，否则使用 :option:`-Z` 设置的恒定的
     z 值。
+
+.. include:: explain_-R.rst_
 
 .. option:: -S
 
