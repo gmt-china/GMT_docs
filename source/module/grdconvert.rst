@@ -23,13 +23,15 @@ grdconvert
 [ :option:`-f`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_grd_in.rst_
 
-.. include:: explain_grd_out.rst_
+必须选项
+--------
 
+.. include:: explain_grd_out.rst_
 
 可选选项
 --------
