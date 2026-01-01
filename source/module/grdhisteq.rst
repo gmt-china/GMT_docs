@@ -36,17 +36,17 @@ grdhisteq
 
 **gmt grdhisteq** 
 *ingrid* 
-[ :option:`-G`\ *outgrid* ]
 [ :option:`-C`\ *n_cells* ]
-[ :option:`-D`\ [*file*] ] [ :option:`-N`\ [*norm*] ]
+[ :option:`-D`\ [*file*] ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-N`\ [*norm*] ]
 [ :option:`-Q` ]
 [ :option:`-R`\ *region* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-h`\ *headers* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_grd_in.rst_
@@ -56,28 +56,26 @@ grdhisteq
 
 .. option:: -C
 
-**-C** *n_cells*
+**-C**\ *n_cells*
     设置将数据范围划分为多少个区间（默认 16）。
 
 .. option:: -D
 
-**-D** [*file*]
+**-D**\ [*file*]
     将层级信息输出到 *file*，若未指定文件则输出到标准输出。
 
 .. include:: explain_grd_out.rst_
 
 .. option:: -N
 
-**-N** [*norm*]
+**-N**\ [*norm*]
     生成高斯输出。与 :option:`-G` 一起使用可输出标准正态分布网格。
-    若附加 *norm*，则强制值落在 ±*norm* 范围内（默认为标准正态分布）。
+    若附加 *norm*，则强制值落在 ±\ *norm* 范围内（默认为标准正态分布）。
 
 .. option:: -Q
 
 **-Q**
     选择二次（非线性）直方图均衡化方式（默认是线性）。
-
-.. option:: -R
 
 .. include:: explain_-R.rst_
 
