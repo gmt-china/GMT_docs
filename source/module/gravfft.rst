@@ -50,12 +50,16 @@ gravfft
 ------------------
 
 .. include:: explain_grd_in.rst_
+..
+
     对于交叉谱计算，还需要指定第二个网格 *ingrid2* 。
 
 必须选项
 --------
 
 .. include:: explain_grd_out.rst_
+..
+
     输出网格文件存储实体对该网格内的点的异常值的计算结果。
 
 可选选项
@@ -164,6 +168,8 @@ gravfft
 .. include:: explain_-V.rst_
 
 .. include:: explain_-f.rst_
+..
+    
     地理坐标网格将会在平地球近似下将坐标单位转换为 m
 
 .. include:: explain_help.rst_

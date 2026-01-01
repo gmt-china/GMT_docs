@@ -127,6 +127,8 @@ barb
 
 .. include:: explain_-XY.rst_
 
+.. include:: explain_-aspatial.rst_
+
 .. include:: explain_-bi.rst_
 
 .. include:: explain_-di.rst_

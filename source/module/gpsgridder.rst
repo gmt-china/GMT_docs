@@ -49,12 +49,12 @@ gpsgridder
 [ :option:`-T`\ *maskgrid* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [**+s**\|\ **w**] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
-[ :option:`-o`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
@@ -160,12 +160,17 @@ gpsgridder
 
 .. include:: explain_-V.rst_
 
+.. include:: explain_-bi.rst_
+
+.. include:: explain_-bo.rst_
+
 .. include:: explain_-d.rst_
 
 .. include:: explain_-e.rst_
 
 .. include:: explain_-f.rst_
-
+..
+    
     如果输入数据为地理坐标，必须使用 **-fg** ，地理坐标网格将会被转换为平地球近似下来计算。
 
 .. include:: explain_-h.rst_
@@ -175,6 +180,8 @@ gpsgridder
 .. include:: explain_-qi.rst_
 
 .. include:: explain_nodereg.rst_
+
+.. include:: explain_core.rst_
 
 .. include:: explain_colon.rst_
 

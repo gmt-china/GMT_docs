@@ -16,7 +16,7 @@ fzanalyzer
 然后通过检查与 FZ 走向正交的剖面来分析每条 FZ 的轨迹，
 并使用一种由 “Atlantic-style” 对称槽和 “Pacific-style” 不对称偶极状异常混合组成的模型，
 并结合一些外围隆起进行建模。我们还仅拟合对称槽模型，并检查经验数据的最小值和槽宽。
-随后对数据槽的宽度以及由各种模型给出的最佳 FZ 位置的:math:`1-\sigma`不确定性进行估计。
+随后对数据槽的宽度以及由各种模型给出的最佳 FZ 位置的 :math:`1-\sigma` 不确定性进行估计。
 我们还计算若干统计指标，并返回沿每条 FZ 距离变化的所有模型参数。
 
 语法
@@ -289,7 +289,7 @@ fzanalyzer
 :doc:`fzmodeler`,
 :doc:`fzprofiler`,
 :doc:`grdmath`,
-:doc:`grdtrack`
+:doc:`grdtrack`,
 :doc:`mlconverter`
 
 参考文献

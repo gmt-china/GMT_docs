@@ -22,7 +22,7 @@ fzprofiler
 [ :option:`-H`\ *height*\ [**c**\|\ **i**\|\ **p**] ]
 [ :option:`-I`\ *profile* ] 
 [ :option:`-L`\ *inc* ]
-[ :option:`-M`\ *ncols* ]
+[ :option:`-N`\ *ncols* ]
 [ :option:`-T`\ *prefix* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *width*\ [**c**\|\ **i**\|\ **p**] ]
@@ -55,12 +55,14 @@ fzprofiler
     如果 *ncols* = 1，则所有剖面垂直堆叠在一列中；
     若 *ncols* = 2，则剖面将在两列中平均分配，依此类推。
 
-.. include:: explain_-V.rst_
+.. option:: -T
 
 **-T**\ *prefix*
     设置所有输入文件的文件名前缀，这些文件由 :doc:`fzanalyzer` 生成 [默认值为 fztrack]。
     文件包括 *prefix*\ _cross.txt、*prefix*\ _analysis.txt、*prefix*\ _par.txt，
     以及由 :doc:`grdtrack` 生成的重采样输出文件 *prefix*\ _resampled.txt。
+
+.. include:: explain_-V.rst_
 
 .. option:: -W
 
