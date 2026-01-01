@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-07-02
+:date: 2026-01-01
 
 .. index:: ! grdgdal
 .. program:: grdgdal
@@ -35,17 +35,20 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-g`\ *gaps* ]
-[ **-hi** ]
+[ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *infile*
-    ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体 :option:`-A` 使用的程序有关
+    ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体与 :option:`-A` 使用的程序有关。
+
+必选选项
+--------
 
 .. option:: -A
 
