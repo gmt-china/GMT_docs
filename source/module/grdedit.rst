@@ -1,5 +1,5 @@
-:author: 田冬冬
-:date: 2022-05-05
+:author: 田冬冬, 陈箫翰
+:date: 2026-01-01
 
 .. index:: ! grdedit
 .. program:: grdedit
@@ -16,21 +16,25 @@ grdedit
 - 对全球地理网格文件沿着东西方向旋转
 - 可以用 *x y z* 值替换网格文件中特定节点的值
 
+**grdedit** 仅对包含网格文件头的文件进行操作。
+**注意**：如果原始数据非常重要，则应使用 :option:`-G` 将修改后的网格保存到新文件中。
+
 语法
 ----
 
 **gmt grdedit** 
-*grid* 
+*ingrid*
 [ :option:`-A` ] 
-[ :option:`-C` ]
+[ :option:`-C`\ **b**\|\ **c**\|\ **n**\|\ **p** ]
 [ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
-[ :option:`-E`\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
+[ :option:`-E`\ [**a**\|\ **e**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**] ]
 [ :option:`-G`\ *outgrid* ]
 [ :option:`-J`\ *parameters* ]
 [ :option:`-L`\ [**+n**\|\ **p**] ]
 [ :option:`-N`\ *table* ]
 [ :option:`-R`\ *region* ]
-[ :option:`-S` ] [ :option:`-T` ]
+[ :option:`-S` ]
+[ :option:`-T` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-bi`\ *binary* ]
 [ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
@@ -38,14 +42,13 @@ grdedit
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
-[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :option:`-w`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 --------
 
-*grid*
-    要修改的2D网格文件
+.. include:: explain_grd_in.rst_
 
 可选选项
 --------
@@ -53,24 +56,32 @@ grdedit
 .. option:: -A
 
 **-A**
-    如有必要，则对网格间隔做微调使得其与数据的范围相兼容。仅用于处理 GMT 3.1
-    之前版本生成的网格文件。
+    必要时调整文件的 *x_inc* 和 *y_inc*，使其与其范围（或通过 :option:`-R` 设置的新范围）相兼容。
+    旧版网格文件（即在 GMT 3.1 之前创建的文件）的 *x_inc* 和 *y_inc* 往往存在较大的偏差，需要进行调整。
+    新版文件不存在类似问题。
 
 .. option:: -C
 
-**-C**
-    清除网格文件头段区中生成该网格所使用的命令历史
+**-C**\ **b**\|\ **c**\|\ **n**\|\ **p**
+    通常输出网格会存储当前模块的命令行历史记录。使用 :option:`-C` 指定输出网格应包含哪些命令历史记录：
+    
+    - **b** 同时写入上一个模块和当前模块的命令历史记录
+    - **c** 仅写入当前模块的命令历史记录
+    - **n** 不保存任何历史记录 [默认]
+    - **p** 仅保存之前的命令历史记录
 
 .. include:: explain_-D_cap.rst_
 
 .. option:: -E
 
-**-E**\ [**a**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**]
-    对网格做变换。该选项与除 :option:`-G` 外的其它选项不兼容
+**-E**\ [**a**\|\ **e**\|\ **h**\|\ **l**\|\ **r**\|\ **t**\|\ **v**]
+    通过以下六种方式之一对网格做变换，对于 **l** \| **r** \| **t** 会交换 *x* 和 *y* 信息。
+    该选项与除 :option:`-G` 外的其它选项不兼容。
 
-    - **-Ea** 旋转180度
-    - **-Eh** 水平翻转网格（从左到右）
-    - **-Ev** 垂直旋转网格（从上到下）
+    - **-Ea** 同时水平和垂直翻转网格（旋转180度）
+    - **-Eh** 水平翻转网格（左右翻转）
+    - **-Ev** 垂直翻转网格（上下翻转）
+    - **-Ee** 交换 x（经度）和 y（纬度）
     - **-El** 逆时针将网格旋转90度
     - **-Er** 顺时针将网格旋转90度
     - **-Et** 对网格进行转置（想象成一个二维矩阵），默认使用该变换
@@ -108,7 +119,8 @@ grdedit
 .. include:: explain_-R.rst_
 ..
 
-    修改网格文件的范围。同时，网格间隔会做相应修改。
+    修改网格文件的范围，并在必要时调整 *x_inc* 和 *y_inc* 的值。
+    **注意**：本选项不能用于选择输入网格的子区域，而是直接替换网格的范围。
 
 .. option:: -S
 
@@ -144,7 +156,11 @@ grdedit
 
 .. include:: explain_-icols.rst_
 
+.. include:: explain_-w.rst_
+
 .. include:: explain_help.rst_
+
+.. include:: explain_grd_coord.rst_
 
 示例
 ----
@@ -176,5 +192,5 @@ GMT 4.1.3 之前的网格文件不包含足够的信息表明某个网格文件�
 
 :doc:`grd2xyz`,
 :doc:`grdfill`,
-:doc:`grdinfo`
+:doc:`grdinfo`,
 :doc:`xyz2grd`
