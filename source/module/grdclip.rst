@@ -35,6 +35,9 @@ grdclip
 
 .. include:: explain_grd_in.rst_
 
+必须选项
+--------
+
 .. include:: explain_grd_out.rst_
 
 可选选项
