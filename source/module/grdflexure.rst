@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2024-06-07
+:date: 2026-01-01
 
 .. index:: ! grdflexure
 .. program:: grdflexure
@@ -55,23 +55,23 @@ grdflexure
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *wd*]\ [**k**]
 [ :option:`-Z`\ *zm*]\ [**k**]
-[ :option:`-h`\ *headers* ]
 [ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
-*topogrd*
+*input*
     地形网格载荷，可以为多种形式：
 
     - 单个二维二进制网格文件，单位为 m
 
-    - 如果使用 :option:`-T` 选项，*topogrd* 可以是一个 C 语言语法形式的模版名，见
+    - 如果使用 :option:`-T` 选项，*input* 可以是一个 C 语言语法形式的模版名，见
       `网格文件名模版`_ 。将为每个时间加载不同的地形网格。
       因此，加载时间必须与 :option:`-T` 给出的时间一致（但并非所有的时间都需要对应的文件）。
 
-    - 可以将 *topogrd* 指定为 *flist*\ **+l** ，其中 *flist* 为文本文件，
+    - 可以将 *input* 指定为 *flist*\ **+l** ，其中 *flist* 为文本文件，
       其中每条记录均包含一个 topogrd 文件名和对应的加载时间（例如
       :doc:`grdseamount` 的 **-M** 选项生成的列表）。加载的时间可以和 :option:`-T`
       给出的时间不同，参见 :option:`-T` 。**注** ：如果 *flist* 文件中包含第三列，
@@ -84,6 +84,9 @@ grdflexure
     **注** ： 水平方向维度输入单位应该为米。如果输入网格单位为 km，则可以追加
     **+uk** ，在程序内部会将 km 转换为 m。所有的文件都需要包含相同的维度，如果
     文件中存在 NaN，则会自动被替换为 0，使用 :option:`-V` 选项可查看这些替换报告。
+
+必须选项
+--------
 
 .. option:: -D
 
@@ -98,7 +101,7 @@ grdflexure
 
 .. option:: -E
 
-**-E**\ [*Te*\ [**k**][/*Te2*\ [**k**]]
+**-E**\ [*Te*\ [**k**][/*Te2*\ [**k**]]]
     设置弹性板厚度（单位为 m）, **k** 表示单位为 km。如果弹性板厚度的值超过
     了 1e10，认为该值超过岩石圈有效弹性厚度的实际范围，GMT 将其认为是抗挠刚度
     ，而不是弹性板厚度 *D* （默认情况下 *D* 由有效弹性厚度 *Te* ，杨氏模量
@@ -107,14 +110,9 @@ grdflexure
     响应。通过给定初始的弹性厚度 *Te* 和最终弹性厚度 *Te2* , 可以选择设置为
     线性粘弹性响应，这时需要同时使用 :option:`-M` 选项。
 
-.. option:: -G
+.. include:: explain_grd_out.rst_
+..
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格文件名，其中各子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
     如果使用 :option:`-T` 选项，则需要使用 C 语言的语法指定输出格网序列的名称格式。
     见 `网格文件名模版`_ 。
     如果输出文件名中包含 %s (单位名称) 或 %c (单位字母)，GMT 将会使用每个
@@ -159,14 +157,14 @@ grdflexure
     :option:`-T` 选项。文本文件的第一列为以年为单位的时间，最后一列则为格式化的
     时间，因此，输出的文本文件的格式为 *time flexuregrid timetag* 。
 
-.. include:: explain_fft.rst_
-
 .. option:: -M
 
 **-M**\ *tm*
     使用粘弹性模型，并通过 :option:`-E` 选项设置弹性板的厚度。可追加粘弹性模型
     的 Maxwell 时间 *tm* ，单位为年，追加 **k** 选项表示 kyr ，追加
     **M** 表示 Myr。该选项不能和 :option:`-F` 选项同时使用。
+
+.. include:: explain_fft.rst_
 
 .. option:: -Q
 
@@ -192,6 +190,8 @@ grdflexure
     不追加时默认使用年。对于其中的每个时间点，该模块都输出一个网格，见
     :option:`-G` 和 `网格文件名模版`_ 。
 
+.. include:: explain_-V.rst_
+
 .. option:: -W
 
 **-W**\ *wd*\ [**k**]
@@ -206,10 +206,12 @@ grdflexure
     该值。因此，如果观测水平面位于海平面，如需观测 5km 深处的海底形变，
     则使用-Z5k，输出未变形面的 *z = -5000*。
 
-.. include:: explain_-V.rst_
+.. include:: explain_-f.rst_
+..
 
-:option:`-f`\ *flags*
-    地理坐标网格将会被转换为平地球下的米，其中使用椭球参数近似
+    地理坐标网格将会被转换为平地球下的米，使用椭球参数近似。
+
+.. include:: explain_-h.rst_
 
 .. include:: explain_help.rst_
 
