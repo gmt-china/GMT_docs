@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2022-07-18
+:date: 2026-01-01
 
 .. index:: ! grdfilter
 .. program:: grdfilter
@@ -21,7 +21,7 @@ grdfilter
 **gmt grdfilter** 
 *ingrid* 
 :option:`-D`\ *distance_flag*
-:option:`-F`\ **x**\ *width*\ [/*width2*][*modifiers*]
+:option:`-F`\ **x**\ *width*\ [/*width2*][**+c**\|\ **+h**\|\ **+l**\|\ **+q**\ *quantile*\|\ **+u**]
 :option:`-G`\ *outgrid*
 [ :option:`-I`\ *increment* ]
 [ :option:`-N`\ **i**\|\ **p**\|\ **r** ]
@@ -30,12 +30,16 @@ grdfilter
 [ :option:`-V`\ [*level*] ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_grd_in.rst_
+
+必须选项
+--------
 
 .. option:: -D
 
@@ -59,7 +63,7 @@ grdfilter
 
 .. option:: -F
 
-**-Fx**\ *width*\ [/*width2*][*modifiers*]
+**-Fx**\ *width*\ [/*width2*][**+c**\|\ **+h**\|\ **+l**\|\ **+q**\ *quantile*\|\ **+u**]
     设置滤波类型，可从卷积和非卷积滤波中选择。**x** 为滤波类型代码，后面的
     *width* 为滤波直径，此时进行各向同性滤波；追加 *width2* 以实现不同方向
     不同的滤波长度（需要 **-Dp** 和 **-D0** ）。默认情况下，执行低通滤波。
@@ -117,7 +121,7 @@ grdfilter
 .. option:: -T
 
 **-T**
-    转换网格配准方式。或者使用 **-r**\ [**g**\|\ **p**] 显式指定输出网格的
+    转换网格配准方式。或者使用 :option:`-r`\ [**g**\|\ **p**] 显式指定输出网格的
     配准方式
 
 .. include:: explain_-V.rst_
@@ -125,6 +129,8 @@ grdfilter
 .. include:: explain_-f.rst_
 
 .. include:: explain_nodereg.rst_
+
+.. include:: explain_core.rst_
 
 .. include:: explain_help.rst_
 
