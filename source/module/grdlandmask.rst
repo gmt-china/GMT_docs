@@ -25,11 +25,12 @@ grdlandmask
 [ :option:`-D`\ *resolution*\ [**+f**] ]
 [ :option:`-E`\ [*bordervalues*] ]
 [ :option:`-N`\ *maskvalues* ]
-[ :option:`-V`\ [*level*] ] [ :option:`-r`\ *reg* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-r`\ *reg* ]
 [ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+必须选项
 --------
 
 .. option:: -G
