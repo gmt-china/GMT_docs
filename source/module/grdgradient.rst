@@ -4,12 +4,14 @@
 .. index:: ! grdgradient
 .. program:: grdgradient
 
-************
 grdgradient
-************
+==============
 
 :官方文档: :doc:`gmt:grdgradient`
 :简介: 从网格文件中计算方向导数（光照强度）或梯度
+
+**grdgradient** 从网格文件中计算给定方向的方向导数(\ :option:`-A`)，或梯度的方向(\ :option:`-D`)和大小(\ :option:`-S`)。
+边界的梯度计算取决于网格的边界条件（详见 :doc:`/option/n` ）。
 
 语法
 --------
@@ -23,25 +25,20 @@ grdgradient
 [ :option:`-E`\ [**m**][**s**][**p**]\ *azim*\ /\ *elev*\ [**+a**\ *ambient*][**+d**\ *diffuse*][**+p**\ *specular*][**+s**\ *shine*] ]
 [ :option:`-N`\ [**e**][**t**][\ *amp*][**+a**\ *ambient*][**+s**\ *sigma*][**+o**\ *offset*] ]
 [ :option:`-Q`\ **c**\|\ **r**\|\ **R**\ [**+f**\ *file*] ]
-[ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
+[ :option:`-R`\ *west*/*east*/*south*/*north*\ [**+r**][**+u**\ *unit*] ]
 [ :option:`-S`\ *slopfile* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-n`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-描述
+输入数据
 -----------
 
-**grdgradient** 从网格文件中计算给定方向的方向导数(\ :option:`-A`)，或梯度的方向(\ :option:`-D`)和大小(\ :option:`-S`)。
-
-边界的梯度计算取决于网格的边界条件（详见中文文档 :doc:`/option/n` 或官方文档 :option:`-n`\ *flags* ）。
-
-必选选项
-------------------
-
 .. include:: explain_grd_in.rst_
+
+必须选项
+------------------
 
 .. include:: explain_grd_out.rst_
 
