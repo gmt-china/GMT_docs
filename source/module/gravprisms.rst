@@ -52,6 +52,7 @@ gravprisms
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-r`\ *reg* ]
@@ -175,6 +176,8 @@ gravprisms
 .. include:: explain_-d.rst_
 
 .. include:: explain_-e.rst_
+
+.. include:: explain_-f.rst_
 
 .. include:: explain_-h.rst_
 

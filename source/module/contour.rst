@@ -35,7 +35,8 @@ contour
 [ :option:`-W`\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
 [ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
 [ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -122,6 +123,7 @@ contour
     这种情况应该使用下面的 :option:`-G` 选项手动设置标注在等值线上的位置。
 
 .. include:: explain_contlabel.rst_
+..
 
     :option:`-G` 选项的用法示例可以参考 :doc:`/module/grdcontour` 模块的 :ref:`gmt-grdcontour-examples` 小节
 
@@ -190,6 +192,7 @@ contour
 .. include:: explain_-icols.rst_
 
 .. include:: explain_-l.rst_
+..
 
     通常，图例中默认选择带标注的等值线。通过将 *label* 设置为 [*annotcontlabel*][/*contlabel*] 格式，
     可以改选普通等值线或者同时选择两者。如果任一标签中包含斜杠 (/) 字符，则改用 | 作为这两个标签的分隔符。

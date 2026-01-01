@@ -38,6 +38,7 @@ batch
 [ :option:`-W`\ [*dir*] ]
 [ :option:`-Z` ]
 [ :option:`-f`\ *flags* ]
+[ :option:`-i`\ *flags* ]
 [ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
@@ -148,6 +149,8 @@ batch
 
 .. include:: explain_-f.rst_
 
+.. include:: explain_-icols.rst_
+
 .. option:: -x
 
 **-x**\ [[-]\ *n*]
@@ -187,7 +190,7 @@ batch
 --------------------
 
 如果在运行 **batch** 前主脚本所在目录有 gmt.conf 文件，
-则该文件将被所有创建和执行的脚本共享，除非脚本在启动现代模式时使用 :option:`-C` 覆盖。
+则该文件将被所有创建和执行的脚本共享，除非脚本在启动现代模式时使用 **-C** 覆盖。
 修改 GMT 默认值的推荐方式是通过 :doc:`set` 在输入脚本中调用。
 注意：每个脚本独立运行（现代模式），因此通过 *preflight* 创建 gmt.conf 文件无法被其他脚本使用。
 

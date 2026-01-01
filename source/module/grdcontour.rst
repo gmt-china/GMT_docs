@@ -39,7 +39,6 @@ grdcontour
 [ :option:`-Z`\ [**+o**\ *shift*][**+s**\ *factor*][**+p**] ]
 [ :option:`-bo`\ *binary* ]
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
-[ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-l`\ *flags* ]
@@ -203,7 +202,8 @@ grdcontour
 .. include:: explain_-h.rst_
 
 .. include:: explain_-l.rst_
-
+..
+    
     通常情况下，图例中会选择带标注的等值线。
     可以通过将 *label* 设置为 [*annotcontlabel*][/*contlabel*] 这种格式，来选择普通等值线或两者都选。
     如果其中任何一个标签包含斜杠 (/) 字符，则使用 | 作为这两个标签的分隔符。

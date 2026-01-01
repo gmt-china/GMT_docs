@@ -79,7 +79,6 @@ events
 [ :option:`-l`\ *flags* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
-[ :option:`-w`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
@@ -297,7 +296,7 @@ events
     *command* 命令部分必须以这些模块名称之一开头，
     然后提供所选模块正常定义图形所需的所有特定选项，
     不包括 :option:`-C` ， :option:`-G` ， :option:`-J` ， :option:`-N` ， :option:`-R` 和 :option:`-W` （这些选项可能用于本模块）。
-    此外，用户不能使用 :option:`-I` 或 **-t** 选项，因
+    此外，用户不能使用 **-I** 或 **-t** 选项，因
     为这些选项将作为由 **-Mi** 和 **-Mt** 引入的变体的一部分自动设置。
     例如，绘制沙滩球的自定义命令可能是 :option:`-Z`\ "meca -Sa5c+f0"，
     而要在剖面图中显示沙滩球可能需要更复杂的命令 

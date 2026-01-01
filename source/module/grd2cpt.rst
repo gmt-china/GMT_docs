@@ -156,6 +156,8 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     使用 **-T**\ *n* 会从累积正态分布中选择 *n* 个点生成 CPT 文件的 *n* 个颜色区间 [默认 11]。
 
 .. include:: explain_-V.rst_
+..
+
     使用本选项会把 CDF(Z) 的估计值写入到 stderr。
 
 .. option:: -W
@@ -170,6 +172,8 @@ grid文件的z值范围以外的数值，将分别使用3种颜色来表示，�
     强制生成连续的CPT文件（默认为离散不连续的CPT）。
 
 .. include:: explain_-bo.rst_
+..
+    
     使用 :option:`-E` 保存 CDF 时有效。
 
 .. include:: explain_-h.rst_
