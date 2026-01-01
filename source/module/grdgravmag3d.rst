@@ -19,10 +19,10 @@ grdgravmag3d
 
 **gmt grdgravmag3d** 
 *grdfile_top* [*grdfile_bot*] 
-[ :option:`-C`\ *density* ]
+:option:`-C`\ *density*
+:option:`-F`\ *xy_file*
+:option:`-G`\ *outgrid*
 [ :option:`-E`\ *thickness* ]
-[ :option:`-F`\ *xy_file* ]
-[ :option:`-G`\ *outgrid* ]
 [ :option:`-H`\ *args* ]
 [ :option:`-I`\ *increment* ]
 [ :option:`-L`\ *z_obs* ]
@@ -32,15 +32,18 @@ grdgravmag3d
 [ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ *level*\ [**b**\|\ **t**] ]
 [ :option:`-f`\ *flags* ]
-[ **-x**\ *+a|n|-n* ]
+[ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *grdfile_top* [*grdfile_bot*]
     输入地形网格文件，输出结果为重力异常。如果输入 2 个网格文件，则计算两个地形
     网格围成的体积的重力异常或者磁异常。
+
+必须选项
+--------
 
 .. option:: -C
 
@@ -53,14 +56,7 @@ grdgravmag3d
 **-F**\ *xy_file*
     计算位于 *xy_file* 文件中的点上的异常值。该选项与 :option:`-G` 选项不能同时使用
 
-.. option:: -G
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名，计算实体对该网格中点的异常值。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+.. include:: explain_grd_out.rst_
 
 可选选项
 --------
@@ -123,7 +119,6 @@ grdgravmag3d
       :option:`-Q`\ *region* 与 :option:`-R` 选项语法相同
 
 .. include:: explain_-R.rst_
-
 
 .. option:: -S
 
