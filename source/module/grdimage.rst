@@ -10,38 +10,6 @@ grdimage
 :官方文档: :doc:`gmt:grdimage`
 :简介: 绘制网格数据或图片
 
-语法
-----
-
-**gmt grdimage** 
-*grid* \| *image*
-:option:`-J`\ *parameters*
-[ :option:`-A`\ *out_img*\ [**=**\ *driver*] ]
-[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
-[ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ :option:`-D`\ [**r**] ]
-[ :option:`-E`\ [**i**\|\ *dpi*] ]
-[ :option:`-G`\ *color*\ [**+b**\|\ **f**] ]
-[ :option:`-I`\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
-[ :option:`-M` ]
-[ :option:`-N` ]
-[ :option:`-Q`\ [*color*][**+i**][**+t**][**+z**\ *value*] ]
-[ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
-[ :option:`-T`\ [**+o**\ [*pen*]][**+s**] ]
-[ :option:`-U`\ [*stamp*] ]
-[ :option:`-V`\ [*level*] ]
-[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
-[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
-[ :option:`-f`\ *flags* ]
-[ :option:`-n`\ *flags* ]
-[ :option:`-p`\ *flags* ]
-[ :option:`-t`\ *transp* ]
-[ :option:`-x`\ [[-]n] ]
-[ :doc:`--PAR=value </conf/overview>` ]
-
-描述
---------
-
 **grdimage** 读取一个二维网格文件，并通过构建一个矩形图像并根据 z 值和 CPT 文件为像素分配灰度
 （或颜色）来生成灰度阴影（或彩色）地图。可以通过提供一个强度值在 ±1 范围内的文件或指令从输入数据网格中推导强度值来添加光照。
 超出此范围的值将被裁剪。此类光照强度文件可使用 :doc:`grdgradient` 从网格创建，并可使用 :doc:`grdmath` 或 :doc:`grdhisteq` 进行修改。
@@ -60,18 +28,41 @@ grdimage
 
 :option:`-R` 选项可用于选择比网格范围更大或更小的地图区域。:option:`-A` 允许直接输出到光栅文件，而不是通过 PostScript 绘图。
 
-.. note::
+语法
+----
 
-    当前 GMT 6.5 版本 不支持 :option:`-Q` 和 :option:`-I` 同时使用，可切换到 GMT 6.4 或 GMT 开发版本，
-    详见 `PR #8643 <https://github.com/GenericMappingTools/gmt/pull/8643>`_ 。
+**gmt grdimage** 
+*grid* \| *image*
+[ :option:`-A`\ *out_img*\ [**=**\ *driver*] ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
+[ :option:`-D`\ [**r**] ]
+[ :option:`-E`\ [**i**\|\ *dpi*] ]
+[ :option:`-G`\ *color*\ [**+b**\|\ **f**] ]
+[ :option:`-I`\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-Jz|Z`\ *parameters* ]
+[ :option:`-M` ]
+[ :option:`-N` ]
+[ :option:`-Q`\ [*color*][**+i**][**+t**][**+z**\ *value*] ]
+[ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
+[ :option:`-T`\ [**+o**\ [*pen*]][**+s**] ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *grid* \| *image*
     2D 网格 *grid* 或图片 *image* 。
-
-.. include:: explain_-J.rst_
 
 可选选项
 --------
@@ -120,6 +111,10 @@ grdimage
 
 .. include:: explain_intense.rst_
 
+.. include:: explain_-J.rst_
+
+.. include:: explain_-Jz.rst_
+
 .. option:: -M
 
 **-M**
@@ -158,8 +153,6 @@ grdimage
       可使用 **+t** 表明生成真透明效果，但 PostScript无法直接支持，此时将通过 PositScript 的微小色块模拟渐变透明，文件体积激增。
       如果 Alpha 值存储的是不透明度而非透明度，可使用 **+i** 反转 Alpha 值（网格文件不能使用 **+i** ）。
 
-.. include:: explain_-R.rst_
-
 .. include:: explain_-Rz.rst_
 
 .. option:: -T
@@ -170,6 +163,8 @@ grdimage
     加上 **+o**\ [*pen*] 可绘制每个小块的轮廓并自定义画笔属性 *pen* 。加上 **+s** 跳过 z=NaN 的节点。
 
 .. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
 
 .. include:: explain_-XY.rst_
 
@@ -232,8 +227,6 @@ GMT 绘制透明的 RGBA 图像的近似方法是模拟颜色的透明效果，�
 GMT 通过图片文件的特殊字节来自动识别图像格式。对于可能包含图片或数据集的格式（例如 GeoTIFF），
 GMT 会判断其属于哪种类型，并相应地进行处理。如果用户最喜欢的图像格式未被自动识别，
 那么请告知 GMT 它的特殊字节，以便添加支持。
-
-.. include:: explain_grdresample.rst_
 
 .. include:: macos_preview_issue.rst_
 
