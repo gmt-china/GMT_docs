@@ -27,7 +27,7 @@ grdpmodeler
 [ :option:`-R`\ *region* ]
 [ :option:`-T`\ *age* ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
@@ -35,8 +35,14 @@ grdpmodeler
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
+输入数据
+------------------
 
-必选选项
+*agegrdfile*
+    输入的地理网格文件名（经度、纬度坐标），其数值为地壳年龄（单位：Myr）。
+    如果未提供网格文件，可使用 :option:`-R`、:option:`-I` 和可选的 :option:`-r` 定义计算域。
+
+必须选项
 ------------------
 
 .. include:: explain_rots.rst_
@@ -60,10 +66,6 @@ grdpmodeler
 可选选项
 ------------------
 
-*ingrid*
-    输入的地理网格文件名（经度、纬度坐标），其数值为地壳年龄（单位：Myr）。
-    如果未提供网格文件，可使用 :option:`-R`、:option:`-I` 和可选的 **-r** 定义计算域。
-
 .. option:: -F
 
 **-F**\ *polygonfile*
@@ -72,11 +74,16 @@ grdpmodeler
     [默认对整个网格进行模型计算。]
 
 .. include:: explain_grd_out.rst_
+..
+
+    输出文件为给定指定旋转参数后的模型预测网格文件。
+    **注意**：如果在 :option:`-S` 中指定了多个模型预测，则文件名 *必须* 是包含格式符 %s 的模板。
+    该格式符将被对应的标签 *az, dist, stage, vel, omega, dlon, dlat, lon, lat* 所替换。
+    不使用本选项则不创建网格文件，会将 *lon, lat, age, predictions* 记录写入标准输出。
 
 .. include:: explain_-I.rst_
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
 .. option:: -T
 
@@ -96,6 +103,8 @@ grdpmodeler
 .. include:: explain_-ocols.rst_
 
 .. include:: explain_nodereg.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
