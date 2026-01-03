@@ -10,46 +10,6 @@ greenspline
 :官方文档: :doc:`gmt:greenspline`
 :简介: 使用格林函数样条进行插值
 
-语法
---------
-
-**gmt greenspline** 
-[ *table* ]
-:option:`-G`\ *grdfile*
-[ :option:`-A`\ *gradfile*\ **+f**\ **0**\|\ **1**\|\ **2**\|\ **3**\|\ **4**\|\ **5** ]
-[ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
-[ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+v**\ *vname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
-[ :option:`-E`\ [*misfitfile*][**+r**\ *reportfile*] ]
-[ :option:`-I`\ *xinc*\ [/*yinc*\ [/*zinc*]] ]
-[ :option:`-L`\ [**t**][**r**] ]
-[ :option:`-N`\ *nodefile* ]
-[ :option:`-Q`\ [*az*\|\ *x/y/z*] ]
-[ :option:`-R`\ *xmin*/*xmax*\ [/*ymin*/*ymax*\ [/*zmin*/*zmax*]] ]
-[ :option:`-S`\ **c**\|\ **l**\|\ **p**\|\ **q**\|\ **r**\|\ **t**\ [*tension*\ [/*scale*]][**+e**\ *limit*][**+n**\ *odd*] ]
-[ :option:`-T`\ *maskgrid* ]
-[ :option:`-V`\ [*level*] ]
-[ :option:`-W`\ [**w**]]
-[ :option:`-Z`\ *mode* ]
-[ :option:`-b`\ *binary* ]
-[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
-[ :option:`-e`\ *regexp* ]
-[ :option:`-f`\ *flags* ]
-[ :option:`-g`\ *gaps* ]
-[ :option:`-h`\ *headers* ]
-[ :option:`-i`\ *flags* ]
-[ :option:`-o`\ *flags* ]
-[ :option:`-q`\ *flags* ]
-[ :option:`-r`\ *reg* ]
-[ :option:`-s`\ *flags* ]
-[ :option:`-w`\ *flags* ]
-[ :option:`-x`\ [[-]n] ]
-[ :option:`-:`\ [**i**\|\ **o**] ]
-[ :doc:`--PAR=value </conf/overview>` ]
-
-
-描述
---------
-
 **greenspline** 使用格林函数 :math:`g(\mathbf{x}; \mathbf{x}')`
 作为样条在规则[或任意]位置进行插值。适用于 1-D，2-D 或 3-D 的笛卡尔坐标或球面坐标，
 样条可以选择最小曲率样条、正则化样条或有张力的连续曲率样条。在数学上，解按以下公式组成
@@ -90,7 +50,44 @@ greenspline
 或者，用户可以选择执行奇异值分解（SVD）并消除最小特征值的贡献；
 这种方法产生一个近似解。在输出时将恢复趋势和归一化因子。
 
-必选选项
+语法
+--------
+
+**gmt greenspline** 
+[ *table* ]
+:option:`-G`\ *grdfile*
+[ :option:`-A`\ *gradfile*\ **+f**\ **0**\|\ **1**\|\ **2**\|\ **3**\|\ **4**\|\ **5** ]
+[ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
+[ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+v**\ *vname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
+[ :option:`-E`\ [*misfitfile*][**+r**\ *reportfile*] ]
+[ :option:`-I`\ *xinc*\ [/*yinc*\ [/*zinc*]] ]
+[ :option:`-L`\ [**t**][**r**] ]
+[ :option:`-N`\ *nodefile* ]
+[ :option:`-Q`\ [*az*\|\ *x/y/z*] ]
+[ :option:`-R`\ *xmin*/*xmax*\ [/*ymin*/*ymax*\ [/*zmin*/*zmax*]] ]
+[ :option:`-S`\ **c**\|\ **l**\|\ **p**\|\ **q**\|\ **r**\|\ **t**\ [*tension*\ [/*scale*]][**+e**\ *limit*][**+n**\ *odd*] ]
+[ :option:`-T`\ *maskgrid* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**w**]]
+[ :option:`-Z`\ *mode* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+输入数据
 --------
 
 .. include:: explain_intables.rst_
@@ -99,10 +96,15 @@ greenspline
     其中表数据格式为 **x**, *w* ， **x** 表示坐标位置，
     *w* 表示数据值（对应上面公式中的 :math:`w(\mathbf{x}_i)` ）。
 
+必须选项
+--------
+
+.. option:: -G
+
 **-G**\ *grdfile*
     输出文件名。
 
-    + 如果设置了 :option:`-R` ， :option:`-I` 和可能的 **-r** ，则输出等距的表数据。
+    + 如果设置了 :option:`-R` ， :option:`-I` 和可能的 :option:`-r` ，则输出等距的表数据。
       此时如果不设置 :option:`-G` 则输出到标准输出。
       **注：** 对于 2-D 网格必须设置 :option:`-G` 。
     + 如果设置了 :option:`-T` ，则必须设置 :option:`-G` ，此时输出为 2-D 网格文件。
@@ -112,7 +114,7 @@ greenspline
       也可以是一个带有 C 格式浮点数标识符的文件名模板，
       这样每一层都被写入一个 2-D 网格文件；
       如果不设置 :option:`-G` ，则将 *(x,y,z,w)* 输出到标准输出。
-    + 如果设置了 :option:`-N` ，则输出为 ASCII 格式（或二进制，见 **-bo**）
+    + 如果设置了 :option:`-N` ，则输出为 ASCII 格式（或二进制，见 :option:`-bo`）
       的表数据，此时如果不设置 :option:`-G` 则输出到标准输出。
 
 可选选项
@@ -210,8 +212,8 @@ greenspline
 **-N**\ *nodefile*
     包含所需输出位置坐标（ **x** 值）的 ASCII 文件，其第一列（或多列）为坐标值。
     生成的 *w* 值会附加到每个记录中，并写入 :option:`-G` 指定的文件中（如果未指定则写入标准输出）；
-    见 **-bo** 选项以实现二进制输出。
-    使用 :option:`-N` 可以不必再指定 :option:`-R` 、 :option:`-I` 和 **-r** 选项。
+    见 :option:`-bo` 选项以实现二进制输出。
+    使用 :option:`-N` 可以不必再指定 :option:`-R` 、 :option:`-I` 和 :option:`-r` 选项。
 
 .. option:: -Q
 
@@ -256,7 +258,7 @@ greenspline
 
 **-T**\ *maskgrid*
     （仅适用于 2-D 插值）仅在 *maskgrid* 中那些不等于 NaN 的节点处插值。
-    使用 :option:`-T` 可以不必再指定 :option:`-R` 、 :option:`-I` 和 **-r** 选项。
+    使用 :option:`-T` 可以不必再指定 :option:`-R` 、 :option:`-I` 和 :option:`-r` 选项。
 
 .. include:: explain_-V.rst_
 
@@ -302,6 +304,8 @@ greenspline
 
 .. include:: explain_-f.rst_
 
+.. include:: explain_-g.rst_
+
 .. include:: explain_-h.rst_
 
 .. include:: explain_-icols.rst_
@@ -310,11 +314,15 @@ greenspline
 
 .. include:: explain_-q.rst_
 
+.. include:: explain_-s.rst_
+
 .. include:: explain_nodereg.rst_
 
 .. include:: explain_-w.rst_
 
 .. include:: explain_core.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
