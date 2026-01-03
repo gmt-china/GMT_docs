@@ -30,7 +30,8 @@ grdrotater
 [ :option:`-S` ]
 [ :option:`-T`\ *ages* ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-g`\ *gaps* ]
@@ -40,11 +41,13 @@ grdrotater
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-必选选项
-------------------
+输入数据
+--------
 
 .. include:: explain_grd_in.rst_
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
@@ -78,8 +81,7 @@ grdrotater
 **-N**
     不输出旋转后的多边形轮廓线 [默认将其写入标准输出，或通过 :option:`-D` 写入文件]。
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
 .. option:: -S
 
@@ -90,12 +92,13 @@ grdrotater
 
 **-T**\ *ages*
     设置所需的重建时间：
-    - 对于单个时间，直接追加数值；
-    - 对于等间隔的时间范围，格式为 :option:`-T`\ *start*\ /\ *stop*\ /\ *inc*；
-    若希望 *inc* 表示“点数”，请追加 **+n**。
-    - 若为不等间距时间序列，请通过文件第一列提供，例如 :option:`-T`\ *agefile*。
-    若未指定 :option:`-T` 且 :option:`-E` 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
 
+    - 对于单个时间，直接追加数值。
+    - 对于等间隔的时间范围，格式为 :option:`-T`\ *start*\ /\ *stop*\ /\ *inc*。
+      若希望 *inc* 表示“点数”，请追加 **+n**。
+    - 若为不等间距时间序列，请通过文件第一列提供，例如 :option:`-T`\ *agefile*。
+
+    若未指定 :option:`-T` 且 :option:`-E` 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
 
 .. include:: explain_-V.rst_
 
@@ -106,6 +109,8 @@ grdrotater
 .. include:: explain_-d.rst_
 
 .. include:: explain_-f.rst_
+
+.. include:: explain_-g.rst_
 
 .. include:: explain_-h.rst_
 
@@ -151,7 +156,7 @@ grdrotater
     gmt grdmath 1 rot_gridA.nc ISNAN SUB 1 rot_gridB.nc ISNAN SUB 2 EQ = overlap.nc
 
 网格 *overlap.nc* 在重叠区域的值为 1，其他区域为 0。
-可以将其用作掩码，或通过 :doc:`grdcontour` :option:`-D` 提取轮廓多边形。
+可以将其用作掩码，或通过 :doc:`grdcontour` **-D** 提取轮廓多边形。
 
 备注
 --------

@@ -20,7 +20,6 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 区域，在小区域中，磁化和地磁场的变化非常小，可以认为是恒定的。对于每个小
 区域，计算其滤波参数并对单独的点使用一阶泰勒级数来重构。
 
-
 语法
 ----
 
@@ -41,12 +40,13 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 [ :option:`-n`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
-*ingrid*\ [=\ *ID*\|\ ?\ *varname*][**+b**\ *band*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*][**+s**\ *scale*]
-    输入磁异常网格名。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_in.rst_
+
+必须选项
+--------
 
 .. option:: -G
 
@@ -63,7 +63,9 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 
 .. option:: -E
 
-**-Ei**\ *inc_grd* **-Ed**\ *dec_grd*
+**-Ei**\ *inc_grd*
+
+**-Ed**\ *dec_grd*
     从 *inc_grd* 和 *dec_grd* 中获取磁化倾角和偏角，默认使用 IGRF 计算。
     **注** ：这两个网格不需要与输入的磁异常一致，范围和分辨率都可以不同。
 
@@ -105,6 +107,8 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 .. include:: explain_-V.rst_
 
 .. include:: explain_-n.rst_
+
+.. include:: explain_grdresample2.rst_
 
 示例
 ----

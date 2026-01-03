@@ -57,16 +57,19 @@ grdseamount
 [ :option:`-r`\ *reg* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项（如果不给定 :option:`-L` 选项）
---------------------------------------------------------------------------------
+输入数据
+--------
 
 .. include:: explain_intables.rst_
 
-.. option:: -G
+必须选项
+----------------------------
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**][:*driver*\ [*dataType*][**+c**\ *options*]]
-    输出网格文件名，其中各子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+如果使用 :option:`-L` 选项则无需下列选项：
+
+.. include:: explain_grd_out.rst_
+..
+
     如果使用 :option:`-T` 选项，则需要使用 C 语言的语法指定输出格网序列的名称格式。
     如果输出文件名中包含 %s (单位名称) 或 %c (单位字母)，GMT 将会使用每个
     网格对应的时间生成文件名，否则会使用年作为时间生成文件名，见
@@ -172,7 +175,7 @@ grdseamount
     *list* 文件中。不指定 *list* 时，输出到标准输出。第一列为时间，单位
     为年，最后一列为格式化的时间。使用 :option:`-W` 可同时输出密度网格名。
     输出的序列将可以作为 :doc:`grdflexure` 模块的输入。
-    使用 :option:`-M` 参数后的输出网格文件名为 *time reliefgrid *\ [ *densitygrid* ] *timetag*
+    使用 :option:`-M` 参数后的输出网格文件名为 *time reliefgrid* [ *densitygrid* ] *timetag*
 
 .. option:: -N
 
@@ -255,14 +258,14 @@ grdseamount
 
 上图为自适应的近似滑坡几何图，其中使用了 **+d** ，**+h** 以及 **+a** 选项。
 滑坡的体积（粉红色）在滑动的过程中将逐渐沉积在浅蓝色部分，沉积物从高度
-:math:`h_c` 开始，线性变化到:math:`r_d` 时变为 0。其中与半径相关的参数
-都是从海山的高度以及形状中计算得到的。**注** ： :math:`h_2 > h_1` ；
+:math:`h_c` 开始，线性变化到 :math:`r_d` 时变为 0。其中与半径相关的参数
+都是从海山的高度以及形状中计算得到的。**注** ： :math:`h_2 > h_1` ，
 :math:`r_1 > r_2`
 
 .. option:: -T
 
 **-T**\ *t0*\ [/*t1*/*dt*]\ [**+l**]
-    设置海山演化序列的起始时间，终止时间和，时间间隔，分别为 *t0*, *t1*
+    设置海山演化序列的起始时间，终止时间和时间间隔，分别为 *t0*, *t1*
     和 *dt* [默认只执行一次计算，与时间无关]。对于单个时间，只给定起始时间。
     默认时间单位是年，追加 *k* 表示千年，追加 *M* 表示百万年。
     使用 **+l** 选项以及将 *dt* 替换为 *n* 可以设置对数时间轴。或者，还
@@ -291,8 +294,10 @@ grdseamount
 
 .. include:: explain_-e.rst_
 
-:option:`-f`\ *flags*
-    地理坐标网格的坐标将会使用平地球近似转换为 km
+.. include:: explain_-f.rst_
+..
+
+    地理坐标网格的坐标将会使用平地球近似转换为 km。
 
 .. include:: explain_-h.rst_
 
