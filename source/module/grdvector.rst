@@ -1,5 +1,5 @@
 :author: 朱邓达, 田冬冬
-:date: 2025-06-11
+:date: 2026-01-03
 
 .. index:: ! grdvector
 .. program:: grdvector
@@ -9,6 +9,10 @@ grdvector
 
 :官方文档: :doc:`gmt:grdvector`
 :简介: 根据两个网格文件绘制矢量场
+
+该命令会读取两个 2D 网格文件并绘制矢量场。两个网格文件分别代表 :math:`(x,y)` 平面内矢量场的
+X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。两个网格文件，也可以分别
+是极坐标下 :math:`(r,\theta)` 的分量 （见 :option:`-A` 和 :option:`-Z` ）。
 
 语法
 --------
@@ -21,7 +25,8 @@ grdvector
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
 [ :option:`-G`\ *fill* ]
 [ :option:`-I`\ [**x**]\ *dx*\ [/*dy*] ]
-[ :option:`-N` ] [ :option:`-Q`\ *parameters* ]
+[ :option:`-N` ]
+[ :option:`-Q`\ *parameters* ]
 [ :option:`-R`\ *region* ]
 [ :option:`-S`\ [**i**\|\ **l**]\ *scale*\ [**+c**\ [[*slon*/]\ *slat*]][**+s**\ *refsize*] ]
 [ :option:`-T` ]
@@ -37,15 +42,8 @@ grdvector
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-描述
+输入数据
 -----------
-
-该命令会读取两个 2D 网格文件并绘制矢量场。两个网格文件分别代表 :math:`(x,y)` 平面内矢量场的
-X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。两个网格文件，也可以分别
-是极坐标下 :math:`(r,\theta)` 的分量 （见 :option:`-A` 和 :option:`-Z` ）。
-
-必选选项
---------
 
 *grid1*
     矢量场的 X 分量网格文件
@@ -57,8 +55,10 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
 对于 :math:`(r,\theta)` ，两个文件分别为大小 :math:`r` 和 角度 :math:`\theta` ，
 其中角度可以是方向角（ :option:`-A` ， 从东向逆时针测量）或方位角（ :option:`-Z` ， 从北向顺时针测量）。
 
+必须选项
+--------
 
-
+.. include:: explain_-J.rst_
 
 可选选项
 --------
@@ -67,11 +67,11 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
 
 **-A**
     输入数据为极坐标表示。即网格文件包含的是 :math:`(r,\theta)` 分量而不是 :math:`(x,y)` 分量。
+    如果 :math:`\theta` 表示方位角，请查阅 :option:`-Z`。
 
 .. include:: explain_-B.rst_
 
 .. include:: use_cpt_grd.rst_
-
 
 .. option:: -G
 
@@ -85,8 +85,6 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
     原始网格间隔的整数倍， *dx* 和 *dy* 后加上 **m** 表示分，加上 **s** 表示秒。
     也可以使用 **-Ix**\ *multx*\ [/*multy*] ，此时 *multx* 和 *multy* 表示倍数。
     默认绘制每个节点上的矢量。
-
-.. include:: explain_-J.rst_
 
 .. option:: -N
 
@@ -123,14 +121,14 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
     更详细的解释见 `矢量缩放与单位的影响`_ 。
     
     使用 :option:`-V` 可以报告所有绘制矢量的最小值、最大值和平均值，以及所有绘制矢量的绘制长度。
-    如果使用 :doc:`/option/l` 自动生成图例，则需要以下一到两个子选项：
+    如果使用 :option:`-l` 自动生成图例，则需要以下一到两个子选项：
 
     - **+c**\ [[*slon*/]\ *slat*] - 控制地图上地理矢量的参考长度。笛卡尔矢量不可用该选项。
       参考长度选择在纬度 *slat* 位置，也可指定经度 *slon* 作倾斜投影（默认为中央经线）。
       如果使用 **+c** 但无参数，则选择地图中点的矢量长度作为参考长度。
 
     - **+s**\ *refsize* - 使用实际数据作为矢量的参考大小。例如，选择板块运动速率 25 mm/yr
-      作为参考，使用 **+s25** ，对应 :doc:`/option/l` 指定 **-l**\ "Velocity (25 mm/yr)"。
+      作为参考，使用 **+s25** ，对应 :option:`-l` 指定 :option:`-l`\ "Velocity (25 mm/yr)"。
       如果不指定 *refsize* ，则默认为上述的 *scale* 参数。
 
 .. option:: -T
@@ -189,7 +187,8 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
 .. option:: -Z
 
 **-Z**
-    输入的 :math:`\theta` 分量数据表示方位角而不是方向信息，自动使用 :option:`-A`。
+    输入的 :math:`\theta` 分量数据表示方位角（正北开始顺时针旋转的角度）而不是方向角（正东开始逆时针旋转的角度），
+    使用本选项会自动使用 :option:`-A`。
 
 .. include:: explain_-f.rst_
 
@@ -258,5 +257,6 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
 
 相关模块
 ----------
+
 :doc:`grdcontour`,
 :doc:`plot`
