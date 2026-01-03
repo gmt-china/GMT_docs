@@ -7,7 +7,7 @@
 grdspotter
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/grdspotter`  
+:官方文档: :doc:`gmt:supplements/spotter/grdspotter`
 :简介: 从重力或地形网格创建 CVA 网格
 
 **grdspotter** 读取一个包含残余海底地形或重力数据的网格文件，
@@ -31,18 +31,20 @@ grdspotter
 [ :option:`-N`\ *upper_age* ]
 [ :option:`-Q`\ *IDinfo* ]
 [ :option:`-S` ]
-[ :option:`-T`\ **t**\|\ **u**\ *fixed_val* ] [
+[ :option:`-T`\ **t**\|\ **u**\ *fixed_val* ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-W`\ *n\_try* ]]
+[ :option:`-W`\ *n\_try* ]
 [ :option:`-Z`\ *z_min*\ [/*z_max*\ [/*z_inc*]] ]
 [ :option:`-r`\ *reg* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-必选选项
-------------------
+输入数据
+--------
 
 .. include:: explain_grd_in.rst_
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
@@ -50,8 +52,7 @@ grdspotter
 
 .. include:: explain_-I.rst_
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
 可选选项
 ------------------
@@ -80,7 +81,7 @@ grdspotter
 .. option:: -M
 
 **-M**
-    当使用 :option:`-D` 和/或 :option:`-P` 时，不尝试将所有流线保留在内存中。
+    根据需要进行流线计算，而不是存储在内存中。如果 :option:`-R` 范围太大，可能需要使用此选项。
     如果内存不足，可以使用此选项在计算时动态生成流线。
     由于我们无法重用为 CVA 步骤计算的流线，因此会变慢。
     不能与 :option:`-W` 或 :option:`-Z` 的多切片模式一起使用。

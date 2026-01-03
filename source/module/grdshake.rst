@@ -1,5 +1,5 @@
 :author: 陈箫翰
-:date: 2025-01-16
+:date: 2026-01-03
 
 .. index:: ! grdshake
 .. program:: grdshake
@@ -21,18 +21,26 @@ grdshake
 [ :option:`-C`\ *a,v,i* ]
 [ :option:`-F`\ *mecatype* ]
 [ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 
-必选选项
+输入数据
+--------
+
+.. include:: explain_grd_in.rst_
+..
+
+    Vs30 速度模型网格文件。
+
+必须选项
 ---------
 
-*ingrid*
-    Vs30 速度模型网格文件
+.. include:: explain_grd_out.rst_
+..
 
-.. option:: -G
-
-**-G**\ *outgrid*
-    输出文件名。如果通过 |\-C| 设置了多个分量，
-    则 <outgrid> 必须包含 %%s 以格式化分量代码。
+    如果通过 :option:`-C` 设置了多个分量，
+    则 *outgrid* 必须包含 %%s 以格式化分量代码。
     
 .. option:: -L
 
@@ -44,7 +52,6 @@ grdshake
 
 **-M**\ *mag*
     地震事件的震级
-
 
 可选选项
 ---------
@@ -65,6 +72,14 @@ grdshake
        - 4 逆冲
 
 .. include:: explain_-R.rst_
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_colon.rst_
+
+.. include:: explain_help.rst_
 
 示例
 -----

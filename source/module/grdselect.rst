@@ -1,5 +1,5 @@
-:author: 周茂
-:date: 2025-12-30
+:author: 周茂, 陈箫翰
+:date: 2026-01-03
 
 .. index:: ! grdselect
 .. program:: grdselect
@@ -7,15 +7,12 @@
 grdselect
 =========
 
-:最近更新时间: 2022-12-11
-
-----
-
 :官方文档: :doc:`gmt:grdselect`
 :简介: 使用一定的空间标准对 2—D 网格、图像或 3-D 网格进行范围筛选或者确定并集
 
-**grdselect** 读取一个或者多个图像或者网格，可对数据数据xxx
-
+**grdselect** 读取多个图像、网格（或数据立方体），并跳过那些未通过指定测试的文件。
+随后，它要么报告通过测试的数据源名称，要么确定这些数据源区域的交集或并集，以及该区域内的数据值范围。
+该区域可能会被取整并向外填充，然后通过其坐标、边界多边形或 -Rw/e/s/n 字符串进行报告。
 
 语法
 ----
@@ -35,21 +32,21 @@ grdselect
 [ :option:`-R`\ *region* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ [*wmin*\ /*wmax*] ]
-[ :option:`-Z`\ [*zmin*\ /*zmax*]] ]
+[ :option:`-Z`\ [*zmin*\ /*zmax*] ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 --------
 
 .. include:: explain_grd_in.rst_
-
-.. note::
+..
     
-    不可将 2—D 和 3—D 文件融合
+    *source1 source2 ...* 为需要读取的数据文件的文件名。
+    **注意：** 不能同时读取 2—D 和 3—D 文件。
 
 可选选项
 --------
@@ -136,10 +133,11 @@ grdselect
 
     *n* 默认为 0。该选项不能用于图片
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Rz.rst_
 ..
     
-    列出与 :option:`-R` 选项设置的范围重合的网格
+    使用 :option:`-R` 选项设置的范围进行 :option:`-A` 计算，读取范围限制在该范围内。
+    对于三维数据立方体，还必须附加 *z* 轴方向的范围限制。
 
 .. option:: -W
 
