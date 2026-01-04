@@ -1,5 +1,5 @@
 :author: 田冬冬, 周茂, 朱邓达
-:date: 2025-10-31
+:date: 2026-01-04
 
 .. index:: ! image
 .. program:: image
@@ -10,15 +10,45 @@ image
 :官方文档: :doc:`gmt:image`
 :简介: 将图片或EPS文件放在图上
 
-**image** 模块可以读取EPS文件或任意一个光栅图片文件，并将其画在图上。
-
-该模块的几个主要用途：
+**image** 模块可以读取EPS文件或任意一个光栅图片文件，并将其画在图上。该模块的几个主要用途：
 
 - 将多张图合并到一张图上
 - 将自己单位的 logo 放在 GMT 生成的图上
 - 将一般图片放在图上
 
-必须选项
+图像可以进行任意缩放。对于 1-bit 位图图像，可以执行以下操作：
+
+(1) **反转** ：即黑像素（开启）变白（关闭），反之亦然
+(2) **着色** ：指定不同的前景色和背景色
+(3) **设置透明** ：即仅绘制前景色或背景色中的一种
+
+此外，用户可以选择使用电视标准的 YIQ 变换将彩色位图图像转换为灰度图。对于位图文件，用户还可以指定将哪种特定颜色设置为透明。
+用户还可以选择复制（平铺）图像。当配合适当的裁剪路径使用时，这允许实现更大尺寸的自定义填充模式
+（大多数 GMT 模块提供的 **-Gp** 功能仅限于小于 146x146 像素的位图）。
+
+语法
+---------
+
+**gmt image**
+*imagefile*
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-D`\ *refpoint* ]
+[ :option:`-F`\ *box* ]
+[ :option:`-G`\ [*color*][**+b**\|\ **f**\|\ **t**] ]
+[ :option:`-I` ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-Jz|Z`\ *parameters* ]
+[ :option:`-M` ]
+[ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+输入数据
 --------
 
 *imagefile*
@@ -31,6 +61,8 @@ image
 可选选项
 --------
 
+.. include:: explain_-B.rst_
+
 .. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+r**\ *dpi*\ **+w**\ [**-**]\ *width*\ [/*height*]\ [**+j**\ *justify*]\ [**+n**\ *nx*\ [/*ny*] ]\ [**+o**\ *dx*\ [/*dy*]]
@@ -38,7 +70,7 @@ image
 
     简单介绍各子选项的含义，详情见 :doc:`/basis/embellishment`
 
-    - **g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ 指定地图上的参考点
+    - [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ 指定地图上的参考点
 
       .. include:: explain_refpoint.rst_
 
@@ -78,18 +110,20 @@ image
 
 .. include:: explain_-J.rst_
 ..
+
     仅与 **-p** 一起使用。
+
+.. include:: explain_-Jz.rst_
 
 .. option:: -M
 
 **-M**
     使用YIQ变换将彩图转换成灰度图
 
-.. include:: explain_-R.rst_
-..
-    仅与 **-p** 选项一起使用。
-
 .. include:: explain_-Rz.rst_
+..
+
+    仅与 **-p** 选项一起使用。
 
 .. include:: explain_-U.rst_
 
@@ -106,7 +140,7 @@ image
 注意事项
 --------
 
-**-G** 和 :option:`-I` 选项仅适用于光栅图片文件，对于EPS文件无效。
+:option:`-G` 和 :option:`-I` 选项仅适用于光栅图片文件，对于EPS文件无效。
 
 示例
 ----
@@ -134,8 +168,8 @@ image
 相关模块
 --------
 
-:doc:`logo`
+:doc:`logo`,
 :doc:`legend`,
-:doc:`colorbar`
+:doc:`colorbar`,
 :doc:`plot`,
 :doc:`psconvert`
