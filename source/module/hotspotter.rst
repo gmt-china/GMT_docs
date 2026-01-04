@@ -10,12 +10,11 @@ hotspotter
 :官方文档: :doc:`gmt:supplements/spotter/hotspotter`  
 :简介: 从海山位置创建 CVA 网格
 
-
 **hotspotter** 从 *table* [或标准输入] 读取 
 (longitude, latitude, amplitude, radius, age) 记录，
 并使用指定的阶段旋转或总重建旋转计算流线。这些流线与海山的形状进行卷积
 （使用振幅和半径 = 6σ 的高斯形状），并叠加以生成累积火山振幅网格（CVA）。
-关于如何读取 (latitude, longitude, ...) 文件，请参见选项 **-:** [*Wessel*, 1999; 2008]。
+关于如何读取 (latitude, longitude, ...) 文件，请参见选项 :option:`-:` [*Wessel*, 1999; 2008]。
 
 语法
 --------
@@ -26,8 +25,10 @@ hotspotter
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
+[ :option:`-D`\ *factor* ]
 [ :option:`-N`\ *upper_age* ]
-[ :option:`-S` ] [ :option:`-T` ]
+[ :option:`-S` ]
+[ :option:`-T` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-bi`\ *binary* ]
 [ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
@@ -41,11 +42,13 @@ hotspotter
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-必选选项
-------------------
+输入数据
+-----------
 
 .. include:: explain_intables.rst_
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
@@ -53,8 +56,7 @@ hotspotter
 
 .. include:: explain_-I.rst_
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
 可选选项
 ------------------
@@ -87,6 +89,8 @@ hotspotter
 .. include:: explain_-di.rst_
 
 .. include:: explain_-e.rst_
+
+.. include:: explain_-g.rst_
 
 .. include:: explain_-h.rst_
 
