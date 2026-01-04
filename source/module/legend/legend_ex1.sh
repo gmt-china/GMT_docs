@@ -3,7 +3,7 @@
 gmt begin legend
 gmt makecpt -Cpanoply -T-8/8/1 -H > tt.cpt
 gmt set FONT_ANNOT_PRIMARY 12p
-gmt legend -R0/10/0/10 -JM6i -Dx0.5i/0.5i+w5i+jBL+l1.2 -C0.1i/0.1i -F+p+gazure1+r -B5f1 << EOF
+gmt legend -R0/10/0/8 -JM6i -Dx0.5i/0.5i+w5i+jBL+l1.2 -C0.1i/0.1i -F+p+gazure1+r -B5f1 << EOF
 # Legend test for gmt pslegend
 # G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line,
 # H is ps=legend.ps

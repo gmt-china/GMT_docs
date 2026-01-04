@@ -1,5 +1,5 @@
-:author: 田冬冬, 周茂, 朱邓达
-:date: 2025-10-31
+:author: 田冬冬, 周茂, 朱邓达, 陈箫翰
+:date: 2026-01-04
 
 .. index:: ! kml2gmt
 .. program:: kml2gmt
@@ -18,6 +18,12 @@ kml2gmt
    KMZ 文件本质上是一个 ZIP 压缩包，其中包含了一个 KML 文件以及若干个辅助文件。
    可以将 KMZ 文件解压得到 KML 文件，再使用该模块进行转换。
 
+本模块只进行基础操作，提取坐标以及每个特征可能存在的名称和描述标签。
+其主要用途是捕获在 Google Earth 中修改过的坐标，然后将修改后的数据重新插入到原始 GMT 数据文件中。
+若要进行更完整的格式转换，请考虑使用 GDAL 提供的命令 **ogr2ogr** ::
+    
+    ogr2ogr -f "GMT" somefile.gmt somefile.kml
+
 语法
 ----
 
@@ -29,10 +35,11 @@ kml2gmt
 [ :option:`-Z` ]
 [ :option:`-bo`\ *binary* ]
 [ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-h`\ *headers* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *kmlfiles*
@@ -69,9 +76,18 @@ kml2gmt
 
 .. include:: explain_-do.rst_
 
+.. include:: explain_-h.rst_
+
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+备注
+--------
+
+如果多边形同时拥有外围轮廓（perimeters）和内孔（holes），建议将输出通过 :doc:`spatial` **-Sh** 处理。
+该命令将确定哪些多边形是外围轮廓，哪些是内孔，并对它们进行组织，使任何内孔都紧随其外围轮廓之后，且其段头将包含 **-Ph** 标志并具有相反的手性。
+此输出可由 :doc:`plot` 绘制，内孔将得到正确识别。
 
 示例
 ----
@@ -80,14 +96,10 @@ kml2gmt
 
     gmt kml2gmt google.kml -V > google.txt
 
-从一个KML文件中分别提取点和多边形到不同的文件::
+从一个 KML 文件中分别提取点和多边形到不同的文件::
 
     gmt kml2gmt google.kml -Fp -V > polygons.txt
     gmt kml2gmt google.kml -Fs -V > points.txt
-
-也可直接用GDAL提供的命令 **ogr2ogr** 实现转换::
-
-    ogr2ogr -f "GMT" somefile.gmt somefile.kml
 
 相关模块
 --------
