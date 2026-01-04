@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2025-12-30
+:date: 2026-01-04
 
 .. index:: ! img2google
 .. program:: img2google
@@ -32,18 +32,21 @@ img2google
 [ :option:`-Z`\ [+] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
-
-.. include:: explain_-R.rst_
-
-可选选项
+输入数据
 --------
 
 *imgfile*
     Img 格式的测深/地形文件，比如由 Sandwell 和 Smith 创建的海底地形文件。
     如果当前文件夹中不存在该文件并且用户已经设置了环境变量 **$GMT_DATADIR**，
     :doc:`img2grd` 将从 **$GMT_DATADIR** 中寻找 *imgfile*。
+
+必须选项
+--------
+
+.. include:: explain_-R.rst_
+
+可选选项
+--------
 
 .. option:: -A
 
@@ -72,7 +75,7 @@ img2google
 .. option:: -L
 
 **-L**\ *LODmin/LODmax*
-    以像素为单位设置细节 (LOD，可见度）的级别。
+    以像素为单位设置细节（LOD，可见度）的级别。
     以屏幕像素为单位的测量值，可以用来确定给定区域的最小可见范围，以设置细节的级别。
     当投影到屏幕上的时候，谷歌地球会计算给定区域的大小。然后计算区域面积的平方根
     （如果区域是正方形，视角在区域的正上方，并且区域没有倾斜，这个测量值就等于投影区域的宽度）。
