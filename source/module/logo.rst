@@ -25,7 +25,8 @@ logo
 **gmt logo** 
 [ :option:`-D`\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
 [ :option:`-F`\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
-[ :option:`-J`\ *parameters* ] [ :option:`-J`\ **z**\|\ **Z**\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-Jz|Z`\ *parameters* ]
 [ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
 [ :option:`-S`\ [**l**\|\ **n**\|\ **u**] ]
 [ :option:`-U`\ [*stamp*] ]
@@ -34,11 +35,6 @@ logo
 [ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
-
-必须选项
---------
-
-无
 
 可选选项
 --------
@@ -68,7 +64,10 @@ logo
 
     .. include:: explain_-F_box.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-J.rst_
+
+.. include:: explain_-Jz.rst_
+
 .. include:: explain_-Rz.rst_
 
 .. option:: -S

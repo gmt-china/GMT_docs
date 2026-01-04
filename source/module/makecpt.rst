@@ -1,5 +1,5 @@
 :author: 周茂, 田冬冬, 陈箫翰, `Liming Li <https://github.com/cugliming>`_
-:date: 2023-11-07
+:date: 2026-01-04
 
 .. index:: ! makecpt
 .. program:: makecpt
@@ -8,9 +8,9 @@ makecpt
 =======
 
 :官方文档: :doc:`gmt:makecpt`
-:简介: 制作 GMT CPT 文件
+:简介: 制作 CPT 文件
 
-在经典模式中，CPT 文件的内容会输出到屏幕标准输出中。
+**makecpt** 是一个帮助制作 CPT 文件的模块。在经典模式中，CPT 文件的内容会输出到屏幕标准输出中。
 而在现代模式中，该命令不会生成显式的 CPT 文件，而是隐式地将其自动设置为后续命令的默认 CPT 文件。
 因此无法使用经典的 ``gmt makecpt xxx > cpt`` 方式生成 CPT 文件。如果需要在现代模式中生成 CPT 文件，
 则可以使用 :option:`-H` 选项： ``gmt makecpt xxx -H > cpt`` 。
@@ -38,11 +38,12 @@ makecpt
 ----
 
 **gmt makecpt**
+[ *table* ]
 [ :option:`-A`\ *transparency*\ [**+a**] ]
 [ :option:`-C`\ *cpt* ]
 [ :option:`-D`\ [**i**\|\ **o**] ]
 [ :option:`-E`\ [*nlevels*] ]
-[ :option:`-F`\ [**R**\|\ **r**\|\ **h**\|\ **c**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
+[ :option:`-F`\ [**R**\|\ **c**\|\ **g**\|\ **h**\|\ **r**\|\ **x**][**+c**\ [*label*]][**+k**\ *keys*] ]
 [ :option:`-G`\ *zlo*\ /\ *zhi* ]
 [ :option:`-H` ]
 [ :option:`-I`\ [**c**][**z**] ]
@@ -60,10 +61,13 @@ makecpt
 [ :option:`-i`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+-----------
 
-无。
+.. include:: explain_intables.rst_
+..
+
+    **注意：** 输入数据只能和 :option:`-E` 或 :option:`-S` 选项一起配合使用。不使用这些选项时，不需要指定输入数据。
 
 可选选项
 --------
@@ -75,25 +79,24 @@ makecpt
     加上 **+a** 则将该透明度同时应用于前景色、背景色和 NaN 颜色
     [默认不透明, 即 *transparency* 为 0]。
 
-.. option:: -C
-
 .. include:: create_cpt.rst_
 
 .. option:: -D
 
 **-D**\ [**i**\|\ **o**]
-    将背景色和前景色分别设置为 CPT 文件中最小值和最大值对应的颜色, **i** 和 **o** 分别
-    表示使用输出 CPT 或者输入 CPT [默认为 :option:`-D` 或 **-Do**, 即输出 CPT 的背景色和前景色]。
+    不使用参数的 **-D** 等效于 **-Do** ，作用是将背景色和前景色分别设置为输出生成的 CPT 文件中最小值和最大值对应的颜色。
+    **-Di** 则为使用 :option:`-C` 指定的主 CPT 文件中最小值和最大值对应的颜色。
     不设置本项时，GMT 默认使用主 CPT 文件规定的背景色与前景色，或是采用配置参数
-    :term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 与 :term:`COLOR_NAN` 的设置。
+    :term:`COLOR_BACKGROUND`\、:term:`COLOR_FOREGROUND` 的设置。
 
 .. option:: -E
 
 **-E**\ [*nlevels*]
-    从命令行或者标准输入中读取表数据文件，使用最后一列决定数据的范围，*nlevels* 表示
-    生成的 CPT 文件会被重采样为 *nlevels* 个等间距的切片，上述两者即等同于 :option:`-T` 选项
-    作用。使用 **-i** 选项可选择其他列决定数据范围，二进制文件则需同时使用 **-bi** 。
-    如果不给定 *nlevels* 参数，则默认其等于主 CPT 中切片数。
+    读取输入数据 *table*，最后一列为数据的 z 值范围。本选项会生成输出一个适用于该数据文件的 CPT 文件，
+    数据的 z 值范围会被划分为 *nlevels* 个等间距颜色区间。如果不给定 *nlevels* 参数，则默认其等于主 CPT 中的层级数。
+    本选项根据数据文件自动确定最大最小值，可以替代需要手动设置参数的 :option:`-T` 选项。
+
+    使用 :option:`-i` 选项可选择其他列决定数据 z 值范围，二进制文件则需同时使用 :option:`-bi` 。
 
 .. option:: -F
 
@@ -136,19 +139,19 @@ makecpt
 .. option:: -I
 
 **-I**\ [**c**][**z**]
-    - **-Ic** 选项翻转颜色的顺序，包括前景色和背景色以及 :term:`COLOR_BACKGROUND` 和
-      :term:`COLOR_FOREGROUND` 参数设置的前景色和背景色[默认]。详细用法和说明见
-      :doc:`/cpt/makecpt` 。
+    - **-Ic** [默认]：反转颜色的顺序，同时也会交换前景色和背景色以及 :term:`COLOR_FOREGROUND` 和
+      :term:`COLOR_BACKGROUND` 参数设置的前景色和背景色。详细用法和说明见 :doc:`/cpt/makecpt` 。
 
-    - **-Iz** 选项翻转 CPT 的 *z* 值（不包括前景色、背景色）。该操作发生于 :option:`-G` 和 :option:`-T`
+    - **-Iz** ：反转 CPT 的 *z* 值正负号（不包括前景色、背景色）。该操作发生于 :option:`-G` 和 :option:`-T`
       选项之前，因此使用上述两选项时，需先考虑 **-Iz** 操作后的 *z* 值的实际范围。
 
 .. option:: -M
 
 **-M**
-    使用 gmt.conf 文件或者命令行中设置的 :term:`COLOR_BACKGROUND` ，
-    :term:`COLOR_FOREGROUND` 和 :term:`COLOR_NAN` 覆盖 CPT 中的前景色、背景色和 NaN 值
-    的颜色。如果和 :option:`-D` 同时使用，则前景色和背景色均被 :option:`-D` 覆盖。
+    使用配置参数 :term:`COLOR_FOREGROUND` 、 :term:`COLOR_BACKGROUND` 
+    和 :term:`COLOR_NAN` 覆盖主 CPT 中的前景色、背景色和 NaN 值的颜色。
+    如果和 :option:`-D` 同时使用，则 :option:`-D` 中的前景色和背景色设置优先，
+    本选项只会让 :term:`COLOR_NAN` 有效。
 
 .. option:: -N
 
@@ -158,47 +161,49 @@ makecpt
 .. option:: -Q
 
 **-Q**
-    :option:`-T` 选项输入为对数值 log10(z) 时，通过对数值分配颜色，但是输出结果仍为原值 *z*。
+    对于 :option:`-T` 选项给出的 z 值线性一维数组，首先计算它的对数值 :math:`\log_{10}(z)`。
+    每个颜色区间根据 z 值的对数值分配颜色，但颜色区间仍用 z 值表示。
 
 .. option:: -S
 
 **-S**\ *mode*
-    从命令行或者标准输入中读取表数据文件，使用 **-i** 选项可调整输入列，从该文件中
-    确定适合 :option:`-T` 选项的范围。下述选项给出确定范围的类型：
+    读取输入数据 *table*，最后一列为数据的 z 值，自动确定适合 :option:`-T` 选项的范围。
+    可以选择的模式有：
 
-    - **-Sr** 使用 min/max 作为范围
-    - :option:`-S`\ *inc*\ [**+d**] 使用 min/max 作为范围，但四舍五入到最近的 *inc*, 以
-      *inc* 为间隔，追加 **+d** 生成离散 CPT
-    - **-Sa**\ *scl* 以平均值为对称中心，*scl* * *sigma* 为单边宽度生成范围
-    - **-Sm**\ *scl* 以中值为对称中心，*scl* * *sigma* 为单边宽度生成范围
-    - **-Sp**\ *scl* 以众数（通过 Least Median of squares 获取）为对称中心，
-      *scl* * *LMS_scale* 为单边宽度生成范围
-    - **-Sq**\ *low/high* 设置低分位数和高分位数为范围（百分比格式）
+    - **-Sr** ：使用数据的最小/最大值作为范围
+    - **-S**\ *inc*\ [**+d**] ：将数据的最小/最大值进行取整，让新范围可以是 *inc* 的整数倍。附加 **+d** 生成离散 CPT。
+    - **-Sa**\ *scl* ：以平均值为对称中心，±\ *scl* * *sigma* 的对称范围
+    - **-Sm**\ *scl* ：以中位数为对称中心，±\ *scl* * *L1_scale* 的对称范围
+    - **-Sp**\ *scl* ：以众数为对称中心（即 LMS；最小二乘中位数），±\ *scl* * *LMS_scale* 的对称范围
+    - **-Sq**\ *low/high* ：从低分位数到高分位数（百分比格式）的范围
+
+    使用 :option:`-i` 选项可选择其他列决定数据 z 值范围，二进制文件则需同时使用 :option:`-bi` 。
 
 .. option:: -T
 
-**-T**\ [*min*/*max*/*inc*\ [**+b**\|\ **i**\|\ **l**\|\ **n**]\|\ *file*\|\ *list*]
-    定义要生成的 CPT 文件的 z 值范围及 z 值间隔。该选项可有如下几种形式：
+**-T**\ *min*/*max*/*inc*\ [**+b**\|\ **i**\|\ **l**\|\ **n**]
 
-    - 若使用了 :option:`-C` 选项且 *inc* 未指定，则 z 值间隔的数目与输入的主 CPT 文件相同
-    - 若 *inc* 后有 **+n** ，则将 *inc* 解释为 z 值间隔的数目而不是 z 值间隔
-    - 使用一个文件给定数值列表
-    - 使用一个数值列表
+**-T**\ *file*\|\ *list*
+    定义要生成的 CPT 文件的 z 值范围 *min/max* 及颜色区间间隔 *inc*。
+    如果不使用本选项，则原样使用主 CPT 中的现有范围和间隔。
+    附加 **+n** 则将 *inc* 解释为颜色区间的数目而不是间隔。其他附加选项的含义详见 `生成一维数组`_ 。
 
-    详见 `生成一维数组`_ 。
+    也可以读取一个文件 *file*，文件第一列代表的一维数组定义了每个颜色区间的边界。
+    或者直接给出一个以逗号分隔的一维数组 *list*。
+    若要设置带有字符串键的分类 CPT， *list* 则为以逗号分隔的字符串列表。
+
+.. include:: explain_-V.rst_
 
 .. option:: -W
 
 **-W**\ [**w**]
-    不对输入主 CPT 内插，而是从 CPT 的开始选取输出颜色，直到所有区间的颜色都被分配完。
-    这在与分类 CPT 同时使用时非常有用。使用 **-Ww** 可生成一个无限重复范围的循环 CPT。
+    不插值主 CPT ，而是从 CPT 的开头开始选取输出颜色，直到所有区间的颜色都被分配完。
+    这在与分类 CPT 同时使用时非常有用。使用 **-Ww** 可生成一个无限重复范围的循环（周期性） CPT。
 
 .. option:: -Z
 
 **-Z**
     生成连续 CPT 文件。默认生成不连续 CPT 文件，即每个 Z 值切片内为同一颜色。
-
-.. include:: explain_-V.rst_
 
 .. include:: explain_-bi.rst_
 
@@ -209,6 +214,8 @@ makecpt
 .. include:: explain_-icols.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_transparency.rst_
 
 .. include:: explain_array.rst_
 
