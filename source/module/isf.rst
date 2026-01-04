@@ -10,24 +10,22 @@ isf
 :官方文档: :doc:`gmt:supplements/seis/gmtisf`
 :简介: 将 ISF 格式的地震目录数据转换为 GMT 表数据
 
+将 `ISC <https://www.isc.ac.uk/iscbulletin>`_ 发布的
+`ISF <https://www.isc.ac.uk/standards/isf/>`_
+格式的地震目录文件 *file.isf* 转为 *[lon lat depth mag ...]* 格式的表数据，输出到标准输出。
+
 语法
 ----
 
-**gmt gmtisf** *ISFfile*
+**gmt isf**
+*ISFfile*
 [ :option:`-R`\ *region* ]
 [ :option:`-D`\ *date_start*\ [/*date_end*] ]
 [ :option:`-F`\ [**a**] ]
 [ :option:`-N` ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-描述
---------
-
-将 `ISC <https://www.isc.ac.uk/iscbulletin>`_ 发布的
-`ISF <https://www.isc.ac.uk/standards/isf/>`_
-格式的地震目录文件 *file.isf* 转为 *[lon lat depth mag ...]* 格式的表数据，输出到标准输出。
-
-必选选项
+输入数据
 --------
 
 *ISFfile*
@@ -36,8 +34,7 @@ isf
 可选选项
 --------
 
-.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
 .. option:: -D
 
