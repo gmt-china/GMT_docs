@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>segyz &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=90daa3b4" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="solar" href="../solar/" />
+    <link rel="prev" title="segy2grd" href="../segy2grd/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">segyz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bug">已知 Bug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">segyz</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/segyz.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-10-06
+    </div>
+  
+  
+  <section id="segyz">
+<span id="index-0"></span><h1>segyz<a class="headerlink" href="#segyz" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/supplements/segy/segyz.html" title="（在 GMT v6.6）"><span>segyz</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>segyz</strong> 用于读取原生(IEEE)格式的 SEGY 文件，并绘制地震数据。</p>
+</dd>
+</dl>
+<p>使用 <em>imagemask</em> 操作可以将地震数据绘制成单色（用户可指定颜色或灰度）的 1 位深度位图，背景透明。
+位图分辨率采用当前 GMT 默认设置。地震道可以根据道头信息绘制在其实际位置上(这样文件中道的顺序就不再重要)。
+GMT 使用标准几何处理，因此理论上可以应用于任意地图投影，但使用地理投影可能会得到不理想的结果。
+需要注意的是，二维绘图器的某些选项在这里不可用。</p>
+<p>需要注意，在绘制地震数据之前，处理操作顺序为：<strong>deviation*[clip]([bias]+[normalize](sample value))</strong>。
+其中，<strong>deviation</strong> 决定了在绘图坐标系中，经过 <strong>[normalized][biased][clipped]</strong> 处理后的样本值为 1 时，
+与道位置的偏移距离。可以理解为对采样值进行进一步缩放。</p>
+<p>SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节的二进制卷头、以及每道 240 字节的头部</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt segyz</strong>
+<em>SEGYfile</em>
+<code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code><em>parameters</em>
+<code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code><strong>z</strong>|<strong>Z</strong><em>parameters</em>
+<code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]
+<a class="reference internal" href="#cmdoption-segyz-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>deviation</em> <a class="reference internal" href="#cmdoption-segyz-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>[<em>color</em>] <a class="reference internal" href="#cmdoption-segyz-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>
+[ <a class="reference internal" href="#cmdoption-segyz-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>clip</em> ]
+[ <a class="reference internal" href="#cmdoption-segyz-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> ] [ <a class="reference internal" href="#cmdoption-segyz-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a><em>nsamp</em> ]
+[ <a class="reference internal" href="#cmdoption-segyz-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a><em>ntrace</em> ]
+[ <a class="reference internal" href="#cmdoption-segyz-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-segyz-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><strong>b</strong>|<strong>i</strong>|<strong>u</strong>|<strong>x</strong>|<strong>y</strong><em>value</em> ]
+[ <a class="reference internal" href="#cmdoption-segyz-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><em>header_x</em>/<em>header_y</em> ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-U</span></code>[<em>stamp</em>] ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code>[<em>level</em>] ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-Y</span></code>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
+[ <a class="reference internal" href="#cmdoption-segyz-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-p</span></code><em>flags</em> ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-t</span></code><em>transp</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>必须选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>SEGYfile</em></dt><dd><p>地震 SEGY 数据文件</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>deviation</em></dt><dd><p>当曲线被缩放后，幅度为 1.0 的波形在图中相当于 X 轴方向上偏移
+多少个单位长度。这个偏移量可以用一个数来表示（X 和 Y 方向都用
+这个值），也可以用两个数 devX/devY 来分别指定 X 方向和 Y 方向的偏移。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong>[<em>color</em>]</dt><dd><p>填充地震道（可变面积，默认填充正值）。指定用于填充
+<strong>imagemask</strong> 的颜色 <em>color</em> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong></dt><dd><p>绘制波形道。</p>
+</dd>
+</dl>
+<p>注意： <em>必须</em> 在 <a class="reference internal" href="#cmdoption-segyz-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 和 <a class="reference internal" href="#cmdoption-segyz-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 之中指定至少一个选项。</p>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-A</strong></dt><dd><p>切换默认的字节顺序状态（默认假设数据为大端字节序）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong><em>clip</em></dt><dd><p>设置进行数据裁剪的采样值（裁剪同时应用于正值和负值）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong></dt><dd><p>填充负偏移而非正偏移</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-L</strong><em>nsamp</em></dt><dd><p>覆盖卷头中每道的样本数量（程序会尝试根据每道头部确定样本数量，以支持变长道）</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-M</strong></dt><dd><p>覆盖卷头中指定的道数。程序会相对优雅地检测文件结束，但此参数限制了程序尝试读取的道数。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong></dt><dd><p>通过全道长度上的均方根振幅(rms amplitude)归一化地震道</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Q</strong><strong>b</strong>|<strong>i</strong>|<strong>u</strong>|<strong>x</strong>|<strong>y</strong><em>value</em></dt><dd><dl class="simple">
+<dt>可以通过指令修改五种不同的设置（可重复使用）：</dt><dd><p><strong>-Qb</strong><em>bias</em> 为缩放后的地震道添加偏移 (-<strong>Qb</strong>-0.1 从值中减去0.1).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>​       <strong>-Qi</strong><em>dpi</em> 设置图像的每英寸像素点分辨率 [默认值300].</p>
+<p>​       <strong>-Qu</strong><em>redvel</em> 应用减速速度（负值移除已有的减速）。</p>
+<p>​       <strong>-Qx</strong><em>mult</em> 将道位置乘以 <em>mult</em> 倍。</p>
+<p>​       <strong>-Qy</strong><em>dy</em> 覆盖 SEGY 卷头中的采样间隔。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong><em>header_x</em>/<em>header_y</em></dt><dd><p>从道头中读取道位置：headers 可以是 <strong>c</strong> 表示 CDP， <strong>o</strong>
+表示偏移距，<strong>b</strong><em>num</em> 表示从道头中第 <em>num</em> 个字节开始读
+取一个长整型数（第一个字节对应 num=0），或者是一个固定的数
+值。 第一个参数用于 x，第二个用于 y。默认情况下，X 和 Y 由道号给出。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-segyz-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-segyz-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong></dt><dd><p>不绘制 rms amplitude 为0的道。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>要绘制 SEGY 文件 <strong>wa1.segy</strong>，使用归一化的道，在真实的偏移距位置绘制，
+裁剪值为 ±3，同时绘制变密度波形和黑色的正半周变面积填充，使用以下命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>​gmt<span class="w"> </span>segyz<span class="w"> </span>wa1.segy<span class="w"> </span>-JX5i/-5i<span class="w"> </span>-D1<span class="w"> </span>-Jz0.05i<span class="w"> </span>-E180/5<span class="w"> </span>-R0/100/0/10/0/10<span class="w"> </span>-C3<span class="w"> </span>-N<span class="w"> </span>-So<span class="w"> </span>-W<span class="w"> </span>-Fblack<span class="w"> </span>-pdf<span class="w"> </span>segy
+</pre></div>
+</div>
+</section>
+<section id="bug">
+<h2>已知 Bug<a class="headerlink" href="#bug" title="Link to this heading"></a></h2>
+<p>可变面积绘图涉及对各种四边形区域进行填充，而这些区域形状往往非常复杂。
+我知道其中一些较为特殊或退化的情况尚未被正确处理，甚至完全未被处理。
+当视角变得更加倾斜，尤其是观察高度增加时，这类问题出现的概率也会升高。不过，波形线绘图不受此问题影响。</p>
+</section>
+<section id="id5">
+<h2>相关模块<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../segy/"><span class="doc">segy</span></a>,
+<a class="reference internal" href="../segy2grd/"><span class="doc">segy2grd</span></a></p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../segy2grd/" class="btn btn-neutral float-left" title="segy2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../solar/" class="btn btn-neutral float-right" title="solar" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 01 月 04 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
