@@ -127,7 +127,6 @@ grdmath
 **Returns** 中的 A B C ... 等字符表示输入参数。
 
 .. list-table:: 运算符列表
-   :widths: 15 10 55 20
    :header-rows: 1
 
    * - 操作符 (Operator)
