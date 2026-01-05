@@ -163,7 +163,9 @@ math
 所有的三角函数运算符默认输入为弧度，若运算符最后一个字母为 ``D`` 表示使用角度计算。
 
 .. list-table:: 运算符列表
+   :widths: 15 10 55 20
    :header-rows: 1
+   :class: fixed-width-table
 
    * - 运算符 (Operator)
      - 参数 (args)
