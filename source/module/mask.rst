@@ -1,5 +1,5 @@
 :author: 田冬冬, 周茂
-:date: 2022-05-05
+:date: 2026-01-05
 
 .. index:: ! mask
 .. program:: mask
@@ -10,16 +10,15 @@ mask
 :官方文档: :doc:`gmt:mask`
 :简介: 将没有数据的区域裁剪或者覆盖
 
-**mask** 读取 (x,y,z) 形式的数据并判断哪些网格中哪些节点是可靠的。只有包含一个或者
-多个数据的节点被认为是可靠的。另外，可以指定影响半径，在数据点半径内的所有节点都是
-可靠的。同时还可对上述结果取反，即寻找不可靠的节点。在得到可靠/不可靠的节点后，该
-模块将使用 :option:`-T` 选项覆盖这些节点，或者使用轮廓创建多边形以剪除不感兴趣的区域。当
-使用裁剪后，直到第二次该模块调用 :option:`-C` 选项才可以关闭。
+**mask** 读取 (x,y,z) 形式的数据并判断哪些网格中哪些节点是可靠的。只有包含一个或者多个数据的节点被认为是可靠的。
+另外，可以指定影响半径，在数据点半径内的所有节点都是可靠的。同时还可对上述结果取反，即寻找不可靠的节点。
+在得到可靠/不可靠的节点后，该模块将使用 :option:`-T` 选项覆盖这些节点，或者创建多边形剪除不感兴趣的区域。
+裁剪一旦启动，将一直保持有效，直到第二次调用该模块并使用 :option:`-C` 选项才可以关闭。
 
 语法
 ----
 
-**gmt mask** 
+**gmt mask**
 [ *table* ]
 :option:`-I`\ *increment*
 :option:`-J`\ *parameters*
@@ -29,7 +28,6 @@ mask
 [ :option:`-D`\ *dumpfile* ]
 [ :option:`-F`\ [**l**\|\ **r**] ]
 [ :option:`-G`\ *fill* ]
-[ :option:`-Jz`\ \|\ **Z**\ *parameters* ]
 [ :option:`-L`\ *nodegrid*\ [**+i**\|\ **o**] ]
 [ :option:`-N` ]
 [ :option:`-Q`\ *cut* ]
@@ -52,10 +50,13 @@ mask
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-I.rst_
 
@@ -71,7 +72,8 @@ mask
 .. option:: -C
 
 **-C**
-    终结裁剪；使用该选项后不需要输入文件
+    结束裁剪，使用本选项不需要输入文件。在经典模式中，使用本选项同时会隐式使用 **-O**。
+    如果自裁剪开始以来移动过位置，还需要同时设置 :option:`-X` 和 :option:`-Y` 选项。
 
 .. option:: -D
 
@@ -95,8 +97,8 @@ mask
 .. option:: -L
 
 **-L**\ *nodegrid*\ [**+i**\|\ **o**]
-    将计算过程中包含 1 和 0 的网格储存到 *nodegrid* ，1 和 0 分别为选定和不被选定的标记。
-    **+o** 选项将无数据的节点转换为 NaN，**+i** 选项将有数据的节点转转为 NaN
+    将计算过程中标记为 1 和 0 的网格储存到 *nodegrid* ，1 和 0 分别为选定和不被选定的标记。
+    **+o** 选项将无数据的节点转换为 NaN，**+i** 选项将有数据的节点转换为 NaN。
 
 .. option:: -N
 
@@ -111,18 +113,20 @@ mask
 .. option:: -S
 
 **-S**\ *search\_radius*
-    设置影响半径。网格节点在数据的影响半径内，就被认为是可靠的，默认半径为 0，即
-    只有数据落入的网格是可靠的，可在半径后追加单位
+    设置影响半径。网格节点在数据的影响半径内，就被认为是可靠的。
+    默认半径为 0，即只有数据落入的网格是可靠的，可在半径后附加单位。
 
 .. option:: -T
 
 **-T**
-    绘制数据而不是多边形轮廓，使用 :option:`-G` 选项可以用来设置其中的填充。不能和 :option:`-D` 选项
-    同时使用
+    绘制色块而不是多边形轮廓，使用 :option:`-G` 选项设置色块的填充颜色或图案。
+    不能和 :option:`-D` 选项同时使用
 
-.. include:: explain_-XY.rst_
+.. include:: explain_-U.rst_
 
 .. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
 
 .. include:: explain_-bi.rst_
 
@@ -175,5 +179,7 @@ mask
 相关模块
 --------
 
-:doc:`grdmask`, :doc:`surface`,
-:doc:`basemap`, :doc:`clip`
+:doc:`grdmask`,
+:doc:`surface`,
+:doc:`basemap`,
+:doc:`clip`
