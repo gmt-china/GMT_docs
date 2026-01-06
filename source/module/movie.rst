@@ -10,6 +10,21 @@ movie
 :官方文档: :doc:`gmt:movie`
 :简介: 制作动画
 
+**movie** 模块能够使用单个绘图脚本生成 GMT 动画，该脚本会重复应用于所有帧，
+同时通过特定帧变量进行一些变化。该模块简化（并隐藏）了通常设置完整动画任务所需的大部分步骤。
+相反，用户可以专注于构建主帧绘图，而让帧的并行执行以及图片到动画的组合在后台进行。
+单个帧会从 *PostScript* 绘图转换为无损、不透明的 *PNG* 图片，
+并可选择组合成动画（这最后一步需要外部工具，这些工具必须存在于用户的路径中；
+请参阅下面的 `技术细节`_ ）。用户可以根据需要添加片头、淡入淡出效果、标签和进度指示器。
+
+.. only:: html
+
+    :download:`Source Code <https://dengda98.github.io/zh/posts/tech/gmt_movie/movie_ex01.sh>`
+
+    .. figure:: https://dengda98.github.io/zh/posts/tech/gmt_movie/anim01.gif
+        :width: 500 px
+        :align: center
+
 语法
 ----
 
@@ -39,25 +54,7 @@ movie
 [ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-描述
---------
-
-**movie** 模块能够使用单个绘图脚本生成 GMT 动画，该脚本会重复应用于所有帧，
-同时通过特定帧变量进行一些变化。该模块简化（并隐藏）了通常设置完整动画任务所需的大部分步骤。
-相反，用户可以专注于构建主帧绘图，而让帧的并行执行以及图片到动画的组合在后台进行。
-单个帧会从 *PostScript* 绘图转换为无损、不透明的 *PNG* 图片，
-并可选择组合成动画（这最后一步需要外部工具，这些工具必须存在于用户的路径中；
-请参阅下面的 `技术细节`_ ）。用户可以根据需要添加片头、淡入淡出效果、标签和进度指示器。
-
-.. only:: html
-
-    :download:`Source Code <https://dengda98.github.io/zh/posts/tech/gmt_movie/movie_ex01.sh>`
-
-    .. figure:: https://dengda98.github.io/zh/posts/tech/gmt_movie/anim01.gif
-        :width: 500 px
-        :align: center
-
-必选选项
+必须选项
 --------
 
 *mainscript*
@@ -312,7 +309,7 @@ movie
 
 .. option:: -S
 
-.. _-Sb:
+.. option:: -Sb
 
 **-Sb**\ *background*
     指定一个 GMT 现代模式脚本 *background* （使用与 *mainscript* 相同的脚本语言编写），
@@ -320,17 +317,17 @@ movie
     
     #. 它可以生成一些文件（例如 *timefile* ），这些文件是 *mainscript* 制作动画时所需的；
     #. 它可以生成一个静态背景图，该图应作为所有帧的背景。
-       此时脚本必须确保其使用与 *mainscript* 相同的绘图原点（即 :option:`-X` 和 :option:`-Y`），
+       此时脚本必须确保其使用与 *mainscript* 相同的绘图原点（即 **-X** 和 **-Y**），
        以便图层能够正确堆叠（除非用户确实希望有不同的偏移量）。
        
     另外，*background* 可以是与画布尺寸完全匹配的 *PostScript* 或 *EPS* 图。
 
-.. _-Sf:
+.. option:: -Sf
 
 **-Sf**\ *foreground*
     指定一个 GMT 现代模式脚本 *foreground* （使用与 *mainscript* 相同的脚本语言编写），
     用来制作静态前景图，该前景图会覆盖在所有帧上。
-    确保其使用与 *mainscript* 相同的绘图原点（即 :option:`-X` 和 :option:`-Y`），以便图层能够正确堆叠。
+    确保其使用与 *mainscript* 相同的绘图原点（即 **-X** 和 **-Y**），以便图层能够正确堆叠。
     另外，*foreground* 可以是与画布尺寸完全匹配的 *PostScript* 或 *EPS* 图。
 
 .. include:: explain_-V.rst_
@@ -438,14 +435,14 @@ movie
    :align: center
    :show-code: false
    
-   **MOVIE_WIDTH** 和 **MOVIE_HEIGHT** 代表了画布尺寸，用户可使用 :option:`-X` 和 :option:`-Y` 来设置绘图原点 [72p, 72p] 并使用投影参数 :option:`-J` 来指示选择用于绘图的区域（图中绿色区域）。
+   **MOVIE_WIDTH** 和 **MOVIE_HEIGHT** 代表了画布尺寸，用户可使用 **-X** 和 **-Y** 来设置绘图原点 [72p, 72p] 并使用投影参数 **-J** 来指示选择用于绘图的区域（图中绿色区域）。
 
 如 :option:`-C` 所述，除非用户指定了自定义布局，否则用户获得的画布尺寸要么是 24 x 13.5 厘米
 （16:9），要么是 24 x 18 厘米（4:3）。如果用户的 :term:`PROJ_LENGTH_UNIT` 设置为英寸，
 那么画布尺寸（9.6 x 5.4 英寸或 9.6 x 7.2 英寸）仅比相应的国际单位制尺寸略大（1.6%）；
 这不会对动画尺寸产生影响，但允许用户使用与所选 *dpu* 相配合的合适尺寸。
 用户应使用给定的画布尺寸来绘制图层，而 **movie** 会做适当转换将画布转换为图像像素尺寸。
-用户有责任使用 :option:`-X` 和 :option:`-Y` 来留出合适的边距以及在画布上对各绘图元素进行任何定位。
+用户有责任使用 **-X** 和 **-Y** 来留出合适的边距以及在画布上对各绘图元素进行任何定位。
 为了减少处理时间，建议将动画的任何静态部分视为静态背景
 （由 *background* 脚本一次性生成；见 :option:`-Sb`）和/或静态前景（由 *foreground* 一次性生成；见 :option:`-Sf`）；然后 **movie** 会按帧组装这些层。
 此外，任何在帧循环中使用的静态数据文件的计算都可以由 *background* 脚本完成。
