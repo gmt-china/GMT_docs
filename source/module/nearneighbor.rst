@@ -1,5 +1,5 @@
 :author: 田冬冬, 周茂, 朱邓达
-:date: 2025-07-16
+:date: 2026-01-06
 
 .. index:: ! nearneighbor
 .. program:: nearneighbor
@@ -35,7 +35,7 @@ nearneighbor
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
-:option:`-S`\ *search_radius*
+:option:`-S`\ *search_radius*\ [*unit*]
 [ :option:`-E`\ *empty* ]
 [ :option:`-N`\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n** ]
 [ :option:`-V`\ [*level*] ]
@@ -54,20 +54,16 @@ nearneighbor
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
     输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 :option:`-W` 选项）
 
-.. option:: -G
+必须选项
+--------
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -75,8 +71,8 @@ nearneighbor
 
 .. option:: -S
 
-**-S**\ *search_radius*
-    设置 *search_radius* ，即上图中的 R，可在后面追加单位
+**-S**\ *search_radius*\ [*unit*]
+    设置搜索半径 *search_radius* ，即上图中的 R，可在后面追加单位
 
 可选选项
 --------
@@ -118,6 +114,8 @@ nearneighbor
 .. include:: explain_-h.rst_
 
 .. include:: explain_-icols.rst_
+
+.. include:: explain_-n.rst_
 
 .. include:: explain_-qi.rst_
 
