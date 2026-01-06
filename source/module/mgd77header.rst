@@ -17,14 +17,14 @@ mgd77header
 语法
 ----
 
-**gmt mgd77header** 
+**gmt mgd77header**
 *GEODAS-id.a77*
 [ :option:`-H`\ *headertable* ]
 [ :option:`-M`\ **f**\ [*item*]\|\ **r**\|\ **t** ]
 [ :option:`-V`\ [*level*] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_

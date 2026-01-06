@@ -21,7 +21,7 @@ mgd77info
 语法
 ----
 
-**gmt mgd77info** 
+**gmt mgd77info**
 *GEODAS-ids*
 [ :option:`-C`\ [**m**\|\ **e**] ]
 [ :option:`-E`\ [**m**\|\ **e**] ]
@@ -31,7 +31,7 @@ mgd77info
 [ :option:`-V`\ [*level*] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
