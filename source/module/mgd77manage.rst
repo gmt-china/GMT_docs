@@ -59,7 +59,7 @@ NetCDF 格式（.nc）。使用下面的命令可以实现批量转换 ::
 
 cruises.lis 文件中包含了所有需要转换的文件名。新生成的 nc 文件也可以放在
 一个或者多个单独的文件夹中，将其路径列在 mgd77_paths.txt 文件中。建议将
-\*.nc 文件夹的路径放在 \*.mgd77 路径之前。使用 :option:`-I` 选项可以选择特定
+\*.nc 文件夹的路径放在 \*.mgd77 路径之前。使用 **-I** 选项可以选择特定
 后缀的文件。
 
 **4. 添加新列**
@@ -73,7 +73,7 @@ cruises.lis 文件中包含了所有需要转换的文件名。新生成的 nc �
 在讨论改正 MGD77 数据的误差前，这里首先分析各种观测误差:
 
 #. 头部信息中某些字段不符合 MGD77 规范或缺少该字段时，将会导致错误。
-   :doc:`mgd77convert` 在使用较高级别的 :option:`-V` 选项会提示这些错误。
+   :doc:`mgd77convert` 在使用较高级别的 **-V** 选项会提示这些错误。
    这些错误通常不会影响数据。
 
 #. 尽管遵循 MGD77 规范，但当特定的数据列编码不正确时，会导致系统误差。
@@ -133,7 +133,7 @@ mgd77manage
 **gmt mgd77manage** 
 *GEODAS-ids*
 [ :option:`-A`\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]\ ]
-[ :option:`-D`\ *abbrev1*,\ *abbrev2*,...) ]
+[ :option:`-D`\ *abbrev1*,\ *abbrev2*,... ]
 [ :option:`-E`\ *empty* ]
 [ :option:`-F` ]
 [ :option:`-I`\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment* ]
@@ -146,7 +146,7 @@ mgd77manage
 [ :option:`-n`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
@@ -186,7 +186,7 @@ mgd77manage
 
     - **d** 指定一个包含两列数据的文件名，第一列为沿轨距离，第二列为数值。如果
       不指定文件，则从标准输入中读取。MGD77+ 文件中有对应的距离则将被新值取代，
-      在其他距离，设置为 NaN。 使用 :option:`-N` 设置距离单位，通过 **-j** 选择距离
+      在其他距离，设置为 NaN。 使用 :option:`-N` 设置距离单位，通过 :option:`-j` 选择距离
       计算方式。
 
     - **D** 与 **d** 功能类似，但在没有给定距离的点，内插得到其更新值
@@ -231,7 +231,7 @@ mgd77manage
 
 .. option:: -D
 
-**-D**\ *abbrev1*,\ *abbrev2*,...)
+**-D**\ *abbrev1*,\ *abbrev2*,...
     给定一个逗号分隔的行缩写列表，从 MGD77+ 文件中删除这些数据。如果要替换数据
     则不应该使用该选项，而是使用 **-A...+f** 。由于不能从 NetCDF 文件中删除变量，
     所以必须创建一个新的文件，其中不包含被剔除的列。一旦文件被创建，则临时删除
@@ -342,7 +342,7 @@ IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
 :doc:`mgd77list`,
-:doc:`mgd77magref`
+:doc:`mgd77magref`,
 :doc:`mgd77info`,
 :doc:`mgd77track`,
 :doc:`mgd77sniffer`,

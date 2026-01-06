@@ -37,10 +37,13 @@ mgd77track
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
+
+必须选项
+--------
 
 .. include:: explain_-J.rst_
 
@@ -149,7 +152,7 @@ MGD77 (Marine Geophysical Data Exchange Format) 格式见
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
 :doc:`mgd77list`,
-:doc:`mgd77magref`
+:doc:`mgd77magref`，
 :doc:`mgd77manage`,
 :doc:`mgd77path`,
 :doc:`mgd77sniffer`
