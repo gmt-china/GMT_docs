@@ -46,10 +46,13 @@ originater
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
@@ -180,14 +183,14 @@ GMT 内置 EarthByte 旋转模型 `Global_EarthByte_230-0Ma_GK07_AREPS.rot`。
 相关模块
 --------
 
-:doc:`grdrotater`,  
-:doc:`grdspotter`,  
-:doc:`project`,  
-:doc:`mapproject`,  
-:doc:`backtracker`,  
-:doc:`pmodeler`,  
-:doc:`grdpmodeler`,  
-:doc:`grdrotater`,  
+:doc:`grdrotater`,
+:doc:`grdspotter`,
+:doc:`project`,
+:doc:`mapproject`,
+:doc:`backtracker`,
+:doc:`pmodeler`,
+:doc:`grdpmodeler`,
+:doc:`grdrotater`,
 :doc:`hotspotter`
 
 参考文献
