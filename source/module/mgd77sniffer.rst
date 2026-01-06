@@ -42,7 +42,7 @@ mgd77sniffer
 [ :option:`-n`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
@@ -403,7 +403,7 @@ MDG77 格式见
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
 :doc:`mgd77list`,
-:doc:`mgd77magref`
+:doc:`mgd77magref`，
 :doc:`mgd77info`,
 :doc:`mgd77track`,
 :doc:`mgd77manage`,

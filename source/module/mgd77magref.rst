@@ -25,14 +25,15 @@ mgd77magref
 [ :option:`-G` ]
 [ :option:`-S`\ **c**\|\ **l**\ *low/high* ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-f`\ *flags* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-可选选项
+输入数据
 --------
 
 *inputfile*
@@ -52,6 +53,9 @@ mgd77magref
     - *F10.7* 索引文件 http://umbra.nascom.nasa.gov/sdb/yohkoh/ys_dbase/indices_flux_raw/Penticton_Absolute/monthly/MONTHPLT.ABS
       上述网址已经停止更新，最新的数据可以从下面网址下载
       ftp://ftp.ngdc.noaa.gov/STP/space-weather/solar-data/solar-features/solar-radio/noontime-flux/penticton/penticton_absolute/listings/listing_drao_noontime-flux-absolute_monthly.txt
+
+可选选项
+--------
 
 .. option:: -A
 
@@ -167,6 +171,8 @@ mgd77magref
 .. include:: explain_-bi.rst_
 
 .. include:: explain_-bo.rst_
+
+.. include:: explain_-f.rst_
 
 .. include:: explain_-h.rst_
 

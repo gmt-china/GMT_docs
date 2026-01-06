@@ -15,8 +15,8 @@ mgd77convert
 语法
 ----
 
-**gmt mgd77convert** 
-*GEODAS-ids* 
+**gmt mgd77convert**
+*GEODAS-ids*
 :option:`-F`\ **a**\|\ **c**\|\ **m**\|\ **t**
 :option:`-T`\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
 [ :option:`-C` ]
@@ -25,10 +25,13 @@ mgd77convert
 [ :option:`-V`\ [*level*] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
+
+必须选项
+--------
 
 .. option:: -F
 
