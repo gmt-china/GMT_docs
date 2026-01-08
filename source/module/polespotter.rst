@@ -79,8 +79,7 @@ polespotter
 **-N**
     归一化网格，使最大值等于 1 [默认不归一化]。
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
 .. _-S:
 

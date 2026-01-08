@@ -36,8 +36,8 @@ isf
 可选选项
 --------
 
-.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
-.. include:: explain_-Rgeo.rst_
+.. |Add_-R| replace:: |Add_-R_auto_table|
+.. include:: explain_-R.rst_
 
 .. _-D:
 

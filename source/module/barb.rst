@@ -49,8 +49,8 @@ barb
 
 .. include:: explain_-J.rst_
 
-.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
-.. include:: explain_-Rgeo.rst_
+.. |Add_-R| replace:: |Add_-R_auto_table|
+.. include:: explain_-R.rst_
 
 .. include:: explain_-Rz.rst_
 
