@@ -19,14 +19,14 @@ pmodeler
 语法
 --------
 
-**gmt pmodeler** 
+**gmt pmodeler**
 *table*
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-S`\ *flags*
 [ :option:`-F`\ *polygonfile* ]
 [ :option:`-T`\ *age* ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -39,13 +39,15 @@ pmodeler
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-
-必选选项
+输入数据
 ------------------
 
 *table*  
     包含地理坐标 (*lon, lat*)，以及可选的地壳年龄（Myr）的一个或多个表格文件名。  
     如果未指定文件，则从标准输入读取数据。
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
@@ -53,15 +55,16 @@ pmodeler
 
 **-S**\ *flags*  
     指定要计算的模型预测类型，可附加一个或多个标识符：  
-    - **a**：板块运动方位角（azimuth）  
-    - **d**：当前位置与洋中脊生成点的球面距离（单位：km）  
-    - **s**：板块运动模型阶段 ID（1 表示最年轻阶段）  
-    - **v**：板块运动速率（mm/yr）  
-    - **w**：板块旋转速率（度/Myr）  
-    - **x**：相对于生成点的经度变化量  
-    - **y**：相对于生成点的纬度变化量  
-    - **X**：地壳生成时的经度  
-    - **Y**：地壳生成时的纬度  
+
+    - **a** ：板块运动方位角（azimuth）  
+    - **d** ：当前位置与洋中脊生成点的球面距离（单位：km）  
+    - **s** ：板块运动模型阶段 ID（1 表示最年轻阶段）  
+    - **v** ：板块运动速率（mm/yr）  
+    - **w** ：板块旋转速率（度/Myr）  
+    - **x** ：相对于生成点的经度变化量  
+    - **y** ：相对于生成点的纬度变化量  
+    - **X** ：地壳生成时的经度  
+    - **Y** ：地壳生成时的纬度  
 
     如果未指定任何参数，则默认计算全部 [**adsvwxyXY**]。
 
@@ -103,6 +106,8 @@ pmodeler
 .. include:: explain_-q.rst_
 
 .. include:: explain_-s.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
