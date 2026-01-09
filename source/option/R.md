@@ -36,7 +36,7 @@ date: 2026-01-08
 
    指定全球范围。**-Rg** 表示 0/360/-90/90，**-Rd** 表示 -180/180/-90/90。
 
-5. **-R***xmin*/*xmax*/*ymin*/*ymax***+u**_unit_
+5. **-R***xmin*/*xmax*/*ymin*/*ymax*\ **+u**_unit_
 
    在投影后的单位（如 UTM 米）下指定区域。*xmin/xmax/ymin/ymax* 为投影坐标，
    *unit* 为距离单位（见 {doc}`/basis/unit`）。GMT 会根据 {doc}`/option/J` 设定的投影方式反算出地理范围。
