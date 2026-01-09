@@ -304,13 +304,13 @@ plot
 
 .. include:: explain_-qi.rst_
 
-.. include:: explain_colon.rst_
-
 .. include:: explain_perspective.rst_
 
 .. include:: explain_-t.rst_
 
 .. include:: explain_-w.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
