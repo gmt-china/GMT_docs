@@ -1,5 +1,5 @@
 :author: 田冬冬, 朱邓达, 王亮
-:date: 2025-06-11
+:date: 2026-01-09
 
 .. index:: ! polar
 .. program:: polar
@@ -18,18 +18,18 @@ polar
 
 **gmt polar** 
 [ *table* ] 
-:option:`-D`\ *lon/lat* :option:`-J`\ *parameters*
+:option:`-D`\ *lon/lat*
+:option:`-J`\ *parameters*
 :option:`-R`\ *region*
 :option:`-M`\ *size*\ [**+m**\ *mag*]
-:option:`-S`\ *<symbol><size>*
+:option:`-S`\ **a**\|\ **c**\|\ **d**\|\ **h**\|\ **i**\|\ **p**\|\ **s**\|\ **t**\|\ **x**\ *size*
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
-[ :option:`-C`\ *lon*/*lat*\ [**+p**\ *pen*][**+s**\ *pointsize*] ]
 [ :option:`-E`\ *fill* ]
 [ :option:`-F`\ *fill* ]
 [ :option:`-G`\ *fill* ]
 [ :option:`-N` ]
 [ :option:`-Q`\ *mode*\ [*args*] ]
-[ :option:`-T`\ *angle*/*form*/*justify*/*fontsize* ]
+[ :option:`-T`\ [**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\[/*dy*]] ]
 [ :option:`-U`\ [*stamp*] ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *pen* ]
@@ -39,6 +39,7 @@ polar
 [ :option:`-e`\ *regexp* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
