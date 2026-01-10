@@ -1,5 +1,5 @@
-:author: 周茂
-:date: 2024-10-23
+:author: 周茂, 陈箫翰
+:date: 2026-01-10
 
 .. index:: ! regress
 .. program:: regress
@@ -24,7 +24,7 @@ regress
 语法
 ----
 
-**gmt regress** 
+**gmt regress**
 [ *table* ] 
 [ :option:`-A`\ [*min*\ /*max*\ /*inc*][**+f**\ [**n**\|\ **p**]] ]
 [ :option:`-C`\ *level* ]
@@ -37,7 +37,8 @@ regress
 [ :option:`-W`\ [**w**]\ [**x**]\ [**y**]\ [**r**] ]
 [ :option:`-Z`\ [**+**\|\ **-**]\ *limit* ]
 [ :option:`-a`\ *flags* ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -50,7 +51,7 @@ regress
 [ :option:`-w`\ *flags* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
@@ -65,37 +66,110 @@ regress
 .. option:: -A
 
 **-A**\ [*min*\ /*max*\ /*inc*][**+f**\ [**n**\|\ **p**]]
-    该选项存有两种用法：(1) 使用该选项计算一个回归模型的范围，而不是计算最优的模型。
-    即以 *inc* 计算线段斜率角度在 *min* 到 *max*
+    该选项有两个用法：
+
+    (1) 寻找回归的完整范围，而不是确定最佳拟合回归。以 *inc* 度为步长（默认 [-90/+90/1]），检查斜率角在 *min* 和 *max* 之间的所有可能回归线。
+    对于每个斜率，根据回归类型 :option:`-E` 和不拟合范数 :option:`-N` 设置来确定最佳截距。
+    对于每个数据分段，会在指定的角度范围内报告 *angle* 、 *E* 、 *slope* 、 *intercept* 这四列数据。
+    该范围内的最佳模型参数将写入分段头中，并在详细信息模式 ( :option:`-V`\ **i** ) 下报告。
+
+    (2) 除 :option:`-N`\ **2** 外，附加 **+f** 以强制最佳回归仅考虑给定的受限角度范围 [默认考虑所有角度]。
+    可分别使用 **+fn** 或 **+fp** 表示负斜率或正斜率。
+
+    .. gmtplot:: regress/GMT_slopes.sh
+        :width: 60%
+        :show-code: false
+
+        扫描斜率 :option:`-A` 以观察使用 LMS ( :option:`-N`\ **r** ) 准则的完全正交回归的不拟合度量 (misfit) 随直线角度的变化情况。这里我们可以看到，最佳解对应的直线角度为 -78.3 度，但在 78.6 度处存在另一个几乎同样好的局部极小值。
+
+.. option:: -C
+
+**-C**\ *level*
+    设置用于回归置信带 (confidence bands) 可选计算的置信水平（以 % 为单位）[默认为 95]。该选项仅在 :option:`-F` 包含输出列 **c** 时使用。
 
 .. option:: -E
 
 **-Ex**\|\ **y**\|\ **o**\|\ **r**
-    设置残差类型。
-    残差（residual）是观测数据点与预测值的差异。
-    本选项的四个可能值表示四种不同的残差。
+    线性回归类型，即选择应计算的不拟合 (misfit) 类型。可从以下选项中选择：
 
-    + **x**：残差为观测数据点与预测直线在x方向上的距离（图中的 :math:`e_x` ）。
-    + **y**：残差为观测数据点与预测直线在y方向上的距离（图中的 :math:`e_y` ）。
-    + **o**：正交回归，残差为观测数据点与预测直线的垂直距离（图中的 :math:`e_o` ）。
-    + **r**：简化主轴回归，残差为观测数据点与预测直线在x方向和y方向上的距离的乘积（图中的绿色矩形区域的面积）。
+    - **x** ： *x* 对 *y* 的回归，即不拟合是从数据点到回归线的水平方向测量。
+    - **y** ： *y* 对 *x* 的回归，即不拟合是从垂直方向测量 [默认]。
+    - **o** ：正交回归，即不拟合是从数据点到直线上最近点的正交距离测量。
+    - **r** ：缩减主轴回归 (Reduced Major Axis)，即不拟合是垂直和水平不拟合的乘积 [**y**]。
 
-.. figure:: https://docs.generic-mapping-tools.org/6.6/_images/GMT_misfit.png
-    :width: 400 px
-    :align: center
+    .. gmtplot:: regress/GMT_misfit.sh
+        :width: 60%
+        :show-code: false
+
+        四种不拟合类型。对于 k = x, y 或 o，会最小化 :math:`e_k` 长度的平方和。对于 :option:`-E`\ **r**，则最小化绿色区域的面积之和。
+
+.. option:: -F
+
+**-F**\ *flags*
+    选择输出数据的列的组合，输出顺序将与指定的顺序一致。可从以下选项中选择：
+
+    - **x** ：观测值 *x*。
+    - **y** ：观测值 *y*。
+    - **m** ：模型预测值。
+    - **r** ：残差（残差 = 数据减去模型）。
+    - **c** ：回归的对称置信区间，参见 :option:`-C` 以指定置信水平。
+    - **z** ：标准化残差或所谓的 *z 分数* (*z-scores*)。
+    - **w** ：离群值权重（0 或 1）。对于 :option:`-N`\ **w**，这些是重新加权最小二乘法 (Reweighted Least Squares) 的权重。
+
+    默认值为 [**xymrczw**]。
+
+    使用 **-Fp** 会输出包含 12 个模型参数的单条记录::
+
+        npoints xmean ymean angle misfit slope intercept sigma_slope sigma_intercept r R n_effective
+
+    **注意**： *R* 只能在选择 :option:`-E`\ **y** 时设置。
+
+.. option:: -N
+
+**-N1**\|\ **2**\|\ **r**\|\ **w**
+    选择用于不拟合 (misfit) 计算的范数。可从以下选项中选择：
+
+    - **1** ： :math:`L_1` 度量，绝对残差的平均值。
+    - **2** ：最小二乘法，平方残差的平均值 [默认值为 **2**]。
+    - **r** ：LMS，平方残差的最小中位数。
+    - **w** ：RLS，重新加权最小二乘法：在通过 LMS 识别并移除离群值后，计算平方残差的平均值。
+
+    传统回归使用 :math:`L_2`，而 :math:`L_1` 尤其是 LMS 在处理离群值时更为稳健。
+    如前所述，RLS 意味着先进行初始 LMS 回归，用其识别数据中的离群值并分配零权重，然后使用 :math:`L_2` 范数重新进行回归。
+
+.. option:: -S
+
+**-S**\ [**r**]
+    限制输出哪些记录。默认情况下，所有数据记录都将按照 :option:`-F` 指定的格式输出。使用本选项排除被回归算法识别为离群值的数据点。
+    使用 **-Sr** 来反转此行为，仅输出离群值记录。
+
+.. option:: -T
+
+**-T**\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ **-T**\ *file*\|\ *list*
+    在参数指定的等间距点处评估最佳拟合回归模型。如果仅给出了 :option:`-T`\ *inc*，将把 *min* 和 *max* 重置为每个分段中 *x* 的极值。
+    若要完全跳过模型评估，使用 :option:`-T`\ 0。
+
+.. include:: explain_-V.rst_
 
 .. option:: -W
 
 **-W**\ [**w**]\ [**x**]\ [**y**]\ [**r**]
+    指定加权回归以及将要提供的权重类型。
+    
+    - 如果提供了 *x* 观测值的 1-:math:`\sigma` 不确定度，请附加 **x** 。
+    - 如果提供了 *y* 的 1-:math:`\sigma` 不确定度，请附加 **y** 。
+    - 如果提供了 *x* 和 *y* 观测值之间的相关性，请附加 **r**。这些列在输入中出现的顺序应紧随必选的 *x* 和 *y* 列之后。
+
+    同时给出 **x** 和 **y** （以及可选的 **r** ）意味着进行正交回归。单独给出 **x** 需要配合使用 :option:`-E`\ **x**，单独给出 **y** 需要配合使用 :option:`-E`\ **y** 。
+
+    通过 :math:`w = 1/\sigma` 的关系将 *x* 和 *y* 的不确定度转换为回归权重 *w* 。使用 **-Ww** 可以把输入列解释为预先计算好的权重。
+    **注意** ：相对于回归线的残差将根据给定的权重进行缩放。大多数范数随后会对此加权残差进行平方（ :option:`-N`\ **1** 是唯一的例外）。
 
 .. option:: -Z
 
 **-Z**\ [±]\ *limit*
-
-
-.. include:: explain_-V.rst_
-
-.. include:: explain_help.rst_
+    更改离群值检测的阈值：当使用 :option:`-N`\ **w** 时，残差 z 分数(z-scores)超过此 *limit* [默认 ±2.5] 的点将被标记为离群值。
+    若要仅将负或正的 z 分数视为可能的离群值，请指定带符号的 *limit* 。
 
 .. include:: explain_-aspatial.rst_
 
@@ -133,16 +207,56 @@ regress
 注意事项
 --------
 
-1. 输出段的头部信号包含计算得到的所有统计信息，这些信息的顺序为：点的个数、
-   x 坐标的平均值、y 坐标的平均值、拟合直线的角度、misfit、斜率、截距、
-   斜率的标准差、截距的标准差。对于 **-Ey** 的情况，同时输出
+输出的分段头 (segment header) 将包含我们为每个分段计算的各种统计数据。
+其顺序依次为： *N* （点数）、 *x0* （加权平均值 x）、 *y0* （加权平均值 y）、 *angle* （直线角度）、 *E* （不拟合度量）、 *slope* （斜率）、 *intercept* （截距）、 *sigma_slope* 以及 *sigma_intercept* 。
+对于标准回归 ( :option:`-E`\ **y** )，还会报告皮尔逊相关系数 *r* 和判定系数 *R* 。最后以有效测量数 :math:`n_{eff}` 结束。
 
-2. 对于直线拟合之外的更一般的线性模型的回归，请参阅 :doc:`math` 的 **-A**
-   选项以及 **LSQFIT** 或者 **SVDFIT** 操作符。
+对于加权数据，在计算需要最小化的平方回归不拟合度量 :option:`-N`\ **2** 时，使用：
 
+.. math::
+
+    E_2(\nu) = \frac{\sum_{i=1}^n w_i e_i^2}{\sum_{i=1}^n w_i} \frac{n_{eff}}{n_{eff}-2},
+
+其中有效测量数由下式给出：
+
+.. math::
+
+    n_{eff} = \frac{\left (\sum_{i=1}^n w_i\right )^2}{\sum_{i=1}^n w_i^2}.
+
+因此 :math:`\nu = n_{eff} - 2` 是有效自由度。
+
+对于涉及除直线拟合之外更通用的线性模型回归，请参阅 :doc:`math` **-A** 以及 **LSQFIT** 或 **SVDFIT** 算子。
 
 示例
 ----
+
+返回通过远程文件 hertzsprung-russell.txt 中数据的最佳拟合正交回归线坐标::
+
+    gmt regress @hertzsprung-russell.txt -Eo -Fxm
+
+对 points.txt 中的 *x-y* 数据进行标准最小二乘回归，并返回 x、y 以及带有 99% 置信区间的模型预测值::
+
+    gmt regress points.txt -Fxymc -C99 > points_regressed.txt
+
+若只想获取上述回归的斜率::
+
+    slope=`gmt regress points.txt -Fp -o5`
+
+对数据 rough.txt 进行重新加权最小二乘回归，并返回 x、y、模型预测值以及 RLS 权重::
+
+    gmt regress rough.txt -Fxymw > points_regressed.txt
+
+对数据 crazy.txt 进行正交最小二乘回归，但先对 x 和 y 取对数，然后返回 x、y、模型预测值和标准化残差 (z-scores)::
+
+    gmt regress crazy.txt -Eo -Fxymz -i0-1l > points_regressed.txt
+
+对于同一文件，检查正交 LMS 不拟合度量在 0 到 90 度之间（步长 0.2 度）如何随角度变化::
+
+    gmt regress points.txt -A0/90/0.2 -Eo -Nr > points_analysis.txt
+
+强制正交 LMS 选择具有正斜率的最佳解::
+
+    gmt regress points.txt -A+fp -Eo -Nr > best_pos_slope.txt
 
 参考文献
 --------
