@@ -22,18 +22,21 @@ rotconverter
 
 **gmt rotconverter** 
 [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
-[ :option:`-A` ] [ :option:`-D` ]
+[ :option:`-A` ]
+[ :option:`-D` ]
 [ :option:`-F`\ **s**\|\ **t** ]
 [ :option:`-G` ]
 [ :option:`-M`\ [*fact*] ]
-[ :option:`-N` ] [ :option:`-S` ]
-[ :option:`-T` ] [ :option:`-W` ]
+[ :option:`-N` ]
+[ :option:`-S` ]
+[ :option:`-T` ]
+[ :option:`-W` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-h`\ *headers* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
 
-必选选项
+输入数据
 ------------------
 
 *rotX*
