@@ -76,9 +76,9 @@ regress
     (2) 除 :option:`-N`\ **2** 外，附加 **+f** 以强制最佳回归仅考虑给定的受限角度范围 [默认考虑所有角度]。
     可分别使用 **+fn** 或 **+fp** 表示负斜率或正斜率。
 
-    .. gmtplot:: regress/GMT_slopes.sh
-        :width: 60%
-        :show-code: false
+    .. figure:: https://docs.generic-mapping-tools.org/6.6/_images/GMT_slopes.png
+        :width: 500 px
+        :align: center
 
         扫描斜率 :option:`-A` 以观察使用 LMS ( :option:`-N`\ **r** ) 准则的完全正交回归的不拟合度量 (misfit) 随直线角度的变化情况。这里我们可以看到，最佳解对应的直线角度为 -78.3 度，但在 78.6 度处存在另一个几乎同样好的局部极小值。
 
@@ -97,9 +97,9 @@ regress
     - **o** ：正交回归，即不拟合是从数据点到直线上最近点的正交距离测量。
     - **r** ：缩减主轴回归 (Reduced Major Axis)，即不拟合是垂直和水平不拟合的乘积 [**y**]。
 
-    .. gmtplot:: regress/GMT_misfit.sh
-        :width: 60%
-        :show-code: false
+    .. figure:: https://docs.generic-mapping-tools.org/6.6/_images/GMT_misfit.png
+        :width: 500 px
+        :align: center
 
         四种不拟合类型。对于 k = x, y 或 o，会最小化 :math:`e_k` 长度的平方和。对于 :option:`-E`\ **r**，则最小化绿色区域的面积之和。
 
