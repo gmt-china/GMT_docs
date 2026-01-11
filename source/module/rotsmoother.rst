@@ -26,7 +26,8 @@ rotsmoother
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W` ]
 [ :option:`-Z` ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -38,7 +39,7 @@ rotsmoother
 [ :doc:`--PAR=value </conf/overview>` ]
 
 
-必选选项
+输入数据
 ------------------
 
 *table*
