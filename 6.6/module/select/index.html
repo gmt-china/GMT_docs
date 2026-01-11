@@ -1,0 +1,665 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>select &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=177cee11" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="set" href="../set/" />
+    <link rel="prev" title="regress" href="../regress/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">select</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">空间准则与可选选项</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">准则1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">准则2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">准则3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">准则4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">准则5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">准则6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">准则7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">其他选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">select</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/select.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-09-22
+    </div>
+  
+  
+  <section id="select">
+<span id="index-0"></span><h1>select<a class="headerlink" href="#select" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/gmtselect.html" title="（在 GMT v6.6）"><span>select</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>筛选符合某个特定准则的数据</p>
+</dd>
+</dl>
+<p>该命令会从输入文件 <em>table</em> 中读取前两列作为经度和纬度，并判断该点是否符合一定的空间准则，
+以筛选出符合条件的记录。</p>
+<p>用于判断的空间准则包括：</p>
+<ol class="arabic simple">
+<li><p>在矩形区域内</p></li>
+<li><p>与点文件中的任意一个点的距离在一定范围之内</p></li>
+<li><p>与线文件中的任意一条线的距离在一定范围之内</p></li>
+<li><p>在多边形文件所指定的多边形内</p></li>
+<li><p>在某个地理区域内（需要海岸线数据）</p></li>
+<li><p>Z 值在某个范围内</p></li>
+<li><p>该点所在的网格单元内具有有效值（即非零和非NaN的值）</p></li>
+</ol>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt select</strong>
+[ <em>table</em> ]
+[ <a class="reference internal" href="#cmdoption-select-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+l</strong>|<strong>r</strong>][<strong>+p</strong><em>percent</em>] ]
+[ <a class="reference internal" href="#cmdoption-select-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>pointfile</em>|<em>lon</em>/<em>lat</em><strong>+d</strong><em>dist</em> ]
+[ <a class="reference internal" href="#cmdoption-select-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>resolution</em>[<strong>+f</strong>] ]
+[ <a class="reference internal" href="#cmdoption-select-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a>[<strong>f</strong>][<strong>n</strong>] ]
+[ <a class="reference internal" href="#cmdoption-select-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>polygonfile</em> ]
+[ <a class="reference internal" href="#cmdoption-select-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>gridmask</em> ]
+[ <a class="reference internal" href="#cmdoption-select-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>[<strong>cfglrsz</strong>] ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code><em>parameters</em> ]
+[ <a class="reference internal" href="#cmdoption-select-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a><em>linefile</em><strong>+d</strong><em>dist</em>[<strong>+p</strong>] ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code><em>maskvalues</em> ]
+[ <a class="reference internal" href="#cmdoption-select-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a><em>min</em>[/<em>max</em>][<strong>+a</strong>][<strong>+c</strong><em>col</em>][<strong>+h</strong>[<strong>k</strong>|<strong>s</strong>]][<strong>+i</strong>] ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code><em>flags</em> ]
+[ <code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code><em>flags</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>输入文件的文件名。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>空间准则与可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h3>准则1<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<p>使用 <a class="reference internal" href="#cmdoption-select-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 筛选出在该矩形区域内的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="k">select</span><span class="w"> </span>points.xy<span class="w"> </span>-R0/5/0/5
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>准则2<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>筛选出与文件 <em>pointfile</em> 中的基准点的距离在一定范围内的点。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-C</strong><em>pointfile</em><strong>+d</strong><em>dist</em></dt><dd><p>ASCII文本文件 <em>pointfile</em> 中每一行是一个基准点的经纬度坐标。
+该准则会筛选出与任意一个基准点的距离在 <em>dist</em> 之内的记录。</p>
+<p>若 <em>dist</em> 等于0，则 <em>pointfile</em> 必须有第三列，表示每个基准点各自的影响半径。
+默认情况下 <em>dist</em> 是笛卡尔坐标系下的距离，单位为用户单位。
+若指定 <strong>-fg</strong> 选项，则表明 <em>dist</em> 为球面距离，后面可以添加地理单位（详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> ）。</p>
+<p>如果只有一个基准点，可以简单使用 <a class="reference internal" href="#cmdoption-select-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>lon</em>/<em>lat</em><strong>+d</strong><em>dist</em> 。</p>
+<p>如果同时使用 <a class="reference internal" href="#cmdoption-select-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 和 <code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code> 选项，则表示基于投影后的图片纸面上的距离进行判断（详情请参考末尾的例子）。</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>准则3<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>筛选所有与线文件 <em>linefile</em> 中的任意一条线的距离在一定范围之内的点。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-L</strong><em>linefile</em><strong>+d</strong><em>dist</em>[<strong>+p</strong>]</dt><dd><p>ASCII文本文件 <em>linefile</em> 内容格式与表示线段的格式相同，也可以是多段数据表示的多条线段
+(参见 <a class="reference internal" href="../../table/ascii/#table-ascii-multiple-segment"><span class="std std-ref">多段数据与数据段头记录</span></a> )。
+该准则会筛选出与任意一条线段的距离在 <em>dist</em> 之内的记录。</p>
+<p>若 <em>dist</em> 等于零，则可以在 <em>linefile</em> 中每段数据的段头记录中使用 <a class="reference internal" href="#cmdoption-select-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>dist</em> 参数，为每个线段分别指定距离值。
+(参见 <a class="reference internal" href="../../table/ascii/#table-ascii-attrs"><span class="std std-ref">数据段头记录中的额外属性</span></a> )</p>
+<p>默认情况下 <em>dist</em> 是笛卡尔坐标系下的距离，单位为用户单位。
+若指定 <strong>-fg</strong> 选项，则表明 <em>dist</em> 为球面距离，后面可以添加地理单位（详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> ）。</p>
+<p>如果使用 <strong>+p</strong> 则会进一步筛选出到最近的线段的垂直投影位置在线段的两个端点内的数据
+（默认情况下垂直投影位置在线段以外的数据点也会被包含进来）。</p>
+</dd>
+</dl>
+</section>
+<section id="id7">
+<h3>准则4<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>筛选出在某个多边形内的点。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong><em>polygonfile</em></dt><dd><p>多段数据文件 <em>polygonfile</em> 的内容为一个或多个闭合多边形的各个顶点(参见 <a class="reference internal" href="../../table/ascii/#table-ascii-multiple-segment"><span class="std std-ref">多段数据与数据段头记录</span></a> )。
+该选项筛选出在任意一个多边形内的数据记录。</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3>准则5<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>根据地理特征信息筛选数据。</p>
+<dl>
+<dt><strong>-N</strong><em>wet/dry</em></dt><dd><p>跳过或保留海湖(wet)/陆地(dry)内的点。</p>
+<p><em>wet</em> 和 <em>dry</em> 可以取 <code class="docutils literal notranslate"><span class="pre">s</span></code> 或 <code class="docutils literal notranslate"><span class="pre">k</span></code> ，分别表示 skip 和 keep。
+默认值为 <code class="docutils literal notranslate"><span class="pre">-Ns/k</span></code> ，即保留所有位于陆地上的记录，并跳过所有海洋、湖泊中的记录。</p>
+</dd>
+<dt><strong>-N</strong><em>ocean/land/lake/island/pond</em></dt><dd><p>进一步细分地理特征，五项分别表示海洋、大陆和岛屿(Continents and islands)、
+湖泊(Lakes (regular and river lakes))、湖中岛(Islands inside lakes)以及湖中岛中湖(Ponds in islands inside lakes)，
+对应GSHHG数据的不同等级(（详情见 <a class="reference internal" href="../gshhg/"><span class="doc">gshhg</span></a> ）)
+每一项均可以取 <code class="docutils literal notranslate"><span class="pre">s</span></code> 或 <code class="docutils literal notranslate"><span class="pre">k</span></code> ，分别表示 skip 和 keep。默认值为 <code class="docutils literal notranslate"><span class="pre">-Ns/k/s/k/s</span></code> ，
+等效于 <code class="docutils literal notranslate"><span class="pre">-Ns/k</span></code>，即仅保留所有陆地上的记录。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>resolution</em>[<strong>+f</strong>]</dt><dd><p>选择海岸线数据的精度，仅与 <code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code> 选项一起使用有效。见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中
+<a class="reference internal" href="#cmdoption-select-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项的介绍。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+l</strong>|<strong>r</strong>][<strong>+p</strong><em>percent</em>]</dt><dd><p>不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
+<p>在绘制湖泊时，若不管湖泊的面积大小而把所有湖泊的边界都画上去，可能导致图
+看上去比较乱，该选项用于对湖泊进行筛选。面积小于 <em>min_area</em> 平方千米
+或者湖泊级别不在 [<em>min_level</em>,<em>max_level</em>] 范围的边界都不会被绘制。
+默认值为 <strong>0/0/4</strong>，即绘制所有湖泊边界，即绘制0到4级所有级别的面积大于0的
+湖泊。</p>
+<p>对于level=2，即湖岸线，包括常规的湖以及很宽的河流。加上 <strong>+r</strong> 则只绘制河流，
+加上 <strong>+l</strong> 则只绘制常规湖。</p>
+<p>对于南极洲而言，因为有冰层的存在，所以海岸线有多种处理方式：</p>
+<ul class="simple">
+<li><p><strong>+ai</strong> 用ice shell boundary作为南极洲的海岸线，默认值</p></li>
+<li><p><strong>+ag</strong> 以ice grounding line作为海岸线</p></li>
+<li><p><strong>+as</strong> 忽略南纬60度以南的海岸线，用户可以使用 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 绘制自己的南极洲海岸线</p></li>
+<li><p><strong>+aS</strong> 忽略南纬60度以北的海岸线</p></li>
+</ul>
+<p><strong>+p</strong><em>precent</em>：一个多边形，降低精度后，边数减少，面积变化，当面积变化
+过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积
+之比小于 <em>percent</em> 的多边形。</p>
+</dd>
+</dl>
+</section>
+<section id="id9">
+<h3>准则6<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p>筛选Z值在某个范围内的点</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Z</strong><em>min</em>[/<em>max</em>][<strong>+a</strong>][<strong>+c</strong><em>col</em>][<strong>+h</strong>[<strong>k</strong>|<strong>s</strong>]][<strong>+i</strong>]</dt><dd><p>筛选出数据第三列的Z值在 <em>min</em> 到 <em>max</em> 范围内或等于 NaN 的数据点
+（使用 <strong>-s</strong> 选项可以排除掉 NaN 数据点）。</p>
+<p>若省略 <em>max</em> 则判断Z值是否等于 <em>min</em> 。若不限制范围的上限或下限， <em>min</em>[/<em>max</em>] 可以使用 <code class="docutils literal notranslate"><span class="pre">-</span></code> 代替。</p>
+<p>注意：
+(1)若第三列Z值代表时间，想要判断Z值是否在某个时间范围内，需要使用 <strong>-f</strong>2T 选项。
+(2)若想要对多列做类似的测试，可以重复多次使用 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项。
+(3)输入数据必须至少有三列。
+(4)当重复多次使用 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项时，不可使用 <strong>-Iz</strong> 选项。</p>
+<p>可以使用以下附加选项：</p>
+<ul class="simple">
+<li><p><strong>+a</strong> 重复使用 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项时，数据点只要满足一个选项即可（默认要满足所有 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项）。</p></li>
+<li><p><strong>+c</strong><em>col</em> 指定Z值所在的列。只使用一个 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项时，不使用 <strong>+c</strong> 默认为第三列(col=2)。
+当重复多次使用 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项时，不使用 <strong>+c</strong> 默认每个 <a class="reference internal" href="#cmdoption-select-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项分别使用数据中第三列、第四列、第五列……为Z值。</p></li>
+<li><p><strong>+i</strong> 反转筛选准则。筛选出Z值不在 <em>min</em> 到 <em>max</em> 范围内的数据点。</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>准则7<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<p>根据数据点所在的网格单元内具有有效值（即非零和非NaN的值）来筛选数据。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-G</strong><em>gridmask</em></dt><dd><p>使用 <a class="reference internal" href="#cmdoption-select-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>gridmask</em> 指定一个网格文件。对于每个数据点而言，判断其所在位置的网格单元是否具有有效值（即非零或非NaN的值）。若该网格单元有有效值，则保留该数据点。</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="id11">
+<h2>其他选项<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong>[<strong>f</strong>][<strong>n</strong>]</dt><dd><p>在判断点是否在一个多边形内时，默认会将恰好在多边形边界线上的点也认为是在多边形内，使用该选项会将多边形上的点认为是在多边形外部。
+<strong>f</strong> 和 <strong>n</strong> 分别修改 <a class="reference internal" href="#cmdoption-select-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 和 <code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code> 选项的行为。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-select-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-select-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong>[<strong>cflrsz</strong>]</dt><dd><p>对七个准则取反，即筛选出不符合准则的记录。c、f、g、l、r、s、z分别对应于
+<code class="docutils literal notranslate"><span class="pre">-C</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-N</span> <span class="pre">-A</span> <span class="pre">-D</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 。</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h2>示例<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<p>筛选输入数据 <code class="docutils literal notranslate"><span class="pre">data.txt</span></code> 中与 <code class="docutils literal notranslate"><span class="pre">pts.txt</span></code> 的任意基准点的距离在300 km以内，
+且与 <code class="docutils literal notranslate"><span class="pre">lines.txt</span></code> 中线段的距离在100 km以外( <code class="docutils literal notranslate"><span class="pre">-Il</span></code> )的点。结果输出到 <code class="docutils literal notranslate"><span class="pre">subset.txt</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="k">select</span><span class="w"> </span>data.txt<span class="w"> </span>-fg<span class="w"> </span>-Cpts.txt+d300k<span class="w"> </span>-Llines.txt+d100k<span class="w"> </span>-Il<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+<p>此处需要使用 <strong>-fg</strong> 以告知程序正在处理地理数据。</p>
+<p>筛选某个区域内所有不在陆地上的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="k">select</span><span class="w"> </span>data.txt<span class="w"> </span>-R120/121/22/24<span class="w"> </span>-Dh<span class="w"> </span>-Nk/s<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+<p>筛选 <code class="docutils literal notranslate"><span class="pre">quakes.txt</span></code> 中所有位于多边形区域内的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="k">select</span><span class="w"> </span>quakes.txt<span class="w"> </span>-Flonlatpath.txt<span class="w"> </span>-fg<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+<p>筛选 <code class="docutils literal notranslate"><span class="pre">stations.txt</span></code> 中的点投影作图后，与 <code class="docutils literal notranslate"><span class="pre">origin.txt</span></code> 的基准点在图片纸面上的距离在5 cm之内的点:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="k">select</span><span class="w"> </span>stations.txt<span class="w"> </span>-Corigin.txt+d5<span class="w"> </span>-R20/50/-10/20<span class="w"> </span>-JM20c<span class="w"> </span>--PROJ_LENGTH_UNIT<span class="o">=</span>cm<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../regress/" class="btn btn-neutral float-left" title="regress" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../set/" class="btn btn-neutral float-right" title="set" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 01 月 11 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

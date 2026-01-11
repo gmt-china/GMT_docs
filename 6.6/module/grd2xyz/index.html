@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grd2xyz &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=177cee11" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grdblend" href="../grdblend/" />
+    <link rel="prev" title="grd2cpt" href="../grd2cpt/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grd2xyz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">距离单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII 格式精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xy">非等间隔XY坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">行顺序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">grd2xyz</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/grd2xyz.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/Dengda98" target="_blank" rel="noopener">朱邓达</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-12-31
+    </div>
+  
+  
+  <section id="grd2xyz">
+<span id="index-0"></span><h1>grd2xyz<a class="headerlink" href="#grd2xyz" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/grd2xyz.html" title="（在 GMT v6.6）"><span>grd2xyz</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>将网格文件转换成表数据</p>
+</dd>
+</dl>
+<p><strong>grd2xyz</strong> 读取一个或多个二进制2D网格文件，并将XYZ数据以ASCII或二进制格式
+写到标准输出中。ASCII输出的格式由参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制，也可以以单精度或双精度浮点数的形式储存为二进制格式，还可以只输出Z值而不包含
+XY坐标数据（参见下文的 <a class="reference internal" href="#cmdoption-grd2xyz-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> ）。或者可以使用 <a class="reference internal" href="#cmdoption-grd2xyz-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 将网格保存为用于 3D 打印机的 STL 格式。
+此外，通过 <a class="reference internal" href="#cmdoption-grd2xyz-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 提供 CPT，将根据 <em>z</em> 值在输出中添加 <em>r</em>、<em>g</em>、<em>b</em>、<em>a</em> 列。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt grd2xyz</strong>
+<em>ingrid</em>
+[ <a class="reference internal" href="#cmdoption-grd2xyz-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>[<em>section</em>/]<em>master</em>|<em>cpt</em>|<em>color</em><span class="math notranslate nohighlight">\(_1\)</span>,<em>color</em><span class="math notranslate nohighlight">\(_2\)</span>[,<em>color</em><span class="math notranslate nohighlight">\(_3\)</span>,…][<strong>+h</strong>[<em>hinge</em>]][<strong>+i</strong><em>dz</em>][<strong>+u</strong>|<strong>U</strong><em>unit</em>][<strong>+s</strong><em>fname</em>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>[<strong>f</strong>|<strong>i</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>[<strong>c</strong>|<strong>r</strong>|<strong>x</strong>|<strong>y</strong>]<em>value</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>[<strong>a</strong>|<strong>b</strong>][<em>base</em>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>[<strong>a</strong>[<strong>+u</strong><em>unit</em>]|<em>weight</em>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a>[<em>flags</em>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-bo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bo</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-d"><code class="xref std std-option docutils literal notranslate"><span class="pre">-d</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-qo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-qo</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grd2xyz-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><em>ingrid</em>[=<em>ID</em>|?<em>varname</em>][<strong>+b</strong><em>band</em>][<strong>+d</strong><em>divisor</em>][<strong>+n</strong><em>invalid</em>][<strong>+o</strong><em>offset</em>][<strong>+s</strong><em>scale</em>]</p>
+<blockquote>
+<div><p>输入网格名。通过追加 =<em>ID</em> 可指定 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a> [默认为 =nf]。
+追加 ?<em>varname</em> 可指定 NetCDF 变量 [默认为 GMT 找到的第一个 2-D 网格]。
+参数详细介绍请参考 <a class="reference internal" href="../../grid/read/"><span class="doc">读 netCDF 文件</span></a>。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-C</strong>[<em>section</em>/]<em>master</em>|<em>cpt</em>|<em>color</em><span class="math notranslate nohighlight">\(_1\)</span>,<em>color</em><span class="math notranslate nohighlight">\(_2\)</span>[,<em>color</em><span class="math notranslate nohighlight">\(_3\)</span>,…][<strong>+h</strong>[<em>hinge</em>]][<strong>+i</strong><em>dz</em>][<strong>+u</strong>|<strong>U</strong><em>unit</em>][<strong>+s</strong><em>fname</em>]</dt><dd><p>基于 z 值确定颜色分量。通过指定主 CPT 名称，CPT 文件或用逗号分割的多个颜色，
+以创建一个 CPT。如果不指定参数，则在现代模式下使用当前 CPT（如果可用）。
+支持以下多种输入：</p>
+<ol class="arabic simple">
+<li><p>主 CPT 名称，例如 <em>earth</em> （详见 <a class="reference internal" href="../../cpt/builtin-cpt/"><span class="doc">内置CPT</span></a> ），
+可使用 CPT 名称 <em>master</em> 或包括相对路径的 <em>section/master</em> 来指定（内置 CPT 不可添加 <strong>.cpt</strong> 扩展名）。</p></li>
+<li><p>自定义 CPT 文件 <em>cpt</em> ，例如 <em>my_colors.cpt</em> 。</p></li>
+<li><p>自动从多个颜色 <em>color</em><span class="math notranslate nohighlight">\(_1\)</span>,<em>color</em><span class="math notranslate nohighlight">\(_2\)</span>[,<em>color</em><span class="math notranslate nohighlight">\(_3\)</span>,…] 中创建线性连续的 CPT，其中 z 值从 0 开始，
+每添加一种颜色 z 值加 1。在这种情况下， <em>color</em><span class="math notranslate nohighlight">\(_i\)</span> 可以是
+<em>r/g/b</em> (e.g. 255/100/75)， <em>h-s-v</em> (e.g. 180-0.8-1)，
+<em>c/m/y/k</em> (e.g. 80/50/40/30)，HTML十六进制 (e.g. #aabbcc)
+或 <a class="reference internal" href="../../basis/color/"><span class="doc">颜色</span></a>名称。逗号之间不能有空格。</p></li>
+</ol>
+<p>支持以下选项：</p>
+<ul class="simple">
+<li><p><strong>+h</strong> - 对于有软铰链 (soft hinge) 的主 CPT，可指定 <em>hinge</em> 值启用铰链，
+而对于有硬铰链 (harde hinge) 的 CPT，可以修改铰链位置 <em>hinge</em> ，但不能禁用。</p></li>
+<li><p><strong>+i</strong> - 指定 <em>dz</em> 使网格 z 值范围分层，默认使用精确范围。</p></li>
+<li><p><strong>+s</strong> - 将创建的 CPT 保存到文件 <em>fname</em>。当 CPT 是自动创建时这很有用，
+但必须用于 <a class="reference internal" href="#cmdoption-grd2xyz-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 的末尾。</p></li>
+<li><p><strong>+u</strong> - 对于任何其他主 CPT，可以通过指定其原始单位 <em>unit</em> 将其 z 值单位转换为米。</p></li>
+<li><p><strong>+U</strong> - 与 <strong>+u</strong> 类似，但是将 z 值单位从米转换为指定单位 <em>unit</em> 。</p></li>
+</ul>
+<p><strong>注：</strong> 我们将在原始输出后新增四列，分别为 red、green 和 blue 的颜色分量
+（均在 0-255 范围内）以及透明度（0-100%，0 表示不透明）。如果颜色表为灰度表，
+则输出灰度（0-255）而非三原色。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong>[<strong>f</strong>|<strong>i</strong>]</dt><dd><p>输出的XY坐标值用对应的列、行号替代</p>
+<p>默认输出的三列数据是：X坐标、Y坐标和Z值。使用该选项，则输出的三列数据为：
+列号、行号和Z值。其中，行号和列号从0开始算起。使用 <strong>-Ff</strong> 则行号和列号从1开始算起。
+若使用 <strong>-Fi</strong> 会输出两列数据：索引值和Z值。索引值相当于是将二维数组用一维数组表示。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-L</strong>[<strong>c</strong>|<strong>r</strong>|<strong>x</strong>|<strong>y</strong>]<em>value</em></dt><dd><p>将记录的输出限制在单行或单列。通过 <em>行</em> 或 <em>列</em> 编号（分别通过指令 <strong>c</strong> 或 <strong>r</strong>），
+或通过固定的 <em>x</em> 或 <em>y</em> 值（分别通过指令 <strong>x</strong> 或 <strong>y</strong>）来指定所需的向量。
+如果超出有效范围，则不会产生输出并发出警告。 <strong>注意</strong>：对于指令 <strong>x</strong> 和 <strong>y</strong>，将分别查找最接近的列或行。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<blockquote>
+<div><p>使用 <a class="reference internal" href="#cmdoption-grd2xyz-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 选项指定只对网格数据的一个子区域进行操作。若该子区域超过网格边界，
+则只输出二者共同的区域</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong>[<strong>a</strong>|<strong>b</strong>][<em>base</em>]</dt><dd><p>将用于 3D 打印的 STL 三角网写入标准输出。默认情况下（ <strong>-Ta</strong>）写入 STL ASCII 文件。
+附加 <strong>b</strong> 则改为写入 STL 二进制（小端序）格式。有关 STL 的更多信息，
+请参见 <a class="reference external" href="https://en.wikipedia.org/wiki/STL_(file_format)">维基百科上的 STL 概述</a>。
+<strong>注意</strong>：所有坐标都经过调整，使得 <em>xmin = ymin = zmin = 0</em>。
+可以附加一个不同于网格最小值的更低的 <em>base</em> [默认]。
+<strong>注意</strong>：网格必须不含 NaN 值。如果网格包含 NaN，将自动用网格中的最小值替换它们；
+如果希望选择其他值，请使用 <a class="reference internal" href="../grdmath/"><span class="doc">grdmath</span></a> 预处理网格。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong>[<strong>a</strong>[<strong>+u</strong><em>unit</em>]|<em>weight</em>]</dt><dd><p>输出四列数据 <em>x, y, z, w</em>，其中 <em>w</em> 是提供的权重 <em>weight*（如果未提供则为 1）[默认仅输出 *x, y, z</em>]。
+使用 <strong>-Wa</strong> 则权重为每个节点所占据的面积。
+对于笛卡尔网格，这仅是 <em>x</em> 和 <em>y</em> 增量的乘积（边界处 [一半] 和角落处 [四分之一] 的网格线配准网格除外）。
+对于地理网格，默认长度单位为 <strong>k**（因此面积单位为 km:sup:`2`）。通过附加 **+u</strong><em>unit</em> 来更改单位。
+对于此类网格，其面积随纬度变化，并且在边界、角落和极点处的网格线注册布局也存在特殊情况。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Z</strong>[<em>flags</em>]</dt><dd><p>以 ASCII 或二进制形式输出Z值</p>
+<p>使用该选项，则输出时只有Z值，没有XY信息。输出Z值的顺序由 <em>flags</em>
+决定。若是行优先，<em>flags</em> 的第一个字符可以取：</p>
+<ul class="simple">
+<li><p><strong>T</strong> 表示第一行是y=ymax</p></li>
+<li><p><strong>B</strong> 表示第一行是y=ynin</p></li>
+</ul>
+<p><em>flags</em> 的第二个字符可以取：</p>
+<ul class="simple">
+<li><p><strong>L</strong> 表示每一行的第一个元素是x=xmin</p></li>
+<li><p><strong>R</strong> 表示每一行的第一个元素是x=xmax</p></li>
+</ul>
+<p>若是列优先，则 <strong>L</strong>|<strong>R</strong> 为第一个字符，<strong>B</strong>|<strong>T</strong> 为第二个字符。</p>
+<p>对于网格线配准的网格文件而言：</p>
+<ul class="simple">
+<li><p>若网格在X方向是周期的，输出数据时不需要包含x=xmax所在的列，则加上 <strong>x</strong></p></li>
+<li><p>若网格在Y方向是周期的，输出数据时不需要包含y=ymax所在的行，则加上 <strong>y</strong></p></li>
+</ul>
+<p>若数据需要做字节交换，则加上 <strong>w</strong>。最后需要指定数据以何种数据类型保存：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> ASCII表，每行输出一个Z值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> int8_t, signed 1-byte character</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> uint8_t, unsigned 1-byte character</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> int16_t, short 2-byte integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">H</span></code> uint16_t, unsigned short 2-byte integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> int32_t, 4-byte integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> uint32_t, unsigned 4-byte integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code> int64_t, long (8-byte) integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code> uint64_t, unsigned long (8-byte) integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> 4-byte floating point single precision</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> 8-byte floating point double precision</p></li>
+</ul>
+<p>默认值为 <strong>-ZTLa</strong>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-bo">
+<span class="sig-name descname"><span class="pre">-bo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-bo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输出格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<blockquote>
+<div><p>该选项只适用于以二进制格式输出XYZ数据。若需要只输出Z值，可以使用 <a class="reference internal" href="#cmdoption-grd2xyz-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项。</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt><dd><p>将某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<blockquote>
+<div><p><strong>-h</strong> 根据第一个网格文件头中的信息输出 1 条头记录。如果选择了二进制输出，则忽略该选项 [默认无头记录]。</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输出的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-qo">
+<span class="sig-name descname"><span class="pre">-qo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-qo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-qo</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>筛选输出的行或数据范围。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grd2xyz-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grd2xyz-s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt><dd><p>设置 NaN 记录的处理方式。 <a class="reference internal" href="../../option/s/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>距离单位<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>GMT支持多种不同的距离单位，以及三种不同的球面距离计算方式。
+详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 和 <a class="reference internal" href="../../option/distcal/"><span class="doc">-j 选项</span></a>。</p>
+</section>
+<section id="ascii">
+<h2>ASCII 格式精度<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<p>ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> ；控制绝对时间的的参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> ；普通浮点数通过参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定更多的有效数字。</p>
+</section>
+<section id="xy">
+<h2>非等间隔XY坐标<a class="headerlink" href="#xy" title="Link to this heading"></a></h2>
+<p>几乎所有GMT模块只能处理XY等间隔的网格文件， <strong>grd2xyz</strong> 是个例外。
+<strong>grd2xyz</strong> 可以输出非等间隔网格文件的原始 <em>x y z</em> 值。</p>
+</section>
+<section id="id5">
+<h2>时间坐标<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>GMT可以识别netCDF网格文件中的时间坐标。netCDF变量的 <strong>unit</strong> 属性会被解析以
+确定网格文件中时间坐标的起算点和单位。这些时间坐标值会被进一步根据
+<a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 和 <a class="reference internal" href="../../conf/time/#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a>
+转换为GMT内部时间值。输出时，默认以相对时间的形式输出，也可以使用 <a class="reference internal" href="#cmdoption-grd2xyz-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a> 选项
+指定以绝对时间方式输出。</p>
+</section>
+<section id="id6">
+<h2>行顺序<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p><strong>-Lr</strong> 选项允许输出网格中的特定行。请注意，虽然网格的 y 坐标向上为正，但内部行号是扫描线编号，因此向下为正。
+因此，第一行 (0) 与最大的 <em>y</em> 值重合。这意味着 <strong>-Lr</strong><em>0</em> 和 <strong>-Ly</strong><em>ymax</em> （使用正确的最大 y 值）将产生相同的结果。
+相比之下， <em>x</em> 和列号都是向右为正，其中 <strong>-Lc</strong><em>0</em> 和 <strong>-Lx</strong><em>xmin</em> （使用正确的最小 x 值）将产生相同的输出。</p>
+</section>
+<section id="id7">
+<h2>示例<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>将一个netCDF网格文件转换为XYZ文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grd2xyz<span class="w"> </span>@AFR.nc<span class="w"> </span>&gt;<span class="w"> </span>AFR.xyz
+</pre></div>
+</div>
+<p>将一个netCDF文件以单精度二进制格式输出其Z值:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grd2xyz<span class="w"> </span>@AFR.nc<span class="w"> </span>-ZTLf<span class="w"> </span>&gt;<span class="w"> </span>AFR.b
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2>相关模块<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grdedit/"><span class="doc">grdedit</span></a>,
+<a class="reference internal" href="../grdconvert/"><span class="doc">grdconvert</span></a>,
+<a class="reference internal" href="../xyz2grd/"><span class="doc">xyz2grd</span></a></p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../grd2cpt/" class="btn btn-neutral float-left" title="grd2cpt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../grdblend/" class="btn btn-neutral float-right" title="grdblend" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 01 月 11 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
