@@ -55,7 +55,7 @@ sac
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *SACfiles*
@@ -77,6 +77,9 @@ sac
       - 对于地理投影而言，*X* 和 *Y* 默认是台站的经度和纬度。
 
     - *pen* 控制当前SAC波形的线条属性
+
+必须选项
+--------
 
 .. include:: explain_-J.rst_
 
@@ -142,7 +145,7 @@ sac
 .. option:: -M
 
 **-M**\ *size*\ [*u*][*/alpha*]
-    控制Y方向的缩放。不使用的话，Y方向即为振幅
+    控制Y方向的缩放。不使用的话，Y方向即为振幅
 
     - *size*\ [*u*] 将所有波形在地图上的高度缩放到 *size*\ [*u*]，
       其中 *u* 可以取 **i**\|\ **c**\|\ **p** ，默认单位由 :term:`PROJ_LENGTH_UNIT` 控制。
@@ -208,8 +211,8 @@ sac
 
     gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 
-.. image:: https://github.com/user-attachments/assets/80d57cb7-ae5e-4351-a6f6-4e9ac48579a4
-   :width: 100%
+.. figure:: https://github.com/user-attachments/assets/80d57cb7-ae5e-4351-a6f6-4e9ac48579a4
+   :width: 80%
    :align: center
 
 
@@ -218,8 +221,8 @@ sac
     gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l"T(s)" -By5+lDegree -BWSen \
          -Ed -M1.5c -W0.5p,red -png distance_profile
 
-.. image:: https://github.com/user-attachments/assets/d5f0d76a-3ff9-4914-a12b-bbc67fae62f4
-   :width: 100%
+.. figure:: https://github.com/user-attachments/assets/d5f0d76a-3ff9-4914-a12b-bbc67fae62f4
+   :width: 80%
    :align: center
 
 
@@ -231,8 +234,8 @@ sac
         saclst stlo stla f *.z | gmt plot -St0.4c -Gred -i1,2
     gmt end show
 
-.. image:: https://github.com/user-attachments/assets/670740ed-6114-40ff-a2c1-f3d7e54ccb26
-   :width: 100%
+.. figure:: https://github.com/user-attachments/assets/670740ed-6114-40ff-a2c1-f3d7e54ccb26
+   :width: 80%
    :align: center
 
 
