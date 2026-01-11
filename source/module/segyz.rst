@@ -1,5 +1,5 @@
 :author: 何星辰
-:date: 2025-10-06
+:date: 2026-01-11
 
 .. index:: ! segyz
 .. program:: segyz
@@ -8,7 +8,7 @@ segyz
 =============
 
 :官方文档: :doc:`gmt:supplements/segy/segyz`
-:简介: **segyz** 用于读取原生(IEEE)格式的 SEGY 文件，并绘制地震数据。
+:简介: **segyz** 用于读取原生(IEEE)格式的 SEGY 文件，并进行三维绘图。
 
 使用 *imagemask* 操作可以将地震数据绘制成单色（用户可指定颜色或灰度）的 1 位深度位图，背景透明。
 位图分辨率采用当前 GMT 默认设置。地震道可以根据道头信息绘制在其实际位置上(这样文件中道的顺序就不再重要)。
@@ -24,14 +24,17 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 语法
 --------
 
-**gmt segyz** 
+**gmt segyz**
 *SEGYfile* 
 :option:`-J`\ *parameters*
-:option:`-J`\ **z**\|\ **Z**\ *parameters*
+:option:`-Jz|Z`\ *parameters*
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
-:option:`-D`\ *deviation* :option:`-F`\ [*color*] :option:`-W`
+:option:`-D`\ *deviation*
+:option:`-F`\ [*color*]
+:option:`-W`
 [ :option:`-C`\ *clip* ]
-[ :option:`-I` ] [ :option:`-L`\ *nsamp* ]
+[ :option:`-I` ]
+[ :option:`-L`\ *nsamp* ]
 [ :option:`-M`\ *ntrace* ]
 [ :option:`-N` ]
 [ :option:`-Q`\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
@@ -45,11 +48,20 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 ------------------
 
 *SEGYfile*
     地震 SEGY 数据文件
+
+必须选项
+------------------
+
+.. include:: explain_-J.rst_
+
+.. include:: explain_-Jz.rst_
+
+.. include:: explain_-Rz.rst_
 
 .. option:: -D
 
@@ -96,7 +108,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
 .. option:: -M
 
-**-M**
+**-M**\ *ntrace*
     覆盖卷头中指定的道数。程序会相对优雅地检测文件结束，但此参数限制了程序尝试读取的道数。
 
 .. option:: -N
@@ -108,28 +120,37 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
 **-Q**\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value*
     可以通过指令修改五种不同的设置（可重复使用）：
-       **-Qb**\ *bias* 为缩放后的地震道添加偏移 (-**Qb**\ -0.1 从值中减去0.1).
 
-​       **-Qi**\ *dpi* 设置图像的每英寸像素点分辨率 [默认值300].
-
-​       **-Qu**\ *redvel* 应用减速速度（负值移除已有的减速）。
-
-​       **-Qx**\ *mult* 将道位置乘以 *mult* 倍。
-
-​       **-Qy**\ *dy* 覆盖 SEGY 卷头中的采样间隔。
+    - **-Qb**\ *bias* ：为缩放后的地震道添加偏移 ( **-Qb**\ -0.1 从值中减去0.1).
+    - **-Qi**\ *dpi* ：设置图像的每英寸像素点分辨率 [默认值300].
+    - **-Qu**\ *redvel* ：应用减速速度（负值移除已有的减速）。
+    - **-Qx**\ *mult* ：将道位置乘以 *mult* 倍。
+    - **-Qy**\ *dy* ：覆盖 SEGY 卷头中的采样间隔。
 
 .. option:: -S
 
-**-S**\ *header\_x*/*header\_y*
+**-S**\ *header_x*/*header_y*
     从道头中读取道位置：headers 可以是 **c** 表示 CDP， **o** 
     表示偏移距，**b**\ *num* 表示从道头中第 *num* 个字节开始读
     取一个长整型数（第一个字节对应 num=0），或者是一个固定的数
     值。 第一个参数用于 x，第二个用于 y。默认情况下，X 和 Y 由道号给出。
 
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
+
 .. option:: -Z
 
 **-Z**
     不绘制 rms amplitude 为0的道。
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
 
 示例
 --------
@@ -139,7 +160,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
 ::
     
-    ​gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
+    gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
 
 已知 Bug
 --------

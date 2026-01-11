@@ -10,11 +10,20 @@ sample1d
 :官方文档: :doc:`gmt:sample1d`
 :简介: 对 1D 表数据进行重采样
 
+**sample1d** 从文件（或标准输入）读取一个多列的 ASCII 格式（或二进制）数据，
+对时间序列或指定测线点位进行重采样。其中独立变量
+（即单调递增或递减的变量，以下称之为 *time* ）
+默认位于首列，用户可指定其他列作为独立变量。可以使用等距或其他指定采样。
+所有列都将基于新的采样间隔重新采样。除平滑样条 （smoothing spline）方法外，
+还可选择多种插值方法。其中，平滑样条通过在拟合误差和曲率之间进行权衡
+（即不完全精确拟合数据点以换取更平滑的曲线）来实现平滑效果。
+本模块不支持输入数据范围外做外推插值。通过使用 :option:`-C` 指定 CPT，
+本模块将基于输入数据最后一列做颜色插值，将 *r,g,b,a* 添加到输出。
+
 语法
 --------
 
-
-**gmt sample1d** 
+**gmt sample1d**
 [ *table* ]
 [ :option:`-A`\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+d**][**+l**] ]
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
@@ -24,7 +33,8 @@ sample1d
 [ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [:option:`-T`\ *file*\|\ *list*]]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *col* ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -39,20 +49,7 @@ sample1d
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-描述
------------    
-
-**sample1d** 从文件（或标准输入）读取一个多列的 ASCII 格式（或二进制）数据，
-对时间序列或指定测线点位进行重采样。其中独立变量
-（即单调递增或递减的变量，以下称之为 *time* ）
-默认位于首列，用户可指定其他列作为独立变量。可以使用等距或其他指定采样。
-所有列都将基于新的采样间隔重新采样。除平滑样条 （smoothing spline）方法外，
-还可选择多种插值方法。其中，平滑样条通过在拟合误差和曲率之间进行权衡
-（即不完全精确拟合数据点以换取更平滑的曲线）来实现平滑效果。
-本模块不支持输入数据范围外做外推插值。通过使用 :option:`-C` 指定 CPT，
-本模块将基于输入数据最后一列做颜色插值，将 *r,g,b,a* 添加到输出。
-
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_intables.rst_
@@ -102,7 +99,7 @@ sample1d
 
 .. option:: -T
 
-**-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [:option:`-T`\ *file*\|\ *list*]
+**-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
     定义要等距采样的 *time* 范围（从 *min* 到 *max* ）和步长 *inc* 
     （默认使用输入的 *time* 值）。用法 :option:`-T`\ *list* 表示指定一系列 *time* 值，
     例如 :option:`-T`\ *13,15,16,22.5* 。具体详见 `生成一维数组`_ 。
@@ -145,6 +142,8 @@ sample1d
 .. include:: explain_-s.rst_
 
 .. include:: explain_-w.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
