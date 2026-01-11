@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰
-:date: 2025-01-20
+:date: 2026-01-11
 
 .. index:: ! segy
 .. program:: segy
@@ -8,7 +8,7 @@ segy
 ======
 
 :官方文档: :doc:`gmt:supplements/segy/segy`
-:简介: 
+:简介: 绘制二维 SEGY 文件
 
 读取一个原生（IEEE）格式的 SEGY 文件，并生成地震数据的绘图。使用 **imagemask** 操作符将地震数据以单色或灰度（由用户指定）1-bit 深度位图的形式绘制，背景为透明。位图分辨率取自当前的 GMT 默认设置。通过使用道头中的信息，可以在真实位置绘制地震道（此时，文件中道的顺序无关紧要）。标准的 GMT 几何处理方法被用于绘制，因此原则上可以采用任何地图投影。然而，地理投影可能会导致意外的结果。另外需注意，某些参数具有非标准含义。
 
@@ -25,19 +25,38 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*
 :option:`-D`\ *deviation*
-:option:`-F`\ [*color*] :option:`-W`
+:option:`-F`\ [*color*]
+:option:`-W`
 [ :option:`-C`\ *clip* ]
-[ :option:`-E`\ *error* ] [ :option:`-I` ] [ :option:`-L`\ *nsamp* ]
-[ :option:`-M`\ *ntrace* ] [ :option:`-N` ]
+[ :option:`-E`\ *error* ]
+[ :option:`-I` ]
+[ :option:`-L`\ *nsamp* ]
+[ :option:`-M`\ *ntrace* ]
+[ :option:`-N` ]
 [ :option:`-Q`\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
 [ :option:`-S`\ *header* ]
 [ :option:`-T`\ *filename* ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-Z` ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 ------------------
 
 *SEGYfile*
     地震 SEGY 数据文件
+
+必须选项
+------------------
+
+.. include:: explain_-J.rst_
+
+.. include:: explain_-R.rst_
 
 .. option:: -D
 
@@ -120,12 +139,24 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 .. option:: -T
 
 **-T**\ *filename*
-    仅绘制其位置对应于 *filename* 中列出位置的道。道的列出顺序无关紧要——程序会在整个空间中检查每个道。
+    仅绘制其位置对应于 *filename* 中列出位置的道。道的列出顺序无关紧要，程序会在整个空间中检查每个道。
+
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
 
 .. option:: -Z
 
 **-Z**
     不绘制 rms amplitude 为0的道。
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
 
 示例
 --------
@@ -147,3 +178,12 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 绘制一个3秒，32道的 SEGY 文件。示例数据：:download:`segy/XB1-Z.sgy`
 
 .. gmtplot:: segy/segy_ex.sh
+   :width: 80%
+   :align: center
+
+
+相关模块
+--------
+
+:doc:`segyz`,
+:doc:`segy2grd`

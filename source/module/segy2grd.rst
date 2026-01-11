@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰
-:date: 2025-01-20
+:date: 2026-01-11
 
 .. index:: ! segy2grd
 .. program:: segy2grd
@@ -8,7 +8,7 @@ segy2grd
 =============
 
 :官方文档: :doc:`gmt:supplements/segy/segy2grd`
-:简介: 
+:简介: 将 SEGY 文件转换为网格文件
 
 **segy2grd** 用于读取 IEEE SEGY 文件并创建二进制网格文件。它可以执行简单的映射(相当于 xyz2grd -Z)，或者在单个网格单元包含 SEGY 文件中多个样本值的情况下进行更复杂的平均值计算。
 
@@ -23,26 +23,34 @@ segy2grd
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 [ :option:`-A`\ [**n**\|\ **z**] ]
+[ :option:`-D`\ *paras* ]
 [ :option:`-L`\ [*nsamp*] ]
 [ :option:`-M`\ [*ntraces*] ]
 [ :option:`-Q`\ **x**\|\ **y**\ *value* ]
 [ :option:`-S`\ [*header*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-r`\ *reg* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 ------------------
 
 *segyfile* 
     *segyfile* 是一个 IEEE 浮点数格式的 SEGY 文件。所有的道集都假定从 0 时间/深度域开始。
 
-.. option:: -G
+必须选项
+------------------
 
-**-G**\ outgrid
-    输出的网格文件名
+.. include:: explain_grd_out.rst_
 
 .. option:: -I
 
 **-I**\ *x_inc*\ /[*y_inc*]
     *x_inc* [以及可选的 *y_inc*] 是网格间距。可以在数值后添加 **m** 表示分钟，或添加 **s** 表示秒。
+
+.. include:: explain_-R.rst_
 
 可选选项
 ------------------
@@ -53,6 +61,8 @@ segy2grd
     将属于同一节点(相同坐标)的多个值相加(等同于 **-Az**)。
     添加 **n** 则仅统计分配到每个节点的数据点数量。
     [默认情况下(不使用 :option:`-A` 选项)会计算平均值]。该选项不用于简单映射。
+
+.. include:: explain_-D_cap.rst_
 
 .. option:: -L
 
@@ -70,9 +80,9 @@ segy2grd
 
 **-Q**\ **x**\|\ **y**\ *value*
     根据不同指令可用于更改两种不同的设置:
-       **-Qx**\ *x-scale* 对道头中的坐标应用缩放因子 *x-scale* ，使其匹配 -R 中指定的坐标范围
 
-       **-Qy**\ *s_int* 当 SEGY 文件中的采样间隔不正确时，指定采样间隔为 *s_int* 。可重复使用。
+        - **-Qx**\ *x-scale* ：对道头中的坐标应用缩放因子 *x-scale* ，使其匹配 :option:`-R` 中指定的坐标范围
+        - **-Qy**\ *s_int* ：当 SEGY 文件中的采样间隔不正确时，指定采样间隔为 *s_int* 。可重复使用。
 
 .. option:: -S
 
@@ -80,6 +90,20 @@ segy2grd
     设置可变间距。 *header* 可以是 **c** 表示 CDP(共同深度点)，**o** 表示偏移量，
     或 **b**\ *number* 表示从第 *number* 字节开始的4字节浮点数。
     如果未设置 :option:`-S`，则假定样本按照 :option:`-I` 提供的 *x_inc* , *y_inc* 进行均匀间隔。
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-bi.rst_
+
+.. include:: explain_-di.rst_
+..
+
+    同时将没有输入 SEGY 覆盖的节点设置为该值 [默认值为 NaN]。
+
+.. include:: explain_nodereg.rst_
+
+.. include:: explain_help.rst_
+
 
 示例
 --------
