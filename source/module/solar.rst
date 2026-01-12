@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰, 姚家园, 王亮
-:date: 2022-05-05
+:date: 2026-01-12
 
 .. index:: ! solar
 .. program:: solar
@@ -9,6 +9,8 @@ solar
 
 :官方文档: :doc:`gmt:solar`
 :简介: 计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
+
+**solar** 计算昼夜平分线（晨昏线）以及民用、航海和天文曙暮光的闭合多边形，并将其写入标准输出，或在地图上用于裁剪或填充。
 
 语法
 ----
@@ -29,16 +31,15 @@ solar
 [ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
 [ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
 [ :option:`-bo`\ *binary* ]
-[ :option:`-h`\ *headers* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-p`\ *flags* ]
 [ :option:`-t`\ *transp* ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+必须选项
 --------
 
-**-I** 和 :option:`-T` 必须使用一个。
+:option:`-I` 和 :option:`-T` 必须使用一个。
 
 可选选项
 --------
@@ -182,6 +183,21 @@ solar
       # 计算指定时间太阳位置并绘制在底图上
       gmt solar -I+d2016-02-09T16:00:00 -C | gmt plot -Sk@sunglasses/1.5c -Gyellow -W0.2p
     gmt end show
+
+打印在给定日期、时间和时区下的当前太阳位置以及日出、日落时间::
+
+    gmt solar -I-7.93/37.079+d2016-02-04T10:01:00+z02:00
+
+绘制昼夜平分线和民用曙暮光::
+
+    gmt begin
+      gmt coast -Rd -W0.1p -JQ0/14c -B -BWSen -Dl -A1000
+      gmt solar -W1p -Tdc
+    gmt end show
+
+根据昼夜平分线设置剪裁路径叠加层::
+
+    gmt solar -G -Td
 
 参考
 ----
