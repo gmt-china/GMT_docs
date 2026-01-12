@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2025-12-30
+:date: 2026-01-12
 
 .. index:: ! sph2grd
 .. program:: sph2grd
@@ -16,35 +16,35 @@ L，M，C[L，M]，S[L，M]
 语法
 -----
 
-**gmt sph2grd** [table]
+**gmt sph2grd**
+[ *table* ]
 :option:`-G`\ *grdfile*
 :option:`-I`\ *increment*
-:option:`-R`\ *region*\ *region*
+:option:`-R`\ *region*
 [ :option:`-D`\ [**g**\|\ **n**] ]
-[ :option:`-E`\ ]
+[ :option:`-E` ]
 [ :option:`-F`\ [**k**]\ *filter* ]
 [ :option:`-N`\ [norm] ]
-[ :option:`-Q`\ ]
+[ :option:`-Q` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-bi`\ *binary* ]
 [ :option:`-h`\ *headers* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-r`\ *reg* ]
-[ **-x**\ [-]\ *n* ]
+[ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 ----------
 
 *table*
     一个或多个球谐系数文本文件 [ 或者二进制文件，见 **-bi**]。文件预期
     的格式为四列，分别比表示阶 L，度 M，然后是余弦和正弦系数。
 
-.. option:: -G
+必须选项
+----------
 
-**-G**\ *grdfile*
-    *grdfile* 为输出网格文件名。
-
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -57,12 +57,12 @@ L，M，C[L，M]，S[L，M]
 
 **-D**\ [**g**\|\ **n**]
     利用位模型计算场。\ **-Dg** 表示计算引力场，\ **-Dn** 表示计算大地水准
-    [ 同时使用 :option:`-E` 选项将会计算基于椭球的场 ]。( 目前该选项还没有实现)
+    [ 同时使用 :option:`-E` 选项将会计算基于椭球的场 ]。
 
 .. option:: -E
 
 **-E**
-    将参考从默认的球改变为椭球。（ 目前该选项还没有实现 ）
+    将参考从默认的球改变为椭球。
 
 .. option:: -F
 
@@ -79,9 +79,15 @@ L，M，C[L，M]，S[L，M]
 
 **-N**\ [norm]
     对球谐系数使用规格化。可选的规格化方法包括：
-    **m** 数学正规格化化 - 表面内积和为 1 (默认)。
-    **g** 大地测量规格化 - 表面内积和为 4pi 。
-    **s** 施密特规格化 - 和地磁学中相同。
+    
+    - **m** 数学正规格化化：表面内积和为 1 (默认)。
+    - **g** 大地测量规格化：表面内积和为 4pi 。
+    - **s** 施密特规格化：和地磁学中相同。
+
+.. option:: -Q
+
+**-Q**
+    系数采用物理学中的相位约定，即 :math:`(-1)^m` 因子。
 
 .. include:: explain_-V.rst_
 
@@ -99,14 +105,14 @@ L，M，C[L，M]，S[L，M]
 
 .. include:: explain_float.rst_
 
+.. include:: explain_grd_coord.rst_
+
 示例
 ------
 
-使用 :file:`egm96_to36.txt` 球谐系数文件创建 1 x 1 度全球网格::
+使用 EGM96_to_36.txt 球谐系数文件创建 1 x 1 度全球网格::
 
     gmt sph2grd @EGM96_to_36.txt -GEGM96_to_36.nc -Rg -I1 -V
-
-由于 :option:`-D` 选项还未实施，该命令结果没有物理意义。
 
 参考文献
 ----------
