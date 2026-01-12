@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰, 周茂
-:date: 2025-08-25
+:date: 2026-01-12
 
 .. index:: ! set
 .. program:: set
@@ -20,10 +20,11 @@ set
 
 **gmt set**
 [ :option:`-C` \| :option:`-D`\ [**s**\|\ **u**] \| :option:`-G`\ *defaultsfile* ]
-[ **-**\ [**BJRXxYycp**]\ *value* ]
+[ **-**\ **B**\|\ **J**\|\ **R**\|\ **X**\|\ **Y**\|\ **p**\ *value* ]
 PARAMETER1 *value1*
 PARAMETER2 *value2*
 PARAMETER3 *value3*
+...
 
 必选选项
 --------
@@ -56,7 +57,7 @@ PARAMETER3 *value3*
 **-G**\ *defaultsfile*
     指定要读取并修改的配置文件名 *defaultsfile*
 
-**-**\ [**BJRXxYycp**]\ *value*
+**-**\ **B**\|\ **J**\|\ **R**\|\ **X**\|\ **Y**\|\ **p**\ *value*
     强行修改GMT命令历史文件 **gmt.history** 中的值。
 
     GMT在执行一个命令时会在命令历史文件 **gmt.history** 中记录一些选项的参数值，
