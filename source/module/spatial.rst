@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2025-12-30
+:date: 2026-01-12
 
 .. index:: ! spatial
 .. program:: spatial
@@ -17,24 +17,25 @@ spatial
 语法
 ----
 
-**gmt spatial** 
+**gmt spatial**
 [ *table* ]
 [ :option:`-A`\ [**a**\ *min_dist*][*unit*]]
 [ :option:`-C` ]
-[ :option:`-D`\ [**+a**\ *amax*][**+c\|C**\ *cmax*][**+d**\ *dmax*][**+f**\ *file*][**+p**][**+s**\ *fact*] ]
+[ :option:`-D`\ [**+a**\ *amax*][**+c\|C**\ *cmax*][**+d**\ *dmax*][**+f**\ *file*][**+p**][**+s**\ *factor*] ]
 [ :option:`-E`\ **+p**\|\ **+n** ]
 [ :option:`-F`\ [**l**] ]
 [ :option:`-I`\ [**e**\|\ **i**] ]
-[ -L|\ *dist*\ /*noise*\ /*offset* ]
-[ :option:`-N`\ *pfile*\ [**+a**][**+p**\ *start*][**+r**][**+z**] ]
+[ :option:`-L`\ *dist*\ /*noise*\ /*offset* ]
+[ :option:`-N`\ *pfile*\ [**+a**][**+i**][**+p**\ [*start*]][**+r**][**+z**] ]
 [ :option:`-Q`\ [*unit*][**+c**\ *min*\ [/*max*]][**+h**][**+l**][**+p**][**+s**\ [**a**\|\ **d**]] ]
 [ :option:`-R`\ *region* ]
-[ :option:`-S`\ **b**\ *width*\|\ **h**\|\ **i**\|\ **u**\|\ **s**\|\ **j** ]
+[ :option:`-S`\ **b**\ *width*\|\ **h**\|\ **s** ]
 [ :option:`-T`\ [*clippolygon*] ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-W`\ *dist*\[*unit*][**+f**\|\ **l**] ]
 [ :option:`-a`\ *flags* ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -48,7 +49,7 @@ spatial
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
@@ -75,7 +76,7 @@ spatial
 
 .. option:: -D
 
-**-D**\ [**+a**\ *amax*][**+c\|C**\ *cmax*][**+d**\ *dmax*][**+f**\ *file*][**+p**][**+s**\ *fact*]
+**-D**\ [**+a**\ *amax*][**+c\|C**\ *cmax*][**+d**\ *dmax*][**+f**\ *file*][**+p**][**+s**\ *factor*] 
     检查输入线或者多边形之间是否存在重复，若使用 **+f** 则检查该选项给定的文件
     中的元素是否与输入文件中的元素存在重复。在确定是否重复的时候，GMT 会自动
     考虑精确匹配（相同的个数和坐标），近似匹配（两个特征之间最近点之间的平均
@@ -95,10 +96,13 @@ spatial
       **+p** 选项，则只考虑在另一条线（非延长线）有垂直投影的点，这样会减小
       一定的计算量
 
-    - **+s**\ *fact* 设置两条线的长度比值的阈值为 *fact* ，默认为 2，若大于
+    - **+s**\ *factor* 设置两条线的长度比值的阈值为 *factor* ，默认为 2，若大于
       值，则两条线分别为子集和超集。
 
-    在进行重复检查时，根据特征的种类，GMT 将会自动选取上述选项中的几项进行判断
+    在进行重复检查时，根据特征的种类，GMT 将会自动选取上述选项中的几项进行判断。
+    对于找到的每个重复项，输出记录以单个字母 **Y** （精确匹配）或 **~** （近似匹配）开头。
+    如果两个匹配分段的长度差异超过 2 倍，则将该重复项视为子集 (**-**) 或超集 (**+**) 并进行相应标记。
+    最后还会记录两条线是否是将一条连续线跨越日界线切分后的结果 (**|**)。
 
 .. option:: -E
 
@@ -127,19 +131,23 @@ spatial
 
 .. option:: -N
 
-**-N**\ *pfile*\ [**+a**][**+p**\ *start*][**+r**][**+z**]
+**-N**\ *pfile*\ [**+a**][**+i**][**+p**\ [*start*]][**+r**][**+z**]
     确定点是否在多边形内。如果在多边形的内部，则报告对应的多边形的 ID，
     *pfile* 为报告的多边形结果。
 
     - **+a** 表示某条线或多边形的所有点均位于多边形内
 
+    - **+i** 点云，为每个输入点确定其所属的多边形 ID，并将其作为输出的最后一列添加
+
     - **+r** 不输出表数据，只报告对应的多边形
 
     - **+p** 设置初始运行的多边形的 ID 为 *start* ，并在运行中对多边形 ID 进行
-      递增，默认 *start* 为 0。除 **+p** 选项为，还可使用 :option:`-Z` 选项或者
-      :option:`-L` 选项在头段信息中设置多边形的 ID
+      递增，默认 *start* 为 0。除 **+p** 选项为，还可使用 **-Z** 选项或者
+      **-L** 选项在头段信息中设置多边形的 ID
 
     - **+z** 将 ID 作为一列输出，默认只写到头部信息中
+
+    不在多边形内的分段不会被输出。如果有多个多边形包含同一个分段，将跳过第二个（及后续）情况。
 
 .. option:: -Q
 
@@ -161,6 +169,9 @@ spatial
     - **+l** 将输入视为线而不是多边形，即使是闭合的多边形也视为线
 
 .. include:: explain_-R.rst_
+..
+
+    将多边形剪裁至地图区域，并根据需要将地图边界包含到多边形中。其结果是一个闭合多边形。
 
 .. option:: -S
 
@@ -193,7 +204,7 @@ spatial
 
 .. include:: explain_-V.rst_
 
-.. --W:
+.. option:: -W
 
 **-W**\ *dist*\[*unit*][**+f**\|\ **+l**]
     对多段线的第一段和最后一段以其原本的方位角进行延长， *dist* 为延长距离，
@@ -234,6 +245,8 @@ spatial
 .. include:: explain_distunits.rst_
 
 .. include:: explain_inside.rst_
+
+.. include:: explain_precision.rst_
 
 示例
 ----
