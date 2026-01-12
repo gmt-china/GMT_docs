@@ -33,7 +33,8 @@ sphtriangulate
 [ :option:`-Q`\ **d**\|\ **v** ]
 [ :option:`-T` ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-h`\ *headers* ]
@@ -45,7 +46,7 @@ sphtriangulate
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
@@ -92,6 +93,8 @@ sphtriangulate
 **-Q**\ **d**\|\ **v**
     **d** 选项为计算 Delaunay 三角网，**v** 选项为计算 Voronoi 图 [默认使用 **d** ]。
 
+    **注意**：如果激活了 :option:`-bo` （二进制输出），则可以使用 :option:`-N` 指定一个单独的文件，用于写入通常情况下输出的多边形信息。
+
 .. option:: -T
 
 **-T**
@@ -110,6 +113,8 @@ sphtriangulate
 
 .. include:: explain_-h.rst_
 
+.. include:: explain_-icols.rst_
+
 .. include:: explain_distcalc.rst_
 
 .. include:: explain_-qi.rst_
@@ -121,6 +126,8 @@ sphtriangulate
 .. include:: explain_nodereg.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_precision.rst_
 
 示例
 ----

@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2025-12-30
+:date: 2026-01-12
 
 .. index:: ! sphdistance
 .. program:: sphdistance
@@ -18,7 +18,8 @@ sphdistance
 语法
 ----
 
-**gmt sphdistance** [ *table* ]
+**gmt sphdistance**
+[ *table* ]
 :option:`-G`\ *grdfile*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
@@ -29,7 +30,8 @@ sphdistance
 [ :option:`-N`\ *nodetable* ]
 [ :option:`-Q`\ *voronoi.txt* ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-h`\ *headers* ]
@@ -40,19 +42,15 @@ sphdistance
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
 
-.. option:: -G
+必须选项
+--------
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格文件名，其中各子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -101,7 +99,7 @@ sphdistance
 .. option:: -Q
 
 **-Q**\ *voronoi.txt*
-    指定 Voronoi 多边形文件 [默认使用输入数据构建 Voronoi 图]。输入数据为二进制文件，
+    指定 Voronoi 多边形文件 [默认使用输入数据构建 Voronoi 图]。如果输入数据为二进制文件，
     需要 :option:`-N` 选项指定节点信息。
 
 .. include:: explain_-V.rst_
@@ -127,6 +125,8 @@ sphdistance
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_precision.rst_
 
 .. include:: explain_float.rst_
 

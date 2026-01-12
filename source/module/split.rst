@@ -1,5 +1,5 @@
 :author: 周茂, 田冬冬, 陈箫翰
-:date: 2025-08-11
+:date: 2026-01-12
 
 .. index:: ! split
 .. program:: split
@@ -10,14 +10,16 @@ split
 :官方文档: :doc:`gmt:gmtsplit`
 :简介: 将表数据拆分成单独的段
 
-**split** 将表数据拆分以使每段数据都具有近乎恒定的方位角。该模块可认为
-是数据提取和 :doc:`wiggle` 模块之间的一个数据过滤模块，也可以用来将一个大的
-数据集分割成小段。
+**split** 从标准输入 [或 *xy[z][dh]file*] 读取一系列 (*x, y* [*, z*]) 记录 [或者可选的 (*x, y* [, *z*], *d, h*)；参见 :option:`-S` 选项]，
+并将其拆分为独立的 (*x, y* [, *z*]) 系列列表，使得每个系列在 *x-y* 平面上具有几乎恒定的方位角。
+该模块提供了多种选项：可以仅选择具有特定方向的系列，可以为系列设定最小长度，还可以对 *z* 值和/或 *x, y* 值进行高通或低通滤波。
+**split** 是数据提取与 :doc:`wiggle` 绘图之间非常有用的过滤器，也可用于将大型 *x, y* [, *z*] 数据集划分为若干分段。
 
 语法
 ----
 
-**gmt split** [ *table* ]
+**gmt split**
+[ *table* ]
 [ :option:`-A`\ *azimuth*/*tolerance* ]
 [ :option:`-C`\ *course_change*]
 [ :option:`-D`\ *minimum_distance* ]
@@ -26,7 +28,8 @@ split
 [ :option:`-Q`\ *flags* ]
 [ :option:`-S` ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -38,7 +41,7 @@ split
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
@@ -94,15 +97,21 @@ split
 
 **-S**
     支持包含 d 和 h 的列，这时输入数据为 x,y,z,d,h。其中 d 和 h 分别表示 x 的增量和
-    y 的增量。使用 **-fg** 时，数据为地理坐标，x 和 y 的坐标单位为度，增量的单位均
+    y 的增量。使用 :option:`-f`\ **g** 时，数据为地理坐标，x 和 y 的坐标单位为度，增量的单位均
     为 km，角度为方位角。若为笛卡尔坐标，距离的单位和 x 以及 y 相同，角度从水平方向
     开始顺时针计算。
 
 .. include:: explain_-V.rst_
 
 .. include:: explain_-bi.rst_
+..
+
+    默认输入列为 2、3 或 5 列，由 :option:`-S` 选项设置。
 
 .. include:: explain_-bo.rst_
+..
+
+    默认输出为 1-5 列，由 :option:`-Q` 选项设置。
 
 .. include:: explain_-d.rst_
 
@@ -111,6 +120,9 @@ split
 .. include:: explain_-f.rst_
 
 .. include:: explain_-g.rst_
+..
+
+    不要让单个分段中存在超过 *gap* 的间隙；一旦检测到，则将其拆分为两个分段 [默认忽略间隙]。
 
 .. include:: explain_-h.rst_
 
@@ -123,6 +135,14 @@ split
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_precision.rst_
+
+距离计算
+---------
+
+输入数据的类型由 :option:`-f` 选项决定。如果给定了 :option:`-f`\ **g** ，则 *x, y* 以经度、纬度度数表示，距离单位为千米，角度为方位角。
+否则，距离为与 *x, y* 单位相同的笛卡尔距离，且角度是从水平方向起逆时针旋转的角度。
 
 示例
 ----

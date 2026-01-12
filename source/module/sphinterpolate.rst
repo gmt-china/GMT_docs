@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2025-12-30
+:date: 2026-01-12
 
 .. index:: ! sphinterpolate
 .. program:: sphinterpolate
@@ -8,20 +8,22 @@ sphinterpolate
 ==============
 
 :官方文档: :doc:`gmt:sphinterpolate`
-:简介:
+:简介: 球面数据的球面张力网格化
 
 **sphinterpolate** 读取 lon，lat，z 形式的文件，进行 Delaunay 三角剖分并作球面张力插值。
-通过 :option:`-Q` 选项可以使用不同的插值方法。
+通过 :option:`-Q` 选项可以使用不同的插值方法，例如选择局部或全局梯度估计，或者优化张力选择以满足四个准则之一。
+所使用的算法是 STRIPACK [*Renka*, 1997a] 和 SSRFPACK [*Renka*, 1997b]。
 
 语法
 ----
 
-**gmt sphinterpolate** [ *table* ]
+**gmt sphinterpolate**
+[ *table* ]
 :option:`-G`\ *grdfile*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
 [ :option:`-D`\ [*east*] ]
-[ :option:`-Q`\ *mode*\ [*options*] ]
+[ :option:`-Q`\ **g**\|\ **l**\|\ **p**\|\ **s**\ [*args*] ]
 [ :option:`-T` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-Z` ]
@@ -36,19 +38,15 @@ sphinterpolate
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
 
-.. option:: -G
+必须选项
+--------
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格文件名，其中各子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -65,7 +63,7 @@ sphinterpolate
 
 .. option:: -Q
 
-**-Q**\ *mode*\ [*options*]
+**-Q**\ **g**\|\ **l**\|\ **p**\|\ **s**\ [*args*]
     设置用于内插的计算张力因子的方法，用来保证局部形状特征或满足弧段约束 [默认没有张力]
 
     - **p** 分段线性插值，不施加张力
@@ -111,6 +109,8 @@ sphinterpolate
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_precision.rst_
 
 示例
 ----
