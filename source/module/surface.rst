@@ -40,7 +40,8 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 [ :option:`-C`\ *convergence_limit*\ [%] ]
 [ :option:`-J`\ *parameters* ]
 [ :option:`-D`\ *breakline_file*\ [**+z**\ [*level*]] ]
-[ :option:`-L`\ **l**\ *lower* ] [ :option:`-L`\ **u**\ *upper* ]
+[ :option:`-L`\ **l**\ *lower* ]
+[ :option:`-L`\ **u**\ *upper* ]
 [ :option:`-M`\ *max_radius* ]
 [ :option:`-N`\ *max_iterations* ]
 [ :option:`-Q`\ [**r**] ]
@@ -62,12 +63,18 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+------------
 
 .. include:: explain_intables.rst_
 
+必须选项
+--------
+
 .. include:: explain_grd_out.rst_
+..
+
+    请注意，生成的网格文件的行数或列数必须至少为 4。
 
 .. include:: explain_-I.rst_
 
@@ -106,7 +113,9 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. option:: -L
 
-**-Ll**\ *lower* and **-Lu**\ *upper*
+**-Ll**\ *lower*
+
+**-Lu**\ *upper*
     对微分方程的解加上限制。 **-Ll**\ *lower* 设置下限，其中 *lower* 可以是一个
     网格文件的文件名或一个固定值。设置以后，输出的网格的值将均大于等于设置的值。
     **-Lu**\ *upper* 设置上限，同样 *upper*  也可以是一个网格文件的文件名或一个
@@ -159,6 +168,11 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     其中 **i** 用于设置内部求解张力，**b** 用于设置边界条件张力。如果不给出子选项，
     则二者同时设置为同一个值。若同时设置为 0，即退化为最小曲率样条解，这也是默认情况。
 
+.. include:: explain_-V.rst_
+..
+
+    **-V3** 将在每次迭代后报告收敛情况，而 **-V** 仅在每个区域网格收敛后报告。
+
 .. option:: -W
 
 **-W**\ [*logfile*]
@@ -172,8 +186,6 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     因此可以更快地收敛，但由于增量变大，最终的结果可能不稳定。如果使用较大的
     值，最好使用 **-Vi** 选项观察迭代过程。默认值为 1.4，可以快速收敛且总能
     得到稳定的解。
-
-.. include:: explain_-V.rst_
 
 .. include:: explain_-aspatial.rst_
 
@@ -203,14 +215,12 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. include:: explain_distunits.rst_
 
-.. include:: explain_float.rst_
-
 示例
 ----
 
 ASCII 数据 `hawaii_5x5.xyg` 为经 :doc:`blockmean` 处理后的数据，使用 **surface**
 网格化为 5 分，设置 *tension_factor* = 0.25，*convergence_limit* = 0.1 mgal，
-将结果输出到 `havaii_grd.nc` 并使用 `-Vi` 选项查看每个迭代过程 ::
+将结果输出到 `havaii_grd.nc` 并使用 **-Vi** 选项查看每个迭代过程 ::
 
     gmt surface hawaii_5x5.xyg -R198/208/18/25 -I5m -Ghawaii_grd.nc -T0.25 -C0.1 -Vi
 

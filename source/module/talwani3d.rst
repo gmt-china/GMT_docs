@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2024-02-21
+:date: 2026-01-12
 
 .. index:: ! talwani3d
 .. program:: talwani3d
@@ -20,7 +20,7 @@ talwani3d
 语法
 ----
 
-**gmt talwani3d** 
+**gmt talwani3d**
 [ *table* ]
 [ :option:`-A` ]
 [ :option:`-D`\ *density* ]
@@ -36,14 +36,13 @@ talwani3d
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
-[ :option:`-f`\ *flags* ]
 [ :option:`-i`\ *flags* ]
 [ :option:`-o`\ *flags* ]
 [ :option:`-r`\ *reg* ]
 [ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
@@ -51,10 +50,6 @@ talwani3d
     并删除重复的多边形顶点。每段的头部信息中必须包含高度（海洋中为深度）和相对密度
     参数，单位为 kg/m^3 或 g/cm^3，见 :option:`-D` 选项。如果不指定文件，就从标准输入中
     读取数据。
-
-.. include:: explain_-I.rst_
-
-.. include:: explain_-R.rst_
 
 可选选项
 --------
@@ -89,6 +84,8 @@ talwani3d
     为输出网格文件名。如果已经设置了 :option:`-N` ，即计算测线处的异常，则可以使用
     :option:`-G` 指定输出文件也可以输出到标准输出
 
+.. include:: explain_-I.rst_
+
 .. option:: -M
 
 **-M**\ [**h**]\ [**v**]
@@ -100,6 +97,8 @@ talwani3d
 **-N**\ *trackfile*
     设置计算异常值的点的位置。如果输入文件中包含 3 列，就把最后一列作为观测
     高度，该高度可以被 :option:`-Z` 选项覆盖
+
+.. include:: explain_-R.rst_
 
 .. include:: explain_-V.rst_
 
@@ -117,6 +116,9 @@ talwani3d
 .. include:: explain_-e.rst_
 
 .. include:: explain_-f.rst_
+..
+
+    地理网格（即经度、纬度维度）将通过“平面地球”近似（Flat Earth approximation），并利用当前椭球参数转换为千米单位。
 
 .. include:: explain_-h.rst_
 

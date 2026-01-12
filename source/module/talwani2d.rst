@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2024-02-21
+:date: 2026-01-12
 
 .. index:: ! talwani2d
 .. program:: talwani2d
@@ -20,7 +20,7 @@ talwani2d
 语法
 ----
 
-**gmt talwani2d** 
+**gmt talwani2d**
 [ *table* ]
 [ :option:`-A` ]
 [ :option:`-D`\ *density* ]
@@ -39,7 +39,7 @@ talwani2d
 [ :option:`-x`\ [[-]n] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
@@ -141,11 +141,9 @@ talwani2d
 注意事项
 --------
 
-The 2-D geoid anomaly is a logarithmic potential and thus has no natural reference
-level. We simply remove the most negative (if density contrast is positive) or
-positive (if density contrast is negative) computed value from all values, rendering
-the entire anomaly positive (or negative). You can use :doc:`math` to change the
-zero level to suit your needs
+二维大地水准面异常（geoid anomaly）属于对数位（logarithmic potential），因此没有天然的参考基准面。
+我们只需从所有计算值中减去最小负值（如果密度对比为正）或最大正值（如果密度对比为负），从而使整个异常变为正值（或负值）。
+您可以利用 :doc:`math` 根据需要更改零水平基准。
 
 参考文献
 --------

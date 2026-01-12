@@ -1,8 +1,8 @@
 :author: 田冬冬, 王亮, 陈箫翰, 朱邓达
-:date: 2025-06-08
+:date: 2026-01-12
 
 .. index:: ! subplot
-.. program:: subplot
+.. program:: subplot_begin
 
 subplot
 =======
@@ -21,7 +21,7 @@ subplot
 
 在子图模式中，需要注意如下几点：
 
-- :option:`-X` 和 :option:`-Y` 选项无法在子图模式中使用，可以使用 :option:`-C` 选项作为替代
+- **-X** 和 **-Y** 选项无法在子图模式中使用，可以使用 :option:`-C` 选项作为替代
 - 在使用 :option:`-J` 选项时，可以使用 **?** 来指定地图宽度或比例尺，此时，GMT会根据
   子图的大小自动确定最合适的地图尺寸
 - 对于笛卡尔投影，若想要X和Y轴共用相同的比例尺，则可以使用 **-Jx?**
@@ -31,7 +31,7 @@ subplot begin 语法
 
 **gmt subplot begin**
 *nrows*\ **x**\ *ncols*
-:option:`-F`\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
+:option:`-F`\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
 [ :option:`-A`\ [*autotag*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+j**\|\ **J**\ *refpoint*][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+r**\|\ **R**][**+s**\ [[*dx*/*dy*][/*shade*]]][**+v**]]
 [ :option:`-C`\ [*side*]\ *clearance* ]
 [ :option:`-D` ]
@@ -56,7 +56,7 @@ subplot begin 语法
 
 .. option:: -F
 
-**-F**\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
+**-F**\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
     指定图片的尺寸。有两种方式：
 
     - **-Ff** - 直接指定整张图片的尺寸
@@ -72,7 +72,7 @@ subplot begin 语法
       即按照整个图片的宽度和高度的几何平均值对边框宽度和标注字体大小进行自动缩放；
       **+as** 类似，但参考每个子图的宽度和高度的几何平均值。
 
-    :option:`-F`\ [**f**]\ *width*/*height*\ [**+f**\ *wfracs*\ /*hfracs*]
+    **-F**\ [**f**]\ *width*/*height*\ [**+f**\ *wfracs*\ /*hfracs*]
         指定整张图片的宽度 *width* 和高度 *height*。
 
         这种情况下，GMT会根据整张图片的尺寸以及子图的数目自动计算每张子图的尺寸。
@@ -168,7 +168,7 @@ subplot begin 语法
 
     .. note::
 
-       在子图模式内不能使用 :option:`-X` 和 :option:`-Y` ，可以使用 :option:`-C` 作为替代。
+       在子图模式内不能使用 **-X** 和 **-Y** ，可以使用 :option:`-C` 作为替代。
 
 .. option:: -D
 
@@ -249,6 +249,8 @@ subplot begin 语法
 
 .. include:: explain_help.rst_
 
+.. program:: subplot_set
+
 subplot set
 -----------
 
@@ -269,9 +271,9 @@ subplot set 语法
 
 **gmt subplot set**
 [ *row,col*\|\ *index* ]
-[ :option:`-A`\ *fixedtag*]
-[ :option:`-C`\ *side*\ /*clearance* ]
-[ :option:`-V`\ [*level*] ]
+[ :option:`-A <subplot_set -A>`\ *fixedtag*]
+[ :option:`-C <subplot_set -C>`\ *side*\ /*clearance* ]
+[ :option:`-V <subplot_set -V>`\ [*level*] ]
 
 可选选项
 --------
@@ -281,6 +283,8 @@ subplot set 语法
 
     若不指定子图行列号或索引号，则自动激活“下一个”子图。
 
+.. option:: -A
+
 **-A**\ *fixedtag*
     设置当前子图的编号，忽略 **subplot begin** 中 :option:`-A` 选项设置的自动编号。
 
@@ -288,22 +292,27 @@ subplot set 语法
     其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 :option:`-A` 选项。
     使用 **-A-** 则不设置任何编号。
 
+.. option:: -C
+
 **-C**\ *side*/*clearance*
     设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。
 
     *side* 可以取 **e** **w** **s** **n** 分别代表东西南北四条边。
     该选项可以重复多次，对不同边分别设置不同的间距。
     **subplot begin** 该选项对所有子图均有效，而 **subplot set** 中使用该选项
-    则仅对当前子图有效。该选项会覆盖 **subplot begin** 中设置的 :option:`-C` 。
+    则仅对当前子图有效。该选项会覆盖 **subplot begin** 中设置的 :option:`-C <subplot_begin -C>` 。
 
     .. note::
 
-       在子图模式下不能使用 :option:`-X` 和 :option:`-Y` ，可以使用 :option:`-C` 作为替代。
+       在子图模式下不能使用 **-X** 和 **-Y** ，可以使用 :option:`-C` 作为替代。
 
 现在可以执行任意数量的绘图命令，并且所有输出都将指向所选的子图。
-subplot 机制要求新子图的第一个绘图命令负责绘制底图。一些底图细节已通过 **subplot begin** 中的 :option:`-S`
-设置，如果需要重新设置底图和轴的一些属性，则需要在第一个绘图命令中通过 :option:`-B` 选项进行设置。
+subplot 机制要求新子图的第一个绘图命令负责绘制底图。一些底图细节已通过 **subplot begin** 中的 :option:`-S <subplot_begin -S>`
+设置，如果需要重新设置底图和轴的一些属性，则需要在第一个绘图命令中通过 :option:`-B <subplot_begin -B>` 选项进行设置。
 
+.. include:: explain_-V.rst_
+
+.. program:: subplot_end
 
 subplot end
 -----------
@@ -320,7 +329,9 @@ subplot end
 subplot end 语法
 ----------------
 
-**gmt subplot end** [ :option:`-V`\ [*level*] ]
+**gmt subplot end** [ :option:`-V <subplot_end -V>`\ [*level*] ]
+
+.. include:: explain_-V.rst_
 
 示例
 ----
