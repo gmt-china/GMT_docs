@@ -1,5 +1,5 @@
-:author: 田冬冬, 周茂, 朱邓达
-:date: 2025-07-16
+:author: 田冬冬, 周茂, 朱邓达, 陈箫翰
+:date: 2026-01-13
 
 .. index:: ! triangulate
 .. program:: triangulate
@@ -20,26 +20,32 @@ triangulate
 哪种算法，如果安装了 Shewchuk 算法，还可以进一步计算 Voronoi 图，并可选择自然最邻
 近算法对数据进行网格化。
 
+**注意**：对于全球范围或超大范围的地理数据，应该考虑使用 :doc:`sphtriangulate` ，
+因为 **triangulate** 是笛卡尔坐标或小范围地理区域算子，无法识别周期性或极地边界条件。
+
 语法
 ----
 
-**gmt triangulate** 
+**gmt triangulate**
 [ *table* ]
+[ :option:`-A` ]
 [ :option:`-C`\ *slpfile* ]
 [ :option:`-D`\ **x**\|\ **y** ]
 [ :option:`-E`\ *empty* ]
 [ :option:`-G`\ *outgrid* ]
 [ :option:`-I`\ *increment* ]
 [ :option:`-J`\ *parameters* ]
+[ :option:`-L`\ *indexfile*\ [**+b**] ]
 [ :option:`-M` ]
 [ :option:`-N` ]
 [ :option:`-Q`\ [**n**] ]
 [ :option:`-R`\ *region* ]
-[ :option:`-S` ]
+[ :option:`-S`\ [*first*][**+z**\ [**a**\|\ **l**\|\ **m**\|\ **p**\|\ **u**]][**+n**] ]
 [ :option:`-T` ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-Z` ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -52,7 +58,7 @@ triangulate
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
@@ -60,36 +66,46 @@ triangulate
 可选选项
 --------
 
+.. option:: -A
+
+**-A**
+    计算笛卡尔三角形的面积，并将面积追加到输出分段头中 [默认不计算面积]。需要使用 :option:`-S` ，且不兼容 :option:`-Q` 。
+
 .. option:: -C
 
 **-C**\ *slpfile*
     读取坡度网格 *slpfile* （单位为度），并使用 CURVE 算法计算水深测量中传播的不确定性
     (Zambo et al, 2016)。需要 :option:`-G` 选项指定输出网格，但不需要 :option:`-R` ，:option:`-I` 等选项，这些
-    信息通过网格获取。该选项不能和 :option:`-D`，:option:`-F`，:option:`-M`，:option:`-N`，:option:`-Q`，:option:`-S` 以及 :option:`-T`
+    信息通过网格获取。该选项不能和 :option:`-D`，:option:`-M`，:option:`-N`，:option:`-Q`，:option:`-S` 以及 :option:`-T`
     选项共同使用。
 
 .. option:: -D
 
 **-Dx**\|\ **y**
-    在设置 :option:`-G` 选项时，求 x 方向或 y 方向的导数
+    在设置 :option:`-G` 选项时，计算由平面面片（planar facets）表示的表面的 x 或 y 方向导数。
 
 .. option:: -E
 
 **-E**\ *empty*
     使用 :option:`-G` 选项时，设置空节点的值，默认为 NaN
 
-.. option:: -G
+.. include:: explain_grd_out.rst_
+..
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    使用三角化将数据网格化，该选项用于指定输出网格名。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+    使用三角剖分将数据网格化为均匀网格（由 :option:`-R` 和 :option:`-I` 控制）。
+    插值是在原始坐标系中进行的，因此如果三角形靠近极点，最好在使用 **triangulate** 之前将所有数据投影到局部坐标系中，或者改用 :doc:`sphtriangulate` 。
+    对于自然最近邻网格化，必须添加 :option:`-Q`\ **n** 。
 
 .. include:: explain_-I.rst_
 
 .. include:: explain_-J.rst_
+
+.. option:: -L
+
+**-L**\ *indexfile*\ [**+b**]
+    指定包含先前计算好的 Delaunay 信息的文件的名称。
+    每条记录必须包含输入数据表 (*table*) 中一个三角形的三个节点编号 [默认使用 Delaunay 三角剖分计算这些信息]。
+    如果 *indexfile* 是二进制文件，且其读取方式与二进制输入数据表相同，则可以追加 **+b** 以加快读取速度 [默认以 ASCII 格式读取节点]。
 
 .. option:: -M
 
@@ -99,20 +115,33 @@ triangulate
 .. option:: -N
 
 **-N**
-    与 :option:`-G` 选项同时使用，用来将三角网的顶点输出到标准输出 [默认只输出网格]
+    与 :option:`-G` 选项同时使用，同时输出所有 Delaunay 顶点编号的三元组 [默认只输出网格]
 
 .. option:: -Q
 
 **-Q**\ [**n**]
-    输出 Voronoi 图的边，而不是三角网的边。需要和 :option:`-R` 同时使用，并且只有使用 Shewchuk
-    算法时可用。**n** 选项用来将边组成闭合的多边形
+    改为输出 Voronoi 胞元的边 [默认输出 Delaunay 三角形的边]。
+    需要使用 :option:`-R`，且仅在链接了 Shewchuk [1996] 库时可用。
+    注意，输出时将忽略 :option:`-Z` 。追加 **n** 将这些边组合成封闭的 Voronoi 多边形。
 
 .. include:: explain_-R.rst_
 
 .. option:: -S
 
-**-S**
-    以多边形的形式输出三角网，中间以段头信息分隔，不能和 :option:`-Q` 同时使用
+**-S**\ [*first*][**+z**\ [**a**\|\ **l**\|\ **m**\|\ **p**\|\ **u**]][**+n**]
+    将三角形作为多边形分段输出，各分段由包含节点编号 *a-b-c* 和 **-Z**\ *polynumber* 的分段头记录分隔。
+    如果使用了 **+n** 标志，将跳过 *polynumber* 和节点编号。
+    追加 *first* （ *first* 为整数），从 *first* 开始计数来报告多边形编号 [默认从零开始]。
+    本选项与 :option:`-Q` 不兼容。
+    附加 **+z** 将 **-Z**\ *zvalue* 置于分段头中，其中 *zvalue* 是每个三角形的代表值。
+
+    **注意**： **+z** 会自动使用 :option:`-Z` 。可以使用以下附加设置：
+
+        * **a** ：选择平均值 [默认]
+        * **l** ：选择最小值
+        * **m** ：选择中位数
+        * **p** ：选择众数
+        * **u** ：选择最大值
 
 .. option:: -T
 
@@ -120,12 +149,12 @@ triangulate
     即使使用 :option:`-G` 选项输出网格，仍然输出边或者多边形 [默认输出网格时不输出三角网或
     Voronoi 多边形]。
 
+.. include:: explain_-V.rst_
+
 .. option:: -Z
 
 **-Z**
-    指定输出和输入为 (x,y,z) 形式的数据，使用 :option:`-G` 选项时，会自动使用该选项 [默认为 (x,y) ]
-
-.. include:: explain_-V.rst_
+    读取 (*x, y, z*) 数据，使用 :option:`-M` 或 :option:`-S` （且未带 **+z**）时输出 *z* 。
 
 .. include:: explain_-bi.rst_
 
@@ -152,6 +181,8 @@ triangulate
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_precision.rst_
 
 .. include:: explain_float.rst_
 
@@ -183,6 +214,12 @@ triangulate
 
     gmt triangulate samples.xyz -Gnnn.nc -Qn -R-100/-90/30/34 -I0.5
 
+说明
+----------
+
+水深网格的不确定度传播需要水平和垂直方向的不确定度，并根据局部坡度进行加权。
+更多详情请参阅 *Zambo et al.* [2014] 和 *Zhou and Liu* [2004] 参考文献。
+
 参考文献
 --------
 
@@ -200,7 +237,7 @@ Proceedings of the U.S. Hydro Conference,National Harbor, MD, 16-19 March 2015.
 Zhou, Q., and Liu, X., 2004, Error analysis on grid-based slope and aspect
 algorithms, *Photogrammetric Eng. & Remote Sensing*, **70** (8), 957-962.
 
-`Shewchuk's Homepage <http://www.cs.cmu.edu/~quake/triangle.html>`__
+`Shewchuk's Homepage <http://www.cs.cmu.edu/~quake/triangle.html>`_
 
 相关模块
 --------
