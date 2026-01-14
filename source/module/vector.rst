@@ -1,5 +1,5 @@
 :author: 田冬冬, 周茂, 陈箫翰
-:date: 2025-08-11
+:date: 2026-01-14
 
 .. index:: ! vector
 .. program:: vector
@@ -11,11 +11,11 @@ vector
 :简介: 操作二维和三维笛卡尔坐标向量
 
 **vector** 读取含有 (x, y)，(x, y, z)，(r, theta) 或 (lon, lat) 等坐标的表文件。
-给定 **-fg** 时，将坐标假定为地理坐标并只包含两列，将其转换到单位球上的三维笛卡尔
-坐标；使用 **-Ci** 选项时，则表明输入数据为 (x, y) 或 (x, y, z)；默认情况下，输入文件的坐标
+给定 :option:`-f`\ **g** 时，将坐标假定为地理坐标并只包含两列，将其转换到单位球上的三维笛卡尔
+坐标；使用 :option:`-C`\ **i** 选项时，则表明输入数据为 (x, y) 或 (x, y, z)；默认情况下，输入文件的坐标
 为 (r, theta) 形式的极坐标。如果不给定输入文件，则可以通过 :option:`-A` 选项传递单个向量。
 可对向量进行的操作包括求夹角，叉乘，相加以及旋转等，其中需要第二个向量时可由 :option:`-S`
-指定。输出向量将会被转换为 (lon, lat) 或者 (r, theta) 的形式，除非使用 **-Co** ，该
+指定。输出向量将会被转换为 (lon, lat) 或者 (r, theta) 的形式，除非使用 :option:`-C`\ **o** ，该
 选项将输出指定为笛卡尔坐标形式。
 
 语法
@@ -30,7 +30,8 @@ vector
 [ :option:`-S`\ *vector* ]
 [ :option:`-T`\ **a**\|\ **d**\|\ **D**\|\ **p**\ *azim*\|\ **r**\ [*arg*]\|\ **R**\|\ **s**\|\ **t**\ [*arg*]\|\ **x** ]
 [ :option:`-V`\ [*level*] ]
-[ :option:`-b`\ *binary* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
 [ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
 [ :option:`-e`\ *regexp* ]
 [ :option:`-f`\ *flags* ]
@@ -44,11 +45,11 @@ vector
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
-    输入表数据文件名。**-fg** 表明输入坐标为 (lon, lat)；**-Ci** 表明输入数据为 
+    输入表数据文件名。 :option:`-f`\ **g** 表明输入坐标为 (lon, lat)， :option:`-C`\ **i** 表明输入数据为 
     (x, y) 或 (x, y, z)，其他情况下，坐标为 (r, theta) 形式。
 
 可选选项
@@ -71,12 +72,12 @@ vector
 
 **-E**
     将输入的地理坐标从大地坐标转换为地心坐标，并将输出的地理坐标从地心坐标转换为大地坐标。
-    该选项只有 **-fg** 设置时，才会生效。
+    该选项只有 :option:`-f`\ **g** 设置时，才会生效。
 
 .. option:: -N
 
 **-N**
-    在输出前，将向量进行归一化（仅在 **-Co** 设置时有效）
+    在输出前，将向量进行归一化（仅在 :option:`-C`\ **o** 设置时有效）
 
 .. option:: -S
 
@@ -111,8 +112,8 @@ vector
 
     - **x** 计算两个向量的叉乘
 
-    不设置 :option:`-T` 选项，则不实施转换，对于 **-Tt** ，不设置 **-je** 时，使用大圆计算，设置时则使用
-    大地线/测地线计算（即大地测量学中的大地主题正算）
+    不设置 :option:`-T` 选项，则不实施转换。输出由其他选项（如 :option:`-A`、 :option:`-C`、 :option:`-E` 和 :option:`-N`）决定。
+    对于 **-Tt** ：(1) 如果是地理坐标，除非选择了 :option:`-j`\ **e** 或 :option:`-j`\ **f**，否则将执行大圆计算；(2) 如果距离为负，将去掉负号并为方位角增加 180 度。
 
 .. include:: explain_-V.rst_
 
@@ -138,10 +139,13 @@ vector
 
 .. include:: explain_-q.rst_
 
+.. include:: explain_-s.rst_
+
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
+.. include:: explain_precision.rst_
 
 示例
 ----
