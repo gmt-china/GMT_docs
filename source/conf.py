@@ -123,7 +123,9 @@ elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
     basedir_for_gallery = "./"
 else:  # build locally
-    siteurl_for_gallery = ""
+    # 修改说明：使用 ".." 表示上一级目录，这样路径会变成 "../_images/xxx.png"
+    # 这允许在 build/html/gallery/index.html 中通过相对路径找到 build/html/_images/ 下的图片
+    siteurl_for_gallery = ".."
     basedir_for_gallery = "source/"
 
 html_context = {
