@@ -10,8 +10,8 @@ class AutoHideOption(SphinxTransform):
 
     def apply(self):
         # 找到所有的 option 指令生成的节点
-        # 使用 list(traverse) 避免在遍历时修改树结构导致的问题
-        for node in list(self.document.traverse(addnodes.desc)):
+        # 使用 list(findall) 避免在遍历时修改树结构导致的问题
+        for node in list(self.document.findall(addnodes.desc)):
             # 检查是否为 option 类型的描述列表
             if node.get('objtype') == 'option':
                 # 1. 创建一个容器节点
