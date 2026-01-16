@@ -56,6 +56,8 @@ import hashlib
 import jinja2
 from docutils.parsers.rst import Directive, directives
 
+from PIL import Image  # 缩略图
+
 TEMPLATE = """
 {%- if show_code -%}
 .. literalinclude:: {{ code }}
@@ -285,6 +287,22 @@ def eval_python(
     os.chdir(cwd)
     return f"{output_base}.*"
 
+def make_thumbnail(input_path, output_path, max_size=(200, 200)):
+    """
+    生成缩略图
+    """
+    try:
+        with Image.open(input_path) as img:
+            # 转换为 RGB 防止 PNG 透明背景变黑（视需求而定，通常保持 RGBA 更好）
+            if img.mode != 'RGBA' and img.mode != 'RGB':
+                img = img.convert('RGB')
+            
+            # 创建副本并缩放
+            thumb = img.copy()
+            thumb.thumbnail(max_size, Image.Resampling.LANCZOS)
+            thumb.save(output_path)
+    except Exception as e:
+        print(f"[WARNING] Failed to create thumbnail for {input_path}: {e}")
 
 def render_figure(code, code_dir, language, output_dir, output_base, config=None):
     """
@@ -441,9 +459,35 @@ class GMTPlotDirective(Directive):
         Path(builddir, code_file.name).write_text(code, encoding="utf-8")
 
         # make figures
-        image = render_figure(
+        # 注意：这里返回的 image_glob 是 "filename.*" 这样的字符串
+        image_glob = render_figure(
             code, code_basedir, self.options["language"], builddir, output_base, config
         )
+
+        # === 缩略图生成 ===
+        # 不使用 image_glob 来找文件，而是直接找同名的 .png 文件
+        # 因为 render_figure 保证了如果有图片生成，一定会有 PNG (在 _search_images 逻辑里)
+        
+        png_filename = f"{output_base}.png"
+        full_png_path = builddir / png_filename
+        
+        # 定义共享缓存目录 (与 conf.py 里的逻辑保持一致)
+        # builddir 是 .../build/gmtplot_directive
+        # 我们需要找到 build/thumbs_cache/thumbnails
+        # builddir.parent 是 build
+        shared_cache_dir = builddir.parent / "thumbs_cache" / "thumbnails"
+        shared_cache_dir.mkdir(parents=True, exist_ok=True)
+        
+        # 定义目标文件名
+        thumb_filename = f"{output_base}_thumb.png"
+        shared_thumb_path = shared_cache_dir / thumb_filename
+
+        # 3. 生成缩略图到共享目录
+        if full_png_path.exists():
+            # 只有当缩略图不存在时才生成（避免重复工作）
+            if not shared_thumb_path.exists():
+                make_thumbnail(full_png_path, shared_thumb_path, max_size=(200, 200))
+        # ===========================
 
         gmtplot_block = (
             jinja2.Template(TEMPLATE)
@@ -452,7 +496,7 @@ class GMTPlotDirective(Directive):
                 show_code=self.options["show-code"],
                 code=builddir_link / code_file.name,
                 code_opts=code_opts,
-                image=builddir_link / image,
+                image=builddir_link / image_glob,
                 image_opts=image_opts,
                 caption=caption,
             )

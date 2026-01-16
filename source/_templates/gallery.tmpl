@@ -14,7 +14,15 @@
     {% if fig["script"] is defined %}
         {# 1. 计算 MD5 和图片路径 #}
         {% set md5value = (config.html_context["basedir"] + fig["script"]) | filemd5 %}
-        {% set image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
+        {# === Script 图片使用 _thumb 后缀 === #}
+        {# 原始大图路径 (如果需要点击看大图可以保留) #}
+        {% set full_image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
+        {# 缩略图路径 #}
+        {# 缩略图通过共享缓存机制，会被 Sphinx 复制到 _static/thumbnails #}
+        {# 路径构造： siteurl + /_static/thumbnails/ + md5 + _thumb.png #}
+        {% set thumb_image = config.html_context["siteurl"] + "/_static/thumbnails/" + md5value + "_thumb.png" %}
+        {# 默认显示缩略图 #}
+        {% set display_image = thumb_image %}
         
         {# 2. 智能链接生成逻辑 #}
         {% if fig["target"].startswith("http") %}
@@ -35,20 +43,34 @@
     {# 情况 2: 手动指定的静态图片 (Image defined)                #}
     {# ========================================================= #}
     {% else %}
+        {# 处理原始图片路径 #}
         {% if fig["image"].startswith("http") %}
-            {% set image = fig["image"] %}
-            {% if fig["target"].startswith("http") %}
-                {% set link, link_type = fig["target"], "url" %}
-            {% else %}
-                {% set link, link_type = "/" + fig["target"], "doc" %}
-            {% endif %}
+             {# 网络图片 #}
+             {% set raw_image = fig["image"] %}
         {% else %}
-            {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
-            {% set link, link_type = "#gmtplot-" + fig["image"], "url" %}
+             {# 本地图片 #}
+             {% set raw_image = fig["image"] %}
         {% endif %}
+
+        {# 调用过滤器生成缩略图路径 #}
+        {% set thumb_rel_path = raw_image | thumbnail %}
         
+        {% if thumb_rel_path.startswith("http") %}
+            {% set display_image = thumb_rel_path %}
+        {% else %}
+            {# 如果是本地生成的缩略图，加上 siteurl 前缀 #}
+            {% set display_image = config.html_context["siteurl"] + "/" + thumb_rel_path %}
+        {% endif %}
+
+        {# 链接逻辑 #}
+        {% if fig["target"].startswith("http") %}
+             {% set link, link_type = fig["target"], "url" %}
+        {% else %}
+             {% set link, link_type = "/" + fig["target"], "doc" %}
+        {% endif %}
         {# 对于没有 script 的情况，我们无法自动计算 MD5，暂时用 image 文件名做 ID #}
-        {% set md5value = fig["image"] %}
+        {% set md5value = fig["image"] | replace("/", "-") | replace(".", "-") %}
+        
     {% endif %}
 
     {# ========================================================= #}
@@ -64,7 +86,9 @@
 
            {# 这里的 id 使用 md5value 确保唯一且合法，不再依赖复杂的 link 变量 #}
            <div id="gallery-item-{{ md5value }}">
-               <img src="{{ image }}" alt="{{ fig['title'] }}" class="figure-img" style="width: 100%; object-fit: contain;">
+               {# 这里 src 使用 display_image (即缩略图) #}
+               {# loading="lazy" 是浏览器原生支持的懒加载，进一步提升速度 #}
+               <img src="{{ display_image }}" alt="{{ fig['title'] }}" loading="lazy" class="figure-img" style="width: 100%; object-fit: contain;">
            </div>
 
         +++

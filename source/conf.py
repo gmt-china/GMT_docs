@@ -217,7 +217,26 @@ latex_elements = {
 }
 
 import hashlib
+import requests
+from PIL import Image
+from io import BytesIO
 from sphinx.jinja2glue import BuiltinTemplateLoader
+
+# 设置共享缩略图缓存目录 (位于 build/thumbs_cache/thumbnails)
+# 无论是 make html 还是 make dirhtml，都从这里读取/写入
+conf_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(conf_dir)
+# build 目录位于项目根目录下
+shared_cache_root = os.path.join(project_root, "build", "thumbs_cache")
+# 图片实际存放的子目录 (为了配合 _static/thumbnails 的结构)
+shared_thumb_dir = os.path.join(shared_cache_root, "thumbnails")
+
+#    将共享缓存目录加入 html_static_path
+#    Sphinx 会在构建最后阶段，自动把这里面的内容复制到 _static 目录中
+if not os.path.exists(shared_thumb_dir):
+    os.makedirs(shared_thumb_dir, exist_ok=True)
+
+html_static_path.append(shared_cache_root)
 
 def _filemd5(file):
     """
@@ -259,15 +278,67 @@ def _filemd5(file):
         print(f"[WARNING] filemd5 filter error reading {target_file}: {e}")
         return "error_placeholder"
 
-# 1. 保存原始的初始化函数
+# 定义 thumbnail 生成函数 (写入共享缓存)
+def _generate_thumbnail(image_path_or_url):
+    """
+    生成缩略图到 build/thumbs_cache/thumbnails，并返回相对路径
+    """
+    # 计算文件名 hash
+    img_hash = hashlib.md5(image_path_or_url.encode()).hexdigest()
+    thumb_filename = f"{img_hash}_thumb.png"
+    thumb_abs_path = os.path.join(shared_thumb_dir, thumb_filename)
+    
+    # 返回给 HTML 用的相对路径 (配合 html_static_path 的复制机制)
+    # Sphinx 会把 shared_cache_root/thumbnails -> _static/thumbnails
+    rel_path_for_html = f"_static/thumbnails/{thumb_filename}"
+    
+    # 如果文件已存在 (共享缓存命中)，直接返回
+    if os.path.exists(thumb_abs_path):
+        return rel_path_for_html
+        
+    # 开始生成
+    try:
+        img = None
+        if image_path_or_url.startswith("http"):
+            # 下载网络图片
+            response = requests.get(image_path_or_url, timeout=15)
+            img = Image.open(BytesIO(response.content))
+        else:
+            # 本地图片查找逻辑
+            candidates = [
+                os.path.join(conf_dir, image_path_or_url),
+                os.path.join(project_root, image_path_or_url),
+                os.path.join(conf_dir, "_images", image_path_or_url)
+            ]
+            for p in candidates:
+                if os.path.exists(p) and os.path.isfile(p):
+                    img = Image.open(p)
+                    break
+            
+        if img:
+            if img.mode not in ('RGB', 'RGBA'):
+                img = img.convert('RGB')
+            img.thumbnail((200, 200), Image.Resampling.LANCZOS)
+            img.save(thumb_abs_path)
+            return rel_path_for_html
+        else:
+            return image_path_or_url
+
+    except Exception as e:
+        print(f"[WARNING] Thumbnail gen failed for {image_path_or_url}: {e}")
+        return image_path_or_url
+
+# Monkey Patch 注入
 _orig_init = BuiltinTemplateLoader.init
 
-# 2. 定义新的初始化函数
-def _patched_init(self, *args, **kwargs):
-    # 调用原始初始化逻辑
-    _orig_init(self, *args, **kwargs)
-    # 强制注入 filemd5 过滤器到当前环境
+def _patched_init(self, builder, theme=None):
+    _orig_init(self, builder, theme)
     self.environment.filters['filemd5'] = _filemd5
+    
+    # 只要是 HTML 类的构建 (html, dirhtml)，都启用缩略图
+    if builder.format == 'html':
+        self.environment.filters['thumbnail'] = _generate_thumbnail
+    else:
+        self.environment.filters['thumbnail'] = lambda x: x
 
-# 3. 替换类的初始化函数
 BuiltinTemplateLoader.init = _patched_init
