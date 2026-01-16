@@ -47,7 +47,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
   用于表示每个轨迹数据的位置以及观测数据个数等信息
 - :doc:`x2sys_put` 使用轨迹网格索引文件更新 TAG 数据库，该选项在拥有多批次观测数据
   时可用来更新数据
-- :doc:`x2sys_get` 用于寻找满足某些条件的轨迹，:option:`-A` 选项结果可作为 x2sys_cross 的
+- :doc:`x2sys_get` 用于寻找满足某些条件的轨迹， **-A** 选项结果可作为 x2sys_cross 的
   输入以提高寻找交叉点的效率
 - :doc:`x2sys_cross` 计算给定轨迹列表中的轨迹的交叉点，也可给出交叉点不符值和均值
 - :doc:`x2sys_report` 统计交叉点结果信息
@@ -73,7 +73,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 
 4. 交叉点平差（x2sys_solve）
 
-5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 :option:`-L` 选项均
+5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 **-L** 选项均
    可实现，推荐使用 x2sys_datalist）
 
 下面将主要介绍 x2sys_init 模块，其他模块可参考对应模块文档。
@@ -81,8 +81,8 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 语法
 ----
 
-**gmt x2sys_init** 
-*TAG* 
+**gmt x2sys_init**
+*TAG*
 :option:`-D`\ *fmtfile*
 [ :option:`-E`\ *suffix* ]
 [ :option:`-F` ]
@@ -152,7 +152,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
     - **k** km 或 kms/hr
     - **m** miles 或 miles/hr
     - **n** nautical miles 或 knots
-    - **u** survey feet 或 survey feet/s). 
+    - **u** survey feet 或 survey feet/s
 
     默认地，当使用了 :option:`-G` 选项时，自动设置为 **-Ndk** **-Nse** （km 和 m/s），
     其他情况设置为 **-Ndc** 和 **-Nsc** 。

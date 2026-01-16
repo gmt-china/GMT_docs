@@ -18,8 +18,8 @@ x2sys_merge
 语法
 ----
 
-**gmt x2sys_merge** 
-:option:`-A`\ *main_COElist.txt* 
+**gmt x2sys_merge**
+:option:`-A`\ *main_COElist.txt*
 :option:`-M`\ *new_COElist.txt*
 [ :doc:`--PAR=value </conf/overview>` ]
 

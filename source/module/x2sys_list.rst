@@ -17,8 +17,8 @@ x2sys_list
 语法
 ----
 
-**gmt x2sys_list** 
-:option:`-C`\ *column* 
+**gmt x2sys_list**
+:option:`-C`\ *column*
 :option:`-T`\ *TAG* [ *coedbase.txt* ]
 [ :option:`-A`\ *asymm_max* ]
 [ :option:`-E` ]
@@ -110,7 +110,7 @@ x2sys_list
     上面各元素输出的顺序和他们在 *flags* 中的顺序一致， **n** 除外，**n**
     选项将放在所有数字列的最后。
 
-.. _-i:
+.. option:: -I
 
 **-I**\ [*list*]
     *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算

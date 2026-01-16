@@ -17,9 +17,9 @@ x2sys_cross
 语法
 ----
 
-**gmt x2sys_cross** 
-*track(s)* 
-:option:`-T`\ *TAG* 
+**gmt x2sys_cross**
+*track(s)*
+:option:`-T`\ *TAG*
 [ :option:`-A`\ *pairs* ]
 [ :option:`-C`\ [*runtimes*] ]
 [ :option:`-D`\ [**S**\|\ **N**] ]
@@ -58,7 +58,7 @@ x2sys_cross
 
 **-A**\ *pairs*
     只处理 *pairs* 文件中包含的轨迹对 [默认对所有的轨迹对计算交叉点]。
-    *pairs* 可以使用 :doc:`x2sys_get` 的 :option:`-L` 选项生成。
+    *pairs* 可以使用 :doc:`x2sys_get` 的 **-L** 选项生成。
 
 .. option:: -C
 

@@ -17,10 +17,10 @@ x2sys_get
 语法
 ----
 
-**gmt x2sys_get** 
-:option:`-T`\ *TAG* 
-[ :option:`-C` ] 
-[ :option:`-F`\ *flags* ] 
+**gmt x2sys_get**
+:option:`-T`\ *TAG*
+[ :option:`-C` ]
+[ :option:`-F`\ *flags* ]
 [ :option:`-G` ]
 [ :option:`-L`\ [*list*]\ [**+i**] ]
 [ :option:`-N`\ *flags* ]
@@ -71,7 +71,7 @@ x2sys_get
     默认会返回所有的可能存在交叉点的轨迹对。
     *list* 为轨迹列表文件名，其中包含若干轨迹名称，
     即只输出必须至少包含列表中的某条轨迹的轨迹对。
-    本选项的输出适用于 :doc:`x2sys_cross` 中的 :option:`-A` 选项。
+    本选项的输出适用于 :doc:`x2sys_cross` 中的 **-A** 选项。
     默认地，只列出外部交叉点，即一条轨迹和另外一条轨迹的交叉点，**+i**
     选项会同时列出内部交叉点，即轨迹自身的交叉点。
 
