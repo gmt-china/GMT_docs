@@ -216,11 +216,6 @@ latex_elements = {
     "releasename": "v",  # the default is "Release" or "发布"
 }
 
-"""
-架构优化：摒弃 TemplateBridge
-利用 Sphinx 的事件钩子 builder-inited 来注入 Jinja2 过滤器，这样更标准、更安全。
-"""
-
 import hashlib
 
 def _filemd5(file):
