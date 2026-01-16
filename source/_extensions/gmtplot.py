@@ -471,11 +471,14 @@ class GMTPlotDirective(Directive):
         png_filename = f"{output_base}.png"
         full_png_path = builddir / png_filename
         
-        # 定义共享缓存目录 (与 conf.py 里的逻辑保持一致)
-        # builddir 是 .../build/gmtplot_directive
-        # 我们需要找到 build/thumbs_cache/thumbnails
-        # builddir.parent 是 build
-        shared_cache_dir = builddir.parent / "thumbs_cache" / "thumbnails"
+        # 定义共享缓存目录
+        # 强制使用与 conf.py 相同的硬编码路径 logic
+        # conf.py 使用的是 project_root/build/thumbs_cache
+        # env.app.srcdir 是 source 目录，其父目录即为 project_root
+        
+        project_root = Path(env.app.srcdir).parent
+        # 无论 Sphinx 实际构建目录在哪里，我们都强制写入这个固定的 build 目录
+        shared_cache_dir = project_root / "build" / "thumbs_cache" / "thumbnails"
         shared_cache_dir.mkdir(parents=True, exist_ok=True)
         
         # 定义目标文件名
