@@ -118,7 +118,9 @@ if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
     siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
     basedir_for_gallery = "source/"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
-    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    # 强制使用相对路径，避免绝对路径导致的根目录错位问题
+    # 因为 gallery 页面在二级目录 (gallery/index.html)，所以用 ".." 回到根目录
+    siteurl_for_gallery = ".."
     basedir_for_gallery = "./"
 else:  # build locally
     # 修改说明：使用 ".." 表示上一级目录，这样路径会变成 "../_images/xxx.png"
