@@ -1,5 +1,5 @@
 :author: 周茂
-:date: 2025-12-30
+:date: 2026-01-16
 
 .. index:: ! wiggle
 .. program:: wiggle
@@ -12,15 +12,16 @@ wiggle
 
 从文件或者标准输入中读取 (x,y,z)，在沿轨方向绘制 z 值。
 连续的 (x,y) 坐标对定义了沿轨距离轴，z 轴垂直于距离轴，形成右手坐标系。
+用户可以设置首选的正异常绘制方向。如果正法向位于首选方向周围 ±90 度窗口之外，则为该方向增加 180 度。
 正异常或者负异常都可以带有阴影。
 
 语法
 ----
 
-**gmt wiggle** 
-[ *table* ] 
-:option:`-J`\ *parameters* 
-:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] 
+**gmt wiggle**
+[ *table* ]
+:option:`-J`\ *parameters*
+:option:`-R`\ *west*/*east*/*south*/*north*\ [**+r**][**+u**\ *unit*]
 :option:`-Z`\ *scale*
 [ :option:`-A`\ [*azimuth*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
@@ -48,10 +49,13 @@ wiggle
 [ :option:`-w`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 
-必选选项
---------
+输入数据
+--------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-J.rst_
 
@@ -64,7 +68,7 @@ wiggle
     追加 **c**，**i** 或者 **p** 表明距离单位分别为
     cm，inch 或 point。如果不指定单位，使用 :term:`PROJ_LENGTH_UNIT` 默认的单位。
 
-可选参数
+可选选项
 --------
 
 .. option:: -A
@@ -84,8 +88,7 @@ wiggle
 .. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ \ **+w**\ *length*\ [**+j**\ *justify*]\ [**+a**\ **l**\|\ **r**]\ [**+o**\ *dx*\ [/*dy*]]\ [**+l**\ [*label*]]
-    使用四种坐标系统定义比例尺的参考点，
-    详见\ `修饰物-定位 <https://docs.gmt-china.org/6.2/basis/embellishment/#id2>`__
+    使用四种坐标系统定义比例尺的参考点，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_refpoint.rst_
 
@@ -100,13 +103,13 @@ wiggle
 .. note::
 
     **-Dj** 或者 **-DJ** 选项将会影响锚点的位置，
-    详见\ `修饰物锚点 <https://docs.gmt-china.org/latest/basis/embellishment/#id6>`__ 。
+    详见\ :ref:`修饰物锚点 <embellishment_anchor>` 。
 
 .. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]]\ [**+s**\ [[*dx*/*dy*/][*shade*]]]
     绘制比例尺的背景面板，
-    详见\ `修饰物-背景面板 <https://docs.gmt-china.org/6.2/basis/embellishment/#id8>`__
+    详见\ :ref:`修饰物-背景面板 <Background-panel>`
 
     .. include:: explain_-F_box.rst_
 
@@ -114,9 +117,10 @@ wiggle
 
 **-G**\ *fill*\ [**+n**][**+p**]
     设置异常值下的阴影填充的颜色和样式。 [默认不填充]
-    追加 **+p** 子选项为填充正异常区域 [默认]。
-    追加 **+n** 子选项为填充负异常区域。
-    追加 **+n+p** 为使用相同的方式填充正异常和负异常区域。
+    
+    - 追加 **+p** 子选项为填充正异常区域 [默认]。
+    - 追加 **+n** 子选项为填充负异常区域。
+    - 追加 **+n+p** 为使用相同的方式填充正异常和负异常区域。
 
     **注**：如果需要设置正异常和负异常使用不同的填充方式，需要重复使用 :option:`-G` 选项。
 
@@ -171,13 +175,14 @@ wiggle
 示例
 ----
 
-下面的示例展示了如果使用 **wiggle** 模块绘图。示例中使用的数据为 :download:`temp.dat <temp.dat>`\ ：
+下面的示例展示了如何使用 **wiggle** 模块绘图。示例使用 :doc:`math` 生成数据：
 
 .. gmtplot::
     :show-code: true
     :width: 600 px
 
     gmt begin wiggle_exam
+    gmt math -T-8/6/0.01 -N3/0 -C2 T 3 DIV 2 POW NEG EXP T PI 2 MUL MUL COS MUL 50 MUL = > temp.dat
     gmt wiggle temp.dat -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne
     gmt end show
 
@@ -197,7 +202,11 @@ wiggle
 
 除测线数据外，wiggle 模块也常用于绘制卫星沿轨观测序列，
 如 `GMT 官方示例 <https://docs.generic-mapping-tools.org/latest/gallery/ex09.html#example-09>`__ 。
-该示例使用 Geosat 卫星观测的沿轨海面高梯度数据来揭示海底构造和海岭。
+该示例使用 Geosat 卫星观测的沿轨海面高梯度数据来揭示海底构造和海岭：
+
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/ex09.png
+    :width: 80%
+    :align: center
 
 Bugs
 ----
@@ -219,4 +228,4 @@ Bugs
 
 :doc:`filter1d`,
 :doc:`basemap`,
-:doc:`gmtsplit`
+:doc:`split`
