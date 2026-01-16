@@ -8,7 +8,7 @@ x2sys_cross
 ===========
 
 :官方文档: :doc:`gmt:supplements/x2sys/x2sys_cross`
-:简介: 计算轨迹之间的交叉点 
+:简介: 计算轨迹之间的交叉点
 
 **x2sys_cross** 用来确定轨迹之间所有的交叉点，并输出时间，
 位置，沿轨距离，朝向，速度以及交叉点不符值和所有观测的平均值。
@@ -91,7 +91,7 @@ x2sys_cross
 .. option:: -Q
 
 **-Qe**\|\ **i**
-    **e** 表示只计算外部交叉点，**i** 表示只计算内部交叉点 
+    **e** 表示只计算外部交叉点，**i** 表示只计算内部交叉点
     [默认计算所有的交叉点]
 
 .. include:: explain_-R.rst_
@@ -156,7 +156,7 @@ Value(track_a) - Value(track_b)。
 ----
 
 计算 :file:`2104.gmt` 文件的内部交叉点，TAG 设置为 GMT ::
-    
+
     gmt x2sys_cross c2104.gmt -TGMT > c2104.txt
 
 计算测深文件 :file:`A13232.mgd77` 和 :file:`A99938.mgd77` 之间的交叉点，

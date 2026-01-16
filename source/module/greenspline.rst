@@ -53,7 +53,7 @@ greenspline
 语法
 --------
 
-**gmt greenspline** 
+**gmt greenspline**
 [ *table* ]
 :option:`-G`\ *grdfile*
 [ :option:`-A`\ *gradfile*\ **+f**\ **0**\|\ **1**\|\ **2**\|\ **3**\|\ **4**\|\ **5** ]

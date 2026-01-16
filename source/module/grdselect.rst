@@ -17,7 +17,7 @@ grdselect
 语法
 ----
 
-**gmt grdselect** 
+**gmt grdselect**
 *source1 source2 ...*
 [ :option:`-A`\ **i**\|\ **u**\ [**+il**\|\ **h**\|\ *inc*] ]
 [ :option:`-C`\ *pointfile* ]
@@ -44,7 +44,7 @@ grdselect
 
 .. include:: explain_grd_in.rst_
 ..
-    
+
     *source1 source2 ...* 为需要读取的数据文件的文件名。
     **注意：** 不能同时读取 2—D 和 3—D 文件。
 
@@ -135,7 +135,7 @@ grdselect
 
 .. include:: explain_-Rz.rst_
 ..
-    
+
     使用 :option:`-R` 选项设置的范围进行 :option:`-A` 计算，读取范围限制在该范围内。
     对于三维数据立方体，还必须附加 *z* 轴方向的范围限制。
 

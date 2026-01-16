@@ -37,7 +37,7 @@ segy2grd
 输入数据
 ------------------
 
-*segyfile* 
+*segyfile*
     *segyfile* 是一个 IEEE 浮点数格式的 SEGY 文件。所有的道集都假定从 0 时间/深度域开始。
 
 必须选项

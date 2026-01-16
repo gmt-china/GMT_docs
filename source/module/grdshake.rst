@@ -13,8 +13,8 @@ grdshake
 语法
 ------
 
-**gmt grdshake** 
-*ingrid* 
+**gmt grdshake**
+*ingrid*
 :option:`-G`\ *outgrid*
 :option:`-L`\ *fault.dat*
 :option:`-M`\ *mag*
@@ -41,7 +41,7 @@ grdshake
 
     如果通过 :option:`-C` 设置了多个分量，
     则 *outgrid* 必须包含 %%s 以格式化分量代码。
-    
+
 .. option:: -L
 
 **-L**\ *fault.dat*

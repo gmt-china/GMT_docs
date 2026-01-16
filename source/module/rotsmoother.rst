@@ -16,7 +16,7 @@ rotsmoother
 语法
 --------
 
-**gmt rotsmoother** 
+**gmt rotsmoother**
 [ *table* ]
 [ :option:`-A` ]
 [ :option:`-C` ]

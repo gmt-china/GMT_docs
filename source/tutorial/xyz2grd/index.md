@@ -30,7 +30,7 @@ author: 陈箫翰
 用户可以使用 {doc}`/module/info` 模块获取数据各列的极值信息，便于接下来的作图：
 
 ```
-$ gmt info HI_geoid_04.xyz 
+$ gmt info HI_geoid_04.xyz
 HI_geoid_04.xyz: N = 15385      <195/210>       <18/25> <-0.516000032425/14.9390010834>
 ```
 

@@ -17,7 +17,7 @@ grdgradient
 --------
 
 
-**gmt grdgradient** 
+**gmt grdgradient**
 *ingrid*
 :option:`-G`\ *outgrid*
 [ :option:`-A`\ *azim*\ [/\ *azim2*] ]

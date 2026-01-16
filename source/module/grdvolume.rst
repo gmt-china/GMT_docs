@@ -20,7 +20,7 @@ grdvolume
 语法
 ----
 
-**gmt grdvolume** 
+**gmt grdvolume**
 *ingrid*
 [ :option:`-C`\ *paras* ]
 [ :option:`-D` ]

@@ -7,7 +7,7 @@
 grdpmodeler
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/grdpmodeler`  
+:官方文档: :doc:`gmt:supplements/spotter/grdpmodeler`
 :简介: 评估地理网格上的板块运动模型
 
 **grdpmodeler** 读取一个地质年龄网格和一个板块运动模型，并计算若干种模型预测结果。

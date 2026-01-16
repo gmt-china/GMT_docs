@@ -130,7 +130,7 @@ mgd77manage
 语法
 ----
 
-**gmt mgd77manage** 
+**gmt mgd77manage**
 *GEODAS-ids*
 [ :option:`-A`\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]\ ]
 [ :option:`-D`\ *abbrev1*,\ *abbrev2*,... ]

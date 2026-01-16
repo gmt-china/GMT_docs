@@ -7,7 +7,7 @@
 pmodeler
 ==============
 
-:官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler`  
+:官方文档: :doc:`gmt:supplements/spotter/gmtpmodeler`
 :简介: 评估特定位置的板块运动模型
 
 **pmodeler** 读取包含 *lon*, *lat*，以及可选 *age* 三列的表格文件，
@@ -42,8 +42,8 @@ pmodeler
 输入数据
 ------------------
 
-*table*  
-    包含地理坐标 (*lon, lat*)，以及可选的地壳年龄（Myr）的一个或多个表格文件名。  
+*table*
+    包含地理坐标 (*lon, lat*)，以及可选的地壳年龄（Myr）的一个或多个表格文件名。
     如果未指定文件，则从标准输入读取数据。
 
 必须选项
@@ -53,18 +53,18 @@ pmodeler
 
 .. option:: -S
 
-**-S**\ *flags*  
-    指定要计算的模型预测类型，可附加一个或多个标识符：  
+**-S**\ *flags*
+    指定要计算的模型预测类型，可附加一个或多个标识符：
 
-    - **a** ：板块运动方位角（azimuth）  
-    - **d** ：当前位置与洋中脊生成点的球面距离（单位：km）  
-    - **s** ：板块运动模型阶段 ID（1 表示最年轻阶段）  
-    - **v** ：板块运动速率（mm/yr）  
-    - **w** ：板块旋转速率（度/Myr）  
-    - **x** ：相对于生成点的经度变化量  
-    - **y** ：相对于生成点的纬度变化量  
-    - **X** ：地壳生成时的经度  
-    - **Y** ：地壳生成时的纬度  
+    - **a** ：板块运动方位角（azimuth）
+    - **d** ：当前位置与洋中脊生成点的球面距离（单位：km）
+    - **s** ：板块运动模型阶段 ID（1 表示最年轻阶段）
+    - **v** ：板块运动速率（mm/yr）
+    - **w** ：板块旋转速率（度/Myr）
+    - **x** ：相对于生成点的经度变化量
+    - **y** ：相对于生成点的纬度变化量
+    - **X** ：地壳生成时的经度
+    - **Y** ：地壳生成时的纬度
 
     如果未指定任何参数，则默认计算全部 [**adsvwxyXY**]。
 
@@ -73,16 +73,16 @@ pmodeler
 
 .. option:: -F
 
-**-F**\ *polygonfile*  
-    指定一个多段闭合多边形文件，用于定义模型计算区域。  
-    多边形外的点将被忽略。  
+**-F**\ *polygonfile*
+    指定一个多段闭合多边形文件，用于定义模型计算区域。
+    多边形外的点将被忽略。
     [默认使用所有数据点。]
 
 .. option:: -T
 
-**-T**\ *age*  
-    使用固定年龄进行模型计算（即忽略输入表格中的年龄值）。  
-    此选项可用于生成某一时刻的模型快照。  
+**-T**\ *age*
+    使用固定年龄进行模型计算（即忽略输入表格中的年龄值）。
+    此选项可用于生成某一时刻的模型快照。
     若输入表中未包含年龄列，则必须使用此选项。
 
 .. include:: explain_-V.rst_
@@ -155,10 +155,10 @@ GMT 发布了 EarthByte 旋转模型 Global\_EarthByte\_230-0Ma\_GK07\_AREPS.rot
 相关模块
 --------
 
-:doc:`backtracker`,  
-:doc:`grdpmodeler`,  
-:doc:`grdrotater`,  
-:doc:`grdspotter`,  
-:doc:`hotspotter`,  
-:doc:`originater`,  
+:doc:`backtracker`,
+:doc:`grdpmodeler`,
+:doc:`grdrotater`,
+:doc:`grdspotter`,
+:doc:`hotspotter`,
+:doc:`originater`,
 :doc:`rotconverter`

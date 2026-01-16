@@ -13,7 +13,7 @@ meca
 语法
 ----
 
-**gmt meca** 
+**gmt meca**
 [ *table* ]
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*

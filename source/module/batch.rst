@@ -3,11 +3,11 @@
 
 .. index:: ! batch
 .. program:: batch
-    
+
 batch
 =====
 
-:官方文档: :doc:`gmt:batch`  
+:官方文档: :doc:`gmt:batch`
 :简介: 自动化批处理作业处理
 
 **batch** 模块可以使用单个主脚本生成 GMT 处理作业，并针对所有作业重复执行，
@@ -87,7 +87,7 @@ batch
 
 **-F**\ *template*
     不使用 **BATCH_NAME** 前缀的单一流水号构建产品文件名，
-    而是使用 `C格式 <https://en.wikipedia.org/wiki/Printf_format_string>`_ *template* 
+    而是使用 `C格式 <https://en.wikipedia.org/wiki/Printf_format_string>`_ *template*
     根据 *timefile* 数据列创建唯一名称。限制如下：
     (1) 如果 *timefile* 有尾随文本，
     可用单个 %s 在模板最后格式化；如果无 %s，则尾随文本不会使用。
@@ -200,7 +200,7 @@ batch
 如果调用间没有变化，批处理序列没有意义。为了实现变化， *mainscript* 需要访问不同的数据集、
 数据子集，或作业参数不同，或以上组合。策略如下：
 
-- 通过 :option:`-T` 提供的 *timefile* 列出特定数据文件， *mainscript* 
+- 通过 :option:`-T` 提供的 *timefile* 列出特定数据文件， *mainscript*
   使用 **BATCH_TEXT** 或 **BATCH_WORD?** 访问特定作业文件名。
 
 - 对于 3D 网格（或 2D 网格堆叠），沿垂直于切片的轴（时间或深度）插值，
@@ -216,26 +216,26 @@ batch
 
 **batch** 模块会创建多个隐藏脚本：
 
-- *batch_init*  
+- *batch_init*
   初始化变量并包含可选 *includefile* 内容。
-- *batch_preflight* （可选，来自 **-Sb**）  
+- *batch_preflight* （可选，来自 **-Sb**）
   准备所需数据文件。
-- *batch_postflight* （可选，来自 **-Sf**）  
+- *batch_postflight* （可选，来自 **-Sf**）
   在所有作业完成后处理文件。
-- *batch_job*  
+- *batch_job*
   接受作业编号并处理数据。
-- *batch_cleanup*  
+- *batch_cleanup*
   结束时删除临时文件。
 
 每个作业有单独的 *batch_params_######* 脚本，用于提供作业特定变量。
 
-*preflight* 和 *postflight* 可访问 *batch_init* 信息，  
+*preflight* 和 *postflight* 可访问 *batch_init* 信息，
 *batch_job* 还可访问作业特定参数文件。
 
 使用 :option:`-Q` 可仅生成这些脚本以供检查。
 
-注意：*mainscript* 会为每个作业复制以上所需文件，多个作业可同时在所有可用核心上运行。  
-多线程 GMT 模块将限制为单核心调用。  
+注意：*mainscript* 会为每个作业复制以上所需文件，多个作业可同时在所有可用核心上运行。
+多线程 GMT 模块将限制为单核心调用。
 每个作业都会确保创建唯一文件，以便 **batch** 判断作业完成并启动下一个。
 
 

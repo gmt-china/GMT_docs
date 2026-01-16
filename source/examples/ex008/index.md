@@ -32,7 +32,7 @@ GEOS 的 julia/python 库实现上述功能，上述封装无需多边形到线�
 .. gmtplot::
     :caption: 海岸线缓冲区
     :width: 60%
-    
+
     gmt begin coast_buffer
 
         # 提取边界
@@ -52,7 +52,7 @@ GEOS 的 julia/python 库实现上述功能，上述封装无需多边形到线�
         gmt plot -R116/124/20/26 -JQ5i tw.geo -W0.5p,black -B
         gmt plot tw_buffer.geo -W0.5p,red
         gmt plot tw_buffer_proj.geo -W0.5p,blue
-    
+
     gmt end show
 ```
 

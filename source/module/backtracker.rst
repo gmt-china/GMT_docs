@@ -7,7 +7,7 @@
 backtracker
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/backtracker`  
+:官方文档: :doc:`gmt:supplements/spotter/backtracker`
 :简介: 生成前向和后向流线和热点轨迹
 
 **backtracker** 从 *infiles* （或标准输入）中读取 ( *longitude, latitude, age* ) 三列数据，
@@ -115,7 +115,7 @@ backtracker
 .. option:: -Q
 
 **-Q**\ *fixed_age*
-    为所有位置指定固定年龄。仅需输入 (*lon, lat*) 
+    为所有位置指定固定年龄。仅需输入 (*lon, lat*)
     两列[默认期望三列（longitude, latitude, age）]。
     适用于输入为等时线点的情况。
 
@@ -187,7 +187,7 @@ backtracker
 
     echo 204 19 80 | gmt backtracker -Df -EPAC_APM.txt -Lb1 > path.txt
 
-要使用 *Doubrovine et al.* [2012] 
+要使用 *Doubrovine et al.* [2012]
 的太平洋绝对板块与地幔柱运动模型预测夏威夷-皇帝海山链，运行::
 
     echo -155.2872 19.3972 80 | gmt backtracker -Df -Lb1 -ED2012.txt -FD2012_HI_drift.txt > traildrift.txt
@@ -222,7 +222,7 @@ GMT 自带 EarthByte 旋转模型文件 **Global_EarthByte_230-0Ma_GK07_AREPS.ro
 Wessel, P., 1999, "Hotspotting" tools released, EOS Trans. AGU, 80 (29),
 p. 319.
 
-Doubrovine, P. V., B. Steinberger, and T. H. Torsvik, 2012, 
-Absolute plate motions in a reference frame defined by moving hot spots in the Pacific, 
+Doubrovine, P. V., B. Steinberger, and T. H. Torsvik, 2012,
+Absolute plate motions in a reference frame defined by moving hot spots in the Pacific,
 Atlantic, and Indian oceans, *J. Geophys. Res.*, **117**\ (B09101),
 https://doi.org/10.1029/2011jb009072.

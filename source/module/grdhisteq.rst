@@ -34,8 +34,8 @@ grdhisteq
 语法
 --------
 
-**gmt grdhisteq** 
-*ingrid* 
+**gmt grdhisteq**
+*ingrid*
 [ :option:`-C`\ *n_cells* ]
 [ :option:`-D`\ [*file*] ]
 [ :option:`-G`\ *outgrid* ]
@@ -114,9 +114,9 @@ grdhisteq
 相关模块
 --------
 
-:doc:`grd2cpt`, 
-:doc:`grdgradient`, 
-:doc:`grdimage`, 
-:doc:`grdmath`, 
-:doc:`grdview`, 
+:doc:`grd2cpt`,
+:doc:`grdgradient`,
+:doc:`grdimage`,
+:doc:`grdmath`,
+:doc:`grdview`,
 :doc:`makecpt`

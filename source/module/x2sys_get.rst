@@ -35,7 +35,7 @@ x2sys_get
 .. option:: -T
 
 **-T**\ *TAG*
-    指定 x2sys TAG，参见 :doc:`x2sys_init` 
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------

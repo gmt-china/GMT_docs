@@ -41,10 +41,10 @@ gshhg
 语法
 ----
 
-**gmt gshhg** 
-*binaryfile.b* 
-[ :option:`-A`\ *min* ] 
-[ :option:`-G` ] 
+**gmt gshhg**
+*binaryfile.b*
+[ :option:`-A`\ *min* ]
+[ :option:`-G` ]
 [ :option:`-I`\ *id* ]
 [ :option:`-L` ]
 [ :option:`-N`\ *level* ]

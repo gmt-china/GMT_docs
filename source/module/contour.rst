@@ -101,7 +101,7 @@ contour
     (5) 如果 *contours* 是一个常数，则以这个常数为间隔绘制等值线。
 
     如果 :option:`-C` 和 :option:`-A` 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
-    
+
 .. option:: -D
 
 **-D**\ [*template*]

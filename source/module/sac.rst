@@ -31,8 +31,8 @@ sac
 语法
 ----
 
-**gmt sac** 
-[ *saclist*\|\ *SACfiles* ] 
+**gmt sac**
+[ *saclist*\|\ *SACfiles* ]
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]

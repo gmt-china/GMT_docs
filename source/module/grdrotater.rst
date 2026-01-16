@@ -7,7 +7,7 @@
 grdrotater
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/grdrotater`  
+:官方文档: :doc:`gmt:supplements/spotter/grdrotater`
 :简介: 地理网格的有限旋转重构
 
 **grdrotater** 读取一个地理网格，并根据给定的总重建旋转参数对其进行重建。
@@ -18,7 +18,7 @@ grdrotater
 语法
 --------
 
-**gmt grdrotater** 
+**gmt grdrotater**
 *ingrid*
 :option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-G`\ *outgrid*

@@ -12,7 +12,7 @@ segy
 
 读取一个原生（IEEE）格式的 SEGY 文件，并生成地震数据的绘图。使用 **imagemask** 操作符将地震数据以单色或灰度（由用户指定）1-bit 深度位图的形式绘制，背景为透明。位图分辨率取自当前的 GMT 默认设置。通过使用道头中的信息，可以在真实位置绘制地震道（此时，文件中道的顺序无关紧要）。标准的 GMT 几何处理方法被用于绘制，因此原则上可以采用任何地图投影。然而，地理投影可能会导致意外的结果。另外需注意，某些参数具有非标准含义。
 
-需要注意的是，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。  
+需要注意的是，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。
 其中，**deviation** 决定了在绘图坐标系中，经过 **[normalized][biased][clipped]** 处理后的样本值为 1 时，与道位置的偏移距离。可以理解为对采样值进行进一步缩放。
 
 SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节的二进制卷头、以及每道 240 字节的头部
@@ -20,8 +20,8 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 语法
 ------
 
-**gmt segy** 
-*SEGYfile* 
+**gmt segy**
+*SEGYfile*
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*
 :option:`-D`\ *deviation*

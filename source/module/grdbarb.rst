@@ -153,5 +153,5 @@ grdbarb
 相关模块
 --------
 
-:doc:`grdvector`, 
+:doc:`grdvector`,
 :doc:`barb`

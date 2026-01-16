@@ -18,9 +18,9 @@ fzprofiler
 语法
 --------
 
-**fzprofiler** 
+**fzprofiler**
 [ :option:`-H`\ *height*\ [**c**\|\ **i**\|\ **p**] ]
-[ :option:`-I`\ *profile* ] 
+[ :option:`-I`\ *profile* ]
 [ :option:`-L`\ *inc* ]
 [ :option:`-N`\ *ncols* ]
 [ :option:`-T`\ *prefix* ]
@@ -109,8 +109,8 @@ fzprofiler
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
 A., Whittaker, J. M., Myhill, R., Chandler, M. T.,
-2015, "Semiautomatic fracture zone tracking", 
+2015, "Semiautomatic fracture zone tracking",
 *Geochem. Geophys. Geosyst.*, 16 (7), 2462–2472.
 https://doi.org/10.1002/2015GC005853.

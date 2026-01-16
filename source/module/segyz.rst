@@ -15,7 +15,7 @@ segyz
 GMT 使用标准几何处理，因此理论上可以应用于任意地图投影，但使用地理投影可能会得到不理想的结果。
 需要注意的是，二维绘图器的某些选项在这里不可用。
 
-需要注意，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。 
+需要注意，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。
 其中，**deviation** 决定了在绘图坐标系中，经过 **[normalized][biased][clipped]** 处理后的样本值为 1 时，
 与道位置的偏移距离。可以理解为对采样值进行进一步缩放。
 
@@ -25,7 +25,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 --------
 
 **gmt segyz**
-*SEGYfile* 
+*SEGYfile*
 :option:`-J`\ *parameters*
 :option:`-Jz|Z`\ *parameters*
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
@@ -73,7 +73,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 .. option:: -F
 
 **-F**\ [*color*]
-    填充地震道（可变面积，默认填充正值）。指定用于填充 
+    填充地震道（可变面积，默认填充正值）。指定用于填充
     **imagemask** 的颜色 *color* 。
 
 .. option:: -W
@@ -130,7 +130,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 .. option:: -S
 
 **-S**\ *header_x*/*header_y*
-    从道头中读取道位置：headers 可以是 **c** 表示 CDP， **o** 
+    从道头中读取道位置：headers 可以是 **c** 表示 CDP， **o**
     表示偏移距，**b**\ *num* 表示从道头中第 *num* 个字节开始读
     取一个长整型数（第一个字节对应 num=0），或者是一个固定的数
     值。 第一个参数用于 x，第二个用于 y。默认情况下，X 和 Y 由道号给出。
@@ -159,7 +159,7 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 裁剪值为 ±3，同时绘制变密度波形和黑色的正半周变面积填充，使用以下命令：
 
 ::
-    
+
     gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
 
 已知 Bug

@@ -14,7 +14,7 @@ fzblender
 的一部分。(简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
 它读取由 :doc:`fzanalyzer` 生成的分析文件，并可选择沿轨迹对结果进行滤波。
 然后，基于指定的信号代码， **fzblender** 将生成一个最优断裂带（FZ）轨迹，
-该轨迹是用户原始数字化轨迹与一个或多个由 :doc:`fzanalyzer` 
+该轨迹是用户原始数字化轨迹与一个或多个由 :doc:`fzanalyzer`
 得到的模型轨迹的加权混合。混合过程依据模型轨迹的质量指标：
 
 * 当质量指标高时，倾向于使用模型轨迹；
@@ -28,13 +28,13 @@ fzblender
 语法
 --------
 
-**gmt fzblender** 
+**gmt fzblender**
 [ :option:`-D` ]
 [ :option:`-E`\ *sfilter* ]
 [ :option:`-F`\ *pfilter* ]
-[ :option:`-I`\ *FZid* ] 
+[ :option:`-I`\ *FZid* ]
 [ :option:`-Q`\ *q_min*/*q_max* ]
-[ :option:`-S`\ **b**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*] ] 
+[ :option:`-S`\ **b**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*] ]
 [ :option:`-T`\ *prefix* ]
 [ :option:`-V`\ [*level*] ]
 [ :option:`-Z`\ *acut*/*vcut*/*fcut*/*wcut* ]
@@ -62,19 +62,19 @@ fzblender
     设置沿轨迹的主滤波器。可选择卷积或非卷积滤波器。
     附加滤波器指令后跟完整（6-sigma） *宽度*。可用卷积滤波器包括：
 
-    - **b**：Boxcar：所有权重相等。  
-    - **c**：Cosine Arch：权重沿余弦拱曲线分布。  
-    - **g**：Gaussian：权重按高斯函数给出。  
+    - **b**：Boxcar：所有权重相等。
+    - **c**：Cosine Arch：权重沿余弦拱曲线分布。
+    - **g**：Gaussian：权重按高斯函数给出。
 
-    非卷积滤波器包括：  
+    非卷积滤波器包括：
 
-    - **m**：中值（Median）：返回中值。  
+    - **m**：中值（Median）：返回中值。
     - **p**：最大似然概率（模式估计器）：返回众数。如果存在多个众数，
-        则返回它们的平均值。可在滤波宽度后附加 **+l** 或 **+u**，分别返回最低或最高的众数值。  
-    - **l**：下限（Lower）：返回所有值的最小值。  
-    - **L**：正下限（Lower）：仅返回所有正值中的最小值。  
-    - **u**：上限（Upper）：返回最大值。  
-    - **U**：负上限（Upper）：仅返回所有负值中的最大值。  
+        则返回它们的平均值。可在滤波宽度后附加 **+l** 或 **+u**，分别返回最低或最高的众数值。
+    - **l**：下限（Lower）：返回所有值的最小值。
+    - **L**：正下限（Lower）：仅返回所有正值中的最小值。
+    - **u**：上限（Upper）：返回最大值。
+    - **U**：负上限（Upper）：仅返回所有负值中的最大值。
 
     对于 **L** 或 **U**，如果没有数据通过初始符号测试，则滤波器返回 0.0。
 
@@ -105,11 +105,11 @@ fzblender
     最终混合是加权平均，同时考虑质量指数和自定义权重（如指定）。选择以下指令：
 
     - **b**：最优槽/边缘模型混合的槽位置。
-        使用“Atlantic”、“Pacific”和“Compression”风格的综合模型对数据进行最佳拟合。  
-    - **d**：沿轨迹的经验槽位置。  
-    - **e**：最优槽/边缘模型混合的最大斜率位置。  
-    - **t**：仅使用“Atlantic”风格槽模型的最佳拟合。  
-    - **u**：用户的原始数字化轨迹。  
+        使用“Atlantic”、“Pacific”和“Compression”风格的综合模型对数据进行最佳拟合。
+    - **d**：沿轨迹的经验槽位置。
+    - **e**：最优槽/边缘模型混合的最大斜率位置。
+    - **t**：仅使用“Atlantic”风格槽模型的最佳拟合。
+    - **u**：用户的原始数字化轨迹。
 
     除了混合后的 FZ 位置，我们还输出 FZ 宽度估计以及 FZ 两侧 1σ 边界轨迹。
 
@@ -125,7 +125,7 @@ fzblender
 **-Z**\ *acut*/*vcut*/*fcut*/*wcut*
     我们将尝试为每个模型分配一个单一质量指数 *Q*，以总结模型拟合的优劣。
     该分配依赖四个需经验确定的阈值：
-    
+
     - *a_cut*：交叉剖面模型的最小峰谷振幅（单位 Eotvos）[25]
     - *v_cut*：模型提供的最小方差降低（%）[50]
     - *f_cut*：模型计算的最小 F 统计量 [50]
@@ -211,7 +211,7 @@ fzblender
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
-A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. Geophys. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem. Geophys.
 Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

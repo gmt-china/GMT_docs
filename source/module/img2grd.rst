@@ -34,7 +34,7 @@ Sandwell 和 Smith 模型的大小和文件名有一定规律，用于在 GMT �
 语法
 ----
 
-**gmt img2grd** 
+**gmt img2grd**
 *imgfile*
 :option:`-G`\ *grdfile*
 :option:`-R`\ *region*

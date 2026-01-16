@@ -16,8 +16,8 @@ grdview
 语法
 --------
 
-**gmt grdview** 
-*reliefgrid* 
+**gmt grdview**
+*reliefgrid*
 :option:`-J`\ *parameters*
 :option:`-Jz|Z`\ *parameters*
 :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
@@ -57,7 +57,7 @@ grdview
 ..
 
     此选项用于指示用于三维轴的范围。
-    
+
 可选选项
 ------------------
 
@@ -94,7 +94,7 @@ grdview
     #. **-Qg** 绘制 Gouraud 着色表面，具有基于顶点的平滑颜色渐变。附加 **m** 在表面顶部绘制网格线。在将切片分割为三角形时，附加 **a** 使用交替的对角线。
        Gouraud 着色比 **-Qs** 产生的颜色过渡更平滑，且生成的 PostScript 文件明显更小、处理更快。
        不过，当等值线水平处需要精确的颜色过渡时（即制作 `contourf` 类型的图形，参见 **-Wc**），仍应使用 **-Qs** 选项，因为 Gouraud 着色不像 **-Qs** 那样会沿等值线切割切片。
-    
+
     **+m** 表示使用（单色电视）YIQ 变换将颜色转换为灰度。
 
     **注意**：如果 CPT 是分类（categorical）类型的，则仅 **-Qm** 可用（参见 :option:`-T`）。
@@ -126,9 +126,9 @@ grdview
         设置mesh网格的线型。 [默认: width = 0.25p, color = black, style = solid]。
         只有使用了 **-Qm** 或 **-Qsm** 才会绘制mesh网格线。
     **-Wf**
-        如果设置了 :option:`-N` 绘制平面，该选项设置平面和数据曲面之间截面的轮廓的线型。 
+        如果设置了 :option:`-N` 绘制平面，该选项设置平面和数据曲面之间截面的轮廓的线型。
         [默认: width = 0.25p, color = black, style = solid]。
-        
+
 .. include:: explain_-XY.rst_
 
 .. include:: explain_-f.rst_

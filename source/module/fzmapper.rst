@@ -19,7 +19,7 @@ fzmapper
 语法
 --------
 
-**fzmapper** 
+**fzmapper**
 [ :option:`-A` ]
 [ :option:`-F`\ *origfile* ]
 [ :option:`-G`\ *vgg_grid* ]
@@ -97,18 +97,18 @@ fzmapper
 相关模块
 --------
 
-:doc:`fzanalyzer`, 
-:doc:`fzblender`, 
-:doc:`mlconverter`, 
-:doc:`fzinformer`, 
-:doc:`fzmodeler`, 
+:doc:`fzanalyzer`,
+:doc:`fzblender`,
+:doc:`mlconverter`,
+:doc:`fzinformer`,
+:doc:`fzmodeler`,
 :doc:`fzprofiler`,
 :doc:`grdtrack`
 
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
-A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. Geophys. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem. Geophys.
 Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

@@ -42,7 +42,7 @@ x2sys_merge
 示例
 ----
 
-使用新的交叉点文件 :file:`COE_fresh.txt` 更新主要交叉点文件 
+使用新的交叉点文件 :file:`COE_fresh.txt` 更新主要交叉点文件
 :file:`COE_data.txt` ::
 
     gmt x2sys_merge -ACOE_data.txt -MCOE_fresh.txt > COE_updated.txt

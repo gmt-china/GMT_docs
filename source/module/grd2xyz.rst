@@ -19,7 +19,7 @@ XY坐标数据（参见下文的 :option:`-Z` ）。或者可以使用 :option:`
 语法
 ----
 
-**gmt grd2xyz** 
+**gmt grd2xyz**
 *ingrid*
 [ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
 [ :option:`-F`\ [**f**\|\ **i**] ]

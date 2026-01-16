@@ -21,7 +21,7 @@ vector
 语法
 ----
 
-**gmt vector** 
+**gmt vector**
 [ *table* ]
 [ :option:`-A`\ **m**\ [*conf*]\|\ *vector* ]
 [ :option:`-C`\ [**i**\|\ **o**] ]
@@ -49,7 +49,7 @@ vector
 --------
 
 *table*
-    输入表数据文件名。 :option:`-f`\ **g** 表明输入坐标为 (lon, lat)， :option:`-C`\ **i** 表明输入数据为 
+    输入表数据文件名。 :option:`-f`\ **g** 表明输入坐标为 (lon, lat)， :option:`-C`\ **i** 表明输入数据为
     (x, y) 或 (x, y, z)，其他情况下，坐标为 (r, theta) 形式。
 
 可选选项

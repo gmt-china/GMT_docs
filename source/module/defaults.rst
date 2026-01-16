@@ -13,7 +13,7 @@ defaults
 语法
 ----
 
-**gmt defaults** 
+**gmt defaults**
 [ :option:`-D`\ [**u**\|\ **s**] ]
 
 可选选项

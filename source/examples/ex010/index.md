@@ -7,7 +7,7 @@ date: 2025-01-25
 
 本例根据地震发震时刻绘制不同颜色的圆，这个例子展示了GMT拥有强大的时间格式处理能力。
 
-示例数据：{download}`data.txt <data.txt>` 
+示例数据：{download}`data.txt <data.txt>`
 
 数据格式如下:
 

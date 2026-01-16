@@ -21,13 +21,13 @@ kml2gmt
 本模块只进行基础操作，提取坐标以及每个特征可能存在的名称和描述标签。
 其主要用途是捕获在 Google Earth 中修改过的坐标，然后将修改后的数据重新插入到原始 GMT 数据文件中。
 若要进行更完整的格式转换，请考虑使用 GDAL 提供的命令 **ogr2ogr** ::
-    
+
     ogr2ogr -f "GMT" somefile.gmt somefile.kml
 
 语法
 ----
 
-**gmt kml2gmt** 
+**gmt kml2gmt**
 [ *kmlfiles* ]
 [ :option:`-E` ]
 [ :option:`-F`\ **s**\|\ **l**\|\ **p** ]

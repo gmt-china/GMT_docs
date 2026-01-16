@@ -29,7 +29,7 @@ grdseamount
 语法
 ----
 
-**gmt grdseamount** 
+**gmt grdseamount**
 [ *table* ]
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*

@@ -13,8 +13,8 @@ grdconvert
 语法
 ----
 
-**gmt grdconvert** 
-*ingrdfile* 
+**gmt grdconvert**
+*ingrdfile*
 :option:`-G`\ *outgrdfile*
 [ :option:`-N` ]
 [ :option:`-R`\ *region* ]

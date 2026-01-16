@@ -148,7 +148,7 @@ makecpt
 .. option:: -M
 
 **-M**
-    使用配置参数 :term:`COLOR_FOREGROUND` 、 :term:`COLOR_BACKGROUND` 
+    使用配置参数 :term:`COLOR_FOREGROUND` 、 :term:`COLOR_BACKGROUND`
     和 :term:`COLOR_NAN` 覆盖主 CPT 中的前景色、背景色和 NaN 值的颜色。
     如果和 :option:`-D` 同时使用，则 :option:`-D` 中的前景色和背景色设置优先，
     本选项只会让 :term:`COLOR_NAN` 有效。

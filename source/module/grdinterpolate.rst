@@ -22,7 +22,7 @@ grdinterpolate
 语法
 ------
 
-**gmt grdinterpolate** 
+**gmt grdinterpolate**
 *cube* | *grd1 grd2 ...*
 :option:`-G`\ *outfile*
 [ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+v**\ *vname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]

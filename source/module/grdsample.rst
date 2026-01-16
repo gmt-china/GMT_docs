@@ -29,7 +29,7 @@ grdsample
 语法
 ----
 
-**gmt grdsample** 
+**gmt grdsample**
 *ingrid*
 :option:`-G`\ *outgrid*
 [ :option:`-I`\ *increment* ]

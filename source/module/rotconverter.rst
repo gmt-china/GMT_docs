@@ -7,7 +7,7 @@
 rotconverter
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/rotconverter`  
+:官方文档: :doc:`gmt:supplements/spotter/rotconverter`
 :简介: 操纵总重建和阶段旋转
 
 
@@ -20,7 +20,7 @@ rotconverter
 语法
 --------
 
-**gmt rotconverter** 
+**gmt rotconverter**
 [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
 [ :option:`-A` ]
 [ :option:`-D` ]

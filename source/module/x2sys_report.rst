@@ -11,8 +11,8 @@ x2sys_report
 :简介: 对交叉点信息进行统计
 
 **x2sys_report** 模块读取交叉点 ASCII 文件 *codebase.txt* （或者从标准输入读）
-并输出每个轨迹的交叉点统计信息，包括：*n* ，*mean* ，*std* ，*rms* 和 
-*weight* 。  
+并输出每个轨迹的交叉点统计信息，包括：*n* ，*mean* ，*std* ，*rms* 和
+*weight* 。
 
 语法
 ----
@@ -40,10 +40,10 @@ x2sys_report
 .. option:: -C
 
 **-C**\ *column*
-    指定要处理的列，列名必须是已经在格式定义文件中存在的，见 :doc:`x2sys_init` 
-    
+    指定要处理的列，列名必须是已经在格式定义文件中存在的，见 :doc:`x2sys_init`
+
 .. option:: -T
-    
+
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init`
 
@@ -86,7 +86,7 @@ x2sys_report
 .. option:: -S
 
 **-S**\ *track*
-    指定单轨迹的名称，只输出和这条轨迹相关的交叉点的信息 
+    指定单轨迹的名称，只输出和这条轨迹相关的交叉点的信息
     [默认输出所有轨迹交叉点信息]
 
 .. include:: explain_-V.rst_
