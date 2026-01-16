@@ -227,7 +227,6 @@ def _filemd5(file):
             data = fp.read()
             return hashlib.md5(data.encode()).hexdigest()
     except FileNotFoundError:
-        # 如果找不到文件，打印警告并返回空或者伪造的 hash，防止报错崩溃
         print(f"[WARNING] filemd5 filter: Cannot find file {file}")
         return "file_not_found"
 
