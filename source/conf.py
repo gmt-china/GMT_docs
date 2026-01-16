@@ -64,8 +64,6 @@ extensions = [
     "sphinxcontrib.datatemplates",
     "hide_options",  # _extensions/hide_options.py
 ]
-# use custom templater bridge defined in _extensions/templatebridge.py
-template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
@@ -217,3 +215,41 @@ latex_elements = {
     "maketitle" : "\\maketitle",
     "releasename": "v",  # the default is "Release" or "发布"
 }
+
+"""
+架构优化：摒弃 TemplateBridge
+利用 Sphinx 的事件钩子 builder-inited 来注入 Jinja2 过滤器，这样更标准、更安全。
+"""
+
+import hashlib
+
+def _filemd5(file):
+    """
+    计算文件内容的 MD5 hash (原 templatebridge.py 中的代码)
+    """
+    # 注意：这里需要处理相对路径问题
+    # 如果 file 是相对路径，确保它是相对于 conf.py 所在目录的
+    try:
+        with open(file, "r", encoding="utf-8") as fp:
+            data = fp.read()
+            return hashlib.md5(data.encode()).hexdigest()
+    except FileNotFoundError:
+        # 如果找不到文件，打印警告并返回空或者伪造的 hash，防止报错崩溃
+        print(f"[WARNING] filemd5 filter: Cannot find file {file}")
+        return "file_not_found"
+
+def setup_filters(app):
+    """
+    在 builder 初始化后，注册自定义 Jinja2 过滤器。
+    增加安全检查，防止在 LaTeX/PDF 编译模式下报错。
+    """
+    # 检查当前构建器是否有 templates 属性 (HTMLBuilder 有，LaTeXBuilder 没有)
+    if hasattr(app.builder, 'templates'):
+        app.builder.templates.environment.filters['filemd5'] = _filemd5
+    else:
+        # 如果是 latex 等其他构建器，不需要这个过滤器，直接跳过
+        pass
+
+def setup(app):
+    # 注册事件
+    app.connect('builder-inited', setup_filters)
