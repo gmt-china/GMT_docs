@@ -8,23 +8,52 @@
     :gutter: 1
 
     {% for fig in group["gallery"] %}
+    {# ========================================================= #}
+    {# 情况 1: 使用脚本生成的图片 (Script defined)               #}
+    {# ========================================================= #}
     {% if fig["script"] is defined %}
+        {# 1. 计算 MD5 和图片路径 #}
         {% set md5value = (config.html_context["basedir"] + fig["script"]) | filemd5 %}
         {% set image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
-        {% set link, link_type = "gmtplot-" + md5value, "ref" %}
+        
+        {# 2. 智能链接生成逻辑 #}
+        {% if fig["target"].startswith("http") %}
+            {# A. 如果 target 是外部链接，直接跳转 #}
+            {% set link, link_type = fig["target"], "url" %}
+        {% else %}
+            {# B. 如果是内部链接，构造带锚点的 URL #}
+            {# 先去掉 target 可能自带的 # 号及后面的内容，避免双重锚点 #}
+            {% set target_clean = fig["target"].split('#')[0] %}
+            
+            {# 构造链接: siteurl + 路径 + #gmtplot-MD5 #}
+            {# 注意：siteurl 在本地是 "..", 配合 "/" 可以正确回到上级目录 #}
+            {% set link = config.html_context["siteurl"] + "/" + target_clean + "#gmtplot-" + md5value %}
+            {% set link_type = "url" %}
+        {% endif %}
+
+    {# ========================================================= #}
+    {# 情况 2: 手动指定的静态图片 (Image defined)                #}
+    {# ========================================================= #}
     {% else %}
-        {% if fig["image"].startswith("http") %}  {# absolute URL for external images #}
+        {% if fig["image"].startswith("http") %}
             {% set image = fig["image"] %}
-            {% if fig["target"].startswith("http") %} {# absolute URL #}
+            {% if fig["target"].startswith("http") %}
                 {% set link, link_type = fig["target"], "url" %}
             {% else %}
                 {% set link, link_type = "/" + fig["target"], "doc" %}
             {% endif %}
-        {% else %}  {# internal images #}
+        {% else %}
             {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
-            {% set link, link_type = "gmtplot-" + fig["image"], "ref" %}
+            {% set link, link_type = "#gmtplot-" + fig["image"], "url" %}
         {% endif %}
+        
+        {# 对于没有 script 的情况，我们无法自动计算 MD5，暂时用 image 文件名做 ID #}
+        {% set md5value = fig["image"] %}
     {% endif %}
+
+    {# ========================================================= #}
+    {# 卡片渲染区域                                              #}
+    {# ========================================================= #}
     .. grid-item-card::
         :margin: 0 2 0 0
         :text-align: center
@@ -33,10 +62,12 @@
 
         .. raw:: html
 
-            <img src="{{ image }}" alt="{{ fig['title'] }}" class="figure-img" style="width: 100%; object-fit: contain;">
+           {# 这里的 id 使用 md5value 确保唯一且合法，不再依赖复杂的 link 变量 #}
+           <div id="gallery-item-{{ md5value }}">
+               <img src="{{ image }}" alt="{{ fig['title'] }}" class="figure-img" style="width: 100%; object-fit: contain;">
+           </div>
 
         +++
         **{{ fig["title"] }}**
     {% endfor %}
 {% endfor %}
-

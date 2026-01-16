@@ -36,5 +36,5 @@ optimize_pdf: pdf
 		$(BUILDDIR)/$(DOCNAME).pdf
 	mv $(BUILDDIR)/$(DOCNAME).optimized.pdf $(BUILDDIR)/$(DOCNAME).pdf
 
-serve: $(HTML)
+server: $(HTML)
 	cd $(BUILDDIR)/$(HTML) && python -m http.server
