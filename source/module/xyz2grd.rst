@@ -1,18 +1,21 @@
+:author: 田冬冬, 朱邓达, 王亮, 陈箫翰
+:date: 2026-01-16
+
 .. index:: ! xyz2grd
-.. include:: common_SYN_OPTs.rst_
+.. program:: xyz2grd
 
 xyz2grd
 =======
 
 :官方文档: :doc:`gmt:xyz2grd`
-:简介: 将XYZ数据或Z数据转换成网格文件
+:简介: 将 xyz 数据或 z 数据转换成网格文件
 
-**xyz2grd** 读取一个或多个Z数据或XYZ数据，并将其转换成二进制网格文件。
-若某些节点没有数据值，则这些节点会被赋值为NaN；
+**xyz2grd** 读取一个或多个 z 数据或 xyz 数据，并将其转换成二进制网格文件。
+若某些节点没有数据值，则这些节点会被赋值为 NaN；
 若某个节点由多个数据值，则该节点的值为所有数据点的平均值。
 
-注意，该模块将 **等间隔** 数据转换为网格数据，对于不等间隔的数据并不具备网格化/插值功能。
-若需要处理不等间隔的数据，可以使用模块
+该模块的本质为：创建一个网格，将离散点数据放置在对应的格点中。
+并不具备网格化/插值功能，若需要网格化，可以使用模块
 :doc:`surface`、
 :doc:`greenspline`、
 :doc:`nearneighbor`
@@ -21,38 +24,40 @@ xyz2grd
 语法
 ----
 
-**gmt xyz2grd** [ *table* ]
-|-G|\ *grdfile*
-|SYN_OPT-I|
-|SYN_OPT-R|
-[ |-A|\ [**d**\|\ **f**\|\ **l**\|\ **m**\|\ **n**\|\ **r**\|\ **S**\|\ **s**\|\ **u**\|\ **z**] ]
-[ |-D|\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
-[ |-J|\ *parameters* ]
-[ |-S|\ [*zfile*] ]
-[ |SYN_OPT-V| ]
-[ |-Z|\ [*flags*] ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt xyz2grd**
+[ *table* ]
+:option:`-G`\ *grdfile*
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+[ :option:`-A`\ [**d**\|\ **f**\|\ **l**\|\ **m**\|\ **n**\|\ **r**\|\ **S**\|\ **s**\|\ **u**\|\ **z**] ]
+[ :option:`-D`\ [**+x**\ *xname*][**+y**\ *yname*][**+z**\ *zname*][**+s**\ *scale*][**+o**\ *offset*][**+n**\ *invalid*][**+t**\ *title*][**+r**\ *remark*] ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-S`\ [*zfile*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-Z`\ [*flags*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
-`table`
+*table*
     输入表数据。可以只包含Z值，也可以包含 (x,y,z) 值。可以是ASCII格式，也可以是二进制格式。
-    XYZ数据不要求排序。如果只包含Z值，则必须使用 |-Z| 选项。
+    XYZ数据不要求排序。如果只包含Z值，则必须使用 :option:`-Z` 选项。
 
-.. _-G:
+必须选项
+--------
 
-**-G**\ *grdfile*
-    生成的网格文件名
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -61,13 +66,13 @@ xyz2grd
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**d**\|\ **f**\|\ **l**\|\ **m**\|\ **n**\|\ **r**\|\ **S**\|\ **s**\|\ **u**\|\ **z**]
     多个数据落在同一个网格节点内时的处理方式。
 
     默认情况下，若有多个数据落在同一个网格节点内，会将这些数据的均值作为该
-    节点的值。使用该选项可以修改这一行为（当使用 |-Z| 选项时，该选项会被忽略）：
+    节点的值。使用该选项可以修改这一行为（当使用 :option:`-Z` 选项时，该选项会被忽略）：
 
     - **-Af** 将第一个落在该节点内的数据值作为节点值
     - **-As** 将最后一个落在该节点内的数据值作为节点值
@@ -82,20 +87,21 @@ xyz2grd
 
 .. include:: explain_-D_cap.rst_
 
-.. _-J:
+.. include:: explain_-J.rst_
+..
 
-**-J**\ *parameters*
-    指定投影方式。将投影方式信息保存到netCDF网格文件中。
+    将地理参考信息以符合 CF-1 标准的元数据保存到 netCDF 网格文件中。
+    PROJ 语法可以直接在参数中使用，并且可以被 GDAL 识别。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*zfile*]
     对输入的Z文件做字节序转换并输出到标准输出或保存到文件 *zfile* 中。
-    该选项只做字节序转换，不生成网格文件。该选项必须与 |-Z| 选项一起使用。
+    该选项只做字节序转换，不生成网格文件。该选项必须与 :option:`-Z` 选项一起使用。
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [*flags*]
     指定Z数据的格式。
@@ -130,12 +136,12 @@ xyz2grd
     - ``f``: 4字节单精度浮点型
     - ``d``: 8字节双精度浮点型
 
-    默认的输入数据格式为 **-ZTLa**。需要注意，**-Z** 选项仅对Z数据有效。
+    默认的输入数据格式为 **-ZTLa**。需要注意，:option:`-Z` 选项仅对Z数据有效。
 
 .. include:: explain_-bi.rst_
 ..
 
-   该选项仅适用于XYZ数据。对于Z数据，应使用 |-Z| 选项。
+   该选项仅适用于XYZ数据。对于Z数据，应使用 :option:`-Z` 选项。
 
 .. include:: explain_-di.rst_
 
@@ -154,11 +160,22 @@ xyz2grd
 
 .. include:: explain_nodereg.rst_
 
+.. include:: explain_-w.rst_
+
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
 .. include:: explain_float.rst_
+
+.. include:: explain_grd_coord.rst_
+
+交换限制
+----------------
+
+所有数据类型都可以读取，甚至是 64 位整数，但在内部网格是以浮点数 (float) 存储的。
+因此，超过浮点类型 23 位尾数 (mantissa) 的整数值可能无法精确表示。当使用 :option:`-S` 时，不涉及网格，我们将数据读取到中间的双精度 (double) 容器中。
+这意味着除了 64 位整数之外，所有数据都可以使用双精度类型的 53 位尾数来表示。
 
 示例
 ----
@@ -172,9 +189,18 @@ xyz2grd
 
     gmt xyz2grd raw.b -D+xm+ym+zm -Graw.nc -R0/100/0/100 -I1 -V -Z -bi3f
 
-将USGS DEM数据转换为网格数据::
+从 NCEI 全球起伏数据 CD-ROM 上的原始二进制 USGS DEM（短整型扫描线导向数据 topo30.b，其中值为 -9999 表示缺失数据）制作网格文件，
+在某些机器上必须反转字节序（如 Sun）::
 
     gmt xyz2grd topo30.b -D+xm+ym+zm -Gustopo.nc -R234/294/24/50 -I30s -di-9999 -ZTLhw
+
+一个包含 4 字节浮点数的二进制文件，该文件是在字节序不同的机器上写入的。可以使用以下命令交换字节序::
+
+    gmt xyz2grd floats.bin -Snew_floats.bin -V -Zf
+
+针对笛卡尔数据集中分配给每个节点的点数制作一个像素配准的 TIFF 文件::
+
+    gmt xyz2grd data.txt -R0/100/0/100 -r -I10 -An -Gnumber_of_points.tif=gd:GTiff
 
 相关模块
 --------

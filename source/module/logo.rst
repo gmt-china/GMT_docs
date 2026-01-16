@@ -1,5 +1,8 @@
+:author: 田冬冬, 周茂, 陈箫翰
+:date: 2025-08-11
+
 .. index:: ! logo
-.. include:: common_SYN_OPTs.rst_
+.. program:: logo
 
 logo
 =======
@@ -19,27 +22,24 @@ logo
 语法
 ----
 
-**gmt logo** [ |-D|\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
-[ |-F|\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
-[ |-J|\ *parameters* ] [ |-J|\ **z**\|\ **Z**\ *parameters* ]
-[ |SYN_OPT-Rz| ]
-[ |-S|\ [**l**\|\ **n**\|\ **u**] ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
-
-必须选项
---------
-
-无
+**gmt logo**
+[ :option:`-D`\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
+[ :option:`-F`\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-Jz|Z`\ *parameters* ]
+[ :option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*] ]
+[ :option:`-S`\ [**l**\|\ **n**\|\ **u**] ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]]
     设置logo在图中的位置
@@ -54,20 +54,23 @@ logo
     - **+o**\ *dx*/*dy* 在参考点的基础上设置logo的额外偏移量
     - **+w**\ *width* 设置logo的宽度
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制GMT logo的背景面板属性
 
-    若只使用 |-F| 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在 GMT logo 周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-J.rst_
+
+.. include:: explain_-Jz.rst_
+
 .. include:: explain_-Rz.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [**l**\|\ **n**\|\ **u**]
     控制GMT logo中地图下方的文字

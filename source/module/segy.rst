@@ -1,15 +1,18 @@
+:author: 田冬冬, 陈箫翰
+:date: 2026-01-11
+
 .. index:: ! segy
-.. include:: common_SYN_OPTs.rst_
+.. program:: segy
 
 segy
 ======
 
 :官方文档: :doc:`gmt:supplements/segy/segy`
-:简介: 
+:简介: 绘制二维 SEGY 文件
 
 读取一个原生（IEEE）格式的 SEGY 文件，并生成地震数据的绘图。使用 **imagemask** 操作符将地震数据以单色或灰度（由用户指定）1-bit 深度位图的形式绘制，背景为透明。位图分辨率取自当前的 GMT 默认设置。通过使用道头中的信息，可以在真实位置绘制地震道（此时，文件中道的顺序无关紧要）。标准的 GMT 几何处理方法被用于绘制，因此原则上可以采用任何地图投影。然而，地理投影可能会导致意外的结果。另外需注意，某些参数具有非标准含义。
 
-需要注意的是，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。  
+需要注意的是，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。
 其中，**deviation** 决定了在绘图坐标系中，经过 **[normalized][biased][clipped]** 处理后的样本值为 1 时，与道位置的偏移距离。可以理解为对采样值进行进一步缩放。
 
 SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节的二进制卷头、以及每道 240 字节的头部
@@ -17,81 +20,102 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 语法
 ------
 
-**gmt segy** *SEGYfile* |-J|\ *parameters*
-|SYN_OPT-R|
-|-D|\ *deviation*
-|-F|\ [*color*] |-W|
-[ |-C|\ *clip* ]
-[ |-E|\ *error* ] [ |-I| ] [ |-L|\ *nsamp* ]
-[ |-M|\ *ntrace* ] [ |-N| ]
-[ |-Q|\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
-[ |-S|\ *header* ]
-[ |-T|\ *filename* ]
+**gmt segy**
+*SEGYfile*
+:option:`-J`\ *parameters*
+:option:`-R`\ *region*
+:option:`-D`\ *deviation*
+:option:`-F`\ [*color*]
+:option:`-W`
+[ :option:`-C`\ *clip* ]
+[ :option:`-E`\ *error* ]
+[ :option:`-I` ]
+[ :option:`-L`\ *nsamp* ]
+[ :option:`-M`\ *ntrace* ]
+[ :option:`-N` ]
+[ :option:`-Q`\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
+[ :option:`-S`\ *header* ]
+[ :option:`-T`\ *filename* ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-Z` ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 ------------------
 
 *SEGYfile*
     地震 SEGY 数据文件
 
-.. _-D:
+必须选项
+------------------
+
+.. include:: explain_-J.rst_
+
+.. include:: explain_-R.rst_
+
+.. option:: -D
 
 **-D**\ *deviation*
    **deviation** 决定了在绘图坐标系中，
    经过 **[normalized][biased][clipped]** 处理后的样本值为 1 时，
    与道位置的偏移距离。可以理解为对采样值进行进一步缩放。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [*color*]
     填充地震道（可变面积，默认填充正值）。指定用于填充 **imagemask** 的颜色 *color* 。
 
-.. _-W:
+.. option:: -W
 
 **-W**
     绘制波形道。
 
-注意： *必须* 在 |-W| 和 |-F| 之中指定至少一个选项。
+注意： *必须* 在 :option:`-W` 和 :option:`-F` 之中指定至少一个选项。
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     切换默认的字节顺序状态（默认假设数据为大端字节序）。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *clip*
     设置进行数据裁剪的采样值（裁剪同时应用于正值和负值）。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *error*
-    使用 |-T| 选项时，允许请求的道位置与实际道位置之间存在误差范围 *error* 。
+    使用 :option:`-T` 选项时，允许请求的道位置与实际道位置之间存在误差范围 *error* 。
 
-.. _-I:
+.. option:: -I
 
 **-I**
     填充负偏移而非正偏移
 
-.. _-L:
+.. option:: -L
 
 **-L**
     覆盖卷头中每道的样本数量（程序会尝试根据每道头部确定样本数量，以支持变长道）
 
-.. _-M:
+.. option:: -M
 
 **-M**
     覆盖卷头中指定的道数。程序会相对优雅地检测文件结束，但此参数限制了程序尝试读取的道数。
 
-.. _-N:
+.. option:: -N
 
 **-N**
     通过全道长度上的均方根振幅(rms amplitude)归一化地震道
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value*
     可以通过指令修改五种不同的设置（可重复使用）：
@@ -105,22 +129,34 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 
        **-Qy**\ *dy* 覆盖 SEGY 卷头中的采样间隔。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *header*
     从道头headers读取道位置 : header 设置为 **c** 表示 CDP,
     **o** 表示偏移, 设置为 **b**\ *num* 表示从头部的第 *num* 字节（第一个字节对应 num = 0）读取一个长整型数。
     默认情况下，道位置由道编号决定。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *filename*
-    仅绘制其位置对应于 *filename* 中列出位置的道。道的列出顺序无关紧要——程序会在整个空间中检查每个道。
+    仅绘制其位置对应于 *filename* 中列出位置的道。道的列出顺序无关紧要，程序会在整个空间中检查每个道。
 
-.. _-Z:
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
+
+.. option:: -Z
 
 **-Z**
     不绘制 rms amplitude 为0的道。
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
 
 示例
 --------
@@ -142,3 +178,12 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 绘制一个3秒，32道的 SEGY 文件。示例数据：:download:`segy/XB1-Z.sgy`
 
 .. gmtplot:: segy/segy_ex.sh
+   :width: 80%
+   :align: center
+
+
+相关模块
+--------
+
+:doc:`segyz`,
+:doc:`segy2grd`

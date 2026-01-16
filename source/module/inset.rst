@@ -1,5 +1,8 @@
+:author: 田冬冬, 周茂, 陈箫翰
+:date: 2024-01-17
+
 .. index:: ! inset
-.. include:: common_SYN_OPTs.rst_
+.. program:: inset
 
 inset
 =====
@@ -16,25 +19,25 @@ inset
 - **inset end** 用于结束图中图模式，所有的操作都会回到原大图中。
 
 在图中图中，用户可以使用任意的投影方式和投影区域。若投影方式中底图宽度或
-比例用 ``?`` 表示，则会根据 |-D| 选项设置的小图尺寸自动确定小图的投影参数。
+比例用 ``?`` 表示，则会根据 :option:`-D` 选项设置的小图尺寸自动确定小图的投影参数。
 
 inset begin语法
 ---------------
 
 **gmt inset begin**
-|-D|\ *inset-box*
-[ |-C|\ [*side*]\ *clearance* ]
-[ |-F|\ *box* ]
-[ |-N| ]
-[ |SYN_OPT-R| ]
-[ |-J|\ *parameters* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+:option:`-D`\ *inset-box*
+[ :option:`-C`\ [*side*]\ *clearance* ]
+[ :option:`-F`\ *box* ]
+[ :option:`-N` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *xmin/xmax/ymin/ymax*\ [**+r**][**+u**\ *unit*]
     类似于 :doc:`-R </option/R>` 选项，通过指定大图中的一个矩形区域作为小图的绘图区域。
@@ -58,17 +61,17 @@ inset begin语法
 可选选项
 --------
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     设置小图区域的背景面板属性。
 
-    若只使用 |-F| 而不使用其它子选项，则会在小图周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在小图周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *clearance*
     小图区域内部的额外空白区域 [默认值没有空白]。其可以取三种形式：
@@ -77,7 +80,7 @@ inset begin语法
     - 两个用斜杠分隔的值，分别设置水平和垂直方向的空白
     - 四个用斜杠分隔的值，分别设置左右下上四条边的空白
 
-.. _-N:
+.. option:: -N
 
 **-N**
     不裁剪超过小图区域边界的部分。

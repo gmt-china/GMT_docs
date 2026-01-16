@@ -1,5 +1,8 @@
+:author: 田冬冬
+:date: 2021-08-20
+
 .. index:: ! end
-.. include:: common_SYN_OPTs.rst_
+.. program:: end
 
 end
 ===
@@ -15,7 +18,7 @@ end
 
 **gmt end**
 [ **show** ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 可选参数
 --------
@@ -51,4 +54,3 @@ end
 :doc:`figure`,
 :doc:`inset`,
 :doc:`subplot`,
-:doc:`gmt`

@@ -53,10 +53,10 @@ gmt surface Table_5_11.txt -R-0.2/6.6/-0.2/6.6 -I0.05 -Gtmp.grd
 用户可以使用 {doc}`/module/grdinfo` 模块获取网格文件的基本信息：
 
 ```
-$ gmt grdinfo tmp.grd 
+$ gmt grdinfo tmp.grd
 tmp.grd: Title: Data gridded with continuous surface splines in tension
 tmp.grd: Command: gmt surface Table_5_11.txt -R-0.2/6.6/-0.2/6.6 -I0.05 -Gtmp.grd
-tmp.grd: Remark: 
+tmp.grd: Remark:
 tmp.grd: Gridline node registration used [Cartesian grid]
 tmp.grd: Grid file format: nf = GMT netCDF format (32-bit float), CF-1.7
 tmp.grd: x_min: -0.2 x_max: 6.6 x_inc: 0.05 name: x n_columns: 137
@@ -64,7 +64,7 @@ tmp.grd: y_min: -0.2 y_max: 6.6 y_inc: 0.05 name: y n_rows: 137
 tmp.grd: v_min: 678.153747559 v_max: 1008.02862549 name: z
 tmp.grd: scale_factor: 1 add_offset: 0
 tmp.grd: format: netCDF-4 chunk_size: 137,137 shuffle: on deflation_level: 3
-tmp.grd: Default CPT: 
+tmp.grd: Default CPT:
 ```
 
 ## 网格文件绘图

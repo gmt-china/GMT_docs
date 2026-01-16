@@ -1,3 +1,8 @@
+---
+author: 周茂, 田冬冬
+date: 2025-10-28
+---
+
 # 地学数据集
 
 使用 GMT 绘图时，经常用到一些特定的地学数据，如国界线、地形起伏数据等。
@@ -13,7 +18,7 @@ gshhg
 dcw/index
 remote-dataset
 CN-border/index
-CN-faults
+CN-faults/index
 CN-block/index
 geo3al/index
 gadm/index

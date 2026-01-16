@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2022-10-14
+:date: 2025-12-30
 
 .. index:: ! earthtide
-.. include:: common_SYN_OPTs.rst_
+.. program:: earthtide
 
 earthtide
 =========
@@ -18,32 +18,32 @@ earthtide
 ----
 
 **gmt earthtide**
-|-T|\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
-|-G|\ *outgrid*
-[ |-C|\ *x|e,y|n,z|v* ]
-[ |SYN_OPT-I| ]
-[ |-L|\ *lon/lat* ]
-[ |SYN_OPT-R| ]
-[ |-S| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT--| ]
+:option:`-G`\ *outgrid*
+:option:`-L`\ *lon/lat*
+:option:`-S`
+[ :option:`-C`\ *x|e,y|n,z|v* ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**]\|\ :option:`-T`\ *file*\|\ *list* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-r`\ *reg* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+必须选项
 --------
 
 以下三个选项必须至少使用其中一个。
 
 .. include:: explain_grd_out.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     输出太阳和月亮的地理坐标以及其距离，单位为米。输出为 Mx7 的矩阵，
-    M 为时刻的个数（通过 |-T| 设置），7 列分别代表：时间，太阳经度，
+    M 为时刻的个数（通过 :option:`-T` 设置），7 列分别代表：时间，太阳经度，
     太阳纬度，太阳距离，月亮经度，月亮纬度，月亮距离
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *lon/lat*
     计算指定位置上的固体地球潮汐的时间序列。坐标必须为大地坐标，默认
@@ -52,31 +52,33 @@ earthtide
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ **x**\|\ **e**,\ **y**\|\ **n**,\ **z**\|\ **v**
-    设置需要计算的固体地球潮汐分量及其保存的网格。该选项需要 |-G| 选项。
+    设置需要计算的固体地球潮汐分量及其保存的网格。该选项需要 :option:`-G` 选项。
     不同选项之间使用逗号分隔：**x** 或 **e** 为东向分量；**y** 或 **n**
     为北向分量，**z** 或 **v** 为垂直分量。例如，**-Ce**,\ **v** 将输出
     写入两个网格，一个为东向分量网格，一个为垂直分量网格。如果设置了
-    |-G| ，但不指定 |-C| ，则默认为垂直分量。
+    :option:`-G` ，但不指定 :option:`-C` ，则默认为垂直分量。
 
 .. include:: explain_-I.rst_
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
-**-T**\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
-    指定计算的时间序列的起始时间 *min* ，终止时间 *max* 和步长 *inc* 。
-
-.. include:: explain_-bo.rst_
-
-.. include:: explain_-ocols.rst_
-
-.. include:: explain_nodereg.rst_
+**-T**\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**]\|\ :option:`-T`\ *file*\|\ *list*
+    以 *inc* 为步长，生成从 *min* 到 *max* 均匀分布的时间序列。
+    附加 **+i** 表示给定的是步长的倒数，或者附加 **+n** 表示 *inc* 为序列的元素个数。
+    可以为步长附加一个有效的时间单位（**d**\|\ **h**\|\ **m**\|\ **s**）。
+    如果仅给出了 *min*，则我们使用该日期和时间进行计算。如果未提供 :option:`-T` ，则从计算机时钟获取 UTC 格式的当前时间。
+    如果未提供 :option:`-G` 或 :option:`-S` ，则 :option:`-T` 被解释为在 :option:`-L` 指定的位置计算时间序列，因此 :option:`-L` 变为必选。
+    当同时存在 :option:`-G` 和 :option:`-T` 时，仅考虑第一个时间 T 序列。
+    日期范围可以从 1901 年到 2099 年。有关数组生成的详细信息，请参见 `生成一维数组`_ 。
 
 .. include:: explain_-V.rst_
+
+.. include:: explain_nodereg.rst_
 
 .. include:: explain_help.rst_
 
@@ -86,7 +88,7 @@ earthtide
 ----
 
 计算 2018 年 6 月 18 日中午，固体地球潮汐垂直分量网格，网格的分辨率为
-30 m（使用默认的 |-R| 和 |-I| 选项） ::
+30 m（使用默认的 :option:`-R` 和 :option:`-I` 选项） ::
 
     gmt earthtide -T2018-06-18T12:00:00 -Gsolid_tide_up.grd
 

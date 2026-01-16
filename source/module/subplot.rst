@@ -1,8 +1,8 @@
 :author: 田冬冬, 王亮, 陈箫翰, 朱邓达
-:date: 2025-06-08
+:date: 2026-01-12
 
 .. index:: ! subplot
-.. include:: common_SYN_OPTs.rst_
+.. program:: subplot_begin
 
 subplot
 =======
@@ -21,8 +21,8 @@ subplot
 
 在子图模式中，需要注意如下几点：
 
-- |-X| 和 |-Y| 选项无法在子图模式中使用，可以使用 |-C| 选项作为替代
-- 在使用 |-J| 选项时，可以使用 **?** 来指定地图宽度或比例尺，此时，GMT会根据
+- **-X** 和 **-Y** 选项无法在子图模式中使用，可以使用 :option:`-C` 选项作为替代
+- 在使用 :option:`-J` 选项时，可以使用 **?** 来指定地图宽度或比例尺，此时，GMT会根据
   子图的大小自动确定最合适的地图尺寸
 - 对于笛卡尔投影，若想要X和Y轴共用相同的比例尺，则可以使用 **-Jx?**
 
@@ -31,20 +31,20 @@ subplot begin 语法
 
 **gmt subplot begin**
 *nrows*\ **x**\ *ncols*
-|-F|\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
-[ |-A|\ [*autotag*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+j**\|\ **J**\ *refpoint*][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+r**\|\ **R**][**+s**\ [[*dx*/*dy*][/*shade*]]][**+v**]]
-[ |-C|\ [*side*]\ *clearance* ]
-[ |-D| ]
-[ |SYN_OPT-B| ]
-[ |SYN_OPT-J| ]
-[ |-M|\ *margins* ]
-[ |SYN_OPT-R| ]
-[ |-S|\ *layout* ]
-[ |-T|\ *title* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT--| ]
+:option:`-F`\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
+[ :option:`-A`\ [*autotag*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+j**\|\ **J**\ *refpoint*][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+r**\|\ **R**][**+s**\ [[*dx*/*dy*][/*shade*]]][**+v**]]
+[ :option:`-C`\ [*side*]\ *clearance* ]
+[ :option:`-D` ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-M`\ *margins* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S`\ *layout* ]
+[ :option:`-T`\ *title* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必须选项
 --------
@@ -54,9 +54,9 @@ subplot begin 语法
 
     每一行和每一列均有相同的子图数目。注意：你无需在每个子图内都绘图。
 
-.. _-F:
+.. option:: -F
 
-**-F**\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
+**-F**\ [**f**\|\ **s**]\ *width(s)*\ /*height(s)*\ [**+af**\|\ **s**][**+f**\ *wfracs*\ /*hfracs*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+p**\ *pen*][**+w**\ *pen*]
     指定图片的尺寸。有两种方式：
 
     - **-Ff** - 直接指定整张图片的尺寸
@@ -69,14 +69,14 @@ subplot begin 语法
     - **+g**\ *fill* - 为整张图的背景矩形填充颜色
     - **+c**\ *dx/dy* - 设置背景矩形与整张图之间的额外空白
     - **+af**\|\ **s** - 默认使用 **+af** ，
-      即按照整个图片的宽度和高度的几何平均值对边框宽度和标注字体大小进行自动缩放； 
+      即按照整个图片的宽度和高度的几何平均值对边框宽度和标注字体大小进行自动缩放；
       **+as** 类似，但参考每个子图的宽度和高度的几何平均值。
 
     **-F**\ [**f**]\ *width*/*height*\ [**+f**\ *wfracs*\ /*hfracs*]
         指定整张图片的宽度 *width* 和高度 *height*。
 
         这种情况下，GMT会根据整张图片的尺寸以及子图的数目自动计算每张子图的尺寸。
-        在计算子图尺寸时会考虑每个子图的刻度线 (ticks)、标注 (annotations)、标签 (labels) 
+        在计算子图尺寸时会考虑每个子图的刻度线 (ticks)、标注 (annotations)、标签 (labels)
         所占据的空间，以及不同子图之间的间隔。整张图的最外圈的刻度线、标注和标签不算在整张图片尺寸之内。
 
         默认所有行和列的尺寸都是相同的。若想要子图的每一行具有不同的高度，
@@ -105,15 +105,15 @@ subplot begin 语法
         第一列为4厘米宽，第二列为8厘米宽，所有列的高度均为4厘米高。
         注意，宽度值或高度值的数目必须是一个或者与行数/列数相匹配。
 
-        对于地理地图而言，每张子图的高度由地图区域 |-R| 以及投影方式 |-J| 决定。
-        有两个选择：(1) 指定子图高度为0，并同时指定 |-R| 和 **-J**，
+        对于地理地图而言，每张子图的高度由地图区域 :option:`-R` 以及投影方式 :option:`-J` 决定。
+        有两个选择：(1) 指定子图高度为0，并同时指定 :option:`-R` 和 :option:`-J`，
         利用其计算每张子图的高度，但要求所有子图必须共享相同的研究区域和投影方式；
         (2) 不断尝试并修改子图的高度以得到最佳的绘图布局。
 
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [*autotag*][**+c**\ *dx*\ [/*dy*]][**+g**\ *fill*][**+j**\|\ **J**\ *refpoint*][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+r**\|\ **R**][**+s**\ [[*dx*/*dy*][/*shade*]]][**+v**]
     为子图自动添加编号。
@@ -129,13 +129,13 @@ subplot begin 语法
     加上子选项可以指定编号的更多属性：
 
     - **+c**\ *dx*\ [/*dy*] - 设置子图编号与文本框轮廓间的距离，
-      默认值为 :term:`FONT_TAG` 的 15%，即 3p/3p 
+      默认值为 :term:`FONT_TAG` 的 15%，即 3p/3p
     - **+g**\ *fill*: 为子图编号的文本框填充颜色
     - **+j**\|\ **J**\ *refpoint* - 指定编号在子图中的位置，默认值为 ``TL``，
       即编号位于子图的左上角。**+j** 和 **+J** 分别适用于子图编号位于子图内部和
       外部的情况
     - **+o**\ *dx*\ [/*dy*] - 设置子图编号相对于 **+j|J** 指定的参考位置间的额外偏移量，
-      默认值为 :term:`FONT_TAG` 的 20%，即 4p/4p 
+      默认值为 :term:`FONT_TAG` 的 20%，即 4p/4p
     - **+p**\ *pen* - 为子图编号加上文本框
     - **+r** - 使用小写罗马数字编号
     - **+R** - 使用大小罗马数字编号（默认使用阿拉伯数字）
@@ -143,7 +143,7 @@ subplot begin 语法
       这里， *dx/dy* 表示相对于编号框的位移（默认是 *2p/-2p* ），
       *shade* 设置用于阴影的填充样式（默认是 *gray50* ）。
     - **+v** - 表示沿着垂直列方向依次增加编号，默认沿着水平行方向依次增加
-   
+
     **注：** 目前你不能在 tag 中使用 Latex 表达式，一个解决方法是使用 :doc:`text` 模块逐个设置 tag。
 
 .. include:: explain_-B.rst_
@@ -151,7 +151,7 @@ subplot begin 语法
 
     该选项会应用到所有子图。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*side*]\ *clearance*
     设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、
@@ -164,28 +164,28 @@ subplot begin 语法
     该选项可以重复多次，对不同边分别设置不同的间距。
 
     **subplot begin** 中该选项对所有子图均有效，而 **subplot set** 中使用该选项
-    则仅对当前子图有效。 |-C| 不会影响 |-A| 设置的编号位置。
+    则仅对当前子图有效。 :option:`-C` 不会影响 :option:`-A` 设置的编号位置。
 
     .. note::
 
-       在子图模式内不能使用 |-X| 和 |-Y| ，可以使用 |-C| 作为替代。 
+       在子图模式内不能使用 **-X** 和 **-Y** ，可以使用 :option:`-C` 作为替代。
 
-.. _-D:
+.. option:: -D
 
 **-D**
     根据已有的默认设置（基于 gmt.conf 文件或 **--PAR**\ *=value* ）
-    以及 |-B|\ ，|-C|\ ，|-M| 和 |-S| 设置，仅确定图片尺寸（如果使用 **-Ff** ）
+    以及 :option:`-B`\ ，:option:`-C`\ ，:option:`-M` 和 :option:`-S` 设置，仅确定图片尺寸（如果使用 **-Ff** ）
     和子图间距，而不绘制和标注任何底图（默认绘制和标注指定子图的底图）。
     当你想先绘制和标注部分子图的底图，之后再分别在子图内绘制数据而不再重绘底图时，
     该选项很有用。对于两次使用 **gmt subplot** 规划的子图区域，
-    使用不同的 |-B|\ ，|-C|\ ，|-M| 和 |-S| 可能导致子图区域不对齐，
-    这时使用 |-D| 可将二者对齐。
+    使用不同的 :option:`-B`\ ，:option:`-C`\ ，:option:`-M` 和 :option:`-S` 可能导致子图区域不对齐，
+    这时使用 :option:`-D` 可将二者对齐。
     相关使用示例详见 `PR #4993 <https://github.com/GenericMappingTools/gmt/pull/4993>`_ 。
-    **注：** 要求 |-F| 保持一致。
+    **注：** 要求 :option:`-F` 保持一致。
 
 .. include:: explain_-J.rst_
 
-.. _-M:
+.. option:: -M
 
 **-M**\ *margins*
     相邻子图之间的额外空白，包括为刻度、标注和标签自动添加的空间。
@@ -207,7 +207,7 @@ subplot begin 语法
     当所有子图共享一个共同的区域时，这很有用。
     在此模块中，所选区域也将成为计算模块所需的数据区域的默认值。
 
-.. _-S:
+.. option:: -S
 
 **-Sc**\ [**b**\|\ **t**][**+l**\ *label*][**+s**\ *label2*][**+t**\ [**c**]]
     设置一列中的所有子图共用 X 轴。
@@ -221,8 +221,8 @@ subplot begin 语法
     - **+s**\ *label2* 为共用的 X 轴添加二级标签
     - **+t** 为每个子图的标题预留空间
     - **+tc** 为第一行的所有子图的标题预留空间
-    
-    某行某列子图的标签和标题仍可通过子图内部的 |-B| 选项进行设置。
+
+    某行某列子图的标签和标题仍可通过子图内部的 :option:`-B` 选项进行设置。
 
 **-Sr**\ [**l**\|\ **r**][**+l**\ *label*][**+p**][**+s**\ *label2*]
     设置一行中所有子图共用 Y 轴。
@@ -236,18 +236,20 @@ subplot begin 语法
     - **+s**\ *label2* 为共用的 Y 轴添加二级标签
     - **+p** 设置所有标注与 Y 轴平行（默认水平）
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *heading*
     设置整张图的总标题，标题文字的属性由 :term:`FONT_HEADING` 控制。
 
-    每张子图各自的标题可以用 |-B| 或 |-S| 选项控制。
+    每张子图各自的标题可以用 :option:`-B` 或 :option:`-S` 选项控制。
 
 .. include:: explain_-V.rst_
 
 .. include:: explain_-XY.rst_
 
 .. include:: explain_help.rst_
+
+.. program:: subplot_set
 
 subplot set
 -----------
@@ -269,9 +271,9 @@ subplot set 语法
 
 **gmt subplot set**
 [ *row,col*\|\ *index* ]
-[ **-A**\ *fixedtag*]
-[ **-C**\ *side*\ /*clearance* ]
-[ |SYN_OPT-V| ]
+[ :option:`-A <subplot_set -A>`\ *fixedtag*]
+[ :option:`-C <subplot_set -C>`\ *side*\ /*clearance* ]
+[ :option:`-V <subplot_set -V>`\ [*level*] ]
 
 可选选项
 --------
@@ -281,12 +283,16 @@ subplot set 语法
 
     若不指定子图行列号或索引号，则自动激活“下一个”子图。
 
+.. option:: -A
+
 **-A**\ *fixedtag*
-    设置当前子图的编号，忽略 **subplot begin** 中 |-A| 选项设置的自动编号。
+    设置当前子图的编号，忽略 **subplot begin** 中 :option:`-A` 选项设置的自动编号。
 
     这一选项可以用于临时修改单个子图的编号，但该选项只能修改编号字符串，
-    其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 |-A| 选项。
+    其余属性（如位置、文本框）等均只能继承自 **subplot begin** 的 :option:`-A` 选项。
     使用 **-A-** 则不设置任何编号。
+
+.. option:: -C
 
 **-C**\ *side*/*clearance*
     设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。
@@ -294,16 +300,19 @@ subplot set 语法
     *side* 可以取 **e** **w** **s** **n** 分别代表东西南北四条边。
     该选项可以重复多次，对不同边分别设置不同的间距。
     **subplot begin** 该选项对所有子图均有效，而 **subplot set** 中使用该选项
-    则仅对当前子图有效。该选项会覆盖 **subplot begin** 中设置的 |-C| 。
+    则仅对当前子图有效。该选项会覆盖 **subplot begin** 中设置的 :option:`-C <subplot_begin -C>` 。
 
     .. note::
 
-       在子图模式下不能使用 |-X| 和 |-Y| ，可以使用 |-C| 作为替代。
+       在子图模式下不能使用 **-X** 和 **-Y** ，可以使用 :option:`-C` 作为替代。
 
 现在可以执行任意数量的绘图命令，并且所有输出都将指向所选的子图。
-subplot 机制要求新子图的第一个绘图命令负责绘制底图。一些底图细节已通过 **subplot begin** 中的 |-S| 
-设置，如果需要重新设置底图和轴的一些属性，则需要在第一个绘图命令中通过 |-B| 选项进行设置。
+subplot 机制要求新子图的第一个绘图命令负责绘制底图。一些底图细节已通过 **subplot begin** 中的 :option:`-S <subplot_begin -S>`
+设置，如果需要重新设置底图和轴的一些属性，则需要在第一个绘图命令中通过 :option:`-B <subplot_begin -B>` 选项进行设置。
 
+.. include:: explain_-V.rst_
+
+.. program:: subplot_end
 
 subplot end
 -----------
@@ -320,7 +329,9 @@ subplot end
 subplot end 语法
 ----------------
 
-**gmt subplot end** [ |SYN_OPT-V| ]
+**gmt subplot end** [ :option:`-V <subplot_end -V>`\ [*level*] ]
+
+.. include:: explain_-V.rst_
 
 示例
 ----

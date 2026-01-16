@@ -2,19 +2,19 @@
 :date: 2025-10-20
 
 .. index:: ! grd2kml
-.. include:: common_SYN_OPTs.rst_
+.. program:: grd2kml
 
 grd2kml
 =======
 
-:官方文档: :doc:`gmt:grd2kml`  
+:官方文档: :doc:`gmt:grd2kml`
 :简介: 从单个网格创建 KML 分级切片图像
 
 
 **grd2kml** 读取一个二维网格文件，并使用所选的图块大小生成 PNG 或 JPG 图像
 以及适用于 Google Earth 的 KML 文件四叉树（quadtree）。
 我们根据四叉树的不同视图层级，对网格进行高斯滤波降采样（可通过选项选择其他滤波器）。
-可选地，通过提供 ±1 范围内的强度网格文件，或自动从输入网格派生强度（见 |-I| ），
+可选地，通过提供 ±1 范围内的强度网格文件，或自动从输入网格派生强度（见 :option:`-I` ），
 可添加光照效果。超出 ±1 范围的强度值将被裁剪。
 地图颜色通过色标（CPT）查表定义，可选择是否叠加等值线。
 如果选择生成纯图块（即未指定等值线），则 PNG 图像由 :doc:`grdimage` 直接输出；
@@ -23,31 +23,33 @@ grd2kml
 语法
 --------
 
-**gmt grd2kml** *ingrid*
-|-N|\ *prefix*
-[ |-A|\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
-[ |-C|\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-E|\ *URL* ]
-[ |-F|\ *filtercode* ]
-[ |-H|\ *scale* ]
-[ |-I|\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
-[ |-L|\ *tilesize* ]
-[ |-S|\ [*extra*] ]
-[ |-T|\ *title* ]
-[ |-W|\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT--| ]
+**gmt grd2kml**
+*ingrid*
+:option:`-N`\ *prefix*
+[ :option:`-A`\ **a**\|\ **g**\|\ **s**\ [*altitude*] ]
+[ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
+[ :option:`-E`\ *URL* ]
+[ :option:`-F`\ *filtercode* ]
+[ :option:`-H`\ *scale* ]
+[ :option:`-I`\ [*file*\|\ *intens*\|\ **+a**\ *azimuth*][**+d**][**+m**\ *ambient*][**+n**\ *args*] ]
+[ :option:`-L`\ *tilesize* ]
+[ :option:`-S`\ [*extra*] ]
+[ :option:`-T`\ *title* ]
+[ :option:`-W`\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
-
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_grd_in.rst_
 
-.. _-N:
+必须选项
+------------------
+
+.. option:: -N
 
 **-N**\ *prefix*
     设置用于顶层 KML 文件名及输出目录名称的唯一前缀 [默认：GMT_Quadtree]。
@@ -56,20 +58,18 @@ grd2kml
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ **a**\|\ **g**\|\ **s**\ [*altitude*]
     选择 Google Earth 支持的三种高度模式之一，确定图层的高度（单位：米）：
     **a** 表示绝对高度，**g** 表示相对于地面的高度，**s** 表示相对于海底的高度。
     若要固定在某一高度上绘制图层，可追加 altitude（米）。
-    使用 0 表示将图层贴合到参考面（如地面或海面）。  
+    使用 0 表示将图层贴合到参考面（如地面或海面）。
     [默认：图块贴合到地面或海面。]
-
-.. _-C:
 
 .. include:: use_cpt_grd.rst_
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *URL*
     若不希望将所有文件保存在本地，可指定远程站点的 URL 作为前缀。
@@ -78,7 +78,7 @@ grd2kml
     这样，你可以通过邮件或下载方式分享 *prefix*.kml，
     用户在 Google Earth 中打开后将自动从远程服务器加载所需文件。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *filtercode*
     指定用于网格降采样的滤波器。
@@ -86,44 +86,42 @@ grd2kml
     、 **m** （中值）[默认：Gaussian]。
     滤波宽度会自动随四叉树层级调整。
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *scale*
     设置传递给 :doc:`psconvert` 的亚像素平滑尺度，以提高光栅化质量
-    （等同于 :doc:`psconvert` 的 |-H| 选项）[默认无平滑]。
-    当未使用 |-W| 时，该选项被忽略。
-
-.. _-I:
+    （等同于 :doc:`psconvert` 的 **-H** 选项）[默认无平滑]。
+    当未使用 :option:`-W` 时，该选项被忽略。
 
 .. include:: explain_intense.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *tilesize*
     设置图块的固定尺寸。必须为 2 的整数幂。
     常用值：256 或 512 [默认 256]。
-    **注意**：对于全球网格（即经度范围为 360° 的数据），若未指定 |-L|，
+    **注意**：对于全球网格（即经度范围为 360° 的数据），若未指定 :option:`-L`，
     则自动设置 *tilesize* = 360。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*extra*]
     增加超出原数据分辨率所需的额外层级 [默认无]。
     这样 GMT 将通过插值生成更高分辨率的图块，而不是让 Google Earth 自行插值。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *title*
     设置顶层文档的标题（即其描述信息）。
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *cfile*\|\ *pen*\ [**+s**\ *scale*/*limit*]
     提供一个包含等值线值与画笔样式的文件，用于在影像上叠加等值线 [默认无等值线]。
-    因此，使用 |-W| 时图块将通过 PostScript 渲染生成，速度较慢。
-    若 *cfile* 无效，则认为输入为 *pen*，并依据 |-C| 所定义的 *cpt* 自动绘制等值线。
+    因此，使用 :option:`-W` 时图块将通过 PostScript 渲染生成，速度较慢。
+    若 *cfile* 无效，则认为输入为 *pen*，并依据 :option:`-C` 所定义的 *cpt* 自动绘制等值线。
     等值线通过 :doc:`grdcontour` 绘制。
     **注意**：画笔宽度指的是最高分辨率图块的宽度；
     对于低一层的图块，其宽度按比例 *scale* [默认 sqrt(2)] 缩减。
@@ -164,13 +162,13 @@ grd2kml
 因此无法在所有层级使用相同厚度的等值线笔宽。
 输入的画笔宽度应视为最高分辨率层的宽度。
 由于生成的图像分辨率（dpi）比常规 GMT 图低得多，
-建议使用亚像素平滑（|-H|）以改善等值线外观。
+建议使用亚像素平滑（ :option:`-H` ）以改善等值线外观。
 生成 PostScript 图块及平滑处理均会显著增加计算时间。
 
 备注
 --------
 
-强度网格可通过 :doc:`grdgradient` 从数据网格生成，
+光照强度网格可通过 :doc:`grdgradient` 从数据网格生成，
 并可使用 :doc:`grdmath` 或 :doc:`grdhisteq` 进一步处理。
 若使用多个不同光照角度的强度网格，可通过 :doc:`grdmath` 合并。
 对于单一光照角度，也可使用自动光照模式。

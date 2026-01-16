@@ -36,7 +36,10 @@ rst_prolog = """
 
 # -- General configuration ------------------------------------------------
 needs_sphinx = "2.4"
-source_suffix = ".rst"
+source_suffix = {
+    '.rst': 'restructuredtext',  # 遇到 .rst 用默认解析器
+    '.md': 'markdown',           # 遇到 .md 用 MyST 解析器
+}
 source_encoding = "utf-8-sig"
 nitpicky = True
 language = "zh_CN"
@@ -57,11 +60,10 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_design",
-    "gmtplot",
+    "gmtplot",  # _extensions/gmtplot.py
     "sphinxcontrib.datatemplates",
+    "hide_options",  # _extensions/hide_options.py
 ]
-# use custom templater bridge defined in _extensions/templatebridge.py
-template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
@@ -98,8 +100,7 @@ copybutton_remove_prompts = True
 # -- Options for HTML output ----------------------------------------------
 import sphinx_rtd_theme
 
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "sticky_navigation": False,
@@ -120,7 +121,9 @@ elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
     siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
     basedir_for_gallery = "./"
 else:  # build locally
-    siteurl_for_gallery = ""
+    # 修改说明：使用 ".." 表示上一级目录，这样路径会变成 "../_images/xxx.png"
+    # 这允许在 build/html/gallery/index.html 中通过相对路径找到 build/html/_images/ 下的图片
+    siteurl_for_gallery = ".."
     basedir_for_gallery = "source/"
 
 html_context = {
@@ -212,3 +215,33 @@ latex_elements = {
     "maketitle" : "\\maketitle",
     "releasename": "v",  # the default is "Release" or "发布"
 }
+
+import hashlib
+
+def _filemd5(file):
+    """
+    计算文件内容的 MD5 hash
+    """
+    try:
+        with open(file, "r", encoding="utf-8") as fp:
+            data = fp.read()
+            return hashlib.md5(data.encode()).hexdigest()
+    except FileNotFoundError:
+        print(f"[WARNING] filemd5 filter: Cannot find file {file}")
+        return "file_not_found"
+
+def setup_filters(app):
+    """
+    在 builder 初始化后，注册自定义 Jinja2 过滤器。
+    增加安全检查，防止在 LaTeX/PDF 编译模式下报错。
+    """
+    # 检查当前构建器是否有 templates 属性 (HTMLBuilder 有，LaTeXBuilder 没有)
+    if hasattr(app.builder, 'templates'):
+        app.builder.templates.environment.filters['filemd5'] = _filemd5
+    else:
+        # 如果是 latex 等其他构建器，不需要这个过滤器，直接跳过
+        pass
+
+def setup(app):
+    # 注册事件
+    app.connect('builder-inited', setup_filters)

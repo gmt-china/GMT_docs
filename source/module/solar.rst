@@ -1,5 +1,8 @@
+:author: 田冬冬, 陈箫翰, 姚家园, 王亮
+:date: 2026-01-12
+
 .. index:: ! solar
-.. include:: common_SYN_OPTs.rst_
+.. program:: solar
 
 solar
 =====
@@ -7,45 +10,46 @@ solar
 :官方文档: :doc:`gmt:solar`
 :简介: 计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域
 
+**solar** 计算昼夜平分线（晨昏线）以及民用、航海和天文曙暮光的闭合多边形，并将其写入标准输出，或在地图上用于裁剪或填充。
+
 语法
 ----
 
 **gmt solar**
-[ |SYN_OPT-B| ]
-[ |-C| ]
-[ |-G|\ [*fill*] ]
-[ |-I|\ [*lon/lat*][**+d**\ *date*][**+z**\ *TZ*] ]
-[ |-J|\ *parameters* ]
-[ |-M| ]
-[ |-N| ]
-[ |SYN_OPT-R| ]
-[ |-T|\ **dcna**\ [**+d**\ *date*][**+z**\ *TZ*]]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-C` ]
+[ :option:`-G`\ [*fill*] ]
+[ :option:`-I`\ [*lon/lat*][**+d**\ *date*][**+z**\ *TZ*] ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-M` ]
+[ :option:`-N` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T`\ **dcna**\ [**+d**\ *date*][**+z**\ *TZ*]]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *pen* ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+必须选项
 --------
 
-**-I** 和 |-T| 必须使用一个。
+:option:`-I` 和 :option:`-T` 必须使用一个。
 
 可选选项
 --------
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**
-    在一行内格式化打印（以Tab键分隔）\ |-I| 选项输出的信息。输出内容包括：
+    在一行内格式化打印（以Tab键分隔）\ :option:`-I` 选项输出的信息。输出内容包括：
 
     - 太阳的经度、纬度、方位角、高度角，单位为度
     - 日出、日落、正午的时间，用小数形式的天表示，比如0.5表示正午12点
@@ -54,7 +58,7 @@ solar
 
     .. note::
 
-       若没有通过 **-I**\ *lon*/*lat* 提供经纬度，则太阳高度角之后的数据均以 (0,0)
+       若没有通过 :option:`-I`\ *lon*/*lat* 提供经纬度，则太阳高度角之后的数据均以 (0,0)
        作为参考点。
 
     ::
@@ -62,14 +66,14 @@ solar
         $ gmt solar -I120/40+d2016-11-01T01:00:00+z8 -C
         160.885755836	-14.5068940782	38.6719503593	-59.513608404	0.270214374769	0.706928713211	0.48857154399	628.868647356	-59.5102114599	16.4569766548
 
-.. _-G:
+.. option:: -G
 
 **-G**\ [*fill*]
     根据晨昏线对黑夜区域填充颜色或图案，见 :doc:`/basis/fill`\。
     若不指定 *fill* 则剪裁黑夜区域，且需要通过 **gmt clip -C** 停止区域剪裁，
     见 :doc:`clip`。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [*lon/lat*][**+d**\ *date*][**+z**\ *TZ*]
     输出太阳的当前位置、方位角和高度角。加上 *lon*/*lat* 则输出日出、日落、
@@ -89,24 +93,24 @@ solar
 
 .. include:: explain_-J.rst_
 
-.. _-M:
+.. option:: -M
 
 **-M**
     将晨昏线数据以多段ASCII表格式写到标准输出（或二进制格式，
     见 :doc:`/option/binary`）。使用该选项，则只输出数据不绘图。
 
-.. _-N:
+.. option:: -N
 
 **-N**
-    反转晨昏线“内”和“外”概念颠倒。仅可与 |-G| 一起使用以剪裁出白昼区，
-    不可与 |-B| 一同使用。
+    反转晨昏线“内”和“外”概念颠倒。仅可与 :option:`-G` 一起使用以剪裁出白昼区，
+    不可与 :option:`-B` 一同使用。
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-Tdcna**\ [**+d**\ *date*][**+z**\ *TZ*]
-    绘制一个或多个不同定义的晨昏线。若需要导出晨昏线数据，见 |-M| 选项。
+    绘制一个或多个不同定义的晨昏线。若需要导出晨昏线数据，见 :option:`-M` 选项。
 
     通过添加 **dcna** 来绘制一个或多个不同定义的晨昏线。其中，
 
@@ -140,7 +144,7 @@ solar
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*pen*]
     设置晨昏线的画笔属性，见 :doc:`/basis/pen`。
@@ -179,6 +183,21 @@ solar
       # 计算指定时间太阳位置并绘制在底图上
       gmt solar -I+d2016-02-09T16:00:00 -C | gmt plot -Sk@sunglasses/1.5c -Gyellow -W0.2p
     gmt end show
+
+打印在给定日期、时间和时区下的当前太阳位置以及日出、日落时间::
+
+    gmt solar -I-7.93/37.079+d2016-02-04T10:01:00+z02:00
+
+绘制昼夜平分线和民用曙暮光::
+
+    gmt begin
+      gmt coast -Rd -W0.1p -JQ0/14c -B -BWSen -Dl -A1000
+      gmt solar -W1p -Tdc
+    gmt end show
+
+根据昼夜平分线设置剪裁路径叠加层::
+
+    gmt solar -G -Td
 
 参考
 ----

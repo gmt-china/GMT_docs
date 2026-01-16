@@ -1,5 +1,8 @@
+:author: 田冬冬, 周茂, 朱邓达
+:date: 2026-01-06
+
 .. index:: ! nearneighbor
-.. include:: common_SYN_OPTs.rst_
+.. program:: nearneighbor
 
 nearneighbor
 ============
@@ -27,71 +30,69 @@ nearneighbor
 语法
 ----
 
-**gmt nearneighbor** [ *table* ] |-G|\ *outgrid*
-|SYN_OPT-I|
-|SYN_OPT-R|
-|-S|\ *search_radius*
-[ |-E|\ *empty* ]
-[|-N|\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n**]
-[ |SYN_OPT-V| ]
-[ |-W| ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt nearneighbor**
+[ *table* ]
+:option:`-G`\ *outgrid*
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+:option:`-S`\ *search_radius*\ [*unit*]
+[ :option:`-E`\ *empty* ]
+[ :option:`-N`\ *sectors*\ [**+m**\ *min_sectors*]\ \|\ **n** ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W` ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
-    输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 |-W| 选项）
+    输入表数据，包含三列或四列 (*x,y,z*\ [,\ *w*]) 形式的数据（见 :option:`-W` 选项）
 
-.. _-G:
+必须选项
+--------
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
-**-S**\ *search_radius*
-    设置 *search_radius* ，即上图中的 R，可在后面追加单位
+**-S**\ *search_radius*\ [*unit*]
+    设置搜索半径 *search_radius* ，即上图中的 R，可在后面追加单位
 
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *empty*
     指定空节点的值为 *empty* ，默认为 NaN
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *sectors*\ [**+m**\ *min_sectors*]\|\ **n**
     以每个网格节点为中心可以将圆形的搜索区域划分为扇区 *sectors* 。**+m** 选项
     用来设置最少搜索的扇区 *min_sectors* ，即至少 *min_sectors* 个扇区至少含有
-    一个数据时，才计算最终的加权值；未通过此测试的节点值被设置为 NaN，见 |-E| 。
+    一个数据时，才计算最终的加权值；未通过此测试的节点值被设置为 NaN，见 :option:`-E` 。
     如果不设置该选项，GMT 至少设置 50% 的扇区来计算加权值，默认情况下，
     sectos = min_sectors = 4。每个扇区最接近的值才会被用来计算加权值，远处的点
     则被忽略。使用 **-Nn** 可以调用 GDAL 的最邻近算法，而不是用 GMT 的该算法。
 
-.. _-W:
+.. option:: -W
 
 **-W**
     表明输入数据的第四列为权重，该权重与距离权重因子相乘即为最终权重
@@ -113,6 +114,8 @@ nearneighbor
 .. include:: explain_-h.rst_
 
 .. include:: explain_-icols.rst_
+
+.. include:: explain_-n.rst_
 
 .. include:: explain_-qi.rst_
 

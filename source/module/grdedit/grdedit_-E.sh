@@ -9,8 +9,8 @@ gmt begin grdedit_-E
             rm relief_${mode}.nc
         done
     gmt subplot end
-    gmt subplot begin 1x4 -Fs3c/6c -Y-h-4c -X8c
-        for mode in l r t; do
+    gmt subplot begin 1x4 -Fs3c/6c -Y-h-4c -X6c
+        for mode in e l r t; do
             gmt grdedit @earth_relief_30m -E${mode} -Grelief_${mode}.nc
             gmt grdimage relief_${mode}.nc -Rrelief_${mode}.nc -Jx? -B+t"-E${mode}" -Cgeo -c
             rm relief_${mode}.nc

@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 周茂
+date: 2024-09-09
+---
+
 # -JK: Eckert equal area
 
 维基链接：

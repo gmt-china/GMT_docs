@@ -2,7 +2,7 @@
 :date: 2022-06-21
 
 .. index:: ! gravfft
-.. include:: common_SYN_OPTs.rst_
+.. program:: gravfft
 
 gravfft
 =======
@@ -12,13 +12,13 @@ gravfft
 
 **gravfft** 包括 3 种模式。
 
-- 模式 1：简单地计算地形网格导致的位变化。需要 |-D| 选项给出密度差
-  （相对密度），以及 |-W| 选项给出参考基准面（观测高度）。该模式将
+- 模式 1：简单地计算地形网格导致的位变化。需要 :option:`-D` 选项给出密度差
+  （相对密度），以及 :option:`-W` 选项给出参考基准面（观测高度）。该模式将
   对地形网格执行 2—D FFT 并使用指定阶的 Parker 展开式计算。
 
 - 模式 2：计算地形引起的挠曲响应（挠曲量）。该模式对网格进行 2—D FFT ，
   基于选定的均衡模型计算。其中载荷可以从上部加载（即地形）也以可以从
-  底部加载（热点等）。在两种情况下，使用 |-T| 以及 |-Z| 设置参数。
+  底部加载（热点等）。在两种情况下，使用 :option:`-T` 以及 :option:`-Z` 设置参数。
 
 - 模式 3：计算导纳或者相干函数（相干谱），结果为径向平均。该模式较为
   复杂，请参照 `示例`_ 理解。
@@ -26,41 +26,46 @@ gravfft
 语法
 ----
 
-**gmt gravfft** *ingrid* [ *ingrid2* ]
-|-G|\ *outgrid*
-[ |-C|\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w** ]
-[ |-D|\ *density*\|\ *rhogrid* ]
-[ |-E|\ *n_terms* ]
-[ |-F|\ [**f**\ [**+s**\|\ **z**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**] ]
-[ |-I|\ **w**\|\ **b**\|\ **c**\|\ **t**\|\ **k** ]
-[ |-N|\ *params* ]
-[ |-Q| ]
-[ |-S| ]
-[ |-T|\ *te/rl/rm/rw*\ [*/ri*]\ [**+m**] ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *wd*\ [**k**] ]
-[ |-Z|\ *zm*\ [*zl*] ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT--| ]
+**gmt gravfft**
+*ingrid*
+[ *ingrid2* ]
+:option:`-G`\ *outgrid*
+[ :option:`-C`\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w** ]
+[ :option:`-D`\ *density*\|\ *rhogrid* ]
+[ :option:`-E`\ *n_terms* ]
+[ :option:`-F`\ [**f**\ [**+s**\|\ **z**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**] ]
+[ :option:`-I`\ **w**\|\ **b**\|\ **c**\|\ **t**\|\ **k** ]
+[ :option:`-M`\ *mgal_at_45* ]
+[ :option:`-N`\ *params* ]
+[ :option:`-Q` ]
+[ :option:`-S` ]
+[ :option:`-T`\ *te/rl/rm/rw*\ [*/ri*]\ [**+m**] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *wd*\ [**k**] ]
+[ :option:`-Z`\ *zm*\ [*zl*] ]
+[ :option:`-f`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
+------------------
+
+.. include:: explain_grd_in.rst_
+..
+
+    对于交叉谱计算，还需要指定第二个网格 *ingrid2* 。
+
+必须选项
 --------
 
-*ingrid*\ [=\ *ID*\|\ ?\ *varname*][**+b**\ *band*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*][**+s**\ *scale*]
-    输入网格名。对于交叉谱计算，还需要指定第二个网格。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_out.rst_
+..
 
-.. _-G:
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*][**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**][:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名，计算实体对该网格内的点的异常值。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+    输出网格文件存储实体对该网格内的点的异常值的计算结果。
 
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *n/wavelength/mean\_depth*/**t**\|\ **b**\|\ **w**
     只计算所选模型的理论导纳曲线并退出。*n* 和 *wavelength* 用于确定
@@ -69,21 +74,21 @@ gravfft
     *mean_depth* 为平均水深。**t** 表示使用从上面加载的模型, **b** 表示使用
     底部加载模型。使用 **w** 可输出波长而不是频率（波数）。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *density*\|\ *rhogrid*
     设置密度对比值（密度差）。例如，计算水层的重力，随后可以与自由空
-    气重力异常相结合，得到布格异常，这种情况下，请不要使用 |-T| ，同时默认
+    气重力异常相结合，得到布格异常，这种情况下，请不要使用 :option:`-T` ，同时默认
     使用 **-N+h** 。
     该选项还可指定一个密度差网格 *rhogrid* ，其必须与输入网格具有相同的配准
     方式，网格中的 NaN 将被替换为网格中的最小密度差。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *n_terms*
     Parker 展开式中使用的阶数（即指数的值），最大为 10，默认为 3。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**f**\ [**+s**]\|\ **b**\|\ **g**\|\ **v**\|\ **n**\|\ **e**]
     指定需计算的参量，默认为自由空气重力异常
@@ -101,7 +106,7 @@ gravfft
 
     - **n** 垂线偏差北向分量，单位为微弧度
 
-.. _-I:
+.. option:: -I
 
 **-I**\ **w**\|\ **b**\|\ **c**\|\ **t**\|\ **k**
     计算相干函数（相干谱）或导纳，输入必须为两个网格文件，输出到标准输出。
@@ -119,36 +124,42 @@ gravfft
 
     - **t** 同为理论导纳，但为从顶部加载的弹性板理论导纳
 
+.. option:: -M
+
+**-M**\ *mgal_at_45*
+    指定 45 度纬度处的重力值，单位为毫伽 (mGal)（用于将重力异常转换为大地水准面高度）。
+    默认值为 980619.9203 mGal（Moritz 1980 年 IGF 值）。在处理其他行星的数据时，需要相应地更改此值。
+
 .. include:: explain_fft.rst_
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
-    输出具有形变的地形网格，z 轴向上，其平均深度由 **-Z**\ *zm* 指定，模型
-    参数由 |-T| 设置。这就是 "gravimetric Moho"。该选项默认使用 **-N+h**
+    输出具有形变的地形网格，z 轴向上，其平均深度由 :option:`-Z`\ *zm* 指定，模型
+    参数由 :option:`-T` 设置。这就是 "gravimetric Moho"。该选项默认使用 :option:`-N`\ **+h**
 
-.. _-S:
+.. option:: -S
 
 **-S**
     基于理论模型，计算由测深作为载荷产生的重力以及大地水准面网格。相关参数
-    需要在 |-T| 和 |-Z| 中设置。Parker 展开式的阶数设置为 1，见下面的 `示例`_
+    需要在 :option:`-T` 和 :option:`-Z` 中设置。Parker 展开式的阶数设置为 1，见下面的 `示例`_
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *te/rl/rm/rw*\ [*/ri*]\ [**+m**]
     计算输入的地形载荷在厚度为 *te* 的弹性板的情况下造成的均衡补偿。*rl*，
     *rm*，*rw* 以及 *ri* 分别为载荷、地幔、海水以及填充物的密度，使用 SI 单位。
-    如果不指定 *ri* ，则其等于 *rl* 。使用 |-Z| 设置地幔平均深度。如果弹性板
+    如果不指定 *ri* ，则其等于 *rl* 。使用 :option:`-Z` 设置地幔平均深度。如果弹性板
     厚度 *te* 大于 1e10，则将被解析为抗扰刚度。**+m** 选项用来输出带有 Moho
-    面效应的网格，见 |-F| 。如果 *te* = 0，则响应函数变为 Airy 模型。使用
-    **-T+m** 时会默认设置 **-N+h**
+    面效应的网格，见 :option:`-F` 。如果 *te* = 0，则响应函数变为 Airy 模型。使用
+    :option:`-T`\ **+m** 时会默认设置 :option:`-N`\ **+h**
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *wd*\ [**k**]
     以 m 为单位设置相对于地形的水深，即观测高度
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *zm*\ [*zl*]
     Moho [and swell] 平均补偿深度，以 m 为单位，向下为正。对于从上面加载的
@@ -156,7 +167,9 @@ gravfft
 
 .. include:: explain_-V.rst_
 
-|SYN_OPT-f|
+.. include:: explain_-f.rst_
+..
+
     地理坐标网格将会在平地球近似下将坐标单位转换为 m
 
 .. include:: explain_help.rst_
@@ -167,13 +180,13 @@ gravfft
 如果输入的笛卡尔网格的水平方向距离的单位不是米，可以通过对输入文件名
 **+u**\ *unit* 来将指定的单位转换为米。例如：对输入文件 **+uk** 将会把
 输入网格的 x 和 y 坐标的单位从 km 转换为 m。如果输入网格为地理网格，可以
-通过 |SYN_OPT-f| 将单位转换为米
+通过 :option:`-f`\ *flags* 将单位转换为米
 
 注意事项
 --------
 
 NetCDF COARDS 网格将会被自动识别为地理网格。对于其他格式的地理网格，可使用
-|SYN_OPT-f| 将单位转换为 m。如果地理网格接近两级，则应考虑使用
+:option:`-f`\ *flags* 将单位转换为 m。如果地理网格接近两级，则应考虑使用
 :doc:`grdproject` 投影后计算。
 
 Plate Flexure
@@ -276,7 +289,7 @@ J. Geophys. Res., 106(B9), 19,431–19,441,
 相关模块
 --------
 
-:doc:`gmt:grdfft`,
+:doc:`grdfft`,
 :doc:`flexure`,
 :doc:`grdflexure`,
 :doc:`gravmag3d`,

@@ -102,3 +102,20 @@
 
 % 代码部分
 \fvset{fontsize=\scriptsize} % 设置全局代码字体为footnotesize
+
+% 让 LaTeX 遇到 hidden-opt 这个类时隐藏但不删除锚点。
+\makeatletter
+\newenvironment{sphinxclasshidden-opt}{%
+    % 1. 强制创建一个垂直位置，以便锚点能落在这里
+    \leavevmode
+    % 2. 开启一个高度为 0 的盒子，内容会“浮动”在页面上但不占位置
+    \vbox to 0pt\bgroup
+        \fontsize{1sp}{1sp}\selectfont % 使用 1sp (最小单位) 替代 0pt，避免渲染引擎报错
+        \color{white}                  % 颜色设为白色
+        \hsize=\textwidth              % 保持宽度一致
+}{%
+    \egroup % 结束盒子
+    % 3. 向上回退一行间距，防止留下空行
+    \vspace{-\baselineskip}
+}
+\makeatother

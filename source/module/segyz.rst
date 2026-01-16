@@ -1,21 +1,21 @@
 :author: 何星辰
-:date: 2025-10-06
+:date: 2026-01-11
 
 .. index:: ! segyz
-.. include:: common_SYN_OPTs.rst_
+.. program:: segyz
 
 segyz
 =============
 
 :官方文档: :doc:`gmt:supplements/segy/segyz`
-:简介: **segyz** 用于读取原生(IEEE)格式的 SEGY 文件，并绘制地震数据。
+:简介: **segyz** 用于读取原生(IEEE)格式的 SEGY 文件，并进行三维绘图。
 
 使用 *imagemask* 操作可以将地震数据绘制成单色（用户可指定颜色或灰度）的 1 位深度位图，背景透明。
 位图分辨率采用当前 GMT 默认设置。地震道可以根据道头信息绘制在其实际位置上(这样文件中道的顺序就不再重要)。
 GMT 使用标准几何处理，因此理论上可以应用于任意地图投影，但使用地理投影可能会得到不理想的结果。
 需要注意的是，二维绘图器的某些选项在这里不可用。
 
-需要注意，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。 
+需要注意，在绘制地震数据之前，处理操作顺序为：**deviation*[clip]([bias]+[normalize](sample value))**。
 其中，**deviation** 决定了在绘图坐标系中，经过 **[normalized][biased][clipped]** 处理后的样本值为 1 时，
 与道位置的偏移距离。可以理解为对采样值进行进一步缩放。
 
@@ -24,110 +24,133 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 语法
 --------
 
-**gmt segyz** *SEGYfile* |-J|\ *parameters*
-|-J|\ **z**\|\ **Z**\ *parameters*
-|SYN_OPT-Rz|
-|-D|\ *deviation* |-F|\ [*color*] |-W|
-[ |-C|\ *clip* ]
-[ |-I| ] [ |-L|\ *nsamp* ]
-[ |-M|\ *ntrace* ]
-[ |-N| ]
-[ |-Q|\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
-[ |-S|\ *header_x*/*header_y* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |-Z| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
+**gmt segyz**
+*SEGYfile*
+:option:`-J`\ *parameters*
+:option:`-Jz|Z`\ *parameters*
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
+:option:`-D`\ *deviation*
+:option:`-F`\ [*color*]
+:option:`-W`
+[ :option:`-C`\ *clip* ]
+[ :option:`-I` ]
+[ :option:`-L`\ *nsamp* ]
+[ :option:`-M`\ *ntrace* ]
+[ :option:`-N` ]
+[ :option:`-Q`\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value* ]
+[ :option:`-S`\ *header_x*/*header_y* ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-Z` ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 ------------------
 
 *SEGYfile*
     地震 SEGY 数据文件
 
-.. _-D:
+必须选项
+------------------
+
+.. include:: explain_-J.rst_
+
+.. include:: explain_-Jz.rst_
+
+.. include:: explain_-Rz.rst_
+
+.. option:: -D
 
 **-D**\ *deviation*
     当曲线被缩放后，幅度为 1.0 的波形在图中相当于 X 轴方向上偏移
     多少个单位长度。这个偏移量可以用一个数来表示（X 和 Y 方向都用
     这个值），也可以用两个数 devX/devY 来分别指定 X 方向和 Y 方向的偏移。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [*color*]
-    填充地震道（可变面积，默认填充正值）。指定用于填充 
+    填充地震道（可变面积，默认填充正值）。指定用于填充
     **imagemask** 的颜色 *color* 。
 
-.. _-W:
+.. option:: -W
 
 **-W**
     绘制波形道。
 
-注意： *必须* 在 |-W| 和 |-F| 之中指定至少一个选项。
+注意： *必须* 在 :option:`-W` 和 :option:`-F` 之中指定至少一个选项。
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     切换默认的字节顺序状态（默认假设数据为大端字节序）。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *clip*
     设置进行数据裁剪的采样值（裁剪同时应用于正值和负值）。
 
-.. _-I:
+.. option:: -I
 
 **-I**
     填充负偏移而非正偏移
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *nsamp*
     覆盖卷头中每道的样本数量（程序会尝试根据每道头部确定样本数量，以支持变长道）
 
-.. _-M:
+.. option:: -M
 
-**-M**
+**-M**\ *ntrace*
     覆盖卷头中指定的道数。程序会相对优雅地检测文件结束，但此参数限制了程序尝试读取的道数。
 
-.. _-N:
+.. option:: -N
 
 **-N**
     通过全道长度上的均方根振幅(rms amplitude)归一化地震道
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ **b**\|\ **i**\|\ **u**\|\ **x**\|\ **y**\ *value*
     可以通过指令修改五种不同的设置（可重复使用）：
-       **-Qb**\ *bias* 为缩放后的地震道添加偏移 (-**Qb**\ -0.1 从值中减去0.1).
 
-​       **-Qi**\ *dpi* 设置图像的每英寸像素点分辨率 [默认值300].
+    - **-Qb**\ *bias* ：为缩放后的地震道添加偏移 ( **-Qb**\ -0.1 从值中减去0.1).
+    - **-Qi**\ *dpi* ：设置图像的每英寸像素点分辨率 [默认值300].
+    - **-Qu**\ *redvel* ：应用减速速度（负值移除已有的减速）。
+    - **-Qx**\ *mult* ：将道位置乘以 *mult* 倍。
+    - **-Qy**\ *dy* ：覆盖 SEGY 卷头中的采样间隔。
 
-​       **-Qu**\ *redvel* 应用减速速度（负值移除已有的减速）。
+.. option:: -S
 
-​       **-Qx**\ *mult* 将道位置乘以 *mult* 倍。
-
-​       **-Qy**\ *dy* 覆盖 SEGY 卷头中的采样间隔。
-
-.. _-S:
-
-**-S**\ *header\_x*/*header\_y*
-    从道头中读取道位置：headers 可以是 **c** 表示 CDP， **o** 
+**-S**\ *header_x*/*header_y*
+    从道头中读取道位置：headers 可以是 **c** 表示 CDP， **o**
     表示偏移距，**b**\ *num* 表示从道头中第 *num* 个字节开始读
     取一个长整型数（第一个字节对应 num=0），或者是一个固定的数
     值。 第一个参数用于 x，第二个用于 y。默认情况下，X 和 Y 由道号给出。
 
-.. _-Z:
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-XY.rst_
+
+.. option:: -Z
 
 **-Z**
     不绘制 rms amplitude 为0的道。
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_help.rst_
 
 示例
 --------
@@ -136,8 +159,8 @@ SEGY 文件应包含 3200 字节的文本头部（将被忽略）、400 字节�
 裁剪值为 ±3，同时绘制变密度波形和黑色的正半周变面积填充，使用以下命令：
 
 ::
-    
-    ​gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
+
+    gmt segyz wa1.segy -JX5i/-5i -D1 -Jz0.05i -E180/5 -R0/100/0/10/0/10 -C3 -N -So -W -Fblack -pdf segy
 
 已知 Bug
 --------

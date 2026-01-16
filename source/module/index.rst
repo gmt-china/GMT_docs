@@ -284,7 +284,7 @@
 :doc:`grdfilter`                                 对网格文件做空间域或时间域滤波
 :doc:`grdfft`                                    对网格文件在波数域或频率域做操作
 :doc:`grdfill`                                   对网格文件中的无值区域进行插值
-:doc:`gmt:grdhisteq`                             对网格做直方图均衡
+:doc:`grdhisteq`                                 对网格做直方图均衡
 :doc:`grd2cpt`                                   根据网格文件的值生成 CPT 文件
 :doc:`blockmean`                                 使用均值估计对 (x,y,z) 数据做区块处理
 :doc:`blockmedian`                               使用中位数估计对 (x,y,z) 数据做区块处理
@@ -314,7 +314,7 @@
 :doc:`grd2xyz`                                   将网格文件转换成表数据
 :doc:`grd2kml`                                   从单个网格创建 KML 分级切片图像
 :doc:`kml2gmt`                                   将 Google Earth 的 KML 文件转换为 GMT 表数据
-:doc:`gmt:gmt2kml`                               将 GMT 表数据转换为 Google Earth 的 KML 文件
+:doc:`gmt2kml`                                   将 GMT 表数据转换为 Google Earth 的 KML 文件
 :doc:`grdconvert`                                在不同的网格格式之间互相转换
 :doc:`psconvert`                                 将 GMT 生成的 PS 文件转换为其他图片格式
 :doc:`isf`                                       将 ISF 格式的地震目录数据转换为 GMT 表数据
@@ -550,7 +550,7 @@
    fzblender
    fzanalyzer
    fzinformer
-   fzmapper 
+   fzmapper
    fzmodeler
    fzprofiler
    grdbarb
@@ -570,7 +570,7 @@
    gmt2kml
    batch
    barb
-      
+
 .. raw:: latex
 
    % revert back to subsections

@@ -1,5 +1,8 @@
+:author: 周茂, 田冬冬, 陈箫翰
+:date: 2025-12-29
+
 .. index:: ! binstats
-.. include:: common_SYN_OPTs.rst_
+.. program:: binstats
 
 binstats
 ===========
@@ -13,39 +16,44 @@ binstats
 语法
 ----
 
-**gmt binstats** [ *table* ] |-G|\ *outgrid*
-|SYN_OPT-I|
-|-C|\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
-|SYN_OPT-R|
-|-S|\ *search_radius*
-[ |-E|\ *empty* ]
-[ |-N| ]
-[ |-T|\ [**h**\|\ **r**] ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**+s**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt binstats**
+[ *table* ]
+:option:`-G`\ *outgrid*
+:option:`-I`\ *increment*
+:option:`-C`\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
+:option:`-R`\ *region*
+:option:`-S`\ *radius*
+[ :option:`-E`\ *empty* ]
+[ :option:`-N` ]
+[ :option:`-T`\ [**h**\|\ **r**] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**+s**] ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+
+输入数据
+------------------
+
+*table*
+    2-4 列的表数据，当包含第四列时，其为权重，必须使用 :option:`-W` 选项来表明数据带权。
+    **-Cn** 将会只接收两列数据。
 
 必选选项
 --------
 
-*table*
-    2-4 列的表数据，当包含第四列时，其为权重，必须使用 |-W| 选项来表明数据带权。
-    **-Cn** 将会只接收两列数据。
-
-.. _-C:
+.. option:: -C
 
 **-C**\ **a**\|\ **d**\|\ **g**\|\ **i**\|\ **l**\|\ **L**\|\ **m**\|\ **n**\|\ **o**\|\ **p**\|\ **q**\ [*quant*]\|\ **r**\|\ **s**\|\ **u**\|\ **U**\|\ **z**
     对每个网格节点进行数据统计，下面将展示各选项含义：
@@ -67,14 +75,7 @@ binstats
     - **U** 最大的负值
     - **z** 求和
 
-.. _-G:
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -83,33 +84,33 @@ binstats
 可选参数
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *empty*
     设置空节点值为 *empty* ，默认为 NaN
 
-.. _-N:
+.. option:: -N
 
 **-N**
     以节点的面积对节点值进行归一化
 
-.. _-S:
+.. option:: -S
 
-**-S**\ *search_radius*
-    设置搜索范围，可追加单位。使用此选项时不能使用 |-T| 选项
+**-S**\ *radius*
+    设置搜索范围，可追加单位。使用此选项时不能使用 :option:`-T` 选项
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [**h**\|\ **r**]
     设置网格节点形状：
 
-    - **h** 六边形，仅适用于笛卡尔坐标。将六边形的中心和统计结果写到标准输出或 **-G**
-      指定的文件中；**-I** 设置仅针对 Y 坐标的增量，X 方向增量会自动计算，**-R** 设定的
+    - **h** 六边形，仅适用于笛卡尔坐标。将六边形的中心和统计结果写到标准输出或 :option:`-G`
+      指定的文件中；:option:`-I` 设置仅针对 Y 坐标的增量，X 方向增量会自动计算，:option:`-R` 设定的
       范围会被调整以适应整数个六边形
 
-    - **r** 矩形，使用 |-I| 可设置该矩形大小，将计算结果写到 |-G| 指定的网格中
+    - **r** 矩形，使用 :option:`-I` 可设置该矩形大小，将计算结果写到 :option:`-G` 指定的网格中
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**+s**]
     加权计算统计量，使用该选项计数将变为权重的和而不是数据的个数。如果权重是由不确定度
@@ -163,9 +164,9 @@ binstats
 相关模块
 --------
 
-:doc:`gmt:blockmean`,
-:doc:`gmt:blockmedian`,
-:doc:`gmt:blockmode`,
+:doc:`blockmean`,
+:doc:`blockmedian`,
+:doc:`blockmode`,
 :doc:`nearneighbor`,
 :doc:`triangulate`,
 :doc:`xyz2grd`

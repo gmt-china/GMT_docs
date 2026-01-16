@@ -1,3 +1,8 @@
+---
+author: 田冬冬, 周茂, 陈箫翰
+date: 2025-08-23
+---
+
 # -JG: Azimuthal orthographic/General perspective
 
 Azimuthal orthographic（正射方位投影）是一种从无穷远距离处的透视投影，因而常用于绘制从外太空看地球。
@@ -58,6 +63,6 @@ Azimuthal orthographic（正射方位投影）是一种从无穷远距离处的�
     :caption: 透视投影
     :width: 75%
 
-    gmt coast -Rg -JG4/52/12c+z230+a90+t60+w180+v60 -Bx2g2 -By1g1 -Ia -Di -Glightbrown \ 
+    gmt coast -Rg -JG4/52/12c+z230+a90+t60+w180+v60 -Bx2g2 -By1g1 -Ia -Di -Glightbrown \
               -Wthinnest -Slightblue --MAP_ANNOT_MIN_SPACING=0.6c -view GMT_perspective
 ```

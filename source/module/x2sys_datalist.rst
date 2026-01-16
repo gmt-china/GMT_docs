@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
-.. index:: !x2sys_datalist
-.. include:: common_SYN_OPTs.rst_
+.. index:: ! x2sys_datalist
+.. program:: x2sys_datalist
 
 x2sys_datalist
 ==============
@@ -15,19 +16,21 @@ x2sys_datalist
 语法
 ----
 
-**gmt x2sys_datalist** *track(s)* **-T**\ *TAG*
-[ |-A| ]
-[ |-E| ]
-[ |-F|\ *name1*,\ *name2*,... ]
-[ |-I|\ [*list*] ]
-[ |-L|\ [*corrections*] ]
-[ |SYN_OPT-R| ]
-[ |-S| ] [
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT--| ]
+**gmt x2sys_datalist**
+*track(s)*
+:option:`-T`\ *TAG*
+[ :option:`-A` ]
+[ :option:`-E` ]
+[ :option:`-F`\ *name1*,\ *name2*,... ]
+[ :option:`-I`\ [*list*] ]
+[ :option:`-L`\ [*corrections*] ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-h`\ *headers* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项
@@ -45,40 +48,40 @@ x2sys_datalist
 
 .. note::
 
-    对于 MGD77 格式的轨迹数据，同时还在 **MGD77_HOME**\/mgd77_paths.txt 
+    对于 MGD77 格式的轨迹数据，同时还在 **MGD77_HOME**\/mgd77_paths.txt
     中的路径和位于 \*.gmt 中的 **$GMT_SHAREDIR**\/mgg/gmtfile_paths 中查找
     轨迹数据。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
-    指定 x2sys TAG，参见 :doc:`x2sys_init` 
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     通过轨迹的权重来消除两个轨迹在交叉点的不符值
 
-.. _-E:
+.. option:: -E
 
 **-E**
     输出两个轨迹的信息作为头部信息 [默认不写入这些头部信息]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *name1*,\ *name2*,...
     指定要输出的变量列表，每个变量以逗号分隔[默认输出所有列]
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [*list*]
     *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算
     [默认包含所有的轨迹]
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*corrections*]
     如果存在改正值，对观测量进行最优改正，*corrections* 为改正表，该改正表可以由 :doc:`x2sys_solve` 生成
@@ -87,7 +90,7 @@ x2sys_datalist
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     使用该选项后，所有的列均为 NaN 的行将不输出 [默认输出所有行]

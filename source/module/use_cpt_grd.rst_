@@ -1,4 +1,4 @@
-.. _-C:
+.. option:: -C
 
 **-C**\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*]
     指定主 CPT 名称，CPT 文件或用逗号分割的多个颜色，
@@ -9,22 +9,20 @@
        可使用 CPT 名称 *master* 或包括相对路径的 *section/master* 来指定（内置 CPT 不可添加 **.cpt** 扩展名）。
 
     2. 自定义 CPT 文件 *cpt* ，例如 *my_colors.cpt* 。
-    
-    3. 自动从多个颜色 *color*\ :math:`_1`,\ *color*\ :math:`_2`\ 
+
+    3. 自动从多个颜色 *color*\ :math:`_1`,\ *color*\ :math:`_2`\
        [,\ *color*\ :math:`_3`\ ,...] 中创建线性连续的 CPT，其中 z 值从 0 开始，
        每添加一种颜色 z 值加 1。在这种情况下， *color*\ :math:`_i` 可以是
        *r/g/b* (e.g. 255/100/75)， *h-s-v* (e.g. 180-0.8-1)，
        *c/m/y/k* (e.g. 80/50/40/30)，HTML十六进制 (e.g. #aabbcc)
        或 :doc:`/basis/color`\ 名称。逗号之间不能有空格。
-    
+
     支持以下选项：
 
     + **+h** - 对于有软铰链 (soft hinge) 的主 CPT，可指定 *hinge* 值启用铰链，
       而对于有硬铰链 (harde hinge) 的 CPT，可以修改铰链位置 *hinge* ，但不能禁用。
     + **+i** - 指定 *dz* 使网格 z 值范围分层，默认使用精确范围。
     + **+s** - 将创建的 CPT 保存到文件 *fname*。当 CPT 是自动创建时这很有用，
-      但必须用于 |-C| 的末尾。
+      但必须用于 :option:`-C` 的末尾。
     + **+u** - 对于任何其他主 CPT，可以通过指定其原始单位 *unit* 将其 z 值单位转换为米。
     + **+U** - 与 **+u** 类似，但是将 z 值单位从米转换为指定单位 *unit* 。
-
-    

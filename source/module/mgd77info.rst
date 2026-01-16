@@ -2,7 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77info
-.. include:: common_SYN_OPTs.rst_
+.. program:: mgd77info
 
 mgd77info
 =========
@@ -21,16 +21,17 @@ mgd77info
 语法
 ----
 
-**gmt mgd77info** *GEODAS-ids*
-[ |-C|\ [**m**\|\ **e**] ]
-[ |-E|\ [**m**\|\ **e**] ]
-[ |-I|\ **a\|c\|m\|t** ]
-[ |-M|\ **f**\ [*item*]\|\ **r**\|\ **e**\|\ **h** ]
-[ |-L|\ [**v**] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+**gmt mgd77info**
+*GEODAS-ids*
+[ :option:`-C`\ [**m**\|\ **e**] ]
+[ :option:`-E`\ [**m**\|\ **e**] ]
+[ :option:`-I`\ **a\|c\|m\|t** ]
+[ :option:`-M`\ **f**\ [*item*]\|\ **r**\|\ **e**\|\ **h** ]
+[ :option:`-L`\ [**v**] ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
@@ -38,33 +39,33 @@ mgd77info
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [**m**\|\ **e**]
     列出 MGD77[+] 文件中所有列的缩写。使用 **m** 和 **e** 选项表示仅列出 MGD77 文件或
     MGD77+ 文件
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [**m**\|\ **e**]
     为每条测线输出单行的总结。
     **m** 选项只对每个 MGD77 字段中非 NaN 值计数，
     **e** 选项对其他字段中非 NaN 值计数
 
-.. _-I:
+.. option:: -I
 
 **-I**\ **a\|c\|m\|t**
     忽略某些数据格式的文件。**a\|c\|m\|t** 分别表示忽略 MGD77 ASCII、MGD77+ NetCDF、
     MGD77T ASCII 、tab 分隔的普通文本文件。该选项可以重复使用以忽略多个格式
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [**v**]
     不显示测线信息。只输出 GEOSAR 机构 2 个字符代码以及其名称列表。
     **v** 选项可同时显示每个机构测量船的 4 个字符代码列表。由于上述两列表均十分长，
     影响阅读体验，因此这里不给出列表，请用户自己运行命令查看。
 
-.. _-M:
+.. option:: -M
 
 **-Mf**\ [*item*]\|\ **r**\|\ **e**\|\ **h**
     列出每条测线的头部信息和 MGD77+ 历史记录。

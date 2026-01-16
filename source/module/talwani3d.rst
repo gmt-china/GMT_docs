@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2024-02-21
+:date: 2026-01-12
 
 .. index:: ! talwani3d
-.. include:: common_SYN_OPTs.rst_
+.. program:: talwani3d
 
 talwani3d
 =========
@@ -12,64 +12,60 @@ talwani3d
 
 **talwani3d** 读取一个多段表文件（或标准输入）。该文件包含一个三维物体在不同的
 高度 *z-level* 下的轮廓，每段均代表一个轮廓。每段的头部信息必须包括高度
-*z-level* 和该高度处的密度 *desity* 这两个参数。（密度可以被 |-D| 选项设置的
-密度常数覆盖）。可通过设置 |-R| 和 |-I| 确定网格，计算位于该格网的异常，
-或者使用 |-N| 计算点上的异常值。计算的异常可包括，自由空气重力异常，
+*z-level* 和该高度处的密度 *desity* 这两个参数。（密度可以被 :option:`-D` 选项设置的
+密度常数覆盖）。可通过设置 :option:`-R` 和 :option:`-I` 确定网格，计算位于该格网的异常，
+或者使用 :option:`-N` 计算点上的异常值。计算的异常可包括，自由空气重力异常，
 垂直重力梯度异常或者大地水准面异常。同时可以使用选项控制轴的单位和方向。
 
 语法
 ----
 
-**gmt talwani3d** [ *table* ]
-[ |-A| ]
-[ |-D|\ *density* ] ]
-[ |-F|\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
-[ |-G|\ *outfile* ]
-[ |SYN_OPT-I| ]
-[ |-M|\ [**h**]\ [**v**] ]
-[ |-N|\ *trackfile* ]
-[ |SYN_OPT-R| ]
-[ |-Z|\ *level*\|\ *obsgrid* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT--| ]
+**gmt talwani3d**
+[ *table* ]
+[ :option:`-A` ]
+[ :option:`-D`\ *density* ]
+[ :option:`-F`\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
+[ :option:`-G`\ *outfile* ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-M`\ [**h**]\ [**v**] ]
+[ :option:`-N`\ *trackfile* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-Z`\ *level*\|\ *obsgrid* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
     该输入文件用来描述三维物体的水平横截面轮廓。如果多边形没有闭合，GMT 将自动闭合
     并删除重复的多边形顶点。每段的头部信息中必须包含高度（海洋中为深度）和相对密度
-    参数，单位为 kg/m^3 或 g/cm^3，见 |-D| 选项。如果不指定文件，就从标准输入中
+    参数，单位为 kg/m^3 或 g/cm^3，见 :option:`-D` 选项。如果不指定文件，就从标准输入中
     读取数据。
-
-.. include:: explain_-I.rst_
-
-.. include:: explain_-R.rst_
 
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     设置 *z* 轴向上为正方向 [默认朝下为正]
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *density*
     设置一个固定的相对密度 *density* ，该设置将覆盖文件中的密度设置，单位
     为 kg/m^3 或 g/cm^3
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **f**\|\ **n**\ [*lat*]\|\ **v**
     指定要计算哪种异常。
@@ -77,32 +73,36 @@ talwani3d
     - **f** 自由空气重力异常 [默认]
 
     - **n** 大地水准面异常，可以在后面追加平均纬度 *lat* 以计算正常重力，
-      默认正常重力为格网最中央位置（如果使用了 |-N| 为测线的中间）
+      默认正常重力为格网最中央位置（如果使用了 :option:`-N` 为测线的中间）
 
     - **v** 垂直梯度重力异常
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outfile*
     输出文件名。如果要计算的位置为一个网格，则该选项为必选选项，*outfile*
-    为输出网格文件名。如果已经设置了 |-N| ，即计算测线处的异常，则可以使用
-    **-G** 指定输出文件也可以输出到标准输出
+    为输出网格文件名。如果已经设置了 :option:`-N` ，即计算测线处的异常，则可以使用
+    :option:`-G` 指定输出文件也可以输出到标准输出
 
-.. _-M:
+.. include:: explain_-I.rst_
+
+.. option:: -M
 
 **-M**\ [**h**]\ [**v**]
     设置距离单位。**h** 表明水平距离单位为 km [m]。**z** 表明垂直距离单位为
     km [m]
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *trackfile*
     设置计算异常值的点的位置。如果输入文件中包含 3 列，就把最后一列作为观测
-    高度，该高度可以被 |-Z| 选项覆盖
+    高度，该高度可以被 :option:`-Z` 选项覆盖
+
+.. include:: explain_-R.rst_
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *level*\|\ *obsgrid*
     设置观测水准面常数 *level* ，默认为 0。可以设置为常数 *level* 或者网格
@@ -116,6 +116,9 @@ talwani3d
 .. include:: explain_-e.rst_
 
 .. include:: explain_-f.rst_
+..
+
+    地理网格（即经度、纬度维度）将通过“平面地球”近似（Flat Earth approximation），并利用当前椭球参数转换为千米单位。
 
 .. include:: explain_-h.rst_
 

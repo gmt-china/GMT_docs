@@ -1,5 +1,8 @@
+:author: 田冬冬, 朱邓达, 陈箫翰
+:date: 2025-06-11
+
 .. index:: ! grdconvert
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdconvert
 
 grdconvert
 ==========
@@ -10,26 +13,30 @@ grdconvert
 语法
 ----
 
-**gmt grdconvert** *ingrdfile* |-G|\ *outgrdfile*
-[ |-N| ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |-Z|\ [**+s**\ *factor*][**+o**\ *offset*] ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT--| ]
+**gmt grdconvert**
+*ingrdfile*
+:option:`-G`\ *outgrdfile*
+[ :option:`-N` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-Z`\ [**+s**\ *factor*][**+o**\ *offset*] ]
+[ :option:`-f`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_grd_in.rst_
 
-.. include:: explain_grd_out.rst_
+必须选项
+--------
 
+.. include:: explain_grd_out.rst_
 
 可选选项
 --------
 
-.. _-N:
+.. option:: -N
 
 **-N**
     在生成native二进制文件时，不将GMT网格文件头段写到文件中。
@@ -38,7 +45,7 @@ grdconvert
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [**+s**\ *factor*][**+o**\ *offset*]
     在写网格文件前，从数据中减去 *offset* 并将结果乘以 *factor*。

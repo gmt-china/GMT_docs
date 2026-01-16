@@ -1,8 +1,8 @@
 :author: 田冬冬, 周茂
-:date: 2024-07-03
+:date: 2026-01-12
 
 .. index:: ! spectrum1d
-.. include:: common_SYN_OPTs.rst_
+.. program:: spectrum1d
 
 spectrum1d
 ==========
@@ -22,8 +22,8 @@ Bendat 和 Piersol [1986] 中的算法。
 其中， f 代表频率，w 代表波长，p 代表计算的功率谱密度，e 代表一倍标准差。
 
 **spectrum1d** 的输出文件的文件名是使用统一的前缀 ``name_stem`` 。如果使用了
-|-C| 选项，那么将会有 8 个文件输出，否则只生成一个功率谱文件（ ``.xpower`` ）。
-这些文件默认是以 ASCII 码格式，除非用 ``-bo`` 选项指定为二进制格式输出。这 8 个
+:option:`-C` 选项，那么将会有 8 个文件输出，否则只生成一个功率谱文件（ ``.xpower`` ）。
+这些文件默认是以 ASCII 码格式，除非用 :option:`-bo` 选项指定为二进制格式输出。这 8 个
 文件介绍如下：
 
 1. ``name_stem.xpower``: X(t) 的功率谱。单位是 ``X*X*dt`` 。
@@ -36,26 +36,34 @@ Bendat 和 Piersol [1986] 中的算法。
 8. ``name_stem.coh``: （平方）相干谱，或者线性相关系数（它是频率的函数）。
    无单位，取值范围为 ``[0,1]`` 。信噪比 ``SNR = coh/(1-coh)`` 。当 coh=0.5 时，SNR=1。
 
-除非使用 ``-T`` 选项，否则以上文件会以单个文件单列的形式输出。
+除非使用 :option:`-T` 选项，否则以上文件会以单个文件单列的形式输出。
 
 语法
 ----
 
-**gmt spectrum1d** [ *table* ] [ |-S|\ *segment_size* ]
-[ |-C|\ [**acgnopxy**] ] [ |-D|\ *dt* ] [ |-L|\ [**h**\|\ **m**] ]
-[ |-N|\ [*name_stem*] ] [ |-T| ] [ |-W| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT--| ]
+**gmt spectrum1d**
+[ *table* ]
+[ :option:`-S`\ *segment_size* ]
+[ :option:`-C`\ [**acgnopxy**] ]
+[ :option:`-D`\ *dt* ]
+[ :option:`-L`\ [**h**\|\ **m**] ]
+[ :option:`-N`\ [*name_stem*] ]
+[ :option:`-T` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W` ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
@@ -63,7 +71,10 @@ Bendat 和 Piersol [1986] 中的算法。
     自功率谱；如果是两列，就计算互功率谱。若未指定文件名， **spectrum1d** 会从
     标准输入流中读取数据。
 
-.. _-S:
+必须选项
+--------
+
+.. option:: -S
 
 **-S**\ *segment_size*
     ``segment_size`` 是一个 2 的指数数值，用于控制 Welch 方法中分段平均时的窗口
@@ -76,44 +87,52 @@ Bendat 和 Piersol [1986] 中的算法。
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [**acgnopxy**]
     读取输入中的前两列，即 *X*\ (*t*) 和 *Y*\ (*t*) 时间序列。假设 *Y*\ (*t*)
     和 *X*\ (*t*) 分别是一个带有噪声的线性系统的输出和输入。使用最小二乘估计最优
     频率响应函数会将噪声最小化并且相干输出与噪声输出是不相关的。
-    本模块默认会输出如下属的全部 8 个文件。使用该选项可以指定输出 8 个文件中的某些文件。
-    x=xpower、y=ypower、c=cpower、n=npower、p=phase、a=admit、g=gain、o=coh。
+    本模块默认会输出如下属的全部 8 个文件。使用该选项可以指定输出 8 个文件中的某些文件：
 
-.. _-D:
+    - **a**: 导纳谱，或传递函数的实部。
+    - **c**: 相干输出的功率谱密度。
+    - **g**: 增益谱，或传递函数的模。
+    - **n**: 噪声输出的功率谱密度。
+    - **o**: 相干系数平方谱，或作为频率函数的线性相关系数。
+    - **p**: 相位谱，或传递函数的相位。
+    - **x**: *X(t)* 的功率谱密度。
+    - **y**: *Y(t)* 的功率谱密度。
+
+.. option:: -D
 
 **-D**\ *dt*
     设置读入的时间序列的时间采样间隔，默认值是1。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [**h**\|\ **m**]
     不去除信号中的线性趋势。默认情况下，在对信号进行变换处理前会先去掉其中的
-    线性趋势。 追加 ``m`` 表示去掉数据的均值， ``h`` 表示去掉数据的中值。
+    线性趋势。 追加 **m** 表示去掉数据的均值， **h** 表示去掉数据的中值。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [*name\_stem*]
-    输出文件名的前缀，默认为 ``spectrum`` 。若不使用此选项，则输出的 9 个文件会
+    设置输出文件名的前缀，默认为 *spectrum* 。若不使用此选项，则输出的 9 个文件会
     合到一个文件里。
 
-.. _-T:
+.. option:: -T
 
 **-T**
-    不让单个分量的结果输出到标准输出，对 |-C| 设置的输出分量分别输出到单个
+    不让单个分量的结果输出到标准输出，对 :option:`-C` 设置的输出分量分别输出到单个
     指定文件中
 
-.. _-W:
+.. include:: explain_-V.rst_
+
+.. option:: -W
 
 **-W**
     输出文件中第一列是波长而不是频率。默认输出时第一列是频率。
-
-.. include:: explain_-V.rst_
 
 .. include:: explain_-bi.rst_
 
@@ -142,14 +161,14 @@ Bendat 和 Piersol [1986] 中的算法。
 示例
 ----
 
-假设 ``data.g`` 是重力数据，单位为 mGal，空间采样间隔为 1.5 km。如下命令会输出
-数据的功率谱到文件 :file:`data.xpower`，单位为 mGal^2 km 表示::
+假设 data.g 是重力数据，单位为 mGal，空间采样间隔为 1.5 km。如下命令会输出
+数据的功率谱到文件 data.xpower ，单位为 mGal^2 km 表示::
 
     gmt spectrum1d data.g -S256 -D1.5 -Ndata
 
-假设除了有重力数据 ``data.g`` 之外，还有在相同地点测得的地形数据 ``data.t`` ，
-单位为 m。计算二者之间的传输函数，即 ``data.t`` 作为输入， 经过传输函数得到了
-``data.g`` 为输出::
+假设除了有重力数据 data.g 之外，还有在相同地点测得的地形数据 data.t ，
+单位为 m。计算二者之间的传输函数，即 data.t 作为输入， 经过传输函数得到了
+data.g 为输出::
 
     paste data.t data.g | gmt spectrum1d -S256 -D1.5 -Ndata -C > results.txt
 

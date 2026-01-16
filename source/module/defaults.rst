@@ -1,5 +1,8 @@
+:author: 田冬冬, 陈箫翰
+:date: 2025-12-30
+
 .. index:: ! defaults
-.. include:: common_SYN_OPTs.rst_
+.. program:: defaults
 
 defaults
 ===========
@@ -10,23 +13,19 @@ defaults
 语法
 ----
 
-**gmt defaults** [ |-D|\ [**u**\|\ **s**] ]
-
-必选选项
---------
-
-无
+**gmt defaults**
+[ :option:`-D`\ [**u**\|\ **s**] ]
 
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**u**\|\ **s**]
     打印系统默认参数值
 
-    - 不使用 |-D| 选项：打印GMT参数当前值
-    - **-D**：列出GMT系统默认参数值
+    - 不使用 :option:`-D` 选项：打印GMT参数当前值
+    - :option:`-D`：列出GMT系统默认参数值
     - **-Du**：列出GMT的US单位制下的默认参数值
     - **-Ds**：列出GMT的SI单位制下的默认参数值
 

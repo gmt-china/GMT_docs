@@ -1,13 +1,13 @@
 :author: 何星辰, 周茂
-:date: 2025-10-21
+:date: 2025-12-29
 
 .. index:: ! batch
-.. include:: common_SYN_OPTs.rst_
-    
+.. program:: batch
+
 batch
 =====
 
-:官方文档: :doc:`gmt:batch`  
+:官方文档: :doc:`gmt:batch`
 :简介: 自动化批处理作业处理
 
 **batch** 模块可以使用单个主脚本生成 GMT 处理作业，并针对所有作业重复执行，
@@ -23,41 +23,43 @@ batch
 语法
 ----
 
-**gmt batch** *mainscript*
-|-N|\ *prefix*
-|-T|\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
-[ |-D| ]
-[ |-F|\ *template* ]
-[ |-I|\ *includefile* ]
-[ |-M|\ [*job*] ]
-[ |-Q|\ [**s**] ]
-[ |-Sb|\ *preflight* ]
-[ |-Sf|\ *postflight* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*dir*] ]
-[ |-Z| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT--| ]
+**gmt batch**
+*mainscript*
+:option:`-N`\ *prefix*
+:option:`-T`\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
+[ :option:`-D` ]
+[ :option:`-F`\ *template* ]
+[ :option:`-I`\ *includefile* ]
+[ :option:`-M`\ [*job*] ]
+[ :option:`-Q`\ [**s**] ]
+[ :option:`-Sb`\ *preflight* ]
+[ :option:`-Sf`\ *postflight* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*dir*] ]
+[ :option:`-Z` ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
-必选选项
+必须选项
 --------
 
 *mainscript*
+
     独立的 GMT 现代模式处理脚本的名称，用于执行参数相关的计算。
     脚本可以访问作业变量，如作业编号和下面定义的其他变量，
     并且可以使用 Bourne shell (.sh)、Bourne again shell (.bash)、
     C shell (.csh) 或 DOS batch (.bat) 编写。脚本语言由文件扩展名推断，
     并且我们使用相同语言构建隐藏的批处理脚本。可以访问的参数将在下文讨论。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *prefix*
     决定批处理文件产品的前缀以及执行后可找到中间作业产品的最终子目录。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *njobs*\|\ *min*/*max*/*inc*\ [**+n**]\|\ *timefile*\ [**+p**\ *width*]\ [**+s**\ *first*]\ [**+w**\ [*str*]\|\ **W**]
     指定要生成的作业数量，创建从 *min* 到 *max* 以 *inc* 为间隔的一列数据集，
@@ -75,55 +77,56 @@ batch
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**
     如果主脚本没有生成使用前缀 **BATCH_NAME** 的产品，
     或者主脚本将直接处理这些产品文件位置，请选择此选项。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *template*
     不使用 **BATCH_NAME** 前缀的单一流水号构建产品文件名，
-    而是使用 `C格式 <https://en.wikipedia.org/wiki/Printf_format_string>`_ *template* 
+    而是使用 `C格式 <https://en.wikipedia.org/wiki/Printf_format_string>`_ *template*
     根据 *timefile* 数据列创建唯一名称。限制如下：
     (1) 如果 *timefile* 有尾随文本，
     可用单个 %s 在模板最后格式化；如果无 %s，则尾随文本不会使用。
     (2) 前 N 个格式语句用于转换 *timefile* 的前 N 列；不能跳过列或指定列顺序
-    （可用 |SYN_OPT-i| 重排输入顺序）。
+    （可用 :option:`-i`\ *flags* 重排输入顺序）。
     (3) 可使用最多五个数值语句（前提 *timefile* 有足够列）。
-    例如 **-F**\ my_data_%05.2lf_%07.0lf_%s 使用 *timefile* 的前两列和尾随文本生成唯一前缀。
+    例如 :option:`-F`\ my_data_%05.2lf_%07.0lf_%s 使用 *timefile* 的前两列和尾随文本生成唯一前缀。
     注意：GMT 数据集内部使用双精度变量，即使列为整数也应使用浮点格式。
     若格式语句和尾随文本包含空格或制表符，将自动替换为下划线。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *includefile*
     将 *includefile* 的内容插入 batch_init.sh 脚本，
-    供所有批处理脚本访问。通常用于添加主脚本和可选 |-S| 脚本可依赖的常量变量。
+    供所有批处理脚本访问。通常用于添加主脚本和可选的 :option:`-S` 脚本可依赖的常量变量。
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [*job*]
     不生成和启动完整处理序列，仅选择一个主作业 [0] 测试。
     主作业将在 *workdir* 中运行，其产品会生成。任何 *preflight* 脚本会在主作业前运行，
     但 *postflight* 脚本不会执行（但会创建）。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [**s**]
     调试：保留所有创建的文件和目录以供检查。或附加 **s** 仅生成批处理脚本但不执行。
     唯一例外是可选 *preflight* 脚本（**-Sb**），始终执行，
     因为可能产生构建主批处理脚本所需的数据。
 
-.. _-Sb:
+.. option:: -S
+.. option:: -Sb
 
 **-Sb**\ *preflight*
     可选 GMT 现代模式 *preflight* 脚本（与 *mainscript* 同语言），
     可下载或复制数据文件，或创建 *mainscript* 所需的文件（如 *timefile*）。
     总是在主批处理序列之前执行。
 
-.. _-Sf:
+.. option:: -Sf
 
 **-Sf**\ *postflight*
     可选 *postflight* 脚本（与 *mainscript* 同语言），可在所有作业完成后执行最终处理，
@@ -131,22 +134,24 @@ batch
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*dir*]
-    默认情况下，所有临时文件和作业产品创建在 |-N| 设置的 *prefix* 子目录中。
+    默认情况下，所有临时文件和作业产品创建在 :option:`-N` 设置的 *prefix* 子目录中。
     可通过 *dir* 覆盖路径。若未提供路径，将在系统临时目录中创建名为 *prefix* 的工作目录。
     工作目录的好处是避免 DropBox 或 TimeMachine 的无限同步，或主目录空间不足问题。
-    产品文件仍放置在 *prefix* 目录中。除非 |-Q| 指定调试，否则工作目录在完成后会被删除。
+    产品文件仍放置在 *prefix* 目录中。除非 :option:`-Q` 指定调试，否则工作目录在完成后会被删除。
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**
-    完成后删除 *mainscript* 以及通过 |-I| 和 |-S| 提供的所有输入脚本。不兼容 |-Q|。
+    完成后删除 *mainscript* 以及通过 :option:`-I` 和 :option:`-S` 提供的所有输入脚本。不兼容 :option:`-Q`。
 
 .. include:: explain_-f.rst_
 
-.. _-cores:
+.. include:: explain_-icols.rst_
+
+.. option:: -x
 
 **-x**\ [[-]\ *n*]
     限制分发作业时使用的核心数量。默认尝试使用所有可用核心。
@@ -163,8 +168,8 @@ batch
 
 多个参数会自动分配，可用于 *mainscript* 和可选 *preflight*/*postflight* 脚本。
 参数分为常量和随作业编号变化的变量。常量对所有脚本可用：**BATCH_PREFIX**：
-批处理作业通用前缀（由 |-N| 设置）；**BATCH_NJOBS**：作业总数（由 |-T| 给出或推断）。
-若使用 |-I|，其中列出的静态参数也可用于所有脚本。此外，*mainscript* 可访问随作业编号变化的参数：
+批处理作业通用前缀（由 :option:`-N` 设置）；**BATCH_NJOBS**：作业总数（由 :option:`-T` 给出或推断）。
+若使用 :option:`-I`，其中列出的静态参数也可用于所有脚本。此外，*mainscript* 可访问随作业编号变化的参数：
 **BATCH_JOB**：当前作业编号（整数，例如 136）， **BATCH_ITEM**：
 根据宽度格式化的作业编号字符串（例如 000136），**BATCH_NAME**：
 当前作业唯一前缀（即 *prefix*\ _\ **BATCH_ITEM**）。若提供 *timefile*，
@@ -172,20 +177,20 @@ batch
 尾随文本可通过 **BATCH_TEXT** 访问，若启用 **+w** 分词，
 则还可通过 **BATCH_WORD0**、 **BATCH_WORD1** 等访问。注意：
 处理脚本生成的产品应使用 **BATCH_NAME** 作为前缀，
-以便自动移动到起始目录（除非使用 |-D|）。使用 |-F| 可基于 |-T| 输入参数生成更灵活的产品名称。
+以便自动移动到起始目录（除非使用 :option:`-D`）。使用 :option:`-F` 可基于 :option:`-T` 输入参数生成更灵活的产品名称。
 
 数据文件
 --------
 
 批处理脚本可访问 **batch** 启动时存在的起始目录中的任何文件，
-以及 *mainscript* 或通过 |-S| 设置的可选脚本生成的新文件。
+以及 *mainscript* 或通过 :option:`-S` 设置的可选脚本生成的新文件。
 无需指定路径。其他文件可能需要完整路径，除非其目录已包含在 :term:`DIR_DATA` 设置中。
 
 自定义 gmt.conf 文件
 --------------------
 
 如果在运行 **batch** 前主脚本所在目录有 gmt.conf 文件，
-则该文件将被所有创建和执行的脚本共享，除非脚本在启动现代模式时使用 |-C| 覆盖。
+则该文件将被所有创建和执行的脚本共享，除非脚本在启动现代模式时使用 **-C** 覆盖。
 修改 GMT 默认值的推荐方式是通过 :doc:`set` 在输入脚本中调用。
 注意：每个脚本独立运行（现代模式），因此通过 *preflight* 创建 gmt.conf 文件无法被其他脚本使用。
 
@@ -195,7 +200,7 @@ batch
 如果调用间没有变化，批处理序列没有意义。为了实现变化， *mainscript* 需要访问不同的数据集、
 数据子集，或作业参数不同，或以上组合。策略如下：
 
-- 通过 |-T| 提供的 *timefile* 列出特定数据文件， *mainscript* 
+- 通过 :option:`-T` 提供的 *timefile* 列出特定数据文件， *mainscript*
   使用 **BATCH_TEXT** 或 **BATCH_WORD?** 访问特定作业文件名。
 
 - 对于 3D 网格（或 2D 网格堆叠），沿垂直于切片的轴（时间或深度）插值，
@@ -211,26 +216,26 @@ batch
 
 **batch** 模块会创建多个隐藏脚本：
 
-- *batch_init*  
+- *batch_init*
   初始化变量并包含可选 *includefile* 内容。
-- *batch_preflight* （可选，来自 **-Sb**）  
+- *batch_preflight* （可选，来自 **-Sb**）
   准备所需数据文件。
-- *batch_postflight* （可选，来自 **-Sf**）  
+- *batch_postflight* （可选，来自 **-Sf**）
   在所有作业完成后处理文件。
-- *batch_job*  
+- *batch_job*
   接受作业编号并处理数据。
-- *batch_cleanup*  
+- *batch_cleanup*
   结束时删除临时文件。
 
 每个作业有单独的 *batch_params_######* 脚本，用于提供作业特定变量。
 
-*preflight* 和 *postflight* 可访问 *batch_init* 信息，  
+*preflight* 和 *postflight* 可访问 *batch_init* 信息，
 *batch_job* 还可访问作业特定参数文件。
 
-使用 |-Q| 可仅生成这些脚本以供检查。
+使用 :option:`-Q` 可仅生成这些脚本以供检查。
 
-注意：*mainscript* 会为每个作业复制以上所需文件，多个作业可同时在所有可用核心上运行。  
-多线程 GMT 模块将限制为单核心调用。  
+注意：*mainscript* 会为每个作业复制以上所需文件，多个作业可同时在所有可用核心上运行。
+多线程 GMT 模块将限制为单核心调用。
 每个作业都会确保创建唯一文件，以便 **batch** 判断作业完成并启动下一个。
 
 
@@ -248,9 +253,9 @@ Shell 脚本局限
 
 编写批处理作业相对简单，但需以变量为思路。先编写单个 *mainscript*，确定哪些随作业编号变化，
 创建变量。如果只需作业编号，可直接使用自动生成变量。
-否则，需制作 |-T| 文件，每行对应一个作业，列包含所需值。
-固定变量可通过 |-I| 指向 *includefile* 赋值。测试脚本时，
-使用 **-Q -M** 确保主作业结果正确，调整变量和选项，最终移除 |-Q|。建议初期使用小批次作业快速验证。
+否则，需制作 :option:`-T` 文件，每行对应一个作业，列包含所需值。
+固定变量可通过 :option:`-I` 指向 *includefile* 赋值。测试脚本时，
+使用 **-Q -M** 确保主作业结果正确，调整变量和选项，最终移除 :option:`-Q`。建议初期使用小批次作业快速验证。
 
 示例
 -----
@@ -319,7 +324,6 @@ macOS 问题
 相关模块
 --------
 
-:doc:`gmt`,
 :doc:`math`,
 :doc:`grdinterpolate`,
 :doc:`grdmath`

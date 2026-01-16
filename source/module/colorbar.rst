@@ -1,5 +1,8 @@
+:author: 田冬冬, 朱邓达, 周茂, 邓山泉, 陈箫翰
+:date: 2025-12-30
+
 .. index:: ! colorbar
-.. include:: common_SYN_OPTs.rst_
+.. program:: colorbar
 
 colorbar
 ========
@@ -11,53 +14,52 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 如果想要修改色条刻度的字体大小、刻度线粗细、边框粗细等属性，应当把色条看成一个新的笛卡尔坐标底图，
 使用 **--PAR**\ =\ *value* 语法临时修改GMT参数的值。参数列表见 :doc:`/conf/index`\ 。
 
+语法
+----
+
 **gmt colorbar**
-[ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
-[ |-D|\ *refpoint* ]
-[ |-F|\ *panel* ]
-[ |-G|\ *zlo*\ /\ *zhi* ]
-[ |-I|\ [*max\_intens*\|\ *low_i*/*high_i*] ]
-[ |-J|\ *parameters* ]
-[ |-J|\ **z**\|\ **Z**\ *parameters* ]
-[ |-L|\ [**i**][*gap*] ]
-[ |-M| ]
-[ |-N|\ [**p**\|\ *dpi* ]]
-[ |-Q| ]
-[ |SYN_OPT-R| ]
-[ |-S| ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *scale* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |-Z|\ *zfile* ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-C`\ *cpt* ]
+[ :option:`-D`\ *refpoint* ]
+[ :option:`-F`\ *panel* ]
+[ :option:`-G`\ *zlo*\ /\ *zhi* ]
+[ :option:`-I`\ [*max\_intens*\|\ *low_i*/*high_i*] ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-Jz|Z`\ *parameters* ]
+[ :option:`-L`\ [**i**][*gap*] ]
+[ :option:`-M` ]
+[ :option:`-N`\ [**p**\|\ *dpi* ]]
+[ :option:`-Q` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S` ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *scale* ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-Z`\ *zfile* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
-
-无
 
 可选选项
 --------
 
-.. _-B:
+.. option:: -B
 
 **-B**\ [**p**\|\ **s**]\ *parameters*
     设置colorbar的标注、刻度和网格线间隔。
 
-    在不使用 |-B| 选项或不指定标注间隔时，默认会根据CPT文件中每一行的内容
-    对colorbar进行标注，具体见 :doc:`/cpt/index`。|-B| 选项的具体说明
+    在不使用 :option:`-B` 选项或不指定标注间隔时，默认会根据CPT文件中每一行的内容
+    对colorbar进行标注，具体见 :doc:`/cpt/index`。:option:`-B` 选项的具体说明
     见 :doc:`/option/B`。
 
     默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
     colorbar的右边；对于垂直colorbar而言，X轴的标签放在colorbar的右边，Y轴标签
-    放在colorbar的上边。除非在 |-D| 选项中使用了 **+m** 子选项。
+    放在colorbar的上边。除非在 :option:`-D` 选项中使用了 **+m** 子选项。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*cpt*]
     要绘制的CPT文件。
@@ -65,10 +67,10 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     若CPT中Z值范围单位为米，而实际绘图时想使用其它单位，则可在文件名后加上 **+U**\ *unit*。
     若CPT中Z值范围单位不为米，而实际绘图中想使用米为单位，则可在文件名后加上 **+u**\ *unit*。
 
-    对于现代模式，若未指定 *cpt* 或者未使用 |-C| 选项，则使用当前CPT。
-    经典模式下，若未指定 |-C| 则从标准输入中读入CPT。
+    对于现代模式，若未指定 *cpt* 或者未使用 :option:`-C` 选项，则使用当前CPT。
+    经典模式下，若未指定 :option:`-C` 则从标准输入中读入CPT。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ [**+w**\ *length*\ [/\ *width*]]\ [**+e**\ [**b**\|\ **f**][*length*]][**+h**\|\ **v**][**+j**\ *justify*]\ [**+m**\ [**a**\|\ **c**\|\ **l**\|\ **u**]][**+n**\ [*txt*]][**+o**\ *dx*\ [/*dy*]]
     指定色标的尺寸和位置。
@@ -107,66 +109,68 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
     - 放在右上角: **-DjTR+w2c/0.5c+o-1c/0c**
     - 放在右下角: **-DjBR+w2c/0.5c+o-1c/0c**
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制色标后的背景边框
 
-    若只使用 |-F| 而不使用其它子选项，则会在色标周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在色标周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *zlow*\ /\ *zhigh*
     对CPT文件做截断，即只绘制 *zlow* 到 *zhigh* 之间的部分。
     若其中某个值等于NaN，则不对CPT的那一端做处理。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [*max_intens*\|\ *low_i*/*high_i*]
     为色标加上光照效果
 
-    - **-I**\ *max_intens* 设置光照强度为 [-\ *max_intens*, +\ *max_intens*]，默认值为[-1,+1]
-    - **-I**\ *low_i*/*high_i* 指定非对称的光照强度范围
+    - :option:`-I`\ *max_intens* 设置光照强度为 [-\ *max_intens*, +\ *max_intens*]，默认值为[-1,+1]
+    - :option:`-I`\ *low_i*/*high_i* 指定非对称的光照强度范围
 
 .. include:: explain_-J.rst_
 
-.. _-L:
+.. include:: explain_-Jz.rst_
+
+.. option:: -L
 
 **-L**\ [**i**][*gap*]
     生成等大小的颜色矩形。
 
     默认情况下，会根据CPT文件中Z值的范围决定颜色矩形的大小。若使用该选项，则
-    会忽略 |-B| 选项设置的间隔。若指定了 *gap* 且CPT文件是离散的，则使用
+    会忽略 :option:`-B` 选项设置的间隔。若指定了 *gap* 且CPT文件是离散的，则使用
     每个矩形的Z值下边界作为标注且将标注放在矩形的正中间。
-    若使用了 **i** 则标注每个间隔范围。若使用了 |-I| 选项，则每个矩形有自己的
+    若使用了 **i** 则标注每个间隔范围。若使用了 :option:`-I` 选项，则每个矩形有自己的
     颜色以及自己的光照强度。
 
-.. _-M:
+.. option:: -M
 
 **-M**
     使用YIQ变换将色标变成单调灰度色标
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [**p**\|\ *dpi*]
     控制色标的图形表示方式
 
     - **-Np** 用颜色矩形来表示（比如离散的颜色）
-    - |-N| 用图形表示（比如连续的颜色），可以加上 *dpi* 指定绘制色标时的等效DPI，默认值为600
+    - :option:`-N` 用图形表示（比如连续的颜色），可以加上 *dpi* 指定绘制色标时的等效DPI，默认值为600
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     使用对数坐标，刻度表示为10的次幂
 
     CPT文件中所有的Z值都会被转换成 :math:`p = \log10(z)`，其中整数的p会以10^p的格式标注。
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Rz.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
     去除不同色块之间的黑色网格线
@@ -175,14 +179,14 @@ GMT 在使用 ``colorbar`` 绘制色条时，本质上是绘制了一个在x或y
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *scale*
     将CPT文件中所有的Z值乘以比例因子 *scale*
 
 .. include:: explain_-XY.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *zfile*
     *zfile* 文件用于指定每个颜色块的宽度。

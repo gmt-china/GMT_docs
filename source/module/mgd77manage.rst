@@ -2,7 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77manage
-.. include:: common_SYN_OPTs.rst_
+.. program:: mgd77manage
 
 mgd77manage
 ===========
@@ -20,21 +20,13 @@ National Centers for Environmental Information，NCEI) 机构下的海洋地球�
 主要包括下面 9 个命令：
 
 - :doc:`mgd77manage` 管理 MGD77+ 文件
-
 - :doc:`mgd77convert` 将 MGD77 数据转换为其他格式
-
 - :doc:`mgd77header` 从 A77 文件创建 MGD77 头部信息
-
 - :doc:`mgd77info` 提取 MGD77 文件信息
-
 - :doc:`mgd77list` 提取 MGD77 文件中的数据
-
 - :doc:`mgd77magref` 计算 IGRF 或 CM4 磁场模型
-
 - :doc:`mgd77path` 返回 MGD77 测线路径
-
 - :doc:`mgd77sniffer` MGD77 测线沿轨质量控制
-
 - :doc:`mgd77track` 绘制 MGD77 测线轨迹
 
 下面将做整体介绍：
@@ -138,22 +130,23 @@ mgd77manage
 语法
 ----
 
-**gmt mgd77manage** *GEODAS-ids*
-[ |-A|\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]\ ]
-[ |-D|\ *abbrev1*,\ *abbrev2*,...) ]
-[ |-E|\ *empty* ]
-[ |-F| ]
-[ |-I|\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment* ]
-[ |-N|\ *unit* ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT--| ]
+**gmt mgd77manage**
+*GEODAS-ids*
+[ :option:`-A`\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]\ ]
+[ :option:`-D`\ *abbrev1*,\ *abbrev2*,... ]
+[ :option:`-E`\ *empty* ]
+[ :option:`-F` ]
+[ :option:`-I`\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment* ]
+[ :option:`-N`\ *unit* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-j`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
@@ -161,7 +154,7 @@ mgd77manage
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ **a**\|\ **c**\|\ **d**\|\ **D**\|\ **e**\|\ **E**\|\ **g**\|\ **i**\|\ **n**\|\ **t**\|\ **T**\ *fileinfo*\ [**+f**]
     添加新的数据列。如果文件中已经存在相同名称的列，则无法添加。**+f** 选项可以
@@ -193,7 +186,7 @@ mgd77manage
 
     - **d** 指定一个包含两列数据的文件名，第一列为沿轨距离，第二列为数值。如果
       不指定文件，则从标准输入中读取。MGD77+ 文件中有对应的距离则将被新值取代，
-      在其他距离，设置为 NaN。 使用 **-N** 设置距离单位，通过 **-j** 选择距离
+      在其他距离，设置为 NaN。 使用 :option:`-N` 设置距离单位，通过 :option:`-j` 选择距离
       计算方式。
 
     - **D** 与 **d** 功能类似，但在没有给定距离的点，内插得到其更新值
@@ -236,27 +229,27 @@ mgd77manage
       文件，则从标准输入中读取。MGD77+ 文件中时间与数据中相对应的会被替换，其他数据
       设置为 NaN。使用大写的 **T** 选项，将会进行内插。
 
-.. _-D:
+.. option:: -D
 
-**-D**\ *abbrev1*,\ *abbrev2*,...)
+**-D**\ *abbrev1*,\ *abbrev2*,...
     给定一个逗号分隔的行缩写列表，从 MGD77+ 文件中删除这些数据。如果要替换数据
     则不应该使用该选项，而是使用 **-A...+f** 。由于不能从 NetCDF 文件中删除变量，
     所以必须创建一个新的文件，其中不包含被剔除的列。一旦文件被创建，则临时删除
     旧文件，将新文件命名为旧文件，然后移除旧文件。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *empty*
     指定单独的字符用来替换空字符串值，例如：“9” 将会把空字符串替换为 “999....”，
     默认为 9。
 
-.. _-F:
+.. option:: -F
 
 **-F**
     强制模式。当激活该模式时，可以强制删除或者替换标准的 MGD77 文件中列。用户
     需要慎重。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *abbrev*/*name*/*unit*/**c**/*scale*/*offset*/*comment*
     除了文件信息，还可以为新增的列指定属性等信息。可指定所选数据的缩写（16 个字符
@@ -280,10 +273,10 @@ mgd77manage
 
     - **t** text 文本类型
 
-    如果选择了文本数据类型，则 |-A| 讨论中的“值”指的是本文数据，插值对于该类型不
+    如果选择了文本数据类型，则 :option:`-A` 讨论中的“值”指的是本文数据，插值对于该类型不
     适用，包含多个单词的值需要加上引号。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *unit*
     指定距离单位（见 `距离单位`_ ）[默认为 **-Nk** （km）]。
@@ -349,7 +342,7 @@ IGRF 见 `<https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html>`__
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
 :doc:`mgd77list`,
-:doc:`mgd77magref`
+:doc:`mgd77magref`,
 :doc:`mgd77info`,
 :doc:`mgd77track`,
 :doc:`mgd77sniffer`,

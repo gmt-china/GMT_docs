@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
-.. index:: !x2sys_list
-.. include:: common_SYN_OPTs.rst_
+.. index:: ! x2sys_list
+.. program:: x2sys_list
 
 x2sys_list
 ==========
@@ -16,30 +17,32 @@ x2sys_list
 语法
 ----
 
-**gmt x2sys_list** |-C|\ *column* |-T|\ *TAG* [ *coedbase.txt* ]
-[ |-A|\ *asymm_max* ]
-[ |-E| ]
-[ |-F|\ *flags* ]
-[ |-I|\ [*list*] ]
-[ |-L|\ [*corrections*] ]
-[ |-N|\ *nx_min*\ [**+p**] ]
-[ |-Q|\ **e**\|\ **i** ]
-[ |SYN_OPT-R| ]
-[ |-S|\ *track*\ [**+b**] ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*list*] ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT--| ]
+**gmt x2sys_list**
+:option:`-C`\ *column*
+:option:`-T`\ *TAG* [ *coedbase.txt* ]
+[ :option:`-A`\ *asymm_max* ]
+[ :option:`-E` ]
+[ :option:`-F`\ *flags* ]
+[ :option:`-I`\ [*list*] ]
+[ :option:`-L`\ [*corrections*] ]
+[ :option:`-N`\ *nx_min*\ [**+p**] ]
+[ :option:`-Q`\ **e**\|\ **i** ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S`\ *track*\ [**+b**] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*list*] ]
+[ :option:`-bo`\ *binary* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *column*
     指定要处理的列，列名必须是格式定义文件中已有的列名，见 :doc:`x2sys_init`
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init`
@@ -51,19 +54,19 @@ x2sys_list
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *asymm_max*
     指定相对于时间中点的交叉点分布的最大不对称性（如果没有时间，也可用距离）。
     不对称性的计算公式为 (n_right - n_left)/(n_right + n_left)。如果指定
     *asymm_max* 值，将会排除超过该截止值的轨迹 [默认值为 1，即不排除任何轨迹]。
 
-.. _-E:
+.. option:: -E
 
 **-E**
     输出两个轨迹的名称和总的交叉点个数作为头部信息 [默认不写入这些头部信息]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *flags*
     使用 **acdhiInNtTvwxyz** 的组合来设置输出。这些字符中不能包括空格，
@@ -71,8 +74,8 @@ x2sys_list
 
     **a** 小于 90 度的角度，该角度为轨迹的方位角
 
-    **c** 指定的观测量的交叉点值（见 **-C**）
-    
+    **c** 指定的观测量的交叉点值（见 :option:`-C`）
+
     **d** 沿轨距离
 
     **h** 轨迹朝向
@@ -97,9 +100,9 @@ x2sys_list
 
     **y** y 坐标或纬度
 
-    **z** 沿轨观测值，见 **-C**
+    **z** 沿轨观测值，见 :option:`-C`
 
-    如果不使用 **-S**，**d**,\ **h**,\ **n**,\ **N**,\ **t**,\ **T**,\ **v**
+    如果不使用 :option:`-S`，**d**,\ **h**,\ **n**,\ **N**,\ **t**,\ **T**,\ **v**
     在每列包含两个输出，分别代表两个轨迹。否则，将只输出对应轨迹的结果
     （除 **n**,\ **N** ）。
     **c** 和 **i** 的符号是由 Value(track_one) - Value(track_two) 决定的。
@@ -107,41 +110,41 @@ x2sys_list
     上面各元素输出的顺序和他们在 *flags* 中的顺序一致， **n** 除外，**n**
     选项将放在所有数字列的最后。
 
-.. _-i:
+.. option:: -I
 
 **-I**\ [*list*]
     *list* 为轨迹列表文件名，其中包含若干轨迹文件名，这些轨迹将不参与计算
     [默认包含所有的轨迹]。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*corrections*]
     对选择观测量进行最优改正，*corrections* 为改正表，该改正表可以由 :doc:`x2sys_solve` 生成
     [默认使用位于 **$X2SYS_HOME**/*TAG* 文件夹中的 TAG_corrections.txt]。
     对于改正表文件的格式，见 :doc:`x2sys_datalist` 的 Corrections 章节
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *nx_min*\ [**+p**]
     只输出至少含有 *nx_min* 个交叉点的轨迹的交叉点信息，
     **+p** 为相反，即输出少于 *nx_min* 个交叉点的轨迹的信息
     [默认为全部轨迹]
 
-.. _-Q:
+.. option:: -Q
 
 **-Qe**\|\ **i**
     **e** 表示外部交叉点，**i** 表示内部交叉点 [默认为全部交叉点]
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *track*\ [**+b**]
-    指定单轨迹的名称，只输出和这条轨迹相关的交叉点的信息 
+    指定单轨迹的名称，只输出和这条轨迹相关的交叉点的信息
     [默认输出所有轨迹交叉点信息]。
-    添加 **+b** 以输出包含该轨迹的轨迹对相关的信息。 
+    添加 **+b** 以输出包含该轨迹的轨迹对相关的信息。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*list*]
     *list* 为文本文件，其中包含的信息为轨迹名称列表和用于计算交叉点处权重的

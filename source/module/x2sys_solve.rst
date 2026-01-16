@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
-.. index:: !x2sys_solve
-.. include:: common_SYN_OPTs.rst_
+.. index:: ! x2sys_solve
+.. program:: x2sys_solve
 
 x2sys_solve
 ===========
@@ -15,14 +16,17 @@ x2sys_solve
 语法
 ----
 
-**gmt x2sys_solve** |-C|\ *column* |-T|\ *TAG* |-E|\ **c**\|\ **d**\|\ **g**\|\ **h**\|\ **s**\|\ **y**\|\ **z**
+**gmt x2sys_solve**
+:option:`-C`\ *column*
+:option:`-T`\ *TAG*
+:option:`-E`\ **c**\|\ **d**\|\ **g**\|\ **h**\|\ **s**\|\ **y**\|\ **z**
 [ *COE_list.txt* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**+u**] ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT--| ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**+u**] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项
@@ -34,17 +38,17 @@ x2sys_solve
     否则，就在最后两列给出轨迹名称。
     如果不给定该输入文件，就从标准输入读取数据。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init`
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *column*
     指定要处理的列，需要和 :doc:`x2sys_list` 中准备的输入数据中的选项一致。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ **c**\|\ **d**\|\ **g**\|\ **h**\|\ **s**\|\ **y**\|\ **z**
     设置用来拟合系统误差的模型。模型的类型可以从下面的函数 f(**p**) 中选择，
@@ -76,7 +80,7 @@ x2sys_solve
 可选选项
 --------
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**+u**]
     使用该选项则意味着，每种观测值在其前面还有一列，表示其权重，
@@ -96,7 +100,7 @@ x2sys_solve
 注意事项
 --------
 
-|-E| 选项中的大多数系统误差模型均包含一个常数偏移量。由于交叉点不符值是两个点
+:option:`-E` 选项中的大多数系统误差模型均包含一个常数偏移量。由于交叉点不符值是两个点
 的差值，因此，这种常数偏移是相对量，而不是绝对量。为了最终结果可解，GMT 添加
 了其他的约束，即所有的常数偏移量的和等于 0。
 如果轨迹形成的集合中只包含同类轨迹，与其他轨迹不存在交叉点，
@@ -114,18 +118,18 @@ x2sys_solve
     gmt x2sys_solve faa_coe.txt -V -TMGD77 -Cfaa -Ec > coe_table.txt
 
 若重力异常观测数据中存在与时间相关的线性漂移::
-    
+
     gmt x2sys_list COE_data.txt -V -TMGD77 -Cfaa -FnTc > faa_coe.txt
     gmt x2sys_solve faa_coe.txt -V -TMGD77 -Cfaa -Et > coe_table.txt
 
 以 MGD77 为 TAG 的轨迹数据生成磁观测交叉点文件 :file:`COE_data.txt` ，
 估计磁朝向改正::
-    
+
     gmt x2sys_list COE_data.txt -V -TMGD77 -Cmag -Fnhc > mag_coe.txt
     gmt x2sys_solve mag_coe.txt -V -TMGD77 -Cmag -Eh > coe_table.txt
 
 基于测深交叉点估计单位缩放因子::
-    
+
     gmt x2sys_list COE_data.txt -V -TMGD77 -Cdepth -Fnz > depth_coe.txt
     gmt x2sys_solve depth_coe.txt -V -TMGD77 -Cdepth -Es > coe_table.txt
 

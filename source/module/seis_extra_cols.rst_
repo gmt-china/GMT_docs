@@ -1,0 +1,20 @@
+数据列顺序
+----------------
+
+:option:`-S` 选项决定了生成所选符号所需的尺寸列数量，但如果未给出 *size*，则期望从文件中读取 *size*。
+此外，使用 :option:`-H` 、 :option:`-I` 和 :option:`-t` 选项将需要额外的列。
+数据记录的顺序是固定的，与选项顺序无关，即使并非所有项目都被激活也是如此。数据列应该按以下顺序排列::
+
+    lon lat depth symbol-columns [size] [scale] [intens] [transp [transp2]] [trailing-text]
+
+带中括号的项是可选的，并受下列选项的控制：
+
+#. 不带参数 *size* 的 :option:`-S` 需要给出 *size* 列
+#. 不带参数 *scale* 的 :option:`-H` 需要给出 *scale* 列
+#. 不带参数 *intens* 的 :option:`-I` 需要给出 *intens* 列
+#. 不带参数的 :option:`-t` 需要给出 *transp* 列。
+
+尾随文本 *trailing-text* 始终是可选的。
+
+**注意**：(1) *depth* 通常是必需的，但如果为 **meca** 指定了 **-Fo**，则不需要该列。
+(2) 可以使用 :option:`-i` 重新排列数据记录以匹配预期的格式。

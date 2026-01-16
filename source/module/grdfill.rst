@@ -1,76 +1,77 @@
+:author: 田冬冬, 陈箫翰
+:date: 2026-01-01
+
 .. index:: ! grdfill
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdfill
 
 grdfill
 =======
 
 :官方文档: :doc:`gmt:grdfill`
-:简介:
+:简介: 对网格文件中的空洞进行插值
 
 **grdfill** 模块读入一个文件数据，并向数据中的“洞”填充数据。
-“洞”通常指值为NaN的节点，但用户也可以使用其它准则指定“洞”。
+“洞”通常指值为 NaN 的节点，但用户也可以使用 :option:`-N` 定义“洞”。有多种不同的算法可用于替换空洞值。
+**注意**：必须提供 :option:`-A` 或 :option:`-L` 其中之一。如果未发现空洞，将输出原始未更改的网格文件。
 
 语法
 ----
 
-**gmt grdfill** *ingrid*
-|-A|\ *mode*\ [*arg*]
-|-G|\ *outgrid*
-[ |SYN_OPT-R| ]
-[ |-L|\ [**p**] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT--| ]
+**gmt grdfill**
+*ingrid*
+[ :option:`-A`\ **c**\|\ **g**\|\ **n**\|\ **s**\ [*arg*]  ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-L`\ [**p**] ]
+[ :option:`-N`\ *value* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必须选项
+输入数据
 --------
 
-*ingrid*
-    输入网格文件
-
-.. _-A:
-
-**-A**\ *mode*\ [*arg*]
-    填充“洞”所使用的算法
-
-    目前支持两种算法：
-
-    - **c**\ *value* 使用某个常数填充“洞”
-    - **n**\ [*radius*] 使用最近的非NaN值填充“洞”，默认的搜索半径为
-      半径默认取 :math:`r^2 = \sqrt{X^2 + Y^2}`，其中 X 和 Y
-      分别是X方向和Y方向的网格数目。也可以指定 *radius* 为搜索半径
-      （单位是节点数）。
-
-.. _-G:
-
-**-G**\ *outgrid*
-    输出网格文件
+.. include:: explain_grd_in.rst_
 
 可选选项
 --------
 
-.. _-N:
+.. option:: -A
+
+**-A**\ **c**\|\ **g**\|\ **n**\|\ **s**\ [*arg*]
+    通过附加以下指令之一来指定要使用的空洞填充算法：
+
+    - **c**：选择常数填充（并附加常数填充值 *value*）。
+    - **g**：在构成空洞的节点处对（可能更粗略的）网格 *arg* 进行采样。
+    - **n**：使用最近的非 NaN 值填充“洞”，默认的搜索半径为 :math:`r = \sqrt{n^2 + m^2}` ，其中 (*n,m*) 分别是X方向和Y方向的网格数目。
+      也可以指定 *radius* 为搜索半径（单位是节点数）。
+    - **s**：选择双三次样条插值（可附加张力参数 *tension* [默认无张力]）。
+
+.. include:: explain_grd_out.rst_
+
+.. option:: -L
+
+**-L**\ [**p**]
+    不填充“洞”，仅列出每个“洞”所处的子区域的范围。
+    :option:`-G` 选项会被忽略。**-Lp** 表示输出每个子区域对应的闭合多边形。
+
+.. option:: -N
 
 **-N**\ [*nodata*]
-    所有值等于 *nodata* 的节点都被认为为“hole”，默认值为NaN
+    所有值等于 *nodata* 的节点都被认为为“hole”，默认值为 NaN 。
 
 .. include:: explain_-R.rst_
 ..
 
-   该选项定义了要处理了子区域范围。
-
-.. _-L:
-
-**-L**\ [**p**]
-    不填充“洞”，仅列出每个“洞”所处的子区域的范围
-
-    |-G| 选项会被忽略。**-Lp** 表示输出每个子区域对应的闭合多边形。
+   该选项定义了要处理的子区域范围。
 
 .. include:: explain_-V.rst_
 
 .. include:: explain_-f.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_grd_coord.rst_
 
 示例
 ----

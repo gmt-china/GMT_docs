@@ -1,3 +1,8 @@
+---
+author: 陈箫翰, 周茂
+date: 2025-12-11
+---
+
 # GMT 远程数据
 
 GMT 远程数据位于 GMT 数据服务器，在 GMT 中使用时会自动下载。
@@ -74,14 +79,22 @@ gmt grdcut @earth_relief_02m_g -Gearth_at_2m.grd
 GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
 <https://www.generic-mapping-tools.org/mirrors> 页面。
 
-对于国内用户，建议直接使用中科大LUG提供的国内镜像。修改方式为:
+对于国内用户，建议直接使用中科大LUG提供的国内镜像。
+
+Linux/macOS/WSL 系统的修改方式为打开终端：
 
 ```
-gmt set GMT_DATA_SERVER https://mirrors.ustc.edu.cn/gmtdata
+$ echo >> ~/.gmt/gmt.conf
+$ echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> ~/.gmt/gmt.conf
 ```
 
-然后将生成的 {file}`gmt.conf` 文件复制到GMT用户目录 {file}`~/.gmt` (Linux/macOS)
-或 {file}`C:\\Users\\当前用户名\\.gmt`（Windows）下。
+Windows 系统则为打开命令提示符 cmd（适用于使用安装包方式安装的 GMT）：
+
+```doscon
+C:\Windows\system32> cd /d %USERPROFILE%\.gmt
+C:\Users\当前用户名\.gmt> echo >> gmt.conf
+C:\Users\当前用户名\.gmt> echo GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata >> gmt.conf
+```
 
 请注意GMT 6.4 及其之前的版本，都无法正常使用科大镜像下载数据。因此强烈建议国内用户使用GMT 6.5 及其以上版本。
 :::

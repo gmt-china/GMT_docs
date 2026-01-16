@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2024-02-21
+:date: 2026-01-12
 
 .. index:: ! talwani2d
-.. include:: common_SYN_OPTs.rst_
+.. program:: talwani2d
 
 talwani2d
 =========
@@ -12,55 +12,57 @@ talwani2d
 
 **talwani2d** 读取一个多段表文件（或标准输入）。该文件包含一个或多个二维物体
 的横截面，横截面为多边形。每段的头部信息中必须包含密度参数：*density*，为该
-物体的密度（单个物体的密度可以被 |-D| 选项设置的密度常数覆盖）。GMT 可通过
-设置 |-T| 计算位于某等距格网的异常，或者使用 |-N| 计算点上的异常值。
+物体的密度（单个物体的密度可以被 :option:`-D` 选项设置的密度常数覆盖）。GMT 可通过
+设置 :option:`-T` 计算位于某等距格网的异常，或者使用 :option:`-N` 计算点上的异常值。
 计算的异常可包括，自由空气重力异常，垂直重力梯度异常或者大地水准面异常。同时
 可以使用选项控制轴的单位和方向。
 
 语法
 ----
 
-**gmt talwani2d** [ *table* ]
-[ |-A| ] [ |-D|\ *density* ] ]
-[ |-F|\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
-[ |-M|\ [**h**]\ [**v**] ]
-[ |-N|\ *trackfile* ]
-[ |-T|\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list* ]
-[ |-Z|\ *level*\ [*ymin*\ /*ymax*] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT--| ]
+**gmt talwani2d**
+[ *table* ]
+[ :option:`-A` ]
+[ :option:`-D`\ *density* ]
+[ :option:`-F`\ **f**\|\ **n**\ [*lat*]\|\ **v** ]
+[ :option:`-M`\ [**h**]\ [**v**] ]
+[ :option:`-N`\ *trackfile* ]
+[ :option:`-T`\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list* ]
+[ :option:`-Z`\ *level*\ [*ymin*\ /*ymax*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *table*
     一个或者多个 ASCII 文件，用来描述一个或者多个物体的横截面多边形。如果
     多边形没有闭合，GMT 将自动闭合并删除重复的多边形顶点。每段的头部信息中
-    必须包含密度参数，单位为 kg/m^3 或 g/cm^3，见 |-D| 选项。如果不指定
+    必须包含密度参数，单位为 kg/m^3 或 g/cm^3，见 :option:`-D` 选项。如果不指定
     文件，就从标准输入中读取数据。
 
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     设置 *z* 轴向上为正方向 [默认朝下为正]
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *density*
     设置一个固定的相对密度 *density* ，该设置将覆盖文件中的密度设置，单位
     为 kg/m^3 或 g/cm^3
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **f**\|\ **n**\ [*lat*]\|\ **v**
     指定要计算哪种异常。
@@ -72,26 +74,26 @@ talwani2d
 
     - **v** 垂直梯度重力异常
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [**h**]\ [**v**]
     设置距离单位。**h** 表明水平距离单位为 km [m]。**z** 表明垂直距离单位为
     km [m]
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *trackfile*
-    设置计算异常值的点的位置。当使用该选项时，禁用 **-T** 选项。计算结果将输
+    设置计算异常值的点的位置。当使用该选项时，禁用 :option:`-T` 选项。计算结果将输
     出到标准输出。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list*
     指定一个等距的点列，在这些位置计算异常值。见 `生成一维数组`_
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *level*\ [*ymin*\ /*ymax*]
     设置水准面常数 *level* ，默认为 0。对于重力异常 **-Ff** ，可以追加 2.5 维
@@ -139,11 +141,9 @@ talwani2d
 注意事项
 --------
 
-The 2-D geoid anomaly is a logarithmic potential and thus has no natural reference
-level. We simply remove the most negative (if density contrast is positive) or
-positive (if density contrast is negative) computed value from all values, rendering
-the entire anomaly positive (or negative). You can use :doc:`math` to change the
-zero level to suit your needs
+二维大地水准面异常（geoid anomaly）属于对数位（logarithmic potential），因此没有天然的参考基准面。
+我们只需从所有计算值中减去最小负值（如果密度对比为正）或最大正值（如果密度对比为负），从而使整个异常变为正值（或负值）。
+您可以利用 :doc:`math` 根据需要更改零水平基准。
 
 参考文献
 --------

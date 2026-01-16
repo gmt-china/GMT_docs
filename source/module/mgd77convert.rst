@@ -2,7 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77convert
-.. include:: common_SYN_OPTs.rst_
+.. program:: mgd77convert
 
 mgd77convert
 ============
@@ -15,20 +15,25 @@ mgd77convert
 语法
 ----
 
-**gmt mgd77convert** *GEODAS-ids* |-F|\ **a**\|\ **c**\|\ **m**\|\ **t**
-|-T|\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
-[ |-C| ]
-[ |-D| ]
-[ |-L|\ [**w**][**e**][**+l**] ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+**gmt mgd77convert**
+*GEODAS-ids*
+:option:`-F`\ **a**\|\ **c**\|\ **m**\|\ **t**
+:option:`-T`\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
+[ :option:`-C` ]
+[ :option:`-D` ]
+[ :option:`-L`\ [**w**][**e**][**+l**] ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
 
-.. _-F:
+必须选项
+--------
+
+.. option:: -F
 
 **-Fa**\|\ **c**\|\ **m**\|\ **t**
     指定输入文件格式:
@@ -43,7 +48,7 @@ mgd77convert
 
     使用 **-FC** 可以从 MGD77+ 文件中恢复原始的 MGD77 设置 [默认应用 E77 改正]
 
-.. _-T:
+.. option:: -T
 
 **-T**\ **a**\|\ **c**\|\ **m**\|\ **t**\ [**+f**]
     指定输出文件格式:
@@ -61,21 +66,21 @@ mgd77convert
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**
-    将 NCEI 的 two-file 数据集中的 \*.h77，\*.a77 转换为单文件的 \*.mgd77。除 |-V| 外，不能和
+    将 NCEI 的 two-file 数据集中的 \*.h77，\*.a77 转换为单文件的 \*.mgd77。除 :option:`-V` 外，不能和
     其他选项同时使用。输入文件为一个或多个 \*.h77，\*.a77 或者文件名（可不带后缀）。
 
-.. _-D:
+.. option:: -D
 
 **-D**
     默认情况下，MGD77+ netCDF 文件中使用的存储类型远超过 ASCII MGD77 格式的精度。对于
     **faa**，**eot**，**mag**，**diur** 和 **msd** 5 种观测，使用 2 字节整数，表明在
     MGD77 格式中精度为 0.1 mGal，0.1 nTesla 和 1 m。在某些情况下，这些观测可能使用 4 字节
-    整数，对应的精度为 10 nGal、10 fTesla 和 0.01 mm。该 |-D| 选项即表明观测为 4 字节整数。
+    整数，对应的精度为 10 nGal、10 fTesla 和 0.01 mm。该 :option:`-D` 选项即表明观测为 4 字节整数。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [**w**][**e**][**+l**]
     设置 verification 报告的级别以及输出的位置，默认不设置该报告，如果设置，默认位置为

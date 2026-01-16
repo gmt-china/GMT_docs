@@ -2,7 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77path
-.. include:: common_SYN_OPTs.rst_
+.. program:: mgd77path
 
 mgd77path
 =========
@@ -16,12 +16,15 @@ mgd77path
 语法
 ----
 
-**gmt mgd77path** *GEODAS-ids* [ |-A|\ [**c**] ] [ |-D| ]
-[ |-I|\ **a\|c\|m\|t** ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+**gmt mgd77path**
+*GEODAS-ids*
+[ :option:`-A`\ [**c**] ]
+[ :option:`-D` ]
+[ :option:`-I`\ **a\|c\|m\|t** ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
@@ -29,17 +32,17 @@ mgd77path
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**c**]
     显示每条测线的完整路径，**c** 选项将会只列出 ID
 
-.. _-D:
+.. option:: -D
 
 **-D**
     显示当前在搜索中的路径
 
-.. _-I:
+.. option:: -I
 
 **-I**\ **a\|c\|m\|t**
     忽略某些数据格式的文件。**a\|c\|m\|t** 分别表示忽略 MGD77 ASCII、MGD77+ NetCDF、
@@ -76,7 +79,7 @@ MDG77 格式见
 :doc:`mgd77convert`,
 :doc:`mgd77header`,
 :doc:`mgd77list`,
-:doc:`mgd77magref`
+:doc:`mgd77magref`，
 :doc:`mgd77manage`,
 :doc:`mgd77info`,
 :doc:`mgd77track`,

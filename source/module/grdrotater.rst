@@ -2,12 +2,12 @@
 :date: 2025-10-18
 
 .. index:: ! grdrotater
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdrotater
 
 grdrotater
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/grdrotater`  
+:官方文档: :doc:`gmt:supplements/spotter/grdrotater`
 :简介: 地理网格的有限旋转重构
 
 **grdrotater** 读取一个地理网格，并根据给定的总重建旋转参数对其进行重建。
@@ -18,33 +18,36 @@ grdrotater
 语法
 --------
 
-**gmt grdrotater** *ingrid*
-|-E|\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
-|-G|\ *outgrid*
-[ |-A|\ *region* ]
-[ |-D|\ *rotoutline* ]
-[ |-F|\ *polygonfile* ]
-[ |-N| ]
-[ |SYN_OPT-R| ]
-[ |-S| ]
-[ |-T|\ *ages* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt grdrotater**
+*ingrid*
+:option:`-E`\ *rot_file*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-G`\ *outgrid*
+[ :option:`-A`\ *region* ]
+[ :option:`-D`\ *rotoutline* ]
+[ :option:`-F`\ *polygonfile* ]
+[ :option:`-N` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S` ]
+[ :option:`-T`\ *ages* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
-
-必选选项
-------------------
+输入数据
+--------
 
 .. include:: explain_grd_in.rst_
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
@@ -53,49 +56,49 @@ grdrotater
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *region*
     直接指定旋转后网格的区域范围。默认情况下，输出网格的范围与旋转后的区域完全匹配；
-    使用 |-A| 可将输出范围裁剪或扩展为指定的 *region*。
+    使用 :option:`-A` 可将输出范围裁剪或扩展为指定的 *region*。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *rotoutline*
     指定输出旋转后网格轮廓线的文件名。它表示网格在指定时间重建后的轮廓。
     若涉及多个重建时间，则 *rotoutline* 必须包含 C 格式化说明符来输出时间。
-    若仅指定一个时间且未使用 |-D|，则轮廓将输出到标准输出（除非使用 |-N|）。
+    若仅指定一个时间且未使用 :option:`-D`，则轮廓将输出到标准输出（除非使用 :option:`-N`）。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *polygonfile*
     指定一个闭合的多段线多边形文件，定义网格内需要投影的区域
     [默认投影整个网格]。
-    **注意**：如果同时给出 |-F| 和 |-R|，则以 |-R| 为准。
+    **注意**：如果同时给出 :option:`-F` 和 :option:`-R`，则以 :option:`-R` 为准。
 
-.. _-N:
+.. option:: -N
 
 **-N**
-    不输出旋转后的多边形轮廓线 [默认将其写入标准输出，或通过 |-D| 写入文件]。
+    不输出旋转后的多边形轮廓线 [默认将其写入标准输出，或通过 :option:`-D` 写入文件]。
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**
-    仅旋转多边形轮廓线，而不旋转网格（若未提供网格文件，则必须使用 |-F|）。
+    仅旋转多边形轮廓线，而不旋转网格（若未提供网格文件，则必须使用 :option:`-F`）。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *ages*
     设置所需的重建时间：
-    - 对于单个时间，直接追加数值；
-    - 对于等间隔的时间范围，格式为 **-T**\ *start*\ /\ *stop*\ /\ *inc*；
-    若希望 *inc* 表示“点数”，请追加 **+n**。
-    - 若为不等间距时间序列，请通过文件第一列提供，例如 **-T**\ *agefile*。
-    若未指定 |-T| 且 |-E| 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
 
+    - 对于单个时间，直接追加数值。
+    - 对于等间隔的时间范围，格式为 :option:`-T`\ *start*\ /\ *stop*\ /\ *inc*。
+      若希望 *inc* 表示“点数”，请追加 **+n**。
+    - 若为不等间距时间序列，请通过文件第一列提供，例如 :option:`-T`\ *agefile*。
+
+    若未指定 :option:`-T` 且 :option:`-E` 指定了旋转文件，则默认使用旋转文件中的时间作为重建时间。
 
 .. include:: explain_-V.rst_
 
@@ -106,6 +109,8 @@ grdrotater
 .. include:: explain_-d.rst_
 
 .. include:: explain_-f.rst_
+
+.. include:: explain_-g.rst_
 
 .. include:: explain_-h.rst_
 
@@ -151,7 +156,7 @@ grdrotater
     gmt grdmath 1 rot_gridA.nc ISNAN SUB 1 rot_gridB.nc ISNAN SUB 2 EQ = overlap.nc
 
 网格 *overlap.nc* 在重叠区域的值为 1，其他区域为 0。
-可以将其用作掩码，或通过 :doc:`grdcontour` |-D| 提取轮廓多边形。
+可以将其用作掩码，或通过 :doc:`grdcontour` **-D** 提取轮廓多边形。
 
 备注
 --------

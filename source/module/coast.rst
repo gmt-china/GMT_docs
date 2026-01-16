@@ -1,5 +1,8 @@
+:author: 田冬冬, 周茂
+:date: 2025-12-30
+
 .. index:: ! coast
-.. include:: common_SYN_OPTs.rst_
+.. program:: coast
 
 coast
 =====
@@ -14,39 +17,43 @@ coast
 语法
 ----
 
-**gmt coast** |-J|\ *parameters*
-|SYN_OPT-R|
-[ |SYN_OPT-Area| ]
-[ |SYN_OPT-B| ]
-[ |-C|\ *fill*\ [**+l**\|\ **+r**] ]
-[ |-D|\ *resolution*\ [**+f**] ]
-[ |-E|\ *dcw* ]
-[ |-F|\ *box* ]
-[ |-G|\ [*fill*] ]
-[ |-I|\ *river*\ [/\ *pen*] ]
-[ |-J|\ **z**\|\ **Z**\ *parameters* ]
-[ |-L|\ *scalebar* ]
-[ |-M| ]
-[ |-N|\ *border*\ [/*pen*] ]
-[ |-Q| ]
-[ |-S|\ [*fill*] ]
-[ |-T|\ *rose* ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*level*/]\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
+**gmt coast**
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
+[ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-C`\ *fill*\ [**+l**\|\ **+r**] ]
+[ :option:`-D`\ *resolution*\ [**+f**] ]
+[ :option:`-E`\ *dcw* ]
+[ :option:`-F`\ *box* ]
+[ :option:`-G`\ [*fill*] ]
+[ :option:`-I`\ *river*\ [/\ *pen*] ]
+[ :option:`-L`\ *scalebar* ]
+[ :option:`-M` ]
+[ :option:`-N`\ *border*\ [/*pen*] ]
+[ :option:`-Q` ]
+[ :option:`-S`\ [*fill*] ]
+[ :option:`-T`\ *rose* ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*level*/]\ *pen* ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+
+必须选项
 --------
 
 .. include:: explain_-J.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Jz.rst_
 
 .. include:: explain_-Rz.rst_
 
@@ -57,15 +64,15 @@ coast
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *fill*\ [**+l**\|\ **+r**]
     设置湖泊与河流湖的颜色。
 
-    默认情况下，湖泊与河流湖会被当做wet区域，直接使用 |-S| 指定的填充值。
+    默认情况下，湖泊与河流湖会被当做wet区域，直接使用 :option:`-S` 指定的填充值。
     使用 **+l** 或 **+r** 可以为湖泊或河流湖单独指定颜色。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *resolution*\ [**+f**]
     选择海岸线数据精度。
@@ -79,13 +86,13 @@ coast
     默认情况下，若找不到指定精度的海岸线数据，程序会自动报错退出。该选项中
     加上 **+f** 则命令在找不到当前指定的精度数据时，自动寻找更低精度的数据。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *code1,code2,...*\ [**+l**\|\ **L**][**+g**\ *fill*][**+p**\ *pen*][**+z**]
     利用DCW数据绘制或导出行政区划边界（洲界、国界、省界）
 
     GMT自带了DCW（Digital Chart of World）数据，即全球的行政区划数据。
-    其包含了全球各国国界和省界数据。该数据独立于GSHHG数据，因而 |-A| 和 |-D|
+    其包含了全球各国国界和省界数据。该数据独立于GSHHG数据，因而 :option:`-A` 和 :option:`-D`
     选项对该数据无效。关于DCW数据及其用法的详细介绍见 :doc:`/dataset/dcw/index`。
 
     通过指定一个或多个以逗号分隔的区域代码 *code* 即可指定一个或多个行政区域。
@@ -108,34 +115,34 @@ coast
     - **+p**\ *pen* 表示绘制多边形轮廓 [默认无轮廓]
     - **+g**\ *fill* 表示设置多边形的填充色 [默认无填充色]
 
-    若想要不同的区域有不同的画笔或填充属性，则需要多次使用 |-E| 选项，每次
+    若想要不同的区域有不同的画笔或填充属性，则需要多次使用 :option:`-E` 选项，每次
     指定不同的区域以及不同的画笔或填充属性。
 
-    若使用了 |-E| 但不指定 |-J| 和 |-M| 则会以 **-R**\ *w/e/s/n* 的
+    若使用了 :option:`-E` 但不指定 :option:`-J` 和 :option:`-M` 则会以 :option:`-R`\ *w/e/s/n* 的
     形式输出对应行政区域的区域范围。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**l**\|\ **t**][**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]]
     控制比例尺和玫瑰图的背景边框
 
-    若只使用 |-F| 而不使用其它子选项，则会在比例尺或方向玫瑰的周围绘制矩形边框。
+    若只使用 :option:`-F` 而不使用其它子选项，则会在比例尺或方向玫瑰的周围绘制矩形边框。
     下面简单介绍各子选项，详细用法见 :doc:`/basis/embellishment`
 
     .. include:: explain_-F_box.rst_
 
     该选项默认会同时控制比例尺和方向玫瑰的背景边框。
-    加上 **l**\|\ **t** 则表示只控制 |-L| 或 |-T| 选项绘制的特征。
+    加上 **l**\|\ **t** 则表示只控制 :option:`-L` 或 :option:`-T` 选项绘制的特征。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ [*fill*]
     设置dry区域的填充色或裁剪dry区域
 
-    **-G**\ *fill* 设置dry区域（一般指陆地）的填充色。
+    :option:`-G`\ *fill* 设置dry区域（一般指陆地）的填充色。
     若不指定 *fill* 则会将dry区域裁剪出来，使得接下来的绘图只有dry区域内的才会被绘制。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *river*\ [/*pen*]
     绘制河流。
@@ -165,45 +172,45 @@ coast
 
 .. include:: explain_-L_scale.rst_
 
-.. _-M:
+.. option:: -M
 
 **-M**
     将边界数据以多段ASCII表或二进制表的形式导出到标准输出
 
     使用该选项，则只导出数据而不绘图。
-    该选项需要与 |-E|, |-I|, |-N| 或 |-W| 选项一起使用。
+    该选项需要与 :option:`-E`, :option:`-I`, :option:`-N` 或 :option:`-W` 选项一起使用。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *border*\ [/*pen*]
     绘制政治边界。
 
-    该选项在某些地方与 |-E| 选项有重叠。边界类型 *border* 可以取：
+    该选项在某些地方与 :option:`-E` 选项有重叠。边界类型 *border* 可以取：
 
     - ``1`` ：国界
     - ``2`` ：州界；（目前只有美国、加拿大、澳大利亚以及南美各国的数据）
-    - ``3`` ：Marine boundaries
+    - ``3`` ：海洋边界
     - ``a`` ：1-3的全部边界；
 
     *pen* 的默认属性为 **default,black,solid**。该选项可重复多次
     使用，以指定不同级别边界的不同画笔属性。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     关闭区域裁剪。
 
-    使用 |-G| 和 |-S| 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令
+    使用 :option:`-G` 和 :option:`-S` 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令
     中只有在裁剪区域内的部分才会被绘制。在绘图结束后，需要关闭裁剪，就需要再次调用
-    **coast**，并加上 |-Q| 选项。若在开启裁剪后使用了 |-X| 和 |-Y| 选项，
-    则在关闭时也要记得使用 |-X| 和 |-Y|。
+    **coast**，并加上 :option:`-Q` 选项。若在开启裁剪后使用了 :option:`-X` 和 :option:`-Y` 选项，
+    则在关闭时也要记得使用 :option:`-X` 和 :option:`-Y`。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [*fill*]
     设置wet区域的填充色或裁剪wet区域
 
-    **-S**\ *fill* 设置wet区域（一般指海洋或湖泊）的填充色。
+    :option:`-S`\ *fill* 设置wet区域（一般指海洋或湖泊）的填充色。
     若不指定 *fill* 则将wet区域裁剪出来，使得接下来的绘图只有wet区域内的才会被绘制。
 
 .. include:: explain_-T_rose.rst_
@@ -212,7 +219,7 @@ coast
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [*level*/]\ *pen*
     绘制岸线（shoreline）
@@ -229,16 +236,20 @@ coast
 
     使用时需要注意：
 
-    - 不使用 |-W| 选项，则不绘制任何shore
-    - 使用 |-W|，给定画笔属性 *pen*，但不给出 *level*，则绘制
+    - 不使用 :option:`-W` 选项，则不绘制任何shore
+    - 使用 :option:`-W`，给定画笔属性 *pen*，但不给出 *level*，则绘制
       四个level的shore
-    - 在同一个命令中可以多次使用 |-W|，以指定不同 *level* 的shore的画笔属性
-    - |-W| 选项中 *level* 是可选的，而 *pen* 是必须的！因而 **-W2**
+    - 在同一个命令中可以多次使用 :option:`-W`，以指定不同 *level* 的shore的画笔属性
+    - :option:`-W` 选项中 *level* 是可选的，而 *pen* 是必须的！因而 **-W2**
       会被解释为所有level的画笔属性，而不是level 2
 
 .. include:: explain_-XY.rst_
 
 .. include:: explain_-bo.rst_
+
+.. include:: explain_-d.rst_
+
+.. include:: explain_-g.rst_
 
 .. include:: explain_perspective.rst_
 

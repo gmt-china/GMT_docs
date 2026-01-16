@@ -1,5 +1,8 @@
+:author: 田冬冬, 王亮, 陈箫翰
+:date: 2025-05-08
+
 .. index:: ! clear
-.. include:: common_SYN_OPTs.rst_
+.. program:: clear
 
 clear
 =====
@@ -12,7 +15,7 @@ clear
 
 **gmt clear**
 **all** | **cache** | **data**\ [=\ *planet*] | **sessions** | **settings**
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 可选选项
 --------
@@ -76,4 +79,3 @@ clear
 :doc:`figure`,
 :doc:`inset`,
 :doc:`subplot`,
-:doc:`gmt`

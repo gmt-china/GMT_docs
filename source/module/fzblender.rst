@@ -2,7 +2,7 @@
 :date: 2025-10-12
 
 .. index:: ! fzblender
-.. include:: common_SYN_OPTs.rst_
+.. program:: fzblender
 
 fzblender
 =============
@@ -14,7 +14,7 @@ fzblender
 的一部分。(简称 `GSFML <https://www.soest.hawaii.edu/PT/GSFML>`_ )。
 它读取由 :doc:`fzanalyzer` 生成的分析文件，并可选择沿轨迹对结果进行滤波。
 然后，基于指定的信号代码， **fzblender** 将生成一个最优断裂带（FZ）轨迹，
-该轨迹是用户原始数字化轨迹与一个或多个由 :doc:`fzanalyzer` 
+该轨迹是用户原始数字化轨迹与一个或多个由 :doc:`fzanalyzer`
 得到的模型轨迹的加权混合。混合过程依据模型轨迹的质量指标：
 
 * 当质量指标高时，倾向于使用模型轨迹；
@@ -22,69 +22,69 @@ fzblender
 * 中间值则产生加权混合效果。
 
 分析结果通常从 :doc:`fzanalyzer` 生成的文件 *prefix*\_analysis.txt 中读取；
-混合结果将写入文件 *prefix*\_blend.txt。如果提供了 |-D| 选项，
+混合结果将写入文件 *prefix*\_blend.txt。如果提供了 :option:`-D` 选项，
 中间的滤波分析文件还可以写入 *prefix*\_filtered.txt。
 
 语法
 --------
 
-**gmt fzblender** [ |-D| ]
-[ |-E|\ *sfilter* ]
-[ |-F|\ *pfilter* ]
-[ |-I|\ *FZid* ] 
-[ |-Q|\ *q_min*/*q_max* ]
-[ |-S|\ **b**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*] ] 
-[ |-T|\ *prefix* ]
-[ |SYN_OPT-V| ]
-[ |-Z|\ *acut*/*vcut*/*fcut*/*wcut* ]
+**gmt fzblender**
+[ :option:`-D` ]
+[ :option:`-E`\ *sfilter* ]
+[ :option:`-F`\ *pfilter* ]
+[ :option:`-I`\ *FZid* ]
+[ :option:`-Q`\ *q_min*/*q_max* ]
+[ :option:`-S`\ **b**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*] ]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-Z`\ *acut*/*vcut*/*fcut*/*wcut* ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
 可选选项
 ------------------
 
-.. _-D:
+.. option:: -D
 
 **-D**
     不删除滤波后的输出文件，而是将其保存为 *prefix*\_filtered.txt。
     [默认情况下，我们会删除这些中间文件]。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *sfilter*
     在主滤波完成后应用二次滤波。若先应用稳健滤波移除大尺度异常值，
     可能会在短尺度产生噪声，此时二次滤波会很有用。
-    有关滤波器的指定方法，请参见 |-F|。
+    有关滤波器的指定方法，请参见 :option:`-F`。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *pfilter*
     设置沿轨迹的主滤波器。可选择卷积或非卷积滤波器。
     附加滤波器指令后跟完整（6-sigma） *宽度*。可用卷积滤波器包括：
 
-    - **b**：Boxcar：所有权重相等。  
-    - **c**：Cosine Arch：权重沿余弦拱曲线分布。  
-    - **g**：Gaussian：权重按高斯函数给出。  
+    - **b**：Boxcar：所有权重相等。
+    - **c**：Cosine Arch：权重沿余弦拱曲线分布。
+    - **g**：Gaussian：权重按高斯函数给出。
 
-    非卷积滤波器包括：  
+    非卷积滤波器包括：
 
-    - **m**：中值（Median）：返回中值。  
+    - **m**：中值（Median）：返回中值。
     - **p**：最大似然概率（模式估计器）：返回众数。如果存在多个众数，
-        则返回它们的平均值。可在滤波宽度后附加 **+l** 或 **+u**，分别返回最低或最高的众数值。  
-    - **l**：下限（Lower）：返回所有值的最小值。  
-    - **L**：正下限（Lower）：仅返回所有正值中的最小值。  
-    - **u**：上限（Upper）：返回最大值。  
-    - **U**：负上限（Upper）：仅返回所有负值中的最大值。  
+        则返回它们的平均值。可在滤波宽度后附加 **+l** 或 **+u**，分别返回最低或最高的众数值。
+    - **l**：下限（Lower）：返回所有值的最小值。
+    - **L**：正下限（Lower）：仅返回所有正值中的最小值。
+    - **u**：上限（Upper）：返回最大值。
+    - **U**：负上限（Upper）：仅返回所有负值中的最大值。
 
     对于 **L** 或 **U**，如果没有数据通过初始符号测试，则滤波器返回 0.0。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *FZid*
     默认情况下，会分析所有 FZ 的横剖面。
-    你也可以使用 |-I| 指定特定的 *FZid*（第一个 *FZid* 为 0）。
+    你也可以使用 :option:`-I` 指定特定的 *FZid*（第一个 *FZid* 为 0）。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *q_min*/*q_max*
     设置在混合结果中使用的质量指数范围。质量指数 *q(d)* 在 *q_min* （0 或差）
@@ -92,10 +92,10 @@ fzblender
     分配给模型 FZ 轨迹的质量权重为*w_q(d)* = (*q(d)* - *q_min*) / (*q_max* - *q_min*)，
     若 *w_q(d)* > *q_max* 则 *w_q(d)* = 1，
     若 *w_q(d)* < *q_min* 则 *w_q(d)* = 0。
-    可通过 |-Q| 改变此权重分配。分配给数字化 FZ 轨迹的质量权重为
-    *w_q(d)* = 1 - mean{模型质量权重}（参见 |-S|）。质量指数的计算请参见 |-Z|。
+    可通过 :option:`-Q` 改变此权重分配。分配给数字化 FZ 轨迹的质量权重为
+    *w_q(d)* = 1 - mean{模型质量权重}（参见 :option:`-S`）。质量指数的计算请参见 :option:`-Z`。
 
-.. _-S:
+.. option:: -S
 
 **-Sb**\|\ **d**\|\ **e**\|\ **t**\|\ **u**\ [*weight*]
     指定希望混合的模型和数据轨迹及其相对自定义权重 [默认均为 1]。
@@ -105,27 +105,27 @@ fzblender
     最终混合是加权平均，同时考虑质量指数和自定义权重（如指定）。选择以下指令：
 
     - **b**：最优槽/边缘模型混合的槽位置。
-        使用“Atlantic”、“Pacific”和“Compression”风格的综合模型对数据进行最佳拟合。  
-    - **d**：沿轨迹的经验槽位置。  
-    - **e**：最优槽/边缘模型混合的最大斜率位置。  
-    - **t**：仅使用“Atlantic”风格槽模型的最佳拟合。  
-    - **u**：用户的原始数字化轨迹。  
+        使用“Atlantic”、“Pacific”和“Compression”风格的综合模型对数据进行最佳拟合。
+    - **d**：沿轨迹的经验槽位置。
+    - **e**：最优槽/边缘模型混合的最大斜率位置。
+    - **t**：仅使用“Atlantic”风格槽模型的最佳拟合。
+    - **u**：用户的原始数字化轨迹。
 
     除了混合后的 FZ 位置，我们还输出 FZ 宽度估计以及 FZ 两侧 1σ 边界轨迹。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *prefix*
     设置所有输出文件的文件名前缀 [fztrack]。
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *acut*/*vcut*/*fcut*/*wcut*
     我们将尝试为每个模型分配一个单一质量指数 *Q*，以总结模型拟合的优劣。
     该分配依赖四个需经验确定的阈值：
-    
+
     - *a_cut*：交叉剖面模型的最小峰谷振幅（单位 Eotvos）[25]
     - *v_cut*：模型提供的最小方差降低（%）[50]
     - *f_cut*：模型计算的最小 F 统计量 [50]
@@ -172,12 +172,12 @@ fzblender
 由于我们对的数据列可能包含明显的趋势（例如经度随沿线距离的变化），
 因此在滤波前会先去除线性趋势，滤波后再恢复趋势。
 然而，在解释靠近 FZ 端点的混合结果时应保持谨慎。
-你可以通过使用 |-D| 选项保存滤波后的剖面，更直接地检查滤波效果。
+你可以通过使用 :option:`-D` 选项保存滤波后的剖面，更直接地检查滤波效果。
 
 注意事项
 --------
 
-需要注意的是，在 |-S| 的各指令中，**e** 与众不同，
+需要注意的是，在 :option:`-S` 的各指令中，**e** 与众不同，
 它反映了基于理论预测的 FZ 位置估计，即 FZ 横切可能对应于 VGG 最陡坡度的位置。
 因此，该位置会与槽中心偏移几公里（除非混合主要为 “Atlantic” 风格），
 将其与其他指令组合使用通常效果不佳。最好单独使用，并配合滤波。
@@ -211,7 +211,7 @@ fzblender
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
-A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. Geophys. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem. Geophys.
 Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

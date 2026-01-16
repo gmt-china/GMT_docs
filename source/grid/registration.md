@@ -1,3 +1,8 @@
+---
+author: 田冬冬
+date: 2025-12-02
+---
+
 (grid-registration)=
 
 # 网格配准
@@ -6,7 +11,8 @@ GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线
 $x = x_{min}, x_{min} + x_{inc}, x_{min} + 2 \cdot x_{inc}, \ldots, x_{max}$
 和 $y = y_{min}, y_{min} + y_{inc}, y_{min} + 2 \cdot y_{inc}, \ldots, y_{max}$ 处。
 而节点的位置有两种选择，即网格线配准（gridline registration）和像素配准（pixel registration）。
-GMT默认使用的是网格线配准方式。
+GMT 默认使用的是网格线配准方式。
+使用 {doc}`/option/nodereg` 则可以显式指定配准方式。
 
 :::{figure} https://docs.generic-mapping-tools.org/latest/_images/GMT_registration.png
 :align: center
@@ -63,7 +69,7 @@ GMT提供了多种方式实现像素配准与网格配准的互相转换。
 一种是使用 {doc}`/module/grdedit` **-T** 选项将网格区域调整半个网格间隔并修改
 配准方式，该方法不改变原有数据点，但改变了网格区域。
 
-另一种方式是使用 {doc}`gmt:grdsample` **-T** 对原始数据做重采样。这种方法保留了
+另一种方式是使用 {doc}`/module/grdsample` **-T** 对原始数据做重采样。这种方法保留了
 网格的区域范围，但在重采样时会丢失数据中的高频信息。
 
 下图展示了为何在重采样过程中会丢失高频信息。图a中展示了一个沿着X轴的剖面。

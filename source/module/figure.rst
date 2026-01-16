@@ -1,5 +1,8 @@
+:author: 田冬冬, 王亮
+:date: 2022-08-30
+
 .. index:: ! figure
-.. include:: common_SYN_OPTs.rst_
+.. program:: figure
 
 figure
 ======
@@ -13,7 +16,7 @@ figure
 该模块必须在你开始向当前图件绘图之前执行，且每次调用 **figure** 模块都会开启一张新的图件。
 你也可以再次使用 **figure** 模块在多个图件之间来回切换，但此时不能再指定 *formats*
 或 *options* 等选项。一个会话中的每张图都有各自的历史记录和配置参数，因而不同图之间的
-**-R** 和 |-J| 选项等信息不会出现错乱。
+**-R** 和 **-J** 选项等信息不会出现错乱。
 
 语法
 ----
@@ -22,7 +25,7 @@ figure
 *prefix*
 [ *formats* ]
 [ *options* ]
-[ |SYN_OPT-V| ]
+[ :option:`-V`\ [*level*] ]
 
 必须选项
 --------
@@ -62,7 +65,7 @@ figure
     指定的图片格式。此处可以设置要传递给模块 :doc:`psconvert` 的选项，
     多个选项之间用逗号分隔。
 
-    默认值为 **A**，表示将 |-A| 选项传给 :doc:`psconvert`。
+    默认值为 `A`，表示将 **-A** 选项传给 :doc:`psconvert`。
 
     其他可选的选项包括：
 
@@ -149,4 +152,3 @@ GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，G
 :doc:`end`,
 :doc:`inset`,
 :doc:`subplot`,
-:doc:`gmt`

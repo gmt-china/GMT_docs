@@ -2,7 +2,7 @@
 :date: 2025-10-13
 
 .. index:: ! fzinformer
-.. include:: common_SYN_OPTs.rst_
+.. program:: fzinformer
 
 fzinformer
 =============
@@ -18,67 +18,67 @@ fzinformer
 语法
 --------
 
-**fzinformer** [ |-D| ]
-[ |-F|\ *max* ]
-[ |-I|\ *profile* ] 
-[ |-N|\ *max* ] 
-[ |-S|\ *max* ]
-[ |-T|\ *prefix* ]
-[ |-W|\ *max* ]
-[ |SYN_OPT-V| ]
+**fzinformer**
+[ :option:`-D` ]
+[ :option:`-F`\ *max* ]
+[ :option:`-I`\ *profile* ]
+[ :option:`-N`\ *max* ]
+[ :option:`-S`\ *max* ]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-W`\ *max* ]
+[ :option:`-V`\ [*level*] ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
 可选选项
 ------------------
 
-.. _-D:
+.. option:: -D
 
 **-D**
      使用 :doc:`fzblender` 的过滤输出结果，而不是原始分析文件来生成绘图。
      此选项要求在运行 :doc:`fzblender` 时使用 **-D** 选项。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *max*
      设置绘图中 *F*-统计量的最大幅值 [10000]。
      此面板使用对数坐标轴；其他面板均为线性坐标。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *profile*
      默认情况下，我们将所有的横断面叠加绘制。
      若要仅选择单个剖面，请附加该剖面的序号，其中 0 表示第一个剖面。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *max*
      设置绘图中 VGG 幅值的最大范围（单位：Eotvos）[200]。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *max*
      设置断裂带（FZ）位移的最大（±）半范围（单位：km）[25]。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *prefix*
      设置在运行 :doc:`fzanalyzer` 和 :doc:`fzblender` 时使用的文件名前缀[默认值为 fztrack]。
-     此处使用的文件为 *prefix*\ _analysis.txt（若使用 |-D|，则为 *prefix*\ _filtered.txt）以及 *prefix*\ _blend.txt。
+     此处使用的文件为 *prefix*\ _analysis.txt（若使用 :option:`-D`，则为 *prefix*\ _filtered.txt）以及 *prefix*\ _blend.txt。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *max*
      设置断裂带宽度的最大范围（单位：km）[50]。
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *acut*/*vcut*/*fcut*/*wcut*
      我们将尝试为每个模型分配一个单一质量指数 *Q*，以总结模型拟合的优劣。
     该分配依赖四个需经验确定的阈值：
-    
+
     - *a_cut*：交叉剖面模型的最小峰谷振幅（单位 Eotvos）[25]
     - *v_cut*：模型提供的最小方差降低（%）[50]
     - *f_cut*：模型计算的最小 F 统计量 [50]
@@ -140,17 +140,17 @@ fzinformer
 相关模块
 --------
 
-:doc:`fzanalyzer`, 
-:doc:`fzblender`, 
-:doc:`mlconverter`, 
-:doc:`fzmapper`, 
-:doc:`fzmodeler`, 
+:doc:`fzanalyzer`,
+:doc:`fzblender`,
+:doc:`mlconverter`,
+:doc:`fzmapper`,
+:doc:`fzmodeler`,
 :doc:`fzprofiler`
 
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
-A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. Geophys. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem. Geophys.
 Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

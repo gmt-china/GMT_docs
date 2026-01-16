@@ -1,5 +1,8 @@
+:author: 田冬冬, 周茂
+:date: 2024-02-12
+
 .. index:: ! grdlandmask
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdlandmask
 
 grdlandmask
 ===========
@@ -15,21 +18,22 @@ grdlandmask
 ----
 
 **gmt grdlandmask**
-|-G|\ *mask_grd_file*
-|SYN_OPT-I|
-|SYN_OPT-R|
-[ |SYN_OPT-Area| ]
-[ |-D|\ *resolution*\ [**+f**] ]
-[ |-E|\ [*bordervalues*] ]
-[ |-N|\ *maskvalues* ]
-[ |-V|\ [*level*] ] [ |SYN_OPT-r| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT--| ]
+:option:`-G`\ *mask_grd_file*
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+[ :option:`-A`\ *min\_area*\ [/*min\_level*/*max\_level*][**+a**\ [**g**\|\ **i**][**s**\|\ **S**]][**+l**\|\ **r**][**+p**\ *percent*] ]
+[ :option:`-D`\ *resolution*\ [**+f**] ]
+[ :option:`-E`\ [*bordervalues*] ]
+[ :option:`-N`\ *maskvalues* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+必须选项
 --------
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *mask_grd_file*
     生成的掩膜网格文件的文件名
@@ -43,7 +47,7 @@ grdlandmask
 
 .. include:: explain_-A.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *resolution*\ [**+f**]
     选择海岸线数据精度。
@@ -58,7 +62,7 @@ grdlandmask
     加上 **+f** 则命令在找不到当前指定的精度数据时，自动寻找更低精度的数据。
     选项海岸线数据的精度，见 :doc:`coast` 中的介绍。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [*bordervalues*]
     恰好落在海岸线多边形边界上的数据的处理方式。
@@ -66,20 +70,20 @@ grdlandmask
     默认情况下，恰好位于海岸线多边形边界上的节点当作是在多边形的内部，使用该选项
     则会将其认为是在多边形的外部。
 
-    此外，还可以在 |-E| 选项后加上四个值 *cborder/lborder/iborder/pborder* 或
+    此外，还可以在 :option:`-E` 选项后加上四个值 *cborder/lborder/iborder/pborder* 或
     一个值 *bordervalue* （表示四个值具有相同的值），以启用线段追踪模式。
-    在根据 |-N| 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。
+    在根据 :option:`-N` 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。
     例如，海岸线穿过的网格单元值将被修改为 *cborder*；同理，
     岛边界、湖内岛、湖内岛中的小湖边界穿过的网格单元值会被依次修改为
     *lborder*、*iborder*、*pborder* 的值。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *maskvalues*
     设置网格节点的值。可以是数字，也可以是NaN。该选项可以取两种格式：
 
-    - **-N**\ *wet/dry* ：分别为水域和陆地设置不同的值
-    - **-N**\ *ocean/land/lake/island/pond* ：分别为海洋、陆地、湖泊、岛屿、池塘设置不同的值
+    - :option:`-N`\ *wet/dry* ：分别为水域和陆地设置不同的值
+    - :option:`-N`\ *ocean/land/lake/island/pond* ：分别为海洋、陆地、湖泊、岛屿、池塘设置不同的值
 
     默认值为 **0/1/0/1/0** （即 **0/1**），即将水域内的网格设置为0，将陆地内的
     网格设置为1。

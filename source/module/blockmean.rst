@@ -1,17 +1,17 @@
 :author: 周茂
-:date: 2022-10-23
+:date: 2025-12-29
 
 .. index:: ! blockmean
-.. include:: common_SYN_OPTs.rst_
+.. program:: blockmean
 
 blockmean
 =========
 
 :官方文档: :doc:`gmt:blockmean`
-:简介: 使用均值估计对表数据做区块平均 
+:简介: 使用均值估计对表数据做区块平均
 
-**blockmean** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 |-R| 和 |-I| 定义
-的每个区块输出一个平均的位置和值到标准输出。使用 |-G| 可直接输出为网格文件。在进行
+**blockmean** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 :option:`-I` 定义
+的每个区块输出一个平均的位置和值到标准输出。使用 :option:`-G` 可直接输出为网格文件。在进行
 :doc:`surface` 模块时，为避免短波信号混淆，应提前使用 **blockmean** ，:doc:`blockmedian`
 , 或 :doc:`blockmode` 。这些操作在用来抽稀数据或者平均数据时很有用。用户可通过设置
 :term:`FORMAT_FLOAT_OUT` 参数设置输出数据有效数字以避免精度损失。
@@ -19,34 +19,40 @@ blockmean
 语法
 ----
 
-**gmt blockmean** [ *table* ]
-|SYN_OPT-I|
-|SYN_OPT-R|
-[ |-A|\ *fields* ]
-[ |-C| ]
-[ |-E|\ [**+p**\|\ **P**] ]
-[ |-G|\ [*grdfile*] ]
-[ |-S|\ [**m**\|\ **n**\|\ **s**\|\ **w**] ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**i**\|\ **o**][**+s**\|\ **w**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt blockmean**
+[ *table* ]
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+[ :option:`-A`\ *fields* ]
+[ :option:`-C` ]
+[ :option:`-E`\ [**+p**\|\ **P**] ]
+[ :option:`-G`\ [*grdfile*] ]
+[ :option:`-S`\ [**m**\|\ **n**\|\ **s**\|\ **w**] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**i**\|\ **o**][**+s**\|\ **w**] ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+
+输入数据
+------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-I.rst_
 
@@ -55,39 +61,39 @@ blockmean
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *field*
-   指定写入每个网格中的字段，该选项需要 |-G| 选项。其中字段通过字符设置：
+   指定写入每个网格中的字段，该选项需要 :option:`-G` 选项。其中字段通过字符设置：
 
-   - **z** ：z 值的平均值，见 **-S**
+   - **z** ：z 值的平均值，见 :option:`-S`
    - **s** ：标准差
    - **l** ：最小值
    - **h** ：最大值
-   - **w** ：权重，见 **-W**
+   - **w** ：权重，见 :option:`-W`
 
-   **s**\|\ **l**\|\ **h** 需要同时设置 |-E| 选项；默认字符为 **z**
+   **s**\|\ **l**\|\ **h** 需要同时设置 :option:`-E` 选项；默认字符为 **z**
 
-.. _-C:
+.. option:: -C
 
-**-C** 
+**-C**
     使用区块的中心作为输出位置，默认使用平均位置
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [**+p**\|\ **P**]
-    输出额外的报告，见 |-A| 。输出顺序为 *x*,\ *y*,\ *z*,\ *s*,\ *l*,\ *h*\ [,\ *w*] 。
-    使用 |-W| 可设置输出权重。使用 **-E+p**\|\ **P** 时，则表明输入数据中包含不确定度，
+    输出额外的报告，见 :option:`-A` 。输出顺序为 *x*,\ *y*,\ *z*,\ *s*,\ *l*,\ *h*\ [,\ *w*] 。
+    使用 :option:`-W` 可设置输出权重。使用 **-E+p**\|\ **P** 时，则表明输入数据中包含不确定度，
     **s** 将变为加权后的值（**+p**） 或者（**+P**）z 的平均值的传播误差。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *grdfile*
     将结果输出为网格；使用该选项时，将不会输出到标准输出。如果输出网格中的
-    字段超过一个（|-A|），则网格名必须包含 ``%s`` 以便将字段名写入到网格
-    文件名中来区别不同的输出网格。**注** : 使用该选项时不能使用 |-C| 选项。
+    字段超过一个（:option:`-A`），则网格名必须包含 ``%s`` 以便将字段名写入到网格
+    文件名中来区别不同的输出网格。**注** : 使用该选项时不能使用 :option:`-C` 选项。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [**m**\|\ **n**\|\ **s**\|\ **w**]
     - **n** 报告落入每个区块中的输入点的个数
@@ -95,7 +101,7 @@ blockmean
     - **w** 报告落入每个区块中的输入点的权重的和
     - **m** 报告落入每个区块中的输入点的均值 [默认]
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**i**\|\ **o**][**+s**\|\ **w**]
     计算加权结果。加权结果的输入和输出都为 4 列，输入数据的第 4 列为权重，输出
@@ -156,7 +162,7 @@ blockmean
 
 :doc:`blockmedian`,
 :doc:`blockmode`,
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,

@@ -2,7 +2,7 @@
 :date: 2025-10-13
 
 .. index:: ! fzmodeler
-.. include:: common_SYN_OPTs.rst_
+.. program:: fzmodeler
 
 fzmodeler
 =============
@@ -20,9 +20,9 @@ fzmodeler
 
 其中：
 
-* *A* 表示幅值（由 |-N| 控制），
-* *m* 表示不对称性（由 |-A| 控制），
-* *u* 表示压缩率（由 |-C| 控制）。
+* *A* 表示幅值（由 :option:`-N` 控制），
+* *m* 表示不对称性（由 :option:`-A` 控制），
+* *u* 表示压缩率（由 :option:`-C` 控制）。
 
 这里，:math:`G_0` 是高斯函数（Gaussian function），
 :math:`G_1` 和 :math:`G_2` 分别是其前两个水平方向导数。
@@ -43,72 +43,72 @@ fzmodeler
 语法
 --------
 
-**fzmodeler** [ |-A|\ *asymmetry* ]
-[ |-C|\ *compression* ]
-[ |-D|\ *min*/*max*/*inc* ]
-[ |-G|\ *comp* ]
-[ |-M| ]
-[ |-N|\ *amplitude* ]
-[ |-O| ]
-[ |-P| ]
-[ |-S|\ *shift* ]
-[ |-T|\ *prefix* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *width* ]
+**fzmodeler**
+[ :option:`-A`\ *asymmetry* ]
+[ :option:`-C`\ *compression* ]
+[ :option:`-D`\ *min*/*max*/*inc* ]
+[ :option:`-G`\ *comp* ]
+[ :option:`-M` ]
+[ :option:`-N`\ *amplitude* ]
+[ :option:`-O` ]
+[ :option:`-P` ]
+[ :option:`-S`\ *shift* ]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *width* ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *asymmetry*
      设置混合模型中的不对称参数，用于在对称信号（“大西洋”）与不对称信号（“太平洋”）之间进行混合 [默认值 0]。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *compression*
      设置混合中使用的压缩量（范围 0–1）[默认值 0]。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *min*/*max*/*inc*
      设置评估模型的自变量范围。
-     若使用 |-M| 选项，则范围以 km 为单位；否则，*min* 和 *max* 被认为是纬度（单位：度），*inc* 被解析为弧分 [-5/5/2 或 -100/100/2，取决于是否使用 |-M|]。
+     若使用 :option:`-M` 选项，则范围以 km 为单位；否则，*min* 和 *max* 被认为是纬度（单位：度），*inc* 被解析为弧分 [-5/5/2 或 -100/100/2，取决于是否使用 :option:`-M`]。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *comp*
      仅绘制分量 :math:`G_i(x)`，其中 i = 0、1 或 2。
 
-.. _-M:
+.. option:: -M
 
 **-M**
-     当选定 |-D| 范围时，以纬度为单位，增量为弧分 [默认单位为 km]。
+     当选定 :option:`-D` 范围时，以纬度为单位，增量为弧分 [默认单位为 km]。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *amplitude*
      设置混合信号的峰-谷幅值 [默认值 100]。
 
-.. _-O:
+.. option:: -O
 
 **-O**
      不生成独立 PDF 图，而是将 PostScript 叠加层输出到标准输出（stdout），
-     即使用 GMT 经典代码 **-O -K** 选项绘图。需要（或自动设置）|-P|。
+     即使用 GMT 经典代码 **-O -K** 选项绘图。需要（或自动设置）:option:`-P`。
 
-.. _-P:
+.. option:: -P
 
 **-P**
      生成合成断裂带（FZ）剖面的 PDF 图（文件名为 *prefix*.pdf）[默认不绘图]。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *shift*
      设置断裂带位置相对于原点的偏移量（单位：km）[默认值 0]。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *prefix*
      设置模型剖面输出文件的前缀 [默认 fzprof]。
@@ -116,7 +116,7 @@ fzmodeler
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *width*
      设置断裂带的全宽度（单位：km）[默认值 25]。
@@ -146,7 +146,7 @@ fzmodeler
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
-A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. Geophys. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem. Geophys.
 Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

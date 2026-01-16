@@ -1,17 +1,17 @@
 :author: 周茂
-:date: 2022-10-23
+:date: 2025-12-29
 
 .. index:: ! blockmode
-.. include:: common_SYN_OPTs.rst_
+.. program:: blockmode
 
 blockmode
 =========
 
 :官方文档: :doc:`gmt:blockmode`
-:简介: 使用众数估计对表数据做区块处理 
+:简介: 使用众数估计对表数据做区块处理
 
-**blockmode** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 |-R| 和 |-I| 定义
-的每个区块输出一个位置和值的众数估计到标准输出。使用 |-G| 可直接输出为网格文件。在进行
+**blockmode** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 :option:`-I` 定义
+的每个区块输出一个位置和值的众数估计到标准输出。使用 :option:`-G` 可直接输出为网格文件。在进行
 :doc:`surface` 模块时，为避免短波信号混淆，应提前使用 **blockmode** ，:doc:`blockmedian`
 , 或 :doc:`blockmean` 。这些操作在用来抽稀数据或者平均数据时很有用。用户可通过设置
 :term:`FORMAT_FLOAT_OUT` 参数设置输出数据有效数字以避免精度损失。
@@ -19,35 +19,41 @@ blockmode
 语法
 ----
 
-**gmt blockmode** [ *table* ]
-|SYN_OPT-I|
-|SYN_OPT-R|
-[ |-A|\ *fields* ]
-[ |-C| ]
-[ |-D|\ [*width*]\ [**+c**][**+a**\|\ **l**\|\ **h** ]]
-[ |-E|\ [**r**\|\ **s**\ [**+l**\|\ **h**]] ]
-[ |-G|\ [*grdfile*] ]
-[ |-Q| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**i**\|\ **o**][**+s**\|\ **w**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt blockmode**
+[ *table* ]
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+[ :option:`-A`\ *fields* ]
+[ :option:`-C` ]
+[ :option:`-D`\ [*width*]\ [**+c**][**+a**\|\ **l**\|\ **h** ]]
+[ :option:`-E`\ [**r**\|\ **s**\ [**+l**\|\ **h**]] ]
+[ :option:`-G`\ [*grdfile*] ]
+[ :option:`-Q` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**i**\|\ **o**][**+s**\|\ **w**] ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+
+输入数据
+------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+--------
 
 .. include:: explain_-I.rst_
 
@@ -56,61 +62,61 @@ blockmode
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *field*
-   指定写入每个网格中的字段，该选项需要 |-G| 选项。其中字段通过字符设置：
+   指定写入每个网格中的字段，该选项需要 :option:`-G` 选项。其中字段通过字符设置：
 
    - **z** ：z 值的众数
    - **s** ：众数的 L1 范数
    - **l** ：最小值
    - **h** ：最大值
-   - **w** ：权重，见 **-W**
+   - **w** ：权重，见 :option:`-W`
 
-   **s**\|\ **l**\|\ **h** 需要同时设置 |-E| 选项；默认字符为 **z**
+   **s**\|\ **l**\|\ **h** 需要同时设置 :option:`-E` 选项；默认字符为 **z**
 
-.. _-C:
+.. option:: -C
 
-**-C** 
-    使用区块的中心作为输出位置，默认使用位置的众数（见 |-Q| ）。|-C| 选项会覆盖
-    |-Q|
+**-C**
+    使用区块的中心作为输出位置，默认使用位置的众数（见 :option:`-Q` ）。:option:`-C` 选项会覆盖
+    :option:`-Q`
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [*width*]\ [**+c**][**+a**\|\ **+l**\|\ **+h**]
-    通过直方图来计算众数，需设置直方图每个间隔的宽度 *width* 。**+c** 将直方图
+    通过直方图来计算众数，需设置直方图每个间隔的宽度 *width* 。 **+c** 将直方图
     的每个区间放在中间，一遍中间点是 *width* 的倍数。如果发现多个众数，通过设置
-    **+a** 可取其平均。**+l** 和 **+h** 分别返回较大的众数和较小的众数。如果
+    **+a** 可取其平均。 **+l** 和 **+h** 分别返回较大的众数和较小的众数。如果
     *width* 未设置，则默认设置为 1。对于整数数据和整数的 *width* ，默认使用
     **+c** 和 **+l** 。众数默认使用 Least Median of Squares 统计。
 
-.. _-E:
+.. option:: -E
 
 **-E**
-    输出额外的报告，见 |-A| 。输出顺序为 *x*,\ *y*,\ *z*,\ *s*,\ *l*,\ *h*\ [,\ *w*] 。
-    使用 |-W| 可设置输出权重。默认输出为 *x*,\ *y*,\ *z*\ [,\ *w*] 。
+    输出额外的报告，见 :option:`-A` 。输出顺序为 *x*,\ *y*,\ *z*,\ *s*,\ *l*,\ *h*\ [,\ *w*] 。
+    使用 :option:`-W` 可设置输出权重。默认输出为 *x*,\ *y*,\ *z*\ [,\ *w*] 。
 
 **-E**\ **r**\|\ **s**\ [**+l**\|\ **h**]
     **s** 输出原数据 id； **r** 输出数据个数；上述数据将会追加到众数后；
     **+h** 输出前述字段中的最大值[默认]；**+l** 输出前述字段的最小值；
-    **E** 选项可以重复使用，因此可以同时指定 **-E**\ [**b**] 和
-    **-E**\ **r**\ [**+l**\|\ **h**]。**-Es** 设置时，输入数据的最后一列
+    **E** 选项可以重复使用，因此可以同时指定 :option:`-E`\ [**b**] 和
+    :option:`-E`\ **r**\ [**+l**\|\ **h**]。**-Es** 设置时，输入数据的最后一列
     必须为无符号整数，表示数据的 id。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *grdfile*
     将结果输出为网格；使用该选项时，将不会输出到标准输出。如果输出网格中的
-    字段超过一个（|-A|），则网格名必须包含 ``%s`` 以便将字段名写入到网格
-    文件名中来区别不同的输出网格。**注** : 使用该选项时不能使用 |-C| 和 |-Q| 选项。
+    字段超过一个（:option:`-A`），则网格名必须包含 ``%s`` 以便将字段名写入到网格
+    文件名中来区别不同的输出网格。**注** : 使用该选项时不能使用 :option:`-C` 和 :option:`-Q` 选项。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     （更快的方法）获取 z 的众数及其对应的位置 [默认分别独立地计算 x 和 y 以及 z 的众数，
-    三者都是独立的]。参见 |-C|
+    三者都是独立的]。参见 :option:`-C`
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**i**\|\ **o**][**+s**\|\ **w**]
     计算加权结果。加权结果的输入和输出都为 4 列，输入数据的第 4 列为权重，输出
@@ -171,7 +177,7 @@ blockmode
 
 :doc:`blockmedian`,
 :doc:`blockmean`,
-:doc:`gmt:greenspline`,
+:doc:`greenspline`,
 :doc:`nearneighbor`,
 :doc:`sphtriangulate`,
 :doc:`surface`,

@@ -2,44 +2,13 @@
 :date: 2025-07-10
 
 .. index:: ! sample1d
+.. program:: sample1d
 
 sample1d
 ========
 
 :官方文档: :doc:`gmt:sample1d`
 :简介: 对 1D 表数据进行重采样
-
-语法
---------
-
-.. include:: common_SYN_OPTs.rst_
-
-**gmt sample1d** [ *table* ]
-[ |-A|\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+d**][**+l**] ]
-[ |-C|\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-E| ]
-[ |-F|\ **a**\|\ **c**\|\ **e**\|\ **l**\|\ **n**\|\ **s**\ *p*\ [**+d1**\|\ **2**] ]
-[ |-N|\ *col* ]
-[ |-T|\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [|-T|\ *file*\|\ *list*]]
-[ |SYN_OPT-V| ]
-[ |-W|\ *col* ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
-
-描述
------------    
 
 **sample1d** 从文件（或标准输入）读取一个多列的 ASCII 格式（或二进制）数据，
 对时间序列或指定测线点位进行重采样。其中独立变量
@@ -48,10 +17,39 @@ sample1d
 所有列都将基于新的采样间隔重新采样。除平滑样条 （smoothing spline）方法外，
 还可选择多种插值方法。其中，平滑样条通过在拟合误差和曲率之间进行权衡
 （即不完全精确拟合数据点以换取更平滑的曲线）来实现平滑效果。
-本模块不支持输入数据范围外做外推插值。通过使用 |-C| 指定 CPT，
+本模块不支持输入数据范围外做外推插值。通过使用 :option:`-C` 指定 CPT，
 本模块将基于输入数据最后一列做颜色插值，将 *r,g,b,a* 添加到输出。
 
-必选选项
+语法
+--------
+
+**gmt sample1d**
+[ *table* ]
+[ :option:`-A`\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+d**][**+l**] ]
+[ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
+[ :option:`-E` ]
+[ :option:`-F`\ **a**\|\ **c**\|\ **e**\|\ **l**\|\ **n**\|\ **s**\ *p*\ [**+d1**\|\ **2**] ]
+[ :option:`-N`\ *col* ]
+[ :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [:option:`-T`\ *file*\|\ *list*]]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *col* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-j`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+输入数据
 ------------------
 
 .. include:: explain_intables.rst_
@@ -59,19 +57,19 @@ sample1d
 可选选项
 --------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**f**\|\ **p**\|\ **m**\|\ **r**\|\ **R**][**+l**]
-    关于沿测线进行采样（如果设置了 |-T|\ ...\ *unit* ）的一些选项，在 |-A| 后追加：
+    关于沿测线进行采样（如果设置了 :option:`-T`\ ...\ *unit* ）的一些选项，在 :option:`-A` 后追加：
 
     + **f** - 沿测线采样，保留原始点位，按需会适当插值线段中点（默认）。
     + **m** - 类似 **f** ，但测线变为阶梯状，先沿经度采样，再沿纬度采样。
     + **p** - 类似 **f** ，但测线变为阶梯状，先沿纬度采样，再沿经度采样。
     + **r** - 等距采样，此时输入的点位（尤其是端点）可能不会严格包括在输出结果中。
     + **R** - 类似 **r** ，但会适当调整采样点间距使输入点位都在输出结果中。
-    
+
     还支持以下选项：
-    
+
     + **+d** - 删除重复输入记录（即 *time* 没变化）。
     + **+l** - 使地理距离的测量沿着恒向线（rhumb lines 或 loxodromes ，
       即沿着该方向行进时行进方向始终与经线保持相同夹角）而不是默认的大圆弧。
@@ -79,10 +77,10 @@ sample1d
 
 .. include:: dump_rgb.rst_
 
-.. _-E:
+.. option:: -E
 
 **-E**
-    如果输入数据中每行记录最后包含有文本列，输出的插值结果将尝试保留 *time* 
+    如果输入数据中每行记录最后包含有文本列，输出的插值结果将尝试保留 *time*
     精确匹配的记录对应的文本列，其它 *time* 不匹配的则没有文本。默认忽略文本列。
 
 .. include:: explain_interpolant.rst_
@@ -91,30 +89,30 @@ sample1d
    :width: 500 px
    :align: center
 
-   |-F| 选项允许您在多个插值方法中选择，包括一个近似方法（平滑样条）。
+   :option:`-F` 选项允许您在多个插值方法中选择，包括一个近似方法（平滑样条）。
    你也可以指定选项来计算导数。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *col*
     选择独立变量 *time* 的列索引 *col* ，默认为 0（即首列）。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
-    定义要等距采样的 *time* 范围（从 *min* 到 *max* ）和步长 *inc* 
-    （默认使用输入的 *time* 值）。用法 **-T**\ *list* 表示指定一系列 *time* 值，
-    例如 **-T**\ *13,15,16,22.5* 。具体详见 `生成一维数组`_ 。
-    若不使用 |-A| ，默认为 |-A|\ **f** 。 
+    定义要等距采样的 *time* 范围（从 *min* 到 *max* ）和步长 *inc*
+    （默认使用输入的 *time* 值）。用法 :option:`-T`\ *list* 表示指定一系列 *time* 值，
+    例如 :option:`-T`\ *13,15,16,22.5* 。具体详见 `生成一维数组`_ 。
+    若不使用 :option:`-A` ，默认为 :option:`-A`\ **f** 。
 
     **注：** 对于空间 *(x, y)* 或 *(lon, lat)* 序列的重新采样，
-    用户必须使用有效的距离单位给出步长，例如 **-T**\ *20k* 。
+    用户必须使用有效的距离单位给出步长，例如 :option:`-T`\ *20k* 。
     关于单位见 `距离单位`_  ，笛卡尔坐标则用单位 **c** 做距离单位。
     此时前两列必须为空间坐标，GMT 将基于前两列空间坐标以及指定的步长沿大圆路径插值。
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *col*
     指定列索引值为 *col* 的列作为平滑三次样条的权重， 要求使用 **-Fs** 。
@@ -144,6 +142,8 @@ sample1d
 .. include:: explain_-s.rst_
 
 .. include:: explain_-w.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 

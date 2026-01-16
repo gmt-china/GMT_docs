@@ -1,5 +1,8 @@
+:author: 田冬冬, 周茂, 陈箫翰
+:date: 2025-08-11
+
 .. index:: ! simplify
-.. include:: common_SYN_OPTs.rst_
+.. program:: simplify
 
 simplify
 ===========
@@ -9,40 +12,45 @@ simplify
 
 **simplify** 模块读取一个或多个数据文件，并使用 Douglas-Peucker 算法对复杂多边形
 进行简化，用曲线近似表示为一系列点并减少点的数量，并保证每个点与直线的偏离都在可容忍的范围内。
+请访问以下网站以直观了解该算法的工作原理：(`https://en.wikipedia.org/wiki/Ramer–Douglas–Peucker_algorithm`)。
 
 语法
 ----
 
 **gmt simplify**
 [ *table* ]
-|-T|\ *tolerance*
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+:option:`-T`\ *tolerance*
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+输入数据
+---------
+
+.. include:: explain_intables.rst_
 
 必须选项
 --------
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *tolerance*
     指定最大所能容忍的误差，即任意数据点与简化后的线段间的距离小于该值。
     默认单位为用户单位。对于地理数据（例如海岸线）可以指定其它
-    `距离单位`。
+    `距离单位`_ 。
 
 可选选项
 --------
-
-.. include:: explain_intables.rst_
 
 .. include:: explain_-V.rst_
 
@@ -71,6 +79,8 @@ simplify
 .. include:: explain_help.rst_
 
 .. include:: explain_distunits.rst_
+
+.. include:: explain_precision.rst_
 
 示例
 ----

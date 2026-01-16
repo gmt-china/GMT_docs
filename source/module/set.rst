@@ -1,5 +1,8 @@
+:author: 田冬冬, 陈箫翰, 周茂
+:date: 2026-01-12
+
 .. index:: ! set
-.. include:: common_SYN_OPTs.rst_
+.. program:: set
 
 set
 ======
@@ -16,11 +19,12 @@ set
 ----
 
 **gmt set**
-[ |-C| \| |-D|\ [**s**\|\ **u**] \| |-G|\ *defaultsfile* ]
-[ **-**\ [**BJRXxYycp**]\ *value* ]
+[ :option:`-C` \| :option:`-D`\ [**s**\|\ **u**] \| :option:`-G`\ *defaultsfile* ]
+[ **-**\ **B**\|\ **J**\|\ **R**\|\ **X**\|\ **Y**\|\ **p**\ *value* ]
 PARAMETER1 *value1*
 PARAMETER2 *value2*
 PARAMETER3 *value3*
+...
 
 必选选项
 --------
@@ -33,27 +37,27 @@ PARAMETER3 *value3*
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**
     将 GMT4 创建的 GMT4配置文件 :file:`.gmtdefaults4` 转换为GMT5及之后版本所使用的
     :file:`gmt.conf` 文件，并保留原GMT4配置文件。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [**s**\|\ **u**]
     在系统默认配置的基础上修改参数值
 
-    - **-D**：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）
+    - :option:`-D`：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）
     - **-Du**：使用US单位制下的默认参数文件
     - **-Ds**：使用SI单位制下的默认参数文件
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *defaultsfile*
     指定要读取并修改的配置文件名 *defaultsfile*
 
-**-**\ [**BJRXxYycp**]\ *value*
+**-**\ **B**\|\ **J**\|\ **R**\|\ **X**\|\ **Y**\|\ **p**\ *value*
     强行修改GMT命令历史文件 **gmt.history** 中的值。
 
     GMT在执行一个命令时会在命令历史文件 **gmt.history** 中记录一些选项的参数值，

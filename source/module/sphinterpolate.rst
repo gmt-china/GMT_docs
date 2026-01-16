@@ -1,53 +1,52 @@
 :author: 周茂
+:date: 2026-01-12
 
 .. index:: ! sphinterpolate
-.. include:: common_SYN_OPTs.rst_
+.. program:: sphinterpolate
 
 sphinterpolate
 ==============
 
 :官方文档: :doc:`gmt:sphinterpolate`
-:简介:
+:简介: 球面数据的球面张力网格化
 
 **sphinterpolate** 读取 lon，lat，z 形式的文件，进行 Delaunay 三角剖分并作球面张力插值。
-通过 |-Q| 选项可以使用不同的插值方法。
+通过 :option:`-Q` 选项可以使用不同的插值方法，例如选择局部或全局梯度估计，或者优化张力选择以满足四个准则之一。
+所使用的算法是 STRIPACK [*Renka*, 1997a] 和 SSRFPACK [*Renka*, 1997b]。
 
 语法
 ----
 
-**gmt sphinterpolate** [ *table* ]
-|-G|\ *grdfile*
-|SYN_OPT-I|
-|SYN_OPT-R|
-[ |-D|\ [*east*] ]
-[ |-Q|\ *mode*\ [*options*] ]
-[ |-T| ]
-[ |SYN_OPT-V| ]
-[ |-Z| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt sphinterpolate**
+[ *table* ]
+:option:`-G`\ *grdfile*
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+[ :option:`-D`\ [*east*] ]
+[ :option:`-Q`\ **g**\|\ **l**\|\ **p**\|\ **s**\ [*args*] ]
+[ :option:`-T` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-Z` ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
 
-.. _-G:
+必须选项
+--------
 
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格文件名，其中各子选项的含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -56,15 +55,15 @@ sphinterpolate
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [*east*]
     用于删掉重复点 [默认不删除，即假定数据中不存在重复]；通过追加 *east* 参数表示不对在此经度
     上的点做重复检查
 
-.. _-Q:
+.. option:: -Q
 
-**-Q**\ *mode*\ [*options*]
+**-Q**\ **g**\|\ **l**\|\ **p**\|\ **s**\ [*args*]
     设置用于内插的计算张力因子的方法，用来保证局部形状特征或满足弧段约束 [默认没有张力]
 
     - **p** 分段线性插值，不施加张力
@@ -72,21 +71,21 @@ sphinterpolate
     - **l** 使用局部梯度估计进行平滑插值
 
     - **g**\ [*N*/*M*/*U*] 使用全局梯度估计进行平滑插值。*N*/*M*/*U* 中 *N* 为使用可变
-      张力时，迭代次数 [3]; *M* 确定全局梯度时使用的 Gauss-Seidel 迭代次数 [10]; *U* 
+      张力时，迭代次数 [3]; *M* 确定全局梯度时使用的 Gauss-Seidel 迭代次数 [10]; *U*
       最后一次迭代中梯度变化的阈值 [0.01]
 
     - **s**\ [*E*/*U*/*N*] 平滑。*E*/*U*/*N* [/0/0/3] 中 *E* 为典型数据值中预期方差；
       *U* 为数据偏差的加权平方和的上限。 *N* 为使用可变张力时的迭代次数。
 
 
-.. _-T:
+.. option:: -T
 
 **-T**
     使用可变张力; 使用 **-Qp** 选项时，忽略该选项
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**
     在内插前，使用最大数据范围 1/(max-min) 进行数据缩放 [默认不缩放]
@@ -111,6 +110,8 @@ sphinterpolate
 
 .. include:: explain_help.rst_
 
+.. include:: explain_precision.rst_
+
 示例
 ----
 
@@ -129,8 +130,8 @@ sphinterpolate
 --------
 
 STRIPACK 算法需要输入中不包含重复点。
-:doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphinterpolate**
-的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
+:doc:`blockmean` 等模块可以将多个接近的点合并成单个点。**sphinterpolate**
+的 :option:`-D` 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行
 
 参考文献

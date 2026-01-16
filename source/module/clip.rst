@@ -1,5 +1,8 @@
+:author: 田冬冬, 陈箫翰
+:date: 2025-12-30
+
 .. index:: ! clip
-.. include:: common_SYN_OPTs.rst_
+.. program:: clip
 
 clip
 ====
@@ -12,70 +15,78 @@ clip
 
 为了判断某个点是在裁剪区域内还是在裁剪区域外，clip使用了“奇偶规则”。从任意
 一点绘制一条任意方向的射线，若该射线穿过裁剪路径线段奇数次，则该点位于裁剪
-区域内；若穿过偶数次，则该点位于裁剪区域外。**-N** 选项可以颠倒内外的定义。
+区域内；若穿过偶数次，则该点位于裁剪区域外。:option:`-N` 选项可以颠倒内外的定义。
 
-最后，记得再次调用 **gmt clip -C** 以关闭裁剪区域。
+最后，记得再次调用 :option:`-C` 以关闭裁剪区域。
 
 语法
 ----
 
-**gmt clip** [ *table* ] |-J|\ *parameters* |-C|\ [*n*]
-|SYN_OPT-Rz|
-[ |-A|\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
-[ |SYN_OPT-B| ]
-|-J|\ **z**\|\ **Z**\ *parameters* ]
-[ |-N| ]
-[ |-T| ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*pen*] ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt clip**
+[ *table* ]
+:option:`-C`\ [*n*]
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
+[ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-N` ]
+[ :option:`-T` ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*pen*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+
+输入数据
+------------------
+
+.. include:: explain_intables.rst_
+
+必须选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*n*]
     结束当前裁剪路径。
 
-    默认会关闭所有已开启的裁剪路径。使用 **-C**\ *n* 则仅关闭当前所有处于激活状态下的
+    默认会关闭所有已开启的裁剪路径。使用 :option:`-C`\ *n* 则仅关闭当前所有处于激活状态下的
     裁剪路径中的其中 *n* 个。
 
-    若在开启裁剪后有使用 |-X| 或 |-Y| 移动过坐标原点，则在关闭裁剪路径时也需要
-    使用 |-X| 或 |-Y| 选项。
+    若在开启裁剪后有使用 :option:`-X` 或 :option:`-Y` 移动过坐标原点，则在关闭裁剪路径时也需要
+    使用 :option:`-X` 或 :option:`-Y` 选项。
 
 .. include:: explain_-J.rst_
 
-.. include:: explain_-R.rst_
+.. include:: explain_-Jz.rst_
 
 .. include:: explain_-Rz.rst_
 
 可选选项
 --------
 
-.. include:: explain_intables.rst_
-
-.. _-A:
+.. option:: -A
 
 **-A**\ [**m**\|\ **p**\|\ **x**\|\ **y**]
     修改两点间的连接方式
 
     地理投影下，两点之间默认沿着大圆弧连接。
 
-    - **-A**：忽略当前的投影方式，直接用直线连接两点
+    - :option:`-A`：忽略当前的投影方式，直接用直线连接两点
     - **-Am**：先沿着经线画，再沿着纬线画
     - **-Ap**：先沿着纬线画，再沿着经线画
 
@@ -86,23 +97,23 @@ clip
 
 .. include:: explain_-B.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**
     反转“区域内”和“区域外”的概念，即只有在多边形外的部分才是裁剪区域，绘图时
-    只有在多边形外的才会被绘制。该选项不能与 |-B| 选项连用。
+    只有在多边形外的才会被绘制。该选项不能与 :option:`-B` 选项连用。
 
-.. _-T:
+.. option:: -T
 
 **-T**
-    不需要任何输入数据。根据 |-R| 选项将整个地图区域裁剪出来，
-    该选项不能与 |-B| 选项连用。
+    不需要任何输入数据。根据 :option:`-R` 选项将整个地图区域裁剪出来，
+    该选项不能与 :option:`-B` 选项连用。
 
 .. include:: explain_-U.rst_
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *pen*
     绘制裁剪路径的轮廓 [默认不绘制]
@@ -125,6 +136,8 @@ clip
 
 .. include:: explain_perspective.rst_
 
+.. include:: explain_-qi.rst_
+
 .. include:: explain_-t.rst_
 
 .. include:: explain_colon.rst_
@@ -139,7 +152,7 @@ clip
 .. gmtplot::
    :width: 60%
    :show-code: true
-   
+
    gmt begin example2
       gmt basemap -Rg -JG120/30N/10c -Bg
       gmt coast -Gbrown -Wfaint
@@ -149,7 +162,7 @@ clip
       echo 135 53 >> tmp.txt
       echo 74 53 >> tmp.txt
       # 打开裁剪
-      gmt clip tmp.txt 
+      gmt clip tmp.txt
       # 画图命令仅在多边形范围内有效：只对范围内陆地填色
       gmt coast -Gbisque
       # 关闭裁剪路径

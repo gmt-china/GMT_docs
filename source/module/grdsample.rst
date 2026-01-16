@@ -1,5 +1,8 @@
+:author: 田冬冬, 朱邓达, 周茂
+:date: 2025-07-16
+
 .. index:: ! grdsample
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdsample
 
 grdsample
 =========
@@ -10,43 +13,44 @@ grdsample
 **grdsample** 模块读取一个网格文件，并对其做插值以生成一个新的网格文件。
 新旧网格文件可能的区别在于：
 
-- 不同的配准方式（**-r** 或 **-T**）
-- 不同的网格间隔或网格节点数（**-I**）
-- 不同的网格范围（**-R**）
+- 不同的配准方式（:option:`-r` 或 :option:`-T`）
+- 不同的网格间隔或网格节点数（:option:`-I`）
+- 不同的网格范围（:option:`-R`）
 
-网格文件插值方式有多种，默认使用 bicubic 插值，可以使用 **-n** 选项设置其它插值方式。
+网格文件插值方式有多种，默认使用 bicubic 插值，可以使用 :option:`-n` 选项设置其它插值方式。
 该模块可以安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能
-存在混叠效应，因而需要在插值前使用 :doc:`gmt:grdfft` 或 :doc:`gmt:grdfilter`
+存在混叠效应，因而需要在插值前使用 :doc:`grdfft` 或 :doc:`grdfilter`
 对网格文件做滤波。
 
-若省略 |-R| 选项，则输出网格与输入网格的区域范围相同；若省略 |-I| 选项，
-则输出网格间距与输入网格间距相同。**-r** 和 |-T| 均可用于修改网格配准方式。
+若省略 :option:`-R` 选项，则输出网格与输入网格的区域范围相同；若省略 :option:`-I` 选项，
+则输出网格间距与输入网格间距相同。:option:`-r` 和 :option:`-T` 均可用于修改网格配准方式。
 若省略这两个选项，则输出网格的配准方式与输入网格相同。
 
 语法
 ----
 
-**gmt grdsample** *in_grdfile* |-G|\ *out_grdfile*
-[ |SYN_OPT-I| ]
-[ |SYN_OPT-R| ]
-[ |-T| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-n| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT--| ]
+**gmt grdsample**
+*ingrid*
+:option:`-G`\ *outgrid*
+[ :option:`-I`\ *increment* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-n`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
-*in_grdfile*
-    要重采样的2D网格文件
+.. include:: explain_grd_in.rst_
 
-.. _-G:
+必须选项
+------------------
 
-**-G**\ *out_grdfile*
-    输出的网格文件名
+.. include:: explain_grd_out.rst_
 
 可选选项
 --------
@@ -56,9 +60,9 @@ grdsample
 .. include:: explain_-R.rst_
 ..
 
-    若只使用 |-R| 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**。
+    若只使用 :option:`-R` 选项，则等效于使用 :doc:`grdcut` 或 :doc:`grdedit` **-S**。
 
-.. _-T:
+.. option:: -T
 
 **-T**
     交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入
@@ -79,12 +83,14 @@ grdsample
 
 .. include:: explain_float.rst_
 
+.. include:: explain_grdresample2.rst_
+
 注意事项
 --------
 
 - 网格插值过程中可能会导致插值后的值出现失真或意外值。例如，使用样条插值可能会导致
   插值后的数据的最大最小值超过原始数据的最大最小值。若这一结果不可接受，可以通过
-  给 **-n** 选项加上 **+c** 以对超过原始数据最值的部分做裁剪。
+  给 :option:`-n` 选项加上 **+c** 以对超过原始数据最值的部分做裁剪。
 - 若某个插值点不在输入数据的网格节点上，则插值时若该节点周围的节点值为NaN，则
   该节点的值也会被插值为NaN。默认的bicubic插值算法会生成连续的一阶导数但需要
   周围4x4个节点。bilinear插值算法只需要周围的2x2个节点，但其只是零阶连续。
@@ -113,7 +119,7 @@ Marks, K. M., and W. H. F. Smith, 2007, Some remarks on resolving seamounts in s
 --------
 
 :doc:`grdedit`,
-:doc:`gmt:grdfft`,
-:doc:`gmt:grdfilter`,
+:doc:`grdfft`,
+:doc:`grdfilter`,
 :doc:`greenspline`,
 :doc:`surface`
