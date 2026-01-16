@@ -1,5 +1,5 @@
 :author: 田冬冬, 朱邓达, 王亮, 陈箫翰
-:date: 2025-11-03
+:date: 2026-01-16
 
 .. index:: ! xyz2grd
 .. program:: xyz2grd
@@ -24,7 +24,8 @@ xyz2grd
 语法
 ----
 
-**gmt xyz2grd** [ *table* ]
+**gmt xyz2grd**
+[ *table* ]
 :option:`-G`\ *grdfile*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
@@ -42,20 +43,21 @@ xyz2grd
 [ :option:`-i`\ *flags* ]
 [ :option:`-qi`\ *flags* ]
 [ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
 [ :option:`-:`\ [**i**\|\ **o**] ]
 [ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
-`table`
+*table*
     输入表数据。可以只包含Z值，也可以包含 (x,y,z) 值。可以是ASCII格式，也可以是二进制格式。
     XYZ数据不要求排序。如果只包含Z值，则必须使用 :option:`-Z` 选项。
 
-.. option:: -G
+必须选项
+--------
 
-**-G**\ *grdfile*
-    生成的网格文件名
+.. include:: explain_grd_out.rst_
 
 .. include:: explain_-I.rst_
 
@@ -85,10 +87,11 @@ xyz2grd
 
 .. include:: explain_-D_cap.rst_
 
-.. option:: -J
+.. include:: explain_-J.rst_
+..
 
-**-J**\ *parameters*
-    指定投影方式。将投影方式信息保存到netCDF网格文件中。
+    将地理参考信息以符合 CF-1 标准的元数据保存到 netCDF 网格文件中。
+    PROJ 语法可以直接在参数中使用，并且可以被 GDAL 识别。
 
 .. option:: -S
 
@@ -157,11 +160,22 @@ xyz2grd
 
 .. include:: explain_nodereg.rst_
 
+.. include:: explain_-w.rst_
+
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 
 .. include:: explain_float.rst_
+
+.. include:: explain_grd_coord.rst_
+
+交换限制
+----------------
+
+所有数据类型都可以读取，甚至是 64 位整数，但在内部网格是以浮点数 (float) 存储的。
+因此，超过浮点类型 23 位尾数 (mantissa) 的整数值可能无法精确表示。当使用 :option:`-S` 时，不涉及网格，我们将数据读取到中间的双精度 (double) 容器中。
+这意味着除了 64 位整数之外，所有数据都可以使用双精度类型的 53 位尾数来表示。
 
 示例
 ----
@@ -175,9 +189,18 @@ xyz2grd
 
     gmt xyz2grd raw.b -D+xm+ym+zm -Graw.nc -R0/100/0/100 -I1 -V -Z -bi3f
 
-将USGS DEM数据转换为网格数据::
+从 NCEI 全球起伏数据 CD-ROM 上的原始二进制 USGS DEM（短整型扫描线导向数据 topo30.b，其中值为 -9999 表示缺失数据）制作网格文件，
+在某些机器上必须反转字节序（如 Sun）::
 
     gmt xyz2grd topo30.b -D+xm+ym+zm -Gustopo.nc -R234/294/24/50 -I30s -di-9999 -ZTLhw
+
+一个包含 4 字节浮点数的二进制文件，该文件是在字节序不同的机器上写入的。可以使用以下命令交换字节序::
+
+    gmt xyz2grd floats.bin -Snew_floats.bin -V -Zf
+
+针对笛卡尔数据集中分配给每个节点的点数制作一个像素配准的 TIFF 文件::
+
+    gmt xyz2grd data.txt -R0/100/0/100 -r -I10 -An -Gnumber_of_points.tif=gd:GTiff
 
 相关模块
 --------
