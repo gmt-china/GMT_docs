@@ -222,8 +222,6 @@ def _filemd5(file):
     """
     计算文件内容的 MD5 hash
     """
-    # 注意：这里需要处理相对路径问题
-    # 如果 file 是相对路径，确保它是相对于 conf.py 所在目录的
     try:
         with open(file, "r", encoding="utf-8") as fp:
             data = fp.read()
