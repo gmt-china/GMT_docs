@@ -16,8 +16,8 @@ polar
 语法
 ----
 
-**gmt polar** 
-[ *table* ] 
+**gmt polar**
+[ *table* ]
 :option:`-D`\ *lon/lat*
 :option:`-J`\ *parameters*
 :option:`-R`\ *region*

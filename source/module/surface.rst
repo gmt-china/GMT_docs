@@ -31,8 +31,8 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 语法
 ----
 
-**gmt surface** 
-[ *table* ] 
+**gmt surface**
+[ *table* ]
 :option:`-G`\ *outgrid*
 :option:`-I`\ *increment*
 :option:`-R`\ *region*
@@ -100,7 +100,7 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. include:: explain_-J.rst_
 ..
-    
+
     该设置仅用于将投影信息输出到最终的网格中，在实际计算中并不会使用。
 
 .. option:: -D

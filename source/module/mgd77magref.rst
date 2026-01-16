@@ -15,7 +15,7 @@ mgd77magref
 语法
 ----
 
-**gmt mgd77magref** 
+**gmt mgd77magref**
 [ *inputfile* ]
 [ :option:`-A`\ [**+a**\ *alt*\ ][**+t**\ *date*\ ][**+y**] ]
 [ :option:`-C`\ *cm4file* ]

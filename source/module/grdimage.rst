@@ -31,7 +31,7 @@ grdimage
 语法
 ----
 
-**gmt grdimage** 
+**gmt grdimage**
 *grid* \| *image*
 [ :option:`-A`\ *out_img*\ [**=**\ *driver*] ]
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]

@@ -7,7 +7,7 @@
 polespotter
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/polespotter`  
+:官方文档: :doc:`gmt:supplements/spotter/polespotter`
 :简介: 找到给定断裂带和深渊山脉的阶段极点
 
 **polespotter** 读取线段（深海丘褶皱线和/或断裂带线）并执行三种类型的扫描之一。
@@ -59,7 +59,7 @@ polespotter
 .. option:: -E
 
 **-E**\ **a**\|\ **f**\ *sigma*
-    为 **a**\ byssal hills 或 **f**\ racture zones 
+    为 **a**\ byssal hills 或 **f**\ racture zones
     的方向提供不同的 1σ 角度不确定性（以度为单位）。
     使用 **-Ea**\ *sigma* 设置前者 [1]，使用 **-Ef**\ *sigma* 设置后者 [1]。
     这些 *sigma* 值随后用于形成权重 = 1/*sigma*。

@@ -23,7 +23,7 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 语法
 ----
 
-**gmt grdredpol** 
+**gmt grdredpol**
 *ingrid*
 :option:`-G`\ *rtp_grd*
 [ :option:`-C`\ *dec/dip* ]
@@ -92,7 +92,7 @@ magnetized vertically and the anomalies were observed at the geomagnetic pole.
 .. option:: -T
 
 **-T**\ *year*
-    IGRF 程序用于计算每个点的偏角和请教的年份，默认为 2000 年 
+    IGRF 程序用于计算每个点的偏角和请教的年份，默认为 2000 年
 
 .. option:: -W
 

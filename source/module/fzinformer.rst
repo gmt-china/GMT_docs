@@ -18,11 +18,11 @@ fzinformer
 语法
 --------
 
-**fzinformer** 
+**fzinformer**
 [ :option:`-D` ]
 [ :option:`-F`\ *max* ]
-[ :option:`-I`\ *profile* ] 
-[ :option:`-N`\ *max* ] 
+[ :option:`-I`\ *profile* ]
+[ :option:`-N`\ *max* ]
 [ :option:`-S`\ *max* ]
 [ :option:`-T`\ *prefix* ]
 [ :option:`-W`\ *max* ]
@@ -78,7 +78,7 @@ fzinformer
 **-Z**\ *acut*/*vcut*/*fcut*/*wcut*
      我们将尝试为每个模型分配一个单一质量指数 *Q*，以总结模型拟合的优劣。
     该分配依赖四个需经验确定的阈值：
-    
+
     - *a_cut*：交叉剖面模型的最小峰谷振幅（单位 Eotvos）[25]
     - *v_cut*：模型提供的最小方差降低（%）[50]
     - *f_cut*：模型计算的最小 F 统计量 [50]
@@ -140,17 +140,17 @@ fzinformer
 相关模块
 --------
 
-:doc:`fzanalyzer`, 
-:doc:`fzblender`, 
-:doc:`mlconverter`, 
-:doc:`fzmapper`, 
-:doc:`fzmodeler`, 
+:doc:`fzanalyzer`,
+:doc:`fzblender`,
+:doc:`mlconverter`,
+:doc:`fzmapper`,
+:doc:`fzmodeler`,
 :doc:`fzprofiler`
 
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
-A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. Geophys. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem. Geophys.
 Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

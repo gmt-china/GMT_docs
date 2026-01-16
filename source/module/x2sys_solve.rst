@@ -118,18 +118,18 @@ x2sys_solve
     gmt x2sys_solve faa_coe.txt -V -TMGD77 -Cfaa -Ec > coe_table.txt
 
 若重力异常观测数据中存在与时间相关的线性漂移::
-    
+
     gmt x2sys_list COE_data.txt -V -TMGD77 -Cfaa -FnTc > faa_coe.txt
     gmt x2sys_solve faa_coe.txt -V -TMGD77 -Cfaa -Et > coe_table.txt
 
 以 MGD77 为 TAG 的轨迹数据生成磁观测交叉点文件 :file:`COE_data.txt` ，
 估计磁朝向改正::
-    
+
     gmt x2sys_list COE_data.txt -V -TMGD77 -Cmag -Fnhc > mag_coe.txt
     gmt x2sys_solve mag_coe.txt -V -TMGD77 -Cmag -Eh > coe_table.txt
 
 基于测深交叉点估计单位缩放因子::
-    
+
     gmt x2sys_list COE_data.txt -V -TMGD77 -Cdepth -Fnz > depth_coe.txt
     gmt x2sys_solve depth_coe.txt -V -TMGD77 -Cdepth -Es > coe_table.txt
 

@@ -22,7 +22,7 @@ grdfft
 语法
 ----
 
-**gmt grdfft** 
+**gmt grdfft**
 *ingrid* [ *ingrid2* ]
 :option:`-G`\ *outfile*\|\ *table*
 [ :option:`-A`\ *azimuth* ]
@@ -87,7 +87,7 @@ grdfft
     如果提供了两个网格文件，将写入 *f* 和 8 个量：Xpower[*f*]、Ypower[*f*]、相干功率coherent power[*f*]、噪声功率noise power[*f*]、
     相位phase[*f*]、导纳admittance[*f*]、增益gain[*f*]、相干性coherency[*f*]。
     每个量后面都跟着其自身的 1 倍标准差误差估计值，因此输出共有 17 列。
-    
+
     通过选择以下指令之一来选择谱类型：
 
     - **r** 选择径向谱 [默认]。

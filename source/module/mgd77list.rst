@@ -23,8 +23,8 @@ ID，时间，位置，控制代码和地球物理观测，其中地球物理观
 语法
 ----
 
-**gmt mgd77list** 
-*GEODAS-ids* 
+**gmt mgd77list**
+*GEODAS-ids*
 :option:`-F`\ *columns*\ [,\ *logic*][:\ *bittests*]
 [ :option:`-A`\ **c**\|\ **d**\|\ **f**\|\ **m**\|\ **t**\ *code*\ [**+f**] ]
 [ :option:`-D`\ **A**\|\ **a**\ *startdate* ]

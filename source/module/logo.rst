@@ -22,7 +22,7 @@ logo
 语法
 ----
 
-**gmt logo** 
+**gmt logo**
 [ :option:`-D`\ [**g**\|\ **j**\|\ **J**\|\ **n**\|\ **x**]\ *refpoint*\ **+w**\ *width*\ [**+j**\ *justify*]\ [**+o**\ *dx*\ [/*dy*]] ]
 [ :option:`-F`\ [**+c**\ *clearances*][**+g**\ *fill*][**+i**\ [[*gap*/]\ *pen*]][**+p**\ [*pen*]][**+r**\ [*radius*]][**+s**\ [[*dx*/*dy*/][*shade*]]] ]
 [ :option:`-J`\ *parameters* ]

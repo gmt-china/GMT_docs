@@ -56,7 +56,7 @@ dimfilter
     - *flag* = 1 ：网格(x,y) 的单位为度，*width* 单位为千米，使用笛卡尔距离
     - *flag* = 2 ：网格(x,y) 的单位为度，*width* 单位为千米，dx 乘以 cos(lat)，
       lat 为所有纬度中值，使用笛卡尔距离
-    
+
     上述计算都狠快，因为只需计算一次权重矩阵。下面的三个选项相对较慢，因为对于
     每个纬度都需重新计算权重矩阵
 
@@ -124,7 +124,7 @@ dimfilter
 
 **-T**
     转换输出网格的配准方式，使其与输入网格相反
-    
+
 .. include:: explain_-V.rst_
 
 .. include:: explain_-f.rst_

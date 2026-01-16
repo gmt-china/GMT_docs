@@ -17,7 +17,7 @@ legend
 语法
 ----
 
-**gmt legend** 
+**gmt legend**
 [ *specfile* ]
 :option:`-D`\ *refpoint*
 [ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]

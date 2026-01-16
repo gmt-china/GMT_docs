@@ -16,11 +16,11 @@ mlconverter
 语法
 --------
 
-**gmt mlconverter** 
+**gmt mlconverter**
 [ *ML_data* ]
 [ :option:`-A` ]
 [ :option:`-G`\ [**s**] ]
-[ :option:`-S` ] 
+[ :option:`-S` ]
 [ :option:`-T`\ **c**\|\ **g**\|\ **o**\|\ **s** ]
 [ :option:`-V`\ [*level*] ]
 

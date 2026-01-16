@@ -1,14 +1,14 @@
 :author: 周茂
 :date: 2025-12-29
 
-.. index:: ! block_median 
+.. index:: ! block_median
 .. program:: block_median
 
 blockmedian
 ===========
 
 :官方文档: :doc:`gmt:blockmedian`
-:简介: 使用中值估计对表数据做区域处理 
+:简介: 使用中值估计对表数据做区域处理
 
 **blockmedian** 读取 xyz 形式的表数据（或可在最后加一列权重）, 并对 :option:`-R` 和 :option:`-I` 定义
 的每个区块输出一个中间的位置和值到标准输出。使用 :option:`-G` 可直接输出为网格文件。在进行
@@ -80,12 +80,12 @@ blockmedian
 
 .. option:: -C
 
-**-C** 
+**-C**
     使用区块的中心作为输出位置，默认使用中间位置
 
 .. option:: -E
 
-**-E**\ [**b**] 
+**-E**\ [**b**]
     输出额外的报告，见 :option:`-A` 。输出顺序为 *x*,\ *y*,\ *z*,\ *s*,\ *l*,\ *h*\ [,\ *w*]，
     默认输出为 *x*,\ *y*,\ *z*\ [,\ *w*] 。
     使用 :option:`-W` 可设置输出权重。

@@ -17,8 +17,8 @@ gmt begin profile
     # 绘制测线AB
     gmt plot tmp1 -W2p,red,-.-
     # 标注AB
-    gmt text tmp1 -F+f15p -D0c/0.2c 
-    
+    gmt text tmp1 -F+f15p -D0c/0.2c
+
     # 沿测线AB绘制地形高度
     gmt basemap -R0/15/-8000/6000 -JX12c/3c -Bya4000+l"Elevation (m)" -Bxa2f1+l"Distance"+u"\260" -BWSrt -Y12c
     # 标注AB位置
@@ -31,7 +31,7 @@ gmt begin profile
     echo 15 0 >> tmp3
     gmt plot tmp3 -Wblack -Glightblue -L+y-8000
     # 将地形填充为灰色
-    gmt plot tmp2 -i2,3 -Wblack -Ggray -L+y-8000 
+    gmt plot tmp2 -i2,3 -Wblack -Ggray -L+y-8000
 
     # 删除临时文件
     rm tmp*

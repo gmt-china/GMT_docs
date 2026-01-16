@@ -48,14 +48,14 @@ x2sys_datalist
 
 .. note::
 
-    对于 MGD77 格式的轨迹数据，同时还在 **MGD77_HOME**\/mgd77_paths.txt 
+    对于 MGD77 格式的轨迹数据，同时还在 **MGD77_HOME**\/mgd77_paths.txt
     中的路径和位于 \*.gmt 中的 **$GMT_SHAREDIR**\/mgg/gmtfile_paths 中查找
     轨迹数据。
 
 .. option:: -T
 
 **-T**\ *TAG*
-    指定 x2sys TAG，参见 :doc:`x2sys_init` 
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------

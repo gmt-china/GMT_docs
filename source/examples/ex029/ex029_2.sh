@@ -8,7 +8,7 @@ gmt begin 3D_earth_relief_2
     gmt grdtrack -R101/108/35/42 -G@earth_relief_06m_p CN-faults.gmt -o0,1,3 > faults.xyz
 
     # 绘制卫星图片，-G 表示在 DEM 上贴卫星图片
-    gmt grdview @earth_relief_06m_p -R101/108/35/42/-1000/5000 -JM10c -JZ4c -N-1000+ggray -G@earth_day_06m_p -Qi -Ba -Bz -BwsENZ -p60/25   
+    gmt grdview @earth_relief_06m_p -R101/108/35/42/-1000/5000 -JM10c -JZ4c -N-1000+ggray -G@earth_day_06m_p -Qi -Ba -Bz -BwsENZ -p60/25
     # 绘制断层线
     gmt plot3d faults.xyz -W1p,brown -p
     # 绘制指北针

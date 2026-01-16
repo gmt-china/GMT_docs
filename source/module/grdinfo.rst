@@ -29,7 +29,7 @@ grdinfo
 语法
 ----
 
-**gmt grdinfo** 
+**gmt grdinfo**
 *ingrid*
 [ :option:`-C`\ [**n**\|\ **t**\] ]
 [ :option:`-D`\ [*xoff*\ [/*yoff*]][**+i**] ]

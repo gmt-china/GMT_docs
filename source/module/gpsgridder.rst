@@ -170,7 +170,7 @@ gpsgridder
 
 .. include:: explain_-f.rst_
 ..
-    
+
     如果输入数据为地理坐标，必须使用 **-fg** ，地理坐标网格将会被转换为平地球近似下来计算。
 
 .. include:: explain_-h.rst_

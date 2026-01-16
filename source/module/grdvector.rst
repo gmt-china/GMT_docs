@@ -17,7 +17,7 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
 语法
 --------
 
-**gmt grdvector** 
+**gmt grdvector**
 *grid1* *grid2*
 :option:`-J`\ *parameters*
 [ :option:`-A` ]
@@ -117,9 +117,9 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
     - **-Si**\ *scale* - 缩放比例 *scale* 表示单位实际数据所对应的绘图距离或地理距离。
 
     - **-Sl**\ *length* - 所有矢量拥有固定的绘图长度 *length*。
-    
+
     更详细的解释见 `矢量缩放与单位的影响`_ 。
-    
+
     使用 :option:`-V` 可以报告所有绘制矢量的最小值、最大值和平均值，以及所有绘制矢量的绘制长度。
     如果使用 :option:`-l` 自动生成图例，则需要以下一到两个子选项：
 
@@ -157,19 +157,19 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
             gmt subplot set 0 -A"(a) ORIG"
             gmt basemap -JX? -Bx+l"X" -By+l"Y"
             gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
-            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T
             gmt subplot set 1 -A"(b) NEG X"
             gmt basemap -JX-2.5i/2.5i -Bx+l"\035X" -By+l"Y"
             gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
-            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T
             gmt subplot set 2 -A"(c) NEG Y"
             gmt basemap -JX2.5i/-2.5i -Bx+l"X" -By+l"\035Y"
             gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
-            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T
             gmt subplot set 3 -A"(d) NEG X,Y"
             gmt basemap -JX-2.5i/-2.5i -Bx+l"\035X" -By+l"\035Y"
             gmt grdvector r.nc az.nc -A -Q0.3i+e  -W3p,red -Gred -Si1i
-            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T 
+            gmt grdvector r.nc az.nc -A -Q0.1i+ec -W1p,blue -Gblue -Si1i -T
         gmt subplot end
         gmt end show
 
@@ -220,20 +220,20 @@ X 分量和 Y 分量，最终矢量场用不同长度和方向的箭头表示。
 
 使用 :option:`-S` 指定矢量缩放需要仔细思考，因为看起来可能有些反直觉。如 :option:`-S` 中所解释的，
 其指定的是每个绘图单位或地理距离单位所对应的实际数据多少。
-所选择的绘图或距离单位将影响所选择的矢量类型。通常，程序会首先计算每个节点上矢量的大小 
+所选择的绘图或距离单位将影响所选择的矢量类型。通常，程序会首先计算每个节点上矢量的大小
 :math:`r` （极坐标数据直接提取）。矢量大小可以是任何单位，
 这里假设我们的网格记录地球水平磁场的长期变化，单位为 nTesla/year，
 在某特定节点上，其值为 28 nTesla/year（在某个方向上）。
 如果你指定缩放因子 *scale* 的单位为绘图单位 **c|i|p** 则表明你选择了 **笛卡尔矢量** 。
-我们进一步假设你设置了 :option:`-S`\ *10c* ，这表明你希望 10 nTesla/year 
-的数据对应绘制 1 cm 长度。在程序内部，模块会将该缩放因子转为绘图比例 
+我们进一步假设你设置了 :option:`-S`\ *10c* ，这表明你希望 10 nTesla/year
+的数据对应绘制 1 cm 长度。在程序内部，模块会将该缩放因子转为绘图比例
 1/10 = 0.1 每 nTesla/year。对于大小为 28 nTesla/year 的矢量，模块会将其乘以绘图比例，
 最终得到图上 2.8 cm 长的矢量。最终不会加入实际数据单位。
 如果我们希望在图例中绘制一条 10 nTesla/year 的参考矢量，则其绘制长度 10 x 0.1 = 1 cm ，
 因为笛卡尔矢量缩放后的长度是恒定的，不依赖于投影和矢量位置，
 即 10 nTesla/year 的矢量在图上各处均为 1 cm。
 
-让我们将这种效果与使用地理距离单位的情况进行对比，假设使用 :option:`-S`\ *0.5k* 
+让我们将这种效果与使用地理距离单位的情况进行对比，假设使用 :option:`-S`\ *0.5k*
 （0.5 nTesla/year 每千米），这表明你选择了 **地理矢量** 。
 在程序内部，模块会将该缩放因子转为地图比例 2 km 每 nTesta/year。
 对于大小为 28 nTesla/year 的矢量，其在地图上的长度为 28 x 2 km = 56 km。

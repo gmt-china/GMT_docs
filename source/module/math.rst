@@ -20,7 +20,7 @@ math
 语法
 ----
 
-**gmt math** 
+**gmt math**
 [ :option:`-A`\ *t_f(t)*\ [**+e**]\ [**+r**]\ [**+s**\|\ **w**] ]
 [ :option:`-C`\ *cols* ]
 [ :option:`-E`\ *eigen* ]
@@ -1043,8 +1043,8 @@ math
    然后按位运算。因此，可储存在双精度数中的最大整数为 2^53 ，更大的数都会被
    截断。如果被比较的数中包括 NaN ，则最终结果也为 NaN
 
-#. **TAPER** will interpret its argument to be a width in the same units as 
-   the time-axis, but if no time is provided (i.e., plain data tables) then 
+#. **TAPER** will interpret its argument to be a width in the same units as
+   the time-axis, but if no time is provided (i.e., plain data tables) then
    the width is taken to be given in number of rows.
 
 #. 颜色转换函数，例如 **RGB2HSV** 等，不仅包括 rgb 到 hsv 等三元数的转换，
@@ -1074,7 +1074,7 @@ math
     name = arg1 arg2 ... arg2[ : comment]
 
 其中，*name* 是宏名，当此运算符出现在命令中时，则将其简单替换为参数列表。宏
-不可以互相调用。下面将给出一个宏的例子：宏 *DEPTH* 将在时间列以 Myr 
+不可以互相调用。下面将给出一个宏的例子：宏 *DEPTH* 将在时间列以 Myr
 为单位给出海底构造的年龄，并计算预测的 half-space 海深 ::
 
     DEPTH = SQRT 350 MUL 2500 ADD NEG : usage: DEPTH to return half-space seafloor depths
@@ -1087,7 +1087,7 @@ math
 参与运算列的选择
 ----------------
 
-**-C**\ *cols* 设置后，任何操作，包括从文件中加载数据都会受到影响。因此，当 :option:`-C`\ *cols* 
+**-C**\ *cols* 设置后，任何操作，包括从文件中加载数据都会受到影响。因此，当 :option:`-C`\ *cols*
 放在数据加载前时，只有设定的列会更新，其他的列会置为 0，若不想其他列置为 0，则需把文件放在
 **-C**\ *cols* 前。
 
@@ -1104,9 +1104,9 @@ math
 ---------------
 
 使用 :option:`-Q` 计算时，请注意 GMT 内部将 c、i 或 p 等长度单位转换为 inch 计算，并对结果
-进行缩放到设置的单位，但这仅在线性运算能得到正确的结果。例如 
+进行缩放到设置的单位，但这仅在线性运算能得到正确的结果。例如
 ``gmt math -Qp 1c 0.5i ADD =``，其中 1c = 28.364p ，0.5i = 36p，且 **ADD** 为
-线性运算，因此会得到正确的结果 64.346p。考虑另外一个例子：``gmt math -Qc 1c 1c MUL =`` 
+线性运算，因此会得到正确的结果 64.346p。考虑另外一个例子：``gmt math -Qc 1c 1c MUL =``
 ，结果却不是 1，而是 0.393。原因是在非线性运算时， **math** 模块无法跟踪计算栈上单位，
 因此在内部均假定以英寸为单位，在最后将结果缩放为 cm。这里在 **math** 内部计算的结果是 1
 英寸的平方，**math** 将其转换为 0.3937 厘米\* 英寸 作为单位，因此结果是错误的。
@@ -1163,7 +1163,7 @@ math
 
 下面将展示使用 **math** 求解方程组。假设当前存在一个增广矩阵 [ A ｜b ]，
 A 为系数矩阵，b 为等号右边的常数列，求解的方程组为 A \* x = b 。**LSQFIT** 操作符可实现
-方程的求解，但前提是使用 :option:`-A` 选项正确放置参数。假定表数据文件 :file:`ty.txt` 包含 
+方程的求解，但前提是使用 :option:`-A` 选项正确放置参数。假定表数据文件 :file:`ty.txt` 包含
 t 和 y(t) 两列，拟合模型为 y(t) = a + b\*t + c\*H(t-t0) ，其中 H 为给定 t0 = 1.55 的
 Heaviside 阶跃函数。这时，需要四列的增广矩阵，第二列为 t ，第四列为 y(t)（或者说 b） ，
 则计算命令为 ::
@@ -1182,7 +1182,7 @@ Heaviside 阶跃函数。这时，需要四列的增广矩阵，第二列为 t �
     1    2    3    5
 
 ::
-    
+
     echo 1 2 3 4 | gmt math -C3 STDIN 1 ADD =
     0    0    0    5
 

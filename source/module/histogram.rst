@@ -16,7 +16,7 @@ histogram
 语法
 ----
 
-**gmt histogram** 
+**gmt histogram**
 [ *table* ]
 :option:`-J`\ **x**\|\ **X**\ *parameters*
 :option:`-T`\ [*min/max*\ /]\ *inc*\ [**+n|i**] \|\ :option:`-T`\ *file*\|\ *list*

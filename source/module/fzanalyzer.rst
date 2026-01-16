@@ -22,7 +22,7 @@ fzanalyzer
 语法
 --------
 
-**gmt fzanalyzer** 
+**gmt fzanalyzer**
 *crossprofiles*
 :option:`-F`\ *fzlines*
 [ :option:`-A`\ *min*/*max*/*inc* ]
@@ -183,7 +183,7 @@ fzanalyzer
     3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(:option:`-S`) 或 C shell 脚本(:option:`-S`\ **c**)，
     其中包含命令行指定的所有参数作为 shell 变量。你可以在自定义绘图或分析脚本中引用这些变量。
 
-    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 
+    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt
     作为 :doc:`grdtrack` **-D** 的输出文件名，因为绘图脚本会以此文件为输入。
 
 示例
@@ -295,7 +295,7 @@ fzanalyzer
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, A., 
-Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, A.,
+Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem.
 Geophys. Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

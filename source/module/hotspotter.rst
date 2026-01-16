@@ -7,10 +7,10 @@
 hotspotter
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/hotspotter`  
+:官方文档: :doc:`gmt:supplements/spotter/hotspotter`
 :简介: 从海山位置创建 CVA 网格
 
-**hotspotter** 从 *table* [或标准输入] 读取 
+**hotspotter** 从 *table* [或标准输入] 读取
 (longitude, latitude, amplitude, radius, age) 记录，
 并使用指定的阶段旋转或总重建旋转计算流线。这些流线与海山的形状进行卷积
 （使用振幅和半径 = 6σ 的高斯形状），并叠加以生成累积火山振幅网格（CVA）。
@@ -19,7 +19,7 @@ hotspotter
 语法
 --------
 
-**gmt hotspotter** 
+**gmt hotspotter**
 [*table*]
 :option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
 :option:`-G`\ *outgrid*

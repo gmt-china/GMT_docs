@@ -41,7 +41,7 @@ gmt begin GMT_seamount_specs
 	>
 	0.28	0.9
 	0.75	0.9
-	> 
+	>
 	0.44	0.4
 	1.05	0.4
 	EOF

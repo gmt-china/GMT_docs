@@ -21,7 +21,7 @@ GMT 会依次在如下目录中去寻找命令行中指定的文件：
 语法
 ----
 
-**gmt which** 
+**gmt which**
 *files*
 [ :option:`-A` ]
 [ :option:`-C` ]

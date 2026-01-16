@@ -17,7 +17,7 @@ grdfill
 语法
 ----
 
-**gmt grdfill** 
+**gmt grdfill**
 *ingrid*
 [ :option:`-A`\ **c**\|\ **g**\|\ **n**\|\ **s**\ [*arg*]  ]
 [ :option:`-G`\ *outgrid* ]

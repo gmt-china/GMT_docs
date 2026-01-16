@@ -30,8 +30,8 @@ grdcut
 语法
 ----
 
-**gmt grdcut** 
-*ingrid* 
+**gmt grdcut**
+*ingrid*
 :option:`-G`\ *outgrid*
 :option:`-R`\ *region*
 [ :option:`-D`\ [**+t**] ]

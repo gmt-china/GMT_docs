@@ -17,7 +17,7 @@ date: 2025-07-06
     数据Z值大于CPT文件中最大值时使用的前景色 [**white**]
 
 **COLOR_CPT**
-    不指定 CPT 时的默认 CPT。当网格文件有默认 CPT 时将忽略此设置。[**turbo**] 
+    不指定 CPT 时的默认 CPT。当网格文件有默认 CPT 时将忽略此设置。[**turbo**]
 
 **COLOR_NAN**
     数值Z值为 NaN 时使用的颜色 \[127.5\]

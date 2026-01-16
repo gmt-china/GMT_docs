@@ -86,7 +86,7 @@ velo
             #. 北向分量的不确定度（1-sigma）
             #. 东向分量和北向分量的 correlation
             #. 标注文本（可选）
-    
+
     **-Sn**\ [*barscale*]
         绘制各向异性矢量。 *barscale* 设置缩放比例。如果未给出 *barscale* ，则数据文件中必须有 *barscale* 列。
         矢量头参数 *shape* 默认为 0.1,可以使用 :option:`-A` 的附加参数 **+h**\ *shape* 进行修改。
@@ -156,13 +156,13 @@ velo
 
 .. option:: -E
 
-**-E**\ *fill* 
+**-E**\ *fill*
     设置 **-Se** 和 **-Sr** 中速度误差椭圆的填充色，或 **-Sw** 中不确定度扇形的填充色。不设置本项则为透明。
     **注意：** 使用 :option:`-C` 和 :option:`-Z`\ **+e** 将会根据 :option:`-Z` 设置的数值从 CPT 中查找填充色。此时本选项无效。
 
 .. option:: -G
 
-**-G**\ *fill* 
+**-G**\ *fill*
     设置符号的填充色。
     **注意：** 使用 :option:`-C` 和 :option:`-Z` 会覆盖本选项。
 

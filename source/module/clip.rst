@@ -152,7 +152,7 @@ clip
 .. gmtplot::
    :width: 60%
    :show-code: true
-   
+
    gmt begin example2
       gmt basemap -Rg -JG120/30N/10c -Bg
       gmt coast -Gbrown -Wfaint
@@ -162,7 +162,7 @@ clip
       echo 135 53 >> tmp.txt
       echo 74 53 >> tmp.txt
       # 打开裁剪
-      gmt clip tmp.txt 
+      gmt clip tmp.txt
       # 画图命令仅在多边形范围内有效：只对范围内陆地填色
       gmt coast -Gbisque
       # 关闭裁剪路径

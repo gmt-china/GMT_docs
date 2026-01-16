@@ -117,7 +117,7 @@ https://www.softpedia.com/get/Tweak/Registry-Tweak/EditPath.shtml
     set G5_64=xxxx
 
 .. note::
-    
+
     目前 gmtswitch.bat 脚本中并未包含 GMT6 版本，用户可手动编辑 ``gmt --show-bindir``
     下的该文件，添加相应的变量并做一定其他修改
 

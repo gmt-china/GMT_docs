@@ -123,7 +123,7 @@ rose
     不绘制图形，只计算 :option:`-R` 选项所需要的参数。以下统计信息会输出到标准输出::
 
         n  mean_az  mean_r  mean_resultant_length  max_bin_sum  scaled_mean  linear_length_sum
-    
+
     使用 :option:`-o` 选项可以选择只输出其中几列。
 
 .. option:: -J

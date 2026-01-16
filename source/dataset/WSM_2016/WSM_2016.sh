@@ -7,7 +7,7 @@ gmt begin wsm2016
     # 绘制底图
     gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
     gmt coast -JD105/35/36/42/10c -R70/140/3/60 -G244/243/239 -S167/194/223 -Baf
-    
+
     # 生成震源机制符号自定义文件
     cat > focal_mec.def << 'EOF'
 N: 1 a
