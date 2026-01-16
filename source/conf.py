@@ -35,7 +35,7 @@ rst_prolog = """
 """
 
 # -- General configuration ------------------------------------------------
-needs_sphinx = "2.4"
+needs_sphinx = "8.0"
 source_suffix = {
     '.rst': 'restructuredtext',  # 遇到 .rst 用默认解析器
     '.md': 'markdown',           # 遇到 .md 用 MyST 解析器
@@ -217,31 +217,49 @@ latex_elements = {
 }
 
 import hashlib
+from sphinx.jinja2glue import BuiltinTemplateLoader
 
 def _filemd5(file):
     """
     计算文件内容的 MD5 hash
     """
+    # Sphinx 8.x 并行编译时，os.getcwd() 可能会变，所以最好用绝对路径
+    # 1. 获取 conf.py 的绝对路径
+    conf_py_path = os.path.abspath(__file__)
+    
+    # 2. 获取 conf.py 所在的目录 (即 source/ 目录)
+    conf_dir = os.path.dirname(conf_py_path)
+    
+    # 3. 获取项目根目录 (source/ 的上一级)
+    project_root = os.path.dirname(conf_dir)
+    
+    # 4. 拼接路径
+    if not os.path.isabs(file):
+        file_path = os.path.join(project_root, file)
+    else:
+        file_path = file
+
     try:
-        with open(file, "r", encoding="utf-8") as fp:
+        with open(file_path, "r", encoding="utf-8") as fp:
             data = fp.read()
             return hashlib.md5(data.encode()).hexdigest()
     except FileNotFoundError:
-        print(f"[WARNING] filemd5 filter: Cannot find file {file}")
-        return "file_not_found"
+        # 打印具体的错误路径
+        print(f"[WARNING] filemd5 filter: Cannot find file {file_path}")
+        return "file_not_found_placeholder"
+    except Exception as e:
+        print(f"[WARNING] filemd5 filter error: {e}")
+        return "error_placeholder"
 
-def setup_filters(app):
-    """
-    在 builder 初始化后，注册自定义 Jinja2 过滤器。
-    增加安全检查，防止在 LaTeX/PDF 编译模式下报错。
-    """
-    # 检查当前构建器是否有 templates 属性 (HTMLBuilder 有，LaTeXBuilder 没有)
-    if hasattr(app.builder, 'templates'):
-        app.builder.templates.environment.filters['filemd5'] = _filemd5
-    else:
-        # 如果是 latex 等其他构建器，不需要这个过滤器，直接跳过
-        pass
+# 1. 保存原始的初始化函数
+_orig_init = BuiltinTemplateLoader.init
 
-def setup(app):
-    # 注册事件
-    app.connect('builder-inited', setup_filters)
+# 2. 定义新的初始化函数
+def _patched_init(self, *args, **kwargs):
+    # 调用原始初始化逻辑
+    _orig_init(self, *args, **kwargs)
+    # 强制注入 filemd5 过滤器到当前环境
+    self.environment.filters['filemd5'] = _filemd5
+
+# 3. 替换类的初始化函数
+BuiltinTemplateLoader.init = _patched_init
