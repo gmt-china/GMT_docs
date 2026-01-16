@@ -23,8 +23,8 @@ x2sys_binlist
 语法
 ----
 
-**gmt x2sys_binlist** 
-*track(s)* 
+**gmt x2sys_binlist**
+*track(s)*
 :option:`-T`\ *TAG*
 [ :option:`-D` ]
 [ :option:`-E` ]
@@ -62,7 +62,7 @@ x2sys_binlist
 
 **-D**
     计算每个和轨迹相交的网格的累积距离。距离的输出位于 *flags* 后。
-    距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 中的 :option:`-N` 选项 
+    距离的单位和 TAG 中的设置一致，见 :doc:`x2sys_init` 中的 **-N** 选项 
 
 .. option:: -E
 
