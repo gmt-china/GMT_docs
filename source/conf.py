@@ -221,34 +221,42 @@ from sphinx.jinja2glue import BuiltinTemplateLoader
 
 def _filemd5(file):
     """
-    计算文件内容的 MD5 hash
+    计算文件内容的 MD5 hash (兼容 RTD 和本地路径)
     """
     # Sphinx 8.x 并行编译时，os.getcwd() 可能会变，所以最好用绝对路径
-    # 1. 获取 conf.py 的绝对路径
-    conf_py_path = os.path.abspath(__file__)
+    # 1. 获取 conf.py 所在的目录 (通常是 source/)
+    conf_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # 2. 获取 conf.py 所在的目录 (即 source/ 目录)
-    conf_dir = os.path.dirname(conf_py_path)
-    
-    # 3. 获取项目根目录 (source/ 的上一级)
+    # 2. 获取项目根目录 (source/ 的上一级)
     project_root = os.path.dirname(conf_dir)
     
-    # 4. 拼接路径
-    if not os.path.isabs(file):
-        file_path = os.path.join(project_root, file)
-    else:
-        file_path = file
+    # 3. 定义可能的搜索路径列表
+    # 策略 A: 相对于项目根目录查找 (适用于 "source/proj/..." 这种情况)
+    path_from_root = os.path.join(project_root, file)
+    
+    # 策略 B: 相对于 conf.py 目录查找 (适用于 "./proj/..." 这种情况，即 RTD 环境)
+    # 注意：如果 file 是 "./xxx"，join 会自动处理
+    path_from_conf = os.path.join(conf_dir, file)
 
+    # 4. 依次尝试查找文件
+    if os.path.exists(path_from_root) and os.path.isfile(path_from_root):
+        target_file = path_from_root
+    elif os.path.exists(path_from_conf) and os.path.isfile(path_from_conf):
+        target_file = path_from_conf
+    else:
+        # 如果都找不到，打印警告（打印两个尝试过的路径，方便调试）
+        print(f"[WARNING] filemd5 filter: Cannot find file.")
+        print(f"  - Tried root base: {path_from_root}")
+        print(f"  - Tried conf base: {path_from_conf}")
+        return "file_not_found_placeholder"
+
+    # 5. 计算 MD5
     try:
-        with open(file_path, "r", encoding="utf-8") as fp:
+        with open(target_file, "r", encoding="utf-8") as fp:
             data = fp.read()
             return hashlib.md5(data.encode()).hexdigest()
-    except FileNotFoundError:
-        # 打印具体的错误路径
-        print(f"[WARNING] filemd5 filter: Cannot find file {file_path}")
-        return "file_not_found_placeholder"
     except Exception as e:
-        print(f"[WARNING] filemd5 filter error: {e}")
+        print(f"[WARNING] filemd5 filter error reading {target_file}: {e}")
         return "error_placeholder"
 
 # 1. 保存原始的初始化函数
