@@ -64,10 +64,23 @@
 
         {# 链接逻辑 #}
         {% if fig["target"].startswith("http") %}
-             {% set link, link_type = fig["target"], "url" %}
+            {% set link, link_type = fig["target"], "url" %}
         {% else %}
-             {% set link, link_type = "/" + fig["target"], "doc" %}
+            {# 1. 获取 target，并处理可能的锚点 #}
+            {% set target_clean = fig["target"].split('#')[0] %}
+
+            {# 2. 强制补全 / (适配 dirhtml) #}
+            {% if not target_clean.endswith('/') %}
+                {% set target_final = target_clean + "/" %}
+            {% else %}
+                {% set target_final = target_clean %}
+            {% endif %}
+
+            {# 3. 拼接 siteurl 生成相对 URL #}
+            {% set link = config.html_context["siteurl"] + "/" + target_final %}
+            {% set link_type = "url" %}
         {% endif %}
+
         {# 对于没有 script 的情况，我们无法自动计算 MD5，暂时用 image 文件名做 ID #}
         {% set md5value = fig["image"] | replace("/", "-") | replace(".", "-") %}
         
