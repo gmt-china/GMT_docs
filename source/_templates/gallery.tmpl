@@ -14,12 +14,9 @@
     {% if fig["script"] is defined %}
         {# 1. 计算 MD5 和图片路径 #}
         {% set md5value = (config.html_context["basedir"] + fig["script"]) | filemd5 %}
-        {# === Script 图片使用 _thumb 后缀 === #}
         {# 原始大图路径 (如果需要点击看大图可以保留) #}
         {% set full_image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
         {# 缩略图路径 #}
-        {# 缩略图通过共享缓存机制，会被 Sphinx 复制到 _static/thumbnails #}
-        {# 路径构造： siteurl + /_static/thumbnails/ + md5 + _thumb.png #}
         {% set thumb_image = config.html_context["siteurl"] + "/_static/thumbnails/" + md5value + "_thumb.png" %}
         {# 默认显示缩略图 #}
         {% set display_image = thumb_image %}
@@ -32,10 +29,17 @@
             {# B. 如果是内部链接，构造带锚点的 URL #}
             {# 先去掉 target 可能自带的 # 号及后面的内容，避免双重锚点 #}
             {% set target_clean = fig["target"].split('#')[0] %}
+
+            {# 2. 强制补全 / (适配 dirhtml) #}
+            {% if not target_clean.endswith('/') %}
+                {% set target_final = target_clean + "/" %}
+            {% else %}
+                {% set target_final = target_clean %}
+            {% endif %}
             
             {# 构造链接: siteurl + 路径 + #gmtplot-MD5 #}
             {# 注意：siteurl 在本地是 "..", 配合 "/" 可以正确回到上级目录 #}
-            {% set link = config.html_context["siteurl"] + "/" + target_clean + "#gmtplot-" + md5value %}
+            {% set link = config.html_context["siteurl"] + "/" + target_final + "#gmtplot-" + md5value %}
             {% set link_type = "url" %}
         {% endif %}
 
@@ -43,14 +47,8 @@
     {# 情况 2: 手动指定的静态图片 (Image defined)                #}
     {# ========================================================= #}
     {% else %}
-        {# 处理原始图片路径 #}
-        {% if fig["image"].startswith("http") %}
-             {# 网络图片 #}
-             {% set raw_image = fig["image"] %}
-        {% else %}
-             {# 本地图片 #}
-             {% set raw_image = fig["image"] %}
-        {% endif %}
+        {# 原始图片路径 #}
+        {% set raw_image = fig["image"] %}
 
         {# 调用过滤器生成缩略图路径 #}
         {% set thumb_rel_path = raw_image | thumbnail %}

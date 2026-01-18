@@ -56,8 +56,6 @@ import hashlib
 import jinja2
 from docutils.parsers.rst import Directive, directives
 
-from PIL import Image  # 缩略图
-
 TEMPLATE = """
 {%- if show_code -%}
 .. literalinclude:: {{ code }}
@@ -167,25 +165,28 @@ def _search_images(cwd):
         else:
             return [png_images[0]]
     else:  # no PNG found
-        ps_images = list(cwd.glob("*.eps"))
-        if len(ps_images) > 1:
+        eps_images = list(cwd.glob("*.eps"))
+        if len(eps_images) > 1:
             raise ValueError("More than one figure generated in one GMT plot.")
-        elif len(ps_images) == 1:  # EPS found
+        elif len(eps_images) == 1:  # EPS found
             cmd = "gmt psconvert -A -P -C-I${{HOME}}/.gmt -T{} {}"
-            subprocess.run(cmd.format("g", ps_images[0]), shell=True, check=False)
-            subprocess.run(cmd.format("f", ps_images[0]), shell=True, check=False)
-            png_images = list(cwd.glob("*.png"))
-            pdf_images = list(cwd.glob("*.pdf"))
+            subprocess.run(cmd.format("g", eps_images[0]), shell=True, check=False)
+            subprocess.run(cmd.format("f", eps_images[0]), shell=True, check=False)
+            # 缩略图
+            cmd_thumb = "gmt psconvert -A -P -C-I${{HOME}}/.gmt -E50 -F{}_thumb -T{} {}"
+            try:
+                subprocess.run(cmd_thumb.format( str(eps_images[0].with_suffix('')), "g", eps_images[0] ), shell=True, check=False)
+            except subprocess.CalledProcessError:
+                logger.warning(f"Failed to generate thumbnail for {eps_images[0]}")
+            
+            images = [f for ext in ['*.png', '*.pdf', '*.jpg'] for f in cwd.glob(ext)]
 
-            if len(png_images) == 1 and len(pdf_images) == 1:
-                return [png_images[0], pdf_images[0]]
-            else:
-                return []
+            return images
         else:  # No PNG and EPS found
             return []
 
 
-def eval_bash(code, code_dir, output_dir, output_base, config=None):
+def eval_bash(code, code_dir, output_dir, output_base, thumbnails_dir, config=None):
     """
     Execute a multi-line block of bash code and copy the generated image files
     to specified output directory.
@@ -211,7 +212,13 @@ def eval_bash(code, code_dir, output_dir, output_base, config=None):
                 f"STDERR: {proc.stderr.decode('utf-8')}"
             )
         for image in _search_images(tmpdir):
-            shutil.move(image, Path(output_dir, output_base).with_suffix(image.suffix))
+            # 移动缩略图
+            if image.stem.endswith("_thumb"):
+                if thumbnails_dir:
+                    shutil.move(image, Path(thumbnails_dir, f"{output_base}_thumb").with_suffix(image.suffix))
+            # 移动 png、pdf 大图
+            else:
+                shutil.move(image, Path(output_dir, output_base).with_suffix(image.suffix))
         return f"{output_base}.*"
 
 
@@ -287,31 +294,14 @@ def eval_python(
     os.chdir(cwd)
     return f"{output_base}.*"
 
-def make_thumbnail(input_path, output_path, max_size=(200, 200)):
-    """
-    生成缩略图
-    """
-    try:
-        with Image.open(input_path) as img:
-            # 转换为 RGB 防止 PNG 透明背景变黑（视需求而定，通常保持 RGBA 更好）
-            if img.mode != 'RGBA' and img.mode != 'RGB':
-                img = img.convert('RGB')
-            
-            # 创建副本并缩放
-            thumb = img.copy()
-            thumb.thumbnail(max_size, Image.Resampling.LANCZOS)
-            thumb.save(output_path)
-    except Exception as e:
-        print(f"[WARNING] Failed to create thumbnail for {input_path}: {e}")
-
-def render_figure(code, code_dir, language, output_dir, output_base, config=None):
+def render_figure(code, code_dir, language, output_dir, output_base, thumbnails_dir, config=None):
     """
     Run a GMT code and save the images in *output_dir* with file names
     derived from *output_base*.
     """
     # pylint: disable=too-many-arguments
     if language == "bash":
-        figname = eval_bash(code, code_dir, output_dir, output_base, config=config)
+        figname = eval_bash(code, code_dir, output_dir, output_base, thumbnails_dir, config=config)
     elif language == "python":
         figname = eval_python(code, code_dir, output_dir, output_base, config=config)
     return figname
@@ -458,39 +448,17 @@ class GMTPlotDirective(Directive):
         builddir.mkdir(parents=True, exist_ok=True)
         Path(builddir, code_file.name).write_text(code, encoding="utf-8")
 
-        # make figures
-        # 注意：这里返回的 image_glob 是 "filename.*" 这样的字符串
+        # 获取缩略图的目标存放路径 (build/dirhtml/_static/thumbnails)
+        builder = env.app.builder
+        thumbnails_dir = ""
+        if hasattr(builder, 'outdir') and builder.format in ('html', 'dirhtml'):
+            thumbnails_dir = Path(builder.outdir) / "_static" / "thumbnails"
+            thumbnails_dir.mkdir(parents=True, exist_ok=True)
+            
+        # make figures (and thumb)
         image_glob = render_figure(
-            code, code_basedir, self.options["language"], builddir, output_base, config
+            code, code_basedir, self.options["language"], builddir, output_base, thumbnails_dir, config
         )
-
-        # === 缩略图生成 ===
-        # 不使用 image_glob 来找文件，而是直接找同名的 .png 文件
-        # 因为 render_figure 保证了如果有图片生成，一定会有 PNG (在 _search_images 逻辑里)
-        
-        png_filename = f"{output_base}.png"
-        full_png_path = builddir / png_filename
-        
-        # 定义共享缓存目录
-        # 强制使用与 conf.py 相同的硬编码路径 logic
-        # conf.py 使用的是 project_root/build/thumbs_cache
-        # env.app.srcdir 是 source 目录，其父目录即为 project_root
-        
-        project_root = Path(env.app.srcdir).parent
-        # 无论 Sphinx 实际构建目录在哪里，我们都强制写入这个固定的 build 目录
-        shared_cache_dir = project_root / "build" / "thumbs_cache" / "thumbnails"
-        shared_cache_dir.mkdir(parents=True, exist_ok=True)
-        
-        # 定义目标文件名
-        thumb_filename = f"{output_base}_thumb.png"
-        shared_thumb_path = shared_cache_dir / thumb_filename
-
-        # 3. 生成缩略图到共享目录
-        if full_png_path.exists():
-            # 只有当缩略图不存在时才生成（避免重复工作）
-            if not shared_thumb_path.exists():
-                make_thumbnail(full_png_path, shared_thumb_path, max_size=(200, 200))
-        # ===========================
 
         gmtplot_block = (
             jinja2.Template(TEMPLATE)
