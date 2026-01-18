@@ -174,10 +174,7 @@ def _search_images(cwd):
             subprocess.run(cmd.format("f", eps_images[0]), shell=True, check=False)
             # 缩略图
             cmd_thumb = "gmt psconvert -A -P -C-I${{HOME}}/.gmt -E75 -F{}_thumb -T{} {}"
-            try:
-                subprocess.run(cmd_thumb.format( str(eps_images[0].with_suffix('')), "g", eps_images[0] ), shell=True, check=False)
-            except subprocess.CalledProcessError:
-                logger.warning(f"Failed to generate thumbnail for {eps_images[0]}")
+            subprocess.run(cmd_thumb.format( str(eps_images[0].with_suffix('')), "g", eps_images[0] ), shell=True, check=False)
             
             images = [f for ext in ['*.png', '*.pdf', '*.jpg'] for f in cwd.glob(ext)]
 
