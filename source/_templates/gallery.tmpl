@@ -47,18 +47,10 @@
     {# 情况 2: 手动指定的静态图片 (Image defined)                #}
     {# ========================================================= #}
     {% else %}
-        {# 原始图片路径 #}
-        {% set raw_image = fig["image"] %}
-
-        {# 调用过滤器生成缩略图路径 #}
-        {% set thumb_rel_path = raw_image | thumbnail %}
+        {# 缩略图路径 #}
+        {% set thumb_rel_path = fig["image"] %}
         
-        {% if thumb_rel_path.startswith("http") %}
-            {% set display_image = thumb_rel_path %}
-        {% else %}
-            {# 如果是本地生成的缩略图，加上 siteurl 前缀 #}
-            {% set display_image = config.html_context["siteurl"] + "/" + thumb_rel_path %}
-        {% endif %}
+        {% set display_image = thumb_rel_path %}
 
         {# 链接逻辑 #}
         {% if fig["target"].startswith("http") %}

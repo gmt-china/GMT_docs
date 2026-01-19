@@ -219,10 +219,6 @@ latex_elements = {
 }
 
 import hashlib
-import os
-import requests
-from PIL import Image
-from io import BytesIO
 from sphinx.jinja2glue import BuiltinTemplateLoader
 
 def _filemd5(file):
@@ -265,63 +261,11 @@ def _filemd5(file):
         print(f"[WARNING] filemd5 filter error reading {target_file}: {e}")
         return "error_placeholder"
 
-# thumbnail 过滤器 (只处理网络图片)
-def _create_thumbnail_filter(builder):
-    def thumbnail_filter(url):
-        # 1. 安全检查：如果没有输出目录，或者是本地路径，直接跳过
-        if not hasattr(builder, 'outdir') or not url.startswith(("http:", "https:")):
-            return url
-            
-        # 2. 目标目录: build/dirhtml/_static/thumbnails
-        out_static_dir = os.path.join(builder.outdir, "_static", "thumbnails")
-        os.makedirs(out_static_dir, exist_ok=True)
-        
-        # 3. 计算文件名 (URL 的 MD5)
-        img_hash = hashlib.md5(url.encode()).hexdigest()
-        thumb_filename = f"{img_hash}_thumb.jpg"
-        thumb_abs_path = os.path.join(out_static_dir, thumb_filename)
-        
-        # 返回给 HTML 的相对路径
-        rel_path_for_html = f"_static/thumbnails/{thumb_filename}"
-        
-        # 4. 缓存命中：如果文件已存在，直接返回
-        if os.path.exists(thumb_abs_path):
-            return rel_path_for_html
-
-        # 5. 下载并生成
-        try:
-            # print(f"[INFO] Downloading: {url}")
-            response = requests.get(url, timeout=15)
-            response.raise_for_status() # 确保请求成功
-            
-            img = Image.open(BytesIO(response.content))
-            if img:
-                # JPG 不支持透明 (RGBA)，必须转 RGB，透明背景会变白
-                if img.mode != 'RGB':
-                    img = img.convert('RGB') 
-                
-                img.thumbnail((200, 200), Image.Resampling.LANCZOS)
-                
-                # 3. 指定 quality 参数 
-                img.save(thumb_abs_path, "JPEG", quality=90)
-                return rel_path_for_html
-
-        except Exception as e:
-            print(f"[WARNING] Download thumbnail failed: {url} | error: {e}")
-            return url # 失败则回退到原始 URL
-
-    return thumbnail_filter
-
 # 注入过滤器
 _orig_init = BuiltinTemplateLoader.init
 
 def _patched_init(self, builder, theme=None):
     _orig_init(self, builder, theme)
     self.environment.filters['filemd5'] = _filemd5
-    
-    if builder.format in ('html', 'dirhtml'):
-        self.environment.filters['thumbnail'] = _create_thumbnail_filter(builder)
-    else:
-        self.environment.filters['thumbnail'] = lambda x: x
 
 BuiltinTemplateLoader.init = _patched_init
