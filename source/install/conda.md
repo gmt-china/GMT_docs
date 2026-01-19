@@ -1,12 +1,17 @@
 ---
 author: 田冬冬, 姚家园, 陈箫翰
-date: 2025-11-01
+date: 2026-01-19
 ---
 
 # 使用 conda 安装 GMT
 
 [conda](https://docs.conda.io/en/latest/) 是一款可在 Linux、Windows 和 macOS 上使用的
 跨平台软件包管理工具，可用于安装 GMT。
+
+因为 GMT 在 Windows 系统上编译的版本存在无法正常使用高精度远程地形数据的 bug，
+因此我们建议 Windows 用户在 WSL （Windows Subsystem for Linux，适用于 Linux 的 Windows 子系统）上安装使用 conda 和 GMT。
+WSL 的安装配置可以参考 [视频教程](https://www.bilibili.com/video/BV1Yb4jzQEXK/) 和
+[文字教程](https://seismo-learn.org/seismology101/computer/wsl-setup/)。
 
 通常情况下，无法单独安装 `conda`。Miniforge 是一个轻量级的 Python 发行版，内置了 `conda` 管理器，
 因此可以通过安装 Miniforge 来获取并使用 `conda`。
