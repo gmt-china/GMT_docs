@@ -1,9 +1,19 @@
 ---
 author: 田冬冬, 陈箫翰, 姚家园, 周茂
-date: 2025-12-20
+date: 2026-01-19
 ---
 
 # Windows 下使用安装包安装 GMT
+
+## 注意事项
+
+因为 GMT 在 Windows 系统上编译的版本存在无法正常使用高精度远程地形数据的 bug，
+因此我们建议 Windows 用户在 WSL （Windows Subsystem for Linux，适用于 Linux 的 Windows 子系统）上安装使用 conda 和 GMT。
+WSL 的安装配置可以参考 [视频教程](https://www.bilibili.com/video/BV1Yb4jzQEXK/) 和
+[文字教程](https://seismo-learn.org/seismology101/computer/wsl-setup/)。
+安装配置完成 WSL 之后，再 {doc}`conda` 。
+
+用户在知悉安装包的缺点后，如果仍然希望使用安装包安装 GMT，可以参考以下安装指南。
 
 ## 安装 GMT
 
