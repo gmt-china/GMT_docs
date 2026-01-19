@@ -62,12 +62,19 @@ git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geo
 mv china-geospatial-data/*.gmt ~/.gmt/cache/
 rm -rf china-geospatial-data
 
-# 4. Download plate boundary types data used in docs
+# 4 Download data used in docs
+
+# 4.1 plate boundary types data (dataset/global_tectonics/)
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt
 mv boundaries.gmt plates.gmt global_gprv.gmt oc_boundaries.gmt ~/.gmt/cache/
+
+# 4.2 satellite image (examples/ex004/)
+git clone --depth 1 https://github.com/CovMat/google-map-downloader.git google-map-downloader
+mv google-map-downloader/example_tif/*.tif ~/.gmt/cache/
+rm -rf google-map-downloader
 
 # 5. Download Chinese font files for GMT Chinese support
 mkdir -p ~/.gmt/winfonts/

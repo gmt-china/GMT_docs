@@ -39,15 +39,14 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 - 地质年代从数据的 `GEN_GLG` 属性中提取，用不同的颜色表示
 - 岩性从数据的 `TYPE` 属性中提取，用不同的填充图案表示
 
-示例代码中使用的地质年代 CPT 色标文件 {download}`geoage.cpt`
+示例代码中使用的地质年代 CPT 色标文件 {download}`geoage.cpt </dataset/geo3al/geoage.cpt>`
 修改自 [GTS2012_epochs](http://seaviewsensing.com/pub/cpt-city/heine/GTS2012_epochs.cpt)。
 
-```{literalinclude} geo3al.sh
-```
-
-```{image} https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png
-:align: center
-:width: 95%
+```{eval-rst}
+.. gmtplot:: geo3al.sh
+    :align: center
+    :width: 80%
+    :show-code: true
 ```
 
 ## 数据来源与处理

@@ -3,12 +3,12 @@
 # Geological map of China and adjacent regions
 #
 
-data=geo3al.gmt
-cpt=geoage.cpt
-
 gmt begin geo3al
+    data=geo3al.gmt
+    cpt=$(gmt which geoage.cpt)
+
     # Paint the land using white color
-    gmt coast -R70/150/13/55 -JM22c -Gwhite -Baf -BWsNe
+    gmt coast -R70/150/13/55 -JM15c -Gwhite -Baf -BWsNe
 
     # Plot the geological map, colored by geologic ages
     # -aZ="GEN_GLG": use the "GEN_GLG" metadata as the Z value
@@ -34,16 +34,35 @@ gmt begin geo3al
 H 10 3 Age of rock units
 N 3
 EOF
-    # Output non-empty lines that don't start with "B", "F", "N" or "#"
-    gawk '!/^($|B|F|N|#)/' $cpt | while read label color period
-    do
-        echo "S 0.3c r 0.38c $color 0.3p 0.7c $period" >> age_legend.txt
-    done
-    gmt legend age_legend.txt -DJBR+w10.5c+jTR+o0c/-2c+l1.3 -F+p0.7p+g255 -C3p/3p
+
+    # 1. 过滤掉 GMT 的控制行 (B, F, N) 和注释 (#)
+    # 2. 提取第二列作为颜色
+    # 3. 提取 ";" 之后的所有文本作为标签
+    gawk '!/^($|B|F|N|#)/ {
+        # $2 是颜色列
+        color = $2
+
+        # 查找分号的位置
+        idx = index($0, ";")
+
+        if (idx > 0) {
+            # 截取分号后面的内容 (idx+1 到结尾)
+            label = substr($0, idx + 1)
+        } else {
+            # 如果没有分号，尝试用第三列（防止空标签）
+            label = $3
+        }
+
+        # 打印 GMT 图例格式
+        # 注意：label 前面留一个空格，避免文字紧贴色块
+        print "S 0.3c r 0.38c " color " 0.3p 0.7c " label
+    }' $cpt >> age_legend.txt
+
+    gmt legend age_legend.txt -DJBR+w10.5c+jTR+o0c/0c+l1.3 -F+p0.7p+g255 -C3p/3p
     rm age_legend.txt
 
     # Plot rock type legend
-    gmt legend -DJBR+w5.0c+jBR+o0c/2c+l1.9 -F+p0.7p+g255 -C3p/1p <<EOF
+    gmt legend -DJBR+w5.0c+jBR+o0c/0c+l1.9 -F+p0.7p+g255 -C3p/1p <<EOF
 H 10 3 Rock type
 N 2
 S 0.3c r 0.5c p28+r500+f100+b255 0.3p 0.7c Volcanic rocks
