@@ -118,7 +118,9 @@ if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
     siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
     basedir_for_gallery = "source/"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
-    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    # 强制使用相对路径，避免绝对路径导致的根目录错位问题
+    # 因为 gallery 页面在二级目录 (gallery/index.html)，所以用 ".." 回到根目录
+    siteurl_for_gallery = ".."
     basedir_for_gallery = "./"
 else:  # build locally
     # 修改说明：使用 ".." 表示上一级目录，这样路径会变成 "../_images/xxx.png"
@@ -259,15 +261,11 @@ def _filemd5(file):
         print(f"[WARNING] filemd5 filter error reading {target_file}: {e}")
         return "error_placeholder"
 
-# 1. 保存原始的初始化函数
+# 注入过滤器
 _orig_init = BuiltinTemplateLoader.init
 
-# 2. 定义新的初始化函数
-def _patched_init(self, *args, **kwargs):
-    # 调用原始初始化逻辑
-    _orig_init(self, *args, **kwargs)
-    # 强制注入 filemd5 过滤器到当前环境
+def _patched_init(self, builder, theme=None):
+    _orig_init(self, builder, theme)
     self.environment.filters['filemd5'] = _filemd5
 
-# 3. 替换类的初始化函数
 BuiltinTemplateLoader.init = _patched_init

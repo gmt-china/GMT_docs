@@ -14,7 +14,12 @@
     {% if fig["script"] is defined %}
         {# 1. 计算 MD5 和图片路径 #}
         {% set md5value = (config.html_context["basedir"] + fig["script"]) | filemd5 %}
-        {% set image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
+        {# 原始大图路径 (如果需要点击看大图可以保留) #}
+        {% set full_image = config.html_context["siteurl"] + "/_images/" + md5value + ".png" %}
+        {# 缩略图路径 #}
+        {% set thumb_image = config.html_context["siteurl"] + "/_static/thumbnails/" + md5value + "_thumb.png" %}
+        {# 默认显示缩略图 #}
+        {% set display_image = thumb_image %}
         
         {# 2. 智能链接生成逻辑 #}
         {% if fig["target"].startswith("http") %}
@@ -24,10 +29,17 @@
             {# B. 如果是内部链接，构造带锚点的 URL #}
             {# 先去掉 target 可能自带的 # 号及后面的内容，避免双重锚点 #}
             {% set target_clean = fig["target"].split('#')[0] %}
+
+            {# 2. 强制补全 / (适配 dirhtml) #}
+            {% if not target_clean.endswith('/') %}
+                {% set target_final = target_clean + "/" %}
+            {% else %}
+                {% set target_final = target_clean %}
+            {% endif %}
             
             {# 构造链接: siteurl + 路径 + #gmtplot-MD5 #}
             {# 注意：siteurl 在本地是 "..", 配合 "/" 可以正确回到上级目录 #}
-            {% set link = config.html_context["siteurl"] + "/" + target_clean + "#gmtplot-" + md5value %}
+            {% set link = config.html_context["siteurl"] + "/" + target_final + "#gmtplot-" + md5value %}
             {% set link_type = "url" %}
         {% endif %}
 
@@ -35,20 +47,33 @@
     {# 情况 2: 手动指定的静态图片 (Image defined)                #}
     {# ========================================================= #}
     {% else %}
-        {% if fig["image"].startswith("http") %}
-            {% set image = fig["image"] %}
-            {% if fig["target"].startswith("http") %}
-                {% set link, link_type = fig["target"], "url" %}
-            {% else %}
-                {% set link, link_type = "/" + fig["target"], "doc" %}
-            {% endif %}
-        {% else %}
-            {% set image = config.html_context["siteurl"] + "/_images/" + fig["image"] + ".png" %}
-            {% set link, link_type = "#gmtplot-" + fig["image"], "url" %}
-        {% endif %}
+        {# 缩略图路径 #}
+        {% set thumb_rel_path = fig["image"] %}
         
+        {% set display_image = thumb_rel_path %}
+
+        {# 链接逻辑 #}
+        {% if fig["target"].startswith("http") %}
+            {% set link, link_type = fig["target"], "url" %}
+        {% else %}
+            {# 1. 获取 target，并处理可能的锚点 #}
+            {% set target_clean = fig["target"].split('#')[0] %}
+
+            {# 2. 强制补全 / (适配 dirhtml) #}
+            {% if not target_clean.endswith('/') %}
+                {% set target_final = target_clean + "/" %}
+            {% else %}
+                {% set target_final = target_clean %}
+            {% endif %}
+
+            {# 3. 拼接 siteurl 生成相对 URL #}
+            {% set link = config.html_context["siteurl"] + "/" + target_final %}
+            {% set link_type = "url" %}
+        {% endif %}
+
         {# 对于没有 script 的情况，我们无法自动计算 MD5，暂时用 image 文件名做 ID #}
-        {% set md5value = fig["image"] %}
+        {% set md5value = fig["image"] | replace("/", "-") | replace(".", "-") %}
+        
     {% endif %}
 
     {# ========================================================= #}
@@ -64,7 +89,9 @@
 
            {# 这里的 id 使用 md5value 确保唯一且合法，不再依赖复杂的 link 变量 #}
            <div id="gallery-item-{{ md5value }}">
-               <img src="{{ image }}" alt="{{ fig['title'] }}" class="figure-img" style="width: 100%; object-fit: contain;">
+               {# 这里 src 使用 display_image (即缩略图) #}
+               {# loading="lazy" 是浏览器原生支持的懒加载，进一步提升速度 #}
+               <img src="{{ display_image }}" alt="{{ fig['title'] }}" loading="lazy" class="figure-img" style="width: 100%; object-fit: contain;">
            </div>
 
         +++

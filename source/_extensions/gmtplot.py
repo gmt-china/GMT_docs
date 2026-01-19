@@ -165,25 +165,25 @@ def _search_images(cwd):
         else:
             return [png_images[0]]
     else:  # no PNG found
-        ps_images = list(cwd.glob("*.eps"))
-        if len(ps_images) > 1:
+        eps_images = list(cwd.glob("*.eps"))
+        if len(eps_images) > 1:
             raise ValueError("More than one figure generated in one GMT plot.")
-        elif len(ps_images) == 1:  # EPS found
+        elif len(eps_images) == 1:  # EPS found
             cmd = "gmt psconvert -A -P -C-I${{HOME}}/.gmt -T{} {}"
-            subprocess.run(cmd.format("g", ps_images[0]), shell=True, check=False)
-            subprocess.run(cmd.format("f", ps_images[0]), shell=True, check=False)
-            png_images = list(cwd.glob("*.png"))
-            pdf_images = list(cwd.glob("*.pdf"))
+            subprocess.run(cmd.format("g", eps_images[0]), shell=True, check=False)
+            subprocess.run(cmd.format("f", eps_images[0]), shell=True, check=False)
+            # 缩略图
+            cmd_thumb = "gmt psconvert -A -P -C-I${{HOME}}/.gmt -E75 -F{}_thumb -T{} {}"
+            subprocess.run(cmd_thumb.format( str(eps_images[0].with_suffix('')), "g", eps_images[0] ), shell=True, check=False)
+            
+            images = [f for ext in ['*.png', '*.pdf', '*.jpg'] for f in cwd.glob(ext)]
 
-            if len(png_images) == 1 and len(pdf_images) == 1:
-                return [png_images[0], pdf_images[0]]
-            else:
-                return []
+            return images
         else:  # No PNG and EPS found
             return []
 
 
-def eval_bash(code, code_dir, output_dir, output_base, config=None):
+def eval_bash(code, code_dir, output_dir, output_base, thumbnails_dir, config=None):
     """
     Execute a multi-line block of bash code and copy the generated image files
     to specified output directory.
@@ -209,7 +209,13 @@ def eval_bash(code, code_dir, output_dir, output_base, config=None):
                 f"STDERR: {proc.stderr.decode('utf-8')}"
             )
         for image in _search_images(tmpdir):
-            shutil.move(image, Path(output_dir, output_base).with_suffix(image.suffix))
+            # 移动缩略图
+            if image.stem.endswith("_thumb"):
+                if thumbnails_dir:
+                    shutil.move(image, Path(thumbnails_dir, f"{output_base}_thumb").with_suffix(image.suffix))
+            # 移动 png、pdf 大图
+            else:
+                shutil.move(image, Path(output_dir, output_base).with_suffix(image.suffix))
         return f"{output_base}.*"
 
 
@@ -285,15 +291,14 @@ def eval_python(
     os.chdir(cwd)
     return f"{output_base}.*"
 
-
-def render_figure(code, code_dir, language, output_dir, output_base, config=None):
+def render_figure(code, code_dir, language, output_dir, output_base, thumbnails_dir, config=None):
     """
     Run a GMT code and save the images in *output_dir* with file names
     derived from *output_base*.
     """
     # pylint: disable=too-many-arguments
     if language == "bash":
-        figname = eval_bash(code, code_dir, output_dir, output_base, config=config)
+        figname = eval_bash(code, code_dir, output_dir, output_base, thumbnails_dir, config=config)
     elif language == "python":
         figname = eval_python(code, code_dir, output_dir, output_base, config=config)
     return figname
@@ -440,9 +445,16 @@ class GMTPlotDirective(Directive):
         builddir.mkdir(parents=True, exist_ok=True)
         Path(builddir, code_file.name).write_text(code, encoding="utf-8")
 
-        # make figures
-        image = render_figure(
-            code, code_basedir, self.options["language"], builddir, output_base, config
+        # 获取缩略图的目标存放路径 (build/dirhtml/_static/thumbnails)
+        builder = env.app.builder
+        thumbnails_dir = ""
+        if hasattr(builder, 'outdir') and builder.format in ('html', 'dirhtml'):
+            thumbnails_dir = Path(builder.outdir) / "_static" / "thumbnails"
+            thumbnails_dir.mkdir(parents=True, exist_ok=True)
+            
+        # make figures (and thumb)
+        image_glob = render_figure(
+            code, code_basedir, self.options["language"], builddir, output_base, thumbnails_dir, config
         )
 
         gmtplot_block = (
@@ -452,7 +464,7 @@ class GMTPlotDirective(Directive):
                 show_code=self.options["show-code"],
                 code=builddir_link / code_file.name,
                 code_opts=code_opts,
-                image=builddir_link / image,
+                image=builddir_link / image_glob,
                 image_opts=image_opts,
                 caption=caption,
             )
