@@ -95,6 +95,10 @@ grdshake
    :width: 80%
    :align: center
 
+参考链接
+---------
+新版中国大陆工程场地VS30 地图（2024）： https://seismisite.net/
+
 相关模块
 ---------
 
