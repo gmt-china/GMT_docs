@@ -76,7 +76,9 @@ git clone --depth 1 https://github.com/CovMat/google-map-downloader.git google-m
 mv google-map-downloader/example_tif/*.tif ~/.gmt/cache/
 rm -rf google-map-downloader
 
-# 4.3 global_vs30 (module/grdshake/)
+# 4.3 
+# global_vs30 (module/grdshake/)
+# SAC files (module/sac/)
 git clone --depth 1 https://github.com/CovMat/dataset_gmtchina.git dataset_gmtchina
 mv dataset_gmtchina/* ~/.gmt/cache/
 rm -rf dataset_gmtchina
