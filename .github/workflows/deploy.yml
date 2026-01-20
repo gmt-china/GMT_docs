@@ -11,14 +11,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  # ====================================================
+  # Job 1:  HTML 
+  # ====================================================
+  deploy-html:
     runs-on: ubuntu-latest
     env:
       GMT_DOC_VERSION: 6.6
     defaults:
       run:
         shell: bash -l {0}
-
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,6 +54,59 @@ jobs:
       - name: Build HTML zip
         run: make htmlzip
 
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p deploy/${GMT_DOC_VERSION}
+          cp -r build/dirhtml/* deploy/${GMT_DOC_VERSION}/
+          cp build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
+          echo "docs.gmt-china.org" > deploy/CNAME
+          touch deploy/.nojekyll
+          
+          cd deploy
+          rm -rf latest
+          ln -sf ${GMT_DOC_VERSION} latest
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: deploy
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+  # ====================================================
+  # Job 2:  PDF 
+  # ====================================================
+  build-pdf:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v2.0.7
+        with:
+          environment-file: environment.yml
+          cache-downloads: false
+          cache-environment: true
+
+      - name: Download and list cached files
+        continue-on-error: true 
+        run: |
+          gh run download --name gmt-cache --dir ~/.gmt/ || echo "Cache not found, skipping."
+          if [ -d ~/.gmt/server ]; then
+            touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Install libfuse2 (for AppImage support)
         run: |
           sudo apt-get update
@@ -70,34 +128,14 @@ jobs:
       - name: Build PDF documentation (Tectonic)
         run: make build_pdf
 
-      - name: Upload PDF Artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload PDF to Release
+        uses: ncipollo/release-action@v1
         with:
-          name: GMT_Docs_PDF
-          path: build/latex/GMT_docs.pdf
-          retention-days: 5
-
-      - name: Prepare deployment directory
-        run: |
-          mkdir -p deploy/${GMT_DOC_VERSION}
-          
-          cp -r build/dirhtml/* deploy/${GMT_DOC_VERSION}/
-          
-          cp build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
-          cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
-          
-          echo "docs.gmt-china.org" > deploy/CNAME
-          touch deploy/.nojekyll
-          
-          cd deploy
-          rm -rf latest
-          ln -sf ${GMT_DOC_VERSION} latest
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: deploy
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          tag: nightly
+          name: "Latest PDF Build"
+          allowUpdates: true
+          removeArtifacts: true
+          replacesArtifacts: true
+          makeLatest: true
+          artifacts: "build/latex/GMT_docs.pdf"
+          token: ${{ secrets.GITHUB_TOKEN }}
