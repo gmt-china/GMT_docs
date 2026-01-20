@@ -6,7 +6,6 @@ on:
     branches:
       - main
 
-# 确保同一时间只有一个部署任务在运行，新的 push 会取消旧的运行
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -21,7 +20,6 @@ jobs:
         shell: bash -l {0}
 
     steps:
-      # 1. 修正版本号 v4
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -32,12 +30,10 @@ jobs:
           cache-downloads: false
           cache-environment: true
 
-      # 2. 增加容错处理：如果缓存工件不存在（比如过期了），不要让流程失败
       - name: Download and list cached files
         continue-on-error: true 
         run: |
           gh run download --name gmt-cache --dir ~/.gmt/ || echo "Cache not found, skipping."
-          # 只有文件存在时才 touch，避免报错
           if [ -d ~/.gmt/server ]; then
             touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
             ls -lhR ~/.gmt
@@ -53,14 +49,11 @@ jobs:
       - name: Build HTML zip
         run: make htmlzip
 
-      # 3. 安装 Tectonic
       - name: Setup tectonic
         uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 4. 缓存 Tectonic 资源
-      # 这将极大加快 PDF 编译速度，使"双重部署"变得没有必要
       - name: Cache Tectonic packages
         uses: actions/cache@v4
         with:
@@ -69,32 +62,32 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-tectonic-
 
-      - name: Build PDF
-        run: make pdf optimize_pdf
+      - name: Build PDF documentation (Tectonic)
+        run: make build_pdf
 
-      # 5. 整理部署文件
-      # 此时 HTML, Zip, PDF 都已生成，统一整理到 deploy 目录
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GMT_Docs_PDF
+          path: build/latex/GMT_docs.pdf
+          retention-days: 5
+
       - name: Prepare deployment directory
         run: |
           mkdir -p deploy/${GMT_DOC_VERSION}
           
-          # 复制 HTML
           cp -r build/dirhtml/* deploy/${GMT_DOC_VERSION}/
           
-          # 复制 Zip 和 PDF
           cp build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
           cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
           
-          # 设置根目录文件
           echo "docs.gmt-china.org" > deploy/CNAME
           touch deploy/.nojekyll
           
-          # 设置 latest 软链
           cd deploy
           rm -rf latest
           ln -sf ${GMT_DOC_VERSION} latest
 
-      # 6. 单次原子部署
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
