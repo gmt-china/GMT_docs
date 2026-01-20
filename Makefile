@@ -20,16 +20,13 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-# Aliases for explicit calls
-build_html: html
-build_pdf: pdf
-
 htmlzip: html
 	cp -r $(BUILDDIR)/html $(BUILDDIR)/$(DOCNAME)
 	cd $(BUILDDIR); zip -r $(DOCNAME).zip $(DOCNAME); rm -r $(DOCNAME); cd ..
 
 pdf: latex
 	tectonic $(BUILDDIR)/latex/$(DOCNAME).tex
+	mv $(BUILDDIR)/latex/$(DOCNAME).pdf $(BUILDDIR)/$(DOCNAME).pdf
 
 # reduce file size of the final PDF documentation
 optimize_pdf: pdf
