@@ -49,6 +49,11 @@ jobs:
       - name: Build HTML zip
         run: make htmlzip
 
+      - name: Install libfuse2 (for AppImage support)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libfuse2
+
       - name: Setup tectonic
         uses: wtfjoke/setup-tectonic@v1
         with:
