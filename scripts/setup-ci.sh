@@ -62,12 +62,41 @@ git clone --depth 1 https://github.com/gmt-china/china-geospatial-data china-geo
 mv china-geospatial-data/*.gmt ~/.gmt/cache/
 rm -rf china-geospatial-data
 
-# 4. Download plate boundary types data used in docs
+# 4 Download data used in docs
+
+# 4.1 plate boundary types data (dataset/global_tectonics/)
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt
 wget -q https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt
 mv boundaries.gmt plates.gmt global_gprv.gmt oc_boundaries.gmt ~/.gmt/cache/
+
+# 4.2 satellite image (examples/ex004/)
+git clone --depth 1 https://github.com/CovMat/google-map-downloader.git google-map-downloader
+mv google-map-downloader/example_tif/*.tif ~/.gmt/cache/
+rm -rf google-map-downloader
+
+# 4.3 
+# global_vs30 (module/grdshake/)
+# SAC files (module/sac/)
+git clone --depth 1 https://github.com/CovMat/dataset_gmtchina.git dataset_gmtchina
+mv dataset_gmtchina/* ~/.gmt/cache/
+rm -rf dataset_gmtchina
+
+# 4.4 dataset/WSM_2016
+wget -q --no-check-certificate https://datapub.gfz-potsdam.de/download/10.5880.WSM.2016.001/wsm2016.csv
+mv wsm2016.csv ~/.gmt/cache/
+
+# 4.5 ex031
+wget -q https://ds.iris.edu/files/products/emc/emc-files/S362ANI_percent.nc
+mv S362ANI_percent.nc ~/.gmt/cache/
+
+# 4.6 module/isf
+wget -q https://download.isc.ac.uk/isf/catalogue/2020/202001.gz
+gzip -dkN 202001.gz
+chmod 777 202001.isf
+mv 202001.isf ~/.gmt/cache/
+rm 202001.gz
 
 # 5. Download Chinese font files for GMT Chinese support
 mkdir -p ~/.gmt/winfonts/
