@@ -94,6 +94,7 @@ mv S362ANI_percent.nc ~/.gmt/cache/
 # 4.6 module/isf
 wget -q https://download.isc.ac.uk/isf/catalogue/2020/202001.gz
 gzip -dkN 202001.gz
+chmod 777 202001.isf
 mv 202001.isf ~/.gmt/cache/
 rm 202001.gz
 
