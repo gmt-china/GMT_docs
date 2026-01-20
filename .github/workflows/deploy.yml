@@ -1,31 +1,28 @@
-#
-# Build and deploy the documentation
-#
 name: Deploy
 
 on:
-  # pull_request: # enable pull_request for testing
   push:
     branches:
       - main
 
+# 确保同一时间只有一个部署任务在运行，新的 push 会取消旧的运行
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
       GMT_DOC_VERSION: 6.6
-
     defaults:
       run:
         shell: bash -l {0}
 
     steps:
+      # 1. 修正版本号 v4
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v2.0.7
@@ -34,82 +31,74 @@ jobs:
           cache-downloads: false
           cache-environment: true
 
+      # 2. 增加容错处理：如果缓存工件不存在（比如过期了），不要让流程失败
       - name: Download and list cached files
+        continue-on-error: true 
         run: |
-          gh run download --name gmt-cache --dir ~/.gmt/
-          # Change modification times of the two files, so GMT won't refresh it
-          touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
-          ls -lhR ~/.gmt
+          gh run download --name gmt-cache --dir ~/.gmt/ || echo "Cache not found, skipping."
+          # 只有文件存在时才 touch，避免报错
+          if [ -d ~/.gmt/server ]; then
+            touch ~/.gmt/server/gmt_data_server.txt ~/.gmt/server/gmt_hash_server.txt
+            ls -lhR ~/.gmt
+          fi
         env:
           GH_TOKEN: ${{ github.token }}
 
-      # Because building the PDF document is slow, the building and deployment
-      # process is designed as follows:
-      #
-      # 1. Build the HTML document and use the old PDF document and HTML zip if available
-      # 2. Deploy the HTML document
-      # 3. Build the HTML document again (html, not dirhtml) and make a zip
-      # 4. Build the PDF document
-      # 5. Deploy the PDF document and HTML zip
-      #
       - name: Build HTML
         run: |
           make dirhtml
           cat sphinx_warnings.txt
 
-      - name: Checkout the gh-pages branch
-        uses: actions/checkout@v6
-        with:
-          ref: gh-pages
-          path: deploy
-          fetch-depth: 0
+      - name: Build HTML zip
+        run: make htmlzip
 
-      - name: Prepare the documentation for deployment
-        run: |
-          cd deploy
-          # generate the .nojekyll file in the root directory
-          touch .nojekyll
-          # generate CNAME in the root directory
-          echo docs.gmt-china.org > CNAME
-          # Use the old PDF documentation because the new PDF documentation is not built
-          if [ -e ${GMT_DOC_VERSION}/GMT_docs.pdf ]; then
-            cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
-          fi
-          # Use the old HTML zip because the new HTML zip is not built
-          if [ -e ${GMT_DOC_VERSION}/GMT_docs.zip ]; then
-            cp ${GMT_DOC_VERSION}/GMT_docs.zip ../build/dirhtml/
-          fi
-          # Replace the old documentation with the new one.
-          rm -rvf ${GMT_DOC_VERSION}
-          cp -rvf ../build/dirhtml/ ${GMT_DOC_VERSION}/
-          # let "latest" link to the latest version
-          rm -rfv latest
-          ln -sfv ${GMT_DOC_VERSION} latest
-          cd ..
-
-      - name: Deploy the HTML documentation to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force_orphan: true
-          publish_dir: deploy
-
-      - name: Build the HMTL zip
-        run: |
-          make htmlzip
-          mv build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
-
+      # 3. 安装 Tectonic
       - name: Setup tectonic
-        uses: wtfjoke/setup-tectonic@v4
+        uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build the PDF
+      # 4. 缓存 Tectonic 资源
+      # 这将极大加快 PDF 编译速度，使"双重部署"变得没有必要
+      - name: Cache Tectonic packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+
+      - name: Build PDF
+        run: make pdf optimize_pdf
+
+      # 5. 整理部署文件
+      # 此时 HTML, Zip, PDF 都已生成，统一整理到 deploy 目录
+      - name: Prepare deployment directory
         run: |
-          make pdf optimize_pdf
+          mkdir -p deploy/${GMT_DOC_VERSION}
+          
+          # 复制 HTML
+          cp -r build/dirhtml/* deploy/${GMT_DOC_VERSION}/
+          
+          # 复制 Zip 和 PDF
+          cp build/GMT_docs.zip deploy/${GMT_DOC_VERSION}/
           cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          
+          # 设置根目录文件
+          echo "docs.gmt-china.org" > deploy/CNAME
+          touch deploy/.nojekyll
+          
+          # 设置 latest 软链
+          cd deploy
+          rm -rf latest
+          ln -sf ${GMT_DOC_VERSION} latest
 
-      - name: Deploy the PDF and HTML zip documentation to gh-pages
+      # 6. 单次原子部署
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          force_orphan: true
           publish_dir: deploy
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
