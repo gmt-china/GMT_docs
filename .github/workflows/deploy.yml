@@ -71,6 +71,8 @@ jobs:
           touch .nojekyll
           # generate CNAME in the root directory
           echo docs.gmt-china.org > CNAME
+          # 生成根目录的 index.html 用于自动跳转
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=latest/" /></head><body><p>Redirecting to <a href="latest/">latest version</a>...</p></body></html>' > index.html
           # Use the old PDF documentation because the new PDF documentation is not built
           if [ -e ${GMT_DOC_VERSION}/GMT_docs.pdf ]; then
             cp ${GMT_DOC_VERSION}/GMT_docs.pdf ../build/dirhtml/
