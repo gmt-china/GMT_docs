@@ -93,6 +93,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
+        if: github.ref == 'refs/heads/main'
 
       - name: Build the HMTL zip
         run: |
@@ -113,3 +114,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
+        if: github.ref == 'refs/heads/main'
