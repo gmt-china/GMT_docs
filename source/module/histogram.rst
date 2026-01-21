@@ -84,7 +84,7 @@ histogram
 **-T**\ *file*\|\ *list*
     指定不等间隔统计直方：提供一个第一列为直方间隔的文件 *file* ，或者一个逗号分隔的数值列表 *list* 。
 
-详情请参见 :doc:`/examples/data_ex01` 。
+详情请参见 :doc:`/examples/data_ex01/` 。
 
 可选选项
 --------
