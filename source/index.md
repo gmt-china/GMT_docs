@@ -104,6 +104,7 @@ module/index
 
 utilities/index
 migrating/index
+array
 contributing
 贡献者 <https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85->
 ```

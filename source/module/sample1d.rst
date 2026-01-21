@@ -102,7 +102,7 @@ sample1d
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
     定义要等距采样的 *time* 范围（从 *min* 到 *max* ）和步长 *inc*
     （默认使用输入的 *time* 值）。用法 :option:`-T`\ *list* 表示指定一系列 *time* 值，
-    例如 :option:`-T`\ *13,15,16,22.5* 。具体详见 :doc:`/examples/data_ex01/index` 。
+    例如 :option:`-T`\ *13,15,16,22.5* 。具体详见 :doc:`/array` 。
     若不使用 :option:`-A` ，默认为 :option:`-A`\ **f** 。
 
     **注：** 对于空间 *(x, y)* 或 *(lon, lat)* 序列的重新采样，

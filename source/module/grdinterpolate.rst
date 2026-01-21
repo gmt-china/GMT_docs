@@ -93,7 +93,7 @@ grdinterpolate
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
     定义要等距采样的 level 范围（从 *min* 到 *max* ）和步长 *inc*
-    （默认使用输入 cube 的每个 level ）。 具体详见 :doc:`/examples/data_ex01/index` 。
+    （默认使用输入 cube 的每个 level ）。 具体详见 :doc:`/array` 。
 
     **注：**
 
