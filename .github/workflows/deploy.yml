@@ -4,7 +4,7 @@
 name: Deploy
 
 on:
-  # pull_request: # enable pull_request for testing
+  pull_request: # enable pull_request for testing
   push:
     branches:
       - main
@@ -107,7 +107,8 @@ jobs:
       - name: Build the PDF
         run: |
           make pdf optimize_pdf
-          cp build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          cp -v build/GMT_docs.pdf deploy/${GMT_DOC_VERSION}/
+          ls -lh deploy/${GMT_DOC_VERSION}/GMT_docs.pdf
 
       - name: Deploy the PDF and HTML zip documentation to gh-pages
         uses: peaceiris/actions-gh-pages@v4
