@@ -130,7 +130,7 @@ movie
     文件行数即为帧数。注意 *timefile* 文件可以在 *background* 脚本中创建（见 :option:`-Sb` ），
     因此在 *background* 脚本执行前后 GMT 都会查找 *timefile* 是否存在。
     如果仅指定帧数 *nframes* ，则只有变量 **MOVIE_FRAME** 可用，因为没有数据文件。
-    对于数组生成的一些细节参数，详见 `生成一维数组`_ 。还支持以下子选项：
+    对于数组生成的一些细节参数，详见 :doc:`/examples/data_ex01` 。还支持以下子选项：
 
     + **+n** - *inc* 变为 *min* 到 *max* 之间的帧数。
     + **+p** - 设置每帧图片命名的帧号格式的标签宽度 *width* ，
@@ -358,8 +358,6 @@ movie
     **注：** 一个核被 **movie** 使用，所以实际上 n-1 个核被用于帧生成。
 
 .. include:: explain_help.rst_
-
-.. include:: explain_array.rst_
 
 参数
 ---------

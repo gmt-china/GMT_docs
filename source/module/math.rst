@@ -123,7 +123,7 @@ math
 .. option:: -T
 
 **-T**\ [*min*/*max*/*inc*\ [**+b**\|\ **i**\|\ **l**\|\ **n**]\|\ *file*\|\ *list*]
-    不加任何选项和文件，表明没有输入文件。其他详见 `生成一维数组`_
+    不加任何选项和文件，表明没有输入文件。其他详见 :doc:`/examples/data_ex01` 。
 
 .. include:: explain_-V.rst_
 
@@ -152,8 +152,6 @@ math
 .. include:: explain_-w.rst_
 
 .. include:: explain_help.rst_
-
-.. include:: explain_array.rst_
 
 运算符
 ------

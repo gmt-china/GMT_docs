@@ -186,7 +186,7 @@ makecpt
 **-T**\ *file*\|\ *list*
     定义要生成的 CPT 文件的 z 值范围 *min/max* 及颜色区间间隔 *inc*。
     如果不使用本选项，则原样使用主 CPT 中的现有范围和间隔。
-    附加 **+n** 则将 *inc* 解释为颜色区间的数目而不是间隔。其他附加选项的含义详见 `生成一维数组`_ 。
+    附加 **+n** 则将 *inc* 解释为颜色区间的数目而不是间隔。其他附加选项的含义详见 :doc:`/examples/data_ex01` 。
 
     也可以读取一个文件 *file*，文件第一列代表的一维数组定义了每个颜色区间的边界。
     或者直接给出一个以逗号分隔的一维数组 *list*。
@@ -216,8 +216,6 @@ makecpt
 .. include:: explain_help.rst_
 
 .. include:: explain_transparency.rst_
-
-.. include:: explain_array.rst_
 
 颜色铰链
 --------
