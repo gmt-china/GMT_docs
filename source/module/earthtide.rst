@@ -74,7 +74,7 @@ earthtide
     如果仅给出了 *min*，则我们使用该日期和时间进行计算。如果未提供 :option:`-T` ，则从计算机时钟获取 UTC 格式的当前时间。
     如果未提供 :option:`-G` 或 :option:`-S` ，则 :option:`-T` 被解释为在 :option:`-L` 指定的位置计算时间序列，因此 :option:`-L` 变为必选。
     当同时存在 :option:`-G` 和 :option:`-T` 时，仅考虑第一个时间 T 序列。
-    日期范围可以从 1901 年到 2099 年。有关数组生成的详细信息，请参见 :doc:`/examples/data_ex01/` 。
+    日期范围可以从 1901 年到 2099 年。有关数组生成的详细信息，请参见 :doc:`/examples/data_ex01/index` 。
 
 .. include:: explain_-V.rst_
 

@@ -129,7 +129,7 @@ filter1d
 .. option:: -T
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+e**\|\ **i**\|\ **n**]\|\ **-T**\ *file*\|\ *list*
-    生成从 *min* 到 *max* 间隔为 *inc* 的等间隔时间序列，详情请参见 :doc:`/examples/data_ex01/` 。
+    生成从 *min* 到 *max* 间隔为 *inc* 的等间隔时间序列，详情请参见 :doc:`/examples/data_ex01/index` 。
 
 .. include:: explain_-V.rst_
 
