@@ -33,5 +33,6 @@
 
 .. toctree::
     :glob:
+    :maxdepth: 1
 
     /examples/data_ex*/index
