@@ -51,9 +51,12 @@ ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.h
 
 ```
 gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/
-# 如果在中文绘图脚本中，有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720
-# 可以去掉横杠后以逗号分隔，添加在后面：
-# gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/,I+m0.5c,E720
+```
+
+如果在中文绘图脚本中，有其他需要传递给 **psconvert** 命令的选项，例如 `-I+m0.5c -E720` 。可以去掉横杠后以逗号分隔，添加在后面：
+
+```
+gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/,I+m0.5c,E720
 ```
 
 接下来，还需要在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
