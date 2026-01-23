@@ -328,6 +328,8 @@ class GMTPlotDirective(Directive):
         if self.options["show-code"]:
             code_opts = []
             for key, val in self.options.items():
+                if key == "name":  # 排除 name 属性，不给代码块加 ID
+                    continue
                 if key == "linenos":
                     code_opts.append(f":{key}:")
                 elif key in self.options_code:
