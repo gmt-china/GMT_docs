@@ -328,6 +328,8 @@ class GMTPlotDirective(Directive):
         if self.options["show-code"]:
             code_opts = []
             for key, val in self.options.items():
+                if key == "name":  # 排除 name 属性，不给代码块加 ID
+                    continue
                 if key == "linenos":
                     code_opts.append(f":{key}:")
                 elif key in self.options_code:
@@ -361,10 +363,13 @@ class GMTPlotDirective(Directive):
             code, code_basedir, builddir, output_base, thumbnails_dir, config
         )
 
+        # 优先使用用户在 rst 中定义的 :name:，如果没有定义，再使用 MD5 哈希值
+        label = self.options.get('name', f"gmtplot-{output_base}")
+
         gmtplot_block = (
             jinja2.Template(TEMPLATE)
             .render(
-                label="gmtplot-" + output_base,
+                label=label,
                 show_code=self.options["show-code"],
                 code=builddir_link / code_file.name,
                 code_opts=code_opts,
