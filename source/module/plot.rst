@@ -1,5 +1,5 @@
 :author: 田冬冬, 陈箫翰, 周茂, 王亮, 何星辰, 姚家园
-:date: 2026-01-06
+:date: 2026-01-23
 
 .. index:: ! plot
 .. program:: plot
@@ -141,9 +141,9 @@ plot
 
     可以将 *refpoint* 设置为 *lon/lat* （或 *x/y* ）坐标替代 **a**\|\ **r**\|\ **s**\|\ **t**，该点将作为所有组的固定外部参考点。
 
-    .. gmtplot:: plot/GMT_segmentize.sh
+    .. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_segmentize.png
         :width: 80%
-        :show-code: false
+        :align: center
 
         虚线表示原始输入数据，输入数据有两个文件 *t1.txt* 和 *t2.txt* 。而实线是改变后的连接方式和分组方式。第一张图是原始输入数据，随后的五个图表示 **-Fpa**、 **-Fpt**、 **-Fps**、 **-Fp**\ 10/35 和 **-Fna** 的效果。
 
@@ -214,9 +214,9 @@ plot
 
     **注意**：必须根据所需结果，至少指定一种填充或一个画笔属性。
 
-    .. gmtplot:: plot/GMT_fill_curves.sh
+    .. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_fill_curves.png
        :width: 80%
-       :show-code: false
+       :align: center
 
        使用本选项对曲线之间的区域进行涂色。会自动识别交点和 NaN 间隙，填充颜色取决于哪条曲线位于上方。图例可以设置为填充矩形，或者通过 **+r** 设置为线条。
 
@@ -336,9 +336,9 @@ plot
 
 14种简单的基本符号只需要一个参数 *size*
 
-.. gmtplot:: plot/GMT_base_symbols1.sh
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_base_symbols1.png
     :width: 80%
-    :show-code: false
+    :align: center
 
     14种简单的基本符号，细圆圈表示相同 *size* 的外接圆。
 
@@ -366,9 +366,9 @@ plot
 
 5种复杂符号需要两个或更多的参数，还可以添加附加选项实现更多显示效果
 
-.. gmtplot:: plot/GMT_base_symbols2.sh
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_base_symbols2.png
     :width: 80%
-    :show-code: false
+    :align: center
 
     5种多参数符号。大写形式 **E**, **J**, **W** 与小写形式 **e**, **j**, **w** 的区别在于大写形式使用地理方位角与地理距离。
 
@@ -426,9 +426,9 @@ plot
 
 .. rubric:: 条状符号
 
-.. gmtplot:: plot/GMT_base_symbols4.sh
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_base_symbols4.png
     :width: 80%
-    :show-code: true
+    :align: center
 
 **-Sb**\ [*size*\ [**c**\|\ **i**\|\ **p**\|\ **q**]][**+b**\ \|\ **B**\ [*base*]][**+v**\|\ **i**\ *ny*][**+s**\ [*gap*]]
     绘制垂直条状符号，从 *base* 到坐标Y。 *size* 为宽度，可以使用 **c**\|\ **i**\|\ **p** 这样的长度单位，也可以使用 **q** 表示X方向单位。
@@ -449,7 +449,7 @@ plot
 
 .. rubric:: 矢量符号
 
-矢量符号需要长度和方向，或矢量终点坐标等参数。通过附加选项可以定制矢量头的样式。
+矢量符号需要长度和方向，或矢量终点坐标等参数。通过附加选项可以定制矢量头的样式。关于矢量绘制的详细说明请参考 :doc:`/basis/vector` 。
 
 **-Sm**\ *size*\ [**+**\ *vecmodifiers*]
     绘制数学圆弧，输入数据的格式为::
@@ -484,22 +484,21 @@ plot
 **-S=**\ *size*\ [**+**\ *vecmodifiers*]
     绘制地理矢量，区别在于第三列是方位角（即以正北为起点顺时针旋转的角度），第四列长度的单位是地理单位（默认为km）。
 
-.. gmtplot:: plot/GMT_base_symbols5.sh
+.. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_base_symbols5.png
     :width: 80%
-    :show-code: true
+    :align: center
 
 .. rubric:: 自定义符号
 
 **-S**\ [**k**\ *name*\ [/\ *size*]]
     绘制自定义的符号。目前，GMT 官方内置了 40 个自定义符号，如下所示：
 
-    .. image:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
+    .. figure:: https://docs.generic-mapping-tools.org/latest/_images/GMT_App_N_1.png
         :width: 50%
         :align: center
-        :alt: GMT 内置自定义符号
 
-    如果这些内置自定义符号无法满足需求，用户可以自行制作自定义符号文件并使用。
-    详细使用方法见\ `制作和使用自定义符号`_。
+    
+    如果这些内置自定义符号无法满足需求（例如没有常用的指北针），用户可以自行制作自定义符号文件并使用。详细使用方法见\ `制作和使用自定义符号`_。
 
 .. rubric:: 带修饰物的线条
 
@@ -638,37 +637,23 @@ plot
 输入数据格式
 ------------
 
-:option:`-S` 选项相对复杂，与不同的选项连用，或者后面接不同的参数，所需要的输入数据的
-格式也不同。不管是什么符号，至少都需要给定符号的位置，即X和Y是必须的::
+:option:`-S` 选项决定了输入数据需要哪些数据列，如果在选项中未给出参数 *size* ，则数据中需要 *size* 列。
+此外，使用 :option:`-H` 、 :option:`-I` 和 :option:`-t` 选项都需要给出各自的数据列。
+无论选项顺序如何，数据列的顺序都是固定的::
 
-    X   Y
+    x y [z] [size] [scale] [intens] [transp [transp2]] [trailing-text]
 
-不同的符号，可能还需要额外的信息，统一写成（用 ``...`` 代表某符号特有的输入列）::
+其中括号中的项是可选的，并受所述选项控制：
 
-    X   Y   ...
+- :option:`-C` 选项需要 *z* 列。
+- :option:`-S` 选项不指定参数则需要 *size* 列。取决于选定的符号，可能需要不止一列。
+- :option:`-H` 选项不指定参数则需要 *scale* 列。
+- :option:`-I` 选项不指定参数则需要 *intens* 列。
+- :option:`-t` 选项不指定参数则需要 *transp* 列。
+- 尾随文本 *trailing-text* 总是可选的。
 
-若 :option:`-S` 指定了符号类型但未指定大小，即 ``-S<symbol>`` ，若该符号类型需要指定
-大小，则需要将符号大小放在输入数据的\ **第三列**，其他输入数据的列号延后，
-此时数据格式为::
-
-    X   Y   size    ...
-
-若size<=0，则跳过该记录行。
-
-若 :option:`-S` 选项后未指定符号代码，则符号代码必须位于输入文件的\ **最后一列**\ ::
-
-    X   Y   ...   symbol
-
-若使用了 :option:`-C` 和 :option:`-S` 选项，则符号的填充色由数据的第三列决定，其他字段依次后移::
-
-    X   Y  [Z]   ...  symbol
-
-因而总结一下输入数据的格式为::
-
-    x  y  [Z]  [size]  ...   [symbol]
-
-其中 ``...`` 为某些符号所要求的特殊的数据列， ``symbol`` 是未指定符号时必须的
-输入列， ``size`` 是未指定大小时的输入列。
+**注** ：(1) 如果 :option:`-S` 未指定具体的符号类型 *symbol* ，则 *symbol* 应位于尾随文本 *trailing-text* 的开头。
+(2) 可以使用 :option:`-i` 重新排列数据记录以匹配预期的格式。
 
 .. _gmt-custom-symbols:
 
@@ -677,16 +662,16 @@ plot
 
 如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据
 `GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/reference/custom-symbols.html>`__
-的格式要求自行制作自定义符号文件。
+的格式要求自行制作自定义符号文件。或者参考中文手册中的 :doc:`指北针符号示例 </examples/ex007>` 。
 
 使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 :file:`name.def`：
 
 #. 当前目录，即运行脚本所在目录
-#. :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
+#. :file:`~/.gmt/custom` 目录（Linux/macOS/WSL 用户）或 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows用户）
 #. :file:`$GMT_SHAREDIR/custom` 目录
 
 用户可以将自己制作的自定义符号复制到以上任一路径即可正常使用。
-建议放在 :file:`~/.gmt/custom` 目录（Linux 和 macOS 用户）或
+建议放在 :file:`~/.gmt/custom` 目录（Linux/macOS/WSL 用户）或
 :file:`C:\\Users\\你的当前用户名\\.gmt\\custom` 目录（Windows 用户）下。
 
 多段数据
@@ -695,14 +680,16 @@ plot
 对于多段数据而言，每段数据的头段记录中都可以包含一些选项，以使得不同段数据拥有
 不同的属性。头段记录中的选项会覆盖命令中选项的参数：
 
-- ``-Gfill`` ：设置当前段数据的填充色
-- ``-G-`` ：对当前数据段关闭填充
-- ``-G`` ：恢复到默认填充色
-- ``-W<pen>`` ：设置当前段数据的画笔属性
-- ``-W`` ：恢复到默认画笔属性 :term:`MAP_DEFAULT_PEN`
-- ``-W-`` ：不绘制轮廓
-- ``-Z<zval>`` ：从cpt文件中查找Z值<zval>所对应的颜色作为填充色
-- ``-ZNaN`` ：从cpt文件中获取NaN颜色
+- **-G**\ *fill* ：设置当前段数据的填充色 *fill*
+- **-G-** ：对当前数据段关闭填充
+- **-G** ：恢复到默认填充色
+- **-L**\ *label* ：设置当前段数据的标签，常用于断层名标注
+- **-W**\ *pen* ：设置当前段数据的画笔属性 *pen* 
+- **-W** ：恢复到默认画笔属性 :term:`MAP_DEFAULT_PEN`
+- **-W-** ：不绘制轮廓
+- **-Z**\ *zval* ：从 cpt 文件中查找 Z 值 *zval* 所对应的颜色作为填充色
+- **-Z**\ *NaN* ：从 cpt 文件中获取 NaN 颜色
+- **-t**\ *transparency* ：设置透明度
 
 详情及示例参见 :ref:`table-ascii-attrs`
 
@@ -713,23 +700,7 @@ plot
 基础示例
 ------------
 
-最简单的命令，绘制线段或多边形，此时数据输入需要两列，即X和Y::
-
-    gmt plot -R0/10/0/10 -JX10c -B1 -png test << EOF
-    3 5
-    5 8
-    7 4
-    EOF
-
-*-F* 选项示例
-----------------
-
-下面的脚本展示了 :option:`-F` 选项的用法：
-
-.. gmtplot:: plot/plot_-F.sh
-   :width: 80%
-
-   plot -F选项示意图
+请参考入门教程中的 :doc:`/tutorial/symbols` 。
 
 .. _gmt-plot-Sq-examples:
 

@@ -84,7 +84,7 @@ plot3d
 
     本选项可以使符号和多边形的填充颜色、线段和多边形的线条颜色由 Z 值决定。
 
-    #. 若绘制符号（即使用 :option:`-S` 选项），则符号的填充色由数据的第四列 Z 值决定，
+    #. 若绘制符号（即使用 :option:`-S` 选项），则符号的填充色由数据的第四列 *w* 决定，
        其他数据列依次后移一列。绘制多波段 3D 柱体时除外，每个波段的颜色均取自 CPT 中的各个切片。
     #. 若绘制线段或多边形（即未使用 :option:`-S` 选项），则需要在多段数据的数据段头记录中指定
        :option:`-Z`\ *val* (参见 :ref:`table-ascii-attrs` )。CPT文件中 *val* 所对应的颜色，
@@ -272,6 +272,27 @@ plot3d
 .. include:: explain_distunits.rst_
 
 .. include:: auto_legend_info.rst_
+
+输入数据格式
+------------
+
+:option:`-S` 选项决定了输入数据需要哪些数据列，如果在选项中未给出参数 *size* ，则数据中需要 *size* 列。
+此外，使用 :option:`-H` 、 :option:`-I` 和 :option:`-t` 选项都需要给出各自的数据列。
+无论选项顺序如何，数据列的顺序都是固定的::
+
+    x y z [w] [size] [scale] [intens] [transp [transp2]] [trailing-text]
+
+其中括号中的项是可选的，并受所述选项控制：
+
+- :option:`-C` 选项需要 *w* 列，在 CPT 文件中查找颜色。
+- :option:`-S` 选项不指定参数则需要 *size* 列。取决于选定的符号，可能需要不止一列。
+- :option:`-H` 选项不指定参数则需要 *scale* 列。
+- :option:`-I` 选项不指定参数则需要 *intens* 列。
+- :option:`-t` 选项不指定参数则需要 *transp* 列。
+- 尾随文本 *trailing-text* 总是可选的。
+
+**注** ：(1) 如果 :option:`-S` 未指定具体的符号类型 *symbol* ，则 *symbol* 应位于尾随文本 *trailing-text* 的开头。
+(2) 可以使用 :option:`-i` 重新排列数据记录以匹配预期的格式。
 
 示例
 --------
