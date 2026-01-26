@@ -89,7 +89,7 @@ talwani2d
 .. option:: -T
 
 **-T**\ *min*\ /*max*\ /\ *inc*\ [**+i**\|\ **n**]\ \|\ *file*\|\ *list*
-    指定一个等距的点列，在这些位置计算异常值。见 `生成一维数组`_
+    指定一个等距的点列，在这些位置计算异常值。见 :doc:`/array` 。
 
 .. include:: explain_-V.rst_
 
@@ -118,8 +118,6 @@ talwani2d
 .. include:: explain_help.rst_
 
 .. include:: explain_distunits.rst_
-
-.. include:: explain_array.rst_
 
 示例
 ----

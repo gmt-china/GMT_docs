@@ -129,9 +129,7 @@ filter1d
 .. option:: -T
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+e**\|\ **i**\|\ **n**]\|\ **-T**\ *file*\|\ *list*
-    生成时间序列
-
-    生成从 *min* 到 *max* 间隔为 *inc* 的等间隔数列。
+    生成从 *min* 到 *max* 间隔为 *inc* 的等间隔时间序列，详情请参见 :doc:`/array` 。
 
 .. include:: explain_-V.rst_
 
@@ -166,8 +164,6 @@ filter1d
 .. include:: explain_distunits.rst_
 
 .. include:: explain_precision.rst_
-
-.. include:: explain_array.rst_
 
 相关模块
 --------

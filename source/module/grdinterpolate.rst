@@ -93,7 +93,7 @@ grdinterpolate
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+a**][**+i**\|\ **n**][**+u**] \| [**-T**\ *file*\|\ *list*]
     定义要等距采样的 level 范围（从 *min* 到 *max* ）和步长 *inc*
-    （默认使用输入 cube 的每个 level ）。 具体详见 `生成一维数组`_ 。
+    （默认使用输入 cube 的每个 level ）。 具体详见 :doc:`/array` 。
 
     **注：**
 
@@ -138,8 +138,6 @@ grdinterpolate
 .. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
-
-.. include:: explain_array.rst_
 
 文件顺序
 -------------
