@@ -1,6 +1,18 @@
 {% extends "!layout.html" %}
 
 {%- block extrahead %}
+{{ super() }}
+{# Pagefind 资源引入 #}
+{% set root_path = pathto('', 1) %}
+{% if root_path == '#' or not root_path %}
+  {% set root_path = './' %}
+{% endif %}
+{% if not root_path.endswith('/') %}
+  {% set root_path = root_path + '/' %}
+{% endif %}
+<link href="{{ root_path }}pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="{{ root_path }}pagefind/pagefind-ui.js"></script>
+
 {# Enable versions switch #}
 {% if enable_versions_switch %}
   <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
@@ -42,5 +54,37 @@
        {{ nav_version }}
      </div>
    {%- endif %}
-   {% include "./searchbox_bing.html" %}
+
+   {#  searchbox: Pagefind 容器 #}
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+{% endblock %}
+
+{% block body %}
+    <div data-pagefind-body>
+        {{ super() }}
+    </div>
 {% endblock %}

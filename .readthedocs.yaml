@@ -12,6 +12,8 @@ build:
   jobs:
     pre_build:
       - bash scripts/setup-ci.sh
+    post_build:
+      - python -m pagefind --site $READTHEDOCS_OUTPUT/html/ --output-subdir pagefind
 
 # Build documentation in the "source/" directory with Sphinx
 sphinx:
