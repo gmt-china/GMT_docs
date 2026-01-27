@@ -1,0 +1,738 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pmodeler &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=177cee11" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="rotconverter" href="../rotconverter/" />
+    <link rel="prev" title="grdpmodeler" href="../grdpmodeler/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pmodeler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">大地坐标与地心坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">点位于多边形内/外</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">备注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">pmodeler</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/pmodeler.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-10-19
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="pmodeler">
+<span id="index-0"></span><h1>pmodeler<a class="headerlink" href="#pmodeler" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/supplements/spotter/gmtpmodeler.html" title="（在 GMT v6.6）"><span>pmodeler</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>评估特定位置的板块运动模型</p>
+</dd>
+</dl>
+<p><strong>pmodeler</strong> 读取包含 <em>lon</em>, <em>lat</em>，以及可选 <em>age</em> 三列的表格文件，
+并结合一个板块运动模型计算多种模型预测结果。
+用户可以选择提供一个多段格式的裁剪多边形文件；
+在这种情况下，仅使用多边形内部的点进行模型预测，
+多边形外的点将被跳过。结果输出到标准输出。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt pmodeler</strong>
+<em>table</em>
+<a class="reference internal" href="#cmdoption-pmodeler-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><em>rot_file</em>|<em>ID1-ID2</em>|<em>lon</em>/<em>lat</em>/<em>angle</em>[<strong>+i</strong>]
+<a class="reference internal" href="#cmdoption-pmodeler-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><em>flags</em>
+[ <a class="reference internal" href="#cmdoption-pmodeler-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>polygonfile</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>age</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-d"><code class="xref std std-option docutils literal notranslate"><span class="pre">-d</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-pmodeler-0"><code class="xref std std-option docutils literal notranslate"><span class="pre">-:</span></code></a>[<strong>i</strong>|<strong>o</strong>] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>包含地理坐标 (<em>lon, lat</em>)，以及可选的地壳年龄（Myr）的一个或多个表格文件名。
+如果未指定文件，则从标准输入读取数据。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-E</strong><em>rot_file</em>|<em>ID1-ID2</em>|<em>lon</em>/<em>lat</em>/<em>angle</em>[<strong>+i</strong>]</dt><dd><p>可通过以下三种方式之一指定旋转参数：</p>
+<ul>
+<li><p>提供一个包含旋转参数的文件。该文件必须为每个旋转包含一条记录，
+每条记录的格式如下：</p>
+<p><em>lon lat tstart [tstop] angle</em> [ <em>khat a b c d e f g df</em> ]</p>
+<p>其中 <em>tstart</em> 和 <em>tstop</em> 以百万年（Myr）为单位，<em>lon lat angle</em> 均以度为单位。
+<em>tstart</em> 和 <em>tstop</em> 分别为阶段的起始与结束年龄。
+若记录中未提供 <em>tstop</em>，则表示为一次总重建旋转，此时 <em>tstop</em> 默认设为 0，
+且文件中其他记录也不应指定 <em>tstop</em>。
+若旋转的协方差矩阵 <strong>C</strong> 可用，则必须按照括号中列出的九个可选项提供：
+此处 <strong>C</strong> = (<em>g</em>/<em>khat</em>)*[ <em>a b d; b c e; d e f</em> ]，
+即 <strong>C</strong> 由三个行向量组成。
+若拟合旋转的自由度 (<em>df</em>) 为 0 或未给出，则默认设置为 10000。
+文件中空行以及以 # 开头的记录将被忽略。</p>
+</li>
+<li><p>提供由两个板块 ID 组成的文件名（以连字符连接，例如 PAC-MBL），
+程序将从 GPlates 旋转数据库中提取相应的旋转参数。
+若未找到对应旋转，将返回错误。</p></li>
+<li><p>直接指定 <em>lon</em>/<em>lat</em>/<em>angle</em>，即旋转极的经度、纬度与旋转角度（均以度为单位），
+用于单一的总重建旋转。</p>
+<p>无论采用哪种方式，都可以在参数后附加 <strong>+i</strong>，
+表示希望对旋转进行反转（invert rotation）。</p>
+</li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-S</strong><em>flags</em></dt><dd><p>指定要计算的模型预测类型，可附加一个或多个标识符：</p>
+<ul class="simple">
+<li><p><strong>a</strong> ：板块运动方位角（azimuth）</p></li>
+<li><p><strong>d</strong> ：当前位置与洋中脊生成点的球面距离（单位：km）</p></li>
+<li><p><strong>s</strong> ：板块运动模型阶段 ID（1 表示最年轻阶段）</p></li>
+<li><p><strong>v</strong> ：板块运动速率（mm/yr）</p></li>
+<li><p><strong>w</strong> ：板块旋转速率（度/Myr）</p></li>
+<li><p><strong>x</strong> ：相对于生成点的经度变化量</p></li>
+<li><p><strong>y</strong> ：相对于生成点的纬度变化量</p></li>
+<li><p><strong>X</strong> ：地壳生成时的经度</p></li>
+<li><p><strong>Y</strong> ：地壳生成时的纬度</p></li>
+</ul>
+<p>如果未指定任何参数，则默认计算全部 [<strong>adsvwxyXY</strong>]。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong><em>polygonfile</em></dt><dd><p>指定一个多段闭合多边形文件，用于定义模型计算区域。
+多边形外的点将被忽略。
+[默认使用所有数据点。]</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong><em>age</em></dt><dd><p>使用固定年龄进行模型计算（即忽略输入表格中的年龄值）。
+此选项可用于生成某一时刻的模型快照。
+若输入表中未包含年龄列，则必须使用此选项。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt><dd><p>将某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,...][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输出的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-q">
+<span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>对输入或输出的行进行筛选，该选项在一定程度上可以代替 gawk 的某些功能。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt><dd><p>设置 NaN 记录的处理方式。 <a class="reference internal" href="../../option/s/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pmodeler-0">
+<span class="sig-name descname"><span class="pre">-:</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pmodeler-0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>交换输入或输出数据的前两列。 <a class="reference internal" href="../../option/colon/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>大地坐标与地心坐标<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>所有球面旋转均作用于地心坐标。
+这意味着输入的数据点和网格被视为采用大地坐标表示，
+在进行旋转之前，必须先将其转换为地心坐标。
+旋转操作完成后，最终重建得到的点将再转换回大地坐标。
+如果将椭球设置参数 <a class="reference internal" href="../../conf/proj/#term-PROJ_ELLIPSOID"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> 更改为 <em>Sphere</em>，
+则可跳过此默认的转换过程。</p>
+</section>
+<section id="id6">
+<h2>点位于多边形内/外<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>为了确定点在多边形内，外或在边界上，GMT 会平衡数据类型以及多边形形状等因素来
+确定算法。对于笛卡尔坐标，GMT 使用 non-zero winding 算法，该算法非常快。对于
+地理坐标，如果多边形不包括两极点且多边形的经度范围不超过 360 度，同样使用该
+算法。否则，GMT 会采用 full spherical ray-shooting 方法。</p>
+</section>
+<section id="id7">
+<h2>示例<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>我们将使用一个包含太平洋地壳位置和年龄的表格 (pac_age.txt)、一个板块运动
+模型 (Pac_APM.txt) 以及一个包含当前太平洋板块轮廓的多边形 (pac_clip_path.txt)。
+要评估太平洋板块当前的板块运动方位角，请尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>pmodeler<span class="w"> </span>pac_age.txt<span class="w"> </span>-EPac_APM.txt<span class="w"> </span>-V<span class="w"> </span>-Fpac_clip_path.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-Sa<span class="w"> </span>-T0<span class="w"> </span>&gt;<span class="w"> </span>pac_dir_0.txt
+</pre></div>
+</div>
+<p>要确定自地壳形成以来整个太平洋板块的纬度变化，请尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>pmodeler<span class="w"> </span>pac_age.txt<span class="w"> </span>-EPac_APM.txt<span class="w"> </span>-V<span class="w"> </span>-Fpac_clip_path.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-Sy<span class="w"> </span>&gt;<span class="w"> </span>pac_dlat.txt
+</pre></div>
+</div>
+<p>要确定太平洋地壳形成时的有效板块运动速度，请尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>pmodeler<span class="w"> </span>pac_age.txt<span class="w"> </span>-EPac_APM.txt<span class="w"> </span>-V<span class="w"> </span>-Fpac_clip_path.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-Sv<span class="w"> </span>&gt;<span class="w"> </span>pac_vel.txt
+</pre></div>
+</div>
+<p>要确定地壳自形成以来已经移动了多远，请尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>pmodeler<span class="w"> </span>pac_age.txt<span class="w"> </span>-EPac_APM.txt<span class="w"> </span>-V<span class="w"> </span>-Fpac_clip_path.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-Sd<span class="w"> </span>&gt;<span class="w"> </span>pac_dist.txt
+</pre></div>
+</div>
+<p>要保存地壳形成时的坐标，请尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>pmodeler<span class="w"> </span>pac_age.txt<span class="w"> </span>-EPac_APM.txt<span class="w"> </span>-V<span class="w"> </span>-Fpac_clip_path.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-SXY<span class="w"> </span>&gt;<span class="w"> </span>ac_origin_xy.txt
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2>备注<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>GMT 发布了 EarthByte 旋转模型 Global_EarthByte_230-0Ma_GK07_AREPS.rot。
+如需使用替代的旋转文件，请创建一个名为
+<strong>GPLATES_ROTATIONS</strong> 的环境变量，使其指向该替代的旋转文件。</p>
+</section>
+<section id="id9">
+<h2>相关模块<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../backtracker/"><span class="doc">backtracker</span></a>,
+<a class="reference internal" href="../grdpmodeler/"><span class="doc">grdpmodeler</span></a>,
+<a class="reference internal" href="../grdrotater/"><span class="doc">grdrotater</span></a>,
+<a class="reference internal" href="../grdspotter/"><span class="doc">grdspotter</span></a>,
+<a class="reference internal" href="../hotspotter/"><span class="doc">hotspotter</span></a>,
+<a class="reference internal" href="../originater/"><span class="doc">originater</span></a>,
+<a class="reference internal" href="../rotconverter/"><span class="doc">rotconverter</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../grdpmodeler/" class="btn btn-neutral float-left" title="grdpmodeler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../rotconverter/" class="btn btn-neutral float-right" title="rotconverter" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 01 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

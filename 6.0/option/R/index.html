@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>-R 选项 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/option/R.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-J 选项" href="../J/" />
+    <link rel="prev" title="标准选项" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-R 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">五种方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">六种坐标</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">地理坐标</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">投影后坐标</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">弧度坐标</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">标准选项</a> &raquo;</li>
+        
+      <li>-R 选项</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/option/R.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r">
+<h1>-R 选项<a class="headerlink" href="#r" title="永久链接至标题">¶</a></h1>
+<p><strong>-R</strong> 选项用于指定要绘制的数据范围或地图区域。该选项的参数可以用五种方式指定，同时支持六种不同类型的数据坐标。</p>
+<div class="section" id="id1">
+<h2>五种方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>可以用五种方式指定数据范围。</p>
+<ol class="arabic">
+<li><p class="first"><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em></p>
+<p>通过给定X方向和Y方向的最大最小值来指定数据范围，是最常见的指定数据范围的方式。常用于指定笛卡尔数据的范围以及经线和纬线是直线的投影方式下的地理区域。例如 <strong>-R0/360/-90/90</strong> 表示X方向范围是0到360，Y方向范围是-90到90。</p>
+</li>
+<li><p class="first"><strong>-R</strong><em>xlleft</em>/<em>ylleft</em>/<em>xuright</em>/<em>yuright</em><strong>+r</strong></p>
+<p>通过给定矩形区域的左下角坐标 (<em>xlleft</em>, <em>ylleft</em>) 和右上角坐标 (<em>xuright</em>, <em>yuright</em>)
+来指定数据范围。例如 <strong>-R-90/20/-65/30+r</strong>。这种形式通常用于倾斜的地图投影中，此时不适合将经线和纬线作为地图边界。使用这种形式可以保证底图为矩形，尽管经线和纬线可能不是直线。</p>
+</li>
+<li><p class="first"><strong>-R</strong><em>gridfile</em></p>
+<p>该方式会直接从2D网格文件 <em>gridfile</em> 中提取数据范围信息。对于某些模块，该方式不仅会从网格中读取范围信息，还会读入网格间隔和网格配准信息（见 <a class="reference internal" href="../nodereg/"><span class="doc">-r 选项</span></a>）。</p>
+</li>
+<li><p class="first"><strong>-R</strong><em>code1</em>,<em>code2</em>,<em>…</em>[<strong>+e</strong>|<strong>r</strong>|<strong>R</strong>[<em>incs</em>]]</p>
+<p>通过直接指定区域代码 <em>code1</em>、<em>code2</em> 等间接指定研究区域范围。</p>
+<p>区域代码可以表示某个大洲、某个国家、某个州或省，详情见 <a class="reference internal" href="../../dataset/dcw/"><span class="doc">DCW: 世界数字图表</span></a> 一节。</p>
+<p><strong>+r</strong>|<strong>+R</strong><em>incs</em> 用于对通过区域代码得到的研究区域范围进一步扩张或缩减。其中 <strong>+r</strong> 表示调整区域范围使得范围是 <em>incs</em> 的整数倍，
+<strong>+R</strong> 表示 <em>incs</em> 被解释为区域范围向外扩展的增量。其中 <em>incs</em> 有三种形式：</p>
+<ol class="arabic simple">
+<li><em>inc</em>：四个边具有相同的增量</li>
+<li><em>xinc</em>/<em>yinc</em>：X和Y方向具有不同的增量</li>
+<li><em>winc</em>/<em>einc</em>/<em>sinc</em>/<em>ninc</em>：上下左右四个边具有不同的增量</li>
+</ol>
+<p>例如 <strong>-RFR+r1</strong> 表示取法国国界对应的区域范围并将其调整到最近的整数度数。</p>
+</li>
+<li><p class="first"><strong>-R</strong><em>anchor</em><em>x0</em>/<em>y0</em>/<em>nx</em>/<em>ny</em></p>
+<p>该方法仅可用于创建新的网格文件。通过指定网格文件中某个特定点（由 <em>anchor</em> 决定，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节）的坐标（由 <em>x0</em>/<em>y0</em> 决定），X和Y方向的网格点数（由 <em>nx</em>/<em>ny</em> 决定），以及X和Y方向的网格间隔（通常由 <strong>-I</strong><em>xinc</em>/<em>yinc</em> 选项决定），即可指定网格文件的区域范围。</p>
+</li>
+</ol>
+<p><a class="reference download internal" download="" href="../../_downloads/2f4a967acda807a02d41f7d7b8a1f3f1/R-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/R-gmtplot-0.png" src="../../_images/R-gmtplot-0.png" />
+<p class="caption"><span class="caption-text"><strong>-R</strong> 选项指定数据范围</span></p>
+</div>
+<ol class="loweralpha simple">
+<li>指定每个维度的极值；(b) 指定左下角和右上角的坐标。</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>六种坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT的坐标轴可以是多种类型，比如地图的经纬度轴、一般的笛卡尔轴、时间轴等等。不同类型的轴需要用不同类型的数据来指定数据的范围。
+<strong>-R</strong> 选项可以使用五种不同的方式来指定数据范围：</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="../../basis/io-format/#float-coordinates"><span class="std std-ref">一般浮点坐标</span></a></li>
+<li><a class="reference internal" href="../../basis/io-format/#geographic-coordinates"><span class="std std-ref">地理坐标</span></a></li>
+<li><a class="reference internal" href="../../basis/io-format/#absolute-time-coordinates"><span class="std std-ref">绝对时间坐标</span></a></li>
+<li><a class="reference internal" href="../../basis/io-format/#relative-time-coordinates"><span class="std std-ref">相对时间坐标</span></a></li>
+<li>投影后坐标</li>
+<li>弧度坐标</li>
+</ol>
+<p>其中地理坐标、浮点坐标、绝对时间坐标和相对时间坐标在 <a class="reference internal" href="../../basis/io-format/"><span class="doc">数据类型</span></a>
+中已经介绍过，此处不再赘述。</p>
+<div class="section" id="id3">
+<h3>地理坐标<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>对于常用的地图范围，GMT提供了两个简化写法：</p>
+<ul class="simple">
+<li><strong>-Rg</strong> 等效于 <strong>-R0/360/-90/90</strong></li>
+<li><strong>-Rd</strong> 等效于 <strong>-R-180/180/-90/90</strong></li>
+</ul>
+<p>GMT 对于地理投影和线性投影的默认设置有很大区别。有些时候数据是地理坐标，但是因为某些原因不能选择地理投影，只能选择线性投影（<strong>-JX</strong> 或 <strong>-Jx</strong>），此时可以通过如下几种方式表明当前数据是地理坐标下的数据，而不是简单的笛卡尔坐标：</p>
+<ol class="arabic simple">
+<li>使用 <strong>-Rg</strong> 而不是 <strong>0/360/-90/90</strong></li>
+<li>使用 <strong>-Rd</strong> 而不是 <strong>-180/180/-90/90</strong></li>
+<li>使用 <strong>-Rg</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em> 表明是某个有限范围的地理区域</li>
+<li>在范围后加后缀 <strong>W|E|S|N</strong> 或更通用的 <strong>D|G</strong>，比如 <strong>-R0/360G/-90/90N</strong></li>
+<li>使用 <strong>-fg</strong> 选项表明输入数据是地理坐标，见 <a class="reference internal" href="../f/"><span class="doc">-f 选项</span></a></li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">推荐使用 <strong>-fg</strong> 这种方式来指定输入数据的类型。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>投影后坐标<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>地理坐标可以通过选择投影方式投影成笛卡尔坐标，通过在区域范围后加上 <strong>+u</strong><em>unit</em>
+来表明这是一个经过投影的地理坐标。</p>
+<p>例如 <strong>-R-200/200/-300/300+uk</strong> 表示位于投影中心 <strong>(0,0)</strong> 处的一个 <strong>400km x 600km</strong>
+的矩形区域。这些坐标在GMT内部会被转换成区域左下角和右上角的地理坐标。当你想要用投影单位指定区域时用这种方式会比较方便（例如UTM meters）。</p>
+</div>
+<div class="section" id="id5">
+<h3>弧度坐标<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>对于以弧度为单位的数据而言，通常会需要指定数据范围是 <span class="math notranslate nohighlight">\(\pi\)</span> 的倍数或分数，此时可以使用 [<strong>+</strong>|<strong>-</strong>][<em>s</em>]<strong>pi</strong>[<em>f</em>] 形式，其中 <em>s</em> 和 <em>f</em> 可以是任意整数或浮点数，
+<em>s</em> 表示 <strong>scale</strong> 即倍数，<em>f</em> 表示 <strong>fraction</strong> 即分数。</p>
+<p>例如 <strong>-2pi/2pi3/0/1</strong> 表示X轴的数据范围是 <span class="math notranslate nohighlight">\(-2\pi\)</span> 到 <span class="math notranslate nohighlight">\(2/3\pi\)</span>，即相当于-360度到120度。</p>
+<p>当使用这种形式时，程序只在 <span class="math notranslate nohighlight">\(\pi\)</span> 相关的值处进行标注，即 n 倍的 <span class="math notranslate nohighlight">\(\pi\)</span>，
+<span class="math notranslate nohighlight">\(1.5\pi\)</span> 以及 3/4，2/3，1/2，1/3，1/4倍的 <span class="math notranslate nohighlight">\(\pi\)</span>。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../J/" class="btn btn-neutral float-right" title="-J 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral float-left" title="标准选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
