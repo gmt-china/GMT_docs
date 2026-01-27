@@ -8,7 +8,6 @@ SOURCEDIR     = source
 BUILDDIR      = build
 DOCNAME       = GMT_docs
 HTML          = dirhtml
-PAGEFIND      = pagefind
 
 # Put it first so that "make" without argument is like "make help"
 help:
