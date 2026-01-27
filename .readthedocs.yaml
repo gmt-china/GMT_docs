@@ -10,8 +10,8 @@ build:
   tools:
     python: "mambaforge-23.11"
   commands:
-    - bash scripts/setup-ci.sh
-    - make dirhtml
+    - export PATH=$READTHEDOCS_VIRTUALENV_PATH/bin:$PATH && bash scripts/setup-ci.sh
+    - export PATH=$READTHEDOCS_VIRTUALENV_PATH/bin:$PATH && make dirhtml
     - mkdir -p $READTHEDOCS_OUTPUT/html/
     - cp -r build/dirhtml/* $READTHEDOCS_OUTPUT/html/
 
