@@ -9,11 +9,16 @@ build:
   os: ubuntu-24.04
   tools:
     python: "mambaforge-23.11"
-  commands:
-    - export PATH=$READTHEDOCS_VIRTUALENV_PATH/bin:$PATH && bash scripts/setup-ci.sh
-    - export PATH=$READTHEDOCS_VIRTUALENV_PATH/bin:$PATH && make dirhtml
-    - mkdir -p $READTHEDOCS_OUTPUT/html/
-    - cp -r build/dirhtml/* $READTHEDOCS_OUTPUT/html/
+  jobs:
+    pre_build:
+      - bash scripts/setup-ci.sh
+    post_build:
+      - python -m pagefind --site $READTHEDOCS_OUTPUT/html/ --output-subdir pagefind
+
+# Build documentation in the "source/" directory with Sphinx
+sphinx:
+  configuration: source/conf.py
+  builder: dirhtml  # 强制 RTD 使用 dirhtml 构建器，本地环境、RTD 预览环境和正式发布环境完全统一
 
 # Optionally build your docs in additional formats such as PDF and ePub
 # formats:
