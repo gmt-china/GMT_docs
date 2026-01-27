@@ -9,14 +9,11 @@ build:
   os: ubuntu-24.04
   tools:
     python: "mambaforge-23.11"
-  jobs:
-    pre_build:
-      - bash scripts/setup-ci.sh
-
-# Build documentation in the "source/" directory with Sphinx
-sphinx:
-  configuration: source/conf.py
-  builder: dirhtml  # 强制 RTD 使用 dirhtml 构建器，本地环境、RTD 预览环境和正式发布环境完全统一
+  commands:
+    - bash scripts/setup-ci.sh
+    - make dirhtml
+    - mkdir -p $READTHEDOCS_OUTPUT/html/
+    - cp -r build/dirhtml/* $READTHEDOCS_OUTPUT/html/
 
 # Optionally build your docs in additional formats such as PDF and ePub
 # formats:
