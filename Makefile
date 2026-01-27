@@ -19,7 +19,7 @@ help:
 dirhtml:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@echo "Running Pagefind for Chinese search support..."
-	$(PAGEFIND) --site "$(BUILDDIR)/$(HTML)" --output-subdir "pagefind"
+	python -m pagefind --site "$(BUILDDIR)/$(HTML)" --output-subdir "pagefind"
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. $(O) is meant as a shortcut for $(SPHINXOPTS)
