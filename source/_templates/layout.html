@@ -61,11 +61,26 @@
        window.addEventListener('DOMContentLoaded', (event) => {
            const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
            const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+           var root = "{{ pathto('', 1) }}";
+           if (root === "#" || root === "" || root === ".") {
+               root = "./";
+           }
+           if (!root.endsWith('/')) {
+               root += '/';
+           }
 
            new PagefindUI({
                element: "#search",
                showSubResults: true,
                bundlePath: bundlePath,
+               processResult: function (result) {
+                   // 检查结果中是否有图片，且图片路径是否以 "/" 开头
+                   // Pagefind 返回的路径通常是 "/_images/xxx.png"
+                   if (result.meta.image && result.meta.image.startsWith("/")) {
+                       result.meta.image = root + result.meta.image.substring(1);
+                   }
+                   return result;
+               },
                translations: {
                    placeholder: "搜索手册...",
                    clear_search: "清除",
