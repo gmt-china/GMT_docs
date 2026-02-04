@@ -96,3 +96,55 @@ code.xref.std-option:hover {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
+/* =========================================
+   Pagefind 搜索结果弹窗化样式 (适配 RTD 主题)
+   ========================================= */
+
+/* 1. 调整搜索框在侧边栏的显示 */
+.pagefind-ui__form::before {
+    /* 让搜索图标和文字稍微紧凑一点 */
+    top: 15px !important;
+}
+
+/* 2. 将搜索结果列表 (Drawer) 变成屏幕中央的弹窗 */
+.pagefind-ui__drawer {
+    position: fixed !important;    /* 强制固定定位，脱离侧边栏流 */
+    top: 10vh !important;          /* 距离顶部 10% 的位置 */
+    left: 20% !important;          /* 水平居中 */
+    
+    width: 80vw !important;        /* 宽度占屏幕 80% */
+    max-width: 800px !important;   /* 最大宽度 800px，防止在大屏太宽 */
+    max-height: 80vh !important;   /* 高度限制，超出会出现滚动条 */
+    
+    background-color: #fff !important; /* 纯白背景 */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important; /* 强烈的阴影，营造悬浮感 */
+    border-radius: 8px !important; /* 圆角 */
+    z-index: 9999 !important;      /* 确保层级最高，覆盖在正文之上 */
+    
+    overflow-y: auto !important;   /* 内容过多时显示滚动条 */
+    padding: 20px !important;      /* 内边距 */
+    border: 1px solid #eee;        /* 细微边框 */
+}
+
+/* 3. 优化单条结果的样式 */
+.pagefind-ui__result {
+    border-bottom: 1px solid #eee !important;
+    padding: 15px 0 !important;
+}
+
+.pagefind-ui__result-thumb {
+    /* 限制缩略图大小，防止过大 */
+    max-width: 120px !important;
+}
+
+/* 4. 移动端适配：在手机上占满全屏 */
+@media (max-width: 768px) {
+    .pagefind-ui__drawer {
+        width: 95vw !important;
+        top: 5vh !important;
+        max-height: 90vh !important;
+        left: 2.5vw !important;
+        transform: none !important;
+    }
+}
