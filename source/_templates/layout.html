@@ -72,9 +72,7 @@
                        if (/^(https?:|\/\/|data:)/.test(imagePath)) {
                            return result;
                        }
-                       if (imagePath.startsWith('/')) {
-                           imagePath = imagePath.substring(1);
-                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
                        result.meta.image = bundlePath + '../' + imagePath;
                    }
                    return result;
