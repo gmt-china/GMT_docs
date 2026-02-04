@@ -84,6 +84,8 @@ histogram
 **-T**\ *file*\|\ *list*
     指定不等间隔统计直方：提供一个第一列为直方间隔的文件 *file* ，或者一个逗号分隔的数值列表 *list* 。
 
+详情请参见 :doc:`/array` 。
+
 可选选项
 --------
 
@@ -233,8 +235,6 @@ histogram
 .. include:: explain_-w.rst_
 
 .. include:: explain_help.rst_
-
-.. include:: explain_array.rst_
 
 示例
 ----

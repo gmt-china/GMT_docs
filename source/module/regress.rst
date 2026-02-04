@@ -147,7 +147,7 @@ regress
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ **-T**\ *file*\|\ *list*
     在参数指定的等间距点处评估最佳拟合回归模型。如果仅给出了 :option:`-T`\ *inc*，将把 *min* 和 *max* 重置为每个分段中 *x* 的极值。
-    若要完全跳过模型评估，使用 :option:`-T`\ 0。
+    若要完全跳过模型评估，使用 :option:`-T`\ 0。详细请参见 :doc:`/array` 。
 
 .. include:: explain_-V.rst_
 
@@ -200,9 +200,6 @@ regress
 .. include:: explain_help.rst_
 
 .. include:: explain_precision.rst_
-
-.. include:: explain_array.rst_
-
 
 注意事项
 --------
