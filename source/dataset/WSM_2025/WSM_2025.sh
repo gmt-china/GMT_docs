@@ -11,7 +11,7 @@
 gmt begin wsm2025
     # 绘制底图
     gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
-    gmt coast -JM10c -R100/130/20/40 -G244/243/239 -S167/194/223 -Baf
+    gmt coast -JM10c -R100/130/15/40 -G244/243/239 -S167/194/223 -Baf
 
     #
     size=0.3c
@@ -91,6 +91,25 @@ EOF
     gawk '($4 == "GFI" || $4 == "GFM") {print $1, $2, $3}' $data | gmt plot -Skfault_slip/$size -W0p,black -Gblack
     gawk '$4 == "BS" {print $1, $2, $3}' $data | gmt plot -SkBS/$size -W0p,pink -Gpink
     gawk '$4 == "DIF" {print $1, $2, $3}' $data | gmt plot -SkDIF/$size -W0p,yellow -Gyellow
+
+    # 符号图例
+    echo 135 40 45 | gmt plot -Skfocal_mec/2c -W1p -Gblack -N
+    echo 135 36 45 | gmt plot -Skborehole_collapse/2c -W1p -Gblack -N
+    echo 135 32 45 | gmt plot -Skstress_relief/2c -W1p -Gblack -N
+    echo 135 28 45 | gmt plot -Skhydra_fract/2c -W1p -Gblack -N
+    echo 135 24 45 | gmt plot -Skfault_slip/2c -W1p -Gblack -N
+    echo 135 20 45 | gmt plot -SkBS/2c -W1p -Gblack -N
+    echo 135 16 45 | gmt plot -SkDIF/2c -W1p -Gblack -N
+
+    gmt text -F+f10p+jML -N << 'EOF'
+138 40 Earthquake focal mechanisms
+138 36 Borehole breakouts
+138 32 Overcoring or other strain relief
+138 28 Hydraulic fractures
+138 24 Geologic fault-slip
+138 20 Borehole slotter
+138 16 Drilling-induced tensile fractures
+EOF
 
     rm $data
 gmt end show
