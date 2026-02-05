@@ -24,7 +24,7 @@ geo3al/index
 gadm/index
 PB2002/index
 global_tectonics/index
-WSM_2025/index
+WSM/index
 ```
 
 用户还可以在网上找到更多其他地学相关数据。可根据需求自行下载，并使用 GDAL 提供的

@@ -29,7 +29,7 @@ WSM_2025 数据集包含了地壳的100842条数据记录，提供了两个数�
 下面的示例使用 `awk` Shell 命令提取需要的不同类型数据并分别绘制：
 
 ```{eval-rst}
-.. gmtplot:: WSM_2025.sh
+.. gmtplot:: WSM.sh
    :width: 80%
 ```
 

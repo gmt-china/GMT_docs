@@ -8,7 +8,7 @@
 # https://doi.org/10.48440/wsm.2025.001
 # https://doi.org/10.5880/WSM.2025.001
 
-gmt begin wsm2025
+gmt begin WSM
     # 绘制底图
     gmt set MAP_GRID_PEN_PRIMARY 0.25p,gray,2_2
     gmt coast -JM10c -R100/130/15/40 -G244/243/239 -S167/194/223 -Baf
