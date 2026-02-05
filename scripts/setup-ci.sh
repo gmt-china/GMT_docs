@@ -79,24 +79,12 @@ rm -rf google-map-downloader
 # 4.3 
 # global_vs30 (module/grdshake/)
 # SAC files (module/sac/)
+# WSM_Database_2025.csv (dataset/WSM_2025)
+# S362ANI_percent.nc (ex031)
+# 202001.isf (module/isf)
 git clone --depth 1 https://github.com/CovMat/dataset_gmtchina.git dataset_gmtchina
 mv dataset_gmtchina/* ~/.gmt/cache/
 rm -rf dataset_gmtchina
-
-# 4.4 dataset/WSM_2016
-wget -q --no-check-certificate https://datapub.gfz-potsdam.de/download/10.5880.WSM.2016.001/wsm2016.csv
-mv wsm2016.csv ~/.gmt/cache/
-
-# 4.5 ex031
-wget -q https://ds.iris.edu/files/products/emc/emc-files/S362ANI_percent.nc
-mv S362ANI_percent.nc ~/.gmt/cache/
-
-# 4.6 module/isf
-wget -q https://download.isc.ac.uk/isf/catalogue/2020/202001.gz
-gzip -dkN 202001.gz
-chmod 777 202001.isf
-mv 202001.isf ~/.gmt/cache/
-rm 202001.gz
 
 # 5. Download Chinese font files for GMT Chinese support
 mkdir -p ~/.gmt/winfonts/
