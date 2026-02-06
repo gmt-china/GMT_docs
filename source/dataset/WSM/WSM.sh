@@ -15,19 +15,7 @@ gmt begin WSM
 
     #
     size=0.3c
-    rawdata=$(gmt which WSM_Database_2025.csv)
-    # 原始数据包含引号包裹的逗号，例如 "Tanzania, United Republic of"，处理分隔符需要 FPAT='([^,]*)|("[^"]*")'
-    # 原始数据包含非 ASCII 字符，LC_ALL=C 强制使用 C 语言环境让它把所有字符都当作单字节处理
-    # 移除可能存在的双引号，确保输出的是纯净数值或字符
-    LC_ALL=C gawk -v FPAT='([^,]*)|("[^"]*")' '
-        NR > 1 && $4 != "" && $5 != "" && $6 != "" && $7 != "" {
-        gsub(/"/, "", $4); gsub(/"/, "", $5); 
-        gsub(/"/, "", $6); gsub(/"/, "", $7);
-        if($4 != "" && $5 != "" && $6 != "" && $7 != "") {
-            print $5, $4, $6, $7
-        }
-    }' ${rawdata} > WSM_output.txt
-    data=$(gmt which WSM_output.txt)
+    data=$(gmt which WSM_example.txt)
 
     # 生成震源机制符号自定义文件
     cat > focal_mec.def << 'EOF'
@@ -111,5 +99,4 @@ EOF
 138 16 Drilling-induced tensile fractures
 EOF
 
-    rm $data
 gmt end show
