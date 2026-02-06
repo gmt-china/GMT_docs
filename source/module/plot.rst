@@ -662,7 +662,7 @@ plot
 
 如果 GMT 内置的自定义符号无法满足用户的需求，用户可以根据
 `GMT 自定义符号文件 <https://docs.generic-mapping-tools.org/latest/reference/custom-symbols.html>`__
-的格式要求自行制作自定义符号文件。或者参考中文手册中的 :doc:`指北针符号示例 </examples/ex007/index>` 。
+的格式要求自行制作自定义符号文件。或者参考中文手册中的 :doc:`指北针符号示例 </examples/ex007/index>` 和 :doc:`地应力符号示例 </dataset/WSM/index>` 。
 
 使用自定义符号时，GMT 会依次按照如下顺序去搜索自定义符号的定义文件 :file:`name.def`：
 
