@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制地形起伏剖面图 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="绘制三维地形图" href="../ex029/" />
+    <link rel="prev" title="绘制矢量场" href="../ex017/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../gallery/">社区绘图实例</a></li>
+      <li class="breadcrumb-item active">绘制地形起伏剖面图</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/examples/ex026/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      赵志远
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2022-04-16
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>绘制地形起伏剖面图<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>使用 GMT 绘制地形起伏剖面图的过程，可以简要概括为先利用 <code class="docutils literal notranslate"><span class="pre">project</span></code> 命令生成测线，
+然后使用 <code class="docutils literal notranslate"><span class="pre">grdtrack</span></code> 命令读取该测线上的地形数据起伏，最后使用 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 命令绘制出地形剖面图。</p>
+<p>下面的例子展示了如何基于以上方法绘制一条地形起伏剖面。例子中使用了精度为4弧分的地形数据，
+生成测线的数据点间隔为0.1度。读者应当根据自己的实际情况进行修改。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># 绘制地形起伏剖面图</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>profile
+
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-JM12c<span class="w"> </span>-R122/149/30/48<span class="w"> </span>-Baf
+<span class="w">    </span><span class="c1"># 让0到2000m海拔的颜色从白，灰再到黑色渐变，生成cpt</span>
+<span class="w">    </span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cwhite,gray,black<span class="w"> </span>-T0/2000<span class="w"> </span>-Z
+<span class="w">    </span><span class="c1"># 绘制灰度地形底图</span>
+<span class="w">    </span>gmt<span class="w"> </span>grdimage<span class="w"> </span>@earth_relief_04m_p<span class="w"> </span>-C<span class="w"> </span>-I+d
+<span class="w">    </span><span class="c1"># 用蓝色填充海洋</span>
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-S167/194/223
+<span class="w">    </span><span class="c1"># 选取测线AB</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">126</span><span class="w"> </span><span class="m">42</span><span class="w"> </span>A<span class="w"> </span>&gt;<span class="w"> </span>tmp1
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">146</span><span class="w"> </span><span class="m">40</span><span class="w"> </span>B<span class="w"> </span>&gt;&gt;<span class="w"> </span>tmp1
+<span class="w">    </span><span class="c1"># 绘制测线AB</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>tmp1<span class="w"> </span>-W2p,red,-.-
+<span class="w">    </span><span class="c1"># 标注AB</span>
+<span class="w">    </span>gmt<span class="w"> </span>text<span class="w"> </span>tmp1<span class="w"> </span>-F+f15p<span class="w"> </span>-D0c/0.2c
+
+<span class="w">    </span><span class="c1"># 沿测线AB绘制地形高度</span>
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-R0/15/-8000/6000<span class="w"> </span>-JX12c/3c<span class="w"> </span>-Bya4000+l<span class="s2">&quot;Elevation (m)&quot;</span><span class="w"> </span>-Bxa2f1+l<span class="s2">&quot;Distance&quot;</span>+u<span class="s2">&quot;\260&quot;</span><span class="w"> </span>-BWSrt<span class="w"> </span>-Y12c
+<span class="w">    </span><span class="c1"># 标注AB位置</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">7000</span><span class="w"> </span>A<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>text<span class="w"> </span>-F+f10p+jBC<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">7000</span><span class="w"> </span>B<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>text<span class="w"> </span>-F+f10p+jBC<span class="w"> </span>-N
+<span class="w">    </span><span class="c1"># 沿测线提取地形高度</span>
+<span class="w">    </span>gmt<span class="w"> </span>project<span class="w"> </span>-C126/42<span class="w"> </span>-E146/40<span class="w"> </span>-G0.1<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>-G@earth_relief_04m_p<span class="w"> </span>&gt;<span class="w"> </span>tmp2
+<span class="w">    </span><span class="c1"># 将海平面以下填充为淡蓝色</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>tmp3
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>tmp3
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>tmp3<span class="w"> </span>-Wblack<span class="w"> </span>-Glightblue<span class="w"> </span>-L+y-8000
+<span class="w">    </span><span class="c1"># 将地形填充为灰色</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>tmp2<span class="w"> </span>-i2,3<span class="w"> </span>-Wblack<span class="w"> </span>-Ggray<span class="w"> </span>-L+y-8000
+
+<span class="w">    </span><span class="c1"># 删除临时文件</span>
+<span class="w">    </span>rm<span class="w"> </span>tmp*
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-d68fc95a7406de8099ccae5ff90d6e6c">
+<a class="reference internal image-reference" href="../../_images/d68fc95a7406de8099ccae5ff90d6e6c.png"><img alt="../../_images/d68fc95a7406de8099ccae5ff90d6e6c.png" src="../../_images/d68fc95a7406de8099ccae5ff90d6e6c.png" style="width: 75%;" />
+</a>
+</figure>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../ex017/" class="btn btn-neutral float-left" title="绘制矢量场" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../ex029/" class="btn btn-neutral float-right" title="绘制三维地形图" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

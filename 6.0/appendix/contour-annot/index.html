@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>等值线标注和“线条标注” &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/appendix/contour-annot.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="prev" title="目录参数" href="../special-dirs/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../variables/">环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">目录参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">等值线标注和“线条标注”</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">标注的位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">标注的属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">等值线标注位置实例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">等距离放置标注</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">给定标注个数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">给定标注位置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">线段与等值线交点处放置标注</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">广义的线段与等值线相交算法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">标注属性实例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">按照沿大圆弧距离放置标注, 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">按照沿大圆弧距离放置标注, 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">使用不同数据集定义标注的内容和位置</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">综合实例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">附录</a> &raquo;</li>
+        
+      <li>等值线标注和“线条标注”</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/appendix/contour-annot.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>等值线标注和“线条标注”<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT 中可以使用采用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块来绘制等值线，每条等值线都可以附加一个标注。GMT 中 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plot3d</span></code> 模块也可以使用
+<code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项绘制带有标注的线段。</p>
+<p>在需要为等值线/线段附加标注的时候，如何优化标注的位置是一个很困难的主题。GMT提供了不同的算法确定标注的位置，并且可以自由地指定标注的属性。本章总结了标注的属性和位置确定方法，并给出了一些应用实例。</p>
+<div class="section" id="id2">
+<h2>标注的位置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT 中提供了5种算法来自动确定标注的位置。对于 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块，可以通过 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项指定使用哪种标注定位算法，对于 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plot3d</span></code> 模块，则可以通过 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项指定使用哪种标注定位算法。</p>
+<p>不管是 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 还是 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code>，其所需要的信息是完全相同的，采用 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;&lt;info&gt;</span></code>
+的格式来指定算法和相应参数，其中 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 取不同的值代表不同的算法，<code class="docutils literal notranslate"><span class="pre">&lt;info&gt;</span></code>
+则是各个算法所对应的参数。</p>
+<p>下述内容给出了不同 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 对应的算法和相应的参数：</p>
+<dl class="docutils">
+<dt>d:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">d&lt;dist&gt;[c|i|p][/frac]</span></code></p>
+<p class="last">根据地图上的投影距离确定标注的位置，可以指定长度单位或采用默认值
+[<a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]。从等值线的起始位置开始，以 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 为步长，沿着等值线布置标注。为了保证可以标注总长度小于 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 的封闭曲线，可以指定 <code class="docutils literal notranslate"><span class="pre">&lt;frac&gt;</span></code> 参数，将第一个标注放置在距封闭曲线起点 d = &lt;dist&gt; * &lt;frac&gt; 的位置上，<code class="docutils literal notranslate"><span class="pre">frac</span></code> 的默认值为0.25。</p>
+</dd>
+<dt>D:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">D&lt;dist&gt;[d|m|s|e|f|k|M|n][/&lt;frac&gt;]</span></code></p>
+<p class="last">与 <code class="docutils literal notranslate"><span class="pre">d</span></code> 相似，但是其输入数据必须是地理坐标（同时必须选择地图投影），距离为沿等值线的地表真实距离。可以附加距离的单位，其中 <code class="docutils literal notranslate"><span class="pre">d|m|s|e|f|k|M|n</span></code>
+各个单位的含义见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节。其它参数的意义与 <code class="docutils literal notranslate"><span class="pre">d</span></code> 相同。</p>
+</dd>
+<dt>f:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">f&lt;fix.txt&gt;[/&lt;slop&gt;[c|i|p]]</span></code></p>
+<p class="last">其中，ASCII文件 <code class="docutils literal notranslate"><span class="pre">&lt;fix.txt&gt;</span></code> 中每条记录的前两列（坐标）指定了标注的位置。当文件中的坐标与等值线的距离小于 <code class="docutils literal notranslate"><span class="pre">&lt;slop&gt;</span></code>
+（附加单位或使用默认值 <a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> ）时，才会显示标注。<code class="docutils literal notranslate"><span class="pre">&lt;slope&gt;</span></code> 的默认值为0，即文件中的坐标必须与线段上的坐标完全匹配。</p>
+</dd>
+<dt>l:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">l&lt;line1&gt;[,&lt;line2&gt;[,</span> <span class="pre">...]]</span></code></p>
+<p>指定一个或多个以逗号分隔的直线段，在这些直线段与等值线的交点位置放置标注。通过起点 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;</span></code> 和终点 <code class="docutils literal notranslate"><span class="pre">&lt;stop&gt;</span></code> 的坐标来定义每个直线段 <code class="docutils literal notranslate"><span class="pre">&lt;line&gt;</span></code> 。起点和终点的坐标可以是常规坐标，如斜杠分隔的经纬度，或与地图区域相关的2个字母组合成的子选项。这些字母的取值与 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 中对齐方式的取值相同，即 <code class="docutils literal notranslate"><span class="pre">[L|C|R][B|M|T]</span></code></p>
+<p class="last">第一个字母代表横坐标 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code>，第二个字母代表纵坐标 <code class="docutils literal notranslate"><span class="pre">&lt;y&gt;</span></code>，如 <code class="docutils literal notranslate"><span class="pre">LB`</span> <span class="pre">代表</span>
+<span class="pre">地图的左下角。</span>
+<span class="pre">在模块</span> <span class="pre">``grdcontour</span></code> 中还可以使用子选项 <code class="docutils literal notranslate"><span class="pre">Z+</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Z-</span></code> 代表网格数据中全局最大值点或最小值点的坐标。例如，直线段 line <code class="docutils literal notranslate"><span class="pre">LT/RB</span></code> 代表地图左上角到右下角的对角线，
+<code class="docutils literal notranslate"><span class="pre">Z-/135W/15S</span></code> 代表网格数据中最小值点与 (135ºW, 15ºS)之间的直线段。</p>
+</dd>
+<dt>L:</dt>
+<dd>除起点与终点之间的线段为大圆弧外，其余内容与子选项 <code class="docutils literal notranslate"><span class="pre">l</span></code> 相同。</dd>
+<dt>n:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">n&lt;number&gt;[/&lt;minlength&gt;[c|i|p]]</span></code></p>
+<p class="last">沿等值线放置 <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;</span></code> 个标注，即将等值线分割为 <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;</span></code> 段，标注位于每段的中心位置。还可以通过指定最小距离 <code class="docutils literal notranslate"><span class="pre">&lt;minlength&gt;</span></code> 来保证相邻标注之间的距离不小于  <code class="docutils literal notranslate"><span class="pre">&lt;minlength&gt;</span></code> 。</p>
+</dd>
+<dt>N:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">N&lt;number&gt;[/&lt;minlength&gt;[c|i|p]]</span></code></p>
+<p class="last">除标注位于每段终点位置外（ <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;</span> <span class="pre">&gt;=</span> <span class="pre">2</span></code> ），与子选项 <code class="docutils literal notranslate"><span class="pre">n</span></code> 类似。当 number=-1 时，标注位于等值线的起点；当 number=+1 时，标注位于等值线的终点。</p>
+</dd>
+<dt>x:</dt>
+<dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">x&lt;cross.d&gt;</span></code></p>
+<p class="last">ASCII文件 <code class="docutils literal notranslate"><span class="pre">&lt;cross.d&gt;</span></code> 内给出了多段数据，这些线段与等值线的交点即是标注的位置。</p>
+</dd>
+<dt>X:</dt>
+<dd>除了ASCII文件中定义的线段为大圆弧外，与子选项 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的类似。</dd>
+</dl>
+<p>每调用一次等值线绘制模块，只能指定一种确定标注位置的算法。</p>
+</div>
+<div class="section" id="id3">
+<h2>标注的属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>确定标注的位置之后，还需要指定标注的属性。对于等值线绘制模块，在 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项后以 <code class="docutils literal notranslate"><span class="pre">+&lt;code&gt;[&lt;参数&gt;]</span></code> 的格式定义不同的属性；对于线条绘制模块中，则是在 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项后用冒号 <code class="docutils literal notranslate"><span class="pre">:</span></code> 来分隔标注的属性和标注的位置。</p>
+<p>部分属性只能用于线条绘制模块，因此，首先列出了两个模块通用的属性。这些属性包括：</p>
+<dl class="docutils">
+<dt>+a:</dt>
+<dd><p class="first">控制标注的角度和线条的角度间的相互关系：</p>
+<ol class="last arabic simple">
+<li>后面加上 <strong>n</strong> 表示二者相互垂直；</li>
+<li>后面加上 <strong>p</strong> 表示二者之间相互平行，调用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 模块时，还可以附加 <strong>u</strong> 或 <strong>d</strong> 表示标注的上边缘指向更高或更低的等值线；</li>
+<li>给定角度 <code class="docutils literal notranslate"><span class="pre">&lt;angle&gt;</span></code> 表示自水平方向开始逆时针方向旋转的角度</li>
+</ol>
+</dd>
+<dt>+c:</dt>
+<dd>每个标注周围存在一个假想的文本框，等值线在这个区域内是不可见的。默认的文本框精确的围限了标注，可以指定水平向和竖直向的间隙（相对于标注的基线）。若水平向和竖直向的间隙值不同，需要以斜杠分隔，可以在间隙值后附加长度单位（ <code class="docutils literal notranslate"><span class="pre">c|i|m|p</span></code> ），也可以指定间隙与标注所采用字体的百分比，默认值为15% 。</dd>
+<dt>+d:</dt>
+<dd>Debug 模式。标注所在位置也会绘制等值线，用来测试等值线的位置。</dd>
+<dt>+d:</dt>
+<dd>延迟模式, 延迟标注文字的绘制。</dd>
+<dt>+f:</dt>
+<dd>指定标注文字的字体、大小和颜色等，可参考 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 。字体的默认值参见 <a class="reference internal" href="../../conf/font/#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 。</dd>
+<dt>+g:</dt>
+<dd>指定文本框的填充效果，颜色的默认值与 <a class="reference internal" href="../../conf/ps/#term-ps-page-color"><span class="xref std std-term">PS_PAGE_COLOR</span></a> 相同。</dd>
+<dt>+j:</dt>
+<dd>指定标注内容与标注位置之间的对齐方式，默认值为 <strong>CM</strong> ，指定值可以覆盖默认值，参数值由2个字母组成，取值范围分别为 <code class="docutils literal notranslate"><span class="pre">[L|C|R][B|M|T]</span></code> 。对于弯曲的标注文字 (<strong>+v</strong>)，只有竖直向对齐方式起作用。</dd>
+<dt>+o:</dt>
+<dd>指定文本框的形状为圆角矩形，只有对文本框进行填充或显示轮廓时才起作用。对于弯曲的标注文字 (<strong>+v</strong>)不起作用。</dd>
+<dt>+p:</dt>
+<dd>指定文本框轮廓线的线条属性，默认值为[0.25p,black] 。</dd>
+<dt>+r:</dt>
+<dd>当曲率半径低于给定值时，不放置标注，可以指定曲率半径的单位，默认值为0。</dd>
+<dt>+u:</dt>
+<dd>在标注后加单位 <code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 。通常在单位和标注之间有一个空格，若想去掉这个间隔，需要在单位前加连字符(-)。调用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 模块时，若给出这个属性，却不指定单位时，则使用网格头段中 <em>z</em> 值的单位。</dd>
+<dt>+v:</dt>
+<dd>根据线条摆动情况放置弯曲的标注，当标注长度较大时，该属性尤其有用。默认值为给定角度的不可见的直线段。</dd>
+<dt>+w:</dt>
+<dd>标注所在位置处等值线的角度，是对附近的 <em>width</em> 个点，进行最小二乘拟合计算的，<em>width</em> 的默认值为10。</dd>
+<dt>+=:</dt>
+<dd>与 <strong>+u</strong> 非常相似，用于指定 <em>prefix</em> 的单位。</dd>
+</dl>
+<p>对于等值线绘制模块，标注的内容为等值线的数值(可以通过 <strong>+u</strong> 或 <strong>+=</strong> 属性来修改)。对于线条绘制模块来说，还可以指定下述属性：</p>
+<dl class="docutils">
+<dt>+l:</dt>
+<dd>在标注位置放置相同的内容，如果标注内容包含空格，则需要用引号括起来。</dd>
+<dt>+L:</dt>
+<dd><p class="first">通过附加 <em>子选项</em> 指定标注的内容，可用的子选项包括：</p>
+<dl class="last docutils">
+<dt>+Lh:</dt>
+<dd>采用多段数据的头记录作为标注内容(假设输入为多段数据，如果不是多段数据，则采用文件头记录)。首先扫描 <code class="docutils literal notranslate"><span class="pre">-L&lt;子选项&gt;</span></code> 属性，若没有指定该选项，则采用数据段头记录首字符(默认为 &gt; )后的第一个单词。</dd>
+<dt>+Ld:</dt>
+<dd>采用笛卡尔坐标系内的距离作为标注内容的距离单位，可以指定单位，如 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code>，默认值为
+[<a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]。标注内容的格式参见:term:<cite>FORMAT_FLOAT_OUT</cite> 。</dd>
+<dt>+LD:</dt>
+<dd>采用真实地表距离计算标注内容，可以指定单位，如
+<code class="docutils literal notranslate"><span class="pre">d|e|f|k|m|M|n|s</span></code>，默认值为弧度 <strong>d</strong> 。</dd>
+<dt>+Lf:</dt>
+<dd>采用ASCII文件 <em>fix.txt</em> 中第2列数据之后的所有文字作为标注的内容，显然，该属性需要在指定标注位置算法(<strong>f</strong>) 的前提下，才能起作用。</dd>
+<dt>+Ln:</dt>
+<dd>采用多段数据中当前数据段的顺序号作为标注内容。</dd>
+<dt>+LN:</dt>
+<dd>采用斜杠分隔的文件号--当前数据段顺序号作为标注内容。</dd>
+<dt>+Lx:</dt>
+<dd>与属性 <strong>h</strong> 类似，多段数据头记录的来源为 <em>cross.d</em> 文件。显然，该属性需要在指定标注位置算法(<strong>x|X</strong>)的前提下，才能起作用。</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>等值线标注位置实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>本节通过一些简单的实例说明等值线标注位置选项的作用。首先，在实例1中，采用部分全球大地水准面数据(geoid)，绘制了等值线。所选择的区域包含了大地水准面的两级，Indian Low和New Guinea High。</p>
+<div class="section" id="id5">
+<h3>等距离放置标注<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>第1个实例使用标注位置算法的默认值，沿等值线每1.5英寸放置一个标注:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot1 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id15">
+<img alt="../../_images/contour-annot-gmtplot-0.png" src="../../_images/contour-annot-gmtplot-0.png" />
+<p class="caption"><span class="caption-text">通过指定 <strong>-Gd</strong> 选项的参数，确定了标注的位置(等值线上相距1.5英寸的点)</span></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>给定标注个数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>现在指定每条等值线上标注的个数。每条等值线上只放置1个标注，并且要求等值线的长度不小于1英寸，</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot2 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id16">
+<img alt="../../_images/contour-annot-gmtplot-1.png" src="../../_images/contour-annot-gmtplot-1.png" />
+<p class="caption"><span class="caption-text">通过指定 <strong>-Gn</strong> 选项的参数，确定了标注的位置(每条长度超过1英寸的等值线的中心位置)</span></p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>给定标注位置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>给定标注所在位置的坐标，由于坐标不是严格位于等值线上，指定了非0距离值，即标注位置与等值线距离的上限。</p>
+<p>根据等值线的几何形状，自动计算标注的角度。为了帮助理解，通过指定选项 <strong>-A</strong> 中的 <strong>+d*</strong> 属性，采用了debug模式，即在每个给定位置上绘制了一个小圆圈。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+cat <span class="s">&lt;&lt; EOF &gt; fix.txt</span>
+<span class="s">80      -8.5</span>
+<span class="s">55      -7.5</span>
+<span class="s">102     0</span>
+<span class="s">130     10.5</span>
+<span class="s">EOF</span>
+gmt begin contour_annot3 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id17">
+<img alt="../../_images/contour-annot-gmtplot-2.png" src="../../_images/contour-annot-gmtplot-2.png" />
+<p class="caption"><span class="caption-text">通过指定 <strong>-Gf</strong> 选项的参数，确定了标注的位置(等值线上与给定点距离最小的点)</span></p>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>线段与等值线交点处放置标注<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>通过指定 <strong>-Gl</strong> 或 <strong>-GL</strong> 选项的参数来定义线段，将标注放置在直线段与等值线的交点。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot4 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id18">
+<img alt="../../_images/contour-annot-gmtplot-3.png" src="../../_images/contour-annot-gmtplot-3.png" />
+<p class="caption"><span class="caption-text">通过指定 <strong>-GL</strong> 选项的参数确定了标注的位置(大圆弧与等值线的交点)</span></p>
+</div>
+<p>图中的标注位于数据极值点连线(<strong>Z-/Z+</strong>)与等值线的交点。图中极值点连线为两点之间的大圆弧，在其与等值线交点位置处放置了标注。同一幅地图中，可以分别指定多条线段。</p>
+</div>
+<div class="section" id="id9">
+<h3>广义的线段与等值线相交算法<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>如果需要指定的与等值线相交的线段比较多，或线段数据来自其他数据集，可以使用广义的相交算法确定标注的位置。多段数据文件 <em>cross.txt</em> 中定义了三条曲线，在这三条曲线与等值线交点位置处放置了标注，</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot5 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GXcross.txt -S10 -T+lLH
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id19">
+<img alt="../../_images/contour-annot-gmtplot-4.png" src="../../_images/contour-annot-gmtplot-4.png" />
+<p class="caption"><span class="caption-text">通过指定 <strong>-GX</strong> 选项的参数(多段数据文件 <em>cross.txt</em> )，确定了标注的位置</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>标注属性实例<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>本节通过实例说明标注属性的作用，采用 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 绘制了大地水准面极值点之间的大圆弧，并且沿着该大圆弧从ETOPO5数据集中提取了高程数据。高程数据文件(transect.txt)中包括了 <em>经度、纬度、距离、大地水准面、高程</em> 数据。</p>
+<div class="section" id="id11">
+<h3>按照沿大圆弧距离放置标注, 1<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>在本实例中将标注的走向从沿大圆弧改变为跨大圆弧，并指定了不透明的文本框和轮廓线，增加了标注的可读性。沿大圆弧每1000km放置一个标注，使用距离值作为标注的内容。标注的方向与大圆弧垂直：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot6 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 -T+l
+gmt plot -SqD1000k:+g+LD+an+p -Wthick transect.txt
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id20">
+<img alt="../../_images/contour-annot-gmtplot-5.png" src="../../_images/contour-annot-gmtplot-5.png" />
+<p class="caption"><span class="caption-text">通过指定 <strong>-Sq</strong> 选项的参数控制标注属性.</span></p>
+</div>
+<p>图中显示了上述命令的综合效果。值得注意的是，大圆弧的起点和终点没有与表示极值点的”-“和”+”符号完全重合。造成这个现象的原因是，极值点符号”-“和”+”的坐标是等值线的平均值，而不是全局或局部极值的位置。</p>
+</div>
+<div class="section" id="id12">
+<h3>按照沿大圆弧距离放置标注, 2<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>与上一个实例不同的是，本实例中标注与大圆弧平行，以弧度指定标注位置，并添加弧度单位。文本框的形状为圆角矩形，且标注内容与文本框的底色呈反色显示。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot7 pdf,png
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
+gmt plot -SqD15d:+gblack+fwhite+LD+o+u<span class="se">\\</span><span class="m">260</span> -Wthick transect.txt
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id21">
+<img alt="../../_images/contour-annot-gmtplot-6.png" src="../../_images/contour-annot-gmtplot-6.png" />
+<p class="caption"><span class="caption-text">另一个标注属性实例</span></p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>使用不同数据集定义标注的内容和位置<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>本实例中采用沿大圆弧的海底地形数据作为标注的内容，按照沿大圆弧的距离，每1500km放置一个标注。因此需要使用 <strong>awk</strong> 程序从 <em>transect.txt</em> 文件中抽取距离为1500km倍数的记录，并创建一个新文件，指定标注的位置和内容：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot8 pdf,png
+gmt convert -i0,1,4 -Em150 transect.txt <span class="p">|</span> gawk  <span class="s1">&#39;{print $1,$2,int($3)}&#39;</span> &gt; fix2.txt
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
+gmt grdcontour geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
+gmt plot -Sqffix2.txt:+g+an+p+Lf+u<span class="s2">&quot; m&quot;</span>+f8p -Wthick transect.txt
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id22">
+<img alt="../../_images/contour-annot-gmtplot-7.png" src="../../_images/contour-annot-gmtplot-7.png" />
+<p class="caption"><span class="caption-text">标注的位置和内容来自不同的数据集</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>综合实例<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<p>最后，采用之前章节中论述的多个标注位置确定方法和属性设置，绘制了一幅比较复杂的综合性图件。假设在Canary Islands发生了灾难性滑坡，图件显示了所引发的的海啸的走时(以小时为单位)。根据海啸走时和海底地形绘制了彩图，对等值线和线条进行了标注。完整的脚本如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin contour_annot9 pdf,png
+gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
+gmt project -E-74/41 -C-17/28 -G10 -Q &gt; great_NY_Canaries.txt
+gmt project -E-74/41 -C2.33/48.87 -G100 -Q &gt; great_NY_Paris.txt
+<span class="nv">km</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> -17 <span class="m">28</span> <span class="p">|</span> gmt mapproject -G-74/41/k -fg --FORMAT_FLOAT_OUT<span class="o">=</span>%.0f -o2<span class="sb">`</span>
+cat <span class="s">&lt;&lt; EOF &gt; ttt.cpt</span>
+<span class="s">0	lightred	3	lightred</span>
+<span class="s">3	lightyellow	6	lightyellow</span>
+<span class="s">6	lightgreen	100	lightgreen</span>
+<span class="s">EOF</span>
+gmt grdgradient @earth_relief_05m -R-85/5/10/55 -Nt1 -A45 -Gtopo5_int.nc
+gmt grdimage ttt_atl.nc -Itopo5_int.nc -Cttt.cpt -R-85/5/10/55 -JM5.3i -nc+t1
+gmt grdcontour ttt_atl.nc -C0.5 -A1+u<span class="s2">&quot; hour&quot;</span>+v+f8p,Bookman-Demi -GL80W/31N/17W/26N,17W/28N/17W/50N -S2
+gmt plot -Wfatter,white great_NY_Canaries.txt
+gmt coast -B20f5 -BWSne+t<span class="s2">&quot;Tsunami travel times from the Canaries&quot;</span> -N1/thick -Glightgray -Wfaint -A500
+gmt convert great_NY_*.txt -E <span class="p">|</span> gmt plot -Sa0.15i -Gred -Wthin
+gmt plot -Wthick great_NY_Canaries.txt -Sqn1:+f8p,Times-Italic+l<span class="s2">&quot;Distance Canaries to New York = </span><span class="nv">$km</span><span class="s2"> km&quot;</span>+ap+v
+
+gmt plot -Wthinner great_NY_Paris.txt -SqD1000k:+an+o+gblue+LDk+f7p,Helvetica-Bold,white
+cat <span class="s">&lt;&lt; EOF | gmt text -Gwhite -Wthin -Dj0.1i/0.1i -F+f8p,Bookman-Demi+j</span>
+<span class="s">74W	41N	RT	New York</span>
+<span class="s">2.33E	48.87N	CT	Paris</span>
+<span class="s">17W	28N	CT	Canaries</span>
+<span class="s">EOF</span>
+rm topo5_int.nc
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id23">
+<img alt="../../_images/contour-annot-gmtplot-8.png" src="../../_images/contour-annot-gmtplot-8.png" />
+<p class="caption"><span class="caption-text">Canary Islands到大西洋沿岸的海啸走时图，特别是纽约。当发生灾难性滑坡时，纽约将在8小时后遭遇大海啸。</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../special-dirs/" class="btn btn-neutral float-left" title="目录参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>边界条件 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/grid/boundary-condition.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="查看netCDF文件" href="../viewer/" />
+    <link rel="prev" title="网格配准" href="../registration/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">网格文件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">网格文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">写netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">网格配准</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">边界条件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">默认边界条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">周期边界条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">地理边界条件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">查看netCDF文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">网格文件</a> &raquo;</li>
+        
+      <li>边界条件</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/grid/boundary-condition.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>边界条件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT中的某些模块在对网格文件做某些操作（比如插值或计算偏导）时，在网格边界处需要指定网格的边界条件。边界条件的选取会影响到区域边界处的计算结果。GMT中可以通过 <a class="reference internal" href="../../option/n/"><span class="doc">-n 选项</span></a> 选项指定网格的边界条件。</p>
+<p>GMT中网格文件的边界条件有三类：</p>
+<div class="section" id="id2">
+<h2>默认边界条件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>默认的边界条件是：</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 f = \frac{\partial}{\partial n} \nabla^2 f = 0\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(f(x, y)\)</span> 是网格文件内的值，<span class="math notranslate nohighlight">\(\partial/\partial n\)</span> 是垂直于这个方向的偏导。</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 = \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}\right)\]</div>
+<p>是二维Laplace操作符。</p>
+</div>
+<div class="section" id="id3">
+<h2>周期边界条件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>X方向的周期边界条件表明数据是以周期 <span class="math notranslate nohighlight">\(x_{max} - x_{min}\)</span> 重复的，数据每
+<span class="math notranslate nohighlight">\(N = (x_{max} - x_{min})/x_{inc}\)</span> 个点重复一次。Y方向同理。</p>
+<ul class="simple">
+<li>对于网格线配准的网格文件，共N+1列数据。第一列数据位于 <span class="math notranslate nohighlight">\(x = x_{min}\)</span> 处，最后一列（N+1列）数据位于 <span class="math notranslate nohighlight">\(x = x_{max}\)</span> 处，周期边界条件意味着数据的第一列和最后一列是完全相同的</li>
+<li>对于像素配准的网格文件，有N列数据，第一列位于 <span class="math notranslate nohighlight">\(x_{min} + x_{inc}/2\)</span>，最后一列（第N列）位于 <span class="math notranslate nohighlight">\(x_{max} - x_{inc}/2\)</span> ，第一列和最后一列的数据是不同的。</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>地理边界条件<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>地理边界条件表明：</p>
+<ol class="arabic simple">
+<li>若 <span class="math notranslate nohighlight">\((x_{max} - x_{min}) \geq 360\)</span> 且180是 <span class="math notranslate nohighlight">\(x_{inc}\)</span> 的整数倍，则在X方向使用周期为360的周期边界条件，否则使用默认边界条件</li>
+<li>若条件1为真，且 <span class="math notranslate nohighlight">\(y_{max} = 90\)</span> 则Y方向上使用“北极边界条件”，否则使用默认边界条件</li>
+<li>若条件1为真，且 <span class="math notranslate nohighlight">\(y_{min} = -90\)</span> 则Y方向上使用“南极边界条件”，否则使用默认边界条件</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../viewer/" class="btn btn-neutral float-right" title="查看netCDF文件" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../registration/" class="btn btn-neutral float-left" title="网格配准" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

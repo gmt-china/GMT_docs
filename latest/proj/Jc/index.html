@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-JC: Cassini cylindrical &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-JCyl_stere: Cylindrical stereographic" href="../Jcyl_stere/" />
+    <link rel="prev" title="-JB: Albers conic equal area" href="../Jb/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地图投影</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Jx/">-JX: Linear, logarithmic, power, and time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jp/">-JP: Polar/Cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ja/">-JA: Lambert azimuthal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">-JB: Albers conic equal area</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-JC: Cassini cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">-JCyl_stere: Cylindrical stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">-JD: Equidistant conic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">-JE: Azimuthal equidistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">-JF: Azimuthal gnomonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">-JG: Azimuthal orthographic/General perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">-JH: Hammer equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">-JI: Sinusoidal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">-JJ: Miller cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jk/">-JK: Eckert equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jl/">-JL: Lambert conic conformal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">-JM: Mercator cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">-JN: Robinson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">-JO: Oblique Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">-JPoly: (American) polyconic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">-JQ: Equidistant cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">-JR: Winkel Tripel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">-JS: General stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">-JT: Transverse Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">-JU: Universal Transverse Mercator (UTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">-JV: Van der Grinten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">-JW: Mollweide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">-JY: Cylindrical equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jspilhaus/">-J+proj=spilhaus: Spilhaus World Ocean Map Projection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">地图投影</a></li>
+      <li class="breadcrumb-item active">-JC: Cassini cylindrical</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/proj/Jc.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2024-09-09
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="jc-cassini-cylindrical">
+<h1>-JC: Cassini cylindrical<a class="headerlink" href="#jc-cassini-cylindrical" title="Link to this heading"></a></h1>
+<p>维基链接：<a class="reference external" href="https://en.wikipedia.org/wiki/Cassini_projection">https://en.wikipedia.org/wiki/Cassini_projection</a></p>
+<p>Cassini cylindrical（Cassini 圆柱投影）由 César-François Cassini de Thury 于 1745 年在调查法国时提出。
+其偶尔也被称为 Cassini-Soldner 投影，因为后者提供了更加精确的数学分析得到了椭球下的公式。</p>
+<p>此投影既不保角也不等面积，而是介于二者之间的一种投影方式。沿着中心经线的畸变最小，
+适合绘制南北方向区域范围较大的地图。其中，中心经线、距离中心经线 90 度的两条经线以及
+赤道是直线，其余经线和纬线都是复杂的曲线。</p>
+<p>该投影方式的参数为：</p>
+<p><strong>-JC</strong><em>lon</em>/<em>lat</em>/<em>width</em>
+或
+<strong>-Jc</strong><em>lon</em>/<em>lat</em>/<em>scale</em></p>
+<ul class="simple">
+<li><p><em>lon</em>/<em>lat</em> 为中心的经纬度</p></li>
+<li><p><em>width</em> 地图宽度</p></li>
+<li><p><em>scale</em> 地图比例尺，即每度在图上的长度或 1:<em>xxxx</em> （图上 1 厘米对应真实地球 <em>xxxx</em> 厘米）</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>coast<span class="w"> </span>-R7:30/38:30/10:30/41:30+r<span class="w"> </span>-JC8.75/40/6c<span class="w"> </span>-Bafg<span class="w"> </span>-LjBR+c40+w100+f+o0.4c/0.5c<span class="w"> </span>-Dh<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-Gspringgreen<span class="w"> </span>-Sazure<span class="w"> </span>-Wthinnest<span class="w"> </span>-Ia/thinner<span class="w"> </span>--FONT_LABEL<span class="o">=</span>10p<span class="w"> </span>-png<span class="w"> </span>GMT_cassini
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-605176bc359d62293a2b9b4f8a41a932">
+<a class="reference internal image-reference" href="../../_images/605176bc359d62293a2b9b4f8a41a932.png"><img alt="../../_images/605176bc359d62293a2b9b4f8a41a932.png" src="../../_images/605176bc359d62293a2b9b4f8a41a932.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Cassini 投影绘制 Sardinia 岛</span><a class="headerlink" href="#gmtplot-605176bc359d62293a2b9b4f8a41a932" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../Jb/" class="btn btn-neutral float-left" title="-JB: Albers conic equal area" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Jcyl_stere/" class="btn btn-neutral float-right" title="-JCyl_stere: Cylindrical stereographic" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

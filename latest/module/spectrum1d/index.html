@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>spectrum1d &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="sph2grd" href="../sph2grd/" />
+    <link rel="prev" title="solar" href="../solar/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">spectrum1d</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII 格式精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">相关模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">参考文献</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">spectrum1d</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/spectrum1d.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2026-01-12
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="spectrum1d">
+<span id="index-0"></span><h1>spectrum1d<a class="headerlink" href="#spectrum1d" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/spectrum1d.html" title="（在 GMT v6.6）"><span>spectrum1d</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>计算一个时间序列的自功率谱，或两个时间序列的互功率谱</p>
+</dd>
+</dl>
+<p><strong>spectrum1d</strong> 从标准输入流或数据文件中读取一列或两列数据。这些数据被当作是
+采样间隔为 <code class="docutils literal notranslate"><span class="pre">&lt;dt&gt;</span></code> 的等间隔的时间序列。<strong>spectrum1d</strong> 采用 Welch [1967]方法，即加窗多段
+平均周期图法，计算输出自功率或互功率谱密度。其输出的功率谱的标准差采用
+Bendat 和 Piersol [1986] 中的算法。</p>
+<p><strong>spectrum1d</strong> 的输出文件有三列:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>f<span class="p">|</span>w<span class="w">   </span>p<span class="w">   </span>e
+</pre></div>
+</div>
+<p>其中， f 代表频率，w 代表波长，p 代表计算的功率谱密度，e 代表一倍标准差。</p>
+<p><strong>spectrum1d</strong> 的输出文件的文件名是使用统一的前缀 <code class="docutils literal notranslate"><span class="pre">name_stem</span></code> 。如果使用了
+<a class="reference internal" href="#cmdoption-spectrum1d-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 选项，那么将会有 8 个文件输出，否则只生成一个功率谱文件（ <code class="docutils literal notranslate"><span class="pre">.xpower</span></code> ）。
+这些文件默认是以 ASCII 码格式，除非用 <a class="reference internal" href="#cmdoption-spectrum1d-bo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bo</span></code></a> 选项指定为二进制格式输出。这 8 个
+文件介绍如下：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.xpower</span></code>: X(t) 的功率谱。单位是 <code class="docutils literal notranslate"><span class="pre">X*X*dt</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.ypower</span></code>: Y(t) 的功率谱。单位是 <code class="docutils literal notranslate"><span class="pre">Y*Y*dt</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.cpower</span></code>: X(t) 和 Y(t) 的互功率谱。单位和 ypower 一样。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.npower</span></code>: 噪声（即两列数组的差）的功率谱。单位和 ypower 一样。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.gain</span></code>: 增益谱，或传输函数的模。单位是 <code class="docutils literal notranslate"><span class="pre">Y/X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.phase</span></code>: 相位谱，或传输函数的相位。单位是弧度。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.admit</span></code>: 导纳（Admittance）谱，或传输函数的实部。单位是 <code class="docutils literal notranslate"><span class="pre">Y/X</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_stem.coh</span></code>: （平方）相干谱，或者线性相关系数（它是频率的函数）。
+无单位，取值范围为 <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code> 。信噪比 <code class="docutils literal notranslate"><span class="pre">SNR</span> <span class="pre">=</span> <span class="pre">coh/(1-coh)</span></code> 。当 coh=0.5 时，SNR=1。</p></li>
+</ol>
+<p>除非使用 <a class="reference internal" href="#cmdoption-spectrum1d-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项，否则以上文件会以单个文件单列的形式输出。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt spectrum1d</strong>
+[ <em>table</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><em>segment_size</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>[<strong>acgnopxy</strong>] ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>dt</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>[<strong>h</strong>|<strong>m</strong>] ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>[<em>name_stem</em>] ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-bo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bo</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-d"><code class="xref std std-option docutils literal notranslate"><span class="pre">-d</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-qi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-qi</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-spectrum1d-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>输入文件名。它是 ASCII 类型的一列数据或两列数据。如果是一列数据文件，就计算
+自功率谱；如果是两列，就计算互功率谱。若未指定文件名， <strong>spectrum1d</strong> 会从
+标准输入流中读取数据。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong><em>segment_size</em></dt><dd><p><code class="docutils literal notranslate"><span class="pre">segment_size</span></code> 是一个 2 的指数数值，用于控制 Welch 方法中分段平均时的窗口
+长度。它也决定了功率谱密度的最小频率分辨率和最大频率分辨率，即
+<code class="docutils literal notranslate"><span class="pre">1.0/(segment_size*dt)</span></code> 和 <code class="docutils literal notranslate"><span class="pre">1.0/(2*dt)</span></code> （即 Nyquist 频率）。在功率谱密度
+中的一个标准误差大约为 <code class="docutils literal notranslate"><span class="pre">1.0/sqrt(n_data/segment_size)</span></code> ，比如 segment_size=256，
+那么就需要 25600 个数据点去计算一个误差棒的 10%。互功率谱误差棒的计算则需要更多
+数据点，而且是相干性的函数，比较复杂。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong>[<strong>acgnopxy</strong>]</dt><dd><p>读取输入中的前两列，即 <em>X</em>(<em>t</em>) 和 <em>Y</em>(<em>t</em>) 时间序列。假设 <em>Y</em>(<em>t</em>)
+和 <em>X</em>(<em>t</em>) 分别是一个带有噪声的线性系统的输出和输入。使用最小二乘估计最优
+频率响应函数会将噪声最小化并且相干输出与噪声输出是不相关的。
+本模块默认会输出如下属的全部 8 个文件。使用该选项可以指定输出 8 个文件中的某些文件：</p>
+<ul class="simple">
+<li><p><strong>a</strong>: 导纳谱，或传递函数的实部。</p></li>
+<li><p><strong>c</strong>: 相干输出的功率谱密度。</p></li>
+<li><p><strong>g</strong>: 增益谱，或传递函数的模。</p></li>
+<li><p><strong>n</strong>: 噪声输出的功率谱密度。</p></li>
+<li><p><strong>o</strong>: 相干系数平方谱，或作为频率函数的线性相关系数。</p></li>
+<li><p><strong>p</strong>: 相位谱，或传递函数的相位。</p></li>
+<li><p><strong>x</strong>: <em>X(t)</em> 的功率谱密度。</p></li>
+<li><p><strong>y</strong>: <em>Y(t)</em> 的功率谱密度。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>dt</em></dt><dd><p>设置读入的时间序列的时间采样间隔，默认值是1。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-L</strong>[<strong>h</strong>|<strong>m</strong>]</dt><dd><p>不去除信号中的线性趋势。默认情况下，在对信号进行变换处理前会先去掉其中的
+线性趋势。 追加 <strong>m</strong> 表示去掉数据的均值， <strong>h</strong> 表示去掉数据的中值。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong>[<em>name_stem</em>]</dt><dd><p>设置输出文件名的前缀，默认为 <em>spectrum</em> 。若不使用此选项，则输出的 9 个文件会
+合到一个文件里。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong></dt><dd><p>不让单个分量的结果输出到标准输出，对 <a class="reference internal" href="#cmdoption-spectrum1d-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 设置的输出分量分别输出到单个
+指定文件中</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong></dt><dd><p>输出文件中第一列是波长而不是频率。默认输出时第一列是频率。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-bo">
+<span class="sig-name descname"><span class="pre">-bo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-bo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输出格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt><dd><p>将某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-qi">
+<span class="sig-name descname"><span class="pre">-qi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-qi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>筛选输入的行或数据范围。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spectrum1d-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-spectrum1d-s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt><dd><p>设置 NaN 记录的处理方式。 <a class="reference internal" href="../../option/s/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="ascii">
+<h2>ASCII 格式精度<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<p>ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> ；控制绝对时间的的参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> ；普通浮点数通过参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定更多的有效数字。</p>
+</section>
+<section id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>假设 data.g 是重力数据，单位为 mGal，空间采样间隔为 1.5 km。如下命令会输出
+数据的功率谱到文件 data.xpower ，单位为 mGal^2 km 表示:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>spectrum1d<span class="w"> </span>data.g<span class="w"> </span>-S256<span class="w"> </span>-D1.5<span class="w"> </span>-Ndata
+</pre></div>
+</div>
+<p>假设除了有重力数据 data.g 之外，还有在相同地点测得的地形数据 data.t ，
+单位为 m。计算二者之间的传输函数，即 data.t 作为输入， 经过传输函数得到了
+data.g 为输出:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>paste<span class="w"> </span>data.t<span class="w"> </span>data.g<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>spectrum1d<span class="w"> </span>-S256<span class="w"> </span>-D1.5<span class="w"> </span>-Ndata<span class="w"> </span>-C<span class="w"> </span>&gt;<span class="w"> </span>results.txt
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>教程<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p><strong>spectrum1d</strong> 输出的单位为功率谱密度的单位，因此，要以数据的平方的量纲作为单位，
+就必须除以采样间隔 <cite>dt</cite>。（如果想对谱做归一化，则可从 Parseval 定理中得到缩放因子，
+Parseval 定理为：输入数据的平方和等于 <strong>spectrum1d</strong> 输出的平方和。）</p>
+<p>假定存在一个数据， <cite>X(t)</cite> ，计算其离散傅立叶变换（DFT），结果为 <cite>X(f)</cite> ，将其与自身
+的复数共轭相乘，即得到周期图</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>P_raw<span class="o">(</span>f<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>X<span class="o">(</span>f<span class="o">)</span><span class="w"> </span>*<span class="w"> </span>X<span class="se">\&#39;</span><span class="o">(</span>f<span class="o">)</span>
+</pre></div>
+</div>
+<p>实际中，P_raw 的噪声会非常地大，因此需要平滑或者平均等方法得到一个实用的估计
+P_useful(f)。除了 Welch 方法，另外还有多种计算功率谱密度的方法:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>计算 x(t) 的自协方差函数，然后平滑，做 taper，然后计算自协方差函数的傅立叶变换。</p></li>
+<li><p>对 x(t) 的自相关函数进行参数拟合，得到模型后计算该模型的谱</p></li>
+<li><p>&quot;maxumum entropy&quot;, &quot;Berg&quot;, &quot;Box-Jenkins&quot;, &quot;ARMA&quot; 或者 &quot;ARIMA&quot; 等方法</p></li>
+</ul>
+</div></blockquote>
+<p>Welch 方法是一种久经考验的方法。在 Welch 方法中，用户需指定一个数据长度 N，这样
+对数据进行分段，以长度为 N 的数据段分别计算谱。谱的频率采样为 <em>k</em> /(<em>N</em> * <em>delta_t</em>)，
+其中 <em>k</em> 为整数，采样个数为 <em>N*（由于谱结果是偶函数，因此计算结果存在一半的冗余）。
+如果原始数据 x(t) 的长度为 *M</em>，则 P_useful 的方差会以 <em>N/M</em> 的比例减小。因此，
+用户可选择远小于 <em>M</em> 的 <em>N</em> 值以得到较低方差的 P_useful。但这种做法在不同方面
+需要互相妥协。</p>
+<p>Welch 方法中同时对每段长度为 <em>N</em> 的数据的功率谱估计中使用了 Hann 窗，这也会减小
+谱估计的方差。这种做法同时会削弱功率谱的旁瓣泄漏并使谱估计更加平滑。但这样会使
+每个估计的带宽轻微地增大，因为在 <em>k</em> 位置的频率采样会与 <em>k+1</em> 位置的估计存在较小
+的相关（实际上，对周期图方法的结果做平滑也会导致类似的效果）。</p>
+<p>最后，Welch 方法同样使用数据重叠处理。由于 Hann 窗是一种两端尖灭的窗，因此对长度
+<em>N</em> 的窗来说，窗中间位置的数据对结果贡献最大。因此，在下一段谱估计中，只将
+窗口移动 <em>N/2</em> 长度，这样可以保证在上一段数据中贡献较小的两端数据在当前段估计中
+有较大的贡献。这样会进一步平滑结果并保证每个数据都能对最后的结果有近似相等的贡献。</p>
+<p>Welch 方法被广泛使用并研究，它的结果非常可靠且其统计属性也被较好地研究。因此，它
+被类似 &quot;Random Data: Analysis and Measurement Procedures&quot; [<em>Bendat and Piersol</em>, 1986]
+等教科书中推荐使用。</p>
+<p>上文中提到的妥协指的是分辨率和方差之间的妥协，这种妥协是广泛存在的，更高的谱分辨率
+通常意味着较大的噪声。Welch 方法也是类似的，谱估计较低的噪声水平通常是通过设置
+<em>N</em> &lt;&lt; <em>M</em> 实现的，这样只能在谱估计中得到 <em>N</em> 个采样，可识别的最长周期为 <em>N</em> * <em>delta_t</em>。
+因此，噪声水平的降低导致了谱采样个数的减少以及可识别长周期长度的减小。相反地，如果
+选择的 <em>N</em> 接近于 <em>M</em>，则谱估计的统计属性会非常差，但会得到很多采样以及识别出更长
+的周期。</p>
+<p>其他谱密度的估计方法也能得到较好的结果。之所以选择 Welch 方法，因为它的统计属性、
+分辨率、旁瓣泄漏、偏移和方差等属性都比较容易且容易实现。一些其他的方法（例如
+Maximum Entropy）则倾向于将这些妥协包装在一个黑匣子中。</p>
+</section>
+<section id="id7">
+<h2>相关模块<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grdfft/"><span class="doc">grdfft</span></a></p>
+</section>
+<section id="id8">
+<h2>参考文献<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>Bendat, J. S., and A. G. Piersol, 1986, Random Data, 2nd revised ed., John Wiley &amp; Sons.</p>
+<p>Welch, P. D., 1967, The use of Fast Fourier Transform for the estimation
+of power spectra: a method based on time averaging over short, modified
+periodograms, IEEE Transactions on Audio and Electroacoustics, Vol AU-15, No 2.</p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../solar/" class="btn btn-neutral float-left" title="solar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../sph2grd/" class="btn btn-neutral float-right" title="sph2grd" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

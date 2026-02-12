@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>地图投影 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="-JX: Linear, logarithmic, power, and time" href="Jx/" />
+    <link rel="prev" title="-: 选项" href="../option/colon/" />
+ 
+
+
+
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">标准选项</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">地图投影</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Jx/">-JX: Linear, logarithmic, power, and time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jp/">-JP: Polar/Cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ja/">-JA: Lambert azimuthal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jb/">-JB: Albers conic equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jc/">-JC: Cassini cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jcyl_stere/">-JCyl_stere: Cylindrical stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jd/">-JD: Equidistant conic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Je/">-JE: Azimuthal equidistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jf/">-JF: Azimuthal gnomonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jg/">-JG: Azimuthal orthographic/General perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jh/">-JH: Hammer equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ji/">-JI: Sinusoidal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jj/">-JJ: Miller cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jk/">-JK: Eckert equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jl/">-JL: Lambert conic conformal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jm/">-JM: Mercator cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jn/">-JN: Robinson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jo/">-JO: Oblique Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jpoly/">-JPoly: (American) polyconic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jq/">-JQ: Equidistant cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jr/">-JR: Winkel Tripel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Js/">-JS: General stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jt/">-JT: Transverse Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Ju/">-JU: Universal Transverse Mercator (UTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jv/">-JV: Van der Grinten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jw/">-JW: Mollweide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jy/">-JY: Cylindrical equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jspilhaus/">-J+proj=spilhaus: Spilhaus World Ocean Map Projection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">地图投影</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/proj/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/core-man" target="_blank" rel="noopener">姚家园</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-08-11
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>地图投影<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>GMT 读取数据的实际坐标，并将其转换或者投影到图片的对应位置。当前，GMT 支持 30 多种坐标变换或投影方式。
+这些投影方式可以分为三类，每一类又可以细分为几个小类：</p>
+<ol class="arabic simple">
+<li><p>笛卡尔投影：细分为三类（位于下图的 OTHER 分类）</p>
+<ul class="simple">
+<li><p>笛卡尔线性投影</p></li>
+<li><p>笛卡尔对数投影</p></li>
+<li><p>笛卡尔指数投影</p></li>
+</ul>
+</li>
+<li><p>极坐标投影（位于下图的 OTHER 分类）</p></li>
+<li><p>地图投影：细分为四类</p>
+<ul class="simple">
+<li><p>圆柱地图投影（cylindrical projection）</p></li>
+<li><p>圆锥地图投影（conic projection）</p></li>
+<li><p>方位地图投影（azimuthal projection）</p></li>
+<li><p>其它地图投影（miscellaneous projection，即下图的 THEMATIC 分类）</p></li>
+</ul>
+</li>
+</ol>
+<p><a class="reference download internal" download="" href="../_downloads/97d6510144a76b7b63e8651053edf8fc/cf32f0962b2d8c7088b91e2a2cf4d104.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-cf32f0962b2d8c7088b91e2a2cf4d104">
+<a class="reference internal image-reference" href="../_images/cf32f0962b2d8c7088b91e2a2cf4d104.png"><img alt="../_images/cf32f0962b2d8c7088b91e2a2cf4d104.png" src="../_images/cf32f0962b2d8c7088b91e2a2cf4d104.png" style="width: 75%;" />
+</a>
+</figure>
+<p><a class="reference internal" href="../option/J/"><span class="doc">-J 选项</span></a> 这一节简要介绍了 GMT 中指定投影方式的三种不同格式。下表列出了 GMT 所支持的全部投影方式。</p>
+<table class="docutils align-center" id="id2">
+<caption><span class="caption-text">GMT 投影代码</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">-J</span></code> 代码</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>-JA</strong><em>lon0</em>/<em>lat0</em>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Ja/"><span class="doc">Lambert azimuthal equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JB</strong><em>lon0</em>/<em>lat0</em>/<em>lat1</em>/<em>lat2</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jb/"><span class="doc">Albers conic equal area</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JC</strong><em>lon0</em>/<em>lat0</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jc/"><span class="doc">Cassini cylindrical</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JCyl_stere</strong>[<em>lon0</em>/[<em>lat0</em>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jcyl_stere/"><span class="doc">Cylindrical stereographic</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JD</strong><em>lon0</em>/<em>lat0</em>/<em>lat1</em>/<em>lat2</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jd/"><span class="doc">Equidistant conic</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JE</strong><em>lon0</em>/<em>lat0</em>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Je/"><span class="doc">Azimuthal equidistant</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JF</strong><em>lon0</em>/<em>lat0</em>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jf/"><span class="doc">Azimuthal gnomonic</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JG</strong><em>lon0</em>/<em>lat0</em>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jg/"><span class="doc">Azimuthal orthographic</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JG</strong><em>lon0</em>/<em>lat0</em>/<em>width</em>
+[<strong>+a</strong><em>azimuth</em>][<strong>+t</strong><em>tilt</em>]
+[<strong>+v</strong><em>vwidth/vheight</em>][<strong>+w</strong><em>twist</em>]
+[<strong>+z</strong><em>altitude</em>[<strong>r</strong>|<strong>R</strong>]|<strong>g</strong>]</p></td>
+<td><p><a class="reference internal" href="Jg/"><span class="doc">General perspective</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JH</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jh/"><span class="doc">Hammer equal area</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JI</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Ji/"><span class="doc">Sinusoidal equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JJ</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jj/"><span class="doc">Miller cylindrical</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JKf</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jk/"><span class="doc">Eckert IV equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JKs</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jk/"><span class="doc">Eckert VI equal area</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JL</strong><em>lon0</em>/<em>lat0</em>/<em>lat1</em>/<em>lat2</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jl/"><span class="doc">Lambert conic conformal</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JM</strong>[<em>lon0</em>/[<em>lat0</em>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jm/"><span class="doc">Mercator cylindrical</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JN</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jn/"><span class="doc">Robinson</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JOa</strong><em>lon0</em>/<em>lat0</em>/<em>azim</em>/<em>width</em>[<strong>+v</strong>]</p></td>
+<td><p><a class="reference internal" href="Jo/"><span class="doc">Oblique Mercator, 1: origin and azim</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JOb</strong><em>lon0</em>/<em>lat0</em>/<em>lon1</em>/<em>lat1</em>/<em>width</em>[<strong>+v</strong>]</p></td>
+<td><p><a class="reference internal" href="Jo/"><span class="doc">Oblique Mercator, 2: two points</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JOc</strong><em>lon0</em>/<em>lat0</em>/<em>lonp</em>/<em>latp</em>/<em>width</em>[<strong>+v</strong>]</p></td>
+<td><p><a class="reference internal" href="Jo/"><span class="doc">Oblique Mercator, 3: origin and pole</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JP</strong><em>width</em>[<strong>+a</strong>][<strong>+f</strong>[<strong>e</strong>|<strong>p</strong>|<em>radius</em>]][<strong>+k</strong><em>kind</em>][<strong>+r</strong><em>offset</em>][<strong>+t</strong><em>origin</em>][<strong>+z</strong>[<strong>p</strong>|<em>radius</em>]]</p></td>
+<td><p><a class="reference internal" href="Jp/"><span class="doc">Polar/Cylindrical</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JPoly</strong>[<em>lon0</em>/[<em>lat0</em>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jpoly/"><span class="doc">(American) polyconic</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JQ</strong>[<em>lon0</em>/[<em>lat0</em>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jq/"><span class="doc">Equidistant cylindrical</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JR</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jr/"><span class="doc">Winkel Tripel</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JS</strong><em>lon0</em>/<em>lat0</em>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Js/"><span class="doc">General stereographic</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JT</strong>[<em>lon0</em>/[<em>lat0</em>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jt/"><span class="doc">Transverse Mercator</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JU</strong><em>zone</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Ju/"><span class="doc">Universal Transverse Mercator (UTM)</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JV</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jv/"><span class="doc">Van der Grinten</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JW</strong>[<em>lon0</em>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jw/"><span class="doc">Mollweide</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JX</strong><em>width</em>[<strong>l</strong>|<strong>p</strong><em>exp</em>|<strong>T</strong>|<strong>t</strong>]
+[/<em>height</em>[<strong>l</strong>|<strong>p</strong><em>exp</em>|<strong>T</strong>|<strong>t</strong>]]
+[<strong>d</strong>]</p></td>
+<td><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/reference/coordinate-transformations.html#jx-linear" title="（在 GMT v6.6）"><span class="xref std std-ref">Linear</span></a>, <a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/reference/coordinate-transformations.html#jx-log" title="（在 GMT v6.6）"><span class="xref std std-ref">logarithmic</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/reference/coordinate-transformations.html#jx-power" title="（在 GMT v6.6）"><span class="xref std std-ref">power</span></a>, and <a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/reference/coordinate-transformations.html#jx-time" title="（在 GMT v6.6）"><span class="xref std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JY</strong><em>lon0</em>/<em>lat0</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="Jy/"><span class="doc">Cylindrical equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-J+proj=spilhaus+width=</strong><em>width</em></p></td>
+<td><p><a class="reference internal" href="Jspilhaus/"><span class="doc">Spilhaus World Ocean Map</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../option/colon/" class="btn btn-neutral float-left" title="-: 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="Jx/" class="btn btn-neutral float-right" title="-JX: Linear, logarithmic, power, and time" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

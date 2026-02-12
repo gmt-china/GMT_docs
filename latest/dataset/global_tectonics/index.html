@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>global_tectonics: 全球地质构造数据 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="WSM_2025: 全球地应力数据" href="../WSM/" />
+    <link rel="prev" title="PB2002: 全球板块边界数据" href="../PB2002/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">GSHHG: 全球高分辨率海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote-dataset/">GMT 远程数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-border/">CN-border: 中国国界省界数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-faults/">CN-faults: 中国断层数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-block/">CN-block: 中国大陆及周边活动地块数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geo3al/">geo3al: 中国及邻区地质图数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">GADM: 全球行政区划数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PB2002/">PB2002: 全球板块边界数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">global_tectonics: 全球地质构造数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">数据简介与GMT格式下载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">使用示例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#boundaries-gmt">boundaries.gmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plates-gmt">plates.gmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-gprv-gmt">global_gprv.gmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oc-boundaries-gmt">oc_boundaries.gmt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">引用信息</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../WSM/">WSM_2025: 全球地应力数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">地学数据集</a></li>
+      <li class="breadcrumb-item active">global_tectonics: 全球地质构造数据</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/dataset/global_tectonics/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2025-07-30
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="global-tectonics">
+<h1>global_tectonics: 全球地质构造数据<a class="headerlink" href="#global-tectonics" title="Link to this heading"></a></h1>
+<p>global_tectonics 是一个全球地质构造数据集，提供 Shapefile、GMT、KML 格式数据的下载。</p>
+<ul class="simple">
+<li><p>官方网站: <a class="reference external" href="https://github.com/dhasterok/global_tectonics">https://github.com/dhasterok/global_tectonics</a></p></li>
+</ul>
+<section id="gmt">
+<h2>数据简介与GMT格式下载<a class="headerlink" href="#gmt" title="Link to this heading"></a></h2>
+<p>global_tectonics 数据集中提供了四个数据文件：</p>
+<ul class="simple">
+<li><p>板块边界数据 : <a class="reference download external" download="" href="https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/boundaries.gmt"><code class="xref download docutils literal notranslate"><span class="pre">boundaries.gmt</span></code></a></p></li>
+<li><p>板块数据 : <a class="reference download external" download="" href="https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/plates.gmt"><code class="xref download docutils literal notranslate"><span class="pre">plates.gmt</span></code></a></p></li>
+<li><p>地质块体数据 : <a class="reference download external" download="" href="https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/global_gprv.gmt"><code class="xref download docutils literal notranslate"><span class="pre">global_gprv.gmt</span></code></a></p></li>
+<li><p>海陆边界线 : <a class="reference download external" download="" href="https://raw.githubusercontent.com/dhasterok/global_tectonics/2376efe78a148643dc7f6867f6ee87d62c1bccc0/plates%26provinces/gmt/oc_boundaries.gmt"><code class="xref download docutils literal notranslate"><span class="pre">oc_boundaries.gmt</span></code></a></p></li>
+</ul>
+<p>更详细的数据说明请阅读数据的参考文献。</p>
+</section>
+<section id="id1">
+<h2>使用示例<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="boundaries-gmt">
+<h3>boundaries.gmt<a class="headerlink" href="#boundaries-gmt" title="Link to this heading"></a></h3>
+<p>数据文件 <code class="docutils literal notranslate"><span class="pre">boundaries.gmt</span></code> 包含了 7 种类型的板块边界数据。每段数据的头段记录中
+包含了板块边界的名称、板块边界类型、相邻的两个板块名以及长度等信息。
+下面的示例使用 <a class="reference internal" href="../../module/convert/"><span class="doc">convert</span></a> 模块的 <strong>-S</strong> 选项提取不同类型的板块
+边界并分别绘制：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>boundaries
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-JN15c<span class="w"> </span>-Rg<span class="w"> </span>-Ba60
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-G244/243/239<span class="w"> </span>-S167/194/223
+
+<span class="w">    </span><span class="c1"># 提取数据头段中不同类型的边界数据并绘图</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=spreading center&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,orange<span class="w"> </span>-l<span class="s2">&quot;spreading center&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=extension zone&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,red<span class="w"> </span>-l<span class="s2">&quot;extension zone&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=subduction zone&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,black<span class="w"> </span>-l<span class="s2">&quot;subduction zone&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=collision zone&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,darkgreen<span class="w"> </span>-l<span class="s2">&quot;collision zone&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=dextral transform&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,blue<span class="w"> </span>-l<span class="s2">&quot;dextral transform&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=sinistral transform&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,pink<span class="w"> </span>-l<span class="s2">&quot;sinistral transform&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>boundaries.gmt<span class="w"> </span>-S<span class="s2">&quot;type=inferred&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p,gray<span class="w"> </span>-l<span class="s2">&quot;inferred&quot;</span>
+
+<span class="w">    </span><span class="c1"># 设置图例属性</span>
+<span class="w">    </span>gmt<span class="w"> </span>legend<span class="w"> </span>-DJMR+o0.1c<span class="w"> </span>-F+p1p+gwhite
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-c3dbc38fe29161bcd14fd3162246efda">
+<a class="reference internal image-reference" href="../../_images/c3dbc38fe29161bcd14fd3162246efda.png"><img alt="../../_images/c3dbc38fe29161bcd14fd3162246efda.png" src="../../_images/c3dbc38fe29161bcd14fd3162246efda.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+<section id="plates-gmt">
+<h3>plates.gmt<a class="headerlink" href="#plates-gmt" title="Link to this heading"></a></h3>
+<p>数据文件 <code class="docutils literal notranslate"><span class="pre">plates.gmt</span></code> 包含了各个板块的多边形数据。每段数据的头段记录中包含了板块名字、属性、性质、面积等数据。
+使用 <a class="reference internal" href="../../module/convert/"><span class="doc">convert</span></a> 模块可以提取出特定板块的数据进行绘图。
+下面的例子展示了如何根据头段记录提取大陆地壳板块、变形带板块，以及提取青藏高原板块、
+华北板块。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>plates
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-JN15c<span class="w"> </span>-Rg<span class="w"> </span>-Ba60
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-Gwhite<span class="w"> </span>-S167/194/223
+
+<span class="w">    </span><span class="c1"># 从crust_type头段中提取出所有大陆地壳板块，并填充橘黄色，设置透明度80%</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>plates.gmt<span class="w"> </span>-S<span class="s2">&quot;crust_type=continental&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Gorange@80<span class="w"> </span>-l<span class="s2">&quot;continental crust plates&quot;</span>
+
+<span class="w">    </span><span class="c1"># 从plate_type头段中提取出所有变形带板块，并填充红色，设置透明度50%</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>plates.gmt<span class="w"> </span>-S<span class="s2">&quot;plate_type=deformation zone&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0p<span class="w"> </span>-Gred@50<span class="w"> </span>-L<span class="w"> </span>-l<span class="s2">&quot;deformation zone&quot;</span>
+
+<span class="w">    </span><span class="c1"># 从poly_name头段中提取出青藏高原板块、华北板块，并分别填充蓝色和淡绿色</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>plates.gmt<span class="w"> </span>-S<span class="s2">&quot;poly_name=Tibet&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p<span class="w"> </span>-L<span class="w"> </span>-Gblue<span class="w"> </span>-l<span class="s2">&quot;Tibet plate&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>plates.gmt<span class="w"> </span>-S<span class="s2">&quot;poly_name=North China&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W0.5p<span class="w"> </span>-Glightgreen<span class="w"> </span>-l<span class="s2">&quot;North China plate&quot;</span>
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-3933076f1b38d27070b3f3b2696ac6ca">
+<a class="reference internal image-reference" href="../../_images/3933076f1b38d27070b3f3b2696ac6ca.png"><img alt="../../_images/3933076f1b38d27070b3f3b2696ac6ca.png" src="../../_images/3933076f1b38d27070b3f3b2696ac6ca.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+<section id="global-gprv-gmt">
+<h3>global_gprv.gmt<a class="headerlink" href="#global-gprv-gmt" title="Link to this heading"></a></h3>
+<p>数据文件 <code class="docutils literal notranslate"><span class="pre">global_gprv.gmt</span></code> 的头段记录中包含了不同地质区域的名字、属性、地质历史事件、
+面积等数据。使用 <a class="reference internal" href="../../module/convert/"><span class="doc">convert</span></a> 模块可以提取出特定地质区域的数据进行绘图。
+下面的例子展示了如何根据从头段记录 <code class="docutils literal notranslate"><span class="pre">prov_type</span></code> 提取克拉通、地盾、被动边缘，
+从 <code class="docutils literal notranslate"><span class="pre">lastorogen</span></code> 提取阿尔卑斯-喜马拉雅造山事件的区域，以及从 <code class="docutils literal notranslate"><span class="pre">prov_name</span></code> 中
+提取南海盆地和鄂尔多斯地块的数据。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>global_gprv
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-JD105/35/36/42/10c<span class="w"> </span>-R70/140/3/60<span class="w"> </span>-Baf
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-Gwhite<span class="w"> </span>-S167/194/223
+
+<span class="w">    </span><span class="c1"># 提取出所有克拉通、地盾、被动板块边缘的边界数据，并填充颜色，设置30%透明度</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>global_gprv.gmt<span class="w"> </span>-S<span class="s2">&quot;prov_type=craton&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-G168/171/210<span class="w"> </span>-t30<span class="w"> </span>-l<span class="s2">&quot;craton&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>global_gprv.gmt<span class="w"> </span>-S<span class="s2">&quot;prov_type=shield&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-G217/205/228<span class="w"> </span>-t30<span class="w"> </span>-l<span class="s2">&quot;shield&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>global_gprv.gmt<span class="w"> </span>-S<span class="s2">&quot;prov_type=passive margin&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-G196/233/236<span class="w"> </span>-t30<span class="w"> </span>-l<span class="s2">&quot;passive margin&quot;</span>
+
+<span class="w">    </span><span class="c1"># 提取出所有和阿尔卑斯-喜马拉雅造山事件相关的地质区域边界数据，并填充红色，设置30%透明度</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>global_gprv.gmt<span class="w"> </span>-S<span class="s2">&quot;lastorogen=Alpine-Himalayan&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Gred@30<span class="w"> </span>-l<span class="s2">&quot;Alpine-Himalayan&quot;</span>
+
+<span class="w">    </span><span class="c1"># 提取出南海盆地的边界数据，绘制出黑色轮廓；提取出鄂尔多斯地块的边界数据，绘制出橘黄色轮廓</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>global_gprv.gmt<span class="w"> </span>-S<span class="s2">&quot;prov_name=South China Sea Basins&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1.5p<span class="w"> </span>-l<span class="s2">&quot;South China Sea Basins&quot;</span>
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span>global_gprv.gmt<span class="w"> </span>-S<span class="s2">&quot;prov_name=Ordos Block&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-W1.5p,orange<span class="w"> </span>-l<span class="s2">&quot;Ordos Block&quot;</span>
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-c0d0c8c385f8eabbdc3d8a7856eae0f6">
+<a class="reference internal image-reference" href="../../_images/c0d0c8c385f8eabbdc3d8a7856eae0f6.png"><img alt="../../_images/c0d0c8c385f8eabbdc3d8a7856eae0f6.png" src="../../_images/c0d0c8c385f8eabbdc3d8a7856eae0f6.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+<section id="oc-boundaries-gmt">
+<h3>oc_boundaries.gmt<a class="headerlink" href="#oc-boundaries-gmt" title="Link to this heading"></a></h3>
+<p>数据文件 <code class="docutils literal notranslate"><span class="pre">oc_boundaries.gmt</span></code> 包含了全球的海陆边界线。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>oc_boundaries
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-JN15c<span class="w"> </span>-Rg<span class="w"> </span>-Ba60
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-G244/243/239<span class="w"> </span>-S167/194/223
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>oc_boundaries.gmt<span class="w"> </span>-W0.5p,red
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-5d2473d19f99c8e3614b022d1be8c612">
+<a class="reference internal image-reference" href="../../_images/5d2473d19f99c8e3614b022d1be8c612.png"><img alt="../../_images/5d2473d19f99c8e3614b022d1be8c612.png" src="../../_images/5d2473d19f99c8e3614b022d1be8c612.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+</section>
+<section id="id2">
+<h2>引用信息<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Hasterok, D., Halpin, J. A., Collins, A. S., Hand, M., Kreemer, C., Gard, M. G., &amp; Glorie, S. (2022). New Maps of Global Geological Provinces and Tectonic Plates. Earth-Science Reviews, 231, 104069. <a class="reference external" href="https://doi.org/10.1016/j.earscirev.2022.104069">https://doi.org/10.1016/j.earscirev.2022.104069</a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../PB2002/" class="btn btn-neutral float-left" title="PB2002: 全球板块边界数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../WSM/" class="btn btn-neutral float-right" title="WSM_2025: 全球地应力数据" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

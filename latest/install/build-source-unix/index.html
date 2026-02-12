@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux/macOS 下编译 GMT 源码 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="Windows 下编译 GMT 源码" href="../build-source-windows/" />
+    <link rel="prev" title="Ubuntu/Debian 下使用 apt 安装 GMT" href="../ubuntu-debian/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">安装</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conda/">使用 conda 安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">Windows 下使用安装包安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macOS/">macOS 下使用 Homebrew 安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fedora/">Fedora 下使用 dnf 安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-debian/">Ubuntu/Debian 下使用 apt 安装 GMT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux/macOS 下编译 GMT 源码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装依赖软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">下载源码及数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">安装 GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">修改环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">测试是否安装成功</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">升级/卸载 GMT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build-source-windows/">Windows 下编译 GMT 源码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">安装</a></li>
+      <li class="breadcrumb-item active">Linux/macOS 下编译 GMT 源码</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/install/build-source-unix.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2025-07-28
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="linux-macos-gmt">
+<h1>Linux/macOS 下编译 GMT 源码<a class="headerlink" href="#linux-macos-gmt" title="Link to this heading"></a></h1>
+<p>这一节介绍如何在 Linux 或 macOS 下编译 GMT 源代码。仅供需要自行编译 GMT 最新版本或开发
+版本的读者参考。</p>
+<section id="id1">
+<h2>安装依赖软件<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>GMT 的编译及运行依赖于其他软件。</p>
+<p>必须的依赖软件包括：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cmake.org/">CMake</a></p></li>
+<li><p><a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">netCDF</a></p></li>
+<li><p><a class="reference external" href="https://curl.haxx.se/">curl</a></p></li>
+<li><p><a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a>：生成 PDF、JPG 等格式的图片</p></li>
+<li><p><a class="reference external" href="https://www.gdal.org/">GDAL</a>：读写多种格式的地理空间数据</p></li>
+</ul>
+<p>可选的依赖软件包括：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ninja-build.org/">Ninja</a>: 快速的构建系统 [可选但推荐]</p></li>
+<li><p><a class="reference external" href="https://libgeos.org/">GEOS</a>：地理信息系统的几何算法库</p></li>
+<li><p><a class="reference external" href="https://www.pcre.org/">PCRE</a>：正则表达式支持</p></li>
+<li><p><a class="reference external" href="http://www.fftw.org/">FFTW</a>：快速傅里叶变换库（&gt;=3.3，macOS 下不需要）</p></li>
+<li><p><a class="reference external" href="https://wiki.gnome.org/Projects/GLib">GLib</a>：GTHREAD 多线程支持（&gt;=2.32）</p></li>
+<li><p>LAPACK：快速矩阵反演库（macOS 下不需要）</p></li>
+<li><p>BLAS：快速矩阵运算库（macOS 下不需要）</p></li>
+<li><p><a class="reference external" href="http://www.graphicsmagick.org">GraphicsMagick</a>：生成 GIF 格式的动画</p></li>
+<li><p><a class="reference external" href="http://www.ffmpeg.org/">FFmpeg</a>：生成 MP4 格式的动画</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Fedora</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装必须软件包</span>
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>gcc<span class="w"> </span>cmake<span class="w"> </span>ninja-build<span class="w"> </span>glibc<span class="w"> </span>netcdf-devel<span class="w"> </span>libcurl-devel<span class="w"> </span>gdal<span class="w"> </span>gdal-devel
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>geos-devel<span class="w"> </span>lapack-devel<span class="w"> </span>openblas-devel<span class="w"> </span>glib2-devel<span class="w"> </span>pcre-devel<span class="w"> </span>fftw-devel
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>ghostscript<span class="w"> </span>xdg-utils
+<span class="c1"># 安装可选软件包</span>
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="sb">`</span>rpm<span class="w"> </span>-E<span class="w"> </span>%fedora<span class="sb">`</span>.noarch.rpm
+$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>GraphicsMagick<span class="w"> </span>ffmpeg
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Ubuntu/Debian</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 更新软件包列表</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<span class="c1"># 安装必须软件包</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>ninja-build<span class="w"> </span>libcurl4-gnutls-dev<span class="w"> </span>libnetcdf-dev<span class="w"> </span>gdal-bin<span class="w"> </span>libgdal-dev
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libgeos-dev<span class="w"> </span>libglib2.0-dev<span class="w"> </span>libpcre3-dev<span class="w"> </span>libfftw3-dev<span class="w"> </span>liblapack-dev
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ghostscript<span class="w"> </span>xdg-utils
+<span class="c1"># 安装可选软件包</span>
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>graphicsmagick<span class="w"> </span>ffmpeg
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装必须软件包</span>
+$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ninja<span class="w"> </span>curl<span class="w"> </span>netcdf
+$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>ghostscript<span class="w"> </span>gdal<span class="w"> </span>geos<span class="w"> </span>pcre2<span class="w"> </span>glib<span class="w"> </span>fftw
+<span class="c1"># 安装可选软件包</span>
+$<span class="w"> </span>brew<span class="w"> </span>install<span class="w"> </span>graphicsmagick<span class="w"> </span>ffmpeg
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>下载源码及数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>编译 GMT 需要下载如下三个文件：</p>
+<ol class="arabic simple">
+<li><p>GMT 6.6.0 源码：<a class="reference external" href="https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-src.tar.xz">gmt-6.6.0-src.tar.xz</a></p></li>
+<li><p>全球海岸线数据 GSHHG：<a class="reference external" href="https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz">gshhg-gmt-2.3.7.tar.gz</a></p></li>
+<li><p>全球数字图表 DCW：<a class="reference external" href="https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.2.0/dcw-gmt-2.2.0.tar.gz">dcw-gmt-2.2.0.tar.gz</a></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>如果想编译 GMT 开发版，可以使用如下命令获取 GMT 最新开发版源码:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">50</span><span class="w"> </span>https://github.com/GenericMappingTools/gmt
+</pre></div>
+</div>
+<p>其余操作与编译 GMT 正式版基本没有区别。</p>
+</div>
+</section>
+<section id="gmt">
+<h2>安装 GMT<a class="headerlink" href="#gmt" title="Link to this heading"></a></h2>
+<p>将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解压三个压缩文件</span>
+$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>gmt-6.6.0-src.tar.xz
+$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>gshhg-gmt-2.3.7.tar.gz
+$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>dcw-gmt-2.2.0.tar.gz
+
+<span class="c1"># 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下</span>
+$<span class="w"> </span>mv<span class="w"> </span>gshhg-gmt-2.3.7<span class="w"> </span>gmt-6.6.0/share/gshhg-gmt
+$<span class="w"> </span>mv<span class="w"> </span>dcw-gmt-2.2.0<span class="w"> </span>gmt-6.6.0/share/dcw-gmt
+
+<span class="c1"># 切换到 gmt 源码目录下</span>
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gmt-6.6.0
+
+<span class="c1"># 用文本编辑器新建并打开 CMake 用户配置文件</span>
+<span class="c1"># Linux 用户</span>
+$<span class="w"> </span>gedit<span class="w"> </span>cmake/ConfigUser.cmake
+<span class="c1"># macOS 用户</span>
+$<span class="w"> </span>touch<span class="w"> </span>cmake/ConfigUser.cmake
+$<span class="w"> </span>open<span class="w"> </span>-a<span class="w"> </span>TextEdit<span class="w"> </span>cmake/ConfigUser.cmake
+</pre></div>
+</div>
+<p>向 <code class="file docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code> 文件中加入如下语句:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="w"> </span><span class="o">(</span>CMAKE_INSTALL_PREFIX<span class="w"> </span><span class="s2">&quot;/opt/GMT-6.6.0&quot;</span><span class="o">)</span>
+<span class="nb">set</span><span class="w"> </span><span class="o">(</span>GMT_USE_THREADS<span class="w"> </span>TRUE<span class="o">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>CMAKE_INSTALL_PREFIX</strong> 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
+<code class="file docutils literal notranslate"><span class="pre">/opt/GMT-6.6.0</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的
+一般用户，可以将安装路径设置为 <code class="file docutils literal notranslate"><span class="pre">/home/xxx/opt/GMT-6.6.0</span></code> 等有可读写
+权限的路径</p></li>
+<li><p><strong>GMT_USE_THREADS</strong> 设置为 <strong>TRUE</strong> 会为 GMT 的某些模块增加多线程并行功能以加速计算，
+也可以不设置</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>此处为了便于一般用户理解，只向 <code class="file docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code> 中写入了必要的语句。
+用户可以将 GMT 提供的配置模板 <code class="file docutils literal notranslate"><span class="pre">cmake/ConfigUserTemplate.cmake</span></code> 复制为
+<code class="file docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code> 并根据配置文件中的大量注释说明信息自行修改配置文件。
+也可以进一步将高级配置模板 <code class="file docutils literal notranslate"><span class="pre">cmake/ConfigUserAdvancedTemplate.cmake</span></code> 复制为
+<code class="file docutils literal notranslate"><span class="pre">cmake/ConfigUserAdvanced.cmake</span></code> 并根据注释说明信息修改高级配置。</p>
+</div>
+<p>继续执行如下命令以检查 GMT 的依赖是否满足：</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>以下的 <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">build</span></code> 命令新建的 <code class="file docutils literal notranslate"><span class="pre">build</span></code> 文件夹位于 GMT 源码压缩包
+解压出来的 <code class="file docutils literal notranslate"><span class="pre">gmt-6.6.0</span></code> 目录下。
+不是 <code class="file docutils literal notranslate"><span class="pre">gmt-6.6.0/cmake</span></code> 目录下，更不是 <code class="file docutils literal notranslate"><span class="pre">/opt/GMT-6.6.0</span></code>。</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>build
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build/
+$<span class="w"> </span>cmake<span class="w"> </span>..<span class="w"> </span>-G<span class="w"> </span>Ninja
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-G</span> <span class="pre">Ninja</span></code> 会检查系统软件是否满足 GMT 的依赖关系，过程中会输出大量信息，并
+在最后汇总输出检查结果。我们只需要关注检查结果是否正确即可。
+正常情况下结果结果如下，若存在一些差异也没有问题。只要过程中不出现报错，即可。
+如果出现报错，则需要检查之前的步骤是否有误，检查完成后删除原 build 目录再新建 build，
+继续执行 <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span> <span class="pre">-G</span> <span class="pre">Ninja</span></code>，直到出现类似的检查结果:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*
+*<span class="w">  </span>GMT<span class="w"> </span>Version:<span class="w">               </span>:<span class="w"> </span><span class="m">6</span>.6.0
+*
+*<span class="w">  </span>Options:
+*<span class="w">  </span>Found<span class="w"> </span>GSHHG<span class="w"> </span>database<span class="w">       </span>:<span class="w"> </span>/home/user/GMT/gmt-6.6.0/share/gshhg<span class="w"> </span><span class="o">(</span><span class="m">2</span>.3.7<span class="o">)</span>
+*<span class="w">  </span>Found<span class="w"> </span>DCW-GMT<span class="w"> </span>database<span class="w">     </span>:<span class="w"> </span>/home/user/GMT/gmt-6.6.0/share/dcw-gmt<span class="w"> </span><span class="o">(</span><span class="m">2</span>.2.0<span class="o">)</span>
+*<span class="w">  </span>Found<span class="w"> </span>GMT<span class="w"> </span>data<span class="w"> </span>server<span class="w">      </span>:<span class="w"> </span>oceania
+*<span class="w">  </span>NetCDF<span class="w"> </span>library<span class="w">             </span>:<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libnetcdf.so
+*<span class="w">  </span>NetCDF<span class="w"> </span>include<span class="w"> </span>dir<span class="w">         </span>:<span class="w"> </span>/usr/include
+*<span class="w">  </span>Curl<span class="w"> </span>library<span class="w">               </span>:<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libcurl.so
+*<span class="w">  </span>Curl<span class="w"> </span>include<span class="w"> </span>dir<span class="w">           </span>:<span class="w"> </span>/usr/include/x86_64-linux-gnu
+*<span class="w">  </span>GDAL<span class="w"> </span>library<span class="w">               </span>:<span class="w"> </span>/usr/lib/libgdal.so
+*<span class="w">  </span>GDAL<span class="w"> </span>include<span class="w"> </span>dir<span class="w">           </span>:<span class="w"> </span>/usr/include/gdal
+*<span class="w">  </span>GEOS<span class="w"> </span>library<span class="w">               </span>:<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libgeos_c.so
+*<span class="w">  </span>GEOS<span class="w"> </span>include<span class="w"> </span>dir<span class="w">           </span>:<span class="w"> </span>/usr/include
+*<span class="w">  </span>FFTW<span class="w"> </span>library<span class="w">               </span>:<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libfftw3f.so
+*<span class="w">  </span>FFTW<span class="w"> </span>threads<span class="w"> </span>library<span class="w">       </span>:<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libfftw3f_threads.so
+*<span class="w">  </span>FFTW<span class="w"> </span>include<span class="w"> </span>dir<span class="w">           </span>:<span class="w"> </span>/usr/include
+*<span class="w">  </span>Accelerate<span class="w"> </span>Framework<span class="w">       </span>:
+*<span class="w">  </span>Regex<span class="w"> </span>support<span class="w">              </span>:<span class="w"> </span>PCRE<span class="w"> </span><span class="o">(</span>/usr/lib/x86_64-linux-gnu/libpcre.so<span class="o">)</span>
+*<span class="w">  </span>ZLIB<span class="w"> </span>library<span class="w">               </span>:<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libz.so
+*<span class="w">  </span>ZLIB<span class="w"> </span>include<span class="w"> </span>dir<span class="w">           </span>:<span class="w"> </span>/usr/include
+*<span class="w">  </span>LAPACK<span class="w"> </span>library<span class="w">             </span>:<span class="w"> </span>yes
+*<span class="w">  </span>BLAS<span class="w"> </span>library<span class="w">               </span>:<span class="w"> </span>yes
+*<span class="w">  </span>License<span class="w"> </span>restriction<span class="w">        </span>:<span class="w"> </span>no
+*<span class="w">  </span>Triangulation<span class="w"> </span>method<span class="w">       </span>:<span class="w"> </span>Shewchuk
+*<span class="w">  </span>OpenMP<span class="w"> </span>support<span class="w">             </span>:<span class="w"> </span>disabled<span class="w"> </span><span class="o">(</span>GMT_ENABLE_OPENMP<span class="w"> </span>not<span class="w"> </span><span class="nb">set</span><span class="o">)</span>
+*<span class="w">  </span>GLIB<span class="w"> </span>GTHREAD<span class="w"> </span>support<span class="w">       </span>:<span class="w"> </span>enabled<span class="w"> </span><span class="o">(</span><span class="m">2</span>.64.6<span class="o">)</span>
+*<span class="w">  </span>Build<span class="w"> </span>generator<span class="w">            </span>:<span class="w"> </span>Unix<span class="w"> </span>Makefiles
+*<span class="w">  </span>Build<span class="w"> </span>GMT<span class="w"> </span>core<span class="w">             </span>:<span class="w"> </span>always<span class="w"> </span><span class="o">[</span>libgmt.so<span class="o">]</span>
+*<span class="w">  </span>Build<span class="w"> </span>PSL<span class="w"> </span>library<span class="w">          </span>:<span class="w"> </span>always<span class="w"> </span><span class="o">[</span>libpostscriptlight.so<span class="o">]</span>
+*<span class="w">  </span>Build<span class="w"> </span>GMT<span class="w"> </span>supplements<span class="w">      </span>:<span class="w"> </span>yes<span class="w"> </span><span class="o">[</span>supplements.so<span class="o">]</span>
+*<span class="w">  </span>Build<span class="w"> </span>GMT<span class="w"> </span><span class="k">for</span><span class="w"> </span>developers<span class="w">   </span>:<span class="w"> </span>yes
+*<span class="w">  </span>Build<span class="w"> </span>proto<span class="w"> </span>supplements<span class="w">    </span>:<span class="w"> </span>none
+*<span class="w">  </span>Build<span class="w"> </span>module<span class="w"> </span>links<span class="w">         </span>:<span class="w"> </span>no
+*<span class="w">  </span>Found<span class="w"> </span>Ghostscript<span class="w"> </span><span class="o">(</span>gs<span class="o">)</span><span class="w">     </span>:<span class="w"> </span>yes<span class="w"> </span><span class="o">(</span><span class="m">10</span>.05.1<span class="o">)</span>
+*<span class="w">  </span>Found<span class="w"> </span>GraphicsMagick<span class="w"> </span><span class="o">(</span>gm<span class="o">)</span><span class="w">  </span>:<span class="w"> </span>yes<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3.35<span class="o">)</span>
+*<span class="w">  </span>Found<span class="w"> </span>ffmpeg<span class="w">               </span>:<span class="w"> </span>yes<span class="w"> </span><span class="o">(</span><span class="m">4</span>.2.4<span class="o">)</span>
+*<span class="w">  </span>Found<span class="w"> </span>open<span class="w">                 </span>:<span class="w"> </span>no
+*<span class="w">  </span>Found<span class="w"> </span>ogr2ogr<span class="w">              </span>:<span class="w"> </span>yes<span class="w"> </span><span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span>
+*<span class="w">  </span>Found<span class="w"> </span>gdal_translate<span class="w">       </span>:<span class="w"> </span>yes<span class="w"> </span><span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span>
+*
+*<span class="w">  </span>Locations:
+*<span class="w">  </span>Installing<span class="w"> </span>GMT<span class="w"> </span><span class="k">in</span><span class="w">          </span>:<span class="w"> </span>/opt/GMT-6.6.0
+*<span class="w">  </span>GMT_DATADIR<span class="w">                </span>:<span class="w"> </span>/opt/GMT-6.6.0/share
+*<span class="w">  </span>GMT_DOCDIR<span class="w">                 </span>:<span class="w"> </span>/opt/GMT-6.6.0/share/doc
+*<span class="w">  </span>GMT_MANDIR<span class="w">                 </span>:<span class="w"> </span>/opt/GMT-6.6.0/share/man
+--<span class="w"> </span>Configuring<span class="w"> </span><span class="k">done</span>
+--<span class="w"> </span>Generating<span class="w"> </span><span class="k">done</span>
+</pre></div>
+</div>
+<p>检查完毕后，开始编译和安装:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>.
+$<span class="w"> </span>sudo<span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>.<span class="w"> </span>--target<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>修改环境变量<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>打开终端，使用如下命令用文件编辑器打开 Shell 配置文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linux 用户</span>
+$<span class="w"> </span>gedit<span class="w"> </span>~/.bashrc
+
+<span class="c1"># macOS 用户</span>
+$<span class="w"> </span>open<span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
+<p>然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，
+然后重启终端使其生效:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GMT6HOME</span><span class="o">=</span>/opt/GMT-6.6.0
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMT6HOME</span><span class="si">}</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>:<span class="si">${</span><span class="nv">GMT6HOME</span><span class="si">}</span>/lib64
+</pre></div>
+</div>
+<p>说明：</p>
+<ul class="simple">
+<li><p>第一个命令添加了环境变量 <strong>GMT6HOME</strong></p></li>
+<li><p>第二个命令修改 GMT6 的 <code class="file docutils literal notranslate"><span class="pre">bin</span></code> 目录加入到 <strong>PATH</strong> 中，使得在终端或脚本中可以找到 GMT 命令</p></li>
+<li><p>第三个命令将 GMT6 的 <code class="file docutils literal notranslate"><span class="pre">lib</span></code> 目录加入到动态链接库路径中。
+通常，32 位系统的路径为 <code class="file docutils literal notranslate"><span class="pre">lib</span></code>，64 位系统的路径为 <code class="file docutils literal notranslate"><span class="pre">lib64</span></code></p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>测试是否安装成功<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>重新打开一个终端，键入如下命令，若正确显示 GMT 版本号，则表示安装成功:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>--version
+<span class="m">6</span>.6.0
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>升级/卸载 GMT<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>按照上面的配置，GMT 会被安装到 <code class="file docutils literal notranslate"><span class="pre">/opt/GMT-6.6.0</span></code> 目录下。若想要卸载 GMT，
+可以直接删除整个 <code class="file docutils literal notranslate"><span class="pre">/opt/GMT-6.6.0</span></code> 即可。</p>
+<p>GMT 不支持自动更新，因而若想要升级 GMT，通常建议先卸载 GMT，然后再下载新版源码
+并按照上面的步骤重新编译安装。</p>
+<p>当然，高级用户也可以同时安装多个版本的 GMT，但需要注意环境变量 <strong>PATH</strong> 的设置。</p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../ubuntu-debian/" class="btn btn-neutral float-left" title="Ubuntu/Debian 下使用 apt 安装 GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../build-source-windows/" class="btn btn-neutral float-right" title="Windows 下编译 GMT 源码" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

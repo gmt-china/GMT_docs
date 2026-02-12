@@ -1,0 +1,1020 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>meca &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="movie" href="../movie/" />
+    <link rel="prev" title="mask" href="../mask/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">meca</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">数据列顺序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">meca</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/meca.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://github.com/wangliang1989" target="_blank" rel="noopener">王亮</a>
+    
+ &nbsp;•&nbsp; 📅 2026-01-05
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="meca">
+<span id="index-0"></span><h1>meca<a class="headerlink" href="#meca" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/supplements/seis/meca.html" title="（在 GMT v6.6）"><span>meca</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>绘制震源机制解</p>
+</dd>
+</dl>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt meca</strong>
+[ <em>table</em> ]
+<a class="reference internal" href="#cmdoption-meca-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a><em>parameters</em>
+<a class="reference internal" href="#cmdoption-meca-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em>
+<a class="reference internal" href="#cmdoption-meca-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><em>format</em>[<em>scale</em>][<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+l</strong>][<strong>+m</strong>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+s</strong><em>reference</em>]
+[ <a class="reference internal" href="#cmdoption-meca-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a>[<strong>+g</strong>[<em>fill</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+p</strong><em>pen</em>][<strong>+s</strong>[<em>symbol</em>]<em>size</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-B"><code class="xref std std-option docutils literal notranslate"><span class="pre">-B</span></code></a>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>cpt</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>depmin</em>/<em>depmax</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><em>fill</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>mode</em>[<em>args</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>fill</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-H"><code class="xref std std-option docutils literal notranslate"><span class="pre">-H</span></code></a>[<em>scale</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>[<em>intens</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>[<em>pen</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-meca-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>[<em>plane</em>][<strong>+p</strong><em>pen</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-U"><code class="xref std std-option docutils literal notranslate"><span class="pre">-U</span></code></a>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a><em>pen</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-Y"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Y</span></code></a>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-di"><code class="xref std std-option docutils literal notranslate"><span class="pre">-di</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-meca-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-p"><code class="xref std std-option docutils literal notranslate"><span class="pre">-p</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-qi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-qi</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-t"><code class="xref std std-option docutils literal notranslate"><span class="pre">-t</span></code></a><em>transp</em> ]
+[ <a class="reference internal" href="#cmdoption-meca-0"><code class="xref std std-option docutils literal notranslate"><span class="pre">-:</span></code></a>[<strong>i</strong>|<strong>o</strong>] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-J">
+<span class="sig-name descname"><span class="pre">-J</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-J" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-J</strong><em>projection</em></dt><dd><p>设置地图投影方式。 <a class="reference internal" href="../../option/J/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>请注意，下面的各个震源机制解格式中，
+设置新的震源球放置位置 <em>newX</em> 和 <em>newY</em> 必须另外再加上 <a class="reference internal" href="#cmdoption-meca-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 选项后才可生效。</p>
+</div>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-S</strong><em>format</em>[<em>size</em>][<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+l</strong>][<strong>+m</strong>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+s</strong><em>reference</em>]</dt><dd><p>指定输入数据的格式、震源球大小等属性。</p>
+<p><em>format</em> 用于指定输入的震源机制解的格式。</p>
+<p><em>size</em> 表示震级为 5 时的震源球大小（即标量地震矩 <span class="math notranslate nohighlight">\(M_0 = 4.0 \times 10^{23}\)</span> dyn cm）。
+其他的震源球半径与震级成正比变化。使用 <strong>+l</strong> 则半径将与地震矩成正比。
+使用 <strong>+s</strong> 把参考震级（或地震矩）从 5 级改为 <em>reference</em>。
+使用 <strong>+m</strong> 则不同震级所有震源球大小相同。</p>
+<p>每个震源球都可以有一个可选的标签。标签默认位于震源球的上方。</p>
+<ul class="simple">
+<li><p><strong>+a</strong><em>angle</em> ：设置标签文本字符串的角度</p></li>
+<li><p><strong>+f</strong><em>font</em> ：设置标签文本字符串的文本属性（大小、字体名称、颜色）</p></li>
+<li><p><strong>+j</strong><em>justify</em> ：设置标签相对于震源球的位置 [默认为 <strong>BC</strong>，即正上方]</p></li>
+<li><p><strong>+o</strong><em>dx</em>[/<em>dy</em>] ：设置标签的额外偏移量</p></li>
+</ul>
+<p><strong>注意</strong>：如果不给出 <em>size</em>，则需要从输入数据中读取 <em>size</em> 列。详细说明请参考 <a class="reference internal" href="#id5">数据列顺序</a> 。</p>
+<p><strong>-S</strong><em>format</em> 可以指定为如下格式：</p>
+<dl>
+<dt><strong>-Sa</strong></dt><dd><p>Aki and Richards约定的震源机制解格式。输入文件的具体格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w">  </span>Y<span class="w">  </span>depth<span class="w">  </span>strike<span class="w">  </span>dip<span class="w">  </span>rake<span class="w">  </span>mag<span class="w">  </span><span class="o">[</span>newX<span class="w">  </span>newY<span class="o">]</span><span class="w">  </span><span class="o">[</span>title<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>X</em> 和 <em>Y</em> 为震源经度和纬度</p></li>
+<li><p><em>depth</em> 为震源深度，单位为km</p></li>
+<li><p><em>strike</em>、<em>dip</em>、<em>rake</em> 为断层的三个基本参数，单位为度</p></li>
+<li><p><em>mag</em> 为地震震级</p></li>
+<li><p><em>newX</em> 和 <em>newY</em> 震源球在图上的经纬度[可选]。默认震源球会放在 <em>X</em> 和 <em>Y</em>
+处，指定新的震源球放置位置 <em>newX</em> 和 <em>newY</em> 以使得震源球与震源位置错开。</p></li>
+<li><p><em>title</em> 震源球标签[可选]</p></li>
+</ul>
+</dd>
+<dt><strong>-Sc</strong></dt><dd><p>Global CMT约定的震源机制解格式。输入文件的具体格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w"> </span>Y<span class="w"> </span>depth<span class="w"> </span>strike1<span class="w"> </span>dip1<span class="w"> </span>rake1<span class="w"> </span>strike2<span class="w"> </span>dip2<span class="w"> </span>rake2<span class="w"> </span>mantissa<span class="w"> </span>exponent<span class="w"> </span><span class="o">[</span>newX<span class="w"> </span>newY<span class="o">]</span><span class="w"> </span><span class="o">[</span>title<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>X</em> 和 <em>Y</em> 为震源经度和纬度</p></li>
+<li><p><em>depth</em> 为震源深度，单位为km</p></li>
+<li><p>两组 <em>strike</em>、<em>dip</em>、<em>rake</em> 为两个断层面的基本参数</p></li>
+<li><p><em>mantissa</em> 和 <em>exponent</em> 是地震标量矩的尾数和指数部分。
+例如，地震标量矩为9.56e+26 dyne-cm，则 <em>mantissa</em>=9.56，<em>exponent</em>=26</p></li>
+<li><p><em>newX</em> 和 <em>newY</em> 震源球在图上的经纬度[可选]。默认震源球会放在 <em>X</em> 和 <em>Y</em>
+处，指定新的震源球放置位置 <em>newX</em> 和 <em>newY</em> 以使得震源球与震源位置错开。</p></li>
+<li><p><em>title</em> 震源球标签[可选]</p></li>
+</ul>
+</dd>
+<dt><strong>-Sm|d|z</strong></dt><dd><p>地震矩张量。输入数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w"> </span>Y<span class="w"> </span>depth<span class="w"> </span>mrr<span class="w"> </span>mtt<span class="w"> </span>mff<span class="w"> </span>mrt<span class="w"> </span>mrf<span class="w"> </span>mtf<span class="w"> </span>exp<span class="w"> </span><span class="o">[</span>newX<span class="w"> </span>newY<span class="o">]</span><span class="w"> </span><span class="o">[</span>title<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>X</em> 和 <em>Y</em> 为震源经度和纬度</p></li>
+<li><p><em>depth</em> 为震源深度，单位为km</p></li>
+<li><p><em>mrr</em> 等是地震矩的6个分量，单位是 <span class="math notranslate nohighlight">\(10^{exp}\)</span> dyne-cm</p></li>
+<li><p><em>exp</em> 地震矩的指数部分。例如 <em>mrr</em>=2.5，<em>exp</em>=26 ，则真实 <em>mrr</em> = 2.0e26</p></li>
+<li><p><em>newX</em> 和 <em>newY</em> 震源球在图上的经纬度[可选]。默认震源球会放在 <em>X</em> 和 <em>Y</em>
+处，指定新的震源球放置位置 <em>newX</em> 和 <em>newY</em> 以使得震源球与震源位置错开。</p></li>
+<li><p><em>title</em> 震源球标签[可选]</p></li>
+</ul>
+<p>地震矩张量可以分解成各向同性部分（ISO）、双力偶部分（DC）和补偿线性向量
+偶极部分（CLVD）。</p>
+<ul class="simple">
+<li><p><strong>m</strong> 表示绘制完整的地震矩张量（ISO+DC+CLVD）</p></li>
+<li><p><strong>d</strong> 表示仅绘制地震矩的双力偶部分（DC），张量的迹为零且行列式为零</p></li>
+<li><p><strong>z</strong> 表示仅绘制地震矩的各向异性部分（DC+CLVD），张量的迹为零</p></li>
+</ul>
+<p>说明：</p>
+<ul class="simple">
+<li><p>6个分量使用的坐标系为USE坐标系，与Global CMT的坐标系一致</p></li>
+<li><p>Global CMT的矩张量解不包含各向同性部分，因而 <strong>-Sm</strong> 和 <strong>-Sz</strong> 的效果相同。</p></li>
+</ul>
+</dd>
+<dt><strong>-Sp</strong></dt><dd><p>由两个断层平面的部分数据构成的机制解。输入数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w"> </span>Y<span class="w"> </span>depth<span class="w"> </span>strike1<span class="w"> </span>dip1<span class="w"> </span>strike2<span class="w"> </span>fault<span class="w"> </span>mag<span class="w"> </span><span class="o">[</span>newX<span class="w"> </span>newY<span class="o">]</span><span class="w"> </span><span class="o">[</span>title<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>X</em> 和 <em>Y</em> 为震源经度和纬度</p></li>
+<li><p><em>depth</em> 为震源深度，单位为km</p></li>
+<li><p><em>strike1</em> 和 <em>dip1</em> 平面1的断层参数，<em>strike2</em> 是平面2的断层参数</p></li>
+<li><p><em>fault</em> 取-1或+1，表示正断层和逆断层</p></li>
+<li><p><em>mag</em> 地震震级</p></li>
+<li><p><em>newX</em> 和 <em>newY</em> 震源球在图上的经纬度[可选]。默认震源球会放在 <em>X</em> 和 <em>Y</em>
+处，指定新的震源球放置位置 <em>newX</em> 和 <em>newY</em> 以使得震源球与震源位置错开。</p></li>
+<li><p><em>title</em> 震源球标签[可选]</p></li>
+</ul>
+</dd>
+<dt><strong>-Sx|y|t</strong></dt><dd><p>指定T、N、P轴的方位和大小。输入数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X<span class="w"> </span>Y<span class="w"> </span>depth<span class="w"> </span>Tvalue<span class="w"> </span>Tazim<span class="w"> </span>Tplunge<span class="w"> </span>Nvalue<span class="w"> </span>Nazim<span class="w"> </span>Nplunge<span class="w"> </span>Pvalue<span class="w"> </span>Pazim<span class="w"> </span>Pplunge<span class="w"> </span>exp<span class="w"> </span><span class="o">[</span>newX<span class="w"> </span>newY<span class="o">]</span><span class="w"> </span><span class="o">[</span>title<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>X</em> 和 <em>Y</em> 为震源经度和纬度</p></li>
+<li><p><em>depth</em> 为震源深度，单位为km</p></li>
+<li><p><em>Tvalue</em> 等9个量定义了T、N、P轴的大小和方向</p></li>
+<li><p><em>exp</em> 是 <em>Tvalue</em> 等的指数部分</p></li>
+<li><p><em>newX</em> 和 <em>newY</em> 震源球在图上的经纬度[可选]。默认震源球会放在 <em>X</em> 和 <em>Y</em>
+处，指定新的震源球放置位置 <em>newX</em> 和 <em>newY</em> 以使得震源球与震源位置错开。</p></li>
+<li><p><em>title</em> 震源球标签[可选]</p></li>
+</ul>
+<p>地震矩张量可以分解成各向同性部分（ISO）、双力偶部分（DC）和补偿线性向量
+偶极部分（CLVD）。</p>
+<ul class="simple">
+<li><p><strong>x</strong> 绘制完整的地震矩张量 (ISO+DC+CLVD)</p></li>
+<li><p><strong>y</strong> 只绘制地震矩的双力偶部分 (DC)，张量的迹为零且行列式为零</p></li>
+<li><p><strong>t</strong> 只绘制地震矩的各向异性部分 (DC+CVLD)，张量的迹为零</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-A</strong>[<strong>+g</strong>[<em>fill</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+p</strong><em>pen</em>][<strong>+s</strong>[<em>symbol</em>]<em>size</em>]</dt><dd><p>在 (<em>newX</em>,<em>newY</em>) 处绘制震源球。</p>
+<p>默认会在数据输入所指定的 (<em>X</em>,<em>Y</em>) 坐标处绘制震源球。使用 <a class="reference internal" href="#cmdoption-meca-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 选项，
+则将震源球绘制在 (<em>newX</em>,<em>newY</em>) 处，并绘制一条连接原始位置和偏移后震源球位置的直线。</p>
+<p>使用 <strong>+s</strong><em>size</em> 可以在原始位置放置一个小符号并设置符号大小。
+默认符号是圆圈，可设置 <em>symbol</em> 更改为 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 中的任何标准几何符号。
+该符号将使用震源球的颜色填充，但也可以选择固定颜色 (<strong>+g</strong><em>fill</em>) 或不填充 (<strong>+g</strong>)。</p>
+<p>连线的画笔属性默认为 <a class="reference internal" href="#cmdoption-meca-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 设置的值，但可以使用 <strong>+p</strong><em>pen</em> [0.25p] 进行覆盖。</p>
+<p>使用 <strong>+o</strong> 将 (<em>newX</em>,<em>newY</em>) 解释为绘图偏移量，也可以给所有地震设置统一的的偏移量 <em>dx/dy</em>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-B">
+<span class="sig-name descname"><span class="pre">-B</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-B" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-B</strong><em>parameters</em></dt><dd><p>设置底图边框和轴属性。 <a class="reference internal" href="../../option/B/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong><em>cpt</em></dt><dd><p>指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>depmin/depmax</em></dt><dd><p>只绘制震源深度在 <em>depmin</em> 和 <em>depmax</em> 之间的地震。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong><em>fill</em></dt><dd><p>震源球拉伸部分的填充色[默认为白色]</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt><dd><p>设置多个属性，可重复使用多次。</p>
+<dl class="simple">
+<dt><strong>-Fa</strong>[<em>size</em>[/<em>Psymbol</em>[<em>Tsymbol</em>]]]</dt><dd><p>计算并在震源球上P轴和T轴处绘制符号，<em>size</em> 是符号大小。
+<em>Psymbol</em> 和 <em>Tsymbol</em> 符号可以取 <strong>c</strong>|<strong>d</strong>|<strong>h</strong>|<strong>i</strong>|<strong>p</strong>|<strong>s</strong>|<strong>t</strong>|<strong>x</strong>，
+具体含义见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> <strong>-S</strong> 选项 [默认值为 6p/cc]</p>
+</dd>
+<dt><strong>-Fe</strong><em>fill</em></dt><dd><p>设置T轴符号的填充色或填充图案</p>
+</dd>
+<dt><strong>-Fg</strong><em>fill</em></dt><dd><p>设置P轴符号的填充色或填充图案</p>
+</dd>
+<dt><strong>-Fp</strong><em>pen</em></dt><dd><p>设置P轴符号的画笔属性</p>
+</dd>
+<dt><strong>-Ft</strong><em>pen</em></dt><dd><p>设置T轴符号的画笔属性</p>
+</dd>
+<dt><strong>-Fo</strong></dt><dd><p>使用旧版本的 <strong>psvelomeca</strong> 命令的输入数据格式，即不需要第三列的深度信息</p>
+</dd>
+<dt><strong>-Fr</strong>[<em>fill</em>]</dt><dd><p>在震源球标签后加一个方框 [默认填充色为白色]</p>
+</dd>
+<dt><strong>-Fz</strong>[<em>pen</em>]</dt><dd><p>地震矩的各向异性部分的画笔属性</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-G</strong><em>fill</em></dt><dd><p>指定压缩部分的填充色[默认值为黑色]</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-H">
+<span class="sig-name descname"><span class="pre">-H</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-H" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-H</strong>[<em>scale</em>]</dt><dd><p>不带参数使用 <strong>-H</strong> 选项会从输入数据读取 <em>scale</em> 列作为缩放比例，对每一条记录的符号大小和画笔宽度进行缩放。
+也可以附加 <em>scale</em> 参数指定一个统一的缩放比例。详细说明请参考 <a class="reference internal" href="#id5">数据列顺序</a> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong><em>intens</em></dt><dd><p>使用 <em>intens</em> 值（±1 范围内），通过模拟光照来调节压缩区填充颜色 [默认无]。
+如果未提供光照强度值，将从输入数据中读取 <em>intens</em> 列。详细说明请参考 <a class="reference internal" href="#id5">数据列顺序</a> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-L</strong>[<em>pen</em>]</dt><dd><p>设置震源球外部轮廓的线条属性 [默认由 <a class="reference internal" href="#cmdoption-meca-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 选项决定]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong></dt><dd><p>地图区域外的震源球也要绘制，默认不绘制</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-T</strong>[<em>plane</em>][<strong>+p</strong><em>pen</em>]</dt><dd><p>绘制节面并勾勒出透明的球体轮廓。 <em>planes</em> 可以取：</p>
+<ul class="simple">
+<li><p><strong>0</strong> 绘制两个节面 [默认]</p></li>
+<li><p><strong>1</strong> 仅绘制第一个节面</p></li>
+<li><p><strong>2</strong> 仅绘制第二个节面</p></li>
+</ul>
+<p>附加 <strong>+p</strong><em>pen</em> 设置画笔属性 [默认画笔属性由 <a class="reference internal" href="#cmdoption-meca-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 选项设置]。</p>
+<p>对于双力偶机制解而言，<a class="reference internal" href="#cmdoption-meca-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项仅绘制节面和圆周使震源球变为透明。
+对于非双力偶机制解而言， <strong>-T0</strong> 在震源球的基础上叠加透明的最佳双力偶解。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-U">
+<span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-U" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>]</dt><dd><p>在图上绘制GMT时间戳logo。 <a class="reference internal" href="../../option/U/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-W</strong><em>pen</em></dt><dd><p>同时设置所有线条以及符号轮廓的画笔属性 [默认值: 0.25p,black,solid]。</p>
+<p>该选项设置的属性可以被 <a class="reference internal" href="#cmdoption-meca-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a>、<a class="reference internal" href="#cmdoption-meca-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>、<a class="reference internal" href="#cmdoption-meca-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>、<strong>-Fp</strong>、
+<strong>-Ft</strong>或 <strong>-Fz</strong> 指定的属性替代。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-X">
+<span class="sig-name descname"><span class="pre">-X</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-X" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-Y">
+<span class="sig-name descname"><span class="pre">-Y</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-Y" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<p><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]]</dt><dd><p>移动绘图原点。 <a class="reference internal" href="../../option/XY/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-di">
+<span class="sig-name descname"><span class="pre">-di</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-di" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em></dt><dd><p>将输入数据某些特定值当作NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-p" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>]</dt><dd><p>设置3D透视视角。 <a class="reference internal" href="../../option/p/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-qi">
+<span class="sig-name descname"><span class="pre">-qi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-qi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>筛选输入的行或数据范围。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-t">
+<span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-t" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>]</dt><dd><p>设置图层透明度（百分比）。取值范围为0（不透明）到100（全透明）。 <a class="reference internal" href="../../option/t/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-meca-0">
+<span class="sig-name descname"><span class="pre">-:</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-meca-0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>交换输入或输出数据的前两列。 <a class="reference internal" href="../../option/colon/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>数据列顺序<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="#cmdoption-meca-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 选项决定了生成所选符号所需的尺寸列数量，但如果未给出 <em>size</em>，则期望从文件中读取 <em>size</em>。
+此外，使用 <a class="reference internal" href="#cmdoption-meca-H"><code class="xref std std-option docutils literal notranslate"><span class="pre">-H</span></code></a> 、 <a class="reference internal" href="#cmdoption-meca-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 和 <a class="reference internal" href="#cmdoption-meca-t"><code class="xref std std-option docutils literal notranslate"><span class="pre">-t</span></code></a> 选项将需要额外的列。
+数据记录的顺序是固定的，与选项顺序无关，即使并非所有项目都被激活也是如此。数据列应该按以下顺序排列:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lon<span class="w"> </span>lat<span class="w"> </span>depth<span class="w"> </span>symbol-columns<span class="w"> </span><span class="o">[</span>size<span class="o">]</span><span class="w"> </span><span class="o">[</span>scale<span class="o">]</span><span class="w"> </span><span class="o">[</span>intens<span class="o">]</span><span class="w"> </span><span class="o">[</span>transp<span class="w"> </span><span class="o">[</span>transp2<span class="o">]]</span><span class="w"> </span><span class="o">[</span>trailing-text<span class="o">]</span>
+</pre></div>
+</div>
+<p>带中括号的项是可选的，并受下列选项的控制：</p>
+<ol class="arabic simple">
+<li><p>不带参数 <em>size</em> 的 <a class="reference internal" href="#cmdoption-meca-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 需要给出 <em>size</em> 列</p></li>
+<li><p>不带参数 <em>scale</em> 的 <a class="reference internal" href="#cmdoption-meca-H"><code class="xref std std-option docutils literal notranslate"><span class="pre">-H</span></code></a> 需要给出 <em>scale</em> 列</p></li>
+<li><p>不带参数 <em>intens</em> 的 <a class="reference internal" href="#cmdoption-meca-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 需要给出 <em>intens</em> 列</p></li>
+<li><p>不带参数的 <a class="reference internal" href="#cmdoption-meca-t"><code class="xref std std-option docutils literal notranslate"><span class="pre">-t</span></code></a> 需要给出 <em>transp</em> 列。</p></li>
+</ol>
+<p>尾随文本 <em>trailing-text</em> 始终是可选的。</p>
+<p><strong>注意</strong>：(1) <em>depth</em> 通常是必需的，但如果为 <strong>meca</strong> 指定了 <strong>-Fo</strong>，则不需要该列。
+(2) 可以使用 <a class="reference internal" href="#cmdoption-meca-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a> 重新排列数据记录以匹配预期的格式。</p>
+</section>
+<section id="id6">
+<h2>示例<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>绘制了两个震源球，位置在其震中处。震源球的大小随震级变化：5 级地震的震源球大小为 1 厘米:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>meca<span class="w"> </span>-JQ104/15c<span class="w"> </span>-R102.5/105.5/30.5/32.5<span class="w"> </span>-Ba<span class="w"> </span>-Sa1c<span class="w"> </span>-png<span class="w"> </span>beachball_1<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
+<span class="s">104.33 31.91 39.8 32 64 85 7 0 0 A</span>
+<span class="s">104.11 31.52 27.1 22 53 57 6 0 0 B</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-548f8358c4b0236ef2b25d24880e442d">
+<a class="reference internal image-reference" href="../../_images/548f8358c4b0236ef2b25d24880e442d.png"><img alt="../../_images/548f8358c4b0236ef2b25d24880e442d.png" src="../../_images/548f8358c4b0236ef2b25d24880e442d.png" style="width: 75%;" />
+</a>
+</figure>
+<p>绘制了两个震源球，位置在其震中处。震源球的大小固定:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>meca<span class="w"> </span>-JQ104/15c<span class="w"> </span>-R102.5/105.5/30.5/32.5<span class="w"> </span>-Ba<span class="w"> </span>-Sa1c+m<span class="w"> </span>-png<span class="w"> </span>beachball_2<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
+<span class="s">104.33 31.91 39.8 32 64 85 7 0 0 A</span>
+<span class="s">104.11 31.52 27.1 22 53 57 6 0 0 B</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-8717f18a8a021183dcdce8e3d8128cfe">
+<a class="reference internal image-reference" href="../../_images/8717f18a8a021183dcdce8e3d8128cfe.png"><img alt="../../_images/8717f18a8a021183dcdce8e3d8128cfe.png" src="../../_images/8717f18a8a021183dcdce8e3d8128cfe.png" style="width: 75%;" />
+</a>
+</figure>
+<p id="gmt-meca-cpt-example">震源球大小随震级变化，颜色随深度变化:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>beachball_3
+gmt<span class="w"> </span>basemap<span class="w"> </span>-JQ104/15c<span class="w"> </span>-R102.5/105.5/30.5/32.5<span class="w"> </span>-Ba<span class="w"> </span>-BWSen
+gmt<span class="w"> </span>coast<span class="w"> </span>-Da<span class="w"> </span>-Ia/0.05,black
+gmt<span class="w"> </span>makecpt<span class="w"> </span>-T0/100/20
+gmt<span class="w"> </span>meca<span class="w"> </span>-A+s0.2c<span class="w"> </span>-Sa1.3c<span class="w"> </span>-C<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
+<span class="s">104.33 31.91 39.8  32 64   85 7.0      0     0 A</span>
+<span class="s">104.11 31.52 27.1  22 53   57 6.0      0     0 B</span>
+<span class="s">103.67 31.13  6.4  86 32  -65 8.0      0     0 C</span>
+<span class="s">103.90 31.34 43.6 194 84  179 4.9 104.18 30.84 D</span>
+<span class="s">103.72 31.44 67.3  73 84 -162 4.9 103.12 31.64 E</span>
+<span class="s">104.12 31.78 12.7 186 68  107 4.7 103.83 32.26 F</span>
+<span class="s">104.23 31.61 62.0  86 63  -51 4.7 104.96 31.69 G</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>colorbar<span class="w"> </span>-DjBL+w5c/0.5c+ml+o0.8c/0.4c<span class="w"> </span>-Bx+lDepth<span class="w"> </span>-By+lkm
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-1be3982af78d4d054867c841a5e0f36c">
+<a class="reference internal image-reference" href="../../_images/1be3982af78d4d054867c841a5e0f36c.png"><img alt="../../_images/1be3982af78d4d054867c841a5e0f36c.png" src="../../_images/1be3982af78d4d054867c841a5e0f36c.png" style="width: 75%;" />
+</a>
+</figure>
+</section>
+<section id="id7">
+<h2>相关模块<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../polar/"><span class="doc">polar</span></a>,
+<a class="reference internal" href="../coupe/"><span class="doc">coupe</span></a>,
+<a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a>,
+<a class="reference internal" href="../plot/"><span class="doc">plot</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../mask/" class="btn btn-neutral float-left" title="mask" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../movie/" class="btn btn-neutral float-right" title="movie" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

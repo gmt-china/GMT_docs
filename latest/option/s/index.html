@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-s 选项 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-t 选项" href="../t/" />
+    <link rel="prev" title="-r 选项" href="../nodereg/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../p/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../q/">-q 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../w/">-w 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">标准选项</a></li>
+      <li class="breadcrumb-item active">-s 选项</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/option/s.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2024-09-09
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="s">
+<h1>-s 选项<a class="headerlink" href="#s" title="Link to this heading"></a></h1>
+<p><strong>-s</strong> 选项用于控制是否输出含有 NaN 的记录。</p>
+<p>默认情况下，GMT命令会输出所有记录，包括那些某列值为 NaN 的记录。
+使用 <strong>-s</strong> 选项可以控制是否输出含 NaN 的记录。其语法为：</p>
+<blockquote>
+<div><p><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>][<strong>+r</strong>]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>只使用 <strong>-s</strong>，则不输出Z值（即第三列）为NaN的记录</p></li>
+<li><p><em>cols</em> 用于指定要检查的列，即只有指定的所有列都为NaN时，才输出或不输出该记录。
+<em>cols</em> 是一系列用逗号分隔的列号或者列号范围。
+列号范围的格式为 <em>start</em>[:<em>inc</em>]:<em>stop</em>。若省略 <em>inc</em> 则默认其值为1。
+比如 <strong>2,5,7</strong> 表示检查第3、6、8列（列号从0开始）；
+<strong>0,2:3</strong> 表示检查第1、3、4 列。</p></li>
+<li><p><strong>+a</strong> 表示任意一列有NaN则不输出</p></li>
+<li><p><strong>+r</strong> 表示反操作，即只输出某列有 NaN 的记录</p></li>
+</ul>
+<p>举几个例子。输入数据 <em>input.dat</em> 的内容为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w">   </span><span class="m">0</span>
+<span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>NaN<span class="w"> </span><span class="m">0</span>
+<span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w">   </span>NaN
+<span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>NaN<span class="w"> </span>NaN
+</pre></div>
+</div>
+<p>不使用 <strong>-s</strong> 选项则会输出所有记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">       </span><span class="m">1</span><span class="w">       </span><span class="m">0</span>
+<span class="m">2</span><span class="w">   </span><span class="m">2</span><span class="w">       </span>NaN<span class="w">     </span><span class="m">0</span>
+<span class="m">3</span><span class="w">   </span><span class="m">3</span><span class="w">       </span><span class="m">3</span><span class="w">       </span>NaN
+<span class="m">4</span><span class="w">   </span><span class="m">4</span><span class="w">   </span>NaN<span class="w"> </span>NaN
+</pre></div>
+</div>
+<p>使用 <strong>-s</strong> 选项则会压制第三列为NaN的记录的输出:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat<span class="w"> </span>-s
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">       </span><span class="m">1</span><span class="w">       </span><span class="m">0</span>
+<span class="m">3</span><span class="w">   </span><span class="m">3</span><span class="w">       </span><span class="m">3</span><span class="w">       </span>NaN
+</pre></div>
+</div>
+<p>使用 <strong>-s+a</strong> 选项则只有任意一列有NaN则不输出该记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat<span class="w"> </span>-s+a
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">       </span><span class="m">1</span><span class="w">       </span><span class="m">0</span>
+<span class="m">3</span><span class="w">   </span><span class="m">3</span><span class="w">       </span><span class="m">3</span><span class="w">       </span>NaN
+</pre></div>
+</div>
+<p>使用 <strong>-s3</strong> 选项则检查第四列（列号从0开始）是否为NaN:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat<span class="w"> </span>-s3
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">       </span><span class="m">1</span><span class="w">       </span><span class="m">0</span>
+<span class="m">2</span><span class="w">   </span><span class="m">2</span><span class="w">       </span>NaN<span class="w">     </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>使用 <strong>-s2,3</strong> 则压制第3和4列均为NaN的记录的输出:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat<span class="w"> </span>-s2,3
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">       </span><span class="m">1</span><span class="w">       </span><span class="m">0</span>
+<span class="m">2</span><span class="w">   </span><span class="m">2</span><span class="w">       </span>NaN<span class="w">     </span><span class="m">0</span>
+<span class="m">3</span><span class="w">   </span><span class="m">3</span><span class="w">       </span><span class="m">3</span><span class="w">       </span>NaN
+</pre></div>
+</div>
+<p>使用 <strong>-s2,3+a</strong> 压制第3列或第四列为NaN的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat<span class="w"> </span>-s2,3+a
+<span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">       </span><span class="m">1</span><span class="w">       </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>使用 <strong>-s2,3+a+r</strong> 反向操作输出第三列或第三列为NaN的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>convert<span class="w"> </span>input.dat<span class="w"> </span>-s2,3+a+r
+<span class="m">2</span><span class="w">   </span><span class="m">2</span><span class="w">       </span>NaN<span class="w">     </span><span class="m">0</span>
+<span class="m">3</span><span class="w">   </span><span class="m">3</span><span class="w">       </span><span class="m">3</span><span class="w">       </span>NaN
+<span class="m">4</span><span class="w">   </span><span class="m">4</span><span class="w">       </span>NaN<span class="w">     </span>NaN
+</pre></div>
+</div>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../nodereg/" class="btn btn-neutral float-left" title="-r 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../t/" class="btn btn-neutral float-right" title="-t 选项" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

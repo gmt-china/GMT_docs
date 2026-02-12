@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3 绘制第一张图 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/get-started/first-plot.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="4 GMT基础" href="../../basis/" />
+    <link rel="prev" title="3.2 命令格式" href="../command/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cli/">3.1 命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/">3.2 命令格式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 绘制第一张图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.3.1 图件分析与拆解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.3.2 绘制底图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3.3 绘制震中和台站位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.3.4 绘制射线路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.3.5 添加台站名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">3.3.6 图层的先后顺序</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">3 GMT初探</a> &raquo;</li>
+        
+      <li>3.3 绘制第一张图</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/get-started/first-plot.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3.3 绘制第一张图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这一节将通过绘制一张地震学常见的射线路径分布图，来展示GMT模块化作图的思想以及
+GMT中图层的概念。</p>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">请注意，以下均采用Linux下的bash脚本作为示例，如果你是在
+Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，强烈建议先阅读 <a class="reference internal" href="../../appendix/cmd/"><span class="doc">命令行及脚本基础</span></a> 一节。</p>
+</div>
+<div class="section" id="id2">
+<h2>3.3.1 图件分析与拆解<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>一个完整的图件通常是由很多部分组成的。GMT在制图时遵循模块化思想，每个模块只绘制整张图的一部分，因而通常一张图需要使用多个GMT命令才能绘制完成。绘制的过程中，若想修改图中的某个部分，只需修改绘制该部分所使用的命令即可，而不会影响其他部分。这就是模块化作图。</p>
+<p>下图展示了我们最终想要实现的绘图效果。整张图由如下几个部分构成：</p>
+<ol class="arabic simple">
+<li>底图（海岸线）</li>
+<li>震中位置（五角星）</li>
+<li>台站位置（三角形）、射线路径（大圆弧线段）</li>
+<li>台站名（文本）</li>
+</ol>
+<p><a class="reference download internal" download="" href="../../_downloads/77248414ba73cfab62a66ca08c1a6c25/first-plot-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/first-plot-gmtplot-0.png" src="../../_images/first-plot-gmtplot-0.png" />
+</div>
+<p>下面会一步步地把整张图绘制出来。</p>
+</div>
+<div class="section" id="id3">
+<h2>3.3.2 绘制底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>GMT中的 <a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充不同的颜色，绘图命令及效果如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc &gt; first-plot.ps
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/first-plot-gmtplot-1.png" src="../../_images/first-plot-gmtplot-1.png" />
+</div>
+<p>解释一下几个选项：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-JH110/24c</span></code> 表示使用Hammer投影，投影中心为110度，整张图宽度为 24 厘米</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 相当于 <code class="docutils literal notranslate"><span class="pre">-R0/360/-90/90</span></code> 即绘制全球范围</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Bg30</span></code> 表示网格线每30度显示一条</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Glightgreen</span></code> 表示将陆地填充浅绿色，<code class="docutils literal notranslate"><span class="pre">-Slightblue</span></code> 表示将海洋填充浅蓝色</li>
+</ol>
+<p>至此，即得到了我们需要的底图。</p>
+</div>
+<div class="section" id="id4">
+<h2>3.3.3 绘制震中和台站位置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../../module/psxy/"><span class="doc">psxy</span></a> 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">J</span><span class="o">=</span>H110/24c
+<span class="nv">R</span><span class="o">=</span>g
+<span class="nv">PS</span><span class="o">=</span>GMT_tutor2_2.ps
+
+gmt pscoast -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Bg30 -Glightgreen -Slightblue -A1000 -Dc -K &gt; <span class="nv">$PS</span>
+
+<span class="c1"># 绘制震中位置</span>
+gmt psxy -J -R -Sa0.5c -W0.5p,black,solid -Gyellow -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">130.72 32.78</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制台站位置</span>
+gmt psxy -J -R -St0.2c -W0.5p,black,solid -Gblack -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">104.39 29.90</span>
+<span class="s">13.14 52.50</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/first-plot-gmtplot-2.png" src="../../_images/first-plot-gmtplot-2.png" />
+</div>
+<p>这里我们通过两次调用 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 命令分别绘制了五角星和三角形。由于绘图的命令比较多，所以我们将绘图命令写成了一个脚本，并定义了一些变量（比如 <code class="docutils literal notranslate"><span class="pre">$PS</span></code>）以避免重复输入类似的文本。</p>
+<p>解释一下：</p>
+<ol class="arabic simple">
+<li>第一个 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 命令用于绘制震中位置，第二个则用于绘制台站位置</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Sa0.5c</span></code> 表示绘制大小为 0.5厘米的五角星，
+<code class="docutils literal notranslate"><span class="pre">-St0.2c</span></code> 表示绘制大小为0.2厘米的三角形</li>
+<li><code class="docutils literal notranslate"><span class="pre">-W</span></code> 表示画笔的属性，这里用于指定用什么样的画笔绘制三角形或五角星的轮廓。
+<code class="docutils literal notranslate"><span class="pre">-W0.5p,black,solid</span></code> 的意思是画笔 <code class="docutils literal notranslate"><span class="pre">0.5p</span></code> 宽，黑色，实心。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-G</span></code> 表示颜色填充，后面跟颜色的名字；<code class="docutils literal notranslate"><span class="pre">-Gblack</span></code> 表示填充黑色；
+<code class="docutils literal notranslate"><span class="pre">-Gyellow</span></code> 表示填充黄色。</li>
+<li>确定了画什么样的符号，还要确定在哪里画。两个 <code class="docutils literal notranslate"><span class="pre">EOF</span></code> 之间的是命令的输入数据，在这里就是位置信息，一行代表一个位置。默认情况下，GMT认为第一个数是经度，第二个是纬度。</li>
+<li>最后一个 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 命令没有绘制任何东西，其作用在于结束绘图，这属于稍高级的技巧，以后会介绍到。</li>
+</ol>
+<p>注意到了吗？相对于上一步的命令而言，<code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 命令中多了一个 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 选项，中间的几个 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 命令使用了 <code class="docutils literal notranslate"><span class="pre">-K</span> <span class="pre">-O</span></code> 选项，最后一个命令则使用了 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项。具体原因此处不解释，在 <a class="reference internal" href="../../option/KO/"><span class="doc">-K 和 -O 选项</span></a> 一节会详细介绍。</p>
+</div>
+<div class="section" id="id5">
+<h2>3.3.4 绘制射线路径<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">psxy</span></code> 模块还可以用于绘制线段，默认情况下，<code class="docutils literal notranslate"><span class="pre">psxy</span></code> 会自动用大圆路径连接地球上的两个位置，不需要额外设置。首先直接看代码：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">J</span><span class="o">=</span>H110/24c
+<span class="nv">R</span><span class="o">=</span>g
+<span class="nv">PS</span><span class="o">=</span>GMT_tutor2_3.ps
+
+gmt pscoast -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Bg30 -Glightgreen -Slightblue -A1000 -Dc -K &gt; <span class="nv">$PS</span>
+
+<span class="c1"># 绘制震中位置</span>
+gmt psxy -J -R -Sa0.5c -W0.5p,black,solid -Gyellow -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">130.72 32.78</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制台站位置</span>
+gmt psxy -J -R -St0.2c -W0.5p,black,solid -Gblack -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">104.39 29.90</span>
+<span class="s">13.14 52.50</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制大圆路径</span>
+gmt psxy -R -J -W1p,red -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">104.39 29.90</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">13.14 52.50</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/first-plot-gmtplot-3.png" src="../../_images/first-plot-gmtplot-3.png" />
+</div>
+<p>用于绘制射线路径的 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 命令和之前的命令的区别在于没有了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项。为了绘制一条线段，至少需要指定两个端点，输入数据中每个 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 之后的两行数据分别代表一条线条的两个端点位置。</p>
+</div>
+<div class="section" id="id6">
+<h2>3.3.5 添加台站名<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>最后还需要往图画里添加台站所在地区的名字。添加文字使用 <a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a> 模块：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">J</span><span class="o">=</span>H110/24c
+<span class="nv">R</span><span class="o">=</span>g
+<span class="nv">PS</span><span class="o">=</span>GMT_tutor2_4.ps
+
+gmt pscoast -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Bg30 -Glightgreen -Slightblue -A1000 -Dc -K &gt; <span class="nv">$PS</span>
+
+<span class="c1"># 绘制震中位置</span>
+gmt psxy -J -R -Sa0.5c -W0.5p,black,solid -Gyellow -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">130.72 32.78</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制台站位置</span>
+gmt psxy -J -R -St0.2c -W0.5p,black,solid -Gblack -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">104.39 29.90</span>
+<span class="s">13.14 52.50</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制大圆路径</span>
+gmt psxy -R -J -W1p,red -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">104.39 29.90</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">13.14 52.50</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 添加文本</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-1.5c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">-77.15 38.89 Washington</span>
+<span class="s">76.22 -69.22 Zhongshanzhan</span>
+<span class="s">EOF</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-1c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">104.39 29.90 Zigong</span>
+<span class="s">13.14 52.50 Berlin</span>
+<span class="s">19.99 -34.52 Bredasdorp</span>
+<span class="s">EOF</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-0.6c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">150.36 -33.79 Sydney</span>
+<span class="s">EOF</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-0.6c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">-52.47 -31.62 Pelotas</span>
+<span class="s">EOF</span>
+
+gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/first-plot-gmtplot-4.png" src="../../_images/first-plot-gmtplot-4.png" />
+</div>
+<p>解释如下：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">EOF</span></code> 之间的每一行依次是加入的文本的纬度、经度和内容，这与 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 类似，只是因为有内容，所以多了一列。之所以没有写在一个 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">pstext</span></code> 命令之下，是因为不同位置的文本的具体位置需要些许不同的调整，你可以看到每个 <code class="docutils literal notranslate"><span class="pre">pstext</span></code>
+命令的 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 参数些许不同，下面会详细解释。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-F</span></code> 控制文本的字体、对齐方式等属性； <code class="docutils literal notranslate"><span class="pre">+f10p,1,black</span></code> 表示使用大小为
+<code class="docutils literal notranslate"><span class="pre">10p</span></code> 的黑色1号字体； <code class="docutils literal notranslate"><span class="pre">+j</span></code> 是控制文本的对齐方式，<code class="docutils literal notranslate"><span class="pre">TL</span></code> 表示输入数据中的经纬度坐标是文本块的左上角，<code class="docutils literal notranslate"><span class="pre">L</span></code> 指左，<code class="docutils literal notranslate"><span class="pre">T</span></code> 指上，<code class="docutils literal notranslate"><span class="pre">LT</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TL</span></code>
+的含义完全一样。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-D</span></code> 是在上述坐标的基础上微调。<code class="docutils literal notranslate"><span class="pre">-D-1.5c/-0.15c</span></code> 是说向左移动1.5厘米，向下移动0.15厘米。</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>3.3.6 图层的先后顺序<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>上面的绘图脚本已经基本绘制出我们最初想要的图件了。细细看会发现，还有一些不完美的地方：比如黄色五角星和三角形被线段盖住了。</p>
+<p>这是因为，GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。解决办法也很简单，先绘制线段，再绘制三角形和五角星即可。</p>
+<p>对脚本中命令的先后顺序进行微调，如下所示：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">J</span><span class="o">=</span>H110/24c
+<span class="nv">R</span><span class="o">=</span>g
+<span class="nv">PS</span><span class="o">=</span>GMT_tutor2_5.ps
+
+gmt pscoast -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Bg30 -Glightgreen -Slightblue -A1000 -Dc -K &gt; <span class="nv">$PS</span>
+
+<span class="c1"># 绘制大圆路径</span>
+gmt psxy -R -J -W1p,red -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">104.39 29.90</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">13.14 52.50</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">&gt;</span>
+<span class="s">130.72 32.78</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制震中位置</span>
+gmt psxy -J -R -Sa0.5c -W0.5p,black,solid -Gyellow -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">130.72 32.78</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 绘制台站位置</span>
+gmt psxy -J -R -St0.2c -W0.5p,black,solid -Gblack -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">104.39 29.90</span>
+<span class="s">13.14 52.50</span>
+<span class="s">19.99 -34.52</span>
+<span class="s">-77.15 38.89</span>
+<span class="s">-52.47 -31.62</span>
+<span class="s">150.36 -33.79</span>
+<span class="s">76.22 -69.22</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 添加文本</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-1.5c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">-77.15 38.89 Washington</span>
+<span class="s">76.22 -69.22 Zhongshanzhan</span>
+<span class="s">EOF</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-1c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">104.39 29.90 Zigong</span>
+<span class="s">13.14 52.50 Berlin</span>
+<span class="s">19.99 -34.52 Bredasdorp</span>
+<span class="s">EOF</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-0.6c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">150.36 -33.79 Sydney</span>
+<span class="s">EOF</span>
+gmt pstext -J -R -F+f12p,1,black+jTL -D-0.6c/-0.15c -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s">-52.47 -31.62 Pelotas</span>
+<span class="s">EOF</span>
+
+gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/first-plot-gmtplot-5.png" src="../../_images/first-plot-gmtplot-5.png" />
+</div>
+<p>需要注意的是，本节内容仅作演示用，实际绘图时通常会写脚本来处理自己的数据，以使得其符合GMT输入数据的要求，而不是像本节示例中这样手写所有的数据。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../basis/" class="btn btn-neutral float-right" title="4 GMT基础" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../command/" class="btn btn-neutral float-left" title="3.2 命令格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

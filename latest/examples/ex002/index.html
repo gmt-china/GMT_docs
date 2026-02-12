@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制地球内部主要界面 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="使用地形起伏数据对其他非地形起伏数据进行明暗调制" href="../ex003/" />
+    <link rel="prev" title="绘制点线图及图例" href="../ex001/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../gallery/">社区绘图实例</a></li>
+      <li class="breadcrumb-item active">绘制地球内部主要界面</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/examples/ex002/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/core-man" target="_blank" rel="noopener">姚家园</a>
+    
+ &nbsp;•&nbsp; 📅 2022-04-29
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>绘制地球内部主要界面<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>在利用地震波研究地球深部结构时，经常需要绘制震相在深度剖面下的射线路径，
+同时也需要绘制地球内部的主要界面。</p>
+<p>震相的射线路径可以用 <a class="reference external" href="http://www.seis.sc.edu/taup/">TauP</a> 提供的 <code class="docutils literal notranslate"><span class="pre">taup_path</span></code>
+命令计算得到，然后在极坐标系 <code class="docutils literal notranslate"><span class="pre">-JP</span></code> 中绘制。难点在于如何绘制几个主要界面。</p>
+<p>本示例将展示如何绘制震中距为30度的 PcP 和 PKiKP 震相的射线路径，
+同时绘制地球内的 410、660界面以及 CMB 和 ICB。
+脚本中调用 TauP 计算射线路径。
+没有安装 TauP 的用户可以直接下载示例射线路径数据 <a class="reference download internal" download="" href="../../_downloads/52925d5b9de36f10d14ac8c181d4488b/PKiKP.raypath.gmt"><code class="xref download docutils literal notranslate"><span class="pre">PKiKP.raypath.gmt</span></code></a> 和 <a class="reference download internal" download="" href="../../_downloads/e9756a939b1acddd4582af53d92e3e9f/PcP.raypath.gmt"><code class="xref download docutils literal notranslate"><span class="pre">PcP.raypath.gmt</span></code></a>。</p>
+<p>绘图脚本如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># 绘制地球内部主要界面</span>
+<span class="c1">#</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>earth-discontinuities
+gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_GRID_PEN_PRIMARY<span class="w"> </span>1p
+<span class="c1"># 绘制地表</span>
+gmt<span class="w"> </span>basemap<span class="w"> </span>-JP10c+a+t15<span class="w"> </span>-R-10/40/0/6371<span class="w"> </span>-Byg6371<span class="w"> </span>-BS
+<span class="c1"># 绘制 410 界面</span>
+gmt<span class="w"> </span>basemap<span class="w"> </span>-Byg6371+5961<span class="w"> </span>-BS
+<span class="c1"># 绘制 660 界面</span>
+gmt<span class="w"> </span>basemap<span class="w"> </span>-Byg6371+5711<span class="w"> </span>-BS
+<span class="c1"># 绘制 CMB</span>
+gmt<span class="w"> </span>basemap<span class="w"> </span>-Byg6371+3480<span class="w"> </span>-BS
+<span class="c1"># 绘制 ICB</span>
+gmt<span class="w"> </span>basemap<span class="w"> </span>-Byg6371+1221<span class="w"> </span>-BS
+
+<span class="c1"># 计算震相的射线路径，用户需安装 TauP，并取消以下注释</span>
+<span class="c1"># taup_path -mod prem -ph PcP -h 300 -deg 30 -o PcP.raypath</span>
+<span class="c1"># taup_path -mod prem -ph PKiKP -h 300 -deg 30 -o PKiKP.raypath</span>
+
+<span class="c1"># 绘制震相的射线路径</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>PcP.raypath.gmt<span class="w"> </span>-W1p,blue
+gmt<span class="w"> </span>plot<span class="w"> </span>PKiKP.raypath.gmt<span class="w"> </span>-W1p,red
+
+<span class="c1"># 绘制震源和台站位置</span>
+gmt<span class="w"> </span>plot<span class="w"> </span>-S<span class="w"> </span>-Gblack<span class="w"> </span>-N<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">0 6071 0.4c a</span>
+<span class="s">30 6471 0.4c i</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 添加标注</span>
+gmt<span class="w"> </span>text<span class="w"> </span>-F+f11p+a<span class="w"> </span>-N<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">-6 6170 20 Surface</span>
+<span class="s">-6 3280 20 CMB</span>
+<span class="s">-3 1020 20 ICB</span>
+<span class="s">16 4100 0 @;blue;PcP@;;</span>
+<span class="s">37 1600 0 @;red;PKiKP@;;</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-a4658cc2fe2e96a6887cd40572d95cd3">
+<a class="reference internal image-reference" href="../../_images/a4658cc2fe2e96a6887cd40572d95cd3.png"><img alt="../../_images/a4658cc2fe2e96a6887cd40572d95cd3.png" src="../../_images/a4658cc2fe2e96a6887cd40572d95cd3.png" style="width: 50%;" />
+</a>
+</figure>
+<p>脚本使用了五次 <code class="docutils literal notranslate"><span class="pre">basemap</span></code> 命令，分别绘制五个界面：</p>
+<ul class="simple">
+<li><p>第一次用于绘制地表：<code class="docutils literal notranslate"><span class="pre">-Byg6371</span></code> 表明要在 Y 方向（极坐标下即 R 方向）以6371为间隔绘制网格线，
+由于地球半径是6371，所以理论上会在R=0和 R=6371 两处绘制网格线。
+<code class="docutils literal notranslate"><span class="pre">-BS</span></code> 的作用是只绘制 R=6371 处的网格线，且只绘制网格线而不绘制刻度</p></li>
+<li><p>第二次用于绘制410界面：与前一命令基本相同，唯一的区别是 <code class="docutils literal notranslate"><span class="pre">-Byg6371+5961</span></code>
+中多了 <code class="docutils literal notranslate"><span class="pre">+5961</span></code>，其作用是定义网格线的起算点，即此时将在 R=5961（即410界面）处绘制网格线</p></li>
+<li><p>其他同理</p></li>
+</ul>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../ex001/" class="btn btn-neutral float-left" title="绘制点线图及图例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../ex003/" class="btn btn-neutral float-right" title="使用地形起伏数据对其他非地形起伏数据进行明暗调制" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

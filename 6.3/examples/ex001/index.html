@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制点线图及图例 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+      <li>绘制点线图及图例</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/examples/ex001/index.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>绘制点线图及图例<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">示例贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/liaoweiyang2017">liaoweiyang2017</a>、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块可以绘制散点图也可以绘制线段，但不直接支持绘制点线图。</p>
+<p>想要绘制点线图，则需要对同一数据两次调用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块。第一次调用使用 <strong>-S</strong> 选项绘制符号，第二次调用不使用 <strong>-S</strong> 选项绘制线段。</p>
+<p>若要绘制图例，则需要手动准备图例文件。图例文件的具体语法见 <a class="reference internal" href="../../module/legend/"><span class="doc">legend</span></a>
+模块。准备图例文件主要是如下三个步骤：</p>
+<ol class="arabic simple">
+<li><p>生成符号对应的图例条目</p></li>
+<li><p>使用图例文件的 <code class="docutils literal notranslate"><span class="pre">G</span></code> 记录将接下来的图例条目上移 <em>N</em> 行，<em>N</em> 为符号图例条目的数目</p></li>
+<li><p>生成线段对应的图例条目</p></li>
+</ol>
+<p>下面的示例中在绘制三个数据时使用了不同属性的点线，并绘制对应的图例。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># 绘制点线图及图例</span>
+<span class="c1">#</span>
+gmt begin legend_ex2
+gmt basemap -R-0.2/4.2/0/7 -JX16c/8c -Bxa1+l<span class="s2">&quot;Number of iterations&quot;</span> -Bya1+l<span class="s2">&quot;Normalized RMS&quot;</span> -BWSrt
+
+<span class="c1"># data 1</span>
+cat &gt; <span class="m">1</span>.txt <span class="s">&lt;&lt; EOF</span>
+<span class="s">0 6.680</span>
+<span class="s">1 1.18</span>
+<span class="s">2 0.861</span>
+<span class="s">3 0.533</span>
+<span class="s">4 0.374</span>
+<span class="s">EOF</span>
+gmt plot <span class="m">1</span>.txt -Ss0.4c -W1p,DEEPSKYBLUE
+gmt plot <span class="m">1</span>.txt -W1p,DEEPSKYBLUE
+
+<span class="c1"># data 2</span>
+cat &gt; <span class="m">2</span>.txt <span class="s">&lt;&lt; EOF</span>
+<span class="s">0 6.458</span>
+<span class="s">1 2.423</span>
+<span class="s">2 0.789</span>
+<span class="s">3 0.523</span>
+<span class="s">4 0.304</span>
+<span class="s">EOF</span>
+gmt plot <span class="m">2</span>.txt -Sc0.4c -W1p,BROWN1
+gmt plot <span class="m">2</span>.txt -W1p,BROWN1
+
+<span class="c1"># data 3</span>
+cat &gt; <span class="m">3</span>.txt <span class="s">&lt;&lt; EOF</span>
+<span class="s">0 6.627</span>
+<span class="s">1 3.223</span>
+<span class="s">2 0.650</span>
+<span class="s">3 0.507</span>
+<span class="s">4 0.289</span>
+<span class="s">EOF</span>
+gmt plot <span class="m">3</span>.txt -Sa0.4c -W1p,PURPLE
+gmt plot <span class="m">3</span>.txt -W1p,PURPLE
+
+<span class="c1"># 制作图例文件</span>
+<span class="c1"># 设置不同的符号</span>
+<span class="c1"># symbol space legend type length (-) thickness,color space LegendName</span>
+<span class="nb">echo</span> S <span class="m">0</span>.2c s <span class="m">0</span>.3c - <span class="m">0</span>.8p,DEEPSKYBLUE <span class="m">0</span>.8c Line1 &gt;&gt; legends.txt
+<span class="nb">echo</span> S <span class="m">0</span>.2c c <span class="m">0</span>.3c - <span class="m">0</span>.8p,BROWN1 <span class="m">0</span>.8c Line2 &gt;&gt; legends.txt
+<span class="nb">echo</span> S <span class="m">0</span>.2c a <span class="m">0</span>.3c - <span class="m">0</span>.8p,PURPLE <span class="m">0</span>.8c Line3 &gt;&gt; legends.txt
+<span class="c1"># 上移 3 行</span>
+<span class="nb">echo</span> G -3l &gt;&gt; legends.txt
+<span class="c1"># 设置不同的线段</span>
+<span class="nb">echo</span> S <span class="m">0</span>.2c - <span class="m">0</span>.6c - <span class="m">0</span>.8p,DEEPSKYBLUE <span class="m">0</span>.8c &gt;&gt; legends.txt
+<span class="nb">echo</span> S <span class="m">0</span>.2c - <span class="m">0</span>.6c - <span class="m">0</span>.8p,BROWN1 <span class="m">0</span>.8c &gt;&gt; legends.txt
+<span class="nb">echo</span> S <span class="m">0</span>.2c - <span class="m">0</span>.6c - <span class="m">0</span>.8p,PURPLE <span class="m">0</span>.8c &gt;&gt; legends.txt
+gmt legend legends.txt -DjTR+l1.2+o0.2c/0.2c -F+p1p
+
+rm legends.txt <span class="m">1</span>.txt <span class="m">2</span>.txt <span class="m">3</span>.txt
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-9f7fc27a22ffe3521b1b112c45bacaa5">
+<img alt="../../_images/9f7fc27a22ffe3521b1b112c45bacaa5.png" src="../../_images/9f7fc27a22ffe3521b1b112c45bacaa5.png" />
+<figcaption>
+<p><span class="caption-text">绘制点线图及其图例</span><a class="headerlink" href="#gmtplot-9f7fc27a22ffe3521b1b112c45bacaa5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

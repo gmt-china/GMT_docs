@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fzblender &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="fzanalyzer" href="../fzanalyzer/" />
+    <link rel="prev" title="mlconverter" href="../mlconverter/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fzblender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">输出列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">滤波</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">相关模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">参考文献</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">fzblender</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/fzblender.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    , 
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2025-10-12
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="fzblender">
+<span id="index-0"></span><h1>fzblender<a class="headerlink" href="#fzblender" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/supplements/gsfml/fzblender.html" title="（在 GMT v6.6）"><span>fzblender</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>生成平滑的加权混合 FZ 轨迹</p>
+</dd>
+</dl>
+<p><strong>fzblender</strong> 是 (Global Seafloor Fabric and Magnetic Lineation Project)
+的一部分。(简称 <a class="reference external" href="https://www.soest.hawaii.edu/PT/GSFML">GSFML</a> )。
+它读取由 <a class="reference internal" href="../fzanalyzer/"><span class="doc">fzanalyzer</span></a> 生成的分析文件，并可选择沿轨迹对结果进行滤波。
+然后，基于指定的信号代码， <strong>fzblender</strong> 将生成一个最优断裂带（FZ）轨迹，
+该轨迹是用户原始数字化轨迹与一个或多个由 <a class="reference internal" href="../fzanalyzer/"><span class="doc">fzanalyzer</span></a>
+得到的模型轨迹的加权混合。混合过程依据模型轨迹的质量指标：</p>
+<ul class="simple">
+<li><p>当质量指标高时，倾向于使用模型轨迹；</p></li>
+<li><p>当质量指标低时，倾向于使用数字化轨迹；</p></li>
+<li><p>中间值则产生加权混合效果。</p></li>
+</ul>
+<p>分析结果通常从 <a class="reference internal" href="../fzanalyzer/"><span class="doc">fzanalyzer</span></a> 生成的文件 <em>prefix</em>_analysis.txt 中读取；
+混合结果将写入文件 <em>prefix</em>_blend.txt。如果提供了 <a class="reference internal" href="#cmdoption-fzblender-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项，
+中间的滤波分析文件还可以写入 <em>prefix</em>_filtered.txt。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt fzblender</strong>
+[ <a class="reference internal" href="#cmdoption-fzblender-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-fzblender-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><em>sfilter</em> ]
+[ <a class="reference internal" href="#cmdoption-fzblender-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>pfilter</em> ]
+[ <a class="reference internal" href="#cmdoption-fzblender-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><em>FZid</em> ]
+[ <a class="reference internal" href="#cmdoption-fzblender-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><em>q_min</em>/<em>q_max</em> ]
+[ <a class="reference internal" href="#cmdoption-fzblender-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><strong>b</strong>|<strong>d</strong>|<strong>e</strong>|<strong>t</strong>|<strong>u</strong>[<em>weight</em>] ]
+[ <a class="reference internal" href="#cmdoption-fzblender-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>prefix</em> ]
+[ <a class="reference internal" href="#cmdoption-fzblender-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-fzblender-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a><em>acut</em>/<em>vcut</em>/<em>fcut</em>/<em>wcut</em> ]</p>
+</section>
+<section id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong></dt><dd><p>不删除滤波后的输出文件，而是将其保存为 <em>prefix</em>_filtered.txt。
+[默认情况下，我们会删除这些中间文件]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong><em>sfilter</em></dt><dd><p>在主滤波完成后应用二次滤波。若先应用稳健滤波移除大尺度异常值，
+可能会在短尺度产生噪声，此时二次滤波会很有用。
+有关滤波器的指定方法，请参见 <a class="reference internal" href="#cmdoption-fzblender-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong><em>pfilter</em></dt><dd><p>设置沿轨迹的主滤波器。可选择卷积或非卷积滤波器。
+附加滤波器指令后跟完整（6-sigma） <em>宽度</em>。可用卷积滤波器包括：</p>
+<ul class="simple">
+<li><p><strong>b</strong>：Boxcar：所有权重相等。</p></li>
+<li><p><strong>c</strong>：Cosine Arch：权重沿余弦拱曲线分布。</p></li>
+<li><p><strong>g</strong>：Gaussian：权重按高斯函数给出。</p></li>
+</ul>
+<p>非卷积滤波器包括：</p>
+<ul class="simple">
+<li><p><strong>m</strong>：中值（Median）：返回中值。</p></li>
+<li><dl class="simple">
+<dt><strong>p</strong>：最大似然概率（模式估计器）：返回众数。如果存在多个众数，</dt><dd><p>则返回它们的平均值。可在滤波宽度后附加 <strong>+l</strong> 或 <strong>+u</strong>，分别返回最低或最高的众数值。</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>l</strong>：下限（Lower）：返回所有值的最小值。</p></li>
+<li><p><strong>L</strong>：正下限（Lower）：仅返回所有正值中的最小值。</p></li>
+<li><p><strong>u</strong>：上限（Upper）：返回最大值。</p></li>
+<li><p><strong>U</strong>：负上限（Upper）：仅返回所有负值中的最大值。</p></li>
+</ul>
+<p>对于 <strong>L</strong> 或 <strong>U</strong>，如果没有数据通过初始符号测试，则滤波器返回 0.0。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong><em>FZid</em></dt><dd><p>默认情况下，会分析所有 FZ 的横剖面。
+你也可以使用 <a class="reference internal" href="#cmdoption-fzblender-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 指定特定的 <em>FZid*（第一个 *FZid</em> 为 0）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Q</strong><em>q_min</em>/<em>q_max</em></dt><dd><p>设置在混合结果中使用的质量指数范围。质量指数 <em>q(d)</em> 在 <em>q_min</em> （0 或差）
+到 <em>q_max</em> （1 或很好）之间连续变化，沿 FZ 轨迹的距离 <em>d</em> 变化。
+分配给模型 FZ 轨迹的质量权重为*w_q(d)* = (<em>q(d)</em> - <em>q_min</em>) / (<em>q_max</em> - <em>q_min</em>)，
+若 <em>w_q(d)</em> &gt; <em>q_max</em> 则 <em>w_q(d)</em> = 1，
+若 <em>w_q(d)</em> &lt; <em>q_min</em> 则 <em>w_q(d)</em> = 0。
+可通过 <a class="reference internal" href="#cmdoption-fzblender-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> 改变此权重分配。分配给数字化 FZ 轨迹的质量权重为
+<em>w_q(d)</em> = 1 - mean{模型质量权重}（参见 <a class="reference internal" href="#cmdoption-fzblender-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a>）。质量指数的计算请参见 <a class="reference internal" href="#cmdoption-fzblender-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Sb</strong>|<strong>d</strong>|<strong>e</strong>|<strong>t</strong>|<strong>u</strong>[<em>weight</em>]</dt><dd><p>指定希望混合的模型和数据轨迹及其相对自定义权重 [默认均为 1]。
+可对每条轨迹重复此选项。如果指定了多条模型轨迹，
+则首先根据其质量指标和权重进行平均，再与数字化轨迹混合（如指定）。
+因此，分配给数字化轨迹的质量指数为 <em>q_r</em> = 1 - mean(模型质量指数)。
+最终混合是加权平均，同时考虑质量指数和自定义权重（如指定）。选择以下指令：</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>b</strong>：最优槽/边缘模型混合的槽位置。</dt><dd><p>使用“Atlantic”、“Pacific”和“Compression”风格的综合模型对数据进行最佳拟合。</p>
+</dd>
+</dl>
+</li>
+<li><p><strong>d</strong>：沿轨迹的经验槽位置。</p></li>
+<li><p><strong>e</strong>：最优槽/边缘模型混合的最大斜率位置。</p></li>
+<li><p><strong>t</strong>：仅使用“Atlantic”风格槽模型的最佳拟合。</p></li>
+<li><p><strong>u</strong>：用户的原始数字化轨迹。</p></li>
+</ul>
+<p>除了混合后的 FZ 位置，我们还输出 FZ 宽度估计以及 FZ 两侧 1σ 边界轨迹。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong><em>prefix</em></dt><dd><p>设置所有输出文件的文件名前缀 [fztrack]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Z</strong><em>acut</em>/<em>vcut</em>/<em>fcut</em>/<em>wcut</em></dt><dd><p>我们将尝试为每个模型分配一个单一质量指数 <em>Q</em>，以总结模型拟合的优劣。
+该分配依赖四个需经验确定的阈值：</p>
+<ul class="simple">
+<li><p><em>a_cut</em>：交叉剖面模型的最小峰谷振幅（单位 Eotvos）[25]</p></li>
+<li><p><em>v_cut</em>：模型提供的最小方差降低（%）[50]</p></li>
+<li><p><em>f_cut</em>：模型计算的最小 F 统计量 [50]</p></li>
+<li><p><em>w_cut</em>：典型 FZ 槽宽（单位 km）[15]</p></li>
+</ul>
+<p>目前，前三个量用于生成五级质量指数（0-1），如下：</p>
+<ol class="arabic simple">
+<li><p>Very Good（非常好）：模型参数均超过阈值</p></li>
+<li><p>Good（好）：幅度和方差降低超过阈值</p></li>
+<li><p>Fair（一般）：仅方差降低超过阈值</p></li>
+<li><p>Poor（差）：仅幅度超过阈值</p></li>
+<li><p>Bad（差）：未满足任何标准</p></li>
+</ol>
+<p>我们分别为槽模型和混合模型计算质量指数。对于经验槽模型，
+只估计峰谷振幅 <em>A</em> 和槽宽 <em>W</em>。这里，将比值 (<em>A</em>/<em>a_cut</em>) / (<em>W</em>/<em>w_cut</em>) 的
+反正切（<span class="math notranslate nohighlight">\(\tan^{-1}\)</span>）缩放至 0-1 范围，并四舍五入到最接近 0.25 的倍数。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-bo">
+<span class="sig-name descname"><span class="pre">-bo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-bo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输出格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-do">
+<span class="sig-name descname"><span class="pre">-do</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-do" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-do</strong><em>nodata</em></dt><dd><p>将输出数据某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,...][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输出的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-fzblender-qi">
+<span class="sig-name descname"><span class="pre">-qi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-fzblender-qi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>筛选输入的行或数据范围。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>输出列<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p><strong>fzblender</strong> 输出 10 列数据，
+分别为 <em>lon, lat, dist, shift, width, qweight, lon_l, lat_l, lon_r, lat_r</em>。
+其中，<em>lon, lat</em> 包含沿距离 <em>dist</em> 的混合轨迹，<em>width</em> 为跨轨宽度，
+<em>shift</em> 为相对于原点的偏移。混合结果的质量权重为 <em>qweight</em>，
+最后四列给出了 FZ 左/右边界的坐标。</p>
+</section>
+<section id="id4">
+<h2>滤波<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>滤波总是在 FZ 端点附近的数据上进行。
+我们使用 <a class="reference internal" href="../filter1d/"><span class="doc">filter1d</span></a> 的 <strong>-E</strong> 选项，将结果延伸至端点。
+由于我们对的数据列可能包含明显的趋势（例如经度随沿线距离的变化），
+因此在滤波前会先去除线性趋势，滤波后再恢复趋势。
+然而，在解释靠近 FZ 端点的混合结果时应保持谨慎。
+你可以通过使用 <a class="reference internal" href="#cmdoption-fzblender-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项保存滤波后的剖面，更直接地检查滤波效果。</p>
+</section>
+<section id="id5">
+<h2>注意事项<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>需要注意的是，在 <a class="reference internal" href="#cmdoption-fzblender-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 的各指令中，<strong>e</strong> 与众不同，
+它反映了基于理论预测的 FZ 位置估计，即 FZ 横切可能对应于 VGG 最陡坡度的位置。
+因此，该位置会与槽中心偏移几公里（除非混合主要为 “Atlantic” 风格），
+将其与其他指令组合使用通常效果不佳。最好单独使用，并配合滤波。</p>
+</section>
+<section id="id6">
+<h2>示例<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>要生成数字化轨迹、经验槽位置和槽模型位置的加权平均，
+并为经验位置赋权 2，模型槽赋权 1，同时读取文件 Pac_analysis.txt，
+先应用宽度为 70 km 的中值滤波，再应用 50 km 的高斯滤波，可以使用以下命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>fzblender<span class="w"> </span>-Su1<span class="w"> </span>-Sd2<span class="w"> </span>-St1<span class="w"> </span>-Fm70<span class="w"> </span>-Eg50<span class="w"> </span>-TPac
+</pre></div>
+</div>
+<p>要沿 FZ 轨迹生成最大坡度位置的平滑轨迹，对同一文件使用相同滤波器，可运行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>fzblender<span class="w"> </span>-Se<span class="w"> </span>-Fm70<span class="w"> </span>-Eg50<span class="w"> </span>-TPac
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>相关模块<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../fzanalyzer/"><span class="doc">fzanalyzer</span></a>,
+<a class="reference internal" href="../fzinformer/"><span class="doc">fzinformer</span></a>,
+<a class="reference internal" href="../fzmapper/"><span class="doc">fzmapper</span></a>,
+<a class="reference internal" href="../fzmodeler/"><span class="doc">fzmodeler</span></a>,
+<a class="reference internal" href="../fzprofiler/"><span class="doc">fzprofiler</span></a>,
+<a class="reference internal" href="../filter1d/"><span class="doc">filter1d</span></a>,
+<a class="reference internal" href="../mlconverter/"><span class="doc">mlconverter</span></a></p>
+</section>
+<section id="id8">
+<h2>参考文献<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
+A., Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+&quot;Semiautomatic fracture zone tracking&quot;, <em>Geochem. Geophys.
+Geosyst.</em>, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.</p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../mlconverter/" class="btn btn-neutral float-left" title="mlconverter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../fzanalyzer/" class="btn btn-neutral float-right" title="fzanalyzer" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

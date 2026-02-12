@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>不等间隔数据插值网格化绘图 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="设置配置参数" href="../configurations/" />
+    <link rel="prev" title="等间隔数据网格化绘图" href="../xyz2grd/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/">入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../advanced/">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">等间隔数据网格化绘图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">不等间隔数据插值网格化绘图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">示例数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">数据插值并网格化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">网格文件绘图</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configurations/">设置配置参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT 单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT 图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT 子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT 多图模式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../advanced/">进阶教程</a></li>
+      <li class="breadcrumb-item active">不等间隔数据插值网格化绘图</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/tutorial/surface/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+      
+      
+  ✍️
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>不等间隔数据插值网格化绘图<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>在实际的科研工作中，另一类经常会接触到的数据类型是以散点形式在空间上不等间隔分布的数据。
+例如利用地震台站记录的地震波形，使用接收函数方法计算出的各个地震台站下方的 Moho 厚度以及地壳波速比数据。
+某些情况下我们希望利用这些以散点形式不等间隔分布的数据点，插值并绘制出这一片区域的数据分布图。
+但是 <a class="reference internal" href="../../module/xyz2grd/"><span class="doc">xyz2grd</span></a> 模块对于不等间隔的数据并不具备插值功能。
+处理不等间隔的数据，可以使用模块
+<a class="reference internal" href="../../module/surface/"><span class="doc">surface</span></a>、
+<a class="reference internal" href="../../module/greenspline/"><span class="doc">greenspline</span></a>、
+<a class="reference internal" href="../../module/nearneighbor/"><span class="doc">nearneighbor</span></a>
+或 <a class="reference internal" href="../../module/triangulate/"><span class="doc">triangulate</span></a>。</p>
+<p>本章节我们将以 <a class="reference internal" href="../../module/surface/"><span class="doc">surface</span></a> 模块为例，介绍对不等间隔数据插值并进行网格化后绘图的方法。</p>
+<section id="id2">
+<h2>示例数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>示例数据下载 <a class="reference download internal" download="" href="../../_downloads/ef94cc23f982cab6684c645580dd9cb1/Table_5_11.txt"><code class="xref download docutils literal notranslate"><span class="pre">Table_5_11.txt</span></code></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 笛卡尔座标系：X座标 Y座标 Z值</span>
+<span class="c1"># 地理座标系：经度 纬度 数值</span>
+
+<span class="c1"># 数据点散点分布，不等间隔</span>
+<span class="m">0</span>.3<span class="w">	</span><span class="m">6</span>.1<span class="w">	</span><span class="m">870</span>
+<span class="m">1</span>.4<span class="w">	</span><span class="m">6</span>.2<span class="w">	</span><span class="m">793</span>
+<span class="m">2</span>.4<span class="w">	</span><span class="m">6</span>.1<span class="w">	</span><span class="m">755</span>
+...
+</pre></div>
+</div>
+<p>下图简单描绘了数据点的分布，以及标注了每个数据点位数值的大小：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>map1
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-R-0.2/6.6/-0.2/6.6<span class="w"> </span>-JM10c<span class="w"> </span>-Baf
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-Sc0.12c<span class="w"> </span>-Gblack
+<span class="w">    </span>gmt<span class="w"> </span>text<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-F+f6p+jLM<span class="w"> </span>-D3p/0<span class="w"> </span>-Gwhite<span class="w"> </span>-W
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-a76ecfa6b8f532d112d94accb79db132">
+<a class="reference internal image-reference" href="../../_images/a76ecfa6b8f532d112d94accb79db132.png"><img alt="../../_images/a76ecfa6b8f532d112d94accb79db132.png" src="../../_images/a76ecfa6b8f532d112d94accb79db132.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+<section id="id3">
+<h2>数据插值并网格化<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>我们使用 <a class="reference internal" href="../../module/surface/"><span class="doc">surface</span></a> 模块对数据进行插值，并转化为 <em>grid</em> 网格文件。以下命令可以在终端中单独运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>surface<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-R-0.2/6.6/-0.2/6.6<span class="w"> </span>-I0.05<span class="w"> </span>-Gtmp.grd
+</pre></div>
+</div>
+<p>其中 <strong>-R</strong> 选项规定了想要进行插值的空间范围。
+<strong>-I</strong> 选项设置了插值后网格文件的数据间隔，可以分别设置X和Y方向的网格间隔。对于地理坐标，可以指定网格间隔单位（默认单位为度）。
+<strong>-G</strong> 选项设置了输出文件的文件名。</p>
+<p>用户可以使用 <a class="reference internal" href="../../module/grdinfo/"><span class="doc">grdinfo</span></a> 模块获取网格文件的基本信息：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>grdinfo<span class="w"> </span>tmp.grd
+tmp.grd:<span class="w"> </span>Title:<span class="w"> </span>Data<span class="w"> </span>gridded<span class="w"> </span>with<span class="w"> </span>continuous<span class="w"> </span>surface<span class="w"> </span>splines<span class="w"> </span><span class="k">in</span><span class="w"> </span>tension
+tmp.grd:<span class="w"> </span>Command:<span class="w"> </span>gmt<span class="w"> </span>surface<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-R-0.2/6.6/-0.2/6.6<span class="w"> </span>-I0.05<span class="w"> </span>-Gtmp.grd
+tmp.grd:<span class="w"> </span>Remark:
+tmp.grd:<span class="w"> </span>Gridline<span class="w"> </span>node<span class="w"> </span>registration<span class="w"> </span>used<span class="w"> </span><span class="o">[</span>Cartesian<span class="w"> </span>grid<span class="o">]</span>
+tmp.grd:<span class="w"> </span>Grid<span class="w"> </span>file<span class="w"> </span>format:<span class="w"> </span><span class="nv">nf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>GMT<span class="w"> </span>netCDF<span class="w"> </span>format<span class="w"> </span><span class="o">(</span><span class="m">32</span>-bit<span class="w"> </span>float<span class="o">)</span>,<span class="w"> </span>CF-1.7
+tmp.grd:<span class="w"> </span>x_min:<span class="w"> </span>-0.2<span class="w"> </span>x_max:<span class="w"> </span><span class="m">6</span>.6<span class="w"> </span>x_inc:<span class="w"> </span><span class="m">0</span>.05<span class="w"> </span>name:<span class="w"> </span>x<span class="w"> </span>n_columns:<span class="w"> </span><span class="m">137</span>
+tmp.grd:<span class="w"> </span>y_min:<span class="w"> </span>-0.2<span class="w"> </span>y_max:<span class="w"> </span><span class="m">6</span>.6<span class="w"> </span>y_inc:<span class="w"> </span><span class="m">0</span>.05<span class="w"> </span>name:<span class="w"> </span>y<span class="w"> </span>n_rows:<span class="w"> </span><span class="m">137</span>
+tmp.grd:<span class="w"> </span>v_min:<span class="w"> </span><span class="m">678</span>.153747559<span class="w"> </span>v_max:<span class="w"> </span><span class="m">1008</span>.02862549<span class="w"> </span>name:<span class="w"> </span>z
+tmp.grd:<span class="w"> </span>scale_factor:<span class="w"> </span><span class="m">1</span><span class="w"> </span>add_offset:<span class="w"> </span><span class="m">0</span>
+tmp.grd:<span class="w"> </span>format:<span class="w"> </span>netCDF-4<span class="w"> </span>chunk_size:<span class="w"> </span><span class="m">137</span>,137<span class="w"> </span>shuffle:<span class="w"> </span>on<span class="w"> </span>deflation_level:<span class="w"> </span><span class="m">3</span>
+tmp.grd:<span class="w"> </span>Default<span class="w"> </span>CPT:
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>网格文件绘图<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>我们同样使用 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a> 模块读取网格文件绘制图片。上面获取到的网格文件基本信息，可以帮助我们确定 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 中 <strong>-T</strong> 选项的参数。
+代码可以整合为：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>map2
+<span class="w">    </span>gmt<span class="w"> </span>surface<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-R-0.2/6.6/-0.2/6.6<span class="w"> </span>-I0.05<span class="w"> </span>-Gtmp.grd
+
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-R-0.2/6.6/-0.2/6.6<span class="w"> </span>-JM10c<span class="w"> </span>-Baf
+<span class="w">    </span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cseis<span class="w"> </span>-T650/1000
+<span class="w">    </span>gmt<span class="w"> </span>grdimage<span class="w"> </span>tmp.grd
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-Sc0.12c<span class="w"> </span>-Gblack
+<span class="w">    </span>gmt<span class="w"> </span>text<span class="w"> </span>Table_5_11.txt<span class="w"> </span>-F+f6p+jLM<span class="w"> </span>-D3p/0<span class="w"> </span>-Gwhite<span class="w"> </span>-W
+
+<span class="w">    </span>gmt<span class="w"> </span>colorbar<span class="w"> </span>-Baf
+
+<span class="w">    </span>rm<span class="w"> </span>tmp.grd
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-b361236c9198707b521bae5ceaa72097">
+<a class="reference internal image-reference" href="../../_images/b361236c9198707b521bae5ceaa72097.png"><img alt="../../_images/b361236c9198707b521bae5ceaa72097.png" src="../../_images/b361236c9198707b521bae5ceaa72097.png" style="width: 80%;" />
+</a>
+</figure>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../xyz2grd/" class="btn btn-neutral float-left" title="等间隔数据网格化绘图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../configurations/" class="btn btn-neutral float-right" title="设置配置参数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

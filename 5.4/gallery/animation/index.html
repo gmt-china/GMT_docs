@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>14.14 制作动画 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/gallery/animation/index.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="14.15 中文图" href="../chinese-texts/" />
+    <link rel="prev" title="14.13 多子图" href="../subplot/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">14 绘图示例</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">14.1 绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">14.2 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">14.3 绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">14.4 绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../beachball/">14.5 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">14.6 绘制图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.7 绘制地形起伏图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">14.8 绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset-map/">14.9 绘制图中图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">14.10 绘制SAC格式地震波形图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">14.11 绘制三角图解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">14.12 绘制等值线图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">14.13 多子图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.14 制作动画</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.14.1 绘制正弦函数动画</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chinese-texts/">14.15 中文图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">14 绘图示例</a> &raquo;</li>
+        
+      <li>14.14 制作动画</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/gallery/animation/index.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>14.14 制作动画<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT自身只能生成静态图片，并不具备制作动画的功能。但动画的本质就是将一系列静态的图片（每张静态图片称为动画的一帧）按照顺序快速切换。因而可以利用GMT绘制多张静态图片，再利用外部工具将这些静态图片转换成单个动画文件。</p>
+<p>使用GMT制作动画时，通常需要考虑如下问题：</p>
+<ol class="arabic simple">
+<li>一张动画需要多少帧？帧数太少会导致动画存在不连续感，帧数太多可能导致绘制/播放很长时间、文件过大。因而通常将相关参数定义为变量，方便根据实际情况进行微调</li>
+<li>不变的元素有哪些？通常一张动图中有些元素是不变的，比如底图、海岸线、图例等等。如果在每一帧静态图片中都重复绘制这些元素，则会浪费大量时间。在绘制静态图片时，可以将这些不变的元素先绘制完，然后将未关闭的PS文件复制到新文件中，并在新文件中绘制余下的部分</li>
+<li>确定文件名。由于要生成一系列静态图片，且将静态图片转换为动图时图片需要按照固定顺序排列，因而必须使得每张静态图片的文件名唯一且依次递增。通常的做法是设定一个帧计数器，其值初始化为0，并随着循环不断递增。文件名则由文件名前缀和帧计数器共同决定，例如 <code class="docutils literal notranslate"><span class="pre">plot_0001.ps</span></code>。需要注意，文件名中 <code class="docutils literal notranslate"><span class="pre">0001</span></code> 的前置 0 不可省略，否则在转换成动图时各帧之间的先后顺序会出错</li>
+<li>每一帧生成的PS文件均需要使用 <a class="reference internal" href="../../module/psconvert/"><span class="doc">psconvert</span></a> 将其转换为PNG等格式</li>
+<li>ImageMagick的 <code class="docutils literal notranslate"><span class="pre">convert</span></code> 命令可以将图片转换成gif或者avi等格式</li>
+</ol>
+<div class="section" id="id2">
+<h2>14.14.1 绘制正弦函数动画<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">n_frames</span><span class="o">=</span><span class="m">18</span>  <span class="c1"># 帧数</span>
+<span class="nv">name</span><span class="o">=</span>anim01  <span class="c1"># 文件名前缀</span>
+
+. gmt_shell_functions.sh
+
+<span class="c1"># 绘制静态的底图</span>
+<span class="nv">angle_step</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="m">360</span> <span class="si">${</span><span class="nv">n_frames</span><span class="si">}</span> <span class="nv">DIV</span> <span class="o">=</span><span class="sb">`</span>
+<span class="nv">angle_inc</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="si">${</span><span class="nv">angle_step</span><span class="si">}</span> <span class="m">10</span> <span class="nv">DIV</span> <span class="o">=</span><span class="sb">`</span>
+gmt psbasemap -R0/360/-1.2/1.6 -JX3.5i/1.65i -P -K -X0.35i -Y0.25i <span class="se">\</span>
+    -BWSne+glightgreen -Bxa90g90f30+u<span class="se">\\</span><span class="m">312</span> -Bya0.5f0.1g1 <span class="se">\</span>
+    --PS_MEDIA<span class="o">=</span>4ix2i --FONT_ANNOT_PRIMARY<span class="o">=</span>9p &gt; <span class="nv">$$</span>.map.ps
+
+mkdir -p <span class="nv">$$</span>  <span class="c1"># $$是当前进程的ID，用于构建唯一的文件夹和文件名</span>
+<span class="nv">frame</span><span class="o">=</span><span class="m">0</span>
+<span class="c1"># 开始循环生成静态图片</span>
+<span class="k">while</span> <span class="o">[</span> <span class="si">${</span><span class="nv">frame</span><span class="si">}</span> -le <span class="si">${</span><span class="nv">n_frames</span><span class="si">}</span> <span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+    <span class="c1"># 文件名格式为 name_##</span>
+    <span class="nv">file</span><span class="o">=</span><span class="sb">`</span>gmt_set_framename <span class="si">${</span><span class="nv">name</span><span class="si">}</span> <span class="si">${</span><span class="nv">frame</span><span class="si">}</span><span class="sb">`</span>
+    cp -f <span class="nv">$$</span>.map.ps <span class="nv">$$</span>.ps
+    <span class="nv">angle</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="si">${</span><span class="nv">frame</span><span class="si">}</span> <span class="si">${</span><span class="nv">angle_step</span><span class="si">}</span> <span class="nv">MUL</span> <span class="o">=</span><span class="sb">`</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="si">${</span><span class="nv">frame</span><span class="si">}</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  <span class="c1"># 第一张图不绘制曲线</span>
+        <span class="c1"># 绘制曲线</span>
+        gmt math -T0/<span class="si">${</span><span class="nv">angle</span><span class="si">}</span>/<span class="si">${</span><span class="nv">angle_inc</span><span class="si">}</span> T <span class="nv">SIND</span> <span class="o">=</span> <span class="nv">$$</span>.sin.d
+        gmt psxy -R -J -O -K -W1p,blue <span class="nv">$$</span>.sin.d &gt;&gt; <span class="nv">$$</span>.ps
+        gmt math -T0/<span class="si">${</span><span class="nv">angle</span><span class="si">}</span>/<span class="si">${</span><span class="nv">angle_step</span><span class="si">}</span> T <span class="nv">SIND</span> <span class="o">=</span> <span class="nv">$$</span>.sin.d
+        gmt psxy -R -J -O -K -Sc0.1i -Gdarkred <span class="nv">$$</span>.sin.d &gt;&gt; <span class="nv">$$</span>.ps
+    <span class="k">fi</span>
+    <span class="c1"># 绘制红点</span>
+    <span class="nv">sin</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="si">${</span><span class="nv">angle</span><span class="si">}</span> <span class="nv">SIND</span> <span class="o">=</span><span class="sb">`</span>
+    gmt psxy -R -J -O -K -Sc0.1i -Gred &gt;&gt; <span class="nv">$$</span>.ps <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">angle</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">sin</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">printf</span> <span class="s2">&quot;0 1.6 a = %03d&quot;</span> <span class="si">${</span><span class="nv">angle</span><span class="si">}</span> <span class="p">|</span> gmt pstext -R -J -F+f14p,Helvetica-Bold+jTL <span class="se">\</span>
+        -N -Dj0.1i/0.05i -K -O &gt;&gt; <span class="nv">$$</span>.ps
+    gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$$</span>.ps
+
+    <span class="c1"># 将生成的PS文件转换为TIF文件</span>
+    gmt psconvert -E125 -Tt -F<span class="nv">$$</span>/<span class="nv">$file</span> <span class="nv">$$</span>.ps
+    <span class="nb">echo</span> <span class="s2">&quot;Frame </span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2"> completed&quot;</span>
+
+    <span class="c1"># 递增frame</span>
+    <span class="nv">frame</span><span class="o">=</span><span class="sb">`</span>gmt_set_framenext <span class="si">${</span><span class="nv">frame</span><span class="si">}</span><span class="sb">`</span>
+<span class="k">done</span>
+
+<span class="c1"># 将静态图片转换为动图</span>
+gm convert -delay <span class="m">20</span> -loop <span class="m">0</span> <span class="nv">$$</span>/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>_*.tif <span class="si">${</span><span class="nv">name</span><span class="si">}</span>.gif
+
+<span class="c1"># 清理</span>
+gmt_cleanup .gmt
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/anim01.gif"><img alt="../../_images/anim01.gif" src="../../_images/anim01.gif" style="width: 60%;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chinese-texts/" class="btn btn-neutral float-right" title="14.15 中文图" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../subplot/" class="btn btn-neutral float-left" title="14.13 多子图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

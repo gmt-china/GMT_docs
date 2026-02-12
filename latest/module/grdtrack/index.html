@@ -1,0 +1,1003 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grdtrack &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grdtrend" href="../grdtrend/" />
+    <link rel="prev" title="grdshake" href="../grdshake/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grdtrack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">距离单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII 格式精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">网格重采样的后果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">提示</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">grdtrack</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/grdtrack.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Dengda98" target="_blank" rel="noopener">朱邓达</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2026-01-03
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="grdtrack">
+<span id="index-0"></span><h1>grdtrack<a class="headerlink" href="#grdtrack" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/grdtrack.html" title="（在 GMT v6.6）"><span>grdtrack</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>在指定位置对一个或多个网格插值</p>
+</dd>
+</dl>
+<p><strong>grdtrack</strong> 读取一个或多个网格文件以及一个前两列（支持更多列）
+为点位 <em>(x, y)</em> 或 <em>(lon, lat)</em> 的表数据（来自文件或标准输入，但 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> 例外）。<strong>grdtrack</strong>
+会在表数据提供的位置上插值网格值，并将插值结果输出到新的一列（或多列）。或者使用 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 选项，
+可将表数据认作线段，然后在每个线段节点上（或者沿着线段等距地）创建与之垂直的交叉测线，
+再沿着这些测线插值网格。对于插值方法（见 <a class="reference internal" href="#cmdoption-grdtrack-n"><code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code></a> ），可选择双三次(bicubic)（默认），
+双线性(bilinear)，B样条(B-spline)和最近邻(nearest-neighbor)，且要求 <a class="reference internal" href="#cmdoption-grdtrack-n"><code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code></a>
+指定网格的边界条件，默认使用自然边界条件（即边界法向二阶导数为0），
+除非网格被自动识别为有周期性。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt grdtrack</strong>
+[ <em>table</em> ]
+<a class="reference internal" href="#cmdoption-grdtrack-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>grd1</em> [ <a class="reference internal" href="#cmdoption-grdtrack-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>grd2</em> ... ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a>[<strong>f</strong>|<strong>p</strong>|<strong>m</strong>|<strong>r</strong>|<strong>R</strong>][<strong>+l</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>|<strong>v</strong>][<strong>d</strong>|<strong>f</strong><em>value</em>][<strong>l</strong>|<strong>r</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>dfile</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><em>line</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>[<strong>+b</strong>][<strong>+n</strong>][<strong>+r</strong>][<strong>+z</strong><em>z0</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><em>method</em>/<em>modifiers</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>[<em>radius</em>][<strong>+e</strong>|<strong>p</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-a"><code class="xref std std-option docutils literal notranslate"><span class="pre">-a</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-bo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bo</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-d"><code class="xref std std-option docutils literal notranslate"><span class="pre">-d</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-j"><code class="xref std std-option docutils literal notranslate"><span class="pre">-j</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-n"><code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-w"><code class="xref std std-option docutils literal notranslate"><span class="pre">-w</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdtrack-0"><code class="xref std std-option docutils literal notranslate"><span class="pre">-:</span></code></a>[<strong>i</strong>|<strong>o</strong>] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+<blockquote>
+<div><p>前两列为用户设置的插值位置 <em>(x, y)</em> 或 <em>(lon, lat)</em> 。
+如果设置了 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> 则不会读取输入表数据，因为 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> 会创建。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-G</strong><em>gridfile</em></dt><dd><p><em>gridfile</em> 为一个 2-D 网格。你可以多次使用 <a class="reference internal" href="#cmdoption-grdtrack-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 或者使用 <strong>-G+l</strong><em>list</em> 来传入多个网格，
+其中 <em>list</em> 为一个文本文件，网格名称在每行的第一个非数值列。
+网格插值结果顺序按照输入顺序。</p>
+<p><strong>注：</strong> 如果 <em>gridfile</em> 是一个远程文件，且未指定网格配准，
+<strong>grdtrack</strong> 默认使用网格线配准（而非像素点配准）
+以确保所有输入点都在网格区域内。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-A</strong>[<strong>f</strong>|<strong>p</strong>|<strong>m</strong>|<strong>r</strong>|<strong>R</strong>][<strong>+l</strong>]</dt><dd><p>关于沿测线进行采样（如果设置了 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 或 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> ）的一些选项，在 <a class="reference internal" href="#cmdoption-grdtrack-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 后追加：</p>
+<ul class="simple">
+<li><p><strong>f</strong> - 沿测线采样，保留原始点位，按需会适当插值线段中点（默认）。</p></li>
+<li><p><strong>m</strong> - 类似 <strong>f</strong> ，但测线变为阶梯状，先沿经度采样，再沿纬度采样。</p></li>
+<li><p><strong>p</strong> - 类似 <strong>f</strong> ，但测线变为阶梯状，先沿纬度采样，再沿经度采样。</p></li>
+<li><p><strong>r</strong> - 等距采样，此时输入的点位（尤其是端点）可能不会严格包括在输出结果中。</p></li>
+<li><p><strong>R</strong> - 类似 <strong>r</strong> ，但会适当调整采样点间距使输入点位都在输出结果中。</p></li>
+</ul>
+<p>最后，可以加上 <strong>+l</strong> 使地理距离的测量沿着恒向线（rhumb lines 或 loxodromes ，
+即沿着该方向行进时行进方向始终与经线保持相同夹角）而不是默认的大圆弧。
+<strong>+l</strong> 仅可与 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 同时使用。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-C</strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>|<strong>v</strong>][<strong>d</strong>|<strong>f</strong><em>value</em>][<strong>l</strong>|<strong>r</strong>]</dt><dd><p>基于输入线段，创建一组等距采样点并插值。另外，可以计算与线段相交的交叉线段并插值。
+等距采样点以及交叉线段的设置包含如下三个参数，三者单位一致，但仅能在 <em>length</em> 后指定单位：</p>
+<ul class="simple">
+<li><p><em>length</em> - 交叉线段的长度，后跟单位。地理坐标下默认米(<strong>e</strong>)，在地理坐标下强烈建议手动指定单位。</p></li>
+<li><p><em>ds</em> - 交叉线段的采样间隔。</p></li>
+<li><p><em>spacing</em> - （可选）交叉线段间的距离，此时将沿着线段等距 <em>spacing</em> 创建交叉测线 [默认在每个线段节点上创建]。</p></li>
+</ul>
+<p>另外，可追加如下子选项：</p>
+<ul class="simple">
+<li><p><strong>+a</strong>，默认情况下，沿着线段前进方向看，所有交叉测线的点位顺序保持一致（从左到右），
+该选项使多条交叉测线的点位顺序交替变化。</p></li>
+<li><p><strong>+v</strong>， 同上，但使点位顺序根据交叉测线走向，大致呈现自西向东或自南向北。</p></li>
+<li><p><strong>+l</strong>，默认情况下，输出整条交叉测线，使用该选项仅保留左半支。</p></li>
+<li><p><strong>+r</strong>，同上，仅保留右半支。</p></li>
+<li><p><strong>+d</strong><em>value</em> 为交叉测线的走向加上偏离角 <em>value</em></p></li>
+<li><p><strong>+f</strong><em>value</em> 指定所有交叉测线为固定走向 <em>value</em> 。</p></li>
+</ul>
+<p>输出结果中每列为 <em>lon, lat, dist, azimuth, z1, z2, ..., zn</em> ，其中 <em>zi</em>
+表示第 <em>i</em> 个网格在 <em>(lon, lat)</em> 位置的采样值。</p>
+<p><strong>注：</strong></p>
+<ul class="simple">
+<li><p>如果使用了 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 且设置了 <em>spacing</em> ，则 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> 设置的测线采样间隔将被覆盖。</p></li>
+<li><p>在地理坐标下， <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 和 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> 使用不同单位会存在bug
+（详见PR <a class="reference external" href="https://github.com/GenericMappingTools/gmt/pull/8728">#8728</a> ），
+如果同时使用，请手动指定相同的距离单位。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>dfile</em></dt><dd><p>与 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 一起使用，将原始线段（可能被重采样）保存到 <em>dfile</em> 文件中，
+否则仅输出交叉测线的结果到标准输出。输出 <em>dfile</em> 格式为
+<em>lon, lat, dist, azimuth, z1, z2, ..., zn</em> ，其中 <em>zi</em>
+表示第 <em>i</em> 个网格在 <em>(lon, lat)</em> 位置的采样值。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-E</strong><em>table</em>|<em>origin</em>|<em>line</em>[,<em>line</em>,...][<strong>+a</strong><em>az</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+g</strong>][<strong>+i</strong><em>inc</em>][<strong>+l</strong><em>length</em>][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+p</strong>][<strong>+r</strong><em>radius</em>][<strong>+x</strong>]</dt><dd><p>创建一条或多条测线。有以下几种方式：</p>
+<ul class="simple">
+<li><p>给定 <em>table</em> 文件，其中包含点位。</p></li>
+<li><p>给定起点 <em>origin</em> （和方位角 <em>azimuth</em> ，长度 <em>length</em> ，和下方相关选项）。</p></li>
+<li><p>给定一条或多条测线 <em>line</em> 。每条 <em>line</em> 的格式为 <em>start/stop</em> ，
+其中 <em>start</em> 和 <em>stop</em> 格式为 <em>lon/lat</em> 或者两个字母指定地图上（或者使用 <a class="reference internal" href="#cmdoption-grdtrack-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 指定的范围内）的位置
+（例如BL,TR等，详见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> ），你也可以使用 Z-,Z+
+代表网格（或多维网格的顶层，仅限 <a class="reference internal" href="../grdinterpolate/"><span class="doc">grdinterpolate</span></a> ）
+的全局最小值位置和最大值位置。</p></li>
+</ul>
+<p>支持以下选项：</p>
+<ul class="simple">
+<li><p><strong>+a</strong> - 设置测线走向 <em>azimuth</em> （配合 <strong>+l</strong> 指定长度），测线始于起点 <em>origin</em> 。</p></li>
+<li><p><strong>+c</strong> - 当多条测线首尾重合时，将其连接起来合并成一条测线。</p></li>
+<li><p><strong>+d</strong> - 输出结果增加沿测线的距离。</p></li>
+<li><p><strong>+g</strong> - 当测线起始点位于同一经度/纬度时，报告沿测线的纬度/经度变化而不是大圆弧距离。</p></li>
+<li><p><strong>+i</strong> - 指定采样间隔 <em>inc</em> ，若不指定则默认为网格最小间距的一半。</p></li>
+<li><p><strong>+l</strong> - 指定测线长度 <em>length</em> ，与 <strong>+a</strong> （或  <strong>+o</strong> ）以及 <em>origin</em> 一起使用。</p></li>
+<li><p><strong>+n</strong> - 指定采样点数 <em>np</em> （这间接确定了采样间隔）。</p></li>
+<li><p><strong>+o</strong> - 与 <strong>+a</strong> 类似，但将 <em>origin</em> 作为测线中点，指定测线走向 <em>az</em>。</p></li>
+<li><p><strong>+p</strong> - 当测线起始点位于同一纬度时，沿着纬线采样而不是大圆弧。</p></li>
+<li><p><strong>+r</strong> - 创建圆形测线，将 <em>origin</em> 作为圆心，指定 <em>radius</em> 作为半径。要求使用 <strong>+n</strong> 或 <strong>+i</strong> 。</p></li>
+<li><p><strong>+x</strong> - 地理距离的测量沿着恒向线（rhumb lines 或 loxodromes，
+即沿着该方向行进时行进方向始终与经线保持相同夹角）而不是默认的大圆弧。</p></li>
+</ul>
+<p><strong>注：</strong></p>
+<ul class="simple">
+<li><p>对于设置长度的选项，仅能设置一种单位，设置不同单位的结果错误。
+地理坐标下若不指定长度单位则默认为千米(<strong>k</strong>)。</p></li>
+<li><p>对于地理坐标，可使用 <strong>-j</strong> 指定距离计算方式（默认计算大圆弧路径）。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong>[<strong>+b</strong>][<strong>+n</strong>][<strong>+r</strong>][<strong>+z</strong><em>z0</em>]</dt><dd><p>搜索每条交叉测线的 z 值临界点作为沿测线距离的函数。该选项只能与 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 以及单个网格同时使用。
+一条交叉测线的对应结果输出一行，每列按顺序包括</p>
+<ul class="simple">
+<li><p><em>dist, lonc, latc, distc, azimuthc, zc</em> - 最大 z 值的位置及相关量。</p></li>
+<li><p><em>lonl, latl, distl</em> - 交叉测线从左至右首个大于 <em>z0</em> 值的位置（左临界点）。</p></li>
+<li><p><em>lonr, latr, distr</em> - 交叉测线从右至左首个大于 <em>z0</em> 值的位置（右临界点）。</p></li>
+<li><p><em>width</em> - 左右临界点的间距。</p></li>
+</ul>
+<p>其中 <em>dist</em> 为该条交叉测线与主测线的交点在主测线上的距离（该交点也定义为交叉测线上测量距离的原点），
+其余12项为沿测线距离 <em>dist</em> 的函数。</p>
+<p>使用以下子选项可计算不同类型的临界点：</p>
+<ul class="simple">
+<li><p><strong>+z</strong><em>z0</em> 上述默认计算的最大值为不受约束的最大值，设置 <em>z0</em> 为非负数可搜索不超过该值的最大值。</p></li>
+<li><p><strong>+n</strong> 搜索最小值，而不是最大值，与上述 <strong>+z</strong><em>z0</em> 同时使用将输出受限制的最小值，其中 <em>z0</em> 仍为非负数，GMT 内部将取反处理。</p></li>
+<li><p><strong>+b</strong> 将交叉测线上的 z 值作为权重，计算交叉测线上距离的加权平均值所在位置(<em>lonc, latc</em>)
+（相当于将z值当作砝码，计算平衡点），左右临界点则为一倍标准差的位置，计算公式为
+<span class="math notranslate nohighlight">\(\sigma=\sqrt{\frac{\sum_i z_i \cdot \sum_i z_i d_i^2 - (\sum_i z_i d_i)^2}{(n-1/n) (\sum_i z_i)^2}}\)</span>。</p></li>
+<li><p><strong>+r</strong> 与 <strong>+b</strong> 类似，但此时 (<em>lonc, latc</em>) 为交叉测线距离原点 (<em>distc</em>==0)，
+左右临界点为一倍距离加权 RMS 的位置，计算公式为
+<span class="math notranslate nohighlight">\(\text{RMS}=\sqrt{\frac{\sum_i z_i d_i^2}{\sum_i z_i}}\)</span> 。</p></li>
+</ul>
+<p><strong>注：</strong> 以上临界点的位置取交叉测线上符合条件的最近节点位置，并未新增采样点。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong></dt><dd><p>不跳过超过网格范围的点（默认仅处理网格范围内的点）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-S</strong>[<strong>a</strong>|<strong>l</strong>|<strong>L</strong>|<strong>m</strong>|<strong>p</strong>|<strong>u</strong>|<strong>U</strong>][<strong>+a</strong>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong>][<strong>+s</strong>[<em>file</em>]]</dt><dd><p>配合 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 使用，根据所有交叉测线计算一条叠加测线。可指定以下叠加方法：</p>
+<ul class="simple">
+<li><p><strong>a</strong> - 计算平均数</p></li>
+<li><p><strong>m</strong> - 计算中位数</p></li>
+<li><p><strong>p</strong> - 使用半样本法估计连续数据的众数</p></li>
+<li><p><strong>l</strong> - 计算最小值</p></li>
+<li><p><strong>L</strong> - 计算最小正值</p></li>
+<li><p><strong>u</strong> - 计算最大值</p></li>
+<li><p><strong>U</strong> - 计算最大负值</p></li>
+</ul>
+<p>支持使用以下多个选项，在 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 输出的所有交叉测线基础上在行末增加输出内容：</p>
+<ul class="simple">
+<li><p><strong>+a</strong> - 输出叠加结果</p></li>
+<li><p><strong>+d</strong> - 输出叠加偏差（统计意义上的 <em>deviation</em> ）</p></li>
+<li><p><strong>+r</strong> - 输出数据相对叠加值的残差 (<em>data</em> - <em>stack</em>)</p></li>
+<li><p><strong>+s</strong> - 将叠加测线结果单独保存到 <em>file</em> 文件 （默认为 stacked_profile.txt）</p></li>
+<li><p><strong>+c</strong> - 在叠加测线结果文件 <em>file</em> 中输出叠加测线的置信区间 <em>stack</em> ± <em>fact</em>*<em>deviation</em> ，默认 <em>fact</em> = 2</p></li>
+</ul>
+<p><strong>注：</strong></p>
+<ul class="simple">
+<li><p>偏差值 <em>deviation</em> 取决于使用哪种叠加方法， <strong>a</strong> 使用标准差， <strong>m|p</strong>
+使用 L1 范数，即 1.4826 乘以中位数绝对偏差(Median Absolute Deviation, MAD)，
+<strong>l|L|u|U</strong> 使用最高值与最低值的差的一半。</p></li>
+<li><p>叠加测线结果可使用 <strong>+s</strong> 单独保存到文件 <em>file</em> 中，第一列为交叉测线在主测线上的距离，
+后面每一个网格结果形成 4 列（或 6 列），分别为叠加结果，叠加偏差，最小值和最大值，
+如果叠加方法为 <strong>a|m|p</strong> ，则再加上置信区间的下界和上界。</p></li>
+<li><p>对于在 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 输出的基础上新增的列，始终按照叠加结果 (<strong>+a</strong>)，叠加偏差 (<strong>+d</strong>) 和残差 (<strong>+r</strong>) 的顺序，
+实际输出几列取决于是否使用对应选项。当输入多个网格时，结果按照该顺序为一组进行重复。</p></li>
+</ul>
+<p>该选项较为复杂，关于该选项的的使用示例见 <a class="reference external" href="https://docs.generic-mapping-tools.org/dev/gallery/ex33.html">官方示例(33)</a> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong>[<em>radius</em>][<strong>+e</strong>|<strong>p</strong>]</dt><dd><p>用于常规网格采样过程（即读取 <em>table</em> 表数据，不使用 <a class="reference internal" href="#cmdoption-grdtrack-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 和 <a class="reference internal" href="#cmdoption-grdtrack-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> ），仅限于单个网格文件。
+采样过程中如果最近节点值为 NaN， 则向外扩展搜索最近的非 NaN 值。可设置 <em>radius</em> 作为搜索半径，
+地理坐标下默认单位为度 (<strong>d</strong>)，设置 <em>radius</em>=0（默认）则不限制半径。</p>
+<ul class="simple">
+<li><p><strong>+p</strong> 表示将输出点位替换为最近非 NaN 节点的位置</p></li>
+<li><p><strong>+e</strong> 则增加三列输出，报告最近非 NaN 节点的位置及其与输入点位的距离。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong></dt><dd><p>用于常规网格采样过程，只输出采样的 z 值（默认输出所有列）。 <strong>注：</strong> 如果和 <a class="reference internal" href="#cmdoption-grdtrack-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a> 一起使用，
+<a class="reference internal" href="#cmdoption-grdtrack-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a> 中的默认列变为 0 而不是 2。如果在 <a class="reference internal" href="#cmdoption-grdtrack-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a> 中指定列索引，z 值所在列从 0 开始编号而不是 2。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-a">
+<span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-a" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-a</strong>[[<em>col</em>=]<em>name</em>][,<em>...</em>]</dt><dd><p>控制输入或输出为 OGR/GMT 格式时对非空间元数据的处理方式。 <a class="reference internal" href="../../option/a/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-bo">
+<span class="sig-name descname"><span class="pre">-bo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-bo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输出格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt><dd><p>将某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-j">
+<span class="sig-name descname"><span class="pre">-j</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-j" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong></dt><dd><p>设置球面距离的计算方式。 <a class="reference internal" href="../../option/distcal/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-n">
+<span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-n" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>]</dt><dd><p>设置网格文件的插值方式。 <a class="reference internal" href="../../option/n/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,...][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输出的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-q">
+<span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>对输入或输出的行进行筛选，该选项在一定程度上可以代替 gawk 的某些功能。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt><dd><p>设置 NaN 记录的处理方式。 <a class="reference internal" href="../../option/s/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-w">
+<span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-w" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-wy</strong>|<strong>a</strong>|<strong>w</strong>|<strong>d</strong>|<strong>h</strong>|<strong>m</strong>|<strong>s</strong>|<strong>c</strong><em>period</em>[/<em>phase</em>][<strong>+c</strong><em>col</em>]</dt><dd><p>将输入坐标转换为循环坐标。 <a class="reference internal" href="../../option/w/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdtrack-0">
+<span class="sig-name descname"><span class="pre">-:</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdtrack-0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>交换输入或输出数据的前两列。 <a class="reference internal" href="../../option/colon/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id7">
+<h2>距离单位<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>GMT支持多种不同的距离单位，以及三种不同的球面距离计算方式。
+详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 和 <a class="reference internal" href="../../option/distcal/"><span class="doc">-j 选项</span></a>。</p>
+</section>
+<section id="ascii">
+<h2>ASCII 格式精度<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<p>ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> ；控制绝对时间的的参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> ；普通浮点数通过参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定更多的有效数字。</p>
+</section>
+<section id="id8">
+<h2>网格重采样的后果<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>在对网格进行重采样或重新取样时，会使用多种算法（参见 <strong>-n</strong>），
+这些算法可能导致重采样后的数值出现一定的失真或意外结果。
+使用样条函数进行重采样的一个常见现象是：新的采样值可能会略微超出原始网格的全局最小值或最大值。
+如果这种超出范围的现象不可接受，可以在 <strong>-n</strong> 选项中添加 <strong>+c</strong> 参数，
+以对重采样结果进行裁剪，从而确保输出的数值不会超过输入网格的最小值和最大值。</p>
+</section>
+<section id="id9">
+<h2>提示<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>如果采样点不在输入网格的节点上，则在该点周围的任何邻近节点上的 NaN 将导致插值结果为 NaN。
+双三次插值（默认方法）产生连续的一阶导数，但需要 4 × 4 节点的邻域。双线性插值只使用 2 × 2 邻域，但只产生零阶连续性。
+当平滑性很重要时，使用双三次插值。使用双线性插值可最小化 NaN 的传播，或 <a class="reference internal" href="#cmdoption-grdtrack-n"><code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code></a> 中的 <em>threshold</em> 。</p>
+</section>
+<section id="id10">
+<h2>示例<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p><strong>注</strong>: 下面是该模块的一些有效语法示例。使用远程文件（文件名以 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 开头）的示例可以剪切并粘贴到您的终端中进行测试。其他需要输入文件的命令只是常见的使用类型的虚拟示例，但不能按编写的原样运行。</p>
+<p>要从远程网格 &#64;earth_relief_05m 采样(0, 0)到(20, 20)之间的大圆测线，并且只输出(dist, topo)记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>-G@earth_relief_05m<span class="w"> </span>-R0/20/0/20<span class="w"> </span>-EBL/TR+d<span class="w"> </span>-o2,3<span class="w"> </span>-fg<span class="w"> </span>&gt;<span class="w"> </span>profile.txt
+</pre></div>
+</div>
+<p>从网格 hawaii_topo.nc 中沿着 track_4.xyg 采样（一个ASCII格式的表数据，包括经度、纬度和基于SEASAT卫星的重力数据，
+包含一行头段记录）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>track_4.xyg<span class="w"> </span>-Ghawaii_topo.nc<span class="w"> </span>-h<span class="w"> </span>&gt;<span class="w"> </span>track_4.xygt
+</pre></div>
+</div>
+<p>沿着文件 cruise_track.xy 中提供的( <em>lon, lat</em> )坐标，对 Sandwell/Smith 海深文件 topo_19.1.nc
+和年龄网格文件 age.3.2.nc (Muller et al.) 进行采样:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>cruise_track.xy<span class="w"> </span>-Gtopo_19.1.nc<span class="w"> </span>-Gage.3.2.nc<span class="w"> </span>&gt;<span class="w"> </span>depths-age.txt
+</pre></div>
+</div>
+<p>沿着文件 track.xy 定义的测线，每隔 25km 创建与之垂直的交叉测线，采样间隔为 3km，对 Sandwell/Smith
+重力异常文件 grav_32.1.nc 采样:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>track.xy<span class="w"> </span>-Ggrav_32.1.nc<span class="w"> </span>-C100k/3/25<span class="w"> </span>-Ar<span class="w"> </span>&gt;<span class="w"> </span>xprofiles.txt
+</pre></div>
+</div>
+<p>与上面类似，但确定沿测线的中心异常位置，阈值为 25 mGal</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>track.xy<span class="w"> </span>-Ggrav_32.1.nc<span class="w"> </span>-C100k/3/25<span class="w"> </span>-F+z25<span class="w"> </span>&gt;<span class="w"> </span>locations.txt
+</pre></div>
+</div>
+<p>沿着网格文件 data.nc 的左下角到右上角进行采样，使用间距1km的测地线，输出包括距离:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>-ELB/RT+i1k+d<span class="w"> </span>-Gdata.nc<span class="w"> </span>-je<span class="w"> </span>&gt;<span class="w"> </span>profiles.txt
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2>相关模块<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../convert/"><span class="doc">convert</span></a>,
+<a class="reference internal" href="../text/"><span class="doc">text</span></a>,
+<a class="reference internal" href="../sample1d/"><span class="doc">sample1d</span></a>,
+<a class="reference internal" href="../project/"><span class="doc">project</span></a>,
+<a class="reference internal" href="../surface/"><span class="doc">surface</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../grdshake/" class="btn btn-neutral float-left" title="grdshake" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../grdtrend/" class="btn btn-neutral float-right" title="grdtrend" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

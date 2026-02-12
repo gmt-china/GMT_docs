@@ -1,0 +1,1121 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>内置CPT &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="制作CPT" href="../makecpt/" />
+    <link rel="prev" title="CPT类型" href="../format/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">颜色表 CPT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">CPT类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">制作CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../current-cpt/">当前CPT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">颜色表 CPT</a></li>
+      <li class="breadcrumb-item active">内置CPT</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/cpt/builtin-cpt.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+  
+  <section class="tex2jax_ignore mathjax_ignore" id="cpt">
+<h1>内置CPT<a class="headerlink" href="#cpt" title="Link to this heading"></a></h1>
+<p>GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展示GMT内置CPT的配色，
+具体如何使用这些内置CPT文件会在后面做进一步介绍。</p>
+<p>下面列出了 GMT 内置的 CPT 文件的具体配色以及 CPT 文件名（位于图下方）。
+用户可以参阅 <a class="extlink-gmt-docs reference external" href="https://docs.generic-mapping-tools.org/6.5/reference/cpts.html">官方手册</a> 了解更多内置 CPT 配色文件。
+内置CPT根据其来源可以分为以下几个大类（以下称为 <code class="docutils literal notranslate"><span class="pre">section</span></code> ）：</p>
+<ul class="simple">
+<li><p><strong>gmt</strong>: GMT 开发者制作的 CPT 文件;</p></li>
+<li><p><strong>SCM</strong>: 由 Fabio Crameri 制作的科学配图用CPT文件;</p></li>
+<li><p><strong>cmocean</strong>: 由 Kirsten Thyng 制作的海洋专用CPT文件;</p></li>
+<li><p><strong>cpt-city</strong>: 从 cpt-city 引入的CPT文件;</p></li>
+<li><p><strong>google</strong>: 由 Google 开发的CPT文件;</p></li>
+<li><p><strong>matlab</strong>: 从 Matlab 引入的CPT文件;</p></li>
+<li><p><strong>matplotlib</strong>: 从 matplotlib 引入的CPT文件;</p></li>
+<li><p><strong>panoply</strong>: 从 Panoply 引入的CPT文件.</p></li>
+</ul>
+<p>使用某个内置CPT文件时，完整的引用格式是 <strong>-C</strong>[<em>section</em>/] <em>cpt</em> 。其中 <em>cpt</em> 是某个 <em>section</em> 以下具体的CPT名字
+（注意不需要 <strong>.cpt</strong> 扩展名）。如果省略 <em>section</em> 则会自动遍历查找，使用第一个找到的 <em>cpt</em> 。
+例如 <strong>-Cglobe</strong> 等同于 <strong>-Cgmt/globe</strong> 。</p>
+<p>每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到
+（将选项 <strong>-C</strong><em>section/cpt</em> 中的 <em>section/cpt</em> 替换为相应的CPT即可）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>colorbar<span class="w"> </span>-Dx0c/0c+w10c/1c+h<span class="w"> </span>-B0<span class="w"> </span>-Csection/cpt<span class="w"> </span>-pdf<span class="w"> </span>CPT
+</pre></div>
+</div>
+<p>下面的色标是利用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 对原始CPT文件做离散处理得到的单色型
+CPT文件，可以用如下命令绘制得到（将选项 <strong>-C</strong><em>section/cpt</em> 中的 <em>section/cpt</em> 替换为相应的CPT即可）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>CPT
+gmt<span class="w"> </span>makecpt<span class="w"> </span>-Csection/cpt<span class="w"> </span>-T-1/1/0.25
+gmt<span class="w"> </span>colorbar<span class="w"> </span>-Dx0c/0c+w10c/1c+h<span class="w"> </span>-B0
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<p>图中黑色三角和白色三角分别表示该CPT拥有一个HARD HINGE或SOFT HINGE。
+关于HARD和SOFT HINGE的定义会在下一节详细介绍。</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-center" id="id1">
+<img alt="../../_images/acton.png" src="../../_images/acton.png" />
+<figcaption>
+<p><span class="caption-text">SCM/acton</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id2">
+<img alt="../../_images/actonS.png" src="../../_images/actonS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/actonS</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id3">
+<img alt="../../_images/bam.png" src="../../_images/bam.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bam</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id4">
+<img alt="../../_images/bamO.png" src="../../_images/bamO.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bamO</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id5">
+<img alt="../../_images/bamako.png" src="../../_images/bamako.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bamako</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id6">
+<img alt="../../_images/bamakoS.png" src="../../_images/bamakoS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bamakoS</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id7">
+<img alt="../../_images/batlow.png" src="../../_images/batlow.png" />
+<figcaption>
+<p><span class="caption-text">SCM/batlow</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id8">
+<img alt="../../_images/batlowK.png" src="../../_images/batlowK.png" />
+<figcaption>
+<p><span class="caption-text">SCM/batlowK</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id9">
+<img alt="../../_images/batlowS.png" src="../../_images/batlowS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/batlowS</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id10">
+<img alt="../../_images/batlowW.png" src="../../_images/batlowW.png" />
+<figcaption>
+<p><span class="caption-text">SCM/batlowW</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id11">
+<img alt="../../_images/berlin.png" src="../../_images/berlin.png" />
+<figcaption>
+<p><span class="caption-text">SCM/berlin</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id12">
+<img alt="../../_images/bilbao.png" src="../../_images/bilbao.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bilbao</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id13">
+<img alt="../../_images/bilbaoS.png" src="../../_images/bilbaoS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bilbaoS</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id14">
+<img alt="../../_images/broc.png" src="../../_images/broc.png" />
+<figcaption>
+<p><span class="caption-text">SCM/broc</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id15">
+<img alt="../../_images/brocO.png" src="../../_images/brocO.png" />
+<figcaption>
+<p><span class="caption-text">SCM/brocO</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id16">
+<img alt="../../_images/buda.png" src="../../_images/buda.png" />
+<figcaption>
+<p><span class="caption-text">SCM/buda</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id17">
+<img alt="../../_images/budaS.png" src="../../_images/budaS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/budaS</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id18">
+<img alt="../../_images/bukavu.png" src="../../_images/bukavu.png" />
+<figcaption>
+<p><span class="caption-text">SCM/bukavu</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id19">
+<img alt="../../_images/cork.png" src="../../_images/cork.png" />
+<figcaption>
+<p><span class="caption-text">SCM/cork</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id20">
+<img alt="../../_images/corkO.png" src="../../_images/corkO.png" />
+<figcaption>
+<p><span class="caption-text">SCM/corkO</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id21">
+<img alt="../../_images/davos.png" src="../../_images/davos.png" />
+<figcaption>
+<p><span class="caption-text">SCM/davos</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id22">
+<img alt="../../_images/davosS.png" src="../../_images/davosS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/davosS</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id23">
+<img alt="../../_images/devon.png" src="../../_images/devon.png" />
+<figcaption>
+<p><span class="caption-text">SCM/devon</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id24">
+<img alt="../../_images/devonS.png" src="../../_images/devonS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/devonS</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id25">
+<img alt="../../_images/fes.png" src="../../_images/fes.png" />
+<figcaption>
+<p><span class="caption-text">SCM/fes</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id26">
+<img alt="../../_images/grayC.png" src="../../_images/grayC.png" />
+<figcaption>
+<p><span class="caption-text">SCM/grayC</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id27">
+<img alt="../../_images/grayCS.png" src="../../_images/grayCS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/grayCS</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id28">
+<img alt="../../_images/hawaii.png" src="../../_images/hawaii.png" />
+<figcaption>
+<p><span class="caption-text">SCM/hawaii</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id29">
+<img alt="../../_images/hawaiiS.png" src="../../_images/hawaiiS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/hawaiiS</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id30">
+<img alt="../../_images/imola.png" src="../../_images/imola.png" />
+<figcaption>
+<p><span class="caption-text">SCM/imola</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id31">
+<img alt="../../_images/imolaS.png" src="../../_images/imolaS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/imolaS</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id32">
+<img alt="../../_images/lajolla.png" src="../../_images/lajolla.png" />
+<figcaption>
+<p><span class="caption-text">SCM/lajolla</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id33">
+<img alt="../../_images/lajollaS.png" src="../../_images/lajollaS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/lajollaS</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id34">
+<img alt="../../_images/lapaz.png" src="../../_images/lapaz.png" />
+<figcaption>
+<p><span class="caption-text">SCM/lapaz</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id35">
+<img alt="../../_images/lapazS.png" src="../../_images/lapazS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/lapazS</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id36">
+<img alt="../../_images/lisbon.png" src="../../_images/lisbon.png" />
+<figcaption>
+<p><span class="caption-text">SCM/lisbon</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id37">
+<img alt="../../_images/nuuk.png" src="../../_images/nuuk.png" />
+<figcaption>
+<p><span class="caption-text">SCM/nuuk</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id38">
+<img alt="../../_images/nuukS.png" src="../../_images/nuukS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/nuukS</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id39">
+<img alt="../../_images/oleron.png" src="../../_images/oleron.png" />
+<figcaption>
+<p><span class="caption-text">SCM/oleron</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id40">
+<img alt="../../_images/oslo.png" src="../../_images/oslo.png" />
+<figcaption>
+<p><span class="caption-text">SCM/oslo</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id41">
+<img alt="../../_images/osloS.png" src="../../_images/osloS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/osloS</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id42">
+<img alt="../../_images/roma.png" src="../../_images/roma.png" />
+<figcaption>
+<p><span class="caption-text">SCM/roma</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id43">
+<img alt="../../_images/romaO.png" src="../../_images/romaO.png" />
+<figcaption>
+<p><span class="caption-text">SCM/romaO</span><a class="headerlink" href="#id43" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id44">
+<img alt="../../_images/tofino.png" src="../../_images/tofino.png" />
+<figcaption>
+<p><span class="caption-text">SCM/tofino</span><a class="headerlink" href="#id44" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id45">
+<img alt="../../_images/tokyo.png" src="../../_images/tokyo.png" />
+<figcaption>
+<p><span class="caption-text">SCM/tokyo</span><a class="headerlink" href="#id45" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id46">
+<img alt="../../_images/tokyoS.png" src="../../_images/tokyoS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/tokyoS</span><a class="headerlink" href="#id46" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id47">
+<img alt="../../_images/turku.png" src="../../_images/turku.png" />
+<figcaption>
+<p><span class="caption-text">SCM/turku</span><a class="headerlink" href="#id47" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id48">
+<img alt="../../_images/turkuS.png" src="../../_images/turkuS.png" />
+<figcaption>
+<p><span class="caption-text">SCM/turkuS</span><a class="headerlink" href="#id48" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id49">
+<img alt="../../_images/vanimo.png" src="../../_images/vanimo.png" />
+<figcaption>
+<p><span class="caption-text">SCM/vanimo</span><a class="headerlink" href="#id49" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id50">
+<img alt="../../_images/vik.png" src="../../_images/vik.png" />
+<figcaption>
+<p><span class="caption-text">SCM/vik</span><a class="headerlink" href="#id50" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id51">
+<img alt="../../_images/vikO.png" src="../../_images/vikO.png" />
+<figcaption>
+<p><span class="caption-text">SCM/vikO</span><a class="headerlink" href="#id51" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id52">
+<img alt="../../_images/algae.png" src="../../_images/algae.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/algae</span><a class="headerlink" href="#id52" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id53">
+<img alt="../../_images/amp.png" src="../../_images/amp.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/amp</span><a class="headerlink" href="#id53" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id54">
+<img alt="../../_images/balance.png" src="../../_images/balance.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/balance</span><a class="headerlink" href="#id54" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id55">
+<img alt="../../_images/curl.png" src="../../_images/curl.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/curl</span><a class="headerlink" href="#id55" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id56">
+<img alt="../../_images/deep.png" src="../../_images/deep.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/deep</span><a class="headerlink" href="#id56" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id57">
+<img alt="../../_images/delta.png" src="../../_images/delta.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/delta</span><a class="headerlink" href="#id57" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id58">
+<img alt="../../_images/dense.png" src="../../_images/dense.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/dense</span><a class="headerlink" href="#id58" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id59">
+<img alt="../../_images/diff.png" src="../../_images/diff.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/diff</span><a class="headerlink" href="#id59" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id60">
+<img alt="../../_images/gray.png" src="../../_images/gray.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/gray</span><a class="headerlink" href="#id60" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id61">
+<img alt="../../_images/haline.png" src="../../_images/haline.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/haline</span><a class="headerlink" href="#id61" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id62">
+<img alt="../../_images/ice.png" src="../../_images/ice.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/ice</span><a class="headerlink" href="#id62" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id63">
+<img alt="../../_images/matter.png" src="../../_images/matter.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/matter</span><a class="headerlink" href="#id63" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id64">
+<img alt="../../_images/oxy.png" src="../../_images/oxy.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/oxy</span><a class="headerlink" href="#id64" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id65">
+<img alt="../../_images/phase.png" src="../../_images/phase.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/phase</span><a class="headerlink" href="#id65" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id66">
+<img alt="../../_images/rain.png" src="../../_images/rain.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/rain</span><a class="headerlink" href="#id66" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id67">
+<img alt="../../_images/solar.png" src="../../_images/solar.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/solar</span><a class="headerlink" href="#id67" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id68">
+<img alt="../../_images/speed.png" src="../../_images/speed.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/speed</span><a class="headerlink" href="#id68" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id69">
+<img alt="../../_images/tarn.png" src="../../_images/tarn.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/tarn</span><a class="headerlink" href="#id69" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id70">
+<img alt="../../_images/tempo.png" src="../../_images/tempo.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/tempo</span><a class="headerlink" href="#id70" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id71">
+<img alt="../../_images/thermal.png" src="../../_images/thermal.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/thermal</span><a class="headerlink" href="#id71" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id72">
+<img alt="../../_images/topo.png" src="../../_images/topo.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/topo</span><a class="headerlink" href="#id72" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id73">
+<img alt="../../_images/turbid.png" src="../../_images/turbid.png" />
+<figcaption>
+<p><span class="caption-text">cmocean/turbid</span><a class="headerlink" href="#id73" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id74">
+<img alt="../../_images/cubhelix.png" src="../../_images/cubhelix.png" />
+<figcaption>
+<p><span class="caption-text">cpt-city/cubhelix</span><a class="headerlink" href="#id74" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id75">
+<img alt="../../_images/dem1.png" src="../../_images/dem1.png" />
+<figcaption>
+<p><span class="caption-text">cpt-city/dem1</span><a class="headerlink" href="#id75" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id76">
+<img alt="../../_images/dem4.png" src="../../_images/dem4.png" />
+<figcaption>
+<p><span class="caption-text">cpt-city/dem4</span><a class="headerlink" href="#id76" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id77">
+<img alt="../../_images/elevation.png" src="../../_images/elevation.png" />
+<figcaption>
+<p><span class="caption-text">cpt-city/elevation</span><a class="headerlink" href="#id77" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id78">
+<img alt="../../_images/abyss.png" src="../../_images/abyss.png" />
+<figcaption>
+<p><span class="caption-text">gmt/abyss</span><a class="headerlink" href="#id78" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id79">
+<img alt="../../_images/bathy.png" src="../../_images/bathy.png" />
+<figcaption>
+<p><span class="caption-text">gmt/bathy</span><a class="headerlink" href="#id79" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id80">
+<img alt="../../_images/categorical.png" src="../../_images/categorical.png" />
+<figcaption>
+<p><span class="caption-text">gmt/categorical</span><a class="headerlink" href="#id80" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id81">
+<img alt="../../_images/cyclic.png" src="../../_images/cyclic.png" />
+<figcaption>
+<p><span class="caption-text">gmt/cyclic</span><a class="headerlink" href="#id81" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id82">
+<img alt="../../_images/dem2.png" src="../../_images/dem2.png" />
+<figcaption>
+<p><span class="caption-text">gmt/dem2</span><a class="headerlink" href="#id82" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id83">
+<img alt="../../_images/dem3.png" src="../../_images/dem3.png" />
+<figcaption>
+<p><span class="caption-text">gmt/dem3</span><a class="headerlink" href="#id83" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id84">
+<img alt="../../_images/drywet.png" src="../../_images/drywet.png" />
+<figcaption>
+<p><span class="caption-text">gmt/drywet</span><a class="headerlink" href="#id84" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id85">
+<img alt="../../_images/earth.png" src="../../_images/earth.png" />
+<figcaption>
+<p><span class="caption-text">gmt/earth</span><a class="headerlink" href="#id85" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id86">
+<img alt="../../_images/etopo1.png" src="../../_images/etopo1.png" />
+<figcaption>
+<p><span class="caption-text">gmt/etopo1</span><a class="headerlink" href="#id86" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id87">
+<img alt="../../_images/gebco.png" src="../../_images/gebco.png" />
+<figcaption>
+<p><span class="caption-text">gmt/gebco</span><a class="headerlink" href="#id87" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id88">
+<img alt="../../_images/geo.png" src="../../_images/geo.png" />
+<figcaption>
+<p><span class="caption-text">gmt/geo</span><a class="headerlink" href="#id88" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id89">
+<img alt="../../_images/globe.png" src="../../_images/globe.png" />
+<figcaption>
+<p><span class="caption-text">gmt/globe</span><a class="headerlink" href="#id89" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id90">
+<img alt="../../_images/gray1.png" src="../../_images/gray1.png" />
+<figcaption>
+<p><span class="caption-text">gmt/gray</span><a class="headerlink" href="#id90" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id91">
+<img alt="../../_images/haxby.png" src="../../_images/haxby.png" />
+<figcaption>
+<p><span class="caption-text">gmt/haxby</span><a class="headerlink" href="#id91" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id92">
+<img alt="../../_images/ibcso.png" src="../../_images/ibcso.png" />
+<figcaption>
+<p><span class="caption-text">gmt/ibcso</span><a class="headerlink" href="#id92" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id93">
+<img alt="../../_images/mag.png" src="../../_images/mag.png" />
+<figcaption>
+<p><span class="caption-text">gmt/mag</span><a class="headerlink" href="#id93" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id94">
+<img alt="../../_images/nighttime.png" src="../../_images/nighttime.png" />
+<figcaption>
+<p><span class="caption-text">gmt/nighttime</span><a class="headerlink" href="#id94" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id95">
+<img alt="../../_images/no_green.png" src="../../_images/no_green.png" />
+<figcaption>
+<p><span class="caption-text">gmt/no_green</span><a class="headerlink" href="#id95" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id96">
+<img alt="../../_images/ocean.png" src="../../_images/ocean.png" />
+<figcaption>
+<p><span class="caption-text">gmt/ocean</span><a class="headerlink" href="#id96" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id97">
+<img alt="../../_images/paired.png" src="../../_images/paired.png" />
+<figcaption>
+<p><span class="caption-text">gmt/paired</span><a class="headerlink" href="#id97" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id98">
+<img alt="../../_images/rainbow.png" src="../../_images/rainbow.png" />
+<figcaption>
+<p><span class="caption-text">gmt/rainbow</span><a class="headerlink" href="#id98" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id99">
+<img alt="../../_images/red2green.png" src="../../_images/red2green.png" />
+<figcaption>
+<p><span class="caption-text">gmt/red2green</span><a class="headerlink" href="#id99" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id100">
+<img alt="../../_images/relief.png" src="../../_images/relief.png" />
+<figcaption>
+<p><span class="caption-text">gmt/relief</span><a class="headerlink" href="#id100" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id101">
+<img alt="../../_images/seafloor.png" src="../../_images/seafloor.png" />
+<figcaption>
+<p><span class="caption-text">gmt/seafloor</span><a class="headerlink" href="#id101" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id102">
+<img alt="../../_images/sealand.png" src="../../_images/sealand.png" />
+<figcaption>
+<p><span class="caption-text">gmt/sealand</span><a class="headerlink" href="#id102" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id103">
+<img alt="../../_images/seis.png" src="../../_images/seis.png" />
+<figcaption>
+<p><span class="caption-text">gmt/seis</span><a class="headerlink" href="#id103" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id104">
+<img alt="../../_images/split.png" src="../../_images/split.png" />
+<figcaption>
+<p><span class="caption-text">gmt/split</span><a class="headerlink" href="#id104" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id105">
+<img alt="../../_images/srtm.png" src="../../_images/srtm.png" />
+<figcaption>
+<p><span class="caption-text">gmt/srtm</span><a class="headerlink" href="#id105" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id106">
+<img alt="../../_images/terra.png" src="../../_images/terra.png" />
+<figcaption>
+<p><span class="caption-text">gmt/terra</span><a class="headerlink" href="#id106" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id107">
+<img alt="../../_images/topo1.png" src="../../_images/topo1.png" />
+<figcaption>
+<p><span class="caption-text">gmt/topo</span><a class="headerlink" href="#id107" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id108">
+<img alt="../../_images/world.png" src="../../_images/world.png" />
+<figcaption>
+<p><span class="caption-text">gmt/world</span><a class="headerlink" href="#id108" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id109">
+<img alt="../../_images/wysiwyg.png" src="../../_images/wysiwyg.png" />
+<figcaption>
+<p><span class="caption-text">gmt/wysiwyg</span><a class="headerlink" href="#id109" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id110">
+<img alt="../../_images/turbo.png" src="../../_images/turbo.png" />
+<figcaption>
+<p><span class="caption-text">google/turbo</span><a class="headerlink" href="#id110" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id111">
+<img alt="../../_images/cool.png" src="../../_images/cool.png" />
+<figcaption>
+<p><span class="caption-text">matlab/cool</span><a class="headerlink" href="#id111" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id112">
+<img alt="../../_images/copper.png" src="../../_images/copper.png" />
+<figcaption>
+<p><span class="caption-text">matlab/copper</span><a class="headerlink" href="#id112" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id113">
+<img alt="../../_images/hot.png" src="../../_images/hot.png" />
+<figcaption>
+<p><span class="caption-text">matlab/hot</span><a class="headerlink" href="#id113" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id114">
+<img alt="../../_images/jet.png" src="../../_images/jet.png" />
+<figcaption>
+<p><span class="caption-text">matlab/jet</span><a class="headerlink" href="#id114" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-odd"><td><figure class="align-center" id="id115">
+<img alt="../../_images/polar.png" src="../../_images/polar.png" />
+<figcaption>
+<p><span class="caption-text">matlab/polar</span><a class="headerlink" href="#id115" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id116">
+<img alt="../../_images/inferno.png" src="../../_images/inferno.png" />
+<figcaption>
+<p><span class="caption-text">matplotlib/inferno</span><a class="headerlink" href="#id116" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id117">
+<img alt="../../_images/magma.png" src="../../_images/magma.png" />
+<figcaption>
+<p><span class="caption-text">matplotlib/magma</span><a class="headerlink" href="#id117" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-center" id="id118">
+<img alt="../../_images/plasma.png" src="../../_images/plasma.png" />
+<figcaption>
+<p><span class="caption-text">matplotlib/plasma</span><a class="headerlink" href="#id118" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id119">
+<img alt="../../_images/viridis.png" src="../../_images/viridis.png" />
+<figcaption>
+<p><span class="caption-text">matplotlib/viridis</span><a class="headerlink" href="#id119" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id120">
+<img alt="../../_images/panoply.png" src="../../_images/panoply.png" />
+<figcaption>
+<p><span class="caption-text">panoply/panoply</span><a class="headerlink" href="#id120" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>GMT内置CPT文件中，某些是针对特定的需求设计的，因而常用于特定的图件中：</p>
+<ol class="arabic simple">
+<li><p>海深：abyss、bathy、gebco、ibcso</p></li>
+<li><p>陆地高程：elevation</p></li>
+<li><p>全球地形起伏：dem1、dem2、dem3、dem4、earth、etopo1、geo、globe、oleron
+relief、terra、topo、world</p></li>
+<li><p>地震成像：seis、polar</p></li>
+<li><p>分类型数据：categorical</p></li>
+</ol>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../format/" class="btn btn-neutral float-left" title="CPT类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../makecpt/" class="btn btn-neutral float-right" title="制作CPT" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

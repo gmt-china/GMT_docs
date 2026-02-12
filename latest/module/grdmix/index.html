@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grdmix &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grd2kml" href="../grd2kml/" />
+    <link rel="prev" title="hotspotter" href="../hotspotter/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grdmix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">grdmix</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/grdmix.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    , 
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2025-10-20
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="grdmix">
+<span id="index-0"></span><h1>grdmix<a class="headerlink" href="#grdmix" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/grdmix.html" title="（在 GMT v6.6）"><span>grdmix</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>混合和变换网格和图像</p>
+</dd>
+</dl>
+<p><strong>grdmix</strong> 将执行涉及图像和网格的各种操作。
+我们可以使用 <em>alpha</em> 网格、图像或常数，为输入的 <em>raster1</em> 图像添加新的 alpha（透明度）层；
+或者使用 <em>weights</em> 对 <em>raster1</em> 和 <em>raster2</em> （网格或图像）进行混合，
+<em>raster1</em> 的权重为 <em>weights</em>，而 <em>raster2</em> 的权重为 <em>1 - weights</em>，并将结果保存为 <em>outfile</em>。
+另外，我们还可以将图像分解为其组成部分（红、绿、蓝或灰度）网格层，或从归一化的分量网格构建图像。
+所有操作都支持使用 <em>intensity</em> 网格调整最终彩色图像的亮度、将彩色图像转换为单色图像或移除 alpha 层。
+所有的 <em>raster?</em>、<em>alpha</em>、<em>intensity</em> 和 <em>weights</em> 文件必须具有相同的尺寸。
+可选的 <em>alpha</em>、<em>intensity</em> 和 <em>weights</em> 文件也可以替换为常数值。</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/GMT_mixing.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/GMT_mixing.png" src="https://docs.generic-mapping-tools.org/latest/_images/GMT_mixing.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">将 NASA 蓝色大理石图像分解为红、绿和蓝分量，
+在相同空间分辨率下获取地形的梯度（灰度），
+并将它们组合以获得带有坡度阴影的蓝色大理石图像。</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt grdmix</strong>
+<em>raster1</em> [ <em>raster2</em> [ <em>raster3</em>]]
+<a class="reference internal" href="#cmdoption-grdmix-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>outfile</em>
+[ <a class="reference internal" href="#cmdoption-grdmix-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a><em>alpha</em>[<strong>+o</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdmix-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>[<em>section</em>/]<em>master</em>|<em>cpt</em>|<em>color</em><span class="math notranslate nohighlight">\(_1\)</span>,<em>color</em><span class="math notranslate nohighlight">\(_2\)</span>[,<em>color</em><span class="math notranslate nohighlight">\(_3\)</span>,...][<strong>+h</strong>[<em>hinge</em>]][<strong>+i</strong><em>dz</em>][<strong>+u</strong>|<strong>U</strong><em>unit</em>][<strong>+s</strong><em>fname</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdmix-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdmix-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><em>intensity</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmix-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdmix-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>[<strong>i</strong>|<strong>o</strong>][<em>divisor</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdmix-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdmix-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmix-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdmix-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a><em>weights</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmix-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>raster1</em> [ <em>raster2</em> [ <em>raster3</em>]]</dt><dd><p>若仅给出一个输入且未设置 <a class="reference internal" href="#cmdoption-grdmix-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>，则 <em>raster1</em> 必须为图像。
+若给出两个输入，则 <em>raster1</em> 和 <em>raster2</em> 必须都是图像或网格。
+若给出三个输入，则它们必须都是网格，并且必须设置 <a class="reference internal" href="#cmdoption-grdmix-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>，
+除非这三个网格分别表示红、绿和蓝通道（范围为 0–255），
+此时可以省略 <a class="reference internal" href="#cmdoption-grdmix-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>必选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-G</strong><em>outfile</em></dt><dd><p>输出栅格的名称。对于图像，请使用以下扩展名之一：
+tif（GeoTIFF）、gif、png、jpg、bmp 或 ppm。
+对于网格，请参见 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a>。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-A</strong><em>alpha</em>[<strong>+o</strong>]</dt><dd><p>获取一个常数 alpha（0–1），或一个网格（0–1 或 NaN），
+或图像（0–255，会被归一化为 0–1）。
+alpha 被视为透明度，因此 0 表示不透明像素，
+而 1（或 NaN）表示 100% 透明度 <em>t</em>。
+输出图像将基于这些值添加透明层。
+完全不透明的节点必须为零。
+如果你的常数或网格表示的是不透明度 (<em>o</em>) 而不是透明度，
+则添加修饰符 <strong>+o</strong>，我们会将 NaN 或 1 视为 100% 不透明，
+并且透明度 <em>t</em> = 1 - <em>o</em>。</p>
+</dd>
+<dt><strong>-C</strong></dt><dd><p>从一个或三个归一化输入网格构建输出图像；
+这些网格的数值必须全部处于 0–1 范围内
+（如果不是，可使用 <strong>-Ni</strong>）。
+可选地，可使用 <a class="reference internal" href="#cmdoption-grdmix-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 为颜色添加透明度，
+或使用 <a class="reference internal" href="#cmdoption-grdmix-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 为颜色添加强度后再输出图像。
+对于三个输入层，输入顺序必须为红网格、绿网格、蓝网格。
+也可以只提供单个输入图像，再通过 <a class="reference internal" href="#cmdoption-grdmix-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 或 <a class="reference internal" href="#cmdoption-grdmix-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 增强。
+<strong>注意</strong>：要使用 CPT 查找表从单个输入网格生成图像，
+请参阅 <a class="reference internal" href="#cmdoption-grdmix-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 的长格式说明。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-C</strong>[<em>section</em>/]<em>master</em>|<em>cpt</em>|<em>color</em><span class="math notranslate nohighlight">\(_1\)</span>,<em>color</em><span class="math notranslate nohighlight">\(_2\)</span>[,<em>color</em><span class="math notranslate nohighlight">\(_3\)</span>,...][<strong>+h</strong>[<em>hinge</em>]][<strong>+i</strong><em>dz</em>][<strong>+u</strong>|<strong>U</strong><em>unit</em>][<strong>+s</strong><em>fname</em>]</dt><dd><p>指定主 CPT 名称，CPT 文件或用逗号分割的多个颜色，
+以创建一个 CPT。如果不指定参数，则在现代模式下使用当前 CPT（如果可用）。
+支持以下多种输入：</p>
+<ol class="arabic simple">
+<li><p>主 CPT 名称，例如 <em>earth</em> （详见 <a class="reference internal" href="../../cpt/builtin-cpt/"><span class="doc">内置CPT</span></a> ），
+可使用 CPT 名称 <em>master</em> 或包括相对路径的 <em>section/master</em> 来指定（内置 CPT 不可添加 <strong>.cpt</strong> 扩展名）。</p></li>
+<li><p>自定义 CPT 文件 <em>cpt</em> ，例如 <em>my_colors.cpt</em> 。</p></li>
+<li><p>自动从多个颜色 <em>color</em><span class="math notranslate nohighlight">\(_1\)</span>,<em>color</em><span class="math notranslate nohighlight">\(_2\)</span>[,<em>color</em><span class="math notranslate nohighlight">\(_3\)</span>,...] 中创建线性连续的 CPT，其中 z 值从 0 开始，
+每添加一种颜色 z 值加 1。在这种情况下， <em>color</em><span class="math notranslate nohighlight">\(_i\)</span> 可以是
+<em>r/g/b</em> (e.g. 255/100/75)， <em>h-s-v</em> (e.g. 180-0.8-1)，
+<em>c/m/y/k</em> (e.g. 80/50/40/30)，HTML十六进制 (e.g. #aabbcc)
+或 <a class="reference internal" href="../../basis/color/"><span class="doc">颜色</span></a>名称。逗号之间不能有空格。</p></li>
+</ol>
+<p>支持以下选项：</p>
+<ul class="simple">
+<li><p><strong>+h</strong> - 对于有软铰链 (soft hinge) 的主 CPT，可指定 <em>hinge</em> 值启用铰链，
+而对于有硬铰链 (harde hinge) 的 CPT，可以修改铰链位置 <em>hinge</em> ，但不能禁用。</p></li>
+<li><p><strong>+i</strong> - 指定 <em>dz</em> 使网格 z 值范围分层，默认使用精确范围。</p></li>
+<li><p><strong>+s</strong> - 将创建的 CPT 保存到文件 <em>fname</em>。当 CPT 是自动创建时这很有用，
+但必须用于 <a class="reference internal" href="#cmdoption-grdmix-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 的末尾。</p></li>
+<li><p><strong>+u</strong> - 对于任何其他主 CPT，可以通过指定其原始单位 <em>unit</em> 将其 z 值单位转换为米。</p></li>
+<li><p><strong>+U</strong> - 与 <strong>+u</strong> 类似，但是将 z 值单位从米转换为指定单位 <em>unit</em> 。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong></dt><dd><p>将单个图像分解为一个或三个输出网格。
+如果图像包含 alpha（透明）层，将额外输出一个网格。
+所有输出网格的数值都保持原始图像的 0–255 范围；
+但可使用 <strong>-No</strong> 将其归一化至 0–1 范围。
+输出名称由 <a class="reference internal" href="#cmdoption-grdmix-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 指定的名称模板生成，
+其中必须包含 C 格式字符串 “%c”。
+该代码将分别被替换为 R、G、B 和 A（对于彩色图像），
+或 g、A（对于灰度图像）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong><em>intensity</em></dt><dd><p>一个常数强度值或网格（范围 ±1），
+用于修改最终输出图像的颜色亮度。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-M</strong></dt><dd><p>强制将图像转换为单色图像，
+使用（电视制式）YIQ 颜色空间转换。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong>[<strong>i</strong>|<strong>o</strong>][<em>divisor</em>]</dt><dd><p>将所有输入网格从 0–255 归一化到 0–1，
+并将所有输出网格从 0–1 缩放回 0–255。
+若只希望对输入或输出单独启用归一化，
+分别使用 <strong>-Ni</strong> 或 <strong>-No</strong>。
+若需使用除 255 外的除数，请附加可选参数 <em>divisor</em>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Q</strong></dt><dd><p>使最终图像变为不透明，
+即移除 alpha 层（如果存在）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong><em>weights</em></dt><dd><p>一个常数权重（0–1），或一个网格（0–1），或图像（0–255）作为权重。
+当给出两个输入栅格时，<em>weights</em> 应用于 <em>raster1</em>，
+而 <em>(1 - weights)</em> 应用于 <em>raster2</em>，
+然后将两者加权求和。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmix-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmix-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p><strong>注</strong>: 下面是该模块的一些有效语法示例。使用远程文件（文件名以 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 开头）的示例可以剪切并粘贴到您的终端中进行测试。其他需要输入文件的命令只是常见的使用类型的虚拟示例，但不能按编写的原样运行。</p>
+<p>要使用一个计算得到的日夜分界权重图像混合地球的夜间与白天视图，可尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmix<span class="w"> </span>@earth_day_06m<span class="w"> </span>@earth_night_06m<span class="w"> </span>-W@weight.png<span class="w"> </span>-Gnewmap.png
+</pre></div>
+</div>
+<p>假设 map1.png 和 map2.png 是不同量的重叠地图，但我们希望使用图像 visible.png
+将它们混合为一张图像：当 visible.png 的数值接近 255 时，
+输出图像将主要显示 map1.png 的内容；
+当数值接近 0 时，将主要显示 map2.png；
+介于两者之间的值将导致加权平均。可执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmix<span class="w"> </span>map1.png<span class="w"> </span>map2.png<span class="w"> </span>-Wvisible.png<span class="w"> </span>-Gnewmap.png<span class="w"> </span>-V
+</pre></div>
+</div>
+<p>若要将网格 transparency.grd 的数值插入图像 gravity.tif 作为 alpha（透明度）层，
+并输出为带透明度的 PNG 图像，可执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmix<span class="w"> </span>gravity.tif<span class="w"> </span>-Atransparency.grd<span class="w"> </span>-Gmap.png
+</pre></div>
+</div>
+<p>若要通过 CPT（relief.cpt）将网格 relief.nc 转换为 RGB jpg 图像 relief.jpg，可执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmix<span class="w"> </span>relief.nc<span class="w"> </span>-Crelief.cpt<span class="w"> </span>-Grelief.jpg
+</pre></div>
+</div>
+<p>若要将彩色图像 layers.png 拆分为独立的、归一化后的红、绿、蓝网格（以及可能的 alpha 网格），执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmix<span class="w"> </span>layers.png<span class="w"> </span>-D<span class="w"> </span>-Glayer_%c.grd<span class="w"> </span>-No
+</pre></div>
+</div>
+<p>若要将三个归一化网格 red.grd、green.grd 和 blue.grd 重新组合为 TIFF 图像，
+同时从网格 intens.grd 应用强度并从网格 transp.grd 添加透明度，可执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmix<span class="w"> </span>red.grd<span class="w"> </span>green.grd<span class="w"> </span>and<span class="w"> </span>blue.grd<span class="w"> </span>-Glayer.tif<span class="w"> </span>-Atransp.grd<span class="w"> </span>-Iintens.grd
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>相关模块<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grdblend/"><span class="doc">grdblend</span></a>,
+<a class="reference internal" href="../grdclip/"><span class="doc">grdclip</span></a>,
+<a class="reference internal" href="../grdcut/"><span class="doc">grdcut</span></a>,
+<a class="reference internal" href="../grdinfo/"><span class="doc">grdinfo</span></a>,
+<a class="reference internal" href="../grdsample/"><span class="doc">grdsample</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../hotspotter/" class="btn btn-neutral float-left" title="hotspotter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../grd2kml/" class="btn btn-neutral float-right" title="grd2kml" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

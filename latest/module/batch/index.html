@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>batch &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="barb" href="../barb/" />
+    <link rel="prev" title="gmt2kml" href="../gmt2kml/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">batch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">数据文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-conf">自定义 gmt.conf 文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">构建主脚本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">技术细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell">Shell 脚本局限</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">使用该模块建议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macos">macOS 问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">batch</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/batch.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2025-12-29
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="batch">
+<span id="index-0"></span><h1>batch<a class="headerlink" href="#batch" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/batch.html" title="（在 GMT v6.6）"><span>batch</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>自动化批处理作业处理</p>
+</dd>
+</dl>
+<p><strong>batch</strong> 模块可以使用单个主脚本生成 GMT 处理作业，并针对所有作业重复执行，
+同时利用特定作业变量进行一些变化。该模块简化（并隐藏）了通常需要设置完整处理序列的大部分步骤。
+用户可以专注于编写主处理脚本，并让作业的并行执行自动完成。
+我们可以通过可选的 <em>preflight</em> 脚本设置所需数据集并进行一次性计算。
+完成后，我们可以通过 <em>postflight</em> 脚本可选地汇总数据输出并生成摘要图或类似操作。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>该模块适用于对脚本语言循环等用法不熟悉的用户，更熟练的用户可自行使用脚本语言代替本模块以实现更高自由度。</p>
+</div>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt batch</strong>
+<em>mainscript</em>
+<a class="reference internal" href="#cmdoption-batch-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><em>prefix</em>
+<a class="reference internal" href="#cmdoption-batch-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>njobs</em>|<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+n</strong>]|<em>timefile</em>[<strong>+p</strong><em>width</em>][<strong>+s</strong><em>first</em>][<strong>+w</strong>[<em>str</em>]|<strong>W</strong>]
+[ <a class="reference internal" href="#cmdoption-batch-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-batch-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>template</em> ]
+[ <a class="reference internal" href="#cmdoption-batch-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><em>includefile</em> ]
+[ <a class="reference internal" href="#cmdoption-batch-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a>[<em>job</em>] ]
+[ <a class="reference internal" href="#cmdoption-batch-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a>[<strong>s</strong>] ]
+[ <a class="reference internal" href="#cmdoption-batch-Sb"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Sb</span></code></a><em>preflight</em> ]
+[ <a class="reference internal" href="#cmdoption-batch-Sf"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Sf</span></code></a><em>postflight</em> ]
+[ <a class="reference internal" href="#cmdoption-batch-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-batch-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>[<em>dir</em>] ]
+[ <a class="reference internal" href="#cmdoption-batch-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-batch-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-batch-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-batch-x"><code class="xref std std-option docutils literal notranslate"><span class="pre">-x</span></code></a>[[-]n] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>必须选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><em>mainscript</em></p>
+<blockquote>
+<div><p>独立的 GMT 现代模式处理脚本的名称，用于执行参数相关的计算。
+脚本可以访问作业变量，如作业编号和下面定义的其他变量，
+并且可以使用 Bourne shell (.sh)、Bourne again shell (.bash)、
+C shell (.csh) 或 DOS batch (.bat) 编写。脚本语言由文件扩展名推断，
+并且我们使用相同语言构建隐藏的批处理脚本。可以访问的参数将在下文讨论。</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong><em>prefix</em></dt><dd><p>决定批处理文件产品的前缀以及执行后可找到中间作业产品的最终子目录。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong><em>njobs</em>|<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+n</strong>]|<em>timefile</em>[<strong>+p</strong><em>width</em>][<strong>+s</strong><em>first</em>][<strong>+w</strong>[<em>str</em>]|<strong>W</strong>]</dt><dd><p>指定要生成的作业数量，创建从 <em>min</em> 到 <em>max</em> 以 <em>inc</em> 为间隔的一列数据集，
+或提供包含参数集的文件，每行对应一个作业。列中的值将作为命名变量
+<strong>BATCH_COL0</strong>， <strong>BATCH_COL1</strong> 等可用于 <em>mainscript</em>，
+任何尾随文本可通过 <strong>BATCH_TEXT</strong> 访问。记录数量等于作业数量。
+注意，如果只给出 <em>njobs</em>，则仅可使用 <strong>BATCH_JOB</strong>，因为没有数据文件。
+有关数组创建的详细信息，请参见 <a class="reference internal" href="../../array/"><span class="doc">生成一维数组</span></a> 。还提供几个修饰符：
+- <strong>+n</strong> 指示 <em>inc</em> 为所需作业数而非增量。
+- <strong>+p</strong> 可设置作业编号格式的宽度，例如 name_000010.grd 宽度为 6。默认情况下自动设置宽度，但如果通过 <strong>+s</strong> 在多台计算机间分割作业，则必须保证所有帧名称宽度一致。
+- <strong>+s</strong> 从 <em>first</em> 而非 0 开始编号输出作业。注意：所有作业仍包含，修饰符仅影响输出编号。
+- <strong>+w</strong> 将尾随文本拆分为单词，通过变量 <strong>BATCH_WORD0</strong>、<strong>BATCH_WORD1</strong> 等访问。默认以制表符或空格分隔，可附加 <em>str</em> 指定其他分隔符。仅使用制表符可使用 <strong>+W</strong>。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong></dt><dd><p>如果主脚本没有生成使用前缀 <strong>BATCH_NAME</strong> 的产品，
+或者主脚本将直接处理这些产品文件位置，请选择此选项。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong><em>template</em></dt><dd><p>不使用 <strong>BATCH_NAME</strong> 前缀的单一流水号构建产品文件名，
+而是使用 <a class="reference external" href="https://en.wikipedia.org/wiki/Printf_format_string">C格式</a> <em>template</em>
+根据 <em>timefile</em> 数据列创建唯一名称。限制如下：
+(1) 如果 <em>timefile</em> 有尾随文本，
+可用单个 %s 在模板最后格式化；如果无 %s，则尾随文本不会使用。
+(2) 前 N 个格式语句用于转换 <em>timefile</em> 的前 N 列；不能跳过列或指定列顺序
+（可用 <a class="reference internal" href="#cmdoption-batch-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> 重排输入顺序）。
+(3) 可使用最多五个数值语句（前提 <em>timefile</em> 有足够列）。
+例如 <a class="reference internal" href="#cmdoption-batch-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>my_data_%05.2lf_%07.0lf_%s 使用 <em>timefile</em> 的前两列和尾随文本生成唯一前缀。
+注意：GMT 数据集内部使用双精度变量，即使列为整数也应使用浮点格式。
+若格式语句和尾随文本包含空格或制表符，将自动替换为下划线。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong><em>includefile</em></dt><dd><p>将 <em>includefile</em> 的内容插入 batch_init.sh 脚本，
+供所有批处理脚本访问。通常用于添加主脚本和可选的 <a class="reference internal" href="#cmdoption-batch-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 脚本可依赖的常量变量。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-M</strong>[<em>job</em>]</dt><dd><p>不生成和启动完整处理序列，仅选择一个主作业 [0] 测试。
+主作业将在 <em>workdir</em> 中运行，其产品会生成。任何 <em>preflight</em> 脚本会在主作业前运行，
+但 <em>postflight</em> 脚本不会执行（但会创建）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Q</strong>[<strong>s</strong>]</dt><dd><p>调试：保留所有创建的文件和目录以供检查。或附加 <strong>s</strong> 仅生成批处理脚本但不执行。
+唯一例外是可选 <em>preflight</em> 脚本（<strong>-Sb</strong>），始终执行，
+因为可能产生构建主批处理脚本所需的数据。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-Sb">
+<span class="sig-name descname"><span class="pre">-Sb</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-Sb" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Sb</strong><em>preflight</em></dt><dd><p>可选 GMT 现代模式 <em>preflight</em> 脚本（与 <em>mainscript</em> 同语言），
+可下载或复制数据文件，或创建 <em>mainscript</em> 所需的文件（如 <em>timefile</em>）。
+总是在主批处理序列之前执行。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-Sf">
+<span class="sig-name descname"><span class="pre">-Sf</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-Sf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Sf</strong><em>postflight</em></dt><dd><p>可选 <em>postflight</em> 脚本（与 <em>mainscript</em> 同语言），可在所有作业完成后执行最终处理，
+如汇总产品、生成报告或图示。注意：<em>postflight</em> 脚本不必为 GMT 脚本。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong>[<em>dir</em>]</dt><dd><p>默认情况下，所有临时文件和作业产品创建在 <a class="reference internal" href="#cmdoption-batch-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> 设置的 <em>prefix</em> 子目录中。
+可通过 <em>dir</em> 覆盖路径。若未提供路径，将在系统临时目录中创建名为 <em>prefix</em> 的工作目录。
+工作目录的好处是避免 DropBox 或 TimeMachine 的无限同步，或主目录空间不足问题。
+产品文件仍放置在 <em>prefix</em> 目录中。除非 <a class="reference internal" href="#cmdoption-batch-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> 指定调试，否则工作目录在完成后会被删除。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong></dt><dd><p>完成后删除 <em>mainscript</em> 以及通过 <a class="reference internal" href="#cmdoption-batch-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 和 <a class="reference internal" href="#cmdoption-batch-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 提供的所有输入脚本。不兼容 <a class="reference internal" href="#cmdoption-batch-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-batch-x">
+<span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-batch-x" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-x</strong>[[-]<em>n</em>]</dt><dd><p>限制分发作业时使用的核心数量。默认尝试使用所有可用核心。
+附加 <em>n</em> 表示仅使用 <em>n</em> 核心（若 <em>n</em> 太大则截断为最大核心数）。
+负数 <em>n</em> 表示选择 (所有 - <em>n</em>) 核心（至少 1 核）。并行处理不依赖 OpenMP；
+前一个作业完成后启动下一个。注意：<strong>batch</strong> 会保留一个核心，因此实际用于作业的核心为 <em>n-1</em>。</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>参数<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>多个参数会自动分配，可用于 <em>mainscript</em> 和可选 <em>preflight</em>/<em>postflight</em> 脚本。
+参数分为常量和随作业编号变化的变量。常量对所有脚本可用：<strong>BATCH_PREFIX</strong>：
+批处理作业通用前缀（由 <a class="reference internal" href="#cmdoption-batch-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> 设置）；<strong>BATCH_NJOBS</strong>：作业总数（由 <a class="reference internal" href="#cmdoption-batch-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 给出或推断）。
+若使用 <a class="reference internal" href="#cmdoption-batch-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>，其中列出的静态参数也可用于所有脚本。此外，<em>mainscript</em> 可访问随作业编号变化的参数：
+<strong>BATCH_JOB</strong>：当前作业编号（整数，例如 136）， <strong>BATCH_ITEM</strong>：
+根据宽度格式化的作业编号字符串（例如 000136），<strong>BATCH_NAME</strong>：
+当前作业唯一前缀（即 <em>prefix</em>_<strong>BATCH_ITEM</strong>）。若提供 <em>timefile</em>，
+则 <strong>BATCH_COL0</strong>、<strong>BATCH_COL1</strong> 等变量分别对应列。
+尾随文本可通过 <strong>BATCH_TEXT</strong> 访问，若启用 <strong>+w</strong> 分词，
+则还可通过 <strong>BATCH_WORD0</strong>、 <strong>BATCH_WORD1</strong> 等访问。注意：
+处理脚本生成的产品应使用 <strong>BATCH_NAME</strong> 作为前缀，
+以便自动移动到起始目录（除非使用 <a class="reference internal" href="#cmdoption-batch-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a>）。使用 <a class="reference internal" href="#cmdoption-batch-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 可基于 <a class="reference internal" href="#cmdoption-batch-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 输入参数生成更灵活的产品名称。</p>
+</section>
+<section id="id5">
+<h2>数据文件<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>批处理脚本可访问 <strong>batch</strong> 启动时存在的起始目录中的任何文件，
+以及 <em>mainscript</em> 或通过 <a class="reference internal" href="#cmdoption-batch-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 设置的可选脚本生成的新文件。
+无需指定路径。其他文件可能需要完整路径，除非其目录已包含在 <a class="reference internal" href="../../conf/dir/#term-DIR_DATA"><span class="xref std std-term">DIR_DATA</span></a> 设置中。</p>
+</section>
+<section id="gmt-conf">
+<h2>自定义 gmt.conf 文件<a class="headerlink" href="#gmt-conf" title="Link to this heading"></a></h2>
+<p>如果在运行 <strong>batch</strong> 前主脚本所在目录有 gmt.conf 文件，
+则该文件将被所有创建和执行的脚本共享，除非脚本在启动现代模式时使用 <strong>-C</strong> 覆盖。
+修改 GMT 默认值的推荐方式是通过 <a class="reference internal" href="../set/"><span class="doc">set</span></a> 在输入脚本中调用。
+注意：每个脚本独立运行（现代模式），因此通过 <em>preflight</em> 创建 gmt.conf 文件无法被其他脚本使用。</p>
+</section>
+<section id="id6">
+<h2>构建主脚本<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>如果调用间没有变化，批处理序列没有意义。为了实现变化， <em>mainscript</em> 需要访问不同的数据集、
+数据子集，或作业参数不同，或以上组合。策略如下：</p>
+<ul class="simple">
+<li><p>通过 <a class="reference internal" href="#cmdoption-batch-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 提供的 <em>timefile</em> 列出特定数据文件， <em>mainscript</em>
+使用 <strong>BATCH_TEXT</strong> 或 <strong>BATCH_WORD?</strong> 访问特定作业文件名。</p></li>
+<li><p>对于 3D 网格（或 2D 网格堆叠），沿垂直于切片的轴（时间或深度）插值，
+可使用 <a class="reference internal" href="../grdinterpolate/"><span class="doc">grdinterpolate</span></a> 获取临时切片网格进行处理。</p></li>
+<li><p>可使用 <a class="reference internal" href="../math/"><span class="doc">math</span></a> 或 <a class="reference internal" href="../grdmath/"><span class="doc">grdmath</span></a> 动态生成数据，
+或每个作业稍作不同处理（使用 <em>timefile</em> 参数）。</p></li>
+<li><p>利用 <em>timefile</em> 传递任何所需参数。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2>技术细节<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><strong>batch</strong> 模块会创建多个隐藏脚本：</p>
+<ul class="simple">
+<li><p><em>batch_init</em>
+初始化变量并包含可选 <em>includefile</em> 内容。</p></li>
+<li><p><em>batch_preflight</em> （可选，来自 <strong>-Sb</strong>）
+准备所需数据文件。</p></li>
+<li><p><em>batch_postflight</em> （可选，来自 <strong>-Sf</strong>）
+在所有作业完成后处理文件。</p></li>
+<li><p><em>batch_job</em>
+接受作业编号并处理数据。</p></li>
+<li><p><em>batch_cleanup</em>
+结束时删除临时文件。</p></li>
+</ul>
+<p>每个作业有单独的 <em>batch_params_######</em> 脚本，用于提供作业特定变量。</p>
+<p><em>preflight</em> 和 <em>postflight</em> 可访问 <em>batch_init</em> 信息，
+<em>batch_job</em> 还可访问作业特定参数文件。</p>
+<p>使用 <a class="reference internal" href="#cmdoption-batch-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> 可仅生成这些脚本以供检查。</p>
+<p>注意：<em>mainscript</em> 会为每个作业复制以上所需文件，多个作业可同时在所有可用核心上运行。
+多线程 GMT 模块将限制为单核心调用。
+每个作业都会确保创建唯一文件，以便 <strong>batch</strong> 判断作业完成并启动下一个。</p>
+</section>
+<section id="shell">
+<h2>Shell 脚本局限<a class="headerlink" href="#shell" title="Link to this heading"></a></h2>
+<p>由于无法控制 shell（如 bash 或 csh）在两个进程间管道的实现（通常涉及子 shell），
+建议避免在主脚本中使用 GMT 模块间管道（例如 <cite>gmt blockmean ... | gmt surface ...</cite>）。
+批处理同时运行多个实例时，子 shell 可能导致 GMT 历史文件损坏，出现错误信息。
+建议将管道拆分为使用临时文件的两步。
+非 GMT 模块与 GMT 模块间的管道不受影响（如 <cite>echo ... | gmt convert ...</cite>）。</p>
+</section>
+<section id="id8">
+<h2>使用该模块建议<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>编写批处理作业相对简单，但需以变量为思路。先编写单个 <em>mainscript</em>，确定哪些随作业编号变化，
+创建变量。如果只需作业编号，可直接使用自动生成变量。
+否则，需制作 <a class="reference internal" href="#cmdoption-batch-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 文件，每行对应一个作业，列包含所需值。
+固定变量可通过 <a class="reference internal" href="#cmdoption-batch-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 指向 <em>includefile</em> 赋值。测试脚本时，
+使用 <strong>-Q -M</strong> 确保主作业结果正确，调整变量和选项，最终移除 <a class="reference internal" href="#cmdoption-batch-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a>。建议初期使用小批次作业快速验证。</p>
+</section>
+<section id="id9">
+<h2>示例<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>提取几内亚湾的 2x2 弧分分辨率地球 DEM 子集，并计算高斯滤波高通网格，
+滤波宽度从 10 到 200 km，步长 10 km。所有网格完成后，计算标准差。示例操作:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; pre.sh</span>
+<span class="s">gmt begin</span>
+<span class="s">    gmt math -o0 -T10/200/10 T = widths.txt</span>
+<span class="s">    gmt grdcut -R-10/20/-10/20 @earth_relief_02m -Gdata.grd</span>
+<span class="s">gmt end</span>
+<span class="s">EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39; &gt; main.sh</span>
+<span class="s">gmt begin</span>
+<span class="s">    gmt grdfilter data.grd -Fg${BATCH_COL0}+h -G${BATCH_NAME}.grd -D2</span>
+<span class="s">gmt end</span>
+<span class="s">EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39; &gt; post.sh</span>
+<span class="s">gmt begin ${BATCH_PREFIX} pdf</span>
+<span class="s">    gmt grdmath ${BATCH_PREFIX}_*.grd -S STD = ${BATCH_PREFIX}_std.grd</span>
+<span class="s">    gmt grdimage ${BATCH_PREFIX}_std.grd -B -B+t&quot;STD of Gaussians residuals&quot; -Chot</span>
+<span class="s">    gmt coast -Wthin,white</span>
+<span class="s">gmt end show</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>batch<span class="w"> </span>main.sh<span class="w"> </span>-Sbpre.sh<span class="w"> </span>-Sfpost.sh<span class="w"> </span>-Twidths.txt<span class="w"> </span>-Nfilter<span class="w"> </span>-V<span class="w"> </span>-Z
+</pre></div>
+</div>
+<p>当然，变量的使用语法会根据脚本语言而有所不同。在这里，
+我们实际上是动态生成 pre.sh、main.sh 和 post.sh 脚本，
+因此需要对任何变量进行转义（因为它们以美元符号开头，需要按原样书写）。
+通过将 EOF 用引号包围，重定向不会替换变量，而是将其保留为原文文本。
+执行结束后，我们会得到 20 个网格文件（例如 filter_07.grd），
+以及通过堆叠所有单独脚本并计算标准差生成的 filter_std.grd 文件。
+完成这些操作所需的信息对用户是隐藏的；实际执行的批处理脚本是基于用户提供的 main.sh 脚本生成的，
+而 <strong>batch</strong> 提供了额外的机制。<strong>batch</strong> 模块会自动管理所有作业的并行执行循环，
+使用所有可用核心，并在前一个作业完成后启动新的作业。</p>
+<p>另一个示例，我们获取所有欧洲国家的列表，并为每个国家制作一个简单的海岸线图，
+将国家名称放在标题中，将两字符 ISO 代码放在左上角，
+然后在 postflight 中将所有单独的 PDF 合并为一个 PDF 文件，并删除单独的文件。
+在这里，我们将 EOF 标签用引号包围，以防止未转义的变量被解释:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; pre.sh</span>
+<span class="s">gmt begin</span>
+<span class="s">    gmt coast -E=EU+l &gt; countries.txt</span>
+<span class="s">gmt end</span>
+<span class="s">EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39; &gt; main.sh</span>
+<span class="s">gmt begin ${BATCH_NAME} pdf</span>
+<span class="s">    gmt coast -R${BATCH_WORD0}+r2 -JQ10c -Glightgray -Slightblue -B -B+t&quot;${BATCH_WORD1}&quot; -E${BATCH_WORD0}+gred+p0.5p</span>
+<span class="s">    echo ${BATCH_WORD0} | gmt text -F+f16p+jTL+cTL -Gwhite -W1p</span>
+<span class="s">gmt end</span>
+<span class="s">EOF</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39; &gt; post.sh</span>
+<span class="s">gmt psconvert -TF -F${BATCH_PREFIX} ${BATCH_PREFIX}_*.pdf</span>
+<span class="s">rm -f ${BATCH_PREFIX}_*.pdf</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>batch<span class="w"> </span>main.sh<span class="w"> </span>-Sbpre.sh<span class="w"> </span>-Sfpost.sh<span class="w"> </span>-Tcountries.txt+w<span class="s2">&quot;\t&quot;</span><span class="w"> </span>-Ncountries<span class="w"> </span>-V<span class="w"> </span>-W<span class="w"> </span>-Z
+</pre></div>
+</div>
+</section>
+<section id="macos">
+<h2>macOS 问题<a class="headerlink" href="#macos" title="Link to this heading"></a></h2>
+<p>默认同时打开的文件数在 macOS 上相对较小，执行大量作业时可能出现 &quot;Too many open files&quot; 错误。可参考
+<a class="reference external" href="https://superuser.com/questions/433746/is-there-a-fix-for-the-too-many-open-files-in-system-error-on-os-x-10-7-1">链接</a> 解决。</p>
+</section>
+<section id="id11">
+<h2>相关模块<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../math/"><span class="doc">math</span></a>,
+<a class="reference internal" href="../grdinterpolate/"><span class="doc">grdinterpolate</span></a>,
+<a class="reference internal" href="../grdmath/"><span class="doc">grdmath</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../gmt2kml/" class="btn btn-neutral float-left" title="gmt2kml" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../barb/" class="btn btn-neutral float-right" title="barb" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

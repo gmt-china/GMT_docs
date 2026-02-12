@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>GSHHG: 全球高分辨率海岸线数据 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="DCW: 世界数字图表" href="../dcw/" />
+    <link rel="prev" title="GMT数据概述" href="../overview/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">GMT数据概述</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GSHHG: 全球高分辨率海岸线数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">数据分辨率</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">数据内容</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">海岸线</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">河流</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">国界线</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">使用示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-age/">earth_age: 地球洋壳年龄数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-images/">earth_day 和 earth_night: 地球昼夜卫星影像</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-mask/">earth_mask: 地球掩膜数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">GADM: 全球行政区划数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PB2002/">PB2002: 全球板块边界数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">地学数据集</a> &raquo;</li>
+        
+      <li>GSHHG: 全球高分辨率海岸线数据</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/dataset/gshhg.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gshhg">
+<h1>GSHHG: 全球高分辨率海岸线数据<a class="headerlink" href="#gshhg" title="永久链接至标题">¶</a></h1>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/gshhg.jpg"><img alt="../../_images/gshhg.jpg" src="../../_images/gshhg.jpg" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-text">GSHHG: 全球高分辨率海岸线数据</span><a class="headerlink" href="#id7" title="永久链接至图片">¶</a></p>
+</div>
+<p><strong>GSHHG数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/gshhg/">http://www.soest.hawaii.edu/wessel/gshhg/</a></p>
+<p>GSHHG，全称为 A Global Self-consistent, Hierarchical, High-resolution Geography Database。GMT提供的GSHHG数据中包含了海岸线、河流和国界等数据。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>GSHHG提供的中国国界数据不符合中国的领土主张，在正式刊物中发表使用此类国界数据的图件时都可能存在问题。</p>
+</div>
+<p>GMT的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块可以直接绘制GSHHG中的数据，也可以使用
+<a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 的 <strong>-M</strong> 选项将数据导出为纯文本文件供其它程序使用。这一节将利用 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块介绍GSHHG数据。关于 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的详细用法，见 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的说明文档。</p>
+<div class="section" id="id1">
+<h2>数据分辨率<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GSHHG提供了五种不同分辨率的数据，以满足不同的需求。五种分辨率从高到低分别为：</p>
+<p><strong>f</strong>ull &gt; <strong>h</strong>igh &gt; <strong>i</strong>ntermediate &gt; <strong>l</strong>ow &gt; <strong>c</strong>rude</p>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的 <strong>-D</strong> 选项加上每种分辨率的单词首字母即可指定使用何种分辨率的数据。在绘制全球地图时，可以用 <strong>-Dc</strong> 指定使用最低分辨率的数据，以避免绘制了大量细节而导致绘图速度慢且文件太大；在绘制几度范围的小区域地图时，则可以使用 <strong>-Df</strong> 指定使用最高分辨率的数据。GMT现代模式下，默认使用 <strong>-Da</strong> 选项，<strong>a</strong> 表示 <strong>a</strong>uto，即GMT会根据当前绘图区域的大小自动选择合适的数据分辨率。</p>
+<p>下面的示例绘制了一个小区域的海岸线边界，可以看到 <strong>-D</strong> 取不同分辨率时边界精细程度的差异:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/6dd3857c8b817207f357e399d3218e01/gshhg-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-0.png" src="../../_images/gshhg-gmtplot-0.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h2>数据内容<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GSHHG数据中包含了海岸线数据、河流数据和国界数据。</p>
+<div class="section" id="id3">
+<h3>海岸线<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>海岸线数据可以进一步细分为4个不同的等级：</p>
+<ul class="simple">
+<li><p>1: 陆地和海洋的分界线，即真正意义上的海岸线</p></li>
+<li><p>2: 陆地与湖泊的分界线</p></li>
+<li><p>3: 湖泊中的岛屿与湖泊的分界线</p></li>
+<li><p>4: 湖泊中的岛屿里的池塘与岛屿的分界线</p></li>
+</ul>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块中有如下几个与海岸线相关的选项：</p>
+<ul class="simple">
+<li><p><strong>-W</strong>[<em>level</em>/]<em>pen</em> 绘制不同等级的海岸线</p></li>
+<li><p><strong>-G</strong><em>fill</em> 设置陆地、岛屿等陆区的填充色</p></li>
+<li><p><strong>-S</strong><em>fill</em> 设置海洋、湖泊等水区的填充色</p></li>
+<li><p><strong>-C</strong><em>fill</em><strong>+l</strong> 设置湖泊的填充色</p></li>
+<li><p><strong>-C</strong><em>fill</em><strong>+r</strong> 设置河流湖的填充色</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>河流<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>河流进一步可以细分为10个等级：</p>
+<ul class="simple">
+<li><p>0: Double-lined rivers (river-lakes).</p></li>
+<li><p>1: Permanent major rivers.</p></li>
+<li><p>2: Additional major rivers.</p></li>
+<li><p>3: Additional rivers.</p></li>
+<li><p>4: Minor rivers.</p></li>
+<li><p>5: Intermittent rivers - major.</p></li>
+<li><p>6: Intermittent rivers - additional.</p></li>
+<li><p>7: Intermittent rivers - minor.</p></li>
+<li><p>8: Major canals.</p></li>
+<li><p>9: Minor canals.</p></li>
+<li><p>10: Irrigation canals.</p></li>
+</ul>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的 <strong>-I</strong> 选项可以用于绘制不同等级的河流，其基本语法为 <strong>-I</strong><em>level</em>/<em>pen</em>。其中 <em>level</em> 除了可以取1至10之外，还可以取：</p>
+<ul class="simple">
+<li><p><strong>a</strong>: 所有河流和运河，即包含0-10等级的所有河流</p></li>
+<li><p><strong>A</strong>: 除了河流湖之外的所有河流和运河，即包含1-10等级的河流</p></li>
+<li><p><strong>r</strong>: 所有永久河流，即0-4等级</p></li>
+<li><p><strong>R</strong>: 除了河流湖之外的永久河流，即1-4等级</p></li>
+<li><p><strong>i</strong>: 所有间歇性河流，即5-7等级</p></li>
+<li><p><strong>c</strong>: 所有运河，即8-10等级</p></li>
+</ul>
+<p>该选项可以重复多次使用，为不同等级的河流设置不同的画笔属性。</p>
+</div>
+<div class="section" id="id5">
+<h3>国界线<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>国界线进一步细分为三个等级</p>
+<ul class="simple">
+<li><p>1: 国界</p></li>
+<li><p>2: 美国州界</p></li>
+<li><p>3: 海洋边界</p></li>
+</ul>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的 <strong>-N</strong> 选项可以用于绘制不同等级的国界线，其基本语法为 <strong>-N</strong><em>level</em>/<em>pen</em>。其中 <em>level</em> 可以取1至3，也可以取 <strong>a</strong> （表示所有边界）。该选项可以重复多次使用，为不同等级的国界设置不同的画笔属性。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>绘制1级海岸线：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JM15c -Ba -A1000 -W1/0.5p -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/gshhg-gmtplot-1.png"><img alt="../../_images/gshhg-gmtplot-1.png" src="../../_images/gshhg-gmtplot-1.png" style="width: 75%;" /></a>
+</div>
+<p>同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），蓝色的为3级岛屿线（即五大湖内部的岛屿）：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JM15c -Ba -A1000 -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/gshhg-gmtplot-2.png"><img alt="../../_images/gshhg-gmtplot-2.png" src="../../_images/gshhg-gmtplot-2.png" style="width: 75%;" /></a>
+</div>
+<p>绘制1-3级海岸线，并为陆地、海洋、湖泊填充不同的颜色：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JM15c -Ba -A1000 -Gtan -Slightblue -Croyalblue+l -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/gshhg-gmtplot-3.png"><img alt="../../_images/gshhg-gmtplot-3.png" src="../../_images/gshhg-gmtplot-3.png" style="width: 75%;" /></a>
+</div>
+<p>绘制海岸线、国界和美国州界：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JM15c -Ba -Dh -A1000 -W1/0.5p -N1/thick,red -N2/thinner -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-4.png" src="../../_images/gshhg-gmtplot-4.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../dcw/" class="btn btn-neutral float-right" title="DCW: 世界数字图表" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../overview/" class="btn btn-neutral float-left" title="GMT数据概述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,2167 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grdmath &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grdpaste" href="../grdpaste/" />
+    <link rel="prev" title="grdmask" href="../grdmask/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grdmath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入输出数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">其他符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">运算符注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">网格值精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">储存、调用和清除</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gshhg">GSHHG 信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">点位于多边形内/外</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">宏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">grdmath</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/grdmath.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      Caesar（自然资源部第一海洋研究所）
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2026-01-05
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="grdmath">
+<span id="index-0"></span><h1>grdmath<a class="headerlink" href="#grdmath" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/grdmath.html" title="（在 GMT v6.6）"><span>grdmath</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>网格数据的逆波兰表示法（RPN）计算</p>
+</dd>
+</dl>
+<p><strong>grdmath</strong> 使用逆波兰表示法对网格文件或常量进行逐元素运算，最终结果写入到新的网格文件。
+若不给定网格文件，则必须使用 <a class="reference internal" href="#cmdoption-grdmath-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 与 <a class="reference internal" href="#cmdoption-grdmath-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 选项生成网格文件。 <strong>= outgrid</strong> 可在计算
+中多次使用以保存中间结果。复杂的或频繁使用的运算可赋值给变量或使用宏。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt grdmath</strong>
+[ <a class="reference internal" href="#cmdoption-grdmath-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+l</strong>|<strong>r</strong>][<strong>+p</strong><em>percent</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdmath-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>resolution</em>[<strong>+f</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdmath-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><em>increment</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a> ] [ <a class="reference internal" href="#cmdoption-grdmath-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdmath-a"><code class="xref std std-option docutils literal notranslate"><span class="pre">-a</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-di"><code class="xref std std-option docutils literal notranslate"><span class="pre">-di</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdmath-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-n"><code class="xref std std-option docutils literal notranslate"><span class="pre">-n</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-r"><code class="xref std std-option docutils literal notranslate"><span class="pre">-r</span></code></a><em>reg</em> ]
+[ <a class="reference internal" href="#cmdoption-grdmath-x"><code class="xref std std-option docutils literal notranslate"><span class="pre">-x</span></code></a>[[-]n] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]
+<em>operand</em> [ <em>operand</em> ] <strong>OPERATOR</strong> [ <em>operand</em> ]
+<strong>OPERATOR</strong> ... <strong>=</strong> <em>outgrid</em></p>
+</section>
+<section id="id2">
+<h2>输入输出数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>operand</em></dt><dd><p>如果 <em>operand</em> 是一个文件，GMT 将试着以网格文件的形式读取该文件。如果非文件，
+将被解析为 <a class="reference internal" href="#id5">其他符号</a> 或数字常量。</p>
+</dd>
+<dt><em>= outgrid</em></dt><dd><p>输出网格文件名</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+l</strong>|<strong>r</strong>][<strong>+p</strong><em>percent</em>]</dt><dd><p>不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
+<p>在绘制湖泊时，若不管湖泊的面积大小而把所有湖泊的边界都画上去，可能导致图
+看上去比较乱，该选项用于对湖泊进行筛选。面积小于 <em>min_area</em> 平方千米
+或者湖泊级别不在 [<em>min_level</em>,<em>max_level</em>] 范围的边界都不会被绘制。
+默认值为 <strong>0/0/4</strong>，即绘制所有湖泊边界，即绘制0到4级所有级别的面积大于0的
+湖泊。</p>
+<p>对于level=2，即湖岸线，包括常规的湖以及很宽的河流。加上 <strong>+r</strong> 则只绘制河流，
+加上 <strong>+l</strong> 则只绘制常规湖。</p>
+<p>对于南极洲而言，因为有冰层的存在，所以海岸线有多种处理方式：</p>
+<ul class="simple">
+<li><p><strong>+ai</strong> 用ice shell boundary作为南极洲的海岸线，默认值</p></li>
+<li><p><strong>+ag</strong> 以ice grounding line作为海岸线</p></li>
+<li><p><strong>+as</strong> 忽略南纬60度以南的海岸线，用户可以使用 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 绘制自己的南极洲海岸线</p></li>
+<li><p><strong>+aS</strong> 忽略南纬60度以北的海岸线</p></li>
+</ul>
+<p><strong>+p</strong><em>precent</em>：一个多边形，降低精度后，边数减少，面积变化，当面积变化
+过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积
+之比小于 <em>percent</em> 的多边形。</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>该选项仅适用于 <strong>LDISTG</strong> 运算符</p>
+</div>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>resolution</em>[<strong>+f</strong>]</dt><dd><p>设置 <strong>LDISTG</strong> 运算符使用的数据集的分辨率:
+(<strong>f</strong>)ull，(<strong>h</strong>)igh，(<strong>i</strong>)ntermediate，(<strong>l</strong>)ow 和 (<strong>c</strong>)rude。
+默认的 <strong>l</strong> 选项将数据集缩减为原本的 20%。如果请求的分辨率不存在，使用 <strong>+f</strong> 选项
+会自动选择一个较低的分辨率。</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>该选项仅适用于 <strong>LDISTG</strong> 运算符。</p>
+</div>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p>指定X和Y方向的网格间隔</p>
+<ul class="simple">
+<li><p><em>xinc</em> 和 <em>yinc</em> 为 X 和 Y 方向的网格间隔。对于地理坐标，可以指定网格间隔单位 [默认单位为度]</p></li>
+<li><p><strong>+e</strong> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调
+网格间隔以适应给定的数据范围）</p></li>
+<li><p><strong>+n</strong> 表明 <em>xinc</em> 和 <em>yinc</em> 不是网格间隔，而是X和Y方向的节点数。
+此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</p></li>
+</ul>
+<p>注意：</p>
+<ul class="simple">
+<li><p>若 <em>yinc</em> 设置为0，则表示其与 <em>xinc</em> 相同</p></li>
+<li><p>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，
+此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-M</strong></dt><dd><p>默认的导数计算单位为 z_units/x(或 y )_units。使用该选项，可以将 dx 和 dy 的单位从度变为
+平地球近似下的米，因此最终单位变为 z_units/meter</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong></dt><dd><p>操作多个网格时，关闭严格的范围匹配检查 [默认情况下，要求每个网格的范围和第一个网格的范围
+不能超过阈值，该阈值为第一个网格间隔的 10^-4]</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong></dt><dd><p>将下一个运算应用到所有的网格中，使最终结果为一个网格。必须在列出所有网格后才能使用该选项。
+<strong>注</strong> ：仅能在改选项后使用 reduce 运算符，包括
+ADD，AND，MAD，LMSSCL，MAX，MEAN，MEDIAN，MIN，MODE，MUL，RMS，STD，SUB，VAR 或 XOR</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-a">
+<span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-a" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-a</strong>[[<em>col</em>=]<em>name</em>][,<em>...</em>]</dt><dd><p>控制输入或输出为 OGR/GMT 格式时对非空间元数据的处理方式。 <a class="reference internal" href="../../option/a/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-di">
+<span class="sig-name descname"><span class="pre">-di</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-di" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em></dt><dd><p>将输入数据某些特定值当作NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-n">
+<span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-n" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>]</dt><dd><p>设置网格文件的插值方式。 <a class="reference internal" href="../../option/n/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-r">
+<span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-r" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</dt><dd><p>设置网格配置方式 [默认为网格线配准]。 <a class="reference internal" href="../../option/nodereg/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdmath-x">
+<span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdmath-x" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-x</strong>[[-]<em>n</em>]</dt><dd><p>限制多核算法中能使用的核数（需要GMT开启OpenMP支持）。 <a class="reference internal" href="../../option/x/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>运算符<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p><strong>Operator</strong> 为运算符名称； <strong>args</strong> 分别表示输入参数和输出参数个数；
+<strong>Returns</strong> 中的 A B C ... 等字符表示输入参数。</p>
+<table class="fixed-width-table docutils align-default" id="id14">
+<caption><span class="caption-text">运算符列表</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 55.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作符 (Operator)</p></th>
+<th class="head"><p>参数 (Args)</p></th>
+<th class="head"><p>返回值 (Returns)</p></th>
+<th class="head"><p>函数类型 (Type)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ABS</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的绝对值</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACOS</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反余弦（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ACOSD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反余弦（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACOSH</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反双曲余弦</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ACOT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反余切（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACOTD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反余切（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ACSC</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反余割（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ACSCD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反余割（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ADD</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A + B（加法）</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AND</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A 等于 NaN 则返回 B，否则返回 A</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ARC</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>返回 [0, pi] 上的圆弧 (A,B)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AREA</span></code></p></td>
+<td><p>0 1</p></td>
+<td><p>每个网格单元的面积（如果是地理坐标，单位为 km<sup>2</sup>）</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ASEC</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正割（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ASECD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正割（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ASIN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正弦（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ASIND</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正弦（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ASINH</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反双曲正弦</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ATAN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正切（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ATAND</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正切（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ATAN2</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A/B 的反正切（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ATAN2D</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A/B 的反正切（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ATANH</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反双曲正切</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BCDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>二项分布累积分布函数 (p = A, n = B, x = C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BPDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>二项分布概率密度函数 (p = A, n = B, x = C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BEI</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>开尔文函数 bei (A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BER</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>开尔文函数 ber (A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BITAND</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A &amp; B (按位与运算)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BITLEFT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A &lt;&lt; B (按位左移)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BITNOT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>~A (按位非运算，即返回补码)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BITOR</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A | B (按位或运算)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BITRIGHT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A &gt;&gt; B (按位右移)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BITTEST</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A 的第 B 位被设置则返回 1，否则为 0 (按位测试)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">BITXOR</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A ^ B (按位异或运算)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">BLEND</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>使用权重 C (0-1 范围) 混合 A 和 B，计算方式为 A*C + B*(1-C)</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CAZ</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>从网格节点到栈中 (<em>x, y</em>)（即 A, B）的笛卡尔方位角</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CBAZ</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>从网格节点到栈中 (<em>x, y</em>)（即 A, B）的笛卡尔反方位角</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CDIST</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>网格节点与栈中 (<em>x, y</em>)（即 A, B）之间的笛卡尔距离</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CDIST2</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>同 CDIST，但仅计算到非零节点的距离</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CEIL</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>ceil (A) (大于或等于 A 的最小整数)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CHICRIT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>卡方分布临界值 (alpha = A, nu = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CHICDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>卡方累积分布函数 (chi2 = A, nu = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CHIPDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>卡方概率密度函数 (chi2 = A, nu = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COMB</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>组合数 nCr (n = A, r = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CORRCOEFF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>相关系数 r(A, B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COS</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的余弦（A 为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">COSD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的余弦（A 为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COSH</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的双曲余弦</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">COT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的余切（A 为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">COTD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的余切（A 为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CSC</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的余割（A 为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CSCD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的余割（A 为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CUMSUM</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>每一行 (B=±1|3) 或每一列 (B=±2|4) 的累加和。B 的符号决定求和方向</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CURV</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的曲率（拉普拉斯算子 <span class="math notranslate nohighlight">\(\nabla^2\)</span>）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">D2DX2</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>d<sup>2</sup>(A)/dx<sup>2</sup> 二阶导数</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">D2DY2</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>d<sup>2</sup>(A)/dy<sup>2</sup> 二阶导数</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">D2DXY</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>d<sup>2</sup>(A)/dxdy 二阶偏导数</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">D2R</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>度转换为弧度</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DDX</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>d(A)/dx 中央一阶导数</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DAYNIGHT</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>太阳在 (A, B) 照射处为 1，其余为 0，C 为过渡宽度</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DDY</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>d(A)/dy 中央一阶导数</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DEG2KM</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>球面度转换为公里</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DENAN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>用 B 中的值替换 A 中的 NaN</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DILOG</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>双对数 (Spence's) 函数</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DIV</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A / B (除法)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DOT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>节点与栈中单位向量 (A, B) 之间的二维(笛卡尔)或三维(地理)点积</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DUP</span></code></p></td>
+<td><p>1 2</p></td>
+<td><p>在栈中复制一份 A</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ECDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>指数累积分布函数 (x = A, lambda = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ECRIT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>指数分布临界值 (alpha = A, lambda = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EPDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>指数概率密度函数 (x = A, lambda = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ERF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>误差函数 erf (A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ERFC</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>互补误差函数 erfc (A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">EQ</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A 等于 B 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ERFINV</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的反误差函数</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">EXCH</span></code></p></td>
+<td><p>2 2</p></td>
+<td><p>交换栈中的 A 和 B</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EXP</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>e 的次幂</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FACT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A! (A 的阶乘)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EXTREMA</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>局部极值：-1 为极小值，+1 为极大值，其余为 0</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FCDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>F 累积分布函数 (F = A, nu1 = B, nu2 = C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FCRIT</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>F 分布临界值 (alpha = A, nu1 = B, nu2 = C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FISHER</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>位于中心经度 A、纬度 B，且浓度参数为 C 的 Fisher 概率密度函数</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FLIPLR</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反转每一行中的值顺序</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FLIPUD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反转每一列的顺序</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FLOOR</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>小于或等于 A 的最大整数</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">FMOD</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A % B (截断除法的余数)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FPDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>F 概率密度函数 (F = A, nu1 = B, nu2 = C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GE</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A &gt;= B 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A &gt; B 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HSV2LAB</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>h,s,v</em> 转换为 <em>l,a,b</em> (h=A[0-360], s=B, v=C[0-1])</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HSV2RGB</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>h,s,v</em> 转换为 <em>r,g,b</em> (h=A[0-360], s=B, v=C[0-1])</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">HSV2XYZ</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>h,s,v</em> 转换为 <em>x,t,z</em> (h=A[0-360], s=B, v=C[0-1])</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HYPOT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>直角三角形的斜边长度 (= sqrt (A<sup>2</sup>+ B<sup>2</sup>))</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">I0</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的修正贝塞尔函数 (第一类, 0阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">I1</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的修正贝塞尔函数 (第一类, 1阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IFELSE</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>如果 A 不等于 0 则返回 B，否则返回 C</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 的修正贝塞尔函数 (第一类, B阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INRANGE</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>如果 B &lt;= A &lt;= C 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INSIDE</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>当位于 A 中的多边形内或其边界上时返回 1，否则为 0</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INV</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的反误差函数</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ISFINITE</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>如果 A 是有限值则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ISNAN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>如果 A 等于 NaN 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">J0</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的贝塞尔函数 (第一类, 0阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">J1</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的贝塞尔函数 (第一类, 1阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">JN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 的贝塞尔函数 (第一类, B阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">K0</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的修正开尔文函数 (第二类, 0阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">K1</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的修正贝塞尔函数 (第二类, 1阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">KEI</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>开尔文函数 kei (A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">KER</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>开尔文函数 ker (A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">KM2DEG</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>公里转换为球面度</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">KN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 的修正贝塞尔函数 (第二类, B阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">KURT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的峰度</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAB2HSV</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>l,a,b</em> 三元组转换为 <em>h,s,v</em> 三元组</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LAB2RGB</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>l,a,b</em> 三元组转换为 <em>r,g,b</em> 三元组</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LAB2XYZ</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>l,a,b</em> 三元组转换为 <em>x,y,z</em> 三元组</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LCDF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>拉普拉斯累积分布函数 (z = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LCRIT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>拉普拉斯分布临界值 (alpha = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LDIST</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>计算到多段 ASCII 文件 A 中各条线的最小距离（如果使用 -fg 则单位为 km）</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LDIST2</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>同 LDIST，计算到文件 B 中各线的距离，但仅针对 A 非零的节点</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LDISTG</span></code></p></td>
+<td><p>0 1</p></td>
+<td><p>同 LDIST，但操作对象为 GSHHG 数据集（参见 -A, -D 选项）</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LE</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A &lt;= B 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LOG</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>双对数 (Spence's) 函数</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LOG10</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\log_{10}\)</span> (A) (以 10 为底的对数)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LOG1P</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>log (1+A) (自然对数，对极小值 A 更精确)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LOG2</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\log_2\)</span> (A) (以 2 为底的对数)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LMSSCL</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的 LMS (最小中位数平方) 尺度估计 (LMS STD)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LMSSCLW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 基于权重 B 的加权 LMS 尺度估计 (LMS STD)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LOWER</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的最低值 (最小值)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LPDF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>拉普拉斯概率密度函数 (z = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LRAND</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>均值为 A，标准差为 B 的拉普拉斯随机噪声</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A &lt; B 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MAD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的中位数绝对偏差 (L1 STD)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MAX</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 和 B 的最大值</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MEAN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的平均值</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MEANW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 基于权重 B 的加权平均值</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MEDIAN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的中位数</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MEDIANW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 基于权重 B 的加权中位数</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MIN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 和 B 的最小值</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MOD</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A % B (向下取整除法的余数)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MODE</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的众数 (最小中位数平方估计)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MODEW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 基于权重 B 的加权众数 (最小中位数平方估计)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MUL</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A x B (乘法)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NAN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A 等于 B 则返回 NaN，否则返回 A</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NEG</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>负值 (-A)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NEQ</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 A 不等于 B 则返回 1，否则为 0</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NORM</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>归一化 (A) 使得 min(A) = 0 且 max(A) = 1</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NOT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>~A (按位非运算，即返回补码)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NRAND</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>均值为 A，标准差为 B 的正态分布随机值</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OR</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>如果 B 等于 NaN 则返回 NaN，否则返回 A</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PCDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>泊松累积分布函数 (x = A, lambda = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PDIST</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>计算到 ASCII 文件 A 中各点的最小距离（如果使用 -fg 则单位为 km）</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PDIST2</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>同 PDIST，计算到文件 B 中各点的距离，但仅针对 A 非零的节点</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PERM</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>排列数 nPr (n = A, r = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PLM</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>伴随勒让德多项式 P(A)，次数为 B，阶数为 C</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PLMg</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>归一化伴随勒让德多项式 P(A)，次数为 B，阶数为 C (地球物理规范)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POINT</span></code></p></td>
+<td><p>1 2</p></td>
+<td><p>从 ASCII 文件 A 中计算平均 x 和 y 并压入栈中</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">POP</span></code></p></td>
+<td><p>1 0</p></td>
+<td><p>从栈中删除顶端元素</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">POW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 的 B 次幂</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PPDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>泊松分布 P(x, lambda) (x = A, lambda = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PQUANT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 的第 B 个分位数 (0-100%)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PQUANTW</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>A 基于权重 B 的第 C 个加权分位数 (0-100%)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PSI</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的 Psi (或 Digamma) 函数</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PV</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>勒让德函数 Pv(A)，次数为 v = real(B) + imag(C)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">QV</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>勒让德函数 Qv(A)，次数为 v = real(B) + imag(C)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">R2</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>斜边的平方 (= A<sup>2</sup>+ B<sup>2</sup>)</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">R2D</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>弧度转换为度</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RAND</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>均值为 A，标准差为 B 的拉普拉斯随机噪声</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RCDF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>瑞利累积分布函数 (z = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RCRIT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>瑞利分布临界值 (alpha = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RGB2HSV</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>r,g,b</em> 转换为 <em>h,s,v</em> (r,g,b 范围为 0-255)</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RGB2LAB</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>r,g,b</em> 转换为 <em>l,a,b</em> (r,g,b 范围为 0-255)</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RGB2XYZ</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>r,g,b</em> 转换为 <em>x,y,z</em> (r,g,b 范围为 0-255)</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RINT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>rint (A) (舍入到最接近 A 的整数)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RMS</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的均方根 (Root-mean-square)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RMSW</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 基于权重 B 的加权均方根</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RPDF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>瑞利概率密度函数 (z = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ROLL</span></code></p></td>
+<td><p>2 0</p></td>
+<td><p>将栈顶 A 个元素循环平移 B 个位置</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ROTX</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>将 A 在 x 方向上按常数 B 进行旋转平移</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ROTY</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>将 A 在 y 方向上按常数 B 进行旋转平移</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SADDLE</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>鞍点 (±)：x 方向为局部极小值(-1)或极大值(+1)，其余为 0</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SDIST</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>计算网格节点与栈中 (<em>lon, lat</em>) (即 A, B) 之间的球面(大圆/测地线)距离（单位为 km）</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SDIST2</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>同 SDIST，但仅计算到非零节点的距离</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SAZ</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>从网格节点到栈中 (<em>lon, lat</em>) (即 A, B) 的球面方位角</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SBAZ</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>从网格节点到栈中 (<em>lon, lat</em>) (即 A, B) 的球面反方位角</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SEC</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正割（结果为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SECD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>反正割（结果为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SIGN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的符号 (+1 或 -1)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SIN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的正弦（A 为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SINC</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>归一化 Sinc 函数</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SIND</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的正弦（A 为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SINH</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的双曲正弦</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SKEW</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的偏度</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SQR</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>平方 (2次幂)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SQRT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>平方根</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STD</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的标准差</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">STDW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 基于权重 B 的加权标准差</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STEP</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>赫维赛德阶跃函数 H(A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">STEPX</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>x 方向的赫维赛德阶跃函数: H(x-A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STEPY</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>y 方向的赫维赛德阶跃函数: H(y-A)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SUB</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A - B (减法)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的累加和 (Cumulative sum)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TAN</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的正切（A 为弧度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TAND</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的正切（A 为度）</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TANH</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的双曲正切</p></td>
+<td><p>微积分</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TAPER</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>在末端 A 范围内余弦渐变到 0 的单位权重</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TCDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>学生 t 累积分布函数 (t = A, nu = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TCRIT</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>学生 t 分布临界值 (alpha = A, nu = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>~A (按位非运算，即返回补码)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TPDF</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>学生 t 概率密度函数 (t = A, nu = B)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TRIM</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>Alpha 截断：如果 C 的值落在 A 和 B (百分比) 指定的尾部，则设为 NaN</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">UPPER</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的最高值 (最大值)</p></td>
+<td><p>算术运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VAR</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的方差</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">VARW</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 基于权重 B 的加权方差</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">VPDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>Von Mises 密度分布 V(x,mu,kappa) (角度=A, mu=B, kappa=C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WCDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>威布尔累积分布函数 (x=A, scale=B, shape=C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">WCRIT</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>威布尔分布临界值 (alpha=A, scale=B, shape=C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WPDF</span></code></p></td>
+<td><p>3 1</p></td>
+<td><p>威布尔密度分布 P(x,scale,shape) (x=A, scale=B, shape=C)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">WRAP</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>将弧度 A 转换到 [-pi, pi] 范围内</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">XOR</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A ^ B (按位异或运算)</p></td>
+<td><p>逻辑运算</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">XYZ2HSV</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>x,y,z</em> 三元组转换为 <em>h,s,v</em> 三元组</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">XYZ2LAB</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>x,y,z</em> 三元组转换为 <em>l,a,b</em> 三元组</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">XYZ2RGB</span></code></p></td>
+<td><p>3 3</p></td>
+<td><p>将 <em>x,y,z</em> 三元组转换为 <em>r,g,b</em> 三元组</p></td>
+<td><p>特殊操作符</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Y0</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的贝塞尔函数 (第二类, 0阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Y1</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>A 的贝塞尔函数 (第二类, 1阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">YLM</span></code></p></td>
+<td><p>2 2</p></td>
+<td><p>次数为 A、阶数为 B 的实部和虚部正交归一化球谐函数</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">YLMg</span></code></p></td>
+<td><p>2 2</p></td>
+<td><p>次数为 A、阶数为 B 的余弦和正弦归一化球谐函数（地球物理规范）</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">YN</span></code></p></td>
+<td><p>2 1</p></td>
+<td><p>A 的贝塞尔函数 (第二类, B阶)</p></td>
+<td><p>特殊函数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ZCDF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>正态累积分布函数 (z = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ZCRIT</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>正态分布临界值 (alpha = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ZPDF</span></code></p></td>
+<td><p>1 1</p></td>
+<td><p>正态概率密度函数 (z = A)</p></td>
+<td><p>概率统计</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2>其他符号<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>以下符号都具有特殊意义：</p>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">数学常量与网格变量</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>标识符</p></th>
+<th class="head"><p>描述 / 数值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PI</span></code></p></td>
+<td><p>圆周率 (3.1415926...)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">E</span></code></p></td>
+<td><p>自然常数 (2.7182818...)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EULER</span></code></p></td>
+<td><p>欧拉常数 (0.5772156...)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">PHI</span></code></p></td>
+<td><p>黄金分割率 (1.6180339...)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">EPS_F</span></code></p></td>
+<td><p>单精度浮点数机器精度 (1.192092896e-07)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">XMIN</span></code></p></td>
+<td><p><em>x</em> 值的最小值</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">XMAX</span></code></p></td>
+<td><p><em>x</em> 值的最大值</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">XRANGE</span></code></p></td>
+<td><p><em>x</em> 值的范围</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">XINC</span></code></p></td>
+<td><p><em>x</em> 的增量</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NX</span></code></p></td>
+<td><p><em>x</em> 方向的节点数</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">YMIN</span></code></p></td>
+<td><p><em>y</em> 值的最小值</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">YMAX</span></code></p></td>
+<td><p><em>y</em> 值的最大值</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">YRANGE</span></code></p></td>
+<td><p><em>y</em> 值的范围</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">YINC</span></code></p></td>
+<td><p><em>y</em> 的增量</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NY</span></code></p></td>
+<td><p><em>y</em> 方向的节点数</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">X</span></code></p></td>
+<td><p>包含 <em>x</em> 坐标的网格</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Y</span></code></p></td>
+<td><p>包含 <em>y</em> 坐标的网格</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">XNORM</span></code></p></td>
+<td><p>包含归一化 [-1 到 +1] <em>x</em> 坐标的网格</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">YNORM</span></code></p></td>
+<td><p>包含归一化 [-1 到 +1] <em>y</em> 坐标的网格</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">XCOL</span></code></p></td>
+<td><p>包含列号 (0, 1, ..., NX-1) 的网格</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">YROW</span></code></p></td>
+<td><p>包含行号 (0, 1, ..., NY-1) 的网格</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NODE</span></code></p></td>
+<td><p>包含节点号 (0, 1, ..., (NX*NY)-1) 的网格</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NODEP</span></code></p></td>
+<td><p>包含补边 (pad) 时的节点号网格</p></td>
+</tr>
+</tbody>
+</table>
+<p>上述符号均可以作为变量使用，当其为多个数时，逐元素操作。</p>
+</section>
+<section id="id6">
+<h2>运算符注意事项<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>对于笛卡尔坐标，运算符 <strong>MEAN</strong>，<strong>MEDIAN</strong>，<strong>MODE</strong>，<strong>LMSSCL</strong>，<strong>MAD</strong>，
+<strong>PQUANT</strong>，<strong>RMS</strong>，<strong>STD</strong> 和 <strong>VAR</strong> 将返回基于给定网格的值。对于地理
+坐标，GMT 将施行球面加权运算，其中每个节点的值都由该点代表的地理区域加权得到。</p></li>
+<li><p><strong>SDIST</strong> 计算堆栈上的点 (lon,lat) 与所有网格点的球面距离，单位为 km。网格范围
+和点的坐标单位均为度。类似地，<strong>SAZ</strong> 和 <strong>SBAZ</strong> 分别用来球面方位角以及球面
+反方位角，单位也为度。如果设置了 <strong>-fg</strong> 或隐含该选项，<strong>LDIST</strong> 和 <strong>PDIST</strong>
+以 km 为单位计算球面距离，否则返回笛卡尔距离。<strong>注</strong> : 如果 <a class="reference internal" href="../../conf/proj/#term-PROJ_ELLIPSOID"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>
+为椭球，则计算结果为大地线（测地线）的长度。这可能导致计算比较慢，但可以通过
+<a class="reference internal" href="../../conf/proj/#term-PROJ_GEODESIC"><span class="xref std std-term">PROJ_GEODESIC</span></a> 中设置使用其他算法以平衡精度和效率。</p>
+<p><strong>LDISTG</strong> 和 <strong>LDIST</strong> 作用类似，但是 <strong>LDISTG</strong> 使用 GSHHG 数据运算。其中
+GSHHG 数据来自 <a class="reference internal" href="#cmdoption-grdmath-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 和 <a class="reference internal" href="#cmdoption-grdmath-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 选项。</p>
+</li>
+<li><p><strong>POINT</strong> 读取一个 ASCII 文件，计算 x 和 y 的平均值并放在堆栈中。如果输入数据
+为地理坐标，使用平均 3D 向量来确定平均位置。</p></li>
+<li><p><strong>PLM</strong> 和 <strong>PLMg</strong> 运算符用来计算 L 阶 M 次的缔合勒让德函数；M 参数
+的范围应该满足 0 &lt;= M &lt;= L，参数为纬度的正弦值。 <strong>PLM</strong> 运算符没有经过标准化，
+并且乘以 phase (-1)^M。 <strong>PLMg</strong> 使用大地测量/地球物理常见的标准化。使用
+<em>-M</em> 参数可以附加球谐系数 C 和 S。 <strong>PLM</strong> 在较高的阶次就会出现溢出，具
+体和纬度相关， <strong>PLMg</strong> 则可以保证在 3000 阶以下都不会溢</p></li>
+<li><p><strong>YLM</strong> 和 <strong>YLGM</strong> 用于计算网格所有位置的 L 阶 M 次标准化后的球谐函数，
+0 &lt;= M &lt;= L。结果返回两个网格，一个为球谐函数的实部网格，一个为虚部网格。使用
+<strong>POP</strong> 可保存其中的任意一个，也可以使用两个连续的 <em>= file.nc</em> 同时保存。</p>
+<p>正交归一化的复数谐函数主要用于物理学和地震学，<strong>YLM</strong> 的平方在球面上的积分为
+1。在大地测量学中，<strong>YLMG</strong> 积分后的结果为 4pi。相位 (-1)^M 不包含在 <strong>YLM</strong>
+和 <strong>YLMg</strong> 中。</p>
+</li>
+<li><p>所有导数都基于 central finite differences 和 natural boundary conditionsi，
+并且为笛卡尔坐标下的导数</p></li>
+<li><p>不同参数文件名相同时，应给定相对路径或绝对路径以区分不同文件</p></li>
+<li><p>不允许使用管道</p></li>
+<li><p>该模块计算过程保存在堆栈中，栈中保存结果最大为 100，即不能叠加太多的操作
+以防溢出</p></li>
+<li><p>所有需要半径的运算符为保证其为正值，均自动取了绝对值后计算</p></li>
+<li><p>当使用 OpenMP 后，某些运算符将使用该能力。目前包括 <strong>LDIST</strong>，<strong>LDIST2</strong>，
+<strong>PDIST</strong>，<strong>PDIST2</strong>，<strong>SAZ</strong>，<strong>SBAZ</strong>，<strong>SDIST</strong>，<strong>YLM</strong>，和 <strong>grd_YLMg</strong></p></li>
+<li><p><strong>DEG2KM</strong> 和 <strong>KM2DEG</strong> 只有当设置 <a class="reference internal" href="../../conf/proj/#term-PROJ_ELLIPSOID"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> 为球形时才准确</p></li>
+<li><p><strong>DOT</strong> 在点积计算之前对二维向量进行归一化，对于三维向量，则不需要。</p></li>
+<li><p>颜色转换函数，例如 <strong>RGB2HSV</strong> 等，不仅包括 rgb 到 hsv 等三元数的转换，
+还包括 lab 到 sRGB 等四元数的转换</p></li>
+<li><p><strong>DAYNIGHT</strong> 返回一个网格，在给定太阳位置为 (A,B) 时，面向太阳的网格点为 1，
+其他为 0，如果过渡宽度 C 为 0，则结果为 0 和 1 两种，如果 C 不为 0，则使用
+atan 函数近似求解，因此值不为 0 或 1。</p></li>
+<li><p><strong>VPDF</strong> 运算符的输入数据单位为角</p></li>
+<li><p><strong>CUMSUM</strong> 运算符通常在行或者列结束时重置累计的值，使用 ±3 或 ±4 可以使累积
+的值在下一行或者列继续</p></li>
+<li><p>位运算符 <strong>BITAND</strong>，<strong>BITLEFT</strong>，<strong>BITNOT</strong>，<strong>BITOR</strong>，<strong>BITRIGHT</strong>，
+<strong>BITTEST</strong> 和 <strong>BITXOR</strong> 会将网格数据中的单精度数转换为无符号的 32 位整数，
+然后按位运算。因此，可储存在双精度数中的最大整数为 2^24 ，更大的数都会被
+截断。如果被比较的数中包括 NaN ，则最终结果也为 NaN</p></li>
+</ol>
+</section>
+<section id="id7">
+<h2>网格值精度<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>不管输入数据的精度如何，创建网格文件的 GMT 程序将在内部以 4 字节浮点数组的形式保存网格。
+这样做是为了节省内存，而且大多数实际数据都可以使用 4 字节浮点值存储。
+具有更高精度的数据（即双精度值）将在 GMT 操作网格或写入新网格时失去该精度。
+为了限制处理数据时的精度损失，用户应该始终考虑在处理之前对数据进行归一化。</p>
+</section>
+<section id="id8">
+<h2>储存、调用和清除<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>用户可以将中间计算结果储存到一个变量中，并在后续计算中调用该变量。这在需要
+对某部分进行多次重复计算时可以提高效率和可读性。保存结果需要使用特殊的运算符
+<strong>STO</strong>&#64;<em>label</em> ， 其中 <em>label</em> 是变量的名称。调用该变量时，使用
+[<strong>RCL</strong>]&#64;<em>label</em> ， <strong>RCL</strong> 是可选的。使用后要清除该变量，可以使用
+<strong>CLR</strong>&#64;<em>label</em> ， <strong>STO</strong> 和 <strong>CLR</strong> 均不影响计算中的堆栈。</p>
+</section>
+<section id="gshhg">
+<h2>GSHHG 信息<a class="headerlink" href="#gshhg" title="Link to this heading"></a></h2>
+<p>GSHHG (The Global Self-consistent, Hierarchical, High-resolution Geography
+Database) 最初为 GSHHS，是一个海岸线数据库，主要有三个来源：World Vector
+Shorelines (WVS，不包括南极洲), CIA World Data Bank II (WDBII), 和 Atlas of
+the Cryosphere (AC，只包含南极洲)。
+除了南极洲，所有的 1 级多边形（海陆边界）都来自更准确的 WVS，所有的更高级别
+的多边形（2-4 级，湖泊边界、湖中岛边界和湖中岛中湖边界）来自 WDBII。南极洲
+的海岸线有两种：冰盖的边界和陆地的边界，可以使用 <strong>-A</strong> 选项选择。为了将 WVS
+、WDBII 和 AC 数据转换为 GMT 可用的格式，GMT 已经进行了多种处理，包括：由线段
+组建多边形，去重，以及校正多边形之间的交叉等。每个多边形的面积已经被计算出来，
+因此，用户可以自己选择不绘制小于最小面积的多边形，还可以限制绘制的多边形的级别
+，见 <strong>-A</strong> 选项。绘制海岸线时，还可以使用不同的精细程度，其中低分辨率的海岸线
+是由 Douglas-Peucker 算法简化得到的。河流和边界的分类遵循 WDBII。详细细节见
+<a class="reference external" href="https://github.com/GenericMappingTools/gshhg-gmt#readme">GSHHG</a> 。</p>
+</section>
+<section id="id9">
+<h2>点位于多边形内/外<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>为了确定点在多边形内，外或在边界上，GMT 会平衡数据类型以及多边形形状等因素来
+确定算法。对于笛卡尔坐标，GMT 使用 non-zero winding 算法，该算法非常快。对于
+地理坐标，如果多边形不包括两极点且多边形的经度范围不超过 360 度，同样使用该
+算法。否则，GMT 会采用 full spherical ray-shooting 方法。</p>
+</section>
+<section id="id10">
+<h2>宏<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>用户可以将特定的运算符组合保存为宏文件 <em>gmtmath.macros</em> 。文件中可以包含任意
+数量的宏， # 开头的行为注释。宏的格式为</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arg1<span class="w"> </span>arg2<span class="w"> </span>...<span class="w"> </span>arg2<span class="o">[</span><span class="w"> </span>:<span class="w"> </span>comment<span class="o">]</span>
+</pre></div>
+</div>
+<p>其中，<em>name</em> 是宏名，当此运算符出现在命令中时，则将其简单替换为参数列表。宏
+不可以互相调用。下面给出一个宏例子：<strong>INCIRCLE</strong> 宏需要三个参数：半径，x0 和 y0，
+并将在圆内的点设置为 1，外部设置为 0</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">INCIRCLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>CDIST<span class="w"> </span>EXCH<span class="w"> </span>DIV<span class="w"> </span><span class="m">1</span><span class="w"> </span>LE<span class="w"> </span>:<span class="w"> </span>usage:<span class="w"> </span>r<span class="w"> </span>x<span class="w"> </span>y<span class="w"> </span>INCIRCLE<span class="w"> </span>to<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>inside<span class="w"> </span>circl
+</pre></div>
+</div>
+<p>由于在宏中可能使用地理或时间常数，因此可使用 <code class="docutils literal notranslate"><span class="pre">:</span></code> 后加一个空格的形式作为注释的开端。</p>
+</section>
+<section id="id11">
+<h2>示例<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p>计算网格点到北极的距离</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-Rg<span class="w"> </span>-I1<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="nv">SDIST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>dist_to_NP.nc
+</pre></div>
+</div>
+<p>求两个文件的均值以及结果的 log10 函数值</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>file1.nc<span class="w"> </span>file2.nc<span class="w"> </span>ADD<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>MUL<span class="w"> </span><span class="nv">LOG10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>file3.nc
+</pre></div>
+</div>
+<p>给定含有海底地形年代（单位 m.y.）和深度（单位 m）网格文件 <code class="file docutils literal notranslate"><span class="pre">agrs.nc</span></code> ，使用
+公式 depth(单位为 m) = 2500 + 350 * sqrt (age) 估计正常深度</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>ages.nc<span class="w"> </span>SQRT<span class="w"> </span><span class="m">350</span><span class="w"> </span>MUL<span class="w"> </span><span class="m">2500</span><span class="w"> </span><span class="nv">ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>depths.nc
+</pre></div>
+</div>
+<p>从 <code class="file docutils literal notranslate"><span class="pre">s_xx.nc</span></code>，<code class="file docutils literal notranslate"><span class="pre">s_yy.nc</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">s_xy.nc</span></code> 三个文件包含的应力张量中，根据
+tan (2*a) = 2 * s_xy / (s_xx - s_yy) 求出最大主应力的角度，单位为度</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span><span class="m">2</span><span class="w"> </span>s_xy.nc<span class="w"> </span>MUL<span class="w"> </span>s_xx.nc<span class="w"> </span>s_yy.nc<span class="w"> </span>SUB<span class="w"> </span>DIV<span class="w"> </span>ATAN<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="nv">DIV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>direction.nc
+</pre></div>
+</div>
+<p>计算 1 度分辨率的网格上完全正则化的 8 阶 4 次球谐函数，实数和虚数的振幅分别为
+0.4 和 1.1</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-R0/360/-90/90<span class="w"> </span>-I1<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>YLM<span class="w"> </span><span class="m">1</span>.1<span class="w"> </span>MUL<span class="w"> </span>EXCH<span class="w"> </span><span class="m">0</span>.4<span class="w"> </span>MUL<span class="w"> </span><span class="nv">ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>harm.nc
+</pre></div>
+</div>
+<p>提取文件:file:<cite>faa.nc</cite> 中超过 100 mgal 的局部最大值的位置</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>faa.nc<span class="w"> </span>DUP<span class="w"> </span>EXTREMA<span class="w"> </span><span class="m">2</span><span class="w"> </span>EQ<span class="w"> </span>MUL<span class="w"> </span>DUP<span class="w"> </span><span class="m">100</span><span class="w"> </span>GT<span class="w"> </span>MUL<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">NAN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>z.nc
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>z.nc<span class="w"> </span>-s<span class="w"> </span>&gt;<span class="w"> </span>max.xyz
+</pre></div>
+</div>
+<p>变量的使用: consider this radial wave where we store and recall the normalized
+radial arguments in radians</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-R0/10/0/10<span class="w"> </span>-I0.25<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">5</span><span class="w"> </span>CDIST<span class="w"> </span><span class="m">2</span><span class="w"> </span>MUL<span class="w"> </span>PI<span class="w"> </span>MUL<span class="w"> </span><span class="m">5</span><span class="w"> </span>DIV<span class="w"> </span>STO@r<span class="w"> </span>COS<span class="w"> </span>@r<span class="w"> </span>SIN<span class="w"> </span><span class="nv">MUL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>wave.nc
+</pre></div>
+</div>
+<p>创建一个保存 32 位浮点型 GeoTiff 文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-Rd<span class="w"> </span>-I10<span class="w"> </span>X<span class="w"> </span>Y<span class="w"> </span><span class="nv">MUL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>lixo.tiff<span class="o">=</span>gd:GTiff
+</pre></div>
+</div>
+<p>计算地理网格 <code class="file docutils literal notranslate"><span class="pre">data.grd</span></code> 中网格点到 <code class="file docutils literal notranslate"><span class="pre">trace.txt</span></code> 的距离，单位为 km</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-Rdata.grd<span class="w"> </span>trace.txt<span class="w"> </span><span class="nv">LDIST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>dist_from_line.grd
+</pre></div>
+</div>
+<p><strong>-S</strong> 选项的使用：计算所有以 model_*.grd 为名的网格对应节点的标准差</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>model_*.grd<span class="w"> </span>-S<span class="w"> </span><span class="nv">STD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>std_of_models.grd
+</pre></div>
+</div>
+<p>创建 0.5 度分辨率的 geotiff 网格文件，网格值为离海岸线的距离，单位为 km</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-RNO,IS<span class="w"> </span>-Dc<span class="w"> </span>-I.5<span class="w"> </span><span class="nv">LDISTG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>distance.tif<span class="o">=</span>gd:GTIFF
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h2>参考文献<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<p>Abramowitz, M., and I. A. Stegun, 1964, <em>Handbook of Mathematical
+Functions</em>, Applied Mathematics Series, vol. 55, Dover, New York.</p>
+<p>Holmes, S. A., and W. E. Featherstone, 2002, A unified approach to the
+Clenshaw summation and the recursive computation of very high degree and
+order normalized associated Legendre functions. <em>Journal of Geodesy</em>,
+76, 279-299.</p>
+<p>Press, W. H., S. A. Teukolsky, W. T. Vetterling, and B. P. Flannery,
+1992, <em>Numerical Recipes</em>, 2nd edition, Cambridge Univ., New York.</p>
+<p>Spanier, J., and K. B. Oldman, 1987, <em>An Atlas of Functions</em>, Hemisphere
+Publishing Corp.</p>
+</section>
+<section id="id13">
+<h2>相关模块<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../math/"><span class="doc">math</span></a>,
+<a class="reference internal" href="../grd2xyz/"><span class="doc">grd2xyz</span></a>,
+<a class="reference internal" href="../grdedit/"><span class="doc">grdedit</span></a>,
+<a class="reference internal" href="../grdinfo/"><span class="doc">grdinfo</span></a>,
+<a class="reference internal" href="../xyz2grd/"><span class="doc">xyz2grd</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../grdmask/" class="btn btn-neutral float-left" title="grdmask" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../grdpaste/" class="btn btn-neutral float-right" title="grdpaste" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

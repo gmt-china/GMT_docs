@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制三维地形图 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="绘制三维有限断层模型" href="../ex030/" />
+    <link rel="prev" title="绘制地形起伏剖面图" href="../ex026/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../gallery/">社区绘图实例</a></li>
+      <li class="breadcrumb-item active">绘制三维地形图</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/examples/ex029/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/liuzhumei" target="_blank" rel="noopener">刘珠妹</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2024-12-26
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>绘制三维地形图<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p><strong>视频讲解</strong>: <a class="reference external" href="https://www.bilibili.com/video/BV1Xh411e7fi/">https://www.bilibili.com/video/BV1Xh411e7fi/</a></p>
+<p>绘制三维地形图的核心是 <a class="reference internal" href="../../module/grdview/"><span class="doc">grdview</span></a> 模块以及 <strong>-JZ</strong> 选项。
+使用 <strong>-JZ</strong> 选项设置 Z 方向上的缩放比例，同时也必须在 <strong>-R</strong> 选项中设置 Z 方向上的最小值和最大值。
+此外，<strong>-p</strong> 选项用于设置三维观察的视角。</p>
+<p>本例将展示如何绘制三维起伏地形图，并叠加卫星图像图层与地震断层图层，用于对比研究。
+请点击观看视频学习代码的详细讲解。</p>
+<p>示例中使用到的数据包括：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;earth_relief_06m</span></code>：<a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-relief.html">earth_relief</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;earth_day_06m</span></code>：<a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html">earth_day &amp; earth_night</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CN-faults.gmt</span></code>：<a class="reference internal" href="../../dataset/CN-faults/"><span class="doc">CN-faults: 中国断层数据</span></a></p></li>
+</ul>
+<p>下面的绘图脚本将三维地形、卫星图片以及断层线绘制在不同高度：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1"># 将三维地形、卫星图片以及断层线绘制在不同高度</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>3D_earth_relief_1
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_FRAME_TYPE<span class="w"> </span>plain
+<span class="w">    </span><span class="c1"># 1. 绘制地形图形，图层默认位于 z 轴底部（此例中即 -1000 的高度）</span>
+<span class="w">    </span>gmt<span class="w"> </span>grdview<span class="w"> </span>@earth_relief_06m_p<span class="w"> </span>-R101/108/35/42/-1000/20000<span class="w"> </span>-JM10c<span class="w"> </span>-JZ10c<span class="w"> </span>-N-1000+ggray<span class="w"> </span>-Qs<span class="w"> </span>-Cgeo<span class="w"> </span>-I+d<span class="w"> </span>-Ba<span class="w"> </span>-BwsENZ<span class="w"> </span>-p60/25
+<span class="w">    </span>gmt<span class="w"> </span>colorbar<span class="w"> </span>-C<span class="w"> </span>-Ba<span class="w"> </span>-DJTC+o0/1c<span class="w"> </span>-p
+
+<span class="w">    </span><span class="c1"># 2. 绘制断层线图层，-p 设置图层抬高到10000</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>CN-faults.gmt<span class="w"> </span>-W2p,brown<span class="w"> </span>-p60/25/10000<span class="w"> </span>-Ba<span class="w"> </span>-BWSen
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-TdjLT+w1.5c+l+o1c<span class="w"> </span>-p
+
+<span class="w">    </span><span class="c1"># 3. 绘制卫星图片图层，-p 设置图层抬高到20000</span>
+<span class="w">    </span>gmt<span class="w"> </span>grdimage<span class="w"> </span>@earth_day_06m_p<span class="w"> </span>-p60/25/20000<span class="w"> </span>-Ba<span class="w"> </span>-BWSen
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-e807ce94fb9b5a1c664c2373e259c973">
+<a class="reference internal image-reference" href="../../_images/e807ce94fb9b5a1c664c2373e259c973.png"><img alt="../../_images/e807ce94fb9b5a1c664c2373e259c973.png" src="../../_images/e807ce94fb9b5a1c664c2373e259c973.png" style="width: 75%;" />
+</a>
+</figure>
+<p>下面的脚本将卫星图片和断层线直接绘制在三维地形上:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1"># 将卫星图片和断层线直接绘制在三维地形上</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>3D_earth_relief_2
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_FRAME_TYPE<span class="w"> </span>plain
+<span class="w">    </span><span class="c1"># 预处理1：生成断层的三维采样，输出数据为断层的经度、纬度以及对应的地形高程</span>
+<span class="w">    </span><span class="c1"># 断层数据有第三列深度，所以grdtrack默认会将高程输出到第4列，因此需要使用 -o0,1,3 让第三列输出为高程。</span>
+<span class="w">    </span>gmt<span class="w"> </span>grdtrack<span class="w"> </span>-R101/108/35/42<span class="w"> </span>-G@earth_relief_06m_p<span class="w"> </span>CN-faults.gmt<span class="w"> </span>-o0,1,3<span class="w"> </span>&gt;<span class="w"> </span>faults.xyz
+
+<span class="w">    </span><span class="c1"># 绘制卫星图片，-G 表示在 DEM 上贴卫星图片</span>
+<span class="w">    </span>gmt<span class="w"> </span>grdview<span class="w"> </span>@earth_relief_06m_p<span class="w"> </span>-R101/108/35/42/-1000/5000<span class="w"> </span>-JM10c<span class="w"> </span>-JZ4c<span class="w"> </span>-N-1000+ggray<span class="w"> </span>-G@earth_day_06m_p<span class="w"> </span>-Qi<span class="w"> </span>-Ba<span class="w"> </span>-Bz<span class="w"> </span>-BwsENZ<span class="w"> </span>-p60/25
+<span class="w">    </span><span class="c1"># 绘制断层线</span>
+<span class="w">    </span>gmt<span class="w"> </span>plot3d<span class="w"> </span>faults.xyz<span class="w"> </span>-W1p,brown<span class="w"> </span>-p
+<span class="w">    </span><span class="c1"># 绘制指北针</span>
+<span class="w">    </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-TdjLT+w1.5c+l+o1c<span class="w"> </span>-p60/25/2000
+
+<span class="w">    </span>rm<span class="w"> </span>faults.xyz
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-ec16aab28b820f276db8aef0d5cd7326">
+<a class="reference internal image-reference" href="../../_images/ec16aab28b820f276db8aef0d5cd7326.png"><img alt="../../_images/ec16aab28b820f276db8aef0d5cd7326.png" src="../../_images/ec16aab28b820f276db8aef0d5cd7326.png" style="width: 75%;" />
+</a>
+</figure>
+<p>除了 GMT 自带的卫星图像数据以外，读者还可以使用开源工具导出精度更高的谷歌卫星图像，并用于 GMT 绘图。
+导出方法可以参考 <a class="reference internal" href="../ex004/"><span class="doc">以地图和卫星图为底图</span></a> 。
+在下面的例子中，<a class="reference internal" href="../../module/grdview/"><span class="doc">grdview</span></a> 模块将合肥地区卫星图像 <code class="docutils literal notranslate"><span class="pre">Hefei.tiff</span></code> 叠加在三维地形图上，
+绘制出了清晰度更高的图片。卫星图像适用于作图范围较小的情况。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>Hefei<span class="w"> </span>jpg<span class="w"> </span>E600
+<span class="w">    </span>gmt<span class="w"> </span>grdview<span class="w"> </span>@earth_relief_30s<span class="w"> </span>-R117/118/31.4/32/0/2000<span class="w"> </span>-JM10c<span class="w"> </span>-JZ2c<span class="w"> </span>-Qi600<span class="w"> </span>-GHefei.tiff<span class="w"> </span>-p135/15<span class="w"> </span>-Baf
+gmt<span class="w"> </span>end
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/26203721/185333355-a57cdc9b-8327-4721-9304-5867ab3b629a.jpg"><img alt="https://user-images.githubusercontent.com/26203721/185333355-a57cdc9b-8327-4721-9304-5867ab3b629a.jpg" src="https://user-images.githubusercontent.com/26203721/185333355-a57cdc9b-8327-4721-9304-5867ab3b629a.jpg" style="width: 100%;" />
+</a>
+</figure>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../ex026/" class="btn btn-neutral float-left" title="绘制地形起伏剖面图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../ex030/" class="btn btn-neutral float-right" title="绘制三维有限断层模型" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaTeX 表达式 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="矢量/箭头" href="../vector/" />
+    <link rel="prev" title="转义序列" href="../escape-character/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">基础知识</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../canvas/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LaTeX 表达式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-latex">GMT 字体和 LaTeX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">技术细节</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">基础知识</a> &raquo;</li>
+      <li>LaTeX 表达式</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/latex.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="latex">
+<h1>LaTeX 表达式<a class="headerlink" href="#latex" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>绘图过程中，用户可能会需要特殊字符标注或者显示公式。GMT 已经可以实现打印简单的<a class="reference internal" href="../special-character/"><span class="doc">特殊字符</span></a>和<a class="reference internal" href="../escape-character/"><span class="doc">转义序列</span></a>，但如果想实现更加复杂的特殊字符和公式，则需要借助功能强大的 LaTeX。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>GMT 自 6.2 开始支持在文本字符串中嵌入 LaTeX 表达式，这些文本字符串包括使用 <a class="reference internal" href="../../option/B/"><span class="doc">-B 选项</span></a> 在标题、子标题或标签中指定的字符串，也包括通过 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块添加的单行文本。GMT 中 LaTeX 表达式可以用两种不同的写法表示:</p>
+<ol class="arabic simple">
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">&#64;[</span> <span class="pre">...</span> <span class="pre">&#64;[</span></code>，如 <code class="docutils literal notranslate"><span class="pre">Plotting</span> <span class="pre">&#64;[\Delta</span> <span class="pre">\sigma_{xx}^2&#64;[</span></code></p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/math&gt;</span></code>，如 <code class="docutils literal notranslate"><span class="pre">Plotting</span> <span class="pre">&lt;math&gt;\Delta</span> <span class="pre">\sigma_{xx}^2&lt;/math&gt;</span></code></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ol class="arabic simple">
+<li><p>若要在 GMT 6.2 以前的版本使用 LaTeX，请参考 <a class="reference external" href="https://blog.seisman.info/gmt-latex/">https://blog.seisman.info/gmt-latex/</a></p></li>
+<li><p>LaTeX 数学符号可参考：<a class="reference external" href="https://github.com/CTeX-org/lshort-zh-cn">《一份（不太）简短的 LaTeX2ε 介绍》</a>
+中的符号表章节</p></li>
+</ol>
+</div>
+<p>下面展示了一个在 GMT 中使用 LaTeX 表达式的例子</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_latex
+    gmt basemap -R-200/200/0/50 -JX15c/4c <span class="se">\</span>
+        -BSwen+t<span class="s2">&quot;Use &lt;math&gt;\Delta g = 2\pi\rho Gh&lt;/math&gt;&quot;</span> <span class="se">\</span>
+        -Bxaf+l<span class="s2">&quot;@[\nabla^4 \psi - \Delta \sigma_{xx}^2@[ (MPa)&quot;</span>
+    gmt text -F+f15p <span class="s">&lt;&lt; EOF</span>
+<span class="s">0 15 Newton&#39;s integral: &lt;math&gt;V = \int_{v} \frac{\mathrm{d}m}{l}&lt;/math&gt;</span>
+<span class="s">0 30 Euler&#39;s formula: @[e^{ix} = \cos x + i \sin x@[</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-31a558243207ae70cf65c8d8492cde94">
+<a class="reference internal image-reference" href="../../_images/31a558243207ae70cf65c8d8492cde94.png"><img alt="../../_images/31a558243207ae70cf65c8d8492cde94.png" src="../../_images/31a558243207ae70cf65c8d8492cde94.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">在轴标签、标题以及 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块中使用 LaTeX 表达式</span><a class="headerlink" href="#gmtplot-31a558243207ae70cf65c8d8492cde94" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="gmt-latex">
+<h2>GMT 字体和 LaTeX<a class="headerlink" href="#gmt-latex" title="Permalink to this heading"></a></h2>
+<p>LaTeX 是一个庞大且复杂的排版系统，有许多可选包，用户安装的 LaTeX 需包括所有 GMT 必须的包。通过包管理器安装 LaTeX 的方法请见
+<a class="reference external" href="https://github.com/GenericMappingTools/gmt/wiki/Install-LaTeX-for-GMT-LaTeX-Integration">GMT Wiki</a>。其中，GMT 必须的包和字体包括：</p>
+<ul class="simple">
+<li><p>必需包：fontenc 和 inputenc</p></li>
+<li><p>必需字体：helvet、mathptmx、courier、symbol、avantgar、bookman、newcent、mathpazo、zapfchan 和 zapfding</p></li>
+</ul>
+<p>上述必需包已经默认包含在所有的 LaTeX 发行版中，必需字体则可以在终端中执行如下命令安装:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tlmgr install collection-fontsrecommended
+</pre></div>
+</div>
+<p>上述字体列表中的字体均可以匹配 GMT 中的字体。因此，如果用户通过 <a class="reference internal" href="../../conf/font/#term-FONT_TITLE"><span class="xref std std-term">FONT_TITLE</span></a> 修改了标题默认的字体，GMT 将在后台生成的 LaTeX 脚本中把该字体设置为默认字体。这种设置可以确保标题最终渲染的字体和用户设置的字体一致。</p>
+</section>
+<section id="id2">
+<h2>技术细节<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>GMT 中显示 LaTeX 表达式的原理：如果在文本字符串中发现特殊标识（即 <code class="docutils literal notranslate"><span class="pre">&#64;[</span></code> 对或 <code class="docutils literal notranslate"><span class="pre">&lt;math&gt;</span> <span class="pre">&lt;/math&gt;</span></code> 对），GMT 将使用 <code class="docutils literal notranslate"><span class="pre">latex</span></code> 和 <code class="docutils literal notranslate"><span class="pre">dvips</span></code> 命令（需提前安装 LaTeX 环境）把整行转换为 EPS 文件。然后，将该 EPS 文件放置在对应的位置。</p>
+<p>这里通过一个实例来帮助用户排查 LaTeX 安装中可能存在的问题。假设用户使用 <a class="reference internal" href="../../module/basemap/"><span class="doc">basemap</span></a> 制作的图的标题为
+<code class="docutils literal notranslate"><span class="pre">-B+t&quot;Use</span> <span class="pre">&#64;[\Delta</span> <span class="pre">g</span> <span class="pre">=</span> <span class="pre">2\pi\rho</span> <span class="pre">Gh&#64;[&quot;</span></code>。GMT 会为该 LaTeX 表达式创建一个临时目录，其中包含一个名为 <code class="file docutils literal notranslate"><span class="pre">gmt_eq.tex</span></code> 的文件：</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span> <span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>helvet<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\thispagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+<span class="k">\fontfamily</span><span class="nb">{</span>phv<span class="nb">}</span><span class="k">\selectfont</span>
+Use <span class="s">$</span><span class="nv">\Delta</span><span class="nb"> g </span><span class="o">=</span><span class="nb"> </span><span class="m">2</span><span class="nv">\pi\rho</span><span class="nb"> Gh</span><span class="s">$</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<p>由于 <a class="reference internal" href="../../conf/font/#term-FONT_TITLE"><span class="xref std std-term">FONT_TITLE</span></a> 设置为 Helvetica，LaTeX 文件将默认字体修改为
+Helvetica（ <em>helvet</em> 包, 代码为 <em>phv</em> ），该 tex 文件会被转换为 DVI 文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>latex -interaction<span class="o">=</span>nonstopmode gmt_eq.tex &gt; /dev/null
+</pre></div>
+</div>
+<p>接着，进一步将结果转换为 EPS 文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dvips -q -E gmt_eq.dvi -o equation.eps
+</pre></div>
+</div>
+<p>这两个命令通过 <code class="file docutils literal notranslate"><span class="pre">gmt_eq.sh</span></code> 脚本（在 windows 下为 <code class="file docutils literal notranslate"><span class="pre">gmt_eq.bat</span></code>）执行。如果命令成功执行，GMT 将读取 EPS 文件 <code class="file docutils literal notranslate"><span class="pre">equation.eps</span></code> 并放置在标题的位置。如果脚本由于某些原因执行失败，GMT 将报错并指导用户在临时目录中进行进一步排查。此时，用户可以运行 <code class="docutils literal notranslate"><span class="pre">latex</span></code> 命令来查看报错信息（但要去除重定向 <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">/dev/null</span></code>）。通常情况下，报错信息会显示问题出现的原因，即缺少某种字体或其他信息。如果用户不能独立解决报错，请在 <a class="reference external" href="https://github.com/GenericMappingTools/gmt/issues">GMT 官方 GitHub</a>
+上提 issue 并提供 LaTeX 脚本和报错信息。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../escape-character/" class="btn btn-neutral float-left" title="转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../vector/" class="btn btn-neutral float-right" title="矢量/箭头" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

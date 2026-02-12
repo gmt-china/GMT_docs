@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>生成一维数组 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="贡献指南" href="../contributing/" />
+    <link rel="prev" title="经典模式 → 现代模式" href="../migrating/classic2modern/" />
+ 
+
+
+
+
+<link href="../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating/">版本迁移</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">生成一维数组</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">不使用任何子选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b"><strong>+b</strong> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l"><strong>+l</strong> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i"><strong>+i</strong> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#n"><strong>+n</strong> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t"><strong>-T</strong> 后直接加文件或逗号分隔的数列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">时间序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a"><strong>+a</strong> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">生成距离序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e"><strong>+e</strong> 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">生成一维数组</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/array.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2026-01-21
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>生成一维数组<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p><a class="reference internal" href="../module/histogram/"><span class="doc">histogram</span></a>, <a class="reference internal" href="../module/makecpt/"><span class="doc">makecpt</span></a>, <a class="reference internal" href="../module/math/"><span class="doc">math</span></a>, <a class="reference internal" href="../module/movie/"><span class="doc">movie</span></a>, <a class="reference internal" href="../module/regress/"><span class="doc">regress</span></a>,
+<a class="reference internal" href="../module/sample1d/"><span class="doc">sample1d</span></a>, <a class="reference internal" href="../module/talwani2d/"><span class="doc">talwani2d</span></a>, <a class="reference internal" href="../module/batch/"><span class="doc">batch</span></a>, <a class="reference internal" href="../module/earthtide/"><span class="doc">earthtide</span></a>,
+<a class="reference internal" href="../module/filter1d/"><span class="doc">filter1d</span></a>, <a class="reference internal" href="../module/grdinterpolate/"><span class="doc">grdinterpolate</span></a> 这些模块，它们的 <strong>-T</strong> 选项用法相同，都是用来创建一维数组。</p>
+<p>下面将以 <a class="reference internal" href="../module/math/"><span class="doc">math</span></a> 为例，讲解 <strong>-T</strong><em>min/max/inc</em> 的用法（其中大部分操作也可通过linux 中的 seq 命令方便地实现）。</p>
+<section id="id2">
+<h2>不使用任何子选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>生成一个从 <em>min</em> 到 <em>max</em>，步长为 <em>inc</em> 的等间隔数组，例如以 0.1 为步长，生成 3.1 到 4.2 的等间隔数组：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T3.1/4.2/0.1<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">3</span>.1
+<span class="m">3</span>.2
+<span class="m">3</span>.3
+<span class="m">3</span>.4
+<span class="m">3</span>.5
+<span class="m">3</span>.6
+<span class="m">3</span>.7
+...
+</pre></div>
+</div>
+</section>
+<section id="b">
+<h2><strong>+b</strong> 选项<a class="headerlink" href="#b" title="Link to this heading"></a></h2>
+<p>首先对 <em>min</em> 和 <em>max</em> 取 <span class="math notranslate nohighlight">\(\log_2\)</span> ，取整到最近的整数作为新的起点和终点。以 <em>inc</em> 为步长，生成从新的起点到终点的整数序列。
+再以这个整数序列中的每一个数为指数（假设为 <em>n</em> ），计算 <span class="math notranslate nohighlight">\(2^n\)</span> ，生成最终的一维数组。</p>
+<p>例如 <strong>-T</strong>3/20/1+b ，首先计算 <span class="math notranslate nohighlight">\(\log_2 3 \approx 1.58\)</span> 取整为 2 ,以及 <span class="math notranslate nohighlight">\(\log_2 20 \approx 4.32\)</span> 取整为 4 。
+以 1 为步长生成整数序列 <em>2 3 4</em> 。再计算 <span class="math notranslate nohighlight">\(2^2 = 4\)</span> , <span class="math notranslate nohighlight">\(2^3 = 8\)</span> , <span class="math notranslate nohighlight">\(2^4 = 16\)</span> ，最终生成一维数组：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T3/20/1+b<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">4</span>
+<span class="m">8</span>
+<span class="m">16</span>
+</pre></div>
+</div>
+</section>
+<section id="l">
+<h2><strong>+l</strong> 选项<a class="headerlink" href="#l" title="Link to this heading"></a></h2>
+<p><em>min</em> 和 <em>max</em> 为最终生成的一维数组的数据范围。 <em>inc</em> 如果为正数，则只能有 1, 2, 3 三种取值：</p>
+<ul class="simple">
+<li><p>1 ：生成 10 的幂次（1, 10, 100...）。</p></li>
+<li><p>2 ：生成 1-2-5 序列（1, 2, 5, 10, 20, 50, 100...）。</p></li>
+<li><p>3 ：生成 1-9 全序列（1, 2, 3...9, 10, 20...）。</p></li>
+</ul>
+<p>然后再取出 <em>min</em> 和 <em>max</em> 之间的部分作为最终生成的一维数组。</p>
+<p>例如， <strong>-T</strong>7/135/2+l 将生成：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T7/135/2+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">10</span>
+<span class="m">20</span>
+<span class="m">50</span>
+<span class="m">100</span>
+</pre></div>
+</div>
+<p>首先生成完整的 1-2-5 序列： ... 1, 2, 5, <strong>10, 20, 50, 100,</strong> 200, 500 ...。
+... 1, 2, 5（小于7）和 200, 500 ...（大于135）会被排除，而 <strong>10 20 50 100</strong> 为最终生成的一维数组。</p>
+<p>同理， <strong>-T</strong>7/135/1+l 将生成：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T7/135/1+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">10</span>
+<span class="m">100</span>
+</pre></div>
+</div>
+<p><strong>-T</strong>7/135/3+l 将生成：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T7/135/3+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">7</span>
+<span class="m">8</span>
+<span class="m">9</span>
+<span class="m">10</span>
+<span class="m">20</span>
+<span class="m">30</span>
+<span class="m">40</span>
+<span class="m">50</span>
+<span class="m">60</span>
+<span class="m">70</span>
+<span class="m">80</span>
+<span class="m">90</span>
+<span class="m">100</span>
+</pre></div>
+</div>
+<p>如果 <em>inc</em> 为负数，则可以取任意负数值。首先以 0 为中心，生成以 <em>inc</em> 为步长的序列：</p>
+<ul class="simple">
+<li><p>-1 ： ... -4, -3, -2, -1, 0, 1, 2, 3, 4 ...</p></li>
+<li><p>-2 ： ... -8, -6, -4, -2, 0, 2, 4, 6, 8 ...</p></li>
+<li><p>以此类推</p></li>
+</ul>
+<p>再以序列中的每一个元素为指数（假设为 <em>n</em> ），计算 <span class="math notranslate nohighlight">\(10^n\)</span> ，取出 <em>min</em> 和 <em>max</em> 之间的部分作为最终生成的一维数组。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T1e-4/1e4/-2+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">0</span>.0001
+<span class="m">0</span>.01
+<span class="m">1</span>
+<span class="m">100</span>
+<span class="m">10000</span>
+
+$<span class="w"> </span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T1e-16/1e16/-3+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+1e-15
+1e-12
+1e-09
+1e-06
+<span class="m">0</span>.001
+<span class="m">1</span>
+<span class="m">1000</span>
+<span class="m">1000000</span>
+<span class="m">1000000000</span>
+1e+12
+1e+15
+</pre></div>
+</div>
+</section>
+<section id="i">
+<h2><strong>+i</strong> 选项<a class="headerlink" href="#i" title="Link to this heading"></a></h2>
+<p>以 <em>inc</em> 的倒数为步长生成从 <em>min</em> 到 <em>max</em> 的一维数组。
+例如在 <a class="reference internal" href="../module/movie/"><span class="doc">movie</span></a> 中为持续 1 分钟的每秒 24 帧动画设置时间：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T0/60/24+i<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">0</span>
+<span class="m">0</span>.0416666666667
+<span class="m">0</span>.0833333333333
+<span class="m">0</span>.125
+<span class="m">0</span>.166666666667
+...
+<span class="m">60</span>
+</pre></div>
+</div>
+</section>
+<section id="n">
+<h2><strong>+n</strong> 选项<a class="headerlink" href="#n" title="Link to this heading"></a></h2>
+<p><em>inc</em> 表示等间隔一维数组元素的个数。例如以 3.44 和 7.82 为起点和终点，生成长度为 5 的等间隔一维数组：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T3.44/7.82/5+n<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">3</span>.44
+<span class="m">4</span>.535
+<span class="m">5</span>.63
+<span class="m">6</span>.725
+<span class="m">7</span>.82
+</pre></div>
+</div>
+</section>
+<section id="t">
+<h2><strong>-T</strong> 后直接加文件或逗号分隔的数列<a class="headerlink" href="#t" title="Link to this heading"></a></h2>
+<p><strong>-T</strong> 后可以直接加文件名，文件内容即为要生成的一维数组。也可以直接给出逗号分隔的数列，例如前 6 个斐波那契数：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T0,1,1,2,3,5<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">0</span>
+<span class="m">1</span>
+<span class="m">1</span>
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">5</span>
+</pre></div>
+</div>
+<p><strong>注</strong>：(1) 如果需要通过数据集文件传递列表节点但希望被理解为列表（即不进行插值），则必须设置文件头包含字符串 &quot;LIST&quot;。
+(2) 如果文件或者逗号分隔的数列中有重复数字或未排序，可以使用 <strong>+u</strong> 选项去重并排序。
+(3) 如果数列只包含一个值，必须在其后加逗号以表明仍是一个数列，以免被误判为步长。</p>
+</section>
+<section id="id3">
+<h2>时间序列<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>如果模块支持绝对时间序列，在 <em>inc</em> 后分别添加 <strong>y</strong> ，<strong>o</strong> ，<strong>d</strong> ，<strong>h</strong> ， <strong>m</strong>
+和 <strong>s</strong> 表示时间步长的单位为年，月，日，时，分，秒。在其后附加 <strong>+t</strong> 选项，可以进一步强调生成时间序列，也可以不加。</p>
+<p>例如生成表示 2020 年 3 月的前 7 天的时间序列：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T2020-03-01T/2020-03-07T/1d<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">2020</span>-03-01T00:00:00
+<span class="m">2020</span>-03-02T00:00:00
+<span class="m">2020</span>-03-03T00:00:00
+<span class="m">2020</span>-03-04T00:00:00
+<span class="m">2020</span>-03-05T00:00:00
+<span class="m">2020</span>-03-06T00:00:00
+<span class="m">2020</span>-03-07T00:00:00
+</pre></div>
+</div>
+</section>
+<section id="a">
+<h2><strong>+a</strong> 选项<a class="headerlink" href="#a" title="Link to this heading"></a></h2>
+<p>少数模块允许使用 <strong>+a</strong>，该选项不对生成的数列进行运算操作，而是将该数列以列的形式追加到输出表数据。
+类似 linux 中的 paste 命令。</p>
+</section>
+<section id="id4">
+<h2>生成距离序列<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>如果模块允许设置空间距离序列，可以使用输入数据的前两列计算距离，并生成等间距序列。</p>
+<p>在 <em>inc</em> 后分别添加 <strong>d</strong>，<strong>m</strong>，<strong>s</strong>，<strong>e</strong>，<strong>f</strong>，<strong>M</strong>，<strong>n</strong> 和 <strong>u</strong>
+表示距离步长的单位为度，分，秒，米，英尺，公里，英里，海里，测量英尺。参见 <a class="reference internal" href="../option/distcal/"><span class="doc">-j 选项</span></a> 了解计算模式。
+如果为笛卡尔坐标，必须使用特殊单位 <strong>c</strong> 作为距离步长单位。</p>
+</section>
+<section id="e">
+<h2><strong>+e</strong> 选项<a class="headerlink" href="#e" title="Link to this heading"></a></h2>
+<p>如果只给定 <em>inc</em> 而从数据中获取最大值和最小值，则 (<em>max</em> - <em>min</em>)/<em>inc</em> 可能不是整数，GMT 会自动对 <em>inc</em> 进行一定的调整。
+如果不想调整 <em>inc</em> ，则可以使用 <strong>+e</strong> 选项，GMT 会固定最小值，适当调整最大值。</p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../migrating/classic2modern/" class="btn btn-neutral float-left" title="经典模式 → 现代模式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../contributing/" class="btn btn-neutral float-right" title="贡献指南" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

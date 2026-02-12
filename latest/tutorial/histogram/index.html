@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制直方图 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="等间隔数据网格化绘图" href="../xyz2grd/" />
+    <link rel="prev" title="进阶教程" href="../advanced/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/">入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../advanced/">进阶教程</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">绘制直方图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">垂直直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">增加修饰</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">水平直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">百分比直方图</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">等间隔数据网格化绘图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">不等间隔数据插值网格化绘图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configurations/">设置配置参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT 单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT 图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT 子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT 多图模式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../advanced/">进阶教程</a></li>
+      <li class="breadcrumb-item active">绘制直方图</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/tutorial/histogram/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/wangliang1989" target="_blank" rel="noopener">王亮</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-08-25
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>绘制直方图<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>GMT 中 <a class="reference internal" href="../../module/histogram/"><span class="doc">histogram</span></a> 模块用于统计并绘制直方图。
+直方图可以直观地展现样本的分布情况。
+一个直方的宽度表示它的数据范围，长度表示位于该范围内的样本的数量或者比例。</p>
+<p>这一节中，我们通过绘制地震震源深度直方图来介绍直方图的绘制。
+以下示例使用的数据为  <a class="reference download internal" download="" href="../../_downloads/63a7ff01f5c85236ea9a103761f6f4cd/eq.dat"><code class="xref download docutils literal notranslate"><span class="pre">eq.dat</span></code></a>，
+数据包含了三列，分别是地震的经度、纬度和深度。</p>
+<p>直方图根据直方的方向可以分为垂直直方图和水平直方图，也可以根据直方的长度的意义不同
+分为计数直方图和百分比直方图。</p>
+<section id="id2">
+<h2>垂直直方图<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>GMT 中默认绘制垂直直方图。绘制直方图只需要一列数据，而上面的示例数据有三列。
+我们需要使用 <strong>-i2</strong> 选项将输入数据的第三列（GMT 中列号从 0 开始）传递给 <strong>histogram</strong>。</p>
+<p>直接使用下面的命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>map
+<span class="w">    </span>gmt<span class="w"> </span>histogram<span class="w"> </span>eq.dat<span class="w"> </span>-i2
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<p>会得到如下报错信息:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>histogram<span class="w"> </span><span class="o">[</span>ERROR<span class="o">]</span>:<span class="w"> </span>Required<span class="w"> </span>argument<span class="w"> </span><span class="k">for</span><span class="w"> </span>bin<span class="w"> </span>width<span class="w"> </span>not<span class="w"> </span><span class="nb">set</span>
+histogram<span class="w"> </span><span class="o">[</span>ERROR<span class="o">]</span>:<span class="w"> </span>Option<span class="w"> </span>-T:<span class="w"> </span>Must<span class="w"> </span>specify<span class="w"> </span>bin<span class="w"> </span>width
+histogram<span class="w"> </span><span class="o">[</span>ERROR<span class="o">]</span>:<span class="w"> </span>Must<span class="w"> </span>specify<span class="w"> </span>either<span class="w"> </span>fill<span class="w"> </span><span class="o">(</span>-G<span class="o">)</span><span class="w"> </span>or<span class="w"> </span>lookup<span class="w"> </span>colors<span class="w"> </span><span class="o">(</span>-C<span class="o">)</span>,<span class="w"> </span>outline<span class="w"> </span>pen<span class="w"> </span>attributes<span class="w"> </span><span class="o">(</span>-W<span class="o">)</span>,<span class="w"> </span>or<span class="w"> </span>both.
+</pre></div>
+</div>
+<p>报错信息告诉我们，<strong>histogram</strong> 需要使用 <strong>-T</strong> 选项指定直方的宽度。同时还需要
+使用 <strong>-G</strong> 指定直方的填充色，或使用 <strong>-W</strong> 指定直方边框的画笔属性。
+根据错误信息，我们向上面的命令增加了几个额外的选项：</p>
+<ul class="simple">
+<li><p><strong>-T5</strong> 设置了统计时每一个直方的宽度是 5。该选项还可以更灵活地设置直方的最大最小值等属性，
+详见 <a class="reference internal" href="../../module/histogram/"><span class="doc">histogram</span></a> 模块文档</p></li>
+<li><p><strong>-W1p</strong> 设置直方的边框宽度为 1p</p></li>
+<li><p><strong>-Baf</strong> 则为整张图加了一个自动的边框</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>hist1
+<span class="w">   </span>gmt<span class="w"> </span>histogram<span class="w"> </span>eq.dat<span class="w"> </span>-Baf<span class="w"> </span>-T5<span class="w"> </span>-W1p<span class="w"> </span>-i2
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-f5af323cff6c526be924ec7c15e6d720">
+<a class="reference internal image-reference" href="../../_images/f5af323cff6c526be924ec7c15e6d720.png"><img alt="../../_images/f5af323cff6c526be924ec7c15e6d720.png" src="../../_images/f5af323cff6c526be924ec7c15e6d720.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">垂直直方图</span><a class="headerlink" href="#gmtplot-f5af323cff6c526be924ec7c15e6d720" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>由此，我们得到了一张非常简单的直方图。从直方图中我们对数据也有了基本的认识。
+直方图中横轴表示数据中地震深度范围集中在 0-40 千米。</p>
+</section>
+<section id="id3">
+<h2>增加修饰<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>为了让图形更加的美观，我们可以添加一些选项：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>hist2
+<span class="w">   </span>gmt<span class="w"> </span>histogram<span class="w"> </span>eq.dat<span class="w"> </span>-JX15c/9c<span class="w"> </span>-R0/40/0/600<span class="w"> </span>-Bxaf+l<span class="s2">&quot;Depth&quot;</span><span class="w"> </span>-Byaf+l<span class="s2">&quot;Counts&quot;</span><span class="w"> </span>-BWSen<span class="w"> </span>-D<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-T5<span class="w"> </span>-i2
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-48c721d4497593909d05dfa824cb73ad">
+<a class="reference internal image-reference" href="../../_images/48c721d4497593909d05dfa824cb73ad.png"><img alt="../../_images/48c721d4497593909d05dfa824cb73ad.png" src="../../_images/48c721d4497593909d05dfa824cb73ad.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">添加选项的垂直直方图</span><a class="headerlink" href="#gmtplot-48c721d4497593909d05dfa824cb73ad" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>-JX15c/9c</strong> 指定了整张直方图的宽度和高度。若不指定，GMT 会自动指定一个合适的值</p></li>
+<li><p><strong>-R0/40/0/600</strong> 设置了直方图的数据范围。若不指定，<strong>histogram</strong> 会自动确定最适合的数据范围。
+这里我们根据前图的统计结果指定了新的 <strong>-R</strong> 范围</p></li>
+<li><p><strong>-B</strong> 选项用于指定底图边框和坐标轴属性</p></li>
+<li><p><strong>-Gred</strong> 表示为直方填充红色</p></li>
+<li><p><strong>-D</strong> 会在每个直方的上方标注该直方中的数量。该选项还可以接更多的子选项以控制标注的
+位置、字体和角度等</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>水平直方图<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>如果想要绘制水平直方图，只需要增加 <strong>-A</strong> 选项。
+需要注意的是，尽管水平直方图中横轴是地震数量，纵轴是地震深度，<strong>-R</strong> 选项中依然是
+深度在前、统计值在后，即与垂直直方图时保持一致。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>hist3
+<span class="w">   </span>gmt<span class="w"> </span>histogram<span class="w"> </span>eq.dat<span class="w"> </span>-JX15c/9c<span class="w"> </span>-R0/40/0/600<span class="w"> </span>-Bxaf+l<span class="s2">&quot;Depth&quot;</span><span class="w"> </span>-Byaf+l<span class="s2">&quot;Counts&quot;</span><span class="w"> </span>-BWSen<span class="w"> </span>-A<span class="w"> </span>-D<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-T5<span class="w"> </span>-i2
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-f20b38ec1cb8ac6b16175d20d8e0dc52">
+<a class="reference internal image-reference" href="../../_images/f20b38ec1cb8ac6b16175d20d8e0dc52.png"><img alt="../../_images/f20b38ec1cb8ac6b16175d20d8e0dc52.png" src="../../_images/f20b38ec1cb8ac6b16175d20d8e0dc52.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">水平直方图</span><a class="headerlink" href="#gmtplot-f20b38ec1cb8ac6b16175d20d8e0dc52" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
+<h2>百分比直方图<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p><strong>histogram</strong> 的 <strong>-Z</strong> 选项可以进一步控制统计图的类型。默认纵轴为统计数目。
+<strong>-Z1</strong> 表示绘制百分比直方图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>hist4
+<span class="w">   </span>gmt<span class="w"> </span>histogram<span class="w"> </span>eq.dat<span class="w"> </span>-JX15c/9c<span class="w"> </span>-Bxaf+l<span class="s2">&quot;Depth&quot;</span><span class="w"> </span>-Byaf+l<span class="s2">&quot;Counts&quot;</span>+u<span class="s2">&quot;%&quot;</span><span class="w"> </span>-BWSen<span class="w"> </span>-Z1<span class="w"> </span>-W1p<span class="w"> </span>-Gred<span class="w"> </span>-T5<span class="w"> </span>-i2
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-4ed65133e0a06cf03ee4e8af499bafa9">
+<a class="reference internal image-reference" href="../../_images/4ed65133e0a06cf03ee4e8af499bafa9.png"><img alt="../../_images/4ed65133e0a06cf03ee4e8af499bafa9.png" src="../../_images/4ed65133e0a06cf03ee4e8af499bafa9.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">添加选项的垂直直方图</span><a class="headerlink" href="#gmtplot-4ed65133e0a06cf03ee4e8af499bafa9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>这个命令中，由于纵轴的含义变了，之前的 <strong>-R</strong> 选项就不再合适了，因而我们去除了
+<strong>-R</strong> 选项让 GMT 自动确定最佳数据范围。</p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../advanced/" class="btn btn-neutral float-left" title="进阶教程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../xyz2grd/" class="btn btn-neutral float-right" title="等间隔数据网格化绘图" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

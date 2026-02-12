@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>矢量/箭头 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="线条属性" href="../line/" />
+    <link rel="prev" title="转义序列" href="../escape-character/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">GMT基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">矢量/箭头</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">矢量头位置及形状</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">矢量头线条颜色和填充色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">其它属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">矢量类型及输入数据格式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">笛卡尔矢量和地理矢量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">圆弧矢量</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">GMT基础</a> &raquo;</li>
+        
+      <li>矢量/箭头</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/vector.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>矢量/箭头<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>矢量是一个有大小和方向的量，通常用箭头↗ 表征矢量。一个矢量由两个独立的部分组成：矢量线和矢量头。矢量线与一般的线没有区别，通常由画笔属性（<a class="reference internal" href="../pen/"><span class="doc">画笔</span></a>）控制。这一节则主要介绍矢量头的属性及控制方式。</p>
+<p>GMT 中能够绘制矢量的模块有
+<a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>、
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.1/plot3d.html" title="(在 GMT v6.1)"><span>plot3d</span></a>、
+<a class="reference internal" href="../../module/grdvector/"><span class="doc">grdvector</span></a>、
+<a class="reference internal" href="../../module/velo/"><span class="doc">velo</span></a> 等。其中最常见的绘制矢量的模块是 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>。</p>
+<p>下面的命令使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 的 <strong>-Sv</strong> 选项绘制了一个最简单的矢量。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">3</span> <span class="p">|</span> gmt plot -R0/5/0/2 -JX5c/2c -Sv0.5c+e -W1.5p -Gred -png vector
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/vector-gmtplot-0.png" src="../../_images/vector-gmtplot-0.png" />
+</div>
+<p>接下来将介绍如何通过在 <strong>-Sv0.5c</strong> 后增加更多的子选项来进一步修改矢量头的属性。</p>
+<div class="section" id="id2">
+<h2>矢量头位置及形状<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在绘制矢量时，默认只绘制矢量线而不绘制矢量头。下面的几个子选项用于指定矢量头的位置以及形状：</p>
+<ul>
+<li><p><strong>+b</strong>[<strong>t</strong>|<strong>c</strong>|<strong>a</strong>|<strong>A</strong>|<strong>i</strong>|<strong>I</strong>][<strong>l</strong>|<strong>r</strong>]：在矢量线的起点加上矢量头</p></li>
+<li><p><strong>+e</strong>[<strong>t</strong>|<strong>c</strong>|<strong>a</strong>|<strong>A</strong>|<strong>i</strong>|<strong>I</strong>][<strong>l</strong>|<strong>r</strong>]：在矢量线的终点加上矢量头</p></li>
+<li><p><strong>+m</strong>[<strong>f</strong>|<strong>r</strong>][<strong>t</strong>|<strong>c</strong>|<strong>a</strong>][<strong>l</strong>|<strong>r</strong>]：在矢量线的中间加上矢量头</p>
+<blockquote>
+<div><p><strong>t</strong>|<strong>c</strong>|<strong>a</strong>|<strong>A</strong>|<strong>i</strong>|<strong>I</strong> 用于控制矢量头的形状。取不同值所对应的矢量头形状如下图所示：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/52740aa879543e349386cbf965a4df96/vector-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/vector-gmtplot-1.png" src="../../_images/vector-gmtplot-1.png" />
+</div>
+<ul class="simple">
+<li><p><strong>l</strong>|<strong>r</strong> 表示只绘制矢量头的左半边或右半边（默认两边都绘制）。其中左定义为从矢量起点看向终点时的左侧</p></li>
+<li><p><strong>f</strong>|<strong>r</strong> 在 <strong>+m</strong> 中用于指定矢量头的方向沿着正方向或逆方向（默认为正方向，即从起点指向终点）</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><strong>+m</strong> 不能与 <strong>+b</strong> 或 <strong>+e</strong> 一起使用</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>+l</strong> 只绘制左半个矢量头</p></li>
+<li><p><strong>+r</strong> 只绘制右半个矢量头</p></li>
+<li><p><strong>+a</strong><em>angle</em> 用于控制矢量箭头的顶端的夹角，默认值为30度。若矢量头形状为 <strong>t</strong> 或 <strong>c</strong>
+则表示端点线或端点圆圈的大小</p></li>
+<li><p><strong>+h</strong><em>shape</em> 进一步控制矢量头 <strong>a</strong> 的形状，其中 <em>shape</em> 可以取-2到2之间的值。设置该子选项的值等效于修改参数 <a class="reference internal" href="../../conf/map/#term-MAP_VECTOR_SHAPE"><span class="xref std std-term">MAP_VECTOR_SHAPE</span></a> （默认值为0）</p>
+<p>下面展示了 <strong>+h</strong> 后取不同值的矢量箭头的形状：</p>
+<blockquote>
+<div><p><a class="reference download internal" download="" href="../../_downloads/9296d2091e7c10572e785441cc9a5487/vector-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/vector-gmtplot-2.png" src="../../_images/vector-gmtplot-2.png" />
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>矢量头线条颜色和填充色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，<strong>-W</strong>选项同时控制矢量线和矢量头的画笔属性，<strong>-G</strong> 选项则控制矢量头的填充色。下面两个子选项可以单独控制矢量头的画笔属性和填充色。</p>
+<ul class="simple">
+<li><p><strong>+p</strong>[<em>pen</em>] 设置矢量头的画笔属性。若不指定 <em>pen</em> 则表示不绘制矢量头的轮廓</p></li>
+<li><p><strong>+g</strong>[<em>fill</em>] 设置矢量头的填充色。若不指定 <em>fill</em> 则表示不填充</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>其它属性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>还可以使用如下子选项进一步控制矢量头的属性：</p>
+<ul class="simple">
+<li><p><strong>+n</strong><em>norm</em> 默认情况下，矢量头的大小不随着矢量线的长度变化而变化，这可能会出现矢量线很短而矢量头过大，或者矢量线很长而矢量头过小的情况。该子选项使得矢量长度小于 <em>norm</em> 时，矢量头的属性（画笔宽度，箭头大小）会根据矢量长度按照 <em>length</em>/<em>norm</em> 缩放。对于笛卡尔矢量，<em>norm</em> 使用绘图单位；对于地理矢量，<em>norm</em> 可以使用距离单位。</p></li>
+<li><p><strong>+t</strong>[<strong>b</strong>|<strong>e</strong>]<em>trim</em> 用于增加或缩短矢量线首端或尾端的长度。其中 <strong>b</strong> 表示首端，<strong>e</strong> 表示尾端。
+<em>trim</em> 为正值表示缩短矢量线，为负值表示增长矢量线。也可以直接使用 <strong>+t</strong><em>trim1</em>/<em>trim2</em> 分别为首端和尾端指定增长/缩短量。</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>矢量类型及输入数据格式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>GMT提供了三类矢量：</p>
+<ul class="simple">
+<li><p>笛卡尔矢量：矢量起点到终点的矢量线以直线方式连接</p></li>
+<li><p>地理矢量：矢量起点到终点之间的矢量线以大圆弧路径连接</p></li>
+<li><p>弧形矢量：矢量线是以某一点为中心的一段圆弧</p></li>
+</ul>
+<p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块中：</p>
+<ul class="simple">
+<li><p><strong>-Sv</strong> 或 <strong>-SV</strong> 用于绘制笛卡尔矢量</p></li>
+<li><p><strong>-S=</strong> 用于绘制地理矢量</p></li>
+<li><p><strong>-Sm</strong> 用于绘制弧形矢量</p></li>
+</ul>
+<p>下面的例子分别绘制了三种矢量：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin arrows pdf,png
+<span class="c1"># 笛卡尔矢量</span>
+<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">1</span>.5 <span class="m">4</span>.5 <span class="m">1</span>.5 <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred
+<span class="c1"># 地理矢量</span>
+<span class="nb">echo</span> <span class="m">10</span> -35 <span class="m">90</span> <span class="m">8000</span> <span class="p">|</span> gmt plot -R0/90/-41.17/41.17 -JM1.75i -S<span class="o">=</span><span class="m">0</span>.2i+b+e -W1.5p -Gred -X2i
+<span class="c1"># 弧形矢量</span>
+<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">0</span>.5 <span class="m">0</span>.9i <span class="m">0</span> <span class="m">90</span> <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sm0.2i+b+e -W1.5p -Gred -X2i
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/vector-gmtplot-3.png" src="../../_images/vector-gmtplot-3.png" />
+<p class="caption"><span class="caption-text">三种矢量：（左）笛卡尔矢量；（中）地理矢量；（右）弧形矢量</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
+</div>
+<div class="section" id="id6">
+<h3>笛卡尔矢量和地理矢量<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>对于笛卡尔矢量和地理矢量，输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X    Y    angle  length
+</pre></div>
+</div>
+<p>其中X和Y是矢量起点坐标，<em>angle</em> 为矢量方向（相对于水平方向逆时针旋转的角度或相对于北向顺时针的方位角），<em>length</em> 为矢量线长度（长度单位为 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 或km）。</p>
+<p>使用如下子选项则可以指定其它输入数据格式：</p>
+<ul class="simple">
+<li><p><strong>+s</strong> 表示将输入数据的中的 <em>angle</em> 和 <em>length</em> 解释为矢量的终点坐标</p></li>
+<li><p><strong>+j</strong>[<strong>b</strong>|<strong>c</strong>|<strong>e</strong>] 表示将输入数据中的X和Y坐标解释为矢量的起点坐标、中点坐标或终点坐标</p></li>
+</ul>
+<p>对于地理矢量，还可以使用如下选项：</p>
+<ul class="simple">
+<li><p><strong>+q</strong> 表明输入数据中的 <em>angle</em> 和 <em>length</em> 表示相对于某个指定极点的大圆路径的起始和结束的角度。该极点默认为北极，可以使用 <strong>+o</strong> 修改该点的位置</p></li>
+<li><p><strong>+o</strong><em>plon</em>/<em>plat</em> 用于指定 <strong>+q</strong> 中大圆路径中的倾斜极点</p></li>
+</ul>
+<p>对于笛卡尔矢量而言，还可以使用：</p>
+<ul class="simple">
+<li><p><strong>+z</strong><em>scale</em> 表示输入数据中的 <em>angle</em> 和 <em>length</em> 被解释为矢量的X分量dx和Y分量dy，然后计算出对应的极坐标下的方向和长度，并将矢量长度乘以 <em>scale</em></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>圆弧矢量<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>对于圆弧矢量，输入数据中需要给定圆弧对应的圆心坐标、半径，以及圆弧起始和结束的角度，即:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   radius  angle0  angle1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../line/" class="btn btn-neutral float-right" title="线条属性" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../escape-character/" class="btn btn-neutral float-left" title="转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

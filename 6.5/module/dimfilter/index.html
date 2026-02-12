@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dimfilter &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="docs" href="../docs/" />
+    <link rel="prev" title="coupe" href="../coupe/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dimfilter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">地理坐标和时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">脚本模版</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">dimfilter</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/dimfilter.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+  
+  <span class="target" id="index-0"></span><section id="dimfilter">
+<h1>dimfilter<a class="headerlink" href="#dimfilter" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a></p>
+</dd>
+<dt class="field-even">最近更新日期<span class="colon">:</span></dt>
+<dd class="field-even"><p>2022-07-16</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/dimfilter.html" title="（在 GMT v6.5）"><span>dimfilter</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>在空间域对网格进行方向中值（DIrectional Median, DIM）滤波</p>
+</dd>
+</dl>
+<p><strong>dimfilter</strong> 对空间域（或时间域）中的网格滤波。该模块将滤波范围（圆）划分
+为多个扇区，对每个扇区进行一级或者二级滤波，并根据二级滤波选择最终的结果。
+这种划分多个扇区的做法与普通中值滤波的区别在于可以避免在具有一定倾斜趋势的
+区域中某些特征（以对海底地形滤波为例，特征可能为海山）导致的中值偏离的情况。
+输出网格可以使用 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 进行裁剪，或者使用 <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> 设置新的网格间隔；裁剪可以避
+免边缘效应。<a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> 选项用于误差分析模式并且输入文件中包含滤波深度。
+<strong>dimfilter</strong> 不会向其他滤波一样产生平滑的输出，因为其返回 N 个扇区中的 N
+个中值中的最小值。除非数据数据中无噪声，否则输出结果可能很不平滑。因此，通
+常建议对网格进行一次额外的滤波（例如，使用 <a class="reference internal" href="../grdfilter/"><span class="doc">grdfilter</span></a> ）。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt dimfilter</strong> <em>ingrid</em>
+<a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><em>0-4</em>
+<a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong><strong>x</strong><em>width</em>[<em>modifier</em>]
+<a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><em>outgrid</em>
+<a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><strong>x</strong><em>sectors</em>[<em>modifier</em>]
+[ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> ]
+[ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong><em>increment</em> ]
+[ <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-f</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#f-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-h</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#h-full" title="（在 GMT v6.5）"><span class="xref std std-ref">headers</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><em>ingrid</em>[=<em>ID</em>|?<em>varname</em>][<strong>+b</strong><em>band</em>][<strong>+d</strong><em>divisor</em>][<strong>+n</strong><em>invalid</em>][<strong>+o</strong><em>offset</em>][<strong>+s</strong><em>scale</em>]</p>
+<blockquote>
+<div><p>输入网格名。通过追加 =<em>ID</em> 可指定 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a> [默认为 =nf]；
+追加 ?<em>varname</em> 可指定 NetCDF 变量 [默认为 GMT 找到的第一个 2-D 网格]。
+对网格追加子选项可进行额外设置：</p>
+<ul class="simple">
+<li><p><strong>+b</strong> 选取一个波段 <em>band</em>（仅用于图片）[默认为 0]</p></li>
+<li><p><strong>+d</strong> 将网格除以一个数 <em>divisor</em> [默认为 1]</p></li>
+<li><p><strong>+n</strong> 将网格中的 <em>invalid</em> 替换为 NaN</p></li>
+<li><p><strong>+o</strong> 将网格中的值进行一定的偏移，即加一个数 <em>offset</em> [默认为 0]</p></li>
+<li><p><strong>+s</strong> 将网格中的值缩放，即乘以 <em>scale</em> [默认为 1]</p></li>
+</ul>
+<p><strong>注</strong> ：<em>offset</em> 操作位于 <em>scale</em> 之前。</p>
+</div></blockquote>
+<dl id="d">
+<dt><strong>-D</strong><em>flag</em></dt><dd><p>距离 <em>flag</em> 用来设置滤波相关的宽度的单位和类型等信息：</p>
+<ul class="simple">
+<li><p><em>flag</em> = 0 ：网格(x,y) 的单位和 <em>width</em> 相同，使用笛卡尔距离</p></li>
+<li><p><em>flag</em> = 1 ：网格(x,y) 的单位为度，<em>width</em> 单位为千米，使用笛卡尔距离</p></li>
+<li><p><em>flag</em> = 2 ：网格(x,y) 的单位为度，<em>width</em> 单位为千米，dx 乘以 cos(lat)，
+lat 为所有纬度中值，使用笛卡尔距离</p></li>
+</ul>
+<p>上述计算都狠快，因为只需计算一次权重矩阵。下面的三个选项相对较慢，因为对于
+每个纬度都需重新计算权重矩阵</p>
+<ul class="simple">
+<li><p><em>flag</em> = 3 ：网格(x,y) 的单位为度，<em>width</em> 单位为千米，dx 乘以 cos(lat)，
+lat 为对应的纬度，使用笛卡尔距离</p></li>
+<li><p><em>flag</em> = 4 ：网格(x,y) 的单位为度，<em>width</em> 单位为千米，使用球面距离计</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="f">
+<dt><strong>-F</strong><strong>x</strong><em>width</em>[<strong>+l</strong>|<strong>u</strong>]</dt><dd><p>设置一级滤波类型，可从卷积和非卷积滤波中选择。<strong>x</strong> 为滤波类型代码，后面的
+<em>width</em> 为滤波直径。</p>
+<p>其中卷积滤波对应的代码包括：</p>
+<ul class="simple">
+<li><p><strong>b</strong> ：Boxcar，即滤波窗口内所有点等权</p></li>
+<li><p><strong>c</strong> ：Cosine Arch，滤波窗口内的权中为 Cosin 曲线</p></li>
+<li><p><strong>g</strong> ：Gaussion，权重通过高斯函数给出</p></li>
+</ul>
+<p>非卷积滤波对应的代码包括：</p>
+<ul class="simple">
+<li><p><strong>m</strong> ：Median，返回中值</p></li>
+<li><p><strong>p</strong> ：Maximum likelihood probability （一种众数估计），返回众数；
+如果存在多个众数，则返回其平均数。追加 <strong>+l</strong> 和 <strong>+u</strong> 可分别选择
+多个众数中的最小值和最大值</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="n">
+<dt><strong>-N</strong><strong>x</strong><em>sectors</em>[<strong>+l</strong>|<strong>u</strong>]</dt><dd><p>设置二级滤波类型，以及扇区的个数 <em>sectors</em> ，扇区个数必须为整数并大于
+0；当扇区格式为 0 时，则不使用二级滤波。</p>
+<p>其中滤波对应的代码包括：</p>
+<ul class="simple">
+<li><p><strong>l</strong> ：返回最小值</p></li>
+<li><p><strong>u</strong> ：返回最大值</p></li>
+<li><p><strong>a</strong> ：返回平均值</p></li>
+<li><p><strong>m</strong> ：Median，返回中值；</p></li>
+<li><p><strong>p</strong> ：Maximum likelihood probability （一种众数估计），返回众数；
+如果存在多个众数，则返回其平均数。追加 <strong>+l</strong> 和 <strong>+u</strong> 可分别选择
+多个众数中的最小值和最大值</p></li>
+</ul>
+</dd>
+</dl>
+<p id="g"><strong>-G</strong><em>outgrid</em>[=<em>ID</em>][<strong>+d</strong><em>divisor</em>][<strong>+n</strong><em>invalid</em>][<strong>+o</strong><em>offset</em>|<strong>a</strong>][<strong>+s</strong><em>scale</em>|<strong>a</strong>][:<em>driver</em>[<em>dataType</em>][<strong>+c</strong><em>options</em>]]</p>
+<blockquote>
+<div><p>输出网格文件名。通过追加 =<em>ID</em> 可指定 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a>。
+对网格追加子选项可进行额外设置：</p>
+<ul class="simple">
+<li><p><strong>+d</strong> 将网格除以一个数 <em>divisor</em> [默认为 1]</p></li>
+<li><p><strong>+n</strong> 将网格中的 <em>invalid</em> 替换为 NaN</p></li>
+<li><p><strong>+o</strong> 将网格中的值进行一定的偏移，即加一个数 <em>offset</em>，或使用 <strong>a</strong> 自动对值
+进行调整以保证整数网格的精度 [默认为 0]</p></li>
+<li><p><strong>+s</strong> 将网格中的值缩放，即乘以 <em>scale</em>，或使用 <strong>a</strong> 自动对网格缩放以保证整数
+网格的精度 [默认为 1]</p></li>
+</ul>
+<p><strong>注</strong> ：<em>offset</em> 操作位于 <em>scale</em> 之前；<strong>+sa</strong> 将会同时设置 <strong>+oa</strong>。如果需
+使用 GDAL 指定网格格式，则 <em>ID</em> 应设置为 <em>gd</em>，并指定 :<em>driver</em> 和可选的数据
+类型 <em>dataType</em>，以及 <strong>+c</strong><em>options</em> 选项传递给 GDAL 的 <strong>-co</strong> 选项。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p>指定X和Y方向的网格间隔</p>
+<ul class="simple">
+<li><p><em>xinc</em> 和 <em>yinc</em> 为 X 和 Y 方向的网格间隔。对于地理坐标，可以指定网格间隔单位 [默认单位为度]</p></li>
+<li><p><strong>+e</strong> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调
+网格间隔以适应给定的数据范围）</p></li>
+<li><p><strong>+n</strong> 表明 <em>xinc</em> 和 <em>yinc</em> 不是网格间隔，而是X和Y方向的节点数。
+此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</p></li>
+</ul>
+<p>注意：</p>
+<ul class="simple">
+<li><p>若 <em>yinc</em> 设置为0，则表示其与 <em>xinc</em> 相同</p></li>
+<li><p>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，
+此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="l">
+<dt><strong>-L</strong></dt><dd><p>使用此选项将 dim.template.sh 脚本内容写到标准输出，不与其他选项组合使用</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围。</p>
+</dd>
+</dl>
+<dl class="simple" id="t">
+<dt><strong>-T</strong></dt><dd><p>转换输出网格的配准方式，使其与输入网格相反</p>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>该模式输入数据不是常见的网格格式，而是 <a class="reference internal" href="../grd2xyz/"><span class="doc">grd2xyz</span></a> 的 <strong>-Z</strong>
+选项输出的形式作为输入。使用该模式输出的结果为均值，MAD 以及中值，
+可用于进一步的误差分析，可见 <a class="reference internal" href="#id7">脚本模版</a></p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt><dd><p>指定输入或输出列的数据类型</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>地理坐标和时间坐标<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>当输出文件为 netCDF 格式时，根据输入数据、网格或者 <strong>-f</strong> 以及 <strong>-R</strong>
+选项，会自动将输出坐标命名为“longitute”，“lattitude” 或者 “time”。例如：
+<strong>-f0x</strong> <strong>-f1t</strong> 和 <strong>-R</strong>90w/90e/0t/3t 都会生成 longitude/time 网格。
+当 x，y 或者 z 坐标为时间时，在网格中将会存储为相对时间，其相对于
+<a class="reference internal" href="../../conf/time/#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a> 和 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 指定的历元。其中时间变量的单位
+属性将会默认与上述两个参数一致。</p>
+</section>
+<section id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>远程文件 &#64;earth_relief_05m 是一个 5 分分辨率的测深网格，对其使用 300
+km 半径的中值滤波，设定范围为 150E ~ 250E，10N ~ 40N，输出结果分辨率
+为 0.5 度。为了防止中值被地形坡度影响，将滤波窗口划分为 6 个扇形，从
+6 个扇形中的中值中选择最小值，使用球面距离计算</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>dimfilter<span class="w"> </span>@earth_relief_05m<span class="w"> </span>-Gfiltered_pacific.nc<span class="w"> </span>-Fm600<span class="w"> </span>-D4<span class="w"> </span>-Nl6<span class="w"> </span>-R150/250/10/40<span class="w"> </span>-I0.5<span class="w"> </span>-V
+</pre></div>
+</div>
+<p>假定文件 cape_verde.nc 是一个范围为 32W ~ 15W，8N ~ 25N，分辨率为 0.5
+分才到测深文件，如果要去除该文件中的小尺度特征以观察 swell，为防止边缘
+效应的影响，将输出结果限定为 27.5W ~ 20.5W，12.5N ~ 19.5N，分辨率为 2
+分。使用笛卡尔距离计算</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>dimfilter<span class="w"> </span>cape_verde.nc<span class="w"> </span>-Gt.nc<span class="w"> </span>-Fm220<span class="w"> </span>-Nl8<span class="w"> </span>-D2<span class="w"> </span>-R-27.5/-20.5/12.5/19.5<span class="w"> </span>-I2m<span class="w"> </span>-V
+gmt<span class="w"> </span>grdfilter<span class="w"> </span>t.nc<span class="w"> </span>-Gcape_swell.nc<span class="w"> </span>-Fg50<span class="w"> </span>-D2<span class="w"> </span>-V
+</pre></div>
+</div>
+<p>假定对某一区域的测深文件进行一系列的滤波，结果为 fxxx.nc，其中 xxx 表示
+滤波半径，可对这一系列文件进行趋势分析，并得到每个点的 MAD(median absolute
+devuation)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f100.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f100.txt
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f110.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f110.txt
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f120.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f120.txt
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f130.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f130.txt
+paste<span class="w"> </span>f100.txt<span class="w"> </span>f110.txt<span class="w"> </span>f120.txt<span class="w"> </span>f130.txt<span class="w"> </span>&gt;<span class="w"> </span>depths.txt
+gmt<span class="w"> </span>dimfilter<span class="w"> </span>depths.txt<span class="w"> </span>-Q<span class="w"> </span>&gt;<span class="w"> </span>output.z
+</pre></div>
+</div>
+<p>上述 <strong>paste</strong> 为 Unix/Linux 命令，用于在水平方向合并多个文件。</p>
+</section>
+<section id="id6">
+<h2>注意事项<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>当输入为地理坐标网格时，卷积滤波都会对滤波权重进行归一化，以使用滤波
+窗口大小的随纬度的变化。并能在跨越 360 度或者包含极点时进行正确的处理。
+但是非卷积滤波器，不使用权重，因此只能在笛卡尔坐标网格使用。如果要使用
+这些滤波，则应先进行投影后使用。</p>
+</section>
+<section id="id7">
+<h2>脚本模版<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>dim.template.sh 是一个脚本框架，可在其中进行完整的 dim 分析，包括 MAD 分析，
+通过 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 选项可以获取。</p>
+</section>
+<section id="id8">
+<h2>参考文献<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>Kim, S.-S., and Wessel, P. (2008), Directional Median Filtering for
+Regional-Residual Separation of Bathymetry, <em>Geochem. Geophys.
+Geosyst.</em>, <strong>9</strong>, Q03005, <a class="reference external" href="https://doi.org/10.1029/2007GC001850">https://doi.org/10.1029/2007GC001850</a>.</p>
+</section>
+<section id="id9">
+<h2>相关模块<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grdfilter/"><span class="doc">grdfilter</span></a></p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../coupe/" class="btn btn-neutral float-left" title="coupe" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../docs/" class="btn btn-neutral float-right" title="docs" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

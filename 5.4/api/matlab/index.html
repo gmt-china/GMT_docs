@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>15.2 GMT Matlab API &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/api/matlab.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="15.3 GMT Julia API" href="../julia/" />
+    <link rel="prev" title="15.1 GMT C API" href="../c/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">15 API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../c/">15.1 GMT C API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15.2 GMT Matlab API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">15.2.1 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">15.2.2 安装</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows平台</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macos">macOS 平台</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unix-linux">Unix/Linux平台</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">15.2.3 使用方法</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">入门级示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">进阶级示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">高手级示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">大神级示例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">15.2.4 常见问题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/">15.3 GMT Julia API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">15 API</a> &raquo;</li>
+        
+      <li>15.2 GMT Matlab API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/api/matlab.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gmt-matlab-api">
+<h1>15.2 GMT Matlab API<a class="headerlink" href="#gmt-matlab-api" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>15.2.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GMT的Matlab接口，顾名思义，提供了在Matlab中调用GMT命令的功能。通过该接口，GMT的所有模块命令都可以在Matlab脚本中嵌入执行。GMT命令生成的结果（grid格网数据、table表格数据、CPT颜色表、文本文件、图片等）都可以作为Matlab变量进行运算；Matlab中的矩阵变量也可以直接作为GMT的输入。</p>
+<p>GMT/MATLAB工具包用户请引用如下文章:</p>
+<p>Wessel, P., and J. F. Luis
+The GMT/MATLAB Toolbox,
+<em>Geochem. Geophys. Geosyst.</em>, <strong>18(2)</strong>, 811-823, 2017.
+<a class="reference external" href="http://dx.doi.org/10.1002/2016GC006723">doi:10.1002/2016GC006723</a>.</p>
+</div>
+<div class="section" id="id2">
+<h2>15.2.2 安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="windows">
+<h3>Windows平台<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h3>
+<p>GMT5.3以后的用户在GMT执行路径（默认为 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt5\bin</span></code> ）下已经存在 <code class="docutils literal notranslate"><span class="pre">gmt.m</span></code>
+和 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexw64|32</span></code> 两个文件，只要确保如下两点即可在Windows下使用该接口了。</p>
+<ul class="simple">
+<li>GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；</li>
+<li>GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。</li>
+</ul>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/Matlab_path.png"><img alt="../../_images/Matlab_path.png" src="../../_images/Matlab_path.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Matlab PATH 设置</span></p>
+</div>
+<p>测试安装是否正确：在Matlab的命令行窗口直接敲入 <code class="docutils literal notranslate"><span class="pre">gmt</span></code>，若出现GMT的版本及使用方法介绍，则安装成功。</p>
+</div>
+<div class="section" id="macos">
+<h3>macOS 平台<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h3>
+<p>在macOS上按照如下流程可以成功编译GMT的Matlab接口。但由于Matlab处理动态链接库的方式很特别，因而该接口可能不太稳定。GMT开发者正试图与MathWorks合作以解决这个问题，将来以下编译方法可能会修改：</p>
+<ol class="arabic">
+<li><p class="first">安装macOS平台下最新版本的GMT；</p>
+</li>
+<li><p class="first">运行安装目录下 <code class="docutils literal notranslate"><span class="pre">share/tools</span></code> 下的 <code class="docutils literal notranslate"><span class="pre">gmt_prepmex.sh</span></code> 文件。此操作会复制GMT的已安装文件到 <code class="docutils literal notranslate"><span class="pre">/opt/gmt</span></code> 目录下，并且会重新检查所有的共享库；</p>
+</li>
+<li><p class="first">使用 <code class="docutils literal notranslate"><span class="pre">gmtswitch</span></code> 切换当前使用的GMT版本，确保 <code class="docutils literal notranslate"><span class="pre">/opt/gmt</span></code> 下的GMT为当前激活版本；</p>
+</li>
+<li><p class="first">使用svn获取 <code class="docutils literal notranslate"><span class="pre">gmt-mex</span></code> 项目文件到本地:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex
+</pre></div>
+</div>
+</li>
+<li><p class="first">进入 <code class="docutils literal notranslate"><span class="pre">get-mex</span></code> 目录并编译生成 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexmaci64</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> gmt-mex/trunk/
+autoconf
+./configure --enable-matlab
+make
+</pre></div>
+</div>
+</li>
+<li><p class="first">将 <code class="docutils literal notranslate"><span class="pre">gmt.m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexmaci64</span></code> 所在目录添加到MTATLAB路径中</p>
+</li>
+<li><p class="first">确保 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件中包含选项： <code class="docutils literal notranslate"><span class="pre">GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so</span></code></p>
+</li>
+</ol>
+<p>经测试，该项目在2015a、2015b的MATLAB版本中可使用，对于更老版本的MATLAB，还未进行测试。</p>
+</div>
+<div class="section" id="unix-linux">
+<h3>Unix/Linux平台<a class="headerlink" href="#unix-linux" title="永久链接至标题">¶</a></h3>
+<p>正在努力开发中，还望有志之士加入…</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>15.2.3 使用方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>GMT接口完全模仿了传统的matlab命令，可以在命令行、m文件或IDE中使用。形式是:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">返回参数</span> <span class="o">=</span> gmt<span class="o">(</span><span class="s1">&#39;&lt;module&gt; &lt;module-options&gt;&#39;</span>, 输入数据<span class="o">)</span>
+</pre></div>
+</div>
+<p>其中 <strong>输入数据</strong> 可以为Matlab的矩阵、结构体或数组等； <strong>返回参数</strong>
+可直接在Matlab中参与后续的计算。调用GMT完毕后，清空缓存:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="o">(</span><span class="s1">&#39;destroy&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3>入门级示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在matlab环境中调用 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 绘制地图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="o">(</span><span class="s1">&#39;pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P &gt; GMT_lambert_az_hemi.ps&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>上例中，并不存在输入数据，也就是不存在与Matlab变量的交互，生成的ps文件在Matlab当前路径下。</p>
+</div>
+<div class="section" id="id5">
+<h3>进阶级示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>在Matlab环境中，绘制文字:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%创建字符串数组
+<span class="nv">lines</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;5 6 Some label&#39;</span>, <span class="s1">&#39;6 7 Another label&#39;</span><span class="o">}</span><span class="p">;</span>
+% 绘制
+gmt<span class="o">(</span><span class="s1">&#39;pstext -R0/10/0/10 -JX6i -Bafg -F+f18p -P &gt; text.ps &#39;</span>, lines<span class="o">)</span><span class="p">;</span>
+gmt<span class="o">(</span><span class="s1">&#39;destroy&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>上例中，字符串数组 <code class="docutils literal notranslate"><span class="pre">lines</span></code> 可以直接作为 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 的输入参数。</p>
+<p>以上为单个输入参数，若需要多个输入参数，如何确定参数的先后顺序？</p>
+</div>
+<div class="section" id="id6">
+<h3>高手级示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>对一个矩阵数组进行格网化并绘图：</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% 创建一个100*3矩阵，xyz值均为0~150之间的随机数</span>
+<span class="n">t</span><span class="p">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">150</span>
+<span class="c">% 利用GMT的surface命令对t进行格网化，输出为结构体G，数组结构见附录</span>
+<span class="n">G</span> <span class="p">=</span> <span class="n">gmt</span><span class="p">(</span><span class="s">&#39;surface -R0/150/0/150 -I1&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="p">);</span>
+<span class="c">% 利用grd2cpt创建颜色表文件，输出为颜色表结构体cpt</span>
+<span class="n">cpt</span> <span class="p">=</span> <span class="n">gmt</span><span class="p">(</span><span class="s">&#39;grd2cpt -Cjet&#39;</span><span class="p">,</span> <span class="n">G</span><span class="p">);</span>
+<span class="c">% 利用grdimage绘制格网化结果</span>
+<span class="n">gmt</span><span class="p">(</span><span class="s">&#39;grdimage -JX8c -Ba -P -C -G &gt; crap_img.ps&#39;</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">cpt</span><span class="p">);</span>
+<span class="n">gmt</span><span class="p">(</span><span class="s">&#39;destroy&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>上例中，<code class="docutils literal notranslate"><span class="pre">grdimage</span></code> 命令需要两个输入参数：颜色表 <code class="docutils literal notranslate"><span class="pre">cpt</span></code> 和格网数据 <code class="docutils literal notranslate"><span class="pre">G</span></code>，两者先后顺序不可交换。强制性输入参数（本例中的 <code class="docutils literal notranslate"><span class="pre">G</span></code> ）要在所有可选参数（本例中的 <code class="docutils literal notranslate"><span class="pre">cpt</span></code> ）之前。若有多个选项参数，强制性输入参数写在最前，然后按顺序给出可选参数。</p>
+</div>
+<div class="section" id="id7">
+<h3>大神级示例<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>另一个多参数的例子：</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="nb">pi</span><span class="p">,</span> <span class="nb">pi</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span>            <span class="c">% 创建x值</span>
+<span class="n">seno</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>                     <span class="c">% 创建y值</span>
+<span class="n">xyz </span><span class="s"> = [x seno seno]</span><span class="p">;</span>              <span class="c">% 创建xyz三列数据，其中y=z</span>
+<span class="n">cpt </span><span class="s"> = gmt(&#39;makecpt -T-1/1/0.1&#39;)</span><span class="p">;</span>  <span class="c">% 创建rainbow颜色表</span>
+<span class="c">%绘制函数曲线，以z值赋颜色。cpt和xyz先后顺序不可交换。</span>
+<span class="n">gmt</span><span class="p">(</span><span class="s">&#39;psxy -R-3.2/3.2/-1.1/1.1 -JX12c -Sc0.1c -C -P -Ba &gt; seno.ps&#39;</span><span class="p">,</span> <span class="n">xyz</span><span class="p">,</span> <span class="n">cpt</span><span class="p">);</span>
+<span class="n">gmt</span><span class="p">(</span><span class="s">&#39;destroy&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>敲黑板，上例 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 一句中，<code class="docutils literal notranslate"><span class="pre">-C</span></code> 为可选参数，因此引号外 <code class="docutils literal notranslate"><span class="pre">cpt</span></code> 要在强制性输入数据 <code class="docutils literal notranslate"><span class="pre">xyz</span></code> 之后。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>15.2.4 常见问题<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>使用完GMT接口后要记得 <code class="docutils literal notranslate"><span class="pre">gmt('destroy')</span></code> 释放内存，不然有可能出现不可预知错误。</li>
+<li>gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。</li>
+<li>绘制地理投影时，经纬度标注可能会出现 <code class="docutils literal notranslate"><span class="pre">%s</span></code> 乱码（即使设置为不显示任何度分秒符号），目前已知Matlab2016存在该问题，其他版本还未有此类反馈。</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../julia/" class="btn btn-neutral float-right" title="15.3 GMT Julia API" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../c/" class="btn btn-neutral float-left" title="15.1 GMT C API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

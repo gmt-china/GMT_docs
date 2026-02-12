@@ -1,0 +1,1049 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grdseamount &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="gravprisms" href="../gravprisms/" />
+    <link rel="prev" title="grdredpol" href="../grdredpol/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grdseamount</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">距离单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">网格文件名模版</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">滑坡模拟细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">grdseamount</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/grdseamount.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2024-06-07
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="grdseamount">
+<span id="index-0"></span><h1>grdseamount<a class="headerlink" href="#grdseamount" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/supplements/potential/grdseamount.html" title="（在 GMT v6.6）"><span>grdseamount</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>创建合成海山（包括高斯、抛物线、多项式、圆锥、圆盘形状的圆形或椭圆型海山）</p>
+</dd>
+</dl>
+<p><strong>grdseamount</strong> 使用给定的地形形状参数生成多种合成海山。输入数据中包括每个海山的
+位置和大小，即 <em>lon</em>, <em>lat</em>, <em>radius</em>, <em>height</em> 。对于椭圆形的海山（ <a class="reference internal" href="#cmdoption-grdseamount-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a>
+），则包括 <em>lon</em>, <em>lat</em>, <em>azimuth</em>, <em>semi-major</em>, <em>semi-minor</em>, <em>height</em> 。
+如果使用 <a class="reference internal" href="#cmdoption-grdseamount-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 选项以生成平顶海山，但后面没有 <em>flattening</em> 参数，则输入数据的
+最后一列为 <em>flattening</em> 参数。对于随时间变化的地形，可以使用 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项，这样
+输入数据的最后两列为海山的开始和停止时间。这种情况下，可以输出海山最终的累积
+形状，也可以输出其中每个时间点的形状或变化（ <a class="reference internal" href="#cmdoption-grdseamount-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> ）。如果海山存在滑坡（ <a class="reference internal" href="#cmdoption-grdseamount-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> ），
+则输入数据中最后一列或者几列为滑坡参数。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/4c39066eaf39c608f44e17609939efb6/df5dcef9bcf41f57a78ae07aa874dbc3.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-df5dcef9bcf41f57a78ae07aa874dbc3">
+<a class="reference internal image-reference" href="../../_images/df5dcef9bcf41f57a78ae07aa874dbc3.png"><img alt="../../_images/df5dcef9bcf41f57a78ae07aa874dbc3.png" src="../../_images/df5dcef9bcf41f57a78ae07aa874dbc3.png" style="width: 60%;" />
+</a>
+</figure>
+<p>多项式平顶海山，其侧面存在两个滑坡。用户可以为海山的形成过程指定一个时间跨度，
+并为单独的滑坡指定时间跨度。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt grdseamount</strong>
+[ <em>table</em> ]
+<a class="reference internal" href="#cmdoption-grdseamount-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>outgrid</em>
+<a class="reference internal" href="#cmdoption-grdseamount-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><em>increment</em>
+<a class="reference internal" href="#cmdoption-grdseamount-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em>
+[ <a class="reference internal" href="#cmdoption-grdseamount-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a>[<em>out</em>/<em>in</em>][<strong>+s</strong><em>scale</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>[<strong>c</strong>|<strong>d</strong>|<strong>g</strong>|<strong>o</strong>|<strong>p</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>unit</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>[<em>flattening</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-H"><code class="xref std std-option docutils literal notranslate"><span class="pre">-H</span></code></a><em>H</em>/<em>rho_l</em>/<em>rho_h</em>[<strong>+d</strong><em>densify</em>][<strong>+b</strong><em>boost</em>][<strong>+p</strong><em>power</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-K"><code class="xref std std-option docutils literal notranslate"><span class="pre">-K</span></code></a>[<em>densitymodel</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>[<em>hn</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a>[<em>list</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><em>norm</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><em>bmode</em>[/<em>fmode</em>][<strong>+d</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a>[<strong>+a</strong>[<em>az1</em>/<em>az2</em>]][<strong>+b</strong>[<em>beta</em>]][<strong>+d</strong>[<em>hc</em>]][<strong>+h</strong>[<em>h1</em>/<em>h2</em>]][<strong>+p</strong>[<em>power</em>]][<strong>+t</strong>[<em>t0</em>/<em>t1</em>]][<strong>+u</strong>[<em>u0</em>]][<strong>+v</strong>[<em>phi</em>]] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>t0</em>[/<em>t1</em>/<em>dt</em>][<strong>+l</strong>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a><em>level</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a><em>avedensity</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-grdseamount-r"><code class="xref std std-option docutils literal notranslate"><span class="pre">-r</span></code></a><em>reg</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>如果使用 <a class="reference internal" href="#cmdoption-grdseamount-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> 选项则无需下列选项：</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<p><strong>-G</strong><em>outgrid</em>[=<em>ID</em>][<strong>+d</strong><em>divisor</em>][<strong>+n</strong><em>invalid</em>][<strong>+o</strong><em>offset</em>|<strong>a</strong>][<strong>+s</strong><em>scale</em>|<strong>a</strong>][:<em>driver</em>[<em>dataType</em>][<strong>+c</strong><em>options</em>]]</p>
+<blockquote>
+<div><p>输出网格文件名。通过追加 =<em>ID</em> 可指定 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a>。
+参数详细介绍请参考 <a class="reference internal" href="../../grid/write/"><span class="doc">写 netCDF 文件</span></a>。</p>
+</div></blockquote>
+<blockquote>
+<div><p>如果使用 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项，则需要使用 C 语言的语法指定输出格网序列的名称格式。
+如果输出文件名中包含 %s (单位名称) 或 %c (单位字母)，GMT 将会使用每个
+网格对应的时间生成文件名，否则会使用年作为时间生成文件名，见
+<a class="reference internal" href="#id6">网格文件名模版</a> 。</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p>指定X和Y方向的网格间隔</p>
+<ul class="simple">
+<li><p><em>xinc</em> 和 <em>yinc</em> 为 X 和 Y 方向的网格间隔。对于地理坐标，可以指定网格间隔单位 [默认单位为度]</p></li>
+<li><p><strong>+e</strong> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调
+网格间隔以适应给定的数据范围）</p></li>
+<li><p><strong>+n</strong> 表明 <em>xinc</em> 和 <em>yinc</em> 不是网格间隔，而是X和Y方向的节点数。
+此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</p></li>
+</ul>
+<p>注意：</p>
+<ul class="simple">
+<li><p>若 <em>yinc</em> 设置为0，则表示其与 <em>xinc</em> 相同</p></li>
+<li><p>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，
+此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-A</strong>[<em>out/in</em>][<strong>+s</strong><em>scale</em>]</dt><dd><p>创建一个 mask 网格以区分海山以及外部，分别用 <em>out</em> 和 <em>in</em> 表示内部和
+外部的值 [1/NaN]。海山的高度以及是否平顶不影响本选项，但 <a class="reference internal" href="#cmdoption-grdseamount-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> ，<a class="reference internal" href="#cmdoption-grdseamount-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>
+和 <a class="reference internal" href="#cmdoption-grdseamount-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 选项不能和本选项同时使用。使用 <strong>+s</strong> 缩放海山的半径[1]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong>[<strong>c</strong>|<strong>d</strong>|<strong>g</strong>|<strong>o</strong>|<strong>p</strong>]</dt><dd><p>选择海山的形状函数： <strong>c</strong> （圆锥）， <strong>d</strong> （圆盘）， <strong>g</strong> （高斯），
+<strong>o</strong> （多项式）和 <strong>p</strong> （抛物线） [默认为高斯]。除圆盘外，其他所有的
+海山都可以使用带 <em>f</em> 参数的 <a class="reference internal" href="#cmdoption-grdseamount-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 选项来截断变成平顶海山。如果 <a class="reference internal" href="#cmdoption-grdseamount-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>
+选项没有任何追加的字母，则从输入的最后一列中读取海山形状。如果不使用
+<a class="reference internal" href="#cmdoption-grdseamount-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 选项，默认为高斯海山。</p>
+</dd>
+</dl>
+<p><a class="reference download internal" download="" href="../../_downloads/4b7dbefbc6731794e1c87e8b17d15aab/cfc569979044cbb69715dcb0b32469de.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-cfc569979044cbb69715dcb0b32469de">
+<a class="reference internal image-reference" href="../../_images/cfc569979044cbb69715dcb0b32469de.png"><img alt="../../_images/cfc569979044cbb69715dcb0b32469de.png" src="../../_images/cfc569979044cbb69715dcb0b32469de.png" style="width: 60%;" />
+</a>
+</figure>
+<p>在上述所有海山中， <span class="math notranslate nohighlight">\(h_0\)</span> 是海山最大高度，<span class="math notranslate nohighlight">\(r_0\)</span> 为基底半径，
+<span class="math notranslate nohighlight">\(h_n\)</span> 是相对于 <a class="reference internal" href="#cmdoption-grdseamount-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> [0] 指定的噪声基底的高度，<em>f</em> 是 <a class="reference internal" href="#cmdoption-grdseamount-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 选项设置的
+平顶海山相关的参数。平顶部分的半径为 <span class="math notranslate nohighlight">\(r_t\)</span> , 对于圆盘形状海山，不存
+在该参数。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>unit</em></dt><dd><p>设置数据文件中的水平距离的单位。对于地理坐标（ <a class="reference internal" href="#cmdoption-grdseamount-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ），不需要该
+选项，在平地球的近似下，自动转换为 km</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong></dt><dd><p>设置海山的基地为椭圆形状。如果使用该选项，则海山数据数据格式应该为：
+<em>lon, lat, azimuth, semi-major, semi-minor, height</em> (后面三个单位为 m)
+[ 默认底部为圆，输入数据格式为 <em>lon, lat, radius, height</em> ]
+下图中的 <span class="math notranslate nohighlight">\(\alpha\)</span> 即为 <em>azimuth</em></p>
+</dd>
+</dl>
+<p><a class="reference download internal" download="" href="../../_downloads/cff47259d241d72f9a271b8e48cbd337/3bc2e22ba5596e5675128e78f736d343.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-3bc2e22ba5596e5675128e78f736d343">
+<a class="reference internal image-reference" href="../../_images/3bc2e22ba5596e5675128e78f736d343.png"><img alt="../../_images/3bc2e22ba5596e5675128e78f736d343.png" src="../../_images/3bc2e22ba5596e5675128e78f736d343.png" style="width: 60%;" />
+</a>
+</figure>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong>[<em>flattening</em>]</dt><dd><p>该参数将海山截断为平顶海山。<em>flattening</em> 参数的范围从 0[不截断] 到 1，但不能为 1，
+如果不使用该选项，就默认在输入文件的最后一列读取该参数 [ 默认没有截断 ]。使用
+<strong>-Cd</strong> 选项时，忽略该选项。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-H">
+<span class="sig-name descname"><span class="pre">-H</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-H" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-H</strong><em>H</em>/<em>rho_l</em>/<em>rho_h</em>[<strong>+d</strong><em>densify</em>][<strong>+p</strong><em>power</em>]</dt><dd><p>设置参考海山密度相关的参数，该参数用于随深度变化的径向（即下图中的 r 轴向）密度函数。
+以 kg/m^3 或 g/cm^3 为单位设置海山的密度，以 m 为单位设置固定参考高度 <em>H</em> [0]。
+使用 <strong>+d</strong> 和 <strong>+p</strong> 选项改变水压驱动的侧面密度 <em>densify</em> ，以及可变密度的指数
+<em>power</em> ，即下图中的 <span class="math notranslate nohighlight">\(\Delta \rho_f\)</span> 和 <em>p</em> ，默认 <em>power</em> 为 1，即为线性
+变化。
+下图中，<em>h(r)</em> 是海山在 r 位置处的高度，<em>z(r)</em> 与 <em>h(r)</em> 含义相近，不过在海山
+内部。如果海山为平顶海山（见 <a class="reference internal" href="#cmdoption-grdseamount-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> ），<em>h(r)</em> 仍然为未截断的情况。
+<strong>注</strong> ：如果使用 <a class="reference internal" href="#cmdoption-grdseamount-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 选项，将会报告每个海山的平均密度。径向密度函数的定义为
+<span class="math notranslate nohighlight">\(\Delta \rho_s = \rho_h - \rho_l\)</span> ，其中 <span class="math notranslate nohighlight">\(\rho_h\)</span> 即参数中的 <em>rho_h</em> ，
+<span class="math notranslate nohighlight">\(\rho_l\)</span> 为参数中的 <em>rho_l</em> ，分别为密度的两个极值（high 和 low）。<span class="math notranslate nohighlight">\(\Delta \rho_f\)</span>
+为参数中的 <em>densify</em></p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\rho(r,z) = \rho_l + \Delta \rho_f \left (\frac{H-h(r)}{H} \right ) + \Delta \rho_s \left ( \frac{h(r)-z(r)}{H} \right )^p\]</div>
+<p><a class="reference download internal" download="" href="../../_downloads/623c4c58a42546a80130ea5943881228/16eb57317f4904a9b9e85e8309fd6bde.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-16eb57317f4904a9b9e85e8309fd6bde">
+<a class="reference internal image-reference" href="../../_images/16eb57317f4904a9b9e85e8309fd6bde.png"><img alt="../../_images/16eb57317f4904a9b9e85e8309fd6bde.png" src="../../_images/16eb57317f4904a9b9e85e8309fd6bde.png" style="width: 60%;" />
+</a>
+</figure>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-K">
+<span class="sig-name descname"><span class="pre">-K</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-K" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-K</strong><em>densitymodel</em></dt><dd><p>保存参考模型横截面的预测密度文件 <em>densitymodel</em> 。这里使用归一化的坐标，即
+半径 x 和高度 z 从 0 到 1，两者的增量都是 0.005，生成 201 x 201 大小的网格。
+<strong>注</strong> ：无需创建海山网格即可使用该选项，因此，<a class="reference internal" href="#cmdoption-grdseamount-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a>，<a class="reference internal" href="#cmdoption-grdseamount-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a>，<a class="reference internal" href="#cmdoption-grdseamount-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 和
+<a class="reference internal" href="#cmdoption-grdseamount-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项都不是必须的。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-L</strong>[<em>hn</em>]</dt><dd><p>输出海山的面积，体积和平均高度。不创建网格。
+使用 <em>hn</em> 参数来指定位于 <em>hn</em> 高度下的部分将不被统计以避免底部噪声的影响 [0]</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-M</strong>[<em>list</em>]</dt><dd><p>在使用 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 参数的前提下，将所有输出网格文件对应的时间和名字输出到
+<em>list</em> 文件中。不指定 <em>list</em> 时，输出到标准输出。第一列为时间，单位
+为年，最后一列为格式化的时间。使用 <a class="reference internal" href="#cmdoption-grdseamount-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 可同时输出密度网格名。
+输出的序列将可以作为 <a class="reference internal" href="../grdflexure/"><span class="doc">grdflexure</span></a> 模块的输入。
+使用 <a class="reference internal" href="#cmdoption-grdseamount-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a> 参数后的输出网格文件名为 <em>time reliefgrid</em> [ <em>densitygrid</em> ] <em>timetag</em></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong><em>norm</em></dt><dd><p>标准化海山网格，使得网格的最大高度等于 <em>norm</em></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Q</strong><em>bmode</em>/<em>fmode</em>[<strong>+d</strong>]</dt><dd><p>只能和 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项共同使用。<em>bmode</em> 和 <em>fmode</em> 用来设置如何处理海山的变化,
+默认为 <strong>-Qc</strong>/<strong>g</strong> 。</p>
+<p><em>bmode</em> 用来设置海山演化使用累积结果还是增量结果，即海山的表面：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>c</em> 表示随时间累积的海山 [默认]</p></li>
+<li><p><em>i</em> 表示每个时间段海山演化的增量</p></li>
+</ul>
+</div></blockquote>
+<p><em>fmode</em> 用来设置海山的变化率，即体积变化率：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>c</em> 表示常数变化率</p></li>
+<li><p><em>g</em> 表示高斯变化率 [默认]</p></li>
+</ul>
+</div></blockquote>
+<p>下图中展示了上述几种模式的区别。默认情况下，计算的海山的增量和累积量，
+使用 <strong>+d</strong> 选项可以将该增量或者累积量以等效圆盘的形式表达。</p>
+</dd>
+</dl>
+<p><a class="reference download internal" download="" href="../../_downloads/ca6bb5a9279ed8087dff086f38d7c0a1/ddd23c10255d2b3f934bfe6ec25ca6fb.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-ddd23c10255d2b3f934bfe6ec25ca6fb">
+<a class="reference internal image-reference" href="../../_images/ddd23c10255d2b3f934bfe6ec25ca6fb.png"><img alt="../../_images/ddd23c10255d2b3f934bfe6ec25ca6fb.png" src="../../_images/ddd23c10255d2b3f934bfe6ec25ca6fb.png" style="width: 60%;" />
+</a>
+</figure>
+<p><em>bmode</em> 两种情况下的海山图（高斯海山，没有平顶，体积线性变化），横坐标
+为海山水平方向的尺度，纵坐标为海山的高度，以二维的变化来显示海山的演化。
+左图为使用 <strong>c</strong> 的情况，表示使用实际地形，也就是随时间累积的地形；
+右图为使用 <strong>i</strong> 的情况，显示了地形随时间变化的增量</p>
+<p><a class="reference download internal" download="" href="../../_downloads/4ae9a8ba9d24ef2764a9df37582461b7/42d5528e5c8c9f8fe22b005568a816c6.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-42d5528e5c8c9f8fe22b005568a816c6">
+<a class="reference internal image-reference" href="../../_images/42d5528e5c8c9f8fe22b005568a816c6.png"><img alt="../../_images/42d5528e5c8c9f8fe22b005568a816c6.png" src="../../_images/42d5528e5c8c9f8fe22b005568a816c6.png" style="width: 60%;" />
+</a>
+</figure>
+<p><em>fmode</em> 的两种情况，横坐标为相对时间，纵坐标为某时刻海山体积与初始海山体积
+的比值。
+虚线为设置为 <strong>c</strong> 的情况；粗实线为设置为 <strong>g</strong> 的结果。</p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-S</strong>[<strong>+a</strong>[<em>az1</em>/<em>az2</em>]][<strong>+b</strong>[<em>beta</em>]][<strong>+d</strong>[<em>hc</em>]][<strong>+h</strong>[<em>h1</em>/<em>h2</em>]][<strong>+p</strong>[<em>power</em>]][<strong>+t</strong>[<em>t0</em>/<em>t1</em>]][<strong>+u</strong>[<em>u0</em>]][<strong>+v</strong>[<em>phi</em>]]</dt><dd><p>设置参数来控制海山的扇形滑坡，参数适用于所有海山。如果指定了子选项而
+没有给定参数，则从输入文件的最后几列中读取，其顺序与子选项字母顺序一致，
+而不是与子选项出现的顺序一致。如果每个海山有多于一个的滑坡，则重复选项
+或者文件中的参数。子选项含义如下：</p>
+<ul class="simple">
+<li><p><strong>+a</strong> 设置扇形滑坡中扇形的角度 [0/360]</p></li>
+<li><p><strong>+b</strong> 为标准化的滑坡体积时间曲线 <span class="math notranslate nohighlight">\(\psi(\tau) = \tau^\beta\)</span> 设置
+正指数系数 <span class="math notranslate nohighlight">\(\beta\)</span> ，默认为线性，即为 1；<span class="math notranslate nohighlight">\(\tau\)</span> 的定义见
+<strong>+t</strong></p></li>
+<li><p><strong>+d</strong> 设置滑坡碎片沉积开始的高度，默认为 <span class="math notranslate nohighlight">\(h_1/2\)</span></p></li>
+<li><p><strong>+h</strong> 设置滑坡扇形区域的上下高度</p></li>
+<li><p><strong>+p</strong> 激活径向滑坡轮廓的角度变化，通过添加幂指数 p 来调节, p &gt; 2。
+<strong>注</strong> ： 对于多个滑坡，可对某些滑坡设置单独的 p = 0，即关闭角度变化。</p></li>
+<li><p><strong>+t</strong> 通过 <span class="math notranslate nohighlight">\(\psi(\tau)\)</span> (见 <strong>+b</strong>) 设置滑坡发展过程的时间跨度,
+其中，<span class="math notranslate nohighlight">\(\tau = (t - t_0)/(t_1 - t_0)\)</span> 为归一化的时间，该选项需要
+<a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项</p></li>
+<li><p><strong>+u</strong> 设置归一化的径向滑坡形状参数 <span class="math notranslate nohighlight">\(u_0 &gt; 0\)</span> [0.2]</p></li>
+<li><p><strong>+v</strong> 设置滑坡的体积相对于整个海山体积的百分比</p></li>
+</ul>
+<p>其中部分参数可结合 <a class="reference internal" href="#id7">滑坡模拟细节</a> 理解。</p>
+</dd>
+</dl>
+<p><a class="reference download internal" download="" href="../../_downloads/d88dceaf097471971a879855a61dc08d/4348fdd34694a3ef77a45fa0e6a9ff6a.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-4348fdd34694a3ef77a45fa0e6a9ff6a">
+<a class="reference internal image-reference" href="../../_images/4348fdd34694a3ef77a45fa0e6a9ff6a.png"><img alt="../../_images/4348fdd34694a3ef77a45fa0e6a9ff6a.png" src="../../_images/4348fdd34694a3ef77a45fa0e6a9ff6a.png" style="width: 60%;" />
+</a>
+</figure>
+<p>上图为自适应的近似滑坡几何图，其中使用了 <strong>+d</strong> ，<strong>+h</strong> 以及 <strong>+a</strong> 选项。
+滑坡的体积（粉红色）在滑动的过程中将逐渐沉积在浅蓝色部分，沉积物从高度
+<span class="math notranslate nohighlight">\(h_c\)</span> 开始，线性变化到 <span class="math notranslate nohighlight">\(r_d\)</span> 时变为 0。其中与半径相关的参数
+都是从海山的高度以及形状中计算得到的。<strong>注</strong> ： <span class="math notranslate nohighlight">\(h_2 &gt; h_1\)</span> ，
+<span class="math notranslate nohighlight">\(r_1 &gt; r_2\)</span></p>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong><em>t0</em>[/<em>t1</em>/<em>dt</em>][<strong>+l</strong>]</dt><dd><p>设置海山演化序列的起始时间，终止时间和时间间隔，分别为 <em>t0</em>, <em>t1</em>
+和 <em>dt</em> [默认只执行一次计算，与时间无关]。对于单个时间，只给定起始时间。
+默认时间单位是年，追加 <em>k</em> 表示千年，追加 <em>M</em> 表示百万年。
+使用 <strong>+l</strong> 选项以及将 <em>dt</em> 替换为 <em>n</em> 可以设置对数时间轴。或者，还
+可以设置一个文件 <em>file</em> ，文件中第一列为时间，其中的时间也可追加单位，
+不追加时默认使用年。
+使用 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项时，将对每个时刻的海山都输出一个网格。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong><em>avedensity</em></dt><dd><p>指定垂直平均密度的网格文件。如果设置了 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项，<em>avedensity</em> 必须是
+具有 C 语言语法的模版名称。如果模版文件名中有 %s（单位名）或者 %c（单位
+字符），将使用 <a class="reference internal" href="#cmdoption-grdseamount-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 选项对应的时间的网格文件，见 <a class="reference internal" href="#id6">网格文件名模版</a> 。
+需要使用 <a class="reference internal" href="#cmdoption-grdseamount-H"><code class="xref std std-option docutils literal notranslate"><span class="pre">-H</span></code></a> 定义密度模型。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong><em>level</em></dt><dd><p>指定背景海深 [0]。由于所有的海山具有向上的地形，设置较大的负的 <em>level</em>
+可以将海山放在海洋里。可以追加 NaN 可以标记不被使用的节点（不能与 <strong>-Qi</strong>
+同时使用)。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<blockquote>
+<div><p>地理坐标网格的坐标将会使用平地球近似转换为 km。</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-r">
+<span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-r" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</dt><dd><p>设置网格配置方式 [默认为网格线配准]。 <a class="reference internal" href="../../option/nodereg/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-grdseamount-0">
+<span class="sig-name descname"><span class="pre">-:</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-grdseamount-0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>交换输入或输出数据的前两列。 <a class="reference internal" href="../../option/colon/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>距离单位<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>GMT支持多种不同的距离单位，以及三种不同的球面距离计算方式。
+详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 和 <a class="reference internal" href="../../option/distcal/"><span class="doc">-j 选项</span></a>。</p>
+</section>
+<section id="id6">
+<h2>网格文件名模版<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>网格文件名允许使用一定的规则来定制模版：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>若将格式化的时间作为文件名的一部分，则使用单个 %s 作为模版的一部分
+（例如，smt_%s.grd）</p></li>
+<li><p>若想控制名称中数字的格式，但仍保留时间的单位，则可以使用 %f 和 %c
+的组合。例如：smt_%05.1f%c.grd 将会生成类似 smt_001.1M.grd 的文件名。
+时间将会进行缩放以适应设置的单位</p></li>
+<li><p>如果不想使用任何单位，则只需给丁一个浮点格式的模版，例如：
+smt_%05.1f_name.grd。时间的单位与原单位相同，即不使用缩放。</p></li>
+</ul>
+</div></blockquote>
+<p>详细的格式信息，见 C 语言 <a class="reference external" href="https://en.wikipedia.org/wiki/Printf_format_string">printf</a>
+语法。</p>
+</section>
+<section id="id7">
+<h2>滑坡模拟细节<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>通过 <a class="reference internal" href="#cmdoption-grdseamount-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> 选项来模拟滑坡并不是物理模型，而是通过简单的几个形状和函数来
+近似滑坡的形状及其演变。下面的（1）和（2）分别为滑坡在剖面和正面两侧的
+形状，（3）为滑坡随时间的变化。</p>
+<p>（1）
+径向滑坡高度为 ：</p>
+<div class="math notranslate nohighlight">
+\[h_s(r) = h_s(u) = h_1 + (h_2 - h_1)q(u) = h_1 + (h_2 - h_1) u_0 \left (\frac{1 + u_0}{u + u_0} - 1\right )\]</div>
+<p>式中，<span class="math notranslate nohighlight">\(u = (r - r_2)/(r_1 - r_2)\)</span> 为发生滑坡的破裂面归一化的水平距离。
+该形状可以通过 <strong>+u</strong> 子选项调节 <span class="math notranslate nohighlight">\(u_0\)</span> 改变。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/3c5db4c46870100df6f90a9959df0878/5a780e81d3ca17b706086193270d9154.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-5a780e81d3ca17b706086193270d9154">
+<a class="reference internal image-reference" href="../../_images/5a780e81d3ca17b706086193270d9154.png"><img alt="../../_images/5a780e81d3ca17b706086193270d9154.png" src="../../_images/5a780e81d3ca17b706086193270d9154.png" style="width: 60%;" />
+</a>
+</figure>
+<p>上图为多种归一化的径向滑坡形状剖面曲线 <span class="math notranslate nohighlight">\(q(u)\)</span> ，可通过 <strong>+u</strong> 改变。例如：
+圆锥形海山的滑坡在上图虚线以下。较小的 <span class="math notranslate nohighlight">\(u_0\)</span> 将会导致更深入地切入海山。</p>
+<p>（2）
+默认情况下，径向滑坡轮廓是固定的，不论滑坡位于海山的哪个侧面。但是，可以通过
+下面的函数添加角度变化</p>
+<div class="math notranslate nohighlight">
+\[s(\alpha) = s(\gamma) = 1 - \lvert \gamma \rvert ^p\]</div>
+<p>其中， <span class="math notranslate nohighlight">\(\gamma = 2 (\alpha - \alpha_1)/(\alpha_2 - \alpha_1) - 1\)</span> ，<em>p</em> 为
+幂指数，可通过 <strong>+p</strong> 设置。启用该选项时，使用 <span class="math notranslate nohighlight">\(s(\alpha)\)</span> 缩放径向滑坡剖面，
+使其在两个扇形位置从 0 开始，然后在滑坡的扇形区域变速变化，较大的 p 值对应快速
+增大，较小的 p 对应快速变小。该参数可以使滑坡扇形时更加平滑。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/79eab1d772081c6d0c8a8dec32efb5e5/af71552c114be46b8a4e791a3cc6198f.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-af71552c114be46b8a4e791a3cc6198f">
+<a class="reference internal image-reference" href="../../_images/af71552c114be46b8a4e791a3cc6198f.png"><img alt="../../_images/af71552c114be46b8a4e791a3cc6198f.png" src="../../_images/af71552c114be46b8a4e791a3cc6198f.png" style="width: 60%;" />
+</a>
+</figure>
+<p>上图为调节 <strong>+p</strong> 参数下的径向滑坡高度的振幅变化。这种变化会导致滑坡体积减少
+<span class="math notranslate nohighlight">\(1 - \bar{s}\)</span> （虚线）。例如：当 p 为 2 时，滑坡体积只有原本的 67%。</p>
+<p>（3）
+滑坡不可能时瞬时发生的，而是在一段时间内发生的。通过模拟的归一化体积变化为：</p>
+<div class="math notranslate nohighlight">
+\[\psi(t) = \psi(\tau) = \tau^\beta = \left (\frac{t - t_0}{t_1 - t_0} \right )^\beta\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(\tau\)</span> 为滑坡发生过程时间的归一化。使用该函数可计算给定时间滑坡
+沉积的部分。<strong>+b</strong> 选项用来设置幂指数 <span class="math notranslate nohighlight">\(\beta\)</span> 。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/ca9e5bb918523d845a24cfaa8e58025b/57f32a9ae8923013c32c4be251fff327.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-57f32a9ae8923013c32c4be251fff327">
+<a class="reference internal image-reference" href="../../_images/57f32a9ae8923013c32c4be251fff327.png"><img alt="../../_images/57f32a9ae8923013c32c4be251fff327.png" src="../../_images/57f32a9ae8923013c32c4be251fff327.png" style="width: 60%;" />
+</a>
+</figure>
+<p>通过上述函数，可以控制滑坡随时间演化的速度。线性的曲线意味着在质量在滑动期间
+以恒定的速度沉积。调整 <span class="math notranslate nohighlight">\(\beta\)</span> 可以调整质量变化集中的时间，
+<span class="math notranslate nohighlight">\(\beta &lt; 1\)</span> 表示发生在总体时间的早期，<span class="math notranslate nohighlight">\(\beta &lt; 1\)</span> 表示发生在整个
+过程的晚期。</p>
+</section>
+<section id="id8">
+<h2>注意事项<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>因为高斯曲线在海山的底部（3 倍 sigma）的幅值为最大幅度的 1.11%。这里计算
+高斯海山时，计算到 4 倍 sigma，使得振幅下降到最大幅度的 0.034%，从而避免
+在海山底部出现明显的阶梯。</p>
+</section>
+<section id="id9">
+<h2>示例<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>创建位于 1 分网格里在 1 W，2 S 处，基底半径为 30 km，高度为 4500 km 的圆形高斯海山:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>1W<span class="w"> </span>2S<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">4500</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>grdseamount<span class="w"> </span>-R1:30W/0:30W/2:30S/1:30S<span class="w"> </span>-I1m<span class="w"> </span>-Ggeo_circ_smt.nc
+gmt<span class="w"> </span>grdimage<span class="w"> </span>geo_circ_smt.nc<span class="w"> </span>-B<span class="w"> </span>-png<span class="w"> </span>circ
+</pre></div>
+</div>
+<p>创建位于 1x1 的笛卡尔网格中的(200,400)处的椭圆形海山，基底长轴为 35，短轴为
+20，长轴方位角为 29，高度为 3700 m，设置参数为 0.15 来获得平顶海山</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="m">400</span><span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">35</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">3700</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>grdseamount<span class="w"> </span>-R150/250/350/450<span class="w"> </span>-I1<span class="w"> </span>-E<span class="w"> </span>-F0.15<span class="w"> </span>-Gcat_ell_smt.nc
+gmt<span class="w"> </span>grdview<span class="w"> </span>cat_ell_smt.nc<span class="w"> </span>-B<span class="w"> </span>-Qi<span class="w"> </span>-I+d<span class="w"> </span>-JZ2c<span class="w"> </span>-p195/20<span class="w"> </span>-png<span class="w"> </span>ell
+</pre></div>
+</div>
+<p>计算两个底部为椭圆型的高斯平顶海山的变化，演化时间分别为 3 Ma 到 2 Ma 以及
+2.8 Ma 到 1.9 Ma，海山体积变化率为常数；从 3 Ma 到 1.9 Ma 平均每 0.1 Myr 输出一个
+网格</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span><span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">#lon lat azimuth, semi-major, semi-minor, height tstart tend</span>
+<span class="s">0   0       -20     120     60      5000    3.0M    2M</span>
+<span class="s">50  80      -40     110     50      4000    2.8M    1.9M</span>
+<span class="s">EOF</span>
+gmt<span class="w"> </span>grdseamount<span class="w"> </span>-R-1024/1022/-1122/924+uk<span class="w"> </span>-I2000<span class="w"> </span>-Gsmt_%3.1f_%s.nc<span class="w"> </span>t.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-T3M/1.9M/0.1M<span class="w"> </span>-Qi/c<span class="w"> </span>-Dk<span class="w"> </span>-E<span class="w"> </span>-F0.2<span class="w"> </span>-Cg<span class="w"> </span>-Mfiles.txt
+</pre></div>
+</div>
+<p><code class="file docutils literal notranslate"><span class="pre">l.lis</span></code> 文件中将包含时间，网格文件名和单位。</p>
+<p>除上述示例外， <a class="reference external" href="https://github.com/GenericMappingTools/gmt/tree/master/test/potential">GMT 官方测试</a>
+中还有其他示例，包括与 <a class="reference internal" href="../grdflexure/"><span class="doc">grdflexure</span></a> 一起使用的示例。</p>
+</section>
+<section id="id10">
+<h2>参考文献<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>Smith, J. R.  and Wessel, P., 2000, Isostatic consequences of giant landslides on the Hawaiian Ridge,
+Pure Appl. Geophys., 157, 1097-1114,
+<a class="reference external" href="https://doi.org/10.1007/s000240050019">https://doi.org/10.1007/s000240050019</a>.</p>
+</section>
+<section id="id11">
+<h2>相关模块<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grdmath/"><span class="doc">grdmath</span></a>,
+<a class="reference internal" href="../gravfft/"><span class="doc">gravfft</span></a>,
+<a class="reference internal" href="../flexure/"><span class="doc">flexure</span></a>,
+<a class="reference internal" href="../grdflexure/"><span class="doc">grdflexure</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../grdredpol/" class="btn btn-neutral float-left" title="grdredpol" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../gravprisms/" class="btn btn-neutral float-right" title="gravprisms" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-B 选项 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script defer="defer" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-U 选项" href="../U/" />
+    <link rel="prev" title="-J 选项" href="../J/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-B 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">边框设置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#axes"><em>axes</em></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">轴设置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#x-y-z"><strong>x</strong>|<strong>y</strong>|<strong>z</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interval"><em>interval</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#p-s"><strong>p</strong>|<strong>s</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">地理底图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">笛卡尔线性轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#log10">笛卡尔log<sub>10</sub>轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">笛卡尔指数轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">时间轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi">弧度轴 <span class="math notranslate nohighlight">\(\pi\)</span> 的标注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">自定义轴</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../p/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../q/">-q 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../w/">-w 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">标准选项</a> &raquo;</li>
+      <li>-B 选项</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/option/B.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="b">
+<h1>-B 选项<a class="headerlink" href="#b" title="永久链接至标题"></a></h1>
+<p><strong>-B</strong> 选项用于控制底图边框的绘制。</p>
+<p><strong>-B</strong> 选项有两套语法，分别用于设置底图边框以及每条边的属性，因而在一个命令中可能需要多次使用 <strong>-B</strong> 选项。若命令中没有出现 <strong>-B</strong> 选项，则不绘制底图边框。</p>
+<section id="id1">
+<h2>边框设置<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p><strong>-B</strong> 选项在设置边框属性时的语法为:</p>
+<p><strong>-B</strong>[<em>axe</em>][<strong>+b</strong>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[<em>val</em>][<strong>+n</strong>][<strong>+o</strong><em>lon</em>/<em>lat</em>][<strong>+t</strong><em>title</em>]</p>
+<p>其中：</p>
+<ul class="simple">
+<li><p><em>axes</em> 控制显示底图的哪几条边，具体用法在下面会进一步介绍</p></li>
+<li><p><strong>+t</strong><em>title</em> 指定当前底图的标题。该标题位于底图上方的中间位置。标题可以是任意字符串，如果是字符串中有空格，则必须用引号将字符串括起来。标题的文本属性由 <a class="reference internal" href="../../conf/font/#term-FONT_TITLE"><span class="xref std std-term">FONT_TITLE</span></a> 控制。标题与上边框之间的距离由 <a class="reference internal" href="../../conf/map/#term-MAP_TITLE_OFFSET"><span class="xref std std-term">MAP_TITLE_OFFSET</span></a> 控制。</p></li>
+<li><p><strong>+g</strong><em>fill</em> 为底图内部填充颜色，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a></p></li>
+<li><p><strong>+n</strong> 表示完全不绘制边框</p></li>
+<li><p><strong>+b</strong> 仅适用于3D底图，使用该子选项则会绘制3D底图的12条边</p></li>
+<li><p><strong>+i</strong><em>val</em> 对于某些投影方式，某条轴可能不会被绘制（比如360度的方位投影地图没有纬度轴，全球Hammer投影没有经度轴），使用该子选项可以强制标注一个经线或纬线。
+<em>val</em> 默认值为0</p></li>
+<li><p><strong>+o</strong><em>lon</em>/<em>lat</em> 指定网格线的参考点。默认情况下，网格线是以北极点作为参考的，如果你想要以另一个点作为参考绘制倾斜的网格线，则可以使用 <strong>+o</strong> 子选项</p></li>
+</ul>
+<p>通常情况下，只需要使用 <em>axes</em> 和 <strong>+t</strong><em>title</em> 选项。</p>
+<section id="axes">
+<h3><em>axes</em><a class="headerlink" href="#axes" title="永久链接至标题"></a></h3>
+<p><em>axes</em> 用于控制要绘制哪些边以及这些边是否有刻度或标注。<em>axes</em> 的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>WSENZ<span class="o">[</span><span class="m">1234</span><span class="o">]</span>wesez<span class="o">[</span><span class="m">1234</span><span class="o">]</span>lrbtu
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/3e2800b0e17111baaef2a207779eb53f/B-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<img alt="../../_images/B-gmtplot-0.png" src="../../_images/B-gmtplot-0.png" />
+</figure>
+<p>二维底图（上图左图）有四条边，分别用东西南北（WSEN或wsen）或左右上下（lrtb）的单词首字母表示。每条边都有四种状态：</p>
+<ol class="arabic simple">
+<li><p>不出现某个字母 =&gt; 不绘制该字母所对应的边</p></li>
+<li><p>出现大写字母WSEN =&gt; 绘制某条边，该边有刻度、有标注</p></li>
+<li><p>出现小写字母wsen =&gt; 绘制某条边，该边有刻度、无标注</p></li>
+<li><p>出现小写字母lrtb =&gt; 绘制某条边，该边无刻度、无标注</p></li>
+</ol>
+<p>下图给出了不同的 <strong>-B</strong> 选项绘制出来的效果图。读者可以修改如下命令中的 <strong>-B</strong>
+选项来尝试不同搭配的效果:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/4/0/4 -JX10c -BWS -pdf axes
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/7d1aec78188f24902450cf06631cab02/B-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<img alt="../../_images/B-gmtplot-1.png" src="../../_images/B-gmtplot-1.png" />
+</figure>
+<p>3D底图有12条边（上图右图）。对于3D底图而言，<strong>Zzu</strong> 用于控制Z轴的绘制。</p>
+<ul class="simple">
+<li><p><strong>Z</strong> 表示有刻度和标注</p></li>
+<li><p><strong>z</strong> 表示有刻度无标注</p></li>
+<li><p><strong>u</strong> 表示无刻度无标注</p></li>
+</ul>
+<p>默认只绘制一条Z轴，可以额外加上 <strong>1234</strong> 的任意组合来表示要绘制哪些Z轴。其中 <strong>1</strong> 始终表示位于左下角的Z轴，其他Z轴按逆时针顺序编号。加上 <strong>+b</strong> 子选项则绘制全部12条边。</p>
+<p>下图展示了3D绘图中 <strong>-B</strong> 选项的不同用法。读者可以修改如下命令中的 <strong>-B</strong> 选项来实现不同搭配的效果:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t<span class="s2">&quot;-BwesnZ&quot;</span> -p130/30 -pdf map
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/af4bcbdc540ad7e7d64f94118f990700/B-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<img alt="../../_images/B-gmtplot-2.png" src="../../_images/B-gmtplot-2.png" />
+</figure>
+</section>
+</section>
+<section id="id2">
+<h2>轴设置<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格线间隔、轴标签以及标注的间隔、前缀和单位。轴属性可以用如下语法控制:</p>
+<p><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em>[<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+s</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+u</strong><em>unit</em>]</p>
+<p>以上语法也可以被拆分为两部分:</p>
+<p><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em>
+和
+<strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>][<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+s</strong>|<strong>S</strong><em>seclabel</em>][<strong>+p</strong><em>prefix</em>][<strong>+u</strong><em>unit</em>]</p>
+<p>其中，</p>
+<ul class="simple">
+<li><p><strong>p|s</strong> 表示一级属性（primary）和二级属性(secondary)</p></li>
+<li><p><strong>x|y|z</strong> 表示设置哪一条轴的属性</p></li>
+<li><p><em>interval</em> 设置刻度、网格线、标注的间隔</p></li>
+<li><p><strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong> 用于设置标注的倾斜角度，其中 <em>angle</em> 是相对于水平方向的旋转角度，取值范围为-90到90。<strong>+an</strong> 等效于 <strong>+a90</strong> 即垂直标注，
+<strong>+ap</strong> 等效于 <strong>+a0</strong> 即平行标注。对于Y轴标注而言，不支持任意角度的标注，仅支持 <strong>+ap</strong> 和 <strong>+an</strong>。</p></li>
+<li><p><strong>+l</strong><em>label</em> 用于给指定的轴加标签。默认情况下，X轴标签文字方向平行于X轴，Y轴标签文字方向平行于Y轴。对于Y轴，可以使用 <strong>+L</strong><em>label</em> 使得Y轴标签文字方向平行于X轴</p></li>
+<li><p><strong>+s</strong><em>label</em> 与 <strong>+l</strong><em>label</em> 类似，也用于给指定的轴添加标签。当同时使用
+<strong>+l</strong><em>label</em> 和 <strong>+s</strong><em>label</em> 时，前者用于指定左轴或下轴的标签，而后者用于指定右轴和上轴的标签。</p></li>
+<li><p><strong>+p</strong><em>prefix</em> 在选中的轴的标注加前缀</p></li>
+<li><p><strong>+u</strong><em>unit</em> 给选中的轴的标注加单位。对于地图而言，标注的单位为度，该符号是自动添加的，由 <a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_MAP"><span class="xref std std-term">FORMAT_GEO_MAP</span></a> 控制</p></li>
+</ul>
+<section id="x-y-z">
+<h3><strong>x</strong>|<strong>y</strong>|<strong>z</strong><a class="headerlink" href="#x-y-z" title="永久链接至标题"></a></h3>
+<p><strong>x</strong>|<strong>y</strong>|<strong>z</strong> 用于指明要设置哪条边的属性，默认值为 <strong>xy</strong>，即同时设置X轴和Y轴的属性。可以指定单个轴（比如只有 <strong>x</strong>），也可以同时指定多个轴（比如 <strong>xy</strong> 和 <strong>xyz</strong>）。如果想要不同轴有不同的设置，则需要多次使用 <strong>-B</strong> 选项，每个指定不同的轴。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-Bxaf -Byaf
+-Bxyzaf
+</pre></div>
+</div>
+</section>
+<section id="interval">
+<h3><em>interval</em><a class="headerlink" href="#interval" title="永久链接至标题"></a></h3>
+<p>每个轴都有三个属性，分别是标注（annotation）、刻度（frame）和网格线（grid）。下图展示了这三个名词在绘图时的具体含义。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/cf8c6b41740006468471271c549596b7/B-gmtplot-3.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<img alt="../../_images/B-gmtplot-3.png" src="../../_images/B-gmtplot-3.png" />
+</figure>
+<p><em>interval</em> 用于设置这三个属性的间隔，它是一个或多个 [<em>t</em>]<em>stride</em>[±<em>phase</em>][<em>u</em>]
+的组合。</p>
+<ul class="simple">
+<li><p><em>t</em> 可以取 <strong>a</strong>（标注）、<strong>f</strong>（刻度）、<strong>g</strong>（网格线），表明要设置轴的哪个属性的间隔</p></li>
+<li><p><em>stride</em> 用于设置间隔，<em>stride</em> 为0，表示不绘制</p></li>
+<li><p>±<em>phase</em> 可以用于控制标注、刻度或网格线的起算点</p></li>
+<li><p><em>u</em> 是间隔的单位，通常只在绘制时间轴时才使用</p></li>
+</ul>
+<p><strong>-B</strong> 选项还有一个可以自动计算间隔的功能，<strong>-Bafg</strong> 会根据当前的区域大小等信息自动计算合适的间隔，<strong>-Bxafg -Byafg</strong> 则会对X轴和Y轴分别计算合适的间隔。</p>
+<p>读者可以将命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+<p>中的 <strong>-B</strong> 选项替换成如下不同的值并查看绘图效果以理解各个参数的含义：</p>
+<ul class="simple">
+<li><p><strong>-Ba2f1g1</strong></p></li>
+<li><p><strong>-Bxa2 -Bya1</strong></p></li>
+<li><p><strong>-Bxafg -Byafg</strong></p></li>
+<li><p><strong>-Ba2+1f1g1</strong></p></li>
+</ul>
+</section>
+<section id="p-s">
+<h3><strong>p</strong>|<strong>s</strong><a class="headerlink" href="#p-s" title="永久链接至标题"></a></h3>
+<p>对于每个轴来说，都有两个等级的属性可以设置，分别称为p（Primary）和s（Secondary）。</p>
+<p>对于地理坐标而言，通常只需要使用默认的Primary属性即可，而Secondary则主要用于坐标轴为时间轴的情况下，此时 <strong>p</strong> 和 <strong>s</strong> 分别用于指定不同尺度的时间间隔。在GMT默认的情况下，<strong>p</strong> 属性的标注比较靠近坐标轴，而 <strong>s</strong> 属性的标注离坐标轴稍远。<strong>p</strong> 和 <strong>s</strong> 的用法与区别，可以参考后面给出的例子。</p>
+</section>
+</section>
+<section id="id3">
+<h2>地理底图<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>地理底图与一般的坐标轴不同，其底图类型 <a class="reference internal" href="../../conf/map/#term-MAP_FRAME_TYPE"><span class="xref std std-term">MAP_FRAME_TYPE</span></a>
+使用 <strong>fancy</strong> 形式。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/b4db55768833978c0a27c294d8799afc/B-gmtplot-4.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id8">
+<img alt="../../_images/B-gmtplot-4.png" src="../../_images/B-gmtplot-4.png" />
+<figcaption>
+<p><span class="caption-text">地理底图示例1</span><a class="headerlink" href="#id8" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p><strong>-Ba1f15mg5m -BS</strong></p>
+<p>下图同时使用了 <strong>p</strong> 和 <strong>s</strong> 两级属性。这里 <strong>p</strong> 属性用于显示弧度，<strong>s</strong>
+属性用于显示弧分。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/d98d05c6793bd28b07a7e18ecc8f23ed/B-gmtplot-5.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id9">
+<img alt="../../_images/B-gmtplot-5.png" src="../../_images/B-gmtplot-5.png" />
+<figcaption>
+<p><span class="caption-text">地理底图示例2</span><a class="headerlink" href="#id9" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>同时使用P和S两级属性 <strong>-Bpa15mf5mg5m -BwSe -Bs1f30mg15m</strong></p>
+</section>
+<section id="id4">
+<h2>笛卡尔线性轴<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>对于一般的线性轴而言，标注的格式由 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+决定，其默认值为 <code class="docutils literal notranslate"><span class="pre">%g</span></code>，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 <em>stride</em> 自动决定。若设置 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+为其他值，则会严格使用其定义的格式，比如 <code class="docutils literal notranslate"><span class="pre">%.2f</span></code> 表示显示两位小数。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/dde248fdd9adda6c360f7b4874e887f0/B-gmtplot-6.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id10">
+<img alt="../../_images/B-gmtplot-6.png" src="../../_images/B-gmtplot-6.png" />
+<figcaption>
+<p><span class="caption-text">笛卡尔线性轴</span><a class="headerlink" href="#id10" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p><strong>-R0/12/0/0.95 -JX3i/0.3i -Ba4f2g1+lFrequency+u” %” -BS</strong></p>
+</section>
+<section id="log10">
+<h2>笛卡尔log<sub>10</sub>轴<a class="headerlink" href="#log10" title="永久链接至标题"></a></h2>
+<p>由于对数坐标的特殊性，<em>stride</em> 参数具有特殊的含义。下面说明 <em>stride</em>
+在对数坐标下的特殊性：</p>
+<ul class="simple">
+<li><p><em>stride</em> 必须是1、2、3或负整数-n。</p>
+<ul>
+<li><p><strong>1</strong>：每10的指数</p></li>
+<li><p><strong>2</strong>：每10的指数的1、2、5倍</p></li>
+<li><p><strong>3</strong>：每10的指数的1、2、3、4、…、9 倍</p></li>
+<li><p><strong>-n</strong>：每10的n次方出现一次</p></li>
+</ul>
+</li>
+<li><p>在 <em>stride</em> 后加 <strong>l</strong>，则标注会以log<sub>10</sub>的值显示，比如100会显示成2</p></li>
+<li><p>在 <em>stride</em> 后加 <strong>p</strong>，则标注会以10的n次方的形式显示，比如10<sup>-5</sup></p></li>
+</ul>
+<p><a class="reference download internal" download="" href="../../_downloads/50f484ecb677f4e37f5fe04730eeefc6/B-gmtplot-7.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id11">
+<img alt="../../_images/B-gmtplot-7.png" src="../../_images/B-gmtplot-7.png" />
+<figcaption>
+<p><span class="caption-text">对数坐标轴</span><a class="headerlink" href="#id11" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>(上) <strong>-R1/1000/0/1 -JX3il/0.25i -Ba1f2g3</strong>(中) <strong>-R1/1000/0/1 -JX3il/0.25i -Ba1f2g3l</strong>(下) <strong>-R1/1000/0/1 -JX3il/0.25i -Ba1f2g3p</strong></p>
+</section>
+<section id="id5">
+<h2>笛卡尔指数轴<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>正常情况下，<em>stride</em> 用于生成等间隔的标注或刻度，但是由于指数函数的特性，这样的标注会在坐标轴的某一端挤在一起。为了避免这个问题，可以在 <em>stride</em> 后加 <strong>p</strong>，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/d053e759d609fdce4bb2f12752e709fa/B-gmtplot-8.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id12">
+<img alt="../../_images/B-gmtplot-8.png" src="../../_images/B-gmtplot-8.png" />
+<figcaption>
+<p><span class="caption-text">指数投影坐标轴</span><a class="headerlink" href="#id12" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>(上) <strong>-R0/100/0/0.9 -JX3ip0.5/0.25i -Ba20f10g5</strong>
+(下) <strong>-R0/100/0/0.9 -JX3ip0.5/0.25i -Ba3f2g1p</strong></p>
+</section>
+<section id="id6">
+<h2>时间轴<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p>时间轴与其他轴不同的地方在于，时间轴可以有多种不同的标注方式。下面会用一系列示例来演示时间轴的灵活性。在下面的例子中，尽管只绘制了X轴（绘图时使用了 <strong>-BS</strong>），实际上时间轴标注的各种用法使用于全部轴。</p>
+<p>在绘制时间轴时，需要指定时间间隔，时间间隔的单位可以取如下值：</p>
+<table class="docutils align-center" id="id13">
+<caption><span class="caption-text">GMT时间单位</span><a class="headerlink" href="#id13" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 17%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Flag</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Y</strong></p></td>
+<td><p>year</p></td>
+<td><p>Plot using all 4 digits</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>y</strong></p></td>
+<td><p>year</p></td>
+<td><p>Plot using last 2 digits</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>O</strong></p></td>
+<td><p>month</p></td>
+<td><p>Format annotation using <strong>FORMAT_DATE_MAP</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>o</strong></p></td>
+<td><p>month</p></td>
+<td><p>Plot as 2-digit integer (1--12)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>U</strong></p></td>
+<td><p>ISO week</p></td>
+<td><p>Format annotation using <strong>FORMAT_DATE_MAP</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>u</strong></p></td>
+<td><p>ISO week</p></td>
+<td><p>Plot as 2-digit integer (1--53)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>r</strong></p></td>
+<td><p>Gregorian week</p></td>
+<td><p>7-day stride from start of week (see <strong>TIME_WEEK_START</strong>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>K</strong></p></td>
+<td><p>ISO weekday</p></td>
+<td><p>Plot name of weekday in selected language</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>k</strong></p></td>
+<td><p>weekday</p></td>
+<td><p>Plot number of day in the week (1--7) (see <strong>TIME_WEEK_START</strong>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>D</strong></p></td>
+<td><p>date</p></td>
+<td><p>Format annotation using <strong>FORMAT_DATE_MAP</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>d</strong></p></td>
+<td><p>day</p></td>
+<td><p>Plot day of month (1--31) or day of year (1--366) (FORMAT_DATE_MAP)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>R</strong></p></td>
+<td><p>day</p></td>
+<td><p>Same as <strong>d</strong>; annotations aligned with week (see <strong>TIME_WEEK_START</strong>)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>H</strong></p></td>
+<td><p>hour</p></td>
+<td><p>Format annotation using <strong>FORMAT_CLOCK_MAP</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>h</strong></p></td>
+<td><p>hour</p></td>
+<td><p>Plot as 2-digit integer (0--24)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>M</strong></p></td>
+<td><p>minute</p></td>
+<td><p>Format annotation using <strong>FORMAT_CLOCK_MAP</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>m</strong></p></td>
+<td><p>minute</p></td>
+<td><p>Plot as 2-digit integer (0--60)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>S</strong></p></td>
+<td><p>seconds</p></td>
+<td><p>Format annotation using <strong>FORMAT_CLOCK_MAP</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>s</strong></p></td>
+<td><p>seconds</p></td>
+<td><p>Plot as 2-digit integer (0--60)</p></td>
+</tr>
+</tbody>
+</table>
+<p>第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time1 pdf,png
+gmt <span class="nb">set</span> <span class="nv">FORMAT_DATE_MAP</span><span class="o">=</span>-o FONT_ANNOT_PRIMARY +9p
+gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpxa7Rf1d -Bsxa1O -BS
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id14">
+<img alt="../../_images/B-gmtplot-9.png" src="../../_images/B-gmtplot-9.png" />
+<figcaption>
+<p><span class="caption-text">时间轴示例1</span><a class="headerlink" href="#id14" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>需要注意，<strong>-Bsa1O</strong> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <strong>O</strong>，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_MAP"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_MAP"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <strong>-o</strong> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
+<p>下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，上面的例子使用日期来标注。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time2 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
+gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpxa6Hf1h -Bsxa1K -BS
+gmt basemap -Bpxa6Hf1h -Bsxa1D -BS -Y0.65i
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id15">
+<img alt="../../_images/B-gmtplot-10.png" src="../../_images/B-gmtplot-10.png" />
+<figcaption>
+<p><span class="caption-text">时间轴示例2</span><a class="headerlink" href="#id15" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>第三个例子展示了两年的时间，并标注了每年以及每三个月。年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time3 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
+gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpxa3Of1o -Bsxa1Y -BS
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id16">
+<img alt="../../_images/B-gmtplot-11.png" src="../../_images/B-gmtplot-11.png" />
+<figcaption>
+<p><span class="caption-text">时间示例3</span><a class="headerlink" href="#id16" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>第四个例子展示了一天中的几个小时，通过在R选项中指定 <strong>t</strong> 来使用相对时间坐标。这里使用了 <strong>p</strong> 属性和 <strong>s</strong> 属性，12小时制，时间从右向左增加：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time4 pdf,png
+gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
+gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpxa15mf5m -Bsxa1H -BS
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id17">
+<img alt="../../_images/B-gmtplot-12.png" src="../../_images/B-gmtplot-12.png" />
+<figcaption>
+<p><span class="caption-text">时间轴示例4</span><a class="headerlink" href="#id17" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>第五个例子用两种方式展示了几周的时间：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time5 png,pdf
+gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character <span class="se">\</span>
+       FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
+gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpxa1K -Bsxa1U -BS
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
+gmt basemap -Bpxa3Kf1k -Bsxa1r -BS -Y0.65i
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id18">
+<img alt="../../_images/B-gmtplot-13.png" src="../../_images/B-gmtplot-13.png" />
+<figcaption>
+<p><span class="caption-text">时间轴示例5</span><a class="headerlink" href="#id18" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time6 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
+gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Bxa1Of1d -BS
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id19">
+<img alt="../../_images/B-gmtplot-14.png" src="../../_images/B-gmtplot-14.png" />
+<figcaption>
+<p><span class="caption-text">时间轴示例6</span><a class="headerlink" href="#id19" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>第七个例子：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time7 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
+gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpxa5Df1d -Bsxa1Y -BS
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id20">
+<img alt="../../_images/B-gmtplot-15.png" src="../../_images/B-gmtplot-15.png" />
+<figcaption>
+<p><span class="caption-text">时间轴示例7</span><a class="headerlink" href="#id20" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="pi">
+<h2>弧度轴 <span class="math notranslate nohighlight">\(\pi\)</span> 的标注<a class="headerlink" href="#pi" title="永久链接至标题"></a></h2>
+<p>如果坐标轴以弧度为单位，用户可以直接指定 <span class="math notranslate nohighlight">\(\pi\)</span> 的整数倍或分数倍作为标注间隔，其格式为 <strong>[+|-][s]pi[f]</strong> ，其中 s 表示标注间隔是 <span class="math notranslate nohighlight">\(\pi\)</span> 的 s 倍，而 f 表示标注间隔为 <span class="math notranslate nohighlight">\(\pi\)</span> 的 f 分之一。</p>
+<p>示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -pdf test1
+gmt basemap -JX10c/5c -R-pi/pi/-1/1 -Bxapi4 -pdf test2
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>自定义轴<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<p>GMT允许用户定义标注来实现不规则间隔的标注，用法是 <strong>-Bc</strong> 后接标注文件名。</p>
+<p>标注文件中以“#”开头的行为注释行，其余为记录行，记录行的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>coord   <span class="nb">type</span>   <span class="o">[</span>label<span class="o">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>coord</em> 是需要标注、刻度或网格线的位置</p></li>
+<li><p><em>type</em> 是如下几个字符的组合</p>
+<ul>
+<li><p><strong>a</strong> 或 <strong>i</strong> 前者为annotation，后者表示interval annotation</p></li>
+<li><p>在一个标注文件中，<strong>a</strong> 和 <strong>i</strong> 只能出现其中的任意一个</p></li>
+<li><p><strong>f</strong> 表示刻度，即frame tick</p></li>
+<li><p><strong>g</strong> 表示网格线，即gridline</p></li>
+</ul>
+</li>
+<li><p><em>label</em> 默认的标注为 <em>coord</em> 的值，若指定 <em>label</em>，则使用 <em>label</em> 的值</p></li>
+</ul>
+<p>需要注意，<em>coord</em> 必须按递增顺序排列。</p>
+<p>下面的例子展示中展示了自定义标注的用法，<strong>xannots.txt</strong> 和 <strong>yannots.txt</strong>
+分别是X轴和Y轴的标注文件：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt;| xannots.txt</span>
+<span class="s">416.0       ig      Devonian</span>
+<span class="s">443.7       ig      Silurian</span>
+<span class="s">488.3       ig      Ordovician</span>
+<span class="s">542 ig      Cambrian</span>
+<span class="s">EOF</span>
+cat <span class="s">&lt;&lt; EOF &gt;| yannots.txt</span>
+<span class="s">0   a</span>
+<span class="s">1   a</span>
+<span class="s">2   f</span>
+<span class="s">2.71828     ag      e</span>
+<span class="s">3   f</span>
+<span class="s">3.1415926   ag      @~p@~</span>
+<span class="s">4   f</span>
+<span class="s">5   f</span>
+<span class="s">6   f</span>
+<span class="s">6.2831852   ag      2@~p@~</span>
+<span class="s">EOF</span>
+
+gmt begin GMT_-B_custom pdf,png
+  gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -Bsxcxannots.txt -BWS+glightblue <span class="se">\</span>
+    --MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id21">
+<img alt="../../_images/B-gmtplot-16.png" src="../../_images/B-gmtplot-16.png" />
+<figcaption>
+<p><span class="caption-text">自定义坐标轴</span><a class="headerlink" href="#id21" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../J/" class="btn btn-neutral float-left" title="-J 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../U/" class="btn btn-neutral float-right" title="-U 选项" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

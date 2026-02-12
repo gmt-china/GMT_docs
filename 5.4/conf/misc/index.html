@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10.12 其他参数 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/conf/misc.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="11 地学数据集" href="../../dataset/" />
+    <link rel="prev" title="10.11 TIME参数" href="../time/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.5 COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.6 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.7 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.11 TIME参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.12 其他参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.12.1 数据下载相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.12.2 算法选择相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.12.3 其他参数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">10 配置参数</a> &raquo;</li>
+        
+      <li>10.12 其他参数</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/conf/misc.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>10.12 其他参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本节介绍GMT中的其他参数，参数的默认值在中括号内列出。</p>
+<div class="section" id="id2">
+<h2>10.12.1 数据下载相关参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="gmt-auto-download">
+<dt>GMT_AUTO_DOWNLOAD</dt>
+<dd>是否允许GMT自动从GMT服务器（由 <code class="docutils literal notranslate"><span class="pre">GMT_DATA_URL</span></code> 控制）下载数据文件到缓存目录 [<code class="docutils literal notranslate"><span class="pre">on</span></code>]</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>10.12.2 算法选择相关参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="gmt-triangulate">
+<dt>GMT_TRIANGULATE</dt>
+<dd><p class="first">设置 <a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/triangulate.html" title="(在 GMT v5.4.6)"><span>triangulate</span></a> 模块中算法代码的来源 [Watson]</p>
+<p class="last"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/triangulate.html" title="(在 GMT v5.4.6)"><span>triangulate</span></a> 模块的核心源码有两个版本，
+<code class="docutils literal notranslate"><span class="pre">Watson</span></code> 的版本遵循GPL，<code class="docutils literal notranslate"><span class="pre">Shewchuk</span></code> 的版本不遵循GPL。该选项用于控制要使用哪个版本，<code class="docutils literal notranslate"><span class="pre">Shewchuk</span></code> 版本拥有更多功能。</p>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-fft">
+<dt>GMT_FFT</dt>
+<dd><p class="first">要使用的FFT算法 [auto]</p>
+<p>可以取：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">auto</span></code>：自动选择合适的算法</li>
+<li><code class="docutils literal notranslate"><span class="pre">fftw[,planner]</span></code>：FFTW算法，其中 <code class="docutils literal notranslate"><span class="pre">planner</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">measure|patient|exhaustive</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">accelerate</span></code> OS X下使用Accelerate Framework</li>
+<li><code class="docutils literal notranslate"><span class="pre">kiss</span></code>：kiss FFT</li>
+<li><code class="docutils literal notranslate"><span class="pre">brenner</span></code>：Brenner Legacy FFT</li>
+</ol>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-interpolant">
+<dt>GMT_INTERPOLANT</dt>
+<dd><p class="first">程序中一维插值所使用的算法 [<code class="docutils literal notranslate"><span class="pre">akima</span></code>]</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">linear</span></code>：线性插值</li>
+<li><code class="docutils literal notranslate"><span class="pre">akima</span></code>：akima’s spline</li>
+<li><code class="docutils literal notranslate"><span class="pre">cubic</span></code>：natural cubic spline</li>
+<li><code class="docutils literal notranslate"><span class="pre">none</span></code>：不插值</li>
+</ol>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-extrapolate-val">
+<dt>GMT_EXTRAPOLATE_VAL</dt>
+<dd><p class="first">外插时超过数据区时如何处理 [NaN]</p>
+<p>可选值包括：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">NaN</span></code>：区域范围外的值一律为NaN</li>
+<li><code class="docutils literal notranslate"><span class="pre">extrap</span></code>： 使用外插算法计算的区域外的值</li>
+<li><code class="docutils literal notranslate"><span class="pre">extrapval,val</span></code>：设置区域外的值为 <code class="docutils literal notranslate"><span class="pre">val</span></code></li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>10.12.3 其他参数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="gmt-export-type">
+<dt>GMT_EXPORT_TYPE</dt>
+<dd><p class="first">控制表数据的数据类型，仅被外部接口使用 [<code class="docutils literal notranslate"><span class="pre">double</span></code>]</p>
+<p class="last">可以取 <code class="docutils literal notranslate"><span class="pre">double</span></code>、<code class="docutils literal notranslate"><span class="pre">single</span></code>、<code class="docutils literal notranslate"><span class="pre">[u]long</span></code>、<code class="docutils literal notranslate"><span class="pre">[u]int</span></code>、
+<code class="docutils literal notranslate"><span class="pre">[u]short</span></code>、<code class="docutils literal notranslate"><span class="pre">[u]char</span></code>。</p>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-custom-libs">
+<dt>GMT_CUSTOM_LIBS</dt>
+<dd><p class="first">要链接的自定义GMT库文件，默认值为空</p>
+<p>GMT支持自定义模块。用户可以写一个GMT模块，并将其编译成动态函数库。通过设置该参数告知GMT该函数库的位置，即可通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">xxx</span></code> 的语法调用自定义模块，以实现扩充GMT功能的目的。</p>
+<p class="last">该参数用于指定自定义动态库函数的路径，多个路径之间用逗号分隔。路径可以是共享库文件的绝对路径，也可以是其所在的目录。若路径是一个目录名，该目录必须需斜杠或反斜杠结尾，表明使用该目录下的全部共享库文件。在Windows下，若目录名是 <code class="docutils literal notranslate"><span class="pre">/</span></code>，则表示在GMT的bin目录下的 <code class="docutils literal notranslate"><span class="pre">gmt_plugins</span></code>
+子目录下寻找库文件。</p>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-language">
+<dt>GMT_LANGUAGE</dt>
+<dd><p class="first">设置GMT绘图时使用的语言 [<code class="docutils literal notranslate"><span class="pre">us</span></code>]</p>
+<p>不同的语言中，月份、星期几、东西南北的表达方法是不同的。该参数用于设置GMT绘图时所使用的语言。GMT支持多种语言，各语言的定义文件位于GMT安装目录中 <code class="docutils literal notranslate"><span class="pre">share/localization</span></code> 目录下的文件。</p>
+<p>此处仅列举几个常见语言如下：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">cn1</span></code>简体中文</li>
+<li><code class="docutils literal notranslate"><span class="pre">cn2</span></code>繁体中文</li>
+<li><code class="docutils literal notranslate"><span class="pre">uk</span></code>英式英语</li>
+<li><code class="docutils literal notranslate"><span class="pre">us</span></code>美式英语</li>
+<li><code class="docutils literal notranslate"><span class="pre">jp</span></code>日语</li>
+<li><code class="docutils literal notranslate"><span class="pre">kr</span></code>韩语</li>
+<li>…</li>
+</ul>
+<p>实际使用时，除了需要修改该参数外，可能还需要修改相应的字符编码和字体。</p>
+<p class="last">若设置语言为 <code class="docutils literal notranslate"><span class="pre">cn1</span></code> 即简体中文并正确设置中文字体，则GMT在绘制时可以显式“一月”、“星期一”、“周一”等中文。相关示例见 <a class="reference internal" href="../../gallery/chinese-texts/"><span class="doc">中文图</span></a>。</p>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-compatibility">
+<dt>GMT_COMPATIBILITY</dt>
+<dd><p class="first">是否开启兼容模式 [4]</p>
+<ul class="last simple">
+<li>若值为4，表示兼容GMT4语法并给出警告</li>
+<li>若值为5，则表示不兼容GMT4语法，严格遵守GMT5语法，遇到GMT4语法时直接报错</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-verbose">
+<dt>GMT_VERBOSE</dt>
+<dd><p class="first">控制GMT命令的verbose级别 [<code class="docutils literal notranslate"><span class="pre">c</span></code>]</p>
+<p class="last">可选值包括 <code class="docutils literal notranslate"><span class="pre">quiet</span></code>、<code class="docutils literal notranslate"><span class="pre">normal</span></code>、<code class="docutils literal notranslate"><span class="pre">compat</span></code>、<code class="docutils literal notranslate"><span class="pre">verbose</span></code>、
+<code class="docutils literal notranslate"><span class="pre">long</span></code>、<code class="docutils literal notranslate"><span class="pre">debug</span></code>。也可以直接使用每个级别的第一个字母。每个级别的具体含义见 <a class="reference internal" href="../../option/V/"><span class="doc">-V 选项</span></a> 一节。</p>
+</dd>
+</dl>
+<dl class="docutils" id="gmt-history">
+<dt>GMT_HISTORY</dt>
+<dd><p class="first">GMT历史文件 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 的处理方式 [true]</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">true</span></code> 可以读写</li>
+<li><code class="docutils literal notranslate"><span class="pre">readonly</span></code> 只能读不能写</li>
+<li><code class="docutils literal notranslate"><span class="pre">false</span></code> 不显示历史文件</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../dataset/" class="btn btn-neutral float-right" title="11 地学数据集" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../time/" class="btn btn-neutral float-left" title="10.11 TIME参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

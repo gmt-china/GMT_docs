@@ -1,0 +1,844 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gravfft &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grdflexure" href="../grdflexure/" />
+    <link rel="prev" title="gravmag3d" href="../gravmag3d/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gravfft</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">网格距离单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plate-flexure">Plate Flexure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">gravfft</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/gravfft.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2022-06-21
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="gravfft">
+<span id="index-0"></span><h1>gravfft<a class="headerlink" href="#gravfft" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/supplements/potential/gravfft.html" title="（在 GMT v6.6）"><span>gravfft</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>网格重力的谱计算，均衡，导纳，以及相干性计算</p>
+</dd>
+</dl>
+<p><strong>gravfft</strong> 包括 3 种模式。</p>
+<ul class="simple">
+<li><p>模式 1：简单地计算地形网格导致的位变化。需要 <a class="reference internal" href="#cmdoption-gravfft-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项给出密度差
+（相对密度），以及 <a class="reference internal" href="#cmdoption-gravfft-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 选项给出参考基准面（观测高度）。该模式将
+对地形网格执行 2—D FFT 并使用指定阶的 Parker 展开式计算。</p></li>
+<li><p>模式 2：计算地形引起的挠曲响应（挠曲量）。该模式对网格进行 2—D FFT ，
+基于选定的均衡模型计算。其中载荷可以从上部加载（即地形）也以可以从
+底部加载（热点等）。在两种情况下，使用 <a class="reference internal" href="#cmdoption-gravfft-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 以及 <a class="reference internal" href="#cmdoption-gravfft-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 设置参数。</p></li>
+<li><p>模式 3：计算导纳或者相干函数（相干谱），结果为径向平均。该模式较为
+复杂，请参照 <a class="reference internal" href="#id7">示例</a> 理解。</p></li>
+</ul>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt gravfft</strong>
+<em>ingrid</em>
+[ <em>ingrid2</em> ]
+<a class="reference internal" href="#cmdoption-gravfft-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a><em>outgrid</em>
+[ <a class="reference internal" href="#cmdoption-gravfft-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>n/wavelength/mean_depth</em>/<strong>t</strong>|<strong>b</strong>|<strong>w</strong> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>density</em>|<em>rhogrid</em> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><em>n_terms</em> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>[<strong>f</strong>[<strong>+s</strong>|<strong>z</strong>]|<strong>b</strong>|<strong>g</strong>|<strong>v</strong>|<strong>n</strong>|<strong>e</strong>] ]
+[ <a class="reference internal" href="#cmdoption-gravfft-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><strong>w</strong>|<strong>b</strong>|<strong>c</strong>|<strong>t</strong>|<strong>k</strong> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a><em>mgal_at_45</em> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><em>params</em> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-gravfft-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>te/rl/rm/rw</em>[<em>/ri</em>][<strong>+m</strong>] ]
+[ <a class="reference internal" href="#cmdoption-gravfft-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-gravfft-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a><em>wd</em>[<strong>k</strong>] ]
+[ <a class="reference internal" href="#cmdoption-gravfft-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a><em>zm</em>[<em>zl</em>] ]
+[ <a class="reference internal" href="#cmdoption-gravfft-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><em>ingrid</em>[=<em>ID</em>|?<em>varname</em>][<strong>+b</strong><em>band</em>][<strong>+d</strong><em>divisor</em>][<strong>+n</strong><em>invalid</em>][<strong>+o</strong><em>offset</em>][<strong>+s</strong><em>scale</em>]</p>
+<blockquote>
+<div><p>输入网格名。通过追加 =<em>ID</em> 可指定 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a> [默认为 =nf]。
+追加 ?<em>varname</em> 可指定 NetCDF 变量 [默认为 GMT 找到的第一个 2-D 网格]。
+参数详细介绍请参考 <a class="reference internal" href="../../grid/read/"><span class="doc">读 netCDF 文件</span></a>。</p>
+</div></blockquote>
+<blockquote>
+<div><p>对于交叉谱计算，还需要指定第二个网格 <em>ingrid2</em> 。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<p><strong>-G</strong><em>outgrid</em>[=<em>ID</em>][<strong>+d</strong><em>divisor</em>][<strong>+n</strong><em>invalid</em>][<strong>+o</strong><em>offset</em>|<strong>a</strong>][<strong>+s</strong><em>scale</em>|<strong>a</strong>][:<em>driver</em>[<em>dataType</em>][<strong>+c</strong><em>options</em>]]</p>
+<blockquote>
+<div><p>输出网格文件名。通过追加 =<em>ID</em> 可指定 <a class="reference internal" href="../../grid/format/"><span class="doc">网格格式</span></a>。
+参数详细介绍请参考 <a class="reference internal" href="../../grid/write/"><span class="doc">写 netCDF 文件</span></a>。</p>
+</div></blockquote>
+<blockquote>
+<div><p>输出网格文件存储实体对该网格内的点的异常值的计算结果。</p>
+</div></blockquote>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong><em>n/wavelength/mean_depth</em>/<strong>t</strong>|<strong>b</strong>|<strong>w</strong></dt><dd><p>只计算所选模型的理论导纳曲线并退出。<em>n</em> 和 <em>wavelength</em> 用于确定
+（ n * wavelength）总的波长范围，最小波长为 <em>wavelength</em> 以 m 为单位，
+见 <a class="reference internal" href="#id7">示例</a> 中最后一个例子。
+<em>mean_depth</em> 为平均水深。<strong>t</strong> 表示使用从上面加载的模型, <strong>b</strong> 表示使用
+底部加载模型。使用 <strong>w</strong> 可输出波长而不是频率（波数）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>density</em>|<em>rhogrid</em></dt><dd><p>设置密度对比值（密度差）。例如，计算水层的重力，随后可以与自由空
+气重力异常相结合，得到布格异常，这种情况下，请不要使用 <a class="reference internal" href="#cmdoption-gravfft-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> ，同时默认
+使用 <strong>-N+h</strong> 。
+该选项还可指定一个密度差网格 <em>rhogrid</em> ，其必须与输入网格具有相同的配准
+方式，网格中的 NaN 将被替换为网格中的最小密度差。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong><em>n_terms</em></dt><dd><p>Parker 展开式中使用的阶数（即指数的值），最大为 10，默认为 3。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong>[<strong>f</strong>[<strong>+s</strong>]|<strong>b</strong>|<strong>g</strong>|<strong>v</strong>|<strong>n</strong>|<strong>e</strong>]</dt><dd><p>指定需计算的参量，默认为自由空气重力异常</p>
+<ul class="simple">
+<li><p><strong>f</strong> 自由空气重力异常，单位 mgal。<strong>+s</strong> 表示从地形中删除平均值，
+表明为 0 地形，即不存在质量异常</p></li>
+<li><p><strong>b</strong> 布格重力异常，单位 mgal</p></li>
+<li><p><strong>g</strong> 大地水准面异常，单位 m</p></li>
+<li><p><strong>v</strong> 垂直重力梯度, 单位 1 Eotvos = 0.1 mgal/km</p></li>
+<li><p><strong>e</strong> 垂线偏差东向分量，单位为微弧度</p></li>
+<li><p><strong>n</strong> 垂线偏差北向分量，单位为微弧度</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong><strong>w</strong>|<strong>b</strong>|<strong>c</strong>|<strong>t</strong>|<strong>k</strong></dt><dd><p>计算相干函数（相干谱）或导纳，输入必须为两个网格文件，输出到标准输出。
+其中第二个网格应为与第一个网格同一范围的重力或者大地水准面。默认计算
+导纳。输出结果为 3 列或者 4 列，分别为：频率（波长），导纳（相干函数）
+，误差（1 倍）以及可选的理论导纳。追加子选项可进行详细设置：</p>
+<ul class="simple">
+<li><p><strong>w</strong> 输出波长，而不是频率（或称波数）</p></li>
+<li><p><strong>k</strong> 设置波长的单位为千米，默认为 m</p></li>
+<li><p><strong>c</strong> 计算相干谱而不是导纳</p></li>
+<li><p><strong>b</strong> 输出第四列，其为底部加载的理论导纳</p></li>
+<li><p><strong>t</strong> 同为理论导纳，但为从顶部加载的弹性板理论导纳</p></li>
+</ul>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-M</strong><em>mgal_at_45</em></dt><dd><p>指定 45 度纬度处的重力值，单位为毫伽 (mGal)（用于将重力异常转换为大地水准面高度）。
+默认值为 980619.9203 mGal（Moritz 1980 年 IGF 值）。在处理其他行星的数据时，需要相应地更改此值。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-N</strong>[<strong>a</strong>|<strong>f</strong>|<strong>m</strong>|<strong>r</strong>|<strong>s</strong>|<em>nx/ny</em>][<strong>+a</strong>|<strong>d</strong>|<strong>h</strong>|<strong>l</strong>][<strong>+e</strong>|<strong>n</strong>|<strong>m</strong>][<strong>+t</strong><em>width</em>][<strong>+v</strong>][<strong>+w</strong>[<em>suffix</em>]][<strong>+z</strong>[<strong>p</strong>]]</dt><dd><p>选择或查询适合 FFT 的网格尺寸并设置可选参数。
+FFT 维度选取：</p>
+<blockquote>
+<div><p><strong>-Na</strong> 以得到最准确的结果来选择 FFT 的维度</p>
+<p><strong>-Nf</strong> 将 FFT 维度设置为数据实际长度</p>
+<p><strong>-Nm</strong> 以最小的运行内存来选择 FFT 的维度</p>
+<p><strong>-Nr</strong> 以最快的计算速度来选择 FFT 的维度</p>
+<p><strong>-Ns</strong> 列出所有可选的维度，然后退出</p>
+<p><strong>-N</strong><em>nx/ny</em> 将会设置 FFT 的维度为 <em>nx</em> 和 <em>ny</em> （维度必须大于等于网格范围）。
+默认情况下， <a class="reference internal" href="#cmdoption-gravfft-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a> 同样会选择大于网格范围的维度，在此情况下会对 FFT 的速度和精度
+进行优化。如果 FFT 的维度大于网格的范围，对网格进行扩展并 taper（两端尖灭）到 0。</p>
+</div></blockquote>
+<p>设置移去数据的趋势：</p>
+<blockquote>
+<div><p><strong>+d</strong>: 移去趋势，即去除符合程度最好的线性趋势 [默认]</p>
+<p><strong>+a</strong>: 移去均值</p>
+<p><strong>+h</strong>: 移去中值，即 0.5 * (max + min).</p>
+<p><strong>+l</strong>: 不做任何处理</p>
+</div></blockquote>
+<p>为避免边缘效应，设置对数据边界的处理：</p>
+<blockquote>
+<div><p><strong>+e</strong> 在数据边界使用边界点对称来扩展网格 [默认]</p>
+<p><strong>+m</strong> 在数据边界使用镜像对称来扩展数据</p>
+<p><strong>+n</strong> 不使用任何数据扩展</p>
+<p><strong>+t</strong> 从数据的边界到 FFT 网格边界使用 taper 使数据趋近于 0 [100%]。
+使用 <strong>+t</strong><em>width</em> 可以修改扩展的范围。当设置了 <strong>+n</strong> 选项时，不进行数据扩展，
+且将 taper 用于数据内部，而不是扩展的范围。
+（译注：100% 的含义为在网格四周分别扩展数据范围的 50%，然后使用 taper 来填充新扩展
+的区域。Taper 或可译为两端尖灭，是一种加窗方法，且窗为平顶，这里默认使用的 cos
+函数形状，即 Tukey 窗。将数据边界上的值逐渐减小到 0 ，以避免谱泄漏 ）</p>
+<p><strong>+v</strong> 在处理中报告适合的维度</p>
+</div></blockquote>
+<p>中间结果的设置，用来保存中间结果，以便用户可以使用中间结果自行进行某步骤：</p>
+<p><strong>+w</strong>[<em>suffix</em>] 设置去趋势/数据扩展/taper 的网格后缀，
+即最终生成 xxx_suffix.ext 的结果。</p>
+<p><strong>+z</strong> 可用来保存执行 FFT 后的复数结果，包括两个网格，文件名将为 xxx_real.ext 和
+xxx_imag.ext。追加 <strong>p</strong> 可以设置为 polar 形式，即幅度和相位，文件名为 xxx_mag.ext
+和 xxx_phase.ext 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Q</strong></dt><dd><p>输出具有形变的地形网格，z 轴向上，其平均深度由 <a class="reference internal" href="#cmdoption-gravfft-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a><em>zm</em> 指定，模型
+参数由 <a class="reference internal" href="#cmdoption-gravfft-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 设置。这就是 &quot;gravimetric Moho&quot;。该选项默认使用 <a class="reference internal" href="#cmdoption-gravfft-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>+h</strong></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong></dt><dd><p>基于理论模型，计算由测深作为载荷产生的重力以及大地水准面网格。相关参数
+需要在 <a class="reference internal" href="#cmdoption-gravfft-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 和 <a class="reference internal" href="#cmdoption-gravfft-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 中设置。Parker 展开式的阶数设置为 1，见下面的 <a class="reference internal" href="#id7">示例</a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong><em>te/rl/rm/rw</em>[<em>/ri</em>][<strong>+m</strong>]</dt><dd><p>计算输入的地形载荷在厚度为 <em>te</em> 的弹性板的情况下造成的均衡补偿。<em>rl</em>，
+<em>rm</em>，<em>rw</em> 以及 <em>ri</em> 分别为载荷、地幔、海水以及填充物的密度，使用 SI 单位。
+如果不指定 <em>ri</em> ，则其等于 <em>rl</em> 。使用 <a class="reference internal" href="#cmdoption-gravfft-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 设置地幔平均深度。如果弹性板
+厚度 <em>te</em> 大于 1e10，则将被解析为抗扰刚度。<strong>+m</strong> 选项用来输出带有 Moho
+面效应的网格，见 <a class="reference internal" href="#cmdoption-gravfft-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 。如果 <em>te</em> = 0，则响应函数变为 Airy 模型。使用
+<a class="reference internal" href="#cmdoption-gravfft-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><strong>+m</strong> 时会默认设置 <a class="reference internal" href="#cmdoption-gravfft-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>+h</strong></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong><em>wd</em>[<strong>k</strong>]</dt><dd><p>以 m 为单位设置相对于地形的水深，即观测高度</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong><em>zm</em>[<em>zl</em>]</dt><dd><p>Moho [and swell] 平均补偿深度，以 m 为单位，向下为正。对于从上面加载的
+情况，只需提供 <em>zm</em> ，对于底部加载，还要设置 <em>zl</em></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gravfft-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gravfft-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<blockquote>
+<div><p>地理坐标网格将会在平地球近似下将坐标单位转换为 m</p>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>网格距离单位<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>如果输入的笛卡尔网格的水平方向距离的单位不是米，可以通过对输入文件名
+<strong>+u</strong><em>unit</em> 来将指定的单位转换为米。例如：对输入文件 <strong>+uk</strong> 将会把
+输入网格的 x 和 y 坐标的单位从 km 转换为 m。如果输入网格为地理网格，可以
+通过 <a class="reference internal" href="#cmdoption-gravfft-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> 将单位转换为米</p>
+</section>
+<section id="id6">
+<h2>注意事项<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>NetCDF COARDS 网格将会被自动识别为地理网格。对于其他格式的地理网格，可使用
+<a class="reference internal" href="#cmdoption-gravfft-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> 将单位转换为 m。如果地理网格接近两级，则应考虑使用
+<a class="reference internal" href="../grdproject/"><span class="doc">grdproject</span></a> 投影后计算。</p>
+</section>
+<section id="plate-flexure">
+<h2>Plate Flexure<a class="headerlink" href="#plate-flexure" title="Link to this heading"></a></h2>
+<p>弹性板的变形中使用了 FFT 解，需要填充密度等于载荷密度（见 <a class="reference internal" href="../grdflexure/"><span class="doc">grdflexure</span></a> ）。
+这种情况通常填充物位于载荷的下方，如果填充物超过载荷的高度，则填充物通常是
+密度较低的沉积物，或者是水/空气。Wessel(2001) 提出了一种近似方法，允许指定
+不同于载荷的填充物密度，同时仍能使用 FFT 解。其思想为使用填充物密度作为载荷
+密度，但振幅通过一个系数 A = sqrt ((rm - ri)/(rm - rl)) 来调整，即对于点载荷
+使用不同密度导致的理论差异。这种近似在刚度较小的板上存在较大的载荷时会失效，
+其他情况表现都很好，且上述失效的情况也并不常见。</p>
+</section>
+<section id="id7">
+<h2>示例<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>（1）
+假设地壳和海水的密度分别为 2700 和 1035，计算海底地形上的海水的影响，将结果写入
+到 <code class="file docutils literal notranslate"><span class="pre">water_g.grd</span></code> （Paker 公式计算到 4 阶）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>bat.grd<span class="w"> </span>-D1665<span class="w"> </span>-Gwater_g.grd<span class="w"> </span>-E4
+</pre></div>
+</div>
+<p>然后在自由空气重力异常 <code class="file docutils literal notranslate"><span class="pre">faa.grd</span></code> 中减去该结果即得到布格重力异常</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>faa.grd<span class="w"> </span>water_g.grd<span class="w"> </span><span class="nv">SUB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>bouguer.grd
+</pre></div>
+</div>
+<p>对上面计算过程做简单解释：
+这里使用减而不是加的原因为，布格异常假定改正了水层导致的质量亏损，所以应该加
+water_g.grd，因为水的密度比下面的岩石小。</p>
+<p>接下来计算地壳地幔的贡献，并叠加到海底异常中。假定地壳厚度为 6 km，密度为
+2700，地幔密度为 3300；可以重复使用用于计算水层异常的命令，但密度对比设置
+为 600。但上述计算需要提前知道平均 Moho 面深度，可以通过对网格进行一定的
+缩放或者偏移实现。这里需要注意偏移的符号，因为 z 轴向上为正</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>bat.grd<span class="o">=</span>+o-6000<span class="w"> </span>-D600<span class="w"> </span>-Gmoho_g.grd
+</pre></div>
+</div>
+<p>接下来，将其从布格重力异常中减去即得到地幔布格重力异常</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>bouguer.grd<span class="w"> </span>moho_g.grd<span class="w"> </span><span class="nv">SUB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mba.grd
+</pre></div>
+</div>
+<p>（2）
+计算平均深度为 7 km，密度为 2700 的弹性板上地形加载的影响，地幔平均深度为 9 km，
+密度为 3300</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>bat.grd<span class="w"> </span>-Gelastic.grd<span class="w"> </span>-T7000/2700/3300/1035+m<span class="w"> </span>-Z9000
+</pre></div>
+</div>
+<p>如果考虑海底以及 Moho 面效应，则获得完整的均衡模型重力响应，这里仅使用 Parker
+展开式中的第一项</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>bat.grd<span class="w"> </span>-D1665<span class="w"> </span>-Gwater_g.grd<span class="w"> </span>-E1
+gmt<span class="w"> </span>gravfft<span class="w"> </span>bat.grd<span class="w"> </span>-Gelastic.grd<span class="w"> </span>-T7000/2700/3300/1035+m<span class="w"> </span>-Z9000<span class="w"> </span>-E1
+gmt<span class="w"> </span>grdmath<span class="w"> </span>water_g.grd<span class="w"> </span>elastic.grd<span class="w"> </span><span class="nv">ADD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>model.grd
+</pre></div>
+</div>
+<p>使用下面的命令可以得到与上面同样的结果</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>bat.grd<span class="w"> </span>-Gmodel.grd<span class="w"> </span>-T7000/2700/3300/1035<span class="w"> </span>-Z9000<span class="w"> </span>-E1
+</pre></div>
+</div>
+<p><strong>注</strong> ：不知是由于 bug 或是某些限制，上面两种计算中，使用 <strong>-E1</strong> 时结果是相同
+的，但是对于大于 1 的情况，结果则不同，第一种方法是对的，第二种方法则存在问题。</p>
+<p>（3）
+假定存在一个隆起，其深度为 50 km，上部平均补偿面深为 9 km，计算其产生的大地水准面
+异常</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>topo.grd<span class="w"> </span>-Gswell_geoid.grd<span class="w"> </span>-T7000/2700/3300/1035<span class="w"> </span>-Fg<span class="w"> </span>-Z9000/50000<span class="w"> </span>-S<span class="w"> </span>-E1
+</pre></div>
+</div>
+<p>（4）
+计算测深网格 <code class="file docutils literal notranslate"><span class="pre">topo.grd</span></code> 和 自由空气重力异常网格 <code class="file docutils literal notranslate"><span class="pre">faa.grd</span></code> 之间的导纳，
+假定地壳有效弹性厚度为 10 km，平均补偿深度为 9 km，并输出从上部加载的理论导纳</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>topo.grd<span class="w"> </span>faa.grd<span class="w"> </span>-It<span class="w"> </span>-T10000/2700/3300/1035<span class="w"> </span>-Z9000
+</pre></div>
+</div>
+<p>（5）
+计算测深网格以及大地水准面网格之间的导纳，且存在一定的底部加载，该加载下补偿面深度为
+40 km，上补偿面深度为 9 km，并在计算结果中输出波长而不是频率</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>topo.grd<span class="w"> </span>geoid.grd<span class="w"> </span>-Ibw<span class="w"> </span>-T10000/2700/3300/1035<span class="w"> </span>-Z9000/40000<span class="w"> </span>-fg
+</pre></div>
+</div>
+<p>（6）
+计算重力理论导纳，其存在底部加载，参数如上，结果结果波长范围为 2000 km，最小波长为
+500 km</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gravfft<span class="w"> </span>-C400/5000/3000/b<span class="w"> </span>-T10000/2700/3300/1035<span class="w"> </span>-Z9000/40000
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2>参考文献<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>Luis, J.F. and M.C. Neves. 2006, The isostatic compensation of the
+Azores Plateau: a 3D admittance and coherence analysis. J. Geothermal
+Volc. Res. Volume 156, Issues 1-2, Pages 10–22,
+<a class="reference external" href="https://doi.org/10.1016/j.jvolgeores.2006.03.010">https://doi.org/10.1016/j.jvolgeores.2006.03.010</a></p>
+<p>Parker, R. L., 1972, The rapid calculation of potential anomalies, Geophys. J., 31, 447–455.</p>
+<p>Wessel. P., 2001, Global distribution of seamounts inferred from gridded Geosat/ERS-1 altimetry,
+J. Geophys. Res., 106(B9), 19,431–19,441,
+<a class="reference external" href="https://doi.org/10.1029/2000JB000083">https://doi.org/10.1029/2000JB000083</a></p>
+</section>
+<section id="id9">
+<h2>相关模块<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grdfft/"><span class="doc">grdfft</span></a>,
+<a class="reference internal" href="../flexure/"><span class="doc">flexure</span></a>,
+<a class="reference internal" href="../grdflexure/"><span class="doc">grdflexure</span></a>,
+<a class="reference internal" href="../gravmag3d/"><span class="doc">gravmag3d</span></a>,
+<a class="reference internal" href="../grdgravmag3d/"><span class="doc">grdgravmag3d</span></a>,
+<a class="reference internal" href="../grdseamount/"><span class="doc">grdseamount</span></a>,
+<a class="reference internal" href="../talwani2d/"><span class="doc">talwani2d</span></a>,
+<a class="reference internal" href="../talwani3d/"><span class="doc">talwani3d</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../gravmag3d/" class="btn btn-neutral float-left" title="gravmag3d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../grdflexure/" class="btn btn-neutral float-right" title="grdflexure" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

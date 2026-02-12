@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>geo3al: 中国及邻区地质图数据 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script defer="defer" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="中文支持" href="../../chinese/" />
+    <link rel="prev" title="CN-block: 中国大陆及周边活动地块数据" href="../CN-block/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">中国地理空间数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CN-border/">CN-border: 中国国界省界数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-faults/">CN-faults: 中国断层数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-block/">CN-block: 中国大陆及周边活动地块数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">geo3al: 中国及邻区地质图数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">数据文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">示例图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">数据来源与处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">扩展阅读</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">数据引用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../dataset/">地学数据集</a> &raquo;</li>
+          <li><a href="../">中国地理空间数据集</a> &raquo;</li>
+      <li>geo3al: 中国及邻区地质图数据</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/dataset-CN/geo3al/index.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="geo3al">
+<h1>geo3al: 中国及邻区地质图数据<a class="headerlink" href="#geo3al" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://xumijian.me/">徐弥坚</a>, <a class="reference external" href="https://github.com/CovMat">陈箫翰</a>, <a class="reference external" href="https://github.com/liuzhumei">刘珠妹</a>, <a class="reference external" href="https://me.seisman.info/">田冬冬</a>, <a class="reference external" href="https://github.com/core-man">姚家园</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>geo3al 数据是由 U.S. Geological Survey (USGS) 提供的中国及邻区地质图数据，是“<a class="reference external" href="https://certmapper.cr.usgs.gov/data/apps/world-maps/">世界地质地图</a>”的一部分，数据分辨率为 1:5,000,000。</p>
+<section id="id1">
+<h2>数据文件<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>中文社区提供了可供 GMT 直接使用的数据文件：</p>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">geo3al.gmt</span></code>：中国及邻区地质图数据</p></li>
+</ul>
+<p>数据的具体下载地址和使用方式请见：<a class="reference internal" href="../"><span class="doc">中国地理空间数据集</span></a>。</p>
+<p>数据中包含了如下非空间元信息（可以参考
+<a class="reference external" href="https://certmapper.cr.usgs.gov/data/we/ofr97470f/spatial/shape/geo3al.shp.xml">geo3al.shp.xml</a>
+以获取元信息的更多细节）：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AREA</span></code>：地层多边形区域的面积（单位 <span class="math notranslate nohighlight">\(m^2\)</span>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PERIMETER</span></code>：地层多边形区域的周长（单位 m）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TYPE</span></code>：岩性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GLG</span></code>：原始地图上显示地表露头的地质年代</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GEN_GLG</span></code>：编者从 <code class="docutils literal notranslate"><span class="pre">GLG</span></code> 中计算得到的地质年代，在单元年龄跨越一个以上地质年龄的情况下用“代”表示</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>示例图<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>下面的示例图使用 <code class="file docutils literal notranslate"><span class="pre">geo3al.gmt</span></code> 数据绘制了中国大陆及邻区地质图：</p>
+<ul class="simple">
+<li><p>地质年代从数据的 <code class="docutils literal notranslate"><span class="pre">GEN_GLG</span></code> 属性中提取，用不同的颜色表示</p></li>
+<li><p>岩性从数据的 <code class="docutils literal notranslate"><span class="pre">TYPE</span></code> 属性中提取，用不同的填充图案表示</p></li>
+</ul>
+<p>示例代码中使用的地质年代 CPT 色标文件 <a class="reference download internal" download="" href="../../_downloads/dfdf181641b1b896617d372446048b0a/geoage.cpt"><code class="xref download docutils literal notranslate"><span class="pre">geoage.cpt</span></code></a>
+修改自 <a class="reference external" href="http://soliton.vm.bytemark.co.uk/pub/cpt-city/heine/GTS2012_epochs.cpt">GTS2012_epochs</a>。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># Geological map of China and adjacent regions</span>
+<span class="c1">#</span>
+
+<span class="nv">data</span><span class="o">=</span>geo3al.gmt
+<span class="nv">cpt</span><span class="o">=</span>geoage.cpt
+
+gmt begin geo3al pdf,png
+    <span class="c1"># Paint the land using white color</span>
+    gmt coast -R70/150/13/55 -JM22c -Gwhite -Baf -BWsNe
+
+    <span class="c1"># Plot the geological map, colored by geologic ages</span>
+    <span class="c1"># -aZ=&quot;GEN_GLG&quot;: use the &quot;GEN_GLG&quot; metadata as the Z value</span>
+    <span class="c1"># -G+z -C$cpt: the fill color is determined by the Z value and the CPT file</span>
+    gmt plot <span class="nv">$data</span> -C<span class="nv">$cpt</span> -aZ<span class="o">=</span><span class="s2">&quot;GEN_GLG&quot;</span> -G+z
+
+    <span class="c1"># Plot rock types using diffenrent patterns (28, 29 and 44)</span>
+    <span class="c1"># -aI=&quot;TYPE&quot;: using the &quot;TYPE&quot; metadata as ID</span>
+    <span class="c1"># -S&quot;-Iv&quot;: only keep data segments that matches &quot;-Iv&quot; (v means &quot;Volcanic rocks&quot;)</span>
+    <span class="c1"># -S&quot;-Ii&quot;: only keep data segments that matches &quot;-Ii&quot; (i means &quot;Intrusive rocks&quot;)</span>
+    <span class="c1"># -S&quot;-Iw&quot;: only keep data segments that matches &quot;-Iw&quot; (w means &quot;Ultrabasic igneous rock or ophiolites&quot;)</span>
+    <span class="c1"># -Gp28+r500+f100+b-: fill with pattern 28, dpi=500, foreground color=100 (gray), background color=- (transparent)</span>
+    gmt convert <span class="nv">$data</span> -aI<span class="o">=</span><span class="s2">&quot;TYPE&quot;</span> -S<span class="s2">&quot;-Iv&quot;</span> <span class="p">|</span> gmt plot -Gp28+r500+f100+b-
+    gmt convert <span class="nv">$data</span> -aI<span class="o">=</span><span class="s2">&quot;TYPE&quot;</span> -S<span class="s2">&quot;-Ii&quot;</span> <span class="p">|</span> gmt plot -Gp29+r500+f100+b-
+    gmt convert <span class="nv">$data</span> -aI<span class="o">=</span><span class="s2">&quot;TYPE&quot;</span> -S<span class="s2">&quot;-Iw&quot;</span> <span class="p">|</span> gmt plot -Gp44+r500+f100+b-
+
+    <span class="c1"># Paint the ocean and lake using color &quot;cadetblue1&quot;</span>
+    gmt coast -SCADETBLUE1
+
+    <span class="c1"># Plot geologic age legend</span>
+    gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 7p  <span class="c1"># font for legend labels</span>
+    cat &gt; age_legend.txt <span class="s">&lt;&lt; EOF</span>
+<span class="s">H 10 3 Age of rock units</span>
+<span class="s">N 3</span>
+<span class="s">EOF</span>
+    <span class="c1"># Output non-empty lines that don&#39;t start with &quot;B&quot;, &quot;F&quot;, &quot;N&quot; or &quot;#&quot;</span>
+    gawk <span class="s1">&#39;!/^($|B|F|N|#)/&#39;</span> <span class="nv">$cpt</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> label color period
+    <span class="k">do</span>
+        <span class="nb">echo</span> <span class="s2">&quot;S 0.3c r 0.38c </span><span class="nv">$color</span><span class="s2"> 0.3p 0.7c </span><span class="nv">$period</span><span class="s2">&quot;</span> &gt;&gt; age_legend.txt
+    <span class="k">done</span>
+    gmt legend age_legend.txt -DJBR+w10.5c+jTR+o0c/-2c+l1.3 -F+p0.7p+g255 -C3p/3p
+    rm age_legend.txt
+
+    <span class="c1"># Plot rock type legend</span>
+    gmt legend -DJBR+w5.0c+jBR+o0c/2c+l1.9 -F+p0.7p+g255 -C3p/1p <span class="s">&lt;&lt;EOF</span>
+<span class="s">H 10 3 Rock type</span>
+<span class="s">N 2</span>
+<span class="s">S 0.3c r 0.5c p28+r500+f100+b255 0.3p 0.7c Volcanic rocks</span>
+<span class="s">S 0.3c r 0.5c p29+r500+f100+b255 0.3p 0.7c Intrusive rocks</span>
+<span class="s">S 0.3c r 0.5c p44+r500+f100+b255 0.3p 0.7c Ultrabasic igneous rock or ophiolites</span>
+<span class="s">EOF</span>
+gmt end show
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png"><img alt="https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png" class="align-center" src="https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png" style="width: 95%;" /></a>
+</section>
+<section id="id3">
+<h2>数据来源与处理<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p><em>以下内容仅供数据维护者参考，一般用户无需关心。</em></p>
+<ol class="arabic">
+<li><p>从 “<a class="reference external" href="https://certmapper.cr.usgs.gov/data/apps/world-maps/">World Geologic Maps</a>”下载 “Generalized Geology of the Far East” 对应的 Shapefile 压缩文件</p></li>
+<li><p>使用 <a class="reference internal" href="../../utilities/gdal/#ogr2ogr"><span class="std std-ref">ogr2ogr</span></a> 将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ogr2ogr -t_srs EPSG:4326 -f OGR_GMT geo3al.gmt geo3al.shp
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>原始数据使用的是以米为单位的投影坐标，而非以经纬度表示的地理坐标。因而在使用
+<code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> 时需要加上 <code class="docutils literal notranslate"><span class="pre">-t_srs</span> <span class="pre">EPSG:4326</span></code> 参数进行坐标转换</p></li>
+<li><p>转换时 <code class="file docutils literal notranslate"><span class="pre">.dbf</span></code>、<code class="file docutils literal notranslate"><span class="pre">.prj</span></code>、<code class="file docutils literal notranslate"><span class="pre">.shx</span></code> 等文件必须和
+<code class="file docutils literal notranslate"><span class="pre">shp</span></code> 文件放在同一目录下</p></li>
+</ul>
+</li>
+</ol>
+<p>数据转换与处理参考了如下博文：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://home.xumijian.me/">Mijian Xu</a> 的博客：
+<a class="reference external" href="https://blog.xumijian.me/post/gmt-geo/">用 GMT 绘制中国大陆及邻区地质年代图</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jimmytseng79">Po-Chin Tseng</a> 的
+<a class="reference external" href="https://jimmytseng79.github.io/GMT5_tutorials/geology_map.html">GMT5 教程：地质图</a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>扩展阅读<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://certmapper.cr.usgs.gov/data/apps/world-maps/">World Geologic Maps</a>
+提供了几乎所有区域的地质图数据。本文只提供了中国及邻区地质图（即 Generalized Geology of the Far East）。需要绘制其他地区地质图的用户可以参考本文的数据处理方式和绘图脚本，但需要注意：</p>
+<ul class="simple">
+<li><p>部分原始数据使用的是经纬度坐标，因此格式转换时不需要使用 <code class="docutils literal notranslate"><span class="pre">-t_srs</span> <span class="pre">EPSG:4326</span></code></p></li>
+<li><p>每个数据提供的属性可能不同，因而用户应查阅从源文件中解压得到的 <code class="docutils literal notranslate"><span class="pre">.xml</span></code> 文件以了解数据提供的元信息，并相应地修改绘图脚本。</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>数据引用<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Steinshouer, D.W., Qiang, J., McCabe, P.J., and Ryder, R.T, 1999,
+Maps showing geology, oil and gas fields, and geologic provinces of the Asia Pacific region:
+U.S. Geological Survey Open-File Report 97-470-F, 16 p.,
+<a class="reference external" href="https://doi.org/10.3133/ofr97470F">https://doi.org/10.3133/ofr97470F</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../CN-block/" class="btn btn-neutral float-left" title="CN-block: 中国大陆及周边活动地块数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../../chinese/" class="btn btn-neutral float-right" title="中文支持" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

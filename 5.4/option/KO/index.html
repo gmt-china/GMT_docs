@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.7 -K 和 -O 选项 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/option/KO.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="8.8 -X 和 -Y 选项" href="../XY/" />
+    <link rel="prev" title="8.6 -U 选项" href="../U/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">8 标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">8.1 -R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">8.2 -J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">8.3 -B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../P/">8.4 -P 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">8.5 -V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">8.6 -U 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.7 -K 和 -O 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">8.7.1 图层</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ps">8.7.2 PS文件结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">8.7.3 -K 和 -O 的作用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">8.7.4 -K 和 -O 的使用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">8.8 -X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">8.9 -a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">8.10 -b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">8.11 -d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">8.12 -e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">8.13 -f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">8.14 -g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">8.15 -h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">8.16 -i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">8.17 -n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.18 -r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">8.19 -p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">8.20 -s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">8.21 -t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">8.22 -x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">8.23 -: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">8 标准选项</a> &raquo;</li>
+        
+      <li>8.7 -K 和 -O 选项</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/option/KO.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="k-o">
+<h1>8.7 -K 和 -O 选项<a class="headerlink" href="#k-o" title="永久链接至标题">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">-K</span></code> 选项和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项是GMT绘图中常用的两个选项，也是经常产生错误的两个选项。</p>
+<div class="section" id="id1">
+<h2>8.7.1 图层<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>要理解 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 选项和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项，首先要理解图层的概念。如果你使用过PhotoShop或者在PowerPoint中画过图，应该很容易理解这一概念。所谓图层，可以理解成一张画有线条与文字的透明胶片，将这些透明胶片按照顺序一张张重叠起来，即构成了最终的图片。以PhotoShop中的图层为例，使用图层的好处在于，可以将某一图层单独拿出来修改，而不影响到其他图层。</p>
+<p>图层的概念也适用于GMT。通常来说，用GMT绘图时是不可能用一个命令就画出想要的效果的。比如要画一个震中和台站的分布图，通常需要将如下几个命令组合起来:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 本示例中命令不完整，仅供演示用途</span>
+
+<span class="c1"># 绘制海岸线</span>
+gmt pscoast ... &gt; map.ps
+<span class="c1"># 用五角星表示地震位置</span>
+gmt psxy event.dat -Sa0.5c ... &gt;&gt; map.ps
+<span class="c1"># 用三角形表示台站位置</span>
+gmt psxy station.in -St0.5c ... &gt;&gt; map.ps
+</pre></div>
+</div>
+<p>每一个绘图命令本质上都是在向PS文件中新增了一个图层，所以上面生成的PS文件中共有三个图层，第一个图层仅包含了海岸线，第二个图层仅包含一些五角星，第三个图层仅包含一些三角形。这些图层按照顺序叠加起来，就组成了我们最终看到的图片。在图层叠加过程中，后面的图层中的非透明区域会覆盖前面的图层，比如第二个图层中填充了颜色的五角星就有可能把前一图层中的某一小段海岸线给覆盖掉。</p>
+</div>
+<div class="section" id="ps">
+<h2>8.7.2 PS文件结构<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h2>
+<p>在理解了图层的概念之后在来说说PS文件的结构。</p>
+<p>任何一个PS文件都由header、body和trailer组成，可以理解成头、身体和尾巴。其中头部的作用是初始化PS文件，比如设置纸张大小、纸张方向、载入字体等；身体部分则是真正的绘图部分，包含了每个绘图命令绘制的图层；尾巴部分则用于控制PS文件的显示。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/c61f5c9d64c5b9d02f6ae43292a91e4b/KO-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center" id="id4">
+<img alt="../../_images/KO-gmtplot-0.png" src="../../_images/KO-gmtplot-0.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的原理</span></p>
+</div>
+<p>因而，一个PS文件中，只有一个头和尾巴，可以有零个、一个或多个身体。</p>
+</div>
+<div class="section" id="id2">
+<h2>8.7.3 -K 和 -O 的作用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在不使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的情况下，GMT的每个绘图命令都会产生完整的PS代码，即包含了头部、身体和尾部。而在使用多个命令绘制一张图片的多个图层时，则要保证第一个绘图命令必须省略尾部，中间的绘图命令必须省略头部和尾部，最后一个绘图命令必须省略头部。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-K</span></code> 选项的作用是省略尾部，即意味着后面还有追加新的图层。
+<code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的作用是省略头部，即这个图层要覆盖在前一图层上。</p>
+<p>因而，在一张图中绘制多个图层时，绘制第一个图层的命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 选项省略尾部，绘制中间图层的命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span> <span class="pre">-O</span></code> 选项，绘制最后一个图层的命令则需要使用 <code class="docutils literal notranslate"><span class="pre">-O</span></code>
+选项。</p>
+<p>因而，对于含多个图层的图片来说，绘图命令如下所示:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscmd1 ... -K &gt; out.ps
+gmt pscmd2 ... -K -O &gt;&gt; out.ps
+...
+gmt pscmd3 ... -K -O &gt;&gt; out.ps
+gmt pscmd4 ... -O &gt;&gt; out.ps
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>8.7.4 -K 和 -O 的使用<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>总结一下 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的用法。对于有n个图层的PS文件：</p>
+<ul class="simple">
+<li>第1个绘图命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></li>
+<li>第2到n-1个绘图命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span> <span class="pre">-O</span></code> 和重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></li>
+<li>第n个绘图命令需要使用 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 和重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></li>
+</ul>
+<p>上面总结的 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的用法看上去很简单，但实际绘图中却非常容易出错。</p>
+<p>想象一下这样一个场景，你需要画一张稍复杂的图，所以需要在脚本中写一堆命令来完成绘图。当你写脚本的时候正确地使用了 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项以及重定向符号，然后也初步完成了绘图。且不说绘图的过程有多艰辛，在完成初步绘图后你可能需要对这张图做一些微调，比如下面这些情形：</p>
+<ul class="simple">
+<li>由于后面的图层会覆盖前面的图层，而有些覆盖是你不想要的，所以你可能会希望调换两个绘图命令的顺序。比如需要调整最开始的两个命令的顺序，或者要调整最后两个命令的顺序，你是否记得在调整顺序的时候要修改 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项以及重定向符号？</li>
+<li>比如需要在第一个绘图命令前再加一个绘图命令，你是否记得要把原来的第一个绘图命令加上 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项以及 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> ？</li>
+<li>比如需要在最后一个绘图后面再加一个绘图命令，你是否记得要把原来的最后一个绘图命令加上 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 选项？</li>
+</ul>
+<p>上面列举的一些情形，即便是对于GMT比较熟悉的人，也偶尔会因为一时粗心而弄错。在被 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 的用法坑了几次之后，就得想一想，有没有办法可以避免这个问题呢？下面展示了一些小技巧:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">PS</span><span class="o">=</span>map.ps
+<span class="nv">J</span><span class="o">=</span>JX5c/5c
+<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/10/0/10
+
+<span class="c1"># 写入文件头</span>
+gmt psxy -J<span class="nv">$J</span> -R<span class="nv">$R</span> -T -K &gt; <span class="nv">$PS</span>
+
+<span class="c1"># 真正的绘图命令</span>
+gmt xxxx -J<span class="nv">$J</span> -R<span class="nv">$R</span> ... -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt xxxx -J<span class="nv">$J</span> -R<span class="nv">$R</span> ... -K -O &gt;&gt; <span class="nv">$PS</span>
+
+<span class="c1"># 写入文件尾</span>
+gmt psxy -J<span class="nv">$J</span> -R<span class="nv">$R</span> -T -O &gt;&gt; <span class="nv">$PS</span>
+</pre></div>
+</div>
+<p>解释一下：</p>
+<ul class="simple">
+<li>对于需要用多个命令绘图的图片，最好将命令写到脚本文件中，这样方便记录和调试命令</li>
+<li>上面的脚本是bash脚本，并将常出现的值定义成变量，以方便使用和修改</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">...</span> <span class="pre">-T</span> <span class="pre">-K</span></code> 只向PS文件中写入头部</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">...</span> <span class="pre">-T</span> <span class="pre">-O</span></code> 只向PS文件中写入尾部</li>
+<li>中间的全部绘图命令统一用 <code class="docutils literal notranslate"><span class="pre">-K</span> <span class="pre">-O</span> <span class="pre">&gt;&gt;</span></code>。这样的统一使得，任意调整命令顺序或删减命令，都不需要修改 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code> 和重定向符号！</li>
+<li>实际使用中， 第一个 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-T</span> <span class="pre">-K</span></code> 命令也可以考虑改成只绘制底图边框的
+<code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span> <span class="pre">-B</span> <span class="pre">...</span> <span class="pre">-K</span></code></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">-K 和 -O 以及重定向符号是在GMT绘图过程中最容易出错的地方。GMT6提供的现代模式中完全抛弃了 -K 和 -O 以及重定向，极大地简化了绘图代码，并减少了出错的可能性。推荐所有用户使用GMT6提供的现代模式。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../XY/" class="btn btn-neutral float-right" title="8.8 -X 和 -Y 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../U/" class="btn btn-neutral float-left" title="8.6 -U 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

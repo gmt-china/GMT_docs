@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WSM_2025: 全球地应力数据 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="中文支持" href="../../chinese/" />
+    <link rel="prev" title="global_tectonics: 全球地质构造数据" href="../global_tectonics/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">GSHHG: 全球高分辨率海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote-dataset/">GMT 远程数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-border/">CN-border: 中国国界省界数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-faults/">CN-faults: 中国断层数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-block/">CN-block: 中国大陆及周边活动地块数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geo3al/">geo3al: 中国及邻区地质图数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">GADM: 全球行政区划数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PB2002/">PB2002: 全球板块边界数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_tectonics/">global_tectonics: 全球地质构造数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">WSM_2025: 全球地应力数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">数据简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">引用信息</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">地学数据集</a></li>
+      <li class="breadcrumb-item active">WSM_2025: 全球地应力数据</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/dataset/WSM/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    
+ &nbsp;•&nbsp; 📅 2026-02-05
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="wsm-2025">
+<h1>WSM_2025: 全球地应力数据<a class="headerlink" href="#wsm-2025" title="Link to this heading"></a></h1>
+<p>World Stress Map Database Release 2025 是一个全球地应力数据库，提供 csv、xlsx 格式数据的下载。</p>
+<ul class="simple">
+<li><p>官方网站: <a class="reference external" href="https://www.world-stress-map.org/">https://www.world-stress-map.org/</a></p></li>
+<li><p>数据下载: <a class="reference external" href="https://datapub.gfz.de/download/10.5880.WSM.2025.001-Scbwez/">https://datapub.gfz.de/download/10.5880.WSM.2025.001-Scbwez/</a></p></li>
+<li><p>格式说明: <a class="reference external" href="https://doi.org/10.48440/wsm.2025.001">https://doi.org/10.48440/wsm.2025.001</a></p></li>
+</ul>
+<section id="id1">
+<h2>数据简介<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>WSM_2025 数据集包含了地壳的100842条数据记录，提供了两个数据文件：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WSM_Database_2025.csv</span></code>: 以逗号分割的文本格式</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WSM_Database_2025.xlsx</span></code>: Excel格式数据</p></li>
+</ul>
+<p>更详细的数据说明请阅读数据格式说明 PDF 文件。</p>
+</section>
+<section id="id2">
+<h2>使用示例<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>数据包含了观测点经纬度、深度、破裂类型等信息。不同列所代表的含义请阅读数据格式说明 PDF 文档。
+但原始数据文件包含引号包裹的逗号，例如 &quot;Tanzania, United Republic of&quot;，处理分隔符时不能简单地使用逗号。
+并且数据中包含非 ASCII 字符，有些数据的经纬度等信息缺失。
+用户在使用数据时，需要特别注意这些情况，必要时删除不用的数据列简化数据处理过程。
+在以下的例子里，使用的不是原始数据，而是手动筛选之后的数据，只保留经纬度、方位角、类型四列：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+<span class="c1"># 官方网站</span>
+<span class="c1"># https://www.world-stress-map.org/</span>
+<span class="c1"># 下载数据文件</span>
+<span class="c1"># https://datapub.gfz.de/download/10.5880.WSM.2025.001-Scbwez/</span>
+<span class="c1"># 格式说明</span>
+<span class="c1"># https://doi.org/10.48440/wsm.2025.001</span>
+<span class="c1"># https://doi.org/10.5880/WSM.2025.001</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>WSM
+<span class="w">    </span><span class="c1"># 绘制底图</span>
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_GRID_PEN_PRIMARY<span class="w"> </span><span class="m">0</span>.25p,gray,2_2
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-JM10c<span class="w"> </span>-R100/130/15/40<span class="w"> </span>-G244/243/239<span class="w"> </span>-S167/194/223<span class="w"> </span>-Baf
+
+<span class="w">    </span><span class="c1">#</span>
+<span class="w">    </span><span class="nv">size</span><span class="o">=</span><span class="m">0</span>.3c
+<span class="w">    </span><span class="nv">data</span><span class="o">=</span><span class="k">$(</span>gmt<span class="w"> </span>which<span class="w"> </span>WSM_example.txt<span class="k">)</span>
+
+<span class="w">    </span><span class="c1"># 生成震源机制符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>focal_mec.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 0 0.2 c</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># 生成钻孔崩落符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>borehole_collapse.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 -0.0866 0.2 t</span>
+<span class="s">0 0.0866 0.2 i</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># 生成应力解除符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>stress_relief.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 -0.05 0.25 -</span>
+<span class="s">0.02 0.05 0.25 -</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># 生成水压致裂符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>hydra_fract.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 0 0.25 t</span>
+<span class="s">0 0 0.25 i</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># 生成断层滑动符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>fault_slip.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 0 0.1 0.2 r</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># 生成钻孔槽(BS)符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>BS.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 0 0.25 x</span>
+<span class="s">0 0 0.25 -</span>
+<span class="s">EOF</span>
+<span class="w">    </span><span class="c1"># 生成钻孔诱发张裂隙(DIF)符号自定义文件</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>DIF.def<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">N: 1 a</span>
+<span class="s">$1 O</span>
+<span class="s">0 0 1 y</span>
+<span class="s">0 0 0.25 d</span>
+<span class="s">EOF</span>
+
+<span class="w">    </span><span class="c1"># 使用 gawk 命令提取该类型的测点数据并绘制</span>
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;($4 == &quot;FMF&quot; || $4 == &quot;FMS&quot; || $4 == &quot;FMA&quot;) {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skfocal_mec/<span class="nv">$size</span><span class="w"> </span>-W0p,lightgreen<span class="w"> </span>-Glightgreen
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;$4 == &quot;BO&quot; {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skborehole_collapse/<span class="nv">$size</span><span class="w"> </span>-W0p,orange<span class="w"> </span>-Gorange
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;$4 == &quot;OC&quot; {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skstress_relief/<span class="nv">$size</span><span class="w"> </span>-W0p,blue
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;($4 == &quot;HF&quot; || $4 == &quot;HFH&quot; || $4 == &quot;HFP&quot; || $4 == &quot;HFS&quot;) {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skhydra_fract/<span class="nv">$size</span><span class="w"> </span>-W0p,red<span class="w"> </span>-Gred
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;($4 == &quot;GFI&quot; || $4 == &quot;GFM&quot;) {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skfault_slip/<span class="nv">$size</span><span class="w"> </span>-W0p,black<span class="w"> </span>-Gblack
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;$4 == &quot;BS&quot; {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-SkBS/<span class="nv">$size</span><span class="w"> </span>-W0p,pink<span class="w"> </span>-Gpink
+<span class="w">    </span>gawk<span class="w"> </span><span class="s1">&#39;$4 == &quot;DIF&quot; {print $1, $2, $3}&#39;</span><span class="w"> </span><span class="nv">$data</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-SkDIF/<span class="nv">$size</span><span class="w"> </span>-W0p,yellow<span class="w"> </span>-Gyellow
+
+<span class="w">    </span><span class="c1"># 符号图例</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skfocal_mec/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">36</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skborehole_collapse/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skstress_relief/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skhydra_fract/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Skfault_slip/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-SkBS/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="m">135</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-SkDIF/2c<span class="w"> </span>-W1p<span class="w"> </span>-Gblack<span class="w"> </span>-N
+
+<span class="w">    </span>gmt<span class="w"> </span>text<span class="w"> </span>-F+f10p+jML<span class="w"> </span>-N<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">138 40 Earthquake focal mechanisms</span>
+<span class="s">138 36 Borehole breakouts</span>
+<span class="s">138 32 Overcoring or other strain relief</span>
+<span class="s">138 28 Hydraulic fractures</span>
+<span class="s">138 24 Geologic fault-slip</span>
+<span class="s">138 20 Borehole slotter</span>
+<span class="s">138 16 Drilling-induced tensile fractures</span>
+<span class="s">EOF</span>
+
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-98a34782e564b5d657235aefb96a610b">
+<a class="reference internal image-reference" href="../../_images/98a34782e564b5d657235aefb96a610b.png"><img alt="../../_images/98a34782e564b5d657235aefb96a610b.png" src="../../_images/98a34782e564b5d657235aefb96a610b.png" style="width: 80%;" />
+</a>
+</figure>
+<p>请注意，示例中没有绘制 geologic-volcanic vent alignment 和 anisotropy of seismic waves 两种类型的数据。</p>
+</section>
+<section id="id3">
+<h2>引用信息<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>Heidbach, Oliver; Rajabi, Mojtaba; Di Giacomo, Domenico; Harris, James; Lammers, Steffi; Morawietz, Sophia; Pierdominici, Simona; Reiter, Karsten; von Specht, Sebastian; Storchak, Dmitry; Ziegler, Moritz O. (2025): World Stress Map Database Release 2025. GFZ Data Services. https://doi.org/10.5880/WSM.2025.001</p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../global_tectonics/" class="btn btn-neutral float-left" title="global_tectonics: 全球地质构造数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../../chinese/" class="btn btn-neutral float-right" title="中文支持" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

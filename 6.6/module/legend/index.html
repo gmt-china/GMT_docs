@@ -1,0 +1,940 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>legend &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="makecpt" href="../makecpt/" />
+    <link rel="prev" title="kml2gmt" href="../kml2gmt/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">legend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">图例文件格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">默认值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">关于图例高度的说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows 注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">自动图例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">legend</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/legend.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://me.seisman.info/" target="_blank" rel="noopener">田冬冬</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://github.com/Dengda98" target="_blank" rel="noopener">朱邓达</a>
+    , 
+      <a href="https://github.com/wangliang1989" target="_blank" rel="noopener">王亮</a>
+    , 
+      赵志远
+    
+ &nbsp;•&nbsp; 📅 2026-01-04
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="legend">
+<span id="index-0"></span><h1>legend<a class="headerlink" href="#legend" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/legend.html" title="（在 GMT v6.6）"><span>legend</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>在图上添加图例</p>
+</dd>
+</dl>
+<p><strong>legend</strong> 模块用于绘制图例，图例由图例文件控制。如无特别说明，
+标注的字体由 <a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 控制。
+若图例中含有中文，必须将 <a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 设置为中文字体。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt legend</strong>
+[ <em>specfile</em> ]
+<a class="reference internal" href="#cmdoption-legend-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>refpoint</em>
+[ <a class="reference internal" href="#cmdoption-legend-B"><code class="xref std std-option docutils literal notranslate"><span class="pre">-B</span></code></a>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>box</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a><em>parameters</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a>[<strong>h</strong>|<strong>e</strong>] ]
+[ <a class="reference internal" href="#cmdoption-legend-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><em>scale</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>file</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-U"><code class="xref std std-option docutils literal notranslate"><span class="pre">-U</span></code></a>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#cmdoption-legend-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-legend-X"><code class="xref std std-option docutils literal notranslate"><span class="pre">-X</span></code></a>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#cmdoption-legend-Y"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Y</span></code></a>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
+[ <a class="reference internal" href="#cmdoption-legend-p"><code class="xref std std-option docutils literal notranslate"><span class="pre">-p</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-qi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-qi</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-legend-t"><code class="xref std std-option docutils literal notranslate"><span class="pre">-t</span></code></a><em>transp</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>specfile</em></dt><dd><p>ASCII 格式图例文件。每个图例项由一条唯一的记录描述，每条记录都以一个字符开头。详细格式说明请参考 <a class="reference internal" href="#id5">图例文件格式</a> 。
+使用 <a class="reference internal" href="#cmdoption-legend-M"><code class="xref std std-option docutils literal notranslate"><span class="pre">-M</span></code></a> 选项可以在现代模式下设置如何同时使用由 <em>specfile</em> 设置的图例项和之前模块通过 <strong>-l</strong> 隐式设置的自动图例项。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>必须选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[/<em>height</em>][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>spacing</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt><dd><p>指定图例框的尺寸和位置</p>
+<p>简单介绍各子选项的含义，详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">修饰物</span></a></p>
+<ul class="simple">
+<li><p>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>指定地图上的参考点</p>
+<ul>
+<li><p><strong>g</strong><em>lon</em>/<em>lat</em> 指定<a class="reference internal" href="../../basis/embellishment/#refpoint-g"><span class="std std-ref">数据坐标</span></a>为参考点</p></li>
+<li><p><strong>j</strong><em>code</em> 或者 <strong>J</strong><em>code</em> 通过 2 个字母的对齐方式码指定<a class="reference internal" href="../../basis/embellishment/#refpoint-j"><span class="std std-ref">锚点</span></a>作为参考点</p></li>
+<li><p><strong>n</strong><em>xn</em>/<em>yn</em> 指定<a class="reference internal" href="../../basis/embellishment/#refpoint-n"><span class="std std-ref">归一化坐标系</span></a>（即 0-1）为参考点</p></li>
+<li><p><strong>x</strong><em>x</em>/<em>y</em> 指定<a class="reference internal" href="../../basis/embellishment/#refpoint-x"><span class="std std-ref">绘图坐标</span></a> 为参考点，
+追加 <strong>c</strong>m, <strong>i</strong>nch, 或者 <strong>p</strong>oint 用来指定单位</p></li>
+</ul>
+</li>
+<li><p><strong>+j</strong><em>justify</em> 指定图例框的锚点（默认锚点在左下角(BL)）</p></li>
+<li><p><strong>+o</strong><em>dx</em>/<em>dy</em> 在参考点的基础上设置图例框的额外偏移量</p></li>
+<li><p><strong>+w</strong><em>width</em>[/<em>height</em>] 指定图例框的尺寸。若 <em>height</em> 为0或未指定，
+则根据图例内容自动估算图例框高度。</p></li>
+<li><p><strong>+l</strong><em>spacing</em> 设置图例里的行间距 [默认值1.1，即当前字体大小的1.1倍]</p></li>
+</ul>
+<p>该选项几个比较有用的用法是：</p>
+<ul class="simple">
+<li><p>将图例放在左下角： <strong>-DjBL+w4c+o0.2c/0.2c</strong></p></li>
+<li><p>将图例放在左上角： <strong>-DjTL+w4c+o0.2c/0.2c</strong></p></li>
+<li><p>将图例放在右下角： <strong>-DjBR+w4c+o0.2c/0.2c</strong></p></li>
+<li><p>将图例放在右上角： <strong>-DjTR+w4c+o0.2c/0.2c</strong></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-B">
+<span class="sig-name descname"><span class="pre">-B</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-B" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-B</strong><em>parameters</em></dt><dd><p>设置底图边框和轴属性。 <a class="reference internal" href="../../option/B/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt><dd><p>控制图例的背景面板属性</p>
+<p>若只使用 <a class="reference internal" href="#cmdoption-legend-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 而不使用其它子选项，则绘制图例框。
+下面简单介绍各子选项，详细用法见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">修饰物</span></a></p>
+<ul class="simple">
+<li><p><strong>+g</strong><em>fill</em> 指定面板填充<a class="reference internal" href="../../basis/color/"><span class="doc">颜色</span></a> [默认不填充]</p></li>
+<li><p><strong>+p</strong><em>pen</em> 绘制面板边框。<em>pen</em> 为边框的<a class="reference internal" href="../../basis/pen/"><span class="doc">画笔属性</span></a>，若不指定 <em>pen</em>，
+则默认使用 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a></p></li>
+<li><p><strong>+r</strong>[<em>radius</em>] 绘制圆角边框，<em>radius</em> 为圆角的半径</p></li>
+<li><p><strong>+i</strong>[[<em>gap</em>/]<em>pen</em>] 在边框内部绘制一个内边框，<em>gap</em> 为内外边框空白距离 [默认为 <em>2p</em>]，
+<em>pen</em> 为内边框的画笔属性 [默认使用 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>]</p></li>
+<li><p><strong>+c</strong><em>clearance</em> 设置<a class="reference internal" href="../../basis/embellishment/"><span class="doc">修饰物</span></a>与面板之间的空白距离。
+默认情况下面板的大小由修饰物的大小决定，使用该子选项可以为面板增加额外的尺寸。
+<em>clearance</em> 的具体设置包括下面 3 种情况：</p>
+<ul>
+<li><p><em>gap</em> 为四个方向增加相同的空白距离</p></li>
+<li><p><em>xgap</em>/<em>ygap</em> 分别为 X 方向和 Y 方向指定不同的空白距离</p></li>
+<li><p><em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> 分别为四个方向指定不同的空白距离</p></li>
+</ul>
+</li>
+<li><p><strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]] 设置面板背景阴影。<em>dx</em>/<em>dy</em> 为阴影区相对于面板的偏移量，
+<em>shade</em> 为阴影区颜色 [默认为 <strong>4p</strong>/<strong>-4p</strong>/<strong>gray50</strong>]</p></li>
+</ul>
+<p><strong>注意：</strong> 如果 <a class="reference internal" href="#cmdoption-legend-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 中没有设置图例宽度，则 <a class="reference internal" href="#cmdoption-legend-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 中的 <strong>+r</strong> 无效。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-J">
+<span class="sig-name descname"><span class="pre">-J</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-J" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-J</strong><em>projection</em></dt><dd><p>设置地图投影方式。 <a class="reference internal" href="../../option/J/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-M">
+<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-M" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-M</strong>[<strong>h</strong>|<strong>e</strong>]</dt><dd><p>仅限现代模式，设置如何同时使用由 <em>specfile</em> 图例文件设置的图例项和之前模块通过 <strong>-l</strong> 隐式设置的自动图例项：</p>
+<ul class="simple">
+<li><p><strong>h</strong>：由先前绘图模块的 <strong>-l</strong> 隐式设置的自动图例项</p></li>
+<li><p><strong>e</strong>：由 <em>specfile</em> 图例文件（或标准输入）显式提供的图例项</p></li>
+</ul>
+<p>默认值为 <strong>he</strong>，即先绘制隐式设置的自动图例项，然后追加显式提供的图例项。
+可以使用 <strong>eh</strong> 改变顺序，或 <strong>h</strong> 、 <strong>e</strong> 只绘制某一类图例。</p>
+<p><strong>注意</strong>：对于经典模式，必须提供图例文件或从标准输入读取。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong><em>scale</em></dt><dd><p>对图例中的所有符号大小乘以 <em>scale</em> [默认值为 1]</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-T</strong><em>file</em></dt><dd><p>将隐藏的图例文件输出到文件中 [仅适用于现代模式]</p>
+<p>现代模式下，某些模块（如 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a>）可以使用 <strong>-l</strong> 选项自动编辑一个隐藏的图例文件。
+在最终成图时，会根据这一图例文件绘制图例。
+该选项可将该隐藏图例文件的内容保存到新文件中，使得用户可以在自动图例文件的基础
+上做进一步自定义。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-U">
+<span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-U" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>]</dt><dd><p>在图上绘制GMT时间戳logo。 <a class="reference internal" href="../../option/U/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-X">
+<span class="sig-name descname"><span class="pre">-X</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-X" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-Y">
+<span class="sig-name descname"><span class="pre">-Y</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-Y" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<p><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]]</dt><dd><p>移动绘图原点。 <a class="reference internal" href="../../option/XY/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-p" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>]</dt><dd><p>设置3D透视视角。 <a class="reference internal" href="../../option/p/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-qi">
+<span class="sig-name descname"><span class="pre">-qi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-qi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>筛选输入的行或数据范围。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-legend-t">
+<span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-legend-t" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>]</dt><dd><p>设置图层透明度（百分比）。取值范围为0（不透明）到100（全透明）。 <a class="reference internal" href="../../option/t/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>图例文件格式<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>图例文件用于控制图例中各项的布局。图例文件中的每个记录对应图例中的一项，图例中
+每项的顺序由记录的先后顺序决定。每个记录的第一个字符决定了当前记录的图例类型。
+GMT中共有14种图例类型，列举如下：</p>
+<dl>
+<dt><strong>#</strong> <em>comment</em></dt><dd><p>以 # 开头的行或空行是注释行，会被跳过</p>
+</dd>
+<dt><strong>A</strong> <em>cptname</em></dt><dd><p>指定CPT文件，使得某些记录可以通过指定Z值来设定颜色，可以多次使用该记录以
+指定不同的CPT文件</p>
+</dd>
+<dt><strong>B</strong> <em>cptname offset height</em> [ <em>optional arguments</em> ]</dt><dd><p>绘制水平colorbar</p>
+<ul class="simple">
+<li><p><em>offset</em> 是colorbar相对于图例框左边界的距离</p></li>
+<li><p><em>height</em> 是colorbar高度，其后可以加上子选项 [<strong>+e</strong>[<strong>b</strong>|<strong>f</strong>][<em>length</em>]][<strong>+h</strong>][<strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]][<strong>+n</strong>[<em>txt</em>]]</p></li>
+<li><p><em>optional arguments</em> 是 <a class="reference internal" href="../colorbar/"><span class="doc">colorbar</span></a> 模块的其它选项</p></li>
+</ul>
+</dd>
+<dt><strong>C</strong> <em>textcolor</em></dt><dd><p>接下来的文本所使用的颜色</p>
+<p>可以直接指定颜色，也可以用 z=<em>val</em> 指定Z值，以从CPT文件中查找相应的颜色
+（CPT文件由 <strong>A</strong> 记录指定）。
+若 <em>textcolor</em> 为 <strong>-</strong>，则使用默认颜色。</p>
+</dd>
+<dt><strong>D</strong> [<em>offset</em>] <em>pen</em> [<strong>-</strong>|<strong>+</strong>|<strong>=</strong>]</dt><dd><p>绘制一条水平线</p>
+<ul class="simple">
+<li><p><em>offset</em> 为线条左右顶端与图例边框的空白距离 [默认为0]</p></li>
+<li><p><em>pen</em> 为线条的画笔属性。若未指定 <em>pen</em>，则使用 <a class="reference internal" href="../../conf/map/#term-MAP_GRID_PEN_PRIMARY"><span class="xref std std-term">MAP_GRID_PEN_PRIMARY</span></a>。
+若 <em>pen</em> 设置为 <strong>-</strong>，则绘制一条不可见的线（供 <strong>V</strong> 记录使用）</p></li>
+<li><p>默认情况下，线条上下各留出四分之一的行间距，<strong>-</strong>|<strong>+</strong>|<strong>=</strong>
+分别表示线条上方无空白、线条下方无空白和线条上下均无空白。</p></li>
+</ul>
+</dd>
+<dt><strong>F</strong> <em>fill1 fill2 ... filln</em></dt><dd><p>指定单元的填充色。</p>
+<p>可以直接指定颜色，也可使用 z=<em>value</em> 形式指定从CPT文件（由 <strong>A</strong> 记录指定）中查找颜色。
+若只给定了一个 <em>fill</em>，则整行都使用相同的填充色，否则依次为当前行的
+每列应用不同的 <em>fill</em>（列数由 <strong>N</strong> 记录控制）。若 <em>fill</em> 为 <strong>-</strong>，则不填充。</p>
+</dd>
+<dt><strong>G</strong> <em>gap</em></dt><dd><p>给定一个垂直空白</p>
+<p>空白的高度由 <em>gap</em> 决定，<em>gap</em> 可以用 <strong>i</strong>|<strong>c</strong>|<strong>p</strong> 单位，
+也可以用 <strong>l</strong>  作为单位表示几倍行距的空白，<em>gap</em> 也可以取负值，表示将当前行上移。</p>
+</dd>
+<dt><strong>H</strong> <em>font</em>|<strong>-</strong> <em>header</em></dt><dd><p>为图例指定一个居中的标题。</p>
+<p><em>header</em> 为标题，<em>font</em> 为文字属性。若字体为 <strong>-</strong> 则使用默认字体 <a class="reference internal" href="../../conf/font/#term-FONT_TITLE"><span class="xref std std-term">FONT_TITLE</span></a>。</p>
+</dd>
+<dt><strong>I</strong> <em>imagefile width justification</em></dt><dd><p>将EPS或光栅文件放在图例中</p>
+<p><em>width</em> 为图片宽度；<em>justification</em> 为图片的对齐方式。</p>
+</dd>
+<dt><strong>L</strong> <em>font</em>|<strong>-</strong> <em>justification label</em></dt><dd><p>在某一列增加指定的文字</p>
+<p><em>label</em> 为显示的文本，<em>font</em> 为字体。若 <em>font</em> 为 <strong>-</strong> 则使用默认字体
+<a class="reference internal" href="../../conf/font/#term-FONT_LABEL"><span class="xref std std-term">FONT_LABEL</span></a>。<em>justification</em> 为对齐方式，可以取
+<strong>L</strong>|<strong>C</strong>|<strong>R</strong>，分别表示左对齐、居中对齐和右对齐</p>
+</dd>
+<dt><strong>M</strong> <em>slon</em>|<strong>-</strong> <em>slat</em> <em>length</em>[<strong>+f</strong>][<strong>+l</strong>[<em>label</em>]][<strong>+u</strong>] [<strong>-F</strong><em>param</em>] [ <strong>-R</strong><em>w/e/s/n</em> <strong>-J</strong><em>param</em> ]</dt><dd><p>在图例中绘制比例尺。</p>
+<p><em>slon</em> 和 <em>slat</em> 用于指定绘制哪一点的比例尺。<em>slon</em> 仅对特定的倾斜投影有效。
+对于一般投影，应设置为 <strong>-</strong>。</p>
+<p><em>length</em> 为比例尺长度，其后可以接长度单位，以及多个子选项。子选项的具体含义见
+<a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a> 模块的 <strong>-L</strong> 选项。</p>
+<p>若想要为比例尺加上背景面板，则可以使用 <a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a> 的 <strong>-F</strong> 选项。
+此外，还可以加上 <strong>-R</strong> 和 <strong>-J</strong> 指定比例尺所使用的投影参数。</p>
+</dd>
+<dt><strong>N</strong> [<em>ncolumns</em> or <em>relwidth1 relwidth2 ... relwidthn</em>]</dt><dd><p>修改图例中的列数 [默认为1列]</p>
+<p>该记录仅对 <strong>S</strong> 和 <strong>L</strong> 记录有效。该记录指定的列数会一直有效直到再次
+使用 <strong>N</strong> 记录。
+<em>ncolumns</em> 用于指定若干个等宽的列，<em>relwidth1 relwidth2 ... relwidthn</em>
+用于指定每列所占的相对宽度，所有宽度的和应等于 <a class="reference internal" href="#cmdoption-legend-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项所设置的宽度相等。</p>
+</dd>
+<dt><strong>P</strong> <em>paragraph-mode-header-for-pstext</em></dt><dd><p>在图例中添加文本段落，参考 <a class="reference internal" href="../text/"><span class="doc">text</span></a> 命令中的段落模式</p>
+</dd>
+<dt><strong>S</strong> [<em>dx1 symbol size fill pen</em> [ <em>dx2 text</em> ]]</dt><dd><p>在图例中绘制符号或线段</p>
+<ul class="simple">
+<li><p><em>dx1</em> 符号中心与左边框的距离。若为 <strong>-</strong> 则自动设置为最大的符号大小的一半。
+<em>dx1</em> 除了可以指定距离，还可以使用 <strong>L</strong>|<strong>C</strong>|<strong>R</strong> 表示符号在
+当前列的对齐方式</p></li>
+<li><p><em>symbol</em> 指定要绘制的符号类型，见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 命令的 <strong>-S</strong> 选项。<em>symbol</em> 为 <strong>-</strong> 表示绘制线段</p></li>
+<li><p><em>size</em> 符号大小</p></li>
+<li><p><em>fill</em> 符号的填充色。使用 <strong>-</strong> 表示不填充。<em>fill</em> 也可以用 z=<em>val</em> 的形式从CPT文件中根据Z值查找颜色</p></li>
+<li><p><em>pen</em> 对于符号设置其轮廓属性，对于线段设置其画笔属性。使用 <strong>-</strong> 表示不绘制轮廓</p></li>
+<li><p><em>dx2</em> 是 <em>text</em> 与左边框的距离。使用 <strong>-</strong> 则自动设置为最大符号大小的1.5倍</p></li>
+<li><p><em>text</em> 是符号的文字说明，字体由 <a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 控制</p></li>
+</ul>
+<p>若只有 <strong>S</strong> 而不接其它任何信息，则直接跳至下一列。若 <em>symbol</em> 取 <strong>f</strong> <strong>q</strong> 或 <strong>v</strong>，
+可以在符号后加上更多的子选项，详情见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 模块 <strong>-S</strong> 选项。
+某些符号（例如矩形、椭圆等）需要指定多个 <em>size</em>，应将多个 <em>size</em> 用逗号
+分隔作为 <em>size</em> 即可。如果只给了一个 <em>size</em>，则其余 <em>size</em> 由GMT默认值决定。</p>
+</dd>
+<dt><strong>T</strong> <em>paragraph-text</em></dt><dd><p>打印一段文本，字体由 <a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 控制。
+若要指定位置和自定义排版，或插入段落分隔符，请使用 <strong>P</strong> 记录。</p>
+</dd>
+<dt><strong>V</strong> [<em>offset</em>] <em>pen</em></dt><dd><p><strong>V</strong> 使用画笔属性 <em>pen</em> 在列之间（如果有多个列）绘制一条垂直线。
+偏移量 <em>offset</em> 类似于 <strong>D</strong> 的偏移量，但方向是垂直的[默认为0]。
+第一次使用 <strong>V</strong> 时，会记住最后一条 <strong>D</strong> 线的垂直位置；
+第二次使用 <strong>V</strong> 时，会从之前的位置绘制到最近一次 <strong>D</strong> 线的位置。
+因此， <strong>D</strong> 必须用来标记垂直线的起点和终点（因此 <strong>V</strong> 必须紧跟 <strong>D</strong>，也就是说它们都必须使用两次，成对出现）。
+如果不需要绘制水平线，只需为 <strong>D</strong> 提供“-”作为画笔即可。</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h2>默认值<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>对于如下符号，若用户不显式指定属性，绘制图例时使用如下默认值：</p>
+<ul class="simple">
+<li><p>地理符号：如果 <em>size</em> 给定为 <strong>-</strong>，则默认使用当前标注字体大小的字符高度</p></li>
+<li><p>线/矢量：如果 <em>size</em> 给定为 <strong>-</strong>，则默认长度为当前标注字体大小字符宽度的 2.5 倍</p></li>
+<li><p>锋面（Front）符号 <strong>f</strong>： <em>size</em> 参数为 <em>length</em>[/<em>gap</em>[<em>ticklength</em>]]。
+锋面符号为左侧（此处指上方）的方框，若未指定， <em>ticklength</em> 设置为给定符号 <em>length</em> 的 30%。
+<em>gap</em> 默认为 -1。可以添加附加选项。</p></li>
+<li><p>矢量符号 <strong>v</strong>：箭头大小为符号大小的30%</p></li>
+<li><p>椭圆符号 <strong>e|E</strong>：主轴长度为符号大小，次轴长度是符号大小的65%，方位角为0</p></li>
+<li><p>矩形符号 <strong>r</strong>：宽度为符号大小，高度为宽度的65%</p></li>
+<li><p>旋转矩形符号 <strong>j|J</strong>：宽度为符号大小，高度为宽度的65%，旋转角度为30度</p></li>
+<li><p>圆角矩形符号 <strong>R</strong>：宽度为符号大小，高度为宽度的65%，角半径为宽度的10%</p></li>
+<li><p>数学圆弧符号 <strong>m|M</strong>：角度为 -10° 到 -45°，箭头大小为符号大小的30%</p></li>
+<li><p>楔形符号 <strong>w</strong>：角度为 -30° 到 30°</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2>关于图例高度的说明<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="#cmdoption-legend-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 中省略 <em>height</em> 将自动估算图例框高度。不包含段落文本的图例会进行精确的计算。
+对于包含段落文本的情况，仅对可能出现的排版行数进行一阶估计。由于无法获取字体度量信息，该估计偶尔会出现 1 行的偏差。
+如果发生这种情况，请留意 <a class="reference internal" href="#cmdoption-legend-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a> 报告的高度，并在 <a class="reference internal" href="#cmdoption-legend-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 中指定一个略大或略小的高度。</p>
+</section>
+<section id="windows">
+<h2>Windows 注意事项<a class="headerlink" href="#windows" title="Link to this heading"></a></h2>
+<p>请注意，在 Windows 下，百分号 (%) 是变量标识符（类似于 Unix 下的 $）。
+若要在批处理脚本中表示普通的百分号，需要将其重复两次 (%%)。
+因此，字体切换机制（&#64;%<em>font</em>% 和 &#64;%%）可能需要双倍数量的百分号。
+这仅适用于脚本内部或以其他方式由 CMD 处理的文本。由模块打开并读取的数据文件不需要这种双写重复。</p>
+</section>
+<section id="id8">
+<h2>示例<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+gmt<span class="w"> </span>begin<span class="w"> </span>legend
+gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cpanoply<span class="w"> </span>-T-8/8/1<span class="w"> </span>-H<span class="w"> </span>&gt;<span class="w"> </span>tt.cpt
+gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>FONT_ANNOT_PRIMARY<span class="w"> </span>12p
+gmt<span class="w"> </span>legend<span class="w"> </span>-R0/10/0/8<span class="w"> </span>-JM6i<span class="w"> </span>-Dx0.5i/0.5i+w5i+jBL+l1.2<span class="w"> </span>-C0.1i/0.1i<span class="w"> </span>-F+p+gazure1+r<span class="w"> </span>-B5f1<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s"># Legend test for gmt pslegend</span>
+<span class="s"># G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line,</span>
+<span class="s"># H is ps=legend.ps</span>
+<span class="s">#</span>
+<span class="s">G -0.1i</span>
+<span class="s">H 24p,Times-Roman My Map Legend</span>
+<span class="s">D 0.2i 1p</span>
+<span class="s">N 2</span>
+<span class="s">V 0 1p</span>
+<span class="s">S 0.1i c 0.15i p300/12 0.25p 0.3i This circle is hachured</span>
+<span class="s">S 0.1i e 0.15i yellow 0.25p 0.3i This ellipse is yellow</span>
+<span class="s">S 0.1i w 0.15i green 0.25p 0.3i This wedge is green</span>
+<span class="s">S 0.1i f 0.25i blue 0.25p 0.3i This is a fault</span>
+<span class="s">S 0.1i - 0.15i - 0.25p,- 0.3i A contour</span>
+<span class="s">S 0.1i v 0.25i magenta 0.5p 0.3i This is a vector</span>
+<span class="s">S 0.1i i 0.15i cyan 0.25p 0.3i This triangle is boring</span>
+<span class="s">D 0.2i 1p</span>
+<span class="s">V 0 1p</span>
+<span class="s">N 1</span>
+<span class="s">M 5 5 600+u+f</span>
+<span class="s">G 0.05i</span>
+<span class="s">I @SOEST_block4.png 3i CT</span>
+<span class="s">G 0.05i</span>
+<span class="s">B tt.cpt 0.2i 0.2i -B0</span>
+<span class="s">G 0.05i</span>
+<span class="s">L 9p,Times-Roman R Smith et al., @%5%J. Geophys. Res., 99@%%, 2000</span>
+<span class="s">G 0.1i</span>
+<span class="s">T Let us just try some simple text that can go on a few lines.</span>
+<span class="s">T There is no easy way to predetermine how many lines may be required</span>
+<span class="s">T so we may have to adjust the height to get the right size box.</span>
+<span class="s">EOF</span>
+rm<span class="w"> </span>-f<span class="w"> </span>tt.cpt
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-c359a3df1d57c01f1d2a6cef65453aad">
+<a class="reference internal image-reference" href="../../_images/c359a3df1d57c01f1d2a6cef65453aad.png"><img alt="../../_images/c359a3df1d57c01f1d2a6cef65453aad.png" src="../../_images/c359a3df1d57c01f1d2a6cef65453aad.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">legend示例图1</span><a class="headerlink" href="#gmtplot-c359a3df1d57c01f1d2a6cef65453aad" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># Show a basic seismicity legend</span>
+<span class="c1">#</span>
+gmt<span class="w"> </span>begin<span class="w"> </span>GMT_seislegend
+<span class="w">    </span>gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>FONT_ANNOT_PRIMARY<span class="w"> </span>10p<span class="w"> </span>FONT_TITLE<span class="w"> </span>18p<span class="w"> </span>FORMAT_GEO_MAP<span class="w"> </span>ddd:mm:ssF
+
+<span class="w">    </span><span class="c1"># Create standard seismicity color table</span>
+<span class="w">    </span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cred,green,blue<span class="w"> </span>-T0,100,300,10000<span class="w"> </span>-N
+
+<span class="w">    </span><span class="c1"># Create legend input file for NEIS quake plot</span>
+<span class="w">    </span>cat<span class="w"> </span>&gt;<span class="w"> </span>neis.legend<span class="w"> </span><span class="s">&lt;&lt;- END</span>
+<span class="s">H 16p,Helvetica-Bold SEISMICITY AND THE RING OF FIRE</span>
+<span class="s">D 0 0.5p</span>
+<span class="s">N 3</span>
+<span class="s">V 0 1p</span>
+<span class="s">S 0.25c c 0.25c red   0.25p 0.5c Shallow depth (0-100 km)</span>
+<span class="s">S 0.25c c 0.25c green 0.25p 0.5c Intermediate depth (100-300 km)</span>
+<span class="s">S 0.25c c 0.25c blue  0.25p 0.5c Very deep (&gt; 300 km)</span>
+<span class="s">D 0 0.5p</span>
+<span class="s">V 0 0.5p</span>
+<span class="s">N 7</span>
+<span class="s">S 0.25c c 0.15c black - 0.75c M 3</span>
+<span class="s">S 0.25c c 0.20c black - 0.75c M 4</span>
+<span class="s">S 0.25c c 0.25c black - 0.75c M 5</span>
+<span class="s">S 0.25c c 0.30c black - 0.75c M 6</span>
+<span class="s">S 0.25c c 0.35c black - 0.75c M 7</span>
+<span class="s">S 0.25c c 0.40c black - 0.75c M 8</span>
+<span class="s">S 0.25c c 0.45c black - 0.75c M 9</span>
+<span class="s">N 1</span>
+<span class="s">G 9p</span>
+<span class="s">L 12p,Times-Italic RB Data from the US National Earthquake Information Center</span>
+<span class="s">END</span>
+<span class="w">    </span>gmt<span class="w"> </span>legend<span class="w"> </span>-Dx0/0+jBL+o0/1c+w18c<span class="w"> </span>-F+p+gfloralwhite+i0.25p+c2p+s<span class="w"> </span>neis.legend
+
+<span class="w">    </span>rm<span class="w"> </span>neis.legend
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-e0a7d8d3471d7dc4fe6585df548019f8">
+<a class="reference internal image-reference" href="../../_images/e0a7d8d3471d7dc4fe6585df548019f8.png"><img alt="../../_images/e0a7d8d3471d7dc4fe6585df548019f8.png" src="../../_images/e0a7d8d3471d7dc4fe6585df548019f8.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">地震活动性图例示例</span><a class="headerlink" href="#gmtplot-e0a7d8d3471d7dc4fe6585df548019f8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id9">
+<h2>自动图例<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>在现代模式下，某些模块可以使用 <strong>-l</strong> 选项，并根据每个命令和参数自动构建图例（详细说明请参考 <a class="reference internal" href="../../option/l/"><span class="doc">-l 选项</span></a> ）。
+一些默认值是硬编码的：自动图例会绘制一个带有 1 磅黑色轮廓的白色矩形面板，并相对于对齐点 (<strong>+j</strong>) 偏移 0.2 厘米。
+若要使用不同的设置，必须调用 <strong>legend</strong> 进行相应的设置进行覆盖。
+<strong>注意</strong>：还可以使用 <strong>legend</strong> <a class="reference internal" href="#cmdoption-legend-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 来将自动图例保存为一个图例文件，对其进行自定义修改以便后续使用。</p>
+</section>
+<section id="id10">
+<h2>相关模块<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../logo/"><span class="doc">logo</span></a>,
+<a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a>,
+<a class="reference internal" href="../text/"><span class="doc">text</span></a>,
+<a class="reference internal" href="../plot/"><span class="doc">plot</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../kml2gmt/" class="btn btn-neutral float-left" title="kml2gmt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../makecpt/" class="btn btn-neutral float-right" title="makecpt" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

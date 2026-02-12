@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2 内置CPT &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/cpt/builtin-cpt.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="7.3 制作CPT" href="../makecpt/" />
+    <link rel="prev" title="7.1 CPT类型" href="../format/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">7 CPT文件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">7.1 CPT类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2 内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">7.3 制作CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">7.4 使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">7.5 CPT资源</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">7 CPT文件</a> &raquo;</li>
+        
+      <li>7.2 内置CPT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/cpt/builtin-cpt.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cpt">
+<h1>7.2 内置CPT<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
+<p>GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展示GMT内置CPT的配色，具体如何使用这些内置CPT文件会在后面做进一步介绍。</p>
+<p>下面列出了GMT内置的若干个CPT文件的具体配色以及CPT文件名（位于图下方）。每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psscale -D0c/0c+w10c/1c+h -B0 -C&lt;cpt&gt; -P &gt; CPT.ps
+</pre></div>
+</div>
+<p>下面的色标是利用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 对原始CPT文件做离散处理得到的单色型
+CPT文件，可以用如下命令绘制得到:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -C&lt;cpt&gt; -T-1/1/0.25 &gt; new.cpt
+gmt psscale -D0c/0c+w10c/1c+h -B0 -Cnew.cpt -P &gt; CPT.ps
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last figure align-center" id="id1">
+<img alt="../../_images/abyss.png" src="../../_images/abyss.png" />
+<p class="caption"><span class="caption-text">abyss</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id2">
+<img alt="../../_images/bathy.png" src="../../_images/bathy.png" />
+<p class="caption"><span class="caption-text">bathy</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id3">
+<img alt="../../_images/categorical.png" src="../../_images/categorical.png" />
+<p class="caption"><span class="caption-text">categorical</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id4">
+<img alt="../../_images/cool.png" src="../../_images/cool.png" />
+<p class="caption"><span class="caption-text">cool</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id5">
+<img alt="../../_images/copper.png" src="../../_images/copper.png" />
+<p class="caption"><span class="caption-text">copper</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id6">
+<img alt="../../_images/cubhelix.png" src="../../_images/cubhelix.png" />
+<p class="caption"><span class="caption-text">cubhelix</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id7">
+<img alt="../../_images/cyclic.png" src="../../_images/cyclic.png" />
+<p class="caption"><span class="caption-text">cyclic</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id8">
+<img alt="../../_images/dem1.png" src="../../_images/dem1.png" />
+<p class="caption"><span class="caption-text">dem1</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id9">
+<img alt="../../_images/dem2.png" src="../../_images/dem2.png" />
+<p class="caption"><span class="caption-text">dem2</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id10">
+<img alt="../../_images/dem3.png" src="../../_images/dem3.png" />
+<p class="caption"><span class="caption-text">dem3</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id11">
+<img alt="../../_images/dem4.png" src="../../_images/dem4.png" />
+<p class="caption"><span class="caption-text">dem4</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id12">
+<img alt="../../_images/drywet.png" src="../../_images/drywet.png" />
+<p class="caption"><span class="caption-text">drywet</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id13">
+<img alt="../../_images/earth.png" src="../../_images/earth.png" />
+<p class="caption"><span class="caption-text">earth</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id14">
+<img alt="../../_images/elevation.png" src="../../_images/elevation.png" />
+<p class="caption"><span class="caption-text">elevation</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id15">
+<img alt="../../_images/etopo1.png" src="../../_images/etopo1.png" />
+<p class="caption"><span class="caption-text">etopo1</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id16">
+<img alt="../../_images/gebco.png" src="../../_images/gebco.png" />
+<p class="caption"><span class="caption-text">gebco</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id17">
+<img alt="../../_images/geo.png" src="../../_images/geo.png" />
+<p class="caption"><span class="caption-text">geo</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id18">
+<img alt="../../_images/globe.png" src="../../_images/globe.png" />
+<p class="caption"><span class="caption-text">globe</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id19">
+<img alt="../../_images/gray.png" src="../../_images/gray.png" />
+<p class="caption"><span class="caption-text">gray</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id20">
+<img alt="../../_images/haxby.png" src="../../_images/haxby.png" />
+<p class="caption"><span class="caption-text">haxby</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id21">
+<img alt="../../_images/hot.png" src="../../_images/hot.png" />
+<p class="caption"><span class="caption-text">hot</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id22">
+<img alt="../../_images/ibcso.png" src="../../_images/ibcso.png" />
+<p class="caption"><span class="caption-text">ibcso</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id23">
+<img alt="../../_images/inferno.png" src="../../_images/inferno.png" />
+<p class="caption"><span class="caption-text">inferno</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id24">
+<img alt="../../_images/jet.png" src="../../_images/jet.png" />
+<p class="caption"><span class="caption-text">jet</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id25">
+<img alt="../../_images/magma.png" src="../../_images/magma.png" />
+<p class="caption"><span class="caption-text">magma</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id26">
+<img alt="../../_images/nighttime.png" src="../../_images/nighttime.png" />
+<p class="caption"><span class="caption-text">nighttime</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id27">
+<img alt="../../_images/no_green.png" src="../../_images/no_green.png" />
+<p class="caption"><span class="caption-text">no_green</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id28">
+<img alt="../../_images/ocean.png" src="../../_images/ocean.png" />
+<p class="caption"><span class="caption-text">ocean</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id29">
+<img alt="../../_images/paired.png" src="../../_images/paired.png" />
+<p class="caption"><span class="caption-text">paired</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id30">
+<img alt="../../_images/panoply.png" src="../../_images/panoply.png" />
+<p class="caption"><span class="caption-text">panoply</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id31">
+<img alt="../../_images/plasma.png" src="../../_images/plasma.png" />
+<p class="caption"><span class="caption-text">plasma</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id32">
+<img alt="../../_images/polar.png" src="../../_images/polar.png" />
+<p class="caption"><span class="caption-text">polar</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id33">
+<img alt="../../_images/rainbow.png" src="../../_images/rainbow.png" />
+<p class="caption"><span class="caption-text">rainbow</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id34">
+<img alt="../../_images/red2green.png" src="../../_images/red2green.png" />
+<p class="caption"><span class="caption-text">red2green</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id35">
+<img alt="../../_images/relief.png" src="../../_images/relief.png" />
+<p class="caption"><span class="caption-text">relief</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id36">
+<img alt="../../_images/seafloor.png" src="../../_images/seafloor.png" />
+<p class="caption"><span class="caption-text">seafloor</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id37">
+<img alt="../../_images/sealand.png" src="../../_images/sealand.png" />
+<p class="caption"><span class="caption-text">sealand</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id38">
+<img alt="../../_images/seis.png" src="../../_images/seis.png" />
+<p class="caption"><span class="caption-text">seis</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id39">
+<img alt="../../_images/split.png" src="../../_images/split.png" />
+<p class="caption"><span class="caption-text">split</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id40">
+<img alt="../../_images/terra.png" src="../../_images/terra.png" />
+<p class="caption"><span class="caption-text">terra</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id41">
+<img alt="../../_images/topo.png" src="../../_images/topo.png" />
+<p class="caption"><span class="caption-text">topo</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id42">
+<img alt="../../_images/viridis.png" src="../../_images/viridis.png" />
+<p class="caption"><span class="caption-text">viridis</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id43">
+<img alt="../../_images/world.png" src="../../_images/world.png" />
+<p class="caption"><span class="caption-text">world</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id44">
+<img alt="../../_images/wysiwyg.png" src="../../_images/wysiwyg.png" />
+<p class="caption"><span class="caption-text">wysiwyg</span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>GMT内置CPT文件中，某些是针对特定的需求设计的，因而常用于特定的图件中：</p>
+<ol class="arabic simple">
+<li>海深：abyss、bathy、gebco、ibcso</li>
+<li>陆地高程：elevation</li>
+<li>全球地形起伏：dem1、dem2、dem3、dem4、earth、etopo1、geo、globe、oleron
+relief、terra、topo、world</li>
+<li>地震成像：seis、polar</li>
+<li>分类型数据：categorical</li>
+</ol>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../makecpt/" class="btn btn-neutral float-right" title="7.3 制作CPT" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../format/" class="btn btn-neutral float-left" title="7.1 CPT类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1138 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mapproject &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="mask" href="../mask/" />
+    <link rel="prev" title="makecpt" href="../makecpt/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mapproject</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">距离单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII 格式精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">存在的限制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">椭球和球</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">输出顺序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">mapproject</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/mapproject.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      Liming Li
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    
+ &nbsp;•&nbsp; 📅 2026-01-05
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="mapproject">
+<span id="index-0"></span><h1>mapproject<a class="headerlink" href="#mapproject" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/mapproject.html" title="（在 GMT v6.6）"><span>mapproject</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>地图投影的正反变换、数据转换以及大地测量计算</p>
+</dd>
+</dl>
+<p><strong>mapproject</strong> 可完成如下计算功能：</p>
+<ol class="arabic simple">
+<li><p>地图投影，读取经纬度数据，并使用指定的地图投影和比例尺计算投影坐标 (x,y)</p></li>
+<li><p>地图投影逆变换，读取 (x,y), 计算经纬度；此功能可以将已知投影类型的地图数字化，再将其变换为地理坐标</p></li>
+<li><p>坐标反算/大地主题反算，计算沿轨点列之间的距离与方位角，或到固定点的距离和方位角</p></li>
+<li><p>计算点到最近线段的距离</p></li>
+<li><p>基准转换，用于将某基准/椭球下的坐标转换为另一基准/椭球</p></li>
+<li><p>不同纬度之间的转换，包括大地纬度、地心纬度等</p></li>
+<li><p>大地坐标与空间直角坐标的转换</p></li>
+<li><p>确定地图范围/绘图范围</p></li>
+</ol>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt mapproject</strong>
+[ <em>table</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a><strong>b</strong>|<strong>f</strong>|<strong>o</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+v</strong>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>[<em>dx</em>/<em>dy</em>][<strong>+m</strong>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><strong>c</strong>|<strong>i</strong>|<strong>p</strong> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a>[<em>datum</em>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>[<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong>|<strong>c</strong>|<strong>i</strong>|<strong>p</strong>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a>[<em>lon0</em>/<em>lat0</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+u</strong><em>unit</em>][<strong>+v</strong>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a><em>parameters</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a><em>table</em>[<strong>+p</strong>][<strong>+u</strong><em>unit</em>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>[<strong>a</strong>|<strong>c</strong>|<strong>g</strong>|<strong>m</strong>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a>[<strong>d</strong>|<strong>e</strong>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>region</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>[<strong>h</strong>]<em>from</em>[/<em>to</em>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>[<strong>b</strong>|<strong>B</strong>|<strong>e</strong>|<strong>E</strong>|<strong>g</strong>|<strong>h</strong>|<strong>j</strong>|<strong>m</strong>|<strong>M</strong>|<strong>n</strong>|<strong>o</strong>|<strong>O</strong>|<strong>r</strong>|<strong>R</strong>|<strong>w</strong>|<strong>s</strong>|<strong>x</strong>][<strong>+n</strong>[<em>nx</em>[/<em>ny</em>]]] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a>[<em>speed</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+f</strong>][<strong>+t</strong><em>epoch</em>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-bo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bo</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-d"><code class="xref std std-option docutils literal notranslate"><span class="pre">-d</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-mapproject-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-j"><code class="xref std std-option docutils literal notranslate"><span class="pre">-j</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-p"><code class="xref std std-option docutils literal notranslate"><span class="pre">-p</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-mapproject-0"><code class="xref std std-option docutils literal notranslate"><span class="pre">-:</span></code></a>[<strong>i</strong>|<strong>o</strong>] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Ab</strong>|<strong>f</strong>|<strong>o</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+v</strong>]</dt><dd><p>计算沿着某轨迹，或到某固定点 (lon0/lat0) 的方位角。</p>
+<ul class="simple">
+<li><p><strong>-Af</strong> 计算每个数据点的（前向）方位角</p></li>
+<li><p><strong>-Ab</strong> 计算数据点到固定点的反方位角</p></li>
+<li><p><strong>-Ao</strong> 可获得 (-90/90) 方向，而非方位角 (0/360)</p></li>
+</ul>
+<p>使用 <a class="reference internal" href="#cmdoption-mapproject-j"><code class="xref std std-option docutils literal notranslate"><span class="pre">-j</span></code></a><strong>e</strong> 选项可在椭球体而非球面上计算方位角。
+如果没有给出固定点，则从上一个点开始计算方位角或反方位角。
+附加 <strong>+v</strong> 选项通过输入文件的第 3-4 列获取“可变”的第二个点 (<em>lon0</em>/<em>lat0</em>)。</p>
+<p>有关 <a class="reference internal" href="#cmdoption-mapproject-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 如何影响输出记录，请参见 <a class="reference external" href="输出顺序">输出顺序</a> 。
+如果指定了 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> 选项，则先进行投影，然后再计算投影后笛卡尔坐标下的方位角。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong>[<em>dx</em>/<em>dy</em>][<strong>+m</strong>]</dt><dd><p>将投影坐标的中心设置为地图投影中心 [默认为左下角]。
+也可以通过指定 <em>dx</em>/<em>dy</em> 来设置投影中心在东方向和北方向的偏移量。
+投影结果将加上该偏移量，详见 <a class="reference internal" href="#id9">示例</a> 中的高斯投影和 UTM 投影。
+如果和 <a class="reference internal" href="#cmdoption-mapproject-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 选项 同时使用，则先减去该偏移量，然后再进行逆投影变换。
+偏移量的单位是有效的绘图距离单位（请参阅 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> ），
+但如果使用了 <a class="reference internal" href="#cmdoption-mapproject-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 选项，则偏移量单位为米。
+对于 Mercator 投影，附加 <strong>+m</strong> 选项可将投影 <em>y</em> 坐标的原点设置为与标准纬线重合 [默认为赤道]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Dc</strong>|<strong>i</strong>|<strong>p</strong></dt><dd><p>临时覆盖 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>，并改用 <strong>c</strong> (cm)，<strong>i</strong> (inch) 或 <strong>p</strong> (points) 为单位。
+该选项不能与 <a class="reference internal" href="#cmdoption-mapproject-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 一起使用。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong>[<em>datum</em>]</dt><dd><p>将大地坐标 (lon,lat,height) 转换为以地球为中心的地球固定坐标 (ECEF) (x,y,z)，使用 <a class="reference internal" href="#cmdoption-mapproject-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 选项
+可实现逆向转换。追加基准的 ID <em>datum</em> （见 <a class="reference internal" href="#cmdoption-mapproject-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><strong>d</strong> 选项）或者通过 <em>ellipsoid</em>:<em>dx</em>,<em>dy</em>,<em>dz</em>
+可指定基准，其中 <em>ellipsoid</em> 为椭球名称（见 <a class="reference internal" href="#cmdoption-mapproject-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><strong>e</strong>）。<em>ellipsoid</em> 除可用 <a class="reference internal" href="#cmdoption-mapproject-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><strong>e</strong> 列出
+的椭球外，还可使用 <em>a</em>[,<em>inv_f</em>] 的形式通过给定椭球长半轴和扁率的倒数来指定椭球，其中
+扁率的倒数默认为 0。不指定基准时，默认使用 WGS-84。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-F</strong>[<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong>|<strong>c</strong>|<strong>i</strong>|<strong>p</strong>]</dt><dd><p>强制使用 1:1 比例尺，即输出数据（或输入，参见 <a class="reference internal" href="#cmdoption-mapproject-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> ）为真实投影下的米数。
+如果要指定其他单位，请附加所需的单位（请参阅 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> ）。
+在不使用 <a class="reference internal" href="#cmdoption-mapproject-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 且使用经典 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> 语法时，
+输出（或输入，请参见 <a class="reference internal" href="#cmdoption-mapproject-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> ）使用 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 指定的单位（或由 <a class="reference internal" href="#cmdoption-mapproject-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 选项指定）。
+当在 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> 中使用 PROJ4 语法或 EPSG 时，无论是否使用 <a class="reference internal" href="#cmdoption-mapproject-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a>，单位都会变为米。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-G</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+u</strong><em>unit</em>][<strong>+v</strong>]</dt><dd><p>计算沿某轨迹的距离，或到某固定点 <em>lon0</em>/<em>lat0</em> 的距离。
+如果没有给出固定点，默认将计算沿输入点定义的轨迹的累积距离。
+如果给出了固定点，则默认计算增量距离。可以附加以下选项改变默认计算方式：</p>
+<ul class="simple">
+<li><p><strong>+a</strong> ：计算累积距离。</p></li>
+<li><p><strong>+i</strong> ：计算增量距离。同时使用 <strong>+a</strong> 和 <strong>+i</strong> 可同时获得累积距离及增量距离。</p></li>
+<li><p><strong>+u</strong> ：指定单位及距离计算方式，参见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> ，默认使用等面积半径的大圆路径。
+其中 <em>unit</em> 可以设置为 <strong>c</strong> 表示使用输入坐标的笛卡尔距离，
+设置为 <strong>C</strong> 表示使用投影坐标的笛卡尔距离。
+<strong>C</strong> 需要设置 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> ，且所有输出坐标都将以投影坐标形式报告。</p></li>
+<li><p><strong>+v</strong> ：通过输入文件的第 3-4 列获取“可变”的第二个点 (<em>lon0</em>/<em>lat0</em>)。
+将针对每条记录更新固定点，因此默认计算方式将变为计算增量距离。</p></li>
+</ul>
+<p>关于 <a class="reference internal" href="#cmdoption-mapproject-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 如何影响输出记录的信息，参见 <a class="reference external" href="输出顺序">输出顺序</a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong></dt><dd><p>进行逆变换，例如：从 (x,y) 数据获取经纬度。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-J">
+<span class="sig-name descname"><span class="pre">-J</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-J" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-J</strong><em>projection</em></dt><dd><p>设置地图投影方式。 <a class="reference internal" href="../../option/J/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-L</strong><em>table</em>[<strong>+p</strong>][<strong>+u</strong><em>unit</em>|<em>c</em>|<em>C</em>]</dt><dd><p>获取输入点到 ASCII 多段文件 <em>table</em> 中的线的最短距离。该距离和最近点的坐标将追加到输出的最后三列。</p>
+<ul class="simple">
+<li><p><strong>+u</strong> ：指定单位及距离计算方式，参见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> ，默认使用等面积半径的大圆路径。
+其中 <em>unit</em> 可以设置为 <strong>c</strong> 表示使用输入坐标的笛卡尔距离，
+设置为 <strong>C</strong> 表示使用投影坐标的笛卡尔距离。
+<strong>C</strong> 需要设置 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> ，且所有输出坐标都将以投影坐标形式报告。</p></li>
+<li><p><strong>+p</strong> ：报告线段 ID <em>seg</em> 和小数形式的最近点编号 <em>pnr</em>，不报告最近点的坐标。</p></li>
+</ul>
+<p><a class="reference internal" href="#cmdoption-mapproject-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> 选项对输出记录的信息顺序的影响，请参见 <a class="reference external" href="输出顺序">输出顺序</a> 。
+<strong>注</strong> ：对于地理坐标来说，距离的计算使用球面模型，因此本选项不能与 <a class="reference internal" href="#cmdoption-mapproject-j"><code class="xref std std-option docutils literal notranslate"><span class="pre">-j</span></code></a><strong>e</strong> 选项同时使用。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-N</strong>[<strong>a</strong>|<strong>c</strong>|<strong>g</strong>|<strong>m</strong>]</dt><dd><p>从大地纬度（使用当前的椭球，参阅 <a class="reference internal" href="../../conf/proj/#term-PROJ_ELLIPSOID"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>）转换为其他辅助纬度，经度不受影响。</p>
+<ul class="simple">
+<li><p><strong>a</strong> - 转换为等面积纬度 (authalic latitudes)。</p></li>
+<li><p><strong>c</strong> - 转换为正形纬度 (conformal latitudes)。</p></li>
+<li><p><strong>g</strong> - 转换为地心纬度 (geocentric latitudes) [默认]。</p></li>
+<li><p><strong>m</strong> - 转换为子午线纬度 (meridional latitudes)。</p></li>
+</ul>
+<p>与 <a class="reference internal" href="#cmdoption-mapproject-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 选项同时使用，可实现反向变换。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Q</strong>[<strong>d</strong>|<strong>e</strong>]</dt><dd><p>列出所有投影参数。 <strong>-Qd</strong>，仅列出基准， <strong>-Qe</strong> 仅列出椭球。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p>指定数据范围。 <a class="reference internal" href="../../option/R/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<blockquote>
+<div><p>UTM 投影比较特殊：如果使用 <a class="reference internal" href="#cmdoption-mapproject-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 选项且未指定 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 范围，
+则将区域设置为给定的 UTM 区域，以保留完整的椭球解。</p>
+</div></blockquote>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong></dt><dd><p>不转换区域之外的点</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong>[<strong>h</strong>]<em>from</em>[/<em>to</em>]</dt><dd><p>使用标准的 Molodensky 转换将基准从 <em>from</em> 转换到 <em>to</em>。
+如果使用 <strong>-Th</strong> ，则表明除坐标转换外，还进行大地高转换，若输入数据包含 3 列，
+则最后一列为高度，若不含第三列，则默认高度为 0，即点位于椭球面上。
+基准可通过基准 ID（参见 <strong>-Qd</strong>）指定或通过 <em>ellipsoid</em>:<em>dx</em>,<em>dy</em>,<em>dz</em>
+指定；其中 <em>ellipsoid</em> 为椭球，dx，dy，dz为椭球中心和地心在三个方向的差异。
+其中椭球可以是椭球ID（参见 <strong>-Qe</strong>），也可以指定为 <em>a</em>[,<em>inv_f</em>]，其中 a
+是椭球长半轴，inv_f 是椭球扁率的倒数，如果省略，则为 0）。若不指定转换后的
+基准，则假定为 WGS84。<a class="reference internal" href="#cmdoption-mapproject-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 以及 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> 同时使用时，会先做基准转换，然后
+投影。用户在使用时需注意 <a class="reference internal" href="../../conf/proj/#term-PROJ_ELLIPSOID"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> 设置的椭球是否正确。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-W</strong>[<strong>b</strong>|<strong>B</strong>|<strong>e</strong>|<strong>E</strong>|<strong>g</strong>|<strong>h</strong>|<strong>j</strong>|<strong>m</strong>|<strong>M</strong>|<strong>n</strong>|<strong>o</strong>|<strong>O</strong>|<strong>r</strong>|<strong>R</strong>|<strong>s</strong>|<strong>w</strong>|<strong>x</strong>][<strong>+n</strong>[<em>nx</em>[/<em>ny</em>]]]</dt><dd><p>报告以投影单位或地理单位表示的各种绘图尺寸或地图区域，不读取任何输入文件。
+在没有参数的情况下，将报告地图的宽度和高度。可以通过 <a class="reference internal" href="#cmdoption-mapproject-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a> 更改报告绘图尺寸所采用的单位。
+可以使用以下附加选项：</p>
+<ul class="simple">
+<li><p><strong>b</strong> - 获取以经纬度表示的边界框。</p></li>
+<li><p><strong>B</strong> - 同上，但以 -Rw/e/s/n 字符串格式作为尾随文本返回结果。</p></li>
+<li><p><strong>e</strong> - 返回由 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> 定义的非矩形区域覆盖的矩形区域坐标。</p></li>
+<li><p><strong>E</strong> - 同上，但以 -Rw/e/s/n 字符串格式作为尾随文本返回。</p></li>
+<li><p><strong>g</strong> - 输出附加地图点 <em>lon</em>/<em>lat</em> 的绘图坐标。</p></li>
+<li><p><strong>h</strong> - 仅输出地图的高度。</p></li>
+<li><p><strong>j</strong> - 输出参考点 <em>code</em> 的地图坐标，参考点 <em>code</em> 的定义请见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 。</p></li>
+<li><p><strong>n</strong> - 同上，但参考点 <em>rx</em>/<em>ry</em> 以 0-1 范围内的归一化位置给出。</p></li>
+<li><p><strong>o</strong> - 如果通过 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><em>xmin/xmax/ymin/ymax</em><strong>+u</strong><em>unit</em> 设置了斜向定义域，
+则返回以度为单位的对角顶点坐标（顺序为 <em>llx urx lly ury</em>）。</p></li>
+<li><p><strong>O</strong> - 同上，但以等效的 -Rw/e/s/n 字符串格式作为尾随文本返回。</p></li>
+<li><p><strong>m</strong> - 改为获取投影绘图坐标下的矩形区域。</p></li>
+<li><p><strong>M</strong> - 同上，但以 -Rw/e/s/n 字符串格式作为尾随文本返回。</p></li>
+<li><p><strong>r</strong> - 输出由 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-J"><code class="xref std std-option docutils literal notranslate"><span class="pre">-J</span></code></a> 定义的斜向区域覆盖的矩形范围。</p></li>
+<li><p><strong>R</strong> - 同上，但以 -Rw/e/s/n 字符串格式作为尾随文本返回结果。</p></li>
+<li><p><strong>s</strong> - 以 1:xxxxxx 的形式输出地图比例尺。</p></li>
+<li><p><strong>w</strong> - 以当前绘图单位输出地图的宽度。</p></li>
+<li><p><strong>x</strong> - 输出特定绘图参考点 <em>px</em>/<em>py</em> 的地图坐标。</p></li>
+</ul>
+<p>其中， <strong>e</strong> 或 <strong>r</strong> 选项后追加 <strong>+n</strong> 可设置斜向区域闭合多边形每条边上的点数 <em>nx</em>/<em>ny</em> [默认为 100]。
+输出所有点构成多边形，而不是只输出四个角点。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/82c09d8231c1034bf6a6c7f4170f3ced/261dea605b4d8c499c8368fa83fe3ffd.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-261dea605b4d8c499c8368fa83fe3ffd">
+<a class="reference internal image-reference" href="../../_images/261dea605b4d8c499c8368fa83fe3ffd.png"><img alt="../../_images/261dea605b4d8c499c8368fa83fe3ffd.png" src="../../_images/261dea605b4d8c499c8368fa83fe3ffd.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">倾斜投影区域（红框范围）和常规区域（黑框范围）。左图中红色区域为倾斜的，可以使用 <a class="reference internal" href="#cmdoption-mapproject-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a><strong>r|R</strong> 获取对应的整个范围的矩形经纬度范围。右图中黑色框是立体投影的范围，红色框为其对应的矩形范围，使用 <a class="reference internal" href="#cmdoption-mapproject-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a><strong>e|E</strong> 可获取红色框范围</span><a class="headerlink" href="#gmtplot-261dea605b4d8c499c8368fa83fe3ffd" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Z</strong>[<em>speed</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+f</strong>][<strong>+t</strong><em>epoch</em>]</dt><dd><p>指定行进速度 <em>speed</em> ，计算沿 <a class="reference internal" href="#cmdoption-mapproject-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 指定轨迹的行进时间，如果不指定速度，则会从
+第 3 列读取。速度为单位时间（单位由 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> [m/s] 指定）内通过的距离。</p>
+<ul class="simple">
+<li><p><strong>+i</strong> ：输出每两个相邻点之间的行进时间。</p></li>
+<li><p><strong>+a</strong> ：输出累积的行进时间。同时使用则获取两种时间信息。</p></li>
+<li><p><strong>+f</strong> ：将累积的行进时间转换为 ISO 8601 规定格式。
+时间中秒的小数位数，默认使用 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> 设置的值。</p></li>
+<li><p><strong>+t</strong>：设置一个时间历元 <em>epoch</em> ，输出相邻点的绝对时间。
+由于上述操作需要点之间的距离，因此需要在 <a class="reference internal" href="#cmdoption-mapproject-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 选项中使用 <strong>+i</strong> 。</p></li>
+</ul>
+<p>本选项对输出记录的信息顺序的影响，请参见 <a class="reference external" href="输出顺序">输出顺序</a> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-bo">
+<span class="sig-name descname"><span class="pre">-bo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-bo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输出格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt><dd><p>将某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-j">
+<span class="sig-name descname"><span class="pre">-j</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-j" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong></dt><dd><p>设置球面距离的计算方式。 <a class="reference internal" href="../../option/distcal/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,...][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输出的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-p" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>]</dt><dd><p>设置3D透视视角。 <a class="reference internal" href="../../option/p/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-q">
+<span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>对输入或输出的行进行筛选，该选项在一定程度上可以代替 gawk 的某些功能。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt><dd><p>设置 NaN 记录的处理方式。 <a class="reference internal" href="../../option/s/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-mapproject-0">
+<span class="sig-name descname"><span class="pre">-:</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mapproject-0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>交换输入或输出数据的前两列。 <a class="reference internal" href="../../option/colon/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>距离单位<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>GMT支持多种不同的距离单位，以及三种不同的球面距离计算方式。
+详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 和 <a class="reference internal" href="../../option/distcal/"><span class="doc">-j 选项</span></a>。</p>
+</section>
+<section id="ascii">
+<h2>ASCII 格式精度<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<p>ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> ；控制绝对时间的的参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> ；普通浮点数通过参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定更多的有效数字。</p>
+</section>
+<section id="id6">
+<h2>存在的限制<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>使用 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 指定的矩形区域在经过投影后，范围变成了非矩形。除非使用 <a class="reference internal" href="#cmdoption-mapproject-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>, 否则投影
+后的网格的最左边的坐标将为 0，最下面的坐标也为 0。因此，在对地图数字化前，应该
+使用 <strong>mapproject</strong> 对地图的几个角点的坐标极值进行一定的计算，以确定适合的比例尺
+和地图左下角的坐标。在数字化时，使用这些值以保证正反算结果正确；或者，可以使用
+类 Unix 系统中的 <strong>awk</strong> 命令将比例尺和偏移添加到坐标中。</p>
+<p>对于某些投影，即使设置了参考椭球为某个椭球，仍然会使用球解法。一般只有 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 设置
+范围超出椭球展开的有效范围时会出现这种情况。包括下面几种投影：</p>
+<ol class="arabic simple">
+<li><p>Lambert Conformal Comic (<strong>-JN</strong>) 和 Albers Equal-Area (<strong>-JB</strong>) 将会在地图比例尺
+超过 1.0E7 时使用球解法。</p></li>
+<li><p>Transverse Mercator (<strong>-JT</strong>) 和 UTM (<strong>-JU</strong>) 当 <a class="reference internal" href="#cmdoption-mapproject-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a> 指定的范围的东西边界
+超过中央子午线 10 度以上时，使用球解法；</p></li>
+<li><p>Cassini (<strong>-JC</strong>) 与上面相同，但超过 4 度就使用球解法；</p></li>
+<li><p>所有的圆锥投影，在经度范围小于 90 度时，使用球解法。</p></li>
+</ol>
+</section>
+<section id="id7">
+<h2>椭球和球<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>上述计算中，如果用户选择的椭球不为球，且基于椭球的公式已经实现，则 GMT 使用相应的
+椭球公式，椭球选择见 <a class="reference internal" href="../../conf/proj/#term-PROJ_ELLIPSOID"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>。用户需要注意的一些隐患如下：</p>
+<ol class="arabic simple">
+<li><p>对于某些投影，如横轴墨卡托投影，Albers，以及 Lambert 投影，当计算区域较小时，
+使用椭球公式，当计算区域较大时，则使用球面公式，同时将纬度替换为对应的辅助
+纬度；具体情况在 <a class="reference internal" href="#id6">存在的限制</a> 章节中已经介绍；</p></li>
+<li><p>当用户想检查一些历史数据时，可能会发现 GMT 给出的计算结果和历史数据有轻微的不同，
+其中一个原因是，早期的 GMT 计算使用的有效数字位数比较少，例如，Clarke 1866 椭球
+的扁率为 1/294.98，GMT 对扁率做平方后使用，值为 0.00676862818，但是早期的版本为
+0.00676866。这会导致十几个厘米的差异。如果用户需要复现以前的计算结果，则需要自己
+指定椭球扁率。另一个原因可能是，早期的数据使用了和现在不同的基准面，这可能会导致
+几十甚至几百米的差异。</p></li>
+<li><p><a class="reference internal" href="../../conf/proj/#term-PROJ_SCALE_FACTOR"><span class="xref std std-term">PROJ_SCALE_FACTOR</span></a> 对于某些投影来说有特定的默认值，用户若想实现某些设置需
+手动设置该参数，见 <a class="reference internal" href="#id9">示例</a> 中的高斯投影。</p></li>
+</ol>
+</section>
+<section id="id8">
+<h2>输出顺序<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>选项 <a class="reference internal" href="#cmdoption-mapproject-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a>、<a class="reference internal" href="#cmdoption-mapproject-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a>、<a class="reference internal" href="#cmdoption-mapproject-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> 和 <a class="reference internal" href="#cmdoption-mapproject-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a> 生成的数据一律按这几个选项的字母顺序排序。
+因此，这些选项在命令中出现的顺序无关紧要。当然，输出顺序也可以用 <a class="reference internal" href="#cmdoption-mapproject-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a> 选项调整。</p>
+</section>
+<section id="id9">
+<h2>示例<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p><strong>Mercator 投影</strong></p>
+<p>将经纬度坐标使用 Mercator 投影转换为平面坐标，1 度对应画布上 0.5 cm:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>@waypoints.txt<span class="w"> </span>-R-180/180/-72/72<span class="w"> </span>-Jm0.5c<span class="w"> </span>-:
+</pre></div>
+</div>
+<p><strong>UTM 投影与高斯投影及其逆变换</strong></p>
+<p>将经纬度坐标使用 UTM 投影转换为平面坐标，下面经纬度坐标位于 UTM 的 51 投影带，
+投影中心的坐标为 (0,0)，投影后坐标单位为米:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">121</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ju51/1:1<span class="w"> </span>-C<span class="w"> </span>-F
+<span class="m">311072</span>.361931<span class="w">       </span><span class="m">3542183</span>.49115
+</pre></div>
+</div>
+<p>GMT 中并无高斯投影（Gauss-Kruger），但其与 UTM 投影都是横轴墨卡托投影的变种，因此
+可用 UTM 投影经过一定的设置近似实现，其中
+UTM 和高斯投影的主要不同在于带号和中央经线投影的比例因子，高斯投影为切椭圆柱投影，
+因此其比例因子为 1， UTM 为割椭圆柱投影，其比例因子为 0.9996，因此上述经纬度的 6
+度带高斯投影为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">121</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ju51/1:1<span class="w"> </span>-C<span class="w"> </span>-F<span class="w"> </span>--PROJ_SCALE_FACTOR<span class="o">=</span><span class="m">1</span>
+<span class="m">310996</span>.760635<span class="w">       </span><span class="m">3543600</span>.93152
+</pre></div>
+</div>
+<p>此外，可以使用横轴墨卡托投用实现 UTM 和高斯投影:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">121</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Jt123/0/1:1<span class="w"> </span>-C500000/0<span class="w"> </span>-R120/126/30/40<span class="w"> </span>-F<span class="w"> </span>--PROJ_SCALE_FACTOR<span class="o">=</span><span class="m">0</span>.9996
+<span class="m">311072</span>.361931<span class="w">       </span><span class="m">3542183</span>.49115
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">121</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Jt123/0/1:1<span class="w"> </span>-C500000/0<span class="w"> </span>-R120/126/30/40<span class="w"> </span>-F<span class="w"> </span>--PROJ_SCALE_FACTOR<span class="o">=</span><span class="m">1</span>
+<span class="m">310996</span>.760635<span class="w">       </span><span class="m">3543600</span>.93152
+</pre></div>
+</div>
+<p>需要注意的是，上述的代码均基于默认椭球（WGS-84），若需其他椭球，需手动设置，也可
+通过 PROJ 的形式指定 EPSG 代码实现，详见 <a class="reference internal" href="../../option/J/"><span class="doc">-J 选项</span></a>。</p>
+<p>将平面坐标使用 UTM 投影逆变换转换为经纬度坐标，平面坐标单位为 m，对应的带号为 51</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">311072</span>.4<span class="w"> </span><span class="m">3542183</span>.5<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ju51/1:1<span class="w"> </span>-C<span class="w"> </span>-F<span class="w"> </span>-I
+<span class="m">121</span>.000000401<span class="w">   </span><span class="m">32</span>.0000000858
+
+<span class="c1"># 将高斯坐标转换为经纬度</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">310996</span>.760635<span class="w"> </span><span class="m">3543600</span>.93152<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ju51/1:1<span class="w"> </span>-C<span class="w"> </span>-F<span class="w"> </span>-I<span class="w"> </span>--PROJ_SCALE_FACTOR<span class="o">=</span><span class="m">1</span>
+<span class="m">121</span><span class="w"> </span><span class="m">31</span>.9999999997
+</pre></div>
+</div>
+<p><strong>不同纬度的转换</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 将大地纬度转换为地心纬度</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ng
+<span class="m">0</span><span class="w">   </span><span class="m">44</span>.807576784
+
+<span class="c1"># 将地心纬度转换为大地纬度</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">44</span>.807576784<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ng<span class="w"> </span>-I
+<span class="m">0</span><span class="w">   </span><span class="m">45</span>
+</pre></div>
+</div>
+<p><strong>笛卡尔坐标反算与大地主题反算</strong></p>
+<p>假定一平面坐标（0,0），计算其与坐标 (1,1) 之间的距离和方位角:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ab1/1<span class="w"> </span>-G1/1+uc
+<span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="m">45</span><span class="w">      </span><span class="m">1</span>.41421356237
+</pre></div>
+</div>
+<p>输出信息分别为横纵坐标，方位角以及距离；设置输出单位为 km，距离计算方式
+(这里使用椭球面距离)，可计算两个经纬度坐标之间的方位角和距离:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Ab1/1<span class="w"> </span>-G1/1+uk<span class="w"> </span>-jg
+<span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="m">44</span>.9956364553<span class="w">   </span><span class="m">156</span>.898594962
+</pre></div>
+</div>
+<p><strong>基准转换</strong></p>
+<p>将点 (0,0) 从香港使用的 1924 年国际椭球转换为 WGS-84 椭球:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-T
+-0.00243433862099<span class="w">   </span>-0.00170923972985
+</pre></div>
+</div>
+<p>对于带有大地高的坐标 (0,0,0)，将其从 CGCS2000 椭球转换为 WGS-84 椭球，由于 GMT
+中没有 CGCS2000 的 ID，因此需通过参数指定:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-Th6378137,298.257222101:0,0,0/219
+<span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</pre></div>
+</div>
+<p>由于 CSCS2000 椭球与 WGS-84 椭球极为接近，因此其转换后的经纬度和大地高均未有
+明显变化</p>
+<p><strong>大地坐标和经纬度的转换</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-E219
+<span class="m">6186446</span>.76449<span class="w">       </span><span class="m">1090837</span>.4793<span class="w">    </span><span class="m">1100250</span>.28422
+
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">6186446</span>.76449<span class="w">        </span><span class="m">1090837</span>.4793<span class="w">    </span><span class="m">1100250</span>.28422<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-E219<span class="w"> </span>-I
+<span class="m">10</span><span class="w">  </span><span class="m">10</span><span class="w">      </span><span class="m">9</span>.99999782909
+</pre></div>
+</div>
+<p><strong>点到线段的距离</strong></p>
+<p>计算 <code class="file docutils literal notranslate"><span class="pre">quakes.txt</span></code> 中的点到 <code class="file docutils literal notranslate"><span class="pre">coastline.txt</span></code> 中每段线的最短距离，
+距离单位为 km</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>quakes.txt<span class="w"> </span>-Lcoastline.txt+uk<span class="w"> </span>&gt;<span class="w"> </span>quake_dist.txt
+</pre></div>
+</div>
+<p><strong>计算沿轨累计距离和时间</strong></p>
+<p>假定船速度为 12 Knots，计算沿轨迹累计距离和航行时间:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>track.txt<span class="w"> </span>-G+un+a+i<span class="w"> </span>-Z12+a<span class="w"> </span>--TIME_UNIT<span class="o">=</span>h<span class="w"> </span>&gt;<span class="w"> </span>elapsed_time.txt
+</pre></div>
+</div>
+<p><strong>:option:`-W` 选项的使用</strong></p>
+<ol class="arabic">
+<li><p>确定横轴墨卡托投影地图的中点的地图坐标:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-R-80/-70/20/40<span class="w"> </span>-Jt-75/1:500000<span class="w"> </span>-WjCM<span class="w"> </span>&gt;<span class="w"> </span>mid_point.txt
+</pre></div>
+</div>
+</li>
+<li><p>确定倾斜墨卡托投影覆盖的矩形区域:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-R270/20/305/25+r<span class="w"> </span>-JOc280/25.5/22/69/2c<span class="w"> </span>-WR
+</pre></div>
+</div>
+</li>
+<li><p>确定矩形绘图范围对应的实际地图坐标范围:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-R-2800/2400/-570/630+uk<span class="w"> </span>-Joc190/25/266/68/1:1<span class="w"> </span>-WO
+</pre></div>
+</div>
+</li>
+<li><p>获取矩形绘图范围对应的实际地图范围的多边形，坐标为地理坐标:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-R-2800/2400/-570/630+uk<span class="w"> </span>-Joc190/25/266/68/1:1<span class="w"> </span>-Wr+n<span class="w"> </span>&gt;<span class="w"> </span>polygon.txt
+</pre></div>
+</div>
+</li>
+<li><p>确定立体投影确定的非矩形区域对应的矩形范围:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-JS36/90/30c<span class="w"> </span>-R-15/60/68/90<span class="w"> </span>-WE
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id10">
+<h2>参考文献<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>Bomford, G., 1952, Geodesy, Oxford U. Press.</p>
+<p>Snyder, J. P., 1987, Map Projections - A Working Manual, U.S. Geological
+Survey Prof. Paper 1395.</p>
+<p>Vanicek, P. and Krakiwsky, E, 1982, Geodesy - The Concepts,
+North-Holland Publ., ISBN: 0 444 86149 1.</p>
+</section>
+<section id="id11">
+<h2>相关模块<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../project/"><span class="doc">project</span></a>,
+<a class="reference internal" href="../grdproject/"><span class="doc">grdproject</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../makecpt/" class="btn btn-neutral float-left" title="makecpt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../mask/" class="btn btn-neutral float-right" title="mask" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

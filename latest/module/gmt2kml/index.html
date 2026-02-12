@@ -1,0 +1,947 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gmt2kml &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="batch" href="../batch/" />
+    <link rel="prev" title="grd2kml" href="../grd2kml/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../regress/">regress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gmt2kml</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">局限</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kmz">构建 KMZ 文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kml">KML 层级</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">分段信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">gmt2kml</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/gmt2kml.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Chuan1937" target="_blank" rel="noopener">何星辰</a>
+    
+ &nbsp;•&nbsp; 📅 2025-10-20
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="gmt2kml">
+<span id="index-0"></span><h1>gmt2kml<a class="headerlink" href="#gmt2kml" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/gmt2kml.html" title="（在 GMT v6.6）"><span>gmt2kml</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>将 GMT 数据表转换为 Google Earth KML 文件</p>
+</dd>
+</dl>
+<p><strong>2kml</strong> 读取一个或多个 GMT 表格文件，并将它们转换为使用
+Google Earth KML 格式的单个输出文件。
+数据可以表示点、线、面或波动，你可以指定额外属性，如标题、海拔模式、颜色、笔宽、透明度、
+区域以及数据描述。还可以将特征延伸到底面（假设高于地面），并为点符号使用自定义图标。
+最后，可以根据细节等级设置、海拔、区域控制可见性，包括在 Google Earth 加载时的状态，
+以及随缩放变化的淡入淡出效果。输入文件应包含以下列：</p>
+<p><em>lon</em> <em>lat</em> [ <em>alt</em> ] [ <em>timestart</em> [ <em>timestop</em> ] ]</p>
+<p>其中 <em>lon</em> 和 <em>lat</em> 对所有特征都是必需的，<em>alt</em> 对所有特征都是可选的
+（参见 <a class="reference internal" href="#cmdoption-gmt2kml-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 和 <a class="reference internal" href="#cmdoption-gmt2kml-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a>），<em>timestart</em> 和 <em>timestop</em> 适用于事件和时间跨度特征。
+对于波动，<em>alt</em> 列是必需的，但应表示沿轨迹的数据异常，例如重力、磁力等。
+这些值将被缩放以产生沿线的偏移距离（以度为单位）。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt 2kml</strong>
+[ <em>table</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a><strong>a</strong>|<strong>g</strong>|<strong>s</strong>[<em>alt</em>|<strong>x</strong><em>scale</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>cpt</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-D"><code class="xref std std-option docutils literal notranslate"><span class="pre">-D</span></code></a><em>descriptfile</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a>[<strong>+e</strong>][<strong>+s</strong>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><strong>e</strong>|<strong>l</strong>|<strong>p</strong>|<strong>s</strong>|<strong>t</strong>|<strong>w</strong> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a>[<em>color</em>][<strong>+f</strong>|<strong>n</strong>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a><em>icon</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-K"><code class="xref std std-option docutils literal notranslate"><span class="pre">-K</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a><em>name1</em>,<em>name2</em>,... ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>[<strong>t</strong>|<em>col</em>|<em>name_template</em>|<em>name</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-O"><code class="xref std std-option docutils literal notranslate"><span class="pre">-O</span></code></a> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a><strong>a</strong>|<strong>i</strong>|<strong>s</strong><em>arg</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-R"><code class="xref std std-option docutils literal notranslate"><span class="pre">-R</span></code></a><strong>e</strong>|<em>w/e/s/n</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a><strong>c</strong>|<strong>n</strong><em>scale</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>title</em>[/<em>foldername</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>[<em>pen</em>][<em>attr</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a>[<strong>+a</strong><em>alt_min/alt_max</em>][<strong>+f</strong><em>minfade/maxfade</em>][<strong>+l</strong><em>minLOD/maxLOD</em>][<strong>+o</strong>][<strong>+v</strong>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-a"><code class="xref std std-option docutils literal notranslate"><span class="pre">-a</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-di"><code class="xref std std-option docutils literal notranslate"><span class="pre">-di</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-qi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-qi</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-gmt2kml-0"><code class="xref std std-option docutils literal notranslate"><span class="pre">-:</span></code></a>[<strong>i</strong>|<strong>o</strong>] ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]
+[ &gt; <em>output.kml</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-A</strong><strong>a</strong>|<strong>g</strong>|<strong>s</strong>[<em>alt</em>|<strong>x</strong><em>scale</em>]</dt><dd><p>选择 Google Earth 认可的三种海拔模式之一，确定特征的高度（以米为单位）：
+<strong>a</strong> 绝对高度，<strong>g</strong> 相对地面高度，<strong>s</strong> 相对海底高度。
+要将特征绘制在固定海拔上，可附加高度 alt（单位：米）。
+使用 0 可将特征固定在选定参考面。或者附加  <strong>x</strong><em>scale</em>  来按该比例缩放输入文件中的海拔。
+如果未附加值，则海拔（米）从输入文件第 3 列读取。[默认情况下，特征固定在海面或地面]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong><em>cpt</em></dt><dd><p>使用 CPT 为符号、事件或时间跨度图标分配颜色，基于输入文件第 3 列的值。
+对于线或面，我们检查段头的 -Z&lt;value&gt; 声明，并通过 CPT 查找获取颜色。
+注意，仅可使用离散颜色。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-D" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-D</strong><em>descriptfile</em></dt><dd><p>包含 HTML 片段的文件，将作为 KML 文件的主要描述内容的一部分包含进去 [无描述]。
+参见 SEGMENT INFORMATION 下的特定特征描述。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-E</strong>[<strong>+e</strong>][<strong>+s</strong>]</dt><dd><p>控制线和面的 Google Earth 渲染方式。附加 <strong>+e</strong> 将特征延伸至地面 [默认不延伸]。
+附加 <strong>+s</strong> 用直线连接点（可能穿过地球表面并不可见） [铺设到表面]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong><strong>e</strong>|<strong>l</strong>|<strong>p</strong>|<strong>s</strong>|<strong>t</strong>|<strong>w</strong></dt><dd><p>设置特征类型。输入文件前两列应为 (<em>lon</em>, <em>lat</em>)。当需要高度或值（
+即未使用 <a class="reference internal" href="#cmdoption-gmt2kml-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 给出高度，或 <a class="reference internal" href="#cmdoption-gmt2kml-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 设置）时，
+第 3 列需要包含 altitude 或 value。选择以下指令：</p>
+<ul class="simple">
+<li><p><strong>e</strong>vent: 仅在特定 <em>time</em> 可见的符号，时间在下一列给出。</p></li>
+<li><p><strong>l</strong>ine: 使用 <a class="reference internal" href="#cmdoption-gmt2kml-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 设置的属性绘制线。</p></li>
+<li><p><strong>p</strong>olygon: 使用 <a class="reference internal" href="#cmdoption-gmt2kml-G"><code class="xref std std-option docutils literal notranslate"><span class="pre">-G</span></code></a> 和 <a class="reference internal" href="#cmdoption-gmt2kml-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 设置的属性绘制面。</p></li>
+<li><p><strong>s</strong>ymbol: 永远可见的普通符号。</p></li>
+<li><p><strong>t</strong>imespan: 仅在下一两列指定的时间段内激活的符号（含 <em>timestart</em>, <em>timestop</em>）。使用 NaN 表示无限时间范围。</p></li>
+<li><p><strong>w</strong>iggle: 第 3 列必须包含数据异常。如果还需要绘制轨迹本身，则单独使用 <strong>-Fl</strong>。参见 <a class="reference internal" href="#cmdoption-gmt2kml-Q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Q</span></code></a> 获取附加参数。</p></li>
+</ul>
+<p><strong>注意</strong>：如果使用时间，格式应为 ISO yyyy-mm-ddThh:mm:ss[.xxx] 或
+GMT 相对时间格式（参见 <strong>-f</strong>）。对于指令 <strong>e</strong>|<strong>s</strong>|<strong>t</strong>，
+符号通过 <a class="reference internal" href="#cmdoption-gmt2kml-I"><code class="xref std std-option docutils literal notranslate"><span class="pre">-I</span></code></a> 设置。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-G">
+<span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-G" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-G</strong>[<em>color</em>][<strong>+f</strong>|<strong>n</strong>]</dt><dd><p>设置填充颜色（<strong>+f</strong>，默认）或标签字体颜色（<strong>+n</strong>）。
+填充颜色应用于符号、延伸、面和正异常波动 [默认为 75% 透明浅橙色]。
+使用 <strong>-G+f</strong> 可关闭填充。文本标签：指定字体颜色 [默认白色]，
+使用 <strong>-G+n</strong> 可禁用标签。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-I">
+<span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-I" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-I</strong><em>icon</em></dt><dd><p>指定用于符号的替代图标 URL [默认 Google Earth 圆形]。若 URL 以 + 开头，
+则在名称前加 <code class="docutils literal notranslate"><span class="pre">http://maps.google.com/mapfiles/kml/</span></code>。
+若完全关闭图标（例如只想使用文本标签），使用 <strong>-I-</strong>。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-K">
+<span class="sig-name descname"><span class="pre">-K</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-K" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-K</strong></dt><dd><p>允许后续追加更多 KML 代码 [完成 KML 文件]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-L" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-L</strong><em>name1</em>,<em>name2</em>,...</dt><dd><p>扩展数据。附加一列或多列名称，用逗号分隔。我们期望输入文件中存在对应数据列，
+并在 KML 文件中作为 Extended Data 编码，
+在 Google Earth 中选择项目时可在气球显示属性。
+如果可用数值列比扩展数据少 1，则将剩余文本作为最后一列扩展数据；
+否则，将文本拆分为单词作为单独列。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-N</strong>[<strong>t</strong>|<em>col</em>|<em>name_template</em>|<em>name</em>]</dt><dd><p>默认情况下，如果段头包含 <a class="reference internal" href="#cmdoption-gmt2kml-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>&quot;label string&quot;，
+将用作 KML 特征名称（面、线段或符号集合）。
+默认名称为 &quot;Line %d&quot; 或 &quot;Point Set %d&quot;。每个点将按段名加序号命名。可选：</p>
+<ol class="arabic simple">
+<li><p><em>col</em>：从数据列格式化为字符串作为符号标签</p></li>
+<li><p><strong>t</strong>：用每条记录的尾随文本作为标签（仅 ASCII 文件可用）</p></li>
+<li><p>自定义字符串含 %d，为每个特征生成唯一编号</p></li>
+<li><p>无参数关闭符号标签，线段仍有名称</p></li>
+</ol>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-O">
+<span class="sig-name descname"><span class="pre">-O</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-O" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-O</strong></dt><dd><p>将 KML 代码追加到现有 KML 文件 [初始化新文件]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-Q">
+<span class="sig-name descname"><span class="pre">-Q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-Q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Qa</strong>|<strong>i</strong>|<strong>s</strong><em>arg</em></dt><dd><p>波动绘图可重复选项（需 <strong>-Fw</strong>）。控制正波动指向：
+- <strong>-Qa</strong>：附加方位角，定义正异常指向半圆
+- <strong>-Qi</strong>：固定方位角
+- <strong>-Qs</strong> <em>scale</em>：波动缩放（z 单位/地图度数）</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-R" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Re</strong>|<em>w/e/s/n</em></dt><dd><p>发出单个区域标签。附加 w/e/s/n 设置特定区域（忽略区域外点），
+或附加 <strong>e</strong> 自动确定数据域 [默认不发区域标签]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong><strong>c</strong>|<strong>n</strong><em>scale</em></dt><dd><p>缩放图标或标签。<strong>-Sc</strong> 缩放符号图标，<strong>-Sn</strong> 缩放名称标签 [默认 1]。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong><em>title</em>[/<em>foldername</em>]</dt><dd><p>设置文档标题 [默认未设置]。可附加 /<em>FolderName</em> 将特征分组到 KML 文件内文件夹。
+默认文件夹名为 &quot;<em>Name</em> Features&quot;。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-W</strong>[<em>pen</em>][<em>attr</em>] <a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/reference/features.html#wpen-attrib" title="（在 GMT v6.6）"><span class="xref std std-ref">(more ...)</span></a></dt><dd><p>设置线、波动或面轮廓的笔属性 [默认：宽 0.25p, 颜色黑, 样式实线]。
+附加 <strong>+cl</strong> 从 CPT 获取颜色，<strong>+cf</strong> 从 CPT 设置符号填充，<strong>+c</strong> 两者皆用。
+KML 中笔宽以像素为单位。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong>[<strong>+a</strong><em>alt_min/alt_max</em>][<strong>+f</strong><em>minfade/maxfade</em>][<strong>+l</strong><em>minLOD/maxLOD</em>][<strong>+o</strong>][<strong>+v</strong>]</dt><dd><p>设置 Document 和 Region 标签属性。<strong>+a</strong> 设置可见高度范围，
+<strong>+f</strong> 设置淡入淡出范围， <strong>+l</strong> 设置细节等级范围（lod_max=-1 表示无限可见）
+， <strong>+o</strong> 加载时打开文档， <strong>+v</strong> 加载时隐藏特征。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-a">
+<span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-a" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-a</strong>[[<em>col</em>=]<em>name</em>][,<em>...</em>]</dt><dd><p>控制输入或输出为 OGR/GMT 格式时对非空间元数据的处理方式。 <a class="reference internal" href="../../option/a/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-di">
+<span class="sig-name descname"><span class="pre">-di</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-di" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em></dt><dd><p>将输入数据某些特定值当作NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-qi">
+<span class="sig-name descname"><span class="pre">-qi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-qi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>筛选输入的行或数据范围。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gmt2kml-0">
+<span class="sig-name descname"><span class="pre">-:</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gmt2kml-0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>交换输入或输出数据的前两列。 <a class="reference internal" href="../../option/colon/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p><strong>注</strong>: 下面是该模块的一些有效语法示例。使用远程文件（文件名以 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 开头）的示例可以剪切并粘贴到您的终端中进行测试。其他需要输入文件的命令只是常见的使用类型的虚拟示例，但不能按编写的原样运行。</p>
+<p>要根据远程文件 &#64;kml_pointsets.txt 的 CPT 绘制彩色符号，先生成 CPT，再创建 KML 文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Ccategorical<span class="w"> </span>&gt;<span class="w"> </span>categories.cpt
+gmt<span class="w"> </span>2kml<span class="w"> </span>@kml_pointsets.txt<span class="w"> </span>-Ccategories.cpt<span class="w"> </span>&gt;<span class="w"> </span>points.kml
+</pre></div>
+</div>
+<p>将包含点位置 (<em>lon, lat</em>) 的文件转换为红色圆形符号的 KML 文件，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>2kml<span class="w"> </span>mypoints.txt<span class="w"> </span>-Gred+f<span class="w"> </span>-Fs<span class="w"> </span>&gt;<span class="w"> </span>mypoints.kml
+</pre></div>
+</div>
+<p>将多段线文件（<em>lon, lat</em>）转换为 KML，段头含 <a class="reference internal" href="#cmdoption-gmt2kml-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> 标签，
+使用粗白笔，并设置文档标题，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>2kml<span class="w"> </span>mylines.txt<span class="w"> </span>-Wthick,white<span class="w"> </span>-Fl<span class="w"> </span>-T<span class="s2">&quot;Lines from here to there&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>mylines.kml
+</pre></div>
+</div>
+<p>将多段面文件转换为 KML，段头含 <a class="reference internal" href="#cmdoption-gmt2kml-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a> 标签，使用粗黑笔和半透明黄色填充，
+设置文档标题，并指定区域限制，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>2kml<span class="w"> </span>mypolygons.txt<span class="w"> </span>-Gyellow@50+f<span class="w"> </span>-Fp<span class="w"> </span>-T<span class="s2">&quot;My polygons&quot;</span><span class="w"> </span>-R30/90/-20/40<span class="w"> </span>&gt;<span class="w"> </span>mypolygons.kml
+</pre></div>
+</div>
+<p>将包含点位置 (<em>lon, lat, time</em>) 的文件转换为绿色圆形符号 KML 文件，
+符号将在指定时间激活并一直显示，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk<span class="w"> </span><span class="s1">&#39;{print $1, $2, $3, &quot;NaN&quot;}&#39;</span><span class="w"> </span>mypoints.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>2kml<span class="w"> </span>-Ggreen+f<span class="w"> </span>-Ft<span class="w"> </span>&gt;<span class="w"> </span>mytimepoints.kml
+</pre></div>
+</div>
+<p>从网格 temp.nc 中提取每 10 单位的等值线和标签，并以 75% 透明红色线和红色标签（不透明）绘制 KML，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdcontour<span class="w"> </span>temp.nc<span class="w"> </span>-Jx1id<span class="w"> </span>-A10+tlabel.txt<span class="w"> </span>-C10<span class="w"> </span>-Dcontours.txt
+gmt<span class="w"> </span>2kml<span class="w">    </span>contours.txt<span class="w"> </span>-Fl<span class="w"> </span>-W1p,red@75<span class="w"> </span>-K<span class="w"> </span>&gt;<span class="w"> </span>contours.kml
+gmt<span class="w"> </span>2kml<span class="w">    </span>-O<span class="w"> </span>-Nt<span class="w"> </span>-Fs<span class="w"> </span>-Sn2<span class="w"> </span>-Gred@0+n<span class="w"> </span>label.txt<span class="w"> </span>-I-<span class="w"> </span>&gt;&gt;<span class="w"> </span>contours.kml
+</pre></div>
+</div>
+<p>将等值线绘制为线并使用 CPT 文件 contours.cpt 上色，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>2kml<span class="w"> </span>contours.txt<span class="w"> </span>-Fl<span class="w"> </span>-Ccontours.cpt<span class="w"> </span>&gt;<span class="w"> </span>contours.kml
+</pre></div>
+</div>
+<p>沿轨迹绘制磁异常波动，正异常为橙色，波动线为 2p 黑色笔，
+将磁异常（nT）缩放为地图上 1nm 对应 50 nT，并将波动置于海面 50m 以上，尝试:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>2kml<span class="w"> </span>magnetics_lon_lat_mag.txt<span class="w"> </span>-Fw<span class="w"> </span>-Gorange+f<span class="w"> </span>-W2p<span class="w"> </span>-Ag50<span class="w"> </span>-Qs50n<span class="w"> </span>&gt;<span class="w"> </span>wiggles.kml
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>局限<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>Google Earth 在跨经线绘制填充面时存在问题。
+目前必须手动将跨越日期变更线的多边形分成西、
+东两部分并分别绘制。Google Earth 还有其他文件大小或线长的限制，未记录。
+如特征未显示且无错误，可尝试通过拆分文件减小大小。</p>
+</section>
+<section id="kmz">
+<h2>构建 KMZ 文件<a class="headerlink" href="#kmz" title="Link to this heading"></a></h2>
+<p>使用 KMZ 格式更优，因为占用空间小。KMZ 是 KML 文件及其引用的图像、图标或数据文件的压缩包。
+可将大数据集分组到 Folders 中。Document 可包含任意数量文件夹。
+可用脚本和 <a class="reference internal" href="#cmdoption-gmt2kml-K"><code class="xref std std-option docutils literal notranslate"><span class="pre">-K</span></code></a>、<a class="reference internal" href="#cmdoption-gmt2kml-O"><code class="xref std std-option docutils literal notranslate"><span class="pre">-O</span></code></a> 选项创建复合 KML 文件。参见 <a class="reference internal" href="#cmdoption-gmt2kml-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a> 了解文件夹/文档切换。
+gmt_shell_scripts.sh 中的 gmt_build_kmz 可协助将多个
+KML 文件（及引用图片）打包为 KMZ 文件。
+需先 source gmt_shell_scripts.sh。</p>
+</section>
+<section id="kml">
+<h2>KML 层级<a class="headerlink" href="#kml" title="Link to this heading"></a></h2>
+<p>GMT 按特征类型（使用 <a class="reference internal" href="#cmdoption-gmt2kml-O"><code class="xref std std-option docutils literal notranslate"><span class="pre">-O</span></code></a>、<a class="reference internal" href="#cmdoption-gmt2kml-K"><code class="xref std std-option docutils literal notranslate"><span class="pre">-K</span></code></a> 或 <strong>-T/</strong><em>foldername</em>）、
+输入文件（非标准输入时）及线段（段头名称或 <a class="reference internal" href="#cmdoption-gmt2kml-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>）将特征存入层级文件夹。
+在 Google Earth 中可方便切换文档内容。示例：</p>
+<p>[ KML header information; not present if <a class="reference internal" href="#cmdoption-gmt2kml-O"><code class="xref std std-option docutils literal notranslate"><span class="pre">-O</span></code></a> was used ]</p>
+<p>&lt;Document&gt;&lt;name&gt;GMT Data Document&lt;/name&gt;</p>
+<p>&lt;Folder&gt;&lt;name&gt;Point Features&lt;/name&gt;</p>
+<p>&lt;!--This level of folder is inserted only when using -O, -K&gt;</p>
+<p>&lt;Folder&gt;&lt;name&gt;file1.txt&lt;/name&gt;</p>
+<p>&lt;!--One folder for each input file (not when standard input)&gt;</p>
+<p>&lt;Folder&gt;&lt;name&gt;Point Set 0&lt;/name&gt;</p>
+<p>&lt;!--One folder per line segment&gt;</p>
+<p>&lt;!--Points from the first line segment in file file1.txt go here&gt;</p>
+<p>&lt;Folder&gt;&lt;name&gt;Point Set 1&lt;/name&gt;</p>
+<p>&lt;!--Points from the second line segment in file file1.txt go here&gt;</p>
+<p>&lt;/Folder&gt;</p>
+<p>&lt;/Folder&gt;</p>
+<p>&lt;Folder&gt;&lt;name&gt;Line Features&lt;/name&gt;</p>
+<p>&lt;Folder&gt;&lt;name&gt;file1.txt&lt;/name&gt;</p>
+<p>&lt;!--One folder for each input file (not when standard input)&gt;</p>
+<p>&lt;Placemark&gt;&lt;name&gt;Line 0&lt;/name&gt;</p>
+<p>&lt;!--Here goes the first line segment&gt;</p>
+<p>&lt;/Placemark&gt;</p>
+<p>&lt;Placemark&gt;&lt;name&gt;Line 1&lt;/name&gt;</p>
+<p>&lt;!--Here goes the second line segment&gt;</p>
+<p>&lt;/Placemark&gt;</p>
+<p>&lt;/Folder&gt;</p>
+<p>&lt;Folder&gt;</p>
+<p>&lt;/Document&gt;</p>
+<p>[ KML trailer information; not present if <a class="reference internal" href="#cmdoption-gmt2kml-K"><code class="xref std std-option docutils literal notranslate"><span class="pre">-K</span></code></a> was used ]</p>
+</section>
+<section id="id6">
+<h2>分段信息<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p><strong>2kml</strong> 会扫描段头中 <a class="reference internal" href="#cmdoption-gmt2kml-L"><code class="xref std std-option docutils literal notranslate"><span class="pre">-L</span></code></a>&quot;<em>some label</em>&quot; [参见 <a class="reference internal" href="#cmdoption-gmt2kml-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a>] 和
+<strong>-T</strong>&quot;<em>some text description</em>&quot;。如存在，将解析为当前特征的名称和描述标签。</p>
+</section>
+<section id="id7">
+<h2>相关模块<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/gmt_shell_functions.sh.html" title="（在 GMT v6.6）"><span>gmt_shell_functions.sh</span></a>,
+<a class="reference internal" href="../grd2kml/"><span class="doc">grd2kml</span></a>,
+<a class="reference internal" href="../img2google/"><span class="doc">img2google</span></a>,
+<a class="reference internal" href="../kml2gmt/"><span class="doc">kml2gmt</span></a>,
+<a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../grd2kml/" class="btn btn-neutral float-left" title="grd2kml" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../batch/" class="btn btn-neutral float-right" title="batch" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+gmt grdimage @earth_mag4km_20m -png,pdf earth_mag

@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制缓冲区 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="根据震级大小绘制不同大小的圆点并进行统计" href="../ex009/" />
+    <link rel="prev" title="绘制自定义符号" href="../ex007/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../gallery/">社区绘图实例</a></li>
+      <li class="breadcrumb-item active">绘制缓冲区</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/examples/ex008/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2023-04-04
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>绘制缓冲区<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>GMT 的 <a class="reference internal" href="../../module/spatial/"><span class="doc">spatial</span></a> 通过调用 <a class="reference external" href="https://libgeos.org/">Geos 库</a> 可实现部分 GIS
+分析功能，包括生成缓冲区。下面对笛卡尔坐标多边形/线数据生成缓冲区。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+
+cat<span class="w"> </span>&gt;<span class="w"> </span>testline1.txt<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">7.8 50.4</span>
+<span class="s">7.8 50.6</span>
+<span class="s">8.1 50.6</span>
+<span class="s">8.1 50.4</span>
+<span class="s">7.8 50.4</span>
+<span class="s">EOF</span>
+
+cat<span class="w"> </span>&gt;<span class="w"> </span>testline2.txt<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">8   50</span>
+<span class="s">9.5 50.5</span>
+<span class="s">EOF</span>
+
+cat<span class="w"> </span>&gt;<span class="w"> </span>testline3.txt<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">9   49.6</span>
+<span class="s">9   50</span>
+<span class="s">9.8 50</span>
+<span class="s">9.8 49.8</span>
+<span class="s">9.4 49.8</span>
+<span class="s">9.4 49.6</span>
+<span class="s">EOF</span>
+
+gmt<span class="w"> </span>spatial<span class="w"> </span>testline1.txt<span class="w"> </span>-Sb0.05<span class="w"> </span>&gt;<span class="w"> </span>testline1_buffer.txt
+gmt<span class="w"> </span>spatial<span class="w"> </span>testline2.txt<span class="w"> </span>-Sb0.05<span class="w"> </span>&gt;<span class="w"> </span>testline2_buffer.txt
+gmt<span class="w"> </span>spatial<span class="w"> </span>testline3.txt<span class="w"> </span>-Sb0.05<span class="w"> </span>&gt;<span class="w"> </span>testline3_buffer.txt
+
+gmt<span class="w"> </span>begin<span class="w"> </span>buffer<span class="w"> </span>png
+<span class="w">  </span>gmt<span class="w"> </span>basemap<span class="w"> </span>-R7.5/10/49.5/51<span class="w"> </span>-JX15c<span class="w"> </span>-B
+
+<span class="w">  </span>gmt<span class="w"> </span>plot<span class="w"> </span>testline1.txt<span class="w"> </span>-W1p,green
+<span class="w">  </span>gmt<span class="w"> </span>plot<span class="w"> </span>testline1_buffer.txt<span class="w"> </span>-W1p,red
+
+<span class="w">  </span>gmt<span class="w"> </span>plot<span class="w"> </span>testline2.txt<span class="w"> </span>-W1p,green
+<span class="w">  </span>gmt<span class="w"> </span>plot<span class="w"> </span>testline2_buffer.txt<span class="w"> </span>-W1p,red
+
+<span class="w">  </span>gmt<span class="w"> </span>plot<span class="w"> </span>testline3.txt<span class="w"> </span>-W1p,green
+<span class="w">  </span>gmt<span class="w"> </span>plot<span class="w"> </span>testline3_buffer.txt<span class="w"> </span>-W1p,red
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-07693b8d08af49ed8ea9fa88ac846354">
+<a class="reference internal image-reference" href="../../_images/07693b8d08af49ed8ea9fa88ac846354.png"><img alt="../../_images/07693b8d08af49ed8ea9fa88ac846354.png" src="../../_images/07693b8d08af49ed8ea9fa88ac846354.png" style="width: 50%;" />
+</a>
+</figure>
+<p>从上图看出，在某些生成的缓冲区中，存在一些异常点。经过分析，推测该 bug 生成原因为：GMT 调用 GEOS
+生成缓冲区多边形后，又调用取最大外部环函数将其从多边形转换为线数据导致部分点丢失，丢失的部分点即
+图中出现的异常点。目前该 bug 还未精确定位和修复。在实际使用中，如果生成缓冲区不是明显的凹多边形，且该
+部分丢失的区域不影响显示或后续分析，用户可手动删除位于缓冲区文件尾部的异常点。更加稳健的做法为使用
+GEOS 的 julia/python 库实现上述功能，上述封装无需多边形到线数据的转换，因此不存在该 bug。此外，还
+可使用 GMT 的 julia 封装 <a class="reference external" href="https://github.com/GenericMappingTools/GMT.jl">GMT.jl</a> 中的 <code class="docutils literal notranslate"><span class="pre">buffer</span></code>
+函数，该函数通过 GDAL 调用 GEOS，同样不存在上述 bug。</p>
+<p>目前，缓冲区生成算法是基于笛卡尔坐标实现的，因此会将输入的地理坐标假定为笛卡尔
+坐标，这在使用地理坐标时，通常是不合适的。正常的做法是，先将多边形坐标投影，然后计算
+缓冲区，最后再将缓冲区做投影逆变换得到地理坐标，其中的投影变换或逆变换可通过
+<a class="reference internal" href="../../module/mapproject/"><span class="doc">mapproject</span></a> 实现，选择的投影最好为等面积投影。下面分别展示不使用投影
+和使用投影的地理坐标缓冲区计算。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>coast_buffer
+
+<span class="w">    </span><span class="c1"># 提取边界</span>
+<span class="w">    </span>gmt<span class="w"> </span>coast<span class="w"> </span>-ETW<span class="w"> </span>-M<span class="w"> </span>-Dc<span class="w"> </span>&gt;<span class="w"> </span>tw.geo
+<span class="w">    </span><span class="c1"># 适当删除面积太小的岛屿等特征，以防生成缓冲区计算太慢</span>
+<span class="w">    </span>gmt<span class="w"> </span>spatial<span class="w"> </span>-Qc1000+h<span class="w"> </span>tw.geo<span class="w"> </span>-fg<span class="w"> </span>&gt;<span class="w"> </span>tw_temp.geo
+<span class="w">    </span><span class="c1"># 生成缓冲区，宽度为 0.5 度</span>
+<span class="w">    </span>gmt<span class="w"> </span>spatial<span class="w"> </span>tw_temp.geo<span class="w"> </span>-Sb0.5<span class="w"> </span>&gt;<span class="w"> </span>tw_buffer.geo
+
+<span class="w">    </span><span class="c1"># 坐标投影</span>
+<span class="w">    </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-R116/124/20/26<span class="w"> </span>-Jh1:1<span class="w"> </span>-C<span class="w"> </span>-F<span class="w"> </span>tw_temp.geo<span class="w"> </span>&gt;<span class="w"> </span>tw_temp.car
+<span class="w">    </span><span class="c1"># 生成缓冲区, 0.5 度约为 56 km</span>
+<span class="w">    </span>gmt<span class="w"> </span>spatial<span class="w"> </span>tw_temp.car<span class="w"> </span>-Sb56000<span class="w"> </span>&gt;<span class="w"> </span>tw_buffer.car
+<span class="w">    </span><span class="c1"># 逆投影</span>
+<span class="w">    </span>gmt<span class="w"> </span>mapproject<span class="w"> </span>-R116/124/20/26<span class="w"> </span>-Jh1:1<span class="w"> </span>-C<span class="w"> </span>-F<span class="w"> </span>-I<span class="w"> </span>tw_buffer.car<span class="w"> </span>&gt;<span class="w"> </span>tw_buffer_proj.geo
+
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>-R116/124/20/26<span class="w"> </span>-JQ5i<span class="w"> </span>tw.geo<span class="w"> </span>-W0.5p,black<span class="w"> </span>-B
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>tw_buffer.geo<span class="w"> </span>-W0.5p,red
+<span class="w">    </span>gmt<span class="w"> </span>plot<span class="w"> </span>tw_buffer_proj.geo<span class="w"> </span>-W0.5p,blue
+
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-1f6c763353a6173e54824196a6ba3fe6">
+<a class="reference internal image-reference" href="../../_images/1f6c763353a6173e54824196a6ba3fe6.png"><img alt="../../_images/1f6c763353a6173e54824196a6ba3fe6.png" src="../../_images/1f6c763353a6173e54824196a6ba3fe6.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">海岸线缓冲区</span><a class="headerlink" href="#gmtplot-1f6c763353a6173e54824196a6ba3fe6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>通过手动编辑缓冲区文件，可得到下图。</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/coast_buffer.png"><img alt="../../_images/coast_buffer.png" src="../../_images/coast_buffer.png" style="width: 60%;" />
+</a>
+</figure>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../ex007/" class="btn btn-neutral float-left" title="绘制自定义符号" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../ex009/" class="btn btn-neutral float-right" title="根据震级大小绘制不同大小的圆点并进行统计" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

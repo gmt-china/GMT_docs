@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>earth_day 和 earth_night: 地球昼夜卫星影像 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="earth_mask: 地球掩膜数据" href="../earth-mask/" />
+    <link rel="prev" title="earth_age: 地球洋壳年龄数据" href="../earth-age/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../usage/">使用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../#gmt">GMT 内置数据</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../#id2">GMT 远程数据</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../earth-relief/">earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../earth-age/">earth_age: 地球洋壳年龄数据</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">earth_day 和 earth_night: 地球昼夜卫星影像</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">数据简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">使用方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">技术细节</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">数据来源及引用</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../earth-mask/">earth_mask: 地球掩膜数据</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../#id3">自定义数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">地学数据集</a> &raquo;</li>
+      <li>earth_day 和 earth_night: 地球昼夜卫星影像</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/dataset/earth-images.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="earth-day-earth-night">
+<h1>earth_day 和 earth_night: 地球昼夜卫星影像<a class="headerlink" href="#earth-day-earth-night" title="永久链接至标题"></a></h1>
+<p><a class="reference download internal" download="" href="../../_downloads/e8cf0a24ee714b5c8ffc573efbdd17a9/earth-images-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/earth-images-gmtplot-0.png"><img alt="../../_images/earth-images-gmtplot-0.png" src="../../_images/earth-images-gmtplot-0.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">地球昼夜卫星影像</span><a class="headerlink" href="#id5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h2>数据简介<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>GMT 提供了地球的卫星影像数据。该数据来自于美国航空航天局，分为白昼（Blue Marble）和黑夜（Black Marble）两类。该影像数据也分不同的精度，从30弧秒到1弧度不等。</p>
+<p>下表列出了GMT提供的昼夜卫星影像的代码、配准方式、分辨率以及文件大小。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 29%" />
+<col style="width: 26%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>代码</p></th>
+<th class="head"><p>配准方式</p></th>
+<th class="head"><p>分辨率</p></th>
+<th class="head"><p>大小</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>01d</p></td>
+<td><p>p</p></td>
+<td><p>1 弧度</p></td>
+<td><p>128 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>30m</p></td>
+<td><p>p</p></td>
+<td><p>30 弧分</p></td>
+<td><p>435 KB</p></td>
+</tr>
+<tr class="row-even"><td><p>20m</p></td>
+<td><p>p</p></td>
+<td><p>20 弧分</p></td>
+<td><p>918 KB</p></td>
+</tr>
+<tr class="row-odd"><td><p>15m</p></td>
+<td><p>p</p></td>
+<td><p>15 弧分</p></td>
+<td><p>1.6 MB</p></td>
+</tr>
+<tr class="row-even"><td><p>10m</p></td>
+<td><p>p</p></td>
+<td><p>10 弧分</p></td>
+<td><p>3.4 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>06m</p></td>
+<td><p>p</p></td>
+<td><p>6 弧分</p></td>
+<td><p>8.8 MB</p></td>
+</tr>
+<tr class="row-even"><td><p>05m</p></td>
+<td><p>p</p></td>
+<td><p>5 弧分</p></td>
+<td><p>13 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>04m</p></td>
+<td><p>p</p></td>
+<td><p>4 弧分</p></td>
+<td><p>19 MB</p></td>
+</tr>
+<tr class="row-even"><td><p>03m</p></td>
+<td><p>p</p></td>
+<td><p>3 弧分</p></td>
+<td><p>33 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>02m</p></td>
+<td><p>p</p></td>
+<td><p>2 弧分</p></td>
+<td><p>71 MB</p></td>
+</tr>
+<tr class="row-even"><td><p>01m</p></td>
+<td><p>p</p></td>
+<td><p>1 弧分</p></td>
+<td><p>258 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>30s</p></td>
+<td><p>p</p></td>
+<td><p>30 弧秒</p></td>
+<td><p>935 MB</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>白昼影像数据的名称为 <strong>earth_day</strong></p></li>
+<li><p>黑夜影像数据的名称为 <strong>earth_night</strong></p></li>
+<li><p>代码中 <strong>d</strong>、<strong>m</strong>和 <strong>s</strong> 表示弧度、弧分和弧秒</p></li>
+<li><p>配准方式 <strong>p</strong> 分别表示像素配准（目前该数据只提供像素配准的数据）</p></li>
+<li><p>目前高精度影像数据以单个文件形式保存，并没有划分为小区块保存</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>使用方法<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>地球昼夜影像数据通过 <strong>&#64;earth_day_</strong><em>rru</em> 或者 <strong>&#64;earth_night_</strong><em>rru</em> 的形式调用，其中 <em>rru</em> 表示影像文件的分辨率。如果命令中使用了 <strong>-R</strong> 选项，则只会绘制该区域内的数据。例如：</p>
+<p>使用15弧分的白昼影像数据绘制全球影像图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage -JH15c @earth_day_15m -pdf map
+</pre></div>
+</div>
+<p>使用2弧分的黑夜影像数据绘制一个区域的影像图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage -JH15c -R90/120/20/60 @earth_night_02m -pdf map
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>技术细节<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>数据会自动下载并保存到 <strong>~/.gmt/server/earth/earth_day</strong> 和 <strong>~/.gmt/server/earth/earth_night</strong> 目录下</p></li>
+<li><p>30弧秒分辨率的版本是NASA官方提供的版本</p></li>
+<li><p>其它分辨率的版本是经过 GMT 官方笛卡尔高斯滤波降采样得到</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>数据来源及引用<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<ol class="arabic simple">
+<li><p>白昼影像: [<a class="reference external" href="https://visibleearth.nasa.gov/images/57752/blue-marble-land-surface-shallow-water-and-shaded-topography">https://visibleearth.nasa.gov/images/57752/blue-marble-land-surface-shallow-water-and-shaded-topography</a>].</p></li>
+<li><p>黑夜影像: [<a class="reference external" href="https://earthobservatory.nasa.gov/features/NightLights/page3.php">https://earthobservatory.nasa.gov/features/NightLights/page3.php</a>].</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../earth-age/" class="btn btn-neutral float-left" title="earth_age: 地球洋壳年龄数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../earth-mask/" class="btn btn-neutral float-right" title="earth_mask: 地球掩膜数据" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

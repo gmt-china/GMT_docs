@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.5 GADM: 全球行政区划数据库 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/dataset/gadm/index.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="12 中文支持" href="../../chinese/" />
+    <link rel="prev" title="11.4 earth_relief: 全球地形起伏数据" href="../earth_relief/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">11 地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">11.1 地学数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">11.2 GSHHG: 全球高精度海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">11.3 DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">11.4 earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11.5 GADM: 全球行政区划数据库</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">11.5.1 数据下载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">11.5.2 数据格式及转换</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geopackagegmt">Geopackage转GMT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shapefilegmt">Shapefile转GMT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">11.5.3 数据分级</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">11.5.4 使用示例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">中国全图</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">1 级行政区划/省界</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2 级行政区划/市界</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">11.5.5 许可协议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">11.5.6 备注</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">11 地学数据集</a> &raquo;</li>
+        
+      <li>11.5 GADM: 全球行政区划数据库</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/dataset/gadm/index.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gadm">
+<h1>11.5 GADM: 全球行政区划数据库<a class="headerlink" href="#gadm" title="永久链接至标题">¶</a></h1>
+<p><strong>GADM主页</strong>：<a class="reference external" href="https://gadm.org/">https://gadm.org/</a></p>
+<p>GADM，全称Database of Global Administrative Areas，是一个高精度的全球行政区划数据库。其包含了全球所有国家和地区的国界、省界、市界、区界等多个级别的行政区划边界数据。</p>
+<div class="section" id="id1">
+<h2>11.5.1 数据下载<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GADM提供了两种下载方式：</p>
+<ol class="arabic simple">
+<li>下载全球所有国家和地区的所有数据 <a class="reference external" href="https://gadm.org/download_world.html">https://gadm.org/download_world.html</a></li>
+<li>按国家下载 <a class="reference external" href="https://gadm.org/download_country_v3.html">https://gadm.org/download_country_v3.html</a></li>
+</ol>
+<p>推荐只下载自己需要的国家的数据。</p>
+<p>需要说明的是，GADM 中对country 的定义为“any entity with <a class="reference external" href="http://zh.wikipedia.org/wiki/ISO_3166-1">an ISO country code</a>”。因而如果想要下载完整的中国数据，实际上需要下载China、Hong Kong、Macao和Taiwan
+四个数据。</p>
+</div>
+<div class="section" id="id2">
+<h2>11.5.2 数据格式及转换<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>对于每个数据，GADM提供了5种不同的格式：</p>
+<ul class="simple">
+<li>Geopackage：可以被GDAL/OGR、ArcGIS、QGIS等软件读取</li>
+<li>Shapefile：可直接用于ArcGIS等软件</li>
+<li>KMZ：可直接在Google Earth中打开</li>
+<li>R (sp)：可直接用于R语言绘图</li>
+<li>R (sf)：可直接用于R语言绘图</li>
+</ul>
+<p>如果在安装GMT时，GMT已经正确链接了GDAL库，则Shapefile格式的数据可以直接用于绘图。实际绘图时，可能只想要一小部分数据（比如某个省的省界），这种情况下，则需要将数据转换成纯文本文件，以方便从数据中提取出需要的部分。</p>
+<p>GDAL 的 <a class="reference external" href="https://www.gdal.org/ogr2ogr.html">ogr2ogr</a> 可以实现多种地理数据格式之间的互相转换。该软件的安装及介绍见
+<a class="reference external" href="https://gmt-china.org/blog/gdal-ogr/">GDAL/OGR: 地理空间数据格式转换神器</a>。本文使用的是 GDAL 2.4.0，其他版本的GDAL可能用法略有不同。</p>
+<div class="section" id="geopackagegmt">
+<h3>Geopackage转GMT<a class="headerlink" href="#geopackagegmt" title="永久链接至标题">¶</a></h3>
+<p>以China数据为例，解压得到文件 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN.gpkg</span></code>。使用如下命令查看文件的信息:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ogrinfo gadm36_CHN.gpkg
+INFO: Open of <span class="sb">`</span>gadm36_CHN.gpkg<span class="s1">&#39;</span>
+<span class="s1">      using driver `GPKG&#39;</span> successful.
+<span class="m">1</span>: gadm36_CHN_0 <span class="o">(</span>Multi Polygon<span class="o">)</span>
+<span class="m">2</span>: gadm36_CHN_1 <span class="o">(</span>Multi Polygon<span class="o">)</span>
+<span class="m">3</span>: gadm36_CHN_2 <span class="o">(</span>Multi Polygon<span class="o">)</span>
+<span class="m">4</span>: gadm36_CHN_3 <span class="o">(</span>Multi Polygon<span class="o">)</span>
+</pre></div>
+</div>
+<p>可以看到Geopackage文件中包含了四个文件，使用如下命令（注意其中的一对单引号）将其转换为GMT可识别的格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_0
+ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_1
+ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_2
+ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_3
+</pre></div>
+</div>
+<p>同理，对Hong Kong、Macao和Taiwan的数据做同样的处理即可。最终得到以 <code class="docutils literal notranslate"><span class="pre">.gmt</span></code> 结尾的数据12个，其中 CHN 四个、HKG 两个、MAC 三个、TWN 三个。</p>
+</div>
+<div class="section" id="shapefilegmt">
+<h3>Shapefile转GMT<a class="headerlink" href="#shapefilegmt" title="永久链接至标题">¶</a></h3>
+<p>以 China 数据为例，将下载的ZIP压缩包解压会得到一堆文件，其中
+<code class="docutils literal notranslate"><span class="pre">gadm36_CHN_[0123].shp</span></code> 是真正需要的4个Shapefile的数据文件。</p>
+<p>使用如下命令即可将Shapefile转换为GMT可识别的格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f OGR_GMT gadm36_CHN_0.gmt gadm36_CHN_0.shp
+ogr2ogr -f OGR_GMT gadm36_CHN_1.gmt gadm36_CHN_1.shp
+ogr2ogr -f OGR_GMT gadm36_CHN_2.gmt gadm36_CHN_2.shp
+ogr2ogr -f OGR_GMT gadm36_CHN_3.gmt gadm36_CHN_3.shp
+</pre></div>
+</div>
+<p>对于 Hong Kong、Macao、Taiwan 的数据做类似操作。最终得到以 <code class="docutils literal notranslate"><span class="pre">.gmt</span></code> 结尾的数据12个，其中 CHN 四个、HKG 两个、MAC 三个、TWN 三个。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>11.5.3 数据分级<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>提取得到的数据文件的文件名类似 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_0.gmt</span></code>，其中 <code class="docutils literal notranslate"><span class="pre">CHN</span></code> 为国家/地区代码，<code class="docutils literal notranslate"><span class="pre">0</span></code> 表示行政等级。</p>
+<p>以中国数据为例，其数据包含了四个等级：</p>
+<ul class="simple">
+<li>0级：即国界</li>
+<li>1级：即省界</li>
+<li>2级：即市界</li>
+<li>3级：即区界</li>
+</ul>
+<p>对于Hong Kong而言，则只包含0级和1级边界。</p>
+</div>
+<div class="section" id="id4">
+<h2>11.5.4 使用示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>中国全图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>绘制中国全图需要前面提取出的四个 0 级数据。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">PS</span><span class="o">=</span>gadm_level0.ps
+
+gmt psxy -JM15c -R72/136/15/54 -T -K -P &gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_CHN_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_HKG_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_MAC_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_TWN_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
+</pre></div>
+</div>
+<p>绘图效果如下：</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/gadm_level0.png"><img alt="../../_images/gadm_level0.png" src="../../_images/gadm_level0.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>1 级行政区划/省界<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>代码与上面的代码几乎一样，此处使用了中国的一级数据和香港、台湾、澳门的0级数据。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">PS</span><span class="o">=</span>gadm_level1.ps
+
+gmt psxy -JM15c -R72/136/15/54 -T -K -P &gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_CHN_1.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_HKG_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_MAC_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R gadm36_TWN_0.gmt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
+</pre></div>
+</div>
+<p>绘图效果如下：</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/gadm_level1.png"><img alt="../../_images/gadm_level1.png" src="../../_images/gadm_level1.png" style="width: 80%;" /></a>
+</div>
+<p>此处绘制了全国所有省的省界数据。如果只想要绘制某个省的省界数据，可以用文本编辑器打开CHN的一级数据文件，在注释行中有清晰地标记出每段数据是哪个省的边界，因而可以很方便地提取出来。</p>
+</div>
+<div class="section" id="id7">
+<h3>2 级行政区划/市界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_2.gmt</span></code>，从中提取安徽相关的数据保存到文件 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_Anhui_2.gmt</span></code> 中，绘图效果如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -JM10c -R114/120/29/35 gadm36_CHN_Anhui_2.gmt -P &gt; gadm_level2.ps
+</pre></div>
+</div>
+<p>绘图效果如下：</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/gadm_level2.png"><img alt="../../_images/gadm_level2.png" src="../../_images/gadm_level2.png" style="width: 40%;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>11.5.5 许可协议<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>GADM的<a class="reference external" href="https://gadm.org/license.html">许可协议</a> 表明该数据可以免费用于学术和非商业用途，可以利用该数据绘制学术出版物的地图，但禁止重新分发或商业用途。</p>
+</div>
+<div class="section" id="id10">
+<h2>11.5.6 备注<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>GADM提供的中国国界数据不一定符合中国的领土主张，省界、市界、区界等数据也不一定能够是最新的版本，在正式刊物中发表使用此类数据的图件时需要谨慎。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../chinese/" class="btn btn-neutral float-right" title="12 中文支持" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../earth_relief/" class="btn btn-neutral float-left" title="11.4 earth_relief: 全球地形起伏数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>x2sys_init &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="xyz2grd" href="../xyz2grd/" />
+    <link rel="prev" title="velo" href="../velo/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">x2sys_init</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#x2sys">x2sys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">格式定义文件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">头部信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">列信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">内置格式定义文件</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">废弃用法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>x2sys_init</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/x2sys_init.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="x2sys-init">
+<h1>x2sys_init<a class="headerlink" href="#x2sys-init" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_init.html" title="(在 GMT v6.2)"><span>x2sys_init</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>初始化 x2sys 数据库</p>
+</dd>
+</dl>
+<section id="x2sys">
+<h2>x2sys<a class="headerlink" href="#x2sys" title="永久链接至标题"></a></h2>
+<p><strong>交叉点分析</strong> ：在船测、航测或卫星等手段观测的沿轨数据中，多次观测的轨迹存在一定的交叉，在交叉点处，对于不存在时变或时变较小的重力异常、海深、地形或海面高等观测量，由于其位置相同，因此理论上是相等的。但由于系统误差的影响，在交叉点处的观测值通常存在一定的差距（称为交叉点不符值）。交叉点分析的主要作用为通过计算交叉点，并对交叉点的不符值进行处理以削弱系统误差。</p>
+<p><strong>x2sys</strong>（Track Crossover Analysis Tools, 沿轨交叉点分析包）即是一套用于寻找沿轨观测数据之间交叉点并进行分析的工具集。其中，沿轨观测数据可以是二维笛卡尔坐标或地理坐标，交叉点可以为不同轨迹或同一轨迹之间的相交的点。工具集主要包括交叉点计算、交叉点不符值统计、交叉点平差（削弱系统误差）等相关分析功能。x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉点的算法，并且能处理多种格式的沿轨观测数据，例如 NetCDF 格式。目前，x2sys 随 GMT 一同发布，其主要功能均包含在 GMT 中，分为多个命令。</p>
+<p><strong>x2sys</strong> 包括的命令：</p>
+<ul class="simple">
+<li><p>x2sys_init 用于初始化特定的沿轨观测数据库，是使用整个 x2sys 包中其他命令的基础。使用 <strong>x2sys_init</strong> 命令指定的标签 TAG 是后续命令中必须的关键参数。</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_binlist.html" title="(在 GMT v6.2)"><span>x2sys_binlist</span></a> 将创建一个粗略的列表，用于表示每个轨迹数据的位置以及观测数据个数等信息</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_put.html" title="(在 GMT v6.2)"><span>x2sys_put</span></a> 用于更新轨迹数据库</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_get.html" title="(在 GMT v6.2)"><span>x2sys_get</span></a> 用于寻找在给定区域内的轨迹</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_cross.html" title="(在 GMT v6.2)"><span>x2sys_cross</span></a> 计算给定轨迹列表中的轨迹的交叉点</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_report.html" title="(在 GMT v6.2)"><span>x2sys_report</span></a> 统计交叉点信息</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_list.html" title="(在 GMT v6.2)"><span>x2sys_list</span></a> 筛选交叉点</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_solve.html" title="(在 GMT v6.2)"><span>x2sys_solve</span></a> 基于 x2sys_cross 确定的交叉点进行交叉点平差</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_datalist.html" title="(在 GMT v6.2)"><span>x2sys_datalist</span></a> 提取交叉点平差后的改正值，以便后续分析</p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_merge.html" title="(在 GMT v6.2)"><span>x2sys_merge</span></a> 合并交叉点列表</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>使用 x2sys_init 命令前，需首先设置环境变量 <code class="docutils literal notranslate"><span class="pre">X2SYS_HOME</span></code> 为某个拥有写权限的文件夹，以便 x2sys 可跟踪具体的设置。</p>
+</div>
+</section>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p><strong>gmt x2sys_init</strong>
+<em>TAG</em>
+<a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>fmtfile</em>
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>suffix</em> ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><strong>d</strong>|<strong>g</strong> ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>dx</em>[/<em>dy</em>] ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><strong>d</strong>|<strong>s</strong><em>unit</em> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><strong>t</strong>|<strong>d</strong><em>gap</em> ]
+[ <strong>-j</strong><a class="reference internal" href="../../option/distcal/"><span class="doc">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<dl class="simple">
+<dt><em>TAG</em></dt><dd><p>数据类型的标签，x2sys_init 将创建一个以 <em>TAG</em> 命名的文件夹来保存相关信息</p>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>fmtfile</em></dt><dd><p><em>fmtfile</em> 文件定义了当前处理的数据文件的格式（见下文中的格式定义）。如果 <em>fmtfile</em> 不在当前文件夹下，则需要指定完整路径。如果 <strong>-D</strong> 选项没有指定，GMT 将自动使用 <em>TAG</em>.fmt，不管其是否存在。
+<strong>注</strong> ：已经弃用的 <code class="docutils literal notranslate"><span class="pre">.def</span></code> 后缀的文件可以正常工作，但不推荐使用，应该考虑改变后缀。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<dl class="simple" id="e">
+<dt><strong>-E</strong><em>suffix</em></dt><dd><p>指定处理数据文件的后缀。如果不给定，GMT 将使用 <strong>-D</strong> 选项中的前缀作为后缀（见 <strong>-D</strong> 选项）。</p>
+</dd>
+</dl>
+<dl class="simple" id="f">
+<dt><strong>-F</strong></dt><dd><p>如果 <strong>TAG</strong> 文件夹存在，将强制创建新的文件夹 [默认存在旧的文件夹时，不创建新文件夹]。</p>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-Gd</strong>|<strong>g</strong></dt><dd><p>选择使用地理坐标。追加 <strong>d</strong> 表明经度范围为 -180 到 180 度。追加 <strong>g</strong> 表明经度范围为 0 到 360 度。</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>dx</em>[/<em>dy</em>]</dt><dd><p><strong>-I</strong> 选项主要用来指定在 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_binlist.html" title="(在 GMT v6.2)"><span>x2sys_binlist</span></a>
+模块中创建的网格的间隔，<em>dx</em> 为横向间隔，<em>dy</em> 为纵向间隔，<em>dy</em> 为可选的，不指定时，使用 <em>dx</em> 作为纵向间隔。追加 <em>m</em> 或 <em>s</em> 用来指定间隔在地理坐标中的单位为角分或角秒。</p>
+</dd>
+</dl>
+<dl id="n">
+<dt><strong>-Nd</strong>|<strong>s</strong><em>unit</em></dt><dd><p>设置其他后续模块中需要使用的距离和速度的单位。
+<strong>d</strong> 表示距离，<strong>s</strong> 表示速度，然后可以分别指定距离和速度的单位。</p>
+<ul class="simple">
+<li><p><strong>c</strong> 表示笛卡尔坐标下的距离或速度</p></li>
+<li><p><strong>e</strong> m 或 m/s，</p></li>
+<li><p><strong>f</strong> feet 或 feet/s</p></li>
+<li><p><strong>k</strong> km 或 kms/hr</p></li>
+<li><p><strong>m</strong> miles 或 miles/hr</p></li>
+<li><p><strong>n</strong> nautical miles 或 knots</p></li>
+<li><p><strong>u</strong> survey feet 或 survey feet/s).</p></li>
+</ul>
+<p>默认地，当使用了 <strong>-G</strong> 选项时，设置为 <strong>-Ndk</strong> <strong>-Nse</strong> （km 和 m/s），其他情况设置为 <strong>-Ndc</strong> 和 <strong>-Nsc</strong> 。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-Wt</strong>|<strong>d</strong><em>gap</em></dt><dd><p>该选项主要用于考虑轨迹数据中的缺失点或观测间隔很大的点。
+<strong>t</strong> 设置最大的时间间隙 <em>gap</em> （使用用户定义的单位，通常为秒）；
+<strong>d</strong> 设置最大的距离间隙 <em>gap</em> （单位见 <strong>-N</strong> 选项）。若交叉点两侧的数据点之间的时间或距离大于 <em>gap</em> ,
+则认为当前轨迹数据存在缺失数据，不用来计算交叉点并平差。</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="../../option/distcal/"><span class="doc">(more …)</span></a></dt><dd><p>设置球面距离的计算方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/gmt.conf.html" title="(在 GMT v6.2)"><span class="xref std std-doc">gmt.conf</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>格式定义文件<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>*.fmt 文件定义了观测数据的格式，主要包括两个部分：(1) 头部信息；(2) 列信息。</p>
+<section id="id5">
+<h3>头部信息<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<p>所有的头部信息均以字符 <code class="docutils literal notranslate"><span class="pre">#</span></code> 开头，后面紧跟一个大写的指令。如果指令可以接收一个参数，则指令和参数之间必须使用空格分隔。在头部信息的末尾可以使用 <code class="docutils literal notranslate"><span class="pre">#</span></code> 添加额外的注释信息。可识别的指令包括下面几个：</p>
+<ol class="arabic simple">
+<li><p><strong>ASCII</strong> 用来表明该数据文件为 ASCII 格式</p></li>
+<li><p><strong>BINARY</strong> 表明该数据文件为二进制格式</p></li>
+<li><p><strong>NETCDF</strong> 表明该数据文件为 1-D netCDF 格式</p></li>
+<li><p><strong>SKIP</strong> 可接收一个参数，表示读取 ASCII 格式的数据文件时跳过的行数或读取二进制文件时跳过的字节数</p></li>
+<li><p><strong>GEO</strong> 表明数据文件的坐标为地理坐标，与 <strong>-G</strong> 的作用相同</p></li>
+<li><p><strong>MULTISEG</strong> 表明每个文件均包括多段数据，中间使用 GMT 段分隔符分开（不适用于 netCDF 格式）</p></li>
+</ol>
+</section>
+<section id="id6">
+<h3>列信息<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<p>列信息中包含多行，其中每行表示不同的变量，每行都含有 7 列，每列均代表特殊的含义：</p>
+<p><em>name type NaN NaN-proxy scale offset oformat</em></p>
+<ol class="arabic">
+<li><p><em>name</em> 变量的名称。其中，坐标是必须的变量，且其名称只能为 <em>lon</em> 和 <em>lat</em>
+（笛卡尔坐标时为 <em>x</em> 和 <em>y</em> ）。时间变量为可选的，<em>time</em> 表示绝对时间，
+<em>rtime</em> 表示相对时间，使用相对时间时，需确保 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 和 <a class="reference internal" href="../../conf/time/#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a>
+设置正确。无论使用的时间是绝对时间还是相对时间，输出结果中都使用绝对时间。</p></li>
+<li><p><em>type</em> 数据类型</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>a</strong> （ASCII 文件）数字</p></li>
+<li><p><strong>c</strong> （二进制文件）1 字节有符号整型</p></li>
+<li><p><strong>u</strong> （二进制文件）1 字节无符号整型</p></li>
+<li><p><strong>h</strong> （二进制文件）2 字节有符号整型</p></li>
+<li><p><strong>i</strong> （二进制文件）4 字节有符号整型</p></li>
+<li><p><strong>f</strong> （二进制文件）4 字节浮点型</p></li>
+<li><p><strong>d</strong> （二进制文件）8 字节浮点型</p></li>
+<li><p><strong>d</strong> （netCDF 文件）自动确定数据类型</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><em>NaN</em> 是否使用某个数字代替 NaN，若是，则为 <em>Y</em>，否则为 <em>N</em></p></li>
+<li><p><em>NaN-Proxy</em> 用来代替 NaN 的数字，若使用 99999.0 代替 NaN，则 <em>NaN</em> 为 <em>Y</em>，
+<em>NaN-Proxy</em> 为 99999.0</p></li>
+<li><p><em>scale</em> 设置对数据使用的缩放倍数</p></li>
+<li><p><em>offset</em> 设置对数据使用的偏移量</p></li>
+<li><p><em>oformat</em> 使用 C 语言格式的字符串指定数据的格式，如果该项设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则使用 GMT 的格式机制，相关的设置参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> ，
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_MAP"><span class="xref std std-term">FORMAT_GEO_MAP</span></a> ，<a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_MAP"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> ，<a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_MAP"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a></p></li>
+</ol>
+</section>
+<section id="id7">
+<h3>内置格式定义文件<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<p>GMT 内置了一些格式定义文件，包括：</p>
+<ul class="simple">
+<li><p>mgd77  普通 mgd77 ASCII 文件</p></li>
+<li><p>mgd77+ 增强型的 mgd77+ netCDF 文件</p></li>
+<li><p>gmt  旧的 mgg 二进制文件</p></li>
+<li><p>xy   普通的 x,y ASCII 表文件</p></li>
+<li><p>xyz  与 <em>xy</em> 相同，但包括 z 值</p></li>
+<li><p>geo  普通的经纬度 ASCII 文件</p></li>
+<li><p>geoz 与 <em>geo</em> 相同，但包含 z 值</p></li>
+</ul>
+<p>如果用户的轨迹数据文件为上述类型中的某一种，例如为普通的 magd77 ASCII 文件，可以之间使用 <strong>-Dmgd77</strong> ，无需手动编写格式定义文件。以上格式定义文件均可在 <strong>GMT_SHAREDIR</strong> 目录下的 x2sys 文件夹中找到。</p>
+</section>
+</section>
+<section id="id8">
+<h2>示例<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<p>这里将给出使用 x2sys 管理大量沿轨观测文件的步骤。</p>
+<p><strong>ASCII 文件</strong></p>
+<p>假定观测数据文件的格式为：2 行头部信息，然后为观测数据，共 6 列，分别为
+lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。</p>
+<p>（1）首先创建一个用来定义数据格式的文件 <code class="file docutils literal notranslate"><span class="pre">line.fmt</span></code> ，其内容为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Format define file for the line format</span>
+<span class="c1">#SKIP 2</span>
+<span class="c1">#GEO</span>
+<span class="c1">#name   type    NaN     NaN-proxy   scale   offset  oformat</span>
+lat     a       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %9.5f
+lon     a       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %10.5f
+<span class="nb">time</span>    a       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %7.1f
+obs1    a       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %7.2f
+obs2    a       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %7.2f
+obs3    a       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %7.2f
+</pre></div>
+</div>
+<p>（2）接下来，创建 TAG 和数据库。假定数据均为地理坐标，使用 1x1 度的网格来为这些沿轨观测文件建立索引，并计算沿轨距离，单位为 km，速度单位为节:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_init LINE -V -G -Dline -Rg -je -Ndk -Nsn -I1/1 -Etrk
+</pre></div>
+</div>
+<p>这里设置 TAG 为 LINE。当 x2sys 试图读取观测数据时，将首先在当前文件夹中寻找数据，然后在 <code class="file docutils literal notranslate"><span class="pre">LINE_paths.txt</span></code> 中查找其他的目录列表。因此，这里创建 <code class="file docutils literal notranslate"><span class="pre">LINE_paths.txt</span></code>
+文件，内容为完整的数据所在的路径。</p>
+<p>所有的 TAG 相关的文件，包括格式定义文件，TAG 文件以及创建的数据库等将保存在
+<strong>$X2SYS_HOME</strong>/<em>TAG</em> 文件夹中，此处为 <strong>$X2SYS_HOME</strong>/LINE。
+<strong>x2sys_init</strong> 将会复制 <strong>-D</strong> 选项设置的 *.fmt 到该文件夹下，以便后续的 x2sys 命令使用。</p>
+<p>（3）创建 tbf 文件。使用 <strong>x2sys_init</strong> 创建数据库以后，可以使用下面两步填充数据库。首先运行 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_binlist.html" title="(在 GMT v6.2)"><span>x2sys_binlist</span></a> ，使用沿轨观测文件创建一个或多个多段轨迹网格索引文件（track bin-index file，tbf）。文件中的信息包括：每个轨道经过哪些
+1x1 度（见 <strong>-I</strong> ）的网格，以及含有哪些观测（这里为 obs1，obs2，obs3，但并非所有的轨迹都含有这 3 种观测）。例如：如果用于将所有的数据文件名保存在 <code class="file docutils literal notranslate"><span class="pre">tracks.lis</span></code> ，则可以运行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_binlist -V -TLINE <span class="o">=</span>tracks.lis &gt; tracks.tbf
+</pre></div>
+</div>
+<p>（4）更新索引数据库。填充数据库的第二步即为更新索引数据库。使用
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_put.html" title="(在 GMT v6.2)"><span>x2sys_put</span></a> 将 tbf 文件中的信息插入到 TAG 数据库中:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_put -V -TLINE tracks.tbf
+</pre></div>
+</div>
+<p>（5）查找数据。使用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_get.html" title="(在 GMT v6.2)"><span>x2sys_get</span></a> 可以查找位于指定范围内的轨迹，并且可以限制特定的观测值组合的轨迹，例如，寻找所有同时包含 obs1 和 obs3 并位于某一区域的轨迹:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_get -V -TLINE -R20/40/-40/-20 -Fobs1,obs3 &gt; tracks.tbf
+</pre></div>
+</div>
+<p><strong>MGD77[+] 文件</strong></p>
+<p>GMT 已经自带了 MGD77，MGD77+ 以及 mgg 观测数据的格式定义文件。对于这些数据，设置 <strong>-j</strong> 和 <strong>-N</strong> 将默认使用大圆距离，单位为 km，速度单位为 m/s。由 NCEI 创建的 MGD77 数据可使用下面命令初始化:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_init MGD77 -V -Dmgd77 -Emgd77 -Rd -Gd -Nsn -I1/1 -Wt900 -Wd5
+</pre></div>
+</div>
+<p>这里设置轨迹中相邻观测超过 15 分钟（即 900 秒）或者大于 5 km 即认为存在数据缺失；设置速度为节。</p>
+<p><strong>二进制文件</strong></p>
+<p>假定用户的观测文件中有 128 个字节的头部信息，接下来为数据记录，其中 lon，lat，time 为双精度数，另有三种观测量为 2 字节整数，且需要乘以 0.1 。前两种观测量使用 -32768 表示没有获得观测值。因此，可以定义一个 <code class="file docutils literal notranslate"><span class="pre">line.fmt</span></code> 为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Format define file for the binary line format</span>
+<span class="c1">#BINARY</span>
+<span class="c1">#SKIP 128</span>
+<span class="c1">#GEO</span>
+<span class="c1">#name   type    NaN     NaN-proxy   scale   offset  oformat</span>
+lat     d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %9.5f
+lon     d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %10.5f
+<span class="nb">time</span>    d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %7.1f
+obs1    h       Y       -32768      <span class="m">0</span>.1     <span class="m">0</span>       %6.1f
+obs2    h       Y       -32768      <span class="m">0</span>.1     <span class="m">0</span>       %6.1f
+obs3    h       N       <span class="m">0</span>           <span class="m">0</span>.1     <span class="m">0</span>       %6.1f
+</pre></div>
+</div>
+<p><strong>1-D netCDF 文件</strong></p>
+<p>最后，假定用户的观测文件为 netCDF 格式，且符合 COARDS 约定，含有同样的观测数据，即
+lon，lat，time，obs1，obs2，obs3，则格式定义文件为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Format define file for the netCDF COARDS line format</span>
+<span class="c1">#NETCDF</span>
+<span class="c1">#GEO</span>
+<span class="c1">#name   type    NaN     NaN-proxy   scale   offset  oformat</span>
+lat     d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %9.5f
+lon     d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %10.5f
+<span class="nb">time</span>    d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %7.1f
+obs1    d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %6.1f
+obs2    d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %6.1f
+obs3    d       N       <span class="m">0</span>           <span class="m">1</span>       <span class="m">0</span>       %6.1f
+</pre></div>
+</div>
+<p>netCDF 观测文件通常不需要设置 scale 以及 NaN，因为这些都包含在 netCDF 自己的格式描述中。</p>
+</section>
+<section id="id9">
+<h2>废弃用法<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+<p>格式定义文件过去使用 .def 作为后缀，由于 GMT 的符号文件也使用该后缀，因此目前已经弃用该扩展名，现在使用的后缀为 .fmt，但 .def 仍然可以正常工作。</p>
+</section>
+<section id="id10">
+<h2>相关模块<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_binlist.html" title="(在 GMT v6.2)"><span>x2sys_binlist</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_datalist.html" title="(在 GMT v6.2)"><span>x2sys_datalist</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_get.html" title="(在 GMT v6.2)"><span>x2sys_get</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_list.html" title="(在 GMT v6.2)"><span>x2sys_list</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_put.html" title="(在 GMT v6.2)"><span>x2sys_put</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_report.html" title="(在 GMT v6.2)"><span>x2sys_report</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_solve.html" title="(在 GMT v6.2)"><span>x2sys_solve</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_cross.html" title="(在 GMT v6.2)"><span>x2sys_cross</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/x2sys/x2sys_merge.html" title="(在 GMT v6.2)"><span>x2sys_merge</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../velo/" class="btn btn-neutral float-left" title="velo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../xyz2grd/" class="btn btn-neutral float-right" title="xyz2grd" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

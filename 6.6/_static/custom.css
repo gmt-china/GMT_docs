@@ -1,0 +1,150 @@
+.rst-content dl dt {
+    font-weight: normal;
+}
+
+.wy-nav-content {
+    max-width: 980px !important;
+}
+
+.hlist {
+    width: 100%
+}
+
+.sd-card-body {
+    padding: 0.2rem 0.2rem;
+}
+
+.sd-card-footer {
+    padding: 0.2rem 0.2rem;
+}
+
+.sd-card-text {
+	font-size: small;
+}
+
+/* Compatibility with sphinx_rtd_theme v3.x.x */
+/* https://github.com/TexasInstruments/processor-sdk-doc/commit/4fa6276ddcf7f9db919af2e5b3aec7e70a1afa16 */
+.wy-side-nav-search>div.version {
+    margin-top: -.4045em;
+    margin-bottom: .809em;
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, .3);
+}
+
+
+/* 调整所有 figure 的外边距 */
+figure {
+    margin: 30px 0 !important;
+}
+
+/* 调整图片与标题的间距 */
+figure img {
+    margin-bottom: 15px;
+}
+
+/* 调整标题样式 */
+figcaption {
+    padding-top: 10px;
+    font-style: italic;
+}
+
+/* 针对 :option: 的样式， !important 强制覆盖主题的设置 */
+code.xref.std-option {
+    background-color: transparent !important; /* 去掉背景 */
+    border: none !important;            /* 去掉边框 */
+
+    font-family: inherit !important;    /* 取消等宽字体，继承正文字体 */
+    font-size: 100% !important;         /* 强制字号与正文 1:1 */
+    color: #007bff !important;          /* 现代标准链接蓝 */
+
+    padding-left: 0 !important; /* 去除左右多余的内边距 */
+    padding-right: 0 !important;
+    margin-right: 0 !important; /* 保险起见，把外边距也去掉 */
+}
+/* 鼠标悬停时的效果，增加交互感 */
+code.xref.std-option:hover {
+    color: #0056b3 !important;          /* 悬停时颜色加深 */
+    text-decoration: underline;
+}
+/* 网页版中不显示 conf.py 中自定义的类 hidden-opt 
+   让 .. option:: 变成一个看不见的像素点 */
+.hidden-opt {
+    visibility: hidden;   
+    height: 0;           
+    margin: 0;           
+    padding: 0;           
+    overflow: hidden;     
+    position: relative;   
+
+    border: none !important;
+    background: none !important;
+}
+
+/* 针对 grdmath，math 页面中的大表格的样式设置 */
+/* 限制特定类别的表格最大宽度 */
+.fixed-width-table {
+    max-width: 870px;
+    width: 100%;       /* 在小屏幕上自动缩小 */
+    margin-left: 0;    /* 靠左对齐，如果想居中改为 auto */
+    margin-right: auto;
+    table-layout: fixed; /* 强制严格遵守列宽比例，有助于换行 */
+}
+
+/* 确保单元格内容自动换行 */
+.fixed-width-table td, .fixed-width-table th {
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* =========================================
+   Pagefind 搜索结果弹窗化样式 (适配 RTD 主题)
+   ========================================= */
+
+/* 1. 调整搜索框在侧边栏的显示 */
+.pagefind-ui__form::before {
+    /* 让搜索图标和文字稍微紧凑一点 */
+    top: 15px !important;
+}
+
+/* 2. 将搜索结果列表 (Drawer) 变成屏幕中央的弹窗 */
+.pagefind-ui__drawer {
+    position: fixed !important;    /* 强制固定定位，脱离侧边栏流 */
+    top: 10vh !important;          /* 距离顶部 10% 的位置 */
+    left: 20% !important;          /* 水平居中 */
+    
+    width: 80vw !important;        /* 宽度占屏幕 80% */
+    max-width: 800px !important;   /* 最大宽度 800px，防止在大屏太宽 */
+    max-height: 80vh !important;   /* 高度限制，超出会出现滚动条 */
+    
+    background-color: #fff !important; /* 纯白背景 */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important; /* 强烈的阴影，营造悬浮感 */
+    border-radius: 8px !important; /* 圆角 */
+    z-index: 9999 !important;      /* 确保层级最高，覆盖在正文之上 */
+    
+    overflow-y: auto !important;   /* 内容过多时显示滚动条 */
+    padding: 20px !important;      /* 内边距 */
+    border: 1px solid #eee;        /* 细微边框 */
+}
+
+/* 3. 优化单条结果的样式 */
+.pagefind-ui__result {
+    border-bottom: 1px solid #eee !important;
+    padding: 15px 0 !important;
+}
+
+.pagefind-ui__result-thumb {
+    /* 限制缩略图大小，防止过大 */
+    max-width: 120px !important;
+}
+
+/* 4. 移动端适配：在手机上占满全屏 */
+@media (max-width: 768px) {
+    .pagefind-ui__drawer {
+        width: 95vw !important;
+        top: 5vh !important;
+        max-height: 90vh !important;
+        left: 2.5vw !important;
+        transform: none !important;
+    }
+}

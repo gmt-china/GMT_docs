@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GMT 远程数据 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="CN-border: 中国国界省界数据" href="../CN-border/" />
+    <link rel="prev" title="DCW: 世界数字图表" href="../dcw/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">GSHHG: 全球高分辨率海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">DCW: 世界数字图表</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GMT 远程数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">使用方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">参数设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">离线使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-database">工作原理及技术细节</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">数据分辨率</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">数据分块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">数据压缩</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">数据更新</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-border/">CN-border: 中国国界省界数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-faults/">CN-faults: 中国断层数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-block/">CN-block: 中国大陆及周边活动地块数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geo3al/">geo3al: 中国及邻区地质图数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">GADM: 全球行政区划数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PB2002/">PB2002: 全球板块边界数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../global_tectonics/">global_tectonics: 全球地质构造数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../WSM/">WSM_2025: 全球地应力数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">地学数据集</a></li>
+      <li class="breadcrumb-item active">GMT 远程数据</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/dataset/remote-dataset.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/CovMat" target="_blank" rel="noopener">陈箫翰</a>
+    , 
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2025-12-11
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="gmt">
+<h1>GMT 远程数据<a class="headerlink" href="#gmt" title="Link to this heading"></a></h1>
+<p>GMT 远程数据位于 GMT 数据服务器，在 GMT 中使用时会自动下载。
+以下列出了 GMT 提供的所有远程数据类型。默认情况下，所有数据均为最新版本，
+但在原始数据发布新版本时，GMT 提供数据可能会稍有延迟。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>数据类型</p></th>
+<th class="head"><p>数据名称</p></th>
+<th class="head"><p>默认 CPT</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-relief.html">地球地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_relief</span></code> 或 <br><code class="docutils literal notranslate"><span class="pre">earth_synbath</span></code></p></td>
+<td><p>geo</p></td>
+<td><p>由 IGPP 对 Scripps SRTM15+V2.6 重采样得到</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-gebco.html">地球 GEBCO 地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_gebco</span></code> 或 <br><code class="docutils literal notranslate"><span class="pre">earth_gebcosi</span></code></p></td>
+<td><p>geo</p></td>
+<td><p>海底地形部分来自 GEBCO 项目</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-geoid.html">地球大地水准面</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_geoid</span></code></p></td>
+<td><p>无</p></td>
+<td><p>来自 NGA 发布的 EGM2008 超高阶重力场模型</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-faa.html">地球自由空气重力异常</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_faa</span></code></p></td>
+<td><p>&#64;earth_faa</p></td>
+<td><p>来自 IGPP，范围：±80˚</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-faaerror.html">地球自由空气重力异常误差</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_faaerror</span></code></p></td>
+<td><p>&#64;earth_faa</p></td>
+<td><p>为 <code class="docutils literal notranslate"><span class="pre">earth_faa</span></code> 的伴随数据</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-vgg.html">地球垂直重力梯度异常</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_vgg</span></code></p></td>
+<td><p>&#64;earth_vgg</p></td>
+<td><p>来自 IGPP，范围：±80˚</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-edefl.html">地球垂线偏差东西向分量</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_edefl</span></code></p></td>
+<td><p>&#64;earth_defl</p></td>
+<td><p>来自 IGPP，范围：±80˚</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-ndefl.html">地球垂线偏差南北向分量</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_ndefl</span></code></p></td>
+<td><p>&#64;earth_defl</p></td>
+<td><p>来自 IGPP，范围：±80˚</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-mag.html">地球磁异常</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_mag</span></code> 或 <br><code class="docutils literal notranslate"><span class="pre">earth_mga4km</span></code></p></td>
+<td><p>&#64;earth_mag</p></td>
+<td><p>EMAG2 模型</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-wdmam.html">地球数字磁异常</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_wdmam</span></code></p></td>
+<td><p>&#64;earth_wdman</p></td>
+<td><p>来自 WDMAM 项目</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-age.html">地球洋壳年龄</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_age</span></code></p></td>
+<td><p>&#64;earth_age</p></td>
+<td><p>来自 EarthByte</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-mdt.html">地球平均稳态海面地形</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_mdt</span></code></p></td>
+<td><p>&#64;earth_mdt</p></td>
+<td><p>CNES 发布，IGPP 重处理</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-mss.html">地球平均海平面</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_mss</span></code></p></td>
+<td><p>&#64;earth_mss</p></td>
+<td><p>CNES 发布，IGPP 重处理</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-mask.html">地球水陆掩膜</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_mask</span></code></p></td>
+<td><p></p></td>
+<td><p>由 <a class="reference internal" href="../../module/grdlandmask/"><span class="doc">grdlandmask</span></a> 计算得到</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-dist.html">地球到海岸线距离</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_dist</span></code></p></td>
+<td><p>&#64;earth_dist</p></td>
+<td><p>由 <a class="reference internal" href="../../module/grdmath/"><span class="doc">grdmath</span></a> 计算得到</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/earth-daynight.html">地球昼夜卫星影像</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">earth_day</span></code> 或 <br><code class="docutils literal notranslate"><span class="pre">earth_night</span></code></p></td>
+<td><p></p></td>
+<td><p>来自 NASA</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/mars-relief.html">火星地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mars_relief</span></code></p></td>
+<td><p>&#64;mars_relief</p></td>
+<td><p>来自 NASA</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/mercury-relief.html">水星地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mercury_relief</span></code></p></td>
+<td><p>&#64;mercury_relief</p></td>
+<td><p>来自 USGS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/moon-relief.html">月球地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">moon_relief</span></code></p></td>
+<td><p>&#64;moon_relief</p></td>
+<td><p>来自 USGS</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/pluto-relief.html">冥王星地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pluto_relief</span></code></p></td>
+<td><p>&#64;pluto_relief</p></td>
+<td><p>来自 USGS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/venus-relief.html">金星地形起伏</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">venus_relief</span></code></p></td>
+<td><p>&#64;venus_relief</p></td>
+<td><p>来自 NASA</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id1">
+<h2>使用方式<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>上述 GMT 数据均为网格形式，GMT 为每种远程数据都提供了不同的分辨率和配准方式的数据，
+具体信息在查阅各个数据对应的文档。所有 GMT 远程数据都可以通过指定特殊文件名的方式来使用：
+<strong>&#64;</strong><em>remote_name</em>_<em>rr</em><em>u</em>_<em>reg</em></p>
+<ul class="simple">
+<li><p><strong>&#64;</strong> 符号用于告诉 GMT 这是一个远程数据</p></li>
+<li><p><em>remote_name</em> 是远程数据的具体名字</p></li>
+<li><p><em>rr</em> 是一个两位整数，用于指定要使用的数据分辨率，单位由 <em>u</em> 指定。
+单位 <em>u</em> 可以取为 <strong>d</strong>、<strong>m</strong> 或 <strong>s</strong> 分别表示度、分和秒</p></li>
+<li><p><em>reg</em> 指定了数据的网格配准方式，可以取 <strong>g</strong> 或 <strong>p</strong>，分别表示网格线配准或像素配准。
+该项是可选的，若不指定 <em>reg</em>，则默认返回网格线配准的网格数据（除非不存在网格线配准的数据）。</p></li>
+</ul>
+<p>除此之外，某些远程数据还有一个默认的 CPT 文件，若用户不指定 CPT 文件，则在绘制数据
+时会使用该默认 CPT 文件。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>关于每个数据的具体名称、分辨率、默认配准方式，在各个数据的官方网页中会详细列出。</p>
+</div>
+<p>例如，若需要使用 30 分的网格线配准的地形数据，则可以直接指定文件名:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdimage<span class="w"> </span>@earth_relief_30m_g<span class="w"> </span>-pdf<span class="w"> </span>map
+</pre></div>
+</div>
+<p>如果想要将某个区域的数据以单个文件的形式保存，并供其它
+软件或命令使用，可以使用 <a class="reference internal" href="../../module/grdcut/"><span class="doc">grdcut</span></a> 命令实现。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdcut<span class="w"> </span>@earth_relief_02m_g<span class="w"> </span>-Gearth_at_2m.grd
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>参数设置<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>你可以通过多个参数和命令进一步控制远程数据的获取过程以及数据在本地所占据的硬盘空间：</p>
+<ol class="arabic simple">
+<li><p>通过参数 <a class="reference internal" href="../../conf/misc/#term-GMT_DATA_SERVER"><span class="xref std std-term">GMT_DATA_SERVER</span></a> 设置使用离你最近的GMT数据服务器以加快下载速度</p></li>
+<li><p>通过参数 <a class="reference internal" href="../../conf/misc/#term-GMT_DATA_SERVER_LIMIT"><span class="xref std std-term">GMT_DATA_SERVER_LIMIT</span></a> 设置允许下载的远程数据的文件大小，默认无限制</p></li>
+<li><p>通过参数 <a class="reference internal" href="../../conf/misc/#term-GMT_DATA_UPDATE_INTERVAL"><span class="xref std std-term">GMT_DATA_UPDATE_INTERVAL</span></a> 控制检查远程数据是否更新的频率 [默认为每天检查一次]</p></li>
+<li><p>通过 <a class="reference internal" href="../../module/clear/"><span class="doc">clear</span></a> 命令清理整个 <em>server</em> 目录下的远程数据或部分数据</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>GMT数据服务器目前在全球范围内有多个镜像。详细的镜像列表见
+<a class="reference external" href="https://www.generic-mapping-tools.org/mirrors">https://www.generic-mapping-tools.org/mirrors</a> 页面。</p>
+<p>对于国内用户，建议直接使用中科大LUG提供的国内镜像。</p>
+<p>Linux/macOS/WSL 系统的修改方式为打开终端：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.gmt/gmt.conf
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">GMT_DATA_SERVER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>https://mirrors.ustc.edu.cn/gmtdata<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.gmt/gmt.conf
+</pre></div>
+</div>
+<p>Windows 系统则为打开命令提示符 cmd（适用于使用安装包方式安装的 GMT）：</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">C:\Windows\system32&gt;</span> <span class="k">cd</span> /d <span class="nv">%USERPROFILE%</span>\.gmt
+<span class="gp">C:\Users\当前用户名\.gmt&gt;</span> <span class="k">echo</span> <span class="p">&gt;&gt;</span> gmt.conf
+<span class="gp">C:\Users\当前用户名\.gmt&gt;</span> <span class="k">echo</span> GMT_DATA_SERVER = https://mirrors.ustc.edu.cn/gmtdata <span class="p">&gt;&gt;</span> gmt.conf
+</pre></div>
+</div>
+<p>请注意GMT 6.4 及其之前的版本，都无法正常使用科大镜像下载数据。因此强烈建议国内用户使用GMT 6.5 及其以上版本。</p>
+</div>
+</section>
+<section id="id3">
+<h2>离线使用<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>如果你即将有一段无网络或低网速的时间，或者你不希望在第一次需要某个数据等待数据的
+下载，你可以使用 <a class="reference internal" href="../../module/get/"><span class="doc">get</span></a> 模块将数据提前下载到本地。</p>
+<p>你可以下载所有远程数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>get<span class="w"> </span>-Ddata
+</pre></div>
+</div>
+<p>也可以只下载地球相关数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>get<span class="w"> </span>-Ddata<span class="o">=</span>earth
+</pre></div>
+</div>
+<p>或者只下载某一类或某几类数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>get<span class="w"> </span>-Ddata<span class="o">=</span>earth_relief,earth_mask
+</pre></div>
+</div>
+<p>高分辨率数据的数据量大，你也可以只下载低分辨率的数据。比如只需要低于1分分辨率的地形数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>get<span class="w"> </span>-Ddata<span class="o">=</span>earth_relief<span class="w"> </span>-I1m
+</pre></div>
+</div>
+<p>更多功能，见 <a class="reference internal" href="../../module/get/"><span class="doc">get</span></a> 模块文档。</p>
+</section>
+<section id="setup-database">
+<span id="id4"></span><h2>工作原理及技术细节<a class="headerlink" href="#setup-database" title="Link to this heading"></a></h2>
+<p>经过一些数据处理，GMT官方把一些公开数据处理成不同分辨率、不同配准方式的数据，
+并保存在GMT专门的数据服务器上。当用户<strong>第一次</strong>使用某个分辨率的某个数据时，
+GMT会自动从服务器上下载该数据文件，并保存到GMT用户目录下的特定子目录下
+（默认为 <code class="file docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录的子目录），然后再读取该文件。
+当用户再次使用该数据时，GMT会自动从本地GMT用户目录下读取该数据文件，
+而无需再次从服务器下载。</p>
+<section id="id5">
+<h3>数据分辨率<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>通常，公开数据提供者只提供一个原始分辨率版本。但有些时候用户不需要原始分辨率。
+GMT对原始数据做笛卡尔高斯滤波以进行减采样，提供了多种
+不同分辨率以及不同配准方式的版本，以满足不同的用户需求。</p>
+</section>
+<section id="id6">
+<h3>数据分块<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>通常，一个分辨率、一个配准方式的数据以单个文件的形式保存在GMT服务器中。
+但，对于高分辨率的数据，这会导致单个文件的大小变得很大，使得网络下载变得困难。
+为了解决这一问题，对于高分辨率的数据，GMT官方将其分割成若干个小区块，
+每个区块以单独的文件保存在服务器上，通常每个区块对应的文件大小约5 MB或更小。
+当用户需要某个区域的高分辨率数据时，可以通过 <strong>-R</strong> 选项指定区域，
+GMT会自动下载该区域的所有区块的数据，然后自动合并成单个网格数据供用户使用。
+这样可以极大减小数据下载量。例如，想要用3秒的数据绘制2度x2度的区域，GMT只需要
+下载该区域几MB的网格数据，而无需下载整个7 GB的3秒数据，极大的节省了下载时间。</p>
+</section>
+<section id="id7">
+<h3>数据压缩<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>GMT以无损且高压缩率的netCDF-4短整型格式保存单个网格数据，使得GMT提供的数据比
+原始数据占据更小的硬盘空间，而不丢失任何分辨率信息。对于分区块的高分辨率数据，
+GMT将数据以 JPEG2000 格式保存在GMT服务器中。该格式具有超高的压缩率，因而可以
+极大减小数据下载量。当将这些 JPEG2000 格式的数据下载到本地后，GMT会自动将其
+转换为短整型 netCDF4 格式。转换过程中使用了GDAL的功能，因而要求GMT支持GDAL。</p>
+</section>
+<section id="id8">
+<h3>数据更新<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>当原始数据发布了新版本，或GMT提供的数据被发现存在问题时，GMT会对数据服务器上的数据
+进行不定时的更新。GMT只提供数据的最新版本。如果你需要老版本的数据，需要自行到
+数据提供者的官方网站下载数据并自行处理。</p>
+<p>GMT检查数据更新的机制是：</p>
+<ol class="arabic simple">
+<li><p>第一次使用任一远程数据时，GMT会从数据服务器下载一个几十 KB 的文本文件
+<code class="file docutils literal notranslate"><span class="pre">gmt_data_server.txt</span></code> 并保存到用户的 <code class="file docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录下</p></li>
+<li><p>当再次使用任一远程数据时，GMT会检查本地文件 <code class="file docutils literal notranslate"><span class="pre">gmt_data_server.txt</span></code> 的日期，
+若其日期比当前时间差一天（该时间阈值用户可自行控制）以上，则再次从GMT服务器
+下载文件 <code class="file docutils literal notranslate"><span class="pre">gmt_data_server.txt</span></code> 并替换本地的老文件</p></li>
+<li><p>读取 <code class="file docutils literal notranslate"><span class="pre">gmt_data_server.txt</span></code> 文件的内容，根据其内容确定GMT数据服务器上的
+远程数据是否有更新。若本地的数据文件比GMT数据服务器上的数据老，则
+GMT会自动将本地已下载的数据文件删除，并重新从GMT服务器下载。由此使用远程数据的
+更新。</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../dcw/" class="btn btn-neutral float-left" title="DCW: 世界数字图表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../CN-border/" class="btn btn-neutral float-right" title="CN-border: 中国国界省界数据" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
