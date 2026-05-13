@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>转义序列 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/basis/escape-character.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="绘制矢量/箭头" href="../vector/" />
+    <link rel="prev" title="特殊字符" href="../special-character/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">GMT基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">转义序列</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">转义字符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">小练习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">GMT基础</a> &raquo;</li>
+        
+      <li>转义序列</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/escape-character.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>转义序列<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>前面介绍了如何设置文字的文字大小、字体和颜色以及如何输入特殊字符。在此基础上，GMT提供了转义字符，以实现上标、下标等功能，并可以在一个字符串内随意切换字体、字号和颜色，给文本加入了更丰富的效果。</p>
+<div class="section" id="id2">
+<h2>转义字符<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT用 <strong>&#64;</strong> 符号实现转义的功能。将 <strong>&#64;</strong> 符号与某些字符结合起来，即构成了一系列可以实现特殊效果的转义字符。</p>
+<p>GMT可以识别的转义字符在下表列出：</p>
+<table border="1" class="docutils align-center" id="id5">
+<caption><span class="caption-text">GMT转义字符</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">转义字符</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>&#64;+</strong></td>
+<td>打开/关闭上标</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;-</strong></td>
+<td>打开/关闭下标</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;_</strong></td>
+<td>打开/关闭下划线</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;#</strong></td>
+<td>打开/关闭小型大写字母（small caps）</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;%</strong><em>fontno</em><strong>%</strong></td>
+<td>切换至另一字体；<strong>&#64;%%</strong> 重置回前一字体</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;:</strong><em>size</em><strong>:</strong></td>
+<td>切换至另一文本尺寸；<strong>&#64;::</strong> 重置回前一尺寸</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;;</strong><em>color</em><strong>;</strong></td>
+<td>切换至另一文本颜色；<strong>&#64;;;</strong> 重置回前一颜色</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;~</strong></td>
+<td>打开/关闭Symbol（12号）字体</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;!</strong></td>
+<td>用接下来的两个字符创建组合字符</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;.</strong></td>
+<td>输出 <strong>°</strong> 符号</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;&#64;</strong></td>
+<td>输出 <strong>&#64;</strong> 符号自身</td>
+</tr>
+</tbody>
+</table>
+<p>除此之外，GMT还为一些常用的欧洲字母专门定义了转义字符。如下表：</p>
+<table border="1" class="docutils align-center" id="id6">
+<caption><span class="caption-text">欧洲特殊字母</span><a class="headerlink" href="#id6" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col width="22%" />
+<col width="28%" />
+<col width="22%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">代码</th>
+<th class="head">效果</th>
+<th class="head">代码</th>
+<th class="head">效果</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>&#64;E</strong></td>
+<td>Æ</td>
+<td><strong>&#64;e</strong></td>
+<td>æ</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;O</strong></td>
+<td>Ø</td>
+<td><strong>&#64;o</strong></td>
+<td>ø</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;A</strong></td>
+<td>Å</td>
+<td><strong>&#64;a</strong></td>
+<td>å</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;C</strong></td>
+<td>Ç</td>
+<td><strong>&#64;c</strong></td>
+<td>ç</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;N</strong></td>
+<td>Ñ</td>
+<td><strong>&#64;n</strong></td>
+<td>ñ</td>
+</tr>
+<tr class="row-odd"><td><strong>&#64;U</strong></td>
+<td>Ü</td>
+<td><strong>&#64;u</strong></td>
+<td>ü</td>
+</tr>
+<tr class="row-even"><td><strong>&#64;s</strong></td>
+<td>ß</td>
+<td><strong>&#64;i</strong></td>
+<td>í</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>小练习<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>下面给出了一些使用转义字符的示例，左边Input是命令中的输入，右边Output是图上显示的效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/cec32f88e7210a21a4c5fc0ca5a38cf0/escape-character-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/escape-character-gmtplot-0.png"><img alt="../../_images/escape-character-gmtplot-0.png" src="../../_images/escape-character-gmtplot-0.png" style="width: 75%;" /></a>
+</div>
+<p>读者可以将下面命令中的 <em>TEXT</em> 和 <em>Label</em> 修改为不同的值，以体验转义字符的效果:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">2</span> TEXT <span class="p">|</span> gmt text -R0/10/0/3 -Jx1c -Bxaf+l<span class="s2">&quot;Label&quot;</span> -BWSen -F+f20p -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>注意事项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>上标/下标不支持嵌套，即只支持一层上标/下标</li>
+<li><a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 命令中有选项可以在文本周围加上文本框，该选项对转义序列无效</li>
+<li>转义序列需要成对存在，与括号类似，开启转义之后必须关闭转义</li>
+<li>在Windows下，由于bat脚本中 <strong>%</strong> 表示变量，因此当你需要在GMT中使用百分号时，应使用 <strong>%%</strong> 来表示一个百分号，即bat脚本中的 <strong>%%</strong> 相当于字符 <strong>%</strong>；切换字体时 <strong>&#64;%%15%%</strong> 相当于正常情况下的 <strong>&#64;%15%</strong>。</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../vector/" class="btn btn-neutral float-right" title="绘制矢量/箭头" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../special-character/" class="btn btn-neutral float-left" title="特殊字符" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

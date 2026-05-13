@@ -1,0 +1,862 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>events &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="figure" href="../figure/" />
+    <link rel="prev" title="end" href="../end/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">描述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time">time 的含义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">四种时间函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">数据排序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">绘制轨迹线</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">events</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/events.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+        
+        
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/Dengda98" target="_blank" rel="noopener">朱邓达</a>
+    
+ &nbsp;•&nbsp; 
+  🧐
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2025-07-07
+    </div>
+  
+  
+  <span class="target" id="index-0"></span><section id="events">
+<h1>events<a class="headerlink" href="#events" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/events.html" title="（在 GMT v6.5）"><span>events</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>绘制某一时刻的事件符号、线条、多边形和标签</p>
+</dd>
+</dl>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt events</strong>
+<a class="reference internal" href="#j"><span><strong>-J</strong></span></a></strong><em>parameters</em>
+<a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]
+<a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong><em>now</em>
+[ <em>table</em> ]
+[ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><strong>r</strong>[<em>dpu</em>[<strong>c</strong>|<strong>i</strong>][<strong>+v</strong>[<em>value</em>]]]|<strong>s</strong> ]
+[ <a class="reference internal" href="#b"><span><strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
+[ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><em>cpt</em> ]
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]] ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong>[<strong>s</strong>|<strong>t</strong>][<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong>[<strong>c</strong>|<strong>l</strong>|<strong>q</strong>]<em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong>[<strong>c</strong>|<strong>l</strong>|<strong>q</strong>]<em>dt</em>][<strong>+f</strong>[<strong>c</strong>|<strong>l</strong>|<strong>q</strong>]<em>dt</em>][<strong>+l</strong><em>dt</em>] ]
+[ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>z</strong>[<em>format</em>]] ]
+[ <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><em>color</em> ]
+[ <a class="reference internal" href="#h"><span><strong>-H</strong></span></a></strong><em>labelbox</em> ]
+[ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong>[<em>length</em>|<strong>t</strong>] ]
+[ <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong><strong>i</strong>|<strong>s</strong>|<strong>t</strong>|<strong>v</strong><em>val1</em>[<strong>+c</strong><em>val2</em>] ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong>[<strong>c</strong>|<strong>r</strong>] ]
+[ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong><em>prefix</em> ]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong><em>symbol</em>[<em>size</em>] ]
+[ <a class="reference internal" href="#u"><span><strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong><em>pen</em> ]
+[ <a class="reference internal" href="#x"><span><strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span><strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
+[ <a class="reference internal" href="#z"><span><strong>-Z</strong></span></a></strong><em>command</em> ]
+[ <strong>-a</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#aspatial-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-bi</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#bi-full" title="（在 GMT v6.5）"><span class="xref std std-ref">binary</span></a> ]
+[ <strong>-di</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#di-full" title="（在 GMT v6.5）"><span class="xref std std-ref">nodata</span></a>[<strong>+c</strong><em>col</em>] ]
+[ <strong>-e</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#e-full" title="（在 GMT v6.5）"><span class="xref std std-ref">regexp</span></a> ]
+[ <strong>-f</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#f-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-h</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#h-full" title="（在 GMT v6.5）"><span class="xref std std-ref">headers</span></a> ]
+[ <strong>-i</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#icols-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-l</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#l-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-p</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#perspective-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-qi</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#qi-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-w</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#w-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>描述<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>从表数据（或标准输入）中读取
+(<em>x</em>, <em>y</em>[, <em>z</em>] [, <em>size</em>], <em>time</em> [, <em>length</em>] [, <em>label</em>]) 数据，
+并绘制出在当前指定时间下每个事件的符号应呈现的样子。
+这些符号可能有所不同，原因在于事件可能具有不同的持续时间，
+用户可能希望以某种方式突出符号属性，以便在事件首次出现时引起注意，
+也许过一段时间后将其淡化，以减少杂乱并聚焦于更近期的事件。
+用户可能还希望符号在其结束时间（GMT 称此阶段为尾声 (coda)）到达后完全消失，
+或者保持可见但变淡、缩小或变暗。
+视需要，每个符号都可以有一个标签，该标签可以在符号显示的同时显示规定的时间长度，或者稍有延迟。
+此模块通常与 <a class="reference internal" href="../movie/"><span class="doc">movie</span></a> 模块结合使用，在其中隐式的时间循环用于调用时间序列中的 <strong>events</strong> ，
+从而随着事件的发展绘制符号。</p>
+<p><a class="reference download external" download="" href="https://dengda98.github.io/zh/posts/tech/gmt_events/WED-A_Vid_1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<video width="100%" controls>
+<source src="https://dengda98.github.io/zh/posts/tech/gmt_events/WED-A_Vid_1.mp4" type="video/mp4">
+</video><p>以上是在时间窗口 -0.5 至 1.5 内对两个事件进行动画展示（仅网页端可见）。
+这两个事件仅在 0 至 1 期间处于活跃状态。
+一个符号（绿色）仅在活跃期间正常绘制（大小随浅绿色时间曲线变化），
+而另一个（红色）在首次到达时通过添加上升、平台、下降和淡出区间进行突出显示，
+然后在不再活跃时逐渐淡出为一个持久但更小、更暗且部分透明的符号，其大小随红色时间曲线变化。
+相比之下，绿色符号只是开启和关闭。红色符号的标签显示延迟了 0.25 个时间单位。
+红色事件使用 -Es+rc0.25+p0.25+dc0.25+f0.25 -Et+o0.25 绘制，
+而绿色事件使用默认设置（即浅绿色时间曲线）。
+<strong>注：</strong> 此处绘制的时间曲线仅用于说明幕后的情况，实际 <strong>events</strong> 模块只涉及这两个事件。</p>
+</section>
+<section id="id3">
+<h2>必选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt><dd><p>设置地图投影方式</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围。</p>
+</dd>
+</dl>
+<blockquote>
+<div><p>对于三维透视图（<a class="reference internal" href="../../option/p/"><span class="doc">-p 选项</span></a>） ，可以加上 /<em>zmin</em>/<em>zmax</em> 指定Z轴的范围。</p>
+</div></blockquote>
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>now</em></dt><dd><p>设置当前绘图时间 <em>now</em>。在 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 中设置的时间偏移和增量都是相对于当前时间的。
+如果 <em>now</em> 为绝对时间，则需要使用 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 来指示 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 和 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong>
+等选项中给出的值的单位。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<dl id="a">
+<dt><strong>-A</strong><strong>r</strong>[<em>dpu</em>[<strong>c</strong>|<strong>i</strong>][<strong>+v</strong>[<em>value</em>]]]|<strong>s</strong></dt><dd><p>当未使用 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 时，<strong>events</strong> 模块将读取直线或多边形。支持两种不同的输入形式，
+并通过所选的 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> 指令指定：</p>
+<ul class="simple">
+<li><p><strong>-Ar</strong> - 输入数据为轨迹线（详见 <a class="reference internal" href="#id8">绘制轨迹线</a> ），输入数据格式为 <em>x, y, time</em> ，
+这里，“事件”指受当前时间（<em>now</em>）、事件持续时间（<a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong>）
+和上升/淡出周期（<strong>-Es</strong>）限制的轨迹的一部分。
+如果当前时间落在轨迹上的两点之间，那么使用线性插值来找到当前的终点。</p></li>
+<li><p><strong>-As</strong> - 输入数据为多个多边形或线条，输入数据格式为 <em>x, y</em> 。
+<strong>events</strong> 模块读取每段记录，并通过段头中的 <strong>-T</strong><em>string</em> 获取每段的显示时间 <em>time</em>。
+这里，“事件”指受当前时间（<em>now</em>）、事件持续时间（<a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong>）
+和上升/淡出周期（<strong>-Es</strong>）限制的整个多边形或线条。
+如果使用了 <strong>-L</strong>[<strong>t</strong>] ，则 <em>string</em> 的格式必须是
+<em>begin</em>/<em>length</em>|<em>end</em> 或 <em>begin</em>,<em>length</em>|<em>end</em> ，
+如果指定了绝对时间则需用逗号分割。</p></li>
+</ul>
+<p><strong>注：</strong> 线条和多边形都不允许放置任何标签。</p>
+<p>或者，用户可以使用 <strong>-Ar</strong><em>dpu</em> 进行不绘制操作，而是将输入的
+<em>x, y</em>[, <em>zcols</em> ]、<em>time</em> 数据转换为 <em>密集采样的点</em>，
+以便稍后调用 <strong>events</strong> 时可以使用此采样数据集并以 <strong>-Sc</strong>[<em>width</em>] 格式将其绘制为圆形。
+这样，用户就可以绘制具有可变笔色和固定或可变笔宽的“线条”，
+同时还能利用 <strong>-Es</strong> 和 <strong>-Et</strong> 的完整机制以及由 <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 控制的所有符号效果。
+在运行 <a class="reference internal" href="../movie/"><span class="doc">movie</span></a> 时， <em>dpu</em> 必须与预期的 dpu 相匹配。
+请注意，如果使用的是国际单位制（SI），<em>dpu</em> 表示每厘米的像素数；
+如果使用的是美国单位制（US），则表示每英寸的像素数（因此取决于 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 设置）。
+另外，可以添加 <strong>c</strong> 或 <strong>i</strong> 来明确设置使用的单位。
+还需注意，如果动画涉及区域或地图投影的更改，则可能需要将 <strong>-Ar</strong><em>dpu</em> 作为主脚本的一部分运行。
+最后，可以使用 <strong>+v</strong>[<em>value</em>] 在密集点数据文件中插入一个 z 列
+（除非附加 <em>value</em> ，否则将初始化为零）以用于 <strong>-Mv</strong> 。</p>
+</dd>
+</dl>
+<dl class="simple" id="b">
+<dt><strong>-B</strong><em>parameters</em> <a class="reference internal" href="../../option/B/"><span class="doc">(more …)</span></a></dt><dd><p>设置底图边框和轴属性。</p>
+</dd>
+</dl>
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>cpt</em></dt><dd><p>使用 <em>cpt</em> 转换可选的第三列中给出的 z 值，以分配符号或多边形的颜色。
+如果使用 <strong>-Ar</strong>，则不允许使用该选项。</p>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]]</dt><dd><p>将文本从投影点 (<em>x</em>,<em>y</em>) 偏移 <em>dx</em>,<em>dy</em> [0/0]。如果不指定 <em>dy</em> 则与 <em>dx</em> 相同。
+使用 <strong>-Dj</strong> 将文本沿对齐点偏移（即，文本对齐将决定移动的方向）。
+使用 <strong>-DJ</strong> 将在拐角处缩短对角线偏移量 <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> 倍。
+添加 <strong>+v</strong>[<em>pen</em>]，将从原始点到移位点绘制一条线，指定 <em>pen</em> 以更改画笔属性。</p>
+</dd>
+</dl>
+<dl id="e">
+<dt><strong>-E</strong>[<strong>s</strong>|<strong>t</strong>][<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong>[<strong>c</strong>|<strong>l</strong>|<strong>q</strong>]<em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong>[<strong>c</strong>|<strong>l</strong>|<strong>q</strong>]<em>dt</em>][<strong>+f</strong>[<strong>c</strong>|<strong>l</strong>|<strong>q</strong>]<em>dt</em>][<strong>+l</strong><em>dt</em>]</dt><dd><p>为符号（<strong>s</strong>ymbol, <strong>-Es</strong>）或文本（<strong>t</strong>ext, <strong>-Et</strong>）的时间函数设置相对时间节点，其中 <span class="math notranslate nohighlight">\(0 \le \Delta t_x, x = r, p, d, f\)</span>
+（详见 <a class="reference internal" href="#id6">四种时间函数</a> ）。通过以下子选项设置增量：</p>
+<ul class="simple">
+<li><p><strong>+o</strong><em>dt</em> - 将事件整体移动 <em>dt</em> 时间。</p></li>
+<li><p><strong>+O</strong><em>dt</em> - 与 <strong>+o</strong> 类似，但仅移动开始时间，可用于缩短事件的持续时间。</p></li>
+<li><p><strong>+l</strong><em>dt</em> - 单独设置文本的持续时间（即显示时长），仅 <strong>-Et</strong> 可用 [默认和符号持续时间一致]。</p></li>
+<li><p><strong>+r</strong><em>dt</em> - 设置上升阶段的时长，此时 <span class="math notranslate nohighlight">\(t_r = t_b - \Delta t_r\)</span> ，
+可选择曲线形状：余弦型 (<strong>c</strong>osine)，线性型(<strong>l</strong>inear)，二次型(<strong>q</strong>uadratic)
+[Quadratic]。</p></li>
+<li><p><strong>+p</strong><em>dt</em> - 设置平台阶段的时长，此时 <span class="math notranslate nohighlight">\(t_p = t_b + \Delta t_p\)</span> ，</p></li>
+<li><p><strong>+d</strong><em>dt</em> - 设置下降阶段的时长，此时 <span class="math notranslate nohighlight">\(t_d = t_p + \Delta t_d\)</span> ，
+可选择曲线形状：余弦型 (<strong>c</strong>osine)，线性型(<strong>l</strong>inear)，二次型(<strong>q</strong>uadratic)
+[Quadratic]。</p></li>
+<li><p><strong>+f</strong><em>dt</em> - 设置淡出阶段的时长，此时 <span class="math notranslate nohighlight">\(t_f = t_e + \Delta t_f\)</span> ，
+可选择曲线形状：余弦型 (<strong>c</strong>osine)，线性型(<strong>l</strong>inear)，二次型(<strong>q</strong>uadratic)
+[Linear]。</p></li>
+</ul>
+<p>以上均为可选项 [默认均为 0]，且可为符号和文本分开设置。
+如果 <strong>s</strong> 和 <strong>t</strong> 均不指定则为二者同时设置。</p>
+<p><strong>注：</strong></p>
+<ul class="simple">
+<li><p><strong>+p</strong> 和 <strong>+d</strong> 不会应用于文本标签，线条和多边形。</p></li>
+<li><p>如果希望绘制文本标签，则需使用 <strong>-Et</strong> 。</p></li>
+<li><p>以上子选项均不支持用于线条。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="f">
+<dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>z</strong>[<em>format</em>]]</dt><dd><p>默认情况下，事件标签文本将使用一级标注字体属性水平放置，并以数据点为中心。
+通常，要绘制的文本是输入数据的尾部文本。可使用该选项的子选项覆盖默认值：</p>
+<ul class="simple">
+<li><p><strong>+f</strong><em>font</em> - 设置字体 (size,fontname,color) [<a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>].</p></li>
+<li><p><strong>+a</strong><em>angle</em> - 设置相对水平方向的旋转角 [0].</p></li>
+<li><p><strong>+j</strong><em>justify</em> - 设置对齐 [CM].</p></li>
+<li><p><strong>+r</strong>[<em>first</em>] - 使用段编号 (从 <em>first</em> [0] 数起) 作为文本标签.</p></li>
+<li><p><strong>+z</strong>[<em>format</em>] - 将传入的 z 值格式化作为文本标签 (要求使用 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> ，可自定义格式 <em>format</em> [<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_MAP"><span class="xref std std-term">FORMAT_FLOAT_MAP</span></a>]).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>fill</em></dt><dd><p>为所有符号或多边形设置恒定的阴影或颜色。</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-H</strong>[<strong>+c</strong><em>dx</em>/<em>dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt><dd><p>添加文本框，并提供以下一个或多个特定参数：</p>
+<ul class="simple">
+<li><p><strong>+c</strong><em>dx</em>/<em>dy</em> - 调整边框和文本的间隔 [字体大小的 15%].</p></li>
+<li><p><strong>+g</strong><em>fill</em> - 填充文本框 [no fill].</p></li>
+<li><p><strong>+p</strong>[<em>pen</em>] - 绘制文本框轮廓 [<a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>].</p></li>
+<li><p><strong>+r</strong> - 使用圆角边框 [直角框].</p></li>
+<li><p><strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]] - 在文本框后面放置一个偏移的背景阴影框。
+这里， <em>dx</em>/<em>dy</em> 表示相对于前景文本框的偏移量 [4<strong>p</strong>/-4<strong>p</strong>]，
+<em>shade</em> 表示阴影填充 [gray50]。 <strong>+s</strong> 还要求使用 <strong>+g</strong>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="jz">
+<dt><strong>-Jz</strong>|<strong>Z</strong><em>parameters</em></dt><dd><p>设置 Z 轴的缩放比例，设置方式与 -Jx|X 相同。</p>
+</dd>
+</dl>
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<em>length</em>|<strong>t</strong>]</dt><dd><p>指定事件的持续时间。如果所有事件的长度相同，则添加 <em>length</em>  。
+如果文件中在 <em>time</em> 列之后给出的是结束时间而非长度，则添加 <strong>t</strong> 。
+如果长度可以从 <em>time</em> 列之后的输入文件中读取，则留空。
+如果未给出 <strong>-L</strong> 参数，则假定事件具有无限的持续时间。
+有关线条和多边形的持续时间处理方式，请参阅 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> 。</p>
+</dd>
+</dl>
+<dl id="m">
+<dt><strong>-M</strong><strong>i</strong>|<strong>s</strong>|<strong>t</strong>|<strong>v</strong><em>val1</em>[<strong>+c</strong><em>val2</em>]</dt><dd><p>控制每个符号的四个属性 (<strong>i</strong>ntensity, <strong>s</strong>ize, <strong>t</strong>ransparency, and <strong>v</strong>alue)
+在符号首次出现时，在其活动持续期间以及随时间淡出时如何变化。
+首先指定类别 [默认值 <em>val1</em> 在中括号中给出]：</p>
+<ul class="simple">
+<li><p><strong>i</strong> - 修改颜色强度 [1] 。通常在 ±1 之间，0 无效果。用于将颜色变得更亮
+(<em>val1</em> &gt; 0) 或更暗 (<em>val1</em> &lt; 0)（色相 (hue) 保持不变）。</p></li>
+<li><p><strong>s</strong> - 修改符号的相对大小 [1] 。将符号大小临时放大 <em>val1</em> 倍。</p></li>
+<li><p><strong>t</strong> - 修改透明度 [100] 。</p></li>
+<li><p><strong>v</strong> - 修改上升阶段的数值[0] 。
+将数据 z 列数值临时加上 <em>val1</em> ，从而根据 CPT 修改符号颜色
+（因此 <strong>-Mv</strong> 需要使用 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> ）。</p></li>
+</ul>
+<p>后跟的 <em>val1</em> 表示由 <strong>-Es</strong> 创建的相应时间函数缩放的最大振幅（详见 <a class="reference internal" href="#id6">四种时间函数</a> ）。
+因此随着时间的推移，实际应用的属性临时修改是变换的。
+<a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 选项可重复使用以设置多个属性。</p>
+<p>视需要，对于那些在事件结束时间达到后仍需一直显示的有限持续时间事件，
+用户必须添加 <strong>+c**（代表尾声）来设置相应的终端值，在尾声期间生效。
+如果未给出 **+c</strong>，则默认值为 0 (intensity), 0 (size), 100 (transparency) 和 0 (value)，
+这意味着除非用户通过一个或多个 <strong>+c</strong> 修饰符（每个 <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 指令一个）来更改这些属性，
+否则在尾声期间符号不会被绘制出来。</p>
+<p><strong>注：</strong> 多边形仅能使用 <strong>-Mt</strong> 。</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<strong>c</strong>|<strong>r</strong>]</dt><dd><p>不要裁剪落在地图边界外的符号 [默认仅绘制坐标严格位于地图边界内的点]。
+对于周期性（360 度经度）的地图，可能需要将所有符号绘制两次，以防它们被重复的边界裁剪。</p>
+<ul class="simple">
+<li><p>使用 <strong>-N</strong> 可关闭裁剪，并且不绘制重复的符号。</p></li>
+<li><p>使用 <strong>-Nr</strong> 可关闭裁剪，同时保留重复符号的绘制。</p></li>
+<li><p>使用 <strong>-Nc</strong> 可保留裁剪，但关闭重复符号的绘制。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong><em>prefix</em></dt><dd><p>将中间事件符号和标签保存到永久文件中，而不是在完成后删除它们。
+文件将被命名为 <em>prefix</em>_symbols.txt 和 <em>prefix</em>_labels.txt。</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>symbol</em>[<em>size</em>]</dt><dd><p>指定用于该事件的符号（默认为绘制线条或多边形；请参阅 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> ）。
+视需要，将符号大小与单位 (<strong>c|i|p</strong>) 一起添加。
+如果没有给出大小，则会从数据文件的第三列（如果使用 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 则为第四列）
+读取事件特定的大小。 <strong>注：</strong> 并非 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 中所有符号都能在此处使用。
+目前本模块仅支持基本符号和自定义符号；
+不支持 bars, vectors, ellipses, fronts, decorated and quoted lines。
+从数据文件读取的符号大小的单位将假定为由 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 控制，除非指定了单位 (<strong>c|i|p</strong>) 。如果只是绘制文本标签，则不需要 <strong>-S</strong> 。</p>
+</dd>
+</dl>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../option/U/"><span class="doc">(more …)</span></a></dt><dd><p>在图上绘制GMT时间戳logo</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>pen</em></dt><dd><p>指定符号轮廓 [默认无轮廓].</p>
+</dd>
+</dl>
+<p id="y"><span id="x"></span><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../option/XY/"><span class="doc">(more …)</span></a></dt><dd><p>移动绘图原点</p>
+</dd>
+</dl>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>command</em></dt><dd><p>绘制由 <a class="reference internal" href="../coupe/"><span class="doc">coupe</span></a> 、 <a class="reference internal" href="../meca/"><span class="doc">meca</span></a> 或 <a class="reference internal" href="../velo/"><span class="doc">velo</span></a> 模块生成的符号。
+<em>command</em> 命令部分必须以这些模块名称之一开头，
+然后提供所选模块正常定义图形所需的所有特定选项，
+不包括 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong>，<a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong>，<a class="reference internal" href="#j"><span><strong>-J</strong></span></a></strong>，<a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong>，<a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 和 <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong> （这些选项可能用于本模块）。
+此外，用户不能使用 <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> 或 <strong>-t</strong> 选项，因
+为这些选项将作为由 <strong>-Mi</strong> 和 <strong>-Mt</strong> 引入的变体的一部分自动设置。
+例如，绘制沙滩球的自定义命令可能是 <strong>-Z</strong>“meca -Sa5c+f0”，
+而要在剖面图中显示沙滩球可能需要更复杂的命令
+<strong>-Z</strong>“coupe -Q -L -Sc3c -Ab128/11/120/250/90/400/0/100+f -Fa0.1i/cc”。
+<strong>注：</strong> 如果使用经典模式，则需使用对应的经典模块名称。</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>,…</em>] <a class="reference internal" href="../../option/a/"><span class="doc">(more …)</span></a></dt><dd><p>设置非空间数据项与数据列之间的对应关系</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输入数据的格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="../../option/d/"><span class="doc">(more …)</span></a></dt><dd><p>将输入数据中值为 <em>nodata</em> 的列替换为 NaN</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>“pattern”</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../option/e/"><span class="doc">(more …)</span></a></dt><dd><p>筛选或剔除匹配指定模式的数据记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt><dd><p>指定输入或输出列的数据类型</p>
+</dd>
+</dl>
+<dl class="simple" id="id5">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输入数据列及简单变换（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-l</strong>[<em>label</em>][<strong>+D</strong><em>pen</em>][<strong>+G</strong><em>gap</em>][<strong>+H</strong><em>header</em>][<strong>+L</strong>[<em>code</em>/]<em>txt</em>][<strong>+N</strong><em>cols</em>][<strong>+S</strong><em>size</em>[/<em>height</em>]][<strong>+V</strong>[<em>pen</em>]][<strong>+f</strong><em>font</em>][<strong>+g</strong><em>fill</em>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>off</em>][<strong>+p</strong><em>pen</em>][<strong>+s</strong><em>scale</em>][<strong>+w</strong><em>width</em>] <a class="reference internal" href="../../option/l/"><span class="doc">(more …)</span></a></dt><dd><p>为当前绘制的符号或线段增加一个自动图例记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../option/p/"><span class="doc">(more …)</span></a></dt><dd><p>设置3D透视视角</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>] <a class="reference internal" href="../../option/q/"><span class="doc">(more …)</span></a></dt><dd><p>筛选输入的行或数据范围</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../option/colon/"><span class="doc">(more …)</span></a></dt><dd><p>交换输入或输出中的第一和第二列</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="time">
+<h2>time 的含义<a class="headerlink" href="#time" title="Link to this heading"></a></h2>
+<p>通常情况下，”time”（例如在 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 参数的输入中）的含义实际上是指所绘制现象的时间，
+但它也可以是任何其他便于使用的单调递增量，比如运行时间、模型时间、帧数或类似距离的其他物理量。
+这完全取决于动画的上下文。在 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 中给出的下降、淡出等值，
+均假定与 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 参数给出的 “time” 参数使用相同的单位。
+因此，如果 “time” 是一个单调递增的帧计数器，那么 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 和 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 中的值就表示帧数。
+当 “time” 实际上是通过日期/时钟标记给出的日历时间，会出现一种特殊情况。
+在此情况下， <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 和 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 参数的单位由 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 设置决定[second]。
+在解释用户的 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 和 <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> 参数时，用户需要指定应使用的时间单位。
+下面的地震活动示例使用了实际的地震时间，但示例使用天作为单位，因为“秒”太小了。</p>
+</section>
+<section id="id6">
+<h2>四种时间函数<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>事件通常要么有有限的持续时间，例如某位君主统治时期的时长，要么是无限的。
+这里所说的“无限”仅仅意味着其持续时间超过了用户所绘制的时间范围。
+在一个动画中，将这些事件的基本情况以地图上的点的形式呈现出来，
+就是从事件开始时开始绘制符号，然后让这个符号在所有帧中保持可见状态直到事件结束
+（在无限持续时间的情况下则一直持续绘制）。
+然而，为了突出新事件的到来，用户可以暂时改变符号的四个属性：
+其大小、颜色强度、透明度和颜色（通过 CPT 查找）。
+<strong>可以把这四个属性视为时间的函数。</strong></p>
+<ol class="arabic simple">
+<li><p>对于 <strong>-Ms</strong> 设置，下面的图表展示了符号大小的变化情况。</p></li>
+</ol>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/psevents_size.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/psevents_size.png" src="https://docs.generic-mapping-tools.org/latest/_images/psevents_size.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">根据 <strong>-Es</strong> 中的时间节点以及 <strong>-Ms</strong> 中的放大倍数，
+推导出一个符号大小随时间变化的隐含规律。
+在此过程中，先将符号大小临时放大五倍，然后逐渐缩小至预期大小，
+最终在淡出和尾声阶段进一步缩小至较小尺寸。</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>同样，为了吸引人们对新到达事件的注意，用户可能需要暂时将颜色变白；
+这可以通过 <strong>-Mi</strong> 选项完成，下图说明了强度如何相应变化。</p></li>
+</ol>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/psevents_intensity.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/psevents_intensity.png" src="https://docs.generic-mapping-tools.org/latest/_images/psevents_intensity.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">根据 <strong>-Es</strong> 中的时间节点以及 <strong>-Mi</strong> 中的强度，
+推导出一个颜色强度随时间变化的隐含规律。
+这里试图在事件到达时将符号变白，并在永久的结束阶段使其变暗。</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>接下来，对于有限的事件，用户可能希望将它们完全淡出，
+或者简单地将它们淡出到一个恒定但仍然可见的透明度；这个未来的阶段被称为尾声，
+其程度可以通过 <strong>-Mt</strong> 选项指定。下图说明了透明度如何随时间变化。</p></li>
+</ol>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/psevents_transparency.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/psevents_transparency.png" src="https://docs.generic-mapping-tools.org/latest/_images/psevents_transparency.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">这里展示了一个符号如何在事件开始时从不可见到完全不透明，
+最后在达到其长度后逐渐消失到近乎不可见的阶段。</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>最后，用户无需为符号指定固定颜色，而是可以使用 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项来设置一个颜色表，
+<strong>events</strong> 将用它来调节符号的颜色。这是通过在数据的 z 列中添加一个可变比例的 <em>dz</em> 来实现的，
+因此查找 CPT 时将在不同时间返回不同的颜色。
+振幅通过 <strong>-Mv</strong> 选项进行控制，它将在 0-<em>val1</em> 范围内生成 <em>dz</em> 值 [默认值为 0-1]。
+在大多数情况下，数据集的 z 值将为零，因此 CPT 将针对 0-1 范围进行设置
+（但请注意，coda 的 <em>val2</em> 值可能为负，因此如果使用 coda，请相应地设置 CPT）。
+下图展示了 <em>dz</em> 如何随时间变化。</p></li>
+</ol>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/psevents_dz.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/psevents_dz.png" src="https://docs.generic-mapping-tools.org/latest/_images/psevents_dz.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">这里展示了一个符号如何在事件开始时从一个恒定的颜色到变化的颜色，
+最后在达到它的长度后褪色到一个不同的颜色阶段。
+在查 CPT 获取颜色之前，该曲线缩放到某个幅值[1]并添加到 z 列数据。</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>如以上示例所示，上升、平台、淡出和尾声周期都是可选的，可以根据需要通过 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 选择或忽略。
+用户可以选择指定三个时间历史中的任何一个，也可以不指定。
+默认情况下，符号大小是恒定的，没有强度变化，所有符号都是不透明的。</p>
+<p>如果绘制的是尾部文本标签（即通过选择 <strong>-Et</strong> 实现），则仅使用透明度的时间函数，
+而不会应用平台期或下降。因此，标签的出现和消失取决于一个初始（且可选的）上升时间
+（在此期间标签会逐渐变得完全可见）、一个正常时间（在此期间标签保持可见）
+以及一个可选的淡出时间（在此期间文本逐渐消失）。下面的图示展示了这种设置：</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/psevents_labels.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/psevents_labels.png" src="https://docs.generic-mapping-tools.org/latest/_images/psevents_labels.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">这里展示标签如何在事件开始时从不可见变为完全不透明，在给定的持续时间内保持可见，
+然后最终完全消失。对于标签，平台期和下降期不适用。</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id7">
+<h2>数据排序<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>虽然只会在通过 <strong>-T</strong> 设置的给定时间绘制应该可见的事件，但绘制的顺序仅由文件中记录的顺序给出。
+因此，如果文件没有按升序时间排序，那么后面的事件可能会位于前面的事件之下。
+为了防止这种情况，用户可以通过 <a class="reference internal" href="../gmtconvert/"><span class="doc">gmtconvert</span></a> <strong>-N</strong> 将文件按升序排序。</p>
+</section>
+<section id="id8">
+<h2>绘制轨迹线<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>如果使用 <strong>-Ar</strong> 来绘制轨迹线（具有 <em>x, y, t</em> 坐标的线条），
+那么正如前面所述，本模块将使用线性插值来找到中间的终端点。
+对于地理数据，特别是如果原始点间距较大，用户可能希望首先通过 <a class="reference internal" href="../sample1d/"><span class="doc">sample1d</span></a>
+对此类轨迹沿大圆进行插值，而不是让较大的间隔接受线性插值。
+<strong>注：</strong> 如果使用 <strong>-Ar</strong><em>dpu</em> 来对线条进行离散化，
+那么请注意，重采样会受到当前样条插值方法的影响，该插值方法由 <a class="reference internal" href="../../conf/misc/#term-GMT_INTERPOLANT"><span class="xref std std-term">GMT_INTERPOLANT</span></a> 控制。
+如果用户确实需要直线（不论哪种坐标系），就使用线性插值。</p>
+</section>
+<section id="id9">
+<h2>示例<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>为了展示 2018 年 5 月 1 日可观察到的地震事件的显示情况（基于当年发生的大于 5 级的地震数据集），
+采用以下处理方式：先在 2 天的时间内增加符号大小并将其颜色淡化，随后在 6 天内逐渐减弱，
+最后缩小至原来大小的一半并加深颜色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>layer
+<span class="w">    </span>gmt<span class="w"> </span>convert<span class="w"> </span><span class="s2">&quot;https://earthquake.usgs.gov/fdsnws/event/1/query.csv?starttime=2018-01-01%2000:00:00&amp;endtime=2018-12-31%2000:00:00&amp;minmagnitude=5&amp;orderby=time-asc&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-i2,1,3,4+s50,0<span class="w"> </span>-hi1<span class="w"> </span>&gt;<span class="w"> </span>q.txt
+<span class="w">    </span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cred,green,blue<span class="w"> </span>-T0,70,300,10000
+<span class="w">    </span>gmt<span class="w"> </span>events<span class="w"> </span>-Rg<span class="w"> </span>-JG200/5/6i<span class="w"> </span>-Baf<span class="w"> </span>q.txt<span class="w"> </span>-SE-<span class="w"> </span>-C<span class="w"> </span>--TIME_UNIT<span class="o">=</span>d<span class="w"> </span>-T2018-05-01T<span class="w"> </span>-Es+r2+d6<span class="w"> </span>-Ms5+c0.5<span class="w"> </span>-Mi1+c-0.6<span class="w"> </span>-Mt+c0
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<p>为了将时间序列文件 <em>seismic_trace.txt</em> (time, amplitude)
+转换为一个 (time, amplitude, time) 格式的文件，以便 <strong>events</strong> 能够使用可变笔进行绘制
+（通过绘制密集分布的圆点来实现），使用参数 <strong>-i</strong> 来确保对 <em>time</em> 列进行两次读取，
+然后使用每厘米 80 像素的 <em>dpu</em> （HD movie）以及相关投影参数:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>events<span class="w"> </span>seismic_trace.txt<span class="w"> </span>-R1984-09-10T03:15/1984-09-10T03:45/-15/15<span class="w"> </span>-JX20cT/10c<span class="w"> </span>-Ar80c<span class="w"> </span>-i0,1,0<span class="w"> </span>&gt;<span class="w"> </span>seismic_trace_pts.txt
+</pre></div>
+</div>
+<p><strong>注：</strong> 如果 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 设置为英寸(<strong>i</strong>) ，
+那么用户需要使用相当于每英寸 200 像素的 dpu，或者指定 <strong>-Ar</strong>200i。</p>
+</section>
+<section id="id10">
+<h2>参考文献<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>Wessel, P., Esteban, F., &amp; Delaviel-Anger, G. (2024). The Generic Mapping Tools and Animations for the Masses. Geochemistry, Geophysics, Geosystems, 25(6). <a class="reference external" href="https://doi.org/10.1029/2024GC011545">https://doi.org/10.1029/2024GC011545</a></p>
+</section>
+<section id="id11">
+<h2>相关模块<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../plot/"><span class="doc">plot</span></a> ,
+<a class="reference internal" href="../movie/"><span class="doc">movie</span></a></p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../end/" class="btn btn-neutral float-left" title="end" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../figure/" class="btn btn-neutral float-right" title="figure" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

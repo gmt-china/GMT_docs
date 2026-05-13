@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CN-faults: 中国断层数据 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="CN-block: 中国大陆及周边活动地块数据" href="../CN-block/" />
+    <link rel="prev" title="CN-border: 中国国界省界数据" href="../CN-border/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">中国地理空间数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CN-border/">CN-border: 中国国界省界数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CN-faults: 中国断层数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">数据文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">示例图</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">绘制全国断层</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">绘制区域断层</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">标注断层名</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">根据属性信息提取数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">根据空间范围提取数据</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">数据来源与处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">数据引用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CN-block/">CN-block: 中国大陆及周边活动地块数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geo3al/">geo3al: 中国及邻区地质图数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../dataset/">地学数据集</a> &raquo;</li>
+          <li><a href="../">中国地理空间数据集</a> &raquo;</li>
+      <li>CN-faults: 中国断层数据</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/dataset-CN/CN-faults.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cn-faults">
+<h1>CN-faults: 中国断层数据<a class="headerlink" href="#cn-faults" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/liuzhumei">刘珠妹</a>, <a class="reference external" href="https://me.seisman.info/">田冬冬</a>, <a class="reference external" href="https://github.com/CovMat">陈箫翰</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>CN-faults 数据来自于邓起东院士编制的《中国活动构造图（1:400 万）》，由<a class="reference external" href="http://datashare.igl.earthquake.cn/datashare">国家地震科学数据中心</a>提供原始数据。数据包含了中国区域内主要断层的地理位置以及断层属性，如断层名称、长度、走向、倾向、倾角、断层性质、最晚活动年代等。</p>
+<section id="id1">
+<h2>数据文件<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>CN-faults 提供了一个数据文件 <code class="file docutils literal notranslate"><span class="pre">CN-faults.gmt</span></code>：中国区域主要断层</p>
+<p>具体的下载地址和使用方式请见：<a class="reference internal" href="../"><span class="doc">中国地理空间数据集</span></a>。</p>
+</section>
+<section id="id2">
+<h2>示例图<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<section id="id3">
+<h3>绘制全国断层<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CN-faults
+    gmt coast -JM15c -RCN -Baf -W0.5p,black -A10000
+    gmt plot CN-faults.gmt -W1p,red
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-45dd9065e08d62f804e8463bf8ad25da">
+<a class="reference internal image-reference" href="../../_images/45dd9065e08d62f804e8463bf8ad25da.png"><img alt="../../_images/45dd9065e08d62f804e8463bf8ad25da.png" src="../../_images/45dd9065e08d62f804e8463bf8ad25da.png" style="width: 75%;" /></a>
+</figure>
+</section>
+<section id="id4">
+<h3>绘制区域断层<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CN-regional-faults
+    gmt basemap -JM15c -R95/105/25/35 -Baf
+    gmt plot CN-faults.gmt -W1p,red
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-57ce715e732a6ec0bff3efbcf494c7ce">
+<a class="reference internal image-reference" href="../../_images/57ce715e732a6ec0bff3efbcf494c7ce.png"><img alt="../../_images/57ce715e732a6ec0bff3efbcf494c7ce.png" src="../../_images/57ce715e732a6ec0bff3efbcf494c7ce.png" style="width: 50%;" /></a>
+</figure>
+</section>
+<section id="id5">
+<h3>标注断层名<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<p>可以使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块的 <strong>-Sq</strong> 选项标注断层名。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CN-faults-labeling
+    gmt coast -JM10c -RTW -Baf -W0.5p,black
+    <span class="c1"># -aL=&quot;断层名称&quot;: set the &quot;L&quot; value (i.e., label) in segment headers using &quot;断层名称&quot;</span>
+    <span class="c1"># :+Lh: take the label text from the &quot;L&quot; value in the segment header</span>
+    gmt convert CN-faults.gmt -aL<span class="o">=</span><span class="s2">&quot;断层名称&quot;</span> <span class="p">|</span> gmt plot -Sqn1:+Lh+f11p,39
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png"><img alt="https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png" src="https://user-images.githubusercontent.com/3974108/144350569-4a4fc59f-b17b-455d-974a-3ce1225e2595.png" style="width: 50%;" /></a>
+</figure>
+</section>
+<section id="id6">
+<h3>根据属性信息提取数据<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<p>可以使用 <strong>convert</strong> 模块的 <strong>-S</strong> 选项提取指定属性的数据。例如，下例中提取出“断层名称”为“红河断裂”的断层数据。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CN-single-fault png
+    gmt basemap -R98/105/22/27 -JM15c -Ba
+    <span class="c1"># -S: output record contains specified field attribute</span>
+    gmt convert CN-faults.gmt -S<span class="s2">&quot;断层名称=红河断裂&quot;</span> <span class="p">|</span> gmt plot
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-e6a9608ce0c5ecc7b68c224e52b1e7ad">
+<a class="reference internal image-reference" href="../../_images/e6a9608ce0c5ecc7b68c224e52b1e7ad.png"><img alt="../../_images/e6a9608ce0c5ecc7b68c224e52b1e7ad.png" src="../../_images/e6a9608ce0c5ecc7b68c224e52b1e7ad.png" style="width: 50%;" /></a>
+</figure>
+</section>
+<section id="id7">
+<h3>根据空间范围提取数据<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="../../module/gmtselect/"><span class="doc">gmtselect</span></a> 模块，可实现矩形范围、缓冲区范围和多边形范围内空间数据的提取。此处仅以缓冲区范围为例。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CN-buffer-fault
+    gmt basemap -R109/113/34/37 -JM15c -Ba
+    <span class="c1"># draw a circle with a radius of 100 km</span>
+    <span class="nb">echo</span> <span class="m">111</span> <span class="m">35</span>.5 200k <span class="p">|</span> gmt plot -SE- -Wblue -fg
+    <span class="c1"># extract faults within the circle</span>
+    gmt <span class="k">select</span> CN-faults.gmt -C111/35.5+d100k -fg <span class="p">|</span> gmt plot
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-a21c4b7128fba1ee2b395d6942efac07">
+<a class="reference internal image-reference" href="../../_images/a21c4b7128fba1ee2b395d6942efac07.png"><img alt="../../_images/a21c4b7128fba1ee2b395d6942efac07.png" src="../../_images/a21c4b7128fba1ee2b395d6942efac07.png" style="width: 50%;" /></a>
+</figure>
+</section>
+</section>
+<section id="id8">
+<h2>数据来源与处理<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>下载 <code class="file docutils literal notranslate"><span class="pre">Active_fault.zip</span></code> 压缩包：<a class="reference external" href="http://datashare.igl.earthquake.cn/map/ActiveFault/introFault.html">中国大陆地区 1:400 万活动断层数据库</a></p></li>
+<li><p>格式转换</p>
+<p>使用 GDAL 的 <a class="reference internal" href="../../utilities/gdal/#ogr2ogr"><span class="std std-ref">ogr2ogr</span></a> 命令将 Shapefile 格式转换为 GMT 可识别的 OGR/GMT 格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f GMT CN-faults.gmt 中国断层_邓起东Line_Project.shp
+</pre></div>
+</div>
+<p>若不关注属性信息，也可以直接使用 GMT 读取 Shapefile 格式的源数据进行绘图。</p>
+</li>
+</ol>
+<p>社区提供的 <code class="file docutils literal notranslate"><span class="pre">CN-faults.gmt</span></code> 文件还参考了《最新 1/400 万中国活动构造空间数据库的建立》，对部分属性字段名称的缺失和错误进行了修正。</p>
+</section>
+<section id="id9">
+<h2>数据引用<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>邓起东. 2007.
+中国活动构造图 (1:400 万).
+地震出版社.</p></li>
+<li><p>屈春燕. 2008.
+最新 1/400 万中国活动构造空间数据库的建立.
+地震地质, 30(1):298-304.
+<a class="reference external" href="http://dx.chinadoi.cn/10.3969/j.issn.0253-4967.2008.01.022">http://dx.chinadoi.cn/10.3969/j.issn.0253-4967.2008.01.022</a></p></li>
+<li><p>Deng, Q. D., Zhang, P. Z., Ran, Y. K., Yang, X. P., Min, W., Chen, L. C., 2003.
+Active tectonics and earthquake activities in China.
+Earth Science Frontiers, 10(S1): 66-73.
+<a class="reference external" href="https://en.cnki.com.cn/Article_en/CJFDTotal-DXQY2003S1011.htm">https://en.cnki.com.cn/Article_en/CJFDTotal-DXQY2003S1011.htm</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../CN-border/" class="btn btn-neutral float-left" title="CN-border: 中国国界省界数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../CN-block/" class="btn btn-neutral float-right" title="CN-block: 中国大陆及周边活动地块数据" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>xyz2grd &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/xyz2grd.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="绘图示例" href="../../gallery/" />
+    <link rel="prev" title="velo" href="../velo/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">xyz2grd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">模块手册</a> &raquo;</li>
+        
+      <li>xyz2grd</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/xyz2grd.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xyz2grd">
+<span id="index-0"></span><h1>xyz2grd<a class="headerlink" href="#xyz2grd" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/xyz2grd.html" title="(在 GMT v6.0)"><span>xyz2grd</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将XYZ数据或Z数据转换成网格文件</td>
+</tr>
+</tbody>
+</table>
+<p>该命令读取一个或多个Z数据或XYZ数据，并将其转换成二进制网格文件。</p>
+<ul class="simple">
+<li>若某些节点没有数据值，则这些节点会被赋值为NaN</li>
+<li>若某个节点由多个数据值，则该节点的值为所有数据点的平均值</li>
+</ul>
+<p>需要注意，该模块只是将已存在的数据转换为网格数据，并不具备网格化/插值功能。若需要网格化功能，可以使用模块 <code class="docutils literal notranslate"><span class="pre">surface</span></code> 、 <code class="docutils literal notranslate"><span class="pre">greenspline</span></code> 、 <code class="docutils literal notranslate"><span class="pre">nearneighbor</span></code>
+或 <code class="docutils literal notranslate"><span class="pre">triangulate</span></code> 。</p>
+<div class="section" id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt>
+<dd>输入表数据。可以只包含Z值，也可以包含 (x,y,z) 值。可以是ASCII格式，也可以是二进制格式。XYZ数据不要求排序。如果只包含Z值，则必须使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项以便确定每一个Z值所属的位置。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;grdfile&gt;</span></code></dt>
+<dd>生成的网格文件名</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dd><p class="first">指定X和Y方向的网格间隔</p>
+<ul class="simple">
+<li><em>xinc</em> X方向的网格间隔</li>
+<li><em>yinc</em> Y方向的网格间隔</li>
+<li><em>unit</em> 网格间隔的单位。对于地理坐标系而言默认值为度，也可设置为其他距离单位</li>
+<li><strong>+e</strong> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
+<li><strong>+n</strong> 表明 <em>xinc</em> 和 <em>yinc</em> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
+</ul>
+<p>注意：</p>
+<ul class="last simple">
+<li>若 <em>yinc</em> 设置为0，则表示其与 <em>xinc</em> 相同</li>
+<li>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt>
+<dd>指定数据范围</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A[d|f|l|m|n|r|s|S|u|z]</span></code></dt>
+<dd><p class="first">多个数据落在同一个网格节点内时的处理方式。</p>
+<p>默认情况下，若有多个数据落在同一个网格节点内，会将这些数据的均值作为该节点的值。使用该选项可以控制这一行为：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Af</span></code> 将第一个落在该节点内的数据值作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-As</span></code> 将最后一个落在该节点内的数据值作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Al</span></code> 将落在该节点内的所有值的最小值作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Au</span></code> 将落在该节点内的所有值的最大值作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ad</span></code> 将落在该节点内的所有值的最大值和最小值的差作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Am</span></code> 将落在该节点内的所有值的均值作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ar</span></code> 将落在该节点内的所有值的RMS值作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-AS</span></code> 将落在该节点内的所有值的标准差作为节点值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-An</span></code> 将落在该节点内的数据数目作为该节点值，该选项仅要求输入数据中有XY值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Az</span></code> 将落在该节点内的所有值的和作为节点值</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong>[<strong>+x</strong><em>xname</em>][<strong>+y</strong><em>yname</em>][<strong>+z</strong><em>zname</em>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>][<strong>+t</strong><em>title</em>][<strong>+r</strong><em>remark</em>]</dt>
+<dd><p class="first">给定网格文件头段中的基本信息：</p>
+<ul class="simple">
+<li><strong>+x</strong><em>xname</em> X变量名及其单位，格式为 <em>varname</em> [<em>unit</em>]，比如 “distance [km]”</li>
+<li><strong>+s</strong><em>scale</em> 读入网格数据后要乘以的因子，默认值为 1</li>
+<li><strong>+o</strong><em>offset</em> 读入数据后并乘以因子后要加的常数，默认值为 0</li>
+<li><strong>+n</strong><em>invalid</em> 指定值 <em>invalid</em> 用于表示该节点处无有效值，默认为NaN</li>
+<li><strong>+t</strong><em>title</em> 网格文件的标题</li>
+<li><strong>+r</strong><em>remark</em> 网格文件的注释信息</li>
+</ul>
+<p>其它说明：</p>
+<ol class="last arabic simple">
+<li>未指定的项其值保持不变</li>
+<li>可以给一个空值以重置某一项，比如使用 <strong>+t</strong> 而不指定标题则设置标题为空</li>
+<li>若字符串中包含空格则需要用引号括起来</li>
+<li>若字符串中包含加号 <strong>+</strong>，需要使用 <strong>+</strong> 对其进行转义。或者可以使用单引号套双引号的方式，例如 ‘“title with + inside”’</li>
+<li>若字符串中使用了shell变量，且变量值中包含加号，则需要使用 <code class="docutils literal notranslate"><span class="pre">${variable/+/\\+}</span></code></li>
+<li>对于地理数据（比如 <strong>-fg</strong> ），<em>xname</em> 和 <em>yname</em> 会自动设置</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S[&lt;zfile&gt;]</span></code></dt>
+<dd>对输入的Z文件做字节序转换并输出到标准输出或保存到文件 <code class="docutils literal notranslate"><span class="pre">&lt;zfile&gt;</span></code> 中。该选项只做字节序转换，不生成网格文件。该选项必须与 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项连用。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z[&lt;flags&gt;]</span></code></dt>
+<dd><p class="first">指定Z数据的格式。</p>
+<p>对于Z数据而言，由于没有XY坐标信息，因而Z数据中必须提供所有节点处的值且按照一定的顺序排列。</p>
+<p>在确定数据的排列顺序时，需要指定数据的起点以及数据排序的方向。</p>
+<ol class="arabic simple">
+<li>数据起点：可以取网格的四个顶点中的任意一个作为起点，四个顶点分别用 TL、TR、BL和BR表示，其中T代表Top，B代表Bottom，L代表Left，R代表Right。</li>
+<li>排序方向：选取数据顶点之后，数据可以是行优先也可以是列优先，所以有两种排序方式。若是行优先，则T|B位于L|R的前面；若列优先，则L|R位于T|B的前面。</li>
+</ol>
+<p>对于网格线配准的数据，若数据在X方向是周期性的但输入数据中并不包含x=xmax处的冗余列，则加上 <code class="docutils literal notranslate"><span class="pre">x</span></code>；若数据在Y方向是周期性的但输入数据中并不包含y=ymax处的冗余行，则加上 <code class="docutils literal notranslate"><span class="pre">y</span></code>；加上 <code class="docutils literal notranslate"><span class="pre">s&lt;n&gt;</span></code> 用于跳过数据中最前面的 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 个字节；若需要转换数据的字节序，则加上 <code class="docutils literal notranslate"><span class="pre">w</span></code> 。</p>
+<p>除此之外，还需要再加上一个字符表征数据类型：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">A</span></code>: ASCII表示，每行一个或多个浮点数</li>
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code>: ASCII表示，每行一项，不仅可以处理浮点数还可以处理日期时间数据和经纬度数据</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code>: int8_t，有符号单字节字符</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code>: uint8_t，无符号单字节字符</li>
+<li><code class="docutils literal notranslate"><span class="pre">h</span></code>: int16_t，有符号双字节整型</li>
+<li><code class="docutils literal notranslate"><span class="pre">H</span></code>: uint16_t，无符号双字节整型</li>
+<li><code class="docutils literal notranslate"><span class="pre">i</span></code>: int32_t，有符号四字节整型</li>
+<li><code class="docutils literal notranslate"><span class="pre">I</span></code>: uint32_t，无符号四字节整型</li>
+<li><code class="docutils literal notranslate"><span class="pre">l</span></code>: int64_t，长整型（8字节）</li>
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code>: uint64_t，无符号长整型（8字节）</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code>: 4字节单精度浮点型</li>
+<li><code class="docutils literal notranslate"><span class="pre">d</span></code>: 8字节双精度浮点型</li>
+</ul>
+<p class="last">默认的输入数据格式为 <code class="docutils literal notranslate"><span class="pre">-ZTLa</span></code> 。需要注意， <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项仅对Z数据有效。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>将ASCII文件转换为网格数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd hawaii_grv.xyz -D+xdegree+ydegree+zGal+t<span class="s2">&quot;Hawaiian Gravity&quot;</span>+r<span class="s2">&quot;GRS-80 Ellipsoid used&quot;</span> <span class="se">\</span>
+    -Ghawaii_grv_new.nc -R198/208/18/25 -I5m -V
+</pre></div>
+</div>
+<p>将二进制格式的XYZ文件（单精度）转换为网格文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd raw.b -D+xm+ym+zm -Graw.nc -R0/100/0/100 -I1 -V -Z -bi3f
+</pre></div>
+</div>
+<p>将USGS DEM数据转换为网格数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd topo30.b -D+xm+ym+zm -Gustopo.nc -R234/294/24/50 -I30s -di-9999 -ZTLhw
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../gallery/" class="btn btn-neutral float-right" title="绘图示例" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../velo/" class="btn btn-neutral float-left" title="velo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

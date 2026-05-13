@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13.58 spectrum1d &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/spectrum1d.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="13.59 xyz2grd" href="../xyz2grd/" />
+    <link rel="prev" title="13.57 sample1d" href="../sample1d/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">13 模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">13.1 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.2 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">13.3 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.4 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.5 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.6 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.7 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.8 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.9 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.10 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.11 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">13.12 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.13 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.14 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2rgb/">13.15 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.16 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.17 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.18 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.19 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.20 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.21 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.22 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.23 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.24 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.25 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.26 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdraster/">13.27 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.28 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.29 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.30 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.31 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.32 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.33 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">13.34 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.35 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.36 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.37 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.38 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psbasemap/">13.39 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psclip/">13.40 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoast/">13.41 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.42 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoupe/">13.43 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pshistogram/">13.44 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psimage/">13.45 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pslegend/">13.46 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psmeca/">13.47 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pspolar/">13.48 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psrose/">13.49 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssac/">13.50 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psscale/">13.51 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssolar/">13.52 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psternary/">13.53 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pstext/">13.54 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psvelo/">13.55 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psxy/">13.56 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.57 sample1d</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.58 spectrum1d</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.58.1 选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.58.2 示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.59 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">13 模块手册</a> &raquo;</li>
+        
+      <li>13.58 spectrum1d</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/module/spectrum1d.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spectrum1d">
+<span id="index-0"></span><h1>13.58 spectrum1d<a class="headerlink" href="#spectrum1d" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/spectrum1d.html" title="(在 GMT v5.4.6)"><span>spectrum1d</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">计算一个时间序列的自功率谱，或两个时间序列的互功率谱</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">spectrum1d</span></code> 从标准输入流或数据文件中读取一列或两列数据。这些数据被当作是采样间隔为 <code class="docutils literal notranslate"><span class="pre">&lt;dt&gt;</span></code> 的等间隔的时间序列。spectrum1d 采用Welch方法，即加窗多段平均周期图法，计算输出自功率或互功率谱密度。其输出的功率谱的标准差，是用
+Bendat和Piersol提供的算法。</p>
+<p><code class="docutils literal notranslate"><span class="pre">spectrum1d</span></code> 的输出文件有三列:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>f<span class="p">|</span>w   p   e
+</pre></div>
+</div>
+<p>其中， f代表频率，w代表波长，p代表计算的功率谱密度，e代表一个标准差的值。</p>
+<p><code class="docutils literal notranslate"><span class="pre">spectrum1d</span></code> 的输出文件的文件名是使用统一的前缀 <code class="docutils literal notranslate"><span class="pre">name_stem</span></code> 。如果使用了
+<code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项，那么将会有8个文件输出，否则只生成一个功率谱文件（ <code class="docutils literal notranslate"><span class="pre">.xpower</span></code> ）。这些文件默认是以ASCII码格式，除非用 <code class="docutils literal notranslate"><span class="pre">-bo</span></code> 选项指定为二进制格式输出。这8个文件介绍如下：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.xpower</span></code>: X(t)的功率谱。单位是 <code class="docutils literal notranslate"><span class="pre">X*X*dt</span></code> 。</li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.ypower</span></code>: Y(t)的功率谱。单位是 <code class="docutils literal notranslate"><span class="pre">Y*Y*dt</span></code> 。</li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.cpower</span></code>: 一致性（coherent）的功率谱。单位和 ypower 一样。</li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.npower</span></code>: 噪声的功率谱。单位和 ypower 一样。</li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.gain</span></code>: 增益谱，或传输函数的模。单位是 <code class="docutils literal notranslate"><span class="pre">Y/X</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.phase</span></code>: 相位谱，或传输函数的相位。单位是弧度。</li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.admit</span></code>: 导纳（Admittance）谱，或传输函数的实部。单位是 <code class="docutils literal notranslate"><span class="pre">Y/X</span></code> 。</li>
+<li><code class="docutils literal notranslate"><span class="pre">name_stem.coh</span></code>: （平方）相干谱，或者线性相关系数（它是频率的函数）。i
+无单位，取值范围为 <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code> 。信噪比 <code class="docutils literal notranslate"><span class="pre">SNR=coh/(1-coh)</span></code> 。当 coh=0.5 时，SNR=1。</li>
+</ol>
+<p>除非使用 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项，否则以上文件会以单个文件单列的形式输出。</p>
+<div class="section" id="id1">
+<h2>13.58.1 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-S&lt;segment_size&gt;</span></code></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">&lt;segment_size&gt;</span></code> 是一个2的指数数值，用于控制Welch方法中分段平均时的窗口长度。它也决定了功率谱密度的最小频率分辨率和最大频率分辨率，即
+<code class="docutils literal notranslate"><span class="pre">1.0/(segment_size*dt)</span></code> 和 <code class="docutils literal notranslate"><span class="pre">1.0/(2*dt)</span></code> （即Nyquist频率）。在功率谱密度中的一个标准误差大约为 <code class="docutils literal notranslate"><span class="pre">1.0/(n_data/segment_size)</span></code> ，比如 segment_size=256，那么就需要25600个数据点去计算一个误差棒的10%。互功率谱误差棒的计算则需要更多数据点，而且是相干性的函数，比较复杂。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">table</span></code></dt>
+<dd>输入文件名。它是ASCII类型的一列数据或两列数据。如果是一列数据文件，就计算自功率谱；如果是两列，就计算互功率谱。若未指定文件名， <code class="docutils literal notranslate"><span class="pre">spectrum1d</span></code> 会从标准输入流中读取数据。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C[xycnpago]</span></code></dt>
+<dd>默认会输出全部8个文件。使用该选项可以指定输出8个文件中的某些文件。x=xpower、y=ypower、c=cpower、n=npower、p=phase、a=admit、g=gain、o=coh。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;dt&gt;</span></code></dt>
+<dd>设置读入的时间序列的时间采样间隔，默认值是1。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[m|h]</span></code></dt>
+<dd>不去除信号中的线性趋势。默认情况下，在对信号进行变换处理前会先去掉其中的线性趋势。 <code class="docutils literal notranslate"><span class="pre">m</span></code> 表示去掉数据的均值， <code class="docutils literal notranslate"><span class="pre">h</span></code> 表示去掉数据的中值。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N[name_stem]</span></code></dt>
+<dd>输出文件名的前缀，默认为 <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> 。若不使用此选项，则输出的8个文件会合到一个文件里。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
+<dd>不让单个分量的结果输出到标准输出流。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W</span></code></dt>
+<dd>输出文件中第一列是波长而不是频率。默认输出时第一列是频率。</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>13.58.2 示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>假设 <code class="docutils literal notranslate"><span class="pre">data.g</span></code> 是重力数据，单位为 mGal，空间采样间隔为1.5 km。如下命令会输出数据的功率谱，单位为 mGal^2 km 表示:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt spectrum1d data.g -S256 -D1.5 -Ndata
+</pre></div>
+</div>
+<p>假设你除了有重力数据 <code class="docutils literal notranslate"><span class="pre">data.g</span></code> 之外，还有在相同地点测得的地形数据 <code class="docutils literal notranslate"><span class="pre">data.t</span></code> ，单位为 m。计算二者之间的传输函数，即 <code class="docutils literal notranslate"><span class="pre">data.t</span></code> 是输入， <code class="docutils literal notranslate"><span class="pre">data.g</span></code> 是输出:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>paste data.t data.g <span class="p">|</span> gmt spectrum1d -S256 -D1.5 -Ndata -C &gt; results.txt
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../xyz2grd/" class="btn btn-neutral float-right" title="13.59 xyz2grd" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sample1d/" class="btn btn-neutral float-left" title="13.57 sample1d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

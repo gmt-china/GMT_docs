@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MAP参数 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="COLOR参数" href="../color/" />
+    <link rel="prev" title="FONT参数" href="../font/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">FONT参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MAP参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">边框相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">标注相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">标签相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">刻度相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">网格线相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">标题相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">其它参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">其他参数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">配置参数</a> &raquo;</li>
+        
+      <li>MAP参数</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/conf/map.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="map">
+<h1>MAP参数<a class="headerlink" href="#map" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>边框相关参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="glossary">
+<dt id="term-MAP_FRAME_TYPE"><strong>MAP_FRAME_TYPE</strong><a class="headerlink" href="#term-MAP_FRAME_TYPE" title="Permalink to this term">¶</a></dt><dd><p>底图边框类型 [<strong>fancy</strong>]</p>
+<p>可选值包括 <strong>inside</strong>|<strong>plain</strong>|<strong>graph</strong>|<strong>fancy</strong>|<strong>fancy+</strong>。</p>
+<ul class="simple">
+<li><p>通常，地理投影默认使用 <strong>fancy</strong> 边框类型，而笛卡尔投影则默认使用 <strong>plain</strong> 边框类型。但某些地理投影比较特殊，只能使用 plain 边框类型。</p></li>
+<li><p><strong>fancy+</strong> 相对于 <strong>fancy</strong> 的区别在于，边框的拐角为圆角</p></li>
+</ul>
+<p>下图给出了不同的底图边框类型的效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/a40f0a7a856595de1dcfc83216e59408/map-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/map-gmtplot-0.png" src="../../_images/map-gmtplot-0.png" />
+</div>
+<p>对于 <strong>graph</strong> 类型，默认箭头的顶端超过坐标轴顶点7.5%。可以通过使用
+<strong>graph,</strong><em>length</em>[%] 的方式指定超过的长度或百分比。坐标轴的宽度由 <a class="reference internal" href="#term-MAP_FRAME_WIDTH"><span class="xref std std-term">MAP_FRAME_WIDTH</span></a> 决定，箭头的长度和宽度则分别是该宽度的10倍和5倍。箭头的形状还可以由 <a class="reference internal" href="#term-MAP_VECTOR_SHAPE"><span class="xref std std-term">MAP_VECTOR_SHAPE</span></a> 控制。</p>
+</dd>
+<dt id="term-MAP_FRAME_PEN"><strong>MAP_FRAME_PEN</strong><a class="headerlink" href="#term-MAP_FRAME_PEN" title="Permalink to this term">¶</a></dt><dd><p>底图类型为 <strong>plain</strong> 时边框的画笔属性 [<strong>thicker,black</strong>]</p>
+</dd>
+<dt id="term-MAP_FRAME_WIDTH"><strong>MAP_FRAME_WIDTH</strong><a class="headerlink" href="#term-MAP_FRAME_WIDTH" title="Permalink to this term">¶</a></dt><dd><p>设置底图类型为 <strong>fancy</strong> 时的边框宽度 [<strong>5p</strong>]</p>
+<p>注意：对于 <strong>fancy</strong> 底图类型，<a class="reference internal" href="#term-MAP_FRAME_PEN"><span class="xref std std-term">MAP_FRAME_PEN</span></a> 自动设置为
+<a class="reference internal" href="#term-MAP_FRAME_WIDTH"><span class="xref std std-term">MAP_FRAME_WIDTH</span></a> 的0.1倍。</p>
+</dd>
+<dt id="term-MAP_FRAME_AXES"><strong>MAP_FRAME_AXES</strong><a class="headerlink" href="#term-MAP_FRAME_AXES" title="Permalink to this term">¶</a></dt><dd><p>使用 <strong>-B</strong> 选项时默认要绘制/标注的轴 [<strong>WSENZ</strong>]</p>
+<p>默认值 <strong>WSENZ</strong> 表示2D底图下绘制并标注四条边，3D底图下则绘制四条边和一条Z轴。加上 <strong>+</strong> 则3D底图下会绘制完整的长方体边框。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>不建议设置该参数。建议使用 <strong>-B</strong> 选项控制实际绘制的边，详情见 <a class="reference internal" href="../../option/B/"><span class="doc">-B 选项</span></a>。</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>标注相关参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="glossary">
+<dt id="term-MAP_ANNOT_OFFSET"><strong>MAP_ANNOT_OFFSET</strong><a class="headerlink" href="#term-MAP_ANNOT_OFFSET" title="Permalink to this term">¶</a></dt><dd><p>同时设置 <a class="reference internal" href="#term-MAP_ANNOT_OFFSET_PRIMARY"><span class="xref std std-term">MAP_ANNOT_OFFSET_PRIMARY</span></a> 和 <a class="reference internal" href="#term-MAP_ANNOT_OFFSET_SECONDARY"><span class="xref std std-term">MAP_ANNOT_OFFSET_SECONDARY</span></a> 的值</p>
+</dd>
+<dt id="term-MAP_ANNOT_OFFSET_PRIMARY"><strong>MAP_ANNOT_OFFSET_PRIMARY</strong><a class="headerlink" href="#term-MAP_ANNOT_OFFSET_PRIMARY" title="Permalink to this term">¶</a></dt><dd><p>一级标注的开始位置与刻度尾端间的距离 [5p]</p>
+</dd>
+<dt id="term-MAP_ANNOT_OFFSET_SECONDARY"><strong>MAP_ANNOT_OFFSET_SECONDARY</strong><a class="headerlink" href="#term-MAP_ANNOT_OFFSET_SECONDARY" title="Permalink to this term">¶</a></dt><dd><p>二级标注的顶部与一级标注的底部之间的距离 [5p]</p>
+</dd>
+<dt id="term-MAP_DEGREE_SYMBOL"><strong>MAP_DEGREE_SYMBOL</strong><a class="headerlink" href="#term-MAP_DEGREE_SYMBOL" title="Permalink to this term">¶</a></dt><dd><p>在地图上绘制“度”时所使用的符号 [degree]</p>
+<p>可以取 <strong>ring</strong>|<strong>degree</strong>|<strong>colon</strong>|<strong>none</strong>。下图给出了取不同值时的绘图效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/3a1d17cf19b00d01bbad7685a6738c11/map-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/map-gmtplot-1.png" src="../../_images/map-gmtplot-1.png" />
+</div>
+</dd>
+<dt id="term-MAP_ANNOT_ORTHO"><strong>MAP_ANNOT_ORTHO</strong><a class="headerlink" href="#term-MAP_ANNOT_ORTHO" title="Permalink to this term">¶</a></dt><dd><p>控制笛卡尔投影下哪些轴的标注垂直于轴 [<strong>we</strong>]</p>
+<p>该参数可以将 <strong>wesnz</strong> 做任意组合，以设置每个轴的标注是否垂直于轴。该参数的效果可以被 <strong>-B</strong> 选项的 <strong>+a</strong> 子选项所覆盖。</p>
+<p>下图给出了取不同值时的绘图效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/3f26f045bc921d298c972dc4c15f93d8/map-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/map-gmtplot-2.png" src="../../_images/map-gmtplot-2.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>此参数仅对笛卡尔投影有效。对于地理投影，可使用 <a class="reference internal" href="#term-MAP_ANNOT_OBLIQUE"><span class="xref std std-term">MAP_ANNOT_OBLIQUE</span></a>。</p>
+</div>
+</dd>
+<dt id="term-MAP_ANNOT_OBLIQUE"><strong>MAP_ANNOT_OBLIQUE</strong><a class="headerlink" href="#term-MAP_ANNOT_OBLIQUE" title="Permalink to this term">¶</a></dt><dd><p>控制倾斜地理投影下标注和刻度的显示 [<strong>anywhere</strong>]</p>
+<p>该参数可以取如下几个关键词的任何组合，关键词之间以逗号分隔：</p>
+<ul class="simple">
+<li><p><strong>separate</strong> 表示经度仅标注在上边界和下边界，纬度仅标注在左边界和右边界</p></li>
+<li><p><strong>anywhere</strong> 表示在任何一个假想的网格线穿过地图边界时均标注</p></li>
+<li><p><strong>lon_horizontal</strong> 表示将经度标注水平绘制</p></li>
+<li><p><strong>lat_horizontal</strong> 表示将纬度标注水平绘制</p></li>
+<li><p><strong>tick_extend</strong> 倾斜的刻度线会扩展使得其长度等于指定刻度线长度</p></li>
+<li><p><strong>tick_normal</strong> 忽略网格线与边框的夹角，刻度线总是垂直于底图边框</p></li>
+<li><p><strong>lat_parallel</strong> 纬度标注平行于底图边框</p></li>
+</ul>
+</dd>
+<dt id="term-MAP_ANNOT_MIN_ANGLE"><strong>MAP_ANNOT_MIN_ANGLE</strong><a class="headerlink" href="#term-MAP_ANNOT_MIN_ANGLE" title="Permalink to this term">¶</a></dt><dd><p>对于某些倾斜投影方式而言，如果标注的基线与地图边界间的夹角小于该值，则不绘制标注。合理的取值范围为0到90 [20]</p>
+</dd>
+<dt id="term-MAP_ANNOT_MIN_SPACING"><strong>MAP_ANNOT_MIN_SPACING</strong><a class="headerlink" href="#term-MAP_ANNOT_MIN_SPACING" title="Permalink to this term">¶</a></dt><dd><p>在某些倾斜投影中，相邻两个标注之间的最小距离，若标注的距离小于该值，则不绘制 [0p]</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>标签相关参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-MAP_LABEL_OFFSET"><strong>MAP_LABEL_OFFSET</strong><a class="headerlink" href="#term-MAP_LABEL_OFFSET" title="Permalink to this term">¶</a></dt><dd><p>轴标注底部与轴标签顶部间的距离 [8p]</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>刻度相关参数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<dl class="glossary">
+<dt id="term-MAP_TICK_PEN"><strong>MAP_TICK_PEN</strong><a class="headerlink" href="#term-MAP_TICK_PEN" title="Permalink to this term">¶</a></dt><dd><p>同时设置 <a class="reference internal" href="#term-MAP_TICK_PEN_PRIMARY"><span class="xref std std-term">MAP_TICK_PEN_PRIMARY</span></a> 和 <a class="reference internal" href="#term-MAP_TICK_PEN_SECONDARY"><span class="xref std std-term">MAP_TICK_PEN_SECONDARY</span></a> 的值</p>
+</dd>
+<dt id="term-MAP_TICK_PEN_PRIMARY"><strong>MAP_TICK_PEN_PRIMARY</strong><a class="headerlink" href="#term-MAP_TICK_PEN_PRIMARY" title="Permalink to this term">¶</a></dt><dd><p>一级刻度的画笔属性 [thinner,black]</p>
+</dd>
+<dt id="term-MAP_TICK_PEN_SECONDARY"><strong>MAP_TICK_PEN_SECONDARY</strong><a class="headerlink" href="#term-MAP_TICK_PEN_SECONDARY" title="Permalink to this term">¶</a></dt><dd><p>二级刻度的画笔属性 [thinner,black]</p>
+</dd>
+<dt id="term-MAP_TICK_LENGTH"><strong>MAP_TICK_LENGTH</strong><a class="headerlink" href="#term-MAP_TICK_LENGTH" title="Permalink to this term">¶</a></dt><dd><p>同时设置 <a class="reference internal" href="#term-MAP_TICK_LENGTH_PRIMARY"><span class="xref std std-term">MAP_TICK_LENGTH_PRIMARY</span></a> 和 <a class="reference internal" href="#term-MAP_TICK_LENGTH_SECONDARY"><span class="xref std std-term">MAP_TICK_LENGTH_SECONDARY</span></a> 的值</p>
+</dd>
+<dt id="term-MAP_TICK_LENGTH_PRIMARY"><strong>MAP_TICK_LENGTH_PRIMARY</strong><a class="headerlink" href="#term-MAP_TICK_LENGTH_PRIMARY" title="Permalink to this term">¶</a></dt><dd><p>一级刻度的主刻度和次刻度的长度 [5p/2.5p]</p>
+<p>若只给定一个长度值，则次刻度的长度假定为主刻度的一半</p>
+</dd>
+<dt id="term-MAP_TICK_LENGTH_SECONDARY"><strong>MAP_TICK_LENGTH_SECONDARY</strong><a class="headerlink" href="#term-MAP_TICK_LENGTH_SECONDARY" title="Permalink to this term">¶</a></dt><dd><p>二级刻度的主刻度和次刻度的长度 [15p/3.75p]</p>
+<p>若只给定一个长度值，则次刻度的长度假定为主刻度的25%</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h2>网格线相关参数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<dl class="glossary">
+<dt id="term-MAP_GRID_PEN"><strong>MAP_GRID_PEN</strong><a class="headerlink" href="#term-MAP_GRID_PEN" title="Permalink to this term">¶</a></dt><dd><p>同时设置 <a class="reference internal" href="#term-MAP_GRID_PEN_PRIMARY"><span class="xref std std-term">MAP_GRID_PEN_PRIMARY</span></a> 和 <a class="reference internal" href="#term-MAP_GRID_PEN_SECONDARY"><span class="xref std std-term">MAP_GRID_PEN_SECONDARY</span></a> 的值</p>
+</dd>
+<dt id="term-MAP_GRID_PEN_PRIMARY"><strong>MAP_GRID_PEN_PRIMARY</strong><a class="headerlink" href="#term-MAP_GRID_PEN_PRIMARY" title="Permalink to this term">¶</a></dt><dd><p>一级网格线的线条属性 [0.25p,black]</p>
+</dd>
+<dt id="term-MAP_GRID_PEN_SECONDARY"><strong>MAP_GRID_PEN_SECONDARY</strong><a class="headerlink" href="#term-MAP_GRID_PEN_SECONDARY" title="Permalink to this term">¶</a></dt><dd><p>二级网格线的线条属性 [thinner,black]</p>
+</dd>
+<dt id="term-MAP_GRID_CROSS_SIZE"><strong>MAP_GRID_CROSS_SIZE</strong><a class="headerlink" href="#term-MAP_GRID_CROSS_SIZE" title="Permalink to this term">¶</a></dt><dd><p>同时设置 <a class="reference internal" href="#term-MAP_GRID_CROSS_SIZE_PRIMARY"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_PRIMARY</span></a> 和 <a class="reference internal" href="#term-MAP_GRID_CROSS_SIZE_SECONDARY"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_SECONDARY</span></a> 的值</p>
+</dd>
+<dt id="term-MAP_GRID_CROSS_SIZE_PRIMARY"><strong>MAP_GRID_CROSS_SIZE_PRIMARY</strong><a class="headerlink" href="#term-MAP_GRID_CROSS_SIZE_PRIMARY" title="Permalink to this term">¶</a></dt><dd><p>一级网格十字线的大小 [0p]</p>
+<ul class="simple">
+<li><p>0表示绘制连续的网格线</p></li>
+<li><p>非零值表示绘制对称的网格十字线</p></li>
+<li><p>负值表示非对称网格十字线，即只绘制远离赤道和本初子午线的刻度</p></li>
+</ul>
+</dd>
+<dt id="term-MAP_GRID_CROSS_SIZE_SECONDARY"><strong>MAP_GRID_CROSS_SIZE_SECONDARY</strong><a class="headerlink" href="#term-MAP_GRID_CROSS_SIZE_SECONDARY" title="Permalink to this term">¶</a></dt><dd><p>二级网格十字线的大小 [0p]</p>
+<ul class="simple">
+<li><p>0表示绘制连续的网格线</p></li>
+<li><p>非零值表示绘制对称的网格十字线</p></li>
+<li><p>负值表示非对称网格十字线，即只绘制远离赤道和本初子午线的刻度</p></li>
+</ul>
+</dd>
+<dt id="term-MAP_POLAR_CAP"><strong>MAP_POLAR_CAP</strong><a class="headerlink" href="#term-MAP_POLAR_CAP" title="Permalink to this term">¶</a></dt><dd><p>控制某些投影下两极附近网格线的显示 [85/90]</p>
+<p>在某些投影下，由于极点是单个点，常规的网格线绘制方法会导致极点处网格线非常密且不美观。该选项则用于解决这一问题。</p>
+<p>若取值为 <strong>none</strong>，则表示不对极点附近的网格线做特殊处理。否则可以指定 <em>pc_lat</em>/<em>pc_dlon</em>，表示在 -<em>pc_lat</em> 到 +<em>pc_lat</em> 纬度范围内正常绘制网格线；在大于 +<em>pc_lat</em> 和小于 -<em>pc_lat</em> 纬度区域内，则按照 <em>pc_dlon</em> 指定的经线间隔绘制网格线。GMT会在 ±<em>pc_lat</em> 纬度处绘制一个圈圈以分隔这两个纬度区间。</p>
+<p>下图展示了该参数取不同值时的绘图效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/a942974b202ed6d80e2533975cd4a52c/map-gmtplot-3.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/map-gmtplot-3.png" src="../../_images/map-gmtplot-3.png" />
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id6">
+<h2>标题相关参数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-MAP_TITLE_OFFSET"><strong>MAP_TITLE_OFFSET</strong><a class="headerlink" href="#term-MAP_TITLE_OFFSET" title="Permalink to this term">¶</a></dt><dd><p>图标题的底部与轴标注（或轴标签）的顶部之间的距离 [14p]</p>
+</dd>
+<dt id="term-MAP_HEADING_OFFSET"><strong>MAP_HEADING_OFFSET</strong><a class="headerlink" href="#term-MAP_HEADING_OFFSET" title="Permalink to this term">¶</a></dt><dd><p>子图标题的顶部与总标题的底部之间的距离 [18p]</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h2>其它参数<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<dl class="glossary">
+<dt id="term-MAP_0.25p_PEN"><strong>MAP_0.25p_PEN</strong><a class="headerlink" href="#term-MAP_0.25p_PEN" title="Permalink to this term">¶</a></dt><dd><p>设置所有与 <strong>-W</strong> 选项相关的画笔属性的默认值 [<strong>0.25p,black</strong>]</p>
+<p>在参数值的前面加上 <strong>+</strong> 可以覆盖其他 <strong>MAP_*_PEN</strong> 相关参数中的颜色。</p>
+</dd>
+<dt id="term-MAP_ORIGIN_X"><strong>MAP_ORIGIN_X</strong><a class="headerlink" href="#term-MAP_ORIGIN_X" title="Permalink to this term">¶</a></dt><dd><p>新绘图在纸张上的原点的X坐标（仅适用于GMT经典模式）[72p]</p>
+</dd>
+<dt id="term-MAP_ORIGIN_Y"><strong>MAP_ORIGIN_Y</strong><a class="headerlink" href="#term-MAP_ORIGIN_Y" title="Permalink to this term">¶</a></dt><dd><p>新绘图在纸张上的原点的Y坐标（仅适用于GMT经典模式）[72p]</p>
+</dd>
+<dt id="term-MAP_LOGO"><strong>MAP_LOGO</strong><a class="headerlink" href="#term-MAP_LOGO" title="Permalink to this term">¶</a></dt><dd><p>是否在左下角绘制GMT时间戳 [<strong>false</strong>]</p>
+<p>可以取 <strong>true</strong>|<strong>false</strong>，等效于在命令行中使用 <a class="reference internal" href="../../option/U/"><span class="doc">-U 选项</span></a>。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>该参数存在已知BUG，见 <a class="reference external" href="https://github.com/GenericMappingTools/gmt/issues/3902">https://github.com/GenericMappingTools/gmt/issues/3902</a></p>
+</div>
+</dd>
+<dt id="term-MAP_LOGO_POS"><strong>MAP_LOGO_POS</strong><a class="headerlink" href="#term-MAP_LOGO_POS" title="Permalink to this term">¶</a></dt><dd><p>GMT时间戳相对于当前绘图原点的对齐方式与位置 [<strong>BL/-54p/-54p</strong>]</p>
+</dd>
+<dt id="term-MAP_SCALE_HEIGHT"><strong>MAP_SCALE_HEIGHT</strong><a class="headerlink" href="#term-MAP_SCALE_HEIGHT" title="Permalink to this term">¶</a></dt><dd><p>地图比例尺的高度 [5p]</p>
+</dd>
+<dt id="term-MAP_LINE_STEP"><strong>MAP_LINE_STEP</strong><a class="headerlink" href="#term-MAP_LINE_STEP" title="Permalink to this term">¶</a></dt><dd><p>绘制线段时所使用的最大步长 [0.75p]</p>
+<p>地理投影下，两点之间会用大圆路径连接，因而GMT需要先计算大圆路径上的其他中间点的坐标，并将这些点用直线连起来。若该步长太大，会导致大圆路径看上去很不光滑；若太小，则会导致数据点太密，图片太大。</p>
+</dd>
+<dt id="term-MAP_VECTOR_SHAPE"><strong>MAP_VECTOR_SHAPE</strong><a class="headerlink" href="#term-MAP_VECTOR_SHAPE" title="Permalink to this term">¶</a></dt><dd><p>矢量箭头的形状 [0]</p>
+<p>可以取-2到2之间的任意实数。下面展示了取-2、-1、0、1和2时的矢量箭头的形状：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/977c1d1587ce578e978f1896bcc031ba/map-gmtplot-4.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/map-gmtplot-4.png" src="../../_images/map-gmtplot-4.png" />
+</div>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../color/" class="btn btn-neutral float-right" title="COLOR参数" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../font/" class="btn btn-neutral float-left" title="FONT参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

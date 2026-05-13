@@ -1,0 +1,179 @@
+:author: 田冬冬, 陈箫翰
+:date: 2025-12-30
+
+.. index:: ! clip
+.. program:: clip
+
+clip
+====
+
+:官方文档: :doc:`gmt:clip`
+:简介: 打开或关闭多边形裁剪路径
+
+该模块会从输入文件中读取XY数据，由此构成一个或多个多边形，进而构建出一个或
+多个裁剪路径。接下来的所有绘图命令中，只有在多边形内部的部分才会被绘制。
+
+为了判断某个点是在裁剪区域内还是在裁剪区域外，clip使用了“奇偶规则”。从任意
+一点绘制一条任意方向的射线，若该射线穿过裁剪路径线段奇数次，则该点位于裁剪
+区域内；若穿过偶数次，则该点位于裁剪区域外。:option:`-N` 选项可以颠倒内外的定义。
+
+最后，记得再次调用 :option:`-C` 以关闭裁剪区域。
+
+语法
+----
+
+**gmt clip**
+[ *table* ]
+:option:`-C`\ [*n*]
+:option:`-J`\ *parameters*
+[ :option:`-Jz|Z`\ *parameters* ]
+:option:`-R`\ *west*/*east*/*south*/*north*\ [/*zmin*/*zmax*][**+r**][**+u**\ *unit*]
+[ :option:`-A`\ [**m**\|\ **p**\|\ **x**\|\ **y**] ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-N` ]
+[ :option:`-T` ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*pen*] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+
+输入数据
+------------------
+
+.. include:: explain_intables.rst_
+
+必须选项
+--------
+
+.. option:: -C
+
+**-C**\ [*n*]
+    结束当前裁剪路径。
+
+    默认会关闭所有已开启的裁剪路径。使用 :option:`-C`\ *n* 则仅关闭当前所有处于激活状态下的
+    裁剪路径中的其中 *n* 个。
+
+    若在开启裁剪后有使用 :option:`-X` 或 :option:`-Y` 移动过坐标原点，则在关闭裁剪路径时也需要
+    使用 :option:`-X` 或 :option:`-Y` 选项。
+
+.. include:: explain_-J.rst_
+
+.. include:: explain_-Jz.rst_
+
+.. include:: explain_-Rz.rst_
+
+可选选项
+--------
+
+.. option:: -A
+
+**-A**\ [**m**\|\ **p**\|\ **x**\|\ **y**]
+    修改两点间的连接方式
+
+    地理投影下，两点之间默认沿着大圆弧连接。
+
+    - :option:`-A`：忽略当前的投影方式，直接用直线连接两点
+    - **-Am**：先沿着经线画，再沿着纬线画
+    - **-Ap**：先沿着纬线画，再沿着经线画
+
+    笛卡尔坐标下，两点之间默认用直线连接。
+
+    - **-Ax** 先沿着X轴画，再沿着Y轴画
+    - **-Ay** 先沿着Y轴画，再沿着X轴画
+
+.. include:: explain_-B.rst_
+
+.. option:: -N
+
+**-N**
+    反转“区域内”和“区域外”的概念，即只有在多边形外的部分才是裁剪区域，绘图时
+    只有在多边形外的才会被绘制。该选项不能与 :option:`-B` 选项连用。
+
+.. option:: -T
+
+**-T**
+    不需要任何输入数据。根据 :option:`-R` 选项将整个地图区域裁剪出来，
+    该选项不能与 :option:`-B` 选项连用。
+
+.. include:: explain_-U.rst_
+
+.. include:: explain_-V.rst_
+
+.. option:: -W
+
+**-W**\ *pen*
+    绘制裁剪路径的轮廓 [默认不绘制]
+
+.. include:: explain_-XY.rst_
+
+.. include:: explain_-bi.rst_
+
+.. include:: explain_-di.rst_
+
+.. include:: explain_-e.rst_
+
+.. include:: explain_-f.rst_
+
+.. include:: explain_-g.rst_
+
+.. include:: explain_-h.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_perspective.rst_
+
+.. include:: explain_-qi.rst_
+
+.. include:: explain_-t.rst_
+
+.. include:: explain_colon.rst_
+
+.. include:: explain_help.rst_
+
+示例
+----
+
+限制作图范围，仅在指定范围内对陆地填色
+
+.. gmtplot::
+   :width: 60%
+   :show-code: true
+
+   gmt begin example2
+      gmt basemap -Rg -JG120/30N/10c -Bg
+      gmt coast -Gbrown -Wfaint
+      # 创建多边形边界数据文件，按逆时针顺序给出各个顶点坐标
+      echo 74 4 > tmp.txt
+      echo 135 4 >> tmp.txt
+      echo 135 53 >> tmp.txt
+      echo 74 53 >> tmp.txt
+      # 打开裁剪
+      gmt clip tmp.txt
+      # 画图命令仅在多边形范围内有效：只对范围内陆地填色
+      gmt coast -Gbisque
+      # 关闭裁剪路径
+      gmt clip -C
+      # 绘制边界轮廓
+      gmt plot tmp.txt -W2p,blue -L
+   gmt end show
+
+相关模块
+--------
+
+:doc:`basemap`,
+:doc:`grdmask`,
+:doc:`mask`

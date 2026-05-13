@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>贡献指南 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="prev" title="等值线标注和“线条标注”" href="../contour-annot/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">贡献指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">维护与更新</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">分支模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">构建文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">文档风格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">文件命名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">文件风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">示例风格</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">新增绘图实例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home"></a> &raquo;</li>
+      <li>贡献指南</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/contributing.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>贡献指南<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<p>欢迎 GMT 中文用户参与到 GMT 中文手册的维护与更新中。可以阅读以下指南，以便更快、更有效地参与到文档的维护与更新之中。</p>
+<section id="id2">
+<h2>维护与更新<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>文档的维护与更新主要包括几个方面：</p>
+<ul class="simple">
+<li><p>修正错别字、语句不通等</p></li>
+<li><p>修正文档中的错误或不清晰的描述</p></li>
+<li><p>修正 reStructuredText 文件语法错误导致的显示问题</p></li>
+<li><p>调整章节结构，使文档条理更清晰</p></li>
+<li><p>翻译、整理更多模块的文档</p></li>
+<li><p>增加示例与入门教程</p></li>
+</ul>
+<p>可以通过如下几种方式参与文档的维护与更新：</p>
+<ol class="arabic simple">
+<li><p>修改文档源码并提交 <a class="reference external" href="https://github.com/gmt-china/GMT_docs/pulls">Pull Request</a>
+（不熟悉 Pull Request 的读者可以参考 <a class="reference external" href="https://seismo-learn.org/contributing/pull-request/">Pull Request 流程</a>）</p></li>
+<li><p>在 GitHub 上的文档源码仓库下提交 <a class="reference external" href="https://github.com/gmt-china/GMT_docs/issues">Issue</a></p></li>
+<li><p>在网页底部评论区留言</p></li>
+<li><p>在 GitHub 上的文档源码仓库下的 Discussions 上留言（也可以直接点击文档网页左下角的“参与讨论”）</p></li>
+<li><p>发送相关建议或投稿至 <a class="reference external" href="mailto:admin&#37;&#52;&#48;gmt-china&#46;org">admin<span>&#64;</span>gmt-china<span>&#46;</span>org</a></p></li>
+</ol>
+</section>
+<section id="id3">
+<h2>分支模型<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>GitHub 上托管的文档仓库中存在如下长期分支：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code>: 主分支，对应 GMT6 最新版本的文档源码，所有绘图命令均使用现代模式</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5.4</span></code>: 对应 GMT5 版本的文档，所有绘图命令均使用经典模式 (该分支已不再维护)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>: 存放文档网页的分支，自动更新，无需人工修改</p></li>
+</ul>
+<p>其它分支均属于短期分支，在合并到 <code class="docutils literal notranslate"><span class="pre">master</span></code> 分支后会删除。</p>
+</section>
+<section id="id4">
+<h2>构建文档<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>本文档使用基于 Python 的文档生成工具 <a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a> 构建得到。读者可以按照如下步骤在自己的计算机上构建网站。</p>
+<ol class="arabic">
+<li><p>安装 <a class="reference external" href="https://seismo-learn.org/software/anaconda/">Anaconda</a>
+（用于科学计算的 Python 发行版）</p></li>
+<li><p>下载文档源码</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 克隆源码，并进入源码目录</span>
+$ git clone --depth<span class="o">=</span><span class="m">100</span> https://github.com/gmt-china/GMT_docs.git
+$ <span class="nb">cd</span> GMT_docs
+</pre></div>
+</div>
+</li>
+<li><p>安装 Sphinx 等文档所需依赖</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>编译生成 HTML 格式的文档</p>
+<p>执行以下命令即可编译生成 HTML 格式的文档（生成的文档位于 <code class="file docutils literal notranslate"><span class="pre">build/html/</span></code> 目录）。直接用浏览器打开 <code class="file docutils literal notranslate"><span class="pre">build/html/index.html</span></code> 即可在本地预览。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make html
+</pre></div>
+</div>
+</li>
+<li><p>编译生成 PDF 格式的文档</p>
+<p>编译 PDF 文档需要先安装 TeXLive：</p>
+<ul class="simple">
+<li><p>Linux 用户：参考 <a class="reference external" href="http://blog.seisman.info/texlive-install">http://blog.seisman.info/texlive-install</a></p></li>
+<li><p>macOS 用户：直接执行 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">install</span> <span class="pre">mactex-no-gui</span></code> 安装 mactex</p></li>
+</ul>
+<p>安装好 TeXLive 后，执行以下命令即可编译生成 PDF 格式的文档（即 <code class="file docutils literal notranslate"><span class="pre">build/latex/GMT_docs.pdf</span></code>）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make latexpdf
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id5">
+<h2>文档风格<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<section id="id6">
+<h3>文件命名<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<p>每个源文件都会被转换成一个单独的网页。因而，确定文件名时应慎重，一旦确定，尽量不要再改动。由于 Windows 不区分文件名大小写，故而 <code class="file docutils literal notranslate"><span class="pre">option-B.rst</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">option-b.rst</span></code>
+在 Windows 下会出现冲突。我们使用的文件的命名规则是：</p>
+<ul class="simple">
+<li><p>文件名一律采用小写字母</p></li>
+<li><p>文件名应尽量使用单词全称，避免使用各种形式的简写</p></li>
+<li><p>若文件名中含多个单词，应使用连字符 (hyphen) <kbd class="kbd docutils literal notranslate">-</kbd> 连接</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>文件风格<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<ol class="arabic simple">
+<li><p>所有教程均采用 <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>
+语言编写，可参考 <a class="reference external" href="https://seismo-learn.org/contributing/restructuredtext/">reStructuredText 备忘单</a>
+学习其常用语法。</p></li>
+<li><p>reStructuredText 文档的一级标题、二级标题和三级标题，分别用 <code class="docutils literal notranslate"><span class="pre">=</span></code>、<code class="docutils literal notranslate"><span class="pre">-</span></code> 和 <code class="docutils literal notranslate"><span class="pre">^</span></code>
+符号标识</p></li>
+<li><p>所有 Bash 命令前应加上 Shell 提示符 <code class="docutils literal notranslate"><span class="pre">$</span></code> 以表示该命令为 Shell 命令</p></li>
+<li><p>中文字符与英文字符和数字之间应加上空格，如 <code class="docutils literal notranslate"><span class="pre">中文</span> <span class="pre">ABC</span> <span class="pre">中文</span></code> 而非 <code class="docutils literal notranslate"><span class="pre">中文ABC中文</span></code>，
+<code class="docutils literal notranslate"><span class="pre">中文</span> <span class="pre">123</span> <span class="pre">中文</span></code> 而非 <code class="docutils literal notranslate"><span class="pre">中文123中文</span></code></p></li>
+<li><p>标点符号采用全角，如 <code class="docutils literal notranslate"><span class="pre">，</span></code>、<code class="docutils literal notranslate"><span class="pre">。</span></code>、<code class="docutils literal notranslate"><span class="pre">：</span></code>、<code class="docutils literal notranslate"><span class="pre">、</span></code>、<code class="docutils literal notranslate"><span class="pre">？</span></code> 等。标点符号与中文字符、英文字符以及数字之间不需加空格。</p></li>
+<li><p>使用 UTF8 编码和 Linux 换行符</p></li>
+<li><p>图片应在保证清晰度的前提下尽可能小</p></li>
+</ol>
+</section>
+<section id="id8">
+<h3>示例风格<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>示例脚本尽量使用 Bash，非必须请勿使用 Perl、Python 等</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code> 分支中的所有脚本均使用现代模式</p></li>
+<li><p>所有脚本至少需要生成 PNG 格式的图片，建议使用 PNG、PDF 生成两种格式的图片，别供网页版和 PDF 版使用</p></li>
+<li><p>所有脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span> <span class="pre">show</span></code> 结尾</p></li>
+<li><p>示例中加入必要的注释，用于说明某个代码段、某个命令选项的功能及其他重要信息，但尽量使用简单英文，更复杂的说明应考虑写到正文中</p></li>
+<li><p>若一行命令太长，可使用反斜杠换行，并且脚本的行数要尽量小</p></li>
+<li><p>需要缩进时，应使用四个空格</p></li>
+</ul>
+<p>文档使用 Sphinx 扩展 <a class="reference external" href="https://github.com/GenericMappingTools/sphinx_gmt">sphinx_gmt</a>
+提供的 <code class="docutils literal notranslate"><span class="pre">gmtplot</span></code> 指令自动执行脚本生成图片，同时将图片插入到文档中。该指令的常用选项有：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code>： 图片在网页中的宽度（建议使用百分比表示，如 <code class="docutils literal notranslate"><span class="pre">100%</span></code>）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption</span></code>：图片标题</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show-code</span></code>：表示是否显示代码（<code class="docutils literal notranslate"><span class="pre">true</span></code> 或 <code class="docutils literal notranslate"><span class="pre">false</span></code>）</p></li>
+</ul>
+<p>该指令用法有两种：行内模式（直接在文档中写绘图代码）和脚本模式（将绘图代码写在脚本中）。</p>
+<p><strong>行内模式</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.. gmtplot::
+    :caption: 图片标题
+    :width: <span class="m">80</span>%
+
+    gmt begin map png,pdf
+    gmt basemap -JX10c/10c -R0/10/0/10 -Baf
+    gmt end show
+</pre></div>
+</div>
+<p><strong>脚本模式</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.. gmtplot:: /scripts/psmeca_ex1.sh
+    :width: <span class="m">80</span>%
+
+    图片标题
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h2>新增绘图实例<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+<p>社区绘图实例都位于 <code class="file docutils literal notranslate"><span class="pre">source/examples/</span></code> 目录下，每个文件夹包含一个实例，从 <code class="file docutils literal notranslate"><span class="pre">ex001</span></code> 开始顺序编号。例如，实例 1 的文件夹为 <code class="file docutils literal notranslate"><span class="pre">source/examples/ex001/</span></code>，该文件夹下需要包含如下信息：</p>
+<ol class="arabic simple">
+<li><p>描述文件 <code class="file docutils literal notranslate"><span class="pre">index.rst</span></code>（必须）</p></li>
+<li><p>Bash 绘图脚本，如 <code class="file docutils literal notranslate"><span class="pre">ex001.sh</span></code>（必须）</p></li>
+<li><p>绘图所需数据 <code class="file docutils literal notranslate"><span class="pre">xxx.dat</span></code> （可选，数据应尽量小）</p></li>
+</ol>
+<p>简要描述绘图意义、所用核心模块的关键语法以及绘图必需的数据等。新增实例时，请参考<a class="reference internal" href="#id5">文档风格</a>和已有的<a class="reference internal" href="../examples/"><span class="doc">社区绘图实例</span></a>。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../contour-annot/" class="btn btn-neutral float-left" title="等值线标注和“线条标注”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

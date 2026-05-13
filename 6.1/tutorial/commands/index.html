@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>命令初探 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="脚本编程" href="../scripting/" />
+    <link rel="prev" title="GMT初探: Windows篇" href="../get-started/windows/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/">GMT初探</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">命令初探</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">GMT绘图脚本模板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">绘制第一张图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">GMT命令格式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/">脚本编程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coastline/">绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">绘制线段和多边形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/">添加文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT多图模式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">入门教程</a> &raquo;</li>
+        
+      <li>命令初探</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/tutorial/commands.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>命令初探<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>上一节我们使用GMT绘制了第一张图，但是没有对其中的细节做任何介绍。这一节我们将简单介绍一下GMT的命令。</p>
+<div class="section" id="gmt">
+<h2>GMT绘图脚本模板<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<p>GMT在绘图时，总是以 <a class="reference internal" href="../../module/begin/"><span class="doc">begin</span></a> 开始，并以 <a class="reference internal" href="../../module/end/"><span class="doc">end</span></a> 结束。所有的<strong>绘图命令</strong>都放在 <strong>begin</strong> 与 <strong>end</strong> 之间，而非绘图命令可以放在任何地方。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>GMT老用户可能会对此比较陌生。</p>
+<p>GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称之为现代模式。GMT5及之前的命令风格称之为经典模式。GMT6既支持经典模式也支持现代模式。现代模式与经典模式可以完成相同的绘图功能，但现代模式大大简化了绘图代码，并极大避免了用户最容易出错的地方，因而推荐用户使用现代模式而非经典模式。</p>
+<p>本手册将只使用现代模式，而不介绍经典模式。GMT新用户只需要按照本手册直接学习现代模式即可；对于GMT老用户，建议阅读 <a class="reference internal" href="../../migrating/classic2modern/"><span class="doc">经典模式 → 现代模式</span></a>
+或者观看视频教程 <a class="reference external" href="https://www.bilibili.com/video/av73835957">GMT6新特性</a>，并开始使用现代模式进行绘图。</p>
+</div>
+<p>在前一节中我们使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--new-script</span></code> 命令生成一个绘图模板。忽略掉绘图模板中的注释语句，一个最最基本的GMT绘图脚本的模板是:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+<span class="c1">#</span>
+<span class="c1"># 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令</span>
+<span class="c1">#</span>
+gmt end
+</pre></div>
+</div>
+<p>你可以直接执行这个脚本，但是因为这里什么命令也没用，所以这个脚本不会生成任何图片。</p>
+<p>绘图时我们通常需要指定图片文件名和图片格式，因而更实用的绘图脚本模板为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin FigureName pdf
+<span class="c1">#</span>
+<span class="c1"># 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令</span>
+<span class="c1">#</span>
+gmt end show
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>FigureName</em> 指定了要生成的图片文件名，你可以指定任意文件名，但最好避免在文件名中使用特殊符号和空格。若不给定文件名，则默认文件名为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code></p></li>
+<li><p>紧跟在图片文件名后的 <strong>pdf</strong> 指定了要生成的图片格式（若不指定格式，则默认图片格式为PDF）。GMT支持多种图片格式，pdf、ps、eps、jpg、png、bmp等等。若想要一次性生成多种格式的图片，则可以使用逗号将多种格式连接起来，如 <strong>pdf,png</strong> 会同时生成PDF和PNG格式的图片</p></li>
+<li><p><strong>gmt end</strong> 后面加上 <strong>show</strong>，则GMT会在绘图完成后，使用系统自带的阅读器软件自动打开生成的图片文件，供用户预览绘图效果</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>绘制第一张图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在GMT绘图脚本模板的基础上，向 <strong>begin</strong> 和 <strong>end</strong> 语句中间加入正确的GMT绘图命令，即可实现用GMT绘图。</p>
+<p>下面的脚本使用 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 绘制了一张全球地图。执行该脚本，会生成文件名为 <code class="file docutils literal notranslate"><span class="pre">GlobalMap</span></code>、格式为PNG和PDF的图片文件，并且GMT会在绘图结束后自动打开生成的图片文件。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GlobalMap png,pdf
+    gmt coast -Rg -JH15c -Gpurple -Baf -B+t<span class="s2">&quot;My First Plot&quot;</span>
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/commands-gmtplot-0.png"><img alt="../../_images/commands-gmtplot-0.png" src="../../_images/commands-gmtplot-0.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">使用GMT绘制的第一张图</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>不理解 <strong>gmt coast</strong> 这一行命令的含义？没关系，稍后会详细介绍。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>想了解 <strong>gmt coast</strong> 的具体用法？打开终端，敲入 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">docs</span> <span class="pre">coast</span></code>，GMT会自动帮你打开 <strong>coast</strong> 模块的说明文档。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>GMT命令格式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>一个GMT命令通常由 <strong>gmt</strong> + <strong>模块名</strong> + <strong>选项</strong> + <strong>参数</strong> 构成。比如上面的例子中:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JH15c -Gpurple -Baf -B+t<span class="s2">&quot;My First Plot&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>所有的GMT命令都需要以 <strong>gmt</strong> 开头</p></li>
+<li><p><strong>coast</strong> 是模块名，这个模块可以用于绘制海岸线</p></li>
+<li><p><strong>-R</strong>、<strong>-J</strong>、<strong>-G</strong>、<strong>-B</strong>等以 <strong>-</strong> 开头的是模块的选项</p></li>
+<li><p><strong>-Baf</strong> 中 <strong>af</strong> 是 <strong>-B</strong> 选项的参数</p></li>
+<li><p><strong>-B+t</strong>“My First Plot” 中 <strong>+t</strong> 为 <strong>-B</strong> 的子选项，“My First Plot” 则是子选项 <strong>+t</strong> 的参数</p></li>
+</ul>
+<p>关于GMT命令的几点说明：</p>
+<ul class="simple">
+<li><p>若模块名以 <strong>gmt</strong> 开头，则模块名中的 <strong>gmt</strong> 可省略。比如 <strong>gmt gmtset xxx xxx</strong> 可简写为 <strong>gmt set xxx xxx</strong></p></li>
+<li><p>模块名、选项等均区分大小写</p></li>
+<li><p>选项以 <strong>-</strong> 开头，后接<strong>单个字符</strong>表示某个选项，字符后接选项的参数以及子选项</p></li>
+<li><p>子选项以 <strong>+</strong> 开头，后接<strong>单个字符</strong>以及子选项的参数</p></li>
+<li><p>不以 <strong>-</strong> 开头的参数，通常都会被当做文件，GMT会尝试去读取</p></li>
+<li><p>各选项间以空格分隔，选项内部不能有空格。选项内部的字符串中若存在空格，在Bash下可以使用单引号或双引号括起来，而在Windows的Batch下则只能使用双引号。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../scripting/" class="btn btn-neutral float-right" title="脚本编程" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../get-started/windows/" class="btn btn-neutral float-left" title="GMT初探: Windows篇" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
