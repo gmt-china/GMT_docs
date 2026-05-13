@@ -130,8 +130,6 @@ gmt get -Ddata=earth_relief -I1m
 
 更多功能，见 {doc}`/module/get` 模块文档。
 
-(setup-database)=
-
 ## 工作原理及技术细节
 
 经过一些数据处理，GMT官方把一些公开数据处理成不同分辨率、不同配准方式的数据，
