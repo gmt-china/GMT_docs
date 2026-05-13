@@ -36,8 +36,6 @@ WSM/index
 - 美国地质图：<https://mrdata.usgs.gov/geology/state/>
 - 全球布格重力异常：<https://bgi.obs-mip.fr/grids-and-models-2/>
 
-
-(setup-database)=
 **建立数据库**
 
 对于 GMT 中文社区维护的或用户自有的数据，用户可选择创建数据库以方便使用。
