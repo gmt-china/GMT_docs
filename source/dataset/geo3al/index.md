@@ -1,6 +1,6 @@
 ---
-author: 徐弥坚, 陈箫翰, 刘珠妹, 田冬冬, 姚家园
-date: 2026-01-19
+author: 徐弥坚, 陈箫翰, 刘珠妹, 田冬冬, 姚家园, 何星辰
+date: 2026-02-12
 ---
 
 # geo3al: 中国及邻区地质图数据
@@ -41,7 +41,7 @@ Windows 用户请下载数据 {file}`china-geospatial-data-GB2312.zip`（GB2312 
 - 岩性从数据的 `TYPE` 属性中提取，用不同的填充图案表示
 
 示例代码中使用的地质年代 CPT 色标文件 {download}`geoage.cpt </dataset/geo3al/geoage.cpt>`
-修改自 [GTS2012_epochs](http://seaviewsensing.com/pub/cpt-city/heine/GTS2012_epochs.cpt)。
+修改自 [GTS2012_epochs](https://phillips.shef.ac.uk/pub/cpt-city/resource/schemes/439881)。
 
 ```{eval-rst}
 .. gmtplot:: geo3al.sh

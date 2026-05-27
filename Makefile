@@ -35,7 +35,7 @@ pdf: latex
 
 # reduce file size of the final PDF documentation
 optimize_pdf: pdf
-	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress \
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=2.0 -dPDFSETTINGS=/prepress \
 		-dNOPAUSE -dQUIET -dBATCH \
 		-sOutputFile=$(BUILDDIR)/$(DOCNAME).optimized.pdf \
 		$(BUILDDIR)/$(DOCNAME).pdf
