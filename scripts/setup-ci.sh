@@ -17,6 +17,7 @@
 # Create the ~/.gmt directory if not exist
 mkdir -p ~/.gmt
 
+gmt set GMT_DATA_SERVER https://opentopography.s3.sdsc.edu/gmtdata/
 # 1. Download the GMT remote datasets used in the docs
 gmt which -Ga @earth_relief_30m_g \
             @earth_relief_30m_p \
@@ -76,7 +77,7 @@ git clone --depth 1 https://github.com/CovMat/google-map-downloader.git google-m
 mv google-map-downloader/example_tif/*.tif ~/.gmt/cache/
 rm -rf google-map-downloader
 
-# 4.3 
+# 4.3
 # global_vs30 (module/grdshake/)
 # SAC files (module/sac/)
 # WSM_Database_2025.csv (dataset/WSM_2025)
