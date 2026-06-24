@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>colorbar &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script defer="defer" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="contour" href="../contour/" />
+    <link rel="prev" title="coast" href="../coast/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">colorbar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>colorbar</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/colorbar.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="colorbar">
+<h1>colorbar<a class="headerlink" href="#colorbar" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/colorbar.html" title="(在 GMT v6.2)"><span>colorbar</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>在地图上绘制灰色或彩色色条</p>
+</dd>
+</dl>
+<p><strong>gmt colorbar</strong>
+[ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>refpoint</em> ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>panel</em> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>zlo</em>/<em>zhi</em> ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>max_intens</em>|<em>low_i</em>/<em>high_i</em>] ]
+[ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><strong>z</strong>|<strong>Z</strong><em>parameters</em> ]
+[ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>i</strong>][<em>gap</em>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<strong>p</strong>|<em>dpi</em> ]]
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong> ]
+[ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>scale</em> ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>zfile</em> ]
+[ <strong>-p</strong><a class="reference internal" href="../../option/p/"><span class="doc">flags</span></a> ]
+[ <strong>-t</strong><a class="reference internal" href="../../option/t/"><span class="doc">transp</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+<section id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>无</p>
+</section>
+<section id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<dl id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em></dt><dd><p>设置colorbar的标注、刻度和网格线间隔。</p>
+<p>在不使用 <strong>-B</strong> 选项或不指定标注间隔时，默认会根据CPT文件中每一行的内容对colorbar进行标注，具体见 <a class="reference internal" href="../../cpt/"><span class="doc">颜色表 CPT</span></a>。<strong>-B</strong> 选项的具体说明见 <a class="reference internal" href="../../option/B/"><span class="doc">-B 选项</span></a>。</p>
+<p>默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
+colorbar的右边；对于垂直colorbar而言，X轴的标签放在colorbar的右边，Y轴标签放在colorbar的上边。除非在 <strong>-D</strong> 选项中使用了 <strong>+m</strong> 子选项。</p>
+</dd>
+</dl>
+<dl id="c">
+<dt><strong>-C</strong>[<em>cpt</em>]</dt><dd><p>要绘制的CPT文件。</p>
+<p>若CPT中Z值范围单位为米，而实际绘图时想使用其它单位，则可在文件名后加上 <strong>+U</strong><em>unit</em>。若CPT中Z值范围单位不为米，而实际绘图中想使用米为单位，则可在文件名后加上 <strong>+u</strong><em>unit</em>。</p>
+<p>对于现代模式，若未指定 <em>cpt</em> 或者未使用 <strong>-C</strong> 选项，则使用当前CPT。经典模式下，若未指定 <strong>-C</strong> 则从标准输入中读入CPT。</p>
+</dd>
+<dt><strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>[<strong>+w</strong><em>length</em>[/<em>width</em>]][<strong>+e</strong>[<strong>b</strong>|<strong>f</strong>][<em>length</em>]][<strong>+h</strong>|<strong>v</strong>][<strong>+j</strong><em>justify</em>][<strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]][<strong>+n</strong>[<em>txt</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt><dd><p>指定色标的尺寸和位置。</p>
+<p>简单介绍各子选项的含义，详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">修饰物</span></a></p>
+<ul class="simple">
+<li><p><strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>指定地图上的参考点</p>
+<ul>
+<li><p><strong>g</strong><em>lon</em>/<em>lat</em> 指定<a class="reference internal" href="../../basis/embellishment/#refpoint-g"><span class="std std-ref">数据坐标</span></a>为参考点</p></li>
+<li><p><strong>j</strong><em>code</em> 或者 <strong>J</strong><em>code</em> 通过 2 个字母的对齐方式码指定<a class="reference internal" href="../../basis/embellishment/#refpoint-j"><span class="std std-ref">锚点</span></a>作为参考点</p></li>
+<li><p><strong>n</strong><em>xn</em>/<em>yn</em> 指定<a class="reference internal" href="../../basis/embellishment/#refpoint-n"><span class="std std-ref">归一化坐标系</span></a>（即 0-1）为参考点</p></li>
+<li><p><strong>x</strong><em>x</em>/<em>y</em> 指定<a class="reference internal" href="../../basis/embellishment/#refpoint-x"><span class="std std-ref">绘图坐标</span></a> 为参考点，追加 <strong>c</strong>m, <strong>i</strong>nch, 或者 <strong>p</strong>oint 用来指定单位</p></li>
+</ul>
+</li>
+<li><p><strong>+j</strong><em>justify</em> 指定色标上的锚点，默认锚点是 <strong>BL</strong></p></li>
+<li><p><strong>+o</strong><em>dx</em>/<em>dy</em> 在参考点的基础上设置色标的额外偏移量</p></li>
+<li><p><strong>+w</strong><em>length</em>[/<em>width</em>] 指定色标的长度和宽度。若未指定宽度，则默认为长度的4%；若长度为负值则会反转色标。</p></li>
+<li><p><strong>+h</strong> 绘制水平色标</p></li>
+<li><p><strong>+v</strong> 绘制垂直色标</p></li>
+<li><p><strong>+e</strong>[<strong>b</strong>|<strong>f</strong>][<em>length</em>] 在CPT中为前景色和背景色加一个三角形。
+<strong>+ef</strong> 表示只加前景色三角形，
+<strong>+eb</strong> 表示只加背景色三角形
+<em>length</em> 是三角的高度，默认为色标宽度的一半。</p></li>
+<li><p><strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>] 将标注、标签和单位放在色标的另一边。
+<strong>a</strong> 代表标注，
+<strong>l</strong> 代表标签，
+<strong>u</strong> 代表单位。
+<strong>c</strong> 表示将标签以单列字符垂直打印。</p></li>
+<li><p><strong>+n</strong><em>text</em> 在色标开始处绘制一个矩形，并用NaN的颜色填充</p></li>
+</ul>
+<p>几种常用的放置色标的方式：</p>
+<ul class="simple">
+<li><p>放在左边: <strong>-DjML+w2c/0.5c+o-1c/0c+m</strong></p></li>
+<li><p>放在右边: <strong>-DjMR+w2c/0.5c+o-1c/0c</strong></p></li>
+<li><p>放在上方: <strong>-DjTC+w2c/0.5c+o0c/-1c+m</strong></p></li>
+<li><p>放在下方: <strong>-DjBC+w2c/0.5c+o0c/-1c+m</strong></p></li>
+<li><p>放在左上角: <strong>-DjTL+w2c/0.5c+o-1c/0c+m</strong></p></li>
+<li><p>放在左下角: <strong>-DjBL+w2c/0.5c+o-1c/0c+m</strong></p></li>
+<li><p>放在右上角: <strong>-DjTR+w2c/0.5c+o-1c/0c</strong></p></li>
+<li><p>放在右下角: <strong>-DjBR+w2c/0.5c+o-1c/0c</strong></p></li>
+</ul>
+</dd>
+</dl>
+<dl id="f">
+<dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt><dd><p>控制色标后的背景边框</p>
+<p>若只使用 <strong>-F</strong> 而不使用其它子选项，则会在色标周围绘制矩形边框。下面简单介绍各子选项，详细用法见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">修饰物</span></a></p>
+<ul class="simple">
+<li><p><strong>+g</strong><em>fill</em> 指定面板填充<a class="reference internal" href="../../basis/color/"><span class="doc">颜色</span></a> [默认不填充]</p></li>
+<li><p><strong>+p</strong><em>pen</em> 绘制面板边框。<em>pen</em> 为边框的<a class="reference internal" href="../../basis/pen/"><span class="doc">画笔属性</span></a>，若不指定 <em>pen</em>，则默认使用 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a></p></li>
+<li><p><strong>+r</strong>[<em>radius</em>] 绘制圆角边框，<em>radius</em> 为圆角的半径</p></li>
+<li><p><strong>+i</strong>[[<em>gap</em>/]<em>pen</em>] 在边框内部绘制一个内边框，<em>gap</em> 为内外边框空白距离 [默认为 <em>2p</em>]，
+<em>pen</em> 为内边框的画笔属性 [默认使用 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>]</p></li>
+<li><p><strong>+c</strong><em>clearance</em> 设置<a class="reference internal" href="../../basis/embellishment/"><span class="doc">修饰物</span></a>与面板之间的空白距离。默认情况下面板的大小由修饰物的大小决定，使用该子选项可以为面板增加额外的尺寸。
+<em>clearance</em> 的具体设置包括下面 3 种情况：</p>
+<ul>
+<li><p><em>gap</em> 为四个方向增加相同的空白距离</p></li>
+<li><p><em>xgap</em>/<em>ygap</em> 分别为 X 方向和 Y 方向指定不同的空白距离</p></li>
+<li><p><em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> 分别为四个方向指定不同的空白距离</p></li>
+</ul>
+</li>
+<li><p><strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]] 设置面板背景阴影。<em>dx</em>/<em>dy</em> 为阴影区相对于面板的偏移量，
+<em>shade</em> 为阴影区颜色 [默认为 <strong>4p</strong>/<strong>-4p</strong>/<strong>gray50</strong>]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>zlow</em>/<em>zhigh</em></dt><dd><p>对CPT文件做截断，即只绘制 <em>zlow</em> 到 <em>zhigh</em> 之间的部分。若其中某个值等于NaN，则不对CPT的那一端做处理。</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<em>max_intens</em>|<em>low_i</em>/<em>high_i</em>]</dt><dd><p>为色标加上光照效果</p>
+<ul class="simple">
+<li><p><strong>-I</strong><em>max_intens</em> 设置光照强度为 [-<em>max_intens</em>, +<em>max_intens</em>]，默认值为[-1,+1]</p></li>
+<li><p><strong>-I</strong><em>low_i</em>/<em>high_i</em> 指定非对称的光照强度范围</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt><dd><p>设置地图投影方式</p>
+</dd>
+</dl>
+<dl id="l">
+<dt><strong>-L</strong>[<strong>i</strong>][<em>gap</em>]</dt><dd><p>生成等大小的颜色矩形。</p>
+<p>默认情况下，会根据CPT文件中Z值的范围决定颜色矩形的大小。若使用该选项，则会忽略 <strong>-B</strong> 选项设置的间隔。若指定了 <em>gap</em> 且CPT文件是离散的，则使用每个矩形的Z值下边界作为标注且将标注放在矩形的正中间。若使用了 <strong>i</strong> 则标注每个间隔范围。若使用了 <strong>-I</strong> 选项，则每个矩形有自己的颜色以及自己的光照强度。</p>
+</dd>
+</dl>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>使用YIQ变换将色标变成单调灰度色标</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<strong>p</strong>|<em>dpi</em>]</dt><dd><p>控制色标的图形表示方式</p>
+<ul class="simple">
+<li><p><strong>-Np</strong> 用颜色矩形来表示（比如离散的颜色）</p></li>
+<li><p><strong>-N</strong> 用图形表示（比如连续的颜色），可以加上 <em>dpi</em> 指定绘制色标时的等效DPI，默认值为600</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="q">
+<dt><strong>-Q</strong></dt><dd><p>使用对数坐标，刻度表示为10的次幂</p>
+<p>CPT文件中所有的Z值都会被转换成 <span class="math notranslate nohighlight">\(p = \log10(z)\)</span>，其中整数的p会以10^p的格式标注。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-S</strong></dt><dd><p>去除不同色块之间的黑色网格线</p>
+</dd>
+</dl>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../option/U/"><span class="doc">(more …)</span></a></dt><dd><p>在图上绘制GMT时间戳logo</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>scale</em></dt><dd><p>将CPT文件中所有的Z值乘以比例因子 <em>scale</em></p>
+</dd>
+</dl>
+<p id="y"><span id="x"></span><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../option/XY/"><span class="doc">(more …)</span></a></dt><dd><p>移动绘图原点</p>
+</dd>
+</dl>
+<dl id="z">
+<dt><strong>-Z</strong><em>zfile</em></dt><dd><p><em>zfile</em> 文件用于指定每个颜色块的宽度。</p>
+<p>默认情况下，颜色块的宽度由颜色的Z值范围决定，比如Z=0-100对应的色块宽度是
+Z=100-150的色块宽度的两倍。</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../option/p/"><span class="doc">(more …)</span></a></dt><dd><p>设置3D透视视角</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../option/t/"><span class="doc">(more …)</span></a></dt><dd><p>设置图层透明度（百分比）。取值范围为0（不透明）到100（全透明）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/gmt.conf.html" title="(在 GMT v6.2)"><span class="xref std std-doc">gmt.conf</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
+gmt makecpt -T-200/1000/100 -Crainbow
+gmt colorbar -C -Dx8c/1c+w12c/0.5c+jTC+h -Bxaf+l<span class="s2">&quot;topography&quot;</span> -By+lkm
+gmt end
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>相关模块<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p><a class="reference internal" href="../makecpt/"><span class="doc">makecpt</span></a>
+<a class="reference internal" href="../gmtlogo/"><span class="doc">gmtlogo</span></a>,
+<a class="reference internal" href="../grd2cpt/"><span class="doc">grd2cpt</span></a>
+<a class="reference internal" href="../image/"><span class="doc">image</span></a>,
+<a class="reference internal" href="../legend/"><span class="doc">legend</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../coast/" class="btn btn-neutral float-left" title="coast" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../contour/" class="btn btn-neutral float-right" title="contour" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

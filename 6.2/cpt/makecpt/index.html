@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>制作CPT &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script defer="defer" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="使用CPT" href="../usage/" />
+    <link rel="prev" title="内置CPT" href="../builtin-cpt/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">颜色表 CPT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">CPT类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">内置CPT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">制作CPT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">周期性CPT文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">动态CPT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../current-cpt/">当前CPT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">颜色表 CPT</a> &raquo;</li>
+      <li>制作CPT</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/cpt/makecpt.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cpt">
+<h1>制作CPT<a class="headerlink" href="#cpt" title="永久链接至标题"></a></h1>
+<p>GMT模块 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 和 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/grd2cpt.html" title="(在 GMT v6.2)"><span>grd2cpt</span></a> 可以内置CPT文件为基础，针对用户自己的数据制作专门的CPT文件；也可以将用户自定义CPT重新调整为一个新的范围、颜色倒转甚至屏蔽部分颜色的新色标文件。比如某个内置CPT文件定义了从0到1颜色从蓝色变成红色，用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 可以制作一个从1000到3000颜色从蓝色变成红色的CPT文件。不同的是，
+<a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 常用于已知极值范围的表数据，而 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/grd2cpt.html" title="(在 GMT v6.2)"><span>grd2cpt</span></a> 常用于将cpt适用于一个或多个格网数据。此外，两者均可通过以下方式翻转颜色：</p>
+<ol class="arabic simple">
+<li><p>利用 <code class="docutils literal notranslate"><span class="pre">-Iz</span></code> 选项倒转CPT的z值指向（不包括前景色、背景色）。用于数据的正负颜色表示和惯例不符的情况（比如用正值表示海平面以下的深度，而不是惯常的负高程）。</p></li>
+<li><p>利用 <code class="docutils literal notranslate"><span class="pre">-Ic</span></code> 选项翻转颜色的顺序，包括前景色和背景色（与 <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> 的宽度设为负值效果一致）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Icz</span></code> 表示以上两种效果的叠加，即颜色顺序不变，只调转了前景色和背景色</p></li>
+<li><p>利用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项提取主CPT的一部分颜色</p></li>
+<li><p>最后，将初始的内置CPT或修改后的CPT拉伸为自定义数据范围</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="nv">SIZE</span><span class="o">=</span>w15c/0.25c
+
+gmt begin cpt_4 pdf,png
+gmt makecpt -Chaxby -T-10/10/1 -H &gt; Icpt.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Iz &gt; Icpt_z.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Ic &gt; Icpt_c.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Icz &gt; Icpt_cz.cpt
+
+gmt plot -R1/10/1/10 -JX20c -T
+
+gmt colorbar -CIcpt.cpt   -Dn0.5/0.25+jCM+<span class="nv">$SIZE</span>+h+e+n -B+l<span class="s2">&quot;Master CPT&quot;</span>
+gmt colorbar -CIcpt_c.cpt -Dn0.5/0.4+jCM+<span class="nv">$SIZE</span>+h+e+n  -B+l<span class="s2">&quot;-Ic&quot;</span>
+gmt colorbar -CIcpt_z.cpt -Dn0.5/0.55+jCM+<span class="nv">$SIZE</span>+h+e+n -B+l<span class="s2">&quot;-Iz&quot;</span>
+gmt colorbar -CIcpt_cz.cpt -Dn0.5/0.7+jCM+<span class="nv">$SIZE</span>+h+e+n -B+l<span class="s2">&quot;-Icz&quot;</span>
+
+rm Icpt*.cpt
+gmt end
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../../_images/makecpt-gmtplot-0.png" src="../../_images/makecpt-gmtplot-0.png" />
+</figure>
+<p>注：这些CPT的调整选项顺序也是有优先级的。比如 <code class="docutils literal notranslate"><span class="pre">-Iz</span></code> 使用后，所有其他的更改都是基于z值反向的前提进行的。</p>
+<p>CPT文件可以在 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a>、<a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>、<a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/plot3d.html" title="(在 GMT v6.2)"><span>plot3d</span></a>
+等命令中使用。通常，你可以使用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 或 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/grd2cpt.html" title="(在 GMT v6.2)"><span>grd2cpt</span></a>
+对已有的CPT（比如GMT内置的CPT）文件进行重采样，并适应你目前所使用的数据范围。当然，也可以自己手写CPT文件，或使用 <code class="docutils literal notranslate"><span class="pre">awk</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">perl</span></code> 之类的文本处理工具自动生成CPT文件。由于GMT中可以用多种方式来指定颜色，因而GMT自带的或用户自己的CPT文件中通常含有如下注释语句:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># COLOR_MODEL = model</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">model</span></code> 可以取 RGB、hsv、cmyk，其指定了CPT文件中的颜色要如何进行解释。</p>
+<section id="id1">
+<h2>周期性CPT文件<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>有一类特殊的CPT文件称之为周期性CPT文件。对于这类CPT文件而言，GMT在根据Z值查找对应的颜色时，会首先从Z值中减去CPT文件中Z值范围的整数倍，使得Z值永远落在CPT
+文件所指定的范围内。这意味着此类CPT文件没有前景色和背景色。</p>
+<p>比如，现在有一个周期性CPT文件，其定义了Z值范围在 <span class="math notranslate nohighlight">\(-\pi\)</span> 到 <span class="math notranslate nohighlight">\(\pi\)</span>
+之间的颜色表。若Z值等于 <span class="math notranslate nohighlight">\(3/2\pi\)</span> ，则会取 <span class="math notranslate nohighlight">\(-\pi/2\)</span> 处的值作为其颜色。</p>
+<p>在使用 <code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grd2cpt</span></code> 生成CPT文件时加上 <code class="docutils literal notranslate"><span class="pre">-Ww</span></code> 选项即可生成周期性
+CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CYCLIC</span>
+</pre></div>
+</div>
+<p>GMT在CPT中看到这一注释行时就会将该CPT当作时周期性CPT文件。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/770e389ad85ddf1c67dd05fd11d2a775/makecpt-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<img alt="../../_images/makecpt-gmtplot-1.png" src="../../_images/makecpt-gmtplot-1.png" />
+</figure>
+</section>
+<section id="id2">
+<h2>动态CPT<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>GMT 内置的 CPT 文件都是动态的。</p>
+<p>所有动态CPT文件都按照两种方式中的一种进行了归一化：</p>
+<ol class="arabic">
+<li><p>如果为存在分界（hinge）的区域填色（如地形颜色在高程为0的海岸线处发生非连续的分界）那么CPT的z值在一侧为-1到0；另一侧为0到1；分界线上为0。CPT文件中对分界线的值注释如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># HINGE = &lt;hinge-value&gt;</span>
+</pre></div>
+</div>
+<p>按照这种方式归一化的内置CPT包括 <code class="docutils literal notranslate"><span class="pre">earth</span></code> <code class="docutils literal notranslate"><span class="pre">etopo1</span></code> <code class="docutils literal notranslate"><span class="pre">geo</span></code>  <code class="docutils literal notranslate"><span class="pre">globe</span></code>
+<code class="docutils literal notranslate"><span class="pre">polar</span></code> <code class="docutils literal notranslate"><span class="pre">red2green</span></code> <code class="docutils literal notranslate"><span class="pre">relief</span></code> <code class="docutils literal notranslate"><span class="pre">sealand</span></code> <code class="docutils literal notranslate"><span class="pre">split</span></code> <code class="docutils literal notranslate"><span class="pre">terra</span></code>
+<code class="docutils literal notranslate"><span class="pre">topo</span></code> <code class="docutils literal notranslate"><span class="pre">world</span></code></p>
+</li>
+<li><p>如果不存在颜色的分界，则CPT的z值归一化为0到1之间。实际使用中，CPT的z值会拉伸到用户指定的范围，包括两种拉伸模式：</p>
+<ol class="arabic">
+<li><p>默认指定一个数值范围，实际应用中（如地形渲染）再拉伸到真实值。见CPT文件中的RANGE注释:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># RANGE = &lt;zmin/zmax&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>若未给定范围，则扩展到数据的极限值</p></li>
+</ol>
+</li>
+</ol>
+<p>下图展示了动态的内置CPT如何拉伸适用于用户自定义数据，绘制命令如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin cpt_3 pdf,png
+gmt makecpt -Cglobe -T-8000/3000
+gmt colorbar -C -Baf -Dx0/0+w4.5i/0.1i+h
+gmt colorbar -Cglobe -Baf -Dx0/0+w4.5i/0.1i+h -Y0.5i
+gmt end
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../../_images/makecpt-gmtplot-2.png" src="../../_images/makecpt-gmtplot-2.png" />
+</figure>
+<p>原始的内置CPT（globe，上图）的初始范围为-10000至10000，颜色不连续处的分界值（hinge）为0，小于0的部分为海蓝色系，大于0的部分为大地色系。但实际上，我们要绘制的区域高程值是非对称的，从-8000米到3000米（下图）。由于hinge值的存在，负高程依旧由海蓝色拉伸填充，正高程则由大地色压缩填充。</p>
+<p>注：若要实现hinge分界效果，<code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 命令中的 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项不可设置 <code class="docutils literal notranslate"><span class="pre">/&lt;z_int&gt;</span></code>。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../builtin-cpt/" class="btn btn-neutral float-left" title="内置CPT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../usage/" class="btn btn-neutral float-right" title="使用CPT" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

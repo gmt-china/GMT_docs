@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文字 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="特殊字符" href="../special-character/" />
+    <link rel="prev" title="填充" href="../fill/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">基础知识</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../canvas/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">文字</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">文字大小</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">字体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">填充色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">描边</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">小练习</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/">LaTeX 表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">基础知识</a> &raquo;</li>
+      <li>文字</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/text.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="index-0">
+<span id="id1"></span><h1>文字<a class="headerlink" href="#index-0" title="永久链接至标题"></a></h1>
+<p>文字，也称文本或字符串。主要由三个属性控制：文字大小、字体、颜色。三个属性之间用逗号分隔，即：<em>size</em>,<em>fonttype</em>,<em>fill</em>。</p>
+<p>在模块的语法介绍中，通常使用 <em>font</em> 表示需要用户指定文字属性，用户应自行将其脑补为 <em>size</em>,<em>fonttype</em>,<em>fill</em>。</p>
+<p>三者均是可选的，但先后顺序不可乱。若其中任意一个属性被省略，则使用该属性的默认值。</p>
+<section id="id2">
+<h2>文字大小<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>文字大小，即常说的字号，可以用数字加单位表示。在不指定单位的情况下默认单位为
+<strong>p</strong>，也可加上 <strong>c</strong>、<strong>p</strong> 或者 <strong>i</strong> 显式指定单位，比如 <strong>15p</strong>。</p>
+<p>有些中文期刊可以会有类似“图片标题是四号字”这样的要求，这就需要知道GMT中的字体大小与Microsoft Word中字号大小的对应关系。如下表所示：</p>
+<table class="docutils align-center" id="id7">
+<caption><span class="caption-text">Word字号与GMT中字号(p)对应关系</span><a class="headerlink" href="#id7" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 29%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>字号</p></th>
+<th class="head"><p>p</p></th>
+<th class="head"><p>字号</p></th>
+<th class="head"><p>p</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>初号</p></td>
+<td><p>42</p></td>
+<td><p>小初</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>一号</p></td>
+<td><p>26</p></td>
+<td><p>小一</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>二号</p></td>
+<td><p>22</p></td>
+<td><p>小二</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>三号</p></td>
+<td><p>16</p></td>
+<td><p>小三</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>四号</p></td>
+<td><p>14</p></td>
+<td><p>小四</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>五号</p></td>
+<td><p>10.5</p></td>
+<td><p>小五</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>六号</p></td>
+<td><p>7.5</p></td>
+<td><p>小六</p></td>
+<td><p>6.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>七号</p></td>
+<td><p>5.5</p></td>
+<td><p>八号</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h2>字体<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>GMT默认支持35种标准字体。下图给出了GMT支持的35种字体的名字及对应的编号:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/30ef0a8d67e248805441eb117e041c6e/text-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/text-gmtplot-0.png"><img alt="../../_images/text-gmtplot-0.png" src="../../_images/text-gmtplot-0.png" style="width: 80%;" /></a>
+</figure>
+<p>GMT中可以用字体名（<strong>区分大小写</strong>）或对应的字体编号来指定字体 （比如
+<strong>Helvetica-Bold</strong> 或者 <strong>1</strong>）。上图中给出了每种字体的字体编号以及字体名称。每个字体名称使用的是自己相对应的字体，所以可以从图中直观地看出不同字体的区别。</p>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span> <span class="pre">-L</span></code> 可以在命令行查看GMT所支持的字体及其编号。</p>
+</div>
+<p>图中大多数字体都很直观，比较特别的字体有两个，Symbol（12号）和ZapfDingbats（34号），前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 <a class="reference internal" href="../special-character/"><span class="doc">特殊字符</span></a>。</p>
+</section>
+<section id="id4">
+<h2>填充色<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>可以为文字指定填充色或填充图案，也就是常说的文字颜色。</p>
+<p>在 <a class="reference internal" href="../color/"><span class="doc">颜色</span></a> 和 <a class="reference internal" href="../fill/"><span class="doc">填充</span></a> 一节中我们已经介绍了如何设置填充色和填充图案，其中介绍的内容均可用于设置文本颜色。</p>
+</section>
+<section id="id5">
+<h2>描边<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>在给文字指定填充色的同时，还可以在填充色 <em>fill</em> 后加上 <strong>=</strong><em>pen</em> 以指定文本轮廓（即描边）的画笔属性。画笔属性 <em>pen</em> 的用法见 <a class="reference internal" href="../pen/"><span class="doc">画笔</span></a> 一节。比如 <strong>red=2p,blue</strong> 表示将文字填充为红色，并使用宽度为 <strong>2p</strong> 的蓝色线条给文字描边。若填充色 <em>fill</em> 为 <strong>-</strong>，则不对文字做填充，即实现空心文字的效果。</p>
+<p>使用 <strong>=</strong><em>pen</em> 语法绘制文本轮廓时，轮廓线条有一半宽度位于文字外部，另一半宽度会遮住字体。为了避免这一现象，可以使用 <strong>=~</strong><em>pen</em> 语法，此时在绘制文字轮廓时只绘制文字外部的半个线宽的线条。</p>
+</section>
+<section id="id6">
+<h2>小练习<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p><a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块可以用于添加文字。下面的命令在图上写了文字 <strong>TEXT</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span>.5 <span class="m">0</span>.5 TEXT <span class="p">|</span> gmt text -R0/5/0/1 -JX15c/2c -F+ffont -pdf text
+</pre></div>
+</div>
+<p>将 <strong>-F+f</strong><em>font</em> 中的 <em>font</em> 修改为不同的值并查看绘图效果以理解这一节的内容。</p>
+<p>下图给出了 <em>font</em> 取不同值的效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/68323cee4186c435055fb23ccd52e26d/text-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/text-gmtplot-1.png"><img alt="../../_images/text-gmtplot-1.png" src="../../_images/text-gmtplot-1.png" style="width: 60%;" /></a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../fill/" class="btn btn-neutral float-left" title="填充" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../special-character/" class="btn btn-neutral float-right" title="特殊字符" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

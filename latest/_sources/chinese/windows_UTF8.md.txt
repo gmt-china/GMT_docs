@@ -1,0 +1,155 @@
+---
+author: 陈箫翰, 田冬冬
+date: 2025-12-26
+---
+
+# Windows 下的 GMT 中文支持（UTF-8编码）
+
+由于历史原因，Windows 系统中文版下中文默认使用 GB 编码，而目前主流的编码方式是 UTF-8。
+本篇通过将 Windows 系统中文默认编码修改为 UTF-8 实现 GMT 的中文支持。其优点在于，
+使用了更现代的 UTF-8 编码，但修改系统默认编码可能会产生一些副作用（见下文）。
+
+如果不愿意修改系统默认中文编码，请参考另一篇配置指南： {doc}`/chinese/windows`。
+
+## 将 Windows 的 ANSI 编码修改为 UTF-8
+
+在 Windows 上，GMT 默认是从系统获取 ANSI 编码的参数（在中文系统下就是 GBK），而不是 UTF-8。
+为此我们需要开启 Windows 的 **Beta版: 使用 Unicode UTF-8 提供全球语言支持**，
+这是 Windows 10/11 专门为解决这类问题而提供的系统级功能。
+开启这个选项后，Windows 会把系统的“ANSI 代码页”强制改为 UTF-8。所有程序都会自动接收到 UTF-8 编码。
+
+操作步骤：
+
+1. 按下 `Win + R`，输入 `intl.cpl`，回车打开 “区域” 设置。
+2. 点击 “管理” 标签页。
+3. 点击 “更改系统区域设置...” 按钮。
+4. 关键步骤： 勾选 **Beta 版: 使用 Unicode UTF-8 提供全球语言支持**。
+5. 点击确定。注意必须 **重启电脑**后才能生效。
+
+:::{warning}
+本设置的修改是全局的。开启后，可能产生如下副作用。用户请自行判断这些副作用是否会影响自己的
+日常使用。如果影响，取消勾选并重启即可恢复。
+
+1. 某些非常古老的中文软件（例如十几年前的游戏或行业软件）可能会出现乱码
+2. 在 FAT32 格式的 U 盘中读写 **文件名过长**的文件将出现报错 `0x800700EA`
+3. Windows 自带的记事本默认会以 UTF-8 编码打开文件，因而打开 GB 编码的文件会乱码。用支持任意切换编码的编辑器软件打开这些文件（例如 VScode），另存为 UTF-8 编码即可
+:::
+
+## Ghostscript 的中文支持
+
+GMT 需要使用 Ghostscript 将 PostScript 文件转换为 PDF、JPG 等格式的图片。
+PostScript CID 字体（Character Identifier Font，字符标识符字体）是
+Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，合称 CJK）的排版和打印问题而开发的一种字体格式架构，
+专门为了让电脑和打印机能够高效处理成千上万个汉字。
+但 GMT 安装包中内置的 Ghostscript 是一个精简的版本，缺失了支持 CID 字体的必要文件，因此 **不支持**中文。
+
+若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后再自行安装一个完整版的 Ghostscript。
+对于已安装 GMT 的用户，必须先卸载 GMT，再按照《{doc}`/install/windows`》一节的步骤重新安装 GMT，安装过程中注意
+**不勾选** Ghostscript。
+
+Ghostscript 完整版安装包下载地址:
+
+- [gs10060w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/gs10060w64.exe)
+
+:::{warning}
+请注意 Ghostscript 的版本！
+由于 Ghostscript 自身的 bug，请勿使用 9.27、9.51 和 9.52 版本的 Ghostscript。
+此外某些 GMT 和 Ghostscript 的版本组合会造成半透明效果失效等等诸多问题，
+对于 GMT 6.4.0 及其他较低版本，建议使用 Ghostscript 9.53-9.56；
+对于 GMT 6.5.0 则建议使用 Ghostscript 10.03 之后的新版本。
+:::
+
+在安装 Ghostscript 的过程中，会有一个生成 cidfmap 的选项 `Generate cidfmap for Windows CJK TrueType fonts`。
+选中该选项则表示会为当前系统自动生成中文所需的 cidfmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
+
+完成后打开命令提示符 cmd，输入以下命令。如果操作正常那么命令都只有一个输出结果：
+
+```doscon
+C:\Windows\system32> where gmt
+c:\programs\gmt6\bin\gmt.exe
+C:\Windows\system32> where gswin64c
+C:\Program Files\gs\gs10.06.0\bin\gswin64c.exe
+```
+
+如果出现多个结果，说明系统中同时存在多个 GMT 或 Ghostscript。这种情况极易发生冲突和中文乱码。
+用户需要仔细检查步骤是否有错漏，并卸载多余的软件。
+
+## GMT 的中文支持
+
+打开命令提示符 cmd，输入以下命令创建 GMT 配置文件目录，并创建 GMT 自定义字体配置文件：
+
+```doscon
+C:\Windows\system32> cd /d %USERPROFILE%
+C:\Users\当前用户名> if not exist .gmt mkdir .gmt
+C:\Users\当前用户名> cd .gmt
+C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
+```
+
+向 GMT自定义字体配置文件 `C:\Users\当前用户名\.gmt\PSL_custom_fonts.txt` 中加入如下内容并保存:
+
+```
+dummy  0.700    1
+STSong-Light--UniGB-UTF8-H  0.700    1
+STFangsong-Light--UniGB-UTF8-H  0.700    1
+STHeiti-Regular--UniGB-UTF8-H   0.700   1
+STKaiti-Regular--UniGB-UTF8-H   0.700   1
+STSong-Light--UniGB-UTF8-V  0.700    1
+STFangsong-Light--UniGB-UTF8-V  0.700    1
+STHeiti-Regular--UniGB-UTF8-V   0.700   1
+STKaiti-Regular--UniGB-UTF8-V   0.700   1
+```
+
+用 `gmt text -L` 查看 GMT 字体:
+
+```doscon
+C:\Users\当前用户名\.gmt> gmt text -L
+...    ......
+39: dummy
+40: STSong-Light--UniGB-UTF8-H
+41: STFangsong-Light--UniGB-UTF8-H
+42: STHeiti-Regular--UniGB-UTF8-H
+43: STKaiti-Regular--UniGB-UTF8-H
+44: STSong-Light--UniGB-UTF8-V
+45: STFangsong-Light--UniGB-UTF8-V
+46: STHeiti-Regular--UniGB-UTF8-V
+47: STKaiti-Regular--UniGB-UTF8-V
+```
+
+:::{warning}
+Windows 平台的 GMT 目前存在一个 bug，自定义字体只有从编号40才开始生效。因此编号39需要用一个不存在的假字体占位。新添加的四种中文字体对应的字体编号为 40 到 47。
+:::
+
+其中 `STSong-Light--UniGB-UTF8-H` 即为宋体，`UniGB-UTF8` 是文字编码方式，
+`H` 表示文字水平排列，`V` 表示竖排文字。
+
+**强烈建议**在脚本中直接使用字体名字（如 `STSong-Light--UniGB-UTF8-H`）而不是字体编号（如 `40`）。
+因为编号取决于 `PSL_custom_fonts.txt` 中字体的添加顺序，而且 Windows 版还有编号偏移的 bug，
+使用字体名字则可以完全规避这些问题，具有很好的移植性。
+
+## GMT 中文测试
+
+:::{note}
+请自行确认你的中文字体配置。
+:::
+
+```{literalinclude} GMT_Chinese_UTF8.bat
+:language: bat
+```
+
+:::{note}
+GMT 6.x 目前在Windows下处理中文时存在BUG，可能会出现某些中文正常显示，某些
+不正常显示的情况。使用:
+
+```
+gmt set PS_CHAR_ENCODING Standard+
+```
+
+可临时避免这一BUG。
+:::
+
+成图效果如下：
+
+:::{figure} GMT_Chinese.png
+:align: center
+:width: 100%
+:::

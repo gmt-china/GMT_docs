@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gmtconvert &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="gmtdefaults" href="../gmtdefaults/" />
+    <link rel="prev" title="gmtconnect" href="../gmtconnect/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gmtconvert</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII 格式精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">gmtconvert</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/gmtconvert.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+  
+  <span class="target" id="index-0"></span><section id="gmtconvert">
+<h1>gmtconvert<a class="headerlink" href="#gmtconvert" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a></p>
+</dd>
+<dt class="field-even">最近更新日期<span class="colon">:</span></dt>
+<dd class="field-even"><p>2022-06-30</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmtconvert.html" title="（在 GMT v6.5）"><span>gmtconvert</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>对表数据进行格式转换，粘贴以及提取列等操作</p>
+</dd>
+</dl>
+<p><strong>convert</strong> 模块读取文件（或从标准输入读取）并将所需信息输出到标准输出。
+该模块可完成如下任务及其组合：</p>
+<ol class="arabic simple">
+<li><p>在二进制数据和 ASCII 数据之间转换</p></li>
+<li><p>将多个文件中的数据记录在水平方向合并（类似于类 Unix 系统下的 paste 命令）</p></li>
+<li><p>提取某些列</p></li>
+<li><p>在多段数据记录中，根据头段信息的匹配结果提取数据记录</p></li>
+<li><p>只列出段头信息，不显示数据记录</p></li>
+<li><p>提取每个数据段的第一个和/或最后一个数据记录</p></li>
+<li><p>将输出数据记录进行反转</p></li>
+<li><p>仅输出段编号的范围</p></li>
+<li><p>根据数据段中数据记录个数输出相匹配的段</p></li>
+</ol>
+<p>输入以及输出都可能包含多个头部信息。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt convert</strong> [ <em>table</em> ]
+[ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> ]
+[ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong>[<strong>+l</strong><em>min</em>][<strong>+u</strong><em>max</em>][<strong>+i</strong>]]
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong>[<em>template</em>[<strong>+o</strong><em>orig</em>]] ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong>[<strong>f</strong>|<strong>l</strong>|<strong>m</strong>|<strong>M</strong><em>stride</em>] ]
+[ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong>[<strong>c</strong>|<strong>n</strong>|<strong>p</strong>|<strong>v</strong>][<strong>a</strong>|<strong>t</strong>|<strong>s</strong>|<strong>r</strong>|<em>refpoint</em>] ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong>[<strong>tsr</strong>] ]
+[ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><em>col</em>[<strong>+a</strong>|<strong>d</strong>] ]
+[ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong>[<strong>~</strong>]<em>selection</em>]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong>[<strong>~</strong>]<em>“search string”</em>|<strong>+f</strong>|<em>file</em>[<strong>+e</strong>] | <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>][<strong>+e</strong>] ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>[<strong>h</strong>][<strong>d</strong>[[<strong>~</strong>]<em>selection</em>]] ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong>[<strong>+n</strong>] ]
+[ <strong>-a</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#aspatial-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-b</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#bi-full" title="（在 GMT v6.5）"><span class="xref std std-ref">binary</span></a> ]
+[ <strong>-d</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#d-full" title="（在 GMT v6.5）"><span class="xref std std-ref">nodata</span></a>[<strong>+c</strong><em>col</em>] ]
+[ <strong>-e</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#e-full" title="（在 GMT v6.5）"><span class="xref std std-ref">regexp</span></a> ]
+[ <strong>-f</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#f-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-g</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#g-full" title="（在 GMT v6.5）"><span class="xref std std-ref">gaps</span></a> ]
+[ <strong>-h</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#h-full" title="（在 GMT v6.5）"><span class="xref std std-ref">headers</span></a> ]
+[ <strong>-i</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#icols-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-o</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#ocols-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-q</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#q-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-s</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#s-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-w</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#w-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="simple" id="a">
+<dt><strong>-A</strong></dt><dd><p>对输入输出进行水平合并 [默认使用垂直合并]。所有文件的数据段数以及每个数据段内的行数
+必须是相同的。对于二进制文件输入，则所有文件必须具有相同的列数；对于 ASCII 文件输入，
+则数据列数可以不同。</p>
+</dd>
+</dl>
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<strong>+l</strong><em>min</em>][<strong>+u</strong><em>max</em>][<strong>+i</strong>]</dt><dd><p>仅输出记录数与给定条件匹配的数据段。以下的子选项含义分别为：</p>
+<ul class="simple">
+<li><p><strong>+l</strong><em>min</em> 数据段中的数据个数大于 <em>min</em> [默认为 0]</p></li>
+<li><p><strong>+u</strong><em>max</em> 数据段中的数据个数小于 <em>max</em> [默认为无穷大]</p></li>
+<li><p><strong>+i</strong> 对选择进行反转</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<em>template</em>[<strong>+o</strong><em>orig</em>]]</dt><dd><p>对于多段数据，将每个段输出到一个单独的文件中 [默认输出到一个单独的文件]。<em>template</em>
+为输出文件的格式模版，该模版由 C 语言格式定义：%d 为整数，%08d 为 8 位整数，位数
+不够则在前面补 0。默认输出模版为 gmtconvert_segment_%d.{txt|bin}。
+<strong>+o</strong><em>orig</em> 表示从 <em>orig</em> 开始编号而不是从 0 开始编号。或者可以使用带有两个 C 语
+言格式说明符的模版，分别为表数据的编号以及段数据的编号。<strong>+o</strong><em>torig</em>/<em>sorig</em>
+则用来设置表数据和段数据编号的起始值。</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-E</strong>[<strong>f</strong>|<strong>l</strong>|<strong>m</strong>|<strong>M</strong><em>stride</em>]</dt><dd><p>仅提取选定的数据段的第一条和最后一条数据记录 [默认输出所有记录]。</p>
+<ul class="simple">
+<li><p><strong>f</strong> 只提取第一条数据记录</p></li>
+<li><p><strong>l</strong> 只提取最后一条数据记录</p></li>
+<li><p><strong>m</strong><em>stride</em> 表示每 <em>stride</em> 个提取一个数据，如果为 <strong>M</strong> ，则还包括最后一个
+数据记录</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="f">
+<dt><strong>-F</strong>[<strong>c</strong>|<strong>n</strong>|<strong>p</strong>|<strong>v</strong>][<strong>a</strong>|<strong>t</strong>|<strong>s</strong>|<strong>r</strong>|<em>refpoint</em>]</dt><dd><p>改变点的连接方式以及数据分组的方式。点的连接方式分为：</p>
+<ul class="simple">
+<li><p><strong>c</strong> 每组数据都形成连续的线作为单独的数据段 [默认]</p></li>
+<li><p><strong>p</strong> 在每组数据中以参考点和每个点组成单独的线段</p></li>
+<li><p><strong>n</strong> 将每组数据中的点都互相连接构成网</p></li>
+<li><p><strong>v</strong> 将每组数据中的点构成向量，以方便 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> <strong>-Sv+s</strong> 选项使用</p></li>
+</ul>
+<p>数据分组的方式包括：</p>
+<ul class="simple">
+<li><p><strong>a</strong> 忽略所有段头信息，直接将所有数据段合并，将参考点设置为第一个
+文件的第一个点</p></li>
+<li><p><strong>t</strong> 将同一个文件中的所有数据段合并，参考点设置为每个组的第一个点</p></li>
+<li><p><strong>s</strong> 每个数据段都作为一个单独的组，参考点为第一个点</p></li>
+<li><p><strong>r</strong> 与 <strong>s</strong> 相同，但是参考点设置为每个点</p></li>
+</ul>
+<p>除上述的参考点设置方式外，还可指定一个参考点 <em>refpoint</em> 替换程序内部参考点。</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<strong>tsr</strong>]</dt><dd><p>将 “item” 的顺序进行反转。</p>
+<ul class="simple">
+<li><p><strong>t</strong> 表示对输出的多个表文件进行反转</p></li>
+<li><p><strong>s</strong> 将每个表文件中数据段进行反转</p></li>
+<li><p><strong>r</strong> 将每个数据段中的数据记录反转 [默认]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="l">
+<dt><strong>-L</strong></dt><dd><p>只输出所有段头信息，不输出数据记录（仅用于 ASCII 文件）</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>col</em>[<strong>+a</strong>|<strong>d</strong>]</dt><dd><p>每个数据段中的 <em>col</em> 列按数值大小进行排序。<strong>+a</strong> 升序 [默认]，<strong>+d</strong> 降序。
+<a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> 选项与 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项不能同时使用，可与其他选项同时使用。与其他选项同时使用
+时， <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> 选项将放在最后应用</p>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong>[<strong>~</strong>]<em>selection</em></dt><dd><p>只输出指定的编号的数据段。该选项不能和 <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> 选项同时使用。<em>selection</em> 的语法
+为 <em>range</em>[,<em>range</em>,…] ，其中 <em>range</em> 是单个段号或者为一个
+<em>start</em>[:<em>step</em>:]:<em>stop</em> 格式指定的一系列段号，<em>step</em> 为增量，是可选的，
+在不指定的情况下默认为 1。<strong>~</strong> 表示反转选择。还可使用 <strong>+f</strong><em>file</em> 指定
+一个段号文件，其中每行均包含一个段号。</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-S</strong>[<strong>~</strong>]<em>“search string”</em>|<strong>+f</strong>|<em>file</em>[<strong>+e</strong>] | <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>][<strong>+e</strong>]</dt><dd><p>只输出头段记录中包含指定字符串的数据段，使用 <strong>~</strong> 可以用来反转选择，即输出
+不包含指定字符串的数据段。如果指定的字符串刚好以 ~ 开头，则需要使用反斜杠
+进行转义。该选项不能和 <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> 选项同时使用。对于 OGR/GMT 格式的文件，可以使用
+<em>varname</em>=<em>value</em> 的形式提取数据段。
+如果存在多个字符串，可使用 <strong>+f</strong><em>file</em> 选项，将字符串存放在一个文件 <em>file</em>
+中，每行均为一个单独的字符串。
+<strong>注</strong> ：如果数据段的属性为多边形，且多边形中间有孔，则输出时会同时输出孔。
+该选项还可使用正则表达式 <em>regrexp</em> 提取数据段，为与字符串提取的方式区别，
+正则表达式必须置于斜杠中。<strong>i</strong> 选项表示匹配时不区分大小写。
+<strong>+e</strong> 字符串表示完全匹配字符串，即字符串完全相等，而不包括作为子字符串匹配
+的结果 [默认包含子字符串的结果]。</p>
+</dd>
+</dl>
+<dl id="t">
+<dt><strong>-T</strong>[<strong>h</strong>][<strong>d</strong>[[<strong>~</strong>]<em>selection</em>]]</dt><dd><p>禁止输出某些信息。</p>
+<ul class="simple">
+<li><p><strong>h</strong> 禁止输出段头 [默认]</p></li>
+<li><p><strong>d</strong> 对于重复的数据，只输出一次。</p></li>
+</ul>
+<p>上述两个子选项可以同时使用。
+默认情况下，两条记录的所有列都相同才被认为是重复的数据，但可通过 <em>selection</em>
+来设置只比较选定的列，若这些列相同，即被认为是重复的数据。<em>selection</em> 的格式
+为 <em>range</em>[,<em>range</em>,…]，<em>range</em> 可以为单独的列号，或者为
+<em>start</em>[:<em>step</em>:]:<em>stop</em> 定义的一组列号，<em>step</em> 为步长，默认为 1。<strong>~</strong>
+用来反转选择。如果要考虑数据后的文本的比较，则在 <em>selection</em> 的最后添加 <em>t</em> ，
+如果不指定数字列，则只考虑最后的文本比较。</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>+n</strong>]</dt><dd><p>将每个数据记录中最后的本文中的词转换为数字，并将这些数字追加到输出结果中。无法转换的
+词将设置为 NaN。使用 <strong>+n</strong> 可禁止输出包含 NaN 的数据行。</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>,…</em>] <a class="reference internal" href="../../option/a/"><span class="doc">(more …)</span></a></dt><dd><p>设置非空间数据项与数据列之间的对应关系</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输入数据的格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输出的数据格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../option/d/"><span class="doc">(more …)</span></a></dt><dd><p>将输入数据中等于 <em>nodata</em> 的记录替换为 NaN，或将输出数据中值为 NaN 的记录替换为 <em>nodata</em></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>“pattern”</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../option/e/"><span class="doc">(more …)</span></a></dt><dd><p>筛选或剔除匹配指定模式的数据记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt><dd><p>指定输入或输出列的数据类型</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="../../option/g/"><span class="doc">(more …)</span></a></dt><dd><p>确定数据或线段的间断</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输入数据列及简单变换（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输出数据列（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>] <a class="reference internal" href="../../option/q/"><span class="doc">(more …)</span></a></dt><dd><p>筛选输入或输出的行或数据范围</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="../../option/s/"><span class="doc">(more …)</span></a></dt><dd><p>设置 NaN 记录的处理方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-wy</strong>|<strong>a</strong>|<strong>w</strong>|<strong>d</strong>|<strong>h</strong>|<strong>m</strong>|<strong>s</strong>|<strong>c</strong><em>period</em>[/<em>phase</em>][<strong>+c</strong><em>col</em>] <a class="reference internal" href="../../option/w/"><span class="doc">(more …)</span></a></dt><dd><p>将输入坐标转换为循环坐标</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../option/colon/"><span class="doc">(more …)</span></a></dt><dd><p>交换输入或输出中的第一和第二列</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="ascii">
+<h2>ASCII 格式精度<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<p>ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> ；控制绝对时间的的参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> ；普通浮点数通过参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定更多的有效数字。</p>
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>将二进制文件 <code class="file docutils literal notranslate"><span class="pre">test.b</span></code> （单精度）转换为 4 列的 ASCII 文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>test.b<span class="w"> </span>-bi4f<span class="w"> </span>&gt;<span class="w"> </span>test.dat
+</pre></div>
+</div>
+<p>将多段 ASCII 表数据 <code class="file docutils literal notranslate"><span class="pre">test.txt</span></code> 转换为双精度二进制文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>test.txt<span class="w"> </span>-bo<span class="w"> </span>&gt;<span class="w"> </span>test.b
+</pre></div>
+</div>
+<p>将 <code class="file docutils literal notranslate"><span class="pre">left.txt</span></code> （共两列）的第二列和 <code class="file docutils literal notranslate"><span class="pre">right.txt</span></code> 的第一列作为
+坐标输入并绘制。这里的思路是：先使用 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> 选项将两个文件水平方向合并，在
+合并后的结果中提取数据</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>left.txt<span class="w"> </span>right.txt<span class="w"> </span>-A<span class="w"> </span>-o1,2<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>...
+</pre></div>
+</div>
+<p>在文件 <code class="file docutils literal notranslate"><span class="pre">big_file.txt</span></code> 中提取头段中包含字符串“RIDGE AXIS”的所有数据段</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>big_file.txt<span class="w"> </span>-S<span class="s2">&quot;RIDGE AXIS&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+<p>在上述文件中提取头段中包含“Spitsbergen”的数据段，且必须完全匹配</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>big_file.txt<span class="w"> </span>-SSpitsbergen+e<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+<p>选区所有不存在以“profile”开头，且后面为整数和 g 到 l 的任意字符的段头的
+数据段</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>-S~<span class="s2">&quot;/^profile [0-9]+[g-l]</span>$<span class="s2">/&quot;</span>
+</pre></div>
+</div>
+<p>对表数据文件中的段的顺序反转，但反转段中数据的顺序</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>lots_of_segments.txt<span class="w"> </span>-Is<span class="w"> </span>&gt;<span class="w"> </span>last_segment_first.txt
+</pre></div>
+</div>
+<p>以 2 为步长，提取段号为 20 到 40，以及段号为 0 的数据段</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>lots_of_segments.txt<span class="w"> </span>-Q0,20:2:40<span class="w"> </span>&gt;<span class="w"> </span>my_segments.txt
+</pre></div>
+</div>
+<p>假定存在如下 OGR/GMT 格式的文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOINT</span>
+...
+<span class="c1"># @NELEVATION|DISPX|DISPY</span>
+<span class="c1"># @Tdouble|double|double</span>
+<span class="c1"># FEATURE_DATA</span>
+<span class="c1"># @D4.945000|-106500.00000000|-32700.00000000</span>
+-9.36890245902635<span class="w"> </span><span class="m">39</span>.367156766570389
+</pre></div>
+</div>
+<p>对上述文件，使用 <strong>-a</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#aspatial-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> 提取属性 ELEVATION 的数据（下述两种等价）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>file.gmt<span class="w"> </span>-a2<span class="o">=</span>ELEVATION<span class="w"> </span>&gt;<span class="w"> </span>xyz.dat
+gmt<span class="w"> </span>convert<span class="w"> </span>file.gmt<span class="w"> </span>-aELEVATION<span class="w"> </span>&gt;<span class="w"> </span>xyz.dat
+</pre></div>
+</div>
+<p>将文件 <code class="file docutils literal notranslate"><span class="pre">sensors.txt</span></code> 中的所有点与指定的远点 23.5/19 相连</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>sensors.txt<span class="w"> </span>-F23.5/19<span class="w"> </span>&gt;<span class="w"> </span>lines.txt
+</pre></div>
+</div>
+<p>将文件 <code class="file docutils literal notranslate"><span class="pre">A.txt</span></code> 与 <code class="file docutils literal notranslate"><span class="pre">B.txt</span></code> 中的所有数据段写到 profile_005000.txt，
+profile_005001.txt … 等单独的文件中:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>A.txt<span class="w"> </span>B.txt<span class="w"> </span>-Dprofile_%6.6d.txt+o5000
+</pre></div>
+</div>
+<p>从文件中提取 100-200 以及 500-600 行</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>junk.txt<span class="w"> </span>-q100-200,500-600<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
+</pre></div>
+</div>
+<p>提取除了 1000-2000 行以外的所有行</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>junk.txt<span class="w"> </span>-q~1000-2000<span class="w"> </span>&gt;<span class="w"> </span>good.txt
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>相关模块<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../gmtinfo/"><span class="doc">gmtinfo</span></a>,
+<a class="reference internal" href="../gmtselect/"><span class="doc">gmtselect</span></a></p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../gmtconnect/" class="btn btn-neutral float-left" title="gmtconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../gmtdefaults/" class="btn btn-neutral float-right" title="gmtdefaults" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

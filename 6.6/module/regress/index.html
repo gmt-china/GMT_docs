@@ -1,0 +1,895 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>regress &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2a4aad08"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="select" href="../select/" />
+    <link rel="prev" title="math" href="../math/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.6
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binstats/">binstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../connect/">connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../convert/">convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../defaults/">defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get/">get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logo/">logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/">math</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">regress</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">输入数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII 格式精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../select/">select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../set/">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simplify/">simplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial/">spatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../split/">split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../which/">which</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isf/">isf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flexure/">flexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravmag3d/">gravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mlconverter/">mlconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzblender/">fzblender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzanalyzer/">fzanalyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzinformer/">fzinformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmapper/">fzmapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzmodeler/">fzmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fzprofiler/">fzprofiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdbarb/">grdbarb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pmodeler/">pmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polespotter/">polespotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmix/">grdmix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2kml/">grd2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../batch/">batch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barb/">barb</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">regress</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/regress.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    , 
+      陈箫翰，王亮
+    
+ &nbsp;•&nbsp; 📅 2026-05-27
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section id="regress">
+<span id="index-0"></span><h1>regress<a class="headerlink" href="#regress" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.6/gmtregress.html" title="（在 GMT v6.6）"><span>regress</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>一维数据线性回归</p>
+</dd>
+</dl>
+<p><strong>regress</strong> 读取一个或多个表数据（也可从标准输入读取），确定每个分段最佳的线性[加权]
+回归模型 <span class="math notranslate nohighlight">\(y(x) = a + b x\)</span> 。用户可自己指定输出哪些数据和模型。默认情况下，将
+所有的输入数据作为一个整体来确定模型，但也可将数据分为等间距的数据段，在每段分别确定
+模型。除了确定最贴近的模型外，该模块还可以输出所有可能的不同斜率的回归模型，这在分析
+居于很多离群数据时非常有用。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>如果用户需要对 x 和 y 坐标的对数结果做拟合，可以使用 <a class="reference internal" href="#cmdoption-regress-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> 选项在读数据后
+将其转换为对数坐标</p>
+</div>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt regress</strong>
+[ <em>table</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a>[<em>min</em>/<em>max</em>/<em>inc</em>][<strong>+f</strong>[<strong>n</strong>|<strong>p</strong>]] ]
+[ <a class="reference internal" href="#cmdoption-regress-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a><em>level</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><strong>x</strong>|<strong>y</strong>|<strong>o</strong>|<strong>r</strong> ]
+[ <a class="reference internal" href="#cmdoption-regress-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>1</strong>|<strong>2</strong>|<strong>r</strong>|<strong>w</strong> ]
+[ <a class="reference internal" href="#cmdoption-regress-S"><code class="xref std std-option docutils literal notranslate"><span class="pre">-S</span></code></a>[<strong>r</strong>] ]
+[ <a class="reference internal" href="#cmdoption-regress-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>[<em>min/max</em>/]<em>inc</em>[<strong>+i</strong>|<strong>n</strong>] |<a class="reference internal" href="#cmdoption-regress-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>file</em>|<em>list</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-V"><code class="xref std std-option docutils literal notranslate"><span class="pre">-V</span></code></a>[<em>level</em>] ]
+[ <a class="reference internal" href="#cmdoption-regress-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>[<strong>w</strong>][<strong>x</strong>][<strong>y</strong>][<strong>r</strong>] ]
+[ <a class="reference internal" href="#cmdoption-regress-Z"><code class="xref std std-option docutils literal notranslate"><span class="pre">-Z</span></code></a>[<strong>+</strong>|<strong>-</strong>]<em>limit</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-a"><code class="xref std std-option docutils literal notranslate"><span class="pre">-a</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-bi"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bi</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-bo"><code class="xref std std-option docutils literal notranslate"><span class="pre">-bo</span></code></a><em>binary</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-d"><code class="xref std std-option docutils literal notranslate"><span class="pre">-d</span></code></a><em>nodata</em>[<strong>+c</strong><em>col</em>] ]
+[ <a class="reference internal" href="#cmdoption-regress-e"><code class="xref std std-option docutils literal notranslate"><span class="pre">-e</span></code></a><em>regexp</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-f"><code class="xref std std-option docutils literal notranslate"><span class="pre">-f</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-g"><code class="xref std std-option docutils literal notranslate"><span class="pre">-g</span></code></a><em>gaps</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-h"><code class="xref std std-option docutils literal notranslate"><span class="pre">-h</span></code></a><em>headers</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-o"><code class="xref std std-option docutils literal notranslate"><span class="pre">-o</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-q"><code class="xref std std-option docutils literal notranslate"><span class="pre">-q</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="#cmdoption-regress-w"><code class="xref std std-option docutils literal notranslate"><span class="pre">-w</span></code></a><em>flags</em> ]
+[ <a class="reference internal" href="../../conf/overview/"><span class="doc">--PAR=value</span></a> ]</p>
+</section>
+<section id="id2">
+<h2>输入数据<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>一个或多个ASCII或二进制表数据。若不提供表数据，则会从标准输入中读取。</p>
+</dd>
+</dl>
+<blockquote>
+<div><p>前两列为分别为 <em>x</em> 和 <em>y</em>。在设置 <a class="reference internal" href="#cmdoption-regress-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a> 和 <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a> 时，需要另外的 1-3
+列作为数据的误差估计，或他们之间的相关系数（见 <a class="reference internal" href="#cmdoption-regress-W"><code class="xref std std-option docutils literal notranslate"><span class="pre">-W</span></code></a>）。</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-A">
+<span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-A" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-A</strong>[<em>min</em>/<em>max</em>/<em>inc</em>][<strong>+f</strong>[<strong>n</strong>|<strong>p</strong>]]</dt><dd><p>给出一系列不同斜率的回归直线进行系统分析，或将最佳拟合限制在指定的斜率范围内。</p>
+<p>（1）当给出 <em>min/max/inc</em> 时，程序会在指定的斜率角度范围内进行搜索：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code> ：最小斜率角度（单位：度）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max</span></code> ：最大斜率角度（单位：度）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inc</span></code> ：角度步长（单位：度）</p></li>
+</ul>
+<p>例如 <code class="docutils literal notranslate"><span class="pre">-A-90/90/1</span></code> 表示从 −90° 到 +90°，每隔 1° 计算一次回归系数。
+在该模式下，程序并不是只寻找一条最佳直线，而是对每一个给定的斜率角度
+根据回归类型参数 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 和误差范数参数 <code class="docutils literal notranslate"><span class="pre">-N</span></code>，
+计算该斜率条件下的最佳截距（即在斜率固定时，使误差最小的直线位置）。
+对于每个数据段，程序会输出随角度变化的一系列结果，包括：角度（angle），
+拟合误差（E），斜率（slope）和截距（intercept）。
+在所计算的角度范围内，误差最小的那组模型参数，
+会被写入数据段头部，并在详细输出模式 <code class="docutils literal notranslate"><span class="pre">-Vi</span></code> 下报告。</p>
+<p>（2）除了用于“搜索多条直线”外，本选项还可用于限制最佳拟合的斜率范围。
+默认情况下，最佳拟合会在所有可能斜率中搜索。
+若添加 <code class="docutils literal notranslate"><span class="pre">+f</span></code> （ <code class="docutils literal notranslate"><span class="pre">-N2</span></code> 情况除外），则程序只会在当前设定的角度范围内寻找误差最小的回归直线。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+fn</span></code> ：只允许在负斜率范围内寻找最佳回归</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+fp</span></code> ：只允许在正斜率范围内寻找最佳回归</p></li>
+</ul>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/6.6/_images/GMT_slopes.png"><img alt="https://docs.generic-mapping-tools.org/6.6/_images/GMT_slopes.png" src="https://docs.generic-mapping-tools.org/6.6/_images/GMT_slopes.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">扫描斜率 <a class="reference internal" href="#cmdoption-regress-A"><code class="xref std std-option docutils literal notranslate"><span class="pre">-A</span></code></a> 以观察使用 LMS ( <a class="reference internal" href="#cmdoption-regress-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>r</strong> ) 准则的完全正交回归的拟合误差随直线角度的变化情况。这里我们可以看到，最佳解对应的直线角度为 -78.3 度，但在 78.6 度处存在另一个几乎同样好的局部极小值。</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-C">
+<span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-C" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-C</strong><em>level</em></dt><dd><p>设置用于回归置信带 (confidence bands) 可选计算的置信水平（以 % 为单位）[默认为 95]。该选项仅在 <a class="reference internal" href="#cmdoption-regress-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 包含输出列 <strong>c</strong> 时使用。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-E">
+<span class="sig-name descname"><span class="pre">-E</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-E" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-Ex</strong>|<strong>y</strong>|<strong>o</strong>|<strong>r</strong></dt><dd><p>本选项设定如何计算拟合残差，可从以下选项中选择：</p>
+<ul class="simple">
+<li><p><strong>x</strong> ：拟合误差是实际数据点与拟合直线的水平距离。</p></li>
+<li><p><strong>y</strong> ：拟合误差是实际数据点与拟合直线的竖直距离[默认]。</p></li>
+<li><p><strong>o</strong> ：拟合误差是实际数据点与拟合直线的垂直距离。</p></li>
+<li><p><strong>r</strong> ：拟合误差是实际数据点与拟合直线的水平距离和竖直距离的乘积。</p></li>
+</ul>
+<p>线性回归默认只有因变量才有误差，所以设定拟合误差为实际数据点与拟合直线的竖直距离为默认。
+如果数据点的自变量存在误差，而因变量不存在误差，则应选择 <strong>x</strong>。
+<strong>o</strong> 和 <strong>r</strong> 适用于自变量和因变量都有误差的情形。
+二者的区别是：在自变量和因变量中有一个的误差为 0 时，<strong>r</strong> 选项的残差会为 0，而 <strong>o</strong> 选项不会。</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/6.6/_images/GMT_misfit.png"><img alt="https://docs.generic-mapping-tools.org/6.6/_images/GMT_misfit.png" src="https://docs.generic-mapping-tools.org/6.6/_images/GMT_misfit.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">四种残差类型。对于 k = x, y 或 o，会最小化 <span class="math notranslate nohighlight">\(e_k\)</span> 长度的平方和。对于 <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><strong>r</strong>，则最小化绿色区域的面积之和。</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-F">
+<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-F" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-F</strong><em>flags</em></dt><dd><p>选择输出数据的列的组合，输出顺序将与指定的顺序一致。可从以下选项中选择：</p>
+<ul class="simple">
+<li><p><strong>x</strong> ：观测值 <em>x</em>。</p></li>
+<li><p><strong>y</strong> ：观测值 <em>y</em>。</p></li>
+<li><p><strong>m</strong> ：模型预测值。</p></li>
+<li><p><strong>r</strong> ：残差（残差 = 数据减去模型）。</p></li>
+<li><p><strong>c</strong> ：回归的对称置信区间，参见 <a class="reference internal" href="#cmdoption-regress-C"><code class="xref std std-option docutils literal notranslate"><span class="pre">-C</span></code></a> 以指定置信水平。</p></li>
+<li><p><strong>z</strong> ：标准化残差或所谓的 <em>z 分数</em> (<em>z-scores</em>)。</p></li>
+<li><p><strong>w</strong> ：离群值权重（0 或 1）。对于 <a class="reference internal" href="#cmdoption-regress-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>w</strong>，这些是重新加权最小二乘法 (Reweighted Least Squares) 的权重。</p></li>
+</ul>
+<p>默认值为 [<strong>xymrczw</strong>]。</p>
+<p>使用 <strong>-Fp</strong> 会输出包含 12 个模型参数的单条记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npoints<span class="w"> </span>xmean<span class="w"> </span>ymean<span class="w"> </span>angle<span class="w"> </span>misfit<span class="w"> </span>slope<span class="w"> </span>intercept<span class="w"> </span>sigma_slope<span class="w"> </span>sigma_intercept<span class="w"> </span>r<span class="w"> </span>R<span class="w"> </span>n_effective
+</pre></div>
+</div>
+<p><strong>注意</strong>： <em>R</em> 只能在选择 <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><strong>y</strong> 时设置。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-N">
+<span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-N" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-N1</strong>|<strong>2</strong>|<strong>r</strong>|<strong>w</strong></dt><dd><p>选择最小化拟合误差的方法。拟合误差是用各实测数据点的残差（residual）计算得到的。
+所有的线性回归都是找到拟合误差（misfit）最小时的回归参数（斜率和截距）。
+本选项最小化拟合误差的方法包括：</p>
+<ul class="simple">
+<li><p><strong>1</strong> ：各数据点的残差的绝对值的和，即残差的 <span class="math notranslate nohighlight">\(L_1\)</span> 范数。</p></li>
+<li><p><strong>2</strong> ：各数据点的残差的平方的和，即残差的 <span class="math notranslate nohighlight">\(L_2\)</span> 范数（Ordinary Least Squares Regression，简称 OLS，就是最小二乘法） [默认]。</p></li>
+<li><p><strong>r</strong> ：各数据点的残差的平方的中位数（Least Median of Squares Regression，简称 LMS）。</p></li>
+<li><p><strong>w</strong> ：通过 LMS 识别异常值并移除后的残差的平方和的平均值（Reweighted Least Squares Regression，简称 RLS）。</p></li>
+</ul>
+<p>一般的线性回归使用的是最小二乘法，即本选项的默认值。
+LMS 在处理离群值时更为稳健。
+RLS 是先进行 LMS 回归，用其识别数据中的离群值并分配零权重，然后使用最小二乘法重新进行回归。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-S">
+<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-S" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-S</strong>[<strong>r</strong>]</dt><dd><p>限制输出哪些记录。默认情况下，所有数据记录都将按照 <a class="reference internal" href="#cmdoption-regress-F"><code class="xref std std-option docutils literal notranslate"><span class="pre">-F</span></code></a> 指定的格式输出。使用本选项排除被回归算法识别为离群值的数据点。
+使用 <strong>-Sr</strong> 来反转此行为，仅输出离群值记录。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-T">
+<span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-T" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>+i</strong>|<strong>n</strong>] |<strong>-T</strong><em>file</em>|<em>list</em></dt><dd><p>在参数指定的等间距点处评估最佳拟合回归模型。如果仅给出了 <a class="reference internal" href="#cmdoption-regress-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a><em>inc</em>，将把 <em>min</em> 和 <em>max</em> 重置为每个分段中 <em>x</em> 的极值。
+若要完全跳过模型评估，使用 <a class="reference internal" href="#cmdoption-regress-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">-T</span></code></a>0。详细请参见 <a class="reference internal" href="../../array/"><span class="doc">生成一维数组</span></a> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-V">
+<span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-V" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-V</strong>[<em>level</em>]</dt><dd><p>设置 verbose 等级 [<strong>w</strong>]。 <a class="reference internal" href="../../option/V/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-W">
+<span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl>
+<dt><strong>-W</strong>[<strong>w</strong>][<strong>x</strong>][<strong>y</strong>][<strong>r</strong>]</dt><dd><p>指定加权回归以及将要提供的权重类型。</p>
+<ul class="simple">
+<li><p>如果提供了 <em>x</em> 观测值的 1-<span class="math notranslate nohighlight">\(\sigma\)</span> 不确定度，请附加 <strong>x</strong> 。</p></li>
+<li><p>如果提供了 <em>y</em> 的 1-<span class="math notranslate nohighlight">\(\sigma\)</span> 不确定度，请附加 <strong>y</strong> 。</p></li>
+<li><p>如果提供了 <em>x</em> 和 <em>y</em> 观测值之间的相关性，请附加 <strong>r</strong>。这些列在输入中出现的顺序应紧随必选的 <em>x</em> 和 <em>y</em> 列之后。</p></li>
+</ul>
+<p>同时给出 <strong>x</strong> 和 <strong>y</strong> （以及可选的 <strong>r</strong> ）意味着进行正交回归。单独给出 <strong>x</strong> 需要配合使用 <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><strong>x</strong>，单独给出 <strong>y</strong> 需要配合使用 <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><strong>y</strong> 。</p>
+<p>通过 <span class="math notranslate nohighlight">\(w = 1/\sigma\)</span> 的关系将 <em>x</em> 和 <em>y</em> 的不确定度转换为回归权重 <em>w</em> 。使用 <strong>-Ww</strong> 可以把输入列解释为预先计算好的权重。
+<strong>注意</strong> ：相对于回归线的残差将根据给定的权重进行缩放。大多数范数随后会对此加权残差进行平方（ <a class="reference internal" href="#cmdoption-regress-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>1</strong> 是唯一的例外）。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-Z">
+<span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-Z</strong>[±]<em>limit</em></dt><dd><p>更改离群值检测的阈值：当使用 <a class="reference internal" href="#cmdoption-regress-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>w</strong> 时，残差 z 分数(z-scores)超过此 <em>limit</em> [默认 ±2.5] 的点将被标记为离群值。
+若要仅将负或正的 z 分数视为可能的离群值，请指定带符号的 <em>limit</em> 。</p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-a">
+<span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-a" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-a</strong>[[<em>col</em>=]<em>name</em>][,<em>...</em>]</dt><dd><p>控制输入或输出为 OGR/GMT 格式时对非空间元数据的处理方式。 <a class="reference internal" href="../../option/a/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-bi">
+<span class="sig-name descname"><span class="pre">-bi</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-bi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输入格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-bo">
+<span class="sig-name descname"><span class="pre">-bo</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-bo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt><dd><p>控制二进制文件的输出格式。 <a class="reference internal" href="../../option/binary/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-d" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt><dd><p>将某些特定值当作 NaN。 <a class="reference internal" href="../../option/d/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-e">
+<span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-e" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>&quot;pattern&quot;</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt><dd><p>筛选或剔除匹配指定模式的数据记录。 <a class="reference internal" href="../../option/e/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></dt><dd><p>显式指定当前输入或输出数据中每一列的数据类型。 <a class="reference internal" href="../../option/f/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-g">
+<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-g" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>确定数据或线段的间断。 <a class="reference internal" href="../../option/g/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-h">
+<span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-h" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt><dd><p>在读/写数据时跳过文件开头的若干个记录。 <a class="reference internal" href="../../option/h/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-i">
+<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-i" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>...</em>][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输入的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-o" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,...][,<strong>t</strong>[<em>word</em>]]</dt><dd><p>对输出的数据进行列选择以及简单的代数运算。 <a class="reference internal" href="../../option/io/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-q">
+<span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-q" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt><dd><p>对输入或输出的行进行筛选，该选项在一定程度上可以代替 gawk 的某些功能。 <a class="reference internal" href="../../option/q/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-s" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt><dd><p>设置 NaN 记录的处理方式。 <a class="reference internal" href="../../option/s/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<div class="hidden-opt std option docutils container">
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-regress-w">
+<span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-regress-w" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="simple">
+<dt><strong>-wy</strong>|<strong>a</strong>|<strong>w</strong>|<strong>d</strong>|<strong>h</strong>|<strong>m</strong>|<strong>s</strong>|<strong>c</strong><em>period</em>[/<em>phase</em>][<strong>+c</strong><em>col</em>]</dt><dd><p>将输入坐标转换为循环坐标。 <a class="reference internal" href="../../option/w/"><span class="doc">(参数详细介绍)</span></a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="ascii">
+<h2>ASCII 格式精度<a class="headerlink" href="#ascii" title="Link to this heading"></a></h2>
+<p>ASCII 格式输出数据通过 gmt.conf 配置文件控制。控制经纬度格式的参数为
+<a class="reference internal" href="../../conf/format/#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> ；控制绝对时间的的参数包括 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> ；普通浮点数通过参数 <a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+控制。上述格式控制可能会导致精度损失，这会在下游计算中导致一些问题。
+如果用户需要保证数据精度，则应考虑将数据写为二进制文件，或者使用
+<a class="reference internal" href="../../conf/format/#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 指定更多的有效数字。</p>
+</section>
+<section id="id4">
+<h2>注意事项<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>输出的分段头 (segment header) 将包含我们为每个分段计算的各种统计数据。
+其顺序依次为： <em>N</em> （点数）、 <em>x0</em> （加权平均值 x）、 <em>y0</em> （加权平均值 y）、 <em>angle</em> （直线角度）、 <em>E</em> （不拟合度量）、 <em>slope</em> （斜率）、 <em>intercept</em> （截距）、 <em>sigma_slope</em> 以及 <em>sigma_intercept</em> 。
+对于标准回归 ( <a class="reference internal" href="#cmdoption-regress-E"><code class="xref std std-option docutils literal notranslate"><span class="pre">-E</span></code></a><strong>y</strong> )，还会报告皮尔逊相关系数 <em>r</em> 和判定系数 <em>R</em> 。最后以有效测量数 <span class="math notranslate nohighlight">\(n_{eff}\)</span> 结束。</p>
+<p>对于加权数据，在计算需要最小化的平方回归不拟合度量 <a class="reference internal" href="#cmdoption-regress-N"><code class="xref std std-option docutils literal notranslate"><span class="pre">-N</span></code></a><strong>2</strong> 时，使用：</p>
+<div class="math notranslate nohighlight">
+\[E_2(\nu) = \frac{\sum_{i=1}^n w_i e_i^2}{\sum_{i=1}^n w_i} \frac{n_{eff}}{n_{eff}-2},\]</div>
+<p>其中有效测量数由下式给出：</p>
+<div class="math notranslate nohighlight">
+\[n_{eff} = \frac{\left (\sum_{i=1}^n w_i\right )^2}{\sum_{i=1}^n w_i^2}.\]</div>
+<p>因此 <span class="math notranslate nohighlight">\(\nu = n_{eff} - 2\)</span> 是有效自由度。</p>
+<p>对于涉及除直线拟合之外更通用的线性模型回归，请参阅 <a class="reference internal" href="../math/"><span class="doc">math</span></a> <strong>-A</strong> 以及 <strong>LSQFIT</strong> 或 <strong>SVDFIT</strong> 算子。</p>
+</section>
+<section id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>返回通过远程文件 hertzsprung-russell.txt 中数据的最佳拟合正交回归线坐标:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>regress<span class="w"> </span>@hertzsprung-russell.txt<span class="w"> </span>-Eo<span class="w"> </span>-Fxm
+</pre></div>
+</div>
+<p>对 points.txt 中的 <em>x-y</em> 数据进行标准最小二乘回归，并返回 x、y 以及带有 99% 置信区间的模型预测值:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>regress<span class="w"> </span>points.txt<span class="w"> </span>-Fxymc<span class="w"> </span>-C99<span class="w"> </span>&gt;<span class="w"> </span>points_regressed.txt
+</pre></div>
+</div>
+<p>若只想获取上述回归的斜率:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">slope</span><span class="o">=</span><span class="sb">`</span>gmt<span class="w"> </span>regress<span class="w"> </span>points.txt<span class="w"> </span>-Fp<span class="w"> </span>-o5<span class="sb">`</span>
+</pre></div>
+</div>
+<p>对数据 rough.txt 进行重新加权最小二乘回归，并返回 x、y、模型预测值以及 RLS 权重:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>regress<span class="w"> </span>rough.txt<span class="w"> </span>-Fxymw<span class="w"> </span>&gt;<span class="w"> </span>points_regressed.txt
+</pre></div>
+</div>
+<p>对数据 crazy.txt 进行正交最小二乘回归，但先对 x 和 y 取对数，然后返回 x、y、模型预测值和标准化残差 (z-scores):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>regress<span class="w"> </span>crazy.txt<span class="w"> </span>-Eo<span class="w"> </span>-Fxymz<span class="w"> </span>-i0-1l<span class="w"> </span>&gt;<span class="w"> </span>points_regressed.txt
+</pre></div>
+</div>
+<p>对于同一文件，检查正交 LMS 不拟合度量在 0 到 90 度之间（步长 0.2 度）如何随角度变化:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>regress<span class="w"> </span>points.txt<span class="w"> </span>-A0/90/0.2<span class="w"> </span>-Eo<span class="w"> </span>-Nr<span class="w"> </span>&gt;<span class="w"> </span>points_analysis.txt
+</pre></div>
+</div>
+<p>强制正交 LMS 选择具有正斜率的最佳解:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>regress<span class="w"> </span>points.txt<span class="w"> </span>-A+fp<span class="w"> </span>-Eo<span class="w"> </span>-Nr<span class="w"> </span>&gt;<span class="w"> </span>best_pos_slope.txt
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>参考文献<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>Bevington, P. R., 1969, <em>Data reduction and error analysis for the physical sciences</em>,
+336 pp., McGraw-Hill, New York.</p>
+<p>Draper, N. R., and H. Smith, 1998, <em>Applied regression analysis</em>, 3rd ed., 736 pp.,
+John Wiley and Sons, New York.</p>
+<p>Rousseeuw, P. J., and A. M. Leroy, 1987, <em>Robust regression and outlier detection</em>,
+329 pp., John Wiley and Sons, New York.</p>
+<p>York, D., N. M. Evensen, M. L. Martinez, and J. De Basebe Delgado, 2004, Unified
+equations for the slope, intercept, and standard errors of the best straight line,
+<em>Am. J. Phys.</em>, 72(3), 367-375.</p>
+</section>
+<section id="id7">
+<h2>相关模块<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../math/"><span class="doc">math</span></a>,
+<a class="reference internal" href="../trend1d/"><span class="doc">trend1d</span></a>,
+<a class="reference internal" href="../trend2d/"><span class="doc">trend2d</span></a></p>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../math/" class="btn btn-neutral float-left" title="math" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../select/" class="btn btn-neutral float-right" title="select" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 06 月 24 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

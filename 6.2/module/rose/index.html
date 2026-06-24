@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rose &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="sac" href="../sac/" />
+    <link rel="prev" title="psconvert" href="../psconvert/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">rose</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">可选选项</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>rose</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/rose.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rose">
+<span id="index-0"></span><h1>rose<a class="headerlink" href="#rose" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/rose.html" title="(在 GMT v6.2)"><span>rose</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>绘制极坐标下的直方图（sector图、rose图或windrose图）</p>
+</dd>
+</dl>
+<section id="id1">
+<h2>可选选项<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<dl>
+<dt><em>table</em></dt><dd><p>输入文件，数据格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>length  azimuth
+</pre></div>
+</div>
+<p>若输入文件中只有azimuth一列数据，则此时需要使用 <strong>-i0</strong> 选项，此时所有的长度都默认为单位长度。</p>
+</dd>
+</dl>
+<dl id="a">
+<dt><strong>-A</strong>[<strong>r</strong>]<em>sector_width</em></dt><dd><p>指定扇页宽度，单位为度</p>
+<ul class="simple">
+<li><p>默认扇页宽度为0，即windrose图</p></li>
+<li><p>若扇页宽度不为0，则表示绘制sector图</p></li>
+<li><p>若扇页宽度不为0且使用了 <strong>-Ar</strong>，则表示绘制rose图</p></li>
+</ul>
+</dd>
+<dt><strong>-B</strong></dt><dd><p>此模块中，X表示径向距离，Y表示方位角。Y轴的标签是图片的标题，比例尺长度由径向网格间隔决定。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Cm[+w]&lt;mode_file&gt;</span></code></dt><dd><p>绘制矢量以显示 <code class="docutils literal notranslate"><span class="pre">&lt;mode_file&gt;</span></code> 中指定的主方向。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-Cm</span></code> 则计算并绘制平均方向。使用 <code class="docutils literal notranslate"><span class="pre">-Cm+w&lt;mode_file&gt;</span></code> 则将计算得到的平均方向及其他统计结果以如下格式保存到文件中:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mean_az, mean_r, mean_resultant, max_r, scaled_mean_r, length_sum, n, sign@alpha
+</pre></div>
+</div>
+<p>其中最后一项可以取0或1，取决于平均结果是否significant at the level of
+confidence set via <strong>-Q</strong>.</p>
+</dd>
+<dt><strong>-D</strong></dt><dd><p>对扇页对偏移，使得其位于每个间隔的中间，即第一个扇页的中心在0度处</p>
+</dd>
+<dt><strong>-F</strong></dt><dd><p>不绘制scale length bar，默认会在右下角绘制</p>
+</dd>
+<dt><strong>-G</strong><em>fill</em></dt><dd><p>绘制扇页的填充色</p>
+</dd>
+<dt><strong>-I</strong></dt><dd><p>不绘制图形，只计算 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项所需要的参数。</p>
+<p>以下统计信息会输出到标准输出:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>n, mean az, mean r, mean resultant length, max bin sum, scaled mean, linear length sum
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[&lt;wlabel&gt;,&lt;elabel&gt;,&lt;slabel&gt;,&lt;nlabel&gt;]</span></code></dt><dd><p>指定0、90、180、270度处的标签。</p>
+<ol class="arabic simple">
+<li><p>对于full-circle图而言，默认值为 <code class="docutils literal notranslate"><span class="pre">WEST,EAST,SOUTH,NORTH</span></code></p></li>
+<li><p>对于half-circle图而言，默认值为 <code class="docutils literal notranslate"><span class="pre">90W,90E,-,0</span></code> ，其中 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示不显示标签</p></li>
+<li><p>只使用 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 但无其他参数表示不显示所有标签</p></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;parameters&gt;</span></code></dt><dd><p>与 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项一起使用以修改矢量的属性。具体属性见 <a class="reference internal" href="../../basis/vector/"><span class="doc">矢量/箭头</span></a> 一节</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q[&lt;alpha&gt;]</span></code></dt><dd><p>设置置信水平，用于决定平均结果是否显著，默认值为 0.05。</p>
+<p>注意：临界值是近似结果且需要至少10个数据点；the critical resultants are
+accurate to at least 3 significant digits. 对于更小的数据集，需要查询准确的统计表。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;r0&gt;/&lt;r1&gt;/&lt;az_0&gt;/&lt;az_1&gt;</span></code></dt><dd><p>指定绘图的半径和方位角范围。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r0</span></code> 取 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r1</span></code> 取最大长度</p></li>
+<li><p>方位角范围取 <code class="docutils literal notranslate"><span class="pre">-90/90</span></code> 或 <code class="docutils literal notranslate"><span class="pre">0/180</span></code> 以绘制half circle plot</p></li>
+<li><p>方位角范围取 <code class="docutils literal notranslate"><span class="pre">0/360</span></code> 以绘制 full circle</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S[n]&lt;plot_radius&gt;[u]</span></code></dt><dd><p>指定圆的半径。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Sn</span></code> 会将输入的半径归一化到0到1。</p>
+</dd>
+<dt><strong>-T</strong></dt><dd><p>指定输入数据为 orientation 数据（即数据范围在0-180度范围内）而不是0-360度范围的direction数据。We compensate by counting each record twice:
+First as <em>azimuth</em> and second as <em>azimuth + 180</em>.
+Ignored if range is given as -90/90 or 0/180.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W[v]&lt;pen&gt;</span></code></dt><dd><p>设置扇区边框的画笔属性。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Wv&lt;pen&gt;</span></code> 可用于设置绘制矢量时所需的画笔属性。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Zu|&lt;scale&gt;</span></code></dt><dd><p>将数据的半径乘以 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> ，比如 <code class="docutils literal notranslate"><span class="pre">-Z0.001</span></code> 会将数据的单位从m变成km。</p>
+<p>若不考虑半径，可以通过 <code class="docutils literal notranslate"><span class="pre">-Zu</span></code> 将所有的半径设置为单位长度。</p>
+</dd>
+<dt><strong>-:</strong></dt><dd><p>输入数据为 <code class="docutils literal notranslate"><span class="pre">azimuth,</span> <span class="pre">radus</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">radius,</span> <span class="pre">azimuth</span></code></p>
+</dd>
+</dl>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../option/U/"><span class="doc">(more …)</span></a></dt><dd><p>在图上绘制GMT时间戳logo</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../option/t/"><span class="doc">(more …)</span></a></dt><dd><p>设置图层透明度（百分比）。取值范围为0（不透明）到100（全透明）</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../psconvert/" class="btn btn-neutral float-left" title="psconvert" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../sac/" class="btn btn-neutral float-right" title="sac" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

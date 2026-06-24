@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>网格文件格式 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="网格配准" href="../registration/" />
+    <link rel="prev" title="网格文件" href="../" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">网格文件</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">网格文件格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#netcdf">netCDF 格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">GMT 自定义二进制文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">其它网格文件格式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">读 netCDF 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">写 netCDF 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">查看 netCDF 文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">网格文件</a> &raquo;</li>
+      <li>网格文件格式</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/grid/format.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>网格文件格式<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<p>GMT 支持的网格数据格式主要分为四大类，这四大类也可细分为更多的数据格式：</p>
+<ol class="arabic simple">
+<li><p>netCDF4 标准网格文件格式</p></li>
+<li><p>netCDF3 “旧”网格文件格式</p></li>
+<li><p>GMT 自定义二进制文件</p></li>
+<li><p>其它网格文件格式</p></li>
+</ol>
+<p>netCDF4 标准网格文件格式是最常见的，也最推荐使用的网格数据格式。它也是 GMT 默认的网格数据格式，一般以 <code class="docutils literal notranslate"><span class="pre">.nc</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.grd</span></code> 作为文件后缀。本章也将只对 netCDF 格式做重点介绍。</p>
+<p>GMT 所支持的所有网格文件格式在下表列出，每种网格文件格式均对应一个两字符 ID。</p>
+<table class="docutils align-center" id="id3">
+<caption><span class="caption-text">GMT 支持的网格文件格式</span><a class="headerlink" href="#id3" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p><em>GMT netCDF4 标准格式</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nb</span></code></p></td>
+<td><p>GMT netCDF format (8-bit integer, COARDS, CF-1.5)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ns</span></code></p></td>
+<td><p>GMT netCDF format (16-bit integer, COARDS, CF-1.5)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ni</span></code></p></td>
+<td><p>GMT netCDF format (32-bit integer, COARDS, CF-1.5)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nf</span></code></p></td>
+<td><p>GMT netCDF format (32-bit float, COARDS, CF-1.5)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nd</span></code></p></td>
+<td><p>GMT netCDF format (64-bit float, COARDS, CF-1.5)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><em>GMT netCDF3 “旧”格式</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cb</span></code></p></td>
+<td><p>GMT netCDF format (8-bit integer, depreciated)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cs</span></code></p></td>
+<td><p>GMT netCDF format (16-bit integer, depreciated)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ci</span></code></p></td>
+<td><p>GMT netCDF format (32-bit integer, depreciated)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cf</span></code></p></td>
+<td><p>GMT netCDF format (32-bit float, depreciated)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span></code></p></td>
+<td><p>GMT netCDF format (64-bit float, depreciated)</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><em>GMT 自定义二进制格式</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bm</span></code></p></td>
+<td><p>GMT native, C-binary format (bit-mask)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bb</span></code></p></td>
+<td><p>GMT native, C-binary format (8-bit integer)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bs</span></code></p></td>
+<td><p>GMT native, C-binary format (16-bit integer)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bi</span></code></p></td>
+<td><p>GMT native, C-binary format (32-bit integer)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bf</span></code></p></td>
+<td><p>GMT native, C-binary format (32-bit float)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bd</span></code></p></td>
+<td><p>GMT native, C-binary format (64-bit float)</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><em>其他网格文件格式</em></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rb</span></code></p></td>
+<td><p>SUN raster file format (8-bit standard)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rf</span></code></p></td>
+<td><p>GEODAS grid format GRD98 (NGDC)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sf</span></code></p></td>
+<td><p>Golden Software Surfer format 6 (32-bit float)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sd</span></code></p></td>
+<td><p>Golden Software Surfer format 7 (64-bit float)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">af</span></code></p></td>
+<td><p>Atlantic Geoscience Center AGC (32-bit float)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ei</span></code></p></td>
+<td><p>ESRI Arc/Info ASCII Grid Interchange format (ASCII integer)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ef</span></code></p></td>
+<td><p>ESRI Arc/Info ASCII Grid Interchange format (ASCII float)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gd</span></code></p></td>
+<td><p>Import/export via GDAL</p></td>
+</tr>
+</tbody>
+</table>
+<p>除了上面列出的网格文件格式之外，有C编程经验的高级用户还可以自己自定义网格文件格式，并将读写该格式的子程序链接到GMT函数库中，使得GMT可以支持自定义网格文件格式的读取。详情见GMT源码中的 <code class="docutils literal notranslate"><span class="pre">gmt_customio.c</span></code>。</p>
+<section id="netcdf">
+<h2>netCDF 格式<a class="headerlink" href="#netcdf" title="永久链接至标题"></a></h2>
+<p>GMT保存2D网格时默认使用与COARDS兼容的netCDF格式。COARDS，全称为
+Cooperative Ocean/Atmosphere Research Data Service，是一个海洋和大气科学相关机构分发网格数据时所采用的一个共同标准。GMT的网格数据兼容COARDS标准，因而
+GMT可以读取这些机构分发的网格数据，同时，GMT生成的网格数据也可以被其它软件所读取。</p>
+<p>netCDF格式中除了包含数据外，还包含了很多其它属性。</p>
+<table class="docutils align-center" id="id4">
+<caption><span class="caption-text">GMT 中 netCDF 格式的属性</span><a class="headerlink" href="#id4" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>属性</strong></p></th>
+<th class="head"><p><strong>说明</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p><em>全局属性</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Conventions</p></td>
+<td><p>COARDS, CF-1.5 (可选)</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>标题 (可选)</p></td>
+</tr>
+<tr class="row-odd"><td><p>source</p></td>
+<td><p>文件是如何创建的 (可选)</p></td>
+</tr>
+<tr class="row-even"><td><p>node_offset</p></td>
+<td><p>网格配准方式，0 表示网格线配置（默认值），1 表示像素配准</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><em>X 和 Y 变量属性</em></p></td>
+</tr>
+<tr class="row-even"><td><p>long_name</p></td>
+<td><p>坐标名称 (如 “Longitude” 和 “Latitude”)</p></td>
+</tr>
+<tr class="row-odd"><td><p>units</p></td>
+<td><p>坐标单位 (如, “degrees_east” 和 “degrees_north”)</p></td>
+</tr>
+<tr class="row-even"><td><p>actual range
+(or valid range)</p></td>
+<td><p><em>x</em> 和 <em>y</em> 的最小最大值</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><em>Z 变量属性</em></p></td>
+</tr>
+<tr class="row-even"><td><p>long_name</p></td>
+<td><p>Z变量名称 (默认为 “z”)</p></td>
+</tr>
+<tr class="row-odd"><td><p>units</p></td>
+<td><p>Z变量单位</p></td>
+</tr>
+<tr class="row-even"><td><p>scale_factor</p></td>
+<td><p><em>z</em> 值要乘以的因子 (默认值: 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>add_offset</p></td>
+<td><p><em>z</em> 值乘以因子后的额外偏移量 (默认值: 0)</p></td>
+</tr>
+<tr class="row-even"><td><p>actual_range</p></td>
+<td><p>Z值的最小最大值</p></td>
+</tr>
+<tr class="row-odd"><td><p>_FillValue
+(or missing_value)</p></td>
+<td><p>数据缺失或无效数据对应的值。若未指定，则根据数据类型自动设置该值</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gmt">
+<h2>GMT 自定义二进制文件<a class="headerlink" href="#gmt" title="永久链接至标题"></a></h2>
+<p>GMT在老版本中并没有使用netCDF作为其网格文件标准格式，而是自定义了一种网格文件格式。该格式已不推荐使用。该格式的文件包含了一个892个字节的头段，以及数据。下标列出了头段中所保存的所有信息。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>参数</strong></p></th>
+<th class="head"><p><strong>描述</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>int</strong> <em>n_columns</em></p></td>
+<td><p>Number of nodes in the <em>x</em>-dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>int</strong> <em>n_rows</em></p></td>
+<td><p>Number of nodes in the <em>y</em>-dimension</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>int</strong> <em>registration</em></p></td>
+<td><p>0 for grid line registration, 1 for pixel registration</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>double</strong> <em>x_min</em></p></td>
+<td><p>Minimum <em>x</em>-value of region</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>double</strong> <em>x_max</em></p></td>
+<td><p>Maximum <em>x</em>-value of region</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>double</strong> <em>y_min</em></p></td>
+<td><p>Minimum <em>y</em>-value of region</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>double</strong> <em>y_max</em></p></td>
+<td><p>Maximum <em>y</em>-value of region</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>double</strong> <em>z_min</em></p></td>
+<td><p>Minimum <em>z</em>-value in data set</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>double</strong> <em>z_max</em></p></td>
+<td><p>Maximum <em>z</em>-value in data set</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>double</strong> <em>x_inc</em></p></td>
+<td><p>Node spacing in <em>x</em>-dimension</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>double</strong> <em>y_inc</em></p></td>
+<td><p>Node spacing in <em>y</em>-dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>double</strong> <em>z_scale_factor</em></p></td>
+<td><p>Factor to multiply <em>z</em>-values after read</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>double</strong> <em>z_add_offset</em></p></td>
+<td><p>Offset to add to scaled <em>z</em>-values</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>char</strong> <em>x_units</em>[80]</p></td>
+<td><p>Units of the <em>x</em>-dimension</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>char</strong> <em>y_units</em>[80]</p></td>
+<td><p>Units of the <em>y</em>-dimension</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>char</strong> <em>z_units</em>[80]</p></td>
+<td><p>Units of the <em>z</em>-dimension</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>char</strong> <em>title</em>[80]</p></td>
+<td><p>Descriptive title of the data set</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>char</strong> <em>command</em>[320]</p></td>
+<td><p>Command line that produced the grid file</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>char</strong> <em>remark</em>[160]</p></td>
+<td><p>Any additional comments</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TYPE</strong> <em>z</em>[n_columns*n_rows]</p></td>
+<td><p>1-D array with <em>z</em>-values in scanline format</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h2>其它网格文件格式<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>除了netCDF和GMT自定义格式外，GMT还支持其它几种网格文件格式。更重要的是，GMT支持通过GDAL读取数据，因而几乎可以读取任意格式的网格文件。</p>
+<p>GDAL所支持的光栅格式列表见: <a class="reference external" href="https://gdal.org/drivers/raster/index.html">https://gdal.org/drivers/raster/index.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../" class="btn btn-neutral float-left" title="网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../registration/" class="btn btn-neutral float-right" title="网格配准" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

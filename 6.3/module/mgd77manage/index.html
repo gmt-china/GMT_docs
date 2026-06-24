@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mgd77manage &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="mgd77convert" href="../mgd77convert/" />
+    <link rel="prev" title="xyz2grd" href="../xyz2grd/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangiulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mgd77manage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mgd77">mgd77 模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">mgd77manage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">距离单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#credits">Credits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>mgd77manage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/mgd77manage.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="mgd77manage">
+<h1>mgd77manage<a class="headerlink" href="#mgd77manage" title="Permalink to this heading"></a></h1>
+<p>这里首先介绍 mgd77 整个包：</p>
+<section id="mgd77">
+<h2>mgd77 模块<a class="headerlink" href="#mgd77" title="Permalink to this heading"></a></h2>
+<p>本模块主要用来管理和处理美国 NGDC (National Geophysical Data Center，现为
+National Centers for Environmental Information，NCEI) 机构下的海洋地球物理数据。在不同的时期，针对上述数据，NCEI 开发了多种数据格式，MGD77 格式为
+1977 年针对沿测线重力，磁，测深以及地震等观测开发的格式，目前已经成为国际数据交换的标准，并在某个版本中加入了制表符分隔的 MGD77T 格式。目前 <strong>mgd77</strong>
+主要包括下面 9 个命令：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#"><span class="doc">mgd77manage</span></a> 管理 MGD77+ 文件</p></li>
+<li><p><a class="reference internal" href="../mgd77convert/"><span class="doc">mgd77convert</span></a> 将 MGD77 数据转换为其他格式</p></li>
+<li><p><a class="reference internal" href="../mgd77header/"><span class="doc">mgd77header</span></a> 从 A77 文件创建 MGD77 头部信息</p></li>
+<li><p><a class="reference internal" href="../mgd77info/"><span class="doc">mgd77info</span></a> 提取 MGD77 文件信息</p></li>
+<li><p><a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a> 提取 MGD77 文件中的数据</p></li>
+<li><p><a class="reference internal" href="../mgd77magref/"><span class="doc">mgd77magref</span></a> 计算 IGRF 或 CM4 磁场模型</p></li>
+<li><p><a class="reference internal" href="../mgd77path/"><span class="doc">mgd77path</span></a> 返回 MGD77 测线路径</p></li>
+<li><p><a class="reference internal" href="../mgd77sniffer/"><span class="doc">mgd77sniffer</span></a> MGD77 测线沿轨质量控制</p></li>
+<li><p><a class="reference internal" href="../mgd77track/"><span class="doc">mgd77track</span></a> 绘制 MGD77 测线轨迹</p></li>
+</ul>
+<p>下面将做整体介绍：</p>
+<p><strong>1. 前言</strong></p>
+<p>mgd77 模块的主要功能为</p>
+<ul class="simple">
+<li><p>改进原本的 mgg 工具集有限的功能</p></li>
+<li><p>实现对数据文件增加新的数据列</p></li>
+<li><p>添加新的格式，即 NetCDF 格式，称为 MGD77+ 或 MGD77+ NetCDF 格式</p></li>
+</ul>
+<p>下面介绍维护文件需要的信息和步骤。</p>
+<p><strong>2. 介绍</strong></p>
+<p><strong>数据位置</strong> ：<strong>$MGD77_HOME</strong> 环境变量为 mgd77 模块的主要目录，其中包含一个名为 mgd77_paths.txt 的文件，文件内容为不同的路径，这些路径即为
+mgd77 数据文件的位置。如果未设置该环境变量，则默认为设置为
+<strong>$GMT_SHAREDIR</strong>/mgd77。</p>
+<p><strong>3. 转换</strong></p>
+<p>使用 <a class="reference internal" href="../mgd77convert/"><span class="doc">mgd77convert</span></a> 可以将 MGD77 文本文件（.mgd77）转换为 MGD77+
+NetCDF 格式（.nc）。使用下面的命令可以实现批量转换</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">mgd77convert</span> <span class="o">=</span>cruises.lis -Fa -Tc -V -Lwe+l &gt; log.txt
+</pre></div>
+</div>
+<p>cruises.lis 文件中包含了所有需要转换的文件名。新生成的 nc 文件也可以放在一个或者多个单独的文件夹中，将其路径列在 mgd77_paths.txt 文件中。建议将
+*.nc 文件夹的路径放在 *.mgd77 路径之前。使用 <strong>-I</strong> 选项可以选择特定后缀的文件。</p>
+<p><strong>4. 添加新列</strong></p>
+<p><strong>mgd77manage</strong> 允许用户添加新数据列到 nc 文件中，包括文本字符串，或从其他网格模型沿轨采样的点等。最大支持 32 个新数据列。数据提取工具，例如
+<a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a> 可用于提取数据列以及用户添加的新列。</p>
+<p><strong>5. 误差源</strong></p>
+<p>在讨论改正 MGD77 数据的误差前，这里首先分析各种观测误差:</p>
+<ol class="arabic simple">
+<li><p>头部信息中某些字段不符合 MGD77 规范或缺少该字段时，将会导致错误。
+<a class="reference internal" href="../mgd77convert/"><span class="doc">mgd77convert</span></a> 在使用较高级别的 <strong>-V</strong> 选项会提示这些错误。这些错误通常不会影响数据。</p></li>
+<li><p>尽管遵循 MGD77 规范，但当特定的数据列编码不正确时，会导致系统误差。通常情况下会导致一个固定常数缩放因子，比如，10 或者 0.1，在将 fathom
+转换为 m 时甚至可能出现 1.8288 的因子。</p></li>
+<li><p>当记录数据或者处理数据时，由于沿轨的纬度、航向或者其他和时间相关的因素可能会导致未知的系统误差。这种误差有时可以通过后期的数据分析解决，例如沿轨和跨轨的检查，通过数据分析可生成改正项，并应用到数据中改正这些误差的影响。但这些改正项在新出现观测数据后可能会变化，因此是一种短时间的改正，需要随着数据的加入不断更新。</p></li>
+<li><p>单个数据或者数据序列可能会超出数据实际范围或者在其他方面突破某种限制，这种数据是不符合实际的。此外，即使在实际范围内，也存在连续数据突变的情况，这同样是不符合实际的。因此，可以对每个数据点生成一个 GOOD 或者 BAD 的标志来标记这些数据。</p></li>
+</ol>
+<p>对于上述误差，目前的策略为，第 1，2 和 4 种误差将通过在 *.nc 文件中在元数据提供信息来改正，第 3 种误差的改正则单独保存在改正表中，因为这些改正通常是不断变化的。</p>
+<p><strong>6. 误差定位</strong></p>
+<p><strong>mgd77sniffer</strong> 可用来对原始的 MGD77 ASCII 文件进行彻底的沿轨完整性检查，并生成对应的 *.e77 错误日志。所有发现的问题都会记录在错误日志中，如果需要，还会给出建议的改正项。后续专业人员可以验证这些改正项是否有效。编辑其中的错误并修正改正项，并通过相关的的代码 key 值激活（请见 <a class="reference internal" href="../mgd77sniffer/"><span class="doc">mgd77sniffer</span></a> ）。<strong>mgd77manage</strong> 可以读取这些错误日志，根据日志中的建议修正错误的头部记录，在读取某些列的时候应用改正项。如果用户在后续发现其他问题，请重新运行这一步骤，因为所有的 E77 设置或标志都是根据最新的 E77 文件重新创建的。</p>
+<p><strong>7. 误差改正</strong></p>
+<p>数据提取命令 <a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a> 允许在数据提取时应用改正。过程为首先剔除带有 BAD 标志的数据，然后应用系统误差改正项，最后，如果制定了改正表，应用这种暂时的改正。所有这些步骤都需要头部数据，并且可以被用户调整。此外，用户可以添加自己的标志作为单独的数据列，使用 <a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a>
+的逻辑测试来确定输出哪些数据。</p>
+<p>下面将介绍 <a class="reference internal" href="#"><span class="doc">mgd77manage</span></a> 命令，其他命令见对应文档。</p>
+</section>
+<section id="id1">
+<h2>mgd77manage<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/supplements/mgd77/mgd77manage.html" title="(在 GMT v6.3)"><span>mgd77manage</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>管理 MGD77+ 文件</p>
+</dd>
+</dl>
+<p><strong>mgd77manage</strong> 用来处理在 MGD77+ NetCDF 文件中的自定义列。用户可以删除列，增加列，更新已经存在的列，或使用 e77 文件进行误差改正。新数据可以来自 ASCII 表文件，或基于现有的列和理论表达式，或对网格进行沿轨采样得到。新数据将以自定义数据列的形式追加到 MGD77+ 文件中具体见 <a class="reference internal" href="#mgd77">mgd77 模块</a> 。</p>
+</section>
+<section id="id2">
+<h2>语法<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p><strong>gmt mgd77manage</strong> <em>GEODAS-ids</em>
+[ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><strong>a</strong>|<strong>c</strong>|<strong>d</strong>|<strong>D</strong>|<strong>e</strong>|<strong>E</strong>|<strong>g</strong>|<strong>i</strong>|<strong>n</strong>|<strong>t</strong>|<strong>T</strong><em>fileinfo</em>[<strong>+f</strong>]]
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><em>abbrev1</em>,<em>abbrev2</em>,…) ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong><em>empty</em> ]
+[ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong><em>abbrev</em>/<em>name</em>/<em>unit</em>/<strong>c</strong>/<em>scale</em>/<em>offset</em>/<em>comment</em> ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><em>unit</em> ]
+[ <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-bi</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#bi-full" title="(在 GMT v6.3)"><span class="xref std std-ref">binary</span></a> ]
+[ <strong>-di</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#di-full" title="(在 GMT v6.3)"><span class="xref std std-ref">nodata</span></a>[<strong>+c</strong><em>col</em>] ]
+[ <strong>-j</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#distcalc-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-n</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#n-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id3">
+<h2>必选选项<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl>
+<dt><em>NGDC-ids</em></dt><dd><p>可以是 5 种说明符种的一种或者几种:</p>
+<ol class="arabic simple">
+<li><p>8 个字符的 GEODAS ID，例如：01010083，JA010010</p></li>
+<li><p>2 个字符的机构 ID，将会返回所有该机构的测线</p></li>
+<li><p>4 个字符代码，返回对应机构和测量船的测线，机构和测量船的代码见 <a class="reference internal" href="../mgd77info/"><span class="doc">mgd77info</span></a> <strong>-L</strong></p></li>
+<li><p>=<em>list</em> ，<em>list</em> 文件中包含 GEODAS ID 列表，每行一个记录</p></li>
+<li><p>什么都不指定，返回所有的测线</p></li>
+</ol>
+<p>如果不指定文件扩展名，则搜索下面 4 个扩展名。搜素顺序为：</p>
+<ul class="simple">
+<li><p>MGD77+ (“.nc”)</p></li>
+<li><p>MGD77T (“.m77t”)</p></li>
+<li><p>MGD77 (“.mgd77”)</p></li>
+<li><p>普通文本文件 (“.dat”)</p></li>
+</ul>
+<p>使用 <strong>-I</strong> 选项可以略过其中的某种或几种格式。</p>
+<p>搜索文件时首先在当前目录查找，如果未设置 <strong>$MGD77_HOME</strong>, 则在默认的
+<strong>$GMT_SHAREDIR</strong>/mgd77 目录查找，如果设置了 <strong>$MGD77_HOME</strong>，则在其下的 <strong>$MGD77_HOME</strong>/mgd77_paths.txt 文件中保存的路径中查找。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<dl id="a">
+<dt><strong>-A</strong><strong>a</strong>|<strong>c</strong>|<strong>d</strong>|<strong>D</strong>|<strong>e</strong>|<strong>E</strong>|<strong>g</strong>|<strong>i</strong>|<strong>n</strong>|<strong>t</strong>|<strong>T</strong><em>fileinfo</em>[<strong>+f</strong>]</dt><dd><p>添加新的数据列。如果文件中已经存在相同名称的列，则无法添加。<strong>+f</strong> 选项可以强制覆盖，但是在某些情况下，这种强行覆盖会失败，需要先删除对应的列，然后再添加，出现这种情况时，会警告提示。新增的列时可以使用如下代码，其含义如下：</p>
+<ul>
+<li><p><strong>a</strong> 追加包含要添加的列的文件名。文件的行数必须与 MGD77+ 文件中相同。如果不指定文件名，则从标准输入中读取。</p></li>
+<li><p><strong>c</strong> 从现有的数据或者公式创建新列，用于改正或者作为参考场。其后可以再接一个字符，字符的含义如下：</p>
+<ul class="simple">
+<li><p><strong>c</strong> 从未改正的测深中减去 Carter 改正</p></li>
+<li><p><strong>g</strong> IGF 重力参考场（也称为“正常重力”）；使用头部信息中的代码确定计算的公式，如果未设置或者无效，则默认使用 IGF1980；代码含义如下：</p>
+<ul>
+<li><p>1 Heiskanen 1924</p></li>
+<li><p>2 International 1930</p></li>
+<li><p>3 IGF1967</p></li>
+<li><p>4 IGF1980</p></li>
+</ul>
+</li>
+<li><p><strong>m</strong> IGRF 总磁场参考场</p></li>
+<li><p><strong>r</strong> 重新计算的磁异常 rmag = mtfx - IGRF，追加 1 或者 2 表示使用的字段</p></li>
+</ul>
+</li>
+<li><p><strong>d</strong> 指定一个包含两列数据的文件名，第一列为沿轨距离，第二列为数值。如果不指定文件，则从标准输入中读取。MGD77+ 文件中有对应的距离则将被新值取代，在其他距离，设置为 NaN。 使用 <strong>-N</strong> 设置距离单位，通过 <strong>-j</strong> 选择距离计算方式。</p></li>
+<li><p><strong>D</strong> 与 <strong>d</strong> 功能类似，但在没有给定距离的点，内插得到其更新值</p></li>
+<li><p><strong>e</strong> 从当前路径或者 $MGD77_HOME/E77 路径中寻找 <a class="reference internal" href="../mgd77sniffer/"><span class="doc">mgd77sniffer</span></a> 生成的 <em>GEODAS_ID.e77</em> E77 日志，使用该日志检查数据并修改头部信息，为某些系统误差提供改正项（例如缩放尺度和偏移量），指定某个异常应用观测值中重新计算（例如：从  <strong>mtf1</strong> 和 最新的 IGRF 计算 <strong>mag</strong> ），并增加或者更新特殊的列标记 <strong>flag</strong> 。所有的固定修改项（例如：由于源机构使用了错误的单位，需要对字段进行缩放）将作为属性写入到 NetCDF MGD77+ 文件中，并在 <a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a>
+读取数据时自动应用该缩放值。通过交叉分析确定的临时的校正不保存在数据文件中，而是保存在改正表中（见 <a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a> ）。默认情况下，e77 文件中每个头段行的第一个字符（?, Y，N）用来表示是否应该应用响应的改正，其中只有 Y 会被改正。对 <strong>-Ae</strong> 进一步使用子选项可以修改这种行为，<strong>h</strong> 忽略所有的头段信息提供的改正，<strong>f</strong> 忽略所有固定固定校正值，<strong>n</strong> , <strong>v</strong> 和 <strong>s</strong> 将忽略与导航，数据值以及其变化率的标志。使用 <strong>-Ae+f</strong> 将使用新的值替换文件中任何现有的 E77 改正。最后，如果 E77 文件没有被验证，则其改正值将不会被应用。使用 <strong>-AE</strong> 来忽略验证状态。</p></li>
+<li><p><strong>g</strong> 沿着 MGD77+ 文件给出的轨迹，使用双三次插值对 GMT 地理网格进行插值，后面追加 GMT 网格文件名。</p></li>
+<li><p><strong>i</strong> 沿 MGD77+ 文件轨迹使用双三次插值内插 Sandwell/Smith 墨卡托 *.img
+网格。追加 img 网格文件名，一个缩放尺度（通常为 1 或者 0.1），img 文件格式（0-3）以及一个可选的网格最大纬度[80.738]，用逗号分隔。文件格式模式中：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 代表 img 文件没有约束代码，返回所有数据</p></li>
+<li><p>1 代表 img 文件有约束代码，返回所有数据</p></li>
+<li><p>2 代表 img 文件有约束代码，返回只在约束点的数据，其他地方为 NaN</p></li>
+<li><p>3 代表 img 文件有约束代码，在约束点返回 1，其他地方为 0</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>n</strong> 追加一个两列表文件名第一列为记录编号，从 0 开始，第二列为数据值，如果不指定文件，则从标准输入中读取。使用对应的数据替换 MGD77+ 中的数据，其他数据则设置为 NaN</p></li>
+<li><p><strong>t</strong> 追加一个两列表文件名，第一列为绝对时间，第二列为数据值，如果不指定文件，则从标准输入中读取。MGD77+ 文件中时间与数据中相对应的会被替换，其他数据设置为 NaN。使用大写的 <strong>T</strong> 选项，将会进行内插。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>abbrev1</em>,<em>abbrev2</em>,…)</dt><dd><p>给定一个逗号分隔的行缩写列表，从 MGD77+ 文件中删除这些数据。如果要替换数据则不应该使用该选项，而是使用 <strong>-A…+f</strong> 。由于不能从 NetCDF 文件中删除变量，所以必须创建一个新的文件，其中不包含被剔除的列。一旦文件被创建，则临时删除旧文件，将新文件命名为旧文件，然后移除旧文件。</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-E</strong><em>empty</em></dt><dd><p>指定单独的字符用来替换空字符串值，例如：“9” 将会把空字符串替换为 “999….”，默认为 9。</p>
+</dd>
+</dl>
+<dl class="simple" id="f">
+<dt><strong>-F</strong></dt><dd><p>强制模式。当激活该模式时，可以强制删除或者替换标准的 MGD77 文件中列。用户需要慎重。</p>
+</dd>
+</dl>
+<dl id="i">
+<dt><strong>-I</strong><em>abbrev</em>/<em>name</em>/<em>unit</em>/<strong>c</strong>/<em>scale</em>/<em>offset</em>/<em>comment</em></dt><dd><p>除了文件信息，还可以为新增的列指定属性等信息。可指定所选数据的缩写（16 个字符或者更小，仅使用小写字母、数字或下划线），详细描述名声、单位、数据类型（上述以 <strong>c</strong> 为例，下面会介绍各种数据类型缩写），缩放参数 scale 以及 offset，以及其他说明（小于 128 字符）。</p>
+<p>数据类型可选项包括：</p>
+<ul class="simple">
+<li><p><strong>c</strong> 字符</p></li>
+<li><p><strong>b</strong> Byte 类型</p></li>
+<li><p><strong>s</strong> short 整数类型</p></li>
+<li><p><strong>f</strong> float 浮点数类型</p></li>
+<li><p><strong>i</strong> int 整数类型</p></li>
+<li><p><strong>d</strong> double 浮点数类型</p></li>
+<li><p><strong>t</strong> text 文本类型</p></li>
+</ul>
+<p>如果选择了文本数据类型，则 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> 讨论中的“值”指的是本文数据，插值对于该类型不适用，包含多个单词的值需要加上引号。</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>unit</em></dt><dd><p>指定距离单位（见 <a class="reference internal" href="#id5">距离单位</a> ）[默认为 <strong>-Nk</strong> （km）]。只在 <strong>-Ag</strong>|<strong>i</strong> 使用时可用。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输入数据的格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="../../option/d/"><span class="doc">(more …)</span></a></dt><dd><p>将输入数据中值为 <em>nodata</em> 的列替换为 NaN</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="../../option/distcal/"><span class="doc">(more …)</span></a></dt><dd><p>设置球面距离的计算方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../option/n/"><span class="doc">(more …)</span></a></dt><dd><p>设置网格文件的插值方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>距离单位<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p>GMT支持多种不同的距离单位，以及三种不同的球面距离计算方式。详情见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 和 <a class="reference internal" href="../../option/distcal/"><span class="doc">-j 选项</span></a>。</p>
+</section>
+<section id="id6">
+<h2>示例<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>在 Geosat/ERS-1 得到的 11.2 版本的海洋重力场中内插 01010047.nc 和 01010008.nc ，将内插结果写到文件中，类型为 2-byte 短整形，单位为 mGal * 10</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77manage <span class="m">01010047</span> <span class="m">01010008</span> -Ai10/1/grav.11.2.img <span class="se">\</span>
+    -Isatgrav/<span class="s2">&quot;Geosat/ERS-1 gravity&quot;</span>/<span class="s2">&quot;mGal&quot;</span>/s/10/0/<span class="s2">&quot;Sandwell/Smith version 11.2&quot;</span> -V
+</pre></div>
+</div>
+<p>使用一个滤波后的磁观测数据添加到 01010047.nc 作为新的列，类型为 float，在对应的时间内插该磁观测数据</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77manage <span class="m">01010047</span> -ATmymag.tm -Ifiltmag/<span class="s2">&quot;Intermediate-wavelength \</span>
+<span class="s2">    magnetic residuals&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;Useful for looking for isochrons&quot;</span> -V
+</pre></div>
+</div>
+<p>从所有的 MGD77+ 文件中删除 satfaa、coastdist 以及 satvgg 列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nv">mgd77manage</span> <span class="o">=</span>allmgd77.lis -Dsatfaa,coastdist,satvgg -V
+</pre></div>
+</div>
+<p>从所有的 MGD77+ 文件中创建 IGRF 字段，4 字节浮点数类型</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nv">mgd77manage</span> <span class="o">=</span>allmgd77.lis -Acm -Iigrf/<span class="s2">&quot;IGRF reference \</span>
+<span class="s2">    field&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;IGRF version 10 for 1990-2010&quot;</span> -V
+</pre></div>
+</div>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this heading"></a></h2>
+<p>IGRF 基于英国地质调查局的 Susan Macmilan 编写的 Fortran 程序，由 Algrave 大学的 Joaquim 通过
+f2c 转换到 C 语言，最终 Paul Wessel 改成 GMT 风格。</p>
+</section>
+<section id="id7">
+<h2>参考<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<p>MDG77 格式见
+<a class="reference external" href="http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt">http://www.ngdc.noaa.gov/mgg/dat/geodas/docs/mgd77.txt.</a></p>
+<p>IGRF 见 <a class="reference external" href="https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html">https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html</a></p>
+</section>
+<section id="id8">
+<h2>相关模块<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../mgd77convert/"><span class="doc">mgd77convert</span></a>,
+<a class="reference internal" href="../mgd77header/"><span class="doc">mgd77header</span></a>,
+<a class="reference internal" href="../mgd77list/"><span class="doc">mgd77list</span></a>,
+<a class="reference internal" href="../mgd77magref/"><span class="doc">mgd77magref</span></a>
+<a class="reference internal" href="../mgd77info/"><span class="doc">mgd77info</span></a>,
+<a class="reference internal" href="../mgd77track/"><span class="doc">mgd77track</span></a>,
+<a class="reference internal" href="../mgd77sniffer/"><span class="doc">mgd77sniffer</span></a>,
+<a class="reference internal" href="../mgd77track/"><span class="doc">mgd77track</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../xyz2grd/" class="btn btn-neutral float-left" title="xyz2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../mgd77convert/" class="btn btn-neutral float-right" title="mgd77convert" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

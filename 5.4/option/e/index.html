@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.12 -e 选项 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/option/e.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="8.13 -f 选项" href="../f/" />
+    <link rel="prev" title="8.11 -d 选项" href="../d/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">8 标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">8.1 -R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">8.2 -J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">8.3 -B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../P/">8.4 -P 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">8.5 -V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">8.6 -U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../KO/">8.7 -K 和 -O 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">8.8 -X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">8.9 -a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">8.10 -b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">8.11 -d 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.12 -e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">8.13 -f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">8.14 -g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">8.15 -h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">8.16 -i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">8.17 -n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.18 -r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">8.19 -p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">8.20 -s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">8.21 -t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">8.22 -x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">8.23 -: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">8 标准选项</a> &raquo;</li>
+        
+      <li>8.12 -e 选项</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/option/e.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="e">
+<h1>8.12 -e 选项<a class="headerlink" href="#e" title="永久链接至标题">¶</a></h1>
+<p>GMT命令在读入数据时默认会处理读入的所有数据记录。<code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的作用是筛选或排除匹配某个字符串或者正则表达式的数据记录。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的用法有两种：</p>
+<ol class="arabic simple">
+<li>匹配某个字符串：<code class="docutils literal notranslate"><span class="pre">-e[~]&quot;&lt;pattern&gt;&quot;</span></code></li>
+<li>匹配某个正则表达式：<code class="docutils literal notranslate"><span class="pre">-e[~]/&lt;regexp&gt;/[i]</span></code></li>
+</ol>
+<p>在匹配字符串或正则表达式前加上 <code class="docutils literal notranslate"><span class="pre">~</span></code> 表示取反，即排除匹配字符串或正则表达式的数据记录。如果数据记录中本身就包括字符 <code class="docutils literal notranslate"><span class="pre">~</span></code>，则需要使用 <code class="docutils literal notranslate"><span class="pre">\~</span></code> 对其进行转义。对于匹配正则表达式而言，还可以加上 <code class="docutils literal notranslate"><span class="pre">i</span></code> 表示忽略大小写。</p>
+<p>以一个常见的应用场景举例。假如文件 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 中有一堆数据点，每个数据都对应某个分类，文件内容如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> type1
+<span class="m">2</span> <span class="m">2</span> type1
+<span class="m">3</span> <span class="m">3</span> type1
+<span class="m">4</span> <span class="m">4</span> type2
+<span class="m">5</span> <span class="m">5</span> type2
+<span class="m">6</span> <span class="m">6</span> type2
+<span class="m">7</span> <span class="m">7</span> type3
+<span class="m">8</span> <span class="m">8</span> type10
+<span class="m">9</span> <span class="m">9</span> type10
+<span class="m">10</span> <span class="m">10</span> null
+</pre></div>
+</div>
+<p>可以使用 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项筛选出自己需要的数据记录。</p>
+<p>筛选出所有匹配 <code class="docutils literal notranslate"><span class="pre">type</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type&#39;</span>
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+<span class="m">4</span>   <span class="m">4</span>       type2
+<span class="m">5</span>   <span class="m">5</span>       type2
+<span class="m">6</span>   <span class="m">6</span>       type2
+<span class="m">7</span>   <span class="m">7</span>       type3
+<span class="m">8</span>   <span class="m">8</span>       type10
+<span class="m">9</span>   <span class="m">9</span>       type10
+</pre></div>
+</div>
+<p>排除所有匹配 <code class="docutils literal notranslate"><span class="pre">null</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e~<span class="s1">&#39;null&#39;</span>
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+<span class="m">4</span>   <span class="m">4</span>       type2
+<span class="m">5</span>   <span class="m">5</span>       type2
+<span class="m">6</span>   <span class="m">6</span>       type2
+<span class="m">7</span>   <span class="m">7</span>       type3
+<span class="m">8</span>   <span class="m">8</span>       type10
+<span class="m">9</span>   <span class="m">9</span>       type10
+</pre></div>
+</div>
+<p>筛选所有匹配 <code class="docutils literal notranslate"><span class="pre">type2</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type2&#39;</span>
+<span class="m">4</span>   <span class="m">4</span>       type2
+<span class="m">5</span>   <span class="m">5</span>       type2
+<span class="m">6</span>   <span class="m">6</span>       type2
+</pre></div>
+</div>
+<p>筛选所有匹配 <code class="docutils literal notranslate"><span class="pre">type1</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 错误写法，因为 type1 也包含在字符串 type10 中</span>
+$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type1&#39;</span>
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+<span class="m">8</span>   <span class="m">8</span>       type10
+<span class="m">9</span>   <span class="m">9</span>       type10
+
+<span class="c1"># 正确写法</span>
+<span class="c1"># 此处使用了正则表达式，\ ``$`` 表示行末匹配</span>
+$ gmt <span class="k">select</span> input.dat -e/type1$/
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+</pre></div>
+</div>
+<p>正则表达式的具体用法不在本手册的范围之内，用户请自行搜索“正则表示式”。</p>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../f/" class="btn btn-neutral float-right" title="8.13 -f 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../d/" class="btn btn-neutral float-left" title="8.11 -d 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

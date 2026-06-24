@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13.35 kml2gmt &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/kml2gmt.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="13.36 makecpt" href="../makecpt/" />
+    <link rel="prev" title="13.34 isogmt" href="../isogmt/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">13 模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">13.1 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.2 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">13.3 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.4 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.5 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.6 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.7 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.8 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.9 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.10 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.11 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">13.12 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.13 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.14 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2rgb/">13.15 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.16 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.17 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.18 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.19 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.20 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.21 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.22 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.23 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.24 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.25 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.26 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdraster/">13.27 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.28 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.29 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.30 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.31 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.32 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.33 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">13.34 isogmt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.35 kml2gmt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.35.1 必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.35.2 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.35.3 示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.36 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.37 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.38 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psbasemap/">13.39 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psclip/">13.40 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoast/">13.41 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.42 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoupe/">13.43 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pshistogram/">13.44 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psimage/">13.45 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pslegend/">13.46 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psmeca/">13.47 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pspolar/">13.48 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psrose/">13.49 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssac/">13.50 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psscale/">13.51 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssolar/">13.52 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psternary/">13.53 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pstext/">13.54 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psvelo/">13.55 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psxy/">13.56 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.57 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.58 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.59 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">13 模块手册</a> &raquo;</li>
+        
+      <li>13.35 kml2gmt</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/module/kml2gmt.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kml2gmt">
+<span id="index-0"></span><h1>13.35 kml2gmt<a class="headerlink" href="#kml2gmt" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/kml2gmt.html" title="(在 GMT v5.4.6)"><span>kml2gmt</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将Google Earth的KML文件转换为GMT表数据</td>
+</tr>
+</tbody>
+</table>
+<p>该模块可以将 KML 文件中包含的点、线或多边形导出为 GMT 可用的格式。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">KMZ 文件本质上是一个 ZIP 压缩包，其中包含了一个 KML 文件以及若干个辅助文件。可以将 KMZ 文件解压得到 KML 文件，再使用该模块进行转换。</p>
+</div>
+<div class="section" id="id1">
+<h2>13.35.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;kmlfiles&gt;</span></code></dt>
+<dd>要转换的KML文件</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>13.35.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-F[s|l|p]</span></code></dt>
+<dd><p class="first">指定要输出的数据类型。默认会输出KML中包含的所有点、线或多边形</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Fs</span></code> 只输出点</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fl</span></code> 只输出线</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fp</span></code> 只输出多边形</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
+<dd>默认只输出经纬度信息，若使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项，则输出坐标的高程信息作为GMT的Z值</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>13.35.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>从 KML 文件中提取所有经纬度信息:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt kml2gmt google.kml -V &gt; google.txt
+</pre></div>
+</div>
+<p>从一个KML文件中分别提取点和多边形到不同的文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt kml2gmt google.kml -Fp -V &gt; polygons.txt
+gmt kml2gmt google.kml -Fs -V &gt; points.txt
+</pre></div>
+</div>
+<p>也可以直接用外部命令 <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> 实现转换:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f <span class="s2">&quot;GMT&quot;</span> somefile.gmt somefile.kml
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../makecpt/" class="btn btn-neutral float-right" title="13.36 makecpt" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../isogmt/" class="btn btn-neutral float-left" title="13.34 isogmt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

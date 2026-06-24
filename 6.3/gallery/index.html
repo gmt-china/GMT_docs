@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社区绘图实例 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="基础知识" href="../basis/" />
+    <link rel="prev" title="GMT 多图模式" href="../tutorial/multifig/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">社区绘图实例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">线段与矢量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">网格图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">三维绘图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">地理空间数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">图例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../" class="icon icon-home"></a> &raquo;</li>
+      <li>社区绘图实例</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/gallery/index.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>社区绘图实例<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<section id="id2">
+<h2>底图<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/d44026c69907320e8680c507fffc6066.png" src="https://docs.gmt-china.org/6.3/_images/d44026c69907320e8680c507fffc6066.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>MAP_FRAME_TYPE 控制底图边框类型</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../conf/map/#gmtplot-d44026c69907320e8680c507fffc6066"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/a4658cc2fe2e96a6887cd40572d95cd3.png" src="https://docs.gmt-china.org/6.3/_images/a4658cc2fe2e96a6887cd40572d95cd3.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制地球内部主要界面</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex002/#gmtplot-a4658cc2fe2e96a6887cd40572d95cd3"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/873f2bf1422020ca6c28aee4fb012627.png" src="https://docs.gmt-china.org/6.3/_images/873f2bf1422020ca6c28aee4fb012627.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>地震台站为中心的地震分布图</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex011/#gmtplot-873f2bf1422020ca6c28aee4fb012627"><span class="std std-ref"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>线段与矢量<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/85f4162ca4b995fe295bfe9a753f2cea.png" src="https://docs.gmt-china.org/6.3/_images/85f4162ca4b995fe295bfe9a753f2cea.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>不同画笔属性</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../basis/pen/#gmtplot-85f4162ca4b995fe295bfe9a753f2cea"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/7b2bde15fb251533e033c4653ebfd207.png" src="https://docs.gmt-china.org/6.3/_images/7b2bde15fb251533e033c4653ebfd207.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制 GPS 速度场</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex015/#gmtplot-7b2bde15fb251533e033c4653ebfd207"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/8a6a8e6f891062a0ab1c3334af2ea8bf.png" src="https://docs.gmt-china.org/6.3/_images/8a6a8e6f891062a0ab1c3334af2ea8bf.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制矢量场</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex017/#gmtplot-8a6a8e6f891062a0ab1c3334af2ea8bf"><span class="std std-ref"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>网格图<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/3a447d30ca5628c48b88ab83a6851d88.png" src="https://docs.gmt-china.org/6.3/_images/3a447d30ca5628c48b88ab83a6851d88.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>使用地形起伏数据对其他非地形起伏数据进行明暗调制</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex003/#gmtplot-3a447d30ca5628c48b88ab83a6851d88"><span class="std std-ref"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>三维绘图<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/116c7b68ca8c491adade37c19a9a9b62.png" src="https://docs.gmt-china.org/6.3/_images/116c7b68ca8c491adade37c19a9a9b62.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制三维地形图</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex029/#gmtplot-116c7b68ca8c491adade37c19a9a9b62"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/ca530adf4c88d02f61decf4a4b296529.png" src="https://docs.gmt-china.org/6.3/_images/ca530adf4c88d02f61decf4a4b296529.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制三维有限断层模型</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex030/#gmtplot-ca530adf4c88d02f61decf4a4b296529"><span class="std std-ref"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>地理空间数据集<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/99b9ff19daa7dc604070553f2a64fa2f.png" src="https://docs.gmt-china.org/6.3/_images/99b9ff19daa7dc604070553f2a64fa2f.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>CN-border: 中国国界省界数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset-CN/CN-border/#gmtplot-99b9ff19daa7dc604070553f2a64fa2f"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/bafa149b29001c1fa23688d393bc26bf.png" src="https://docs.gmt-china.org/6.3/_images/bafa149b29001c1fa23688d393bc26bf.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>CN-border: 中国国界省界数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset-CN/CN-border/#gmtplot-bafa149b29001c1fa23688d393bc26bf"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/36937cf4e2d817702326527147957098.png" src="https://docs.gmt-china.org/6.3/_images/36937cf4e2d817702326527147957098.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制中国及邻国国界</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset-CN/CN-border/#gmtplot-36937cf4e2d817702326527147957098"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/45dd9065e08d62f804e8463bf8ad25da.png" src="https://docs.gmt-china.org/6.3/_images/45dd9065e08d62f804e8463bf8ad25da.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>CN-faults: 中国断层数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset-CN/CN-faults/#gmtplot-45dd9065e08d62f804e8463bf8ad25da"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/24032eb27761500ed6c1130fdcb4bce3.png" src="https://docs.gmt-china.org/6.3/_images/24032eb27761500ed6c1130fdcb4bce3.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>CN-block: 中国大陆及周边活动地块数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset-CN/CN-block/#gmtplot-24032eb27761500ed6c1130fdcb4bce3"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png" src="https://user-images.githubusercontent.com/3974108/123166472-7376e080-d443-11eb-9289-d8913afed442.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>geo3al: 中国及邻区地质图数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset-CN/geo3al/"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/ca0110ed9d2d08dde9798cea9a15439d.png" src="https://docs.gmt-china.org/6.3/_images/ca0110ed9d2d08dde9798cea9a15439d.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_relief: 全球地形起伏数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-relief/#gmtplot-ca0110ed9d2d08dde9798cea9a15439d"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/f66dc7914eeefb350bd27ee5392ae861.png" src="https://docs.gmt-china.org/6.3/_images/f66dc7914eeefb350bd27ee5392ae861.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_age: 地球洋壳年龄数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-age/#gmtplot-f66dc7914eeefb350bd27ee5392ae861"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/27dc8c2b2e2857bfd55e9704be1b6ecb.png" src="https://docs.gmt-china.org/6.3/_images/27dc8c2b2e2857bfd55e9704be1b6ecb.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_day 和 earth_night: 地球昼夜卫星影像</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-images/#gmtplot-27dc8c2b2e2857bfd55e9704be1b6ecb"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/f1ca50af00037761638b3b77eab663ba.png" src="https://docs.gmt-china.org/6.3/_images/f1ca50af00037761638b3b77eab663ba.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_mask: 地球掩膜数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-mask/#gmtplot-f1ca50af00037761638b3b77eab663ba"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/a4d9b6a5b3b2ae123e2e74e6c0fd3b93.png" src="https://docs.gmt-china.org/6.3/_images/a4d9b6a5b3b2ae123e2e74e6c0fd3b93.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_geoid: EGM2008 全球大地水准面模型</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-geoid/#gmtplot-a4d9b6a5b3b2ae123e2e74e6c0fd3b93"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/4c6f95dec57c376cff9112df81f25c39.png" src="https://docs.gmt-china.org/6.3/_images/4c6f95dec57c376cff9112df81f25c39.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_faa: IGPP 全球自由空气异常数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-faa/#gmtplot-4c6f95dec57c376cff9112df81f25c39"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/4e83b31a0bca8524ec2fc68604623217.png" src="https://docs.gmt-china.org/6.3/_images/4e83b31a0bca8524ec2fc68604623217.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>earth_mag 和 earth_mag4km: EMAG2 全球磁异常模型</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/earth-mag/#gmtplot-4e83b31a0bca8524ec2fc68604623217"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/716b324f615ccf580d7a3a8155d7e4a0.png" src="https://docs.gmt-china.org/6.3/_images/716b324f615ccf580d7a3a8155d7e4a0.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>PB2002: 全球板块边界数据</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../dataset/PB2002/#gmtplot-716b324f615ccf580d7a3a8155d7e4a0"><span class="std std-ref"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2>图例<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/8b90bc3bc0f3b75334954b44bb289b2a.png" src="https://docs.gmt-china.org/6.3/_images/8b90bc3bc0f3b75334954b44bb289b2a.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>GMT 绘制图例</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../module/legend/#gmtplot-8b90bc3bc0f3b75334954b44bb289b2a"><span class="std std-ref"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-2 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover sd-text-center docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<img alt="https://docs.gmt-china.org/6.3/_images/9f7fc27a22ffe3521b1b112c45bacaa5.png" src="https://docs.gmt-china.org/6.3/_images/9f7fc27a22ffe3521b1b112c45bacaa5.png" />
+</figure>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><strong>绘制点线图及其图例</strong></p>
+</div>
+<a class="sd-stretched-link reference internal" href="../examples/ex001/#gmtplot-9f7fc27a22ffe3521b1b112c45bacaa5"><span class="std std-ref"></span></a></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id8">
+<h1>外部绘图实例<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gallery.html">GMT 官方示例</a></p></li>
+<li><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/animations.html">GMT 官方动画示例</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/channel/UCo1drOh0OZPcB7S8TmIyf8Q">GMT YouTube Channel</a></p></li>
+<li><p><a class="reference external" href="https://www.pygmt.org/latest/gallery/index.html">PyGMT Gallery</a></p></li>
+<li><p><a class="reference external" href="https://github.com/michaelgrund/GMT-plotting">GMT and PyGMT plotting examples</a></p></li>
+<li><p><a class="reference external" href="https://github.com/weiji14/nzasc2021">NZ Antarctic Science Conference 2021 poster</a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tutorial/multifig/" class="btn btn-neutral float-left" title="GMT 多图模式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../basis/" class="btn btn-neutral float-right" title="基础知识" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

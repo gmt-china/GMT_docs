@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fitcircle &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="gmt" href="../gmt/" />
+    <link rel="prev" title="filter1d" href="../filter1d/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fitcircle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>fitcircle</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/fitcircle.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fitcircle">
+<span id="index-0"></span><h1>fitcircle<a class="headerlink" href="#fitcircle" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/fitcircle.html" title="(在 GMT v6.2)"><span>fitcircle</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>拟合球面上数据点的平均位置及圆弧</p>
+</dd>
+</dl>
+<p>该命令从输入数据的前两列读取经纬度数据，将其转换为单位球面上的笛卡尔三维矢量，然后计算输入坐标数据的平均位置以及可以拟合这些坐标点的大圆路径的pole。</p>
+<section id="id1">
+<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt><dd><p>输入数据</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">-L&lt;norm&gt;</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-L1</span></code> 解法1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-L2</span></code> 解法2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-L3</span></code> 同时输出解法1和解法2的结果</p></li>
+</ul>
+<p>在计算输入坐标的均值和大圆弧pole时有两种计算方法，分别用 <code class="docutils literal notranslate"><span class="pre">-L1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-L2</span></code>
+表示。当数据沿着某个大圆弧且距离接近时，两组解结果相似。若数据较分散，则大圆弧的pole要比均值不精确得多。此时可以比较两组结果以作为相互的验证。</p>
+<p>The <strong>-L1</strong> solution is so called because it approximates the
+minimization of the sum of absolute values of cosines of angular
+distances. This solution finds the mean position as the Fisher average
+of the data, and the pole position as the Fisher average of the
+cross-products between the mean and the data. Averaging cross-products
+gives weight to points in proportion to their distance from the mean,
+analogous to the “leverage” of distant points in linear regression in the plane.</p>
+<p>The <strong>-L2</strong> solution is so called because it approximates the
+minimization of the sum of squares of cosines of angular distances. It
+creates a 3 by 3 matrix of sums of squares of components of the data
+vectors. The eigenvectors of this matrix give the mean and pole
+locations. This method may be more subject to roundoff errors when there
+are thousands of data. The pole is given by the eigenvector
+corresponding to the smallest eigenvalue; it is the least-well
+represented factor in the data and is not easily estimated by either method.</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h2>选项<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-Ff|m|n|s|c</span></code></dt><dd><p>控制输出格式。</p>
+<p>正常情况下，该命令会将计算结果以较复杂的形式输出。使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则只返回简单的坐标。 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 后可以加上其他修饰符以指定要返回的坐标：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> Flat Earth mean location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> mean location</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> north pole of great circle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> south pole of great circle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> pole of small circle and its colatitude, which requires <code class="docutils literal notranslate"><span class="pre">-S</span></code></p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S[&lt;lat&gt;]</span></code></dt><dd><p>拟合小圆弧而不是大圆弧</p>
+<p>The pole will be constrained to lie on the great circle connecting the pole
+of the best-fit great circle and the mean location of the data.
+Optionally append the desired fixed latitude of the small circle
+[Default will determine the latitude].</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>如下命令，用两种计算方法拟合了数据的大圆弧路径和小圆弧路径，并借助 <a class="reference internal" href="../project/"><span class="doc">project</span></a>
+生成路径坐标。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1"># test/fitcircle/circles.sh</span>
+<span class="c1">#</span>
+<span class="c1"># Tests gmt fitcircle on spherical data points</span>
+
+<span class="nv">ps</span><span class="o">=</span>fitcircle_ex1.ps
+
+<span class="c1"># Fit great circle to red points and small circle to green points</span>
+<span class="c1"># Plot the best-fitting great and small circles as well as the</span>
+<span class="c1"># location of the mean locations and pole locations for both</span>
+<span class="c1"># the -L1 and -L2 options (i.e., -L3).</span>
+
+gmt fitcircle gcircle.txt -L3 &gt; g.txt
+gmt fitcircle scircle.txt -L3 -S &gt; s.txt
+<span class="nv">gpole1</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L1 N Hemisphere&quot;</span> g.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">gpole2</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L2 N Hemisphere&quot;</span> g.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">spole1</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L1 Small Circle Pole&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">spole2</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L2 Small Circle Pole&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{printf &quot;%s/%s\n&quot;, $1, $2}&#39;</span><span class="sb">`</span>
+<span class="nv">slat1</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L1 Small Circle&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{print 90-$NF}&#39;</span><span class="sb">`</span>
+<span class="nv">slat2</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;L2 Small Circle&quot;</span> s.txt <span class="p">|</span> gawk <span class="s1">&#39;{print 90-$NF}&#39;</span><span class="sb">`</span>
+gmt psxy -Rg -JG-30/40/7i -P -Bg -K gcircle.txt -Sc0.04i -Gred -Xc -Yc &gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -K scircle.txt -Sc0.04i -Ggreen &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1 -T<span class="nv">$gpole1</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W3p &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1 -T<span class="nv">$gpole2</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W1p,- &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1/<span class="nv">$slat1</span> -T<span class="nv">$spole1</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W3p &gt;&gt; <span class="nv">$ps</span>
+gmt project -G1/<span class="nv">$slat2</span> -T<span class="nv">$spole2</span> -L-180/180 <span class="p">|</span> gmt psxy -R -J -O -K -W1p,- &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;Great Circle Pole&quot;</span> g.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gred -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;Small Circle Pole&quot;</span> s.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Ggreen -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L1 Average&quot;</span> g.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L2 Average&quot;</span> g.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L1 Average&quot;</span> s.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+grep <span class="s2">&quot;L2 Average&quot;</span> s.txt <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.2i -Gyellow -W0.25p &gt;&gt; <span class="nv">$ps</span>
+gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
+rm g.txt s.txt gmt.*
+</pre></div>
+</div>
+<figure class="align-center" id="id4">
+<img alt="../../_images/fitcircle-gmtplot-0.png" src="../../_images/fitcircle-gmtplot-0.png" />
+<figcaption>
+<p><span class="caption-text">fitcircle示例</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../filter1d/" class="btn btn-neutral float-left" title="filter1d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../gmt/" class="btn btn-neutral float-right" title="gmt" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

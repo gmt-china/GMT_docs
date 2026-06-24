@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>img2grd &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="inset" href="../inset/" />
+    <link rel="prev" title="img2google" href="../img2google/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">img2grd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">地理坐标示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">墨卡托示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangiulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>img2grd</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/img2grd.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="img2grd">
+<h1>img2grd<a class="headerlink" href="#img2grd" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/supplements/img/img2grd.html" title="(在 GMT v6.3)"><span>img2grd</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>从墨卡托 img 格式文件中提取网格数据</p>
+</dd>
+</dl>
+<p><strong>img2grd</strong> 读取 img 格式的文件，提取数据并写入到网格文件中。<strong>-M</strong> 选项用来设置在提取的网格文件中保留球墨卡托投影，如果不使用该选项，则取消保留球墨卡托投影，结果为地理坐标网格。</p>
+<p>img 格式是一种二进制网格文件，数据为球墨卡托投影后的结果。球墨卡托投影原理决定其纬度间隔在转换为地理坐标时不是等间距的，因此导致了下述两个坐标系统下的区域范围轻微的差异。球墨卡托投影原理还决定了 img 文件在纬度方向并不是全球覆盖的，在极区有空白，即 <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong> 选项设置的最大纬度 80.738 ；在经度方向则是全覆盖的。虽然该模块可以处理任何 img
+格式文件，但目前较少的产品或模型以 img 格式发布。Sandwell 和 Smith 基于卫星测高数据创建的海洋重力场（包括重力异常、垂线偏差和垂直重力梯度）和海底地形模型采用了该格式发布。由于测高卫星轨道倾角的限制，在不同时期，上述模型的纬度范围不同，早期最大纬度为 72.006，当前最大纬度范围为 80.738 。</p>
+<p>Sandwell 和 Smith 模型的大小和文件名有一定规律，用于在 GMT 中自动设置参数并处理，文件名在不同时期的命名方式不同，但规律类似，例如：world_grav.img.7.2 和 grav_28.1.img</p>
+<ul class="simple">
+<li><p>grav 表示该文件为自由空气重力异常</p></li>
+<li><p>img 表示文件格式为 img</p></li>
+<li><p>7.2 表示该模型版本号为 7，分辨率为 2 分；28.1 表示版本号为 28，分辨率为 1 分</p></li>
+</ul>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p><strong>gmt img2grd</strong> <em>imgfile</em>
+<a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><em>grdfile</em>
+<a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong><em>region</em>
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong>[ <em>minlat/maxlat</em> ] ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong><em>inc</em> ]
+[ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> ]
+[ <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><em>navg</em> ]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong>[<em>scale</em>] ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong><em>type</em> ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong><em>maxlon</em> ]
+[ <strong>-n</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#n-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><em>imgfile</em></dt><dd><p>输入墨卡托 img 格式文件名，例如： Sandwell 和 Smith 创建的海洋重力场或海底地形文件。</p>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>grdfile</em></dt><dd><p>输出网格文件名。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<em>minlat/maxlat</em>]</dt><dd><p>设置纬度范围为 -80.738/+80.738。附加 <em>minlat/maxlat</em> 可以指定输入的 img 文件的纬度范围 [ 默认为 -72.006/72.006 ]。该选项通常不必使用，因为本模块可以自动确定输入文件的纬度范围。</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-E</strong></dt><dd><p>当输出网格为地理坐标时，即未设置 <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 选项时，使用 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 选项可以强制地理坐标格网符合纬度范围并强制经纬度间隔相等。默认情况下，本模块首先从输入文件中提取 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 指定范围内的网格，网格的坐标形式和原始文件相同，即球墨卡托投影。因此，当输出网格为地理坐标时，需将球墨卡托投影转换为地理坐标。在转换过程中，通常会稍微超出指定的纬度范围，且在纬度方向的间隔和经度方向不匹配。但是，这种强制经纬度范围等间隔的重采样会导致内插误差。因此，只有强制输出网格为指定范围内，且经纬度间隔相同时才建议使用。在这种情况下，<strong>-R</strong> 设置的区域必须为经纬度间隔的整数倍。</p>
+</dd>
+</dl>
+<dl class="simple" id="f">
+<dt><strong>-F</strong></dt><dd><p>平移 x 和 y 墨卡托坐标，使其位于左下角，即 (0,0)</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong></dt><dd><p>指定输入的 img 文件纬度间隔 <em>inc</em> [ 默认为 2 ]。添加 <strong>m</strong> [ 默认 ] 或 <strong>s</strong>
+来指定单位。该选项通常不必使用，因为本模块可以根据输入 img 文件大小自动判断。</p>
+</dd>
+</dl>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>输出球墨卡托网格 [ 默认为地理 lon/lat 网格 ]。输入文件的的球墨卡托投影被保留，因此 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 指定的区域被轻微地调整，调整后的区域对应于像素的边界。设置输出网格文件的头部信息，x 和 y 轴方向的距离相对于使用 <strong>-Jm1</strong>
+投影下的投影中心。使用 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> 选项可以将 x 和 y 轴的距离设置为相对于输出范围 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 的西南角，距离单位为用户默认的单位。</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>navg</em></dt><dd><p>对输入的墨卡托像素在 <em>navg</em> x <em>navg*的范围内平均，并创建平均后的像素点。
+如果和 *</em>-T3** 同时使用，输出网格值为平均约束值，范围为 0 到 1。如果和 <strong>-T2</strong> 同时使用，输出网格值为像素平均值或 NaN，平均约束值 &gt; 0.5 时，为像素平均值，平均约束值 &lt; 0.5 时，为 NaN。
+<em>navg</em> 的单位为像素 [ 默认值为 1，表示不进行平均]。</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-S</strong>[<em>scale</em>]</dt><dd><p>对输出的网格文件进行 <em>scale</em> 比例缩放，以保证结果单位正确[ 默认是 1.0 ]。对于目前的 img 文件：海底地形，单位为米，因此设置为 <strong>-S</strong>1 得到米 ；自由空气重力异常，单位为 mGal*10 ，因此设置为 <strong>-S</strong>0.1 得到 mGal ；垂线偏差，单位为 micro-radians*10 ， 因此设置为 <strong>-S</strong>0.1 得到 micro-radians ；垂直重力梯度，单位为 Eotvos*10 ， 因此设置为 <strong>-S</strong>0.1 得到 Eotvos 或者设置为 <strong>-S</strong>0.01 得到 mGal/km。如果不给定 <em>scale</em>，则将通过文件名来自动确定。</p>
+</dd>
+</dl>
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>type</em></dt><dd><p><em>type</em> 处理约束信息的编码（译注：约束信息可理解为数据可靠性的一种衡量标准）。
+<em>type</em> = 0 表明没有约束信息编码到 img 文件（1995 年前的重力场模型）中，并获取所有数据。
+<em>type</em> &gt; 0 表明有约束信息编码到 img 文件 (1995 以后以及当前版本的 img 文件)。
+<strong>-T1</strong> 获取所有数据；
+<strong>-T2</strong> 获得约束点的数据值，内插点的数值设置为 NaN ；
+<strong>-T3</strong> 约束点的数据值设置为 1，内插点设置为 0 [ 默认值为 1]。</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>maxlon</em></dt><dd><p>指定输入 img 文件的最大经度 <em>maxlon</em>。从 1995 年开始，Sandwell 和 Smith 的模型的
+<em>maxlon</em> = 360.0 ，但是某些早期的模型 <em>maxlon</em> = 390.0 [ 默认为 360.0 ]。</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../option/n/"><span class="doc">(more …)</span></a></dt><dd><p>设置网格文件的插值方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>地理坐标示例<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>如果需要输出地理坐标网格，则不能使用 <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 选项。从 <em>grav_28.1.img</em> 文件中提取数据并转换为地理坐标:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt img2grd grav_28.1.img -Gmerc_grav.nc -R-40/40/-70/-30 -V
+</pre></div>
+</div>
+<p>由于在 img 文件的墨卡托单位中，纬度间隔是相等的，转换为地理坐标时导致纬度间隔不相等，因此最终提取的网格并不能严格匹配 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 选项指定的纬度范围。使用 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> 选项可以精确的匹配 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 指定的范围，并且强制经度和纬度的间隔相同:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt img2grd grav_28.1.img -Gmerc_grav.nc -R-40/40/-70/-30 -E -V
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>墨卡托示例<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p><strong>数据处理示例</strong></p>
+<p>由于 img 格式为墨卡托投影，因此如果最终数据处理结果为墨卡托地图，不建议使用该模块提取地理坐标，而是直接使用墨卡托投影坐标处理。如果强行从 img 提取到地理坐标再转换为墨卡托投影会导致丢失短波信息。因此，最好使用
+<strong>-M</strong> 选项并与所需的墨卡托投影设置一定的线性比例缩放（见 GMT 例 29）。从 <em>world_grav.img.7.2</em> 中提取 <strong>-R</strong>-40/40/-70/-30 范围内的数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt img2grd -M world_grav.img.7.2 -Gmerc_grav.nc -R-40/40/-70/-30 -V
+</pre></div>
+</div>
+<p>注意到 <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong> 选项告诉用户区域范围被调整为 <strong>-R</strong>-40/40/-70.0004681551/-29.9945810754 。如果在脚本编写中需要使用该范围，可以使用 <strong>grdinfo -Ii</strong>。此外，用户也可以从 <strong>grdinfo</strong> 的信息中看到，网格文件头部信息显示区域范围调整为 <strong>-R</strong>-40/40/-99.4333333333/-31.4666666667。该纬度范围为使用 <strong>-Jm</strong>1 和
+<strong>-R</strong>-40/40/-70.0004681551/-29.9945810754 经过球墨卡托投影的结果。使用 ship.lonlatgrav 对 merc_grav.nc
+进行采样的代码为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> PROJ_ELLIPSOID Sphere
+
+gmt mapproject -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -C ship.lonlatgrav <span class="p">|</span> <span class="se">\</span>
+gmt grdtrack -Gmerc_grav.nc <span class="p">|</span> <span class="se">\</span>
+gmt mapproject -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -I -C &gt; ship.lonlatgravsat
+</pre></div>
+</div>
+<p>如上述代码，建议对数据投影和重投影，而不是对 img 文件进行类似的操作。因为对数据处理只进行一次插值（即 grdtrack）,
+对 img 文件操作会进行两次插值（分别在转换和重采样中）。</p>
+<p>如果想从上面的墨卡托网格中提取地理坐标网格，可以使用:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdproject merc_grav.nc -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -I -D2m -Ggrav.nc
+</pre></div>
+</div>
+<p>在某些情况下，上述操作中的两个坐标的范围不能很好的对齐。这种情况下，可以使用下面的代码:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz merc_grav.nc <span class="p">|</span> <span class="se">\</span>
+gmt mapproject -R-40/40/-70.0004681551/-29.994581075 -Jm1i -I <span class="p">|</span> <span class="se">\</span>
+gmt surface -R-40/40/-70/70 -I2m -Ggrav.nc
+</pre></div>
+</div>
+<p><strong>绘图示例</strong></p>
+<p>如果要获取上述区域的墨卡托地图，假定用户的 gmt.conf 中的 <strong>PROJ_LENGTH_UNIT</strong> 是 inch 。因为上面的 merc_grav.nc
+是使用 <strong>-Jm</strong>1i 投影得到的，1度对应地图 1 英寸，因此为 80 英寸宽。可以通过使用 <strong>-Jx</strong>0.1i 投影来制作
+8 英寸宽的地图以在其他程序中应用 （例如：grdcontour，grdimage，grdview），如果要叠加地理坐标图，可以使用上面的 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 和 <strong>-Jm</strong>0.1 来使两个坐标系统匹配，避免导致移位。</p>
+<p>除了上述的方法，还有更加方便的方法。注意到输入的 img 文件的像素宽为 2 分（可以通过 <code class="docutils literal notranslate"><span class="pre">grdinfo</span> <span class="pre">mercgrav.nc</span></code> 查看）,
+merc_grav.nc 有 2400 x 2039 个像素。如果图的宽度为 8 英寸，每英寸中包含 300 个像素。但实际绘图中不需要这么高的分辨率，每英寸 100 个像素即可满足，因此可以把原始数据平均为 3 x 3 的像素。（如果想绘制等值线图的话，可能需要更多的平均保证等值线光滑，例如：6 x 6）由于 2039 不能被 3 整除，因此实际的 <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong> 会被调整:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt img2grd -M world_grav.img.7.2 -Gmerc_grav_2.nc -R-40/40/-70/-30 -N3 -V
+</pre></div>
+</div>
+<p>调整以后的区域为 <strong>-R</strong>-40/40/-70.023256525/-29.9368261101 ，输出结果为 800 x 601 个像素。下面可以生成一个可以使用
+grdgradient 生成一个光照文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdgradient merc_grav_2.nc -Gillum.nc -A0/270 -Ne0.6
+</pre></div>
+</div>
+<p>如果已经有一个 “grav.cpt” 文件，可以使用下面的命令生成阴影图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+    gmt grdimage merc_grav_2.nc -Iillum.nc -Cgrav.cpt -Jx0.1i
+    gmt basemap -R-40/40/-70.023256525/-29.9368261101 -Jm0.1i -Ba10
+gmt end show
+</pre></div>
+</div>
+<p>如果要从 img 文件中只获取地理坐标的约束数据值，则需要同时使用 <strong>-T</strong>2 选项，使用 grd2xyz 输出数据值，通过管道和``grep -v NaN``
+可以消除 NaN 值。</p>
+</section>
+<section id="id6">
+<h2>相关模块<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../gmt/"><span class="doc">gmt</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/supplements/img/img2google.html" title="(在 GMT v6.3)"><span>img2google</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../img2google/" class="btn btn-neutral float-left" title="img2google" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../inset/" class="btn btn-neutral float-right" title="inset" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

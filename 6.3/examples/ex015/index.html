@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘制 GPS 速度场 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+      <li>绘制 GPS 速度场</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/examples/ex015/index.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gps">
+<h1>绘制 GPS 速度场<a class="headerlink" href="#gps" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">示例贡献者</dt>
+<dd class="field-odd"><p>李黎明</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>本示例展示如何使用 <a class="reference internal" href="../../module/velo/"><span class="doc">velo</span></a> 模块绘制 GPS 速度场。</p>
+<p>示例中所使用的 GPS 数据来自于 <a class="reference external" href="https://doi.org/10.1016/j.geog.2014.12.006">Zhao et al. (2015)</a>
+的补充材料，根据 <a class="reference internal" href="../../module/velo/"><span class="doc">velo</span></a> 模块的要求做简单修改。</p>
+<p>本示例仅用于演示，不保证数据的完整性与可靠性。需要使用相关数据的用户请自行到文章主页下载相关数据。</p>
+<p><strong>数据下载：</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/2f78d5326261172f16f4ddf0bdb5ef65/gps_campagin.txt"><code class="xref download docutils literal notranslate"><span class="pre">gps_campagin.txt</span></code></a>: Velocities of campagin stations with respective to EURASIA plate from 1999-2014</p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/8d07516197a146b0e88a34c2a213f04d/gps_continuous.txt"><code class="xref download docutils literal notranslate"><span class="pre">gps_continuous.txt</span></code></a>: Velocities of continuous stations with respective to EURASIA plate from 1999-2014</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#</span>
+<span class="c1"># 绘制 GPS 速度场</span>
+<span class="c1">#</span>
+
+gmt begin gps
+<span class="c1"># 绘制底图</span>
+gmt <span class="nb">set</span> <span class="nv">FORMAT_GEO_MAP</span><span class="o">=</span>ddd:mm:ssF
+gmt basemap -R70/135/15/55 -JM18c -Bf5a10 -BWesN
+gmt makecpt -Cglobe -T-10000/10000/200 -Z -D
+gmt grdimage @earth_relief_06m -I+d
+gmt colorbar -DjCB+w18c/0.3c+o0/-2.5c+h -BWSEN -Bxa2000f400+l<span class="s2">&quot;Elevation/m&quot;</span> -G-8000/8000
+
+<span class="c1"># 绘制国界</span>
+gmt plot CN-border-L1.gmt -W1p,-
+
+<span class="c1"># 绘制 GPS 速度场</span>
+<span class="c1"># -Se 后面两个参数表示：</span>
+<span class="c1">#    速度值为 1 的矢量的长度（0.05c）/置信度（0.95）</span>
+<span class="c1">#    +f 设置文本的大小，0 表示不显示标注</span>
+<span class="c1"># -A 控制矢量的属性，0.15c 是矢量头的大小，+e 表示在矢量尾端绘制箭头，+p0.75p,blue 设置矢量箭头轮廓的属性</span>
+<span class="c1"># -W 控制矢量线及误差椭圆的轮廓的宽度,颜色,线型</span>
+<span class="c1"># -G 矢量头的填充色</span>
+gmt velo gps_campagin.txt -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,blue -W0.5p,blue -Gblue
+gmt velo gps_continuous.txt -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,red -W0.5p,red -Gred
+
+<span class="c1"># 添加图例</span>
+<span class="c1"># 此处在底图右下角，设置了一个宽 3.5c 高 2c 的底图</span>
+<span class="c1"># 底图范围为 0/1/0/1，矢量箭头和文字的位置需对应该小图中的位置</span>
+gmt inset begin -R0/1/0/1 -JX3.5c/2c -DjBR -F+gwhite
+<span class="nb">echo</span> <span class="m">0</span>.05 <span class="m">0</span>.75 <span class="s1">&#39;20\2611 mm/yr&#39;</span> <span class="p">|</span> gmt text -F+f7p+jML
+<span class="nb">echo</span> <span class="m">0</span>.05 <span class="m">0</span>.50 <span class="m">20</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="p">|</span> gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,blue -Gblue -W0.5p,blue
+<span class="nb">echo</span> <span class="m">0</span>.05 <span class="m">0</span>.25 <span class="m">20</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="p">|</span> gmt velo -Se0.05c/0.95+f0 -A0.15c+e+p0.5p,red -Gred -W0.5p,red
+gmt text -F+f6p+jML -M <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; 0.4 0.50 0.25 2c c</span>
+<span class="s">Continuous Station</span>
+<span class="s">1998-2014</span>
+<span class="s">&gt; 0.4 0.25 0.25 2c c</span>
+<span class="s">Campaign Stations</span>
+<span class="s">2009-2014</span>
+<span class="s">EOF</span>
+gmt inset end
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-7b2bde15fb251533e033c4653ebfd207">
+<a class="reference internal image-reference" href="../../_images/7b2bde15fb251533e033c4653ebfd207.png"><img alt="../../_images/7b2bde15fb251533e033c4653ebfd207.png" src="../../_images/7b2bde15fb251533e033c4653ebfd207.png" style="width: 80%;" /></a>
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
