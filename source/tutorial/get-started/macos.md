@@ -18,7 +18,7 @@ macOS 下可以使用 {kbd}`Command + 空格键` 启动 Spotlight，在弹出的
 启动终端后，敲入 `gmt` 以执行 GMT 命令。你将看到 GMT 的欢迎界面信息，类似于：
 
 ```console
-        GMT - The Generic Mapping Tools, Version 6.6.0 [64-bit] [8 cores]
+        GMT - The Generic Mapping Tools, Version 6.7.0 [64-bit] [8 cores]
         (c) 1991-2025 The GMT Team (https://www.generic-mapping-tools.org/team.html).
 
         Supported in part by the US National Science Foundation (http://www.nsf.gov/)

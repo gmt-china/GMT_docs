@@ -75,7 +75,7 @@ $ brew install graphicsmagick ffmpeg
 
 编译 GMT 需要下载如下三个文件：
 
-1. GMT 6.6.0 源码：[gmt-6.6.0-src.tar.xz](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-src.tar.xz)
+1. GMT 6.7.0 源码：[gmt-6.7.0-src.tar.xz](https://github.com/GenericMappingTools/gmt/releases/download/6.7.0/gmt-6.7.0-src.tar.xz)
 2. 全球海岸线数据 GSHHG：[gshhg-gmt-2.3.7.tar.gz](https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz)
 3. 全球数字图表 DCW：[dcw-gmt-2.2.0.tar.gz](https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.2.0/dcw-gmt-2.2.0.tar.gz)
 
@@ -95,16 +95,16 @@ $ git clone --depth 50 https://github.com/GenericMappingTools/gmt
 
 ```
 # 解压三个压缩文件
-$ tar -xvf gmt-6.6.0-src.tar.xz
+$ tar -xvf gmt-6.7.0-src.tar.xz
 $ tar -xvf gshhg-gmt-2.3.7.tar.gz
 $ tar -xvf dcw-gmt-2.2.0.tar.gz
 
 # 将 gshhg 和 dcw 数据复制到 gmt 的 share 目录下
-$ mv gshhg-gmt-2.3.7 gmt-6.6.0/share/gshhg-gmt
-$ mv dcw-gmt-2.2.0 gmt-6.6.0/share/dcw-gmt
+$ mv gshhg-gmt-2.3.7 gmt-6.7.0/share/gshhg-gmt
+$ mv dcw-gmt-2.2.0 gmt-6.7.0/share/dcw-gmt
 
 # 切换到 gmt 源码目录下
-$ cd gmt-6.6.0
+$ cd gmt-6.7.0
 
 # 用文本编辑器新建并打开 CMake 用户配置文件
 # Linux 用户
@@ -117,13 +117,13 @@ $ open -a TextEdit cmake/ConfigUser.cmake
 向 {file}`cmake/ConfigUser.cmake` 文件中加入如下语句:
 
 ```
-set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.6.0")
+set (CMAKE_INSTALL_PREFIX "/opt/GMT-6.7.0")
 set (GMT_USE_THREADS TRUE)
 ```
 
 - **CMAKE_INSTALL_PREFIX** 用于设置 GMT 的安装路径，上面的语句会将 GMT 安装在
-  {file}`/opt/GMT-6.6.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
-  一般用户，可以将安装路径设置为 {file}`/home/xxx/opt/GMT-6.6.0` 等有可读写
+  {file}`/opt/GMT-6.7.0` 目录下，用户可以自行修改为其他路径。没有 root 权限的
+  一般用户，可以将安装路径设置为 {file}`/home/xxx/opt/GMT-6.7.0` 等有可读写
   权限的路径
 - **GMT_USE_THREADS** 设置为 **TRUE** 会为 GMT 的某些模块增加多线程并行功能以加速计算，
   也可以不设置
@@ -140,8 +140,8 @@ set (GMT_USE_THREADS TRUE)
 
 :::{note}
 以下的 `mkdir build` 命令新建的 {file}`build` 文件夹位于 GMT 源码压缩包
-解压出来的 {file}`gmt-6.6.0` 目录下。
-不是 {file}`gmt-6.6.0/cmake` 目录下，更不是 {file}`/opt/GMT-6.6.0`。
+解压出来的 {file}`gmt-6.7.0` 目录下。
+不是 {file}`gmt-6.7.0/cmake` 目录下，更不是 {file}`/opt/GMT-6.7.0`。
 :::
 
 ```
@@ -158,11 +158,11 @@ $ cmake .. -G Ninja
 
 ```
 *
-*  GMT Version:               : 6.6.0
+*  GMT Version:               : 6.7.0
 *
 *  Options:
-*  Found GSHHG database       : /home/user/GMT/gmt-6.6.0/share/gshhg (2.3.7)
-*  Found DCW-GMT database     : /home/user/GMT/gmt-6.6.0/share/dcw-gmt (2.2.0)
+*  Found GSHHG database       : /home/user/GMT/gmt-6.7.0/share/gshhg (2.3.7)
+*  Found DCW-GMT database     : /home/user/GMT/gmt-6.7.0/share/dcw-gmt (2.2.0)
 *  Found GMT data server      : oceania
 *  NetCDF library             : /usr/lib/x86_64-linux-gnu/libnetcdf.so
 *  NetCDF include dir         : /usr/include
@@ -200,10 +200,10 @@ $ cmake .. -G Ninja
 *  Found gdal_translate       : yes (3.0.4)
 *
 *  Locations:
-*  Installing GMT in          : /opt/GMT-6.6.0
-*  GMT_DATADIR                : /opt/GMT-6.6.0/share
-*  GMT_DOCDIR                 : /opt/GMT-6.6.0/share/doc
-*  GMT_MANDIR                 : /opt/GMT-6.6.0/share/man
+*  Installing GMT in          : /opt/GMT-6.7.0
+*  GMT_DATADIR                : /opt/GMT-6.7.0/share
+*  GMT_DOCDIR                 : /opt/GMT-6.7.0/share/doc
+*  GMT_MANDIR                 : /opt/GMT-6.7.0/share/man
 -- Configuring done
 -- Generating done
 ```
@@ -231,7 +231,7 @@ $ open ~/.zshrc
 然后重启终端使其生效:
 
 ```
-export GMT6HOME=/opt/GMT-6.6.0
+export GMT6HOME=/opt/GMT-6.7.0
 export PATH=${GMT6HOME}/bin:$PATH
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 ```
@@ -249,13 +249,13 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT6HOME}/lib64
 
 ```
 $ gmt --version
-6.6.0
+6.7.0
 ```
 
 ## 升级/卸载 GMT
 
-按照上面的配置，GMT 会被安装到 {file}`/opt/GMT-6.6.0` 目录下。若想要卸载 GMT，
-可以直接删除整个 {file}`/opt/GMT-6.6.0` 即可。
+按照上面的配置，GMT 会被安装到 {file}`/opt/GMT-6.7.0` 目录下。若想要卸载 GMT，
+可以直接删除整个 {file}`/opt/GMT-6.7.0` 即可。
 
 GMT 不支持自动更新，因而若想要升级 GMT，通常建议先卸载 GMT，然后再下载新版源码
 并按照上面的步骤重新编译安装。

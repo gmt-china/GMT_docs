@@ -368,7 +368,7 @@ Ghostscript 接受丰富的命令行选项来修改其行为。其中许多选�
 --------------------
 
 如果您制作了一系列 KML 文件（这些文件可能依赖于本地 PNG 图像等其他项），您可以将它们合并为一个 KMZ 文件，以节省空间并将相关文件归类在一起。
-`gmt_shell_functions.sh <https://docs.generic-mapping-tools.org/6.6/gmt_shell_functions.sh.html>`_ 中的 Bash 函数 **gmt_build_kmz** 可用于实现此目的。
+`gmt_shell_functions.sh <https://docs.generic-mapping-tools.org/6.7/gmt_shell_functions.sh.html>`_ 中的 Bash 函数 **gmt_build_kmz** 可用于实现此目的。
 在使用该函数之前，您需要先运行 source gmt_shell_functions.sh。
 
 弃用说明

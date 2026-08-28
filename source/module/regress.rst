@@ -90,7 +90,7 @@ regress
     - ``+fn`` ：只允许在负斜率范围内寻找最佳回归
     - ``+fp`` ：只允许在正斜率范围内寻找最佳回归
 
-    .. figure:: https://docs.generic-mapping-tools.org/6.6/_images/GMT_slopes.png
+    .. figure:: https://docs.generic-mapping-tools.org/6.7/_images/GMT_slopes.png
         :width: 500 px
         :align: center
 
@@ -116,7 +116,7 @@ regress
     **o** 和 **r** 适用于自变量和因变量都有误差的情形。
     二者的区别是：在自变量和因变量中有一个的误差为 0 时，**r** 选项的残差会为 0，而 **o** 选项不会。
 
-    .. figure:: https://docs.generic-mapping-tools.org/6.6/_images/GMT_misfit.png
+    .. figure:: https://docs.generic-mapping-tools.org/6.7/_images/GMT_misfit.png
         :width: 500 px
         :align: center
 

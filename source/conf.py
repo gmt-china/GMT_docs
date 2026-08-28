@@ -17,7 +17,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.6"
+version = "6.7"
 release = version
 
 # -- Contributor information ---------------------------------------------

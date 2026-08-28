@@ -48,7 +48,7 @@ WSL 的安装配置可以参考 [视频教程](https://www.bilibili.com/video/BV
 
    ```
    $ gmt --version
-   6.6.0
+   6.7.0
    ```
 
 4. GMT 新版本发布后，若需要升级到新版本，可以执行如下命令：
