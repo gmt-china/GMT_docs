@@ -17,7 +17,7 @@ WSL 的安装配置可以参考 [视频教程](https://www.bilibili.com/video/BV
 
 ## 安装 GMT
 
-1. 下载 GMT 安装包 [gmt-6.6.0-win64.exe](https://github.com/GenericMappingTools/gmt/releases/download/6.6.0/gmt-6.6.0-win64.exe)
+1. 下载 GMT 安装包 [gmt-6.7.0-win64.exe](https://github.com/GenericMappingTools/gmt/releases/download/6.7.0/gmt-6.7.0-win64.exe)
 
    GMT 安装包中不仅包含了 GMT，还包含了运行 GMT 所需的如下软件：
 
@@ -49,7 +49,7 @@ WSL 的安装配置可以参考 [视频教程](https://www.bilibili.com/video/BV
    > where gmt
    c:\programs\gmt6\bin\gmt.exe
    > gmt --version
-   6.6.0
+   6.7.0
    ```
 
    如果出现的安装路径和版本号符合预期，则表示 GMT 安装成功。
