@@ -124,7 +124,7 @@ solar
 
     不同曙暮光区的定义如下图所示：
 
-    .. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Twilight-dawn_subcategories.svg/640px-Twilight-dawn_subcategories.svg.png
+    .. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Twilight-dawn_subcategories.svg/1280px-Twilight-dawn_subcategories.svg.png
        :align: center
        :width: 80%
 
