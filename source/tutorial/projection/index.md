@@ -43,7 +43,7 @@ date: 2026-09-01
         done
     done
     gmt begin distortion
-    gmt coast -Glightgreen -Slightblue -R0/360/-85/85 -JM8i -Bxa30fg30 -Bya30fg30 -W0.1p
+    gmt coast -Glightgreen -Slightblue -R0/360/-85/85 -JM6i -Bxa30fg30 -Bya30fg30 -W0.1p
     gmt plot loc.xy -SE0/2000k/2000k -Gred@70
     gmt end show
 ```
