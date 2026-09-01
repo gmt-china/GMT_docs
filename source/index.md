@@ -55,8 +55,8 @@ GMT 是地球科学里使用最广泛的制图软件之一。
     :columns: 3
 
     - `GMT 中文手册源码 <https://github.com/gmt-china/GMT_docs>`__
-    - `GMT 中文手册 PDF <https://docs.gmt-china.org/6.6/GMT_docs.pdf>`__
-    - `GMT 中文手册 HTML ZIP <https://docs.gmt-china.org/6.6/GMT_docs.zip>`__
+    - `GMT 中文手册 PDF <https://docs.gmt-china.org/6.7/GMT_docs.pdf>`__
+    - `GMT 中文手册 HTML ZIP <https://docs.gmt-china.org/6.7/GMT_docs.zip>`__
 ```
 
 ```{toctree}
@@ -104,6 +104,7 @@ module/index
 
 utilities/index
 migrating/index
+array
 contributing
 贡献者 <https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85->
 ```

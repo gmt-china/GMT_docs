@@ -2,12 +2,12 @@
 :date: 2025-10-18
 
 .. index:: ! grdpmodeler
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdpmodeler
 
 grdpmodeler
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/grdpmodeler`  
+:官方文档: :doc:`gmt:supplements/spotter/grdpmodeler`
 :简介: 评估地理网格上的板块运动模型
 
 **grdpmodeler** 读取一个地质年龄网格和一个板块运动模型，并计算若干种模型预测结果。
@@ -19,30 +19,35 @@ grdpmodeler
 
 **gmt grdpmodeler**
 [ *agegrdfile* ]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-**-S**\ *flags*
-[ |-F|\ *polygonfile* ]
-[ |-G|\ *outgrid* ]
-[ |SYN_OPT-I| ]
-[ |SYN_OPT-R| ]
-[ |-T|\ *age* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+:option:`-S`\ *flags*
+[ :option:`-F`\ *polygonfile* ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T`\ *age* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
+输入数据
+------------------
 
-必选选项
+*agegrdfile*
+    输入的地理网格文件名（经度、纬度坐标），其数值为地壳年龄（单位：Myr）。
+    如果未提供网格文件，可使用 :option:`-R`、:option:`-I` 和可选的 :option:`-r` 定义计算域。
+
+必须选项
 ------------------
 
 .. include:: explain_rots.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *flags*
     指定要计算的模型预测类型，可附加一个或多个标识符：
@@ -61,11 +66,7 @@ grdpmodeler
 可选选项
 ------------------
 
-*ingrid*
-    输入的地理网格文件名（经度、纬度坐标），其数值为地壳年龄（单位：Myr）。
-    如果未提供网格文件，可使用 |-R|、|-I| 和可选的 **-r** 定义计算域。
-
-.. _-F:
+.. option:: -F
 
 **-F**\ *polygonfile*
     指定一个多段闭合多边形文件，描述模型计算的区域内部。
@@ -73,13 +74,18 @@ grdpmodeler
     [默认对整个网格进行模型计算。]
 
 .. include:: explain_grd_out.rst_
+..
+
+    输出文件为给定指定旋转参数后的模型预测网格文件。
+    **注意**：如果在 :option:`-S` 中指定了多个模型预测，则文件名 *必须* 是包含格式符 %s 的模板。
+    该格式符将被对应的标签 *az, dist, stage, vel, omega, dlon, dlat, lon, lat* 所替换。
+    不使用本选项则不创建网格文件，会将 *lon, lat, age, predictions* 记录写入标准输出。
 
 .. include:: explain_-I.rst_
 
-.. |Add_-Rgeo| unicode:: 0x20 .. 仅为占位符
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *age*
     使用固定年龄进行模型计算（即忽略输入年龄网格中的年龄值）。
@@ -97,6 +103,8 @@ grdpmodeler
 .. include:: explain_-ocols.rst_
 
 .. include:: explain_nodereg.rst_
+
+.. include:: explain_colon.rst_
 
 .. include:: explain_help.rst_
 

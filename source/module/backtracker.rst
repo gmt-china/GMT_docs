@@ -1,13 +1,13 @@
 :author: 何星辰
-:date: 2025-10-17
+:date: 2025-12-22
 
 .. index:: ! backtracker
-.. include:: common_SYN_OPTs.rst_
+.. program:: backtracker
 
 backtracker
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/backtracker`  
+:官方文档: :doc:`gmt:supplements/spotter/backtracker`
 :简介: 生成前向和后向流线和热点轨迹
 
 **backtracker** 从 *infiles* （或标准输入）中读取 ( *longitude, latitude, age* ) 三列数据，
@@ -17,49 +17,53 @@ backtracker
 （2）或在初始位置与最终位置之间生成一个采样轨迹（流线或热点轨迹）[*Wessel*, 1999]。
 
 在第一种模式下，输入数据前三列必须为 (longitude, latitude, age)，后续可包含其他字段。
-参见选项 **-:** 了解如何读取 (latitude, longitude, age) 格式的文件。
+参见 :doc:`/option/colon` 了解如何读取 (latitude, longitude, age) 格式的文件。
 
 语法
 --------
 
-**gmt backtracker** [ *table* ]
-|-E|\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
-[ |-A|\ [*young*/*old*] ]
-[ |-D|\ **f**\|\ **b** ]
-[ |-F|\ *driftfile* ]
-[ |-L|\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*] ]
-[ |-M|\ [*factor*] ]
-[ |-N|\ *upper_age* ]
-[ |-Q|\ *fixed_age* ]
-[ |-S|\ *filestem* ]
-[ |-T|\ *zero_age* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**a**\|\ **t**] ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt backtracker**
+[ *table* ]
+:option:`-E`\ *rot_file*\|\ *ID1-ID2*\|\ *lon*/*lat*/*angle*\ [**+i**]
+[ :option:`-A`\ [*young*/*old*] ]
+[ :option:`-D`\ **f**\|\ **b** ]
+[ :option:`-F`\ *driftfile* ]
+[ :option:`-L`\ **f**\|\ **b**\ **F**\|\ **B**\ [*step*] ]
+[ :option:`-M`\ [*factor*] ]
+[ :option:`-N`\ *upper_age* ]
+[ :option:`-Q`\ *fixed_age* ]
+[ :option:`-S`\ *filestem* ]
+[ :option:`-T`\ *zero_age* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**a**\|\ **t**] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_intables.rst_
+
+必须选项
+------------------
 
 .. include:: explain_rots.rst_
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [*young*/*old*]
     与 **-Lb**\|\ **f** 联用，用于限制输出轨迹的预测年龄区间，
@@ -67,7 +71,7 @@ backtracker
     如果使用 **-LB**\|\ **F**，则限制条件适用于阶段编号（id 1 表示最年轻阶段）。
     若未指定区间，则期望输入文件的第 4、5 列分别提供各记录的年龄上下限。
 
-.. _-D:
+.. option:: -D
 
 **-Df**\|\ **b**
     设置时间方向：**-Df** 表示时间向后（从年轻到年老位置），
@@ -75,18 +79,18 @@ backtracker
     **注意**：对于 **-Db**，输入位置的年龄即为该点的实际年龄；
     而对于 **-Df**，输入的年龄对应的是重建点的时间。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *driftfile*
     提供一个包含 (*lon, lat, age*) 记录的文件，描述当前热点随时间的运动历史。
     反演时程序将根据输入的第 3 列（即年龄）插值热点在该时间的位置，
     并据此调整输入点或路径的位置变化[默认无漂移]。
     **注意**：
-    (1) 使用 |-F| 时，|-L| 的 *step* 单位为时间（百万年）；
+    (1) 使用 :option:`-F` 时， :option:`-L` 的 *step* 单位为时间（百万年）；
     (2) 漂移仅在回溯点（**-Db**）或预测海山链（**-Df -Lb**）时考虑；
-    (3) 不能与 |-M| 同时使用。
+    (3) 不能与 :option:`-M` 同时使用。
 
-.. _-L:
+.. option:: -L
 
 **-Lf**\|\ **b**\|\ **F**\|\ **B**\ [*step*]
     指定在初始与最终位置之间生成采样路径：
@@ -95,41 +99,41 @@ backtracker
     若 *step* < 0 或未指定，则仅返回旋转时间。
     当使用 **-LF** 或 **-LB** 时，
     输出的第 3 列为阶段编号（1 为最年轻阶段）[默认输出沿轨迹预测年龄]。
-    可通过 |-D| 控制路径方向。
+    可通过 :option:`-D` 控制路径方向。
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [*factor*]
     将输出的张开角按 *factor* 缩放[默认 0.5]。
     通常用于获取计算流线所需的半扩张速率。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *upper_age*
     设置向过去扩展最老阶段旋转的最大时间上限[默认不扩展]。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *fixed_age*
-    为所有位置指定固定年龄。仅需输入 (*lon, lat*) 
+    为所有位置指定固定年龄。仅需输入 (*lon, lat*)
     两列[默认期望三列（longitude, latitude, age）]。
     适用于输入为等时线点的情况。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *filestem*
-    当启用 |-L| 时，轨迹默认以多段文件形式写入标准输出。
+    当启用 :option:`-L` 时，轨迹默认以多段文件形式写入标准输出。
     通过指定 *filestem*，可令每条轨迹分别写入 *filestem.#* 文件，其中 *#* 为轨迹编号，
     该编号同时写入输出的第 4 列。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *zero_age*
     设置当前时间[默认 0 Ma]。
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**a**\|\ **t**]
     旋转给定的输入点 (*lon, lat, time*)，并计算投影点的置信椭圆。
@@ -137,8 +141,7 @@ backtracker
     可追加 **t** 或 **a**，分别表示在输出中追加时间或角度。
     在这 2–3 个基本输出后，
     程序将输出方位角、长轴、短轴（单位：km），表示 95% 置信椭圆。
-    参见 |-D| 了解旋转方向的控制。
-
+    参见 :option:`-D` 了解旋转方向的控制。
 
 .. include:: explain_-bi.rst_
 
@@ -184,7 +187,7 @@ backtracker
 
     echo 204 19 80 | gmt backtracker -Df -EPAC_APM.txt -Lb1 > path.txt
 
-要使用 *Doubrovine et al.* [2012] 
+要使用 *Doubrovine et al.* [2012]
 的太平洋绝对板块与地幔柱运动模型预测夏威夷-皇帝海山链，运行::
 
     echo -155.2872 19.3972 80 | gmt backtracker -Df -Lb1 -ED2012.txt -FD2012_HI_drift.txt > traildrift.txt
@@ -219,7 +222,7 @@ GMT 自带 EarthByte 旋转模型文件 **Global_EarthByte_230-0Ma_GK07_AREPS.ro
 Wessel, P., 1999, "Hotspotting" tools released, EOS Trans. AGU, 80 (29),
 p. 319.
 
-Doubrovine, P. V., B. Steinberger, and T. H. Torsvik, 2012, 
-Absolute plate motions in a reference frame defined by moving hot spots in the Pacific, 
+Doubrovine, P. V., B. Steinberger, and T. H. Torsvik, 2012,
+Absolute plate motions in a reference frame defined by moving hot spots in the Pacific,
 Atlantic, and Indian oceans, *J. Geophys. Res.*, **117**\ (B09101),
 https://doi.org/10.1029/2011jb009072.

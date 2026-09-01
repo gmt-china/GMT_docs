@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
-.. index:: !x2sys_merge
-.. include:: common_SYN_OPTs.rst_
+.. index:: ! x2sys_merge
+.. program:: x2sys_merge
 
 x2sys_merge
 ===========
@@ -17,18 +18,20 @@ x2sys_merge
 语法
 ----
 
-**gmt x2sys_merge** |-A|\ *main_COElist.txt* |-M|\ *new_COElist.txt*
-[ |SYN_OPT--| ]
+**gmt x2sys_merge**
+:option:`-A`\ *main_COElist.txt*
+:option:`-M`\ *new_COElist.txt*
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *main_COElist.txt*
     指定主要的交叉点文件 *main_COElist.txt*
 
-.. _-M:
+.. option:: -M
 
 **-M**\ *new_COElist.txt*
     指定新的交叉点文件 *new_COElist.txt*
@@ -39,7 +42,7 @@ x2sys_merge
 示例
 ----
 
-使用新的交叉点文件 :file:`COE_fresh.txt` 更新主要交叉点文件 
+使用新的交叉点文件 :file:`COE_fresh.txt` 更新主要交叉点文件
 :file:`COE_data.txt` ::
 
     gmt x2sys_merge -ACOE_data.txt -MCOE_fresh.txt > COE_updated.txt

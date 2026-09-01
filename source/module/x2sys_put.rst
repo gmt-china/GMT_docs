@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
-.. index:: !x2sys_put
-.. include:: common_SYN_OPTs.rst_
+.. index:: ! x2sys_put
+.. program:: x2sys_put
 
 x2sys_put
 =========
@@ -19,9 +20,13 @@ x2sys_put
 语法
 ----
 
-**gmt x2sys_put** [ *info.tbf* ] |-T|\ *TAG* [ |-D| ] [ |-F| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+**gmt x2sys_put**
+[ *info.tbf* ]
+:option:`-T`\ *TAG*
+[ :option:`-D` ]
+[ :option:`-F` ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------
@@ -29,7 +34,7 @@ x2sys_put
 *info.tbf*
     轨迹索引文件名，如果不指定，将从通过标准输入获取
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
     指定 x2sys TAG，参见 :doc:`x2sys_init`
@@ -37,12 +42,12 @@ x2sys_put
 可选选项
 --------
 
-.. _-D:
+.. option:: -D
 
 **-D**
     在 TAG 数据库中删除给定的轨迹索引文件中所有的轨迹 [默认为添加作为新的轨迹]
 
-.. _-F:
+.. option:: -F
 
 **-F**
     用在轨迹索引文件中存在的轨迹信息替换 TAG 数据库已经存在的旧信息
@@ -69,7 +74,7 @@ x2sys 数据库
 命名为 *TAG*\ \_tracks.d；
 第二个文件的名字为 *TAG*\ \_index.b，是一个二进制文件，其中包含哪条轨迹经过
 哪些网格等信息，在经过该网格时，有哪些观测量。网格是由 :doc:`x2sys_init`
-模块在 *TAG* 初始化时，使用 |-R| 和 |-I| 选项生成的。
+模块在 *TAG* 初始化时，使用 **-R** 和 **-I** 选项生成的。
 所有的数据库文件都储存在 **$X2SYS_HOME**/*TAG* 文件夹中。
 禁止用户手动编辑这些文件。
 

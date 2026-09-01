@@ -402,7 +402,7 @@ gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf test
 ```{eval-rst}
 .. gmtplot:: B/B_time_axes_3.sh
     :width: 60%
-    :caption: 时间示例 3    
+    :caption: 时间示例 3
     :show-code: true
 ```
 

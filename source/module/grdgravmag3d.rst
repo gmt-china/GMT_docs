@@ -2,7 +2,7 @@
 :date: 2024-02-19
 
 .. index:: ! grdgravmag3d
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdgravmag3d
 
 grdgravmag3d
 =============
@@ -17,58 +17,56 @@ grdgravmag3d
 语法
 ----
 
-**gmt grdgravmag3d** *grdfile_top* [*grdfile_bot*] [ |-C|\ *density* ]
-[ |-E|\ *thickness* ]
-[ |-F|\ *xy_file* ]
-[ |-G|\ *outgrid* ]
-[ |-H|\ *args* ]
-[ |SYN_OPT-I| ]
-[ |-L|\ *z_obs* ]
-[ |-Q|\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*] ]
-[ |SYN_OPT-R| ]
-[ |-S|\ *radius* ]
-[ |SYN_OPT-V| ]
-[ |-Z|\ *level*\ [**b**\|\ **t**] ]
-[ |SYN_OPT-f| ]
-[ **-x**\ *+a|n|-n* ]
-[ |SYN_OPT--| ]
+**gmt grdgravmag3d**
+*grdfile_top* [*grdfile_bot*]
+:option:`-C`\ *density*
+:option:`-F`\ *xy_file*
+:option:`-G`\ *outgrid*
+[ :option:`-E`\ *thickness* ]
+[ :option:`-H`\ *args* ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-L`\ *z_obs* ]
+[ :option:`-Q`\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*] ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S`\ *radius* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-Z`\ *level*\ [**b**\|\ **t**] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 *grdfile_top* [*grdfile_bot*]
     输入地形网格文件，输出结果为重力异常。如果输入 2 个网格文件，则计算两个地形
     网格围成的体积的重力异常或者磁异常。
 
-.. _-C:
+必须选项
+--------
+
+.. option:: -C
 
 **-C**\ *density*
     设置物体密度，单位为 kg/m^3。也可使用一个网格文件提供其可变的密度。该选项与
-    |-H| 不能同时使用
+    :option:`-H` 不能同时使用
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *xy_file*
-    计算位于 *xy_file* 文件中的点上的异常值。该选项与 |-G| 选项不能同时使用
+    计算位于 *xy_file* 文件中的点上的异常值。该选项与 :option:`-G` 选项不能同时使用
 
-.. _-G:
-
-**-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
-[**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
-[:*driver*\ [*dataType*][**+c**\ *options*]]
-
-    输出网格名，计算实体对该网格中点的异常值。各子选项含义见
-    `网格文件 <https://docs.gmt-china.org/latest/grid/read/#id1>`__ 。
+.. include:: explain_grd_out.rst_
 
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *thickness*
     设置层厚度为 *thickness* ，单位为 m，默认为 500 m
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *f_dec/f_dip/m_int/m_dec/m_dip*
 
@@ -104,34 +102,33 @@ grdgravmag3d
 
 .. include:: explain_-I.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *z_obs*
     设置观测水平面，默认为 0，同时也是计算异常的高度面
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [**n**\ *n_pad*]\|\ [*pad_dist*]\|\ [*region*]
-    基于 |-R| 选项扩展计算区域
+    基于 :option:`-R` 选项扩展计算区域
 
       **-Qn**\ *n_pad* 扩展边缘 *n_pad* * dx[/dy] 大小的范围，*n_pad* 为点数
 
-      **-Q**\ *pad_dist* 只在东西方向分别扩展 *pad_dist* 大小的范围，*pad_dist* 为距离
+      :option:`-Q`\ *pad_dist* 只在东西方向分别扩展 *pad_dist* 大小的范围，*pad_dist* 为距离
 
-      **-Q**\ *region* 与 |-R| 选项语法相同
+      :option:`-Q`\ *region* 与 :option:`-R` 选项语法相同
 
 .. include:: explain_-R.rst_
 
-
-.. _-S:
+.. option:: -S
 
 **-S**\ *radius*
-    以 km 为单位设置搜索半径，仅在两网格模式或者使用 |-E| 时有效，默认为 30 km。该选项通过
+    以 km 为单位设置搜索半径，仅在两网格模式或者使用 :option:`-E` 时有效，默认为 30 km。该选项通过
     不计算与当前节点距离大于 *radius* 的棱柱的影响来加快计算速度，但会导致结果不准确。
 
 .. include:: explain_-V.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *level*\ [**b**\|\ **t**]
     设置参考平面，默认 *level* = 0。计算时将使用该参考面与地形网格构成的区域形成的异常。
@@ -150,7 +147,7 @@ grdgravmag3d
 如果输入的笛卡尔网格的水平方向距离的单位不是米，可以通过对输入文件名
 **+u**\ *unit* 来将指定的单位转换为米。例如：对输入文件 **+uk** 将会把
 输入网格的 x 和 y 坐标的单位从 km 转换为 m。如果输入网格为地理网格，可以
-通过 |SYN_OPT-f| 将单位转换为米
+通过 :option:`-f`\ *flags* 将单位转换为米
 
 示例
 ----

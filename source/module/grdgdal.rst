@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2022-07-02
+:date: 2026-01-01
 
 .. index:: ! grdgdal
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdgdal
 
 grdgdal
 =======
@@ -12,7 +12,7 @@ grdgdal
 
 **grdgdal** 封装了一部分 :doc:`GDAL </utilities/gdal>` 程序（当前包含 gdalinfo，gdaldem，gdal_grid，gdal_translate，
 gdal_rasterize 以及 gdalwarp），因此可以在该模块中实现上述命令的功能。考虑到 gmt 和 GDAL
-的语法差异较大，本模块仅提供了较少的 GMT 风格的选项，而是使用 |-F| 选项将 GDAL 风格的语法
+的语法差异较大，本模块仅提供了较少的 GMT 风格的选项，而是使用 :option:`-F` 选项将 GDAL 风格的语法
 传递给 GDAL。因此，要使用该模块的用户可能需要查阅 GDAL 文档来了解其用法。
 
 本模块在输出网格时，提供了一个选项来设置使用 GMT 或 GDAL 来写网格文件。两种方式各有优缺点。
@@ -23,30 +23,34 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 语法
 ----
 
-**gmt grdgdal** *infile*
-|-A|\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
-|-G|\ *outfile*
-[ |-F|\ "*gd opts*"]
-[ |-M|\ [**+r**\ [**+w**]]]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-g| ]
-[ **-hi** ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT--| ]
+**gmt grdgdal**
+*infile*
+:option:`-A`\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
+:option:`-G`\ *outfile*
+[ :option:`-F`\ "*gd opts*"]
+[ :option:`-M`\ [**+r**\ [**+w**]]]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :doc:`--PAR=value </conf/overview>` ]
+
+输入数据
+--------
+
+*infile*
+    ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体与 :option:`-A` 使用的程序有关。
 
 必选选项
 --------
 
-*infile*
-    ASCII，二进制表数据，OGR 数据或 2—D 网格文件名。具体 |-A| 使用的程序有关
-
-.. _-A:
+.. option:: -A
 
 **-A**\ *prog*\ [**+m**\ *method*\ **+c**\ *cpt*]
     选择要运行的 GDAL 程序，*prog* 可选的值包括：*info*，*dem*，*grid*，*rasterize*，
@@ -59,19 +63,19 @@ Julia，Python 等使用。使用 GDAL 写网格可能会稍为快一些，但�
 可选选项
 --------
 
-.. _-F:
+.. option:: -F
 
 **-F**\ "*gdal opts*"
-    传递给 |-A| 指定的程序的选项列表，用双引号扩起来
+    传递给 :option:`-A` 指定的程序的选项列表，用双引号扩起来
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [**+r**\ [**+w**]]
-    |-M| 后不加任何选项时，使用 GDAL 读和写数据。
+    :option:`-M` 后不加任何选项时，使用 GDAL 读和写数据。
 
     - **+r** 使用 GDAL 读数据，使用 GMT 写数据，当读 OGR 格式数据时，该选项为必须
 
-    - **+w** 与 |-M| 相同
+    - **+w** 与 :option:`-M` 相同
 
 .. include:: explain_-R.rst_
 

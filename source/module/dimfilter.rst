@@ -2,7 +2,7 @@
 :date: 2022-07-16
 
 .. index:: ! dimfilter
-.. include:: common_SYN_OPTs.rst_
+.. program:: dimfilter
 
 dimfilter
 =========
@@ -14,8 +14,8 @@ dimfilter
 为多个扇区，对每个扇区进行一级或者二级滤波，并根据二级滤波选择最终的结果。
 这种划分多个扇区的做法与普通中值滤波的区别在于可以避免在具有一定倾斜趋势的
 区域中某些特征（以对海底地形滤波为例，特征可能为海山）导致的中值偏离的情况。
-输出网格可以使用 |-R| 进行裁剪，或者使用 |-I| 设置新的网格间隔；裁剪可以避
-免边缘效应。|-Q| 选项用于误差分析模式并且输入文件中包含滤波深度。
+输出网格可以使用 :option:`-R` 进行裁剪，或者使用 :option:`-I` 设置新的网格间隔；裁剪可以避
+免边缘效应。:option:`-Q` 选项用于误差分析模式并且输入文件中包含滤波深度。
 **dimfilter** 不会向其他滤波一样产生平滑的输出，因为其返回 N 个扇区中的 N
 个中值中的最小值。除非数据数据中无噪声，否则输出结果可能很不平滑。因此，通
 常建议对网格进行一次额外的滤波（例如，使用 :doc:`grdfilter` ）。
@@ -23,27 +23,31 @@ dimfilter
 语法
 ----
 
-**gmt dimfilter** *ingrid*
-|-D|\ *0-4*
-|-F|\ **x**\ *width*\ [*modifier*]
-|-G|\ *outgrid*
-|-N|\ **x**\ *sectors*\ [*modifier*]
-[ |-L| ]
-[ |-Q| ]
-[ |SYN_OPT-I| ]
-[ |SYN_OPT-R| ]
-[ |-T| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT--| ]
+**gmt dimfilter**
+*ingrid*
+:option:`-D`\ *0-4*
+:option:`-F`\ **x**\ *width*\ [*modifier*]
+:option:`-G`\ *outgrid*
+:option:`-N`\ **x**\ *sectors*\ [*modifier*]
+[ :option:`-L` ]
+[ :option:`-Q` ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+------------------
 
 .. include:: explain_grd_in.rst_
 
-.. _-D:
+必须选项
+--------
+
+.. option:: -D
 
 **-D**\ *flag*
     距离 *flag* 用来设置滤波相关的宽度的单位和类型等信息：
@@ -52,7 +56,7 @@ dimfilter
     - *flag* = 1 ：网格(x,y) 的单位为度，*width* 单位为千米，使用笛卡尔距离
     - *flag* = 2 ：网格(x,y) 的单位为度，*width* 单位为千米，dx 乘以 cos(lat)，
       lat 为所有纬度中值，使用笛卡尔距离
-    
+
     上述计算都狠快，因为只需计算一次权重矩阵。下面的三个选项相对较慢，因为对于
     每个纬度都需重新计算权重矩阵
 
@@ -60,7 +64,7 @@ dimfilter
       lat 为对应的纬度，使用笛卡尔距离
     - *flag* = 4 ：网格(x,y) 的单位为度，*width* 单位为千米，使用球面距离计
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **x**\ *width*\ [**+l**\|\ **u**]
     设置一级滤波类型，可从卷积和非卷积滤波中选择。**x** 为滤波类型代码，后面的
@@ -79,7 +83,9 @@ dimfilter
       如果存在多个众数，则返回其平均数。追加 **+l** 和 **+u** 可分别选择
       多个众数中的最小值和最大值
 
-.. _-N:
+.. include:: explain_grd_out.rst_
+
+.. option:: -N
 
 **-N**\ **x**\ *sectors*\ [**+l**\|\ **u**]
     设置二级滤波类型，以及扇区的个数 *sectors* ，扇区个数必须为整数并大于
@@ -95,32 +101,30 @@ dimfilter
       如果存在多个众数，则返回其平均数。追加 **+l** 和 **+u** 可分别选择
       多个众数中的最小值和最大值
 
-.. include:: explain_grd_out.rst_
-
 可选选项
 --------
 
-.. include:: explain_-I.rst_
-
-.. _-L:
+.. option:: -L
 
 **-L**
     使用此选项将 dim.template.sh 脚本内容写到标准输出，不与其他选项组合使用
 
-.. include:: explain_-R.rst_
-
-.. _-T:
-
-**-T**
-    转换输出网格的配准方式，使其与输入网格相反
-
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     该模式输入数据不是常见的网格格式，而是 :doc:`grd2xyz` 的 **-Z**
     选项输出的形式作为输入。使用该模式输出的结果为均值，MAD 以及中值，
     可用于进一步的误差分析，可见 `脚本模版`_
-    
+
+.. include:: explain_-I.rst_
+
+.. include:: explain_-R.rst_
+
+.. option:: -T
+
+**-T**
+    转换输出网格的配准方式，使其与输入网格相反
+
 .. include:: explain_-V.rst_
 
 .. include:: explain_-f.rst_
@@ -174,7 +178,7 @@ devuation) ::
 --------
 
 dim.template.sh 是一个脚本框架，可在其中进行完整的 dim 分析，包括 MAD 分析，
-通过 |-L| 选项可以获取。
+通过 :option:`-L` 选项可以获取。
 
 参考文献
 --------

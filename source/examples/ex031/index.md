@@ -10,7 +10,7 @@ date: 2025-09-29
 其中沿深度方向网格分为 *nz* 层，网格节点值以速度为例，
 {doc}`/module/grdinterpolate` 模块采样流程为
 
-1. 通过 **-S** 给定地表某点位坐标 (*lon0, lat0*) ，使用 {doc}`/module/grdtrack` 
+1. 通过 **-S** 给定地表某点位坐标 (*lon0, lat0*) ，使用 {doc}`/module/grdtrack`
    模块采样每层二维网格中该点位的值，共得到 *nz* 个值。
 2. 如果使用了 **-T** 自定义深度范围和间距，则使用 {doc}`/module/sample1d`
    模块将上一步得到的数据采样到自定义深度。

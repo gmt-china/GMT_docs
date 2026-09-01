@@ -11,6 +11,7 @@ date: 2024-09-04
 
 ```{eval-rst}
 .. gmtplot:: layers-5.sh
+    :name: tutorial_layers_plot_1
     :width: 75%
     :show-code: false
 ```
@@ -87,6 +88,7 @@ X   Y   对齐方式    TEXT
 
 ```{eval-rst}
 .. gmtplot:: layers-5.sh
+    :name: tutorial_layers_plot_2
     :width: 75%
 ```
 

@@ -7,6 +7,6 @@ gmt begin chinese-compass png,pdf C-I${HOME}/.gmt/
     # 方向玫瑰图
     gmt basemap -R-7/7/-5/5 -Tdg0/0+w0.6i+f3+l+jCM
     # 磁场玫瑰图
-    gmt basemap -R-7/7/-5/5 -Tmg0/0+w1i+d-14.5+t45/10/5+i0.25p,blue+p0.25p,red+l+jCM -X1.5i 
+    gmt basemap -R-7/7/-5/5 -Tmg0/0+w1i+d-14.5+t45/10/5+i0.25p,blue+p0.25p,red+l+jCM -X1.5i
 
 gmt end show

@@ -79,7 +79,7 @@ GMT可以识别的转义字符在下表列出：
 ```{eval-rst}
 .. gmtplot:: escapes.sh
     :show-code: false
-    :width: 75%
+    :width: 100%
     :caption: GMT转义序列示例
 ```
 

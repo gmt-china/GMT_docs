@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
 .. index:: ! x2sys_init
-.. include:: common_SYN_OPTs.rst_
+.. program:: x2sys_init
 
 x2sys_init
 ==========
@@ -26,10 +27,10 @@ x2sys
 工具集主要包括交叉点计算、交叉点不符值统计、交叉点平差（削弱系统误差）等相关分析功能。
 x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉点的算法，
 并且能处理多种格式的沿轨观测数据，例如 NetCDF 格式。
-目前，x2sys 随 GMT 一同发布，其主要功能均包含在 GMT 中，分为多个命令。 
+目前，x2sys 随 GMT 一同发布，其主要功能均包含在 GMT 中，分为多个命令。
 
 .. note::
-    
+
     由于 x2sys 工具包中概念较多，这里先进行一些约定：
         - 轨迹数据/轨道数据/沿轨观测数据/测线数据是相同的概念，即沿测线的观测数据，
           格式通常为 xyz
@@ -46,7 +47,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
   用于表示每个轨迹数据的位置以及观测数据个数等信息
 - :doc:`x2sys_put` 使用轨迹网格索引文件更新 TAG 数据库，该选项在拥有多批次观测数据
   时可用来更新数据
-- :doc:`x2sys_get` 用于寻找满足某些条件的轨迹，**-A** 选项结果可作为 x2sys_cross 的
+- :doc:`x2sys_get` 用于寻找满足某些条件的轨迹， **-A** 选项结果可作为 x2sys_cross 的
   输入以提高寻找交叉点的效率
 - :doc:`x2sys_cross` 计算给定轨迹列表中的轨迹的交叉点，也可给出交叉点不符值和均值
 - :doc:`x2sys_report` 统计交叉点结果信息
@@ -72,7 +73,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 
 4. 交叉点平差（x2sys_solve）
 
-5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 |-L| 选项均
+5. 将改正值应用到测线中（x2sys_datalist、x2sys_report 和 x2sys_list 的 **-L** 选项均
    可实现，推荐使用 x2sys_datalist）
 
 下面将主要介绍 x2sys_init 模块，其他模块可参考对应模块文档。
@@ -80,19 +81,19 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 语法
 ----
 
-**gmt x2sys_init** 
-*TAG* 
-|-D|\ *fmtfile*
-[ |-E|\ *suffix* ]
-[ |-F| ]
-[ |-G|\ **d**\|\ **g** ]
-[ |-I|\ *dx*\ [/*dy*] ]
-[ |-N|\ **d**\|\ **s**\ *unit* ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ **t**\|\ **d**\ *gap* ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT--| ]
+**gmt x2sys_init**
+*TAG*
+:option:`-D`\ *fmtfile*
+[ :option:`-E`\ *suffix* ]
+[ :option:`-F` ]
+[ :option:`-G`\ **d**\|\ **g** ]
+[ :option:`-I`\ *dx*\ [/*dy*] ]
+[ :option:`-N`\ **d**\|\ **s**\ *unit* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ **t**\|\ **d**\ *gap* ]
+[ :option:`-j`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 --------
@@ -101,72 +102,72 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
     数据类型的标签，x2sys_init 将创建一个以 *TAG* 命名的文件夹来保存相关配置信息。后续
     模块将依赖该配置信息进行数据处理
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *fmtfile*
     *fmtfile* 文件定义了当前处理的数据文件的格式（见下文中的 `格式定义文件`_ ）。
-    如果 *fmtfile* 不在当前文件夹下，则需要指定完整路径。若 *fmtfile* 不包含后缀，GMT 
+    如果 *fmtfile* 不在当前文件夹下，则需要指定完整路径。若 *fmtfile* 不包含后缀，GMT
     会假定使用自带的格式定义文件，这些文件位于 ``gmt --show-sharedir`` 结果的 *x2sys*
     文件夹下，见 `内置格式定义文件`_ 。
-    如果 |-D| 选项没有指定，GMT 将自动使用 *TAG*\ .fmt，不管其是否存在。
+    如果 :option:`-D` 选项没有指定，GMT 将自动使用 *TAG*\ .fmt，不管其是否存在。
     **注** ：已经弃用的 ``.def`` 后缀的文件可以正常工作，但不推荐使用，应该考虑改变后缀
     ，见 `废弃用法`_ 。
 
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *suffix*
-    指定处理数据文件的后缀。如果不指定，GMT 将使用 |-D| 选项中的前缀作为后缀（见 |-D| 选项）。
+    指定处理数据文件的后缀。如果不指定，GMT 将使用 :option:`-D` 选项中的前缀作为后缀（见 :option:`-D` 选项）。
 
-.. _-F:
+.. option:: -F
 
 **-F**
-    如果 **TAG** 文件夹存在，将强制创建新的文件夹 [默认存在旧的文件夹时，不创建新文件夹]。    
+    如果 **TAG** 文件夹存在，将强制创建新的文件夹 [默认存在旧的文件夹时，不创建新文件夹]。
 
-.. _-G:
+.. option:: -G
 
 **-Gd**\|\ **g**
     选择使用地理坐标。追加 **d** 表明经度范围为 -180 到 180 度，
     追加 **g** 表明经度范围为 0 到 360 度。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *dx*\ [/*dy*]
-    |-I| 选项主要用来指定在 :doc:`x2sys_binlist` 
+    :option:`-I` 选项主要用来指定在 :doc:`x2sys_binlist`
     模块中创建的网格的间隔，*dx* 为横向间隔，*dy* 为纵向间隔，*dy* 为可选的，
     不指定时，使用 *dx* 作为纵向间隔。
     追加 *m* 或 *s* 用来指定间隔在地理坐标中的单位为角分或角秒。
 
-.. _-N:
+.. option:: -N
 
 **-Nd**\|\ **s**\ *unit*
     设置其他后续模块中需要使用的距离和速度的单位。
     **d** 表示距离，**s** 表示速度，然后可以分别指定距离和速度的单位。
-    
+
     - **c** 表示笛卡尔坐标下的距离或速度
     - **e** m 或 m/s，
     - **f** feet 或 feet/s
     - **k** km 或 kms/hr
     - **m** miles 或 miles/hr
     - **n** nautical miles 或 knots
-    - **u** survey feet 或 survey feet/s). 
+    - **u** survey feet 或 survey feet/s
 
-    默认地，当使用了 |-G| 选项时，自动设置为 **-Ndk** **-Nse** （km 和 m/s），
+    默认地，当使用了 :option:`-G` 选项时，自动设置为 **-Ndk** **-Nse** （km 和 m/s），
     其他情况设置为 **-Ndc** 和 **-Nsc** 。
 
 .. include:: explain_-R.rst_
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-Wt**\|\ **d**\ *gap*
     该选项主要用于考虑轨迹数据中的缺失点或观测间隔很大的点。
     **t** 设置最大的时间间隙 *gap* （使用用户定义的单位，通常为秒）；
-    **d** 设置最大的距离间隙 *gap* （单位见 |-N| 选项）。
-    若交叉点两侧的数据点之间的时间或距离大于 *gap* , 
+    **d** 设置最大的距离间隙 *gap* （单位见 :option:`-N` 选项）。
+    若交叉点两侧的数据点之间的时间或距离大于 *gap* ,
     则认为当前轨迹数据存在缺失数据，不用来计算交叉点并平差。
 
 .. include:: explain_distcalc.rst_
@@ -191,7 +192,7 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 3. **NETCDF** 表明该数据文件为 1-D NetCDF 格式
 4. **SKIP** 可接收一个参数，表示读取 ASCII 格式的数据文件时跳过的行数或
    读取二进制文件时跳过的字节数
-5. **GEO** 表明数据文件的坐标为地理坐标，与 |-G| 的作用相同
+5. **GEO** 表明数据文件的坐标为地理坐标，与 :option:`-G` 的作用相同
 6. **MULTISEG** 表明每个文件均包括多段数据，中间使用 GMT 段分隔符分开（不适用于 NetCDF 格式）
 
 列信息
@@ -201,12 +202,12 @@ x2sys 基于 x_system，不同之处在于，x2sys 使用了新的寻找交叉�
 
     name  type  NaN  NaN-proxy  scale  offset  oformat
 
-1. *name* 变量的名称。其中，坐标是必须的变量，且其名称只能为 *lon* 和 *lat* 
+1. *name* 变量的名称。其中，坐标是必须的变量，且其名称只能为 *lon* 和 *lat*
    （笛卡尔坐标时为 *x* 和 *y* ）。时间变量为可选的，*time* 表示绝对时间，
    *rtime* 表示相对时间，使用相对时间时，需确保 :term:`TIME_UNIT` 和 :term:`TIME_EPOCH`
    设置正确。无论使用的时间是绝对时间还是相对时间，输出结果中都使用绝对时间。
 2. *type* 数据类型
-       
+
     - **a** （ASCII 文件）数字
     - **c** （二进制文件）1 字节有符号整型
     - **u** （二进制文件）1 字节无符号整型
@@ -276,12 +277,12 @@ lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。
 
 所有的 TAG 相关的文件，包括格式定义文件，TAG 文件以及创建的数据库等将保存在
 **$X2SYS_HOME**\ /*TAG* 文件夹中，此处为 **$X2SYS_HOME**\ /LINE。
-**x2sys_init** 将会复制 |-D| 选项设置的 \*.fmt 到该文件夹下，以便后续的 x2sys 命令使用。
+**x2sys_init** 将会复制 :option:`-D` 选项设置的 \*.fmt 到该文件夹下，以便后续的 x2sys 命令使用。
 
 （3）创建 tbf 文件。使用 **x2sys_init** 创建数据库以后，可以使用下面两步填充数据库。
 首先运行 :doc:`x2sys_binlist` ，使用沿轨观测文件创建一个或多个多段
 轨迹网格索引文件（track bin-index file，tbf）。文件中的信息包括：每个轨道经过哪些
-1x1 度（见 |-I| ）的网格，以及含有哪些观测（这里为 obs1，obs2，obs3，
+1x1 度（见 :option:`-I` ）的网格，以及含有哪些观测（这里为 obs1，obs2，obs3，
 但并非所有的轨迹都含有这 3 种观测）。
 例如：如果用于将所有的数据文件名保存在 :file:`tracks.lis` ，则可以运行::
 
@@ -300,7 +301,7 @@ lat，lon，time，obs1，obs2，obs3，后缀为 .trk 。
 **MGD77[+] 文件**
 
 GMT 已经自带了 MGD77，MGD77+ 以及 mgg 观测数据的格式定义文件。
-对于这些数据，设置 **-j** 和 |-N| 将默认使用大圆距离，单位为 km，速度单位为 m/s。
+对于这些数据，设置 **-j** 和 :option:`-N` 将默认使用大圆距离，单位为 km，速度单位为 m/s。
 由 NCEI 创建的 MGD77 数据可使用下面命令初始化::
 
     gmt x2sys_init MGD77 -V -Dmgd77 -Emgd77 -Rd -Gd -Nsn -I1/1 -Wt900 -Wd5

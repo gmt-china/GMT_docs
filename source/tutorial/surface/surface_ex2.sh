@@ -1,5 +1,5 @@
 gmt begin map2
-    gmt surface Table_5_11.txt -R-0.2/6.6/-0.2/6.6 -I0.05 -Gtmp.grd    
+    gmt surface Table_5_11.txt -R-0.2/6.6/-0.2/6.6 -I0.05 -Gtmp.grd
 
     gmt basemap -R-0.2/6.6/-0.2/6.6 -JM10c -Baf
     gmt makecpt -Cseis -T650/1000

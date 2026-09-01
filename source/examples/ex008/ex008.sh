@@ -31,7 +31,7 @@ gmt spatial testline3.txt -Sb0.05 > testline3_buffer.txt
 
 gmt begin buffer png
   gmt basemap -R7.5/10/49.5/51 -JX15c -B
-    
+
   gmt plot testline1.txt -W1p,green
   gmt plot testline1_buffer.txt -W1p,red
 

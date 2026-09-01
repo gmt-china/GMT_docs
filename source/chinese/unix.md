@@ -51,9 +51,12 @@ ghostscript [查找文件时](https://ghostscript.readthedocs.io/en/latest/Use.h
 
 ```
 gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/
-# 如果在中文绘图脚本中，有其他需要传递给 gmt psconvert 命令的选项，例如 -I+m0.5c -E720
-# 可以去掉横杠后以逗号分隔，添加在后面：
-# gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/,I+m0.5c,E720
+```
+
+如果在中文绘图脚本中，有其他需要传递给 **psconvert** 命令的选项，例如 `-I+m0.5c -E720` 。可以去掉横杠后以逗号分隔，添加在后面：
+
+```
+gmt begin 图片文件名 图片格式 C-I${HOME}/.gmt/,I+m0.5c,E720
 ```
 
 接下来，还需要在 `~/.gmt`下创建字体配置文件 `PSL_custom_fonts.txt`:
@@ -101,7 +104,9 @@ Font #  Font Name
 ```
 
 其中 39-46 号字体为新添加的中文字体。
-以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。
+以后要用中文字体时，**强烈建议**直接指定字体的名字（如 `STSong-Light--UniGB-UTF8-H`）而不是字体的编号（如 `39`）。
+因为编号取决于 `PSL_custom_fonts.txt` 中字体的添加顺序，不同机器上对应的编号可能不同，
+而字体名字则具有很好的移植性。
 
 ## GMT 中文测试
 
@@ -112,8 +117,6 @@ GMT 6.x 目前在处理中文时存在 BUG，可能会出现某些中文正常�
 ```
 gmt set PS_CHAR_ENCODING Standard+
 ```
-
-请自行确认你的中文字体编号。如果编号不是 39 到 46，请自行修改以下测试脚本。
 :::
 
 测试脚本和成图效果如下：

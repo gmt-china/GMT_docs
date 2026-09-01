@@ -5,7 +5,7 @@ gmt begin Roman_numerals_colorbar
     gmt makecpt -Cseis -Ic -T6/10/1
     # 以下是绘制地震烈度图的代码，略
     # ...
-    
+
     # 生成罗马数字标注的自定义轴文件
 
     # 第一种类型：标注对齐刻度

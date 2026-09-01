@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2022-07-18
+:date: 2026-01-01
 
 .. index:: ! grdfilter
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdfilter
 
 grdfilter
 =========
@@ -11,31 +11,37 @@ grdfilter
 :简介: 在空间（或时间）域中对网格滤波
 
 **grdfilter** 使用卷积、非卷积各向同性或矩形滤波器对网格进行滤波。输出网格可以
-设置新的区域（|-R|），间隔（|-I|）或者配准方式（|-T|）。这样可以在数据足够
+设置新的区域（:option:`-R`），间隔（:option:`-I`）或者配准方式（:option:`-T`）。这样可以在数据足够
 大的情况下，可去掉网格边缘以避免滤波的边缘效应。如果滤波器为低通滤波，则输出结果
 的频率可能低于输入的采样频率。**注**：频域（或称波数域）滤波，见 :doc:`grdfft`。
 
 语法
 ----
 
-**gmt grdfilter** *ingrid* |-D|\ *distance_flag*
-|-F|\ **x**\ *width*\ [/*width2*][*modifiers*]
-|-G|\ *outgrid*
-[ |SYN_OPT-I| ]
-[ |-N|\ **i**\|\ **p**\|\ **r** ]
-[ |SYN_OPT-R| ]
-[ |-T| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT--| ]
+**gmt grdfilter**
+*ingrid*
+:option:`-D`\ *distance_flag*
+:option:`-F`\ **x**\ *width*\ [/*width2*][**+c**\|\ **+h**\|\ **+l**\|\ **+q**\ *quantile*\|\ **+u**]
+:option:`-G`\ *outgrid*
+[ :option:`-I`\ *increment* ]
+[ :option:`-N`\ **i**\|\ **p**\|\ **r** ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-x`\ [[-]n] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_grd_in.rst_
 
-.. _-D:
+必须选项
+--------
+
+.. option:: -D
 
 **-D**\ *flag*
     距离 *flag* 用来设置滤波相关的宽度的单位和类型等信息：
@@ -45,7 +51,7 @@ grdfilter
     - *flag* = 1 ：网格(x,y) 的单位为度，*width* 单位为千米，使用笛卡尔距离
     - *flag* = 2 ：网格(x,y) 的单位为度，*width* 单位为千米，dx 乘以 cos(lat)，
       lat 为所有纬度中值，使用笛卡尔距离
-    
+
     上述计算都狠快，因为只需计算一次权重矩阵。下面的三个选项相对较慢，因为对于
     每个纬度都需重新计算权重矩阵
 
@@ -55,9 +61,9 @@ grdfilter
     - *flag* = 5 ：网格(x,y) 的单位为墨卡托 **-Jm1** img 单位，*width* 为千米，
       使用球面距离计算
 
-.. _-F:
+.. option:: -F
 
-**-Fx**\ *width*\ [/*width2*][*modifiers*]
+**-Fx**\ *width*\ [/*width2*][**+c**\|\ **+h**\|\ **+l**\|\ **+q**\ *quantile*\|\ **+u**]
     设置滤波类型，可从卷积和非卷积滤波中选择。**x** 为滤波类型代码，后面的
     *width* 为滤波直径，此时进行各向同性滤波；追加 *width2* 以实现不同方向
     不同的滤波长度（需要 **-Dp** 和 **-D0** ）。默认情况下，执行低通滤波。
@@ -69,7 +75,7 @@ grdfilter
     - **b** ：Boxcar，即滤波窗口内所有点等权
     - **c** ：Cosine Arch，滤波窗口内的权中为 Cosin 曲线
     - **g** ：Gaussion，权重通过高斯函数给出，其中宽度是传统高斯标准差的 6 倍
-    - **f** ：Custom，权重由网格文件 *width* 给出，维度必须为奇数，且需 
+    - **f** ：Custom，权重由网格文件 *width* 给出，维度必须为奇数，且需
       **-D0** ，输出网格的间隔必须与输入一致或为其整数倍
     - **o** ：Operator，权重由网格文件 *width* 给出，维度必须为奇数，且需
       **-D0** ，输出网格的间隔必须与输入一致或为其整数倍。不同之处在于，假定
@@ -100,22 +106,22 @@ grdfilter
 
 .. include:: explain_-I.rst_
 
-.. _-N:
+.. option:: -N
 
 **-N**\ **i**\|\ **p**\|\ **r**
     确定输入网格中的 NaN 值如何处理。
 
     - **i** 计算过程中忽略所有 NaN 值 [默认]
-    - **r** 与 **i** 相同，但如果输出网格与输入配准相同，则在输入网格的 NaN 
+    - **r** 与 **i** 相同，但如果输出网格与输入配准相同，则在输入网格的 NaN
       值出现的位置将输出网格对应值也设置为 NaN
     - **p** 如果在滤波搜索范围内出现 NaN 值，则将最终网格点设置为 NaN
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-T**
-    转换网格配准方式。或者使用 **-r**\ [**g**\|\ **p**] 显式指定输出网格的
+    转换网格配准方式。或者使用 :option:`-r`\ [**g**\|\ **p**] 显式指定输出网格的
     配准方式
 
 .. include:: explain_-V.rst_
@@ -123,6 +129,8 @@ grdfilter
 .. include:: explain_-f.rst_
 
 .. include:: explain_nodereg.rst_
+
+.. include:: explain_core.rst_
 
 .. include:: explain_help.rst_
 
@@ -133,7 +141,7 @@ grdfilter
 
 #. 使用 **-D5** 选项时，输入墨卡托网格必须由 :doc:`img2grd` 的 **-C** 选项
    生成，因此 y 值的原点为赤道（即 x = y = 0 对应于 lon = lat = 0）
-#. |-I| 选项设置的新的 *x\_inc* ， *y\_inc* 如果不是输入数据的间隔的整数倍，
+#. :option:`-I` 选项设置的新的 *x\_inc* ， *y\_inc* 如果不是输入数据的间隔的整数倍，
    则滤波会非常慢
 
 示例

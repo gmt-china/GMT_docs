@@ -3,7 +3,7 @@
 # 绘制三维速度模型的任意垂直切片
 
 # 下载示例模型文件
-wget "https://ds.iris.edu/files/products/emc/emc-files/S362ANI_percent.nc"
+# wget "https://ds.iris.edu/files/products/emc/emc-files/S362ANI_percent.nc"
 
 gmt begin 3d_vert_slice
     # 构建底图

@@ -1,7 +1,8 @@
 :author: 田冬冬, 王亮
 :date: 2025-12-09
+
 .. index:: ! begin
-.. include:: common_SYN_OPTs.rst_
+.. program:: begin
 
 begin
 =====
@@ -27,8 +28,8 @@ begin
 [ *prefix* ]
 [ *formats* ]
 [ *options* ]
-[ |-C| ]
-[ |SYN_OPT-V| ]
+[ :option:`-C` ]
+[ :option:`-V`\ [*level*] ]
 
 可选选项
 --------
@@ -81,7 +82,7 @@ begin
 
     详细解释以及其他更多选项见 :doc:`psconvert` 的说明文档。
 
-.. _-C:
+.. option:: -C
 
 **-C**
     启动一个“干净”的会话。所有已存在的 gmt.conf 都会被忽略，而不会影响到该会话。
@@ -172,4 +173,3 @@ UNIX shell 注意事项
 :doc:`figure`,
 :doc:`inset`,
 :doc:`subplot`,
-:doc:`gmt`

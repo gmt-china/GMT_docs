@@ -2,7 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77magref
-.. include:: common_SYN_OPTs.rst_
+.. program:: mgd77magref
 
 mgd77magref
 ===========
@@ -15,28 +15,30 @@ mgd77magref
 语法
 ----
 
-**gmt mgd77magref** [ *inputfile* ]
-[ |-A|\ [**+a**\ *alt*\ ][**+t**\ *date*\ ][**+y**] ]
-[ |-C|\ *cm4file* ]
-[ |-D|\ *Dstfile* ]
-[ |-E|\ *f107file* ]
-[ |-F|\ *flags* ]
-[ |-G| ]
-[ |-S|\ **c**\|\ **l**\ *low/high* ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt mgd77magref**
+[ *inputfile* ]
+[ :option:`-A`\ [**+a**\ *alt*\ ][**+t**\ *date*\ ][**+y**] ]
+[ :option:`-C`\ *cm4file* ]
+[ :option:`-D`\ *Dstfile* ]
+[ :option:`-E`\ *f107file* ]
+[ :option:`-F`\ *flags* ]
+[ :option:`-G` ]
+[ :option:`-S`\ **c**\|\ **l**\ *low/high* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-可选选项
+输入数据
 --------
 
 *inputfile*
     输入文件，其中包含时间和空间信息，前两列必须为经纬度，正常情况下，第三列第四列必须
-    是海拔（km）和时间，但如果这两个参数对所有数据都是恒定的，则可以通过 **-A** 选项
+    是海拔（km）和时间，但如果这两个参数对所有数据都是恒定的，则可以通过 :option:`-A` 选项
     指定，这时输入文件中就不包含对应的列。如果没有输入文件，则从标准输入中读取数据。
 
     关于 CM4 的说明：CM4 的核心场的有效期为 1960-2002.5，但电离层和磁层场是在 *Dst*
@@ -52,31 +54,34 @@ mgd77magref
       上述网址已经停止更新，最新的数据可以从下面网址下载
       ftp://ftp.ngdc.noaa.gov/STP/space-weather/solar-data/solar-features/solar-radio/noontime-flux/penticton/penticton_absolute/listings/listing_drao_noontime-flux-absolute_monthly.txt
 
-.. _-A:
+可选选项
+--------
+
+.. option:: -A
 
 **-A**\ [**+a**\ *alt*\ ][**+t**\ *date*\ ][**+y**]
     指定输入文件被解析的形式。**+a** 用来设置固定的海拔 *alt* (km)，[默认使用数据的
     第三列作为海拔]，**+t** 用来设置固定时间 *data*，[默认使用数据的第四列作为时间]，
     **+y** 表示所有的时间都为小数年的形式 [默认为 *dateTcolck* 格式，见 :term:`TIME_EPOCH`]
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *cm4file*
     指定备用的 CM4 参数文件 [umdl.CM4]
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *Dstfile*
     指定备用文件，其内容为 CM4 小时平均的 *Dst* 索引 [Dst_all.wdc].
     也可以指定单个索引，用于所有的数据
 
-.. _-E:
+.. option:: -E
 
 **-E**\ *f107file*
     指定备用文件，其中包含 CM4 absolute F10.7 solar radio flux [F107_mon.plt].
     也可以指定单个索引用于所有的数据
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *flags*
     选择输出项，*flags* 包含一个或者多个字符：
@@ -123,12 +128,12 @@ mgd77magref
     Primay 和 Induced Magetospheric field 相加的结果。输出数据的格式与字符出现的顺序
     有关，默认为 **-Frthxyzdi**/**1** ，也可以使用 **-o** 选项进一步筛选。
 
-.. _-G:
+.. option:: -G
 
 **-G**
     指定坐标为地心坐标，默认为大地坐标
 
-.. _-L:
+.. option:: -L
 
 **-L**
     计算外部源的 J field vector.
@@ -153,7 +158,7 @@ mgd77magref
 
     **4** means Poloidal field.
 
-.. _-S:
+.. option:: -S
 
 **-Sc**\ *low/high*
     通过球谐系数的阶数来限制 core field（地核？）贡献的波长在给定的阶数范围内 [1/13]
@@ -166,6 +171,8 @@ mgd77magref
 .. include:: explain_-bi.rst_
 
 .. include:: explain_-bo.rst_
+
+.. include:: explain_-f.rst_
 
 .. include:: explain_-h.rst_
 

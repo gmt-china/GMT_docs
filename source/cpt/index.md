@@ -1,6 +1,6 @@
 ---
-author: 田冬冬, 姚家园, 周茂
-date: 2024-09-16
+author: 田冬冬, 姚家园, 周茂, 何星辰
+date: 2026-02-12
 ---
 
 # 颜色表 CPT
@@ -23,5 +23,5 @@ current-cpt
 
 除了以上各小节介绍的 CPT 资源，还可以访问以下链接获取更多 CPT 资源：
 
-1. <http://seaviewsensing.com/pub/cpt-city/index.html>
+1. <https://phillips.shef.ac.uk/pub/cpt-city/>
 2. <http://www.fabiocrameri.ch/colourmaps.php>

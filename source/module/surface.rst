@@ -2,7 +2,7 @@
 :date: 2024-07-21
 
 .. index:: ! surface
-.. include:: common_SYN_OPTs.rst_
+.. program:: surface
 
 surface
 =======
@@ -31,41 +31,50 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 语法
 ----
 
-**gmt surface** [ *table* ] |-G|\ *outgrid*
-|SYN_OPT-I|
-|SYN_OPT-R|
-[ |-A|\ *aspect_ratio*\|\ **m** ]
-[ |-C|\ *convergence_limit*\ [%] ]
-[ |-J|\ *parameters* ]
-[ |-D|\ *breakline_file*\ [**+z**\ [*level*]] ]
-[ |-L|\ **l**\ *lower* ] [ |-L|\ **u**\ *upper* ]
-[ |-M|\ *max_radius* ]
-[ |-N|\ *max_iterations* ]
-[ |-Q|\ [**r**] ]
-[ |-S|\ *search_radius*\ [**m**\|\ **s**] ]
-[ |-T|\ [**b**\|\ **i**]\ *tension_factor* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*logfile*] ]
-[ |-Z|\ *over-relaxation_factor* ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-bi| ]
-[ |SYN_OPT-di| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt surface**
+[ *table* ]
+:option:`-G`\ *outgrid*
+:option:`-I`\ *increment*
+:option:`-R`\ *region*
+[ :option:`-A`\ *aspect_ratio*\|\ **m** ]
+[ :option:`-C`\ *convergence_limit*\ [%] ]
+[ :option:`-J`\ *parameters* ]
+[ :option:`-D`\ *breakline_file*\ [**+z**\ [*level*]] ]
+[ :option:`-L`\ **l**\ *lower* ]
+[ :option:`-L`\ **u**\ *upper* ]
+[ :option:`-M`\ *max_radius* ]
+[ :option:`-N`\ *max_iterations* ]
+[ :option:`-Q`\ [**r**] ]
+[ :option:`-S`\ *search_radius*\ [**m**\|\ **s**] ]
+[ :option:`-T`\ [**b**\|\ **i**]\ *tension_factor* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*logfile*] ]
+[ :option:`-Z`\ *over-relaxation_factor* ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-di`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+------------
 
 .. include:: explain_intables.rst_
 
+必须选项
+--------
+
 .. include:: explain_grd_out.rst_
+..
+
+    请注意，生成的网格文件的行数或列数必须至少为 4。
 
 .. include:: explain_-I.rst_
 
@@ -74,14 +83,14 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *aspect_ratio*\|\ **m**
     设置网格纵横比 *aspect_ratio* ，其中 dy = dx / *aspect_ratio*。
     对于地理数据，可以使用 **-Am** 设置网格纵横比为纬度平均值的余弦。
     不设置本项时，默认网格纵横比为 1，即各向同性网格。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *convergence_limit*\ [%]
     设置收敛极限，单位与 *z* 的单位相同。当任意格点的绝对变化量小于该极限时，
@@ -91,10 +100,10 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. include:: explain_-J.rst_
 ..
-    
+
     该设置仅用于将投影信息输出到最终的网格中，在实际计算中并不会使用。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *breakline*\ [**+z**\ [*level*]]
     指定一个 *breakline*, 其中数据格式为 *x, y, z*。在该 breakline 上的网格点，将
@@ -102,9 +111,11 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     文件。如果文件中不存在 *z*，或者用户想要覆盖文件中的 *z* 值，则可在文件后追加
     **+z**\ *level*，如果不指定 *level* 值，则默认为 0。
 
-.. _-L:
+.. option:: -L
 
-**-Ll**\ *lower* and **-Lu**\ *upper*
+**-Ll**\ *lower*
+
+**-Lu**\ *upper*
     对微分方程的解加上限制。 **-Ll**\ *lower* 设置下限，其中 *lower* 可以是一个
     网格文件的文件名或一个固定值。设置以后，输出的网格的值将均大于等于设置的值。
     **-Lu**\ *upper* 设置上限，同样 *upper*  也可以是一个网格文件的文件名或一个
@@ -115,33 +126,33 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
        - **u** 不设置约束 [默认]
        - **d** 针对 *l* 和 *u* 分别表示设置为输入数据的最小值和最大值
 
-.. _-M:
+.. option:: -M
 
 **-M**\ *max_radius*
     设置一个半径大小，在求解结束后，位于输出离散点半径内的格点数据将被保留，半径
     以外的数据将设置为 NaN。可追加距离单位。
-    或可使用 **-M**\ *n_cells*\ **c** 形式以不用距离，而是格点个数来保留数据，其中
+    或可使用 :option:`-M`\ *n_cells*\ **c** 形式以不用距离，而是格点个数来保留数据，其中
     *n_cells* 为离散点周围的格点个数。**-M0c** 表示只有离散点所处的格点被保留。
     **-M1c** 将保留处其所处格点外的最近一圈格点，即 3x3 的范围，依此类推。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *max_iterations*
     迭代次数, 默认为 500。迭代将会在达到收敛极限或迭代次数达到 *max_iterations* 时停止。这个
     最大迭代次数仅针对最终输出的网格，对于 GMT 内部的临时网格，其迭代次数放大为
     网格间隔相应的倍数。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [**r**]
     输出本模块建议运行时使用的网格维度。该选项主要目的为建议一个最优的网格维度以
     允许本模块可使用多次中间步骤以加快计算并得到更好的结果。当用户得到此建议维度
-    时，可使用 |-R| 和 |-I| 设置新的结果，并在后续使用 :doc:`grdsample` 或
+    时，可使用 :option:`-R` 和 :option:`-I` 设置新的结果，并在后续使用 :doc:`grdsample` 或
     :doc:`grdcut` 以得到用户原本希望的维度和范围。
-    另外，可追加 **r** 使 **surface** 完全按照 |-R| 指定的范围计算结果 [默认会自动
-    寻找稍大的区域，然后在输出时将区域裁剪为 |-R| 设置的范围。]
+    另外，可追加 **r** 使 **surface** 完全按照 :option:`-R` 指定的范围计算结果 [默认会自动
+    寻找稍大的区域，然后在输出时将区域裁剪为 :option:`-R` 设置的范围。]
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *search_radius*\ [**m**\|\ **s**]
     设置搜索半径 *search_radius*，单位与 x 和 y 的单位相同，默认值为 0，即不做搜索；
@@ -149,7 +160,7 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     分别表示角分和角秒。该选项用于在第一次迭代之前进行初始化。除非网格点个数为素数，
     不存在中间阶段，否则无需设置该选项。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [**b**\|\ **i**]\ *tension_factor*
     设置张力因子，必须在 0 到 1 之间。
@@ -157,12 +168,17 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     其中 **i** 用于设置内部求解张力，**b** 用于设置边界条件张力。如果不给出子选项，
     则二者同时设置为同一个值。若同时设置为 0，即退化为最小曲率样条解，这也是默认情况。
 
-.. _-W:
+.. include:: explain_-V.rst_
+..
+
+    **-V3** 将在每次迭代后报告收敛情况，而 **-V** 仅在每个区域网格收敛后报告。
+
+.. option:: -W
 
 **-W**\ [*logfile*]
     将收敛信息输出到为 *logfile* 文件，默认为 *surface_log.txt*
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ *over-relaxation_factor*
     Over-relaxation 因子，该参数用于加速收敛，取值应位于 1 到 2 之间。当其为
@@ -170,8 +186,6 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
     因此可以更快地收敛，但由于增量变大，最终的结果可能不稳定。如果使用较大的
     值，最好使用 **-Vi** 选项观察迭代过程。默认值为 1.4，可以快速收敛且总能
     得到稳定的解。
-
-.. include:: explain_-V.rst_
 
 .. include:: explain_-aspatial.rst_
 
@@ -201,28 +215,26 @@ Laplace 方程，其解即为调和面，除控制点外，不会出现最大值
 
 .. include:: explain_distunits.rst_
 
-.. include:: explain_float.rst_
-
 示例
 ----
 
 ASCII 数据 `hawaii_5x5.xyg` 为经 :doc:`blockmean` 处理后的数据，使用 **surface**
 网格化为 5 分，设置 *tension_factor* = 0.25，*convergence_limit* = 0.1 mgal，
-将结果输出到 `havaii_grd.nc` 并使用 `-Vi` 选项查看每个迭代过程 ::
+将结果输出到 `havaii_grd.nc` 并使用 **-Vi** 选项查看每个迭代过程 ::
 
     gmt surface hawaii_5x5.xyg -R198/208/18/25 -I5m -Ghawaii_grd.nc -T0.25 -C0.1 -Vi
 
 注意事项
 --------
 
-尽管 |-R| 选项控制了最终输出网格的范围，但在 GMT 内部会使用一个稍大一些的区域，
+尽管 :option:`-R` 选项控制了最终输出网格的范围，但在 GMT 内部会使用一个稍大一些的区域，
 这种做法有利于最终结果的收敛。
 
 
 格网化地理坐标数据：边界条件
 ----------------------------
 
-**surface** 内部执行的有限差分算法基于笛卡尔坐标，因此设置了 |-A| 选项以适应
+**surface** 内部执行的有限差分算法基于笛卡尔坐标，因此设置了 :option:`-A` 选项以适应
 不同纬度下不同方向（即经度和纬度方向）的纵横比。当输出地理坐标网格的经度范围
 为 0～360 范围时，将在经度方向实施周期边界条件。但是，在极点处，却不能使用该
 边界条件，因为在极点处的有限差分解时无效的（在极点处，网格间隔为 0）。如果
@@ -241,7 +253,7 @@ ASCII 数据 `hawaii_5x5.xyg` 为经 :doc:`blockmean` 处理后的数据，使�
 使用球近似，即大圆距离（译注：椭球的大小是影响该距离的主要因素，球近似不是
 主要因素）。对于纬度，GMT 将 y 方向的距离除以每维度所对应的距离，对于经度，则
 除以平均纬度对应的距离。因此，转换后的度与用户输出的增量可能不完全一致。这
-其中所涉及到的舍入是用户所不希望的，并会导致网格的维度为素数。|-Q| 选项可用来
+其中所涉及到的舍入是用户所不希望的，并会导致网格的维度为素数。:option:`-Q` 选项可用来
 处理这种情况，但间隔转换导致的无穷小数仍然难以有效解决。因此，不要使用长度
 单位设置间隔是一种比较好的方法，设置为角度、角分、角秒可以得到更加干净的结果，
 因为这样网格的维度是可控的并且可避免舍入误差。

@@ -17,7 +17,7 @@ copyright = "2014–{}, {}".format(datetime.date.today().year, author)
 github_user = "gmt-china"
 github_repo = "GMT_docs"
 github_url = f"https://github.com/{github_user}/{github_repo}"
-version = "6.6"
+version = "6.7"
 release = version
 
 # -- Contributor information ---------------------------------------------
@@ -35,8 +35,11 @@ rst_prolog = """
 """
 
 # -- General configuration ------------------------------------------------
-needs_sphinx = "2.4"
-source_suffix = ".rst"
+needs_sphinx = "8.0"
+source_suffix = {
+    '.rst': 'restructuredtext',  # 遇到 .rst 用默认解析器
+    '.md': 'markdown',           # 遇到 .md 用 MyST 解析器
+}
 source_encoding = "utf-8-sig"
 nitpicky = True
 language = "zh_CN"
@@ -57,11 +60,10 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_copybutton",
     "sphinx_design",
-    "gmtplot",
+    "gmtplot",  # _extensions/gmtplot.py
     "sphinxcontrib.datatemplates",
+    "hide_options",  # _extensions/hide_options.py
 ]
-# use custom templater bridge defined in _extensions/templatebridge.py
-template_bridge = "templatebridge.MyTemplateBridge"
 #mathjax_path = "https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Set smartquotes_action to "qe" to disable Smart Quotes transform of -- and ---
@@ -98,8 +100,7 @@ copybutton_remove_prompts = True
 # -- Options for HTML output ----------------------------------------------
 import sphinx_rtd_theme
 
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "sticky_navigation": False,
@@ -117,10 +118,14 @@ if os.getenv("GITHUB_ACTIONS"):  # Build by GitHub Actions
     siteurl_for_gallery = f"https://docs.gmt-china.org/{version}"
     basedir_for_gallery = "source/"
 elif os.getenv("READTHEDOCS"):  # Preview PRs powered by ReadTheDocs
-    siteurl_for_gallery = os.getenv("READTHEDOCS_CANONICAL_URL")
+    # 强制使用相对路径，避免绝对路径导致的根目录错位问题
+    # 因为 gallery 页面在二级目录 (gallery/index.html)，所以用 ".." 回到根目录
+    siteurl_for_gallery = ".."
     basedir_for_gallery = "./"
 else:  # build locally
-    siteurl_for_gallery = ""
+    # 修改说明：使用 ".." 表示上一级目录，这样路径会变成 "../_images/xxx.png"
+    # 这允许在 build/html/gallery/index.html 中通过相对路径找到 build/html/_images/ 下的图片
+    siteurl_for_gallery = ".."
     basedir_for_gallery = "source/"
 
 html_context = {
@@ -212,3 +217,55 @@ latex_elements = {
     "maketitle" : "\\maketitle",
     "releasename": "v",  # the default is "Release" or "发布"
 }
+
+import hashlib
+from sphinx.jinja2glue import BuiltinTemplateLoader
+
+def _filemd5(file):
+    """
+    计算文件内容的 MD5 hash (兼容 RTD 和本地路径)
+    """
+    # Sphinx 8.x 并行编译时，os.getcwd() 可能会变，所以最好用绝对路径
+    # 1. 获取 conf.py 所在的目录 (通常是 source/)
+    conf_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # 2. 获取项目根目录 (source/ 的上一级)
+    project_root = os.path.dirname(conf_dir)
+    
+    # 3. 定义可能的搜索路径列表
+    # 策略 A: 相对于项目根目录查找 (适用于 "source/proj/..." 这种情况)
+    path_from_root = os.path.join(project_root, file)
+    
+    # 策略 B: 相对于 conf.py 目录查找 (适用于 "./proj/..." 这种情况，即 RTD 环境)
+    # 注意：如果 file 是 "./xxx"，join 会自动处理
+    path_from_conf = os.path.join(conf_dir, file)
+
+    # 4. 依次尝试查找文件
+    if os.path.exists(path_from_root) and os.path.isfile(path_from_root):
+        target_file = path_from_root
+    elif os.path.exists(path_from_conf) and os.path.isfile(path_from_conf):
+        target_file = path_from_conf
+    else:
+        # 如果都找不到，打印警告（打印两个尝试过的路径，方便调试）
+        print(f"[WARNING] filemd5 filter: Cannot find file.")
+        print(f"  - Tried root base: {path_from_root}")
+        print(f"  - Tried conf base: {path_from_conf}")
+        return "file_not_found_placeholder"
+
+    # 5. 计算 MD5
+    try:
+        with open(target_file, "r", encoding="utf-8") as fp:
+            data = fp.read()
+            return hashlib.md5(data.encode()).hexdigest()
+    except Exception as e:
+        print(f"[WARNING] filemd5 filter error reading {target_file}: {e}")
+        return "error_placeholder"
+
+# 注入过滤器
+_orig_init = BuiltinTemplateLoader.init
+
+def _patched_init(self, builder, theme=None):
+    _orig_init(self, builder, theme)
+    self.environment.filters['filemd5'] = _filemd5
+
+BuiltinTemplateLoader.init = _patched_init

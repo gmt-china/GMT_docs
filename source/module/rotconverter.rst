@@ -2,12 +2,12 @@
 :date: 2025-10-19
 
 .. index:: ! rotconverter
-.. include:: common_SYN_OPTs.rst_
+.. program:: rotconverter
 
 rotconverter
 =============
 
-:官方文档: :doc:`gmt:supplements/spotter/rotconverter`  
+:官方文档: :doc:`gmt:supplements/spotter/rotconverter`
 :简介: 操纵总重建和阶段旋转
 
 
@@ -20,20 +20,23 @@ rotconverter
 语法
 --------
 
-**gmt rotconverter** [ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
-[ |-A| ] [ |-D| ]
-[ |-F|\ **s**\|\ **t** ]
-[ |-G| ]
-[ |-M|\ [*fact*] ]
-[ |-N| ] [ |-S| ]
-[ |-T| ] [ |-W| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT--| ]
+**gmt rotconverter**
+[ **±** ] *rotA* [ **±** *rotB* ] [ **±** *rotC* ] ...
+[ :option:`-A` ]
+[ :option:`-D` ]
+[ :option:`-F`\ **s**\|\ **t** ]
+[ :option:`-G` ]
+[ :option:`-M`\ [*fact*] ]
+[ :option:`-N` ]
+[ :option:`-S` ]
+[ :option:`-T` ]
+[ :option:`-W` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-h`\ *headers* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
-必选选项
+输入数据
 ------------------
 
 *rotX*
@@ -51,51 +54,51 @@ rotconverter
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     表明时间实际上只是张开角度 [时间单位为 Myr]。
 
-.. _-D:
+.. option:: -D
 
 **-D**
     报告经度使用 -180/+180 范围 [默认为 0/360]。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ **s**\|\ **t**
     指定旋转的输出格式。 *out* 标志必须是
     **t** （总重建旋转）或 **s** （阶段旋转），
     分别地。[默认为 **-Ft** （输出包含总重建旋转）]。
 
-.. _-G:
+.. option:: -G
 
 **-G**
     以 GPlates 使用的 Plates4 格式输出最终旋转 [默认为 spotter 格式]。
 
-.. _-M:
+.. option:: -M
 
 **-M**\ [*fact*]
     输出时将张开角度缩放 *fact* 倍 [0.5]。
     通常用于获取流线所需的半速率。
-    需要阶段极点输出（参见 |-F|）。
+    需要阶段极点输出（参见 :option:`-F`）。
 
-.. _-N:
+.. option:: -N
 
 **-N**
     将所有输出极点置于北半球 [默认报告正旋转角度]。
 
-.. _-S:
+.. option:: -S
 
 **-S**
     将所有输出极点置于南半球 [默认报告正旋转角度]。
 
-.. _-T:
+.. option:: -T
 
 **-T**
     转置最终结果，即改变旋转角度的符号。
 
-.. _-W:
+.. option:: -W
 
 **-W**
     确保所有输出旋转具有负的张开角度 [默认报告正旋转角度]。
@@ -109,7 +112,7 @@ rotconverter
 限制
 --------
 
-请注意，|-N|、|-S| 和 |-W| 只能同时使用一个。
+请注意，:option:`-N`、:option:`-S` 和 :option:`-W` 只能同时使用一个。
 
 示例
 --------

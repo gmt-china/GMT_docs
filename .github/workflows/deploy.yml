@@ -17,7 +17,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      GMT_DOC_VERSION: 6.6
+      GMT_DOC_VERSION: 6.7
 
     defaults:
       run:
@@ -25,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v2.0.7
+        uses: mamba-org/setup-micromamba@v3.2.1
         with:
           environment-file: environment.yml
           cache-downloads: false
@@ -58,7 +58,7 @@ jobs:
           cat sphinx_warnings.txt
 
       - name: Checkout the gh-pages branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: deploy
@@ -93,6 +93,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
+        if: github.ref == 'refs/heads/main'
 
       - name: Build the HMTL zip
         run: |
@@ -101,6 +102,8 @@ jobs:
 
       - name: Setup tectonic
         uses: wtfjoke/setup-tectonic@v4
+        with:
+          tectonic-version: 0.15.0
 
       - name: Build the PDF
         run: |
@@ -113,3 +116,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: deploy
+        if: github.ref == 'refs/heads/main'

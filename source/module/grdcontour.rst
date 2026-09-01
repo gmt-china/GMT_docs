@@ -1,70 +1,68 @@
 :author: 田冬冬, 陈箫翰, 朱邓达
-:date: 2025-08-25
+:date: 2025-12-31
 
 .. index:: ! grdcontour
+.. program:: grdcontour
 
-
-**********
 grdcontour
-**********
+============
 
 :官方文档: :doc:`gmt:grdcontour`
 :简介: 根据网格文件绘制等值线
 
+**grdcontour** 读取一个二维grid网格文件，并绘制等值线。
+或者将等值线的 *x, y, z* 位置保存到一个或多个输出文件（或标准输出），不绘制图像。
+
 语法
 --------
 
-.. include:: common_SYN_OPTs.rst_
+**gmt grdcontour**
+*ingrid*
+:option:`-J`\ *parameters*
+[ :option:`-A`\ [**n**\|\ *contours*][*labelinfo*] ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-C`\ *contours*\|\ *cpt* ]
+[ :option:`-D`\ *template* ]
+[ :option:`-F`\ [**l**\|\ **r**] ]
+[ :option:`-G`\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
+[ :option:`-L`\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
+[ :option:`-N`\ [*cpt*] ]
+[ :option:`-Q`\ [*n*\|\ *length*\ [*unit*]][**+z**] ]
+[ :option:`-R`\ *west*/*east*/*south*/*north*\ [**+r**][**+u**\ *unit*] ]
+[ :option:`-S`\ *smoothfactor* ]
+[ :option:`-T`\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-Z`\ [**+o**\ *shift*][**+s**\ *factor*][**+p**] ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-l`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**gmt grdcontour** *grid*
-|-J|\ *parameters* [ |-A|\ [**n**\|\ *contours*][*labelinfo*] ]
-[ |SYN_OPT-B| ]
-[ |-C|\ *contours*\|\ *cpt* ]
-[ |-D|\ *template* ]
-[ |-F|\ [**l**\|\ **r**] ]
-[ |-G|\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params* ]
-[ |-L|\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p** ]
-[ |-N|\ [*cpt*] ]
-[ |-Q|\ [*n*\|\ *length*\ [*unit*]][**+z**] ]
-[ |SYN_OPT-Rz| ]
-[ |-S|\ *smoothfactor* ]
-[ |-T|\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]] ]
-[ |SYN_OPT-U| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |-Z|\ [**+o**\ *shift*][**+s**\ *factor*][**+p**] ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ **-ho**\ [*n*] ]
-[ |SYN_OPT-l| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
-[ |SYN_OPT--| ]
-
-描述
+输入数据
 -----------
 
-**grdcontour** 读取一个二维grid网格文件，并绘制等值线。或者将等值线的x、y、z位置保存到一个或多个输出文件（或标准输出），不绘制图像。
+.. include:: explain_grd_in.rst_
 
-必选选项
+必须选项
 ------------------
-
-*grid*
-    二维grid网格文件
 
 .. include:: explain_-J.rst_
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ [**n**]\|\ [*contours*][*labelinfo*]
-    **-A**\ *contours* 设置标注间隔，如果在 |-C| 选项中指定标注间隔的话，
+    :option:`-A`\ *contours* 设置标注间隔，如果在 :option:`-C` 选项中指定标注间隔的话，
     这里的设置会被覆盖。**-An** 则为不进行标注。也可以用 ``-A20,80,100`` 类似的用法，对指定的
     等值线进行标注。如果只想要标注一条等值线，需要在末尾加上逗号，例如 ``-A20,`` ，这样 ``20`` 就不会被认为是标注间隔。
     *labelinfo* 代表可以在最后追加下列额外选项:
@@ -73,7 +71,7 @@ grdcontour
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *contours*
     指定绘制等值线的形式，具体说明如下:
@@ -94,72 +92,71 @@ grdcontour
 
     (5) 如果 *contours* 是一个常数，则以这个常数为间隔绘制等值线。
 
-    如果 |-C| 和 |-A| 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
+    如果 :option:`-C` 和 :option:`-A` 都没有指定的话，则自动计算合适的间隔绘制标注等值线。
 
-.. _-D:
+.. option:: -D
 
-**-D**\ *template* 
+**-D**\ *template*
     将等值线转存为线段文件，不绘制图像。后面可以加上C语言的 `printf <https://linux.die.net/man/3/printf>`_ 函数
     的格式说明符作为输出文件名模板。如果不指定文件名模板则全部打印到标准输出。如果文件名不含格式说明符则全部输出到
-    单个文件。  
+    单个文件。
 
     + 如果有浮点数格式(e.g., %6.2f)，其被替换为等值线的z值。
     + 如果有整数格式(e.g., %06d)，其被替换为等值线的计数索引。
     + 如果有字符格式(%c)，其被替换为 C 或 O ，分别代表闭合等值线和开放等值线。
-    
+
     这3个说明符可以任何顺序组合在一起，以定义输出的文件名。
 
     例如，只给定 %c 则输出两个文件，只给定 %f 则等值线的每一级输出为一个文件，给定 %d 则每条等值线输出到独立文件中。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**l**\|\ **r**]
-    使用 |-D| 时，设置按顺序输出等值线的线段。 **-Fl** （默认值）表示沿着高z值在左侧的等值线方向， 
-    **-Fr** 表示沿着高z值在右侧的等值线方向，不使用 **-F** 则为任意方向。
+    使用 :option:`-D` 时，设置按顺序输出等值线的线段。 **-Fl** （默认值）表示沿着高z值在左侧的等值线方向，
+    **-Fr** 表示沿着高z值在右侧的等值线方向，不使用 :option:`-F` 则为任意方向。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ [**d**\|\ **f**\|\ **n**\|\ **l**\|\ **L**\|\ **x**\|\ **X**]\ *params*
 
 .. warning::
     某些时候等值线图会出现标注数字消失不见的情况。这是由于数字被标注在绘图范围外所致。
-    这种情况应该使用下面的 **-G** 选项手动设置标注在等值线上的位置。
+    这种情况应该使用下面的 :option:`-G` 选项手动设置标注在等值线上的位置。
 
 .. include:: explain_contlabel.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *low/high*\|\ **n**\|\ **N**\|\ **P**\|\ **p**
     不绘制小于 *low* 大于 *high* 的等值线。 也可以设置为 **-Ln** 只绘制负值，
     或 **-Lp** 只绘制正值。使用大写的 **-LN** 或 **-LP** 表示包括0等值线。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [*cpt*]
-    指定 *cpt* 文件，对等值线之间的区域填充颜色。
+    使用 *cpt* 指定的离散颜色表填充等值线之间的区域。
+    同时可以使用 :option:`-C` 和 :option:`-A` 来控制等值线和标注。
+    如果未附加 *cpt*，则必须改为通过 :option:`-C` 提供离散颜色表。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [*n*\|\ *length*\ [*unit*]][**+z**]
     不绘制少于 *n* 个点的等值线（默认绘制所有等值线）。或者，以距离 *unit* 为单位给出最小等值线长度 *length* ，
     其中 *unit* 可使用地理距离单位 **d|m|s|e|f|k|M|n|u** ，
     也可使用 **c**\ （用户坐标的笛卡尔距离）和 **C**\ （坐标投影后的笛卡尔距离）。可加上 **+z** 以去除零等值线。
 
-
 .. include:: explain_-R.rst_
 
-.. include:: explain_-Rz.rst_
+.. option:: -S
 
-.. _-S:
-    
 **-S**\ *smoothfactor*
-    在 *网格尺寸/smoothfactor* 间隔下重采样等值线。 
+    在 *网格尺寸/smoothfactor* 间隔下重采样等值线。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [**h**\|\ **l**][**+a**][**+d**\ *gap*\ [/*length*]][**+l**\ [*labels*]]
     在最内层闭合等值线上每隔一段 *gap* 距离向着下降方向的刻度。
-    用户可以加上 **h** 或 **l** 来选择分别只在极大值区域或极小值区域绘制。还支持以下选项：  
+    用户可以加上 **h** 或 **l** 来选择分别只在极大值区域或极小值区域绘制。还支持以下选项：
 
     + **+a** - 对所有闭合等值线绘制刻度，而不只是最内层。
     + **+d** - 后面加上 *gap*\ [/*length*] 来设置刻度间的距离 *gap* 以及刻度线长度 *length*
@@ -168,7 +165,7 @@ grdcontour
       如果不设置 *label* 则使用 **-** 和 **+** 作为标注。如果正好为两个字符，例如 **+l**\ *LH* ，
       则极小值和极大值区域各取一个字符作为标注（ *L* 和 *H* ）。
       对于更复杂的标签，用逗号分隔字符串（例如，\ **+l**\ *lo,hi* ）。
-      如果使用 |-C| 给定了文件，且设置了 |-T| ，则只有被标记为大写字母 C 或 A 
+      如果使用 :option:`-C` 给定了文件，且设置了 :option:`-T` ，则只有被标记为大写字母 C 或 A
       的等值线才会有刻度和极大极小值标注。 **注意：** 极大极小值标注有时可能在最内层等值线的外面，
       因为仅使用了等值线坐标的平均值来确定标注坐标。
 
@@ -176,24 +173,24 @@ grdcontour
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
-**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]] :ref:`(more ...) <set-pens>`
+**-W**\ [*type*]\ *pen*\ [**+c**\ [**l**\|\ **f**]]
     设置等值线的线型。默认情况下，有标注的等值线线型 *pen* 为 ``0.75p,black`` ，
-    无标注的等值线线型 *pen* 为 ``0.25p,black`` 。如果要设置有标注的等值线线型，*type* 应该设置为 **a** ，
-    例如 ``-Wa1.75p,red`` 。无标注的等值线线型，*type* 应该设置为 **c** ，例如 ``-Wc1.25p,red`` 。
-    如果加上 **+cl** ，则使用 |-C| 选项所指定的CPT文件为不同的等值线设置颜色;
+    无标注的等值线线型 *pen* 为 ``0.25p,black`` 。如果要设置有标注的等值线线型， *type* 应该设置为 **a** ，
+    例如 ``-Wa1.75p,red`` 。无标注的等值线线型， *type* 应该设置为 **c** ，例如 ``-Wc1.25p,red`` 。
+    如果加上 **+cl** ，则使用 :option:`-C` 选项所指定的CPT文件为不同的等值线设置颜色;
     如果使用 **+cf** ，则为标注设置颜色;
     使用 **+c** 则同时为等值线和标注设置颜色。
 
 .. include:: explain_-XY.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [**+o**\ *shift*][**+s**\ *factor*][**+p**]
     在计算等值线之前，从数据中减去 *shift* 再乘以 *factor* （默认-o0+s1）。
-    在 |-A|\ ，\ |-C|\ 和\ |-L|\ 中指定的值是缩放之后的。
-    后面加上 **-p** 表明网格数据的z值是360度周期循环的（例如相位数据，角度分布），
+    在 :option:`-A`\ ，\ :option:`-C`\ 和\ :option:`-L`\ 中指定的值是缩放之后的。
+    后面加上 **+p** 表明网格数据的z值是360度周期循环的（例如相位数据，角度分布），
     这要求零等值线必须特殊处理。
 
 .. include:: explain_-bo.rst_
@@ -205,12 +202,30 @@ grdcontour
 .. include:: explain_-h.rst_
 
 .. include:: explain_-l.rst_
+..
+
+    通常情况下，图例中会选择带标注的等值线。
+    可以通过将 *label* 设置为 [*annotcontlabel*][/*contlabel*] 这种格式，来选择普通等值线或两者都选。
+    如果其中任何一个标签包含斜杠 (/) 字符，则使用 | 作为这两个标签的分隔符。
 
 .. include:: explain_perspective.rst_
 
 .. include:: explain_-t.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_distunits.rst_
+
+.. include:: explain_precision.rst_
+
+注意事项
+---------
+
+等值线的角度是通过对沿等值线的 *n* 个点取平均值来计算的。
+如果得到的角度不理想，可以调整两个变量：通过 :option:`-A` 的 **+w** 修饰符更改 *n*，和/或通过 :option:`-S` 对等值线进行重采样。
+在 *n* 固定时， :option:`-S` 会使计算更加局部化；反之，在 :option:`-S` 保持不变的情况下增加 *n*，计算结果则会更加整体化。
+
+.. include:: auto_legend_info.rst_
 
 基础示例
 ----------
@@ -283,3 +298,11 @@ grdcontour
 .. gmtplot:: grdcontour/grdcontour-annot5.sh
     :width: 80%
     :show-code: true
+
+相关模块
+--------
+
+:doc:`basemap`,
+:doc:`grdimage`,
+:doc:`grdview`,
+:doc:`contour`

@@ -2,7 +2,7 @@
 :date: 2025-10-17
 
 .. index:: ! grdhisteq
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdhisteq
 
 grdhisteq
 =============
@@ -34,17 +34,19 @@ grdhisteq
 语法
 --------
 
-**gmt grdhisteq** *ingrid* [ |-G|\ *outgrid* ]
-[ |-C|\ *n_cells* ] [ |-D|\ [*file*] ] [ |-N|\ [*norm*] ]
-[ |-Q| ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT--| ]
+**gmt grdhisteq**
+*ingrid*
+[ :option:`-C`\ *n_cells* ]
+[ :option:`-D`\ [*file*] ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-N`\ [*norm*] ]
+[ :option:`-Q` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-h`\ *headers* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
-
-必选选项
+输入数据
 ------------------
 
 .. include:: explain_grd_in.rst_
@@ -52,30 +54,28 @@ grdhisteq
 可选选项
 ------------------
 
-.. _-C:
+.. option:: -C
 
-**-C** *n_cells*
+**-C**\ *n_cells*
     设置将数据范围划分为多少个区间（默认 16）。
 
-.. _-D:
+.. option:: -D
 
-**-D** [*file*]
+**-D**\ [*file*]
     将层级信息输出到 *file*，若未指定文件则输出到标准输出。
 
 .. include:: explain_grd_out.rst_
 
-.. _-N:
+.. option:: -N
 
-**-N** [*norm*]
-    生成高斯输出。与 **-G** 一起使用可输出标准正态分布网格。
-    若附加 *norm*，则强制值落在 ±*norm* 范围内（默认为标准正态分布）。
+**-N**\ [*norm*]
+    生成高斯输出。与 :option:`-G` 一起使用可输出标准正态分布网格。
+    若附加 *norm*，则强制值落在 ±\ *norm* 范围内（默认为标准正态分布）。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     选择二次（非线性）直方图均衡化方式（默认是线性）。
-
-.. _-R:
 
 .. include:: explain_-R.rst_
 
@@ -109,14 +109,14 @@ grdhisteq
    当 N 很大时，x 可能大于 4。
    在 :doc:`grdview` 中，若光照梯度被裁剪到 [-1, 1]，则仅 68% 的数据会正确显示，
    16% 会被裁剪为 -1，另 16% 为 +1。
-   若图像过亮或过暗，可使用 :doc:`grdmath` 乘以小于 1 的系数缩小值域，或使用 **-N** 指定归一化因子。
+   若图像过亮或过暗，可使用 :doc:`grdmath` 乘以小于 1 的系数缩小值域，或使用 :option:`-N` 指定归一化因子。
 
 相关模块
 --------
 
-:doc:`grd2cpt`, 
-:doc:`grdgradient`, 
-:doc:`grdimage`, 
-:doc:`grdmath`, 
-:doc:`grdview`, 
+:doc:`grd2cpt`,
+:doc:`grdgradient`,
+:doc:`grdimage`,
+:doc:`grdmath`,
+:doc:`grdview`,
 :doc:`makecpt`

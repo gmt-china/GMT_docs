@@ -1,7 +1,8 @@
 :author: 陈箫翰, 何星辰
-:date: 2025-10-29
+:date: 2026-01-03
+
 .. index:: ! grdvs30
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdvs30
 
 grdvs30
 =======
@@ -20,41 +21,60 @@ Vs30，即上部30米内的时间平均剪切波速度，是地震工程领域�
 语法
 ----
 
-**gmt grdvs30** *ingrid* |-G|\ *outgrid*
-|-C|\ *val*\|\ *fname*\ [**+g**]
-[ |SYN_OPT-R| ]
-[ |-W|\ *water_vel* ]
+**gmt grdvs30**
+*ingrid*
+:option:`-G`\ *outgrid*
+:option:`-C`\ *val*\|\ *fname*\ [**+g**]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *water_vel* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
 
-必选选项
+输入数据
 --------
 
-*ingrid*
-    地形网格文件作为输入数据
+.. include:: explain_grd_in.rst_
 
-.. _-G:
+必须选项
+--------
 
-**-G**\ *outgrid*\ 
-    输出的 Vs30 速度模型网格文件名
-
-.. _-C:
+.. option:: -C
 
 **-C**\ *val*\|\ *fname*\[\ **+g**\]
-    参数可以是以下三种之一：  
+    参数可以是以下三种之一：
 
     - 一个介于 0 和 1 之间的值 *val* ，其中 0 表示稳定的克拉通区，1 表示活动构造区。
     - 一个克拉通区域多边形的多段文件的名称 *fname* 。
     - 一个包含克拉通/活动构造区域的网格文件的名称 *fname* 。
       在这种情况下，必须使用 **+g** 后缀来表明正在读取的是网格文件。
 
+.. option:: -G
+
+**-G**\ *outgrid*\
+    输出的 Vs30 速度模型网格文件名
+
 可选选项
 --------
 
 .. include:: explain_-R.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *water_vel*
     设置水域区域的 Vs30 值 [默认值=600]
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_nodereg.rst_
+
+.. include:: explain_colon.rst_
+
+.. include:: explain_help.rst_
+
 
 示例
 ----
@@ -62,3 +82,13 @@ Vs30，即上部30米内的时间平均剪切波速度，是地震工程领域�
 计算 **topo.grd** 网格的 Vs30 估计值，并将克拉通值设为0::
 
     gmt grdvs30 topo.grd -C0 -Gvs30.grd
+
+参考资料
+-------------
+
+- https://github.com/usgs/earthquake-global_vs30/blob/master/src/grad2vs30.c
+
+相关模块
+--------
+
+:doc:`grdshake`

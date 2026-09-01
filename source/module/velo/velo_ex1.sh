@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
 
 gmt begin velo_ex1
-# 左边三个符号
-gmt velo -JM15c -R241/242/34/35 -B0.5 -BWeSn+tvelo \
-        -Sw3c/1.e7 -W1p -G60 -E210 -D2 << EOF
-# lon     lat    spin(rad/yr) spin_sigma (rad/yr)
-241.2 34.2  5.65E-08 1.17E-08
-241.2 34.5 -4.85E-08 1.85E-08
-241.2 34.7  4.46E-09 3.07E-08
+gmt velo -R-10/10/-10/10 -W0.6p,red -Egreen -L -Se0.2/0.39/18 -B1g1 -Jx0.4/0.4 -A0.3c+p1p+e+gred << EOF
+#Long. Lat. Evel Nvel Esig Nsig CorEN SITE
+#(deg) (deg) (mm/yr) (mm/yr)
+0. -8. 0.0 0.0 4.0 6.0 0.500 4x6
+-8. 5. 3.0 3.0 0.0 0.0 0.500 3x3
+0. 0. 4.0 6.0 4.0 6.0 0.500
+-5. -5. 6.0 4.0 6.0 4.0 0.500 6x4
+5. 0. -6.0 4.0 6.0 4.0 -0.500 -6x4
+0. -5. 6.0 -4.0 6.0 4.0 -0.500 6x-4
 EOF
-
-# 右边三个符号
-gmt velo -Sw3c/1.e7 -W1p -D2 << EOF
-# lon     lat    spin(rad/yr) spin_sigma (rad/yr)
-241.7 34.2  5.65E-08 1.17E-08
-241.7 34.5 -4.85E-08 1.85E-08
-241.7 34.7  4.46E-09 3.07E-08
-EOF
-gmt coast -W1p -Di
 gmt end show

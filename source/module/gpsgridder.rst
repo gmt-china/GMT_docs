@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2022-02-07
+:date: 2025-12-31
 
 .. index:: ! gpsgridder
-.. include:: common_SYN_OPTs.rst_
+.. program:: gpsgridder
 
 gpsgridder
 ==========
@@ -35,48 +35,52 @@ gpsgridder
 语法
 ----
 
-**gmt gpsgridder** [ *table* ]
-|-G|\ *outgrid*
-[ |-C|\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
-[ |-E|\ [*misfitfile*] ]
-[ |-F|\ [**d**\|\ **f**]\ *fudge* ]
-[ |SYN_OPT-I| ]
-[ |-L| ]
-[ |-N|\ *nodefile* ]
-[ |SYN_OPT-R| ]
-[ |-S|\ *nu* ]
-[ |-T|\ *maskgrid* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**+s**\|\ **w**] ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-x| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt gpsgridder**
+[ *table* ]
+:option:`-G`\ *outgrid*
+[ :option:`-C`\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**] ]
+[ :option:`-E`\ [*misfitfile*] ]
+[ :option:`-F`\ [**d**\|\ **f**]\ *fudge* ]
+[ :option:`-I`\ *increment* ]
+[ :option:`-L` ]
+[ :option:`-N`\ *nodefile* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-S`\ *nu* ]
+[ :option:`-T`\ *maskgrid* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**+s**\|\ **w**] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-x`\ [[-]n] ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
---------
+输入数据
+------------------
 
 *table*
     输入数据文件，其中数据为离散点的 GPS 应变。输入格式必须为 *x y u v* [ *du dv* ]
-    （设置不确定度或者权请见 |-W| ）。如果输入数据为地理坐标，必须使用 **-fg** , gmt
+    （设置不确定度或者权请见 :option:`-W` ）。如果输入数据为地理坐标，必须使用 :option:`-f`\ **g** , gmt
     则以平地球近似来计算距离
 
+必须选项
+--------
+
 .. include:: explain_grd_out.rst_
-    
-- 如果设置了 |-R| 和 |-I|，则输出两个网格，分别为 u 和 v 分量。
-- 如果设置了 |-T| 选项，则输出两个文本文件，分别为离散点上的 u 和 v 分量
-- 如果设置了 |-N| 选项，输出单个文本文件。
+
+- 如果设置了 :option:`-R` 和 :option:`-I`，则输出两个网格，分别为 u 和 v 分量。
+- 如果设置了 :option:`-T` 选项，则输出两个文本文件，分别为离散点上的 u 和 v 分量
+- 如果设置了 :option:`-N` 选项，输出单个文本文件。
 
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [[**n**\|\ **r**\|\ **v**]\ *value*\ [%]][**+c**][**+f**\ *file*][**+i**][**+n**]
     拟合曲面：通过 SVD 求解线性系统的样条参数，并去除某些特征值以得到平滑的结果；
@@ -84,7 +88,7 @@ gpsgridder
 
     - **n** 保留前 *value* 个最大的特征值
     - **r** 默认选项，保留与最大特征值的比值小于 *value* 的特征值 [0]
-    - **v** 保留所需的特征值，以确保模型预测方差分数大于 *value* 
+    - **v** 保留所需的特征值，以确保模型预测方差分数大于 *value*
 
     对于 **n** 和 **v** 选项，需在 *value* 后追加 % 以设置为百分数。
     此外，还可设置如下子选项：
@@ -100,17 +104,17 @@ gpsgridder
 
     同时使用两者即同时输出两种类型。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [*misfitfile*]
     在输入数据位置处计算拟合值，并报告 u 和 v 的残差的统计值（mean, std, rms）。
     可追加一个文件 *misfitfile* ，将统计数据写入文件中，在 u 和 v 两列之后增加两列，
-    用于存放拟合值和残差。如果设置了 |-W| 选项，将再追加两列，存放 :math:`\chi_u^2`
-    和 :math:`\chi_v^2` 。如果设置了 |-C| 选项，将不输出上述内容，而是输出特征值
-    的编号，特征值以及残差的方差，rms，rms_u 和 rms_v。如果同时使用了 |-W| ， 则
+    用于存放拟合值和残差。如果设置了 :option:`-W` 选项，将再追加两列，存放 :math:`\chi_u^2`
+    和 :math:`\chi_v^2` 。如果设置了 :option:`-C` 选项，将不输出上述内容，而是输出特征值
+    的编号，特征值以及残差的方差，rms，rms_u 和 rms_v。如果同时使用了 :option:`-W` ， 则
     同样追加输出 :math:`\chi^2` ，:math:`\chi_u^2` ，:math:`\chi_v^2`
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**d**\|\ **f**]\ *fudge*
     格林函数与 :math:`r^{-2}` 和 :math:`\log(r)` 是成正比的，因此，在 :math:`r=0` 时，
@@ -122,46 +126,52 @@ gpsgridder
 
 .. include:: explain_-I.rst_
 
-.. _-L:
+.. option:: -L
 
 **-L**
     在进行样条拟合的时候，不移去趋势。[默认移去趋势，拟合残差，然后恢复趋势]
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *nodefile*
-    计算 *nodefile* 中位置处的应变并在其后追加 *w* 值，并输出到 |-G| 设置的
-    文件中，不指定 |-G| 时，输出到标准输出。该选项无需使用 |-R| 和 |-I| 选项
+    计算 *nodefile* 中位置处的应变并在其后追加 *w* 值，并输出到 :option:`-G` 设置的
+    文件中，不指定 :option:`-G` 时，输出到标准输出。该选项无需使用 :option:`-R` 和 :option:`-I` 选项
 
 .. include:: explain_-R.rst_
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *nu*
     设置 2-D 弹性板的泊松比，默认为 0.5。设置为 1 时，表明弹性板时刚性的，
     设置为 -1 表明两个方向的应变没有耦合关系
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *maskgrid*
-    只计算 *maskgrid* 文件中指定的节点的值，该选项无需使用 |-R| 和 |-I|
+    只计算 *maskgrid* 文件中指定的节点的值，该选项无需使用 :option:`-R` 和 :option:`-I`
 
-.. _-W:
+.. option:: -W
 
 **-W**\ [**+s**\|\ **w**]
     输入文件必须在最后两列中提供 *u* 和 *v* 的一倍不确定度。如果不确定度是
     一倍中误差，则使用 1/(sigma^2) 作为权重计算，即默认情况，或使用 **+s**
     的情况。如果不确定度为权重，则使用 **+w** ，将输入数据直接作为权重。需要
-    注意的是，只有设置了 |-C| 时，|-W| 才有效。
+    注意的是，只有设置了 :option:`-C` 时，:option:`-W` 才有效。
 
 .. include:: explain_-V.rst_
+
+.. include:: explain_-bi.rst_
+
+.. include:: explain_-bo.rst_
 
 .. include:: explain_-d.rst_
 
 .. include:: explain_-e.rst_
 
-**-fg**
-    地理坐标网格将会被转换为平地球近似下来计算
+.. include:: explain_-f.rst_
+..
+
+    如果输入数据为地理坐标，必须使用 **-fg** ，地理坐标网格将会被转换为平地球近似下来计算。
 
 .. include:: explain_-h.rst_
 
@@ -170,6 +180,8 @@ gpsgridder
 .. include:: explain_-qi.rst_
 
 .. include:: explain_nodereg.rst_
+
+.. include:: explain_core.rst_
 
 .. include:: explain_colon.rst_
 
@@ -180,7 +192,7 @@ gpsgridder
 关于 SVD 解
 -----------
 
-通常情况下，很难知道使用多少个特征值来做拟合，可以使用 |-C| 选项分别测试所有
+通常情况下，很难知道使用多少个特征值来做拟合，可以使用 :option:`-C` 选项分别测试所有
 方案，并估计模型的方差和以及数据的匹配程度，这样可获得一个函数，用来分析
 需要选择多少个特征值。这些一系列的方案可以做成一个动图，可以更方便地分析结果。
 
@@ -196,7 +208,7 @@ gpsgridder
 废弃用法
 --------
 
-- 6.3.0: 在 |-C| 中使用 **+n** 选项来设置 dry-run，废弃以前的设置为负数的做法。 `#5725 <https://github.com/GenericMappingTools/gmt/pull/5725/>`_
+- 6.3.0: 在 :option:`-C` 中使用 **+n** 选项来设置 dry-run，废弃以前的设置为负数的做法。 `#5725 <https://github.com/GenericMappingTools/gmt/pull/5725/>`_
 
 参考
 ----
@@ -209,6 +221,6 @@ Sandwell, D. T. and P. Wessel, 2016, Interpolation of 2-D Vector Data Using Cons
 相关模块
 --------
 
-:doc:`gmt:greenspline`
-:doc:`nearneighbor` 
+:doc:`greenspline`,
+:doc:`nearneighbor`,
 :doc:`surface`

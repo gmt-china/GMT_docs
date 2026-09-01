@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
 .. index:: ! sphtriangulate
-.. include:: common_SYN_OPTs.rst_
+.. program:: sphtriangulate
 
 sphtriangulate
 ==============
@@ -16,7 +17,7 @@ sphtriangulate
 多边形组成。
 
 **sphtriangulate** 读取一个或者多个经纬度坐标文件并进行球面 Delaunay 三角化。**-Qv**
-选项可进步一生成 Voronoi 图。通常，多边形输出结果为闭合的并且可填充，使用 |-T| 选项
+选项可进步一生成 Voronoi 图。通常，多边形输出结果为闭合的并且可填充，使用 :option:`-T` 选项
 则输出构成多边形的弧段而非多边形。
 
 语法
@@ -24,27 +25,28 @@ sphtriangulate
 
 **gmt sphtriangulate**
 [ *table* ]
-[ |-A| ]
-[ |-C| ]
-[ |-D| ]
-[ |-L|\ *unit* ]
-[ |-N|\ *file* ]
-[ |-Q|\ **d**\|\ **v** ]
-[ |-T| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-j| ]
-[ |SYN_OPT-qi| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+[ :option:`-A` ]
+[ :option:`-C` ]
+[ :option:`-D` ]
+[ :option:`-L`\ *unit* ]
+[ :option:`-N`\ *file* ]
+[ :option:`-Q`\ **d**\|\ **v** ]
+[ :option:`-T` ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-j`\ *flags* ]
+[ :option:`-qi`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_intables.rst_
@@ -52,25 +54,25 @@ sphtriangulate
 可选选项
 --------
 
-.. _-A:
+.. option:: -A
 
 **-A**
-    计算球面三角的面积或多边形（见 |-Q| ）的面积并输出到段信息中 [默认不计算面积]。
-    面积单位见 |-L| 选项。
+    计算球面三角的面积或多边形（见 :option:`-Q` ）的面积并输出到段信息中 [默认不计算面积]。
+    面积单位见 :option:`-L` 选项。
 
-.. _-C:
+.. option:: -C
 
 **-C**
     用于节省内存。该模块默认在运算过程中同时保存地理坐标和笛卡尔坐标，但对于大型数据
     集，这可能会占据很大内存，因此使用该选项可以只保留其中一种坐标以节省内存，必要的
     时候 GMT 会自动实现坐标转换。
 
-.. _-D:
+.. option:: -D
 
 **-D**
     用于删掉重复点 [默认不删除]。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *unit*
     指定距离和面积计算的单位，可选项包括 **e** (m)， **f** (foot)， **k** (km)，
@@ -78,24 +80,26 @@ sphtriangulate
     除非设置了 **-je** ，否则使用球面近似距离；在这种情况下，计算面积前将纬度转换为
     自定义的纬度。当单位设置为度时，面积的结果为球面度。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *file*
     将多边形信息写到 *file* 文件中。对于Delaunay 三角网，相关信息包括：每个三角形三个
-    定点的编号（若设置 |-A| 还包括三角形面积）；对于 Voronoi ，包括节点坐标（ |-A| ）
+    定点的编号（若设置 :option:`-A` 还包括三角形面积）；对于 Voronoi ，包括节点坐标（ :option:`-A` ）
     选项使用同上。如果输出文件格式为 ASCII，这些信息都显示在段信息中，并可将整个结果输出
-    到标准输出，无需使用 |-N| 选项；如果输出文件为二进制文件，则 |-N| 选项是必须的。
+    到标准输出，无需使用 :option:`-N` 选项；如果输出文件为二进制文件，则 :option:`-N` 选项是必须的。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ **d**\|\ **v**
     **d** 选项为计算 Delaunay 三角网，**v** 选项为计算 Voronoi 图 [默认使用 **d** ]。
 
-.. _-T:
+    **注意**：如果激活了 :option:`-bo` （二进制输出），则可以使用 :option:`-N` 指定一个单独的文件，用于写入通常情况下输出的多边形信息。
+
+.. option:: -T
 
 **-T**
-    将结果输出为弧段 [默认输出闭合的三角形或者多边形]。当使用 |-A| 选项时，同时
-    计算弧段的长度并写到段信息中，单位见 |-L| 选项。
+    将结果输出为弧段 [默认输出闭合的三角形或者多边形]。当使用 :option:`-A` 选项时，同时
+    计算弧段的长度并写到段信息中，单位见 :option:`-L` 选项。
 
 .. include:: explain_-V.rst_
 
@@ -109,6 +113,8 @@ sphtriangulate
 
 .. include:: explain_-h.rst_
 
+.. include:: explain_-icols.rst_
+
 .. include:: explain_distcalc.rst_
 
 .. include:: explain_-qi.rst_
@@ -120,6 +126,8 @@ sphtriangulate
 .. include:: explain_nodereg.rst_
 
 .. include:: explain_help.rst_
+
+.. include:: explain_precision.rst_
 
 示例
 ----
@@ -146,8 +154,8 @@ sphtriangulate
 --------
 
 多边形或三角形面积的计算使用了 STRIPACK 算法。该算法需要输入中不包含重复点。
-:doc:`gmt:blockmean` 等模块可以将多个接近的点合并成单个点。**sphtriangulate**
-的 |-D| 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
+:doc:`blockmean` 等模块可以将多个接近的点合并成单个点。**sphtriangulate**
+的 :option:`-D` 选项也可以删除重复点，但是这通过对点的坐标精确比较实现，对大型
 数据集来说，运行可能会很慢。STRIPACK 算法在检测到重复点时，会直接退出执行。
 
 参考文献

@@ -7,7 +7,7 @@ gmt begin map
     gmt set FONT_ANNOT 5p
     gmt set FONT_TITLE 8p
     gmt set MAP_TITLE_OFFSET 0p
-    
+
     # 指定作图区域为东经118度4分9.1秒到118度12分36秒，北纬24度25分12.6秒到24度33分23秒
     # -Bxa5mf 设置经度标注间隔5分，-Bya4mf 设置纬度标注间隔4分
     gmt basemap -R118:04:09.1/118:12:36.0/24:25:12.6/24:33:23.0 -JM4c -Bxa5mf -Bya4mf -B+t"Amap (GCJ-02 to WGS84)"

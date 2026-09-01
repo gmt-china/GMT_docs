@@ -2,7 +2,7 @@
 :date: 2025-10-11
 
 .. index:: ! fzanalyzer
-.. include:: common_SYN_OPTs.rst_
+.. program:: fzanalyzer
 
 fzanalyzer
 ==========
@@ -16,49 +16,50 @@ fzanalyzer
 然后通过检查与 FZ 走向正交的剖面来分析每条 FZ 的轨迹，
 并使用一种由 “Atlantic-style” 对称槽和 “Pacific-style” 不对称偶极状异常混合组成的模型，
 并结合一些外围隆起进行建模。我们还仅拟合对称槽模型，并检查经验数据的最小值和槽宽。
-随后对数据槽的宽度以及由各种模型给出的最佳 FZ 位置的:math:`1-\sigma`不确定性进行估计。
+随后对数据槽的宽度以及由各种模型给出的最佳 FZ 位置的 :math:`1-\sigma` 不确定性进行估计。
 我们还计算若干统计指标，并返回沿每条 FZ 距离变化的所有模型参数。
 
 语法
 --------
 
-**gmt fzanalyzer** *crossprofiles*
-|-F|\ *fzlines*
-[ |-A|\ *min*/*max*/*inc* ]
-[ |-C|\ *min*/*max*/*inc* ]
-[ |-D|\ *corrwidth* ]
-[ |-I|\ *FZ*\ [/*profile*] ]
-[ |-S|\ [**b**\|\ **c**]]
-[ |-T|\ *prefix* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *min*/*max*/*inc* ]
-[ |SYN_OPT-bo| ]
-[ |SYN_OPT-do| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT--| ]
+**gmt fzanalyzer**
+*crossprofiles*
+:option:`-F`\ *fzlines*
+[ :option:`-A`\ *min*/*max*/*inc* ]
+[ :option:`-C`\ *min*/*max*/*inc* ]
+[ :option:`-D`\ *corrwidth* ]
+[ :option:`-I`\ *FZ*\ [/*profile*] ]
+[ :option:`-S`\ [**b**\|\ **c**]]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *min*/*max*/*inc* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-do`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项
 ------------------
 
 *crossprofiles*
-    该文件是使用 :doc:`grdtrack` 命令并带有 **-C** 选项，
+    该文件是使用 :doc:`grdtrack` 命令并带有 :option:`-C` 选项，
     从一个或多个断裂带（FZ）的近似数字化轨迹（包含 *lon*, *lat*）生成的横剖面表格。
     此表格是一个 ASCII（或二进制，参见 **-bi**）文件，必须包含 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist*。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *fzlines*
     其中，*fzlines* 是通过运行 :doc:`grdtrack` 命令并使用
-    **-D** 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
+    :option:`-D` 选项获得的重采样轨迹文件。与 *crossprofiles* 文件类似，
     该文件必须包含相同的 7 个数据列：
     *lon, lat, dist, azimuth, vgg, age, fzdist* 。
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *min*/*max*/*inc*
     指定一个或三个参数，用于控制模型信号混合的方式。
@@ -67,7 +68,7 @@ fzanalyzer
     *inc* 为搜索时使用的步进增量 [默认 0.05]。
     若只需指定一个固定的不对称值（不进行搜索），则只需提供该单一值。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *min*/*max*/*inc*
     指定一个或三个参数，用于控制 “compression” 模型信号的搜索方式。
@@ -76,39 +77,39 @@ fzanalyzer
     *inc* 为搜索步进增量 [默认 0.05]。
     若只需指定一个固定压缩值（不进行搜索），则只需提供该单一值。
 
-.. _-D:
+.. option:: -D
 
 **-D**\ *corrwidth*
     指定中心走廊宽度 *corrwidth* （单位：km）[默认 25]。
     此走廊用于限定断裂带（FZ）槽位置在重新定位时允许偏离中心的最大范围。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *FZ*\ [/*profile*]
     默认情况下，程序会分析所有断裂带（FZ）生成的横剖面。
-    但你可以使用 |-I| 指定特定的断裂带 *id* （首个为 0）。
+    但你可以使用 :option:`-I` 指定特定的断裂带 *id* （首个为 0）。
     还可指定仅处理该断裂带中的某一个 *profile* [默认处理全部]。
     注意，输出文件仍会包含所有剖面，但仅所选剖面对应的导出参数为非零。
 
-.. _-S:
+.. option:: -S
 
 **-S**\ [**b**\|\ **c**]
     以命令行选项设置的参数输出，格式适用于直接嵌入 Bourne/bash shell 脚本中。
     若附加 **c**，则输出为 csh/tcsh 语法格式。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *prefix*
     设置所有输出文件所使用的文件名前缀 [默认 *fztrack*]。
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *min*/*max*/*inc*
     指定三个参数，用于控制断裂带（FZ）横向信号建模的方式。
     其中，*min* 为最小 FZ 信号宽度（单位：km），用于非线性宽度搜索 [默认 1]；
     *max* 为最大宽度 [默认 50]；
     *inc* 为宽度搜索的步进增量 [默认 1]。
-    建议根据具体研究区域调整合适的取值范围并相应设置 |-W|。
+    建议根据具体研究区域调整合适的取值范围并相应设置 :option:`-W`。
     若选择的范围过宽，可能导致模型拟合受到与 FZ 槽无关的数据特征干扰，从而产生虚假结果。
 
 .. include:: explain_-V.rst_
@@ -147,7 +148,7 @@ fzanalyzer
 
     gmt grdmath -R-120/-65/-50/5 -I5m -fg digitize.txt LDIST DEG2KM = dist2fz.nc
 
-由于对大量断裂带（FZ）进行该计算的速度较慢，因此没有必要在 **-I** 中使用过高的分辨率，
+由于对大量断裂带（FZ）进行该计算的速度较慢，因此没有必要在 :option:`-I` 中使用过高的分辨率，
 因为距离变化是平滑的，插值结果也会近似正确。建议生成一个全球网格，但将其划分为四个象限（或更小的区域块），
 并在多核计算机上并行运行。
 例如，要通过象限方式生成全球网格，可以运行以下命令::
@@ -179,10 +180,10 @@ fzanalyzer
     2. 文件 *prefix*\_cross.txt 包含每条横剖面的观测值和最佳拟合模型的预测值。
     可用于逐剖面绘图或结果的可视化分析。
 
-    3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(|-S|) 或 C shell 脚本(|-S|\ **c**)，
+    3. 文件 *prefix*\_par.[c]sh 是一个 Bourne shell 脚本(:option:`-S`) 或 C shell 脚本(:option:`-S`\ **c**)，
     其中包含命令行指定的所有参数作为 shell 变量。你可以在自定义绘图或分析脚本中引用这些变量。
 
-    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt 
+    4. 最后，虽然不是 **fzanalyzer** 的输出文件，你应使用 *prefix*\_resampled.txt
     作为 :doc:`grdtrack` **-D** 的输出文件名，因为绘图脚本会以此文件为输入。
 
 示例
@@ -288,13 +289,13 @@ fzanalyzer
 :doc:`fzmodeler`,
 :doc:`fzprofiler`,
 :doc:`grdmath`,
-:doc:`grdtrack`
+:doc:`grdtrack`,
 :doc:`mlconverter`
 
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, A., 
-Whittaker, J. M., Myhill, R., Chandler, M. T.,2015, 
-"Semiautomatic fracture zone tracking", *Geochem. 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, A.,
+Whittaker, J. M., Myhill, R., Chandler, M. T.,2015,
+"Semiautomatic fracture zone tracking", *Geochem.
 Geophys. Geosyst.*, 16 (7), 2462–2472.https://doi.org/10.1002/2015GC005853.

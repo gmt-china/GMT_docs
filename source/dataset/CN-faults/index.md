@@ -1,6 +1,6 @@
 ---
 author: 刘珠妹, 田冬冬, 陈箫翰
-date: 2025-11-23
+date: 2025-12-11
 ---
 
 # CN-faults: 中国断层数据
@@ -78,12 +78,13 @@ $ gmt convert CN-faults.gmt -aL="FN_Ch"
    :width: 50%
 ```
 
-提取出“断层名称”为“红河断裂”的断层数据，并标注断层英文名：
+提取出“断层名称”为“红河断裂”的断层数据，并标注断层英文名。
+同时本例也展示了断层名标注数量过多过密情况下的调整方式：
 
 ```{eval-rst}
 .. gmtplot:: CN-single-fault-labeling.sh
    :show-code: true
-   :width: 50%
+   :width: 100%
 ```
 
 ### 根据空间范围提取数据
@@ -116,15 +117,15 @@ ogr2ogr -f "OGR_GMT" CAFD400_V2023_1.gmt CAFD400_V2023_1.shp
 
 ## 数据属性说明
 
-- FZN_Ch: 中文断裂带名称  
-- FZN_En: 英文断裂带名称  
-- FN_Ch: 中文断层名称  
-- FN_En: 英文断层名称  
+- FZN_Ch: 中文断裂带名称
+- FZN_En: 英文断裂带名称
+- FN_Ch: 中文断层名称
+- FN_En: 英文断层名称
 - FSN_Ch: 中文断层分段
 - FSN_En: 英文断层分段
 - Fea_Ch: 中文断层分段运动学性质和可探测性
 - Fea_En: 英文断层分段运动学性质和可探测性
-- AGE: 最近活动时代（代码）  
+- AGE: 最近活动时代（代码）
 - AGE_Des: 最近活动时代
 - RefE: 数据来源，包括参考文献、工作内容或参考规模。
 

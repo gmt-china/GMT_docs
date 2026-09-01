@@ -1,24 +1,25 @@
 ---
 author: 田冬冬, 陈箫翰
-date: 2025-07-28
+date: 2025-12-27
 ---
 
-# Windows 下的 GMT 中文支持
+# Windows 下的 GMT 中文支持（GB编码）
 
-## ghostscript 的中文支持
+## Ghostscript 的中文支持
 
-GMT 需要使用 Ghostscript 生成 PDF、JPG 等格式的图片。如果没有正确配置
-Ghostscript 的中文支持，GMT 生成的图片中的中文将会出现乱码。因此必须首先
-配置 Ghostscript 的中文支持，但 GMT 安装包中内置的 Ghostscript **不支持**中文。
+GMT 需要使用 Ghostscript 将 PostScript 文件转换为 PDF、JPG 等格式的图片。
+PostScript CID 字体（Character Identifier Font，字符标识符字体）是
+Adobe Systems 为解决大字符集语言（主要是中文、日文、韩文，合称 CJK）的排版和打印问题而开发的一种字体格式架构，
+专门为了让电脑和打印机能够高效处理成千上万个汉字。
+但 GMT 安装包中内置的 Ghostscript 是一个精简的版本，缺失了支持 CID 字体的必要文件，因此 **不支持**中文。
 
-若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后
-再自行安装 Ghostscript。对于已安装 GMT 的用户，建议先卸载 GMT，再
-按照《 {doc}`/install/windows` 》一节的步骤重新安装 GMT，安装过程中注意
-不勾选 Ghostscript。
+若需要 GMT 支持中文，则需要在安装 GMT 时不勾选 Ghostscript 组件，待安装完成后再自行安装一个完整版的 Ghostscript。
+对于已安装 GMT 的用户，必须先卸载 GMT，再按照《{doc}`/install/windows`》一节的步骤重新安装 GMT，安装过程中注意
+**不勾选** Ghostscript。
 
-Ghostscript 安装包下载地址:
+Ghostscript 完整版安装包下载地址:
 
-- [gs10051w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/gs10051w64.exe)
+- [gs10060w64.exe（64 位）](https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/gs10060w64.exe)
 
 :::{warning}
 请注意 Ghostscript 的版本！
@@ -28,32 +29,33 @@ Ghostscript 安装包下载地址:
 对于 GMT 6.5.0 则建议使用 Ghostscript 10.03 之后的新版本。
 :::
 
-:::{note}
-安装 Ghostscript 的过程中记得勾选 `Generate cidfmap for Windows CJK TrueType fonts`
-以生成中文字体配置文件。
-:::
+在安装 Ghostscript 的过程中，会有一个生成 cidfmap 的选项 `Generate cidfmap for Windows CJK TrueType fonts`。
+选中该选项则表示会为当前系统自动生成中文所需的 cidfmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
 
-在安装 ghostscript 的过程中，会有一个生成 cidmap 的选项，选中该选项则表示会为当前系统自动
-生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 **不要** 将该选项取消。
+完成后打开命令提示符 cmd，输入以下命令。如果操作正常那么命令都只有一个输出结果：
+
+```doscon
+C:\Windows\system32> where gmt
+c:\programs\gmt6\bin\gmt.exe
+C:\Windows\system32> where gswin64c
+C:\Program Files\gs\gs10.06.0\bin\gswin64c.exe
+```
+
+如果出现多个结果，说明系统中同时存在多个 GMT 或 Ghostscript。这种情况极易发生冲突和中文乱码。
+用户需要仔细检查步骤是否有错漏，并卸载多余的软件。
 
 ## GMT 的中文支持
 
-新建GMT自定义字体配置文件 `C:\Users\用户名\.gmt\PSL_custom_fonts.txt`
-（注意 `用户名` 应该替换为实际的用户名。
-若不存在 `C:\Users\用户名\.gmt` 目录则需新建该目录。
-Win10 用户可以直接新建文件夹。Win7 的文件管理器无法新建
-以 **.** 开头的文件夹，因而需要打开CMD，然后执行命令 `mkdir .gmt` 以创建该文件夹）。
+打开命令提示符 cmd，输入以下命令创建 GMT 配置文件目录，并创建 GMT 自定义字体配置文件：
 
-:::{note}
-Windows默认隐藏文件的扩展名。新手在新建这个字体配置文件时，
-常常将文件名错误写成 `PSL_custom_fonts.txt.txt`，导致中文字体添加失败。
-因此强烈建议在**资源管理器** -> **查看**中开启显示文件扩展名:
-
-```{image} chinese-extension.png
+```doscon
+C:\Windows\system32> cd /d %USERPROFILE%
+C:\Users\当前用户名> if not exist .gmt mkdir .gmt
+C:\Users\当前用户名> cd .gmt
+C:\Users\当前用户名\.gmt> notepad PSL_custom_fonts.txt
 ```
-:::
 
-向 GMT自定义字体配置文件 `C:\Users\用户名\.gmt\PSL_custom_fonts.txt` 中加入如下语句:
+向 GMT自定义字体配置文件 `C:\Users\当前用户名\.gmt\PSL_custom_fonts.txt` 中加入如下内容并保存:
 
 ```
 STSong-Light--GB-EUC-H  0.700    1
@@ -88,12 +90,12 @@ Font #  Font Name
 可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。
 其中 `STSong-Light-GB-EUC-H` 即为宋体，`GB-EUC` 是文字编码方式，
 `H` 表示文字水平排列，`V` 表示竖排文字。
-强烈建议在执行测试脚本前确认自己的中文字体编号。
+**强烈建议**在脚本中直接使用字体名字（如 `STSong-Light--GB-EUC-H`）而不是字体编号。
 
 ## GMT 中文测试
 
 :::{note}
-请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。
+请自行确认你的中文字体配置。
 :::
 
 :::{warning}
@@ -123,7 +125,7 @@ gmt set PS_CHAR_ENCODING Standard+
 可临时避免这一BUG。
 
 此外，GMT 6.3 及之后的版本每句使用中文的命令之前，
-以及使用echo命令输出含中文的文件之前，必须设置 `chcp 936` ，否则将出现乱码:
+以及使用echo命令输出含中文的文件之前，必须设置 `chcp 936` ，即 GB 编码。否则将出现乱码:
 
 ```
 chcp 936

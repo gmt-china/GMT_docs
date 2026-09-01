@@ -46,7 +46,7 @@ GMT提供了三种矢量（对应 {doc}`/module/plot` **-S** 参数）：
 ```
 
 我们可以在绘制矢量的主选项（如 {doc}`/module/plot` 的 **-S** ，{doc}`/module/grdvector`
-的 **-Q** ）后面增加更多的**子选项**来进一步修改矢量头的属性。 
+的 **-Q** ）后面增加更多的**子选项**来进一步修改矢量头的属性。
 
 ## 控制矢量外观
 
@@ -97,7 +97,7 @@ GMT提供了三种矢量（对应 {doc}`/module/plot` **-S** 参数）：
   ```{eval-rst}
   .. gmtplot::
       :show-code: false
-    
+
       gmt begin vector-shape
       for shape in -2 -1 0 1 2; do
           echo 1 1 0 1.5 | gmt plot -R0/5/0/2 -JX2c/1c -Sv0.5c+b+h$shape -W1.5p -Gred -X2c
@@ -120,14 +120,14 @@ GMT提供了三种矢量（对应 {doc}`/module/plot` **-S** 参数）：
   若使用 **+n** 但无参数，则不论长度如何，矢量将始终绘制，不做缩放
   （默认不绘制矢量头长度超过线长度的矢量）。
   对于笛卡尔矢量，*norm* 使用绘图单位 **c|i|p** ；对于地理矢量，*norm* 可以使用距离单位（默认 **k**）。
-  可以使用单位 **q** 表示使用的用户数据单位（如速率 mm/yr），此时用户必须使用 **+v** 或 **+z** 
+  可以使用单位 **q** 表示使用的用户数据单位（如速率 mm/yr），此时用户必须使用 **+v** 或 **+z**
   选择用户数据单位到绘图/距离单位的缩放系数。
 
   ```{eval-rst}
   .. gmtplot::
       :show-code: false
       :caption: 左图使用了 **+n** 并指定了参数，矢量头随长度变化而变化；右图未使用 **+n** ，除过短矢量外，其它矢量头大小保持一致。
-    
+
       R="-2/2/-2/2"
       gmt grdmath -R$R -I0.25 X Y R2 NEG EXP X MUL = z.nc
       gmt grdmath z.nc DDX = dzdx.nc
@@ -152,13 +152,13 @@ GMT提供了三种矢量（对应 {doc}`/module/plot` **-S** 参数）：
       :show-code: false
       :width: 300 px
       :caption: 不同长度的矢量使用不同颜色绘制。
-    
+
       gmt begin vector png
           R="0/10/0/10"
-          gmt basemap -R$R -JX10c/-10c -Baf -BWSen 
+          gmt basemap -R$R -JX10c/-10c -Baf -BWSen
           gmt makecpt -Crainbow -T0/10 -D
 
-          for len in $(seq 0.5 0.5 9.5 | tr '\n' ' '); do 
+          for len in $(seq 0.5 0.5 9.5 | tr '\n' ' '); do
               echo 0 $len 0 $len | gmt plot -C -Sv0.5c+e+g0+v1q+c -G+z -W+c
           done
           gmt colorbar -Bxa2f
@@ -183,7 +183,7 @@ X    Y   [Z]   angle  length
 X   Y   [Z]   radius  angle0  angle1
 ```
 
-如果模块中使用 **-C** 指定了 CPT， 则输入数据第三列需指定 Z 值用于从 CPT 中查找颜色。 
+如果模块中使用 **-C** 指定了 CPT， 则输入数据第三列需指定 Z 值用于从 CPT 中查找颜色。
 
 使用如下子选项可调整输入数据格式（**不支持圆弧矢量**，**+v** 和 **+z** 不可用于 {doc}`/module/grdvector` 模块）：
 
@@ -207,10 +207,10 @@ X   Y   [Z]   radius  angle0  angle1
       gmt begin vector+q+o png
           lonp=0
           latp=20
-          gmt coast -Rg -JG20/20/10c -Dc -A5000 -Gpink -Sthistle -Bg -B+t"\053q\053o$lonp/$latp" 
+          gmt coast -Rg -JG20/20/10c -Dc -A5000 -Gpink -Sthistle -Bg -B+t"\053q\053o$lonp/$latp"
           echo $lon0 $lat0 0 320 | gmt plot -S=1c+e+g0+q+o$lonp/$latp -W2p
           echo $lon0 $lat0 | gmt plot -Sc0.4c -G0
-          echo $lonp $latp | gmt plot -Sc0.4c -Gred 
+          echo $lonp $latp | gmt plot -Sc0.4c -Gred
           echo $lonp $latp pole | gmt text -F+f15p+jTL -C20%/20%+tO -Gwhite -Dj0.3c
 
           lonp=50
@@ -218,22 +218,22 @@ X   Y   [Z]   radius  angle0  angle1
           gmt coast -Rg -JG20/20/10c -Dc -A5000 -Gpink -Sthistle -Bg -B+t"\053q\053o$lonp/$latp" -X+w+2c
           echo $lon0 $lat0 0 320 | gmt plot -S=1c+e+g0+q+o$lonp/$latp -W2p
           echo $lon0 $lat0 | gmt plot -Sc0.4c -G0
-          echo $lonp $latp | gmt plot -Sc0.4c -Gred 
+          echo $lonp $latp | gmt plot -Sc0.4c -Gred
           echo $lonp $latp pole | gmt text -F+f15p+jTL -C20%/20%+tO -Gwhite -Dj0.3c
 
           gmt coast -Rg -JG20/20/10c -Dc -A5000 -Gpink -Sthistle -Bg -B+t"\053q\053o" -X+w+2c
           echo $lon0 $lat0 0 320 | gmt plot -S=1c+e+g0+q+o -W2p
           echo $lon0 $lat0 | gmt plot -Sc0.4c -G0
-          echo 0 90 | gmt plot -Sc0.4c -Gred 
+          echo 0 90 | gmt plot -Sc0.4c -Gred
           echo 0 90 pole | gmt text -F+f15p+jTL -C20%/20%+tO -Gwhite -Dj0.3c
-          
+
       gmt end show
   ```
 
 - **+v\[i|l\]**_scale_ - 在给定单位下，将矢量长度放大 *scale* 倍。
   **+vi** 表示缩小 *scale* 倍，**+vl** 表示使用统一固定长度而忽略输入的矢量长度。
 
-- **+z**[*scale*] - 表示输入数据中的 *angle* 和 *length* 
+- **+z**[*scale*] - 表示输入数据中的 *angle* 和 *length*
   被解释为矢量的X分量dx和Y分量dy，然后计算出对应的极坐标下的方向和长度，
   并将矢量长度乘以 *scale* （默认1）。
 
@@ -242,4 +242,4 @@ X   Y   [Z]   radius  angle0  angle1
   此时程序假定将长度放大 *scale* 倍可转为当前绘图单位（见 {term}`PROJ_LENGTH_UNIT`）
   的笛卡尔矢量或单位为 km 的地理矢量。
   另外如果使用 **+c** 则矢量长度将用于从 CPT 中确定颜色（此时 **-C** 不再要求额外的 *Z* 列）。
-  
+

@@ -1,6 +1,6 @@
 ---
 author: 田冬冬
-date: 2022-05-02
+date: 2026-01-23
 ---
 
 # 绘制符号
@@ -15,10 +15,10 @@ date: 2022-05-02
 以及符号大小。GMT 中常见的十几种简单符号及其对应的符号类型代码如下图所示。
 比如 **c** 代表圆（**c**ircle），**t** 代表三角形（**t**riangle）。
 
-```{eval-rst}
-.. gmtplot:: symbols.sh
-    :show-code: false
-```
+:::{figure} https://docs.generic-mapping-tools.org/latest/_images/GMT_base_symbols1.png
+:align: center
+:width: 80%
+:::
 
 ## 绘制简单符号
 

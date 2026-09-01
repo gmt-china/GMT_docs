@@ -24,7 +24,7 @@ geo3al/index
 gadm/index
 PB2002/index
 global_tectonics/index
-WSM_2016/index
+WSM/index
 ```
 
 用户还可以在网上找到更多其他地学相关数据。可根据需求自行下载，并使用 GDAL 提供的
@@ -36,8 +36,6 @@ WSM_2016/index
 - 美国地质图：<https://mrdata.usgs.gov/geology/state/>
 - 全球布格重力异常：<https://bgi.obs-mip.fr/grids-and-models-2/>
 
-
-(setup-database)=
 **建立数据库**
 
 对于 GMT 中文社区维护的或用户自有的数据，用户可选择创建数据库以方便使用。

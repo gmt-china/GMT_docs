@@ -1,8 +1,8 @@
 :author: 周茂
-:date: 2022-06-30
+:date: 2025-12-30
 
 .. index:: ! convert
-.. include:: common_SYN_OPTs.rst_
+.. program:: convert
 
 convert
 ===========
@@ -26,50 +26,56 @@ convert
 输入以及输出都可能包含多个头部信息。
 
 语法
+-------
 
-**gmt convert** [ *table* ]
-[ |-A| ]
-[ |-C|\ [**+l**\ *min*][**+u**\ *max*][**+i**]]
-[ |-D|\ [*template*\ [**+o**\ *orig*]] ]
-[ |-E|\ [**f**\|\ **l**\|\ **m**\|\ **M**\ *stride*] ]
-[ |-F|\ [**c**\|\ **n**\|\ **p**\|\ **v**][**a**\|\ **t**\|\ **s**\|\ **r**\|\ *refpoint*] ]
-[ |-I|\ [**tsr**] ]
-[ |-L| ]
-[ |-N|\ *col*\ [**+a**\|\ **d**] ]
-[ |-Q|\ [**~**]\ *selection*]
-[ |-S|\ [**~**]\ *"search string"*\|\ **+f**\|\ *file*\ [**+e**] \| |-S|\ [**~**]/\ *regexp*/[**i**][**+e**] ]
-[ |-T|\ [**h**][**d**\ [[**~**]\ *selection*]] ]
-[ |SYN_OPT-V| ]
-[ |-W|\ [**+n**] ]
-[ |SYN_OPT-a| ]
-[ |SYN_OPT-b| ]
-[ |SYN_OPT-d| ]
-[ |SYN_OPT-e| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-g| ]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-q| ]
-[ |SYN_OPT-s| ]
-[ |SYN_OPT-w| ]
-[ |SYN_OPT-:| ]
-[ |SYN_OPT--| ]
+**gmt convert**
+[ *table* ]
+[ :option:`-A` ]
+[ :option:`-C`\ [**+l**\ *min*][**+u**\ *max*][**+i**]]
+[ :option:`-D`\ [*template*\ [**+o**\ *orig*]] ]
+[ :option:`-E`\ [**f**\|\ **l**\|\ **m**\|\ **M**\ *stride*] ]
+[ :option:`-F`\ [**c**\|\ **n**\|\ **p**\|\ **v**][**a**\|\ **t**\|\ **s**\|\ **r**\|\ *refpoint*] ]
+[ :option:`-I`\ [**tsr**] ]
+[ :option:`-L` ]
+[ :option:`-N`\ *col*\ [**+a**\|\ **d**] ]
+[ :option:`-Q`\ [**~**]\ *selection*]
+[ :option:`-S`\ [**~**]\ *"search string"*\|\ **+f**\|\ *file*\ [**+e**] \| :option:`-S`\ [**~**]/\ *regexp*/[**i**][**+e**] ]
+[ :option:`-T`\ [**h**][**d**\ [[**~**]\ *selection*]] ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ [**+n**] ]
+[ :option:`-Z` ]
+[ :option:`-a`\ *flags* ]
+[ :option:`-bi`\ *binary* ]
+[ :option:`-bo`\ *binary* ]
+[ :option:`-d`\ *nodata*\ [**+c**\ *col*] ]
+[ :option:`-e`\ *regexp* ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-g`\ *gaps* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-q`\ *flags* ]
+[ :option:`-s`\ *flags* ]
+[ :option:`-w`\ *flags* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
+-----------
 
 .. include:: explain_intables.rst_
 
 可选选项
+-----------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     对输入输出进行水平合并 [默认使用垂直合并]。所有文件的数据段数以及每个数据段内的行数
     必须是相同的。对于二进制文件输入，则所有文件必须具有相同的列数；对于 ASCII 文件输入，
     则数据列数可以不同。
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [**+l**\ *min*][**+u**\ *max*][**+i**]
     仅输出记录数与给定条件匹配的数据段。以下的子选项含义分别为：
@@ -78,7 +84,7 @@ convert
     - **+u**\ *max* 数据段中的数据个数小于 *max* [默认为无穷大]
     - **+i** 对选择进行反转
 
-.. _-D:
+.. option:: -D
 
 **-D**\ [*template*\ [**+o**\ *orig*]]
     对于多段数据，将每个段输出到一个单独的文件中 [默认输出到一个单独的文件]。*template*
@@ -88,7 +94,7 @@ convert
     言格式说明符的模版，分别为表数据的编号以及段数据的编号。**+o**\ *torig*\ /*sorig*
     则用来设置表数据和段数据编号的起始值。
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [**f**\|\ **l**\|\ **m**\|\ **M**\ *stride*]
     仅提取选定的数据段的第一条和最后一条数据记录 [默认输出所有记录]。
@@ -98,7 +104,7 @@ convert
     - **m**\ *stride* 表示每 *stride* 个提取一个数据，如果为 **M** ，则还包括最后一个
       数据记录
 
-.. _-F:
+.. option:: -F
 
 **-F**\ [**c**\|\ **n**\|\ **p**\|\ **v**][**a**\|\ **t**\|\ **s**\|\ **r**\|\ *refpoint*]
     改变点的连接方式以及数据分组的方式。点的连接方式分为：
@@ -118,7 +124,7 @@ convert
 
     除上述的参考点设置方式外，还可指定一个参考点 *refpoint* 替换程序内部参考点。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [**tsr**]
     将 “item” 的顺序进行反转。
@@ -127,34 +133,34 @@ convert
     - **s** 将每个表文件中数据段进行反转
     - **r** 将每个数据段中的数据记录反转 [默认]
 
-.. _-L:
+.. option:: -L
 
 **-L**
     只输出所有段头信息，不输出数据记录（仅用于 ASCII 文件）
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *col*\ [**+a**\|\ **d**]
     每个数据段中的 *col* 列按数值大小进行排序。**+a** 升序 [默认]，**+d** 降序。
-    |-N| 选项与 |-F| 选项不能同时使用，可与其他选项同时使用。与其他选项同时使用
-    时， |-N| 选项将放在最后应用
+    :option:`-N` 选项与 :option:`-F` 选项不能同时使用，可与其他选项同时使用。与其他选项同时使用
+    时， :option:`-N` 选项将放在最后应用
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ [**~**]\ *selection*
-    只输出指定的编号的数据段。该选项不能和 |-S| 选项同时使用。*selection* 的语法
+    只输出指定的编号的数据段。该选项不能和 :option:`-S` 选项同时使用。*selection* 的语法
     为 *range*\ [,\ *range*,...] ，其中 *range* 是单个段号或者为一个
     *start*\ [:*step*:]\ :*stop* 格式指定的一系列段号，*step* 为增量，是可选的，
     在不指定的情况下默认为 1。**~** 表示反转选择。还可使用 **+f**\ *file* 指定
     一个段号文件，其中每行均包含一个段号。
 
-.. _-S:
+.. option:: -S
 
-**-S**\ [**~**]\ *"search string"*\|\ **+f**\|\ *file*\ [**+e**] \| |-S|\ [**~**]/\ *regexp*/[**i**][**+e**]
+**-S**\ [**~**]\ *"search string"*\|\ **+f**\|\ *file*\ [**+e**] \| :option:`-S`\ [**~**]/\ *regexp*/[**i**][**+e**]
     只输出头段记录中包含指定字符串的数据段，使用 **~** 可以用来反转选择，即输出
     不包含指定字符串的数据段。如果指定的字符串刚好以 ~ 开头，则需要使用反斜杠
-    进行转义。该选项不能和 |-Q| 选项同时使用。对于 OGR/GMT 格式的文件，可以使用
-    *varname*\ =\ *value* 的形式提取数据段。 
+    进行转义。该选项不能和 :option:`-Q` 选项同时使用。对于 OGR/GMT 格式的文件，可以使用
+    *varname*\ =\ *value* 的形式提取数据段。
     如果存在多个字符串，可使用 **+f**\ *file* 选项，将字符串存放在一个文件 *file*
     中，每行均为一个单独的字符串。
     **注** ：如果数据段的属性为多边形，且多边形中间有孔，则输出时会同时输出孔。
@@ -163,7 +169,7 @@ convert
     **+e** 字符串表示完全匹配字符串，即字符串完全相等，而不包括作为子字符串匹配
     的结果 [默认包含子字符串的结果]。
 
-.. _-T:
+.. option:: -T
 
 **-T**\ [**h**][**d**\ [[**~**]\ *selection*]]
     禁止输出某些信息。
@@ -174,18 +180,24 @@ convert
     上述两个子选项可以同时使用。
     默认情况下，两条记录的所有列都相同才被认为是重复的数据，但可通过 *selection*
     来设置只比较选定的列，若这些列相同，即被认为是重复的数据。*selection* 的格式
-    为 *range*\ [,\ *range*,...]，*range* 可以为单独的列号，或者为 
+    为 *range*\ [,\ *range*,...]，*range* 可以为单独的列号，或者为
     *start*\ [:*step*:]\ :*stop* 定义的一组列号，*step* 为步长，默认为 1。**~**
     用来反转选择。如果要考虑数据后的文本的比较，则在 *selection* 的最后添加 *t* ，
     如果不指定数字列，则只考虑最后的文本比较。
 
-.. _-W:
+.. include:: explain_-V.rst_
+
+.. option:: -W
 
 **-W**\ [**+n**]
     将每个数据记录中最后的本文中的词转换为数字，并将这些数字追加到输出结果中。无法转换的
     词将设置为 NaN。使用 **+n** 可禁止输出包含 NaN 的数据行。
 
-.. include:: explain_-V.rst_
+.. option:: -Z
+
+**-Z**
+    转置数据集中的单个段。任何尾随文本都将丢失。
+    **注意**：如果使用二进制表，请添加 :option:`-V` 以报告转置后表的维度，因为在读取二进制转置表时，您需要指定 :option:`-bi`\ *ncols*。
 
 .. include:: explain_-aspatial.rst_
 
@@ -220,6 +232,7 @@ convert
 .. include:: explain_precision.rst_
 
 示例
+-----------
 
 将二进制文件 :file:`test.b` （单精度）转换为 4 列的 ASCII 文件 ::
 
@@ -230,7 +243,7 @@ convert
     gmt convert test.txt -bo > test.b
 
 将 :file:`left.txt` （共两列）的第二列和 :file:`right.txt` 的第一列作为
-坐标输入并绘制。这里的思路是：先使用 |-A| 选项将两个文件水平方向合并，在
+坐标输入并绘制。这里的思路是：先使用 :option:`-A` 选项将两个文件水平方向合并，在
 合并后的结果中提取数据 ::
 
     gmt convert left.txt right.txt -A -o1,2 | gmt plot ...
@@ -266,7 +279,7 @@ convert
     # @D4.945000|-106500.00000000|-32700.00000000
     -9.36890245902635 39.367156766570389
 
-对上述文件，使用 |SYN_OPT-a| 提取属性 ELEVATION 的数据（下述两种等价） ::
+对上述文件，使用 :option:`-a`\ *flags* 提取属性 ELEVATION 的数据（下述两种等价） ::
 
     gmt convert file.gmt -a2=ELEVATION > xyz.dat
     gmt convert file.gmt -aELEVATION > xyz.dat
@@ -289,6 +302,7 @@ profile_005001.txt ... 等单独的文件中::
     gmt convert junk.txt -q~1000-2000 > good.txt
 
 相关模块
+-----------
 
 :doc:`info`,
 :doc:`select`

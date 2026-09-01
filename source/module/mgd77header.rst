@@ -2,7 +2,7 @@
 :date: 2024-06-21
 
 .. index:: ! mgd77header
-.. include:: common_SYN_OPTs.rst_
+.. program:: mgd77header
 
 mgd77header
 ===========
@@ -11,19 +11,20 @@ mgd77header
 :简介: 由 A77 文件创建 MGD77 头段记录
 
 **mgd77header** 通过读取 A77 文件生成 MGD77 头段记录，以确定时间、空间范围、
-存在的数据列以及经过的 10 度大小的网格。也可以使用 |-H| 选项读取一个包含头段
+存在的数据列以及经过的 10 度大小的网格。也可以使用 :option:`-H` 选项读取一个包含头段
 记录的文件。输出头段记录结果为 MGD77 格式或者列表形式。
 
 语法
 ----
 
-**gmt mgd77header** *GEODAS-id.a77*
-[ |-H|\ *headertable* ]
-[ |-M|\ **f**\ [*item*]\|\ **r**\|\ **t** ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+**gmt mgd77header**
+*GEODAS-id.a77*
+[ :option:`-H`\ *headertable* ]
+[ :option:`-M`\ **f**\ [*item*]\|\ **r**\|\ **t** ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-必选选项
+输入数据
 --------
 
 .. include:: explain_ncid.rst_
@@ -31,13 +32,13 @@ mgd77header
 可选选项
 --------
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *headertable*
     从 *headertable* 文件中获取头段记录。输入文件的每一行都应包含一个名称和值，以
     空格分隔。请参见下面的示例头文件中所有的头段可能包含的名称。
 
-.. _-M:
+.. option:: -M
 
 **-Mf**\ [*item*]\|\ **r**\|\ **t**
     列出每个测线的头段信息。**f** 选项用于格式化输出，每行一个条目，后续可使用 Unix

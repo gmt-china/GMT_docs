@@ -2,7 +2,7 @@
 :date: 2024-02-17
 
 .. index:: ! gravmag3d
-.. include:: common_SYN_OPTs.rst_
+.. program:: gravmag3d
 
 gravmag3d
 =============
@@ -17,51 +17,53 @@ gravmag3d
 语法
 ----
 
-**gmt gravmag3d** *xyz_file* |-T|\ **v**\ *vert_file* OR |-T|\ **r\|s**\ *raw_file* OR |-M|\ **+s**\ *body,params*
-[ |-C|\ *density* ]
-[ |-E|\ *thickness* ]
-[ |-F|\ *xy_file* ]
-[ |-G|\ *outgrid* ]
-[ |-H|\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip* ]
-[ |-L|\ *z_observation* ]
-[ |-S|\ *radius* ]
-[ |-Z|\ *level* ]
-[ |SYN_OPT-V| ]
-[ **-fg**]
-[ |SYN_OPT-h| ]
-[ |SYN_OPT-i| ]
-[ |SYN_OPT-o| ]
-[ |SYN_OPT-r| ]
-[ |SYN_OPT--| ]
+**gmt gravmag3d**
+*xyz_file*
+:option:`-T`\ **v**\ *vert_file* OR :option:`-T`\ **r\|s**\ *raw_file* OR :option:`-M`\ **+s**\ *body,params*
+[ :option:`-C`\ *density* ]
+[ :option:`-E`\ *thickness* ]
+[ :option:`-F`\ *xy_file* ]
+[ :option:`-G`\ *outgrid* ]
+[ :option:`-H`\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip* ]
+[ :option:`-L`\ *z_observation* ]
+[ :option:`-S`\ *radius* ]
+[ :option:`-Z`\ *level* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-h`\ *headers* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-o`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 必选选项（不是全部都必选）
 ---------------------------
 
-.. _-C:
+.. option:: -C
 
 **-C**\ *density*
-    以国际单位制设置多面体的密度。该选项与 |-H| 互斥
+    以国际单位制设置多面体的密度。该选项与 :option:`-H` 互斥
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *f_dec*/*f_dip*/*m_int*/*m_dec*/*m_dip*
     设置计算磁异常的参数。*f_dec*/*f_dip* 表示地磁偏角和地磁倾角，单位为 m。
     *m_int*/*m_dec*/*m_dip* 分别为物体磁强度、偏角和倾角。
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *xy_file*
-    计算异常的位置，与 |-G| 选项互斥
+    计算异常的位置，与 :option:`-G` 选项互斥
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *outgrid*\ [=\ *ID*][**+d**\ *divisor*][**+n**\ *invalid*]
 [**+o**\ *offset*\|\ **a**][**+s**\ *scale*\|\ **a**]
 [:*driver*\ [*dataType*][**+c**\ *options*]]
 
-    输出网格文件名，其中各子选项的含义见 :doc:`/grid/read` 。
+    输出网格文件名，其中各子选项的含义见 :doc:`/grid/write` 。
 
-.. _-M:
+.. option:: -M
 
 **-M+s**\ *body,params*
     创建几何体并计算形成的重力异常和磁异常。该选项为 **-Tr**\ /**-Ts** 选项的替代。
@@ -104,7 +106,7 @@ gravmag3d
 
 .. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-Tv**\ *vert_file* 或者 **-Tr|s**\ *raw_file*
 
@@ -116,11 +118,11 @@ gravmag3d
     给定闭合曲面的的顶点文件 *vert_file* 。文件格式和 :doc:`triangulate` 模块生成的格式相同。
     如果 *xyz_file* 文件可以为 3，4，5，6 或者 8 列。
 
-    - 3 列的情况下，表明磁强度/密度假定为常数，由 |-C| 和 |-H| 控制
+    - 3 列的情况下，表明磁强度/密度假定为常数，由 :option:`-C` 和 :option:`-H` 控制
     - 4-6 列分别表示，磁强度，倾角，以及偏角
     - 8 列时表示，磁场倾角、偏角以及物体的磁强度、倾角和偏角。
 
-    在大于 3 列的情况下，|-H| 选项被忽略。
+    在大于 3 列的情况下，:option:`-H` 选项被忽略。
 
     **-Tr|s**\ *raw_file*
 
@@ -130,24 +132,24 @@ gravmag3d
 可选选项
 --------
 
-.. _-E:
+.. option:: -E
 
 **-E**\ [*thickness*]
     设置层厚度为 *thickness* ，单位为 m，默认为 0。只有多面体为非闭合的情况下，想要
     计算一定厚度的层形成的异常时才可用该选项
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*z_observation*]
     设置观测水平面，默认为 0，同时也是计算异常的高度面
 
-.. _-S:
+.. option:: -S
 
 **-S**\ *radius*
     以 km 为单位设置搜索半径。当输出点距离三角形中心的距离大于该半径时，则不考虑该
     三角形。使用该选项可以加快计算速度，但是计算结果会变得不准确
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**\ [*level*]
     设置参考平面的高度为 *level* ，默认为 0。当三角形构成的多面体不闭合并使用该不闭合

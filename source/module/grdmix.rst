@@ -2,12 +2,12 @@
 :date: 2025-10-20
 
 .. index:: ! grdmix
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdmix
 
 grdmix
 =============
 
-:官方文档: :doc:`gmt:grdmix`  
+:官方文档: :doc:`gmt:grdmix`
 :简介: 混合和变换网格和图像
 
 **grdmix** 将执行涉及图像和网格的各种操作。
@@ -32,33 +32,34 @@ grdmix
 
 **gmt grdmix**
 *raster1* [ *raster2* [ *raster3*]]
-|-G|\ *outfile*
-[ |-A|\ *alpha*\ [**+o**] ]
-[ |-C|\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
-[ |-D| ]
-[ |-I|\ *intensity* ]
-[ |-M| ]
-[ |-N|\ [**i**\|\ **o**][*divisor*] ]
-[ |-Q| ]
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *weights* ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT--| ]
+:option:`-G`\ *outfile*
+[ :option:`-A`\ *alpha*\ [**+o**] ]
+[ :option:`-C`\ [*section*/]\ *master*\|\ *cpt*\|\ *color*\ :math:`_1`,\ *color*\ :math:`_2`\ [,\ *color*\ :math:`_3`\ ,...]\ [**+h**\ [*hinge*]][**+i**\ *dz*][**+u**\|\ **U**\ *unit*][**+s**\ *fname*] ]
+[ :option:`-D` ]
+[ :option:`-I`\ *intensity* ]
+[ :option:`-M` ]
+[ :option:`-N`\ [**i**\|\ **o**][*divisor*] ]
+[ :option:`-Q` ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *weights* ]
+[ :option:`-f`\ *flags* ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
+输入数据
+------------------
+
+*raster1* [ *raster2* [ *raster3*]]
+    若仅给出一个输入且未设置 :option:`-C`，则 *raster1* 必须为图像。
+    若给出两个输入，则 *raster1* 和 *raster2* 必须都是图像或网格。
+    若给出三个输入，则它们必须都是网格，并且必须设置 :option:`-C`，
+    除非这三个网格分别表示红、绿和蓝通道（范围为 0–255），
+    此时可以省略 :option:`-C`。
 
 必选选项
 ------------------
 
-*raster1* [ *raster2* [ *raster3*]]
-    若仅给出一个输入且未设置 |-C|，则 *raster1* 必须为图像。
-    若给出两个输入，则 *raster1* 和 *raster2* 必须都是图像或网格。
-    若给出三个输入，则它们必须都是网格，并且必须设置 |-C|，
-    除非这三个网格分别表示红、绿和蓝通道（范围为 0–255），
-    此时可以省略 |-C|。
-
-.. _-G:
+.. option:: -G
 
 **-G**\ *outfile*
     输出栅格的名称。对于图像，请使用以下扩展名之一：
@@ -68,7 +69,7 @@ grdmix
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**\ *alpha*\ [**+o**]
     获取一个常数 alpha（0–1），或一个网格（0–1 或 NaN），
@@ -81,48 +82,44 @@ grdmix
     则添加修饰符 **+o**，我们会将 NaN 或 1 视为 100% 不透明，
     并且透明度 *t* = 1 - *o*。
 
-.. _-C1:
-
 **-C**
     从一个或三个归一化输入网格构建输出图像；
     这些网格的数值必须全部处于 0–1 范围内
     （如果不是，可使用 **-Ni**）。
-    可选地，可使用 |-A| 为颜色添加透明度，
-    或使用 |-I| 为颜色添加强度后再输出图像。
+    可选地，可使用 :option:`-A` 为颜色添加透明度，
+    或使用 :option:`-I` 为颜色添加强度后再输出图像。
     对于三个输入层，输入顺序必须为红网格、绿网格、蓝网格。
-    也可以只提供单个输入图像，再通过 |-A| 或 |-I| 增强。
+    也可以只提供单个输入图像，再通过 :option:`-A` 或 :option:`-I` 增强。
     **注意**：要使用 CPT 查找表从单个输入网格生成图像，
-    请参阅 |-C| 的长格式说明。
-
-.. _-C2:
+    请参阅 :option:`-C` 的长格式说明。
 
 .. include:: use_cpt_grd.rst_
 
-.. _-D:
+.. option:: -D
 
 **-D**
     将单个图像分解为一个或三个输出网格。
     如果图像包含 alpha（透明）层，将额外输出一个网格。
     所有输出网格的数值都保持原始图像的 0–255 范围；
     但可使用 **-No** 将其归一化至 0–1 范围。
-    输出名称由 |-G| 指定的名称模板生成，
+    输出名称由 :option:`-G` 指定的名称模板生成，
     其中必须包含 C 格式字符串 “%c”。
     该代码将分别被替换为 R、G、B 和 A（对于彩色图像），
     或 g、A（对于灰度图像）。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *intensity*
     一个常数强度值或网格（范围 ±1），
     用于修改最终输出图像的颜色亮度。
 
-.. _-M:
+.. option:: -M
 
 **-M**
     强制将图像转换为单色图像，
     使用（电视制式）YIQ 颜色空间转换。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ [**i**\|\ **o**][*divisor*]
     将所有输入网格从 0–255 归一化到 0–1，
@@ -131,7 +128,7 @@ grdmix
     分别使用 **-Ni** 或 **-No**。
     若需使用除 255 外的除数，请附加可选参数 *divisor*。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**
     使最终图像变为不透明，
@@ -141,7 +138,7 @@ grdmix
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *weights*
     一个常数权重（0–1），或一个网格（0–1），或图像（0–255）作为权重。
@@ -192,7 +189,6 @@ grdmix
 相关模块
 --------
 
-:doc:`gmt`, 
 :doc:`grdblend`,
 :doc:`grdclip`,
 :doc:`grdcut`,

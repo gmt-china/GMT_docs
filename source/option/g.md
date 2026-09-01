@@ -31,9 +31,9 @@ date: 2025-08-17
 用户可以设置 **u** 用于指定 *gap* 的单位：
 
 - 对于地理坐标 (**x**|**y**|**d**)，*u* 可以取 **d**(egree), **m**(inute), **s**(econd),
-  或 (m)**e**(ter), **f**(eet), **k**(ilometer), **M**(iles), 或 **n**(autical miles) 
+  或 (m)**e**(ter), **f**(eet), **k**(ilometer), **M**(iles), 或 **n**(autical miles)
   [默认为(m)**e**(ter)]
-- 对于投影坐标 (**X**|**Y**|**D**)，*u* 可以取 **i**(nch), **c**(entimeter), **p**(oint) 
+- 对于投影坐标 (**X**|**Y**|**D**)，*u* 可以取 **i**(nch), **c**(entimeter), **p**(oint)
   [默认值由 {term}`PROJ_LENGTH_UNIT`控制]
 - 对于 **x**|**y**|**z**，若输入是时间数据，则单位由 {term}`TIME_UNIT` 控制
 

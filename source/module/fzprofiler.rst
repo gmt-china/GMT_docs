@@ -2,7 +2,7 @@
 :date: 2025-10-15
 
 .. index:: ! fzprofiler
-.. include:: common_SYN_OPTs.rst_
+.. program:: fzprofiler
 
 fzprofiler
 =============
@@ -18,54 +18,56 @@ fzprofiler
 语法
 --------
 
-**fzprofiler** [ |-H|\ *height*\ [**c**\|\ **i**\|\ **p**] ]
-[ |-I|\ *profile* ] 
-[ |-L|\ *inc* ]
-[ |-M|\ *ncols* ]
-[ |-T|\ *prefix* ]
-[ |SYN_OPT-V| ]
-[ |-W|\ *width*\ [**c**\|\ **i**\|\ **p**] ]
+**fzprofiler**
+[ :option:`-H`\ *height*\ [**c**\|\ **i**\|\ **p**] ]
+[ :option:`-I`\ *profile* ]
+[ :option:`-L`\ *inc* ]
+[ :option:`-N`\ *ncols* ]
+[ :option:`-T`\ *prefix* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *width*\ [**c**\|\ **i**\|\ **p**] ]
 
-**注意**：选项标志和相关参数之间不允许有任何空格。
 
 可选选项
 ------------------
 
-.. _-H:
+.. option:: -H
 
 **-H**\ *width*\ [**c**\|\ **i**\|\ **p**]
     设置单个剖面图的高度。如果未附加单位，则默认单位为 GMT 当前设置的 :term:`PROJ_LENGTH_UNIT`。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ *profile*
     默认情况下，我们会将所有横断面剖面绘制为一个堆叠图。
     若要仅选择一个特定剖面，请指定其编号，其中 0 表示第一个剖面。
 
-.. _-L:
+.. option:: -L
 
 **-L**\ *inc*
     决定绘制哪些剖面。默认绘制每一个剖面 (*inc* = 1)。
-    使用 |-L| 可以选择每隔 *inc* 个剖面绘制一次 [默认值为 1]。
+    使用 :option:`-L` 可以选择每隔 *inc* 个剖面绘制一次 [默认值为 1]。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *ncols*
     设置剖面在图中的列数。
     如果 *ncols* = 1，则所有剖面垂直堆叠在一列中；
     若 *ncols* = 2，则剖面将在两列中平均分配，依此类推。
 
-.. include:: explain_-V.rst_
+.. option:: -T
 
 **-T**\ *prefix*
     设置所有输入文件的文件名前缀，这些文件由 :doc:`fzanalyzer` 生成 [默认值为 fztrack]。
     文件包括 *prefix*\ _cross.txt、*prefix*\ _analysis.txt、*prefix*\ _par.txt，
     以及由 :doc:`grdtrack` 生成的重采样输出文件 *prefix*\ _resampled.txt。
 
-.. _-W:
+.. include:: explain_-V.rst_
+
+.. option:: -W
 
 **-W**\ *width*\ [**c**\|\ **i**\|\ **p**]
-    设置单个剖面图的宽度。单位同 |-H|。
+    设置单个剖面图的宽度。单位同 :option:`-H`。
 
 图像特征
 --------
@@ -107,8 +109,8 @@ fzprofiler
 参考文献
 --------
 
-Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni, 
+Wessel, P., Matthews, K. J., Müller, R. D., Mazzoni,
 A., Whittaker, J. M., Myhill, R., Chandler, M. T.,
-2015, "Semiautomatic fracture zone tracking", 
+2015, "Semiautomatic fracture zone tracking",
 *Geochem. Geophys. Geosyst.*, 16 (7), 2462–2472.
 https://doi.org/10.1002/2015GC005853.

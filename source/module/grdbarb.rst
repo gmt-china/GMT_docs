@@ -2,7 +2,7 @@
 :date: 2025-10-15
 
 .. index:: ! grdbarb
-.. include:: common_SYN_OPTs.rst_
+.. program:: grdbarb
 
 grdbarb
 =============
@@ -21,27 +21,25 @@ grdbarb
 **grdbarb**
 *compx.nc* *compy.nc*
 **-J**\ *parameters*
-[ |-A| ]
-[ |SYN_OPT-B| ]
-[ |-C|\ *cpt* ]
-[ |-G|\ *fill* ]
-[ |-I|\ [**x**]\ *dx*\ [/*dy*] ]
-[ |-N| ]
-[ |-Q|\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*] ]
-[ |SYN_OPT-R| ]
-[ |-T| ]
-[ |SYN_OPT-U| ]
-[ |-W|\ *pen* ]
-[ |SYN_OPT-X| ]
-[ |SYN_OPT-Y| ]
-[ |-Z| ]
-[ |SYN_OPT-f| ]
-[ |SYN_OPT-p| ]
-[ |SYN_OPT-t| ]
+[ :option:`-A` ]
+[ :option:`-B`\ [**p**\|\ **s**]\ *parameters* ]
+[ :option:`-C`\ *cpt* ]
+[ :option:`-G`\ *fill* ]
+[ :option:`-I`\ [**x**]\ *dx*\ [/*dy*] ]
+[ :option:`-N` ]
+[ :option:`-Q`\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*] ]
+[ :option:`-R`\ *region* ]
+[ :option:`-T` ]
+[ :option:`-U`\ [*stamp*] ]
+[ :option:`-W`\ *pen* ]
+[ :option:`-X`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*xshift*] ]
+[ :option:`-Y`\ [**a**\|\ **c**\|\ **f**\|\ **r**][*yshift*] ]
+[ :option:`-Z` ]
+[ :option:`-f`\ *flags* ]
+[ :option:`-p`\ *flags* ]
+[ :option:`-t`\ *transp* ]
 
-**注意** ：选项标志和相关参数之间不允许有任何空格。
-
-必选选项
+输入数据
 ------------------
 
 *compx.nc*
@@ -49,12 +47,15 @@ grdbarb
 *compy.nc*
     包含风场的 y 分量。（参见 :doc:`/grid/format` ）
 
+必须选项
+------------------
+
 .. include:: explain_-J.rst_
 
 可选选项
 ------------------
 
-.. _-A:
+.. option:: -A
 
 **-A**
     网格文件包含极坐标形式的风场分量 (速度, 方向)，
@@ -62,7 +63,7 @@ grdbarb
 
 .. include:: explain_-B.rst_
 
-.. _-C:
+.. option:: -C
 
 **-C**\ [*cpt*]
     使用 *cpt* 文件根据风速分配颜色。
@@ -72,24 +73,24 @@ grdbarb
     还可以使用 -Ccolor1,color2[,color3,...] 自动从这些颜色生成线性连续色带。
     其中 *color*\ **n** 可以是 r/g/b 三元组、颜色名称或 HTML 十六进制颜色（例如 ``#aabbcc`` ）。
 
-.. _-G:
+.. option:: -G
 
 **-G**\ *fill*
     设置风羽内部的填充颜色或灰度 [默认无填充]。
 
-.. _-I:
+.. option:: -I
 
 **-I**\ [**x**]\ *dx*\ [/*dy*]
     仅在每隔 *x_inc*、*y_inc* 节点处绘制风羽（必须是原网格间距的整数倍）。
     追加 **m** 表示以弧分为单位，**s** 表示以弧秒为单位。
     或者使用 **-Ix** 指定倍率 *multx*\ [/*multy*] [默认绘制所有节点]。
 
-.. _-N:
+.. option:: -N
 
 **-N**
     不在地图边界处裁剪风羽 [默认会裁剪]。
 
-.. _-Q:
+.. option:: -Q
 
 **-Q**\ *length*\ [**+a**\ *angle*][**+g**\ -\|\ *fill*][**+jb**\|\ **c**\|\ **e**][**+p**\ -\|\ *pen*][**+s**\ *scale*][**+w**\ *width*]
     修改风羽参数。
@@ -103,10 +104,9 @@ grdbarb
     - **+s** - 设置长羽对应的风速 [默认 5]。
     - **+w** - 设置风羽的宽度。
 
-.. |Add_-Rgeo| replace:: |Add_-R_auto_table|
-.. include:: explain_-Rgeo.rst_
+.. include:: explain_-R.rst_
 
-.. _-T:
+.. option:: -T
 
 **-T**
     调整笛卡尔数据集的方位角，使其与 x、y 方向比例尺符号一致 [默认不调整]。
@@ -116,17 +116,17 @@ grdbarb
 
 .. include:: explain_-V.rst_
 
-.. _-W:
+.. option:: -W
 
 **-W**\ *pen*
     设置用于绘制风羽轮廓的画笔属性 [默认：黑色实线，默认宽度]。
 
 .. include:: explain_-XY.rst_
 
-.. _-Z:
+.. option:: -Z
 
 **-Z**
-    表示提供的 theta 网格包含的是方位角而非方向（隐含启用 **-A**）。
+    表示提供的 theta 网格包含的是方位角而非方向（隐含启用 :option:`-A`）。
 
 .. include:: explain_-f.rst_
 
@@ -153,5 +153,5 @@ grdbarb
 相关模块
 --------
 
-:doc:`grdvector`, 
+:doc:`grdvector`,
 :doc:`barb`

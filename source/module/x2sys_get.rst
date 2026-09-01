@@ -1,7 +1,8 @@
 :author: 周茂
+:date: 2025-12-30
 
-.. index:: !x2sys_get
-.. include:: common_SYN_OPTs.rst_
+.. index:: ! x2sys_get
+.. program:: x2sys_get
 
 x2sys_get
 =========
@@ -11,53 +12,57 @@ x2sys_get
 
 **x2sys_get** 将会从 TAG 数据库中查询满足需求的轨迹数据并返回。
 查询条件可以是选定的区域，也可以是满足某些数据条件。
-使用 |-L| 选项可列出所有可能存在的交叉点的测线对。
+使用 :option:`-L` 选项可列出所有可能存在的交叉点的测线对。
 
 语法
 ----
 
-**gmt x2sys_get** |-T|\ *TAG* [ |-C| ] [ |-F|\ *flags* ] [ |-G| ]
-[ |-L|\ [*list*]\ [**+i**] ]
-[ |-N|\ *flags* ] [
-[ |SYN_OPT-R| ]
-[ |SYN_OPT-V| ]
-[ |SYN_OPT--| ]
+**gmt x2sys_get**
+:option:`-T`\ *TAG*
+[ :option:`-C` ]
+[ :option:`-F`\ *flags* ]
+[ :option:`-G` ]
+[ :option:`-L`\ [*list*]\ [**+i**] ]
+[ :option:`-N`\ *flags* ]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :doc:`--PAR=value </conf/overview>` ]
 
 
 必选选项
 --------
 
-.. _-T:
+.. option:: -T
 
 **-T**\ *TAG*
-    指定 x2sys TAG，参见 :doc:`x2sys_init` 
+    指定 x2sys TAG，参见 :doc:`x2sys_init`
 
 可选选项
 --------
 
-.. _-C:
+.. option:: -C
 
 **-C**
     不输出轨迹文件的名称，而是输出至少含有一个观测值的轨迹网格的坐标。
 
-.. _-D:
+.. option:: -D
 
 **-D**
     只输出轨迹名称 [默认会输出观测值]
 
-.. _-F:
+.. option:: -F
 
 **-F**\ *flags*
     给定用逗号分隔的列名称列表（如 :doc:`x2sys_init` 中格式定义文件中的描述）,
     列名称必须是已有的变量名称，筛选包含这些变量的轨迹 [默认输出所有的列]。
 
-.. _-G:
+.. option:: -G
 
 **-G**
-    输出整个沿轨观测数据的标志（Y 或者 N）而不是仅在 |-R| 区域内部的数据标志
+    输出整个沿轨观测数据的标志（Y 或者 N）而不是仅在 :option:`-R` 区域内部的数据标志
     [默认]
 
-.. _-L:
+.. option:: -L
 
 **-L**\ [*list*]\ [**+i**]
     交叉点模式。返回可能存在交叉点的轨迹对的列表。
@@ -66,11 +71,11 @@ x2sys_get
     默认会返回所有的可能存在交叉点的轨迹对。
     *list* 为轨迹列表文件名，其中包含若干轨迹名称，
     即只输出必须至少包含列表中的某条轨迹的轨迹对。
-    本选项的输出适用于 :doc:`x2sys_cross` 中的 |-A| 选项。
+    本选项的输出适用于 :doc:`x2sys_cross` 中的 **-A** 选项。
     默认地，只列出外部交叉点，即一条轨迹和另外一条轨迹的交叉点，**+i**
     选项会同时列出内部交叉点，即轨迹自身的交叉点。
 
-.. _-N:
+.. option:: -N
 
 **-N**\ *flags*
     给定用逗号分隔的列名称列表（如 :doc:`x2sys_init` 中格式定义文件中的描述），
