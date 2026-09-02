@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROJ参数 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="PS参数" href="../ps/" />
+    <link rel="prev" title="IO参数" href="../io/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">IO参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">其他参数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">配置参数</a> &raquo;</li>
+      <li>PROJ参数</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/conf/proj.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="proj">
+<h1>PROJ参数<a class="headerlink" href="#proj" title="永久链接至标题"></a></h1>
+<p>本节列出投影相关参数，参数的默认值在中括号内列出。</p>
+<dl class="glossary">
+<dt id="term-PROJ_LENGTH_UNIT"><strong>PROJ_LENGTH_UNIT</strong><a class="headerlink" href="#term-PROJ_LENGTH_UNIT" title="Permalink to this term"></a></dt><dd><p>长度量的默认单位 [<strong>c</strong>]</p>
+<p>当长度量未显式给定单位时所使用的默认单位，可以取 <strong>c</strong>|<strong>i</strong>|<strong>p</strong>。见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a>。</p>
+</dd>
+<dt id="term-PROJ_ELLIPSOID"><strong>PROJ_ELLIPSOID</strong><a class="headerlink" href="#term-PROJ_ELLIPSOID" title="Permalink to this term"></a></dt><dd><p>地图投影中使用的地球椭球 [<strong>WGS-84</strong>]</p>
+<p>GMT支持几十种地球椭球（此处不列举，详见官方文档）。除此之外，GMT还支持自定义椭球，用户只需按照固定的格式对椭球命名，GMT会从椭球名字中提取半长轴以及扁率。可用的格式如下：</p>
+<ul class="simple">
+<li><p><em>a</em>：球半径为a，单位为 m，扁率为零。比如 6378137</p></li>
+<li><p><em>a</em>,<em>inv_f</em> ： <em>inv_f</em> 为扁率的倒数，比如 6378137,298.257223563</p></li>
+<li><p><em>a</em>,<em>b</em>=<em>b</em> ： <em>b</em> 为半短轴长度，单位为 m，比如 6378137,b=6356752.3142</p></li>
+<li><p><em>a</em>,<strong>f=</strong><em>f</em> ： <em>f</em> 为扁率，比如 6378137,f=0.0033528</p></li>
+</ul>
+<p>需要注意，对于某些全球投影，GMT会对选中的地球椭球做球状近似，将扁率设为零，并使用其平均半径。当GMT做此类近似时，会给出警告信息。</p>
+</dd>
+<dt id="term-PROJ_AUX_LATITUDE"><strong>PROJ_AUX_LATITUDE</strong><a class="headerlink" href="#term-PROJ_AUX_LATITUDE" title="Permalink to this term"></a></dt><dd><p>以大圆弧方式计算球面距离时球体近似的辅助纬线 [<strong>authalic</strong>]</p>
+<p>在使用大圆弧距离计算方式时，需要将真实地球近似为一个半径为
+<a class="reference internal" href="#term-PROJ_MEAN_RADIUS"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a> 的球体，在做球体近似时需要选择合适的辅助纬线。可选值包括</p>
+<ul class="simple">
+<li><p><strong>authalic</strong></p></li>
+<li><p><strong>geocentric</strong></p></li>
+<li><p><strong>conformal</strong></p></li>
+<li><p><strong>meridional</strong></p></li>
+<li><p><strong>parametric</strong></p></li>
+<li><p><strong>none</strong></p></li>
+</ul>
+<p>当设置为除 <strong>none</strong> 外的其他值时，GMT会在计算距离前，将大圆弧距离计算时使用的两点中任意一点的纬度转换成辅助纬度。</p>
+</dd>
+<dt id="term-PROJ_MEAN_RADIUS"><strong>PROJ_MEAN_RADIUS</strong><a class="headerlink" href="#term-PROJ_MEAN_RADIUS" title="Permalink to this term"></a></dt><dd><p>地球/行星的平均半径 [<strong>authalic</strong>]</p>
+<p>在计算两点间的大圆弧距离或区域的表面积时才会被使用。可选值包括</p>
+<ul class="simple">
+<li><p><strong>mean (R_1)</strong></p></li>
+<li><p><strong>authalic (R_2)</strong></p></li>
+<li><p><strong>volumetric (R_3)</strong></p></li>
+<li><p><strong>meridional</strong></p></li>
+<li><p><strong>quadratic</strong></p></li>
+</ul>
+</dd>
+<dt id="term-PROJ_SCALE_FACTOR"><strong>PROJ_SCALE_FACTOR</strong><a class="headerlink" href="#term-PROJ_SCALE_FACTOR" title="Permalink to this term"></a></dt><dd><p>修改某些投影的地图缩放因子以减小面积失真</p>
+<ul class="simple">
+<li><p>Polar Stereographic：默认值为0.9996</p></li>
+<li><p>UTM：默认值为0.9996</p></li>
+<li><p>Transverse Mercator：默认值为1</p></li>
+</ul>
+</dd>
+<dt id="term-PROJ_GEODESIC"><strong>PROJ_GEODESIC</strong><a class="headerlink" href="#term-PROJ_GEODESIC" title="Permalink to this term"></a></dt><dd><p>指定大地测量距离中所使用的算法 [Vincenty]</p>
+<p>可以取：</p>
+<ul class="simple">
+<li><p><strong>Vincenty</strong> 默认值，精确到0.5mm</p></li>
+<li><p><strong>Rudoe</strong> GMT4所使用的计算方式</p></li>
+<li><p><strong>Andoyer</strong> 精度为10米量级，比 Vincenty 快5倍</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../io/" class="btn btn-neutral float-left" title="IO参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../ps/" class="btn btn-neutral float-right" title="PS参数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+gmt coast -Rg -JN10c -Gblack -B0 -png gshhg

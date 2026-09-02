@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IO参数 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/conf/io.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="PROJ参数" href="../proj/" />
+    <link rel="prev" title="FORMAT参数" href="../format/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/"  selected > v6.0 </option>
+            
+            <option value="/5.4/" > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">FORMAT参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IO参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">表数据相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">网格文件相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">其他IO参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">其他参数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">配置参数</a> &raquo;</li>
+        
+      <li>IO参数</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/conf/io.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="io">
+<h1>IO参数<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>表数据相关参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-io-header"><strong>IO_HEADER</strong></dt>
+<dd><p class="first">指定输入/输出的表文件中是否有文件头记录 [false]</p>
+<p class="last">可以取 <code class="docutils literal notranslate"><span class="pre">true|false</span></code>。若值为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则等效于使用 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a></p>
+</dd>
+<dt id="term-io-header-marker"><strong>IO_HEADER_MARKER</strong></dt>
+<dd><p class="first">输入ASCII表文件中文件头记录的标识符 [<code class="docutils literal notranslate"><span class="pre">#</span></code>]</p>
+<p class="last">若希望输入和输出数据中使用不同的文件头标识符，则可以使用逗号分隔输入和输出数据的文件头标识符，比如 <code class="docutils literal notranslate"><span class="pre">#,:</span></code>。</p>
+</dd>
+<dt id="term-io-n-header-recs"><strong>IO_N_HEADER_RECS</strong></dt>
+<dd><p class="first">在使用 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项时，要跳过的文件头记录的数目 [0]</p>
+<p class="last">见 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a> 和 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a>。</p>
+</dd>
+<dt id="term-io-first-header"><strong>IO_FIRST_HEADER</strong></dt>
+<dd>若整个数据中只有一个数据段时，是否要写这个数据段的文件头记录。默认情况下，只有当这个单独段的头段记录中有额外的内容时才会写该头记录。可选的值包括 <code class="docutils literal notranslate"><span class="pre">always</span></code>、<code class="docutils literal notranslate"><span class="pre">never</span></code> 和 <code class="docutils literal notranslate"><span class="pre">maybe</span></code> [<code class="docutils literal notranslate"><span class="pre">maybe</span></code>]</dd>
+<dt id="term-io-col-separator"><strong>IO_COL_SEPARATOR</strong></dt>
+<dd><p class="first">GMT输出ASCII表数据时列与列之间的分隔符 [tab]</p>
+<p class="last">可以取 <code class="docutils literal notranslate"><span class="pre">tab</span></code>、<code class="docutils literal notranslate"><span class="pre">space</span></code>、<code class="docutils literal notranslate"><span class="pre">comma</span></code> 和 <code class="docutils literal notranslate"><span class="pre">none</span></code></p>
+</dd>
+<dt id="term-io-segment-marker"><strong>IO_SEGMENT_MARKER</strong></dt>
+<dd><p class="first">多段数据中每段数据开始的标识符 [<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>]</p>
+<p>见 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a> 中的相关介绍。若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和输出数据的段标识符，比如 <code class="docutils literal notranslate"><span class="pre">&gt;,:</span></code>。</p>
+<p>有两个特殊的标识符：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">B</span></code> 表示将空行作为数据段开始的标识符</li>
+<li><code class="docutils literal notranslate"><span class="pre">N</span></code> 表示将一个NaN记录作为数据段开始的标识符</li>
+</ol>
+<p class="last">若想要将字符 <code class="docutils literal notranslate"><span class="pre">B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span></code> 作为段数据标识符，而不是使用上面提到的特殊含义，则必须使用 <code class="docutils literal notranslate"><span class="pre">\B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">\N</span></code>。</p>
+</dd>
+<dt id="term-io-segment-binary"><strong>IO_SEGMENT_BINARY</strong></dt>
+<dd><p class="first">二进制数据中，某个记录的所有值都是NaN时该如何解释 [2]</p>
+<p class="last">默认情况下，当二进制数据中某个记录的值为NaN的列数超过了 <code class="docutils literal notranslate"><span class="pre">IO_SEGMENT_BINARY</span></code>
+的值时，则将该记录解释为二进制数据中的数据段头记录。将该参数赋值为0或off可以关闭这一特性。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>网格文件相关参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-io-nc4-chunk-size"><strong>IO_NC4_CHUNK_SIZE</strong></dt>
+<dd>控制写netCDF文件时的分块大小 [auto]</dd>
+<dt id="term-io-nc4-deflation-level"><strong>IO_NC4_DEFLATION_LEVEL</strong></dt>
+<dd><p class="first">输出netCDF4格式的数据时所使用的压缩等级 [3]</p>
+<p class="last">可以取0到9的整数，0表示不压缩，9表示最大压缩。低压缩率可以提高性能并减少文件尺寸，而高压缩率虽然可以进一步减小文件尺寸，但却需要更多的处理时间。</p>
+</dd>
+<dt id="term-io-gridfile-shorthand"><strong>IO_GRIDFILE_SHORTHAND</strong></dt>
+<dd><p class="first">是否支持自动识别网格文件后缀的功能 [false]</p>
+<p>GMT中也可以将网格文件的后缀与网格文件格式关联起来这样GMT就可以直接根据文件后缀确定网格文件的格式了。</p>
+<p>这一特性通过一个叫 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 的文件来实现。GMT会依次在当前目录、家目录或
+<code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code> 目录下寻找 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 的示例格式如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># GMT i/o shorthand file</span>
+
+<span class="c1"># It can have any number of comment lines like this one anywhere</span>
+<span class="c1"># suffix format_id scale offset NaN Comments</span>
+grd        nf        -     -      -    Default format
+b          bf        -     -      -    Native binary floats
+i2         bs        -     -    <span class="m">32767</span>  <span class="m">2</span>-byte integers with NaN value
+ras        rb        -     -      -    Sun raster files
+byte       bb        -     -     <span class="m">255</span>   Native binary <span class="m">1</span>-byte grids
+bit        bm        -     -      -    Native binary <span class="m">0</span> or <span class="m">1</span> grids
+mask       bm        -     -      <span class="m">0</span>    Native binary <span class="m">1</span> or NaN masks
+faa        bs       <span class="m">0</span>.1    -    <span class="m">32767</span>  Native binary gravity in <span class="m">0</span>.1 mGal
+ns         ns        a     a      -    <span class="m">16</span>-bit integer netCDF grid with auto-scale and auto-offset
+</pre></div>
+</div>
+<p class="last">要使用这一特性，需要将参数 <a class="reference internal" href="#term-io-gridfile-shorthand"><span class="xref std std-term">IO_GRIDFILE_SHORTHAND</span></a>
+设置为 <code class="docutils literal notranslate"><span class="pre">true</span></code>。此时，文件名 <code class="docutils literal notranslate"><span class="pre">file.i2</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">file.i2=bs///32767</span></code>，
+<code class="docutils literal notranslate"><span class="pre">wet.mask</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">wet.mask=bm+n0</span></code>。</p>
+</dd>
+<dt id="term-io-gridfile-format"><strong>IO_GRIDFILE_FORMAT</strong></dt>
+<dd><p class="first">GMT默认使用的网格文件格式 [nf]</p>
+<p class="last">见 <a class="reference internal" href="../../grid/format/"><span class="doc">网格文件格式</span></a> 一节。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>其他IO参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-io-lonlat-toggle"><strong>IO_LONLAT_TOGGLE</strong></dt>
+<dd><p class="first">数据的前两列是纬度、经度而不是经度、纬度 [false]</p>
+<p>该参数的作用与 <a class="reference internal" href="../../option/colon/"><span class="doc">-: 选项</span></a> 功能相同。其可以取如下值：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">false</span></code> 默认值，输入/输出数据均为 (x, y)</li>
+<li><code class="docutils literal notranslate"><span class="pre">true</span></code> 输入/输出数据均为 (y, x)</li>
+<li><code class="docutils literal notranslate"><span class="pre">IN</span></code> 仅输入数据为 (y, x)</li>
+<li><code class="docutils literal notranslate"><span class="pre">OUT</span></code> 仅输出数据为 (y, x)</li>
+</ol>
+</dd>
+<dt id="term-io-nan-records"><strong>IO_NAN_RECORDS</strong></dt>
+<dd><p class="first">控制当读入的记录中的X、Y或Z包含NaN记录时的处理方式 [pass]</p>
+<p>可以取如下值：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">skip</span></code>：直接跳过NaN记录，并报告NaN记录的数目</li>
+<li><code class="docutils literal notranslate"><span class="pre">pass</span></code>：将所有记录传递给程序</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'b2dfca9a4bfad764aa2b',
+    clientSecret: '4ae5ddcd25c6b6d6bc07ac39201ea417054a530a',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../proj/" class="btn btn-neutral float-right" title="PROJ参数" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../format/" class="btn btn-neutral float-left" title="FORMAT参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2020年05月08日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

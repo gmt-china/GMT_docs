@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>网格配准 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script defer="defer" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="边界条件" href="../boundary-condition/" />
+    <link rel="prev" title="网格文件格式" href="../format/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">网格文件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">网格文件格式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">网格配准</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">网格配准方式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">网格线配准</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">像素配准</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">配准方式转换</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">读 netCDF 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">写 netCDF 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">查看 netCDF 文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">网格文件</a> &raquo;</li>
+      <li>网格配准</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/grid/registration.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="grid-registration">
+<span id="id1"></span><h1>网格配准<a class="headerlink" href="#grid-registration" title="永久链接至标题"></a></h1>
+<p>GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线会出现在
+<span class="math notranslate nohighlight">\(x = x_{min}, x_{min} + x_{inc}, x_{min} + 2 \cdot x_{inc}, \ldots, x_{max}\)</span>
+和 <span class="math notranslate nohighlight">\(y = y_{min}, y_{min} + y_{inc}, y_{min} + 2 \cdot y_{inc}, \ldots, y_{max}\)</span> 处。而节点的位置有两种选择，即网格线配准（gridline registration）和像素配准（pixel registration）。GMT默认使用的是网格线配准方式。</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/GMT_registration.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/GMT_registration.png" src="https://docs.generic-mapping-tools.org/latest/_images/GMT_registration.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-text">GMT网格配准方式</span><a class="headerlink" href="#id6" title="永久链接至图片"></a></p>
+<div class="legend">
+<p>（左）网格线配准；（右）像素配准。</p>
+</div>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>大多数原始观测数据都采样网格线配准方式，而有时经过处理的数据会以像素配准方式发布。尽管两种配准方式可以互相转换，但转换过程中会降低Nyquist采样率，压制一些高频信息。因而如果你可以控制，应尽量避免配准转换。</p>
+</div>
+<section id="id2">
+<h2>网格配准方式<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<section id="id3">
+<h3>网格线配准<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<p>在网格线配准方式下，节点（图中黑色圆圈）中心位于网格线的交叉点处，节点的值代表了长宽为 <span class="math notranslate nohighlight">\(x_{inc} \cdot y_{inc}\)</span> 的单元（图中红色区域）内的平均值。这种情况下，节点数目与网格范围和间隔的关系为：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccl}
+nx &amp; =  &amp;       (x_{max} - x_{min}) / x_{inc} + 1       \\
+ny &amp; =  &amp;       (y_{max} - y_{min}) / y_{inc} + 1
+\end{array}\end{split}\]</div>
+<p>左图中nx=ny=4。</p>
+</section>
+<section id="id4">
+<h3>像素配准<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<p>在像素配准方式下，节点（图中黑色圆圈）位于网格单元的中心，即网格点之间的区域，节点的值代表了每个单元（图中红色区域）内的平均值。在这种情况下，节点数目与网格范围和间隔的关系为：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccl}
+nx &amp; =  &amp;       (x_{max} - x_{min}) / x_{inc}   \\
+ny &amp; =  &amp;       (y_{max} - y_{min}) / y_{inc}
+\end{array}\end{split}\]</div>
+<p>因而，对于相同的网格区域和网格间隔而言，像素配准比网格线配准要少一列和一行数据。右图中nx=ny=3。</p>
+</section>
+</section>
+<section id="id5">
+<h2>配准方式转换<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>GMT提供了多种方式实现像素配准与网格配准的互相转换。</p>
+<p>一种是使用 <a class="reference internal" href="../../module/grdedit/"><span class="doc">grdedit</span></a> <strong>-T</strong> 选项将网格区域调整半个网格间隔并修改配准方式，该方法不改变原有数据点，但改变了网格区域。</p>
+<p>另一种方式是使用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/grdsample.html" title="(在 GMT v6.2)"><span>grdsample</span></a> <strong>-T</strong> 对原始数据做重采样。这种方法保留了网格的区域范围，但在重采样时会丢失数据中的高频信息。</p>
+<p>下图展示了为何在重采样过程中会丢失高频信息。图a中展示了一个沿着X轴的剖面。粗黑线为Nyquist频率下的X分量，在每个离散网格点处的值用红色圆圈表示。为了对配准方式进行转换，需要在相隔的网格节点中间（即红色三角形）进行重采样。显然，红色三角形的值始终为0，因而Nyquist频率所对应的高频信息在重采样的过程中丢失了。而对于低频信息而言（图中细线），蓝色圆圈为原始数据，蓝色三角为重采样时的采样点，因而低频信息得到了有效保留。图b给出了将像素配准转换为网格配准时重采样的转换函数，其显示了在重采样过程中，低频部分会保留，而高频部分振幅会被衰减。</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://docs.generic-mapping-tools.org/latest/_images/GMT_grid2pix.png"><img alt="https://docs.generic-mapping-tools.org/latest/_images/GMT_grid2pix.png" src="https://docs.generic-mapping-tools.org/latest/_images/GMT_grid2pix.png" style="width: 75%;" /></a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../format/" class="btn btn-neutral float-left" title="网格文件格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../boundary-condition/" class="btn btn-neutral float-right" title="边界条件" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

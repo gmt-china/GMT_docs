@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS参数 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="TIME参数" href="../time/" />
+    <link rel="prev" title="PROJ参数" href="../proj/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">PROJ参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">其他参数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">配置参数</a> &raquo;</li>
+      <li>PS参数</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/conf/ps.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ps">
+<h1>PS参数<a class="headerlink" href="#ps" title="Permalink to this heading"></a></h1>
+<p>本节列出所有与PS相关的参数，参数的默认值在中括号内列出。</p>
+<dl class="glossary">
+<dt id="term-PS_CHAR_ENCODING"><strong>PS_CHAR_ENCODING</strong><a class="headerlink" href="#term-PS_CHAR_ENCODING" title="Permalink to this term"></a></dt><dd><p>设置文本字符集编码方式 [<strong>ISOLatin1+</strong>]</p>
+<p>GMT使用的字符集编码方式。可选值包括：</p>
+<ul class="simple">
+<li><p><strong>Standard</strong></p></li>
+<li><p><strong>Standard+</strong></p></li>
+<li><p><strong>ISOLatin1</strong></p></li>
+<li><p><strong>ISOLatin1+</strong></p></li>
+<li><p><strong>ISO-8859-</strong><em>x</em>（x取值为1-10或13-15）</p></li>
+</ul>
+<p>若安装GMT时使用SI单位制，则默认值为 <strong>ISOLatin1+</strong> 编码；否则使用 <strong>Standard+</strong> 编码。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>字符集信息是写在PS文件头中的，因而若需要临时修改字符集，则需要使用
+<strong>--PS_CHAR_ENCODING=</strong>=<em>encoding</em> 临时修改字符集，而不能使用
+gmt set 修改。</p>
+</div>
+</dd>
+<dt id="term-PS_COLOR_MODEL"><strong>PS_COLOR_MODEL</strong><a class="headerlink" href="#term-PS_COLOR_MODEL" title="Permalink to this term"></a></dt><dd><p>生成PS代码时颜色所使用的色彩模型 [<strong>rgb</strong>]</p>
+<p>可以取RGB、HSV、CMYK或GRAY。若设置为HSV，其不会影响绘图过程中使用RGB指定的颜色；若设置为GRAY，则所有的颜色都将使用YIQ方法转换成灰度。</p>
+</dd>
+<dt id="term-PS_COMMENTS"><strong>PS_COMMENTS</strong><a class="headerlink" href="#term-PS_COMMENTS" title="Permalink to this term"></a></dt><dd><p>生成的PS代码中是否包含注释信息 [<strong>false</strong>]</p>
+<p>若为 <strong>true</strong>，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，当你需要手动编辑PS文件时比较有用。默认情况下，其值为 <strong>false</strong>，即PS文件中不会包含注释，此时生成的PS文件更小。</p>
+</dd>
+<dt id="term-PS_CONVERT"><strong>PS_CONVERT</strong><a class="headerlink" href="#term-PS_CONVERT" title="Permalink to this term"></a></dt><dd><p>现在模式下在执行 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 命令时GMT会自动调用 <a class="reference internal" href="../../module/psconvert/"><span class="doc">psconvert</span></a>
+生成用户指定格式的图片。该选项用于控制调用 <strong>psconvert</strong> 时的默认参数，多个参数之间以逗号分隔 [<strong>A</strong>]</p>
+</dd>
+<dt id="term-PS_IMAGE_COMPRESS"><strong>PS_IMAGE_COMPRESS</strong><a class="headerlink" href="#term-PS_IMAGE_COMPRESS" title="Permalink to this term"></a></dt><dd><p>设置PS中的图像压缩算法 [<strong>deflate,5</strong>]</p>
+<p>可以取值为：</p>
+<ul class="simple">
+<li><p><strong>rle</strong>：Run-Length Encoding scheme</p></li>
+<li><p><strong>lzw</strong>：Lempel-Ziv-Welch compression</p></li>
+<li><p><strong>deflate</strong>[,<em>level</em>]：DEFLATE 压缩，<em>level</em> 可以取1到9</p></li>
+<li><p><strong>none</strong>：不压缩，相当于 <strong>deflate,5</strong></p></li>
+</ul>
+</dd>
+<dt id="term-PS_LINE_CAP"><strong>PS_LINE_CAP</strong><a class="headerlink" href="#term-PS_LINE_CAP" title="Permalink to this term"></a></dt><dd><p>控制线段的<strong>端点</strong>的绘制方式 [<strong>butt</strong>]</p>
+<p>可以取如下值：</p>
+<ul class="simple">
+<li><p><strong>butt</strong>：不对端点做特殊处理，即端点是矩形（默认值）</p></li>
+<li><p><strong>round</strong>：端点处为直径与线宽相等的半圆弧</p></li>
+<li><p><strong>square</strong>：端点处为边长与线宽相等的半个正方形</p></li>
+</ul>
+<p>下图展示了该参数取不同值时线段端点的区别。需要注意，图中三条线段的长度是相同的，但因参数设置不同而导致线段看上去长度不同。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/6c07541765a9242d3abf3ccbfa99858d/aa216622f7175289d73aa65f21f252aa.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-aa216622f7175289d73aa65f21f252aa">
+<a class="reference internal image-reference" href="../../_images/aa216622f7175289d73aa65f21f252aa.png"><img alt="../../_images/aa216622f7175289d73aa65f21f252aa.png" src="../../_images/aa216622f7175289d73aa65f21f252aa.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>PS_LINE_CAP</strong> 控制线段端点绘图效果</span><a class="headerlink" href="#gmtplot-aa216622f7175289d73aa65f21f252aa" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</dd>
+<dt id="term-PS_LINE_JOIN"><strong>PS_LINE_JOIN</strong><a class="headerlink" href="#term-PS_LINE_JOIN" title="Permalink to this term"></a></dt><dd><p>控制线段拐点的绘制方式 [<strong>miter</strong>]</p>
+<p>可以取 <strong>miter</strong>、<strong>round</strong>、<strong>bevel</strong>。</p>
+<p>下图展示了 <strong>PS_LINE_JOIN</strong> 取不同值时线段拐点的绘图效果。当线宽较小时，几乎看不出来区别，这里为了显示的效果，将线宽设置为 20p。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/588586a07fda2fb967cb663f14b399aa/1c643e9989cfaf7179984f3c718cf399.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-1c643e9989cfaf7179984f3c718cf399">
+<a class="reference internal image-reference" href="../../_images/1c643e9989cfaf7179984f3c718cf399.png"><img alt="../../_images/1c643e9989cfaf7179984f3c718cf399.png" src="../../_images/1c643e9989cfaf7179984f3c718cf399.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>PS_LINE_JOIN</strong> 控制线段拐点绘制效果</span><a class="headerlink" href="#gmtplot-1c643e9989cfaf7179984f3c718cf399" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</dd>
+<dt id="term-PS_MITER_LIMIT"><strong>PS_MITER_LIMIT</strong><a class="headerlink" href="#term-PS_MITER_LIMIT" title="Permalink to this term"></a></dt><dd><p>设置 <a class="reference internal" href="#term-PS_LINE_JOIN"><span class="xref std std-term">PS_LINE_JOIN</span></a> 取 <strong>miter</strong> 时拐点的角度阈值 [35]</p>
+<p>当两个相交的线段之间的夹角小于该阈值时，则该拐角会被bevelled而不是被mitered。该参数的取值范围为0到180。若设置为0，则使用PS的默认值（11度），若设置为180，则所有拐角都会被beveled。</p>
+</dd>
+<dt id="term-PS_MEDIA"><strong>PS_MEDIA</strong><a class="headerlink" href="#term-PS_MEDIA" title="Permalink to this term"></a></dt><dd><p>设置当前纸张的尺寸 [a4]</p>
+<p>下表列出了GMT预定义的若干种纸张尺寸及其对应的宽度和高度（单位为points）。</p>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">GMT预定义纸张大小</span><a class="headerlink" href="#id1" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Media</p></th>
+<th class="head"><p>width</p></th>
+<th class="head"><p>height</p></th>
+<th class="head"><p>Media</p></th>
+<th class="head"><p>width</p></th>
+<th class="head"><p>height</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A0</p></td>
+<td><p>2380</p></td>
+<td><p>3368</p></td>
+<td><p>archA</p></td>
+<td><p>648</p></td>
+<td><p>864</p></td>
+</tr>
+<tr class="row-odd"><td><p>A1</p></td>
+<td><p>1684</p></td>
+<td><p>2380</p></td>
+<td><p>archB</p></td>
+<td><p>864</p></td>
+<td><p>1296</p></td>
+</tr>
+<tr class="row-even"><td><p>A2</p></td>
+<td><p>1190</p></td>
+<td><p>1684</p></td>
+<td><p>archC</p></td>
+<td><p>1296</p></td>
+<td><p>1728</p></td>
+</tr>
+<tr class="row-odd"><td><p>A3</p></td>
+<td><p>842</p></td>
+<td><p>1190</p></td>
+<td><p>archD</p></td>
+<td><p>1728</p></td>
+<td><p>2592</p></td>
+</tr>
+<tr class="row-even"><td><p>A4</p></td>
+<td><p>595</p></td>
+<td><p>842</p></td>
+<td><p>archE</p></td>
+<td><p>2592</p></td>
+<td><p>3456</p></td>
+</tr>
+<tr class="row-odd"><td><p>A5</p></td>
+<td><p>421</p></td>
+<td><p>595</p></td>
+<td><p>flsa</p></td>
+<td><p>612</p></td>
+<td><p>936</p></td>
+</tr>
+<tr class="row-even"><td><p>A6</p></td>
+<td><p>297</p></td>
+<td><p>421</p></td>
+<td><p>halfletter</p></td>
+<td><p>396</p></td>
+<td><p>612</p></td>
+</tr>
+<tr class="row-odd"><td><p>A7</p></td>
+<td><p>210</p></td>
+<td><p>297</p></td>
+<td><p>statement</p></td>
+<td><p>396</p></td>
+<td><p>612</p></td>
+</tr>
+<tr class="row-even"><td><p>A8</p></td>
+<td><p>148</p></td>
+<td><p>210</p></td>
+<td><p>note</p></td>
+<td><p>540</p></td>
+<td><p>720</p></td>
+</tr>
+<tr class="row-odd"><td><p>A9</p></td>
+<td><p>105</p></td>
+<td><p>148</p></td>
+<td><p>letter</p></td>
+<td><p>612</p></td>
+<td><p>792</p></td>
+</tr>
+<tr class="row-even"><td><p>A10</p></td>
+<td><p>74</p></td>
+<td><p>105</p></td>
+<td><p>legal</p></td>
+<td><p>612</p></td>
+<td><p>1008</p></td>
+</tr>
+<tr class="row-odd"><td><p>B0</p></td>
+<td><p>2836</p></td>
+<td><p>4008</p></td>
+<td><p>11x17</p></td>
+<td><p>792</p></td>
+<td><p>1224</p></td>
+</tr>
+<tr class="row-even"><td><p>B1</p></td>
+<td><p>2004</p></td>
+<td><p>2836</p></td>
+<td><p>tabloid</p></td>
+<td><p>792</p></td>
+<td><p>1224</p></td>
+</tr>
+<tr class="row-odd"><td><p>B2</p></td>
+<td><p>1418</p></td>
+<td><p>2004</p></td>
+<td><p>ledger</p></td>
+<td><p>1224</p></td>
+<td><p>792</p></td>
+</tr>
+<tr class="row-even"><td><p>B3</p></td>
+<td><p>1002</p></td>
+<td><p>1418</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>B4</p></td>
+<td><p>709</p></td>
+<td><p>1002</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>B5</p></td>
+<td><p>501</p></td>
+<td><p>709</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>用户还可以用 <em>W</em><strong>x</strong><em>H</em> 的格式完全自定义纸张尺寸，其中 <em>W</em> 和 <em>H</em> 分别为纸张的宽度和高度。比如 12cx12c 表示纸张为宽度和高度都为12厘米。</p>
+<p>若某些尺寸经常使用，用户还可以自定义纸张格式，只需要新建或编辑
+<code class="file docutils literal notranslate"><span class="pre">~/.gmt/gmt_custom_media.conf</span></code> 即可，文件格式也很简单:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 纸张格式名  宽度  高度</span>
+paper1        <span class="m">2000</span>  <span class="m">3000</span>
+paper2        <span class="m">3000</span>  <span class="m">0</span>
+</pre></div>
+</div>
+<p>纸张高度为0，表示纸张可以向上无限延展。</p>
+</dd>
+<dt id="term-PS_PAGE_COLOR"><strong>PS_PAGE_COLOR</strong><a class="headerlink" href="#term-PS_PAGE_COLOR" title="Permalink to this term"></a></dt><dd><p>设置纸张的背景色 [<strong>white</strong>]</p>
+</dd>
+<dt id="term-PS_PAGE_ORIENTATION"><strong>PS_PAGE_ORIENTATION</strong><a class="headerlink" href="#term-PS_PAGE_ORIENTATION" title="Permalink to this term"></a></dt><dd><p>设置纸张方向 [<strong>landscape</strong>]</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>仅GMT经典模式下有效，现代模式下纸张始终是 portrait 模式。</p>
+</div>
+<p>可以取 <strong>portrait</strong> 或 <strong>landscape</strong>。</p>
+</dd>
+<dt id="term-PS_SCALE_X"><strong>PS_SCALE_X</strong><a class="headerlink" href="#term-PS_SCALE_X" title="Permalink to this term"></a></dt><dd><p>绘图时X方向的全局比例 [1.0]</p>
+<p>用于实现图像的整体缩放。</p>
+</dd>
+<dt id="term-PS_SCALE_Y"><strong>PS_SCALE_Y</strong><a class="headerlink" href="#term-PS_SCALE_Y" title="Permalink to this term"></a></dt><dd><p>绘图时Y方向的全局比例 [1.0]</p>
+<p>用于实现图像的整体缩放。</p>
+</dd>
+<dt id="term-PS_TRANSPARENCY"><strong>PS_TRANSPARENCY</strong><a class="headerlink" href="#term-PS_TRANSPARENCY" title="Permalink to this term"></a></dt><dd><p>设置生成PS文件所使用的透明模式 [Normal]</p>
+<p>可取值包括Color、ColorBurn、ColorDodge、Darken、Difference、Exclusion、HardLight、Hue、Lighten、Luminosity、Multiply、Normal、Overlay、Saturation、SoftLight、Screen</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../proj/" class="btn btn-neutral float-left" title="PROJ参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../time/" class="btn btn-neutral float-right" title="TIME参数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

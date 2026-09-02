@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16.5.1 PostScript &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/appendix/low-level/postscript.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex/" />
+    <link rel="search" title="搜索" href="../../../search/" />
+    <link rel="next" title="16.5.2 命令行历史" href="../cmd-history/" />
+    <link rel="prev" title="16.5 GMT底层原理" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">15 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">16 附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../style/">16.1 风格指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cmd/">16.2 命令行及脚本基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../colors/">16.3 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../patterns/">16.4 GMT预定义填充图案</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../">16.5 GMT底层原理</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">16.5.1 PostScript</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ps">PS是什么</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">PS的优点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">PS阅读器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">将PS转换为其他格式</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cmd-history/">16.5.2 命令行历史</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculate-distance/">16.6 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../variables/">16.7 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../special-dirs/">16.8 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contour-annot/">16.9 等值线标注和“线条标注”</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../">首页</a> &raquo;</li>
+        
+          <li><a href="../../">16 附录</a> &raquo;</li>
+        
+          <li><a href="../">16.5 GMT底层原理</a> &raquo;</li>
+        
+      <li>16.5.1 PostScript</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/appendix/low-level/postscript.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="postscript">
+<span id="index-0"></span><h1>16.5.1 PostScript<a class="headerlink" href="#postscript" title="永久链接至标题">¶</a></h1>
+<p>GMT生成的图片为PS格式，全称是PostScript。这一节将简单介绍一下PS语言与PS格式。</p>
+<div class="section" id="ps">
+<h2>PS是什么<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h2>
+<p>PostScript是一种用于描述<strong>矢量图形</strong>的页面描述语言。简单的说，用PostScript
+语言写成的文件就是PS格式的图片，一般文件后缀用 <code class="docutils literal notranslate"><span class="pre">ps</span></code>，简称为PS文件。</p>
+<p>提到格式，很多人都会有畏惧感，总觉得格式是个很复杂的东西。其实，格式不过是一种定义，定义了将信息以何种方式保存到文件中，那些用于打开某种格式的软件，只不过恰好知道了格式的定义，并且根据定义将文件中的信息提取出来，然后呈现给用户，仅此而已。比如 <code class="docutils literal notranslate"><span class="pre">doc</span></code>，用MS Word可以打开，用WPS也可以打开，如果你愿意，你也可以自己读 <code class="docutils literal notranslate"><span class="pre">doc</span></code> 的格式定义，自己写代码读取 <code class="docutils literal notranslate"><span class="pre">doc</span></code> 格式的文件。</p>
+<p>下面教你怎样从零创建一个PS格式的文件，以消除对PS格式的陌生感。</p>
+<ol class="arabic">
+<li><p class="first">首先打开你最常用的一款<strong>文本编辑器</strong>（比如 <code class="docutils literal notranslate"><span class="pre">vim</span></code> 、 <code class="docutils literal notranslate"><span class="pre">gedit</span></code> 或 <code class="docutils literal notranslate"><span class="pre">notepad++</span></code> ），新建一个空白文件；</p>
+</li>
+<li><p class="first">将如下内容复制到该空白文件中:</p>
+<div class="highlight-postscript notranslate"><div class="highlight"><pre><span></span><span class="cp">%! PS-Adobe-3.0</span>
+<span class="nv">/Helvetica</span> <span class="nf">findfont</span> <span class="mf">20</span> <span class="nf">scalefont</span> <span class="nf">setfont</span>
+<span class="mf">150</span> <span class="mf">400</span> <span class="nf">moveto</span>
+<span class="s">(PostScript is not that hard!)</span> <span class="nf">show</span>
+
+<span class="nf">showpage</span>
+<span class="cs">%%Trailer</span>
+<span class="cs">%%EOF</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">将该文件以文件名 <code class="docutils literal notranslate"><span class="pre">simple.ps</span></code> 保存</p>
+</li>
+<li><p class="first">Linux下用命令 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">simple.ps</span></code> 查看该文件；Windows下应该直接双击就可以看到</p>
+</li>
+</ol>
+<p>解释一下这个文件:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">%!</span> <span class="pre">PS-Adobe-3.0</span></code> 表明该文件是PostScript格式，且是PS3.0版</li>
+<li><code class="docutils literal notranslate"><span class="pre">Helvetica</span></code> 是PS内置的一种字体，<code class="docutils literal notranslate"><span class="pre">findfont</span></code> 命令用于寻找、缩放、设置字体</li>
+<li><code class="docutils literal notranslate"><span class="pre">150</span> <span class="pre">400</span> <span class="pre">moveto</span></code> 将坐标原点移动到某位置</li>
+<li><code class="docutils literal notranslate"><span class="pre">(text)</span> <span class="pre">show</span></code> 用于显示文字</li>
+<li><code class="docutils literal notranslate"><span class="pre">showpage</span></code> 表示显示该页</li>
+</ul>
+<p>是不是很简单？GMT的绘图模块本质上就是生成一堆PS代码，只要把这些PS代码按照一定的规则保存到纯文本文件中，即可用PS阅读器查看绘图效果。</p>
+</div>
+<div class="section" id="id1">
+<h2>PS的优点<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GMT所有的绘图模块都只能生成PS代码，将这些PS代码保存到PS文件中即可完成绘图。</p>
+<p>不管当初GMT是以什么理由选择PS作为图像格式的，就今天来看，PS文件具有如下优势：</p>
+<ol class="arabic">
+<li><p class="first">矢量图形格式</p>
+<p>PS是矢量图形格式，即用点、直线或多边形等数学方程的几何元素来表示图像。因而可以任意旋转与缩放而不是出现图像失真。</p>
+</li>
+<li><p class="first">易于转换为其他格式</p>
+<p>GMT提供了 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 模块，可以很方便地将PS文件以任意精度转换为jpeg、png、eps、pdf等图片格式，以满足不同情形下的需求。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>PS阅读器<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>PS阅读器，或称PS解释器，是用于查看PS文件的软件。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ghostscript.com/">ghostscript</a></li>
+<li><a class="reference external" href="http://www.gsview.com/">gsview</a></li>
+<li><a class="reference external" href="https://wiki.gnome.org/Apps/Evince">evince</a></li>
+<li><a class="reference external" href="https://pwmt.org/projects/zathura/">zathura</a> (Linux only)</li>
+<li><a class="reference external" href="http://www.sumatrapdfreader.org/free-pdf-reader.html">SumatraPDF</a> (Windows only)</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>将PS转换为其他格式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>GMT提供了 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 模块，可以很方便地将PS文件以任意精度转换为jpeg、png、eps、pdf等图片格式，以满足不同情形下的需求。</p>
+<p>比如，将 PS 文件转化为 JPG 文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert test.ps
+</pre></div>
+</div>
+<p>转换为 JPG 格式的过程中对其进行裁剪并旋转:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -A -P test.ps
+</pre></div>
+</div>
+<p>转化为 PDF 格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tf -A -P test.ps
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cmd-history/" class="btn btn-neutral float-right" title="16.5.2 命令行历史" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral float-left" title="16.5 GMT底层原理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-w 选项 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script defer="defer" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-x 选项" href="../x/" />
+    <link rel="prev" title="-t 选项" href="../t/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../p/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../q/">-q 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-w 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">标准选项</a> &raquo;</li>
+      <li>-w 选项</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/option/w.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="w">
+<h1>-w 选项<a class="headerlink" href="#w" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a>, <a class="reference external" href="https://github.com/core-man">姚家园</a>, <a class="reference external" href="https://me.seisman.info/">田冬冬</a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p><strong>-w</strong> 选项用于将输入坐标转换为循环坐标，其语法为：</p>
+<blockquote>
+<div><p><strong>-wy</strong>|<strong>a</strong>|<strong>w</strong>|<strong>d</strong>|<strong>h</strong>|<strong>m</strong>|<strong>s</strong>|<strong>c</strong><em>period</em>[/<em>phase</em>][<strong>+c</strong><em>col</em>]</p>
+</div></blockquote>
+<p><strong>-w</strong> 选项默认将输入的 x 坐标转换为循环坐标。可以使用 <strong>+c</strong><em>col</em> 子选项选择其他输入列进行转换，<em>col</em> 的默认值为 0（第一列），即 x 坐标。可以使用 <a class="reference internal" href="../../module/spectrum1d/"><span class="doc">spectrum1d</span></a> 或者 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/grdfft.html" title="(在 GMT v6.2)"><span>grdfft</span></a> 等模块提供的标准谱分析工具来分析时间序列数据的周期，但也经常会在时域中分析各种周期性。为了进行此类时域分析，我们需要将时间序列的时间坐标转换为循环的时间坐标，以便进行多周期堆叠、网格化以及直方图展示等操作。将输入的 x、y 或者 z 坐标转换为循环坐标的公式为：</p>
+<div class="math notranslate nohighlight">
+\[t' = (t - \tau) \;\mathrm{mod}\; T,\]</div>
+<p>式中，<em>t</em> 为输入坐标，<span class="math notranslate nohighlight">\(\tau\)</span> 为相移（通常为 0），<em>T</em> 为生成循环坐标 <span class="math notranslate nohighlight">\(t'\)</span> 的周期，<span class="math notranslate nohighlight">\(\mathrm{mod}\)</span> 为取模运算。</p>
+<p>GMT 提供了很多规定单位的标准时间循环以及用于其他笛卡尔坐标的自定义循环。下表给出了每种循环的单位、周期以及相移。用户在使用时，只需指定相应的代码
+<strong>y</strong>、<strong>a</strong>、<strong>w</strong>、<strong>d</strong>、<strong>h</strong>、<strong>m</strong>、<strong>s</strong>、<strong>c</strong><em>period</em>[/<em>phase</em>]：</p>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">标准时间循环代码</span><a class="headerlink" href="#id1" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 41%" />
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>代码</strong></p></th>
+<th class="head"><p><strong>含义</strong>（<strong>单位</strong>）</p></th>
+<th class="head"><p><strong>周期</strong></p></th>
+<th class="head"><p><strong>相位</strong></p></th>
+<th class="head"><p><strong>范围</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>y</strong></p></td>
+<td><p>年循环（归一化）</p></td>
+<td><p>1 年</p></td>
+<td><p>0</p></td>
+<td><p>0–1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>a</strong></p></td>
+<td><p>年循环（月）</p></td>
+<td><p>1 年</p></td>
+<td><p>0</p></td>
+<td><p>0–12</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>w</strong></p></td>
+<td><p>周循环（天）</p></td>
+<td><p>1 周</p></td>
+<td><p>0</p></td>
+<td><p>0–7</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>d</strong></p></td>
+<td><p>天循环（小时）</p></td>
+<td><p>1 天</p></td>
+<td><p>0</p></td>
+<td><p>0–24</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>h</strong></p></td>
+<td><p>小时循环（分钟）</p></td>
+<td><p>1 小时</p></td>
+<td><p>0</p></td>
+<td><p>0–60</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>m</strong></p></td>
+<td><p>分钟循环（秒）</p></td>
+<td><p>1 分</p></td>
+<td><p>0</p></td>
+<td><p>0–60</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>s</strong></p></td>
+<td><p>秒循环（秒）</p></td>
+<td><p>1 秒</p></td>
+<td><p>0</p></td>
+<td><p>0–1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>c</strong></p></td>
+<td><p>自定义循环（归一化）</p></td>
+<td><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\tau\)</span></p></td>
+<td><p>0–1</p></td>
+</tr>
+</tbody>
+</table>
+<p>使用自定义循环 <strong>c</strong> 时，必须指定其周期（<em>period</em>），也可以指定相位（<em>phase</em>）[默认为 0]，周期和相位的单位与原始数据相同，<strong>-w</strong> 选项不能包含单位。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<ul class="simple">
+<li><p>使用年循环（<strong>a</strong> 代码）或周循环（<strong>w</strong> 代码）时，横轴为时间轴。因此，可以使用与月份和工作日相关的配置参数，如 <a class="reference internal" href="../../conf/misc/#term-GMT_LANGUAGE"><span class="xref std std-term">GMT_LANGUAGE</span></a>、<a class="reference internal" href="../../conf/format/#term-FORMAT_TIME_PRIMARY_MAP"><span class="xref std std-term">FORMAT_TIME_PRIMARY_MAP</span></a> 以及 <a class="reference internal" href="../../conf/time/#term-TIME_WEEK_START"><span class="xref std std-term">TIME_WEEK_START</span></a></p></li>
+<li><p>周循环（<strong>w</strong> 代码）中范围为 0-1 的坐标代表一周的第一天（即星期一），但可以通过 <a class="reference internal" href="../../conf/time/#term-TIME_WEEK_START"><span class="xref std std-term">TIME_WEEK_START</span></a> 进行修改</p></li>
+<li><p>使用 <strong>-w</strong> 选项时，除非已经单独设置，否则 GMT 会自动设置 <strong>-f</strong> 选项来表明使用的是绝对时间</p></li>
+</ul>
+</div>
+<p>下面将通过密西西比河在 1930–1940 年期间的日流量来演示 <strong>-w</strong> 选项的使用方法。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_cycle_1 pdf,png
+    gmt plot @mississippi.txt -JX15cT/7c -W0.25p,red -Bxaf -Byaf+l<span class="s2">&quot;10@+3@+ m@+3@+/s&quot;</span> <span class="se">\</span>
+        -BWSrt+t<span class="s2">&quot;Mississippi river daily discharge&quot;</span> -i0,1+s1e-3
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/w-gmtplot-0.png"><img alt="../../_images/w-gmtplot-0.png" src="../../_images/w-gmtplot-0.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">密西西比河日流量时间序列图</span><a class="headerlink" href="#id2" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>上图绘制了密西西比河日流量的时间序列，可以看出有明显的周年特征。因此，可以使用归一化年坐标（<strong>-wy</strong>）将所有年份的日流量绘制在单个归一化年份中（范围为 0–1）。下图中，常规年和闰年都按自身长度进行了归一化：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_cycle_2 pdf,png
+    gmt plot @mississippi.txt -R0/1/0/50 -JX15c/7c -W0.25p,red -Bxaf -Byaf+l<span class="s2">&quot;10@+3@+ m@+3@+/s&quot;</span> <span class="se">\</span>
+        -BWSrt+t<span class="s2">&quot;Mississippi river annual discharge&quot;</span> -i0,1+s1e-3 -wy
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/w-gmtplot-1.png"><img alt="../../_images/w-gmtplot-1.png" src="../../_images/w-gmtplot-1.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">归一化年份下的密西西比河日流量时间序列图</span><a class="headerlink" href="#id3" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>如果想看不同月份的流量变化，则需要将同一月份的数据归入同一区间（每个区间的长度不同，即 28-31 天）。这种情况可以使用 <strong>-wa</strong> 选项，它会归一化每月的数据，并加上整数的月份编号。以三月份为例：该选项会将所有年份的三月份数据的 x 坐标（以三月的起点起算）按三月份的时间长度归一化，然后再加 2（三月份的编号），最终所有年份的三月份数据的 x 坐标的范围便为 2.00000-2.99999…。这样一来，我们便能很容易地绘制月流量直方图：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_cycle_3 pdf,png
+    gmt histogram @mississippi.txt -R-3/9/0/8 -JX15c/7c -T1 -Gred -W1p -Bxaf -Byaf+l<span class="s2">&quot;10@+6@+ m@+3@+/s&quot;</span> <span class="se">\</span>
+        -BWSrt+t<span class="s2">&quot;Average monthly discharge&quot;</span> -Z0+w -i0,1+s1e-6 -wa
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/w-gmtplot-2.png"><img alt="../../_images/w-gmtplot-2.png" src="../../_images/w-gmtplot-2.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">10 年间的密西西比河月流量（以 9 月为起点）</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>将 <a class="reference internal" href="../../module/histogram/"><span class="doc">histogram</span></a> 模块的  <strong>-T1</strong> 参数改为 <strong>-T3</strong>，则可以绘制类似的季度流量直方图。</p>
+<p>通过设置 <strong>+c</strong><em>col</em> 子选项，<strong>-w</strong> 选项同样可以应用于 <em>y</em> 坐标或者任意坐标。下例读入数据时，将时间设为  <em>y</em> 坐标。两个子图与上面的两个例子类似，但横纵坐标相反。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_cycle_4 pdf,png
+    gmt subplot begin 1x2 -Fs8c/10c -BWSrt -T<span class="s2">&quot;Mississippi river annual discharge&quot;</span> -A+jTR
+    gmt plot @mississippi.txt -i1+s1e-3,0 -R0/50/0/1 -W0.25p,blue -Byaf+l<span class="s2">&quot;Normalized year&quot;</span> <span class="se">\</span>
+        -Bxaf+l<span class="s2">&quot;10@+3@+ m@+3@+/s&quot;</span> -wy+c1 -c
+    gmt histogram @mississippi.txt -R-3/9/0/8 -T1 -Gblue -W1p -Bxaf -Byaf+l<span class="s2">&quot;10@+6@+ m@+3@+/s&quot;</span> -Z0+w <span class="se">\</span>
+        -i0,1+s1e-6 -A -wa -c --FORMAT_TIME_PRIMARY_MAP<span class="o">=</span>a
+    gmt subplot end
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/w-gmtplot-3.png"><img alt="../../_images/w-gmtplot-3.png" src="../../_images/w-gmtplot-3.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text">a）归一化后一年内的密西西比河日流量，b）10 年的密西西比河月流量，以 9 月为起点</span><a class="headerlink" href="#id5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p><strong>-w</strong> 选项为 GMT 全局选项，因而可以在所有可以读取表数据的模块中使用该选项。例如，下例使用 <a class="reference internal" href="../../module/xyz2grd/"><span class="doc">xyz2grd</span></a> 模块将密西西比河日流量数据转换成网格文件，然后使用 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a> 模块绘图（使用默认 CPT，即 turbo）。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_cycle_5 pdf,png
+    gmt xyz2grd @mississippi.txt -i0,1+s1e-3,1+s1e-3 -wy -R0/1/0/50 -I50+n -r -Gtmp.grd
+    gmt grdimage tmp.grd -JX15c/8c -BWSen -Bxaf+l<span class="s2">&quot;Normalized year&quot;</span> -Byaf+l<span class="s2">&quot;Discharge (10@+3@+ m@+3@+/s)&quot;</span>
+    gmt colorbar -DJRM -Baf
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/w-gmtplot-4.png"><img alt="../../_images/w-gmtplot-4.png" src="../../_images/w-gmtplot-4.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">归一化年份下的密西西比河日流量</span><a class="headerlink" href="#id6" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>最后一个示例将展示周循环和日循环的使用。使用的数据是 Verrazano-Narrows 大桥的 3 年的车流量数据（单位是<strong>辆/小时</strong>）。下例的四张子图分别表示原始车流量时间序列、周流量时间序列、周流量直方图以及小时流量直方图：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+gmt begin GMT_cycle_6 pdf,png
+  gmt <span class="nb">set</span> TIME_WEEK_START Monday
+  gmt subplot begin 2x2 -Fs15c/8c -M14p/6p -A <span class="se">\</span>
+    -T<span class="s2">&quot;Verrazzano-Narrows Bridge @%34%\337@%% Brooklyn Traffic [2018-2020]&quot;</span> -BWSrt
+    <span class="c1"># Raw time-series</span>
+    gmt plot @NY_traffic.txt -Wfaint,red -By+l<span class="s2">&quot;Vehicles/hour&quot;</span> -gx21600 -c
+    <span class="c1"># Weekly wrapped time-series</span>
+    gmt plot @NY_traffic.txt -R0/7/0/17000 -Wfaint,red -ww -gx0.25 -c
+    <span class="c1"># Weekly histogram normalized for number of hours for a weekday in the 3-year data</span>
+    <span class="nv">n_week_hours</span><span class="o">=</span><span class="k">$(</span>gmt convert @NY_traffic.txt -ww <span class="p">|</span> gmt <span class="k">select</span> -Z0/0.999+c0 <span class="p">|</span> gmt info -Fi -o2<span class="k">)</span>
+    gmt histogram @NY_traffic.txt -R0/7/2000/4000 -Wthick -Gred -T1 -Z0+w -By+l<span class="s2">&quot;Vehicles/hour&quot;</span> <span class="se">\</span>
+        -i0,1+d<span class="si">${</span><span class="nv">n_week_hours</span><span class="si">}</span> -ww -c
+    <span class="c1"># Daily histogram normalized for number of days in the 3-year data</span>
+    <span class="nv">n_mondays</span><span class="o">=</span><span class="k">$(</span>gmt convert @NY_traffic.txt -wd <span class="p">|</span> gmt <span class="k">select</span> -Z-0.5/0.5+c0 <span class="p">|</span> gmt info -Fi -o2<span class="k">)</span>
+    gmt histogram @NY_traffic.txt -R0/24/0/8000 -Wthick -Gred -T1 -Z0+w -i0,1+d<span class="si">${</span><span class="nv">n_mondays</span><span class="si">}</span> -wd -c
+  gmt subplot end
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/w-gmtplot-5.png"><img alt="../../_images/w-gmtplot-5.png" src="../../_images/w-gmtplot-5.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-text">（a）Verrazano-Narrows 大桥原始车流量时间序列；（b）周流量时间序列；（c）周流量直方图；（d）小时流量直方图</span><a class="headerlink" href="#id7" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>上图中，（a）图绘制了三年期间的车流量时间序列。图中一些需要注意的点有：Covid-19 导致了 2020 年 3 月中旬车流量的急剧下降；某些时间段存在数据缺失；2018 年 5 月可能出现了一个尖峰。使用 <strong>-g</strong> 选项以避免绘制数据缺失超过 6 小时的时窗。</p>
+<p>（b）图绘制了周车流量时间序列（<strong>-ww</strong>）。可以看出，工作日存在明显的早晚高峰，周末与工作日的特征则有所不同。图（a）中的尖峰来自某个异常的周四和周日，这两天的数据可能有问题。同样，使用 <strong>-g</strong> 选项以避免绘制数据缺失超过 6 小时的时窗。</p>
+<p>（c）图绘制了车周流量直方图。可以看出，车流量在周中缓慢增加，在周末下降。绘图脚本计算了数据中属于第一个工作日（<strong>-Z0/0.999+c0</strong>）的所有小时数，用于归一化车流量数据（<strong>+d${n_week_hours}</strong>），使最终单位为<strong>辆/小时</strong>。</p>
+<p>（d）图绘制了小时车流量直方图（<strong>-wd</strong>）。绘图脚本计算了数据中属于第一个小时（<strong>-Z-0.5/0.5+c0</strong>）的数目（即天数），用于归一化车流量数据（<strong>+d${n_mondays}</strong>），使最终单位为<strong>辆/小时</strong>。</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../t/" class="btn btn-neutral float-left" title="-t 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../x/" class="btn btn-neutral float-right" title="-x 选项" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

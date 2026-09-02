@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>填充 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="文字" href="../text/" />
+    <link rel="prev" title="画笔" href="../pen/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">基础知识</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../canvas/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">填充</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">填充颜色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">填充图案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">小练习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">附录: GMT预定义填充图案</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/">LaTeX 表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">基础知识</a> &raquo;</li>
+      <li>填充</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/fill.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="index-0">
+<span id="id1"></span><h1>填充<a class="headerlink" href="#index-0" title="永久链接至标题"></a></h1>
+<p>用画笔绘制了圆形或多边形之后，还可以为其填充颜色。在GMT模块的语法介绍中，一般用
+<em>fill</em> 表示需要指定填充属性，读者在见到 <em>fill</em> 时应自动联想到本节介绍的内容。</p>
+<p>填充 <em>fill</em> 有两种方式/形式：填充颜色和填充图案。</p>
+<p>最常见的情况是使用 <strong>plot</strong> 模块绘制一个多边形区域或一个符号，然后使用
+<strong>-G</strong><em>fill</em> 选项为其填充颜色。为了方便描述，这一节以 <strong>-G</strong><em>fill</em> 为例。</p>
+<section id="id2">
+<h2>填充颜色<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>给多边形或符号填充颜色很简单，直接用 <strong>-G</strong><em>color</em> 即可。颜色在 <a class="reference internal" href="../color/"><span class="doc">颜色</span></a> 一节已经介绍过了。比如 <strong>-Gred</strong> 表示填充色为红色，
+<strong>-G230/200/0</strong> 表示填充色为 <strong>230/200/0</strong>。</p>
+</section>
+<section id="id3">
+<h2>填充图案<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>除了可以填充颜色之外，还可以使用填充图案（pattern）。比如地质图里经常会给不同区域填充不同的图案以区分不同的地质结构。其语法为：
+<strong>-GP</strong>|<strong>p</strong><em>pattern</em>[<strong>+b</strong><em>color</em>][<strong>+f</strong><em>color</em>][<strong>+r</strong><em>dpi</em>]</p>
+<p><em>pattern</em> 有两种取法：</p>
+<ul class="simple">
+<li><p>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="#gmt-patterns"><span class="std std-ref">GMT预定义填充图案</span></a></p></li>
+<li><p>取文件名，表示使用一个1、8或24位Sun光栅文件作为位图图案</p></li>
+</ul>
+<p><strong>+r</strong><em>dpi</em> 设置了用于填充的位图图案的分辨率。<em>dpi</em> 越大，则填充区域内位图重复的次数越多。<em>dpi</em> 的默认值为1200。</p>
+<p>若使用 <strong>-GP</strong> 而不是 <strong>-Gp</strong>，则图案会发生位反转，即白色区域变成黑色，黑色区域变成白色（仅对1位位图或GMT预定义位图图案有效）。</p>
+<p>对于GMT预定义的图案以及用户自定义的1位位图来说，可以用 <strong>+b</strong><em>color</em> 和 <strong>+f</strong><em>color</em>
+分别设置图案的前景色和背景色，以分别替换默认的黑色和白色像素点。若只给 <strong>+b</strong> 和 <strong>+f</strong> 而不指定颜色，则视为前景色或背景色为透明。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<ol class="arabic simple">
+<li><p>使用的光栅图片必须小于146x146像素；若要使用更大的图像，需要使用 <a class="reference internal" href="../../module/image/"><span class="doc">image</span></a> 模块</p></li>
+<li><p>默认只能使用Sun光栅文件。若GMT在编译时链接了GDAL，则也可以使用其它格式的图片作为填充图案</p></li>
+<li><p>图案填充是通过使用多边形做路径裁剪实现的。复杂的裁剪路径会需要更多的内存，因而可能导致某些PS解释器由于内存不足而退出。在这种情况下，建议使用灰度填充区域</p></li>
+</ol>
+</div>
+</section>
+<section id="id4">
+<h2>小练习<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>下面使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块在底图中心绘制了一个直径为4厘米的圆，并填充颜色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc4c -Gfill -pdf <span class="nb">test</span>
+</pre></div>
+</div>
+<p>请尝试将命令中的 <strong>-G</strong><em>fill</em> 中的 <em>fill</em> 修改为以下不同的值并查看效果以理解这一节的内容：</p>
+<ul class="simple">
+<li><p><strong>-G128</strong></p></li>
+<li><p><strong>-G127/255/0</strong></p></li>
+<li><p><strong>-G#00ff00</strong></p></li>
+<li><p><strong>-G25-0.86-0.82</strong></p></li>
+<li><p><strong>-GDarkOliveGreen1</strong></p></li>
+<li><p><strong>-Gp7+r300</strong></p></li>
+<li><p><strong>-Gp12+r300</strong></p></li>
+<li><p><strong>-Gp7+r1000</strong></p></li>
+<li><p><strong>-GP7+r1000</strong></p></li>
+<li><p><strong>-Gp7+bred+r300</strong></p></li>
+<li><p><strong>-Gp7+bred+f-+r300</strong></p></li>
+</ul>
+</section>
+<section id="gmt">
+<span id="gmt-patterns"></span><h2>附录: GMT预定义填充图案<a class="headerlink" href="#gmt" title="永久链接至标题"></a></h2>
+<p>下图列出了GMT中预定义的90种位图图案（右键查看大图并放大才能看到差异），所有图案都是使用默认的黑白色在 <em>dpi</em>=300的环境下生成的。每张小图中左半部分使用
+<strong>-Gp</strong> 绘制，右半部分使用 <strong>-GP</strong> 绘制。</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/GMT_patterns.png"><img alt="../../_images/GMT_patterns.png" src="../../_images/GMT_patterns.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">GMT内置位图图案</span><a class="headerlink" href="#id5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p><strong>下载：</strong>
+<a class="reference download internal" download="" href="../../_downloads/ca7db2195d4b03494effd01f675fdd9f/GMT_patterns.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF</span> <span class="pre">格式</span></code></a> |
+<a class="reference download internal" download="" href="../../_downloads/2519804e351e6d1b9865e1f5fcde0083/GMT_patterns.png"><code class="xref download docutils literal notranslate"><span class="pre">PNG</span> <span class="pre">格式</span></code></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../pen/" class="btn btn-neutral float-left" title="画笔" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../text/" class="btn btn-neutral float-right" title="文字" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

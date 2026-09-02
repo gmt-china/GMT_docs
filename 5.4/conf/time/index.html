@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10.11 TIME参数 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/conf/time.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="10.12 其他参数" href="../misc/" />
+    <link rel="prev" title="10.10 PS参数" href="../ps/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.5 COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.6 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.7 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.11 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.12 其他参数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">10 配置参数</a> &raquo;</li>
+        
+      <li>10.11 TIME参数</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/conf/time.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="time">
+<h1>10.11 TIME参数<a class="headerlink" href="#time" title="永久链接至标题">¶</a></h1>
+<p>本节列出所有时间相关参数，参数的默认值在中括号内列出。</p>
+<dl class="docutils" id="time-epoch">
+<dt>TIME_EPOCH</dt>
+<dd><p class="first">指定所有相对时间的参考时刻 [1970-01-01T00:00:00]</p>
+<p class="last">其格式为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddT[hh:mm:ss]</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yyyy-Www-ddTT[hh:mm:ss]</span></code></p>
+</dd>
+</dl>
+<dl class="docutils" id="time-unit">
+<dt>TIME_UNIT</dt>
+<dd><p class="first">指定相对时间数据相对于参考时间的单位 [s]</p>
+<p>可以取：</p>
+<ol class="last arabic simple">
+<li>y：年；假定一年365.2425天；</li>
+<li>o：月；假定所有月是等长的；</li>
+<li>d：天；</li>
+<li>h：时；</li>
+<li>m：分钟；</li>
+<li>s：秒；</li>
+</ol>
+</dd>
+</dl>
+<dl class="docutils" id="time-system">
+<dt>TIME_SYSTEM</dt>
+<dd><p class="first"><code class="docutils literal notranslate"><span class="pre">TIME_EPOCH</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TIME_UNIT</span></code> 的合并版</p>
+<p>即指定 <code class="docutils literal notranslate"><span class="pre">TIME_SYSTEM</span></code> 相当于同时指定了 <code class="docutils literal notranslate"><span class="pre">TIME_EPOCH</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TIME_UNIT</span></code>。可取如下值：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">JD</span></code>：等效于-4713-11-25T12:00:00 d</li>
+<li><code class="docutils literal notranslate"><span class="pre">MJD</span></code>：等效于1858-11-17T00:00:00 d</li>
+<li><code class="docutils literal notranslate"><span class="pre">J2000</span></code>：等效于2000-01-01T12:00:00 d</li>
+<li><code class="docutils literal notranslate"><span class="pre">S1985</span></code>：等效于1985-01-01T00:00:00 s</li>
+<li><code class="docutils literal notranslate"><span class="pre">UNIX</span></code>： 等效于1970-01-01T00:00:00 s</li>
+<li><code class="docutils literal notranslate"><span class="pre">RD0001</span></code>：等效于0001-01-01T00:00:00 s</li>
+<li><code class="docutils literal notranslate"><span class="pre">RATA</span></code>：等效于0000-12-31T00:00:00 d</li>
+</ol>
+<p class="last">该参数并不存在于 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中，当指定该参数时，其会被自动转换为
+<code class="docutils literal notranslate"><span class="pre">TIME_EPOCH</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TIME_UNIT</span></code> 对应的值。</p>
+</dd>
+</dl>
+<dl class="docutils" id="time-week-start">
+<dt>TIME_WEEK_START</dt>
+<dd>指定周几是一周的第一天，可取值为Monday或Sunday [Monday]</dd>
+</dl>
+<dl class="docutils" id="time-y2k-offset-year">
+<dt>TIME_Y2K_OFFSET_YEAR</dt>
+<dd><p class="first">当用两位数字表示四位数字的年份时，TIME_Y2K_OFFSET_YEAR给定了100年序列的第一年 [1950]</p>
+<p class="last">比如，若TIME_Y2K_OFFSET_YEAR=1729，则数字29到99分别表示1729到1799，而数字00
+到28则表示1800到1828。默认值为1950，即00到99表示的年份范围为1950到2049。</p>
+</dd>
+</dl>
+<dl class="docutils" id="time-report">
+<dt>TIME_REPORT</dt>
+<dd><p class="first">控制GMT运行进度报告中是否显示时间戳 [<code class="docutils literal notranslate"><span class="pre">none</span></code>]</p>
+<p>可以取三个值：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">none</span></code> 不显示时间戳</li>
+<li><code class="docutils literal notranslate"><span class="pre">clock</span></code> 显示绝对时间</li>
+<li><code class="docutils literal notranslate"><span class="pre">elapsed</span></code> 显示自会话开始所经历的时间</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils" id="time-is-interval">
+<dt>TIME_IS_INTERVAL</dt>
+<dd><p class="first">控制输入的日期时间数据截断和微调 [<code class="docutils literal notranslate"><span class="pre">off</span></code>]</p>
+<p>其可以取如下三类值：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">off</span></code>：即不对输入数据做任何截断和调整</li>
+<li><code class="docutils literal notranslate"><span class="pre">+&lt;n&gt;&lt;u&gt;</span></code>：<code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 为某个整数，<code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code>为某个时间单位。其表示将输入的日期时间数据截断为 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;&lt;u&gt;</span></code> 的整数倍，并将其放在紧接着的时间间隔的中间</li>
+<li><code class="docutils literal notranslate"><span class="pre">-&lt;n&gt;&lt;u&gt;</span></code>：同样，但将该输入数据放在前一个时间间隔的中间</li>
+</ul>
+<p>时间间隔单位 <code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 可以取如下值：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code> 年</li>
+<li><code class="docutils literal notranslate"><span class="pre">o</span></code> 月</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code> 周</li>
+<li><code class="docutils literal notranslate"><span class="pre">h</span></code> 小时</li>
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> 分钟</li>
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code> 秒</li>
+</ul>
+<p>下面的示例在时间坐标系下绘制了三个红点，每个红点的输入数据都是:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1997</span>-03-05 <span class="m">1</span>
+</pre></div>
+</div>
+<p>图中展示了 <code class="docutils literal notranslate"><span class="pre">TIME_IS_INTERVAL</span></code> 取不同值时的效果：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">off</span></code>：<code class="docutils literal notranslate"><span class="pre">1997-03-05</span></code> 解释为 <code class="docutils literal notranslate"><span class="pre">1997-03-05T00:00:00.00.0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">+1o</span></code>：<code class="docutils literal notranslate"><span class="pre">1997-03-05</span></code> 解释为 <code class="docutils literal notranslate"><span class="pre">1997-03-15T12:00:00.0</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-1o</span></code>：<code class="docutils literal notranslate"><span class="pre">1997-03-05</span></code> 解释为 <code class="docutils literal notranslate"><span class="pre">1997-02-15T12:00:00.0</span></code></li>
+</ul>
+<p><a class="reference download internal" download="" href="../../_downloads/3c72ce3b0d27aca03aedca799a2680df/time-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="last figure align-center">
+<img alt="../../_images/time-gmtplot-0.png" src="../../_images/time-gmtplot-0.png" />
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="time-interval-fraction">
+<dt>TIME_INTERVAL_FRACTION</dt>
+<dd><p class="first">确定时间轴开头和结尾的部分时间间隔是否需要标注 [0.5]</p>
+<p class="last">对于时间轴而言，若开头/结尾部分的时间间隔大于指定的时间间隔的某个比例，则绘制开头/结尾部分的标注并将标注置于时间间隔的中间。</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../misc/" class="btn btn-neutral float-right" title="10.12 其他参数" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../ps/" class="btn btn-neutral float-left" title="10.10 PS参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

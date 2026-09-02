@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13.42 psconvert &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/psconvert.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="13.43 pscoupe" href="../pscoupe/" />
+    <link rel="prev" title="13.41 pscoast" href="../pscoast/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">13 模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">13.1 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.2 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">13.3 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.4 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.5 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.6 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.7 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.8 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.9 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.10 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.11 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">13.12 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.13 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.14 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2rgb/">13.15 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.16 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.17 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.18 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.19 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.20 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.21 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.22 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.23 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.24 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.25 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.26 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdraster/">13.27 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.28 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.29 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.30 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.31 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.32 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.33 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">13.34 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.35 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.36 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.37 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.38 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psbasemap/">13.39 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psclip/">13.40 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoast/">13.41 pscoast</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.42 psconvert</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.42.1 必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.42.2 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.42.3 其他</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faq">13.42.4 FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bugs">13.42.5 BUGS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoupe/">13.43 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pshistogram/">13.44 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psimage/">13.45 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pslegend/">13.46 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psmeca/">13.47 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pspolar/">13.48 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psrose/">13.49 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssac/">13.50 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psscale/">13.51 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssolar/">13.52 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psternary/">13.53 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pstext/">13.54 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psvelo/">13.55 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psxy/">13.56 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.57 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.58 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.59 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">13 模块手册</a> &raquo;</li>
+        
+      <li>13.42 psconvert</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/module/psconvert.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="psconvert">
+<span id="index-0"></span><h1>13.42 psconvert<a class="headerlink" href="#psconvert" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/psconvert.html" title="(在 GMT v5.4.6)"><span>psconvert</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将 GMT 生成的 PS/EPS 文件转换为其他图片格式</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">本模块原名为 <code class="docutils literal notranslate"><span class="pre">ps2raster</span></code> ，v5.2.1 版本起更名为 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code></p>
+</div>
+<p>该模块通过调用 GhostScript 将 PS/EPS 文件转换为其他图片格式，包括BMP、EPS、JPEG、PDF、PNG、PPM、SVG、TIFF 格式。</p>
+<div class="section" id="id1">
+<h2>13.42.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">psfiles</span></code></dt>
+<dd><p class="first">要转换格式的 PS 文件名</p>
+<p>默认情况下，转换后的文件与转换前的文件有相同的文件名，文件后缀由文件格式决定。</p>
+<p>如下命令会将PS文件转换成JPG格式:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert test.ps
+gmt psconvert test1.ps test2.ps map*.ps
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>13.42.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A[u][&lt;margins&gt;][-][+p&lt;paint&gt;][+p[&lt;pen&gt;]][+r][+s[m]|S&lt;width&gt;[&lt;u&gt;]/&lt;height&gt;[&lt;u&gt;]]</span></code></dt>
+<dd><p class="first">对输出的图片做裁边</p>
+<p>默认情况下，转换得到的图片的大小由PS文件的纸张尺寸决定。通常画图的时候是不会把一张A4纸画满的，所以在图片周围就会出现多余的白色部分。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项会对PS文件进行裁剪，仅保留其中有绘图的部分:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -A test.ps
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-Au</span></code> 会先将GMT的时间戳去掉再裁剪。</p>
+<p>默认的裁剪方式会将图片裁剪到尽可能小。如果想要图片周围有额外的白色区域，可以加上额外的边距 <code class="docutils literal notranslate"><span class="pre">&lt;margins&gt;</span></code> 。其中 <code class="docutils literal notranslate"><span class="pre">&lt;margins&gt;</span></code> 可以取：</p>
+<ol class="arabic simple">
+<li>一个数，四条边的额外边距相同，如 <code class="docutils literal notranslate"><span class="pre">-A0.5c</span></code></li>
+<li>两个数字，分别指定X和Y方向的额外边距，如 <code class="docutils literal notranslate"><span class="pre">-A0.5c/1c</span></code></li>
+<li>四个数字，分别指定左右下上四条边的边距，如 <code class="docutils literal notranslate"><span class="pre">-A0.5c/0.5c/0.5c/0.5c</span></code></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">-A+s</span></code> 可以指定最终图片的尺寸：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-A+s&lt;width&gt;</span></code> 指定最终生成的图片的宽度，高度自动决定。程序会对图片做插值以保证 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 的值</li>
+<li><code class="docutils literal notranslate"><span class="pre">-A+S&lt;scale&gt;</span></code> 指定图片的缩放比例</li>
+<li><code class="docutils literal notranslate"><span class="pre">-A+sm&lt;width&gt;/&lt;height&gt;</span></code> 设置图片所允许的最大尺寸。若原始图片的宽度不大于 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 则使用图片的原始尺寸， <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code> 同理。</li>
+</ul>
+<p>如下命令会生成一个宽为5厘米的图片:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -A+s5c test.ps
+</pre></div>
+</div>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-A+r</span></code> 使得在计算边界时使用round函数而不是ceil函数，这会对裁剪造成极其微小的区别，仅当要处理非常小的图片时才需要使用。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-A+g&lt;paint&gt;</span></code> 为BoundingBox指定填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-A+p&lt;pen&gt;</span></code> 为BoundingBox指定边框颜色，默认颜色为 <code class="docutils literal notranslate"><span class="pre">0.25p,black</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-A-</span></code> 覆盖 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项中自动设置的 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 值</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;gs_options&gt;</span></code></dt>
+<dd><p class="first">传递给 GhostScript 的选项</p>
+<p>该选项用于在调用 GhostScript 时传给 GhostScript 额外的选项，若要额外给
+GhostScript增加多个选项，可重复使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 命令。</p>
+<p>在Windows下，若PS文件中含中文，则可能需要使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项告诉ghostscript字体路径:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -C-sFONTPATH<span class="o">=</span>C:<span class="se">\W</span>indows<span class="se">\F</span>onts chinese.ps
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;outdir&gt;</span></code></dt>
+<dd><p class="first">设置输出目录</p>
+<p class="last">默认情况下，会在PS文件同一目录中生成其他图片文件，使用 <code class="docutils literal notranslate"><span class="pre">-D&lt;outdir&gt;</span></code> 选项可以指定输出目录， <code class="docutils literal notranslate"><span class="pre">-D.</span></code> 表示在当前目录输出。需注意，输出目录必须已存在，否则会报错。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;dpi&gt;</span></code></dt>
+<dd><p class="first">设置图片精度</p>
+<p>值越大，图片越清晰，文件也越大。PDF格式默认值为720，其他格式默认值为300，单位为dpi。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tj -E600 test.ps
+</pre></div>
+</div>
+<p>说明：</p>
+<ol class="last arabic simple">
+<li>EPS是矢量图片格式，-E选项对其无效</li>
+<li>PDF是矢量图片格式，-E选项对其中的pattern和字体有效</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;out_name&gt;</span></code></dt>
+<dd><p class="first">指定输出的文件名</p>
+<p>默认情况下，该命令会直接使用输入的PS文件名，并修改其后缀作为输出文件的文件名。比如 <code class="docutils literal notranslate"><span class="pre">test.ps</span></code> 转换出的图片则为 <code class="docutils literal notranslate"><span class="pre">test.jpg</span></code> 、 <code class="docutils literal notranslate"><span class="pre">test.png</span></code> 之类的。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项可强制指定输出文件名，文件后缀由输出的文件格式自动决定:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tf -Fout test.ps
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;ghost_path&gt;</span></code></dt>
+<dd><p class="first">指定GhostScript可执行文件的路径</p>
+<p><code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 底层调用了 GhostScript 来实现PS到其他格式的转换，因而成功转换的前提是必须能够找到 GhostScript 的可执行文件。 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项即用于显式指定
+ghostscript可执行文件的路径。</p>
+<p>说明：</p>
+<ol class="last arabic simple">
+<li>Linux下一般不需要设置ghostscript的路径，除非你自己重新编译了gs并安装到了非标准路径下</li>
+<li>Windows下，一般也不需要使用该选项，程序会自动从注册表里获取路径信息</li>
+<li>如果从注册表中获取路径失败，则必须指定 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项，例如 <code class="docutils literal notranslate"><span class="pre">-Gc:\programs\gs\gs9.02\bin\gswin64c</span></code></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I</span></code></dt>
+<dd>Enforce gray-shades by using ICC profiles.  GhostScript versions
+&gt;= 9.00 change gray-shades by using ICC profiles.  GhostScript 9.05
+and above provide the ‘-dUseFastColor=true’ option to prevent that
+and that is what <strong>psconvert</strong> does by default, unless option <strong>-I</strong> is
+set.  Note that for GhostScript &gt;= 9.00 and &lt; 9.05 the gray-shade
+shifting is applied to all but PDF format.  We have no solution to
+offer other than upgrade GhostScript.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;listfile&gt;</span></code></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">&lt;listfile&gt;</span></code> 中包含要转换的所有PS文件名</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-P</span></code></dt>
+<dd><p class="first">强制转换后的图片为Portrait模式。</p>
+<p class="last">若PS文件在绘图时使用了 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项，则psconvert的 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项无效；若PS文件在绘图时未使用 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项，则psconvert的 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项会将图片旋转90度。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q[g|t][1|2|4]</span></code></dt>
+<dd>Set the anti-aliasing options for <strong>g</strong>raphics or <strong>t</strong>ext.
+Append the size of the subsample box (1, 2, or 4) [4]. Default is no
+anti-aliasing (same as <em>bits</em> = 1).</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
+<dd>在执行ghostscript命令后，将具体的命令打印到标准错误流中，且保留转换过程中的所有临时文件。该选项主要用于调试。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Tb|e|E|f|F|j|g|G|m|s|t</span></code></dt>
+<dd><p class="first">指定要转换的图片格式。可以接如下值：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">b</span></code> ：BMP；</li>
+<li><code class="docutils literal notranslate"><span class="pre">e</span></code> ：EPS；</li>
+<li><code class="docutils literal notranslate"><span class="pre">E</span></code> ：带有PageSize命令的EPS；</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> ：PDF；</li>
+<li><code class="docutils literal notranslate"><span class="pre">F</span></code> ：多页PDF；</li>
+<li><code class="docutils literal notranslate"><span class="pre">j</span></code> ：JPEG（默认值）；</li>
+<li><code class="docutils literal notranslate"><span class="pre">g</span></code> ：PNG；</li>
+<li><code class="docutils literal notranslate"><span class="pre">G</span></code> ：透明PNG；</li>
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> ：PPM；</li>
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code> ：SVG；</li>
+<li><code class="docutils literal notranslate"><span class="pre">t</span></code> ：TIFF；</li>
+</ul>
+<p>说明：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">g</span></code> 和 <code class="docutils literal notranslate"><span class="pre">G</span></code> 的区别在于前者背景色为白色，后者背景色为透明；</li>
+<li>对于 <code class="docutils literal notranslate"><span class="pre">bjgt`</span> <span class="pre">格式可以在其后加</span> <span class="pre">``-</span></code> 将PS文件转换为灰度图；</li>
+<li>EPS格式可以与其他格式合在一起使用。比如 <code class="docutils literal notranslate"><span class="pre">-Tef</span></code> 会同时生成EPS和PDF文件。除此之外，该命令一次只能转换一种格式，比如 <code class="docutils literal notranslate"><span class="pre">-Tbf</span></code> 则只会生成PDF格式（即以 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项中的最后一个格式为准）</li>
+<li><code class="docutils literal notranslate"><span class="pre">-TF</span></code> 会将多个PS/PDF文件转换并合并成一个多页的PDF文件，需要使用
+<code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项指定输出的文件名</li>
+</ol>
+<p>转换为PDF格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tf test.ps
+</pre></div>
+</div>
+<p>转换为JPG格式的灰度图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -Tj test.ps
+</pre></div>
+</div>
+<p>利用一堆PS文件生成一个多页PDF:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -TF -Fout.pdf *.ps
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W</span></code></dt>
+<dd>见官方文档</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
+<dd>转换完成后删除输入的PS文件。若转换失败，输入的PS文件不会被删除。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>13.42.3 其他<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>转换为PDF、PNG时使用DEFALTE压缩；转换为TIFF时使用LZW压缩；</li>
+<li>对于小dpi的图件而言，可以使用 <code class="docutils literal notranslate"><span class="pre">-Qt4</span> <span class="pre">-Qg4</span></code> 使得文字和线条看上去更加尖锐；</li>
+<li>psconvert还可以用于其他命令生成的PS文件；</li>
+</ol>
+</div>
+<div class="section" id="faq">
+<h2>13.42.4 FAQ<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">错误信息:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GMT PS format detected but file is not finalized. Maybe a -K in excess? No output created.
+</pre></div>
+</div>
+<p>出现这种错误的最常见原因是最后一个绘图命令里多了一个 <code class="docutils literal notranslate"><span class="pre">-K</span></code> ，即本该只使用
+<code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项关闭PS文件的，但却使用了 <code class="docutils literal notranslate"><span class="pre">-K</span> <span class="pre">-O</span></code> 选项。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="bugs">
+<h2>13.42.5 BUGS<a class="headerlink" href="#bugs" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>Windows下会自动为文件名加双引号，导致无法找到要转换的PS文件（v5.1.1）</li>
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项时， <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项无效，导致无法在Windows转换含中文的PS文件（v5.1.1）</li>
+<li>不能使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，即不能生成多页PDF（v5.1.2）</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项无效（v5.2.1）</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pscoupe/" class="btn btn-neutral float-right" title="13.43 pscoupe" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pscoast/" class="btn btn-neutral float-left" title="13.41 pscoast" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

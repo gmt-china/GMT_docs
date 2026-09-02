@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GDAL &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="等值线标注和“线条标注”" href="../../contour-annot/" />
+    <link rel="prev" title="相关工具" href="../" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">相关工具</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GDAL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ogr2ogr">ogr2ogr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gdal-translate">gdal_translate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">相关工具</a> &raquo;</li>
+      <li>GDAL</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/utilities/gdal.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gdal">
+<h1>GDAL<a class="headerlink" href="#gdal" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://gdal.org/">GDAL</a>（<strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary）是光栅（raster）和矢量（vector）地理空间数据格式的转换库/工具，支持多种光栅或矢量地理空间数据格式的互相转换和处理。</p>
+<section id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p>历史上，GDAL 仅用于处理光栅地理空间数据，而 OGR 则仅用于处理矢量地理空间数据。自 GDAL 2.0 开始，二者集成在一起了，一般统称为 GDAL 或 GDAL/OGR。因此，GDAL 现在具备了处理光栅和矢量地理空间数据格式的能力。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>若无显式说明，本手册提到 GDAL 和 GDAL/OGR 时，表示同一个意思；提到 OGR 时，仅表示地理空间矢量数据格式。</p>
+</div>
+<p>GDAL/OGR 有两个核心部分：</p>
+<ul class="simple">
+<li><p>GDAL 部分：支持多种光栅地理空间数据格式的互相转换，如常见的 netCDF、GeoTiff、HDF5、XYZ 等，详见<a class="reference external" href="https://gdal.org/drivers/raster/index.html">光栅格式列表</a></p></li>
+<li><p>OGR 部分：支持多种矢量数据格式的互相转换，如常见的 OGR/GMT（即 GMT）、Shapefile 、KML、MapInfo、Excel 等，详见<a class="reference external" href="https://gdal.org/drivers/vector/index.html">矢量格式列表</a></p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>安装<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>《<a class="reference internal" href="../../install/"><span class="doc">GMT 安装</span></a>》中介绍了各种操作系统下安装 GMT 的方法。GDAL 要么已包含在 GMT 安装包中，要么作为推荐包已被安装。</p>
+</section>
+<section id="ogr2ogr">
+<span id="id3"></span><h2>ogr2ogr<a class="headerlink" href="#ogr2ogr" title="Permalink to this heading"></a></h2>
+<p>GDAL 提供的 <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> 命令可以实现几十种地理矢量数据格式之间的互相转换。因而，可以用其将任意地理矢量数据格式转换为 GMT 可识别的 OGR/GMT 格式，以供 GMT 直接使用。该命令的详细用法请参考 <a class="reference external" href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr 官方文档</a>，这里仅介绍该命令的基本用法:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ogr2ogr -f GMT 输出数据文件名 输入数据文件名
+</pre></div>
+</div>
+<p>例如，将 Shapefile 格式的数据文件 <code class="file docutils literal notranslate"><span class="pre">gadm36_USA_0.shp</span></code> 转换为 GMT 可识别的 OGR/GMT 格式，输出文件名为 <code class="file docutils literal notranslate"><span class="pre">gadm36_USA_0.gmt</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ogr2ogr -f GMT gadm36_USA_0.gmt gadm36_USA_0.shp
+</pre></div>
+</div>
+</section>
+<section id="gdal-translate">
+<span id="id4"></span><h2>gdal_translate<a class="headerlink" href="#gdal-translate" title="Permalink to this heading"></a></h2>
+<p>GDAL 提供的 <code class="docutils literal notranslate"><span class="pre">gdal_translate</span></code> 命令可以实现多种地理空间光栅数据格式之间的互相转换。该命令的详细用法请参考 <a class="reference external" href="https://gdal.org/programs/gdal_translate.html">gdal_translate 官方文档</a>，这里只介绍该命令的基本用法:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdal_translate -of GMT 输入数据文件名 输出数据文件名
+</pre></div>
+</div>
+<p>例如，将 GeoTiff 格式的数据文件数据 <code class="file docutils literal notranslate"><span class="pre">srtm_56_05.tif</span></code> 转换为 GMT 使用的 netCDF 格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdal_translate -of GMT srtm_56_05.tif srtm_56_05.nc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>GDAL 默认不支持读写 GMT 的 netCDF 格式。可以使用如下命令检查当前系统安装的
+<code class="docutils literal notranslate"><span class="pre">gdal_translate</span></code> 支持哪些格式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gdal_translate --formats
+</pre></div>
+</div>
+<p>若输出中不包含 GMT，则表示当前 GDAL 不支持 GMT 的 netCDF 格式。</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../" class="btn btn-neutral float-left" title="相关工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../../contour-annot/" class="btn btn-neutral float-right" title="等值线标注和“线条标注”" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

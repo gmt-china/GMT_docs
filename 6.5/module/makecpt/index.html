@@ -1,0 +1,742 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>makecpt &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5898cba8" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1a85e45a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+      <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="mapproject" href="../mapproject/" />
+    <link rel="prev" title="legend" href="../legend/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.5
+     </div>
+   
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events/">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgdal/">grdgdal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinterpolate/">grdinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdselect/">grdselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdshake/">grdshake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvs30/">grdvs30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">makecpt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">生成一维数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">颜色铰链</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpt-cpt">离散 CPT 和连续 CPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earthtide/">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravprisms/">gravprisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">模块手册</a></li>
+      <li class="breadcrumb-item active">makecpt</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/module/makecpt.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+  
+  <span class="target" id="index-0"></span><section id="makecpt">
+<h1>makecpt<a class="headerlink" href="#makecpt" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a>, <a class="reference external" href="https://me.seisman.info/">田冬冬</a>, <a class="reference external" href="https://github.com/CovMat">陈箫翰</a>, <a class="reference external" href="https://github.com/cugliming">Liming Li</a></p>
+</dd>
+<dt class="field-even">最近更新日期<span class="colon">:</span></dt>
+<dd class="field-even"><p>2023-11-07</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="field-list simple">
+<dt class="field-odd">官方文档<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/makecpt.html" title="（在 GMT v6.5）"><span>makecpt</span></a></p>
+</dd>
+<dt class="field-even">简介<span class="colon">:</span></dt>
+<dd class="field-even"><p>制作 GMT CPT 文件</p>
+</dd>
+</dl>
+<p>在经典模式中，CPT 文件的内容会输出到屏幕标准输出中。
+而在现代模式中，该命令不会生成显式的 CPT 文件，而是隐式地将其自动设置为后续命令的默认 CPT 文件。
+因此无法使用经典的 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">makecpt</span> <span class="pre">xxx</span> <span class="pre">&gt;</span> <span class="pre">cpt</span></code> 方式生成 CPT 文件。如果需要在现代模式中生成 CPT 文件，
+则可以使用 <a class="reference internal" href="#h"><span><strong>-H</strong></span></a></strong> 选项： <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">makecpt</span> <span class="pre">xxx</span> <span class="pre">-H</span> <span class="pre">&gt;</span> <span class="pre">cpt</span></code> 。
+关于经典模式和现代模式的语法区别，建议阅读 <a class="reference internal" href="../../migrating/classic2modern/"><span class="doc">经典模式 → 现代模式</span></a> 章节。</p>
+<p>该命令基于主 CPT 创建用户所需的 CPT，获得的 CPT 可以是离散或连续的，颜色也可相对
+主 CPT 反转。如果需使用 GMT 之外的 CPT 作为主 CPT，可在
+<a class="reference external" href="http://seaviewsensing.com/pub/cpt-city/index.html">cpt-city</a> 中查询。</p>
+<p><a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项所指定的 z 值范围以外的数值，分别使用 3 种颜色来表示，分别为：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>背景色 (B，background color), 表示低于最小 z 值时所对应的颜色</p></li>
+<li><p>前景色 (F，foreground color), 表示高于最大 z 值时所对应的颜色</p></li>
+<li><p>以及 NaN 值颜色 (N)，表示 z 值被定义为 NaN 时对应的颜色，即 z 值未定义的情况</p></li>
+</ul>
+</div></blockquote>
+<p>默认情况下，这三种颜色会沿用 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项所指定的主 CPT 文件的设置，但也可以使用 <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong> 、
+<a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 以及 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> 选项修改。或者使用 <a class="reference internal" href="../gmtset/"><span class="doc">gmtset</span></a> 命令对 <a class="reference internal" href="../../conf/color/#term-COLOR_BACKGROUND"><span class="xref std std-term">COLOR_BACKGROUND</span></a>、
+<a class="reference internal" href="../../conf/color/#term-COLOR_FOREGROUND"><span class="xref std std-term">COLOR_FOREGROUND</span></a> 与 <a class="reference internal" href="../../conf/color/#term-COLOR_NAN"><span class="xref std std-term">COLOR_NAN</span></a> 进行自定义修改。需注意，选项总会覆盖
+自定义参数值。</p>
+<p>颜色模式 (RGB, HSV, CMYK) 会沿用 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项所指定的主 CPT 文件的设置。
+或者使用 <a class="reference internal" href="../gmtset/"><span class="doc">gmtset</span></a> 命令对 <a class="reference internal" href="../../conf/color/#term-COLOR_MODEL"><span class="xref std std-term">COLOR_MODEL</span></a> 进行自定义修改。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><strong>gmt makecpt</strong>
+[ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><em>transparency</em>[<strong>+a</strong>] ]
+[ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><em>cpt</em> ]
+[ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong>[<strong>i</strong>|<strong>o</strong>] ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong>[<em>nlevels</em>] ]
+[ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong>[<strong>R</strong>|<strong>r</strong>|<strong>h</strong>|<strong>c</strong>|<strong>x</strong>][<strong>+c</strong>[<em>label</em>]][<strong>+k</strong><em>keys</em>] ]
+[ <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><em>zlo</em>/<em>zhi</em> ]
+[ <a class="reference internal" href="#h"><span><strong>-H</strong></span></a></strong> ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong>[<strong>c</strong>][<strong>z</strong>] ]
+[ <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> ]
+[ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong><em>mode</em> ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>[<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+b</strong>|<strong>i</strong>|<strong>l</strong>|<strong>n</strong>]|<em>file</em>|<em>list</em>] ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong>[<strong>w</strong>] ]
+[ <a class="reference internal" href="#z"><span><strong>-Z</strong></span></a></strong> ]
+[ <strong>-bi</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#bi-full" title="（在 GMT v6.5）"><span class="xref std std-ref">binary</span></a> ]
+[ <strong>-di</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#di-full" title="（在 GMT v6.5）"><span class="xref std std-ref">nodata</span></a>[<strong>+c</strong><em>col</em>] ]
+[ <strong>-h</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#h-full" title="（在 GMT v6.5）"><span class="xref std std-ref">headers</span></a> ]
+[ <strong>-i</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/gmt.html#icols-full" title="（在 GMT v6.5）"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>无。</p>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<dl class="simple" id="a">
+<dt><strong>-A</strong><em>transparency</em>[<strong>+a</strong>]</dt><dd><p>设置透明度，<em>transparency</em> 的取值范围是 0 到 100。
+加上 <strong>+a</strong> 则将该透明度同时应用于前景色、背景色和 NaN 颜色
+[默认不透明, 即 <em>transparency</em> 为 0]。</p>
+</dd>
+</dl>
+<dl id="c">
+<dt><strong>-C</strong>[[<em>section</em>/] <em>master_cpt</em>[<strong>+h</strong>[<em>hinge</em>]][<strong>+u</strong>|<strong>U</strong><em>unit</em>]|<em>local_cpt</em>|<em>color1,color2</em>[,<em>color3</em>,…]]</dt><dd><p>输入主 CPT 文件名。一般情况下，输入文件为 GMT 内置 CPT (请见 <a class="reference internal" href="../../cpt/builtin-cpt/"><span class="doc">内置CPT</span></a>)
+之一，可通过 <em>master_cpt</em> 或 <em>section</em>/<em>master_cpt</em> 的形式指定，但不能带有 <strong>.cpt</strong>
+后缀。
+如果主 CPT 中存在软铰链（soft-hinge），则可使用 <strong>+h</strong> 激活铰链，其铰链值为 0。如果
+CPT 中存在硬铰链（hard-hinge），则使用 <strong>+h</strong>[<em>hinge</em>] 激活铰链，并可修改铰链值
+为 <em>hinge</em> 。
+对于不存在铰链的内置 CPT，用户可使用 <strong>+U</strong><em>unit</em> 将 z 值从其他单位转换为米，或使用
+<strong>+u</strong><em>unit</em> 将米转换为其他单位，<em>unit</em> 可以从
+<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong> 中取值，详见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a>。</p>
+<p>主 CPT 也可以为用户自己的 CPT 文件，这时，CPT 必须带有 <strong>.cpt</strong> 后缀。</p>
+<p>此外，除设置主 CPT 文件名外, 也可指定一个颜色序列 <em>color1,color2</em>[<em>,color3</em>,…]
+创建线性连续 CPT，其中 <em>z</em> 值从 0 开始，每种颜色递增 1。这种情况下，<em>color</em><strong>n</strong>
+可以为 r/g/b 三元数（见 <a class="reference internal" href="../../basis/color/"><span class="doc">颜色</span></a>）或者 HTML 16 进制颜色 (例如，#aabbcc)。</p>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>将背景色和前景色分别设置为 CPT 文件中最小值和最大值对应的颜色, <strong>i</strong> 和 <strong>o</strong> 分别
+表示使用输出 CPT 或者输入 CPT [默认为 <strong>-D</strong> 或 <strong>-Do</strong>, 即输出 CPT 的背景色和前景色]。
+不设置本项时，GMT 默认使用主 CPT 文件规定的背景色与前景色，或是采用配置参数
+<a class="reference internal" href="../../conf/color/#term-COLOR_BACKGROUND"><span class="xref std std-term">COLOR_BACKGROUND</span></a>、<a class="reference internal" href="../../conf/color/#term-COLOR_FOREGROUND"><span class="xref std std-term">COLOR_FOREGROUND</span></a> 与 <a class="reference internal" href="../../conf/color/#term-COLOR_NAN"><span class="xref std std-term">COLOR_NAN</span></a> 的设置。</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-E</strong>[<em>nlevels</em>]</dt><dd><p>从命令行或者标准输入中读取表数据文件，使用最后一列决定数据的范围，<em>nlevels</em> 表示
+生成的 CPT 文件会被重采样为 <em>nlevels</em> 个等间距的切片，上述两者即等同于 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项
+作用。使用 <strong>-i</strong> 选项可选择其他列决定数据范围，二进制文件则需同时使用 <strong>-bi</strong> 。
+如果不给定 <em>nlevels</em> 参数，则默认其等于主 CPT 中切片数。</p>
+</dd>
+</dl>
+<dl id="f">
+<dt><strong>-F</strong>[<strong>R</strong>|<strong>r</strong>|<strong>h</strong>|<strong>c</strong>|<strong>x</strong>][<strong>+c</strong>[<em>label</em>]][<strong>+k</strong><em>keys</em>]</dt><dd><ul class="simple">
+<li><p><strong>-FR</strong> ，输出的 CPT 以 r/g/b 灰度值，或名称指定颜色[默认]；</p></li>
+<li><p><strong>-Fr</strong> ，输出的 CPT 以 r/g/b 方式指定颜色；</p></li>
+<li><p><strong>-Fh</strong> ，输出的 CPT 以 h-s-v 方式指定颜色；</p></li>
+<li><p><strong>-Fc</strong> ，输出的 CPT 以 c/m/y/k 方式指定颜色；</p></li>
+</ul>
+<p>附加 <strong>+c</strong> 以分类格式输出离散型 CPT。如果追加 <em>label</em> ，则在绘制 CPT 时，每个
+分类均创建标签。标签的格式可以是逗号分隔的列表（中间可通过不指定名称来跳过类别），
+也可以通过 <em>start</em>[-] 来指定以 <em>start</em> 为首，依次递增的标签。追加 <strong>-</strong> 则表示
+标签的范围为 <em>start</em> 到 <em>start+1</em>。注意，存在以下特殊情况：</p>
+<ul class="simple">
+<li><p>如果使用 <strong>+cM</strong> 且类别数为 12，则 GMT 会自动创建月份名称列表</p></li>
+<li><p>如果使用 <strong>+cD</strong> 且类别数为 7，则创建一周内每天名称列表</p></li>
+</ul>
+<p>上述两种情况，标签的格式受 <a class="reference internal" href="../../conf/format/#term-FORMAT_TIME_PRIMARY_MAP"><span class="xref std std-term">FORMAT_TIME_PRIMARY_MAP</span></a>，<a class="reference internal" href="../../conf/misc/#term-GMT_LANGUAGE"><span class="xref std std-term">GMT_LANGUAGE</span></a>
+和 <a class="reference internal" href="../../conf/time/#term-TIME_WEEK_START"><span class="xref std std-term">TIME_WEEK_START</span></a> 参数影响。</p>
+<p>附加 <strong>+k</strong><em>keys</em> 选项表示使用字符而不是数字设置分类 CPT 的键值。<em>keys</em> 可以是
+一个文件，其中包含键值列表；<em>keys</em> 也可以是单个字符，例如：D，则键值列表为 D、E、F…。
+如果是逗号分隔的键值列表，则应使用 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项，而不是该选项。</p>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>zlo</em>/<em>zhi</em></dt><dd><p>截断主 CPT 文件，将主 CPT 的最小和最大 z 值分别限制为 <em>zlo</em> 与 <em>zhi</em>。上述两值
+若设置为 NaN，则仍旧使用原本的最值。截断的操作发生在重采样之前。译注：该选项
+通常用于地形、深度等具有实际意义的 CPT。</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-H</strong></dt><dd><p>仅限现代模式。
+默认情况下是将 CPT 保存为隐藏的当前 CPT，加上该选项会显式地将 CPT 写入标准输出。
+在写制作动画的脚本时，需要传递显式命名的 CPT 文件，因此需要使用本功能。
+建议阅读 <a class="reference internal" href="../../migrating/classic2modern/"><span class="doc">经典模式 → 现代模式</span></a> 。</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<strong>c</strong>][<strong>z</strong>]</dt><dd><ul class="simple">
+<li><p><strong>-Ic</strong> 选项翻转颜色的顺序，包括前景色和背景色以及 <a class="reference internal" href="../../conf/color/#term-COLOR_BACKGROUND"><span class="xref std std-term">COLOR_BACKGROUND</span></a> 和
+<a class="reference internal" href="../../conf/color/#term-COLOR_FOREGROUND"><span class="xref std std-term">COLOR_FOREGROUND</span></a> 参数设置的前景色和背景色[默认]。详细用法和说明见
+<a class="reference internal" href="../../cpt/makecpt/"><span class="doc">制作CPT</span></a> 。</p></li>
+<li><p><strong>-Iz</strong> 选项翻转 CPT 的 <em>z</em> 值（不包括前景色、背景色）。该操作发生于 <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong> 和 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>
+选项之前，因此使用上述两选项时，需先考虑 <strong>-Iz</strong> 操作后的 <em>z</em> 值的实际范围。</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>使用 gmt.conf 文件或者命令行中设置的 <a class="reference internal" href="../../conf/color/#term-COLOR_BACKGROUND"><span class="xref std std-term">COLOR_BACKGROUND</span></a> ，
+<a class="reference internal" href="../../conf/color/#term-COLOR_FOREGROUND"><span class="xref std std-term">COLOR_FOREGROUND</span></a> 和 <a class="reference internal" href="../../conf/color/#term-COLOR_NAN"><span class="xref std std-term">COLOR_NAN</span></a> 覆盖 CPT 中的前景色、背景色和 NaN 值
+的颜色。如果和 <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong> 同时使用，则前景色和背景色均被 <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong> 覆盖。</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong></dt><dd><p>不在生成的 CPT 中写入前景色，背景色和 NaN 值的颜色[默认写入]。</p>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p><a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项输入为对数值 log10(z) 时，通过对数值分配颜色，但是输出结果仍为原值 <em>z</em>。</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>mode</em></dt><dd><p>从命令行或者标准输入中读取表数据文件，使用 <strong>-i</strong> 选项可调整输入列，从该文件中
+确定适合 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项的范围。下述选项给出确定范围的类型：</p>
+<ul class="simple">
+<li><p><strong>-Sr</strong> 使用 min/max 作为范围</p></li>
+<li><p><strong>-S</strong><em>inc</em>[<strong>+d</strong>] 使用 min/max 作为范围，但四舍五入到最近的 <em>inc</em>, 以
+<em>inc</em> 为间隔，追加 <strong>+d</strong> 生成离散 CPT</p></li>
+<li><p><strong>-Sa</strong><em>scl</em> 以平均值为对称中心，<em>scl</em> * <em>sigma</em> 为单边宽度生成范围</p></li>
+<li><p><strong>-Sm</strong><em>scl</em> 以中值为对称中心，<em>scl</em> * <em>sigma</em> 为单边宽度生成范围</p></li>
+<li><p><strong>-Sp</strong><em>scl</em> 以众数（通过 Least Median of squares 获取）为对称中心，
+<em>scl</em> * <em>LMS_scale</em> 为单边宽度生成范围</p></li>
+<li><p><strong>-Sq</strong><em>low/high</em> 设置低分位数和高分位数为范围（百分比格式）</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="t">
+<dt><strong>-T</strong>[<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+b</strong>|<strong>i</strong>|<strong>l</strong>|<strong>n</strong>]|<em>file</em>|<em>list</em>]</dt><dd><p>定义要生成的 CPT 文件的 z 值范围及 z 值间隔。该选项可有如下几种形式：</p>
+<ul class="simple">
+<li><p>若使用了 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项且 <em>inc</em> 未指定，则 z 值间隔的数目与输入的主 CPT 文件相同</p></li>
+<li><p>若 <em>inc</em> 后有 <strong>+n</strong> ，则将 <em>inc</em> 解释为 z 值间隔的数目而不是 z 值间隔</p></li>
+<li><p>使用一个文件给定数值列表</p></li>
+<li><p>使用一个数值列表</p></li>
+</ul>
+<p>详见 <a class="reference internal" href="#id5">生成一维数组</a> 。</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>w</strong>]</dt><dd><p>不对输入主 CPT 内插，而是从 CPT 的开始选取输出颜色，直到所有区间的颜色都被分配完。
+这在与分类 CPT 同时使用时非常有用。使用 <strong>-Ww</strong> 可生成一个无限重复范围的循环 CPT。</p>
+</dd>
+</dl>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong></dt><dd><p>生成连续 CPT 文件。默认生成不连续 CPT 文件，即每个 Z 值切片内为同一颜色。</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输入数据的格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="../../option/d/"><span class="doc">(more …)</span></a></dt><dd><p>将输入数据中值为 <em>nodata</em> 的列替换为 NaN</p>
+</dd>
+</dl>
+<dl class="simple" id="id4">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输入数据列及简单变换（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>生成一维数组<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>下面将展示如何使用 <a class="reference internal" href="../gmtmath/"><span class="doc">gmtmath</span></a> 生成一维数组（其中大部分操作也可通过
+linux 中的 seq 命令方便地实现）</p>
+<p><strong>不使用任何子选项</strong></p>
+<p>以 0.1 为步长，生成 3.1 到 4.2 等等间隔序列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T3.1/4.2/0.1<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">3</span>.1
+<span class="m">3</span>.2
+...
+<span class="m">4</span>.2
+</pre></div>
+</div>
+<p><strong>+a 选项</strong></p>
+<p>该选项不对生成的数列进行运算操作，而是将该数列以列的形式追加到输出表数据，类似
+linux 中的 paste 命令。</p>
+<p><strong>+b 选项</strong></p>
+<p>以 3 和 20 分别为起点和终点，创建一个 2 的整数幂的列表，将生成
+的整数幂以 1 为步长取值 <strong>-T</strong>3/20/1<strong>+b</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T3/20/1+b<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">4</span>
+<span class="m">8</span>
+<span class="m">16</span>
+</pre></div>
+</div>
+<p><strong>+l 选项</strong></p>
+<p>以 7 和 135 分别为起点和终点，先创建一个 10 的整数幂的列表，当
+<em>inc</em> 为 1 时，输出该列表；当 <em>inc</em> 为 2 时，同时输出该列表中每个元素的
+1，2，5 倍值（不包括超出原始数据范围的部分）； 当 <em>inc</em> 为 3 时，同时输出
+该列表中每个元素的 1，2，…，9 倍值（同样不包括超出原始数据范围的部分）。
+<strong>-T</strong>7/135/2<strong>+l</strong> 将会生成如下数列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T7/135/2+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">10</span>
+<span class="m">20</span>
+<span class="m">50</span>
+<span class="m">100</span>
+</pre></div>
+</div>
+<p><em>inc</em> 为负整数时，将实现如下效果</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T1e-4/1e4/-2+l<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">0</span>.0001
+<span class="m">0</span>.01
+<span class="m">1</span>
+<span class="m">100</span>
+<span class="m">10000</span>
+</pre></div>
+</div>
+<p><strong>+i 选项</strong></p>
+<p>该选项将以 1 作为默认步长，第三个数字做为每步长中的数字个数
+<em>length</em>。假设需要在 1 分钟内每 24 秒生成一帧</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T0/60/24+i<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">0</span>
+<span class="m">0</span>.0416666666667
+<span class="m">0</span>.0833333333333
+<span class="m">0</span>.125
+<span class="m">0</span>.166666666667
+...
+<span class="m">60</span>
+</pre></div>
+</div>
+<p><strong>+n 选项</strong></p>
+<p>生成固定长度的数列。以 3.44 和 7.82 为
+起点和终点，生成长度为 5 的等间隔序列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T3.44/7.82/5+n<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">3</span>.44
+<span class="m">4</span>.535
+<span class="m">5</span>.63
+<span class="m">6</span>.725
+<span class="m">7</span>.82
+</pre></div>
+</div>
+<p><strong>-T 后直接加文件或逗号分隔的数列</strong></p>
+<p><strong>-T</strong> 后可以直接加文件，文件中即为要生成的列表；另外，可以直接使用逗号分隔，
+将列表附加到 <strong>-T</strong> 选项后，如下为 Fibonacci 数列前 6 项</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T0,1,1,2,3,5<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">0</span>
+<span class="m">1</span>
+<span class="m">1</span>
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">5</span>
+</pre></div>
+</div>
+<p><em>注</em> ： 如果数列只包含一个值，必须在其后加逗号以表明仍是一个数列</p>
+<p><strong>+u 选项</strong></p>
+<p>如果文件或者逗号分隔的数列中有重复数字或未排序，可以使用 <strong>+u</strong>
+选项去重并排序。</p>
+<p><strong>+t 选项</strong></p>
+<p>生成绝对时间序列。在 <em>inc</em> 后分别添加 <strong>y</strong> ，<strong>o</strong> ，<strong>d</strong> ，<strong>h</strong> ， <strong>m</strong>
+和 <strong>s</strong> 表示时间步长的单位为年，月，日，时，分，秒。在其后附加 <strong>+t</strong> 选项，
+可以进一步强调生成时间序列，也可以不加</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>math<span class="w"> </span>-o0<span class="w"> </span>-T2020-03-01T/2020-03-07T/1d<span class="w"> </span><span class="nv">T</span><span class="w"> </span><span class="o">=</span>
+<span class="m">2020</span>-03-01T00:00:00
+<span class="m">2020</span>-03-02T00:00:00
+<span class="m">2020</span>-03-03T00:00:00
+<span class="m">2020</span>-03-04T00:00:00
+<span class="m">2020</span>-03-05T00:00:00
+<span class="m">2020</span>-03-06T00:00:00
+<span class="m">2020</span>-03-07T00:00:00
+</pre></div>
+</div>
+<p><strong>生成距离序列</strong></p>
+<p>如果输入文件中包含两列以上的数据，可以使用前两列计算距离，并生成等距序列。
+在 <em>inc</em> 后分别添加 <strong>d</strong>，<strong>m</strong>，<strong>s</strong>，<strong>e</strong>，<strong>f</strong>，<strong>M</strong>，<strong>n</strong> 和 <strong>u</strong>
+表示距离步长的单位为度，分，秒，米，英尺，公里，英里，海里，英尺。如果
+为笛卡尔坐标，使用 c 作为距离步长单位。</p>
+<p><strong>+e 选项</strong></p>
+<p>如果只给定 <em>inc</em> 而从数据中获取最大值和最小值，则 (<em>max</em> - <em>min</em>)/<em>inc</em> 可能
+不是整数，GMT 讲会自动对 <em>inc</em> 进行一定的调整。如果不想调整 <em>inc</em> ，则可以
+使用 <strong>+e</strong> 选项，GMT 会固定最小值，适当调整最大值。</p>
+</section>
+<section id="id6">
+<h2>颜色铰链<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>某些 GMT 动态 CPT 是两个独立的 CPT 合成的，合成位置称为铰链值。铰链两侧
+的颜色通常会有较大的变化，用于两个不同的方面（例如，陆地和海洋的高程和深度）。
+一般情况下，颜色的动态变化不受铰链的影响，将整个颜色范围拉伸得到最终的 CPT。
+但激活铰链值时，CPT 铰链两侧的部分将分别拉伸到所需的范围。铰链分为硬铰链和软
+铰链，铰链必须通过在 CPT 后追加 <strong>+h</strong>[<em>hinge</em>] 激活。如果设定的拉伸范围
+不包括铰链值，则只在 CPT 中选取与范围相关的一半重新采样颜色。</p>
+</section>
+<section id="cpt-cpt">
+<h2>离散 CPT 和连续 CPT<a class="headerlink" href="#cpt-cpt" title="Link to this heading"></a></h2>
+<p>所有的 CPT 都可以拉伸，但只建议使用连续 CPT 在 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 指定的新节点上采样，如果
+使用离散 CPT 采样，则会警告，但仍可使用。GMT 这样做的原因是防止重采样
+原始 CPT 导致混叠。</p>
+</section>
+<section id="id7">
+<h2>示例<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>以 polar CPT 为主 CPT，创建一个范围为 -200 到 200，间距为 25 的离散 CPT</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cpolar<span class="w"> </span>-T-200/200/25<span class="w"> </span>&gt;<span class="w"> </span>colors.cpt
+</pre></div>
+</div>
+<p>使用默认的 turbo CPT 为主 CPT，创建一个范围为 -2 到 6 的等距 CPT</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-T-2/6<span class="w"> </span>&gt;<span class="w"> </span>colors.cpt
+</pre></div>
+</div>
+<p>在 gebco 的基础上，创建一个适用于 v3206_06.txt 数据文件的 CPT，颜色区间
+个数为 24 个</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cgebco<span class="w"> </span>@v3206_06.txt<span class="w"> </span>-E24<span class="w"> </span>&gt;<span class="w"> </span>my_depths.cpt
+</pre></div>
+</div>
+<p>创建一个震源深度 CPT 文件，红色表示深度为 0-100 km，绿色表示 100-300 km，
+蓝色表示 300-1000 km</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cred,green,blue<span class="w"> </span>-T0,80,300,1000<span class="w"> </span>-N<span class="w"> </span>&gt;<span class="w"> </span>seis.cpt
+</pre></div>
+</div>
+<p>创建一个连续 CPT，从 3-10 变化时，颜色从白色过度到蓝色</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cwhite,blue<span class="w"> </span>-T3/10<span class="w"> </span>&gt;<span class="w"> </span>cold.cpt
+</pre></div>
+</div>
+<p>创建一个 0-500 范围的循环 CPT，如果值范围超过 500 或小于 0，则使用循环
+后的值，而不是 NaN 对应的颜色</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cjet<span class="w"> </span>-T0/500<span class="w"> </span>-Ww<span class="w"> </span>&gt;<span class="w"> </span>wrapped.cpt
+</pre></div>
+</div>
+<p>创建一个拥有三个类别的分类 CPT，并指定类别名</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Ccubhelix<span class="w"> </span>-T0/2/1<span class="w"> </span>-F+cClouds,Trees,Water<span class="w"> </span>&gt;<span class="w"> </span>cat.cpt
+</pre></div>
+</div>
+<p>创建一个拥有 10 个类别的分类 CPT，类别名从 A、B、C 等开始编号</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Cjet<span class="w"> </span>-T0/10/1<span class="w"> </span>-F+cA
+</pre></div>
+</div>
+<p>使用字符串键值创建一个分类 CPT</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>makecpt<span class="w"> </span>-Ccategorical<span class="w"> </span>-Twood,water,gold
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2>相关模块<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="../grd2cpt/"><span class="doc">grd2cpt</span></a></p>
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../legend/" class="btn btn-neutral float-left" title="legend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../mapproject/" class="btn btn-neutral float-right" title="mapproject" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2025, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2025 年 07 月 27 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

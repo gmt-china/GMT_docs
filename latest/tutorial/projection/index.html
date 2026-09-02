@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何选择地图投影 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a00e37ec" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=3a0f95c6"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=540d3cec"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="设置配置参数" href="../configurations/" />
+    <link rel="prev" title="不等间隔数据插值网格化绘图" href="../surface/" />
+ 
+
+
+
+
+<link href="../../pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="../../pagefind/pagefind-ui.js"></script>
+
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+   
+   <a href="../../">
+     <h2 class="sidebar-title">GMT 中文手册</h2>
+   </a>
+     <div class="version">
+       6.7
+     </div>
+
+   
+   <div id="search" style="margin-top: 10px;"></div>
+   <script>
+       window.addEventListener('DOMContentLoaded', (event) => {
+           const scriptTag = document.querySelector('script[src*="pagefind-ui.js"]');
+           const bundlePath = scriptTag.src.replace('pagefind-ui.js', '');
+
+           new PagefindUI({
+               element: "#search",
+               showSubResults: true,
+               bundlePath: bundlePath,
+               processResult: function (result) {
+                   if (result.meta.image) {
+                       var imagePath = result.meta.image;
+                       if (/^(https?:|\/\/|data:)/.test(imagePath)) {
+                           return result;
+                       }
+                       imagePath = imagePath.replace(/^(\.\.?\/)+/, '');
+                       result.meta.image = bundlePath + '../' + imagePath;
+                   }
+                   return result;
+               },
+               translations: {
+                   placeholder: "搜索手册...",
+                   clear_search: "清除",
+                   load_more: "加载更多",
+                   search_label: "搜索",
+                   filters_label: "筛选",
+                   zero_results: "未找到关于 [SEARCH_TERM] 的结果",
+                   many_results: "找到 [COUNT] 条关于 [SEARCH_TERM] 的结果",
+                   one_result: "找到 1 条关于 [SEARCH_TERM] 的结果",
+                   searching: "正在搜索 [SEARCH_TERM]..."
+               }
+           });
+       });
+   </script>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/">入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../advanced/">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">等间隔数据网格化绘图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">不等间隔数据插值网格化绘图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">如何选择地图投影</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">地图投影变形</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">地图投影分类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">地图投影选择</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../configurations/">设置配置参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT 单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT 图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT 子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT 多图模式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id10">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theme/">主题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../array/">生成一维数组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../advanced/">进阶教程</a></li>
+      <li class="breadcrumb-item active">如何选择地图投影</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/tutorial/projection/index.md" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+    <div class="page-meta" style="font-size: 0.85em; color: #666; margin-bottom: 1em; padding-bottom: 0.5em; border-bottom: 1px solid #ddd;">
+      
+      
+        
+        
+      
+      
+      
+        
+      
+      
+      
+  ✍️
+      <a href="https://github.com/ZMAlt" target="_blank" rel="noopener">周茂</a>
+    
+ &nbsp;•&nbsp; 📅 2026-09-01
+    </div>
+  
+  <div data-pagefind-body>
+    
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>如何选择地图投影<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
+<p>地图投影就是将三维球形（或椭球形）地球表面投影到二维的纸张上，
+即使用数学公式将球面坐标与平面坐标对应起来，这个过程必然会导致地球表面变形。
+根据绘制地图的目的，某些变形是可以接受的，而另一些则是不可接受的；
+因此，存在不同的地图投影，以牺牲其他属性为代价来保留球体的某些属性。</p>
+<section id="id2">
+<h2>地图投影变形<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
+<p>地图投影变形可以分为四个方面：角度，方向，距离和面积。
+不同投影对应的变形特征不同：</p>
+<ul class="simple">
+<li><p><strong>保角投影</strong>，也称为等角投影或正形投影。在地图上任意一点，投影后角度和形状不变，
+但会牺牲面积准确性，常用于对角度要求严格的应用，比如航海导航。</p></li>
+<li><p><strong>保方向投影</strong>，也称为等方向投影、方位投影或正轴投影。投影中心点到地图上任何一点的方向保持不变，
+通常会牺牲形状、面积和距离的准确性，常用于对方向要求严格的应用，例如航空导航</p></li>
+<li><p><strong>保距离投影</strong>，也称等距投影。保证地图上的某些线段（通常是从投影中心点到任何一点的经线，
+或沿着特定的平行线）的尺度是正确的，通常会牺牲形状和面积的准确性，常用于对距离要求严格的应用，
+例如交通线或管线绘制测量</p></li>
+<li><p><strong>保面积投影</strong>，也称等面积投影或正积投影。保证了地图上任何区域的面积比例与地球上的实际面积比例一致，
+牺牲形状和角度的准确性，通常用于对面积要求严格的地图，例如土地测量，森林覆盖率统计等。</p></li>
+<li><p><strong>任意投影</strong>，不保上述任何元素的投影。</p></li>
+</ul>
+<p>衡量投影变形的方法有多种，最常用的为变形椭圆。下图绘制了在墨卡托投影（-JM）下的变形椭圆，
+该投影为保角投影。投影中心坐标为 (0, 0)，在投影中心处面积变形最小。
+在同一经度方向的变形是恒定的；在维度方向，离投影中心越远，变形越大。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/da2ba42c0622f2a27abbf482c614c10d/0be211bdb7491cae6a41779a78704c2d.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="gmtplot-0be211bdb7491cae6a41779a78704c2d">
+<a class="reference internal image-reference" href="../../_images/0be211bdb7491cae6a41779a78704c2d.png"><img alt="../../_images/0be211bdb7491cae6a41779a78704c2d.png" src="../../_images/0be211bdb7491cae6a41779a78704c2d.png" style="width: 50%;" />
+</a>
+</figure>
+</section>
+<section id="id3">
+<h2>地图投影分类<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<p><strong>投影面</strong></p>
+<p>上一章节介绍了投影几何特征的变形，并可据此特征作为地图分类依据。
+另外一种常见的分类方法为根据投影面分类。通常可以分为如下三种，
+假定都为正轴投影（见<strong>投影面与地轴的关系</strong>）。</p>
+<ul class="simple">
+<li><p><strong>平面/方位投影</strong>：投影到一个平面上。特点为纬线是同心圆，经线是辐射状的直线</p></li>
+<li><p><strong>圆柱投影</strong>：纬线是同心圆弧，经线是辐射状的直线，在标准纬线（圆锥体接触地球的线）附近失真最小</p></li>
+<li><p><strong>圆锥投影</strong>：纬线（平行线）和经线（垂直线）通常是等距的平行线，形成直角网格</p></li>
+</ul>
+<p>在实际使用中，为了保证多种因素不变形或者变形较小，出现了很多伪圆柱、伪圆锥投影或者混合投影，
+这些投影并不满足上述对应投影特征。</p>
+<p><strong>投影面与地球的关系</strong></p>
+<p>投影面与地球之间的关系可以是相切或者投影面割地球（即投影面穿过地球）。
+相切是最常见的，但这种方式在除切点和切线以外的区域，变形越来越大。
+为防止最远端变形太大，可以使用割地球的形式，在割线以外的地方，变形越来越大。
+割地球程度越大，越能减小最远端的变形。上述的切点即为投影设置的投影中心，
+切线或者割线即为标准纬线。</p>
+<p><strong>投影面与地轴的关系</strong></p>
+<p>根据投影面和地轴之间的关系，投影可以分为</p>
+<ul class="simple">
+<li><p><strong>正轴投影</strong>：投影体/面的轴线与地球的旋转轴重合（或平行），平面正轴投影即地轴垂直于投影平面，
+圆柱/圆锥正轴投影即为轴线与地轴重合。</p></li>
+<li><p><strong>横轴投影</strong>：投影体的轴线垂直于地球的旋转轴（例如，横轴墨卡托投影和我国常用的高斯-克吕格投影）</p></li>
+<li><p><strong>斜轴投影</strong>：投影体的轴线既不平行也不垂直于地球的旋转轴，适用于绘制斜向延伸的区域（例如，沿着大圆航线的区域）</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>地图投影选择<a class="headerlink" href="#id4" title="链接到此标题。"></a></h2>
+<p>地图投影应以满足制图需要为主要目标，即根据需要保的要素或避免的变形选择，
+在此之外，则很大程度上以追求美观为主。</p>
+<p><strong>一些简单地初步选择</strong></p>
+<ul class="simple">
+<li><p>用于小范围的大比例尺地图，使用横轴墨卡托投影，或我国常采用的高斯-克吕格投影等，例如-JT、-JU</p></li>
+<li><p>用于大范围（大洲，全球等）的小比例尺地图，常使用混合投影，例如-JH、-JJ、-JK、-JM、-JN、-JQ、-JV</p></li>
+<li><p>低纬度国家，使用圆柱投影，例如-JC、-JM、-JQ、-JY</p></li>
+<li><p>中纬度国家，使用圆锥投影，例如-JA、-JB、-JL</p></li>
+<li><p>极区范围，使用方位投影等，例如-JG、-JE、-JS</p></li>
+<li><p>纵向狭长的范围或国家，使用横轴圆柱投影等，例如-JC</p></li>
+<li><p>沿倾斜方向的范围，使用倾斜投影，例如-JO</p></li>
+<li><p>以外太空的角度看地球，使用-JG</p></li>
+</ul>
+</section>
+</section>
+
+
+  </div>
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../surface/" class="btn btn-neutral float-left" title="不等间隔数据插值网格化绘图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../configurations/" class="btn btn-neutral float-right" title="设置配置参数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2026, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2026 年 09 月 02 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

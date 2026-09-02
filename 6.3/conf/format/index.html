@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FORMAT参数 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="IO参数" href="../io/" />
+    <link rel="prev" title="DIR参数" href="../dir/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">DIR参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FORMAT参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">日期的输入/输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">时间的输入/输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">地理坐标的输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">浮点数的输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">其它数据的绘图格式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">其他参数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">配置参数</a> &raquo;</li>
+      <li>FORMAT参数</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/conf/format.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="format">
+<h1>FORMAT参数<a class="headerlink" href="#format" title="Permalink to this heading"></a></h1>
+<p>下面列出所有与格式相关的参数，通常包括输入格式、输出格式和绘图格式三类，参数的默认值在中括号内列出。</p>
+<section id="id1">
+<h2>日期的输入/输出/绘图格式<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="glossary">
+<dt id="term-FORMAT_DATE_IN"><strong>FORMAT_DATE_IN</strong><a class="headerlink" href="#term-FORMAT_DATE_IN" title="Permalink to this term"></a></dt><dd><p>输入数据中日期字符串的格式模板 [<strong>yyyy-mm-dd</strong>]</p>
+<p>日期字符串可以用公历表示，也可以用ISO周历表示。</p>
+<p>对于公历而言，可以将如下模板做合理组合：</p>
+<ul class="simple">
+<li><p><strong>yyyy</strong>：四位年份</p></li>
+<li><p><strong>yy</strong>：两位年份（见 <a class="reference internal" href="../time/#term-TIME_Y2K_OFFSET_YEAR"><span class="xref std std-term">TIME_Y2K_OFFSET_YEAR</span></a>）</p></li>
+<li><p><strong>mm</strong>：两位月份</p></li>
+<li><p><strong>o</strong>：月份的名称简写</p></li>
+<li><p><strong>dd</strong>：两位日期</p></li>
+<li><p><strong>jjj</strong>：一年中的第几天</p></li>
+</ul>
+<p>比如 <strong>ddmmyyyy</strong>、<strong>yy-mm-dd</strong>、<strong>dd-o-yyyy</strong>、<strong>yyyy/dd/mm</strong>、
+<strong>yyyy-jjj</strong> 等。</p>
+<p>对于ISO周历而言，其模板格式为 <strong>yyyy</strong>[-]<strong>W</strong>[-]<strong>ww</strong>[-]<strong>d</strong>，表示某年的第ww周的第d天。比如 <strong>yyyyWwwd</strong> 或 <strong>yyyy-Www</strong> 等。</p>
+</dd>
+<dt id="term-FORMAT_DATE_OUT"><strong>FORMAT_DATE_OUT</strong><a class="headerlink" href="#term-FORMAT_DATE_OUT" title="Permalink to this term"></a></dt><dd><p>输出日期字符串时所使用的格式 [<strong>yyyy-mm-dd</strong>]</p>
+<p>参考 <a class="reference internal" href="#term-FORMAT_DATE_IN"><span class="xref std std-term">FORMAT_DATE_IN</span></a> 的相关说明。除此之外：</p>
+<ul class="simple">
+<li><p>若模板开头有一个 <strong>-</strong>，则所有的整数年月日在输出时会省略前置零。比如若使用模板 <strong>-yyyy-mm-dd</strong> 则输出类似于 2012-1-3 而不是 2012-01-03</p></li>
+<li><p>若模板为 <strong>-</strong>，则输出时省略日期，日期和时间中的 <strong>T</strong> 也会被省略</p></li>
+</ul>
+</dd>
+<dt id="term-FORMAT_DATE_MAP"><strong>FORMAT_DATE_MAP</strong><a class="headerlink" href="#term-FORMAT_DATE_MAP" title="Permalink to this term"></a></dt><dd><p>绘制日期字符串时所使用的格式 [<strong>yyyy-mm-dd</strong>]</p>
+<p>参考 <a class="reference internal" href="#term-FORMAT_DATE_IN"><span class="xref std std-term">FORMAT_DATE_IN</span></a> 和 <a class="reference internal" href="#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> 的相关说明。除此之外，</p>
+<ul class="simple">
+<li><p>绘制月份名时的 <strong>mm</strong> 可以用 <strong>o</strong> 替代，即图上显示 Jan 而不是 01</p></li>
+<li><p>用 <strong>u</strong> 代替 <strong>W</strong>[-]<strong>ww</strong>，即图上显示 Week 10 而不是 W10</p></li>
+</ul>
+<p>所有的日期文本字符串都由 <a class="reference internal" href="../misc/#term-GMT_LANGUAGE"><span class="xref std std-term">GMT_LANGUAGE</span></a>、
+<a class="reference internal" href="#term-FORMAT_TIME_PRIMARY_MAP"><span class="xref std std-term">FORMAT_TIME_PRIMARY_MAP</span></a> 和 <a class="reference internal" href="#term-FORMAT_TIME_SECONDARY_MAP"><span class="xref std std-term">FORMAT_TIME_SECONDARY_MAP</span></a> 控制。</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h2>时间的输入/输出/绘图格式<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="glossary">
+<dt id="term-FORMAT_CLOCK_OUT"><strong>FORMAT_CLOCK_OUT</strong><a class="headerlink" href="#term-FORMAT_CLOCK_OUT" title="Permalink to this term"></a></dt><dd><p>输出时间字符串时所使用的格式 [<strong>hh:mm:ss</strong>]</p>
+<ul class="simple">
+<li><p><strong>hh</strong>、<strong>mm</strong>、<strong>ss</strong>分别表示时、分、秒</p></li>
+<li><p>若想要以浮点数输出最小单位（比如秒），可以加上 <strong>.xxx</strong>，比如
+<strong>hh:mm:ss.xxx</strong>或者<strong>hh:mm.xxx</strong>；否则只输出最小单位的整数部分。即输出为01:02:03而不是01:02:03.456。</p></li>
+<li><p>默认使用24小时制。若要使用12小时制，可以在字符串的最后加上
+<strong>am</strong>、<strong>AM</strong>、<strong>a.m.</strong>、<strong>A.M.</strong>。比如 <strong>hha.m.</strong> 等等。</p></li>
+<li><p>若时间格式模板以 <strong>-</strong> 开头，则输出时间字符串时不会输出前置0</p></li>
+<li><p>若时间格式模板为 <strong>-</strong>，则在输出日期时间时不输出时间字符串</p></li>
+</ul>
+</dd>
+<dt id="term-FORMAT_CLOCK_IN"><strong>FORMAT_CLOCK_IN</strong><a class="headerlink" href="#term-FORMAT_CLOCK_IN" title="Permalink to this term"></a></dt><dd><p>输入数据中时间数据的格式 [<strong>hh:mm:ss</strong>]</p>
+<p>见 <a class="reference internal" href="#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> 的说明。</p>
+</dd>
+<dt id="term-FORMAT_CLOCK_MAP"><strong>FORMAT_CLOCK_MAP</strong><a class="headerlink" href="#term-FORMAT_CLOCK_MAP" title="Permalink to this term"></a></dt><dd><p>图上绘制时间字符串时所使用的格式 [<strong>hh:mm:ss</strong>]</p>
+<p>见 <a class="reference internal" href="#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a> 的说明。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>地理坐标的输出/绘图格式<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl class="glossary">
+<dt id="term-FORMAT_GEO_OUT"><strong>FORMAT_GEO_OUT</strong><a class="headerlink" href="#term-FORMAT_GEO_OUT" title="Permalink to this term"></a></dt><dd><p>控制地理坐标数据的输出格式 [<strong>D</strong>]</p>
+<p>格式的通用形式有两类：</p>
+<ul>
+<li><p>[±]<strong>D</strong>：表示将地理数据以浮点数的形式输出，浮点数的格式由
+<a class="reference internal" href="#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 决定</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>D</strong>：经度输出范围为 -180到180</p></li>
+<li><p><strong>+D</strong>：经度输出范围为 0到360</p></li>
+<li><p><strong>-D</strong>：经度输出范围为 -360到0</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>[±]ddd[:mm[:ss]][.xxx][F|G]</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>ddd</strong>：固定格式的整型度</p></li>
+<li><p><strong>:</strong>：分隔符</p></li>
+<li><p><strong>mm</strong>：固定格式的整型分</p></li>
+<li><p><strong>ss</strong>：固定格式的整型秒</p></li>
+<li><p><strong>.xxx</strong>：前一个量的小数部分</p></li>
+<li><p><strong>F</strong>：用WSEN后缀来表示正负号</p></li>
+<li><p><strong>G</strong>：与F相同，但后缀前有一空格</p></li>
+<li><p><strong>±</strong>：默认经度范围为-180到180，若加正号则范围为0到360，加负号则范围为-360到0</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>示例及效果：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ddd:mmF</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">35:45W</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ddd:mmG</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">35:45</span> <span class="pre">W</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ddd:mm:ss</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">40:34:24</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ddd.xxx</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">36.250</span></code></p></li>
+</ul>
+</dd>
+<dt id="term-FORMAT_GEO_MAP"><strong>FORMAT_GEO_MAP</strong><a class="headerlink" href="#term-FORMAT_GEO_MAP" title="Permalink to this term"></a></dt><dd><p>绘图时地理坐标的显示格式 [<strong>ddd.mm.ss</strong>]</p>
+<p>格式的具体定义参考 <a class="reference internal" href="#term-FORMAT_GEO_OUT"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>，但具体格式会进一步由 <strong>-B</strong> 选项控制。除此之外，还可以在格式后面加上 <strong>A</strong> 表示绘制坐标的绝对值。</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>浮点数的输出/绘图格式<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<dl class="glossary">
+<dt id="term-FORMAT_FLOAT_OUT"><strong>FORMAT_FLOAT_OUT</strong><a class="headerlink" href="#term-FORMAT_FLOAT_OUT" title="Permalink to this term"></a></dt><dd><p>双精度浮点数在输出时所使用的格式 [<strong>%.12lg</strong>]</p>
+<p>具体的格式遵循C语言 <code class="docutils literal notranslate"><span class="pre">printf</span></code> 函数的格式定义，比如 <strong>%.3lf</strong>。</p>
+<p>若需要为不同列指定不同的输出格式，可以使用多个逗号分隔的 <em>cols</em>:<em>format</em> 形式。其中，<em>cols</em> 可以是列号（比如5代表数据的第六列），也可以是列范围（比如3-7表示第4到8列），不指定 <em>cols</em> 的格式将用于其他余下的列。比如 <code class="docutils literal notranslate"><span class="pre">0:%.3lf,1-3:%.12lg,%lf</span></code>。</p>
+<p>也可以列出N个用空格分隔的格式，这些格式分别应用到数据的前N列中，比如 <code class="docutils literal notranslate"><span class="pre">%.3lf</span> <span class="pre">%.2lf</span> <span class="pre">%lf</span></code> 。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ol class="arabic simple">
+<li><p>由于 GMT 内部将所有数字以浮点型保存，因而若使用整型格式 <code class="docutils literal notranslate"><span class="pre">%d</span></code> 显示则会出错</p></li>
+<li><p>若设置为 <code class="docutils literal notranslate"><span class="pre">%'lg</span></code>，则 10000 会显示成 10,000。由于单引号的特殊意义，因而可能需要转义，即写成 <code class="docutils literal notranslate"><span class="pre">%\'lg</span></code></p></li>
+<li><p>百分号 <strong>%</strong> 在Windows的Batch下有特殊含义，在使用时需要使用两个百分号代替一个百分号，例如 <code class="docutils literal notranslate"><span class="pre">%%.3lf</span></code></p></li>
+</ol>
+</div>
+</dd>
+<dt id="term-FORMAT_FLOAT_MAP"><strong>FORMAT_FLOAT_MAP</strong><a class="headerlink" href="#term-FORMAT_FLOAT_MAP" title="Permalink to this term"></a></dt><dd><p>以双精度浮点数形式绘制地图边框标注或等值线标注时所使用的格式 [<strong>%.12lg</strong>]</p>
+<p>见 <a class="reference internal" href="#term-FORMAT_FLOAT_OUT"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> 中的相关说明。</p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h2>其它数据的绘图格式<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<dl class="glossary">
+<dt id="term-FORMAT_TIME_MAP"><strong>FORMAT_TIME_MAP</strong><a class="headerlink" href="#term-FORMAT_TIME_MAP" title="Permalink to this term"></a></dt><dd><p>同时设置 <a class="reference internal" href="#term-FORMAT_TIME_PRIMARY_MAP"><span class="xref std std-term">FORMAT_TIME_PRIMARY_MAP</span></a> 和 <a class="reference internal" href="#term-FORMAT_TIME_SECONDARY_MAP"><span class="xref std std-term">FORMAT_TIME_SECONDARY_MAP</span></a> 的值</p>
+</dd>
+<dt id="term-FORMAT_TIME_PRIMARY_MAP"><strong>FORMAT_TIME_PRIMARY_MAP</strong><a class="headerlink" href="#term-FORMAT_TIME_PRIMARY_MAP" title="Permalink to this term"></a></dt><dd><p>一级标注中月份、周名的格式 [<strong>full</strong>]</p>
+<p>可以取如下值：</p>
+<ul class="simple">
+<li><p><strong>full</strong>：显示全称，比如 January</p></li>
+<li><p><strong>abbreviate</strong>：显示简称，比如 Jan</p></li>
+<li><p><strong>character</strong>：显示单个字符，比如 J</p></li>
+</ul>
+<p>还可以使用 <strong>Full</strong>、<strong>Abbreviate</strong>、<strong>Character</strong> 表示所有名字均大写。</p>
+<p>全称、简称以及单字符的定义见GMT安装目录下 <code class="file docutils literal notranslate"><span class="pre">share/localization</span></code> 目录中的语言定义文件。</p>
+</dd>
+<dt id="term-FORMAT_TIME_SECONDARY_MAP"><strong>FORMAT_TIME_SECONDARY_MAP</strong><a class="headerlink" href="#term-FORMAT_TIME_SECONDARY_MAP" title="Permalink to this term"></a></dt><dd><p>二级标注中月份、周名的格式 [<strong>full</strong>]</p>
+<p>见 <a class="reference internal" href="#term-FORMAT_TIME_PRIMARY_MAP"><span class="xref std std-term">FORMAT_TIME_PRIMARY_MAP</span></a> 中的相关说明。</p>
+</dd>
+<dt id="term-FORMAT_TIME_STAMP"><strong>FORMAT_TIME_STAMP</strong><a class="headerlink" href="#term-FORMAT_TIME_STAMP" title="Permalink to this term"></a></dt><dd><p>GMT时间戳中时间信息的显示格式 [<strong>%Y %b %d %H:%M:%S</strong>]</p>
+<p>该选项的值用C函数 <a class="reference external" href="http://www.cplusplus.com/reference/ctime/strftime/">strftime</a>
+解析，故而理论上可以包含任意文本。</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../dir/" class="btn btn-neutral float-left" title="DIR参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../io/" class="btn btn-neutral float-right" title="IO参数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

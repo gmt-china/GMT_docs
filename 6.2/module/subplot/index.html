@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>subplot &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="surface" href="../surface/" />
+    <link rel="prev" title="sph2grd" href="../sph2grd/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">subplot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subplot-begin">subplot begin 语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subplot-set">subplot set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">subplot set 语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subplot-end">subplot end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">subplot end 语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>subplot</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/subplot.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="subplot">
+<h1>subplot<a class="headerlink" href="#subplot" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/subplot.html" title="(在 GMT v6.2)"><span>subplot</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>管理和设置子图模式</p>
+</dd>
+</dl>
+<p><strong>subplot</strong> 模块可以将当前纸张分隔成若干个网格区域，每个区域内都可以包含一张单独的子图。</p>
+<p><strong>subplot</strong>  模块提供了三条指令：</p>
+<ul class="simple">
+<li><p><strong>subplot begin</strong> 进入子图模式，并设置子图的布局</p></li>
+<li><p><strong>subplot set</strong> 用于指定接下来的绘图操作在哪一个子图中进行</p></li>
+<li><p><strong>subplot end</strong> 用于结束子图模式</p></li>
+</ul>
+<p>在子图模式中，需要注意如下几点：</p>
+<ul class="simple">
+<li><p><strong>-X</strong> 和 <strong>-Y</strong> 选项无法在子图模式中使用，可以使用 <strong>-C</strong> 选项作为替代</p></li>
+<li><p>在使用 <strong>-J</strong> 选项时，可以使用 <strong>?</strong> 来指定地图宽度或比例尺，此时，GMT会根据子图的大小自动确定最合适的地图尺寸</p></li>
+<li><p>对于笛卡尔投影，若想要X和Y轴共用相同的比例尺，则可以使用 <strong>-Jx?</strong></p></li>
+</ul>
+<section id="subplot-begin">
+<h2>subplot begin 语法<a class="headerlink" href="#subplot-begin" title="永久链接至标题"></a></h2>
+<p><strong>gmt subplot begin</strong>
+<em>nrows</em><strong>x</strong><em>ncols</em>
+<a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]
+[ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<em>autolabel</em>][<strong>+j</strong>|<strong>J</strong><em>refpoint</em>][<strong>+c</strong><em>dx</em>/<em>dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>][<strong>+r</strong>][<strong>+R</strong>][<strong>+v</strong>] ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>side</em>]<em>clearance</em> ]
+[ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>projection</em> ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>layout</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>title</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id1">
+<h2>必须选项<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<dl>
+<dt><em>nrows</em><strong>x</strong><em>ncols</em></dt><dd><p>指定子图的行数和列数。中间为小写英文字母 <strong>x</strong>，不是星号或其他符号。</p>
+<p>每一行和每一列均有相同的子图数目。注意：你无需在每个子图内都绘图。</p>
+</dd>
+</dl>
+<dl id="f">
+<dt><strong>-F</strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]</dt><dd><p>指定图片的尺寸。有两种方式：</p>
+<ul class="simple">
+<li><p><strong>-Ff</strong>: 直接指定整张图片的尺寸</p></li>
+<li><p><strong>-Fs</strong>: 指定单个子图的尺寸</p></li>
+</ul>
+<p>除此之外，还可以为整张图加上背景色和边框:</p>
+<ul class="simple">
+<li><p><strong>+p</strong><em>pen</em>: 为整张图加上背景矩形边框</p></li>
+<li><p><strong>+w</strong><em>pen</em>: 绘制子图区域之间的水平和垂直分割线</p></li>
+<li><p><strong>+g</strong><em>fill</em>: 为整张图的背景矩形填充颜色</p></li>
+<li><p><strong>+c</strong><em>dx/dy</em>: 设置背景矩形与整张图之间的额外空白</p></li>
+</ul>
+<dl>
+<dt><strong>-F</strong>[<strong>f</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>]</dt><dd><p>指定整张图片的宽度 <em>width</em> 和高度 <em>height</em>。</p>
+<p>这种情况下，GMT会根据整张图片的尺寸以及子图的数目自动计算每张子图的尺寸。在计算子图尺寸时会考虑每个子图的刻度线、标注、标签所占据的空间，以及不同子图之间的间隔。整张图的最外圈的刻度线、标记和标签不算在整张图片尺寸之内。</p>
+<p>默认所有行和列的尺寸都是相同的。若想要子图的每一行具有不同的高度，或者子图的每一列具有不同的宽度，则可以使用
+<strong>+f</strong>，后面紧跟着一系列逗号分隔的宽度比例和以逗号分隔的高度比例。单个数则表示所有行或列有相同的宽度或高度。</p>
+<p>例如，对于一个2x2的子图，使用<strong>-Ff</strong>12c/12c+f3,1/1,2 则表示</p>
+<ul class="simple">
+<li><p>整张图的宽度和高度均为12厘米</p></li>
+<li><p>第一列占3个宽度，第二列占1个宽度</p></li>
+<li><p>第一行占1个高度，第二行占2个高度</p></li>
+</ul>
+</dd>
+<dt><strong>-Fs</strong><em>widths</em>/<em>heights</em></dt><dd><p>通过指定每个子图的宽度和高度间接指定图片尺寸。</p>
+<p>在这种情况下，整张图片的尺寸由每个子图的尺寸以及刻度线、标注、标签占据的空间和子图之间的间隙共同决定，但最外圈的刻度线、标记、标签所占据的空间不算在整张图的尺寸之内。</p>
+<p>默认所有行和列的尺寸都是相同的。若想要给每行或每列指定不同的子图尺寸，可以加上一系列以逗号分隔的宽度，然后再加上一个斜杠，并加上一系列以逗号分隔的高度。单个数则表示所有行或列有相同的宽度或高度。</p>
+<p>例如，对于一个2x2的子图，使用 <strong>-Fs</strong>4c,8c/4c 则表示第一列为4厘米宽，第二列为8厘米宽，所有列的高度均为4厘米高。注意，宽度值或高度值的数目必须是一个或者与行数/列数相匹配。</p>
+<p>对于地理地图而言，每张子图的高度由地图区域 <strong>-R</strong> 以及投影方式 <strong>-J</strong> 决定。有两个选择：(1) 指定子图高度为0，并同时指定 <strong>-R</strong> 和 <strong>-J</strong>，利用其计算每张子图的高度，但要求所有子图必须共享相同的研究区域和投影方式；(2) 不断尝试并修改子图的高度以得到最佳的绘图布局。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<dl id="a">
+<dt><strong>-A</strong>[<em>autolabel</em>][<strong>+j</strong>|<strong>J</strong><em>refpoint</em>][<strong>+c</strong><em>dx</em>/<em>dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>][<strong>+r</strong>][<strong>+R</strong>][<strong>+v</strong>]</dt><dd><p>为子图自动添加编号。</p>
+<p><em>autolabel</em> 可以是单个数字或字母，也可以在数字或字母的一侧或两侧加上括号。其设置了左上角第一张子图的编号，而其余子图则按照递增的顺序依次编号。默认值为 <strong>a)</strong>。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>括号在Unix Shell中有特殊含义，可以将其用单引号括起来，即 <code class="docutils literal notranslate"><span class="pre">'(a)'</span></code>。</p>
+</div>
+<p>加上子选项可以指定编号的更多属性：</p>
+<ul class="simple">
+<li><p><strong>+j</strong>|<strong>J</strong><em>refpoint</em>: 指定编号在子图中的位置，默认值为 <code class="docutils literal notranslate"><span class="pre">TL</span></code>，即编号位于子图的左上角。<strong>+j</strong> 和 <strong>+J</strong> 分别适用于子图编号位于子图内部和外部的情况</p></li>
+<li><p><strong>+o</strong><em>dx</em>[/<em>dy</em>] 设置子图编号相对于 <strong>+j|J</strong> 指定的参考位置间的额外偏移量，默认值为 <a class="reference internal" href="../../conf/font/#term-FONT_TAG"><span class="xref std std-term">FONT_TAG</span></a> 的20%</p></li>
+<li><p><strong>+p</strong><em>pen</em> 为子图编号加上文本框</p></li>
+<li><p><strong>+g</strong><em>fill</em> 为子图编号的文本框填充颜色</p></li>
+<li><p><strong>+c</strong><em>dx</em>[/<em>dy</em>]: 设置子图编号与文本框轮廓间的距离，默认值为 <a class="reference internal" href="../../conf/font/#term-FONT_TAG"><span class="xref std std-term">FONT_TAG</span></a> 的15%</p></li>
+<li><p><strong>+r</strong> 表示用小写罗马数字编号</p></li>
+<li><p><strong>+R</strong> 表示用大小罗马数字编号</p></li>
+<li><p><strong>+v</strong> 表示沿着垂直列方向依次增加编号，默认沿着水平行方向依次增加</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="b">
+<dt><strong>-B</strong><em>parameters</em> <a class="reference internal" href="../../option/B/"><span class="doc">(more …)</span></a></dt><dd><p>设置底图边框和轴属性</p>
+</dd>
+</dl>
+<dl id="c">
+<dt><strong>-C</strong>[<em>side</em>]<em>clearance</em></dt><dd><p>设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。</p>
+<p><em>side</em> 可以取 <strong>e</strong> <strong>w</strong> <strong>s</strong> <strong>n</strong> 分别代表东西南北四条边；也可以取 <strong>x</strong> 或 <strong>y</strong>，分别表示设置东西或南北方向两条边的空白；若不指定 <em>side</em>，则表示同时设置四条边上的空白量。</p>
+<p>该选项可以重复多次，对不同边分别设置不同的间距。</p>
+<p><strong>subplot begin</strong> 中该选项对所有子图均有效，而 <strong>subplot set</strong> 中使用该选项则仅对当前子图有效。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>在子图模式内不能使用 <strong>-X</strong> 和 <strong>-Y</strong>，可以使用 <strong>-C</strong> 作为替代。</p>
+</div>
+</dd>
+</dl>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt><dd><p>设置地图投影方式</p>
+</dd>
+</dl>
+<dl id="m">
+<dt><strong>-M</strong><em>margins</em></dt><dd><p>相邻子图之间的额外空白</p>
+<p><em>margins</em> 可以有三种情况：</p>
+<ol class="arabic simple">
+<li><p>取一个值，表示子图四个方向的空白 [默认值为 <a class="reference internal" href="../../conf/font/#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 规定的字体大小]</p></li>
+<li><p>取两个值，表示子图的水平和垂直方向的空白，两个值之间用斜杠分隔</p></li>
+<li><p>取四个值，表示子图的左右下上四个方向的空白，四个值之间用斜杠分隔</p></li>
+</ol>
+<p><em>margins</em> 允许设置为负值，进一步缩小子图间距。</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+<dl id="s">
+<dt><strong>-SC</strong>[<strong>b</strong>|<strong>t</strong>][<strong>+l</strong><em>label</em>][<strong>+t</strong>]</dt><dd><p>设置一列中的所有子图共用X轴</p>
+<p>当一列所有子图共用X轴时，默认只有第一行子图的顶部（<strong>t</strong>） X轴和最后一个子图的底部（<strong>b</strong>）X轴有标注。</p>
+<ul class="simple">
+<li><p><strong>-SCb</strong> 一列中只有最后一行子图的底部X轴有标注</p></li>
+<li><p><strong>-SCt</strong> 一列中只有第一行子图的顶部X轴有标注</p></li>
+<li><p><strong>+l</strong><em>label</em> 为共用的X轴添加标注</p></li>
+<li><p><strong>+t</strong> 为每个子图的标题预留空间</p></li>
+<li><p><strong>+tc</strong> 为第一行的所有子图的标题预留空间</p></li>
+</ul>
+</dd>
+<dt><strong>-SR</strong>[<strong>l</strong>|<strong>r</strong>][<strong>+l</strong><em>label</em>][<strong>+p</strong>][<strong>+t</strong>]</dt><dd><p>设置一行中所有子图共用Y轴</p>
+<p>当一行所有子图共用X轴时，默认只有第一列子图的左边Y轴和最后一列子图的右边Y轴有标注。</p>
+<ul class="simple">
+<li><p><strong>-SRl</strong> 一行中只有第一列子图的左边Y轴有标注</p></li>
+<li><p><strong>-SRr</strong> 一行中只有最后一列子图的右边Y轴有标注</p></li>
+<li><p><strong>+l</strong><em>label</em> 为共用的Y轴添加标注</p></li>
+<li><p><strong>+p</strong> 设置所有标注与Y轴平行</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="t">
+<dt><strong>-T</strong><em>heading</em></dt><dd><p>设置整张图的总标题，标题文字的属性由 <a class="reference internal" href="../../conf/font/#term-FONT_HEADING"><span class="xref std std-term">FONT_HEADING</span></a> 控制。</p>
+<p>每张子图各自的标题可以用 <strong>-B</strong> 或 <strong>-S</strong> 选项控制。</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<p id="y"><span id="x"></span><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../option/XY/"><span class="doc">(more …)</span></a></dt><dd><p>移动绘图原点</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/gmt.conf.html" title="(在 GMT v6.2)"><span class="xref std std-doc">gmt.conf</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="subplot-set">
+<h2>subplot set<a class="headerlink" href="#subplot-set" title="永久链接至标题"></a></h2>
+<p><strong>subplot set</strong> 通过指定子图的行列号或索引号以激活某个特定的子图，接下来的所有绘图命令将只在该子图内进行绘制。其与 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 功能基本一致。</p>
+<p>子图的行号、列号、索引号均从0开始算起。因而对于MxN的子图而言，行号的取值为0到M-1，列号的取值为0到N-1，索引号的取值则为0到(M*N-1)。</p>
+<p>若使用 <strong>subplot set</strong> 但未指定子图的行列号或索引号，则GMT会自动激活“下一个”子图。例如，对于一个2行2列的图而言，每次使用 <strong>subplot set</strong> 而不指定子图行和列，则按照行优先顺序依次激活子图 <code class="docutils literal notranslate"><span class="pre">0,0</span></code> → <code class="docutils literal notranslate"><span class="pre">0,1</span></code> → <code class="docutils literal notranslate"><span class="pre">1,0</span></code> → <code class="docutils literal notranslate"><span class="pre">1,1</span></code>。若 <strong>subplot begin</strong> 中使用了 <strong>-A+v</strong> 选项，则按照列优先顺序依次激活子图
+<code class="docutils literal notranslate"><span class="pre">0,0</span></code> → <code class="docutils literal notranslate"><span class="pre">1,0</span></code> → <code class="docutils literal notranslate"><span class="pre">0,1</span></code> → <code class="docutils literal notranslate"><span class="pre">1,1</span></code>。</p>
+</section>
+<section id="id3">
+<h2>subplot set 语法<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p><strong>gmt subplot set</strong>
+[ <em>row,col</em>|<em>index</em> ]
+[ <strong>-A</strong><em>fixedlabel</em>]
+[ <strong>-C</strong><em>side</em>/<em>clearance</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
+</section>
+<section id="id4">
+<h2>可选选项<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<dl>
+<dt><em>row,col</em> | <em>index</em></dt><dd><p>指定要激活的子图的行列号或索引号。行列号、索引号均从0开始算起。</p>
+<p>若不指定子图行列号或索引号，则自动激活“下一个”子图。</p>
+</dd>
+<dt><strong>-A</strong><em>fixedlabel</em></dt><dd><p>设置当前子图的编号，忽略 <strong>subplot begin</strong> 中 <strong>-A</strong> 选项设置的自动编号。</p>
+<p>这一选项可以用于临时修改单个子图的编号，但该选项只能修改编号字符串，其余属性（如位置、文本框）等均只能继承自 <strong>subplot begin</strong> 的 <strong>-A</strong> 选项。</p>
+</dd>
+<dt><strong>-C</strong><em>side</em>/<em>clearance</em></dt><dd><p>设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。</p>
+<p><em>side</em> 可以取 <strong>e</strong> <strong>w</strong> <strong>s</strong> <strong>n</strong> 分别代表东西南北四条边。该选项可以重复多次，对不同边分别设置不同的间距。
+<strong>subplot begin</strong> 该选项对所有子图均有效，而 <strong>subplot set</strong> 中使用该选项则仅对当前子图有效。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>在子图模式下不能使用 <strong>-X</strong> 和 <strong>-Y</strong>，可以使用 <strong>-C</strong> 作为替代。</p>
+</div>
+</dd>
+</dl>
+</section>
+<section id="subplot-end">
+<h2>subplot end<a class="headerlink" href="#subplot-end" title="永久链接至标题"></a></h2>
+<p>该命令用于结束当前的子图模式。</p>
+<p>在结束子图模式时，其会进行如下操作：</p>
+<ul class="simple">
+<li><p>对所有子图进行编号</p></li>
+<li><p>将绘图原点重置回之前的原点位置</p></li>
+<li><p>更新历史信息，设置为线性投影，并给出整张图的大小，使得用户可以使用 <strong>-DJ</strong> 方式放置colorbar等。</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>subplot end 语法<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p><strong>gmt subplot end</strong> [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
+</section>
+<section id="id6">
+<h2>示例<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p>下面的示例展示了如何设置一张2x2布局的图，并使用不同的方式指定要激活的子图。不同的设置方式的效果是相同的，用户在使用时可根据需求选择最直观最简便的方式。</p>
+<p><strong>方法1: 使用 subplot set 指定子图行列号</strong></p>
+<p>注意行列号均从0开始。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+    gmt subplot begin 2x2 -Fs5c/2.5c -A
+    gmt subplot <span class="nb">set</span> <span class="m">0</span>,0
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span> <span class="m">0</span>,1
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span> <span class="m">1</span>,0
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span> <span class="m">1</span>,1
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot end
+gmt end
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../../_images/subplot-gmtplot-01.png" src="../../_images/subplot-gmtplot-01.png" />
+</figure>
+<p><strong>方法2: 使用 subplot set 指定子图索引号</strong></p>
+<p>注意子图索引号从0开始:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+    gmt subplot begin 2x2 -Fs5c/2.5c -A
+    gmt subplot <span class="nb">set</span> <span class="m">0</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span> <span class="m">1</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span> <span class="m">2</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span> <span class="m">3</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot end
+gmt end
+</pre></div>
+</div>
+<p><strong>方法3: 使用 subplot set 但不指定子图号</strong></p>
+<p>每次使用 <strong>subplot set</strong> 但不指定子图行列号或索引号，则会自动激活“下一个”子图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+    gmt subplot begin 2x2 -Fs5c/2.5c -A
+    gmt subplot <span class="nb">set</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot <span class="nb">set</span>
+    gmt basemap -R0/10/0/10 -Baf
+    gmt subplot end
+gmt end
+</pre></div>
+</div>
+<p><strong>方法4: 使用 -c 选项</strong></p>
+<p><a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 的功能与 <strong>subplot set</strong> 类似，可以用于激活指定的子图。其后可以接子图行列号或索引号，也可以只使用 <strong>-c</strong> 自动激活下一个子图:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
+    gmt subplot begin 2x2 -Fs5c/2.5c -A
+    gmt basemap -R0/10/0/10 -Baf -c
+    gmt basemap -R0/10/0/10 -Baf -c
+    gmt basemap -R0/10/0/10 -Baf -c
+    gmt basemap -R0/10/0/10 -Baf -c
+    gmt subplot end
+gmt end
+</pre></div>
+</div>
+<p>下面展示了如何设置一个2x2的图，并设置共用X和Y轴:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin panels png,pdf
+  gmt subplot begin 2x2 -Fs10c/5cc -M5p -A -SCb -SRl -Bwstr
+    gmt subplot <span class="nb">set</span>
+    gmt basemap -R0/80/0/10
+    gmt subplot <span class="nb">set</span>
+    gmt basemap
+    gmt subplot <span class="nb">set</span>
+    gmt basemap
+    gmt subplot <span class="nb">set</span>
+    gmt basemap
+  gmt subplot end
+gmt end
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../../_images/subplot-gmtplot-11.png" src="../../_images/subplot-gmtplot-11.png" />
+</figure>
+<p>下面的示例展示了如何绘制一个不完全规则的子图。这个示例中，实际上只使用了子图0、2、3，而第一张图同时占据了子图0和1的空间。在这种情况下，GMT的自动编号功能无法正确编号，因而需要在 <strong>subplot set</strong> 中为每个子图单独指定编号。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf,png
+    gmt subplot begin 2x2 -Fs5c/3c -A -M0
+
+    gmt subplot <span class="nb">set</span> <span class="m">0</span>
+    gmt basemap -R0/20/0/10 -JX11.2c/3c -Baf -BWSen
+
+    gmt subplot <span class="nb">set</span> <span class="m">2</span> -A<span class="s1">&#39;(b)&#39;</span>
+    gmt basemap -R0/20/0/10 -JX? -Baf -BWSen
+
+    gmt subplot <span class="nb">set</span> <span class="m">3</span> -A<span class="s1">&#39;(c)&#39;</span>
+    gmt basemap -R0/20/0/10 -JX? -Baf -BWSen
+
+    gmt subplot end
+gmt end
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="../../_images/subplot-gmtplot-21.png" src="../../_images/subplot-gmtplot-21.png" />
+</figure>
+</section>
+<section id="id7">
+<h2>相关模块<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<p><a class="reference internal" href="../begin/"><span class="doc">begin</span></a>,
+<a class="reference internal" href="../clear/"><span class="doc">clear</span></a>,
+<a class="reference internal" href="../docs/"><span class="doc">docs</span></a>,
+<a class="reference internal" href="../end/"><span class="doc">end</span></a>,
+<a class="reference internal" href="../figure/"><span class="doc">figure</span></a>,
+<a class="reference internal" href="../inset/"><span class="doc">inset</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../sph2grd/" class="btn btn-neutral float-left" title="sph2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../surface/" class="btn btn-neutral float-right" title="surface" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

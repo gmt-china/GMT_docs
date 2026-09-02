@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grdinfo &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="grdlandmask" href="../grdlandmask/" />
+    <link rel="prev" title="grdimage" href="../grdimage/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grdinfo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>grdinfo</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/grdinfo.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="grdinfo">
+<h1>grdinfo<a class="headerlink" href="#grdinfo" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/grdinfo.html" title="(在 GMT v6.2)"><span>grdinfo</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>提取网格文件的基本信息</p>
+</dd>
+</dl>
+<p><strong>grdinfo</strong> 模块读取一个2D网格文件并报告网格文件的相关信息。能提取的信息包括：</p>
+<ul class="simple">
+<li><p>X、Y、Z的最大和最小值</p></li>
+<li><p>最大/最小Z值所在的位置</p></li>
+<li><p>X、Y的网格间隔</p></li>
+<li><p>X和Y方向节点数目</p></li>
+<li><p>均值、标准差</p></li>
+<li><p>中位数、绝对中位差（median absolute deviation）</p></li>
+<li><p>the mode (Least Median of Squares; LMS), LMS scale of <em>z</em></p></li>
+<li><p>值为NaN的节点数</p></li>
+<li><p>网格配准方式</p></li>
+<li><p>网格类型（笛卡尔数据或地理数据）</p></li>
+</ul>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p><strong>gmt grdinfo</strong> <em>grdfiles</em>
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>n</strong>|<strong>t</strong>] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<em>xoff</em>[/<em>yoff</em>]][<strong>+i</strong>] ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>x</strong>|<strong>y</strong>][<strong>+h</strong>|<strong>H</strong>|<strong>l</strong>|<strong>L</strong>] ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong> ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>dx</em>[/<em>dy</em>]|<strong>b</strong>|<strong>i</strong>|<strong>r</strong>] ]
+[ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>0</strong>|<strong>1</strong>|<strong>2</strong>|<strong>p</strong>|<strong>a</strong>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>dz</em>][<strong>+a</strong>[<em>alpha</em>]][<strong>+s</strong>] ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-f</strong><a class="reference internal" href="../../option/f/"><span class="doc">flags</span></a> ]
+[ <strong>-h</strong><a class="reference internal" href="../../option/h/"><span class="doc">headers</span></a> ]
+[ <strong>-o</strong><a class="reference internal" href="../../option/io/"><span class="doc">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<dl class="simple">
+<dt><em>grdfile</em></dt><dd><p>一个或多个网格文件名</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<dl id="c">
+<dt><strong>-C</strong>[<strong>n</strong>|<strong>t</strong>]</dt><dd><p>将输出信息以Tab分隔显示在一行中。输出格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name w e s n z0 z1 dx dy nx ny <span class="o">[</span>x0 y0 x1 y1<span class="o">]</span> <span class="o">[</span>med scale<span class="o">]</span> <span class="o">[</span>mean std rms<span class="o">]</span> <span class="o">[</span>n_nan<span class="o">]</span> registration gtype
+</pre></div>
+</div>
+<p>默认只输出前13列。方括号中的信息仅当使用 <strong>-M</strong>、<strong>-L1</strong>、<strong>-L2</strong>、<strong>-M</strong>
+选项时才会输出。</p>
+<p>使用 <strong>-Ct</strong> 则将文件名 <em>name</em> 放在最后一列；使用 <strong>-Cn</strong> 则只输出数值列。</p>
+<p><em>registration</em> 为网格的配准方式，0表示网格线配准，1表示像素配准；
+<em>gtype</em> 表示数据类型，0表示笛卡尔数据，1表示地理数据。</p>
+<p>若与 <strong>-I</strong> 选项一起使用，则输出格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NF w e s n z0 z1
+</pre></div>
+</div>
+<p>其中 <em>NF</em> 是总网格数目。</p>
+</dd>
+</dl>
+<dl id="d">
+<dt><strong>-D</strong>[<em>xoff</em>[/<em>yoff</em>]][<strong>+i</strong>]</dt><dd><p>将网格区域划分为多个子区域，并报告子区域的范围。</p>
+<p>子区域大小为 <em>dx</em> 乘 <em>dy</em>，由 <strong>-I</strong> 选项控制。
+<em>xoff/yoff</em> 用于指定多个子区域之间的重叠区域。
+<strong>+i</strong> 子选项表明若该子区域内无数据则忽略该区域。若使用 <strong>-C</strong> 选项则以 <em>w e s n</em> 格式输出每个子区域的区域范围，使用 <strong>-Ct</strong> 则在最后一列以 <strong>-R</strong><em>w/e/s/n</em> 格式输出子区域数据范围。</p>
+<p><strong>-D</strong> 选项示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt grdinfo @earth_relief_30m -D -I180/90
+-R-180/0/-90/0
+-R0/180/-90/0
+-R-180/0/0/90
+-R0/180/0/90
+</pre></div>
+</div>
+<p><strong>-D</strong> 与 <strong>-C</strong> 一起使用:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt grdinfo @earth_relief_30m -D -I180/90 -C
+-180    <span class="m">0</span>       -90     <span class="m">0</span>
+<span class="m">0</span>       <span class="m">180</span>     -90     <span class="m">0</span>
+-180    <span class="m">0</span>       <span class="m">0</span>       <span class="m">90</span>
+<span class="m">0</span>       <span class="m">180</span>     <span class="m">0</span>       <span class="m">90</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl id="e">
+<dt><strong>-E</strong>[<strong>x</strong>|<strong>y</strong>][<strong>l</strong>|<strong>L</strong>|<strong>u</strong>|<strong>U</strong>]</dt><dd><p>报告每一列（<strong>-Ex</strong>）或每一行（<strong>-Ey</strong>）的极值。</p>
+<ul class="simple">
+<li><p><strong>+u</strong>|<strong>U</strong> : 寻找每一列的极大值 [默认行为]</p></li>
+<li><p><strong>+l</strong>|<strong>L</strong> : 寻找每一列的极小值</p></li>
+</ul>
+<p>其中，大写的 <strong>+L</strong> 表示寻找正值中最小的一个；大写的 <strong>+U</strong> 表示寻找负值中最大的一个。</p>
+</dd>
+</dl>
+<dl class="simple" id="f">
+<dt><strong>-F</strong></dt><dd><p>以每行输出一个信息的方式的输出信息。该选项不得与 <strong>-C</strong> 一起使用。</p>
+</dd>
+</dl>
+<dl id="i">
+<dt><strong>-I</strong>[<em>dx</em>[/<em>dy</em>]|<strong>b</strong>|<strong>i</strong>|<strong>r</strong>]</dt><dd><p>报告网格数据的区域范围</p>
+<p>使用 <strong>-I</strong><em>dx</em>/<em>dy</em> 会先获取网格的区域范围，并对该范围做微调使得其是 <em>dx</em>
+和 <em>dy</em> 的整数倍，并以 <strong>-R</strong><em>w/e/s/n</em> 的形式输出。</p>
+<ul class="simple">
+<li><p><strong>-Ir</strong> 以 <strong>-R</strong><em>w/e/s/n</em> 输出真实的网格区域范围</p></li>
+<li><p><strong>-Ii</strong> 以 <strong>-R</strong><em>w/e/s/n</em> 输出 <strong>img</strong> 补充包生成的网格文件的精确范围</p></li>
+<li><p><strong>-Ib</strong> 输出区域范围对应的四个顶点的坐标</p></li>
+<li><p><strong>-I</strong> 不加任何选项以 <strong>-I</strong><em>xinc</em>[/<em>yinc</em>] 形式输出网格间隔</p></li>
+</ul>
+<p><strong>-I</strong> 选项示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt grdinfo @earth_relief_30m -I
+-I30m
+
+$ gmt grdinfo @earth_relief_30m -Ir
+-R-180/180/-90/90
+
+$ gmt grdinfo @earth_relief_30m -Ib
+-180    -90
+<span class="m">180</span>     -90
+<span class="m">180</span>     <span class="m">90</span>
+-180    <span class="m">90</span>
+-180    -90
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl id="l">
+<dt><strong>-L</strong>[<strong>0</strong>|<strong>1</strong>|<strong>2</strong>|<strong>p</strong>|<strong>a</strong>]</dt><dd><p>报告Z值的其他信息。该选项可多次使用。</p>
+<ul class="simple">
+<li><p><strong>-L0</strong>: 扫描整个数据并报告Z值的范围，而不仅仅只是从网格的头段中读取Z值范围</p></li>
+<li><p><strong>-L1</strong>: 输出中位数以及L1 scale （L1 scale= 1.4826*Median Absolute Deviation）</p></li>
+<li><p><strong>-L2</strong>: 输出均值、标准差以及均方根</p></li>
+<li><p><strong>-Lp</strong>: 输出 mode (Least Median of Squares; LMS) 和 LMS scale</p></li>
+<li><p><strong>-La</strong>: 输出以上全部信息</p></li>
+</ul>
+<p>注意，对于像素配准的地理网格数据而言，每个节点代表的区域面积随着纬度的增加而减小，此时GMT报告的是网格文件在球面平均下的统计值。</p>
+</dd>
+</dl>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>寻找并报告Z值最小和最大值所对应的坐标，以及值为NaN的网格点的数目</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>w/e/s/n</em></dt><dd><p>从网格文件中取出一个子区域，并报告该子区域的信息。若指定的区域范围超过了网格边界，则只提取公共区域内的为网格信息。</p>
+</dd>
+</dl>
+<dl id="t">
+<dt><strong>-T</strong>[<em>dz</em>][<strong>+a</strong>[<em>alpha</em>]][<strong>+s</strong>]</dt><dd><p>以 <strong>-T</strong><em>zmin/zmax</em> 或 <strong>-T</strong><em>zmin/zmax/dz</em> 的格式输出Z值范围</p>
+<p>若只使用 <strong>-T</strong> 选项，则以 <strong>-T</strong><em>zmin/zmax</em> 格式输出Z值范围；若使用 <em>dz</em> 则先提取Z的最小最大值，并做微调使得最值是 <em>dz</em> 的整数倍，并以 <strong>-T</strong><em>zmin/zmax/dz</em> 格式输出。</p>
+<p>其它子选项：</p>
+<ul class="simple">
+<li><p><strong>+a</strong><em>alpha</em> 对网格文件中的值进行排序，并去除极值两端的部分数据。<em>alpha</em>
+为要去除的数据的百分比，默认值为 2。即去除数据 0.5*<em>alpha</em> 和
+100 - 0.5*<em>alpha</em> 的数据，并据此修改Z值范围。</p></li>
+<li><p><strong>+s</strong> 根据Z值的绝对最大值，输出一个关于0对称的范围</p></li>
+</ul>
+<p>示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt grdinfo @earth_relief_30m -T
+-T-9458/5888
+
+$ gmt grdinfo @earth_relief_30m -T100
+-T-9500/5900/100
+
+$ gmt grdinfo @earth_relief_30m -T100+s
+-T-9500/9500/100
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt><dd><p>指定输入或输出列的数据类型</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输出数据列（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/gmt.conf.html" title="(在 GMT v6.2)"><span class="xref std std-doc">gmt.conf</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt grdinfo @earth_relief_30m.grd
+earth_relief_30m.grd: Title: Earth Relief at <span class="m">30</span> arc minutes
+earth_relief_30m.grd: Command: grdfilter SRTM15+V2.nc -Fg55.6 -D1 -I30m -rg -Gearth_relief_30m.grd<span class="o">=</span>ns --IO_NC4_DEFLATION_LEVEL<span class="o">=</span><span class="m">9</span> --PROJ_ELLIPSOID<span class="o">=</span>Sphere
+earth_relief_30m.grd: Remark: Obtained by Gaussian Cartesian filtering <span class="o">(</span><span class="m">55</span>.6 km fullwidth<span class="o">)</span> from SRTM15+V2.nc <span class="o">[</span>Tozer et al., <span class="m">2019</span><span class="p">;</span> http://dx.doi.org/10.1029/2019EA000658<span class="o">]</span>
+earth_relief_30m.grd: Gridline node registration used <span class="o">[</span>Geographic grid<span class="o">]</span>
+earth_relief_30m.grd: Grid file format: <span class="nv">ns</span> <span class="o">=</span> GMT netCDF format <span class="o">(</span><span class="m">16</span>-bit integer<span class="o">)</span>, CF-1.7
+earth_relief_30m.grd: x_min: -180 x_max: <span class="m">180</span> x_inc: <span class="m">0</span>.5 <span class="o">(</span><span class="m">30</span> min<span class="o">)</span> name: longitude n_columns: <span class="m">721</span>
+earth_relief_30m.grd: y_min: -90 y_max: <span class="m">90</span> y_inc: <span class="m">0</span>.5 <span class="o">(</span><span class="m">30</span> min<span class="o">)</span> name: latitude n_rows: <span class="m">361</span>
+earth_relief_30m.grd: z_min: -9458 z_max: <span class="m">5888</span> name: elevation <span class="o">(</span>m<span class="o">)</span>
+earth_relief_30m.grd: scale_factor: <span class="m">1</span> add_offset: <span class="m">0</span>
+earth_relief_30m.grd: format: netCDF-4 chunk_size: <span class="m">145</span>,181 shuffle: on deflation_level: <span class="m">9</span>
+</pre></div>
+</div>
+<p>从输出中可以看到很多信息：</p>
+<ul class="simple">
+<li><p>网格文件中的标题信息；</p></li>
+<li><p>生成该网格文件的命令；</p></li>
+<li><p>网格文件的配准方式，此处为Gridline配准；</p></li>
+<li><p>数据格式为 <strong>ns</strong> 即16位整型；</p></li>
+<li><p>数据中X维度的最小值x_min、最大值x_max、网格间隔x_inc以及数据点数nx；</p></li>
+<li><p>数据中Y维度的最小值y_min、最大值y_max、网格间隔y_inc以及数据点数ny；</p></li>
+<li><p>数据中Z值的最小值z_min和最大值z_max以及其他信息；</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>相关模块<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p><a class="reference internal" href="../grd2cpt/"><span class="doc">grd2cpt</span></a>,
+<a class="reference internal" href="../grd2xyz/"><span class="doc">grd2xyz</span></a>,
+<a class="reference internal" href="../grdedit/"><span class="doc">grdedit</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../grdimage/" class="btn btn-neutral float-left" title="grdimage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../grdlandmask/" class="btn btn-neutral float-right" title="grdlandmask" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>脚本编程 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="绘制底图" href="../basemap/" />
+    <link rel="prev" title="命令初探" href="../commands/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/">GMT初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/">命令初探</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">脚本编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bash">Bash编程基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#batch">Batch编程基础知识</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bashbatch">将Bash脚本转换为Batch脚本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux">Linux 常用命令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coastline/">绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">绘制线段和多边形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/">添加文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT多图模式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">入门教程</a> &raquo;</li>
+        
+      <li>脚本编程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/tutorial/scripting.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>脚本编程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本手册中的所有示例及代码都使用Bash脚本实现，要求读者对Bash脚本语言有最基本的了解。Windows用户若使用Batch脚本，则需要同时了解Bash和Batch的语法，并了解如何将本手册中的Bash脚本正确转换为Batch脚本。</p>
+<p>这一节介绍本手册中或GMT使用过程中最常用的Bash和Batch语法，而不涉及不常用或更复杂的语法。本文主要包含四部分内容：</p>
+<ul class="simple">
+<li><p>Bash编程基础知识</p></li>
+<li><p>Batch编程基础知识</p></li>
+<li><p>将Bash脚本转换为Batch脚本</p></li>
+<li><p>常用Unix小工具</p></li>
+</ul>
+<div class="section" id="bash">
+<h2>Bash编程基础知识<a class="headerlink" href="#bash" title="永久链接至标题">¶</a></h2>
+<p>用文本编辑器创建一个后缀名为 <strong>.sh</strong> 的文件，向其中写入Bash命令并保存，即得到一个Bash脚本。</p>
+<p>打开终端，在终端中输入 <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script.sh</span></code>，即可执行Bash脚本 <code class="file docutils literal notranslate"><span class="pre">script.sh</span></code>。也可以执行命令 <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">script.sh</span></code> 给脚本可执行权限，然后即可在终端输入
+<code class="docutils literal notranslate"><span class="pre">./script.sh</span></code>运行“可执行”的脚本。</p>
+<p>下面的Bash脚本展示并解释了Bash中常用的语法：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># 脚本的第一行叫 shebang，用来告知系统如何执行该脚本:</span>
+<span class="c1"># 参见： http://en.wikipedia.org/wiki/Shebang_(Unix)</span>
+<span class="c1"># 以 # 开头的行是注释行，在脚本执行时会被忽略</span>
+
+<span class="c1"># echo 命令用于显示后面的字符</span>
+<span class="nb">echo</span> Hello world!
+
+<span class="c1"># 声明一个变量</span>
+<span class="c1"># 注意：= 两边不能有空格!</span>
+<span class="nv">projection</span><span class="o">=</span><span class="s2">&quot;X10c/10c&quot;</span>
+<span class="nv">region</span><span class="o">=</span><span class="s2">&quot;0/10/0/10&quot;</span>
+
+<span class="c1"># 在变量名前加上 $ 符号即可引用该变量的值</span>
+<span class="nb">echo</span> <span class="nv">$projection</span> <span class="nv">$region</span>
+
+<span class="c1"># 执行GMT命令</span>
+gmt begin map
+gmt basemap -J<span class="nv">$projection</span> -R<span class="nv">$region</span> -Baf
+
+<span class="c1"># 输入数据</span>
+<span class="c1"># 有些命令需要读入数据。Bash中有多种方法可以将数据传递给一个命令：</span>
+<span class="c1"># 1. 将数据保存到文件中，并在命令中指定数据文件名</span>
+<span class="c1">#    下面的命令会读取文件 input.dat 中的数据</span>
+gmt plot input.dat -W1p
+
+<span class="c1"># 2. 通过管道符号 | 将前一个命令的输出作为后一个命令的输入</span>
+<span class="c1">#    下面的命令中，echo 命令输出了 5 5，该输出通过管道被传递给了 GMT 命令作为输入</span>
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt plot -Sc0.5c
+
+<span class="c1"># 3. 使用 heredoc 将两个 EOF 之间的数据传给命令</span>
+<span class="c1">#    下面的命令中，&lt;&lt; EOF 表示将接下来到EOF为止的内容传递给命令</span>
+gmt plot -Sc0.5c <span class="s">&lt;&lt; EOF</span>
+<span class="s">1 2</span>
+<span class="s">3 4</span>
+<span class="s">5 6</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 输出数据</span>
+<span class="c1"># 很多命令都会输出一些数据或信息。默认情况下，输出会在终端显示。为了将数据保存到文件中，需要使用重定向符号。</span>
+<span class="c1"># 常用的重定向符号主要有两个： &gt; 和 &gt;&gt;</span>
+<span class="c1">#   &gt; 表示将数据输出到文件中。若文件不存在，则创建该文件；若文件已存在，则覆盖该文件的原内容；</span>
+<span class="c1">#  &gt;&gt; 表示将数据追加到文件中。若文件不存在，则创建该文件；若文件已存在，则将数据追加到原内容的后面；</span>
+<span class="nb">echo</span> <span class="m">1</span> <span class="m">3</span> Point1 &gt; tmp.txt
+<span class="nb">echo</span> <span class="m">2</span> <span class="m">5</span> Point2 &gt;&gt; tmp.txt
+<span class="nb">echo</span> <span class="m">4</span> <span class="m">2</span> Point3 &gt;&gt; tmp.txt
+<span class="c1"># 此时文件中有三行内容</span>
+
+<span class="c1"># 倒引号</span>
+<span class="c1"># 倒引号的作用是将一个命令的输出保存到一个变量中，供后面的命令使用</span>
+<span class="c1"># 下面将 gmt info 的输出保存到变量 new_region 中，并在接下来的命令中使用了该变量的值</span>
+<span class="nv">new_region</span><span class="o">=</span><span class="sb">`</span>gmt info input.dat -I1/1<span class="sb">`</span>
+gmt plot input.dat -J<span class="nv">$projection</span> <span class="nv">$new_region</span>
+
+<span class="c1"># 长命令续行符</span>
+<span class="c1"># 当一个命令较长时，可以将命令拆分为多行，每行行末用续行符 \ 表示下一行命令</span>
+<span class="c1"># 需要接在当前命令的后面</span>
+gmt coast -A1000 -Dc -ECN -W1/1p <span class="se">\</span>
+        -Glightblue -Slightred
+
+gmt end show
+
+<span class="c1"># rm 命令删除文件</span>
+rm tmp.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="batch">
+<h2>Batch编程基础知识<a class="headerlink" href="#batch" title="永久链接至标题">¶</a></h2>
+<p>新建一个文本文件，将后缀改为 <strong>.bat</strong>，向文件中写入Batch命令并保存，即得到一个Batch脚本。</p>
+<p>双击该Batch脚本即可直接运行，也可以打开CMD窗口，再输入Batch脚本名以运行脚本。</p>
+<p>下面的Batch脚本展示并解释了Batch脚本中常用的语法：</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="c1">REM 以 REM 开头的行是注释行，在脚本执行时会被忽略</span>
+
+<span class="c1">REM echo 命令用于显示后面的字符</span>
+<span class="k">echo</span> Hello world!
+
+<span class="c1">REM 使用 set 命令声明一个变量</span>
+<span class="k">set</span> <span class="nv">projection</span><span class="p">=</span><span class="s2">&quot;X10c/10c&quot;</span>
+<span class="k">set</span> <span class="nv">region</span><span class="p">=</span><span class="s2">&quot;0/10/0/10&quot;</span>
+
+<span class="c1">REM 在变量名前后加上 % 即可引用该变量的值</span>
+<span class="k">echo</span> <span class="nv">%projection%</span> <span class="nv">%region%</span>
+
+<span class="c1">REM 执行GMT命令</span>
+gmt begin map
+gmt basemap -J<span class="nv">%projection%</span> -R<span class="nv">%region%</span> -Baf
+
+<span class="c1">REM 输入数据</span>
+<span class="c1">REM 有些命令需要读入数据。Bash中有多种方法可以将数据传递给一个命令：</span>
+<span class="c1">REM 1. 将数据保存到文件中，并在命令中指定数据文件名</span>
+<span class="c1">REM    下面的命令会读取文件 input.dat 中的数据</span>
+gmt plot input.dat -W1p
+
+<span class="c1">REM 2. 通过管道符号 | 将前一个命令的输出作为后一个命令的输入</span>
+<span class="c1">REM    下面的命令中，echo 命令输出了 5 5，该输出通过管道被传递给了 GMT 命令作为输入</span>
+<span class="k">echo</span> 5 5 <span class="p">|</span> gmt plot -Sc0.5c
+
+<span class="c1">REM 输出数据</span>
+<span class="c1">REM 很多命令都会输出一些数据或信息。默认情况下，输出会在终端显示。为了将数据保存到文件中，需要使用重定向符号。</span>
+<span class="c1">REM 常用的重定向符号主要有两个： &gt; 和 &gt;&gt;</span>
+<span class="c1">REM   &gt; 表示将数据输出到文件中。若文件不存在，则创建该文件；若文件已存在，则覆盖该文件的原内容；</span>
+<span class="c1">REM  &gt;&gt; 表示将数据追加到文件中。若文件不存在，则创建该文件；若文件已存在，则将数据追加到原内容的后面；</span>
+<span class="k">echo</span> 1 3 Point1 <span class="p">&gt;</span> tmp.txt
+<span class="k">echo</span> 2 5 Point2 <span class="p">&gt;&gt;</span> tmp.txt
+<span class="k">echo</span> 4 2 Point3 <span class="p">&gt;&gt;</span> tmp.txt
+<span class="c1">REM 此时文件中有三行内容</span>
+
+<span class="c1">REM 将命令的输出保存到变量中</span>
+<span class="c1">REM Batch中可以将命令的输出写到文件中，然后用 set /p var=&lt;file 的方式将文件中的内容作为变量的值</span>
+gmt info input.dat -I1/1 <span class="p">&gt;</span> tmp.dat
+<span class="k">set</span> <span class="k">/p</span> <span class="nv">new_region</span><span class="p">=&lt;</span>tmp.dat
+gmt plot input.dat -J<span class="nv">%projection%</span> <span class="nv">%new_region%</span>
+
+<span class="c1">REM 长命令续行符</span>
+<span class="c1">REM 当一个命令较长时，可以将命令拆分为多行，每行行末用续行符 ^ 表示下一行命令</span>
+<span class="c1">REM 需要接在当前命令的后面</span>
+gmt coast -A1000 -Dc -ECN -W1/1p <span class="se">^</span>
+<span class="se"> </span>       -Glightblue -Slightred
+
+gmt end show
+
+<span class="c1">REM del 命令用于删除文件</span>
+<span class="k">del</span> tmp.txt
+
+<span class="c1">REM pause 命令用于暂停命令的执行</span>
+<span class="c1">REM 双击执行Batch脚本，脚本会在结束后自动退出。</span>
+<span class="c1">REM 为了查看脚本执行过程中是否报错，通常在Batch文件最后一行加上 pause</span>
+<span class="k">pause</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bashbatch">
+<h2>将Bash脚本转换为Batch脚本<a class="headerlink" href="#bashbatch" title="永久链接至标题">¶</a></h2>
+<p>Bash语法和Batch语法不同。本手册中所有脚本均使用Bash实现，Batch用户需要根据需求自行将Bash脚本转换为Batch脚本。转换主要注意如下几点：</p>
+<ul>
+<li><p>注释符号： <code class="docutils literal notranslate"><span class="pre">#</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">REM</span></code></p></li>
+<li><p>定义变量的方式： <code class="docutils literal notranslate"><span class="pre">var=value</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">var=value</span></code></p></li>
+<li><p>引用变量的方式： <code class="docutils literal notranslate"><span class="pre">$region</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">%region%</span></code></p></li>
+<li><p>删除文件的命令： <code class="docutils literal notranslate"><span class="pre">rm</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">del</span></code></p></li>
+<li><p>Bash中可以使用倒引号 <code class="docutils literal notranslate"><span class="pre">var=`cmd1`</span></code> 将命令 cmd1 的输出作为变量 var 的值。Batch不支持这一语法，需要使用下面的命令实现类似功能:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmd1 &gt; tmp.dat
+<span class="nb">set</span> /p <span class="nv">var</span><span class="o">=</span>&lt;tmp.dat
+</pre></div>
+</div>
+</li>
+<li><p>Bash中可以使用 EOF 将多行数据传递给一个命令。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot <span class="s">&lt;&lt; EOF</span>
+<span class="s">1 2</span>
+<span class="s">3 4</span>
+<span class="s">5 6</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>Batch不支持这一语法，只能多次使用 echo 命令将数据输出到同一文件中，再将文件传递给命令使用:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> &gt;  tmp.dat
+<span class="nb">echo</span> <span class="m">3</span> <span class="m">4</span> &gt;&gt; tmp.dat
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">6</span> &gt;&gt; tmp.dat
+gmt plot tmp.dat
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="linux">
+<h2>Linux 常用命令<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://seismo-learn.org/seismology101/computer/commands/">《地震“学”科研入门教程：Linux 常用命令》</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../basemap/" class="btn btn-neutral float-right" title="绘制底图" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../commands/" class="btn btn-neutral float-left" title="命令初探" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

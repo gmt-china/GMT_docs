@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Linux 下安装 GMT &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="Windows 下安装 GMT" href="../windows/" />
+    <link rel="prev" title="安装" href="../" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">安装</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux 下安装 GMT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fedora">Fedora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rhel-centos">RHEL/CentOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu-debian">Ubuntu/Debian用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#archlinux">ArchLinux用户</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">Windows 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macOS/">macOS 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross-platform/">跨平台安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-source/">Linux/macOS 下编译GMT源码</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">安装</a> &raquo;</li>
+        
+      <li>Linux 下安装 GMT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/install/linux.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux-gmt">
+<h1>Linux 下安装 GMT<a class="headerlink" href="#linux-gmt" title="永久链接至标题">¶</a></h1>
+<p>尽管大多数Linux发行版都提供了GMT二进制包，可以直接通过软件包管理器 <strong>apt</strong>
+或 <strong>yum</strong> 安装，但发行版提供的GMT版本都很老，不建议使用。</p>
+<p>针对Fedora/RHEL/CentOS用户，GMT的官方RPM仓库提供了最新版本的GMT。</p>
+<div class="section" id="fedora">
+<h2>Fedora<a class="headerlink" href="#fedora" title="永久链接至标题">¶</a></h2>
+<p><strong>Fedora 32</strong> 及之后版本的用户，可以启用
+<a class="reference external" href="https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/">GMT官方RPM仓库</a>
+以安装GMT最新版本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 启用GMT官方RPM仓库</span>
+sudo dnf copr <span class="nb">enable</span> genericmappingtools/gmt
+
+<span class="c1"># 安装最新版GMT</span>
+sudo dnf install gmt
+
+<span class="c1"># 当有新版本发布时可直接更新</span>
+sudo dnf update gmt
+
+<span class="c1"># 地理数据格式转换工具</span>
+sudo dnf install gdal
+</pre></div>
+</div>
+<p>除此之外，还可以安装如下可选包以使用GMT的更多功能:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 制作GIF格式动画需要GraphicsMagick</span>
+sudo dnf install GraphicsMagick
+
+<span class="c1"># 制作MP4、WebM格式动画需要ffmpeg</span>
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="sb">`</span>rpm -E %fedora<span class="sb">`</span>.noarch.rpm
+sudo dnf install ffmpeg
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>如果你已经安装了Fedora系统仓库提供的GMT软件包，你必须在使用GMT官方仓库前卸载旧的GMT安装包。使用如下命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rhel-centos">
+<h2>RHEL/CentOS<a class="headerlink" href="#rhel-centos" title="永久链接至标题">¶</a></h2>
+<p><strong>RHEL/CentOS 7/8</strong> 用户可以启用
+<a class="reference external" href="https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/">GMT官方RPM仓库</a>
+以安装GMT最新版本。</p>
+<p>安装方式如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装 epel-release</span>
+sudo yum install epel-release
+
+<span class="c1"># 启用 PowerTools 仓库 (仅限于 RHEL/CentOS 8 用户)</span>
+sudo yum config-manager --set-enabled powertools
+
+<span class="c1"># 启用GMT官方仓库 (仅限于RHEL/CentOS 7/8 用户)</span>
+sudo yum install yum-plugin-copr
+sudo yum copr <span class="nb">enable</span> genericmappingtools/gmt
+
+<span class="c1"># 安装最新版GMT</span>
+sudo yum install gmt
+
+<span class="c1"># 当有新版本发布时可直接更新</span>
+sudo yum update gmt
+
+<span class="c1"># 地理数据格式转换工具</span>
+sudo yum install gdal
+</pre></div>
+</div>
+<p>除此之外，还可以安装如下可选包以使用GMT的更多功能:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 制作GIF格式动画需要GraphicsMagick</span>
+sudo yum install GraphicsMagick
+
+<span class="c1"># 制作MP4、WebM格式动画需要ffmpeg</span>
+sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="sb">`</span>rpm -E %rhel<span class="sb">`</span>.noarch.rpm
+sudo yum install ffmpeg
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>如果你已经安装了EPEL仓库提供的GMT软件包，你必须在使用GMT官方仓库前卸载旧的GMT安装包。使用如下命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo yum remove GMT dcw-gmt gshhg-gmt-nc4 gshhg-gmt-nc4-full gshhg-gmt-nc4-high
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ubuntu-debian">
+<h2>Ubuntu/Debian用户<a class="headerlink" href="#ubuntu-debian" title="永久链接至标题">¶</a></h2>
+<p>Ubuntu 和 Debian 用户可以直接使用如下命令安装GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install gmt gmt-dcw gmt-gshhg
+sudo apt install ghostscript gdal-bin graphicsmagick ffmpeg
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>由于Ubuntu和Debian自身的软件更新规则，通常以上命令安装的都是老版本的GMT，比如GMT 5.4 或者 GMT 6.0.0，而不是GMT的最新版本。</p>
+<p>针对这种情况，有如下几种选择：</p>
+<ol class="arabic simple">
+<li><p>使用老版本 GMT</p></li>
+<li><p>使用其它Linux发行版</p></li>
+<li><p>编译GMT源码以安装最新版，具体编译方法见 <a class="reference internal" href="../build-source/"><span class="doc">Linux/macOS 下编译GMT源码</span></a></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="archlinux">
+<h2>ArchLinux用户<a class="headerlink" href="#archlinux" title="永久链接至标题">¶</a></h2>
+<p>ArchLinux用户请参考 <a class="reference external" href="https://github.com/GenericMappingTools/gmt/wiki/Install-latest-GMT-on-ArchLinux">https://github.com/GenericMappingTools/gmt/wiki/Install-latest-GMT-on-ArchLinux</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../windows/" class="btn btn-neutral float-right" title="Windows 下安装 GMT" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../" class="btn btn-neutral float-left" title="安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

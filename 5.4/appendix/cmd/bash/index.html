@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16.2.2 bash简明教程 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/appendix/cmd/bash.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex/" />
+    <link rel="search" title="搜索" href="../../../search/" />
+    <link rel="next" title="16.2.3 bat简明教程" href="../bat/" />
+    <link rel="prev" title="16.2.1 命令行基础" href="../cmd-basis/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">15 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">16 附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../style/">16.1 风格指南</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../">16.2 命令行及脚本基础</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../cmd-basis/">16.2.1 命令行基础</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">16.2.2 bash简明教程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">bash 是什么</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">bash 的创建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">常用命令</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">定义变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">添加注释</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">循环</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../bat/">16.2.3 bat简明教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../unix-tools/">16.2.4 Unix常用工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../colors/">16.3 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../patterns/">16.4 GMT预定义填充图案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../low-level/">16.5 GMT底层原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculate-distance/">16.6 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../variables/">16.7 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../special-dirs/">16.8 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contour-annot/">16.9 等值线标注和“线条标注”</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../">首页</a> &raquo;</li>
+        
+          <li><a href="../../">16 附录</a> &raquo;</li>
+        
+          <li><a href="../">16.2 命令行及脚本基础</a> &raquo;</li>
+        
+      <li>16.2.2 bash简明教程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/appendix/cmd/bash.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bash">
+<h1>16.2.2 bash简明教程<a class="headerlink" href="#bash" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>bash 是什么<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>bash 是类 UNIX 系统下最常见的 shell。bash 是一个程序也是一种编程语言。</p>
+</div>
+<div class="section" id="id2">
+<h2>bash 的创建<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>新建一个文本文件，后缀名任意，通常用 <code class="docutils literal notranslate"><span class="pre">.sh</span></code>。</p>
+<p>bash脚本可以直接用 <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">script.sh</span></code> 的形式执行，也可以通过如下命令给脚本执行权限，然后使用 <code class="docutils literal notranslate"><span class="pre">./script.sh</span></code> 的方式执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod +x ./script.sh
+<span class="c1"># 赋予脚本文件可执行权限</span>
+./script.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>常用命令<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="echo">
+<h3>echo 命令<a class="headerlink" href="#echo" title="永久链接至标题">¶</a></h3>
+<p>echo，顾名思义，就是回显的意思，在屏幕上输出 hello world:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> hello world
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>重定向符号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>常见的重定向符号有 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>。</p>
+<p>默认情况下，命令执行结果是输出到终端窗口。使用重定向后，将改成输出到另一个位置（文件）。
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 的区别在于 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 会先将文件内容清空然后再将命令执行结果输入，而 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 会将命令执行结果直接追加到文件末尾:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> 第一行 &gt; newfile.txt
+<span class="nb">echo</span> 第二行 &gt;&gt; newfile.txo
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>管道符号<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>管道符号 <code class="docutils literal notranslate"><span class="pre">|</span></code> 会将其左侧命令的输出结果作为输入传递给其右侧语句:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c -Ba -Sa0.5c -Gred &gt; map.ps
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>删除文件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code> 命令用来删除文件。使用 GMT 命令绘图后通常会在文件夹下产生一些临时文件，这时可以使用 <code class="docutils literal notranslate"><span class="pre">rm</span></code> 命令进行删除:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> &gt; tmp1.txt
+<span class="nb">echo</span> <span class="m">3</span> <span class="m">4</span> &gt;&gt; tmp1.txt
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">6</span> &gt; tmp2.txt
+gmt psxy tmp1.txt -R0/10/0/10 -JX10c -Ba -Sa1c -Gred -K &gt; map.ps
+gmt plot tmp2.txt -R -J -Sc0.5c -Gyellow -O &gt;&gt; map.ps
+rm tmp* gmt.*
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>定义变量<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>bash 定义变量不需要申明变量的类型:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">VAR</span><span class="o">=</span><span class="s2">&quot;some&quot;</span>
+<span class="c1"># = 号的前后不能加空格</span>
+<span class="nb">echo</span> <span class="nv">$VAR</span>
+<span class="c1"># 在使用变量时，必须加上美元符号</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>添加注释<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>在行首添加 #，即可注释该行。</p>
+</div>
+<div class="section" id="id9">
+<h2>循环<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>多种循环结构:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> cmd1<span class="p">;</span> <span class="k">do</span>
+    cmd2<span class="p">;</span>
+<span class="k">done</span>
+
+<span class="k">until</span> cmd1<span class="p">;</span> <span class="k">do</span>
+    cmd2<span class="p">;</span>
+<span class="k">done</span>
+
+<span class="k">for</span> name in words<span class="p">;</span> <span class="k">do</span>
+    cmd<span class="p">;</span>
+<span class="k">done</span>
+
+<span class="k">for</span> <span class="o">((</span>exp1<span class="p">;</span> exp2<span class="p">;</span> exp3<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+    cmd<span class="p">;</span>
+<span class="k">done</span>
+
+<span class="k">case</span> word in
+    pat1<span class="o">)</span> cmd1<span class="p">;;</span>
+    pat2<span class="o">)</span> cmd2<span class="p">;;</span>
+    pat3<span class="o">)</span> cmd3<span class="p">;;</span>
+<span class="k">esac</span>
+</pre></div>
+</div>
+<p>一个实际的例子:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="o">=</span><span class="s2">&quot;1 2 3 4 5 a b c&quot;</span>
+<span class="k">for</span> i in <span class="nv">$a</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+<span class="nv">a</span><span class="o">=(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> a b c<span class="o">)</span>
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">10</span><span class="p">;</span>++i<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="p">[i]</span><span class="si">}</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../bat/" class="btn btn-neutral float-right" title="16.2.3 bat简明教程" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../cmd-basis/" class="btn btn-neutral float-left" title="16.2.1 命令行基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

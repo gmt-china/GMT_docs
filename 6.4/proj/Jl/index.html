@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-JL: Lambert conic conformal &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ca9801ff" />
+
+  
+    <link rel="shortcut icon" href=""/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=0ac0dc94"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=30646c52"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-JM: Mercator cylindrical" href="../Jm/" />
+    <link rel="prev" title="-JK: Eckert equal area" href="../Jk/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.4
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id9">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地图投影</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Jx/">-JX: Linear, logarithmic, power, and time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jp/">-JP: Polar/Cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ja/">-JA: Lambert azimuthal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">-JB: Albers conic equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jc/">-JC: Cassini cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">-JCyl_stere: Cylindrical stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">-JD: Equidistant conic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">-JE: Azimuthal equidistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">-JF: Azimuthal gnomonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">-JG: Azimuthal orthographic/General perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">-JH: Hammer equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">-JI: Sinusoidal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">-JJ: Miller cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jk/">-JK: Eckert equal area</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-JL: Lambert conic conformal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">-JM: Mercator cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">-JN: Robinson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">-JO: Oblique Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">-JPoly: (American) polyconic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">-JQ: Equidistant cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">-JR: Winkel Tripel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">-JS: General stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">-JT: Transverse Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">-JU: Universal Transverse Mercator (UTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">-JV: Van der Grinten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">-JW: Mollweide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">-JY: Cylindrical equal area</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs#%E8%B4%A1%E7%8C%AE%E8%80%85-">贡献者</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../">地图投影</a></li>
+      <li class="breadcrumb-item active">-JL: Lambert conic conformal</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/edit/main/source/proj/Jl.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jl-lambert-conic-conformal">
+<h1>-JL: Lambert conic conformal<a class="headerlink" href="#jl-lambert-conic-conformal" title="Link to this heading"></a></h1>
+<p>维基链接：<a class="reference external" href="https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection">https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection</a></p>
+<p>Lambert conic conformal（Lambert 圆锥保角投影）由 Johann Heinrich Lambert 于 1772 年提出，主要用于绘制东西方向范围很大的地图。与 Albers 投影不同的是，Lambert 投影不是等面积的。纬线是共圆心的圆弧，经线是这些圆的等间隔分布的半径。与 Albers 投影类似，只有两条标准纬线是无畸变的。投影中心的选取并不影响投影，但其指定了哪一条经线垂直于地图。</p>
+<p>该投影的参数为：</p>
+<p><strong>-JL</strong><em>lon0</em>/<em>lat0</em>/<em>lat1</em>/<em>lat2</em>/<em>width</em>
+或
+<strong>-Jl</strong><em>lon0</em>/<em>lat0</em>/<em>lat1</em>/<em>lat2</em>/<em>scale</em></p>
+<ul class="simple">
+<li><p><em>lon0</em> 和 <em>lat0</em> 是投影中心的位置</p></li>
+<li><p><em>lat1</em> 和 <em>lat2</em> 是两条标准纬线</p></li>
+<li><p><em>width</em> 地图宽度</p></li>
+<li><p><em>scale</em> 地图比例尺，即每度在图上的长度或 1:<em>xxxx</em> （图上 1 厘米对应真实地球 <em>xxxx</em> 厘米）</p></li>
+</ul>
+<p>Lambert 保角投影场用于绘制美国地图，两个固定的标准纬线是 33°N 和 45°N。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>GMT_lambert_conic
+gmt<span class="w"> </span><span class="nb">set</span><span class="w"> </span>MAP_FRAME_TYPE<span class="w"> </span>fancy<span class="w"> </span>FORMAT_GEO_MAP<span class="w"> </span>ddd:mm:ssF<span class="w"> </span>MAP_GRID_CROSS_SIZE_PRIMARY<span class="w"> </span><span class="m">0</span>.15c
+gmt<span class="w"> </span>coast<span class="w"> </span>-R-130/-70/24/52<span class="w"> </span>-JL-100/35/33/45/12c<span class="w"> </span>-Bag<span class="w"> </span>-Dl<span class="w"> </span>-N1/thick,red<span class="w"> </span>-N2/thin<span class="w"> </span>-A500<span class="w"> </span>-Gtan<span class="w"> </span>-Wthinnest,white<span class="w"> </span>-Sblue
+gmt<span class="w"> </span>end<span class="w"> </span>show
+</pre></div>
+</div>
+<figure class="align-center" id="gmtplot-5c52cfa28b6e3b042e0019043b6c7f1f">
+<a class="reference internal image-reference" href="../../_images/5c52cfa28b6e3b042e0019043b6c7f1f.png"><img alt="../../_images/5c52cfa28b6e3b042e0019043b6c7f1f.png" src="../../_images/5c52cfa28b6e3b042e0019043b6c7f1f.png" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-text">Lambert 保角圆锥投影</span><a class="headerlink" href="#gmtplot-5c52cfa28b6e3b042e0019043b6c7f1f" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../Jk/" class="btn btn-neutral float-left" title="-JK: Eckert equal area" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Jm/" class="btn btn-neutral float-right" title="-JM: Mercator cylindrical" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2024, GMT 中文社区。
+      <span class="lastupdated">最后更新于 2024 年 02 月 12 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

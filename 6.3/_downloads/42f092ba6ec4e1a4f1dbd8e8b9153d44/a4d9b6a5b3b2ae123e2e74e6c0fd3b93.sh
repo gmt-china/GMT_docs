@@ -1,0 +1,1 @@
+gmt grdimage @earth_geoid_20m_p -png,pdf earth_geoid
