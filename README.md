@@ -91,5 +91,3 @@ GMT 中文手册由以下贡献者维护：
 | 💡 | example | 增添示例 | 🤔 | ideas | 建议与想法 |
 | 🚧 | maintenance | 底层维护 | 👀 | review | 审核文档 |
 | 📹 | video | 录制视频教程 | | ||
-
-[![Star History Chart](https://api.star-history.com/svg?repos=gmt-china/GMT_docs&type=Date)](https://star-history.com/#gmt-china/GMT_docs&Date)
