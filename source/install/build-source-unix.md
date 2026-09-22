@@ -53,7 +53,7 @@ $ sudo dnf install GraphicsMagick ffmpeg
 $ sudo apt update
 # 安装必须软件包
 $ sudo apt install build-essential cmake ninja-build libcurl4-gnutls-dev libnetcdf-dev gdal-bin libgdal-dev
-$ sudo apt install libgeos-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+$ sudo apt install libgeos-dev libglib2.0-dev libpcre2-dev libfftw3-dev liblapack-dev
 $ sudo apt install ghostscript xdg-utils
 # 安装可选软件包
 $ sudo apt install graphicsmagick ffmpeg
