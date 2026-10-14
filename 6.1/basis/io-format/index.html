@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>数据类型 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="输入文件的搜索目录" href="../input-files/" />
+    <link rel="prev" title="修饰物" href="../embellishment/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">GMT基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geographic-coordinates">地理坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#absolute-time-coordinates">绝对时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relative-time-coordinates">相对时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-coordinates">一般坐标值</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">GMT基础</a> &raquo;</li>
+        
+      <li>数据类型</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/io-format.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT 可以绘制地图的经纬度轴、笛卡尔坐标轴、绝对时间轴以及相对时间轴（见 <a class="reference internal" href="../../option/B/"><span class="doc">-B 选项</span></a>）。对于不同的坐标轴，需要的数据类型也不同。GMT 所支持的数据类型主要分为四大类：</p>
+<ul class="simple">
+<li><p>地理坐标</p></li>
+<li><p>绝对时间坐标</p></li>
+<li><p>相对时间坐标</p></li>
+<li><p>一般浮点数</p></li>
+</ul>
+<div class="section" id="geographic-coordinates">
+<span id="id2"></span><h2>地理坐标<a class="headerlink" href="#geographic-coordinates" title="永久链接至标题">¶</a></h2>
+<p>地理坐标（即经纬度）有两种表示方式：</p>
+<ol class="arabic">
+<li><p>以浮点型的度数表示。比如 <strong>-123.45</strong> 代表-123.45度</p></li>
+<li><p>度分秒表示：</p>
+<blockquote>
+<div><p>[<strong>±</strong>]<em>ddd</em>[<strong>:</strong><em>mm</em>[<strong>:</strong><em>ss</em>[.<em>xxx</em>]]][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>]</p>
+</div></blockquote>
+<p>其中，<em>ddd</em>、<em>mm</em>、<em>ss</em>、<em>xxx</em> 分别表示弧度、弧分、弧秒、弧毫秒。
+<strong>W</strong>、<strong>E</strong>、<strong>S</strong>、<strong>N</strong> 分别代表西经、东经、北纬、南纬。例如 <strong>123:27W</strong> 代表西经123度27分，<strong>123:27:15.120W</strong> 表示西经123度27分15.12秒。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="absolute-time-coordinates">
+<span id="id3"></span><h2>绝对时间坐标<a class="headerlink" href="#absolute-time-coordinates" title="永久链接至标题">¶</a></h2>
+<p>绝对时间由两部分构成，即日期和时间，表示为 <em>date</em><strong>T</strong><em>clock</em></p>
+<p>其中 <strong>T</strong> 是关键字，用于分隔日期和时间。</p>
+<p>日期 <em>date</em> 可以是如下格式的一种：</p>
+<ol class="arabic simple">
+<li><p><em>yyyy</em>[<strong>-</strong><em>mm</em>[<strong>-</strong><em>dd</em>]]：年-月-日，例如 <strong>2013</strong>、<strong>2015-10</strong>、<strong>2015-01-02</strong></p></li>
+<li><p><em>yyyy</em>[<strong>-</strong><em>jjj</em>]：年-一年中的第几日，例如 <strong>2015-040</strong></p></li>
+<li><p><em>yyyy</em>[<strong>-W</strong><em>ww</em>[<strong>-</strong><em>d</em>]]：年-第几周-该周内第几天，例如 <strong>2014-W01-3</strong>、<strong>2014-W01</strong></p></li>
+</ol>
+<p>时间 <em>clock</em> 是24小时制，其格式为 <em>hh</em><strong>:</strong>[<em>mm</em><strong>:</strong>[<em>ss</em>[.<em>xxx</em>]]]，例如 <strong>10:10:35.120</strong>。</p>
+<p>使用过程中需要注意：</p>
+<ol class="arabic simple">
+<li><p>GMT的时间数据的输入/输出格式默认为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddThh:mm:ss.xxx</span></code>。若想要输入其它格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_IN"><span class="xref std std-term">FORMAT_DATE_IN</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_IN"><span class="xref std std-term">FORMAT_CLOCK_IN</span></a>；若想要输出其它格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#term-FORMAT_DATE_OUT"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-FORMAT_CLOCK_OUT"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a></p></li>
+<li><p>若未指定 <em>date</em> 则假定 <em>date</em> 为今日</p></li>
+<li><p>若未指定 <em>clock</em> 则认为是 <strong>00:00:00</strong></p></li>
+<li><p>若指定了 <em>clock</em> 则必须要加 <strong>T</strong>，比如 <strong>T10:20:34</strong> 表示今天的早晨10点多</p></li>
+<li><p>所有绝对时间在程序内部都会被转换成相对于特定时刻的秒数</p></li>
+</ol>
+<p>下面举几个绝对日期的例子：</p>
+<ul class="simple">
+<li><p><strong>2014-02-10T10:00:00.000</strong></p></li>
+<li><p><strong>T10:20:44.234</strong></p></li>
+<li><p><strong>2014-040T23:23:54.330</strong></p></li>
+</ul>
+</div>
+<div class="section" id="relative-time-coordinates">
+<span id="id4"></span><h2>相对时间坐标<a class="headerlink" href="#relative-time-coordinates" title="永久链接至标题">¶</a></h2>
+<p>相对时间坐标即某个时间相对于参考时刻的秒数、小时数、天数或年数。因而在使用相对时间时，首先要给定两个参数：参考时刻以及相对时间所使用的单位。</p>
+<p>GMT参数 <a class="reference internal" href="../../conf/time/#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a> 用于指定参考时刻，
+<a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 用于指定相对时间的单位。也可以用参数 <a class="reference internal" href="../../conf/time/#term-TIME_SYSTEM"><span class="xref std std-term">TIME_SYSTEM</span></a> 同时指定这两个参数。默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。</p>
+<p>在指定了参考时刻后，相对时间就跟一般的浮点数没什么区别了。那如何区分一般的浮点数与相对时间呢？有两种方式：</p>
+<ol class="arabic simple">
+<li><p>在数据后加上小写的 <strong>t</strong>，比如 <strong>30t</strong> 表示相对于 <a class="reference internal" href="../../conf/time/#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a>
+间隔了 30 个 <a class="reference internal" href="../../conf/time/#term-TIME_UNIT"><span class="xref std std-term">TIME_UNIT</span></a> 时间单位的时刻</p></li>
+<li><p>在命令行中使用 <strong>-ft</strong> 选项表明当前数据是相对时间，此时不需要在数字后加 <strong>t</strong></p></li>
+</ol>
+</div>
+<div class="section" id="float-coordinates">
+<span id="id5"></span><h2>一般坐标值<a class="headerlink" href="#float-coordinates" title="永久链接至标题">¶</a></h2>
+<p>在绘制常规的笛卡尔坐标轴时，即输入数据不是地理坐标、绝对时间或相对时间时，输入数据可以直接用浮点数表示，而不去在意其物理含义及单位。比如，5牛顿的力，5千克的质量，在 GMT 看来都只是浮点数 <strong>5</strong>。</p>
+<p>这些浮点数坐标可以用两种方式表示：</p>
+<ol class="arabic simple">
+<li><p>一般表示： [<strong>±</strong>]<em>xxx.xxx</em>，比如 <strong>123.45</strong></p></li>
+<li><p>指数表示： [<strong>±</strong>]<em>xxx.xx</em>[<strong>E</strong>|<strong>e</strong>|<strong>D</strong>|<strong>d</strong>[<strong>±</strong>]<em>xx</em>]。比如 <strong>1.23E10</strong></p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../input-files/" class="btn btn-neutral float-right" title="输入文件的搜索目录" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../embellishment/" class="btn btn-neutral float-left" title="修饰物" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8.19 -p 选项 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/option/perspective.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="8.20 -s 选项" href="../s/" />
+    <link rel="prev" title="8.18 -r 选项" href="../gridreg/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">8 标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">8.1 -R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">8.2 -J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">8.3 -B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../P/">8.4 -P 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">8.5 -V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">8.6 -U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../KO/">8.7 -K 和 -O 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">8.8 -X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">8.9 -a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">8.10 -b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">8.11 -d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">8.12 -e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">8.13 -f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">8.14 -g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">8.15 -h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">8.16 -i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">8.17 -n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.18 -r 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.19 -p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">8.20 -s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">8.21 -t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">8.22 -x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">8.23 -: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">8 标准选项</a> &raquo;</li>
+        
+      <li>8.19 -p 选项</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/option/perspective.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="p">
+<h1>8.19 -p 选项<a class="headerlink" href="#p" title="永久链接至标题">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项用于控制2D底图或3D底图的透视视角。</p>
+<p>对于一个2D底图（比如二维平面内的矩形）或者一个3D底图（比如三维空间内的立方体），从不同的方向看时会看到不同的形态。该选项用于控制从怎样的透视视角去看一张图。其语法为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-p<span class="o">[</span>x<span class="p">|</span>y<span class="p">|</span>z<span class="o">]</span>&lt;azim&gt;<span class="o">[</span>/&lt;elev&gt;<span class="o">[</span>/&lt;zlevel&gt;<span class="o">]][</span>+w&lt;lon0&gt;/&lt;lat0&gt;<span class="o">[</span>/&lt;z0&gt;<span class="o">]][</span>+v&lt;x0&gt;/&lt;y0&gt;<span class="o">]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;azim&gt;</span></code> 指定视角的方位角，即相对于北方向顺时针旋转的角度，默认值为180。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;elev&gt;</span></code> 指定视角的海拔，即视角相对于纸张平面向上旋转的角度，其取值范围为
+0到90（不含0），其中0表示视角与纸张平面平行，90表示视角垂直于纸张平面，默认值为90。</p>
+<p>下图给出了2D底图下透视视角取不同值时所看到的底图。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/68d698ae37b3e080b65e037f860ff752/perspective-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/perspective-gmtplot-0.png" src="../../_images/perspective-gmtplot-0.png" />
+</div>
+<p>对于3D底图而言（使用了 <code class="docutils literal notranslate"><span class="pre">-JZ</span></code> 选项），默认会在Z轴底部绘制XY平面的边框。</p>
+<ul class="simple">
+<li>设置 <code class="docutils literal notranslate"><span class="pre">&lt;zlevel&gt;</span></code> 则可以指定在 <code class="docutils literal notranslate"><span class="pre">Z=&lt;zlevel&gt;</span></code> 平面内绘制边框。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-px|y|z</span></code> 则分别用于指定绘制 YZ 平面、XZ平面或XY平面。默认为 <code class="docutils literal notranslate"><span class="pre">-pz</span></code> 即绘制XY平面</li>
+</ul>
+<p>下图给出了3D底图上使用不同的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项绘制出来的效果图。绘制底图使用的命令为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10/0/20 -JX3c -JZ3c -Baf -Bzaf -BwsENZ1+b -p135/40 &gt; xxx.ps
+</pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/b2f8cd274057c293c1e3572f2eccee88/perspective-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/perspective-gmtplot-1.png" src="../../_images/perspective-gmtplot-1.png" />
+</div>
+<p>在绘制动画时，如果不同帧使用的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 透视参数不同，则由于投影的问题可能会导致底图在纸上的位置出现不规则运动。可以有三种方式解决：</p>
+<ol class="arabic simple">
+<li>加上 <code class="docutils literal notranslate"><span class="pre">+</span></code> 使得数据范围的中心点固定在纸张的中心</li>
+<li>加上 <code class="docutils literal notranslate"><span class="pre">+w&lt;lon0&gt;/&lt;lat0&gt;/&lt;z&gt;</span></code> 将地图上的某个点固定在纸张的中心</li>
+<li>加上 <code class="docutils literal notranslate"><span class="pre">+v&lt;x0&gt;/&lt;y0&gt;</span></code> 使得数据范围的中心点或地图上的某个点，在投影后的位置始终固定在纸张上的 <code class="docutils literal notranslate"><span class="pre">&lt;x0&gt;/&lt;y0&gt;</span></code> 处</li>
+</ol>
+<p>除此之外，若 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项后不接任何参数，则其会继承前一GMT绘图命令的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 参数。</p>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../s/" class="btn btn-neutral float-right" title="8.20 -s 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gridreg/" class="btn btn-neutral float-left" title="8.18 -r 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

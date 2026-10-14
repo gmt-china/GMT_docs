@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sac &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="sample1d" href="../sample1d/" />
+    <link rel="prev" title="rose" href="../rose/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sac</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>sac</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/sac.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="sac">
+<h1>sac<a class="headerlink" href="#sac" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/supplements/seis/sac.html" title="(在 GMT v6.2)"><span>sac</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>绘制 SAC 格式的地震波形数据</p>
+</dd>
+</dl>
+<p><strong>sac</strong> 模块可以读取SAC文件并绘制波形数据。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><strong>sac</strong> 模块修改自原 pssac 与 pssac2，其功能类似，但语法不同。</p>
+</div>
+<p><strong>sac</strong> 模块实现波形绘制的步骤是：</p>
+<ol class="arabic simple">
+<li><p>读入 SAC 文件列表</p></li>
+<li><p>根据 <strong>-T</strong> 选项确定参考时间</p></li>
+<li><p>根据 <strong>-C</strong> 选项和参考时间读入指定的波形数据段</p></li>
+<li><p>根据 <strong>-F</strong> 选项对数据进行预处理</p></li>
+<li><p>根据 <strong>-M</strong> 选项确定Y方向的缩放因子并对波形振幅进行缩放</p></li>
+<li><p>根据 <strong>-Q</strong> 决定是否交换X和Y</p></li>
+<li><p>根据 <strong>-E</strong> 以及其他信息确定波形在地图上的位置</p></li>
+<li><p>根据 <strong>-W</strong> 选项绘制波形</p></li>
+<li><p>根据 <strong>-G</strong> 选项为波形涂色</p></li>
+</ol>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p><strong>gmt sac</strong> [ <em>saclist</em>|<em>SACfiles</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
+<a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
+[ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>t0/t1</em>] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dx</em>[/<em>dy</em>] ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><strong>a</strong>|<strong>b</strong>|<strong>k</strong>|<strong>d</strong>|<strong>n</strong>[<em>n</em>]|<strong>u</strong>[<em>n</em>] ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>i</strong>][<strong>q</strong>][<strong>r</strong>] ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<strong>p</strong>|<strong>n</strong>][<strong>+g</strong><em>fill</em>][<strong>+z</strong><em>zero</em>][<strong>+t</strong><em>t0/t1</em>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>size</em>[<em>u</em>][/<em>alpha</em>] ]
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>] ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<strong>+t</strong><em>n</em>][<strong>+r</strong><em>reduce_vel</em>][<strong>+s</strong><em>shift</em>] ]
+[ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <strong>-h</strong><a class="reference internal" href="../../option/h/"><span class="doc">headers</span></a> ]
+[ <strong>-p</strong><a class="reference internal" href="../../option/p/"><span class="doc">flags</span></a> ]
+[ <strong>-t</strong><a class="reference internal" href="../../option/t/"><span class="doc">transp</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<dl>
+<dt><em>SACfiles</em></dt><dd><p>要绘制在图上的一系列SAC文件名，目前仅支持等间隔SAC数据</p>
+</dd>
+<dt><em>saclist</em></dt><dd><p>SAC 文件列表，每行包含一个SAC文件名及其对应的控制参数。</p>
+<p>文件格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>filename <span class="o">[</span>X  Y <span class="o">[</span>pen<span class="o">]]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>filename</em> 是要绘制的SAC文件名</p></li>
+<li><p><em>X</em> 和 <em>Y</em> 控制SAC波形的第一个数据点在地图上的位置。若省略 <em>X</em> 和
+<em>Y</em> ，则使用其默认值，否则此处指定的 <em>X</em> 和 <em>Y</em> 将具有最高优先级</p>
+<ul>
+<li><p>对于线性投影而言，<em>X</em> 默认是SAC文件的开始时间。使用 <strong>-T</strong> 选项会调整 <em>X</em> 的默认值，<em>Y</em> 值则由 <em>-E</em> 选项控制；</p></li>
+<li><p>对于地理投影而言，<em>X</em> 和 <em>Y</em> 默认是台站的经度和纬度。</p></li>
+</ul>
+</li>
+<li><p><em>pen</em> 控制当前SAC波形的线条属性</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt><dd><p>设置地图投影方式</p>
+</dd>
+</dl>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt><dd><p>指定数据范围</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<dl class="simple" id="b">
+<dt><strong>-B</strong><em>parameters</em> <a class="reference internal" href="../../option/B/"><span class="doc">(more …)</span></a></dt><dd><p>设置底图边框和轴属性</p>
+</dd>
+</dl>
+<dl id="c">
+<dt><strong>-C</strong>[<em>t0/t1</em>]</dt><dd><p>只读取并绘制时间窗 <em>t0</em> 到 <em>t1</em> 范围内的波形。</p>
+<p><em>t0</em> 和 <em>t1</em> 均是相对于参考时间的秒数，参考时间由 <strong>-T</strong> 选项决定。若未使用 <strong>-T</strong> 选项，则使用SAC头段中的参考时间（kzdate和kztime）。</p>
+<p>若只使用了 <strong>-C</strong> 但未指定时间窗，则 <em>t0</em>/<em>t1</em> 由 <strong>-R</strong> 选项的
+<em>xmin</em>/<em>xmax</em> 决定。</p>
+</dd>
+</dl>
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>dx</em>[<strong>/</strong><em>dy</em>]</dt><dd><p>使得波形偏离指定位置 <em>dx</em>/<em>dy</em>。若未指定 <em>dy</em> 则默认与 <em>dx</em> 相同。</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-Ea</strong>|<strong>b</strong>|<strong>k</strong>|<strong>d</strong>|<strong>n</strong>[<em>n</em>]|<strong>u</strong>[<em>n</em>]</dt><dd><p>选择剖面类型（即Y轴类型）</p>
+<ul class="simple">
+<li><p><strong>a</strong> 方位角剖面</p></li>
+<li><p><strong>b</strong> 反方位角剖面</p></li>
+<li><p><strong>k</strong> 震中距剖面（单位 km）</p></li>
+<li><p><strong>d</strong> 震中距剖面（单位 degree）</p></li>
+<li><p><strong>n</strong> 波形编号剖面，第一个波形的编号为 <em>n</em> [<em>n</em> 默认值为0]</p></li>
+<li><p><strong>u</strong> 用户自定义剖面，SAC波形的Y位置由SAC头段变量 <strong>user</strong><em>n</em> 决定 [默认使用 user0]</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="f">
+<dt><strong>-F</strong>[<strong>i</strong>][<strong>q</strong>][<strong>r</strong>]</dt><dd><p>绘图之前的数据预处理</p>
+<ul class="simple">
+<li><p><strong>i</strong> 积分</p></li>
+<li><p><strong>q</strong> 平方</p></li>
+<li><p><strong>r</strong> 去均值</p></li>
+</ul>
+<p><strong>i</strong>|<strong>q</strong>|<strong>r</strong> 可以重复多次，比如 <strong>-Frii</strong> 会将加速度转化为位移。
+<strong>i</strong>|<strong>q</strong>|<strong>r</strong> 出现的顺序决定了数据预处理的流程。</p>
+</dd>
+</dl>
+<dl class="simple" id="g">
+<dt><strong>-G</strong>[<strong>p</strong>|<strong>n</strong>][<strong>+g</strong><em>fill</em>][<strong>+z</strong><em>zero</em>][<strong>+t</strong><em>t0/t1</em>]</dt><dd><p>为波形的正/负部分涂色。</p>
+<ul class="simple">
+<li><p>若 <strong>-G</strong> 后不接任何参数，则默认将正值部分填充为黑色</p></li>
+<li><p><strong>p</strong>|<strong>n</strong> 控制是要填充正值区域还是负值区域，重复使用 <strong>-G</strong> 选项以分别为正/负部分设置不同的填充属性</p></li>
+<li><p><strong>+g</strong><em>fill</em> 设置填充色</p></li>
+<li><p><strong>+t</strong><em>t0</em>/<em>t1</em> 只填充 <em>t0</em>/<em>t1</em> 时间范围内的波形。参考时间由 <strong>-T</strong> 选项决定。</p></li>
+<li><p><strong>+z</strong><em>zero</em> 定义“零”参考线。从“零”到顶部为正值区域，从“零”到底部为负值区域</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="m">
+<dt><strong>-M</strong><em>size</em>[<em>u</em>][<em>/alpha</em>]</dt><dd><p>控制Y方向的缩放。不使用的话，Y方向即为振幅</p>
+<ul class="simple">
+<li><p><em>size</em>[<em>u</em>] 将所有波形在地图上的高度缩放到 <em>size</em>[<em>u</em>]，其中 <em>u</em> 可以取 <strong>i</strong>|<strong>c</strong>|<strong>p</strong> ，默认单位由 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 控制。</p></li>
+<li><p><em>size</em>/<em>alpha</em></p>
+<ul>
+<li><p>若 <em>alpha</em> 小于0，则所有波形使用相同的比例因子。比例因子由第一个波形决定，第一个波形将被缩放到 <em>size</em>[<em>u</em>]</p></li>
+<li><p>若 <em>alpha</em> 等于0，则将所有波形乘以 <em>size</em> ，此时不允许有单位</p></li>
+<li><p>若 <em>alpha</em> 大于0，则将所有波形乘以 <em>size</em>*r^<em>alpha</em>，其中
+r 是以 km 为单位的距离</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>垂直绘制波形，即Y轴是时间，X轴是振幅</p>
+</dd>
+</dl>
+<dl id="s">
+<dt><strong>-S</strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>]</dt><dd><p>指定时间比例尺。</p>
+<p>对于地理投影而言，即表示图上一个单位距离所代表的波形描述。其中单位 <em>unit</em> 可以取 <strong>c</strong>|<strong>i</strong>|<strong>p</strong>。若未指定 <em>unit</em>，则默认使用 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 所指定的单位。</p>
+<p>在 <em>scale</em> 前加上 <strong>i</strong> 则时间比例尺的含义反过来，即 <em>scale</em> 表示
+1秒长度的波形在图上的实际长度。</p>
+</dd>
+</dl>
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<strong>+t</strong><em>n</em>][<strong>+r</strong><em>reduce_vel</em>][<strong>+s</strong><em>shift</em>]</dt><dd><p>指定参考时间及偏移量</p>
+<ul class="simple">
+<li><p><strong>+t</strong><em>tmark</em> 指定参考时间（即将所有波形沿着参考时间对齐），其中
+<em>tmark</em> 可以取-5(b), -4(e), -3(o), -2(a), 0-9(t0-t9)</p></li>
+<li><p><strong>+r</strong><em>reduce_vel</em> 设置reduce速度，单位 km/s</p></li>
+<li><p><strong>+s</strong><em>shift</em> 将所有波形偏移 <em>shift</em> 秒</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../option/U/"><span class="doc">(more …)</span></a></dt><dd><p>在图上绘制GMT时间戳logo</p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>pen</em></dt><dd><p>设置波形的画笔属性</p>
+</dd>
+</dl>
+<p id="y"><span id="x"></span><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../option/XY/"><span class="doc">(more …)</span></a></dt><dd><p>移动绘图原点</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../option/p/"><span class="doc">(more …)</span></a></dt><dd><p>设置3D透视视角</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../option/t/"><span class="doc">(more …)</span></a></dt><dd><p>设置图层透明度（百分比）。取值范围为0（不透明）到100（全透明）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.2/gmt.conf.html" title="(在 GMT v6.2)"><span class="xref std std-doc">gmt.conf</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>利用 SAC 的命令 <strong>funcgen seismogram</strong> 生成了波形，想要绘制单个波形，并分别为正负部分涂色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
+</pre></div>
+</div>
+<p>利用 SAC 命令 <strong>datagen sub tel *.z</strong> 生成多个波形，将其绘制在距离剖面上:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l<span class="s2">&quot;T(s)&quot;</span> -By5+lDegree -BWSen <span class="se">\</span>
+     -Ed -M1.5c -W0.5p,red -png distance_profile
+</pre></div>
+</div>
+<p>利用 SAC 命令 <strong>datagen sub tel *.z</strong> 生成多个波形，将其绘制在地图上:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf
+gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
+saclst stlo stla f *.z <span class="p">|</span> gmt plot -St0.4c -Gblack -i1,2
+gmt end
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>相关模块<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p><a class="reference internal" href="../meca/"><span class="doc">meca</span></a>,
+<a class="reference internal" href="../polar/"><span class="doc">polar</span></a>,
+<a class="reference internal" href="../coupe/"><span class="doc">coupe</span></a>,
+<a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a>,
+<a class="reference internal" href="../plot/"><span class="doc">plot</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../rose/" class="btn btn-neutral float-left" title="rose" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../sample1d/" class="btn btn-neutral float-right" title="sample1d" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

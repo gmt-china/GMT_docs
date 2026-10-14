@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.4 兼容OGR的GMT矢量数据格式 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/table/ogr.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="6 网格文件" href="../../grid/" />
+    <link rel="prev" title="5.3 netCDF表" href="../netcdf/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 表数据</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ascii/">5.1 ASCII表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">5.2 二进制表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netcdf/">5.3 netCDF表</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4 兼容OGR的GMT矢量数据格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.4.1 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ogr-gmt">5.4.2 OGR/GMT格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">5.4.3 OGR/GMT元数据</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#v">格式版本号 <code class="docutils literal notranslate"><span class="pre">&#64;V</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#g">几何类型 <code class="docutils literal notranslate"><span class="pre">&#64;G</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#r">区域范围 <code class="docutils literal notranslate"><span class="pre">&#64;R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#j">投影信息 <code class="docutils literal notranslate"><span class="pre">&#64;J</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#n">声明非空间字段 <code class="docutils literal notranslate"><span class="pre">&#64;N</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">5.4.4 OGR/GMT数据</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">非空间数据</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">多边形拓扑</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">5.4.5 示例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">5 表数据</a> &raquo;</li>
+        
+      <li>5.4 兼容OGR的GMT矢量数据格式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/table/ogr.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ogrgmt">
+<h1>5.4 兼容OGR的GMT矢量数据格式<a class="headerlink" href="#ogrgmt" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>5.4.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>地理空间数据有多种格式，按照类型划分，可以大致分为光栅型（raster）和矢量型（vector）。</p>
+<ul class="simple">
+<li>光栅型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/formats_list.html">http://www.gdal.org/formats_list.html</a></li>
+<li>矢量型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/ogr_formats.html">http://www.gdal.org/ogr_formats.html</a></li>
+</ul>
+<p>简单的说，在GMT中，netCDF格式的网格文件属于光栅型地理空间数据，而一般的表数据则属于矢量型地理空间数据。</p>
+<p><a class="reference external" href="http://www.gdal.org/">GDAL</a> 是一个可以实现多种光栅型或矢量型地理空间数据格式间互相转换的库/工具，其全称为Geospatial Data Abstraction Library。历史上，GDAL仅用于处理光栅型数据格式，而OGR则仅用于处理矢量型数据格式。从GDAL 2.0开始，二者相互集成在一起，即GDAL已经具备了处理光栅型和矢量型地理空间数据格式的能力。本文中，提到OGR时，仅表示地理空间矢量数据格式。</p>
+<p>一个矢量数据中，不仅仅有地理空间数据（地理坐标数据，点、线、多边形等），也可以有非地理空间数据（城市名等）。老版本的GMT只能处理地理空间数据，而不能利用非地理空间数据。GMT5定义了一种兼容OGR的GMT矢量数据格式，通常称为OGR/GMT格式。这种格式中包含了地理空间和非地理空间数据，所有的非地理空间数据都以注释的形式写到文件中，因而GMT4也可以正常读取
+OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的输出可以很容易地被其他GIS或绘图软件所使用。</p>
+</div>
+<div class="section" id="ogr-gmt">
+<h2>5.4.2 OGR/GMT格式<a class="headerlink" href="#ogr-gmt" title="永久链接至标题">¶</a></h2>
+<p>OGR/GMT格式的一些重要性质列举如下：</p>
+<ul class="simple">
+<li>所有非空间数据都以注释行的形式写到文件中，这些注释行在GMT4中会被直接忽略</li>
+<li>非空间数据的各个字段之间用空格分隔，每个字段均以字符 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 作为前缀，紧接着一个用于表征该字段内容的字符。每个字段内部的多个字符串之间用字符 <code class="docutils literal notranslate"><span class="pre">|</span></code> 分隔</li>
+<li>字符 <code class="docutils literal notranslate"><span class="pre">\</span></code> 作为转义字符，比如字符串内 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 表示换行</li>
+<li>文件中，非空间数据均保存在空间数据之前。因而GMT在处理地理空间数据之前，已经解析了非地理空间信息，这些非地理空间信息可能会影响到地理空间数据的处理</li>
+<li>数据文件的第一个注释行必须指定OGR/GMT格式的版本号，即 <code class="docutils literal notranslate"><span class="pre">&#64;VGMT1.0</span></code></li>
+<li>为了兼容其他GIS格式（比如shapefiles），OGR/GMT格式中显式包含了一个字段，用于指定接下来的地理空间数据是点、线还是多边形</li>
+<li>每个文件有一个头段注释，其中指定了当前文件所包含的地理特征，以及每个特征所对应的非地理属性（比如区域范围，投影方式等）</li>
+<li>同一个OGR/GMT格式的文件中，所有数据段必须具有相同类型的特征（都是点或线或多边形）</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>5.4.3 OGR/GMT元数据<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在OGR/GMT格式的文件头部，需要包含一系列元数据信息。元数据用于描述整个文件的共同信息，比如版本号、几何类型、区域范围、投影方式、非空间数据的格式等信息。</p>
+<div class="section" id="v">
+<h3>格式版本号 <code class="docutils literal notranslate"><span class="pre">&#64;V</span></code><a class="headerlink" href="#v" title="永久链接至标题">¶</a></h3>
+<p>OGR/GMT格式的版本号用 <code class="docutils literal notranslate"><span class="pre">&#64;V</span></code> 来指定。因而OGR/GMT格式的文件的第一行的内容必须是:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">GMT1.0</span></code> 是OGR/GMT格式的版本号。</p>
+</div>
+<div class="section" id="g">
+<h3>几何类型 <code class="docutils literal notranslate"><span class="pre">&#64;G</span></code><a class="headerlink" href="#g" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;G</span></code> 用于指定当前数据文件的几何类型，其后接的参数可以是：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">POINT</span></code>: 包含多个数据点（每个点都可以有自己的头段记录）</li>
+<li><code class="docutils literal notranslate"><span class="pre">MULTIPOINT</span></code>: 多点数据（所有的点共用同一个头段记录）</li>
+<li><code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code>: 包含多个独立的线段（即GMT中的多段数据，每条线段可以有自己的头段记录）</li>
+<li><code class="docutils literal notranslate"><span class="pre">MULTILINESTRING</span></code>: 多线数据（文件中的所有线段是一个特性，共用同一个头段记录）</li>
+<li><code class="docutils literal notranslate"><span class="pre">POLYGON</span></code>: 包含多个闭合多边形（每个多边形可以有自己的头段记录）</li>
+<li><code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code>: 多个多边形数据（所有多边形共用同一个头段记录）</li>
+</ul>
+<p>例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOLYGON</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="r">
+<h3>区域范围 <code class="docutils literal notranslate"><span class="pre">&#64;R</span></code><a class="headerlink" href="#r" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;R</span></code> 用于指定区域范围，其格式与 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项类似。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @R150/190/-45/-54</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="j">
+<h3>投影信息 <code class="docutils literal notranslate"><span class="pre">&#64;J</span></code><a class="headerlink" href="#j" title="永久链接至标题">¶</a></h3>
+<p>投影信息用四个可选的字符串表示，每个字符串以 <code class="docutils literal notranslate"><span class="pre">&#64;J</span></code> 开头。</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Je</span></code>: 投影的EPSG代码</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Jg</span></code>: GMT中所使用的投影参数</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Jp</span></code>: 投影参数的Proj.4表示</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Jw</span></code>: 投影参数的OGR WKT (well known text)表示</li>
+</ul>
+<p>示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @Je4326 @JgX @Jp&quot;+proj=longlat +ellps=WGS84+datum=WGS84 +no_defs&quot;</span>
+<span class="c1"># @Jw&quot;GEOGCS[\&quot;WGS84\&quot;,DATUM[\&quot;WGS_1984\&quot;,SPHEROID\&quot;WGS84\&quot;,6378137,\</span>
+<span class="m">298</span>.257223563,AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class="se">\&quot;</span>,<span class="se">\&quot;</span><span class="m">7030</span><span class="se">\&quot;</span><span class="o">]]</span>,TOWGS84<span class="o">[</span><span class="m">0</span>,0,0,0,0,0,0<span class="o">]</span>,
+AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class="se">\&quot;</span>,<span class="se">\&quot;</span><span class="m">6326</span><span class="se">\&quot;</span><span class="o">]]</span>,PRIMEM<span class="o">[</span><span class="se">\&quot;</span>Greenwich<span class="se">\&quot;</span>,0,<span class="se">\</span>
+AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class="se">\&quot;</span>,<span class="se">\&quot;</span><span class="m">8901</span><span class="se">\&quot;</span><span class="o">]]</span>,UNIT<span class="o">[</span><span class="se">\&quot;</span>degree<span class="se">\&quot;</span>,0.01745329251994328,<span class="se">\</span>
+AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class="se">\&quot;</span>,<span class="se">\&quot;</span><span class="m">9122</span><span class="se">\&quot;</span><span class="o">]]</span>,AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class="se">\&quot;</span>,<span class="se">\&quot;</span><span class="m">4326</span><span class="se">\&quot;</span><span class="o">]]</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="n">
+<h3>声明非空间字段 <code class="docutils literal notranslate"><span class="pre">&#64;N</span></code><a class="headerlink" href="#n" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;N</span></code> 后接一个用于描述非空间字段名称的字符串，各个字段名称之间用 <code class="docutils literal notranslate"><span class="pre">|</span></code> 分隔。若字段名称中有空格，则必须用引号括起来。<code class="docutils literal notranslate"><span class="pre">&#64;N</span></code> 必须有一个与之对应的 <code class="docutils literal notranslate"><span class="pre">&#64;T</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">&#64;T</span></code> 用于指定每个字段名称的数据类型。可取的数据类型包括 <code class="docutils literal notranslate"><span class="pre">string</span></code>、
+<code class="docutils literal notranslate"><span class="pre">interger</span></code>、 <code class="docutils literal notranslate"><span class="pre">double</span></code>、 <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 和 <code class="docutils literal notranslate"><span class="pre">logical</span></code>。</p>
+<p>示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOLYGON @Nname|depth|id @Tstring|double|integer</span>
+</pre></div>
+</div>
+<p>表明数据文件中包含了多个多边形，每个多边形都可以有独立的头段记录以指定非空间信息，非空间信息有三个，分别是name、depth和id，三个字段分别是字符串、浮点型和整型。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>5.4.4 OGR/GMT数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>元数据之后即是真正的数据，包括非空间数据和空间数据。</p>
+<div class="section" id="id4">
+<h3>非空间数据<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>非空间数据用 <code class="docutils literal notranslate"><span class="pre">&#64;D</span></code> 表示，紧跟着一系列以 <code class="docutils literal notranslate"><span class="pre">|</span></code> 分隔的字符串，每个字段的含义以及格式由 <code class="docutils literal notranslate"><span class="pre">&#64;N</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&#64;T</span></code> 决定。</p>
+<p>非空间数据所在的注释行应放在每段数据的坐标数据前。对于几何类型为 <code class="docutils literal notranslate"><span class="pre">LINE</span></code>、
+<code class="docutils literal notranslate"><span class="pre">POLYGON</span></code>、 <code class="docutils literal notranslate"><span class="pre">MULTILINE</span></code> 或 <code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code> 的数据而言，每段数据之间用特定的字符分隔，默认分隔符是 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>。非空间数据紧跟在 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 行之后。对于几何类型为 <code class="docutils literal notranslate"><span class="pre">POINT</span></code> 或 <code class="docutils literal notranslate"><span class="pre">MULTIPOINT</span></code> 的数据而言，则不需要分隔符。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;N</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&#64;D</span></code> 中的字符串中若包含空格，则必须用双引号括起来。若字符串中本身包含双引号或 <code class="docutils literal notranslate"><span class="pre">|</span></code>，则需要使用转义字符进行转义。若两个 <code class="docutils literal notranslate"><span class="pre">|</span></code> 之间为空，则表示对应的字段为空值。</p>
+<p>一个点数据的头段示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOINT @Nname|depth|id @Tstring|double|integer</span>
+<span class="c1"># @D&quot;Point 1&quot;|-34.5|1</span>
+</pre></div>
+</div>
+<p>一个多边形数据的头段示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOLYGON @Nname|depth|id @Tstring|double|integer</span>
+&gt;
+<span class="c1"># @D&quot;Area 1&quot;|-34.5|1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>多边形拓扑<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>旧版本的GMT只支持常规的多边形，不支持一个多边形内有个洞的情况。</p>
+<p>GMT通过在多边形数据前加上 <code class="docutils literal notranslate"><span class="pre">&#64;P</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&#64;H</span></code> 来指定当前的数据段是外环还是内环，即是真正的多边形，还是多边形内的洞。<code class="docutils literal notranslate"><span class="pre">&#64;H</span></code> 必须紧跟在对应的 <code class="docutils literal notranslate"><span class="pre">&#64;P</span></code> 之后。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;H</span></code> 所指定的洞不应该有任何 <code class="docutils literal notranslate"><span class="pre">&#64;D</span></code> 值，因为非空间数据适用于整个特性，而 <code class="docutils literal notranslate"><span class="pre">&#64;H</span></code> 所指定的多边形只是多边形的一部分，并不是一个新的多边形。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>5.4.5 示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>点数据示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOINT @Nname|depth|id</span>
+<span class="c1"># @Tstring|double|integer</span>
+<span class="c1"># @R178.43/178.5/-57.98/-34.5</span>
+<span class="c1"># @Je4326</span>
+<span class="c1"># @Jp&quot;+proj=longlat +ellps=WGS84 +datum=WGS84+no_defs&quot;</span>
+<span class="c1"># FEATURE_DATA</span>
+<span class="c1"># @D&quot;point 1&quot;|-34.5|1</span>
+<span class="m">178</span>.5 -45.7
+<span class="c1"># @D&quot;Point 2&quot;|-57.98|2</span>
+<span class="m">178</span>.43 -46.8
+...
+</pre></div>
+</div>
+<p>线数据示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GLINESTRING @Nname|depth|id</span>
+<span class="c1"># @Tstring|double|integer</span>
+<span class="c1"># @R178.1/178.6/-48.7/-45.6</span>
+<span class="c1"># @Jp&quot;+proj=longlat +ellps=WGS84 +datum=WGS84+no_defs&quot;</span>
+<span class="c1"># FEATURE_DATA</span>
+&gt; -W0.25p
+<span class="c1"># @D&quot;Line 1&quot;|-50|1</span>
+<span class="m">178</span>.5 -45.7
+<span class="m">178</span>.6 -48.2
+<span class="m">178</span>.4 -48.7
+<span class="m">178</span>.1 -45.6
+&gt; -W0.25p
+<span class="c1"># @D&quot;Line 2&quot;|-57.98|$</span>
+<span class="m">178</span>.43 -46.8
+...
+</pre></div>
+</div>
+<p>多边形数据示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOLYGON @N&quot;Polygon name&quot;|substrate|id @Tstring|string|integer</span>
+<span class="c1"># @R178.1/178.6/-48.7/-45.6</span>
+<span class="c1"># @Jj@Jp&quot;+proj=longlat +ellps=WGS84 +datum=WGS84+no_defs&quot;</span>
+<span class="c1"># FEATURE_DATA</span>
+&gt; -Gblue -W0.25p
+<span class="c1"># @P</span>
+<span class="c1"># @D&quot;Area 1&quot;|finesand|1</span>
+<span class="m">178</span>.1 -45.6
+<span class="m">178</span>.1 -48.2
+<span class="m">178</span>.5 -48.2
+<span class="m">178</span>.5 -45.6
+<span class="m">178</span>.1 -45.6
+&gt;
+<span class="c1"># @H</span>
+<span class="c1"># First hole in the preceding perimeter, so is technically still</span>
+<span class="c1"># part of the same geometry, despite the preceding &gt; character.</span>
+<span class="c1"># No attribute data is provided, as this is inherited.</span>
+<span class="m">178</span>.2 -45.4
+<span class="m">178</span>.2 -46.5
+<span class="m">178</span>.4 -46.5
+<span class="m">178</span>.4 -45.4
+<span class="m">178</span>.2 -45.4
+&gt;
+<span class="c1"># @P</span>
+...
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../grid/" class="btn btn-neutral float-right" title="6 网格文件" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../netcdf/" class="btn btn-neutral float-left" title="5.3 netCDF表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

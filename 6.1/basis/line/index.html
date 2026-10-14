@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>线条属性 &mdash; GMT中文手册</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="锚点" href="../anchor/" />
+    <link rel="prev" title="矢量/箭头" href="../vector/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+  <a href="../../" class="icon icon-home"> GMT中文手册
+</a>
+    <div class="version">
+      6.1
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">GMT基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">线条属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">端点偏移量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">线条平滑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">端点箭头</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">其它属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.1/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../">GMT基础</a> &raquo;</li>
+        
+      <li>线条属性</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/line.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>线条属性<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>对于线条而言，其基本的画笔属性由三个：线宽、颜色和线型，在 <a class="reference internal" href="../pen/"><span class="doc">画笔</span></a>
+中已经做过介绍。除此之外，某些模块还可以为线条设置额外的属性，这些额外的属性可以通过在画笔属性后加上子选项来是实现。</p>
+<p>线条的额外属性包括：端点偏移量、线条平滑和端点箭头。</p>
+<div class="section" id="id2">
+<h2>端点偏移量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在给定若干个数据点绘制线条时，一般都是从起点（第一个点）一直画到终点（最后一个点）。可以使用 <strong>+o</strong> 子选项为线段两端指定偏移量，使得绘制线段时的起点和终点与输入数据中指定的起点和终点间存在一定的偏移量。该子选项的语法是：
+<strong>+o</strong><em>offset</em>[<em>u</em>]</p>
+<ul class="simple">
+<li><p>若只给了一个 <em>offset</em>，则表示起点和终点共用同一个偏移量</p></li>
+<li><p>也可以用 <em>offset</em>/<em>offset</em> 分别为起点和终点指定不同的偏移量</p></li>
+<li><p>对于每个偏移量，都可以使用长度单位 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 或距离单位</p></li>
+</ul>
+<p>下面的示例展示了 <strong>+o</strong> 子选项的用法和使用效果。图中，细线和粗线使用了相同的输入数据，其中细线没有使用 <strong>+o</strong>，此时线段的起点和终点与数据指定的点重合；粗线在绘制线条时使用了 <strong>-W2p+o1c/500k</strong> 选项，即在起点处偏移1厘米，在终点处偏移500千米。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/bea70872294dec046646d1da5e78e0d7/line-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/line-gmtplot-0.png" src="../../_images/line-gmtplot-0.png" />
+<p class="caption"><span class="caption-text">线段起点偏移示意图</span><a class="headerlink" href="#id6" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>线条平滑<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>通常情况下，在绘制线条时，两点之间是用直线连接的（地图上两点之间默认用大圆弧连接）。使用 <strong>+s</strong> 子选项会使用 Bezier splines 在两点之间做样条插值以得到更光滑的曲线。需要注意的是：该样条平滑是对投影后的2D坐标进行处理的，并不针对原始坐标（即其不是一个球面样条插值）。</p>
+<p>下图中，左图使用了 <strong>-W2p</strong> 选项，右边使用了 <strong>-W2p+s</strong>。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/80039ae3d68e37828287b76aa7cee9fa/line-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/line-gmtplot-1.png" src="../../_images/line-gmtplot-1.png" />
+<p class="caption"><span class="caption-text">线条自动样条插值示意图</span><a class="headerlink" href="#id7" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>端点箭头<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，在绘制线段时，线段的两个端点并没有什么特别的。使用 <strong>+v</strong> 子选项，可以在线段的一端或两段绘制端点箭头。该子选项的语法为：
+<strong>+v</strong>[<strong>b</strong>|<strong>e</strong>]<em>vspecs</em></p>
+<ul class="simple">
+<li><p>默认会在线段两端都加上箭头，<strong>b</strong>|<strong>e</strong> 表示只绘制开头或结尾的箭头</p></li>
+<li><p><em>vspecs</em> 用于指定端点箭头的属性，详见 <a class="reference internal" href="../vector/"><span class="doc">矢量/箭头</span></a></p></li>
+</ul>
+<p>下图中细线是通常绘制的线段，粗线使用的选项是 <strong>-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue</strong></p>
+<p><a class="reference download internal" download="" href="../../_downloads/d2004b0f1de498149d06749661e4bed5/line-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/line-gmtplot-2.png" src="../../_images/line-gmtplot-2.png" />
+<p class="caption"><span class="caption-text">线条端点箭头示意图</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>其它属性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>除了上面提到的属性之外，GMT中还有一些参数可以影响线段的外观。这些参数包括：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../conf/ps/#term-PS_LINE_CAP"><span class="xref std std-term">PS_LINE_CAP</span></a>：控制线段顶端的绘制方式</p></li>
+<li><p><a class="reference internal" href="../../conf/ps/#term-PS_LINE_JOIN"><span class="xref std std-term">PS_LINE_JOIN</span></a>：控制线段拐点/交点的绘制方式</p></li>
+<li><p><a class="reference internal" href="../../conf/ps/#term-PS_MITER_LIMIT"><span class="xref std std-term">PS_MITER_LIMIT</span></a>：控制线段拐点在 <code class="docutils literal notranslate"><span class="pre">miter</span></code> 模式下的阈值</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../anchor/" class="btn btn-neutral float-right" title="锚点" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../vector/" class="btn btn-neutral float-left" title="矢量/箭头" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2014-2021, GMT中文社区.
+      <span class="lastupdated">
+        最后更新于 2021年06月13日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

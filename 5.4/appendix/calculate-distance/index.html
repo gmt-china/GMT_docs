@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16.6 三种距离计算方式 &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/appendix/calculate-distance.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="16.7 环境变量" href="../variables/" />
+    <link rel="prev" title="16.5.2 命令行历史" href="../low-level/cmd-history/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">16 附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../style/">16.1 风格指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmd/">16.2 命令行及脚本基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colors/">16.3 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patterns/">16.4 GMT预定义填充图案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-level/">16.5 GMT底层原理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">16.6 三种距离计算方式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flat-earth">16.6.1 Flat Earth距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">16.6.2 大圆路径距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">16.6.3 测地距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">16.6.4 总结</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../variables/">16.7 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">16.8 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">16.9 等值线标注和“线条标注”</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">16 附录</a> &raquo;</li>
+        
+      <li>16.6 三种距离计算方式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/appendix/calculate-distance.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>16.6 三种距离计算方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>在计算地球或其它星体上任意两点间的距离时，GMT 提供了三种不同的计算方式。这三种方式在精度和效率上各有权衡，用户可以根据自己的需求选择适合的距离计算方式。</p>
+<div class="section" id="flat-earth">
+<h2>16.6.1 Flat Earth距离<a class="headerlink" href="#flat-earth" title="永久链接至标题">¶</a></h2>
+<p>地球上任意两点 A 和 B 的 Flat Earth 距离计算公式：</p>
+<div class="math notranslate nohighlight">
+\[d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
+\theta_B}{2} \right ] \Delta \lambda^2}\]</div>
+<p>其中 R 是地球平均半径（由参数 <a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 控制），
+<span class="math notranslate nohighlight">\(\theta\)</span> 是纬度，
+<span class="math notranslate nohighlight">\(\Delta \lambda = \lambda_A - \lambda_B\)</span> 是经度差。式中地理坐标的单位均是弧度，且需要考虑到跨越经度的周期性问题。</p>
+<p>该方法的特点是计算速度快但精度不高，适用于纬度相差不大且对计算效率要求比较高的情况。</p>
+<p>可以通过在距离量前加上前缀 <code class="docutils literal notranslate"><span class="pre">-</span></code> 指定使用该方法计算两点间的距离。对于某些只需要指定距离单位而不需要指定具体距离值的情况下，则可以在距离单位前加上前缀 <code class="docutils literal notranslate"><span class="pre">-</span></code>
+表示该距离用 Flat Earth 方法计算。比如，<code class="docutils literal notranslate"><span class="pre">-S-50M</span></code> 表示设定搜索半径为50海里，其中距离用 Flat Earth 方法计算。</p>
+</div>
+<div class="section" id="id2">
+<h2>16.6.2 大圆路径距离<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>该方法将地球近似为一个半径为R的球，地球上任意两点 A 和 B 的大圆路径距离可以用
+<a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine 公式</a> 计算：</p>
+<div class="math notranslate nohighlight">
+\[d_g = 2R \sin^{-1}  {\sqrt{\sin^2\frac{\theta_A - \theta_B}{2} + \cos
+\theta_A \cos \theta_B \sin^2 \frac{\lambda_A - \lambda_B}{2}} }\]</div>
+<p>该方法是 GMT 默认使用的距离计算方法，适用于大多数情况。比如，<code class="docutils literal notranslate"><span class="pre">-S5000f</span></code> 表示距离为 5000 英尺。</p>
+<p>有两个 GMT 参数可以控制大圆路径距离的计算细节，分别是：</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 地球平均半径</li>
+<li><a class="reference internal" href="../../conf/proj/#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a> 指定将大地纬度转换为多个适合球状近似的辅助纬度中的其中一个</li>
+</ul>
+<p>需要注意，这两个选项仅当 <a class="reference internal" href="../../conf/proj/#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> 不为 <code class="docutils literal notranslate"><span class="pre">sphere</span></code> 时才有效。</p>
+</div>
+<div class="section" id="id3">
+<h2>16.6.3 测地距离<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>地球上两点间的精确距离可以用 Vincenty (1975) 的完全椭球公式计算。该方法计算得到的距离精度最高精确到 0.5 毫米，同时也是计算速度的最慢的方式。</p>
+<p>可以通过在距离或距离单位前加上前缀 <code class="docutils literal notranslate"><span class="pre">+</span></code> 来指定用该方法计算距离。比如，<code class="docutils literal notranslate"><span class="pre">-S+20k</span></code> 表示用该方法计算的20千米的距离。</p>
+<p>除了 Vincenty 完全椭球公式外，还可以将参数 <a class="reference internal" href="../../conf/proj/#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a>
+设置成 <code class="docutils literal notranslate"><span class="pre">Rudoe</span></code> （GMT4所使用的计算公式）或 <code class="docutils literal notranslate"><span class="pre">Andoyer</span></code> （近似公式，精确到10米量级）以使用不同的计算公式。</p>
+</div>
+<div class="section" id="id4">
+<h2>16.6.4 总结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>GMT 在计算距离时有三种算法：FLAT Earth距离、大圆路径距离和测地距离。三种方法的计算精度由低到高，计算速度由高到低。</p>
+<p>对于一个距离量，比如 <code class="docutils literal notranslate"><span class="pre">40k</span></code>，默认使用大圆弧距离，可以使用 <code class="docutils literal notranslate"><span class="pre">-40k</span></code>
+表示 FLAT Earth 距离，<code class="docutils literal notranslate"><span class="pre">+40k</span></code> 表示测地距离。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../variables/" class="btn btn-neutral float-right" title="16.7 环境变量" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../low-level/cmd-history/" class="btn btn-neutral float-left" title="16.5.2 命令行历史" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

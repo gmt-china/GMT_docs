@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-JA: Lambert azimuthal equal area &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-JB: Albers conic equal area" href="../Jb/" />
+    <link rel="prev" title="-JP: Polar/Cylindrical" href="../Jp/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地图投影</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Jx/">-JX: Linear, logarithmic, power, and time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jp/">-JP: Polar/Cylindrical</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-JA: Lambert azimuthal equal area</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">矩形地图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">半球地图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">震源辐射花样</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">-JB: Albers conic equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jc/">-JC: Cassini cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">-JCyl_stere: Cylindrical stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">-JD: Equidistant conic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">-JE: Azimuthal equidistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">-JF: Azimuthal gnomonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">-JG: Azimuthal orthographic/General perspective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">-JH: Hammer equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">-JI: Sinusoidal equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">-JJ: Miller cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jk/">-JK: Eckert equal area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jl/">-JL: Lambert conic conformal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">-JM: Mercator cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">-JN: Robinson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">-JO: Oblique Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">-JPoly: (American) polyconic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">-JQ: Equidistant cylindrical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">-JR: Winkel Tripel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">-JS: General stereographic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">-JT: Transverse Mercator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">-JU: Universal Transverse Mercator (UTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">-JV: Van der Grinten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">-JW: Mollweide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">-JY: Cylindrical equal area</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">地图投影</a> &raquo;</li>
+      <li>-JA: Lambert azimuthal equal area</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/proj/Ja.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ja-lambert-azimuthal-equal-area">
+<h1>-JA: Lambert azimuthal equal area<a class="headerlink" href="#ja-lambert-azimuthal-equal-area" title="永久链接至标题"></a></h1>
+<p>维基链接: <a class="reference external" href="https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection">https://en.wikipedia.org/wiki/Lambert_azimuthal_equal-area_projection</a></p>
+<p>Lambert azimuthal equal area（Lambert 方位等面积投影）由 Johann Heinrich Lambert 于 1772 年发展得到。通常用于绘制大区域地图（例如整个大洲或半球），该投影是方位等面积投影。在投影的中心畸变为 0，离投影中心越远畸变越大。该投影的参数为：</p>
+<p><strong>-JA</strong><em>lon</em>/<em>lat</em>/[<em>distance</em>/]<em>width</em>
+或
+<strong>-Ja</strong><em>lon</em>/<em>lat</em>/[<em>distance</em>/]<em>scale</em></p>
+<ul class="simple">
+<li><p><em>lon</em>/<em>lat</em> 投影中心坐标</p></li>
+<li><p><em>distance</em> 投影中心到边界的角度，默认值为 90，即距离投影中心各 90°，即整个半球</p></li>
+<li><p><em>width</em> 地图宽度</p></li>
+<li><p><em>scale</em> 地图比例尺，可以取 1:<em>xxxx</em> 格式（图上1厘米对应真实地球 <em>xxxx</em> 厘米），也可以是 <em>radius</em>/<em>latitude</em>（表示从投影中心到纬线 <em>latitude</em> 在图上的距离为 <em>radius</em>）</p></li>
+</ul>
+<section id="id1">
+<h2>矩形地图<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>此投影下，经线和纬线通常不是直线，因而不适合直接用经纬线指定地图边界。本例中通过指定区域的左下角（0°E/40°S）和右上角（60°E/10°S）的坐标来指定区域范围。
+<strong>-R</strong> 中 <strong>+r</strong> 用于告诉 GMT 此处指定的是左下角和右上角的坐标。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_lambert_az_rect pdf,png
+gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>
+gmt coast -R0/-40/60/-10+r -JA30/-30/12c -Bag -Dl -A500 -Gp10+r300 -Wthinnest
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/Ja-gmtplot-0.png"><img alt="../../_images/Ja-gmtplot-0.png" src="../../_images/Ja-gmtplot-0.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-text">使用 Lambert 方位等面积投影绘制矩形地图</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h2>半球地图<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>要绘制半球地图，需要指定区域范围为整个地球，此时可以使用 <strong>-Rg</strong> 或 <strong>-Rd</strong>。下图绘制了以南美洲为中心的半球图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JA280/30/12c -Bg -Dc -A1000 -Gnavy -png GMT_lambert_az_hemi
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/Ja-gmtplot-1.png"><img alt="../../_images/Ja-gmtplot-1.png" src="../../_images/Ja-gmtplot-1.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-text">使用 Lambert 方位等面积投影绘制半球地图</span><a class="headerlink" href="#id5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h2>震源辐射花样<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>地震学在绘制震源机制解时，就是将三维的辐射花样信息投影到一个水平面内。投影的方式有两种：Schmidt 网和 Wulff 网。其中 Schmidt 网使用的就是 Lambert 方位等面积投影（中心经纬度为 0/0），Wulff 网使用的则是等角度的立体投影（<strong>-JS</strong>）。两种震源球投影方式如下图所示：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/d678bbf1e1511a098a39bcaef8cd954a/Ja-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/Ja-gmtplot-2.png"><img alt="../../_images/Ja-gmtplot-2.png" src="../../_images/Ja-gmtplot-2.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-text">震源球投影：等面积的 Schmidt 网和等角度的 Wulff 网</span><a class="headerlink" href="#id6" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Jp/" class="btn btn-neutral float-left" title="-JP: Polar/Cylindrical" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Jb/" class="btn btn-neutral float-right" title="-JB: Albers conic equal area" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13.46 pslegend &mdash; GMT中文手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/module/pslegend.html"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="13.47 psmeca" href="../psmeca/" />
+    <link rel="prev" title="13.45 psimage" href="../psimage/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
+
+    
+    </a>
+
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
+            
+            <option value="/6.0/" > v6.0 </option>
+            
+            <option value="/5.4/"  selected > v5.4 </option>
+            
+        </select>
+    </div>
+    
+    
+
+    
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">13 模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">13.1 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.2 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">13.3 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.4 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.5 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.6 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.7 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.8 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.9 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.10 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.11 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">13.12 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.13 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.14 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2rgb/">13.15 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.16 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.17 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.18 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.19 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.20 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.21 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.22 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.23 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.24 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.25 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.26 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdraster/">13.27 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.28 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.29 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.30 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.31 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.32 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.33 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">13.34 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.35 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.36 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.37 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.38 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psbasemap/">13.39 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psclip/">13.40 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoast/">13.41 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.42 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoupe/">13.43 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pshistogram/">13.44 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psimage/">13.45 psimage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.46 pslegend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.46.1 选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.46.2 图例文件格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.46.3 示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../psmeca/">13.47 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pspolar/">13.48 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psrose/">13.49 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssac/">13.50 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psscale/">13.51 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssolar/">13.52 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psternary/">13.53 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pstext/">13.54 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psvelo/">13.55 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psxy/">13.56 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.57 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.58 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.59 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT中文手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">首页</a> &raquo;</li>
+        
+          <li><a href="../">13 模块手册</a> &raquo;</li>
+        
+      <li>13.46 pslegend</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/5.4/source/module/pslegend.rst" class="fa fa-github"> 编辑本页</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pslegend">
+<span id="index-0"></span><h1>13.46 pslegend<a class="headerlink" href="#pslegend" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/pslegend.html" title="(在 GMT v5.4.6)"><span>pslegend</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在图上添加图例</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h2>13.46.1 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;dx&gt;/&lt;dy&gt;</span></code></dt>
+<dd>设置图例边框与内部图例之间的空白，默认值为 <code class="docutils literal notranslate"><span class="pre">4p/4p</span></code></dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+l&lt;spacing&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
+<dd><p class="first">设置图例的位置和大小</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 用于指定图例框的尺寸，若 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code> 未指定或取0，则GMT会自动估算所需的高度</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定图例上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的额外偏移量</li>
+<li><code class="docutils literal notranslate"><span class="pre">+l&lt;spacing&gt;</span></code> 行间距因子，默认值为1.1，则当前字体大小的1.1倍</li>
+</ul>
+<p>该选项几个比较有用的用法是：</p>
+<ol class="last arabic simple">
+<li>将图例放在左下角： <code class="docutils literal notranslate"><span class="pre">-DjBL+w4c+o0.2c/0.2c</span></code></li>
+<li>将图例放在左上角： <code class="docutils literal notranslate"><span class="pre">-DjTL+w4c+o0.2c/0.2c</span></code></li>
+<li>将图例放在右下角： <code class="docutils literal notranslate"><span class="pre">-DjBR+w4c+o0.2c/0.2c</span></code></li>
+<li>将图例放在右上角： <code class="docutils literal notranslate"><span class="pre">-DjTR+w4c+o0.2c/0.2c</span></code></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt>
+<dd><p class="first">控制图例的背景属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
+<p class="last">默认图例无边框，使用该选项则会给图例绘制边框。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>13.46.2 图例文件格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>图例文件用于控制图例中各项的布局。图例文件中的每个记录对应图例中的一项，图例中每项的顺序由记录的先后顺序决定。每个记录的第一个字符决定了当前记录的图例类型。GMT中共有14种图例类型，列举如下：</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">comment</span></code></dt>
+<dd>以#开头的行或空行都会被跳过</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">cptname</span></code></dt>
+<dd>指定CPT文件，使得某些记录可以通过指定Z值来设定颜色，可以多次使用该记录以指定不同的CPT文件</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">cptname</span> <span class="pre">offset</span> <span class="pre">height</span> <span class="pre">[optional</span> <span class="pre">arguments]</span></code></dt>
+<dd><p class="first">绘制水平colorbar</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> 是colorbar相对于图例框左边界的距离</li>
+<li><code class="docutils literal notranslate"><span class="pre">height</span></code> 是colorbar高度，其后可以加上子选项 <code class="docutils literal notranslate"><span class="pre">+e[b|f][&lt;length&gt;]][+h][+ma|c|l|u][+n[&lt;txt&gt;]</span></code></li>
+<li>还可以添加其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 <a class="reference internal" href="../psscale/"><span class="doc">psscale</span></a> 命令</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">textcolor</span></code></dt>
+<dd><p class="first">接下来的所有文本所使用的颜色。</p>
+<p class="last">可以直接指定颜色，也可以用 <code class="docutils literal notranslate"><span class="pre">z=&lt;val&gt;</span></code> 指定Z值，以从CPT文件中查找相应的颜色（CPT文件由A记录指定），若 <code class="docutils literal notranslate"><span class="pre">textcolor</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则使用默认颜色</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">[offset]</span> <span class="pre">pen</span> <span class="pre">[-|+|=]</span></code></dt>
+<dd><p class="first">绘制一条水平线</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> 为线条左右顶端与图例边框的空白距离</li>
+<li><code class="docutils literal notranslate"><span class="pre">pen</span></code> 为线条属性<ol class="arabic">
+<li>默认值为0</li>
+<li>若未指定pen，则使用 <code class="docutils literal notranslate"><span class="pre">MAP_GRID_PEN_PRIMARY</span></code></li>
+<li>若pen设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则绘制一条不可见的线</li>
+</ol>
+</li>
+<li>默认情况下，线条上下各留出四分之一的行间距， <code class="docutils literal notranslate"><span class="pre">-|+|=</span></code> 分别表示线条上方无空白、线条下方无空白和线条上下均无空白。</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">fill1</span> <span class="pre">fill2</span> <span class="pre">...</span> <span class="pre">filln</span></code></dt>
+<dd><p class="first">指定单元的填充色。</p>
+<p class="last">可以直接指定颜色，也可使用 <code class="docutils literal notranslate"><span class="pre">z=&lt;value&gt;</span></code> 形式指定从CPT文件中查找颜色。若只给定了一个 <code class="docutils literal notranslate"><span class="pre">fill</span></code> ，则整行都使用相同的填充色，否则依次为当前行的每列应用不同的 <code class="docutils literal notranslate"><span class="pre">fill</span></code> ，若 <code class="docutils literal notranslate"><span class="pre">fill</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则不填充。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">G</span> <span class="pre">gap</span></code></dt>
+<dd><p class="first">给定一个垂直空白</p>
+<p class="last">空白的高度由 <code class="docutils literal notranslate"><span class="pre">gap</span></code> 决定， <code class="docutils literal notranslate"><span class="pre">gap</span></code> 可以用 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code> 单位，也可以用 <code class="docutils literal notranslate"><span class="pre">l</span></code>
+作为单位表示多少行空白， <code class="docutils literal notranslate"><span class="pre">gap</span></code> 也可以取负值，表示将当前行上移。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">fontsize|-</span> <span class="pre">font|-</span> <span class="pre">header</span></code></dt>
+<dd><p class="first">为图例指定一个居中的标题。</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">header</span></code> 为标题</li>
+<li><code class="docutils literal notranslate"><span class="pre">fontsize</span></code> 为字号</li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code> 为字体号</li>
+<li><code class="docutils literal notranslate"><span class="pre">-</span></code> 表示使用默认的文字大小以及默认字体 <code class="docutils literal notranslate"><span class="pre">FONT_TITLE</span></code></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">imagefile</span> <span class="pre">width</span> <span class="pre">justification</span></code></dt>
+<dd><p class="first">将EPS或光栅文件放在图例中</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code> 为图片宽度</li>
+<li><code class="docutils literal notranslate"><span class="pre">justification</span></code> 为图片的对齐方式</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">fontsize|-</span> <span class="pre">font|-</span> <span class="pre">justification</span> <span class="pre">label</span></code></dt>
+<dd><p class="first">在图例中某列增加指定的文字</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">label</span></code> 为显示的文本</li>
+<li><code class="docutils literal notranslate"><span class="pre">fontsize</span></code> 为字号</li>
+<li><code class="docutils literal notranslate"><span class="pre">font</span></code> 为字体号</li>
+<li><code class="docutils literal notranslate"><span class="pre">justification</span></code> 为对齐方式，可以取 <code class="docutils literal notranslate"><span class="pre">L|C|R</span></code> ，分别表示左对齐、居中对齐和右对齐</li>
+<li><code class="docutils literal notranslate"><span class="pre">-</span></code> 表示使用默认的文字大小以及默认字体 <code class="docutils literal notranslate"><span class="pre">FONT_TITLE</span></code></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">slon|-</span> <span class="pre">slat</span> <span class="pre">length</span> <span class="pre">[+f][+l[label]][+u]</span> <span class="pre">[-Fparam]</span> <span class="pre">[-Rw/e/s/n</span> <span class="pre">-Jparam]</span></code></dt>
+<dd>在图例中绘制比例尺，在 <a class="reference internal" href="../psbasemap/"><span class="doc">psbasemap</span></a> 命令中有详细介绍</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">ncolumns</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">relwidth1</span> <span class="pre">relwidth2</span> <span class="pre">...</span> <span class="pre">relwidthn</span></code></dt>
+<dd><p class="first">修改图例中的列数</p>
+<p class="last">默认只有一列，该记录仅对S和L记录有效。该记录指定的列数会一直有效直到再次使用N记录。 <code class="docutils literal notranslate"><span class="pre">ncolumns</span></code> 用于指定若干个等宽的列， <code class="docutils literal notranslate"><span class="pre">relwidth1</span> <span class="pre">relwidth2</span> <span class="pre">...</span> <span class="pre">relwidthn</span></code>
+用于指定每列所占的相对宽度，所有宽度的和应等于 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项所设置的宽度相等。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">paragraph-mode-header-for-pstext</span></code></dt>
+<dd>在图例中添加段落，参考 <a class="reference internal" href="../pstext/"><span class="doc">pstext</span></a> 命令中的段落模式</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">[dx1</span> <span class="pre">symbol</span> <span class="pre">size</span> <span class="pre">fill</span> <span class="pre">pen]</span> <span class="pre">[dx2</span> <span class="pre">text]</span></code></dt>
+<dd><p class="first">在图例中绘制符号</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code> 指定要绘制的符号类型， 见 <a class="reference internal" href="../psxy/"><span class="doc">psxy</span></a> 命令的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项。若 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 则表示绘制线段</li>
+<li><code class="docutils literal notranslate"><span class="pre">dx1</span></code> 是符号中心与左边界的距离</li>
+<li><code class="docutils literal notranslate"><span class="pre">dx2</span></code> 是 <code class="docutils literal notranslate"><span class="pre">text</span></code> 与左边界的距离</li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code> 的字体由参数 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">fill</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pen</span></code> 控制符号的填充和轮廓颜色，设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 则表示不填充或无轮廓颜色</li>
+<li><code class="docutils literal notranslate"><span class="pre">fill</span></code> 可以使用 <code class="docutils literal notranslate"><span class="pre">z=&lt;val&gt;</span></code> 的形式，从CPT文件中查找颜色</li>
+<li><code class="docutils literal notranslate"><span class="pre">dx1</span></code> 除了可以指定距离，还可以使用 <code class="docutils literal notranslate"><span class="pre">L|C|R</span></code> 表示符号在当前列的对齐方式</li>
+<li>若S记录中无其他参数，则直接调至下一列</li>
+<li>若 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 取为 <code class="docutils literal notranslate"><span class="pre">f|q|v</span></code> ，则可以在 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 后加上额外的子选项</li>
+<li>某些符号可能需要指定多个size，将多个size用逗号分隔作为size即可</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">paragraph-text</span></code></dt>
+<dd>用参数 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 打印一段文本</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">V</span> <span class="pre">[offset]</span> <span class="pre">pen</span></code></dt>
+<dd>在两列之间绘制垂直的线条</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>13.46.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt pslegend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 <span class="se">\</span>
+    -C0.1i/0.1i -B5f1 <span class="s">&lt;&lt; EOF &gt; pslegend_ex1.ps</span>
+<span class="s"># Legend test for pslegend</span>
+<span class="s"># G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line.</span>
+<span class="s"># H is header, L is label, S is symbol, T is paragraph text, M is map scale.</span>
+<span class="s">#</span>
+<span class="s">G -0.1i</span>
+<span class="s">H 24 Times-Roman My Map Legend</span>
+<span class="s">D 0.2i 1p</span>
+<span class="s">N 2</span>
+<span class="s">V 0 1p</span>
+<span class="s">S 0.1i c 0.15i p300/12 0.25p 0.3i This circle is hachured</span>
+<span class="s">S 0.1i e 0.15i yellow 0.25p 0.3i This ellipse is yellow</span>
+<span class="s">S 0.1i w 0.15i green 0.25p 0.3i This wedge is green</span>
+<span class="s">S 0.1i f0.1i+l+t 0.25i blue 0.25p 0.3i This is a fault</span>
+<span class="s">S 0.1i - 0.15i - 0.25p,- 0.3i A dashed contour</span>
+<span class="s">S 0.1i v0.1i+a40+e 0.25i magenta 0.25p 0.3i This is a vector</span>
+<span class="s">S 0.1i i 0.15i cyan 0.25p 0.3i This triangle is boring</span>
+<span class="s">V 0 1p</span>
+<span class="s">D 0.2i 1p</span>
+<span class="s">N 1</span>
+<span class="s">M 5 5 600+u f</span>
+<span class="s">G 0.05i</span>
+<span class="s">#I SOEST_logo.ras 3i CT</span>
+<span class="s">G 0.05i</span>
+<span class="s">B rainbow.cpt 0.2i 0.2i</span>
+<span class="s">G 0.05i L 9 4 R Smith et al., @%5%J. Geophys. Res., 99@%%, 2000</span>
+<span class="s">G 0.1i</span>
+<span class="s">P</span>
+<span class="s">T Let us just try some simple text that can go on a few lines.</span>
+<span class="s">T There is no easy way to predetermine how many lines will be required,</span>
+<span class="s">T so we may have to adjust the box height to get the right size box.</span>
+<span class="s">EOF</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/pslegend_ex1.png"><img alt="../../_images/pslegend_ex1.png" src="../../_images/pslegend_ex1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">pslegend示例图1</span></p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ps</span><span class="o">=</span>pslegend_ex2.ps
+
+gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
+
+cat <span class="s">&lt;&lt;EOF &gt; table.txt</span>
+<span class="s">#G 0.04i</span>
+<span class="s">H 24 Times-Roman Eight Largest Cities in North America</span>
+<span class="s">D 1p</span>
+<span class="s">N 6 22 16 20 20 8 8</span>
+<span class="s">V 0.25p</span>
+<span class="s">S 0.15i c 0.1i snow1 -</span>
+<span class="s">L - - C City Name</span>
+<span class="s">L - - C Country</span>
+<span class="s">L - - C Population</span>
+<span class="s">L - - C Climate</span>
+<span class="s">L - - C WC?</span>
+<span class="s">L - - C OL?</span>
+<span class="s">D 0 1p</span>
+<span class="s">F lightgreen</span>
+<span class="s">S 0.15i c 0.1i red 0.25p</span>
+<span class="s">L - - R Mexico City</span>
+<span class="s">L - - R Mexico</span>
+<span class="s">L - - R 8,851,080</span>
+<span class="s">L - - R Tropical</span>
+<span class="s">L - - C Y</span>
+<span class="s">L - - C Y</span>
+<span class="s">F -</span>
+<span class="s">S 0.15i c 0.1i orange 0.25p</span>
+<span class="s">L - - R New York City</span>
+<span class="s">L - - R USA</span>
+<span class="s">L - - R 8,405,837</span>
+<span class="s">L - - R Tempered</span>
+<span class="s">L - - C Y</span>
+<span class="s">L - - C N</span>
+<span class="s">S 0.15i c 0.1i yellow 0.25p</span>
+<span class="s">L - - R Los Angeles</span>
+<span class="s">L - - R USA</span>
+<span class="s">L - - R 3,904,657</span>
+<span class="s">L - - R Subtropical</span>
+<span class="s">L - - C Y</span>
+<span class="s">L - - C Y</span>
+<span class="s">F lightblue</span>
+<span class="s">S 0.15i c 0.1i green 0.25p</span>
+<span class="s">L - - R Toronto</span>
+<span class="s">L - - R Canada</span>
+<span class="s">L - - R 2,795,060</span>
+<span class="s">L - - R Tempered</span>
+<span class="s">L - - C N</span>
+<span class="s">L - - C N</span>
+<span class="s">F -</span>
+<span class="s">S 0.15i c 0.1i blue 0.25p</span>
+<span class="s">L - - R Chicago</span>
+<span class="s">L - - R USA</span>
+<span class="s">L - - R 2,714,856</span>
+<span class="s">L - - R Tempered</span>
+<span class="s">L - - C Y</span>
+<span class="s">L - - C N</span>
+<span class="s">S 0.15i c 0.1i cyan 0.25p</span>
+<span class="s">L - - R Houston</span>
+<span class="s">L - - R USA</span>
+<span class="s">L - - R 2,714,856</span>
+<span class="s">L - - R subtropical</span>
+<span class="s">L - - C N</span>
+<span class="s">L - - C N</span>
+<span class="s">F lightred</span>
+<span class="s">S 0.15i c 0.1i magenta 0.25p</span>
+<span class="s">L - - R Havana</span>
+<span class="s">L - - R Cuba</span>
+<span class="s">L - - R 2,106,146</span>
+<span class="s">L - - R Tropical</span>
+<span class="s">L - - C N</span>
+<span class="s">L - - C N</span>
+<span class="s">F lightblue</span>
+<span class="s">S 0.15i c 0.1i white 0.25p</span>
+<span class="s">L - - R Montreal</span>
+<span class="s">L - - R Canada</span>
+<span class="s">L - - R 1,649,519</span>
+<span class="s">L - - R Tempered</span>
+<span class="s">L - - C N</span>
+<span class="s">L - - C Y</span>
+<span class="s">D 1p</span>
+<span class="s">V 1p</span>
+<span class="s">F -</span>
+<span class="s">N 1</span>
+<span class="s">L 9 4 R Information from Wikipedia</span>
+<span class="s">G 0.05i</span>
+<span class="s">T Many of these cities have hosted World Cup Soccer (WC) and some</span>
+<span class="s">T have hosted the Olympics (OL).  The rest is just some basic information</span>
+<span class="s">T about each city, such as climate and population.  Of course, this is all</span>
+<span class="s">T an excuse to demonstrate variable-width tables and row coloring.</span>
+<span class="s">#G 0.1i</span>
+<span class="s">EOF</span>
+cat <span class="s">&lt;&lt; EOF &gt; t.cpt</span>
+<span class="s">1	red</span>
+<span class="s">2	orange</span>
+<span class="s">3	yellow</span>
+<span class="s">4	green</span>
+<span class="s">5	blue</span>
+<span class="s">6	cyan</span>
+<span class="s">7	magenta</span>
+<span class="s">8	white</span>
+<span class="s">EOF</span>
+gmt pslegend -Dx0/0+w5.6i+jBL+l1.1 -C0.05i -F+p+gsnow1 -B0 table.txt -P --FONT_ANNOT_PRIMARY<span class="o">=</span>12p <span class="se">\</span>
+        --FONT_LABEL<span class="o">=</span>12p &gt; <span class="nv">$ps</span>
+rm -f table.txt t.cpt gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/pslegend_ex2.png"><img alt="../../_images/pslegend_ex2.png" src="../../_images/pslegend_ex2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">pslegend示例图2</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989','sqdeng'],
+    id: md5(location.pathname),
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../psmeca/" class="btn btn-neutral float-right" title="13.47 psmeca" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../psimage/" class="btn btn-neutral float-left" title="13.45 psimage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2020, GMT中文社区
+      <span class="lastupdated">
+        最后更新于 2020年01月11日.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

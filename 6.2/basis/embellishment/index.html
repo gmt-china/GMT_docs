@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>修饰物 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="数据类型" href="../io-format/" />
+    <link rel="prev" title="锚点" href="../anchor/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../">基础知识</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../canvas/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/">LaTeX 表达式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">修饰物</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">定位</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">底图参考点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">修饰物锚点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">修饰物锚点偏移量</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">背景面板</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../input-files/">输入文件的搜索目录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">基础知识</a> &raquo;</li>
+      <li>修饰物</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/basis/embellishment.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>修饰物<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<p>GMT除了可以绘制线段、符号、矢量外，还可以绘制如下修饰物：</p>
+<ol class="arabic simple">
+<li><p>地图比例尺</p></li>
+<li><p>色标</p></li>
+<li><p>图例</p></li>
+<li><p>方向玫瑰</p></li>
+<li><p>磁场玫瑰</p></li>
+<li><p>叠加图片</p></li>
+<li><p>GMT logo</p></li>
+<li><p>小图（map inset）</p></li>
+<li><p>垂直比例尺</p></li>
+</ol>
+<p>这些修饰物可以用不同的模块绘制，且有各自的语法。所有这些修饰物都可以抽象为一个矩形元素。这一节介绍一种通用的机制，以指定这些修饰物在图上的位置以及修饰物的背景面板。</p>
+<section id="id2">
+<h2>定位<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>绘制修饰物的模块大多有一个选项用于指定修饰物在底图上的位置，其基本语法为：</p>
+<blockquote>
+<div><p>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>[<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+</div></blockquote>
+<p>为了精确地将修饰物放在底图上的任意一点，GMT需要做四件事：</p>
+<ol class="arabic simple">
+<li><p>通过 [<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em> 语法指定底图上的一个<strong>参考点</strong></p></li>
+<li><p>通过 <strong>+j</strong><em>justify</em> 指定修饰物上的一个<strong>锚点</strong></p></li>
+<li><p>通过 <strong>+o</strong><em>dx</em>[/<em>dy</em>] 对修饰物的锚点做偏移</p></li>
+<li><p>将修饰物的偏移后的锚点与底图上的参考点重合以实现修饰物的放置</p></li>
+</ol>
+<p>下图展示了GMT如何实现修饰物的精确放置。其中大矩形代表底图，小矩形代表修饰物。本示例中首先指定了底图左上角为参考点，并指定了修饰物的左上角为锚点，通过 <strong>+o</strong><em>dx</em>[/<em>dy</em>] 对修饰物锚点进行微调。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/a75f47c7c5e7acff7e29866e84da665c/embellishment-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center">
+<img alt="../../_images/embellishment-gmtplot-0.png" src="../../_images/embellishment-gmtplot-0.png" />
+</figure>
+<section id="id3">
+<h3>底图参考点<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<p>GMT提供了5种方法用于指定底图的参考点，使得用户可以灵活地指定底图内/外的任意一点作为参考点。五种方法分别以 <strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong> 开头。若未指定使用何种方式，则默认使用 <strong>x</strong> 方式指定参考点。</p>
+<section id="id4">
+<h4>通过坐标指定参考点<a class="headerlink" href="#id4" title="永久链接至标题"></a></h4>
+<dl class="simple" id="refpoint-g">
+<dt>数据坐标</dt><dd><p>用 <strong>g</strong><em>lon</em>/<em>lat</em> 指定参考点的数据坐标。例如 <strong>g135/20</strong> 表示参考点的坐标为 135/20</p>
+</dd>
+</dl>
+<dl class="simple" id="refpoint-x">
+<dt>绘图坐标</dt><dd><p>用 <strong>x</strong><em>X</em>/<em>Y</em> 指定参考点的绘图坐标，即给出参考点相对于绘图原点的偏移距，例如 <strong>x4c/2c</strong> 表示参考点位于底图原点的右侧4厘米，上方2厘米处</p>
+</dd>
+</dl>
+<dl class="simple" id="refpoint-n">
+<dt>归一化坐标</dt><dd><p>用 <strong>n</strong><em>X</em>/<em>Y</em> 指定参考点的归一化坐标。归一化坐标是指，底图所对应的矩形的
+X轴范围为0到1，Y轴同理。使用负值或者大于1的值则可以指定底图外的一点为参考点。比如 <strong>n0.2/0.1</strong></p>
+</dd>
+</dl>
+</section>
+<section id="refpoint-j">
+<span id="id5"></span><h4>通过锚点指定参考点<a class="headerlink" href="#refpoint-j" title="永久链接至标题"></a></h4>
+<p>可以用 <strong>j</strong><em>anchor</em> 或 <strong>J</strong><em>anchor</em> 的方式指定底图的某个锚点作为底图参考点。其中锚点 <em>anchor</em> 有9个可能的取值，在 <a class="reference internal" href="../anchor/"><span class="doc">锚点</span></a> 一节中已经详细介绍过。例如 <strong>j</strong>TL 指定了底图左上角为参考点。</p>
+<p>使用 <strong>j</strong><em>anchor</em> 或 <strong>J</strong><em>anchor</em> 方式指定底图参考点的同时，也设置了修饰物上默认使用的锚点位置。使用 <strong>j</strong><em>anchor</em> 方式修饰物的默认锚点与参考点锚点相同。例如 <strong>jTL</strong> 指定底图左上角为参考点，同时也指定了修饰物左上角为其锚点，即底图左上角与修饰物左上角重合，则修饰物位于底图左上角的<strong>内部</strong>。当需要将修饰物放在底图内部某个角落、某条边的中心或图的中心时，建议使用 <strong>j</strong>。</p>
+<p>使用 <strong>J</strong><em>anchor</em> 方式，修饰物的默认锚点是与底图参考点锚点呈镜像相反。例如
+<strong>JTL</strong> 指定底图的左上角作为参考点，同时指定了修饰物的默认锚点是 <strong>BR</strong>
+即右下角（镜像对称）。因而底图的左上角与修饰物的右下角重合，则修饰物位于底图左上角的<strong>外部</strong>。当需要将修饰物放在底图的外部时，建议使用 <strong>J</strong>。</p>
+</section>
+</section>
+<section id="id6">
+<h3>修饰物锚点<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<p>在指定底图参考点后，可以进一步用 <strong>+j</strong><em>anchor</em> 指定修饰物上的锚点。</p>
+<p>若未使用 <strong>+j</strong><em>anchor</em> 指定锚点，则修饰物的锚点按如下规则取默认值：</p>
+<ol class="arabic simple">
+<li><p>若使用 <strong>j</strong><em>anchor</em> 方式指定底图参考点，则修饰物锚点与底图锚点相同</p></li>
+<li><p>若使用 <strong>J</strong><em>anchor</em> 方式指定底图参考点，则修饰物锚点使用与底图参考点镜像相反的锚点</p></li>
+<li><p>若使用其它三种方式指定参考点，对于玫瑰图和比例尺而言，锚点默认为 <strong>MC</strong>，其他修饰物锚点默认为 <strong>BL</strong></p></li>
+</ol>
+</section>
+<section id="id7">
+<h3>修饰物锚点偏移量<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<p>指定底图参考点和修饰物锚点后，即可将二者重合起来，实现修饰物在底图上的定位。在此基础上，可以额外使用 <strong>+o</strong><em>dx</em>/<em>dy</em> 指定修饰物锚点的偏移量。尤其是在使用 <strong>j</strong> 和 <strong>J</strong> 指定底图参考点时，由于底图只能指定某个锚点作为参考点，因而就需要为修饰物锚点指定额外的偏移量以增加定位的灵活性。偏移量为正值表示沿着与指定锚点所使用的对齐代码同一方向作偏移。</p>
+<p>比如使用 <strong>jTL</strong> 指定底图左上角为参考点，同时修饰物的左上角锚点也被选中，此时使用 <strong>+o2c/1c</strong> 表示将修饰物的左上角锚点向左移动 2 cm、向上移动 1 cm，最后将底图参考点与偏移后的锚点对齐。</p>
+</section>
+</section>
+<section id="id8">
+<h2>背景面板<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<p>对于任意一个修饰物，GMT都可以为其绘制一个背景面板。背景面板的位置和大小由修饰物直接决定。除此之外，背景面板还有一些其他属性。背景面板的属性由 <strong>-F</strong> 选项的子选项决定：</p>
+<p><strong>-F</strong>[<strong>+c</strong><em>clearance</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[<em>dx</em>/<em>dy</em>/][<em>fill</em>]]</p>
+<ul class="simple">
+<li><p><strong>+g</strong><em>fill</em> 指定面板填充<a class="reference internal" href="../color/"><span class="doc">颜色</span></a> [默认不填充]</p></li>
+<li><p><strong>+p</strong><em>pen</em> 绘制面板边框。<em>pen</em> 为边框的<a class="reference internal" href="../pen/"><span class="doc">画笔属性</span></a>，若不指定 <em>pen</em>，则默认使用 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a></p></li>
+<li><p><strong>+r</strong>[<em>radius</em>] 绘制圆角边框，<em>radius</em> 为圆角的半径</p></li>
+<li><p><strong>+i</strong>[[<em>gap</em>/]<em>pen</em>] 在边框内部绘制一个内边框，<em>gap</em> 为内外边框空白距离 [默认为 <em>2p</em>]，
+<em>pen</em> 为内边框的画笔属性 [默认使用 <a class="reference internal" href="../../conf/map/#term-MAP_DEFAULT_PEN"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>]</p></li>
+<li><p><strong>+c</strong><em>clearance</em> 设置<a class="reference internal" href="#"><span class="doc">修饰物</span></a>与面板之间的空白距离。默认情况下面板的大小由修饰物的大小决定，使用该子选项可以为面板增加额外的尺寸。
+<em>clearance</em> 的具体设置包括下面 3 种情况：</p>
+<ul>
+<li><p><em>gap</em> 为四个方向增加相同的空白距离</p></li>
+<li><p><em>xgap</em>/<em>ygap</em> 分别为 X 方向和 Y 方向指定不同的空白距离</p></li>
+<li><p><em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> 分别为四个方向指定不同的空白距离</p></li>
+</ul>
+</li>
+<li><p><strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]] 设置面板背景阴影。<em>dx</em>/<em>dy</em> 为阴影区相对于面板的偏移量，
+<em>shade</em> 为阴影区颜色 [默认为 <strong>4p</strong>/<strong>-4p</strong>/<strong>gray50</strong>]</p></li>
+</ul>
+<p><a class="reference download internal" download="" href="../../_downloads/6eb02064e3ffa3580de80fb70468e8a9/embellishment-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<figure class="align-center" id="id9">
+<img alt="../../_images/embellishment-gmtplot-1.png" src="../../_images/embellishment-gmtplot-1.png" />
+<figcaption>
+<p><span class="caption-text">GMT修饰物背景面板</span><a class="headerlink" href="#id9" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>左图使用了 <strong>-F+glightgreen+r</strong>，右图使用了 <strong>-F+p1p+i+s+gwhite+c0.1i</strong> (不包含最内侧虚线框)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../anchor/" class="btn btn-neutral float-left" title="锚点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../io-format/" class="btn btn-neutral float-right" title="数据类型" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

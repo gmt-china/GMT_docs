@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-J 选项 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-B 选项" href="../B/" />
+    <link rel="prev" title="-R 选项" href="../R/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-J 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">GMT投影代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proj4">Proj4投影代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-proj4">GMT+PROJ4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../p/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../q/">-q 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../w/">-w 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">标准选项</a> &raquo;</li>
+      <li>-J 选项</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/option/J.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="j">
+<h1>-J 选项<a class="headerlink" href="#j" title="Permalink to this heading"></a></h1>
+<p><strong>-J</strong> 选项用于指定坐标变换方式或地图投影方式，即将数据投影到画布上所采用的函数。</p>
+<p><strong>-J</strong> 选项后接投影代码以及投影参数。GMT目前支持三种不同的方式指定投影代码和投影方式：</p>
+<ul class="simple">
+<li><p>GMT投影代码</p></li>
+<li><p>Proj4投影代码</p></li>
+<li><p>GMT+PROJ4投影代码</p></li>
+</ul>
+<section id="gmt">
+<h2>GMT投影代码<a class="headerlink" href="#gmt" title="Permalink to this heading"></a></h2>
+<p><strong>-J</strong> 选项有两种写法:</p>
+<blockquote>
+<div><p><strong>-J</strong><span class="math notranslate nohighlight">\(\delta\)</span>[<em>parameters</em>/]<em>scale</em></p>
+<p><strong>-J</strong><span class="math notranslate nohighlight">\(\Delta\)</span>[<em>parameters</em>/]<em>width</em></p>
+</div></blockquote>
+<p>其中，<em>δ</em> 和 <em>Δ</em> 用于指定投影代码，前者为小写字母，后者为大写字母。
+<em>parameters</em> 是零个或多个由斜杠分隔的投影参数，参数数目由投影方式决定。</p>
+<p>投影代码使用小写字母时，<strong>-J</strong> 的最后一个参数 <em>scale</em> 表示底图比例尺，即图上距离与真实地球距离之间的换算关系。<em>scale</em> 可以有两种格式：</p>
+<ul class="simple">
+<li><p>单个数字加单位，例如 <strong>2c</strong>，表示真实地球距离的1度投影到画布上为2厘米</p></li>
+<li><p><strong>1:xxxx</strong> 格式，例如 <strong>1:10000000</strong> 表示画布上的1厘米对应真实地球距离的10000000厘米</p></li>
+</ul>
+<p>投影代码为大写字母时，<strong>-J</strong> 的最后一个参数 <em>width</em> 表示底图宽度。还可以加上子选项还进一步控制 <em>width</em> 的含义:</p>
+<ul class="simple">
+<li><p><strong>+dw</strong> 表示 <em>width</em> 为底图的宽度 [默认值]</p></li>
+<li><p><strong>+dh</strong> 表示 <em>width</em> 为底图的高度</p></li>
+<li><p><strong>+du</strong> 表示 <em>width</em> 为底图维度中最大的那个维度的长度</p></li>
+<li><p><strong>+dl</strong> 表示 <em>width</em> 为底图维度中最小的那个维度的长度</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>几乎所有地图投影方式，都只能指定底图宽度或高度中的任一个，而不能同时指定二者，因为地图高度会由地图宽度和投影方式自动决定。</p>
+<p>画图时通常建议使用大写投影代码以直接指定图片宽度，除非需要明确指定比例尺。</p>
+</div>
+<p>例如：</p>
+<ul class="simple">
+<li><p><strong>-Jm1c</strong> 表示使用墨卡托投影，地图上的1度距离投影到画布上为1厘米</p></li>
+<li><p><strong>-Jm1:10000000</strong> 表示使用墨卡托投影，画布上的1 cm代表实际距离中的10000000 cm，即100 km</p></li>
+<li><p><strong>-JM15c</strong> 也表示使用墨卡托投影，整个地图的宽度是15厘米，地图的高度由 <strong>-R</strong>
+和 <strong>-J</strong> 自动确定</p></li>
+<li><p><strong>-JM15ch</strong> 表示整个地图的高度是15厘米</p></li>
+<li><p><strong>-JX10c/5c</strong> 使用线性投影，地图的宽度是10厘米，高度为5厘米</p></li>
+</ul>
+<p>下表列出了GMT所支持的全部投影方式，详细介绍见 <a class="reference internal" href="../../proj/"><span class="doc">地图投影</span></a>。</p>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">GMT 投影代码</span><a class="headerlink" href="#id1" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">-J</span></code> 代码</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>-JA</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Ja/"><span class="doc">Lambert azimuthal equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JB</strong>lon<sub>0</sub>/lat<sub>0</sub>/lat<sub>1</sub>/lat<sub>2</sub>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jb/"><span class="doc">Albers conic equal area</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JC</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jc/"><span class="doc">Cassini cylindrical</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JCyl_stere</strong>[lon<sub>0</sub>/[lat<sub>0</sub>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jcyl_stere/"><span class="doc">Cylindrical stereographic</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JD</strong>lon<sub>0</sub>/lat<sub>0</sub>/lat<sub>1</sub>/lat<sub>2</sub>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jd/"><span class="doc">Equidistant conic</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JE</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Je/"><span class="doc">Azimuthal equidistant</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JF</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jf/"><span class="doc">Azimuthal gnomonic</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JG</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jg/"><span class="doc">Azimuthal orthographic</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JG</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>alt</em>/<em>azim</em>/<em>tilt</em>/<em>twist</em>/<em>W</em>/<em>H</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jg/"><span class="doc">General perspective</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JH</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jh/"><span class="doc">Hammer equal area</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JI</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Ji/"><span class="doc">Sinusoidal equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JJ</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jj/"><span class="doc">Miller cylindrical</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JKf</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jk/"><span class="doc">Eckert IV equal area</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JKs</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jk/"><span class="doc">Eckert VI equal area</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JL</strong>lon<sub>0</sub>/lat<sub>0</sub>/lat<sub>1</sub>/lat<sub>2</sub>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jl/"><span class="doc">Lambert conic conformal</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JM</strong>[lon<sub>0</sub>/[lat<sub>0</sub>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jm/"><span class="doc">Mercator cylindrical</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JN</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jn/"><span class="doc">Robinson</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JOa</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>azim</em>/<em>width</em>[<strong>+v</strong>]</p></td>
+<td><p><a class="reference internal" href="../../proj/Jo/"><span class="doc">Oblique Mercator, 1: origin and azim</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JOb</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>1</sub>/lat<sub>1</sub>/<em>width</em>[<strong>+v</strong>]</p></td>
+<td><p><a class="reference internal" href="../../proj/Jo/"><span class="doc">Oblique Mercator, 2: two points</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JOc</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>width</em>[<strong>+v</strong>]</p></td>
+<td><p><a class="reference internal" href="../../proj/Jo/"><span class="doc">Oblique Mercator, 3: origin and pole</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JP</strong><em>width</em>[<strong>+a</strong>][<strong>+f</strong>[<strong>e</strong>|<strong>p</strong>|<em>radius</em>]][<strong>+k</strong><em>kind</em>][<strong>+r</strong><em>offset</em>][<strong>+t</strong><em>origin</em>][<strong>+z</strong>[<strong>p</strong>|<em>radius</em>]]</p></td>
+<td><p><a class="reference internal" href="../../proj/Jp/"><span class="doc">Polar/Cylindrical</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JPoly</strong>[lon<sub>0</sub>/[lat<sub>0</sub>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jpoly/"><span class="doc">(American) polyconic</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JQ</strong>[lon<sub>0</sub>/[lat<sub>0</sub>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jq/"><span class="doc">Equidistant cylindrical</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JR</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jr/"><span class="doc">Winkel Tripel</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JS</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Js/"><span class="doc">General stereographic</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JT</strong>[lon<sub>0</sub>/[lat<sub>0</sub>/]]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jt/"><span class="doc">Transverse Mercator</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JU</strong><em>zone</em>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Ju/"><span class="doc">Universal Transverse Mercator (UTM)</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JV</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jv/"><span class="doc">Van der Grinten</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JW</strong>[lon<sub>0</sub>/]<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jw/"><span class="doc">Mollweide</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-JX</strong><em>width</em>[<strong>l</strong>|<strong>p</strong><em>exp</em>|<strong>T</strong>|<strong>t</strong>][/<em>height</em>[<strong>l</strong>|<strong>p</strong><em>exp</em>|<strong>T</strong>|<strong>t</strong>]][<strong>d</strong>]</p></td>
+<td><p><a class="reference internal" href="../../proj/Jx/#jx-linear"><span class="std std-ref">Linear</span></a>, <a class="reference internal" href="../../proj/Jx/#jx-log"><span class="std std-ref">logarithmic</span></a>,
+<a class="reference internal" href="../../proj/Jx/#jx-power"><span class="std std-ref">power</span></a>, and <a class="reference internal" href="../../proj/Jx/#jx-time"><span class="std std-ref">time</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-JY</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>width</em></p></td>
+<td><p><a class="reference internal" href="../../proj/Jy/"><span class="doc">Cylindrical equal area</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proj4">
+<h2>Proj4投影代码<a class="headerlink" href="#proj4" title="Permalink to this heading"></a></h2>
+<p>GMT用单个字母指定投影方式，但英文字母只有26个，而投影方式却不止26个，因而，从GMT 4.3.0开始，GMT开始支持 Proj4 包的投影代码。Proj4 包不是使用单个字符指定投影方式，而是通过一个单词指定。比如墨卡托投影既可以用 <strong>-Jm</strong> 指定也可以用 <strong>-Jmerc</strong> 指定。</p>
+<p>其语法为:</p>
+<blockquote>
+<div><p><strong>-J</strong><em>abbrev</em>/[<em>parameters</em>/]<em>scale</em></p>
+<p><strong>-J</strong><em>Abbrev</em>/[<em>parameters</em>/]<em>width</em></p>
+</div></blockquote>
+<p>类似的，若投影代码的首字母为大写，则最后一个参数表示底图宽度；若投影代码为小写，则最后一个参数表述底图比例尺。</p>
+<table class="docutils align-center" id="id2">
+<caption><span class="caption-text">Proj4投影代码</span><a class="headerlink" href="#id2" title="永久链接至表格"></a></caption>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>代码</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>-Jaea/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lat<sub>1</sub>/lat<sub>2</sub>/<em>scale</em></p></td>
+<td><p>Albers conic equal area</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jaeqd/</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>scale</em></p></td>
+<td><p>Azimuthal equidistant</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jcass/</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Cassini cylindrical</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jcea/</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Cylindrical equal area</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jcyl_stere/</strong>[lon<sub>0</sub>[/lat<sub>0</sub>/]]<em>scale</em></p></td>
+<td><p>Cylindrical stereographic</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jeqc/</strong>[lon<sub>0</sub>[/lat<sub>0</sub>/]]<em>scale</em></p></td>
+<td><p>Equidistant cylindrical</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jeqdc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lat<sub>1</sub>/lat<sub>2</sub>/<em>scale</em></p></td>
+<td><p>Equidistant conic</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jgnom/</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>scale</em></p></td>
+<td><p>Azimuthal gnomonic</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jhammer/</strong>lon<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Hammer equal area</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jeck4/</strong>lon<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Eckert IV equal area</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jeck6/</strong>lon<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Eckert VI equal area</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jlaea/</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>scale</em></p></td>
+<td><p>Lambert azimuthal equal area</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jlcc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lat<sub>1</sub>/lat<sub>2</sub>/<em>scale</em></p></td>
+<td><p>Lambert conic conformal</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jmerc/</strong>[lon<sub>0</sub>[/lat<sub>0</sub>/]]<em>scale</em></p></td>
+<td><p>Mercator cylindrical</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jmill/</strong>lon<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Miller cylindrical</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jmoll/</strong>[lon<sub>0</sub>/]<em>scale</em></p></td>
+<td><p>Mollweide</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jnsper/</strong>lon<sub>0</sub>/lat<sub>0</sub><em>alt/azim/tilt/twist/W/H/scale</em></p></td>
+<td><p>General perspective</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jomerc/</strong>lon<sub>0</sub>/lat<sub>0</sub><em>azim</em>/<em>scale</em></p></td>
+<td><p>Oblique Mercator, 1: origin and azimuth</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jomerc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>1</sub>/lat<sub>1</sub>/<em>scale</em></p></td>
+<td><p>Oblique Mercator, 2: two points</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jomercp/</strong>:lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>scale</em></p></td>
+<td><p>Oblique Mercator, 3: origin and pole</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jortho/</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>scale</em></p></td>
+<td><p>Azimuthal orthographic</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jpolar/</strong>[<strong>a</strong>]<em>scale</em>[/<em>origin</em>]</p></td>
+<td><p>Polar [azimuthal] (<span class="math notranslate nohighlight">\(\theta, r\)</span>) (or cylindrical)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jpoly/</strong>[lon<sub>0</sub>[/lat<sub>0</sub>/]]<em>scale</em></p></td>
+<td><p>(American) polyconic</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jrobin/</strong>[lon<sub>0</sub>/]<em>scale</em></p></td>
+<td><p>Robinson</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jsinu/</strong>lat<sub>0</sub>/<em>scale</em></p></td>
+<td><p>Sinusoidal equal area</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jstere/</strong>lon<sub>0</sub>/lat<sub>0</sub>[/<em>horizon</em>]/<em>scale</em></p></td>
+<td><p>General stereographic</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jtmerc/</strong>[lon<sub>0</sub>[/lat<sub>0</sub>/]]<em>scale</em></p></td>
+<td><p>Transverse Mercator</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jutm/</strong><em>zone</em>/<em>scale</em></p></td>
+<td><p>Universal Transverse Mercator (UTM)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jvandg/</strong>[lon<sub>0</sub>/]<em>scale</em></p></td>
+<td><p>Van der Grinten</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>-Jwintri/</strong>[lon<sub>0</sub>/]<em>scale</em></p></td>
+<td><p>Winkel Tripel</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>-Jxy</strong><em>xscale</em>[<strong>l</strong>|<strong>p</strong><em>exp</em>|<strong>T</strong>|<strong>t</strong>][/<em>yscale</em>[<strong>l</strong>|<strong>p</strong><em>exp</em>|<strong>T</strong>|<strong>t</strong>]][<strong>d</strong>]</p></td>
+<td><p>Linear, log<span class="math notranslate nohighlight">\(_{10}\)</span>, <span class="math notranslate nohighlight">\(x^a-y^b\)</span>, and time</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gmt-proj4">
+<h2>GMT+PROJ4<a class="headerlink" href="#gmt-proj4" title="Permalink to this heading"></a></h2>
+<p>从GMT6开始，GMT支持使用 PROJ.4 库来实现坐标和基准面的转换。这一特性是通过GDAL
+实现的，因而需要GMT在安装时链接到GDAL库。详细的 PROJ.4 语法见
+<a class="reference external" href="https://proj.org/apps/index.html">https://proj.org/apps/index.html</a>。</p>
+<p>在PROJ.4中，投影一般有很多参数，多个参数之间用空格分隔。在GMT中，可以将所有参数用双引号括起来:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-J<span class="s2">&quot;+proj=merc +ellps=WGS84 +units=m&quot;</span>
+</pre></div>
+</div>
+<p>或直接将所有参数连在一起:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-J+proj<span class="o">=</span>merc+ellps<span class="o">=</span>WGS84+units<span class="o">=</span>m
+</pre></div>
+</div>
+<p>也可以直接使用 <a class="reference external" href="http://spatialreference.org">EPSG codes</a>，但需要设置环境变量
+<strong>GDAL_DATA</strong> 指向 GDAL 的 data 子目录。例如 <strong>-JEPSG:4326</strong> 表示使用 WGS-84 系统。</p>
+<p>对于 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/mapproject.html" title="(在 GMT v6.3)"><span>mapproject</span></a> 和 <a class="reference internal" href="../../module/grdproject/"><span class="doc">grdproject</span></a> 模块，可以直接使用
+<strong>+to</strong> 关键字直接指定要将A参考系统转换为B参考系统，而不需要中间步骤。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-JEPSG:4326+to+proj<span class="o">=</span>aeqd+ellps<span class="o">=</span>WGS84+units<span class="o">=</span>m
+</pre></div>
+</div>
+<p>对于使用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/mapproject.html" title="(在 GMT v6.3)"><span>mapproject</span></a> 和 <a class="reference internal" href="../../module/grdproject/"><span class="doc">grdproject</span></a> 进行点和网格文件的转换，GMT可以使用所有的 <a class="reference external" href="https://proj.org/operations/projections/index.html">PROJ.4投影</a>。但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：<strong>+width=</strong><em>size</em>
+和 <strong>+scale=1:xxxx</strong> 使得其与经典的GMT中的工作方式相似。也可以在投影参数的最后加上字符串 <strong>/1:xxx</strong> 来指定比例尺。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../R/" class="btn btn-neutral float-left" title="-R 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../B/" class="btn btn-neutral float-right" title="-B 选项" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

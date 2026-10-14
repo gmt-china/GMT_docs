@@ -1,0 +1,1 @@
+gmt logo -png logo

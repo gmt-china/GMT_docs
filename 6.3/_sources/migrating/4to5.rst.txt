@@ -1,0 +1,62 @@
+GMT4 → GMT5
+===========
+
+:贡献者: |田冬冬|
+
+----
+
+GMT5 相对于 GMT4 有很多功能上的更新以及语法上的改进。最大的变化在于，GMT5 中所有 GMT 命令
+必须以 **gmt** 开头。
+
+GMT4 中使用 **psbasemap** 命令绘制底图、使用 **pscoast** 绘制海岸线。
+**psbasemap** 和 **pscoast** 都是 GMT4 提供的命令，每个命令均对应一个可执行文件。
+GMT4 总共提供了上百个命令，这带来一个命名空间污染（namespace pollution）的问题。
+即不同的软件提供了相同名字的命令，导致不同命令之间出现冲突，使得用户难以确认
+自己执行的 **pscoast** 命令是由 GMT 提供的还是其它软件包提供的。
+
+为了解决这个问题，GMT5 对源码做了大量改写。GMT5 中只提供 **gmt** 这一个命令/可执行文件。
+GMT4 中的所有\ **命令**\ 在 GMT5 中都变成了 **gmt** 命令的\ **模块**。
+所有模块都以 **gmt** *module* *options* 的形式进行调用。
+例如，GMT4 中的命令 **psbasemap** 在 GMT5 中应写为 **gmt psbasemap**。
+
+因而，将 GMT4 脚本迁移到 GMT5 下，只需要遵循如下步骤：
+
+#.  将所有 GMT4 命令前加上 **gmt**。例如，**psbasemap** 改成 **gmt psbasemap**
+#.  保存并执行脚本。若出现报错，则找到最早的报错信息并查询当前 GMT 版本对应的文档，
+    检查是否语法存在变化，并进一步更正
+
+GMT 提供了脚本 **gmt5syntax**，可以自动在 GMT4 命令前加上 **gmt**，该脚本位于
+GMT 的 :file:`share/tools` 目录下。该脚本的使用方法也很简单::
+
+    gmt5syntax old_script.sh > new_script.sh
+
+如果不愿意修改原脚本，GMT 还为旧命令提供了软链接，使得依然可以直接使用 **psbasemap** 等命令，
+但极其不推荐这一方法。为旧命令生成软链接有多种方法，用户可任选其一即可：
+
+#.  如果你是自行编译 GMT 源码并安装，则可以在 :file:`cmake/ConfigUser.cmake` 中加上
+    ``set (GMT_INSTALL_MODULE_LINKS TRUE)`` 再进行编译安装
+
+#.  GMT 提供了一个脚本，可以用于检查软连接是否存在，同时也可以创建或删除软连接。
+    对于已经安装 GMT 的用户，可以执行以下命令以检查软连接是否已经存在::
+
+        $(gmt --show-sharedir)/tools/gmt_links.sh
+
+    执行如下命令为所有旧 GMT 命令创建软连接（可能需要 root 权限）::
+
+        $(gmt --show-sharedir)/tools/gmt_links.sh create
+
+    也可以执行如下命令删除已有的软连接::
+
+        $(gmt --show-sharedir)/tools/gmt_links.sh delete
+
+#.  对于 Bash 用户，可以直接在 Bash 脚本、终端或者 Bash 配置文件中加入如下语句::
+
+        source $(gmt --show-sharedir)/tools/gmt_functions.sh
+
+    该脚本会为所有旧命令构建一个等效的 bash 函数。
+
+#.  对于 csh 用户，可以直接在 csh 脚本、终端或者 csh 配置文件中加入如下语句::
+
+        source `gmt --show-sharedir`/tools/gmt_aliases.csh
+
+    该脚本会为所有旧命令构建一个等效的 csh 别名。

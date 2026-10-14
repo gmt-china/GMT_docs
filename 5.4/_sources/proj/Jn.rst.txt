@@ -1,0 +1,19 @@
+-Jn：Robinson投影
+=================
+
+维基链接：https://en.wikipedia.org/wiki/Robinson_projection
+
+此投影Arthur H. Robinson于1963年提出，是一个修改后的圆柱投影，既不是保角也不是
+等面积。中心经线以及所有纬线都是直线，其余经线都是曲线。其使用查找表的方式而
+不是解析表达式来使得全球看上去比较正常。比例尺在经线38度是真实的。
+
+该投影的参数为::
+
+    -JN[<lon>/]<width>       -Jn[<lon>/]<scale>
+
+``<lon>`` 是中心经线，默认值为地图区域的中心。
+
+.. gmtplot::
+    :caption: 使用Robinson投影绘制全球地图
+
+    gmt pscoast -Rd -JN4.5i -Bg -Dc -A10000 -Ggoldenrod -Ssnow2 -P > GMT_robinson.ps

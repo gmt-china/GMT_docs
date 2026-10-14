@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>设置配置参数 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="GMT 单行模式" href="../oneliner/" />
+    <link rel="prev" title="绘制直方图" href="../histogram/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../started/">入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../advanced/">进阶教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">绘制直方图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">设置配置参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">确定配置参数的名称</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">配置参数的设置方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT 单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT 图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT 子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT 多图模式</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../advanced/">进阶教程</a> &raquo;</li>
+      <li>设置配置参数</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/tutorial/configurations.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>设置配置参数<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/wangliang1989">王亮</a>, <a class="reference external" href="https://me.seisman.info/">田冬冬</a></p>
+</dd>
+</dl>
+<p>本节介绍 GMT 的配置参数及其设置方法。GMT 提供了 150 多个配置参数，用于控制图形的外观和数据的处理方式。这些配置参数一般都有默认值。有时，这些默认值并不合适。例如，下面这幅图的标题相对于底图大了一些，显得不协调。遇到类似的情况，可以自行设置相关配置参数，以细致地调节图形的外观或数据的处理方式。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin conf0 pdf,png
+    gmt basemap -JX2c -R0/1/0/1 -Bwsen+t<span class="s1">&#39;Title&#39;</span>
+gmt end show
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/configurations-gmtplot-0.png"><img alt="../../_images/configurations-gmtplot-0.png" src="../../_images/configurations-gmtplot-0.png" style="width: 20%;" /></a>
+</figure>
+<p>要设置配置参数，就需要依次解决两个问题：第一个问题是确定需要修改的配置参数的名称，第二个问题是如何修改。所以，本节先介绍如何确定配置参数的名称，再介绍配置参数的设置方法。</p>
+<section id="id2">
+<h2>确定配置参数的名称<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>使用 <a class="reference internal" href="../../module/gmtdefaults/"><span class="doc">gmtdefaults</span></a> 模块可以列出所有配置参数及其默认值。配置参数的名称是由它控制的元素的属性决定的，所以根据元素或属性的名称，即可找到对应的配置参数。上面的例子中的问题是标题的字体太大，因此需要修改的配置参数的元素是标题（TITLE)，而属性是字体（FONT)。执行 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">defaults</span></code> 命令并用 <code class="docutils literal notranslate"><span class="pre">grep</span></code> 命令进行筛选，可以找到所有与标题（TITLE）有关的参数:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt defaults <span class="p">|</span> grep TITLE
+<span class="nv">FONT_TITLE</span>                     <span class="o">=</span> 24p,Helvetica,black
+<span class="nv">MAP_TITLE_OFFSET</span>               <span class="o">=</span> 14p
+</pre></div>
+</div>
+<p>下面的命令可以找到和字体（FONT）有关的参数:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt defaults <span class="p">|</span> grep FONT
+<span class="c1"># FONT Parameters</span>
+<span class="nv">FONT_ANNOT_PRIMARY</span>             <span class="o">=</span> 12p,Helvetica,black
+<span class="nv">FONT_ANNOT_SECONDARY</span>           <span class="o">=</span> 14p,Helvetica,black
+<span class="nv">FONT_HEADING</span>                   <span class="o">=</span> 32p,Helvetica,black
+<span class="nv">FONT_LABEL</span>                     <span class="o">=</span> 16p,Helvetica,black
+<span class="nv">FONT_LOGO</span>                      <span class="o">=</span> 8p,Helvetica,black
+<span class="nv">FONT_TAG</span>                       <span class="o">=</span> 20p,Helvetica,black
+<span class="nv">FONT_TITLE</span>                     <span class="o">=</span> 24p,Helvetica,black
+</pre></div>
+</div>
+<p>下图展示了 GMT 绘图时底图中各个元素的英文名称以及本手册中对应的中文名称。建议读者记住底图各个元素的中英文名称以方便查找和修改。</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/tutor_conf.png"><img alt="../../_images/tutor_conf.png" src="../../_images/tutor_conf.png" style="width: 100%;" /></a>
+</figure>
+</section>
+<section id="id3">
+<h2>配置参数的设置方法<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>配置参数的设置有两种方法：一种为全局设置，对设置以后的所有命令都有效。另一种为临时设置，只对该条命令有效。下面以配置参数 <a class="reference internal" href="../../conf/font/#term-FONT_TITLE"><span class="xref std std-term">FONT_TITLE</span></a> 为例，介绍全局和临时设置标题（TITLE）的字体（FONT）的方法。</p>
+<p>全局设置需要使用 <a class="reference internal" href="../../module/gmtset/"><span class="doc">gmtset</span></a> 模块。用 <a class="reference internal" href="../../module/gmtset/"><span class="doc">gmtset</span></a> 模块做的设置对之后的所有命令都有效。在下面的例子中，使用 <a class="reference internal" href="../../module/gmtset/"><span class="doc">gmtset</span></a> 模块全局设置了标题的字体为 <code class="docutils literal notranslate"><span class="pre">12p,Times-Bold,red</span></code>，所以两个标题的字体都发生了相应的改变。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin conf1 pdf,png
+    gmt <span class="nb">set</span> FONT_TITLE 12p,Times-Bold,red <span class="c1"># 全局设置标题的字体</span>
+    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t<span class="s1">&#39;Title One&#39;</span>
+    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t<span class="s1">&#39;Title Two&#39;</span> -X6c
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/configurations-gmtplot-1.png"><img alt="../../_images/configurations-gmtplot-1.png" src="../../_images/configurations-gmtplot-1.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">标题字体的全局设置</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<p>临时设置则是通过为命令添加选项 <strong>--KEY=</strong><em>value</em> 的形式实现的，其中 <strong>KEY</strong> 是配置参数的名称，<em>value</em> 是配置参数的值。在下面的例子中，在绘制左边的底图时使用了选项 <code class="docutils literal notranslate"><span class="pre">--FONT_TITLE=12p,Times-Bold,red</span></code>，所以该底图的标题的字体是红色的。由于临时设置仅对当前命令有效，其不会影响到接下来的其它命令。因而右边的底图的标题属性依然是 <a class="reference internal" href="../../conf/font/#term-FONT_TITLE"><span class="xref std std-term">FONT_TITLE</span></a> 的默认值。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin conf2 pdf,png
+    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t<span class="s1">&#39;Title One&#39;</span> --FONT_TITLE<span class="o">=</span>12p,Times-Bold,red
+    gmt basemap -JX5c -R0/1/0/1 -Bwsen+t<span class="s1">&#39;Title Two&#39;</span> -X6c
+gmt end
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/configurations-gmtplot-2.png"><img alt="../../_images/configurations-gmtplot-2.png" src="../../_images/configurations-gmtplot-2.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">标题字体的临时设置</span><a class="headerlink" href="#id5" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../histogram/" class="btn btn-neutral float-left" title="绘制直方图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../oneliner/" class="btn btn-neutral float-right" title="GMT 单行模式" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

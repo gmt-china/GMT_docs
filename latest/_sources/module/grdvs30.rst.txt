@@ -1,0 +1,94 @@
+:author: 陈箫翰, 何星辰
+:date: 2026-01-03
+
+.. index:: ! grdvs30
+.. program:: grdvs30
+
+grdvs30
+=======
+
+:官方文档: :doc:`gmt:supplements/seis/grdvs30`
+:简介: 计算 Vs30 速度模型
+
+Vs30，即上部30米内的时间平均剪切波速度，是地震工程领域用来评估地震场地条件的关键指标。
+**grdvs30** 模块通过地形数据计算某个范围的 Vs30 速度模型。
+
+输入一个地理坐标系的地形网格文件，以及一个常量克拉通值或一个克拉通文件作为权重，
+范围从0（对应稳定的地盾区，即克拉通）到1（对应活动构造区）。
+
+一个可选参数 **water_vel** 表示水覆盖区域的速度值，默认值为600。
+
+语法
+----
+
+**gmt grdvs30**
+*ingrid*
+:option:`-G`\ *outgrid*
+:option:`-C`\ *val*\|\ *fname*\ [**+g**]
+[ :option:`-R`\ *region* ]
+[ :option:`-V`\ [*level*] ]
+[ :option:`-W`\ *water_vel* ]
+[ :option:`-i`\ *flags* ]
+[ :option:`-r`\ *reg* ]
+[ :option:`-:`\ [**i**\|\ **o**] ]
+
+输入数据
+--------
+
+.. include:: explain_grd_in.rst_
+
+必须选项
+--------
+
+.. option:: -C
+
+**-C**\ *val*\|\ *fname*\[\ **+g**\]
+    参数可以是以下三种之一：
+
+    - 一个介于 0 和 1 之间的值 *val* ，其中 0 表示稳定的克拉通区，1 表示活动构造区。
+    - 一个克拉通区域多边形的多段文件的名称 *fname* 。
+    - 一个包含克拉通/活动构造区域的网格文件的名称 *fname* 。
+      在这种情况下，必须使用 **+g** 后缀来表明正在读取的是网格文件。
+
+.. option:: -G
+
+**-G**\ *outgrid*\
+    输出的 Vs30 速度模型网格文件名
+
+可选选项
+--------
+
+.. include:: explain_-R.rst_
+
+.. option:: -W
+
+**-W**\ *water_vel*
+    设置水域区域的 Vs30 值 [默认值=600]
+
+.. include:: explain_-V.rst_
+
+.. include:: explain_-icols.rst_
+
+.. include:: explain_nodereg.rst_
+
+.. include:: explain_colon.rst_
+
+.. include:: explain_help.rst_
+
+
+示例
+----
+
+计算 **topo.grd** 网格的 Vs30 估计值，并将克拉通值设为0::
+
+    gmt grdvs30 topo.grd -C0 -Gvs30.grd
+
+参考资料
+-------------
+
+- https://github.com/usgs/earthquake-global_vs30/blob/master/src/grad2vs30.c
+
+相关模块
+--------
+
+:doc:`grdshake`

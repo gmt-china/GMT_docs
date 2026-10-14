@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gmtmath &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="gmtselect" href="../gmtselect/" />
+    <link rel="prev" title="gmtlogo" href="../gmtlogo/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.3
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">社区绘图实例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/#id8">外部绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">模块手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtbinstats/">gmtbinstats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">gmtlogo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">gmtmath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">生成一维数组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">其他符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">运算符注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">存储、调用和清空</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">宏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">参与运算列的选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">绝对时间列</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">对单位进行缩放</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">参考文献</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">相关模块</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsplit/">gmtsplit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">triangiulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">mgd77track</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.3/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">模块手册</a> &raquo;</li>
+      <li>gmtmath</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/module/gmtmath.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="gmtmath">
+<h1>gmtmath<a class="headerlink" href="#gmtmath" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/ZMAlt">周茂</a></p>
+</dd>
+<dt class="field-even">官方文档</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmtmath.html" title="(在 GMT v6.3)"><span>gmtmath</span></a></p>
+</dd>
+<dt class="field-odd">简介</dt>
+<dd class="field-odd"><p>表数据的逆波兰表示法（RPN）计算</p>
+</dd>
+</dl>
+<p><strong>gmtmath</strong> 使用逆波兰表示法（Reverse Polish Notation）对一个或多个表数据文件或者常量进行加减乘除等操作。逆波兰表示法是一种后缀表示法，即将运算符写在操作数之后。该模块可以计算任意复杂的运算。模块默认逐元素进行计算操作。其中某些运算符仅需要一个参数。如果输入中不含表文件，则可以使用 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 或 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> 选项。默认情况下，除了时间以外的列，所有的列都参与运算（见 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> ）。如果多个运算整体非常复杂或者频繁出现，可以编写为宏以便后续使用。</p>
+<section id="id1">
+<h2>语法<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<p><strong>gmt math</strong> [ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><em>t_f(t)</em>[<strong>+e</strong>][<strong>+r</strong>][<strong>+s</strong>|<strong>w</strong>] ]
+[ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><em>cols</em> ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong><em>eigen</em> ]
+[ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><em>n_col</em>[/<em>t_col</em>] ]
+[ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>|<strong>n</strong>] ]
+[ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong>[<strong>f</strong>|<strong>l</strong>] ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>[<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+b</strong>|<strong>i</strong>|<strong>l</strong>|<strong>n</strong>]|<em>file</em>|<em>list</em>] ]
+[ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-b</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#bi-full" title="(在 GMT v6.3)"><span class="xref std std-ref">binary</span></a> ]
+[ <strong>-d</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#d-full" title="(在 GMT v6.3)"><span class="xref std std-ref">nodata</span></a>[<strong>+c</strong><em>col</em>] ]
+[ <strong>-e</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#e-full" title="(在 GMT v6.3)"><span class="xref std std-ref">regexp</span></a> ]
+[ <strong>-f</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#f-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-g</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#g-full" title="(在 GMT v6.3)"><span class="xref std std-ref">gaps</span></a> ]
+[ <strong>-h</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#h-full" title="(在 GMT v6.3)"><span class="xref std std-ref">headers</span></a> ]
+[ <strong>-i</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#icols-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-o</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#ocols-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-q</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#q-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-s</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#s-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>-w</strong><a class="reference external" href="https://docs.generic-mapping-tools.org/6.3/gmt.html#w-full" title="(在 GMT v6.3)"><span class="xref std std-ref">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]
+<em>operand</em> [ <em>operand</em> ] <strong>OPERATOR</strong> [ <em>operand</em> ] <strong>OPERATOR</strong> …
+<strong>=</strong> [ <em>outfile</em> ]</p>
+</section>
+<section id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt><em>operand</em></dt><dd><p>如果 <em>operand</em> 是一个文件，GMT 将试着以表文件的形式读取该文件。如果非文件，将被解析为 <a class="reference internal" href="#id6">其他符号</a> 。 若为 <strong>STDIN</strong> ，表示将读取标准输入并放入堆栈中。如果有必要， <strong>STDIN</strong> 参数可以多次出现。</p>
+</dd>
+<dt><strong>=</strong> <em>outfile</em></dt><dd><p>输出表数据文件名，不指定的情况下写到标准输出</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<dl id="a">
+<dt><strong>-A</strong><em>t_f(t)</em>[<strong>+e</strong>][<strong>+r</strong>][<strong>+s</strong>|<strong>w</strong>]</dt><dd><p>建立并求解线性方程。该选项需要 <strong>-N</strong><em>n_col</em>[/<em>t_col</em>] 选项，用来从给定的 <em>t_f(t)</em> 文件中进行初始化解方程所需的增广矩阵，其中 <em>t_f(t)</em> 文件只包含 <em>t</em> 和 <em>f(t)</em> 两列。在增广矩阵中，<em>t</em> 变量于编号为 <em>t_col</em> 指定的列， <em>f(t)</em> 位于编号为 <em>n_col</em> - 1 的列。</p>
+<ul class="simple">
+<li><p><strong>+e</strong> 使用 <strong>LSQFIT</strong> 或 <strong>SVDFIT</strong> 操作符时，使用该选项，可以求解拟合系数。结果包括 4 列：t，f(t)，t 位置的计算值，t 位置的残差 [默认只输出系数]</p></li>
+<li><p><strong>+r</strong> 选项只输出 <em>f(t)</em></p></li>
+<li><p><strong>+s</strong> 指定 <em>t_f(t)</em> 的第三列为 1 倍中误差</p></li>
+<li><p><strong>+w</strong> 指定 <em>t_f(t)</em> 的第三列为权重</p></li>
+</ul>
+<p>具体使用方法见倒数第二个示例。</p>
+</dd>
+</dl>
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>cols</em></dt><dd><p>选择要运算的列 <em>cols</em> 。多列以逗号分隔，类似 1,3-5,7 的表达形式也是允许的；此外，-Cx 等效于 -C0，-Cy 等效于 -C1。使用不带任何参数的 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项可用来重置，即选择除时间列外的所有列（见 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> ）。<strong>-Ca</strong> 选择所有的列，包括时间列， <strong>-Cr</strong> 的作用是反向选择，即选择除当前已选定的列以外的其他列。</p>
+</dd>
+</dl>
+<dl class="simple" id="e">
+<dt><strong>-E</strong><em>eigen</em></dt><dd><p>设置 <strong>LSQFIT</strong> 和 <strong>SVDFIT</strong> 运算符的特征值，默认为 1e-7。比 1e-7 更小的特征值将被重置为 0 ，并在求解中不考虑。</p>
+</dd>
+</dl>
+<dl class="simple" id="i">
+<dt><strong>-I</strong></dt><dd><p>将输出数据从升序变为降序 [默认为升序]</p>
+</dd>
+</dl>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>n_col</em>[/<em>t_col</em>]</dt><dd><p>设置列数和时间所在的列，列从 0 开始计数，默认输入列最大编号 <em>n_clo</em> 为 2 ，时间列 <em>t_col</em> 位于第 0 列。</p>
+</dd>
+</dl>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>|<strong>n</strong>]</dt><dd><p>实现不同长度单位之间的快速计算， <strong>-Ca</strong> <strong>-N</strong>1/0  <strong>-T</strong>0/0/1 的简写。在进行不同单位的长度计算时，在计算前都转换为 <em>inch</em> ，然后计算，并将结果转换为 <a class="reference internal" href="../../conf/proj/#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 设置的单位。使用 <strong>c</strong> ， <strong>i</strong> ， <strong>p</strong>
+可设置对应的输出长度单位。 <strong>n</strong> 表示输出结果无量纲。</p>
+</dd>
+</dl>
+<dl class="simple" id="s">
+<dt><strong>-S</strong>[<strong>f</strong>|<strong>l</strong>]</dt><dd><p>仅输出结果的第一行 [默认为所有行]。这在输出统计结果的时候可能会有用（比如 <strong>MODE</strong> 运算）。 <strong>l</strong> 和 <strong>f</strong> 分别表示第一行和最后一行。</p>
+</dd>
+</dl>
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+b</strong>|<strong>i</strong>|<strong>l</strong>|<strong>n</strong>]|<em>file</em>|<em>list</em>]</dt><dd><p>不加任何选项和文件，表明没有输入文件。其他详见 <a class="reference internal" href="#id4">生成一维数组</a></p>
+</dd>
+</dl>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt><dd><p>设置 verbose 等级 [<strong>w</strong>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输入数据的格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt><dd><p>设置二进制输出的数据格式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../option/d/"><span class="doc">(more …)</span></a></dt><dd><p>将输入数据中等于 <em>nodata</em> 的记录替换为 NaN，或将输出数据中值为 NaN 的记录替换为 <em>nodata</em></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>“pattern”</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../option/e/"><span class="doc">(more …)</span></a></dt><dd><p>筛选或剔除匹配指定模式的数据记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt><dd><p>指定输入或输出列的数据类型</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="../../option/g/"><span class="doc">(more …)</span></a></dt><dd><p>确定数据或线段的间断</p>
+</dd>
+</dl>
+<dl class="simple" id="h">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../option/h/"><span class="doc">(more …)</span></a></dt><dd><p>跳过或生成指定数目的头段记录</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输入数据列及简单变换（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="../../option/io/"><span class="doc">(more …)</span></a></dt><dd><p>设置输出数据列（0表示第一列，<strong>t</strong> 表示文本列）</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>] <a class="reference internal" href="../../option/q/"><span class="doc">(more …)</span></a></dt><dd><p>筛选输入或输出的行或数据范围</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="../../option/s/"><span class="doc">(more …)</span></a></dt><dd><p>设置 NaN 记录的处理方式</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-wy</strong>|<strong>a</strong>|<strong>w</strong>|<strong>d</strong>|<strong>h</strong>|<strong>m</strong>|<strong>s</strong>|<strong>c</strong><em>period</em>[/<em>phase</em>][<strong>+c</strong><em>col</em>] <a class="reference internal" href="../../option/w/"><span class="doc">(more …)</span></a></dt><dd><p>将输入坐标转换为循环坐标</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt><dd><p>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</p>
+</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt><dd><p>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</p>
+</dd>
+<dt><strong>-?</strong> 或无参数</dt><dd><p>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h2>生成一维数组<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>下面将展示如何使用 <a class="reference internal" href="#"><span class="doc">gmtmath</span></a> 生成一维数组（其中大部分操作也可通过
+linux 中的 seq 命令方便地实现）</p>
+<p><strong>不使用任何子选项</strong></p>
+<p>以 0.1 为步长，生成 3.1 到 4.2 等等间隔序列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T3.1/4.2/0.1 <span class="nv">T</span> <span class="o">=</span>
+<span class="m">3</span>.1
+<span class="m">3</span>.2
+...
+<span class="m">4</span>.2
+</pre></div>
+</div>
+<p><strong>+a 选项</strong></p>
+<p>该选项不对生成的数列进行运算操作，而是将该数列以列的形式追加到输出表数据，类似
+linux 中的 paste 命令。</p>
+<p><strong>+b 选项</strong></p>
+<p>以 3 和 20 分别为起点和终点，创建一个 2 的整数幂的列表，将生成的整数幂以 1 为步长取值 <strong>-T</strong>3/20/1<strong>+b</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T3/20/1+b <span class="nv">T</span> <span class="o">=</span>
+<span class="m">4</span>
+<span class="m">8</span>
+<span class="m">16</span>
+</pre></div>
+</div>
+<p><strong>+l 选项</strong></p>
+<p>以 7 和 135 分别为起点和终点，先创建一个 10 的整数幂的列表，当
+<em>inc</em> 为 1 时，输出该列表；当 <em>inc</em> 为 2 时，同时输出该列表中每个元素的
+1，2，5 倍值（不包括超出原始数据范围的部分）； 当 <em>inc</em> 为 3 时，同时输出该列表中每个元素的 1，2，…，9 倍值（同样不包括超出原始数据范围的部分）。
+<strong>-T</strong>7/135/2<strong>+l</strong> 将会生成如下数列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T7/135/2+l <span class="nv">T</span> <span class="o">=</span>
+<span class="m">10</span>
+<span class="m">20</span>
+<span class="m">50</span>
+<span class="m">100</span>
+</pre></div>
+</div>
+<p><em>inc</em> 为负整数时，将实现如下效果</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T1e-4/1e4/-2+l <span class="nv">T</span> <span class="o">=</span>
+<span class="m">0</span>.0001
+<span class="m">0</span>.01
+<span class="m">1</span>
+<span class="m">100</span>
+<span class="m">10000</span>
+</pre></div>
+</div>
+<p><strong>+i 选项</strong></p>
+<p>该选项将以 1 作为默认步长，第三个数字做为每步长中的数字个数
+<em>length</em>。假设需要在 1 分钟内每 24 秒生成一帧</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T0/60/24+i <span class="nv">T</span> <span class="o">=</span>
+<span class="m">0</span>
+<span class="m">0</span>.0416666666667
+<span class="m">0</span>.0833333333333
+<span class="m">0</span>.125
+<span class="m">0</span>.166666666667
+...
+<span class="m">60</span>
+</pre></div>
+</div>
+<p><strong>+n 选项</strong></p>
+<p>生成固定长度的数列。以 3.44 和 7.82 为起点和终点，生成长度为 5 的等间隔序列</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T3.44/7.82/5+n <span class="nv">T</span> <span class="o">=</span>
+<span class="m">3</span>.44
+<span class="m">4</span>.535
+<span class="m">5</span>.63
+<span class="m">6</span>.725
+<span class="m">7</span>.82
+</pre></div>
+</div>
+<p><strong>-T 后直接加文件或逗号分隔的数列</strong></p>
+<p><strong>-T</strong> 后可以直接加文件，文件中即为要生成的列表；另外，可以直接使用逗号分隔，将列表附加到 <strong>-T</strong> 选项后，如下为 Fibonacci 数列前 6 项</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T0,1,1,2,3,5 <span class="nv">T</span> <span class="o">=</span>
+<span class="m">0</span>
+<span class="m">1</span>
+<span class="m">1</span>
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">5</span>
+</pre></div>
+</div>
+<p><em>注</em> ： 如果数列只包含一个值，必须在其后加逗号以表明仍是一个数列</p>
+<p><strong>+u 选项</strong></p>
+<p>如果文件或者逗号分隔的数列中有重复数字或未排序，可以使用 <strong>+u</strong>
+选项去重并排序。</p>
+<p><strong>+t 选项</strong></p>
+<p>生成绝对时间序列。在 <em>inc</em> 后分别添加 <strong>y</strong> ，<strong>o</strong> ，<strong>d</strong> ，<strong>h</strong> ， <strong>m</strong>
+和 <strong>s</strong> 表示时间步长的单位为年，月，日，时，分，秒。在其后附加 <strong>+t</strong> 选项，可以进一步强调生成时间序列，也可以不加</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -o0 -T2020-03-01T/2020-03-07T/1d <span class="nv">T</span> <span class="o">=</span>
+<span class="m">2020</span>-03-01T00:00:00
+<span class="m">2020</span>-03-02T00:00:00
+<span class="m">2020</span>-03-03T00:00:00
+<span class="m">2020</span>-03-04T00:00:00
+<span class="m">2020</span>-03-05T00:00:00
+<span class="m">2020</span>-03-06T00:00:00
+<span class="m">2020</span>-03-07T00:00:00
+</pre></div>
+</div>
+<p><strong>生成距离序列</strong></p>
+<p>如果输入文件中包含两列以上的数据，可以使用前两列计算距离，并生成等距序列。在 <em>inc</em> 后分别添加 <strong>d</strong>，<strong>m</strong>，<strong>s</strong>，<strong>e</strong>，<strong>f</strong>，<strong>M</strong>，<strong>n</strong> 和 <strong>u</strong>
+表示距离步长的单位为度，分，秒，米，英尺，公里，英里，海里，英尺。如果为笛卡尔坐标，使用 c 作为距离步长单位。</p>
+<p><strong>+e 选项</strong></p>
+<p>如果只给定 <em>inc</em> 而从数据中获取最大值和最小值，则 (<em>max</em> - <em>min</em>)/<em>inc</em> 可能不是整数，GMT 讲会自动对 <em>inc</em> 进行一定的调整。如果不想调整 <em>inc</em> ，则可以使用 <strong>+e</strong> 选项，GMT 会固定最小值，适当调整最大值。</p>
+</section>
+<section id="id5">
+<h2>运算符<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p><strong>Operator</strong> 为运算符名称； <strong>args</strong> 分别表示输入参数和输出参数个数；
+<strong>Returns</strong> 中的 A B C … 等字符表示输入参数。所有的三角函数运算符默认输入为弧度，若运算符最后一个字母为 <code class="docutils literal notranslate"><span class="pre">D</span></code> 表示使用角度计算。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 5%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Operator</p></td>
+<td><p>args</p></td>
+<td><p>Returns</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ABS</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>abs (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ACOS</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>acos (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ACOSH</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>acosh (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ACSC</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>acsc (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ACOT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>acot (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ADD</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A + B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>AND</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>B if A == NaN, else A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ASEC</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>asec (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ASIN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>asin (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ASINH</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>asinh (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ATAN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>atan (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ATAN2</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>atan2 (A, B)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ATANH</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>atanh (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BCDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Binomial cumulative distribution function for p = A, n = B, and x = C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>BPDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Binomial probability density function for p = A, n = B, and x = C</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BEI</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Kelvin function bei (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>BER</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Kelvin function ber (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BITAND</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A &amp; B (bitwise AND operator)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>BITLEFT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A &lt;&lt; B (bitwise left-shift operator)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BITNOT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>~A (bitwise NOT operator, i.e., return two’s complement)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>BITOR</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A | B (bitwise OR operator)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BITRIGHT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A &gt;&gt; B (bitwise right-shift operator)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>BITTEST</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if bit B of A is set, else 0 (bitwise TEST operator)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BITXOR</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A ^ B (bitwise XOR operator)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CEIL</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>ceil (A) (smallest integer &gt;= A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>CHICRIT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Chi-squared distribution critical value for alpha = A and nu = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CHICDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Chi-squared cumulative distribution function for chi2 = A and nu = B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>CHIPDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Chi-squared probability density function for chi2 = A and nu = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>COL</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Places column A on the stack</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>COMB</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Combinations n_C_r, with n = A and r = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CORRCOEFF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Correlation coefficient r(A, B)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>COS</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>cos (A) (A in radians)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>COSD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>cos (A) (A in degrees)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>COSH</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>cosh (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>COT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>cot (A) (A in radians)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>COTD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>cot (A) (A in degrees)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CSC</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>csc (A) (A in radians)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>CSCD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>csc (A) (A in degrees)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DDT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>d(A)/dt Central 1st derivative</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>D2DT2</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>d^2(A)/dt^2 2nd derivative</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>D2R</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Converts degrees to radians</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DEG2KM</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Converts spherical degrees to kilometers</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DENAN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Replace NaNs in A with values from B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DILOG</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>dilog (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DIFF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Forward difference between adjacent elements of A (A[1]-A[0], A[2]-A[1], …, NaN)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>DIV</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A / B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DUP</strong></p></td>
+<td><p>1 2</p></td>
+<td><p>Places duplicate of A on the stack</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ECDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Exponential cumulative distribution function for x = A and lambda = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ECRIT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Exponential distribution critical value for alpha = A and lambda = B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EPDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Exponential probability density function for x = A and lambda = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ERF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Error function erf (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ERFC</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Complementary Error function erfc (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ERFINV</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Inverse error function of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EQ</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if A == B, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>EXCH</strong></p></td>
+<td><p>2 2</p></td>
+<td><p>Exchanges A and B on the stack</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EXP</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>exp (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FACT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>A! (A factorial)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FCDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>F cumulative distribution function for F = A, nu1 = B, and nu2 = C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FCRIT</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>F distribution critical value for alpha = A, nu1 = B, and nu2 = C</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FLIPUD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Reverse order of each column</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FLOOR</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>floor (A) (greatest integer &lt;= A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>FMOD</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A % B (remainder after truncated division)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FPDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>F probability density function for F = A, nu1 = B, and nu2 = C</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GE</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if A &gt;= B, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if A &gt; B, else 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>HSV2LAB</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert h,s,v triplets to l,a,b triplets, with h = A (0-360), s = B and v = C (0-1)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>HSV2RGB</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert h,s,v triplets to r,g,b triplets, with h = A (0-360), s = B and v = C (0-1)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>HSV2XYZ</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert h,s,v triplets to x,t,z triplets, with h = A (0-360), s = B and v = C (0-1)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>HYPOT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>hypot (A, B) = sqrt (A*A + B*B)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>I0</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Modified Bessel function of A (1st kind, order 0)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>I1</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Modified Bessel function of A (1st kind, order 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>IFELSE</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>B if A != 0, else C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>IN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Modified Bessel function of A (1st kind, order B)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>INRANGE</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>1 if B &lt;= A &lt;= C, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>INT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Numerically integrate A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>INV</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>1 / A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ISFINITE</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>1 if A is finite, else 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ISNAN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>1 if A == NaN, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>J0</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Bessel function of A (1st kind, order 0)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>J1</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Bessel function of A (1st kind, order 1)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>JN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Bessel function of A (1st kind, order B)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>K0</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Modified Kelvin function of A (2nd kind, order 0)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>K1</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Modified Bessel function of A (2nd kind, order 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>KM2DEG</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Converts kilometers to spherical degrees</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>KN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Modified Bessel function of A (2nd kind, order B)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>KEI</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Kelvin function kei (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>KER</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Kelvin function ker (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>KURT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Kurtosis of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LAB2HSV</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert l,a,b triplets to h,s,v triplets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LAB2RGB</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert l,a,b triplets to r,g,b triplets</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LAB2XYZ</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert l,a,b triplets to x,y,z triplets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LCDF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Laplace cumulative distribution function for z = A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LCRIT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Laplace distribution critical value for alpha = A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LE</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if A &lt;= B, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LMSSCL</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>LMS (Least Median of Squares) scale estimate (LMS STD) of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LMSSCLW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted LMS scale estimate (LMS STD) of A for weights in B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LOG</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>log (A) (natural log)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LOG10</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>log10 (A) (base 10)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LOG1P</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>log (1+A) (accurate for small A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LOG2</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>log2 (A) (base 2)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LOWER</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>The lowest (minimum) value of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LPDF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Laplace probability density function for z = A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LRAND</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Laplace random noise with mean A and std. deviation B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LSQFIT</strong></p></td>
+<td><p>1 0</p></td>
+<td><p>Let current table be [A | b] return least squares solution x = A \ b</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>LT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if A &lt; B, else 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MAD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Median Absolute Deviation (L1 STD) of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>MADW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted Median Absolute Deviation (L1 STD) of A for weights in B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MAX</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Maximum of A and B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>MEAN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Mean value of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MEANW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted mean value of A for weights in B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>MEDIAN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Median value of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MEDIANW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted median value of A for weights in B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>MIN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Minimum of A and B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MOD</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A mod B (remainder after floored division)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>MODE</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Mode value (Least Median of Squares) of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MODEW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted mode value (Least Median of Squares) of A for weights in B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>MUL</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A * B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NAN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>NaN if A == B, else A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NEG</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>-A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NEQ</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>1 if A != B, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NORM</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Normalize (A) so max(A)-min(A) = 1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NOT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>NaN if A == NaN, 1 if A == 0, else 0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NRAND</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Normal, random values with mean A and std. deviation B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>OR</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>NaN if B == NaN, else A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PCDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Poisson cumulative distribution function for x = A and lambda = B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>PERM</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Permutations n_P_r, with n = A and r = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PPDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Poisson distribution P(x,lambda), with x = A and lambda = B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>PLM</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Associated Legendre polynomial P(A) degree B order C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PLMg</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Normalized associated Legendre polynomial P(A) degree B order C (geophysical convention)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>POP</strong></p></td>
+<td><p>1 0</p></td>
+<td><p>Delete top element from the stack</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>POW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A ^ B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>PQUANT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>The B’th quantile (0-100%) of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PQUANTW</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>The C’th weighted quantile (0-100%) of A for weights in B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>PSI</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Psi (or Digamma) of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PV</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Legendre function Pv(A) of degree v = real(B) + imag(C)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>QV</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Legendre function Qv(A) of degree v = real(B) + imag(C)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>R2</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>R2 = A^2 + B^2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>R2D</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Convert radians to degrees</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RAND</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Uniform random values between A and B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RCDF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Rayleigh cumulative distribution function for z = A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RCRIT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Rayleigh distribution critical value for alpha = A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RGB2HSV</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert r,g,b triplets to h,s,v triplets, with r = A, g = B, and b = C (in 0-255 range)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RGB2LAB</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert r,g,b triplets to l,a,b triplets, with r = A, g = B, and b = C (in 0-255 range)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RGB2XYZ</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert r,g,b triplets to x,y,x triplets, with r = A, g = B, and b = C (in 0-255 range)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RINT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>rint (A) (round to integral value nearest to A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RMS</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Root-mean-square of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RMSW</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Weighted root-mean-square of A for weights in B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RPDF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Rayleigh probability density function for z = A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ROLL</strong></p></td>
+<td><p>2 0</p></td>
+<td><p>Cyclicly shifts the top A stack items by an amount B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ROTT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Rotate A by the (constant) shift B in the t-direction</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SEC</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sec (A) (A in radians)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SECD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sec (A) (A in degrees)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SIGN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sign (+1 or -1) of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SIN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sin (A) (A in radians)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SINC</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sinc (A) (sin (pi*A)/(pi*A))</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SIND</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sin (A) (A in degrees)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SINH</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sinh (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SKEW</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Skewness of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SQR</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>A^2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SQRT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>sqrt (A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>STD</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Standard deviation of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>STDW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted standard deviation of A for weights in B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>STEP</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Heaviside step function H(A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>STEPT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Heaviside step function H(t-A)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SUB</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>A - B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SUM</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Cumulative sum of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TAN</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>tan (A) (A in radians)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TAND</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>tan (A) (A in degrees)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TANH</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>tanh (A)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TAPER</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Unit weights cosine-tapered to zero within A of end margins</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Chebyshev polynomial Tn(-1&lt;A&lt;+1) of degree B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TCRIT</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Student’s t distribution critical value for alpha = A and nu = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TPDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Student’s t probability density function for t = A, and nu = B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TCDF</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Student’s t cumulative distribution function for t = A, and nu = B</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>UPPER</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>The highest (maximum) value of A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>VAR</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Variance of A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>VARW</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Weighted variance of A for weights in B</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>VPDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Von Mises density distribution V(x,mu,kappa), with angles = A, mu = B, and kappa = C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>WCDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Weibull cumulative distribution function for x = A, scale = B, and shape = C</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>WCRIT</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Weibull distribution critical value for alpha = A, scale = B, and shape = C</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>WPDF</strong></p></td>
+<td><p>3 1</p></td>
+<td><p>Weibull density distribution P(x,scale,shape), with x = A, scale = B, and shape = C</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>XOR</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>B if A == NaN, else A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>XYZ2HSV</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert x,y,z triplets to h,s,v triplets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>XYZ2LAB</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert x,y,z triplets to l,a,b triplets</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>XYZ2RGB</strong></p></td>
+<td><p>3 3</p></td>
+<td><p>Convert x,y,z triplets to r,g,b triplets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Y0</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Bessel function of A (2nd kind, order 0)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Y1</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Bessel function of A (2nd kind, order 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>YN</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Bessel function of A (2nd kind, order B)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ZCDF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Normal cumulative distribution function for z = A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ZPDF</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Normal probability density function for z = A</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ZCRIT</strong></p></td>
+<td><p>1 1</p></td>
+<td><p>Normal distribution critical value for alpha = A</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ROOTS</strong></p></td>
+<td><p>2 1</p></td>
+<td><p>Treats col A as f(t) = 0 and returns its roots</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h2>其他符号<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>以下符号具有特殊的含义：</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>PI</strong></p></td>
+<td><p>3.1415926…</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>E</strong></p></td>
+<td><p>2.7182818…</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EULER</strong></p></td>
+<td><p>0.5772156…</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>PHI</strong></p></td>
+<td><p>1.6180339… (golden ratio)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>EPS_F</strong></p></td>
+<td><p>1.192092896e-07 (sgl. prec. eps)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>EPS_D</strong></p></td>
+<td><p>2.2204460492503131e-16 (dbl. prec. eps)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TMIN</strong></p></td>
+<td><p>Minimum t value</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TMAX</strong></p></td>
+<td><p>Maximum t value</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TRANGE</strong></p></td>
+<td><p>Range of t values</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TINC</strong></p></td>
+<td><p>t increment</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>N</strong></p></td>
+<td><p>The number of records</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>T</strong></p></td>
+<td><p>Table with t-coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>TNORM</strong></p></td>
+<td><p>Table with normalized t-coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>TROW</strong></p></td>
+<td><p>Table with row numbers 1, 2, …, N-1</p></td>
+</tr>
+</tbody>
+</table>
+<p>上述符号均可以作为变量使用，当其为多个数时，逐元素操作。以 <a class="reference internal" href="#id4">生成一维数组</a>
+中第一个实例中的 <strong>T</strong> 符号为例，其含义为将 <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong> 选项生成的序列转换为表，以便后续使用 <strong>=</strong> 输出。</p>
+</section>
+<section id="id7">
+<h2>运算符注意事项<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>PLM</strong> 和 <strong>PLMg</strong> 运算符用来计算 L 阶 M 次 x 的缔合勒让德函数；各参数的范围应该满足 -1 &lt;= x &lt;= +1 、0 &lt;= M &lt;= L。 <strong>PLM</strong> 运算符没有经过标准化，并且乘以 phase (-1)^M。 <strong>PLMg</strong> 使用大地测量/地球物理常见的标准化。使用
+<a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong> 参数可以附加输出球谐系数 C 和 S。 <strong>PLM</strong> 在较高的阶次就会出现溢出，具体和纬度相关， <strong>PLMg</strong> 则可以保证在 3000 阶以下都不会溢出</p></li>
+<li><p>不同参数文件名相同时，应给定相对路径或绝对路径以区分不同文件</p></li>
+<li><p>该模块计算过程保存在堆栈中，栈中保存结果最大为 100，即不能叠加太多的操作以防溢出</p></li>
+<li><p>所有需要半径的运算符为保证其为正值，均自动取绝对值后计算</p></li>
+<li><p><strong>DDT</strong> 和 <strong>DDT2</strong> 函数仅适用于等间隔数据</p></li>
+<li><p>所有导数都基于 central finite differences 和 natural boundary conditions</p></li>
+<li><p><strong>ROOTS</strong> 必须是栈上最后一个操作，后面只能加 <strong>=</strong></p></li>
+<li><p>位运算符 <strong>BITAND</strong>，<strong>BITLEFT</strong>，<strong>BITNOT</strong>，<strong>BITOR</strong>，<strong>BITRIGHT</strong>，
+<strong>BITTEST</strong> 和 <strong>BITXOR</strong> 会将表数据中的双精度数转换为无符号的 64 位整数，然后按位运算。因此，可储存在双精度数中的最大整数为 2^53 ，更大的数都会被截断。如果被比较的数中包括 NaN ，则最终结果也为 NaN</p></li>
+<li><p><strong>TAPER</strong> will interpret its argument to be a width in the same units as
+the time-axis, but if no time is provided (i.e., plain data tables) then
+the width is taken to be given in number of rows.</p></li>
+<li><p>颜色转换函数，例如 <strong>RGB2HSV</strong> 等，不仅包括 rgb 到 hsv 等三元数的转换，还包括 lab 到 sRGB 等四元数的转换。这些函数在是否使用 <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> 选项下的表现不同。使用 <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> 时，输入应该为三元数，并将三个输出结果放在栈中。由于只有栈顶的元素被打印，必须使用 <strong>POP</strong> 或 <strong>ROLL</strong> 等操作符来获取其他感兴趣的项。如果没有 <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> ，GMT 将三元素视为整体，转换后，同样以整体的方式返回到堆栈中。</p></li>
+<li><p><strong>VPDF</strong> 运算符的输入数据单位为角度</p></li>
+</ol>
+</section>
+<section id="id8">
+<h2>存储、调用和清空<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p>用户可以将中间计算结果储存到一个变量中，并在后续计算中调用该变量。这在需要对某部分进行多次重复计算时可以提高效率和可读性。保存结果需要使用特殊的运算符
+<strong>STO</strong>&#64;<em>label</em> ， 其中 <em>label</em> 是变量的名称。调用该变量时，使用
+[<strong>RCL</strong>]&#64;<em>label</em> ， <strong>RCL</strong> 是可选的。使用后要清除该变量，可以使用
+<strong>CLR</strong>&#64;<em>label</em> ， <strong>STO</strong> 和 <strong>CLR</strong> 均不影响计算中的堆栈。</p>
+</section>
+<section id="id9">
+<h2>宏<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<p>用户可以将特定的运算符组合保存为宏文件 <em>gmtmath.macros</em> 。文件中可以包含任意数量的宏， # 开头的行为注释。宏的格式为</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">name</span> <span class="o">=</span> arg1 arg2 ... arg2<span class="o">[</span> : comment<span class="o">]</span>
+</pre></div>
+</div>
+<p>其中，<em>name</em> 是宏名，当此运算符出现在命令中时，则将其简单替换为参数列表。宏不可以互相调用。下面将给出一个宏的例子：宏 <em>DEPTH</em> 将在时间列以 Myr
+为单位给出海底构造的年龄，并计算预测的 half-space 海深</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DEPTH</span> <span class="o">=</span> SQRT <span class="m">350</span> MUL <span class="m">2500</span> ADD NEG : usage: DEPTH to <span class="k">return</span> half-space seafloor depths
+</pre></div>
+</div>
+<p>由于在宏中可能使用地理或时间常数，因此可使用 <code class="docutils literal notranslate"><span class="pre">:</span></code> 后加一个空格的形式作为注释的开端。下面是一个 <strong>GPSWEEK</strong> 宏，用于确定给定的时间处于的 GPS 周数（相对于某个参考时刻）:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">GPSWEEK</span> <span class="o">=</span> <span class="m">1980</span>-01-06T00:00:00 SUB <span class="m">86400</span> DIV <span class="m">7</span> DIV FLOOR : usage: GPS week without rollover
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h2>参与运算列的选择<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<p><strong>-C</strong><em>cols</em> 设置后，任何操作，包括从文件中加载数据都会受到影响。因此，当 <strong>-C</strong><em>cols</em>
+放在数据加载前时，只有设定的列会更新，其他的列会置为 0，若不想其他列置为 0，则需把文件放在
+<strong>-C</strong><em>cols</em> 前。</p>
+</section>
+<section id="id11">
+<h2>绝对时间列<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<p>如果输入数据有多列并且包含绝对时间列（通过 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> [0] 设置 id)，则时间输出为相对时间。在标量计算模式（<strong>-Q</strong>）中，同样会将绝对时间转换为相对时间。如果 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选定的列中包含绝对时间，同样会转换为相对时间。用户可以设置合适的 <strong>-f</strong> 或 <strong>-fo</strong> 选项来避免这种转换。例如：如果需要计算时间差，则相对时间更加合适；如果要计算绝对时间，则需要使用 <strong>-fo</strong> 选项设置输出时间格式为绝对时间。</p>
+</section>
+<section id="id12">
+<h2>对单位进行缩放<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
+<p>使用 <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> 计算时，请注意 GMT 内部将 c、i 或 p 等长度单位转换为 inch 计算，并对结果进行缩放到设置的单位，但这仅在线性运算能得到正确的结果。例如
+<code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">math</span> <span class="pre">-Qp</span> <span class="pre">1c</span> <span class="pre">0.5i</span> <span class="pre">ADD</span> <span class="pre">=</span></code>，其中 1c = 28.364p ，0.5i = 36p，且 <strong>ADD</strong> 为线性运算，因此会得到正确的结果 64.346p。考虑另外一个例子：<code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">math</span> <span class="pre">-Qc</span> <span class="pre">1c</span> <span class="pre">1c</span> <span class="pre">MUL</span> <span class="pre">=</span></code>
+，结果却不是 1，而是 0.393。原因是在非线性运算时， <strong>math</strong> 模块无法跟踪计算栈上单位，因此在内部均假定以英寸为单位，在最后将结果缩放为 cm。这里在 <strong>math</strong> 内部计算的结果是 1
+英寸的平方，<strong>math</strong> 将其转换为 0.3937 厘米* 英寸 作为单位，因此结果是错误的。</p>
+</section>
+<section id="id13">
+<h2>示例<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h2>
+<p>将两种不同单位的长度相减，并赋值给 <em>length</em> 变量</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">length</span><span class="o">=</span><span class="sb">`</span>gmt math -Q 15c 2i <span class="nv">SUB</span> <span class="o">=</span><span class="sb">`</span>
+</pre></div>
+</div>
+<p>计算不同单位的长度之间的比，输出无量纲</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ratio</span><span class="o">=</span><span class="sb">`</span>gmt math -Qn 15c 2i <span class="nv">DIV</span> <span class="o">=</span><span class="sb">`</span>
+</pre></div>
+</div>
+<p>对 process1 产生的数据进行开方，然后使用管道传递给 process3</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>process1 <span class="p">|</span> gmt math STDIN <span class="nv">SQRT</span> <span class="o">=</span> <span class="p">|</span> process3
+</pre></div>
+</div>
+<p>对两个数据文件进行平均，并对结果取 log10</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math file1.txt file2.txt ADD <span class="m">0</span>.5 MUL <span class="nv">LOG10</span> <span class="o">=</span> file3.txt
+</pre></div>
+</div>
+<p>对包含海底地形年代（以 m.y. 为单位）和深度（以 m 为单位）的数据文件 <code class="file docutils literal notranslate"><span class="pre">samples.txt</span></code> ，使用公式 depth(单位为 m) = 2500 + 350 * sqrt (age) 计算正常深度，并最终获得深度异常</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math samples.txt T SQRT <span class="m">350</span> MUL <span class="m">2500</span> ADD <span class="nv">SUB</span> <span class="o">=</span>
+</pre></div>
+</div>
+<p>取三个文件对应列（第 1 列，第 4 到 6列）的平均值</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -C1,4-6 sizes.1 sizes.2 ADD sizes.3 ADD <span class="m">3</span> <span class="nv">DIV</span> <span class="o">=</span> ave.txt
+</pre></div>
+</div>
+<p>从含有一列数据的 <code class="file docutils literal notranslate"><span class="pre">ages.txt</span></code> 文件中计算模值，并赋值给变量</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">mode_age</span><span class="o">=</span><span class="sb">`</span>gmt math -S -T ages.txt <span class="nv">MODE</span> <span class="o">=</span><span class="sb">`</span>
+</pre></div>
+</div>
+<p>计算 <code class="file docutils literal notranslate"><span class="pre">t.txt</span></code> 中坐标的 dilog(x) 函数值</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -Tt.txt T <span class="nv">DILOG</span> <span class="o">=</span> dilog.txt
+</pre></div>
+</div>
+<p>下面展示一个使用存储变量的例子。将 (2*pi*T/360) 作为变量储存，对该变量分别乘以 2 和 3 ，并对上述结果求余弦，然后加和</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/360/1 <span class="m">2</span> PI MUL <span class="m">360</span> DIV T MUL STO@kT COS @kT <span class="m">2</span> MUL COS ADD @kT <span class="m">3</span> MUL COS <span class="nv">ADD</span> <span class="o">=</span> harmonics.txt
+</pre></div>
+</div>
+<p>使用 <strong>gmtmath</strong> 实现标量计算（不含输入文件）可以使用 <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> 选项，计算 kei(((1 + 1.75)/2.2) + cos (60)) 并将结果赋值给 shell 中的变量 z</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">z</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="m">1</span> <span class="m">1</span>.75 ADD <span class="m">2</span>.2 DIV <span class="m">60</span> COSD ADD <span class="nv">KEI</span> <span class="o">=</span><span class="sb">`</span>
+</pre></div>
+</div>
+<p>将黄色的 RGB 值转换为 HSV 并保存为 hue</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="nv">hue</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="m">255</span> <span class="m">255</span> <span class="m">0</span> RGB2HSV POP <span class="nv">POP</span> <span class="o">=</span><span class="sb">`</span>
+</pre></div>
+</div>
+<p>下面将展示使用 <strong>gmtmath</strong> 求解方程组。假设当前存在一个增广矩阵 [ A ｜b ]，A 为系数矩阵，b 为等号右边的常数列，求解的方程组为 A * x = b 。<strong>LSQFIT</strong> 操作符可实现方程的求解，但前提是使用 <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong> 选项正确放置参数。假定表数据文件 <code class="file docutils literal notranslate"><span class="pre">ty.txt</span></code> 包含
+t 和 y(t) 两列，拟合模型为 y(t) = a + b*t + c*H(t-t0) ，其中 H 为给定 t0 = 1.55 的
+Heaviside 阶跃函数。这时，需要四列的增广矩阵，第二列为 t ，第四列为 y(t)（或者说 b） ，则计算命令为</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -N4/1 -Aty.txt -C0 <span class="m">1</span> ADD -C2 <span class="m">1</span>.55 STEPT ADD -Ca <span class="nv">LSQFIT</span> <span class="o">=</span> solution.txt
+</pre></div>
+</div>
+<p>上面的例子中使用了 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项来激活操作的列，并在 <strong>LSQFIT</strong> 求解前激活了所有列（ <strong>-Ca</strong> ）;
+第二列和第四列（列编号为 1 和 3）被设置为 t 和 y(t)。如果用户自己已经准备了增广矩阵文件 <code class="file docutils literal notranslate"><span class="pre">lsqsys.txt</span></code> ， 求解将更加简单</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T lsqsys.txt <span class="nv">LSQFIT</span> <span class="o">=</span> solution.txt
+</pre></div>
+</div>
+<p>下面展示 <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> 选项的位置对于数据加载的影响</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="p">|</span> gmt math STDIN -C3 <span class="m">1</span> <span class="nv">ADD</span> <span class="o">=</span>
+<span class="m">1</span>    <span class="m">2</span>    <span class="m">3</span>    <span class="m">5</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="p">|</span> gmt math -C3 STDIN <span class="m">1</span> <span class="nv">ADD</span> <span class="o">=</span>
+<span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span>    <span class="m">5</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h2>参考文献<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h2>
+<p>Abramowitz, M., and I. A. Stegun, 1964, <em>Handbook of Mathematical
+Functions</em>, Applied Mathematics Series, vol. 55, Dover, New York.</p>
+<p>Holmes, S. A., and W. E. Featherstone, 2002, A unified approach to the
+Clenshaw summation and the recursive computation of very high degree and
+order normalized associated Legendre functions. <em>Journal of Geodesy</em>,
+76, 279-299.</p>
+<p>Press, W. H., S. A. Teukolsky, W. T. Vetterling, and B. P. Flannery,
+1992, <em>Numerical Recipes</em>, 2nd edition, Cambridge Univ., New York.</p>
+<p>Spanier, J., and K. B. Oldman, 1987, <em>An Atlas of Functions</em>, Hemisphere
+Publishing Corp.</p>
+</section>
+<section id="id15">
+<h2>相关模块<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../grdmath/"><span class="doc">grdmath</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../gmtlogo/" class="btn btn-neutral float-left" title="gmtlogo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../gmtselect/" class="btn btn-neutral float-right" title="gmtselect" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2022, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2022 年 06 月 19 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>-U 选项 &mdash; GMT 中文手册</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="-V 选项" href="../V/" />
+    <link rel="prev" title="-B 选项" href="../B/" />
+
+
+  <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+  <script type="text/javascript" src="/latest/_static/version_switch.js"></script>
+
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+  <a href="../../" class="icon icon-home"> GMT 中文手册
+</a>
+    <div class="version">
+      6.2
+    </div>
+
+
+<div role="search">
+  <form class="wy-form" action="https://www.bing.com/search" id="searchForm">
+    <input id="search-bar" type="text" name="q" placeholder="搜索文档" required>
+    <input type="hidden" name="sitesearch" value="docs.gmt-china.org/latest/" id="sitesearch">
+  </form>
+  <script>
+    var searchForm = document.getElementById('searchForm');
+    searchForm.onsubmit = function () {
+      var url = this.action;
+      var q = document.getElementById('search-bar').value;
+      var site = document.getElementById('sitesearch').value;
+      var url = url + '?q=' + q + ' site:' + site;
+      window.open(url);
+      return false;
+    };
+  </script>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">GMT 入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating/">版本迁移</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/started/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/advanced/">进阶教程</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 实例</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">绘图实例</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GMT 进阶</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">基础知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">颜色表 CPT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../p/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../q/">-q 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../w/">-w 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">地图投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset-CN/">中国地理空间数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">附录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities/">相关工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contour-annot/">等值线标注和“线条标注”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/gmt-china/GMT_docs/graphs/contributors">贡献者列表</a></li>
+</ul>
+
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs"><i class="fa fa-github fa-fw"></i> 手册源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.2/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> 手册 PDF</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT 中文手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../">标准选项</a> &raquo;</li>
+      <li>-U 选项</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/gmt-china/GMT_docs/blob/master/source/option/U.rst" class="fa fa-github"> 编辑本页</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="u">
+<h1>-U 选项<a class="headerlink" href="#u" title="永久链接至标题"></a></h1>
+<p><strong>-U</strong> 选项用于在图上绘制一个带有GMT标识的时间戳。其语法为:</p>
+<blockquote>
+<div><p><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>-U</strong> 不加任何参数时会在当前图的左下角添加一个带GMT标识的时间戳</p></li>
+<li><p><strong>-U</strong><em>label</em> 会在时间戳后打印字符串 <em>label</em>，比如 <code class="docutils literal notranslate"><span class="pre">-U&quot;This</span> <span class="pre">is</span> <span class="pre">string&quot;</span></code></p></li>
+<li><p><strong>-U+c</strong> 会在时间戳后打印当前命令</p></li>
+<li><p><strong>-U+j</strong><em>just</em><strong>+o</strong><em>dx</em>/<em>dy</em> 用于控制将时间戳的哪个<a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a>
+与当前底图的左下角对齐，以及其偏移量。例如，<code class="docutils literal notranslate"><span class="pre">-U+jBL+o0/0</span></code> 表示将时间戳的左下角与底图左下角对齐</p></li>
+</ul>
+<p>GMT参数中有一些可以控制时间戳：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../conf/map/#term-MAP_LOGO"><span class="xref std std-term">MAP_LOGO</span></a> 控制是否绘制时间戳，默认值为 <strong>FALSE</strong></p></li>
+<li><p><a class="reference internal" href="../../conf/map/#term-MAP_LOGO_POS"><span class="xref std std-term">MAP_LOGO_POS</span></a> 用于控制时间戳的位置</p></li>
+<li><p><a class="reference internal" href="../../conf/format/#term-FORMAT_TIME_STAMP"><span class="xref std std-term">FORMAT_TIME_STAMP</span></a> 用于控制时间戳的显示格式</p></li>
+<li><p><a class="reference internal" href="../../conf/font/#term-FONT_LOGO"><span class="xref std std-term">FONT_LOGO</span></a> 时间戳中文本字体</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -U<span class="s2">&quot;This is a GMT logo&quot;</span> -png GMT_-U
+</pre></div>
+</div>
+<figure class="align-center" id="id1">
+<img alt="../../_images/U-gmtplot-0.png" src="../../_images/U-gmtplot-0.png" />
+<figcaption>
+<p><span class="caption-text"><strong>-U</strong> 选项加时间戳</span><a class="headerlink" href="#id1" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>每个带有 <strong>-U</strong> 选项的绘图命令都会绘制一遍时间戳，因而一张图中只需要在一个绘图命令中使用 <strong>-U</strong> 即可。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>修改UNIX 环境变量 <strong>TZ</strong> 可以控制时间戳中时间所使用的时区，默认为当地时区。例如，使用 <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">TZ=Asia/Shanghai</span></code> 可以将时区设置为东八区。</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../B/" class="btn btn-neutral float-left" title="-B 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../V/" class="btn btn-neutral float-right" title="-V 选项" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2014–2021, GMT 中文社区.
+      <span class="lastupdated">最后更新于 2021 年 11 月 23 日.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">sphinx_rtd_theme 主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
